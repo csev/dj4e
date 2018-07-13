@@ -20,6 +20,7 @@ Once you have completed tutorial, make a second admin user with the following in
 Account: dj4e
 Password: <?= htmlentities($adminpw) ?>
 </pre>
+You can use any email address you like.
 </p>
 <p>
 Then create a 
@@ -55,7 +56,15 @@ $crawler = $client->submit($form);
 $html = $crawler->html();
 showHTML("Show retrieved page",$html);
 
-line_out("Looking for  an anchor tag with text of 'Questions')");
+if ( strpos($html,'Log in') > 0 ) {
+    error_out('It looks like you have not yet set up dj4e / '.$adminpw);
+    error_out('The test cannot be continued');
+    return;
+} else {
+    line_out("Login successful...");
+}
+
+line_out("Looking for  an anchor tag with text of 'Questions'");
 $link = $crawler->selectLink('Questions')->link();
 $url = $link->getURI();
 line_out("Retrieving ".htmlent_utf8($url)."...");
@@ -65,6 +74,12 @@ $html = $crawler->html();
 showHTML("Show retrieved page",$html);
 
 line_out("Looking for  an anchor tag with text of '".$qtext."')");
+if ( strpos($html,$qtext) < 1 ) {
+    error_out('It looks like you have not created a question with text');
+    error_out($qtext);
+    error_out('The test cannot be continued');
+    return;
+}
 $link = $crawler->selectLink($qtext)->link();
 $url = $link->getURI();
 line_out("Retrieving ".htmlent_utf8($url)."...");
