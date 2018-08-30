@@ -28,15 +28,15 @@ Then create a
 <pre>
 <?= $qtext ?>
 </pre>
-and submit your Django base url to the autograder. 
+and submit your Django admin url to the autograder. 
 </p>
 <?php
 
-$url = getUrl('http://drchuck.pythonanywhere.com');
+$url = getUrl('http://drchuck.pythonanywhere.com/admin');
 if ( $url === false ) return;
 $passed = 0;
 
-$admin = $url . '/admin';
+$admin = $url;
 error_log("Tutorial02 ".$url);
 line_out("Retrieving ".htmlent_utf8($admin)."...");
 flush();
