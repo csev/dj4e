@@ -28,11 +28,11 @@ Then create a
 <pre>
 <?= $qtext ?>
 </pre>
-Have at least one answer be 42 and submit your Django url to the autograder. 
+and submit your Django base url to the autograder. 
 </p>
 <?php
 
-$url = getUrl('http://localhost:8000');
+$url = getUrl('http://drchuck.pythonanywhere.com');
 if ( $url === false ) return;
 $passed = 0;
 
@@ -57,7 +57,7 @@ $html = $crawler->html();
 showHTML("Show retrieved page",$html);
 
 if ( strpos($html,'Log in') > 0 ) {
-    error_out('It looks like you have not yet set up dj4e / '.$adminpw);
+    error_out('It looks like you have not yet set up the admin account with dj4e / '.$adminpw);
     error_out('The test cannot be continued');
     return;
 } else {
@@ -73,30 +73,18 @@ markTestPassed('Questions page retrieved');
 $html = $crawler->html();
 showHTML("Show retrieved page",$html);
 
-line_out("Looking for  an anchor tag with text of '".$qtext."')");
+line_out("Looking for '$qtext'");
 if ( strpos($html,$qtext) < 1 ) {
     error_out('It looks like you have not created a question with text');
     error_out($qtext);
     error_out('The test cannot be continued');
     return;
 }
-$link = $crawler->selectLink($qtext)->link();
-$url = $link->getURI();
-line_out("Retrieving ".htmlent_utf8($url)."...");
-$crawler = $client->request('GET', $url);
-markTestPassed('Questions page retrieved');
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
 
-line_out("Looking for '42'");
-if ( strpos($html, '42') > 0 ) {
-    line_out('Found 42');
-    $passed++;
-} else {
-    error_out('Did not find 42');
-}
+line_out("Found '$qtext'");
+$passed++;
 
-$perfect = 4;
+$perfect = 3;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 if ( $score < 1.0 ) autoToggle();
