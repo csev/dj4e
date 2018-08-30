@@ -8,16 +8,22 @@ line_out("Grading Django Tutorial 01");
 
 ?>
 <p>
-For this assignment work throught Part 1 of the Django tutorial at
+For this assignment work through Part 1 of the Django tutorial at
 <a href="https://docs.djangoproject.com/en/2.0/intro/tutorial01/" target="_blank">
 https://docs.djangoproject.com/en/2.0/intro/tutorial01/</a>.
 </a>
 </p>
 <?php
-
 nameNote();
+?>
+Here is a sample of what you might put into your <b>views.py</b>.
+<pre>
+    return HttpResponse("Hello, world. Jane Instructor / 1ff1de77 is the polls index.")
+</pre>
 
-$url = getUrl('http://csevumich.byethost18.com/howdy.php');
+<?php
+
+$url = getUrl('http://drchuck.pythonanywhere.com/polls1');
 if ( $url === false ) return;
 $grade = 0;
 
