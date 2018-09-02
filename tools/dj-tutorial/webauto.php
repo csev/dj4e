@@ -262,8 +262,9 @@ function webauto_check_post_redirect($client) {
 function webauto_get_form_button($crawler,$text) 
 {
     $html = $crawler->html();;
-    if ( strpos($hmtl, $text) === false) {
-        line_out('Did not find form with a "'.$text.'" button');
+    $msg = 'Did not find form with a "'.$text.'" button';
+    if ( strpos($html, $text) === false) {
+        line_out($msg);
         throw new Exception($msg);
     }
 
@@ -272,7 +273,6 @@ function webauto_get_form_button($crawler,$text)
         markTestPassed('Found form with "'.$text.'" button');
         return $form;
     } catch(Exception $ex) {
-        $msg = 'Did not find form with a "'.$text.'" button';
         error_out($msg);
         throw new Exception($msg);
     }
@@ -281,8 +281,9 @@ function webauto_get_form_button($crawler,$text)
 function webauto_get_href($crawler,$text) 
 {
     $html = $crawler->html();;
+    $msg = 'Did not find anchor tag with"'.$text;
     if ( strpos($html, $text) === false) {
-        line_out('Did not find anchor tag with a "'.$text);
+        line_out($msg);
         throw new Exception($msg);
     }
 
@@ -291,7 +292,6 @@ function webauto_get_href($crawler,$text)
         markTestPassed('Found an anchor tag with "'.$text.'" button');
         return $link;
     } catch(Exception $ex) {
-        $msg = 'Did not find anchor tag with"'.$text;
         error_out($msg);
         throw new Exception($msg);
     }
