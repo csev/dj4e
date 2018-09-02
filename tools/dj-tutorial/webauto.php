@@ -261,6 +261,12 @@ function webauto_check_post_redirect($client) {
 
 function webauto_get_form_button($crawler,$text) 
 {
+    $html = $crawler->html();;
+    if ( strpos($hmtl, $text) === false) {
+        line_out('Did not find form with a "'.$text.'" button');
+        throw new Exception($msg);
+    }
+
     try {
         $form = $crawler->selectButton($text)->form();
         markTestPassed('Found form with "'.$text.'" button');
@@ -272,8 +278,28 @@ function webauto_get_form_button($crawler,$text)
     }
 }
 
+function webauto_get_href($crawler,$text) 
+{
+    $html = $crawler->html();;
+    if ( strpos($html, $text) === false) {
+        line_out('Did not find anchor tag with a "'.$text);
+        throw new Exception($msg);
+    }
+
+    try {
+        $link = $crawler->selectLink($text)->link();
+        markTestPassed('Found an anchor tag with "'.$text.'" button');
+        return $link;
+    } catch(Exception $ex) {
+        $msg = 'Did not find anchor tag with"'.$text;
+        error_out($msg);
+        throw new Exception($msg);
+    }
+}
+
+
 // http://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
-function webauto_change_form($form, $name, $value) 
+function webauto_change_form($form, $name, $value)
 {
     try {
         $x = $form->get($name);

@@ -18,6 +18,7 @@ if ( SettingsForm::handleSettingsPost() ) {
 $assignments = array(
     'tutorial01.php' => 'Writing your first Django app, (part 1)',
     'tutorial02.php' => 'Models and administration (part 2)',
+    'tutorial03.php' => 'Writing your first Django app (part 3)',
 );
 
 $oldsettings = Settings::linkGetAll();
