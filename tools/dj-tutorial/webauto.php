@@ -259,7 +259,7 @@ function webauto_check_post_redirect($client) {
     }
 }
 
-function webauto_get_form_button($crawler,$text) 
+function webauto_get_form_with_button($crawler,$text) 
 {
     $html = $crawler->html();;
     $msg = 'Did not find form with a "'.$text.'" button';

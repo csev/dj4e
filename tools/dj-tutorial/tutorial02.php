@@ -23,13 +23,13 @@ Password: <?= htmlentities($adminpw) ?>
 You can use any email address you like.
 </p>
 <p>
-Then create a 
+Then create a
 <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy" target="_blank">question</a> with the exact text:
 <pre>
 <?= $qtext ?>
 </pre>
-Have at three answerd and at least one answer be 42 
-and submit your Django admin url to the autograder. 
+Have at three answers and at least one answer be "42"
+and submit your Django admin url to the autograder.
 </p>
 <?php
 
@@ -51,7 +51,7 @@ $html = $crawler->html();
 showHTML("Show retrieved page",$html);
 
 line_out('Looking for the form with a value="Log In" submit button');
-$form = webauto_get_form_button($crawler,'Log in');
+$form = webauto_get_form_with_button($crawler,'Log in');
 $form->setValues(array("username" => "dj4e", "password" => $adminpw));
 $crawler = $client->submit($form);
 $html = $crawler->html();
