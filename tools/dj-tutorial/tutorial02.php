@@ -28,6 +28,7 @@ Then create a
 <pre>
 <?= $qtext ?>
 </pre>
+Have at three answerd and at least one answer be 42 
 and submit your Django admin url to the autograder. 
 </p>
 <?php
