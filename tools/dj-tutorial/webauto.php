@@ -18,6 +18,13 @@ if ( $dueDate->message ) {
     echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
 }
 
+function webauto_get_html($crawler) {
+    if ( $crawler == false ) return false;
+    $html = $crawler->html();
+    showHTML("Show retrieved page",$html);
+    return $html;
+}
+
 function showHTML($message, $html) {
     global $OUTPUT;
     $pos = strpos($html,'<b>Fatal error</b>');
@@ -259,6 +266,35 @@ function webauto_check_post_redirect($client) {
     }
 }
 
+function webauto_get_radio_button_choice($form,$field_name,$choice) 
+{
+    line_out("Looking for '$field_name' with '$choice' as the label");
+    if ($form->has($field_name) ) {
+        $field = $form->get($field_name);
+        $type = $field->getType();
+        if ( $type == "radio" ) {
+            success_out("Found '$field_name' radio buttons");
+        } else {
+            error_out("Could not find radio buttons for form input '$field_name'");
+            return false;
+        }
+    }
+
+    $formnode = $form->getFormNode();
+    $value = false;
+    foreach($formnode->childNodes as $node){
+        if ( $node->nodeName == "input" ) {
+            $value = $node->getAttribute("value");
+            continue;
+        }
+        if ( $node->nodeName == "label" && trim($node->nodeValue) == trim($choice) ) {
+            if (is_string($value) ) return $value;
+        }
+    }
+    error_out("Could not form input '$field_name' with label of '$choice'");
+    return false;
+}
+
 function webauto_get_form_with_button($crawler,$text) 
 {
     $html = $crawler->html();;
@@ -280,6 +316,7 @@ function webauto_get_form_with_button($crawler,$text)
 
 function webauto_get_href($crawler,$text) 
 {
+    if ( $crawler == false ) return false;
     $html = $crawler->html();;
     $msg = 'Did not find anchor tag with"'.$text;
     if ( strpos($html, $text) === false) {
@@ -331,6 +368,25 @@ function webauto_search_for($html, $needle)
         error_out("Could not find '$needle'");
         return false;
     }
+}
+
+/* Returns a crawler */
+function webauto_get_url($client, $url) {
+    line_out(" ");
+    line_out("Retrieving ".htmlentities($url)." ...");
+    flush();
+    try {
+        $crawler = $client->request('GET', $url);
+        $response = $client->getResponse();
+        $status = $response->getStatus();
+        if ( $status != 200 ) {
+            line_out("Page may have errors, HTTP status=$status");
+        }
+    } catch(\Exception $e) {
+        error_out($e->getMessage());
+        return false;
+    }
+    return $crawler;
 }
 
 function webauto_dont_want($html, $needle)

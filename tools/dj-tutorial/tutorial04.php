@@ -48,98 +48,65 @@ $passed = 0;
 
 $owner = $url . '/owner';
 error_log("Tutorial04 ".$owner);
-line_out("Retrieving ".htmlent_utf8($owner)." ...");
-flush();
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = $client->request('GET', $owner);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
-$passed = 0;
-
-if ( stripos($html, 'Hello') !== false ) {
-    success_out("Found 'Hello' in your HTML");
-    $passed += 1;
-} else {
-    error_out("Did not find 'Hello' in your HTML");
-}
+$crawler = webauto_get_url($client, $owner);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+webauto_search_for($html, 'Hello');
 
 $check = webauto_get_check();
 
 if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
-    success_out("Found ($USER->displayname) in your html");
-    $passed += 1;
+    markTestPassed("Found ($USER->displayname) in your html");
 } else if ( $check && stripos($html,$check) !== false ) {
-    success_out("Found ($check) in your html");
-    $passed += 1;
+    markTestPassed("Found ($check) in your html");
 } else if ( $USER->displayname ) {
     error_out("Did not find $USER->displayname or $check in your html");
     error_out("No score will be sent, but the test will continue");
 }
 
-line_out("Retrieving ".htmlent_utf8($url)." ...");
-flush();
-
-$crawler = $client->request('GET', $url);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
+$crawler = webauto_get_url($client, $url);
+$html = webauto_get_html($crawler);
 
 $link = webauto_get_href($crawler, $qtext);
 $passed += 1;
 $url = $link->getURI();
-line_out("Retrieving ".htmlent_utf8($url)." ...");
-$crawler = $client->request('GET', $url);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
+
+$crawler = webauto_get_url($client, $url);
+$html = webauto_get_html($crawler);
 
 line_out("Looking for '$qtext' in the detail response");
-if ( strpos($html, $qtext) !== false ) {
-    success_out("Found ($qtext) in your detail response");
-    $passed += 1;
-} else {
-    success_out("Did not find ($qtext) in your detail response");
-}
+webauto_search_for($html, $qtext);
 
 line_out("Looking for HTML form with 'Vote' button");
 $form = webauto_get_form_with_button($crawler,'Vote');
 
-line_out("Looking for choice radio button");
-if ($form->has("choice") ) {
-    $choice = $form->get("choice");
-    $type = $choice->getType();
-    if ( $type == "radio" ) {
-        $passed += 1;
-        success_out("Found 'choice' radio buttons");
-    } else {
-        error_out("Could not find radio buttons for form input 'choice'");
-        return;
-    }
-}
-
-line_out("Looking for choice with '42' as the label");
-$matches = Array();
-preg_match('/<input type="radio" name="choice" id="choice." value="(.)"><label for="choice.">42<.label>/',$html,$matches);
-if ( is_array($matches) && count($matches) == 2 && is_numeric($matches[1]) ) {
-    success_out("Found choice with '42'");
-    $passed += 1;
-    $choiceval = $matches[1];
+$value = webauto_get_radio_button_choice($form,'choice','42');
+if ( is_string($value) ) {
+    markTestPassed("Found choice radio button with a label of '42'");
 } else {
-    error_out("Could not find radio button for '42'");
+    error_out("Could not find choice radio button with label of '42'");
     return;
 }
 
-success_out($choiceval);
+line_out(" ");
+webauto_change_form($form, 'choice', $value);
+line_out("Submitting voting form");
+$crawler = $client->submit($form);
+
+$html = webauto_get_html($crawler);
+webauto_search_for($html, 'Vote again?');
 
 // var_dump($choice->availableOptionValues());
 
 // New for Polls 4
 
 // -------------------- Send the grade ---------------
-$perfect = 3;
-if ( $passed > $perfect ) $passed = $perfect;
+$perfect = 8;
 
 if ( ! $check ) {
     error_out("No score sent, missing owner name");
