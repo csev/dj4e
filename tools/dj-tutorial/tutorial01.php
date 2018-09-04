@@ -25,27 +25,18 @@ Here is a sample of what you might put into your <b>views.py</b>.
 
 $url = getUrl('http://dj4e.pythonanywhere.com/polls1');
 if ( $url === false ) return;
-$grade = 0;
+$passed = 0;
 
 error_log("Tutorial01 ".$url);
-line_out("Retrieving ".htmlent_utf8($url)."...");
-flush();
-
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = $client->request('GET', $url);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
-$passed = 0;
+$crawler = webauto_get_url($client, $url);
+if ( $crawler === false ) return;
 
-if ( stripos($html, 'Hello') !== false ) {
-    success_out("Found 'Hello' in your HTML");
-    $passed += 1;
-} else {
-    error_out("Did not find 'Hello' in your HTML");
-}
+$html = webauto_get_html($crawler);
+webauto_search_for($html, 'Hello');
 
 $check = webauto_get_check();
 
@@ -60,6 +51,9 @@ if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
     error_out("No score sent");
     return;
 }
+
+// -------
+line_out(' ');
 
 $perfect = 2;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);

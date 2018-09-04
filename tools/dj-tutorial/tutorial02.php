@@ -39,23 +39,21 @@ $passed = 0;
 
 $admin = $url;
 error_log("Tutorial02 ".$url);
-line_out("Retrieving ".htmlent_utf8($admin)."...");
-flush();
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = $client->request('GET', $admin);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
+$crawler = webauto_get_url($client, $admin);
+$html = webauto_get_html($crawler);
 
-line_out('Looking for the form with a value="Log In" submit button');
+// line_out('Looking for the form with a value="Log In" submit button');
 $form = webauto_get_form_with_button($crawler,'Log in');
-$form->setValues(array("username" => "dj4e", "password" => $adminpw));
+webauto_change_form($form, 'username', 'dj4e');
+webauto_change_form($form, 'password', $adminpw);
+
 $crawler = $client->submit($form);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
+$html = webauto_get_html($crawler);
 
 if ( strpos($html,'Log in') > 0 ) {
     error_out('It looks like you have not yet set up the admin account with dj4e / '.$adminpw);
@@ -65,14 +63,12 @@ if ( strpos($html,'Log in') > 0 ) {
     line_out("Login successful...");
 }
 
-line_out("Looking for  an anchor tag with text of 'Questions'");
-$link = $crawler->selectLink('Questions')->link();
+$link = webauto_get_href($crawler,'Questions');
 $url = $link->getURI();
-line_out("Retrieving ".htmlent_utf8($url)."...");
-$crawler = $client->request('GET', $url);
+$crawler = webauto_get_url($client, $url);
+$html = webauto_get_html($crawler);
+
 markTestPassed('Questions page retrieved');
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
 
 line_out("Looking for '$qtext'");
 if ( strpos($html,$qtext) < 1 ) {
@@ -85,6 +81,8 @@ if ( strpos($html,$qtext) < 1 ) {
 line_out("Found '$qtext'");
 $passed++;
 
+// -------
+line_out(' ');
 $perfect = 3;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

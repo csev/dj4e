@@ -101,11 +101,8 @@ $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'Vote again?');
 
-// var_dump($choice->availableOptionValues());
-
-// New for Polls 4
-
 // -------------------- Send the grade ---------------
+line_out(' ');
 $perfect = 8;
 
 if ( ! $check ) {

@@ -46,61 +46,43 @@ $passed = 0;
 
 $owner = $url . '/owner';
 error_log("Tutorial03 ".$owner);
-line_out("Retrieving ".htmlent_utf8($owner)."...");
-flush();
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = $client->request('GET', $owner);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
-$passed = 0;
-
-if ( stripos($html, 'Hello') !== false ) {
-    success_out("Found 'Hello' in your HTML");
-    $passed += 1;
-} else {
-    error_out("Did not find 'Hello' in your HTML");
-}
+$crawler = webauto_get_url($client, $owner);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+webauto_search_for($html, 'Hello');
 
 $check = webauto_get_check();
 
 if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
-    success_out("Found ($USER->displayname) in your html");
-    $passed += 1;
+    markTestPassed("Found ($USER->displayname) in your html");
 } else if ( $check && stripos($html,$check) !== false ) {
-    success_out("Found ($check) in your html");
-    $passed += 1;
+    markTestPassed("Found ($check) in your html");
 } else if ( $USER->displayname ) {
     error_out("Did not find $USER->displayname or $check in your html");
     error_out("No score will be sent, but the test will continue");
 }
 
-line_out("Retrieving ".htmlent_utf8($url)."...");
-flush();
-
-$crawler = $client->request('GET', $url);
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
+$crawler = webauto_get_url($client, $url);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
 
 $link = webauto_get_href($crawler, $qtext);
 $passed += 1;
 $url = $link->getURI();
-line_out("Retrieving ".htmlent_utf8($url)."...");
-$html = $crawler->html();
-showHTML("Show retrieved page",$html);
 
-line_out("Looking for '$qtext' in the detail response");
-if ( strpos($html, $qtext) !== false ) {
-    success_out("Found ($qtext) in your detail response");
-    $passed += 1;
-} else {
-    success_out("Did not find ($qtext) in your detail response");
-}
+$crawler = webauto_get_url($client, $url);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
+webauto_search_for($html, $qtext);
 
 // -------------------- Send the grade ---------------
+line_out(' ');
 $perfect = 3;
 if ( $passed > $perfect ) $passed = $perfect;
 
