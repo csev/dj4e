@@ -79,7 +79,7 @@ if ( $title ) {
 laptop or desktop computer with a URL like <strong>http://localhost...</strong> you
 will need to install and use the <a href="http://www.wa4e.com/md/" target="_blank">NGrok or LocalTunnel</a>
 application to get a temporary Internet-accessible URL that can be used with this application.  Make sure to use
-port 8000 and not port 8888 as is used in the examples.
+DJango's port 8000 and not port 8888 as is used in the documentation.
 </p>
 <?php
 }
