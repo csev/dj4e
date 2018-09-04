@@ -40,7 +40,7 @@ and submit your Django polls url to the autograder.
 </p>
 <?php
 
-$url = getUrl('http://drchuck.pythonanywhere.com/polls3');
+$url = getUrl('http://dj4e.pythonanywhere.com/polls3');
 if ( $url === false ) return;
 $passed = 0;
 

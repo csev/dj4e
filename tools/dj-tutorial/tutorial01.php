@@ -23,7 +23,7 @@ Here is a sample of what you might put into your <b>views.py</b>.
 
 <?php
 
-$url = getUrl('http://drchuck.pythonanywhere.com/polls1');
+$url = getUrl('http://dj4e.pythonanywhere.com/polls1');
 if ( $url === false ) return;
 $grade = 0;
 

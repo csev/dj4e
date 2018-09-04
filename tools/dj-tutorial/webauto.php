@@ -318,7 +318,7 @@ function webauto_get_href($crawler,$text)
 {
     if ( $crawler == false ) return false;
     $html = $crawler->html();;
-    $msg = 'Did not find anchor tag with"'.$text;
+    $msg = 'Did not find anchor tag with"'.$text.'"';
     if ( strpos($html, $text) === false) {
         line_out($msg);
         throw new Exception($msg);
