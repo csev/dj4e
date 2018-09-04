@@ -15,10 +15,14 @@ https://docs.djangoproject.com/en/2.0/intro/tutorial01/</a>.
 </p>
 <?php
 nameNote();
+$message = $check;
+if ( $USER->displayname ) {
+    $message = $USER->displayname . " / ". $check;
+}
 ?>
 Here is a sample of what you might put into your <b>views.py</b>.
 <pre>
-    return HttpResponse("Hello, world. Jane Instructor / 1ff1de77 is the polls index.")
+    return HttpResponse("Hello, world. <?= $message ?> is the polls index.")
 </pre>
 
 <?php

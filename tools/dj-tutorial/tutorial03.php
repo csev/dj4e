@@ -15,11 +15,15 @@ https://docs.djangoproject.com/en/2.0/intro/tutorial03/</a>.
 </p>
 <?php
 nameNote();
+$message = $check;
+if ( $USER->displayname ) {
+    $message = $USER->displayname . " / ". $check;
+}
 ?>
 Add the following to your <b>views.py</b> with the required information above.
 <pre>
     def owner(request):
-        return HttpResponse("Hello, world. Jane Instructor / 1ff1de77 is the polls owner.")
+       return HttpResponse("Hello, world. <?= $message ?> is the polls index.")
 </pre>
 Add the following to your <b>urls.py</b> to add the route the to the <b>/owner</b> path.
 <pre>

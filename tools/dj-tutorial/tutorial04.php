@@ -15,12 +15,17 @@ https://docs.djangoproject.com/en/2.0/intro/tutorial04/</a>.
 </p>
 <?php
 nameNote();
+$message = $check;
+if ( $USER->displayname ) {
+    $message = $USER->displayname . " / ". $check;
+}
 ?>
 Even though this excersise refactors three of your views as generic views, you
 can keep the "owner" view as an old-style view in your <b>views.py</b>.
 <pre>
     def owner(request):
-        return HttpResponse("Hello, world. Jane Instructor / 1ff1de77 is the polls owner.")
+        return HttpResponse("Hello, world. <?= $message ?> is the polls owner.")
+
 </pre>
 You can mix old ans new styles in your <b>urls.py</b> file as shown below:
 <pre>
