@@ -36,6 +36,7 @@ https://docs.djangoproject.com/en/2.0/intro/
 <li>
 <a href="https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/" target="_blank">Installing DJango on PythonAnywhere</a>
 </li>
+<li><a href="code" target="_blank">Sample Code</a> (under construction)</li>
 </ul>
 <p>
 This site uses <a href="http://www.tsugi.org" target="_blank">Tsugi</a> 
