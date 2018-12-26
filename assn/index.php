@@ -68,7 +68,8 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("install_pyaw.md") ?>>Installing DJango (PythonAnywhere)</option>
+  <option <?= x_sel("paw_install.md") ?>>Installing DJango (PythonAnywhere)</option>
+  <option <?= x_sel("paw_github.md") ?>>Using GitHub (PythonAnywhere)</option>
 </select>
 </div>
 <?php
@@ -81,7 +82,8 @@ This is a set of supplementary documentation for use with this
 web site.
 </p>
 <ul>
-<li><a href="install_pyaw.md">Installing DJango (PythonAnywhere)</a></li>
+<li><a href="paw_install.md">Installing DJango (PythonAnywhere)</a></li>
+<li><a href="paw_github.md">Using GitHub (PythonAnywhere)</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
