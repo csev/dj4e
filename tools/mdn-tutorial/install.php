@@ -55,6 +55,12 @@ if ( strpos($html, 'ALLOWED_HOSTS') !== false ) {
 }
 webauto_search_for($html, 'The install worked successfully! Congratulations!');
 
+if ( strpos($url,'dj4e.com') !== false ) {
+    error_out("Not graded - sample solution");
+    return;
+}
+
+
 $crawler = webauto_get_url($client, $csspath);
 $response = $client->getResponse();
 $status = $response->getStatus();
@@ -67,6 +73,11 @@ if ( $status != 200 ) {
 }
 
 if ( strpos($url,'mdntutorial.pythonanywhere.com') !== false ) {
+    error_out("Not graded - sample solution");
+    return;
+}
+
+if ( strpos($url,'dj4e.com') !== false ) {
     error_out("Not graded - sample solution");
     return;
 }
