@@ -1,45 +1,44 @@
 Installing DJango on PythonAnywhere
 ===================================
 
-This is a more specific version of the documentation from PythonAnywhere
+This is a more specific version of the documentation from PythonAnywhere (PYAW)
 on how to install the Mozilla Developer Network (MDN) tutorial.
 
 https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/
 
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
+
 Feel free to look at that page as well.
 
-Once you have created your PythonAnywhere account, start a `bash` shell
+Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and DJango 2.
 
     mkvirtualenv django2 --python=/usr/bin/python3.6
     pip install django ## this may take a couple of minutes
 
-Note if you iexit and re-start a new shell - you need the following command
-to get back to the virtual environment.
+Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
+to get back into your virtual environment in the new bash shell.
 
     workon django2
 
-Back in MDN Page
+In the PYAW shell, continue the steps from the MDN:
 
     cd ~
     mkdir django_projects
     cd django_projects
     django-admin startproject mytestsite
 
-In PYAW
+In the PYAW web interface navigate to the `Web` tab to create a new web application.  If you
+have not already done so, add a new web application.  Select `manual configuration` and Python
+3.6.  Once the webapp is created, you need to make a few changes to the settings for the web
+app and your application.
 
-WebApp Tab
+source code: /home/--your-account---/django_projects/mytestsite
+working directory: /home/--your-account---/django_projects/mytestsite
+virtualenv: /home/--your-account---/.virtualenvs/django2
 
-Add New WebApp
-Manual Configuration
-Python 3.6
-
-virtualenv setting
-
-/home/mdntutorial/.virtualenvs/django2
-
-Source code for `/home/mdntutorial/django_projects/mytestsite` - this is slightly different
-from the sample in the PythonAnywhere tutorial.
+Then edit the *WGSI Configuration File* and put the following code into it.
+This is slightly different from the sample in the PythonAnywhere tutorial.
 
     import os
     import sys

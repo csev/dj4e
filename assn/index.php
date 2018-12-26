@@ -70,6 +70,7 @@ function onSelect() {
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("paw_install.md") ?>>Installing DJango (PythonAnywhere)</option>
   <option <?= x_sel("paw_github.md") ?>>Using GitHub (PythonAnywhere)</option>
+  <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
 </select>
 </div>
 <?php
@@ -84,6 +85,7 @@ web site.
 <ul>
 <li><a href="paw_install.md">Installing DJango (PythonAnywhere)</a></li>
 <li><a href="paw_github.md">Using GitHub (PythonAnywhere)</a></li>
+<li><a href="paw_skeleton.md">Skeleton web site</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using

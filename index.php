@@ -30,7 +30,14 @@ https://docs.djangoproject.com/en/2.0/intro/
 <h2>Notes</h2>
 <ul>
 <li>
-<a href="https://dj4e.pythonanywhere.com" target="_blank">Sample Implementations</a>
+<a href="assn">Assignments</a> (under construction)
+</li>
+<li>
+<a href="https://mdntutorial.pythonanywhere.com" target="_blank">Sample Implementations for the MDN tutorial</a>
+</li>
+
+<li>
+<a href="https://dj4e.pythonanywhere.com" target="_blank">Sample Implementations for the DJango Tutorial</a>
 (add a path to this URL to get to the actual implementations)
 </li>
 <li>
