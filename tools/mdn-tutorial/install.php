@@ -4,13 +4,12 @@ require_once "webauto.php";
 
 use Goutte\Client;
 
-line_out("Grading Installing Django");
+line_out("Installing Django on PythonAnywhere");
 
 ?>
 <p>
-For this assignment work through Part 1 of the Django tutorial at
-<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment" target="_blank">
-https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment</a>.
+<a href="https://www.dj4e.com/assn/paw_install.md" target="_blank">
+https://www.dj4e.com/assn/paw_install.md</a>.
 </a>
 </p>
 <p>
@@ -22,7 +21,9 @@ ALLOWED_HOSTS = ['*']
 <?php
 
 // $url = getUrl('http://dj4e.pythonanywhere.com/polls1');
-$url = getUrl('http://localhost:8888/dj4e/assn/install_pyaw/index.htm');
+// $url = getUrl('http://localhost:8888/dj4e/assn/install_pyaw/index.htm');
+// $url = getUrl('http://mdntutorial.pythonanywhere.com');
+$url = getUrl('https://www.dj4e.com/assn/install_pyaw/index.htm');
 if ( $url === false ) return;
 $passed = 0;
 
@@ -40,9 +41,19 @@ $client = new Client();
 $client->setMaxRedirects(5);
 
 $crawler = webauto_get_url($client, $url);
+$response = $client->getResponse();
+$status = $response->getStatus();
+if ( $status == 404 ) {
+    error_out("Could not load $url, status=$status");
+    return;
+}
 if ( $crawler === false ) return;
 
 $html = webauto_get_html($crawler);
+if ( strpos($html, 'ALLOWED_HOSTS') !== false ) {
+    error_out('It looks like you forgot to edit the ALLOWED_HOSTS setting');
+    return;
+}
 webauto_search_for($html, 'The install worked successfully! Congratulations!');
 
 $crawler = webauto_get_url($client, $csspath);
@@ -53,6 +64,11 @@ if ( $status != 200 ) {
 } else {
     success_out("Loaded $csspath");
     $passed += 1;
+}
+
+if ( strpos($url,'mdntutorial.pythonanywhere.com') !== false ) {
+    error_out("Not graded - sample solution");
+    return;
 }
 
 // -------
