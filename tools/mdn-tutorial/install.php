@@ -12,12 +12,6 @@ line_out("Installing Django on PythonAnywhere");
 https://www.dj4e.com/assn/paw_install.md</a>.
 </a>
 </p>
-<p>
-You will need to edit the file <b>mytestsite/settings.py</b> and change the following line:
-<pre>
-ALLOWED_HOSTS = ['*']
-</pre>
-
 <?php
 
 // $url = getUrl('http://dj4e.pythonanywhere.com/polls1');
@@ -51,6 +45,14 @@ if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 if ( strpos($html, 'ALLOWED_HOSTS') !== false ) {
     error_out('It looks like you forgot to edit the ALLOWED_HOSTS setting');
+?>
+<p>
+You will need to edit the file <b>mytestsite/settings.py</b> and change the following line:
+<pre>
+ALLOWED_HOSTS = ['*']
+</pre>
+</p>
+<?php
     return;
 }
 webauto_search_for($html, 'The install worked successfully! Congratulations!');
@@ -60,7 +62,7 @@ if ( strpos($url,'dj4e.com') !== false ) {
     return;
 }
 
-
+// Make sure static is set up properly
 $crawler = webauto_get_url($client, $csspath);
 $response = $client->getResponse();
 $status = $response->getStatus();
