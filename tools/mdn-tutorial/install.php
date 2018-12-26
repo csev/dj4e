@@ -23,7 +23,7 @@ ALLOWED_HOSTS = ['*']
 // $url = getUrl('http://dj4e.pythonanywhere.com/polls1');
 // $url = getUrl('http://localhost:8888/dj4e/assn/install_pyaw/index.htm');
 // $url = getUrl('http://mdntutorial.pythonanywhere.com');
-$url = getUrl('https://www.dj4e.com/assn/install_pyaw/index.htm');
+$url = getUrl('https://www.dj4e.com/assn/paw_install/index.htm');
 if ( $url === false ) return;
 $passed = 0;
 
@@ -33,7 +33,6 @@ if ( strpos($url,'index.htm') !== false ) {
 }
 
 $csspath = $path . '/static/admin/css/fonts.css';
-// echo("PATH=$csspath\n");
 
 error_log("MDNInstall".$url);
 // http://symfony.com/doc/current/components/dom_crawler.html
@@ -61,6 +60,7 @@ $response = $client->getResponse();
 $status = $response->getStatus();
 if ( $status != 200 ) {
     error_out("Could not load $csspath, make sure you are serving your static files status=$status");
+    return;
 } else {
     success_out("Loaded $csspath");
     $passed += 1;
