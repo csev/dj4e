@@ -9,7 +9,7 @@ line_out("Installing Django on PythonAnywhere");
 ?>
 <p>
 <a href="https://www.dj4e.com/assn/paw_install.md" target="_blank">
-https://www.dj4e.com/assn/paw_install.md</a>.
+https://www.dj4e.com/assn/paw_install.md</a>
 </a>
 </p>
 <?php
