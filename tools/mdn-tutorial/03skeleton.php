@@ -36,6 +36,7 @@ error_log("MDNInstall".$url);
 $client = new Client();
 $client->setMaxRedirects(5);
 
+line_out('It is OK for this page to get a 404 error');
 $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
 
