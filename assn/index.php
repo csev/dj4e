@@ -102,9 +102,7 @@ $OUTPUT->footerStart();
 <script>
 // https://stackoverflow.com/questions/7901679/jquery-add-target-blank-for-outgoing-link
 $(window).load(function() {
-        console.log('Yada1');
     $('a[href^="http"]').attr('target', function() {
-        console.log('Yada');
       if(this.host == location.host) return '_self'
       else return '_blank'
     });
