@@ -53,6 +53,10 @@ center {
         display: none;
     }
 }
+a[target="_blank"]:after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
 </style>
 <?php
 $OUTPUT->bodyStart();
@@ -93,5 +97,19 @@ If you find a mistake in these pages, feel free to send me a fix using
 </p>
 <?php
 }
-$OUTPUT->footer();
+$OUTPUT->footerStart();
+?>
+<script>
+// https://stackoverflow.com/questions/7901679/jquery-add-target-blank-for-outgoing-link
+$(window).load(function() {
+        console.log('Yada1');
+    $('a[href^="http"]').attr('target', function() {
+        console.log('Yada');
+      if(this.host == location.host) return '_self'
+      else return '_blank'
+    });
+});
+</script>
+<?php
+$OUTPUT->footerEnd();
 
