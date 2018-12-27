@@ -59,6 +59,10 @@ Edit the file `catalog/urls.py` and put the following lines in the file:
     urlpatterns = [
     ]
 
+While it is not essential to this assignment, it is a good idea to run the migrations
+at this point in time.  In the PYAW shell:
+
+    cd ~/django_project/locallibrary
 
     python3 manage.py makemigrations
     python3 manage.py migrate
@@ -71,4 +75,27 @@ Web Tab
 Edit and change 'mytestsite' to 'locallibrary' (Twice)
 
     WSGI configuration file:/var/www/mdntutorial_pythonanywhere_com_wsgi.py
+
+The `Reload` your web application and visit its url to make sure you get the expected output.
+
+    http://mdntutorial.pythonanywhere.com/catalog/
+
+You should get an error, 'Page not found(404)'
+(<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
+This is an incomplete web site at this point so that is normal.
+
+At this point, once your application is working, you might want to check it into
+github and tag it.
+
+    cd ~/django_projects
+    git status
+    git commit -a "Skeleton tutorial complete"
+    git push
+
+You might also want to tag this version of the code in case you need to come back to it:
+
+    git tag skeleton
+    git push origin --tags
+
+
 
