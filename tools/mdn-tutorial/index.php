@@ -16,11 +16,8 @@ if ( SettingsForm::handleSettingsPost() ) {
 
 // All the assignments we support
 $assignments = array(
-    'install.php' => 'Getting DJango installed and up and running',
-    'tutorial01.php' => 'Writing your first Django app, (part 1)',
-    'tutorial02.php' => 'Models and administration (part 2)',
-    'tutorial03.php' => 'Writing your first Django app (part 3)',
-    'tutorial04.php' => 'Writing your first Django app (part 4)',
+    '01install.php' => 'Getting DJango installed and up and running',
+    '03skeleton.php' => 'Setting up the Skeleton Web Site',
 );
 
 $oldsettings = Settings::linkGetAll();
