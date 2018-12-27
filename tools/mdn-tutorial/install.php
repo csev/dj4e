@@ -14,9 +14,6 @@ https://www.dj4e.com/assn/paw_install.md</a>
 </p>
 <?php
 
-// $url = getUrl('http://dj4e.pythonanywhere.com/polls1');
-// $url = getUrl('http://localhost:8888/dj4e/assn/install_pyaw/index.htm');
-// $url = getUrl('http://mdntutorial.pythonanywhere.com');
 $url = getUrl('https://www.dj4e.com/assn/paw_install/index.htm');
 if ( $url === false ) return;
 $passed = 0;
