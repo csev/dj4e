@@ -22,10 +22,10 @@ it is being built.
 </p>
 <p>
 The first part of this site is a set of autograders for 
-DJango tutorials 1-4 available at:
+Mozilla Developer Network (MDN) at
 
-<a href="https://docs.djangoproject.com/en/2.0/intro/" target="_blank">
-https://docs.djangoproject.com/en/2.0/intro/
+<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django" target="_blank">
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 </a>
 <h2>Notes</h2>
 <ul>
@@ -34,14 +34,6 @@ https://docs.djangoproject.com/en/2.0/intro/
 </li>
 <li>
 <a href="https://mdntutorial.pythonanywhere.com" target="_blank">Sample Implementations for the MDN tutorial</a>
-</li>
-
-<li>
-<a href="https://dj4e.pythonanywhere.com" target="_blank">Sample Implementations for the DJango Tutorial</a>
-(add a path to this URL to get to the actual implementations)
-</li>
-<li>
-<a href="https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/" target="_blank">Installing DJango on PythonAnywhere</a>
 </li>
 <li><a href="code" target="_blank">Sample Code</a> (under construction)</li>
 </ul>
@@ -54,7 +46,7 @@ to build these kinds of sites for yourself, please see the
 <a href="http://www.tsugi.org" target="_blank">tsugi.org</a> website.
 <h3>Copyright</h3>
 <p>
-All this material produced by Anthony Whyte and Charles Severance
+The material produced on this site is by Anthony Whyte and Charles Severance
 and is Copyright Creative Commons Attribution 3.0 
 unless otherwise indicated.  
 </p>
