@@ -1,5 +1,5 @@
-Storing your code into GitHub
-=============================
+Storing your DJango Projects in GitHub
+======================================
 
 This excercise shows how to store your assignments in a private repository in 
 <a href="https://www.github.com" target="_blank">GitHub</a>, 
