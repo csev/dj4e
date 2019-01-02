@@ -62,7 +62,7 @@ Edit the file `catalog/urls.py` and put the following lines in the file:
 While it is not essential to this assignment, it is a good idea to run the migrations
 at this point in time.  In the PYAW shell:
 
-    cd ~/django_project/locallibrary
+    cd ~/django_projects/locallibrary
 
     python3 manage.py makemigrations
     python3 manage.py migrate
