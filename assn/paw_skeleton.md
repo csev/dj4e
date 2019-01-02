@@ -84,12 +84,16 @@ You should get an error, 'Page not found(404)'
 (<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
 This is an incomplete web site at this point so that is normal.
 
+If You Are Keeping Your Projects GitHub
+---------------------------------------
+
 At this point, once your application is working, you might want to check it into
 github and tag it.
 
     cd ~/django_projects
     git status
-    git commit -a "Skeleton tutorial complete"
+    git add localibrary
+    git commit -m "Skeleton tutorial complete"
     git push
 
 You might also want to tag this version of the code in case you need to come back to it:
