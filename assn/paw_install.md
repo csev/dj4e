@@ -102,8 +102,11 @@ you will find that it often quicker and easier to make small edits to files in t
 rather than a full screen UI.  And once you start deploying real applications in production
 environments like Google, Amazon, Microsoft, etc.. all you will have is command line.
 
-Once this file has been edited, on the PYAW Web page, restart your web application and check
+Once this file has been edited, on the PYAW Web tab, `Reload` your web application, wait a few seconds and check
 that it is up and running:
 
-    http://mdntutorial.pythonanywhere.com/
+    http://--your-account--.pythonanywhere.com/
 
+Here is a
+<a href="paw_install/paw-webapp.png" target="_blank">Sample</a>
+of what the resulting page should look like.
