@@ -6,8 +6,9 @@ tutorial:
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
 
-Go into a PYAW shell and create a new application:
+Go into a PYAW shell, go into your virtual environment and create a new application:
 
+    workon django2
     cd ~/django_projects
     django-admin startproject locallibrary
 
