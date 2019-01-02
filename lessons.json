@@ -223,18 +223,16 @@
     "lti" : [
         {
         "title" : "Auto-grader: Installing DJango",
-        "launch" : "tools/mdntutorial/",
-        "resource_link_id" : "php_03_guess",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_install",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "guess.php"
+                "value": "01install.php"
             }
         ]
         }
     ],
-
-
     "references" : [
         {
             "title" : "PythonAnywhere",
