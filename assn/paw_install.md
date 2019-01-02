@@ -28,7 +28,7 @@ and set up a virtual environment with Python 3.x and DJango 2.
 
 Lets make sure that your django was installed successfully with the following command:
 
-    python -m django --version
+    python3 -m django --version
     # This should show something like 2.1.4 
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
