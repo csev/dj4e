@@ -26,15 +26,15 @@ and set up a virtual environment with Python 3.x and DJango 2.
     mkvirtualenv django2 --python=/usr/bin/python3.6
     pip install django ## this may take a couple of minutes
 
-Lets make sure that your django was installed successfully with the following command:
-
-    python3 -m django --version
-    # This should show something like 2.1.4 
-
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
 
     workon django2
+
+Lets make sure that your django was installed successfully with the following command:
+
+    python3 -m django --version
+    # This should show something like 2.1.4 
 
 In the PYAW shell, continue the steps from the MDN:
 
