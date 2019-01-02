@@ -1,14 +1,24 @@
 Installing DJango on PythonAnywhere
 ===================================
 
-This is a more specific version of the documentation from PythonAnywhere (PYAW)
-on how to install the Mozilla Developer Network (MDN) tutorial.
+Befor you start this assignment, you should already have signed up for a 
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
+account and be logged in on your account.
 
-https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/
+This is a set of instructions to go through the first step of the 
+Mozilla Developer Network (MDN) DJango tutorial to get 
+Django intalled on your PythonAnywhere account.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
 
+This is adapted from the PYAW documentation for following the DJango tutorial.
+
+https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/
+
 Feel free to look at that page as well.
+
+Instructions
+------------
 
 Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and DJango 2.
@@ -19,7 +29,7 @@ and set up a virtual environment with Python 3.x and DJango 2.
 Lets make sure that your django was installed successfully with the following command:
 
     python -m django --version
-    # This should show something like 2.0.2.
+    # This should show something like 2.1.4 
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
