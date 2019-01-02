@@ -1,0 +1,247 @@
+{
+"title": "DJango for Everybody (DJ4E)",
+"description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
+"count": true,
+"required_modules": [
+    "https://github.com/tsugitools/gift",
+    "https://github.com/tsugitools/youtube",
+    "https://github.com/tsugitools/peer-grade"
+],
+"badges": [
+],
+"modules": [
+{
+    "title": "Introduction to Dynamic Web Content",
+    "anchor": "rrc",
+    "icon" : "fa-clone",
+    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
+    "slides": "lectures/Web-01-HTTP.ppt",
+    "videos" : [
+        {
+            "title" : "Web Applications and the Request/Response Cycle",
+            "youtube" : "6Vyn7qhV2xs"
+        },
+        {
+            "title" : "Understanding Browser Developer Mode",
+            "youtube" : "kL3hYPVnhjQ"
+        }
+    ], 
+    "references" : [
+        {
+            "title" : "Hypertext Transfer Protocol",
+            "href" : "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
+        },
+        {
+            "title" : "What Happens When You Click a Link? - Computerphile",
+            "href" : "https://www.youtube.com/watch?v=keo0dglCj7I"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Quiz: Request-Response Cycle",
+        "launch" : "mod/gift/?quiz=01-Request-Response.txt",
+        "resource_link_id" : "php_01_rrc_quiz"
+        },
+        {
+        "title" : "Autograder: Request-Response Cycle",
+        "launch" : "tools/autograder/",
+        "resource_link_id" : "php_01_rrc",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "http_headers.php"
+            }
+        ]
+        }
+    ]
+},
+{
+    "title": "HyperText Markup Language (HTML)",
+    "anchor": "html",
+    "icon" : "fa-html5",
+    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.",
+    "slides": "lectures/Web-02-HTML.ppt",
+    "videos" : [
+        {
+            "title" : "HTML - HyperText Markup Language (Part 1)",
+            "youtube" : "ZV9SG8unDYc"
+        },
+        {
+            "title" : "HTML - HyperText Markup Language (Part 2)",
+            "youtube" : "tibwt3mVINM"
+        },
+        {
+            "title" : "HTML - Sample Code Walkthrough",
+            "youtube" : "b99aHsUi7Zk"
+        }
+    ], 
+    "references" : [
+        {
+            "title" : "HTML Sample Code (Browse)",
+            "href" : "https://www.wa4e.com/code/html/index.htm"
+        },
+        {
+            "title" : "HTML Sample Code (Download)",
+            "href" : "https://www.wa4e.com/code/html.zip"
+        }
+    ],
+    "assignment" : "https://www.wa4e.com/assn/html/",
+    "lti" : [
+        {
+        "title" : "Quiz: HTML",
+        "launch" : "mod/gift/?quiz=00-HTML.txt",
+        "resource_link_id" : "php_01_html_quiz"
+        },
+        {
+        "title" : "Autograder: HyperText Markup Language (HTML)",
+        "launch" : "tools/web-autograde/",
+        "resource_link_id" : "html_01",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "a01.php"
+            }
+        ]
+        }
+    ]
+},
+{
+    "title": "Cascading Style Sheets (CSS)",
+    "anchor": "css",
+    "icon" : "fa-css3",
+    "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
+    "slides": "lectures/Web-03-CSS.ppt",
+    "videos" : [
+        {
+            "title" : "CSS - Cascading Style Sheets - (Part 1)",
+            "youtube" : "v6lfSzF8MuI"
+        },
+        {
+            "title" : "CSS - Cascading Style Sheets - (Part 2)",
+            "youtube" : "hEY4V_OWZAU"
+        },
+        {
+            "title" : "CSS - Cascading Style Sheets - (Part 3)",
+            "youtube" : "aA587wqx0B0"
+        },
+        {
+            "title" : "CSS - Sample Code Walkthrough (Part 1)",
+            "youtube" : "SLiS4oQahuk"
+        },
+        {
+            "title" : "CSS - Sample Code Walkthrough (Part 2)",
+            "youtube" : "pzw7JnPCGdo"
+        }
+    ], 
+    "assignment" : "https://www.wa4e.com/assn/css/",
+    "references" : [
+        {
+            "title" : "CSS Sample Code (Browse)",
+            "href" : "https://www.wa4e.com/code/css/index.htm"
+        },
+        {
+            "title" : "CSS Sample Code (Download)",
+            "href" : "https://www.wa4e.com/code/css.zip"
+        },
+        {
+            "title" : "Web Developer Plugin by Chris Pedrick",
+            "href" : "https://chrispederick.com/"
+        },
+        {
+            "title" : "CSS Cheat Sheet by Leslie Frank",
+            "href" : "http://www.lesliefranke.com/files/reference/csscheatsheet.html"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Quiz: CSS",
+        "launch" : "mod/gift/?quiz=00-CSS.txt",
+        "resource_link_id" : "php_01_css_quiz"
+        },
+        {
+        "title": "Peer Graded: Cascading Style Sheets (CSS)",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "css",
+        "custom" : [
+            {
+                "key": "config",
+                "json": 
+{
+  "title": "Cascading Style Sheets",
+  "description": "In this assignment you will develop a Cascading Style Sheet (CSS) to control, the look, feel, and layout of some provide HTML content.",
+  "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "assignment" : "http://www.wa4e.com/assn/css/",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of your index.htm with the styling applied",
+      "type": "image"
+    },
+    {
+      "title": "The source code of your blocks.css file",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your blocks.css passing the W3 CSS validator",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your browser viewing www.brainyquote.com with all styles turned off",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your browser at www.brainyquote.com inspecting the navigation element to find its background color",
+      "type": "image"
+    }
+  ],
+  "totalpoints": 10,
+  "instructorpoints": 0,
+  "peerpoints": 4,
+  "assesspoints":3,
+  "minassess": 2,
+  "maxassess": 6,
+  "flag": true,
+  "resubmit":"on"
+}
+            }
+        ]
+        }
+        ]
+},
+{ 
+    "title": "Installing DJango on PythonAnywhere",
+    "anchor": "paw_install",
+    "icon" : "fa-clone",
+    "description": "This walks through the installation steps for DJango on PythonAnywhere.",
+    "chapters" : "3",
+    "videos" : [
+    {
+        "title": "Installing DJango on PythonAnywhere",
+        "youtube": "lPpIubhqWR4"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_install.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Installing DJango",
+        "launch" : "tools/mdntutorial/",
+        "resource_link_id" : "php_03_guess",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "guess.php"
+            }
+        ]
+        }
+    ],
+
+
+    "references" : [
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        }
+    ]
+}
+
+]
+}
