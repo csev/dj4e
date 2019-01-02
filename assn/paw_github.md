@@ -41,13 +41,13 @@ the following commands:
     git config --global credential.helper cache   # Optional but convienent
     git config --global credential.helper 'cache --timeout=604800'  # Optional but convienent
     git commit -m "first commit" 
-    git remote add origin https://github.com/--your-git-acct--/django_projects.git
+    git remote add origin https://github.com/--your-github-acct--/django_projects.git
     git push -u origin master
     (enter id and password for git)
 
 Go to 
 
-    https://github.com/csev/django_projects
+    https://github.com/--your-github-account---/django_projects
 
 Verify the data has been pushed to the repo and verify that it is private.
 
