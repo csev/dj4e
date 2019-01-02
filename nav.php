@@ -9,7 +9,7 @@ $set->setHome($CFG->servicename, $CFG->apphome);
 if ( isset($CFG->lessons) ) {
     $set->addLeft('Lessons', $R.'lessons');
 }
-$set->addLeft('Autograders', $T.'store');
+// $set->addLeft('Autograders', $T.'store');
 
 if ( isset($_SESSION['id']) ) {
     $submenu = new \Tsugi\UI\Menu();
