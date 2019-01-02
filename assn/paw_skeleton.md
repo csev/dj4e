@@ -93,7 +93,7 @@ github and tag it.
     cd ~/django_projects
     git status
     git add localibrary
-    git commit -m "Skeleton tutorial complete"
+    git commit -a -m "Skeleton tutorial complete"
     git push
 
 You might also want to tag this version of the code in case you need to come back to it:
