@@ -23,7 +23,7 @@ Put these three lines into the file and save it.
 
     __pycache__
     *.swp
-    *.sqlite
+    *.sqlite3
 
 Remember that to see all the files in a folder (including those that start with a '.')
 you need to type `ls -la`.
