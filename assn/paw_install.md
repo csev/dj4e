@@ -16,6 +16,11 @@ and set up a virtual environment with Python 3.x and DJango 2.
     mkvirtualenv django2 --python=/usr/bin/python3.6
     pip install django ## this may take a couple of minutes
 
+Lets make sure that your django was installed successfully with the following command:
+
+    python -m django --version
+    # This should show something like 2.0.2.
+
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
 
@@ -33,9 +38,9 @@ have not already done so, add a new web application.  Select `manual configurati
 3.6.  Once the webapp is created, you need to make a few changes to the settings for the web
 app and your application.
 
-source code: /home/--your-account---/django_projects/mytestsite
-working directory: /home/--your-account---/django_projects/mytestsite
-virtualenv: /home/--your-account---/.virtualenvs/django2
+    source code: /home/--your-account---/django_projects/mytestsite
+    working directory: /home/--your-account---/django_projects/mytestsite
+    virtualenv: /home/--your-account---/.virtualenvs/django2
 
 Then edit the *WGSI Configuration File* and put the following code into it.
 This is slightly different from the sample in the PythonAnywhere tutorial.
