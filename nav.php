@@ -7,7 +7,6 @@ $set = new \Tsugi\UI\MenuSet();
 $set->setHome($CFG->servicename, $CFG->apphome);
 
 $set->addLeft('Autograders', $T.'store');
-$set->addLeft('Using NGrok', $R.'ngrok');
 if ( isset($CFG->lessons) ) {
     $set->addLeft('Lessons', $R.'lessons');
 }
