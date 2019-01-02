@@ -1,19 +1,36 @@
-Moving your code into github
-============================
+Storing your code into GitHub
+=============================
 
-Go to github, create a new private repo called `django_projects`
+This excercise shows how to store your assignments in a private repository in 
+<a href="https://www.github.com" target="_blank">GitHub</a>, 
+if you have an account that supports a private repository.  Please don't put your
+assignments into a public repository on GitHub.
+
+Go to GitHub, create a new private repo called `django_projects` - do not create
+a README, .gitignore, or add a license.  You can do those things later - but for now
+we want to make a new fresh and *empty* repository.
+
+Once yu have yout github repository, go to your 
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> 
+account and start a bash shell.
 
 Create a file
 
-    ~/django_projects/.gitignore
+    cd ~/django_projects
+    nano .gitignore
+
+Put these three lines into the file and save it.
 
     __pycache__
     *.swp
     *.sqlite
 
-Go into a PythnonAnywhere shell
+Remember that to see all the files in a folder (including those that start with a '.')
+you need to type `ls -la`.
 
-    cd ~/django_projects
+Still in your PythnonAnywhere shell in the `~/django_projects` folder, run
+the following commands:
+
     git init
     git config --global push.default simple
     git add *
