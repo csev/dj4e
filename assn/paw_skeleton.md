@@ -6,7 +6,10 @@ tutorial:
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
 
-Go into a PYAW shell, go into your virtual environment and create a new application:
+Once you have your github repository, go to your
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
+account and start a bash shell, 
+go into your virtual environment and create a new application:
 
     workon django2
     cd ~/django_projects
