@@ -123,10 +123,10 @@
     ]
 },
 {
-    "title": "Building the DJango Skeleton site on PythonAnywhere",
+    "title": "Installing DJango skeleton site",
     "anchor": "paw_skeleton",
     "icon" : "fa-cubes",
-    "description": "This sets up the MDN Skeleton Web Site on PythonAnywhere.",
+    "description": "Skeleton Web Site Tutorial from Mozilla Developers Network.",
     "videos" : [
     {
         "title": "MDN Skeleton Web Site on PythonAnywhere",
@@ -185,7 +185,7 @@
     ],
     "references" : [
         {
-            "title" : "MDN Models Web Site",
+            "title" : "Models Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models"
         },
         {
