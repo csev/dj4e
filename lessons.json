@@ -166,7 +166,7 @@
     "videos" : [
     {
         "title": "Django Models",
-        "youtube": "6_JHiJvXu-I"
+        "youtube": "2-QFePlm7GA"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_models.md",
@@ -187,6 +187,46 @@
         {
             "title" : "Models Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models"
+        },
+        {
+            "title" : "Command Shell for SQLite",
+            "href": "https://www.sqlite.org/cli.html"
+        },
+        {
+            "title" : "SQLite Browser",
+            "href": "https://sqlitebrowser.org/"
+        }
+    ]
+},
+{
+    "title": "DJango admin site",
+    "anchor": "paw_admin",
+    "icon" : "fa-user",
+    "description": "This exercise works through the DJango admin insterface for the LocalLibrary web site.",
+    "videos" : [
+    {
+        "title": "Django Admin",
+        "youtube": "XXXX-I"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_admin.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Django admin",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_admin",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05admin.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Admin Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site"
         },
         {
             "title" : "Command Shell for SQLite",
