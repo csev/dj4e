@@ -6,6 +6,9 @@ data in our database.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models
 
+You can view a
+<a href="https://www.youtube.com/watch?v=2-QFePlm7GA&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=5" target="_blank">video walkthrough</a> of this assignment.
+
 Read and understand the tutorial, and when you get to the section titled
 <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models#Defining_the_LocalLibrary_Models" target="_blank">Defining the LocalLibrary Models</a>, 
 go to your
