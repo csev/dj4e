@@ -1,10 +1,10 @@
 <?php
 
 $REGISTER_LTI2 = array(
-"name" => "PHP Autograder",
+"name" => "Web App Autograder",
 "FontAwesome" => "fa-code",
-"short_name" => "PHP Autograder",
-"description" => "This is an autograder for PHP assignments from www.wa4e.com.",
+"short_name" => "Autograder",
+"description" => "This is an autograder for DJango assignments from www.dj4e.com.",
 "messages" => array("launch", "launch_grade")
 );
 
