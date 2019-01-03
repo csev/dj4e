@@ -27,16 +27,6 @@ Mozilla Developer Network (MDN) at
 <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django" target="_blank">
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 </a>
-<h2>Notes</h2>
-<ul>
-<li>
-<a href="assn">Assignments</a> (under construction)
-</li>
-<li>
-<a href="https://mdntutorial.pythonanywhere.com" target="_blank">Sample Implementations for the MDN tutorial</a>
-</li>
-<li><a href="code" target="_blank">Sample Code</a> (under construction)</li>
-</ul>
 <p>
 This site uses <a href="http://www.tsugi.org" target="_blank">Tsugi</a> 
 framework to embed a learning 
