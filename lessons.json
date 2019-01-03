@@ -55,8 +55,107 @@
         }
     ]
 },
+{ 
+    "title": "Installing DJango on PythonAnywhere",
+    "anchor": "paw_install",
+    "icon" : "fa-clone",
+    "description": "This walks through the installation steps for DJango on PythonAnywhere.",
+    "videos" : [
+    {
+        "title": "Installing DJango on PythonAnywhere",
+        "youtube": "lPpIubhqWR4"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_install.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Installing DJango",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_install",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "01install.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        },
+        {
+            "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
+            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
+        },
+        {
+            "title" : "Setting up the django.org tutorial on PythonAnywhere",
+            "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
+        }
+    ]
+},
+{ 
+    "title": "Putting your DJango Projects into GitHub",
+    "anchor": "paw_github",
+    "icon" : "fa-github",
+    "description": "This uploads your DJango projects on PythonAnywhere to a private repository on GitHub.",
+    "videos" : [
+    {
+        "title": "Using GitHub with Django and PythonAnywhere",
+        "youtube": "9FJwue2Eqao"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_github.md",
+    "references" : [
+        {
+            "title" : "GitHub",
+            "href" : "https://www.github.com/"
+        },
+        {
+            "title" : "Caching your GitHub password in Linux",
+            "href" : "https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux"
+        }
+    ]
+},
+{ 
+    "title": "Building the DJango Skeleton site on PythonAnywhere",
+    "anchor": "paw_skeleton",
+    "icon" : "fa-clone",
+    "description": "This sets up the MDN Skeleton Web Site on PythonAnywhere.",
+    "videos" : [
+    {
+        "title": "MDN Skeleton Web Site on PythonAnywhere",
+        "youtube": "6_JHiJvXu-I"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_skeleton.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: MDN Skeleton Web Site",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_skeleton",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "03skeleton.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        },
+        {
+            "title" : "MDN Skeleton Web Site",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
+        }
+    ]
+},
 {
-    "title": "HyperText Markup Language (HTML)",
+    "title": "Review: HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",
     "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.",
@@ -106,7 +205,7 @@
     ]
 },
 {
-    "title": "Cascading Style Sheets (CSS)",
+    "title": "Review: Cascading Style Sheets (CSS)",
     "anchor": "css",
     "icon" : "fa-css3",
     "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
@@ -206,105 +305,6 @@
         ]
         }
         ]
-},
-{ 
-    "title": "Installing DJango on PythonAnywhere",
-    "anchor": "paw_install",
-    "icon" : "fa-clone",
-    "description": "This walks through the installation steps for DJango on PythonAnywhere.",
-    "videos" : [
-    {
-        "title": "Installing DJango on PythonAnywhere",
-        "youtube": "lPpIubhqWR4"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/paw_install.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: Installing DJango",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_install",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "01install.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "PythonAnywhere",
-            "href" : "https://www.pythonanywhere.com/"
-        },
-        {
-            "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
-            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
-        },
-        {
-            "title" : "Setting up the django.org tutorial on PythonAnywhere",
-            "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
-        }
-    ]
-},
-{ 
-    "title": "Putting your DJango Projects into GitHub",
-    "anchor": "paw_github",
-    "icon" : "fa-github",
-    "description": "This uploads your DJango projects on PythonAnywhere to a private repository on GitHub.",
-    "videos" : [
-    {
-        "title": "Using GitHub with Django and PythonAnywhere",
-        "youtube": "9FJwue2Eqao"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/paw_github.md",
-    "references" : [
-        {
-            "title" : "GitHub",
-            "href" : "https://www.github.com/"
-        },
-        {
-            "title" : "Caching your GitHub password in Linux",
-            "href" : "https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux"
-        }
-    ]
-},
-{ 
-    "title": "Building the DJango Skeleton site on PythonAnywhere",
-    "anchor": "paw_skeleton",
-    "icon" : "fa-clone",
-    "description": "This sets up the MDN Skeleton Web Site on PythonAnywhere.",
-    "videos" : [
-    {
-        "title": "MDN Skeleton Web Site on PythonAnywhere",
-        "youtube": "6_JHiJvXu-I"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/paw_skeleton.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: MDN Skeleton Web Site",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_skeleton",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "03skeleton.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "PythonAnywhere",
-            "href" : "https://www.pythonanywhere.com/"
-        },
-        {
-            "title" : "MDN Skeleton Web Site",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
-        }
-    ]
 }
 
 ]

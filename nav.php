@@ -9,7 +9,9 @@ $set->setHome($CFG->servicename, $CFG->apphome);
 if ( isset($CFG->lessons) ) {
     $set->addLeft('Lessons', $R.'lessons');
 }
-// $set->addLeft('Autograders', $T.'store');
+if ( isset($_SESSION['id']) ) {
+    $set->addLeft('GradeBook', $R.'assignments');
+}
 
 if ( isset($_SESSION['id']) ) {
     $submenu = new \Tsugi\UI\Menu();
@@ -36,6 +38,7 @@ if ( isset($_SESSION['id']) ) {
     if ( $CFG->DEVELOPER ) {
         $submenu->addLink('Test LTI Tools', $T . 'dev');
     }
+    $submenu->addLink('Test Tools', $T.'store');
     if ( isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true" ) {
         $submenu->addLink('Administer', $T . 'admin/');
     }
