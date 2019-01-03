@@ -18,6 +18,10 @@ https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/
 
 Feel free to look at that page as well.
 
+You can view a
+<a href="https://www.youtube.com/watch?v=lPpIubhqWR4&index=2&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z"
+ targt="_blank">video walkthrough</a> of this assignment.
+
 Instructions
 ------------
 

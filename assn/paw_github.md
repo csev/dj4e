@@ -6,6 +6,10 @@ This excercise shows how to store your assignments in a private repository in
 if you have an account that supports a private repository.  Please don't put your
 assignments for this site into a public repository on GitHub.
 
+You can view a
+<a href="https://www.youtube.com/watch?v=9FJwue2Eqao&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=2"
+ targt="_blank">video walkthrough</a> of this assignment.
+
 Go to GitHub, create a new private repo called `django_projects` - do not create
 a README, .gitignore, or add a license.  You can do those things later - but for now
 we want to make a new fresh and *empty* repository.

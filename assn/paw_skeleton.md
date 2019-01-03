@@ -6,6 +6,10 @@ tutorial:
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
 
+You can view a
+<a href="https://www.youtube.com/watch?v=6_JHiJvXu-I&index=3&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z"
+ targt="_blank">video walkthrough</a> of this assignment.
+
 Once you have your github repository, go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell, 
