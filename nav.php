@@ -10,7 +10,7 @@ if ( isset($CFG->lessons) ) {
     $set->addLeft('Lessons', $R.'lessons');
 }
 if ( isset($_SESSION['id']) ) {
-    $set->addLeft('GradeBook', $R.'assignments');
+    $set->addLeft('My Progress', $R.'assignments');
 }
 
 if ( isset($_SESSION['id']) ) {
