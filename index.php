@@ -23,10 +23,16 @@ it is being built.
 <p>
 The first part of this site is a set of autograders for 
 Mozilla Developer Network (MDN) at
-
 <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django" target="_blank">
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 </a>
+</p>
+<p>
+We use the free 
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> hosting environment
+to deploy and test our DJango projects and applications.
+</p>
+<h2>Technology</h2>
 <p>
 This site uses <a href="http://www.tsugi.org" target="_blank">Tsugi</a> 
 framework to embed a learning 
