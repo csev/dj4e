@@ -25,7 +25,7 @@
             "title" : "Understanding Browser Developer Mode",
             "youtube" : "kL3hYPVnhjQ"
         }
-    ], 
+    ],
     "references" : [
         {
             "title" : "Hypertext Transfer Protocol",
@@ -55,7 +55,7 @@
         }
     ]
 },
-{ 
+{
     "title": "Installing DJango on PythonAnywhere",
     "anchor": "paw_install",
     "icon" : "fa-clone",
@@ -95,7 +95,7 @@
         }
     ]
 },
-{ 
+{
     "title": "Putting your DJango Projects into GitHub",
     "anchor": "paw_github",
     "icon" : "fa-github",
@@ -122,7 +122,7 @@
         }
     ]
 },
-{ 
+{
     "title": "Building the DJango Skeleton site on PythonAnywhere",
     "anchor": "paw_skeleton",
     "icon" : "fa-cubes",
@@ -149,12 +149,44 @@
     ],
     "references" : [
         {
-            "title" : "PythonAnywhere",
-            "href" : "https://www.pythonanywhere.com/"
-        },
-        {
             "title" : "MDN Skeleton Web Site",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
+        },
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        }
+    ]
+},
+{
+    "title": "DJango Models",
+    "anchor": "paw_modules",
+    "icon" : "fa-database",
+    "description": "This exercise adds models for the LocalLibrary web site.",
+    "videos" : [
+    {
+        "title": "Django Models",
+        "youtube": "6_JHiJvXu-I"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_models.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Django Models",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_modules",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "04models.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "MDN Models Web Site",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models"
         }
     ]
 },
@@ -177,7 +209,7 @@
             "title" : "HTML - Sample Code Walkthrough",
             "youtube" : "b99aHsUi7Zk"
         }
-    ], 
+    ],
     "references" : [
         {
             "title" : "HTML Sample Code (Browse)",
@@ -235,7 +267,7 @@
             "title" : "CSS - Sample Code Walkthrough (Part 2)",
             "youtube" : "pzw7JnPCGdo"
         }
-    ], 
+    ],
     "assignment" : "https://www.wa4e.com/assn/css/",
     "references" : [
         {
@@ -268,7 +300,7 @@
         "custom" : [
             {
                 "key": "config",
-                "json": 
+                "json":
 {
   "title": "Cascading Style Sheets",
   "description": "In this assignment you will develop a Cascading Style Sheet (CSS) to control, the look, feel, and layout of some provide HTML content.",
