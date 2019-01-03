@@ -13,7 +13,7 @@ Go to GitHub, create a new private repo called `django_projects` - do not create
 a README, .gitignore, or add a license.  You can do those things later - but for now
 we want to make a new fresh and *empty* repository.
 
-Once you have your github repository, go to your 
+Go to your 
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> 
 account and start a bash shell.
 

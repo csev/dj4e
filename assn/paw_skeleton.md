@@ -9,7 +9,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 You can view a
 <a href="https://www.youtube.com/watch?v=6_JHiJvXu-I&index=3&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z" target="_blank">video walkthrough</a> of this assignment.
 
-Once you have your github repository, go to your
+Go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell, 
 go into your virtual environment and create a new application:
