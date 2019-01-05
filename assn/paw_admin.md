@@ -2,33 +2,53 @@ DJango Admin Site
 =================
 
 Our next step is to explore the LocalLibrary administration web site that
-allows us to store data in our database.
+allows us to create, read, update, and delete data in our database.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site
 
+If you are submitting this assignment to the DJ4E autograder for this assignment,
+it would be a good idea to check the autograder for specific instructions that
+the autograder requires for this assignment.
 
+Complete the following sections of the Admin tutorial:
 
-
-
-
-
-
-
-Read and understand the tutorial, and when you get to the section titled
-<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models#Defining_the_LocalLibrary_Models" target="_blank">Defining the LocalLibrary Models</a>, 
-go to your
+* Edit `~/django_projects/locallibrary/catalog/admin.py` and register the four models
+* Create a superuser (The autograder will ask you to make a second superuser)
+* Reload your application under the `Web` tab in
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-account and start a bash shell.
+* Log in to the admin site.  Insead of using http://localhost:8000/admin, simply add `/admin` to the end of 
+your PythonAnywhere site (i.e. like 
+<a href="http://mdntutorial.pythonanywhere.com/admin" target="_blank">http://mdntutorial.pythonanywhere.com/admin</a>.
+* Create some books (The autograder will ask you to create one specific book and author)
+* Continue into the Advanced Configuration
+* Register a Model Admin class
+* Configure the list views - Note that you need to edit `~/django_projects/locallibrary/catalog/models.py` at one point
+* Add the list filter
+* Organize the detail view layout
+* Enable inline editing of associated records
 
-    workon django2
+Remember that every time the MDN tutorial tells you to run the server after
+making a configuration change:
+
+    python3 manage.py runserver
+
+You need to go into 
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
+under the `Web` tab and `Reload` the web server to re-read your updated configuration.  There is 
+not harm in reloading your web application too often.
+
+If you want to wipe out your database and start over, do the following:
+
     cd ~/django_projects/locallibrary
-
-Edit the file `catalog/models.py` and add the `Genre` model using as described in the tutorial.
-You can edit the file with `nano`, `vi`, or the PythonAnywhere web interface.  Once you have added
-the model, run the migrations from `~/django_projects/locallibrary`
-
-    python3 manage.py makemigrations
+    rm db.sqlite3
     python3 manage.py migrate
+
+Also reload your application on PythonAnywhere.
+
+This will wipe out all of your tables and the data in those tables and create fresh and empty tables.
+
+If you are using git
+--------------------
 
 If you are using `git`, you can see what files have been modified / created:
 
@@ -36,51 +56,9 @@ If you are using `git`, you can see what files have been modified / created:
 
 The git output would be as follows:
 
-    modified:   catalog/models.py
+    modified:   catalog/models.py===============
     Untracked files:
         catalog/migrations/0001_initial.py   
-
-The `git` command won't show the `db.sqlite3` file has changed because we have told `git`
-not to track the database file in the `.gitignore` file
-
-Lets take a quick look at the contents of the `db.sqlite3` file in your bash shell:
-
-    sqlite3 db.sqlite3 
-    SQLite version 3.11.0 2016-02-15 17:29:24
-    Enter ".help" for usage hints.
-    sqlite> .tables
-    auth_group                  catalog_genre
-    auth_group_permissions      django_admin_log
-    auth_permission             django_content_type
-    auth_user                   django_migrations
-    auth_user_groups            django_session
-    auth_user_user_permissions
-    sqlite> .mode column
-    sqlite> select * from catalog_genre;
-    sqlite> .schema catalog_genre
-    CREATE TABLE "catalog_genre" (
-        "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
-        "name" varchar(200) NOT NULL);
-    sqlite> .quit  
-
-You can learn more about the command line mode of `sqlite3` at their web site:
-
-https://www.sqlite.org/cli.html
-
-Continue editing the `catalog/models.py` file and add the Book, BookInstance, and Author models
-according to the 
-
-Also add the `language` field to the correct table as discussed in the "Challenge" section 
-at the end of the tutorial.
-
-Once your models.py file is complete, run the migrations again:
-
-    cd ~/django_projects/locallibrary
-    python3 manage.py makemigrations
-    python3 manage.py migrate
-
-You can repeat the process of editing the `models.py` file and re-running the migrations until you get them
-right.
 
 If You Are Keeping Your Projects GitHub
 ---------------------------------------
@@ -90,12 +68,12 @@ github and tag it.
 
     cd ~/django_projects/locallibrary
     git status
-    git add catalog/migrations/*
-    git commit -a -m "Models tutorial complete"
+    git add catalog/migrations/* =================
+    git commit -a -m "Admin tutorial complete"
     git push
 
 You might also want to tag this version of the code in case you need to come back to it:
 
-    git tag models
+    git tag admin
     git push origin --tags
 
