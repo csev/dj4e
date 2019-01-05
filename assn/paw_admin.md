@@ -37,15 +37,6 @@ You need to go into
 under the `Web` tab and `Reload` the web server to re-read your updated configuration.  There is 
 not harm in reloading your web application too often.
 
-If you want to wipe out your database and start over, do the following:
-
-    cd ~/django_projects/locallibrary
-    rm db.sqlite3
-    python3 manage.py migrate
-
-Also reload your application on PythonAnywhere.
-
-This will wipe out all of your tables and the data in those tables and create fresh and empty tables.
 
 If you are using git
 --------------------
@@ -56,9 +47,25 @@ If you are using `git`, you can see what files have been modified / created:
 
 The git output would be as follows:
 
-    modified:   catalog/models.py===============
-    Untracked files:
-        catalog/migrations/0001_initial.py   
+        modified:   catalog/admin.py
+        modified:   catalog/models.py
+
+Making a Fresh Database
+-----------------------
+If you want to experiment a bit and you want to wipe out your database and start over, do the following:
+
+    cd ~/django_projects/locallibrary
+    rm db.sqlite3
+    python3 manage.py migrate
+
+Also `Reload` your application on PythonAnywhere.   Note that this process will also wipe
+out your superuser accounts and all data you have entered.
+
+This will wipe out all of your tables and the data in those tables and create fresh and empty tables.
+
+The `db.sqlite3` file is a normal file - you can back it up and/or copy over it - just make sure to `Reload`
+your web application when you change your database.
+
 
 If You Are Keeping Your Projects GitHub
 ---------------------------------------
@@ -68,7 +75,7 @@ github and tag it.
 
     cd ~/django_projects/locallibrary
     git status
-    git add catalog/migrations/* =================
+    git add catalog/*
     git commit -a -m "Admin tutorial complete"
     git push
 
