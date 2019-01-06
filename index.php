@@ -9,7 +9,7 @@ require "nav.php";
 ?>
 <div id="container">
 <div style="margin-left: 10px; float:right">
-<img src="images/Chuck_16x9_gears_DJ4E.jpg" onclick='window.location.href="https://www.youtube.com/watch?v=lPpIubhqWR4&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=2";' style="padding: 5px; width:300px;">
+<img src="images/Chuck_16x9_gears_DJ4E.jpg" onclick='window.location.href="https://www.youtube.com/watch?v=lPpIubhqWR4&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=2";' style="padding: 5px; width:360px;">
 </div>
 <h1>DJango for Everybody</h1>
 <p>
