@@ -52,6 +52,8 @@ if ( isset($_SESSION['id']) ) {
 } else {
     $set->addRight('Login', $T.'login.php');
 }
+$set->addRight('Instructor', 'http://www.dr-chuck.com');
+
 
 // Set the topNav for the session
 $OUTPUT->topNavSession($set);

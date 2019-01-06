@@ -8,11 +8,9 @@ require "nav.php";
 
 ?>
 <div id="container">
-<!--
 <div style="margin-left: 10px; float:right">
-<iframe width="400" height="225" src="https://www.youtube.com/embed/tuXySrvw8TE?rel=0" frameborder="0" allowfullscreen></iframe>
+<img src="images/Chuck_16x9_gears_DJ4E.jpg" onclick='window.location.href="https://www.youtube.com/watch?v=lPpIubhqWR4&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=2";' style="padding: 5px; width:300px;">
 </div>
--->
 <h1>DJango for Everybody</h1>
 <p>
 This web site is building a set of free / OER materials to help students
