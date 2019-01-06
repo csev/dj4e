@@ -22,8 +22,7 @@ it is being built.
 The first part of this site is a set of autograders for 
 Mozilla Developer Network (MDN) at
 <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django" target="_blank">
-https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
-</a>
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django</a>.
 </p>
 <p>
 We use the free 
@@ -40,7 +39,16 @@ to build these kinds of sites for yourself, please see the
 <a href="http://www.tsugi.org" target="_blank">tsugi.org</a> website.
 <h3>Copyright</h3>
 <p>
-The material produced on this site is by Anthony Whyte and Charles Severance
+  <blockquote>
+  <p>The <a href="https://developer.mozilla.org/en-US/docs/MDN/About">Mozilla Developer Nework (MDN)</a>
+materials used on this site are by
+<a rel="nofollow" href="https://developer.mozilla.org/en-US/docs/MDN/About$history" class="new">Mozilla Contributors</a>
+and are licensed under
+<a rel="noopener" href="http://creativecommons.org/licenses/by-sa/2.5/" class="external">CC-BY-SA 2.5</a>.
+</p>
+</blockquote>
+<p>
+The material produced specifically for this site is by Charles Severance and others
 and is Copyright Creative Commons Attribution 3.0 
 unless otherwise indicated.  
 </p>
