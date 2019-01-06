@@ -7,7 +7,7 @@ by sending requests and checking the responses from your application.
 
 <center><a href="ngrok_mac/00-autograder.png" target="_blank"><img src="ngrok_mac/00-autograder.png" style="width:80%; border: 1px black solid;"></a></center>
 
-You cannot submit a URL like `http://localhost/homework/guess.php`
+You cannot submit a URL like `http://localhost/`
 because "localhost" only works for network conections originating *within*
 your computer and your computer protects your computer from
 incoming connectsion (i.e. they are blocked by a firewall).
@@ -23,13 +23,6 @@ use to submit your application to the Autograder.
 LocalTunnel is a free product and service and is suitable for use for
 this class.  If you want a more full-featured product, you might be interested
 in "ngrok" which has a "freemium" pricing model.
-
-Video Tutorial
---------------
-
-You can watch a video demonstrating the use of LocalTunnel on Windows at:
-
-<a href="https://www.youtube.com/watch?v=-Rh9S9zqAYQ&list=PLlRFEj9H3Oj7FHbnXWviqQt0sKEK_hdKX" target="_blank">https://www.youtube.com/watch?v=-Rh9S9zqAYQ</a>
 
 Installing LocalTunnel
 ----------------------
@@ -56,7 +49,7 @@ The ZIP file will probably automatically open so you can copy the
 To run `lt-win` from the `Desktop` folder, start a Command prompt and type:
 
     cd Desktop
-    lt-win -p 80
+    lt-win -p 8000
     your url is: https://vgbyqzdlcd.localtunnel.me
 
 
@@ -82,8 +75,8 @@ Construct the LocalTunnel url by removing
 the "http://localhost" and replace it
 with the LocalTunnel-provided URL:
 
-    Local:  http://localhost/php-solutions/assn/guess/guess.php
-    Tunnel: http://vgbyqzdlcd.localtunnel.me/php-solutions/assn/guess/guess.php
+    Local:  http://localhost:8000/
+    Tunnel: http://vgbyqzdlcd.localtunnel.me/
 
 Test that url in your browser.  The LocalTunnel and local urls should
 return the exact same page.

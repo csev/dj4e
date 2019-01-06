@@ -7,7 +7,7 @@ by sending requests and checking the responses from your application.
 
 <center><a href="ngrok_mac/00-autograder.png" target="_blank"><img src="ngrok_mac/00-autograder.png" style="width:80%; border: 1px black solid;"></a></center>
 
-You cannot submit a URL like `http://localhost:8888/homework/guess.php`
+You cannot submit a URL like `http://localhost:8000/`
 because "localhost" only works for network conections originating *within*
 your computer and your computer protects your computer from
 incoming connectsion (i.e. they are blocked by a firewall).
@@ -55,7 +55,7 @@ named `lt-mac`.
 To run `lt-mac` from the `Downloads` folder, in the terminal window type:
 
     cd ~/Downloads
-    ./lt-mac -p 8888
+    ./lt-mac -p 8000
     your url is: https://gyxbbjtami.localtunnel.me
 
 You should note the temporary URL that LocalTunnel has assigned you 
@@ -78,11 +78,11 @@ Checking Your Application Via the Tunnel
 ----------------------------------------
 
 Construct the LocalTunnel url by removing 
-the "http://localhost:8888" and replace it
+the "http://localhost:8000" and replace it
 with the LocalTunnel-provided URL:
 
-    Local:  http://localhost:8888/wa4e/solutions/guess/guess.php
-    Tunnel: https://gyxbbjtami.localtunnel.me/wa4e/solutions/guess/guess.php
+    Local:  http://localhost:8000/
+    Tunnel: https://gyxbbjtami.localtunnel.me/
 
 Test that url in your browser.  The LocalTunnel and local urls should
 return the exact same page.
