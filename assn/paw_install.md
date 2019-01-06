@@ -112,5 +112,5 @@ that it is up and running:
     http://--your-account--.pythonanywhere.com/
 
 Here is a
-<a href="paw_install/paw-webapp.png" target="_blank">Sample</a>
+<a href="paw_install/index.htm" target="_blank">Sample</a>
 of what the resulting page should look like.
