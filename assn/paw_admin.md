@@ -75,7 +75,6 @@ github and tag it.
 
     cd ~/django_projects/locallibrary
     git status
-    git add catalog/*
     git commit -a -m "Admin tutorial complete"
     git push
 
