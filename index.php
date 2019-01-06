@@ -38,15 +38,12 @@ If you are interested in collaborating
 to build these kinds of sites for yourself, please see the 
 <a href="http://www.tsugi.org" target="_blank">tsugi.org</a> website.
 <h3>Copyright</h3>
-<p>
-  <blockquote>
-  <p>The <a href="https://developer.mozilla.org/en-US/docs/MDN/About">Mozilla Developer Nework (MDN)</a>
-materials used on this site are by
+<p>The <a href="https://developer.mozilla.org/en-US/docs/MDN/About">Mozilla Developer Nework (MDN)</a>
+materials used and referenced on this site are by
 <a rel="nofollow" href="https://developer.mozilla.org/en-US/docs/MDN/About$history" class="new">Mozilla Contributors</a>
 and are licensed under
 <a rel="noopener" href="http://creativecommons.org/licenses/by-sa/2.5/" class="external">CC-BY-SA 2.5</a>.
 </p>
-</blockquote>
 <p>
 The material produced specifically for this site is by Charles Severance and others
 and is Copyright Creative Commons Attribution 3.0 
