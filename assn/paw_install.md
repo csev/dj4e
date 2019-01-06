@@ -21,6 +21,11 @@ Feel free to look at that page as well.
 You can view a
 <a href="https://www.youtube.com/watch?v=lPpIubhqWR4&index=2&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z" target="_blank">video walkthrough</a> of this assignment.
 
+**Note:** If you are submitting these assignments to the auto grader you 
+should complete each assignment and then submit it and get full credit before
+moving on to the next assignment.  Because the assignments build on one another the application that you have build by the last step of the tutorial
+will no longer pass the earlier autograders.
+
 Instructions
 ------------
 

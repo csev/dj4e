@@ -56,10 +56,10 @@
     ]
 },
 {
-    "title": "Installing DJango on PythonAnywhere",
+    "title": "Installing DJango",
     "anchor": "paw_install",
     "icon" : "fa-clone",
-    "description": "This walks through the installation steps for DJango on PythonAnywhere.",
+    "description": "This walks through the installation steps for DJango on PythonAnywhere.  We also provide instructions for submitting an application on your local computer for grading.",
     "videos" : [
     {
         "title": "Installing DJango on PythonAnywhere",
