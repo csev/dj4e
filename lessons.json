@@ -67,7 +67,7 @@
     },
     {
         "title": "Fixing DJango Errors on PythonAnywhere",
-        "youtube": "Q"
+        "youtube": "WE2eJzD6PJ8"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_install.md",
@@ -88,6 +88,10 @@
         {
             "title" : "PythonAnywhere",
             "href" : "https://www.pythonanywhere.com/"
+        },
+        {
+            "title" : "Using ngrok to Submit to the Autograder",
+            "href" : "/ngrok"
         },
         {
             "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
