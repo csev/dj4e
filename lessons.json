@@ -90,12 +90,12 @@
             "href" : "https://www.pythonanywhere.com/"
         },
         {
-            "title" : "Using ngrok to Submit to the Autograder",
-            "href" : "/ngrok"
-        },
-        {
             "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
             "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
+        },
+        {
+            "title" : "Using ngrok to submit a local application to the Autograder",
+            "href" : "/ngrok"
         },
         {
             "title" : "Setting up the django.org tutorial on PythonAnywhere",
