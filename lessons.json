@@ -64,6 +64,10 @@
     {
         "title": "Installing DJango on PythonAnywhere",
         "youtube": "lPpIubhqWR4"
+    },
+    {
+        "title": "Fixing DJango Errors on PythonAnywhere",
+        "youtube": "Q"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_install.md",
@@ -202,11 +206,11 @@
     "title": "DJango admin site",
     "anchor": "paw_admin",
     "icon" : "fa-user",
-    "description": "This exercise works through the DJango admin insterface for the LocalLibrary web site.",
+    "description": "This exercise works through the DJango admin interface for the LocalLibrary web site.",
     "videos" : [
     {
         "title": "Django Admin",
-        "youtube": "XXXX-I"
+        "youtube": "o_IJCrkEjtQ"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_admin.md",
