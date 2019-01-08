@@ -19,6 +19,7 @@ $assignments = array(
     '01install.php' => 'Getting DJango installed and up and running',
     '03skeleton.php' => 'Setting up the Skeleton site',
     '05admin.php' => 'Exploring the Admin site',
+    '06home.php' => 'DJango Home Page',
 );
 
 $oldsettings = Settings::linkGetAll();

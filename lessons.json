@@ -251,6 +251,38 @@
     ]
 },
 {
+    "title": "DJango home page",
+    "anchor": "paw_home",
+    "icon" : "fa-user",
+    "description": "This exercise works builds our first top level view (the home page) for the LocalLibrary web site.",
+    "videos" : [
+    {
+        "title": "Django Home Page",
+        "youtube": "rkEjtQ"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_home.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Django Home Page",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_home",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "06home.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Admin Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page"
+        }
+    ]
+},
+{
     "title": "Review: HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",

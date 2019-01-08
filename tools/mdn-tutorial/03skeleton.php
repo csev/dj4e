@@ -29,8 +29,6 @@ if ( strpos($url,'index.htm') !== false ) {
     $path = dirname($path);
 }
 
-$csspath = $path . '/static/admin/css/fonts.css';
-
 error_log("MDNInstall".$url);
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();

@@ -216,14 +216,20 @@ function autoToggle() {
 
 function webauto_get_check() {
     global $USER, $LINK, $CONTEXT;
-    $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
+    $check = substr(webauto_get_check_full(),0,8);
+    return $check;
+}
+
+function webauto_get_check_full() {
+    global $USER, $LINK, $CONTEXT;
+    $check = md5($USER->id+$LINK->id+$CONTEXT->id);
     return $check;
 }
 
 
 function webauto_check_title($crawler) {
     global $USER, $LINK, $CONTEXT;
-    $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
+    $check = webauto_get_check();
 
     try {
         $title = $crawler->filter('title')->text();
