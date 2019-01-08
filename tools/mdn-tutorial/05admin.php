@@ -55,6 +55,21 @@ error_log("Tutorial02 ".$url);
 $client = new Client();
 $client->setMaxRedirects(5);
 
+$catalog_url = str_replace('admin', 'catalog', $admin);
+line_out('Checking to make tutorials are being done in the correct order.');
+line_out('Checking to make sure the /catalog url still returns a 404 error page');
+$crawler = webauto_get_url($client, $catalog_url);
+if ( $crawler === false ) return;
+
+$html = webauto_get_html($crawler);
+$retval = webauto_search_for($html, 'Using the URLconf defined in <code>locallibrary.urls</code>');
+if ( $retval === true ) {
+    $passed += 9;
+} else {
+    error_out('It looks like you have submitted a website with a later tutorial already completed.');
+}
+
+
 $crawler = webauto_get_url($client, $admin);
 $html = webauto_get_html($crawler);
 
@@ -88,13 +103,13 @@ $instance_url = $instance_link->getURI();
 $crawler = webauto_get_url($client, $catalog_url);
 $html = webauto_get_html($crawler);
 
-markTestPassed('Catalog page retrieved');
+markTestPassed('Catalog admin page retrieved');
 
 // Load the authors page
 $crawler = webauto_get_url($client, $authors_url);
 $html = webauto_get_html($crawler);
 
-markTestPassed('Authors page retrieved');
+markTestPassed('Authors admin page retrieved');
 
 line_out("Looking for '$last_name and $first_name'");
 if ( strpos($html,$last_name) < 1 && strpos($html,$first_name) < 1 ) {
@@ -114,7 +129,7 @@ webauto_search_for($html, 'LAST NAME');
 $crawler = webauto_get_url($client, $books_url);
 $html = webauto_get_html($crawler);
 
-markTestPassed('Books page retrieved');
+markTestPassed('Books admin page retrieved');
 
 line_out("Looking for '$book_title'");
 if ( strpos($html,$book_title) < 1 ) {
@@ -138,7 +153,7 @@ webauto_search_for($html, 'GENRE');
 $crawler = webauto_get_url($client, $instance_url);
 $html = webauto_get_html($crawler);
 
-markTestPassed('Bookinstances page retrieved');
+markTestPassed('Bookinstances admin page retrieved');
 
 line_out('Checking to see if list_filter was added to Bookinstances');
 webauto_search_for($html, 'FILTER');
@@ -148,10 +163,10 @@ webauto_search_for($html, 'This year');
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
-$perfect = 19;
+$perfect = 29;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
-if ( $score < 1.0 ) autoToggle();
+// if ( $score < 1.0 ) autoToggle();
 
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);
