@@ -1,5 +1,5 @@
-DJango Views
-============
+DJango Home Page
+================
 
 Ironically, we are several steps into this tutorial and we *finally* get
 to the point where we are building the elements of *our* user interface into
