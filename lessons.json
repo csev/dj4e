@@ -287,6 +287,38 @@
     ]
 },
 {
+    "title": "DJango detail pages",
+    "anchor": "paw_detail",
+    "icon" : "fa-user",
+    "description": "This exercise builds detail views for the LocalLibrary web site.",
+    "videos" : [
+    {
+        "title": "DJango Detail Pages",
+        "youtube": "xyzzy"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_detail.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Django Detail Pages",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_detail",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "07detail.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Home Page Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page"
+        }
+    ]
+},
+{
     "title": "Review: HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",
