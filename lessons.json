@@ -287,7 +287,7 @@
     ]
 },
 {
-    "title": "DJango detail pages",
+    "title": "DJango detail (Under construction)",
     "anchor": "paw_detail",
     "icon" : "fa-user",
     "description": "This exercise builds detail views for the LocalLibrary web site.",
