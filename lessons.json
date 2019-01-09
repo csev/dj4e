@@ -313,8 +313,8 @@
     ],
     "references" : [
         {
-            "title" : "Home Page Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page"
+            "title" : "Detail Pages Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views"
         }
     ]
 },
