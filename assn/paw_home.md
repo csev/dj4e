@@ -60,7 +60,7 @@ Complete the following sections of the Views tutorial:
 
 * Create the file `static/css/styles.css` as suggested
 
-* Create the file `~/django_projects/locallibrary/catalog/templates/index.html`as suggested but replace the string "Mozilla Developer Network!" with something else.  You do not need to use your name if you don't want to - it just must be something other than the text in the tutorial.
+* Create the file `templates/index.html`as suggested but replace the string "Mozilla Developer Network!" with something else.  You do not need to use your name if you don't want to - it just must be something other than the text in the tutorial.
 
 
 * Reload your application under the `Web` tab in
@@ -100,18 +100,18 @@ The git output would be as follows:
 If You Are Keeping Your Projects GitHub
 ---------------------------------------
 
-At this point, once your models are working, you might want to check it into
-github and tag it.
+At this point, once your models are working, you might want to add the new files
+and check your modifications into github.
 
     cd ~/django_projects/locallibrary/catalog
     git status
     git add static templates 
-    git commit -a -m "Views tutorial complete"
+    git commit -a -m "Home tutorial complete"
     git push
 
 You might also want to tag this version of the code in case you need to come back to it:
 
-    git tag views
+    git tag home
     git push origin --tags
 
 
