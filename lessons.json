@@ -254,7 +254,7 @@
     "title": "DJango home page",
     "anchor": "paw_home",
     "icon" : "fa-user",
-    "description": "This exercise works builds our first top level view (the home page) for the LocalLibrary web site.",
+    "description": "This exercise builds our first top level view (the home page) for the LocalLibrary web site.",
     "videos" : [
     {
         "title": "DJango Home Page",

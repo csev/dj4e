@@ -77,7 +77,8 @@ function onSelect() {
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
   <option <?= x_sel("paw_models.md") ?>>DJAngo Models</option>
   <option <?= x_sel("paw_admin.md") ?>>DJAngo Admin</option>
-  <option <?= x_sel("paw_home.md") ?>>DJAngo Home Pages</option>
+  <option <?= x_sel("paw_home.md") ?>>Home Page</option>
+  <option <?= x_sel("paw_views.md") ?>>Detail Pages</option>
 </select>
 </div>
 <?php
@@ -95,7 +96,8 @@ web site.
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
 <li><a href="paw_models.md">DJango Models</a></li>
 <li><a href="paw_admin.md">DJango Admin</a></li>
-<li><a href="paw_home.md">DJango Home Pages</a></li>
+<li><a href="paw_home.md">Home Page</a></li>
+<li><a href="paw_views.md">Detail Pages</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
