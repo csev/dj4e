@@ -277,7 +277,7 @@
     ],
     "references" : [
         {
-            "title" : "Admin Tutorial from Mozilla Developers Network",
+            "title" : "Home Page Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page"
         }
     ]
