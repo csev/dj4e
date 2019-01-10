@@ -17,6 +17,8 @@ function endsWith($haystack, $needle) {
 
 $url = $_SERVER['REQUEST_URI'];
 
+$parts = parse_url($url);
+if ( isset($parts['path']) ) $url = $parts['path'];
 $pieces = explode('/',$url);
 
 $file = false;

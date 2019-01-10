@@ -146,9 +146,9 @@ function checkPostRedirect($client) {
 function markTestPassed($message=false) {
     global $passed;
     if ( $message ) {
-        success_out("Test passed: ".$message);
+        success_out("Test completed: ".$message);
     } else {
-        success_out("Test passed.");
+        success_out("Test completed.");
     }
     $passed++;
 }
@@ -156,7 +156,7 @@ function markTestPassed($message=false) {
 function webauto_test_passed($grade, $url) {
     global $USER, $OUTPUT;
 
-    success_out("Test passed - congratulations");
+    success_out("Test completed - congratulations");
 
     if ( ! $USER->displayname || ! isset($_SESSION['lti']) ) {
         line_out('Not setup to return a grade..');

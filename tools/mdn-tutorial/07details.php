@@ -12,7 +12,7 @@ $shuffled = $MT->shuffle($names);
 $first_name = $shuffled[0];
 $last_name = $shuffled[1];
 $title_name = $shuffled[3];
-$full_name = $first_name . ', ' . $last_name;
+$full_name = $first_name . ' ' . $last_name;
 $last_first = $last_name . ', ' . $first_name;
 $book_title = "How the Number 42 and $title_name are Connected";
 $meta = '<meta name="wa4e" content="'.$check.'">';
@@ -20,14 +20,14 @@ $meta = '<meta name="wa4e" content="'.$check.'">';
 $adminpw = substr(getMD5(),4,9);
 line_out("Exploring DJango Views (MDN)");
 ?>
-<a href="../../assn/paw_home.md" target="_blank">
-https://www.dj4e.com/assn/paw_home.md</a>
+<a href="../../assn/paw_details.md" target="_blank">
+https://www.dj4e.com/assn/paw_details.md</a>
 </a>
 </p>
 <?php
 ?>
 </p>
-As part of this assignment, you must <b>remove</b> the `dj4e` superuser or change its password.
+As part of this assignment, you must not have the `dj4e` superuser or change its password.
 This assignment will mark points off if it <i>can</i> log in to superuser account.
 <pre>
 Account: dj4e
@@ -41,6 +41,14 @@ You need to add the following line to your <b>base_generic.html</b> file within 
 </pre>
 Make sure to put this all on one line and with no extra spaces within the tag.
 </p>
+<p>
+You should still have an author and book from the previous tutorial:
+<pre>
+Author: <?= htmlentities($full_name) ?> 
+Book: <?= htmlentities($book_title) ?>
+</pre>
+</p>
+
 <?php
 
 $url = getUrl('http://mdntutorial.pythonanywhere.com/');
@@ -81,9 +89,12 @@ if ( $crawler === false ) return;
 
 $html = webauto_get_html($crawler);
 
-webauto_search_for($html, 'Dynamic content');
-webauto_search_for($html, 'All books');
-webauto_search_for($html, 'All authors');
+$home_link = webauto_get_href($crawler,'Home');
+$home_url = $home_link->getURI();
+$books_link = webauto_get_href($crawler,'All books');
+$books_url = $books_link->getURI();
+$authors_link = webauto_get_href($crawler,'All authors');
+$authors_url = $authors_link->getURI();
 
 if ( strpos($html, 'Mozilla Developer Network') > 0 ) {
     error_out('It looks like you left in the default name for the developer of the application.');
@@ -101,17 +112,6 @@ if ( $retval === False ) {
     $passed = -1000;
 } else {
     success_out('Found the appropriate <meta> tag');
-    $passed += 2;
-}
-
-// Checking if a later tutorial is already working
-$books_link = webauto_get_href($crawler,'All books');
-$books_url = $books_link->getURI();
-
-if ( strpos($books_url, 'catalog/books') > 0 ) {
-    error_out('It looks like your "All books" link from a future graded exercise is already working..');
-    error_out('10 point deduction...');
-    $passed -= 10;
 }
 
 // Make sure static is set up properly
@@ -127,11 +127,52 @@ if ( $status != 200 ) {
     $passed += 1;
 }
 
+line_out('Retrieving book list page...');
+$crawler = webauto_get_url($client, $books_url);
+$html = webauto_get_html($crawler);
+
+$retval = webauto_search_for($html, $book_title);
+$retval = webauto_search_for($html, $last_first);
+$book_detail_link = webauto_get_href($crawler,$book_title);
+$book_detail_url = $book_detail_link->getURI();
+
+line_out('Retrieving book detail page...');
+$crawler = webauto_get_url($client, $book_detail_url);
+$html = webauto_get_html($crawler);
+
+$retval = webauto_search_for($html, $book_title);
+$retval = webauto_search_for($html, $last_first);
+
+line_out('Retrieving author list page...');
+$crawler = webauto_get_url($client, $authors_url);
+$html = webauto_get_html($crawler);
+
+$retval = webauto_search_for($html, $last_first);
+$author_detail_link = webauto_get_href($crawler,$last_first);
+$author_detail_url = $author_detail_link->getURI();
+
+line_out('Retrieving author detail page...');
+$crawler = webauto_get_url($client, $author_detail_url);
+$html = webauto_get_html($crawler);
+
+$retval = webauto_search_for($html, $last_first);
+$back_to_book_link = webauto_get_href($crawler,$book_title);
+$back_to_book_url = $back_to_book_link->getURI();
+
+line_out('Retrieving book detail page from author page...');
+$crawler = webauto_get_url($client, $back_to_book_url);
+$html = webauto_get_html($crawler);
+
+$retval = webauto_search_for($html, $book_title);
+$retval = webauto_search_for($html, $last_first);
+
 
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
-$perfect = 21;
+// echo("  -- Raw score $passed \n");
+$passed += 1;
+$perfect = 30;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
