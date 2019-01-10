@@ -77,7 +77,7 @@ under the `Web` tab and `Reload` the web server to re-read your updated configur
 Generally the server automatically detects changes to templates or static files
 without requiring your application to be reloaded.  There is not harm in reloading your 
 web application too often.  If you made a change and dont think you are seeing the change,
-Reload the qweb application.
+reload the web application.
 
 
 If you are using git
