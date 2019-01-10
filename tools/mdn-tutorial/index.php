@@ -20,6 +20,7 @@ $assignments = array(
     '03skeleton.php' => 'Setting up the Skeleton site',
     '05admin.php' => 'Exploring the Admin site',
     '06home.php' => 'DJango Home Page',
+    '07detail.php' => 'DJango Details Pages',
 );
 
 $oldsettings = Settings::linkGetAll();
