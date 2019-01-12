@@ -378,6 +378,17 @@ function webauto_search_for($html, $needle)
     }
 }
 
+function webauto_search_for_not($html, $needle)
+{
+    if ( stripos($html,$needle) === false ) {
+        markTestPassed("Did not find '$needle'");
+        return true;
+    } else {
+        error_out("Should not have found '$needle'");
+        return false;
+    }
+}
+
 /* Returns a crawler */
 function webauto_get_url($client, $url) {
     line_out(" ");

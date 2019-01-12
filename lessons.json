@@ -319,6 +319,38 @@
     ]
 },
 {
+    "title": "DJango sessions",
+    "anchor": "paw_sessions",
+    "icon" : "fa-user",
+    "description": "This exercise uses sessions on the LocalLibrary web site.",
+    "videos" : [
+    {
+        "title": "DJango Sessions",
+        "youtube": "yada"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_sessions.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Django Sessions",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_sessions",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "08sessions.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions"
+        }
+    ]
+},
+{
     "title": "Review: HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",

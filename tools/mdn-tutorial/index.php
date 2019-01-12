@@ -21,6 +21,7 @@ $assignments = array(
     '05admin.php' => 'Exploring the Admin site',
     '06home.php' => 'DJango Home Page',
     '07details.php' => 'DJango Details Pages',
+    '08sessions.php' => 'DJango Sessions',
 );
 
 $oldsettings = Settings::linkGetAll();
