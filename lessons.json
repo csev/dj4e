@@ -297,7 +297,7 @@
         "youtube": "sbu_KNI4Hqk"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_detail.md",
+    "assignment" : "https://www.dj4e.com/assn/paw_details.md",
     "lti" : [
         {
         "title" : "Auto-grader: Django Detail Pages",
