@@ -114,6 +114,12 @@ if ( $retval === False ) {
     success_out('Found the appropriate <meta> tag');
 }
 
+if ( strpos($html, 'You have visited this page') > 0 ) {
+    error_out('It looks like you already have some code running from a future version of this application.');
+    error_out('Ten point score deduction for going more than 88 miles per hour');
+    $passed = $passed -10;
+}
+
 // Make sure static is set up properly
 line_out("Checking to see if you are serving your CSS files properly...");
 $crawler = webauto_get_url($client, $css_url);

@@ -305,8 +305,12 @@ function webauto_get_radio_button_choice($form,$field_name,$choice)
 
 function webauto_get_form_with_button($crawler,$text) 
 {
-    $html = $crawler->html();;
     $msg = 'Did not find form with a "'.$text.'" button';
+    if ( ! is_object($crawler) ) {
+        line_out($msg);
+        throw new Exception($msg);
+    }
+    $html = $crawler->html();;
     if ( strpos($html, $text) === false) {
         line_out($msg);
         throw new Exception($msg);
