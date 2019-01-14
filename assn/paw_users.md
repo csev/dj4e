@@ -1,9 +1,13 @@
 DJango Users and Authentication
 ===============================
 
-In this assignment we will add  a few lines of code to demonstrate sessions.
+In this assignment we will add some non-admin users, and the code for them to log in and log out to
+the LocalLibrary application.   Then we will add data model elements to represent book checkout and a screen
+so users can see the books that they have checked out.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
+
+This is a more complex tutorial so allow plenty of time to work on this tutorial.
 
 * You will need an admin user for this assignment, if you hhave deleted the super user, and need to
 create another one, use the following commands in a console shell:
