@@ -351,6 +351,38 @@
     ]
 },
 {
+    "title": "DJango Users and Authentication",
+    "anchor": "paw_users",
+    "icon" : "fa-user",
+    "description": "This exercise explores the interaction between authentication and our application.",
+    "videos" : [
+    {
+        "title": "DJango Users",
+        "youtube": "yada"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_users.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Django Users",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "paw_users",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "09users.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication"
+        }
+    ]
+},
+{
     "title": "Review: HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",

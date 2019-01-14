@@ -18,14 +18,21 @@ $book_title = "How the Number 42 and $title_name are Connected";
 $meta = '<meta name="wa4e" content="'.$check.'">';
 
 $adminpw = substr(getMD5(),4,9);
-line_out("Exploring DJango Views (MDN)");
+$userpw = "Meow_" . substr(getMD5(),1,6). '_42';
+line_out("Exploring DJango Users (MDN)");
 ?>
-<a href="../../assn/paw_sessions.md" target="_blank">
-https://www.dj4e.com/assn/paw_sessions.md</a>
+<a href="../../assn/paw_users.md" target="_blank">
+https://www.dj4e.com/assn/paw_users.md</a>
 </a>
-</p>
-<?php
-?>
+<p>
+In addition to the steps in the tutorial, make a user (not an admin account) and add it to
+the "Library Staff" account to allow this autograder to log in and check your work
+with the following information:
+<pre>
+Account: dj4e_user
+Password: <?= htmlentities($userpw) ?>
+</pre>
+You can use any email address you like.
 </p>
 <p>
 You should still have the identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area and an author and book from the previous tutorial autograder.

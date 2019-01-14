@@ -21,7 +21,7 @@ line_out("Exploring DJango Admin (MDN)");
 https://www.dj4e.com/assn/paw_skeleton.md</a>
 </a>
 </p>
-</p>
+<p>
 In addition to the steps in the tutorial, make a second admin user to allow
 this autograder to log in and check your work with the following information:
 <pre>
