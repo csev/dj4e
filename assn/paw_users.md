@@ -41,7 +41,7 @@ you can always revert a file to your previous version and re-make your changes.
 
 
 * Add the template for `login.html` in the correct folder as described in the tutorial.  If you successfully 
-log in without doing th enext step - you will be redirected to `/accounts/profile/` - we need to
+log in without doing the next step - you will be redirected to `/accounts/profile/` - we need to
 change this in the next step.
 
 * Add the `LOGIN_REDIRECT_URL` to `locallibrary/locallibrary/settings.py` as directed in the tutorial and
@@ -72,7 +72,7 @@ to set the status to "On Loan".
 
 * Edit the `catalog/urls.py` and add the url pattern for the `LoanedBooksByUserListView`.
 
-* Edit `/catalog/templates/base_generic.html` and add th link to `my-borrowed`
+* Edit `/catalog/templates/base_generic.html` and add the link to `my-borrowed`
 
 * Restart your web application.
 
