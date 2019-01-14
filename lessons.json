@@ -322,7 +322,7 @@
     "title": "DJango sessions",
     "anchor": "paw_sessions",
     "icon" : "fa-user",
-    "description": "This exercise uses sessions on the LocalLibrary web site.",
+    "description": "(under construction) This exercise uses sessions on the LocalLibrary web site.",
     "videos" : [
     {
         "title": "DJango Sessions",
@@ -354,7 +354,7 @@
     "title": "DJango Users and Authentication",
     "anchor": "paw_users",
     "icon" : "fa-user",
-    "description": "This exercise explores the interaction between authentication and our application.",
+    "description": "(under construction) This exercise explores the interaction between authentication and our application.",
     "videos" : [
     {
         "title": "DJango Users",
