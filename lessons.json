@@ -111,7 +111,7 @@
     "title": "Putting your DJango Projects into GitHub",
     "anchor": "paw_github",
     "icon" : "fa-github",
-    "description": "This optional exercise uploads your DJango projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository.  If you are an enrolled student art a school you may be able to get free priavte repositories through the GitHub for Students program.",
+    "description": "This optional exercise uploads your DJango projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
     "videos" : [
     {
         "title": "Using GitHub with Django and PythonAnywhere",
