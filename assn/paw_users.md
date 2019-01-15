@@ -9,7 +9,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 
 This is a more complex tutorial so allow plenty of time to work on this tutorial.
 
-* You will need an admin user for this assignment, if you hhave deleted the super user, and need to
+* You will need an admin user for this assignment, if you have deleted the super user, and need to
 create another one, use the following commands in a console shell:
 
         python3 manage.py createsuperuser
