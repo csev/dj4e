@@ -329,7 +329,7 @@ function webauto_get_form_with_button($crawler,$text)
 function webauto_get_href($crawler,$text) 
 {
     if ( $crawler == false ) return false;
-    $html = $crawler->html();;
+    $html = $crawler->html();
     $msg = 'Did not find anchor tag with"'.$text.'"';
     if ( strpos($html, $text) === false) {
         line_out($msg);
@@ -346,6 +346,13 @@ function webauto_get_href($crawler,$text)
     }
 }
 
+function webauto_get_url_from_href($crawler,$text) 
+{
+    $href = webauto_get_href($crawler,$text);
+    if ( ! $href ) return false;
+    $url = $href->getURI();
+    return $url;
+}
 
 // http://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
 function webauto_change_form($form, $name, $value)
@@ -394,8 +401,9 @@ function webauto_search_for_not($html, $needle)
 }
 
 /* Returns a crawler */
-function webauto_get_url($client, $url) {
+function webauto_get_url($client, $url, $message=false) {
     line_out(" ");
+    if ( $message ) line_out($message);
     line_out("Retrieving ".htmlentities($url)." ...");
     flush();
     try {
