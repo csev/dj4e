@@ -22,9 +22,10 @@ comment out one of the provided lines and replace it as follows:
         return HttpResponseRedirect(reverse('index') )                                                             
 
 Once you finish the `templates/catalog/book_renew_librarian.html` task and get to
-the "Testing the page", you will have to hand construct the URL to see your new
-user interface.   To do this go into the 'Admin' and look at a book instance that has been checked out
-and grab the "id" of the BookInstance and make a URL that looks like the following with the book's ID:
+the "Testing the page" for that section of the tutorial, you will have to hand construct
+the URL to see your new user interface.   To do this go into the 'Admin' and
+look at a book instance that has been checked out and grab the "id" of
+the BookInstance and make a URL that looks like the following with the book's ID:
 
 http://mdntutorial.pythonanywhere.com/catalog/book/31cf12c7-6b83-4bb4-8ffd-6c0058a044ba/renew/
 
@@ -35,7 +36,8 @@ Once you have verified that the new form is working, change the `views.py` back 
 
         return HttpResponseRedirect(reverse('all-borrowed') )                                                             
         # Delete this -> return HttpResponseRedirect(reverse('index') )                                                             
-Once you restore this, when you update the due date it will update, but you will get a message
+Once you restore this, when you visit the URL for `renew` and press `Submit`, it will update
+the due date it will update, but you will get a message
 stating `Reverse for 'all-borrowed' not found.` when you press the `Submit` button.  It is OK
 we will create a view with a name of `all borrowed` in the next part of this assignment.
 
