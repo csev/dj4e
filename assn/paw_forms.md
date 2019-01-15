@@ -1,45 +1,14 @@
 DJango Forms and Authentication
 ===============================
 
-In this tutorial, we will add a 'renew' Form that is usable by librarians:
-
-https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
-
-Once that is done, we will go back to the previous tutorial and add a view
-for librarians to see checked out books and link it into the new form.
+For this task, we will go back to the previous tutorial and add a view
+for librarians to see checked all checked out books.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#Challenge_yourself
 
-And once that is done, we will complete the Forms tutorial:
+Then we will complete the Forms tutorial:
 
-Adding the renew form
----------------------
-
-Go through the Forms tutorial.  In the `views.py` in the `renew_book_librarian` view,
-comment out one of the provided lines and replace it as follows:
-
-        # return HttpResponseRedirect(reverse('all-borrowed') )                                                             
-        return HttpResponseRedirect(reverse('index') )                                                             
-
-Once you finish the `templates/catalog/book_renew_librarian.html` task and get to
-the "Testing the page" for that section of the tutorial, you will have to hand construct
-the URL to see your new user interface.   To do this go into the 'Admin' and
-look at a book instance that has been checked out and grab the "id" of
-the BookInstance and make a URL that looks like the following with the book's ID:
-
-http://mdntutorial.pythonanywhere.com/catalog/book/31cf12c7-6b83-4bb4-8ffd-6c0058a044ba/renew/
-
-You should be able to update the due date and verify that the new date is in the database
-by loking at the BookInstance using the `admin` interface.
-
-Once you have verified that the new form is working, change the `views.py` back to:
-
-        return HttpResponseRedirect(reverse('all-borrowed') )                                                             
-        # Delete this -> return HttpResponseRedirect(reverse('index') )                                                             
-Once you restore this, when you visit the URL for `renew` and press `Submit`, it will update
-the due date it will update, but you will get a message
-stating `Reverse for 'all-borrowed' not found.` when you press the `Submit` button.  It is OK
-we will create a view with a name of `all borrowed` in the next part of this assignment.
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
 Adding the librarian view
 -------------------------
@@ -71,6 +40,8 @@ and add the `catalog | book instance | Set book as returned` permission to the g
 
 * Add the following to `catalog/views.py`:
 
+        from django.contrib.auth.mixins import PermissionRequiredMixin
+
         class LoanedBooksListView(PermissionRequiredMixin,generic.ListView):
             """Generic class-based view listing books on loan to current user."""
             model = BookInstance
@@ -84,7 +55,7 @@ and add the `catalog | book instance | Set book as returned` permission to the g
     Note that `get_queryset()` is quite similar to the same method in `LoadedBooksByUserListView`
     except that we have removed the filter by logged in user.
 
-* Create the template in `templates/catalog/bookinstance_list_borrowed_all.html`
+* Create the template in `catalog/templates/catalog/bookinstance_list_borrowed_all.html`
 
         {% extends "base_generic.html" %}
         {% block content %}
@@ -94,9 +65,6 @@ and add the `catalog | book instance | Set book as returned` permission to the g
             {% for bookinst in bookinstance_list %}
             <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
                 <a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a>
-                {% if perms.catalog.can_mark_returned %}-
-                 <a href="{% url 'renew-book-librarian' bookinst.id %}">Renew</a>  - 
-                {% endif %}
                 ({{bookinst.borrower}}, {{ bookinst.due_back }})
             </li>
             {% endfor %}
@@ -111,6 +79,46 @@ and add the `catalog | book instance | Set book as returned` permission to the g
         {% if perms.catalog.can_mark_returned %}
         <li><a href="{% url 'all-borrowed'%}">All Borrowed</a></li>   
         {% endif %}
+
+* Then `Reload` the application and log in with an account that is in the group 'Library Staff'
+and verify that the 'All borrowed` code works.
+
+If You Are Keeping Your Projects GitHub
+---------------------------------------
+
+At this point, once your models are working, you might want to add the new files
+and check your modifications into github.
+
+    cd ~/django_projects/locallibrary/catalog
+    git status
+    git add ... (add files as approptiate)
+    git commit -a -m "All borrowed complete"
+    git push
+
+You might also want to tag this version of the code in case you need to come back to it:
+
+    git tag borrowed
+    git push origin --tags
+
+
+Adding the renew form
+---------------------
+
+* Go through the Forms tutorial - it is pretty straighforward.
+
+* Update the template in `catalog/templates/catalog/bookinstance_list_borrowed_all.html` to call the new
+renewal form from the "all bororred" view, add these three lines after the 'book-detial' line.
+
+        ...
+                <a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a>
+                {% if perms.catalog.can_mark_returned %}   
+                 - <a href="{% url 'renew-book-librarian' bookinst.id %}">Renew</a>  - 
+                {% endif %}
+                ({{bookinst.borrower}}, {{ bookinst.due_back }})
+        ...
+
+You should reload your web application and test both the 'All borrowed' view and the librarian renewal
+feature.
 
 If You Are Keeping Your Projects GitHub
 ---------------------------------------
