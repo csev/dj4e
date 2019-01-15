@@ -130,8 +130,8 @@ $retval = webauto_search_for($html, $last_first);
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
-echo("  -- Raw score $passed \n");
-$perfect = 30;
+// echo("  -- Raw score $passed \n");
+$perfect = 22;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
