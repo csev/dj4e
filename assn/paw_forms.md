@@ -138,16 +138,18 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms#Generic_
 * Add the Create Update, and Delete views to `views.py` as described in the tutorial.  But we want to
 only allow logged in users to access these views.  If you want to take the extra step, you can create a new permission
 and use the `PermissionRequiredMixin` to be more fine-grained.  At a minimum, make sure that you have to be
-logged in to do the CRUD operations.  __You don't want to leave a web site up with some 
-wide-open URLs that accept data from the internet without a log in - that would be very irresponsible
-and make your hosting provider very unhappy.__
+logged in to do the CRUD operations.  
 
-    Simply add the LoginRequiredMixin to each of your classes
+    Simply add the `LoginRequiredMixin` to each of your classes (we imported it earlier in the file)
 
         class AuthorCreate(LoginRequiredMixin,CreateView):
             model = Author
             fields = '__all__'
             initial = {'date_of_death': '05/01/2018'}
+
+    __You don't want to leave a web site up with some 
+    wide-open URLs that accept data from the internet without a log in - that would be very irresponsible
+    and make your hosting provider very unhappy.__
         
 * Create the `catalog/templates/catalog/author_form.html` template as described in the tutorial
 
@@ -161,7 +163,7 @@ and make your hosting provider very unhappy.__
         http://mdntutorial.pythonanywhere.com/catalog/author/12/update
         http://mdntutorial.pythonanywhere.com/catalog/author/12/delete
 
-    You can go into an author detail page and add "update" or "delete to the end of the URL to access
+    You can go into an author detail page and add "update" or "delete" to the end of the URL to access
     those views.
 
 * If your code is working to this point, and you are using git you might want to commit
