@@ -99,11 +99,3 @@ You might also want to tag this version of the code in case you need to come bac
     git tag user
     git push origin --tags
 
-
-References
-----------
-
-https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/
-
-https://docs.djangoproject.com/en/2.0/topics/db/queries/#following-relationships-backward
-
