@@ -348,11 +348,11 @@
     "title": "DJango Users and Authentication",
     "anchor": "paw_users",
     "icon" : "fa-user",
-    "description": "(under construction) This exercise explores the interaction between authentication and our application.",
+    "description": "This exercise explores the interaction between authentication and our application.",
     "videos" : [
     {
         "title": "DJango Users",
-        "youtube": "yada"
+        "youtube": "u5nW_2L1ACA"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_users.md",
