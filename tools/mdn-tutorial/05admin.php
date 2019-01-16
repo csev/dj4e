@@ -90,14 +90,10 @@ if ( strpos($html,'Log in') > 0 ) {
 }
 
 // Grab the urls to the various links
-$catalog_link = webauto_get_href($crawler,'Catalog');
-$catalog_url = $catalog_link->getURI();
-$authors_link = webauto_get_href($crawler,'Authors');
-$authors_url = $authors_link->getURI();
-$books_link = webauto_get_href($crawler,'Books');
-$books_url = $books_link->getURI();
-$instance_link = webauto_get_href($crawler,'Book instances');
-$instance_url = $instance_link->getURI();
+$catalog_url = webauto_get_href_url($crawler,'Catalog');
+$authors_url = webauto_get_href_url($crawler,'Authors');
+$books_url = webauto_get_href_url($crawler,'Books');
+$instance_url = webauto_get_href_url($crawler,'Book instances');
 
 // Load the catalog page
 $crawler = webauto_get_url($client, $catalog_url);

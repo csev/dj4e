@@ -89,12 +89,9 @@ if ( $crawler === false ) return;
 
 $html = webauto_get_html($crawler);
 
-$home_link = webauto_get_href($crawler,'Home');
-$home_url = $home_link->getURI();
-$books_link = webauto_get_href($crawler,'All books');
-$books_url = $books_link->getURI();
-$authors_link = webauto_get_href($crawler,'All authors');
-$authors_url = $authors_link->getURI();
+$home_url = webauto_get_href_url($crawler,'Home');
+$books_url = webauto_get_href_url($crawler,'All books');
+$authors_url = webauto_get_href_url($crawler,'All authors');
 
 if ( strpos($html, 'Mozilla Developer Network') > 0 ) {
     error_out('It looks like you left in the default name for the developer of the application.');
@@ -139,8 +136,7 @@ $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $book_title);
 $retval = webauto_search_for($html, $last_first);
-$book_detail_link = webauto_get_href($crawler,$book_title);
-$book_detail_url = $book_detail_link->getURI();
+$book_detail_url = webauto_get_href_url($crawler,$book_title);
 
 line_out('Retrieving book detail page...');
 $crawler = webauto_get_url($client, $book_detail_url);
@@ -154,16 +150,14 @@ $crawler = webauto_get_url($client, $authors_url);
 $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $last_first);
-$author_detail_link = webauto_get_href($crawler,$last_first);
-$author_detail_url = $author_detail_link->getURI();
+$author_detail_url = webauto_get_href_url($crawler,$last_first);
 
 line_out('Retrieving author detail page...');
 $crawler = webauto_get_url($client, $author_detail_url);
 $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $last_first);
-$back_to_book_link = webauto_get_href($crawler,$book_title);
-$back_to_book_url = $back_to_book_link->getURI();
+$back_to_book_url = webauto_get_href_url($crawler,$book_title);
 
 line_out('Retrieving book detail page from author page...');
 $crawler = webauto_get_url($client, $back_to_book_url);

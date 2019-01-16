@@ -105,8 +105,7 @@ if ( $retval === False ) {
 }
 
 // Checking if a later tutorial is already working
-$books_link = webauto_get_href($crawler,'All books');
-$books_url = $books_link->getURI();
+$books_url = webauto_get_href_url($crawler,'All books');
 
 if ( strpos($books_url, 'catalog/books') > 0 ) {
     error_out('It looks like your "All books" link from a future graded exercise is already working..');
