@@ -378,9 +378,9 @@
 },
 {
     "title": "DJango Forms and CRUD",
-    "anchor": "paw_users",
+    "anchor": "paw_forms",
     "icon" : "fa-user",
-    "description": "This exercise building some forms and a full set of Create, Read, and Updat (CRUD) forms.",
+    "description": "This exercise building some forms and a full set of Create, Read, and Update (CRUD) forms.",
     "videos" : [
     {
         "title": "DJango Forms - All Books",
@@ -400,19 +400,23 @@
         {
         "title" : "Auto-grader: Django Users",
         "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_users",
+        "resource_link_id" : "paw_forms",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "09users.php"
+                "value": "10forms.php"
             }
         ]
         }
     ],
     "references" : [
         {
-            "title" : "Tutorial from Mozilla Developers Network",
+            "title" : "Authentication Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication"
+        },
+        {
+            "title" : "Forms Tutorial from Mozilla Developers Network",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms"
         }
     ]
 },
