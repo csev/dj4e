@@ -23,6 +23,7 @@ $assignments = array(
     '07details.php' => 'DJango Details Pages',
     '08sessions.php' => 'DJango Sessions',
     '09users.php' => 'DJango Users and Authentication',
+    '10forms.php' => 'DJango Forms',
 );
 
 $oldsettings = Settings::linkGetAll();
