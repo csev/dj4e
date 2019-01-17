@@ -22,8 +22,8 @@ $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
 line_out("Exploring DJango Forms (MDN)");
 ?>
-<a href="../../assn/paw_users.md" target="_blank">
-https://www.dj4e.com/assn/paw_users.md</a>
+<a href="../../assn/paw_forms.md" target="_blank">
+https://www.dj4e.com/assn/paw_forms.md</a>
 </a>
 <p>
 In addition to the steps in the tutorial, make a user (not an admin account) and add it to
@@ -45,6 +45,8 @@ You should still have the identifiying <b>meta</b> tag in your <b>&lt;head&gt;</
 $url = getUrl('http://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
+
+webauto_check_test();
 
 $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
@@ -209,6 +211,11 @@ if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 // if ( $score < 1.0 ) autoToggle();
+
+if ( webauto_testrun($url) ) {
+    error_out("Not graded - sample solution");
+    return;
+}
 
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);

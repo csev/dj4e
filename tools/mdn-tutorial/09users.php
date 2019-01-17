@@ -45,6 +45,8 @@ $url = getUrl('http://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
 
+webauto_check_test();
+
 $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
 $css_url = $url . 'catalog/static/css/styles.css';
@@ -137,6 +139,10 @@ $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 // if ( $score < 1.0 ) autoToggle();
 
+if ( webauto_testrun($url) ) {
+    error_out("Not graded - sample solution");
+    return;
+}
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);
 

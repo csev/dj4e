@@ -53,8 +53,7 @@ ALLOWED_HOSTS = ['*']
 }
 webauto_search_for($html, 'Using the URLconf defined in <code>locallibrary.urls</code>');
 
-if ( strpos($url,'dj4e.com') !== false || strpos($url,'index.htm') !== false ||
-    strpos($url,'mdntutorial.pythonanywhere.com') !== false ) {
+if ( webauto_testrun($url) ) {
     error_out("Not graded - sample solution");
     return;
 }

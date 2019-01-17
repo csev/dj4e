@@ -47,6 +47,8 @@ $url = getUrl('http://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
 
+webauto_check_test();
+
 $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
 $css_url = $url . 'catalog/static/css/styles.css';
@@ -67,12 +69,14 @@ webauto_change_form($form, 'password', $adminpw);
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
+if ( ! webauto_testrun($url) ) {
 if ( strpos($html,'Log in') > 0 ) {
     line_out('Congratulations, it looks like you have deleted the superuser account with dj4e / '.$adminpw);
     $passed += 10;
 } else {
     error_out('Oops! It looks like you forgot to delete or change the password on the superuser account with dj4e / '.$adminpw);
     error_out('Ten point score deduction');
+}
 }
 
 // Start the actual test
@@ -105,9 +109,9 @@ if ( $retval === False ) {
 }
 
 // Checking if a later tutorial is already working
-$books_url = webauto_get_href_url($crawler,'All books');
+$books_url = webauto_get_url_from_href($crawler,'All books');
 
-if ( strpos($books_url, 'catalog/books') > 0 ) {
+if ( ! webauto_testrun($url) && strpos($books_url, 'catalog/books') > 0 ) {
     error_out('It looks like your "All books" link from a future graded exercise is already working..');
     error_out('10 point deduction...');
     $passed -= 10;
@@ -135,6 +139,11 @@ if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 // if ( $score < 1.0 ) autoToggle();
+
+if ( webauto_testrun($url) ) {
+    error_out("Not graded - sample solution");
+    return;
+}
 
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);

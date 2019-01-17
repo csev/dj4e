@@ -14,18 +14,20 @@ $full_name = $first_name . ', ' . $last_name;
 $last_first = $last_name . ', ' . $first_name;
 $book_title = "How the Number 42 and $title_name are Connected";
 
+$adminuser = 'dj4e';
 $adminpw = substr(getMD5(),4,9);
+
 line_out("Exploring DJango Admin (MDN)");
 ?>
 <a href="../../assn/paw_admin.md" target="_blank">
-https://www.dj4e.com/assn/paw_skeleton.md</a>
+https://www.dj4e.com/assn/paw_admin.md</a>
 </a>
 </p>
 <p>
 In addition to the steps in the tutorial, make a second admin user to allow
 this autograder to log in and check your work with the following information:
 <pre>
-Account: dj4e
+Account: <?= htmlentities($adminuser) ?> 
 Password: <?= htmlentities($adminpw) ?>
 </pre>
 You can use any email address you like.
@@ -44,9 +46,12 @@ Also add a "Science Fiction" book by that author with a title of:<br/>
 </p>
 <?php
 
+
 $url = getUrl('http://mdntutorial.pythonanywhere.com/admin');
 if ( $url === false ) return;
 $passed = 0;
+
+webauto_check_test();
 
 $admin = $url;
 error_log("Tutorial02 ".$url);
@@ -75,14 +80,14 @@ $html = webauto_get_html($crawler);
 
 // line_out('Looking for the form with a value="Log In" submit button');
 $form = webauto_get_form_with_button($crawler,'Log in');
-webauto_change_form($form, 'username', 'dj4e');
+webauto_change_form($form, 'username', $adminuser);
 webauto_change_form($form, 'password', $adminpw);
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
 if ( strpos($html,'Log in') > 0 ) {
-    error_out('It looks like you have not yet set up the admin account with dj4e / '.$adminpw);
+    error_out("It looks like you have not yet set up the admin account with $adminuser / $adminpw");
     error_out('The test cannot be continued');
     return;
 } else {
@@ -90,10 +95,10 @@ if ( strpos($html,'Log in') > 0 ) {
 }
 
 // Grab the urls to the various links
-$catalog_url = webauto_get_href_url($crawler,'Catalog');
-$authors_url = webauto_get_href_url($crawler,'Authors');
-$books_url = webauto_get_href_url($crawler,'Books');
-$instance_url = webauto_get_href_url($crawler,'Book instances');
+$catalog_url = webauto_get_url_from_href($crawler,'Catalog');
+$authors_url = webauto_get_url_from_href($crawler,'Authors');
+$books_url = webauto_get_url_from_href($crawler,'Books');
+$instance_url = webauto_get_url_from_href($crawler,'Book instances');
 
 // Load the catalog page
 $crawler = webauto_get_url($client, $catalog_url);
@@ -163,6 +168,11 @@ $perfect = 29;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 // if ( $score < 1.0 ) autoToggle();
+
+if ( webauto_testrun($url) ) {
+    error_out("Not graded - sample solution");
+    return;
+}
 
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);

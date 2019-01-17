@@ -37,6 +37,8 @@ $url = getUrl('http://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
 
+webauto_check_test();
+
 $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
 $css_url = $url . 'catalog/static/css/styles.css';
@@ -57,6 +59,7 @@ webauto_change_form($form, 'password', $adminpw);
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
+if ( ! webauto_testrun($url) ) {
 if ( strpos($html,'Log in') > 0 ) {
     line_out('Congratulations, it looks like you have deleted the superuser account with dj4e / '.$adminpw);
     $passed += 8;
@@ -64,15 +67,16 @@ if ( strpos($html,'Log in') > 0 ) {
     error_out('Oops! It looks like you forgot to delete or change the password on the superuser account with dj4e / '.$adminpw);
     error_out('Eight point score deduction');
 }
+}
 
 // Start the actual test
 $crawler = webauto_get_url($client, $catalog_url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
-$home_url = webauto_get_href_url($crawler,'Home');
-$books_url = webauto_get_href_url($crawler,'All books');
-$authors_url = webauto_get_href_url($crawler,'All authors');
+$home_url = webauto_get_url_from_href($crawler,'Home');
+$books_url = webauto_get_url_from_href($crawler,'All books');
+$authors_url = webauto_get_url_from_href($crawler,'All authors');
 
 $retval = webauto_search_for_not($html, 'Mozilla Developer Network');
 
@@ -117,7 +121,7 @@ $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $book_title);
 $retval = webauto_search_for($html, $last_first);
-$book_detail_url = webauto_get_href_url($crawler,$book_title);
+$book_detail_url = webauto_get_url_from_href($crawler,$book_title);
 
 line_out('Retrieving book detail page...');
 $crawler = webauto_get_url($client, $book_detail_url);
@@ -131,14 +135,14 @@ $crawler = webauto_get_url($client, $authors_url);
 $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $last_first);
-$author_detail_url = webauto_get_href_url($crawler,$last_first);
+$author_detail_url = webauto_get_url_from_href($crawler,$last_first);
 
 line_out('Retrieving author detail page...');
 $crawler = webauto_get_url($client, $author_detail_url);
 $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $last_first);
-$back_to_book_url = webauto_get_href_url($crawler,$book_title);
+$back_to_book_url = webauto_get_url_from_href($crawler,$book_title);
 
 line_out('Retrieving book detail page from author page...');
 $crawler = webauto_get_url($client, $back_to_book_url);
@@ -157,6 +161,11 @@ if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 // if ( $score < 1.0 ) autoToggle();
+
+if ( webauto_testrun($url) ) {
+    error_out("Not graded - sample solution");
+    return;
+}
 
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);
