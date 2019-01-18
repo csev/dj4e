@@ -9,6 +9,10 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 You can view a
 <a href="https://www.youtube.com/watch?v=6_JHiJvXu-I&index=3&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z" target="_blank">video walkthrough</a> of this assignment.
 
+*Note:* If you are submitting these assignments to the autograder, make sure you finish
+grading of one assignment before starting on the next assignment.  The autograder deducts
+points for hainv *too many* features implemented.
+
 Go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell, 
@@ -20,15 +24,6 @@ go into your virtual environment and create a new application:
 
     cd ~/django_projects/locallibrary
     python3 manage.py startapp catalog
-
-At this point, you might want to push your newly added files to github so as you make changes,
-you can see what files you have changed and what the differences are.
-
-    cd ~/django_projects/locallibrary
-    git status
-    git add .
-    git commit -a
-    git push
 
 Edit the file `locallibrary/settings.py` and make the following changes:
 
@@ -59,7 +54,7 @@ Edit the file `locallibrary/urls.py` and append the following lines to the file:
         path('', RedirectView.as_view(url='/catalog/', permanent=True)),
     ]
 
-Edit the file `catalog/urls.py` and put the following lines in the file:
+Create the file `catalog/urls.py` and put the following lines in the file:
     
     from django.urls import path
     from . import views
@@ -87,9 +82,10 @@ The `Reload` your web application and visit its url to make sure you get the exp
 
     http://mdntutorial.pythonanywhere.com/catalog/
 
-You should get an error, 'Page not found(404)'
+When you visit the page, 
+you *should* get an error, 'Page not found(404)'
 (<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
-This is an incomplete web site at this point so that is normal.
+We are stopping this tutorial when the web site is still incomplete so that is normal.
 
 If You Are Keeping Your Projects GitHub
 ---------------------------------------
