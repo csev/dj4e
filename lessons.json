@@ -15,7 +15,7 @@
     "anchor": "rrc",
     "icon" : "fa-refresh",
     "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
-    "slides": "lectures/Web-01-HTTP.ppt",
+    "slides": "lectures/Web-01-HTTP.pptx",
     "videos" : [
         {
             "title" : "Web Applications and the Request/Response Cycle",
