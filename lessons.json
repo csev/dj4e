@@ -175,6 +175,42 @@
     ]
 },
 {
+    "title": "Basic SQL",
+    "anchor": "paw_basic_sql",
+    "icon" : "fa-user",
+    "description": "This is a quick look at the basic operations (CRUD) in Structured Query Language (SQL).",
+    "videos" : [
+    {
+        "title": "Basic SQL",
+        "youtube": "yada"
+    }
+   ],
+    "slides": "lectures/SQL-01-Basics.pptx",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Basic SQL",
+        "launch" : "tools/mdn-sql/",
+        "resource_link_id" : "paw_basic_sql",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "single_lite.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Command Shell for SQLite",
+            "href": "https://www.sqlite.org/cli.html"
+        },
+        {
+            "title" : "SQLite Browser",
+            "href": "https://sqlitebrowser.org/"
+        }
+    ]
+},
+{
     "title": "DJango Models",
     "anchor": "paw_modules",
     "icon" : "fa-database",
