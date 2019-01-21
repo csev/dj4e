@@ -16,6 +16,7 @@ if ( SettingsForm::handleSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     '04models.php' => 'MDN Models Tutorial',
+    'single_lite.php' => 'Command Line SQL',
 );
 
 $oldsettings = Settings::linkGetAll();

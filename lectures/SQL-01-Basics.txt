@@ -12,7 +12,8 @@ Exit with ".quit", statements end with a semicolon.
 
 CREATE TABLE "Users" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
-    "name" TEXT, "email" TEXT
+    "name" TEXT,
+    "email" TEXT
 );
 
 .tables
