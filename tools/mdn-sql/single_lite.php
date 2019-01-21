@@ -101,15 +101,12 @@ This assignment is to be run using the SQLite command line
 tool on a Linux system like the bash shell on
 <a href="https://www.pythonanywhere.com/" target="_blank">
 https://www.pythonanywhere.com/</a>.
-</p>
-<p>
-Start the sqlite command line interface on a file that you can throw away:
 <pre>
 $ cd ~
 $ sqlite3 pitch.sqlite3
 SQLite version 3.24.0 2018-06-04 14:10:15
 Enter ".help" for usage hints.
-sqlite>
+sqlite&gt;
 </pre>
 <p>
 Create a table in the database called "Ages":
