@@ -1,0 +1,48 @@
+DJango for Everybody Database Handout - Command line SQLite
+
+https://www.dj4e.com/lectures/SQL-01-Basics.txt
+
+Start:
+
+sqlite3 zip.sqlite3
+
+Exit with ".quit", statements end with a semicolon.
+
+.mode column
+
+CREATE TABLE "Users" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+    "name" TEXT, "email" TEXT
+);
+
+.tables
+
+.schema Users
+
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Colleen', 'cvl@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Sally', 'a1@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Kristen', 'kf@umich.edu');
+
+SELECT * FROM Users;
+
+DELETE FROM Users WHERE email='ted@umich.edu';
+
+SELECT * FROM Users;
+
+UPDATE Users SET name="Charles" WHERE email='csev@umich.edu';
+
+SELECT * FROM Users;
+
+SELECT * FROM Users WHERE email='csev@umich.edu';
+
+SELECT * FROM Users ORDER BY email;
+
+SELECT * FROM Users ORDER BY name DESC;
+
+If you want: DROP TABLE Users 
+
+.quit
+
