@@ -55,7 +55,60 @@ Go to
 Verify the data has been pushed to the repo and verify that it is private.
 
 If you get tired of typing your github credentials over and over, you can tell
-the bash shell to cache them for a week using the following caommands:
+the bash shell to cache them for a week using the following commands:
+
+When Things go Wrong
+--------------------
+
+Sometimes when you have a repo and are working on files, and start typing
+things like `git commit -a` or `git push` you start getting very strange
+errors start appearing that imply that you can't do what you are trying to
+do.
+
+Sometimes if you are trying to do a `git pull` and you made some local changes, the following sequense will work:
+
+    git stash
+    git pull
+    git stash apply
+
+This undoes your local changes (except for added files) but "stashes" them. 
+Then the pull will work and the `git stash apply` pulls gets your "stashed" 
+changes and re-applies them.  Then a `git push` might work.
+
+If things are really messed up and `git` is complaining about a lock file
+or something very mysterious, sometimes the quickest way is to take a step back
+and then go forward again.  This process assumes that you have something in 
+github - here are the steps to restore your `django_projects` folder.  You may 
+lose a few bits in this process but your git folder will work again.
+
+First lets see what changes we have made because we will need to redo
+the changes.
+
+    cd ~/django_projects
+    git status
+
+Then rename your folder and check out a fresh copy of your repository:
+
+    cd ~
+    mv django_projects broken_version
+    git clone https://github.com/--your-github-acct--/django_projects.git
+
+Now you have a fresh new copy of your github repository.  Then go into
+the saved copy and see which files you want to copy over into the newly
+checked out copy of your repo:
+
+    cd ~/broken_version
+    git status
+
+Then for each file you want to put back into your check'ed out repo, do:
+
+    cp locallibrary/locallibrary/settings.py ../django_projects/locallibrary/locallibrary/settings.py
+
+Use tab completion to make sure that you are typing folders and files 
+correctly.
+
+You can change the folder paths from this example depending on what repo you are working with
+and where in your folder structure you are working.
 
 References
 ----------
