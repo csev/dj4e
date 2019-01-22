@@ -2,7 +2,7 @@ DJango for Everybody Database Handout - Command line SQLite
 
 https://www.dj4e.com/lectures/SQL-01-Basics.txt
 
-Start:
+Start the command line in a Linux/Bash shell:
 
 sqlite3 zip.sqlite3
 
