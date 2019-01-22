@@ -177,7 +177,7 @@
 {
     "title": "Basic SQL",
     "anchor": "paw_basic_sql",
-    "icon" : "fa-user",
+    "icon" : "fa-database",
     "description": "This is a quick look at the basic operations (CRUD) in Structured Query Language (SQL).",
     "videos" : [
     {
@@ -205,6 +205,10 @@
         }
     ],
     "references" : [
+        {
+            "title" : "Liz Fong: Creating the SQL Database Standards",
+            "href": "https://www.youtube.com/watch?v=rLUm3vst87g"
+        },
         {
             "title" : "Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
