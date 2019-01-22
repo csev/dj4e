@@ -270,7 +270,7 @@
 {
     "title": "DJango admin site",
     "anchor": "paw_admin",
-    "icon" : "fa-user",
+    "icon" : "fa-university",
     "description": "This exercise works through the DJango admin interface for the LocalLibrary web site.",
     "videos" : [
     {
@@ -310,7 +310,7 @@
 {
     "title": "DJango home page",
     "anchor": "paw_home",
-    "icon" : "fa-user",
+    "icon" : "fa-home",
     "description": "This exercise builds our first top level view (the home page) for the LocalLibrary web site.",
     "videos" : [
     {
@@ -342,7 +342,7 @@
 {
     "title": "DJango detail",
     "anchor": "paw_detail",
-    "icon" : "fa-user",
+    "icon" : "fa-align-left",
     "description": "This exercise builds detail views for the LocalLibrary web site.",
     "videos" : [
     {
@@ -374,7 +374,7 @@
 {
     "title": "DJango sessions",
     "anchor": "paw_sessions",
-    "icon" : "fa-user",
+    "icon" : "fa-cube",
     "description": "This exercise uses sessions on the LocalLibrary web site.  This exercises is quite simple so there is no video walkthrough.",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md",
     "lti" : [
@@ -400,7 +400,7 @@
 {
     "title": "DJango Users and Authentication",
     "anchor": "paw_users",
-    "icon" : "fa-user",
+    "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
     "videos" : [
     {
@@ -432,7 +432,7 @@
 {
     "title": "DJango Forms and CRUD",
     "anchor": "paw_forms",
-    "icon" : "fa-user",
+    "icon" : "fa-database",
     "description": "This exercise ibuilds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "videos" : [
     {
