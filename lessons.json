@@ -206,6 +206,14 @@
     ],
     "references" : [
         {
+            "title" : "Sample SQLite Command Line Operations",
+            "href": "https://www.dj4e.com/lectures/SQL-01-Basics.txt"
+        },
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        },
+        {
             "title" : "Liz Fong: Creating the SQL Database Standards",
             "href": "https://www.youtube.com/watch?v=rLUm3vst87g"
         },
