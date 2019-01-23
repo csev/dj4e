@@ -8,6 +8,7 @@
 .idea
 *.swp
 *.bak
+~*
 ehthumbs.db
 Thumbs.db
 solutions

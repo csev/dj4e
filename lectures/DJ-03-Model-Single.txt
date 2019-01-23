@@ -1,0 +1,46 @@
+Django for Everybody Database Handout - Command line SQLite
+
+https://www.dj4e.com/lectures/DJ-03-Model-Basics.txt
+
+You can check out the Django code for this project at:
+
+https://github.com/csev/dj4e-samples
+
+Start the command line in a Linux/Bash shell and go into your project folder.
+
+cd dj4e-samples/users
+
+python3 manage.py makemigrations  # May not find any changes
+python3 manage.py migrate         # Create the database and table(s)
+
+Start the django shell:
+
+python3 manage.py shell
+
+(In the shell at the >>> prompt) 
+
+u = User(name='Kristen', email='kf@umich.edu')
+u.save()
+u = User(name='Chuck', email='csev@umich.edu')
+u.save()
+u = User(name='Colleen', email='cvl@umich.edu')
+u.save()
+u = User(name='Ted', email='ted@umich.edu')
+u.save()
+u = User(name='Sally', email='a2@umich.edu')
+u.save()
+
+User.objects.values()
+User.objects.filter(email='csev@umich.edu').values()
+
+User.objects.filter(email='ted@umich.edu').delete()
+User.objects.values()
+
+User.objects.filter(email='csev@umich.edu').update(name='Charles')
+User.objects.values()
+
+User.objects.values().order_by('email')
+User.objects.values().order_by('-name')
+
+.quit
+
