@@ -57,28 +57,56 @@ Verify the data has been pushed to the repo and verify that it is private.
 If you get tired of typing your github credentials over and over, you can tell
 the bash shell to cache them for a week using the following commands:
 
-When Things go Wrong
---------------------
+Local and Remote Repositories Out of Sync
+-----------------------------------------
 
 Sometimes when you have a repo and are working on files, and start typing
 things like `git commit -a` or `git push` you start getting very strange
 errors start appearing that imply that you can't do what you are trying to
 do.
 
-Sometimes if you are trying to do a `git pull` and you made some local changes, the following sequense will work:
+Often this is bcause you are doing things in your repo two different
+places (i.e. your laptop and PythonAnywhere) and one or the other copies is
+out of sync with the copy that you have stored in GitHub.
+
+When your remote repository is "ahead" of your local repository, you 
+will see the following error when you do a `git pull`:
+
+    $ git status
+    On branch master
+
+    	modified:   locallibrary/settings.py
+
+    $ git pull
+    error: cannot pull with rebase: You have unstaged changes.
+    error: please commit or stash them.
+
+Solving this is pretty simple, the following sequence will work:
 
     git stash
     git pull
     git stash apply
 
-This undoes your local changes (except for added files) but "stashes" them. 
+This undoes your local changes (except for added files whch don't 
+affect the pull) but "stashes" them. 
 Then the pull will work and the `git stash apply` pulls gets your "stashed" 
-changes and re-applies them.  Then a `git push` might work.
+changes and re-applies them.  
 
-If things are really messed up and `git` is complaining about a lock file
-or something very mysterious, sometimes the quickest way is to take a step back
+Harder to Fix Problems
+----------------------
+
+If you end up in a situation where git is complaining about a "merge conflict"
+you can Google around and find a solution.  But sometimes that is 
+kind of obtuse and it is easier to grab a fresh copy of your repo 
+and manually re-apply your changes.
+
+If things are really messed up and `git` is complaining about a lock file,
+or something else very mysterious, sometimes the quickest 
+way to get going again is to take a step back
 and then go forward again.  This process assumes that you have something in 
-github - here are the steps to restore your `django_projects` folder.  You may 
+github to go back to.  
+
+Here are the steps to restore your `django_projects` folder.  You may 
 lose a few bits in this process but your git folder will work again.
 
 First lets see what changes we have made because we will need to redo
@@ -100,15 +128,28 @@ checked out copy of your repo:
     cd ~/broken_version
     git status
 
-Then for each file you want to put back into your check'ed out repo, do:
+Then for each file you want to put back into your freshly checked out repo, do:
 
     cp locallibrary/locallibrary/settings.py ../django_projects/locallibrary/locallibrary/settings.py
+
+You can also use the Linux `diff` command to see how files differ before making
+the copy:
+
+    diff locallibrary/locallibrary/settings.py ../django_projects/locallibrary/locallibrary/settings.py
 
 Use tab completion to make sure that you are typing folders and files 
 correctly.
 
-You can change the folder paths from this example depending on what repo you are working with
-and where in your folder structure you are working.
+If you are dealing with a merge conflict, you may still need to go into the
+newly checked out folder and edit the files before committing.  The git
+merge process puts little marks in the file to show where the conflicts
+were found.  Just test your code before committing and uploading - any merge
+lines in the file will be syntax errors in your application that you can
+fix.
+
+You can change the folder paths from this example depending on 
+what repo you are working with and where in your folder structure 
+you are working.
 
 References
 ----------
