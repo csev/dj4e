@@ -1,6 +1,6 @@
-Django for Everybody Database Handout - Command line SQLite
+Django for Everybody - Single Table Models
 
-https://www.dj4e.com/lectures/DJ-03-Model-Basics.txt
+https://www.dj4e.com/lectures/DJ-03-Model-Single.txt
 
 You can check out the Django code for this project at:
 
@@ -18,6 +18,8 @@ Start the django shell:
 python3 manage.py shell
 
 (In the shell at the >>> prompt) 
+
+from usermodel.models import User
 
 u = User(name='Kristen', email='kf@umich.edu')
 u.save()

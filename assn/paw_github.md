@@ -89,7 +89,7 @@ Solving this is pretty simple, the following sequence will work:
 
 This undoes your local changes (except for added files whch don't 
 affect the pull) but "stashes" them. 
-Then the pull will work and the `git stash apply` pulls gets your "stashed" 
+Then the pull will work and the `git stash apply` retrieves your "stashed" 
 changes and re-applies them.  
 
 Harder to Fix Problems
