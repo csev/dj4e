@@ -1,7 +1,7 @@
 Installing DJango on PythonAnywhere
 ===================================
 
-Befor you start this assignment, you should already have signed up for a 
+Before you start this assignment, you should already have signed up for a 
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.

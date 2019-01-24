@@ -76,6 +76,7 @@ function onSelect() {
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("paw_install.md") ?>>Installing DJango</option>
   <option <?= x_sel("paw_github.md") ?>>Using GitHub</option>
+  <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
   <option <?= x_sel("paw_models.md") ?>>DJAngo Models</option>
   <option <?= x_sel("paw_admin.md") ?>>DJAngo Admin</option>
@@ -98,6 +99,7 @@ web site.
 <ul>
 <li><a href="paw_install.md">Installing DJango</a></li>
 <li><a href="paw_github.md">Using GitHub</a></li>
+<li><a href="dj_install.md">Installing Django Locally</a></li>
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
 <li><a href="paw_models.md">DJango Models</a></li>
 <li><a href="paw_admin.md">DJango Admin</a></li>
