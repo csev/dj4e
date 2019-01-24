@@ -17,7 +17,7 @@ Start the django shell:
 
 python3 manage.py shell
 
-(In the shell at the >>> prompt) 
+(In the shell at the prompt) 
 
 from usermodel.models import User
 
