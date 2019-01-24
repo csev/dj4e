@@ -640,6 +640,61 @@
         ]
         }
         ]
+},
+{
+    "title": "Project Descripttion",
+    "anchor": "pr_description",
+    "icon" : "fa-css3",
+    "description": "Introduce your project to the rest of the class.",
+    "assignment" : "https://www.wa4e.com/project/01_description",
+    "references" : [
+        {
+            "title" : "Project Specifications",
+            "href" : "https://www.wa4e.com/project/00_overview"
+        }
+    ],
+    "lti" : [
+        {
+        "title": "Peer Graded: Project Description",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "pr_description",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Milestone 1: Describe Your Project",
+  "description": "Please describe your proposed Django database-backed web site project in 1-2 paragraphs.   Talk about the scope of the project, similar web sites, the kind of data the project will store and show and the interactive elements that get data from logged-in end users.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "URL of your GitHub Repo - If it is private just put in your github account url and mention that your repo is private below",
+      "type": "url"
+    },
+    {
+      "title": "Please describe your project in a few paragraphs.",
+      "type": "code",
+      "code": "markup"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
+        }
+        ]
 }
 
 ]

@@ -18,6 +18,21 @@ account and start a bash shell.
     workon django2
     cd ~/django_projects/locallibrary
 
+Make sure that you have properly edited the `locallibrary/settings.py` file to register your catalog
+application within the locallibrary project by adding `CatalogConfig` line:
+
+    ALLOWED_HOSTS = ['*']   <-- Change
+
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'catalog.apps.CatalogConfig',    <--- Add
+    ]
+
 Edit the file `catalog/models.py` and add the `Genre` model using as described in the tutorial.
 You can edit the file with `nano`, `vi`, or the PythonAnywhere web interface.  Once you have added
 the model, run the migrations from `~/django_projects/locallibrary`
