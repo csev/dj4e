@@ -74,7 +74,8 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("01_overview.md") ?>>Project Overview</option>
+  <option <?= x_sel("00_overview.md") ?>>Project Overview</option>
+  <option <?= x_sel("01_description.md") ?>>Milestone: Description</option>
 </select>
 </div>
 <?php
@@ -87,7 +88,8 @@ This is a set of supplementary documentation for use with this
 web site.
 </p>
 <ul>
-<li><a href="01_overview.md">Project Overview</a></li>
+<li><a href="00_overview.md">Project Overview</a></li>
+<li><a href="01_description.md">Milestone: Description</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
