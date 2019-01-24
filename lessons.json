@@ -234,8 +234,16 @@
     "description": "This exercise adds models for the LocalLibrary web site.",
     "videos" : [
     {
-        "title": "Django Models",
+        "title": "Django Models Assignment Walkthrough",
         "youtube": "2-QFePlm7GA"
+    },
+    {
+        "title": "Django Single Table Models Walkthrough",
+        "youtube": "zULy8o8VK3Q"
+    },
+    {
+        "title": "Django Many-to-One Models Walkthrough",
+        "youtube": "vEkGXH7xSsc"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_models.md",
@@ -256,6 +264,14 @@
         {
             "title" : "Models Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models"
+        },
+        {
+            "title" : "Django Single Table Model Sample",
+            "href": "https://www.dj4e.com/lectures/DJ-03-Model-Single.txt"
+        },
+        {
+            "title" : "Django Many-To-One Model Sample",
+            "href": "https://www.dj4e.com/lectures/DJ-04-Model-One.txt"
         },
         {
             "title" : "Command Shell for SQLite",
