@@ -642,15 +642,15 @@
         ]
 },
 {
-    "title": "Project Descripttion",
+    "title": "Project Description",
     "anchor": "pr_description",
     "icon" : "fa-css3",
     "description": "Introduce your project to the rest of the class.",
-    "assignment" : "https://www.wa4e.com/project/01_description",
+    "assignment" : "https://www.dj4e.com/project/01_description.md",
     "references" : [
         {
             "title" : "Project Specifications",
-            "href" : "https://www.wa4e.com/project/00_overview"
+            "href" : "https://www.dj4e.com/project/00_overview.md"
         }
     ],
     "lti" : [
