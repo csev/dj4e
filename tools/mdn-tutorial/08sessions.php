@@ -28,8 +28,19 @@ https://www.dj4e.com/assn/paw_sessions.md</a>
 ?>
 </p>
 <p>
+You need to add the following line to your <b>base_generic.html</b> file within the
+<b>&lt;head&gt;</b> area:
+<pre>
+<?= htmlentities($meta) ?>
+</pre>
+Make sure to put this all on one line and with no extra spaces within the tag.  This should stop
+changing from now on. (sorry).
+</p>
+<!--
+<p>
 You should still have the identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area and an author and book from the previous tutorial autograder.
 </p>
+-->
 
 <?php
 
