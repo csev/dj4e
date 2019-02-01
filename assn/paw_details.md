@@ -49,6 +49,7 @@ Complete the following sections of the Views tutorial:
 
 * Add pagination the pagination code to `templates/base_generic.html` and make sure you have at least
 three books so you can set the pagination to two in the view and then test pagination.
+Once you test the pagination set `paginate_by = 20` so the autograder finds your books.
 
 * Reload your application under the `Web` tab in
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>

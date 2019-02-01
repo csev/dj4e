@@ -395,7 +395,11 @@ function webauto_search_for_many($html, $needles)
 
 function webauto_search_for($html, $needle)
 {
-    if ( stripos($html,$needle) > 0 ) {
+    if ( strpos($html,$needle) > 0 ) {
+        markTestPassed("Found '$needle'");
+        return true;
+    } else if ( stripos($html,$needle) > 0 ) {
+        error_out("Warning: Found 'needle' but with incorrect case");
         markTestPassed("Found '$needle'");
         return true;
     } else {

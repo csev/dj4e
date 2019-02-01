@@ -6,6 +6,10 @@ require_once "names.php";
 use Goutte\Client;
 
 $check = webauto_get_check_full_by_link();
+$check_new = webauto_get_check_full();
+// TODO: Collapse down to check without link
+// $check = webauto_get_check_full();
+
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
 $shuffled = $MT->shuffle($names);
@@ -16,6 +20,7 @@ $full_name = $first_name . ' ' . $last_name;
 $last_first = $last_name . ', ' . $first_name;
 $book_title = "How the Number 42 and $title_name are Connected";
 $meta = '<meta name="wa4e" content="'.$check.'">';
+$meta_new = '<meta name="wa4e" content="'.$check_new.'">';
 
 $adminpw = substr(getMD5(),4,9);
 line_out("Exploring DJango Views (MDN)");
@@ -34,9 +39,10 @@ Account: dj4e
 </pre>
 </p>
 <p>
-You need to add the following line to your <b>base_generic.html</b> file within the 
+You need to one or both of the following lines to your <b>base_generic.html</b> file within the 
 <b>&lt;head&gt;</b> area:
 <pre>
+<?= htmlentities($meta_new) ?>  (preferred)
 <?= htmlentities($meta) ?>
 </pre>
 Make sure to put this all on one line and with no extra spaces within the tag.
@@ -122,7 +128,8 @@ if ( strpos($html, 'Mozilla Developer Network') > 0 ) {
 
 line_out("Checking meta tag...");
 $retval = webauto_search_for($html, $meta);
-if ( $retval === False ) {
+$retval_new = webauto_search_for($html, $meta_new);
+if ( $retval_new == False && $retval === False ) {
     error_out('You seem to be missing the required meta tag.  Check spacing.');
     error_out('Assignment will not be scored.');
     $passed = -1000;

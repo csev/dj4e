@@ -37,12 +37,11 @@ Complete the following sections of the Views tutorial:
 
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-        if settings.DEBUG:
-            urlpatterns += [
-                re_path(r'^static/(?P<path>.*)$', serve, {
-                    'document_root': os.path.join(BASE_DIR, 'catalog/static'),
-                }),
-            ]
+        urlpatterns += [
+            re_path(r'^static/(?P<path>.*)$', serve, {
+                'document_root': os.path.join(BASE_DIR, 'catalog/static'),
+            }),
+        ]
 
     We need the extra bits to serve the static files locally in debug mode.  We will come back
     to talk about how to serve static files when we move our application to production.
