@@ -5,6 +5,9 @@ require_once "names.php";
 
 use Goutte\Client;
 
+// TODO: Make this work on 06 07
+$code = $USER->id+$CONTEXT->id;
+
 $check = webauto_get_check_full();
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
