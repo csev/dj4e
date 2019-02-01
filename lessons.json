@@ -56,7 +56,7 @@
     ]
 },
 {
-    "title": "Installing DJango",
+    "title": "Installing DJango on PythonAnywhere",
     "anchor": "paw_install",
     "icon" : "fa-clone",
     "description": "This walks through the installation steps for DJango on PythonAnywhere.  We also provide instructions for submitting an application on your local computer for grading.",
@@ -320,6 +320,29 @@
         {
             "title" : "SQLite Browser",
             "href": "https://sqlitebrowser.org/"
+        }
+    ]
+},
+{
+    "title": "Installing DJango locally",
+    "anchor": "paw_local",
+    "icon" : "fa-clone",
+    "description": "This is an optional exercise to install DJango locally to both speed your development cycles and to play with the sample code.   You can submit your assignments from your local computer using a technology called 'ngrok'.",
+    "videos" : [
+    {
+        "title": "Submitting Assignments Using ngrok",
+        "youtube": "WLWuMjDDSa4"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/dj_install.md",
+    "references" : [
+        {
+            "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
+            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
+        },
+        {
+            "title" : "Using ngrok to submit a local application to the Autograder",
+            "href" : "/ngrok"
         }
     ]
 },

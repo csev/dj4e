@@ -1,5 +1,5 @@
-Developing with Django on Your Laptop
-=====================================
+Developing with Django on your computer
+=======================================
 
 As you start to develop more intricate Django applications, you might find it more
 convienent to install Django on your local computer and then use githib to move your
