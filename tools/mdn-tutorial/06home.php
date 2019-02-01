@@ -41,6 +41,18 @@ You need to add the following line to your <b>base_generic.html</b> file within 
 </pre>
 Make sure to put this all on one line and with no extra spaces within the tag.
 </p>
+<p>
+Make an Author with the following name (first, last):<br/>
+<pre>
+<?= htmlentities($full_name) ?>
+</pre>
+</p>
+<p>
+Also add a "Science Fiction" book by that author with a title of:<br/>
+<pre>
+<?= htmlentities($book_title) ?>
+</pre>
+</p>
 <?php
 
 $url = getUrl('http://mdntutorial.pythonanywhere.com/');
