@@ -5,7 +5,7 @@ require_once "names.php";
 
 use Goutte\Client;
 
-$check = webauto_get_check_full();
+$check = webauto_get_check_full_by_link();
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
 $shuffled = $MT->shuffle($names);
