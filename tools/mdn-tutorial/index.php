@@ -143,10 +143,23 @@ function fatalHandler() {
 }
 register_shutdown_function("fatalHandler");
 
-// Assume try / catch is in the script
 if ( $assn && isset($assignments[$assn]) ) {
     ob_start();
-    include($assn);
+    try {
+        include($assn);
+    } catch(Exception $e) { // Catch and eat expected throws...
+        $message = $e->getMessage();
+        if ( strpos($message,'Did not find form') === 0 ) {
+            // pass
+        } else if ( strpos($message,'Did not find anchor') === 0 ) {
+            // pass
+        } else if ( strpos($message,'Did not find form field') === 0 ) {
+            // pass
+        } else { // Unexpected...
+            error_log("Unexpected exception: ".get_class($e)." Message=".$e->getMessage());
+            throw $e; // rethrow
+        }
+    }
     $ob_output = ob_get_contents();
     ob_end_clean();
     echo($ob_output);
