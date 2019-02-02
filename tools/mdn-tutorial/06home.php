@@ -155,7 +155,7 @@ if ( $status != 200 ) {
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
-$perfect = 21;
+$perfect = 20;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
