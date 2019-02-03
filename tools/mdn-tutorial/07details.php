@@ -36,17 +36,10 @@ Account: dj4e
 </pre>
 </p>
 <p>
-You need to one or both of the following lines to your <b>base_generic.html</b> file within the 
-<b>&lt;head&gt;</b> area:
-<pre>
-<?= htmlentities($meta) ?>
-</pre>
-Make sure to put this all on one line and with no extra spaces within the tag.
-</p>
-<p>
-You should still have an author and book from the previous tutorial:
+You should still have the meta tag, an author and book from the previous tutorial:
 </p>
 <pre>
+<?= htmlentities($meta) ?> 
 Author: <?= htmlentities($full_name) ?> 
 Book: <?= htmlentities($book_title) ?>
 </pre>

@@ -38,13 +38,8 @@ You can use any email address you like.
 <p>
 Make an Author with the following name (first, last):<br/>
 <pre>
-<?= htmlentities($full_name) ?>
-</pre>
-</p>
-<p>
-Also add a "Science Fiction" book by that author with a title of:<br/>
-<pre>
-<?= htmlentities($book_title) ?>
+Author: <?= htmlentities($full_name) ?> 
+Book: <?= htmlentities($book_title) ?> 
 </pre>
 </p>
 <?php
