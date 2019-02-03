@@ -1,4 +1,4 @@
-DJango Forms and Authentication
+Django Forms and Authentication
 ===============================
 
 For this task, we will go back to the previous tutorial and add a view
@@ -172,6 +172,6 @@ it all and tag it with a tag like "crud"
 Congratulations
 ---------------
 
-If you have made it this far, you have seen a lot of the patterns used in developing a DJango application.
+If you have made it this far, you have seen a lot of the patterns used in developing a Django application.
 Hopefully you learned some of it along the way as you move into building your own applications from scratch
 going forward.

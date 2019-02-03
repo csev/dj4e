@@ -1,4 +1,4 @@
-DJango Admin Site
+Django Admin Site
 =================
 
 Our next step is to explore the LocalLibrary administration web site that

@@ -1,4 +1,4 @@
-DJango Models
+Django Models
 =============
 
 Our next step is to add some models to our LocalLibrary application so we can store

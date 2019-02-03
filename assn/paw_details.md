@@ -1,4 +1,4 @@
-DJango Detail Pages
+Django Detail Pages
 ===================
 
 In this assignment we will add detail pages for books and authors.
@@ -36,7 +36,7 @@ Complete the following sections of the Views tutorial:
         class BookDetailView(generic.DetailView):
             model = Book
 
-    Since list and detail views are so common in programming DJango provides us classes for us to reuse/extend.
+    Since list and detail views are so common in programming Django provides us classes for us to reuse/extend.
     This saves us a lot of typing almost the same thing over and over again.
 
 * You will have to make the `catalog` folder under the `templates` folder

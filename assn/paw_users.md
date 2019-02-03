@@ -1,4 +1,4 @@
-DJango Users and Authentication
+Django Users and Authentication
 ===============================
 
 In this assignment we will add some non-admin users, and the code for them to log in and log out to

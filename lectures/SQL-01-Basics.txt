@@ -1,4 +1,4 @@
-DJango for Everybody Database Handout - Command line SQLite
+Django for Everybody Database Handout - Command line SQLite
 
 https://www.dj4e.com/lectures/SQL-01-Basics.txt
 

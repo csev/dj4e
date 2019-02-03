@@ -74,7 +74,7 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("paw_install.md") ?>>Installing DJango</option>
+  <option <?= x_sel("paw_install.md") ?>>Installing Django</option>
   <option <?= x_sel("paw_github.md") ?>>Using GitHub</option>
   <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
@@ -82,9 +82,9 @@ function onSelect() {
   <option <?= x_sel("paw_admin.md") ?>>DJAngo Admin</option>
   <option <?= x_sel("paw_home.md") ?>>Home Page</option>
   <option <?= x_sel("paw_details.md") ?>>Detail Pages</option>
-  <option <?= x_sel("paw_sessions.md") ?>>DJango Sessions</option>
-  <option <?= x_sel("paw_users.md") ?>>DJango Users</option>
-  <option <?= x_sel("paw_forms.md") ?>>DJango Forms</option>
+  <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
+  <option <?= x_sel("paw_users.md") ?>>Django Users</option>
+  <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
 </select>
 </div>
 <?php
@@ -97,17 +97,17 @@ This is a set of supplementary documentation for use with this
 web site.
 </p>
 <ul>
-<li><a href="paw_install.md">Installing DJango</a></li>
+<li><a href="paw_install.md">Installing Django</a></li>
 <li><a href="paw_github.md">Using GitHub</a></li>
 <li><a href="dj_install.md">Installing Django Locally</a></li>
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
-<li><a href="paw_models.md">DJango Models</a></li>
-<li><a href="paw_admin.md">DJango Admin</a></li>
+<li><a href="paw_models.md">Django Models</a></li>
+<li><a href="paw_admin.md">Django Admin</a></li>
 <li><a href="paw_home.md">Home Page</a></li>
 <li><a href="paw_details.md">Detail Pages</a></li>
-<li><a href="paw_sessions.md">DJango Sessions</a></li>
-<li><a href="paw_users.md">DJango Users</a></li>
-<li><a href="paw_forms.md">DJango Forms</a></li>
+<li><a href="paw_sessions.md">Django Sessions</a></li>
+<li><a href="paw_users.md">Django Users</a></li>
+<li><a href="paw_forms.md">Django Forms</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using

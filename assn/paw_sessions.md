@@ -1,4 +1,4 @@
-DJango Sessions
+Django Sessions
 ===============
 
 In this assignment we will add  a few lines of code to demonstrate sessions.

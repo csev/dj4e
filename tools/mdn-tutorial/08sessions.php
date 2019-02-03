@@ -21,7 +21,7 @@ $book_title = "How the Number 42 and $title_name are Connected";
 $meta = '<meta name="wa4e" content="'.$check.'">';
 
 $adminpw = substr(getMD5(),4,9);
-line_out("Exploring DJango Views (MDN)");
+line_out("Exploring Django Views (MDN)");
 ?>
 <a href="../../assn/paw_sessions.md" target="_blank">
 https://www.dj4e.com/assn/paw_sessions.md</a>

@@ -23,7 +23,7 @@ $meta = '<meta name="wa4e" content="'.$check.'">';
 $adminpw = substr(getMD5(),4,9);
 $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
-line_out("Exploring DJango Forms (MDN)");
+line_out("Exploring Django Forms (MDN)");
 ?>
 <a href="../../assn/paw_forms.md" target="_blank">
 https://www.dj4e.com/assn/paw_forms.md</a>

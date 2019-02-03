@@ -17,7 +17,7 @@ $book_title = "How the Number 42 and $title_name are Connected";
 $adminuser = 'dj4e';
 $adminpw = substr(getMD5(),4,9);
 
-line_out("Exploring DJango Admin (MDN)");
+line_out("Exploring Django Admin (MDN)");
 ?>
 <a href="../../assn/paw_admin.md" target="_blank">
 https://www.dj4e.com/assn/paw_admin.md</a>

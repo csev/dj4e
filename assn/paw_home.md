@@ -1,4 +1,4 @@
-DJango Home Page
+Django Home Page
 ================
 
 Ironically, we are several steps into this tutorial and we *finally* get

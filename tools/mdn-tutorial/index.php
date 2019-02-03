@@ -16,14 +16,14 @@ if ( SettingsForm::handleSettingsPost() ) {
 
 // All the assignments we support
 $assignments = array(
-    '01install.php' => 'Getting DJango installed and up and running',
+    '01install.php' => 'Getting Django installed and up and running',
     '03skeleton.php' => 'Setting up the Skeleton site',
     '05admin.php' => 'Exploring the Admin site',
-    '06home.php' => 'DJango Home Page',
-    '07details.php' => 'DJango Details Pages',
-    '08sessions.php' => 'DJango Sessions',
-    '09users.php' => 'DJango Users and Authentication',
-    '10forms.php' => 'DJango Forms',
+    '06home.php' => 'Django Home Page',
+    '07details.php' => 'Django Details Pages',
+    '08sessions.php' => 'Django Sessions',
+    '09users.php' => 'Django Users and Authentication',
+    '10forms.php' => 'Django Forms',
 );
 
 $oldsettings = Settings::linkGetAll();

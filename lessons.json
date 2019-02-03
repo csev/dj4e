@@ -1,5 +1,5 @@
 {
-"title": "DJango for Everybody (DJ4E)",
+"title": "Django for Everybody (DJ4E)",
 "description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
 "count": true,
 "required_modules": [
@@ -56,28 +56,24 @@
     ]
 },
 {
-    "title": "Installing DJango on PythonAnywhere",
+    "title": "Installing Django on PythonAnywhere",
     "anchor": "paw_install",
     "icon" : "fa-clone",
-    "description": "This walks through the installation steps for DJango on PythonAnywhere.  We also provide instructions for submitting an application on your local computer for grading.",
+    "description": "This walks through the installation steps for Django on PythonAnywhere.  If you cannot use PythonAnywhere, you can also install Django locally and submit assignments your local computer for grading.  Installing Django locally will be described in an upcoming lesson.",
     "videos" : [
     {
-        "title": "Installing DJango on PythonAnywhere",
+        "title": "Installing Django on PythonAnywhere",
         "youtube": "lPpIubhqWR4"
     },
     {
-        "title": "Fixing DJango Errors on PythonAnywhere",
+        "title": "Fixing Django Errors on PythonAnywhere",
         "youtube": "WE2eJzD6PJ8"
-    },
-    {
-        "title": "Submitting Assignments Using ngrok",
-        "youtube": "WLWuMjDDSa4"
     }
-   ],
+  ],
     "assignment" : "https://www.dj4e.com/assn/paw_install.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Installing DJango",
+        "title" : "Auto-grader: Installing Django",
         "launch" : "tools/mdn-tutorial/",
         "resource_link_id" : "paw_install",
         "custom" : [
@@ -94,7 +90,7 @@
             "href" : "https://www.pythonanywhere.com/"
         },
         {
-            "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
+            "title" : "Setting up a Django Environment (Mozilla Developer Network)",
             "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
         },
         {
@@ -108,10 +104,10 @@
     ]
 },
 {
-    "title": "Putting your DJango Projects into GitHub",
+    "title": "Putting your Django Projects into GitHub",
     "anchor": "paw_github",
     "icon" : "fa-github",
-    "description": "This optional exercise uploads your DJango projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
+    "description": "This optional exercise uploads your Django projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
     "videos" : [
     {
         "title": "Using GitHub with Django and PythonAnywhere",
@@ -139,7 +135,7 @@
     ]
 },
 {
-    "title": "Installing DJango skeleton site",
+    "title": "Installing Django skeleton site",
     "anchor": "paw_skeleton",
     "icon" : "fa-cubes",
     "description": "Skeleton Web Site Tutorial from Mozilla Developers Network.",
@@ -228,7 +224,7 @@
     ]
 },
 {
-    "title": "DJango Models",
+    "title": "Django Models",
     "anchor": "paw_modules",
     "icon" : "fa-database",
     "description": "This exercise adds models for the LocalLibrary web site.",
@@ -284,10 +280,10 @@
     ]
 },
 {
-    "title": "DJango admin site",
+    "title": "Django admin site",
     "anchor": "paw_admin",
     "icon" : "fa-university",
-    "description": "This exercise works through the DJango admin interface for the LocalLibrary web site.",
+    "description": "This exercise works through the Django admin interface for the LocalLibrary web site.",
     "videos" : [
     {
         "title": "Django Admin",
@@ -324,10 +320,10 @@
     ]
 },
 {
-    "title": "Installing DJango locally",
+    "title": "Installing Django locally",
     "anchor": "paw_local",
     "icon" : "fa-clone",
-    "description": "This is an optional exercise to install DJango locally to both speed your development cycles and to play with the sample code.   You can submit your assignments from your local computer using a technology called 'ngrok'.",
+    "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develpp more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
     "videos" : [
     {
         "title": "Submitting Assignments Using ngrok",
@@ -337,7 +333,7 @@
     "assignment" : "https://www.dj4e.com/assn/dj_install.md",
     "references" : [
         {
-            "title" : "Setting up a DJango Environment (Mozilla Developer Network)",
+            "title" : "Setting up a Django Environment (Mozilla Developer Network)",
             "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
         },
         {
@@ -347,13 +343,13 @@
     ]
 },
 {
-    "title": "DJango home page",
+    "title": "Django home page",
     "anchor": "paw_home",
     "icon" : "fa-home",
     "description": "This exercise builds our first top level view (the home page) for the LocalLibrary web site.",
     "videos" : [
     {
-        "title": "DJango Home Page",
+        "title": "Django Home Page",
         "youtube": "zpOIeV9HLpc"
     }
    ],
@@ -379,13 +375,13 @@
     ]
 },
 {
-    "title": "DJango detail",
+    "title": "Django detail",
     "anchor": "paw_detail",
     "icon" : "fa-align-left",
     "description": "This exercise builds detail views for the LocalLibrary web site.",
     "videos" : [
     {
-        "title": "DJango Detail Pages",
+        "title": "Django Detail Pages",
         "youtube": "sbu_KNI4Hqk"
     }
    ],
@@ -423,7 +419,7 @@
     ]
 },
 {
-    "title": "DJango sessions",
+    "title": "Django sessions",
     "anchor": "paw_sessions",
     "icon" : "fa-cube",
     "description": "This exercise uses sessions on the LocalLibrary web site.  This exercises is quite simple so there is no video walkthrough.",
@@ -449,13 +445,13 @@
     ]
 },
 {
-    "title": "DJango Users and Authentication",
+    "title": "Django Users and Authentication",
     "anchor": "paw_users",
     "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
     "videos" : [
     {
-        "title": "DJango Users",
+        "title": "Django Users",
         "youtube": "u5nW_2L1ACA"
     }
    ],
@@ -481,21 +477,21 @@
     ]
 },
 {
-    "title": "DJango Forms and CRUD",
+    "title": "Django Forms and CRUD",
     "anchor": "paw_forms",
     "icon" : "fa-database",
     "description": "This exercise ibuilds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "videos" : [
     {
-        "title": "DJango Forms - All Books",
+        "title": "Django Forms - All Books",
         "youtube": "IH1aNL2tYIk"
     },
     {
-        "title": "DJango Forms - Renewal",
+        "title": "Django Forms - Renewal",
         "youtube": "I8LwvFPi31M"
     },
     {
-        "title": "DJango Forms - CRUD",
+        "title": "Django Forms - CRUD",
         "youtube": "VUuV9bENvck"
     }
    ],

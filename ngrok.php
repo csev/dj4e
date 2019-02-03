@@ -19,7 +19,7 @@ they have a globally accessible URL like
 and can be directly submitted to the autograder for testing.
 </p>
 <p>
-For whatever reason, you might prefer to install and run DJango locally on your computer.
+For whatever reason, you might prefer to install and run Django locally on your computer.
 This is a fine solution for the course, but to submit the applications on your local computer
 to the autograder, you need to use a tool like 
 <a href="https://www.ngrok.org" target="_blank">ngrok</a> or
@@ -44,7 +44,7 @@ explain how ngrok works and why ngrok is needed to allow access to your local we
 Download the ngrok.zip file to your <b>Downloads</b> folder and then extract it by double clicking on
 the downloaded file and it will unzip and produce a single file called <b>ngrok</b>.  You can put this 
 file anywhere on your computer but for now we will just execute it from the <b>Downloads</b> folder.
-Make sure your DJango application is up and running and then 
+Make sure your Django application is up and running and then 
 open up a Terminal Window as follows:
 <pre>
 $ cd Downloads/
@@ -90,7 +90,7 @@ the downloaded file and selecting "Extract All".  It will make a folder like "ng
 and in that folder, you will find a single file named <b>ngrok.exe</b>.  You 
 You can put this 
 file anywhere on your computer but for now we will just execute it from the <b>Downloads</b> folder.
-Make sure your DJango application is up and running and then 
+Make sure your Django application is up and running and then 
 open up a Command Line window as follows:
 <pre>
 C:\...&gt; cd Downloads\ngrok_2.0.19_windows_386

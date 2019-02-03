@@ -1,7 +1,7 @@
 Django Database Web Site Project
 ================================
 
-In this project you will develop a database-backed web site using DJango. The goal is an open ended project that you could use as part of your portfolio and give you experience in developing something that you have defined.
+In this project you will develop a database-backed web site using Django. The goal is an open ended project that you could use as part of your portfolio and give you experience in developing something that you have defined.
 
 You should develop the project in github as it is important to track effort as the project evolves.  It is up to you as to whether you want a public or private github repository.  In general it is acceptable and gently encouraged to use a public repository as public github work is a valuable addition to your portfolio.
 

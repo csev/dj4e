@@ -1,4 +1,4 @@
-Storing your DJango Projects in GitHub
+Storing your Django Projects in GitHub
 ======================================
 
 This excercise shows how to store your assignments in a private repository in 

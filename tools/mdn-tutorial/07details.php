@@ -26,7 +26,7 @@ $meta = '<meta name="wa4e" content="'.$check.'">';
 $meta_new = '<meta name="wa4e" content="'.$check_new.'">';
 
 $adminpw = substr(getMD5(),4,9);
-line_out("Exploring DJango Views (MDN)");
+line_out("Exploring Django Views (MDN)");
 ?>
 <a href="../../assn/paw_details.md" target="_blank">
 https://www.dj4e.com/assn/paw_details.md</a>

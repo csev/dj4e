@@ -11,10 +11,10 @@ require "nav.php";
 <div style="margin-left: 10px; float:right">
 <img src="images/Chuck_16x9_gears_DJ4E.jpg" onclick='window.location.href="https://www.youtube.com/watch?v=lPpIubhqWR4&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=2";' style="padding: 5px; width:360px;">
 </div>
-<h1>DJango for Everybody</h1>
+<h1>Django for Everybody</h1>
 <p>
 This web site is building a set of free / OER materials to help students
-learn the DJango web development framework.  The site is 
+learn the Django web development framework.  The site is 
 <b>under construction</b> but you are welcome to make use of it as
 it is being built.
 </p>
@@ -27,7 +27,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django</a>.
 <p>
 We use the free 
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> hosting environment
-to deploy and test our DJango projects and applications.
+to deploy and test our Django projects and applications.
 </p>
 <h2>Technology</h2>
 <p>
