@@ -401,6 +401,10 @@
     ],
     "references" : [
         {
+            "title" : "Review: Object-Oriented Programming in Python",
+            "href": "https://www.py4e.com/lessons/Objects"
+        },
+        {
             "title" : "Detail Pages Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views"
         },
