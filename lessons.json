@@ -407,6 +407,10 @@
         {
             "title" : "Detail Pages Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views"
+        },
+        {
+            "title" : "Django Documentation: Generic display views",
+            "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/"
         }
     ]
 },
