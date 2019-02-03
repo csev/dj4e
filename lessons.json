@@ -411,6 +411,14 @@
         {
             "title" : "Django Documentation: Generic display views",
             "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/"
+        },
+        {
+            "title" : "Django Documentation: Generic list display views",
+            "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
+        },
+        {
+            "title" : "Django Documentation: Generic detail display views",
+            "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
         }
     ]
 },
