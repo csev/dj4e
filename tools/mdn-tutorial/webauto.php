@@ -219,18 +219,6 @@ function autoToggle() {
     echo("<script>dataToggle('$div_id');</script>\n");
 }
 
-function webauto_get_check_by_link() {
-    global $USER, $LINK, $CONTEXT;
-    $check = substr(webauto_get_check_full_by_link(),0,8);
-    return $check;
-}
-
-function webauto_get_check_full_by_link() {
-    global $USER, $LINK, $CONTEXT;
-    $check = md5($USER->id+$LINK->id+$CONTEXT->id);
-    return $check;
-}
-
 function webauto_get_check() {
     $check = substr(webauto_get_check_full(),0,8);
     return $check;
