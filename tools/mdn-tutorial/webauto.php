@@ -19,8 +19,13 @@ if ( $dueDate->message ) {
 }
 
 function webauto_get_html($crawler) {
-    if ( $crawler == false ) return false;
-    $html = $crawler->html();
+    try {
+        $html = $crawler->html();
+    }
+    catch (Exception $e) {
+        error_log("Could not find HTML ".$e->getMessage());
+        throw new Exception("Could not retrieve HTML from page");
+    }
     showHTML("Show retrieved page",$html);
     return $html;
 }
@@ -399,7 +404,7 @@ function webauto_search_for($html, $needle)
         markTestPassed("Found '$needle'");
         return true;
     } else if ( stripos($html,$needle) > 0 ) {
-        error_out("Warning: Found 'needle' but with incorrect case");
+        error_out("Warning: Found '$needle' but with incorrect case");
         markTestPassed("Found '$needle'");
         return true;
     } else {

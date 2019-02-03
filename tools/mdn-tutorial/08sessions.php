@@ -5,9 +5,7 @@ require_once "names.php";
 
 use Goutte\Client;
 
-// TODO: Make this work on 06 07
 $code = $USER->id+$CONTEXT->id;
-
 $check = webauto_get_check_full();
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
@@ -31,31 +29,13 @@ https://www.dj4e.com/assn/paw_sessions.md</a>
 ?>
 </p>
 <p>
-You need to add the following line to your <b>base_generic.html</b> file within the
-<b>&lt;head&gt;</b> area:
-<pre>
-<?= htmlentities($meta) ?>
-</pre>
-Make sure to put this all on one line and with no extra spaces within the tag.  This should stop
-changing from now on. (sorry).
-</p>
-<p>
-Make an Author with the following name (first, last):<br/>
-<pre>
-<?= htmlentities($full_name) ?>
-</pre>
-</p>
-<p>
-Also add a "Science Fiction" book by that author with a title of:<br/>
-<pre>
-<?= htmlentities($book_title) ?>
-</pre>
-</p>
-<!--
-<p>
 You should still have the identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area and an author and book from the previous tutorial autograder.
+<pre>
+<?= htmlentities($meta) ?>  
+Author: <?= htmlentities($full_name) ?>  
+Book: <?= htmlentities($book_title) ?>  
+</pre>
 </p>
--->
 
 <?php
 

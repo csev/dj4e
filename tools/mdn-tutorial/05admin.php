@@ -5,6 +5,9 @@ require_once "names.php";
 
 use Goutte\Client;
 
+// Use link-independent code
+$code = $USER->id+$CONTEXT->id;
+
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
 $shuffled = $MT->shuffle($names);
 $first_name = $shuffled[0];
@@ -123,8 +126,8 @@ if ( strpos($html,$last_name) < 1 && strpos($html,$first_name) < 1 ) {
 
 line_out('Checking to see if the Authors detail page was altered');
 line_out("  list_display = ('last_name', ...");
-webauto_search_for($html, 'DATE OF BIRTH');
-webauto_search_for($html, 'LAST NAME');
+webauto_search_for($html, 'Date of birth');
+webauto_search_for($html, 'Last name');
 
 // Load the books page
 $crawler = webauto_get_url($client, $books_url);
@@ -143,12 +146,12 @@ if ( strpos($html,$book_title) < 1 ) {
 
 line_out('Checking to see if the Books list page was altered');
 line_out("  list_display = ('title', 'author',...");
-webauto_search_for($html, 'TITLE');
-webauto_search_for($html, 'AUTHOR');
+webauto_search_for($html, 'Title');
+webauto_search_for($html, 'Author');
 
 line_out('Checking to see if models.py was modified to add Genre to list display');
 line_out("  def display_genre(self): ....");
-webauto_search_for($html, 'GENRE');
+webauto_search_for($html, 'Genre');
 
 // Load the bookinstancess page
 $crawler = webauto_get_url($client, $instance_url);
@@ -157,7 +160,7 @@ $html = webauto_get_html($crawler);
 markTestPassed('Bookinstances admin page retrieved');
 
 line_out('Checking to see if list_filter was added to Bookinstances');
-webauto_search_for($html, 'FILTER');
+webauto_search_for($html, 'Filter');
 webauto_search_for($html, 'By due back');
 webauto_search_for($html, 'This year');
 

@@ -155,6 +155,8 @@ if ( $assn && isset($assignments[$assn]) ) {
             // pass
         } else if ( strpos($message,'Did not find form field') === 0 ) {
             // pass
+        } else if ( strpos($message,'Could not retrieve HTML') === 0 ) {
+            // pass
         } else { // Unexpected...
             error_log("Unexpected exception: ".get_class($e)." Message=".$e->getMessage());
             throw $e; // rethrow
