@@ -7,7 +7,7 @@ DJ-01-Hosting + Structure
 
 DJ-02-Model-Table
    users
-DJ-03-Many-To-One
+DJ-03-One-To-Many
    tracks - shell
 
 DJ-04-Templates-Views

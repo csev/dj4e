@@ -263,11 +263,11 @@
         },
         {
             "title" : "Django Single Table Model Sample",
-            "href": "https://www.dj4e.com/lectures/DJ-03-Model-Single.txt"
+            "href": "https://www.dj4e.com/lectures/DJ-02-Model-Single.txt"
         },
         {
             "title" : "Django Many-To-One Model Sample",
-            "href": "https://www.dj4e.com/lectures/DJ-04-Model-One.txt"
+            "href": "https://www.dj4e.com/lectures/DJ-03-One-To-Many.txt"
         },
         {
             "title" : "Command Shell for SQLite",
