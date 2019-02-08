@@ -679,7 +679,7 @@
 {
     "title": "Project Overview",
     "anchor": "pr_description",
-    "icon" : "fa-css3",
+    "icon" : "fa-address-card",
     "description": "Introduce your project to the rest of the class.",
     "assignment" : "https://www.dj4e.com/project/01_description.md",
     "references" : [
@@ -708,6 +708,61 @@
     },
     {
       "title": "Please describe your project in a few paragraphs.",
+      "type": "code",
+      "code": "markup"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
+        }
+        ]
+},
+{
+    "title": "Project Milestone 2",
+    "anchor": "pr_02_milestone",
+    "icon" : "fa-comment",
+    "description": "Introduce your project to the rest of the class.",
+    "assignment" : "https://www.dj4e.com/project/02_revision.md",
+    "references" : [
+        {
+            "title" : "Project Specification",
+            "href" : "https://www.dj4e.com/project/00_overview.md"
+        }
+    ],
+    "lti" : [
+        {
+        "title": "Peer Graded: Project Revision",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "pr_02_milestone",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Milestone 2: Revise your Project Description",
+  "description": "For this milestone, you will revise your 1-2 paragraph summary of your project idea and add a short paragraph describing what the changes are and why you are making the changes.  If you are not making any changes briefly describe anything you have learned or improved on your description.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "URL of your GitHub Repo - If it is private just put in your github account url and mention that your repo is private below",
+      "type": "url"
+    },
+    {
+      "title": "Please describe your project (again) in a few paragraphs.",
       "type": "code",
       "code": "markup"
     }

@@ -2,7 +2,8 @@ Milestone 2: Revised Description
 ================================
 
 For this milestone, you will revise your 1-2 paragraph summary of your project idea and add a short paragraph
-describing what the changes are and why you are making the changes.  If you are not making any changes briefly describe anything you have learned or improved on your descirption.
+describing what the changes are and why you are making the changes.  If you are not making any changes briefly
+describe anything you have learned or improved on your description.
 
 * If you are basing the project on a data set, give the data set you have found or the kind of data set you are looking for.  If you are thinking of building something similar to an existing data-backed site, linclude which site(s) you are looking at.
 
