@@ -484,7 +484,7 @@
     "title": "Django Forms and CRUD",
     "anchor": "paw_forms",
     "icon" : "fa-database",
-    "description": "This exercise ibuilds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
+    "description": "This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "videos" : [
     {
         "title": "Django Forms - All Books",

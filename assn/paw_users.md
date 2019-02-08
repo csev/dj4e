@@ -19,6 +19,8 @@ create another one, use the following commands in a console shell:
 * Add the account authentication URLs - make sure to reload your application after you change
 the `urls.py` file.  The MDN tutorial does not remind you each time you need to Reload the application.
 Tend toward reloading too often versus not too often.  When in doubt, reload :)
+If you are developing locally, it auto-reloads quite a bit but sometimes it is
+helpful to abort and restart the `runserver` command.
 
 * Update `settings.py` to add a reference to the new project-wide `templates` folder - Make
 sure to reload your application and test.  When you change configuration files - you might break your entire
