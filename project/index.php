@@ -76,6 +76,7 @@ function onSelect() {
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("00_overview.md") ?>>Project Overview</option>
   <option <?= x_sel("01_description.md") ?>>Milestone: Description</option>
+  <option <?= x_sel("02_revision.md") ?>>Milestone: Revised Description</option>
 </select>
 </div>
 <?php
@@ -90,6 +91,7 @@ web site.
 <ul>
 <li><a href="00_overview.md">Project Overview</a></li>
 <li><a href="01_description.md">Milestone: Description</a></li>
+<li><a href="02_revision.md">Milestone: Revised Description</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
