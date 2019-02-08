@@ -114,7 +114,9 @@ $crawler = webauto_get_url($client, $all_url, 'Retrieving the "All Borrowed" pag
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $book_title);
 
-$when_long = $datetime->format('M. d, Y');
+// d = Day of month with leading zeros
+// j = Day of month without leading zeros
+$when_long = $datetime->format('M. j, Y');
 $retval = webauto_search_for($html, $when_long);
 
 // Clean up a previously created authors if they are there
