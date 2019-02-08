@@ -1,9 +1,9 @@
 Web-01-HTTP - Add codes (including redirect)
-  code/http  - Add a redirect sample
-  getpost - http post / get
+  code/http  - Client / server / redirect
 
 DJ-01-Hosting + Structure
-   hello
+   dj4e / hello
+   getpost - http post / get
 
 DJ-02-Model-Table
    users
@@ -16,9 +16,9 @@ DJ-04-Templates-Views
 DJ-05-MVC  ?? Should this be 04 or 05?
 
 DJ-06-Cookies-Sessions
-    generic generic views - cats/dogs/horses/autos
-    session
+   generic generic views - cats/dogs/horses/autos
+   session
 
 DJ-07-CRUD
-    form - forms.py
-    autoscrud -  under construction
+   form - forms.py
+   autoscrud -  under construction

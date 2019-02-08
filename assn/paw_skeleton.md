@@ -51,8 +51,9 @@ Edit the file `locallibrary/urls.py` and append the following lines to the file:
     #Add URL maps to redirect the base URL to our application
     from django.views.generic import RedirectView
     urlpatterns += [
-        path('', RedirectView.as_view(url='/catalog/', permanent=True)),
+        path('', RedirectView.as_view(url='/catalog/')),
     ]
+    # Do not add ", permanent=True" to the above line (different than the MDN tutorial)
 
 Create the file `catalog/urls.py` and put the following lines in the file:
     
