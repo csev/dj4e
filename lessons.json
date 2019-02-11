@@ -18,10 +18,12 @@
     "slides": "lectures/Web-01-HTTP.pptx",
     "videos" : [
         {
+            "TODO" : "Re-record",
             "title" : "Web Applications and the Request/Response Cycle",
             "youtube" : "6Vyn7qhV2xs"
         },
         {
+            "TODO" : "Re-record",
             "title" : "Understanding Browser Developer Mode",
             "youtube" : "kL3hYPVnhjQ"
         }
@@ -499,10 +501,10 @@
         "youtube": "VUuV9bENvck"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_users.md",
+    "assignment" : "https://www.dj4e.com/assn/paw_forms.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Django Users",
+        "title" : "Auto-grader: Django Forms and CRUD",
         "launch" : "tools/mdn-tutorial/",
         "resource_link_id" : "paw_forms",
         "custom" : [
