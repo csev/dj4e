@@ -5,8 +5,6 @@ if ( ! defined('COOKIE_SESSION') ) define('COOKIE_SESSION', true);
 require_once "../tsugi/config.php";
 require_once "Parsedown.php";
 
-require_once "../top.php";
-require_once "../nav.php";
 
 if ( ! function_exists('endsWith') ) {
 function endsWith($haystack, $needle) {
@@ -22,9 +20,16 @@ if ( isset($parts['path']) ) $url = $parts['path'];
 $pieces = explode('/',$url);
 
 $file = false;
+$svg = false;
 $contents = false;
 if ( $pieces >= 2 ) {
    $file = $pieces[count($pieces)-1];
+   if ( endsWith($file, '.svg') ) {
+        $contents = file_get_contents('svg/'.$file);
+        header('Content-Type: image/svg+xml');
+        echo($contents);
+        return;
+   }
    if ( ! endsWith($file, '.md') ) $file = false;
    if ( ! $file || ! file_exists($file) ) $file = false;
 }
@@ -43,6 +48,8 @@ function x_sel($file) {
     return $retval;
 }
 
+require_once "../top.php";
+require_once "../nav.php";
 
 $OUTPUT->header();
 ?>
@@ -74,7 +81,7 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("paw_install.md") ?>>Installing Django</option>
+  <option <?= x_sel("paw_install.md") ?>>Django and PythonAnywhere</option>
   <option <?= x_sel("paw_github.md") ?>>Using GitHub</option>
   <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
@@ -85,6 +92,8 @@ function onSelect() {
   <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
   <option <?= x_sel("paw_users.md") ?>>Django Users</option>
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
+  <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
+  <option <?= x_sel("dj4e_autos.md") ?>>Autos Crud</option>
 </select>
 </div>
 <?php
@@ -97,7 +106,7 @@ This is a set of supplementary documentation for use with this
 web site.
 </p>
 <ul>
-<li><a href="paw_install.md">Installing Django</a></li>
+<li><a href="paw_install.md">Django and PythonAnywhere</a></li>
 <li><a href="paw_github.md">Using GitHub</a></li>
 <li><a href="dj_install.md">Installing Django Locally</a></li>
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
@@ -108,6 +117,8 @@ web site.
 <li><a href="paw_sessions.md">Django Sessions</a></li>
 <li><a href="paw_users.md">Django Users</a></li>
 <li><a href="paw_forms.md">Django Forms</a></li>
+<li><a href="dj4e_hello.md">Hello World</a></li>
+<li><a href="dj4e_autos.md">Auto CRUD</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using

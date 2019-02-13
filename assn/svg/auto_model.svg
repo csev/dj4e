@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 290 120"
+    style="max-width: 500px;">
+  <defs>
+    <marker id="arrowhead" markerWidth="5" markerHeight="3.5" 
+    refX="0" refY="1.75" orient="auto">
+      <polygon points="0 0, 5 1.75, 0 3.5" />
+    </marker>
+  </defs>
+  <svg x="10" y="10">
+    <rect x="0" y="0" height="100" width="100" style="stroke:#000000;fill: #00dd00"/>
+    <text x="15" y="25" font-size="15" font-family="courier new">
+    <tspan>Autos</tspan>
+    <tspan dy="15" x="15">nickname</tspan>
+    <tspan dy="15" x="15">make</tspan>
+    </text>
+  </svg>
+  <svg x="180" y="10">
+    <rect x="0" y="0" height="100" width="100" style="stroke:#000000;fill: #00dd00"/>
+    <text x="15" y="25" font-size="15" font-family="courier new">
+    <tspan>Make</tspan>
+    <tspan dy="15" x="15">name</tspan>
+    </text>
+  </svg>
+  <line x1="85" y1="60" x2="175" y2="35"
+    stroke="black" stroke-width="3" marker-end="url(#arrowhead)" />
+</svg>
