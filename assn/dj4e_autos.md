@@ -2,7 +2,7 @@ Autos CRUD
 ==========
 
 This assignment is to build a fully working CRUD (Create, Read, Update, and Delete)
-application to manage automobiles and their makes (i.e. Ford, Hundai, Toyota, 
+application to manage automobiles and their makes (i.e. Ford, Hundai, Toyota,
 Tata, Audi, etc.).
 
 This application will be similar to:
@@ -30,9 +30,10 @@ The `autos` project is the first of several applications we will add to the `dj4
 Extending the home application
 ------------------------------
 
-Since we will have a number of applications we will use the `home` application to provide
-convienent urls to switch between applications.   If you did not use a template for your 
-home page, it would probably be a good idea to switch to a template as shown in 
+Since we will build a number of applications in this project, we will use the `home`
+application to provide convienent urls to switch between applications.   If you did
+not use a template for your home page, it would probably be a good idea to switch
+to the template pattern as shown in:
 
 https://github.com/csev/dj4e-samples/blob/master/templates/home/urls.py
 
@@ -57,11 +58,11 @@ The essense of this task is to just copy the code from:
 
 https://github.com/csev/dj4e-samples/tree/master/dj4ecrud
 
-and make it work in youe `autos` project.  
+and make it work in your `autos` project.
 
 Here are some tasks:
 
-* Edit `dj4e/urls.py` to route `/autos` urls to `autos/urls.py` file 
+* Edit `dj4e/urls.py` to route `/autos` urls to `autos/urls.py` file
 (<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/dj4ecrud/urls.py" target="_blank">Example</a>)
 
 * Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
