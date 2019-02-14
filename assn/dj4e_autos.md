@@ -62,7 +62,8 @@ and make it work in your `autos` project.
 
 Here are some tasks:
 
-* Edit `dj4e/urls.py` to route `/autos` urls to `autos/urls.py` file
+* Edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.  Also route the `accounts/` url to the 
+Django built in login features and add the `admin/` route so you can work with your data.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/dj4ecrud/urls.py" target="_blank">Example</a>)
 
 * Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
