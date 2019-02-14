@@ -64,7 +64,7 @@ reload your application.
 * Complete the <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#Example_%E2%80%94_listing_the_current_user's_books" target="_blank">Example — listing the current user's books</a>
 task - this is pretty intricate and will take some time.  This entails a change to the `models.py` and
 a migration in the command line.  Once you have changed the `models.py` file, running the following commands
-to updtae the database schema:
+to update the database schema:
 
         cd ~/django_projects/locallibrary/
         python3 manage.py makemigrations

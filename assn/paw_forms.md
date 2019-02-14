@@ -143,7 +143,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms#Generic_
 
 * Add the Create Update, and Delete views to `views.py` as described in the tutorial.  But we want to
 only allow logged in users to access these views.  If you want to take the extra step, you can create a new permission
-and use the `PermissionRequiredMixin` to be more fine-grained.  At a minimum, make sure that you have to be
+and use the `PermissionRequiredMixin` to be more fine-grained.  At a minimum, make sure that a user must be 
 logged in to do the CRUD operations.  
 
     Simply add the `LoginRequiredMixin` to each of your classes (we imported it earlier in the file)
