@@ -336,7 +336,7 @@ function webauto_get_href($crawler,$text)
     $html = $crawler->html();
     $msg = 'Did not find anchor tag with"'.$text.'"';
     if ( strpos($html, $text) === false) {
-        line_out($msg);
+        error_out($msg);
         throw new Exception($msg);
     }
 
