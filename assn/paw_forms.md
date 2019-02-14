@@ -77,10 +77,12 @@ and add the `catalog | book instance | Set book as returned` permission to the g
 * Add this to `templates/base_generic.html` right below 'My Borrowed'
 
         {% if perms.catalog.can_mark_returned %}
-        <li><a href="{% url 'all-borrowed'%}">All borrowed</a></li>   
+          <hr/>
+          <li>Staff</li>
+          <li><a href="{% url 'all-borrowed'%}">All borrowed</a></li>
         {% endif %}
 
-    Don't surround this with a `user.is_staff` test - just issue the link if the
+    Don't surround this with a `user.is_staff` test - just show the link if the
     user has the `catalog.can_mark_returned` permission.   We don't want our library
     staff to be able to access the '/admin' page.
 
