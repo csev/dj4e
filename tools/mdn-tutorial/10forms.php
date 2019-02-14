@@ -86,10 +86,10 @@ $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, 'User: '.$useraccount);
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
-$all_url = webauto_get_url_from_href($crawler,'All Borrowed');
+$all_url = webauto_get_url_from_href($crawler,'All borrowed');
 $authors_url = webauto_get_url_from_href($crawler,'All authors');
 
-$crawler = webauto_get_url($client, $all_url, 'Retrieving the "All Borrowed" page');
+$crawler = webauto_get_url($client, $all_url, 'Retrieving the "All borrowed" page');
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $book_title);
 
@@ -110,7 +110,7 @@ $crawler = webauto_get_url($client, $detail_url, 'Retrieving the detail page');
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $book_title);
 
-$crawler = webauto_get_url($client, $all_url, 'Retrieving the "All Borrowed" page');
+$crawler = webauto_get_url($client, $all_url, 'Retrieving the "All borrowed" page');
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $book_title);
 
