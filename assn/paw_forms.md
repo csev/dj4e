@@ -77,7 +77,7 @@ and add the `catalog | book instance | Set book as returned` permission to the g
 * Add this to `templates/base_generic.html` right below 'My Borrowed'
 
         {% if perms.catalog.can_mark_returned %}
-        <li><a href="{% url 'all-borrowed'%}">All Borrowed</a></li>   
+        <li><a href="{% url 'all-borrowed'%}">All borrowed</a></li>   
         {% endif %}
 
 * Then `Reload` the application and log in with an account that is in the group 'Library Staff'
