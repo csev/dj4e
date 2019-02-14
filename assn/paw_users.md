@@ -25,7 +25,7 @@ helpful to abort and restart the `runserver` command.
 * Update `settings.py` to add a reference to the new project-wide `templates` folder - Make
 sure to reload your application and test.  When you change configuration files - you might break your entire
 application so you want to reload on *each* configuration change so you can quickly figure out what went
-wrong and fix it.  You can use `git diff` to see what you changes  you have made and if something goes wrong, 
+wrong and fix it.  You can use `git diff` to see what you changes  you have made and if something goes wrong,
 you can always revert a file to your previous version and re-make your changes.
 
         get checkout locallibrary/settings.py
@@ -46,7 +46,7 @@ you can always revert a file to your previous version and re-make your changes.
     It should show uyou the name of the template it is looking for.
 
 
-* Add the template for `login.html` in the correct folder as described in the tutorial.  If you successfully 
+* Add the template for `login.html` in the correct folder as described in the tutorial.  If you successfully
 log in without doing the next step - you will be redirected to `/accounts/profile/` - we need to
 change this in the next step.
 
@@ -62,7 +62,7 @@ reload your application.
 * Update `base_generic.html` to add the logged in indication as well as Login and Logout links
 
 * Complete the <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#Example_%E2%80%94_listing_the_current_user's_books" target="_blank">Example — listing the current user's books</a>
-task - this is pretty intricate and will take some time.  This entails a change to the `models.py` and 
+task - this is pretty intricate and will take some time.  This entails a change to the `models.py` and
 a migration in the command line.  Once you have changed the `models.py` file, running the following commands
 to updtae the database schema:
 
@@ -71,7 +71,10 @@ to updtae the database schema:
         python3 manage.py migrate
 
 * Update the `catalog/admin.py` file to add code to the `BookInstance` model and reload your application.
-Then make a book instance and check it out to a user.  Check out several book instances to users.  Make sure
+
+* Then log into the `/admin' user interface in your application.  Create some new book instances
+(the imprint can be any string) some instances out to a user.  Check out several book instances to different users.
+Make sure
 to set the status to "On Loan".
 
 * Edit the `catalog/views.py` file and add the `LoanedBooksByUserListView` view.
