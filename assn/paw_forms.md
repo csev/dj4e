@@ -80,6 +80,10 @@ and add the `catalog | book instance | Set book as returned` permission to the g
         <li><a href="{% url 'all-borrowed'%}">All borrowed</a></li>   
         {% endif %}
 
+    Don't surround this with a `user.is_staff` test - just issue the link if the
+    user has the `catalog.can_mark_returned` permission.   We don't want our library
+    staff to be able to access the '/admin' page.
+
 * Then `Reload` the application and log in with an account that is in the group 'Library Staff'
 and verify that the 'All borrowed` code works.
 
