@@ -353,11 +353,7 @@ function webauto_get_href($crawler,$text)
 
 function webauto_get_url_from_href($crawler,$text) 
 {
-    try {
-        $href = webauto_get_href($crawler,$text);
-    } catch(Exception $ex) {
-        return false;
-    }
+    $href = webauto_get_href($crawler,$text);
     if ( ! $href ) return false;
     $url = $href->getURI();
     return $url;
