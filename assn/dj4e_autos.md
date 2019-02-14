@@ -73,16 +73,27 @@ Django built in login features and add the `admin/` route so you can work with y
 You can ignore the `cleanup` stuff.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/views.py" target="_blank">Example</a>)
 
+* Create the necessary templates in `home\templates\registration` to support the login / log out views.  
+(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/home/templates" target="_blank">Example</a>)
+
+* Create the necessary views in `autos\templates\autos` to support your views.
+Note that the sample code uses a sub folder under `templates` to
+make sure that templates are not inadvertently shared across multiple applications within a Django project.
+(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/templates" target="_blank">Example</a>)
+
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign key from Autos to Makes.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/urls.py" target="_blank">Example</a>)
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
 
-* Run the commands to perform the migrations.
+* Run the commands to perform the migrations.  
 
-* Create the necessary templates to support your views.  Note that the sample code uses a sub folder under `templates` to
-make sure that templates are not inadvertently shared across multiple applications within a Django project.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/templates" target="_blank">Example</a>)
+* Edit `autos\admin.py` to add the Auto and Make models to the django administration interface.
+(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/admin.py" target="_blank">Example</a>)
+
+* Create a superuser so you can test the admin interface
+and log in to the application.
+
 
 Make sure to check the autograder for additional requirements.
 
