@@ -21,7 +21,7 @@ Complete the following sections of the Views tutorial:
 
         cd ~/django_projects/locallibrary/catalog
 
-* Edit `urls.py` so it looks like follows:
+* Edit `catalog/urls.py` so it looks like follows:
 
         from django.urls import path
         from . import views
