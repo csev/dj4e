@@ -578,6 +578,43 @@
     ]
 },
 {
+    "title": "Autos CRUD Application",
+    "anchor": "dj4e_autos",
+    "icon" : "fa-database",
+    "description": "In this assignment we build a smaller CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_autos.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Hello World",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "dj4e_hello",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "11hello.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Autos CRUD",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "dj44_autos",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "12forms.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Hello World Assignment",
+            "href": "https://www.dj4e.com/assn/dj4e_autos.md"
+        }
+    ]
+},
+{
     "title": "Review: Cascading Style Sheets (CSS)",
     "anchor": "css",
     "icon" : "fa-css3",
