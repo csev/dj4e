@@ -586,23 +586,23 @@
     "lti" : [
         {
         "title" : "Auto-grader: Hello World",
-        "launch" : "tools/mdn-tutorial/",
+        "launch" : "tools/dj4e/",
         "resource_link_id" : "dj4e_hello",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "11hello.php"
+                "value": "01hello.php"
             }
         ]
         },
         {
         "title" : "Auto-grader: Autos CRUD",
-        "launch" : "tools/mdn-tutorial/",
+        "launch" : "tools/dj4e/",
         "resource_link_id" : "dj4e_autos",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "12forms.php"
+                "value": "02forms.php"
             }
         ]
         }
