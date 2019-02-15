@@ -598,7 +598,7 @@
         {
         "title" : "Auto-grader: Autos CRUD",
         "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "dj44_autos",
+        "resource_link_id" : "dj4e_autos",
         "custom" : [
             {
                 "key": "exercise",
@@ -610,7 +610,7 @@
     "references" : [
         {
             "title" : "Hello World Assignment",
-            "href": "https://www.dj4e.com/assn/dj4e_autos.md"
+            "href": "https://www.dj4e.com/assn/dj4e_hello.md"
         }
     ]
 },
