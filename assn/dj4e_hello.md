@@ -71,9 +71,9 @@ named 'hello_world'.
 References
 ----------
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/hello" target="_blank">Hello World Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/master/dj4ecrud/home" target="_blank">Hello World Sample Code</a>
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/templates" target="_blank">Templates Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/master/samples/templates" target="_blank">Templates Sample Code</a>
 
 * <a href="dj_install.md" target="_blank">Installing Django Locally</a>
 
