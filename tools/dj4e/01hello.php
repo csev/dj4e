@@ -37,7 +37,7 @@ You should add an identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area 
 
 <?php
 
-$url = getUrl('http://projects.dj4e.com/hello');
+$url = getUrl('https://projects.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
 
@@ -46,6 +46,8 @@ webauto_check_test();
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+
+$url .= 'hello';
 
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
@@ -60,7 +62,7 @@ if ( $retval === False ) {
     $passed = -1000;
 }
 
-$retval = webauto_search_for($html, 'Hello');
+$retval = webauto_search_for($html, 'Hello World');
 
 // -------
 line_out(' ');
