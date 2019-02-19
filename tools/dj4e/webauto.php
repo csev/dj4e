@@ -459,3 +459,25 @@ function webauto_check_test() {
     $adminpw = 'readony_8ffd-6c005';
     $userpw = 'readony_8ffd-6c005';
 }
+
+// <option value="46">LU_42</option></select>
+function quoteBack($html, $pos) {
+    $end = -1;
+    for($i=$pos; $i > 0; $i-- ){
+        if ( $end == -1 && $html[$i] == '"' ) {
+            $end = $i;
+            continue;
+        }
+        if ( $end != -1 && $html[$i] == '"' ) {
+            return substr($html, $i+1, $end-$i-1);
+        }
+    }
+    return "";
+}
+
+function trimSlash($url) {
+    if ( strlen($url) < 2 ) return($url);
+    $ch = substr($url, strlen($url)-1, 1);
+    if ( $ch != '/' ) return $url;
+    return substr($url, 0, strlen($url)-1);
+}
