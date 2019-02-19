@@ -122,7 +122,7 @@ line_out("Checking meta tag...");
 $retval = webauto_search_for($html, $meta);
 if ( $retval === False ) {
     error_out('You seem to be missing the required meta tag.  Check spacing.');
-    $meta_good = false;
+    $meta_good = true;
 }
 
 // Add an item the the lookup table
