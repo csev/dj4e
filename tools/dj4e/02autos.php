@@ -53,8 +53,7 @@ You should add identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area of 
 
 <?php
 
-// $url = getUrl('http://projects.dj4e.com/');
-$url = getUrl('http://localhost:8000/');
+$url = getUrl('http://projects.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
 
