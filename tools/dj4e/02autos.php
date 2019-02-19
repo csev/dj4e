@@ -117,12 +117,12 @@ $passed = $savepassed;
 $crawler = webauto_get_url($client, $add_lookup_url, "Retrieving the 'Add $lookup_article $lookup_lower' page");
 $html = webauto_get_html($crawler);
 
-$meta_good = false;
+$meta_good = true;
 line_out("Checking meta tag...");
 $retval = webauto_search_for($html, $meta);
 if ( $retval === False ) {
     error_out('You seem to be missing the required meta tag.  Check spacing.');
-    $meta_good = true;
+    $meta_good = false;
 }
 
 // Add an item the the lookup table
