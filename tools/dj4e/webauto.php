@@ -442,11 +442,12 @@ function webauto_dont_want($html, $needle)
 
 function webauto_testrun($url) {
     return strpos($url,'dj4e.com') !== false || strpos($url,'index.htm') !== false ||
-        strpos($url,'mdntutorial.pythonanywhere.com') !== false;
+        strpos($url,'mdntutorial.pythonanywhere.com') !== false || 
+        strpos($url,'http://localhost') !== false;
 }
 
 function webauto_check_test() {
-    global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw;
+    global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
     if ( ! webauto_testrun($url) ) return;
     error_out('Test run - switching to sample data');
     $first_name = 'Jamal';
@@ -456,8 +457,9 @@ function webauto_check_test() {
     $full_name = $first_name . ' ' . $last_name;
     $last_first = $last_name . ', ' . $first_name;
     $meta = '<meta name="wa4e" content="735b90b4568125ed6c3f678819b6e058">';
-    $adminpw = 'readony_8ffd-6c005';
-    $userpw = 'readony_8ffd-6c005';
+    $adminpw = 'dj4e_42_!';
+    $userpw = 'dj4e_42_!';
+    $useraccount = 'dj4e-projects';
 }
 
 // <option value="46">LU_42</option></select>
