@@ -41,13 +41,13 @@ $url = getUrl('https://projects.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
 
+$url = trimSlash($url);
+
 webauto_check_test();
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
-
-$url .= 'hello';
 
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
