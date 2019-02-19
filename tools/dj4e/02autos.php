@@ -8,6 +8,13 @@ use Goutte\Client;
 // TODO: Make this work on 06 07
 $code = $USER->id+$CONTEXT->id;
 
+$lookup_lower = 'make';
+$lookup_article = 'a';
+$lookup_lower_plural = 'makes';
+$main_lower = 'auto';
+$main_article = 'an';
+$main_lower_plural = 'autos';
+
 $check = webauto_get_check_full();
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
@@ -25,8 +32,8 @@ $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
 line_out("Exploring Django Users (MDN)");
 ?>
-<a href="../../assn/paw_users.md" target="_blank">
-https://www.dj4e.com/assn/dj4e_hello.md</a>
+<a href="../../assn/dj4e_autos.md" target="_blank">
+https://www.dj4e.com/assn/dj4e_autos.md</a>
 </a>
 <p>
 In addition to the steps in the tutorial, make a user (not an admin account).  
@@ -46,36 +53,23 @@ You should add identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area of 
 
 <?php
 
-$url = getUrl('http://projects.dj4e.com/');
+// $url = getUrl('http://projects.dj4e.com/');
+$url = getUrl('http://localhost:8000/');
 if ( $url === false ) return;
 $passed = 0;
 
 webauto_check_test();
 
 $admin = $url . 'admin';
-$catalog_url = $url . 'catalog';
-$css_url = $url . 'catalog/static/css/styles.css';
+$main_url = $url . $main_lower_plural;
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
 
 // Start the actual test
-$crawler = webauto_get_url($client, $catalog_url);
+$crawler = webauto_get_url($client, $main_url);
 if ( $crawler === false ) return;
-$html = webauto_get_html($crawler);
-
-line_out("Checking meta tag...");
-$retval = webauto_search_for($html, $meta);
-if ( $retval === False ) {
-    error_out('You seem to be missing the required meta tag.  Check spacing.');
-    error_out('Assignment will not be scored.');
-    $passed = -1000;
-}
-$login_url = webauto_get_url_from_href($crawler,'Login');
-
-
-$crawler = webauto_get_url($client, $login_url, "Logging in as $useraccount");
 $html = webauto_get_html($crawler);
 
 // Use the log_in form
@@ -86,59 +80,137 @@ webauto_change_form($form, 'password', $userpw);
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
-$retval = webauto_search_for($html, 'User: '.$useraccount);
-$logout_url = webauto_get_url_from_href($crawler,'Logout');
-$borrowed_url = webauto_get_url_from_href($crawler,'My Borrowed');
+if ( stripos($html,"Your username and password didn't match. Please try again.") ) {
+    error_out("Could not log in to your account...");
+    return;
+}
 
-$crawler = webauto_get_url($client, $borrowed_url, 'Retrieving the "My Borrowed" page');
+$add_lookup_url = webauto_get_url_from_href($crawler,"Add $lookup_article $lookup_lower");
+$view_lookup_url = webauto_get_url_from_href($crawler,"View $lookup_lower_plural");
+
+line_out("Checking for old $lookup_lower_plural from previous autograder runs...");
+$savepassed = $passed;
+
+// <option value="46">LU_42</option></select>
+function quoteBack($html, $pos) {
+    $end = -1;
+    for($i=$pos; $i > 0; $i-- ){
+        if ( $end == -1 && $html[$i] == '"' ) {
+            $end = $i;
+            continue;
+        }
+        if ( $end != -1 && $html[$i] == '"' ) {
+            return substr($html, $i+1, $end-$i-1);
+        }
+    }
+    return "";
+}
+
+function trimSlash($url) {
+    if ( strlen($url) < 2 ) return($url);
+    $ch = substr($url, strlen($url)-1, 1);
+    if ( $ch != '/' ) return $url;
+    return substr($url, 0, strlen($url)-1);
+}
+
+$count = 0;
+for($i=0; $i<10; $i++) {
+    $crawler = webauto_get_url($client, $view_lookup_url, "Retrieving the 'View $lookup_lower_plural' page");
+    $html = webauto_get_html($crawler);
+    $pos = strpos($html, 'LU_');
+    if ( $pos < 1 ) break;
+    $pos2 = strpos($html, 'Delete', $pos);
+    if ( $pos2 < 1 ) break;
+
+    $link = quoteBack($html, $pos2);
+    $delete_url = trimSlash($url) . $link;
+    $crawler = webauto_get_url($client, $delete_url, "Retrieving Delete URL");
+    $html = webauto_get_html($crawler);
+
+    $form = webauto_get_form_with_button($crawler,'Yes, delete.');
+    $crawler = $client->submit($form);
+    $html = webauto_get_html($crawler);
+    $count++;
+}
+
+line_out("Deleted $count old $lookup_lower_plural");
+$passed = $savepassed;
+
+$crawler = webauto_get_url($client, $add_lookup_url, "Retrieving the 'Add $lookup_article $lookup_lower' page");
 $html = webauto_get_html($crawler);
-$retval = webauto_search_for($html, $book_title);
 
-$crawler = webauto_get_url($client, $logout_url, 'Logging out');
+/*
+line_out("Checking meta tag...");
+$retval = webauto_search_for($html, $meta);
+if ( $retval === False ) {
+    error_out('You seem to be missing the required meta tag.  Check spacing.');
+    error_out('Assignment will not be scored.');
+    $passed = -1000;
+}
+*/
+
+$lookup_new = "LU_42";
+
+$form = webauto_get_form_with_button($crawler,'Submit');
+webauto_change_form($form, 'name', $lookup_new);
+$crawler = $client->submit($form);
+$html = webauto_get_html($crawler);
+line_out("It looks like we created $lookup_article $lookup_lower named $lookup_new :)");
+
+$add_main_url = webauto_get_url_from_href($crawler,"Add $main_article $main_lower");
+$crawler = webauto_get_url($client, $add_main_url, "Retrieving 'Add $main_article $main_lower' page...");
 $html = webauto_get_html($crawler);
 
-$home_url = webauto_get_url_from_href($crawler,'Home');
-$books_url = webauto_get_url_from_href($crawler,'All books');
-$authors_url = webauto_get_url_from_href($crawler,'All authors');
-$login_url = webauto_get_url_from_href($crawler,'Login');
+$pos = strpos($html, $lookup_new);
+if ( $pos < 1 ) {
+    error_out("Could not find $lookup_new in $lookup_lower_plural drop-down");
+    return;
+}
 
-$crawler = webauto_get_url($client, $books_url, 'Retrieving book list page...');
+$lookup_select = quoteBack($html, $pos);
+line_out("Selecting $lookup_new key=$lookup_select");
+
+$new_nickname =  "Main_nickname_42";
+
+$form = webauto_get_form_with_button($crawler,'Submit');
+webauto_change_form($form, 'nickname', $new_nickname);
+webauto_change_form($form, 'mileage', "42");
+webauto_change_form($form, 'comments', "Hello world");
+webauto_change_form($form, $lookup_lower, $lookup_select);
+$crawler = $client->submit($form);
+$html = webauto_get_html($crawler);
+$retval = webauto_search_for($html, $new_nickname);
+
+$pos = strpos($html, $new_nickname);
+if ( $pos < 1 ) {
+    error_out("Could not find $new_nickname in $main_lower_plural");
+    return;
+}
+$pos2 = strpos($html, "Update", $pos);
+if ( $pos2 < 1 ) {
+    error_out("Could not find Update link for $new_nickname in $main_lower_plural");
+    return;
+}
+
+$update_link = quoteBack($html, $pos2);
+$update_url = trimSlash($url) . $update_link;
+$crawler = webauto_get_url($client, $update_url, "Retrieving the Update page");
 $html = webauto_get_html($crawler);
 
-$retval = webauto_search_for($html, $book_title);
-$retval = webauto_search_for($html, $last_first);
-$book_detail_url = webauto_get_url_from_href($crawler,$book_title);
-
-$crawler = webauto_get_url($client, $book_detail_url, 'Retrieving book detail page...');
+$new_nickname = $new_nickname . "_updated";
+$form = webauto_get_form_with_button($crawler,'Submit');
+webauto_change_form($form, 'nickname', $new_nickname);
+$crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
-$retval = webauto_search_for($html, $book_title);
-$retval = webauto_search_for($html, $last_first);
-
-$crawler = webauto_get_url($client, $authors_url, 'Retrieving author list page...');
-$html = webauto_get_html($crawler);
-
-$retval = webauto_search_for($html, $last_first);
-$author_detail_url = webauto_get_url_from_href($crawler,$last_first);
-
-$crawler = webauto_get_url($client, $author_detail_url, 'Retrieving author detail page...');
-$html = webauto_get_html($crawler);
-
-$retval = webauto_search_for($html, $last_first);
-$back_to_book_url = webauto_get_url_from_href($crawler,$book_title);
-
-$crawler = webauto_get_url($client, $back_to_book_url, 'Retrieving book detail page from author page...');
-$html = webauto_get_html($crawler);
-
-$retval = webauto_search_for($html, $book_title);
-$retval = webauto_search_for($html, $last_first);
+$retval = webauto_search_for($html, $new_nickname);
 
 
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
-// echo("  -- Raw score $passed \n");
-$perfect = 22;
+echo("  -- Raw score $passed \n");
+$perfect = 9;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

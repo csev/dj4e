@@ -17,6 +17,7 @@ if ( SettingsForm::handleSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     '01hello.php' => 'Hello World',
+    '02autos.php' => 'Autos CRUD',
 );
 
 $oldsettings = Settings::linkGetAll();
