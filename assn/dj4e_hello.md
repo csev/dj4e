@@ -62,7 +62,8 @@ view named `home.html`.
 
 * If you did not make a direct to template path, edit 
 the `home/views.py` file to produce a view that says "Hello World ... " and 
-some additional text about cats and/or any text that the autograder is asking for.
+some additional text about cats and/or any text or meta tag
+that the autograder is asking for.
 
 Once your project is working, you probably want to check it into github and make a tag
 named 'hello_world'.
