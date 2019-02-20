@@ -182,8 +182,14 @@ $new_nickname =  "Main_entry_42_" . rand(0,100);
 
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'nickname', $new_nickname);
-webauto_change_form($form, 'mileage', "42");
-webauto_change_form($form, 'comments', "Hello world");
+foreach($fields as $field) {
+    if ( $field['type'] == 'i' ) {
+        $value = ( 4200 + rand(1,100) ) . "";
+    } else {
+        $value = "Hello world";
+    }
+    webauto_change_form($form, $field['name'], $value);
+}
 webauto_change_form($form, $lookup_lower, $lookup_select);
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
