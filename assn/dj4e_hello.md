@@ -71,7 +71,7 @@ named 'hello_world'.
 References
 ----------
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/dj4ecrud/home" target="_blank">Hello World Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/master/dj4e" target="_blank">Hello World Sample Code</a>
 
 * <a href="https://github.com/csev/dj4e-samples/tree/master/samples/templates" target="_blank">Templates Sample Code</a>
 
