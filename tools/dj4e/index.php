@@ -18,6 +18,7 @@ if ( SettingsForm::handleSettingsPost() ) {
 $assignments = array(
     '01hello.php' => 'Hello World',
     '02autos.php' => 'Autos CRUD',
+    '02cats.php' => 'Cats CRUD',
 );
 
 $oldsettings = Settings::linkGetAll();

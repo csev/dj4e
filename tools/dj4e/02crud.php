@@ -25,11 +25,10 @@ $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
 line_out("Exploring Django Users (MDN)");
 ?>
-<a href="../../assn/dj4e_autos.md" target="_blank">
-https://www.dj4e.com/assn/dj4e_autos.md</a>
+<a href="<?= $assignment_url ?>" target="_blank"><?= $assignment_url_text ?></a>
 </a>
 <p>
-In addition to the steps in the tutorial, make a user (not an admin account).  
+In order for the autograder to exercise your assignment, make a user (not an admin account).  
 Don't give it staff or super user permissions.
 <pre>
 Account: <?= htmlentities($useraccount) ?> 

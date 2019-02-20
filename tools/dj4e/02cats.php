@@ -2,33 +2,37 @@
 
 global $assignment_type, $title_singular, $assignment_title, $lookup_lower, $lookup_article;
 global $lookup_lower_plural, $main_lower, $main_article, $main_lower_plural, $fields;
-global $assignment_type_lower, $reference_implementation, $assignment_url;
+global $assignment_type_lower, $reference_implementation;
 
-$title_singular = "Auto";
-$title_plural = "Autos";
-$assignment_title = "Autos CRUD";
+$title_singular = "Cat";
+$title_plural = "Cats";
+$assignment_title = "Cats CRUD";
 
-$assignment_url = "../../assn/dj4e_autos.md";
-$assignment_url_text = "https://www.dj4e.com/assn/dj4e_autos.md";
-$reference_implementation = "https://projects.dj4e.com/autos";
+$assignment_url = "02spec.php?assn=02cats.php";
+$assignment_url_text = "Specification";
+$reference_implementation = "https://projects.dj4e.com/cats";
 
 $assignment_type = 'Assignment';
 $assignment_type_lower = 'assignment';
 // $assignment_type == 'Exam';
 // $assignment_type == "Sample Exam";
 
-$lookup_lower = 'make';
+$lookup_lower = 'breed';
 $lookup_article = 'a';
 $lookup_lower_plural = $lookup_lower . 's';
-$main_lower = 'auto';
+$lookup_lower_title = ucfirst($lookup_lower);
+$lookup_lower_title_plural = ucfirst($lookup_lower_plural);
+$main_lower = 'cat';
 $main_article = 'an';
 $main_lower_plural = $main_lower . 's';
+$main_lower_title = ucfirst($main_lower);
+$main_lower_title_plural = ucfirst($main_lower_plural);
 
 // The logical key for lookup is always 'name'
 // The logical key for main is always 'nickname'
 $fields = array(
-    array('name' => 'mileage', 'type' => 'i'),
-    array('name' => 'comments', 'type' => 's'),
+    array('name' => 'weight', 'type' => 'i'),
+    array('name' => 'foods', 'type' => 's'),
 );
 
 if ( !isset($SPEC_ONLY) ) require_once("02crud.php");
