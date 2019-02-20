@@ -7,7 +7,7 @@ Tata, Audi, etc.).
 
 This application will be similar to:
 
-https://projects.dj4e.com/crud
+https://projects.dj4e.com
 
 This application will be in effect a clone of:
 
@@ -27,21 +27,22 @@ and start a new application in your `dj4e` project:
 
 The `autos` project is the first of several applications we will add to the `dj4e` project.
 
-Extending the home application
-------------------------------
+Extending the home (i.e. main) page
+-----------------------------------
 
 Since we will build a number of applications in this project, we will use the `home`
 application to provide convienent urls to switch between applications.   If you did
 not use a template for your home page, it would probably be a good idea to switch
 to the template pattern as shown in:
 
-https://github.com/csev/dj4e-samples/blob/master/templates/home/urls.py
+https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/home/urls.py
 
 Your `home\urls.py` should have a like like this
 
-    path('', TemplateView.as_view(template_name='main.html')),
+    path('', TemplateView.as_view(template_name='main.html'), name='main'),
 
 And you should have a file `home/templates/main.html` that has the text for the top-level page.
+You can keep the "Hello World" text in the page somewhere.
 
 Add a link to the "/autos" url in `main.html` and anything else the autograder needs:
 
@@ -76,11 +77,6 @@ You can ignore the `cleanup` stuff.
 * Create the necessary templates in `home\templates\registration` to support the login / log out views.  
 (<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/home/templates" target="_blank">Example</a>)
 
-* Create the necessary views in `autos\templates\autos` to support your views.
-Note that the sample code uses a sub folder under `templates` to
-make sure that templates are not inadvertently shared across multiple applications within a Django project.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/templates" target="_blank">Example</a>)
-
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign key from Autos to Makes.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/urls.py" target="_blank">Example</a>)
 
@@ -94,6 +90,10 @@ make sure that templates are not inadvertently shared across multiple applicatio
 * Create a superuser so you can test the admin interface
 and log in to the application.
 
+* Create the necessary views in `autos\templates\autos` to support your views.
+Note that the sample code uses a sub folder under `templates` to
+make sure that templates are not inadvertently shared across multiple applications within a Django project.
+(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/autos/templates" target="_blank">Example</a>)
 
 Make sure to check the autograder for additional requirements.
 
