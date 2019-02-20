@@ -22,7 +22,7 @@ patterns.
 
 This application will end up with a similar structure to 
 
-https://github.com/csev/dj4e-samples/tree/master/hello
+https://github.com/csev/dj4e-samples/tree/master/dj4e
 
 We first need to make a new project within our `django_projects` folder.   It is time
 to stop working on `locallibrary` - just keep it working so you can refer back to it
