@@ -615,6 +615,26 @@
     ]
 },
 {
+    "title": "Cats CRUD Application",
+    "anchor": "dj4e_cats",
+    "icon" : "fa-paw",
+    "description": "This module will build a second CRUD application to make sure that it is very well understood.",
+    "assignment" : "https://www.dj4e.com/tools/dj4e/02spec.php?assn=02cats.php",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Cats CRUD",
+        "launch" : "tools/dj4e/",
+        "resource_link_id" : "dj4e_cats",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "02cats.php"
+            }
+        ]
+        }
+    ]
+},
+{
     "title": "Review: Cascading Style Sheets (CSS)",
     "anchor": "css",
     "icon" : "fa-css3",
