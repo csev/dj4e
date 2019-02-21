@@ -112,11 +112,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
 <?php if ( $main_lower_plural != 'autos' ) { ?>
-    path('autos/', include('autos.urls')),
+    # path('autos/', include('autos.urls')),
 <?php } ?>
     path('<?= $main_lower_plural ?>/', include('<?= $main_lower_plural ?>.urls')),
 ]
 </pre>
+<?php if ( $main_lower_plural != 'autos' ) { ?>
+<p>
+Comment out the <b>autos</b> route (and any other routes for your application(s)) to 
+avoid duplicate paths when using the <b>{% url .. %}</b> and
+<b>reverse_lazy()</b> features since path names are global across all applications.
+</p>
+<?php } ?>
 <li>
 You must follow the URL patterns within your application that are used in the sample CRUD code.
 You do not need to change the <b>main</b> or <b>lookup</b> urls

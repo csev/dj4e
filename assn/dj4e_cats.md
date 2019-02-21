@@ -9,6 +9,13 @@ This application will be similar to:
 
 https://projects.dj4e.com/cats
 
+The login information is as follows:
+
+    Account: dj4e-projects
+    Password: dj4e_nn_!
+
+The 'nn' is a 2-digit number that by now, you should be able to easily guess.
+
 This application will be in effect a clone of of your previous assigment but different. 
 You will use your autos assignment as a prototype for this cats assignment.
 
@@ -16,7 +23,8 @@ Making a New Project
 --------------------
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
-and start a new application in your `dj4e` project:
+and start a new application in your `dj4e` project (this project already should have 'hello'
+and 'autos' applications from previous assignments):
 
     workon django2  # as needed
     cd ~/django_projects/dj4e
@@ -55,15 +63,13 @@ things simple.
             path('cats/', include('cats.urls')),
         ]
     
-* Edit the `cats/urls.py` file to add routes for the list, edit, and delete pages for both cats and breeds
+* Edit the `cats/urls.py` file to add routes for the list, edit, and delete pages for both cats and breeds.
 
 * Edit the `cats/views.py` file to add views for the list, edit, and delete pages for both cats and breeds.
 
 * Create the necessary templates in `home\templates\registration` to support the login / log out views.  
 
-* Edit the `cats/models.py` file to add Cat and Breed models with a foreign key from Cat to Breed.
-
-<img src="svg/cat_model.svg" alt="A data model diagram showing Cat and Breed" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
+* Edit the `cats/models.py` file to add Cat and Breed models as per the specification with a foreign key from Cat to Breed.
 
 * Run the commands to perform the migrations.  
 

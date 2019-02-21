@@ -5,21 +5,29 @@ This assignment is to build a fully working CRUD (Create, Read, Update, and Dele
 application to manage automobiles and their makes (i.e. Ford, Hundai, Toyota,
 Tata, Audi, etc.).
 
-This application will be similar to:
-
-https://projects.dj4e.com
-
 This application will be in effect a clone of:
 
 https://github.com/csev/dj4e-samples/tree/master/dj4ecrud
 
 We will make this in a new project.
 
+This application will be similar to:
+
+https://projects.dj4e.com
+
+The login information is as follows:
+
+    Account: dj4e-projects
+    Password: dj4e_nn_!
+
+The 'nn' is a 2-digit number that by now, you should be able to easily guess.
+
 Making a New Project
 --------------------
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
-and start a new application in your `dj4e` project:
+and start a new application in your `dj4e` project (this project already should have the 'hello'
+application from a previous assignment).
 
     workon django2  # as needed
     cd ~/django_projects/dj4e

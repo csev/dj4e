@@ -93,8 +93,8 @@ function onSelect() {
   <option <?= x_sel("paw_users.md") ?>>Django Users</option>
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
   <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
-  <option <?= x_sel("dj4e_autos.md") ?>>Autos Crud</option>
-  <option <?= x_sel("dj4e_cats.md") ?>>Cats Crud</option>
+  <option <?= x_sel("dj4e_autos.md") ?>>Autos CRUD</option>
+  <option <?= x_sel("dj4e_cats.md") ?>>Cats CRUD</option>
 </select>
 </div>
 <?php
