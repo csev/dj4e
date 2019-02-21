@@ -222,23 +222,19 @@ class <?= $lookup_title ?>(models.Model):
     def __str__(self):
         return self.name
 
-class <?= $main_title ?>((models.Model) :
+class <?= $main_title ?>((models.Model):
     nickname = models.CharField(
             max_length=200,
             validators=[MinLengthValidator(2, "Nickname must be greater than 1 character")]
     )
 <?php
-$first = True;
 foreach($fields as $field ) {
-    if ( ! $first ) echo(",\n");
-    $first = False;
     if ( $field['type'] == 'i' ) {
-        echo('    '.$field['name'].' = models.PositiveIntegerField()');
+        echo('    '.$field['name']." = models.PositiveIntegerField()\n");
     } else {
-        echo('    '.$field['name'].' = models.CharField(max_length=300)');
+        echo('    '.$field['name']." = models.CharField(max_length=300)\n");
     }
 }
-echo("\n");
 ?>
     <?= $lookup_lower ?> = models.ForeignKey('<?= $lookup_title ?>', on_delete=models.CASCADE, null=False)
 
