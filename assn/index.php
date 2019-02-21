@@ -94,6 +94,7 @@ function onSelect() {
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
   <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Autos Crud</option>
+  <option <?= x_sel("dj4e_cats.md") ?>>Cats Crud</option>
 </select>
 </div>
 <?php
@@ -119,6 +120,7 @@ web site.
 <li><a href="paw_forms.md">Django Forms</a></li>
 <li><a href="dj4e_hello.md">Hello World</a></li>
 <li><a href="dj4e_autos.md">Auto CRUD</a></li>
+<li><a href="dj4e_cats.md">Cats CRUD</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using

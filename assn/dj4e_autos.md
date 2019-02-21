@@ -100,7 +100,7 @@ Make sure to check the autograder for additional requirements.
 References
 ----------
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/dj4ecrud" target="_blank">AUtos CRUD Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/master/dj4ecrud" target="_blank">Autos CRUD Sample Code</a>
 
 * <a href="dj_install.md" target="_blank">Installing Django Locally</a>
 
