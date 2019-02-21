@@ -104,8 +104,27 @@ for this <?= $assignment_type_lower ?>.
 </li>
 <li>
 This can be added as a new application to your <b>dj4e</b> project.  You do not have to remove
-existing applications, simply add a new <b><?= $main_lower_plural ?></b> application.   You should add a route
-to your <b>dj4e/urls.py</b> as follows:
+existing applications, simply add a new <b><?= $main_lower_plural ?></b> application.
+Activate any virtual environment you need (if any) and go into your `django_projects` folder
+and start a new application in your `dj4e` project (this project already should have 'hello'
+and 'autos' applications from previous assignments):
+<pre>
+    workon django2  # as needed
+    cd ~/django_projects/dj4e
+    python3 manage.py startapp <?= $main_lower_plural ?>
+</pre>
+</li>
+<li>
+Add a link to `home/templates/main.html` that has the text for the top-level page.
+<pre>
+    &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/autos"&gt;Autos CRUD&lt;/a&gt;
+    &lt;li&gt;&lt;a href="/<?= $main_lower_plural ?>"&gt;<?= $main_title_plural ?> CRUD&lt;/a&gt;
+    &lt;ul&gt;
+</pre>
+</li>
+<li>
+You should add a route to your <b>dj4e/urls.py</b> as follows:
 <pre>
 urlpatterns = [
     path('', include('home.urls')),
@@ -124,7 +143,9 @@ avoid duplicate paths when using the <b>{% url .. %}</b> and
 <b>reverse_lazy()</b> features since path names are global across all applications.
 </p>
 <?php } ?>
+</li>
 <li>
+Edit the <b><?= $main_lower_plural ?>/urls.py</b> file to add routes for the list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
 You must follow the URL patterns within your application that are used in the sample CRUD code.
 You do not need to change the <b>main</b> or <b>lookup</b> urls
 in <b><?= $main_lower_plural ?>/urls.py</b> -
@@ -132,6 +153,20 @@ URLs for your new app should look like:
 <pre>
 /<?= $main_lower_plural ?>/main
 </pre>
+</li>
+<li>
+Edit the <b><?= $main_lower_plural ?>/views.py</b> file to add views for the list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
+</li><li>
+Create the necessary templates in <b>home\templates\registration</b> to support the login / log out views.
+</li><li>
+Edit the <b><?= $main_lower_plural ?>/models.py</b> file to add <?= $main_title ?> and <?= $lookup_title ?> models as per the specification with a foreign key from <?= $main_title ?> to <?= $lookup_title ?>.
+</li><li>
+Run the commands to perform the migrations.
+</li><li>
+Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the django administration interface.
+</li><li>
+Create a superuser so you can test the admin interface and log in to the application.
+</li>
 </ul>
 <?php if ( $reference_implementation ) { ?>
 <h2>Sample Implementation</h2>
@@ -141,6 +176,15 @@ You can experiment with a reference implementation at:
 <p>
 <a href="<?= $reference_implementation ?>" target="_blank"><?= $reference_implementation ?></a>
 </p>
+<p>
+The login information is as follows:
+<pre>
+    Account: dj4e-projects
+    Password: dj4e_nn_!
+</pre>
+The 'nn' is a 2-digit number that by now, you should be able to easily guess.
+</p>
+
 <?php } ?>
 <h2>Using the Autograder</h2>
 <p>
@@ -169,16 +213,16 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
 
-class <?= $lookup_lower_title ?>(models.Model):
+class <?= $lookup_title ?>(models.Model):
     name = models.CharField(
             max_length=200,
-            validators=[MinLengthValidator(2, "<?= $lookup_lower_title ?> must be greater than 1 character")]
+            validators=[MinLengthValidator(2, "<?= $lookup_title ?> must be greater than 1 character")]
     )
 
     def __str__(self):
         return self.name
 
-class <?= $main_lower_title ?>((models.Model) :
+class <?= $main_title ?>((models.Model) :
     nickname = models.CharField(
             max_length=200,
             validators=[MinLengthValidator(2, "Nickname must be greater than 1 character")]
@@ -196,7 +240,7 @@ foreach($fields as $field ) {
 }
 echo("\n");
 ?>
-    <?= $lookup_lower ?> = models.ForeignKey('<?= $lookup_lower_title ?>', on_delete=models.CASCADE, null=False)
+    <?= $lookup_lower ?> = models.ForeignKey('<?= $lookup_title ?>', on_delete=models.CASCADE, null=False)
 
     def __str__(self):
         return self.nickname

@@ -19,14 +19,8 @@ $assignment_type_lower = 'assignment';
 
 $lookup_lower = 'breed';
 $lookup_article = 'a';
-$lookup_lower_plural = $lookup_lower . 's';
-$lookup_lower_title = ucfirst($lookup_lower);
-$lookup_lower_title_plural = ucfirst($lookup_lower_plural);
 $main_lower = 'cat';
 $main_article = 'an';
-$main_lower_plural = $main_lower . 's';
-$main_lower_title = ucfirst($main_lower);
-$main_lower_title_plural = ucfirst($main_lower_plural);
 
 // The logical key for lookup is always 'name'
 // The logical key for main is always 'nickname'
@@ -34,5 +28,12 @@ $fields = array(
     array('name' => 'weight', 'type' => 'i'),
     array('name' => 'foods', 'type' => 's'),
 );
+
+$lookup_lower_plural = $lookup_lower . 's';
+$lookup_title = ucfirst($lookup_lower);
+$lookup_title_plural = ucfirst($lookup_lower_plural);
+$main_lower_plural = $main_lower . 's';
+$main_title = ucfirst($main_lower);
+$main_title_plural = ucfirst($main_lower_plural);
 
 if ( !isset($SPEC_ONLY) ) require_once("02crud.php");
