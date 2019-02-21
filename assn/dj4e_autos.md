@@ -5,11 +5,13 @@ This assignment is to build a fully working CRUD (Create, Read, Update, and Dele
 application to manage automobiles and their makes (i.e. Ford, Hundai, Toyota,
 Tata, Audi, etc.).
 
-This application will be in effect a clone of:
+This application will be based on this repo:
 
 https://github.com/csev/dj4e-samples/tree/master/dj4ecrud
 
-We will make this in a new project.
+**Do not clone this repository for this assignment**.  You will make a new
+project and application in your `django_projects` folder and use this application
+as *sample code*.
 
 This application will be similar to:
 

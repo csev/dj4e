@@ -24,6 +24,9 @@ This application will end up with a similar structure to
 
 https://github.com/csev/dj4e-samples/tree/master/dj4e
 
+**Do not clone this repository**.  It is jsut to be used as sample code as you
+build your new project and application in your `django_projects` folder.
+
 We first need to make a new project within our `django_projects` folder.   It is time
 to stop working on `locallibrary` - just keep it working so you can refer back to it
 as you build new applications.
