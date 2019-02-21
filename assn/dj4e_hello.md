@@ -1,8 +1,8 @@
 Hello World
 ===========
 
-At this point in the course we are going to start over and build a series of 
-applications in a Django project.  To review terminology, in the work that you 
+At this point in the course we are going to start over and build a series of
+applications in a Django project.  To review terminology, in the work that you
 have done so far:
 
 * `django_projects` is a folder and/or a github repository that contains multiple
@@ -20,7 +20,7 @@ you don't have a compure that can run Django locally you can continue to use
 PythonAnywhere but increasingly examples will be shown unsing local development
 patterns.
 
-This application will end up with a similar structure to 
+This application will end up with a similar structure to
 
 https://github.com/csev/dj4e-samples/tree/master/dj4e
 
@@ -41,8 +41,41 @@ and start a new project and an application:
     cd ~/django_projects/dj4e
     python3 manage.py startapp home
 
-What to Edit
-------------
+Using Django Locally
+--------------------
+
+    cd ~/django_projects/dj4e
+    python3 manage.py runserver
+
+In general as you make changes to the files below, runserver will monitor
+for file changes and restart itself although sometimes you do want to abort
+runserver and restart it manually to make sure it sees every new change.
+
+If you are running Django on PythonAnywhere
+-------------------------------------------
+
+Under your Web tab, Set the following:
+
+    Source Code:   /home/--your account--/django_projects/dj4e
+    Working Directory:   /home/--your account--/django_projects/dj4e
+
+In your WGSI Configuration file use:
+
+    import os
+    import sys
+
+    path = os.path.expanduser('~/django_projects/dj4e')
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'dj4e.settings'
+    from django.core.wsgi import get_wsgi_application
+    from django.contrib.staticfiles.handlers import StaticFilesHandler
+    application = StaticFilesHandler(get_wsgi_application())
+
+Of course you need to Reload your application as you make changes to the files below.
+
+Files to Edit
+-------------
 
 These are the steps to get things started:
 
@@ -56,12 +89,12 @@ These are the steps to get things started:
 * Edit `dj4e/urls.py` to include the `home/urls.py` file.  Do *not* add any redirect
 route like we used in the locallibrary / catalog application.
 
-* Edit the `home/urls.py` file to add a path that routes the '' path to a function-based view 
+* Edit the `home/urls.py` file to add a path that routes the '' path to a function-based view
 named `index()`, a class-based view named `HomeView()`, or diapatch the path directly to a
 view named `home.html`.
 
-* If you did not make a direct to template path, edit 
-the `home/views.py` file to produce a view that says "Hello World ... " and 
+* If you did not make a direct to template path, edit
+the `home/views.py` file to produce a view that says "Hello World ... " and
 some additional text about cats and/or any text or meta tag
 that the autograder is asking for.
 
