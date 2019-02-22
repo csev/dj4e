@@ -421,7 +421,6 @@ function webauto_get_url($client, $url, $message=false) {
         $status = $response->getStatus();
         if ( $status != 200 ) {
             error_out("Page may have errors, HTTP status=$status");
-            throw new Exception("Could not retrieve HTML from page");
         }
     } catch(\Exception $e) {
         error_out($e->getMessage());
