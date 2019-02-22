@@ -106,8 +106,12 @@ for this <?= $assignment_type_lower ?>.
 This can be added as a new application to your <b>dj4e</b> project.  You do not have to remove
 existing applications, simply add a new <b><?= $main_lower_plural ?></b> application.
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
-and start a new application in your `dj4e` project (this project already should have 'hello'
-and 'autos' applications from previous assignments):
+and start a new application in your `dj4e` project (this project already should have
+<?php if ($main_lower_plural == 'autos') { ?>
+a 'hello' application from a previous assignment):
+<?php } else { ?>
+'hello' and 'autos' applications from previous assignments):
+<?php } ?>
 <pre>
     workon django2  # as needed
     cd ~/django_projects/dj4e
@@ -118,7 +122,9 @@ and 'autos' applications from previous assignments):
 Add a link to `home/templates/main.html` that has the text for the top-level page.
 <pre>
     &lt;ul&gt;
+<?php if ($main_lower_plural != 'autos') { ?>
     &lt;li&gt;&lt;a href="/autos"&gt;Autos CRUD&lt;/a&gt;
+<?php } ?>
     &lt;li&gt;&lt;a href="/<?= $main_lower_plural ?>"&gt;<?= $main_title_plural ?> CRUD&lt;/a&gt;
     &lt;ul&gt;
 </pre>
@@ -138,7 +144,7 @@ urlpatterns = [
 </pre>
 <?php if ( $main_lower_plural != 'autos' ) { ?>
 <p>
-Comment out the <b>autos</b> route (and any other routes for your application(s)) to 
+Comment out the <b>autos</b> route (and any other routes for your application(s)) to
 avoid duplicate paths when using the <b>{% url .. %}</b> and
 <b>reverse_lazy()</b> features since path names are global across all applications.
 </p>
@@ -188,9 +194,9 @@ The 'nn' is a 2-digit number that by now, you should be able to easily guess.
 <?php } ?>
 <h2>Using the Autograder</h2>
 <p>
-This <?= $assignment_type_lower ?> will be automatically graded and so your web server will need an 
+This <?= $assignment_type_lower ?> will be automatically graded and so your web server will need an
 Internet-accessible URL so you can submit it for autograding.  You can do this either using
-<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or 
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or
 <a href="https://www.ngrok.com" target="_blank">Ngrok</a>.
 Instructions for using ngrok are available at:
 </p>
@@ -201,7 +207,7 @@ Instructions for using ngrok are available at:
 Please see the process for handing in the <?= $assignment_type_lower ?> at the end of this document.
 </p>
 <p>
-<b>Important:</b> The autograder will demand that your &lt;meta&gt; tag is in the 
+<b>Important:</b> The autograder will demand that your &lt;meta&gt; tag is in the
 head area of your document.  If the autograder does not find the tag,
 it will run all the tests but will not treat the grade as official.
 </p>
@@ -247,7 +253,7 @@ foreach($fields as $field ) {
 <p>
 This <?= $assignment_type_lower ?> will be autograded by a link that you will be provided with in the LMS
 system.   When you launch the autograder, it will prompt for a web-accessible URL
-where it can access your web application.  
+where it can access your web application.
 <?php if ( $assignment_type == 'Exam') { ?>
 Please also have in a ZIP of your source code (entire project)
 in case there is a need to verify your work or assign partial credit.

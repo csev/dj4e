@@ -13,9 +13,8 @@ $assignment_url_text = "https://www.dj4e.com/assn/dj4e_autos.md";
 $reference_implementation = "https://projects.dj4e.com/autos";
 
 $assignment_type = 'Assignment';
-$assignment_type_lower = 'assignment';
-// $assignment_type == 'Exam';
-// $assignment_type == "Sample Exam";
+// $assignment_type = 'Exam';
+$assignment_type = "Sample Exam";
 
 $lookup_lower = 'make';
 $lookup_article = 'a';
@@ -29,6 +28,7 @@ $fields = array(
     array('name' => 'comments', 'type' => 's'),
 );
 
+$assignment_type_lower = strtolower($assignment_type);
 $lookup_lower_plural = $lookup_lower . 's';
 $lookup_title = ucfirst($lookup_lower);
 $lookup_title_plural = ucfirst($lookup_lower_plural);
