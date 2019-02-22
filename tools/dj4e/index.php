@@ -1,6 +1,7 @@
 <?php
 require_once "../config.php";
 
+use \Tsugi\Util\U;
 use \Tsugi\Core\Settings;
 use \Tsugi\Core\LTIX;
 use \Tsugi\UI\SettingsForm;
@@ -22,6 +23,13 @@ $assignments = array(
 );
 
 $oldsettings = Settings::linkGetAll();
+
+$password = Settings::linkGet('password');
+if ( strlen(U::get($_POST, "password")) > 0  ) {
+    $_SESSION['assignment_password'] = U::get($_POST, "password");
+    header( 'Location: '.addSession('index.php') ) ;
+    return;
+}
 
 $assn = Settings::linkGet('exercise');
 $custom = LTIX::ltiCustomGet('exercise');
@@ -46,10 +54,12 @@ if ( $assn === false && isset($_GET["inherit"]) && isset($CFG->lessons) ) {
     }
 }
 
+$password_ok = strlen($password) < 1 || U::get($_SESSION,'assignment_password') == $password;
+
 // Get any due date information
 $dueDate = SettingsForm::getDueDate();
 // Let the assignment handle the POST
-if ( count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
+if ( $password_ok && count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
     require($assn);
     return;
 }
@@ -81,6 +91,7 @@ echo('</div>');
 
 SettingsForm::start();
 SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
+SettingsForm::text("password", __('Set a password to protect this assignment'));
 SettingsForm::dueDate();
 SettingsForm::done();
 SettingsForm::end();
@@ -92,6 +103,23 @@ if ( ! $USER->displayname || $USER->displayname == '' ) {
     echo('<p style="color:blue;">Auto grader launched without a student name.</p>'.PHP_EOL);
 } else {
     $OUTPUT->welcomeUserCourse();
+}
+
+if ( ! $password_ok ) {
+?>
+<p>
+This autograder is password protected, please enter the instructor provided password to
+unlock this assignment.
+</p>
+<p>
+<form method="post">
+    Password:
+    <input type="password" name="password">
+    <input type="submit">
+</form>
+<?php
+    $OUTPUT->footer();
+    return;
 }
 
 $ALL_GOOD = false;
@@ -110,7 +138,7 @@ function my_error_handler($errno , $errstr, $errfile, $errline , $trace = false)
     $message = $errfile."@".$errline." ".$errstr;
     error_log($message);
     if ( $trace ) error_log($trace);
-    $detail = 
+    $detail =
         "Check the most recently retrieved page (above) and see why the autograder is uphappy.\n" .
         "\nHere is some internal detail where the autograder was unable to continue.\n".
         'Caught exception: '.$message."\n".$trace."\n";
