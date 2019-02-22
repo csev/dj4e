@@ -420,7 +420,7 @@ function webauto_get_url($client, $url, $message=false) {
         $response = $client->getResponse();
         $status = $response->getStatus();
         if ( $status != 200 ) {
-            line_out("Page may have errors, HTTP status=$status");
+            error_out("Page may have errors, HTTP status=$status");
         }
     } catch(\Exception $e) {
         error_out($e->getMessage());
