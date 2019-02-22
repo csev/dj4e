@@ -52,7 +52,7 @@ $passed = 0;
 webauto_check_test();
 
 $admin = $url . 'admin';
-$main_url = $url . $main_lower_plural;
+$main_url = trimSlash($url) . '/'  . $main_lower_plural;
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
