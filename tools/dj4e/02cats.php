@@ -20,7 +20,7 @@ $assignment_type_lower = 'assignment';
 $lookup_lower = 'breed';
 $lookup_article = 'a';
 $main_lower = 'cat';
-$main_article = 'an';
+$main_article = 'a';
 
 // The logical key for lookup is always 'name'
 // The logical key for main is always 'nickname'
