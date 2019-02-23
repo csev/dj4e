@@ -117,7 +117,6 @@ if ( $retval === False ) {
 }
 
 // Add an item the the lookup table
-
 $lookup_new = "LU_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);

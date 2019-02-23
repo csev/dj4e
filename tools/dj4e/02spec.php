@@ -77,6 +77,19 @@ exam even is it is not 100% complete. Please do not discuss the
 nature of the exam with anyone except the teaching staff until
 we tell you that all students have completed the exam.
 </p>
+<p>
+You have unlimited tries using the autograder during the exam period.
+You can turn your assignment to the augrader using either 
+Ngrok or PythonAnywhere or any other way to get a web accessible URL
+for your application.
+</p>
+<p>
+<b>Note:</b> If your application is not working at the end of
+the exam period (even if the autograder still is giving you a score
+of zero), make sure to ZIP up your code and upload it to 
+the LMS so we can hand grade your exam and give you a more appropriate
+score than the autograder.   
+</p>
 <?php } else { ?>
 <h1>Resources</h1>
 <p>There are several resources you might find useful:

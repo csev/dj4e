@@ -1,12 +1,8 @@
 <?php
 
-global $assignment_type, $title_singular, $assignment_title, $lookup_lower, $lookup_article;
+global $assignment_type, $title_singular, $lookup_lower, $lookup_article;
 global $lookup_lower_plural, $main_lower, $main_article, $main_lower_plural, $fields;
 global $assignment_type_lower, $reference_implementation;
-
-$title_singular = "Cat";
-$title_plural = "Cats";
-$assignment_title = "Cats CRUD";
 
 $assignment_url = "02spec.php?assn=02cats.php";
 $assignment_url_text = "Specification";
@@ -21,6 +17,9 @@ $lookup_lower = 'breed';
 $lookup_article = 'a';
 $main_lower = 'cat';
 $main_article = 'a';
+
+$title_singular = ucfirst($main_lower);
+$title_plural = $title_singular . 's';
 
 // The logical key for lookup is always 'name'
 // The logical key for main is always 'nickname'
