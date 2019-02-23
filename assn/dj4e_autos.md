@@ -49,9 +49,9 @@ https://github.com/csev/dj4e-samples/blob/master/dj4ecrud/home/urls.py
 
 Your `home\urls.py` should have a like like this
 
-    path('', TemplateView.as_view(template_name='main.html'), name='main'),
+    path('', TemplateView.as_view(template_name='main_hello.html'), name='main'),
 
-And you should have a file `home/templates/main.html` that has the text for the top-level page.
+And you should have a file `home/templates/main_hello.html` that has the text for the top-level page.
 You can keep the "Hello World" text in the page somewhere.
 
 Add a link to the "/autos" url in `main.html` and anything else the autograder needs:

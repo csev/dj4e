@@ -92,12 +92,10 @@ These are the steps to get things started:
 * Edit `dj4e/urls.py` to include the `home/urls.py` file.  Do *not* add any redirect
 route like we used in the locallibrary / catalog application.
 
-* Edit the `home/urls.py` file to add a path that routes the '' path to a function-based view
-named `index()`, a class-based view named `HomeView()`, or diapatch the path directly to a
-view named `home.html`.
+* Edit the `home/urls.py` file to add a path that routes the '' path to a direct template view
+pointing at a file `home/templates/main_home.html`
 
-* If you did not make a direct to template path, edit
-the `home/views.py` file to produce a view that says "Hello World ... " and
+* Edit `home/templates/main_home.html` and put in some text that says "Hello World ... " and
 some additional text about cats and/or any text or meta tag
 that the autograder is asking for.
 
