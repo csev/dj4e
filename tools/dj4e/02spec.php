@@ -78,12 +78,6 @@ nature of the exam with anyone except the teaching staff until
 we tell you that all students have completed the exam.
 </p>
 <p>
-You have unlimited tries using the autograder during the exam period.
-You can turn your assignment to the augrader using either 
-Ngrok or PythonAnywhere or any other way to get a web accessible URL
-for your application.
-</p>
-<p>
 <b>Note:</b> If your application is not working at the end of
 the exam period (even if the autograder still is giving you a score
 of zero), make sure to ZIP up your code and upload it to 
@@ -207,7 +201,8 @@ The 'nn' is a 2-digit number that by now, you should be able to easily guess.
 <?php } ?>
 <h2>Using the Autograder</h2>
 <p>
-This <?= $assignment_type_lower ?> will be automatically graded and so your web server will need an
+This <?= $assignment_type_lower ?> will be automatically graded.  You will have 
+unlimited attempts in the autograder until the deadline for submission.   Your web server will need an
 Internet-accessible URL so you can submit it for autograding.  You can do this either using
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or
 <a href="https://www.ngrok.com" target="_blank">Ngrok</a>.
