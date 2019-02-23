@@ -99,7 +99,25 @@ The sample CRUD code that we covered in class and used in previous assignments.
 </li>
 </ul>
 <?php } ?>
-<h2 clear="all">General Specifications</h2>
+<?php if ( $reference_implementation ) { ?>
+<h2>Sample Implementation</h2>
+<p>
+You can experiment with a reference implementation at:
+</p>
+<p>
+<a href="<?= $reference_implementation ?>" target="_blank"><?= $reference_implementation ?></a>
+</p>
+<p>
+The login information is as follows:
+<pre>
+    Account: dj4e-projects
+    Password: dj4e_nn_!
+</pre>
+The 'nn' is a 2-digit number that by now, you should be able to easily guess.
+</p>
+
+<?php } ?>
+<h2 clear="all">Specifications / Tasks</h2>
 <p>
 Here are some general specifications for this <?= $assignment_type_lower ?>:
 <ul>
@@ -181,45 +199,7 @@ Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and
 Create a superuser so you can test the admin interface and log in to the application.
 </li>
 </ul>
-<?php if ( $reference_implementation ) { ?>
-<h2>Sample Implementation</h2>
-<p>
-You can experiment with a reference implementation at:
-</p>
-<p>
-<a href="<?= $reference_implementation ?>" target="_blank"><?= $reference_implementation ?></a>
-</p>
-<p>
-The login information is as follows:
-<pre>
-    Account: dj4e-projects
-    Password: dj4e_nn_!
-</pre>
-The 'nn' is a 2-digit number that by now, you should be able to easily guess.
-</p>
-
-<?php } ?>
-<h2>Using the Autograder</h2>
-<p>
-This <?= $assignment_type_lower ?> will be automatically graded.  You will have 
-unlimited attempts in the autograder until the deadline for submission.   Your web server will need an
-Internet-accessible URL so you can submit it for autograding.  You can do this either using
-<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or
-<a href="https://www.ngrok.com" target="_blank">Ngrok</a>.
-Instructions for using ngrok are available at:
-</p>
-<p>
-<a href="http://www.dj4e.com/ngrok" target="_blank">http://www.dj4e.com/ngrok</a>
-</p>
-<p>
-Please see the process for handing in the <?= $assignment_type_lower ?> at the end of this document.
-</p>
-<p>
-<b>Important:</b> The autograder will demand that your &lt;meta&gt; tag is in the
-head area of your document.  If the autograder does not find the tag,
-it will run all the tests but will not treat the grade as official.
-</p>
-<h2>Creating models for this application</h2>
+<h2>Data models for this application</h2>
 <p>
 The data models for this assignment should be as follows:
 <pre>
@@ -256,7 +236,26 @@ foreach($fields as $field ) {
         return self.nickname
 
 </pre>
-
+<h1>Using the Autograder</h1>
+<p>
+This <?= $assignment_type_lower ?> will be automatically graded.  You will have 
+unlimited attempts in the autograder until the deadline for submission.   Your web server will need an
+Internet-accessible URL so you can submit it for autograding.  You can do this either using
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or
+<a href="https://www.ngrok.com" target="_blank">Ngrok</a>.
+Instructions for using ngrok are available at:
+</p>
+<p>
+<a href="http://www.dj4e.com/ngrok" target="_blank">http://www.dj4e.com/ngrok</a>
+</p>
+<p>
+Please see the process for handing in the <?= $assignment_type_lower ?> at the end of this document.
+</p>
+<p>
+<b>Important:</b> The autograder will demand that your &lt;meta&gt; tag is in the
+head area of your document.  If the autograder does not find the tag,
+it will run all the tests but will not treat the grade as official.
+</p>
 <h1>What To Hand In</h1>
 <p>
 This <?= $assignment_type_lower ?> will be autograded by a link that you will be provided with in the LMS
