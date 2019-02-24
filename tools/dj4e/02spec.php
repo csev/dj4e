@@ -204,7 +204,6 @@ Create a superuser so you can test the admin interface and log in to the applica
 The data models for this assignment should be as follows:
 <pre>
 from django.db import models
-from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
 
 class <?= $lookup_title ?>(models.Model):
