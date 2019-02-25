@@ -46,7 +46,7 @@ function showHTML($message, $html) {
 
 function getMD5() {
     global $USER, $LINK, $CONTEXT;
-    $check = md5($USER->id+$LINK->id+$CONTEXT->id);
+    $check = md5($USER->id+$CONTEXT->id);
     return $check;
 }
 
