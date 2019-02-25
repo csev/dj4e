@@ -13,6 +13,7 @@ $assignment_type_lower = 'assignment';
 // $assignment_type == 'Exam';
 // $assignment_type == "Sample Exam";
 
+$assignment_examples = "(i.e. Tabby, Persian, Maine Coon, Siamese, Manx, etc.)";
 $lookup_lower = 'breed';
 $lookup_article = 'a';
 $main_lower = 'cat';

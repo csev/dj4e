@@ -27,7 +27,7 @@ pre {padding-left: 2em;}
 <h1><?= $assignment_type ?>: <?= $title_singular ?> Database CRUD</h1>
 <p>
 In this <?= $assignment_type_lower ?> you will build a web based application to
-track data about <?= strtolower($title_plural) ?>.
+track data about <?= strtolower($title_plural) ?> <?= $assignment_examples ?>.
 We will only allow logged in users
 to track <?= strtolower($title_plural) ?>.
 </p>
@@ -258,12 +258,14 @@ urlpatterns = [
 Edit the <b><?= $main_lower_plural ?>/views.py</b> file to add/edit views for the
 list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
 </li><li>
-Create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
+If you have not already done so, 
+create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
 </li>
 <li>
 Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the
 Django administration interface.
-</li><li>
+</li>
+<li>
 If you have not already done so, create a superuser so you can test the admin interface and log in to the application.
 </li>
 </ul>

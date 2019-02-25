@@ -19,6 +19,7 @@ $title_plural = $title_singular . 's';
 $assignment_url = "../../assn/dj4e_autos.md";
 $assignment_url_text = "https://www.dj4e.com/assn/dj4e_autos.md";
 $reference_implementation = "https://projects.dj4e.com/autos";
+$assignment_examples = "(Ford, Hundai, Toyota, Tata, Audi, etc.)";
 
 // The logical key for lookup is always 'name'
 // The logical key for main is always 'nickname'
