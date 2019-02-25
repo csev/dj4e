@@ -78,7 +78,7 @@ function getUrl($sample) {
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
-        return $_GET['url'];
+        return trim($_GET['url']);
     }
 
     echo('<form>');
