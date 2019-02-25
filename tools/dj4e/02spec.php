@@ -80,9 +80,9 @@ we tell you that all students have completed the exam.
 <p>
 <b>Note:</b> If your application is not working at the end of
 the exam period (even if the autograder still is giving you a score
-of zero), make sure to ZIP up your code and upload it to 
+of zero), make sure to ZIP up your code and upload it to
 the LMS so we can hand grade your exam and give you a more appropriate
-score than the autograder.   
+score than the autograder.
 </p>
 <?php } else { ?>
 <h1>Resources</h1>
@@ -144,6 +144,63 @@ a 'hello' application from a previous assignment):
 </pre>
 </li>
 <li>
+Edit the <b>dj4e/dj4e/settings.py</b> to update the INSTALLED_APPS:
+<pre>
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'home.apps.HomeConfig',
+    'autos.apps.AutosConfig',
+<?php if ($main_lower_plural != 'autos') { ?>
+    '<?= $main_lower_plural ?>.apps.<?= $title_plural ?>Config',    &lt;---- Add this
+<?php } ?>
+]
+</pre>
+</li>
+<li>
+<p>
+Edit the <b><?= $main_lower_plural ?>/models.py</b> file to add <?= $main_title ?> and <?= $lookup_title ?> models
+as shown below with a foreign key from <?= $main_title ?> to <?= $lookup_title ?>.
+<pre>
+from django.db import models
+from django.core.validators import MinLengthValidator
+
+class <?= $lookup_title ?>(models.Model):
+    name = models.CharField(
+            max_length=200,
+            validators=[MinLengthValidator(2, "<?= $lookup_title ?> must be greater than 1 character")]
+    )
+
+    def __str__(self):
+        return self.name
+
+class <?= $main_title ?>(models.Model):
+    nickname = models.CharField(
+            max_length=200,
+            validators=[MinLengthValidator(2, "Nickname must be greater than 1 character")]
+    )
+<?php
+foreach($fields as $field ) {
+    if ( $field['type'] == 'i' ) {
+        echo('    '.$field['name']." = models.PositiveIntegerField()\n");
+    } else {
+        echo('    '.$field['name']." = models.CharField(max_length=300)\n");
+    }
+}
+?>
+    <?= $lookup_lower ?> = models.ForeignKey('<?= $lookup_title ?>', on_delete=models.CASCADE, null=False)
+
+    def __str__(self):
+        return self.nickname
+</pre>
+<li>
+Run the commands to perform the migrations.
+</li>
+<li>
 Add a link to `home/templates/main.html` that has the text for the top-level page.
 <pre>
     &lt;ul&gt;
@@ -176,68 +233,43 @@ avoid duplicate paths when using the <b>{% url .. %}</b> and
 <?php } ?>
 </li>
 <li>
-Edit the <b><?= $main_lower_plural ?>/urls.py</b> file to add routes for the list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
-You must follow the URL patterns within your application that are used in the sample CRUD code.
+Create the <b><?= $main_lower_plural ?>/urls.py</b> file to add routes for the list,
+edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
 You do not need to change the <b>main</b> or <b>lookup</b> urls
 in <b><?= $main_lower_plural ?>/urls.py</b> -
-URLs for your new app should look like:
+<?php if ( $main_lower_plural != 'autos' ) { ?>
+<p>
+You should change the 'name=' values and class name on the paths from the sample application so you don't conflict
+with the 'autos' application:
 <pre>
-/<?= $main_lower_plural ?>/main
+
+urlpatterns = [
+    path('', views.<?= $main_title ?>List.as_view(), name='<?= $main_lower_plural ?>'),
+    path('main/create/', views.<?= $main_title ?>Create.as_view(), name='<?= $main_lower ?>_create'),
+    path('main/&lt;int:pk&gt;/update/', views.<?= $main_title ?>Update.as_view(), name='<?= $main_lower ?>_update'),
+    ...
+]
 </pre>
+</p>
+<?php } ?>
+
 </li>
 <li>
-Edit the <b><?= $main_lower_plural ?>/views.py</b> file to add views for the list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
+Edit the <b><?= $main_lower_plural ?>/views.py</b> file to add/edit views for the
+list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
 </li><li>
-Create the necessary templates in <b>home\templates\registration</b> to support the login / log out views.
-</li><li>
-Edit the <b><?= $main_lower_plural ?>/models.py</b> file to add <?= $main_title ?> and <?= $lookup_title ?> models as per the specification with a foreign key from <?= $main_title ?> to <?= $lookup_title ?>.
-</li><li>
-Run the commands to perform the migrations.
-</li><li>
-Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the django administration interface.
+Create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
+</li>
+<li>
+Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the
+Django administration interface.
 </li><li>
 Create a superuser so you can test the admin interface and log in to the application.
 </li>
 </ul>
-<h2>Data models for this application</h2>
-<p>
-The data models for this assignment should be as follows:
-<pre>
-from django.db import models
-from django.core.validators import MinLengthValidator
-
-class <?= $lookup_title ?>(models.Model):
-    name = models.CharField(
-            max_length=200,
-            validators=[MinLengthValidator(2, "<?= $lookup_title ?> must be greater than 1 character")]
-    )
-
-    def __str__(self):
-        return self.name
-
-class <?= $main_title ?>(models.Model):
-    nickname = models.CharField(
-            max_length=200,
-            validators=[MinLengthValidator(2, "Nickname must be greater than 1 character")]
-    )
-<?php
-foreach($fields as $field ) {
-    if ( $field['type'] == 'i' ) {
-        echo('    '.$field['name']." = models.PositiveIntegerField()\n");
-    } else {
-        echo('    '.$field['name']." = models.CharField(max_length=300)\n");
-    }
-}
-?>
-    <?= $lookup_lower ?> = models.ForeignKey('<?= $lookup_title ?>', on_delete=models.CASCADE, null=False)
-
-    def __str__(self):
-        return self.nickname
-
-</pre>
 <h1>Using the Autograder</h1>
 <p>
-This <?= $assignment_type_lower ?> will be automatically graded.  You will have 
+This <?= $assignment_type_lower ?> will be automatically graded.  You will have
 unlimited attempts in the autograder until the deadline for submission.   Your web server will need an
 Internet-accessible URL so you can submit it for autograding.  You can do this either using
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or
