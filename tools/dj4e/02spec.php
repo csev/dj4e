@@ -264,7 +264,7 @@ Create the necessary templates in <b>home/templates/registration</b> to support 
 Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the
 Django administration interface.
 </li><li>
-Create a superuser so you can test the admin interface and log in to the application.
+If you have not already done so, create a superuser so you can test the admin interface and log in to the application.
 </li>
 </ul>
 <h1>Using the Autograder</h1>
