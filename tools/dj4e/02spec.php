@@ -4,7 +4,7 @@ if ( ! isset($_GET['assn'] ) ) die('No assignment');
 
 $assn = $_GET['assn'];
 
-if ( strpos($assn, '02') !== 0 ) die('Bad format');
+// if ( strpos($assn, '02') !== 0 ) die('Bad format');
 if ( strpos($assn, '.php') === false ) die('Bad format');
 
 $SPEC_ONLY = true;
@@ -78,11 +78,12 @@ nature of the exam with anyone except the teaching staff until
 we tell you that all students have completed the exam.
 </p>
 <p>
-<b>Note:</b> If your application is not working at the end of
-the exam period (even if the autograder still is giving you a score
-of zero), make sure to ZIP up your code and upload it to
-the LMS so we can hand grade your exam and give you a more appropriate
-score than the autograder.
+<b>Note:</b> You must upload a ZIP file of your application to the LMS
+to receive full credit for the exam even if the autograder gives you a perfect score.
+If your application is not working at the end of the exam period (even
+if the autograder still is giving you a score of zero), make sure to ZIP
+up your code and upload it to the LMS so we can hand grade your exam
+and give you a more appropriate score than the autograder.
 </p>
 <?php } else { ?>
 <h1>Resources</h1>
@@ -258,7 +259,7 @@ urlpatterns = [
 Edit the <b><?= $main_lower_plural ?>/views.py</b> file to add/edit views for the
 list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
 </li><li>
-If you have not already done so, 
+If you have not already done so,
 create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
 </li>
 <li>

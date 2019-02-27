@@ -23,7 +23,7 @@ $meta = '<meta name="wa4e" content="'.$check.'">';
 $adminpw = substr(getMD5(),4,9);
 $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
-line_out("Exploring Django Users (MDN)");
+line_out("Create, Read, Update, and Delete (CRUD)")
 ?>
 <a href="<?= $assignment_url ?>" target="_blank"><?= $assignment_url_text ?></a>
 </a>
