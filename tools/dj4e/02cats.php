@@ -10,8 +10,8 @@ $reference_implementation = "https://projects.dj4e.com/cats";
 
 $assignment_type = 'Assignment';
 $assignment_type_lower = 'assignment';
-// $assignment_type == 'Exam';
-// $assignment_type == "Sample Exam";
+// $assignment_type = 'Exam';
+// $assignment_type = "Sample Exam";
 
 $assignment_examples = "(i.e. Tabby, Persian, Maine Coon, Siamese, Manx, etc.)";
 $lookup_lower = 'breed';

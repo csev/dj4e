@@ -298,6 +298,17 @@ where it can access your web application.
 <?php if ( $assignment_type == 'Exam') { ?>
 Please also have in a ZIP of your source code (entire project)
 in case there is a need to verify your work or assign partial credit.
+</p>
+<p>
+If you are doing your work on PythonAnywhere, create a ZIP file as follows:
+<pre>
+    cd ~/django_projects/dj4e
+    rm <?= $main_lower_plural ?>.zip
+    zip -r <?= $main_lower_plural ?>.zip <?= $main_lower_plural ?> -x '*pycache*'
+</pre>
+Then download the ZIP file using the Files tab of PythonAnywhere and upload
+the ZIP file back up to the LMS.
+</p>
 <?php } ?>
 </p>
 <hr/>
