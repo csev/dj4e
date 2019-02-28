@@ -258,6 +258,10 @@ urlpatterns = [
 <li>
 Edit the <b><?= $main_lower_plural ?>/views.py</b> file to add/edit views for the
 list, edit, and delete pages for both <?= $main_lower_plural ?> and <?= $lookup_lower_plural ?>.
+</li>
+<li>
+Add the appropriate templates to <b><?= $main_lower_plural ?>/templates</b> following the naming
+conventions for the templates.
 </li><li>
 If you have not already done so,
 create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
