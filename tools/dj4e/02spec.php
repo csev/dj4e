@@ -307,7 +307,9 @@ If you are doing your work on PythonAnywhere, create a ZIP file as follows:
     zip -r <?= $main_lower_plural ?>.zip <?= $main_lower_plural ?> -x '*pycache*'
 </pre>
 Then download the ZIP file from `django_projects/dj4e` using the
-Files tab of PythonAnywhere and upload the ZIP file back up to the LMS.
+Files tab of PythonAnywhere and upload the ZIP file back up to the LMS.  Some browsers
+(i.e. Safari on the Mac) automatically extract the ZIP into a folder.  If this
+happens simply compress it again to make a ZIP to upload.
 </p>
 <?php } ?>
 </p>
