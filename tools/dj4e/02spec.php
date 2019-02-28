@@ -267,7 +267,7 @@ If you have not already done so,
 create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
 </li>
 <li>
-Edit <b><?= $main_lower_plural ?>\admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the
+Edit <b><?= $main_lower_plural ?>/admin.py</b> to add the <?= $main_title ?> and <?= $lookup_title ?> models to the
 Django administration interface.
 </li>
 <li>
