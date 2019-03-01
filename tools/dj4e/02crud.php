@@ -68,6 +68,7 @@ $form = webauto_get_form_with_button($crawler,'login');
 webauto_change_form($form, 'username', $useraccount);
 webauto_change_form($form, 'password', $userpw);
 
+line_out("Submitting form...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
@@ -97,6 +98,7 @@ for($i=0; $i<10; $i++) {
     $html = webauto_get_html($crawler);
 
     $form = webauto_get_form_with_button($crawler,'Yes, delete.');
+    line_out("Submitting form...");
     $crawler = $client->submit($form);
     $html = webauto_get_html($crawler);
     $count++;
@@ -120,6 +122,7 @@ if ( $retval === False ) {
 $lookup_new = "LU_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);
+line_out("Submitting form...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 line_out("It looks like we created $lookup_article $lookup_lower named $lookup_new :)");
@@ -150,6 +153,7 @@ $html = webauto_get_html($crawler);
 $lookup_new = $lookup_new . "_updated";
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);
+line_out("Submitting form...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
@@ -189,6 +193,7 @@ foreach($fields as $field) {
     webauto_change_form($form, $field['name'], $value);
 }
 webauto_change_form($form, $lookup_lower, $lookup_select);
+line_out("Submitting form...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $new_nickname);
@@ -212,6 +217,7 @@ $html = webauto_get_html($crawler);
 $new_nickname = $new_nickname . "_updated";
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'nickname', $new_nickname);
+line_out("Submitting form...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 

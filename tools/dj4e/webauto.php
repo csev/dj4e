@@ -365,7 +365,7 @@ function webauto_change_form($form, $name, $value)
     try {
         $x = $form->get($name);
     } catch(Exception $ex) {
-        $msg = 'Did not find form field named "'.$name;
+        $msg = 'Did not find form field named "'.$name.'"';
         error_out($msg);
         throw new Exception($msg);
     }
@@ -412,8 +412,10 @@ function webauto_search_for_not($html, $needle)
 /* Returns a crawler */
 function webauto_get_url($client, $url, $message=false) {
     line_out(" ");
-    if ( $message ) line_out($message);
-    line_out("Retrieving ".htmlentities($url)." ...");
+    if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
+    echo("<b>Loading URL:</b> ".htmlentities($url));
+    echo(' (<a href="'.str_replace('"',"&quot;", $url).'" target="_blank">Open URL</a>)');
+    echo("<br/>\n");
     flush();
     try {
         $crawler = $client->request('GET', $url);

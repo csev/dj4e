@@ -307,7 +307,7 @@ in case there is a need to verify your work or assign partial credit.
 If you are doing your work on PythonAnywhere, create a ZIP file as follows:
 <pre>
     cd ~/django_projects/dj4e
-    rm <?= $main_lower_plural ?>.zip        # In case you do the zip twice
+    rm -f <?= $main_lower_plural ?>.zip
     zip -r <?= $main_lower_plural ?>.zip <?= $main_lower_plural ?> -x '*pycache*'
 </pre>
 Then download the ZIP file from `django_projects/dj4e` using the
