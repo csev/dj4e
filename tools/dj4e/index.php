@@ -79,22 +79,22 @@ $OUTPUT->topNav();
 
 // Settings button and dialog
 
-echo('<div style="float: right;">');
 if ( $USER->instructor ) {
+    echo('<div style="float: right;">');
     if ( $CFG->launchactivity ) {
         echo('<a href="analytics" class="btn btn-default">Launches</a> ');
     }
     echo('<a href="grades.php" target="_blank"><button class="btn btn-info">Grade detail</button></a> '."\n");
-}
-SettingsForm::button();
-echo('</div>');
+    SettingsForm::button();
+    echo('</div>');
 
-SettingsForm::start();
-SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
-SettingsForm::text("password", __('Set a password to protect this assignment'));
-SettingsForm::dueDate();
-SettingsForm::done();
-SettingsForm::end();
+    SettingsForm::start();
+    SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
+    SettingsForm::text("password", __('Set a password to protect this assignment'));
+    SettingsForm::dueDate();
+    SettingsForm::done();
+    SettingsForm::end();
+}
 
 $OUTPUT->flashMessages();
 
