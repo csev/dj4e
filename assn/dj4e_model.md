@@ -62,7 +62,7 @@ foreign key names.  Here is a subset of the `models.py`:
 All of the columns from the CSV data must be represented somewhere in the
 data model.
 
-Once you have your model build, wun `makemigrations` and `migrate` to create
+Once you have your model build, run `makemigrations` and `migrate` to create
 the database.
 
 Reading CSV Files
