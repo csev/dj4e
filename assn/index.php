@@ -95,6 +95,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Autos CRUD</option>
   <option <?= x_sel("dj4e_cats.md") ?>>Cats CRUD</option>
+  <option <?= x_sel("dj4e_model.md") ?>>Loading Model Data</option>
 </select>
 </div>
 <?php
@@ -121,6 +122,7 @@ web site.
 <li><a href="dj4e_hello.md">Hello World</a></li>
 <li><a href="dj4e_autos.md">Auto CRUD</a></li>
 <li><a href="dj4e_cats.md">Cats CRUD</a></li>
+<li><a href="dj4e_model.md">Loading Model Data</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
