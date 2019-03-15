@@ -129,7 +129,11 @@ foreign key connections can be made.
 You will note that the code empties the three tables out every time and freshly reloads
 all the data so the process can be run over and over.
 
-This script needs to be run in the Django shell so you must be in the project folder (i.e.
+Running the Script
+------------------
+
+Place the CSV file in the `unesco` folder along with your `load.py` file and then run
+the script needs to be run in the Django shell from the project folder (i.e.
 where the `manage.py` file resides):
 
     cd ~/django_projects
@@ -139,5 +143,5 @@ It needs to be run this way so that lines like:
 
     from many.models import Person, Course, Membership
 
-Work properly.
+work properly.
 
