@@ -586,7 +586,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Hello World",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_hello",
         "custom" : [
             {
@@ -597,7 +597,7 @@
         },
         {
         "title" : "Auto-grader: Autos CRUD",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_autos",
         "custom" : [
             {
@@ -623,7 +623,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Cats CRUD",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_cats",
         "custom" : [
             {
@@ -636,7 +636,7 @@
     "references" : [
         {
             "title" : "Cats Application Specification",
-            "href": "https://www.dj4e.com/tools/dj4e/02spec.php?assn=02cats.php"
+            "href": "https://www.dj4e.com/tools/crud/02spec.php?assn=02cats.php"
         }
     ]
 },
@@ -650,7 +650,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Data model",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_many",
         "custom" : [
             {
