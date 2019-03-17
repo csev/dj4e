@@ -644,18 +644,18 @@
     "title": "Many-to-Many Data Models",
     "anchor": "dj4e_many",
     "icon" : "fa-database",
-    "description": "We build a data model from a flat file. (Under Construction)",
+    "description": "We build a data model from a flat file.",
     "slides": "lectures/DJ-03-Many-To-Many.pptx",
     "assignment" : "https://www.dj4e.com/assn/dj4e_model.md",
     "lti" : [
         {
         "title" : "Auto-grader: Data model",
-        "launch" : "tools/crud/",
+        "launch" : "tools/mdn-sql/",
         "resource_link_id" : "dj4e_many",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "03model.php"
+                "value": "05many.php"
             }
         ]
         }

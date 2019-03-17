@@ -21,3 +21,39 @@ function runQuery(&$db, $query) {
     }
     return $results;
 }
+
+function countQuery(&$db, $query) {
+    $results = runQuery($db, $query);
+    if ( ! $results ) return -1;
+    while ($row = $results->fetchArray()) {
+        return($row[0]);
+    }
+    return -1;
+}
+
+function checkCountTable(&$db, $table, $expected, $margin=0) {
+    $query = 'SELECT count(id) FROM '.$table;
+    return checkCountQuery($db, $query, $expected, $margin);
+}
+
+function checkCountQuery(&$db, $query, $expected, $margin=0) {
+    $count = countQuery($db, $query);
+    if ( $count < 0 ) {
+        $_SESSION['error'] = "Query failed ".$query;
+        header( 'Location: '.addSession('index.php') ) ;
+        return false;
+    }
+    if ( $margin < 1 && $count != $expected ) {
+        $_SESSION['error'] = "Ran query: ".$query." - Expected $expected records, found $count";
+        header( 'Location: '.addSession('index.php') ) ;
+        return false;
+    }
+    $lower = $expected - $margin;
+    $upper = $expected + $margin;
+    if ( $count < $lower || $count > $upper ) {
+        $_SESSION['error'] = "Ran query: ".$query." - Expected between $lower and $upper records, found $count";
+        header( 'Location: '.addSession('index.php') ) ;
+        return false;
+    }
+    return true;
+}
