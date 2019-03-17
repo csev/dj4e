@@ -990,7 +990,7 @@
       "type": "image"
     },
     {
-      "title": "The models.py file for your model.  Does nothave to be complete and syntax errors are OK.  Focus on important things like foreign keys.",
+      "title": "The models.py file for your model.  Does not have to be complete and syntax errors are OK.  Focus on important conceptual things like foreign keys.",
       "type": "code",
       "code": "markup"
     }
