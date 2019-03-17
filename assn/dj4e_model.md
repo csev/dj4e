@@ -50,17 +50,39 @@ foreign key names.  Here is a subset of the `models.py`:
 
     from django.db import models
   
-    class Site(models.Model):
+    class Category(models.Model) :
         name = models.CharField(max_length=128)
-        iso = models.ForeignKey(Iso_code, on_delete=models.CASCADE)
 
-    class Iso(models.Model) :
-        name = models.CharField(max_length=128)
+        def __str__(self) : 
+            return self.name
 
     ...
 
+    class Site(models.Model):
+        name = models.CharField(max_length=128)
+        year = models.IntegerField(null=True)
+        iso = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+        ....
+
+        def __str__(self) : 
+            return self.name
+
+
 All of the columns from the CSV data must be represented somewhere in the
 data model.
+
+Also add the models to `admin.py`:
+
+    from django.contrib import admin
+
+    # Register your models here.
+
+    from unesco.models import Site, Category, ...
+
+    admin.site.register(Site)
+    admin.site.register(Category)
+    ...
 
 Once you have your model build, run `makemigrations` and `migrate` to create
 the database.
@@ -117,7 +139,7 @@ from a previous row so the first thing that we do is use `get()` to retrieve the
 If this works, we have loaded the correct `Person` object.  If the `get()` fails,
 it triggers the `except` clause that creates a new person and calls `save()` to add it to the
 `Person` table.  One way or another, by the end if this segment of code `p` contains a reference
-to a Person stored in the databas ethat can be used to fullfill a foreign key
+to a Person stored in the database that can be used to fullfill a foreign key
 later in the code.
 
     m = Membership(role=r,person=p, course=c)
@@ -128,6 +150,27 @@ foreign key connections can be made.
 
 You will note that the code empties the three tables out every time and freshly reloads
 all the data so the process can be run over and over.
+
+Dealing with Empty Columns
+--------------------------
+
+Your data will be more complex than the sample, You will need to deal with situations
+where an integer column like the `year` will be empty.  First, add `null=True` to numeric columns
+that can be empty in your `models.py`.   Then before inserting the `Site` record, check the year to
+see if it is a valid integer and if it is not a valid integer set it to `None` which will become 
+`NULL` (or empty) in the data base when inserted:
+
+    try:
+        y = int(row[3])
+    except:
+        y = None
+
+    ...
+
+    site = Site(name=row[0], description=row[1], year=y, ... )
+    site.save()
+
+You will need to do this for each of the numeric fields that might be missing.
 
 Running the Script
 ------------------
