@@ -61,7 +61,7 @@ foreign key names.  Here is a subset of the `models.py`:
     class Site(models.Model):
         name = models.CharField(max_length=128)
         year = models.IntegerField(null=True)
-        iso = models.ForeignKey(Category, on_delete=models.CASCADE)
+        category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
         ....
 
