@@ -184,7 +184,7 @@ where the `manage.py` file resides):
 
 It needs to be run this way so that lines like:
 
-    from many.models import Person, Course, Membership
+    from unesco.models import Site, Iso, ....
 
 work properly.
 
