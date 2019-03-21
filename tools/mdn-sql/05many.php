@@ -4,7 +4,7 @@ use \Tsugi\Core\LTIX;
 use \Tsugi\Util\LTI;
 use \Tsugi\Util\Mersenne_Twister;
 
-$MAX_UPLOAD_FILE_SIZE = 2*1024*1024;
+$MAX_UPLOAD_FILE_SIZE = 3*1024*1024;
 
 require_once "sql_util.php";
 
