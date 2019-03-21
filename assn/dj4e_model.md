@@ -6,7 +6,7 @@ then build a script to load data in to that model.  Thie data is a simplified ex
 of the <a href="https://whc.unesco.org/en/list/" tatget="_blank">UNESCO World Heritage Sites</a> registry.
 The un-normalized data is provided as both a spreadsheet and a CSF file:
 
-<a href="dj4e_model/whc-sites-2018-small.csv" target="_blank">CSV Version</a>
+<a href="dj4e_model/whc-sites-2018-clean.csv" target="_blank">CSV Version</a>
 
 <a href="dj4e_model/whc-sites-2018-small.xls" target="_blank">XLS Version</a>
 
@@ -93,7 +93,7 @@ Reading CSV Files
 The next step is to build a Python script to read the CSV file:
 
 
-<a href="dj4e_model/whc-sites-2018-small.csv" target="_blank">CSV Version</a>
+<a href="dj4e_model/whc-sites-2018-clean.csv" target="_blank">CSV Version</a>
 
 and load it into your database, and then use the administration user interface
 to verify that the data is properly loaded.   Here is a bit of sample code that
@@ -101,7 +101,7 @@ can easily read the CSV file in Python:
 
     import csv
 
-    fh = open('whc-sites-2018-small.csv')
+    fh = open('unesco/whc-sites-2018-clean.csv')
     rows = csv.reader(fh)
     i = 0
     for row in rows:
