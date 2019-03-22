@@ -20,6 +20,7 @@ $assignments = array(
     '01hello.php' => 'Hello World',
     '02autos.php' => 'Autos CRUD',
     '02cats.php' => 'Cats CRUD',
+    '11adlist1.php' => 'AdList #1',
 );
 
 $oldsettings = Settings::linkGetAll();

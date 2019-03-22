@@ -668,6 +668,26 @@
     ]
 },
 {
+    "title": "Classified Ads #1",
+    "anchor": "dj4e_ads1",
+    "icon" : "fa-database",
+    "description": "We write the first iteration of the classified ads application.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_model.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Ad List #1",
+        "launch" : "tools/dj4e/",
+        "resource_link_id" : "dj4e_ads1",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "11adlist1.php"
+            }
+        ]
+        }
+    ]
+},
+{
     "title": "Review: Cascading Style Sheets (CSS)",
     "anchor": "css",
     "icon" : "fa-css3",
