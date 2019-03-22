@@ -672,7 +672,7 @@
     "anchor": "dj4e_ads1",
     "icon" : "fa-database",
     "description": "We write the first iteration of the classified ads application.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_model.md",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #1",
