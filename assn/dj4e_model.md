@@ -18,8 +18,9 @@ The columns in the data are as follows:
 Getting Started
 ---------------
 
-Make a new application under your `django_projects` called `unesco`.  This
-application will not have any UI of its own - but you will be using the admin
+Make a new project under your `django_projects` called `loader`.  Then 
+make an application called `unesco`.  This application will not have any
+ UI of its own - but you will be using the admin
 UI so you will need a super user.
 
 Design a Data Model
