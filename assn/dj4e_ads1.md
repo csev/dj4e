@@ -1,7 +1,7 @@
 Building a Classified Ad Web Site
 =================================
 
-In this assignment, you will build a web site that is roughly equivalent to 
+In this assignment, you will build a web site that is roughly equivalent to
 
 https://chucklist.dj4e.com/
 
@@ -18,8 +18,8 @@ and combining them into a single application.
 Note: Do **not** build this application by forking the sample application repository
 and hacking it.  There is just too much cruft in that repository that will make it hard to develop
 your application.   You will end up with a lot cleaner code by taking pieces from
-the sample applications and copying them into a new application.   At some point, 
-we will ask you to hand 
+the sample applications and copying them into a new application.   At some point,
+we will ask you to hand
 in the source of your application and we will check to make sure you are not using a fork
 of the sample application.
 
@@ -27,13 +27,16 @@ Borrowing from the Samples Repository
 -------------------------------------
 
 (1) Make a new project under your `django_projects` called `adlist` and within that
-project make an application called `ads`.   
+project make an application called `ads`.
 
-(2) Copy `samples/requirements.txt` to `adlist/requirements.txt` and run
+(2) Copy `samples/requirements.txt` to `adlist/requirements.txt` and launch a shell in your virtual environment and run:
 
     pip install -r requirements.txt   # or pip3
 
-This will pull in important extra libraries that your application will need.
+This will pull in important extra libraries that your application will need.  On PythonAnywhere
+under the Web tab there is a link to launch a shell into your virual environment.  It
+is important to be in the virtual environment so the installed libraries end
+up in the right place.
 
 (3) Adapt `adlist/settings.py` to pull in most of `samples/settings.py`.
 
@@ -45,39 +48,51 @@ Alternatively, you can look through the `samples/settings.py` and copy pertinent
 into `adlist/settings.py` - some lines have an "Add" comment to help draw your attention
 to things to copy across.
 
-Make sure to add a line like this:
+In addition to all the other settings fixes, make sure to add a line
+to `adlist/settings.py` like this:
 
     # Used for a default title
     APP_NAME = 'ChucksList'
 
 This shows up in default page titles and default page navigation.
 
-(4) Copy the entire `home` application folder into your adlist project.  This should not
+(4) Copy the entire `home` application folder from into your adlist project.  This should not
 need much changing - it has things like base templates, and login templates and is designed
-to quickly get up to speed getting started in a new project.
+to quickly get up to speed getting started in a new project.  If you are using PythonAnywhere
 
-(5) Edit your `adlist/urls.py` and pull in some of the paths from `samples/urls.py`.   Look 
+Make sure to get the latest version of dj4e-samples.  If you have never checked it out
+on PythonAnywhere:
+
+    cd ~
+    git clone https://github.com/csev/dj4e-samples
+
+If it already is on PythonAnywhere:
+
+    cd ~/dj4e-samples
+    git pull
+
+Once you have `~/dj4e-samples` and `~/django_projects/adlist` you
+can copy all of home with the following commands:
+
+    mkdir ~/django_projects/adlist/home
+    cp -r ~/dj4e-samples/samples/home/* ~/django_projects/adlist/home
+
+(5) Edit your `adlist/urls.py` and pull in some of the paths from `samples/urls.py`.   Look
 for lines that say "Keep" to help make sure you configure all of the optional features.
-
-(6) Make a simple view in your `ads` application, and connect it into your `adlist/urls.py`
 
 At this point, you should be able to run:
 
     python3 manage.py makemigrations
     python3 manage.py migrate
     python3 manage.py createsuperuser
-    python3 manage.py runserver
 
-There won't be many working urls other than '/ads' - you can also test the login with something like:
+There won't be many working urls.  Try these two to see if you have the home code
+working properly:
 
     https://chucklist.dj4e.com/accounts/login
-
-Don't worry about social login yet.  We will get to that later.
-
-Another cool url to test is:
-
     https://chucklist.dj4e.com/favicon.ico
 
+Don't worry about social login yet.  We will get to that later.
 Favicons are shown in the tabs in the browser.  We will get to favicons later too :)
 
 Building the Ads Application
@@ -86,11 +101,9 @@ Building the Ads Application
 In this section, you will pull bits and pieces of the sample applications repository and pull them
 into your `ads` application.
 
-(1) The best place to start is to figure out the `menu` application and copy most of it into `ads`
-and tweak it so that it looks more like the navigation in sample implementation.
+(1) Create a new `ads` application.
 
-(2) Next, look at the `owner` application - it shows how rows in a model can be "owned" by a user.
-Use this in your `ads/model.py`:
+(2) Use this in your `ads/model.py`:
 
     class Ad(models.Model) :
         title = models.CharField(
@@ -102,13 +115,20 @@ Use this in your `ads/model.py`:
         owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
         created_at = models.DateTimeField(auto_now_add=True)
         updated_at = models.DateTimeField(auto_now=True)
-    
+
         # Shows up in the admin list
         def __str__(self):
             return self.title
 
-Then adapt the `admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
+(3) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
+`admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
 ad application and the above model.
+
+(4) Pull merge `base_menu.html` template from `menu` application and into `ads`
+and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
+as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
+look like the adlist application.
+
 
 Working with Ambiguity
 ----------------------
