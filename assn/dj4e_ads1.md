@@ -95,6 +95,10 @@ working properly:
 Don't worry about social login yet.  We will get to that later.
 Favicons are shown in the tabs in the browser.  We will get to favicons later too :)
 
+If you get an error like `Could not import github_settings.py for social_django`
+when running `manage.py` or restarting your PythonAnywhere webapp,
+don't worry - you will see this warning until you set up social login.
+
 Building the Ads Application
 ----------------------------
 
