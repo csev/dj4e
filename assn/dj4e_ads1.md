@@ -128,7 +128,7 @@ into your `ads` application.
 `admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
 ad application and the above model.
 
-(4) Pull merge `base_menu.html` template from `menu` application and into `ads`
+(4) Pull `base_menu.html` template from `samples/menu` application and into `ads`
 and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
 as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
 look like the adlist application.
