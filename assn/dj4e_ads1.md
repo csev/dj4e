@@ -133,6 +133,22 @@ and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
 as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
 look like the adlist application.
 
+Fun Challenges
+--------------
+
+(1) Make social login work.  Take a look at `samples/github_settings-dist.py`, copy it into
+`adlist/github_settings.py` and go through the process on github to get your client ID and
+secret.   The documentation is in comments in the `github_setting.py` file.
+You can register two applications - one on localhost and one on PythonAnywhere.  If you are
+using github on localhost - make sure that you 
+register `http://127.0.0.1:8000/` instead of `http://localhost:8000/` and use that in your browser
+to test your site.
+
+(2) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+avatar when you log in in your application and elsewhere.
+
+(3) Change your `home/static/favicon.ico` to your own design.   I made my favicon
+at https://favicon.io/favicon-generator/
 
 Working with Ambiguity
 ----------------------
@@ -149,4 +165,7 @@ So this is kind of like the real world - when you have to build your own first a
 for someone else.
 
 Let us know if you really get stuck.  We want you to succeed in this assignment.
+
+
+
 
