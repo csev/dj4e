@@ -463,10 +463,10 @@ function webauto_check_test() {
     $adminpw = 'dj4e_42_!';
     $userpw = 'dj4e_42_!';
     $useraccount = 'dj4e-projects';
-    $user1 = 'dj4e_user1';
-    $user2password = 'Meow_81e728_41';
-    $user2 = 'dj4e_user2';
-    $user2password = 'Meow_42_81e728';
+    $user1account = 'dj4e_user1';
+    $user1pw = 'Meow_81e728_41';
+    $user2account = 'dj4e_user2';
+    $user2pw = 'Meow_42_81e728';
 }
 
 // <option value="46">LU_42</option></select>
