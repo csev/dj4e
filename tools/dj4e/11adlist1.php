@@ -21,7 +21,8 @@ $now = date('H:i:s');
 line_out("Building Classified Ad Site #1");
 
 // $url = getUrl('http://mdntutorial.pythonanywhere.com/');
-$url = getUrl('http://localhost:8000/');
+// $url = getUrl('http://localhost:8000/');
+$url = getUrl('https://chucklist.dj4e.com/');
 if ( $url === false ) return;
 
 ?>
