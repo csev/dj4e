@@ -450,6 +450,7 @@ function webauto_testrun($url) {
 
 function webauto_check_test() {
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
+    global $user1account, $user1pw, $user2account, $user2pw;
     if ( ! webauto_testrun($url) ) return;
     error_out('Test run - switching to sample data');
     $first_name = 'Jamal';
@@ -462,6 +463,10 @@ function webauto_check_test() {
     $adminpw = 'dj4e_42_!';
     $userpw = 'dj4e_42_!';
     $useraccount = 'dj4e-projects';
+    $user1 = 'dj4e_user1';
+    $user2password = 'Meow_81e728_41';
+    $user2 = 'dj4e_user2';
+    $user2password = 'Meow_42_81e728';
 }
 
 // <option value="46">LU_42</option></select>
