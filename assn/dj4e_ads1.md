@@ -124,8 +124,11 @@ into your `ads` application.
         def __str__(self):
             return self.title
 
-(3) The routes for the update and delete operations should be of the form `/ad/14/update`
-and `/ad/14/delete`.  Something like the following should work in your urls.py:
+(3) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
+`admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
+ad application and the above model. Make sure to follow the url patterns
+the update and delete operations.  They chould be of the form `/ad/14/update`
+and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
     urlpatterns = [
         path('', views.AdListView.as_view()),
@@ -139,12 +142,7 @@ and `/ad/14/delete`.  Something like the following should work in your urls.py:
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
     ]
 
-
-(4) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
-`admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
-ad application and the above model.
-
-(5) Pull `base_menu.html` template from `samples/menu` application and into `ads`
+(4) Pull `base_menu.html` template from `samples/menu` application and into `ads`
 and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
 as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
 look like the adlist application.
@@ -153,7 +151,8 @@ Fun Challenges
 --------------
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps.
+avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be 
+any thing you like - it does not have to be a picture of you.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
