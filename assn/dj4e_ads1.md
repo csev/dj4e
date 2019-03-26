@@ -34,7 +34,7 @@ project make an application called `ads`.
     pip install -r requirements.txt   # or pip3
 
 This will pull in important extra libraries that your application will need.  On PythonAnywhere
-under the Web tab there is a link to launch a shell into your virual environment.  It
+under the Web tab there is a link to launch a shell into your virtual environment.  It
 is important to be in the virtual environment so the installed libraries end
 up in the right place.
 
@@ -124,11 +124,27 @@ into your `ads` application.
         def __str__(self):
             return self.title
 
-(3) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
+(3) The routes for the update and delete operations should be of the form `/ad/14/create`
+and `/ad/14/delete`.  Something like the following should work in your urls.py:
+
+    urlpatterns = [
+        path('', views.AdListView.as_view()),
+        path('ads', views.AdListView.as_view(), name='ads'),
+        path('ad/<int:pk>', views.AdDetailView.as_view(), name='ad_detail'),
+        path('ad/create',
+            views.AdCreateView.as_view(success_url=reverse_lazy('ads')), name='ad_create'),
+        path('ad/<int:pk>/update',
+            views.AdUpdateView.as_view(success_url=reverse_lazy('ads')), name='ad_update'),
+        path('ad/<int:pk>/delete',
+            views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
+    ]
+
+
+(4) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
 `admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
 ad application and the above model.
 
-(4) Pull `base_menu.html` template from `samples/menu` application and into `ads`
+(5) Pull `base_menu.html` template from `samples/menu` application and into `ads`
 and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
 as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
 look like the adlist application.
