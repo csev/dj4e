@@ -124,7 +124,7 @@ into your `ads` application.
         def __str__(self):
             return self.title
 
-(3) The routes for the update and delete operations should be of the form `/ad/14/create`
+(3) The routes for the update and delete operations should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your urls.py:
 
     urlpatterns = [
