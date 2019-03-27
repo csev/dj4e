@@ -3,7 +3,7 @@ Building a Classified Ad Web Site
 
 In this assignment, you will build a web site that is roughly equivalent to
 
-https://chucklist.dj4e.com/
+https://chucklist.dj4e.com/m1
 
 This web site is a classified ad web site.   People can view ads without logging in
 and if they log in, they can create their own ads.   It uses a social login
