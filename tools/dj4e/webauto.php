@@ -91,6 +91,7 @@ Django's port 8000 and not port 8888 as is used in the above documentation.
 
 function getUrl($sample) {
     global $USER, $access_code;
+    global $base_url_path;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -110,6 +111,16 @@ function getUrl($sample) {
         echo('<p><a href="#" onclick="window.location.href = window.location.href; return false;">Re-run this test</a></p>'."\n");
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
+        }
+
+        try {
+            $pieces = parse_url(trim($_GET['url']));
+            $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
+            if ( $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
+                $base_url_path .= ':' . $pieces['port'];
+            }
+        } catch(Exception $e) {
+            $base_url_path - false;
         }
         return trim($_GET['url']);
     }
@@ -411,10 +422,13 @@ function webauto_search_for_not($html, $needle)
 
 /* Returns a crawler */
 function webauto_get_url($client, $url, $message=false) {
+    global $base_url_path;
     line_out(" ");
     if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
     echo("<b>Loading URL:</b> ".htmlentities($url));
-    echo(' (<a href="'.str_replace('"',"&quot;", $url).'" target="_blank">Open URL</a>)');
+    $the_url = str_replace('"',"&quot;", $url);
+    if ( strpos($the_url, '/') === 0 ) $the_url = $base_url_path . $the_url;
+    echo(' (<a href="'.$the_url.'" target="_blank">Open URL</a>)');
     echo("<br/>\n");
     flush();
     try {

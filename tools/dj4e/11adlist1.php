@@ -166,9 +166,10 @@ if ( webauto_dont_want($html, "Your username and password didn't match. Please t
 
 // Cleanup old ads
 $saved = $passed;
-preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-if ( is_array($matches) && isset($matches[0]) && is_array($matches[0]) ) {
-    foreach($matches[0] as $match ) {
+// preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
+if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
+    foreach($matches[1] as $match ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
@@ -193,13 +194,15 @@ $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
 // Look for the edit entry
-preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
-if ( is_array($matches) && isset($matches[0]) && is_array($matches[0]) ) {
-    if ( count($matches[0]) != 1 ) {
+// preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
+// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
+if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
+    if ( count($matches[1]) != 1 ) {
         error_out("Expecting exactly one update url like /ad/nnn/update");
         return;
     }
-    $match = $matches[0][0];
+    $match = $matches[1][0];
     $crawler = webauto_get_url($client, $match, "Loading edit page for old record");
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
