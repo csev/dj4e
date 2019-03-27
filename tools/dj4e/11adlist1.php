@@ -80,7 +80,7 @@ if ( webauto_dont_want($html, "Your username and password didn't match. Please t
 // Cleanup old ads
 $saved = $passed;
 // preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-preg_match_all("'\"([a-z/]*/[0-9]+/delete)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
@@ -110,7 +110,7 @@ $html = webauto_get_html($crawler);
 
 // Look for the edit entry
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
-preg_match_all("'\"([a-z/]*/[0-9]+/update)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
         error_out("Expecting exactly one update url like /ad/nnn/update");
