@@ -688,6 +688,26 @@
     ]
 },
 {
+    "title": "Classified Ads #2",
+    "anchor": "dj4e_ads2",
+    "icon" : "fa-database",
+    "description": "We add pictures and comments to our classified ads application.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Ad List #2",
+        "launch" : "tools/dj4e/",
+        "resource_link_id" : "dj4e_ads2",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "12adlist2.php"
+            }
+        ]
+        }
+    ]
+},
+{
     "title": "Review: Cascading Style Sheets (CSS)",
     "anchor": "css",
     "icon" : "fa-css3",
