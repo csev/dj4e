@@ -116,7 +116,7 @@ function getUrl($sample) {
         try {
             $pieces = parse_url(trim($_GET['url']));
             $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
-            if ( $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
+            if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
                 $base_url_path .= ':' . $pieces['port'];
             }
         } catch(Exception $e) {
