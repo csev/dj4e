@@ -165,8 +165,8 @@ the gravatar when the user logs in.
 
 (6) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates`.
 
-(7) Then edit all of the `ads_` files in `ads/templates` to change them so they extend `base_menu.html`.
-Change
+(7) Then edit all four of the `ads_` files in `ads/templates` to change them so they extend `base_menu.html`.
+Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
 
@@ -174,8 +174,35 @@ to be.
 
     {% extends "base_menu.html" %}
 
-Then edit ads/templates/base_menu.html` to make it look like the top menu in the sample application, 
-in particular, add a 'Create Ad' link on the right and a 'Ads' link on the left.
+(8) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
+
+    <ul class="nav navbar-nav">
+      {% url 'ads' as ads %}
+      <li {% if request.get_full_path == ads %}class="active"{% endif %}>
+          <a href="{% url 'ads' %}">Ads</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+        <li>
+        <a href="{% url 'ad_create' %}">Create Ad</a>
+        </li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </ul>
+        {% else %}
+        <li>
+        <a href="{% url 'login' %}?next={% url 'ads' %}">Login</a>
+        </li>
+        {% endif %}
+    </ul>
+
+When you are dont, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
+sample implementation.
 
 Fun Challenges
 --------------
