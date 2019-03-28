@@ -89,8 +89,8 @@ At this point, you should be able to run:
 There won't be many working urls.  Try these two to see if you have the home code
 working properly:
 
-    https://chucklist.dj4e.com/accounts/login
-    https://chucklist.dj4e.com/favicon.ico
+    https://your-account.pythonanywhere.com/accounts/login
+    https://your-account.pythonanywhere.com/favicon.ico
 
 Don't worry about social login yet.  We will get to that later.
 Favicons are shown in the tabs in the browser.  We will get to favicons later too :)
