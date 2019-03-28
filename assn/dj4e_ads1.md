@@ -142,7 +142,16 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
     ]
 
-(4) Pull `base_menu.html` template from `samples/menu` application and into `ads`
+(4) Link the `ads/urls.py` into your `adlist/urls.py` using the following routes:
+
+    urlpatterns = [
+        path('', include('ads.urls')),
+        path('admin/', admin.site.urls),
+        path('accounts/', include('django.contrib.auth.urls')),
+        url(r'^oauth/', include('social_django.urls', namespace='social')),
+    ]
+
+(5) Pull `base_menu.html` template from `samples/menu` application and into `ads`
 and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
 as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
 look like the adlist application.
