@@ -156,16 +156,20 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
         url(r'^oauth/', include('social_django.urls', namespace='social')),
     ]
 
-(5) Next we will add the bootstrap navigation bar to the top of your application as shown in:
+
+Adding the Bootstrap menu to the top of the page
+------------------------------------------------
+
+Next we will add the bootstrap navigation bar to the top of your application as shown in:
 
 https://chucklist.dj4e.com/
 
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
 the gravatar when the user logs in.
 
-(6) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates`.
+(1) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates`.
 
-(7) Then edit all four of the `ads_` files in `ads/templates` to change them so they extend `base_menu.html`.
+(2) Then edit all four of the `ads_` files in `ads/templates` to change them so they extend `base_menu.html`.
 Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
@@ -174,32 +178,41 @@ to be.
 
     {% extends "base_menu.html" %}
 
-(8) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
+(3) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
 
-    <ul class="nav navbar-nav">
-      {% url 'ads' as ads %}
-      <li {% if request.get_full_path == ads %}class="active"{% endif %}>
-          <a href="{% url 'ads' %}">Ads</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        {% if user.is_authenticated %}
-        <li>
-        <a href="{% url 'ad_create' %}">Create Ad</a>
-        </li>
-        <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-            </ul>
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">{{ settings.APP_NAME }}</a>
+        </div>
+        <!-- https://stackoverflow.com/questions/22047251/django-dynamically-get-view-url-and-check-if-its-the-current-page -->
+        <ul class="nav navbar-nav">
+          {% url 'ads' as ads %}
+          <li {% if request.get_full_path == ads %}class="active"{% endif %}>
+              <a href="{% url 'ads' %}">Ads</a></li>
         </ul>
-        {% else %}
-        <li>
-        <a href="{% url 'login' %}?next={% url 'ads' %}">Login</a>
-        </li>
-        {% endif %}
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li>
+            <a href="{% url 'ad_create' %}">Create Ad</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                    <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </li>
+            {% else %}
+            <li>
+            <a href="{% url 'login' %}?next={% url 'ads' %}">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+
 
 When you are dont, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
 sample implementation.
