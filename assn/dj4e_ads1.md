@@ -105,7 +105,7 @@ Building the Ads Application
 In this section, you will pull bits and pieces of the sample applications repository and pull them
 into your `ads` application.
 
-(1) Create a new `ads` application.
+(1) Create a new `ads` application within your `adlist` project.
 
 (2) Use this in your `ads/model.py`:
 
