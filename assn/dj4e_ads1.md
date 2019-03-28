@@ -156,10 +156,26 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
         url(r'^oauth/', include('social_django.urls', namespace='social')),
     ]
 
-(5) Pull `base_menu.html` template from `samples/menu` application and into `ads`
-and then edit the ad templates to extend `base_menu.html` using `main_menu.html`
-as an example.  Then adjust `adlist/templates/base_menu.html` to make the navigation
-look like the adlist application.
+(5) Next we will add the bootstrap navigation bar to the top of your application as shown in:
+
+https://chucklist.dj4e.com/
+
+This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
+the gravatar when the user logs in.
+
+(6) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates`.
+
+(7) Then edit all of the `ads_` files in `ads/templates` to change them so they extend `base_menu.html`.
+Change
+
+    {% extends "base_bootstrap.html" %}
+
+to be.
+
+    {% extends "base_menu.html" %}
+
+Then edit ads/templates/base_menu.html` to make it look like the top menu in the sample application, 
+in particular, add a 'Create Ad' link on the right and a 'Ads' link on the left.
 
 Fun Challenges
 --------------
