@@ -147,7 +147,8 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
     ]
 
-(4) Link the `ads/urls.py` into your `adlist/urls.py` using the following routes:
+(4) Change your `adlist/urls.py` to use the following url patterns so the main route ('') 
+goes to the `ads` application.
 
     urlpatterns = [
         path('', include('ads.urls')),
