@@ -69,20 +69,36 @@ into your `ads` application to add support for an optional single picture per ad
         content_type = models.CharField(max_length=256, null=True, help_text='The MIMEType of the file')
         ...
 
-Of course do the mirations once you have modified the model.
+Do not include the entire `Pic` model.  Of course do the mirations once you have modified the model.
 
-(2) Pull in some of `pics/urls.py` (merging create and update), adapt the new create/update view
-from `pics/views.py`, and bring in the `pics/forms.py` as well as `pics/humanize.py`.
+(2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.
 
-(3) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
+(3) Pull in some of `pics/urls.py` (merging create and update), adapt the `PicFormView`
+from `pics/views.py` as `AdFormView`.
+
+Old `urls.py`:
+
+    path('ad/create',
+        views.AdCreateView.as_view(success_url=reverse_lazy('ads')), name='ads_create'),
+    path('ad/<int:pk>/update',
+        views.AdUpdateView.as_view(success_url=reverse_lazy('ads')), name='ads_update'),
+
+New `urls.py`:
+
+    path('ad/create',
+        views.AdFormView.as_view(success_url=reverse_lazy('ads')), name='ads_create'),
+    path('ad/<int:pk>/update',
+        views.AdFormView.as_view(success_url=reverse_lazy('ads')), name='ads_update'),
+
+(4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
 JavaSript bits at the end and change the `enctype` on the `form` tag.
 
-(4) Alter the `ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
+(5) Alter the `ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
 
-(4) Add a `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
+(6) Add a `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
 
     path('ad_picture/<int:pk>', views.stream_file, name='ad_picture'),
 

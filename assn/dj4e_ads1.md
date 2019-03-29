@@ -157,6 +157,8 @@ goes to the `ads` application.
         url(r'^oauth/', include('social_django.urls', namespace='social')),
     ]
 
+It is important that the `owner` field be automatically set uring the `OwnerCreateView`, etc.   If you see the
+`owner` in your create screen it will not work with the autograder.
 
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
