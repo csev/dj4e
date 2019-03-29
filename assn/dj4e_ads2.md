@@ -56,10 +56,10 @@ match the registered callback URL for this application.` error message when you 
 Adding Pictures to the Ads Application
 --------------------------------------
 
-In this section, you will pull bits and pieces of the `meals` sample application
+In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `ads/model.py`, talking inspiration from `samples/meals/models.py`
+(1) Add this to your `ads/model.py`, talking inspiration from `samples/pics/models.py`
 
     class Ad(models.Model) :
 
@@ -71,22 +71,22 @@ into your `ads` application to add support for an optional single picture per ad
 
 Of course do the mirations once you have modified the model.
 
-(2) Pull in some of `meals/urls.py` (merging create and update), adapt the new create/update view
-from `meals/views.py`, and bring in the `meals/forms.py` as well as `meals/humanize.py`.
+(2) Pull in some of `pics/urls.py` (merging create and update), adapt the new create/update view
+from `pics/views.py`, and bring in the `pics/forms.py` as well as `pics/humanize.py`.
 
-(3) Alter your `ad_form.html` by looking through `meals/templates/meal_form.html`.  Make sure to add the 
+(3) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
 JavaSript bits at the end and change the `enctype` on the `form` tag.
 
-(4) Alter the `ad_detail.html` template by looking through `meals/templates/meal_detail.html` and
-to add code to include the image in the output if ther is an image associated with the ad.
+(4) Alter the `ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
+to add code to include the image in the output if there is an image associated with the ad.
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
 
-(4) Add a `ad_picture` route to your `urls.py` based on the `meal_picture` route from `meals/urls.py`:
+(4) Add a `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
 
     path('ad_picture/<int:pk>', views.stream_file, name='ad_picture'),
 
-(5) Add the `stream_file` view from `meals/views.py` and adapt appropriately
+(5) Add the `stream_file` view from `pics/views.py` and adapt appropriately
 
 Test to make sure you can upload, view, and update pictures with your ads and if you are using github,
 once this is all working, you might want to check this in before you start on the next step.
@@ -134,7 +134,7 @@ pass into the `ad_detail.html` template through the context.
 to the current logged in user.  Also add the ability to add a comment to an ad when the user is logged in by looking
 at the techniques in `forums/templates/forum_detail.html`.
 
-(5) Add a route in `urls.py` for the `comment_create` and `comment_delete` routes from `meals/urls.py`.
+(5) Add a route in `urls.py` for the `comment_create` and `comment_delete` routes from `pics/urls.py`.
 Make sure to use the same URL patterns as shown here:
 
     urlpatterns = [
@@ -145,7 +145,7 @@ Make sure to use the same URL patterns as shown here:
             views.CommentDeleteView.as_view(success_url=reverse_lazy('forums')), name='comment_delete'),
 ]
 
-(6) Adapt the comment related views from `meals/views.py` and put them into your `view.py`.
+(6) Adapt the comment related views from `pics/views.py` and put them into your `view.py`.
 
 (7) You will have to adapt the `forums/comment_delete.html` template to work in your ads application.
 
