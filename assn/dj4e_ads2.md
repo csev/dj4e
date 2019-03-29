@@ -69,12 +69,12 @@ into your `ads` application to add support for an optional single picture per ad
         content_type = models.CharField(max_length=256, null=True, help_text='The MIMEType of the file')
         ...
 
-Do not include the entire `Pic` model.  Of course do the mirations once you have modified the model.
+Do not include the entire `Pic` model.  Of course do the migrations once you have modified the model.
 
 (2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.
 
-(3) Pull in some of `pics/urls.py` (merging create and update), adapt the `PicFormView`
-from `pics/views.py` as `AdFormView`.
+(3) Pull in some of `pics/urls.py` adapt the patterns in `PicCreateView` and
+`PicUpdateView` into `ads/views.py` `AdCreateView` and `AdUpdateView:
 
 Old `urls.py`:
 
