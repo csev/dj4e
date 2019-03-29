@@ -139,7 +139,8 @@ into your `ads` application to add support for an optional single picture per ad
             if len(self.text) < 15 : return self.text
             return self.text[:11] + ' ...'
 
-Of course do the mirations once you have modified the model.
+Do not add the Forum model - simpley connect the `Comment` model to the `Ad` model. Of course do 
+the mirations once you have modified the model successfully.
 
 (2) Merge the `CommentForm` from `forums/forms.py` into your `forms.py`.
 
