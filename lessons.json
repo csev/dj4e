@@ -685,6 +685,16 @@
             }
         ]
         }
+    ],
+    "references" : [
+        {
+            "title" : "Sample Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://chucklist.dj4e.com/"
+        }
     ]
 },
 {
@@ -704,6 +714,16 @@
                 "value": "12adlist2.php"
             }
         ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://chucklist.dj4e.com/m2"
         }
     ]
 },
