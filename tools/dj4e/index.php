@@ -21,6 +21,7 @@ $assignments = array(
     '02autos.php' => 'Autos CRUD',
     '02cats.php' => 'Cats CRUD',
     '11adlist1.php' => 'AdList #1',
+    '12adlist2.php' => 'AdList #2',
 );
 
 $oldsettings = Settings::linkGetAll();

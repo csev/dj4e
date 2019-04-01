@@ -20,7 +20,6 @@ $now = date('H:i:s');
 
 line_out("Building Classified Ad Site #2");
 
-// $url = getUrl('http://mdntutorial.pythonanywhere.com/');
 // $url = getUrl('http://localhost:8000/');
 $url = getUrl('https://chucklist.dj4e.com/m2');
 if ( $url === false ) return;
@@ -33,9 +32,12 @@ https://www.dj4e.com/assn/dj4e_ads2.md</a>
 You should already have two users and a <b>meta</b> tag.
 <pre>
 <?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
-<?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?>
+<?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?> 
 <?= htmlentities($meta) ?>
 </pre>
+Note that your application should not be at the '/m2' path and should not
+have a "Versions" drop-down.  That is just how the sample implementation is written
+to support more than one variant of the code at the same time.
 </p>
 <?php
 webauto_check_test();
@@ -76,7 +78,6 @@ if ( webauto_dont_want($html, "Your username and password didn't match. Please t
 
 // Cleanup old ads
 $saved = $passed;
-// preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
@@ -116,7 +117,6 @@ if ( ! webauto_search_for($html, $title) ) {
 }
 
 // Look for the edit entry
-// preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
@@ -136,92 +136,52 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     return;
 }
 
-$logout_url = webauto_get_url_from_href($crawler,'Logout');
-$crawler = webauto_get_url($client, $logout_url, "Logging out...");
+// Lets add a comment form
+line_out('Looking for the detail page so we can add a comment');
+$detail_url = webauto_get_url_from_href($crawler,$title."_updated");
+$crawler = webauto_get_url($client, $detail_url, "Loading detail...");
 $html = webauto_get_html($crawler);
 
-success_out("Completed first user, moving to second user...");
+// Use the comment form
+$form = webauto_get_form_with_button($crawler,'Submit');
+webauto_change_form($form, 'comment', $title."_comment");
 
-// Do it again with the second user
-
-$crawler = webauto_get_url($client, $url);
-if ( $crawler === false ) return;
-$html = webauto_get_html($crawler);
-
-line_out("Checking meta tag...");
-$retval = webauto_search_for($html, $meta);
-if ( $retval === False ) {
-    error_out('You seem to be missing the required meta tag.  Check spacing.');
-    error_out('Assignment will not be scored.');
-    $meta_good = false;
-}
-$login_url = webauto_get_url_from_href($crawler,'Login');
-
-
-$crawler = webauto_get_url($client, $login_url, "Logging in as $user2account");
-$html = webauto_get_html($crawler);
-
-// Use the log_in form
-$form = webauto_get_form_with_button($crawler,'Login Locally');
-webauto_change_form($form, 'username', $user2account);
-webauto_change_form($form, 'password', $user2pw);
-
+line_out('Submitting the comment form');
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
-if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
+if ( ! webauto_search_for($html, $title."_comment") ) {
+    error_out('Added a comment but could not find it on the next screen');
+    return;
+}
 
-// Cleanup old ads
-$saved = $passed;
-// preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
+
+line_out('Deleteing that comment..');
+// comment/3/delete
+
+preg_match_all("'\"([a-z0-9/]*comment*/[0-9]+/delete)\"'",$html,$matches);
+// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
+
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     foreach($matches[1] as $match ) {
-        $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
+        $crawler = webauto_get_url($client, $match, "Loading delete page for comment");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
         $crawler = $client->submit($form);
         $html = webauto_get_html($crawler);
+        if ( ! webauto_search_for_not($html, $title."_comment") ) {
+            error('It appears that the comment was not deleted.');
+            return;
+        }
     } 
-}
-$passed = $saved;
-
-$create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
-$crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
-$html = webauto_get_html($crawler);
-
-// Use the create ad form
-$title = 'HHGTTG_42 '.$now;
-$form = webauto_get_form_with_button($crawler,'Submit');
-webauto_change_form($form, 'title', $title);
-webauto_change_form($form, 'price', '0.42');
-webauto_change_form($form, 'text', 'Towels - guaranteed to impress Vogons.');
-
-$crawler = $client->submit($form);
-$html = webauto_get_html($crawler);
-
-// Look for the edit entry
-// preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
-// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
-    if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one update url like /ad/nnn/update");
-        return;
-    }
-    $match = $matches[1][0];
-    $crawler = webauto_get_url($client, $match, "Loading edit page for old record");
-    $html = webauto_get_html($crawler);
-    $form = webauto_get_form_with_button($crawler,'Submit');
-    webauto_change_form($form, 'title', $title."_updated");
-    $crawler = $client->submit($form);
-    $html = webauto_get_html($crawler);
-    webauto_search_for($html,$title."_updated");
 } else {
-    error_out("Could not find update url of the form /ad/nnn/update");
+    error_out('Could not find link to delete comment comment/nnn/delete');
     return;
 }
 
+
+line_out('');
+line_out('Test completed... Logging out.');
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
 $crawler = webauto_get_url($client, $logout_url, "Logging out...");
 $html = webauto_get_html($crawler);
@@ -230,7 +190,7 @@ $html = webauto_get_html($crawler);
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
-$perfect = 20;
+$perfect = 16;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
