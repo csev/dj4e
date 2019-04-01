@@ -98,6 +98,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_model.md") ?>>Loading Model Data</option>
   <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
   <option <?= x_sel("dj4e_ads2.md") ?>>AdList Milestone #2</option>
+  <option <?= x_sel("dj4e_ads3.md") ?>>AdList Milestone #3</option>
 </select>
 </div>
 <?php
@@ -127,6 +128,7 @@ web site.
 <li><a href="dj4e_model.md">Loading Model Data</a></li>
 <li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
 <li><a href="dj4e_ads2.md">AdList Milestone #2</a></li>
+<li><a href="dj4e_ads3.md">AdList Milestone #3</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
