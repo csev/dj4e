@@ -140,7 +140,13 @@ into your `ads` application.
 
 (3) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
 `admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
-ad application and the above model. Make sure to follow the url patterns
+ad application and the above model.   A big part of this assignment is to use the
+view classes that are in `util.py` and used in `views.py`.  The new `owner` field should
+not be shown to the user on the create and update forms, it should be automatically set
+by the classes like `OwnerCreateView` in `util.py`.  If you see an "owner" drop down
+in yur user interface the program is not implemented correctly and will fail the autograder.
+
+(4) When you are implementing the update and delete views, make sure to follow the url patterns
 the update and delete operations.  They chould be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
@@ -156,7 +162,7 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
     ]
 
-(4) Change your `adlist/urls.py` to use the following url patterns so the main route ('') 
+(5) Change your `adlist/urls.py` to use the following url patterns so the main route ('') 
 goes to the `ads` application.
 
     urlpatterns = [
@@ -166,8 +172,6 @@ goes to the `ads` application.
         url(r'^oauth/', include('social_django.urls', namespace='social')),
     ]
 
-It is important that the `owner` field be automatically set uring the `OwnerCreateView`, etc.   If you see the
-`owner` in your create screen it will not work with the autograder.
 
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
