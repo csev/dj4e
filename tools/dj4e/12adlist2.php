@@ -18,7 +18,7 @@ $user2pw = "Meow_42_" . substr(getMD5(),1,6);
 
 $now = date('H:i:s');
 
-line_out("Building Classified Ad Site #1");
+line_out("Building Classified Ad Site #2");
 
 // $url = getUrl('http://mdntutorial.pythonanywhere.com/');
 // $url = getUrl('http://localhost:8000/');
@@ -34,7 +34,6 @@ You should already have two users and a <b>meta</b> tag.
 <pre>
 <?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
 <?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?>
-
 <?= htmlentities($meta) ?>
 </pre>
 </p>
@@ -96,7 +95,12 @@ $create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
 $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
 $html = webauto_get_html($crawler);
 
-// Use the log_in form
+if ( ! webauto_search_for_not($html, "owner") ) {
+    error_out('The owner field is not supposed to appear in the create form.');
+    return;
+}
+
+// Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'title', $title);
@@ -105,6 +109,11 @@ webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+
+if ( ! webauto_search_for($html, $title) ) {
+    error_out('Tried to create a record and cannot find the record in the list view');
+    return;
+}
 
 // Look for the edit entry
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
@@ -221,7 +230,7 @@ $html = webauto_get_html($crawler);
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
-$perfect = 16;
+$perfect = 20;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
