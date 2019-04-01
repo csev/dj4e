@@ -29,14 +29,23 @@ Borrowing from the Samples Repository
 (1) Make a new project under your `django_projects` called `adlist` and within that
 project make an application called `ads`.
 
-(2) Copy `samples/requirements.txt` to `adlist/requirements.txt` and launch a shell in your virtual environment and run:
+(2) Copy `samples/requirements.txt` to `adlist/requirements.txt` and launch a shell.  If you are using
+virtual environments you must run the `pip` command in your virtual environment.   In PythonAnywhere 
+under Linux you would say:
+
+    workon django2
+
+The run:
 
     pip install -r requirements.txt   # or pip3
 
 This will pull in important extra libraries that your application will need.  On PythonAnywhere
-under the Web tab there is a link to launch a shell into your virtual environment.  It
-is important to be in the virtual environment so the installed libraries end
-up in the right place.
+make sure to double check under the `Web` tab under the `Virtualenv` sectiont that you have
+it set to something like:
+
+    /home/--your-account---/.virtualenvs/django2
+
+So that your python application is run within the virtual environment.
 
 (3) Adapt `adlist/settings.py` to pull in most of `samples/settings.py`.
 
