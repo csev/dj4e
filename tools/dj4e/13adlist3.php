@@ -18,15 +18,15 @@ $user2pw = "Meow_42_" . substr(getMD5(),1,6);
 
 $now = date('H:i:s');
 
-line_out("Building Classified Ad Site #2");
+line_out("Building Classified Ad Site #3");
 
-// $url = getUrl('http://localhost:8000/');
-$url = getUrl('https://chucklist.dj4e.com/m2');
+// $url = getUrl('http://localhost:8000/m3');
+$url = getUrl('https://chucklist.dj4e.com/m3');
 if ( $url === false ) return;
 
 ?>
-<a href="../../assn/dj4e_ads2.md" target="_blank">
-https://www.dj4e.com/assn/dj4e_ads2.md</a>
+<a href="../../assn/dj4e_ads3.md" target="_blank">
+https://www.dj4e.com/assn/dj4e_ads3.md</a>
 </a>
 <p>
 You should already have two users and a <b>meta</b> tag.
@@ -69,14 +69,32 @@ $favmd5 = md5($content);
 // echo("<pre>\n"); echo("Len = ".strlen($content)); echo(" md5 = ".$favmd5);
 
 if ( $favlen == 15406 && $favmd5 == 'da98cfb3992c3d6985fc031320bde065' ) {
-    line_out("Note: Please replace the favicon to be something other than the default.");
-    error_out("Having your own favicon is optional in this assignment but not in the next assignment.");
+    error_out("Please replace the favicon to be something other than the default.");
+    error_out("5 point dediction.");
+    $passed = $passed - 5;
+} else {
+    success_out("Favicon loaded");
+    $passed = $passed + 1;
 }
 
 
+for($test_no=0; $test_no<2; $test_no++) {
+if ( $test_no == 0 ) {
+    $useraccount = $user1account;
+    $userpw = $user1pw;
+} else {
+    line_out('');
+    line_out('----------------------');
+    success_out("Rerunning tests with the second user");
+    $useraccount = $user2account;
+    $userpw = $user2pw;
+}
+
 // Start the actual test
+line_out("Loading web site...");
 $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
+
 $html = webauto_get_html($crawler);
 
 line_out("Checking meta tag...");
@@ -90,13 +108,13 @@ if ( $retval === False ) {
 $login_url = webauto_get_url_from_href($crawler,'Login');
 
 
-$crawler = webauto_get_url($client, $login_url, "Logging in as $user1account");
+$crawler = webauto_get_url($client, $login_url, "Logging in as $useraccount");
 $html = webauto_get_html($crawler);
 
 // Use the log_in form
 $form = webauto_get_form_with_button($crawler,'Login Locally');
-webauto_change_form($form, 'username', $user1account);
-webauto_change_form($form, 'password', $user1pw);
+webauto_change_form($form, 'username', $useraccount);
+webauto_change_form($form, 'password', $userpw);
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
@@ -143,81 +161,72 @@ if ( ! webauto_search_for($html, $title) ) {
     return;
 }
 
-// Look for the edit entry
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
-    if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one update url like /ad/nnn/update");
-        return;
-    }
-    $match = $matches[1][0];
-    $crawler = webauto_get_url($client, $match, "Loading edit page for old record");
-    $html = webauto_get_html($crawler);
-    $form = webauto_get_form_with_button($crawler,'Submit');
-    webauto_change_form($form, 'title', $title."_updated");
-    $crawler = $client->submit($form);
-    $html = webauto_get_html($crawler);
-    webauto_search_for($html,$title."_updated");
-} else {
-    error_out("Could not find update url of the form /ad/nnn/update");
-    return;
-}
+// ad/3/favorite
 
-// Lets add a comment form
-line_out('Looking for the detail page so we can add a comment');
-$detail_url = webauto_get_url_from_href($crawler,$title."_updated");
-$crawler = webauto_get_url($client, $detail_url, "Loading detail...");
-$html = webauto_get_html($crawler);
-
-// Use the comment form
-$form = webauto_get_form_with_button($crawler,'Submit');
-webauto_change_form($form, 'comment', $title."_comment");
-
-line_out('Submitting the comment form');
-$crawler = $client->submit($form);
-$html = webauto_get_html($crawler);
-
-if ( ! webauto_search_for($html, $title."_comment") ) {
-    error_out('Added a comment but could not find it on the next screen');
-    return;
-}
-
-
-line_out('Deleteing that comment..');
-// comment/3/delete
-
-preg_match_all("'\"([a-z0-9/]*comment*/[0-9]+/delete)\"'",$html,$matches);
+preg_match_all("#'([a-z0-9/]*/[0-9]+/favorite)'#",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
+if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
     foreach($matches[1] as $match ) {
-        $crawler = webauto_get_url($client, $match, "Loading delete page for comment");
-        $html = webauto_get_html($crawler);
-        $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-        $crawler = $client->submit($form);
-        $html = webauto_get_html($crawler);
-        if ( ! webauto_search_for_not($html, $title."_comment") ) {
-            error('It appears that the comment was not deleted.');
+        line_out("Retrieving $match");
+        $crawler = $client->request('POST', $match);
+        if ( $crawler === false ) {
+            error_out("Error POSTING to favorite url: ".$match);
             return;
         }
+        $status = $response->getStatus();
+        if ( $status !== 200 ) {
+            error_out("Error posting to favorite url: ".$match." status=".$status);
+            return;
+        }
+        success_out("Favorited success");
+        break;
     } 
 } else {
-    error_out('Could not find link to delete comment comment/nnn/delete');
+    error_out("Could not find link to favorite 'ad/nnn/favorite'");
     return;
 }
 
+// ad/3/unfavorite
+
+preg_match_all("#'([a-z0-9/]*/[0-9]+/unfavorite)'#",$html,$matches);
+
+if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
+    foreach($matches[1] as $match ) {
+        $crawler = $client->request('POST', $match);
+        if ( $crawler === false ) {
+            error_out("Error POSTING to unfavorite url: ".$match);
+            return;
+        }
+        $status = $response->getStatus();
+        if ( $status !== 200 ) {
+            error_out("Error posting to unfavorite url: ".$match." status=".$status);
+            return;
+        }
+        success_out("UnFavorite success");
+        break;
+    } 
+} else {
+    error_out('Could not find link to favorite ad/nnn/unfavorite');
+    return;
+}
 
 line_out('');
-line_out('Test completed... Logging out.');
+line_out('Test completed... Going to the main page and Logging out.');
+$crawler = webauto_get_url($client, $url);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
 $crawler = webauto_get_url($client, $logout_url, "Logging out...");
 $html = webauto_get_html($crawler);
+
+} // End of the for
 
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
-$perfect = 16;
+$perfect = 13;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

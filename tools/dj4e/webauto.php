@@ -504,3 +504,19 @@ function trimSlash($url) {
     if ( $ch != '/' ) return $url;
     return substr($url, 0, strlen($url)-1);
 }
+
+function get_favicon($client, $favicon_url) {
+    $crawler = $client->request('GET', $favicon_url);
+    if ( $crawler === false ) {
+        error_out("Unable to load favicon");
+        return false;
+    }
+    $response = $client->getResponse();
+    $status = $response->getStatus();
+    if ( $status !== 200 ) {
+        error_out("Unable to load favicon status=".$status);
+        return false;
+    }
+    $content = $response->getContent();
+    return $content;
+}

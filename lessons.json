@@ -728,6 +728,36 @@
     ]
 },
 {
+    "title": "Classified Ads #3",
+    "anchor": "dj4e_ads3",
+    "icon" : "fa-database",
+    "description": "We add favorites to our classified ads application.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_ads3.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Ad List #3",
+        "launch" : "tools/dj4e/",
+        "resource_link_id" : "dj4e_ads3",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "13adlist3.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://chucklist.dj4e.com/m3"
+        }
+    ]
+},
+{
     "title": "Review: Cascading Style Sheets (CSS)",
     "anchor": "css",
     "icon" : "fa-css3",
