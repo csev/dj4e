@@ -732,6 +732,12 @@
     "anchor": "dj4e_ads3",
     "icon" : "fa-database",
     "description": "We add favorites to our classified ads application.",
+    "videos" : [
+    {
+        "title": "DJ4E Samples - Favorites",
+        "youtube": "6cq-ehBHkwc"
+    }
+   ],
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads3.md",
     "lti" : [
         {
@@ -748,8 +754,12 @@
     ],
     "references" : [
         {
-            "title" : "Sample Code",
+            "title" : "Sample Code on Github",
             "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Sample Code Server",
+            "href": "https://samples.dj4e.com/"
         },
         {
             "title" : "Reference Implementation",
