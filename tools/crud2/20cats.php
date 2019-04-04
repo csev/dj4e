@@ -16,24 +16,18 @@ $assignment_type_lower = 'assignment';
 // $assignment_type = "Sample Exam";
 
 $assignment_examples = "(i.e. Tabby, Persian, Maine Coon, Siamese, Manx, etc.)";
-$lookup_lower = 'breed';
-$lookup_article = 'a';
 $main_lower = 'cat';
 $main_article = 'a';
 
 $title_singular = ucfirst($main_lower);
 $title_plural = $title_singular . 's';
 
-// The logical key for lookup is always 'name'
-// The logical key for main is always 'nickname'
+// The logical key for main is always 'name'
 $fields = array(
     array('name' => 'foods', 'type' => 's'),
     array('name' => 'weight', 'type' => 'i'),
 );
 
-$lookup_lower_plural = $lookup_lower . 's';
-$lookup_title = ucfirst($lookup_lower);
-$lookup_title_plural = ucfirst($lookup_lower_plural);
 $main_lower_plural = $main_lower . 's';
 $main_title = ucfirst($main_lower);
 $main_title_plural = ucfirst($main_lower_plural);

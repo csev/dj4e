@@ -475,8 +475,8 @@ function webauto_check_test() {
     $last_first = $last_name . ', ' . $first_name;
     $meta = '<meta name="wa4e" content="735b90b4568125ed6c3f678819b6e058">';
     $adminpw = 'dj4e_42_!';
-    $userpw = 'dj4e_42_!';
-    $useraccount = 'dj4e-projects';
+    $useraccount = 'dj4e_user1';
+    $userpw = 'Meow_81e728_41!';
     $user1account = 'dj4e_user1';
     $user1pw = 'Meow_81e728_41';
     $user2account = 'dj4e_user2';
