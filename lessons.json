@@ -768,6 +768,58 @@
     ]
 },
 {
+    "title": "CRUD II",
+    "anchor": "dj4e_crud2",
+    "icon" : "fa-database",
+    "description": "Some CRUD Exercises.",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Autos CRUD II",
+        "launch" : "tools/crud2/",
+        "resource_link_id" : "dj4e_crud2_autos",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "20autos.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Cats CRUD II",
+        "launch" : "tools/crud2/",
+        "resource_link_id" : "dj4e_crud2_cats",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "20cats.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Specification - Autos CRUD II",
+            "href": "tools/crud2/02spec.php?assn=20autos.php"
+        },
+        {
+            "title" : "Reference Implementation - Autos",
+            "href": "https://chucklist.dj4e.com/autos"
+        },
+        {
+            "title" : "Sample Exam - Cats CRUD II",
+            "href": "tools/crud2/02spec.php?assn=20cats.php"
+        },
+        {
+            "title" : "Reference Implementation - Cats",
+            "href": "https://chucklist.dj4e.com/cats"
+        },
+        {
+            "title" : "Sample Code on Github",
+            "href": "https://github.com/csev/dj4e-samples"
+        }
+    ]
+},
+{
     "title": "Project Overview",
     "anchor": "pr_description",
     "icon" : "fa-address-card",

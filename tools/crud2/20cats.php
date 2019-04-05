@@ -13,7 +13,8 @@ $base_project = 'adlist';
 $assignment_type = 'Assignment';
 $assignment_type_lower = 'assignment';
 // $assignment_type = 'Exam';
-// $assignment_type = "Sample Exam";
+$assignment_type = "Sample Exam";
+$assignment_type_lower = strtolower($assignment_type);
 
 $assignment_examples = "(i.e. Tabby, Persian, Maine Coon, Siamese, Manx, etc.)";
 $main_lower = 'cat';

@@ -33,8 +33,8 @@ You should already have two users and a <b>meta</b> tag.
 </p>
 <?php
 
-$url = getUrl('http://localhost:8000/'.$main_lower_plural);
-// $url = getUrl('https://chucklist.dj4e.com/m2');
+// $url = getUrl('http://localhost:8000/'.$main_lower_plural);
+$url = getUrl('https://chucklist.dj4e.com/'.$main_lower_plural);
 if ( $url === false ) return;
 
 webauto_check_test();
