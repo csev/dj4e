@@ -1031,7 +1031,7 @@
       "type": "url"
     },
     {
-      "title": "Please describe your project in one paragraph so reviewers know what hey are looking at.",
+      "title": "Please describe your project in one paragraph so reviewers know what they are looking at.",
       "type": "code",
       "code": "markup"
     },
@@ -1043,6 +1043,130 @@
       "title": "The models.py file for your model.  Does not have to be complete and syntax errors are OK.  Focus on important conceptual things like foreign keys.",
       "type": "code",
       "code": "markup"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
+        }
+        ]
+},
+{
+    "title": "Project Milestone 5 - First Review",
+    "anchor": "pr_05_milestone",
+    "icon" : "fa-comment",
+    "description": "This is the first of two project reviews.",
+    "references" : [
+        {
+            "title" : "Project Specification",
+            "href" : "https://www.dj4e.com/project/00_overview.md"
+        }
+    ],
+    "lti" : [
+        {
+        "title": "Peer Graded: First Review",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "pr_05_milestone",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Milestone 5: Project Submission",
+  "description": "For this milestone you will submit a description of your project, a URL, some screen shots, and optionally an account / password if needed so we can review your project work to date.  You will continue to work on and improve your project, taking the comments from this preer review as input to your work.   There will be a second and final review after this review.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "URL of your working web site.",
+      "type": "url"
+    },
+    {
+      "title": "Please describe your project in one paragraph so reviewers know what they are looking at.  Include an id/pw for your site if it is needed to review the site.",
+      "type": "code",
+      "code": "markup"
+    },
+    {
+      "title": "A representative screen shot of your application",
+      "type": "image"
+    },
+    {
+      "title": "A second representative screen shot of your application",
+      "type": "image"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
+        }
+        ]
+},
+{
+    "title": "Project Milestone 6 - Project Submission",
+    "anchor": "pr_06_milestone",
+    "icon" : "fa-comment",
+    "description": "This is the first of two project reviews.",
+    "references" : [
+        {
+            "title" : "Project Specification",
+            "href" : "https://www.dj4e.com/project/00_overview.md"
+        }
+    ],
+    "lti" : [
+        {
+        "title": "Peer Graded: Project Review",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "pr_06_milestone",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Milestone 6: Project Submission",
+  "description": "For this milestone you will submit a description of your project, a URL, some screen shots, and optionally an account / password if needed so we can review your project.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "URL of your working web site.",
+      "type": "url"
+    },
+    {
+      "title": "Please describe your project in one paragraph so reviewers know what they are looking at.  Include an id/pw for your site if it is needed to review the site.",
+      "type": "code",
+      "code": "markup"
+    },
+    {
+      "title": "A representative screen shot of your application",
+      "type": "image"
+    },
+    {
+      "title": "A second representative screen shot of your application",
+      "type": "image"
     }
   ],
   "gallery": "off",
