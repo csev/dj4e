@@ -130,7 +130,6 @@ if ( ! webauto_search_for_not($html, "owner") ) {
 
 // TODO: Make this required
 // Sanity check the new ad page
-
 if ( strpos($html, 'type="file"') < 1 ) {
     error_out("Create Ad form cannot upload a file");
 }
@@ -142,6 +141,7 @@ if ( strpos($html, 'window.File') < 1 ) {
 if ( strpos($html, 'multipart/form-data') < 1 ) {
     error_out('Create Ad form requires enctype="multipart/form-data"');
 }
+
 // Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
@@ -215,6 +215,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
             error('It appears that the comment was not deleted.');
             return;
         }
+        break;
     } 
 } else {
     error_out('Could not find link to delete comment comment/nnn/delete');
