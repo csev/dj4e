@@ -128,6 +128,20 @@ if ( ! webauto_search_for_not($html, "owner") ) {
     return;
 }
 
+// TODO: Make this required
+// Sanity check the new ad page
+
+if ( strpos($html, 'type="file"') < 1 ) {
+    error_out("Create Ad form cannot upload a file");
+}
+
+if ( strpos($html, 'window.File') < 1 ) {
+    error_out("Create Ad page appears to be missing JavaScript to check the size of the uploaded file");
+}
+
+if ( strpos($html, 'multipart/form-data') < 1 ) {
+    error_out('Create Ad form requires enctype="multipart/form-data"');
+}
 // Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
@@ -166,10 +180,11 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
 // Lets add a comment form
 line_out('Looking for the detail page so we can add a comment');
 $detail_url = webauto_get_url_from_href($crawler,$title."_updated");
-$crawler = webauto_get_url($client, $detail_url, "Loading detail...");
+$crawler = webauto_get_url($client, $detail_url, "Loading detail page...");
 $html = webauto_get_html($crawler);
 
 // Use the comment form
+line_out('Looking comment form and submit button.');
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'comment', $title."_comment");
 

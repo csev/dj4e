@@ -91,7 +91,7 @@ New `urls.py`:
         views.AdFormView.as_view(success_url=reverse_lazy('ads')), name='ads_update'),
 
 (4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
-JavaSript bits at the end and change the `enctype` on the `form` tag.
+JavaScript bits at the end and change the `enctype` on the `form` tag.
 
 (5) Alter the `ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
@@ -148,10 +148,12 @@ the mirations once you have modified the model successfully.
 pass into the `ad_detail.html` template through the context.
 
 (4) Adapt the `ad_detail.html` template to show comments with delete and update icons when a comment belongs
-to the current logged in user.  Also add the ability to add a comment to an ad when the user is logged in by looking
+to the current logged in user.  
+
+(5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
 at the techniques in `forums/templates/forum_detail.html`.
 
-(5) Add a route in `urls.py` for the `comment_create` and `comment_delete` routes from `pics/urls.py`.
+(6) Add a route in `urls.py` for the `comment_create` and `comment_delete` routes from `pics/urls.py`.
 Make sure to use the same URL patterns as shown here:
 
     urlpatterns = [
@@ -162,8 +164,8 @@ Make sure to use the same URL patterns as shown here:
             views.CommentDeleteView.as_view(success_url=reverse_lazy('forums')), name='comment_delete'),
 ]
 
-(6) Adapt the comment related views from `pics/views.py` and put them into your `view.py`.
+(7) Adapt the comment related views from `pics/views.py` and put them into your `view.py`.
 
-(7) You will have to adapt the `forums/comment_delete.html` template to work in your ads application.
+(8) You will have to adapt the `forums/comment_delete.html` template to work in your ads application.
 
 
