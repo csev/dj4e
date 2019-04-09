@@ -160,8 +160,11 @@ if ( ! webauto_search_for($html, $title) ) {
 // Look for the edit entry
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
-    if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one update url like /ad/nnn/update");
+    if ( count($matches[1]) < 1 ) {
+        error_out("Could not find an update url like /ad/nnn/update");
+        return;
+    } else if ( count($matches[1]) > 1 ) {
+        error_out("Expecting only one update url like /ad/nnn/update");
         return;
     }
     $match = $matches[1][0];
