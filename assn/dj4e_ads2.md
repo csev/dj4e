@@ -73,11 +73,14 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 
 (2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.
 
-(3) Pull in some of `pics/urls.py` adapt the patterns in `PicCreateView` and
-`PicUpdateView` into `ads/views.py` `AdCreateView` and `AdUpdateView`.
+(3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
+`PicUpdateView` and replace `AdCreateView` and `AdUpdateView` in `ads/views.py`.  
+These new classes completely replace the classes that you had from the previous assignment.
+These new views don't inherit from
 
 (4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
-JavaScript bits at the end and change the `enctype` on the `form` tag.
+JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
+attribute to the `form` tag.
 
 (5) Alter the `ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
