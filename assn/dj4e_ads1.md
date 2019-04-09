@@ -144,10 +144,10 @@ ad application and the above model.   A big part of this assignment is to use th
 view classes that are in `util.py` and used in `views.py`.  The new `owner` field should
 not be shown to the user on the create and update forms, it should be automatically set
 by the classes like `OwnerCreateView` in `util.py`.  If you see an "owner" drop down
-in yur user interface the program is not implemented correctly and will fail the autograder.
+in your user interface the program is not implemented correctly and will fail the autograder.
 
 (4) When you are implementing the update and delete views, make sure to follow the url patterns
-the update and delete operations.  They chould be of the form `/ad/14/update`
+the update and delete operations.  They should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
     urlpatterns = [
@@ -257,7 +257,7 @@ match the registered callback URL for this application.` error message when you 
 Working with Ambiguity
 ----------------------
 
-This assignment is far more vague than previous assignments - on purpose.  The goal is to get
+This assignment is more vague than previous assignments - on purpose.  The goal is to get
 closer to the development model for actual applications.  You know what you want to build
 and start with a mostly blank slate.  You look at sample code, reuse some code form stuff
 you build earlier, do some online
