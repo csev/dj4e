@@ -74,21 +74,7 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 (2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.
 
 (3) Pull in some of `pics/urls.py` adapt the patterns in `PicCreateView` and
-`PicUpdateView` into `ads/views.py` `AdCreateView` and `AdUpdateView:
-
-Old `urls.py`:
-
-    path('ad/create',
-        views.AdCreateView.as_view(success_url=reverse_lazy('ads')), name='ads_create'),
-    path('ad/<int:pk>/update',
-        views.AdUpdateView.as_view(success_url=reverse_lazy('ads')), name='ads_update'),
-
-New `urls.py`:
-
-    path('ad/create',
-        views.AdFormView.as_view(success_url=reverse_lazy('ads')), name='ads_create'),
-    path('ad/<int:pk>/update',
-        views.AdFormView.as_view(success_url=reverse_lazy('ads')), name='ads_update'),
+`PicUpdateView` into `ads/views.py` `AdCreateView` and `AdUpdateView`.
 
 (4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
 JavaScript bits at the end and change the `enctype` on the `form` tag.
