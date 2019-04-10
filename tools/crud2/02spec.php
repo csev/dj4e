@@ -242,6 +242,29 @@ that appears only when the user is logged in.
 <li>
 If you have not already done so, create a superuser so you can test the admin interface and log in to the application.
 </li>
+<li>
+This step is optional but strongly recommended to help you keep the templates from multiple 
+applications (i.e. adlist, autos, cats, etc.) within a Django project
+separate.  It is somewhat counterintuitive, but the names for Django templates are global across all applications.  Up to now,
+a common technique to insure that you are using the right template in your <b>views.py</b>
+is to use a template naming pattern that looks like this:
+<pre>
+autos/templates/auto_list.html
+cats/templates/cats_list.html
+</pre>
+This can work as long as you are very careful to add the "application name" prefix to <i>every</i> template as you move
+from one application to another, but a safer and more reliable pattern that is encouraged by
+the <b>Generic</b> views is to make a folder within <b>templates</b> that 
+matches the application name and not have a prefix on each template as follows:
+<pre>
+autos/templates/auto/list.html
+cats/templates/cats/list.html
+</pre>
+Of course in the views you need to change the "_" in template names to "/".
+This pattern of template naming insures that <i>every</i> template is "name spaced" within each application.
+If you don't use this pattern and have multiple applications, you might be using the "wrong" template
+with the same name from another application.
+</li>
 </ul>
 <h1>Using the Autograder</h1>
 <p>
