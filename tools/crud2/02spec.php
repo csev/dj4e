@@ -242,30 +242,49 @@ that appears only when the user is logged in.
 <li>
 If you have not already done so, create a superuser so you can test the admin interface and log in to the application.
 </li>
-<li>
-This step is optional but strongly recommended to help you keep the templates from multiple 
-applications (i.e. adlist, autos, cats, etc.) within a Django project
-separate.  It is somewhat counterintuitive, but the names for Django templates are global across all applications.  Up to now,
+</ul>
+<h1>Template Naming</h1>
+<p>
+You can use any pattern you like in naming templates across multiple Django applications (i.e. adlist, autos, cats, etc.)
+in a Django project, but there is a suggested pattern to follow to minimize template name clashes and to avoid
+subtle hard-to-find bugs.
+</p>
+It is somewhat counterintuitive, but the names for Django templates are <b>global across all</b> applications.  Up to now,
 a common technique to insure that you are using the right template in your <b>views.py</b>
 is to use a template naming pattern that looks like this:
 <pre>
 autos/templates/auto_list.html
-cats/templates/cats_list.html
+autos/templates/auto_delete.html
+autos/templates/comment_delete.html    &lt;---  The same template name 
+cats/templates/cat_list.html
+cats/templates/cat_delete.html
+cats/templates/comment_delete.html     &lt;---  The same template name 
 </pre>
-This can work as long as you are very careful to add the "application name" prefix to <i>every</i> template as you move
-from one application to another, but a safer and more reliable pattern that is encouraged by
+In the above example, when you reference <b>comment_delete.html</b> as a template in a <b>views.py</b> file, 
+you might get the template from <b>autos</b> or <b>cats</b>.
+So you might have a bug that is caused because you did not get the template you expected.
+</p>
+<p>
+The above can work as long as you are very careful to add the "application name" prefix to <i>every</i> template as you move
+from one application to another.  So you would need to name the templates <b>autos_comment_delete.html</b> 
+and <b>cats_comment_delete.html</b> or some other template names that are unique across all applications.
+
+A safer and more reliable pattern that is encouraged by
 the <b>Generic</b> views is to make a folder within <b>templates</b> that 
-matches the application name and not have a prefix on each template as follows:
+matches the application name and use the model name as the prefix for the template file as follows:
 <pre>
-autos/templates/auto/list.html
-cats/templates/cats/list.html
+autos/templates/autos/auto_list.html
+autos/templates/autos/auto_delete.html
+autos/templates/autos/comment_delete.html
+cats/templates/cats/cat_list.html
+cats/templates/cats/cat_delete.html
+cats/templates/cats/comment_delete.html
 </pre>
-Of course in the views you need to change the "_" in template names to "/".
-This pattern of template naming insures that <i>every</i> template is "name spaced" within each application.
-If you don't use this pattern and have multiple applications, you might be using the "wrong" template
-with the same name from another application.
-</li>
-</ul>
+In this pattern "autos" is the Django application name and "auto" and "comment" are the model names.
+This way you can have two templates named <b>comment_delete.html</b> and know in your <b>views.py</b>
+which one you are using because you reference <b>autos/comment_delete.html</b>
+or <b>cats/comment_delete.html</b>.
+</p>
 <h1>Using the Autograder</h1>
 <p>
 This <?= $assignment_type_lower ?> will be automatically graded.  You will have
