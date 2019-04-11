@@ -1156,7 +1156,7 @@
       "type": "url"
     },
     {
-      "title": "Please describe your project in one paragraph so reviewers know what they are looking at.  Include an id/pw for your site if it is needed to review the site.",
+      "title": "Please describe your project in one paragraph so reviewers know what they are looking at.  Include an id/pw for your site if it is needed to review the site.  Also include your github URL if it is public. Also indicate if you would be willing to be included in a public gallery of student projects. (not required)",
       "type": "code",
       "code": "markup"
     },
