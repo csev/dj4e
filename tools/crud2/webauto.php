@@ -113,16 +113,20 @@ function getUrl($sample) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
 
+
         try {
             $pieces = parse_url(trim($_GET['url']));
-            $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
-            if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
-                $base_url_path .= ':' . $pieces['port'];
+            if ( isset($pieces['scheme']) && isset($pieces['host']) ) {
+                $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
+                if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
+                    $base_url_path .= ':' . $pieces['port'];
+                }
+                return trim($_GET['url']);
             }
+            echo("<p>Badly formatted URL</p>\n");
         } catch(Exception $e) {
-            $base_url_path - false;
+            echo("<p>Badly formatted URL</p>\n");
         }
-        return trim($_GET['url']);
     }
 
     echo('<form>');
