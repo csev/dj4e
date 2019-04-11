@@ -149,7 +149,7 @@ webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.41');
 webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 
-line_out("Submitting the create form...");
+line_out("Submitting the create form, expecting the list of items...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
 
