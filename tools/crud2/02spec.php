@@ -181,7 +181,8 @@ foreach($fields as $field ) {
 ?>
     comments = models.ManyToManyField(settings.AUTH_USER_MODEL, through='Comment', 
        related_name='<?= $main_lower ?>_comments')
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+       related_name='<?= $main_lower ?>_owner')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -196,8 +197,8 @@ class Comment(models.Model) :
     )
 
     <?= $main_lower ?> = models.ForeignKey(<?= $main_title ?>, on_delete=models.CASCADE)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-       related_name='<?= $main_lower ?>_owner')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+       related_name='<?= $main_lower ?>_comment_owner')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -237,7 +238,9 @@ You can also copy and adapt your templates from a previous assignment to produce
 </li>
 <li>
 Edit <b>base_menu.html.py</b> template so you have a <b>Create <?= $main_title ?></b> link
-that appears only when the user is logged in.
+that appears only when the user is logged in.  Also make sure that the "next=" on your Login
+and Logout buttons routes the user back to the <b>/<?= $main_lower_plural ?></b> URL
+after you login.
 </li>
 <li>
 If you have not already done so, create a superuser so you can test the admin interface and log in to the application.

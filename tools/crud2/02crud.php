@@ -73,13 +73,14 @@ $html = webauto_get_html($crawler);
 $redirected = $client->getHistory()->current()->getUri();
 
 if ( strpos($redirected, $url) !== 0 ) {
-    error_out("After login we went to $redirected instead of $url");
+    error_out("After login we were redirected to $redirected instead of $url");
     error_out("Look in base_menu.html and check the 'next=' parameter on your login link");
 }
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
+if ( webauto_dont_want($html, "Create Ad") return;
 
-// Cleanup old ads
+// Cleanup old items
 $saved = $passed;
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
