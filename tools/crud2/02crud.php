@@ -78,7 +78,7 @@ if ( strpos($redirected, $url) !== 0 ) {
 }
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
-if ( webauto_dont_want($html, "Create Ad") return;
+if ( webauto_dont_want($html, "Create Ad") ) return;
 
 // Cleanup old items
 $saved = $passed;
