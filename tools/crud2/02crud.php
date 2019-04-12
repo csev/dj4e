@@ -105,7 +105,7 @@ if ( ! webauto_search_for_not($html, "owner") ) {
     return;
 }
 
-if ( ! webauto_search_for_not($html, "comments") ) {
+if ( ! webauto_search_for_not($html, "comment") ) {
     error_out('The comments field is not supposed to appear in the create form.');
     return;
 }
