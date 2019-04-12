@@ -146,6 +146,11 @@ if ( ! webauto_search_for_not($html, "owner") ) {
     return;
 }
 
+if ( ! webauto_search_for_not($html, "comment") ) {
+    error_out('The comments field is not supposed to appear in the create form.');
+    return;
+}
+
 // Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
