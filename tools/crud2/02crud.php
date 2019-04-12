@@ -70,6 +70,12 @@ webauto_change_form($form, 'password', $user1pw);
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+$redirected = $client->getHistory()->current()->getUri();
+
+if ( strpos($redirected, $url) !== 0 ) {
+    error_out("After login we went to $redirected instead of $url");
+    error_out("Look in base_menu.html and check the 'next=' parameter on your login link");
+}
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
@@ -120,7 +126,7 @@ if ( ! webauto_search_for($html, $name) ) {
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one update url like /$main_lower/nnn/update");
+        error_out("Expecting exactly one update url like /$main_lower/nnn/update - found ".count($matches[1]));
         return;
     }
     $match = $matches[1][0];
