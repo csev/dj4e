@@ -40,6 +40,7 @@ function webauto_get_html($crawler) {
         if ( $title ) error_out($title);
     }
     showHTML("Show retrieved page",$html);
+    return $html;
 }
 
 function showHTML($message, $html) {
