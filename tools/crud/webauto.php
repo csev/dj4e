@@ -26,8 +26,20 @@ function webauto_get_html($crawler) {
         error_log("Could not find HTML ".$e->getMessage());
         throw new Exception("Could not retrieve HTML from page");
     }
+    if ( strpos($html,"<th>Exception Value:</th>") > 0 ) {
+        $title = false;
+        try {
+            $nodeValues = $crawler->filter('title')->each(function ($node, $i) {
+                return $node->text();
+            });
+            if ( is_array($nodeValues) && count($nodeValues) ) $title = $nodeValues[0];
+        } catch(Exception $e) {
+            echo("<p>Badly formatted URL</p>\n");
+        }
+        line_out("It appears that there is a Django error on this page");
+        if ( $title ) error_out($title);
+    }
     showHTML("Show retrieved page",$html);
-    return $html;
 }
 
 function showHTML($message, $html) {
@@ -91,6 +103,7 @@ Django's port 8000 and not port 8888 as is used in the above documentation.
 
 function getUrl($sample) {
     global $USER, $access_code;
+    global $base_url_path;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -111,7 +124,21 @@ function getUrl($sample) {
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
-        return trim($_GET['url']);
+
+
+        try {
+            $pieces = parse_url(trim($_GET['url']));
+            if ( isset($pieces['scheme']) && isset($pieces['host']) ) {
+                $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
+                if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
+                    $base_url_path .= ':' . $pieces['port'];
+                }
+                return trim($_GET['url']);
+            }
+            echo("<p>Badly formatted URL</p>\n");
+        } catch(Exception $e) {
+            echo("<p>Badly formatted URL</p>\n");
+        }
     }
 
     echo('<form>');
@@ -411,10 +438,13 @@ function webauto_search_for_not($html, $needle)
 
 /* Returns a crawler */
 function webauto_get_url($client, $url, $message=false) {
+    global $base_url_path;
     line_out(" ");
     if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
     echo("<b>Loading URL:</b> ".htmlentities($url));
-    echo(' (<a href="'.str_replace('"',"&quot;", $url).'" target="_blank">Open URL</a>)');
+    $the_url = str_replace('"',"&quot;", $url);
+    if ( strpos($the_url, '/') === 0 ) $the_url = $base_url_path . $the_url;
+    echo(' (<a href="'.$the_url.'" target="_blank">Open URL</a>)');
     echo("<br/>\n");
     flush();
     try {
@@ -450,6 +480,7 @@ function webauto_testrun($url) {
 
 function webauto_check_test() {
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
+    global $user1account, $user1pw, $user2account, $user2pw;
     if ( ! webauto_testrun($url) ) return;
     error_out('Test run - switching to sample data');
     $first_name = 'Jamal';
@@ -460,8 +491,12 @@ function webauto_check_test() {
     $last_first = $last_name . ', ' . $first_name;
     $meta = '<meta name="wa4e" content="735b90b4568125ed6c3f678819b6e058">';
     $adminpw = 'dj4e_42_!';
-    $userpw = 'dj4e_42_!';
-    $useraccount = 'dj4e-projects';
+    $useraccount = 'dj4e_user1';
+    $userpw = 'Meow_81e728_41!';
+    $user1account = 'dj4e_user1';
+    $user1pw = 'Meow_81e728_41';
+    $user2account = 'dj4e_user2';
+    $user2pw = 'Meow_42_81e728';
 }
 
 // <option value="46">LU_42</option></select>
@@ -484,4 +519,20 @@ function trimSlash($url) {
     $ch = substr($url, strlen($url)-1, 1);
     if ( $ch != '/' ) return $url;
     return substr($url, 0, strlen($url)-1);
+}
+
+function get_favicon($client, $favicon_url) {
+    $crawler = $client->request('GET', $favicon_url);
+    if ( $crawler === false ) {
+        error_out("Unable to load favicon");
+        return false;
+    }
+    $response = $client->getResponse();
+    $status = $response->getStatus();
+    if ( $status !== 200 ) {
+        error_out("Unable to load favicon status=".$status);
+        return false;
+    }
+    $content = $response->getContent();
+    return $content;
 }

@@ -26,8 +26,20 @@ function webauto_get_html($crawler) {
         error_log("Could not find HTML ".$e->getMessage());
         throw new Exception("Could not retrieve HTML from page");
     }
+    if ( strpos($html,"<th>Exception Value:</th>") > 0 ) {
+        $title = false;
+        try {
+            $nodeValues = $crawler->filter('title')->each(function ($node, $i) {
+                return $node->text();
+            });
+            if ( is_array($nodeValues) && count($nodeValues) ) $title = $nodeValues[0];
+        } catch(Exception $e) {
+            echo("<p>Badly formatted URL</p>\n");
+        }
+        line_out("It appears that there is a Django error on this page");
+        if ( $title ) error_out($title);
+    }
     showHTML("Show retrieved page",$html);
-    return $html;
 }
 
 function showHTML($message, $html) {
@@ -112,6 +124,7 @@ function getUrl($sample) {
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
+
 
         try {
             $pieces = parse_url(trim($_GET['url']));
@@ -478,8 +491,8 @@ function webauto_check_test() {
     $last_first = $last_name . ', ' . $first_name;
     $meta = '<meta name="wa4e" content="735b90b4568125ed6c3f678819b6e058">';
     $adminpw = 'dj4e_42_!';
-    $userpw = 'dj4e_42_!';
-    $useraccount = 'dj4e-projects';
+    $useraccount = 'dj4e_user1';
+    $userpw = 'Meow_81e728_41!';
     $user1account = 'dj4e_user1';
     $user1pw = 'Meow_81e728_41';
     $user2account = 'dj4e_user2';

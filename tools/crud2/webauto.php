@@ -26,8 +26,20 @@ function webauto_get_html($crawler) {
         error_log("Could not find HTML ".$e->getMessage());
         throw new Exception("Could not retrieve HTML from page");
     }
+    if ( strpos($html,"<th>Exception Value:</th>") > 0 ) {
+        $title = false;
+        try {
+            $nodeValues = $crawler->filter('title')->each(function ($node, $i) {
+                return $node->text();
+            });
+            if ( is_array($nodeValues) && count($nodeValues) ) $title = $nodeValues[0];
+        } catch(Exception $e) {
+            echo("<p>Badly formatted URL</p>\n");
+        }
+        line_out("It appears that there is a Django error on this page");
+        if ( $title ) error_out($title);
+    }
     showHTML("Show retrieved page",$html);
-    return $html;
 }
 
 function showHTML($message, $html) {
