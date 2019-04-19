@@ -74,11 +74,11 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 (2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.
 
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
-`PicUpdateView` and replace `AdCreateView` and `AdUpdateView` in `ads/views.py`.  
+`PicUpdateView` and replace `AdCreateView` and `AdUpdateView` in `ads/views.py`.
 These new classes completely replace the classes that you had from the previous assignment.
 These new views don't inherit from
 
-(4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the 
+(4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
 attribute to the `form` tag.
 
@@ -128,32 +128,32 @@ into your `ads` application to add support for an optional single picture per ad
             if len(self.text) < 15 : return self.text
             return self.text[:11] + ' ...'
 
-Do not add the Forum model - simply connect the `Comment` model to the `Ad` model. Of course do 
-the mirations once you have modified the model successfully.
+Do not add the Forum model - simply connect the `Comment` model to the `Ad` model. Of course do
+the migrations once you have modified the model successfully.
 
 (2) Merge the `CommentForm` from `forums/forms.py` into your `forms.py`.
 
-(3) Adapt the techniques in the `ForumDetailView` into your `AdDetailView` to retrieve the comments to 
+(3) Adapt the techniques in the `ForumDetailView` into your `AdDetailView` to retrieve the comments to
 pass into the `ad_detail.html` template through the context.
 
 (4) Adapt the `ad_detail.html` template to show comments with delete and update icons when a comment belongs
-to the current logged in user.  
+to the current logged in user.
 
 (5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
 at the techniques in `forums/templates/forum_detail.html`.
 
-(6) Add a route in `urls.py` for the `comment_create` and `comment_delete` routes from `pics/urls.py`.
-Make sure to use the same URL patterns as shown here:
+(6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
+routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown here:
 
     urlpatterns = [
         ...
         path('ad/<int:pk>/comment',
-            views.CommentCreateView.as_view(), name='comment_create'),
+            views.CommentCreateView.as_view(), name='ad_comment_create'),
         path('comment/<int:pk>/delete',
-            views.CommentDeleteView.as_view(success_url=reverse_lazy('forums')), name='comment_delete'),
+            views.CommentDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_comment_delete'),
 ]
 
-(7) Adapt the comment related views from `pics/views.py` and put them into your `view.py`.
+(7) Adapt the comment related views from `forums/views.py` and put them into your `view.py`.
 
 (8) You will have to adapt the `forums/comment_delete.html` template to work in your ads application.
 
