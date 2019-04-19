@@ -183,18 +183,18 @@ https://chucklist.dj4e.com/
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
 the gravatar when the user logs in.
 
-(1) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates`.  This should
+(1) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates/ads`.  This should
 extend `base_bootstrap.html` (in your `home` application).  You will need to adjust the navigation and url
 lookups in this file to match the naviation in the sample implementation.
 
-(2) Then edit all four of the `ads_` files in `ads/templates` to change them so they extend `base_menu.html`.
-Change the first line of each file from:
+(2) Then edit all four of the `ads_` files in `ads/templates/ads` to change them so 
+they extend `ads/base_menu.html`.  Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
 
 to be.
 
-    {% extends "base_menu.html" %}
+    {% extends "ads/base_menu.html" %}
 
 (3) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
 
@@ -232,7 +232,7 @@ to be.
     </nav>
 
 
-When you are dont, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
+When you are done, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
 sample implementation.
 
 Fun Challenges

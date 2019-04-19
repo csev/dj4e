@@ -78,11 +78,11 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 These new classes completely replace the classes that you had from the previous assignment.
 These new views don't inherit from
 
-(4) Alter your `ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
+(4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
 attribute to the `form` tag.
 
-(5) Alter the `ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
+(5) Alter the `templates/ads/ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
@@ -134,13 +134,13 @@ the migrations once you have modified the model successfully.
 (2) Merge the `CommentForm` from `forums/forms.py` into your `forms.py`.
 
 (3) Adapt the techniques in the `ForumDetailView` into your `AdDetailView` to retrieve the comments to
-pass into the `ad_detail.html` template through the context.
+pass into the `templates/ads/ad_detail.html` template through the context.
 
-(4) Adapt the `ad_detail.html` template to show comments with delete and update icons when a comment belongs
+(4) Adapt the `templates/ads/ad_detail.html` template to show comments with delete and update icons when a comment belongs
 to the current logged in user.
 
 (5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
-at the techniques in `forums/templates/forum_detail.html`.
+at the techniques in `forums/templates/forums/detail.html`.
 
 (6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
 routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown here:
@@ -155,6 +155,6 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
 
 (7) Adapt the comment related views from `forums/views.py` and put them into your `view.py`.
 
-(8) You will have to adapt the `forums/comment_delete.html` template to work in your ads application.
+(8) You will have to adapt the `templates/forums/comment_delete.html` template to work in your ads application.
 
 
