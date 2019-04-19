@@ -219,7 +219,7 @@ to be.
                     <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}?next={% url 'ads' %}">Logout</a></li>
                 </ul>
             </li>
             {% else %}
