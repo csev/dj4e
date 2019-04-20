@@ -85,8 +85,9 @@ function onSelect() {
   <option <?= x_sel("paw_github.md") ?>>Using GitHub</option>
   <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
-  <option <?= x_sel("paw_models.md") ?>>DJAngo Models</option>
-  <option <?= x_sel("paw_admin.md") ?>>DJAngo Admin</option>
+  <option <?= x_sel("paw_models.md") ?>>Django Models</option>
+  <option <?= x_sel("paw_admin.md") ?>>Django Admin</option>
+  <option <?= x_sel("dj4e_model.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("paw_home.md") ?>>Home Page</option>
   <option <?= x_sel("paw_details.md") ?>>Detail Pages</option>
   <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
@@ -95,7 +96,6 @@ function onSelect() {
   <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Autos CRUD</option>
   <option <?= x_sel("dj4e_cats.md") ?>>Cats CRUD</option>
-  <option <?= x_sel("dj4e_model.md") ?>>Loading Model Data</option>
   <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
   <option <?= x_sel("dj4e_ads2.md") ?>>AdList Milestone #2</option>
   <option <?= x_sel("dj4e_ads3.md") ?>>AdList Milestone #3</option>
@@ -117,6 +117,7 @@ web site.
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
 <li><a href="paw_models.md">Django Models</a></li>
 <li><a href="paw_admin.md">Django Admin</a></li>
+<li><a href="dj4e_model.md">Batch Loading Data</a></li>
 <li><a href="paw_home.md">Home Page</a></li>
 <li><a href="paw_details.md">Detail Pages</a></li>
 <li><a href="paw_sessions.md">Django Sessions</a></li>
@@ -125,7 +126,6 @@ web site.
 <li><a href="dj4e_hello.md">Hello World</a></li>
 <li><a href="dj4e_autos.md">Auto CRUD</a></li>
 <li><a href="dj4e_cats.md">Cats CRUD</a></li>
-<li><a href="dj4e_model.md">Loading Model Data</a></li>
 <li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
 <li><a href="dj4e_ads2.md">AdList Milestone #2</a></li>
 <li><a href="dj4e_ads3.md">AdList Milestone #3</a></li>

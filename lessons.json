@@ -373,6 +373,33 @@
     ]
 },
 {
+    "title": "Many-to-Many Data Models",
+    "anchor": "dj4e_many",
+    "icon" : "fa-database",
+    "description": "We build a data model from a flat file.",
+    "slides": "lectures/DJ-03-Many-To-Many.pptx",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_model.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Data model",
+        "launch" : "tools/mdn-sql/",
+        "resource_link_id" : "dj4e_many",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05many.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "UNESCO World Heritage Sites",
+            "href": "https://whc.unesco.org/en/list/"
+        }
+    ]
+},
+{
     "title": "Installing Django locally",
     "anchor": "paw_local",
     "icon" : "fa-clone",
@@ -637,33 +664,6 @@
         {
             "title" : "Cats Application Specification",
             "href": "https://www.dj4e.com/tools/crud/02spec.php?assn=02cats.php"
-        }
-    ]
-},
-{
-    "title": "Many-to-Many Data Models",
-    "anchor": "dj4e_many",
-    "icon" : "fa-database",
-    "description": "We build a data model from a flat file.",
-    "slides": "lectures/DJ-03-Many-To-Many.pptx",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_model.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: Data model",
-        "launch" : "tools/mdn-sql/",
-        "resource_link_id" : "dj4e_many",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "05many.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "UNESCO World Heritage Sites",
-            "href": "https://whc.unesco.org/en/list/"
         }
     ]
 },
