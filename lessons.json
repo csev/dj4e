@@ -14,7 +14,7 @@
     "title": "HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",
-    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.",
+    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.   This content is from www.wa4e.com.",
     "slides": "lectures/Web-02-HTML.ppt",
     "TODO" : "Review these for potential updating",
     "videos" : [
@@ -32,6 +32,10 @@
         }
     ],
     "references" : [
+        {
+            "title" : "Web Applications for Everybody",
+            "href" : "https://www.wa4e.com/"
+        },
         {
             "title" : "HTML Sample Code (Browse)",
             "href" : "https://www.wa4e.com/code/html/index.htm"
