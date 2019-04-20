@@ -50,7 +50,7 @@
         },
         {
         "title" : "Autograder: HyperText Markup Language (HTML)",
-        "launch" : "tools/web-autograde/",
+        "launch" : "tools/html-autograde/",
         "resource_link_id" : "html_01",
         "custom" : [
             {
