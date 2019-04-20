@@ -54,7 +54,7 @@ Your `home\urls.py` should have a like like this
 And you should have a file `home/templates/main_hello.html` that has the text for the top-level page.
 You can keep the "Hello World" text in the page somewhere.
 
-Add a link to the "/autos" url in `main.html` and anything else the autograder needs:
+Add a link to the "/autos" url in `main_hello.html` and anything else the autograder needs:
 
     <ul>
     <li><a href="/autos">Autos CRUD</a>
