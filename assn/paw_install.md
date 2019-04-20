@@ -50,6 +50,15 @@ Lets make sure that your django was installed successfully with the following co
     python3 -m django --version
     # This should show something like 2.1.4 
 
+Lets also get a copy of the sample code for DJ4E checked out so you can look at sample code
+as the course progresses and install some important additional Django software libraries using 
+`pip3`.
+
+    cd ~
+    git clone https://github.com/csev/dj4e-samples
+    cd dj4e-samples/samples
+    pip3 install -r requirements.txt
+
 In the PYAW shell, continue the steps from the MDN:
 
     cd ~

@@ -100,10 +100,11 @@ Then lets checkout the dj4e-samples repo
     cd django
     git clone https://github.com/csev/dj4e-samples
 
-Then lets run one of the applications:
+Then lets setup the database for the main sample applications:
 
     cd dj4e-samples
-    cd hello
+    cd samples
+    python3 manage.py migrate 
     python3 manage.py runserver 
 
 Then navigate to http://localhost:8000 to see the page.
@@ -113,8 +114,7 @@ Then just for fun, open a second terminal / shell / command line and:
     cd Desktop
     cd django
     cd dj4e-samples
-    cd user
-    python3 manage.py migrate
+    cd samples
     python3 manage.py runserver 8001
 
 Then navigate to http://localhost:8001 to see the page.
@@ -124,7 +124,7 @@ You can abort the `runserver` applications, switch to a new folder and start run
 You can check out more than one set of projects into the `django` folder.   Here I check 
 out my private repo with the solutions to the assignments so I can work on them.
 
-    cd ~         # or simple 'cd' for Windows
+    cd ~           # or simple 'cd' for Windows
     cd Desktop
     cd django
     git clone https://github.com/--your-github-account--/django_projects
