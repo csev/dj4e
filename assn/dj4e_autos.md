@@ -2,7 +2,7 @@ Autos CRUD
 ==========
 
 This assignment is to build a fully working CRUD (Create, Read, Update, and Delete)
-application to manage automobiles and their makes (i.e. Ford, Hundai, Toyota,
+application to manage automobiles and their makes (i.e. Ford, Hyundai, Toyota,
 Tata, Audi, etc.).
 
 This application will be based on this repo:
