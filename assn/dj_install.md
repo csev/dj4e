@@ -2,7 +2,7 @@ Developing with Django on your computer
 =======================================
 
 As you start to develop more intricate Django applications, you might find it more
-convienent to install Django on your local computer and then use githib to move your
+convienent to install Django on your local computer and then use github to move your
 tested code into your 
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 server so you it is available on the Internet for grading or otherwise sharing.
