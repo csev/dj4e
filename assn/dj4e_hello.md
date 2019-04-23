@@ -22,7 +22,7 @@ patterns.
 
 This application will end up with a similar structure to
 
-https://github.com/csev/dj4e-samples/tree/master/onepage
+https://github.com/csev/dj4e-samples/tree/master/autod
 
 **Do not clone this repository**.  It is just to be used as sample code as you
 build your new project and application in your `django_projects` folder.
@@ -107,7 +107,7 @@ References
 
 * <a href="https://github.com/csev/dj4e-samples/tree/master/dj4e" target="_blank">Hello World Sample Code</a>
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/samples/templates" target="_blank">Templates Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/master/tmpl" target="_blank">Templates Sample Code</a>
 
 * <a href="dj_install.md" target="_blank">Installing Django Locally</a>
 

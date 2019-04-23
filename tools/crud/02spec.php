@@ -95,7 +95,7 @@ and give you a more appropriate score than the autograder.
 <li>
 The sample CRUD code that we covered in class and used in previous assignments.
 <pre>
-<a href="https://github.com/csev/dj4e-samples/tree/master/dj4ecrud" target="_blank">https://github.com/csev/dj4e-samples/tree/master/dj4ecrud</a>
+<a href="https://github.com/csev/dj4e-samples/tree/master/autos" target="_blank">https://github.com/csev/dj4e-samples/tree/master/autos</a>
 </pre>
 </li>
 </ul>

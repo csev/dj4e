@@ -103,7 +103,6 @@ Then lets checkout the dj4e-samples repo
 Then lets setup the database for the main sample applications:
 
     cd dj4e-samples
-    cd samples
     python3 manage.py migrate 
     python3 manage.py runserver 
 
@@ -114,7 +113,6 @@ Then just for fun, open a second terminal / shell / command line and:
     cd Desktop
     cd django
     cd dj4e-samples
-    cd samples
     python3 manage.py runserver 8001
 
 Then navigate to http://localhost:8001 to see the page.

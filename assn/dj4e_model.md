@@ -38,7 +38,7 @@ is needed in order to store Python objects in the `scripts` folder.
 
 Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
-https://github.com/csev/dj4e-samples/tree/master/samples/scripts
+https://github.com/csev/dj4e-samples/tree/master/scripts
 
 Add the following line to your `locallibrary/locallibrary/settings.py`:
 

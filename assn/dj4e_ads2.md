@@ -19,7 +19,7 @@ Updating Requirements
 ---------------------
 
 (1) Do a `git pull` in your `dj4e-samples` repo and make sure all the pre-requisites are
-installed.  Copy `samples/requirements.txt` to `adlist/requirements.txt` and launch a
+installed.  Copy `dj4e-samples/requirements.txt` to `adlist/requirements.txt` and launch a
 shell in your virtual environment and run:
 
     pip install -r requirements.txt   # or pip3

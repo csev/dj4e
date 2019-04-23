@@ -97,7 +97,7 @@ and give you a more appropriate score than the autograder.
 <li>
 The sample code that we covered in class and used in previous assignments.
 <pre>
-<a href="https://github.com/csev/dj4e-samples/tree/master/samples" target="_blank">https://github.com/csev/dj4e-samples/tree/master/samples</a>
+<a href="https://github.com/csev/dj4e-samples" target="_blank">https://github.com/csev/dj4e-samples</a>
 </pre>
 <?php if ( isset($particular) ) { ?>
 In particular, pay attention to the <?= $particular ?> examples.

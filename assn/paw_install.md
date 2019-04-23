@@ -56,7 +56,7 @@ as the course progresses and install some important additional Django software l
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
-    cd dj4e-samples/samples
+    cd dj4e-samples
     pip3 install -r requirements.txt
 
 In the PYAW shell, continue the steps from the MDN:

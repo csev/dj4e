@@ -8,7 +8,7 @@ https://github.com/csev/dj4e-samples
 
 Start the command line in a Linux/Bash shell and go into your project folder.
 
-cd dj4e-samples/users
+cd dj4e-samples
 
 python3 manage.py makemigrations  # May not find any changes
 python3 manage.py migrate         # Create the database and table(s)
