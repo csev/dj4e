@@ -116,4 +116,4 @@ References
 
 * <a href="../ngrok" target="_blank">Using ngrok to turn in your assignments</a>
 
-* <a href="https://stackoverflow.com/questions/13808020/include-an-svg-hosted-on-github-in-markdown" target="_blank">Embedding SCG in Markdown</a>
+* <a href="https://stackoverflow.com/questions/13808020/include-an-svg-hosted-on-github-in-markdown" target="_blank">Embedding SVG in Markdown</a>
