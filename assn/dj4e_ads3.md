@@ -14,7 +14,7 @@ Do All of the Challenges
 ------------------------
 
 At this point all of the challenges should be working - not all will be tested
-byt he autograder - but we will separately check them.
+by the autograder - but we will separately check them.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in in your application and elsewhere with gravatar enabled apps.  The gravatar can be
