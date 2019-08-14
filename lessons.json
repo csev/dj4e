@@ -554,11 +554,11 @@
     ]
 },
 {
-    "title": "Autos CRUD Application",
-    "anchor": "dj4e_autos",
+    "title": "Hello World DIY",
+    "anchor": "dj4e_hello",
     "icon" : "fa-database",
-    "description": "In this assignment we build a smaller CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_autos.md",
+    "description": "In this assignment we build a small application from scratch that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
     "lti" : [
         {
         "title" : "Auto-grader: Hello World",
@@ -570,7 +570,18 @@
                 "value": "01hello.php"
             }
         ]
-        },
+        }
+    ],
+    "references" : [
+    ]
+},
+{
+    "title": "Autos CRUD Application",
+    "anchor": "dj4e_autos",
+    "icon" : "fa-database",
+    "description": "In this assignment we build a small CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_autos.md",
+    "lti" : [
         {
         "title" : "Auto-grader: Autos CRUD",
         "launch" : "tools/crud/",
@@ -717,13 +728,19 @@
     ]
 },
 {
-    "title": "CRUD II",
+    "title": "Classified Ads #4",
+    "anchor": "dj4e_ads4",
+    "icon" : "fa-database",
+    "description": "We add another feature our classified ads application. (TBD)"
+},
+{
+    "title": "CRUD Practice",
     "anchor": "dj4e_crud2",
     "icon" : "fa-database",
     "description": "Some CRUD Exercises.",
     "lti" : [
         {
-        "title" : "Auto-grader: Autos CRUD II",
+        "title" : "Auto-grader: Autos CRUD Practice",
         "launch" : "tools/crud2/",
         "resource_link_id" : "dj4e_crud2_autos",
         "custom" : [
@@ -734,7 +751,7 @@
         ]
         },
         {
-        "title" : "Auto-grader: Cats CRUD II",
+        "title" : "Auto-grader: Cats CRUD Practice",
         "launch" : "tools/crud2/",
         "resource_link_id" : "dj4e_crud2_cats",
         "custom" : [
@@ -747,7 +764,7 @@
     ],
     "references" : [
         {
-            "title" : "Specification - Autos CRUD II",
+            "title" : "Specification - Autos CRUD Practice",
             "href": "tools/crud2/02spec.php?assn=20autos.php"
         },
         {
@@ -755,7 +772,7 @@
             "href": "https://chucklist.dj4e.com/autos"
         },
         {
-            "title" : "Sample Exam - Cats CRUD II",
+            "title" : "Sample Exam - Cats CRUD Practice",
             "href": "tools/crud2/02spec.php?assn=20cats.php"
         },
         {
@@ -1076,7 +1093,7 @@
         ]
 },
 {
-    "title": "Project Milestone 6 - Final Project",
+    "title": "Project Milestone 6 - Final Report",
     "anchor": "pr_06_milestone",
     "icon" : "fa-comment",
     "description": "This is the final project submission.",

@@ -84,10 +84,10 @@ These are the steps to get things started:
 
 * Edit the `dj4e/dj4e/settings.py`, fix `ALLOWED_HOSTS` and add the home application:
 
-    INSTALLED_APPS = [
-        ...
-        'home.apps.HomeConfig',    <--- Add
-    ]
+        INSTALLED_APPS = [
+            ...
+            'home.apps.HomeConfig',    <--- Add
+        ]
 
 * Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
 route like we used in the locallibrary / catalog application.
