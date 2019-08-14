@@ -9,7 +9,7 @@ describe anything you have learned or improved on your description.
 
 * If you are building a social site, describe what site is most similar and what features you are thinking about building.  Pay particular attendion to how you will avoid scope creep.
 
-* If you are building a 'public facing" web site for an organization, tell us the kind of site you are looking to build andwhat kind of user-entered material you hope to have on your site.
+* If you are building a "public facing" web site for an organization, tell us the kind of site you are looking to build andwhat kind of user-entered material you hope to have on your site.
 
 Keep it short, to the point and easily readible.   This proposal still does not lock you down, you can change your mind later.  The goal is just to get started with your thinking about the project as early as possible.
 
