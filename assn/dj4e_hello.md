@@ -22,7 +22,7 @@ patterns.
 
 This application will end up with a similar structure to
 
-https://github.com/csev/dj4e-samples/tree/master/autod
+https://github.com/csev/dj4e-samples/tree/master/autos
 
 **Do not clone this repository**.  It is just to be used as sample code as you
 build your new project and application in your `django_projects` folder.

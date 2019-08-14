@@ -157,9 +157,9 @@ Once you can read through the file, it is time to load it into the database thro
 the data model.  There is a simple example of how to write such a script in the
 DJ4E-Samples respoistory:
 
-<a href="https://github.com/csev/dj4e-samples/tree/master/samples/many" target="_blank">Many-to-Many / Data Model</a>
+<a href="https://github.com/csev/dj4e-samples/blob/master/many/models.py" target="_blank">Many-to-Many / Data Model</a>
 
-<a href="https://github.com/csev/dj4e-samples/tree/master/samples/scripts" target="_blank">Many-to-Many / Script</a>
+<a href="https://github.com/csev/dj4e-samples/blob/master/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
 
 See the file `load.csv` and `many_load.py` for and example of how you look through a file,
 insert model data and make foreign key connections.  A key technique is in this bit of code:
