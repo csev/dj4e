@@ -82,20 +82,20 @@ Files to Edit
 
 These are the steps to get things started:
 
-* Edit the `dj4e/settings.py`, fix `ALLOWED_HOSTS` and add the home application:
+* Edit the `dj4e/dj4e/settings.py`, fix `ALLOWED_HOSTS` and add the home application:
 
     INSTALLED_APPS = [
         ...
         'home.apps.HomeConfig',    <--- Add
     ]
 
-* Edit `dj4e/urls.py` to include the `home/urls.py` file.  Do *not* add any redirect
+* Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
 route like we used in the locallibrary / catalog application.
 
-* Edit the `home/urls.py` file to add a path that routes the '' path to a direct template view
-pointing at a file `home/templates/main_home.html`
+* Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
+pointing at a file `dj4e/home/templates/main_home.html`
 
-* Edit `home/templates/main_home.html` and put in some text that says "Hello World ... " and
+* Edit `dj4e/home/templates/main_home.html` and put in some text that says "Hello World ... " and
 some additional text about cats and/or any text or meta tag
 that the autograder is asking for.
 
@@ -105,7 +105,7 @@ named 'hello_world'.
 References
 ----------
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/dj4e" target="_blank">Hello World Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/master/hello" target="_blank">Hello World Sample Code</a>
 
 * <a href="https://github.com/csev/dj4e-samples/tree/master/tmpl" target="_blank">Templates Sample Code</a>
 
