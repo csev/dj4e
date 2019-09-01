@@ -65,7 +65,7 @@ things like `git commit -a` or `git push` you start getting very strange
 errors start appearing that imply that you can't do what you are trying to
 do.
 
-Often this is bcause you are doing things in your repo two different
+Often this is because you are doing things in your repo two different
 places (i.e. your laptop and PythonAnywhere) and one or the other copies is
 out of sync with the copy that you have stored in GitHub.
 

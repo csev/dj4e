@@ -15,7 +15,7 @@ points for hainv *too many* features implemented.
 
 Go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-account and start a bash shell, 
+account and start a bash shell,
 go into your virtual environment and create a new application:
 
     workon django2
@@ -39,7 +39,9 @@ Edit the file `locallibrary/settings.py` and make the following changes:
         'catalog.apps.CatalogConfig',    <--- Add
     ]
 
-Edit the file `locallibrary/urls.py` and append the following lines to the file:
+Edit the file `locallibrary/urls.py` and append the following lines to the file.
+Do not add the `permanent=True` to the `path()` statement as shown in the
+MDN tutorial:
 
     # Use include() to add paths from the catalog application
     from django.urls import include
@@ -56,7 +58,7 @@ Edit the file `locallibrary/urls.py` and append the following lines to the file:
     # Do not add ", permanent=True" to the above line (different than the MDN tutorial)
 
 Create the file `catalog/urls.py` and put the following lines in the file:
-    
+
     from django.urls import path
     from . import views
     urlpatterns = [
@@ -83,7 +85,7 @@ The `Reload` your web application and visit its url to make sure you get the exp
 
     http://mdntutorial.pythonanywhere.com/catalog/
 
-When you visit the page, 
+When you visit the page,
 you *should* get an error, 'Page not found(404)'
 (<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
 We are stopping this tutorial when the web site is still incomplete so that is normal.
