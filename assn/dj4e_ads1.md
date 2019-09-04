@@ -138,12 +138,12 @@ into your `ads` application.
         def __str__(self):
             return self.title
 
-(3) Pull in pieces of `owner` application other than `models.py`.  Then adapt the
+(3) Pull in pieces of `myarts` application other than `models.py`.  Then adapt the
 `admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
-view classes that are in `util.py` and used in `views.py`.  The new `owner` field should
+view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
 not be shown to the user on the create and update forms, it should be automatically set
-by the classes like `OwnerCreateView` in `util.py`.  If you see an "owner" drop down
+by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop down
 in your user interface the program is not implemented correctly and will fail the autograder.
 
 (4) When you are implementing the update and delete views, make sure to follow the url patterns
