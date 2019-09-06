@@ -18,12 +18,26 @@
     "slides": "lectures/Web-01-HTTP.pptx",
     "videos" : [
         {
-            "TODO" : "Re-record",
             "title" : "Web Applications and the Request/Response Cycle",
-            "youtube" : "6Vyn7qhV2xs"
+            "youtube" : "ZT8uqIEG92o"
         },
         {
-            "TODO" : "Re-record",
+            "title" : "Exploring the HyperText Transfer Protocol",
+            "youtube" : "Q5YIrYkrVXg"
+        },
+        {
+            "title" : "Using Sockets to Make Network Connections in Python",
+            "youtube" : "RDvlb_XgVyI"
+        },
+        {
+            "title" : "Building a Simple Web Browser in Python",
+            "youtube" : "Fxgw_BxZg2I"
+        },
+        {
+            "title" : "Building a Simple HTTP Server in Python",
+            "youtube" : "PNt8zXl7EJ0"
+        },
+        {
             "title" : "Understanding Browser Developer Mode",
             "youtube" : "kL3hYPVnhjQ"
         }
