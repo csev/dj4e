@@ -76,7 +76,7 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
 `PicUpdateView` and replace `AdCreateView` and `AdUpdateView` in `ads/views.py`.
 These new classes completely replace the classes that you had from the previous assignment.
-These new views don't inherit from
+These new views don't inherit from owner.py.
 
 (4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
@@ -136,7 +136,7 @@ the migrations once you have modified the model successfully.
 (3) Adapt the techniques in the `ForumDetailView` into your `AdDetailView` to retrieve the comments to
 pass into the `templates/ads/ad_detail.html` template through the context.
 
-(4) Adapt the `templates/ads/ad_detail.html` template to show comments with delete and update icons when a comment belongs
+(4) Adapt the `templates/ads/ad_detail.html` template to show comments with a delete icon when a comment belongs
 to the current logged in user.
 
 (5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
