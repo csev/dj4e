@@ -237,7 +237,7 @@ You can also copy and adapt your templates from a previous assignment to produce
 <b><?= $main_lower_plural ?>/templates</b>.
 </li>
 <li>
-Edit <b>base_menu.html.py</b> template so you have a <b>Create <?= $main_title ?></b> link
+Edit <b>base_menu.html</b> template so you have a <b>Create <?= $main_title ?></b> link
 that appears only when the user is logged in.  Also make sure that the "next=" on your Login
 and Logout buttons routes the user back to the <b>/<?= $main_lower_plural ?></b> URL
 after you login.
