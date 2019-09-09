@@ -207,24 +207,24 @@ to be.
         <ul class="nav navbar-nav">
           {% url 'ads' as ads %}
           <li {% if request.get_full_path == ads %}class="active"{% endif %}>
-              <a href="{% url 'ads' %}">Ads</a></li>
+              <a href="{% url 'app_name_here:ads' %}">Ads</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li>
-            <a href="{% url 'ad_create' %}">Create Ad</a>
+            <a href="{% url 'app_name_here:ad_create' %}">Create Ad</a>
             </li>
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                     <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'logout' %}?next={% url 'ads' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}?next={% url 'app_name_here:ads' %}">Logout</a></li>
                 </ul>
             </li>
             {% else %}
             <li>
-            <a href="{% url 'login' %}?next={% url 'ads' %}">Login</a>
+            <a href="{% url 'login' %}?next={% url 'app_name_here:ads' %}">Login</a>
             </li>
             {% endif %}
         </ul>
@@ -247,7 +247,7 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after up update the file and press 'Refresh' and.or switch browsers.
 
-(3) Make social login work.  Take a look at `samples/github_settings-dist.py`, copy it into
+(3) Make social login work.  Take a look at `dj4e-samples/github_settings-dist.py`, copy it into
 `adlist/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments in the `github_setting.py` file.
 You can register two applications - one on localhost and one on PythonAnywhere.  If you are
@@ -264,7 +264,7 @@ closer to the development model for actual applications.  You know what you want
 and start with a mostly blank slate.  You look at sample code, reuse some code form stuff
 you build earlier, do some online
 searching and glue pieces of what you find together to make your application.  Of course as
-you are gluing bits from various places together, they lways break and you have to adjust things
+you are gluing bits from various places together, they always break and you have to adjust things
 so they fit in your application.
 
 So this is kind of like the real world - when you have to build your own first application
