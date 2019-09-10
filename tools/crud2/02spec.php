@@ -29,7 +29,7 @@ pre {padding-left: 2em;}
 In this <?= $assignment_type_lower ?> you will build a web based application to
 track data about <?= strtolower($title_plural) ?> <?= $assignment_examples ?>.
 Only logged in users will be able to add a <?= strtolower($title_singular) ?> record.
-Each of the <?= strtolower($title_singular) ?> will be owned by the logged-in
+Each of the <?= strtolower($title_singular) ?> entries will be owned by the logged-in
 user that created the item.  Only the owning user will be able to edit or
 deletes <?= strtolower($title_singular) ?> entries that belong to them.
 </p>
