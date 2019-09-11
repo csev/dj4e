@@ -33,6 +33,11 @@ Each of the <?= strtolower($title_singular) ?> entries will be owned by the logg
 user that created the item.  Only the owning user will be able to edit or
 deletes <?= strtolower($title_singular) ?> entries that belong to them.
 </p>
+<p>
+Your application must also allow logged-in users to create a comment for 
+any <?= strtolower($title_singular) ?> record.  Comments should be visible to all users; 
+however, only the comment owning user will be able to delete their comments.
+</p>
 <?php if ( $assignment_type == 'Exam' || $assignment_type == "Sample Exam" ) { ?>
 <h1><?= $assignment_type ?> Rules
 </h1>
