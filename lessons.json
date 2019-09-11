@@ -190,7 +190,7 @@
     "title": "Basic SQL",
     "anchor": "paw_basic_sql",
     "icon" : "fa-database",
-    "description": "This is a quick look at the basic operations (CRUD) in Structured Query Language (SQL).",
+    "description": "This is a quick look at databases in general and the basic operations (CRUD) in Structured Query Language (SQL). We don't go too far into SQL because we will be using Django's model capabilities to build the databases for our library application.",
     "videos" : [
     {
         "title": "How Databases Work",
@@ -248,13 +248,14 @@
     ]
 },
 {
-    "title": "Django Models",
+    "title": "Django Data Models",
     "anchor": "paw_modules",
     "icon" : "fa-database",
-    "description": "This exercise adds models for the LocalLibrary web site.",
+    "description": "This section explores how we define models in Django and then we build the data models for the LocalLibrary web site.",
+    "slides": "lectures/DJ-02-Model-Single.pptx",
     "videos" : [
     {
-        "title": "Django Simple Models",
+        "title": "Django Data Models",
         "youtube": "AqsPifp-ccc"
     },
     {
@@ -262,7 +263,7 @@
         "youtube": "zULy8o8VK3Q"
     },
     {
-        "title": "Demonstration: Django Models Assignment",
+        "title": "Demonstration: LocalLibrary Data Models",
         "youtube": "2-QFePlm7GA"
     }
    ],
@@ -286,7 +287,7 @@
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models"
         },
         {
-            "title" : "Django Single Table Model Sample",
+            "title" : "Django Data Model Commands (DJ-02-Model-Single.txt)",
             "href": "https://www.dj4e.com/lectures/DJ-02-Model-Single.txt"
         },
         {
@@ -300,10 +301,11 @@
     ]
 },
 {
-    "title": "Django admin site",
+    "title": "One-To-Many Data Models",
     "anchor": "paw_admin",
     "icon" : "fa-university",
-    "description": "This exercise works through the Django admin interface for the LocalLibrary web site.",
+    "description": "We explore the design of one-to-many data models and add data models to the the LocalLibrary Django admin interface.",
+    "slides": "lectures/DJ-03-One-To-Many.pptx",
     "videos" : [
     {
         "title": "Django Admin",
@@ -330,6 +332,10 @@
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site"
         },
         {
+            "title" : "Django One-To-Many Shell Commands (DJ-03-One-To-Many.txt)",
+            "href": "https://www.dj4e.com/lectures/DJ-03-One-To-Many.txt"
+        },
+        {
             "title" : "Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
         },
@@ -340,11 +346,11 @@
     ]
 },
 {
-    "title": "Multi-Table Data Models",
+    "title": "Many-To-Many Data Models",
     "anchor": "dj4e_load",
     "icon" : "fa-database",
-    "description": "We build a data model from a flat file.",
-    "slides": "lectures/DJ-03-Model-Multi.pptx",
+    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
+    "slides": "lectures/DJ-04-Many-To-Many.pptx",
     "videos" : [
     {
         "title": "Demonstration: Django Many-to-One Models",
@@ -366,10 +372,6 @@
         }
     ],
     "references" : [
-        {
-            "title" : "Django One-to-Many Data Model Commands",
-            "href": "https://www.dj4e.com/lectures/DJ-03-One-To-Many.txt"
-        },
         {
             "title" : "UNESCO World Heritage Sites",
             "href": "https://whc.unesco.org/en/list/"

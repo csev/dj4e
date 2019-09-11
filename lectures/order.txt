@@ -7,8 +7,6 @@ DJ-01-Hosting + Structure
 
 DJ-02-Model-Table
    users
-DJ-03-One-To-Many
-   tracks - shell
 
 DJ-04-Templates-Views
    views
@@ -22,3 +20,6 @@ DJ-06-Cookies-Sessions
 DJ-07-CRUD
    form - forms.py
    autoscrud -  under construction
+
+DJ-03-One-To-Many
+   tracks - shell (tbd)
