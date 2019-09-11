@@ -78,7 +78,7 @@ You can learn more about the command line mode of `sqlite3` at their web site:
 https://www.sqlite.org/cli.html
 
 Continue editing the `catalog/models.py` file and add the Book, BookInstance, and Author models
-according to the 
+according to the tutorial.
 
 Also add the `language` field to the correct table as discussed in the "Challenge" section 
 at the end of the tutorial.
