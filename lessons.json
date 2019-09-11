@@ -290,10 +290,6 @@
             "href": "https://www.dj4e.com/lectures/DJ-02-Model-Single.txt"
         },
         {
-            "title" : "Django Many-To-One Model Sample",
-            "href": "https://www.dj4e.com/lectures/DJ-03-One-To-Many.txt"
-        },
-        {
             "title" : "Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
         },
@@ -344,11 +340,11 @@
     ]
 },
 {
-    "title": "Many-to-Many Data Models",
+    "title": "Multi-Table Data Models",
     "anchor": "dj4e_load",
     "icon" : "fa-database",
     "description": "We build a data model from a flat file.",
-    "slides": "lectures/DJ-03-Many-To-Many.pptx",
+    "slides": "lectures/DJ-03-Model-Multi.pptx",
     "videos" : [
     {
         "title": "Demonstration: Django Many-to-One Models",
@@ -370,6 +366,10 @@
         }
     ],
     "references" : [
+        {
+            "title" : "Django One-to-Many Data Model Commands",
+            "href": "https://www.dj4e.com/lectures/DJ-03-One-To-Many.txt"
+        },
         {
             "title" : "UNESCO World Heritage Sites",
             "href": "https://whc.unesco.org/en/list/"
