@@ -341,7 +341,7 @@
     "icon" : "fa-database",
     "description": "We build a data model from a flat file.",
     "slides": "lectures/DJ-03-Many-To-Many.pptx",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_model.md",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
     "lti" : [
         {
         "title" : "Auto-grader: Data model",

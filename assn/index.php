@@ -87,7 +87,7 @@ function onSelect() {
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
   <option <?= x_sel("paw_models.md") ?>>Django Models</option>
   <option <?= x_sel("paw_admin.md") ?>>Django Admin</option>
-  <option <?= x_sel("dj4e_model.md") ?>>Batch Loading Data</option>
+  <option <?= x_sel("dj4e_load.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("paw_home.md") ?>>Home Page</option>
   <option <?= x_sel("paw_details.md") ?>>Detail Pages</option>
   <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
@@ -117,7 +117,7 @@ web site.
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
 <li><a href="paw_models.md">Django Models</a></li>
 <li><a href="paw_admin.md">Django Admin</a></li>
-<li><a href="dj4e_model.md">Batch Loading Data</a></li>
+<li><a href="dj4e_load.md">Batch Loading Data</a></li>
 <li><a href="paw_home.md">Home Page</a></li>
 <li><a href="paw_details.md">Detail Pages</a></li>
 <li><a href="paw_sessions.md">Django Sessions</a></li>

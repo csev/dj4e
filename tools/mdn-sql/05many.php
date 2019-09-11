@@ -141,7 +141,10 @@ upload your SQLite3 database here:<br/>
 <input type="submit">
 <p>
 Do the assignment at 
-<a href="https://www.dj4e.com/assn/dj4e_model.md" target="_blank">https://www.dj4e.com/assn/dj4e_model.md</a> and when the
+<a href="https://www.dj4e.com/assn/dj4e_load.md" target="_blank">https://www.dj4e.com/assn/dj4e_load.md</a> 
+</p>
+<p>
+When the
 assignment is complete, upload your <b>db.sqlite3</b> file this auto grader.  Is you are using
 PythonAnywhere you will need to download the file and then upload it to this autograder.
 </p>
