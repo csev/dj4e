@@ -119,8 +119,13 @@ upload your SQLite3 database here:<br/>
 <input type="submit">
 <p>
 Do the assignment at 
-<a href="https://www.dj4e.com/assn/paw_models.md" target="_blank">https://www.dj4e.com/assn/paw_models.md</a> and when the
-assignment is complete, download the resulting <b>db.sqlite3</b> file and upload it to this auto grader.  
+<a href="https://www.dj4e.com/assn/paw_models.md" target="_blank">https://www.dj4e.com/assn/paw_models.md</a>.
+</p>
+<p>
+When the
+assignment is complete, upload the resulting <b>db.sqlite3</b> file to this auto grader.  
+If you are using PythonAnywhere download the file using the Files tab and then upload the
+file to the autograder.
 </p>
 <p>
 This autograder checks the schemas of the five tables
