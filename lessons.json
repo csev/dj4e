@@ -193,7 +193,15 @@
     "description": "This is a quick look at the basic operations (CRUD) in Structured Query Language (SQL).",
     "videos" : [
     {
-        "title": "Basic SQL",
+        "title": "How Databases Work",
+        "youtube": "C1QXYMNTEVs"
+    },
+    {
+        "title": "Introduction to Structured Query Language (SQL)",
+        "youtube": "wtU7Pp6VFoE"
+    },
+    {
+        "title": "Demonstration: Basic SQL",
         "youtube": "9nZGhDhHRT0"
     }
    ],
@@ -246,16 +254,16 @@
     "description": "This exercise adds models for the LocalLibrary web site.",
     "videos" : [
     {
-        "title": "Django Models Assignment Walkthrough",
-        "youtube": "2-QFePlm7GA"
+        "title": "Django Simple Models",
+        "youtube": "AqsPifp-ccc"
     },
     {
-        "title": "Django Single Table Models Walkthrough",
+        "title": "Demonstration: Django Single Table Models",
         "youtube": "zULy8o8VK3Q"
     },
     {
-        "title": "Django Many-to-One Models Walkthrough",
-        "youtube": "vEkGXH7xSsc"
+        "title": "Demonstration: Django Models Assignment",
+        "youtube": "2-QFePlm7GA"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_models.md",
@@ -341,6 +349,12 @@
     "icon" : "fa-database",
     "description": "We build a data model from a flat file.",
     "slides": "lectures/DJ-03-Many-To-Many.pptx",
+    "videos" : [
+    {
+        "title": "Demonstration: Django Many-to-One Models",
+        "youtube": "vEkGXH7xSsc"
+    }
+   ],
     "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
     "lti" : [
         {
