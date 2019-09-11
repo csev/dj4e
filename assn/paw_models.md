@@ -93,7 +93,7 @@ You can repeat the process of editing the `models.py` file and re-running the mi
 right.
 
 If you are using the autograder for this assignment, you will need to upload the
-`db.sqlite3` file.  If you are using PythonAnywhere you can sue the Files tab
+`db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
 to download the file to your computer and then upload it to the autograder.
 
 If You Are Keeping Your Projects GitHub
