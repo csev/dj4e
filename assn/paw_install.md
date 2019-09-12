@@ -96,7 +96,7 @@ the allowed hosts line (around line 28) to be:
      ALLOWED_HOSTS = [ '*' ]                                                                                                        
 
 There are three ways to edit files in your PythonAnywhere environment, ranging from the easiest
-to the coolest.
+to the coolest.  You only have to edit the file one of these ways.
 
 (1) Go to the main PythonAnywhere dashboard, browse files, navigate to the correct folder and edit the file
 
