@@ -107,7 +107,7 @@ to the coolest.
     cd ~/django_projects/mytestsite/mytestsite/
     nano settings.py
 
-    Save the File by pressing 'CTRL-C', 'Y', and Enter
+    Save the File by pressing 'CTRL-X', 'Y', and Enter
 
 (3) Don't try this most difficult and most cool way to edit files on Linux without a helper
 if it is your first time with the `vi` text editor.
