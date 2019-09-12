@@ -111,7 +111,11 @@ function getUrl($sample) {
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
-        return trim($_GET['url']);
+        $retval = trim($_GET['url']);
+        if ( strpos($retval, 'http') !== 0 ) {
+            echo('<p style="color:red">Usually your URL should start with http or https.</p>');
+        }
+        return $retval;
     }
 
     echo('<form>');

@@ -39,13 +39,17 @@ Edit the file `locallibrary/settings.py` and make the following changes:
         'catalog.apps.CatalogConfig',    <--- Add
     ]
 
-Edit the file `locallibrary/urls.py` and append the following lines to the file.
-Do not add the `permanent=True` to the `path()` statement as shown in the
-MDN tutorial:
+Edit the file `locallibrary/urls.py` and update the code to look like the following:
+
+    from django.contrib import admin
+    from django.urls import path
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+    ]
 
     # Use include() to add paths from the catalog application
     from django.urls import include
-    from django.urls import path
     urlpatterns += [
         path('catalog/', include('catalog.urls')),
     ]
@@ -55,7 +59,10 @@ MDN tutorial:
     urlpatterns += [
         path('', RedirectView.as_view(url='/catalog/')),
     ]
-    # Do not add ", permanent=True" to the above line (different than the MDN tutorial)
+
+Note that if you are following the MDN Tutorial for this step, it will suggest
+that you add `, permanent=True` to the `path()` statement above.   Do not add
+the `permanent` parameter or it will mess things up later.
 
 Create the file `catalog/urls.py` and put the following lines in the file:
 
