@@ -208,11 +208,6 @@
     "slides": "lectures/SQL-01-Basics.pptx",
     "lti" : [
         {
-        "title" : "Quiz: Basic SQL",
-        "launch" : "mod/gift/?quiz=01-SQL-basic.txt",
-        "resource_link_id" : "sql_01_quiz"
-        },
-        {
         "title" : "Auto-grader: Basic SQL",
         "launch" : "tools/mdn-sql/",
         "resource_link_id" : "paw_basic_sql",
