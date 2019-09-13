@@ -131,7 +131,7 @@ foreach($database as $row) {
 </pre>
 Once the inserts are done, run the following SQL command:
 <pre>
-SELECT hex(name || age) AS X FROM Ages ORDER BY X
+SELECT hex(name || age) AS X FROM Ages ORDER BY X;
 </pre>
 Find the <b>first</b> row in the resulting record set and enter the long string that looks like 
 <b>53656C696E613333</b>.
