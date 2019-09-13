@@ -58,6 +58,8 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
     pip3 install -r requirements.txt
+    python3 manage.py makemigrations
+    python3 manage.py migrate
 
 In the PYAW shell, continue the steps from the MDN:
 

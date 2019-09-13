@@ -15,6 +15,15 @@ go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell.
 
+First, lets build the models for the the dj4e-samples if you have not already done so:
+
+    workon django2    # If needed
+    cd ~/dj4e-samples
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+
+Then continue working on the `locallibrary` project:
+
     workon django2
     cd ~/django_projects/locallibrary
 
