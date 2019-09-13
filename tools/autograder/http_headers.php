@@ -69,7 +69,7 @@ unset($_SESSION['postdata']);
 <p>
 You are to retrieve the following document in a browser tab with 
 "Developer Mode" enabled so you can examine the HTTP Response headers.
-You may need to open the URL in a new tab, turn on dveloper mode, 
+You may need to open the URL in a new tab, turn on developer mode, 
 and then press refresh to get the proper data.
 <ul>
 <li><a href="<?= $getUrl ?>" target="_blank"><?= $getUrl ?></a></li>
