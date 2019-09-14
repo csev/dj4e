@@ -137,6 +137,10 @@ Find the <b>first</b> row in the resulting record set and enter the long string 
 <b>53656C696E613333</b>.
 </p>
 <p>
+If you are using the SQLite command line interface, you can use the ".quit"
+command to exit the program.
+</p>
+<p>
 <b>Note:</b> This assignment must be done using SQLite - in particular, the 
 <code>SELECT</code> query above will not work in any other database.  So 
 you cannot use MySQL or Oracle for this assignment.
