@@ -24,7 +24,7 @@ Getting Started
 We will do this assignment within your library application but it will not have any user
 interface other than using the admin interface to verify that your application is working.
 
-Make a new application under your `django_projects/locallibrary` called `unesco`.
+Make new application under your `django_projects/locallibrary` called `unesco`.
 
     cd ~/django_projects/locallibrary
     python3 manage.py startapp unesco
@@ -39,6 +39,11 @@ is needed in order to store Python objects in the `scripts` folder.
 Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
 https://github.com/csev/dj4e-samples/tree/master/scripts
+
+This is probably redundant, but make sure you are in your virtual environment and 
+install `django extensions`:
+
+    pip3 install django_extensions
 
 Add the following line to your `locallibrary/locallibrary/settings.py`:
 
@@ -242,5 +247,22 @@ it into the right tables:
     1
     sqlite>
 
+Once This Assignment is Done
+----------------------------
 
+We added this project to `locallibrary` and added the models to the admin user interface so 
+you could look at them, but you might not want to see the `unesco` data from this point forward.
+Simply comment out the line in `locallibrary/locallibrary/settings.py` as follows:
+
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+    ...
+        'django_extensions', 
+        # 'unesco.apps.UnescoConfig',  # Comment out
+    ]
+
+And then restart your web application and verify that the unesco tables no longer show up in the
+administrator interface.
 
