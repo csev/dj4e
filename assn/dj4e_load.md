@@ -1,7 +1,7 @@
 Building and Loading a Data Model
 =================================
 
-In this assignment you will temporarily step away from building the LocalLibnrary applications and
+In this assignment you will temporarily step away from building the LocalLibrary applications and
 develop a data model from a file of un-normalized data and
 then build a script to load data in to that model.
 
