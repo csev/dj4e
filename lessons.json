@@ -358,10 +358,6 @@
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site"
         },
         {
-            "title" : "Django One-To-Many Shell Commands (DJ-03-One-To-Many.txt)",
-            "href": "https://www.dj4e.com/lectures/DJ-03-One-To-Many.txt"
-        },
-        {
             "title" : "Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
         },
@@ -378,6 +374,26 @@
     "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
     "slides": "lectures/DJ-04-Many-To-Many.pptx",
     "videos" : [
+    {
+        "title": "Many-to-Many Overview",
+        "youtube": "JI4ZOFOubLY",
+        "project" : "DJ 04 Many 01 Overview"
+    },
+    {
+        "title": "A Simple Many-To-Many Example in Django",
+        "youtube": "gf2-J9YOMcc",
+        "project" : "DJ 04 Many 02 Many"
+    },
+    {
+        "title": "Many-To-Many Data Models for Courses and Membership",
+        "youtube": "kY_1a057phM",
+        "project" : "DJ 04 Many 03 Course"
+    },
+    {
+        "title": "Building a Django Batch Script to Load Data from CSV",
+        "youtube": "E8y_6S2Fc5s",
+        "project" : "DJ 04 Many 04 Batch"
+    },
     {
         "title": "Demonstration: Django Many-to-One Models",
         "youtube": "vEkGXH7xSsc"
