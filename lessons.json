@@ -304,7 +304,38 @@
     "videos" : [
     {
         "title": "Django Admin",
-        "youtube": "o_IJCrkEjtQ"
+        "youtube": "o_IJCrkEjtQ",
+        "project": ""
+    },
+    {
+        "title": "One-to-Many Models Overview",
+        "youtube": "vgyYEE7XDzw",
+        "project": "DJ 03 Many 01 Overview"
+    },
+    {
+        "title": "Removing Replication in One-to-Many Models",
+        "youtube": "JCQYxILYNIE",
+        "project": "DJ 03 Many 02 Replication"
+    },
+    {
+        "title": "Storing Primary and Foreign Keys in a Database",
+        "youtube": "xmyE-zQaBEI",
+        "project": "DJ 03 Many 03 Physical"
+    },
+    {
+        "title": "Representing One-To-Many Models in Django",
+        "youtube": "9t-bP963_jY",
+        "project": "DJ 03 Many 04 Django"
+    },
+    {
+        "title": "Data Model Migration in Django",
+        "youtube": "YqARGlI6bGc",
+        "project": "DJ 03 Many 05 Migrate"
+    },
+    {
+        "title": "Using the Django Shell to Explore One-to-Many Models",
+        "youtube": "ZdLpAtfWfZk",
+        "project": "DJ 03 Many 06 Shell"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/paw_admin.md",
