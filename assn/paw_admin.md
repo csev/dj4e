@@ -18,8 +18,8 @@ Note that it is OK to have more than one super user and you can log in as any
 super user and edit or delete the other superuser accounts.
 * Reload your application under the `Web` tab in
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-* Log in to the admin site.  Insead of using http://localhost:8000/admin, simply add `/admin` to the end of 
-your PythonAnywhere site (i.e. like 
+* Log in to the admin site.  Insead of using http://localhost:8000/admin, simply add `/admin` to the end of
+your PythonAnywhere site (i.e. like
 <a href="http://mdntutorial.pythonanywhere.com/admin" target="_blank">http://mdntutorial.pythonanywhere.com/admin</a>.
 * Create some books (The autograder will ask you to create one specific book and author)
 * Continue into the Advanced Configuration
@@ -29,15 +29,14 @@ your PythonAnywhere site (i.e. like
 * Organize the detail view layout
 * Enable inline editing of associated records
 
-Remember that every time the MDN tutorial tells you to run the server after
-making a configuration change:
+Just as a reminder, when you are running on PythonAnywhere you do not need to do a:
 
-    python3 manage.py runserver
+    python3 manage.py runserver  # Don't do this on PythonAnywhere
 
-You need to go into 
-<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-under the `Web` tab and `Reload` the web server to re-read your updated configuration.  There is 
-not harm in reloading your web application too often.
+Everytime you make a configuration change.  But if you are running on
+PythonAnywhere and make a configuration change you **do** need to
+go into the `Web` tab and `Reload` the web server to re-read your updated configuration.  There is
+not harm in reloading your web on PythonAnywhere application too often.  So when in doubt, reload :)
 
 
 If you are using git
