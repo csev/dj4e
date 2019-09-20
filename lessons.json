@@ -254,6 +254,11 @@
         "youtube": "AqsPifp-ccc"
     },
     {
+        "title": "Data Model Migration in Django",
+        "youtube": "YqARGlI6bGc",
+        "project": "DJ 03 Many 05 Migrate"
+    },
+    {
         "title": "Demonstration: Django Single Table Models",
         "youtube": "zULy8o8VK3Q"
     },
@@ -330,7 +335,8 @@
     {
         "title": "Data Model Migration in Django",
         "youtube": "YqARGlI6bGc",
-        "project": "DJ 03 Many 05 Migrate"
+        "project": "DJ 03 Many 05 Migrate",
+        "meta": "Remove after Fall 2019 - moved to DJ-02"
     },
     {
         "title": "Using the Django Shell to Explore One-to-Many Models",
