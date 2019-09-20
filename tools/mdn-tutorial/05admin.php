@@ -41,6 +41,7 @@ Make an Author with the following name (first, last):<br/>
 Author: <?= htmlentities($full_name) ?> 
 Book: <?= htmlentities($book_title) ?> 
 </pre>
+You can use any values you like for the Summary, ISBN, and Genre fields.
 </p>
 <?php
 
