@@ -533,7 +533,7 @@
     "title": "Django sessions",
     "anchor": "paw_sessions",
     "icon" : "fa-cube",
-    "description": "This exercise uses sessions on the LocalLibrary web site.  This exercises is quite simple so there is no video walkthrough.",
+    "description": "This exercise uses sessions on the LocalLibrary web site.  This exercise is quite simple so there is no video walkthrough.",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md",
     "lti" : [
         {
