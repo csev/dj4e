@@ -95,7 +95,6 @@ function onSelect() {
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
   <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Autos CRUD</option>
-  <option <?= x_sel("dj4e_cats.md") ?>>Cats CRUD</option>
   <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
   <option <?= x_sel("dj4e_ads2.md") ?>>AdList Milestone #2</option>
   <option <?= x_sel("dj4e_ads3.md") ?>>AdList Milestone #3</option>
@@ -125,7 +124,6 @@ web site.
 <li><a href="paw_forms.md">Django Forms</a></li>
 <li><a href="dj4e_hello.md">Hello World</a></li>
 <li><a href="dj4e_autos.md">Auto CRUD</a></li>
-<li><a href="dj4e_cats.md">Cats CRUD</a></li>
 <li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
 <li><a href="dj4e_ads2.md">AdList Milestone #2</a></li>
 <li><a href="dj4e_ads3.md">AdList Milestone #3</a></li>

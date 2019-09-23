@@ -588,7 +588,8 @@
     ]
 },
 {
-    "title": "Django Forms and CRUD",
+    "title": "Django Forms and CRUD (Under Revision)",
+    "NOTE": "Revise this completely",
     "anchor": "paw_forms",
     "icon" : "fa-database",
     "description": "This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
@@ -684,7 +685,7 @@
     "anchor": "dj4e_cats",
     "icon" : "fa-paw",
     "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_cats.md",
+    "assignment" : "https://www.dj4e.com/tools/crud/02spec.php?assn=02cats.php",
     "lti" : [
         {
         "title" : "Auto-grader: Cats CRUD",
@@ -696,12 +697,6 @@
                 "value": "02cats.php"
             }
         ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Cats Application Specification",
-            "href": "https://www.dj4e.com/tools/crud/02spec.php?assn=02cats.php"
         }
     ]
 },
