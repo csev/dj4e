@@ -704,7 +704,7 @@
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
     "icon" : "fa-newspaper",
-    "description": "We write the first iteration of the classified ads application.",
+    "description": "We cover bootstrap menus, crispy forms, social login with github and owned model rows and then we write the first iteration of the classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
     "lti" : [
         {
@@ -723,6 +723,22 @@
         {
             "title" : "Sample Code",
             "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Ownership of Rows",
+            "href": "https://samples.dj4e.com/myarts/"
+        },
+        {
+            "title" : "Bootstrap / Menus",
+            "href": "https://samples.dj4e.com/menu/"
+        },
+        {
+            "title" : "Crispy Forms",
+            "href": "https://samples.dj4e.com/crispy/"
+        },
+        {
+            "title" : "Social Login with Github",
+            "href": "https://python-social-auth.readthedocs.io/en/latest/configuration/django.html"
         },
         {
             "title" : "Reference Implementation",
