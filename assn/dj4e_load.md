@@ -40,7 +40,7 @@ Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
 https://github.com/csev/dj4e-samples/tree/master/scripts
 
-This is probably redundant, but make sure you are in your virtual environment and 
+This is probably redundant, but make sure you are in your virtual environment and
 install `django extensions`:
 
     pip3 install django_extensions
@@ -53,7 +53,7 @@ Add the following line to your `locallibrary/locallibrary/settings.py`:
         'django.contrib.contenttypes',
     ...
         'django_extensions', # Add
-        'unesco.apps.UnescoConfig',  # Add 
+        'unesco.apps.UnescoConfig',  # Add
     ]
 
 
@@ -75,11 +75,11 @@ columns that have vertical duplication, such as region:
     Cultural    Algeria                Arab States                 dz
     Cultural    Algeria                Arab States                 dz
 
-You will make a Django model that describes the tables and foreign keys
-sufficient to represent this data efficiently with no vertical duplication.
+You will make a Django model that describes the tables, one-to-many relationships,
+and foreign keys sufficient to represent this data efficiently with no vertical duplication.
 Numbers and dates do not have to have their own tables.
 
-Name the core model `Site`, use singular names for all of the table/model
+Name the first model `Site`, use singular names for all of the table/model
 names.  Use the exact name of the column for the model field names and
 foreign key names.  Here is a subset of the `unesco/models.py`:
 
@@ -102,7 +102,6 @@ foreign key names.  Here is a subset of the `unesco/models.py`:
 
         def __str__(self) :
             return self.name
-
 
 All of the columns from the CSV data must be represented somewhere in the
 data model.
@@ -129,38 +128,14 @@ the database.
 You can repeat the process of editing the `models.py` file and re-running the migrations steps
 until you get them right.
 
-Reading CSV Files
------------------
-
-The next step is to build a Python script to read the CSV file and load it into your database.
-
-<a href="dj4e_load/whc-sites-2018-clean.csv" target="_blank">CSV Version</a>
-
-and load it into your database, and then use the administration user interface
-to verify that the data is properly loaded.   Here is a bit of sample code that
-can easily read the CSV file in Python:
-
-    import csv
-
-    fh = open('unesco/whc-sites-2018-clean.csv')
-    rows = csv.reader(fh)
-    i = 0
-    for row in rows:
-        if len(row[0]) < 1 : continue
-        print(row[0])
-        i = i + 1
-        if i > 5 : break
-
-Note that the first row of the CSV contains the variable names so it should be
-skipped.   This only prionts out the name field for the first five rows of the CSV
-file.   You can play with this to explore how the CSV reader sees this file.
-
 Loading Data Into Your Database
 -------------------------------
 
-Once you can read through the file, it is time to load it into the database through
-the data model.  There is a simple example of how to write such a script in the
-DJ4E-Samples respoistory:
+Django has a special `runscript` capability that allows you to write a a Python program
+to read and write the database using your Django models.
+
+There is a simple example of how to write such a script in the
+`dj4e-samples` respoistory:
 
 <a href="https://github.com/csev/dj4e-samples/blob/master/many/models.py" target="_blank">Many-to-Many / Data Model</a>
 
@@ -176,6 +151,10 @@ that was just read `row[0]`.  The email address may or may not already be in the
 from a previous line in the file. One way or another, by the end of this line
 of code `p` contains a reference to a Person stored in the database that can be
 used to fullfill a foreign key later in the code.
+
+Note that the "p, created" is an example of Python function
+<a href="https://youtu.be/CaVhM65wD6g?t=254" target="_blank">returning two values</a>
+using a tuple.
 
     m = Membership(role=r,person=p, course=c)
     m.save()
@@ -225,7 +204,7 @@ work properly.
 Checking Your Data By Hand
 --------------------------
 
-You can check to see if your data was loaded properly in the Django 
+You can check to see if your data was loaded properly in the Django
 Admin user interface.
 
 You can also hand-check your data by running a few queries on
@@ -250,7 +229,7 @@ it into the right tables:
 Once This Assignment is Done
 ----------------------------
 
-We added this project to `locallibrary` and added the models to the admin user interface so 
+We added this project to `locallibrary` and added the models to the admin user interface so
 you could look at them, but you might not want to see the `unesco` data from this point forward.
 Simply comment out the line in `locallibrary/locallibrary/settings.py` as follows:
 
@@ -259,7 +238,7 @@ Simply comment out the line in `locallibrary/locallibrary/settings.py` as follow
         'django.contrib.auth',
         'django.contrib.contenttypes',
     ...
-        'django_extensions', 
+        'django_extensions',
         # 'unesco.apps.UnescoConfig',  # Comment out
     ]
 
