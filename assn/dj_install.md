@@ -3,7 +3,7 @@ Developing with Django on your computer
 
 As you start to develop more intricate Django applications, you might find it more
 convienent to install Django on your local computer and then use github to move your
-tested code into your 
+tested code into your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 server so you it is available on the Internet for grading or otherwise sharing.
 
@@ -56,25 +56,11 @@ at the error or server logs.  Error tracebacks and error logs come right out.
 
 * You can work without a network connection!
 
-These instructions assume you that you are already set up using Github and PythonAnywhere 
+These instructions assume you that you are already set up using Github and PythonAnywhere
 and want to edit your applications on your computer
 and present them on PythonAnywhere.  But you can always use the
 <a href="../ngrok">ngrok</a> application
 to submit your assignments to the autograder if you like.
-
-Before You Start
-----------------
-
-Before you start doing this, make sure that your code in the PythonAnywhere shell
-is fully checked in to GitHub:
-
-    $ cd ~/django_projects
-    $ git status
-    On branch master
-    Your branch is up-to-date with 'origin/master'.
-    nothing to commit, working directory clean
-
-If you have any outstanding git stuff on PYAW - clean it up and push it ot the repo.
 
 On Your Laptop
 --------------
@@ -94,17 +80,21 @@ Windows Command Line:
     cd Desktop
     mkdir django
 
-Then lets checkout the dj4e-samples repo
+Then lets checkout the dj4e-samples repo and get things started:
 
     cd Desktop      # If not already there
     cd django
     git clone https://github.com/csev/dj4e-samples
 
-Then lets setup the database for the main sample applications:
-
     cd dj4e-samples
-    python3 manage.py migrate 
-    python3 manage.py runserver 
+    python3 manage.py migrate            # Makemigrations is already in git
+    python3 manage.py createsuperuser
+    python3 manage.py runscript gview_load
+    python3 manage.py runscript many_load
+
+To run the server get into the folder with `manage.py` and then:
+
+    python3 manage.py runserver
 
 Then navigate to http://localhost:8000 to see the page.
 
@@ -117,30 +107,35 @@ Then just for fun, open a second terminal / shell / command line and:
 
 Then navigate to http://localhost:8001 to see the page.
 
-You can abort the `runserver` applications, switch to a new folder and start runserver again.
+You can abort the `runserver` applications in the command line, switch to
+a new folder and start runserver again.
 
-You can check out more than one set of projects into the `django` folder.   Here I check 
-out my private repo with the solutions to the assignments so I can work on them.
+This section shows how to get a Django application working - in the next section
+we show you to work on your code on two computers and move
+the changes back and forth.
 
-    cd ~           # or simple 'cd' for Windows
-    cd Desktop
-    cd django
-    git clone https://github.com/--your-github-account--/django_projects
-    cd django_projects
-    cd locallibrary
-    python3 manage.py migrate
-    python3 manage.py runserver
+Moving Code Between Your Laptop and PythonAnywhere
+--------------------------------------------------
 
-Then navigate to http://localhost:8000 to see the page.
+If you want you can keep a local copy your `django_projects` synchronized with your
+copy on PythonAnywhere using `github`.
 
-You only have to do the `migrate` once right after the checkout - or whenever
-you change models.
+Before You Start
+----------------
 
-Also, remember that the `runserver` process automatically restarts itself if any files in the
-project are updated.
+Before you start doing this, make sure that your code in the PythonAnywhere shell
+is fully checked in to GitHub:
 
-Developing Locally and and Moving to PythonAnywhere
----------------------------------------------------
+    $ cd ~/django_projects
+    $ git status
+    On branch master
+    Your branch is up-to-date with 'origin/master'.
+    nothing to commit, working directory clean
+
+If you have any outstanding git modifications on PYAW - clean it up and push it to the repo.
+
+Working on Your Code on Your Laptop
+-----------------------------------
 
 So you are on your local laptop / computer and are making changes
 
@@ -157,12 +152,11 @@ So you are on your local laptop / computer and are making changes
     git commit -a
     git push
 
-Then you can go into PythonAnywhere ina bash shell and type:
+Then you can go into PythonAnywhere in a bash shell and type:
 
     cd ~/django_projects/locallibrary
     git pull
     python3 manage.py migrate         # If the pull included new migrations
-
 
 Then in the "Web" tab reload your application and visit it.
 
@@ -177,7 +171,7 @@ If this is what you did, there is a simple workaround.  On the system where you 
     git pull
     git stash apply
 
-This takes your un-pushed changes and hides them in the "stash", allowing the `git pull` to 
+This takes your un-pushed changes and hides them in the "stash", allowing the `git pull` to
 work and then the `stash apply` re-modifies the files.
 
 Most of the time this works if all you did is edited two places and tried to push from both.
