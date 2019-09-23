@@ -17,8 +17,9 @@ account and start a bash shell.
 
 First, lets build the models for the the dj4e-samples if you have not already done so:
 
-    workon django2    # If needed
+    workon django2                      # If needed
     cd ~/dj4e-samples
+    pip3 install -r requirements.txt     # If needed
     python3 manage.py makemigrations
     python3 manage.py migrate
 
