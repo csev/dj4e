@@ -588,11 +588,11 @@
     ]
 },
 {
-    "title": "Django Forms and CRUD (Under Revision)",
+    "title": "Django Forms and CRUD",
     "NOTE": "Revise this completely",
     "anchor": "paw_forms",
     "icon" : "fa-database",
-    "description": "This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
+    "description": "(Being revised) This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "videos" : [
     {
         "title": "Django Forms - All Books",
@@ -636,7 +636,7 @@
     "title": "Hello World DIY",
     "anchor": "dj4e_hello",
     "icon" : "fa-database",
-    "description": "In this assignment we build a small application from scratch that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
+    "description": "(Being revised) In this assignment we build a small application from scratch that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
     "lti" : [
         {
