@@ -15,15 +15,7 @@ go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell.
 
-First, lets build the models for the the dj4e-samples if you have not already done so:
-
-    workon django2                      # If needed
-    cd ~/dj4e-samples
-    pip3 install -r requirements.txt     # If needed
-    python3 manage.py makemigrations
-    python3 manage.py migrate
-
-Then continue working on the `locallibrary` project:
+Lets go into the locallibrary project:
 
     workon django2
     cd ~/django_projects/locallibrary
@@ -44,7 +36,7 @@ application within the locallibrary project by adding `CatalogConfig` line:
     ]
 
 Edit the file `catalog/models.py` and add the `Genre` model using as described in the tutorial.
-You can edit the file with `nano`, `vi`, or the PythonAnywhere web interface.  Once you have added
+You can edit the file with `nano`, `vi`, or the PythonAnywhere Files tab interface.  Once you have added
 the model, run the migrations from `~/django_projects/locallibrary`
 
     python3 manage.py makemigrations
@@ -65,7 +57,7 @@ not to track the database file in the `.gitignore` file
 
 Lets take a quick look at the contents of the `db.sqlite3` file in your bash shell:
 
-    sqlite3 db.sqlite3 
+    $ sqlite3 db.sqlite3 
     SQLite version 3.11.0 2016-02-15 17:29:24
     Enter ".help" for usage hints.
     sqlite> .tables
