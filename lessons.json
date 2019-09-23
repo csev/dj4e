@@ -376,7 +376,7 @@
 {
     "title": "Many-To-Many Data Models",
     "anchor": "dj4e_load",
-    "icon" : "fa-database",
+    "icon" : "fa-arrows",
     "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
     "slides": "lectures/DJ-04-Many-To-Many.pptx",
     "videos" : [
@@ -532,7 +532,7 @@
 {
     "title": "Django sessions",
     "anchor": "paw_sessions",
-    "icon" : "fa-cube",
+    "icon" : "fa-cookie",
     "description": "This exercise uses sessions on the LocalLibrary web site.  This exercise is quite simple so there is no video walkthrough.",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md",
     "lti" : [
@@ -591,7 +591,7 @@
     "title": "Django Forms and CRUD",
     "NOTE": "Revise this completely",
     "anchor": "paw_forms",
-    "icon" : "fa-database",
+    "icon" : "fa-table",
     "description": "(Being revised) This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "videos" : [
     {
@@ -635,7 +635,7 @@
 {
     "title": "Hello World DIY",
     "anchor": "dj4e_hello",
-    "icon" : "fa-database",
+    "icon" : "fa-globe",
     "description": "(Being revised) In this assignment we build a small application from scratch that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
     "lti" : [
@@ -657,7 +657,7 @@
 {
     "title": "Autos CRUD Application",
     "anchor": "dj4e_autos",
-    "icon" : "fa-database",
+    "icon" : "fa-car",
     "description": "In this assignment we build a small CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_autos.md",
     "lti" : [
@@ -703,7 +703,7 @@
 {
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
-    "icon" : "fa-database",
+    "icon" : "fa-newspaper",
     "description": "We write the first iteration of the classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
     "lti" : [
@@ -733,7 +733,7 @@
 {
     "title": "Classified Ads #2",
     "anchor": "dj4e_ads2",
-    "icon" : "fa-database",
+    "icon" : "fa-newspaper",
     "description": "We add pictures and comments to our classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
     "lti" : [
@@ -763,7 +763,7 @@
 {
     "title": "Classified Ads #3",
     "anchor": "dj4e_ads3",
-    "icon" : "fa-database",
+    "icon" : "fa-newspaper",
     "description": "We add favorites to our classified ads application.",
     "videos" : [
     {
@@ -803,7 +803,7 @@
 {
     "title": "Classified Ads #4",
     "anchor": "dj4e_ads4",
-    "icon" : "fa-database",
+    "icon" : "fa-newspaper",
     "description": "We add another feature our classified ads application. (TBD)"
 },
 {
