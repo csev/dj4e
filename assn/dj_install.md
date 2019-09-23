@@ -14,11 +14,13 @@ tutorials, you might as well use it:
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
 
 You can use a virtual environment or if you have a suitable version of Python 3.x on your
-computer and can use `pip` to install a suitable version of Django for your whole computer,
+computer and can use `pip3` to install a suitable version of Django for your whole computer,
 there is no need to put things in a virtual environment.
 
-However you get Python 3 and Django installed, you know you are good when these commands
-show reasonable versions for these commands:
+Also you should install git on your computer using any of the good tutorials out there.
+
+You know Python and Django are correctly installed when these commands
+show reasonable version numbers:
 
 Linux/Mac:
 
