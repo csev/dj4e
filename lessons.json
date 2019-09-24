@@ -454,6 +454,7 @@
     "anchor": "paw_home",
     "icon" : "fa-home",
     "description": "This exercise builds our first top level view (the home page) for the LocalLibrary web site.",
+    "slides": "lectures/DJ-05-MVC.pptx",
     "videos" : [
     {
         "title": "Django Home Page",
@@ -485,6 +486,7 @@
     "title": "Django detail",
     "anchor": "paw_detail",
     "icon" : "fa-align-left",
+    "slides": "lectures/DJ-06-Views-Templates.pptx",
     "description": "This exercise builds detail views for the LocalLibrary web site.",
     "videos" : [
     {
@@ -534,6 +536,7 @@
     "anchor": "paw_sessions",
     "icon" : "fa-cookie",
     "description": "This exercise uses sessions on the LocalLibrary web site.  This exercise is quite simple so there is no video walkthrough.",
+    "slides": "lectures/DJ-07-Cookies-Sessions.pptx",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md",
     "lti" : [
         {
@@ -560,6 +563,7 @@
     "anchor": "paw_users",
     "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
+    "slides": "lectures/DJ-08-Forms.pptx",
     "videos" : [
     {
         "title": "Django Users",
