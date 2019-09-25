@@ -563,7 +563,7 @@
     "anchor": "paw_users",
     "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
-    "slides": "lectures/DJ-08-Forms.pptx",
+    "slidesTBD": "lectures/DJ-08-Login.pptx",
     "videos" : [
     {
         "title": "Django Users",
@@ -597,6 +597,7 @@
     "anchor": "paw_forms",
     "icon" : "fa-table",
     "description": "(Being revised) This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
+    "slides": "lectures/DJ-09-Forms.pptx",
     "videos" : [
     {
         "title": "Django Forms - All Books",
