@@ -450,12 +450,16 @@
     ]
 },
 {
-    "title": "Django home page",
+    "title": "Understanding Model View Controller (MVC) ",
     "anchor": "paw_home",
     "icon" : "fa-home",
-    "description": "This exercise builds our first top level view (the home page) for the LocalLibrary web site.",
+    "description": "We cover the concept of the Model-View-Controller (MVC) in web applications and build our first top level view (the home page) for the LocalLibrary web site.",
     "slides": "lectures/DJ-05-MVC.pptx",
     "videos" : [
+    {
+        "title": "Model View Controller in Django",
+        "youtube": "XvWG5KMncOU"
+    },
     {
         "title": "Django Home Page",
         "youtube": "zpOIeV9HLpc"
@@ -483,12 +487,20 @@
     ]
 },
 {
-    "title": "Django detail",
+    "title": "Django Views and Templates",
     "anchor": "paw_detail",
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Templates.pptx",
-    "description": "This exercise builds detail views for the LocalLibrary web site.",
+    "description": "We vinally get to looking at the core of a Django application - the views and Templates and build detail views for the LocalLibrary web site.",
     "videos" : [
+    {
+        "title": "URL Routing in Django",
+        "youtube": "AQFC13D2mRM"
+    },
+    {
+        "title": "Django Views",
+        "youtube": "AQFC13D2mRM"
+    },
     {
         "title": "Django Detail Pages",
         "youtube": "sbu_KNI4Hqk"
