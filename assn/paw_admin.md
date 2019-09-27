@@ -67,6 +67,26 @@ This will wipe out all of your tables and the data in those tables and create fr
 The `db.sqlite3` file is a normal file - you can back it up and/or copy over it - just make sure to `Reload`
 your web application when you change your database.
 
+Some Common Mistakes
+--------------------
+
+Sometimes student set `Debug=False` in the `locallibrary/settings.py` file.
+This should be set to `True`.
+
+Sometimes when commands like
+
+    python3 manage.py migrations
+
+run without error, but the web application will not start, check to make
+sure your virtual environment is properly set under the Web tab
+on PythonAnywhere.  If you did the installation properly and created a `django2`
+virtual environment, the virtual environment should be set to:
+
+    /home/--your-account---/.virtualenvs/django2
+
+You can also see a very convinent "Start a bash shell in this environment"
+if the virtual environment is set propertly under the Web tab.
+
 
 If You Are Keeping Your Projects GitHub
 ---------------------------------------
