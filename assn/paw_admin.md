@@ -75,11 +75,13 @@ This should be set to `True`.
 
 Sometimes when commands like
 
-    python3 manage.py migrations
+    python3 manage.py migrate
 
-run without error, but the web application will not start, check to make
-sure your virtual environment is properly set under the Web tab
-on PythonAnywhere.  If you did the installation properly and created a `django2`
+run without error, but the web application will not start on
+PythonAnywhere, check to make sure your virtual environment is
+properly set under the Web tab.  If you did the
+<a href="paw_install.md" target="_blank">installation</a>
+properly and created a `django2`
 virtual environment, the virtual environment should be set to:
 
     /home/--your-account---/.virtualenvs/django2
