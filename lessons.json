@@ -497,17 +497,18 @@
     {
         "title": "URL Routing in Django",
         "youtube": "AQFC13D2mRM",
-        "project": "DJ 06 Views 02 Urls"
-    },
-    {
-        "title": "Django Views",
-        "youtube": "AQFC13D2mRM",
         "project": "DJ 06 Views 01 Urls"
     },
     {
         "title": "Django Views",
         "youtube": "9Qk4vJMssMo",
         "project": "DJ 06 Views 02 Views"
+    },
+    {
+        "title": "Inside Django Views and HTML Escaping in Django",
+        "youtube": "SAAWE4Hz6Mk",
+        "status" : "TBD",
+        "project": "DJ 06 Views 03 Detail"
     },
     {
         "title": "Using Templates in Django",
@@ -518,6 +519,18 @@
         "title": "Using the Django Template Language (DTL)",
         "youtube": "teL44ugGpSs",
         "project": "DJ 06 Views 05 DTL"
+    },
+    {
+        "title": "Django Template Inheritance",
+        "youtube": "IMgml67lH9Y",
+        "status" : "TBD",
+        "project": "DJ 06 Views 06 Inherit"
+    },
+    {
+        "title": "Reversing Django URLs",
+        "youtube": "YT60BZJjySg",
+        "status" : "TBD",
+        "project": "DJ 06 Views 07 Reverse"
     },
     {
         "title": "Understanding Django Generic Views",
