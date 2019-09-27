@@ -507,7 +507,6 @@
     {
         "title": "Inside Django Views and HTML Escaping in Django",
         "youtube": "SAAWE4Hz6Mk",
-        "status" : "TBD",
         "project": "DJ 06 Views 03 Detail"
     },
     {
@@ -523,13 +522,11 @@
     {
         "title": "Django Template Inheritance",
         "youtube": "IMgml67lH9Y",
-        "status" : "TBD",
         "project": "DJ 06 Views 06 Inherit"
     },
     {
         "title": "Reversing Django URLs",
         "youtube": "YT60BZJjySg",
-        "status" : "TBD",
         "project": "DJ 06 Views 07 Reverse"
     },
     {
