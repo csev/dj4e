@@ -41,20 +41,12 @@ Extending the home (i.e. main) page
 -----------------------------------
 
 Since we will build a number of applications in this project, we will use the `home`
-application to provide convienent urls to switch between applications.   If you did
-not use a template for your home page, it would probably be a good idea to switch
-to the template pattern as shown in:
-
-https://github.com/csev/dj4e-samples/blob/master/home/urls.py
-
-Your `home\urls.py` should have a like like this
-
-    path('', TemplateView.as_view(template_name='main_hello.html'), name='main'),
+application to provide convienent urls to switch between applications. 
 
 And you should have a file `home/templates/main_hello.html` that has the text for the top-level page.
 You can keep the "Hello World" text in the page somewhere.
 
-Add a link to the "/autos" url in `main_hello.html` and anything else the autograder needs:
+Add a link to the "/autos" url in `home/templates/main/hello.html` and anything else the autograder needs:
 
     <ul>
     <li><a href="/autos">Autos CRUD</a>
@@ -65,7 +57,7 @@ It is a list because we will be adding more applications in future assignments. 
 Building the Autos Application
 ------------------------------
 
-The essense of this task is to just copy the code from:
+The essense of this task is to adapt the code from:
 
 https://github.com/csev/dj4e-samples/tree/master/autos
 
@@ -73,9 +65,22 @@ and make it work in your `autos` project.
 
 Here are some tasks:
 
-* Edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.  Also route the `accounts/` url to the 
-Django built in login features and add the `admin/` route so you can work with your data.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">Example</a>)
+* Edit `dj4e/urls.py` and
+add the `accounts/` so you can use the Django built in login features.
+(<a href="https://docs.djangoproject.com/en/2.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>)
+
+    from django.contrib import admin
+    from django.urls import path, include
+    from django.contrib.auth import views as auth_views
+
+    urlpatterns = [
+        path('', include('home.urls')),
+        path('admin/', admin.site.urls),
+        path('accounts/', include('django.contrib.auth.urls')),  # Keep
+
+    ]
+
+* Edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
 * Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
@@ -83,6 +88,8 @@ Django built in login features and add the `admin/` route so you can work with y
 * Edit the `autos/views.py` file to add views for the list, edit, and delete pages for both autos and makes.
 You can ignore the `cleanup` stuff.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/views.py" target="_blank">Example</a>)
+
+* Create the file `home\templates\registration\login.html` with the following text:
 
 * Create the necessary templates in `home\templates\registration` to support the login / log out views.  
 (<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates" target="_blank">Example</a>)

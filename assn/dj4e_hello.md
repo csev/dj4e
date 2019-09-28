@@ -44,8 +44,8 @@ and start a new project and an application:
     cd ~/django_projects/dj4e
     python3 manage.py startapp home
 
-Using Django Locally
---------------------
+If you have Django Locally
+--------------------------
 
     cd ~/django_projects/dj4e
     python3 manage.py runserver
@@ -53,6 +53,41 @@ Using Django Locally
 In general as you make changes to the files below, runserver will monitor
 for file changes and restart itself although sometimes you do want to abort
 runserver and restart it manually to make sure it sees every new change.
+
+Files to Edit
+-------------
+
+These are the steps to build your "Hello World" application.
+
+* Make folders `dj4e/home/templates` and `dj4e/home/templates/home/`
+
+* Create `dj4e/home/templates/main_home.html` and put in some text that says "Hello World ... " and
+some additional text about cats and/or any text or meta tag
+that the autograder is asking for.
+
+* Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
+pointing at a file `dj4e/home/templates/main/home.html`
+
+    path('', TemplateView.as_view(template_name='home/hello.html'), name='home'),
+
+* Edit the `dj4e/dj4e/settings.py`, fix `ALLOWED_HOSTS` and add the home application:
+
+        INSTALLED_APPS = [
+            ...
+            'home.apps.HomeConfig',    <--- Add
+        ]
+
+* Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
+route like we used in the locallibrary / catalog application.  It should look like the following
+
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('', include('home.urls')),
+        path('admin/', admin.site.urls),
+    ]
+
 
 If you are running Django on PythonAnywhere
 -------------------------------------------
@@ -62,7 +97,11 @@ Under your Web tab, Set the following:
     Source Code:   /home/--your account--/django_projects/dj4e
     Working Directory:   /home/--your account--/django_projects/dj4e
 
-In your WGSI Configuration file use:
+You should leave the virtual environment setting the same - pointing to your `django2`
+virtual environment.
+
+Your WGSI Configuration file under the Web tab on PythonAnywhere
+should be replaced with this text:
 
     import os
     import sys
@@ -75,32 +114,9 @@ In your WGSI Configuration file use:
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
-Of course you need to Reload your application as you make changes to the files below.
-
-Files to Edit
--------------
-
-These are the steps to get things started:
-
-* Edit the `dj4e/dj4e/settings.py`, fix `ALLOWED_HOSTS` and add the home application:
-
-        INSTALLED_APPS = [
-            ...
-            'home.apps.HomeConfig',    <--- Add
-        ]
-
-* Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
-route like we used in the locallibrary / catalog application.
-
-* Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
-pointing at a file `dj4e/home/templates/main_home.html`
-
-* Edit `dj4e/home/templates/main_home.html` and put in some text that says "Hello World ... " and
-some additional text about cats and/or any text or meta tag
-that the autograder is asking for.
-
-Once your project is working, you probably want to check it into github and make a tag
-named 'hello_world'.
+Of course you need to Reload your application as you make changes to the files in this 
+Django project.  If you are running locally, the `runserver` process will automatically
+restart itself whenever you change a file in the `dj4e` folder.
 
 References
 ----------
