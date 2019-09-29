@@ -89,9 +89,6 @@ and add the `catalog | book instance | Set book as returned` permission to the g
 * Then `Reload` the application and log in with an account that is in the group 'Library Staff'
 and verify that the 'All borrowed` code works.
 
-* If you are using git, you should add and commit all your files and tag your repo
-with a tag like "borrowed"
-
 Adding the renew form
 ---------------------
 
@@ -121,15 +118,6 @@ renewal form from the "all borrowed" view, add these three lines after the 'book
 * You should reload your web application and test both the 'All borrowed' view and the librarian renewal
 feature.  Make sure when you change the due date that it actually changes.  Try some invalid dates like
 next year to test data validation.
-
-* If your code is working to this point, and you are using git you might want to commit
-it all and tag it with a tag like "renew"
-
-        git add catalog/forms.py catalog/templates/catalog/*
-        git commit -a -m "Adding the first form"
-        git push
-        git tag renew
-        git push --tags
 
 The tutorial shows an equivalent way of building a model-based view.  It is not necessary to actually build
 this equivalent form.
@@ -171,9 +159,6 @@ logged in to do the CRUD operations.
 
     You can go into an author detail page and add "update" or "delete" to the end of the URL to access
     those views.
-
-* If your code is working to this point, and you are using git you might want to commit
-it all and tag it with a tag like "crud"
 
 Congratulations
 ---------------

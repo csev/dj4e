@@ -98,20 +98,3 @@ If you are using the autograder for this assignment, you will need to upload the
 `db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
 to download the file to your computer and then upload it to the autograder.
 
-If You Are Keeping Your Projects GitHub
----------------------------------------
-
-At this point, once your models are working, you might want to check it into
-github and tag it.
-
-    cd ~/django_projects/locallibrary
-    git status
-    git add catalog/migrations/*
-    git commit -a -m "Models tutorial complete"
-    git push
-
-You might also want to tag this version of the code in case you need to come back to it:
-
-    git tag models
-    git push origin --tags
-

@@ -88,19 +88,3 @@ to set the status to "On Loan".
 * Check to see if your logged in user can see their own borrowed books.   Make sure the user's book
 instances have a status of "On Loan".
 
-If You Are Keeping Your Projects GitHub
----------------------------------------
-
-At this point, once your models are working, you might want to add the new files
-and check your modifications into github.
-
-    cd ~/django_projects/locallibrary/catalog
-    git status
-    git commit -a -m "User tutorial complete"
-    git push
-
-You might also want to tag this version of the code in case you need to come back to it:
-
-    git tag user
-    git push origin --tags
-

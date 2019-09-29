@@ -608,7 +608,7 @@
     "anchor": "paw_users",
     "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
-    "slidesTBD": "lectures/DJ-08-Login.pptx",
+    "slides": "lectures/DJ-08-Login.pptx",
     "videos" : [
     {
         "title": "Django Users",

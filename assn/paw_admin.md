@@ -89,20 +89,3 @@ virtual environment, the virtual environment should be set to:
 You can also see a very convinent "Start a bash shell in this environment"
 if the virtual environment is set propertly under the Web tab.
 
-
-If You Are Keeping Your Projects GitHub
----------------------------------------
-
-At this point, once your models are working, you might want to check it into
-github and tag it.
-
-    cd ~/django_projects/locallibrary
-    git status
-    git commit -a -m "Admin tutorial complete"
-    git push
-
-You might also want to tag this version of the code in case you need to come back to it:
-
-    git tag admin
-    git push origin --tags
-

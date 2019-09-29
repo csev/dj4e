@@ -97,22 +97,3 @@ you *should* get an error, 'Page not found(404)'
 (<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
 We are stopping this tutorial when the web site is still incomplete so that is normal.
 
-If You Are Keeping Your Projects GitHub
----------------------------------------
-
-At this point, once your application is working, you might want to check it into
-github and tag it.
-
-    cd ~/django_projects
-    git status
-    git add localibrary
-    git commit -a -m "Skeleton tutorial complete"
-    git push
-
-You might also want to tag this version of the code in case you need to come back to it:
-
-    git tag skeleton
-    git push origin --tags
-
-
-

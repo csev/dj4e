@@ -78,42 +78,6 @@ without requiring your application to be reloaded.  There is not harm in reloadi
 web application too often.  If you made a change and dont think you are seeing the change,
 reload the web application.
 
-
-If you are using git
---------------------
-
-If you are using `git`, you can see what files have been modified / created:
-
-    cd ~/django_projects/locallibrary/catalog
-    git status
-
-The git output would be as follows:
-
-    Changes not staged for commit:
-        modified:   urls.py
-        modified:   views.py
-    Untracked files:
-        static/
-        templates/
-
-If You Are Keeping Your Projects GitHub
----------------------------------------
-
-At this point, once your models are working, you might want to add the new files
-and check your modifications into github.
-
-    cd ~/django_projects/locallibrary/catalog
-    git status
-    git add static templates 
-    git commit -a -m "Home tutorial complete"
-    git push
-
-You might also want to tag this version of the code in case you need to come back to it:
-
-    git tag home
-    git push origin --tags
-
-
 References
 ----------
 
