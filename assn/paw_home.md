@@ -96,10 +96,10 @@ If you did the
 properly and created a `django2`
 virtual environment, the virtual environment under the `Web` tab should be set to:
 
-    /home/--your-account---/.virtualenvs/django2
+    /home/drchuck/.virtualenvs/django2
 
-You can also see a very convienent "Start a bash shell in this environment"
-if the virtual environment is set properly under the Web tab.
+Replacing "drchuck" with your PythonAnywhere account name.
+
 
 References
 ----------
