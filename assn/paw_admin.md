@@ -29,7 +29,7 @@ your PythonAnywhere site (i.e. like
 * Organize the detail view layout
 * Enable inline editing of associated records
 
-Just as a reminder, when you are running on PythonAnywhere you do not need to do a:
+Just as a reminder, when you are running on PythonAnywhere you **do not need** to do a:
 
     python3 manage.py runserver  # Don't do this on PythonAnywhere
 
@@ -37,19 +37,6 @@ Everytime you make a configuration change.  But if you are running on
 PythonAnywhere and make a configuration change you **do** need to
 go into the `Web` tab and `Reload` the web server to re-read your updated configuration.  There is
 not harm in reloading your web on PythonAnywhere application too often.  So when in doubt, reload :)
-
-
-If you are using git
---------------------
-
-If you are using `git`, you can see what files have been modified / created:
-
-    git status
-
-The git output would be as follows:
-
-        modified:   catalog/admin.py
-        modified:   catalog/models.py
 
 Making a Fresh Database
 -----------------------
@@ -59,10 +46,8 @@ If you want to experiment a bit and you want to wipe out your database and start
     rm db.sqlite3
     python3 manage.py migrate
 
-Also `Reload` your application on PythonAnywhere.   Note that this process will also wipe
-out your superuser accounts and all data you have entered.
-
 This will wipe out all of your tables and the data in those tables and create fresh and empty tables.
+Note that this process will also wipe out your superuser accounts and all data you have entered.
 
 The `db.sqlite3` file is a normal file - you can back it up and/or copy over it - just make sure to `Reload`
 your web application when you change your database.
@@ -70,7 +55,7 @@ your web application when you change your database.
 Some Common Mistakes
 --------------------
 
-Sometimes student set `Debug=False` in the `locallibrary/settings.py` file.
+Sometimes students set `Debug=False` in the `locallibrary/settings.py` file.
 This should be set to `True`.
 
 Sometimes when commands like
@@ -86,6 +71,6 @@ virtual environment, the virtual environment should be set to:
 
     /home/--your-account---/.virtualenvs/django2
 
-You can also see a very convinent "Start a bash shell in this environment"
-if the virtual environment is set propertly under the Web tab.
+You can also see a very convienent "Start a bash shell in this environment"
+if the virtual environment is set properly under the Web tab.
 

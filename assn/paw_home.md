@@ -78,6 +78,29 @@ without requiring your application to be reloaded.  There is not harm in reloadi
 web application too often.  If you made a change and dont think you are seeing the change,
 reload the web application.
 
+Common Problems and How to Fix Them
+-----------------------------------
+
+If you relead your web application and get the "Something went wrong :("
+page when you access your web application, check on the "error.log" link 
+and scroll to the very bottom to see why your application will not start.
+If you see and error message like:
+
+    No module named 'django_extensions'
+
+It probably means that you have not set up your virtual environment under 
+the `Web` tab.  
+
+If you did the
+<a href="paw_install.md" target="_blank">installation</a>
+properly and created a `django2`
+virtual environment, the virtual environment under the `Web` tab should be set to:
+
+    /home/--your-account---/.virtualenvs/django2
+
+You can also see a very convienent "Start a bash shell in this environment"
+if the virtual environment is set properly under the Web tab.
+
 References
 ----------
 
