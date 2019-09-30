@@ -71,4 +71,4 @@ virtual environment, the virtual environment should be set to:
 
     /home/drchuck/.virtualenvs/django2
 
-Replacing "drchuck" with your pythonanywhere name.
+Replacing "drchuck" with your PythonAnywhere account name.
