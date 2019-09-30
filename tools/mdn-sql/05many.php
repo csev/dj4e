@@ -65,14 +65,16 @@ if ( isset($_FILES['database']) ) {
     }
 
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_category') ) return;
-    if ( ! runQuery($db, 'SELECT id, name FROM unesco_states') ) return;
+    if ( ! ( runQuery($db, 'SELECT id, name FROM unesco_states') ||
+             runQuery($db, 'SELECT id, name FROM unesco_state') ) ) return;
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_region') ) return;
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_iso') ) return;
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_site') ) return;
 
-    // 3 163 5 163 1044 
+    // 3 163 5 163 1044
     if ( ! checkCountTable($db, 'unesco_category', 3) ) return;
-    if ( ! checkCountTable($db, 'unesco_states', 163) ) return;
+    if ( ! ( checkCountTable($db, 'unesco_states', 163) ||
+            checkCountTable($db, 'unesco_state', 163) ) ) return;
     if ( ! checkCountTable($db, 'unesco_region', 5) ) return;
     if ( ! checkCountTable($db, 'unesco_iso', 163) ) return;
     if ( ! checkCountTable($db, 'unesco_site', 1044) ) return;
@@ -81,7 +83,8 @@ if ( isset($_FILES['database']) ) {
     if ( ! checkCountTable($db, 'unesco_category WHERE name="Mixed"', 1) ) return;
     if ( ! checkCountTable($db, 'unesco_iso WHERE name="gb"', 1) ) return;
     if ( ! checkCountTable($db, 'unesco_region WHERE name="Africa"', 1) ) return;
-    if ( ! checkCountTable($db, 'unesco_states WHERE name="India"', 1) ) return;
+    if ( ! (checkCountTable($db, 'unesco_states WHERE name="India"', 1) ||
+        checkCountTable($db, 'unesco_state WHERE name="India"', 1)) ) return;
 
     // Dig into Sites a bit
     if ( ! checkCountTable($db, 'unesco_site WHERE name="Hawaii Volcanoes National Park"', 1) ) return;
@@ -134,14 +137,14 @@ if ( $dueDate->message ) {
 ?>
 <p>
 <form name="myform" enctype="multipart/form-data" method="post" >
-To get credit for this assignment, perform the instructions below and 
+To get credit for this assignment, perform the instructions below and
 upload your SQLite3 database here:<br/>
-<input name="database" type="file"> 
+<input name="database" type="file">
 (Must have a .sqlite3 suffix)<br/>
 <input type="submit">
 <p>
-Do the assignment at 
-<a href="https://www.dj4e.com/assn/dj4e_load.md" target="_blank">https://www.dj4e.com/assn/dj4e_load.md</a> 
+Do the assignment at
+<a href="https://www.dj4e.com/assn/dj4e_load.md" target="_blank">https://www.dj4e.com/assn/dj4e_load.md</a>
 </p>
 <p>
 When the
@@ -150,7 +153,7 @@ PythonAnywhere you will need to download the file and then upload it to this aut
 </p>
 <p>
 This autograder checks the schemas and contents of the five tables
-(unesco_category, unesco_iso, unesco_region, unesco_site, and unesco_states)
+(unesco_category, unesco_iso, unesco_region, unesco_site, and unesco_state)
 that will be created when the assignment is completed properly.
 </p>
 </form>
