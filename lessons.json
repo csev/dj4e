@@ -577,12 +577,24 @@
     ]
 },
 {
-    "title": "Django sessions",
+    "title": "Django Cookies and Sessions",
     "anchor": "paw_sessions",
     "icon" : "fa-cookie",
-    "description": "This exercise uses sessions on the LocalLibrary web site.  This exercise is quite simple so there is no video walkthrough.",
+    "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.  Our exercise uses sessions on the LocalLibrary web site.  This exercise is quite simple so there is no video walkthrough.",
     "slides": "lectures/DJ-07-Cookies-Sessions.pptx",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md",
+    "videos" : [
+    {
+        "title": "Cookies in Browsers and Django",
+        "project" : "DJ-07-Cookies-01-Cookies",
+        "youtube": "C75IW38hKI8"
+    },
+    {
+        "title": "Using Sessions in Django",
+        "project" : "DJ-07-Cookies-02-Sessions",
+        "youtube": "RjykNmVdcgI"
+    }
+   ],
     "lti" : [
         {
         "title" : "Auto-grader: Django Sessions",
