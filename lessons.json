@@ -668,9 +668,34 @@
     "NOTE": "Revise this completely",
     "anchor": "paw_forms",
     "icon" : "fa-table",
-    "description": "(Being revised) This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
+    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.  (Being revised) This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "slides": "lectures/DJ-09-Forms.pptx",
     "videos" : [
+    {
+        "title": "Forms, GET, POST, and HTTP",
+        "project" : "DJ-09-Forms-01-getpost",
+        "youtube": "KqH0Pu2ZnIg"
+    },
+    {
+        "title": "Building HTML Forms",
+        "project" : "DJ-09-Forms-02-HTML",
+        "youtube": "iXgnkxwzZzM"
+    },
+    {
+        "title": "Forms and Cross Site Request Forgery (CSRF)",
+        "project" : "DJ-09-Forms-03-CSRF",
+        "youtube": "j-vdshWK9Lc"
+    },
+    {
+        "title": "CSRF Support in Django",
+        "project" : "DJ-09-Forms-04-Form-CSRF",
+        "youtube": "w9Y6tIVGUTI"
+    },
+    {
+        "title": "The POST Redirect Pattern",
+        "project" : "DJ-09-Forms-05-Refresh",
+        "youtube": "Cug7pkRWQM0"
+    },
     {
         "title": "Django Forms - All Books",
         "youtube": "IH1aNL2tYIk"
