@@ -692,9 +692,24 @@
         "youtube": "w9Y6tIVGUTI"
     },
     {
-        "title": "The POST Redirect Pattern",
+        "title": "The POST Refresh Pattern",
         "project" : "DJ-09-Forms-05-Refresh",
         "youtube": "Cug7pkRWQM0"
+    },
+    {
+        "title": "Implementing POST Redirect in Django",
+        "project" : "DJ-09-Forms-06-Redirect",
+        "youtube": "a_ahU4F1V2g"
+    },
+    {
+        "title": "Using Django Forms Capabilities",
+        "project" : "DJ-09-Forms-07-FormsPy",
+        "youtube": "bYlgvmAPrp0"
+    },
+    {
+        "title": "Data Validation with Django Forms",
+        "project" : "DJ-09-Forms-08-Validation",
+        "youtube": "bYlgvmAPrp0"
     },
     {
         "title": "Django Forms - All Books",
