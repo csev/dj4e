@@ -7,7 +7,7 @@ Tata, Audi, etc.).
 
 This application will be based on this folder in the samples repo:
 
-https://github.com/csev/dj4e-samples/tree/master/auto
+https://github.com/csev/dj4e-samples/tree/master/autos
 
 **Do not clone this repository for this assignment**.  You will make a new
 project and application in your `django_projects` folder and use this application
