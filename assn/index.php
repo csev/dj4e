@@ -88,8 +88,8 @@ function onSelect() {
   <option <?= x_sel("paw_models.md") ?>>Django Models</option>
   <option <?= x_sel("paw_admin.md") ?>>Django Admin</option>
   <option <?= x_sel("dj4e_load.md") ?>>Batch Loading Data</option>
-  <option <?= x_sel("paw_home.md") ?>>Home Page</option>
-  <option <?= x_sel("paw_details.md") ?>>Detail Pages</option>
+  <option <?= x_sel("paw_home.md") ?>>Django Home Page</option>
+  <option <?= x_sel("paw_details.md") ?>>Django Detail Pages</option>
   <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
   <option <?= x_sel("paw_users.md") ?>>Django Users</option>
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
@@ -106,8 +106,7 @@ function onSelect() {
 } else {
 ?>
 <p>
-This is a set of supplementary documentation for use with this
-web site.
+These are the assignments for Django for Everybody (DJ4E).
 </p>
 <ul>
 <li><a href="paw_install.md">Django and PythonAnywhere</a></li>
@@ -117,8 +116,8 @@ web site.
 <li><a href="paw_models.md">Django Models</a></li>
 <li><a href="paw_admin.md">Django Admin</a></li>
 <li><a href="dj4e_load.md">Batch Loading Data</a></li>
-<li><a href="paw_home.md">Home Page</a></li>
-<li><a href="paw_details.md">Detail Pages</a></li>
+<li><a href="paw_home.md">Django Home Page</a></li>
+<li><a href="paw_details.md">Django Detail Pages</a></li>
 <li><a href="paw_sessions.md">Django Sessions</a></li>
 <li><a href="paw_users.md">Django Users</a></li>
 <li><a href="paw_forms.md">Django Forms</a></li>

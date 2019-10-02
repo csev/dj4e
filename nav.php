@@ -11,6 +11,8 @@ if ( isset($CFG->lessons) ) {
 }
 if ( isset($_SESSION['id']) ) {
     $set->addLeft('My Progress', $R.'assignments');
+} else {
+    $set->addLeft('Assignments', $R.'assn');
 }
 
 if ( isset($_SESSION['id']) ) {

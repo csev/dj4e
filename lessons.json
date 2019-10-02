@@ -664,11 +664,11 @@
     ]
 },
 {
-    "title": "Django Forms and CRUD",
+    "title": "Forms in HTTP, HTML, and Django",
     "NOTE": "Revise this completely",
     "anchor": "paw_forms",
     "icon" : "fa-table",
-    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.  (Being revised) This exercise builds some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
+    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.  In the locallibrary tutorial we build some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
     "slides": "lectures/DJ-09-Forms.pptx",
     "videos" : [
     {
@@ -735,10 +735,11 @@
     ]
 },
 {
-    "title": "Hello World DIY",
+    "title": "DIY: Hello World Project",
     "anchor": "dj4e_hello",
     "icon" : "fa-globe",
-    "description": "(Being revised) In this assignment we build a small application from scratch that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
+    "TODO" : "Need a hello world walkthrough for local and PYAW",
+    "description": "In this assignment we start a completely new django project that we will use as a base to build our own application going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have depended too much on the MDN tutorial instructions without actually reading the text of the tutorial.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
     "lti" : [
         {

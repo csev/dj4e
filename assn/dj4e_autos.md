@@ -29,7 +29,8 @@ Making a New Project
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
 and start a new application in your `dj4e` project (this project already should have the 'hello'
-application from a previous assignment).
+application from a 
+<a href="dj4e_hello.md">previous assignment</a>).
 
     workon django2  # as needed
     cd ~/django_projects/dj4e
@@ -65,20 +66,22 @@ and make it work in your `autos` project.
 
 Here are some tasks:
 
+* Create a template in `home\templates\registration` to support the login view.
+(<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">Example</a>)
+
 * Edit `dj4e/urls.py` and
 add the `accounts/` so you can use the Django built in login features.
 (<a href="https://docs.djangoproject.com/en/2.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>)
 
-    from django.contrib import admin
-    from django.urls import path, include
-    from django.contrib.auth import views as auth_views
+        from django.contrib import admin
+        from django.urls import path, include
+        from django.contrib.auth import views as auth_views
 
-    urlpatterns = [
-        path('', include('home.urls')),
-        path('admin/', admin.site.urls),
-        path('accounts/', include('django.contrib.auth.urls')),  # Keep
-
-    ]
+        urlpatterns = [
+            path('', include('home.urls')),
+            path('admin/', admin.site.urls),
+            path('accounts/', include('django.contrib.auth.urls')),  # Keep
+        ]
 
 * Edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
@@ -86,13 +89,9 @@ add the `accounts/` so you can use the Django built in login features.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
 
 * Edit the `autos/views.py` file to add views for the list, edit, and delete pages for both autos and makes.
-You can ignore the `cleanup` stuff.
+It will make things a lot simpler in the long run if you convert the Make views to 
+the shorter form like the Auto views.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/views.py" target="_blank">Example</a>)
-
-* Create the file `home\templates\registration\login.html` with the following text:
-
-* Create the necessary templates in `home\templates\registration` to support the login / log out views.  
-(<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates" target="_blank">Example</a>)
 
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign key from Autos to Makes.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
