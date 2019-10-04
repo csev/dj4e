@@ -81,7 +81,7 @@ reload the web application.
 Common Problems and How to Fix Them
 -----------------------------------
 
-If you relead your web application and get the "Something went wrong :("
+If you reload your web application and get the "Something went wrong :("
 page when you access your web application, check on the "error.log" link 
 and scroll to the very bottom to see why your application will not start.
 If you see and error message like:
