@@ -119,7 +119,9 @@ Then rename your folder and check out a fresh copy of your repository:
 
     cd ~
     mv django_projects broken_version
-    git clone https://github.com/--your-github-acct--/django_projects.git
+    git clone https://github.com/drchuck/django_projects.git
+
+Replacing `drchuck` with your github account.
 
 Now you have a fresh new copy of your github repository.  Then go into
 the saved copy and see which files you want to copy over into the newly

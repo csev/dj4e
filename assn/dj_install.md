@@ -119,11 +119,11 @@ the changes back and forth.
 Moving Code Between Your Laptop and PythonAnywhere
 --------------------------------------------------
 
-If you want you can keep a local copy your `django_projects` synchronized with your
+If you want, you can keep a local copy your `django_projects` synchronized with your
 copy on PythonAnywhere using `github`.
 
-Before You Start
-----------------
+If you are already using github to store your application
+---------------------------------------------------------
 
 Before you start doing this, make sure that your code in the PythonAnywhere shell
 is fully checked in to GitHub:
@@ -136,6 +136,27 @@ is fully checked in to GitHub:
 
 If you have any outstanding git modifications on PYAW - clean it up and push it to the repo.
 
+If you have not yet put your PythonAnywhere code on github
+----------------------------------------------------------
+
+If you have not yet uploaded your `django_projects` folder to github, first follow the
+<a href="paw_github.md">these instructions</a> to get your application uploaded to github.
+
+Checking your github code out onto your laptop
+----------------------------------------------
+
+Once your application is in github, you can simply check it out to your laptop computer
+using commands like:
+
+    cd ~         # or simple 'cd' for Windows
+    cd Desktop
+    cd django
+    git clone https://github.com/drhuck/django_projects.git
+
+Replacing `drchuck` with your github account.  This should bring a copy of your
+application from github down to your computer and store it in the folder
+`django_projects`.
+
 Working on Your Code on Your Laptop
 -----------------------------------
 
@@ -145,7 +166,7 @@ So you are on your local laptop / computer and are making changes
     cd Desktop
     cd django
     cd django_projects
-    cd locallibrary
+    cd locallibrary    # Or whatever project you want to work on
     # edit some files :)
     python3 manage.py makemigrations    # If you changed your models
     python3 manage.py migrate           # If you changed your models.py
@@ -167,7 +188,8 @@ from PythonAnywhere, things will go very smoothly.
 
 If you edit two places and push from one of the places, the push will work - but the push
 won't work from the second place and pull won't work either becausee you have local changes.
-If this is what you did, there is a simple workaround.  On the system where you have un-pushed changes and want to do a pull befor pushing, do this:
+If this is what you did, there is a simple workaround.  On the system where you have un-pushed
+changes and want to do a pull before pushing, do this:
 
     git stash
     git pull
