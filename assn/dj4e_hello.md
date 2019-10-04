@@ -17,7 +17,7 @@ views, templates, admin configurations, etc.
 At this point you should be doing development
 locally and uploading it to PythonAnywhere or just using ngrok to turn it in. If
 you don't have a compure that can run Django locally you can continue to use
-PythonAnywhere but increasingly examples will be shown unsing local development
+PythonAnywhere but increasingly examples will be shown using local development
 patterns.
 
 This application will end up with a similar structure to
