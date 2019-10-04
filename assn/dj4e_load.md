@@ -105,9 +105,10 @@ foreign key names.  Here is a subset of the `unesco/models.py`:
             return self.name
 
 All of the columns from the CSV data must be represented somewhere in the
-data model.
+data model.  There should be five models in your design, and four One-To-Many
+relationships and no Many-to-Many relationships.
 
-Also add the models to `unesco/admin.py`:
+Also add the models to `unesco/admin.py` so you can view them in the administrator interface:
 
     from django.contrib import admin
 
