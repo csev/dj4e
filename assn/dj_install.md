@@ -122,8 +122,8 @@ Moving Code Between Your Laptop and PythonAnywhere
 If you want, you can keep a local copy your `django_projects` synchronized with your
 copy on PythonAnywhere using `github`.
 
-If you are already using github to store your application
----------------------------------------------------------
+If you are already using github to store your projects
+------------------------------------------------------
 
 Before you start doing this, make sure that your code in the PythonAnywhere shell
 is fully checked in to GitHub:
