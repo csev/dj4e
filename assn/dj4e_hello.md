@@ -14,25 +14,12 @@ project configuration is in the folder `localllibrary/locallibrary`.
 * `catalog` is an *application* within the `locallibrary` project that has models,
 views, templates, admin configurations, etc.
 
-At this point you should be doing development
-locally and uploading it to PythonAnywhere or just using ngrok to turn it in. If
-you don't have a compure that can run Django locally you can continue to use
-PythonAnywhere but increasingly examples will be shown using local development
-patterns.
-
-This application will end up with a similar structure to
-
-https://github.com/csev/dj4e-samples/tree/master/autos
-
-**Do not clone this repository**.  It is just to be used as sample code as you
-build your new project and application in your `django_projects` folder.
-
 We first need to make a new project within our `django_projects` folder.   It is time
-to stop working on `locallibrary` - just keep it working so you can refer back to it
-as you build new applications.
+to finish and then stop working on the `locallibrary` project.
+Just keep it working so you can refer back to it as you build new applications.
 
-Making a New Project
---------------------
+Making a New Project and Application
+-------------------------------------
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
 and start a new project and an application:
@@ -44,8 +31,8 @@ and start a new project and an application:
     cd ~/django_projects/dj4e
     python3 manage.py startapp home
 
-If you have Django Locally
---------------------------
+Starting Django in the new project (local computer)
+---------------------------------------------------
 
     cd ~/django_projects/dj4e
     python3 manage.py runserver
@@ -54,58 +41,19 @@ In general as you make changes to the files below, runserver will monitor
 for file changes and restart itself although sometimes you do want to abort
 runserver and restart it manually to make sure it sees every new change.
 
-Files to Edit
--------------
-
-These are the steps to build your "Hello World" application.
-
-* Make folders `dj4e/home/templates` and `dj4e/home/templates/home/`
-
-* Create `dj4e/home/templates/main_home.html` and put in some text that says "Hello World ... " and
-some additional text about cats and/or any text or meta tag
-that the autograder is asking for.
-
-* Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
-pointing at a file `dj4e/home/templates/main/home.html`
-
-    path('', TemplateView.as_view(template_name='home/hello.html'), name='home'),
-
-* Edit the `dj4e/dj4e/settings.py`, fix `ALLOWED_HOSTS` and add the home application:
-
-        INSTALLED_APPS = [
-            ...
-            'home.apps.HomeConfig',    <--- Add
-        ]
-
-* Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
-route like we used in the locallibrary / catalog application.  It should look like the following
-
-    from django.contrib import admin
-    from django.urls import path, include
-
-    urlpatterns = [
-        path('', include('home.urls')),
-        path('admin/', admin.site.urls),
-    ]
-
-
-If you are running Django on PythonAnywhere
--------------------------------------------
+Switching to the new project (on PythonAnywhere)
+------------------------------------------------
 
 Under your Web tab, Set the following:
 
-    Source Code:   /home/--your account--/django_projects/dj4e
-    Working Directory:   /home/--your account--/django_projects/dj4e
+    Source Code:   /home/drchuck/django_projects/dj4e
+    Working Directory:   /home/drchuck/django_projects/dj4e
 
-You should leave the virtual environment setting the same - pointing to your `django2`
-virtual environment.  If you did the
-<a href="paw_install.md" target="_blank">installation</a>
-properly and created a `django2`
-virtual environment, the virtual environment under the `Web` tab should already be set to:
+The virtual environment should be pointing to your `django2` virtual environment:
 
     /home/drchuck/.virtualenvs/django2
 
-Replacing "drchuck" with your PythonAnywhere account name.
+Replace `drchuck` above with your PythonAnywhere account name.
 
 Your WGSI Configuration file under the Web tab on PythonAnywhere
 should be replaced with this text:
@@ -121,9 +69,48 @@ should be replaced with this text:
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
-Of course you need to Reload your application as you make changes to the files in this
-Django project.  If you are running locally, the `runserver` process will automatically
-restart itself whenever you change a file in the `dj4e` folder.
+Of course once you make these changes and other chenges below,
+you need to Reload your application.
+
+Files to Edit/Create
+--------------------
+
+These are the steps to build your "Hello World" application.
+
+* Make folders `dj4e/home/templates` and `dj4e/home/templates/home/`
+
+* Create `dj4e/home/templates/main_home.html` and put in some text that says "Hello World ... " and
+some additional text about cats and/or any text or meta tag
+that the autograder is asking for.
+
+* Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
+pointing at a file `dj4e/home/templates/main/home.html`
+
+        path('', TemplateView.as_view(template_name='home/hello.html'), name='home'),
+
+* Edit the `dj4e/dj4e/settings.py`, make sure `DEBUG` is set to True, fix `ALLOWED_HOSTS` and add the home 
+application to `INSTALLED_APPS`:
+
+        DEBUG = True                   # Make sure we see tracebacks in the UI
+
+        ALLOWED_HOSTS = [ '*' ]        # Allow access from anywhere
+
+        INSTALLED_APPS = [
+            ...
+            'home.apps.HomeConfig',    #  Add this
+        ]
+
+
+* Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
+route like we used in the locallibrary / catalog application.  It should look like the following
+
+        from django.contrib import admin
+        from django.urls import path, include
+
+        urlpatterns = [
+            path('', include('home.urls')),
+            path('admin/', admin.site.urls),
+        ]
 
 References
 ----------

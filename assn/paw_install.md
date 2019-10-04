@@ -1,13 +1,13 @@
 Installing Django on PythonAnywhere
 ===================================
 
-Before you start this assignment, you should already have signed up for a 
+Before you start this assignment, you should already have signed up for a
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.
 
-This is a set of instructions to go through the first step of the 
-Mozilla Developer Network (MDN) Django tutorial to get 
+This is a set of instructions to go through the first step of the
+Mozilla Developer Network (MDN) Django tutorial to get
 Django intalled on your PythonAnywhere account.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
@@ -21,12 +21,12 @@ Feel free to look at that page as well.
 You can view a
 <a href="https://www.youtube.com/watch?v=lPpIubhqWR4&index=2&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z" target="_blank">video walkthrough</a> of this assignment.
 
-You can do all of the assignments on your local computer instead 
+You can do all of the assignments on your local computer instead
 of PythonAnywhere.  You will need to use the
 <a href="../ngrok">ngrok</a> application
 to submit your assignments to the autograder.
 
-**Note:** If you are submitting these assignments to the auto grader you 
+**Note:** If you are submitting these assignments to the auto grader you
 should complete each assignment and then submit it and get full credit before
 moving on to the next assignment.  Because the assignments build on one another the application that you have build by the last step of the tutorial
 will no longer pass the earlier autograders.
@@ -48,10 +48,10 @@ to get back into your virtual environment in the new bash shell.
 Lets make sure that your django was installed successfully with the following command:
 
     python3 -m django --version
-    # This should show something like 2.1.4 
+    # This should show something like 2.1.4
 
 Lets also get a copy of the sample code for DJ4E checked out so you can look at sample code
-as the course progresses and install some important additional Django software libraries using 
+as the course progresses and install some important additional Django software libraries using
 `pip3`.
 
     cd ~
@@ -73,9 +73,18 @@ have not already done so, add a new web application.  Select `manual configurati
 3.6.  Once the webapp is created, you need to make a few changes to the settings for the web
 app and your application.
 
-    source code: /home/--your-account---/django_projects/mytestsite
-    working directory: /home/--your-account---/django_projects/mytestsite
-    virtualenv: /home/--your-account---/.virtualenvs/django2
+    Source code: /home/drchuck/django_projects/mytestsite
+    Working directory: /home/drchuck/django_projects/mytestsite
+
+    Virtualenv: /home/drchuck/.virtualenvs/django2
+
+Replace `drchuck` with your account on PythonAnywhere.
+
+Note that once you have your Virtualenv set up you have a very convenient link
+titled "Start a console in this virtualenv" - this is a great way to open up consoles
+so you never have to type "workon django2" and it makes sure your virtual
+envronment is properly set up and configured.
+<a href="paw_install/web_tab.png" target="_blank">Sample image</a>
 
 Then edit the *WGSI Configuration File* and put the following code into it.
 Make sure to delete the existing contenxt of the file and replace it with the text below.
@@ -95,7 +104,7 @@ This is slightly different from the sample in the PythonAnywhere tutorial.
 You need to edit the file `~/django_projects/mytestsite/mytestsite/settings.py` and change
 the allowed hosts line (around line 28) to be:
 
-     ALLOWED_HOSTS = [ '*' ]                                                                                                        
+     ALLOWED_HOSTS = [ '*' ]
 
 There are three ways to edit files in your PythonAnywhere environment, ranging from the easiest
 to the coolest.  You only have to edit the file one of these ways.
@@ -113,7 +122,7 @@ to the coolest.  You only have to edit the file one of these ways.
 
 (3) Don't try this most difficult and most cool way to edit files on Linux without a helper
 if it is your first time with the `vi` text editor.
-    
+
     cd ~/django_projects/mytestsite/mytestsite/
     vi settings.py
 
@@ -131,7 +140,9 @@ environments like Google, Amazon, Microsoft, etc.. all you will have is command 
 Once this file has been edited, on the PYAW Web tab, `Reload` your web application, wait a few seconds and check
 that it is up and running:
 
-    http://--your-account--.pythonanywhere.com/
+    http://drchuck.pythonanywhere.com/
+
+Replace `drchuck` with your account on PythonAnywhere.
 
 Here is a
 <a href="paw_install/index.htm" target="_blank">Sample</a>
