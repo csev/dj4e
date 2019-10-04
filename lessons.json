@@ -120,37 +120,6 @@
     ]
 },
 {
-    "title": "Putting your Django Projects into GitHub (Optional)",
-    "anchor": "paw_github",
-    "icon" : "fa-github",
-    "description": "This optional exercise uploads your Django projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
-    "videos" : [
-    {
-        "title": "Using GitHub with Django and PythonAnywhere",
-        "youtube": "9FJwue2Eqao"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/paw_github.md",
-    "references" : [
-        {
-            "title" : "GitHub",
-            "href" : "https://www.github.com/"
-        },
-        {
-            "title" : "Unlimited Free Private Repositories on GitHub",
-            "href" : "https://blog.github.com/changelog/2019-01-08-pricing-changes/"
-        },
-        {
-            "title" : "GitHub for Students",
-            "href" : "https://education.github.com/students"
-        },
-        {
-            "title" : "Caching your GitHub password in Linux",
-            "href" : "https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux"
-        }
-    ]
-},
-{
     "title": "Installing Django skeleton site",
     "anchor": "paw_skeleton",
     "icon" : "fa-cubes",
@@ -423,29 +392,6 @@
         {
             "title" : "UNESCO World Heritage Sites",
             "href": "https://whc.unesco.org/en/list/"
-        }
-    ]
-},
-{
-    "title": "Installing Django locally",
-    "anchor": "paw_local",
-    "icon" : "fa-clone",
-    "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develpp more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
-    "videos" : [
-    {
-        "title": "Submitting Assignments Using ngrok",
-        "youtube": "WLWuMjDDSa4"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/dj_install.md",
-    "references" : [
-        {
-            "title" : "Setting up a Django Environment (Mozilla Developer Network)",
-            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
-        },
-        {
-            "title" : "Using ngrok to submit a local application to the Autograder",
-            "href" : "/ngrok"
         }
     ]
 },
@@ -746,6 +692,60 @@
         {
             "title" : "Forms Tutorial from Mozilla Developers Network",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms"
+        }
+    ]
+},
+{
+    "title": "Putting Django Projects into GitHub (Optional)",
+    "anchor": "paw_github",
+    "icon" : "fa-github",
+    "description": "This exercise uploads your Django projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
+    "videos" : [
+    {
+        "title": "Using GitHub with Django and PythonAnywhere",
+        "youtube": "9FJwue2Eqao"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/paw_github.md",
+    "references" : [
+        {
+            "title" : "GitHub",
+            "href" : "https://www.github.com/"
+        },
+        {
+            "title" : "Unlimited Free Private Repositories on GitHub",
+            "href" : "https://blog.github.com/changelog/2019-01-08-pricing-changes/"
+        },
+        {
+            "title" : "GitHub for Students",
+            "href" : "https://education.github.com/students"
+        },
+        {
+            "title" : "Caching your GitHub password in Linux",
+            "href" : "https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux"
+        }
+    ]
+},
+{
+    "title": "Installing Django locally (optional)",
+    "anchor": "paw_local",
+    "icon" : "fa-clone",
+    "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develpp more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
+    "videos" : [
+    {
+        "title": "Submitting Assignments Using ngrok",
+        "youtube": "WLWuMjDDSa4"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/dj_install.md",
+    "references" : [
+        {
+            "title" : "Setting up a Django Environment (Mozilla Developer Network)",
+            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
+        },
+        {
+            "title" : "Using ngrok to submit a local application to the Autograder",
+            "href" : "/ngrok"
         }
     ]
 },
