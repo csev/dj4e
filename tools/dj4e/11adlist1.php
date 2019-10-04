@@ -20,11 +20,6 @@ $now = date('H:i:s');
 
 line_out("Building Classified Ad Site #1");
 
-// $url = getUrl('http://mdntutorial.pythonanywhere.com/');
-// $url = getUrl('http://localhost:8000/');
-$url = getUrl('https://chucklist.dj4e.com/');
-if ( $url === false ) return;
-
 ?>
 <a href="../../assn/dj4e_ads1.md" target="_blank">
 https://www.dj4e.com/assn/dj4e_ads1.md</a>
@@ -41,6 +36,9 @@ You should have this <b>meta</b> tag in then <b>&lt;head&gt;</b> of each page:
 </pre>
 </p>
 <?php
+$url = getUrl('https://chucklist.dj4e.com/');
+if ( $url === false ) return;
+
 webauto_check_test();
 $passed = 0;
 

@@ -20,10 +20,6 @@ $now = date('H:i:s');
 
 line_out("Building Classified Ad Site #3");
 
-// $url = getUrl('http://localhost:8000/m3');
-$url = getUrl('https://chucklist.dj4e.com/m3');
-if ( $url === false ) return;
-
 ?>
 <a href="../../assn/dj4e_ads3.md" target="_blank">
 https://www.dj4e.com/assn/dj4e_ads3.md</a>
@@ -40,6 +36,10 @@ have a "Versions" drop-down.  That is just how the sample implementation is writ
 to support more than one variant of the code at the same time.
 </p>
 <?php
+
+$url = getUrl('https://chucklist.dj4e.com/m3');
+if ( $url === false ) return;
+
 webauto_check_test();
 $passed = 0;
 
