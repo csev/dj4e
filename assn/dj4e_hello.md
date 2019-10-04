@@ -98,7 +98,14 @@ Under your Web tab, Set the following:
     Working Directory:   /home/--your account--/django_projects/dj4e
 
 You should leave the virtual environment setting the same - pointing to your `django2`
-virtual environment.
+virtual environment.  If you did the
+<a href="paw_install.md" target="_blank">installation</a>
+properly and created a `django2`
+virtual environment, the virtual environment under the `Web` tab should already be set to:
+
+    /home/drchuck/.virtualenvs/django2
+
+Replacing "drchuck" with your PythonAnywhere account name.
 
 Your WGSI Configuration file under the Web tab on PythonAnywhere
 should be replaced with this text:
@@ -114,7 +121,7 @@ should be replaced with this text:
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
-Of course you need to Reload your application as you make changes to the files in this 
+Of course you need to Reload your application as you make changes to the files in this
 Django project.  If you are running locally, the `runserver` process will automatically
 restart itself whenever you change a file in the `dj4e` folder.
 

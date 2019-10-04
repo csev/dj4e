@@ -40,7 +40,7 @@ The run:
     pip install -r requirements.txt   # or pip3
 
 This will pull in important extra libraries that your application will need.  On PythonAnywhere
-make sure to double check under the `Web` tab under the `Virtualenv` sectiont that you have
+make sure to double check under the `Web` tab under the `Virtualenv` section that you have
 it set to something like:
 
     /home/--your-account---/.virtualenvs/django2
