@@ -79,14 +79,18 @@ at this point in time.  In the PYAW shell:
     python3 manage.py makemigrations
     python3 manage.py migrate
 
-Web Tab
+On the Web tab
+<a href="paw_skeleton/webapp_config.png" target="_blank">Sample image</a>,
+update the following values: 
 
-    Source code: /home/mdntutorial/django_projects/locallibrary
-    Working directory: /home/mdntutorial/django_projects/locallibrary
+    Source code: /home/dj4e/django_projects/locallibrary
+    Working directory: /home/dj4e/django_projects/locallibrary
 
-Edit and change 'mytestsite' to 'locallibrary' (Twice)
+Change `dj4e` above to your PythonAnywhere account name.
 
-    WSGI configuration file:/var/www/mdntutorial_pythonanywhere_com_wsgi.py
+Edit and change 'mytestsite' to 'locallibrary' (Twice) in the 
+WGSI configuration file. The virtual environment should already be
+set up and does not need to change.
 
 The `Reload` your web application and visit its url to make sure you get the expected output.
 
