@@ -151,13 +151,27 @@ using commands like:
     cd ~         # or simple 'cd' for Windows
     cd Desktop
     cd django
-    git clone https://github.com/drhuck/django_projects.git
+    git clone https://github.com/drchuck/django_projects.git
 
 Replacing `drchuck` with your github account.  This should bring a copy of your
 application from github down to your computer and store it in the folder
 `django_projects`.
 
-Working on Your Code on Your Laptop
+Note that you should keep the `dj4e-samples` and `django_projects` next to each
+other since they are both in github.
+
+On your laptop:
+
+    Desktop/django/dj4e-samples
+    Desktop/django/django_projects
+
+On PythonAnywhere:
+
+    ~/dj4e-samples
+    ~/django_projects
+
+
+Working on your Code on your Laptop
 -----------------------------------
 
 So you are on your local laptop / computer and are making changes

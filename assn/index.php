@@ -82,8 +82,6 @@ function onSelect() {
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("paw_install.md") ?>>Django and PythonAnywhere</option>
-  <option <?= x_sel("paw_github.md") ?>>Using GitHub</option>
-  <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
   <option <?= x_sel("paw_models.md") ?>>Django Models</option>
   <option <?= x_sel("paw_admin.md") ?>>Django Admin</option>
@@ -93,6 +91,8 @@ function onSelect() {
   <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
   <option <?= x_sel("paw_users.md") ?>>Django Users</option>
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
+  <option <?= x_sel("paw_github.md") ?>>Using GitHub</option>
+  <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("dj4e_hello.md") ?>>Hello World</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Autos CRUD</option>
   <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
@@ -110,8 +110,6 @@ These are the assignments for Django for Everybody (DJ4E).
 </p>
 <ul>
 <li><a href="paw_install.md">Django and PythonAnywhere</a></li>
-<li><a href="paw_github.md">Using GitHub</a></li>
-<li><a href="dj_install.md">Installing Django Locally</a></li>
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
 <li><a href="paw_models.md">Django Models</a></li>
 <li><a href="paw_admin.md">Django Admin</a></li>
@@ -121,6 +119,8 @@ These are the assignments for Django for Everybody (DJ4E).
 <li><a href="paw_sessions.md">Django Sessions</a></li>
 <li><a href="paw_users.md">Django Users</a></li>
 <li><a href="paw_forms.md">Django Forms</a></li>
+<li><a href="paw_github.md">Using GitHub</a></li>
+<li><a href="dj_install.md">Installing Django Locally</a></li>
 <li><a href="dj4e_hello.md">Hello World</a></li>
 <li><a href="dj4e_autos.md">Auto CRUD</a></li>
 <li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
