@@ -274,6 +274,7 @@
     "anchor": "paw_admin",
     "icon" : "fa-university",
     "description": "We explore the design of one-to-many data models and add data models to the the LocalLibrary Django admin interface.",
+    "TODO" : "Make peer graded model assignment.",
     "slides": "lectures/DJ-03-One-To-Many.pptx",
     "videos" : [
     {
