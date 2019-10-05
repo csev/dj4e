@@ -51,6 +51,23 @@ ALLOWED_HOSTS = ['*']
 <?php
     return;
 }
+if ( strpos($html, 'The requested resource was not found on this server.') !== false ) {
+    error_out('It looks like you set DEBUG = False');
+?>
+<p>
+You should turn debugging on so that you get more detail in the browsers when you have errors in 
+your application.
+</p>
+<p>
+You will need to edit the file <b>mytestsite/settings.py</b> and change the following line:
+<pre>
+DEBUG = True
+</pre>
+</p>
+<?php
+    return;
+}
+
 webauto_search_for($html, 'Using the URLconf defined in <code>locallibrary.urls</code>');
 
 if ( webauto_testrun($url) ) {
