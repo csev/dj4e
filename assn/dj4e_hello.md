@@ -79,14 +79,21 @@ These are the steps to build your "Hello World" application.
 
 * Make folders `dj4e/home/templates` and `dj4e/home/templates/home/`
 
-* Create `dj4e/home/templates/main_home.html` and put in some text that says "Hello World ... " and
+* Create `dj4e/home/templates/home/hello.html` and put in some text that says "Hello World ... " and
 some additional text about cats and/or any text or meta tag
 that the autograder is asking for.
 
 * Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
-pointing at a file `dj4e/home/templates/main/home.html`
+pointing at a file `dj4e/home/templates/home/hello.html` making sure to import `TemplateView` in the top
+of the file:
 
-        path('', TemplateView.as_view(template_name='home/hello.html'), name='home'),
+        from django.urls import path
+        from django.views.generic import TemplateView
+
+        app_name='home'
+        urlpatterns = [
+            path('', TemplateView.as_view(template_name='home/hello.html'), name='home'),
+        ]   
 
 * Edit the `dj4e/dj4e/settings.py`, make sure `DEBUG` is set to True, fix `ALLOWED_HOSTS` and add the home 
 application to `INSTALLED_APPS`:
@@ -111,15 +118,4 @@ route like we used in the locallibrary / catalog application.  It should look li
             path('', include('home.urls')),
             path('admin/', admin.site.urls),
         ]
-
-References
-----------
-
-* <a href="https://github.com/csev/dj4e-samples/tree/master/hello" target="_blank">Hello World Sample Code</a>
-
-* <a href="https://github.com/csev/dj4e-samples/tree/master/tmpl" target="_blank">Templates Sample Code</a>
-
-* <a href="dj_install.md" target="_blank">Installing Django Locally</a>
-
-* <a href="../ngrok" target="_blank">Using ngrok to turn in your assignments</a>
 
