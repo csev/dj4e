@@ -755,8 +755,20 @@
     "anchor": "dj4e_hello",
     "icon" : "fa-globe",
     "TODO" : "Need a hello world walkthrough for local and PYAW",
-    "description": "In this assignment we start a completely new django project that we will use as a base to build our own application going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have depended too much on the MDN tutorial instructions without actually reading the text of the tutorial.",
+    "description": "In this assignment we start a completely new Django project that we will use as a base to build our own application going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have depended too much on the MDN tutorial instructions without actually reading the text of the tutorial.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
+    "videos" : [
+    {
+        "title": "Exploring the DIY Hello World Django Application on PythonAnyWhere",
+        "project": "diy hello paw raw edited",
+        "youtube": "3iXKAVKqhkA"
+    },
+    {
+        "title": "Exploring the DIY Hello World Django Application on Localhost",
+        "project": "diy hello local raw edited",
+        "youtube": "5EUO_QK8lB4"
+    }
+   ],
     "lti" : [
         {
         "title" : "Auto-grader: Hello World",
