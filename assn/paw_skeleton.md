@@ -116,6 +116,9 @@ you *should* get an error, 'Page not found(404)'
 (<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
 We are stopping this tutorial when the web site is still incomplete so that is normal.
 
+Common Problems and How to Fix Them
+-----------------------------------
+
 If you received an "Error not found" page that does not look like the above image,
 check to make sure that you have `DEBUG = True` in your `settings.py` file.  If you
 set `DEBUG` to `False`, it will make it far more difficult to track down errors in
