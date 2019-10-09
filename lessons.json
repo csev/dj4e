@@ -791,6 +791,13 @@
     "icon" : "fa-car",
     "description": "In this assignment we build a small CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_autos.md",
+    "videos" : [
+    {
+        "title": "Walkthrough of the DJ4e Autos Sample - Generic Edit Forms",
+        "project": "samples autos walkthrough",
+        "youtube": "3kHgAE-MidA"
+    }
+   ],
     "lti" : [
         {
         "title" : "Auto-grader: Autos CRUD",
