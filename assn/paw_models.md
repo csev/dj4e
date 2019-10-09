@@ -32,7 +32,8 @@ application within the locallibrary project by adding `CatalogConfig` line:
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
-        'catalog.apps.CatalogConfig',    <--- Add
+        'django_extensions',             # Add this line
+        'catalog.apps.CatalogConfig',    # Add this line
     ]
 
 Edit the file `catalog/models.py` and add the `Genre` model using as described in the tutorial.
