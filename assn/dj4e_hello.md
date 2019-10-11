@@ -21,10 +21,10 @@ Just keep it working so you can refer back to it as you build new applications.
 Making a New Project and Application
 -------------------------------------
 
-Activate any virtual environment you need (if any) and go into your `django_projects` folder
+Start a shell with virtual environment (if needed) and go into your `django_projects` folder
 and start a new project and an application:
 
-    workon django2  # as needed
+    workon django2                  # as needed
     cd ~/django_projects
     django-admin startproject dj4e
 
