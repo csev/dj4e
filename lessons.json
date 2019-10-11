@@ -612,7 +612,6 @@
 },
 {
     "title": "Forms in HTTP, HTML, and Django",
-    "NOTE": "Revise this completely",
     "anchor": "paw_forms",
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.  In the locallibrary tutorial we build some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
@@ -659,15 +658,15 @@
         "youtube": "bYlgvmAPrp0"
     },
     {
-        "title": "Django Forms - All Books",
+        "title": "MDN Tutorial: Django Forms - All Books",
         "youtube": "IH1aNL2tYIk"
     },
     {
-        "title": "Django Forms - Renewal",
+        "title": "MDN Tutorial: Django Forms - Renewal",
         "youtube": "I8LwvFPi31M"
     },
     {
-        "title": "Django Forms - CRUD",
+        "title": "MDN Tutorial: Django Forms - CRUD",
         "youtube": "VUuV9bENvck"
     }
    ],

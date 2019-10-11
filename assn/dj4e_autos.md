@@ -29,7 +29,7 @@ Making a New Project
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
 and start a new application in your `dj4e` project (this project already should have the 'hello'
-application from a 
+application from a
 <a href="dj4e_hello.md">previous assignment</a>).
 
     workon django2  # as needed
@@ -42,12 +42,12 @@ Extending the home (i.e. main) page
 -----------------------------------
 
 Since we will build a number of applications in this project, we will use the `home`
-application to provide convienent urls to switch between applications. 
+application to provide convienent urls to switch between applications.
 
-And you should have a file `home/templates/main_hello.html` that has the text for the top-level page.
+And you should have a file `dj4e/home/templates/home/hello.html` that has the text for the top-level page.
 You can keep the "Hello World" text in the page somewhere.
 
-Add a link to the "/autos" url in `home/templates/main/hello.html` and anything else the autograder needs:
+Add a link to the "/autos" url in `dj4e/home/templates/home/hello.html` and anything else the autograder needs:
 
     <ul>
     <li><a href="/autos">Autos CRUD</a>
@@ -69,9 +69,13 @@ Here are some tasks:
 * Create a template in `home\templates\registration` to support the login view.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">Example</a>)
 
+* Edit `dj4e/settings.py` add the autos application to the list of `INSTALLED_APPS`.
+You can follow the pattern of the `HomeConfig` line in that file.
+
 * Edit `dj4e/urls.py` and
 add the `accounts/` so you can use the Django built in login features.
-(<a href="https://docs.djangoproject.com/en/2.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>)
+(<a href="https://docs.djangoproject.com/en/2.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
+Also edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
         from django.contrib import admin
         from django.urls import path, include
@@ -81,24 +85,31 @@ add the `accounts/` so you can use the Django built in login features.
             path('', include('home.urls')),
             path('admin/', admin.site.urls),
             path('accounts/', include('django.contrib.auth.urls')),  # Keep
+            path('autos/', include('autos.urls')),                   # Add
         ]
-
-* Edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
 * Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
 
 * Edit the `autos/views.py` file to add views for the list, edit, and delete pages for both autos and makes.
-It will make things a lot simpler in the long run if you convert the Make views to 
+It will make things a lot simpler in the long run if you convert the Make views to
 the shorter form like the Auto views.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/views.py" target="_blank">Example</a>)
 
-* Edit the `autos/models.py` file to add Auto and Makes models with a foreign key from Autos to Makes.
+* In your `views.py` file, you should *not* simply use the code for the `Make` views.  You
+should rewrite the `Make` views using the same patterns as the `Auto` views.  If you
+don't use the generic edit views on your `Make` views you will need to define the
+appropriate `MakeForm` in your `forms.py` just like in the sample code.  The
+best approach is to build your `views.py` *without* using
+a `forms.py - but you can do it either way.
+
+* Edit the `autos/models.py` file to add Auto and Makes models with a foreign
+key from Autos to Makes.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
 
-* Run the commands to perform the migrations.  
+* Run the commands to perform the migrations.
 
 * Edit `autos\admin.py` to add the Auto and Make models to the django administration interface.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/admin.py" target="_blank">Example</a>)

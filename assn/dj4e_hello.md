@@ -1,5 +1,5 @@
-Hello World
-===========
+DIY: Hello World
+================
 
 At this point in the course we are going to start over and build a series of
 applications in a Django project.  To review terminology, in the work that you
