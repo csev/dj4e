@@ -70,7 +70,7 @@ Here are some tasks:
 (<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">Example</a>)
 
 * Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
-your `dj4e\home\templates` - this will be used in your autos templates and make our HTML look
+your `dj4e/home/templates` - this will be used in your autos templates and make our HTML look
 better by applying the <a href="https://getbootstrap.com/docs/4.0/" target="_blank">Bootstrap</a>
 and other styling libraries.
 
@@ -116,13 +116,13 @@ key from Autos to Makes.
 
 * Run the commands to perform the migrations.
 
-* Edit `autos\admin.py` to add the Auto and Make models to the django administration interface.
+* Edit `autos/admin.py` to add the Auto and Make models to the django administration interface.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/admin.py" target="_blank">Example</a>)
 
 * Create a superuser so you can test the admin interface
 and log in to the application.
 
-* Create the necessary views in `autos\templates\autos` to support your views.
+* Create the necessary views in `autos/templates/autos` to support your views.
 Note that the sample code uses a sub folder under `templates` to
 make sure that templates are not inadvertently shared across multiple applications within a Django project.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/templates" target="_blank">Example</a>)
