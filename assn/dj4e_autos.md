@@ -66,8 +66,13 @@ and make it work in your `autos` project.
 
 Here are some tasks:
 
-* Create a template in `home\templates\registration` to support the login view.
+* Create a template in `home/templates/registration` to support the login view.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">Example</a>)
+
+* Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
+your `dj4e\home\templates` - this will be used in your autos templates and make our HTML look
+better by applying the <a href="https://getbootstrap.com/docs/4.0/" target="_blank">Bootstrap</a>
+and other styling libraries.
 
 * Edit `dj4e/settings.py` add the autos application to the list of `INSTALLED_APPS`.
 You can follow the pattern of the `HomeConfig` line in that file.
