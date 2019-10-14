@@ -43,6 +43,15 @@ function webauto_get_html($crawler) {
     return $html;
 }
 
+function webauto_get_meta($crawler, $name) {
+    try {
+        $retval = $crawler->filterXpath('//meta[@name="'.$name.'"]')->attr('value');
+    } catch(Exception $e) {
+        $retval = false;
+    }
+    return $retval;
+}
+
 function showHTML($message, $html) {
     global $OUTPUT;
     $pos = strpos($html,'<b>Fatal error</b>');
@@ -537,3 +546,34 @@ function get_favicon($client, $favicon_url) {
     $content = $response->getContent();
     return $content;
 }
+
+// Two tons of meta..
+function check_code_and_version($crawler) {
+    global $RESULT;
+    $wa4e_code = webauto_get_meta($crawler, 'wa4e-code');
+    $wa4e_version = webauto_get_meta($crawler, 'wa4e-version');
+
+    if ( strlen($wa4e_code) < 1 && strlen($wa4e_version) ) return;
+
+    try {
+        $json = json_decode($RESULT->getJSON());
+    } catch(Exception $e) {
+        $json = new \stdClass();
+    }
+
+    if ( strlen($wa4e_code) > 0 ) {
+        $wa4e_codes = array();
+        if ( isset($json->wa4e_codes) && is_array($json->wa4e_codes) ) $wa4e_codes = $json->wa4e_codes;
+        if ( ! in_array($wa4e_code, $wa4e_codes) ) $wa4e_codes[] = $wa4e_code;
+        $json->wa4e_codes = $wa4e_codes;
+    }
+
+    if ( strlen($wa4e_version) > 1 ) {
+        $wa4e_versions = array();
+        if ( isset($json->wa4e_versions) && is_array($json->wa4e_versions) ) $wa4e_versions = $json->wa4e_versions;
+        if ( ! in_array($wa4e_version, $wa4e_versions) ) $wa4e_versions[] = $wa4e_version;
+        $json->wa4e_versions = $wa4e_versions;
+    }
+    $RESULT->setJSON(json_encode($json));
+}
+

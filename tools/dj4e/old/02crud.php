@@ -117,6 +117,11 @@ if ( $retval === False ) {
     $meta_good = false;
 }
 
+// Two tons of meta..
+$x = $crawler->filterXpath('//meta[@name="wa4e-code"]')->attr('value');
+line_out("XXX "+$x);
+line_out("YADA");
+
 // Add an item the the lookup table
 $lookup_new = "LU_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');

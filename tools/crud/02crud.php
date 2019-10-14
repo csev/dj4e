@@ -63,6 +63,23 @@ $crawler = webauto_get_url($client, $main_url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
+$meta_good = true;
+line_out("Checking meta tag...");
+$wa4e_meta = webauto_get_meta($crawler, "wa4e");
+if ( strlen($wa4e_meta) < 1 || $wa4e_meta != $check ) {
+    error_out('You seem to be missing the required meta name="wa4e" tag. See above.');
+    $meta_good = false;
+}
+
+// More meta tags
+check_code_and_version($crawler);
+
+$wa4e_code = webauto_get_meta($crawler, 'wa4e-code');
+if ( strpos($wa4e_code, "42") !== 0 ) {
+    error_out('You seem to be missing the required meta name="wa4e-code" tag.  Check the assignment document.');
+    $meta_good = false;
+}
+
 // Use the log_in form
 $form = webauto_get_form_with_button($crawler,'login');
 webauto_change_form($form, 'username', $useraccount);
@@ -79,6 +96,7 @@ if ( stripos($html,"Your username and password didn't match. Please try again.")
 
 $add_lookup_url = webauto_get_url_from_href($crawler,"Add $lookup_article $lookup_lower");
 $view_lookup_url = webauto_get_url_from_href($crawler,"View $lookup_lower_plural");
+
 
 line_out("Checking for old $lookup_lower_plural from previous autograder runs...");
 $savepassed = $passed;
@@ -110,13 +128,6 @@ $passed = $savepassed;
 $crawler = webauto_get_url($client, $add_lookup_url, "Retrieving the 'Add $lookup_article $lookup_lower' page");
 $html = webauto_get_html($crawler);
 
-$meta_good = true;
-line_out("Checking meta tag...");
-$retval = webauto_search_for($html, $meta);
-if ( $retval === False ) {
-    error_out('You seem to be missing the required meta tag.  Check spacing.');
-    $meta_good = false;
-}
 
 // Add an item the the lookup table
 $lookup_new = "LU_42_" . rand(0,100);
@@ -235,7 +246,7 @@ $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 // if ( $score < 1.0 ) autoToggle();
 
 if ( ! $meta_good ) {
-    error_out("Not graded - missing meta tag");
+    error_out("Not graded - missing meta tag(s)");
     return;
 }
 if ( webauto_testrun($url) ) {

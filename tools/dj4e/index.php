@@ -17,9 +17,9 @@ if ( SettingsForm::handleSettingsPost() ) {
 
 // All the assignments we support
 $assignments = array(
-    '01hello.php' => 'Hello World',
-    '02autos.php' => 'Autos CRUD',
-    '02cats.php' => 'Cats CRUD',
+    // '01hello.php' => 'Hello World',
+    // '02autos.php' => 'Autos CRUD',
+    // '02cats.php' => 'Cats CRUD',
     '11adlist1.php' => 'AdList #1',
     '12adlist2.php' => 'AdList #2',
     '13adlist3.php' => 'AdList #3',
