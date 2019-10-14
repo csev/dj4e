@@ -127,7 +127,13 @@ Note that the sample code uses a sub folder under `templates` to
 make sure that templates are not inadvertently shared across multiple applications within a Django project.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/autos/templates" target="_blank">Example</a>)
 
-Make sure to check the autograder for additional requirements.
+* Find the line in your `base_bootstrap.html` that looks like this:
+
+        <meta name="wa4e-code" value="99999999">
+
+   and change the `9999999`  to be "<span id="wa4e-code">missing</span>"
+
+Make sure to check the autograder for additional markup requirements.
 
 References
 ----------
@@ -139,3 +145,9 @@ References
 * <a href="../ngrok" target="_blank">Using ngrok to turn in your assignments</a>
 
 * <a href="https://stackoverflow.com/questions/13808020/include-an-svg-hosted-on-github-in-markdown" target="_blank">Embedding SVG in Markdown</a>
+
+<script>
+var d= new Date();
+var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
+document.getElementById("wa4e-code").innerHTML = code;
+</script>
