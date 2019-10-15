@@ -74,8 +74,9 @@ if ( strlen($wa4e_meta) < 1 || $wa4e_meta != $check ) {
 // More meta tags
 check_code_and_version($crawler);
 
+// Validate the $crawler code
 $wa4e_code = webauto_get_meta($crawler, 'wa4e-code');
-if ( strpos($wa4e_code, "42") !== 0 ) {
+if ( strpos($wa4e_code, "4215") !== 0 ) {
     error_out('You seem to be missing the required meta name="wa4e-code" tag.  Check the assignment document.');
     $meta_good = false;
 }

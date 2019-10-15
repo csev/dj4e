@@ -553,6 +553,7 @@ function check_code_and_version($crawler) {
     $wa4e_code = webauto_get_meta($crawler, 'wa4e-code');
     $wa4e_version = webauto_get_meta($crawler, 'wa4e-version');
 
+    if ( $wa4e_code == "99999999" ) $wa4e_code = false;
     if ( strlen($wa4e_code) < 1 && strlen($wa4e_version) ) return;
 
     try {
