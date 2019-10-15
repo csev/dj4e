@@ -231,6 +231,13 @@ to be.
       </div>
     </nav>
 
+(4) Find the line in your `base_bootstrap.html` that looks like this:
+
+        <meta name="wa4e-code" value="99999999">
+
+   and change the `9999999`  to be "<span id="wa4e-code">missing</span>"
+
+Make sure to check the autograder for additional markup requirements.
 
 When you are done, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
 sample implementation.
@@ -273,5 +280,9 @@ for someone else.
 Let us know if you really get stuck.  We want you to succeed in this assignment.
 
 
-
+<script>
+var d= new Date();
+var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
+document.getElementById("wa4e-code").innerHTML = code;
+</script>
 
