@@ -846,7 +846,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #1",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_ads1",
         "custom" : [
             {
@@ -892,7 +892,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #2",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_ads2",
         "custom" : [
             {
@@ -928,7 +928,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #3",
-        "launch" : "tools/dj4e/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_ads3",
         "custom" : [
             {
@@ -967,7 +967,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Autos CRUD Practice",
-        "launch" : "tools/crud2/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_crud2_autos",
         "custom" : [
             {
@@ -978,7 +978,7 @@
         },
         {
         "title" : "Auto-grader: Cats CRUD Practice",
-        "launch" : "tools/crud2/",
+        "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_crud2_cats",
         "custom" : [
             {
@@ -991,7 +991,7 @@
     "references" : [
         {
             "title" : "Specification - Autos CRUD Practice",
-            "href": "tools/crud2/02spec.php?assn=20autos.php"
+            "href": "tools/crud/02spec.php?assn=20autos.php"
         },
         {
             "title" : "Reference Implementation - Autos",
@@ -999,7 +999,7 @@
         },
         {
             "title" : "Sample Exam - Cats CRUD Practice",
-            "href": "tools/crud2/02spec.php?assn=20cats.php"
+            "href": "tools/crud/02spec.php?assn=20cats.php"
         },
         {
             "title" : "Reference Implementation - Cats",
