@@ -4,8 +4,8 @@
 use \Tsugi\Grades\GradeUtil;
 
 // A library for webscraping graders
-require_once "lib/goutte/vendor/autoload.php";
-require_once "lib/goutte/Goutte/Client.php";
+require_once "../crud/lib/goutte/vendor/autoload.php";
+require_once "../crud/lib/goutte/Goutte/Client.php";
 
 use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
