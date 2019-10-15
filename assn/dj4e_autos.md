@@ -66,6 +66,8 @@ and make it work in your `autos` project.
 
 Here are some tasks:
 
+* Go into your `dj4e-samples` folder and do a `git pull` to get the latest version of the samples code.
+
 * Create a template in `home/templates/registration` to support the login view.
 (<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">Example</a>)
 
