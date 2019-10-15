@@ -29,6 +29,9 @@ $fields = array(
     array('name' => 'weight', 'type' => 'i'),
 );
 
+$lookup_lower_plural = $lookup_lower . 's';
+$lookup_title = ucfirst($lookup_lower);
+$lookup_title_plural = ucfirst($lookup_lower_plural);
 $main_lower_plural = $main_lower . 's';
 $main_title = ucfirst($main_lower);
 $main_title_plural = ucfirst($main_lower_plural);
