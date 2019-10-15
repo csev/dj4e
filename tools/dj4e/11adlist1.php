@@ -1,7 +1,7 @@
 <?php
 
-require_once "webauto.php";
-require_once "names.php";
+require_once "../crud/webauto.php";
+require_once "../crud/names.php";
 
 use Goutte\Client;
 

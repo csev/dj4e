@@ -78,7 +78,8 @@ check_code_and_version($crawler);
 $wa4e_code = webauto_get_meta($crawler, 'wa4e-code');
 if ( strpos($wa4e_code, "4215") !== 0 ) {
     error_out('You seem to be missing the required meta name="wa4e-code" tag.  Check the assignment document.');
-    $meta_good = false;
+    // TODO: Uncomment this after October 2019
+    // $meta_good = false;
 }
 
 // Use the log_in form
