@@ -290,9 +290,22 @@ Instructions for using ngrok are available at:
 Please see the process for handing in the <?= $assignment_type_lower ?> at the end of this document.
 </p>
 <p>
-<b>Important:</b> The autograder will demand that your &lt;meta&gt; tag is in the
-head area of your document.  If the autograder does not find the tag,
-it will run all the tests but will not treat the grade as official.
+If the autograder complains about a missing "wa4e" meta tag, add or edit it in
+your <b>home/templates/base_bootstrap.html</b> file:
+<pre>
+&lt;meta name="wa4e" value="--provided-by-autograder--"&gt;
+</pre>
+If the autograder does not find the tag, it will run all the tests but
+will not treat the grade as official.
+</p>
+<p>
+If the autograder complains about a missing "wa4e-code" meta tag, add or edit it in
+your <b>home/templates/base_bootstrap.html</b> file:
+<pre>
+&lt;name="wa4e-code" value="<span id="wa4e-code">missing</span>"&gt;
+</pre>
+If you are adding an application to an existing Django project that you have already run through
+the autograder, you probably already have good value for both meta tags in your template file.
 </p>
 <h1>What To Hand In</h1>
 <p>
@@ -326,5 +339,10 @@ Copyright Charles R. Severance - All Rights Reserved
 Copyright Creative Commons Attribution 3.0 - Charles R. Severance
 <?php } ?>
 </center>
+<script>
+var d= new Date();
+var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
+document.getElementById("wa4e-code").innerHTML = code;
+</script>
 </body>
 </html>
