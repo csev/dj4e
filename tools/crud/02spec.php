@@ -293,7 +293,7 @@ Please see the process for handing in the <?= $assignment_type_lower ?> at the e
 If the autograder complains about a missing "wa4e" meta tag, add or edit it in
 your <b>home/templates/base_bootstrap.html</b> file:
 <pre>
-&lt;meta name="wa4e" value="--provided-by-autograder--"&gt;
+&lt;meta name="wa4e" content="--provided-by-autograder--"&gt;
 </pre>
 If the autograder does not find the tag, it will run all the tests but
 will not treat the grade as official.
@@ -302,7 +302,7 @@ will not treat the grade as official.
 If the autograder complains about a missing "wa4e-code" meta tag, add or edit it in
 your <b>home/templates/base_bootstrap.html</b> file:
 <pre>
-&lt;name="wa4e-code" value="<span id="wa4e-code">missing</span>"&gt;
+&lt;name="wa4e-code" content="<span id="wa4e-code">missing</span>"&gt;
 </pre>
 If you are adding an application to an existing Django project that you have already run through
 the autograder, you probably already have good value for both meta tags in your template file.

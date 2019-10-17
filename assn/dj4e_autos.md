@@ -131,7 +131,7 @@ make sure that templates are not inadvertently shared across multiple applicatio
 
 * Find the line in your `base_bootstrap.html` that looks like this:
 
-        <meta name="wa4e-code" value="99999999">
+        <meta name="wa4e-code" content="99999999">
 
    and change the `9999999`  to be "<span id="wa4e-code">missing</span>"
 
