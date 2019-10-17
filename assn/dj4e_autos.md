@@ -19,7 +19,7 @@ https://crud.dj4e.com
 
 The login information is as follows:
 
-    Account: dj4e-projects
+    Account: dj4e-crud
     Password: dj4e_nn_!
 
 The 'nn' is a 2-digit number that by now, you should be able to easily guess.
