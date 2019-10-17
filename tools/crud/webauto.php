@@ -71,7 +71,6 @@ function showHTML($message, $html) {
     echo("\n<pre>\n");
     echo(htmlentities($html));
     echo("\n</pre>\n");
-    
 }
 
 function getMD5() {
@@ -164,7 +163,7 @@ function getUrl($sample) {
     echo('    Please enter the URL of your web site to grade:<br/>
         <input type="text" name="url" value="'.$sample.'" size="100"><br/>');
     if ( isset($_GET['code']) ) {
-        echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>'); 
+        echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>');
     }
     echo('<input type="submit" class="btn btn-primary" value="Evaluate">
         </form>');
@@ -323,7 +322,7 @@ function webauto_check_post_redirect($client) {
     }
 }
 
-function webauto_get_radio_button_choice($form,$field_name,$choice) 
+function webauto_get_radio_button_choice($form,$field_name,$choice)
 {
     line_out("Looking for '$field_name' with '$choice' as the label");
     if ($form->has($field_name) ) {
@@ -352,7 +351,7 @@ function webauto_get_radio_button_choice($form,$field_name,$choice)
     return false;
 }
 
-function webauto_get_form_with_button($crawler,$text) 
+function webauto_get_form_with_button($crawler,$text, $text2=false)
 {
     $msg = 'Did not find form with a "'.$text.'" button';
     if ( ! is_object($crawler) ) {
@@ -360,9 +359,19 @@ function webauto_get_form_with_button($crawler,$text)
         throw new Exception($msg);
     }
     $html = $crawler->html();;
-    if ( strpos($html, $text) === false) {
+    if ( strpos($html, $text) === false && strpos($html, $text2) === false) {
         line_out($msg);
         throw new Exception($msg);
+    }
+
+    if ( is_string($text2) ) {
+        try {
+            $form = $crawler->selectButton($text2)->form();
+            markTestPassed('Found form with "'.$text2.'" button');
+            return $form;
+        } catch(Exception $ex) {
+            // pass and drop through
+        }
     }
 
     try {
@@ -375,7 +384,7 @@ function webauto_get_form_with_button($crawler,$text)
     }
 }
 
-function webauto_get_href($crawler,$text) 
+function webauto_get_href($crawler,$text)
 {
     if ( $crawler == false ) return false;
     $html = $crawler->html();
@@ -396,7 +405,7 @@ function webauto_get_href($crawler,$text)
     }
 }
 
-function webauto_get_url_from_href($crawler,$text) 
+function webauto_get_url_from_href($crawler,$text)
 {
     $href = webauto_get_href($crawler,$text);
     if ( ! $href ) return false;
@@ -418,7 +427,7 @@ function webauto_change_form($form, $name, $value)
     $x->setValue($value);
 }
 
-function webauto_search_for_many($html, $needles) 
+function webauto_search_for_many($html, $needles)
 {
     $retval = true;
     foreach($needles as $needle ) {
@@ -492,7 +501,7 @@ function webauto_dont_want($html, $needle)
 
 function webauto_testrun($url) {
     return strpos($url,'dj4e.com') !== false || strpos($url,'index.htm') !== false ||
-        strpos($url,'mdntutorial.pythonanywhere.com') !== false || 
+        strpos($url,'mdntutorial.pythonanywhere.com') !== false ||
         strpos($url,'http://localhost') !== false;
 }
 

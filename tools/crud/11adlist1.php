@@ -61,7 +61,6 @@ if ( $retval === False ) {
 }
 $login_url = webauto_get_url_from_href($crawler,'Login');
 
-
 $crawler = webauto_get_url($client, $login_url, "Logging in as $user1account");
 $html = webauto_get_html($crawler);
 

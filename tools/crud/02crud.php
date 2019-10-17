@@ -66,7 +66,7 @@ $html = webauto_get_html($crawler);
 require("meta_check.php");
 
 // Use the log_in form
-$form = webauto_get_form_with_button($crawler,'login');
+$form = webauto_get_form_with_button($crawler, 'login', 'Login');
 webauto_change_form($form, 'username', $useraccount);
 webauto_change_form($form, 'password', $userpw);
 
