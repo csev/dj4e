@@ -498,7 +498,7 @@ function webauto_testrun($url) {
 
 function webauto_check_test() {
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
-    global $user1account, $user1pw, $user2account, $user2pw;
+    global $user1account, $user1pw, $user2account, $user2pw, $check;
     if ( ! webauto_testrun($url) ) return;
     error_out('Test run - switching to sample data');
     $first_name = 'Jamal';
@@ -507,7 +507,8 @@ function webauto_check_test() {
     $book_title = "How the Number 42 and $title_name are Connected";
     $full_name = $first_name . ' ' . $last_name;
     $last_first = $last_name . ', ' . $first_name;
-    $meta = '<meta name="wa4e" content="735b90b4568125ed6c3f678819b6e058">';
+    $check = '735b90b4568125ed6c3f678819b6e058';
+    $meta = '<meta name="wa4e" content="'.$check.'">';
     $adminpw = 'dj4e_42_!';
     $useraccount = 'dj4e_user1';
     $userpw = 'Meow_81e728_41!';
