@@ -8,9 +8,9 @@ $assignment_url = "02spec.php?assn=20stars.php";
 $assignment_url_text = "Specification";
 $reference_implementation = "https://crud.dj4e.com/stars";
 
-$assignment_type = 'Assignment';
-$assignment_type = 'Exam';
-// $assignment_type == "Sample Exam";
+// $assignment_type = 'Assignment';
+// $assignment_type = 'Exam';
+$assignment_type = "Sample Exam";
 $assignment_type_lower = strtolower($assignment_type);
 
 $main_lower = 'star';
