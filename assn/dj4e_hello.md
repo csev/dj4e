@@ -83,7 +83,7 @@ These are the steps to build your "Hello World" application.
 some additional text about cats and/or any text or meta tag
 that the autograder is asking for.
 
-* Edit the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
+* Create the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
 pointing at a file `dj4e/home/templates/home/hello.html` making sure to import `TemplateView` in the top
 of the file:
 
