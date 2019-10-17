@@ -15,7 +15,7 @@ as *sample code*.
 
 This application will be similar to:
 
-https://projects.dj4e.com
+https://crud.dj4e.com
 
 The login information is as follows:
 

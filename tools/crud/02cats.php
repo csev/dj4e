@@ -6,7 +6,7 @@ global $assignment_type_lower, $reference_implementation;
 
 $assignment_url = "02spec.php?assn=02cats.php";
 $assignment_url_text = "Specification";
-$reference_implementation = "https://projects.dj4e.com/cats";
+$reference_implementation = "https://crud.dj4e.com/cats";
 
 $assignment_type = 'Assignment';
 $assignment_type_lower = 'assignment';

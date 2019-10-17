@@ -37,7 +37,7 @@ You should add an identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area 
 
 <?php
 
-$url = getUrl('https://projects.dj4e.com/');
+$url = getUrl('https://crud.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
 
