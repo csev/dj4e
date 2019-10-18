@@ -63,7 +63,8 @@ $crawler = webauto_get_url($client, $main_url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
-require("meta_check.php");
+// TODO: Bring this back after October 2019
+// require("meta_check.php");
 
 // Use the log_in form
 $form = webauto_get_form_with_button($crawler, 'login', 'Login');
@@ -78,6 +79,9 @@ if ( stripos($html,"Your username and password didn't match. Please try again.")
     error_out("Could not log in to your account...");
     return;
 }
+
+// TODO: Remove this after October 2019
+require("meta_check.php");
 
 $add_lookup_url = webauto_get_url_from_href($crawler,"Add $lookup_article $lookup_lower");
 $view_lookup_url = webauto_get_url_from_href($crawler,"View $lookup_lower_plural");
