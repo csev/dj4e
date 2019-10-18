@@ -77,14 +77,14 @@ Files to Edit/Create
 
 These are the steps to build your "Hello World" application.
 
-* Make folders `dj4e/home/templates` and `dj4e/home/templates/home/`
+* Make folders `django_projects/dj4e/home/templates` and `django_projects/dj4e/home/templates/home/`
 
-* Create `dj4e/home/templates/home/hello.html` and put in some text that says "Hello World ... " and
+* Create `django_projects/dj4e/home/templates/home/hello.html` and put in some text that says "Hello World ... " and
 some additional text about cats and/or any text or meta tag
 that the autograder is asking for.
 
-* Create the `dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
-pointing at a file `dj4e/home/templates/home/hello.html` making sure to import `TemplateView` in the top
+* Create the `django_projects/dj4e/home/urls.py` file to add a path that routes the '' path to a direct template view
+pointing at a file `django_projects/dj4e/home/templates/home/hello.html` making sure to import `TemplateView` in the top
 of the file:
 
         from django.urls import path
@@ -95,7 +95,7 @@ of the file:
             path('', TemplateView.as_view(template_name='home/hello.html'), name='home'),
         ]   
 
-* Edit the `dj4e/dj4e/settings.py`, make sure `DEBUG` is set to True, fix `ALLOWED_HOSTS` and add the home 
+* Edit the `django_projects/dj4e/dj4e/settings.py`, make sure `DEBUG` is set to True, fix `ALLOWED_HOSTS` and add the home 
 application to `INSTALLED_APPS`:
 
         DEBUG = True                   # Make sure we see tracebacks in the UI
@@ -108,7 +108,7 @@ application to `INSTALLED_APPS`:
         ]
 
 
-* Edit `dj4e/dj4e/urls.py` to include the `dj4e/home/urls.py` file.  Do *not* add any redirect
+* Edit `django_projects/dj4e/dj4e/urls.py` to include the `django_projects/dj4e/home/urls.py` file.  Do *not* add any redirect
 route like we used in the locallibrary / catalog application.  It should look like the following
 
         from django.contrib import admin

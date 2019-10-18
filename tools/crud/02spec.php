@@ -145,7 +145,7 @@ a 'hello' application from a previous assignment):
 </pre>
 </li>
 <li>
-Edit the <b>dj4e/dj4e/settings.py</b> to update the INSTALLED_APPS:
+Edit the <b>django_projects/dj4e/dj4e/settings.py</b> to update the INSTALLED_APPS:
 <pre>
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -202,7 +202,7 @@ foreach($fields as $field ) {
 Run the commands to perform the migrations.
 </li>
 <li>
-Add a link to <b>dj4e/home/templates/home/hello.html</b> that has the text for the top-level page.
+Add a link to <b>django_projects/dj4e/home/templates/home/hello.html</b> that has the text for the top-level page.
 <pre>
     &lt;ul&gt;
 <?php if ($main_lower_plural != 'autos') { ?>
@@ -213,7 +213,7 @@ Add a link to <b>dj4e/home/templates/home/hello.html</b> that has the text for t
 </pre>
 </li>
 <li>
-You should add a route to your <b>dj4e/urls.py</b> as follows:
+You should add a route to your <b>django_projects/dj4e/urls.py</b> as follows:
 <pre>
 urlpatterns = [
     path('', include('home.urls')),
@@ -312,7 +312,7 @@ the autograder, you probably already have good value for both meta tags in your 
 This <?= $assignment_type_lower ?> will be autograded by a link that you will be provided with in the LMS
 system.   When you launch the autograder, it will prompt for a web-accessible URL
 where it can access your web application.
-<?php if ( $assignment_type == 'Exam') { ?>
+<?php if ( $assignment_type == 'Exam' || $assignment_type == 'Sample Exam') { ?>
 Please also have in a ZIP of your source code (entire project)
 in case there is a need to verify your work or assign partial credit.
 </p>
