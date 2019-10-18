@@ -202,7 +202,7 @@ foreach($fields as $field ) {
 Run the commands to perform the migrations.
 </li>
 <li>
-Add a link to `home/templates/main.html` that has the text for the top-level page.
+Add a link to <b>dj4e/home/templates/home/hello.html</b> that has the text for the top-level page.
 <pre>
     &lt;ul&gt;
 <?php if ($main_lower_plural != 'autos') { ?>
