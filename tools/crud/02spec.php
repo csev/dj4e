@@ -328,6 +328,10 @@ Files tab of PythonAnywhere and upload the ZIP file back up to the LMS.  Some br
 (i.e. Safari on the Mac) automatically extract the ZIP into a folder.  If this
 happens simply compress it again to make a ZIP to upload.
 </p>
+<p>
+If you are doing your work on a Mac or Windows, you can make a ZIP by using the "Compress
+Folder" feature.
+</p>
 <?php } ?>
 </p>
 <hr/>
