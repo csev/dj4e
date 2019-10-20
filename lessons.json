@@ -838,6 +838,19 @@
     ]
 },
 {
+    "title": "Hosting Django",
+    "anchor": "dj4e_hosting",
+    "icon" : "fa-store",
+    "description": "This module will explore how Django applications are hosted on a system like Pythonanywhere.",
+    "videos" : [
+    {
+        "title": "Virtual Hosting of Django Applications",
+        "project": "TBD",
+        "youtube": "KA5ZM3E9OjY"
+    }
+   ]
+},
+{
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
     "icon" : "fa-newspaper",
