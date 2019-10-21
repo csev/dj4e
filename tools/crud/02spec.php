@@ -245,7 +245,7 @@ with the 'autos' application:
 <pre>
 
 urlpatterns = [
-    path('', views.<?= $main_title ?>List.as_view(), name='<?= $main_lower_plural ?>'),
+    path('', views.<?= $main_title ?>List.as_view(), name='all'),
     path('main/create/', views.<?= $main_title ?>Create.as_view(), name='<?= $main_lower ?>_create'),
     path('main/&lt;int:pk&gt;/update/', views.<?= $main_title ?>Update.as_view(), name='<?= $main_lower ?>_update'),
     ...
