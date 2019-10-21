@@ -112,7 +112,7 @@ a `forms.py - but you can do it either way.
 
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign
 key from Autos to Makes.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
+(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/models.py" target="_blank">Example</a>)
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
 
