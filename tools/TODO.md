@@ -7,6 +7,8 @@ Move the meta_check back up after October 2019
 
 In 02spec and in autos sample switch autos:all to autos:auto_list
 
+Change the view name from MainList to AutoList in 02spec and autos sample code and _autos.md
+
 
 
 
