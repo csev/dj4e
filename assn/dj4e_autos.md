@@ -96,7 +96,6 @@ Also edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.
         ]
 
 * Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
-(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/urls.py" target="_blank">Example</a>)
 
 * Edit the `autos/views.py` file to add views for the list, edit, and delete pages for both autos and makes.
 It will make things a lot simpler in the long run if you convert the Make views to
@@ -112,14 +111,12 @@ a `forms.py - but you can do it either way.
 
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign
 key from Autos to Makes.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/models.py" target="_blank">Example</a>)
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
 
 * Run the commands to perform the migrations.
 
 * Edit `autos/admin.py` to add the Auto and Make models to the django administration interface.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/admin.py" target="_blank">Example</a>)
 
 * Create a superuser so you can test the admin interface
 and log in to the application.
@@ -127,7 +124,6 @@ and log in to the application.
 * Create the necessary views in `autos/templates/autos` to support your views.
 Note that the sample code uses a sub folder under `templates` to
 make sure that templates are not inadvertently shared across multiple applications within a Django project.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/templates" target="_blank">Example</a>)
 
 * Find the line in your `base_bootstrap.html` that looks like this:
 
