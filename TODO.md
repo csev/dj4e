@@ -1,3 +1,3 @@
 
-Re-record DJ-02-Models with the new paths
+Add new assignment to "replicate this site" between hello and autos.
 
