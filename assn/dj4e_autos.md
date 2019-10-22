@@ -133,6 +133,32 @@ make sure that templates are not inadvertently shared across multiple applicatio
 
 Make sure to check the autograder for additional markup requirements.
 
+Things that can go wrong
+------------------------
+
+If you ever get a 405 error on a Django page it means that you have defined 
+a class that does not have a `get()` method.  For example if you meant to say
+this:
+
+    class AutoUpdate(LoginRequiredMixin, UpdateView):
+        model = Auto
+        fields = '__all__'
+        success_url = reverse_lazy('autos:all')
+
+But instead you did:
+
+    class AutoUpdate(LoginRequiredMixin, View):
+        model = Auto
+        fields = '__all__'
+        success_url = reverse_lazy('autos:all')
+
+(i.e. you extended `View` instead of `UpdateView`) - the result is that there
+is no `def get(self, request) in your view.
+So you get the 
+<a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors" target="_blank">405 HTTP status code</a> (invalid method).
+
+
+
 References
 ----------
 
