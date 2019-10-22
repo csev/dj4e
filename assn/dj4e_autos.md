@@ -153,9 +153,10 @@ But instead you did:
         success_url = reverse_lazy('autos:all')
 
 (i.e. you extended `View` instead of `UpdateView`) - the result is that there
-is no `def get(self, request) in your view.
+is no `def get(self, request):` in your view.
 So you get the 
-<a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors" target="_blank">405 HTTP status code</a> (invalid method).
+<a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors" target="_blank">405 HTTP status code</a> (invalid method)
+when you navigate to the URL that forwards to the view.
 
 
 
