@@ -136,9 +136,9 @@ Make sure to check the autograder for additional markup requirements.
 Things that can go wrong
 ------------------------
 
-If you ever get a 405 error on a Django page it means that you have defined 
-a class that does not have a `get()` method.  For example if you meant to say
-this:
+If you ever get a 405 error on a Django page it probably means that you
+have defined a view class that does not have a `get()` method.
+For example if you meant to say this:
 
     class AutoUpdate(LoginRequiredMixin, UpdateView):
         model = Auto
