@@ -46,6 +46,7 @@ function webauto_get_html($crawler) {
 function webauto_get_meta($crawler, $name) {
     try {
         $retval = $crawler->filterXpath('//meta[@name="'.$name.'"]')->attr('content');
+        if ( $retval == '42-42' ) $retval = false;
     } catch(Exception $e) {
         $retval = false;
     }
