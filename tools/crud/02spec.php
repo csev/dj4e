@@ -274,6 +274,32 @@ Django administration interface.
 If you have not already done so, create a superuser so you can test the admin interface and log in to the application.
 </li>
 </ul>
+<h1>Hand-Testing Your Application</h1>
+<p>
+While it might be tempting to edit all your code following the above
+instructions and immediately send it to the autograder, you usually can save
+a lot of time by running a quick hand-check of your application.  Errors
+are much easier to see in a browser than in the autograder.  Do all these steps:
+<ul>
+<li>Log in to your application</li>
+<li>Go to the main page to list all the <?= $main_lower_plural ?></li>
+<li>Add a new <?= $lookup_lower ?></li>
+<li>View all the <?= $lookup_lower_plural ?></li>
+<li>Update a <?= $lookup_lower ?></li>
+<li>Add a new <?= $main_lower ?></li>
+<li>View all the <?= $main_lower_plural ?></li>
+<li>Update a <?= $main_lower ?></li>
+<li>Delete a <?= $main_lower ?></li>
+<li>View all the <?= $lookup_lower_plural ?></li>
+<li>Delete a <?= $lookup_lower ?></li>
+</ul>
+You should be able to do this hand test in about a minute once you do it
+a few times.
+</p>
+<p>
+Once you are confident that all the views are working without error, then you
+can send it to the autograder.
+</p>
 <h1>Using the Autograder</h1>
 <p>
 This <?= $assignment_type_lower ?> will be automatically graded.  You will have
