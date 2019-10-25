@@ -15,6 +15,17 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
+Make sure to get the latest version of dj4e-samples.  If you have never checked it out
+on PythonAnywhere:
+
+    cd ~
+    git clone https://github.com/csev/dj4e-samples
+
+If it already is on PythonAnywhere:
+
+    cd ~/dj4e-samples
+    git pull
+
 Note: Do **not** build this application by forking the sample application repository
 and hacking it.  There is just too much cruft in that repository that will make it hard to develop
 your application.   You will end up with a lot cleaner code by taking pieces from
@@ -29,8 +40,8 @@ Borrowing from the Samples Repository
 (1) Make a new project under your `django_projects` called `adlist` and within that
 project make an application called `ads`.
 
-(2) Copy `samples/requirements.txt` to `adlist/requirements.txt` and launch a shell.  If you are using
-virtual environments you must run the `pip` command in your virtual environment.   In PythonAnywhere 
+(2) Copy `dj4e-samples/requirements.txt` to `django_projects/adlist/requirements.txt` and launch a shell.  If you are using
+virtual environments you must run the `pip` command in your virtual environment.   In PythonAnywhere
 under Linux you would say:
 
     workon django2
@@ -47,18 +58,19 @@ it set to something like:
 
 So that your python application is run within the virtual environment.
 
-(3) Adapt `adlist/settings.py` to pull in most of `samples/settings.py`.
+(3) Adapt `django_projects/adlist/adlist/settings.py` to pull in most of `dj4e-samples/dj4e-samples/settings.py`.
 
-You might even want to copy `samples/settings.py` to `adlist/settings.py` and then delete
+You might even want to copy `dj4e-samples/dj4e-samples/settings.py` to
+`dango_projects/adlist/adlist/settings.py` and then delete
 all the `INSTALLED_APPLICATIONS` after `home` and add `ads`.  You also have to search
-and replace `samples` with `adlist` in a few places.
+and replace `dj4e-samples` with `adlist` in a few places.
 
-Alternatively, you can look through the `samples/settings.py` and copy pertinent lines
-into `adlist/settings.py` - some lines have an "Add" comment to help draw your attention
+Alternatively, you can look through the `dj4e-samples/dj4e-samples/settings.py` and copy pertinent lines
+into `django_project/adlist/adlist/settings.py` - some lines have an "Add" comment to help draw your attention
 to things to copy across.
 
 In addition to all the other settings fixes, make sure to add a line
-to `adlist/settings.py` like this:
+to `django_project/adlist/adlist/settings.py` like this:
 
     # Used for a default title
     APP_NAME = 'ChucksList'
@@ -67,26 +79,12 @@ This shows up in default page titles and default page navigation.
 
 (4) Copy the entire `home` application folder from into your adlist project.  This should not
 need much changing - it has things like base templates, and login templates and is designed
-to quickly get up to speed getting started in a new project.  If you are using PythonAnywhere
-
-Make sure to get the latest version of dj4e-samples.  If you have never checked it out
-on PythonAnywhere:
-
-    cd ~
-    git clone https://github.com/csev/dj4e-samples
-
-If it already is on PythonAnywhere:
-
-    cd ~/dj4e-samples
-    git pull
-
-Once you have `~/dj4e-samples` and `~/django_projects/adlist` you
-can copy all of home with the following commands:
+to quickly get up to speed getting started in a new project.  
 
     mkdir ~/django_projects/adlist/home
-    cp -r ~/dj4e-samples/samples/home/* ~/django_projects/adlist/home
+    cp -r ~/dj4e-samples/dj4e-samples/home/* ~/django_projects/adlist/home
 
-(5) Edit your `adlist/urls.py` and pull in some of the paths from `samples/urls.py`.   Look
+(5) Edit your `adlist/urls.py` and pull in some of the paths from `dj4e-samples/dj4e-samples/urls.py`.   Look
 for lines that say "Keep" to help make sure you configure all of the optional features.
 
 At this point, you should be able to run:
@@ -162,7 +160,7 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
     ]
 
-(5) Change your `adlist/urls.py` to use the following url patterns so the main route ('') 
+(5) Change your `adlist/urls.py` to use the following url patterns so the main route ('')
 goes to the `ads` application.
 
     urlpatterns = [
@@ -183,11 +181,11 @@ https://chucklist.dj4e.com/
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
 the gravatar when the user logs in.
 
-(1) Copy `base_menu.html` template from `samples/menu` application and into `ads/templates/ads`.  This should
+(1) Copy `base_menu.html` template from `dj4e-samples/menu` application and into `ads/templates/ads`.  This should
 extend `base_bootstrap.html` (in your `home` application).  You will need to adjust the navigation and url
 lookups in this file to match the naviation in the sample implementation.
 
-(2) Then edit all four of the `ads_` files in `ads/templates/ads` to change them so 
+(2) Then edit all four of the `ads_` files in `ads/templates/ads` to change them so
 they extend `ads/base_menu.html`.  Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
@@ -246,7 +244,7 @@ Fun Challenges
 --------------
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be 
+avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
 any thing you like - it does not have to be a picture of you.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
@@ -254,13 +252,13 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after up update the file and press 'Refresh' and.or switch browsers.
 
-(3) Make social login work.  Take a look at `dj4e-samples/github_settings-dist.py`, copy it into
+(3) Make social login work.  Take a look at `dj4e-samples/dj4e-samples/github_settings-dist.py`, copy it into
 `adlist/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments in the `github_setting.py` file.
 You can register two applications - one on localhost and one on PythonAnywhere.  If you are
-using github on localhost - make sure that you 
+using github on localhost - make sure that you
 register `http://127.0.0.1:8000/` instead of `http://localhost:8000/` and use that in your browser
-to test your site.  If you use localhost, you probably will get the `The redirect_uri MUST 
+to test your site.  If you use localhost, you probably will get the `The redirect_uri MUST
 match the registered callback URL for this application.` error message when you use social login.
 
 Working with Ambiguity
