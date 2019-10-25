@@ -213,7 +213,7 @@ Add a link to <b>django_projects/dj4e/home/templates/home/hello.html</b> that ha
 </pre>
 </li>
 <li>
-You should add a route to your <b>django_projects/dj4e/urls.py</b> as follows:
+You should add a route to your <b>django_projects/dj4e/dj4e/urls.py</b> as follows:
 <pre>
 urlpatterns = [
     path('', include('home.urls')),
