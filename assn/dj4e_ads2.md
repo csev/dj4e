@@ -155,6 +155,6 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
 
 (7) Adapt the comment related views from `forums/views.py` and put them into your `view.py`.
 
-(8) You will have to adapt the `templates/forums/comment_delete.html` template to work in your ads application.
+(8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
 
 
