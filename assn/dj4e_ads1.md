@@ -37,8 +37,7 @@ of the sample application.
 Borrowing from the Samples Repository
 -------------------------------------
 
-(1) Make a new project under your `django_projects` called `adlist` and within that
-project make an application called `ads`.
+(1) Make a new project under your `django_projects` called `adlist`.
 
 (2) Copy `dj4e-samples/requirements.txt` to `django_projects/adlist/requirements.txt` and launch a shell.  If you are using
 virtual environments you must run the `pip` command in your virtual environment.   In PythonAnywhere
