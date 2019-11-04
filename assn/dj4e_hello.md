@@ -34,6 +34,9 @@ and start a new project and an application:
 Starting Django in the new project (local computer)
 ---------------------------------------------------
 
+Only use this if yu are running on your local compuer.  Skip to the
+next set of instructions if you are on PythonAnywhere.
+
     cd ~/django_projects/dj4e
     python3 manage.py runserver
 
