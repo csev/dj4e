@@ -81,7 +81,7 @@ need much changing - it has things like base templates, and login templates and 
 to quickly get up to speed getting started in a new project.  
 
     mkdir ~/django_projects/adlist/home
-    cp -r ~/dj4e-samples/dj4e-samples/home/* ~/django_projects/adlist/home
+    cp -r ~/dj4e-samples/home/* ~/django_projects/adlist/home
 
 (5) Edit your `adlist/urls.py` and pull in some of the paths from `dj4e-samples/dj4e-samples/urls.py`.   Look
 for lines that say "Keep" to help make sure you configure all of the optional features.
