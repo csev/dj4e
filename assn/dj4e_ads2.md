@@ -15,19 +15,6 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
-Updating Requirements
----------------------
-
-(1) Do a `git pull` in your `dj4e-samples` repo and make sure all the pre-requisites are
-installed.  Copy `dj4e-samples/requirements.txt` to `adlist/requirements.txt` and launch a
-shell in your virtual environment and run:
-
-    pip install -r requirements.txt   # or pip3
-
-On PythonAnywhere under the Web tab there is a link to launch a shell into your
-virtual environment.  It is important to be in the virtual environment so the
-installed libraries end up in the right place.
-
 Do Some or All of the Challenges
 ---------------------------------
 
