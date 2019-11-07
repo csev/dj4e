@@ -30,7 +30,7 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after up update the file and press 'Refresh' and.or switch browsers.
 
-(3) Make social login work.  Take a look at `samples/github_settings-dist.py`, copy it into
+(3) Make social login work.  Take a look at `dj4e-samples/github_settings-dist.py`, copy it into
 `adlist/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments in the `github_setting.py` file.
 You can register two applications - one on localhost and one on PythonAnywhere.  If you are
@@ -46,7 +46,7 @@ Adding Pictures to the Ads Application
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `ads/model.py`, talking inspiration from `samples/pics/models.py`
+(1) Add this to your `ads/model.py`, talking inspiration from `dj4e-samples/pics/models.py`
 
     class Ad(models.Model) :
 
