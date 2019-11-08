@@ -61,9 +61,9 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 (2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.
 
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
-`PicUpdateView` and replace `AdCreateView` and `AdUpdateView` in `ads/views.py`.
-These new classes completely replace the classes that you had from the previous assignment.
-These new views don't inherit from owner.py.
+`PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
+These new views don't inherit from owner.py becuase they manage the `owner` column in the `get()`
+and `put()` methods.
 
 (4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
@@ -78,16 +78,15 @@ in your UI it is likely a mistake in your `forms.py`.
 
     path('ad_picture/<int:pk>', views.stream_file, name='ad_picture'),
 
-(5) Add the `stream_file` view from `pics/views.py` and adapt appropriately
+(5) Add the `stream_file()` view from `pics/views.py` and adapt appropriately
 
-Test to make sure you can upload, view, and update pictures with your ads and if you are using github,
-once this is all working, you might want to check this in before you start on the next step.
+Test to make sure you can upload, view, and update pictures with your ads.
 
 Adding Comments to the Ads Application
 --------------------------------------
 
 In this section, you will pull bits and pieces of the `forum` sample application
-into your `ads` application to add support for an optional single picture per ad.
+into your `ads` application to add support for comments for each ad.
 
 (1) Update your `models.py` adding the comment feature from the `forums\models.py`
 
@@ -118,7 +117,7 @@ into your `ads` application to add support for an optional single picture per ad
 Do not add the Forum model - simply connect the `Comment` model to the `Ad` model. Of course do
 the migrations once you have modified the model successfully.
 
-(2) Merge the `CommentForm` from `forums/forms.py` into your `forms.py`.
+(2) Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
 
 (3) Adapt the techniques in the `ForumDetailView` into your `AdDetailView` to retrieve the comments to
 pass into the `templates/ads/ad_detail.html` template through the context.

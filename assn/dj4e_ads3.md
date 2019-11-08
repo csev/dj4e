@@ -25,7 +25,7 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after up update the file and press 'Refresh' and.or switch browsers.
 
-(3) Make social login work.  Take a look at `samples/github_settings-dist.py`, copy it into
+(3) Make social login work.  Take a look at `dj4e-samples/github_settings-dist.py`, copy it into
 `adlist/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments in the `github_setting.py` file.
 You can register two applications - one on localhost and one on PythonAnywhere.  If you are
@@ -41,7 +41,7 @@ Adding Favorites to the Ads Application
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `ads/model.py`, talking inspiration from `samples/favs/models.py`
+(1) Add this to your `ads/model.py`, talking inspiration from `dj4e-samples/favs/models.py`
 
     class Ad(models.Model) :
 
@@ -75,7 +75,7 @@ Of course do the migrations once you have modified the model.
     ...
 
 (3) Pull in and adapt `ThingListView`, `AddFavoriteView`, and `DeleteFavoriteView`
-from `samples/favs/views.py` into your `views.py`.
+from `dj4e-samples/favs/views.py` into your `views.py`.
 
 (4) Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the 
 parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
