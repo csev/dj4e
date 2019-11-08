@@ -152,17 +152,20 @@ in your user interface the program is not implemented correctly and will fail th
 the update and delete operations.  They should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
+    from django.urls import path, reverse_lazy
+    from . import views
+
     app_name='ads'
     urlpatterns = [
         path('', views.AdListView.as_view()),
-        path('ads', views.AdListView.as_view(), name='ads'),
+        path('ads', views.AdListView.as_view(), name='all'),
         path('ad/<int:pk>', views.AdDetailView.as_view(), name='ad_detail'),
         path('ad/create',
-            views.AdCreateView.as_view(success_url=reverse_lazy('ads')), name='ad_create'),
+            views.AdCreateView.as_view(success_url=reverse_lazy('ads:all')), name='ad_create'),
         path('ad/<int:pk>/update',
-            views.AdUpdateView.as_view(success_url=reverse_lazy('ads')), name='ad_update'),
+            views.AdUpdateView.as_view(success_url=reverse_lazy('ads:all')), name='ad_update'),
         path('ad/<int:pk>/delete',
-            views.AdDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_delete'),
+            views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
 
 (5) Change your `adlist/urls.py` to use the following url patterns so the main route ('')
@@ -202,6 +205,7 @@ to be.
 (3) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
 
     {% block navbar %}
+    {% load app_tags %}
     <nav class="navbar navbar-default navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -211,24 +215,24 @@ to be.
         <ul class="nav navbar-nav">
           {% url 'ads' as ads %}
           <li {% if request.get_full_path == ads %}class="active"{% endif %}>
-              <a href="{% url 'app_name_here:ads' %}">Ads</a></li>
+              <a href="{% url 'ads:all' %}">Ads</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li>
-            <a href="{% url 'app_name_here:ad_create' %}">Create Ad</a>
+            <a href="{% url 'ads:ad_create' %}">Create Ad</a>
             </li>
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                     <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'logout' %}?next={% url 'app_name_here:ads' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}?next={% url 'ads:all' %}">Logout</a></li>
                 </ul>
             </li>
             {% else %}
             <li>
-            <a href="{% url 'login' %}?next={% url 'app_name_here:ads' %}">Login</a>
+            <a href="{% url 'login' %}?next={% url 'ads:all' %}">Login</a>
             </li>
             {% endif %}
         </ul>
