@@ -61,7 +61,7 @@ So that your python application is run within the virtual environment.
 
 You might even want to copy `dj4e-samples/dj4e-samples/settings.py` to
 `dango_projects/adlist/adlist/settings.py` and then delete
-all the `INSTALLED_APPLICATIONS` after `home` and add `ads`.  You also have to search
+all the `INSTALLED_APPLICATIONS` after `home`.  You also have to search
 and replace `dj4e-samples` with `adlist` in a few places.
 
 Alternatively, you can look through the `dj4e-samples/dj4e-samples/settings.py` and copy pertinent lines
@@ -111,7 +111,12 @@ Building the Ads Application
 In this section, you will pull bits and pieces of the sample applications repository and pull them
 into your `ads` application.
 
-(1) Create a new `ads` application within your `adlist` project.
+(1) Create a new `ads` application within your `adlist` project:
+
+    cd django_projects/adlist
+    python3 manage.py startapp ads
+
+The add the application to your `adlist/adlist/settings.py` and `adlist/adlist/urls.py'.
 
 (2) Use this in your `ads/model.py`:
 
