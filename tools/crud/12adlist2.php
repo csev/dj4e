@@ -54,25 +54,8 @@ line_out("Loading the favicon...");
 $favicon_url = $base_url_path . '/favicon.ico';
 $crawler = $client->request('GET', $favicon_url);
 if ( $crawler === false ) {
-    error_out("Unable to load favicon");
-    return;
+    line_out("Favicon is coming in the next assignment...");
 }
-$response = $client->getResponse();
-$status = $response->getStatus();
-if ( $status !== 200 ) {
-    error_out("Unable to load favicon status=".$status);
-    return;
-}
-$content = $response->getContent();
-$favlen = strlen($content);
-$favmd5 = md5($content);
-// echo("<pre>\n"); echo("Len = ".strlen($content)); echo(" md5 = ".$favmd5);
-
-if ( $favlen == 15406 && $favmd5 == 'da98cfb3992c3d6985fc031320bde065' ) {
-    line_out("Note: Please replace the favicon to be something other than the default.");
-    error_out("Having your own favicon is optional in this assignment but not in the next assignment.");
-}
-
 
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
