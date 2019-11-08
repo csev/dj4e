@@ -8,6 +8,7 @@
 .idea
 *.swp
 *.bak
+*.zip
 ~*
 ehthumbs.db
 Thumbs.db
