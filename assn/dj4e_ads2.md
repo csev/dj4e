@@ -28,7 +28,7 @@ any thing you like - it does not have to be a picture of you.
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
-after up update the file and press 'Refresh' and.or switch browsers.
+after up update the file and press 'Refresh' and/or switch browsers.
 
 (3) Make social login work.  Take a look at `dj4e-samples/github_settings-dist.py`, copy it into
 `adlist/github_settings.py` and go through the process on github to get your client ID and
