@@ -45,7 +45,7 @@ under Linux you would say:
 
     workon django2
 
-The run:
+Then run:
 
     pip install -r requirements.txt   # or pip3
 
