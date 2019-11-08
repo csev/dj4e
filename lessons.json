@@ -935,12 +935,32 @@
     ]
 },
 {
-    "title": "Classified Ads #2",
+    "title": "JavaScript / Classified Ads #2",
     "anchor": "dj4e_ads2",
-    "icon" : "fa-newspaper",
-    "description": "We add pictures and comments to our classified ads application.",
+    "icon" : "fa-code",
+    "description": "We take a quick look at the JavaScript language.  The video recordings are from Web Applications for Everybody.  We also add pictures and comments to our classified ads application.",
+    "slides": "lectures/JS-01-JavaScript.ppt",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
+    "videos" : [
+        {
+            "title" : "JavaScript - Part 1 (From PHP class)",
+            "youtube" : "AyIllqHSGoI"
+        },
+        {
+            "title" : "JavaScript - Part 2 (From PHP class)",
+            "youtube" : "E5jTKLXz9OE"
+        },
+        {
+            "title" : "JavaScript - Part 3 (From PHP class)",
+            "youtube" : "jQQ88xzuBTU"
+        }
+    ],
     "lti" : [
+        {
+        "title" : "Quiz: JavaScript",
+        "launch" : "mod/gift/?quiz=09-JavaScript.txt",
+        "resource_link_id" : "js_09_javascript_quiz"
+        },
         {
         "title" : "Auto-grader: Ad List #2",
         "launch" : "tools/crud/",
@@ -955,12 +975,20 @@
     ],
     "references" : [
         {
-            "title" : "Sample Code",
+            "title" : "Sample DJ4E Code",
             "href": "https://github.com/csev/dj4e-samples"
         },
         {
             "title" : "Reference Implementation",
             "href": "https://chucklist.dj4e.com/m2"
+        },
+        {
+            "title" : "Sample JavaScript code",
+            "href" : "code/javascript.zip"
+        },
+        {
+            "title" : "Bonus: Building JavaScript with with Brendan Eich",
+            "href" : "https://www.youtube.com/watch?v=IPxQ9kEaF8c"
         }
     ]
 },
