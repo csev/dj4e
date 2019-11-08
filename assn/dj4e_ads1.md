@@ -195,6 +195,7 @@ to be.
 
 (3) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
 
+    {% block navbar %}
     <nav class="navbar navbar-default navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -227,6 +228,9 @@ to be.
         </ul>
       </div>
     </nav>
+    {% endblock %}
+
+Make sure to kee
 
 (4) Find the line in your `base_bootstrap.html` that looks like this:
 

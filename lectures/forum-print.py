@@ -114,5 +114,46 @@ class CommentDeleteView(OwnerDeleteView):
         return reverse('forums:forum_detail', args=[forum.id])
 
 
+# dj4e-samples/forums/templates/forums/detail.html
+
+{% extends "base_bootstrap.html" %}
+{% load crispy_forms_tags %}
+{% load humanize %} <!-- https://docs.djangoproject.com/en/2.1/ref/contrib/humanize -->
+{% block content %}
+<h1>
+{% if forum.owner == user %}
+<span style="float: right;">
+<a href="{% url 'forums:forum_update' forum.id %}"><i class="fa fa-pencil"></i></a>
+<a href="{% url 'forums:forum_delete' forum.id %}"><i class="fa fa-trash"></i></a>
+</span>
+{% endif %}
+{{ forum.title }}
+</h1>
+<p>
+{{ forum.text }}
+</p>
+<p>
+({{ forum.updated_at|naturaltime }})
+</p>
+{% if user.is_authenticated %}
+<br clear="all"/>
+<p>
+<form method="post" action="{% url 'forums:forum_comment_create' forum.id %}">
+    {% csrf_token %}
+    {{ comment_form|crispy }}
+<input type="submit" value="Submit">
+<input type="submit" value="All Forums" onclick="window.location.href='{% url 'forums:all' %}';return false;">
+</form>
+</p>
+{% endif %}
+{% for comment in comments %}
+<p> {{ comment.text }} 
+({{ comment.updated_at|naturaltime }})
+{% if user == comment.owner %}
+<a href="{% url 'forums:forum_comment_delete' comment.id %}"><i class="fa fa-trash"></i></a>
+{% endif %}
+</p>
+{% endfor %}
+{% endblock %}
 
 
