@@ -152,6 +152,7 @@ in your user interface the program is not implemented correctly and will fail th
 the update and delete operations.  They should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
+    app_name='ads'
     urlpatterns = [
         path('', views.AdListView.as_view()),
         path('ads', views.AdListView.as_view(), name='ads'),
