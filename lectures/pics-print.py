@@ -177,36 +177,58 @@ def stream_file(request, pk) :
     response.write(pic.picture)
     return response
 
-# Another way to do it.
-# This will handle create and update with an optional pk parameter on get and post
-# We don't use the Generic or OwnerGeneric because (a) we need a form with a file
-# and (b) we need to to populate the model with request.FILES
-class PicFormView(LoginRequiredMixin, View):
-    template = 'pics/form.html'
-    success_url = reverse_lazy('pics:all')
-    def get(self, request, pk=None) :
-        if not pk : 
-            form = CreateForm()
-        else: 
-            pic = get_object_or_404(Pic, id=pk, owner=self.request.user)
-            form = CreateForm(instance=pic)
-        ctx = { 'form': form }
-        return render(request, self.template, ctx)
 
-    def post(self, request, pk=None) :
-        if not pk:
-            form = CreateForm(request.POST, request.FILES or None)
-        else:
-            pic = get_object_or_404(Pic, id=pk, owner=self.request.user)
-            form = CreateForm(request.POST, request.FILES or None, instance=pic)
+# /Users/csev/django/dj4e-samples/pics/templates/pics/form.html
 
-        if not form.is_valid() :
-            ctx = {'form' : form}
-            return render(request, self.template, ctx)
+{% extends "base_bootstrap.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<p>
+  <form action="" method="post" id="upload_form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Submit">
+    <input type="submit" value="Cancel" onclick="window.location.href='{% url 'pics:all' %}';return false;">
+  </form>
+</p>
+<!-- https://stackoverflow.com/questions/2472422/django-file-upload-size-limit -->
+<script>
+$("#upload_form").submit(function() {
+  console.log('Checking file size');
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+      var file = $('#id_{{ form.upload_field_name }}')[0].files[0];
+      if (file && file.size > {{ form.max_upload_limit }} ) {
+          alert("File " + file.name + " of type " + file.type + " must be < {{ form.max_upload_limit_text }}");
+      return false;
+    }
+  }
+});
+</script>
+{% endblock %}
 
-        # Adjust the model owner before saving
-        pic = form.save(commit=False)
-        pic.owner = self.request.user
-        pic.save()
-        return redirect(self.success_url)
 
+# dj4e-samples/pics/templates/pics/detail.html
+
+{% extends "base_bootstrap.html" %}
+{% load humanize %} <!-- https://docs.djangoproject.com/en/2.1/ref/contrib/humanize -->
+{% block content %}
+<span style="float: right;">
+({{ pic.updated_at|naturaltime }})
+{% if pic.owner == user %}
+<a href="{% url 'pics:pic_update' pic.id %}"><i class="fa fa-pencil"></i></a>
+<a href="{% url 'pics:pic_delete' pic.id %}"><i class="fa fa-trash"></i></a>
+{% endif %}
+</span>
+<h1>{{ pic.title }}</h1>
+{% if pic.content_type %}
+<img style="float:right; max-width:50%;" src="{% url 'pics:pic_picture' pic.id %}">
+{% endif %}
+<p>
+{{ pic.text }}
+</p>
+<p>
+</p>
+<p>
+<a href="{% url 'pics:all' %}">All pics</a>
+</p>
+{% endblock %}
