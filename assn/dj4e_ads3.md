@@ -38,8 +38,9 @@ match the registered callback URL for this application.` error message when you 
 Adding Favorites to the Ads Application
 -----------------------------------------
 
-In this section, you will pull bits and pieces of the `pics` sample application
-into your `ads` application to add support for an optional single picture per ad.
+In this section, you will pull bits and pieces of the `favs` sample application
+into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
+ads.
 
 (1) Add this to your `ads/model.py`, talking inspiration from `dj4e-samples/favs/models.py`
 
@@ -77,7 +78,7 @@ Of course do the migrations once you have modified the model.
 (3) Pull in and adapt `ThingListView`, `AddFavoriteView`, and `DeleteFavoriteView`
 from `dj4e-samples/favs/views.py` into your `views.py`.
 
-(4) Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the 
+(4) Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
 parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
 code at the end.
 
