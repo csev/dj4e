@@ -157,7 +157,7 @@ $crawler = webauto_get_url($client, $login_url, "Logging in as $user2account");
 $html = webauto_get_html($crawler);
 
 // Use the log_in form
-$form = webauto_get_form_with_button($crawler,'Login Locally');
+$form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
 webauto_change_form($form, 'username', $user2account);
 webauto_change_form($form, 'password', $user2pw);
 
