@@ -115,7 +115,8 @@ Building the Ads Application
 ----------------------------
 
 In this section, you will pull bits and pieces of the sample applications repository and pull them
-into your `ads` application.
+into your `ads` application.  __Note:__ If you find you have a problem saving files in the PythonAnywhere
+system using their browser-based editor, you might need to turn off your ad blocker.
 
 (1) Create a new `ads` application within your `adlist` project:
 
