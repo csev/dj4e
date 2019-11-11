@@ -66,7 +66,12 @@ and replace `dj4e-samples` with `adlist` in a few places.
 
 Alternatively, you can look through the `dj4e-samples/dj4e-samples/settings.py` and copy pertinent lines
 into `django_project/adlist/adlist/settings.py` - some lines have an "Add" comment to help draw your attention
-to things to copy across.
+to things to copy across.  Make sure `INSTALLED_APPLICATIONS` includes the following applications:
+
+    'django.contrib.humanize',
+    'rest_framework',
+    'crispy_forms',
+    'social_django',
 
 In addition to all the other settings fixes, make sure to add a line
 to `django_project/adlist/adlist/settings.py` like this:
@@ -169,8 +174,14 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
 
-(5) Change your `adlist/urls.py` to use the following url patterns so the main route ('')
-goes to the `ads` application.
+(5) Edit the `adlist/urls.py` to look as follows:
+
+    import os
+    from django.contrib import admin
+    from django.urls import path
+    from django.urls import include
+    from django.conf.urls import url
+    from django.views.static import serve
 
     urlpatterns = [
         path('', include('ads.urls')),
@@ -179,6 +190,15 @@ goes to the `ads` application.
         url(r'^oauth/', include('social_django.urls', namespace='social')),
     ]
 
+    # Serve the favicon
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    urlpatterns += [
+        path('favicon.ico', serve, {
+                'path': 'favicon.ico',
+                'document_root': os.path.join(BASE_DIR, 'home/static'),
+            }
+        ),
+    ]
 
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
@@ -190,21 +210,18 @@ https://chucklist.dj4e.com/
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
 the gravatar when the user logs in.
 
-(1) Copy `base_menu.html` template from `dj4e-samples/menu` application and into `ads/templates/ads`.  This should
-extend `base_bootstrap.html` (in your `home` application).  You will need to adjust the navigation and url
-lookups in this file to match the naviation in the sample implementation.
-
-(2) Then edit all four of the `ads_` files in `ads/templates/ads` to change them so
+(2) Edit all four of the `ads_` files in `ads/templates/ads` to change them so
 they extend `ads/base_menu.html`.  Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
 
-to be.
+to be:
 
     {% extends "ads/base_menu.html" %}
 
-(3) Then edit `ads/templates/base_menu.html` replace the main lists of navigation items as follows:
+(3) Then create `ads/templates/base_menu.html` with the following content:
 
+    {% extends "base_bootstrap.html" %}
     {% block navbar %}
     {% load app_tags %}
     <nav class="navbar navbar-default navbar-inverse">
@@ -240,8 +257,6 @@ to be.
       </div>
     </nav>
     {% endblock %}
-
-Make sure to kee
 
 (4) Find the line in your `base_bootstrap.html` that looks like this:
 
