@@ -17,7 +17,7 @@ At this point all of the challenges should be working - not all will be tested
 by the autograder - but we will separately check them.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps.  The gravatar can be
+avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
 any thing you like - it does not have to be a picture of you.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
@@ -25,14 +25,20 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after up update the file and press 'Refresh' and.or switch browsers.
 
-(3) Make social login work.  Take a look at `dj4e-samples/github_settings-dist.py`, copy it into
-`adlist/github_settings.py` and go through the process on github to get your client ID and
-secret.   The documentation is in comments in the `github_setting.py` file.
-You can register two applications - one on localhost and one on PythonAnywhere.  If you are
-using github on localhost - make sure that you
-register `http://127.0.0.1:8000/` instead of `http://localhost:8000/` and use that in your browser
-to test your site.  If you use localhost, you probably will get the `The redirect_uri MUST
-match the registered callback URL for this application.` error message when you use social login.
+(3) Make social login work.  Take a look at
+<a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
+github_settings-dist.py</a>, copy it into
+`adlist\adlist/github_settings.py` and go through the process on github to get your client ID and
+secret.   The documentation is in comments of the file.  Also take a look at
+<a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">
+dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
+and at the end of your `adlist\adlist/github_settings.py`.
+
+You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
+using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead
+of `http://localhost:8000/` and use that in your browser to test your site.  If you
+use localhost, you probably will get the `The redirect_uri MUST match the registered callback
+URL for this application.` error message when you use social login.
 
 
 Adding Favorites to the Ads Application
