@@ -28,11 +28,28 @@ after up update the file and press 'Refresh' and.or switch browsers.
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`adlist\adlist/github_settings.py` and go through the process on github to get your client ID and
+`adlist/adlist/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `adlist\adlist/github_settings.py`.
+and at the end of your `adlist/adlist/github_settings.py`.
+
+    # The code below dynamically switches between non-social login.html 
+    # and social_login.html when we notice that social login has been
+    # configured in settings.py (later in the course)
+    # Or just uncomment the path above when you enable social login
+
+    from django.contrib.auth import views as auth_views
+    try:
+        from . import github_settings
+        social_login = 'registration/login_social.html'
+        urlpatterns.insert(0,
+            path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))
+        )
+        print('Using',social_login,'as the login template')
+    except:
+        print('Using registration/login.html as the login template')
+
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead
