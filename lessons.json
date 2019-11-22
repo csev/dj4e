@@ -1,4 +1,5 @@
 {
+
 "title": "Django for Everybody (DJ4E)",
 "description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
 "count": true,
@@ -1115,6 +1116,45 @@
             {
                 "key": "exercise",
                 "value": "13adlist3.php"
+            }
+        ]
+        },
+        {
+        "title": "Peer Graded: Ads3 User Interface",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "peer_ads_3",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Ads3 Look and Feel",
+  "description": "This is an assignment to make sure that your user interface properly supoprts the stars in the favorites.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of your home (all ads) page showing at least two stars filled in (Maximum 2MB per file)",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your home (all ads) page showing at least two stars not-filled in (Maximum 2MB per file)",
+      "type": "image"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
             }
         ]
         }
