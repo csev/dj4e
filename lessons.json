@@ -851,7 +851,7 @@
    ]
 },
 {
-    "title": "Object-Oriented Programming",
+    "title": "Object-Oriented Programming in Python",
     "anchor": "Objects",
     "icon" : "fa-cubes",
     "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
@@ -989,6 +989,99 @@
         {
             "title" : "Bonus: Building JavaScript with with Brendan Eich",
             "href" : "https://www.youtube.com/watch?v=IPxQ9kEaF8c"
+        }
+    ]
+},
+{
+    "title": "JavaScript Objects",
+    "anchor": "js-oo",
+    "icon" : "fa-code",
+    "description": "We do a quick look at how the JavaScript language supports the Object-Oriented pattern. The video recordings are from Web Applications for Everybody.",
+    "slides": "lectures/JS-02-JavaScript-Objects.ppt",
+    "videos" :
+        {
+            "title" : "JavaScript Object Orientation (from PHP class)",
+            "youtube" : "dPvjFwNl2fM"
+        },
+    "references" :
+        {
+            "title" : "Sample code",
+            "href" : "code/javascript-objects.zip"
+        },
+    "lti" : [
+        {
+        "title" : "Quiz: JavaScript Objects",
+        "launch" : "mod/gift/?quiz=09-JavaScript-Objects.txt",
+        "resource_link_id" : "js_02_js_objects_quiz"
+        }
+    ]
+},
+{
+    "title": "jQuery",
+    "anchor": "jquery",
+    "icon" : "fa-briefcase",
+    "description": "This is a brief introduction to the jQuery library which is widely used to do in-browser manipulation of the Document Object Model(DOM) and event handling.  The video recordings are from Web Applications for Everybody.",
+    "slides": "lectures/JS-03-JQuery.ppt",
+    "videos" : [
+        {
+            "title" : "jQuery - Part 1 (From PHP Class)",
+            "youtube" : "vCdsSaylTDM"
+        },
+        {
+            "title" : "jQuery - Part 2 (From PHP Class)",
+            "youtube" : "auVow0kWZCg"
+        }
+    ],
+    "references" :
+    [
+        {
+            "title" : "Sample code",
+            "href" : "code/jquery-01.zip"
+        },
+        {
+            "title" : "Bonus: John Resig - Building jQuery",
+            "href" : "https://www.youtube.com/watch?v=B7Aut4OUuvs"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Quiz: jQuery",
+        "launch" : "mod/gift/?quiz=10-JQuery.txt",
+        "resource_link_id" : "js_03_jquery"
+        }
+    ]
+},
+{
+    "title": "JSON - JavaScript Object Notation",
+    "anchor": "json",
+    "icon" : "fa-briefcase",
+    "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser (JavaScript/jQuery).  The video recordings are from Web Applications for Everybody.",
+    "slides": "lectures/JS-04-JSON.ppt",
+    "videos" : [
+        {
+            "title" : "JSON - JavaScript Object Notation - JSON (From PHP Class)",
+            "youtube" : "MUqGiqlmeGk"
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Bonus: Douglas Crockford - Discovering JSON",
+            "href" : "https://www.youtube.com/watch?v=kc8BAR7SHJI"
+        },
+        {
+            "title" : "Sample code - JSON",
+            "href" : "code/json-01.zip"
+        },
+        {
+            "title" : "Sample code - JSON Chat",
+            "href" : "code/json-02-chat.zip"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Quiz: JSON",
+        "launch" : "mod/gift/?quiz=10-JSON.txt",
+        "resource_link_id" : "js_04_json"
         }
     ]
 },
