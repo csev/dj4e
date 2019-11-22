@@ -1003,11 +1003,16 @@
             "title" : "JavaScript Object Orientation (from PHP class)",
             "youtube" : "dPvjFwNl2fM"
         },
-    "references" :
+    "references" : [
+        {
+            "title" : "Sample code running",
+            "href" : "code/javascript-objects"
+        },
         {
             "title" : "Sample code",
             "href" : "code/javascript-objects.zip"
-        },
+        }
+    ],
     "lti" : [
         {
         "title" : "Quiz: JavaScript Objects",
@@ -1035,8 +1040,12 @@
     "references" :
     [
         {
+            "title" : "Sample code running",
+            "href" : "code/jquery"
+        },
+        {
             "title" : "Sample code",
-            "href" : "code/jquery-01.zip"
+            "href" : "code/jquery.zip"
         },
         {
             "title" : "Bonus: John Resig - Building jQuery",
@@ -1069,18 +1078,18 @@
             "href" : "https://www.youtube.com/watch?v=kc8BAR7SHJI"
         },
         {
-            "title" : "Sample code - JSON",
-            "href" : "code/json-01.zip"
+            "title" : "Sample implementation - JSON CHAT",
+            "href" : "https://samples.dj4e.com/"
         },
         {
             "title" : "Sample code - JSON Chat",
-            "href" : "code/json-02-chat.zip"
+            "href" : "https://github.com/csev/dj4e-samples/tree/master/chat"
         }
     ],
     "lti" : [
         {
         "title" : "Quiz: JSON",
-        "launch" : "mod/gift/?quiz=10-JSON.txt",
+        "launch" : "mod/gift/?quiz=JS-04-JSON.txt",
         "resource_link_id" : "js_04_json"
         }
     ]
