@@ -958,8 +958,8 @@
     "lti" : [
         {
         "title" : "Quiz: JavaScript",
-        "launch" : "mod/gift/?quiz=09-JavaScript.txt",
-        "resource_link_id" : "js_09_javascript_quiz"
+        "launch" : "mod/gift/?quiz=JS-01-JavaScript.txt",
+        "resource_link_id" : "js_01_javascript_quiz"
         },
         {
         "title" : "Auto-grader: Ad List #2",
@@ -995,7 +995,7 @@
 {
     "title": "JavaScript Objects",
     "anchor": "js-oo",
-    "icon" : "fa-code",
+    "icon" : "fa-ethernet",
     "description": "We do a quick look at how the JavaScript language supports the Object-Oriented pattern. The video recordings are from Web Applications for Everybody.",
     "slides": "lectures/JS-02-JavaScript-Objects.ppt",
     "videos" :
@@ -1011,7 +1011,7 @@
     "lti" : [
         {
         "title" : "Quiz: JavaScript Objects",
-        "launch" : "mod/gift/?quiz=09-JavaScript-Objects.txt",
+        "launch" : "mod/gift/?quiz=JS-02-Objects.txt",
         "resource_link_id" : "js_02_js_objects_quiz"
         }
     ]
@@ -1046,15 +1046,15 @@
     "lti" : [
         {
         "title" : "Quiz: jQuery",
-        "launch" : "mod/gift/?quiz=10-JQuery.txt",
+        "launch" : "mod/gift/?quiz=JS-03-JQuery.txt",
         "resource_link_id" : "js_03_jquery"
         }
     ]
 },
 {
-    "title": "JSON - JavaScript Object Notation",
+    "title": "JSON / AJAX",
     "anchor": "json",
-    "icon" : "fa-briefcase",
+    "icon" : "fa-file-archive",
     "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser (JavaScript/jQuery).  The video recordings are from Web Applications for Everybody.",
     "slides": "lectures/JS-04-JSON.ppt",
     "videos" : [
