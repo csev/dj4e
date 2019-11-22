@@ -115,11 +115,11 @@ are a set of manual test steps:
 * Log in to your application on the first account
 * Create an ad, view its details, update, the ad, and delete the ad (test for regression)
 * Create more than one ad
-* In the ad list view mark one ad as a favorite and then press 'refresh' and see if the star is the same
+* In the list view mark one ad as a favorite and then press 'refresh' and see if the star is the same
 after refresh as it was when you clicked on the star
-* In the ad list view unfavorite a favorited ad and then press 'refresh' and see if the star is the same
+* In the list view unfavorite a favorited ad and then press 'refresh' and see if the star is the same
 after refresh as it was when you clicked on the star
-* log in on the sedonc account - make sure the favorites are not the same as the first account
+* Log in on the second account - make sure the favorites are not the same as the first account
 * Do several favorite and unfavorite operations pressing 'refresh' after each change and make sure
 the star "sticks" (i.e. has the same value as when you clicked it)
 
