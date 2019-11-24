@@ -25,7 +25,7 @@ Complete the following sections of the Views tutorial:
         ]
         ...
 
-* Edit `views.py` for the views.index as suggested in the turoail, adding these lines
+* Edit `views.py` for the views.index as suggested in the tutorial, adding these lines
 
         from django.views import generic
 
