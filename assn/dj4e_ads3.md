@@ -98,12 +98,16 @@ Of course do the migrations once you have modified the model.
         views.DeleteFavoriteView.as_view(), name='ad_unfavorite'),
     ...
 
-(3) Pull in and adapt `ThingListView`, `AddFavoriteView`, and `DeleteFavoriteView`
-from `dj4e-samples/favs/views.py` into your `views.py`.
+(3) Look at how `ThingListView` from `dj4e-samples/favs/views.py`
+retrieves the list of favorites for the current user and add code
+to your `AdListView` to retrieve the favorites for the current logged in user.
 
 (4) Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
 parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
 code at the end.
+
+(5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
+from `dj4e-samples/favs/views.py` into your `views.py`.
 
 Manual Testing
 --------------
