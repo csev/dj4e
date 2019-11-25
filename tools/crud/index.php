@@ -24,6 +24,7 @@ $assignments = array(
     '11adlist1.php' => 'AdList #1',
     '12adlist2.php' => 'AdList #2',
     '13adlist3.php' => 'AdList #3',
+    '14adlist4.php' => 'AdList #4',
     '20autos.php' => 'Autos CRUD II',
     '20cats.php' => 'Cats CRUD II',
 );
