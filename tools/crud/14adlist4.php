@@ -244,9 +244,10 @@ $html = webauto_get_html($crawler);
 
 } // End of the for
 
-// HHGTTG_42 05:36:18
-$search_url = $url . "?search=" . urlencode($title);
-$search_url = $url . "?search=_";
+// Search for nothing matching...
+$not_found = "4242421234542";
+// $not_found = "HHG";
+$search_url = $url . "?search=" . $not_found;
 
 line_out("Loading search url...");
 $crawler = webauto_get_url($client, $search_url);
@@ -254,18 +255,42 @@ if ( $crawler === false ) return;
 
 $html = webauto_get_html($crawler);
 
-preg_match_all('#href=[ ]*"ad"/[0-9]+#',$html,$matches);
-echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
-if ( ! is_array($matches) || count($matches) != 1 ) {
+$matches = array();
+$match_count = preg_match_all('#href=[ ]*"[^"]*ad/[0-9]+#',$html,$matches);
+// echo("<pre>\n");print_r($matches);echo("\n</pre>\n");
+if ( $match_count > 0 ) {
+    error_out("Search for '$not_found' should return zero ads.");
+    return;
+}
+$passed++;
+
+// Search for something we expect to be there: HHGTTG_42 05:36:18
+$search_url = $url . "?search=" . urlencode($title);
+line_out("Loading search url...");
+$crawler = webauto_get_url($client, $search_url);
+if ( $crawler === false ) return;
+
+$html = webauto_get_html($crawler);
+
+$matches = array();
+$match_count = preg_match_all('#href=[ ]*"[^"]*ad/[0-9]+#',$html,$matches);
+// echo("<pre>\n");print_r($matches);echo("\n</pre>\n");
+if ( $match_count < 1 ) {
+    error_out("Search for '$title' returned no ads.");
+    return;
+}
+
+if ( $match_count > 1 ) {
     error_out("Found more than one ad when searching for '$title'.");
     return;
 }
+$passed++;
 
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 echo("  -- Raw score $passed \n");
-$perfect = 13;
+$perfect = 15;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
