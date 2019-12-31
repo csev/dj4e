@@ -18,7 +18,7 @@ Go to your
 account and start a bash shell,
 go into your virtual environment and create a new application:
 
-    workon django2
+    workon django3
     cd ~/django_projects
     django-admin startproject locallibrary
 
@@ -84,9 +84,9 @@ at this point in time.  In the PYAW shell:
 
 If you get an error when you type the above `python3` commands that cannot
 find the `django_extensions` you either have not set up your virtual environment
-properly or did not use the `workon django2` command to switch into your
+properly or did not use the `workon django3` command to switch into your
 virtual environment in your shell.  When you are in a shell, you need to
-be in the `django2` virtual environment or the `manage.py` commands will fail.
+be in the `django3` virtual environment or the `manage.py` commands will fail.
 
 On the Web tab
 <a href="paw_skeleton/webapp_config.png" target="_blank">Sample image</a>,
@@ -103,7 +103,7 @@ Edit and change 'mytestsite' to 'locallibrary' (Twice) in the
 
 The virtual environment should already be set up and does not need to change.
 
-    Virtualenv: /home/drchuck/.virtualenvs/django2
+    Virtualenv: /home/drchuck/.virtualenvs/django3
 
 Change `drchuck` above to your PythonAnywhere account name.
 

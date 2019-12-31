@@ -9,8 +9,8 @@ line_out("Grading Django Tutorial 01");
 ?>
 <p>
 For this assignment work through Part 1 of the Django tutorial at
-<a href="https://docs.djangoproject.com/en/2.2/intro/tutorial01/" target="_blank">
-https://docs.djangoproject.com/en/2.2/intro/tutorial01/</a>.
+<a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/" target="_blank">
+https://docs.djangoproject.com/en/3.0/intro/tutorial01/</a>.
 </a>
 </p>
 <?php

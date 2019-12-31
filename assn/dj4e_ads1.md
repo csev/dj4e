@@ -43,7 +43,7 @@ Borrowing from the Samples Repository
 virtual environments you must run the `pip` command in your virtual environment.   In PythonAnywhere
 under Linux you would say:
 
-    workon django2
+    workon django3
 
 Then run:
 
@@ -53,7 +53,7 @@ This will pull in important extra libraries that your application will need.  On
 make sure to double check under the `Web` tab under the `Virtualenv` section that you have
 it set to something like:
 
-    /home/--your-account---/.virtualenvs/django2
+    /home/--your-account---/.virtualenvs/django3
 
 So that your python application is run within the virtual environment.
 

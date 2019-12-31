@@ -17,7 +17,7 @@ account and start a bash shell.
 
 Lets go into the locallibrary project:
 
-    workon django2
+    workon django3
     cd ~/django_projects/locallibrary
 
 Make sure that you have properly edited the `locallibrary/settings.py` file to register your catalog

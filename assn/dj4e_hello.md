@@ -24,7 +24,7 @@ Making a New Project and Application
 Start a shell with virtual environment (if needed) and go into your `django_projects` folder
 and start a new project and an application:
 
-    workon django2                  # as needed
+    workon django3                  # as needed
     cd ~/django_projects
     django-admin startproject dj4e
 
@@ -52,9 +52,9 @@ Under your Web tab, Set the following:
     Source Code:   /home/drchuck/django_projects/dj4e
     Working Directory:   /home/drchuck/django_projects/dj4e
 
-The virtual environment should be pointing to your `django2` virtual environment:
+The virtual environment should be pointing to your `django3` virtual environment:
 
-    /home/drchuck/.virtualenvs/django2
+    /home/drchuck/.virtualenvs/django3
 
 Replace `drchuck` above with your PythonAnywhere account name.
 

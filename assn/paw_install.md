@@ -37,13 +37,13 @@ Instructions
 Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 2.
 
-    mkvirtualenv django2 --python=/usr/bin/python3.6
+    mkvirtualenv django3 --python=/usr/bin/python3.6
     pip3 install django ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
 
-    workon django2
+    workon django3
 
 Lets make sure that your django was installed successfully with the following command:
 
@@ -76,13 +76,13 @@ app and your application.
     Source code: /home/drchuck/django_projects/mytestsite
     Working directory: /home/drchuck/django_projects/mytestsite
 
-    Virtualenv: /home/drchuck/.virtualenvs/django2
+    Virtualenv: /home/drchuck/.virtualenvs/django3
 
 Replace `drchuck` with your account on PythonAnywhere.
 
 Note that once you have your Virtualenv set up you have a very convenient link
 titled "Start a console in this virtualenv" - this is a great way to open up consoles
-so you never have to type "workon django2" and it makes sure your virtual
+so you never have to type "workon django3" and it makes sure your virtual
 envronment is properly set up and configured.
 <a href="paw_install/web_tab.png" target="_blank">Sample image</a>
 

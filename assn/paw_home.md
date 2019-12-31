@@ -91,10 +91,10 @@ If you see and error message like:
 It probably means that you have not set up your virtual environment under 
 the `Web` tab.  
 
-If you did the installation properly and created a `django2`
+If you did the installation properly and created a `django3`
 virtual environment, the virtual environment under the `Web` tab should be set to:
 
-    /home/drchuck/.virtualenvs/django2
+    /home/drchuck/.virtualenvs/django3
 
 Replacing "drchuck" with your PythonAnywhere account name.
 

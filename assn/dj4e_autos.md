@@ -32,7 +32,7 @@ and start a new application in your `dj4e` project (this project already should 
 application from a
 <a href="dj4e_hello.md">previous assignment</a>).
 
-    workon django2  # as needed
+    workon django3  # as needed
     cd ~/django_projects/dj4e
     python3 manage.py startapp autos
 

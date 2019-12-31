@@ -40,10 +40,10 @@ Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
 https://github.com/csev/dj4e-samples/tree/master/scripts
 
-This is probably redundant, but make sure you are in your `django2` virtual environment and
+This is probably redundant, but make sure you are in your `django3` virtual environment and
 install `django extensions`:
 
-    workon django2                     # If necessary
+    workon django3                     # If necessary
     pip3 install django_extensions
 
 Add the following line to your `locallibrary/locallibrary/settings.py`:
@@ -195,7 +195,7 @@ Place the CSV file in the `unesco` folder and then run the script from the proje
 where the `manage.py` file resides):
 
     cd ~/django_projects/library
-    workon django2                             # if necessary
+    workon django3                             # if necessary
     python3 manage.py runscript many_load
 
 It needs to be run this way so that lines like:
