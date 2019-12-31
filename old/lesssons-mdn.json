@@ -15,7 +15,7 @@
     "title": "Introduction to Dynamic Web Content",
     "anchor": "rrc",
     "icon" : "fa-refresh",
-    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP). The recorded lectures are from Web Applications for Everybody.",
+    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
     "slides": "lectures/Web-01-HTTP.pptx",
     "videos" : [
         {
@@ -67,57 +67,6 @@
             {
                 "key": "exercise",
                 "value": "http_headers.php"
-            }
-        ]
-        }
-    ]
-},
-{
-    "title": "HyperText Markup Language (HTML)",
-    "anchor": "html",
-    "icon" : "fa-html5",
-    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.",
-    "slides": "lectures/Web-02-HTML.ppt",
-    "chapters" : "7-14",
-    "videos" : [
-        {
-            "title" : "HTML - HyperText Markup Language (Part 1)",
-            "youtube" : "ZV9SG8unDYc"
-        },
-        {
-            "title" : "HTML - HyperText Markup Language (Part 2)",
-            "youtube" : "tibwt3mVINM"
-        },
-        {
-            "title" : "HTML - Sample Code Walkthrough",
-            "youtube" : "b99aHsUi7Zk"
-        }
-    ],
-    "references" : [
-        {
-            "title" : "HTML Sample Code (Browse)",
-            "href" : "https://www.dj4e.com/code/html/index.htm"
-        },
-        {
-            "title" : "HTML Sample Code (Download)",
-            "href" : "https://www.dj4e.com/code/html.zip"
-        }
-    ],
-    "assignment" : "https://www.dj4e.com/assn/html/",
-    "lti" : [
-        {
-        "title" : "Quiz: HTML",
-        "launch" : "mod/gift/?quiz=00-HTML.txt",
-        "resource_link_id" : "dj_01_html_quiz"
-        },
-        {
-        "title" : "Autograder: HyperText Markup Language (HTML)",
-        "launch" : "tools/web-autograde/",
-        "resource_link_id" : "html_01",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "a01.php"
             }
         ]
         }
