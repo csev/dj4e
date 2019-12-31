@@ -15,7 +15,7 @@
     "title": "Introduction to Dynamic Web Content",
     "anchor": "rrc",
     "icon" : "fa-refresh",
-    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP). The recorded lectures are from Web Applications for Everybody.",
+    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
     "slides": "lectures/Web-01-HTTP.pptx",
     "videos" : [
         {
@@ -76,7 +76,7 @@
     "title": "HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",
-    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.",
+    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
     "slides": "lectures/Web-02-HTML.ppt",
     "chapters" : "7-14",
     "videos" : [
@@ -103,7 +103,7 @@
             "href" : "https://www.dj4e.com/code/html.zip"
         }
     ],
-    "assignment" : "https://www.dj4e.com/assn/html/",
+    "assignment" : "https://www.dj4e.com/assn/html/index.htm",
     "lti" : [
         {
         "title" : "Quiz: HTML",
