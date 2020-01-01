@@ -1,14 +1,14 @@
 
-Serving HTML Content Using Django
-=================================
+Adding HTML Content to Django
+=============================
 
 In this assignment we will be adding some HTML content to your Django instance.
 Most of the content that comes from a site is usually served through a template
 and a view, but sometimes you just want to have a few static HTML pages on 
 your site.
 
-Serving Static Content
-----------------------
+Serving HTML Content
+--------------------
 
 Make a two folders
 
