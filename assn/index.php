@@ -29,8 +29,9 @@ if ( $pieces >= 2 ) {
       if ( strpos($file_with_folder, '..' ) === false ) $file = $file_with_folder;
    }
    if ( ! file_exists($file) ) $file = false;
+
    if ( endsWith($file, '.svg') ) {
-        $contents = file_get_contents('svg/'.$file);
+        $contents = file_get_contents($file);
         header('Content-Type: image/svg+xml');
         echo($contents);
         return;
