@@ -55,6 +55,11 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
     pip3 install -r requirements.txt
+    python3 manage.py check
+
+If the `check` identifies errors, stop until there are no errors.  Onnly take the next steps
+once check sees no errors.  Once the check works do:
+
     python3 manage.py makemigrations
     python3 manage.py migrate
 
