@@ -24,9 +24,20 @@ $svg = false;
 $contents = false;
 if ( $pieces >= 2 ) {
    $file = $pieces[count($pieces)-1];
+   if ( ! file_exists($file) ) {
+      $file_with_folder = $pieces[count($pieces)-2] . '/' . $file;
+      if ( strpos($file_with_folder, '..' ) === false ) $file = $file_with_folder;
+   }
+   if ( ! file_exists($file) ) $file = false;
    if ( endsWith($file, '.svg') ) {
         $contents = file_get_contents('svg/'.$file);
         header('Content-Type: image/svg+xml');
+        echo($contents);
+        return;
+   }
+   if ( endsWith($file, '.txt') ) {
+        $contents = file_get_contents($file);
+        header('Content-Type: text/plain');
         echo($contents);
         return;
    }
