@@ -107,6 +107,9 @@ the allowed hosts line (around line 28) to be:
 Leave the __DEBUG__ value set to *True* - we are not really "in production" and if you set this to 
 *False* you will not see error messages when you make mistakes.
 
+Editing Files on PythonAnywhere
+-------------------------------
+
 There are three ways to edit files in your PythonAnywhere environment, ranging from the easiest
 to the coolest.  You only have to edit the file one of these ways.
 
