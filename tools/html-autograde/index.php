@@ -139,8 +139,8 @@ if ( $dueDate->message ) {
 ?>
 <p>
 Here is the specification for this assignment:
-<a href="https://www.wa4e.com/assn/html/" target="_blank">
-https://www.wa4e.com/assn/html/
+<a href="https://www.dj4e.com/assn/dj4e_html.md" target="_blank">
+https://www.dj4e.com/assn/dj4e_html.md
 </a>
 </p>
 <p>

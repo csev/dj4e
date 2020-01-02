@@ -151,7 +151,7 @@ function validateHTML($data) {
         $validator = 'https://validator.w3.org/nu/?out=json&parser=html5';
         echo("Sending ".strlen($data)." characters to the validator.\n$validator ...\n");
         $return = Net::doBody($validator, "POST", $data,
-            "Content-type: text/html; charset=utf-8\nUser-Agent: Autograder_www.wa4e.com");
+            "Content-type: text/html; charset=utf-8\nUser-Agent: Autograder_www.dj4e.com");
 
         // echo(htmlentities(LTI::jsonIndent($return)));
         $json = json_decode($return);
