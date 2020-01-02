@@ -6,12 +6,7 @@ use \Tsugi\Util\Net;
 use \Tsugi\Blob\BlobUtil;
 
 function getTitleString() {
-    global $USER;
-    $retval = '';
-    if ( $USER->displayname && strlen($USER->displayname) > 0 ) {
-        $retval = $USER->displayname . ' ';
-    }
-    $retval .= getTitleCode();
+    $retval = getTitleCode();
     return $retval;
 }
 

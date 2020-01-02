@@ -19,7 +19,6 @@ if ( SettingsForm::handleSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     'a01.php' => 'HTML Validate',
-    'colleen.php' => 'Colleen HTML Assignment 01'
 );
 
 
@@ -149,7 +148,7 @@ the <a href="https://validator.w3.org/nu/" target="_blank">W3C HTML Validator</a
 before submitting this assignment.
 </p>
 <p>
-Make sure your title tag in the HTML contains this:
+Make sure your title tag in the HTML contains this string along with the rest of your title:
 <pre>
 &lt;title&gt; ... <?= htmlentities(getTitleString()) ?> ... &lt;/title&gt;
 </pre>
