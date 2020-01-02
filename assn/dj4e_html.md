@@ -21,7 +21,7 @@ Create a file at `~/django_projects/mysite/site/subfolder/hello.html` with this 
 
     <h1>Hello World</h1>
 
-Change your `mysite/urls.py` to be:
+Change your `~/django_projects/mysite/mysite/urls.py` to be:
 
     import os
     from django.contrib import admin
@@ -43,8 +43,9 @@ Change your `mysite/urls.py` to be:
     ]
 
 Going forward we will be adding entries to this `urlpatterns` variable 
-as we add new features.  Do not remove these entries from your `urls.py`.
-Just add the new entries as required by the upcoming assignments.
+as we add new features.  As you do upcoming assignments,
+do not remove these entries from your `urls.py`.
+Just add the new url pattern entries as required by the upcoming assignments.
 
 Once you have made the changes, you should check for errors using:
 
@@ -58,17 +59,6 @@ reload your application and then test your application by navigating to:
 
     (your-account).pythonanywhere.com
 
-If your application fails to 
-load or reload, you might get an error message that looks
-like <a href="dj4e_html/pyaw_error.htm" target="_blank">this</a>.
-
-If you get an error, you will need to look through the error logs
-under the `Web` tab on PythonAnywhere:
-
-<center><img src="dj4e_html/error_logs.png" style="border: 1px black solid;"></center>
-
-First check the `error` log and then check the `server` log.
-Make sure to scroll through the logs to the end to find the latest error.
 
 
 Testing Your Application
@@ -103,5 +93,57 @@ Go to __(your-account).pythonanywhere.com/site/subfolder/hello.htm__ - you shoul
 see "Hello World" styled using a HTML header tag 
 ( like <a href="dj4e_html/hello.htm" target="_blank">this</a>)
 
+Building Some Validated HTML
+----------------------------
 
+Create a web page in a file named `dj4e.htm` and store it in the `site` folder according
+to these specifications.
 
+Your page will be well-formed HTML5, and indicate that it is in the UTF-8 character set.
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Jane Instructor 4c56ff</title>
+      <meta charset="UTF-8">
+    </head>
+    <body>
+    ...
+    </body>
+    </html>
+
+Your name and code will be different from this example.
+
+Your HTML must pass the validator at:
+
+    https://validator.w3.org/nu/
+
+<center><img src="dj4e_html/02-validator.png" alt="A screen shot of the w3c validator with a successful outcome." width="80%" border="2px"></a></center>
+
+The __title__ tag must contain your name or the string indicated by the autograder.
+
+<center><img src="dj4e_html/01-title-name.png" alt="A screen shot of the autograder user interface." width="80%" border="2px"></a></center>
+
+You must have at least one example of the following tags: __span__, __p__, __div__, __h1__, and __ul__
+
+You must have three __a__ tags and three __li__ tags.
+
+You must have some bold text in the document and some italics
+text in the document but you must use the correct tags (i.e. neither __b__ nor __i__ are allowed).
+
+There is a lot of flexibility within those parameters. 
+
+Common Errors
+--------------
+
+If your application fails to 
+load or reload, you might get an error message that looks
+like <a href="dj4e_html/pyaw_error.htm" target="_blank">this</a>.
+
+If you get an error, you will need to look through the error logs
+under the `Web` tab on PythonAnywhere:
+
+<center><img src="dj4e_html/error_logs.png" style="border: 1px black solid;"></center>
+
+First check the `error` log and then check the `server` log.
+Make sure to scroll through the logs to the end to find the latest error.

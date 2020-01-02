@@ -185,9 +185,7 @@ Once the above configuration is complete, go back to the top of the PYAW
 Web tab, `Reload` your web application, wait a few seconds and check
 that it is up and running:
 
-    http://drchuck.pythonanywhere.com/
-
-Replace `drchuck` with your account on PythonAnywhere.
+    http://(your-account).pythonanywhere.com/
 
 Here is a
 <a href="dj4e_install/index.htm" target="_blank">Sample</a>
