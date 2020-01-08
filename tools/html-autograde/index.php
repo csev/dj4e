@@ -37,13 +37,9 @@ if ( ! $assn || ! isset($assignments[$assn]) ) {
     Settings::linkSet('exercise', $assn);
 }
 
-// Deal with the POST
-if ( isset($_FILES['html_01']) ) {
+// Deal with the GET
+if ( isset($_GET['url']) ) {
     $retval = checkHTMLPost();
-    if ( $retval === true ) {
-        header( 'Location: '.addSession('index.php') ) ;
-        return;
-    }
     if ( is_string($retval) ) {
          $_SESSION['error'] = $retval;
         header( 'Location: '.addSession('index.php') ) ;
@@ -87,7 +83,6 @@ $OUTPUT->flashMessages();
 $OUTPUT->welcomeUserCourse();
 
 $ALL_GOOD = false;
-
 function my_error_handler($errno , $errstr, $errfile, $errline , $trace = false)
 {
     global $OUTPUT, $ALL_GOOD;
@@ -154,13 +149,11 @@ Make sure your title tag in the HTML contains this string along with the rest of
 </pre>
 </p>
 <p>
-<form name="myform" enctype="multipart/form-data" method="post" action="<?= addSession('index.php') ?>">
-Please upload your file containing the HTML.
-<p><input name="html_01" type="file"></p>
-<input type="submit">
-</form>
-</p>
 <?php
+
+$url = getUrl('https://drchuck.pythonanywhere.com/site/dj4e.htm');
+if ( $url === false ) return;
+$passed = 0;
 
 if ( ! isset($_SESSION['html_data']) ) {
     $OUTPUT->footer();
@@ -172,9 +165,7 @@ $possgrade = 0;
 $data = $_SESSION['html_data'];
 unset($_SESSION['html_data']);
 echo("<pre>\n");
-// echo("Input HTML\n");
-// echo(htmlentities($data));
-// echo("\n");
+// echo("Input HTML\n"); echo(htmlentities($data)); echo("\n");
 
 $valid= validateHTML($data);
 

@@ -1,6 +1,7 @@
 <?php
 
 use \Tsugi\Core\LTIX;
+use \Tsugi\Grades\GradeUtil;
 use \Tsugi\Util\LTI;
 use \Tsugi\Util\Net;
 use \Tsugi\Blob\BlobUtil;
@@ -103,21 +104,16 @@ function badmessage($badmessage=false) {
  * (3) True - things are good and the html is in the session
  */
 function checkHTMLPost() {
-    if ( ! isset($_FILES['html_01']) ) return false;
+    if ( ! isset($_GET['url']) ) return false;
 
-    $fdes = $_FILES['html_01'];
-    $filename = isset($fdes['name']) ? basename($fdes['name']) : false;
-     // Check to see if they left off a file
-    if( $fdes['error'] == 4) {
-        return 'Missing file, make sure to select all files before pressing submit';
-    }
+    $fdes = $_GET['url'];
 
-    $data = BlobUtil::uploadFileToString($fdes, false);
+    $data = file_get_contents($fdes);
     if ( $data === false ) {
-        return 'Could not retrieve file data';
+        return 'Could not retrieve file data from '.$fdes;
     }
 
-    if ( count($data) > 250000 ) {
+    if ( strlen($data) > 250000 ) {
         return 'Please upload a file less than 250K';
     }
 
@@ -133,6 +129,7 @@ function checkHTMLPost() {
     }
     
     // Put the data into session to allow us to process this in the GET request
+    // echo("<pre>\n");echo(htmlentities($data));die();
     $_SESSION['html_data'] = $data;
     return true;
 }
@@ -148,7 +145,7 @@ function validateHTML($data) {
         $return = Net::doBody($validator, "POST", $data,
             "Content-type: text/html; charset=utf-8\nUser-Agent: Autograder_www.dj4e.com");
 
-        // echo(htmlentities(LTI::jsonIndent($return)));
+        echo(htmlentities(LTI::jsonIndent($return)));
         $json = json_decode($return);
         if ( !isset($json->messages) || ! is_array($json->messages) ) {
             echo "<span>Did not get a correct response from the validator</span>\n";
@@ -176,4 +173,34 @@ function validateHTML($data) {
         }
     }
     return true;
+}
+
+function getUrl($sample) {
+    global $USER;
+
+    if ( isset($_GET['url']) ) {
+        echo('<p><a href="#" onclick="window.location.href = window.location.href; return false;">Re-run this test</a></p>'."\n");
+        if ( isset($_SESSION['lti']) ) {
+            $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
+        }
+        return $_GET['url'];
+    }
+
+    echo('<form>');
+    echo('<input type="hidden" name="'.session_name().'" value="'.session_id().'">');
+    echo('    Please enter the URL of your web site to grade:<br/>
+        <input type="text" name="url" value="'.$sample.'" size="100"><br/>');
+    echo('<input type="submit" class="btn btn-primary" value="Evaluate">
+        </form>');
+    if ( $USER->displayname ) {
+        echo("By entering a URL in this field and submitting it for
+        grading, you are representing that this is your own work.  Do not submit someone else's
+        web site for grading.
+        ");
+    }
+
+    echo("<p>You can run this autograder as many times as you like and the last submitted
+    grade will be recorded.  Make sure to double-check the course Gradebook to verify
+    that your grade has been sent.</p>\n");
+    return false;
 }
