@@ -86,6 +86,11 @@
     "assignment" : "https://www.dj4e.com/assn/dj4e_install.md",
     "lti" : [
         {
+        "title" : "Quiz: Django Tutorial 1 Concepts",
+        "launch" : "mod/gift/?quiz=02-TUT1.txt",
+        "resource_link_id" : "php_01_tut_quiz"
+        },
+        {
         "title" : "Auto-grader: Installing Django",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj_install",
