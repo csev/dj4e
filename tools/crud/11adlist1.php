@@ -120,7 +120,7 @@ if ( ! webauto_search_for($html, $title) ) {
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one update url like /ad/nnn/update");
+        error_out("Expecting exactly one update url like /ad/nnn/update - found ".count($matches[1]));
         return;
     }
     $match = $matches[1][0];
@@ -201,7 +201,7 @@ preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one update url like /ad/nnn/update");
+        error_out("Expecting exactly one update url like /ad/nnn/update - found".count($matches[1]));
         return;
     }
     $match = $matches[1][0];

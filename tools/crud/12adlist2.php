@@ -50,10 +50,8 @@ $client->setMaxRedirects(5);
 // Load the Favicon
 // https://en.wikipedia.org/wiki/ICO_(file_format)
 
-line_out("Loading the favicon...");
-$favicon_url = $base_url_path . '/favicon.ico';
-$crawler = $client->request('GET', $favicon_url);
-if ( $crawler === false ) {
+$content = get_favicon($client, $base_url_path);
+if ( $content === false ) {
     line_out("Favicon is coming in the next assignment...");
 }
 

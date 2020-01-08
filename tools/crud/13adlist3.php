@@ -50,22 +50,11 @@ $client->setMaxRedirects(5);
 // Load the Favicon
 // https://en.wikipedia.org/wiki/ICO_(file_format)
 
-line_out("Loading the favicon...");
-$favicon_url = $base_url_path . '/favicon.ico';
-$crawler = $client->request('GET', $favicon_url);
-if ( $crawler === false ) {
-    error_out("Unable to load favicon");
-    return;
-}
-$response = $client->getResponse();
-$status = $response->getStatus();
-if ( $status !== 200 ) {
-    error_out("Unable to load favicon status=".$status);
-    return;
-}
-$content = $response->getContent();
+$content = get_favicon($client, $base_url_path);
+if ( $content === false ) return;
 $favlen = strlen($content);
 $favmd5 = md5($content);
+
 // echo("<pre>\n"); echo("Len = ".strlen($content)); echo(" md5 = ".$favmd5);
 
 if ( $favlen == 15406 && $favmd5 == 'da98cfb3992c3d6985fc031320bde065' ) {
@@ -187,6 +176,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
             error_out("Error POSTING to favorite url: ".$match);
             return;
         }
+        $response = $client->getResponse();
         $status = $response->getStatus();
         if ( $status !== 200 ) {
             error_out("Error posting to favorite url: ".$match." status=".$status);
@@ -211,6 +201,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
             error_out("Error POSTING to unfavorite url: ".$match);
             return;
         }
+        $response = $client->getResponse();
         $status = $response->getStatus();
         if ( $status !== 200 ) {
             error_out("Error posting to unfavorite url: ".$match." status=".$status);

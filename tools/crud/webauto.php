@@ -552,14 +552,28 @@ function trimSlash($url) {
     return substr($url, 0, strlen($url)-1);
 }
 
-function get_favicon($client, $favicon_url) {
+function get_favicon($client, $base_url_path) {
+    $favicon_url = $base_url_path . '/favicon.ico';
+
+    line_out("Loading the favicon from ".$favicon_url." ...");
     $crawler = $client->request('GET', $favicon_url);
-    if ( $crawler === false ) {
-        error_out("Unable to load favicon");
-        return false;
+    $status = 404;
+    if ( $crawler !== false ) {
+        $response = $client->getResponse();
+        $status = $response->getStatus();
     }
-    $response = $client->getResponse();
-    $status = $response->getStatus();
+
+    if ( $status != 200 ||$crawler === false ) {
+        $favicon_url = $base_url_path . '/static/favicon.ico';
+        line_out("Loading the favicon from ".$favicon_url." ...");
+        $crawler = $client->request('GET', $favicon_url);
+    }
+
+    if ( $crawler !== false ) {
+        $response = $client->getResponse();
+        $status = $response->getStatus();
+    }
+
     if ( $status !== 200 ) {
         error_out("Unable to load favicon status=".$status);
         return false;
