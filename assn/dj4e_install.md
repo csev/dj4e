@@ -220,21 +220,26 @@ Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the follo
 The `check` does a check for syntax and logic errors in your Django application.
 It is easier to fix errors in the command line.
 And when there are no errors, navigate to the `Web` tab in Python anywhere
-and `Reload` your application.
+and `Reload` your application and then test your application by navigating to:
 
-Every time we make changes to our application, we should run
+    (your-account).pythonanywhere.com/polls
+
+You should see a line that lokos like:
+
+    Hello, world. You're at the polls index.
+
+Going forward, every time we make changes to our application, we should run
 
     python manage.py check
 
-And when that shows no errors, navigate to the `Web`, press `Reload`,
-and then go to your web site to test your changes.  This pattern
+in the shell, and when that shows no errors, navigate to the `Web`, press `Reload`,
+and then go to your web site to test your changes.  This pattern of change, reload, and test
 will become second nature after a while.
-
 
 Possible Errors
 ---------------
 
-If your application fails to
+If your application passed a `check` but fails to
 load or reload, you might get an error message that looks
 like <a href="dj4e_install/pyaw_error.htm" target="_blank">this</a>.
 
