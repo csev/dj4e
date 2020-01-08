@@ -60,14 +60,9 @@ function nameNote($title=false) {
     $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
 ?>
 <p>
-To receive a grade for this assignment, include your name
+To receive a grade for this assignment, include 
+this string <strong><?= $check?></strong>
 <?php
-if ( $USER->displayname ) {
-    echo("(<strong>".htmlentities($USER->displayname)."</strong>) and/or \n");
-} else {
-    echo("and \n");
-}
-echo("this string <strong>".$check."</strong> \n");
 if ( $title ) {
     echo('in the &lt;title&gt; tag in all the pages of your application.');
 } else {
@@ -77,7 +72,7 @@ if ( $title ) {
 </p>
 <p>If you need to run this grading program on an application that is running on your
 laptop or desktop computer with a URL like <strong>http://localhost...</strong> you
-will need to install and use the <a href="http://www.wa4e.com/md/" target="_blank">NGrok or LocalTunnel</a>
+will need to install and use the <a href="http://www.dj4e.com/md/" target="_blank">NGrok or LocalTunnel</a>
 application to get a temporary Internet-accessible URL that can be used with this application.  Make sure to use
 Django's port 8000 and not port 8888 as is used in the above documentation.
 </p>

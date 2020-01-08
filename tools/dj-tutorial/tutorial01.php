@@ -16,9 +16,6 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial01/</a>.
 <?php
 nameNote();
 $message = $check;
-if ( $USER->displayname ) {
-    $message = $USER->displayname . " / ". $check;
-}
 ?>
 Here is a sample of what you might put into your <b>views.py</b>.
 <pre>
@@ -31,7 +28,7 @@ ALLOWED_HOSTS = ['*']
 
 <?php
 
-$url = getUrl('http://dj4e.pythonanywhere.com/polls1');
+$url = getUrl('http://drchuck.pythonanywhere.com/polls');
 if ( $url === false ) return;
 $passed = 0;
 
@@ -48,14 +45,11 @@ webauto_search_for($html, 'Hello');
 
 $check = webauto_get_check();
 
-if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
-    success_out("Found ($USER->displayname) in your html");
-    $passed += 1;
-} else if ( $check && stripos($html,$check) !== false ) {
+if ( $check && stripos($html,$check) !== false ) {
     success_out("Found ($check) in your html");
     $passed += 1;
-} else if ( $USER->displayname ) {
-    error_out("Did not find $USER->displayname or $check in your html");
+} else {
+    error_out("Did not find $check in your html");
     error_out("No score sent");
     return;
 }

@@ -35,7 +35,7 @@ Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 3.
 
     mkvirtualenv django3 --python=/usr/bin/python3.6
-    pip3 install django ## this may take a couple of minutes
+    pip install django ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
@@ -44,7 +44,7 @@ to get back into your virtual environment in the new bash shell.
 
 Lets make sure that your django was installed successfully with the following command:
 
-    python3 -m django --version
+    python -m django --version
     # This should show something like 3.0.2
 
 Installing the Sample Code for DJ4E
@@ -52,13 +52,13 @@ Installing the Sample Code for DJ4E
 
 Lets also get a copy of the sample code for DJ4E checked out so you can look at sample code
 as the course progresses and install some important additional Django software libraries using
-`pip3`.
+`pip`.
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
-    pip3 install -r requirements.txt
-    python3 manage.py check
+    pip install -r requirements.txt
+    python manage.py check
 
 This is the normal output of running `check`:
 
@@ -69,7 +69,7 @@ This is the normal output of running `check`:
 If the `check` identifies errors, stop until there are no errors.  Only take the next steps
 once check sees no errors.  Once the check works do:
 
-    python3 manage.py makemigrations
+    python manage.py makemigrations
 
 This is the normal output of the `makemigrations`:
 
@@ -79,7 +79,7 @@ This is the normal output of the `makemigrations`:
 
 Then run:
 
-    python3 manage.py migrate
+    python manage.py migrate
 
 If you are doing this for the first time, it should run some migrations and create a file `db.sqlite3`.
 
@@ -104,7 +104,7 @@ the allowed hosts line (around line 28) to be:
 
      ALLOWED_HOSTS = [ '*' ]
 
-Leave the __DEBUG__ value set to *True* - we are not really "in production" and if you set this to 
+Leave the __DEBUG__ value set to *True* - we are not really "in production" and if you set this to
 *False* you will not see error messages when you make mistakes.
 
 Editing Files on PythonAnywhere
@@ -166,7 +166,8 @@ envronment is properly set up and configured.
 <a href="paw_install/web_tab.png" target="_blank">Sample image</a>
 
 Then edit the *WGSI Configuration File* and put the following code into it.
-__Make sure to delete the existing content__ of the file and completely replace it with the text below.
+__Make sure to delete the existing content__ of the *WGSI Configuration File* file and completely
+replace it with the text below.
 This is slightly different from the sample in the PythonAnywhere tutorial.
 
     import os
@@ -190,6 +191,45 @@ that it is up and running:
 Here is a
 <a href="dj4e_install/index.htm" target="_blank">Sample</a>
 of what the resulting page should look like.
+
+Adding Your Polls Application
+-----------------------------
+
+At this point, you can add the polls application as shown in the
+<a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
+Django tutorial</a>.
+We are jumping into the middle of this tutorial because
+the first part of the tutorial is installing and configuring Django in general.
+
+The first step is to make the `polls` application:
+
+    cd ~/django_projects/mysite
+    python manage.py startapp polls
+
+Continue to follow the
+<a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
+Django tutorial</a>.
+until you reach the part where it tells you to run this command:
+
+    python manage.py runserver
+
+Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the following command:
+
+    python manage.py check
+
+The `check` does a check for syntax and logic errors in your Django application.
+It is easier to fix errors in the command line.
+And when there are no errors, navigate to the `Web` tab in Python anywhere
+and `Reload` your application.
+
+Every time we make changes to our application, we should run
+
+    python manage.py check
+
+And when that shows no errors, navigate to the `Web`, press `Reload`,
+and then go to your web site to test your changes.  This pattern
+will become second nature after a while.
+
 
 Possible Errors
 ---------------

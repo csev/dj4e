@@ -73,6 +73,54 @@
     ]
 },
 {
+    "title": "Installing Django on PythonAnywhere",
+    "anchor": "dj4e_install",
+    "icon" : "fa-clone",
+    "description": "This walks through the installation steps for Django on PythonAnywhere.  If you cannot use PythonAnywhere, you can also install Django locally and submit assignments your local computer for grading.  Installing Django locally will be described in an upcoming lesson.",
+    "videos" : [
+    {
+        "title": "Installing Django on PythonAnywhere",
+        "youtube": "lPpIubhqWR4"
+    },
+    {
+        "title": "Fixing Django Errors on PythonAnywhere",
+        "youtube": "WE2eJzD6PJ8"
+    }
+  ],
+    "assignment" : "https://www.dj4e.com/assn//dj4e_install.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Installing Django",
+        "launch" : "tools/dj-tutorial/",
+        "resource_link_id" : "dj_install",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "tutorial01.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        },
+        {
+            "title" : "Writing your first Django app, part 1",
+            "href" : "https://docs.djangoproject.com/en/3.0/intro/tutorial01/"
+        },
+        {
+            "title" : "Setting up the django.org tutorial on PythonAnywhere",
+            "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
+        },
+        {
+            "title" : "Using ngrok to submit a local application to the Autograder (optional)",
+            "href" : "/ngrok"
+        }
+    ]
+},
+{
     "title": "HyperText Markup Language (HTML)",
     "anchor": "html",
     "icon" : "fa-html5",
@@ -103,7 +151,7 @@
             "href" : "https://www.dj4e.com/code/html.zip"
         }
     ],
-    "assignment" : "https://www.dj4e.com/assn/html/index.htm",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_html.md",
     "lti" : [
         {
         "title" : "Quiz: HTML",
@@ -112,7 +160,7 @@
         },
         {
         "title" : "Autograder: HyperText Markup Language (HTML)",
-        "launch" : "tools/web-autograde/",
+        "launch" : "tools/html-autograde/",
         "resource_link_id" : "html_01",
         "custom" : [
             {
@@ -120,54 +168,6 @@
                 "value": "a01.php"
             }
         ]
-        }
-    ]
-},
-{
-    "title": "Installing Django on PythonAnywhere",
-    "anchor": "paw_install",
-    "icon" : "fa-clone",
-    "description": "This walks through the installation steps for Django on PythonAnywhere.  If you cannot use PythonAnywhere, you can also install Django locally and submit assignments your local computer for grading.  Installing Django locally will be described in an upcoming lesson.",
-    "videos" : [
-    {
-        "title": "Installing Django on PythonAnywhere",
-        "youtube": "lPpIubhqWR4"
-    },
-    {
-        "title": "Fixing Django Errors on PythonAnywhere",
-        "youtube": "WE2eJzD6PJ8"
-    }
-  ],
-    "assignment" : "https://www.dj4e.com/assn/paw_install.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: Installing Django",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_install",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "01install.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "PythonAnywhere",
-            "href" : "https://www.pythonanywhere.com/"
-        },
-        {
-            "title" : "Setting up a Django Environment (Mozilla Developer Network)",
-            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
-        },
-        {
-            "title" : "Setting up the django.org tutorial on PythonAnywhere",
-            "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
-        },
-        {
-            "title" : "Using ngrok to submit a local application to the Autograder (optional)",
-            "href" : "/ngrok"
         }
     ]
 },

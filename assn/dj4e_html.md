@@ -25,7 +25,7 @@ Change your `~/django_projects/mysite/mysite/urls.py` to be:
 
     import os
     from django.contrib import admin
-    from django.urls import path
+    from django.urls import include, path
     from django.conf.urls import url
     from django.views.static import serve
 
@@ -35,7 +35,7 @@ Change your `~/django_projects/mysite/mysite/urls.py` to be:
 
     urlpatterns = [
         path('admin/', admin.site.urls),
-    
+        path('polls/', include('polls.urls')),                                                                                           
         url(r'^site/(?P<path>.*)$', serve,
             {'document_root': SITE_ROOT, 'show_indexes': True},
             name='site_path'
@@ -50,7 +50,7 @@ Just add the new url pattern entries as required by the upcoming assignments.
 Once you have made the changes, you should check for errors using:
 
     cd ~/django_projects/mysite
-    python3 manage.py check
+    python manage.py check
 
 If the `check` fails, stop and fix any and all errors before continuing.
 
