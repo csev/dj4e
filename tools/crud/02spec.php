@@ -316,19 +316,19 @@ Instructions for using ngrok are available at:
 Please see the process for handing in the <?= $assignment_type_lower ?> at the end of this document.
 </p>
 <p>
-If the autograder complains about a missing "wa4e" meta tag, add or edit it in
+If the autograder complains about a missing "dj4e" meta tag, add or edit it in
 your <b>home/templates/base_bootstrap.html</b> file:
 <pre>
-&lt;meta name="wa4e" content="--provided-by-autograder--"&gt;
+&lt;meta name="dj4e" content="--provided-by-autograder--"&gt;
 </pre>
 If the autograder does not find the tag, it will run all the tests but
 will not treat the grade as official.
 </p>
 <p>
-If the autograder complains about a missing "wa4e-code" meta tag, add or edit it in
+If the autograder complains about a missing "dj4e-code" meta tag, add or edit it in
 your <b>home/templates/base_bootstrap.html</b> file:
 <pre>
-&lt;name="wa4e-code" content="<span id="wa4e-code">missing</span>"&gt;
+&lt;name="dj4e-code" content="<span id="dj4e-code">missing</span>"&gt;
 </pre>
 If you are adding an application to an existing Django project that you have already run through
 the autograder, you probably already have good value for both meta tags in your template file.
@@ -372,7 +372,7 @@ Copyright Creative Commons Attribution 3.0 - Charles R. Severance
 <script>
 var d= new Date();
 var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
-document.getElementById("wa4e-code").innerHTML = code;
+document.getElementById("dj4e-code").innerHTML = code;
 </script>
 </body>
 </html>

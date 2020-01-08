@@ -17,7 +17,7 @@ $title_name = $shuffled[3];
 $full_name = $first_name . ' ' . $last_name;
 $last_first = $last_name . ', ' . $first_name;
 $book_title = "How the Number 42 and $title_name are Connected";
-$meta = '<meta name="wa4e" content="'.$check.'">';
+$meta = '<meta name="dj4e" content="'.$check.'">';
 
 $adminpw = substr(getMD5(),4,9);
 line_out("Exploring Django Views (MDN)");

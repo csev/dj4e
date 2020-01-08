@@ -75,8 +75,8 @@ Checking Your Application Via NGrok
 Construct the ngrok url by removing the "http://localhost:8888" and replace it
 with the ngrok-provided URL:
 
-    Local: http://localhost:8888/wa4e/solutions/guess/guess.php
-    Ngrok: http://f01f774d.ngrok.io/wa4e/solutions/guess/guess.php
+    Local: http://localhost:8888/dj4e/solutions/guess/guess.php
+    Ngrok: http://f01f774d.ngrok.io/dj4e/solutions/guess/guess.php
 
 Test that url in your browser.  The ngrok and local urls should
 return the exact same page.

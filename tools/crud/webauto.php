@@ -112,7 +112,7 @@ if ( $title ) {
 </p>
 <p>If you need to run this grading program on an application that is running on your
 laptop or desktop computer with a URL like <strong>http://localhost...</strong> you
-will need to install and use the <a href="http://www.wa4e.com/md/" target="_blank">NGrok or LocalTunnel</a>
+will need to install and use the <a href="http://www.dj4e.com/md/" target="_blank">NGrok or LocalTunnel</a>
 application to get a temporary Internet-accessible URL that can be used with this application.  Make sure to use
 Django's port 8000 and not port 8888 as is used in the above documentation.
 </p>
@@ -520,7 +520,7 @@ function webauto_check_test() {
     $full_name = $first_name . ' ' . $last_name;
     $last_first = $last_name . ', ' . $first_name;
     $check = '735b90b4568125ed6c3f678819b6e058';
-    $meta = '<meta name="wa4e" content="'.$check.'">';
+    $meta = '<meta name="dj4e" content="'.$check.'">';
     $adminpw = 'dj4e_42_!';
     $useraccount = 'dj4e_user1';
     $userpw = 'Meow_81e728_41!';
@@ -571,11 +571,11 @@ function get_favicon($client, $favicon_url) {
 // Two tons of meta..
 function check_code_and_version($crawler) {
     global $RESULT;
-    $wa4e_code = webauto_get_meta($crawler, 'wa4e-code');
-    $wa4e_version = webauto_get_meta($crawler, 'wa4e-version');
+    $dj4e_code = webauto_get_meta($crawler, 'dj4e-code');
+    $dj4e_version = webauto_get_meta($crawler, 'dj4e-version');
 
-    if ( $wa4e_code == "99999999" ) $wa4e_code = false;
-    if ( strlen($wa4e_code) < 1 && strlen($wa4e_version) ) return;
+    if ( $dj4e_code == "99999999" ) $dj4e_code = false;
+    if ( strlen($dj4e_code) < 1 && strlen($dj4e_version) ) return;
 
     try {
         $json = json_decode($RESULT->getJSON());
@@ -583,18 +583,18 @@ function check_code_and_version($crawler) {
         $json = new \stdClass();
     }
 
-    if ( strlen($wa4e_code) > 0 ) {
-        $wa4e_codes = array();
-        if ( isset($json->wa4e_codes) && is_array($json->wa4e_codes) ) $wa4e_codes = $json->wa4e_codes;
-        if ( ! in_array($wa4e_code, $wa4e_codes) ) $wa4e_codes[] = $wa4e_code;
-        $json->wa4e_codes = $wa4e_codes;
+    if ( strlen($dj4e_code) > 0 ) {
+        $dj4e_codes = array();
+        if ( isset($json->dj4e_codes) && is_array($json->dj4e_codes) ) $dj4e_codes = $json->dj4e_codes;
+        if ( ! in_array($dj4e_code, $dj4e_codes) ) $dj4e_codes[] = $dj4e_code;
+        $json->dj4e_codes = $dj4e_codes;
     }
 
-    if ( strlen($wa4e_version) > 1 ) {
-        $wa4e_versions = array();
-        if ( isset($json->wa4e_versions) && is_array($json->wa4e_versions) ) $wa4e_versions = $json->wa4e_versions;
-        if ( ! in_array($wa4e_version, $wa4e_versions) ) $wa4e_versions[] = $wa4e_version;
-        $json->wa4e_versions = $wa4e_versions;
+    if ( strlen($dj4e_version) > 1 ) {
+        $dj4e_versions = array();
+        if ( isset($json->dj4e_versions) && is_array($json->dj4e_versions) ) $dj4e_versions = $json->dj4e_versions;
+        if ( ! in_array($dj4e_version, $dj4e_versions) ) $dj4e_versions[] = $dj4e_version;
+        $json->dj4e_versions = $dj4e_versions;
     }
     $RESULT->setJSON(json_encode($json));
 }

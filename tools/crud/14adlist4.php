@@ -9,7 +9,7 @@ $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
 
-$meta = '<meta name="wa4e" content="'.$check.'">';
+$meta = '<meta name="dj4e" content="'.$check.'">';
 
 $user1account = 'dj4e_user1';
 $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';

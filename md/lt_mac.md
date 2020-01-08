@@ -81,8 +81,8 @@ Construct the LocalTunnel url by removing
 the "http://localhost:8888" and replace it
 with the LocalTunnel-provided URL:
 
-    Local:  http://localhost:8888/wa4e/solutions/guess/guess.php
-    Tunnel: https://gyxbbjtami.localtunnel.me/wa4e/solutions/guess/guess.php
+    Local:  http://localhost:8888/dj4e/solutions/guess/guess.php
+    Tunnel: https://gyxbbjtami.localtunnel.me/dj4e/solutions/guess/guess.php
 
 Test that url in your browser.  The LocalTunnel and local urls should
 return the exact same page.

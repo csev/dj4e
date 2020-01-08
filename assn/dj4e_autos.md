@@ -127,9 +127,9 @@ make sure that templates are not inadvertently shared across multiple applicatio
 
 * Find the line in your `base_bootstrap.html` that looks like this:
 
-        <meta name="wa4e-code" content="99999999">
+        <meta name="dj4e-code" content="99999999">
 
-   and change the `9999999`  to be "<span id="wa4e-code">missing</span>"
+   and change the `9999999`  to be "<span id="dj4e-code">missing</span>"
 
 Make sure to check the autograder for additional markup requirements.
 
@@ -174,5 +174,5 @@ References
 <script>
 var d= new Date();
 var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
-document.getElementById("wa4e-code").innerHTML = code;
+document.getElementById("dj4e-code").innerHTML = code;
 </script>

@@ -5,7 +5,7 @@
 <head>
     <title>{% block title %}{{ settings.APP_NAME }}{% endblock %}</title>
 
-<meta name="wa4e" content="735b90b4568125ed6c3f678819b6e058">
+<meta name="dj4e" content="735b90b4568125ed6c3f678819b6e058">
 
 <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
