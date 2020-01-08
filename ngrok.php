@@ -15,7 +15,7 @@ Using the Autograder with ngrok
 The assignments for this course are expected to be run on 
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> and as such
 they have a globally accessible URL like
-<a href="https://mdntutorial.pythonanywhere.com" target="_blank">https://mdntutorial.pythonanywhere.com</a>
+<a href="https://drchuck.pythonanywhere.com" target="_blank">https://drchuck.pythonanywhere.com</a>
 and can be directly submitted to the autograder for testing.
 </p>
 <p>

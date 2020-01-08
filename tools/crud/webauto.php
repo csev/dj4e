@@ -504,7 +504,7 @@ function webauto_dont_want($html, $needle)
 
 function webauto_testrun($url) {
     return strpos($url,'dj4e.com') !== false || strpos($url,'index.htm') !== false ||
-        strpos($url,'mdntutorial.pythonanywhere.com') !== false ||
+        strpos($url,'dj4e.pythonanywhere.com') !== false ||
         strpos($url,'http://localhost') !== false;
 }
 
