@@ -80,11 +80,7 @@
     "videos" : [
     {
         "title": "Installing Django on PythonAnywhere",
-        "youtube": "lPpIubhqWR4"
-    },
-    {
-        "title": "Fixing Django Errors on PythonAnywhere",
-        "youtube": "WE2eJzD6PJ8"
+        "youtube": "d32UKww3h1"
     }
   ],
     "assignment" : "https://www.dj4e.com/assn/dj4e_install.md",
