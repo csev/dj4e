@@ -6,21 +6,9 @@ Before you start this assignment, you should already have signed up for a
 account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.
 
-This is adapted from the PYAW documentation for following the Django tutorial.
-
-https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/
-
-Feel free to look at that page as well.
-
-<!--  TODO
 You can view a
-<a href="https://www.youtube.com/watch?v=lPpIubhqWR4&index=2&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z" target="_blank">video walkthrough</a> of this assignment.
--->
-
-You can do all of the assignments on your local computer instead
-of PythonAnywhere.  You will need to use the
-<a href="../ngrok">ngrok</a> application
-to submit your assignments to the autograder.
+<a href="https://www.youtube.com/watch?v=d32UKww3h1c" target="_blank">video walkthrough</a>
+of this assignment.
 
 **Note:** If you are submitting these assignments to the auto grader you
 should complete each assignment and then submit it and get full credit before
