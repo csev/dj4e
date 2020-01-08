@@ -87,7 +87,7 @@
         "youtube": "WE2eJzD6PJ8"
     }
   ],
-    "assignment" : "https://www.dj4e.com/assn//dj4e_install.md",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_install.md",
     "lti" : [
         {
         "title" : "Auto-grader: Installing Django",
