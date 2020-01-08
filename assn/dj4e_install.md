@@ -183,9 +183,7 @@ of what the resulting page should look like.
 Adding Your Polls Application
 -----------------------------
 
-At this point, you can add the polls application as shown in the
-<a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
-Django tutorial</a>.
+At this point, you can add the polls application from the first DJango tutorial.
 We are jumping into the middle of this tutorial because
 the first part of the tutorial is installing and configuring Django in general.
 
@@ -194,10 +192,10 @@ The first step is to make the `polls` application:
     cd ~/django_projects/mysite
     python manage.py startapp polls
 
-Continue to follow the
+Continue to follow the steps outlined in
 <a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
 Django tutorial</a>.
-until you reach the part where it tells you to run this command:
+until you reach the part where the tutorial tells you to run this command:
 
     python manage.py runserver
 
