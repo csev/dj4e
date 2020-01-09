@@ -28,7 +28,7 @@ ALLOWED_HOSTS = ['*']
 
 <?php
 
-$url = getUrl('http://drchuck.pythonanywhere.com/polls');
+$url = getUrl('http://djtutorial.dj4e.com/polls');
 if ( $url === false ) return;
 $passed = 0;
 

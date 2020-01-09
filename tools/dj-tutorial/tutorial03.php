@@ -16,9 +16,6 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial03/</a>.
 <?php
 nameNote();
 $message = $check;
-if ( $USER->displayname ) {
-    $message = $USER->displayname . " / ". $check;
-}
 ?>
 Add the following to your <b>views.py</b> with the required information above.
 <pre>
@@ -44,7 +41,7 @@ and submit your Django polls url to the autograder.
 </p>
 <?php
 
-$url = getUrl('http://dj4e.pythonanywhere.com/polls3');
+$url = getUrl('http://djtutorial.dj4e.com/polls3');
 if ( $url === false ) return;
 $passed = 0;
 

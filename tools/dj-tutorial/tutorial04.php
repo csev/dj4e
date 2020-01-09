@@ -16,9 +16,6 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial04/</a>.
 <?php
 nameNote();
 $message = $check;
-if ( $USER->displayname ) {
-    $message = $USER->displayname . " / ". $check;
-}
 ?>
 Even though this excersise refactors three of your views as generic views, you
 can keep the "owner" view as an old-style view in your <b>views.py</b>.
@@ -47,7 +44,7 @@ Then submit your Django polls url to the autograder.
 </p>
 <?php
 
-$url = getUrl('http://dj4e.pythonanywhere.com/polls4');
+$url = getUrl('http://djtutorial.dj4e.com/polls4');
 if ( $url === false ) return;
 $passed = 0;
 

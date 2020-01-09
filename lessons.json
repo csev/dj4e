@@ -173,44 +173,8 @@
     ]
 },
 {
-    "title": "Installing Django skeleton site",
-    "anchor": "paw_skeleton",
-    "icon" : "fa-cubes",
-    "description": "Skeleton Web Site Tutorial from Mozilla Developers Network.",
-    "videos" : [
-    {
-        "title": "MDN Skeleton Web Site on PythonAnywhere",
-        "youtube": "6_JHiJvXu-I"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/paw_skeleton.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: MDN Skeleton Web Site",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_skeleton",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "03skeleton.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "MDN Skeleton Web Site",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
-        },
-        {
-            "title" : "PythonAnywhere",
-            "href" : "https://www.pythonanywhere.com/"
-        }
-    ]
-},
-{
     "title": "Basic SQL",
-    "anchor": "paw_basic_sql",
+    "anchor": "dj4e_basic_sql",
     "icon" : "fa-database",
     "description": "This is a quick look at databases in general and the basic operations (CRUD) in Structured Query Language (SQL). We don't go too far into SQL because we will be using Django's model capabilities to build the databases for our library application.",
     "videos" : [
@@ -224,6 +188,7 @@
     },
     {
         "title": "Demonstration: Basic SQL",
+        "TODO": "This could be re-recorded or re-edited because it uses the mdntutorial account - but it is all SQL",
         "youtube": "9nZGhDhHRT0"
     }
    ],
@@ -255,7 +220,7 @@
             "href": "https://www.youtube.com/watch?v=rLUm3vst87g"
         },
         {
-            "title" : "Command Shell for SQLite",
+            "title" : "Documentation: Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
         },
         {
@@ -266,9 +231,9 @@
 },
 {
     "title": "Django Data Models",
-    "anchor": "paw_modules",
+    "anchor": "dj4e_modules",
     "icon" : "fa-database",
-    "description": "This section explores how we define models in Django and then we build the data models for the LocalLibrary web site.",
+    "description": "This section explores how we define models in Django and then we build the data models for the polls web site.",
     "slides": "lectures/DJ-02-Model-Single.pptx",
     "videos" : [
     {
@@ -282,38 +247,34 @@
     },
     {
         "title": "Demonstration: Django Single Table Models",
+        "NOTE" : "May not need to re-record - covers DJ-03-Model-Single.txt",
         "youtube": "zULy8o8VK3Q"
-    },
-    {
-        "title": "Demonstration: LocalLibrary Data Models",
-        "youtube": "2-QFePlm7GA"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_models.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Django Models",
-        "launch" : "tools/mdn-sql/",
-        "resource_link_id" : "paw_modules",
+        "title" : "Auto-grader: Django Tutorial part 2",
+        "launch" : "tools/dj-tutorial/",
+        "resource_link_id" : "dj4e_tut_2",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "04models.php"
+                "value": "tutorial02.php"
             }
         ]
         }
     ],
     "references" : [
         {
-            "title" : "Models Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models"
+            "title" : "Writing your first Django app, part 2",
+            "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial02/"
         },
         {
             "title" : "Django Data Model Commands (DJ-02-Model-Single.txt)",
             "href": "https://www.dj4e.com/lectures/DJ-02-Model-Single.txt"
         },
         {
-            "title" : "Command Shell for SQLite",
+            "title" : "Documentation: Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
         },
         {
@@ -324,17 +285,12 @@
 },
 {
     "title": "One-To-Many Data Models",
-    "anchor": "paw_admin",
+    "anchor": "dj4e_one_to_many",
     "icon" : "fa-university",
     "description": "We explore the design of one-to-many data models and add data models to the the LocalLibrary Django admin interface.",
     "TODO" : "Make peer graded model assignment.",
     "slides": "lectures/DJ-03-One-To-Many.pptx",
     "videos" : [
-    {
-        "title": "Django Admin",
-        "youtube": "o_IJCrkEjtQ",
-        "project": ""
-    },
     {
         "title": "One-to-Many Models Overview",
         "youtube": "vgyYEE7XDzw",
@@ -367,27 +323,9 @@
         "project": "DJ 03 Many 06 Shell"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_admin.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: Django admin",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_admin",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "05admin.php"
-            }
-        ]
-        }
-    ],
     "references" : [
         {
-            "title" : "Admin Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site"
-        },
-        {
-            "title" : "Command Shell for SQLite",
+            "title" : "Documentation: Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
         },
         {
@@ -466,12 +404,11 @@
         "youtube": "zpOIeV9HLpc"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_home.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Django Home Page",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_home",
+        "title" : "Auto-grader: Django Tutorial part 3",
+        "launch" : "tools/dj-tutorial/",
+        "resource_link_id" : "dj4e_tut_3",
         "custom" : [
             {
                 "key": "exercise",
@@ -482,8 +419,8 @@
     ],
     "references" : [
         {
-            "title" : "Home Page Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page"
+            "title" : "Writing your first Django app, part 3",
+            "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial03/"
         }
     ]
 },
@@ -492,7 +429,7 @@
     "anchor": "paw_detail",
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Templates.pptx",
-    "description": "We vinally get to looking at the core of a Django application - the views and Templates and build detail views for the LocalLibrary web site.",
+    "description": "We finally get to looking at the core of a Django application - the views and Templates and build detail views for the LocalLibrary web site.",
     "videos" : [
     {
         "title": "URL Routing in Django",
