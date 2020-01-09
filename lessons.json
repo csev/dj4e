@@ -196,7 +196,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Basic SQL",
-        "launch" : "tools/mdn-sql/",
+        "launch" : "tools/sqlite/",
         "resource_link_id" : "paw_basic_sql",
         "custom" : [
             {
@@ -370,7 +370,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Data model",
-        "launch" : "tools/mdn-sql/",
+        "launch" : "tools/sqlite/",
         "resource_link_id" : "dj4e_load",
         "custom" : [
             {
@@ -408,7 +408,7 @@
         "custom" : [
             {
                 "key": "exercise",
-                "value": "06home.php"
+                "value": "tutorial03.php"
             }
         ]
         }
@@ -466,22 +466,17 @@
         "title": "Understanding Django Generic Views",
         "youtube": "uPRabryhv5k",
         "project": "DJ 06 Views 08 Generic"
-    },
-    {
-        "title": "MDN Detail Views",
-        "youtube": "sbu_KNI4Hqk"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_details.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Django Detail Pages",
-        "launch" : "tools/mdn-tutorial/",
-        "resource_link_id" : "paw_detail",
+        "title" : "Auto-grader: Django Tutorial part 4",
+        "launch" : "tools/dj-tutorial/",
+        "resource_link_id" : "dj4e_tut_4",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "07details.php"
+                "value": "tutorial04.php"
             }
         ]
         }
@@ -492,8 +487,8 @@
             "href": "https://www.py4e.com/lessons/Objects"
         },
         {
-            "title" : "Detail Pages Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views"
+            "title" : "Writing your first Django app, part 3",
+            "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial04/"
         },
         {
             "title" : "Django Documentation: Generic display views",
@@ -530,8 +525,8 @@
    ],
     "lti" : [
         {
-        "title" : "Auto-grader: Django Sessions",
-        "launch" : "tools/mdn-tutorial/",
+        "title" : "Auto-grader: TODO Django Sessions",
+        "launch" : "tools/TODO-tutorial/",
         "resource_link_id" : "paw_sessions",
         "custom" : [
             {
@@ -542,10 +537,6 @@
         }
     ],
     "references" : [
-        {
-            "title" : "Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions"
-        }
     ]
 },
 {
@@ -569,17 +560,12 @@
         "title": "Login and Views in Django",
         "project" : "DJ-08-Login-03-Views", 
         "youtube": "n5Xwqz1IJck"
-    },
-    {
-        "title": "Django Users",
-        "youtube": "u5nW_2L1ACA"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_users.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Django Users",
-        "launch" : "tools/mdn-tutorial/",
+        "title" : "Auto-grader: TODO Django Users",
+        "launch" : "tools/TODO-tutorial/",
         "resource_link_id" : "paw_users",
         "custom" : [
             {
@@ -590,10 +576,6 @@
         }
     ],
     "references" : [
-        {
-            "title" : "Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication"
-        }
     ]
 },
 {
@@ -642,25 +624,12 @@
         "title": "Data Validation with Django Forms",
         "project" : "DJ-09-Forms-08-Validation",
         "youtube": "kRXiMIFKzoQ"
-    },
-    {
-        "title": "MDN Tutorial: Django Forms - All Books",
-        "youtube": "IH1aNL2tYIk"
-    },
-    {
-        "title": "MDN Tutorial: Django Forms - Renewal",
-        "youtube": "I8LwvFPi31M"
-    },
-    {
-        "title": "MDN Tutorial: Django Forms - CRUD",
-        "youtube": "VUuV9bENvck"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/paw_forms.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Django Forms and CRUD",
-        "launch" : "tools/mdn-tutorial/",
+        "title" : "Auto-grader: (TODO) Django Forms and CRUD",
+        "launch" : "tools/TODO-tutorial/",
         "resource_link_id" : "paw_forms",
         "custom" : [
             {
@@ -671,14 +640,6 @@
         }
     ],
     "references" : [
-        {
-            "title" : "Authentication Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication"
-        },
-        {
-            "title" : "Forms Tutorial from Mozilla Developers Network",
-            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms"
-        }
     ]
 },
 {
@@ -726,10 +687,6 @@
     "assignment" : "https://www.dj4e.com/assn/dj_install.md",
     "references" : [
         {
-            "title" : "Setting up a Django Environment (Mozilla Developer Network)",
-            "href" : "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment"
-        },
-        {
             "title" : "Using ngrok to submit a local application to the Autograder",
             "href" : "/ngrok"
         }
@@ -740,7 +697,7 @@
     "anchor": "dj4e_hello",
     "icon" : "fa-globe",
     "TODO" : "Need a hello world walkthrough for local and PYAW",
-    "description": "In this assignment we start a completely new Django project that we will use as a base to build our own application going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have depended too much on the MDN tutorial instructions without actually reading the text of the tutorial.",
+    "description": "In this assignment we start a completely new Django project that we will use as a base to build our own application going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have depended too much on the tutorial instructions without actually reading the text of the tutorial.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
     "videos" : [
     {
