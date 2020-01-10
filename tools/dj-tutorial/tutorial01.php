@@ -4,14 +4,22 @@ require_once "webauto.php";
 
 use Goutte\Client;
 
-line_out("Grading Django Tutorial 01");
+line_out("Autograder Django Tutorial 01");
 
 ?>
 <p>
-For this assignment work through Part 1 of the Django tutorial at
+Assignment instructions:
+<a href="https://www.dj4e.com/assn/dj4e_install.md" target="_blank">
+https://www.dj4e.com/assn/dj4e_install.md
+</a>.
+This assignment will cover the material in 
+Part 1 of the Django tutorial at
 <a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/" target="_blank">
-https://docs.djangoproject.com/en/3.0/intro/tutorial01/</a>.
+https://docs.djangoproject.com/en/3.0/intro/tutorial01/</a>
+but since we are doing the installation on PythonAnywhere
 </a>
+you will need to go back and forth between the Django
+tutorial and our instructions to finish the assignment.
 </p>
 <?php
 nameNote();
