@@ -155,9 +155,9 @@
     "assignment" : "https://www.dj4e.com/assn/dj4e_html.md",
     "lti" : [
         {
-        "title" : "Quiz: HTML",
-        "launch" : "mod/gift/?quiz=00-HTML.txt",
-        "resource_link_id" : "dj_01_html_quiz"
+            "title" : "Quiz: HTML",
+            "launch" : "mod/gift/?quiz=00-HTML.txt",
+            "resource_link_id" : "dj_01_html_quiz"
         },
         {
         "title" : "Autograder: HyperText Markup Language (HTML)",
@@ -194,6 +194,11 @@
    ],
     "slides": "lectures/SQL-01-Basics.pptx",
     "lti" : [
+        {
+            "title" : "Quiz: SQL",
+            "launch" : "mod/gift/?quiz=04-SQL.txt",
+            "resource_link_id" : "dj_04_sql_quiz"
+        },
         {
         "title" : "Auto-grader: Basic SQL",
         "launch" : "tools/sqlite/",
@@ -252,6 +257,11 @@
     }
    ],
     "lti" : [
+        {
+            "title" : "Quiz: Django Tutorial 2",
+            "launch" : "mod/gift/?quiz=03-TUT2.txt",
+            "resource_link_id" : "dj_03_tut2_quiz"
+        },
         {
         "title" : "Auto-grader: Django Tutorial part 2",
         "launch" : "tools/dj-tutorial/",
