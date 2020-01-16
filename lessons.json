@@ -258,11 +258,6 @@
    ],
     "lti" : [
         {
-            "title" : "Quiz: Django Tutorial 2",
-            "launch" : "mod/gift/?quiz=03-TUT2.txt",
-            "resource_link_id" : "dj_03_tut2_quiz"
-        },
-        {
         "title" : "Auto-grader: Django Tutorial part 2",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj4e_tut_2",
@@ -272,6 +267,11 @@
                 "value": "tutorial02.php"
             }
         ]
+        },
+        {
+            "title" : "Quiz: Django Tutorial 2",
+            "launch" : "mod/gift/?quiz=03-TUT2.txt",
+            "resource_link_id" : "dj_03_tut2_quiz"
         }
     ],
     "references" : [
