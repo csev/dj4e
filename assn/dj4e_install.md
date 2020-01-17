@@ -153,8 +153,8 @@ so you never have to type "workon django3" and it makes sure your virtual
 envronment is properly set up and configured.
 <a href="paw_install/web_tab.png" target="_blank">Sample image</a>
 
-Then edit the *WGSI Configuration File* and put the following code into it.
-__Make sure to delete the existing content__ of the *WGSI Configuration File* file and completely
+Then edit the *WGSI Configuration* under the `Web` tab and put the following code into it.
+__Make sure to delete the existing content__ of the *WGSI Configuration* file and completely
 replace it with the text below.
 This is slightly different from the sample in the PythonAnywhere tutorial.
 
@@ -169,6 +169,9 @@ This is slightly different from the sample in the PythonAnywhere tutorial.
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
+Do not edit the file `django_projects/mysite/mysite/wsgi.py` - leave this
+file alone - PythonAnywhere ignores this file and looks under the `Web` tab
+for the information.
 
 Once the above configuration is complete, go back to the top of the PYAW
 Web tab, `Reload` your web application, wait a few seconds and check
