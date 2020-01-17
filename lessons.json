@@ -173,6 +173,27 @@
     ]
 },
 {
+    "title": "The Structure of a Django Application",
+    "anchor": "structure",
+    "icon" : "fa-refresh",
+    "description": "We look at the basic structure of a Django web application and how the components / files in a Django application work together to respond to a web request.",
+    "slides": "lectures/DJ-01-Structure.pptx",
+    "videos" : [
+    ],
+    "references" : [
+        {
+            "title" : "Hypertext Transfer Protocol",
+            "href" : "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
+        },
+        {
+            "title" : "What Happens When You Click a Link? - Computerphile",
+            "href" : "https://www.youtube.com/watch?v=keo0dglCj7I"
+        }
+    ],
+    "lti" : [
+    ]
+},
+{
     "title": "Basic SQL",
     "anchor": "dj4e_basic_sql",
     "icon" : "fa-database",
