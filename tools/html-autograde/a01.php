@@ -43,7 +43,7 @@ progressMessage($grade,$possgrade);
 $possgrade++;
 $count = getTagCount($dom, 'b');
 if ( $count >= 1 ) {
-    badmessage('Found at least one b (bold) tag');
+    badmessage('The b tag is not recommended for bold text');
 } else {
     $grade++;
     goodmessage('Did not find any b (bold) tags');
@@ -57,7 +57,7 @@ progressMessage($grade,$possgrade);
 $possgrade++;
 $count = getTagCount($dom, 'i');
 if ( $count >= 1 ) {
-    badmessage('Found at least one i (italics) tag');
+    badmessage('The i tag is not recommended for italics text');
 } else {
     $grade++;
     goodmessage('Did not find any i (italics) tags');
