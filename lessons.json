@@ -322,6 +322,7 @@
         "title" : "Auto-grader: Django Tutorial part 2",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj4e_tut_2",
+        "learning_objectives": "models / admin",
         "custom" : [
             {
                 "key": "exercise",
@@ -453,6 +454,7 @@
         "title" : "Auto-grader: Django Tutorial part 3",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj4e_tut_3",
+        "learning_objectives": "Views / templates",
         "custom" : [
             {
                 "key": "exercise",
@@ -650,6 +652,7 @@
         "title" : "Auto-grader: Django Tutorial part 4",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj4e_tut_4",
+        "learning_objectives": "Forms / CSRF / DB update / Generic Views",
         "custom" : [
             {
                 "key": "exercise",
