@@ -476,6 +476,7 @@ function webauto_search_for_not($html, $needle)
     }
 }
 
+/* Deprecated */
 function webauto_get_url($client, $url, $message=false) {
     return webauto_retrieve_url($client, $url, $message);
 }

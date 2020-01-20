@@ -259,7 +259,7 @@
     "title": "Django Data Models",
     "anchor": "dj4e_modules",
     "icon" : "fa-database",
-    "description": "This section explores how we define models in Django and then we build the data models for the polls web site.",
+    "description": "This section explores how we define models in Django and then we build the data models and explore the administration interface for our application.",
     "slides": "lectures/DJ-02-Model-Single.pptx",
     "videos" : [
     {
@@ -400,6 +400,7 @@
     ],
     "references" : [
         {
+            "TODO": "Need more references",
             "title" : "Writing your first Django app, part 3",
             "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial03/"
         }
@@ -457,17 +458,6 @@
     }
    ],
     "lti" : [
-        {
-        "title" : "Auto-grader: Django Tutorial part 4",
-        "launch" : "tools/dj-tutorial/",
-        "resource_link_id" : "dj4e_tut_4",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "tutorial04.php"
-            }
-        ]
-        }
     ],
     "references" : [
         {
@@ -542,18 +532,22 @@
    ],
     "lti" : [
         {
-        "title" : "Auto-grader: (TODO) Django Forms and CRUD",
-        "launch" : "tools/TODO-tutorial/",
-        "resource_link_id" : "paw_forms",
+        "title" : "Auto-grader: Django Tutorial part 4",
+        "launch" : "tools/dj-tutorial/",
+        "resource_link_id" : "dj4e_tut_4",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "10forms.php"
+                "value": "tutorial04.php"
             }
         ]
         }
     ],
     "references" : [
+        {
+            "title" : "Writing your first Django app, part 4",
+            "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial04/"
+        }
     ]
 },
 {
