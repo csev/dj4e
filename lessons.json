@@ -197,7 +197,7 @@
     "title": "Basic SQL",
     "anchor": "dj4e_basic_sql",
     "icon" : "fa-database",
-    "description": "This is a quick look at databases in general and the basic operations (CRUD) in Structured Query Language (SQL). We don't go too far into SQL because we will be using Django's model capabilities to build the databases for our library application.",
+    "description": "This is a quick look at databases in general and the basic operations (CRUD) in Structured Query Language (SQL). We don't go too far into SQL because we will be using Django's model capabilities to build the databases for our application.",
     "videos" : [
     {
         "title": "How Databases Work",
@@ -318,7 +318,7 @@
     "title": "One-To-Many Data Models",
     "anchor": "dj4e_one_to_many",
     "icon" : "fa-university",
-    "description": "We explore the design of one-to-many data models and add data models to the the LocalLibrary Django admin interface.",
+    "description": "We explore the design of one-to-many data models.",
     "TODO" : "Make peer graded model assignment.",
     "slides": "lectures/DJ-03-One-To-Many.pptx",
     "videos" : [
@@ -420,9 +420,9 @@
 },
 {
     "title": "Understanding Model View Controller (MVC) ",
-    "anchor": "paw_home",
+    "anchor": "dj4e_mvc",
     "icon" : "fa-home",
-    "description": "We cover the concept of the Model-View-Controller (MVC) in web applications and build our first top level view (the home page) for the LocalLibrary web site.",
+    "description": "We cover the concept of the Model-View-Controller (MVC) in web applications.",
     "slides": "lectures/DJ-05-MVC.pptx",
     "videos" : [
     {
@@ -456,7 +456,7 @@
     "anchor": "paw_detail",
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Templates.pptx",
-    "description": "We finally get to looking at the core of a Django application - the views and Templates and build detail views for the LocalLibrary web site.",
+    "description": "We finally get to looking at the core of a Django application - the views and Templates.",
     "videos" : [
     {
         "title": "URL Routing in Django",
@@ -518,20 +518,20 @@
             "href": "https://www.py4e.com/lessons/Objects"
         },
         {
-            "title" : "Writing your first Django app, part 3",
+            "title" : "Writing your first Django app, part 4",
             "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial04/"
         },
         {
             "title" : "Django Documentation: Generic display views",
-            "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/"
+            "href": "https://docs.djangoproject.com/en/3.0/ref/class-based-views/generic-display/"
         },
         {
             "title" : "Django Documentation: Generic list display views",
-            "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
+            "href": "https://docs.djangoproject.com/en/3.0/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
         },
         {
             "title" : "Django Documentation: Generic detail display views",
-            "href": "https://docs.djangoproject.com/en/2.1/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
+            "href": "https://docs.djangoproject.com/en/3.0/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
         }
     ]
 },
@@ -539,7 +539,7 @@
     "title": "Django Cookies and Sessions",
     "anchor": "paw_sessions",
     "icon" : "fa-cookie",
-    "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.  Our exercise uses sessions on the LocalLibrary web site.  This exercise is quite simple so there is no video walkthrough.",
+    "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
     "slides": "lectures/DJ-07-Cookies-Sessions.pptx",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md#TODO",
     "videos" : [
@@ -613,7 +613,7 @@
     "title": "Forms in HTTP, HTML, and Django",
     "anchor": "paw_forms",
     "icon" : "fa-table",
-    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.  In the locallibrary tutorial we build some basic forms and a full set of Create, Read, and Update (CRUD) forms.",
+    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
     "slides": "lectures/DJ-09-Forms.pptx",
     "videos" : [
     {
