@@ -328,6 +328,54 @@
     }
    ],
     "lti" : [
+    ],
+    "references" : [
+    ]
+},
+{
+    "title": "Django Views and Templates",
+    "anchor": "paw_detail",
+    "icon" : "fa-align-left",
+    "slides": "lectures/DJ-06-Views-Templates.pptx",
+    "description": "We finally get to looking at the core of a Django application - the views and Templates.",
+    "videos" : [
+    {
+        "title": "URL Routing in Django",
+        "youtube": "AQFC13D2mRM",
+        "project": "DJ 06 Views 01 Urls"
+    },
+    {
+        "title": "Django Views",
+        "youtube": "9Qk4vJMssMo",
+        "project": "DJ 06 Views 02 Views"
+    },
+    {
+        "title": "Inside Django Views and HTML Escaping in Django",
+        "youtube": "SAAWE4Hz6Mk",
+        "project": "DJ 06 Views 03 Detail"
+    },
+    {
+        "title": "Using Templates in Django",
+        "youtube": "mTvWrpMGWBA",
+        "project": "DJ 06 Views 04 Templates"
+    },
+    {
+        "title": "Using the Django Template Language (DTL)",
+        "youtube": "teL44ugGpSs",
+        "project": "DJ 06 Views 05 DTL"
+    },
+    {
+        "title": "Django Template Inheritance",
+        "youtube": "IMgml67lH9Y",
+        "project": "DJ 06 Views 06 Inherit"
+    },
+    {
+        "title": "Reversing Django URLs",
+        "youtube": "YT60BZJjySg",
+        "project": "DJ 06 Views 07 Reverse"
+    }
+   ],
+    "lti" : [
         {
         "title" : "Auto-grader: Django Tutorial part 3",
         "launch" : "tools/dj-tutorial/",
@@ -387,46 +435,11 @@
 },
 {
     "title": "Django Views and Templates",
-    "anchor": "paw_detail",
+    "anchor": "django_generic",
     "icon" : "fa-align-left",
-    "slides": "lectures/DJ-06-Views-Templates.pptx",
-    "description": "We finally get to looking at the core of a Django application - the views and Templates.",
+    "slides": "lectures/DJ-06-Views-Generic.pptx",
+    "description": "We look at the generic views capability within Django.",
     "videos" : [
-    {
-        "title": "URL Routing in Django",
-        "youtube": "AQFC13D2mRM",
-        "project": "DJ 06 Views 01 Urls"
-    },
-    {
-        "title": "Django Views",
-        "youtube": "9Qk4vJMssMo",
-        "project": "DJ 06 Views 02 Views"
-    },
-    {
-        "title": "Inside Django Views and HTML Escaping in Django",
-        "youtube": "SAAWE4Hz6Mk",
-        "project": "DJ 06 Views 03 Detail"
-    },
-    {
-        "title": "Using Templates in Django",
-        "youtube": "mTvWrpMGWBA",
-        "project": "DJ 06 Views 04 Templates"
-    },
-    {
-        "title": "Using the Django Template Language (DTL)",
-        "youtube": "teL44ugGpSs",
-        "project": "DJ 06 Views 05 DTL"
-    },
-    {
-        "title": "Django Template Inheritance",
-        "youtube": "IMgml67lH9Y",
-        "project": "DJ 06 Views 06 Inherit"
-    },
-    {
-        "title": "Reversing Django URLs",
-        "youtube": "YT60BZJjySg",
-        "project": "DJ 06 Views 07 Reverse"
-    },
     {
         "title": "Understanding Django Generic Views",
         "youtube": "uPRabryhv5k",
@@ -471,7 +484,7 @@
 },
 {
     "title": "Forms in HTTP, HTML, and Django",
-    "anchor": "paw_forms",
+    "anchor": "dj4e_forms",
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
     "slides": "lectures/DJ-09-Forms.pptx",
