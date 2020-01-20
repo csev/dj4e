@@ -52,7 +52,7 @@ error_log("Tutorial03 ".$owner);
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = webauto_get_url($client, $owner);
+$crawler = webauto_retrieve_url($client, $owner);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'Hello');
@@ -68,15 +68,16 @@ if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
     error_out("No score will be sent, but the test will continue");
 }
 
-$crawler = webauto_get_url($client, $url);
+$crawler = webauto_retrieve_url($client, $url, "Retrieving the list page");
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
-$link = webauto_get_href($crawler, $qtext);
-$passed += 1;
-$url = $link->getURI();
 
-$crawler = webauto_get_url($client, $url);
+$url = webauto_extract_url($crawler, $qtext);
+if ( $url == false ) return;
+$passed += 1;
+
+$crawler = webauto_retrieve_url($client, $url, "Retrieving detail page");
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 

@@ -45,7 +45,7 @@ error_log("Tutorial01 ".$url);
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = webauto_get_url($client, $url);
+$crawler = webauto_retrieve_url($client, $url);
 if ( $crawler === false ) return;
 
 $html = webauto_get_html($crawler);

@@ -44,7 +44,7 @@ error_log("Tutorial02 ".$url);
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = webauto_get_url($client, $admin);
+$crawler = webauto_retrieve_url($client, $admin);
 $html = webauto_get_html($crawler);
 
 // line_out('Looking for the form with a value="Log In" submit button');
@@ -63,9 +63,10 @@ if ( strpos($html,'Log in') > 0 ) {
     line_out("Login successful...");
 }
 
-$link = webauto_get_href($crawler,'Questions');
-$url = $link->getURI();
-$crawler = webauto_get_url($client, $url);
+$url = webauto_extract_url($crawler,'Questions');
+if ( $url == false ) return;
+
+$crawler = webauto_retrieve_url($client, $url);
 $html = webauto_get_html($crawler);
 
 markTestPassed('Questions page retrieved');

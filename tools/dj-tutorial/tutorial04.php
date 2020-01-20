@@ -24,7 +24,7 @@ can keep the "owner" view as an old-style view in your <b>views.py</b>.
         return HttpResponse("Hello, world. <?= $message ?> is the polls owner.")
 
 </pre>
-You can mix old ans new styles in your <b>urls.py</b> file as shown below:
+You can mix function and class views in your <b>urls.py</b> file as shown below:
 <pre>
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
@@ -55,7 +55,7 @@ error_log("Tutorial04 ".$owner);
 $client = new Client();
 $client->setMaxRedirects(5);
 
-$crawler = webauto_get_url($client, $owner);
+$crawler = webauto_retrieve_url($client, $owner);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'Hello');
@@ -71,14 +71,14 @@ if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
     error_out("No score will be sent, but the test will continue");
 }
 
-$crawler = webauto_get_url($client, $url);
+$crawler = webauto_retrieve_url($client, $url);
 $html = webauto_get_html($crawler);
 
-$link = webauto_get_href($crawler, $qtext);
+$url = webauto_extract_url($crawler, $qtext);
+if ( $url == false ) return;
 $passed += 1;
-$url = $link->getURI();
 
-$crawler = webauto_get_url($client, $url);
+$crawler = webauto_retrieve_url($client, $url);
 $html = webauto_get_html($crawler);
 
 line_out("Looking for '$qtext' in the detail response");

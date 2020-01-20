@@ -4,8 +4,8 @@
 use \Tsugi\Grades\GradeUtil;
 
 // A library for webscraping graders
-require_once "lib/goutte/vendor/autoload.php";
-require_once "lib/goutte/Goutte/Client.php";
+require_once "../crud/lib/goutte/vendor/autoload.php";
+require_once "../crud/lib/goutte/Goutte/Client.php";
 
 use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
@@ -19,10 +19,46 @@ if ( $dueDate->message ) {
 }
 
 function webauto_get_html($crawler) {
-    if ( $crawler == false ) return false;
-    $html = $crawler->html();
+    try {
+        $html = $crawler->html();
+    }
+    catch (Exception $e) {
+        error_log("Could not find HTML ".$e->getMessage());
+        throw new Exception("Could not retrieve HTML from page");
+    }
+    if ( strpos($html,"<th>Exception Value:</th>") > 0 ) {
+        $title = false;
+        try {
+            $nodeValues = $crawler->filter('title')->each(function ($node, $i) {
+                return $node->text();
+            });
+            if ( is_array($nodeValues) && count($nodeValues) ) $title = $nodeValues[0];
+        } catch(Exception $e) {
+            echo("<p>Badly formatted URL</p>\n");
+        }
+        line_out("It appears that there is a Django error on this page");
+        if ( $title ) error_out($title);
+    }
     showHTML("Show retrieved page",$html);
     return $html;
+}
+
+function webauto_get_meta($crawler, $name) {
+    try {
+        $retval = $crawler->filterXpath('//meta[@name="'.$name.'"]')->attr('content');
+        if ( $retval == '42-42' ) $retval = false;
+    } catch(Exception $e) {
+        $retval = false;
+    }
+    // TODO: Remove after 2019 Fall
+    if ( ! $retval ) {
+        try {
+            $retval = $crawler->filterXpath('//meta[@name="'.$name.'"]')->attr('value');
+        } catch(Exception $e) {
+            $retval = false;
+        }
+    }
+    return $retval;
 }
 
 function showHTML($message, $html) {
@@ -36,12 +72,11 @@ function showHTML($message, $html) {
     echo("\n<pre>\n");
     echo(htmlentities($html));
     echo("\n</pre>\n");
-    
 }
 
 function getMD5() {
     global $USER, $LINK, $CONTEXT;
-    $check = md5($USER->id+$LINK->id+$CONTEXT->id);
+    $check = md5($USER->id+$CONTEXT->id);
     return $check;
 }
 
@@ -60,9 +95,14 @@ function nameNote($title=false) {
     $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
 ?>
 <p>
-To receive a grade for this assignment, include 
-this string <strong><?= $check?></strong>
+To receive a grade for this assignment, include your name
 <?php
+if ( $USER->displayname ) {
+    echo("(<strong>".htmlentities($USER->displayname)."</strong>) and/or \n");
+} else {
+    echo("and \n");
+}
+echo("this string <strong>".$check."</strong> \n");
 if ( $title ) {
     echo('in the &lt;title&gt; tag in all the pages of your application.');
 } else {
@@ -70,19 +110,18 @@ if ( $title ) {
 }
 ?>
 </p>
-<!--
 <p>If you need to run this grading program on an application that is running on your
 laptop or desktop computer with a URL like <strong>http://localhost...</strong> you
 will need to install and use the <a href="http://www.dj4e.com/md/" target="_blank">NGrok or LocalTunnel</a>
 application to get a temporary Internet-accessible URL that can be used with this application.  Make sure to use
 Django's port 8000 and not port 8888 as is used in the above documentation.
 </p>
--->
 <?php
 }
 
 function getUrl($sample) {
     global $USER, $access_code;
+    global $base_url_path;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -99,11 +138,27 @@ function getUrl($sample) {
     }
 
     if ( isset($_GET['url']) ) {
-        echo('<p><a href="#" onclick="window.location.href = window.location.href; return false;">Re-run this test</a></p>'."\n");
+        echo('<p><a href="#" id="test-rerun" onclick="$(\'#test-rerun\').text(\'Test running...\');');
+        echo('window.location.href = window.location.href; return false;">Re-run this test</a>'."\n");
+        echo("</p>\n");
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
-        return $_GET['url'];
+
+
+        try {
+            $pieces = parse_url(trim($_GET['url']));
+            if ( isset($pieces['scheme']) && isset($pieces['host']) ) {
+                $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
+                if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
+                    $base_url_path .= ':' . $pieces['port'];
+                }
+                return trim($_GET['url']);
+            }
+            echo("<p>Badly formatted URL</p>\n");
+        } catch(Exception $e) {
+            echo("<p>Badly formatted URL</p>\n");
+        }
     }
 
     echo('<form>');
@@ -111,7 +166,7 @@ function getUrl($sample) {
     echo('    Please enter the URL of your web site to grade:<br/>
         <input type="text" name="url" value="'.$sample.'" size="100"><br/>');
     if ( isset($_GET['code']) ) {
-        echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>'); 
+        echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>');
     }
     echo('<input type="submit" class="btn btn-primary" value="Evaluate">
         </form>');
@@ -143,9 +198,9 @@ function checkPostRedirect($client) {
 function markTestPassed($message=false) {
     global $passed;
     if ( $message ) {
-        success_out("Test passed: ".$message);
+        success_out("Test completed: ".$message);
     } else {
-        success_out("Test passed.");
+        success_out("Test completed.");
     }
     $passed++;
 }
@@ -153,7 +208,7 @@ function markTestPassed($message=false) {
 function webauto_test_passed($grade, $url) {
     global $USER, $OUTPUT;
 
-    success_out("Test passed - congratulations");
+    success_out("Test completed - congratulations");
 
     if ( ! $USER->displayname || ! isset($_SESSION['lti']) ) {
         line_out('Not setup to return a grade..');
@@ -212,15 +267,20 @@ function autoToggle() {
 }
 
 function webauto_get_check() {
-    global $USER, $LINK, $CONTEXT;
-    $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
+    $check = substr(webauto_get_check_full(),0,8);
+    return $check;
+}
+
+function webauto_get_check_full() {
+    global $USER, $CONTEXT;
+    $check = md5($USER->id+$CONTEXT->id);
     return $check;
 }
 
 
 function webauto_check_title($crawler) {
     global $USER, $LINK, $CONTEXT;
-    $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
+    $check = webauto_get_check();
 
     try {
         $title = $crawler->filter('title')->text();
@@ -265,7 +325,7 @@ function webauto_check_post_redirect($client) {
     }
 }
 
-function webauto_get_radio_button_choice($form,$field_name,$choice) 
+function webauto_get_radio_button_choice($form,$field_name,$choice)
 {
     line_out("Looking for '$field_name' with '$choice' as the label");
     if ($form->has($field_name) ) {
@@ -294,13 +354,27 @@ function webauto_get_radio_button_choice($form,$field_name,$choice)
     return false;
 }
 
-function webauto_get_form_with_button($crawler,$text) 
+function webauto_get_form_with_button($crawler,$text, $text2=false)
 {
-    $html = $crawler->html();;
     $msg = 'Did not find form with a "'.$text.'" button';
-    if ( strpos($html, $text) === false) {
+    if ( ! is_object($crawler) ) {
         line_out($msg);
         throw new Exception($msg);
+    }
+    $html = $crawler->html();;
+    if ( strpos($html, $text) === false && strpos($html, $text2) === false) {
+        line_out($msg);
+        throw new Exception($msg);
+    }
+
+    if ( is_string($text2) ) {
+        try {
+            $form = $crawler->selectButton($text2)->form();
+            markTestPassed('Found form with "'.$text2.'" button');
+            return $form;
+        } catch(Exception $ex) {
+            // pass and drop through
+        }
     }
 
     try {
@@ -313,13 +387,14 @@ function webauto_get_form_with_button($crawler,$text)
     }
 }
 
-function webauto_get_href($crawler,$text) 
+function webauto_get_href($crawler,$text)
 {
     if ( $crawler == false ) return false;
-    $html = $crawler->html();;
+    $html = $crawler->html();
     $msg = 'Did not find anchor tag with"'.$text.'"';
     if ( strpos($html, $text) === false) {
-        line_out($msg);
+        if ( stripos($html, $text) !== false ) $msg .= ' (check your case)';
+        error_out($msg);
         throw new Exception($msg);
     }
 
@@ -333,6 +408,23 @@ function webauto_get_href($crawler,$text)
     }
 }
 
+function webauto_get_url_from_href($crawler,$text)
+{
+    $href = webauto_get_href($crawler,$text);
+    if ( ! $href ) return false;
+    $url = $href->getURI();
+    return $url;
+}
+
+function webauto_extract_url($crawler,$text)
+{
+    try {
+        $url = webauto_get_url_from_href($crawler,$text);
+    } catch(Exception $ex) {
+        return false;
+    }
+    return $url;
+}
 
 // http://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
 function webauto_change_form($form, $name, $value)
@@ -340,7 +432,7 @@ function webauto_change_form($form, $name, $value)
     try {
         $x = $form->get($name);
     } catch(Exception $ex) {
-        $msg = 'Did not find form field named "'.$name;
+        $msg = 'Did not find form field named "'.$name.'"';
         error_out($msg);
         throw new Exception($msg);
     }
@@ -348,7 +440,7 @@ function webauto_change_form($form, $name, $value)
     $x->setValue($value);
 }
 
-function webauto_search_for_many($html, $needles) 
+function webauto_search_for_many($html, $needles)
 {
     $retval = true;
     foreach($needles as $needle ) {
@@ -360,7 +452,11 @@ function webauto_search_for_many($html, $needles)
 
 function webauto_search_for($html, $needle)
 {
-    if ( stripos($html,$needle) > 0 ) {
+    if ( strpos($html,$needle) > 0 ) {
+        markTestPassed("Found '$needle'");
+        return true;
+    } else if ( stripos($html,$needle) > 0 ) {
+        error_out("Warning: Found '$needle' but with incorrect case");
         markTestPassed("Found '$needle'");
         return true;
     } else {
@@ -369,17 +465,38 @@ function webauto_search_for($html, $needle)
     }
 }
 
+function webauto_search_for_not($html, $needle)
+{
+    if ( stripos($html,$needle) === false ) {
+        markTestPassed("Did not find '$needle'");
+        return true;
+    } else {
+        error_out("Should not have found '$needle'");
+        return false;
+    }
+}
+
+function webauto_get_url($client, $url, $message=false) {
+    return webauto_retrieve_url($client, $url, $message);
+}
+
 /* Returns a crawler */
-function webauto_get_url($client, $url) {
+function webauto_retrieve_url($client, $url, $message=false) {
+    global $base_url_path;
     line_out(" ");
-    line_out("Retrieving ".htmlentities($url)." ...");
+    if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
+    echo("<b>Loading URL:</b> ".htmlentities($url));
+    $the_url = str_replace('"',"&quot;", $url);
+    if ( strpos($the_url, '/') === 0 ) $the_url = $base_url_path . $the_url;
+    echo(' (<a href="'.$the_url.'" target="_blank">Open URL</a>)');
+    echo("<br/>\n");
     flush();
     try {
         $crawler = $client->request('GET', $url);
         $response = $client->getResponse();
         $status = $response->getStatus();
         if ( $status != 200 ) {
-            line_out("Page may have errors, HTTP status=$status");
+            error_out("Page may have errors, HTTP status=$status");
         }
     } catch(\Exception $e) {
         error_out($e->getMessage());
@@ -398,3 +515,115 @@ function webauto_dont_want($html, $needle)
         return false;
     }
 }
+
+function webauto_testrun($url) {
+    return strpos($url,'dj4e.com') !== false || strpos($url,'index.htm') !== false ||
+        strpos($url,'dj4e.pythonanywhere.com') !== false ||
+        strpos($url,'http://localhost') !== false;
+}
+
+function webauto_check_test() {
+    global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
+    global $user1account, $user1pw, $user2account, $user2pw, $check;
+    if ( ! webauto_testrun($url) ) return;
+    error_out('Test run - switching to sample data');
+    $first_name = 'Jamal';
+    $last_name = 'Michaella';
+    $title_name = 'Darryl';
+    $book_title = "How the Number 42 and $title_name are Connected";
+    $full_name = $first_name . ' ' . $last_name;
+    $last_first = $last_name . ', ' . $first_name;
+    $check = '735b90b4568125ed6c3f678819b6e058';
+    $meta = '<meta name="dj4e" content="'.$check.'">';
+    $adminpw = 'dj4e_42_!';
+    $useraccount = 'dj4e_user1';
+    $userpw = 'Meow_81e728_41!';
+    $user1account = 'dj4e_user1';
+    $user1pw = 'Meow_81e728_41';
+    $user2account = 'dj4e_user2';
+    $user2pw = 'Meow_42_81e728';
+}
+
+// <option value="46">LU_42</option></select>
+function quoteBack($html, $pos) {
+    $end = -1;
+    for($i=$pos; $i > 0; $i-- ){
+        if ( $end == -1 && $html[$i] == '"' ) {
+            $end = $i;
+            continue;
+        }
+        if ( $end != -1 && $html[$i] == '"' ) {
+            return substr($html, $i+1, $end-$i-1);
+        }
+    }
+    return "";
+}
+
+function trimSlash($url) {
+    if ( strlen($url) < 2 ) return($url);
+    $ch = substr($url, strlen($url)-1, 1);
+    if ( $ch != '/' ) return $url;
+    return substr($url, 0, strlen($url)-1);
+}
+
+function get_favicon($client, $base_url_path) {
+    $favicon_url = $base_url_path . '/favicon.ico';
+
+    line_out("Loading the favicon from ".$favicon_url." ...");
+    $crawler = $client->request('GET', $favicon_url);
+    $status = 404;
+    if ( $crawler !== false ) {
+        $response = $client->getResponse();
+        $status = $response->getStatus();
+    }
+
+    if ( $status != 200 ||$crawler === false ) {
+        $favicon_url = $base_url_path . '/static/favicon.ico';
+        line_out("Loading the favicon from ".$favicon_url." ...");
+        $crawler = $client->request('GET', $favicon_url);
+    }
+
+    if ( $crawler !== false ) {
+        $response = $client->getResponse();
+        $status = $response->getStatus();
+    }
+
+    if ( $status !== 200 ) {
+        error_out("Unable to load favicon status=".$status);
+        return false;
+    }
+    $content = $response->getContent();
+    return $content;
+}
+
+// Two tons of meta..
+function check_code_and_version($crawler) {
+    global $RESULT;
+    $dj4e_code = webauto_get_meta($crawler, 'dj4e-code');
+    $dj4e_version = webauto_get_meta($crawler, 'dj4e-version');
+
+    if ( $dj4e_code == "99999999" ) $dj4e_code = false;
+    if ( strlen($dj4e_code) < 1 && strlen($dj4e_version) ) return;
+
+    try {
+        $json = json_decode($RESULT->getJSON());
+    } catch(Exception $e) {
+        $json = new \stdClass();
+    }
+
+    if ( strlen($dj4e_code) > 0 ) {
+        $dj4e_codes = array();
+        if ( isset($json->dj4e_codes) && is_array($json->dj4e_codes) ) $dj4e_codes = $json->dj4e_codes;
+        if ( ! in_array($dj4e_code, $dj4e_codes) ) $dj4e_codes[] = $dj4e_code;
+        $json->dj4e_codes = $dj4e_codes;
+    }
+
+    if ( strlen($dj4e_version) > 1 ) {
+        $dj4e_versions = array();
+        if ( isset($json->dj4e_versions) && is_array($json->dj4e_versions) ) $dj4e_versions = $json->dj4e_versions;
+        if ( ! in_array($dj4e_version, $dj4e_versions) ) $dj4e_versions[] = $dj4e_version;
+        $json->dj4e_versions = $dj4e_versions;
+    }
+    $RESULT->setJSON(json_encode($json));
+}
+
