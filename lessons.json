@@ -57,12 +57,12 @@
         {
         "title" : "Quiz: Request-Response Cycle",
         "launch" : "mod/gift/?quiz=01-Request-Response.txt",
-        "resource_link_id" : "php_01_rrc_quiz"
+        "resource_link_id" : "dj4e_01_rrc_quiz"
         },
         {
         "title" : "Autograder: Request-Response Cycle",
         "launch" : "tools/autograder/",
-        "resource_link_id" : "php_01_rrc",
+        "resource_link_id" : "dj4e_01_rrc",
         "custom" : [
             {
                 "key": "exercise",
@@ -88,7 +88,7 @@
         {
         "title" : "Quiz: Django Tutorial 1 Concepts",
         "launch" : "mod/gift/?quiz=02-TUT1.txt",
-        "resource_link_id" : "php_01_tut_quiz"
+        "resource_link_id" : "dj4e_01_tut_quiz"
         },
         {
         "title" : "Auto-grader: Installing Django",
@@ -328,6 +328,11 @@
     }
    ],
     "lti" : [
+        {
+        "title" : "Quiz: Model-View-Controller",
+        "launch" : "mod/gift/?quiz=05-MVC.txt",
+        "resource_link_id" : "dj4e_01_mvc_quiz"
+        }
     ],
     "references" : [
     ]
