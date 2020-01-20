@@ -315,110 +315,6 @@
     ]
 },
 {
-    "title": "One-To-Many Data Models",
-    "anchor": "dj4e_one_to_many",
-    "icon" : "fa-university",
-    "description": "We explore the design of one-to-many data models.",
-    "TODO" : "Make peer graded model assignment.",
-    "slides": "lectures/DJ-03-One-To-Many.pptx",
-    "videos" : [
-    {
-        "title": "One-to-Many Models Overview",
-        "youtube": "vgyYEE7XDzw",
-        "project": "DJ 03 Many 01 Overview"
-    },
-    {
-        "title": "Removing Replication in One-to-Many Models",
-        "youtube": "JCQYxILYNIE",
-        "project": "DJ 03 Many 02 Replication"
-    },
-    {
-        "title": "Storing Primary and Foreign Keys in a Database",
-        "youtube": "xmyE-zQaBEI",
-        "project": "DJ 03 Many 03 Physical"
-    },
-    {
-        "title": "Representing One-To-Many Models in Django",
-        "youtube": "9t-bP963_jY",
-        "project": "DJ 03 Many 04 Django"
-    },
-    {
-        "title": "Data Model Migration in Django",
-        "youtube": "YqARGlI6bGc",
-        "project": "DJ 03 Many 05 Migrate",
-        "meta": "Remove after Fall 2019 - moved to DJ-02"
-    },
-    {
-        "title": "Using the Django Shell to Explore One-to-Many Models",
-        "youtube": "ZdLpAtfWfZk",
-        "project": "DJ 03 Many 06 Shell"
-    }
-   ],
-    "references" : [
-        {
-            "title" : "Documentation: Command Shell for SQLite",
-            "href": "https://www.sqlite.org/cli.html"
-        },
-        {
-            "title" : "SQLite Browser",
-            "href": "https://sqlitebrowser.org/"
-        }
-    ]
-},
-{
-    "title": "Many-To-Many Data Models",
-    "anchor": "dj4e_load",
-    "icon" : "fa-arrows",
-    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
-    "slides": "lectures/DJ-04-Many-To-Many.pptx",
-    "videos" : [
-    {
-        "title": "Many-to-Many Overview",
-        "youtube": "JI4ZOFOubLY",
-        "project" : "DJ 04 Many 01 Overview"
-    },
-    {
-        "title": "A Simple Many-To-Many Example in Django",
-        "youtube": "gf2-J9YOMcc",
-        "project" : "DJ 04 Many 02 Many"
-    },
-    {
-        "title": "Many-To-Many Data Models for Courses and Membership",
-        "youtube": "kY_1a057phM",
-        "project" : "DJ 04 Many 03 Course"
-    },
-    {
-        "title": "Building a Django Batch Script to Load Data from CSV",
-        "youtube": "E8y_6S2Fc5s",
-        "project" : "DJ 04 Many 04 Batch"
-    },
-    {
-        "title": "Demonstration: Django Many-to-One Models",
-        "youtube": "vEkGXH7xSsc"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: Data model",
-        "launch" : "tools/sqlite/",
-        "resource_link_id" : "dj4e_load",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "05many.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "UNESCO World Heritage Sites",
-            "href": "https://whc.unesco.org/en/list/"
-        }
-    ]
-},
-{
     "title": "Understanding Model View Controller (MVC) ",
     "anchor": "dj4e_mvc",
     "icon" : "fa-home",
@@ -536,8 +432,72 @@
     ]
 },
 {
-    "title": "Django Cookies and Sessions",
-    "anchor": "paw_sessions",
+    "title": "Forms in HTTP, HTML, and Django",
+    "anchor": "paw_forms",
+    "icon" : "fa-table",
+    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
+    "slides": "lectures/DJ-09-Forms.pptx",
+    "videos" : [
+    {
+        "title": "Forms, GET, POST, and HTTP",
+        "project" : "DJ-09-Forms-01-getpost",
+        "youtube": "KqH0Pu2ZnIg"
+    },
+    {
+        "title": "Building HTML Forms",
+        "project" : "DJ-09-Forms-02-HTML",
+        "youtube": "iXgnkxwzZzM"
+    },
+    {
+        "title": "Forms and Cross Site Request Forgery (CSRF)",
+        "project" : "DJ-09-Forms-03-CSRF",
+        "youtube": "j-vdshWK9Lc"
+    },
+    {
+        "title": "CSRF Support in Django",
+        "project" : "DJ-09-Forms-04-Form-CSRF",
+        "youtube": "w9Y6tIVGUTI"
+    },
+    {
+        "title": "The POST Refresh Pattern",
+        "project" : "DJ-09-Forms-05-Refresh",
+        "youtube": "Cug7pkRWQM0"
+    },
+    {
+        "title": "Implementing POST Redirect in Django",
+        "project" : "DJ-09-Forms-06-Redirect",
+        "youtube": "a_ahU4F1V2g"
+    },
+    {
+        "title": "Using Django Forms Capabilities",
+        "project" : "DJ-09-Forms-07-FormsPy",
+        "youtube": "bYlgvmAPrp0"
+    },
+    {
+        "title": "Data Validation with Django Forms",
+        "project" : "DJ-09-Forms-08-Validation",
+        "youtube": "kRXiMIFKzoQ"
+    }
+   ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: (TODO) Django Forms and CRUD",
+        "launch" : "tools/TODO-tutorial/",
+        "resource_link_id" : "paw_forms",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "10forms.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+    ]
+},
+{
+    "title": "Cookies and Sessions",
+    "anchor": "dj4e_sessions",
     "icon" : "fa-cookie",
     "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
     "slides": "lectures/DJ-07-Cookies-Sessions.pptx",
@@ -602,70 +562,6 @@
             {
                 "key": "exercise",
                 "value": "09users.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-    ]
-},
-{
-    "title": "Forms in HTTP, HTML, and Django",
-    "anchor": "paw_forms",
-    "icon" : "fa-table",
-    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
-    "slides": "lectures/DJ-09-Forms.pptx",
-    "videos" : [
-    {
-        "title": "Forms, GET, POST, and HTTP",
-        "project" : "DJ-09-Forms-01-getpost",
-        "youtube": "KqH0Pu2ZnIg"
-    },
-    {
-        "title": "Building HTML Forms",
-        "project" : "DJ-09-Forms-02-HTML",
-        "youtube": "iXgnkxwzZzM"
-    },
-    {
-        "title": "Forms and Cross Site Request Forgery (CSRF)",
-        "project" : "DJ-09-Forms-03-CSRF",
-        "youtube": "j-vdshWK9Lc"
-    },
-    {
-        "title": "CSRF Support in Django",
-        "project" : "DJ-09-Forms-04-Form-CSRF",
-        "youtube": "w9Y6tIVGUTI"
-    },
-    {
-        "title": "The POST Refresh Pattern",
-        "project" : "DJ-09-Forms-05-Refresh",
-        "youtube": "Cug7pkRWQM0"
-    },
-    {
-        "title": "Implementing POST Redirect in Django",
-        "project" : "DJ-09-Forms-06-Redirect",
-        "youtube": "a_ahU4F1V2g"
-    },
-    {
-        "title": "Using Django Forms Capabilities",
-        "project" : "DJ-09-Forms-07-FormsPy",
-        "youtube": "bYlgvmAPrp0"
-    },
-    {
-        "title": "Data Validation with Django Forms",
-        "project" : "DJ-09-Forms-08-Validation",
-        "youtube": "kRXiMIFKzoQ"
-    }
-   ],
-    "lti" : [
-        {
-        "title" : "Auto-grader: (TODO) Django Forms and CRUD",
-        "launch" : "tools/TODO-tutorial/",
-        "resource_link_id" : "paw_forms",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "10forms.php"
             }
         ]
         }
@@ -859,6 +755,110 @@
             "title" : "Quiz: Object-Oriented Programming",
             "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
             "resource_link_id" : "dj4e_16_oo_quiz"
+        }
+    ]
+},
+{
+    "title": "One-To-Many Data Models",
+    "anchor": "dj4e_one_to_many",
+    "icon" : "fa-university",
+    "description": "We explore the design of one-to-many data models.",
+    "TODO" : "Make peer graded model assignment.",
+    "slides": "lectures/DJ-03-One-To-Many.pptx",
+    "videos" : [
+    {
+        "title": "One-to-Many Models Overview",
+        "youtube": "vgyYEE7XDzw",
+        "project": "DJ 03 Many 01 Overview"
+    },
+    {
+        "title": "Removing Replication in One-to-Many Models",
+        "youtube": "JCQYxILYNIE",
+        "project": "DJ 03 Many 02 Replication"
+    },
+    {
+        "title": "Storing Primary and Foreign Keys in a Database",
+        "youtube": "xmyE-zQaBEI",
+        "project": "DJ 03 Many 03 Physical"
+    },
+    {
+        "title": "Representing One-To-Many Models in Django",
+        "youtube": "9t-bP963_jY",
+        "project": "DJ 03 Many 04 Django"
+    },
+    {
+        "title": "Data Model Migration in Django",
+        "youtube": "YqARGlI6bGc",
+        "project": "DJ 03 Many 05 Migrate",
+        "meta": "Remove after Fall 2019 - moved to DJ-02"
+    },
+    {
+        "title": "Using the Django Shell to Explore One-to-Many Models",
+        "youtube": "ZdLpAtfWfZk",
+        "project": "DJ 03 Many 06 Shell"
+    }
+   ],
+    "references" : [
+        {
+            "title" : "Documentation: Command Shell for SQLite",
+            "href": "https://www.sqlite.org/cli.html"
+        },
+        {
+            "title" : "SQLite Browser",
+            "href": "https://sqlitebrowser.org/"
+        }
+    ]
+},
+{
+    "title": "Many-To-Many Data Models",
+    "anchor": "dj4e_load",
+    "icon" : "fa-arrows",
+    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
+    "slides": "lectures/DJ-04-Many-To-Many.pptx",
+    "videos" : [
+    {
+        "title": "Many-to-Many Overview",
+        "youtube": "JI4ZOFOubLY",
+        "project" : "DJ 04 Many 01 Overview"
+    },
+    {
+        "title": "A Simple Many-To-Many Example in Django",
+        "youtube": "gf2-J9YOMcc",
+        "project" : "DJ 04 Many 02 Many"
+    },
+    {
+        "title": "Many-To-Many Data Models for Courses and Membership",
+        "youtube": "kY_1a057phM",
+        "project" : "DJ 04 Many 03 Course"
+    },
+    {
+        "title": "Building a Django Batch Script to Load Data from CSV",
+        "youtube": "E8y_6S2Fc5s",
+        "project" : "DJ 04 Many 04 Batch"
+    },
+    {
+        "title": "Demonstration: Django Many-to-One Models",
+        "youtube": "vEkGXH7xSsc"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Data model",
+        "launch" : "tools/sqlite/",
+        "resource_link_id" : "dj4e_load",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05many.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "UNESCO World Heritage Sites",
+            "href": "https://whc.unesco.org/en/list/"
         }
     ]
 },
