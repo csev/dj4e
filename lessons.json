@@ -386,6 +386,11 @@
                 "value": "tutorial03.php"
             }
         ]
+        },
+        {
+            "title" : "Quiz: Django Tutorial 3",
+            "launch" : "mod/gift/?quiz=03-TUT3.txt",
+            "resource_link_id" : "dj_tut3_quiz"
         }
     ],
     "references" : [
