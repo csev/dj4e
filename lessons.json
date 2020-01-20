@@ -334,7 +334,7 @@
 },
 {
     "title": "Django Views and Templates",
-    "anchor": "paw_detail",
+    "anchor": "django_views",
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Templates.pptx",
     "description": "We finally get to looking at the core of a Django application - the views and Templates.",
@@ -434,7 +434,7 @@
     ]
 },
 {
-    "title": "Django Views and Templates",
+    "title": "Django Generic Views",
     "anchor": "django_generic",
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Generic.pptx",
