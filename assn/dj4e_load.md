@@ -24,15 +24,15 @@ Getting Started
 We will do this assignment within your library application but it will not have any user
 interface other than using the admin interface to verify that your application is working.
 
-Make new application under your `django_projects/locallibrary` called `unesco`.
+Make new application under your `django_projects/mysite` called `unesco`.
 
-    cd ~/django_projects/locallibrary
+    cd ~/django_projects/mysite
     python3 manage.py startapp unesco
 
 Also make a folder called `scripts` and add an `__init__.py` file to it.  The `__init__.py` file
 is needed in order to store Python objects in the `scripts` folder.
 
-    cd ~/django_projects/locallibrary
+    cd ~/django_projects/mysite
     mkdir scripts
     touch scripts/__init__.py
 
@@ -40,13 +40,12 @@ Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
 https://github.com/csev/dj4e-samples/tree/master/scripts
 
-This is probably redundant, but make sure you are in your `django3` virtual environment and
 install `django extensions`:
 
     workon django3                     # If necessary
     pip3 install django_extensions
 
-Add the following line to your `locallibrary/locallibrary/settings.py`:
+Add the following line to your `mysite/mysite/settings.py`:
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -123,7 +122,7 @@ Also add the models to `unesco/admin.py` so you can view them in the administrat
 Once you have your model built, run `makemigrations` and `migrate` to create
 the database.
 
-    cd ~/django_projects/locallibrary
+    cd ~/django_projects/mysite
     python3 manage.py makemigrations
     python3 manage.py migrate
 
@@ -232,9 +231,9 @@ it into the right tables:
 Once This Assignment is Done
 ----------------------------
 
-We added this project to `locallibrary` and added the models to the admin user interface so
+We added this project to `mysite` and added the models to the admin user interface so
 you could look at them, but you might not want to see the `unesco` data from this point forward.
-Simply comment out the line in `locallibrary/locallibrary/settings.py` as follows:
+Simply comment out the line in `mysite/mysite/settings.py` as follows:
 
     INSTALLED_APPS = [
         'django.contrib.admin',
