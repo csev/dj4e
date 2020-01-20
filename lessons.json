@@ -335,6 +335,14 @@
         }
     ],
     "references" : [
+        {
+            "title" : "Model-View-Controller (Wikipedia)",
+            "href": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
+        },
+        {
+            "title" : "Django and MVC (FAQ)",
+            "href": "https://docs.djangoproject.com/en/3.0/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names"
+        }
     ]
 },
 {
@@ -400,9 +408,36 @@
     ],
     "references" : [
         {
-            "TODO": "Need more references",
             "title" : "Writing your first Django app, part 3",
             "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial03/"
+        },
+        {
+            "title" : "Django URL Routing",
+            "href": "https://docs.djangoproject.com/en/3.0/topics/http/urls/"
+        },
+        {
+            "title" : "Django Templates",
+            "href": "https://docs.djangoproject.com/en/3.0/topics/templates/"
+        },
+        {
+            "title" : "Django HttpRequest Object",
+            "href": "https://docs.djangoproject.com/en/3.0/ref/request-response/#django.http.HttpRequest"
+        },
+        {
+            "title" : "Django HttpResponse Object",
+            "href": "https://docs.djangoproject.com/en/3.0/ref/request-response/#django.http.HttpResponse"
+        },
+        {
+            "title" : "Cross-Site Scripting (XSS)",
+            "href": "https://en.wikipedia.org/wiki/Cross-site_scripting"
+        },
+        {
+            "title" : "HTTP Status Codes",
+            "href": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes"
+        },
+        {
+            "title" : "Django URL Resolving",
+            "href": "https://docs.djangoproject.com/en/3.0/topics/http/urls/#reverse-resolution-of-urls"
         }
     ]
 },
@@ -440,7 +475,17 @@
         {
             "title" : "Quiz: Object-Oriented Programming",
             "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
-            "resource_link_id" : "dj4e_16_oo_quiz"
+            "resource_link_id" : "dj4e_16_oo_quiz",
+            "custom" : [
+            {
+                "key": "tries",
+                "value": "101"
+            },
+            {
+                "key": "delay",
+                "value": "601"
+            }
+            ]
         }
     ]
 },
