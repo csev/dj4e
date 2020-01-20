@@ -348,6 +348,44 @@
     ]
 },
 {
+    "title": "Object-Oriented Programming in Python",
+    "anchor": "Objects",
+    "icon" : "fa-cubes",
+    "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
+    "slides": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+    "references" : [
+        {
+            "title" : "Chapter 14: Python Objects",
+            "href" : "https://www.py4e.com/html3/14-objects"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Objects Part 1",
+            "youtube" : "u9xZE5t9Y30"
+        },
+        {
+            "title" : "Objects Part 2",
+            "youtube" : "b2vc5uzUfoE"
+        },
+        {
+            "title" : "Objects Part 3",
+            "youtube" : "bal0Fv6QE9w"
+        },
+        {
+            "title" : "Objects Part 4",
+            "youtube" : "EE9PaHPPm2w"
+        }
+    ],
+    "lti" : [
+        {
+            "title" : "Quiz: Object-Oriented Programming",
+            "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
+            "resource_link_id" : "dj4e_16_oo_quiz"
+        }
+    ]
+},
+{
     "title": "Django Views and Templates",
     "anchor": "paw_detail",
     "icon" : "fa-align-left",
@@ -719,44 +757,6 @@
         "youtube": "KA5ZM3E9OjY"
     }
    ]
-},
-{
-    "title": "Object-Oriented Programming in Python",
-    "anchor": "Objects",
-    "icon" : "fa-cubes",
-    "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
-    "slides": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
-    "references" : [
-        {
-            "title" : "Chapter 14: Python Objects",
-            "href" : "https://www.py4e.com/html3/14-objects"
-        }
-    ],
-    "videos" : [
-        {
-            "title" : "Objects Part 1",
-            "youtube" : "u9xZE5t9Y30"
-        },
-        {
-            "title" : "Objects Part 2",
-            "youtube" : "b2vc5uzUfoE"
-        },
-        {
-            "title" : "Objects Part 3",
-            "youtube" : "bal0Fv6QE9w"
-        },
-        {
-            "title" : "Objects Part 4",
-            "youtube" : "EE9PaHPPm2w"
-        }
-    ],
-    "lti" : [
-        {
-            "title" : "Quiz: Object-Oriented Programming",
-            "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
-            "resource_link_id" : "dj4e_16_oo_quiz"
-        }
-    ]
 },
 {
     "title": "One-To-Many Data Models",
