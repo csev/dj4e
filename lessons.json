@@ -55,9 +55,19 @@
     ],
     "lti" : [
         {
-        "title" : "Quiz: Request-Response Cycle",
-        "launch" : "mod/gift/?quiz=01-Request-Response.txt",
-        "resource_link_id" : "dj4e_01_rrc_quiz"
+            "title" : "Quiz: Request-Response Cycle",
+            "launch" : "mod/gift/?quiz=01-Request-Response.txt",
+            "resource_link_id" : "dj4e_01_rrc_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         },
         {
         "title" : "Autograder: Request-Response Cycle",
@@ -86,9 +96,19 @@
     "assignment" : "https://www.dj4e.com/assn/dj4e_install.md",
     "lti" : [
         {
-        "title" : "Quiz: Django Tutorial 1 Concepts",
-        "launch" : "mod/gift/?quiz=02-TUT1.txt",
-        "resource_link_id" : "dj4e_01_tut_quiz"
+            "title" : "Quiz: Django Tutorial 1 Concepts",
+            "launch" : "mod/gift/?quiz=02-TUT1.txt",
+            "resource_link_id" : "dj4e_01_tut_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         },
         {
         "title" : "Auto-grader: Installing Django",
@@ -157,7 +177,17 @@
         {
             "title" : "Quiz: HTML",
             "launch" : "mod/gift/?quiz=00-HTML.txt",
-            "resource_link_id" : "dj_01_html_quiz"
+            "resource_link_id" : "dj_01_html_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         },
         {
         "title" : "Autograder: HyperText Markup Language (HTML)",
@@ -218,7 +248,17 @@
         {
             "title" : "Quiz: SQL",
             "launch" : "mod/gift/?quiz=04-SQL.txt",
-            "resource_link_id" : "dj_04_sql_quiz"
+            "resource_link_id" : "dj_04_sql_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         },
         {
         "title" : "Auto-grader: Basic SQL",
@@ -292,7 +332,17 @@
         {
             "title" : "Quiz: Django Tutorial 2",
             "launch" : "mod/gift/?quiz=03-TUT2.txt",
-            "resource_link_id" : "dj_03_tut2_quiz"
+            "resource_link_id" : "dj_03_tut2_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ],
     "references" : [
@@ -329,9 +379,19 @@
    ],
     "lti" : [
         {
-        "title" : "Quiz: Model-View-Controller",
-        "launch" : "mod/gift/?quiz=05-MVC.txt",
-        "resource_link_id" : "dj4e_01_mvc_quiz"
+            "title" : "Quiz: Model-View-Controller",
+            "launch" : "mod/gift/?quiz=05-MVC.txt",
+            "resource_link_id" : "dj4e_01_mvc_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ],
     "references" : [
@@ -403,7 +463,17 @@
         {
             "title" : "Quiz: Django Tutorial 3",
             "launch" : "mod/gift/?quiz=03-TUT3.txt",
-            "resource_link_id" : "dj_tut3_quiz"
+            "resource_link_id" : "dj_tut3_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ],
     "references" : [
@@ -477,14 +547,14 @@
             "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
             "resource_link_id" : "dj4e_16_oo_quiz",
             "custom" : [
-            {
-                "key": "tries",
-                "value": "101"
-            },
-            {
-                "key": "delay",
-                "value": "601"
-            }
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
             ]
         }
     ]
@@ -993,9 +1063,19 @@
     ],
     "lti" : [
         {
-        "title" : "Quiz: JavaScript",
-        "launch" : "mod/gift/?quiz=JS-01-JavaScript.txt",
-        "resource_link_id" : "js_01_javascript_quiz"
+            "title" : "Quiz: JavaScript",
+            "launch" : "mod/gift/?quiz=JS-01-JavaScript.txt",
+            "resource_link_id" : "js_01_javascript_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         },
         {
         "title" : "Auto-grader: Ad List #2",
@@ -1051,9 +1131,19 @@
     ],
     "lti" : [
         {
-        "title" : "Quiz: JavaScript Objects",
-        "launch" : "mod/gift/?quiz=JS-02-Objects.txt",
-        "resource_link_id" : "js_02_js_objects_quiz"
+            "title" : "Quiz: JavaScript Objects",
+            "launch" : "mod/gift/?quiz=JS-02-Objects.txt",
+            "resource_link_id" : "js_02_js_objects_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ]
 },
@@ -1090,9 +1180,19 @@
     ],
     "lti" : [
         {
-        "title" : "Quiz: jQuery",
-        "launch" : "mod/gift/?quiz=JS-03-JQuery.txt",
-        "resource_link_id" : "js_03_jquery"
+            "title" : "Quiz: jQuery",
+            "launch" : "mod/gift/?quiz=JS-03-JQuery.txt",
+            "resource_link_id" : "js_03_jquery",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ]
 },
@@ -1124,9 +1224,19 @@
     ],
     "lti" : [
         {
-        "title" : "Quiz: JSON",
-        "launch" : "mod/gift/?quiz=JS-04-JSON.txt",
-        "resource_link_id" : "js_04_json"
+            "title" : "Quiz: JSON",
+            "launch" : "mod/gift/?quiz=JS-04-JSON.txt",
+            "resource_link_id" : "js_04_json",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ]
 },
