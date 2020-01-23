@@ -62,12 +62,10 @@ webauto_search_for($html, 'Hello');
 
 $check = webauto_get_check();
 
-if ( $USER->displayname && stripos($html,$USER->displayname) !== false ) {
-    markTestPassed("Found ($USER->displayname) in your html");
-} else if ( $check && stripos($html,$check) !== false ) {
+if ( $check && stripos($html,$check) !== false ) {
     markTestPassed("Found ($check) in your html");
-} else if ( $USER->displayname ) {
-    error_out("Did not find $USER->displayname or $check in your html");
+} else {
+    error_out("Did not find $check in your html");
     error_out("No score will be sent, but the test will continue");
 }
 
