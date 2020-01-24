@@ -15,12 +15,12 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial03/</a>.
 </p>
 <?php
 nameNote();
-$message = $check;
+$check = webauto_get_check();
 ?>
 Add the following to your <b>views.py</b> with the required information above.
 <pre>
     def owner(request):
-       return HttpResponse("Hello, world. <?= $message ?> is the polls index.")
+       return HttpResponse("Hello, world. <?= $check ?> is the polls index.")
 </pre>
 Add the following to your <b>urls.py</b> to add the route the to the <b>/owner</b> path.
 <pre>
@@ -56,8 +56,6 @@ $crawler = webauto_retrieve_url($client, $owner);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'Hello');
-
-$check = webauto_get_check();
 
 if ( $check && stripos($html,$check) !== false ) {
     markTestPassed("Found ($check) in your html");

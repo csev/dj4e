@@ -15,13 +15,14 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial04/</a>.
 </p>
 <?php
 nameNote();
-$message = $check;
+$check = webauto_get_check();
+
 ?>
 Even though this excersise refactors three of your views as generic views, you
 can keep the "owner" view as an old-style view in your <b>views.py</b>.
 <pre>
     def owner(request):
-        return HttpResponse("Hello, world. <?= $message ?> is the polls owner.")
+        return HttpResponse("Hello, world. <?= $check ?> is the polls owner.")
 
 </pre>
 You can mix function and class views in your <b>urls.py</b> file as shown below:
@@ -59,8 +60,6 @@ $crawler = webauto_retrieve_url($client, $owner);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'Hello');
-
-$check = webauto_get_check();
 
 if ( $check && stripos($html,$check) !== false ) {
     markTestPassed("Found ($check) in your html");
