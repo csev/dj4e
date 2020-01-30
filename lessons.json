@@ -603,7 +603,7 @@
     "title": "Forms in HTTP, HTML, and Django",
     "anchor": "dj4e_forms",
     "icon" : "fa-table",
-    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect out appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
+    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
     "slides": "lectures/DJ-09-Forms.pptx",
     "videos" : [
     {
