@@ -565,13 +565,13 @@
     "title": "Django Generic Views",
     "anchor": "django_generic",
     "icon" : "fa-align-left",
-    "slides": "lectures/DJ-06-Views-Generic.pptx",
+    "slides": "lectures/DJ-07-Views-Generic.pptx",
     "description": "We look at the generic views capability within Django.",
     "videos" : [
     {
         "title": "Understanding Django Generic Views",
         "youtube": "uPRabryhv5k",
-        "project": "DJ 06 Views 08 Generic"
+        "project": "DJ 07 Views 08 Generic"
     }
    ],
     "lti" : [
@@ -604,46 +604,46 @@
     "anchor": "dj4e_forms",
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
-    "slides": "lectures/DJ-09-Forms.pptx",
+    "slides": "lectures/DJ-10-Forms.pptx",
     "videos" : [
     {
         "title": "Forms, GET, POST, and HTTP",
-        "project" : "DJ-09-Forms-01-getpost",
+        "project" : "DJ-10-Forms-01-getpost",
         "youtube": "KqH0Pu2ZnIg"
     },
     {
         "title": "Building HTML Forms",
-        "project" : "DJ-09-Forms-02-HTML",
+        "project" : "DJ-10-Forms-02-HTML",
         "youtube": "iXgnkxwzZzM"
     },
     {
         "title": "Forms and Cross Site Request Forgery (CSRF)",
-        "project" : "DJ-09-Forms-03-CSRF",
+        "project" : "DJ-10-Forms-03-CSRF",
         "youtube": "j-vdshWK9Lc"
     },
     {
         "title": "CSRF Support in Django",
-        "project" : "DJ-09-Forms-04-Form-CSRF",
+        "project" : "DJ-10-Forms-04-Form-CSRF",
         "youtube": "w9Y6tIVGUTI"
     },
     {
         "title": "The POST Refresh Pattern",
-        "project" : "DJ-09-Forms-05-Refresh",
+        "project" : "DJ-10-Forms-05-Refresh",
         "youtube": "Cug7pkRWQM0"
     },
     {
         "title": "Implementing POST Redirect in Django",
-        "project" : "DJ-09-Forms-06-Redirect",
+        "project" : "DJ-10-Forms-06-Redirect",
         "youtube": "a_ahU4F1V2g"
     },
     {
         "title": "Using Django Forms Capabilities",
-        "project" : "DJ-09-Forms-07-FormsPy",
+        "project" : "DJ-10-Forms-07-FormsPy",
         "youtube": "bYlgvmAPrp0"
     },
     {
         "title": "Data Validation with Django Forms",
-        "project" : "DJ-09-Forms-08-Validation",
+        "project" : "DJ-10-Forms-08-Validation",
         "youtube": "kRXiMIFKzoQ"
     }
    ],
@@ -673,17 +673,17 @@
     "anchor": "dj4e_sessions",
     "icon" : "fa-cookie",
     "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
-    "slides": "lectures/DJ-07-Cookies-Sessions.pptx",
+    "slides": "lectures/DJ-08-Cookies-Sessions.pptx",
     "assignment" : "https://www.dj4e.com/assn/paw_sessions.md#TODO",
     "videos" : [
     {
         "title": "Cookies in Browsers and Django",
-        "project" : "DJ-07-Cookies-01-Cookies",
+        "project" : "DJ-08-Cookies-01-Cookies",
         "youtube": "C75IW38hKI8"
     },
     {
         "title": "Using Sessions in Django",
-        "project" : "DJ-07-Cookies-02-Sessions",
+        "project" : "DJ-08-Cookies-02-Sessions",
         "youtube": "RjykNmVdcgI"
     }
    ],
@@ -708,21 +708,21 @@
     "anchor": "paw_users",
     "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
-    "slides": "lectures/DJ-08-Login.pptx",
+    "slides": "lectures/DJ-09-Login.pptx",
     "videos" : [
     {
         "title": "Creating and Managing Users in Django",
-        "project" : "DJ-08-Login-01-Users", 
+        "project" : "DJ-09-Login-01-Users", 
         "youtube": "E_X5Kr6xmNY"
     },
     {
         "title": "Login and Logout URLs in Django",
-        "project" : "DJ-08-Login-02-Urls", 
+        "project" : "DJ-09-Login-02-Urls", 
         "youtube": "tNofsgLH7c4"
     },
     {
         "title": "Login and Views in Django",
-        "project" : "DJ-08-Login-03-Views", 
+        "project" : "DJ-09-Login-03-Views", 
         "youtube": "n5Xwqz1IJck"
     }
    ],
