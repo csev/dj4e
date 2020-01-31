@@ -451,6 +451,21 @@
    ],
     "lti" : [
         {
+            "title" : "Quiz: Views and Teamplates",
+            "launch" : "mod/gift/?quiz=06-Views-Templates.txt",
+            "resource_link_id" : "dj4e_06_views_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
         "title" : "Auto-grader: Django Tutorial part 3",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj4e_tut_3",
