@@ -451,7 +451,7 @@
    ],
     "lti" : [
         {
-            "title" : "Quiz: Views and Teamplates",
+            "title" : "Quiz: Views and Templates",
             "launch" : "mod/gift/?quiz=06-Views-Templates.txt",
             "resource_link_id" : "dj4e_06_views_quiz",
             "custom" : [
@@ -594,6 +594,21 @@
     }
    ],
     "lti" : [
+        {
+            "title" : "Quiz: Generic Views",
+            "launch" : "mod/gift/?quiz=07-Views-Generic.txt",
+            "resource_link_id" : "dj4e_07_generic_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
     ],
     "references" : [
         {
