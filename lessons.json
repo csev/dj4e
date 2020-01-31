@@ -97,7 +97,7 @@
     "lti" : [
         {
             "title" : "Quiz: Django Tutorial 1 Concepts",
-            "launch" : "mod/gift/?quiz=02-TUT1.txt",
+            "launch" : "mod/gift/?quiz=DJ-TUT1.txt",
             "resource_link_id" : "dj4e_01_tut_quiz",
             "custom" : [
                 {
@@ -332,7 +332,7 @@
         },
         {
             "title" : "Quiz: Django Tutorial 2",
-            "launch" : "mod/gift/?quiz=03-TUT2.txt",
+            "launch" : "mod/gift/?quiz=DJ-TUT2.txt",
             "resource_link_id" : "dj_03_tut2_quiz",
             "custom" : [
                 {
@@ -479,7 +479,7 @@
         },
         {
             "title" : "Quiz: Django Tutorial 3",
-            "launch" : "mod/gift/?quiz=03-TUT3.txt",
+            "launch" : "mod/gift/?quiz=DJ-TUT3.txt",
             "resource_link_id" : "dj_tut3_quiz",
             "custom" : [
                 {
@@ -638,11 +638,11 @@
     ]
 },
 {
-    "title": "Forms in HTTP, HTML, and Django",
-    "anchor": "dj4e_forms",
+    "title": "Forms in HTTP, and HTML",
+    "anchor": "dj4e_forms_html",
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
-    "slides": "lectures/DJ-10-Forms.pptx",
+    "slides": "lectures/DJ-10-Forms-HTML.pptx",
     "videos" : [
     {
         "title": "Forms, GET, POST, and HTTP",
@@ -673,16 +673,6 @@
         "title": "Implementing POST Redirect in Django",
         "project" : "DJ-10-Forms-06-Redirect",
         "youtube": "a_ahU4F1V2g"
-    },
-    {
-        "title": "Using Django Forms Capabilities",
-        "project" : "DJ-10-Forms-07-FormsPy",
-        "youtube": "bYlgvmAPrp0"
-    },
-    {
-        "title": "Data Validation with Django Forms",
-        "project" : "DJ-10-Forms-08-Validation",
-        "youtube": "kRXiMIFKzoQ"
     }
    ],
     "lti" : [
@@ -697,6 +687,67 @@
                 "value": "tutorial04.php"
             }
         ]
+        },
+        {
+            "title" : "Quiz: Django Tutorial 4",
+            "launch" : "mod/gift/?quiz=DJ-TUT4.txt",
+            "resource_link_id" : "dj_tut4_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Django Template Tags and Filters",
+            "href": "https://docs.djangoproject.com/en/3.0/ref/templates/builtins/"
+        },
+        {
+            "title" : "Writing your first Django app, part 4",
+            "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial04/"
+        }
+    ]
+},
+{
+    "title": "Forms in Django",
+    "anchor": "dj4e_forms_django",
+    "icon" : "fa-table",
+    "description": "We cover how to use the Django built in forms processing to futher simplify our view processing.",
+    "slides": "lectures/DJ-11-Forms-Django.pptx",
+    "videos" : [
+    {
+        "title": "Using Django Forms Capabilities",
+        "project" : "DJ-10-Forms-07-FormsPy",
+        "youtube": "bYlgvmAPrp0"
+    },
+    {
+        "title": "Data Validation with Django Forms",
+        "project" : "DJ-10-Forms-08-Validation",
+        "youtube": "kRXiMIFKzoQ"
+    }
+   ],
+    "lti" : [
+        {
+            "title" : "Quiz: Django Forms",
+            "launch" : "mod/gift/?quiz=11-Forms-Django.txt",
+            "resource_link_id" : "dj_forms_django",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ],
     "references" : [
