@@ -677,6 +677,21 @@
    ],
     "lti" : [
         {
+            "title" : "Quiz: HTML Forms",
+            "launch" : "mod/gift/?quiz=10-Forms-HTML.txt",
+            "resource_link_id" : "dj_html_forms_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
         "title" : "Auto-grader: Django Tutorial part 4",
         "launch" : "tools/dj-tutorial/",
         "resource_link_id" : "dj4e_tut_4",
