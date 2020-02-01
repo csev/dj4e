@@ -17,27 +17,30 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial03/</a>.
 nameNote();
 $check = webauto_get_check();
 ?>
-Add the following to your <b>views.py</b> with the required information above.
+Add the following to your <b>mysite/polls/views.py</b> with the required information above.
 <pre>
     def owner(request):
        return HttpResponse("Hello, world. <?= $check ?> is the polls index.")
 </pre>
-Add the following to your <b>urls.py</b> to add the route the to the <b>/owner</b> path.
+Make sure to check the file <b>mysite/polls/urls.py</b> to insure that the 
+the path to the <b>owner</b> view is properly routed:
 <pre>
 urlpatterns = [
     # ex: /polls/
     path('', views.index, name='index'),
-    # ex: /polls/owner
-    path('owner', views.owner, name='owner'),
     # ex: /polls/5/
     ...
+    # Make sure this is included...
+    path('owner', views.owner, name='owner'),
+]
 </pre>
 <p>
-You should already have a question with this text from the previous assignment:
+You should already 
+have created a question with this text from the previous assignment:
 <pre>
 <?= $qtext ?>
 </pre>
-and submit your Django polls url to the autograder. 
+and submit your Django polls url to the autograder. (Your url should be /polls - not /polls3).
 </p>
 <?php
 

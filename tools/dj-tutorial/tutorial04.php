@@ -19,13 +19,13 @@ $check = webauto_get_check();
 
 ?>
 Even though this exercise refactors three of your views as generic views, you
-can keep the "owner" view as an old-style view in your <b>views.py</b>.
+can keep the "owner" view as an old-style view in your <b>mysite/polls/views.py</b>.
 <pre>
     def owner(request):
         return HttpResponse("Hello, world. <?= $check ?> is the polls owner.")
 
 </pre>
-You can mix function and class views in your <b>polls/urls.py</b> file as shown below:
+You can mix function and class views in your <b>mysite/polls/urls.py</b> file as shown below:
 <pre>
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
@@ -42,6 +42,7 @@ from the previous assignment:
 <?= $qtext ?>
 </pre>
 Then submit your Django polls url to the autograder. 
+Your url should be "/polls" not "/polls4".
 </p>
 <?php
 

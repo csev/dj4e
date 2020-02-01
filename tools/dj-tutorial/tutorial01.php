@@ -29,7 +29,7 @@ Here is a sample of what you might put into your <b>views.py</b>.
 <pre>
     return HttpResponse("Hello, world. <?= $message ?> is the polls index.")
 </pre>
-Also you will need to edit the file <b>mysite/settings.py</b> and change the following line:
+Also you will need to edit the file <b>mysite/mysite/settings.py</b> and change the following line:
 <pre>
 ALLOWED_HOSTS = ['*']
 </pre>
