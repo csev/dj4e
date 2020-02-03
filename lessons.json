@@ -621,7 +621,7 @@
     "anchor": "dj4e_forms_html",
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
-    "slides": "lectures/DJ-10-Forms-HTML.pptx",
+    "slides": "lectures/DJ-08-Forms-HTML.pptx",
     "videos" : [
     {
         "title": "Forms, GET, POST, and HTTP",
@@ -710,6 +710,80 @@
     ]
 },
 {
+    "title": "Cookies and Sessions",
+    "anchor": "dj4e_sessions",
+    "icon" : "fa-cookie",
+    "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
+    "slides": "lectures/DJ-09-Cookies-Sessions.pptx",
+    "assignment" : "https://www.dj4e.com/assn/paw_sessions.md#TODO",
+    "videos" : [
+    {
+        "title": "Cookies in Browsers and Django",
+        "project" : "DJ-08-Cookies-01-Cookies",
+        "youtube": "C75IW38hKI8"
+    },
+    {
+        "title": "Using Sessions in Django",
+        "project" : "DJ-08-Cookies-02-Sessions",
+        "youtube": "RjykNmVdcgI"
+    }
+   ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: TODO Django Sessions",
+        "launch" : "tools/TODO-tutorial/",
+        "resource_link_id" : "paw_sessions",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "08sessions.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+    ]
+},
+{
+    "title": "Django Users and Authentication",
+    "anchor": "paw_users",
+    "icon" : "fa-key",
+    "description": "This exercise explores the interaction between authentication and our application.",
+    "slides": "lectures/DJ-10-Login.pptx",
+    "videos" : [
+    {
+        "title": "Creating and Managing Users in Django",
+        "project" : "DJ-09-Login-01-Users", 
+        "youtube": "E_X5Kr6xmNY"
+    },
+    {
+        "title": "Login and Logout URLs in Django",
+        "project" : "DJ-09-Login-02-Urls", 
+        "youtube": "tNofsgLH7c4"
+    },
+    {
+        "title": "Login and Views in Django",
+        "project" : "DJ-09-Login-03-Views", 
+        "youtube": "n5Xwqz1IJck"
+    }
+   ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: TODO Django Users",
+        "launch" : "tools/TODO-tutorial/",
+        "resource_link_id" : "paw_users",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "09users.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+    ]
+},
+{
     "title": "Forms in Django",
     "anchor": "dj4e_forms_django",
     "icon" : "fa-table",
@@ -753,80 +827,6 @@
             "title" : "Writing your first Django app, part 4",
             "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial04/"
         }
-    ]
-},
-{
-    "title": "Cookies and Sessions",
-    "anchor": "dj4e_sessions",
-    "icon" : "fa-cookie",
-    "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
-    "slides": "lectures/DJ-08-Cookies-Sessions.pptx",
-    "assignment" : "https://www.dj4e.com/assn/paw_sessions.md#TODO",
-    "videos" : [
-    {
-        "title": "Cookies in Browsers and Django",
-        "project" : "DJ-08-Cookies-01-Cookies",
-        "youtube": "C75IW38hKI8"
-    },
-    {
-        "title": "Using Sessions in Django",
-        "project" : "DJ-08-Cookies-02-Sessions",
-        "youtube": "RjykNmVdcgI"
-    }
-   ],
-    "lti" : [
-        {
-        "title" : "Auto-grader: TODO Django Sessions",
-        "launch" : "tools/TODO-tutorial/",
-        "resource_link_id" : "paw_sessions",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "08sessions.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-    ]
-},
-{
-    "title": "Django Users and Authentication",
-    "anchor": "paw_users",
-    "icon" : "fa-key",
-    "description": "This exercise explores the interaction between authentication and our application.",
-    "slides": "lectures/DJ-09-Login.pptx",
-    "videos" : [
-    {
-        "title": "Creating and Managing Users in Django",
-        "project" : "DJ-09-Login-01-Users", 
-        "youtube": "E_X5Kr6xmNY"
-    },
-    {
-        "title": "Login and Logout URLs in Django",
-        "project" : "DJ-09-Login-02-Urls", 
-        "youtube": "tNofsgLH7c4"
-    },
-    {
-        "title": "Login and Views in Django",
-        "project" : "DJ-09-Login-03-Views", 
-        "youtube": "n5Xwqz1IJck"
-    }
-   ],
-    "lti" : [
-        {
-        "title" : "Auto-grader: TODO Django Users",
-        "launch" : "tools/TODO-tutorial/",
-        "resource_link_id" : "paw_users",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "09users.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
     ]
 },
 {
