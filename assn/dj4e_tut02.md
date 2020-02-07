@@ -2,8 +2,6 @@
 Django Project Tutorial 2
 =========================
 
-(TBD)
-
 Learning Objectives:
 
 * Understand Django models and models.py 

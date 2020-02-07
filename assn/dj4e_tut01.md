@@ -2,8 +2,6 @@
 Django Project Tutorial 1
 =========================
 
-(TBD)
-
 Learning Objectives:
 
 * Understand URL routing and urls.py 

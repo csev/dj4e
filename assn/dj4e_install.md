@@ -1,241 +1,217 @@
-Installing Django on PythonAnywhere
-===================================
+Developing with Django on your computer
+=======================================
 
-Before you start this assignment, you should already have signed up for a
+As you start to develop more intricate Django applications, you might find it more
+convienent to install Django on your local computer and then use github to move your
+tested code into your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-account and be logged in on your account.  You should be able to complete all
-of the exercises in this course using a free PythonAnywhere account.
+server so you it is available on the Internet for grading or otherwise sharing.
 
-You can view a
-<a href="https://www.youtube.com/watch?v=d32UKww3h1c" target="_blank">video walkthrough</a>
-of this assignment.
+There are many sources of tutorial material on how to install Python3 and Django on
+your computer.  Since the rest of this material uses the Mozilla Developer Network
+tutorials, you might as well use it:
 
-**Note:** If you are submitting these assignments to the auto grader you
-should complete each assignment and then submit it and get full credit before
-moving on to the next assignment.  Because the assignments build on one another
-the application that you have build by the last step of the tutorial
-will no longer pass the earlier autograders.
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
 
-Setting Up Your Environment
----------------------------
+You can use a virtual environment or if you have a suitable version of Python 3.x on your
+computer and can use `pip3` to install a suitable version of Django for your whole computer,
+there is no need to put things in a virtual environment.
 
-Once you have created your PYAW account, start a `bash` shell
-and set up a virtual environment with Python 3.x and Django 3.
+Also you should install git on your computer using any of the good tutorials out there.
 
-    mkvirtualenv django3 --python=/usr/bin/python3.6
-    pip install django ## this may take a couple of minutes
+You know Python and Django are correctly installed when these commands
+show reasonable version numbers:
 
-Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
-to get back into your virtual environment in the new bash shell.
+Linux/Mac:
 
-    workon django3
+    $ python3 --version
+    Python 3.6.0
+    $ python3 -m django --version
+    2.0.5
 
-Lets make sure that your django was installed successfully with the following command:
+If the above does not work on Windows, try:
 
-    python -m django --version
-    # This should show something like 3.0.2
+    > py --version
+    Python 3.6.0
+    > py -m django --version
+    2.0.5
 
-Installing the Sample Code for DJ4E
+You also need to have `git` installed and available in the shell / command line.
+
+Why Develop Locally?
+--------------------
+
+There are a number of advantages to doing development work locally:
+
+* You never have to `Reload` your application.  The Django `runserver` process monitors
+changes to your files and completely restarts itself as soon as any file changes in your
+project.   This makes for much quicker edit-test cycles.
+
+* You can use a fancy text editor like VScode, Atom, or Sublime.
+
+* No more need to change the WGSI configuration file when you want to switch between
+your project and some sample code - you can even run more than one application at the
+same time on different ports.
+
+* You can put debug `print()` statements and they come right out without having to look
+at the error or server logs.  Error tracebacks and error logs come right out.
+
+* You can work without a network connection!
+
+These instructions assume you that you are already set up using Github and PythonAnywhere
+and want to edit your applications on your computer
+and present them on PythonAnywhere.  But you can always use the
+<a href="../ngrok">ngrok</a> application
+to submit your assignments to the autograder if you like.
+
+On Your Laptop
+--------------
+
+We suggest you make a folder somewhere to store all of your Django projects.  This folder
+should be easy to find so you can use your cool VSCode, Atom, or Sublime text editor.
+
+Linux / MacOS / Windows bash shell:
+
+    cd ~
+    cd Desktop
+    mkdir django
+
+Windows Command Line:
+
+    cd
+    cd Desktop
+    mkdir django
+
+Then lets checkout the dj4e-samples repo and get things started:
+
+    cd Desktop      # If not already there
+    cd django
+    git clone https://github.com/csev/dj4e-samples
+
+    cd dj4e-samples
+    python3 manage.py migrate            # Makemigrations is already in git
+    python3 manage.py createsuperuser
+    python3 manage.py runscript gview_load
+    python3 manage.py runscript many_load
+
+To run the server get into the folder with `manage.py` and then:
+
+    python3 manage.py runserver
+
+Then navigate to http://localhost:8000 to see the page.
+
+Then just for fun, open a second terminal / shell / command line and:
+
+    cd Desktop
+    cd django
+    cd dj4e-samples
+    python3 manage.py runserver 8001
+
+Then navigate to http://localhost:8001 to see the page.
+
+You can abort the `runserver` applications in the command line, switch to
+a new folder and start runserver again.
+
+This section shows how to get a Django application working - in the next section
+we show you to work on your code on two computers and move
+the changes back and forth.
+
+Moving Code Between Your Laptop and PythonAnywhere
+--------------------------------------------------
+
+If you want, you can keep a local copy your `django_projects` synchronized with your
+copy on PythonAnywhere using `github`.
+
+If you are already using github to store your projects
+------------------------------------------------------
+
+Before you start doing this, make sure that your code in the PythonAnywhere shell
+is fully checked in to GitHub:
+
+    $ cd ~/django_projects
+    $ git status
+    On branch master
+    Your branch is up-to-date with 'origin/master'.
+    nothing to commit, working directory clean
+
+If you have any outstanding git modifications on PYAW - clean it up and push it to the repo.
+
+If you have not yet put your PythonAnywhere code on github
+----------------------------------------------------------
+
+If you have not yet uploaded your `django_projects` folder to github, first follow the
+<a href="paw_github.md">these instructions</a> to get your application uploaded to github.
+
+Checking your github code out onto your laptop
+----------------------------------------------
+
+Once your application is in github, you can simply check it out to your laptop computer
+using commands like:
+
+    cd ~         # or simple 'cd' for Windows
+    cd Desktop
+    cd django
+    git clone https://github.com/drchuck/django_projects.git
+
+Replacing `drchuck` with your github account.  This should bring a copy of your
+application from github down to your computer and store it in the folder
+`django_projects`.
+
+Note that you should keep the `dj4e-samples` and `django_projects` next to each
+other since they are both in github.
+
+On your laptop:
+
+    Desktop/django/dj4e-samples
+    Desktop/django/django_projects
+
+On PythonAnywhere:
+
+    ~/dj4e-samples
+    ~/django_projects
+
+
+Working on your Code on your Laptop
 -----------------------------------
 
-Lets also get a copy of the sample code for DJ4E checked out so you can look at sample code
-as the course progresses and install some important additional Django software libraries using
-`pip`.
+So you are on your local laptop / computer and are making changes
 
-    cd ~
-    git clone https://github.com/csev/dj4e-samples
-    cd dj4e-samples
-    pip install -r requirements.txt
-    python manage.py check
-
-This is the normal output of running `check`:
-
-    When you want to use social login, please see dj4e-samples/github_settings-dist.py
-    Using registration/login.html as the login template
-    System check identified no issues (0 silenced).
-
-If the `check` identifies errors, stop until there are no errors.  Only take the next steps
-once check sees no errors.  Once the check works do:
-
-    python manage.py makemigrations
-
-This is the normal output of the `makemigrations`:
-
-    When you want to use social login, please see dj4e-samples/github_settings-dist.py
-    Using registration/login.html as the login template
-    No changes detected
-
-Then run:
-
-    python manage.py migrate
-
-If you are doing this for the first time, it should run some migrations and create a file `db.sqlite3`.
-
-The `dj4e-samples` folder is reference material that you can
-use through out the course.   From time to
-time we might make changes to this and ask you to do a `git pull` to get the latest version
-of the code.
-
-Building Your Application
--------------------------
-
-Now that we have your Django set up and you have retrieved the sample code for DJ4E, lets
-build your first application in the PYAW shell:
-
-    cd ~
-    mkdir django_projects
+    cd ~         # or simple 'cd' for Windows
+    cd Desktop
+    cd django
     cd django_projects
-    django-admin startproject mysite
+    cd mysite    # Or whatever project you want to work on
+    # edit some files :)
+    python3 manage.py makemigrations    # If you changed your models
+    python3 manage.py migrate           # If you changed your models.py
+    git status
+    git add ....
+    git commit -a
+    git push
 
-You need to edit the file `~/django_projects/mysite/mysite/settings.py` and change
-the allowed hosts line (around line 28) to be:
-
-     ALLOWED_HOSTS = [ '*' ]
-
-Leave the __DEBUG__ value set to *True* - we are not really "in production" and if you set this to
-*False* you will not see error messages when you make mistakes.
-
-Editing Files on PythonAnywhere
--------------------------------
-
-There are three ways to edit files in your PythonAnywhere environment, ranging from the easiest
-to the coolest.  You only have to edit the file one of these ways.
-
-(1) Go to the main PythonAnywhere dashboard, browse files, navigate to the correct folder and edit the file
-
-    /home/drchuck/django_projects/mysite/mysite/settings.py
-
-(2) Or in the command line:
-
-    cd ~/django_projects/mysite/mysite/
-    nano settings.py
-
-    Save the File by pressing 'CTRL-X', 'Y', and Enter
-
-(3) Don't try this most difficult and most cool way to edit files on Linux without a helper
-if it is your first time with the `vi` text editor.
-
-    cd ~/django_projects/mysite/mysite/
-    vi settings.py
-
-Once you have opened `vi`, cursor down to the `ALLOWED_HOSTS` line,
-position your cursor between the braces and press the
-`i` key to go into 'INSERT' mode, then type your new text and press the `esc` key when you are
-done.  To save the file, you type `:wq` followed by `enter`.  If you get lost press `escape` `:q!`
-`enter` to get out of the file without saving.
-
-If you aleady know some _other_ command line text editor in Linux, you can use it to edit files.  In general,
-you will find that it often quicker and easier to make small edits to files in the command line
-rather than a full screen UI.  And once you start deploying real applications in production
-environments like Google, Amazon, Microsoft, etc.. all you will have is command line.
-
-Running Your Application
-------------------------
-
-Now that we have built your first application, we need to tell PythonAnywhere where to look
-to run your application as a web server so you can test it.
-
-In the PYAW web interface navigate to the `Web` tab to create a new web application.  If you
-have not already done so, add a new web application.  Select `manual configuration` and Python
-3.6.  Once the webapp is created, you need to make a few changes to the settings for the web
-app and your application.
-
-    Source code: /home/drchuck/django_projects/mysite
-    Working directory: /home/drchuck/django_projects/mysite
-
-    Virtualenv: /home/drchuck/.virtualenvs/django3
-
-Replace `drchuck` with your account on PythonAnywhere.
-
-Note that once you have your Virtualenv set up you have a very convenient link
-titled "Start a console in this virtualenv" - this is a great way to open up consoles
-so you never have to type "workon django3" and it makes sure your virtual
-envronment is properly set up and configured.
-<a href="paw_install/web_tab.png" target="_blank">Sample image</a>
-
-Then edit the *WGSI Configuration* under the `Web` tab and put the following code into it.
-__Make sure to delete the existing content__ of the *WGSI Configuration* file and completely
-replace it with the text below.
-This is slightly different from the sample in the PythonAnywhere tutorial.
-
-    import os
-    import sys
-
-    path = os.path.expanduser('~/django_projects/mysite')
-    if path not in sys.path:
-        sys.path.insert(0, path)
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
-    from django.core.wsgi import get_wsgi_application
-    from django.contrib.staticfiles.handlers import StaticFilesHandler
-    application = StaticFilesHandler(get_wsgi_application())
-
-Do not edit the file `django_projects/mysite/mysite/wsgi.py` - leave this
-file alone - PythonAnywhere ignores this file and looks under the `Web` tab
-for the information.
-
-Once the above configuration is complete, go back to the top of the PYAW
-Web tab, `Reload` your web application, wait a few seconds and check
-that it is up and running:
-
-    http://(your-account).pythonanywhere.com/
-
-Here is a
-<a href="dj4e_install/index.htm" target="_blank">Sample</a>
-of what the resulting page should look like.
-
-Adding Your Polls Application
------------------------------
-
-At this point, you can add the polls application from the first DJango tutorial.
-We are jumping into the middle of this tutorial because
-the first part of the tutorial is installing and configuring Django in general.
-
-The first step is to make the `polls` application:
+Then you can go into PythonAnywhere in a bash shell and type:
 
     cd ~/django_projects/mysite
-    python manage.py startapp polls
+    git pull
+    python3 manage.py migrate         # If the pull included new migrations
 
-Continue to follow the steps outlined in
-<a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
-Django tutorial</a>.
-until you reach the part where the tutorial tells you to run this command:
+Then in the "Web" tab reload your application and visit it.
 
-    python manage.py runserver
+As long as you follow the pattern of doing `git push` from your laptop/desktop and `git pull`
+from PythonAnywhere, things will go very smoothly.
 
-Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the following command:
+If you edit two places and push from one of the places, the push will work - but the push
+won't work from the second place and pull won't work either becausee you have local changes.
+If this is what you did, there is a simple workaround.  On the system where you have un-pushed
+changes and want to do a pull before pushing, do this:
 
-    python manage.py check
+    git stash
+    git pull
+    git stash apply
 
-The `check` does a check for syntax and logic errors in your Django application.
-It is easier to fix errors in the command line.
-And when there are no errors, navigate to the `Web` tab in Python anywhere
-and `Reload` your application and then test your application by navigating to:
+This takes your un-pushed changes and hides them in the "stash", allowing the `git pull` to
+work and then the `stash apply` re-modifies the files.
 
-    (your-account).pythonanywhere.com/polls
+Most of the time this works if all you did is edited two places and tried to push from both.
 
-You should see a line that lokos like:
 
-    Hello, world. You're at the polls index.
-
-Going forward, every time we make changes to our application, we should run
-
-    python manage.py check
-
-in the shell, and when that shows no errors, navigate to the `Web`, press `Reload`,
-and then go to your web site to test your changes.  This pattern of change, reload, and test
-will become second nature after a while.
-
-Possible Errors
----------------
-
-If your application passed a `check` but fails to
-load or reload, you might get an error message that looks
-like <a href="dj4e_install/pyaw_error.htm" target="_blank">this</a>.
-
-If you get an error, you will need to look through the error logs
-under the `Web` tab on PythonAnywhere:
-
-<center><img src="dj4e_install/error_logs.png" alt="An image showing the three log links under the Web tab in PythonAnywhere" style="border: 1px black solid;"></center>
-
-First check the `error` log and then check the `server` log.
-Make sure to scroll through the logs to the end to find the most recent error.

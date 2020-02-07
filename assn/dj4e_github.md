@@ -75,7 +75,7 @@ will see the following error when you do a `git pull`:
     $ git status
     On branch master
 
-    	modified:   locallibrary/settings.py
+    	modified:   mysite/settings.py
 
     $ git pull
     error: cannot pull with rebase: You have unstaged changes.
@@ -132,12 +132,12 @@ checked out copy of your repo:
 
 Then for each file you want to put back into your freshly checked out repo, do:
 
-    cp locallibrary/locallibrary/settings.py ../django_projects/locallibrary/locallibrary/settings.py
+    cp mysite/mysite/settings.py ../django_projects/mysite/mysite/settings.py
 
 You can also use the Linux `diff` command to see how files differ before making
 the copy:
 
-    diff locallibrary/locallibrary/settings.py ../django_projects/locallibrary/locallibrary/settings.py
+    diff mysite/mysite/settings.py ../django_projects/mysite/mysite/settings.py
 
 Use tab completion to make sure that you are typing folders and files 
 correctly.

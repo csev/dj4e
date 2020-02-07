@@ -2,8 +2,6 @@
 Django Project Tutorial 3
 =========================
 
-(TBD)
-
 Learning Objectives:
 
 * Build a detail view

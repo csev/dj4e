@@ -2,8 +2,6 @@
 Django Project Tutorial 4
 =========================
 
-(TBD)
-
 Learning Objectives:
 
 * Build and use an HTML form
