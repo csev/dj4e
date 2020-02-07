@@ -8,24 +8,30 @@ $qtext = 'Answer to the Ultimate Question';
 ?>
 <h1>DIY Hello World / Sessions</h1>
 <p>
-The instructions for this assignment are at 
+The instructions for this assignment are at
 <a href="../../assn/dj4e_hello.md" target="_blank">dj4e_hello.md</a>
 </a>.
-This assignment extends the previous Django tutorial Part 4 - and you 
-need to keep the polls application running as well as the data for that autograder
-to get credit for this assignment.
+This assignment extends the previous Django tutorial Part 4.  In addition to
+the requirements of the assignment,
+you need to keep the <b>/polls/owner</b> view working as well.
 </p>
 <?php
 nameNote();
 $check = webauto_get_check();
-
 ?>
-You need to keep the <b>/polls/owner</b> view working as well.
-You should already have a question with this text with one answer that is '42'
-from the previous assignment:
+</p>
+<p>
+In addition to the session feature in the above assignment also set a cookie
+in your <b>/hello</b> view:
 <pre>
-<?= $qtext ?>
+resp.set_cookie('dj4e_cookie', '<?= $check?>', max_age=1000)
 </pre>
+Remember that to set a cookie in a Django view, you can't just use
+the <b>render()</b> shortcut.  Instead you
+need to create the <b>HttpResponse</b> and then add the cookie to the response
+before returning it from your view.  Take a look at the
+<b>dj4e-sample</b> code to see how this can be done.
+</p>
 Then submit your Django base site (i.e. with no path) to this autograder.
 </p>
 <?php
