@@ -746,12 +746,13 @@
         },
         {
         "title" : "Auto-grader: Hello World",
-        "launch" : "tools/crud/",
+        "launch" : "tools/dj-tutorial/",
+        "learning_objectives": "Cookies / Sessions / DIY",
         "resource_link_id" : "dj4e_hello",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "01hello.php"
+                "value": "hello05.php"
             }
         ]
         }
