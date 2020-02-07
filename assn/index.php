@@ -102,7 +102,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_hello.md") ?>>Hello Session World</option>
   <option <?= x_sel("dj4e_load.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Login / Autos CRUD</option>
-  <option <?= x_sel("dj_install.md") ?>>Installing Django Locally</option>
+  <option <?= x_sel("dj4e_install.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("dj4e_github.md") ?>>Using GitHub</option>
   <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
   <option <?= x_sel("dj4e_ads2.md") ?>>AdList Milestone #2</option>
@@ -128,7 +128,7 @@ These are the assignments for Django for Everybody (DJ4E).
 <li><a href="dj4e_hello.md">Hello Session World</a></li>
 <li><a href="dj4e_autos.md">Login / Autos CRUD</a></li>
 <li><a href="dj4e_github.md">Using GitHub</a></li>
-<li><a href="dj_install.md">Installing Django Locally</a></li>
+<li><a href="dj4e_install.md">Installing Django Locally</a></li>
 <li><a href="dj4e_load.md">Batch Loading Data</a></li>
 <li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
 <li><a href="dj4e_ads2.md">AdList Milestone #2</a></li>

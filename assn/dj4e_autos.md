@@ -28,15 +28,13 @@ Making a New Project
 --------------------
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
-and start a new application in your `dj4e` project (this project already should have the 'hello'
+and start a new application in your `mysite` project (this project already should have the 'hello'
 application from a
 <a href="dj4e_hello.md">previous assignment</a>).
 
     workon django3  # as needed
-    cd ~/django_projects/dj4e
+    cd ~/django_projects/mysite
     python3 manage.py startapp autos
-
-The `autos` project is the first of several applications we will add to the `dj4e` project.
 
 Extending the home (i.e. main) page
 -----------------------------------
@@ -44,10 +42,10 @@ Extending the home (i.e. main) page
 Since we will build a number of applications in this project, we will use the `home`
 application to provide convienent urls to switch between applications.
 
-And you should have a file `dj4e/home/templates/home/hello.html` that has the text for the top-level page.
+And you should have a file `dj4e/home/templates/home/main.html` that has the text for the top-level page.
 You can keep the "Hello World" text in the page somewhere.
 
-Add a link to the "/autos" url in `dj4e/home/templates/home/hello.html` and anything else the autograder needs:
+Add a link to the "/autos" url in `dj4e/home/templates/home/main.html` and anything else the autograder needs:
 
     <ul>
     <li><a href="/autos">Autos CRUD</a>
@@ -165,7 +163,7 @@ References
 
 * <a href="https://github.com/csev/dj4e-samples/tree/master/autos" target="_blank">Autos CRUD Sample Code</a>
 
-* <a href="dj_install.md" target="_blank">Installing Django Locally</a>
+* <a href="dj4e_install.md" target="_blank">Installing Django Locally</a>
 
 * <a href="../ngrok" target="_blank">Using ngrok to turn in your assignments</a>
 
