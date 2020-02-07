@@ -745,6 +745,12 @@
             ]
         },
         {
+        "title" : "Auto-grader: Cookies!",
+        "launch" : "tools/cookies/",
+        "learning_objectives": "Cookies",
+        "resource_link_id" : "dj4e_cookie"
+        },
+        {
         "title" : "Auto-grader: Hello World",
         "launch" : "tools/dj-tutorial/",
         "learning_objectives": "Cookies / Sessions / DIY",
