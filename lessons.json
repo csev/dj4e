@@ -730,6 +730,21 @@
    ],
     "lti" : [
         {
+            "title" : "Quiz: Cookies and Sessions",
+            "launch" : "mod/gift/?quiz=09-Cookies-Sessions.txt",
+            "resource_link_id" : "dj4e_09_cookie_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
         "title" : "Auto-grader: Hello World",
         "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_hello",
