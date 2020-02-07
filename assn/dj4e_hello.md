@@ -72,4 +72,5 @@ too much code.  If you just copy and paste everything from `dj4e-samples` it wil
 make this work.  Sometime when looking at code written by others, it is important to know what
 is going on to what *not* to copy.
 
+Also make sure to check any auto grader for any additional requirements for this assignment.
 
