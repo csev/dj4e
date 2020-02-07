@@ -13,6 +13,10 @@ You should make sure to get the latest updates by doing the following:
     cd ~/dj4e-samples
     git pull
 
+Be very carful pulling code from `dj4e-samples` - it often has much more
+code than your program needs - so know what you are looking at before you copy
+code into your application.
+
 Building a Main Page
 --------------------
 
@@ -40,6 +44,9 @@ Edit the file `~/django_projects/mysite/mysite/urls.py` and add following path r
 You will need to make sure to add the proper python imports at the top of the file to make this work.
 There are lots of examples of the use of TemplateView in the `urls.py` files in `dj4e-samples`
 and in the lecture materials.
+
+Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `home` application following
+the pattern that you used to add the `polls` application to `INSTALLED_APPS`;
 
 Make sure to run:
 
