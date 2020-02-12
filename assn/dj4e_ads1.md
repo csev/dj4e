@@ -57,42 +57,79 @@ it set to something like:
 
 So that your python application is run within the virtual environment.
 
-(3) Adapt `django_projects/adlist/adlist/settings.py` to pull in most of `dj4e-samples/dj4e-samples/settings.py`.
+(3) Copy the `settings.py` and `urls.py` files and the entire
+`home` folder from the `dj4e-samples` project:
 
-You might even want to copy `dj4e-samples/dj4e-samples/settings.py` to
-`dango_projects/adlist/adlist/settings.py` and then delete
+    cp ~/dj4e-samples/dj4e-samples/settings.py ~/django_projects/adlist/adlist
+    cp ~/dj4e-samples/dj4e-samples/urls.py ~/django_projects/adlist/adlist
+    mkdir ~/django_projects/adlist/home
+    cp -r ~/dj4e-samples/home/* ~/django_projects/adlist/home
+
+
+(4) Edit the `~/dango_projects/adlist/adlist/settings.py` and then delete
 all the `INSTALLED_APPLICATIONS` after `home`.  You also have to search
-and replace `dj4e-samples` with `adlist` in a few places.
-
-Alternatively, you can look through the `dj4e-samples/dj4e-samples/settings.py` and copy pertinent lines
-into `django_project/adlist/adlist/settings.py` - some lines have an "Add" comment to help draw your attention
-to things to copy across.  Make sure `INSTALLED_APPLICATIONS` includes the following applications:
-
-    'django.contrib.humanize',
-    'rest_framework',
-    'crispy_forms',
-    'social_django',
-
-In addition to all the other settings fixes, make sure to add a line
-to `django_project/adlist/adlist/settings.py` like this:
+and replace `dj4e-samples` with `adlist` in a few places.  Also set
+the name of your application in the `settings.py` file:
 
     # Used for a default title
     APP_NAME = 'ChucksList'
 
 This shows up in default page titles and default page navigation.
 
-(4) Copy the entire `home` application folder from into your adlist project.  This should not
-need much changing - it has things like base templates, and login templates and is designed
-to quickly get up to speed getting started in a new project.
-
-    mkdir ~/django_projects/adlist/home
-    cp -r ~/dj4e-samples/home/* ~/django_projects/adlist/home
-
 (5) Edit your `django_projects/adlist/adlist/urls.py` and
-pull in some of the paths from `dj4e-samples/dj4e-samples/urls.py`.   Look
-for lines that say "Keep" to help make sure you configure all of the optional features.
+remove all of the `path()` calls to the sample applications. Make
+sure to keep the `path()` to include the `home.urls`.  Also keep
+the `site` and `favicon` rules in your `urls.py`.
 
-At this point, you should be able to run:
+(6) Edit the file `django_projects/adlist/home/templates/home/main.html` and put
+this HTML in the file:
+
+    <html>
+    <head>
+        <title>{{ settings.APP_NAME }}</title>
+    </head>
+    <body>
+        <h1>Welcome to {{ settings.APP_NAME }}</h1>
+        <p>
+        Hello world.
+        </p>
+    </body>
+    </html>
+
+(7) At this point, you should be able to run:
+
+    python3 manage.py check
+
+Keep running `check` until it does not find any errors.
+
+(8)
+If you have errors, you might find the `grep` tool very helpful in figuring out where you might find certain errors.
+For example, lets say after you did all the editing, and went to the ads url and got this error:
+
+    NoReverseMatch at /ads
+    'myarts' is not a registered namespace
+
+You *thought* you fixed all the instances where the string "myarts" was in your code, but you must have missed one.
+You can manually look at every file individually or use the following command to let the computer do the searching:
+
+    cd ~/django_projects/adlist
+    grep -r myarts *
+
+You might see output like this:
+
+    ads/templates/ads/ad_list.html:<a href="{% url 'login' %}?next={% url 'myarts:all' %}">Login</a>
+
+The `grep` program is searching for all the files in the current folder and in subfolders for any lines
+in any file that have the string "myarts" in them and shows you the file name and the line within the file.
+
+The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
+Expression Parser"</a> and is one of the most useful Linux commands to know.
+
+
+
+
+(8) Once your application can start without error, set up the database
+for your project:
 
     python3 manage.py makemigrations
     python3 manage.py migrate
@@ -101,9 +138,11 @@ At this point, you should be able to run:
 There won't be many working urls.  Try these two to see if you have the home code
 working properly:
 
-    https://your-account.pythonanywhere.com/accounts/login
+    https://your-account.pythonanywhere.com/
     https://your-account.pythonanywhere.com/favicon.ico
+    https://your-account.pythonanywhere.com/accounts/login
 
+Look at how pretty the login form looks :).
 Don't worry about social login yet.  We will get to that later.
 Favicons are shown in the tabs in the browser.  We will get to favicons later too :)
 
@@ -148,7 +187,7 @@ The add the application to your `adlist/adlist/settings.py` and `adlist/adlist/u
             return self.title
 
 (3) Pull in pieces of `myarts` application other than `models.py`.  Then adapt the
-`admin.py`, `views.py`, `urls.py`, and templates to be suitable for a classified
+`admin.py`, `views.py`, `urls.py`, and `templates` to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
 view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
 not be shown to the user on the create and update forms, it should be automatically set
@@ -175,32 +214,6 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
 
-(5) Edit the `adlist/urls.py` to look as follows:
-
-    import os
-    from django.contrib import admin
-    from django.urls import path
-    from django.urls import include
-    from django.conf.urls import url
-    from django.views.static import serve
-
-    urlpatterns = [
-        path('', include('ads.urls')),
-        path('admin/', admin.site.urls),
-        path('accounts/', include('django.contrib.auth.urls')),
-        url(r'^oauth/', include('social_django.urls', namespace='social')),
-    ]
-
-    # Serve the favicon
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    urlpatterns += [
-        path('favicon.ico', serve, {
-                'path': 'favicon.ico',
-                'document_root': os.path.join(BASE_DIR, 'home/static'),
-            }
-        ),
-    ]
-
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
 
@@ -218,9 +231,9 @@ they extend `ads/base_menu.html`.  Change the first line of each file from:
 
 to be:
 
-    {% extends "ads/base_menu.html" %}
+    {% extends "base_menu.html" %}
 
-(3) Then create `ads/templates/base_menu.html` with the following content:
+(3) Then create `home/templates/base_menu.html` with the following content:
 
     {% extends "base_bootstrap.html" %}
     {% block navbar %}
