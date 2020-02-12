@@ -79,7 +79,7 @@ You can follow the pattern of the `HomeConfig` line in that file.
 
 * Edit `dj4e/urls.py` and
 add the `accounts/` so you can use the Django built in login features.
-(<a href="https://docs.djangoproject.com/en/2.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
+(<a href="https://docs.djangoproject.com/en/3.0/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
 Also edit `dj4e/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
         from django.contrib import admin

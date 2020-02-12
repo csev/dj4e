@@ -118,7 +118,7 @@ class CommentDeleteView(OwnerDeleteView):
 
 {% extends "base_bootstrap.html" %}
 {% load crispy_forms_tags %}
-{% load humanize %} <!-- https://docs.djangoproject.com/en/2.1/ref/contrib/humanize -->
+{% load humanize %} <!-- https://docs.djangoproject.com/en/3.0/ref/contrib/humanize -->
 {% block content %}
 <h1>
 {% if forum.owner == user %}

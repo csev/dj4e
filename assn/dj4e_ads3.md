@@ -80,7 +80,7 @@ ads.
         ad = models.ForeignKey(Ad, on_delete=models.CASCADE)
         user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
-        # https://docs.djangoproject.com/en/2.1/ref/models/options/#unique-together
+        # https://docs.djangoproject.com/en/3.0/ref/models/options/#unique-together
         class Meta:
             unique_together = ('ad', 'user')
 
