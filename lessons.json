@@ -891,6 +891,23 @@
         "project": "DJ 03 Many 06 Shell"
     }
    ],
+    "lti" : [
+        {
+            "title" : "Quiz: One to Many Data Models",
+            "launch" : "mod/gift/?quiz=DB-02-One-To-Many.txt",
+            "resource_link_id" : "dj4e_db_one_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
     "references" : [
         {
             "title" : "Documentation: Command Shell for SQLite",
