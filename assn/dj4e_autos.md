@@ -24,8 +24,8 @@ The login information is as follows:
 
 The 'nn' is a 2-digit number that by now, you should be able to easily guess.
 
-Making a New Project
---------------------
+Making a New Application
+------------------------
 
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
 and start a new application in your `mysite` project (this project already should have the 'hello'
