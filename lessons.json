@@ -791,15 +791,19 @@
    ],
     "lti" : [
         {
-        "title" : "Auto-grader: TODO Django Users",
-        "launch" : "tools/TODO-tutorial/",
-        "resource_link_id" : "dj4e_users",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "09users.php"
-            }
-        ]
+            "title" : "Quiz: Login and Authentication",
+            "launch" : "mod/gift/?quiz=10-Login.txt",
+            "resource_link_id" : "dj4e_10_login_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ],
     "references" : [
