@@ -81,8 +81,8 @@ add the `accounts/` path so you can use the Django built in login features.
 (<a href="https://docs.djangoproject.com/en/3.0/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
 Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
-    path('accounts/', include('django.contrib.auth.urls')),  # Add
-    path('autos/', include('autos.urls')),                   # Add
+        path('accounts/', include('django.contrib.auth.urls')),  # Add
+        path('autos/', include('autos.urls')),                   # Add
 
 * Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
 
