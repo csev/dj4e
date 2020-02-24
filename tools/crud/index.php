@@ -27,12 +27,7 @@ $assignments = array(
     '14adlist4.php' => 'AdList #4',
     '20autos.php' => 'Autos CRUD II',
     '20cats.php' => 'Cats CRUD II',
-    '194cities.php' => 'Cities',
-    '194wizards.php' => 'Wizards',
     '199horses.php' => 'Horses',
-    '199boats.php' => 'Boats',
-    '202gadgets.php' => 'Gadgets',
-    '202shows.php' => 'Shows',
 );
 
 $oldsettings = Settings::linkGetAll();
