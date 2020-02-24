@@ -129,10 +129,10 @@ The auto-grader-required <b>meta</b> tag must be in the head area for all of the
 for this <?= $assignment_type_lower ?>.
 </li>
 <li>
-This can be added as a new application to your <b>dj4e</b> project.  You do not have to remove
+This can be added as a new application to your <b>mysite</b> project.  You do not have to remove
 existing applications, simply add a new <b><?= $main_lower_plural ?></b> application.
 Activate any virtual environment you need (if any) and go into your `django_projects` folder
-and start a new application in your `dj4e` project (this project already should have
+and start a new application in your `mysite` project (this project already should have
 <?php if ($main_lower_plural == 'autos') { ?>
 a 'hello' application from a previous assignment):
 <?php } else { ?>
@@ -140,12 +140,12 @@ a 'hello' application from a previous assignment):
 <?php } ?>
 <pre>
     workon django2  # as needed
-    cd ~/django_projects/dj4e
+    cd ~/django_projects/mysite
     python3 manage.py startapp <?= $main_lower_plural ?>
 </pre>
 </li>
 <li>
-Edit the <b>django_projects/dj4e/dj4e/settings.py</b> to update the INSTALLED_APPS:
+Edit the <b>django_projects/mysite/mysite/settings.py</b> to update the INSTALLED_APPS:
 <pre>
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -202,7 +202,7 @@ foreach($fields as $field ) {
 Run the commands to perform the migrations.
 </li>
 <li>
-Add a link to <b>django_projects/dj4e/home/templates/home/main.html</b> that has the text for the top-level page.
+Add a link to <b>django_projects/mysite/home/templates/home/main.html</b> that has the text for the top-level page.
 <pre>
     &lt;ul&gt;
 <?php if ($main_lower_plural != 'autos') { ?>
@@ -213,14 +213,14 @@ Add a link to <b>django_projects/dj4e/home/templates/home/main.html</b> that has
 </pre>
 </li>
 <li>
-You should add a route to your <b>django_projects/dj4e/dj4e/urls.py</b> as follows:
+You should add a route to your <b>django_projects/mysite/mysite/urls.py</b> as follows:
 <pre>
 urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
 <?php if ( $main_lower_plural != 'autos' ) { ?>
-    # path('autos/', include('autos.urls')),
+    path('autos/', include('autos.urls')),
 <?php } ?>
     path('<?= $main_lower_plural ?>/', include('<?= $main_lower_plural ?>.urls')),
 ]
@@ -345,11 +345,11 @@ in case there is a need to verify your work or assign partial credit.
 <p>
 If you are doing your work on PythonAnywhere, create a ZIP file as follows:
 <pre>
-    cd ~/django_projects/dj4e
+    cd ~/django_projects/mysite
     rm -f <?= $main_lower_plural ?>.zip
     zip -r <?= $main_lower_plural ?>.zip <?= $main_lower_plural ?> -x '*pycache*'
 </pre>
-Then download the ZIP file from `django_projects/dj4e` using the
+Then download the ZIP file from `django_projects/mysite` using the
 Files tab of PythonAnywhere and upload the ZIP file back up to the LMS.  Some browsers
 (i.e. Safari on the Mac) automatically extract the ZIP into a folder.  If this
 happens simply compress it again to make a ZIP to upload.
