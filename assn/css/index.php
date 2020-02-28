@@ -28,7 +28,7 @@ Using only CSS.
 <p>There are several sources of information so you can do the assignment:
 <ul>
 <li>Lectures and materials on <i>Cascading Style Sheets</i> from
-<a href="https://www.wa4e.com/lessons/css" target="_blank">www.wa4e.com</a></li>
+<a href="https://www.dj4e.com/lessons/css" target="_blank">www.dj4e.com</a></li>
 </ul>
 </p>
 <h1>Pre-Requisites</h1>
@@ -112,8 +112,8 @@ Web Developer add on to turn off all styles:
 
 
 <p style="padding-top:30px;">
-Provided by: <a href="http://www.wa4e.com/" target="_blank">
-www.wa4e.com</a> <br/>
+Provided by: <a href="http://www.dj4e.com/" target="_blank">
+www.dj4e.com</a> <br/>
 </p>
 <center>
 Copyright Creative Commons Attribution 3.0 - Charles R. Severance
