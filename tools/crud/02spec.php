@@ -157,7 +157,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'autos.apps.AutosConfig',
 <?php if ($main_lower_plural != 'autos') { ?>
-    '<?= $main_lower_plural ?>.apps.<?= $title_plural ?>Config',    &lt;---- Add this
+    '<?= $main_lower_plural ?>.apps.<?= ucfirst($title_plural) ?>Config',    &lt;---- Add this
 <?php } ?>
 ]
 </pre>
