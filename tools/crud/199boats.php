@@ -8,8 +8,8 @@ $assignment_url = "02spec.php?assn=199boats.php";
 $assignment_url_text = "Specification";
 $reference_implementation = "https://crud.dj4e.com/boats";
 
-$assignment_type = 'Assignment';
 $assignment_type = 'Exam';
+$assignment_type = 'Assignment';
 // $assignment_type == "Sample Exam";
 $assignment_type_lower = strtolower($assignment_type);
 
