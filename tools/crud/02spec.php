@@ -225,13 +225,6 @@ urlpatterns = [
     path('<?= $main_lower_plural ?>/', include('<?= $main_lower_plural ?>.urls')),
 ]
 </pre>
-<?php if ( $main_lower_plural != 'autos' ) { ?>
-<p>
-Comment out the <b>autos</b> route (and any other routes for your application(s)) to
-avoid duplicate paths when using the <b>{% url .. %}</b> and
-<b>reverse_lazy()</b> features since path names are global across all applications.
-</p>
-<?php } ?>
 </li>
 <li>
 Create the <b><?= $main_lower_plural ?>/urls.py</b> file to add routes for the list,
