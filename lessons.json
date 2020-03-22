@@ -1232,6 +1232,10 @@
             "href": "https://python-social-auth.readthedocs.io/en/latest/configuration/django.html"
         },
         {
+            "title" : "Chapter 14: Python Objects (review)",
+            "href" : "https://www.py4e.com/html3/14-objects"
+        },
+        {
             "title" : "Reference Implementation",
             "href": "https://chucklist.dj4e.com/"
         }
