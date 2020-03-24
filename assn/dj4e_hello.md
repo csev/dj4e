@@ -31,7 +31,7 @@ bits) in an application named "home".  To get started:
 Create an HTML file in `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
     <ul>
-    <li><p><a href="/polls">A Polls Application</a></p>
+    <li><p><a href="/polls">A Polls Application</a></p></li>
     </ul>
 
 

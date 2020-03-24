@@ -29,45 +29,24 @@ If you have already checked `dj4e-samples`  on PythonAnywhere do:
     pip install -r requirements.txt
 
 
-Adding the ads application
---------------------------
+Pulling In Code From Samples
+----------------------------
 
-(0) Edit your `mysite/home/templates\base_bootstrap.html` and make sure that it has the following two
-lines inserted at the right places in the file. This line needs to be right before the 
-`</head>` tag:
+In this section, we will break and then fix your `settings.py` and `urls.py`.
+When this is done, the autos, cats, dogs, etc will stop working unless you 
+add them back to these two files.  It is OK for these applications to be working.
+The autograder will just look at /ads.
 
-    {% block head %} {% endblock %}
-
-This line needs to be right before the `</body>` tag:
-
-{% block footer %} {% endblock %}
-
-Take a look at `dj4e-samples/home/templates/base_bootstrap.html` (after you have done the `git pull` above)
-to see where thes lines need to go in your file.
-
-    
-(1) Add an `ads` application to your `mysite` project.
-
-    cd ~/django_projects/mysite
-    python3 manage.py check   # Make sure this works!
-    python3 manage.py startapp ads
-    
-So that your python3 application is run within the virtual environment.
-
-(2) Edit your `mysite/mysite/settings.py` and add the line to installed
-
-(3) Copy the `settings.py` and `urls.py` files and the entire
+(1) Copy the `settings.py` and `urls.py` files and the entire
 `home` folder from the `dj4e-samples` project:
 
-    cp ~/dj4e-samples/dj4e-samples/settings.py ~/django_projects/adlist/adlist
-    cp ~/dj4e-samples/dj4e-samples/urls.py ~/django_projects/adlist/adlist
-    mkdir ~/django_projects/adlist/home
-    cp -r ~/dj4e-samples/home/* ~/django_projects/adlist/home
+    cp ~/dj4e-samples/dj4e-samples/settings.py ~/django_projects/mysite/mysite
+    cp ~/dj4e-samples/dj4e-samples/urls.py ~/django_projects/mysite/mysite
+    cp -r ~/dj4e-samples/home/* ~/django_projects/mysite/home
 
-
-(4) Edit the `~/dango_projects/adlist/adlist/settings.py` and then delete
+(2) Edit `~/dango_projects/mysite/mysite/settings.py` and then delete
 all the `INSTALLED_APPLICATIONS` after `home`.  You also have to search
-and replace `dj4e-samples` with `adlist` in a few places.  Also set
+and replace `dj4e-samples` with `mysite` in a few places.  Also set
 the name of your application in the `settings.py` file:
 
     # Used for a default title
@@ -75,12 +54,12 @@ the name of your application in the `settings.py` file:
 
 This shows up in default page titles and default page navigation.
 
-(5) Edit your `django_projects/adlist/adlist/urls.py` and
+(5) Edit your `django_projects/mysite/mysite/urls.py` and
 remove all of the `path()` calls to the sample applications. Make
 sure to keep the `path()` to include the `home.urls`.  Also keep
 the `site` and `favicon` rules in your `urls.py`.
 
-(6) Edit the file `django_projects/adlist/home/templates/home/main.html` and put
+(6) Edit the file `django_projects/mysite/home/templates/home/main.html` and put
 this HTML in the file:
 
     <html>
@@ -101,41 +80,15 @@ this HTML in the file:
 
 Keep running `check` until it does not find any errors.
 
-(8)
-If you have errors, you might find the `grep` tool very helpful in figuring out where you might find certain errors.
-For example, lets say after you did all the editing, and went to the ads url and got this error:
-
-    NoReverseMatch at /ads
-    'myarts' is not a registered namespace
-
-You *thought* you fixed all the instances where the string "myarts" was in your code, but you must have missed one.
-You can manually look at every file individually or use the following command to let the computer do the searching:
-
-    cd ~/django_projects/adlist
-    grep -r myarts *
-
-You might see output like this:
-
-    ads/templates/ads/ad_list.html:<a href="{% url 'login' %}?next={% url 'myarts:all' %}">Login</a>
-
-The `grep` program is searching for all the files in the current folder and in subfolders for any lines
-in any file that have the string "myarts" in them and shows you the file name and the line within the file.
-
-The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
-Expression Parser"</a> and is one of the most useful Linux commands to know.
-
-
-
-
-(8) Once your application can start without error, set up the database
+(8) Once your application can pass the check  without error, set up the database
 for your project:
 
     python3 manage.py makemigrations
     python3 manage.py migrate
     python3 manage.py createsuperuser
 
-There won't be many working urls.  Try these two to see if you have the home code
-working properly:
+If you restart your web application, there won't be many working urls.
+Try these two to see if you have the home code working properly:
 
     https://your-account.pythonanywhere.com/
     https://your-account.pythonanywhere.com/favicon.ico
@@ -153,15 +106,18 @@ Building the Ads Application
 ----------------------------
 
 In this section, you will pull bits and pieces of the sample applications repository and pull them
-into your `ads` application.  __Note:__ If you find you have a problem saving files in the PythonAnywhere
-system using their browser-based editor, you might need to turn off your ad blocker.
+into your `ads` application.  
 
-(1) Create a new `ads` application within your `adlist` project:
+__Important Note:__ If you find you have a problem saving files in the PythonAnywhere
+system using their browser-based editor, you might need to turn off your ad blocker for
+this site - weird bt true.
 
-    cd django_projects/adlist
+(1) Create a new `ads` application within your `mysite` project:
+
+    cd django_projects/mysite
     python3 manage.py startapp ads
 
-The add the application to your `adlist/adlist/settings.py` and `adlist/adlist/urls.py'.
+The add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py'.
 
 (2) Use this in your `ads/model.py`:
 
@@ -191,7 +147,7 @@ ad application and the above model.   A big part of this assignment is to use th
 view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
 not be shown to the user on the create and update forms, it should be automatically set
 by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop down
-in your user interface the program is not implemented correctly and will fail the autograder.
+in your create screen the program is not implemented correctly and will fail the autograder.
 
 (4) When you are implementing the update and delete views, make sure to follow the url patterns
 the update and delete operations.  They should be of the form `/ad/14/update`
@@ -212,6 +168,31 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
         path('ad/<int:pk>/delete',
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
+
+Debugging: Searching through all your files in the bash shell
+-------------------------------------------------------------
+
+If you have errors, you might find the `grep` tool very helpful in figuring out where you might find your errors.
+For example, lets say after you did all the editing, and went to the ads url and got this error:
+
+    NoReverseMatch at /ads
+    'myarts' is not a registered namespace
+
+You *thought* you fixed all the instances where the string "myarts" was in your code, but you must have missed one.
+You can manually look at every file individually or use the following command to let the computer do the searching:
+
+    cd ~/django_projects/mysite
+    grep -r myarts *
+
+You might see output like this:
+
+    ads/templates/ads/ad_list.html:<a href="{% url 'login' %}?next={% url 'myarts:all' %}">Login</a>
+
+The `grep` program is searching for all the files in the current folder and in subfolders for any lines
+in any file that have the string "myarts" in them and shows you the file name and the line within the file.
+
+The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
+Expression Parser"</a> and is one of the most useful Linux commands to know.
 
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
@@ -297,11 +278,11 @@ after up update the file and press 'Refresh' and.or switch browsers.
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`adlist\adlist/github_settings.py` and go through the process on github to get your client ID and
+`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `adlist\adlist/github_settings.py`.
+and at the end of your `mysite/mysite/github_settings.py`.
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead
