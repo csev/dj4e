@@ -65,15 +65,15 @@ Here are some tasks:
 
 * Go into your `dj4e-samples` folder and do a `git pull` to get the latest version of the samples code.
 
-* Create a template in `home/templates/registration` to support the login view.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">Example</a>)
+* Create `mysite/home/templates` and `mysite/home/templates/registration` folders using `mkdir` and copy the
+(<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
 
 * Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
-your `mysite/home/templates` - this will be used in your autos templates and make our HTML look
+your `mysite/home/templates` - this will be used in your `autos/templates` and make our HTML look
 better by applying the <a href="https://getbootstrap.com/docs/4.0/" target="_blank">Bootstrap</a>
 and other styling libraries.
 
-* Edit `mysite/settings.py` add the autos application to the list of `INSTALLED_APPS`.
+* Edit `mysite/mysite/settings.py` add the autos application to the list of `INSTALLED_APPS`.
 You can follow the pattern of the `HomeConfig` line in that file.
 
 * Edit `mysite/mysite/urls.py` and

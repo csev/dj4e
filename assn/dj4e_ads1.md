@@ -21,41 +21,40 @@ on PythonAnywhere:
     cd ~
     git clone https://github.com/csev/dj4e-samples
 
-If it already is on PythonAnywhere:
-
-    cd ~/dj4e-samples
-    git pull
-
-Note: Do **not** build this application by forking the sample application repository
-and hacking it.  There is just too much cruft in that repository that will make it hard to develop
-your application.   You will end up with a lot cleaner code by taking pieces from
-the sample applications and copying them into a new application.   At some point,
-we will ask you to hand
-in the source of your application and we will check to make sure you are not using a fork
-of the sample application.
-
-Borrowing from the Samples Repository
--------------------------------------
-
-(1) Make a new project under your `django_projects` called `adlist`.
-
-(2) Copy `dj4e-samples/requirements.txt` to `django_projects/adlist/requirements.txt` and launch a shell.  If you are using
-virtual environments you must run the `pip` command in your virtual environment.   In PythonAnywhere
-under Linux you would say:
+If you have already checked `dj4e-samples`  on PythonAnywhere do:
 
     workon django3
+    cd ~/dj4e-samples
+    git pull
+    pip install -r requirements.txt
 
-Then run:
 
-    pip install -r requirements.txt   # or pip3
+Adding the ads application
+--------------------------
 
-This will pull in important extra libraries that your application will need.  On PythonAnywhere
-make sure to double check under the `Web` tab under the `Virtualenv` section that you have
-it set to something like:
+(0) Edit your `mysite/home/templates\base_bootstrap.html` and make sure that it has the following two
+lines inserted at the right places in the file. This line needs to be right before the 
+`</head>` tag:
 
-    /home/--your-account---/.virtualenvs/django3
+    {% block head %} {% endblock %}
 
-So that your python application is run within the virtual environment.
+This line needs to be right before the `</body>` tag:
+
+{% block footer %} {% endblock %}
+
+Take a look at `dj4e-samples/home/templates/base_bootstrap.html` (after you have done the `git pull` above)
+to see where thes lines need to go in your file.
+
+    
+(1) Add an `ads` application to your `mysite` project.
+
+    cd ~/django_projects/mysite
+    python3 manage.py check   # Make sure this works!
+    python3 manage.py startapp ads
+    
+So that your python3 application is run within the virtual environment.
+
+(2) Edit your `mysite/mysite/settings.py` and add the line to installed
 
 (3) Copy the `settings.py` and `urls.py` files and the entire
 `home` folder from the `dj4e-samples` project:
