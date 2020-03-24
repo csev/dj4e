@@ -63,7 +63,7 @@ Adding Comments to the Ads Application
 In this section, you will pull bits and pieces of the `forum` sample application
 into your `ads` application to add support for comments for each ad.
 
-(1) Update your `models.py` adding the comment feature from the `forums\models.py`
+(1) Update your `models.py` adding the comment feature from the `forums/models.py`
 
     class Ad(models.Model) :
 
@@ -137,11 +137,11 @@ after up update the file and press 'Refresh' and.or switch browsers.
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`adlist\adlist/github_settings.py` and go through the process on github to get your client ID and
+`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `adlist\adlist/github_settings.py`.
+and at the end of your `mysite/mysite/github_settings.py`.
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead

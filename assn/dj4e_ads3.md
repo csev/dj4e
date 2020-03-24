@@ -28,11 +28,11 @@ after up update the file and press 'Refresh' and.or switch browsers.
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`adlist/adlist/github_settings.py` and go through the process on github to get your client ID and
+`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `adlist/adlist/github_settings.py`.
+and at the end of your `mysite/mysite/github_settings.py`.
 
     # The code below dynamically switches between non-social login.html 
     # and social_login.html when we notice that social login has been

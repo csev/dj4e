@@ -17,7 +17,7 @@ Once you understand what the `well` code is doing, you only have to change a few
 
 * You only have to change your main "all" view in `views.py`
 
-* You only have to change the main li;st/all template.
+* You only have to change the main list/all template.
 
 There should not be any other changes required.
 
