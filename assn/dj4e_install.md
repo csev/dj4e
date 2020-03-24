@@ -46,7 +46,7 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
     pip install -r requirements.txt
-    python manage.py check
+    python3 manage.py check
 
 This is the normal output of running `check`:
 
@@ -57,7 +57,7 @@ This is the normal output of running `check`:
 If the `check` identifies errors, stop until there are no errors.  Only take the next steps
 once check sees no errors.  Once the check works do:
 
-    python manage.py makemigrations
+    python3 manage.py makemigrations
 
 This is the normal output of the `makemigrations`:
 
@@ -67,7 +67,7 @@ This is the normal output of the `makemigrations`:
 
 Then run:
 
-    python manage.py migrate
+    python3 manage.py migrate
 
 If you are doing this for the first time, it should run some migrations and create a file `db.sqlite3`.
 
@@ -190,18 +190,18 @@ the first part of the tutorial is installing and configuring Django in general.
 The first step is to make the `polls` application:
 
     cd ~/django_projects/mysite
-    python manage.py startapp polls
+    python3 manage.py startapp polls
 
 Continue to follow the steps outlined in
 <a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
 Django tutorial</a>.
 until you reach the part where the tutorial tells you to run this command:
 
-    python manage.py runserver
+    python3 manage.py runserver
 
 Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the following command:
 
-    python manage.py check
+    python3 manage.py check
 
 The `check` does a check for syntax and logic errors in your Django application.
 It is easier to fix errors in the command line.
@@ -216,7 +216,7 @@ You should see a line that lokos like:
 
 Going forward, every time we make changes to our application, we should run
 
-    python manage.py check
+    python3 manage.py check
 
 in the shell, and when that shows no errors, navigate to the `Web`, press `Reload`,
 and then go to your web site to test your changes.  This pattern of change, reload, and test
