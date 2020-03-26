@@ -1197,6 +1197,7 @@
     "icon" : "fa-newspaper",
     "description": "We model owned rows, bootstrap menus, crispy forms, and social login with github and then we write the first iteration of the classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
+    "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "videos" : [
         {
             "title" : "Owned Rows in Django - Overview",
