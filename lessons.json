@@ -1195,8 +1195,22 @@
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
     "icon" : "fa-newspaper",
-    "description": "We cover bootstrap menus, crispy forms, social login with github and owned model rows and then we write the first iteration of the classified ads application.",
+    "description": "We model owned rows, bootstrap menus, crispy forms, and social login with github and then we write the first iteration of the classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
+    "videos" : [
+        {
+            "title" : "Owned Rows in Django - Overview",
+            "youtube" : "YTK-Sx4OUqs"
+        },
+        {
+            "title" : "Owned Rows in Django - Generic Views Review",
+            "youtube" : "z4iJ3Njbc9g"
+        },
+        {
+            "title" : "Owned Rows in Django - owner.py",
+            "youtube" : "hznUKCsk8X8"
+        }
+    ],
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #1",
@@ -1212,7 +1226,7 @@
     ],
     "references" : [
         {
-            "title" : "Sample Code",
+            "title" : "Sample myarts Code",
             "href": "https://github.com/csev/dj4e-samples"
         },
         {
