@@ -1,7 +1,7 @@
 Classified Ad Web Site - Milestone 4
 ====================================
 
-In this assignment, you will expand your classified ads web site to add serch functionality
+In this assignment, you will expand your classified ads web site to add search functionality
 equivalent to:
 
 https://chucklist.dj4e.com/m4
