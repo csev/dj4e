@@ -1195,7 +1195,7 @@
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
     "icon" : "fa-newspaper",
-    "description": "We explore crispy forms, modeling owned rows, bootstrap menus, and social login with github and then we write the first iteration of the classified ads application.",
+    "description": "We explore crispy forms, model owned rows, and bootstrap menus and then we write the first iteration of the classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "videos" : [
@@ -1239,8 +1239,8 @@
     ],
     "references" : [
         {
-            "title" : "Sample myarts Code",
-            "href": "https://github.com/csev/dj4e-samples"
+            "title" : "Crispy Forms",
+            "href": "https://samples.dj4e.com/crispy/"
         },
         {
             "title" : "Ownership of Rows",
@@ -1249,14 +1249,6 @@
         {
             "title" : "Bootstrap / Menus",
             "href": "https://samples.dj4e.com/menu/"
-        },
-        {
-            "title" : "Crispy Forms",
-            "href": "https://samples.dj4e.com/crispy/"
-        },
-        {
-            "title" : "Social Login with Github",
-            "href": "https://python-social-auth.readthedocs.io/en/latest/configuration/django.html"
         },
         {
             "title" : "Chapter 14: Python Objects (review)",
@@ -1536,6 +1528,10 @@
         {
             "title" : "Sample Code on Github",
             "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Social Login with Github",
+            "href": "https://python-social-auth.readthedocs.io/en/latest/configuration/django.html"
         },
         {
             "title" : "Sample Code Server",
