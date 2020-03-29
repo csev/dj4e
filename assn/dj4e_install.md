@@ -210,7 +210,7 @@ and `Reload` your application and then test your application by navigating to:
 
     (your-account).pythonanywhere.com/polls
 
-You should see a line that lokos like:
+You should see a line that looks like:
 
     Hello, world. You're at the polls index.
 
