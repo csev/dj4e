@@ -193,10 +193,10 @@ You might see output like this:
 
 The `grep` program is searching for all the files in the current folder and in subfolders for any lines
 in any file that have the string "myarts" in them and shows you the file name and the line within the file.
-The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time :).
 
 The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
 Expression Parser"</a> and is one of the most useful Linux commands to know.
+The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time :).
 
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
