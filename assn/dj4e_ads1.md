@@ -153,7 +153,7 @@ by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop
 in your create screen the program is not implemented correctly and will fail the autograder.
 
 (5) When you are implementing the update and delete views, make sure to follow the url patterns
-the update and delete operations.  They should be of the form `/ad/14/update`
+for the update and delete operations.  They should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
     from django.urls import path, reverse_lazy
