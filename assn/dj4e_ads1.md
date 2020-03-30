@@ -141,15 +141,18 @@ The add the application to your `mysite/mysite/settings.py` and `mysite/mysite/u
         def __str__(self):
             return self.title
 
-(3) Pull in pieces of `myarts` application other than `models.py`.  Then adapt the
-`admin.py`, `views.py`, `urls.py`, and `templates` to be suitable for a classified
+(3) Copy the `owner.py` from `myarts` to your ads application.  This is the one file you <b>do not</b>
+have to change at all (thanks to object orientation :) ).
+
+(4) The files `admin.py`, `views.py`, `urls.py`, and the `templates` folder will require significant
+adaptation to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
 view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
 not be shown to the user on the create and update forms, it should be automatically set
 by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop down
 in your create screen the program is not implemented correctly and will fail the autograder.
 
-(4) When you are implementing the update and delete views, make sure to follow the url patterns
+(5) When you are implementing the update and delete views, make sure to follow the url patterns
 the update and delete operations.  They should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
@@ -182,7 +185,7 @@ You *thought* you fixed all the instances where the string "myarts" was in your 
 You can manually look at every file individually or use the following command to let the computer do the searching:
 
     cd ~/django_projects/mysite
-    grep -r myarts *
+    grep -ri myarts *
 
 You might see output like this:
 
@@ -190,6 +193,7 @@ You might see output like this:
 
 The `grep` program is searching for all the files in the current folder and in subfolders for any lines
 in any file that have the string "myarts" in them and shows you the file name and the line within the file.
+The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time :).
 
 The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
 Expression Parser"</a> and is one of the most useful Linux commands to know.
