@@ -1269,16 +1269,24 @@
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
     "videos" : [
         {
-            "title" : "JavaScript - Part 1 (From PHP class)",
-            "youtube" : "AyIllqHSGoI"
+            "title" : "JavaScript - Overview and History",
+            "youtube" : "xBpKUM1CTBQ"
         },
         {
-            "title" : "JavaScript - Part 2 (From PHP class)",
-            "youtube" : "E5jTKLXz9OE"
+            "title" : "JavaScript - In the Browser",
+            "youtube" : "wnUhEMhEeDs"
         },
         {
-            "title" : "JavaScript - Part 3 (From PHP class)",
-            "youtube" : "jQQ88xzuBTU"
+            "title" : "JavaScript - The Language",
+            "youtube" : "vFErM6Cfx9A"
+        },
+        {
+            "title" : "JavaScript - Functions and Arrays",
+            "youtube" : "a7wPzoX9o_8"
+        },
+        {
+            "title" : "JavaScript - Loops and Conditional",
+            "youtube" : "njEzr5cvEig"
         }
     ],
     "lti" : [
