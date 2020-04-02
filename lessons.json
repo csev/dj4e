@@ -1243,6 +1243,21 @@
     "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
     "lti" : [
         {
+            "title" : "Quiz: Many-To-Many",
+            "launch" : "mod/gift/?quiz=DB-04-Many-To-Many.txt",
+            "resource_link_id" : "dj4e_db_04_many",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
         "title" : "Auto-grader: Data model",
         "launch" : "tools/sqlite/",
         "resource_link_id" : "dj4e_load",
