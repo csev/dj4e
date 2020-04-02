@@ -1234,10 +1234,6 @@
         "title": "Building a Django Batch Script to Load Data from CSV",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
-    },
-    {
-        "title": "Demonstration: Django Many-to-One Models",
-        "youtube": "vEkGXH7xSsc"
     }
    ],
     "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
