@@ -1194,12 +1194,12 @@
             "href": "https://samples.dj4e.com/myarts/"
         },
         {
-            "title" : "Bootstrap / Menus",
-            "href": "https://samples.dj4e.com/menu/"
-        },
-        {
             "title" : "Chapter 14: Python Objects (review)",
             "href" : "https://www.py4e.com/html3/14-objects"
+        },
+        {
+            "title" : "Bootstrap / Menus",
+            "href": "https://samples.dj4e.com/menu/"
         },
         {
             "title" : "Reference Implementation",
@@ -1389,6 +1389,14 @@
         {
             "title" : "Sample DJ4E Code",
             "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Adding Pictures",
+            "href": "https://samples.dj4e.com/pics/"
+        },
+        {
+            "title" : "Forums and Comments",
+            "href": "https://samples.dj4e.com/forums/"
         },
         {
             "title" : "Reference Implementation",
