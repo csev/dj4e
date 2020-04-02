@@ -1139,59 +1139,6 @@
    ]
 },
 {
-    "title": "Many-To-Many Data Models",
-    "anchor": "dj4e_load",
-    "icon" : "fa-arrows",
-    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
-    "slides": "lectures/DJ-04-Many-To-Many.pptx",
-    "videos" : [
-    {
-        "title": "Many-to-Many Overview",
-        "youtube": "JI4ZOFOubLY",
-        "project" : "DJ 04 Many 01 Overview"
-    },
-    {
-        "title": "A Simple Many-To-Many Example in Django",
-        "youtube": "gf2-J9YOMcc",
-        "project" : "DJ 04 Many 02 Many"
-    },
-    {
-        "title": "Many-To-Many Data Models for Courses and Membership",
-        "youtube": "kY_1a057phM",
-        "project" : "DJ 04 Many 03 Course"
-    },
-    {
-        "title": "Building a Django Batch Script to Load Data from CSV",
-        "youtube": "E8y_6S2Fc5s",
-        "project" : "DJ 04 Many 04 Batch"
-    },
-    {
-        "title": "Demonstration: Django Many-to-One Models",
-        "youtube": "vEkGXH7xSsc"
-    }
-   ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
-    "lti" : [
-        {
-        "title" : "Auto-grader: Data model",
-        "launch" : "tools/sqlite/",
-        "resource_link_id" : "dj4e_load",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "05many.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "UNESCO World Heritage Sites",
-            "href": "https://whc.unesco.org/en/list/"
-        }
-    ]
-},
-{
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
     "icon" : "fa-newspaper",
@@ -1261,12 +1208,64 @@
     ]
 },
 {
-    "title": "JavaScript / Classified Ads #2",
-    "anchor": "dj4e_ads2",
+    "title": "Many-To-Many Data Models",
+    "anchor": "dj4e_many",
+    "icon" : "fa-arrows",
+    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
+    "slides": "lectures/DJ-04-Many-To-Many.pptx",
+    "videos" : [
+    {
+        "title": "Many-to-Many Overview",
+        "youtube": "JI4ZOFOubLY",
+        "project" : "DJ 04 Many 01 Overview"
+    },
+    {
+        "title": "A Simple Many-To-Many Example in Django",
+        "youtube": "gf2-J9YOMcc",
+        "project" : "DJ 04 Many 02 Many"
+    },
+    {
+        "title": "Many-To-Many Data Models for Courses and Membership",
+        "youtube": "kY_1a057phM",
+        "project" : "DJ 04 Many 03 Course"
+    },
+    {
+        "title": "Building a Django Batch Script to Load Data from CSV",
+        "youtube": "E8y_6S2Fc5s",
+        "project" : "DJ 04 Many 04 Batch"
+    },
+    {
+        "title": "Demonstration: Django Many-to-One Models",
+        "youtube": "vEkGXH7xSsc"
+    }
+   ],
+    "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Data model",
+        "launch" : "tools/sqlite/",
+        "resource_link_id" : "dj4e_load",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05many.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "UNESCO World Heritage Sites",
+            "href": "https://whc.unesco.org/en/list/"
+        }
+    ]
+},
+{
+    "title": "JavaScript",
+    "anchor": "dj4e_javascript",
     "icon" : "fa-code",
-    "description": "We take a quick look at the JavaScript language.  The video recordings are from Web Applications for Everybody.  We also add pictures and comments to our classified ads application.",
+    "description": "We take a quick look at the JavaScript language and how it is used in the browser.",
     "slides": "lectures/JS-01-JavaScript.ppt",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
     "videos" : [
         {
             "title" : "JavaScript - Overview and History",
@@ -1304,27 +1303,12 @@
                     "value": "601"
                 }
             ]
-        },
-        {
-        "title" : "Auto-grader: Ad List #2",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads2",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "12adlist2.php"
-            }
-        ]
         }
     ],
     "references" : [
         {
             "title" : "Sample DJ4E Code",
             "href": "https://github.com/csev/dj4e-samples"
-        },
-        {
-            "title" : "Reference Implementation",
-            "href": "https://chucklist.dj4e.com/m2"
         },
         {
             "title" : "Sample JavaScript code",
@@ -1337,16 +1321,21 @@
     ]
 },
 {
-    "title": "JavaScript Objects",
+    "title": "Object Oriented Programming in JavaScript",
     "anchor": "js-oo",
     "icon" : "fa-ethernet",
-    "description": "We do a quick look at how the JavaScript language supports the Object-Oriented pattern. The video recordings are from Web Applications for Everybody.",
+    "description": "We do a quick look at how the JavaScript language supports the Object-Oriented pattern.",
     "slides": "lectures/JS-02-JavaScript-Objects.ppt",
-    "videos" :
+    "videos" :[
         {
-            "title" : "JavaScript Object Orientation (from PHP class)",
-            "youtube" : "dPvjFwNl2fM"
+            "title" : "JavaScript Object Oriented Concepts",
+            "youtube" : "N_ZB9VnXDWo"
         },
+        {
+            "title" : "Building Classes and Objects in JavaScript",
+            "youtube" : "DLWYj1_j1Is"
+        }
+    ],
     "references" : [
         {
             "title" : "Sample code running",
@@ -1372,6 +1361,38 @@
                     "value": "601"
                 }
             ]
+        }
+    ]
+},
+{
+    "title": "Classified Ads #2",
+    "anchor": "dj4e_ads2",
+    "icon" : "fa-code",
+    "description": "We add pictures and comments to our classified ads application.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
+    "videos" : [
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Ad List #2",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads2",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "12adlist2.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample DJ4E Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://chucklist.dj4e.com/m2"
         }
     ]
 },
