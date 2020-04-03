@@ -1383,6 +1383,10 @@
     "description": "We add pictures and comments to our classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
     "videos" : [
+        {
+            "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
+            "youtube" : "tanl9CthvHE"
+        }
     ],
     "lti" : [
         {
