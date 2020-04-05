@@ -1428,16 +1428,16 @@
     "title": "jQuery",
     "anchor": "jquery",
     "icon" : "fa-briefcase",
-    "description": "This is a brief introduction to the jQuery library which is widely used to do in-browser manipulation of the Document Object Model(DOM) and event handling.  The video recordings are from Web Applications for Everybody.",
+    "description": "This is a brief introduction to the jQuery library which is widely used to do in-browser manipulation of the Document Object Model(DOM) and event handling.",
     "slides": "lectures/JS-03-JQuery.ppt",
     "videos" : [
         {
-            "title" : "jQuery - Part 1 (From PHP Class)",
-            "youtube" : "vCdsSaylTDM"
+            "title" : "jQuery and the Document Object Model",
+            "youtube" : "jvhybOHImk "
         },
         {
-            "title" : "jQuery - Part 2 (From PHP Class)",
-            "youtube" : "auVow0kWZCg"
+            "title" : "Using jQuery",
+            "youtube" : "TBD"
         }
     ],
     "references" :
