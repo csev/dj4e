@@ -1,15 +1,13 @@
 <html><head><meta charset="utf-8"/></head><body>
-<p>js-12.htm</p>
+<p>js-15.htm - Loop and Break</p>
 <p>Please look at the source and developer console.</p>
 
 <script type="text/javascript">
-balls = {"golf": "Golf balls",
-    "tennis": "Tennis balls", 
-    "ping": "Ping Pong balls"};
-
-for (ball in balls) {
-   console.log(ball+' = '+balls[ball]);
-}
+for(var count=1; count<=600; count++ ) {
+  if ( count == 5 ) break;
+  console.log('Count:', count);
+} 
+console.log("Done");
 </script>
 
 <script type="text/javascript" src="showsource.js"></script>
