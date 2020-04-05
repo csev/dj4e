@@ -1,19 +1,13 @@
 <html><head><meta charset="utf-8"/></head><body>
-<p>js-17.htm</p>
+<p>js-15.htm - Loop and Break</p>
 <p>Please look at the source and developer console.</p>
 
 <script type="text/javascript">
-try {
-    x = y + 1;
-    console.log(x);
+for(var count=1; count<=600; count++ ) {
+  if ( count == 5 ) break;
+  console.log('Count:', count);
 } 
-catch(erval) {
-    console.log('Oops - Sorry');
-    console.dir(erval);
-}
-finally {
-    console.log('Always runs');
-}
+console.log("Done");
 </script>
 
 <script type="text/javascript" src="showsource.js"></script>

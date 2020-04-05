@@ -1,15 +1,14 @@
 <html><head><meta charset="utf-8"/></head><body>
-<p>js-12.htm</p>
+<p>js-16.htm - loop and continue</p>
 <p>Please look at the source and developer console.</p>
 
 <script type="text/javascript">
-balls = {"golf": "Golf balls",
-    "tennis": "Tennis balls", 
-    "ping": "Ping Pong balls"};
-
-for (ball in balls) {
-   console.log(ball+' = '+balls[ball]);
+for(var count=1; count<=10; count++ ) {
+  if ( (count % 2) == 0 ) continue;
+  console.log('Count:', count);
 }
+console.log("Done");
+
 </script>
 
 <script type="text/javascript" src="showsource.js"></script>

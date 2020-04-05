@@ -1,11 +1,19 @@
 <html><head><meta charset="utf-8"/></head><body>
-<p>js-14.htm - counted loop</p>
+<p>js-17.htm</p>
 <p>Please look at the source and developer console.</p>
 
 <script type="text/javascript">
-for(var count=1; count<=6; count++ ) {
-  console.log(count, 'times 6 is', count * 6);
+try {
+    x = y + 1;
+    console.log(x);
 } 
+catch(erval) {
+    console.log('Oops - Sorry');
+    console.dir(erval);
+}
+finally {
+    console.log('Always runs');
+}
 </script>
 
 <script type="text/javascript" src="showsource.js"></script>
