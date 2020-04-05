@@ -23,5 +23,5 @@ function renderPRE( script, codeScriptName ){
   script.insertAdjacentHTML('afterend', "<pre class='language-js'><code>" + jsCode + "</code></pre>");
 }
 
-renderPRE(document.getElementsByTagName("script")[0]);
+renderPRE(document.getElementsByTagName("script")[1]);
 
