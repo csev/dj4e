@@ -20,7 +20,7 @@ function renderPRE( script, codeScriptName ){
   } else {
       jsCode = jsCode.replace(/</g, "&lt").replace(/>/g, "&gt").trim();
   }
-  script.insertAdjacentHTML('afterend', "<pre class='language-js'><code>" + jsCode + "</code></pre>");
+  script.insertAdjacentHTML('afterend', "<hr/><pre class='language-js'><code>" + jsCode + "</code></pre>");
 }
 
 renderPRE(document.getElementsByTagName("script")[0]);
