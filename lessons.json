@@ -1319,8 +1319,8 @@
     ],
     "references" : [
         {
-            "title" : "Sample DJ4E Code",
-            "href": "https://github.com/csev/dj4e-samples"
+            "title" : "Sample JavaScript Code Running",
+            "href": "code/javascript"
         },
         {
             "title" : "Sample JavaScript code (Download ZIP)",
