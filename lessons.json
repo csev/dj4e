@@ -1493,12 +1493,16 @@
     "title": "JSON / AJAX",
     "anchor": "json",
     "icon" : "fa-file-archive",
-    "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser (JavaScript/jQuery).  The video recordings are from Web Applications for Everybody.",
+    "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser (JavaScript/jQuery).",
     "slides": "lectures/JS-04-JSON.ppt",
     "videos" : [
         {
-            "title" : "JSON - JavaScript Object Notation - JSON (From PHP Class)",
-            "youtube" : "MUqGiqlmeGk"
+            "title" : "JSON - JavaScript Object Notation",
+            "youtube" : "8ifl_tEVVvY"
+        },
+        {
+            "title" : "Building an AJAX Chat with Django",
+            "youtube" : "FDf69yaSH8A"
         }
     ],
     "references" : [
