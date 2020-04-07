@@ -31,6 +31,15 @@ github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of `mysite/mysite/github_settings.py`.
 
+To get your key and secret from github, go to:
+<a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a>
+and add a new OAuth2 application.  Here are some sample settings:
+
+    Application name: ChuckList PythonAnywhere
+    Homepage Url: https://drchuck.pythonanywhere.com
+    Application Description: Some pithy words...
+    Authorization callback URL: https://drchuck.pythonanywhere.com/oauth/complete/github/
+   
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead
 of `http://localhost:8000/` and use that in your browser to test your site.  If you
