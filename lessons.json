@@ -1552,7 +1552,15 @@
     "description": "We add favorites to our classified ads application.",
     "videos" : [
     {
-        "title": "DJ4E Samples - Favorites",
+        "title": "DJ4E Samples Walkthrough - Favicon",
+        "youtube": "C1WGD5hFdT8"
+    },
+    {
+        "title": "DJ4E Samples Walkthrough - Social Login",
+        "youtube": "NctpQ-2Kdtw"
+    },
+    {
+        "title": "DJ4E Samples Walkthrough - Favorites",
         "youtube": "6cq-ehBHkwc"
     }
    ],
