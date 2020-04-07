@@ -29,33 +29,13 @@ after up update the file and press 'Refresh' and.or switch browsers.
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
-secret.   The documentation is in comments of the file.  Also take a look at
-<a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/urls.py" target="_blank">
-dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `mysite/mysite/github_settings.py`.
-
-    # The code below dynamically switches between non-social login.html 
-    # and social_login.html when we notice that social login has been
-    # configured in settings.py (later in the course)
-    # Or just uncomment the path above when you enable social login
-
-    from django.contrib.auth import views as auth_views
-    try:
-        from . import github_settings
-        social_login = 'registration/login_social.html'
-        urlpatterns.insert(0,
-            path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))
-        )
-        print('Using',social_login,'as the login template')
-    except:
-        print('Using registration/login.html as the login template')
-
+secret.   The documentation is in comments of `mysite/mysite/github_settings.py`.
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead
 of `http://localhost:8000/` and use that in your browser to test your site.  If you
-use localhost, you probably will get the `The redirect_uri MUST match the registered callback
-URL for this application.` error message when you use social login.
+use localhost, you probably will get an error message when you login like:
+`The redirect_uri MUST match the registered callback URL for this application.`
 
 
 Adding Favorites to the Ads Application
@@ -128,7 +108,7 @@ after refresh as it was when you clicked on the star
 the star "sticks" (i.e. has the same value as when you clicked it)
 
 The most common problem is that when you click onthe star if looks good on the screen but the
-fact that this is not a favorites (or not) did not get recorded in the server.  
+fact that this is not a favorites (or not) did not get recorded in the server.
 Often you will need to check the developer network console in your browser to find errors
 in the AJAX code.
 
