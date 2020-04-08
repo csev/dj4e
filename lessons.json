@@ -1639,8 +1639,18 @@
 {
     "title": "Classified Ads #4",
     "anchor": "dj4e_ads4",
-    "icon" : "fa-newspaper",
+    "icon" : "fa-search",
     "description": "We add search a feature our classified ads application.",
+    "videos" : [
+    {
+        "title": "DJ4E Samples Walkthrough - search (well)",
+        "youtube": "4pOExZHnL9k"
+    },
+    {
+        "title": "DJ4E Samples Walkthrough - myarts (review)",
+        "youtube" : "iHvJZ_lvXB4"
+    }
+   ],
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads4.md",
     "lti" : [
         {
