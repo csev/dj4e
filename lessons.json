@@ -1721,6 +1721,7 @@
 },
 {
     "title": "CRUD Practice",
+    "hidden": true,
     "anchor": "dj4e_crud2",
     "icon" : "fa-database",
     "description": "Some CRUD Exercises.",
