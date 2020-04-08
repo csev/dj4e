@@ -13,11 +13,11 @@ https://samples.dj4e.com/well/
 
 Once you understand what the `well` code is doing, you only have to change a few files:
 
-* The `urls.py` does not have to change
+* Your `urls.py` does not have to change
 
-* You only have to change your main "all" view in `views.py`
+* You only have to change your "all" view in `views.py`
 
-* You only have to change the main list/all template.
+* You only have to change the list/all template.
 
 There should not be any other changes required.
 
