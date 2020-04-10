@@ -18,12 +18,19 @@ by the autograder - but we will separately check them.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
-any thing you like - it does not have to be a picture of you.
+anything you like - it does not have to be a picture of you.  The gravatar is associated an email address
+so make sure to give an email address to the user you create with `createsuperuser`.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
-after up update the file and press 'Refresh' and.or switch browsers.
+after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
+is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
+you can add a GET parameter tho the URL to forc it to be re-retrieved:
+
+    https://chucklist.dj4e.com/favicon.ico?x=42
+
+Change the `x` value to something else if you want to test over and over.
 
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
