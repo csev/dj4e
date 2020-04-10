@@ -59,6 +59,8 @@ if ( $retval === False ) {
     error_out('Assignment will not be scored.');
     $meta_good = false;
 }
+
+webauto_search_for_menu($html);
 $login_url = webauto_get_url_from_href($crawler,'Login');
 
 $crawler = webauto_get_url($client, $login_url, "Logging in as $user1account");
@@ -71,6 +73,7 @@ webauto_change_form($form, 'password', $user1pw);
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
@@ -109,6 +112,7 @@ webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( ! webauto_search_for($html, $title) ) {
     error_out('Tried to create a record and cannot find the record in the list view');
@@ -139,6 +143,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
 $crawler = webauto_get_url($client, $logout_url, "Logging out...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 success_out("Completed first user, moving to second user...");
 
@@ -147,6 +152,7 @@ success_out("Completed first user, moving to second user...");
 $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 require("meta_check.php");
 
@@ -177,6 +183,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
         $crawler = $client->submit($form);
         $html = webauto_get_html($crawler);
+        webauto_search_for_menu($html);
     } 
 }
 $passed = $saved;
@@ -184,6 +191,7 @@ $passed = $saved;
 $create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
 $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // Use the create ad form
 $title = 'HHGTTG_42 '.$now;
@@ -194,6 +202,7 @@ webauto_change_form($form, 'text', 'Towels - guaranteed to impress Vogons.');
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // Look for the edit entry
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
@@ -220,12 +229,13 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
 $crawler = webauto_get_url($client, $logout_url, "Logging out...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
-$perfect = 19;
+$perfect = 27;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

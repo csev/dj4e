@@ -466,6 +466,18 @@ function webauto_search_for_not($html, $needle)
     }
 }
 
+function webauto_search_for_menu($html)
+{
+    $needle = '<nav';
+    if ( strpos($html,$needle) > 0 ) {
+        markTestPassed("Found menu bar at the top of the page");
+        return true;
+    } else {
+        error_out("Could not find menu bar at the top of the page");
+        return false;
+    }
+}
+
 /* Returns a crawler */
 function webauto_get_url($client, $url, $message=false) {
     global $base_url_path;

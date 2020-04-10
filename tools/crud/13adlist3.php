@@ -59,8 +59,8 @@ $favmd5 = md5($content);
 
 if ( $favlen == 15406 && $favmd5 == 'da98cfb3992c3d6985fc031320bde065' ) {
     error_out("Please replace the favicon to be something other than the default.");
-    error_out("5 point dediction.");
-    $passed = $passed - 5;
+    error_out("10 point deduction.");
+    $passed = $passed - 10;
 } else {
     success_out("Favicon loaded");
     $passed = $passed + 1;
@@ -85,6 +85,7 @@ $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
 
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 require("meta_check.php");
 
@@ -93,6 +94,7 @@ $login_url = webauto_get_url_from_href($crawler,'Login');
 
 $crawler = webauto_get_url($client, $login_url, "Logging in as $useraccount");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // Use the log_in form
 $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
@@ -101,6 +103,7 @@ webauto_change_form($form, 'password', $userpw);
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
@@ -123,6 +126,7 @@ $passed = $saved;
 $create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
 $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( ! webauto_search_for_not($html, "owner") ) {
     error_out('The owner field is not supposed to appear in the create form.');
@@ -157,6 +161,7 @@ webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( ! webauto_search_for($html, $title) ) {
     error_out('Tried to create a record and cannot find the record in the list view');
@@ -220,9 +225,11 @@ line_out('Test completed... Going to the main page and Logging out.');
 $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
 $crawler = webauto_get_url($client, $logout_url, "Logging out...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 } // End of the for
 
@@ -230,7 +237,7 @@ $html = webauto_get_html($crawler);
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
-$perfect = 13;
+$perfect = 32;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

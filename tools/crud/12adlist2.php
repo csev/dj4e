@@ -59,6 +59,7 @@ if ( $content === false ) {
 $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 require("meta_check.php");
 
@@ -67,6 +68,7 @@ $login_url = webauto_get_url_from_href($crawler,'Login');
 
 $crawler = webauto_get_url($client, $login_url, "Logging in as $user1account");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // Use the log_in form
 $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
@@ -75,6 +77,7 @@ webauto_change_form($form, 'password', $user1pw);
 
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
@@ -97,6 +100,7 @@ $passed = $saved;
 $create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
 $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( ! webauto_search_for_not($html, "owner") ) {
     error_out('The owner field is not supposed to appear in the create form.');
@@ -132,6 +136,7 @@ webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 line_out("Submitting the create form, expecting the list of items...");
 $crawler = $client->submit($form);
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 if ( ! webauto_search_for($html, $title) ) {
     error_out('Tried to create a record and cannot find the record in the list view');
@@ -155,6 +160,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     webauto_change_form($form, 'title', $title."_updated");
     $crawler = $client->submit($form);
     $html = webauto_get_html($crawler);
+    webauto_search_for_menu($html);
     webauto_search_for($html,$title."_updated");
 } else {
     error_out("Could not find update url of the form /ad/nnn/update");
@@ -166,6 +172,7 @@ line_out('Looking for the detail page so we can add a comment');
 $detail_url = webauto_get_url_from_href($crawler,$title."_updated");
 $crawler = webauto_get_url($client, $detail_url, "Loading detail page...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // Use the comment form
 line_out('Looking comment form and submit button.');
@@ -212,12 +219,13 @@ line_out('Test completed... Logging out.');
 $logout_url = webauto_get_url_from_href($crawler,'Logout');
 $crawler = webauto_get_url($client, $logout_url, "Logging out...");
 $html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
 
 // -------
 line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
-$perfect = 16;
+$perfect = 24;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
