@@ -80,13 +80,6 @@ this HTML in the file:
 
 Keep running `check` until it does not find any errors.
 
-(8) Once your application can pass the check  without error, set up the database
-for your project:
-
-    python3 manage.py makemigrations
-    python3 manage.py migrate
-    python3 manage.py createsuperuser
-
 If you restart your web application, there won't be many working urls.
 Try these two to see if you have the home code working properly:
 
@@ -171,6 +164,16 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
         path('ad/<int:pk>/delete',
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
+
+(6) Ad you build the application, use `check` periodically as you complete some of the code.
+
+    python3 manage.py check
+
+(7) Once your application is mostly complete and can pass the `check`
+without error, add the new models to your migrations and database tables:
+
+    python3 manage.py makemigrations
+    python3 manage.py migrate
 
 Debugging: Searching through all your files in the bash shell
 -------------------------------------------------------------
