@@ -105,6 +105,18 @@ code at the end.
 (5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
 from `dj4e-samples/favs/views.py` into your `views.py`.
 
+Things that might go wrong
+--------------------------
+
+Make sure to turn off your ad blocker.  Take a look at your web developer console if the AJAX part 
+of favorites seem to fail.  You might see a message like:
+
+    POST .. net::ERR_BLOCKED_BY_CLIENT
+
+Or a similar message - this means your JavaScript tried to do an AJAX
+request and was stopped by the browser.
+
+
 Manual Testing
 --------------
 
