@@ -1232,6 +1232,7 @@
     },
     {
         "title": "Building a Django Batch Script to Load Data from CSV",
+        "todo" : "Re-record this with extensions",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
     }
