@@ -71,7 +71,7 @@
         },
         {
         "title" : "Autograder: Request-Response Cycle",
-        "launch" : "tools/autograder/",
+        "launch" : "tools/http/",
         "resource_link_id" : "dj4e_01_rrc",
         "custom" : [
             {
