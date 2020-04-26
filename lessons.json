@@ -393,11 +393,12 @@
     {
         "title": "Data Model Migration in Django",
         "youtube": "YqARGlI6bGc",
+        "todo" : "Need to make migration fit better in DJ-02",
         "project": "DJ 03 Many 05 Migrate"
     },
     {
         "title": "Demonstration: Django Single Table Models",
-        "NOTE" : "May not need to re-record - covers DJ-03-Model-Single.txt",
+        "todo" : "May not need to re-record - covers DJ-03-Model-Single.txt",
         "youtube": "zULy8o8VK3Q"
     }
    ],
@@ -495,7 +496,7 @@
     "anchor": "django_views",
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Templates.pptx",
-    "description": "We finally get to looking at the core of a Django application - the views and Templates.",
+    "description": "We finally get to looking at the core of a Django application - the views and templates.",
     "videos" : [
     {
         "title": "URL Routing in Django",
@@ -725,7 +726,7 @@
     "title": "Forms in HTTP, and HTML",
     "anchor": "dj4e_forms_html",
     "icon" : "fa-table",
-    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our appications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
+    "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our applications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
     "slides": "lectures/DJ-08-Forms-HTML.pptx",
     "videos" : [
     {
