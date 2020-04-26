@@ -1119,7 +1119,7 @@
         "youtube": "WLWuMjDDSa4"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_install.md",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_local.md",
     "references" : [
         {
             "title" : "Using ngrok to submit a local application to the Autograder",

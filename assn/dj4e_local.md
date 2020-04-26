@@ -87,9 +87,14 @@ Then lets checkout the dj4e-samples repo and get things started:
     cd Desktop      # If not already there
     cd django
     git clone https://github.com/csev/dj4e-samples
-
     cd dj4e-samples
-    python3 manage.py migrate            # Makemigrations is already in git
+    pip install -r requirements.txt
+    python3 manage.py check
+
+Once you have the requirements installed and you are passing the `check` step
+without errors, lets make a database and put a bit of data in the database:
+
+    python3 manage.py migrate
     python3 manage.py createsuperuser
     python3 manage.py runscript gview_load
     python3 manage.py runscript many_load
@@ -111,107 +116,4 @@ Then navigate to http://localhost:8001 to see the page.
 
 You can abort the `runserver` applications in the command line, switch to
 a new folder and start runserver again.
-
-This section shows how to get a Django application working - in the next section
-we show you to work on your code on two computers and move
-the changes back and forth.
-
-Moving Code Between Your Laptop and PythonAnywhere
---------------------------------------------------
-
-If you want, you can keep a local copy your `django_projects` synchronized with your
-copy on PythonAnywhere using `github`.
-
-If you are already using github to store your projects
-------------------------------------------------------
-
-Before you start doing this, make sure that your code in the PythonAnywhere shell
-is fully checked in to GitHub:
-
-    $ cd ~/django_projects
-    $ git status
-    On branch master
-    Your branch is up-to-date with 'origin/master'.
-    nothing to commit, working directory clean
-
-If you have any outstanding git modifications on PYAW - clean it up and push it to the repo.
-
-If you have not yet put your PythonAnywhere code on github
-----------------------------------------------------------
-
-If you have not yet uploaded your `django_projects` folder to github, first follow the
-<a href="paw_github.md">these instructions</a> to get your application uploaded to github.
-
-Checking your github code out onto your laptop
-----------------------------------------------
-
-Once your application is in github, you can simply check it out to your laptop computer
-using commands like:
-
-    cd ~         # or simple 'cd' for Windows
-    cd Desktop
-    cd django
-    git clone https://github.com/drchuck/django_projects.git
-
-Replacing `drchuck` with your github account.  This should bring a copy of your
-application from github down to your computer and store it in the folder
-`django_projects`.
-
-Note that you should keep the `dj4e-samples` and `django_projects` next to each
-other since they are both in github.
-
-On your laptop:
-
-    Desktop/django/dj4e-samples
-    Desktop/django/django_projects
-
-On PythonAnywhere:
-
-    ~/dj4e-samples
-    ~/django_projects
-
-
-Working on your Code on your Laptop
------------------------------------
-
-So you are on your local laptop / computer and are making changes
-
-    cd ~         # or simple 'cd' for Windows
-    cd Desktop
-    cd django
-    cd django_projects
-    cd mysite    # Or whatever project you want to work on
-    # edit some files :)
-    python3 manage.py makemigrations    # If you changed your models
-    python3 manage.py migrate           # If you changed your models.py
-    git status
-    git add ....
-    git commit -a
-    git push
-
-Then you can go into PythonAnywhere in a bash shell and type:
-
-    cd ~/django_projects/mysite
-    git pull
-    python3 manage.py migrate         # If the pull included new migrations
-
-Then in the "Web" tab reload your application and visit it.
-
-As long as you follow the pattern of doing `git push` from your laptop/desktop and `git pull`
-from PythonAnywhere, things will go very smoothly.
-
-If you edit two places and push from one of the places, the push will work - but the push
-won't work from the second place and pull won't work either becausee you have local changes.
-If this is what you did, there is a simple workaround.  On the system where you have un-pushed
-changes and want to do a pull before pushing, do this:
-
-    git stash
-    git pull
-    git stash apply
-
-This takes your un-pushed changes and hides them in the "stash", allowing the `git pull` to
-work and then the `stash apply` re-modifies the files.
-
-Most of the time this works if all you did is edited two places and tried to push from both.
-
 
