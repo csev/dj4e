@@ -143,6 +143,7 @@
 },
 {
     "title": "HyperText Markup Language (HTML)",
+    "todo": "re-record HTML lectures with dj4e screens",
     "anchor": "html",
     "icon" : "fa-html5",
     "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
@@ -204,6 +205,7 @@
 },
 {
     "title": "Cascading Style Sheets (CSS)",
+    "todo": "re-record CSS lectures with dj4e screens",
     "anchor": "css",
     "icon" : "fa-css3",
     "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
@@ -321,7 +323,7 @@
     },
     {
         "title": "Demonstration: Basic SQL",
-        "TODO": "This could be re-recorded or re-edited because it uses the mdntutorial account - but it is all SQL",
+        "todo": "This could be re-recorded or re-edited because it uses the mdntutorial account - but it is all SQL",
         "youtube": "9nZGhDhHRT0"
     }
    ],
@@ -959,7 +961,7 @@
     "anchor": "dj4e_one_to_many",
     "icon" : "fa-university",
     "description": "We explore the design of one-to-many data models.",
-    "TODO" : "Make peer graded model assignment.",
+    "todo" : "Make peer graded model assignment for one-to-many data models.",
     "slides": "lectures/DJ-03-One-To-Many.pptx",
     "videos" : [
     {
@@ -1210,7 +1212,7 @@
 {
     "title": "Many-To-Many Data Models",
     "anchor": "dj4e_many",
-    "TODO:": "Needs a many-to-many quiz",
+    "todo:": "Need a many-to-many quiz",
     "icon" : "fa-arrows",
     "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
     "slides": "lectures/DJ-04-Many-To-Many.pptx",
@@ -1232,7 +1234,7 @@
     },
     {
         "title": "Building a Django Batch Script to Load Data from CSV",
-        "todo" : "Re-record this with extensions",
+        "todo" : "Re-record batch loading using extensions",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
     }
