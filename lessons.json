@@ -1258,7 +1258,7 @@
             ]
         },
         {
-        "title" : "Auto-grader: Data model",
+        "title" : "Auto-grader: Many-to-Many Data Model",
         "launch" : "tools/sqlite/",
         "resource_link_id" : "dj4e_load",
         "custom" : [
