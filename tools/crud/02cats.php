@@ -5,7 +5,7 @@ global $lookup_lower_plural, $main_lower, $main_article, $main_lower_plural, $fi
 global $assignment_type_lower, $reference_implementation;
 
 $assignment_url = "02spec.php?assn=02cats.php";
-$assignment_url_text = "Specification";
+$assignment_url_text = "Assignment Specification";
 $reference_implementation = "https://crud.dj4e.com/cats";
 
 $assignment_type = 'Assignment';
