@@ -49,5 +49,5 @@ User.objects.values()
 User.objects.values().order_by('email')
 User.objects.values().order_by('-name')
 
-.quit
+quit()
 
