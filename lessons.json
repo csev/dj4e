@@ -40,7 +40,7 @@
         },
         {
             "title" : "Understanding Browser Developer Mode",
-            "youtube" : "kL3hYPVnhjQ"
+            "youtube" : "0JsWY3pmdak"
         }
     ],
     "references" : [
@@ -323,8 +323,7 @@
     },
     {
         "title": "Demonstration: Basic SQL",
-        "todo": "This could be re-recorded or re-edited because it uses the mdntutorial account - but it is all SQL",
-        "youtube": "9nZGhDhHRT0"
+        "youtube": "2Or6_sSyl7c"
     }
    ],
     "slides": "lectures/SQL-01-Basics.pptx",
@@ -398,8 +397,7 @@
     },
     {
         "title": "Demonstration: Django Single Table Models",
-        "todo" : "May not need to re-record - covers DJ-03-Model-Single.txt",
-        "youtube": "zULy8o8VK3Q"
+        "youtube": "p5K5hFiJ-GI"
     }
    ],
     "lti" : [
