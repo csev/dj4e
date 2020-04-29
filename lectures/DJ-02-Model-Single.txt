@@ -7,10 +7,15 @@ You can check out the Django code for this project at:
 https://github.com/csev/dj4e-samples
 
 Start the command line in a Linux/Bash shell and go into your project folder.
+Activate a virtual environment if needed.
 
 cd dj4e-samples
+git pull                          # incase there are updates
+pip3 install -r requirements.txt  # to make sure that all the utilities are there
 
-python3 manage.py makemigrations  # May not find any changes
+python3 manage.py check           # Make sure things are set up
+python3 manage.py makemigrations  # Probably won't find any changes
+rm db.sqlite3                     # In case you have done this before
 python3 manage.py migrate         # Create the database and table(s)
 
 Start the django shell:
