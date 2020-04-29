@@ -1,6 +1,6 @@
 Django for Everybody - Single Table Models
 
-https://www.dj4e.com/lectures/DJ-03-Model-Single.txt
+https://www.dj4e.com/lectures/DJ-02-Model-Single.txt
 
 You can check out the Django code for this project at:
 
