@@ -143,7 +143,6 @@
 },
 {
     "title": "HyperText Markup Language (HTML)",
-    "todo": "re-record HTML lectures with dj4e screens",
     "anchor": "html",
     "icon" : "fa-html5",
     "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
@@ -205,7 +204,6 @@
 },
 {
     "title": "Cascading Style Sheets (CSS)",
-    "todo": "re-record CSS lectures with dj4e screens",
     "anchor": "css",
     "icon" : "fa-css3",
     "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
@@ -984,12 +982,6 @@
         "project": "DJ 03 Many 04 Django"
     },
     {
-        "title": "Data Model Migration in Django",
-        "youtube": "YqARGlI6bGc",
-        "project": "DJ 03 Many 05 Migrate",
-        "meta": "Remove after Fall 2019 - moved to DJ-02"
-    },
-    {
         "title": "Using the Django Shell to Explore One-to-Many Models",
         "youtube": "ZdLpAtfWfZk",
         "project": "DJ 03 Many 06 Shell"
@@ -1384,7 +1376,6 @@
     "icon" : "fa-code",
     "description": "We add pictures and comments to our classified ads application.",
     "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
-    "todo" : "Add tags, drop down autofill, auto add",
     "videos" : [
         {
             "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
@@ -1644,6 +1635,7 @@
     "anchor": "dj4e_ads4",
     "icon" : "fa-search",
     "description": "We add search a feature our classified ads application.",
+    "todo" : "Add tags, drop down autofill, auto add",
     "videos" : [
     {
         "title": "DJ4E Samples Walkthrough - search (well)",
