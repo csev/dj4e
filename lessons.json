@@ -1132,11 +1132,10 @@
    ]
 },
 {
-    "title": "Classified Ads #1",
-    "anchor": "dj4e_ads1",
+    "title": "Owned Rows",
+    "anchor": "dj4e_owned",
     "icon" : "fa-newspaper",
-    "description": "We explore crispy forms, model owned rows, and bootstrap menus and then we write the first iteration of the classified ads application.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
+    "description": "We cover how we mark objects as 'owned' by Django users.",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "videos" : [
         {
@@ -1150,7 +1149,44 @@
         {
             "title" : "Owned Rows in Django - owner.py",
             "youtube" : "hznUKCsk8X8"
+        }
+    ],
+    "lti" : [
+        {
+            "title" : "Quiz: Owned Rows",
+            "launch" : "mod/gift/?quiz=12-Owned-Rows.txt",
+            "resource_link_id" : "dj4e_12_owned",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Ownership of Rows",
+            "href": "https://samples.dj4e.com/myarts/"
         },
+        {
+            "title" : "Chapter 14: Python Objects (review)",
+            "href" : "https://www.py4e.com/html3/14-objects"
+        }
+    ]
+},
+{
+    "title": "Classified Ads #1",
+    "anchor": "dj4e_ads1",
+    "icon" : "fa-newspaper",
+    "description": "We explore crispy forms, and bootstrap menus and then use owned tows we write the first iteration of the classified ads application.",
+    "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
+    "slides": "lectures/DJ-12-Owned-Rows.pptx",
+    "videos" : [
         {
             "title" : "Walking through the DJ4E Crispy Forms (crispy) Sample Code",
             "youtube" : "iovsuP8yVUU"
