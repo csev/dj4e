@@ -137,7 +137,7 @@
         },
         {
             "title" : "Using ngrok to submit a local application to the Autograder (optional)",
-            "https://www.youtube.com/watch?v=keo0dglCj7Ihref" : "/ngrok"
+            "href" : "/ngrok"
         }
     ]
 },
