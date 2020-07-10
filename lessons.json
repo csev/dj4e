@@ -146,7 +146,7 @@
     "anchor": "html",
     "icon" : "fa-html5",
     "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
-    "slides": "lectures/Web-02-HTML.ppt",
+    "slides": "lectures/Web-02-HTML.pptx",
     "chapters" : "7-14",
     "videos" : [
         {
