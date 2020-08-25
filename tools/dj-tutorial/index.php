@@ -68,6 +68,16 @@ if ( $LAUNCH->link && $LAUNCH->user && $LAUNCH->user->instructor ) {
 
 // View
 $OUTPUT->header();
+?>
+<script>
+function sendToIframe(id, html) {
+    var iframe = document.getElementById(id);
+    var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+    console.log(html);
+    iframedoc.body.innerHTML = html;
+}
+</script>
+<?php
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 

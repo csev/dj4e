@@ -61,11 +61,31 @@ function webauto_get_meta($crawler, $name) {
     return $retval;
 }
 
+    function togglePre($title, $html) {
+        global $div_id;
+        $div_id = $div_id + 1;
+        $text = _m('Show/Hide');
+        $detail = _m('characters of HTML retrieved');
+        $retrieve = new \stdClass();
+        $retrieve->html = $html;
+        echo("<script> var retrieve_".$div_id." = ".json_encode($retrieve).";</script>\n");
+        echo('<strong>'.htmlpre_utf8($title));
+        echo(' (<a href="#" onclick="sendToIframe('.$div_id.', retrieve_'.$div_id.'.html);dataToggle('."'".$div_id."'".');');
+        echo(';return false;">');
+        echo($text."</a></strong>\n");
+        echo(' '.strlen($html).' '.$detail.')'."\n");
+        echo('<iframe id="'.$div_id.'" style="display:none; border: solid green 3px; width:90%; height: 300px;">'."\n");
+        echo("<pre>\n");
+        echo(htmlpre_utf8($html));
+        echo("</pre>\n");
+        echo("</iframe><br/>\n");
+    }
+
 function showHTML($message, $html) {
     global $OUTPUT;
     $pos = strpos($html,'<b>Fatal error</b>');
     if ( $pos === false ) {
-        $OUTPUT->togglePre($message, $html);
+        togglePre($message, $html);
         return;
     }
     echo('<p style="color:red">Your application seems to have an error in this page:</p>');
@@ -115,7 +135,7 @@ Django's port 8000 and not port 8888 as is used in the above documentation.
 }
 
 function getUrl($sample) {
-    global $USER, $access_code;
+    global $USER, $OUTPUT, $access_code;
     global $base_url_path;
 
     if ( isset($access_code) && $access_code ) {
@@ -163,8 +183,11 @@ function getUrl($sample) {
     if ( isset($_GET['code']) ) {
         echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>');
     }
-    echo('<input type="submit" class="btn btn-primary" value="Evaluate">
-        </form>');
+?>  
+<input type="submit" class="btn btn-primary" value="Evaluate" onclick="$('#evaluate_spinner').show();return true;">
+<img src="<?= $OUTPUT->getSpinnerUrl() ?>" id="evaluate_spinner" style="display:none;">
+</form>
+<?php
     if ( $USER->displayname ) {
         echo("By entering a URL in this field and submitting it for
         grading, you are representing that this is your own work.  Do not submit someone else's
@@ -254,11 +277,14 @@ function webauto_test_passed($grade, $url) {
     return true;
 }
 
+// No longer used with iframe viewing
 function autoToggle() {
+    /*
     global $div_id;
     echo("<script>dataToggle('$div_id');</script>\n");
     $div_id--;
     echo("<script>dataToggle('$div_id');</script>\n");
+     */
 }
 
 function webauto_get_check() {

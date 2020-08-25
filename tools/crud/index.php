@@ -92,6 +92,14 @@ a[target="_blank"]:after {
   margin: 0 3px 0 5px;
 }
 </style>
+<script>
+function sendToIframe(id, html) {
+    var iframe = document.getElementById(id);
+    var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+    console.log(html);
+    iframedoc.body.innerHTML = html;
+}
+</script>
 <?php
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
