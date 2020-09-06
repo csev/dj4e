@@ -41,7 +41,9 @@ disable CSS styles.</p></li>
 </p>
 <h1>Tasks</h1>
 <p>
-Here are the tasks for this assignment.
+Here are the tasks for this assignment.  These tasks can be done by editing HTML and
+CSS files in a folder on your computer.  You do not have to upload these files to
+a server to complete the assignment.
 <ul>
 <li><p>Take this <a href="index.txt" target="_blank">this file</a> and 
 copy/paste the contents into 

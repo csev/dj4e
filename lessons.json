@@ -93,7 +93,7 @@
         "youtube": "d32UKww3h1c"
     }
   ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_install.md",
+    "assignment" : "{apphome}/assn/dj4e_install.md",
     "lti" : [
         {
             "title" : "Quiz: Django Tutorial 1 Concepts",
@@ -165,14 +165,14 @@
     "references" : [
         {
             "title" : "HTML Sample Code (Browse)",
-            "href" : "https://www.dj4e.com/code/html/index.htm"
+            "href" : "{apphome}/code/html/index.htm"
         },
         {
             "title" : "HTML Sample Code (Download ZIP)",
-            "href" : "https://www.dj4e.com/code/html.zip"
+            "href" : "{apphome}/code/html.zip"
         }
     ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_html.md",
+    "assignment" : "{apphome}/assn/dj4e_html.md",
     "lti" : [
         {
             "title" : "Quiz: HTML",
@@ -231,15 +231,15 @@
             "youtube" : "MHqI-PKBl_A"
         }
     ], 
-    "assignment" : "https://www.dj4e.com/assn/css/index.php",
+    "assignment" : "{apphome}/assn/css/index.php",
     "references" : [
         {
             "title" : "CSS Sample Code (Browse)",
-            "href" : "https://www.dj4e.com/code/css/index.htm"
+            "href" : "{apphome}/code/css/index.htm"
         },
         {
             "title" : "CSS Sample Code (Download ZIP)",
-            "href" : "https://www.dj4e.com/code/css.zip"
+            "href" : "{apphome}/code/css.zip"
         },
         {
             "title" : "Web Developer Plugin by Chris Pedrick",
@@ -356,7 +356,7 @@
     "references" : [
         {
             "title" : "Sample SQLite Command Line Operations (SQL-01-Basics.txt)",
-            "href": "https://www.dj4e.com/lectures/SQL-01-Basics.txt"
+            "href": "{apphome}/lectures/SQL-01-Basics.txt"
         },
         {
             "title" : "PythonAnywhere",
@@ -434,7 +434,7 @@
         },
         {
             "title" : "Django Data Model Commands (DJ-02-Model-Single.txt)",
-            "href": "https://www.dj4e.com/lectures/DJ-02-Model-Single.txt"
+            "href": "{apphome}/lectures/DJ-02-Model-Single.txt"
         },
         {
             "title" : "Documentation: Command Shell for SQLite",
@@ -817,7 +817,7 @@
     "icon" : "fa-cookie",
     "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
     "slides": "lectures/DJ-09-Cookies-Sessions.pptx",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_hello.md",
+    "assignment" : "{apphome}/assn/dj4e_hello.md",
     "videos" : [
     {
         "title": "Cookies in Browsers and Django",
@@ -1020,7 +1020,7 @@
     "anchor": "dj4e_autos",
     "icon" : "fa-car",
     "description": "In this assignment we build a small CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_autos.md",
+    "assignment" : "{apphome}/assn/dj4e_autos.md",
     "videos" : [
     {
         "title": "Walkthrough of the DJ4E Autos Sample - Generic Edit Forms",
@@ -1044,7 +1044,7 @@
     "references" : [
         {
             "title" : "Hello World Assignment",
-            "href": "https://www.dj4e.com/assn/dj4e_hello.md"
+            "href": "{apphome}/assn/dj4e_hello.md"
         }
     ]
 },
@@ -1053,7 +1053,7 @@
     "anchor": "dj4e_cats",
     "icon" : "fa-paw",
     "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.",
-    "assignment" : "https://www.dj4e.com/tools/crud/02spec.php?assn=02cats.php",
+    "assignment" : "{apphome}/tools/crud/02spec.php?assn=02cats.php",
     "lti" : [
         {
         "title" : "Auto-grader: Cats CRUD",
@@ -1079,7 +1079,7 @@
         "youtube": "9FJwue2Eqao"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_github.md",
+    "assignment" : "{apphome}/assn/dj4e_github.md",
     "references" : [
         {
             "title" : "GitHub",
@@ -1110,7 +1110,7 @@
         "youtube": "WLWuMjDDSa4"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_local.md",
+    "assignment" : "{apphome}/assn/dj4e_local.md",
     "references" : [
         {
             "title" : "Using ngrok to submit a local application to the Autograder",
@@ -1184,7 +1184,7 @@
     "anchor": "dj4e_ads1",
     "icon" : "fa-newspaper",
     "description": "We explore crispy forms, and bootstrap menus and then use owned tows we write the first iteration of the classified ads application.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_ads1.md",
+    "assignment" : "{apphome}/assn/dj4e_ads1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "videos" : [
         {
@@ -1265,7 +1265,7 @@
         "project" : "DJ 04 Many 04 Batch"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_load.md",
+    "assignment" : "{apphome}/assn/dj4e_load.md",
     "lti" : [
         {
             "title" : "Quiz: Many-To-Many",
@@ -1410,7 +1410,7 @@
     "anchor": "dj4e_ads2",
     "icon" : "fa-code",
     "description": "We add pictures and comments to our classified ads application.",
-    "assignment" : "https://www.dj4e.com/assn/dj4e_ads2.md",
+    "assignment" : "{apphome}/assn/dj4e_ads2.md",
     "videos" : [
         {
             "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
@@ -1593,7 +1593,7 @@
         "youtube": "6cq-ehBHkwc"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_ads3.md",
+    "assignment" : "{apphome}/assn/dj4e_ads3.md",
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #3",
@@ -1681,7 +1681,7 @@
         "youtube" : "iHvJZ_lvXB4"
     }
    ],
-    "assignment" : "https://www.dj4e.com/assn/dj4e_ads4.md",
+    "assignment" : "{apphome}/assn/dj4e_ads4.md",
     "lti" : [
         {
         "title" : "Auto-grader: Ad List #4",
@@ -1807,11 +1807,11 @@
     "anchor": "pr_description",
     "icon" : "fa-address-card",
     "description": "Introduce your project to the rest of the class.",
-    "assignment" : "https://www.dj4e.com/project/01_description.md",
+    "assignment" : "{apphome}/project/01_description.md",
     "references" : [
         {
             "title" : "Project Specification",
-            "href" : "https://www.dj4e.com/project/00_overview.md"
+            "href" : "{apphome}/project/00_overview.md"
         }
     ],
     "lti" : [
@@ -1862,11 +1862,11 @@
     "anchor": "pr_02_milestone",
     "icon" : "fa-comment",
     "description": "Introduce your project to the rest of the class.",
-    "assignment" : "https://www.dj4e.com/project/02_revision.md",
+    "assignment" : "{apphome}/project/02_revision.md",
     "references" : [
         {
             "title" : "Project Specification",
-            "href" : "https://www.dj4e.com/project/00_overview.md"
+            "href" : "{apphome}/project/00_overview.md"
         }
     ],
     "lti" : [
@@ -1917,11 +1917,11 @@
     "anchor": "pr_03_milestone",
     "icon" : "fa-comment",
     "description": "Design a first verson of the user interface (UI) for your project.",
-    "assignment" : "https://www.dj4e.com/project/03_userinterface.md",
+    "assignment" : "{apphome}/project/03_userinterface.md",
     "references" : [
         {
             "title" : "Project Specification",
-            "href" : "https://www.dj4e.com/project/00_overview.md"
+            "href" : "{apphome}/project/00_overview.md"
         }
     ],
     "lti" : [
@@ -1988,11 +1988,11 @@
     "anchor": "pr_04_milestone",
     "icon" : "fa-comment",
     "description": "Design a first verson of the data model (UI) for your project.",
-    "assignment" : "https://www.dj4e.com/project/04_model.md",
+    "assignment" : "{apphome}/project/04_model.md",
     "references" : [
         {
             "title" : "Project Specification",
-            "href" : "https://www.dj4e.com/project/00_overview.md"
+            "href" : "{apphome}/project/00_overview.md"
         }
     ],
     "lti" : [
@@ -2055,7 +2055,7 @@
     "references" : [
         {
             "title" : "Project Specification",
-            "href" : "https://www.dj4e.com/project/00_overview.md"
+            "href" : "{apphome}/project/00_overview.md"
         }
     ],
     "lti" : [
@@ -2117,7 +2117,7 @@
     "references" : [
         {
             "title" : "Project Specification",
-            "href" : "https://www.dj4e.com/project/00_overview.md"
+            "href" : "{apphome}/project/00_overview.md"
         }
     ],
     "lti" : [
