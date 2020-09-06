@@ -147,7 +147,6 @@
     "icon" : "fa-html5",
     "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
     "slides": "lectures/Web-02-HTML.pptx",
-    "chapters" : "7-14",
     "videos" : [
         {
             "title" : "HTML - HyperText Markup Language (Part 1)",
@@ -208,7 +207,6 @@
     "icon" : "fa-css3",
     "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
     "slides": "lectures/Web-03-CSS.ppt",
-    "chapters" : "19-22",
     "videos" : [
         {
             "title" : "CSS - Cascading Style Sheets - (Part 1)",
