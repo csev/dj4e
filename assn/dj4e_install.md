@@ -135,10 +135,13 @@ Running Your Application
 Now that we have built your first application, we need to tell PythonAnywhere where to look
 to run your application as a web server so you can test it.
 
-In the PYAW web interface navigate to the `Web` tab to create a new web application.  If you
-have not already done so, add a new web application.  Select `manual configuration` and Python
-3.6.  Once the webapp is created, you need to make a few changes to the settings for the web
-app and your application.
+In the PYAW web interface navigate to the `Web` tab to create a new web application.  You do not need
+to upgrade your account - they give you one application like *drchuck.pythonanywhere.com* - use this
+free application for the course.
+
+When making the new application, do *not* create a "Django application" - instead,
+select `manual configuration` and Python 3.6.  Once the webapp is created, you need to
+make a few changes to the settings for the web app and your application.
 
     Source code: /home/drchuck/django_projects/mysite
     Working directory: /home/drchuck/django_projects/mysite
@@ -183,7 +186,7 @@ of what the resulting page should look like.
 Adding Your Polls Application
 -----------------------------
 
-At this point, you can add the polls application from the first DJango tutorial.
+At this point, you can add the polls application from the first Django tutorial.
 We are jumping into the middle of this tutorial because
 the first part of the tutorial is installing and configuring Django in general.
 
@@ -197,7 +200,7 @@ Continue to follow the steps outlined in
 Django tutorial</a>.
 until you reach the part where the tutorial tells you to run this command:
 
-    python3 manage.py runserver
+    python3 manage.py runserver     # <-- Never run this on pythonanywhere
 
 Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the following command:
 
@@ -205,7 +208,9 @@ Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the follo
 
 The `check` does a check for syntax and logic errors in your Django application.
 It is easier to fix errors in the command line.
-And when there are no errors, navigate to the `Web` tab in Python anywhere
+
+And when there are no errors, you are done with the Django Tutorial, come back to these
+instructions - and navigate to the `Web` tab in Python anywhere
 and `Reload` your application and then test your application by navigating to:
 
     (your-account).pythonanywhere.com/polls

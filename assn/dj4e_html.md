@@ -55,13 +55,12 @@ Once you have made the changes, you should check for errors using:
 If the `check` fails, stop and fix any and all errors before continuing.
 
 Once `check` succeeds, you can go to the `Web` tab on PythonAnywhere,
-reload your application and then test your application by navigating to:
+reload your application and then check your application by navigating to:
 
     (your-account).pythonanywhere.com
 
-
-Testing Your Application
-------------------------
+Viewing Your New Files
+----------------------
 
 Navigate to your top level page
 page __(your-account).pythonanywhere.com__
