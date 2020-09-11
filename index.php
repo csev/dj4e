@@ -13,15 +13,18 @@ require "nav.php";
 </div>
 <h1>Django for Everybody</h1>
 <p>
-This web site is building a set of free / OER materials to help students
-learn the Django web development framework.  The site is 
-<b>under construction</b> but you are welcome to make use of it as
-it is being built.
+This web site is building a set of free materials, lectures, and assignments to help students
+learn the Django web development framework.  
+You can take this course and receive a certificate at:
+<ul>
+<li><a href="https://www.coursera.org/specializations/django">Coursera: Django for Everybody Specialization</a></li>
+</ul>
 </p>
 <p>
 We use the free 
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> hosting environment
-to deploy and test our Django projects and applications.
+to deploy and test our Django projects and applications.  You can keep using this hosting environent
+to develop and deploy your Django applications after you complete the course.
 </p>
 <h2>Technology</h2>
 <p>
