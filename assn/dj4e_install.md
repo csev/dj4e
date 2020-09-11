@@ -55,7 +55,19 @@ This is the normal output of running `check`:
     System check identified no issues (0 silenced).
 
 If the `check` identifies errors, stop until there are no errors.  Only take the next steps
-once check sees no errors.  Once the check works do:
+once check sees no errors.  If you see this error:
+
+    python manage.py check
+      File "manage.py", line 17
+        ) from exc
+             ^
+    SyntaxError: invalid syntax
+
+It means that you are not running in the virtual environment (`workon django3`) and mistakenly
+running Python 2 instead of Python 3.  There is *no error* in `manage.py` - it is valid
+Python 3 syntax that confuses Python 2.
+
+Once the `check` works do:
 
     python3 manage.py makemigrations
 
