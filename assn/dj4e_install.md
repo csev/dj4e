@@ -242,3 +242,35 @@ under the `Web` tab on PythonAnywhere:
 First check the `error` log and then check the `server` log.
 Make sure to scroll through the logs to the end to find the most recent error.
 
+Starting Over Fresh
+-------------------
+
+If you have followed instructions and it just does not work and you want 
+to start over at the beginning of this assignment, here are the steps
+to clear things out:
+
+* Remove all of your running consoles under the www.pythonanywhere.com Consoles tab
+
+* Open a new __bash__ console from the Consoles tab.  Do not run
+the __workon__ command and run the following commands:
+
+        cd ~
+        rm -rf .virtualenvs/django3
+        rm -rf dj4e-samples
+        rm -rf django_projects
+
+* Then go to the Web tab on www.pythonanywhere.com and Reload your application.
+It may give you errors - this is OK.  We just want to make sure that
+no processes are left hanging on to old files.
+
+Then close your console, and delete it under the Consoles tab and go up to the very beginning
+of this handout and start over.
+
+We did not remove any of the configuration changes under the Web tab - so as you re-create
+all the files, parts of the Web tab may just stat working when you Reload your application.
+
+
+Some parts of the condif
+
+
+
