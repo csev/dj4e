@@ -278,11 +278,9 @@ no processes are left hanging on to old files.
 Then close your console, and delete it under the Consoles tab and go up to the very beginning
 of this handout and start over.
 
-We did not remove any of the configuration changes under the Web tab - so as you re-create
-all the files, parts of the Web tab may just stat working when you Reload your application.
-
-
-Some parts of the condif
+We did not remove any of the configuration changes under the Web tab - 
+so as you re-create all the files, parts of the Web tab may just start
+working when you Reload your application.
 
 
 
