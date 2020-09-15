@@ -83,11 +83,13 @@ $OUTPUT->topNav($menu);
 
 // Settings button and dialog
 
-SettingsForm::start();
-SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
-SettingsForm::dueDate();
-SettingsForm::done();
-SettingsForm::end();
+if ( $LAUNCH->user->instructor ) {
+    SettingsForm::start();
+    SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
+    SettingsForm::dueDate();
+    SettingsForm::done();
+    SettingsForm::end();
+}
 
 $OUTPUT->flashMessages();
 

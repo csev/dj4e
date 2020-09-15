@@ -105,8 +105,7 @@ $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 
 // Settings button and dialog
-
-if ( $USER->instructor ) {
+if ( $LAUNCH->user->instructor ) {
     SettingsForm::start();
     SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
     SettingsForm::text("password", __('Set a password to protect this assignment'));
@@ -143,10 +142,33 @@ unlock this assignment.
 
 $ALL_GOOD = false;
 
+// Since we are doing trans_sid, there is always an active buffer
+// https://www.php.net/manual/en/function.ob-get-status.php
+/*
+Array
+(
+    [level] => 2
+    [type] => 0
+    [status] => 0
+    [name] => URL-Rewriter
+    [del] => 1
+)
+ */
+// All we want to know is whether or not we are buffering - don't
+// pop the buffer stack if the top one is the URL-Rewriter
+function my_ob_get_status() {
+    $var = ob_get_status();
+    var_dump($var);
+    if ( is_array($var) && isset($var["name"]) && $var["name"] != "URL-Rewriter" ) {
+        return true;
+    }
+    return false;
+}
+
 function my_error_handler($errno , $errstr, $errfile, $errline , $trace = false)
 {
     global $OUTPUT, $ALL_GOOD;
-    if ( ob_get_status() ) {
+    if ( my_ob_get_status() ) {
         $ob_output = ob_get_contents();
         ob_end_clean();
         echo($ob_output);
@@ -169,7 +191,7 @@ function my_error_handler($errno , $errstr, $errfile, $errline , $trace = false)
 function fatalHandler() {
     global $ALL_GOOD, $OUTPUT;
     if ( $ALL_GOOD ) return;
-    if ( ob_get_status() ) {
+    if ( my_ob_get_status() ) {
         $ob_output = ob_get_contents();
         ob_end_clean();
         echo($ob_output);
@@ -204,9 +226,11 @@ if ( $assn && isset($assignments[$assn]) ) {
             throw $e; // rethrow
         }
     }
-    $ob_output = ob_get_contents();
-    ob_end_clean();
-    echo($ob_output);
+    if ( my_ob_get_status() ) {
+        $ob_output = ob_get_contents();
+        ob_end_clean();
+        echo($ob_output);
+    }
 
     $LAUNCH->result->setJsonKey('output', $ob_output);
 } else {
@@ -218,7 +242,7 @@ if ( $assn && isset($assignments[$assn]) ) {
 }
 
 $ALL_GOOD = true;
-if ( ob_get_status() ) {
+if ( my_ob_get_status() ) {
     $ob_output = ob_get_contents();
     ob_end_clean();
     echo($ob_output);
