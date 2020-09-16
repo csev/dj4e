@@ -312,8 +312,8 @@ Working with Ambiguity
 
 This assignment is more vague than previous assignments - on purpose.  The goal is to get
 closer to the development model for actual applications.  You know what you want to build
-and start with a mostly blank slate.  You look at sample code, reuse some code form stuff
-you build earlier, do some online
+and start with a mostly blank slate.  You look at sample code, reuse some code from stuff
+you built earlier, do some online
 searching and glue pieces of what you find together to make your application.  Of course as
 you are gluing bits from various places together, they always break and you have to adjust things
 so they fit in your application.
@@ -321,7 +321,8 @@ so they fit in your application.
 So this is kind of like the real world - when you have to build your own first application
 for someone else.
 
-Let us know if you really get stuck.  We want you to succeed in this assignment.
+It is not tricky on purpose.  We want you to succeed in this assignment.  But we do want you
+to do less cutting-and-pasting and more writing Django applications.
 
 
 <script>
