@@ -145,7 +145,10 @@ not be shown to the user on the create and update forms, it should be automatica
 by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop down
 in your create screen the program is not implemented correctly and will fail the autograder.
 
-(5) When you are implementing the update and delete views, make sure to follow the url patterns
+(5) Adapt the templates in `myarts/templates/myarts` as a starting point to create the needed
+templates in `ads/templates/ads`.
+
+(6) When you are implementing the update and delete views, make sure to follow the url patterns
 for the update and delete operations.  They should be of the form `/ad/14/update`
 and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
 
@@ -165,11 +168,11 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
 
-(6) Ad you build the application, use `check` periodically as you complete some of the code.
+(7) As you build the application, use `check` periodically as you complete some of the code.
 
     python3 manage.py check
 
-(7) Once your application is mostly complete and can pass the `check`
+(8) Once your application is mostly complete and can pass the `check`
 without error, add the new models to your migrations and database tables:
 
     python3 manage.py makemigrations
@@ -211,7 +214,7 @@ https://chucklist.dj4e.com/
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
 the gravatar when the user logs in.
 
-(2) Edit all four of the `ads_` files in `ads/templates/ads` to change them so
+(1) Edit all four of the `ads_` files in `ads/templates/ads` to change them so
 they extend `ads/base_menu.html`.  Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
@@ -220,7 +223,7 @@ to be:
 
     {% extends "base_menu.html" %}
 
-(3) Then create `home/templates/base_menu.html` with the following content:
+(2) Then create `home/templates/base_menu.html` with the following content:
 
     {% extends "base_bootstrap.html" %}
     {% block navbar %}
@@ -259,7 +262,7 @@ to be:
     </nav>
     {% endblock %}
 
-(4) Find the line in your `base_bootstrap.html` that looks like this:
+(3) Find the line in your `base_bootstrap.html` that looks like this:
 
         <meta name="dj4e-code" content="99999999">
 
