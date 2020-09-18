@@ -254,6 +254,49 @@ under the `Web` tab on PythonAnywhere:
 First check the `error` log and then check the `server` log.
 Make sure to scroll through the logs to the end to find the most recent error.
 
+Never Edit or Remove Your manage.py File
+----------------------------------------
+
+You will get lots of errors when you run `manage.py` - the errors are never
+in the file itself and you will never need to edit `manage.py` to fix a problem
+with your program.
+
+Sometimes if you run
+
+    python manage.py ....
+
+Sometimes it even says there is a syntax error in `manage.py` like this:
+
+    $ python manage.py check
+      File "manage.py", line 16
+        ) from exc
+             ^
+    SyntaxError: invalid syntax
+
+This is because you are running python 2.x and not python 3.x.  The file is not
+valid syntax for python2.  If you are runing python2, it probably means you are
+not in the correct virtual environment.  If you check the python version:
+
+    $ python --version
+    Python 2.7.12
+
+And it is 2.x, you have bigger problems that need to be fixed first.
+
+If you open `manage.py` in the file editor, it will show a syntax error on line
+16 - this is because it is looking at the file as Python 2 (sound familiar).  
+If this bothers you, you can change the first line of the file (change nothing else)
+to be:
+
+    #!/usr/bin/env python3
+
+This is called the "Hashbang" and is a specially formatted comment that indicates what
+kind of code the file contains.
+
+And if you are reading this after you made a mistake and edited your `manage.py` - here
+is a fresh copy of the file you can use:
+
+Fresh copy of [manage.py](dj4e_install/manage.py.txt)
+
 Starting Over Fresh
 -------------------
 
