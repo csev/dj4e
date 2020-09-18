@@ -46,7 +46,7 @@ fresh database using the following instructions:
     rm db.sqlite3
     python manage.py makemigrations
     python manage.py migrate
-    python manage.py createsuperuser
+    python manage.py createsuperuser    # If needed
 
 You need to recreate the superuser because it is stored in the database
 and the `rm` command emptied out your database.  You can do
