@@ -254,8 +254,8 @@ under the `Web` tab on PythonAnywhere:
 First check the `error` log and then check the `server` log.
 Make sure to scroll through the logs to the end to find the most recent error.
 
-Never Edit or Remove Your manage.py File
-----------------------------------------
+More on Your manage.py File
+---------------------------
 
 You will get lots of errors when you run `manage.py` - the errors are never
 in the file itself and you will never need to edit `manage.py` to fix a problem
