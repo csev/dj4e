@@ -73,7 +73,11 @@ markTestPassed('Questions page retrieved');
 
 line_out("Looking for '$qtext'");
 if ( strpos($html,$qtext) < 1 ) {
-    error_out('It looks like you have not created a question with text');
+    if ( stripos($html,$qtext) > 0 ) {
+        error_out('Your question text case does not match');
+    } else {
+        error_out('It looks like you have not created a question with text');
+    }
     error_out($qtext);
     error_out('The test cannot be continued');
     return;
