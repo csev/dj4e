@@ -26,10 +26,10 @@ Make sure to check the file <b>mysite/polls/urls.py</b> to insure that the
 the path to the <b>owner</b> view is properly routed:
 <pre>
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('', views.index, name='index'),
     path('owner', views.owner, name='owner'),
-    path('&lt;int:pk&gt;/', views.DetailView.as_view(), name='detail'),
-    path('&lt;int:pk&gt;/results/', views.ResultsView.as_view(), name='results'),
+    path('&lt;int:pk&gt;/', views.detail, name='detail'),
+    path('&lt;int:pk&gt;/results/', views.results, name='results'),
     path('&lt;int:question_id&gt;/vote/', views.vote, name='vote'),
 ]
 </pre>
