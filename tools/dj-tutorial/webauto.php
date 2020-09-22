@@ -71,7 +71,6 @@ function webauto_get_meta($crawler, $name) {
 			$host = parse_url($base_url_path, PHP_URL_HOST);
             $html = str_replace('<head>','<head><base href="https://'.$host.'">',$html);
         }
-		// $html = str_replace('<head>','<head><base href="https://djtutorial.dj4e.com/">',$html);
         echo("<script> var retrieve_".$div_id." = '".base64_encode($html)."';</script>\n");
         echo('<strong>'.htmlpre_utf8($title));
         echo(' (<a href="#" onclick="sendToIframe('.$div_id.', atob(retrieve_'.$div_id.'));dataToggle('."'".$div_id."'".');');
