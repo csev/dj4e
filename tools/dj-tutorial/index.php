@@ -118,7 +118,6 @@ Array
 // pop the buffer stack if the top one is the URL-Rewriter
 function my_ob_get_status() {
     $var = ob_get_status();
-    var_dump($var);
     if ( is_array($var) && isset($var["name"]) && $var["name"] != "URL-Rewriter" ) {
         return true;
     }
