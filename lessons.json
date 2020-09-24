@@ -394,6 +394,11 @@
     {
         "title": "Demonstration: Django Single Table Models",
         "youtube": "p5K5hFiJ-GI"
+    },
+    {
+        "title": "Demonstration: Resetting your Django database on PythonAnywhere",
+        "project", "tut2 reset database edit",
+        "youtube": "GOQIJbTSzoQ"
     }
    ],
     "lti" : [
