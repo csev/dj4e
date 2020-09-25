@@ -397,7 +397,7 @@
     },
     {
         "title": "Demonstration: Resetting your Django database on PythonAnywhere",
-        "project", "tut2 reset database edit",
+        "project": "tut2 reset database edit",
         "youtube": "GOQIJbTSzoQ"
     }
    ],
