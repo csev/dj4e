@@ -512,7 +512,7 @@ function webauto_retrieve_url($client, $url, $message=false) {
     global $webauto_http_status;
     line_out(" ");
     if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
-    echo("<b>Loading URL:</b> ".htmlentities($url));
+    echo("<hr/><b>Loading URL:</b> ".htmlentities($url));
     $the_url = str_replace('"',"&quot;", $url);
     if ( strpos($the_url, '/') === 0 ) $the_url = $base_url_path . $the_url;
     echo(' (<a href="'.$the_url.'" target="_blank">Open URL</a>)');
