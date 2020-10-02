@@ -61,40 +61,39 @@ function webauto_get_meta($crawler, $name) {
     return $retval;
 }
 
-    function togglePre($title, $html) {
-        global $div_id;
-        global $base_url_path;
-        $div_id = $div_id + 1;
-        $text = _m('Show/Hide');
-        $detail = _m('characters of HTML retrieved');
-        if ( $base_url_path ) {
-            $host = parse_url($base_url_path, PHP_URL_HOST);
-            $html = str_replace('<head>','<head><base href="https://'.$host.'">',$html);
-        }
-        echo("<script> var retrieve_".$div_id." = '".base64_encode($html)."';</script>\n");
-        echo('<strong>'.htmlpre_utf8($title));
-        echo(' (<a href="#" onclick="sendToIframe('.$div_id.', atob(retrieve_'.$div_id.'));dataToggle('."'".$div_id."'".');');
-        echo(';return false;">');
-        echo($text."</a></strong>\n");
-        echo(' '.strlen($html).' '.$detail.')'."\n");
-        echo('<iframe id="'.$div_id.'" style="display:none; border: solid green 3px; width:90%; height: 300px;">'."\n");
-        echo("<pre>\n");
-        echo(htmlpre_utf8($html));
-        echo("</pre>\n");
-        echo("</iframe><br/>\n");
+function togglePre($title, $html) {
+    global $div_id;
+    global $base_url_path;
+    $div_id = $div_id + 1;
+    $text = _m('Show/Hide Retrieved Page');
+    $detail = _m('characters of HTML retrieved');
+    if ( $base_url_path ) {
+        $host = parse_url($base_url_path, PHP_URL_HOST);
+        $html = str_replace('<head>','<head><base href="https://'.$host.'">',$html);
     }
+    echo("<script> var retrieve_".$div_id." = '".base64_encode($html)."';</script>\n");
+    echo('<strong>'.htmlpre_utf8($title));
+    echo(' '.strlen($html).' '.$detail."\n");
+    echo('<a href="#" onclick="sendToIframe('.$div_id.', atob(retrieve_'.$div_id.'));dataToggle('."'".$div_id."'".');');
+    echo(';return false;" class="btn btn-primary">');
+    echo($text."</a></strong>\n");
+    echo('<iframe id="'.$div_id.'" style="display:none; border: solid green 3px; width:90%; height: 300px;">'."\n");
+    echo("<pre>\n");
+    echo(htmlpre_utf8($html));
+    echo("</pre>\n");
+    echo("</iframe><br/>\n");
+}
 
 function showHTML($message, $html) {
     global $OUTPUT;
+    global $webauto_http_status;
+    togglePre("", $html);
     $pos = strpos($html,'<b>Fatal error</b>');
-    if ( $pos === false ) {
-        togglePre($message, $html);
-        return;
+    if ( $webauto_http_status != 200 ) {
+        error_out("Page may have errors, HTTP status=$webauto_http_status");
+    } else if ( $pos !== false ) {
+        error_out("Your application seems to have a fatal error");
     }
-    echo('<p style="color:red">Your application seems to have an error in this page:</p>');
-    echo("\n<pre>\n");
-    echo(htmlentities($html));
-    echo("\n</pre>\n");
 }
 
 function getMD5() {
@@ -136,14 +135,13 @@ if ( $title ) {
 <p>If you need to run this grading program on an application that is running on your
 laptop or desktop computer with a URL like <strong>http://localhost...</strong> you
 will need to install and use the <a href="http://www.dj4e.com/md/" target="_blank">NGrok</a>
-application to get a temporary Internet-accessible URL that can be used with this application.  Make sure to use
-Django's port 8000 and not port 8888 as is used in the above documentation.
+application to get a temporary Internet-accessible URL that can be used with this application.
 </p>
 <?php
 }
 
 function getUrl($sample) {
-    global $OUTPUT, $USER, $access_code;
+    global $USER, $OUTPUT, $access_code;
     global $base_url_path;
 
     if ( isset($access_code) && $access_code ) {
@@ -283,16 +281,6 @@ function webauto_test_passed($grade, $url) {
     }
 
     return true;
-}
-
-// No longer used with iframe viewing
-function autoToggle() {
-    /*
-    global $div_id;
-    echo("<script>dataToggle('$div_id');</script>\n");
-    $div_id--;
-    echo("<script>dataToggle('$div_id');</script>\n");
-     */
 }
 
 function webauto_get_check() {
@@ -510,6 +498,7 @@ function webauto_search_for_menu($html)
 /* Returns a crawler */
 function webauto_get_url($client, $url, $message=false) {
     global $base_url_path;
+    global $webauto_http_status;
     line_out(" ");
     if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
     echo("<b>Loading URL:</b> ".htmlentities($url));
@@ -521,10 +510,7 @@ function webauto_get_url($client, $url, $message=false) {
     try {
         $crawler = $client->request('GET', $url);
         $response = $client->getResponse();
-        $status = $response->getStatus();
-        if ( $status != 200 ) {
-            error_out("Page may have errors, HTTP status=$status");
-        }
+        $webauto_http_status = $response->getStatus();
     } catch(\Exception $e) {
         error_out($e->getMessage());
         return false;

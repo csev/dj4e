@@ -240,8 +240,6 @@ $perfect = 31;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
-// if ( $score < 1.0 ) autoToggle();
-
 if ( ! $meta_good ) {
     error_out("Not graded - missing meta tag");
     return;

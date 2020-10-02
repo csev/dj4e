@@ -72,8 +72,6 @@ $perfect = 2;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
-// if ( $score < 1.0 ) autoToggle();
-
 if ( webauto_testrun($url) ) {
     error_out("Not graded - sample solution");
     return;
