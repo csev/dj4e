@@ -117,13 +117,8 @@ function nameNote($title=false) {
     $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
 ?>
 <p>
-To receive a grade for this assignment, include your name
+To receive a grade for this assignment, include
 <?php
-if ( $USER->displayname ) {
-    echo("(<strong>".htmlentities($USER->displayname)."</strong>) and/or \n");
-} else {
-    echo("and \n");
-}
 echo("this string <strong>".$check."</strong> \n");
 if ( $title ) {
     echo('in the &lt;title&gt; tag in all the pages of your application.');
@@ -201,7 +196,7 @@ function getUrl($sample) {
         ");
     }
 
-    echo("<p>You can run this autograder as many times as you like and the last submitted
+    echo("<p>You can run this autograder as many times as you like and the highest
     grade will be recorded.  Make sure to double-check the course Gradebook to verify
     that your grade has been sent.</p>\n");
     return false;
@@ -433,6 +428,16 @@ function webauto_get_url_from_href($crawler,$text)
     return $url;
 }
 
+function webauto_extract_url($crawler,$text)
+{
+    try {
+        $url = webauto_get_url_from_href($crawler,$text);
+    } catch(Exception $ex) {
+        return false;
+    }
+    return $url;
+}
+
 // http://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
 function webauto_change_form($form, $name, $value)
 {
@@ -495,8 +500,13 @@ function webauto_search_for_menu($html)
     }
 }
 
-/* Returns a crawler */
+/* Deprecated */
 function webauto_get_url($client, $url, $message=false) {
+    return webauto_retrieve_url($client, $url, $message);
+}
+
+/* Returns a crawler */
+function webauto_retrieve_url($client, $url, $message=false) {
     global $base_url_path;
     global $webauto_http_status;
     line_out(" ");

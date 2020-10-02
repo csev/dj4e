@@ -117,7 +117,7 @@ function nameNote($title=false) {
     $check = webauto_get_check();
 ?>
 <p>
-To receive a grade for this assignment, include 
+To receive a grade for this assignment, include
 <?php
 echo("this string <strong>".$check."</strong> \n");
 if ( $title ) {
@@ -184,7 +184,7 @@ function getUrl($sample) {
     if ( isset($_GET['code']) ) {
         echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>');
     }
-?>  
+?>
 <input type="submit" class="btn btn-primary" value="Evaluate" onclick="$('#evaluate_spinner').show();return true;">
 <img src="<?= $OUTPUT->getSpinnerUrl() ?>" id="evaluate_spinner" style="display:none;">
 </form>
@@ -484,6 +484,18 @@ function webauto_search_for_not($html, $needle)
         return true;
     } else {
         error_out("Should not have found '$needle'");
+        return false;
+    }
+}
+
+function webauto_search_for_menu($html)
+{
+    $needle = '<nav';
+    if ( strpos($html,$needle) > 0 ) {
+        markTestPassed("Found menu bar at the top of the page");
+        return true;
+    } else {
+        error_out("Could not find menu bar at the top of the page");
         return false;
     }
 }
