@@ -1,10 +1,12 @@
 DIY: Hello World / Sessions
 ===========================
 
-In this application, you will make a new application in your `django_projects`
-and add a bit of code to make use of sessions.  A key element of this assignment is
-that we will tell you "what to do" and less exact steps to cut and paste.  It is time
-for you to understand how to "Do It Yourself" (DIY).
+In this assignment, you will make two new applications in your `django_projects`
+to make it so that the `/` path actually returns a page and add a bit of code
+to make use of sessions.
+
+A key element of this assignment is that we will tell you "what to do" and
+less exact steps to cut and paste.  It is time for you to understand how to "Do It Yourself" (DIY).
 
 This assignment will not have any models - just views.  In this assignment you will
 be looking at the `dj4e-samples` code and figuring out how to read and adapt sample code.

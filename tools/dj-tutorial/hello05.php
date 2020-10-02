@@ -11,9 +11,11 @@ $qtext = 'Answer to the Ultimate Question';
 The instructions for this assignment are at
 <a href="../../assn/dj4e_hello.md" target="_blank">dj4e_hello.md</a>
 </a>.
-This assignment extends the previous Django tutorial Part 4.  In addition to
+This assignment adds two new applications (main and hello) to your project
+where you built your tutorial solutions.  In addition to
 the requirements of the assignment,
-you need to keep the <b>/polls/owner</b> view working as well.
+you need to keep the <b>/polls/owner</b> view working as well
+to keep the autograder happy.
 </p>
 <?php
 nameNote();
@@ -45,6 +47,16 @@ error_log("Hello05 ".$url);
 $client = new Client();
 $client->setMaxRedirects(5);
 
+// Check that top page
+$crawler = webauto_retrieve_url($client, $url);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+if (  stripos($html,'Page not found') !== false ) {
+    error_out("Your top page still has a 404 error");
+} else {
+    $passed++;
+}
+
 $owner = $url . '/polls/owner';
 
 $crawler = webauto_retrieve_url($client, $owner);
@@ -72,10 +84,15 @@ if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'view count=2');
 
+$crawler = webauto_retrieve_url($client, $sessurl);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+webauto_search_for($html, 'view count=3');
+
 
 // -------------------- Send the grade ---------------
 line_out(' ');
-$perfect = 4;
+$perfect = 6;
 
 if ( ! $check ) {
     error_out("No score sent, missing owner name");
