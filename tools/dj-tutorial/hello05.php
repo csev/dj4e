@@ -41,6 +41,7 @@ Then submit your Django base site (i.e. with no path) to this autograder.
 $url = getUrl('http://djtutorial.dj4e.com');
 if ( $url === false ) return;
 $passed = 0;
+$send = true;
 error_log("Hello05 ".$url);
 //
 // http://symfony.com/doc/current/components/dom_crawler.html
@@ -52,7 +53,8 @@ $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 if (  stripos($html,'Page not found') !== false ) {
-    error_out("Your top page still has a 404 error");
+    line_out("Your top page is not correct - No score will be sent, but the test will continue");
+    $send = false;
 } else {
     $passed++;
 }
@@ -67,8 +69,8 @@ webauto_search_for($html, 'Hello');
 if ( $check && stripos($html,$check) !== false ) {
     markTestPassed("Found ($check) in your html");
 } else {
-    error_out("Did not find $check in your html");
-    error_out("No score will be sent, but the test will continue");
+    error_out("Did not find $check in your html - No score will be sent, but the test will continue");
+    $send = false;
 }
 
 
@@ -94,8 +96,8 @@ webauto_search_for($html, 'view count=3');
 line_out(' ');
 $perfect = 6;
 
-if ( ! $check ) {
-    error_out("No score sent, missing owner name");
+if ( ! $send ) {
+    error_out("No score sent");
     return;
 }
 
