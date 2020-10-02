@@ -114,7 +114,8 @@ function titleNote() {
 function nameNote($title=false) {
     global $USER, $LINK, $CONTEXT;
     global $check;
-    $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
+    // $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
+    $check = webauto_get_check();
 ?>
 <p>
 To receive a grade for this assignment, include
