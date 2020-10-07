@@ -273,8 +273,9 @@
       "type": "image"
     },
     {
-      "title": "The source code of your blocks.css file",
-      "type": "image"
+      "title": "Please paste the source code of your blocks.css file",
+      "type": "code",
+      "code": "css"
     },
     {
       "title": "Image (JPG or PNG) of your blocks.css passing the W3 CSS validator",
