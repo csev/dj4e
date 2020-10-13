@@ -37,7 +37,8 @@ Password: <?= htmlentities($userpw) ?>
 You can use any email address you like.
 </p>
 <p>
-You should add identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area of each page you generate.
+You should edit or add a <b>meta</b> tag in your <b>&lt;head&gt;</b> area of each page you generate
+as shown below:
 <pre>
 <?= htmlentities($meta) ?> 
 </pre>

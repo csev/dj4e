@@ -34,7 +34,7 @@ application from a
 
     workon django3  # as needed
     cd ~/django_projects/mysite
-    python3 manage.py startapp autos
+    python manage.py startapp autos
 
 Extending the home (i.e. main) page
 -----------------------------------
@@ -98,22 +98,30 @@ appropriate `MakeForm` in your `forms.py` just like in the sample code.  The
 best approach is to build your `views.py` *without* using
 a `forms.py` - but you can do it either way.
 
+* Run the `python manage.py check` until you see no errors
+
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign
 key from Autos to Makes.
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
 
-* Run the `python3 manage.py check` until you see no errors
+* Run the `python manage.py makemigrations` until it has no errors.  If you find that the migrations
+have partially completed and seems ot be confused, you can always start the migrations over by
+typing:
 
-* Run the `makemigrations` and `migrate`  commands to perform the migrations.
+        rm */migrations/00*.py
+
+* Run the `python manage.py migrate` to create the database.
 
 * Edit `autos/admin.py` to add the Auto and Make models to the Django administration interface.
+
+* Run the `python manage.py check` until you see no errors
 
 * Create a superuser so you can test the admin interface
 and log in to the application.
 
-* Create the necessary views in `autos/templates/autos` to support your views.
-Note that the sample code uses a sub folder under `templates` to
+* Create the necessary template files in `autos/templates/autos` to support your views.
+Note that the the second sub folder under `templates` is there to
 make sure that templates are not inadvertently shared across multiple applications within a Django project.
 
 * Find the line in your `base_bootstrap.html` that looks like this:
