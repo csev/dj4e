@@ -1,4 +1,5 @@
 <?php
+
 $CRUD_FIELDS_LIST = <<< EOF
 {
     "autos" : {
@@ -8,6 +9,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "makes",
         "lookup_singular": "make",
         "lookup_article": "a",
+        "examples": "Ford, Hundai, Toyota, Tata, Audi",
         "fields" : [
             { "name" : "mileage", "type" : "i" },
             { "name" : "comments", "type" : "s" }
@@ -20,7 +22,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "breeds",
         "lookup_singular": "breed",
         "lookup_article": "a",
-        "examples": "(i.e. Tabby, Persian, Maine Coon, Siamese, Manx, etc.)",
+        "examples": "Tabby, Persian, Maine Coon, Siamese, Manx",
         "fields" : [
             { "name" : "weight", "type" : "i" },
             { "name" : "foods", "type" : "s" }
@@ -33,6 +35,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "types",
         "lookup_singular": "type",
         "lookup_article": "a",
+        "examples": "Siruis, Riegel, Arcturus, Vega, Polaris",
         "fields" : [
             { "name" : "mass", "type" : "i" },
             { "name" : "distance", "type" : "i" }
@@ -45,6 +48,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "houses",
         "lookup_singular": "house",
         "lookup_article": "a",
+        "examples": "Dumbledore, V*******t, Skeeter, Krum, Grindelwald",
         "fields" : [
             { "name" : "power", "type" : "i" },
             { "name" : "spell", "type" : "s" }
@@ -57,6 +61,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "types",
         "lookup_singular": "type",
         "lookup_article": "a",
+        "examples": "Titanic, Mayflower, Santa Maria, Constitution, HMS Victory",
         "fields" : [
             { "name" : "length", "type" : "i" },
             { "name" : "knots", "type" : "i" }
@@ -69,6 +74,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "breeds",
         "lookup_singular": "breed",
         "lookup_article": "a",
+        "examples": "Black Beauty, Seabiscuit, Secretariat, Trigger, Mr. Ed",
         "fields" : [
             { "name" : "height", "type" : "i" },
             { "name" : "weight", "type" : "i" }
@@ -81,6 +87,8 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "genres",
         "lookup_singular": "genre",
         "lookup_article": "a",
+
+        "examples": "Sound of Music, Wicked, Jersey Boys, The Moustrap, Chicago",
         "fields" : [
             { "name" : "minutes", "type" : "i" },
             { "name" : "summary", "type" : "s" }
@@ -93,6 +101,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "brands",
         "lookup_singular": "brand",
         "lookup_article": "a",
+        "examples": "Coffee, Dog Polisher, Juicer, Coffee Maker",
         "fields" : [
             { "name" : "price", "type" : "i" },
             { "name" : "year", "type" : "i" },
@@ -106,6 +115,7 @@ $CRUD_FIELDS_LIST = <<< EOF
         "lookup_plural": "states",
         "lookup_singular": "state",
         "lookup_article": "a",
+        "examples": "Ann Arbor, Atlanta, Chicago, Dallas, New York, Phoenix",
         "fields" : [
             { "name" : "population", "type" : "i" },
             { "name" : "slogan", "type" : "s" }
@@ -121,6 +131,7 @@ function patchSpec($SPEC) {
     $SPEC->assignment_type = ucwords($SPEC->assignment_type_lower);
     $SPEC->assignment_examples = $SPEC->examples;
     $SPEC->assignment_url_text = $SPEC->assignment_type . " Specification";
+    $SPEC->assignment_url = "99spec.php?assn=".urlencode(base64_encode($SPEC->key))."&type=".urlencode(base64_encode($SPEC->assignment_type_lower));
 }
 
 function prePatchSpec($SPEC) {

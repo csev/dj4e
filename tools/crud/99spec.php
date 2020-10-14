@@ -31,7 +31,7 @@ pre {padding-left: 2em;}
 <h1><?= $SPEC->assignment_type ?>: <?= $SPEC->title_singular ?> Database CRUD</h1>
 <p>
 In this <?= $SPEC->assignment_type_lower ?> you will build a web based application to
-track data about <?= strtolower($SPEC->title_plural) ?> <?= $SPEC->assignment_examples ?>.
+track data about <?= strtolower($SPEC->title_plural) ?> (i.e. <?= $SPEC->assignment_examples ?> ... ).
 We will only allow logged in users
 to track <?= strtolower($SPEC->title_plural) ?>.
 </p>

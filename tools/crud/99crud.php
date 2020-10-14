@@ -186,12 +186,12 @@ $new_nickname =  "Main_entry_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'nickname', $new_nickname);
 foreach($SPEC->fields as $field) {
-    if ( $field['type'] == 'i' ) {
+    if ( $field->type == 'i' ) {
         $value = ( 4200 + rand(1,100) ) . "";
     } else {
         $value = "Hello world";
     }
-    webauto_change_form($form, $field['name'], $value);
+    webauto_change_form($form, $field->name, $value);
 }
 webauto_change_form($form, $SPEC->lookup_lower, $lookup_select);
 line_out("Submitting form...");
