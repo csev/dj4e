@@ -5,6 +5,7 @@ require_once "../crud/webauto.php";
 use Goutte\Client;
 
 $qtext = 'Answer to the Ultimate Question';
+$cookie_name = 'dj4e_cookie';
 ?>
 <h1>DIY Hello World / Sessions</h1>
 <p>
@@ -26,7 +27,7 @@ $check = webauto_get_check();
 In addition to the session feature in the above assignment also set a cookie
 in your <b>/hello</b> view:
 <pre>
-resp.set_cookie('dj4e_cookie', '<?= $check?>', max_age=1000)
+resp.set_cookie('<?= $cookie_name ?>', '<?= $check?>', max_age=1000)
 </pre>
 Remember that to set a cookie in a Django view, you can't just use
 the <b>render()</b> shortcut.  Instead you
@@ -91,10 +92,41 @@ if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'view count=3');
 
+// Go after the cookies
+$cookieJar = $client->getCookieJar();
+
+line_out(' ');
+echo("<hr/>\n");
+line_out("Looking for $cookie_name - expecting $check");
+$test = $cookieJar->get($cookie_name);
+$value = $test ? $test->getValue() : null;
+
+if ( $value == $check ) {
+    success_out("Found $cookie_name=".$check);
+    $passed = $passed + 1;
+} else if ( strlen($value) > 0 ) {
+    error_out("Found $cookie_name with incorrect value: ".$value);
+} else {
+    error_out("Did not find $cookie_name");
+    $cookies = $cookieJar->all();
+    $count = 0;
+    foreach ($cookies as $cookie) {
+        if ( $count == 0 ) {
+            line_out("Found these cookies:");
+        }
+        $name       = $cookie->getName();
+        $value      = $cookie->getValue();
+        line_out(htmlentities($name).'='.htmlentities($value));
+        $count = $count + 1;
+    }
+    if ( $count < 1 ) {
+        line_out("No cookies found :(");
+    }
+}
 
 // -------------------- Send the grade ---------------
 line_out(' ');
-$perfect = 6;
+$perfect = 7;
 
 if ( ! $send ) {
     error_out("No score sent");
