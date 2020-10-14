@@ -21,15 +21,12 @@ $assignments = array(
     '02autos.php' => 'Autos CRUD',
     '02cats.php' => 'Cats CRUD',
     '99cats.php' => 'Cats 99',
-    '20stars.php' => 'Stars Sample Exam',
+    '99stars.php' => 'Stars 99',
+    '99random.php' => 'Random 99',
     '11adlist1.php' => 'AdList #1',
     '12adlist2.php' => 'AdList #2',
     '13adlist3.php' => 'AdList #3',
     '14adlist4.php' => 'AdList #4',
-    '20autos.php' => 'Autos CRUD II',
-    '20cats.php' => 'Cats CRUD II',
-    '194cities.php' => 'Cities',
-    '194wizards.php' => 'Wizards',
 );
 
 $oldsettings = Settings::linkGetAll();
