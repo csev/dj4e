@@ -1053,7 +1053,6 @@
     "anchor": "dj4e_cats",
     "icon" : "fa-paw",
     "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.",
-    "assignment" : "{apphome}/tools/crud/02spec.php?assn=02cats.php",
     "lti" : [
         {
         "title" : "Auto-grader: Cats CRUD",
@@ -1062,7 +1061,7 @@
         "custom" : [
             {
                 "key": "exercise",
-                "value": "02cats.php"
+                "value": "99cats.php"
             }
         ]
         }
