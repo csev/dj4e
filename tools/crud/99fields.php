@@ -2,19 +2,6 @@
 
 $CRUD_FIELDS_LIST = <<< EOF
 {
-    "autos" : {
-        "key": "autos",
-        "key_singular": "auto",
-        "article": "an",
-        "lookup_plural": "makes",
-        "lookup_singular": "make",
-        "lookup_article": "a",
-        "examples": "Ford, Hundai, Toyota, Tata, Audi",
-        "fields" : [
-            { "name" : "mileage", "type" : "i" },
-            { "name" : "comments", "type" : "s" }
-        ]
-    },
     "cats" : {
         "key": "cats",
         "key_singular": "cat",
@@ -26,6 +13,20 @@ $CRUD_FIELDS_LIST = <<< EOF
         "fields" : [
             { "name" : "weight", "type" : "i" },
             { "name" : "foods", "type" : "s" }
+        ]
+    },
+    "pets" : {
+        "key": "pets",
+        "key_singular": "pet",
+        "article": "a",
+        "lookup_plural": "types",
+        "lookup_singular": "type",
+        "lookup_article": "a",
+        "examples": "Turtle, Rabbit, Cat, Bearded Lizard, Pig",
+        "fields" : [
+            { "name" : "age", "type" : "i" },
+            { "name" : "cost", "type" : "i" },
+            { "name" : "comments", "type" : "s" }
         ]
     },
     "stars" : {
@@ -106,6 +107,20 @@ $CRUD_FIELDS_LIST = <<< EOF
             { "name" : "price", "type" : "i" },
             { "name" : "year", "type" : "i" },
             { "name" : "notes", "type" : "s" }
+        ]
+    },
+    "movies" : {
+        "key": "movies",
+        "key_singular": "movie",
+        "article": "a",
+        "lookup_plural": "genres",
+        "lookup_singular": "genre",
+        "lookup_article": "a",
+
+        "examples": "Chicago, All that Jazz, Sound of Music, Grease",
+        "fields" : [
+            { "name" : "minutes", "type" : "i" },
+            { "name" : "summary", "type" : "s" }
         ]
     },
     "cities" : {

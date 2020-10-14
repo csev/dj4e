@@ -302,12 +302,7 @@ can send it to the autograder.
 This <?= $SPEC->assignment_type_lower ?> will be automatically graded.  You will have
 unlimited attempts in the autograder until the deadline for submission.   Your web server will need an
 Internet-accessible URL so you can submit it for autograding.  You can do this either using
-<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> or
-<a href="https://www.ngrok.com" target="_blank">Ngrok</a>.
-Instructions for using ngrok are available at:
-</p>
-<p>
-<a href="http://www.dj4e.com/ngrok" target="_blank">http://www.dj4e.com/ngrok</a>
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>.
 </p>
 <p>
 Please see the process for handing in the <?= $SPEC->assignment_type_lower ?> at the end of this document.
