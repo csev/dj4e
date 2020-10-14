@@ -20,6 +20,7 @@ $assignments = array(
     '01hello.php' => 'Hello World',
     '02autos.php' => 'Autos CRUD',
     '02cats.php' => 'Cats CRUD',
+    '99cats.php' => 'Cats 99',
     '20stars.php' => 'Stars Sample Exam',
     '11adlist1.php' => 'AdList #1',
     '12adlist2.php' => 'AdList #2',
