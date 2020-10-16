@@ -7,6 +7,7 @@ if ( ! isset($_GET['type'] ) ) die('No assignment type');
 
 $assn = base64_decode($_GET['assn']);
 $type = base64_decode($_GET['type']);
+$online = isset($_GET['online']) ? $_GET['online'] : false;
 
 if ( ! isset($CRUD_FIELDS->{$assn}) ) die('Bad assignment');
 
@@ -43,6 +44,18 @@ to track <?= strtolower($SPEC->title_plural) ?>.
     if ( $SPEC->assignment_type == "Sample Exam" ) {
         echo('<b>(If this were a real exam)</b> ');
     }
+
+if ( $online ) {
+?>
+By taking this exam, you are agreeing to the following statement:
+<div style="border:2px solid black; padding: 5px; margin: 5px; width:100%"><b>
+This examination represents my own work and I have neither
+received nor given anyone any aid on this examination.
+</b>
+</div>
+</p>
+<?php
+} else {
 ?>
 In order for us to consider your exam for grading, you must read the
 statement below and if you agree with the statement sign and date below
@@ -65,6 +78,8 @@ Date:  _______________
 </div>
 <p>
 <?php
+}
+
     if ( $SPEC->assignment_type == "Sample Exam" ) {
         echo('If this were a real exam, it would be ');
     } else {

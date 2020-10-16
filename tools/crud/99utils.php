@@ -7,6 +7,9 @@ function patchSpec($SPEC) {
     $SPEC->assignment_examples = $SPEC->examples;
     $SPEC->assignment_url_text = $SPEC->assignment_type . " Specification";
     $SPEC->assignment_url = "99spec.php?assn=".urlencode(base64_encode($SPEC->key))."&type=".urlencode(base64_encode($SPEC->assignment_type_lower));
+    if ( isset($SPEC->online) && $SPEC->online ) {
+        $SPEC->assignment_url .= "&online=true";
+    }
 }
 
 function prePatchSpec($SPEC) {
