@@ -2,6 +2,18 @@
 
 $CRUD_FIELDS_LIST = <<< EOF
 {
+    "autos" : {
+        "key": "autos",
+        "key_singular": "auto",
+        "article": "an",
+        "lookup_plural": "makes",
+        "lookup_singular": "make",
+        "lookup_article": "a",
+        "fields" : [
+            { "name" : "mileage", "type" : "i" },
+            { "name" : "comments", "type" : "s" }
+        ]
+    },
     "cats" : {
         "key": "cats",
         "key_singular": "cat",
