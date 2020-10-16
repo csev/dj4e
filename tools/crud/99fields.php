@@ -27,6 +27,19 @@ $CRUD_FIELDS_LIST = <<< EOF
             { "name" : "foods", "type" : "s" }
         ]
     },
+    "stars" : {
+        "key": "stars",
+        "key_singular": "star",
+        "article": "a",
+        "lookup_plural": "types",
+        "lookup_singular": "type",
+        "lookup_article": "a",
+        "examples": "Siruis, Riegel, Arcturus, Vega, Polaris",
+        "fields" : [
+            { "name" : "mass", "type" : "i" },
+            { "name" : "distance", "type" : "i" }
+        ]
+    },
     "pets" : {
         "key": "pets",
         "key_singular": "pet",
@@ -39,19 +52,6 @@ $CRUD_FIELDS_LIST = <<< EOF
             { "name" : "age", "type" : "i" },
             { "name" : "cost", "type" : "i" },
             { "name" : "comments", "type" : "s" }
-        ]
-    },
-    "stars" : {
-        "key": "stars",
-        "key_singular": "star",
-        "article": "a",
-        "lookup_plural": "types",
-        "lookup_singular": "type",
-        "lookup_article": "a",
-        "examples": "Siruis, Riegel, Arcturus, Vega, Polaris",
-        "fields" : [
-            { "name" : "mass", "type" : "i" },
-            { "name" : "distance", "type" : "i" }
         ]
     },
     "wizards" : {
