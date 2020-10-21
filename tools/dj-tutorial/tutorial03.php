@@ -53,6 +53,7 @@ error_log("Tutorial03 ".$owner);
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
 
 $crawler = webauto_retrieve_url($client, $owner);
 if ( $crawler === false ) return;

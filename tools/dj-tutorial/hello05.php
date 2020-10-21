@@ -48,6 +48,7 @@ error_log("Hello05 ".$url);
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
 
 // Check that top page
 $crawler = webauto_retrieve_url($client, $url);
