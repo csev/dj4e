@@ -58,6 +58,7 @@ $main_url = trimSlash($url) . '/'  . $main_lower_plural;
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
 
 // Start the actual test
 $crawler = webauto_get_url($client, $main_url);

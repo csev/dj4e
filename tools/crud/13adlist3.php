@@ -46,6 +46,7 @@ $passed = 0;
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
 
 // Load the Favicon
 // https://en.wikipedia.org/wiki/ICO_(file_format)
