@@ -14,6 +14,7 @@ $assn = $keys[$pos];
 
 $SPEC = $CRUD_FIELDS->{$assn};
 $SPEC->assignment_type_lower = 'exam';
+$SPEC->online = true;
 patchSpec($SPEC);
 
 if ( !isset($SPEC_ONLY) ) require_once("99crud.php");
