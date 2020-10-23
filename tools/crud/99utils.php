@@ -18,11 +18,11 @@ function prePatchSpec($SPEC) {
     $SPEC->main_lower = $SPEC->key_singular;
     $SPEC->main_article = $SPEC->article;
     $SPEC->title_singular = ucfirst($SPEC->key_singular);
-    $SPEC->title_plural = $SPEC->title_singular . 's';
+    $SPEC->title_plural = ucfirst($SPEC->key);
     $SPEC->lookup_lower_plural = $SPEC->lookup_plural;
     $SPEC->lookup_title = ucfirst($SPEC->lookup_lower);
     $SPEC->lookup_title_plural = ucfirst($SPEC->lookup_lower_plural);
-    $SPEC->main_lower_plural = $SPEC->main_lower . 's';
+    $SPEC->main_lower_plural = $SPEC->key;
     $SPEC->main_title = ucfirst($SPEC->main_lower);
     $SPEC->main_title_plural = ucfirst($SPEC->main_lower_plural);
 }
