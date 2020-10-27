@@ -87,7 +87,7 @@ see a list of files including your `hello.txt`
 (like <a href="dj4e_html/site.htm" target="_blank">this</a>).
 Click on `hello.txt` on your site and you should see "Hello world". 
 
-Go to __(your-account).pythonanywhere.com/site/subfolder/hello.htm__ - you should
+Go to __(your-account).pythonanywhere.com/site/subfolder/hello.html__ - you should
 see "Hello World" styled using a HTML header tag 
 ( like <a href="dj4e_html/hello.htm" target="_blank">this</a>)
 

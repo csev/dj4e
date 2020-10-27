@@ -1,10 +1,4 @@
+Record how to use the autograder
 
-Add CSS at the beginning.
-
-Add Django forms and one-to-many to PPT
-
-Javascript
-
-
-
+Make github and install locally assignments.
 
