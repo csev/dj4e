@@ -1798,6 +1798,10 @@
         {
             "title" : "Project Specification",
             "href" : "{apphome}/project/00_overview.md"
+        },
+        {
+            "title" : "Sample Projects",
+            "href" : "https://projects.dj4e.com"
         }
     ],
     "lti" : [
@@ -1853,6 +1857,10 @@
         {
             "title" : "Project Specification",
             "href" : "{apphome}/project/00_overview.md"
+        },
+        {
+            "title" : "Sample Projects",
+            "href" : "https://projects.dj4e.com"
         }
     ],
     "lti" : [
@@ -1908,6 +1916,10 @@
         {
             "title" : "Project Specification",
             "href" : "{apphome}/project/00_overview.md"
+        },
+        {
+            "title" : "Sample Projects",
+            "href" : "https://projects.dj4e.com"
         }
     ],
     "lti" : [
@@ -1979,6 +1991,10 @@
         {
             "title" : "Project Specification",
             "href" : "{apphome}/project/00_overview.md"
+        },
+        {
+            "title" : "Sample Projects",
+            "href" : "https://projects.dj4e.com"
         }
     ],
     "lti" : [
