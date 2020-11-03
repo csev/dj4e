@@ -103,7 +103,7 @@ into your `ads` application.
 
 __Important Note:__ If you find you have a problem saving files in the PythonAnywhere
 system using their browser-based editor, you might need to turn off your ad blocker for
-this site - weird bt true.
+this site - weird but true.
 
 (1) Create a new `ads` application within your `mysite` project:
 
