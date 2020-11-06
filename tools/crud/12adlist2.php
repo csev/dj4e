@@ -147,10 +147,10 @@ if ( ! webauto_search_for($html, $title) ) {
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) < 1 ) {
-        error_out("Could not find an update url like /ad/nnn/update");
+        error_out("Could not find an Edit link with a url like /ad/nnn/update");
         return;
     } else if ( count($matches[1]) > 1 ) {
-        error_out("Expecting only one update url like /ad/nnn/update");
+        error_out("Expecting only one Edit link with a url like /ad/nnn/update");
         return;
     }
     $match = $matches[1][0];
@@ -163,7 +163,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     webauto_search_for_menu($html);
     webauto_search_for($html,$title."_updated");
 } else {
-    error_out("Could not find update url of the form /ad/nnn/update");
+    error_out("Could not find Edit link with a url of the form /ad/nnn/update");
     return;
 }
 
