@@ -24,7 +24,7 @@ Getting Started
 We will do this assignment within your library application but it will not have any user
 interface other than using the admin interface to verify that your application is working.
 
-Make new application under your `django_projects/mysite` called `unesco`.
+Make new application under your `django_projects/mysite` called `unesco`.  
 
     cd ~/django_projects/mysite
     python3 manage.py startapp unesco
@@ -227,6 +227,39 @@ it into the right tables:
     sqlite> SELECT COUNT(*) FROM unesco_site JOIN unesco_iso ON iso_id=unesco_iso.id WHERE unesco_site.name="Maritime Greenwich" AND unesco_iso.name = "gb";
     1
     sqlite>
+
+If the autograder complains about the size of your db.sqlite3 file
+------------------------------------------------------------------
+
+The autograder has a maximum size limit on the database you upload.   If your database
+exceeds this size you have two options - the easy one is to use the `VACUUM` command
+to remove extra space in the database.  In a shell do the following:
+
+    $ cd ~/django_projects/mysite
+    $ ls -l db.sqlite3 
+    -rw-r--r-- 1 dj4e registered_users 1153024 Nov 10 10:32 db.sqlite3
+    $ sqlite3 db.sqlite3 "VACUUM;"
+    $ ls -l db.sqlite3                                                                             
+    -rw-r--r-- 1 dj4e registered_users 1082368 Nov 10 13:14 db.sqlite3
+
+This might get your file small enough to be uploaded to the autograder.   You could also
+go into the `/admin` interface, delete some unneeded data and run the `VACUUM` command
+in the shell and check the file size afterwards.
+
+If your file is still too big for the autograder, you will need to start
+with a fresh database and then reload the data.  But we will make a copy
+of the data and restore it after you finish this assignment.
+
+    $ cd ~/django_projects/mysite
+    $ cp db.sqlite3 save.sqlite3
+    $ rm db.sqlite3
+    $ python3 manage.py migrate
+
+Run your load script and upload `db.sqlite3` to the autograder.
+
+When you pass the autograder, restore the old database:
+
+    $ cp save.sqlite3 db.sqlite3
 
 Once This Assignment is Done
 ----------------------------
