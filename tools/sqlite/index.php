@@ -78,5 +78,5 @@ if ( $assn && isset($assignments[$assn]) ) {
 }
         
 
-$OUTPUT->footer();
+if ( !isset($FOOTER_DONE) ) $OUTPUT->footer();
 

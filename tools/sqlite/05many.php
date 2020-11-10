@@ -136,11 +136,11 @@ if ( $dueDate->message ) {
 }
 ?>
 <p>
-<form name="myform" enctype="multipart/form-data" method="post" >
+<form id="upload_form" name="myform" enctype="multipart/form-data" method="post" >
 To get credit for this assignment, perform the instructions below and
 upload your SQLite3 database here:<br/>
-<input name="database" type="file">
-(Must have a .sqlite3 suffix)<br/>
+<input id="upload_file" name="database" type="file">
+(Must have a .sqlite3 suffix and be &lt; 3M)<br/>
 <input type="submit">
 <p>
 Do the assignment at
@@ -157,4 +157,24 @@ This autograder checks the schemas and contents of the five tables
 that will be created when the assignment is completed properly.
 </p>
 </form>
-</p>
+<?php
+$OUTPUT->footerStart();
+?>
+<script>
+$("#upload_form").submit(function() {
+  console.log('Checking file size');
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+      var file = $('#upload_file')[0].files[0];
+      var max = 3000000;
+      var maxstr = '3M';
+      if (file && file.size > max ) {
+          alert("File " + file.name + " must be < " + maxstr);
+      return false;
+    }
+  }
+});
+</script>
+<?php
+global $FOOTER_DONE;
+$FOOTER_DONE = true;
+$OUTPUT->footerEnd();
