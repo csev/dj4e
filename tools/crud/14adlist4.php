@@ -31,7 +31,7 @@ You should already have two users and a <b>meta</b> tag.
 <?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?> 
 <?= htmlentities($meta) ?>
 </pre>
-Note that your application should not be at the '/m2' path and should not
+Note that your application should not be at the '/m4' path and should not
 have a "Versions" drop-down.  That is just how the sample implementation is written
 to support more than one variant of the code at the same time.
 </p>
