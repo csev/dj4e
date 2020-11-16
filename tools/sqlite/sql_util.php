@@ -32,7 +32,7 @@ function countQuery(&$db, $query) {
 }
 
 function checkCountTable(&$db, $table, $expected, $margin=0) {
-    $query = 'SELECT count(id) FROM '.$table;
+    $query = 'SELECT COUNT(*) FROM '.$table;
     return checkCountQuery($db, $query, $expected, $margin);
 }
 
