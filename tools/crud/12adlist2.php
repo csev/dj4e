@@ -175,7 +175,7 @@ $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
 // Use the comment form
-line_out('Looking comment form and submit button.');
+line_out('Looking for comment form and submit button.');
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'comment', $title."_comment");
 

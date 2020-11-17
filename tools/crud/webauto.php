@@ -371,12 +371,12 @@ function webauto_get_form_with_button($crawler,$text, $text2=false)
 {
     $msg = 'Did not find form with a "'.$text.'" button';
     if ( ! is_object($crawler) ) {
-        line_out($msg);
+        error_out($msg);
         throw new Exception($msg);
     }
     $html = $crawler->html();;
     if ( strpos($html, $text) === false && strpos($html, $text2) === false) {
-        line_out($msg);
+        error_out($msg);
         throw new Exception($msg);
     }
 
