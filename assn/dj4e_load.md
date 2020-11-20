@@ -21,7 +21,7 @@ The columns in the data are as follows:
 Getting Started
 ---------------
 
-We will do this assignment within your library application but it will not have any user
+We will do this assignment within your mysite application but it will not have any user
 interface other than using the admin interface to verify that your application is working.
 
 Make new application under your `django_projects/mysite` called `unesco`.  
@@ -193,7 +193,7 @@ Running the Script
 Place the CSV file in the `unesco` folder and then run the script from the project folder (i.e.
 where the `manage.py` file resides):
 
-    cd ~/django_projects/library
+    cd ~/django_projects/mysite
     workon django3                             # if necessary
     python3 manage.py runscript many_load
 
