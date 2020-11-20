@@ -228,8 +228,36 @@ it into the right tables:
     1
     sqlite>
 
-If the autograder complains about the size of your db.sqlite3 file
-------------------------------------------------------------------
+Upload to the Autograder
+------------------------
+
+When the data passes your manual tests, you can download `db.sqlite3` from PythonAnywhere
+and then upload it to the autograder.
+
+Once This Assignment is Done
+----------------------------
+
+We added this project to `mysite` and added the models to the admin user interface so
+you could look at them, but you might not want to see the `unesco` data from this point forward.
+Simply comment out the line in `mysite/mysite/settings.py` as follows:
+
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+    ...
+        'django_extensions',
+        # 'unesco.apps.UnescoConfig',  # Comment out
+    ]
+
+And then restart your web application and verify that the unesco tables no longer show up in the
+administrator interface.
+
+
+(Errors) If the autograder complains about the size of your db.sqlite3 file
+---------------------------------------------------------------------------
+
+This section is only if you encounter errors.
 
 The autograder has a maximum size limit on the database you upload.   If your database
 exceeds this size you have two options - the easy one is to use the `VACUUM` command
@@ -260,23 +288,4 @@ Run your load script and upload `db.sqlite3` to the autograder.
 When you pass the autograder, restore the old database:
 
     $ cp save.sqlite3 db.sqlite3
-
-Once This Assignment is Done
-----------------------------
-
-We added this project to `mysite` and added the models to the admin user interface so
-you could look at them, but you might not want to see the `unesco` data from this point forward.
-Simply comment out the line in `mysite/mysite/settings.py` as follows:
-
-    INSTALLED_APPS = [
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-    ...
-        'django_extensions',
-        # 'unesco.apps.UnescoConfig',  # Comment out
-    ]
-
-And then restart your web application and verify that the unesco tables no longer show up in the
-administrator interface.
 
