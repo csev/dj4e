@@ -60,7 +60,7 @@ Add the following line to your `batch/batch/settings.py`:
 
 At this point you should run:
 
-    python manage.py check
+    python3 manage.py check
 
 And make sure that your basic Django environment is configured properly.
 
