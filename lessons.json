@@ -989,6 +989,12 @@
         "title": "Using the Django Shell to Explore One-to-Many Models",
         "youtube": "ZdLpAtfWfZk",
         "project": "DJ 03 Many 06 Shell"
+    },
+    {
+        "title": "Building a Django Batch Script to Load Data from CSV",
+        "todo" : "Re-record batch loading using extensions",
+        "youtube": "E8y_6S2Fc5s",
+        "project" : "DJ 04 Many 04 Batch"
     }
    ],
     "assignment" : "{apphome}/assn/dj4e_load.md",
@@ -1255,12 +1261,6 @@
         "title": "Many-To-Many Data Models for Courses and Membership",
         "youtube": "kY_1a057phM",
         "project" : "DJ 04 Many 03 Course"
-    },
-    {
-        "title": "Building a Django Batch Script to Load Data from CSV",
-        "todo" : "Re-record batch loading using extensions",
-        "youtube": "E8y_6S2Fc5s",
-        "project" : "DJ 04 Many 04 Batch"
     }
    ],
     "lti" : [

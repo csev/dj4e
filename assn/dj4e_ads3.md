@@ -105,6 +105,15 @@ code at the end.
 (5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
 from `dj4e-samples/favs/views.py` into your `views.py`.
 
+Finding and Fixing Errors in the Developer Console
+--------------------------------------------------
+
+This is the first time you are using AJAX so some of the errors will only be seen in the developer
+console.  If your favoriting code breaks - you won't see the errors on the main screen.  Go into the
+developer console, under the network tab and watch for the AJAX (also known as XHR) calls.  Some will
+fail with errors like 404 or 500 and - if you select the request that is in error and look at
+the `Response` tab you will usually see what is going wrong in the server.
+
 Things that might go wrong
 --------------------------
 
@@ -115,7 +124,6 @@ of favorites seem to fail.  You might see a message like:
 
 Or a similar message - this means your JavaScript tried to do an AJAX
 request and was stopped by the browser.
-
 
 Manual Testing
 --------------
