@@ -1,7 +1,7 @@
 Building and Loading a Data Model
 =================================
 
-In this assignment you will temporarily step away from building the applications and
+In this assignment you will temporarily step away from building the LocalLibrary applications and
 develop a data model from a file of un-normalized data and
 then build a script to load data in to that model.
 
@@ -21,20 +21,18 @@ The columns in the data are as follows:
 Getting Started
 ---------------
 
-We will do this assignment in a new Django project called `batch` so as not to disturb your other work.
+We will do this assignment within your mysite application but it will not have any user
+interface other than using the admin interface to verify that your application is working.
 
-   cd ~/django_project/
-   django-admin startproject batch
+Make new application under your `django_projects/mysite` called `unesco`.  
 
-Make new application under your `django_projects/batch` called `unesco`.  
-
-    cd ~/django_projects/batch
+    cd ~/django_projects/mysite
     python3 manage.py startapp unesco
 
 Also make a folder called `scripts` and add an `__init__.py` file to it.  The `__init__.py` file
 is needed in order to store Python objects in the `scripts` folder.
 
-    cd ~/django_projects/batch
+    cd ~/django_projects/mysite
     mkdir scripts
     touch scripts/__init__.py
 
@@ -42,12 +40,12 @@ Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
 https://github.com/csev/dj4e-samples/tree/master/scripts
 
-Then in install `django extensions` if you have not already done so:
+install `django extensions`:
 
     workon django3                     # If necessary
     pip3 install django_extensions
 
-Add the following line to your `batch/batch/settings.py`:
+Add the following line to your `mysite/mysite/settings.py`:
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -58,11 +56,6 @@ Add the following line to your `batch/batch/settings.py`:
         'unesco.apps.UnescoConfig',  # Add
     ]
 
-At this point you should run:
-
-    python manage.py check
-
-And make sure that your basic Django environment is configured properly.
 
 Design a Data Model
 -------------------
@@ -129,7 +122,7 @@ Also add the models to `unesco/admin.py` so you can view them in the administrat
 Once you have your model built, run `makemigrations` and `migrate` to create
 the database.
 
-    cd ~/django_projects/batch
+    cd ~/django_projects/mysite
     python3 manage.py makemigrations
     python3 manage.py migrate
 
@@ -200,7 +193,7 @@ Running the Script
 Place the CSV file in the `unesco` folder and then run the script from the project folder (i.e.
 where the `manage.py` file resides):
 
-    cd ~/django_projects/batch
+    cd ~/django_projects/mysite
     workon django3                             # if necessary
     python3 manage.py runscript many_load
 
@@ -212,6 +205,9 @@ work properly.
 
 Checking Your Data By Hand
 --------------------------
+
+You can check to see if your data was loaded properly in the Django
+Admin user interface.
 
 You can also hand-check your data by running a few queries on
 your data before turning it in to make sure the data makes
@@ -238,6 +234,26 @@ Upload to the Autograder
 When the data passes your manual tests, you can download `db.sqlite3` from PythonAnywhere
 and then upload it to the autograder.
 
+Once This Assignment is Done
+----------------------------
+
+We added this project to `mysite` and added the models to the admin user interface so
+you could look at them, but you might not want to see the `unesco` data from this point forward.
+Simply comment out the line in `mysite/mysite/settings.py` as follows:
+
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+    ...
+        'django_extensions',
+        # 'unesco.apps.UnescoConfig',  # Comment out
+    ]
+
+And then restart your web application and verify that the unesco tables no longer show up in the
+administrator interface.
+
+
 (Errors) If the autograder complains about the size of your db.sqlite3 file
 ---------------------------------------------------------------------------
 
@@ -247,22 +263,29 @@ The autograder has a maximum size limit on the database you upload.   If your da
 exceeds this size you have two options - the easy one is to use the `VACUUM` command
 to remove extra space in the database.  In a shell do the following:
 
-    $ cd ~/django_projects/batch
+    $ cd ~/django_projects/mysite
     $ ls -l db.sqlite3 
     -rw-r--r-- 1 dj4e registered_users 1153024 Nov 10 10:32 db.sqlite3
     $ sqlite3 db.sqlite3 "VACUUM;"
     $ ls -l db.sqlite3                                                                             
     -rw-r--r-- 1 dj4e registered_users 1082368 Nov 10 13:14 db.sqlite3
 
-This might get your file small enough to be uploaded to the autograder.
+This might get your file small enough to be uploaded to the autograder.   You could also
+go into the `/admin` interface, delete some unneeded data and run the `VACUUM` command
+in the shell and check the file size afterwards.
 
-If your file is still too big for the autograder, you will need to clear your
-database and then reload the data.  
+If your file is still too big for the autograder, you will need to start
+with a fresh database and then reload the data.  But we will make a copy
+of the data and restore it after you finish this assignment.
 
-    $ cd ~/django_projects/batch
+    $ cd ~/django_projects/mysite
+    $ cp db.sqlite3 save.sqlite3
     $ rm db.sqlite3
     $ python3 manage.py migrate
 
-Run your load script and upload `db.sqlite3` to the autograder.  At this point
-it should be the correct size.
+Run your load script and upload `db.sqlite3` to the autograder.
+
+When you pass the autograder, restore the old database:
+
+    $ cp save.sqlite3 db.sqlite3
 

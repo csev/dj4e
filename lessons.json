@@ -991,6 +991,7 @@
         "project": "DJ 03 Many 06 Shell"
     }
    ],
+    "assignment" : "{apphome}/assn/dj4e_load.md",
     "lti" : [
         {
             "title" : "Quiz: One to Many Data Models",
@@ -1006,6 +1007,17 @@
                     "value": "601"
                 }
             ]
+        },
+        {
+        "title" : "Auto-grader: Many-to-Many Data Model",
+        "launch" : "tools/sqlite/",
+        "resource_link_id" : "dj4e_load",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05many.php"
+            }
+        ]
         }
     ],
     "references" : [
@@ -1251,7 +1263,6 @@
         "project" : "DJ 04 Many 04 Batch"
     }
    ],
-    "assignment" : "{apphome}/assn/dj4e_load.md",
     "lti" : [
         {
             "title" : "Quiz: Many-To-Many",
@@ -1267,17 +1278,6 @@
                     "value": "601"
                 }
             ]
-        },
-        {
-        "title" : "Auto-grader: Many-to-Many Data Model",
-        "launch" : "tools/sqlite/",
-        "resource_link_id" : "dj4e_load",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "05many.php"
-            }
-        ]
         }
     ],
     "references" : [
