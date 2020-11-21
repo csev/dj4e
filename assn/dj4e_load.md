@@ -23,8 +23,8 @@ Getting Started
 
 We will do this assignment in a new Django project called `batch` so as not to disturb your other work.
 
-   cd ~/django_project/
-   django-admin startproject batch
+    cd ~/django_project/
+    django-admin startproject batch
 
 Make new application under your `django_projects/batch` called `unesco`.  
 
