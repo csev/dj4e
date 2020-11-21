@@ -100,7 +100,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_tut03.md") ?>>Django Views</option>
   <option <?= x_sel("dj4e_tut04.md") ?>>Django Forms</option>
   <option <?= x_sel("dj4e_hello.md") ?>>Hello Session World</option>
-  <option <?= x_sel("dj4e_unesco.md") ?>>Batch Loading Data</option>
+  <option <?= x_sel("dj4e_load.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Login / Autos CRUD</option>
   <option <?= x_sel("dj4e_local.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("dj4e_github.md") ?>>Using GitHub</option>
@@ -126,7 +126,7 @@ These are the assignments for Django for Everybody (DJ4E).
 <li><a href="dj4e_tut03.md">Django Views</a></li>
 <li><a href="dj4e_tut04.md">Django Forms</a></li>
 <li><a href="dj4e_hello.md">Hello Session World</a></li>
-<li><a href="dj4e_unesco.md">Batch Loading Data</a></li>
+<li><a href="dj4e_load.md">Batch Loading Data</a></li>
 <li><a href="dj4e_autos.md">Login / Autos CRUD</a></li>
 <li><a href="dj4e_github.md">Using GitHub</a></li>
 <li><a href="dj4e_local.md">Installing Django Locally</a></li>
