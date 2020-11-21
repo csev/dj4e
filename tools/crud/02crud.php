@@ -74,7 +74,8 @@ webauto_change_form($form, 'username', $useraccount);
 webauto_change_form($form, 'password', $userpw);
 
 line_out("Submitting form...");
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
 if ( stripos($html,"Your username and password didn't match. Please try again.") ) {
@@ -108,7 +109,8 @@ for($i=0; $i<10; $i++) {
 
     $form = webauto_get_form_with_button($crawler,'Yes, delete.');
     line_out("Submitting form...");
-    $crawler = $client->submit($form);
+    // $crawler = $client->submit($form);
+	$crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     $count++;
 }
@@ -125,7 +127,8 @@ $lookup_new = "LU_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);
 line_out("Submitting form...");
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 line_out("It looks like we created $lookup_article $lookup_lower named $lookup_new :)");
 
@@ -156,7 +159,8 @@ $lookup_new = $lookup_new . "_updated";
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);
 line_out("Submitting form...");
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
 $crawler = webauto_get_url($client, $view_lookup_url, "Retrieving lookup view page...");
@@ -196,7 +200,8 @@ foreach($fields as $field) {
 }
 webauto_change_form($form, $lookup_lower, $lookup_select);
 line_out("Submitting form...");
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $new_nickname);
 
@@ -220,7 +225,8 @@ $new_nickname = $new_nickname . "_updated";
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'nickname', $new_nickname);
 line_out("Submitting form...");
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $new_nickname);

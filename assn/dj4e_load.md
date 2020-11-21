@@ -7,7 +7,7 @@ then build a script to load data in to that model.
 
 The data is a simplified extraction
 of the <a href="https://whc.unesco.org/en/list/" tatget="_blank">UNESCO World Heritage Sites</a> registry.
-The un-normalized data is provided as both a spreadsheet and a CSF file:
+The un-normalized data is provided as both a spreadsheet and a CSV file:
 
 <a href="dj4e_load/whc-sites-2018-clean.csv" target="_blank">CSV Version</a>
 

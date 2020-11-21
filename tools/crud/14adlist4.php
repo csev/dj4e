@@ -101,7 +101,8 @@ $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
 webauto_change_form($form, 'username', $useraccount);
 webauto_change_form($form, 'password', $userpw);
 
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
@@ -125,7 +126,8 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-        $crawler = $client->submit($form);
+        // $crawler = $client->submit($form);
+		$crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
     } 
 }
@@ -167,7 +169,8 @@ webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.41');
 webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 
-$crawler = $client->submit($form);
+// $crawler = $client->submit($form);
+$crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 

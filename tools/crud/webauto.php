@@ -23,6 +23,7 @@ function webauto_get_html($crawler) {
         $html = $crawler->html();
     }
     catch (Exception $e) {
+        error_out("Could not find HTML ".$e->getMessage());
         error_log("Could not find HTML ".$e->getMessage());
         throw new Exception("Could not retrieve HTML from page");
     }
@@ -451,6 +452,16 @@ function webauto_change_form($form, $name, $value)
     }
     line_out("Changing form field '$name' to be $value");
     $x->setValue($value);
+}
+
+function webauto_submit_form($client, $form) {
+    $crawler = $client->submit($form);
+	$response = $client->getInternalResponse();
+	$status = $response->getStatus();
+	if ( $status != 200 ) {
+		error_out("Submitting the form caused an error http code=".$status);
+	}
+	return $crawler;
 }
 
 function webauto_search_for_many($html, $needles)
