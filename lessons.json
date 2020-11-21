@@ -992,7 +992,7 @@
     },
     {
         "title": "Building a Django Batch Script to Load Data from CSV",
-        "todo" : "Re-record batch loading using extensions",
+        "todo" : "Re-record do with one-to-many and using extensions",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
     }
@@ -1015,7 +1015,7 @@
             ]
         },
         {
-        "title" : "Auto-grader: Many-to-Many Data Model",
+        "title" : "Auto-grader: One-to-Many Unesco Data",
         "launch" : "tools/sqlite/",
         "resource_link_id" : "dj4e_load",
         "custom" : [
@@ -1261,6 +1261,12 @@
         "title": "Many-To-Many Data Models for Courses and Membership",
         "youtube": "kY_1a057phM",
         "project" : "DJ 04 Many 03 Course"
+    },
+    {
+        "title": "Building a Django Batch Script to Load Data from CSV",
+        "todo" : "Re-record batch loading using extensions",
+        "youtube": "E8y_6S2Fc5s",
+        "project" : "DJ 04 Many 04 Batch"
     }
    ],
     "lti" : [
