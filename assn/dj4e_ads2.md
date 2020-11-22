@@ -119,6 +119,30 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
 
 (8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
 
+Manual Testing
+--------------
+
+It is always a good idea to manually test your application before submitting it for grading.  Here
+are a set of manual test steps:
+
+* Make two accounts - If you have not already done so
+* Log in to your application on the first account
+* Create an ad with a picture
+* In the all ads list make sure that the edit / delete button shows correctly
+* View its details click on the picture to see that it fulls the screen
+* Update the ad, check that the details are correct 
+* Delete the ad - just to make sure it works - the autograder gets grumpy if it cannot delete an ad
+* Create two more ads
+* Make two comments on an ad - make sure you can see the edit / delete buttons on your comments
+* Delete one of your comments
+* Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
+* Go into one the ad you commented on above - make sure to see the comment from the first user
+and make sure there is **no** edit or delete button.
+* Make two new comments - make sure you *do* see the edit / delete buttons for your comments but not for
+the other user's comments.
+* Delete one of your comments and make sure it goes away
+
+
 Do Some or All of the Challenges
 ---------------------------------
 

@@ -105,6 +105,30 @@ code at the end.
 (5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
 from `dj4e-samples/favs/views.py` into your `views.py`.
 
+Manual Testing
+--------------
+
+It is always a good idea to manually test your application before submitting it for grading.  Here
+are a set of manual test steps:
+
+* Make two accounts if you have not already done so
+* Log in to your application on the first account
+* Create an ad, view its details, update, the ad, and delete the ad (test for regression)
+* Create more than one ad
+* In the list view mark one ad as a favorite and then press 'refresh' and see if the star is the same
+after refresh as it was when you clicked on the star
+* In the list view unfavorite a favorited ad and then press 'refresh' and see if the star is the same
+after refresh as it was when you clicked on the star
+* Log in on the second account - make sure the favorites are not the same as the first account
+* Do several favorite and unfavorite operations pressing 'refresh' after each change and make sure
+the star "sticks" (i.e. has the same value as when you clicked it)
+
+The most common problem is that when you click onthe star if looks good on the screen but the
+fact that this is not a favorites (or not) did not get recorded in the server.
+Often you will need to check the developer network console in your browser to find errors
+in the AJAX code.
+
+
 Finding and Fixing Errors in the Developer Console
 --------------------------------------------------
 
@@ -124,27 +148,3 @@ of favorites seem to fail.  You might see a message like:
 
 Or a similar message - this means your JavaScript tried to do an AJAX
 request and was stopped by the browser.
-
-Manual Testing
---------------
-
-It is always a good idea to manually test your application before submitting it for grading.  Here
-are a set of manual test steps:
-
-* Make two accounts
-* Log in to your application on the first account
-* Create an ad, view its details, update, the ad, and delete the ad (test for regression)
-* Create more than one ad
-* In the list view mark one ad as a favorite and then press 'refresh' and see if the star is the same
-after refresh as it was when you clicked on the star
-* In the list view unfavorite a favorited ad and then press 'refresh' and see if the star is the same
-after refresh as it was when you clicked on the star
-* Log in on the second account - make sure the favorites are not the same as the first account
-* Do several favorite and unfavorite operations pressing 'refresh' after each change and make sure
-the star "sticks" (i.e. has the same value as when you clicked it)
-
-The most common problem is that when you click onthe star if looks good on the screen but the
-fact that this is not a favorites (or not) did not get recorded in the server.
-Often you will need to check the developer network console in your browser to find errors
-in the AJAX code.
-

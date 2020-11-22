@@ -21,3 +21,19 @@ Once you understand what the `well` code is doing, you only have to change a few
 
 There should not be any other changes required.
 
+Manual Testing
+--------------
+
+It is always a good idea to manually test your application before submitting it for grading.  Here
+are a set of manual test steps:
+
+* Log in to your application and create several ads
+* Search for some text in the body of one or more of your ads
+* Note the "?search=" in the location bar in your browser
+* Clear the search and see all of the results
+
+Challenge
+---------
+
+Make the search look for text in either the body or the title.
+

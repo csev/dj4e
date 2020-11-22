@@ -273,6 +273,30 @@ Make sure to check the autograder for additional markup requirements.
 When you are done, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
 sample implementation.
 
+Manual Testing
+--------------
+
+It is always a good idea to manually test your application before submitting it for grading.  Here
+are a set of manual test steps:
+
+* Make two accounts if you have not already done so
+* Log in to your application on the first account
+* Make sure the menu bar shows at the top of all of the screens - the autograder gets grumpy about a missing menu on a page
+* Create an ad 
+* Try to submit an add with no title - make sure that it complains
+* Create an ad
+* In the all ads list make sure that the edit / delete button shows correctly
+* View its details - make sure the edit / delete button shows up correctly
+* Update the ad, check that the details are correct after the update
+* Delete the ad - just to make sure it works 
+* Create two more ads
+* Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
+* Go into one the detail for the ad created by the other user -  make sure you **do not** see edit / delete buttons
+* Create a new ad on the second account
+* Make sure that in the "all ads list" the edit / delete buttons are only present on the ads the second user "owns"
+* Delete the ad
+
+
 Fun Challenges
 --------------
 
