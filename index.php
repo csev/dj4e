@@ -51,4 +51,4 @@ var_dump($USER);
 -->
 </div>
 <?php 
-require "foot.php";
+require "footer.php";

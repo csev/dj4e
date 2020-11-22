@@ -962,7 +962,6 @@
     "anchor": "dj4e_one_to_many",
     "icon" : "fa-university",
     "description": "We explore the design of one-to-many data models.",
-    "todo" : "Make peer graded model assignment for one-to-many data models.",
     "slides": "lectures/DJ-03-One-To-Many.pptx",
     "videos" : [
     {
@@ -1013,6 +1012,41 @@
                     "value": "601"
                 }
             ]
+        },
+        {
+        "title": "Peer Graded: Unesco Data Model",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "peer_model",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Unesco Data Model",
+  "description": "You will upload a picture of your normalized Unesco data model.  It can be a photo of a hand-drawn model or you can use a layout tool.  You should use 'Crow's Foot Notation' for your model and both ends of each line must be properly labelled with a 'one' or 'many' indication.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of your Unesco data model (Maximum 2MB per file)",
+      "type": "image"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
         },
         {
         "title" : "Auto-grader: One-to-Many Unesco Data",

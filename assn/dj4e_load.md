@@ -86,6 +86,11 @@ You will make a Django model that describes the tables, one-to-many relationship
 and foreign keys sufficient to represent this data efficiently with no vertical duplication.
 Numbers and dates do not have to have their own tables.
 
+Draw the data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" 
+target="_blank">Crow's-Foot Notation</a>.  You can use paper, or a layout tool - one way or another your
+diagram should have five boxes and four lines - and the each of lines should be properly labelled
+as a "many" or a "one" end.
+
 Name the first model `Site`, use singular names for all of the table/model
 names.  Use the exact name of the column for the model field names and
 foreign key names.  Here is a subset of the `unesco/models.py`:
@@ -97,6 +102,8 @@ foreign key names.  Here is a subset of the `unesco/models.py`:
 
         def __str__(self) :
             return self.name
+
+    class State(models.Model) :
 
     ...
 
