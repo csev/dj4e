@@ -18,6 +18,9 @@ The columns in the data are as follows:
     name,description,justification,year,longitude,latitude,
     area_hectares,category,states,region,iso
 
+You have to have the CSV data available to run the batch script.   If you are using PythonAnywhere
+to do your homework, you can use the `wget` command to pull in the data (see below).
+
 Getting Started
 ---------------
 
@@ -30,6 +33,12 @@ Make new application under your `django_projects/batch` called `unesco`.
 
     cd ~/django_projects/batch
     python3 manage.py startapp unesco
+
+You need to copy the CSV file into the `unesco` folder.  If the `wget` command is available
+you can use it to download the file:
+
+    cd unesco
+    wget https://www.dj4e.com/assn/dj4e_load/whc-sites-2018-clean.csv
 
 Also make a folder called `scripts` and add an `__init__.py` file to it.  The `__init__.py` file
 is needed in order to store Python objects in the `scripts` folder.
