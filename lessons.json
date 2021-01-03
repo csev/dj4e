@@ -800,14 +800,14 @@
     ]
 },
 {
-    "title": "Forms in HTTP, and HTML",
+    "title": "Forms in HTTP and HTML",
     "anchor": "dj4e_forms_html",
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our applications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
     "slides": "lectures/DJ-08-Forms-HTML.pptx",
     "discussions" : [
         {
-        "title" : "Forms in HTTP, and HTML",
+        "title" : "Forms in HTTP and HTML",
         "launch" : "mod/tdiscus/",
         "resource_link_id": "discuss_11_forms"
         }
