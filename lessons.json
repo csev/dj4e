@@ -10,6 +10,13 @@
 ],
 "badges": [
 ],
+"discussions" : [
+    {
+    "title" : "Welcome to Django for Everybody",
+    "launch" : "mod/tdiscus/",
+    "resource_link_id": "discussion_welcome"
+    }
+],
 "modules": [
 {
     "title": "Introduction to Dynamic Web Content",
@@ -17,6 +24,13 @@
     "icon" : "fa-refresh",
     "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
     "slides": "lectures/Web-01-HTTP.pptx",
+    "discussions" : [
+        {
+        "title" : "Introduction to Dynamic Web Content",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_01_intro"
+        }
+    ],
     "videos" : [
         {
             "title" : "Web Applications and the Request/Response Cycle",
@@ -87,6 +101,13 @@
     "anchor": "dj4e_install",
     "icon" : "fa-clone",
     "description": "This walks through the installation steps for Django on PythonAnywhere.  If you cannot use PythonAnywhere, you can also install Django locally and submit assignments your local computer for grading.  Installing Django locally will be described in an upcoming lesson.",
+    "discussions" : [
+        {
+        "title" : "Installing Django on PythonAnywhere",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_02_install"
+        }
+    ],
     "videos" : [
     {
         "title": "Installing Django on PythonAnywhere",
@@ -147,6 +168,13 @@
     "icon" : "fa-html5",
     "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
     "slides": "lectures/Web-02-HTML.pptx",
+    "discussions" : [
+        {
+        "title" : "HyperText Markup Language (HTML)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_03_html"
+        }
+    ],
     "videos" : [
         {
             "title" : "HTML - HyperText Markup Language (Part 1)",
@@ -207,6 +235,13 @@
     "icon" : "fa-css3",
     "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
     "slides": "lectures/Web-03-CSS.ppt",
+    "discussions" : [
+        {
+        "title" : "Cascading Style Sheets (CSS)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_04_css"
+        }
+    ],
     "videos" : [
         {
             "title" : "CSS - Cascading Style Sheets - (Part 1)",
@@ -309,6 +344,13 @@
     "anchor": "dj4e_basic_sql",
     "icon" : "fa-database",
     "description": "This is a quick look at databases in general and the basic operations (CRUD) in Structured Query Language (SQL). We don't go too far into SQL because we will be using Django's model capabilities to build the databases for our application.",
+    "discussions" : [
+        {
+        "title" : "Basic SQL",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_05_sql"
+        }
+    ],
     "videos" : [
     {
         "title": "How Databases Work",
@@ -381,6 +423,13 @@
     "icon" : "fa-database",
     "description": "This section explores how we define models in Django and then we build the data models and explore the administration interface for our application.",
     "slides": "lectures/DJ-02-Model-Single.pptx",
+    "discussions" : [
+        {
+        "title" : "Django Data Models",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_06_model"
+        }
+    ],
     "videos" : [
     {
         "title": "Django Data Models",
@@ -451,11 +500,18 @@
     ]
 },
 {
-    "title": "Understanding Model View Controller (MVC) ",
+    "title": "Understanding Model View Controller (MVC)",
     "anchor": "dj4e_mvc",
     "icon" : "fa-home",
     "description": "We cover the concept of the Model-View-Controller (MVC) in web applications.",
     "slides": "lectures/DJ-05-MVC.pptx",
+    "discussions" : [
+        {
+        "title" : "Understanding Model View Controller (MVC)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_07_mvc"
+        }
+    ],
     "videos" : [
     {
         "title": "Model View Controller in Django",
@@ -497,6 +553,13 @@
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-06-Views-Templates.pptx",
     "description": "We finally get to looking at the core of a Django application - the views and templates.",
+    "discussions" : [
+        {
+        "title" : "Django Views and Templates",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_08_views"
+        }
+    ],
     "videos" : [
     {
         "title": "URL Routing in Django",
@@ -623,6 +686,13 @@
     "icon" : "fa-cubes",
     "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
     "slides": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+    "discussions" : [
+        {
+        "title" : "Object-Oriented Programming in Python",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_09_objects"
+        }
+    ],
     "references" : [
         {
             "title" : "Chapter 14: Python Objects",
@@ -671,6 +741,13 @@
     "icon" : "fa-align-left",
     "slides": "lectures/DJ-07-Views-Generic.pptx",
     "description": "We look at the generic views capability within Django.",
+    "discussions" : [
+        {
+        "title" : "Django Generic Views",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_10_generic"
+        }
+    ],
     "videos" : [
     {
         "title": "Understanding Django Generic Views",
@@ -728,6 +805,13 @@
     "icon" : "fa-table",
     "description": "We cover how GET and POST work, how forms are constructed from HTML, how we protect our applications against Cross-Site Scripting Forgery (CSRF), and how we handle browser refreshes after POST.",
     "slides": "lectures/DJ-08-Forms-HTML.pptx",
+    "discussions" : [
+        {
+        "title" : "Forms in HTTP, and HTML",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_11_forms"
+        }
+    ],
     "videos" : [
     {
         "title": "Forms, GET, POST, and HTTP",
@@ -822,6 +906,13 @@
     "description": "We explore how cookies work in the browser and how to set and read cookies in Django.  We then explore how cookies are used to support sessions in Django and how we use sessions in Django.",
     "slides": "lectures/DJ-09-Cookies-Sessions.pptx",
     "assignment" : "{apphome}/assn/dj4e_hello.md",
+    "discussions" : [
+        {
+        "title" : "Cookies and Sessions",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_12_sessions"
+        }
+    ],
     "videos" : [
     {
         "title": "Cookies in Browsers and Django",
@@ -878,6 +969,13 @@
     "icon" : "fa-key",
     "description": "This exercise explores the interaction between authentication and our application.",
     "slides": "lectures/DJ-10-Login.pptx",
+    "discussions" : [
+        {
+        "title" : "Django Users and Authentication",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_13_users"
+        }
+    ],
     "videos" : [
     {
         "title": "Creating and Managing Users in Django",
@@ -921,6 +1019,13 @@
     "icon" : "fa-table",
     "description": "We cover how to use the Django built in forms processing to futher simplify our view processing.",
     "slides": "lectures/DJ-11-Forms-Django.pptx",
+    "discussions" : [
+        {
+        "title" : "Forms in Django",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_14_forms"
+        }
+    ],
     "videos" : [
     {
         "title": "Using Django Forms Capabilities",
@@ -963,6 +1068,13 @@
     "icon" : "fa-university",
     "description": "We explore the design of one-to-many data models.",
     "slides": "lectures/DJ-03-One-To-Many.pptx",
+    "discussions" : [
+        {
+        "title" : "One-To-Many Data Models",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_15_one"
+        }
+    ],
     "videos" : [
     {
         "title": "One-to-Many Models Overview",
@@ -1077,6 +1189,13 @@
     "icon" : "fa-car",
     "description": "In this assignment we build a small CRUD application from scratch to support an autos database that we will use as a base to build on going forward.   This will serve as a way to review some of the concepts in the tutorial that we might have covered a little too quickly.",
     "assignment" : "{apphome}/assn/dj4e_autos.md",
+    "discussions" : [
+        {
+        "title" : "Autos CRUD Application",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_16_autos"
+        }
+    ],
     "videos" : [
     {
         "title": "Walkthrough of the DJ4E Autos Sample - Generic Edit Forms",
@@ -1124,6 +1243,13 @@
     "anchor": "dj4e_github",
     "icon" : "fa-github",
     "description": "This exercise uploads your Django projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
+    "discussions" : [
+        {
+        "title" : "Putting Django Projects into GitHub",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_17_git"
+        }
+    ],
     "videos" : [
     {
         "title": "Using GitHub with Django and PythonAnywhere",
@@ -1155,6 +1281,13 @@
     "anchor": "dj4e_local",
     "icon" : "fa-clone",
     "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develpp more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
+    "discussions" : [
+        {
+        "title" : "Installing Django Locally",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_18_local"
+        }
+    ],
     "videos" : [
     {
         "title": "Submitting Assignments Using ngrok",
@@ -1175,6 +1308,13 @@
     "icon" : "fa-newspaper",
     "description": "We cover how we mark objects as 'owned' by Django users.",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
+    "discussions" : [
+        {
+        "title" : "Owned Rows",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_19_owned"
+        }
+    ],
     "videos" : [
         {
             "title" : "Owned Rows in Django - Overview",
@@ -1224,6 +1364,13 @@
     "description": "We explore crispy forms, and bootstrap menus and then use owned tows we write the first iteration of the classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
+    "discussions" : [
+        {
+        "title" : "Classified Ads #1",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_20_ads1"
+        }
+    ],
     "videos" : [
         {
             "title" : "Walking through the DJ4E Crispy Forms (crispy) Sample Code",
@@ -1280,6 +1427,13 @@
     "icon" : "fa-arrows",
     "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
     "slides": "lectures/DJ-04-Many-To-Many.pptx",
+    "discussions" : [
+        {
+        "title" : "Many-To-Many Data Models",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_21_many"
+        }
+    ],
     "videos" : [
     {
         "title": "Many-to-Many Overview",
@@ -1333,6 +1487,13 @@
     "icon" : "fa-code",
     "description": "We take a quick look at the JavaScript language and how it is used in the browser.",
     "slides": "lectures/JS-01-JavaScript.ppt",
+    "discussions" : [
+        {
+        "title" : "JavaScript",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_22_javascript"
+        }
+    ],
     "videos" : [
         {
             "title" : "JavaScript - Overview and History",
@@ -1393,6 +1554,13 @@
     "icon" : "fa-ethernet",
     "description": "We do a quick look at how the JavaScript language supports the Object-Oriented pattern.",
     "slides": "lectures/JS-02-JavaScript-Objects.ppt",
+    "discussions" : [
+        {
+        "title" : "Object Oriented Programming in JavaScript",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_23_oojs"
+        }
+    ],
     "videos" :[
         {
             "title" : "JavaScript Object Oriented Concepts",
@@ -1437,6 +1605,13 @@
     "icon" : "fa-code",
     "description": "We add pictures and comments to our classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads2.md",
+    "discussions" : [
+        {
+        "title" : "Classified Ads #2",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_24_ads2"
+        }
+    ],
     "videos" : [
         {
             "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
@@ -1485,6 +1660,13 @@
     "icon" : "fa-briefcase",
     "description": "This is a brief introduction to the jQuery library which is widely used to do in-browser manipulation of the Document Object Model(DOM) and event handling.",
     "slides": "lectures/JS-03-JQuery.ppt",
+    "discussions" : [
+        {
+        "title" : "jQuery",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_25_jquery"
+        }
+    ],
     "videos" : [
         {
             "title" : "jQuery and the Document Object Model",
@@ -1550,6 +1732,13 @@
     "icon" : "fa-file-archive",
     "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser (JavaScript/jQuery).",
     "slides": "lectures/JS-04-JSON.ppt",
+    "discussions" : [
+        {
+        "title" : "JSON / AJAX",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_26_ajax"
+        }
+    ],
     "videos" : [
         {
             "title" : "JSON - JavaScript Object Notation",
@@ -1605,6 +1794,13 @@
     "anchor": "dj4e_ads3",
     "icon" : "fa-newspaper",
     "description": "We add favorites to our classified ads application.",
+    "discussions" : [
+        {
+        "title" : "Classified Ads #3",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_27_ads3"
+        }
+    ],
     "videos" : [
     {
         "title": "DJ4E Samples Walkthrough - Favicon",
@@ -1697,6 +1893,13 @@
     "icon" : "fa-search",
     "description": "We add search a feature our classified ads application.",
     "todo" : "Add tags, drop down autofill, auto add",
+    "discussions" : [
+        {
+        "title" : "Classified Ads #4",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_28_ads3"
+        }
+    ],
     "videos" : [
     {
         "title": "DJ4E Samples Walkthrough - search (well)",
@@ -1781,6 +1984,13 @@
     "anchor": "dj4e_crud2",
     "icon" : "fa-database",
     "description": "Some CRUD Exercises.",
+    "discussions" : [
+        {
+        "title" : "CRUD Practice",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_29_crud"
+        }
+    ],
     "lti" : [
         {
         "title" : "Auto-grader: Autos CRUD Practice",
@@ -1834,6 +2044,13 @@
     "icon" : "fa-address-card",
     "description": "Introduce your project to the rest of the class.",
     "assignment" : "{apphome}/project/01_description.md",
+    "discussions" : [
+        {
+        "title" : "Project Overview",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_30_project"
+        }
+    ],
     "references" : [
         {
             "title" : "Project Specification",
@@ -1893,6 +2110,13 @@
     "icon" : "fa-comment",
     "description": "Introduce your project to the rest of the class.",
     "assignment" : "{apphome}/project/02_revision.md",
+    "discussions" : [
+        {
+        "title" : "Project Milestone 2",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_31_pr2"
+        }
+    ],
     "references" : [
         {
             "title" : "Project Specification",
@@ -1952,6 +2176,13 @@
     "icon" : "fa-comment",
     "description": "Design a first verson of the user interface (UI) for your project.",
     "assignment" : "{apphome}/project/03_userinterface.md",
+    "discussions" : [
+        {
+        "title" : "Project Milestone 3",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_32_pr3"
+        }
+    ],
     "references" : [
         {
             "title" : "Project Specification",
@@ -2027,6 +2258,13 @@
     "icon" : "fa-comment",
     "description": "Design a first verson of the data model (UI) for your project.",
     "assignment" : "{apphome}/project/04_model.md",
+    "discussions" : [
+        {
+        "title" : "Project Milestone 4",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_33_pr4"
+        }
+    ],
     "references" : [
         {
             "title" : "Project Specification",
@@ -2094,6 +2332,13 @@
     "anchor": "pr_05_milestone",
     "icon" : "fa-comment",
     "description": "This is a project review to get feedback to help you for the final project submission.",
+    "discussions" : [
+        {
+        "title" : "Project Milestone 5 - Project Review",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_34_pr5"
+        }
+    ],
     "references" : [
         {
             "title" : "Project Specification",
@@ -2156,6 +2401,13 @@
     "anchor": "pr_06_milestone",
     "icon" : "fa-comment",
     "description": "This is the final project submission.",
+    "discussions" : [
+        {
+        "title" : "Project Milestone 6 - Final Report",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_35_pr6"
+        }
+    ],
     "references" : [
         {
             "title" : "Project Specification",
