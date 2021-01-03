@@ -30,6 +30,8 @@ $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
 
 $CFG->tdiscus = $CFG->apphome . '/mod/tdiscus/';
 
+$CFG->launcherror = $CFG->apphome . "/launcherror";
+
 $buildmenu = $CFG->dirroot."/../buildmenu.php";
 if ( file_exists($buildmenu) ) {
     require_once $buildmenu;
