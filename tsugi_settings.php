@@ -28,3 +28,10 @@ $CFG->giftquizzes = $CFG->dirroot.'/../dj4e-private/quiz';
 
 $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
 
+$buildmenu = $CFG->dirroot."/../buildmenu.php";
+if ( file_exists($buildmenu) ) {
+    require_once $buildmenu;
+    $CFG->defaultmenu = buildMenu();
+}
+
+
