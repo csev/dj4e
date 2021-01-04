@@ -1098,14 +1098,15 @@
     },
     {
         "title": "Using the Django Shell to Explore One-to-Many Models",
-        "youtube": "ZdLpAtfWfZk",
-        "project": "DJ 03 Many 06 Shell"
+        "youtube": "aGtY4xkirsE",
+        "notes" : "revised 2021-01 truncated reference to m-2-m at end formerly ZdLpAtfWfZk",
+        "project": "DJ 03 Many 05 Shell"
     },
     {
-        "title": "Building a Django Batch Script to Load Data from CSV",
-        "todo" : "Re-record do with one-to-many and using extensions",
-        "youtube": "E8y_6S2Fc5s",
-        "project" : "DJ 04 Many 04 Batch"
+        "title": "Loading One-to-Many Data using a Django Batch Script",
+        "youtube": "4DZlvtTvSrY",
+        "notes": "Reused the first part of the many_load video - added a new ending cats_load",
+        "project" : "DJ 03 Many 06 Batch"
     }
    ],
     "assignment" : "{apphome}/assn/dj4e_load.md",
@@ -1173,6 +1174,10 @@
         }
     ],
     "references" : [
+        {
+            "title" : "UNESCO World Heritage Sites",
+            "href": "https://whc.unesco.org/en/list/"
+        },
         {
             "title" : "Documentation: Command Shell for SQLite",
             "href": "https://www.sqlite.org/cli.html"
@@ -1452,7 +1457,6 @@
     },
     {
         "title": "Building a Django Batch Script to Load Data from CSV",
-        "todo" : "Re-record batch loading using extensions",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
     }
@@ -1472,12 +1476,6 @@
                     "value": "601"
                 }
             ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "UNESCO World Heritage Sites",
-            "href": "https://whc.unesco.org/en/list/"
         }
     ]
 },
