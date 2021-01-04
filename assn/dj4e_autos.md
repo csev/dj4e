@@ -157,7 +157,26 @@ So you get the
 <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors" target="_blank">405 HTTP status code</a> (invalid method)
 when you navigate to the URL that forwards to the view.
 
+Manual Testing
+--------------
 
+It is always a good idea to manually test your application before submitting it for grading.  Here
+is a rough outline of the steps that the autograder will take to grade your application.  You should
+run them by hand before running the autograder and make sure they work without error.
+
+* Log in
+* Add a make
+* Add an auto selecting the make
+* View the makes
+* Update the make and press 'Cancel' -  Should go to the auto list list
+* Update the make, make a change and save it - Should go to the auto list
+* The make for the auto in the list should be automatically updated
+* Update the auto, change its nickname and save it - it should be updated in the auto list
+* Add a second make
+* Add a second auto using the second make
+* View the autos - make sure the second car and make are present
+* Delete the second make - the auto corresponding to the make should go away automaticallr (Cascade in action)
+* Delete the first auto
 
 References
 ----------
