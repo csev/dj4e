@@ -1369,6 +1369,7 @@
     "description": "We explore crispy forms, and bootstrap menus and then use owned tows we write the first iteration of the classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
+    "todo": "How to switch Django to MySQL on PythonAnywhere",
     "discussions" : [
         {
         "title" : "Classified Ads #1",
