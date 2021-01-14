@@ -99,7 +99,7 @@ web site.
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
-<a href="https://github.com/csev/dj4e/tree/master/project" target="_blank">Github</a>.
+<a href="https://github.com/csev/dj4e/tree/main/project" target="_blank">Github</a>.
 </p>
 <?php
 }

@@ -33,7 +33,7 @@ you can add a GET parameter tho the URL to forc it to be re-retrieved:
 Change the `x` value to something else if you want to test over and over.
 
 (3) Make social login work.  Take a look at
-<a href="https://github.com/csev/dj4e-samples/blob/master/dj4e-samples/github_settings-dist.py" target="_blank">
+<a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of `mysite/mysite/github_settings.py`.

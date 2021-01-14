@@ -7,7 +7,7 @@ Tata, Audi, etc.).
 
 This application will be based on this folder in the samples repo:
 
-https://github.com/csev/dj4e-samples/tree/master/autos
+https://github.com/csev/dj4e-samples/tree/main/autos
 
 **Do not clone this repository for this assignment**.  You will make a new
 project and application in your `django_projects` folder and use this application
@@ -56,7 +56,7 @@ Building the Autos Application
 
 The essense of this task is to adapt the code from:
 
-https://github.com/csev/dj4e-samples/tree/master/autos
+https://github.com/csev/dj4e-samples/tree/main/autos
 
 and make it work in your `autos` project.  As always there is a lot of code in `dj4e-samples` - be careful 
 copying - and only copy code when you know why you are copying it.  Go slowly.
@@ -66,7 +66,7 @@ Here are some tasks:
 * Go into your `dj4e-samples` folder and do a `git pull` to get the latest version of the samples code.
 
 * Create `mysite/home/templates` and `mysite/home/templates/registration` folders using `mkdir` and copy the
-(<a href="https://github.com/csev/dj4e-samples/blob/master/home/templates/registration/login.html" target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
+(<a href="https://github.com/csev/dj4e-samples/blob/main/home/templates/registration/login.html" target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
 
 * Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
 your `mysite/home/templates` - this will be used in your `autos/templates` and make our HTML look
@@ -89,7 +89,7 @@ Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file
 * Edit the `autos/views.py` file to add views for the list, edit, and delete pages for both autos and makes.
 It will make things a lot simpler in the long run if you convert the Make views to
 the shorter form like the Auto views.
-(<a href="https://github.com/csev/dj4e-samples/blob/master/autos/views.py" target="_blank">Example</a>)
+(<a href="https://github.com/csev/dj4e-samples/blob/main/autos/views.py" target="_blank">Example</a>)
 
 * In your `views.py` file, you should *not* simply use the code for the `Make` views.  You
 should rewrite the `Make` views using the same patterns as the `Auto` views.  If you
@@ -181,7 +181,7 @@ run them by hand before running the autograder and make sure they work without e
 References
 ----------
 
-* <a href="https://github.com/csev/dj4e-samples/tree/master/autos" target="_blank">Autos CRUD Sample Code</a>
+* <a href="https://github.com/csev/dj4e-samples/tree/main/autos" target="_blank">Autos CRUD Sample Code</a>
 
 * <a href="dj4e_install.md" target="_blank">Installing Django Locally</a>
 

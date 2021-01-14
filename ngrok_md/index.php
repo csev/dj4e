@@ -94,7 +94,7 @@ Note that if you are running Windows and the bash shell, NGrok does not seem to 
 Use the Windows Command line to run NGrok on Windows.
 <p>
 If you find a mistake in this documentation, feel free to send me a fix using
-<a href="https://github.com/csev/dj4e/tree/master/md" target="_blank">Github</a>.
+<a href="https://github.com/csev/dj4e/tree/main/md" target="_blank">Github</a>.
 </p>
 <?php
 }

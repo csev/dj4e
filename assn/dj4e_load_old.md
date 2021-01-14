@@ -38,7 +38,7 @@ is needed in order to store Python objects in the `scripts` folder.
 
 Make a copy of the `many_load.py` from this folder into your `scripts` folder:
 
-https://github.com/csev/dj4e-samples/tree/master/scripts
+https://github.com/csev/dj4e-samples/tree/main/scripts
 
 install `django extensions`:
 
@@ -138,9 +138,9 @@ to read and write the database using your Django models.
 There is a simple example of how to write such a script in the
 `dj4e-samples` respoistory:
 
-<a href="https://github.com/csev/dj4e-samples/blob/master/many/models.py" target="_blank">Many-to-Many / Data Model</a>
+<a href="https://github.com/csev/dj4e-samples/blob/main/many/models.py" target="_blank">Many-to-Many / Data Model</a>
 
-<a href="https://github.com/csev/dj4e-samples/blob/master/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
+<a href="https://github.com/csev/dj4e-samples/blob/main/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
 
 See the file `load.csv` and `many_load.py` for and example of how you look through a file,
 insert model data and make foreign key connections.  A key technique is in this bit of code:

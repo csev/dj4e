@@ -43,7 +43,7 @@ the following commands:
     git config --global credential.helper 'cache --timeout=604800'  # Optional but convienent
     git commit -m "first commit" 
     git remote add origin https://github.com/--your-github-acct--/django_projects.git
-    git push -u origin master
+    git push -u origin main
     (enter id and password for git)
 
 Go to 

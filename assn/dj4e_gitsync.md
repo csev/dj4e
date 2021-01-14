@@ -45,7 +45,7 @@ the following commands:
     git config --global credential.helper 'cache --timeout=604800'  # Optional but convienent
     git commit -m "first commit" 
     git remote add origin https://github.com/--your-github-acct--/django_projects.git
-    git push -u origin master
+    git push -u origin main
     (enter id and password for git)
 
 Go to 
@@ -73,7 +73,7 @@ When your remote repository is "ahead" of your local repository, you
 will see the following error when you do a `git pull`:
 
     $ git status
-    On branch master
+    On branch main
 
     	modified:   mysite/settings.py
 
@@ -297,8 +297,8 @@ is fully checked in to GitHub:
 
     $ cd ~/django_projects
     $ git status
-    On branch master
-    Your branch is up-to-date with 'origin/master'.
+    On branch main
+    Your branch is up-to-date with 'origin/main'.
     nothing to commit, working directory clean
 
 If you have any outstanding git modifications on PYAW - clean it up and push it to the repo.

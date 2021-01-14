@@ -137,7 +137,7 @@ These are the assignments for Django for Everybody (DJ4E).
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using
-<a href="https://github.com/csev/dj4e/tree/master/assn" target="_blank">Github</a>.
+<a href="https://github.com/csev/dj4e/tree/main/assn" target="_blank">Github</a>.
 </p>
 <?php
 }
