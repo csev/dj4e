@@ -45,7 +45,7 @@ Edit the file `~/django_projects/mysite/mysite/urls.py` and add following path r
 
 You will need to make sure to add the proper python imports at the top of the file to make this work.
 There are lots of examples of the use of TemplateView in the `urls.py` files in `dj4e-samples`
-and in the lecture materials.  Figuing out exactly how to change your `urls.py` is one of the
+and in the lecture materials.  Figuring out exactly how to change your `urls.py` is one of the
 DIY aspects of this assignment.
 
 Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `home` application following
