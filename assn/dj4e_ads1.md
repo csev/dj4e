@@ -33,8 +33,8 @@ Pulling In Code From Samples
 ----------------------------
 
 In this section, we will break and then fix your `settings.py` and `urls.py`.
-When this is done, the autos, cats, dogs, etc will stop working unless you 
-add them back to these two files.  It is OK for these applications to be working.
+When this is done, the autos, cats, dogs, etc will stop working unless you
+add them back to these two files.  It is OK for these applications not to be working.
 The autograder will just look at /ads.
 
 (1) Copy the `settings.py` and `urls.py` files and the entire
@@ -62,17 +62,13 @@ the `site` and `favicon` rules in your `urls.py`.
 (6) Edit the file `django_projects/mysite/home/templates/home/main.html` and put
 this HTML in the file:
 
-    <html>
-    <head>
-        <title>{{ settings.APP_NAME }}</title>
-    </head>
-    <body>
+    {% extends "base_bootstrap.html" %}
+    {% block content %}
         <h1>Welcome to {{ settings.APP_NAME }}</h1>
         <p>
         Hello world.
         </p>
-    </body>
-    </html>
+    {% endblock content %}
 
 (7) At this point, you should be able to run:
 
@@ -99,7 +95,7 @@ Building the Ads Application
 ----------------------------
 
 In this section, you will pull bits and pieces of the sample applications repository and pull them
-into your `ads` application.  
+into your `ads` application.
 
 __Important Note:__ If you find you have a problem saving files in the PythonAnywhere
 system using their browser-based editor, you might need to turn off your ad blocker for
@@ -110,13 +106,12 @@ this site - weird but true.
     cd django_projects/mysite
     python3 manage.py startapp ads
 
-The add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py'.
+Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py`.
 
 (2) Use this in your `ads/model.py`:
 
     from django.db import models
     from django.core.validators import MinLengthValidator
-    from django.contrib.auth.models import User
     from django.conf import settings
 
     class Ad(models.Model) :
@@ -282,13 +277,13 @@ are a set of manual test steps:
 * Make two accounts if you have not already done so
 * Log in to your application on the first account
 * Make sure the menu bar shows at the top of all of the screens - the autograder gets grumpy about a missing menu on a page
-* Create an ad 
+* Create an ad
 * Try to submit an add with no title - make sure that it complains
 * Create an ad
 * In the all ads list make sure that the edit / delete button shows correctly
 * View its details - make sure the edit / delete button shows up correctly
 * Update the ad, check that the details are correct after the update
-* Delete the ad - just to make sure it works 
+* Delete the ad - just to make sure it works
 * Create two more ads
 * Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
 * Go into one the detail for the ad created by the other user -  make sure you **do not** see edit / delete buttons
@@ -354,4 +349,3 @@ var d= new Date();
 var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
 document.getElementById("dj4e-code").innerHTML = code;
 </script>
-
