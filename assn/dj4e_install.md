@@ -195,6 +195,14 @@ Here is a
 <a href="dj4e_install/index.htm" target="_blank">Sample</a>
 of what the resulting page should look like.
 
+Just as a note, you *never* run the `runserver` command on PythonAnywhere.
+
+    python3 manage.py runserver
+
+This functionality is replaced by the "reload" button on your Web tab.  So
+if you are reading any Django instrutctions that say to do a `runserver`, instead do a
+`check` and then reload the application in the PythonAnywhere web UI.
+
 Adding Your Polls Application
 -----------------------------
 
