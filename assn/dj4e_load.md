@@ -29,7 +29,7 @@ We will do this assignment in a new Django project called `batch` so as not to d
     cd ~/django_project/
     django-admin startproject batch
 
-Make new application under your `django_projects/batch` called `unesco`.  
+Make new application under your `django_projects/batch` called `unesco`.
 
     cd ~/django_projects/batch
     python3 manage.py startapp unesco
@@ -95,8 +95,7 @@ You will make a Django model that describes the tables, one-to-many relationship
 and foreign keys sufficient to represent this data efficiently with no vertical duplication.
 Numbers and dates do not have to have their own tables.
 
-Draw the data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" 
-target="_blank">Crow's-Foot Notation</a>.  You can use paper, or a layout tool - one way or another your
+Draw the data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">Crow's-Foot Notation</a>. You can use paper, or a layout tool - one way or another your
 diagram should have five boxes and four lines - and the each of lines should be properly labelled
 as a "many" or a "one" end.
 
@@ -155,11 +154,11 @@ until you get them right.
 Loading Data Into Your Database
 -------------------------------
 
-Django has a special `runscript` capability that allows you to write a a Python program
+Django has a special `runscript` capability that allows you to write a Python program
 to read and write the database using your Django models.
 
 There is a simple example of how to write such a script in the
-`dj4e-samples` respoistory:
+`dj4e-samples` respository:
 
 <a href="https://github.com/csev/dj4e-samples/blob/main/many/models.py" target="_blank">Many-to-Many / Data Model</a>
 
@@ -194,7 +193,7 @@ Dealing with Empty Columns
 
 Your data will be more complex than the sample, You will need to deal with situations
 where an integer column like the `year` will be empty.  First, add `null=True` to numeric columns
-that can be empty in your `models.py`.   Then before inserting the `Site` record, check the year to
+that can be empty in your `models.py`.   Then, before inserting the `Site` record, check the year to
 see if it is a valid integer and if it is not a valid integer set it to `None` which will become
 `NULL` (or empty) in the data base when inserted:
 
@@ -264,16 +263,16 @@ exceeds this size you have two options - the easy one is to use the `VACUUM` com
 to remove extra space in the database.  In a shell do the following:
 
     $ cd ~/django_projects/batch
-    $ ls -l db.sqlite3 
+    $ ls -l db.sqlite3
     -rw-r--r-- 1 dj4e registered_users 1153024 Nov 10 10:32 db.sqlite3
     $ sqlite3 db.sqlite3 "VACUUM;"
-    $ ls -l db.sqlite3                                                                             
+    $ ls -l db.sqlite3
     -rw-r--r-- 1 dj4e registered_users 1082368 Nov 10 13:14 db.sqlite3
 
 This might get your file small enough to be uploaded to the autograder.
 
 If your file is still too big for the autograder, you will need to clear your
-database and then reload the data.  
+database and then reload the data.
 
     $ cd ~/django_projects/batch
     $ rm db.sqlite3
@@ -281,4 +280,3 @@ database and then reload the data.
 
 Run your load script and upload `db.sqlite3` to the autograder.  At this point
 it should be the correct size.
-
