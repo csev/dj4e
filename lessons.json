@@ -112,6 +112,10 @@
     {
         "title": "Installing Django on PythonAnywhere",
         "youtube": "d32UKww3h1c"
+    },
+    {
+        "title": "How the Autograder Works",
+        "youtube": "n5_xdz2Zo3A"
     }
   ],
     "assignment" : "{apphome}/assn/dj4e_install.md",
