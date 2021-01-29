@@ -388,7 +388,7 @@
         },
         {
         "title" : "Auto-grader: Basic SQL",
-        "launch" : "tools/sqlite/",
+        "launch" : "tools/sqlite/?exercise=single_lite.php",
         "resource_link_id" : "dj4e_basic_sql",
         "custom" : [
             {
