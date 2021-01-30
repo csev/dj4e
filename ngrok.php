@@ -22,7 +22,7 @@ and can be directly submitted to the autograder for testing.
 For whatever reason, you might prefer to install and run Django locally on your computer.
 This is a fine solution for the course, but to submit the applications on your local computer
 to the autograder, you need to use a tool like 
-<a href="https://www.ngrok.org" target="_blank">ngrok</a> or
+<a href="https://www.ngrok.com" target="_blank">ngrok</a> or
 <a href="https://localtunnel.github.io/" target="_blank">localtunnel</a>.
 </p>
 <p>
