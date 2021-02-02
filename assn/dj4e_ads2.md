@@ -21,7 +21,7 @@ Adding Pictures to the Ads Application
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `ads/model.py`, talking inspiration from `dj4e-samples/pics/models.py`
+(1) Add this to your `ads/model.py`, taking inspiration from `dj4e-samples/pics/models.py`
 
     class Ad(models.Model) :
 
@@ -37,7 +37,7 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
 `PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
-These new views don't inherit from owner.py becuase they manage the `owner` column in the `get()`
+These new views don't inherit from owner.py because they manage the `owner` column in the `get()`
 and `put()` methods.
 
 (4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
@@ -49,11 +49,11 @@ to add code to include the image in the output if there is an image associated w
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
 
-(6) Add a `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
+(6) Add an `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
 
     path('ad_picture/<int:pk>', views.stream_file, name='ad_picture'),
 
-(5) Add the `stream_file()` view from `pics/views.py` and adapt appropriately
+(5) Add the `stream_file()` view from `pics/views.py` and adapt appropriately.
 
 Test to make sure you can upload, view, and update pictures with your ads.
 
@@ -115,7 +115,7 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
             views.CommentDeleteView.as_view(success_url=reverse_lazy('ads')), name='ad_comment_delete'),
     ]
 
-(7) Adapt the comment related views from `forums/views.py` and put them into your `view.py`.
+(7) Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
 
 (8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
 
@@ -130,16 +130,16 @@ are a set of manual test steps:
 * Create an ad with a picture
 * In the all ads list make sure that the edit / delete button shows correctly
 * View its details click on the picture to see that it fulls the screen
-* Update the ad, check that the details are correct 
+* Update the ad, check that the details are correct
 * Delete the ad - just to make sure it works - the autograder gets grumpy if it cannot delete an ad
 * Create two more ads
-* Make two comments on an ad - make sure you can see the edit / delete buttons on your comments
+* Make two comments on an ad - make sure you can see the delete button on your comments
 * Delete one of your comments
 * Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
 * Go into one the ad you commented on above - make sure to see the comment from the first user
-and make sure there is **no** edit or delete button.
-* Make two new comments - make sure you *do* see the edit / delete buttons for your comments but not for
-the other user's comments.
+and make sure there is **no** delete button
+* Make two new comments - make sure you *do* see the delete button for your comments but not for
+the other user's comments
 * Delete one of your comments and make sure it goes away
 
 
@@ -151,7 +151,7 @@ And they are fun.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
-anything you like - it does not have to be a picture of you.  The gravatar is associated an email address
+anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
@@ -159,7 +159,7 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
-you can add a GET parameter tho the URL to forc it to be re-retrieved:
+you can add a GET parameter to the URL to force it to be re-retrieved:
 
     https://chucklist.dj4e.com/favicon.ico?x=42
 
