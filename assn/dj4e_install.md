@@ -200,7 +200,7 @@ Just as a note, you *never* run the `runserver` command on PythonAnywhere.
     python3 manage.py runserver
 
 This functionality is replaced by the "reload" button on your Web tab.  So
-if you are reading any Django instrutctions that say to do a `runserver`, instead do a
+if you are reading any Django instructions that say to do a `runserver`, instead do a
 `check` and then reload the application in the PythonAnywhere web UI.
 
 Adding Your Polls Application
