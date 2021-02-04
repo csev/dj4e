@@ -54,8 +54,11 @@ This is the normal output of running `check`:
     Using registration/login.html as the login template
     System check identified no issues (0 silenced).
 
-If the `check` identifies errors, stop until there are no errors.  Only take the next steps
-once check sees no errors.  If you see this error:
+If you see a SyntaxError
+------------------------
+
+If the `check` identifies errors, do not go on to the rest of the assignment 
+once you can run `check` and there are no errors.  If you see this error:
 
     python manage.py check
       File "manage.py", line 17
@@ -63,9 +66,22 @@ once check sees no errors.  If you see this error:
              ^
     SyntaxError: invalid syntax
 
-It means that you are not running in the virtual environment (`workon django3`) and mistakenly
+Do *not* edit your `manage.py` file - the problem is never in that file.
+
+There are several possible reasons for this:
+
+*   It can mean that you are not running in the virtual environment (`workon django3`) and mistakenly
 running Python 2 instead of Python 3.  There is *no error* in `manage.py` - it is valid
 Python 3 syntax that confuses Python 2.
+
+* It can mean that you have edited your `manage.py` file and have introduced a syntax error.  Take a look
+at this <a href="dj4e_install/manage-py.png" target="_blank">screen shot of a working manage.py</a> and check if
+there are any differences.   While you are there you can change line 1 from 'python' to 'python3' and the syntax
+error indication will go away.  Often the mistakes are on the indentation of lines 16 and 17.  Check and match
+the indentation in the screen shot exactly.
+
+When running 'check' works
+--------------------------
 
 Once the `check` works do:
 
@@ -265,7 +281,7 @@ Make sure to scroll through the logs to the end to find the most recent error.
 More on Your manage.py File
 ---------------------------
 
-You will get lots of errors when you run `manage.py` - the errors are never
+You may get lots of errors when you run `manage.py` - the errors are never
 in the file itself and you will never need to edit `manage.py` to fix a problem
 with your program.
 
