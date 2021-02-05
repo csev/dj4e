@@ -17,7 +17,7 @@ while building the tutorial on PythonAnywhere.
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
 * What to do when the tutorial tells you to access 'localhost:8000'
-* When everything works but your application still does not run
+* When everything works but your application says 'Something went wrong :-('
 
 You *must* be in your virtual environment
 ---------------------------------------
@@ -144,8 +144,8 @@ Add the `polls` to your URL.
 You do not need to add `django_projects` or `mysite` to your URL - this is all captured
 in the settings under the 'Web' tab in the PythonAnywhere user interface.
 
-When everything works but your application still does not run
--------------------------------------------------------------
+When everything works but your application says 'Something went wrong :-('
+--------------------------------------------------------------------------
 
 If your application passed a `check` but fails to
 load or reload, you might get an error message that looks
