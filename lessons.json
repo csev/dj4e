@@ -157,6 +157,14 @@
             "href" : "https://docs.djangoproject.com/en/3.0/intro/tutorial01/"
         },
         {
+            "title" : "Problems Running Django Project Tutorials on PythonAnywhere",
+            "href" : "{apphome}/assn/dj4e_tutpaw.md"
+        },
+        {
+            "title" : "Setting up the django.org tutorial on PythonAnywhere",
+            "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
+        },
+        {
             "title" : "Setting up the django.org tutorial on PythonAnywhere",
             "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
         },
@@ -490,6 +498,10 @@
             "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial02/"
         },
         {
+            "title" : "Problems Running Django Project Tutorials on PythonAnywhere",
+            "href" : "{apphome}/assn/dj4e_tutpaw.md"
+        },
+        {
             "title" : "Django Data Model Commands (DJ-02-Model-Single.txt)",
             "href": "{apphome}/lectures/DJ-02-Model-Single.txt"
         },
@@ -649,6 +661,10 @@
         {
             "title" : "Writing your first Django app, part 3",
             "href": "https://docs.djangoproject.com/en/3.0/intro/tutorial03/"
+        },
+        {
+            "title" : "Problems Running Django Project Tutorials on PythonAnywhere",
+            "href" : "{apphome}/assn/dj4e_tutpaw.md"
         },
         {
             "title" : "Django URL Routing",
@@ -1307,7 +1323,7 @@
     "references" : [
         {
             "title" : "Using ngrok to submit a local application to the Autograder",
-            "href" : "/ngrok"
+            "href" : "{apphome}/ngrok"
         }
     ]
 },
