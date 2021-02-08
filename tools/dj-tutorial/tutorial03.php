@@ -28,8 +28,8 @@ the path to the <b>owner</b> view is properly routed:
 urlpatterns = [
     path('', views.index, name='index'),
     path('owner', views.owner, name='owner'),
-    path('&lt;int:pk&gt;/', views.detail, name='detail'),
-    path('&lt;int:pk&gt;/results/', views.results, name='results'),
+    path('&lt;int:question_id&gt;/', views.detail, name='detail'),
+    path('&lt;int:question_id&gt;/results/', views.results, name='results'),
     path('&lt;int:question_id&gt;/vote/', views.vote, name='vote'),
 ]
 </pre>

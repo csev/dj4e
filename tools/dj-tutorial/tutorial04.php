@@ -30,8 +30,8 @@ You can mix function and class views in your <b>mysite/polls/urls.py</b> file as
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('owner', views.owner, name='owner'),
-    path('&lt;int:pk&gt;/', views.DetailView.as_view(), name='detail'),
-    path('&lt;int:pk&gt;/results/', views.ResultsView.as_view(), name='results'),
+    path('&lt;int:question_id&gt;/', views.DetailView.as_view(), name='detail'),
+    path('&lt;int:question_id&gt;/results/', views.ResultsView.as_view(), name='results'),
     path('&lt;int:question_id&gt;/vote/', views.vote, name='vote'),
 ]
 </pre>
