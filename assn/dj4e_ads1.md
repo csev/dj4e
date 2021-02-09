@@ -54,6 +54,41 @@ the name of your application in the `settings.py` file:
 
 This shows up in default page titles and default page navigation.
 
+(3) We are going to switch your application on PythonAnywhere from using an
+SQLite database to a MySQL database for the rest of this course.  If you keep running
+SQLite and your application stores too much data it will start to slow down.
+If you are running locally, you can keep using SQLite.   Go to
+the `Databases` tab in PythonAnywhere.  Make a MySQL database and choose
+a name and password and write them down.
+
+(4) Edit `~/dango_projects/mysite/mysite/settings.py` and find the existing
+value for the `DATABASES` variable and comment it out.
+
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
+
+Add an entry to point Django at your newly created MySQL database.  In this example,
+your PythonAnywhere account is `drchuck` and the database you created is `ads` and
+the password you set for the database is `phone_8675309`.   Change the sample values below
+to the values for your database.
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'drchuck$ads',
+            'USER': 'drchuck',
+            'PASSWORD': 'phone_8675309',
+            'HOST': 'drchuck.mysql.pythonanywhere-services.com',
+             'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            },
+        }
+    }
+
 (5) Edit your `django_projects/mysite/mysite/urls.py` and
 remove all of the `path()` calls to the sample applications. Make
 sure to keep the `path()` to include the `home.urls`.  Also keep
@@ -76,7 +111,23 @@ this HTML in the file:
 
 Keep running `check` until it does not find any errors.
 
-If you restart your web application, there won't be many working urls.
+If you get an error like `Could not import github_settings.py for social_django`
+when running `manage.py` or restarting your PythonAnywhere webapp,
+don't worry - you will see this warning until you set up social login.
+
+(8) Once `check` works you will need to run your migrations and make a new
+adminsitrator account:
+
+    cd ~/django_projects/mysite
+    python manage.py makemigrations      # Might say "no changes"
+    python manage.py migrate
+    python manage.py createsuperuser
+
+If the `makemigrations` works and `migrate` fails, you may have an error
+in the `DATABASE` section of your `settings.py`.   You can edit your `settings.py`
+and rerun the `migrate` until it works.
+
+(9) If you restart your web application, there won't be many working urls.
 Try these two to see if you have the home code working properly:
 
     https://your-account.pythonanywhere.com/
@@ -86,10 +137,6 @@ Try these two to see if you have the home code working properly:
 Look at how pretty the login form looks :).
 Don't worry about social login yet.  We will get to that later.
 Favicons are shown in the tabs in the browser.  We will get to favicons later too :)
-
-If you get an error like `Could not import github_settings.py for social_django`
-when running `manage.py` or restarting your PythonAnywhere webapp,
-don't worry - you will see this warning until you set up social login.
 
 Building the Ads Application
 ----------------------------
