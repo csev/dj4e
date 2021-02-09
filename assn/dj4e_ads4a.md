@@ -41,13 +41,14 @@ using a ModelForm in order to process uploaded pictures.  The key is that you ha
 save the tags after the form has been copied to the model and the model has been saved because
 the tags are stored using a many-to-many data model.
 
+https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
+
 In your `forms.py` code you will need to (a) add 'tags' to the field list and (b) update the
 code in the commit to look like:
 
-        # https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
         if commit:
             instance.save()
-            self.save_m2m()
+            self.save_m2m()    # Add this
 
 In your `views.py`, we have our own code to pull data from the form to the model and then
 save the model.  This code is in both the insert and edit views:
@@ -58,7 +59,7 @@ save the model.  This code is in both the insert and edit views:
         inst.save()
 
         # https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
-        form.save_m2m()
+        form.save_m2m()    # Add this
 
 You need to add the `save_m2m()` call *after* the instance was saved.
 
