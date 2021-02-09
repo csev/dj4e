@@ -6,6 +6,10 @@ functionality equivalent to:
 
 https://chucklist.dj4e.com/m4
 
+*Important*: The number of lines you need to add to your code is *very* small.  Take your time
+read the samepl code carefully - only make changes that you understand.  Wholesale cutting and
+pasting sample code will make it almost impossible to complete this assignment.
+
 Adding Search
 -------------
 
@@ -31,6 +35,32 @@ https://django-taggit.readthedocs.io/en/latest/
 
 You might find the easiest path is to use the `taggit` documentation to make your changes,
 looking at the `tagme` code to verify what you are doing.
+
+There is a bit of an extra wrinkle when adapting the approach in `tagme` because we are
+using a ModelForm in order to process uploaded pictures.  The key is that you have to
+save the tags after the form has been copied to the model and the model has been saved because
+the tags are stored using a many-to-many data model.
+
+In your `forms.py` code you will need to (a) add 'tags' to the field list and (b) update the
+code in the commit to look like:
+
+        # https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
+        if commit:
+            instance.save()
+            self.save_m2m()
+
+In your `views.py`, we have our own code to pull data from the form to the model and then
+save the model.  This code is in both the insert and edit views:
+
+        # Adjust the model owner before saving
+        inst = form.save(commit=False)
+        inst.owner = self.request.user
+        inst.save()
+
+        # https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
+        form.save_m2m()
+
+You need to add the `save_m2m()` call *after* the instance was saved.
 
 Manual Testing
 --------------
