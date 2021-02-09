@@ -54,14 +54,42 @@ the name of your application in the `settings.py` file:
 
 This shows up in default page titles and default page navigation.
 
-(3) We are going to switch your application on PythonAnywhere from using an
+(3) Edit your `django_projects/mysite/mysite/urls.py` and
+remove all of the `path()` calls to the sample applications. Make
+sure to keep the `path()` to include the `home.urls`.  Also keep
+the `site` and `favicon` rules in your `urls.py`.
+
+(4) Edit the file `django_projects/mysite/home/templates/home/main.html` and put
+this HTML in the file:
+
+    {% extends "base_bootstrap.html" %}
+    {% block content %}
+        <h1>Welcome to {{ settings.APP_NAME }}</h1>
+        <p>
+        Hello world.
+        </p>
+    {% endblock content %}
+
+(5) At this point, you should be able to run:
+
+    python3 manage.py check
+
+Keep running `check` until it does not find any errors.
+
+If you get an error like `Could not import github_settings.py for social_django`
+when running `manage.py` or restarting your PythonAnywhere webapp,
+don't worry - you will see this warning until you set up social login.
+
+(6) <b>If you are not using PythonAnywhere you can skip this step.</b>
+We are going to switch your application on PythonAnywhere from using an
 SQLite database to a MySQL database for the rest of this course.  If you keep running
 SQLite and your application stores too much data it will start to slow down.
 If you are running locally, you can keep using SQLite.   Go to
 the `Databases` tab in PythonAnywhere.  Make a MySQL database and choose
 a name and password and write them down.
 
-(4) Edit `~/dango_projects/mysite/mysite/settings.py` and find the existing
+(7) <b>If you are not using PythonAnywhere you can skip this step.</b>
+Edit `~/dango_projects/mysite/mysite/settings.py` and find the existing
 value for the `DATABASES` variable and comment it out.
 
     # DATABASES = {
@@ -89,33 +117,8 @@ to the values for your database.
         }
     }
 
-(5) Edit your `django_projects/mysite/mysite/urls.py` and
-remove all of the `path()` calls to the sample applications. Make
-sure to keep the `path()` to include the `home.urls`.  Also keep
-the `site` and `favicon` rules in your `urls.py`.
-
-(6) Edit the file `django_projects/mysite/home/templates/home/main.html` and put
-this HTML in the file:
-
-    {% extends "base_bootstrap.html" %}
-    {% block content %}
-        <h1>Welcome to {{ settings.APP_NAME }}</h1>
-        <p>
-        Hello world.
-        </p>
-    {% endblock content %}
-
-(7) At this point, you should be able to run:
-
-    python3 manage.py check
-
-Keep running `check` until it does not find any errors.
-
-If you get an error like `Could not import github_settings.py for social_django`
-when running `manage.py` or restarting your PythonAnywhere webapp,
-don't worry - you will see this warning until you set up social login.
-
-(8) Once `check` works you will need to run your migrations and make a new
+(8) <b>If you are not using PythonAnywhere you can skip this step.</b>
+Once `check` works you will need to run your migrations and make a new
 adminsitrator account:
 
     cd ~/django_projects/mysite
