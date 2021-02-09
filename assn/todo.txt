@@ -1,6 +1,5 @@
-- Tags 
 - Paging
-- type ahead
+- Type ahead
 - Ckeditor
 - Translation
 - Testing

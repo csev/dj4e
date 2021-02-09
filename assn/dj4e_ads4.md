@@ -1,25 +1,36 @@
 Classified Ad Web Site - Milestone 4
 ====================================
 
-In this assignment, you will expand your classified ads web site to add search functionality
-equivalent to:
+In this assignment, you will expand your classified ads web site to add search and tags 
+functionality equivalent to:
 
 https://chucklist.dj4e.com/m4
 
-We will add a search capability to your previous milestone by borrowing more parts and 
-pieces from the sample code that runs:
+Adding Search
+-------------
+
+The `well` sample application contains code you can adapt to implement the code to search
+the title and text:
 
 https://samples.dj4e.com/well/
 
-Once you understand what the `well` code is doing, you only have to change a few files:
+To avoid getting too much broken at one time - it is probably a good idea to make search work
+and then further evolve your code to support tags.
 
-* Your `urls.py` does not have to change
+Adding Support for Tags
+-----------------------
 
-* You only have to change your "all" view in `views.py`
+The `tagme` application adds a `tags` field to the model and and adds support for tags
+to the user interface and search code.
 
-* You only have to change the list/all template.
+https://samples.dj4e.com/tagme/
 
-There should not be any other changes required.
+You should also review the documentation for the `django-taggit` library at:
+
+https://django-taggit.readthedocs.io/en/latest/
+
+You might find the easiest path is to use the `taggit` documentation to make your changes,
+looking at the `tagme` code to verify what you are doing.
 
 Manual Testing
 --------------
@@ -27,13 +38,22 @@ Manual Testing
 It is always a good idea to manually test your application before submitting it for grading.  Here
 are a set of manual test steps:
 
-* Log in to your application and create several ads
-* Search for some text in the body of one or more of your ads
-* Note the "?search=" in the location bar in your browser
-* Clear the search and see all of the results
+* Log in to your application and create several ads add a tag to one of the ads.  Make sure that
+you put unique words that are only in the title, text, and tag so you can verify that you can search
+for a word in any of the three places.
 
-Challenge
----------
+* Go into the detail page for an ad and verify that it shows you the title, text, and tag(s) that you entered
 
-Make the search look for text in either the body or the title.
+* Make sure to edit an ad and verify that you are able to change the title, text, and tags.
+
+* Search for some text that is only in a title and verify that the correct ads come back.
+
+* Search for some text that is only in a body and verify that the correct ads come back.
+
+* Search for some text that is only in a tag and verify that the correct ads come back.
+
+* Note the "?search=" in the location bar in your browser while you are doing searched
+
+* Clear the search and see all of the results and verify there is no "?search=" get parameter
+
 
