@@ -6,9 +6,12 @@ functionality equivalent to:
 
 https://chucklist.dj4e.com/m4
 
-*Important*: The number of lines you need to add to your code is *very* small.  Take your time
-read the samepl code carefully - only make changes that you understand.  Wholesale cutting and
+*Important*: The number of lines you need to add to your code is *relatively* small.  Take your time
+read the sample code carefully - only make changes that you understand.  Wholesale cutting and
 pasting sample code will make it almost impossible to complete this assignment.
+
+This is somewhat like the kind of real work you do when you have a working application and want to add a feature
+the the application.  First - don't break what you have working.
 
 Adding Search
 -------------

@@ -1,6 +1,9 @@
 Classified Ad Web Site - Milestone 4
 ====================================
 
+If you want a more challenging version of this assignment 
+<a href="dj4e_ads4a.md">click here</a>.
+
 In this assignment, you will expand your classified ads web site to add search functionality
 equivalent to:
 
