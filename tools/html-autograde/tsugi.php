@@ -12,7 +12,7 @@ if ( $file ) {
 
 // Make a Tsugi Application
 $launch = \Tsugi\Core\LTIX::requireData();
-$app = new \Tsugi\Silex\Application($launch);
+$app = new \Tsugi\Lumen\Application($launch);
 
 // Add some routes
 \Tsugi\Controllers\Analytics::routes($app);
