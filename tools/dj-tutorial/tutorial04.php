@@ -35,6 +35,9 @@ urlpatterns = [
     path('&lt;int:question_id&gt;/vote/', views.vote, name='vote'),
 ]
 </pre>
+Note that this file somewhat different between tutorials three and four.  In this tutorial
+it directs you change 'question_id' to 'pk' in two of paths.
+</p>
 <p>
 You should already have a question with this text with one answer that is '42'
 from the previous assignment:
