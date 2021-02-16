@@ -231,7 +231,7 @@ function webauto_test_passed($grade, $url) {
 
     success_out("Test completed - congratulations");
 
-    if ( ! $USER->displayname || ! isset($_SESSION['lti']) ) {
+    if ( ! isset($_SESSION['lti']) ) {
         line_out('Not setup to return a grade..');
         return false;
     }
