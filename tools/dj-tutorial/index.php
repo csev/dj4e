@@ -95,7 +95,7 @@ $OUTPUT->flashMessages();
 
 $code = $USER->id+$LINK->id+$CONTEXT->id;
 if ( ! $USER->displayname || $USER->displayname == '' ) {
-    echo('<p style="color:blue;">Auto grader launched without a student name.</p>'.PHP_EOL);
+    // echo('<p style="color:blue;">Auto grader launched without a student name.</p>'.PHP_EOL);
 } else {
     $OUTPUT->welcomeUserCourse();
 }
