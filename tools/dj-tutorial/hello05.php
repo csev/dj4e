@@ -35,6 +35,11 @@ need to create the <b>HttpResponse</b> and then add the cookie to the response
 before returning it from your view.  Take a look at the
 <b>dj4e-sample</b> code to see how this can be done.
 </p>
+<p>
+When this is done, your `hello/urls.py` will only have one entry and your
+`hello/views.py` will have only one view that *both* uses the session and
+sets the cookie.
+</p>
 Then submit your Django base site (i.e. with no path) to this autograder.
 </p>
 <?php
