@@ -984,105 +984,6 @@
     ]
 },
 {
-    "title": "Django Users and Authentication",
-    "anchor": "dj4e_users",
-    "icon" : "fa-key",
-    "description": "This exercise explores the interaction between authentication and our application.",
-    "slides": "lectures/DJ-10-Login.pptx",
-    "discussions" : [
-        {
-        "title" : "Django Users and Authentication",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_13_users"
-        }
-    ],
-    "videos" : [
-    {
-        "title": "Creating and Managing Users in Django",
-        "project" : "DJ-09-Login-01-Users", 
-        "youtube": "E_X5Kr6xmNY"
-    },
-    {
-        "title": "Login and Logout URLs in Django",
-        "project" : "DJ-09-Login-02-Urls", 
-        "youtube": "tNofsgLH7c4"
-    },
-    {
-        "title": "Login and Views in Django",
-        "project" : "DJ-09-Login-03-Views", 
-        "youtube": "n5Xwqz1IJck"
-    }
-   ],
-    "lti" : [
-        {
-            "title" : "Quiz: Login and Authentication",
-            "launch" : "mod/gift/?quiz=10-Login.txt",
-            "resource_link_id" : "dj4e_10_login_quiz",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "101"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        }
-    ],
-    "references" : [
-    ]
-},
-{
-    "title": "Forms in Django",
-    "anchor": "dj4e_forms_django",
-    "icon" : "fa-table",
-    "description": "We cover how to use the Django built in forms processing to futher simplify our view processing.",
-    "slides": "lectures/DJ-11-Forms-Django.pptx",
-    "discussions" : [
-        {
-        "title" : "Forms in Django",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_14_forms"
-        }
-    ],
-    "videos" : [
-    {
-        "title": "Using Django Forms Capabilities",
-        "project" : "DJ-10-Forms-07-FormsPy",
-        "youtube": "bYlgvmAPrp0"
-    },
-    {
-        "title": "Data Validation with Django Forms",
-        "project" : "DJ-10-Forms-08-Validation",
-        "youtube": "kRXiMIFKzoQ"
-    }
-   ],
-    "lti" : [
-        {
-            "title" : "Quiz: Django Forms",
-            "launch" : "mod/gift/?quiz=11-Django-Forms.txt",
-            "resource_link_id" : "dj4e_forms_django",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "101"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Django Template Tags and Filters",
-            "href": "https://docs.djangoproject.com/en/3.0/ref/templates/builtins/"
-        }
-    ]
-},
-{
     "title": "One-To-Many Data Models",
     "anchor": "dj4e_one_to_many",
     "icon" : "fa-university",
@@ -1205,6 +1106,105 @@
         {
             "title" : "SQLite Browser",
             "href": "https://sqlitebrowser.org/"
+        }
+    ]
+},
+{
+    "title": "Django Users and Authentication",
+    "anchor": "dj4e_users",
+    "icon" : "fa-key",
+    "description": "This exercise explores the interaction between authentication and our application.",
+    "slides": "lectures/DJ-10-Login.pptx",
+    "discussions" : [
+        {
+        "title" : "Django Users and Authentication",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_13_users"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Creating and Managing Users in Django",
+        "project" : "DJ-09-Login-01-Users", 
+        "youtube": "E_X5Kr6xmNY"
+    },
+    {
+        "title": "Login and Logout URLs in Django",
+        "project" : "DJ-09-Login-02-Urls", 
+        "youtube": "tNofsgLH7c4"
+    },
+    {
+        "title": "Login and Views in Django",
+        "project" : "DJ-09-Login-03-Views", 
+        "youtube": "n5Xwqz1IJck"
+    }
+   ],
+    "lti" : [
+        {
+            "title" : "Quiz: Login and Authentication",
+            "launch" : "mod/gift/?quiz=10-Login.txt",
+            "resource_link_id" : "dj4e_10_login_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
+    "references" : [
+    ]
+},
+{
+    "title": "Form Objects in Django",
+    "anchor": "dj4e_forms_django",
+    "icon" : "fa-table",
+    "description": "We cover how to use the Django built in forms objects and their connection to Django models to futher simplify our view processing.",
+    "slides": "lectures/DJ-11-Forms-Django.pptx",
+    "discussions" : [
+        {
+        "title" : "Forms in Django",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_14_forms"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Using Django Forms Capabilities",
+        "project" : "DJ-10-Forms-07-FormsPy",
+        "youtube": "bYlgvmAPrp0"
+    },
+    {
+        "title": "Data Validation with Django Forms",
+        "project" : "DJ-10-Forms-08-Validation",
+        "youtube": "kRXiMIFKzoQ"
+    }
+   ],
+    "lti" : [
+        {
+            "title" : "Quiz: Django Forms",
+            "launch" : "mod/gift/?quiz=11-Django-Forms.txt",
+            "resource_link_id" : "dj4e_forms_django",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Django Template Tags and Filters",
+            "href": "https://docs.djangoproject.com/en/3.0/ref/templates/builtins/"
         }
     ]
 },
