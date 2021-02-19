@@ -17,7 +17,7 @@ if ( SettingsForm::handleSettingsPost() ) {
 $assignments = array(
     'single_lite.php' => 'Command Line SQL',
     '04models.php' => 'MDN Models Tutorial',
-    '05many.php' => 'Many-to-Many Exercise',
+    '05many.php' => 'Unesco One-to-Many Exercise',
 );
 
 $oldsettings = Settings::linkGetAll();
