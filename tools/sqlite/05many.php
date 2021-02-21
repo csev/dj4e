@@ -67,6 +67,7 @@ if ( isset($_FILES['database']) ) {
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_category') ) return;
     if ( ! ( runQuery($db, 'SELECT id, name FROM unesco_states') ||
              runQuery($db, 'SELECT id, name FROM unesco_state') ) ) return;
+    unset($_SESSION['error']); // In case state table was named wrong
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_region') ) return;
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_iso') ) return;
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_site') ) return;
@@ -75,6 +76,7 @@ if ( isset($_FILES['database']) ) {
     if ( ! checkCountTable($db, 'unesco_category', 3) ) return;
     if ( ! ( checkCountTable($db, 'unesco_states', 163) ||
             checkCountTable($db, 'unesco_state', 163) ) ) return;
+    unset($_SESSION['error']); // In case state table was named wrong
     if ( ! checkCountTable($db, 'unesco_region', 5) ) return;
     if ( ! checkCountTable($db, 'unesco_iso', 163) ) return;
     if ( ! checkCountTable($db, 'unesco_site', 1044) ) return;
@@ -85,6 +87,7 @@ if ( isset($_FILES['database']) ) {
     if ( ! checkCountTable($db, 'unesco_region WHERE name="Africa"', 1) ) return;
     if ( ! (checkCountTable($db, 'unesco_states WHERE name="India"', 1) ||
         checkCountTable($db, 'unesco_state WHERE name="India"', 1)) ) return;
+    unset($_SESSION['error']); // In case state table was named wrong
 
     // Dig into Sites a bit
     if ( ! checkCountTable($db, 'unesco_site WHERE name="Hawaii Volcanoes National Park"', 1) ) return;
@@ -142,7 +145,7 @@ To get credit for this assignment, perform the instructions below and
 upload your SQLite3 database here:<br/>
 <input id="upload_file" name="database" type="file">
 (Must have a .sqlite3 suffix and be &lt; 3M)<br/>
-<input type="submit">
+<input type="submit" value="<?= __('Check database') ?>">
 <p>
 Do the assignment at
 <a href="https://www.dj4e.com/assn/dj4e_load.md" target="_blank">https://www.dj4e.com/assn/dj4e_load.md</a>
