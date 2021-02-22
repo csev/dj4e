@@ -67,8 +67,18 @@ https://djtutorial.dj4e.com/</a> server.  It still shows "404" when you navigate
 Playing With Sessions (DIY)
 ---------------------------
 
-You next goal is to make a new application named `hello` and replicate the functionality
-at https://samples.dj4e.com/session/sessfun except make it so that it responds to the
+You next goal is to make a new application named `hello`.  First you need to use `startapp` to create a folder
+for the application and have Django put in empty files like `views.py` and `models.py`.
+
+Once you have created an empty `hello` application make a `urls.py` in the `hello` folder.   
+Take a look how
+the https://samples.dj4e.com/session/sessfun except make it so that it responds to the
+<a href="https://djtutorial.dj4e.com/hello" target="_blank">
+https://djtutorial.dj4e.com/hello</a>
+
+
+change `settings.py` to route `
+ and replicate the functionality
 URL `/hello` in your Django project like in <a href="https://djtutorial.dj4e.com/hello" target="_blank">
 https://djtutorial.dj4e.com/hello</a>
 

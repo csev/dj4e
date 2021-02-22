@@ -16,7 +16,7 @@ The un-normalized data is provided as both a spreadsheet and a CSV file:
 The columns in the data are as follows:
 
     name,description,justification,year,longitude,latitude,
-    area_hectares,category,states,region,iso
+    area_hectares,category,state,region,iso
 
 You have to have the CSV data available to run the batch script.   If you are using PythonAnywhere
 to do your homework, you can use the `wget` command to pull in the data (see below).
@@ -80,7 +80,7 @@ You are to design a database model that represents this flat data across
 multiple tables using "third-normal form" - which basically means that
 columns that have vertical duplication, such as region:
 
-    category    states                 region                      iso
+    category    state                  region                      iso
 
     Cultural    Afghanistan            Asia and the Pacific        af
     Cultural    Afghanistan            Asia and the Pacific        af
@@ -235,11 +235,11 @@ it into the right tables:
     $ sqlite3 db.sqlite3
     SQLite version 3.24.0 2018-06-04 14:10:15
     Enter ".help" for usage hints.
-    sqlite> SELECT count(id) FROM unesco_states;
+    sqlite> SELECT count(id) FROM unesco_state;
     163
     sqlite> SELECT count(id) FROM unesco_site;
     1044
-    sqlite> SELECT count(id) FROM unesco_states where name="India";
+    sqlite> SELECT count(id) FROM unesco_state where name="India";
     1
     sqlite> SELECT count(id) FROM unesco_site WHERE name="Hawaii Volcanoes National Park" AND year=1987 AND area_hectares = 87940.0;
     1
