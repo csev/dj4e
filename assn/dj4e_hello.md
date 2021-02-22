@@ -56,7 +56,7 @@ Make sure to run:
 
     python3 manage.py check
 
-To see if your changes have syntax errors, then Reload your web application and 
+To see if your changes have syntax errors, then Reload your web application and
 navigate to the top level path (i.e. no path).  You should no longer
 get a "404" and instead be able to navigate to the polls application by clicking on the link.
 Congratulations!  You now have a web site that is not broken.
@@ -67,27 +67,31 @@ https://djtutorial.dj4e.com/</a> server.  It still shows "404" when you navigate
 Playing With Sessions (DIY)
 ---------------------------
 
-You next goal is to make a new application named `hello`.  First you need to use `startapp` to create a folder
-for the application and have Django put in empty files like `views.py` and `models.py`.
-
-Once you have created an empty `hello` application make a `urls.py` in the `hello` folder.   
-Take a look how
-the https://samples.dj4e.com/session/sessfun except make it so that it responds to the
+Your next goal is to make a new application named `hello`.  It will work like:
 <a href="https://djtutorial.dj4e.com/hello" target="_blank">
 https://djtutorial.dj4e.com/hello</a>
 
+You will need to:
 
-change `settings.py` to route `
- and replicate the functionality
-URL `/hello` in your Django project like in <a href="https://djtutorial.dj4e.com/hello" target="_blank">
-https://djtutorial.dj4e.com/hello</a>
+* Use `startapp` to create a folder
+for the application and have Django create empty files like `views.py` and `models.py` in the `hello` folder.
+
+
+* Create a `urls.py` to route all requests to the hello application to a view function that you will write in
+`views.py` - You will only write a single view function that will both set a cookie and implement the session
+logic similar to the `session` sample code at
+https://samples.dj4e.com/session/sessfun
+
+* Change the project-wide `urls.py` to mount the new application's urls at `/hello`
 
 Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
     <li><p><a href="/hello">Test the session</a></p>
 
-This is the DIY part of this assignment - no more cutting and pasting instructions :)
+These instructions are telling you *what* to do now *how* to do it. This is the DIY part of this assignment -
+look at sample code and understand it - no more cutting and pasting instructions.
 
+This assignment is not a lot of code.   It is more about learning to read, reuse, and adapt code.
 There is lots of sample code in `dj4e-samples` - probably
 too much code.  If you just copy and paste everything from `dj4e-samples` it will be difficult to
 make this work.  Sometime when looking at code written by others, it is important to know what
