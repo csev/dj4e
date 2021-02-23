@@ -40,10 +40,7 @@ function buildMenu() {
             $submenu->addLink('Google Classroom', $T.'gclass/login');
         }
         $submenu->addLink('Free App Store', 'https://www.tsugicloud.org');
-        if ( $CFG->DEVELOPER ) {
-            $submenu->addLink('Test LTI Tools', $T . 'dev');
-        }
-        $submenu->addLink('Test Tools', $T.'store');
+        $submenu->addLink('Test LTI Tools', $T.'store');
         if ( isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true" ) {
             $submenu->addLink('Administer', $T . 'admin/');
         }
