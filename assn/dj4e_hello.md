@@ -48,9 +48,6 @@ There are lots of examples of the use of TemplateView in the `urls.py` files in 
 and in the lecture materials.  Figuring out exactly how to change your `urls.py` is one of the
 DIY aspects of this assignment.
 
-Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `home` application following
-the pattern that you used to add the `polls` application to `INSTALLED_APPS` - again - the exact code
-is something you figure out from looking at `dj4e-samples` or from the lectures.
 
 Make sure to run:
 
@@ -84,11 +81,16 @@ https://samples.dj4e.com/session/sessfun
 
 * Change the project-wide `urls.py` to mount the new application's urls at `/hello`
 
+* Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `home` application following
+the pattern that you used to add the `polls` application to `INSTALLED_APPS` - again - the exact code
+is something you figure out from looking at `dj4e-samples` or from the lectures.
+
 Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
     <li><p><a href="/hello">Test the session</a></p>
 
-These instructions are telling you *what* to do now *how* to do it. This is the DIY part of this assignment -
+These instructions are telling you *what* to do now *how* to do it. This is
+another DIY part of this assignment -
 look at sample code and understand it - no more cutting and pasting instructions.
 
 This assignment is not a lot of code.   It is more about learning to read, reuse, and adapt code.
