@@ -261,23 +261,15 @@ This section is only if you encounter errors.
 
 The autograder has a maximum size limit on the database you upload.   If your database
 exceeds this size you have two options - the easy one is to use the `VACUUM` command
-to remove extra space in the database.  In a shell do the following:
+to remove extra space in the database.  
 
-    $ cd ~/django_projects/batch
-    $ ls -l db.sqlite3
-    -rw-r--r-- 1 dj4e registered_users 1153024 Nov 10 10:32 db.sqlite3
-    $ sqlite3 db.sqlite3 "VACUUM;"
-    $ ls -l db.sqlite3
-    -rw-r--r-- 1 dj4e registered_users 1082368 Nov 10 13:14 db.sqlite3
-
-This might get your file small enough to be uploaded to the autograder.
-
-If your file is still too big for the autograder, you will need to clear your
-database and then reload the data.
+If your file is too big for the autograder, sometimes resetting the database and
+reloading the data will help.
 
     $ cd ~/django_projects/batch
     $ rm db.sqlite3
     $ python3 manage.py migrate
+    $ python3 manage.py runscript many_load
 
-Run your load script and upload `db.sqlite3` to the autograder.  At this point
-it should be the correct size.
+Run your load script and upload the new `db.sqlite3` to the autograder.  At this point
+it should be as small as it can be.

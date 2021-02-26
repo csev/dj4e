@@ -33,13 +33,13 @@ if ( isset($_FILES['database']) ) {
     }
 
     if ( ! isset($fdes['tmp_name']) ) {
-        $_SESSION['error'] = "Could not find file on server: ".$fdes['name'];
+        $_SESSION['error'] = "Could not find file on server: ".$fdes['name']. "perhaps your file is too large";
         header( 'Location: '.addSession('index.php') ) ;
         return;
     }
 
     if ( strlen($fdes['tmp_name']) < 1 ) {
-        $_SESSION['error'] = "Temporary name not found: ".$fdes['name'];
+        $_SESSION['error'] = "Temporary name not found: ".$fdes['name']. "perhaps your file is too large";
         header( 'Location: '.addSession('index.php') ) ;
         return;
     }
