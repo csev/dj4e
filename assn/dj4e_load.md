@@ -257,15 +257,11 @@ and then upload it to the autograder.
 Resetting Your Database
 -----------------------
 
-If the autograder complains that your file is somehow too big, or you just
+If the autograder complains that your file is somehow too big, 
+or you have been changing your `models.py` and your `makemigrations`
+is asking you how to convert existing columns,
+or you just
 want to start with a fresh database, you can run the following commands.
-
-Make sure you run these commands in the currect folder
-(i.e. ~/django_projects/batch`).  You can run this process in any django
-project but your database is completely reset (i.e. adin and login accounts
-are deleted as well).  This also completely rebuilds your migrations 
-from your latest `models.py` file(s) so you can use this 
-sometimes if `makemigrations` gets stuck.
 
     $ cd ~/django_projects/batch
     $ rm db.sqlite3
@@ -274,5 +270,8 @@ sometimes if `makemigrations` gets stuck.
     $ python3 manage.py migrate
     $ python3 manage.py runscript many_load
 
-Run your load script and upload the new `db.sqlite3` to the autograder.  At this point
-it should be as small as it can be.
+Make sure you run these commands in the correct folder
+(i.e. `~/django_projects/batch`).  You can run this process in any Django
+project but your database is completely reset (i.e. admin and login accounts
+are deleted as well).  This also completely rebuilds your migrations 
+from your latest `models.py` file(s).
