@@ -254,20 +254,23 @@ Upload to the Autograder
 When the data passes your manual tests, you can download `db.sqlite3` from PythonAnywhere
 and then upload it to the autograder.
 
-(Errors) If the autograder complains about the size of your db.sqlite3 file
----------------------------------------------------------------------------
+Resetting Your Database
+-----------------------
 
-This section is only if you encounter errors.
+If the autograder complains that your file is somehow too big, or you just
+want to start with a fresh database, you can run the following commands.
 
-The autograder has a maximum size limit on the database you upload.   If your database
-exceeds this size you have two options - the easy one is to use the `VACUUM` command
-to remove extra space in the database.  
-
-If your file is too big for the autograder, sometimes resetting the database and
-reloading the data will help.
+Make sure you run these commands in the currect folder
+(i.e. ~/django_projects/batch`).  You can run this process in any django
+project but your database is completely reset (i.e. adin and login accounts
+are deleted as well).  This also completely rebuilds your migrations 
+from your latest `models.py` file(s) so you can use this 
+sometimes if `makemigrations` gets stuck.
 
     $ cd ~/django_projects/batch
     $ rm db.sqlite3
+    $ rm */migrations/0*
+    $ python3 manage.py makemigrations
     $ python3 manage.py migrate
     $ python3 manage.py runscript many_load
 
