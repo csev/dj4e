@@ -3,6 +3,7 @@
 require_once "../crud/webauto.php";
 
 use Goutte\Client;
+use \Tsugi\Util\U;
 
 $qtext = 'Answer to the Ultimate Question';
 $cookie_name = 'dj4e_cookie';
@@ -45,6 +46,8 @@ Then submit your Django base site (i.e. with no path) to this autograder.
 <?php
 
 $url = getUrl('http://djtutorial.dj4e.com');
+if ( U::endsWith($url, '/hello') ) $url = str_replace('/hello', '', $url);
+if ( U::endsWith($url, '/hello/') ) $url = str_replace('/hello/', '', $url);
 if ( $url === false ) return;
 $passed = 0;
 $send = true;
