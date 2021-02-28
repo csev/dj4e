@@ -64,6 +64,7 @@ if ( isset($_FILES['database']) ) {
         return;
     }
 
+    $GOOD_QUERY = 0;
     if ( ! runQuery($db, 'SELECT id, name FROM unesco_category') ) return;
     if ( ! ( runQuery($db, 'SELECT id, name FROM unesco_states') ||
              runQuery($db, 'SELECT id, name FROM unesco_state') ) ) return;
