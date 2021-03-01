@@ -39,7 +39,7 @@ if ( isset($_FILES['database']) ) {
     }
 
     if ( strlen($fdes['tmp_name']) < 1 ) {
-        $_SESSION['error'] = "Temporary name not found: ".$fdes['name'];
+        $_SESSION['error'] = "Temporary name not found: ".$fdes['name'].' - your file may be too large';
         header( 'Location: '.addSession('index.php') ) ;
         return;
     }
