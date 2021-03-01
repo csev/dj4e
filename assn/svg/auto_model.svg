@@ -17,6 +17,8 @@
     <tspan>Autos</tspan>
     <tspan dy="15" x="15">nickname</tspan>
     <tspan dy="15" x="15">make</tspan>
+    <tspan dy="15" x="15">mileage</tspan>
+    <tspan dy="15" x="15">comments</tspan>
     </text>
   </svg>
   <svg x="180" y="10">
