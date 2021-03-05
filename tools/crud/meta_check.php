@@ -21,8 +21,8 @@ $dj4e_code = webauto_get_meta($crawler, 'dj4e-code');
 if ( ! $dj4e_code || strlen($dj4e_code) < 1 ) {
     error_out('You seem to be missing the required meta name="dj4e-code" tag.  Check the assignment document.');
     $meta_good = false;
-}  else if ( strpos($dj4e_code, "42") !== 0 || strlen($dj4e_code) < 14 ) {
-    error_out('Your meta name="dj4e-code" tag is not formatted correctly.  Check the assignment document.');
+}  else if ( strpos($dj4e_code, "42-42") !== 0 || strlen($dj4e_code) < 14 ) {
+    error_out('Your meta name="dj4e-code" tag is not formatted correctly.  Make sure you removed the 42-42 meta tag.');
     $meta_good = false;
 } else {
 	$then = substr($dj4e_code,2);
