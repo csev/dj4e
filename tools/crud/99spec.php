@@ -316,8 +316,10 @@ can send it to the autograder.
 <p>
 This <?= $SPEC->assignment_type_lower ?> will be automatically graded.  You will have
 unlimited attempts in the autograder until the deadline for submission.   Your web server will need an
-Internet-accessible URL so you can submit it for autograding.  You can do this either using
-<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>.
+Internet-accessible URL so you can submit it for autograding.
+The most common way to turn in your exam is to use
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
+the same way we have been doing assignments all along.
 </p>
 <p>
 Please see the process for handing in the <?= $SPEC->assignment_type_lower ?> at the end of this document.
