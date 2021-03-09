@@ -28,8 +28,10 @@ line_out("Create, Read, Update, and Delete (CRUD)")
 <a href="<?= $assignment_url ?>" target="_blank"><?= $assignment_url_text ?></a>
 </a>
 <p>
-In order for the autograder to exercise your assignment, make a user (not an admin account).  
-You do this by navigating to the <b>/admin</b> path in your application, logging in
+In order for the autograder to exercise your assignment, you must
+create a user account with the credentials below.  It is best if this is not
+a "superuser" - instead
+navigating to the <b>/admin</b> path in your application, logging in
 with your superuser account and creating the new account in the admin UI.  By
 default the new user will not have staff or superuser permissions.
 <pre>

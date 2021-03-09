@@ -105,11 +105,12 @@ key from Autos to Makes.
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
 
-* Run the `python manage.py makemigrations` until it has no errors.  If you find that the migrations
-have partially completed and seems ot be confused, you can always start the migrations over by
-typing:
-
-        rm */migrations/00*.py
+* Run the `python manage.py makemigrations` until it has no errors.  Sometimes
+when you make changes to `models.py`, the makemigrations will pick
+up on the changes and ask you for example if you want to rename a field.
+Sometimes you make a change to your `models.py` and `makemigrations`
+gets stuck or lost.  If migrations gets stuck, you might need to start
+with a fresh database.
 
 * Run the `python manage.py migrate` to create the database.
 
