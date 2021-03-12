@@ -348,7 +348,7 @@ This <?= $SPEC->assignment_type_lower ?> will be autograded by a link that you w
 system.   When you launch the autograder, it will prompt for a web-accessible URL
 where it can access your web application.
 <?php if ( $SPEC->assignment_type == 'Exam' || $SPEC->assignment_type == 'Sample Exam') { ?>
-Please also have in a ZIP of your source code (entire project)
+Please also have in a ZIP of your source code of your new application
 in case there is a need to verify your work or assign partial credit.
 </p>
 <p>
