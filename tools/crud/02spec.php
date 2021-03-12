@@ -316,7 +316,7 @@ will not treat the grade as official.
 If the autograder complains about a missing "dj4e-code" meta tag, add or edit it in
 your <b>home/templates/base_bootstrap.html</b> file:
 <pre>
-&lt;name="dj4e-code" content="<span id="dj4e-code">missing</span>"&gt;
+&lt;meta name="dj4e-code" content="<span id="dj4e-code">missing</span>"&gt;
 </pre>
 If you are adding an application to an existing Django project that you have already run through
 the autograder, you probably already have good value for both meta tags in your template file.
