@@ -1,3 +1,4 @@
+
 Building a Classified Ad Web Site
 =================================
 
@@ -45,7 +46,7 @@ The autograder will just look at /ads.
     cp -r ~/dj4e-samples/home/* ~/django_projects/mysite/home
 
 (2) Edit `~/dango_projects/mysite/mysite/settings.py` and then delete
-all the `INSTALLED_APPLICATIONS` after `home`.  You also have to search
+all the `INSTALLED_APPLICATIONS` after `home`.  You will have to search
 and replace `dj4e-samples` with `mysite` in a few places.  Also set
 the name of your application in the `settings.py` file:
 
@@ -56,7 +57,7 @@ This shows up in default page titles and default page navigation.
 
 (3) Edit your `django_projects/mysite/mysite/urls.py` and
 remove all of the `path()` calls to the sample applications. Make
-sure to keep the `path()` to include the `home.urls`.  Also keep
+sure to keep the `path()` to `home.urls`.  Also keep
 the `site` and `favicon` rules in your `urls.py`.
 
 (4) Edit the file `django_projects/mysite/home/templates/home/main.html` and put
@@ -78,18 +79,18 @@ Keep running `check` until it does not find any errors.
 
 If you get an error like `Could not import github_settings.py for social_django`
 when running `manage.py` or restarting your PythonAnywhere webapp,
-don't worry - you will see this warning until you set up social login.
+don't worry - you will see this warning until you set up the social login.
 
-(6) <b>If you are not using PythonAnywhere you can skip this step.</b>
-We are going to switch your application on PythonAnywhere from using an
+<b>If you are using Ngrok skip to step 9, otherwise continue with these steps.</b>
+
+(6) We are going to switch your application on PythonAnywhere from using an
 SQLite database to a MySQL database for the rest of this course.  If you keep running
 SQLite and your application stores too much data it will start to slow down.
-If you are running locally, you can keep using SQLite.   Go to
-the `Databases` tab in PythonAnywhere.  Make a MySQL database and choose
+If you are running locally, you can keep using SQLite. Go to
+the `Databases` tab in PythonAnywhere. Make a MySQL database and choose
 a name and password and write them down.
 
-(7) <b>If you are not using PythonAnywhere you can skip this step.</b>
-Edit `~/dango_projects/mysite/mysite/settings.py` and find the existing
+(7) Edit `~/dango_projects/mysite/mysite/settings.py` and find the existing
 value for the `DATABASES` variable and comment it out.
 
     # DATABASES = {
@@ -117,8 +118,7 @@ to the values for your database.
         }
     }
 
-(8) <b>If you are not using PythonAnywhere you can skip this step.</b>
-Once `check` works you will need to run your migrations and make a new
+(8) Once `check` works you will need to run your migrations and make a new
 adminsitrator account:
 
     cd ~/django_projects/mysite
@@ -138,8 +138,8 @@ Try these two to see if you have the home code working properly:
     https://your-account.pythonanywhere.com/accounts/login
 
 Look at how pretty the login form looks :).
-Don't worry about social login yet.  We will get to that later.
-Favicons are shown in the tabs in the browser.  We will get to favicons later too :)
+Don't worry about the social login yet. We will get to that later.
+Favicons are shown in the browser tabs.  We will get to favicons later too :)
 
 Building the Ads Application
 ----------------------------
@@ -180,7 +180,7 @@ Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/
             return self.title
 
 (3) Copy the `owner.py` from `myarts` to your ads application.  This is the one file you <b>do not</b>
-have to change at all (thanks to object orientation :) ).
+have to change at all (thanks to object orientation 😊).
 
 (4) The files `admin.py`, `views.py`, `urls.py`, and the `templates` folder will require significant
 adaptation to be suitable for a classified
@@ -242,12 +242,12 @@ You might see output like this:
 
     ads/templates/ads/ad_list.html:<a href="{% url 'login' %}?next={% url 'myarts:all' %}">Login</a>
 
-The `grep` program is searching for all the files in the current folder and in subfolders for any lines
-in any file that have the string "myarts" in them and shows you the file name and the line within the file.
+The `grep` program searches files in the current  folder and subfolders for any lines
+in any file that have the string "myarts" in them and shows you the file name and the line it is mentioned.
 
 The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
 Expression Parser"</a> and is one of the most useful Linux commands to know.
-The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time :).
+The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time 😊.
 
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
@@ -256,8 +256,8 @@ Next we will add the bootstrap navigation bar to the top of your application as 
 
 https://chucklist.dj4e.com/
 
-This top bar includes a 'Create Ad' navigation item and the login/logout navigation as well as
-the gravatar when the user logs in.
+This top bar includes a 'Create Ad' navigation item and the login/logout navigation with
+gravatar when the user logs in.
 
 (1) Edit all four of the `ads_` files in `ads/templates/ads` to change them so
 they extend `ads/base_menu.html`.  Change the first line of each file from:
@@ -354,14 +354,14 @@ so make sure to give an email address to the user you create with `createsuperus
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
-is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
-you can add a GET parameter tho the URL to forc it to be re-retrieved:
+is "too effective" on a favicon so to force a real reload (command/ctrl + shift + r) to check if the new 
+favicon is really being served you can add a GET parameter to the URL to force it to be re-retrieved:
 
     https://chucklist.dj4e.com/favicon.ico?x=42
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) Make social login work.  Take a look at
+(3) To make the social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
@@ -380,7 +380,7 @@ Working with Ambiguity
 ----------------------
 
 This assignment is more vague than previous assignments - on purpose.  The goal is to get
-closer to the development model for actual applications.  You know what you want to build
+closer to the development model of actual applications. You know what you want to build
 and start with a mostly blank slate.  You look at sample code, reuse some code from stuff
 you built earlier, do some online
 searching and glue pieces of what you find together to make your application.  Of course as
