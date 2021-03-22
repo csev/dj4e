@@ -29,6 +29,9 @@ If you have already checked `dj4e-samples`  on PythonAnywhere do:
     git pull
     pip install -r requirements.txt
 
+__Important Note:__ If you find you have a problem saving files in the PythonAnywhere
+system using their browser-based editor, you might need to turn off your ad blocker for
+this site - weird but true.
 
 Pulling In Code From Samples
 ----------------------------
