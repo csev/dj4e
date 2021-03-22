@@ -25,7 +25,8 @@ line_out("Building Classified Ad Site #1");
 https://www.dj4e.com/assn/dj4e_ads1.md</a>
 </a>
 <p>
-Create two users (they do not have to be superusers):
+Create two non-super users, by logging into the <b>/admin</b> URL of your application
+using a superuser account:
 <pre>
 <?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
 <?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?>
