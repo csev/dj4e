@@ -170,6 +170,10 @@
             "href" : "https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/"
         },
         {
+            "title" : "Quora: What web framework do you use in your company? Is it Django?",
+            "href" : "https://www.quora.com/As-a-Python-developer-what-web-framework-do-you-use-in-your-company-Is-it-Django"
+        },
+        {
             "title" : "Using ngrok to submit a local application to the Autograder (optional)",
             "href" : "/ngrok"
         }
@@ -718,6 +722,10 @@
         {
             "title" : "Chapter 14: Python Objects",
             "href" : "https://www.py4e.com/html3/14-objects"
+        },
+        {
+            "title" : "Quora: Is C++ Object Oriented or Procedural?",
+            "href" : "https://www.quora.com/Is-C-object-oriented-or-procedural/answer/Chuck-Severance"
         }
     ],
     "videos" : [
