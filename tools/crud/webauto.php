@@ -502,6 +502,16 @@ function webauto_search_for_not($html, $needle)
 
 function webauto_search_for_menu($html)
 {
+    global $MENU_WARNING_ONCE ;
+
+    if ( ! isset($MENU_WARNING_ONCE) ) $MENU_WARNING_ONCE = 0;
+
+    // TODO: Give this teeth
+    if ( $MENU_WARNING_ONCE < 3 &&  stripos($html,"ChucksList") > 0 ) {
+        error_out("Your application should not be named 'ChucksList'");
+        $MENU_WARNING_ONCE++;
+    }
+
     $needle = '<nav';
     if ( strpos($html,$needle) > 0 ) {
         markTestPassed("Found menu bar at the top of the page");

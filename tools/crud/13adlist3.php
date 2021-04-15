@@ -31,6 +31,7 @@ You should already have two users and a <b>meta</b> tag.
 <?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?> 
 <?= htmlentities($meta) ?>
 </pre>
+Your application should either be at the '/' path or the '/ads' path.
 Note that your application should not be at the '/m3' path and should not
 have a "Versions" drop-down.  That is just how the sample implementation is written
 to support more than one variant of the code at the same time.
