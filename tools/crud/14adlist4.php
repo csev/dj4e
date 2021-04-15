@@ -33,7 +33,8 @@ You should already have two users and a <b>meta</b> tag.
 </pre>
 Note that your application should not be at the '/m4' path and should not
 have a "Versions" drop-down.  That is just how the sample implementation is written
-to support more than one variant of the code at the same time.
+to support more than one variant of the code at the same time.  Your application
+should either be at the '/' path or the '/ads' path.
 </p>
 <?php
 
