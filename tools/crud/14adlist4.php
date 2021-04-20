@@ -168,12 +168,24 @@ if ( strpos($html, 'multipart/form-data') > 1 ) {
     error_out('Create Ad form requires enctype="multipart/form-data"');
 }
 
+// TODO: Demand tags sometime after 210420
+$tags = False;
+if ( strpos($html, 'Tags') > 1 ) {
+    $tags = True;
+    // markTestPassed('Found enctype="multipart/form-data" on Create Ad form');
+} else {
+    error_out('Could not find Tags field on create Ad form');
+}
+
 // Add a record
 $title = 'HHGTTG_4'.($test_no+1).' '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.41');
 webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
+
+// TODO : Always do this
+if ( $tags ) webauto_change_form($form, 'tags', 'poem, vogon');
 
 // $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
