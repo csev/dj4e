@@ -41,6 +41,9 @@ function webauto_get_html($crawler) {
         if ( $title ) error_out($title);
     }
     showHTML("Show retrieved page",$html);
+
+    // https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
+    $html = preg_replace('/<!--(.*)-->/Uis', '', $html);
     return $html;
 }
 
