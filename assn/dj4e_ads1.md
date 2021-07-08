@@ -8,7 +8,7 @@ https://chucklist.dj4e.com/m1
 
 This web site is a classified ad web site.   People can view ads without logging in
 and if they log in, they can create their own ads.   It uses a social login
-that allows loging using github accounts.
+that allows logging in using github accounts.
 
 You will build this application by borrowing parts and pieces from the code that runs
 
