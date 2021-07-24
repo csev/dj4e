@@ -122,7 +122,7 @@ The __title__ tag must contain your name or the string indicated by the autograd
 
 <center><img src="dj4e_html/01-title-name.png" alt="A screen shot of the autograder user interface." width="80%" border="2px"></a></center>
 
-You must have at least one example of the following tags: __span__, __p__, __div__, __h1__, and __ul__
+You must have at least one example of each of the following tags: __span__, __p__, __div__, __h1__, and __ul__
 
 You must have three __a__ tags and three __li__ tags.
 
