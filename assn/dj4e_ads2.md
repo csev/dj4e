@@ -38,7 +38,7 @@ Do not include the entire `Pic` model.  Of course do the migrations once you hav
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
 `PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
 These new views don't inherit from owner.py because they manage the `owner` column in the `get()`
-and `put()` methods.
+and `post()` methods.
 
 (4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
@@ -157,7 +157,7 @@ so make sure to give an email address to the user you create with `createsuperus
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
-after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
+after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
 you can add a GET parameter to the URL to force it to be re-retrieved:
 
