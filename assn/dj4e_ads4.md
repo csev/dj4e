@@ -1,7 +1,7 @@
 Classified Ad Web Site - Milestone 4
 ====================================
 
-In this assignment, you will expand your classified ads web site to add search and tags 
+In this assignment, you will expand your classified ads web site to add search and tags
 functionality equivalent to:
 
 https://chucklist.dj4e.com/m4
@@ -66,6 +66,8 @@ save the model.  This code is in both the insert and edit views:
 
 You need to add the `save_m2m()` call *after* the instance was saved.
 
+Finally, the detail template for the `tagme` application contains code that can be adapted to display the tags in your application.
+
 Manual Testing
 --------------
 
@@ -89,5 +91,3 @@ for a word in any of the three places.
 * Note the "?search=" in the location bar in your browser while you are doing searched
 
 * Clear the search and see all of the results and verify there is no "?search=" get parameter
-
-
