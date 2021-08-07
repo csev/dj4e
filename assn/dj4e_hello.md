@@ -22,7 +22,7 @@ code into your application.
 Building a Main Page
 --------------------
 
-It is time for your the "/" URL in your application to actually refer to a real page instead
+It is time for the "/" in your application URL to actually refer to a real page instead
 of throwing a "404 Not Found" error.  We will store this page (and other project-wide
 bits) in an application named "home".  To get started:
 
@@ -101,11 +101,10 @@ These instructions are telling you *what* to do now *how* to do it. This is
 another DIY part of this assignment -
 look at sample code and understand it - no more cutting and pasting instructions.
 
-This assignment is not a lot of code.   It is more about learning to read, reuse, and adapt code.
+This assignment is not a lot of code. It is more about learning to read, reuse, and adapt code.
 There is lots of sample code in `dj4e-samples` - probably
 too much code.  If you just copy and paste everything from `dj4e-samples` it will be difficult to
 make this work.  Sometime when looking at code written by others, it is important to know what
 is going on to what *not* to copy.
 
-Also make sure to check any auto grader for any additional requirements for this assignment.
-
+Also make sure to check the auto grader for any additional requirements for this assignment.
