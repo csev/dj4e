@@ -7,6 +7,10 @@ Most of the content that comes from a site is usually served through a template
 and a view, but sometimes you just want to have a few static HTML pages on 
 your site.
 
+*Important:* This assignment assumes you have finished the previous assignment
+to setup your Django environment.  You will be adding some HTML files to your
+Django environment so they are available to the autograder for grading.
+
 Serving HTML Content
 --------------------
 
