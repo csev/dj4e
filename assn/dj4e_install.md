@@ -215,7 +215,21 @@ Just as a note, you *never* run the `runserver` command on PythonAnywhere.
 
     python3 manage.py runserver
 
-This functionality is replaced by the "reload" button on your Web tab.  So
+If you try to do `runserver` on PythonAnywhere it, you will see an error message like this
+
+    00:26 ~/django_projects/mysite (master)$ python manage.py runserver
+    Watching for file changes with StatReloader
+    Performing system checks...
+    System check identified no issues (0 silenced).
+    September 14, 2021 - 00:26:16
+    Django version 2.2.7, using settings 'mysite.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
+    Error: That port is already in use.
+    00:26 ~/django_projects/mysite (master)$
+
+This will *never* work on PythonAnywhere.  You run / restart your server on
+PythonAnywhere using the "reload" button on your `Web` tab.  So
 if you are reading any Django instructions that say to do a `runserver`, instead do a
 `check` and then reload the application in the PythonAnywhere web UI.
 
@@ -277,6 +291,20 @@ under the `Web` tab on PythonAnywhere:
 
 First check the `error` log and then check the `server` log.
 Make sure to scroll through the logs to the end to find the most recent error.
+
+Do you have two mysite filders?
+-------------------------------
+
+For some reason students who finish this assignment often end u making their `mysite` folder twice.
+They end up with a folder in their home directory and in their `django_projects` subfolder.
+
+<center><img src="dj4e_install/install_cleanup.png" alt="An image showing a mysite folder in django_projects and in the home directory with instructions to remove the one in the home directory" style="border: 1px black solid; width:80%;"></center>
+
+It is a good idea to remove the extra folder in your home directory after making sure that the right 
+code is in your `django_projects/mysite` folder.   It is really frustrating to have two folders and 
+do a bunch of work in one of the folders that does not actually affect your running application.
+
+So you might as well clean this up right away if you see it.
 
 More on Your manage.py File
 ---------------------------
