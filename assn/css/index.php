@@ -12,7 +12,9 @@ $json = loadPeer("peer.json");
 <p>
 <?= $json->description ?>
 <p>
-You will transform from this:
+You should already have your system set up on PythonAnywhere and have completed the HTML
+assignment.
+In this assignment, you will transform from this:
 <center>
 <a href="01-No-style.png" target="_blank">
 <img src="01-No-style.png" width="80%" border="2px"></a>
@@ -35,28 +37,34 @@ Using only CSS.
 <p>
 <ul>
 <li><p>Please install the <a href="http://chrispederick.com/work/web-developer/" target="_blank">
-Web Developer Toolkit</a> for your browser from Chris Pedrick and know how to use it to 
+Web Developer Toolkit</a> for your browser from Chris Pedrick and know how to use it to
 disable CSS styles.</p></li>
 </ul>
 </p>
 <h1>Tasks</h1>
 <p>
 Here are the tasks for this assignment.  These tasks can be done by editing HTML and
-CSS files in a folder on your computer.  You do not have to upload these files to
-a server to complete the assignment.
+CSS files in your `site` folder on PythonAnywhere.
 <ul>
-<li><p>Take this <a href="index.txt" target="_blank">this file</a> and 
-copy/paste the contents into 
-<b>index.htm</b>.  You will not change this file.
-<li><p>Take <a href="blocks.txt" target="_blank">this file</a>
-and copy/paste the contents into 
-<b>blocks.css</b> in the same folder as the above file.
-</p>
-<li><p>Edit the <b>blocks.css</b> and add the CSS rules so 
-it the HTML file looks like the above image when you view the index.htm
-file in your browser.
+<li><p>
+Make a folder <b>django_projects\site\css</b>.
 </p></li>
-<li><p>The four boxes have five pixel borders with different colors and five pixels 
+<li><p>Take this <a href="index.txt" target="_blank">this file</a> and
+copy/paste the contents into
+<b>django_projects/mysite/site/css/index.htm</b>.  You will not change this file.
+<li><p>Take <a href="blocks.txt" target="_blank">this file</a>
+and copy/paste the contents into
+<b>django_projects/mysite/site/css/blocks.css</b> in the same folder as the above file.
+</p>
+<li><p>Edit the <b>blocks.css</b> and add the CSS rules so
+the HTML file looks like the above image when you view
+<pre>
+https://your-account.pythonanywhere.com/site/css/index.htm
+</pre>
+file in your browser.
+(<a href="https://drchuck.pythonanywhere.com/site/css/index.htm" target="_blank">Example that *looks* correct but is not a solution at all</a>)
+</p></li>
+<li><p>The four boxes have five pixel borders with different colors and five pixels
 of margin and padding.  It is probably simplest to use fixed positioning to get the
 boxes to be "sticky" to the corners of the screen even when you resize.  Make the boxes
 width be <b>25%</b> so the width changes as you resize your browser.</p></li>
@@ -86,7 +94,7 @@ foreach($json->parts as $part ) {
 
 <h1>Sample Screen Shots</h1>
 <p>
-Using inspect element on the 
+Using inspect element on the
 <a href="https://www.brainyquote.com/" target="_blank">
 https://www.brainyquote.com/</a>.
 <center>
@@ -95,7 +103,7 @@ https://www.brainyquote.com/</a>.
 </center>
 </p>
 <p>
-Looking at 
+Looking at
 <a href="https://www.brainyquote.com/" target="_blank">
 https://www.brainyquote.com/</a> using Chris Pedrick's
 Web Developer add on to turn off all styles:
