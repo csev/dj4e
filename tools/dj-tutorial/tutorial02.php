@@ -23,7 +23,7 @@ Password: <?= htmlentities($adminpw) ?>
 You can use any email address you like.
 </p>
 <p>
-Using with the Django shell or the Dkango administration user interface, insert a
+Using with the Django shell or the Django administration user interface, insert a
 <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy" target="_blank">question</a> with the exact text:
 <pre>
 <?= $qtext ?>
