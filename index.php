@@ -19,7 +19,8 @@ You can take this course and receive a certificate at:
 <ul>
 <li><a href="https://www.coursera.org/specializations/django">Coursera: Django for Everybody Specialization</a></li>
 <li><a href="https://www.edx.org/xseries/michiganx-django-for-everybody">edX: Django for Everybody XSeries Program</a></li>
-<li><a href="https://www.futurelearn.com/programs/django">FutureLearn: Django for Everybody Program</a></li>
+<li><a href="https://www.futurelearn.com/programs/django">FutureLearn: Django for Everybody</a></li>
+<li><a href="https://www.youtube.com/watch?v=o0XbHvKxw7Y">FreeCodeCamp: Django for Everybody</a>
 </ul>
 </p>
 <p>
