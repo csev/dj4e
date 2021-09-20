@@ -17,10 +17,10 @@ This web site is building a set of free materials, lectures, and assignments to 
 learn the Django web development framework.  
 You can take this course and receive a certificate at:
 <ul>
-<li><a href="https://www.coursera.org/specializations/django">Coursera: Django for Everybody Specialization</a></li>
-<li><a href="https://www.edx.org/xseries/michiganx-django-for-everybody">edX: Django for Everybody XSeries Program</a></li>
-<li><a href="https://www.futurelearn.com/programs/django">FutureLearn: Django for Everybody</a></li>
-<li><a href="https://www.youtube.com/watch?v=o0XbHvKxw7Y">FreeCodeCamp: Django for Everybody</a>
+<li><a href="https://www.coursera.org/specializations/django" target="_blank">Coursera: Django for Everybody Specialization</a></li>
+<li><a href="https://www.edx.org/xseries/michiganx-django-for-everybody" target="_blank">edX: Django for Everybody XSeries Program</a></li>
+<li><a href="https://www.futurelearn.com/programs/django" target="_blank">FutureLearn: Django for Everybody</a></li>
+<li><a href="https://www.youtube.com/watch?v=o0XbHvKxw7Y" target="_blank">FreeCodeCamp: Django for Everybody</a>
 <li><a href="https://online.umich.edu/series/django/" target="_blank">Free certificates for University of Michgan students and staff</a></li>
 </ul>
 </p>
