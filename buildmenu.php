@@ -54,7 +54,7 @@ function buildMenu() {
     } else {
         $set->addRight('Login', $T.'login.php');
     }
-    $set->addRight('Instructor', 'http://www.dr-chuck.com');
+    $set->addRight('Instructor', 'http://online.dr-chuck.com');
 
     return $set;
 }
