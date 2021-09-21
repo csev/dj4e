@@ -7,6 +7,14 @@ require "top.php";
 require "nav.php";
 
 ?>
+
+<!-- Fix for smartphone screen responsiveness -->
+<style>
+code {
+  word-break: break-word;
+}
+</style>
+
 <div id="container">
 <div style="margin-left: 10px; float:right">
 <img src="images/Chuck_16x9_SakaiCar_DJ4E_small.png" onclick='window.location.href="https://www.sakaiger.com/sakaicar";' target="_blank" style="padding: 5px; width:360px;">
