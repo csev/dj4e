@@ -29,6 +29,19 @@ If you have already checked `dj4e-samples`  on PythonAnywhere do:
     git pull
     pip install -r requirements.txt
 
+To switch to using the MySQL database outside of the PythonAnywhere, you might need to install
+the MySQL client and possibly the server on your system before `pip install` will work using
+instructions at https://pypi.org/project/mysqlclient/ - once you have the MySQL
+prerequisites installed or are using PythonAnywhere, you can run:
+
+    pip install mysqlclient
+
+So your Python code can connect to MySQL databases.  If you are having installation problems,
+you can keep using the SQLite database but it will mean that your application will start to
+run much more slowly as we add complexity to the application.  It is especially to switch to
+MySQL on PythonAnywhere.
+
+
 __Important Note:__ If you find you have a problem saving files in the PythonAnywhere
 system using their browser-based editor, you might need to turn off your ad blocker for
 this site - weird but true.
