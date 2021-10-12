@@ -246,7 +246,8 @@ it into the right tables:
     1
     sqlite> SELECT COUNT(*) FROM unesco_site JOIN unesco_iso ON iso_id=unesco_iso.id WHERE unesco_site.name="Maritime Greenwich" AND unesco_iso.name = "gb";
     1
-    sqlite>
+    sqlite> .quit
+    $
 
 Upload to the Autograder
 ------------------------
