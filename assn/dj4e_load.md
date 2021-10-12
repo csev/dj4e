@@ -255,6 +255,9 @@ Upload to the Autograder
 When the data passes your manual tests, you can download `db.sqlite3` from PythonAnywhere
 and then upload it to the autograder.
 
+<center><img src="dj4e_load/pyaw_download.png" alt="An image pointing to the download icon on the Files tab on PythonAnywhere" style="width: 50%; border: 1px black solid;"></center>
+
+
 Resetting Your Database
 -----------------------
 
