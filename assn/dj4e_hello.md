@@ -68,8 +68,9 @@ Playing With Sessions (DIY)
 ---------------------------
 
 Your next goal is to make a new application named `hello`.  It will work like:
-<a href="https://djtutorial.dj4e.com/hello" target="_blank">
-https://djtutorial.dj4e.com/hello</a>
+<a href="https://samples.dj4e.com/session/sessfun" target="_blank">
+https://samples.dj4e.com/session/sessfun</a> but it will be in an application
+called `hello` with a single view.
 
 You will need to:
 
