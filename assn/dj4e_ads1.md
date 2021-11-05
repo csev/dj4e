@@ -135,7 +135,7 @@ to the values for your database.
     }
 
 (8) Once `check` works you will need to run your migrations and make a new
-adminsitrator account:
+administrator account:
 
     cd ~/django_projects/mysite
     python manage.py makemigrations      # Might say "no changes"
