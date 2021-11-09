@@ -34,7 +34,7 @@ the MySQL client and possibly the server on your system before `pip install` wil
 instructions at https://pypi.org/project/mysqlclient/ - once you have the MySQL
 prerequisites installed or are using PythonAnywhere, you can run:
 
-    pip install mysqlclient
+    pip install mysqlclient==1.4.6
 
 So your Python code can connect to MySQL databases.  If you are having installation problems,
 you can keep using the SQLite database but it will mean that your application will start to
