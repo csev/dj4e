@@ -33,7 +33,7 @@ to get back into your virtual environment in the new bash shell.
 Lets make sure that your django was installed successfully with the following command:
 
     python -m django --version
-    # This should show something like 3.0.2
+    # This should show something like 3.2.4
 
 Installing the Sample Code for DJ4E
 -----------------------------------
