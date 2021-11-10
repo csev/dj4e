@@ -47,7 +47,7 @@ Here are the tasks for this assignment.  These tasks can be done by editing HTML
 CSS files in your `site` folder on PythonAnywhere.
 <ul>
 <li><p>
-Make a folder <b>django_projects\site\css</b>.
+Make a folder <b>django_projects/mysite/site/css</b>.
 </p></li>
 <li><p>Take this <a href="index.txt" target="_blank">this file</a> and
 copy/paste the contents into
