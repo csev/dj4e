@@ -40,6 +40,8 @@ echo("<p>This is an experiment - under construction - see Chuck for details.</p>
 
 echo("<pre>\n");
 
+echo("Checking versions seen in the past 21 days...\n");
+
 // Lets find the most common version
 $versions = array();
 foreach ( $rows as $row ) {

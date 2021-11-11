@@ -23,7 +23,7 @@ Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 3.
 
     mkvirtualenv django3 --python=/usr/bin/python3.6
-    pip install django==3.2.4 ## this may take a couple of minutes
+    pip install django==3.2.5 ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
@@ -33,7 +33,7 @@ to get back into your virtual environment in the new bash shell.
 Lets make sure that your django was installed successfully with the following command:
 
     python -m django --version
-    # This should show something like 3.2.4
+    # This should show something like 3.2.5
 
 Installing the Sample Code for DJ4E
 -----------------------------------
