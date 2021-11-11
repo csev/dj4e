@@ -27,9 +27,9 @@ lots of things will fail.  You will not have access to the correct version
 of Python and you will not have a proper installation of Django.  You can always
 check which python you are running using the `--version` option.
 
-In the example below we are running Python 2.7.12 (bad) and Django 1.11.26 (very bad)
+In the example below we are running Python 2.7.12 (bad)
 without the virtual environment and once we activate into the virtual environment we are 
-using Python 3.6 and Django 3.1.
+using Python 3.8 and Django 3.1.
 
     17:33 ~ $ python --version
     Python 2.7.12
@@ -37,9 +37,9 @@ using Python 3.6 and Django 3.1.
     1.11.26
     17:33 ~ $ workon django3
     (django3) 17:33 ~ $ python --version
-    Python 3.6.9
+    Python 3.8.1
     (django3) 17:36 ~ $ python -m django --version
-    3.1.1
+    3.2.5
     (django3) 17:33 ~ $ 
 
 Each time you start a new bash shell, you need to type `workon django3`.  If you

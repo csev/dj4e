@@ -187,16 +187,16 @@ show reasonable version numbers:
 Linux/Mac:
 
     $ python3 --version
-    Python 3.6.0
+    Python 3.8.0
     $ python3 -m django --version
-    2.0.5
+    3.2.5
 
 If the above does not work on Windows, try:
 
     > py --version
-    Python 3.6.0
+    Python 3.8.0
     > py -m django --version
-    2.0.5
+    3.2.5
 
 You also need to have `git` installed and available in the shell / command line.
 

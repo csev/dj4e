@@ -22,7 +22,7 @@ Setting Up Your Environment
 Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 3.
 
-    mkvirtualenv django3 --python=/usr/bin/python3.6
+    mkvirtualenv django3 --python=/usr/bin/python3.8
     pip install django==3.2.5 ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
@@ -168,7 +168,7 @@ to upgrade your account - they give you one application like *drchuck.pythonanyw
 free application for the course.
 
 When making the new application, do *not* create a "Django application" - instead,
-select `manual configuration` and Python 3.6.  Once the webapp is created, you need to
+select `manual configuration` and Python 3.8.  Once the webapp is created, you need to
 make a few changes to the settings for the web app and your application.
 
     Source code: /home/drchuck/django_projects/mysite
