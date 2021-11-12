@@ -28,6 +28,7 @@ If you have already checked `dj4e-samples`  on PythonAnywhere do:
     cd ~/dj4e-samples
     git pull
     pip install -r requirements.txt
+    python manage.py check
 
 To switch to using the MySQL database outside of the PythonAnywhere, you might need to install
 the MySQL client and possibly the server on your system before `pip install` will work using
