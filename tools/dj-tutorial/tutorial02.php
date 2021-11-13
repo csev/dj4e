@@ -23,15 +23,15 @@ Password: <?= htmlentities($adminpw) ?>
 You can use any email address you like.
 </p>
 <p>
-Using with the Django shell or the Django administration user interface, insert a
+Using the Django shell or the Django administration user interface, insert a
 <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy" target="_blank">question</a> with the exact text:
 <pre>
 <?= $qtext ?>
 </pre>
-Insert at three choices and associate them with your question.  One of the choices
+Insert at least three choices and associate them with your question.  One of the choices
 should be "42".  
 (<a href="tutorial02/choice_detail.png" target="_blank">Example</a>)
-When you have stored this date, submit your Django admin url to the autograder.
+When you have stored this data, submit your Django admin url to the autograder.
 </p>
 <?php
 
