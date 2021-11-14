@@ -107,7 +107,7 @@ look at sample code and understand it - no more cutting and pasting instructions
 This assignment is not a lot of code. It is more about learning to read, reuse, and adapt code.
 There is lots of sample code in `dj4e-samples` - probably
 too much code.  If you just copy and paste everything from `dj4e-samples` it will be difficult to
-make this work.  Sometime when looking at code written by others, it is important to know what
-is going on to what *not* to copy.
+make this work.  When looking at code written by others, it is important to know what
+is going, what can be copied, and what *not* to copy.
 
 Also make sure to check the auto grader for any additional requirements for this assignment.
