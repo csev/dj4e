@@ -100,7 +100,7 @@ Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the 
 
     <li><p><a href="/hello">Test the session</a></p>
 
-These instructions are telling you *what* to do now *how* to do it. This is
+These instructions are telling you *what* to do not *how* to do it. This is
 another DIY part of this assignment -
 look at sample code and understand it - no more cutting and pasting instructions.
 
