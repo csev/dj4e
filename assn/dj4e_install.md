@@ -292,10 +292,10 @@ under the `Web` tab on PythonAnywhere:
 First check the `error` log and then check the `server` log.
 Make sure to scroll through the logs to the end to find the most recent error.
 
-Do you have two mysite filders?
+Do you have two mysite folders?
 -------------------------------
 
-For some reason students who finish this assignment often end u making their `mysite` folder twice.
+For some reason students who finish this assignment often end up making their `mysite` folder twice.
 They end up with a folder in their home directory and in their `django_projects` subfolder.
 
 <center><img src="dj4e_install/install_cleanup.png" alt="An image showing a mysite folder in django_projects and in the home directory with instructions to remove the one in the home directory" style="border: 1px black solid; width:80%;"></center>
