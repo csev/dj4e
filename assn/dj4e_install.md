@@ -182,7 +182,7 @@ Note that once you have your Virtualenv set up you have a very convenient link
 titled "Start a console in this virtualenv" - this is a great way to open up consoles
 so you never have to type "workon django3" and it makes sure your virtual
 envronment is properly set up and configured.
-<a href="paw_install/web_tab.png" target="_blank">Sample image</a>
+<a href="dj4e_install/web_tab.png" target="_blank">Sample image</a>
 
 Then edit the *WGSI Configuration File* and put the following code into it.
 __Make sure to delete the existing content__ of the *WGSI Configuration File* file and completely
