@@ -90,9 +90,9 @@ If your view function was named `myview`, the path will look as follows:
         path('', views.myview),
 
 * Change the project-wide `mysite/urls.py` to mount the new application's urls at `/hello`.  Look at the line for
-the `polls` urls and adapt it for yur `hello` application.
+the `polls` urls and adapt it for your `hello` application.
 
-* Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `home` application following
+* Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `hello` application following
 the pattern that you used to add the `polls` application to `INSTALLED_APPS` - again - the exact code
 is something you figure out from looking at `dj4e-samples` or from the lectures.
 
