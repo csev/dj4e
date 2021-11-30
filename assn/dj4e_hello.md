@@ -98,7 +98,7 @@ is something you figure out from looking at `dj4e-samples` or from the lectures.
 
 Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
-    <li><p><a href="/hello">Test the session</a></p>
+    <li><p><a href="/hello">Test the session</a></p></li>
 
 These instructions are telling you *what* to do not *how* to do it. This is
 another DIY part of this assignment -
