@@ -280,7 +280,7 @@
             "title" : "CSS - Sample Code Walkthrough (Part 2)",
             "youtube" : "MHqI-PKBl_A"
         }
-    ], 
+    ],
     "assignment" : "{apphome}/assn/css/index.php",
     "references" : [
         {
@@ -1134,17 +1134,17 @@
     "videos" : [
     {
         "title": "Creating and Managing Users in Django",
-        "project" : "DJ-09-Login-01-Users", 
+        "project" : "DJ-09-Login-01-Users",
         "youtube": "E_X5Kr6xmNY"
     },
     {
         "title": "Login and Logout URLs in Django",
-        "project" : "DJ-09-Login-02-Urls", 
+        "project" : "DJ-09-Login-02-Urls",
         "youtube": "tNofsgLH7c4"
     },
     {
         "title": "Login and Views in Django",
-        "project" : "DJ-09-Login-03-Views", 
+        "project" : "DJ-09-Login-03-Views",
         "youtube": "n5Xwqz1IJck"
     }
    ],
@@ -1925,7 +1925,7 @@
         {
         "title" : "Classified Ads #4",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_28_ads3"
+        "resource_link_id": "discuss_28_ads4"
         }
     ],
     "videos" : [
@@ -2003,6 +2003,59 @@
         {
             "title" : "Reference Implementation",
             "href": "https://chucklist.dj4e.com/m4"
+        }
+    ]
+},
+{
+    "title": "Building an Application on Your Own",
+    "anchor": "dj4e_solo",
+    "icon" : "fa-search",
+    "description": "This week - in the auto grader - you will be presented with a sample application and you are to replicate its fuctionality.  There is no new material - but you might want to look back and review some material to help with this assignment.",
+    "discussions" : [
+        {
+        "title" : "A Solo Appplication",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_29_solo"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "(Review) Using Sessions in Django",
+        "project" : "DJ-08-Cookies-02-Sessions",
+        "youtube": "RjykNmVdcgI"
+    },
+    {
+        "title": "(Review) Login and Views in Django",
+        "project" : "DJ-09-Login-03-Views",
+        "youtube": "n5Xwqz1IJck"
+    },
+    {
+        "title": "(Review) Django Views",
+        "youtube": "9Qk4vJMssMo",
+        "project": "DJ 06 Views 02 Views"
+    },
+    {
+        "title": "(Review) Using Templates in Django",
+        "youtube": "mTvWrpMGWBA",
+        "project": "DJ 06 Views 04 Templates"
+    },
+    {
+        "title": "(Review) Implementing POST Redirect in Django",
+        "project" : "DJ-10-Forms-06-Redirect",
+        "youtube": "a_ahU4F1V2g"
+    }
+   ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: An Application of Your Own",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_app_solo",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "15solo.php"
+            }
+        ]
         }
     ]
 },
