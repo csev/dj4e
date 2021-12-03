@@ -14,18 +14,16 @@ $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
 
 $now = date('H:i:s');
 
-line_out("Your job is to look at and replicate the functionality of an application.");
-
 $code = 'timecode_'.substr($timecode.'', 1, 6);
 $reverse = ($timecode % 2 == 0 ) ? 'yes' : 'no';
 $cases = array('none', 'upper', 'casefold', 'title');
 $case = $cases[($timecode/100) % count($cases)];
 
-$field1 = 'Hello';
-$field2 = 'World';
+$field1 = 'Hello world';
+$field2 = $names[$timecode % count($names)] .' ' . ($timecode % 100);
 
-$sample = "https://chucklist.dj4e.com/solo";
 $sample = "http://localhost:8000/solo";
+$sample = "https://chucklist.dj4e.com/solo";
 
 // Compute result
 $result = trim($field1) . ' ' . trim($field2);
@@ -40,11 +38,18 @@ else if ( $case == 'title' ) $result = ucwords($result);
 <input type="hidden" name="code" value="<?= $code ?>">
 <input type="hidden" name="case" value="<?= $case ?>">
 <input type="hidden" name="reverse" value="<?= $reverse ?>">
-<input type="submit" value="Replicate this application">
+Your Assignment: <input type="submit" value="Replicate this application">
 </form>
 <p>
-Create a user, by logging into the <b>/admin</b> URL of your application
-using a superuser account:
+The application that you need to implement will change every 24 hours in small ways so you need to look carefully at
+the set of steps in the sample application.  The changes will only be the time code calue and how you concatenate the 
+two strings. The rest of the application will be unchanged.  You can log into the sample application using:
+<pre>
+dj4e_user1 / Meow_81e728_41
+</pre>
+<p>
+<b>Your</b> application must require a log in before it can be used.  The auto grader
+will use the following account to log in to your application:
 <pre>
 <?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
 </pre>
