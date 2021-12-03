@@ -14,7 +14,18 @@ $now = date('H:i:s');
 
 line_out("Solo Mission");
 
+$code = 123;
+$reverse = 'yes';
+$case = 'upper';
+$sample = "https://chucklist.dj4e.com/solo";
+$sample = "http://localhost:8000/solo";
 ?>
+<form method="post" action="<?= $sample ?>/launch/" target="_blank">
+<input type="hidden" name="code" value="<?= $code ?>">
+<input type="hidden" name="case" value="<?= $case ?>">
+<input type="hidden" name="reverse" value="<?= $reverse ?>">
+<input type="submit" name="Sample Application">
+</form>
 <p>
 Create a user, by logging into the <b>/admin</b> URL of your application
 using a superuser account:
@@ -22,7 +33,7 @@ using a superuser account:
 <?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
 </pre>
 <?php
-$url = getUrl('https://chucklist.dj4e.com/solo');
+$url = getUrl($sample);
 if ( $url === false ) return;
 
 webauto_check_test();
@@ -49,6 +60,8 @@ $html = webauto_get_html($crawler);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
+webauto_dont_want($html, "Your result is");
+
 $field1 = 'Hello';
 $field2 = 'World';
 
@@ -62,6 +75,7 @@ $html = webauto_get_html($crawler);
 
 $result = 'Hello World';
 webauto_search_for($html, $result);
+webauto_search_for($html, "Your result is");
 
 
 // -------
