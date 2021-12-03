@@ -55,6 +55,7 @@ foreach ( $rows as $row ) {
 
 krsort($versions);
 $version = False;
+$count = 0;
 if ( count($versions) > 0 ) {
 	foreach ( $versions as $version => $count ) {
 		break;

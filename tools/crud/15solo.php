@@ -14,7 +14,7 @@ $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
 
 $now = date('H:i:s');
 
-$code = 'timecode_'.substr($timecode.'', 1, 6);
+$code = 'TimeCode_'.substr($timecode.'', 1, 6);
 $reverse = ($timecode % 2 == 0 ) ? 'yes' : 'no';
 $cases = array('none', 'upper', 'casefold', 'title');
 $case = $cases[($timecode/100) % count($cases)];
@@ -41,9 +41,12 @@ else if ( $case == 'title' ) $result = ucwords($result);
 Your Assignment: <input type="submit" value="Replicate this application">
 </form>
 <p>
-The application that you need to implement will change every 24 hours in small ways so you need to look carefully at
-the set of steps in the sample application.  The changes will only be the time code calue and how you concatenate the 
-two strings. The rest of the application will be unchanged.  You can log into the sample application using:
+The instructions for this assignment are unique to every student and will change
+once per 4 hours.
+The instructions for <b>your</b> assignment will be shown when you launch the application
+from this auto grader.  You may need to re-launch the application from the auto grader
+to re-check the specifications after some time passes.
+You can log into the sample application using:
 <pre>
 dj4e_user1 / Meow_81e728_41
 </pre>
