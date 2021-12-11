@@ -20,6 +20,9 @@ code {
 <img src="images/Chuck_16x9_SakaiCar_DJ4E_small.png" onclick='window.location.href="https://www.sakaiger.com/sakaicar";' target="_blank" style="padding: 5px; width:360px;">
 </div>
 <h1>Django for Everybody</h1>
+<?php
+if (version_compare(PHP_VERSION, '8.0.0') >= 0) echo('<p style="color:red;"><b>The autograders associated with this site do not work beyond PHP 7.</b></p>'."\n");
+?>
 <p>
 This web site is building a set of free materials, lectures, and assignments to help students
 learn the Django web development framework.  
