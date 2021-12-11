@@ -9,6 +9,7 @@ require_once "../crud/lib/goutte/Goutte/Client.php";
 
 use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
+use Goutte\Client;
 
 // Get any due date information
 $dueDate = SettingsForm::getDueDate();
@@ -16,6 +17,14 @@ $penalty = $dueDate->penalty;
 
 if ( $dueDate->message ) {
     echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
+}
+
+function webauto_setup() {
+    global $client;
+    // http://symfony.com/doc/current/components/dom_crawler.html
+    $client = new Client();
+    $client->setMaxRedirects(5);
+    $client->getClient()->setSslVerification(false);
 }
 
 function webauto_get_html($crawler) {

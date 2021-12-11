@@ -3,8 +3,6 @@
 require_once "../crud/webauto.php";
 require_once "../crud/names.php";
 
-use Goutte\Client;
-
 $code = $USER->id+$CONTEXT->id;
 $timecode = $code;
 $timecode = $timecode + intval((time() / (60*60*24)));
@@ -63,10 +61,7 @@ if ( $url === false ) return;
 webauto_check_test();
 $passed = 0;
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+webauto_setup();
 
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
@@ -78,7 +73,6 @@ $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
 webauto_change_form($form, 'username', $user1account);
 webauto_change_form($form, 'password', $user1pw);
 
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
@@ -90,7 +84,6 @@ $form = webauto_get_form_with_button($crawler,'Submit', 'Submit Query');
 webauto_change_form($form, 'field1', $field1);
 webauto_change_form($form, 'field2', $field2);
 
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 

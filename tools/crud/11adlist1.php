@@ -3,8 +3,6 @@
 require_once "../crud/webauto.php";
 require_once "../crud/names.php";
 
-use Goutte\Client;
-
 $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
@@ -43,10 +41,7 @@ if ( $url === false ) return;
 webauto_check_test();
 $passed = 0;
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+webauto_setup();
 
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
@@ -73,7 +68,6 @@ $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
 webauto_change_form($form, 'username', $user1account);
 webauto_change_form($form, 'password', $user1pw);
 
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
@@ -91,7 +85,6 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-        // $crawler = $client->submit($form);
 		$crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
     } 
@@ -114,7 +107,6 @@ webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.41');
 webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
 
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
@@ -137,7 +129,6 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
     webauto_change_form($form, 'title', $title."_updated");
-    // $crawler = $client->submit($form);
 	$crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     webauto_search_for($html,$title."_updated");
@@ -173,7 +164,6 @@ $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
 webauto_change_form($form, 'username', $user2account);
 webauto_change_form($form, 'password', $user2pw);
 
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
@@ -188,7 +178,6 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-        // $crawler = $client->submit($form);
 		$crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
         webauto_search_for_menu($html);
@@ -208,7 +197,6 @@ webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.42');
 webauto_change_form($form, 'text', 'Towels - guaranteed to impress Vogons.');
 
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
@@ -227,7 +215,6 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
     webauto_change_form($form, 'title', $title."_updated");
-    // $crawler = $client->submit($form);
 	$crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     webauto_search_for($html,$title."_updated");

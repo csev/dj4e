@@ -3,8 +3,6 @@
 require_once "webauto.php";
 require_once "names.php";
 
-use Goutte\Client;
-
 // TODO: Make this work on 06 07
 $code = $USER->id+$CONTEXT->id;
 
@@ -61,10 +59,7 @@ webauto_check_test();
 $admin = $url . 'admin';
 $main_url = trimSlash($url) . '/'  . $main_lower_plural;
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+webauto_setup();
 
 // Start the actual test
 $crawler = webauto_get_url($client, $main_url);
@@ -80,7 +75,6 @@ webauto_change_form($form, 'username', $useraccount);
 webauto_change_form($form, 'password', $userpw);
 
 line_out("Submitting form...");
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
@@ -115,7 +109,6 @@ for($i=0; $i<10; $i++) {
 
     $form = webauto_get_form_with_button($crawler,'Yes, delete.');
     line_out("Submitting form...");
-    // $crawler = $client->submit($form);
 	$crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     $count++;
@@ -133,7 +126,6 @@ $lookup_new = "LU_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);
 line_out("Submitting form...");
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 line_out("It looks like we created $lookup_article $lookup_lower named $lookup_new :)");
@@ -165,7 +157,6 @@ $lookup_new = $lookup_new . "_updated";
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);
 line_out("Submitting form...");
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
@@ -206,7 +197,6 @@ foreach($fields as $field) {
 }
 webauto_change_form($form, $lookup_lower, $lookup_select);
 line_out("Submitting form...");
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $new_nickname);
@@ -231,7 +221,6 @@ $new_nickname = $new_nickname . "_updated";
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'nickname', $new_nickname);
 line_out("Submitting form...");
-// $crawler = $client->submit($form);
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 
