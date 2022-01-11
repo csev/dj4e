@@ -80,11 +80,11 @@ progressMessage($grade,$possgrade);
 
 $possgrade++;
 $count = getTagCount($dom, 'li');
-if ( $count == 3 ) {
+if ( $count >= 3 ) {
     $grade++;
-    goodmessage('Found three li tags');
+    goodmessage('Found at least three li tags');
 } else {
-    badmessage('Wanted three li tags, found '.$count."\n");
+    badmessage('Wanted at least three li tags, found '.$count."\n");
 }
 progressMessage($grade,$possgrade);
 
