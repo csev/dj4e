@@ -13,7 +13,10 @@ $json = loadPeer("peer.json");
 <?= $json->description ?>
 <p>
 You should already have your system set up on PythonAnywhere and have completed the HTML
-assignment.
+assignment before starting this assignment.  The HTML assignment sets up your application to
+serve static files and we will need that set up to do this assignment.
+</p>
+<p>
 In this assignment, you will transform from this:
 <center>
 <a href="01-No-style.png" target="_blank">
