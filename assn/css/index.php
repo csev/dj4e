@@ -74,7 +74,8 @@ width be <b>25%</b> so the width changes as you resize your browser.</p></li>
 <li><p>Center the link at the top of the page.  Use your developer console / inspect element
 feature of your browser to visit <a href="https://www.brainyquote.com/" target="_blank">
 https://www.brainyquote.com/</a> and figure out the background color, font, and text color
-they are using an replicate that exactly for the link in your <b>index.htm</b>.
+they are using in the top navigation bar and replicate that exactly for the link to BrainyQuote
+in your <b>index.htm</b>.
 </p></li>
 <li><p>Your CSS must pass the validator at:
 <pre>

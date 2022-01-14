@@ -12,7 +12,7 @@ Assignment instructions:
 <a href="https://www.dj4e.com/assn/dj4e_install.md" target="_blank">
 https://www.dj4e.com/assn/dj4e_install.md
 </a>.
-This assignment will cover the material in 
+This assignment will cover the material in
 Part 1 of the Django tutorial at
 <a href="https://docs.djangoproject.com/en/3.0/intro/tutorial01/" target="_blank">
 https://docs.djangoproject.com/en/3.0/intro/tutorial01/</a>
@@ -29,7 +29,8 @@ Here is a sample of what you might put into your <b>views.py</b>.
 <pre>
     return HttpResponse("Hello, world. <?= $message ?> is the polls index.")
 </pre>
-Also you will need to edit the file <b>mysite/mysite/settings.py</b> and change the following line:
+Also you will need to edit the file <b>mysite/mysite/settings.py</b> and
+edit the <b>ALLOWED_HOSTS</b> to look as follows:
 <pre>
 ALLOWED_HOSTS = ['*']
 </pre>
