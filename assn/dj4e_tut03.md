@@ -11,5 +11,5 @@ Learning Objectives:
 * Further detail on url.py and url routing
 
 
-https://docs.djangoproject.com/en/3.0/intro/tutorial03/
+https://docs.djangoproject.com/en/3.2/intro/tutorial03/
 
