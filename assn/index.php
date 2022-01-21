@@ -96,6 +96,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_install.md") ?>>Django and PythonAnywhere</option>
   <option <?= x_sel("dj4e_html.md") ?>>Adding HTML</option>
   <option <?= x_sel("dj4e_tut01.md") ?>>Serving Dynamic Content</option>
+  <option <?= x_sel("dj4e_tutpaw.md") ?>>PythonAnywhere and Django Tutorials</option>
   <option <?= x_sel("dj4e_tut02.md") ?>>Django Models</option>
   <option <?= x_sel("dj4e_tut03.md") ?>>Django Views</option>
   <option <?= x_sel("dj4e_tut04.md") ?>>Django Forms</option>
@@ -122,6 +123,7 @@ These are the assignments for Django for Everybody (DJ4E).
 <li><a href="dj4e_install.md">Django and PythonAnywhere</a></li>
 <li><a href="dj4e_html.md">Adding HTML</a></li>
 <li><a href="dj4e_tut01.md">Serving Dynamic Content</a></li>
+<li><a href="dj4e_tutpaw.md">PythonAnywhere and Django Tutorials</a></li>
 <li><a href="dj4e_tut02.md">Django Models</a></li>
 <li><a href="dj4e_tut03.md">Django Views</a></li>
 <li><a href="dj4e_tut04.md">Django Forms</a></li>

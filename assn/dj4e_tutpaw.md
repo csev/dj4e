@@ -17,6 +17,7 @@ while building the tutorial on PythonAnywhere.
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
 * What to do when the tutorial tells you to access 'localhost:8000'
+* How and when you exit the Django shell (>>> prompt)
 * When everything works but your application says 'Something went wrong :-('
 
 You *must* be in your virtual environment
@@ -143,6 +144,51 @@ Add the `polls` to your URL.
 
 You do not need to add `django_projects` or `mysite` to your URL - this is all captured
 in the settings under the 'Web' tab in the PythonAnywhere user interface.
+
+How and when you exit the Django shell
+-------------------------------------- 
+
+In tutorial 2, you edit `models.py` and run the Django Shell, then you edit
+the `models.py` file again and then run the shell again. What the tutorial does
+not mention is the need to exit and restart the shell any time you change
+`models.py`.  The tutorial tells you to run the shell again but it does not
+tell you to exit the existing shell first - so you might see an error like this:
+
+    (django3) 17:16 ~/django_projects/mysite (master)$ python manage.py shell
+    Type "help", "copyright", "credits" or "license" for more information.
+    (InteractiveConsole)
+    >>> # Do some django shell stuff
+
+    >>> python manage.py shell
+    File "<console>", line 1
+        python manage.py shell
+            ^
+    SyntaxError: invalid syntax
+    >>> 
+
+The correct way is to exit the shell and restart it.
+
+    (django3) 17:20 ~/django_projects/mysite (master)$ python manage.py shell
+    Type "help", "copyright", "credits" or "license" for more information.
+    (InteractiveConsole)
+    >>> # Do some django shell stuff
+
+    >>> quit()
+    (django3) 17:20 ~/django_projects/mysite (master)$ 
+
+Then you edit your `models.py` and *re-start* the Django shell from the
+`bash` console:
+
+    (django3) 17:24 ~/django_projects/mysite (master)$ python manage.py shell
+    Type "help", "copyright", "credits" or "license" for more information.
+    (InteractiveConsole)
+    >>> # Do some more django shell stuff
+
+    >>> quit()
+    (django3) 17:20 ~/django_projects/mysite (master)$ 
+
+After a while you will understand that you need to be in `bash` (dollar sign prompt)
+to run bash commands and be in the Django shell (>>> prompt) to run Django commands.
 
 When everything works but your application says 'Something went wrong :-('
 --------------------------------------------------------------------------

@@ -158,7 +158,7 @@
             "href" : "https://docs.djangoproject.com/en/3.2/intro/tutorial01/"
         },
         {
-            "title" : "Problems Running Django Project Tutorials on PythonAnywhere",
+            "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
             "href" : "{apphome}/assn/dj4e_tutpaw.md"
         },
         {
@@ -207,6 +207,10 @@
         }
     ],
     "references" : [
+        {
+            "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
+            "href" : "{apphome}/assn/dj4e_tutpaw.md"
+        },
         {
             "title" : "HTML Sample Code (Browse)",
             "href" : "{apphome}/code/html/index.htm"
@@ -503,7 +507,7 @@
             "href": "https://docs.djangoproject.com/en/3.2/intro/tutorial02/"
         },
         {
-            "title" : "Problems Running Django Project Tutorials on PythonAnywhere",
+            "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
             "href" : "{apphome}/assn/dj4e_tutpaw.md"
         },
         {
@@ -668,7 +672,7 @@
             "href": "https://docs.djangoproject.com/en/3.2/intro/tutorial03/"
         },
         {
-            "title" : "Problems Running Django Project Tutorials on PythonAnywhere",
+            "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
             "href" : "{apphome}/assn/dj4e_tutpaw.md"
         },
         {
