@@ -84,7 +84,7 @@ webauto_search_for($html, $qtext);
 
 // -------------------- Send the grade ---------------
 line_out(' ');
-$perfect = 3;
+$perfect = 4;
 if ( $passed > $perfect ) $passed = $perfect;
 
 if ( ! $check ) {
