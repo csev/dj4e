@@ -367,7 +367,9 @@ function webauto_get_radio_button_choice($form,$field_name,$choice)
 
     $formnode = $form->getFormNode();
     $value = false;
-    foreach($formnode->childNodes as $node){
+    $allNodes = webauto_recurse_children($form->getFormNode());
+    // foreach($formnode->childNodes as $node){
+    foreach($allNodes as $node){
         if ( $node->nodeName == "input" ) {
             $value = $node->getAttribute("value");
             continue;
@@ -378,6 +380,19 @@ function webauto_get_radio_button_choice($form,$field_name,$choice)
     }
     error_out("Could not form input '$field_name' with label of '$choice'");
     return false;
+}
+
+
+function webauto_recurse_children($startnode) {
+    $nodes = array();
+    foreach($startnode->childNodes as $node){
+        $nodes[] = $node;
+        if ( is_object($node) && $node->childNodes->length > 0 ) {
+            $more = webauto_recurse_children($node);
+            $nodes = array_merge($nodes, $more);
+        }
+    }
+    return $nodes;
 }
 
 function webauto_get_form_with_button($crawler,$text, $text2=false)

@@ -66,8 +66,10 @@ if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 webauto_search_for($html, 'Hello');
 
+$hascheck = false;
 if ( $check && stripos($html,$check) !== false ) {
     markTestPassed("Found ($check) in your html");
+    $hascheck = true;
 } else {
     error_out("Did not find $check in your html");
     error_out("No score will be sent, but the test will continue");
@@ -109,12 +111,12 @@ webauto_search_for($html, 'Vote again?');
 line_out(' ');
 $perfect = 8;
 
-if ( ! $check ) {
-    error_out("No score sent, missing owner name");
+$score = webauto_compute_effective_score($perfect, $passed, $penalty);
+
+if ( ! $hascheck ) {
+    error_out("No score sent, missing owner value");
     return;
 }
-
-$score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 // Send grade
 if ( $score > 0.0 ) webauto_test_passed($score, $url);
