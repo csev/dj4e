@@ -45,7 +45,7 @@ Then submit your Django base site (i.e. with no path) to this autograder.
 </p>
 <?php
 
-$url = getUrl('http://djtutorial.dj4e.com');
+$url = getUrl('http://drchuck.pythonanywhere.com');
 if ( U::endsWith($url, '/hello') ) $url = str_replace('/hello', '', $url);
 if ( U::endsWith($url, '/hello/') ) $url = str_replace('/hello/', '', $url);
 if ( $url === false ) return;
@@ -63,9 +63,7 @@ $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 if (  stripos($html,'Page not found') !== false ) {
-    line_out("Your top page is not correct - No score will be sent, but the test will continue");
-    $send = false;
-} else {
+    line_out("Hey - that top page is always a 404 - no problem - lets keep going :) ");
     $passed++;
 }
 

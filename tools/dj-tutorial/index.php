@@ -21,6 +21,7 @@ $assignments = array(
     'tutorial03.php' => 'Writing your first Django app (part 3)',
     'tutorial04.php' => 'Writing your first Django app (part 4)',
     'hello05.php' => 'Hello world / sessions',
+    'guess.php' => 'A guessing game',
 );
 
 $oldsettings = Settings::linkGetAll();
