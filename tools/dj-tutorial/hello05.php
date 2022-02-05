@@ -133,7 +133,7 @@ if ( $value == $check ) {
 
 // -------------------- Send the grade ---------------
 line_out(' ');
-$perfect = 7;
+$perfect = 6;
 
 if ( ! $send ) {
     error_out("No score sent");
