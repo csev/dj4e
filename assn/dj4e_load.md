@@ -92,9 +92,10 @@ columns that have vertical duplication, such as region:
     Cultural    Algeria                Arab States                 dz
     Cultural    Algeria                Arab States                 dz
 
-You will make a Django model that describes the tables, one-to-many relationships,
-and foreign keys sufficient to represent this data efficiently with no vertical duplication.
-Numbers and dates do not have to have their own tables.
+You need a Django model that describes the tables, one-to-many relationships,
+and foreign keys sufficient to represent this data efficiently with no
+vertical duplication of string values.  Numbers and dates do not have to
+have their own tables.
 
     from django.db import models
 
