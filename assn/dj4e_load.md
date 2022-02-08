@@ -96,39 +96,48 @@ You will make a Django model that describes the tables, one-to-many relationship
 and foreign keys sufficient to represent this data efficiently with no vertical duplication.
 Numbers and dates do not have to have their own tables.
 
-Draw the data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">Crow's-Foot Notation</a>. You can use paper, or a layout tool - one way or another your
-diagram should have five boxes and four lines - and the each of lines should be properly labelled
-as a "many" or a "one" end.
-
-Name the first model `Site`, use singular names for all of the table/model
-names.  Use the exact name of the column for the model field names and
-foreign key names.  Here is a subset of the `unesco/models.py`:
-
     from django.db import models
 
-    class Category(models.Model) :
-        name = models.CharField(max_length=128)
-
+    class Category(models.Model):
+        name = models.CharField(max_length=128, default="")
         def __str__(self) :
             return self.name
 
-    class State(models.Model) :
+    class State(models.Model):
+        name = models.CharField(max_length=128, default="")
+        def __str__(self) :
+            return self.name
 
-    ...
+    class Iso(models.Model):
+        name = models.CharField(max_length=128, default="")
+        def __str__(self) :
+            return self.name
+
+    class Region(models.Model):
+        name = models.CharField(max_length=128, default="")
+        def __str__(self) :
+            return self.name
 
     class Site(models.Model):
-        name = models.CharField(max_length=128)
+        name = models.CharField(max_length=300)
         year = models.IntegerField(null=True)
-        category = models.ForeignKey(Category, on_delete=models.CASCADE)
-
-        ....
+        latitude = models.FloatField(null=True)
+        longitude = models.FloatField(null=True)
+        description = models.TextField(null=True)
+        justification = models.TextField(null=True)
+        area_hectares = models.FloatField(null=True)
+        category = models.ForeignKey("Category", on_delete=models.CASCADE, null=True)
+        region = models.ForeignKey("Region", on_delete=models.CASCADE, null=True)
+        iso = models.ForeignKey("Iso", on_delete=models.CASCADE, null=True)
+        state = models.ForeignKey("State", on_delete=models.CASCADE, null=True)
 
         def __str__(self) :
             return self.name
 
-All of the columns from the CSV data must be represented somewhere in the
-data model.  There should be five models in your design, and four One-To-Many
-relationships and no Many-to-Many relationships.
+Draw the data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">Crow's-Foot Notation</a>. You
+can use paper, or a layout tool - one way or another your
+diagram should have five boxes and four lines - and the each of lines should be properly labelled
+as a "many" or a "one" end.
 
 Also add the models to `unesco/admin.py` so you can view them in the administrator interface:
 
@@ -208,7 +217,7 @@ see if it is a valid integer and if it is not a valid integer set it to `None` w
     site = Site(name=row[0], description=row[1], year=y, ... )
     site.save()
 
-You will need to do this for each of the numeric fields that might be missing.
+You will need to do this for each of the numeric fields that might be missing or have invalid data.
 
 Running the Script
 ------------------
@@ -261,7 +270,7 @@ and then upload it to the autograder.
 Resetting Your Database
 -----------------------
 
-If the autograder complains that your file is somehow too big, 
+If the autograder complains that your file is somehow too big,
 or you have been changing your `models.py` and your `makemigrations`
 is asking you how to convert existing columns,
 or you just
@@ -277,5 +286,6 @@ want to start with a fresh database, you can run the following commands.
 Make sure you run these commands in the correct folder
 (i.e. `~/django_projects/batch`).  You can run this process in any Django
 project but your database is completely reset (i.e. admin and login accounts
-are deleted as well).  This also completely rebuilds your migrations 
+are deleted as well).  This also completely rebuilds your migrations
 from your latest `models.py` file(s).
+
