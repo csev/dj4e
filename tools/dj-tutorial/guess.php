@@ -20,8 +20,8 @@ You have to figure out the secret number to guess by using the above application
 <p>
 There are two paths in the <b>urls.py</b> for the <b>guess</b> application in the Django project.
 <pre>
-    path('', views.index, name='index'),
-    path('&lt;int:guessvalue&gt;', views.guess, name='index'),
+    path('', views.index),
+    path('&lt;int:guessvalue&gt;', views.guess),
 </pre>
 </p>
 <?php
