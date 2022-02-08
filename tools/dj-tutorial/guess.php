@@ -15,7 +15,8 @@ $sample = "https://drchuck.pythonanywhere.com/guess/";
 Your Assignment: <input type="submit" value="Replicate this application">
 </form>
 <p>
-You have to figure out the secret number to guess by using the above application.
+Each student is given a different number for their guessing game.  To figure out
+<strong>your</strong> particular number, play the above guessing game.
 </p>
 <p>
 There are two paths in the <b>urls.py</b> for the <b>guess</b> application in the Django project.
