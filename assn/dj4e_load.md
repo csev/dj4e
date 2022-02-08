@@ -140,18 +140,6 @@ can use paper, or a layout tool - one way or another your
 diagram should have five boxes and four lines - and the each of lines should be properly labelled
 as a "many" or a "one" end.
 
-Also add the models to `unesco/admin.py` so you can view them in the administrator interface:
-
-    from django.contrib import admin
-
-    # Register your models here.
-
-    from unesco.models import Site, Category, ...
-
-    admin.site.register(Site)
-    admin.site.register(Category)
-    ...
-
 Once you have your model built, run `makemigrations` and `migrate` to create
 the database.
 
