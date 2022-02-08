@@ -14,10 +14,24 @@ $sample = "https://drchuck.pythonanywhere.com/guess/";
 <input type="hidden" name="secret" value="<?= $secret ?>">
 Your Assignment: <input type="submit" value="Replicate this application">
 </form>
+<?php if ( $secret == 42 ) { ?>
+<p>Congratulations, you got the number 42 as your secret number!  To celebrate, 
+you get an instant 100% on this assignment!  
+</p>
+<?php
+webauto_test_passed(1.0, "about:42");
+?>
+<p>
+You can still run the autograder but you already have been awarded a perfect score!
+</p>
+<?php } else { ?>
 <p>
 Each student is given a different number for their guessing game.  To figure out
-<strong>your</strong> particular number, play the above guessing game.
+<strong>your</strong> particular number, play the above guessing game.  You cannot just visit that URL
+to find your number - if you visit the URL the will always be 42.  You must visit the URL using the
+above button to get <strong>your</strong> number.
 </p>
+<?php } ?>
 <p>
 There are two paths in the <b>urls.py</b> for the <b>guess</b> application in the Django project.
 <pre>
