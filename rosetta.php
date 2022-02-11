@@ -43,7 +43,7 @@
 
 <li><p>
 <a href="https://github.com/csev/sakai/blob/plus/plus/tool/src/main/java/org/sakaiproject/plus/tool/MainController.java" target="_blank">MainController.java</a> ↔️
-<a href="https://github.com/csev/dj4e-samples/blob/main/autos/urls.py" target="_blank">views.py</a> and
+<a href="https://github.com/csev/dj4e-samples/blob/main/autos/urls.py" target="_blank">urls.py</a> and
 <a href="https://github.com/csev/dj4e-samples/blob/main/autos/views.py" target="_blank">views.py</a>
 </p></li>
 
