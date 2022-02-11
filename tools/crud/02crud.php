@@ -44,8 +44,8 @@ as shown below:
 <pre>
 <?= htmlentities($meta) ?> 
 </pre>
-If there is already a meta tag with the value "42-42" make sure to remove it or replace it
-with the above tag.
+If there is already a meta tag with the value "42-42" <b>make sure</b>
+to <em>remove it or replace</em> it with the above tag.
 </p>
 
 <?php
