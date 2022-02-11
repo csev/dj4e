@@ -38,6 +38,10 @@
 </p></li>
 
 <li><p>
+<a href="https://github.com/csev/sakai/blob/plus/plus/tool/src/main/resources/Messages.properties" target="_blank">Messages.properties</a> (I18N)
+</p></li>
+
+<li><p>
 <a href="https://github.com/csev/sakai/blob/plus/plus/tool/src/main/java/org/sakaiproject/plus/tool/MainController.java" target="_blank">MainController.java</a> ↔️
 <a href="https://github.com/csev/dj4e-samples/blob/main/autos/urls.py" target="_blank">views.py</a> and
 <a href="https://github.com/csev/dj4e-samples/blob/main/autos/views.py" target="_blank">views.py</a>
@@ -46,10 +50,6 @@
 <li><p>
 <a href="https://github.com/csev/sakai/blob/plus/plus/tool/src/main/webapp/WEB-INF/templates/index.html" target="_blank">index.html</a>  ↔️ 
 <a href="https://github.com/csev/dj4e-samples/blob/main/autos/templates/autos/auto_list.html" target="_blank">auto_list.html</a>
-</p></li>
-
-<li><p>
-<a href="https://github.com/csev/sakai/blob/plus/plus/tool/src/main/resources/Messages.properties" target="_blank">Messages.properties</a> (I18N)
 </p></li>
 
 <li><p>
