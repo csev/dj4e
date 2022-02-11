@@ -7,6 +7,10 @@
 <ul>
 
 <li><p>
+<a href="https://www.dj4e.com/lessons/dj4e_mvc" target="_blank">My module on Django MVC</a>
+</p></li>
+
+<li><p>
 <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html" target="_blank">Spring MVC Web Framework Dcumentation</a>
 </p></li>
 
