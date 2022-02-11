@@ -3,9 +3,17 @@
 <title>Connecting Django and Java</title>
 </head>
 <body>
-<h1>Connecting Django and Java</h1>
+<h1>Connecting Python/Django and Java/Spring MVC</h1>
 <ul>
 
+<li><p>
+<a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html" target="_blank">Spring MVC Web Framework Dcumentation</a>
+</p></li>
+
+<li><p>
+<a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/images/mvc.png" target="_blank">Spring MVC Web Framework Diagram</a>
+</p></li>
+<hr/>
 <li><p>
 <a href="https://github.com/csev/sakai/blob/plus/plus/api/src/main/java/org/sakaiproject/plus/api/model/Tenant.java" target="_blank">Tenant Data Model</a> ↔️
 <a href="https://github.com/csev/dj4e-samples/blob/main/autos/models.py" target="_blank">models.py</a>
