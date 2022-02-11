@@ -569,6 +569,10 @@
         {
             "title" : "Django and MVC (FAQ)",
             "href": "https://docs.djangoproject.com/en/3.2/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names"
+        },
+        {
+            "title" : "Two MVC Approaches: Python/Django versus Java/Spring MVC",
+            "href": "{apphome}/rosetta"
         }
     ]
 },
