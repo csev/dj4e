@@ -95,7 +95,8 @@ the shorter form like the Auto views.
 have the application working, you should come back and rewrite the `Make` views using the same patterns as the `Auto` views.
 If you switch to the pattern in the `Autos` views and use the generic edit views on your `Make` views you no longer need to
 have a `MakeForm` or `forms.py`.   You can either write the long version of the views or the short version of the views - the
-long version is easier to code but more challenging to understand.
+short version is easier to code but more challenging to understand because it relies so heavily on a complex parent object
+and inheritance.
 
 * Run the `python manage.py check` until you see no errors
 
