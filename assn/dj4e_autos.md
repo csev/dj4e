@@ -58,14 +58,14 @@ The essense of this task is to adapt the code from:
 
 https://github.com/csev/dj4e-samples/tree/main/autos
 
-and make it work in your `autos` project.  As always there is a lot of code in `dj4e-samples` - be careful 
+and make it work in your `autos` project.  As always there is a lot of code in `dj4e-samples` - be careful
 copying - and only copy code when you know why you are copying it.  Go slowly.
 
 Here are some tasks:
 
 * Go into your `dj4e-samples` folder and do a `git pull` to get the latest version of the samples code.
 
-* Create `mysite/home/templates` and `mysite/home/templates/registration` folders using `mkdir` and copy the
+* Create `mysite/home/templates/registration` folders using `mkdir` and copy the
 (<a href="https://github.com/csev/dj4e-samples/blob/main/home/templates/registration/login.html" target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
 
 * Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
@@ -91,12 +91,11 @@ It will make things a lot simpler in the long run if you convert the Make views 
 the shorter form like the Auto views.
 (<a href="https://github.com/csev/dj4e-samples/blob/main/autos/views.py" target="_blank">Example</a>)
 
-* In your `views.py` file, you should *not* simply use the code for the `Make` views.  You
-should rewrite the `Make` views using the same patterns as the `Auto` views.  If you
-don't use the generic edit views on your `Make` views you will need to define the
-appropriate `MakeForm` in your `forms.py` just like in the sample code.  The
-best approach is to build your `views.py` *without* using
-a `forms.py` - but you can do it either way.
+* In your `views.py` file, you can start out using the `Make` views from the sample code, but once you
+have the application working, you should come back and rewrite the `Make` views using the same patterns as the `Auto` views.
+If you switch to the pattern in the `Autos` views and use the generic edit views on your `Make` views you no longer need to
+have a `MakeForm` or `forms.py`.   You can either write the long version of the views or the short version of the views - the
+long version is easier to code but more challenging to understand.
 
 * Run the `python manage.py check` until you see no errors
 
@@ -154,7 +153,7 @@ But instead you did:
 
 (i.e. you extended `View` instead of `UpdateView`) - the result is that there
 is no `def get(self, request):` in your view.
-So you get the 
+So you get the
 <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors" target="_blank">405 HTTP status code</a> (invalid method)
 when you navigate to the URL that forwards to the view.
 
