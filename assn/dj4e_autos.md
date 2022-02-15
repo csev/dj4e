@@ -84,12 +84,9 @@ Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file
         path('accounts/', include('django.contrib.auth.urls')),  # Add
         path('autos/', include('autos.urls')),                   # Add
 
-* Edit the `autos/urls.py` file to add routes for the list, edit, and delete pages for both autos and makes
+* Edit the `autos/urls.py` file to add routes for the list, create, update, and delete views for both autos and makes
 
-* Edit the `autos/views.py` file to add views for the list, edit, and delete pages for both autos and makes.
-It will make things a lot simpler in the long run if you convert the Make views to
-the shorter form like the Auto views.
-(<a href="https://github.com/csev/dj4e-samples/blob/main/autos/views.py" target="_blank">Example</a>)
+* Edit the `autos/views.py` file to add views for the list, create, update, and delete views for both autos and makes.
 
 * In your `views.py` file, you can start out using the `Make` views from the sample code, but once you
 have the application working, you should come back and rewrite the `Make` views using the same patterns as the `Auto` views.
