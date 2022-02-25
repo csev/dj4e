@@ -331,7 +331,7 @@ Please also have in a ZIP of your source code of your new application
 in case there is a need to verify your work or assign partial credit.
 </p>
 <p>
-If you are doing your work on PythonAnywhere, create a ZIP file as follows:
+If you are doing your work on PythonAnywhere, go into a console shell and create a ZIP file as follows:
 <pre>
     cd ~/django_projects/mysite
     rm -f <?= $main_lower_plural ?>.zip
@@ -343,7 +343,7 @@ Files tab of PythonAnywhere and upload the ZIP file back up to the LMS.  Some br
 happens simply compress it again to make a ZIP to upload.
 </p>
 <p>
-If you are doing your work on a Mac or Windows, you can make a ZIP by using the "Compress
+If you are doing your work locally on a Mac or Windows and using ngrok to submist your assignment, you can make a ZIP by using the "Compress
 Folder" feature.
 </p>
 <?php } ?>
