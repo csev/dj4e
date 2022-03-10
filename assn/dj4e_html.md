@@ -14,7 +14,7 @@ Django environment so they are available to the autograder for grading.
 Serving HTML Content
 --------------------
 
-Make a two folders
+Make two folders
 
     mkdir ~/django_projects/mysite/site
     mkdir ~/django_projects/mysite/site/subfolder
