@@ -62,7 +62,7 @@ The autograder will just look at /ads.
     cp ~/dj4e-samples/dj4e-samples/urls.py ~/django_projects/mysite/mysite
     cp -r ~/dj4e-samples/home/* ~/django_projects/mysite/home
 
-(2) Edit `~/dango_projects/mysite/mysite/settings.py` and then delete
+(2) Edit `~/django_projects/mysite/mysite/settings.py` and then delete
 all the `INSTALLED_APPLICATIONS` after `home`.  You will have to search
 and replace `dj4e-samples` with `mysite` in a few places.  Also set
 the name of your application in the `settings.py` file:
@@ -103,11 +103,12 @@ don't worry - you will see this warning until you set up the social login.
 (6) We are going to switch your application on PythonAnywhere from using an
 SQLite database to a MySQL database for the rest of this course.  If you keep running
 SQLite and your application stores too much data it will start to slow down.
-If you are running locally, you can keep using SQLite. Go to
-the `Databases` tab in PythonAnywhere. Make a MySQL database and choose
-a name and password and write them down.
+If you are running locally, you can keep using SQLite. 
 
-(7) Edit `~/dango_projects/mysite/mysite/settings.py` and find the existing
+(7) To use MySQL, first go to the `Databases` tab in PythonAnywhere. Make a MySQL database 
+named `ads` and choose a name and password and write them down.
+
+(8) Edit `~/django_projects/mysite/mysite/settings.py` and find the existing
 value for the `DATABASES` variable and comment it out.
 
     # DATABASES = {
@@ -135,7 +136,7 @@ to the values for your database.
         }
     }
 
-(8) Once `check` works you will need to run your migrations and make a new
+(9) Once `check` works you will need to run your migrations and make a new
 administrator account:
 
     cd ~/django_projects/mysite
@@ -147,7 +148,7 @@ If the `makemigrations` works and `migrate` fails, you may have an error
 in the `DATABASE` section of your `settings.py`.   You can edit your `settings.py`
 and rerun the `migrate` until it works.
 
-(9) If you restart your web application, there won't be many working urls.
+(10) If you restart your web application, there won't be many working urls.
 Try these two to see if you have the home code working properly:
 
     https://your-account.pythonanywhere.com/
