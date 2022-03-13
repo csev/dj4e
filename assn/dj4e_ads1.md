@@ -77,8 +77,8 @@ remove all of the `path()` calls to the sample applications. Make
 sure to keep the `path()` to `home.urls`.  Also keep
 the `site` and `favicon` rules in your `urls.py`.
 
-(4) Edit the file `django_projects/mysite/home/templates/home/main.html` and put
-this HTML in the file:
+(4) Edit the file `django_projects/mysite/home/templates/home/main.html` and replace the
+contents with this:
 
     {% extends "base_bootstrap.html" %}
     {% block content %}
@@ -410,6 +410,20 @@ for someone else.
 It is not tricky on purpose.  We want you to succeed in this assignment.  But we do want you
 to do less cutting-and-pasting and more writing Django applications.
 
+Some Common Errors in This Assignment
+-------------------------------------
+
+Since you are in effect starting with a brand new `mysite/settings.py` and `mysite/urls.py`, you might
+find a few problems when you are running `python manage.py check` - I will keep a list of the common
+problems and their solutions here:
+
+(1) If you see an error message "TypeError: 'module' object is not iterable" when you are
+running `python manage.py check`, this maybe because you mistakenly
+edited the `ROOT_URLCONF` value in `settings.py`  - your value should be:
+
+    ROOT_URLCONF = 'mysite.urls'
+
+More will be added as the problems are identified.
 
 <script>
 var d= new Date();
