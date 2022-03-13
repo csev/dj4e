@@ -11,6 +11,12 @@ use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
 use Goutte\Client;
 
+$ngrok_fails = array(
+    "ngrok.com/signup",
+    "Sign up for an ngrok account",
+    "ngrok account and install your authtoken",
+);
+
 // Get any due date information
 $dueDate = SettingsForm::getDueDate();
 $penalty = $dueDate->penalty;
@@ -28,6 +34,7 @@ function webauto_setup() {
 }
 
 function webauto_get_html($crawler) {
+    global $ngrok_fails;
     try {
         $html = $crawler->html();
     }
@@ -48,6 +55,14 @@ function webauto_get_html($crawler) {
         }
         line_out("It appears that there is a Django error on this page");
         if ( $title ) error_out($title);
+    }
+    // Check for ngrok failures
+    $ngrok_fail = false;
+    foreach($ngrok_fails as $fail) {
+        if ( stripos($html, $fail) !== false ) $ngrok_fail = true;
+    }
+    if ( $ngrok_fail ) {
+        error_out("It appears that your ngrok tunnel is not working properly.");
     }
     showHTML("Show retrieved page",$html);
 
