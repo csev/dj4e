@@ -201,7 +201,7 @@ Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/
 (3) Copy the `owner.py` from `myarts` to your ads application.  This is the one file you <b>do not</b>
 have to change at all (thanks to object orientation 😊).
 
-(4) The files `admin.py`, `views.py`, `urls.py`, and the `templates` folder will require significant
+(4) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in the `myarts` folder will require significant
 adaptation to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
 view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
