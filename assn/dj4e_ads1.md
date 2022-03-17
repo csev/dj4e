@@ -65,7 +65,8 @@ The autograder will just look at /ads.
 (2) Edit `~/django_projects/mysite/mysite/settings.py` and then delete
 all the `INSTALLED_APPLICATIONS` after `home`.  You will have to search
 and replace `dj4e-samples` with `mysite` in a few places.  Also set
-the name of your application in the `settings.py` file:
+the name of your application in the `settings.py` file to something other
+than `ChucksList`:
 
     # Used for a default title
     APP_NAME = 'ChucksList'
