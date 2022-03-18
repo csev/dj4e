@@ -16,11 +16,11 @@ $user2pw = "Meow_42_" . substr(getMD5(),1,6);
 
 $now = date('H:i:s');
 
-line_out("Building Classified Ad Site #2");
+line_out("Building Classified Ads + Pictures ");
 
 ?>
-<a href="../../assn/dj4e_ads2.md" target="_blank">
-https://www.dj4e.com/assn/dj4e_ads2.md</a>
+<a href="../../assn/dj4e_ads1b.md" target="_blank">
+https://www.dj4e.com/assn/dj4e_ads1b.md</a>
 </a>
 <p>
 You should already have two users and a <b>meta</b> tag.
@@ -49,7 +49,7 @@ webauto_setup();
 
 $content = get_favicon($client, $base_url_path);
 if ( $content === false ) {
-    line_out("Favicon is coming in the next assignment...");
+    line_out("Favicon is coming soon...");
 }
 
 // Start the actual test
