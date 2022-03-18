@@ -24,6 +24,7 @@ $assignments = array(
     '99stars.php' => 'Stars 99',
     '99random.php' => 'Random 99',
     '11adlist1.php' => 'AdList #1',
+    '11adlist1b.php' => 'AdList #1 + Pictures',
     '12adlist2.php' => 'AdList #2',
     '13adlist3.php' => 'AdList #3',
     '14adlist4.php' => 'AdList #4',

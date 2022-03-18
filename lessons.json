@@ -1465,59 +1465,6 @@
     ]
 },
 {
-    "title": "Many-To-Many Data Models",
-    "anchor": "dj4e_many",
-    "icon" : "fa-arrows",
-    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
-    "slides": "lectures/DJ-04-Many-To-Many.pptx",
-    "discussions" : [
-        {
-        "title" : "Many-To-Many Data Models",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_21_many"
-        }
-    ],
-    "videos" : [
-    {
-        "title": "Many-to-Many Overview",
-        "youtube": "JI4ZOFOubLY",
-        "project" : "DJ 04 Many 01 Overview"
-    },
-    {
-        "title": "A Simple Many-To-Many Example in Django",
-        "youtube": "gf2-J9YOMcc",
-        "project" : "DJ 04 Many 02 Many"
-    },
-    {
-        "title": "Many-To-Many Data Models for Courses and Membership",
-        "youtube": "kY_1a057phM",
-        "project" : "DJ 04 Many 03 Course"
-    },
-    {
-        "title": "Building a Django Batch Script to Load Data from CSV",
-        "youtube": "E8y_6S2Fc5s",
-        "project" : "DJ 04 Many 04 Batch"
-    }
-   ],
-    "lti" : [
-        {
-            "title" : "Quiz: Many-To-Many",
-            "launch" : "mod/gift/?quiz=DB-04-Many-To-Many.txt",
-            "resource_link_id" : "dj4e_db_04_many",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "101"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        }
-    ]
-},
-{
     "title": "JavaScript",
     "anchor": "dj4e_javascript",
     "icon" : "fa-code",
@@ -1636,10 +1583,114 @@
     ]
 },
 {
+    "title": "Classified Ads + Pictures",
+    "anchor": "dj4e_ads1b",
+    "icon" : "fa-code",
+    "description": "We add pictures to our classified ads application.",
+    "assignment" : "{apphome}/assn/dj4e_ads1b.md",
+    "discussions" : [
+        {
+        "title" : "Classified Ads + Pictures",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_24_ads1b"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
+            "youtube" : "tanl9CthvHE"
+        },
+        {
+            "title" : "Walking through the DJ4E Forums (forums) Sample Code",
+            "youtube" : "mgcj3V56X-A"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Ad List + Pictures",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads1b",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "11adlist1b.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample DJ4E Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Adding Pictures",
+            "href": "https://samples.dj4e.com/pics/"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://chucklist.dj4e.com/mc"
+        }
+    ]
+},
+{
+    "title": "Many-To-Many Data Models",
+    "anchor": "dj4e_many",
+    "icon" : "fa-arrows",
+    "description": "We further explore the design of many-to-many data models and write a Django script to load comma-separated (CSV) data into many-to-many tables.",
+    "slides": "lectures/DJ-04-Many-To-Many.pptx",
+    "discussions" : [
+        {
+        "title" : "Many-To-Many Data Models",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_21_many"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Many-to-Many Overview",
+        "youtube": "JI4ZOFOubLY",
+        "project" : "DJ 04 Many 01 Overview"
+    },
+    {
+        "title": "A Simple Many-To-Many Example in Django",
+        "youtube": "gf2-J9YOMcc",
+        "project" : "DJ 04 Many 02 Many"
+    },
+    {
+        "title": "Many-To-Many Data Models for Courses and Membership",
+        "youtube": "kY_1a057phM",
+        "project" : "DJ 04 Many 03 Course"
+    },
+    {
+        "title": "Building a Django Batch Script to Load Data from CSV",
+        "youtube": "E8y_6S2Fc5s",
+        "project" : "DJ 04 Many 04 Batch"
+    }
+   ],
+    "lti" : [
+        {
+            "title" : "Quiz: Many-To-Many",
+            "launch" : "mod/gift/?quiz=DB-04-Many-To-Many.txt",
+            "resource_link_id" : "dj4e_db_04_many",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "101"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ]
+},
+{
     "title": "Classified Ads #2",
     "anchor": "dj4e_ads2",
     "icon" : "fa-code",
-    "description": "We add pictures and comments to our classified ads application.",
+    "description": "We add comments to our classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads2.md",
     "discussions" : [
         {
@@ -1649,10 +1700,6 @@
         }
     ],
     "videos" : [
-        {
-            "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
-            "youtube" : "tanl9CthvHE"
-        },
         {
             "title" : "Walking through the DJ4E Forums (forums) Sample Code",
             "youtube" : "mgcj3V56X-A"
@@ -1675,10 +1722,6 @@
         {
             "title" : "Sample DJ4E Code",
             "href": "https://github.com/csev/dj4e-samples"
-        },
-        {
-            "title" : "Adding Pictures",
-            "href": "https://samples.dj4e.com/pics/"
         },
         {
             "title" : "Forums and Comments",
