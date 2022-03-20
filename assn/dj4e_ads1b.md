@@ -4,7 +4,7 @@ Classified Ads + Pictures
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:
 
-https://chucklist.dj4e.com/mc
+https://chucklist.dj4e.com/mp
 
 The primary additions from the previous milestone are to add an image to each ad and
 keep all the features from the previous version of the application.
