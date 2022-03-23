@@ -104,9 +104,9 @@ don't worry - you will see this warning until you set up the social login.
 (6) We are going to switch your application on PythonAnywhere from using an
 SQLite database to a MySQL database for the rest of this course.  If you keep running
 SQLite and your application stores too much data it will start to slow down.
-If you are running locally, you can keep using SQLite. 
+If you are running locally, you can keep using SQLite.
 
-(7) To use MySQL, first go to the `Databases` tab in PythonAnywhere. Make a MySQL database 
+(7) To use MySQL, first go to the `Databases` tab in PythonAnywhere. Make a MySQL database
 named `ads` and choose a name and password and write them down.
 
 (8) Edit `~/django_projects/mysite/mysite/settings.py` and find the existing
@@ -148,6 +148,12 @@ administrator account:
 If the `makemigrations` works and `migrate` fails, you may have an error
 in the `DATABASE` section of your `settings.py`.   You can edit your `settings.py`
 and rerun the `migrate` until it works.
+
+Somtimes `migrations` or `makemigrations` takes up to a few minutes - if they are running
+and not showning any errors - please be patient.  If the migrations process is
+interrupted - you might need to drop your MySQL tables and run the migrations again - instructions
+are shown below to drop the databases tables so you can run the migrations
+on a fresh database.
 
 (10) If you restart your web application, there won't be many working urls.
 Try these two to see if you have the home code working properly:
@@ -372,7 +378,7 @@ so make sure to give an email address to the user you create with `createsuperus
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
-is "too effective" on a favicon so to force a real reload (command/ctrl + shift + r) to check if the new 
+is "too effective" on a favicon so to force a real reload (command/ctrl + shift + r) to check if the new
 favicon is really being served you can add a GET parameter to the URL to force it to be re-retrieved:
 
     https://chucklist.dj4e.com/favicon.ico?x=42
@@ -425,6 +431,73 @@ edited the `ROOT_URLCONF` value in `settings.py`  - your value should be:
     ROOT_URLCONF = 'mysite.urls'
 
 More will be added as the problems are identified.
+
+(2) If you have a problem running `migrate` or `makemigrations` in step 9 above, you might want
+to start with a fresh MySQL database.  Since we are using a MYSQL server, we can't
+just delete the SQLite file and start over - but it is not much more difficult.
+
+First go into `Consoles` and start a `MySQL` console.  You should go into a shell and see a prompt
+like this - type the command `SHOW DATABASES;` to find your database:
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    mysql> SHOW DATABASES;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | dj4e$chucklist     |
+    | dj4e$default       |
+    +--------------------+
+    3 rows in set (4.05 sec)
+    mysql>
+
+Note - <b>never touch</b> the `information_schema` database - if you mess with this you break your entire MySQL
+installation and may need to create a completely new PythonAnywhere account.   Leave `information_schema`
+alone.
+
+Pick the database you are using (in your `settings.py`) and issuer the `USE` command to select
+the database and run the `SHOW TABLES;` command:
+
+    mysql> use dj4e$chucklist;
+    Database changed
+    mysql> SHOW TABLES;
+    +----------------------------+
+    | Tables_in_dj4e$chucklist   |
+    +----------------------------+
+    | ads_ad                     |
+    | django_admin_log           |
+    | django_content_type        |
+    | django_migrations          |
+    | django_session             |
+    | social_auth_association    |
+    | social_auth_code           |
+    | social_auth_nonce          |
+    | social_auth_partial        |
+    | social_auth_usersocialauth |
+    +----------------------------+
+    10 rows in set (0.00 sec)
+    mysql>
+
+Your list of tables might have more or less tables.  To reset things, just run the
+command `DROP TABLE ads_ad;` once for every table in the list.  From time to time
+run `SHOW TABLES;` to see where things are going.  You want to drop every table.
+
+If you try to drop a table and it complains about a foreign key constraint - skip
+dropping the table and keep dropping the rest of the tables.  When you get to the end
+to a `SHOW TABLES;` again and start dropping the remaining tables until you have none.
+This happens because when you have a one-many relationship and a foreign key
+you need to drop the "many" table (i.e. autos) before you can drop the "one" table
+(i.e. makes).
+
+Once you have no more tables, go back to the bash shell and run the following commands:
+
+    cd ~/django_projects/mysite
+    rm */migrations/00*
+
+Then go back to step 9 and pick up with the `makemigrations` step.  Since your database is
+completely empty - you will need to re-add any `createuser` accounts and/or the accounts which
+are needed for the autograder to work.
+
 
 <script>
 var d= new Date();
