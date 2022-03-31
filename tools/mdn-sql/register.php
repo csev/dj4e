@@ -1,10 +1,10 @@
 <?php
 
 $REGISTER_LTI2 = array(
-"name" => "SQL Autograder for Django",
+"name" => "MDN SQL Autograder",
 "FontAwesome" => "fa-database",
-"short_name" => "SQL Autograder",
-"description" => "This is an autograder for SQL assignments from www.dj4e.com.",
+"short_name" => "MDN SQL",
+"description" => "This is an autograder for Mozilla Developer Network SQL assignments from www.dj4e.com.",
 "messages" => array("launch", "launch_grade"),
 );
 
