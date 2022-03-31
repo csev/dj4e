@@ -3,7 +3,7 @@
 if ( ! defined('COOKIE_SESSION') ) define('COOKIE_SESSION', true);
 
 require_once "../../tsugi/config.php";
-require_once "Parsedown.php";
+require_once "../Parsedown.php";
 
 
 if ( ! function_exists('endsWith') ) {
@@ -81,7 +81,7 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
+  <option <?= x_sel("paw_skeleton.md") ?>>Starting the MDN Tutorial</option>
   <option <?= x_sel("paw_models.md") ?>>Django Models</option>
   <option <?= x_sel("paw_admin.md") ?>>Django Admin</option>
   <option <?= x_sel("paw_home.md") ?>>Django Home Page</option>
@@ -100,7 +100,7 @@ function onSelect() {
 These are the assignments for Django for Everybody (DJ4E).
 </p>
 <ul>
-<li><a href="paw_skeleton.md">Skeleton web site</a></li>
+<li><a href="paw_skeleton.md">Starting the MDN Tutorial</a></li>
 <li><a href="paw_models.md">Django Models</a></li>
 <li><a href="paw_admin.md">Django Admin</a></li>
 <li><a href="paw_home.md">Django Home Page</a></li>

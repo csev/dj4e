@@ -1,12 +1,15 @@
 Starting the MDN Tutorial
 =========================
 
-You should not do this assignment until you are completely finished with all
-of your Ads assignments.  This assignment will switch your
+__You should not do this assignment until you are completely finished with all
+of your Ads assignments.__
+
+This assignment will switch your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account to a brand new <b>project</b>.  We won't delete your <b>mysite</b>
-project - we will make a new project and point your PythonAnywhere at
-this new project.
+project - we will make a new project and point your PythonAnywhere Web application at
+this new project - so your previous project will disapper from the web - but
+still be there if you wanted to switch back.
 
 Checking Your Installation
 --------------------------
