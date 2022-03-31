@@ -64,11 +64,11 @@ Sometimes when commands like
 
 run without error, but the web application will not start on
 PythonAnywhere, check to make sure your virtual environment is
-properly set under the Web tab.  If you did the
-<a href="paw_install.md" target="_blank">installation</a>
-properly and created a `django2`
+properly set under the Web tab.  If you did the installation
+properly and created a `django3`
 virtual environment, the virtual environment should be set to:
 
-    /home/drchuck/.virtualenvs/django2
+    /home/drchuck/.virtualenvs/django3
 
 Replacing "drchuck" with your PythonAnywhere account name.
+

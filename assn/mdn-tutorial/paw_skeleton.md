@@ -1,29 +1,40 @@
-Skeleton Web Site
-=================
+Starting the MDN Tutorial
+=========================
 
-This is our PythonAnywhere variant of the next step of the Mozilla Developer Network
-tutorial:
+You should not do this assignment until you are completely finished with all
+of your Ads assignments.  This assignment will switch your
+<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
+account to a brand new <b>project</b>.  We won't delete your <b>mysite</b>
+project - we will make a new project and point your PythonAnywhere at
+this new project.
+
+Checking Your Installation
+--------------------------
+
+We assume that you have a Django 3 virtual environment all set up from your
+previous assignments.  Start a shell and type:
+
+    workon django3
+
+Of course always make sure to type this command when you start a fresh shell.
+
+We will start the MDN tutorial at step 3.  You can read the first two steps - 
+but you can start at the "Skeleton Website" step.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
 
-You can view a
-<a href="https://www.youtube.com/watch?v=6_JHiJvXu-I&index=3&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z" target="_blank">video walkthrough</a> of this assignment.
-
 *Note:* If you are submitting these assignments to the autograder, make sure you finish
 grading of one assignment before starting on the next assignment.  The autograder deducts
-points for hainv *too many* features implemented.
+points for haing *too many* features implemented.
 
-Go to your
-<a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-account and start a bash shell,
-go into your virtual environment and create a new application:
+Since you already have a `dango_projects` folder your first step in the tutorial does
+not require a `mkdir` command - instead:
 
-    workon django2
     cd ~/django_projects
     django-admin startproject locallibrary
 
-    cd ~/django_projects/locallibrary
-    python3 manage.py startapp catalog
+Continuing with the Tutorial
+----------------------------
 
 Edit the file `locallibrary/settings.py` and make the following changes:
 
@@ -74,42 +85,46 @@ Create the file `catalog/urls.py` and put the following lines in the file:
     urlpatterns = [
     ]
 
-While it is not essential to this assignment, it is a good idea to run the migrations
+While it is not essential to this assignment, it is a good idea to run check and migrations
 at this point in time.  In the PYAW shell:
 
+    workon django3
     cd ~/django_projects/locallibrary
 
+    python3 manage.py check
     python3 manage.py makemigrations
     python3 manage.py migrate
 
 If you get an error when you type the above `python3` commands that cannot
 find the `django_extensions` you either have not set up your virtual environment
-properly or did not use the `workon django2` command to switch into your
+properly or did not use the `workon django3` command to switch into your
 virtual environment in your shell.  When you are in a shell, you need to
-be in the `django2` virtual environment or the `manage.py` commands will fail.
+be in the `django3` virtual environment or the `manage.py` commands will fail.
 
-On the Web tab
-<a href="paw_skeleton/webapp_config.png" target="_blank">Sample image</a>,
-we need to switch from the `mytestsite` to the `locallibrary` project so we
-need to update the following values:
+Switching Your Web Application to a New Project
+-----------------------------------------------
+
+We need to go into the `Web` tab in PythonAnywhere and *switch* which project your
+account is serving at your application URL.
+
+Scroll down to the *Code:* section and make the following settings (replace 'drchuck'
+with your PYAW account):
 
     Source code: /home/drchuck/django_projects/locallibrary
     Working directory: /home/drchuck/django_projects/locallibrary
 
-Change `drchuck` above to your PythonAnywhere account name.
-
-Edit and change 'mytestsite' to 'locallibrary' (Twice) in the
-`WGSI configuration file`.
+Edit the *WGSI Configuration File* and change `mysite` to `locallibrary` in two places
+and save it.
 
 The virtual environment should already be set up and does not need to change.
 
-    Virtualenv: /home/drchuck/.virtualenvs/django2
+    Virtualenv: /home/drchuck/.virtualenvs/django3
 
 Change `drchuck` above to your PythonAnywhere account name.
 
 Then `Reload` your web application and visit its url to make sure you get the expected output.
 
-    http://mdntutorial.pythonanywhere.com/catalog/
+    http://drchuck.pythonanywhere.com/catalog/
 
 When you visit the page,
 you *should* get an error, 'Page not found(404)'

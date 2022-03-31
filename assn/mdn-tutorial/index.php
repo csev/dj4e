@@ -81,7 +81,6 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("paw_install.md") ?>>Django and PythonAnywhere</option>
   <option <?= x_sel("paw_skeleton.md") ?>>Skeleton web site</option>
   <option <?= x_sel("paw_models.md") ?>>Django Models</option>
   <option <?= x_sel("paw_admin.md") ?>>Django Admin</option>
@@ -101,7 +100,6 @@ function onSelect() {
 These are the assignments for Django for Everybody (DJ4E).
 </p>
 <ul>
-<li><a href="paw_install.md">Django and PythonAnywhere</a></li>
 <li><a href="paw_skeleton.md">Skeleton web site</a></li>
 <li><a href="paw_models.md">Django Models</a></li>
 <li><a href="paw_admin.md">Django Admin</a></li>
