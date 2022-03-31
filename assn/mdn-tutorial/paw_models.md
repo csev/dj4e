@@ -43,19 +43,6 @@ the model, run the migrations from `~/django_projects/locallibrary`
     python3 manage.py makemigrations
     python3 manage.py migrate
 
-If you are using `git`, you can see what files have been modified / created:
-
-    git status
-
-The git output would be as follows:
-
-    modified:   catalog/models.py
-    Untracked files:
-        catalog/migrations/0001_initial.py   
-
-The `git` command won't show the `db.sqlite3` file has changed because we have told `git`
-not to track the database file in the `.gitignore` file
-
 Lets take a quick look at the contents of the `db.sqlite3` file in your bash shell:
 
     $ sqlite3 db.sqlite3 
