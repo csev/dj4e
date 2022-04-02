@@ -2637,10 +2637,6 @@
         {
             "title" : "MDN Skeleton Web Site",
             "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
-        },
-        {
-            "title" : "PythonAnywhere",
-            "href" : "https://www.pythonanywhere.com/"
         }
     ],
     "lti" : [
