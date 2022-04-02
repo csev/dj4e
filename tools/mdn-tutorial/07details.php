@@ -40,6 +40,8 @@ You should still have the meta tag, an author and book from the previous tutoria
 </p>
 <pre>
 <?= htmlentities($meta) ?> 
+</pre>
+<pre>
 Author: <?= htmlentities($full_name) ?> 
 Book: <?= htmlentities($book_title) ?>
 </pre>

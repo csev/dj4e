@@ -32,6 +32,8 @@ https://www.dj4e.com/assn/mdn/paw_sessions.md</a>
 You should still have the identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area and an author and book from the previous tutorial autograder.
 <pre>
 <?= htmlentities($meta) ?>  
+</pre>
+<pre>
 Author: <?= htmlentities($full_name) ?>  
 Book: <?= htmlentities($book_title) ?>  
 </pre>

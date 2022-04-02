@@ -119,7 +119,7 @@ upload your SQLite3 database here:<br/>
 <input type="submit">
 <p>
 Do the assignment at 
-<a href="https://www.dj4e.com/assn/paw_models.md" target="_blank">https://www.dj4e.com/assn/paw_models.md</a>.
+<a href="../../assn/mdn/paw_models.md" target="_blank">https://www.dj4e.com/assn/mdn/paw_models.md</a>.
 </p>
 <p>
 When the
