@@ -21,8 +21,8 @@ $meta = '<meta name="wa4e" content="'.$check.'">';
 $adminpw = substr(getMD5(),4,9);
 line_out("Exploring Django Views (MDN)");
 ?>
-<a href="../../assn/paw_home.md" target="_blank">
-https://www.dj4e.com/assn/paw_home.md</a>
+<a href="../../assn/mdn/paw_home.md" target="_blank">
+https://www.dj4e.com/assn/mdn/paw_home.md</a>
 </a>
 </p>
 <?php

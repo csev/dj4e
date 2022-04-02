@@ -2627,6 +2627,114 @@
         ]
         }
         ]
+},
+{
+    "title": "MDN Tutorial (Legacy)",
+    "anchor": "mdn_legacy",
+    "icon" : "fa-comment",
+    "description": "This is a set of assignments centered around the Mozilla Developer Network Django tutorial.",
+    "references" : [
+        {
+            "title" : "MDN Skeleton Web Site",
+            "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
+        },
+        {
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: MDN Skeleton Web Site",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_skeleton",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "03skeleton.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Models",
+        "launch" : "tools/mdn-sql/",
+        "resource_link_id" : "mdn_modules",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "04models.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Admin",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_admin",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05admin.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Home Page",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_home",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "06home.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Detail Pages",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_detail",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "07details.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Sessions",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_sessions",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "08sessions.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Users",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_users",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "09users.php"
+            }
+        ]
+        },
+        {
+        "title" : "Auto-grader: Django Forms",
+        "launch" : "tools/mdn-tutorial/",
+        "resource_link_id" : "mdn_forms",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "10forms.php"
+            }
+        ]
+        }
+
+
+        ]
 }
 
 ]

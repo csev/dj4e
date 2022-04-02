@@ -22,8 +22,8 @@ $adminpw = substr(getMD5(),4,9);
 
 line_out("Exploring Django Admin (MDN)");
 ?>
-<a href="../../assn/paw_admin.md" target="_blank">
-https://www.dj4e.com/assn/paw_admin.md</a>
+<a href="../../assn/mdn/paw_admin.md" target="_blank">
+https://www.dj4e.com/assn/mdn/paw_admin.md</a>
 </a>
 </p>
 <p>

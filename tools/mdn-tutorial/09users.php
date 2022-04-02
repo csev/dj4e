@@ -25,8 +25,8 @@ $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
 line_out("Exploring Django Users (MDN)");
 ?>
-<a href="../../assn/paw_users.md" target="_blank">
-https://www.dj4e.com/assn/paw_users.md</a>
+<a href="../../assn/mdn/paw_users.md" target="_blank">
+https://www.dj4e.com/assn/mdn/paw_users.md</a>
 </a>
 <p>
 In addition to the steps in the tutorial, make a user (not an admin account) and add it to

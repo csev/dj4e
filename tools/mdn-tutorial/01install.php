@@ -8,13 +8,13 @@ line_out("Installing Django on PythonAnywhere");
 
 ?>
 <p>
-<a href="../../assn/paw_install.md" target="_blank">
-https://www.dj4e.com/assn/paw_install.md</a>
+<a href="../../assn/mdn/paw_install.md" target="_blank">
+https://www.dj4e.com/assn/mdn/paw_install.md</a>
 </a>
 </p>
 <?php
 
-$url = getUrl('https://www.dj4e.com/assn/paw_install/index.htm');
+$url = getUrl('https://www.dj4e.com/assn/mdn/paw_install/index.htm');
 if ( $url === false ) return;
 $passed = 0;
 
