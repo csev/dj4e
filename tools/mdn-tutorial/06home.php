@@ -57,7 +57,7 @@ webauto_check_test();
 
 $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
-$css_url = $url . 'catalog/static/css/styles.css';
+$css_url = $url . 'static/css/styles.css';
 
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();

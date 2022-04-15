@@ -162,7 +162,7 @@ if ( strpos($html, 'multipart/form-data') > 1 ) {
 }
 
 // TODO: Demand tags sometime after 210420
-$tags = False;
+$tags = True;
 if ( strpos($html, 'Tags') > 1 ) {
     $tags = True;
     // markTestPassed('Found enctype="multipart/form-data" on Create Ad form');
