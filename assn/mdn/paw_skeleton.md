@@ -62,7 +62,17 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 
 starting with the command:
 
+    cd ~/django_projects/locallibrary
 	python3 manage.py startapp catalog
+
+When you get to this section - do not add `permanent=True`, just leave it out.
+Instead of this:
+
+        path('', RedirectView.as_view(url='catalog/', permanent=True)),
+
+Do this:
+
+        path('', RedirectView.as_view(url='catalog/')),   #Better
 
 Continue with the tutorial until it tells you to `python3 manage.py runserver` - instead do
 
