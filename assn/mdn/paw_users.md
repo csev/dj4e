@@ -14,7 +14,7 @@ create another one, use the following commands in a console shell:
 
         python3 manage.py createsuperuser
 
-* Make a new user (check the autograder for specific instructions) and add it to Library staff
+* Make a new user (check the autograder for specific instructions) and add it to Library Members
 
 * Add the account authentication URLs - make sure to reload your application after you change
 the `urls.py` file.  The MDN tutorial does not remind you each time you need to Reload the application.

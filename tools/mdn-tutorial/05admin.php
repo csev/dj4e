@@ -58,6 +58,8 @@ error_log("Tutorial02 ".$url);
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
+
 
 $catalog_url = str_replace('admin', 'catalog', $admin);
 line_out('Checking to make tutorials are being done in the correct order.');

@@ -30,7 +30,7 @@ https://www.dj4e.com/assn/paw_forms.md</a>
 </a>
 <p>
 In addition to the steps in the tutorial, make a user (not an admin account) and add it to
-the "Library Staff" account to allow this autograder to log in and check your work
+the "Library Members" account to allow this autograder to log in and check your work
 with the following information:
 <pre>
 Account: <?= htmlentities($useraccount) ?> 

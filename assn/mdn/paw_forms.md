@@ -86,7 +86,7 @@ and add the `catalog | book instance | Set book as returned` permission to the g
     user has the `catalog.can_mark_returned` permission.   We don't want our library
     staff to be able to access the '/admin' page.
 
-* Then `Reload` the application and log in with an account that is in the group 'Library Staff'
+* Then `Reload` the application and log in with an account that is in the group 'Library Members'
 and verify that the 'All borrowed` code works.
 
 Adding the renew form

@@ -33,6 +33,7 @@ error_log("MDNInstall".$url);
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
 
 line_out('It is OK for this page to get a 404 error');
 $crawler = webauto_get_url($client, $url);

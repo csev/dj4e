@@ -11,6 +11,15 @@ project - we will make a new project and point your PythonAnywhere Web applicati
 this new project - so your previous project will disapper from the web - but
 still be there if you wanted to switch back.
 
+__NOTE:__ If you find a complete solution to this assignment somewhere out there, do
+*not* use it for these assignments.  The autograders expect you to do these assignments
+*one at a time* and pass each autograder before going on to the next autograder.  If you find
+some sample code outside of the actual tutorial pages - it is fine to look at it to check your
+work, but you will get youself in trouble if you use it as a short-cut.
+
+If you get completely confused, you can quite easily start over from the beginning.  See
+the instructions at the bottom of this page to start over.
+
 Checking Your Installation
 --------------------------
 
@@ -21,7 +30,7 @@ previous assignments.  Start a shell and type:
 
 Of course always make sure to type this command when you start a fresh shell.
 
-We will start the MDN tutorial at step 3.  You can read the first two steps - 
+We will start the MDN tutorial at step 3.  You can read the first two steps -
 but you can start at the "Skeleton Website" step.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
@@ -33,11 +42,10 @@ points for haing *too many* features implemented.
 Since you already have a `dango_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
+	workon django3  # Always make sure you have done this at least once in each session
     cd ~/django_projects
     django-admin startproject locallibrary
-
-Continuing with the Tutorial
-----------------------------
+	cd locallibrary
 
 Edit the file `locallibrary/settings.py` and make the following changes:
 
@@ -45,63 +53,27 @@ Edit the file `locallibrary/settings.py` and make the following changes:
 
     ALLOWED_HOSTS = ['*']               # Change
 
-    INSTALLED_APPS = [
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        'django_extensions',             # Add this line
-        'catalog.apps.CatalogConfig',    # Add this line
-    ]
+Continue with the Tutorial
+--------------------------
 
-Edit the file `locallibrary/urls.py` and update the code to look like the following:
+Then continue with the tutorial at the step *Creating the catalog application*:
 
-    from django.contrib import admin
-    from django.urls import path
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#creating_the_catalog_application
 
-    urlpatterns = [
-        path('admin/', admin.site.urls),
-    ]
+starting with the command:
 
-    # Use include() to add paths from the catalog application
-    from django.urls import include
-    urlpatterns += [
-        path('catalog/', include('catalog.urls')),
-    ]
+	python3 manage.py startapp catalog
 
-    #Add URL maps to redirect the base URL to our application
-    from django.views.generic import RedirectView
-    urlpatterns += [
-        path('', RedirectView.as_view(url='/catalog/')),
-    ]
+Continue with the tutorial until it tells you to `python3 manage.py runserver` - instead do
 
-Note that if you are following the MDN Tutorial for this step, it will suggest
-that you add `, permanent=True` to the `path()` statement above.   Do **not** add
-the `permanent` parameter or it will mess things up later.
+	python3 manage.py check
 
-Create the file `catalog/urls.py` and put the following lines in the file:
+and keep running `check` until there are no errors.
 
-    from django.urls import path
-    from . import views
-    urlpatterns = [
-    ]
+Remember that on PythonAnywhere, we __never__ do a `runserver` but instead use the Web
+tab to configure and start our Django application.
 
-While it is not essential to this assignment, it is a good idea to run check and migrations
-at this point in time.  In the PYAW shell:
-
-    workon django3
-    cd ~/django_projects/locallibrary
-
-    python3 manage.py check
-    python3 manage.py makemigrations
-    python3 manage.py migrate
-
-If you get an error when you type the above `python3` commands that cannot
-find the `django_extensions` you either have not set up your virtual environment
-properly or did not use the `workon django3` command to switch into your
-virtual environment in your shell.  When you are in a shell, you need to
+Remember that when you are in a shell, you need to
 be in the `django3` virtual environment or the `manage.py` commands will fail.
 
 Switching Your Web Application to a New Project
@@ -146,3 +118,13 @@ If you reload your web application and get the "Something went wrong :("
 page when you access your web application, check on the "error.log" link
 and scroll to the very bottom to see why your application will not start.
 
+Starting Over
+-------------
+
+If you pasted in too much stuff or deleted a large amount of text, and want to start over
+it is quite easy.  We just rename the `locallibrary` folder:
+
+	cd ~/django_projects
+    mv locallibrary broken1
+
+and then go to the top of this file and do everything over starting with `startproject`.

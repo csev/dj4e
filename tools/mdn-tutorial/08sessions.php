@@ -54,6 +54,8 @@ $css_url = $url . 'catalog/static/css/styles.css';
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
+
 
 line_out('Checking to make sure we cannot log into the /admin url');
 $crawler = webauto_get_url($client, $admin);

@@ -30,7 +30,7 @@ https://www.dj4e.com/assn/mdn/paw_users.md</a>
 </a>
 <p>
 In addition to the steps in the tutorial, make a user (not an admin account) and add it to
-the "Library Staff" account to allow this autograder to log in and check your work
+the "Library Members" account to allow this autograder to log in and check your work
 with the following information:
 <pre>
 Account: <?= htmlentities($useraccount) ?> 
@@ -64,6 +64,8 @@ $css_url = $url . 'catalog/static/css/styles.css';
 // http://symfony.com/doc/current/components/dom_crawler.html
 $client = new Client();
 $client->setMaxRedirects(5);
+$client->getClient()->setSslVerification(false);
+
 
 // Start the actual test
 $crawler = webauto_get_url($client, $catalog_url);
