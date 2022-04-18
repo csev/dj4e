@@ -134,6 +134,8 @@ if ( $status != 200 ) {
     $passed += 1;
 }
 
+$must_do_challenge = false;
+
 line_out('Retrieving book list page...');
 $crawler = webauto_get_url($client, $books_url);
 $html = webauto_get_html($crawler);
@@ -149,6 +151,7 @@ $html = webauto_get_html($crawler);
 $retval = webauto_search_for($html, $book_title);
 $retval = webauto_search_for($html, $last_first);
 
+if ( $must_do_challenge ) {
 line_out('Retrieving author list page...');
 $crawler = webauto_get_url($client, $authors_url);
 $html = webauto_get_html($crawler);
@@ -169,6 +172,7 @@ $html = webauto_get_html($crawler);
 
 $retval = webauto_search_for($html, $book_title);
 $retval = webauto_search_for($html, $last_first);
+} // End must_do_challenge
 
 
 // -------
@@ -176,7 +180,12 @@ line_out(' ');
 echo("<!-- Raw score $passed -->\n");
 // echo("  -- Raw score $passed \n");
 $passed += 1;
-$perfect = 30;
+if ( $must_do_challenge ) {
+	$perfect = 30;
+} else {
+	$perfect = 24;
+}
+
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
