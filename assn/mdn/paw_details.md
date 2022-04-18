@@ -58,7 +58,7 @@ Once you test the pagination set `paginate_by = 20` so the autograder finds your
 <a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
 and explore the list and detail views.
 
-* Finish the author challenge.  In the `templates/catalog/author_detail.html` file when
+* You do not have to do the the author challenge.  If you do, in the `templates/catalog/author_detail.html` file when
 you want to loop through all the books for a particular author, use the following pattern.
 
         {% for book in author.book_set.all %}
