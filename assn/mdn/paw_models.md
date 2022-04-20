@@ -32,7 +32,6 @@ application within the locallibrary project by adding `CatalogConfig` line:
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
-        'django_extensions',             # Add this line
         'catalog.apps.CatalogConfig',    # Add this line
     ]
 
