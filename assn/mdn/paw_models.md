@@ -74,3 +74,21 @@ If you are using the autograder for this assignment, you will need to upload the
 `db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
 to download the file to your computer and then upload it to the autograder.
 
+If Your Model/Database Gets Messed Up
+-------------------------------------
+
+If you want to clean up your database and start with a
+fresh database using the following instructions:
+
+    cd ~/django_projects/locallibrary
+    rm */migrations/00*
+    rm db.sqlite3
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py createsuperuser    # If needed
+
+You need to recreate the superuser because it is stored in the database
+and the `rm` command emptied out your database.  You can do
+this process any time your database feels like it is messed up.  But
+you have to re-enter all your accounts and data.
+
