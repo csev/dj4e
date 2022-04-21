@@ -44,7 +44,7 @@ if ( strpos($html, 'ALLOWED_HOSTS') !== false ) {
     error_out('It looks like you forgot to edit the ALLOWED_HOSTS setting');
 ?>
 <p>
-You will need to edit the file <b>mytestsite/settings.py</b> and change the following line:
+You will need to edit the file <b>locallibrary/settings.py</b> and change the following line:
 <pre>
 ALLOWED_HOSTS = ['*']
 </pre>
@@ -60,7 +60,7 @@ You should turn debugging on so that you get more detail in the browsers when yo
 your application.
 </p>
 <p>
-You will need to edit the file <b>mytestsite/settings.py</b> and change the following line:
+You will need to edit the file <b>locallibrary/settings.py</b> and change the following line:
 <pre>
 DEBUG = True
 </pre>

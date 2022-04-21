@@ -13,7 +13,7 @@ $shuffled = $MT->shuffle($names);
 $first_name = $shuffled[0];
 $last_name = $shuffled[1];
 $title_name = $shuffled[3];
-$full_name = $first_name . ', ' . $last_name;
+$full_name = $first_name . ' ' . $last_name;
 $last_first = $last_name . ', ' . $first_name;
 $book_title = "How the Number 42 and $title_name are Connected";
 

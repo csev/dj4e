@@ -45,7 +45,7 @@ if ( strpos($html, 'ALLOWED_HOSTS') !== false ) {
     error_out('It looks like you forgot to edit the ALLOWED_HOSTS setting');
 ?>
 <p>
-You will need to edit the file <b>mytestsite/settings.py</b> and change the following line:
+You will need to edit the file <b>locallibrary/settings.py</b> and change the following line:
 <pre>
 ALLOWED_HOSTS = ['*']
 </pre>
