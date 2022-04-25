@@ -21,31 +21,6 @@ Complete the following sections of the Views tutorial:
 
         cd ~/django_projects/locallibrary/catalog
 
-* Edit `catalog/urls.py` so it looks like follows:
-
-        from django.urls import path
-        from . import views
-        urlpatterns = [
-            path('', views.index, name='index'),    # New line as per tutorial
-        ]
-
-        # New lines below to serve static files in debug mode
-        import os
-        from django.urls import re_path
-        from django.views.static import serve
-        from django.conf import settings
-
-        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-        urlpatterns += [
-            re_path(r'^static/(?P<path>.*)$', serve, {
-                'document_root': os.path.join(BASE_DIR, 'catalog/static'),
-            }),
-        ]
-
-    We need the extra bits to serve the static files locally in debug mode.  We will come back
-    to talk about how to serve static files when we move our application to production.
-
 * Edit `views.py` for the views.index as suggested in the tutorial
 
 * You will have to make the `templates` and `static` directories

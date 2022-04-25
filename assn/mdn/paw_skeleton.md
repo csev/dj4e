@@ -53,6 +53,14 @@ Edit the file `locallibrary/settings.py` and make the following changes:
 
     ALLOWED_HOSTS = ['*']               # Change
 
+The tutorial does not tell you how to set the `STATIC_ROOT` value in your `settings.py`
+so that you can serve static files.  Go find the `STATIC_URL` line in `settings.py` 
+and add the `STATIC_ROOT` line below it.
+
+    STATIC_URL = '/static/'
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'catalog/static')  # New line
+
 Continue with the Tutorial
 --------------------------
 
@@ -65,14 +73,14 @@ starting with the command:
     cd ~/django_projects/locallibrary
 	python3 manage.py startapp catalog
 
-When you get to this section - do not add `permanent=True`, just leave it out.
-Instead of this:
+When you get to this section and are editing `locallibrary/urls.py`, do not add `permanent=True`
+if the tutorial tells you to do so - just leave it out.  Not so good:
 
         path('', RedirectView.as_view(url='catalog/', permanent=True)),
 
-Do this:
+Better:
 
-        path('', RedirectView.as_view(url='catalog/')),   #Better
+        path('', RedirectView.as_view(url='catalog/')),
 
 Continue with the tutorial until it tells you to `python3 manage.py runserver` - instead do
 
@@ -81,10 +89,7 @@ Continue with the tutorial until it tells you to `python3 manage.py runserver` -
 and keep running `check` until there are no errors.
 
 Remember that on PythonAnywhere, we __never__ do a `runserver` but instead use the Web
-tab to configure and start our Django application.
-
-Remember that when you are in a shell, you need to
-be in the `django3` virtual environment or the `manage.py` commands will fail.
+tab to point to and start our Django application.
 
 Switching Your Web Application to a New Project
 -----------------------------------------------
