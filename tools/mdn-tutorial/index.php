@@ -38,7 +38,6 @@ if ( $assn && isset($assignments[$assn]) ) {
     $assn = $custom;
 }
 
-
 if ( $assn === false && isset($_GET["inherit"]) && isset($CFG->lessons) ) {
     $l = new Lessons($CFG->lessons);
     if ( $l ) {
@@ -58,6 +57,22 @@ $dueDate = SettingsForm::getDueDate();
 if ( count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
     require($assn);
     return;
+}
+
+// Test info
+function webauto_check_test() {
+    global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw;
+    if ( ! webauto_testrun($url) ) return;
+    error_out('Test run - switching to sample data');
+    $first_name = 'Jamal';
+    $last_name = 'Michaella';
+    $title_name = 'Darryl';
+    $book_title = "How the Number 42 and $title_name are Connected";
+    $full_name = $first_name . ' ' . $last_name;
+    $last_first = $last_name . ', ' . $first_name;
+    $meta = '<meta name="dj4e" content="735b90b4568125ed6c3f678819b6e058">';
+    $adminpw = 'readony_8ffd-6c005';
+    $userpw = 'readony_8ffd-6c005';
 }
 
 // View
@@ -184,6 +199,16 @@ if ( ob_get_status() ) {
 }
 
 $OUTPUT->footerStart();
+?>
+<script>
+function sendToIframe(id, html) {
+    var iframe = document.getElementById(id);
+    var iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+    console.log(html);
+    iframedoc.body.innerHTML = html;
+}
+</script>
+<?php
 $OUTPUT->footerEnd();
 
 

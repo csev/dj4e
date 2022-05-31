@@ -1,6 +1,6 @@
 <?php
 
-require_once "webauto.php";
+require_once "../crud/webauto.php";
 
 use Goutte\Client;
 

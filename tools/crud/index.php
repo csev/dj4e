@@ -102,6 +102,29 @@ function sendToIframe(id, html) {
 }
 </script>
 <?php
+
+function webauto_check_test() {
+    global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
+    global $user1account, $user1pw, $user2account, $user2pw, $check;
+    if ( ! webauto_testrun($url) ) return;
+    error_out('Test run - switching to sample data');
+    $first_name = 'Jamal';
+    $last_name = 'Michaella';
+    $title_name = 'Darryl';
+    $book_title = "How the Number 42 and $title_name are Connected";
+    $full_name = $first_name . ' ' . $last_name;
+    $last_first = $last_name . ', ' . $first_name;
+    $check = '735b90b4568125ed6c3f678819b6e058';
+    $meta = '<meta name="dj4e" content="'.$check.'">';
+    $adminpw = 'dj4e_42_!';
+    $useraccount = 'dj4e_user1';
+    $userpw = 'Meow_81e728_41!';
+    $user1account = 'dj4e_user1';
+    $user1pw = 'Meow_81e728_41';
+    $user2account = 'dj4e_user2';
+    $user2pw = 'Meow_42_81e728';
+}
+
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 

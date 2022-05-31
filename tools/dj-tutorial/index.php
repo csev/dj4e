@@ -79,6 +79,7 @@ function sendToIframe(id, html) {
 }
 </script>
 <?php
+
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 
