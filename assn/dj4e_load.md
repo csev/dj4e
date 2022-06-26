@@ -3,7 +3,7 @@ Building and Loading a Data Model
 
 In this assignment you will temporarily step away from building the applications and
 develop a data model from a file of un-normalized data and
-then build a script to load data in to that model.  It is qite common to build
+then build a script to load data in to that model.  It is quite common to build
 a web site and then need to pre-load it with data from a file or API.
 
 The data is a simplified extraction
