@@ -6,7 +6,7 @@ This web site is building a set of free materials, lectures, and assignments to 
 * [edX](https://www.edx.org/xseries/michiganx-django-for-everybody): Django for Everybody XSeries Program
 * [FutureLearn](https://www.futurelearn.com/programs/django): Django for Everybody Program
 
-We use the free PythonAnywhere hosting environment to deploy and test our Django projects and applications. You can keep using this hosting environent to develop and deploy your Django applications after you complete the course.
+We use the free PythonAnywhere hosting environment to deploy and test our Django projects and applications. You can keep using this hosting environment to develop and deploy your Django applications after you complete the course.
 
 ### Technology
 
