@@ -1318,7 +1318,7 @@
     "title": "Installing Django locally (optional)",
     "anchor": "dj4e_local",
     "icon" : "fa-clone",
-    "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develpp more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
+    "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develop more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
     "discussions" : [
         {
         "title" : "Installing Django Locally",
