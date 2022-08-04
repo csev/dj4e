@@ -57,7 +57,7 @@ This is the normal output of running `check`:
 If you see a SyntaxError
 ------------------------
 
-If the `check` identifies errors, do not go on to the rest of the assignment 
+If the `check` identifies errors, do not go on to the rest of the assignment
 once you can run `check` and there are no errors.  If you see this error:
 
     python manage.py check
@@ -300,8 +300,8 @@ They end up with a folder in their home directory and in their `django_projects`
 
 <center><img src="dj4e_install/install_cleanup.png" alt="An image showing a mysite folder in django_projects and in the home directory with instructions to remove the one in the home directory" style="border: 1px black solid; width:80%;"></center>
 
-It is a good idea to remove the extra folder in your home directory after making sure that the right 
-code is in your `django_projects/mysite` folder.   It is really frustrating to have two folders and 
+It is a good idea to remove the extra folder in your home directory after making sure that the right
+code is in your `django_projects/mysite` folder.   It is really frustrating to have two folders and
 do a bunch of work in one of the folders that does not actually affect your running application.
 
 So you might as well clean this up right away if you see it.
@@ -335,7 +335,7 @@ not in the correct virtual environment.  If you check the python version:
 And it is 2.x, you have bigger problems that need to be fixed first.
 
 If you open `manage.py` in the file editor, it will show a syntax error on line
-16 - this is because it is looking at the file as Python 2 (sound familiar).  
+16 - this is because it is looking at the file as Python 2 (sound familiar).
 If this bothers you, you can change the first line of the file (change nothing else)
 to be:
 
@@ -349,10 +349,38 @@ is a fresh copy of the file you can use:
 
 Fresh copy of [manage.py](dj4e_install/manage.py.txt)
 
+Django 3.x to Django 4.x issues
+-------------------------------
+
+In general Django 4.x is quite compatible with Django 3.x and Django 2.x.  You might find
+small errors if you started a project on an Earlier version of Django and upgraded to
+Django 4.x mid-project.  One common error is that the `url()` feature used in various `urls.py`
+files changed form 3.x to 4.x.  If you see something like the following error:
+
+    from django.conf.urls import url
+    ImportError: Cannot import 'url' from 'django.conf.urls'
+
+It is quite easy to fix.  The 'url()' function is now renamed and moves into a different
+area of the Django library in 4.x.   Remove the above line and find an import from `djanjo.urls`
+and add a `re_path` to it like the following:
+
+    from django.urls import include, path, re_path
+                                           ^^^^^^^ Add this
+
+Then find lines that call `url( ..` and change them to be `re_path( ...` - the calling
+patterns are the same between `url` and `re_path` so no other changes are needed.
+
+The good news is that `re_path` also works with the Django 3.x library so once you make
+the change you don't have to undo the change when going back to Django 3.x.
+
+Here is a <a href="https://stackoverflow.com/a/71628531/1994792" target="_blank">StackOverflow answer</a>
+that covers this topic.  It actually shows two ways to fix this - but the cleaner and more future-proof
+approach is just changing to use `re_path` as shown above.
+
 Starting Over Fresh
 -------------------
 
-If you have followed instructions and it just does not work and you want 
+If you have followed instructions and it just does not work and you want
 to start over at the beginning of this assignment, here are the steps
 to clear things out:
 
@@ -373,7 +401,7 @@ no processes are left hanging on to old files.
 Then close your console, and delete it under the Consoles tab and go up to the very beginning
 of this handout and start over.
 
-We did not remove any of the configuration changes under the Web tab - 
+We did not remove any of the configuration changes under the Web tab -
 so as you re-create all the files, parts of the Web tab may just start
 working when you Reload your application.
 
