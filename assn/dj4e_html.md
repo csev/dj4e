@@ -29,8 +29,7 @@ Change your `~/django_projects/mysite/mysite/urls.py` to be:
 
     import os
     from django.contrib import admin
-    from django.urls import include, path
-    from django.conf.urls import url
+    from django.urls import include, path, re_path
     from django.views.static import serve
 
     # Up two folders to serve "site" content
@@ -40,7 +39,7 @@ Change your `~/django_projects/mysite/mysite/urls.py` to be:
     urlpatterns = [
         path('admin/', admin.site.urls),
         path('polls/', include('polls.urls')),                                                                                           
-        url(r'^site/(?P<path>.*)$', serve,
+        re_path(r'^site/(?P<path>.*)$', serve,
             {'document_root': SITE_ROOT, 'show_indexes': True},
             name='site_path'
         ),
