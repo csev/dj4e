@@ -42,7 +42,7 @@ SELECT * FROM Users ORDER BY email;
 
 SELECT * FROM Users ORDER BY name DESC;
 
-If you want: DROP TABLE Users 
+If you want: DROP TABLE Users; 
 
 .quit
 
