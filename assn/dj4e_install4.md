@@ -30,8 +30,10 @@ to get back into your virtual environment in the new bash shell.
 
     workon django4
 
-Lets make sure that your django was installed successfully with the following command:
+Lets make sure that your django was installed successfully and you are running the rght version of Python with the following commands:
 
+    python --version
+    # This should show something like Python 3.9.5
     python -m django --version
     # This should show something like 4.0.7
 
