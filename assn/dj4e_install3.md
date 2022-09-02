@@ -20,22 +20,20 @@ Setting Up Your Environment
 ---------------------------
 
 Once you have created your PYAW account, start a `bash` shell
-and set up a virtual environment with Python 3.x and Django 4.
+and set up a virtual environment with Python 3.x and Django 3.
 
-    mkvirtualenv django4 --python=/usr/bin/python3.9
-    pip install django==4.0.7 ## this may take a couple of minutes
+    mkvirtualenv django3 --python=/usr/bin/python3.8
+    pip install django==3.2.5 ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell.
 
-    workon django4
+    workon django3
 
-Lets make sure that your django was installed successfully and you are running the rght version of Python with the following commands:
+Lets make sure that your django was installed successfully with the following command:
 
-    python --version
-    # This should show something like Python 3.9.5
     python -m django --version
-    # This should show something like 4.0.7
+    # This should show something like 3.2.5
 
 Installing the Sample Code for DJ4E
 -----------------------------------
@@ -47,7 +45,7 @@ as the course progresses and install some important additional Django software l
     cd ~
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
-    pip install -r requirements4.txt
+    pip install -r requirements.txt
     python3 manage.py check
 
 This is the normal output of running `check`:
@@ -72,7 +70,7 @@ Do *not* edit your `manage.py` file - the problem is never in that file.
 
 There are several possible reasons for this:
 
-*   It can mean that you are not running in the virtual environment (`workon django4`) and mistakenly
+*   It can mean that you are not running in the virtual environment (`workon django3`) and mistakenly
 running Python 2 instead of Python 3.  There is *no error* in `manage.py` - it is valid
 Python 3 syntax that confuses Python 2.
 
@@ -176,13 +174,13 @@ make a few changes to the settings for the web app and your application.
     Source code: /home/drchuck/django_projects/mysite
     Working directory: /home/drchuck/django_projects/mysite
 
-    Virtualenv: /home/drchuck/.virtualenvs/django4
+    Virtualenv: /home/drchuck/.virtualenvs/django3
 
 Replace `drchuck` with your account on PythonAnywhere.
 
 Note that once you have your Virtualenv set up you have a very convenient link
 titled "Start a console in this virtualenv" - this is a great way to open up consoles
-so you never have to type "workon django4" and it makes sure your virtual
+so you never have to type "workon django3" and it makes sure your virtual
 envronment is properly set up and configured.
 <a href="dj4e_install/web_tab.png" target="_blank">Sample image</a>
 
@@ -248,7 +246,7 @@ The first step is to make the `polls` application:
     python3 manage.py startapp polls
 
 Continue to follow the steps outlined in
-<a href="https://docs.djangoproject.com/en/4.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
+<a href="https://docs.djangoproject.com/en/3.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
 Django tutorial</a>.
 until you reach the part where the tutorial tells you to run this command:
 
@@ -355,7 +353,7 @@ Django 3.x to Django 4.x issues
 -------------------------------
 
 In general Django 4.x is quite compatible with Django 3.x and Django 2.x.  You might find
-small errors if you started a project on an earlier version of Django and upgraded to
+small errors if you started a project on an Earlier version of Django and upgraded to
 Django 4.x mid-project.  One common error is that the `url()` feature used in various `urls.py`
 files changed form 3.x to 4.x.  If you see something like the following error:
 
@@ -392,7 +390,7 @@ to clear things out:
 the __workon__ command and run the following commands:
 
         cd ~
-        rm -rf .virtualenvs/django4
+        rm -rf .virtualenvs/django3
         rm -rf dj4e-samples
         rm -rf django_projects
 
