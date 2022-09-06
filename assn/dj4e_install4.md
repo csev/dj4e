@@ -170,7 +170,7 @@ to upgrade your account - they give you one application like *drchuck.pythonanyw
 free application for the course.
 
 When making the new application, do *not* create a "Django application" - instead,
-select `manual configuration` and Python 3.8.  Once the webapp is created, you need to
+select `manual configuration` and Python 3.9.  Once the webapp is created, you need to
 make a few changes to the settings for the web app and your application.
 
     Source code: /home/drchuck/django_projects/mysite
