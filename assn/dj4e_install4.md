@@ -202,10 +202,10 @@ This is slightly different from the sample in the PythonAnywhere tutorial.
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
-
 Once the above configuration is complete, go back to the top of the PYAW
 Web tab, `Reload` your web application, wait a few seconds and check
-that it is up and running:
+that it is up and visiting the URL for your application showin in the Web
+tab on PYAW like:
 
     http://(your-account).pythonanywhere.com/
 
