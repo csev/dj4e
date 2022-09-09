@@ -68,7 +68,9 @@ file in your browser.
 (<a href="https://drchuck.pythonanywhere.com/site/css/index.htm" target="_blank">Example that *looks* correct but is not a solution at all</a>)
 </p></li>
 <li><p>The four boxes have five pixel borders with different colors and five pixels
-of margin and padding.  It is probably simplest to use fixed positioning to get the
+of margin and padding.  It is probably simplest to use
+<a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank">fixed positioning</a>
+to get the
 boxes to be "sticky" to the corners of the screen even when you resize.  Make the boxes
 width be <b>25%</b> so the width changes as you resize your browser.</p></li>
 <li><p>Center the link at the top of the page.  Use your developer console / inspect element
@@ -76,6 +78,11 @@ feature of your browser to visit <a href="https://www.brainyquote.com/" target="
 https://www.brainyquote.com/</a> and figure out the background color, font, and text color
 they are using in the top navigation bar and replicate that exactly for the link to BrainyQuote
 in your <b>index.htm</b>.
+</p></li>
+You might find that using the
+<a href="https://www.w3schools.com/css/css_border_shorthand.asp" target="_blank">border shortcut</a>
+in your CSS instead of the separate "border" values makes the CSS validtor "happier".
+<li><p>
 </p></li>
 <li><p>Your CSS must pass the validator at:
 <pre>
