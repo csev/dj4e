@@ -155,7 +155,7 @@
         },
         {
             "title" : "Writing your first Django app, part 1",
-            "href" : "https://docs.djangoproject.com/en/3.2/intro/tutorial01/"
+            "href" : "https://docs.djangoproject.com/en/4.0/intro/tutorial01/"
         },
         {
             "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
@@ -500,7 +500,7 @@
     "references" : [
         {
             "title" : "Writing your first Django app, part 2",
-            "href": "https://docs.djangoproject.com/en/3.2/intro/tutorial02/"
+            "href": "https://docs.djangoproject.com/en/4.0/intro/tutorial02/"
         },
         {
             "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
@@ -564,7 +564,7 @@
         },
         {
             "title" : "Django and MVC (FAQ)",
-            "href": "https://docs.djangoproject.com/en/3.2/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names"
+            "href": "https://docs.djangoproject.com/en/4.0/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names"
         },
         {
             "title" : "Two MVC Approaches: Python/Django versus Java/Spring MVC",
@@ -669,7 +669,7 @@
     "references" : [
         {
             "title" : "Writing your first Django app, part 3",
-            "href": "https://docs.djangoproject.com/en/3.2/intro/tutorial03/"
+            "href": "https://docs.djangoproject.com/en/4.0/intro/tutorial03/"
         },
         {
             "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
@@ -677,23 +677,23 @@
         },
         {
             "title" : "Django URL Routing",
-            "href": "https://docs.djangoproject.com/en/3.2/topics/http/urls/"
+            "href": "https://docs.djangoproject.com/en/4.0/topics/http/urls/"
         },
         {
             "title" : "Django Templates",
-            "href": "https://docs.djangoproject.com/en/3.2/topics/templates/"
+            "href": "https://docs.djangoproject.com/en/4.0/topics/templates/"
         },
         {
             "title" : "Django Template Tags and Filters",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/templates/builtins/"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/templates/builtins/"
         },
         {
             "title" : "Django HttpRequest Object",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest"
         },
         {
             "title" : "Django HttpResponse Object",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpResponse"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponse"
         },
         {
             "title" : "Cross-Site Scripting (XSS)",
@@ -705,7 +705,7 @@
         },
         {
             "title" : "Django URL Resolving",
-            "href": "https://docs.djangoproject.com/en/3.2/topics/http/urls/#reverse-resolution-of-urls"
+            "href": "https://docs.djangoproject.com/en/4.0/topics/http/urls/#reverse-resolution-of-urls"
         }
     ]
 },
@@ -812,23 +812,23 @@
         },
         {
             "title" : "Writing your first Django app, part 4",
-            "href": "https://docs.djangoproject.com/en/3.2/intro/tutorial04/"
+            "href": "https://docs.djangoproject.com/en/4.0/intro/tutorial04/"
         },
         {
             "title" : "Django Template Tags and Filters",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/templates/builtins/"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/templates/builtins/"
         },
         {
             "title" : "Django Documentation: Generic display views",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/"
         },
         {
             "title" : "Django Documentation: Generic list display views",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
         },
         {
             "title" : "Django Documentation: Generic detail display views",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
         }
     ]
 },
@@ -924,11 +924,11 @@
     "references" : [
         {
             "title" : "Django Template Tags and Filters",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/templates/builtins/"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/templates/builtins/"
         },
         {
             "title" : "Writing your first Django app, part 4",
-            "href": "https://docs.djangoproject.com/en/3.2/intro/tutorial04/"
+            "href": "https://docs.djangoproject.com/en/4.0/intro/tutorial04/"
         }
     ]
 },
@@ -1217,7 +1217,7 @@
     "references" : [
         {
             "title" : "Django Template Tags and Filters",
-            "href": "https://docs.djangoproject.com/en/3.2/ref/templates/builtins/"
+            "href": "https://docs.djangoproject.com/en/4.0/ref/templates/builtins/"
         }
     ]
 },
