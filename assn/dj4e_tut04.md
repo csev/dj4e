@@ -10,5 +10,5 @@ Learning Objectives:
 * Introduce generic views
 * Build code to update the database
 
-https://docs.djangoproject.com/en/3.2/intro/tutorial04/
+https://docs.djangoproject.com/en/4.0/intro/tutorial04/
 
