@@ -77,7 +77,7 @@ Replacing "drchuck" with your PythonAnywhere account name.
 References
 ----------
 
-https://docs.djangoproject.com/en/3.2/ref/views/
+https://docs.djangoproject.com/en/4.0/ref/views/
 
 https://stackoverflow.com/questions/30430131/get-the-file-path-for-a-static-file-in-django-code
 

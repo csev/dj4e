@@ -13,7 +13,7 @@ Make sure to reload your application under the `Web` tab in
 References
 ----------
 
-https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/
+https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/
 
-https://docs.djangoproject.com/en/3.2/topics/db/queries/#following-relationships-backward
+https://docs.djangoproject.com/en/4.0/topics/db/queries/#following-relationships-backward
 
