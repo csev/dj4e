@@ -11,6 +11,7 @@ Project Specifications
 These specifications are very wide-open to let you really make your own choice as to the nature of your project.
 
 * The project must be a web site that can be accessed and viewed.
+* The project must be written in Django and deployed on PythonAnywhere
 * The project must have at least six data models (i.e. tables)
 * The project must have at least three Many-to-One relationships between models and at least one Many-to-Many relationship
 * The project must have a feature for end-users to log in.  This can be using the internal Django authorization with manually created accounts or use a social login from one or more of the common providers (Github, Google, Twitter, Facebook, etc).
