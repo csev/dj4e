@@ -148,7 +148,7 @@ Do the assignment at
 </p>
 <p>
 When the
-assignment is complete, upload your <b>db.sqlite3</b> file this auto grader.  Is you are using
+assignment is complete, upload your <b>db.sqlite3</b> file this auto grader.  If you are using
 PythonAnywhere you will need to download the file and then upload it to this autograder.
 </p>
 <p>
