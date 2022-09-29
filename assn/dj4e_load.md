@@ -54,7 +54,7 @@ https://github.com/csev/dj4e-samples/tree/main/scripts
 
 Then in install `django extensions` if you have not already done so:
 
-    workon django3                     # If necessary
+    workon django4                     # or django3 (if needed)
     pip3 install django_extensions
 
 Add the following line to your `batch/batch/settings.py`:
@@ -77,7 +77,7 @@ And make sure that your basic Django environment is configured properly.
 Design a Data Model
 -------------------
 
-You are to design a database model that represents this flat data across
+We need to design a database model that represents this flat data across
 multiple tables using "third-normal form" - which basically means that
 columns that have vertical duplication, such as region:
 
@@ -92,7 +92,7 @@ columns that have vertical duplication, such as region:
     Cultural    Algeria                Arab States                 dz
     Cultural    Algeria                Arab States                 dz
 
-You need a Django model that describes the tables, one-to-many relationships,
+We will use a Django model that describes the tables, one-to-many relationships,
 and foreign keys sufficient to represent this data efficiently with no
 vertical duplication of string values.  Numbers and dates do not have to
 have their own tables.
@@ -135,7 +135,8 @@ have their own tables.
         def __str__(self) :
             return self.name
 
-Draw the data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">Crow's-Foot Notation</a>. You
+Draw the above data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
+Crow's-Foot Notation</a>. You
 can use paper, or a layout tool - one way or another your
 diagram should have five boxes and four lines - and the each of lines should be properly labelled
 as a "many" or a "one" end.
@@ -215,7 +216,7 @@ Place the CSV file in the `unesco` folder and then run the script from the proje
 where the `manage.py` file resides):
 
     cd ~/django_projects/batch
-    workon django3                             # if necessary
+    workon django4                             # Or django3 (if necessary)
     python3 manage.py runscript many_load
 
 It needs to be run this way so that lines like:
