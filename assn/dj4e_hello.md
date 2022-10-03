@@ -69,8 +69,15 @@ Playing With Sessions (DIY)
 
 Your next goal is to make a new application named `hello`.  It will work like:
 <a href="https://djtutorial.dj4e.com/hello" target="_blank">
-https://djtutorial.dj4e.com/hello</a> - your code will draw form the sample code that 
-runs at
+https://djtutorial.dj4e.com/hello</a>.
+
+Your `views.py` will be adapted from 
+
+<a href="https://github.com/csev/dj4e-samples/blob/main/session/views.py" target="_blank">
+https://github.com/csev/dj4e-samples/blob/main/session/views.py</a>
+
+We walk through this code in the lectures and you can 
+experiment with this sample code at
 <a href="https://samples.dj4e.com/session/sessfun" target="_blank">
 https://samples.dj4e.com/session/sessfun</a>.
 
@@ -79,13 +86,11 @@ You will need to:
 * Use `startapp` to create a folder
 for the application and have Django create empty files like `views.py` and `models.py` in the `hello` folder.
 
-
 * Create a `hello/urls.py` to route all requests to the hello application to a view function that you will write in
 `views.py` - You can look at your `polls/urls.py` to see how the file is constructed in general and adapt it
 to create `hello/urls.py`.   You will only need one urlpattern in the `hello` application.
 You will only write a single view function that will *both* set a cookie and implement the session.
 If your view function was named `myview`, the path will look as follows:
-
 
         path('', views.myview),
 
@@ -102,7 +107,8 @@ Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the 
 
 These instructions are telling you *what* to do not *how* to do it. This is
 another DIY part of this assignment -
-look at sample code and understand it - no more cutting and pasting instructions.
+look at sample code and understand it - no more cutting and pasting of chunks of code without knowing
+how the pieces fit together.
 
 This assignment is not a lot of code. It is more about learning to read, reuse, and adapt code.
 There is lots of sample code in `dj4e-samples` - probably
