@@ -65,11 +65,11 @@ Here are some tasks:
 
 * Go into your `dj4e-samples` folder and do a `git pull` to get the latest version of the samples code.
 
-* Create `mysite/home/templates/registration` folders using `mkdir` and copy the
+* Create `mysite/home/templates/registration` folders and copy the
 (<a href="https://github.com/csev/dj4e-samples/blob/main/home/templates/registration/login.html" target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
 
 * Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
-your `mysite/home/templates` - this will be used in your `autos/templates` and make our HTML look
+your `mysite/home/templates/base_bootstrap.html` - this will be used in your `autos/templates` and make our HTML look
 better by applying the <a href="https://getbootstrap.com/docs/4.0/" target="_blank">Bootstrap</a>
 and other styling libraries.
 
