@@ -26,7 +26,7 @@ It is time for the "/" in your application URL to actually refer to a real page 
 of throwing a "404 Not Found" error.  We will store this page (and other project-wide
 bits) in an application named "home".  To get started:
 
-    workon django3                  # as needed
+    workon django4                  # or django3 as needed
     cd ~/django_projects/mysite
     python3 manage.py startapp home
 

@@ -12,7 +12,7 @@ cutting and pasting.
 The rest of theis document is here to help you with problems you might encounter 
 while building the tutorial on PythonAnywhere.
 
-* What happens when you don't activate your virtual environment (django3)
+* What happens when you don't activate your virtual environment (django4)
 * Your line 16 seems to have a syntax error in the text editor in `manage.py`
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
@@ -36,15 +36,15 @@ using Python 3.8 and Django 3.1.
     Python 2.7.12
     17:33 ~ $ python -m django --version
     1.11.26
-    17:33 ~ $ workon django3
-    (django3) 17:33 ~ $ python --version
-    Python 3.8.1
-    (django3) 17:36 ~ $ python -m django --version
-    3.2.5
-    (django3) 17:33 ~ $ 
+    17:33 ~ $ workon django4
+    (django4) 17:33 ~ $ python --version
+    Python 3.9.5
+    (django4) 17:36 ~ $ python -m django --version
+    4.0.7
+    (django4) 17:33 ~ $ 
 
-Each time you start a new bash shell, you need to type `workon django3`.  If you
-leave and come back to a shell that is still running, if you see the '(django3)'
+Each time you start a new bash shell, you need to type `workon django4`.  If you
+leave and come back to a shell that is still running, if you see the '(django4)'
 in your prompt - you do not have to re-run the `workon` command.  It just needs
 to be done once per shell.
 
@@ -154,7 +154,7 @@ not mention is the need to exit and restart the shell any time you change
 `models.py`.  The tutorial tells you to run the shell again but it does not
 tell you to exit the existing shell first - so you might see an error like this:
 
-    (django3) 17:16 ~/django_projects/mysite (master)$ python manage.py shell
+    (django4) 17:16 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some django shell stuff
@@ -168,24 +168,24 @@ tell you to exit the existing shell first - so you might see an error like this:
 
 The correct way is to exit the shell and restart it.
 
-    (django3) 17:20 ~/django_projects/mysite (master)$ python manage.py shell
+    (django4) 17:20 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some django shell stuff
 
     >>> quit()
-    (django3) 17:20 ~/django_projects/mysite (master)$ 
+    (django4) 17:20 ~/django_projects/mysite (master)$ 
 
 Then you edit your `models.py` and *re-start* the Django shell from the
 `bash` console:
 
-    (django3) 17:24 ~/django_projects/mysite (master)$ python manage.py shell
+    (django4) 17:24 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some more django shell stuff
 
     >>> quit()
-    (django3) 17:20 ~/django_projects/mysite (master)$ 
+    (django4) 17:20 ~/django_projects/mysite (master)$ 
 
 After a while you will understand that you need to be in `bash` (dollar sign prompt)
 to run bash commands and be in the Django shell (>>> prompt) to run Django commands.

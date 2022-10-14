@@ -17,7 +17,7 @@ account and start a bash shell.
 
 Lets go into the locallibrary project:
 
-    workon django3
+    workon django4   # or django3
     cd ~/django_projects/locallibrary
 
 Make sure that you have properly edited the `locallibrary/settings.py` file

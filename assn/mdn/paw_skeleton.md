@@ -23,10 +23,10 @@ the instructions at the bottom of this page to start over.
 Checking Your Installation
 --------------------------
 
-We assume that you have a Django 3 virtual environment all set up from your
+We assume that you have a Django virtual environment all set up from your
 previous assignments.  Start a shell and type:
 
-    workon django3
+    workon django4      # or django3
 
 Of course always make sure to type this command when you start a fresh shell.
 
@@ -42,7 +42,7 @@ points for haing *too many* features implemented.
 Since you already have a `dango_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
-	workon django3  # Always make sure you have done this at least once in each session
+	workon django4  # or django3 (once per session)
     cd ~/django_projects
     django-admin startproject locallibrary
 	cd locallibrary
@@ -108,7 +108,7 @@ and save it.
 
 The virtual environment should already be set up and does not need to change.
 
-    Virtualenv: /home/drchuck/.virtualenvs/django3
+    Virtualenv: /home/drchuck/.virtualenvs/django4
 
 Change `drchuck` above to your PythonAnywhere account name.
 

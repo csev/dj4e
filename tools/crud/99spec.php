@@ -158,7 +158,7 @@ a 'hello' application from a previous assignment):
 'hello' and 'autos' applications from previous assignments):
 <?php } ?>
 <pre>
-    workon django3  # as needed
+    workon django4                   # or django3 if needed
     cd ~/django_projects/mysite
     python3 manage.py startapp <?= $SPEC->main_lower_plural ?>
 </pre>

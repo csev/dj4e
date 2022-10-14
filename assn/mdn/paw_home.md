@@ -66,10 +66,10 @@ If you see and error message like:
 It probably means that you have not set up your virtual environment under 
 the `Web` tab.  
 
-If you did the installation properly and created a `django3`
+If you did the installation properly and created a `django4`
 virtual environment, the virtual environment under the `Web` tab should be set to:
 
-    /home/drchuck/.virtualenvs/django3
+    /home/drchuck/.virtualenvs/django4
 
 Replacing "drchuck" with your PythonAnywhere account name.
 

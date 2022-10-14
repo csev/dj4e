@@ -24,7 +24,7 @@ on PythonAnywhere:
 
 If you have already checked `dj4e-samples`  on PythonAnywhere do:
 
-    workon django3
+    workon django4     # or django3 if needed
     cd ~/dj4e-samples
     git pull
     pip install -r requirements.txt
