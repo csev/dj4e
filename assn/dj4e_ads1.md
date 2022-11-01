@@ -178,7 +178,7 @@ this site - weird but true.
 
 (1) Create a new `ads` application within your `mysite` project:
 
-    cd django_projects/mysite
+    cd ~/django_projects/mysite
     python3 manage.py startapp ads
 
 Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py`.
