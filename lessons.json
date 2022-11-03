@@ -1714,11 +1714,11 @@
     ]
 },
 {
-    "title": "Classified Ads #2",
+    "title": "Classified Ads + Comments",
     "anchor": "dj4e_ads2",
     "icon" : "fa-code",
     "description": "We add comments to our classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_ads2.md",
+    "assignment" : "{apphome}/assn/dj4e_ads2b.md",
     "discussions" : [
         {
         "title" : "Classified Ads #2",
@@ -1734,13 +1734,13 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List #2",
+        "title" : "Auto-grader: Ad List + Comments",
         "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads2",
+        "resource_link_id" : "dj4e_ads2b",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "12adlist2.php"
+                "value": "12adlist2b.php"
             }
         ]
         }
