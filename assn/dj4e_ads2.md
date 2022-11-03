@@ -20,6 +20,8 @@ Adding Pictures to the Ads Application
 
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
+If you already added pictures to your application in a previous assignment, you can
+just skip to the instructions to add comments to your application.
 
 (1) Add this to your `ads/model.py`, taking inspiration from `dj4e-samples/pics/models.py`
 
