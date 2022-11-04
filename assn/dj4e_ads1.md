@@ -99,7 +99,8 @@ If you get an error like `Could not import github_settings.py for social_django`
 when running `manage.py` or restarting your PythonAnywhere webapp,
 don't worry - you will see this warning until you set up the social login.
 
-<b>If you are using Ngrok skip to step 9, otherwise continue with these steps.</b>
+<b>If you are running on your local computer, (i.e not using PythonAnywhere) 
+you can skip to step 9, otherwise continue with these steps.  Steps 6-8 are for PythonAnywhere.</b>
 
 (6) We are going to switch your application on PythonAnywhere from using an
 SQLite database to a MySQL database for the rest of this course.  If you keep running
