@@ -1552,6 +1552,14 @@
     ],
     "references" : [
         {
+            "title" : "Review: Object-Oriented Programming in Python",
+            "href": "https://www.py4e.com/lessons/Objects"
+        },
+        {
+            "title" : "Quora: Is C++ Object Oriented or Procedural?",
+            "href" : "https://www.quora.com/Is-C-object-oriented-or-procedural/answer/Chuck-Severance"
+        },
+        {
             "title" : "Sample code running",
             "href" : "code/javascript-objects"
         },
