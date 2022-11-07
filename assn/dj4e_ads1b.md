@@ -33,7 +33,7 @@ into your `ads` application to add support for an optional single picture per ad
 
 Do not include the entire `Pic` model.  Of course do the migrations once you have modified the model.
 
-(2) Copy in the `pics/forms.py` as well as `pics/humanize.py` into the ads application folder.
+(2) Copy in the `pics/forms.py` as well as `pics/humanize.py` into the `ads` application folder.
 
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
 `PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
