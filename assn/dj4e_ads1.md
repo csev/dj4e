@@ -27,7 +27,7 @@ If you have already checked `dj4e-samples`  on PythonAnywhere do:
     workon django4     # or django3 if needed
     cd ~/dj4e-samples
     git pull
-    pip install -r requirements.txt
+    pip install -r requirements4.txt   # or requirements3.txt if needed
     python manage.py check
 
 To switch to using the MySQL database outside of the PythonAnywhere, you might need to install
@@ -91,7 +91,7 @@ contents with this:
 
 (5) At this point, you should be able to run:
 
-    python3 manage.py check
+    python manage.py check
 
 Keep running `check` until it does not find any errors.
 
@@ -180,7 +180,7 @@ this site - weird but true.
 (1) Create a new `ads` application within your `mysite` project:
 
     cd ~/django_projects/mysite
-    python3 manage.py startapp ads
+    python manage.py startapp ads
 
 Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py`.
 
@@ -240,13 +240,13 @@ and `/ad/14/delete`.  Something like the following should work in your `urls.py`
 
 (7) As you build the application, use `check` periodically as you complete some of the code.
 
-    python3 manage.py check
+    python manage.py check
 
 (8) Once your application is mostly complete and can pass the `check`
 without error, add the new models to your migrations and database tables:
 
-    python3 manage.py makemigrations
-    python3 manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 Debugging: Searching through all your files in the bash shell
 -------------------------------------------------------------

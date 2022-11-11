@@ -18,11 +18,11 @@ Notes for PythonAnywhere
 
 Remember that you never use `runserver` on PythonAnywhere:
 
-    python3 manage.py runserver     # <-- Never run this on pythonanywhere
+    python manage.py runserver     # <-- Never run this on pythonanywhere
 
 Instead after you change files, run
 
-    python3 manage.py check
+    python manage.py check
 
 And then go to the the PythonAnywhere Web tab and press Reload.
 

@@ -71,7 +71,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 starting with the command:
 
     cd ~/django_projects/locallibrary
-	python3 manage.py startapp catalog
+	python manage.py startapp catalog
 
 When you get to this section and are editing `locallibrary/urls.py`, do not add `permanent=True`
 if the tutorial tells you to do so - just leave it out.  Not so good:
@@ -82,9 +82,9 @@ Better:
 
         path('', RedirectView.as_view(url='catalog/')),
 
-Continue with the tutorial until it tells you to `python3 manage.py runserver` - instead do
+Continue with the tutorial until it tells you to `python manage.py runserver` - instead do
 
-	python3 manage.py check
+	python manage.py check
 
 and keep running `check` until there are no errors.
 

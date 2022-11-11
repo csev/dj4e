@@ -160,7 +160,7 @@ a 'hello' application from a previous assignment):
 <pre>
     workon django4                   # or django3 if needed
     cd ~/django_projects/mysite
-    python3 manage.py startapp <?= $SPEC->main_lower_plural ?>
+    python manage.py startapp <?= $SPEC->main_lower_plural ?>
 </pre>
 </li>
 <li>

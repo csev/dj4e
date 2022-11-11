@@ -107,12 +107,12 @@ Don't use `runserver` on PythonAnywhere
 Just as a note, you *never* run the `runserver` command on PythonAnywhere.  Often the
 tutorials have you make a bunch of changes to yout files and then tell you to do:
 
-    python3 manage.py runserver
+    python manage.py runserver
 
 This functionality is replaced by the "reload" button on your Web tab.  So
 if you are reading any Django instructions that say to do a `runserver`, instead do a
 
-    python3 manage.py check
+    python manage.py check
 
 And then reload the application in the PythonAnywhere Web tab.  There is a short cut
 to relead your application on the PythonAnywhere file editor.  It is a little icon 

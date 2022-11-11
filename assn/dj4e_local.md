@@ -14,7 +14,7 @@ tutorials, you might as well use it:
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
 
 You can use a virtual environment or if you have a suitable version of Python 3.x on your
-computer and can use `pip3` to install a suitable version of Django for your whole computer,
+computer and can use `pip` to install a suitable version of Django for your whole computer,
 there is no need to put things in a virtual environment.
 
 Also you should install git on your computer using any of the good tutorials out there.
@@ -24,9 +24,9 @@ show reasonable version numbers:
 
 Linux/Mac:
 
-    $ python3 --version
+    $ python --version
     Python 3.8.0
-    $ python3 -m django --version
+    $ python -m django --version
     3.2.5
 
 If the above does not work on Windows, try:
@@ -88,20 +88,20 @@ Then lets checkout the dj4e-samples repo and get things started:
     cd django
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
-    pip install -r requirements.txt
-    python3 manage.py check
+    pip install -r requirements4.txt
+    python manage.py check
 
 Once you have the requirements installed and you are passing the `check` step
 without errors, lets make a database and put a bit of data in the database:
 
-    python3 manage.py migrate
-    python3 manage.py createsuperuser
-    python3 manage.py runscript gview_load
-    python3 manage.py runscript many_load
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py runscript gview_load
+    python manage.py runscript many_load
 
 To run the server get into the folder with `manage.py` and then:
 
-    python3 manage.py runserver
+    python manage.py runserver
 
 Then navigate to http://localhost:8000 to see the page.
 
@@ -110,7 +110,7 @@ Then just for fun, open a second terminal / shell / command line and:
     cd Desktop
     cd django
     cd dj4e-samples
-    python3 manage.py runserver 8001
+    python manage.py runserver 8001
 
 Then navigate to http://localhost:8001 to see the page.
 

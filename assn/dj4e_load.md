@@ -33,7 +33,7 @@ We will do this assignment in a new Django project called `batch` so as not to d
 Make new application under your `django_projects/batch` called `unesco`.
 
     cd ~/django_projects/batch
-    python3 manage.py startapp unesco
+    python manage.py startapp unesco
 
 You need to copy the CSV file into the `unesco` folder.  If the `wget` command is available
 you can use it to download the file:
@@ -55,7 +55,7 @@ https://github.com/csev/dj4e-samples/tree/main/scripts
 Then in install `django extensions` if you have not already done so:
 
     workon django4                     # or django3 (if needed)
-    pip3 install django_extensions
+    pip install django_extensions
 
 Add the following line to your `batch/batch/settings.py`:
 
@@ -70,7 +70,7 @@ Add the following line to your `batch/batch/settings.py`:
 
 At this point you should run:
 
-    python3 manage.py check
+    python manage.py check
 
 And make sure that your basic Django environment is configured properly.
 
@@ -145,8 +145,8 @@ Once you have your model built, run `makemigrations` and `migrate` to create
 the database.
 
     cd ~/django_projects/batch
-    python3 manage.py makemigrations
-    python3 manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 You can repeat the process of editing the `models.py` file and re-running the migrations steps
 until you get them right.
@@ -217,7 +217,7 @@ where the `manage.py` file resides):
 
     cd ~/django_projects/batch
     workon django4                             # Or django3 (if necessary)
-    python3 manage.py runscript many_load
+    python manage.py runscript many_load
 
 It needs to be run this way so that lines like:
 
@@ -269,9 +269,9 @@ want to start with a fresh database, you can run the following commands.
     $ cd ~/django_projects/batch
     $ rm db.sqlite3
     $ rm */migrations/0*
-    $ python3 manage.py makemigrations
-    $ python3 manage.py migrate
-    $ python3 manage.py runscript many_load
+    $ python manage.py makemigrations
+    $ python manage.py migrate
+    $ python manage.py runscript many_load
 
 Make sure you run these commands in the correct folder
 (i.e. `~/django_projects/batch`).  You can run this process in any Django

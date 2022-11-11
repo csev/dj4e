@@ -27,7 +27,7 @@ interface other than using the admin interface to verify that your application i
 Make new application under your `django_projects/mysite` called `unesco`.  
 
     cd ~/django_projects/mysite
-    python3 manage.py startapp unesco
+    python manage.py startapp unesco
 
 Also make a folder called `scripts` and add an `__init__.py` file to it.  The `__init__.py` file
 is needed in order to store Python objects in the `scripts` folder.
@@ -43,7 +43,7 @@ https://github.com/csev/dj4e-samples/tree/main/scripts
 install `django extensions`:
 
     workon django4                     # or django3 if necessary
-    pip3 install django_extensions
+    pip install django_extensions
 
 Add the following line to your `mysite/mysite/settings.py`:
 
@@ -123,8 +123,8 @@ Once you have your model built, run `makemigrations` and `migrate` to create
 the database.
 
     cd ~/django_projects/mysite
-    python3 manage.py makemigrations
-    python3 manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 You can repeat the process of editing the `models.py` file and re-running the migrations steps
 until you get them right.
@@ -195,7 +195,7 @@ where the `manage.py` file resides):
 
     cd ~/django_projects/mysite
     workon django4                     # or django3 if necessary
-    python3 manage.py runscript many_load
+    python manage.py runscript many_load
 
 It needs to be run this way so that lines like:
 
@@ -281,7 +281,7 @@ of the data and restore it after you finish this assignment.
     $ cd ~/django_projects/mysite
     $ cp db.sqlite3 save.sqlite3
     $ rm db.sqlite3
-    $ python3 manage.py migrate
+    $ python manage.py migrate
 
 Run your load script and upload `db.sqlite3` to the autograder.
 

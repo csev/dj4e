@@ -28,7 +28,7 @@ bits) in an application named "home".  To get started:
 
     workon django4                  # or django3 as needed
     cd ~/django_projects/mysite
-    python3 manage.py startapp home
+    python manage.py startapp home
 
 Create an HTML file in `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
@@ -54,7 +54,7 @@ to reference `home` and follow the pattern of case from the `polls` line.
 
 Make sure to run:
 
-    python3 manage.py check
+    python manage.py check
 
 To see if your changes have syntax errors, then Reload your web application and
 navigate to the top level path (i.e. no path).  You should no longer

@@ -26,8 +26,8 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 * Then run your migration
 
         cd ~/django_projects/locallibrary
-        python3 manage.py makemigrations
-        python3 manage.py migrate
+        python manage.py makemigrations
+        python manage.py migrate
 
 * Reload your application, go into the admin page -> Groups and change the 'Library Staff' group
 and add the `catalog | book instance | Set book as returned` permission to the group and save the group.

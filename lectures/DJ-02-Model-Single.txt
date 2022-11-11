@@ -11,16 +11,16 @@ Activate a virtual environment if needed.
 
 cd dj4e-samples
 git pull                          # incase there are updates
-pip3 install -r requirements.txt  # to make sure that all the utilities are there
+pip install -r requirements4.txt  # to make sure that all the utilities are there
 
-python3 manage.py check           # Make sure things are set up
-python3 manage.py makemigrations  # Probably won't find any changes
+python manage.py check           # Make sure things are set up
+python manage.py makemigrations  # Probably won't find any changes
 rm db.sqlite3                     # In case you have done this before
-python3 manage.py migrate         # Create the database and table(s)
+python manage.py migrate         # Create the database and table(s)
 
 Start the django shell:
 
-python3 manage.py shell
+python manage.py shell
 
 (In the shell at the prompt) 
 

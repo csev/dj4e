@@ -28,8 +28,8 @@ Edit the file `catalog/models.py` and add the `Genre` model using as described i
 You can edit the file with `nano`, `vi`, or the PythonAnywhere Files tab interface.  Once you have added
 the model, run the migrations from `~/django_projects/locallibrary`
 
-    python3 manage.py makemigrations
-    python3 manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 Lets take a quick look at the contents of the `db.sqlite3` file in your bash shell:
 
@@ -64,8 +64,8 @@ at the end of the tutorial.
 Once your models.py file is complete, run the migrations again:
 
     cd ~/django_projects/locallibrary
-    python3 manage.py makemigrations
-    python3 manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 You can repeat the process of editing the `models.py` file and re-running the migrations until you get them
 right.

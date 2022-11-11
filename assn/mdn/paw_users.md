@@ -12,7 +12,7 @@ This is a more complex tutorial so allow plenty of time to work on this tutorial
 * You will need an admin user for this assignment, if you have deleted the super user, and need to
 create another one, use the following commands in a console shell:
 
-        python3 manage.py createsuperuser
+        python manage.py createsuperuser
 
 * Make a new user (check the autograder for specific instructions) and add it to Library Members
 
@@ -67,8 +67,8 @@ a migration in the command line.  Once you have changed the `models.py` file, ru
 to update the database schema:
 
         cd ~/django_projects/locallibrary/
-        python3 manage.py makemigrations
-        python3 manage.py migrate
+        python manage.py makemigrations
+        python manage.py migrate
 
 * Update the `catalog/admin.py` file to add code to the `BookInstance` model and reload your application.
 

@@ -31,7 +31,7 @@ your PythonAnywhere site (i.e. like
 
 Just as a reminder, when you are running on PythonAnywhere you **do not need** to do a:
 
-    python3 manage.py runserver  # Don't do this on PythonAnywhere
+    python manage.py runserver  # Don't do this on PythonAnywhere
 
 Everytime you make a configuration change.  But if you are running on
 PythonAnywhere and make a configuration change you **do** need to
@@ -44,7 +44,7 @@ If you want to experiment a bit and you want to wipe out your database and start
 
     cd ~/django_projects/locallibrary
     rm db.sqlite3
-    python3 manage.py migrate
+    python manage.py migrate
 
 This will wipe out all of your tables and the data in those tables and create fresh and empty tables.
 Note that this process will also wipe out your superuser accounts and all data you have entered.
@@ -60,7 +60,7 @@ This should be set to `True`.
 
 Sometimes when commands like
 
-    python3 manage.py migrate
+    python manage.py migrate
 
 run without error, but the web application will not start on
 PythonAnywhere, check to make sure your virtual environment is
