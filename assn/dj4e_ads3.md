@@ -138,6 +138,12 @@ developer console, under the network tab and watch for the AJAX (also known as X
 fail with errors like 404 or 500 and - if you select the request that is in error and look at
 the `Response` tab you will usually see what is going wrong in the server.
 
+Sometimes the AJAX errors are a little difficult to see when 
+using the <a href="dj4e_tutpaw/error_in_chrome.png" target="_blank">Chrome browser</a>.
+The developer console in <a href="dj4e_tutpaw/error_in_firefox.png" target="_blank">FireFox</a>
+renders the actual HTML to make it easier to read.
+
+
 Things that might go wrong
 --------------------------
 
