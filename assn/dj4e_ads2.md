@@ -15,6 +15,10 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
+__Important Note:__ If you find you have a problem saving files in the PythonAnywhere
+system using their browser-based editor, you might need to turn off your ad blocker for
+this site - weird but true.
+
 Adding Pictures to the Ads Application
 --------------------------------------
 

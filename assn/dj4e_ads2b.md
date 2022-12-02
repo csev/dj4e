@@ -18,6 +18,10 @@ and blending them into a your application.
 Adding Comments to the Ads Application
 --------------------------------------
 
+__Important Note:__ If you find you have a problem saving files in the PythonAnywhere
+system using their browser-based editor, you might need to turn off your ad blocker for
+this site - weird but true.
+
 In this section, you will pull bits and pieces of the `forum` sample application
 into your `ads` application to add support for comments for each ad.
 
