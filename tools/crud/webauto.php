@@ -281,7 +281,6 @@ function webauto_test_passed($grade, $url) {
     GradeUtil::gradeUpdateJson(json_encode(array("url" => $url)));
     $debug_log = array();
     $retval = LTIX::gradeSend($grade, false, $debug_log);
-    $OUTPUT->dumpDebugArray($debug_log);
     $success = false;
     if ( $retval == true ) {
         $success = "Grade sent to server (".$grade.")";
@@ -297,9 +296,13 @@ function webauto_test_passed($grade, $url) {
     if ( strlen($success) > 0 ) {
         success_out($success);
         error_log($success);
+		echo("\n<!--\n");
+   		$OUTPUT->dumpDebugArray($debug_log);
+		echo("\n-->\n");
     } else if ( strlen($failure) > 0 ) {
         error_out($failure);
         error_log($failure);
+   		$OUTPUT->dumpDebugArray($debug_log);
     } else {
         error_log("No status");
     }

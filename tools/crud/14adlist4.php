@@ -284,7 +284,7 @@ $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
 $matches = array();
-$match_count = preg_match_all('#href=[ ]*"[^"]*ad/[0-9]+#',$html,$matches);
+$match_count = preg_match_all('#href=[ ]*"[^"]*ad.*/[0-9]+#',$html,$matches);
 // echo("<pre>\n");print_r($matches);echo("\n</pre>\n");
 if ( $match_count < 1 ) {
     error_out("Could not find an href of the form /ad/nnn with text of '$title'.");
