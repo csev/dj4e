@@ -43,6 +43,9 @@ Book: <?= htmlentities($book_title) ?>
 </pre>
 You can use any values you like for the Summary, ISBN, and Genre fields.
 </p>
+<p>
+Make sure to include '/admin' in your site url below.
+</p>
 <?php
 
 
