@@ -103,7 +103,7 @@ with your PYAW account):
     Source code: /home/drchuck/django_projects/locallibrary
     Working directory: /home/drchuck/django_projects/locallibrary
 
-Edit the *WGSI Configuration File* and change `mysite` to `locallibrary` in two places
+**Important:** Edit the *WGSI Configuration File* and change `mysite` to `locallibrary` in two places
 and save it.
 
 The virtual environment should already be set up and does not need to change.
