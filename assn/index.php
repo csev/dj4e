@@ -94,6 +94,7 @@ function onSelect() {
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("dj4e_install.md") ?>>Django and PythonAnywhere</option>
+  <option <?= x_sel("dj4e_shell.md") ?>>Using the Linux Command Line Interface (Shell)</option>
   <option <?= x_sel("dj4e_html.md") ?>>Adding HTML</option>
   <option <?= x_sel("dj4e_tut01.md") ?>>Serving Dynamic Content</option>
   <option <?= x_sel("dj4e_tutpaw.md") ?>>PythonAnywhere and Django Tutorials</option>
@@ -121,6 +122,7 @@ These are the assignments for Django for Everybody (DJ4E).
 </p>
 <ul>
 <li><a href="dj4e_install.md">Django and PythonAnywhere</a></li>
+<li><a href="dj4e_shell.md">Using the Linux Command Line Interface (Shell)</a></li>
 <li><a href="dj4e_html.md">Adding HTML</a></li>
 <li><a href="dj4e_tut01.md">Serving Dynamic Content</a></li>
 <li><a href="dj4e_tutpaw.md">PythonAnywhere and Django Tutorials</a></li>
