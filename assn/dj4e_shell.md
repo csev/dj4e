@@ -1,6 +1,6 @@
 
-Using the Command Line Interface on PythonAnywhere
-==================================================
+Using the Command Line Interface / Shell on PythonAnywhere
+==========================================================
 
 A lot of the assignments in this course require you to use the Bash
 Shell (Linux command line interface) on PythonAnywhere.  In this example:

@@ -168,10 +168,46 @@
         {
             "title" : "Quora: What web framework do you use in your company? Is it Django?",
             "href" : "https://www.quora.com/As-a-Python-developer-what-web-framework-do-you-use-in-your-company-Is-it-Django"
+        }
+    ]
+},
+{
+    "title": "Using the Command Line Shell on PythonAnywhere",
+    "anchor": "dj4e_shell",
+    "icon" : "fa-terminal",
+    "description": "During this class you will be using the command line interface (shell) to work with Linux on PythonAnywhere.  In today's world it is good to have a basic understanding of the Linux command line interface - since Linux is the operating system used by most of the cloud servers in production.  In this section we do a quick overview of using the Shell on PythonAnywhere.",
+    "discussions" : [
+        {
+        "title" : "Using the Command Shell on PythonAnywhere",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_00_shell"
+        }
+    ],
+    "lti" : [
+        {
+            "title" : "Quiz: Using the Linux Command Line",
+            "launch" : "mod/gift/?quiz=00-Shell.txt",
+            "resource_link_id" : "dj4e_00_shell_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "11"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Using the Shell on PythonAnywhere",
+            "href" : "{apphome}/assn/dj4e_shell.md"
         },
         {
-            "title" : "Using ngrok to submit a local application to the Autograder (optional)",
-            "href" : "/ngrok"
+            "title" : "PythonAnywhere",
+            "href" : "https://www.pythonanywhere.com/"
         }
     ]
 },
