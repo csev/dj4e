@@ -183,6 +183,12 @@
         "resource_link_id": "discuss_00_shell"
         }
     ],
+    "videos" : [
+    {
+        "title": " Using the Command Line Shell on PythonAnywhere",
+        "youtube": "bNjwj7BKJAo"
+    }
+  ],
     "lti" : [
         {
             "title" : "Quiz: Using the Linux Command Line",
