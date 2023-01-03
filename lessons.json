@@ -175,7 +175,7 @@
     "title": "Using the Command Line Shell on PythonAnywhere",
     "anchor": "dj4e_shell",
     "icon" : "fa-dollar",
-    "description": "During this class you will be using the command line interface (shell) to work with Linux on PythonAnywhere.  Since Linux is the operating system used by most of the cloud servers in production, it is good for you to have a basic understanding of the Linux command line interface.  In this section we do a quick overview of using the Shell on PythonAnywhere.",
+    "description": "During this class you will be using the command line interface (shell) to work with Linux on PythonAnywhere.  Since Linux is the operating system used by most of the cloud servers in production, it is good for you to have a basic understanding of the Linux command line interface.  In this section we do a quick overview of using the Shell on PythonAnywhere. For this module you watch a video and take a quiz.",
     "discussions" : [
         {
         "title" : "Using the Command Shell on PythonAnywhere",
