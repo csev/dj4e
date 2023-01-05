@@ -65,7 +65,7 @@ the HTML file looks like the above image when you view
 https://your-account.pythonanywhere.com/site/css/index.htm
 </pre>
 file in your browser.
-(<a href="https://drchuck.pythonanywhere.com/site/css/index.htm" target="_blank">Example that *looks* correct but is not a solution at all</a>)
+(<a href="https://dj4e.pythonanywhere.com/site/css/index.htm" target="_blank">Example that *looks* correct but is not a solution at all</a>)
 </p></li>
 <li><p>The four boxes have five pixel borders with different colors and five pixels
 of margin and padding.  It is probably simplest to use
