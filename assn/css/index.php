@@ -74,16 +74,14 @@ to get the
 boxes to be "sticky" to the corners of the screen even when you resize.  Make the boxes
 width be <b>25%</b> so the width changes as you resize your browser.</p></li>
 <li><p>Center the link at the top of the page.  Use your developer console / inspect element
-feature of your browser to visit <a href="https://www.brainyquote.com/" target="_blank">
-https://www.brainyquote.com/</a> and figure out the background color, font, and text color
-they are using in the top navigation bar and replicate that exactly for the link to BrainyQuote
+feature of your browser to visit <a href="https://www.dj4e.com/" target="_blank">
+https://www.dj4e.com/</a> and figure out the background color, font, and text color
+used in the top navigation bar and replicate for the link to DJ4E
 in your <b>index.htm</b>.
 </p></li>
 You might find that using the
 <a href="https://www.w3schools.com/css/css_border_shorthand.asp" target="_blank">border shortcut</a>
 in your CSS instead of the separate "border" values makes the CSS validtor "happier".
-<li><p>
-</p></li>
 <li><p>Your CSS must pass the validator at:
 <pre>
 <a href="https://jigsaw.w3.org/css-validator" target="_blank">https://jigsaw.w3.org/css-validator</a>
@@ -104,25 +102,6 @@ foreach($json->parts as $part ) {
 
 
 <h1>Sample Screen Shots</h1>
-<p>
-Using inspect element on the
-<a href="https://www.brainyquote.com/" target="_blank">
-https://www.brainyquote.com/</a>.
-<center>
-<a href="04-brainy-inspect.png" target="_blank">
-<img src="04-brainy-inspect.png" width="80%" border="2px"></a>
-</center>
-</p>
-<p>
-Looking at
-<a href="https://www.brainyquote.com/" target="_blank">
-https://www.brainyquote.com/</a> using Chris Pedrick's
-Web Developer add on to turn off all styles:
-<center>
-<a href="05-brainy-no-css.png" target="_blank">
-<img src="05-brainy-no-css.png" width="80%" border="2px"></a>
-</center>
-</p>
 <p>Passing the CSS validator:
 <p>
 <center>
