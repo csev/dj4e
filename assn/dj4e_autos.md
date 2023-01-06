@@ -47,7 +47,7 @@ You can keep the "Hello World" text in the page somewhere.
 
 Add a link to the "/autos" url in `mysite/home/templates/home/main.html` and anything else the autograder needs:
 
-    <li><a href="/autos">Autos CRUD</a>
+    <li><a href="/autos">Autos CRUD</a></li>
 
 It is a list because we will be adding more applications in future assignments. :)
 
