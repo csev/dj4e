@@ -10,8 +10,8 @@ $qtext = 'Answer to the Ultimate Question';
 <h1>Django Tutorial 02</h1>
 <p>
 For this assignment work through Part 2 of the Django tutorial at
-<a href="https://docs.djangoproject.com/en/4.0/intro/tutorial02/" target="_blank">
-https://docs.djangoproject.com/en/4.0/intro/tutorial02/</a>.
+<a href="https://www.dj4e.com/assn/dj4e_tut02.md" target="_blank">
+https://www.dj4e.com/assn/dj4e_tut02.md</a>.
 </a>
 </p>
 <p>

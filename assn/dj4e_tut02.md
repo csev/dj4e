@@ -34,8 +34,19 @@ Instead nagivate to the same path on your PythonAnywhere site:
 
     (your-account).pythonanywhere.com/admin
 
-If Your Model/Database Gets Messed Up
--------------------------------------
+If You Create an admin User and Need to Change its Password
+------------------------------------------------------------
+
+If you run `createsuperuser` and end up with an `admin` account and want to
+change the password for an account, use:
+
+    cd ~/django_projects/mysite
+    python manage.py changepassword admin
+
+You can change any Django user account using this approach.
+
+If Your Model/Database Gets Messed Up Completely - Start over
+-------------------------------------------------------------
 
 Since this is your first time doing a model and migrations, things can
 get messed up - if you want to clean up your database and start with a
