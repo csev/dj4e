@@ -56,6 +56,7 @@ $menu = false;
 if ( $LAUNCH->link && $LAUNCH->user && $LAUNCH->user->instructor ) {
     $menu = new \Tsugi\UI\MenuSet();
     $menu->addLeft('Student Data', 'grades.php');
+    $menu->addLeft('Send Grade', 'sendgrade.php');
     if ( $CFG->launchactivity ) {
         $menu->addRight(__('Launches'), 'analytics');
     }

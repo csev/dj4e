@@ -95,6 +95,7 @@ value="<?= htmlentities($oldcookie) ?>"/></p>
 </p>
 <?php
 if ( $USER->instructor ) {
+echo('<a href="sendgrade.php" class="btn btn-default">Grade Send</a> ');
 echo("\n<hr/>");
 echo("\n<pre>\n");
 print_r($_COOKIE);

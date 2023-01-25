@@ -52,6 +52,7 @@ echo('<span style="float: right;">');
 if ( $USER->instructor ) {
     if ( $CFG->launchactivity ) {
         echo('<a href="analytics" class="btn btn-default">Launches</a> ');
+        echo('<a href="sendgrade.php" class="btn btn-default">Grade Send</a> ');
     }
     echo('<a href="grades.php" target="_blank"><button class="btn btn-info">Grade detail</button></a> '."\n");
 SettingsForm::button();
