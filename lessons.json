@@ -776,6 +776,10 @@
     ],
     "references" : [
         {
+            "title" : "Slides: The True Story of Python Assignment Statements",
+            "href" : "{apphome}/lectures/PY-01-Variables.pptx"
+        },
+        {
             "title" : "Chapter 14: Python Objects",
             "href" : "https://www.py4e.com/html3/14-objects"
         },
