@@ -163,11 +163,6 @@ if ( $title ) {
 }
 ?>
 </p>
-<p>If you need to run this grading program on an application that is running on your
-laptop or desktop computer with a URL like <strong>http://localhost...</strong> you
-will need to install and use the <a href="http://www.dj4e.com/md/" target="_blank">NGrok</a>
-application to get a temporary Internet-accessible URL that can be used with this application.
-</p>
 <?php
 }
 

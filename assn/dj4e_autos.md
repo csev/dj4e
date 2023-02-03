@@ -183,8 +183,6 @@ References
 
 * <a href="dj4e_install.md" target="_blank">Installing Django Locally</a>
 
-* <a href="../ngrok" target="_blank">Using ngrok to turn in your assignments</a>
-
 * <a href="https://stackoverflow.com/questions/13808020/include-an-svg-hosted-on-github-in-markdown" target="_blank">Embedding SVG in Markdown</a>
 
 <script>
