@@ -151,9 +151,6 @@ the database.
     python manage.py makemigrations
     python manage.py migrate
 
-You can repeat the process of editing the `models.py` file and re-running the migrations steps
-until you get them right.
-
 Loading Data Into Your Database
 -------------------------------
 
@@ -213,8 +210,7 @@ Dealing with Empty Columns
 --------------------------
 
 Your data will be more complex than the sample, You will need to deal with situations
-where an integer column like the `year` will be empty.  First, add `null=True` to numeric columns
-that can be empty in your `models.py`.   Then, before inserting the `Site` record, check the year to
+where an integer column like the `year` will be empty.  Then, before inserting the `Site` record, check the year to
 see if it is a valid integer and if it is not a valid integer set it to `None` which will become
 `NULL` (or empty) in the data base when inserted:
 
@@ -236,7 +232,7 @@ see if it is a valid integer and if it is not a valid integer set it to `None` w
 
     ...
 
-    site = Site(name=row[0], description=row[1], year=y, ... , category=cat)
+    site = Site(name=row[0], description=row[1], year=y, latitude = lat, ... , category=cat)
     site.save()
 
 You will need to do a try / except for each of the numeric fields that might be missing or have invalid data.
