@@ -165,12 +165,11 @@ There is a simple example of how to write such a script in the
 
 <a href="https://github.com/csev/dj4e-samples/blob/main/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
 
-See the file `load.csv` and `many_load.py` for and example of how you look through a file,
-insert model data and make foreign key connections.
+You will need to copy the `many_load.py` to `unesco/scripts/many_load.py` and then make changes 
+to adapt it from the Membership model/data to the Site model/data.   
 
-You will need to make changes to the `many_load.py` to adapt it from the Memebership
-model/data to the Site model/data.   For example you need to change the name of the file that
-the sample script opens and reads.
+You need to change the name of the file that
+the sample script opens and reads to the file that you downloaded and installed.
 
 Also in the example code, before the loop to read the data is
 executed, we empty out the database using statements like:
