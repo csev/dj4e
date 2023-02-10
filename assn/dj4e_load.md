@@ -92,10 +92,11 @@ columns that have vertical duplication, such as region:
     Cultural    Algeria                Arab States                 dz
     Cultural    Algeria                Arab States                 dz
 
-We will use a Django model that describes the tables, one-to-many relationships,
-and foreign keys sufficient to represent this data efficiently with no
-vertical duplication of string values.  Numbers and dates do not have to
-have their own tables.
+In order to simplify the assignment, we have done the model design for you
+and spread the data across five tables linked together with one-to-many relationships.
+
+The result of the database design exercise is the following `models.py` file.  It
+uses foreign keys to link the tables together.  You can put this file in `unesco/models.py`:
 
     from django.db import models
 
@@ -135,13 +136,15 @@ have their own tables.
         def __str__(self) :
             return self.name
 
-Draw the above data model using <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
-Crow's-Foot Notation</a>. You
-can use paper, or a layout tool - one way or another your
+Since we have given you the data model, in order to better understand the data model,
+as an exercise, please draw the model using
+<a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
+Crow's-Foot Notation</a>.
+You can use paper, or a layout tool - one way or another your
 diagram should have five boxes and four lines - and the each of lines should be properly labelled
 as a "many" or a "one" end.
 
-Once you have your model built, run `makemigrations` and `migrate` to create
+Once you have put the file in `unesco/models.py` built, run `makemigrations` and `migrate` to create
 the database.
 
     cd ~/django_projects/batch
@@ -165,7 +168,19 @@ There is a simple example of how to write such a script in the
 <a href="https://github.com/csev/dj4e-samples/blob/main/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
 
 See the file `load.csv` and `many_load.py` for and example of how you look through a file,
-insert model data and make foreign key connections.  A key technique is in this bit of code:
+insert model data and make foreign key connections.
+
+In this example before the loop to read the data is executed, we empty out the database
+using statements like:
+
+    Person.objects.all().delete()
+
+For your code you will want to empty out all the models / tables with statements like:
+
+    Category.objects.all().delete()
+
+In order to create the entries in each of the lookup tables so you can point to them
+using foreign keys, the sample code uses statements like the following:
 
     p, created = Person.objects.get_or_create(email=row[0])
 
@@ -173,20 +188,26 @@ This code insures that there is a row in the Person table for the email address
 that was just read `row[0]`.  The email address may or may not already be in the table
 from a previous line in the file. One way or another, by the end of this line
 of code `p` contains a reference to a Person stored in the database that can be
-used to fullfill a foreign key later in the code.
+used to fullfill a foreign key refernence later in the code.
 
 Note that the "p, created" is an example of Python function
 <a href="https://youtu.be/CaVhM65wD6g?t=254" target="_blank">returning two values</a>
 using a tuple.
 
+For your program you will create the "lookup" entries in each table (Category, Iso, State, and Region)
+using four statements like:
+
+    cat, created = Category.objects.get_or_create(name=row[7])
+
+In the sample code, once all the lookup objects are created, the sample code creates the
+Membership entry using the following code.
+
     m = Membership(role=r,person=p, course=c)
     m.save()
 
-The line to make the `Membership` row is the last thing that is done so all the
-foreign key connections can be made.
-
-Notice that the code empties the three tables out every time and freshly reloads
-all the data so the process can be run over and over.
+The line to create and save the `Membership` row is the last thing that is done so all the
+foreign key connections can be made because the Person, Course, and Role entries
+exist and are in the variables p, c, and r respectively.
 
 Dealing with Empty Columns
 --------------------------
@@ -197,6 +218,10 @@ that can be empty in your `models.py`.   Then, before inserting the `Site` recor
 see if it is a valid integer and if it is not a valid integer set it to `None` which will become
 `NULL` (or empty) in the data base when inserted:
 
+    cat, created = Category.objects.get_or_create(name=row[7])
+
+    ...
+
     try:
         y = int(row[3])
     except:
@@ -204,10 +229,20 @@ see if it is a valid integer and if it is not a valid integer set it to `None` w
 
     ...
 
-    site = Site(name=row[0], description=row[1], year=y, ... )
+    try:
+        lat = float(row[5])
+    except:
+        lat = None
+
+    ...
+
+    site = Site(name=row[0], description=row[1], year=y, ... , category=cat)
     site.save()
 
-You will need to do this for each of the numeric fields that might be missing or have invalid data.
+You will need to do a try / except for each of the numeric fields that might be missing or have invalid data.
+
+At the end you will create the Site object from the lookup objects, cleaned up column data and the string data
+that goes into the `Site` table.
 
 Running the Script
 ------------------
