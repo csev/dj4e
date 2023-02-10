@@ -232,7 +232,7 @@ see if it is a valid integer and if it is not a valid integer set it to `None` w
 
     ...
 
-    site = Site(name=row[0], description=row[1], year=y, latitude = lat, ... , category=cat)
+    site = Site(name=row[0], description=row[1], year=y, ... latitude = lat, ... category=cat ...)
     site.save()
 
 You will need to do a try / except for each of the numeric fields that might be missing or have invalid data.
