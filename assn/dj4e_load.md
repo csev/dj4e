@@ -96,7 +96,8 @@ In order to simplify the assignment, we have done the model design for you
 and spread the data across five tables linked together with one-to-many relationships.
 
 The result of the database design exercise is the following `models.py` file.  It
-uses foreign keys to link the tables together.  You can put this file in `unesco/models.py`:
+uses foreign keys to link the tables together.  You can add this
+file in `batch/unesco/models.py`:
 
     from django.db import models
 
@@ -167,8 +168,12 @@ There is a simple example of how to write such a script in the
 See the file `load.csv` and `many_load.py` for and example of how you look through a file,
 insert model data and make foreign key connections.
 
-In this example before the loop to read the data is executed, we empty out the database
-using statements like:
+You will need to make changes to the `many_load.py` to adapt it from the Memebership
+model/data to the Site model/data.   For example you need to change the name of the file that
+the sample script opens and reads.
+
+Also in the example code, before the loop to read the data is
+executed, we empty out the database using statements like:
 
     Person.objects.all().delete()
 
@@ -177,7 +182,7 @@ For your code you will want to empty out all the models / tables with statements
     Category.objects.all().delete()
 
 In order to create the entries in each of the lookup tables so you can point to them
-using foreign keys, the sample code uses statements like the following:
+using foreign keys, the sample `many_load.py` code uses statements like the following:
 
     p, created = Person.objects.get_or_create(email=row[0])
 
@@ -191,8 +196,8 @@ Note that the "p, created" is an example of Python function
 <a href="https://youtu.be/CaVhM65wD6g?t=254" target="_blank">returning two values</a>
 using a tuple.
 
-For your program you will create the "lookup" entries in each table (Category, Iso, State, and Region)
-using four statements like:
+For your program you will create the "lookup" entries in each
+table (Category, Iso, State, and Region) using four statements like:
 
     cat, created = Category.objects.get_or_create(name=row[7])
 
@@ -210,9 +215,10 @@ Dealing with Empty Columns
 --------------------------
 
 Your data will be more complex than the sample, You will need to deal with situations
-where an integer column like the `year` will be empty.  Then, before inserting the `Site` record, check the year to
-see if it is a valid integer and if it is not a valid integer set it to `None` which will become
-`NULL` (or empty) in the data base when inserted:
+where an integer column like the `year` will be empty.  Then, before inserting
+the `Site` record, check the year to see if it is a valid integer and if it is
+not a valid integer set it to `None` which will become `NULL` (or empty) in the
+data base when inserted:
 
     cat, created = Category.objects.get_or_create(name=row[7])
 
