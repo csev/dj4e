@@ -174,10 +174,10 @@ the sample code from the lecture on this topic - it needs a *quite a few* of cha
 make it work with your `Site` data model.  We outline the kinds of changes that are needed
 below:
 
-(1) You need to change the name of the file that
+__(1)__ You need to change the name of the file that
 the sample script opens and reads to the file that you downloaded and installed.
 
-(2) In the example code, before the loop to read the data is
+__(2)__ In the example code, before the loop to read the data is
 executed, we empty out the database using statements like:
 
     Person.objects.all().delete()
@@ -186,7 +186,7 @@ For your code you will want to empty out all the models / tables with statements
 
     Category.objects.all().delete()
 
-(3) In order to create the entries in each of the lookup tables so you can point to them
+__(3)__ In order to create the entries in each of the lookup tables so you can point to them
 using foreign keys, the sample `many_load.py` code uses statements like the following:
 
     p, created = Person.objects.get_or_create(email=row[0])
@@ -206,7 +206,7 @@ table (Category, Iso, State, and Region) using four statements like:
 
     cat, created = Category.objects.get_or_create(name=row[7])
 
-(5) In the sample code, once all the lookup objects are created, the sample code creates the
+__(4)__ In the sample code, once all the lookup objects are created, the sample code creates the
 Membership entry using the following code.
 
     m = Membership(role=r,person=p, course=c)
@@ -216,7 +216,7 @@ The line to create and save the `Membership` row is the last thing that is done 
 foreign key connections can be made because the Person, Course, and Role entries
 exist and are in the variables p, c, and r respectively.
 
-(6) Your data will be more complex than the sample, You will need to deal with situations
+__(5)__ Your data will be more complex than the sample, You will need to deal with situations
 where an integer column like the `year` will be empty.  The solution is to
 check the `year` to see if it is a valid integer and if it is
 not a valid integer set it to `None` which will become `NULL` (or empty) in the
