@@ -165,6 +165,9 @@ There is a simple example of how to write such a script in the
 
 <a href="https://github.com/csev/dj4e-samples/blob/main/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
 
+Changing the batch script
+--------------------------
+
 You will need to copy the `many_load.py` to `unesco/scripts/many_load.py` and then make changes 
 to adapt it from the Membership model/data to the Site model/data.  The `many_load.py` file is
 the sample code from the lecture on this topic - it needs a *quite a few* of changes to
