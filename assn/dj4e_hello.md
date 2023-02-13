@@ -83,10 +83,10 @@ https://samples.dj4e.com/session/sessfun</a>.
 
 You will need to:
 
-* Use `startapp` to create a folder
+1. Use `startapp` to create a folder
 for the application and have Django create empty files like `views.py` and `models.py` in the `hello` folder.
 
-* Create a `hello/urls.py` to route all requests to the hello application to a view function that you will write in
+2. Create a `hello/urls.py` to route all requests to the hello application to a view function that you will write in
 `views.py` - You can look at your `polls/urls.py` to see how the file is constructed in general and adapt it
 to create `hello/urls.py`.   You will only need one urlpattern in the `hello` application.
 You will only write a single view function that will *both* set a cookie and implement the session.
@@ -94,10 +94,10 @@ If your view function was named `myview`, the path will look as follows:
 
         path('', views.myview),
 
-* Change the project-wide `mysite/urls.py` to mount the new application's urls at `/hello`.  Look at the line for
+3. Change the project-wide `mysite/urls.py` to mount the new application's urls at `/hello`.  Look at the line for
 the `polls` urls and adapt it for your `hello` application.
 
-* Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `hello` application following
+4. Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `hello` application following
 the pattern that you used to add the `polls` application to `INSTALLED_APPS` - again - the exact code
 is something you figure out from looking at `dj4e-samples` or from the lectures.
 
