@@ -166,12 +166,15 @@ There is a simple example of how to write such a script in the
 <a href="https://github.com/csev/dj4e-samples/blob/main/scripts/many_load.py" target="_blank">Many-to-Many / Script</a>
 
 You will need to copy the `many_load.py` to `unesco/scripts/many_load.py` and then make changes 
-to adapt it from the Membership model/data to the Site model/data.   
+to adapt it from the Membership model/data to the Site model/data.  The `many_load.py` file is
+the sample code from the lecture on this topic - it needs a *quite a few* of changes to
+make it work with your `Site` data model.  We outline the kinds of changes that are needed
+below:
 
-You need to change the name of the file that
+(1) You need to change the name of the file that
 the sample script opens and reads to the file that you downloaded and installed.
 
-Also in the example code, before the loop to read the data is
+(2) In the example code, before the loop to read the data is
 executed, we empty out the database using statements like:
 
     Person.objects.all().delete()
@@ -180,7 +183,7 @@ For your code you will want to empty out all the models / tables with statements
 
     Category.objects.all().delete()
 
-In order to create the entries in each of the lookup tables so you can point to them
+(3) In order to create the entries in each of the lookup tables so you can point to them
 using foreign keys, the sample `many_load.py` code uses statements like the following:
 
     p, created = Person.objects.get_or_create(email=row[0])
@@ -200,7 +203,7 @@ table (Category, Iso, State, and Region) using four statements like:
 
     cat, created = Category.objects.get_or_create(name=row[7])
 
-In the sample code, once all the lookup objects are created, the sample code creates the
+(5) In the sample code, once all the lookup objects are created, the sample code creates the
 Membership entry using the following code.
 
     m = Membership(role=r,person=p, course=c)
@@ -210,14 +213,11 @@ The line to create and save the `Membership` row is the last thing that is done 
 foreign key connections can be made because the Person, Course, and Role entries
 exist and are in the variables p, c, and r respectively.
 
-Dealing with Empty Columns
---------------------------
-
-Your data will be more complex than the sample, You will need to deal with situations
-where an integer column like the `year` will be empty.  Then, before inserting
-the `Site` record, check the year to see if it is a valid integer and if it is
+(6) Your data will be more complex than the sample, You will need to deal with situations
+where an integer column like the `year` will be empty.  The solution is to
+check the `year` to see if it is a valid integer and if it is
 not a valid integer set it to `None` which will become `NULL` (or empty) in the
-data base when inserted:
+data base when inserted.
 
     cat, created = Category.objects.get_or_create(name=row[7])
 
