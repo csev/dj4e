@@ -272,7 +272,12 @@ Edit the <b><?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views 
 list, edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
 </li>
 <li>
-Add the appropriate templates to <b><?= $SPEC->main_lower_plural ?>/templates</b> following the naming
+Create/edit the <b><?= $SPEC->main_lower_plural ?>/forms.py</b> file to add/edit the forms that you need
+for your views. You do not need to make a form if you are for any view that extends a generic view because because
+generic views create a Form objects for each view automatically.
+</li>
+<li>
+Add the appropriate templates to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b> following the naming
 conventions for the templates.
 </li><li>
 If you have not already done so,
