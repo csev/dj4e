@@ -86,7 +86,9 @@ Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file
 
 * Edit the `autos/views.py` file to add views for the list, create, update, and delete views for both autos and makes based on the sample code.
 
-* Edit the `autos/urls.py` file to add routes for views for both autos and makes
+* Create/Edit the `autos/urls.py` file to add routes for views for both autos and makes
+
+* Create/Edit the `autos/forms.py` file to add the form for MakeForm
 
 * In your `views.py` file, you can start out using the `Make` views from the sample code, but once you
 have the application working, you should come back and rewrite the `Make` views using the same patterns as the `Auto` views.
@@ -95,12 +97,12 @@ have a `MakeForm` or `forms.py`.   You can either write the long version of the 
 short version is easier to code but more challenging to understand because it relies so heavily on a complex parent object
 and inheritance.
 
-* Run the `python manage.py check` until you see no errors
-
 * Edit the `autos/models.py` file to add Auto and Makes models with a foreign
 key from Autos to Makes.
 
 <img src="svg/auto_model.svg" alt="A data model diagram showing Autos and Makes" style="display: block; margin-left: auto; margin-right: auto;align: center; max-width: 300px;">
+
+* Run the `python manage.py check` until you see no errors
 
 * Run the `python manage.py makemigrations` until it has no errors.  Sometimes
 when you make changes to `models.py`, the makemigrations will pick
