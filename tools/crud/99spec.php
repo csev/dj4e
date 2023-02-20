@@ -142,10 +142,12 @@ The 'nn' is a 2-digit number that by now, you should be able to easily guess.
 Here are some general specifications for this <?= $SPEC->assignment_type_lower ?>:
 <ul>
 <li>
-Use the Django-provided features for login and log out just as in the provided sample code.
+Your application should support logging in and logging out.  If you
+have this working in the autos assignment, you should not need to change anything.
 <li>
 The auto-grader-required <b>meta</b> tag must be in the head area for all of the pages
-for this <?= $SPEC->assignment_type_lower ?>.
+for this <?= $SPEC->assignment_type_lower ?>.  This is likely already set 
+up from a previous assignment.
 </li>
 <li>
 This can be added as a new application to your <b>mysite</b> project.  You do not have to remove
