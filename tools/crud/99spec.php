@@ -220,7 +220,7 @@ foreach($SPEC->fields as $field ) {
         return self.nickname
 </pre>
 <li>
-Run the commands to perform the migrations.
+Run the commands to perform the migrations until they work with no errors.
 </li>
 <li>
 Add a link to <b>django_projects/mysite/home/templates/home/main.html</b> that has the text for the top-level page.
