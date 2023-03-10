@@ -5,7 +5,7 @@ require_once "../crud/webauto.php";
 use Goutte\Client;
 
 $adminpw = substr(getMD5(),4,9);
-if ( is_numeric($adminpw) ) $adminpw = $adminpw+'a';
+if ( is_numeric($adminpw) ) $adminpw = $adminpw.'a';
 $qtext = 'Answer to the Ultimate Question';
 ?>
 <h1>Django Tutorial 02</h1>
