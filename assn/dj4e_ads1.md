@@ -47,6 +47,11 @@ __Important Note:__ If you find you have a problem saving files in the PythonAny
 system using their browser-based editor, you might need to turn off your ad blocker for
 this site - weird but true.
 
+__Important Note:__ If you are using PowerPoint slides for sample code, *never* copy and paste
+from Powerpoint or Word into PythonAnywhere.  Microsoft products use *weird* characters for
+quotes and dollar signs and they can break your code but look perfect.  A good rule is to never
+copy code from any Microsoft product.
+
 Pulling In Code From Samples
 ----------------------------
 
@@ -337,6 +342,8 @@ to be:
         <meta name="dj4e-code" content="99999999">
 
    and change the `9999999`  to be "<span id="dj4e-code">missing</span>"
+   Note that there will be two meta tags, one for dj4e-code and one for
+   dj4e - keep both in this file.
 
 Make sure to check the autograder for additional markup requirements.
 
