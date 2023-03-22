@@ -448,11 +448,12 @@ function webauto_get_form_with_button($crawler,$text, $text2=false)
     }
 }
 
-function webauto_get_href($crawler,$text)
+function webauto_get_href($crawler,$text, $message=false)
 {
     if ( $crawler == false ) return false;
     $html = $crawler->html();
     $msg = 'Did not find anchor tag with"'.$text.'"';
+    if ( is_string($message) ) $msg .= ' ' . $message;
     if ( strpos($html, $text) === false) {
         if ( stripos($html, $text) !== false ) $msg .= ' (check your case)';
         error_out($msg);
@@ -469,18 +470,18 @@ function webauto_get_href($crawler,$text)
     }
 }
 
-function webauto_get_url_from_href($crawler,$text)
+function webauto_get_url_from_href($crawler,$text,$message=false)
 {
-    $href = webauto_get_href($crawler,$text);
+    $href = webauto_get_href($crawler,$text, $message);
     if ( ! $href ) return false;
     $url = $href->getURI();
     return $url;
 }
 
-function webauto_extract_url($crawler,$text)
+function webauto_extract_url($crawler,$text, $message=false)
 {
     try {
-        $url = webauto_get_url_from_href($crawler,$text);
+        $url = webauto_get_url_from_href($crawler,$text, $message);
     } catch(Exception $ex) {
         return false;
     }
@@ -488,12 +489,13 @@ function webauto_extract_url($crawler,$text)
 }
 
 // http://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
-function webauto_change_form($form, $name, $value)
+function webauto_change_form($form, $name, $value, $message=false)
 {
     try {
         $x = $form->get($name);
     } catch(Exception $ex) {
         $msg = 'Did not find form field named "'.$name.'"';
+        if ( is_string($message) ) $msg .= ' ' . $detail;
         error_out($msg);
         throw new Exception($msg);
     }
@@ -536,13 +538,13 @@ function webauto_search_for($html, $needle, $ignorecase=true)
     }
 }
 
-function webauto_search_for_not($html, $needle)
+function webauto_search_for_not($html, $needle, $message=false)
 {
     if ( stripos($html,$needle) === false ) {
         markTestPassed("Did not find '$needle'");
         return true;
     } else {
-        error_out("Should not have found '$needle'");
+        error_out("Should not have found '$needle' ".$message);
         return false;
     }
 }

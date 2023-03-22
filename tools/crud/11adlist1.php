@@ -100,6 +100,11 @@ if ( ! webauto_search_for_not($html, "owner") ) {
     return;
 }
 
+if ( ! webauto_search_for($html, "price") ) {
+    error_out('The price field is missing on the create form - check the field_list in views.py');
+    return;
+}
+
 // Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
@@ -113,6 +118,23 @@ webauto_search_for_menu($html);
 
 if ( ! webauto_search_for($html, $title) ) {
     error_out('Tried to create a record and cannot find the record in the list view');
+    return;
+}
+
+// Check the detail page
+$detail_url = webauto_get_url_from_href($crawler,$title, "(Could not link to the detail page on the list view)");
+$crawler_detail = webauto_get_url($client, $detail_url, "Loading detail page");
+$html_detail = webauto_get_html($crawler_detail);
+if ( ! webauto_search_for($html_detail, $title) ) {
+    error_out("Did not find '$title' on detail page");
+    return;
+}
+if ( ! webauto_search_for($html_detail, 'Price', true) ) {
+    error_out("Did not find price on detail page");
+    return;
+}
+if ( ! webauto_search_for_not($html_detail, "owner") ) {
+    error_out('The owner field is not supposed to appear in the detail form.');
     return;
 }
 
@@ -181,7 +203,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
 		$crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
         webauto_search_for_menu($html);
-    } 
+    }
 }
 $passed = $saved;
 
