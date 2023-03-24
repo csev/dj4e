@@ -486,26 +486,18 @@ the database and run the `SHOW TABLES;` command:
     10 rows in set (0.00 sec)
     mysql>
 
-Your list of tables might have more or less tables.  To reset things, just run the
-command `DROP TABLE ads_ad;` once for every table in the list.  From time to time
-run `SHOW TABLES;` to see where things are going.  You want to drop every table.
+Then we will get rid of the `ads_ad` table and its associated migration records:
 
-If you try to drop a table and it complains about a foreign key constraint - skip
-dropping the table and keep dropping the rest of the tables.  When you get to the end
-to a `SHOW TABLES;` again and start dropping the remaining tables until you have none.
-This happens because when you have a one-many relationship and a foreign key
-you need to drop the "many" table (i.e. autos) before you can drop the "one" table
-(i.e. makes).
+    mysql> DROP TABLE ads_ad;
+    mysql> DELETE FROM django_migrations WHERE app='ads';
 
-Once you have no more tables, go back to the bash shell and run the following commands:
+Then, in the bash shell, you can remove and re-make the migrations
 
     cd ~/django_projects/mysite
-    rm */migrations/00*
+    rm ads/migrations/00*
 
-Then go back to step 9 and pick up with the `makemigrations` step.  Since your database is
-completely empty - you will need to re-add any `createuser` accounts and/or the accounts which
-are needed for the autograder to work.
-
+Then go back to step 9 and pick up with the `makemigrations` and `migrate` steps as well as
+`createuser` is needed.
 
 <script>
 var d= new Date();
