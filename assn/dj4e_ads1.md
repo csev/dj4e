@@ -225,8 +225,8 @@ in your create screen the program is not implemented correctly and will fail the
 templates in `ads/templates/ads`.
 
 (6) When you are implementing the update and delete views, make sure to follow the url patterns
-for the update and delete operations.  They should be of the form `/ad/14/update`
-and `/ad/14/delete`.  Something like the following should work in your `urls.py`:
+for the update and delete operations.  They should be of the form `/ad/<int:pk>/update`
+and `/ad/<int:pk>/delete`.  Something like the following should work in your `urls.py`:
 
     from django.urls import path, reverse_lazy
     from . import views
