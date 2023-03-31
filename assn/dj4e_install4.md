@@ -26,7 +26,8 @@ and set up a virtual environment with Python 3.x and Django 4.
     pip install django==4.0.7 ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
-to get back into your virtual environment in the new bash shell.
+to get back into your virtual environment in the new bash shell unless you enable it automatically
+as shown below.
 
     workon django4
 
@@ -36,6 +37,30 @@ Lets make sure that your django was installed successfully and you are running t
     # This should show something like Python 3.9.5
     python -m django --version
     # This should show something like 4.0.7
+
+Automatically Enabling Your Virtual Environment
+-----------------------------------------------
+
+Each time you start a new shell, you will need to activate your virtual environment.  It
+is a lot simpler to do this automatically every time you login by editing the `.bashrc` file
+in *your* home directory.
+
+    /home/(your-account)/.bashrc
+
+Look for lines near the end of the file that look like:
+
+    # Load virtualenvwrapper
+    source virtualenvwrapper.sh &> /dev/null
+
+Add the following lines to the file and save the file.
+
+    # Auto switch into django4 virtual environment
+    workon django4
+
+The next time you start a console/shell, the shell should be using the `django4` environment
+and you should see the virtual environment indicator in your shell prompt:
+
+    (django4) 13:29 ~ $
 
 Installing the Sample Code for DJ4E
 -----------------------------------
