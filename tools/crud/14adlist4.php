@@ -315,6 +315,7 @@ if ( $match_count < 1 ) {
 
 if ( $match_count > 1 ) {
     error_out("Found more than one ad when searching for '$title'.");
+    line_out("You probably need to add distinct() after select_related().distinct() ... in your views.py");
     return;
 }
 $passed++;
