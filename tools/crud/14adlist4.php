@@ -225,7 +225,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
             return;
         }
         $response = $client->getResponse();
-        $status = $response->getStatus();
+        $status = $response->getStatusCode();
         if ( $status !== 200 ) {
             error_out("Error posting to favorite url: ".$match." status=".$status);
             return;
@@ -250,7 +250,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
             return;
         }
         $response = $client->getResponse();
-        $status = $response->getStatus();
+        $status = $response->getStatusCode();
         if ( $status !== 200 ) {
             error_out("Error posting to unfavorite url: ".$match." status=".$status);
             return;

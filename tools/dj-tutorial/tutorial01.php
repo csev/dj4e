@@ -2,8 +2,6 @@
 
 require_once "../crud/webauto.php";
 
-use Goutte\Client;
-
 line_out("Autograder Django Tutorial 01");
 
 ?>
@@ -42,10 +40,8 @@ if ( $url === false ) return;
 $passed = 0;
 
 error_log("Tutorial01 ".$url);
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+
+webauto_setup();
 
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler === false ) return;

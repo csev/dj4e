@@ -2,8 +2,6 @@
 
 require_once "../crud/webauto.php";
 
-use Goutte\Client;
-
 $adminpw = substr(getMD5(),4,9);
 if ( is_numeric($adminpw) ) $adminpw = $adminpw.'a';
 $qtext = 'Answer to the Ultimate Question';
@@ -43,10 +41,7 @@ $passed = 0;
 $admin = $url;
 error_log("Tutorial02 ".$url);
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+webauto_setup();
 
 $crawler = webauto_retrieve_url($client, $admin);
 $html = webauto_get_html($crawler);

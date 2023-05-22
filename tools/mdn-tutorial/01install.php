@@ -2,8 +2,6 @@
 
 require_once "../crud/webauto.php";
 
-use Goutte\Client;
-
 line_out("Installing Django on PythonAnywhere");
 
 ?>
@@ -26,14 +24,12 @@ if ( strpos($url,'index.htm') !== false ) {
 $csspath = $path . '/static/admin/css/fonts.css';
 
 error_log("MDNInstall".$url);
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+
+webauto_setup();
 
 $crawler = webauto_get_url($client, $url);
 $response = $client->getResponse();
-$status = $response->getStatus();
+$status = $response->getStatusCode();
 if ( $status == 404 ) {
     error_out("Could not load $url, status=$status");
     return;
@@ -63,7 +59,7 @@ if ( strpos($url,'dj4e.com') !== false ) {
 // Make sure static is set up properly
 $crawler = webauto_get_url($client, $csspath);
 $response = $client->getResponse();
-$status = $response->getStatus();
+$status = $response->getStatusCode();
 if ( $status != 200 ) {
     error_out("Could not load $csspath, make sure you are serving your static files status=$status");
     return;

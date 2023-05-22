@@ -3,8 +3,6 @@
 require_once "../crud/webauto.php";
 require_once "names.php";
 
-use Goutte\Client;
-
 // TODO: Make this work on 06 07
 $code = $USER->id+$CONTEXT->id;
 
@@ -61,11 +59,7 @@ $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
 $css_url = $url . 'static/css/styles.css';
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
-
+webauto_setup();
 
 // Start the actual test
 $crawler = webauto_get_url($client, $catalog_url);
