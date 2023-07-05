@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        console.log("In the head. Parsing paused.");
+        document.addEventListener('DOMContentLoaded', () => console.log("DOM ready!"));
+        console.log("DOMContentLoaded registered");
+        setTimeout(() => console.log("Five seconds later..."), 5000);
+        console.log("In the head. Parsing resuming.");
+        </script>
+    </script>
+</head>
+<body>
+    <p id="before" onclick="console.log('Before clicked', this);">A Early Paragraph</p>
+    <script>
+        document.write("<p>A Middle Paragrah</p>");
+        console.log("Mid body. Parsing paused.");
+        document.getElementById("before").style.color= "green";
+        document.getElementById("after").style.color= "green";
+        console.log("Mid body. Parsing resuming.");
+    </script>
+    <p id="after">A Late Paragraph</p>
+    <script>
+        console.log("End body. Parsing paused.");
+        document.getElementById("after").style.color= "orange";
+        console.log("End body. Parsing resumeing.");
+    </script>
+</body>
+</html>
