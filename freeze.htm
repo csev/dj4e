@@ -1,0 +1,22 @@
+<p><a onclick="alert('Hi DJ4E');">If DOM UI events are working this is an alert()</a></p>
+<p><a onclick="setTimeout(updateTime, 100);">Start time display</a></p>
+<p>Time: <span id="time">TBD</span></p>
+
+<p><a onclick="updateTimeLoop(10000000);">Iterate 10 Million</a></p>
+<p><a onclick="updateTimeLoop(100000000);">Iterate 100 Million</a></p>
+<p>Loop: <span id="loop">TBD</span></p>
+
+<script>
+    // Irresponsible code
+    function updateTimeLoop(iterations) {
+        for(let i=0;i<=iterations; i++) {
+            document.getElementById("loop").innerHTML = i;
+        }
+    }
+
+    function updateTime() {
+        document.getElementById("time").innerHTML = Date.now();
+        setTimeout(updateTime, 100);
+    }
+</script>
+
