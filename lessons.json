@@ -1839,27 +1839,27 @@
     ],
     "videos" : [
         {
-            "title" : "(TBD) jQuery and the Document Object Model",
+            "title" : "(Redo) jQuery and the Document Object Model",
             "youtube" : "GjvhybOHImk"
         },
         {
-            "title" : "(TBD) Walking through the DJ4E jQuery DOM sample code",
+            "title" : "(Redo) Walking through the DJ4E jQuery DOM sample code",
             "youtube" : "XClRHt71qGw"
         },
         {
-            "title" : "(TBD) Using jQuery",
+            "title" : "(Redo) Using jQuery",
             "youtube" : "G9gXLF-EPcM"
         },
         {
-            "title" : "(TBD) Walking through the DJ4E jQuery setup sample code",
+            "title" : "(Redo) Walking through the DJ4E jQuery setup sample code",
             "youtube" : "xI4axL8cyVU"
         },
         {
-            "title" : "(TBD) Walking through the DJ4E jQuery events sample code",
+            "title" : "(Redo) Walking through the DJ4E jQuery events sample code",
             "youtube" : "7E4KBoE2uRM"
         },
         {
-            "title" : "(TBD) Walking through the DJ4E jQuery DOM modification sample code",
+            "title" : "(Redo) Walking through the DJ4E jQuery DOM modification sample code",
             "youtube" : "qCFklryOSqs"
         }
     ],
@@ -1911,15 +1911,15 @@
             "youtube" : "8ifl_tEVVvY"
         },
         {
-            "title" : "Walking through the DJ4E JSON Sample Code",
+            "title" : "(Redo) Walking through the DJ4E JSON Sample Code",
             "youtube" : "rYOdxeFYaFA"
         },
         {
-            "title" : "(TBD) Building an AJAX Chat with Django",
+            "title" : "(Redo) Building an AJAX Chat with Django",
             "youtube" : "FDf69yaSH8A"
         },
         {
-            "title" : "(TBD) Walking through the DJ4E JSON (chat) Sample Code",
+            "title" : "(Redo) Walking through the DJ4E JSON (chat) Sample Code",
             "youtube" : "OqtEgkYbmCo"
         }
     ],
