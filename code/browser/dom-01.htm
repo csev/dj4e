@@ -1,0 +1,14 @@
+<html><head><meta charset="utf-8"/></head><body>
+<p>dom-01.htm</p>
+<p>
+Hello <b><span id="person">Chuck</span></b> there.
+</p> 
+<script type="text/javascript">
+console.dir(document.getElementById('person'));
+st = document.getElementById('person').innerHTML;
+console.log("Span tag = "+st);
+
+alert('Hi there ' + st); // Pause for a bit
+document.getElementById('person').innerHTML = 'Joseph';
+</script>
+</body></html>
