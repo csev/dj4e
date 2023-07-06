@@ -1520,7 +1520,7 @@
     "title": "JavaScript",
     "anchor": "dj4e_javascript",
     "icon" : "fa-code",
-    "description": "We take a quick look at the JavaScript language and how it is used in the browser.",
+    "description": "We take a quick look at the JavaScript language.",
     "slides": "lectures/JS-01-JavaScript.ppt",
     "discussions" : [
         {
@@ -1828,7 +1828,7 @@
     "title": "JavaScript and the Browser",
     "anchor": "browser",
     "icon" : "fa-briefcase",
-    "description": "We look at particular aspects of the JavaStript run-tim while in a browser including manipulation of the Document Object Model(DOM) and event handling.",
+    "description": "We look at particular aspects of the JavaScript run-time in a browser including manipulation of the Document Object Model(DOM) and event handling.",
     "slides": "lectures/JS-03-Browser.ppt",
     "discussions" : [
         {
