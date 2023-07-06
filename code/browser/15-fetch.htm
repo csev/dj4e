@@ -1,0 +1,10 @@
+<p>A Paragraph</p>
+<p id="zap"></p>
+<script>
+    fetch('secret.txt')
+        .then(response => response.text() )
+        .then(textString => {
+            document.getElementById("zap")
+                .innerText = textString;
+        });
+</script>
