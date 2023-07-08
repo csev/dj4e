@@ -11,7 +11,7 @@ Learning Objectives:
 
 Follow the instructions in this tutorial:
 
-https://docs.djangoproject.com/en/4.0/intro/tutorial02/
+https://docs.djangoproject.com/en/4.2/intro/tutorial02/
 
 Notes for PythonAnywhere
 ------------------------

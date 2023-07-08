@@ -242,7 +242,7 @@ The first step is to make the `polls` application:
     python manage.py startapp polls
 
 Continue to follow the steps outlined in
-<a href="https://docs.djangoproject.com/en/4.0/intro/tutorial01/#creating-the-polls-app" target="_blank">
+<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
 Django tutorial</a>.
 until you reach the part where the tutorial tells you to run this command:
 
