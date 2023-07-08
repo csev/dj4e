@@ -12,8 +12,8 @@ https://www.dj4e.com/assn/dj4e_install.md
 </a>.
 This assignment will cover the material in
 Part 1 of the Django tutorial at
-<a href="https://docs.djangoproject.com/en/4.0/intro/tutorial01/" target="_blank">
-https://docs.djangoproject.com/en/4.0/intro/tutorial01/</a>
+<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/" target="_blank">
+https://docs.djangoproject.com/en/4.2/intro/tutorial01/</a>
 but since we are doing the installation on PythonAnywhere
 </a>
 you will need to go back and forth between the Django
