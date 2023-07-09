@@ -22,8 +22,8 @@ Setting Up Your Environment
 Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 4.
 
-    mkvirtualenv django4 --python=/usr/bin/python3.9
-    pip install django==4.0.7 ## this may take a couple of minutes
+    mkvirtualenv django4 --python=/usr/bin/python3.11
+    pip install django==4.2.3 ## this may take a couple of minutes
 
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell unless you enable it automatically
@@ -34,9 +34,9 @@ as shown below.
 Lets make sure that your django was installed successfully and you are running the rght version of Python with the following commands:
 
     python --version
-    # This should show something like Python 3.9.5
+    # This should show something like Python 3.11.4
     python -m django --version
-    # This should show something like 4.0.7
+    # This should show something like 4.2.3
 
 Automatically Enabling Your Virtual Environment
 -----------------------------------------------
