@@ -1837,30 +1837,26 @@
         "resource_link_id": "discuss_25_browser"
         }
     ],
-    "videos" : [
+    " videos" : [
         {
-            "title" : "(Todo) jQuery and the Document Object Model",
-            "youtube" : "GjvhybOHImk"
+            "title" : "The JavaScript Execution Model In the Browser",
+            "youtube" : "tkZcNu-RGQA"
         },
         {
-            "title" : "(Todo) Walking through the DJ4E jQuery DOM sample code",
-            "youtube" : "XClRHt71qGw"
+            "title" : "Working with the Document Object Model (DOM) in JavaScript",
+            "youtube" : "dPpGAYZGrgs"
         },
         {
-            "title" : "(Todo) Using jQuery",
-            "youtube" : "G9gXLF-EPcM"
+            "title" : "Modifying the Document Object Model (DOM) in JavaScript",
+            "youtube" : "x-TaJHWs4nU"
         },
         {
-            "title" : "(Todo) Walking through the DJ4E jQuery setup sample code",
-            "youtube" : "xI4axL8cyVU"
+            "title" : "JavaScript Events in the Browser",
+            "youtube" : "_QVcbmGqm2o"
         },
         {
-            "title" : "(Todo) Walking through the DJ4E jQuery events sample code",
-            "youtube" : "7E4KBoE2uRM"
-        },
-        {
-            "title" : "(Todo) Walking through the DJ4E jQuery DOM modification sample code",
-            "youtube" : "qCFklryOSqs"
+            "title" : "Using Fetch to make Network Requests in JavaScript",
+            "youtube" : "LbKfSzuHWyM"
         }
     ],
     "references" :
