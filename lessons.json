@@ -1936,7 +1936,7 @@
     "lti" : [
         {
             "title" : "Quiz: JSON",
-            "launch" : "mod/gift/?quiz=JS-04-JSON.txt",
+            "launch" : "mod/gift/?quiz=JS-04-AJAX-JSON.txt",
             "resource_link_id" : "js_04_json",
             "custom" : [
                 {
