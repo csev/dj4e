@@ -1903,12 +1903,16 @@
     ],
     "videos" : [
         {
-            "title" : "(Todo) JSON - JavaScript Object Notation",
-            "youtube" : "8ifl_tEVVvY"
+            "title" : "JSON - JavaScript Object Notation",
+            "youtube" : "thhKcuHNQzo"
         },
         {
             "title" : "Walking through the DJ4E JSON / Fetch (fetch) Sample Code",
             "youtube" : "KcgPJYil5Do"
+        },
+        {
+            "title" : "JSON - AJAX and CHAT",
+            "youtube" : "PJ1LkwGcOsk"
         },
         {
             "title" : "Walking through the DJ4E JSON (chat) Sample Code",
@@ -1921,7 +1925,7 @@
             "href" : "https://www.youtube.com/watch?v=kc8BAR7SHJI"
         },
         {
-            "title" : "Sample implementation - JSON CHAT",
+            "title" : "DJ4E Sample Code Server",
             "href" : "https://samples.dj4e.com/"
         },
         {
