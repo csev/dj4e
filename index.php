@@ -34,7 +34,7 @@ You can take this course and receive a certificate at:
 <li><a href="https://www.futurelearn.com/programs/django" target="_blank">FutureLearn: Django for Everybody</a></li>
 -->
 <li><a href="https://www.youtube.com/watch?v=o0XbHvKxw7Y" target="_blank">FreeCodeCamp: Django for Everybody</a>
-<li><a href="https://online.umich.edu/series/django/" target="_blank">Free certificates for University of Michgan students and staff</a></li>
+<li><a href="https://online.umich.edu/series/django/" target="_blank">Free certificates for University of Michigan students and staff</a></li>
 </ul>
 </p>
 <p>
