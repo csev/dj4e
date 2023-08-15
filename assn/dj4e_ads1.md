@@ -44,6 +44,8 @@ If you have never checked out the sample code on PythonAnywhere you can:
 Once you have the samples checked out (either before or just now), check out the
 right version:
 
+    cd ~/dj4e-samples
+
     git checkout main        # For Django 4.2
 
     git checkout django40    # For Django 4.0
