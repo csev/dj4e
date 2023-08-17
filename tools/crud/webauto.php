@@ -89,13 +89,6 @@ function webauto_get_meta($crawler, $name) {
     return $retval;
 }
 
-function autoToggle() {
-    global $div_id;
-    echo("<script>dataToggle('$div_id');</script>\n");
-    $div_id--;
-    echo("<script>dataToggle('$div_id');</script>\n");
-}
-
 function togglePre($title, $html) {
     global $div_id;
     global $base_url_path;
@@ -237,7 +230,7 @@ function checkPostRedirect($client) {
     global $passed;
     line_out("Checking to see if the POST redirected to a GET");
     $method = $client->getRequest()->getMethod();
-    if ( $method == "get" ) {
+    if ( $method == "GET" ) {
         $passed++;
         markTestPassed("POST Redirect Check");
     } else {
