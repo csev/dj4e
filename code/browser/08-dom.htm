@@ -1,0 +1,11 @@
+<h1 id="fun">A header</h1>
+<p><a onclick="myFunc();">Click Me</a></p>
+<script>
+    function myFunc() {
+        console.log("I was clicked");
+        let elem = document.getElementById("fun");
+        console.log(elem)
+        elem.innerHTML = "A cool header";
+    }
+</script>
+

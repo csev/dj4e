@@ -35,7 +35,7 @@ $assignments = array(
 $oldsettings = Settings::linkGetAll();
 
 $password = Settings::linkGet('password');
-if ( strlen(U::get($_POST, "password")) > 0  ) {
+if ( strlen(U::get($_POST, "password", '')) > 0  ) {
     $_SESSION['assignment_password'] = U::get($_POST, "password");
     header( 'Location: '.addSession('index.php') ) ;
     return;

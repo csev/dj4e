@@ -3,8 +3,6 @@
 require_once "../crud/webauto.php";
 require_once "names.php";
 
-use Goutte\Client;
-
 // Use link-independent code
 $code = $USER->id+$CONTEXT->id;
 
@@ -59,11 +57,7 @@ webauto_check_test();
 $admin = $url;
 error_log("Tutorial02 ".$url);
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
-
+webauto_setup();
 
 $catalog_url = str_replace('admin', 'catalog', $admin);
 line_out('Checking to make tutorials are being done in the correct order.');

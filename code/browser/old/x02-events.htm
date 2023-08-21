@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <p id="before" onclick="console.log('Before clicked', this);">A Early Paragraph</p>
+    <p id="after">A Late Paragraph</p>
+    <script>
+        document.getElementById("after").addEventListener("click", (event) => console.log('After clicked', event.target));
+    </script>
+</body>
+</html>

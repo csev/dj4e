@@ -2,7 +2,6 @@
 
 require_once "../crud/webauto.php";
 
-use Goutte\Client;
 use \Tsugi\Util\U;
 
 $qtext = 'Answer to the Ultimate Question';
@@ -52,11 +51,8 @@ if ( $url === false ) return;
 $passed = 0;
 $send = true;
 error_log("Hello05 ".$url);
-//
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+
+webauto_setup();
 
 // Check that top page
 $crawler = webauto_retrieve_url($client, $url);

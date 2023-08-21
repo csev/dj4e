@@ -3,11 +3,8 @@
 require_once "../crud/webauto.php";
 require_once "names.php";
 
-use Goutte\Client;
-
 $code = $USER->id+$CONTEXT->id;
 $check = webauto_get_check_full();
-
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
 $shuffled = $MT->shuffle($names);
@@ -59,11 +56,7 @@ $admin = $url . 'admin';
 $catalog_url = $url . 'catalog';
 $css_url = $url . 'static/css/styles.css';
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
-
+webauto_setup();
 
 line_out('Checking to make sure we cannot log into the /admin url');
 $crawler = webauto_get_url($client, $admin);
@@ -125,7 +118,7 @@ if ( ! webauto_testrun($url) && strpos($html, 'You have visited this page') > 0 
 line_out("Checking to see if you are serving your CSS files properly...");
 $crawler = webauto_get_url($client, $css_url);
 $response = $client->getResponse();
-$status = $response->getStatus();
+$status = $response->getStatusCode();
 if ( $status != 200 ) {
     error_out("Could not load $css_url, make sure you are serving your static files status=$status");
     return;

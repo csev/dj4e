@@ -1469,7 +1469,7 @@
     "videos" : [
         {
             "title" : "Walking through the DJ4E Crispy Forms (crispy) Sample Code",
-            "youtube" : "iovsuP8yVUU"
+            "youtube" : "kQORvrIzsZs"
         },
         {
             "title" : "Walking through the DJ4E My Articles (myarts) Sample Code",
@@ -1520,7 +1520,7 @@
     "title": "JavaScript",
     "anchor": "dj4e_javascript",
     "icon" : "fa-code",
-    "description": "We take a quick look at the JavaScript language and how it is used in the browser.",
+    "description": "We take a quick look at the JavaScript language.",
     "slides": "lectures/JS-01-JavaScript.ppt",
     "discussions" : [
         {
@@ -1825,64 +1825,56 @@
     ]
 },
 {
-    "title": "jQuery",
-    "anchor": "jquery",
+    "title": "JavaScript and the Browser",
+    "anchor": "browser",
     "icon" : "fa-briefcase",
-    "description": "This is a brief introduction to the jQuery library which is widely used to do in-browser manipulation of the Document Object Model(DOM) and event handling.",
-    "slides": "lectures/JS-03-JQuery.ppt",
+    "description": "We look at particular aspects of the JavaScript run-time in a browser including manipulation of the Document Object Model(DOM) and event handling.",
+    "slides": "lectures/JS-03-Browser.ppt",
     "discussions" : [
         {
-        "title" : "jQuery",
+        "title" : "JavaScript in the Browser",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_25_jquery"
+        "resource_link_id": "discuss_25_browser"
         }
     ],
     "videos" : [
         {
-            "title" : "jQuery and the Document Object Model",
-            "youtube" : "GjvhybOHImk"
+            "title" : "The JavaScript Execution Model In the Browser",
+            "youtube" : "tkZcNu-RGQA"
         },
         {
-            "title" : "Walking through the DJ4E jQuery DOM sample code",
-            "youtube" : "XClRHt71qGw"
+            "title" : "Working with the Document Object Model (DOM) in JavaScript",
+            "youtube" : "dPpGAYZGrgs"
         },
         {
-            "title" : "Using jQuery",
-            "youtube" : "G9gXLF-EPcM"
+            "title" : "Modifying the Document Object Model (DOM) in JavaScript",
+            "youtube" : "x-TaJHWs4nU"
         },
         {
-            "title" : "Walking through the DJ4E jQuery setup sample code",
-            "youtube" : "xI4axL8cyVU"
+            "title" : "JavaScript Events in the Browser",
+            "youtube" : "_QVcbmGqm2o"
         },
         {
-            "title" : "Walking through the DJ4E jQuery events sample code",
-            "youtube" : "7E4KBoE2uRM"
-        },
-        {
-            "title" : "Walking through the DJ4E jQuery DOM modification sample code",
-            "youtube" : "qCFklryOSqs"
+            "title" : "Using Fetch to make Network Requests in JavaScript",
+            "youtube" : "LbKfSzuHWyM"
         }
     ],
     "references" :
     [
         {
             "title" : "Sample code running",
-            "href" : "code/jquery"
+            "href" : "code/browser"
         },
         {
             "title" : "Sample code (Download ZIP)",
-            "href" : "code/jquery.zip"
-        },
-        {
-            "title" : "Bonus: John Resig - Building jQuery",
-            "href" : "https://www.youtube.com/watch?v=B7Aut4OUuvs"
+            "href" : "code/browser.zip"
         }
     ],
     "lti" : [
         {
-            "title" : "Quiz: jQuery",
-            "launch" : "mod/gift/?quiz=JS-03-JQuery.txt",
-            "resource_link_id" : "js_03_jquery",
+            "title" : "Quiz: Browser and JavaScript",
+            "launch" : "mod/gift/?quiz=JS-03-Browser.txt",
+            "resource_link_id" : "js_03_browser",
             "custom" : [
                 {
                     "key": "tries",
@@ -1900,8 +1892,8 @@
     "title": "JSON / AJAX",
     "anchor": "json",
     "icon" : "fa-file-archive",
-    "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser (JavaScript/jQuery).",
-    "slides": "lectures/JS-04-JSON.ppt",
+    "description": "In this section we look at JavaScript Object Notation (JSON).  JSON is commonly used as a syntax to exchange data between code running on the server (i.e. in Django) and code running in the browser in JavaScript.",
+    "slides": "lectures/JS-04-AJAX-JSON.ppt",
     "discussions" : [
         {
         "title" : "JSON / AJAX",
@@ -1912,19 +1904,19 @@
     "videos" : [
         {
             "title" : "JSON - JavaScript Object Notation",
-            "youtube" : "8ifl_tEVVvY"
+            "youtube" : "thhKcuHNQzo"
         },
         {
-            "title" : "Walking through the DJ4E JSON Sample Code",
-            "youtube" : "rYOdxeFYaFA"
+            "title" : "Walking through the DJ4E JSON / Fetch (fetch) Sample Code",
+            "youtube" : "KcgPJYil5Do"
         },
         {
-            "title" : "Building an AJAX Chat with Django",
-            "youtube" : "FDf69yaSH8A"
+            "title" : "JSON - AJAX and CHAT",
+            "youtube" : "PJ1LkwGcOsk"
         },
         {
             "title" : "Walking through the DJ4E JSON (chat) Sample Code",
-            "youtube" : "OqtEgkYbmCo"
+            "youtube" : "v5CKyLS701M"
         }
     ],
     "references" : [
@@ -1933,7 +1925,7 @@
             "href" : "https://www.youtube.com/watch?v=kc8BAR7SHJI"
         },
         {
-            "title" : "Sample implementation - JSON CHAT",
+            "title" : "DJ4E Sample Code Server",
             "href" : "https://samples.dj4e.com/"
         },
         {
@@ -1944,7 +1936,7 @@
     "lti" : [
         {
             "title" : "Quiz: JSON",
-            "launch" : "mod/gift/?quiz=JS-04-JSON.txt",
+            "launch" : "mod/gift/?quiz=JS-04-AJAX-JSON.txt",
             "resource_link_id" : "js_04_json",
             "custom" : [
                 {

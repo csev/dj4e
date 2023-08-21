@@ -6,6 +6,7 @@ require_once "../crud/names.php";
 $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
+// HACK $check = "1679091c5a880faf6fb5e6087eb1b2dc";
 
 $meta = '<meta name="dj4e" content="'.$check.'">';
 
@@ -13,6 +14,9 @@ $user1account = 'dj4e_user1';
 $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
 $user2account = 'dj4e_user2';
 $user2pw = "Meow_42_" . substr(getMD5(),1,6);
+
+// HACK $user1pw = "Meow_679091_41";
+// HACK $user2pw = "Meow_42_679091";
 
 $now = date('H:i:s');
 

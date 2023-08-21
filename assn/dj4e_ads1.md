@@ -16,19 +16,52 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
-Make sure to get the latest version of dj4e-samples.  If you have never checked it out
-on PythonAnywhere:
+Make sure to get the correct version of dj4e-samples.  
+
+Getting the Right Version of the Sample Code
+--------------------------------------------
+
+**Important**: During Fall 2023 the course is making a transition from Django 4.0
+to 4.2. Depending on when you started, you might be using Django 4.0 or 4.2 at this
+point in the course.
+
+There is no need to switch Django versions in the middle of the course - all we need to do is
+make sure the provided sample code you are using corresponds to the Django version you are using.
+
+First check what version of Django is running in your virtual environment:
+
+    workon django4
+    python -m django --version
+
+This should be 4.0.n or 4.2.n  You need to checkout the correct version of the sample code
+that corresponds to your Django version.
+
+If you have never checked out the sample code on PythonAnywhere you can:
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
 
-If you have already checked `dj4e-samples`  on PythonAnywhere do:
+Once you have the samples checked out (either before or just now), check out the
+right version:
 
-    workon django4     # or django3 if needed
     cd ~/dj4e-samples
+
+    git checkout main        # For Django 4.2
+
+    git checkout django40    # For Django 4.0
+
+Once you have checked out the correct version, continue with:
+
     git pull
-    pip install -r requirements4.txt   # or requirements3.txt if needed
+    pip install -r requirements4.txt
     python manage.py check
+
+If `python manage.py check` fails with a traceback, stop and get some help.
+If `python manage.py check` works without a traceback, you should be ready to continue with
+this assignment and the rest of the course.
+
+Using the MySQL Database
+------------------------
 
 To switch to using the MySQL database outside of the PythonAnywhere, you might need to install
 the MySQL client and possibly the server on your system before `pip install` will work using

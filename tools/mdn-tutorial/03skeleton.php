@@ -2,8 +2,6 @@
 
 require_once "../crud/webauto.php";
 
-use Goutte\Client;
-
 line_out("Installing Django on PythonAnywhere");
 
 ?>
@@ -30,10 +28,8 @@ if ( strpos($url,'index.htm') !== false ) {
 }
 
 error_log("MDNInstall".$url);
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+
+webauto_setup();
 
 line_out('It is OK for this page to get a 404 error');
 $crawler = webauto_get_url($client, $url);

@@ -1,0 +1,10 @@
+<p>A Paragraph</p>
+<script>
+    fetch('secret.txt')
+        .then(response => {
+            console.log(response); return response.text()
+        }) 
+        .then(textString => {
+            console.log(textString);
+        });
+</script>

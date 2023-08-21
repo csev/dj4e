@@ -2,14 +2,11 @@
 \Tsugi\Core\LTIX::getConnection();
 
 use \Tsugi\Grades\GradeUtil;
-
-// A library for webscraping graders
-require_once "../crud/lib/goutte/vendor/autoload.php";
-require_once "../crud/lib/goutte/Goutte/Client.php";
-
 use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
-use Goutte\Client;
+
+use Symfony\Component\BrowserKit\HttpBrowser;
+use Symfony\Component\HttpClient\HttpClient;
 
 $ngrok_fails = array(
     "ngrok.com/signup",
@@ -27,13 +24,13 @@ if ( $dueDate->message ) {
 
 function webauto_setup() {
     global $client;
-    // http://symfony.com/doc/current/components/dom_crawler.html
-    $client = new Client();
-    $client->setMaxRedirects(5);
-    $client->getClient()->setSslVerification(false);
+    $client = new HttpBrowser(HttpClient::create(['verify_peer' => false, 'verify_host' => false]));
+    // $client = new Client();
+    // $client->setMaxRedirects(5);
+    // $client->getClient()->setSslVerification(false);
 }
 
-function webauto_get_html($crawler) {
+function webauto_get_html($crawler, $showSource=false) {
     global $ngrok_fails;
     try {
         $html = $crawler->html();
@@ -64,7 +61,7 @@ function webauto_get_html($crawler) {
     if ( $ngrok_fail ) {
         error_out("It appears that your ngrok tunnel is not working properly.");
     }
-    showHTML("Show retrieved page",$html);
+    showHTML("Show retrieved page",$html, $showSource);
 
     // https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
     $html = preg_replace('/<!--(.*)-->/Uis', '', $html);
@@ -112,10 +109,15 @@ function togglePre($title, $html) {
     echo("</iframe><br/>\n");
 }
 
-function showHTML($message, $html) {
+function showHTML($message, $html, $showSource=false) {
     global $OUTPUT;
     global $webauto_http_status;
-    togglePre("", $html);
+    global $SHOW_SOURCE;
+    if ( $showSource || (isset($SHOW_SOURCE) && $SHOW_SOURCE)) {
+        togglePre("", "<pre>\n".htmlentities($html)."\n</pre>\n");
+    } else {
+        togglePre("", $html);
+    }
     $pos = strpos($html,'<b>Fatal error</b>');
     if ( $webauto_http_status != 200 ) {
         error_out("Page may have errors, HTTP status=$webauto_http_status");
@@ -499,7 +501,7 @@ function webauto_change_form($form, $name, $value, $message=false)
 function webauto_submit_form($client, $form) {
     $crawler = $client->submit($form);
 	$response = $client->getInternalResponse();
-	$status = $response->getStatus();
+	$status = $response->getStatusCode();
 	if ( $status != 200 ) {
 		error_out("Submitting the form caused an error http code=".$status);
 	}
@@ -584,7 +586,7 @@ function webauto_retrieve_url($client, $url, $message=false) {
     try {
         $crawler = $client->request('GET', $url);
         $response = $client->getResponse();
-        $webauto_http_status = $response->getStatus();
+        $webauto_http_status = $response->getStatusCode();
     } catch(\Exception $e) {
         error_out($e->getMessage());
         return false;
@@ -641,7 +643,7 @@ function get_favicon($client, $base_url_path) {
     $status = 404;
     if ( $crawler !== false ) {
         $response = $client->getResponse();
-        $status = $response->getStatus();
+        $status = $response->getStatusCode();
     }
 
     if ( $status != 200 ||$crawler === false ) {
@@ -652,7 +654,7 @@ function get_favicon($client, $base_url_path) {
 
     if ( $crawler !== false ) {
         $response = $client->getResponse();
-        $status = $response->getStatus();
+        $status = $response->getStatusCode();
     }
 
     if ( $status !== 200 ) {

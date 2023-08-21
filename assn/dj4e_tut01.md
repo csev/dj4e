@@ -9,5 +9,5 @@ Learning Objectives:
 * Understand how the request/response cycle is manifested in Django
 
 
-https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+https://docs.djangoproject.com/en/4.2/intro/tutorial01/
 

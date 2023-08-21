@@ -78,7 +78,7 @@ You can follow the pattern of the `HomeConfig` line in that file.
 
 * Edit `mysite/mysite/urls.py` and
 add the `accounts/` path so you can use the Django built in login features.
-(<a href="https://docs.djangoproject.com/en/4.0/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
+(<a href="https://docs.djangoproject.com/en/4.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
 Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
         path('accounts/', include('django.contrib.auth.urls')),  # Add

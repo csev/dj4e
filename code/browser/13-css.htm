@@ -1,0 +1,16 @@
+<h1 id="fun">A header</h1>
+<p>
+<button id="poof">Hide</button>
+<button id="show">Show</button>
+</p>
+<script>
+     document.getElementById('show').addEventListener('click', 
+         function () {
+             document.getElementById('fun').style.display = 'block';
+         }
+     );
+     document.getElementById('poof').addEventListener('click', 
+         (event) => document.getElementById('fun').style.display = 'none'
+     );
+</script>
+

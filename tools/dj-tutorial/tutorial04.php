@@ -2,15 +2,13 @@
 
 require_once "../crud/webauto.php";
 
-use Goutte\Client;
-
 $qtext = 'Answer to the Ultimate Question';
 ?>
 <h1>Django Tutorial 04</h1>
 <p>
 For this assignment work through Part 4 of the Django tutorial at
-<a href="https://docs.djangoproject.com/en/4.0/intro/tutorial04/" target="_blank">
-https://docs.djangoproject.com/en/4.0/intro/tutorial04/</a>.
+<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial04/" target="_blank">
+https://docs.djangoproject.com/en/4.2/intro/tutorial04/</a>.
 </a>
 </p>
 <?php
@@ -56,10 +54,7 @@ $passed = 0;
 $owner = $url . '/owner';
 error_log("Tutorial04 ".$owner);
 
-// http://symfony.com/doc/current/components/dom_crawler.html
-$client = new Client();
-$client->setMaxRedirects(5);
-$client->getClient()->setSslVerification(false);
+webauto_setup();
 
 $crawler = webauto_retrieve_url($client, $owner);
 if ( $crawler === false ) return;
