@@ -97,7 +97,10 @@ enter the code you get here: <br/>
 </p>
 <h1>Instructions</h1>
 <p>
-This assignment is to be run using the SQLite command line
+You need to run a sequence of SQL commands to an SQL interpreter.
+</p>
+<p>
+One way to start an interpreter is to run SQLite command line
 tool on a Linux system like the bash shell on
 <a href="https://www.pythonanywhere.com/" target="_blank">
 https://www.pythonanywhere.com/</a>.
@@ -109,7 +112,13 @@ Enter ".help" for usage hints.
 sqlite&gt;
 </pre>
 <p>
-Create a table in the database called "Ages":
+If you can't run SQLit on your own computer, you can
+use an in-browser SQLite instance at
+<a href="https://sqlite.org/fiddle/" target="_blank">
+https://sqlite.org/fiddle/</a>.
+<p>
+Once you have the interpreter available, use an SQL statement
+to create a table in the database called "Ages":
 <pre>
 CREATE TABLE Ages ( 
   id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
