@@ -134,12 +134,16 @@ of the code.
 Building Your Application
 -------------------------
 
-Now that we have your Django set up and you have retrieved the sample code for DJ4E, lets
+Now that we have your Django set up and you have retrieved the sample 
+code for DJ4E, lets
 build your first application in the PYAW shell:
 
     cd ~
     mkdir django_projects
-    cd django_projects
+
+Once you have made a folder in your home directory, lets go into that folder and make a Django project.
+
+    cd ~/django_projects
     django-admin startproject mysite
 
 At this point, keep your shell open in one tab and open the PythonAnywhere *Files* application
