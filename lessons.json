@@ -386,10 +386,6 @@
       "type": "image"
     },
     {
-      "title": "Image (JPG or PNG) of your browser viewing www.dj4e.com with all styles turned off",
-      "type": "image"
-    },
-    {
       "title": "Image (JPG or PNG) of your browser at www.dj4e.com inspecting the navigation element to find its background color",
       "type": "image"
     }
