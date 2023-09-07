@@ -71,7 +71,7 @@ as the course progresses and install some important additional Django software l
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
-    cd dj4e-samples
+    cd ~/dj4e-samples
     pip install -r requirements4.txt
     python manage.py check
 
