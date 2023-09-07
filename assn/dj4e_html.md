@@ -103,7 +103,7 @@ to these specifications.
 Your page will be well-formed HTML5, and indicate that it is in the UTF-8 character set.
 
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
       <title>Jane Instructor 4c56ff</title>
       <meta charset="UTF-8">
