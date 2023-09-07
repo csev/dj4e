@@ -88,6 +88,11 @@ in your CSS instead of the separate "border" values makes the CSS validtor "happ
 </pre>
 </p></li>
 </ul>
+<p>
+Note - that as you change files like `blocks.css` you may need to make sure that when you hit 'refresh'
+that a new copy of the file is loaded.  One some browsers, you can press 'Shift-Refresh' to force a reload
+of the cache so you get a fresh copy of the file.
+</p>
 <h1>What To Hand In</h1>
 <p>
 For this assignment you will hand in:
