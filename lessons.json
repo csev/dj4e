@@ -547,12 +547,8 @@
     ],
     "references" : [
         {
-            "title" : "Writing your first Django app, part 2",
-            "href": "https://docs.djangoproject.com/en/4.0/intro/tutorial02/"
-        },
-        {
-            "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
-            "href" : "{apphome}/assn/dj4e_tutpaw.md"
+            "title" : "Assignment: Django Project Tutorial 2",
+            "href": "https://www.dj4e.com/assn/dj4e_tut02.md"
         },
         {
             "title" : "Django Data Model Commands (DJ-02-Model-Single.txt)",
@@ -565,6 +561,10 @@
         {
             "title" : "SQLite Browser",
             "href": "https://sqlitebrowser.org/"
+        },
+        {
+            "title" : "Notes on Running Django Project Tutorials on PythonAnywhere",
+            "href" : "{apphome}/assn/dj4e_tutpaw.md"
         }
     ]
 },
