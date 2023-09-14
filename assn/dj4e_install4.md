@@ -25,6 +25,11 @@ and set up a virtual environment with Python 3.x and Django 4.
     mkvirtualenv django4 --python=/usr/bin/python3.9
     pip install django==4.2.3 ## this may take a couple of minutes
 
+Sometimes these two commands take a long time.  Run them one at a time in the 
+shell.  When the servers are running slowly, each command can take more than ten
+minutes to finish.  Be patient and wait until you see the `$` prompt indicating
+the command is complete before continuing.
+
 Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
 to get back into your virtual environment in the new bash shell unless you enable it automatically
 as shown below.
@@ -34,7 +39,7 @@ as shown below.
 Lets make sure that your django was installed successfully and you are running the rght version of Python with the following commands:
 
     python --version
-    # This should show something like Python 3.9.4
+    # This should show something like Python 3.9.5
     python -m django --version
     # This should show something like 4.2.3
 
@@ -73,6 +78,11 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd ~/dj4e-samples
     pip install -r requirements4.txt
+
+The `pip` command can also take a few minutes to complete.  Once it finishes and you
+get the `$` prompt again, check for a good instlal by running:
+
+    cd ~/dj4e-samples
     python manage.py check
 
 This is the normal output of running `check`:
@@ -126,20 +136,23 @@ Then run:
 
 If you are doing this for the first time, it should run some migrations and create a file `db.sqlite3`.
 
-The `dj4e-samples` folder is reference material that you can
-use through out the course.   From time to
-time we might make changes to this and ask you to do a `git pull` to get the latest version
-of the code.
+The `dj4e-samples` folder is reference material that you can use through
+out the course.   From time to time we might make changes to this and ask you to
+do a `git pull` to get the latest version of the code.
 
 Building Your Application
 -------------------------
 
-Now that we have your Django set up and you have retrieved the sample code for DJ4E, lets
+Now that we have your Django set up and you have retrieved the sample 
+code for DJ4E, lets
 build your first application in the PYAW shell:
 
     cd ~
     mkdir django_projects
-    cd django_projects
+
+Once you have made a folder in your home directory, lets go into that folder and make a Django project.
+
+    cd ~/django_projects
     django-admin startproject mysite
 
 At this point, keep your shell open in one tab and open the PythonAnywhere *Files* application
