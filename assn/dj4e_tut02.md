@@ -37,6 +37,12 @@ Instead nagivate to the same path on your PythonAnywhere site:
 If You Create an admin User and Need to Change its Password
 ------------------------------------------------------------
 
+Note that when Linux / Bash is promoting for a password, it does
+not "echo" your characters so someone watching over your shoulder
+does not see the password.  Just type the password and press
+enter.  Trust that Linux is listening as you type even though
+it does not show the characters as you type.
+
 If you run `createsuperuser` and end up with an `admin` account and want to
 change the password for an account, use:
 
