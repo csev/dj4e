@@ -7,8 +7,8 @@ account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.
 
 You can view a
-<a href="https://www.youtube.com/watch?v=d32UKww3h1c" target="_blank">video walkthrough</a>
-of this assignment.
+<a href="https://www.youtube.com/watch?v=ZsEu-jyy2qY" target="_blank">video walkthrough</a>
+of installing Django 4.2.
 
 **Note:** If you are submitting these assignments to the auto grader you
 should complete each assignment and then submit it and get full credit before
