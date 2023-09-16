@@ -22,6 +22,12 @@ $OUTPUT->flashMessages();
 // Show the basic info for this user
 GradeUtil::gradeShowInfo($row);
 
+if ( U::isEmpty($row) ) {
+    echo("<p>No submission</p>\n");
+    $OUTPUT->footer();
+    return;
+}
+
 // Unique detail
 echo("<p>Submitted URL:</p>\n");
 $json = json_decode($row['json']);
