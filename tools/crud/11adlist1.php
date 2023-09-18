@@ -78,6 +78,7 @@ webauto_search_for_menu($html);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
+line_out("Deleting any old ads belonging to User 1");
 // Cleanup old ads
 $saved = $passed;
 // preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
@@ -89,7 +90,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-		$crawler = webauto_submit_form($client, $form);
+        $crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
     } 
 }
@@ -127,27 +128,31 @@ if ( ! webauto_search_for($html, $title) ) {
 
 // Check the detail page
 $detail_url = webauto_get_url_from_href($crawler,$title, "(Could not link to the detail page on the list view)");
-$crawler_detail = webauto_get_url($client, $detail_url, "Loading detail page");
-$html_detail = webauto_get_html($crawler_detail);
-if ( ! webauto_search_for($html_detail, $title) ) {
+$crawler = webauto_get_url($client, $detail_url, "Loading detail page");
+$html = webauto_get_html($crawler);
+if ( ! webauto_search_for($html, $title) ) {
     error_out("Did not find '$title' on detail page");
     return;
 }
-if ( ! webauto_search_for($html_detail, 'Price', true) ) {
+if ( ! webauto_search_for($html, 'Price', true) ) {
     error_out("Did not find price on detail page");
     return;
 }
-if ( ! webauto_search_for_not($html_detail, "owner") ) {
+if ( ! webauto_search_for_not($html, "owner") ) {
     error_out('The owner field is not supposed to appear in the detail form.');
     return;
 }
+
+$crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to update the ad that User 1 just created");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
 
 // Look for the edit entry
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one Edit link with a url like /ad/nnn/update - found ".count($matches[1]));
+        error_out("Expecting User 1 to have an update link for item that was just created with a url like /ad/nnn/update - found ".count($matches[1]));
         return;
     }
     $match = $matches[1][0];
@@ -155,11 +160,11 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
     webauto_change_form($form, 'title', $title."_updated");
-	$crawler = webauto_submit_form($client, $form);
+    $crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     webauto_search_for($html,$title."_updated");
 } else {
-    error_out("Could not Edit link with a url of the form /ad/nnn/update");
+    error_out("Could not find an update link for the item that User 1 just created with a url like /ad/nnn/update - found ".count($matches[1]));
     return;
 }
 
@@ -195,6 +200,7 @@ $html = webauto_get_html($crawler);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
 
+line_out("Deleting any old ads belonging to User 2");
 // Cleanup old ads
 $saved = $passed;
 // preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
@@ -204,7 +210,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
         $html = webauto_get_html($crawler);
         $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-		$crawler = webauto_submit_form($client, $form);
+        $crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
         webauto_search_for_menu($html);
     }
@@ -228,12 +234,13 @@ $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
 // Look for the edit entry
+line_out("Looking through the main view to update the ad that User 2 just created");
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
-        error_out("Expecting exactly one Edit link with a url like /ad/nnn/update - found".count($matches[1]));
+        error_out("Expecting User 2 to have an update link for item that was just created with a url like /ad/nnn/update - found ".count($matches[1]));
         return;
     }
     $match = $matches[1][0];
@@ -241,11 +248,11 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
     webauto_change_form($form, 'title', $title."_updated");
-	$crawler = webauto_submit_form($client, $form);
+    $crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     webauto_search_for($html,$title."_updated");
 } else {
-    error_out("Could not find Edit link with a url of the form /ad/nnn/update");
+    error_out("Could not find an update link for the item that User 2 just created with a url like /ad/nnn/update - found ".count($matches[1]));
     return;
 }
 
