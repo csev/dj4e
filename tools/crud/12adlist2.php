@@ -166,6 +166,10 @@ if ( ! webauto_search_for_not($html_detail, "owner") ) {
     return;
 }
 
+$crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to update the ad that User 1 just created");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
 // Look for the edit entry
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
