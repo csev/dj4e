@@ -1,0 +1,28 @@
+# Some sample poll questions
+Answer to the Ultimate Question,123,42,86
+What is your favourite social media?Instagram,Facebook,X,TikTok,LinkedIn,None
+What is your favourite season,Summer,Fall,Winter,Spring
+How to you like your food,Spicy,Medium,Mild
+What is your favorite programming language,Python,C,Rust,C++,Java,PHP
+What is the most complex feature of Django,Models,Views,Templates,Url routing
+Which of the following files is consulted first when Django receives a request,urls.py,views.py,models.py,admin.py
+Which of the following Django files configures which models are shown in the admin interface,urls.py,views.py,models.py,admin.py
+What port do web browsers use for non-secure http requests,80,442,42,180,8000
+What is your name,lancelot,arthur
+A line to ignore :)
+What is your quest,Seek the grail,Learn Django,Understand Python OO
+What is your favourite color,blue,yellow,red
+What is the airspeed of an unladen swallow,20,12,33
+Which keyword is used to add conditions to your query,WHERE,IF,ONLYIF,SELECT
+What kind of key is used to reference a primary key in another table,logical,master,id,foreign
+Which of the following is NOT a good synonym for "class" in Python,direction,template,blueprint,pattern
+Which of the following is rarely used in Object Oriented Programming,Destructor,Constructor,Inheritance,Method,Attribute
+Which of the following Python types it most like the request.POST data in Django,dictionary,list,string
+Which of the following HTTP methods add form data to the URL after a question mark,GET,POST
+Which protocol determines how cookies are sent back and forth,HTTP,HTML,CSS,ORM,SQL
+What does the second "T" of HTTP stand for,Transfer,Transport,Transpose,movemenT
+What operating system are you using in PythonAnywhere when you open a Bash shell,Linux,Windows,MacOS,DEC VMS,MS/DOS
+Which command do you use to exit the SQLite comand line tool,.quit,quit(),return,grep
+What does the "b" in "bash shell" stand for,Bourne,Bond (James Bond),Best,Bivalve,Conch
+What is the preferred tag in modern HTML to indicate that text is to be shown in bold format,strong,b,bold,span
+What is the HTML tag for an item in a bulletted list,li,list:item,bullet,item,tag
