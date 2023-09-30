@@ -19,6 +19,18 @@ You can parse ith with `split(',')`.  If there are less than two items in the re
 you can ignore the line.  If there are more than two items the `[0]` item is the question 
 and the `[1:]` items are the choices.
 
+Designing a Database Model
+--------------------------
+
+Since we are reusing the `polls` data model with `Choices` and `Questions` we are already past
+the "design" phase.  But in order to better under the `polls` data model,
+as an exercise, you should look at your `models.py` and draw the model using
+<a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
+Crow's-Foot Notation</a>.
+You can use paper, or a layout tool - one way or another your
+diagram should have two boxes and one lines - and the line should be properly labelled
+as a "many" or a "one" end.
+
 Getting Started
 ---------------
 
@@ -45,15 +57,6 @@ At this point you should run:
 
 To make sure that your Django environment is configured properly.
 
-Since you are using an already designed data model with `Choices` and `Questions`, in order to better understand
-the data model,
-as an exercise, please draw the model using
-<a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
-Crow's-Foot Notation</a>.
-You can use paper, or a layout tool - one way or another your
-diagram should have two boxes and one lines - and the line should be properly labelled
-as a "many" or a "one" end.
-
 Copying the data file into your application
 -------------------------------------------
 
@@ -71,7 +74,7 @@ as the file `polls_load.py`.
 
     import csv  # https://docs.python.org/3/library/csv.html
 
-    from polls2.models import Question, Choice
+    from polls.models import Question, Choice
 
     def run():
         print("=== Polls Loader")
