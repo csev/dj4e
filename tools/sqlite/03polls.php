@@ -87,7 +87,7 @@ if ( isset($_FILES['database']) ) {
     if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='None'", 1) ) return;
     //
     // Do a bit of joining
-    $query = "SELECT COUNT(*) FROM {$app_name}_question JOIN ${app_name}_choice ON {$app_name}_question.id = {$app_name}_choice.question_id WHERE {$app_name}_question.question_text = 'What is your quest'";
+    $query = "SELECT COUNT(*) FROM {$app_name}_question JOIN {$app_name}_choice ON {$app_name}_question.id = {$app_name}_choice.question_id WHERE {$app_name}_question.question_text = 'What is your quest'";
      
     if ( ! checkCountQuery($db, $query, 1) ) return;
 
