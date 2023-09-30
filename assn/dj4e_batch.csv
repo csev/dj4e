@@ -1,6 +1,6 @@
 # Some sample poll questions
 Answer to the Ultimate Question,123,42,86
-What is your favourite social media?Instagram,Facebook,X,TikTok,LinkedIn,None
+What is your favourite social media,Instagram,Facebook,X,TikTok,LinkedIn,None
 What is your favourite season,Summer,Fall,Winter,Spring
 How to you like your food,Spicy,Medium,Mild
 What is your favorite programming language,Python,C,Rust,C++,Java,PHP
@@ -9,7 +9,6 @@ Which of the following files is consulted first when Django receives a request,u
 Which of the following Django files configures which models are shown in the admin interface,urls.py,views.py,models.py,admin.py
 What port do web browsers use for non-secure http requests,80,442,42,180,8000
 What is your name,lancelot,arthur
-A line to ignore :)
 What is your quest,Seek the grail,Learn Django,Understand Python OO
 What is your favourite color,blue,yellow,red
 What is the airspeed of an unladen swallow,20,12,33

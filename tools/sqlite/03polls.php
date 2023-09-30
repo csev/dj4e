@@ -9,6 +9,8 @@ $MAX_UPLOAD_FILE_SIZE = 3*1024*1024;
 
 require_once "sql_util.php";
 
+$app_name = "polls2";
+
 $oldgrade = $RESULT->grade;
 
 if ( isset($_FILES['database']) ) {
@@ -34,13 +36,13 @@ if ( isset($_FILES['database']) ) {
     }
 
     if ( ! isset($fdes['tmp_name']) ) {
-        $_SESSION['error'] = "Could not find file on server: ".$fdes['name']. "perhaps your file is too large";
+        $_SESSION['error'] = "Could not find file on server: ".$fdes['name'];
         header( 'Location: '.addSession('index.php') ) ;
         return;
     }
 
-    if ( U::strlen($fdes['tmp_name']) < 1 ) {
-        $_SESSION['error'] = "Temporary name not found: ".$fdes['name']. "perhaps your file is too large";
+    if ( strlen($fdes['tmp_name']) < 1 ) {
+        $_SESSION['error'] = "Temporary name not found: ".$fdes['name'].' - your file may be too large';
         header( 'Location: '.addSession('index.php') ) ;
         return;
     }
@@ -65,11 +67,29 @@ if ( isset($_FILES['database']) ) {
         return;
     }
 
-    if ( ! runQuery($db, 'SELECT id, name FROM catalog_genre') ) return;
-    if ( ! runQuery($db, 'SELECT id, first_name, last_name, date_of_birth, date_of_death FROM catalog_author') ) return;
-    if ( ! runQuery($db, 'SELECT id, title, summary, isbn, author_id FROM catalog_book') ) return;
-    if ( ! runQuery($db, 'SELECT id, imprint, due_back, status, book_id FROM catalog_bookinstance') ) return;
-    if ( ! runQuery($db, 'SELECT id, book_id, genre_id FROM catalog_book_genre') ) return;
+    $GOOD_QUERY = 0;
+    if ( ! runQuery($db, "SELECT id, question_text, pub_date FROM {$app_name}_question") ) return;
+    if ( ! runQuery($db, "SELECT id, choice_text, votes, question_id FROM {$app_name}_choice") ) return;
+
+    // 3 163 5 163 1044
+    if ( ! checkCountTable($db, "{$app_name}_question", 26) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_choice", 100) ) return;
+
+    // Look at contents with a WHERE clause
+    if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text='What is your favourite season'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text='What is your name'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text='Which command do you use to exit the SQLite comand line tool'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text LIKE '%what%'", 15) ) return;
+
+    if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='42'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='PHP'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='Spicy'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='None'", 1) ) return;
+    //
+    // Do a bit of joining
+    $query = "SELECT COUNT(*) FROM {$app_name}_question JOIN ${app_name}_choice ON {$app_name}_question.id = {$app_name}_choice.question_id WHERE {$app_name}_question.question_text = 'What is your quest'";
+     
+    if ( ! checkCountQuery($db, $query, 1) ) return;
 
     $gradetosend = 1.0;
     $scorestr = "Your answer is correct, score saved.";
@@ -111,30 +131,29 @@ if ( $dueDate->message ) {
     echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
 }
 ?>
+<h1>Polls Batch Loading One-to-Many Data</h1>
 <p>
 <form id="upload_form" name="myform" enctype="multipart/form-data" method="post" >
-To get credit for this assignment, perform the instructions below and 
+To get credit for this assignment, perform the instructions below and
 upload your SQLite3 database here:<br/>
-<input id="upload_file" name="database" type="file"> 
+<input id="upload_file" name="database" type="file">
 (Must have a .sqlite3 suffix and be &lt; 3M)<br/>
-<input type="submit">
+<input type="submit" value="<?= __('Check database') ?>">
 <p>
-Do the assignment at 
-<a href="https://www.dj4e.com/assn/paw_models.md" target="_blank">https://www.dj4e.com/assn/paw_models.md</a>.
+Do the assignment at
+<a href="https://www.dj4e.com/assn/dj4e_batch.md" target="_blank">https://www.dj4e.com/assn/dj4e_batch.md</a>
 </p>
 <p>
 When the
-assignment is complete, upload the resulting <b>db.sqlite3</b> file to this auto grader.  
-If you are using PythonAnywhere download the file using the Files tab and then upload the
-file to the autograder.
+assignment is complete, upload your <b>db.sqlite3</b> file this auto grader.  If you are using
+PythonAnywhere you will need to download the file and then upload it to this autograder.
 </p>
 <p>
-This autograder checks the schemas of the five tables
-(catalog_author, catalog_book, catalog_book_genre, catalog_bookinstance, and catalog_genre)
+This autograder checks the schemas and contents of the two tables
+(polls_question and polls_choice)
 that will be created when the assignment is completed properly.
 </p>
 </form>
-</p>
 <?php
 $OUTPUT->footerStart();
 ?>

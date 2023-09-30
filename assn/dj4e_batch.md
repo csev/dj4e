@@ -2,7 +2,7 @@ Batch Loading a Data Model
 ==========================
 
 Sometimes, we need to build a Django model and pre-load it with data from a file or other
-source.  
+source.
 
 In this assignment, we are going to fill your `polls` model from a text file.  Each poll question
 has a question and one or more choices.  The sample data looks as follows:
@@ -15,8 +15,8 @@ has a question and one or more choices.  The sample data looks as follows:
 
 You can download the data for this assignment at <a href="dj4e_batch.csv" target="_blank">dj4e_batch.csv</a>.
 
-You can parse ith with `split(',')`.  If there are less than two items in the resulting list,
-you can ignore the line.  If there are more than two items the `[0]` item is the question 
+You can parse the rows with the `csv` library or `split(',')`.  If there are less than two items in the resulting list,
+you can ignore the line.  If there are more than two items the `[0]` item is the question
 and the `[1:]` items are the choices.
 
 Designing a Database Model
@@ -147,8 +147,15 @@ it into the right tables:
     SQLite version 3.24.0 2018-06-04 14:10:15
     Enter ".help" for usage hints.
 
-TBD
-
+    sqlite> SELECT COUNT(*) FROM polls_question
+    26
+    sqlite> SELECT COUNT(*) FROM polls_choice
+    100
+    sqlite> SELECT COUNT(*) FROM polls_question WHERE question_text LIKE '%what%'
+    15
+    sqlite> SELECT COUNT(*) FROM polls_question JOIN polls_choice ON polls_question.id = polls_choice.question_id
+       WHERE polls_question.question_text = 'What is your quest';
+    3
     sqlite> .quit
     $
 

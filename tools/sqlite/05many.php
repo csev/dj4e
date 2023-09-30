@@ -1,6 +1,7 @@
 <?php
 
 use \Tsugi\Core\LTIX;
+use \Tsugi\Util\U;
 use \Tsugi\Util\LTI;
 use \Tsugi\Util\Mersenne_Twister;
 
@@ -26,7 +27,7 @@ if ( isset($_FILES['database']) ) {
         return;
     }
 
-    if ( ! endsWith($fdes['name'],'.sqlite3') ) {
+    if ( ! U::endsWith($fdes['name'],'.sqlite3') ) {
         $_SESSION['error'] = "Uploaded file must have .sqlite3 suffix: ".$fdes['name'];
         header( 'Location: '.addSession('index.php') ) ;
         return;
@@ -38,7 +39,7 @@ if ( isset($_FILES['database']) ) {
         return;
     }
 
-    if ( strlen($fdes['tmp_name']) < 1 ) {
+    if ( U::strlen($fdes['tmp_name']) < 1 ) {
         $_SESSION['error'] = "Temporary name not found: ".$fdes['name'].' - your file may be too large';
         header( 'Location: '.addSession('index.php') ) ;
         return;
@@ -49,7 +50,7 @@ if ( isset($_FILES['database']) ) {
     $fh = fopen($file,'r');
     $prefix = fread($fh, 100);
     fclose($fh);
-    if ( ! startsWith($prefix,'SQLite format 3') ) {
+    if ( ! U::startsWith($prefix,'SQLite format 3') ) {
         $_SESSION['error'] = "Uploaded file is not SQLite3 format: ".$fdes['name'];
         header( 'Location: '.addSession('index.php') ) ;
         return;

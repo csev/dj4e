@@ -16,6 +16,7 @@ if ( SettingsForm::handleSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     'single_lite.php' => 'Command Line SQL',
+    '03polls.php' => 'Polls One-to-Many Exercise',
     '04models.php' => 'MDN Models Tutorial',
     '05many.php' => 'Unesco One-to-Many Exercise',
 );
