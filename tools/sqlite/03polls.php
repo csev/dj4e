@@ -74,7 +74,7 @@ if ( isset($_FILES['database']) ) {
 
     // 3 163 5 163 1044
     if ( ! checkCountTable($db, "{$app_name}_question", 26) ) return;
-    if ( ! checkCountTable($db, "{$app_name}_choice", 100) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_choice", 104) ) return;
 
     // Look at contents with a WHERE clause
     if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text='What is your favourite season'", 1) ) return;
@@ -90,7 +90,7 @@ if ( isset($_FILES['database']) ) {
     // Do a bit of joining
     $query = "SELECT COUNT(*) FROM {$app_name}_question JOIN {$app_name}_choice ON {$app_name}_question.id = {$app_name}_choice.question_id WHERE {$app_name}_question.question_text = 'What is your quest'";
      
-    if ( ! checkCountQuery($db, $query, 1) ) return;
+    if ( ! checkCountQuery($db, $query, 3) ) return;
 
     $gradetosend = 1.0;
     $scorestr = "Your answer is correct, score saved.";

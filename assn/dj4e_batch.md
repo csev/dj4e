@@ -111,7 +111,6 @@ Running the Script
 You run the script from the project folder (i.e.  where the `manage.py` file resides):
 
     cd ~/django_projects/mysite
-    workon django4                             # (if necessary)
     python manage.py runscript polls_load
 
 It needs to be run this way so that lines like:
@@ -150,7 +149,7 @@ it into the right tables:
     sqlite> SELECT COUNT(*) FROM polls_question;
     26
     sqlite> SELECT COUNT(*) FROM polls_choice;
-    100
+    104
     sqlite> SELECT COUNT(*) FROM polls_question WHERE question_text LIKE '%what%';
     15
     sqlite> SELECT COUNT(*) FROM polls_question JOIN polls_choice ON polls_question.id = polls_choice.question_id
