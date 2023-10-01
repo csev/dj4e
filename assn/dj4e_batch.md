@@ -41,7 +41,7 @@ is needed in order to store Python objects in the `scripts` folder.
     mkdir scripts
     touch scripts/__init__.py
 
-Add `django_extensions` to your `INSTALLED_APPLICATIONS` in `mysite/mysite/settings.py`:
+Add `django_extensions` to your `INSTALLED_APPS` in `mysite/mysite/settings.py`:
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -147,11 +147,11 @@ it into the right tables:
     SQLite version 3.24.0 2018-06-04 14:10:15
     Enter ".help" for usage hints.
 
-    sqlite> SELECT COUNT(*) FROM polls_question
+    sqlite> SELECT COUNT(*) FROM polls_question;
     26
-    sqlite> SELECT COUNT(*) FROM polls_choice
+    sqlite> SELECT COUNT(*) FROM polls_choice;
     100
-    sqlite> SELECT COUNT(*) FROM polls_question WHERE question_text LIKE '%what%'
+    sqlite> SELECT COUNT(*) FROM polls_question WHERE question_text LIKE '%what%';
     15
     sqlite> SELECT COUNT(*) FROM polls_question JOIN polls_choice ON polls_question.id = polls_choice.question_id
        WHERE polls_question.question_text = 'What is your quest';

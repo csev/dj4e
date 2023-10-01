@@ -9,7 +9,8 @@ $MAX_UPLOAD_FILE_SIZE = 3*1024*1024;
 
 require_once "sql_util.php";
 
-$app_name = "polls2";
+$app_name = "polls";
+// $app_name = "polls2";
 
 $oldgrade = $RESULT->grade;
 
@@ -50,7 +51,7 @@ if ( isset($_FILES['database']) ) {
     $file = $fdes['tmp_name'];
 
     $fh = fopen($file,'r');
-    $prefix = fread($fh, 100);
+    $prefix = fread($fh, 104);
     fclose($fh);
     if ( ! U::startsWith($prefix,'SQLite format 3') ) {
         $_SESSION['error'] = "Uploaded file is not SQLite3 format: ".$fdes['name'];
