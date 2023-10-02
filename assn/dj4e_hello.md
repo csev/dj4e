@@ -26,7 +26,6 @@ It is time for the "/" in your application URL to actually refer to a real page 
 of throwing a "404 Not Found" error.  We will store this page (and other project-wide
 bits) in an application named "home".  To get started:
 
-    workon django4                  # or django3 as needed
     cd ~/django_projects/mysite
     python manage.py startapp home
 
@@ -69,7 +68,9 @@ Playing With Sessions (DIY)
 
 Your next goal is to make a new application named `hello`.  It will work like:
 <a href="https://djtutorial.dj4e.com/hello" target="_blank">
-https://djtutorial.dj4e.com/hello</a>.
+https://djtutorial.dj4e.com/hello</a>.  This uses the Django session to start a variable at 1
+and for each refresh increment the value in the session, and when the number n the session 
+is > four reset the session variable to one,
 
 Your `views.py` will be adapted from 
 
@@ -94,8 +95,9 @@ If your view function was named `myview`, the path will look as follows:
 
         path('', views.myview),
 
-3. Change the project-wide `mysite/urls.py` to mount the new application's urls at `/hello`.  Look at the line for
-the `polls` urls and adapt it for your `hello` application.
+3. Change the project-wide `~/django_projects/mysite/mysite/urls.py` to set up the path to the
+new application's urls at `/hello`.  Look at the line in that file that routes paths to the `polls`
+application and adapt it for your `hello` application.
 
 4. Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `hello` application following
 the pattern that you used to add the `polls` application to `INSTALLED_APPS` - again - the exact code
