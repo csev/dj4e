@@ -132,7 +132,7 @@ if ( $dueDate->message ) {
     echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
 }
 ?>
-<h1>Polls Batch Loading One-to-Many Data</h1>
+<h1>Polls Loading One-to-Many Data</h1>
 <p>
 <form id="upload_form" name="myform" enctype="multipart/form-data" method="post" >
 To get credit for this assignment, perform the instructions below and
