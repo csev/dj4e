@@ -128,12 +128,23 @@ using either your `/polls` application or the `/admin` feature of your django ap
 Possible Errors
 ---------------
 
-If you get an error about 'runscripts' not found, you forgot to add `django_extensions` to your
-`settings.py` in the instructions above.
+If you get an error message about `No module named django_extensions` you forgot
+to type `workon django4`  to activate your virtual environment:
 
-    $ python manage.py runscripts polls_load
-    Unknown command: 'runscripts'
-    Type 'manage.py help' for usage.
+    $ python manage.py check
+    Traceback (most recent call last):
+      File "/home/drchuck/django_projects/mysite/manage.py", line 21, in <module>
+        main()
+
+            ... blah blah blah traceback messages ....
+
+      File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+    ModuleNotFoundError: No module named 'django_extensions'
+
+    $ workon django4 
+    (django4) $ python manage.py check
+    System check identified no issues (0 silenced).
+    
 
 Checking Your Data By Hand
 --------------------------
