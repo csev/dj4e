@@ -1089,7 +1089,7 @@
         "project": "DJ 03 Many 05 Shell"
     },
     {
-        "title": "Loading One-to-Many Data using a Django Batch Script",
+        "title": "Loading One-to-Many Data using a Script",
         "youtube": "4DZlvtTvSrY",
         "notes": "Reused the first part of the many_load video - added a new ending cats_load",
         "project" : "DJ 03 Many 06 Batch"
@@ -1746,7 +1746,7 @@
         "project" : "DJ 04 Many 03 Course"
     },
     {
-        "title": "Building a Django Batch Script to Load Data from CSV",
+        "title": "Building a Django Script to Load Data from CSV",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
     }
