@@ -82,7 +82,7 @@ if ( isset($_FILES['database']) ) {
     if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text='Which command do you use to exit the SQLite comand line tool'", 1) ) return;
     if ( ! checkCountTable($db, "{$app_name}_question WHERE question_text LIKE '%what%'", 15) ) return;
 
-    if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='42'", 1) ) return;
+    if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='42'", 2) ) return;
     if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='PHP'", 1) ) return;
     if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='Spicy'", 1) ) return;
     if ( ! checkCountTable($db, "{$app_name}_choice WHERE choice_text='None'", 1) ) return;
