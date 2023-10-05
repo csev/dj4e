@@ -4,7 +4,7 @@ Batch Loading a Data Model
 Sometimes, we need to build a Django model and pre-load it with data from a file or other
 source.
 
-In this assignment, we are going to fill your `polls` model from a text file.  Each poll question
+In this assignment, we are going to fill your `polls` model from a CSV file.  Each poll question
 has a question and one or more choices.  The sample data looks as follows:
 
     Answer to the Ultimate Question,123,42,86
@@ -23,7 +23,7 @@ Designing a Database Model
 --------------------------
 
 Since we are reusing the `polls` data model with `Choices` and `Questions` we are already past
-the "design" phase.  But in order to better under the `polls` data model,
+the "design" phase.  But in order to better understand the `polls` data model,
 as an exercise, you should look at your `models.py` and draw the model using
 <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
 Crow's-Foot Notation</a>.
