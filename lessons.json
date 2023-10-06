@@ -899,7 +899,7 @@
     ],
     "videos" : [
     {
-        "title": "Forms, GET, POST, and HTTP",
+        "title": "Forms, GET, POST, and HTTP (8:19)",
         "project" : "DJ-10-Forms-01-getpost",
         "youtube": "KqH0Pu2ZnIg"
     },
@@ -1000,12 +1000,12 @@
     ],
     "videos" : [
     {
-        "title": "Cookies in Browsers and Django",
+        "title": "Cookies in Browsers and Django (9:43)",
         "project" : "DJ-08-Cookies-01-Cookies",
         "youtube": "C75IW38hKI8"
     },
     {
-        "title": "Using Sessions in Django",
+        "title": "Using Sessions in Django (12:33)",
         "project" : "DJ-08-Cookies-02-Sessions",
         "youtube": "RjykNmVdcgI"
     }
@@ -1063,33 +1063,33 @@
     ],
     "videos" : [
     {
-        "title": "One-to-Many Models Overview",
+        "title": "One-to-Many Models Overview (5:52)",
         "youtube": "vgyYEE7XDzw",
         "project": "DJ 03 Many 01 Overview"
     },
     {
-        "title": "Removing Replication in One-to-Many Models",
+        "title": "Removing Replication in One-to-Many Models (8:36)",
         "youtube": "JCQYxILYNIE",
         "project": "DJ 03 Many 02 Replication"
     },
     {
-        "title": "Storing Primary and Foreign Keys in a Database",
+        "title": "Storing Primary and Foreign Keys in a Database (2:46)",
         "youtube": "xmyE-zQaBEI",
         "project": "DJ 03 Many 03 Physical"
     },
     {
-        "title": "Representing One-To-Many Models in Django",
+        "title": "Representing One-To-Many Models in Django (9:56)",
         "youtube": "9t-bP963_jY",
         "project": "DJ 03 Many 04 Django"
     },
     {
-        "title": "Using the Django Shell to Explore One-to-Many Models",
+        "title": "Using the Django Shell to Explore One-to-Many Models (7:45)",
         "youtube": "aGtY4xkirsE",
         "notes" : "revised 2021-01 truncated reference to m-2-m at end formerly ZdLpAtfWfZk",
         "project": "DJ 03 Many 05 Shell"
     },
     {
-        "title": "Loading One-to-Many Data using a Script",
+        "title": "Loading One-to-Many Data using a Script (12:16)",
         "youtube": "4DZlvtTvSrY",
         "notes": "Reused the first part of the many_load video - added a new ending cats_load",
         "project" : "DJ 03 Many 06 Batch"
