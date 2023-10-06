@@ -34,15 +34,15 @@
     ],
     "videos" : [
         {
-            "title" : "Web Applications and the Request/Response Cycle",
+            "title" : "Web Applications and the Request/Response Cycle (6:04)",
             "youtube" : "ZT8uqIEG92o"
         },
         {
-            "title" : "Exploring the HyperText Transfer Protocol",
+            "title" : "Exploring the HyperText Transfer Protocol (16:28)",
             "youtube" : "Q5YIrYkrVXg"
         },
         {
-            "title" : "Using Sockets to Make Network Connections in Python",
+            "title" : "Using Sockets to Make Network Connections in Python (6:34)",
             "youtube" : "RDvlb_XgVyI"
         },
         {
