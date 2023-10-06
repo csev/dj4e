@@ -583,7 +583,7 @@
     ],
     "videos" : [
     {
-        "title": "Model View Controller in Django",
+        "title": "Model View Controller in Django (7:07)",
         "youtube": "XvWG5KMncOU",
         "project": "DJ 05 MVC"
     }
@@ -635,37 +635,37 @@
     ],
     "videos" : [
     {
-        "title": "URL Routing in Django",
+        "title": "URL Routing in Django (6:59)",
         "youtube": "AQFC13D2mRM",
         "project": "DJ 06 Views 01 Urls"
     },
     {
-        "title": "Django Views",
+        "title": "Django Views (6:19)",
         "youtube": "9Qk4vJMssMo",
         "project": "DJ 06 Views 02 Views"
     },
     {
-        "title": "Inside Django Views and HTML Escaping in Django",
+        "title": "Inside Django Views and HTML Escaping in Django (15:36)",
         "youtube": "SAAWE4Hz6Mk",
         "project": "DJ 06 Views 03 Detail"
     },
     {
-        "title": "Using Templates in Django",
+        "title": "Using Templates in Django (10:05)",
         "youtube": "mTvWrpMGWBA",
         "project": "DJ 06 Views 04 Templates"
     },
     {
-        "title": "Using the Django Template Language (DTL)",
+        "title": "Using the Django Template Language (DTL) (11:00)",
         "youtube": "teL44ugGpSs",
         "project": "DJ 06 Views 05 DTL"
     },
     {
-        "title": "Django Template Inheritance",
+        "title": "Django Template Inheritance (6:06)",
         "youtube": "IMgml67lH9Y",
         "project": "DJ 06 Views 06 Inherit"
     },
     {
-        "title": "Reversing Django URLs",
+        "title": "Reversing Django URLs (12:52)",
         "youtube": "YT60BZJjySg",
         "project": "DJ 06 Views 07 Reverse"
     }
@@ -786,19 +786,19 @@
     ],
     "videos" : [
         {
-            "title" : "Objects - Introduction - Part 1",
+            "title" : "Objects - Introduction - Part 1 (10:40)",
             "youtube" : "u9xZE5t9Y30"
         },
         {
-            "title" : "Objects - A Sample Class - Part 2",
+            "title" : "Objects - A Sample Class - Part 2 (8:19)",
             "youtube" : "b2vc5uzUfoE"
         },
         {
-            "title" : "Objects - Object Lifecycle - Part 3",
+            "title" : "Objects - Object Lifecycle - Part 3 (6:25)",
             "youtube" : "bal0Fv6QE9w"
         },
         {
-            "title" : "Objects - Inheritance - Part 4",
+            "title" : "Objects - Inheritance - Part 4 (7:37)",
             "youtube" : "EE9PaHPPm2w"
         }
     ],
@@ -835,7 +835,7 @@
     ],
     "videos" : [
     {
-        "title": "Understanding Django Generic Views",
+        "title": "Understanding Django Generic Views (16:28)",
         "youtube": "uPRabryhv5k",
         "project": "DJ 07 Views 08 Generic"
     }
@@ -904,27 +904,27 @@
         "youtube": "KqH0Pu2ZnIg"
     },
     {
-        "title": "Building HTML Forms",
+        "title": "Building HTML Forms (11:49)",
         "project" : "DJ-10-Forms-02-HTML",
         "youtube": "iXgnkxwzZzM"
     },
     {
-        "title": "Forms and Cross Site Request Forgery (CSRF)",
+        "title": "Forms and Cross Site Request Forgery (CSRF) (5:52)",
         "project" : "DJ-10-Forms-03-CSRF",
         "youtube": "j-vdshWK9Lc"
     },
     {
-        "title": "CSRF Support in Django",
+        "title": "CSRF Support in Django (9:16)",
         "project" : "DJ-10-Forms-04-Form-CSRF",
         "youtube": "w9Y6tIVGUTI"
     },
     {
-        "title": "The POST Refresh Pattern",
+        "title": "The POST Refresh Pattern (3:26)",
         "project" : "DJ-10-Forms-05-Refresh",
         "youtube": "Cug7pkRWQM0"
     },
     {
-        "title": "Implementing POST Redirect in Django",
+        "title": "Implementing POST Redirect in Django (8:04)",
         "project" : "DJ-10-Forms-06-Redirect",
         "youtube": "a_ahU4F1V2g"
     }
