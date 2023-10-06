@@ -1185,17 +1185,17 @@
     ],
     "videos" : [
     {
-        "title": "Creating and Managing Users in Django",
+        "title": "Creating and Managing Users in Django (3:45)",
         "project" : "DJ-09-Login-01-Users",
         "youtube": "E_X5Kr6xmNY"
     },
     {
-        "title": "Login and Logout URLs in Django",
+        "title": "Login and Logout URLs in Django (7:24)",
         "project" : "DJ-09-Login-02-Urls",
         "youtube": "tNofsgLH7c4"
     },
     {
-        "title": "Login and Views in Django",
+        "title": "Login and Views in Django (10:15)",
         "project" : "DJ-09-Login-03-Views",
         "youtube": "n5Xwqz1IJck"
     }
@@ -1235,12 +1235,12 @@
     ],
     "videos" : [
     {
-        "title": "Using Django Forms Capabilities",
+        "title": "Using Django Forms Capabilities (13:26)",
         "project" : "DJ-10-Forms-07-FormsPy",
         "youtube": "bYlgvmAPrp0"
     },
     {
-        "title": "Data Validation with Django Forms",
+        "title": "Data Validation with Django Forms (9:12)",
         "project" : "DJ-10-Forms-08-Validation",
         "youtube": "kRXiMIFKzoQ"
     }
@@ -1284,7 +1284,7 @@
     ],
     "videos" : [
     {
-        "title": "Walkthrough of the DJ4E Autos Sample - Generic Edit Forms",
+        "title": "Walkthrough of the DJ4E Autos Sample - Generic Edit Forms (36:12)",
         "project": "samples autos walkthrough",
         "youtube": "3kHgAE-MidA"
     }
