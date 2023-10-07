@@ -8,7 +8,15 @@ In this assignment, we are going to build a `book` model and load data from a CS
 Our book model will be a simpler version of the one used in the lectures in the class.
 Our data file will have book titles and languages separated by a commas.
 
-    TBD
+    # https://www.nypl.org/blog/2020/12/03/125-nyc-books-we-love-multilingual-titles
+    The Age of Innocence,en
+    The Age of Innocence,es
+    Another Country,en
+    Another Country,es
+    Another Country,iw
+    Bodega Dreams,en
+    Bodega Dreams,es
+    ...
 
 You can download the data for this assignment at <a href="dj4e_book.csv" target="_blank">dj4e_book.csv</a>.
 
@@ -184,7 +192,7 @@ it into the right tables:
 
     sqlite> SELECT COUNT(*) FROM books_book;
     30
-    sqlite> SELECT COUNT(*) FROM books_lang;;
+    sqlite> SELECT COUNT(*) FROM books_lang;
     11
     sqlite> SELECT COUNT(*) FROM books_book WHERE title LIKE '%Breakfast%';
     3
