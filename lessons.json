@@ -46,15 +46,15 @@
             "youtube" : "RDvlb_XgVyI"
         },
         {
-            "title" : "Building a Simple Web Browser in Python",
+            "title" : "Building a Simple Web Browser in Python (8:39)",
             "youtube" : "Fxgw_BxZg2I"
         },
         {
-            "title" : "Building a Simple HTTP Server in Python",
+            "title" : "Building a Simple HTTP Server in Python (16:07)",
             "youtube" : "PNt8zXl7EJ0"
         },
         {
-            "title" : "Understanding Browser Developer Mode",
+            "title" : "Understanding Browser Developer Mode (9:43)",
             "youtube" : "0JsWY3pmdak"
         }
     ],
@@ -111,11 +111,11 @@
     ],
     "videos" : [
     {
-        "title": "Installing Django on PythonAnywhere",
+        "title": "Installing Django on PythonAnywhere (21:13)",
         "youtube": "ZsEu-jyy2qY"
     },
     {
-        "title": "How the Autograder Works",
+        "title": "How the Autograder Works (9:13)",
         "youtube": "n5_xdz2Zo3A"
     }
   ],
@@ -185,7 +185,7 @@
     ],
     "videos" : [
     {
-        "title": " Using the Command Line Shell on PythonAnywhere",
+        "title": " Using the Command Line Shell on PythonAnywhere (19:01)",
         "youtube": "bNjwj7BKJAo"
     }
   ],
@@ -232,15 +232,15 @@
     ],
     "videos" : [
         {
-            "title" : "HTML - HyperText Markup Language (Part 1)",
+            "title" : "HTML - HyperText Markup Language (Part 1) (5:53)",
             "youtube" : "yWmJSO5xQlU"
         },
         {
-            "title" : "HTML - HyperText Markup Language (Part 2)",
+            "title" : "HTML - HyperText Markup Language (Part 2) (13:52)",
             "youtube" : "fh3omoEiebQ"
         },
         {
-            "title" : "HTML - Sample Code Walkthrough",
+            "title" : "HTML - Sample Code Walkthrough (13:58)",
             "youtube" : "wYc6l28v7Cs"
         }
     ],
@@ -303,23 +303,23 @@
     ],
     "videos" : [
         {
-            "title" : "CSS - Cascading Style Sheets - (Part 1)",
+            "title" : "CSS - Cascading Style Sheets - (Part 1) (12:47)",
             "youtube" : "blWx62Js7T0"
         },
         {
-            "title" : "CSS - Cascading Style Sheets - (Part 2)",
+            "title" : "CSS - Cascading Style Sheets - (Part 2) (15:03)",
             "youtube" : "nMU8wMgasJ8"
         },
         {
-            "title" : "CSS - Cascading Style Sheets - (Part 3)",
+            "title" : "CSS - Cascading Style Sheets - (Part 3) (13:40)",
             "youtube" : "7KWtFdqXiqE"
         },
         {
-            "title" : "CSS - Sample Code Walkthrough (Part 1)",
+            "title" : "CSS - Sample Code Walkthrough (Part 1) (13:26)",
             "youtube" : "2Eu96WnoHBY"
         },
         {
-            "title" : "CSS - Sample Code Walkthrough (Part 2)",
+            "title" : "CSS - Sample Code Walkthrough (Part 2) (25:49)",
             "youtube" : "MHqI-PKBl_A"
         }
     ],
@@ -418,15 +418,15 @@
     ],
     "videos" : [
     {
-        "title": "How Databases Work",
+        "title": "How Databases Work (18:57)",
         "youtube": "C1QXYMNTEVs"
     },
     {
-        "title": "Introduction to Structured Query Language (SQL)",
+        "title": "Introduction to Structured Query Language (SQL) (11:45)",
         "youtube": "wtU7Pp6VFoE"
     },
     {
-        "title": "Demonstration: Basic SQL",
+        "title": "Demonstration: Basic SQL (6:36)",
         "youtube": "2Or6_sSyl7c"
     }
    ],
@@ -497,21 +497,21 @@
     ],
     "videos" : [
     {
-        "title": "Django Data Models",
+        "title": "Django Data Models (19:59)",
         "youtube": "AqsPifp-ccc"
     },
     {
-        "title": "Data Model Migration in Django",
+        "title": "Data Model Migration in Django (7:54)",
         "youtube": "YqARGlI6bGc",
         "todo" : "Need to make migration fit better in DJ-02",
         "project": "DJ 03 Many 05 Migrate"
     },
     {
-        "title": "Demonstration: Django Single Table Models",
+        "title": "Demonstration: Django Single Table Models (11:09)",
         "youtube": "p5K5hFiJ-GI"
     },
     {
-        "title": "Demonstration: Resetting your Django database on PythonAnywhere",
+        "title": "Demonstration: Resetting your Django database on PythonAnywhere (5:47)",
         "project": "tut2 reset database edit",
         "youtube": "GOQIJbTSzoQ"
     }
@@ -1338,7 +1338,7 @@
     ],
     "videos" : [
     {
-        "title": "Using GitHub with Django and PythonAnywhere",
+        "title": "Using GitHub with Django and PythonAnywhere (6:55)",
         "youtube": "9FJwue2Eqao"
     }
    ],
@@ -1376,7 +1376,7 @@
     ],
     "videos" : [
     {
-        "title": "Submitting Assignments Using ngrok",
+        "title": "Submitting Assignments Using ngrok (6:06)",
         "youtube": "WLWuMjDDSa4"
     }
    ],
@@ -1403,15 +1403,15 @@
     ],
     "videos" : [
         {
-            "title" : "Owned Rows in Django - Overview",
+            "title" : "Owned Rows in Django - Overview (6:02)",
             "youtube" : "YTK-Sx4OUqs"
         },
         {
-            "title" : "Owned Rows in Django - Generic Views Review",
+            "title" : "Owned Rows in Django - Generic Views Review (10:17)",
             "youtube" : "z4iJ3Njbc9g"
         },
         {
-            "title" : "Owned Rows in Django - owner.py",
+            "title" : "Owned Rows in Django - owner.py (13:03)",
             "youtube" : "hznUKCsk8X8"
         }
     ],
@@ -1460,15 +1460,15 @@
     ],
     "videos" : [
         {
-            "title" : "Walking through the DJ4E Crispy Forms (crispy) Sample Code",
+            "title" : "Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)",
             "youtube" : "kQORvrIzsZs"
         },
         {
-            "title" : "Walking through the DJ4E My Articles (myarts) Sample Code",
+            "title" : "Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
             "youtube" : "iHvJZ_lvXB4"
         },
         {
-            "title" : "Walking through the DJ4E Bootstrap Menu (menu) Sample Code",
+            "title" : "Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)",
             "youtube" : "nuz_zXWoCo8"
         }
     ],
@@ -1523,23 +1523,23 @@
     ],
     "videos" : [
         {
-            "title" : "JavaScript - Overview and History",
+            "title" : "JavaScript - Overview and History (9:59)",
             "youtube" : "xBpKUM1CTBQ"
         },
         {
-            "title" : "JavaScript - In the Browser",
+            "title" : "JavaScript - In the Browser (14:02)",
             "youtube" : "wnUhEMhEeDs"
         },
         {
-            "title" : "JavaScript - The Language",
+            "title" : "JavaScript - The Language (16:57)",
             "youtube" : "BtIhwBPeyp4"
         },
         {
-            "title" : "JavaScript - Functions and Arrays",
+            "title" : "JavaScript - Functions and Arrays (7:03)",
             "youtube" : "a7wPzoX9o_8"
         },
         {
-            "title" : "JavaScript - Loops and Conditional",
+            "title" : "JavaScript - Loops and Conditional (6:37)",
             "youtube" : "XtKhAo9IO5Q"
         }
     ],
@@ -1590,11 +1590,11 @@
     ],
     "videos" :[
         {
-            "title" : "JavaScript Object Oriented Concepts",
+            "title" : "JavaScript Object Oriented Concepts (4:21)",
             "youtube" : "N_ZB9VnXDWo"
         },
         {
-            "title" : "Building Classes and Objects in JavaScript",
+            "title" : "Building Classes and Objects in JavaScript (13:13)",
             "youtube" : "DLWYj1_j1Is"
         }
     ],
@@ -1649,7 +1649,7 @@
     ],
     "videos" : [
         {
-            "title" : "Walking through the DJ4E Pictures (pics) Sample Code",
+            "title" : "Walking through the DJ4E Pictures (pics) Sample Code (33:06)",
             "youtube" : "tanl9CthvHE"
         }
     ],
@@ -1731,22 +1731,22 @@
     ],
     "videos" : [
     {
-        "title": "Many-to-Many Overview",
+        "title": "Many-to-Many Overview (5:34)",
         "youtube": "JI4ZOFOubLY",
         "project" : "DJ 04 Many 01 Overview"
     },
     {
-        "title": "A Simple Many-To-Many Example in Django",
+        "title": "A Simple Many-To-Many Example in Django (12:35)",
         "youtube": "gf2-J9YOMcc",
         "project" : "DJ 04 Many 02 Many"
     },
     {
-        "title": "Many-To-Many Data Models for Courses and Membership",
+        "title": "Many-To-Many Data Models for Courses and Membership (8:38)",
         "youtube": "kY_1a057phM",
         "project" : "DJ 04 Many 03 Course"
     },
     {
-        "title": "Building a Django Script to Load Data from CSV",
+        "title": "Building a Django Script to Load Data from CSV (16:50)",
         "youtube": "E8y_6S2Fc5s",
         "project" : "DJ 04 Many 04 Batch"
     }
@@ -1784,7 +1784,7 @@
     ],
     "videos" : [
         {
-            "title" : "Walking through the DJ4E Forums (forums) Sample Code",
+            "title" : "Walking through the DJ4E Forums (forums) Sample Code (25:28)",
             "youtube" : "mgcj3V56X-A"
         }
     ],
@@ -1831,23 +1831,23 @@
     ],
     "videos" : [
         {
-            "title" : "The JavaScript Execution Model In the Browser",
+            "title" : "The JavaScript Execution Model In the Browser (8:24)",
             "youtube" : "tkZcNu-RGQA"
         },
         {
-            "title" : "Working with the Document Object Model (DOM) in JavaScript",
+            "title" : "Working with the Document Object Model (DOM) in JavaScript (5:40)",
             "youtube" : "dPpGAYZGrgs"
         },
         {
-            "title" : "Modifying the Document Object Model (DOM) in JavaScript",
+            "title" : "Modifying the Document Object Model (DOM) in JavaScript (8:24)",
             "youtube" : "x-TaJHWs4nU"
         },
         {
-            "title" : "JavaScript Events in the Browser",
+            "title" : "JavaScript Events in the Browser (7:54)",
             "youtube" : "_QVcbmGqm2o"
         },
         {
-            "title" : "Using Fetch to make Network Requests in JavaScript",
+            "title" : "Using Fetch to make Network Requests in JavaScript (7:00)",
             "youtube" : "LbKfSzuHWyM"
         }
     ],
@@ -1895,19 +1895,19 @@
     ],
     "videos" : [
         {
-            "title" : "JSON - JavaScript Object Notation",
+            "title" : "JSON - JavaScript Object Notation (8:34)",
             "youtube" : "thhKcuHNQzo"
         },
         {
-            "title" : "Walking through the DJ4E JSON / Fetch (fetch) Sample Code",
+            "title" : "Walking through the DJ4E JSON / Fetch (fetch) Sample Code (21:53)",
             "youtube" : "KcgPJYil5Do"
         },
         {
-            "title" : "JSON - AJAX and CHAT",
+            "title" : "JSON - AJAX and CHAT (8:05)",
             "youtube" : "PJ1LkwGcOsk"
         },
         {
-            "title" : "Walking through the DJ4E JSON (chat) Sample Code",
+            "title" : "Walking through the DJ4E JSON (chat) Sample Code (16:03)",
             "youtube" : "v5CKyLS701M"
         }
     ],
@@ -1957,15 +1957,15 @@
     ],
     "videos" : [
     {
-        "title": "DJ4E Samples Walkthrough - Favicon",
+        "title": "DJ4E Samples Walkthrough - Favicon (4:11)",
         "youtube": "C1WGD5hFdT8"
     },
     {
-        "title": "DJ4E Samples Walkthrough - Social Login",
+        "title": "DJ4E Samples Walkthrough - Social Login (8:47)",
         "youtube": "NctpQ-2Kdtw"
     },
     {
-        "title": "DJ4E Samples Walkthrough - Favorites",
+        "title": "DJ4E Samples Walkthrough - Favorites (30:20)",
         "youtube": "6cq-ehBHkwc"
     }
    ],
@@ -2056,11 +2056,11 @@
     ],
     "videos" : [
     {
-        "title": "DJ4E Samples Walkthrough - search (well)",
+        "title": "DJ4E Samples Walkthrough - search (well) (21:30)",
         "youtube": "4pOExZHnL9k"
     },
     {
-        "title": "DJ4E Samples Walkthrough - myarts (review)",
+        "title": "DJ4E Samples Walkthrough - myarts (review) (30:13)",
         "youtube" : "iHvJZ_lvXB4"
     }
    ],

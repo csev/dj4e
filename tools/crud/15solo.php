@@ -15,7 +15,7 @@ $now = date('H:i:s');
 $code = 'TimeCode_'.substr($timecode.'', 1, 6);
 $reverse = ($timecode % 2 == 0 ) ? 'yes' : 'no';
 $cases = array('none', 'upper', 'casefold', 'title');
-$case = $cases[($timecode/100) % count($cases)];
+$case = $cases[(int)($timecode/100) % count($cases)];
 
 $field1 = 'Hello world';
 $field2 = $names[$timecode % count($names)] .' ' . ($timecode % 100);
