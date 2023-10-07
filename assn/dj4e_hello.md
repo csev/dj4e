@@ -47,6 +47,10 @@ There are lots of examples of the use of TemplateView in the `urls.py` files in 
 and in the lecture materials.  Figuring out exactly how to change your `urls.py` is one of the
 DIY aspects of this assignment.
 
+Then edit the file `~/django_projects/mysite/mysite/settings.py` and add a line to load the `home`
+application.  Simply duplicate the line in `INSTALLED_APPS` for the `polls` application and edit it
+to reference `home` and follow the pattern of case from the `polls` line.
+
 Make sure to run:
 
     python manage.py check
