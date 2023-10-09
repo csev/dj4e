@@ -107,7 +107,7 @@ $value = $test ? $test->getValue() : null;
 if ( $value == $check ) {
     success_out("Found $cookie_name=".$check);
     $passed = $passed + 1;
-} else if ( strlen($value) > 0 ) {
+} else if ( U::strlen($value) > 0 ) {
     error_out("Found $cookie_name with incorrect value: ".$value);
 } else {
     error_out("Did not find $cookie_name");
