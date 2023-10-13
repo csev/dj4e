@@ -29,7 +29,7 @@ JSON_EXTRACT(R.json, '$.dj4e_versions') AS versions, email, displayname
 FROM lti_result AS R
 JOIN lti_user AS U ON R.user_id = U.user_id
 WHERE grade = 1 AND link_id = :LNK AND 
-DATE(R.updated_at) >= CURDATE() - INTERVAL 21 DAY;
+DATE(R.updated_at) >= CURDATE() - INTERVAL 21 DAY
 ORDER BY R.updated_at desc limit 300;";
 
 $rows = $PDOX->allRowsDie($sql,
@@ -45,21 +45,21 @@ echo("Checking versions seen in the past 21 days...\n");
 // Lets find the most common version
 $versions = array();
 foreach ( $rows as $row ) {
-    $verstr = $row['versions'];
-	$vers = json_decode($verstr);
-	if ( ! is_array($vers) ) continue;
-	foreach($vers as $ver) {
-		$versions[$ver] = U::get($versions, $ver, 0) + 1;
-	}
+    $verstr = U::get($row,'versions','');
+    $vers = json_decode($verstr);
+    if ( ! is_array($vers) ) continue;
+    foreach($vers as $ver) {
+        $versions[$ver] = U::get($versions, $ver, 0) + 1;
+    }
 }
 
 krsort($versions);
 $version = False;
 $count = 0;
 if ( count($versions) > 0 ) {
-	foreach ( $versions as $version => $count ) {
-		break;
-	}
+    foreach ( $versions as $version => $count ) {
+        break;
+    }
 }
 
 echo("Latest version $version ($count)\n");
@@ -67,10 +67,10 @@ echo("Latest version $version ($count)\n");
 echo("Checking version anomalies...\n");
 $count = 0;
 foreach($rows as $row) {
-    $verstr = $row['versions'];
-	$vers = json_decode($verstr);
-	if ( ! is_array($vers) ) continue;
-	if ( $vers == array($version) ) continue;
+    $verstr = U::get($row,'versions','');
+    $vers = json_decode($verstr);
+    if ( ! is_array($vers) ) continue;
+    if ( $vers == array($version) ) continue;
 
     $count++;
     echo($row['updated_at'].' ');
@@ -86,10 +86,10 @@ if ( $count < 1 ) echo("None found.\n");
 echo("Checking code anomalies...\n");
 $count = 0;
 foreach($rows as $row) {
-    $codstr = $row['codes'];
-	$codes = json_decode($codstr);
-	if ( ! is_array($codes) ) continue;
-	if ( count($codes) ) continue;
+    $codstr = U::get($row, 'codes', '');
+    $codes = json_decode($codstr);
+    if ( ! is_array($codes) ) continue;
+    if ( count($codes) ) continue;
 
     $count++;
     echo($row['updated_at'].' ');
