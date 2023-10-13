@@ -1306,10 +1306,40 @@
     ]
 },
 {
-    "title": "Cats CRUD Application",
+    "title": "Cats CRUD and Concept Review",
     "anchor": "dj4e_cats",
     "icon" : "fa-paw",
-    "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.",
+    "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.  It is a great time to review important concepts in the course in the context of your first complete application.",
+    "videos" : [
+    {
+        "title": "Review: URL Routing (6:59)",
+        "youtube": "AQFC13D2mRM"
+    },
+    {
+        "title": "Review: Templates (10:05)",
+        "youtube": "mTvWrpMGWBA"
+    },
+    {
+        "title": "Review: Views (6:19)",
+        "youtube": "9Qk4vJMssMo"
+    },
+    {
+        "title": "Review: Reversing URLs (12:52)",
+        "youtube": "YT60BZJjySg"
+    },
+    {
+        "title": "Review: Template Inheritance (6:05)",
+        "youtube": "IMgml67lH9Y"
+    },
+    {
+        "title": "Review: Generic Views (16:28)",
+        "youtube": "uPRabryhv5k"
+    },
+    {
+        "title": "Review: Django Forms (13:56)",
+        "youtube": "bYlgvmAPrp0"
+    }
+   ],
     "lti" : [
         {
         "title" : "Auto-grader: Cats CRUD",
