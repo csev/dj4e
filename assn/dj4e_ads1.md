@@ -16,7 +16,7 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
-Make sure to get the correct version of dj4e-samples.  
+Make sure to get the correct version of dj4e-samples.
 
 Getting the Right Version of the Sample Code
 --------------------------------------------
@@ -137,7 +137,7 @@ If you get an error like `Could not import github_settings.py for social_django`
 when running `manage.py` or restarting your PythonAnywhere webapp,
 don't worry - you will see this warning until you set up the social login.
 
-<b>If you are running on your local computer, (i.e not using PythonAnywhere) 
+<b>If you are running on your local computer, (i.e not using PythonAnywhere)
 you can skip to step 9, otherwise continue with these steps.  Steps 6-8 are for PythonAnywhere.</b>
 
 (6) We are going to switch your application on PythonAnywhere from using an
@@ -331,7 +331,53 @@ to be:
 
     {% extends "base_menu.html" %}
 
-(2) Then create `home/templates/base_menu.html` with the following content:
+(2) **Important:** We need to create `home/templates/base_menu.html` depending on the Bootstrap version you are using.
+Open your in your `home/templates/base_bootstrap.html` and look for a `<link` line that is loading
+Bootstrap.  You need to choose one of the following two versions of `base_menu.html`.
+
+**If the line looks like:**
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+
+Then you are using Bootstrap 5.0 and use the following code for your `base_menu.html`:
+
+    {% extends 'base_bootstrap.html' %}
+    {% load app_tags %} <!-- see home/templatetags/app_tags.py and dj4e-samples/settings.py -->
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius:10px !important">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'ads:all' %}">{{ settings.APP_NAME }}</a>
+        <ul class="navbar-nav">
+          {% url 'ads:all' as x %}
+          <li {% if request.get_full_path == x %}class="active"{% endif %}>
+              <a class="nav-link" href="{% url 'ads:all' %}" role="button">Ads</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+          <li>
+             <a class="nav-link" href="{% url 'ads:ad_create' %}">Create Ad</a>
+          </li>
+          <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="rightnavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="rightnavDropdown">
+                <li><a class="dropdown-item" href="{% url 'logout' %}?next={% url 'ads:all' %}">Logout</a></li>
+            </ul>
+           </li>
+           {% else %}
+           <li class="nav-item"><a class="nav-link" href="{% url 'login' %}?next={% url 'ads:all' %}">Login</a></li>
+           {% endif %}
+        </ul>
+      </div>
+    </nav>
+    {% endblock %}
+
+**If the line in `base_bootstrap.html` looks like:**
+
+    <link ... href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" ...
+
+Then you are using Bootstrap 3.0 and use the following code for your `base_menu.html`:
 
     {% extends "base_bootstrap.html" %}
     {% block navbar %}
