@@ -234,20 +234,6 @@ Add a link to <b>django_projects/mysite/home/templates/home/main.html</b> that h
 </pre>
 </li>
 <li>
-You should add a route to your <b>django_projects/mysite/mysite/urls.py</b> as follows:
-<pre>
-urlpatterns = [
-    path('', include('home.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-<?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
-    path('autos/', include('autos.urls')),
-<?php } ?>
-    path('<?= $SPEC->main_lower_plural ?>/', include('<?= $SPEC->main_lower_plural ?>.urls')),
-]
-</pre>
-</li>
-<li>
 Create the <b><?= $SPEC->main_lower_plural ?>/urls.py</b> file to add routes for the list,
 edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
 You do not need to change the <b>main</b> or <b>lookup</b> urls
@@ -268,6 +254,20 @@ urlpatterns = [
 </p>
 <?php } ?>
 
+</li>
+<li>
+You should add a route to your <b>django_projects/mysite/mysite/urls.py</b> as follows:
+<pre>
+urlpatterns = [
+    path('', include('home.urls')),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+<?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
+    path('autos/', include('autos.urls')),
+<?php } ?>
+    path('<?= $SPEC->main_lower_plural ?>/', include('<?= $SPEC->main_lower_plural ?>.urls')),
+]
+</pre>
 </li>
 <li>
 Edit the <b><?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views for the
