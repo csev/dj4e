@@ -292,8 +292,8 @@ Adding the Bootstrap menu to the top of the page
 **Important:** Follow these instructions closely because during Fall 2023, we are switching
 from Bootstrap 3 to Bootstrap 5.   If you started the course with Django 4.0 and Bootstrap 3,
 you should finish the course with Bootstrap 3.  There is no need to switch.  In this section,
-we show you how to check your Bootstrap version and provide code for both the Bootstrap 3 and
-Bootstrap 5 code.
+we show you how to check your Bootstrap version and provide code for both Bootstrap 3 and
+Bootstrap 5.
 
 Next we will add the bootstrap navigation bar to the top of your application as shown in:
 
