@@ -22,8 +22,8 @@ Getting the Right Version of the Sample Code
 --------------------------------------------
 
 **Important**: During Fall 2023 the course is making a transition from Django 4.0
-to 4.2. Depending on when you started, you might be using Django 4.0 or 4.2 at this
-point in the course.
+to 4.2 and from Bootstrap 3 to Bootstrap 5. Depending on when you started, you might
+be using Django 4.0 or 4.2 at this point in the course.
 
 There is no need to switch Django versions in the middle of the course - all we need to do is
 make sure the provided sample code you are using corresponds to the Django version you are using.
