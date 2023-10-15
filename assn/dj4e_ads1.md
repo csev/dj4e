@@ -286,34 +286,14 @@ without error, add the new models to your migrations and database tables:
     python manage.py makemigrations
     python manage.py migrate
 
-Debugging: Searching through all your files in the bash shell
--------------------------------------------------------------
-
-If you have errors, you might find the `grep` tool very helpful in figuring out where you might find your errors.
-For example, lets say after you did all the editing, and went to the ads url and got this error:
-
-    NoReverseMatch at /ads
-    'myarts' is not a registered namespace
-
-You *thought* you fixed all the instances where the string "myarts" was in your code, but you must have missed one.
-You can manually look at every file individually or use the following command to let the computer do the searching:
-
-    cd ~/django_projects/mysite
-    grep -ri myarts *
-
-You might see output like this:
-
-    ads/templates/ads/ad_list.html:<a href="{% url 'login' %}?next={% url 'myarts:all' %}">Login</a>
-
-The `grep` program searches files in the current  folder and subfolders for any lines
-in any file that have the string "myarts" in them and shows you the file name and the line it is mentioned.
-
-The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
-Expression Parser"</a> and is one of the most useful Linux commands to know.
-The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time 😊.
-
 Adding the Bootstrap menu to the top of the page
 ------------------------------------------------
+
+**Important:** Follow these instructions closely because during Fall 2023, we are switching
+from Bootstrap 3 to Bootstrap 5.   If you started the course with Django 4.0 and Bootstrap 3,
+you should finish the course with Bootstrap 3.  There is no need to switch.  In this section,
+we show you how to check your Bootstrap version and provide code for both the Bootstrap 3 and
+Bootstrap 5 code.
 
 Next we will add the bootstrap navigation bar to the top of your application as shown in:
 
@@ -335,7 +315,7 @@ to be:
 Open your in your `home/templates/base_bootstrap.html` and look for a `<link` line that is loading
 Bootstrap.  You need to choose one of the following two versions of `base_menu.html`.
 
-**If the line looks like:**
+**If the line in `base_bootstrap.html` is including Bootstrap 5:**
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 
@@ -373,7 +353,7 @@ Then you are using Bootstrap 5.0 and use the following code for your `base_menu.
     </nav>
     {% endblock %}
 
-**If the line in `base_bootstrap.html` looks like:**
+**If the line in `base_bootstrap.html` is including Bootstrap 3:**
 
     <link ... href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" ...
 
@@ -503,6 +483,32 @@ for someone else.
 
 It is not tricky on purpose.  We want you to succeed in this assignment.  But we do want you
 to do less cutting-and-pasting and more writing Django applications.
+
+Debugging: Searching through all your files in the bash shell
+-------------------------------------------------------------
+
+If you have errors, you might find the `grep` tool very helpful in figuring out where you might find your errors.
+For example, lets say after you did all the editing, and went to the ads url and got this error:
+
+    NoReverseMatch at /ads
+    'myarts' is not a registered namespace
+
+You *thought* you fixed all the instances where the string "myarts" was in your code, but you must have missed one.
+You can manually look at every file individually or use the following command to let the computer do the searching:
+
+    cd ~/django_projects/mysite
+    grep -ri myarts *
+
+You might see output like this:
+
+    ads/templates/ads/ad_list.html:<a href="{% url 'login' %}?next={% url 'myarts:all' %}">Login</a>
+
+The `grep` program searches files in the current  folder and subfolders for any lines
+in any file that have the string "myarts" in them and shows you the file name and the line it is mentioned.
+
+The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_blank">"Generalized Regular
+Expression Parser"</a> and is one of the most useful Linux commands to know.
+The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time 😊.
 
 Some Common Errors in This Assignment
 -------------------------------------
