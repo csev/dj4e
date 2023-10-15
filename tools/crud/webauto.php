@@ -163,7 +163,7 @@ if ( $title ) {
 
 function getUrl($sample) {
     global $USER, $OUTPUT, $access_code;
-    global $base_url_path;
+    global $base_url_path, $URL_IN_USE;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -180,7 +180,7 @@ function getUrl($sample) {
     }
 
     if ( isset($_GET['url']) ) {
-        echo('<p><a href="#" id="test-rerun" onclick="$(\'#test-rerun\').text(\'Test running...\');');
+        echo('<p><a href="#" class="btn btn-primary" id="test-rerun" onclick="$(\'#test-rerun\').text(\'Test running...\');');
         echo('window.location.href = window.location.href; return false;">Re-run this test</a>'."\n");
         echo("</p>\n");
         if ( isset($_SESSION['lti']) ) {
@@ -195,7 +195,8 @@ function getUrl($sample) {
                 if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
                     $base_url_path .= ':' . $pieces['port'];
                 }
-                return trim($_GET['url']);
+                $URL_IN_USE = $_GET['url'];
+                return trim($URL_IN_USE);
             }
             echo("<p>Badly formatted URL</p>\n");
         } catch(Exception $e) {
@@ -667,12 +668,15 @@ function get_favicon($client, $base_url_path) {
 
 // Two tons of meta..
 function check_code_and_version($crawler) {
-    global $RESULT;
+    global $RESULT, $URL_IN_USE;
+
+    if ( isset($URL_IN_USE) && is_string($URL_IN_USE) && strpos($URL_IN_USE, 'dj4e.com') > 0 ) return;
+
     $dj4e_code = webauto_get_meta($crawler, 'dj4e-code');
     $dj4e_version = webauto_get_meta($crawler, 'dj4e-version');
 
     if ( $dj4e_code == "99999999" ) $dj4e_code = false;
-    if ( strlen($dj4e_code) < 1 && strlen($dj4e_version) ) return;
+    if ( U::strlen($dj4e_code) < 1 && U::strlen($dj4e_version) ) return;
 
     try {
         $json = json_decode($RESULT->getJSON());

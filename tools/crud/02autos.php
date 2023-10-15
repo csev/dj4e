@@ -17,7 +17,7 @@ $title_singular = ucfirst($main_lower);
 $title_plural = $title_singular . 's';
 
 $assignment_url = "../../assn/dj4e_autos.md";
-$assignment_url_text = "https://www.dj4e.com/assn/dj4e_autos.md";
+$assignment_url_text = "Assignment Specification";
 $reference_implementation = "https://crud.dj4e.com/autos";
 $assignment_examples = "(Ford, Hundai, Toyota, Tata, Audi, etc.)";
 

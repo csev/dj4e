@@ -34,6 +34,6 @@ if ( ! $dj4e_code || strlen($dj4e_code) < 1 ) {
 	}
 }
 
-// TODO: Check veriosn too :)
+// TODO: Check version too :)
 $dj4e_version = webauto_get_meta($crawler, 'dj4e-version');
 error_log('dj4e_version '.$dj4e_version);

@@ -23,7 +23,7 @@ $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
 line_out("Create, Read, Update, and Delete (CRUD)")
 ?>
-<a href="<?= $assignment_url ?>" target="_blank"><?= $assignment_url_text ?></a>
+<a href="<?= $assignment_url ?>" class="btn btn-info" target="_blank"><?= $assignment_url_text ?></a>
 </a>
 <p>
 In order for the autograder to exercise your assignment, you must
