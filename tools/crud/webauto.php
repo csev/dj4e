@@ -1,6 +1,7 @@
 <?php
 \Tsugi\Core\LTIX::getConnection();
 
+use \Tsugi\Util\U;
 use \Tsugi\Grades\GradeUtil;
 use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
