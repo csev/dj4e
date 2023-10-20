@@ -98,6 +98,7 @@ exam even is it is not 100% complete. Please do not discuss the
 nature of the exam with anyone except the teaching staff until
 we tell you that all students have completed the exam.
 </p>
+<?php if ( $DO_ZIP ) { ?>
 <p>
 <b>Note:</b> You must upload a ZIP file of your application to the LMS
 to receive full credit for the exam even if the autograder gives you a perfect score.
@@ -106,6 +107,7 @@ if the autograder still is giving you a score of zero), make sure to ZIP
 up your code and upload it to the LMS so we can hand grade your exam
 and give you a more appropriate score than the autograder.
 </p>
+<?php } /* if ( $DO_ZIP ) */ ?>
 <?php } else { ?>
 <h1>Resources</h1>
 <p>There are several resources you might find useful:
