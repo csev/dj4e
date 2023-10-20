@@ -5,6 +5,8 @@ require_once "99fields.php";
 if ( ! isset($_GET['assn'] ) ) die('No assignment');
 if ( ! isset($_GET['type'] ) ) die('No assignment type');
 
+$DO_ZIP = false;
+
 $assn = base64_decode($_GET['assn']);
 $type = base64_decode($_GET['type']);
 $online = isset($_GET['online']) ? $_GET['online'] : false;
@@ -354,7 +356,7 @@ the autograder, you probably already have good value for both meta tags in your 
 This <?= $SPEC->assignment_type_lower ?> will be autograded by a link that you will be provided with in the LMS
 system.   When you launch the autograder, it will prompt for a web-accessible URL
 where it can access your web application.
-<?php if ( $SPEC->assignment_type == 'Exam' || $SPEC->assignment_type == 'Sample Exam') { ?>
+<?php if ( $DO_ZIP && ($SPEC->assignment_type == 'Exam' || $SPEC->assignment_type == 'Sample Exam') ) { ?>
 Please also have in a ZIP of your source code of your new application
 in case there is a need to verify your work or assign partial credit.
 </p>
