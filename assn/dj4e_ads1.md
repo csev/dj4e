@@ -243,7 +243,7 @@ Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/
         def __str__(self):
             return self.title
 
-(3) Copy the `owner.py` from `myarts` to your ads application.  This is the one file you <b>do not</b>
+(3) Copy the `owner.py` file from `dj4e-samples/myarts` to your `ads` folder.  This is the one file you <b>do not</b>
 have to change at all (thanks to object orientation 😊).
 
 (4) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in the `myarts` folder will require significant
