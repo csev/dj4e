@@ -34,7 +34,8 @@ First check what version of Django is running in your virtual environment:
     python -m django --version
 
 This should be 4.0.n or 4.2.n  You need to checkout the correct version of the sample code
-that corresponds to your Django version.
+that corresponds to your Django version. **Important**: Write down which version of Django
+you are using.
 
 If you have never checked out the sample code on PythonAnywhere you can:
 
@@ -42,16 +43,21 @@ If you have never checked out the sample code on PythonAnywhere you can:
     git clone https://github.com/csev/dj4e-samples
 
 Once you have the samples checked out (either before or just now), check out the
-right version:
+right version for the version of Django you are using.
+
+__If you are using Django 4.2__
 
     cd ~/dj4e-samples
+    git checkout main
 
-    git checkout main        # For Django 4.2
+__If you are using Django 4.0__ (You started before September 2023)
 
-    git checkout django40    # For Django 4.0
+    cd ~/dj4e-samples
+    git checkout django40
 
 Once you have checked out the correct version, continue with:
 
+    cd ~/dj4e-samples
     git pull
     pip install -r requirements4.txt
     python manage.py check
