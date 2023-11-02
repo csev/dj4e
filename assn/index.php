@@ -106,7 +106,8 @@ function onSelect() {
   <option <?= x_sel("dj4e_autos.md") ?>>Login / Autos CRUD</option>
   <option <?= x_sel("dj4e_local.md") ?>>Installing Django Locally</option>
   <option <?= x_sel("dj4e_github.md") ?>>Using GitHub</option>
-  <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
+  <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1 (Django 4.2)</option>
+  <option <?= x_sel("dj4e_ads1-40.md") ?>>AdList Milestone #1 (Django 4.0)</option>
   <option <?= x_sel("dj4e_ads2.md") ?>>AdList Milestone #2</option>
   <option <?= x_sel("dj4e_ads3.md") ?>>AdList Milestone #3</option>
   <option <?= x_sel("dj4e_ads4.md") ?>>AdList Milestone #4</option>
@@ -134,7 +135,8 @@ These are the assignments for Django for Everybody (DJ4E).
 <li><a href="dj4e_autos.md">Login / Autos CRUD</a></li>
 <li><a href="dj4e_github.md">Using GitHub</a></li>
 <li><a href="dj4e_local.md">Installing Django Locally</a></li>
-<li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
+<li><a href="dj4e_ads1.md">AdList Milestone #1 (Django 4.2)</a></li>
+<li><a href="dj4e_ads1-40.md">AdList Milestone #1 (Django 4.0)</a></li>
 <li><a href="dj4e_ads2.md">AdList Milestone #2</a></li>
 <li><a href="dj4e_ads3.md">AdList Milestone #3</a></li>
 <li><a href="dj4e_ads4.md">AdList Milestone #4</a></li>

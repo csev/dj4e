@@ -1,5 +1,5 @@
 
-Building a Classified Ad Web Site (Django 4.2)
+Building a Classified Ad Web Site (Django 4.0)
 ==============================================
 
 Working with the correct version of Django
@@ -17,10 +17,10 @@ First check what version of Django is running in your virtual environment:
     workon django4
     python -m django --version
 
-This should be 4.0.n or 4.2.n  These instructions are *only* for Django 4.2. If you
-are using Django 4.0, you *must* switch to these instructions:
+This should be 4.0.n or 4.2.n  These instructions are *only* for Django 4.0. If you
+are using Django 4.2, you *must* switch to these instructions:
 
-<a href="dj4e_ads1-40.md" class="btn btn-warning">Instructions for Ads1 using Django 4.0</a>.<hr/>
+<a href="dj4e_ads1.md" class="btn btn-warning">Instructions for Ads1 using Django 4.2</a>.<hr/>
 
 In this assignment, you will build a web site that is roughly equivalent to
 
@@ -36,9 +36,7 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
-Make sure to get the correct version of dj4e-samples.
-
-Setting up Ads1 on Django 4.2
+Setting up Ads1 on Django 4.0
 -----------------------------
 
 If you have never checked out the sample code on PythonAnywhere you can:
@@ -50,9 +48,9 @@ Once you have the samples checked out (either before or just now), check out the
 right version for the version of Django you are using.
 
     cd ~/dj4e-samples
-    git checkout main
+    git checkout django40
     git pull
-    ip install -r requirements4.txt
+    pip install -r requirements4.txt
     python manage.py check
 
 If `python manage.py check` fails with a traceback, stop and get some help.
@@ -73,7 +71,6 @@ So your Python code can connect to MySQL databases.  If you are having installat
 you can keep using the SQLite database but it will mean that your application will start to
 run much more slowly as we add complexity to the application.  It is especially to switch to
 MySQL on PythonAnywhere.
-
 
 __Important Note:__ If you find you have a problem saving files in the PythonAnywhere
 system using their browser-based editor, you might need to turn off your ad blocker for
@@ -306,33 +303,38 @@ to be:
 
 (2) Create `home/templates/base_menu.html` with this code:
 
-    {% extends 'base_bootstrap.html' %}
-    {% load app_tags %} <!-- see home/templatetags/app_tags.py and dj4e-samples/settings.py -->
+    {% extends "base_bootstrap.html" %}
     {% block navbar %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius:10px !important">
+    {% load app_tags %}
+    <nav class="navbar navbar-default navbar-inverse">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'ads:all' %}">{{ settings.APP_NAME }}</a>
-        <ul class="navbar-nav">
-          {% url 'ads:all' as x %}
-          <li {% if request.get_full_path == x %}class="active"{% endif %}>
-              <a class="nav-link" href="{% url 'ads:all' %}" role="button">Ads</a></li>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">{{ settings.APP_NAME }}</a>
+        </div>
+        <!-- https://stackoverflow.com/questions/22047251/django-dynamically-get-view-url-and-check-if-its-the-current-page -->
+        <ul class="nav navbar-nav">
+          {% url 'ads' as ads %}
+          <li {% if request.get_full_path == ads %}class="active"{% endif %}>
+              <a href="{% url 'ads:all' %}">Ads</a></li>
         </ul>
-        <ul class="navbar-nav">
-          {% if user.is_authenticated %}
-          <li>
-             <a class="nav-link" href="{% url 'ads:ad_create' %}">Create Ad</a>
-          </li>
-          <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="rightnavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="rightnavDropdown">
-                <li><a class="dropdown-item" href="{% url 'logout' %}?next={% url 'ads:all' %}">Logout</a></li>
-            </ul>
-           </li>
-           {% else %}
-           <li class="nav-item"><a class="nav-link" href="{% url 'login' %}?next={% url 'ads:all' %}">Login</a></li>
-           {% endif %}
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li>
+            <a href="{% url 'ads:ad_create' %}">Create Ad</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                    <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'logout' %}?next={% url 'ads:all' %}">Logout</a></li>
+                </ul>
+            </li>
+            {% else %}
+            <li>
+            <a href="{% url 'login' %}?next={% url 'ads:all' %}">Login</a>
+            </li>
+            {% endif %}
         </ul>
       </div>
     </nav>
