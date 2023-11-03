@@ -77,6 +77,9 @@ you can keep using the SQLite database but it will mean that your application wi
 run much more slowly as we add complexity to the application.  It is especially to switch to
 MySQL on PythonAnywhere.
 
+Pulling In Code From Samples
+----------------------------
+
 __Important Note:__ If you find you have a problem saving files in the PythonAnywhere
 system using their browser-based editor, you might need to turn off your ad blocker for
 this site - weird but true.
@@ -85,9 +88,6 @@ __Important Note:__ If you are using PowerPoint slides for sample code, *never* 
 from Powerpoint or Word into PythonAnywhere.  Microsoft products use *weird* characters for
 quotes and dollar signs and they can break your code but look perfect.  A good rule is to never
 copy code from any Microsoft product.
-
-Pulling In Code From Samples
-----------------------------
 
 In this section, we will break and then fix your `settings.py` and `urls.py`.
 When this is done, the autos, cats, dogs, etc will stop working unless you
