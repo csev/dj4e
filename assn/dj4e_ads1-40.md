@@ -53,7 +53,12 @@ right version for the version of Django you are using.
     pip install -r requirements4.txt
     python manage.py check
 
-If `python manage.py check` fails with a traceback, stop and get some help.
+If `python manage.py check` fails with a missing module error, try:
+
+    pip install --force-reinstall -r requirements4.txt
+
+If `python manage.py check` still fails after re-installing your requirements, stop and get some help.
+
 If `python manage.py check` works without a traceback, you should be ready to continue with
 this assignment and the rest of the course.
 
