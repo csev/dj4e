@@ -538,7 +538,7 @@ function webauto_search_for($html, $needle, $ignorecase=true)
 function webauto_search_for_not($html, $needle, $message=false)
 {
     if ( stripos($html,$needle) === false ) {
-        markTestPassed("Did not find '$needle'");
+        markTestPassed("Did not find '$needle' (test passed - it is not supposed to be in the output)");
         return true;
     } else {
         error_out("Should not have found '$needle' ".$message);
