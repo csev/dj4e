@@ -1851,7 +1851,7 @@
     "anchor": "browser",
     "icon" : "fa-briefcase",
     "description": "We look at particular aspects of the JavaScript run-time in a browser including manipulation of the Document Object Model(DOM) and event handling.",
-    "slides": "lectures/JS-03-Browser.ppt",
+    "slides": "lectures/JS-03-Browser.pptx",
     "discussions" : [
         {
         "title" : "JavaScript in the Browser",
