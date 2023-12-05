@@ -23,7 +23,7 @@ Once you have created your PYAW account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 4.
 
     mkvirtualenv django4 --python=/usr/bin/python3.9
-    pip install django==4.2.3 ## this may take a couple of minutes
+    pip install django==4.2.7 ## this may take a couple of minutes
 
 Sometimes these two commands take a long time.  Run them one at a time in the 
 shell.  When the servers are running slowly, each command can take more than ten
@@ -41,7 +41,7 @@ Lets make sure that your django was installed successfully and you are running t
     python --version
     # This should show something like Python 3.9.5
     python -m django --version
-    # This should show something like 4.2.3
+    # This should show something like 4.2.7
 
 Automatically Enabling Your Virtual Environment
 -----------------------------------------------
