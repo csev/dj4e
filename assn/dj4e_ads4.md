@@ -66,7 +66,8 @@ save the model.  This code is in both the insert and edit views:
 
 You need to add the `save_m2m()` call *after* the instance was saved.
 
-Finally, the detail template for the `tagme` application contains code that can be adapted to display the tags in your application.
+Finally, the detail template for the `tagme` application contains code that can be adapted to
+display the tags in your application.
 
 Manual Testing
 --------------

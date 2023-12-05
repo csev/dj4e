@@ -2,6 +2,26 @@
 Building a Classified Ad Web Site (Django 4.2)
 ==============================================
 
+Working with the correct version of Django
+------------------------------------------
+
+**Important**: During Fall 2023 the course is making a transition from Django 4.0
+to 4.2 and from Bootstrap 3 to Bootstrap 5. Depending on when you started the course, you might
+be using Django 4.0 or 4.2 at this point in the course.
+
+There is no need to switch Django versions in the middle of the course - all we need to do is
+make sure you use the correct version of the provided sample when setting up this assignment.
+
+First check what version of Django is running in your virtual environment:
+
+    workon django4
+    python -m django --version
+
+This should be 4.0.n or 4.2.n  These instructions are *only* for Django 4.2. If you
+are using Django 4.0, you *must* switch to these instructions:
+
+<a href="dj4e_ads1-40.md" class="btn btn-warning">Instructions for Ads1 using Django 4.0</a>.<hr/>
+
 In this assignment, you will build a web site that is roughly equivalent to
 
 https://chucklist.dj4e.com/m1
@@ -16,26 +36,28 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
-Setting up Ads1
----------------
+Make sure to get the correct version of dj4e-samples.
+
+Setting up Ads1 on Django 4.2
+-----------------------------
 
 If you have never checked out the sample code on PythonAnywhere you can:
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
 
-Once you have the samples checked out (either before or just now), install the requirements:
+Once you have the samples checked out (either before or just now), check out the
+right version for the version of Django you are using.
 
-    workon django4
     cd ~/dj4e-samples
     git checkout main
     git pull
-    pip install -r requirements42.txt
+    pip install -r requirements4.txt
     python manage.py check
 
 If `python manage.py check` fails with a missing module error, try:
 
-    pip install --force-reinstall -r requirements42.txt
+    pip install --force-reinstall -r requirements4.txt
 
 If `python manage.py check` still fails after re-installing your requirements, stop and get some help.
 
