@@ -5,9 +5,8 @@ In this assignment we will add detail pages for books and authors.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views
 
-If you are submitting this assignment to the DJ4E autograder 
-for this assignment,
-it would be a good idea to check the autograder for specific instructions that
+If you are submitting this assignment to the DJ4E autograder for this assignment,
+yu should check the autograder for specific instructions that
 the autograder requires for this assignment.
 
 Complete the following sections of the Views tutorial:
@@ -58,7 +57,8 @@ Once you test the pagination set `paginate_by = 20` so the autograder finds your
 <a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
 and explore the list and detail views.
 
-* You do not have to do the the author challenge.  If you do, in the `templates/catalog/author_detail.html` file when
+* You do not have to do the the "Challenge yourself" portion at the end of the tutorial.
+If you do, in the `templates/catalog/author_detail.html` file when
 you want to loop through all the books for a particular author, use the following pattern.
 
         {% for book in author.book_set.all %}
