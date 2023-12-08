@@ -26,7 +26,7 @@ Checking Your Installation
 We assume that you have a Django virtual environment all set up from your
 previous assignments.  Start a shell and type:
 
-    workon django4      # or django3
+    workon django4
 
 Of course always make sure to type this command when you start a fresh shell.
 
@@ -42,7 +42,7 @@ points for haing *too many* features implemented.
 Since you already have a `dango_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
-	workon django4  # or django3 (once per session)
+	workon django4
     cd ~/django_projects
     django-admin startproject locallibrary
 	cd locallibrary
