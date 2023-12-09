@@ -33,14 +33,13 @@ function buildMenu() {
         if ( file_exists('privacy.php') ) {
             $submenu->addLink('Privacy', $R.'privacy');
         }
+        $submenu->addLink('Versions', $R.'versions');
         if ( $CFG->providekeys ) {
             $submenu->addLink('LMS Integration', $T . 'settings');
         }
         if ( isset($CFG->google_classroom_secret) ) {
             $submenu->addLink('Google Classroom', $T.'gclass/login');
         }
-        $submenu->addLink('Free App Store', 'https://www.tsugicloud.org');
-        $submenu->addLink('Test LTI Tools', $T.'store');
         if ( isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true" ) {
             $submenu->addLink('Administer', $T . 'admin/');
         }

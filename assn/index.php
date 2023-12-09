@@ -120,6 +120,9 @@ function onSelect() {
 ?>
 <p>
 These are the assignments for Django for Everybody (DJ4E).
+These assignments are designed for use with Django 
+<?= $CFG->getExtension('django_version') ?>.
+</p>
 </p>
 <ul>
 <li><a href="dj4e_install.md">Django and PythonAnywhere</a></li>

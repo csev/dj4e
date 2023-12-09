@@ -1,6 +1,6 @@
 <?php include("top.php");?>
 <?php include("nav.php");?>
-<h1>Course Versions</h1>
+<h1>Django for Everybody Versions</h1>
 <p>As time passes and Django releases new vesions, this course
 needs to be updated.  Very little changes from one version of Django
 to the next so if this course is not using the *latest* version of
@@ -8,7 +8,7 @@ Django it is usually no problem.  You may see demonstration videos
 with older versions of Django that work with a later version of Django.
 </p>
 <p>
-<a href="https://docs.djangoproject.com/en/5.0/releases/" targwt="_blank">
+<a href="https://docs.djangoproject.com/en/5.0/releases/" target="_blank">
 Django Releases
 </a></p>
 <h2>Current Version of this Course</h2>

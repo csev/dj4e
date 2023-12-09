@@ -32,6 +32,9 @@ $CFG->tdiscus = $CFG->apphome . '/mod/tdiscus/';
 
 $CFG->launcherror = $CFG->apphome . "/launcherror";
 
+$CFG->setExtension('django_version', '4.2');
+$CFG->setExtension('django_version_short', '42');
+
 $buildmenu = $CFG->dirroot."/../buildmenu.php";
 if ( file_exists($buildmenu) ) {
     require_once $buildmenu;
