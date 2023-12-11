@@ -123,7 +123,7 @@ Do the assignment at
 </p>
 <p>
 When the
-assignment is complete, upload the resulting <b>db.sqlite3</b> file to this auto grader.  
+assignment is complete, upload the resulting <b>~/django_projects/locallibrary/db.sqlite3</b> file to this auto grader.  
 If you are using PythonAnywhere download the file using the Files tab and then upload the
 file to the autograder.
 </p>

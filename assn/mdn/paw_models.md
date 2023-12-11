@@ -33,6 +33,7 @@ the model, run the migrations from `~/django_projects/locallibrary`
 
 Lets take a quick look at the contents of the `db.sqlite3` file in your bash shell:
 
+    $ cd ~/django_projects/locallibrary
     $ sqlite3 db.sqlite3 
     SQLite version 3.11.0 2016-02-15 17:29:24
     Enter ".help" for usage hints.
