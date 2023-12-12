@@ -59,8 +59,8 @@ https://www.sqlite.org/cli.html
 Continue editing the `catalog/models.py` file and add the Book, BookInstance, and Author models
 according to the tutorial.
 
-Also add the `language` field to the correct table as discussed in the "Challenge" section 
-at the end of the tutorial.
+Also add the `Language` model to your `models.py` as discussed in the "Challenge" section 
+at the end of the tutorial.  It is OK if you look at their solution in github to get the code.
 
 Once your models.py file is complete, run the migrations again:
 
