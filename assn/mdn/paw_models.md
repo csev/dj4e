@@ -31,7 +31,7 @@ the model, run the migrations from `~/django_projects/locallibrary`
     python manage.py makemigrations
     python manage.py migrate
 
-Lets take a quick look at the contents of the `db.sqlite3` file in your bash shell:
+Lets take a quick look at the contents of the `~/django_projects/locallibrary/db.sqlite3` file in your bash shell:
 
     $ cd ~/django_projects/locallibrary
     $ sqlite3 db.sqlite3 
@@ -72,7 +72,7 @@ You can repeat the process of editing the `models.py` file and re-running the mi
 right.
 
 If you are using the autograder for this assignment, you will need to upload the
-`db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
+`~/django_projects/locallibrary/db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
 to download the file to your computer and then upload it to the autograder.
 
 If Your Model/Database Gets Messed Up

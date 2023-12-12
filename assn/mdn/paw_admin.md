@@ -49,7 +49,7 @@ If you want to experiment a bit and you want to wipe out your database and start
 This will wipe out all of your tables and the data in those tables and create fresh and empty tables.
 Note that this process will also wipe out your superuser accounts and all data you have entered.
 
-The `db.sqlite3` file is a normal file - you can back it up and/or copy over it - just make sure to `Reload`
+The `~/django_projects/locallibrary/db.sqlite3` file is a normal file - you can back it up and/or copy over it - just make sure to `Reload`
 your web application when you change your database.
 
 Some Common Mistakes
