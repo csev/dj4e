@@ -61,7 +61,7 @@ and add the `STATIC_ROOT` line below it.
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'catalog/static')  # New line
 
-In order the `os` library, you need to add an import to the top of your `settings.py`:
+In order use the `os` library, you need to add an import to the top of your `settings.py`:
 
      import os
 
