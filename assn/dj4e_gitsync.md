@@ -250,7 +250,7 @@ Then lets checkout the dj4e-samples repo and get things started:
     cd django
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
-    pip install -r requirements4.txt
+    pip install -r requirements42.txt
     python manage.py check
 
 Once you have the requirements installed and you are passing the `check` step

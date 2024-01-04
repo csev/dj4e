@@ -25,16 +25,16 @@ show reasonable version numbers:
 Linux/Mac:
 
     $ python --version
-    Python 3.8.0
+    Python 3.11.6
     $ python -m django --version
-    3.2.5
+    4.2.3
 
 If the above does not work on Windows, try:
 
     > py --version
-    Python 3.8.0
+    Python 3.11.6
     > py -m django --version
-    3.2.5
+    4.2.3
 
 You also need to have `git` installed and available in the shell / command line.
 
@@ -88,7 +88,7 @@ Then lets checkout the dj4e-samples repo and get things started:
     cd django
     git clone https://github.com/csev/dj4e-samples
     cd dj4e-samples
-    pip install -r requirements4.txt
+    pip install -r requirements42.txt
     python manage.py check
 
 Once you have the requirements installed and you are passing the `check` step
