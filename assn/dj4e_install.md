@@ -20,9 +20,9 @@ Setting Up Your Environment
 ---------------------------
 
 Once you have created your PYAW account, start a `bash` shell
-and set up a virtual environment with Python 3.x and Django 4.
+and set up a virtual environment with Python 3.x and Django 4.2.
 
-    mkvirtualenv django4 --python=/usr/bin/python3.9
+    mkvirtualenv django42 --python=/usr/bin/python3.9
     pip install django==4.2.7 ## this may take a couple of minutes
 
 Sometimes these two commands take a long time.  Run them one at a time in the 
@@ -34,9 +34,9 @@ Note if you exit and re-start a new shell on PythonAnywhere - you need the follo
 to get back into your virtual environment in the new bash shell unless you enable it automatically
 as shown below.
 
-    workon django4
+    workon django42
 
-Lets make sure that your django was installed successfully and you are running the rght version of Python with the following commands:
+Lets make sure that your django was installed successfully and you are running the right version of Python with the following commands:
 
     python --version
     # This should show something like Python 3.9.5
@@ -59,13 +59,13 @@ Look for lines near the end of the file that look like:
 
 Add the following lines to the file and save the file.
 
-    # Auto switch into django4 virtual environment
-    workon django4
+    # Auto switch into django42 virtual environment
+    workon django42
 
-The next time you start a console/shell, the shell should be using the `django4` environment
+The next time you start a console/shell, the shell should be using the `django42` environment
 and you should see the virtual environment indicator in your shell prompt:
 
-    (django4) 13:29 ~ $
+    (django42) 13:29 ~ $
 
 Installing the Sample Code for DJ4E
 -----------------------------------
@@ -107,7 +107,7 @@ Do *not* edit your `manage.py` file - the problem is never in that file.
 
 There are several possible reasons for this:
 
-*   It can mean that you are not running in the virtual environment (`workon django4`) and mistakenly
+*   It can mean that you are not running in the virtual environment (`workon django42`) and mistakenly
 running Python 2 instead of Python 3.  There is *no error* in `manage.py` - it is valid
 Python 3 syntax that confuses Python 2.
 
@@ -184,13 +184,13 @@ make a few changes to the settings for the web app and your application.
     Source code: /home/drchuck/django_projects/mysite
     Working directory: /home/drchuck/django_projects/mysite
 
-    Virtualenv: /home/drchuck/.virtualenvs/django4
+    Virtualenv: /home/drchuck/.virtualenvs/django42
 
 Replace `drchuck` with your account on PythonAnywhere.
 
 Note that once you have your Virtualenv set up you have a very convenient link
 titled "Start a console in this virtualenv" - this is a great way to open up consoles
-so you never have to type "workon django4" and it makes sure your virtual
+so you never have to type "workon django42" and it makes sure your virtual
 envronment is properly set up and configured.
 <a href="dj4e_install/web_tab.png" target="_blank">Sample image</a>
 
@@ -435,7 +435,7 @@ to clear things out:
 the __workon__ command and run the following commands:
 
         cd ~
-        rm -rf .virtualenvs/django4
+        rm -rf .virtualenvs/django42
         rm -rf dj4e-samples
         rm -rf django_projects
 

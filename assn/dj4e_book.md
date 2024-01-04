@@ -28,11 +28,11 @@ Before You Start Any Assignment
 Before you start any assignment, make sure your bash shell has activated your virtual environment.
 You know that you are in your virtual environment when you see the bash prompt as something like this:
 
-    (django4) 12:08 ~/django_projects/mysite $
+    (django42) 12:08 ~/django_projects/mysite $
 
-If you don't see `(django4)` at the beginning  your prompt, run the command:
+If you don't see `(django42)` at the beginning  your prompt, run the command:
 
-    workon django4
+    workon django42
 
 Without the virtual environment activated, literally nothing will work.
 

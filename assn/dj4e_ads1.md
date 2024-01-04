@@ -26,7 +26,7 @@ If you have never checked out the sample code on PythonAnywhere you can:
 
 Once you have the samples checked out (either before or just now), install the requirements:
 
-    workon django4
+    workon django42
     cd ~/dj4e-samples
     git checkout main
     git pull

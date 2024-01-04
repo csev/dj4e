@@ -129,7 +129,7 @@ Possible Errors
 ---------------
 
 If you get an error message about `No module named django_extensions` you forgot
-to type `workon django4`  to activate your virtual environment:
+to type `workon django42`  to activate your virtual environment:
 
     $ python manage.py check
     Traceback (most recent call last):
@@ -141,8 +141,8 @@ to type `workon django4`  to activate your virtual environment:
       File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
     ModuleNotFoundError: No module named 'django_extensions'
 
-    $ workon django4 
-    (django4) $ python manage.py check
+    $ workon django42
+    (django42) $ python manage.py check
     System check identified no issues (0 silenced).
     
 

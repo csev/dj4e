@@ -16,11 +16,11 @@ Before You Start Any Assignment
 Before you start any assignment, make sure your bash shell has activated your virtual environment.
 You know that you are in your virtual environment when you see the bash prompt as something like this:
 
-    (django4) 12:08 ~/django_projects/mysite $
+    (django42) 12:08 ~/django_projects/mysite $
 
-If you don't see `(django4)` at the beginning  your prompt, run the command:
+If you don't see `(django42)` at the beginning  your prompt, run the command:
 
-    workon django4
+    workon django42
 
 Without the virtual environment activated, literally nothing will work.
 
@@ -50,13 +50,13 @@ Look for lines near the end of the file that look like:
 
 Add the following lines at the end of the file and save the file.
 
-    # Auto switch into django4 virtual environment
-    workon django4
+    # Auto switch into django42 virtual environment
+    workon django42
 
-The next time you start a console/shell, the shell should be using the `django4` environment
+The next time you start a console/shell, the shell should be using the `django42` environment
 and you should see the virtual environment indicator in your shell prompt:
 
-    (django4) 13:29 ~ $
+    (django42) 13:29 ~ $
 
 Congratulations - you will no longer waste a bunch of time or break your application because
 you forgot to activate your virtual environment.

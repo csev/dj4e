@@ -54,7 +54,7 @@ https://github.com/csev/dj4e-samples/tree/main/scripts
 
 Then in install `django extensions` if you have not already done so:
 
-    workon django4                     # or django3 (if needed)
+    workon django42                # or django4 (if needed)
     pip install django_extensions
 
 Add the following line to your `batch/batch/settings.py`:
@@ -255,7 +255,7 @@ Place the CSV file in the `unesco` folder and then run the script from the proje
 where the `manage.py` file resides):
 
     cd ~/django_projects/batch
-    workon django4                             # Or django3 (if necessary)
+    workon django42                            # Or django4 (if necessary)
     python manage.py runscript many_load
 
 It needs to be run this way so that lines like:

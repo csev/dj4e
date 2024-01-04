@@ -32,7 +32,7 @@ and start a new application in your `mysite` project (this project already shoul
 application from a
 <a href="dj4e_hello.md">previous assignment</a>).
 
-    workon django4       # or django3 as needed
+    workon django42      # or django4 as needed
     cd ~/django_projects/mysite
     python manage.py startapp autos
 

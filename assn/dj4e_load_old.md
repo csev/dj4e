@@ -42,7 +42,7 @@ https://github.com/csev/dj4e-samples/tree/main/scripts
 
 install `django extensions`:
 
-    workon django4                     # or django3 if necessary
+    workon django42                     # or django4 if necessary
     pip install django_extensions
 
 Add the following line to your `mysite/mysite/settings.py`:
@@ -194,7 +194,7 @@ Place the CSV file in the `unesco` folder and then run the script from the proje
 where the `manage.py` file resides):
 
     cd ~/django_projects/mysite
-    workon django4                     # or django3 if necessary
+    workon django42                       # or django4 if necessary
     python manage.py runscript many_load
 
 It needs to be run this way so that lines like:
