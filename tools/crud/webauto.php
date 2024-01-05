@@ -162,9 +162,10 @@ if ( $title ) {
 <?php
 }
 
-function getUrl($sample) {
+function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
     global $USER, $OUTPUT, $access_code;
     global $base_url_path, $URL_IN_USE;
+    global $SECONDS_BEFORE_RETRY;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -180,14 +181,53 @@ function getUrl($sample) {
         }
     }
 
+    if ( ! isset($SECONDS_BEFORE_RETRY) ) $SECONDS_BEFORE_RETRY = 0;
+    if ( $SECONDS_BEFORE_RETRY > 2 ) {
+        echo('<script>
+            var seconds_before_retry = '.$SECONDS_BEFORE_RETRY.';
+            var first_update = true;
+            function decrement_counter() {
+                seconds_before_retry--;
+                if ( seconds_before_retry > 0 ) {
+                    let minutes = Math.round(seconds_before_retry/60);
+                    console.log("Countdown", seconds_before_retry, "seconds", minutes, "minutes");
+                    if ( seconds_before_retry % 10 == 0 ) {
+                        console.log("This is a good time to hand-test your application while you are waiting.  Most assignments include instructions on how to hand-test your application.");
+                    }
+                    if ( minutes > 1 ) {
+                        document.getElementById("countdown").textContent = minutes+" minutes";
+                    } else if ( first_update || seconds_before_retry <= 10 || ( seconds_before_retry > 10 && seconds_before_retry % 10 == 0 ) ) {
+                        document.getElementById("countdown").textContent = seconds_before_retry+" seconds";
+                    }
+                    first_update = false;
+                    setTimeout(decrement_counter, "1000");
+                } else {
+                    document.getElementById("test-rerun").removeAttribute("disabled");
+                    document.getElementById("test-rerun").textContent = "Submit";
+                }
+            }
+            setTimeout(decrement_counter, "1000");
+            </script>
+        ');
+    }
+
     if ( isset($_GET['url']) ) {
-        echo('<p><a href="#" class="btn btn-primary" id="test-rerun" onclick="$(\'#test-rerun\').text(\'Test running...\');');
-        echo('window.location.href = window.location.href; return false;">Re-run this test</a>'."\n");
-        echo("</p>\n");
+        echo('<p><a href="#" class="btn btn-primary" id="test-rerun" ');
+        if ( $SECONDS_BEFORE_RETRY > 2 && ! $USER->instructor ) {
+            echo(' disabled ');
+        }
+        echo('onclick="$(\'#test-rerun\').text(\'Test running...\');');
+        echo('window.location.href = window.location.href; return false;">');
+        if ( $SECONDS_BEFORE_RETRY > 2 ) {
+            echo('Please wait <span id="countdown">... </span> (rate limit)');
+        } else {
+            echo("Re-run this test");
+        }
+        echo("</a></p>\n");
+
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
-
 
         try {
             $pieces = parse_url(trim($_GET['url']));
@@ -212,9 +252,21 @@ function getUrl($sample) {
     if ( isset($_GET['code']) ) {
         echo('<input type="hidden" name="code" value="'.$_GET['code'].'"><br/>');
     }
+
+    echo('<button type="submit" id="test-rerun" class="btn btn-primary" ');
+    if ( $SECONDS_BEFORE_RETRY > 2 && ! $USER->instructor ) {
+        echo(' disabled ');
+    }
+    echo(' onclick="$(\'#evaluate_spinner\').show();return true;">');
+    if ( $SECONDS_BEFORE_RETRY > 2 ) {
+        echo('Please wait <span id="countdown">...</span> (rate limit)');
+    } else {
+        echo('Evaluate');
+    }
+    echo("</button>\n");
 ?>
-<input type="submit" class="btn btn-primary" value="Evaluate" onclick="$('#evaluate_spinner').show();return true;">
 <img src="<?= $OUTPUT->getSpinnerUrl() ?>" id="evaluate_spinner" style="display:none;">
+</p>
 </form>
 <?php
     if ( $USER->displayname ) {

@@ -10,7 +10,18 @@ use \Tsugi\UI\Lessons;
 $LAUNCH = LTIX::requireData();
 $p = $CFG->dbprefix;
 
-if ( SettingsForm::handleSettingsPost() ) {
+if ( SettingsForm::isSettingsPost() ) {
+    if ( isset($_POST['delay']) && $_POST['delay'] != '' && ! is_numeric($_POST['delay']) ) {
+        $_SESSION['error'] = __('Delay must be numeric');
+        header( 'Location: '.addSession('index.php') ) ;
+        return;
+    }
+    if ( isset($_POST['delay_tries']) && $_POST['delay_tries'] != '' && ! is_numeric($_POST['delay_tries']) ) {
+        $_SESSION['error'] = __('Delay_tries must be numeric');
+        header( 'Location: '.addSession('index.php') ) ;
+        return;
+    }
+    SettingsForm::handleSettingsPost();
     header( 'Location: '.addSession('index.php') ) ;
     return;
 }
@@ -41,27 +52,23 @@ if ( strlen(U::get($_POST, "password", '')) > 0  ) {
     return;
 }
 
+$LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
 $assn = Settings::linkGet('exercise');
-$custom = LTIX::ltiCustomGet('exercise');
-if ( $assn && isset($assignments[$assn]) ) {
-    // Configured
-} else if ( strlen($custom) > 0 && isset($assignments[$custom]) ) {
-    Settings::linkSet('exercise', $custom);
-    $assn = $custom;
+$delay = Settings::linkGet('delay');
+$delay_tries = Settings::linkGet('delay_tries');
+
+// Load the previous attempt
+$attempt = json_decode($RESULT->getJson());
+$when = 0;
+$tries = 0;
+if ( $attempt && is_object($attempt) ) {
+    if ( isset($attempt->when) ) $when = $attempt->when + 0;
+    if ( isset($attempt->tries) ) $tries = $attempt->tries + 0;
 }
 
-
-if ( $assn === false && isset($_GET["inherit"]) && isset($CFG->lessons) ) {
-    $l = new Lessons($CFG->lessons);
-    if ( $l ) {
-        $lti = $l->getLtiByRlid($_GET['inherit']);
-        if ( isset($lti->custom) ) foreach($lti->custom as $custom ) {
-            if (isset($custom->key) && isset($custom->value) && $custom->key == 'exercise' ) {
-                $assn = $custom->value;
-                Settings::linkSet('exercise', $assn);
-            }
-        }
-    }
+$SECONDS_BEFORE_RETRY = 0;
+if ( $delay >= 0 && $when > 0 && $tries > $delay_tries) {
+    $SECONDS_BEFORE_RETRY = ($when+$delay) - time();
 }
 
 $password_ok = strlen($password) < 1 || U::get($_SESSION,'assignment_password') == $password;
@@ -135,6 +142,8 @@ if ( $LAUNCH->user->instructor ) {
     SettingsForm::start();
     SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
     SettingsForm::text("password", __('Set a password to protect this assignment'));
+    SettingsForm::text('delay',__('The number of seconds between retries.  Leave blank or set to zero to allow immediate retries.'));
+    SettingsForm::text('delay_tries',__('The number of attmpts before the delay kicks in.  Leave blank or set to zero to trigger immediate delays.'));
     SettingsForm::dueDate();
     SettingsForm::done();
     SettingsForm::end();
@@ -257,7 +266,8 @@ if ( $assn && isset($assignments[$assn]) ) {
         echo($ob_output);
     }
 
-    $LAUNCH->result->setJsonKey('output', $ob_output);
+    $result = array("when" => time(), "tries" => $tries+1, "submit" => $_POST, "output" => $ob_output, "url" => U::get($_GET, 'url', ''));
+    $LAUNCH->result->setJson(json_encode($result));
 } else {
     if ( $USER->instructor ) {
         echo("<p>Please use settings to select an assignment for this tool.</p>\n");

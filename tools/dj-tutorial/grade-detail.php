@@ -4,6 +4,8 @@ require_once "../config.php";
 
 use \Tsugi\Util\U;
 use \Tsugi\Grades\GradeUtil;
+use \Tsugi\Core\Settings;
+use \Tsugi\UI\SettingsForm;
 
 session_start();
 
@@ -13,6 +15,9 @@ if ( ! U::get($_REQUEST, 'user_id') ) {
 
 // Get the user's grade data also checks session
 $row = GradeUtil::gradeLoad($_REQUEST['user_id']);
+$delay_str = Settings::linkGet('delay');
+$delay = 0;
+if ( is_numeric($delay_str) ) $delay = $delay_str+0;
 
 $menu = new \Tsugi\UI\MenuSet();
 $menu->addLeft(__('Back to all grades'), 'index.php');
@@ -33,12 +38,24 @@ if ( U::isEmpty($row['json']) ) {
 }
 
 // Unique detail
-echo("<p>Submitted URL:</p>\n");
 $json = json_decode($row['json']);
 if ( is_object($json) && isset($json->url)) {
-    echo("<p><a href=\"".safe_href($json->url)."\" target=\"_new\">");;
+    echo("<p>Submitted URL:\n");
+    echo("<a href=\"".safe_href($json->url)."\" target=\"_new\">");;
     echo(htmlent_utf8($json->url));
     echo("</a></p>\n");
+}
+
+if ( $delay > 0 && is_object($json) && isset($json->when)) {
+    $when = $json->when;
+    $delta = ($when + $delay) - time();
+    if ( $delta > 0 ) {
+        echo("<p>Can be retried in ".SettingsForm::getDueDateDelta(($when + $delay) - time())."</p>\n");
+    }
+}
+
+if ( is_object($json) && isset($json->tries)) {
+    echo("<p>Tries: ".htmlent_utf8($json->tries)."</p>\n");
 }
 
 if ( is_object($json) && isset($json->output)) {
