@@ -11,14 +11,36 @@
 ],
 "badges": [
 ],
-"discussions" : [
-    {
-    "title" : "Welcome to Django for Everybody",
-    "launch" : "mod/tdiscus/",
-    "resource_link_id": "discussion_welcome"
-    }
-],
 "modules": [
+{
+    "title": "Welcome to Django for Everybody",
+    "anchor": "welcome",
+    "icon" : "fa-smile-o",
+    "description": " We look at why Django is a popular web technology and compare it to other web development technologies like PHP.",
+    "discussions" : [
+        {
+        "title" : "Welcome to Django for Everybody",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discussion_welcome"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Why teach Django? (6:53)",
+            "youtube" : "KH_-vhsfxjg"
+        }
+    ],
+    "references" : [
+        {
+            "title" : "What web framework do you use in your company? Is it Django?",
+            "href" : "https://www.quora.com/As-a-Python-developer-what-web-framework-do-you-use-in-your-company-Is-it-Django/answer/Chuck-Severance"
+        },
+        {
+            "title" : "Should a beginner use PHP or Python for web development?",
+            "href" : "https://www.quora.com/Which-programming-language-should-I-choose-for-web-development-PHP-or-Python-and-why-Im-a-beginner/answer/Chuck-Severance"
+        }
+    ]
+},
 {
     "title": "Introduction to Dynamic Web Content",
     "anchor": "rrc",
