@@ -26,8 +26,10 @@
     ],
     "videos" : [
         {
-            "title" : "Why teach Django? (6:53)",
-            "youtube" : "KH_-vhsfxjg"
+            "title" : "Welcome to Django for Everybody (7:33)",
+            "youtube" : "oxJQB4f2MMs",
+            "media": "DJ-00-00-Welcome-2024-01-09.m4v",
+            "youtube-2018" : "KH_-vhsfxjg"
         }
     ],
     "references" : [

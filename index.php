@@ -17,7 +17,7 @@ code {
 
 <div id="container">
 <div style="margin-left: 10px; float:right">
-<img src="images/Chuck_16x9_SakaiCar_DJ4E_small.png" onclick='window.location.href="https://www.sakaiger.com/sakaicar";' target="_blank" style="padding: 5px; width:360px;">
+<iframe width="400" height="225" src="https://www.youtube.com/embed/oxJQB4f2MMs?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 <h1>Django for Everybody</h1>
 <p>
