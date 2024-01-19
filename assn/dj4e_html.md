@@ -14,7 +14,7 @@ Django environment so they are available to the autograder for grading.
 Serving HTML Content
 --------------------
 
-Make two folders
+Using the Shell on PythonAnywhere, make two folders
 
     mkdir ~/django_projects/mysite/site
     mkdir ~/django_projects/mysite/site/subfolder
@@ -50,7 +50,7 @@ as we add new features.  As you do upcoming assignments,
 do not remove these entries from your `urls.py`.
 Just add the new url pattern entries as required by the upcoming assignments.
 
-Once you have made the changes, you should check for errors using:
+Once you have made the changes, you should check for errors in the PythonAnywhere shell:
 
     cd ~/django_projects/mysite
     python manage.py check
@@ -97,10 +97,11 @@ see "Hello World" styled using a HTML header tag
 Building Some Validated HTML
 ----------------------------
 
-Create a web page in a file named `dj4e.htm` and store it in the `site` folder according
+Create a web page in a file named `dj4e.htm` and store it in the `~/django_projects/mysite/site` folder according
 to these specifications.
 
-Your page will be well-formed HTML5, and indicate that it is in the UTF-8 character set.
+Your page will be well-formed HTML5, and indicate that it is in the UTF-8 character set.  This is a starting point
+for the file.
 
     <!DOCTYPE html>
     <html lang="en">
@@ -109,30 +110,34 @@ Your page will be well-formed HTML5, and indicate that it is in the UTF-8 charac
       <meta charset="UTF-8">
     </head>
     <body>
-    ...
+    <h1>This is just a starting point</h1>
+    <p>Construct your HTML following the instructions below.</p>
+      ....
+    <p>When you have finished your HTML *and* it passes the HTML
+     validator, you can submit it to the autograder.</p>
     </body>
     </html>
 
-Your name and code will be different from this example.
+Your name and code in the above HTML will come from the autograder.
 
-Your HTML must pass the validator at:
+* The __title__ tag must contain your name or the string indicated by the autograder.
+
+<center><img src="dj4e_html/01-title-name.png" alt="A screen shot of the autograder user interface." width="80%" border="2px"></a></center>
+
+* You must have at least one example of each of the following tags: __span__, __p__, __div__, __h1__, and __ul__
+
+* You must have three __a__ tags and three __li__ tags.
+
+* You must have some bold text in the document and some italics
+text in the document but you must use the correct tags (i.e. neither __b__ nor __i__ are allowed).
+
+There is a lot of flexibility within those parameters. 
+
+But to get a grade, your HTML must have no syntax errors and must pass the validator at:
 
     https://validator.w3.org/nu/
 
 <center><img src="dj4e_html/02-validator.png" alt="A screen shot of the w3c validator with a successful outcome." width="80%" border="2px"></a></center>
-
-The __title__ tag must contain your name or the string indicated by the autograder.
-
-<center><img src="dj4e_html/01-title-name.png" alt="A screen shot of the autograder user interface." width="80%" border="2px"></a></center>
-
-You must have at least one example of each of the following tags: __span__, __p__, __div__, __h1__, and __ul__
-
-You must have three __a__ tags and three __li__ tags.
-
-You must have some bold text in the document and some italics
-text in the document but you must use the correct tags (i.e. neither __b__ nor __i__ are allowed).
-
-There is a lot of flexibility within those parameters. 
 
 Common Errors
 --------------
