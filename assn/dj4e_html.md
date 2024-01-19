@@ -118,7 +118,10 @@ for the file.
     </body>
     </html>
 
-Your name and code in the above HTML will come from the autograder.
+Once you save the file load it in
+__(your-account).pythonanywhere.com/site/dj4e.htm__ and make sure it loads.
+
+Once you can see it, you need to start editing it to meet the requirements for the autograder.
 
 * The __title__ tag must contain your name or the string indicated by the autograder.
 
