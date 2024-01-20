@@ -250,14 +250,14 @@ At this point, you can add the polls application from the first Django tutorial.
 We are jumping into the middle of this tutorial because
 the first part of the tutorial is installing and configuring Django in general.
 
-The first step is to make the `polls` application:
+Start at the step where we make the `polls` application:
 
     cd ~/django_projects/mysite
     python manage.py startapp polls
 
 Continue to follow the steps outlined in
 <a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
-Django tutorial</a>.
+Django tutorial</a>
 until you reach the part where the tutorial tells you to run this command:
 
     python manage.py runserver     # <-- Never run this on pythonanywhere
@@ -272,6 +272,20 @@ It is easier to fix errors in the command line.
 And when there are no errors, you are done with the Django Tutorial, come back to these
 instructions - and navigate to the `Web` tab in Python anywhere
 and `Reload` your application and then test your application by navigating to:
+
+    (your-account).pythonanywhere.com
+
+You should see a page that looks like:
+
+<center><img src="dj4e_install/pyaw_404.png" alt="An image showing a 404 Not found response" style="border: 1px black solid;"></center>
+
+This page is a "404 Error" which means that Django could not find a route in your application for the
+"empty path".  Because you have `DEBUG = true` in your `settings.py`, Django tells you have not yet told
+it how to route the "empty path" *and* it tells you all the paths it knows how to route.
+
+This 404 error is OK at this point in the tutorial.  Later we will add a route in 
+`mysite/mysite/urls.py` for the "empty path" - but for now we can change the URL to 
+add `polls` to route to the application that you just created.
 
     (your-account).pythonanywhere.com/polls
 
