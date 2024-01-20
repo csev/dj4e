@@ -105,7 +105,7 @@ if ( webauto_dont_want($html, "Your username and password didn't match. Please t
 
 // Cleanup old ads
 $saved = $passed;
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
@@ -197,7 +197,7 @@ $html = webauto_get_html($crawler);
 
 // ad/3/favorite
 
-preg_match_all("#'([a-z0-9/]*/[0-9]+/favorite)'#",$html,$matches);
+preg_match_all("#'([a-z0-9/]*/[0-9]+/favorite[^\"]*)'#",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
@@ -224,7 +224,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
 
 // ad/3/unfavorite
 
-preg_match_all("#'([a-z0-9/]*/[0-9]+/unfavorite)'#",$html,$matches);
+preg_match_all("#'([a-z0-9/]*/[0-9]+/unfavorite[^\"]*)'#",$html,$matches);
 
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
     foreach($matches[1] as $match ) {
