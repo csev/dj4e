@@ -1,10 +1,13 @@
 <?php
+use \Tsugi\Util\U;
 use \Tsugi\Util\Net;
 use \Tsugi\Core\LTIX;
 use \Tsugi\UI\Output;
 
 require "top.php";
 require "nav.php";
+
+$warn_domain = "@umich.edu";
 
 ?>
 
@@ -40,6 +43,19 @@ We use the free
 to deploy and test our Django projects and applications.  You can keep using this hosting environent
 to develop and deploy your Django applications after you complete the course.
 </p>
+<?php
+$month = date('n');
+$email = U::get($_SESSION, 'email');
+if ( ($month == 1 || $month == 9 ) && U::endsWith($email, $warn_domain) ) {
+?>
+<p style="border: 2px red solid; margin: 5px; padding: 5px;">
+You are logged in using an <?= $warn_domain ?> email address.  If you are taking
+this course for credit, you need to do your assignments through the campus LMS
+(i.e. Canvas) to get credit for the assignments.
+</p>
+<?php
+}
+?>
 <h2>Technology</h2>
 <p>
 This site uses <a href="http://www.tsugi.org" target="_blank">Tsugi</a> 
