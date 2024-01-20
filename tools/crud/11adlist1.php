@@ -33,7 +33,7 @@ using a superuser account:
 <?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
 <?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?>
 </pre>
-You should have this <b>meta</b> tag in then <b>&lt;head&gt;</b> of each page:
+You should have this <b>meta</b> tag in the <b>&lt;head&gt;</b> of each page:
 <pre>
 <?= htmlentities($meta) ?>
 </pre>
