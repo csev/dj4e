@@ -159,7 +159,7 @@ Django has a special `runscript` capability that allows you to write a Python pr
 to read and write the database using your Django models.
 
 There is a simple example of how to write such a script in the
-`dj4e-samples` respository:
+`dj4e-samples` repository:
 
 <a href="https://github.com/csev/dj4e-samples/blob/main/many/models.py" target="_blank">Many-to-Many / Data Model</a>
 
@@ -195,7 +195,7 @@ This code insures that there is a row in the Person table for the email address
 that was just read `row[0]`.  The email address may or may not already be in the table
 from a previous line in the file. One way or another, by the end of this line
 of code `p` contains a reference to a Person stored in the database that can be
-used to fullfill a foreign key refernence later in the code.
+used to fullfill a foreign key reference later in the code.
 
 Note that the "p, created" is an example of Python function
 <a href="https://youtu.be/CaVhM65wD6g?t=254" target="_blank">returning two values</a>
