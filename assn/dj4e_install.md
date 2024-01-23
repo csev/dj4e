@@ -16,6 +16,11 @@ moving on to the next assignment.  Because the assignments build on one another
 the application that you have build by the last step of the tutorial
 will no longer pass the earlier autograders.
 
+**Note:** Sometimes browser plugins like add blockers or privacy tools break your use
+of PythonAnywhere's browser-based development environment.  If you experience weird problems
+like a hung browser, first turn off some of your extensions/addons/plugins.
+And if the problem persists use a different browser to test.   
+
 Setting Up Your Environment
 ---------------------------
 
