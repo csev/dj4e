@@ -82,7 +82,7 @@ line_out("Deleting any old ads belonging to User 1");
 // Cleanup old ads
 $saved = $passed;
 // preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
@@ -149,7 +149,7 @@ $html = webauto_get_html($crawler);
 
 // Look for the edit entry
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/update[^\"]*)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
         error_out("Expecting User 1 to have an update link for item that was just created with a url like /ad/nnn/update - found ".count($matches[1]));
@@ -204,7 +204,7 @@ line_out("Deleting any old ads belonging to User 2");
 // Cleanup old ads
 $saved = $passed;
 // preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     foreach($matches[1] as $match ) {
         $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
@@ -236,7 +236,7 @@ webauto_search_for_menu($html);
 // Look for the edit entry
 line_out("Looking through the main view to update the ad that User 2 just created");
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/update)\"'",$html,$matches);
+preg_match_all("'\"([a-z0-9/]*/[0-9]+/update[^\"]*)\"'",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {

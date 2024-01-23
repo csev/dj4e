@@ -17,7 +17,6 @@ $OUTPUT->header();
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 
-
 $sql = "SELECT R.updated_at, JSON_EXTRACT(R.json, '$.dj4e_codes') AS codes, 
 JSON_EXTRACT(R.json, '$.dj4e_versions') AS versions, email, displayname 
 FROM lti_result AS R
@@ -25,6 +24,9 @@ JOIN lti_user AS U ON R.user_id = U.user_id
 WHERE grade = 1 AND link_id = :LNK ORDER BY R.updated_at desc limit 200;";
 
 $sql = "SELECT R.updated_at, JSON_EXTRACT(R.json, '$.dj4e_codes') AS codes, 
+	R.json AS json,
+JSON_EXTRACT(R.json, '$.output') AS output,
+JSON_EXTRACT(R.json, '$.url') AS url,
 JSON_EXTRACT(R.json, '$.dj4e_versions') AS versions, email, displayname 
 FROM lti_result AS R
 JOIN lti_user AS U ON R.user_id = U.user_id
@@ -71,13 +73,13 @@ foreach($rows as $row) {
     $vers = json_decode($verstr);
     if ( ! is_array($vers) ) continue;
     if ( $vers == array($version) ) continue;
-
     $count++;
     echo($row['updated_at'].' ');
     echo($row['codes'].' ');
     echo($row['versions'].' ');
     echo($row['email'].' ');
-    echo($row['displayname']);
+    echo($row['displayname'].' ');
+    echo($row['url'].' ');
     echo("\n");
 }
 
