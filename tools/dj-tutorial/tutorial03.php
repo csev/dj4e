@@ -71,7 +71,7 @@ $html = webauto_get_html($crawler);
 
 $url = webauto_extract_url($crawler, $qtext);
 if ( $url == false && stripos($html, $qtext) > 0 ) {
-    error_out("I found the question text on your page, but I am looking for the exact question text in the achor tag");
+    error_out("I found the question text on your page, but I am looking for the exact question text in the anchor tag");
     return;
 }
 
