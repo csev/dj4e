@@ -15,7 +15,7 @@ You should make sure to get the latest updates by doing the following:
     cd ~/dj4e-samples
     git pull
 
-Be very careful pulling code from `dj4e-samples` - it often has much more
+In general, be careful copying code from `dj4e-samples` - it often has much more
 code than your program needs - so know what you are looking at before you copy
 code into your application.
 
