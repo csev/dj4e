@@ -73,6 +73,7 @@ Start with putting this code into your `scripts` folder `(~/django_projects/mysi
 as the file `polls_load.py`.
 
     import csv  # https://docs.python.org/3/library/csv.html
+    from django.utils import timezone, datetime
 
     from polls.models import Question, Choice
 
