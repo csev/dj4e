@@ -87,6 +87,9 @@ You will need to:
 1. Use `startapp` to create a folder
 for the application and have Django create empty files like `views.py` and `models.py` in the `hello` folder.
 
+    cd ~/django_projects/mysite
+    python manage.py startapp hello
+
 2. Create a `hello/urls.py` to route all requests to the hello application to a view function that you will write in
 `views.py` - You can look at your `polls/urls.py` to see how the file is constructed in general and adapt it
 to create `hello/urls.py`.   You will only need one urlpattern in the `hello` application.
