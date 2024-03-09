@@ -93,10 +93,15 @@ as the file `polls_load.py`.
         for row in reader:
             print(row)
 
+            # Replace these comments to
+
             # Make a new Question and save it
 
             # Loop through the choice strings in row[1:] and add each choice,
             # connect it to the question and save it
+
+            # Read and review the code for creating and saving Question objects
+            # in Tutorial 2
 
         print("=== Load Complete")
 
