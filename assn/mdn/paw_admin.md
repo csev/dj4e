@@ -20,7 +20,7 @@ super user and edit or delete the other superuser accounts.
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 * Log in to the admin site.  Insead of using http://localhost:8000/admin, simply add `/admin` to the end of
 your PythonAnywhere site (i.e. like
-<a href="http://mdntutorial.pythonanywhere.com/admin" target="_blank">http://mdntutorial.pythonanywhere.com/admin</a>.
+<a href="https://mdntutorial.pythonanywhere.com/admin" target="_blank">https://mdntutorial.pythonanywhere.com/admin</a>.
 * Create some books (The autograder will ask you to create one specific book and author)
 * Continue into the Advanced Configuration
 * Register a Model Admin class
