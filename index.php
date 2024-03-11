@@ -58,12 +58,12 @@ this course for credit, you need to do your assignments through the campus LMS
 ?>
 <h2>Technology</h2>
 <p>
-This site uses <a href="http://www.tsugi.org" target="_blank">Tsugi</a> 
+This site uses <a href="https://www.tsugi.org" target="_blank">Tsugi</a> 
 framework to embed a learning 
 management system into this site and handle the autograders.  
 If you are interested in collaborating
 to build these kinds of sites for yourself, please see the 
-<a href="http://www.tsugi.org" target="_blank">tsugi.org</a> website.
+<a href="https://www.tsugi.org" target="_blank">tsugi.org</a> website.
 <h3>Copyright</h3>
 <p>
 The material produced specifically for this site is by Charles Severance and others
