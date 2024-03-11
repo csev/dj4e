@@ -14,7 +14,7 @@ https://www.dj4e.com/assn/mdn/paw_skeleton.md</a>
 If you are building your application on PythonAnywhere, your grading
 url should look like:
 <pre>
-http://mdntutorial.pythonanywhere.com/catalog/
+https://mdntutorial.pythonanywhere.com/catalog/
 </pre>
 <?php
 

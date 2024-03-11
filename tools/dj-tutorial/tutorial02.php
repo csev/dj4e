@@ -34,7 +34,7 @@ When you have stored this data, submit your Django admin url to the autograder.
 </p>
 <?php
 
-$url = getUrl('http://djtutorial.dj4e.com/admin');
+$url = getUrl('https://djtutorial.dj4e.com/admin');
 if ( $url === false ) return;
 $passed = 0;
 

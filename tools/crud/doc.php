@@ -14,14 +14,14 @@ if ( SettingsForm::handleSettingsPost() ) {
 }
 Here is some documentation on the software used to build these unit tests:
 <ul>
-<li><a href="http://symfony.com/doc/current/components/dom_crawler.html" target="_new">
-http://symfony.com/doc/current/components/dom_crawler.html
+<li><a href="https://symfony.com/doc/current/components/dom_crawler.html" target="_new">
+https://symfony.com/doc/current/components/dom_crawler.html
 </a></li>
-<li><a href="http://api.symfony.com/2.3/Symfony/Component/BrowserKit.html" target="_new">
-http://api.symfony.com/2.3/Symfony/Component/BrowserKit.html
+<li><a href="https://api.symfony.com/2.3/Symfony/Component/BrowserKit.html" target="_new">
+https://api.symfony.com/2.3/Symfony/Component/BrowserKit.html
 </a></li>
-<li><a href="http://api.symfony.com/2.3/Symfony/Component/DomCrawler/Crawler.html" target="_new">
-http://api.symfony.com/2.3/Symfony/Component/DomCrawler/Crawler.html
+<li><a href="https://api.symfony.com/2.3/Symfony/Component/DomCrawler/Crawler.html" target="_new">
+https://api.symfony.com/2.3/Symfony/Component/DomCrawler/Crawler.html
 </a></li>
 </ul>
 </p>

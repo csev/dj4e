@@ -9,7 +9,7 @@ function mapdown($input) {
 }
 
 // Compute the stuff for the output
-$getUrl = 'http://data.pr4e.org/intro-short.txt';
+$getUrl = 'https://data.pr4e.org/intro-short.txt';
 
 $data = Net::doGet($getUrl);
 $response = Net::getLastHttpResponse();

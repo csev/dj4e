@@ -50,7 +50,7 @@ to <em>remove it or replace</em> it with the above tag.
 
 <?php
 
-$url = getUrl('http://crud.dj4e.com/');
+$url = getUrl('https://crud.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
 

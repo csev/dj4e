@@ -47,7 +47,7 @@ Book: <?= htmlentities($book_title) ?>
 </p>
 <?php
 
-$url = getUrl('http://mdntutorial.pythonanywhere.com/');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
 

@@ -41,7 +41,7 @@ Complete the following sections of the Views tutorial:
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 
 * Visit the catalog site
-<a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
+<a href="https://mdntutorial.pythonanywhere.com/catalog" target="_blank">https://mdntutorial.pythonanywhere.com/catalog</a>
 
 When you make changes to configuration files like `urls.py` or `views.py` it is always a good idea to reload
 your web application on

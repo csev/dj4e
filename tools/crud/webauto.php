@@ -537,7 +537,7 @@ function webauto_extract_url($crawler,$text, $message=false)
     return $url;
 }
 
-// http://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
+// https://api.symfony.com/4.0/Symfony/Component/DomCrawler/Form.html
 function webauto_change_form($form, $name, $value, $message=false)
 {
     try {

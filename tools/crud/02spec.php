@@ -90,7 +90,7 @@ and give you a more appropriate score than the autograder.
 <p>There are several resources you might find useful:
 <ul>
 <li>Recorded lectures, sample code and chapters from
-<a href="http://www.dj4e.com" target="_blank">www.dj4e.com</a>
+<a href="https://www.dj4e.com" target="_blank">www.dj4e.com</a>
 </ul>
 <li>
 The sample CRUD code that we covered in class and used in previous assignments.
@@ -349,7 +349,7 @@ Folder" feature.
 <?php } ?>
 </p>
 <hr/>
-Provided by: <a href="http://www.dj4e.com/" target="_blank">www.dj4e.com</a>
+Provided by: <a href="https://www.dj4e.com/" target="_blank">www.dj4e.com</a>
 <center>
 <?php if ( strpos($assignment_type,'Exam') !== false ) { ?>
 Copyright Charles R. Severance - All Rights Reserved

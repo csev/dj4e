@@ -16,7 +16,7 @@ for($i=0; $i < $howmany; $i ++ ) {
     $name = $names[$MT->getNext(0,count($names)-1)];
     $age = $MT->getNext(13,40);
     $sha = strtoupper(bin2hex($name.$age));
-    // http://stackoverflow.com/questions/4100488/a-numeric-string-as-array-key-in-php
+    // https://stackoverflow.com/questions/4100488/a-numeric-string-as-array-key-in-php
     $database[$sha.'!'] = array($sha,$name,$age);
 }
 $sorted = $database;
