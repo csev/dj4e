@@ -47,7 +47,7 @@ Your url should be "/polls" not "/polls4".
 </p>
 <?php
 
-$url = getUrl('http://djtutorial.dj4e.com/polls4');
+$url = getUrl('https://djtutorial.dj4e.com/polls4');
 if ( $url === false ) return;
 $passed = 0;
 

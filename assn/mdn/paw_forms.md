@@ -153,9 +153,9 @@ logged in to do the CRUD operations.
 
 * Test that you can Create, Update, and Delete by logging in as a valid user and manually going to the URLs:
 
-        http://mdntutorial.pythonanywhere.com/catalog/author/create/
-        http://mdntutorial.pythonanywhere.com/catalog/author/12/update
-        http://mdntutorial.pythonanywhere.com/catalog/author/12/delete
+        https://mdntutorial.pythonanywhere.com/catalog/author/create/
+        https://mdntutorial.pythonanywhere.com/catalog/author/12/update
+        https://mdntutorial.pythonanywhere.com/catalog/author/12/delete
 
     You can go into an author detail page and add "update" or "delete" to the end of the URL to access
     those views.

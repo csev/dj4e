@@ -43,7 +43,7 @@ You should still have the identifiying <b>meta</b> tag in your <b>&lt;head&gt;</
 
 <?php
 
-$url = getUrl('http://mdntutorial.pythonanywhere.com/');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
 

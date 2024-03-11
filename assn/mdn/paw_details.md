@@ -54,7 +54,7 @@ Once you test the pagination set `paginate_by = 20` so the autograder finds your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 
 * Visit the catalog site
-<a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
+<a href="https://mdntutorial.pythonanywhere.com/catalog" target="_blank">https://mdntutorial.pythonanywhere.com/catalog</a>
 and explore the list and detail views.
 
 * You do not have to do the the "Challenge yourself" portion at the end of the tutorial.

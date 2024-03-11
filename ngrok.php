@@ -72,7 +72,7 @@ http://localhost:8000/
 </pre>
 And you can go to paths other than the root like:
 <pre>
-http://c5343c6e.ngrok.io/catalog
+https://c5343c6e.ngrok.io/catalog
 </pre>
 Your local web server will be visible to the Internet at the ngrok-chosen address
 until you end the <b>ngrok</b> application.  To terminate the <b>ngrok</b> on the 
@@ -105,7 +105,7 @@ Forwarding          https://c5343c6e.ngrok.io -&gt; localhost:8000
 Replace "8000" with whatever port your web server is running on.  Then nagivate in your browser
 to the address that ngrok has chosen for you.  Do not include the port number on the ngrok address.
 <pre>
-http://c5343c6e.ngrok.io
+https://c5343c6e.ngrok.io
 </pre>
 At that point you should see the same thing as you would see if you went to 
 <pre>
@@ -113,7 +113,7 @@ http://localhost:8000/
 </pre>
 And you can go to paths other than the root like:
 <pre>
-http://c5343c6e.ngrok.io/catalog
+https://c5343c6e.ngrok.io/catalog
 </pre>
 Your local web server will be visible to the Internet at the ngrok-chosen address
 until you end the <b>ngrok</b> application.  To terminate the <b>ngrok</b> on the 

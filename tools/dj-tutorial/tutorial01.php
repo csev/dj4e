@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['*']
 
 <?php
 
-$url = getUrl('http://djtutorial.dj4e.com/polls');
+$url = getUrl('https://djtutorial.dj4e.com/polls');
 if ( $url === false ) return;
 $passed = 0;
 

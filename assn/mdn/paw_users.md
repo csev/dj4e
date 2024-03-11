@@ -40,7 +40,7 @@ you can always revert a file to your previous version and re-make your changes.
 
 * `Reload` your application and go to a URL like
 
-        http://mdntutorial.pythonanywhere.com/accounts/login/
+        https://mdntutorial.pythonanywhere.com/accounts/login/
 
     You will get a 'TemplateDoesNotExist' error - which is correct because the new templates are not there yet.
     It should show uyou the name of the template it is looking for.

@@ -48,7 +48,7 @@ as shown below:
 
 <?php
 
-$url = getUrl('http://crud.dj4e.com/');
+$url = getUrl('https://crud.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
 

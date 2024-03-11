@@ -119,7 +119,7 @@ Change `drchuck` above to your PythonAnywhere account name.
 
 Then `Reload` your web application and visit its url to make sure you get the expected output.
 
-    http://drchuck.pythonanywhere.com/catalog/
+    https://drchuck.pythonanywhere.com/catalog/
 
 When you visit the page,
 you *should* get an error, 'Page not found(404)'

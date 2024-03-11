@@ -339,7 +339,7 @@
         },
         {
             "title" : "CSS Cheat Sheet by Leslie Frank",
-            "href" : "http://www.lesliefranke.com/files/reference/csscheatsheet.html"
+            "href" : "https://www.lesliefranke.com/files/reference/csscheatsheet.html"
         }
     ],
     "lti" : [
@@ -1681,7 +1681,7 @@
   "title": "Menus and Pictures",
   "description": "In this assignment you will take some screen shots to deomstrate the look and feel of your application..",
   "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
-  "assignment" : "http://www.dj4e.com/assn/dj4e_ads1b.md",
+  "assignment" : "https://www.dj4e.com/assn/dj4e_ads1b.md",
   "parts": [
     {
       "title": "Image (JPG or PNG) of a detail page showing a picture to the right of the Ad, edit and update buttons, and the top menu",

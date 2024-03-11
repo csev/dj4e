@@ -55,7 +55,7 @@ Ngrok should start up and show a user interface like this:
 <center><a href="ngrok_mac/02-running.png" target="_blank"><img src="ngrok_mac/02-running.png" style="width:90%; border: 1px black solid;"></a></center>
 
 You should note the temporary URL that ngrok has assigned you for use later.
-In this example, the temporary URL is `http://f01f774d.ngrok.io` - record
+In this example, the temporary URL is `https://f01f774d.ngrok.io` - record
 that for later.
 
 You can place the `ngrok` executable command in any folder you like.  If you
@@ -76,7 +76,7 @@ Construct the ngrok url by removing the "http://localhost:8000" and replace it
 with the ngrok-provided URL:
 
     Local: http://localhost:8000/
-    Ngrok: http://f01f774d.ngrok.io/
+    Ngrok: https://f01f774d.ngrok.io/
 
 Test that url in your browser.  The ngrok and local urls should
 return the exact same page.

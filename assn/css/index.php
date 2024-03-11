@@ -39,7 +39,7 @@ Using only CSS.
 <h1>Pre-Requisites</h1>
 <p>
 <ul>
-<li><p>Please install the <a href="http://chrispederick.com/work/web-developer/" target="_blank">
+<li><p>Please install the <a href="https://chrispederick.com/work/web-developer/" target="_blank">
 Web Developer Toolkit</a> for your browser from Chris Pedrick and know how to use it to
 disable CSS styles.</p></li>
 </ul>
@@ -117,7 +117,7 @@ foreach($json->parts as $part ) {
 
 
 <p style="padding-top:30px;">
-Provided by: <a href="http://www.dj4e.com/" target="_blank">
+Provided by: <a href="https://www.dj4e.com/" target="_blank">
 www.dj4e.com</a> <br/>
 </p>
 <center>

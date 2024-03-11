@@ -220,7 +220,7 @@ Web tab, `Reload` your web application, wait a few seconds and check
 that it is up and visiting the URL for your application shown in in the Web
 tab on PYAW like:
 
-    http://(your-account).pythonanywhere.com/
+    https://(your-account).pythonanywhere.com/
 
 Here is a
 <a href="dj4e_install/index.htm" target="_blank">Sample</a>

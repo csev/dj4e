@@ -131,8 +131,8 @@ tells you to navigate to a url that looks like:
 Once you have reloaded your application you need to go to the URL that PythonAnywhere
 has assigned to your application.
 
-    http://(your-account).pythonanywhere.com/
-    http://drchuck.pythonanywhere.com/
+    https://(your-account).pythonanywhere.com/
+    https://drchuck.pythonanywhere.com/
 
 If the tutorial tells you to go to a URL like
 
@@ -140,7 +140,7 @@ If the tutorial tells you to go to a URL like
 
 Add the `polls` to your URL.
 
-    http://drchuck.pythonanywhere.com/polls
+    https://drchuck.pythonanywhere.com/polls
 
 You do not need to add `django_projects` or `mysite` to your URL - this is all captured
 in the settings under the 'Web' tab in the PythonAnywhere user interface.

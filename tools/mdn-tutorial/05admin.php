@@ -48,7 +48,7 @@ Make sure to include '/admin' in your site url below.
 <?php
 
 
-$url = getUrl('http://mdntutorial.pythonanywhere.com/admin');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/admin');
 if ( $url === false ) return;
 $passed = 0;
 
