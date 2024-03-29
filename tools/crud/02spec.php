@@ -139,7 +139,7 @@ a 'hello' application from a previous assignment):
 'hello' and 'autos' applications from previous assignments):
 <?php } ?>
 <pre>
-    workon django4                   # or django3 needed
+    workon django42                  # or django3 needed
     cd ~/django_projects/mysite
     python manage.py startapp <?= $main_lower_plural ?>
 </pre>

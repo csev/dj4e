@@ -164,7 +164,7 @@ a 'hello' application from a previous assignment):
 'hello' and 'autos' applications from previous assignments):
 <?php } ?>
 <pre>
-    workon django4                   # or django3 if needed
+    workon django42                  # or django3 if needed
     cd ~/django_projects/mysite
     python manage.py startapp <?= $SPEC->main_lower_plural ?>
 </pre>
