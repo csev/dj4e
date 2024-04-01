@@ -72,17 +72,9 @@ function webauto_get_html($crawler, $showSource=false) {
 function webauto_get_meta($crawler, $name) {
     try {
         $retval = $crawler->filterXpath('//meta[@name="'.$name.'"]')->attr('content');
-        if ( $retval == '42-42' ) $retval = false;
+        if ( $retval == '42-42' ) $retval = '';
     } catch(Exception $e) {
-        $retval = false;
-    }
-    // TODO: Remove after 2019 Fall
-    if ( ! $retval ) {
-        try {
-            $retval = $crawler->filterXpath('//meta[@name="'.$name.'"]')->attr('value');
-        } catch(Exception $e) {
-            $retval = false;
-        }
+        $retval = '';
     }
     return $retval;
 }
