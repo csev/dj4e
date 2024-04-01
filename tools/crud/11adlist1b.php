@@ -131,12 +131,12 @@ if ( ! webauto_testrun($url) ) {
         }
     }
 
-} /* End if ( webauto_testrun() ) */
+	$crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to start the autograder");
+	if ( $crawler === false ) return;
+	$html = webauto_get_html($crawler);
+	webauto_search_for_menu($html);
 
-$crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to start the autograder");
-if ( $crawler === false ) return;
-$html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
+} /* End if ( webauto_testrun() ) */
 
 // Cleanup old ads
 $saved = $passed;
