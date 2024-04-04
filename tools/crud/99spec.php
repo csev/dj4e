@@ -2,6 +2,8 @@
 
 require_once "99fields.php";
 
+require("../../dj4e_django_version.php");
+
 if ( ! isset($_GET['assn'] ) ) die('No assignment');
 if ( ! isset($_GET['type'] ) ) die('No assignment type');
 
@@ -164,7 +166,7 @@ a 'hello' application from a previous assignment):
 'hello' and 'autos' applications from previous assignments):
 <?php } ?>
 <pre>
-    workon django42                  # or django3 if needed
+    workon django<?= $DJ4E_DJANGO_VERISION_SHORT ?> 
     cd ~/django_projects/mysite
     python manage.py startapp <?= $SPEC->main_lower_plural ?>
 </pre>
