@@ -14,7 +14,7 @@ $user1account = 'dj4e_user1';
 $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
 $user2account = 'dj4e_user2';
 $user2pw = "Meow_42_" . substr(getMD5(),1,6);
-$ad_title = $ad_titles[$code % count($ad_titles)];
+$ad_title = $ad_titles[($code+2) % count($ad_titles)];
 
 $now = date('H:i:s');
 
