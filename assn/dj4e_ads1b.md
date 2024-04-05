@@ -39,12 +39,13 @@ into your `ads` application to add support for an optional single picture per ad
 Do not include the entire `Pic` model.  Of course do the migrations once you have modified the model.
 
 (2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.  Edit the `pics/forms.py` and change
-*only* the following two lines:
+*only* the following three lines:
 
     ...
     from pics.models import Pic
     ...
             model = Pic
+            fields = ['title', 'text', 'picture']
 
 to:
 
@@ -52,6 +53,7 @@ to:
     from ads.models import Ad
     ...
             model = Ad
+            fields = ['title', 'text', 'picture', 'price']
 
 Leave the other bits of `ads/forms.py` alone.  Only change the name of the model in the
 above two lines.
