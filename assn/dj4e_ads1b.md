@@ -31,13 +31,30 @@ into your `ads` application to add support for an optional single picture per ad
 
         ...
         # Picture
-        picture = models.BinaryField(null=True, editable=True)
-        content_type = models.CharField(max_length=256, null=True, help_text='The MIMEType of the file')
+        picture = models.BinaryField(null=True, blank=True, editable=True)
+        content_type = models.CharField(max_length=256, null=True, blank=True,
+            help_text='The MIMEType of the file')
         ...
 
 Do not include the entire `Pic` model.  Of course do the migrations once you have modified the model.
 
-(2) Copy in the `pics/forms.py` as well as `pics/humanize.py` into the `ads` application folder.
+(2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.  Edit the `pics/forms.py` and change
+*only* the following two lines:
+
+    ...
+    from pics.models import Pic
+    ...
+            model = Pic
+
+to:
+
+    ...
+    from ads.models import Ad
+    ...
+            model = Ad
+
+Leave the other bits of `ads/forms.py` alone.  Only change the name of the model in the
+above two lines.
 
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
 `PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
