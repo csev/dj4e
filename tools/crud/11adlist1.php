@@ -2,6 +2,7 @@
 
 require_once "../crud/webauto.php";
 require_once "../crud/names.php";
+require_once "../crud/ad_titles.php";
 
 $code = $USER->id+$CONTEXT->id;
 
@@ -14,6 +15,7 @@ $user1account = 'dj4e_user1';
 $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
 $user2account = 'dj4e_user2';
 $user2pw = "Meow_42_" . substr(getMD5(),1,6);
+$ad_title = $ad_titles[$code % count($ad_titles)];
 
 // HACK $user1pw = "Meow_679091_41";
 // HACK $user2pw = "Meow_42_679091";
@@ -37,6 +39,18 @@ You should have this <b>meta</b> tag in the <b>&lt;head&gt;</b> of each page:
 <pre>
 <?= htmlentities($meta) ?>
 </pre>
+</p>
+<p>
+<b>New Autograder Requirement:</b>
+Before you run this autograder, you should log into your application and manually add
+a classified ad with this as its title (case matters):
+<pre>
+<?php
+echo($ad_title);
+?>
+</pre>
+The autograder will not run unless it sees an ad with the above title in
+the inital list of ads after it logs in.
 </p>
 <?php
 $url = getUrl('https://chucklist.dj4e.com/');
@@ -77,6 +91,56 @@ $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
 if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
+
+// First, check if there is a manually entered title in the ad list
+// unless of course this is a test run...
+if ( ! webauto_testrun($url) ) {
+    line_out('Looking for your manually created entry: '.$ad_title);
+
+    if ( ! webauto_search_for($html, $ad_title) ) {
+        error_out('Could not find an ad with a title of: '.$ad_title);
+        error_out('Auto grading will not continue until you manually add a title as desceibed above.');
+        error_out('');
+        return;
+    }
+
+    // Check the detail page
+    $detail_url = webauto_get_url_from_href($crawler,$ad_title, "(Could not link to the detail page on the list view)");
+    $crawler_detail = webauto_get_url($client, $detail_url, "Loading detail page");
+    $html_detail = webauto_get_html($crawler_detail);
+    if ( ! webauto_search_for($html_detail, $ad_title) ) {
+        error_out("Did not find '$ad_title' on detail page");
+        return;
+    }
+    if ( ! webauto_search_for($html_detail, 'Price', true) ) {
+        error_out("Did not find price on detail page");
+        return;
+    }
+    if ( ! webauto_search_for_not($html_detail, "owner") ) {
+        error_out('The owner field is not supposed to appear in the detail form.');
+        return;
+    }
+
+    line_out("Congratulations your manually created entry looks good!");
+
+    // Patch the URL to add /ads if after log in, we redirect to /ads..
+    // TODO: Change the assignment so it is always at ads after thinking about it a bit.
+    if ( strpos($url, '/ads') === false ) {
+        if ( strpos($detail_url, '/ads/') !== false ) {
+            if ( ! U::endsWith($url, '/') ) $url = $url . '/';
+            $url = $url . 'ads';
+            error_out("Switching to base url of ".$url);
+        }
+    }
+
+    $crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to start the autograder");
+    if ( $crawler === false ) return;
+    $html = webauto_get_html($crawler);
+
+    webauto_search_for_menu($html);
+
+} /* End if ( webauto_testrun() ) */
+
 
 line_out("Deleting any old ads belonging to User 1");
 // Cleanup old ads
