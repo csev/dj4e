@@ -4,6 +4,8 @@ require_once "../crud/webauto.php";
 require_once "../crud/names.php";
 require_once "../crud/ad_titles.php";
 
+use \Tsugi\Util\U;
+
 $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
