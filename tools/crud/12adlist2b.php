@@ -40,7 +40,7 @@ to support more than one variant of the code at the same time.
 </p>
 <p>
 <b>New Autograder Requirement:</b>
-Before you run this autograder, you should log into your application and manually add
+Before you run this autograder, you should log into your application using your <b>administrator</b> account and manually add
 a classified ad with this as its title (case matters):
 <pre>
 <?php
@@ -48,7 +48,8 @@ echo($ad_title);
 ?>
 </pre>
 The autograder will not run unless it sees an ad with the above title in
-the inital list of ads after it logs in.
+the initial list of ads after it logs in.
+Don't use either of the above accounts to add the ad or it will be deleted at the beginning of each run.
 </p>
 <?php
 
