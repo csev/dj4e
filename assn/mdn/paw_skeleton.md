@@ -26,7 +26,7 @@ Checking Your Installation
 We assume that you have a Django virtual environment all set up from your
 previous assignments.  Start a shell and type:
 
-    workon django4
+    workon django42
 
 Of course always make sure to type this command when you start a fresh shell.
 
@@ -42,7 +42,7 @@ points for haing *too many* features implemented.
 Since you already have a `dango_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
-	workon django4
+	workon django42
     cd ~/django_projects
     django-admin startproject locallibrary
 	cd locallibrary
@@ -113,7 +113,7 @@ and save it.
 
 The virtual environment should already be set up and does not need to change.
 
-    Virtualenv: /home/drchuck/.virtualenvs/django4
+    Virtualenv: /home/drchuck/.virtualenvs/django42
 
 Change `drchuck` above to your PythonAnywhere account name.
 

@@ -65,10 +65,10 @@ Sometimes when commands like
 run without error, but the web application will not start on
 PythonAnywhere, check to make sure your virtual environment is
 properly set under the Web tab.  If you did the installation
-properly and created a `django4`
+properly and created a `django42`
 virtual environment, the virtual environment should be set to:
 
-    /home/drchuck/.virtualenvs/django4
+    /home/drchuck/.virtualenvs/django42
 
 Replacing "drchuck" with your PythonAnywhere account name.
 
