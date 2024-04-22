@@ -25,7 +25,6 @@ WHERE grade = 1 AND link_id = :LNK ORDER BY R.updated_at desc limit 200;";
 
 $sql = "SELECT R.updated_at, JSON_EXTRACT(R.json, '$.dj4e_codes') AS codes, 
 	R.json AS json,
-JSON_EXTRACT(R.json, '$.output') AS output,
 JSON_EXTRACT(R.json, '$.url') AS url,
 JSON_EXTRACT(R.json, '$.dj4e_versions') AS versions, email, displayname 
 FROM lti_result AS R
