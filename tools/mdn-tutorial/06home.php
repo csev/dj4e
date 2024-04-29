@@ -40,6 +40,8 @@ You need to add the following line to your <b>base_generic.html</b> file within 
 </pre>
 Make sure to put this all on one line and with no extra spaces within the tag.
 </p>
+<p>
+Make sure to insert the following author and book written by the author:
 <pre>
 Author: <?= htmlentities($full_name) ?> 
 Book: <?= htmlentities($book_title) ?> 
