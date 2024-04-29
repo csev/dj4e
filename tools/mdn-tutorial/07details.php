@@ -38,6 +38,8 @@ You should still have the meta tag, an author and book from the previous tutoria
 <pre>
 <?= htmlentities($meta) ?> 
 </pre>
+<p>
+Make sure to insert the following author and book written by the author:
 <pre>
 Author: <?= htmlentities($full_name) ?> 
 Book: <?= htmlentities($book_title) ?>
