@@ -202,6 +202,8 @@ $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.41');
 webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
+$picturepath = dirname(__FILE__) . "/Sakaiger.png";
+webauto_change_form($form, 'picture', $picturepath);
 
 line_out("Submitting the create form, expecting the list of items...");
 $crawler = webauto_submit_form($client, $form);
@@ -249,6 +251,8 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
     webauto_change_form($form, 'title', $title."_updated");
+    $picturepath = dirname(__FILE__) . "/Sakaiger.png";
+    webauto_change_form($form, 'picture', $picturepath);
 	$crawler = webauto_submit_form($client, $form);
     $html = webauto_get_html($crawler);
     webauto_search_for_menu($html);

@@ -230,6 +230,8 @@ $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.41');
 webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
+$picturepath = dirname(__FILE__) . "/Sakaiger.png";
+webauto_change_form($form, 'picture', $picturepath);
 
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
