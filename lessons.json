@@ -28,7 +28,7 @@
         {
             "title" : "Welcome to Django for Everybody (7:33)",
             "youtube" : "oxJQB4f2MMs",
-            "media": "DJ-00-00-Welcome-2024-01-09.m4v",
+            "media": "lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v",
             "youtube-2018" : "KH_-vhsfxjg"
         }
     ],
@@ -59,27 +59,32 @@
     "videos" : [
         {
             "title" : "Web Applications and the Request/Response Cycle (6:04)",
+            "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
             "youtube" : "ZT8uqIEG92o"
         },
         {
             "title" : "Exploring the HyperText Transfer Protocol (16:28)",
+            "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
             "youtube" : "Q5YIrYkrVXg"
         },
         {
             "title" : "Using Sockets to Make Network Connections in Python (6:34)",
+            "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
             "youtube" : "RDvlb_XgVyI"
         },
         {
             "title" : "Building a Simple Web Browser in Python (8:39)",
-            "media": "Web-01-HTTP-04-Browser-1080.mov",
+            "media": "lesson-02-http/04-Web-01-HTTP-04-Browser.m4v",
             "youtube" : "Fxgw_BxZg2I"
         },
         {
             "title" : "Building a Simple HTTP Server in Python (16:07)",
+            "media": "lesson-02-http/05-Web-01-HTTP-05-Server.m4v",
             "youtube" : "PNt8zXl7EJ0"
         },
         {
             "title" : "Understanding Browser Developer Mode (9:43)",
+            "media" : "lesson-02-http/06-dev-mode-walkthrough.mov",
             "youtube" : "0JsWY3pmdak"
         }
     ],
@@ -137,10 +142,12 @@
     "videos" : [
     {
         "title": "Installing Django on PythonAnywhere (21:13)",
+        "media": "lesson-03-paw/01-01_paw_install_42.m4v",
         "youtube": "ZsEu-jyy2qY"
     },
     {
         "title": "How the Autograder Works (9:13)",
+        "media": "lesson-03-paw/02-01_paw_install_errors.m4v",
         "youtube": "n5_xdz2Zo3A"
     }
   ],
@@ -210,7 +217,8 @@
     ],
     "videos" : [
     {
-        "title": " Using the Command Line Shell on PythonAnywhere (19:01)",
+        "title": "Using the Command Line Shell on PythonAnywhere (19:01)",
+        "media": "lesson-04-shell/01-01_paw_shell.m4v",
         "youtube": "bNjwj7BKJAo"
     }
   ],
@@ -258,14 +266,17 @@
     "videos" : [
         {
             "title" : "HTML - HyperText Markup Language (Part 1) (5:53)",
+            "media": "lesson-05-html/01-Web-02-HTML-A.m4v",
             "youtube" : "yWmJSO5xQlU"
         },
         {
             "title" : "HTML - HyperText Markup Language (Part 2) (13:52)",
+            "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
             "youtube" : "fh3omoEiebQ"
         },
         {
             "title" : "HTML - Sample Code Walkthrough (13:58)",
+            "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
             "youtube" : "wYc6l28v7Cs"
         }
     ],
@@ -329,22 +340,27 @@
     "videos" : [
         {
             "title" : "CSS - Cascading Style Sheets - (Part 1) (12:47)",
+            "media" : "lesson-06-css/01-Web-02-CSS-A.m4v",
             "youtube" : "blWx62Js7T0"
         },
         {
             "title" : "CSS - Cascading Style Sheets - (Part 2) (15:03)",
+            "media": "lesson-06-css/02-Web-02-CSS-B.m4v",
             "youtube" : "nMU8wMgasJ8"
         },
         {
             "title" : "CSS - Cascading Style Sheets - (Part 3) (13:40)",
+            "media": "lesson-06-css/03-Web-02-CSS-C.m4v",
             "youtube" : "7KWtFdqXiqE"
         },
         {
             "title" : "CSS - Sample Code Walkthrough (Part 1) (13:26)",
+            "media": "lesson-06-css/04-Web-03-CSS-Code-A.m4v",
             "youtube" : "2Eu96WnoHBY"
         },
         {
             "title" : "CSS - Sample Code Walkthrough (Part 2) (25:49)",
+            "media": "lesson-06-css/05-Web-03-CSS-Code-B.m4v",
             "youtube" : "MHqI-PKBl_A"
         }
     ],
@@ -444,14 +460,18 @@
     "videos" : [
     {
         "title": "How Databases Work (18:57)",
+        "media": "lesson-07-sql/01-SQL-01-Basic-01.m4v",
         "youtube": "C1QXYMNTEVs"
     },
     {
         "title": "Introduction to Structured Query Language (SQL) (11:45)",
+        "media": "lesson-07-sql/02-SQL-01-Basic-02.m4v",
+        "note": "Audio is messed up in FCPX",
         "youtube": "wtU7Pp6VFoE"
     },
     {
         "title": "Demonstration: Basic SQL (6:36)",
+        "media": "lesson-07-sql/03-sql-01-basic.m4v",
         "youtube": "2Or6_sSyl7c"
     }
    ],
@@ -523,20 +543,25 @@
     "videos" : [
     {
         "title": "Django Data Models (19:59)",
+        "media": "lesson-08-models/01-DJ-02-Models.m4v",
+        "note": "Audio is messed up in FCPX",
         "youtube": "AqsPifp-ccc"
     },
     {
         "title": "Data Model Migration in Django (7:54)",
         "youtube": "YqARGlI6bGc",
+        "media": "lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v",
         "todo" : "Need to make migration fit better in DJ-02",
         "project": "DJ 03 Many 05 Migrate"
     },
     {
         "title": "Demonstration: Django Single Table Models (11:09)",
+        "media": "lesson-08-models/03-04_paw_models.m4v",
         "youtube": "p5K5hFiJ-GI"
     },
     {
         "title": "Demonstration: Resetting your Django database on PythonAnywhere (5:47)",
+        "media": "lesson-08-models/04-tut2-reset-database-edit.mov",
         "project": "tut2 reset database edit",
         "youtube": "GOQIJbTSzoQ"
     }
@@ -609,6 +634,7 @@
     "videos" : [
     {
         "title": "Model View Controller in Django (7:07)",
+        "media": "lesson-09-mvc/01-DJ-05-MVC.m4v",
         "youtube": "XvWG5KMncOU",
         "project": "DJ 05 MVC"
     }
@@ -661,36 +687,43 @@
     "videos" : [
     {
         "title": "URL Routing in Django (6:59)",
+        "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v",
         "youtube": "AQFC13D2mRM",
         "project": "DJ 06 Views 01 Urls"
     },
     {
         "title": "Django Views (6:19)",
+        "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v",
         "youtube": "9Qk4vJMssMo",
         "project": "DJ 06 Views 02 Views"
     },
     {
         "title": "Inside Django Views and HTML Escaping in Django (15:36)",
+        "media": "lesson-10-views/03-DJ-06-Views-03-Detail.m4v",
         "youtube": "SAAWE4Hz6Mk",
         "project": "DJ 06 Views 03 Detail"
     },
     {
         "title": "Using Templates in Django (10:05)",
+        "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v",
         "youtube": "mTvWrpMGWBA",
         "project": "DJ 06 Views 04 Templates"
     },
     {
         "title": "Using the Django Template Language (DTL) (11:00)",
+        "media": "lesson-10-views/05-DJ-06-Views-05-DTL.m4v",
         "youtube": "teL44ugGpSs",
         "project": "DJ 06 Views 05 DTL"
     },
     {
         "title": "Django Template Inheritance (6:06)",
+        "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v",
         "youtube": "IMgml67lH9Y",
         "project": "DJ 06 Views 06 Inherit"
     },
     {
         "title": "Reversing Django URLs (12:52)",
+        "media": "lesson-10-views/07-DJ-06-Views-07-Reverse.m4v",
         "youtube": "YT60BZJjySg",
         "project": "DJ 06 Views 07 Reverse"
     }
