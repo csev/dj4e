@@ -58,9 +58,7 @@ Once you have made the changes, you should check for errors in the PythonAnywher
 If the `check` fails, stop and fix any and all errors before continuing.
 
 Once `check` succeeds, you can go to the `Web` tab on PythonAnywhere,
-reload your application and then check your application by navigating to:
-
-    (your-account).pythonanywhere.com/site
+reload your application and then view your new files.
 
 Viewing Your New Files
 ----------------------
