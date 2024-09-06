@@ -60,7 +60,7 @@ If the `check` fails, stop and fix any and all errors before continuing.
 Once `check` succeeds, you can go to the `Web` tab on PythonAnywhere,
 reload your application and then check your application by navigating to:
 
-    (your-account).pythonanywhere.com
+    (your-account).pythonanywhere.com/site
 
 Viewing Your New Files
 ----------------------
