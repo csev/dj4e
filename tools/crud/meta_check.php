@@ -25,13 +25,18 @@ if ( ! $dj4e_code || strlen($dj4e_code) < 1 ) {
     error_out('Your meta name="dj4e-code" tag is not formatted correctly.  Make sure you removed the 42-42 meta tag.');
     $meta_good = false;
 } else {
-	$then = substr($dj4e_code,2);
-	$now = time();
-    if ( ($then + 180*24*60*60) < $now ) {
-		error_log('Expired dj4e-code '.$dj4e_code.' user:'.$USER->id.' '.$USER->email." ".$USER->displayname);
-    	error_out('Your meta name="dj4e-code" tag is out of date.  Check the assignment document.');
-    	$meta_good = false;
-	}
+    $then = substr($dj4e_code,2);
+    if ( ! is_numeric($dj4e_code) ) {
+       error_out('Your meta name="dj4e-code" tag is not formatted correctly.  Missing numeric data.');
+       $meta_good = false;
+    } else {
+        $now = time();
+        if ( ($then + 180*24*60*60) < $now ) {
+            error_log('Expired dj4e-code '.$dj4e_code.' user:'.$USER->id.' '.$USER->email." ".$USER->displayname);
+            error_out('Your meta name="dj4e-code" tag is out of date.  Check the assignment document.');
+            $meta_good = false;
+        }
+    }
 }
 
 // TODO: Check version too :)
