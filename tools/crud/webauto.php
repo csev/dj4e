@@ -545,7 +545,13 @@ function webauto_change_form($form, $name, $value, $message=false)
 }
 
 function webauto_submit_form($client, $form) {
-    $crawler = $client->submit($form);
+    /* This can blow up - bug in symfony that they won't fix */
+    try {
+        $crawler = $client->submit($form);
+    } catch(Exception $ex) {
+        error_out("Submitting the form caused an error - often this is an '<input type=file' field with the wrong name");
+        return $crawler;
+    }
 	$response = $client->getInternalResponse();
 	$status = $response->getStatusCode();
 	if ( $status != 200 ) {

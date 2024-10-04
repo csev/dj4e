@@ -196,6 +196,19 @@ if ( strpos($html, 'multipart/form-data') > 1 ) {
     error_out('Create Ad form requires enctype="multipart/form-data"');
 }
 
+if ( ! strpos($html, 'csrfmiddlewaretoken') > 1 ) {
+    error_out('Create Ad form requires csrfmiddlewaretoken');
+}
+
+if ( ! strpos($html, 'type="file"') > 1 ) {
+    error_out('Create Ad form requires an input type="file" on Create Ad form');
+}
+
+if ( ! strpos($html, 'name="picture"') > 1 ) {
+    error_out('Create Ad form requires an input name="picture" on Create Ad form');
+}
+
+
 // Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
