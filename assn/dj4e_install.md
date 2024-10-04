@@ -413,34 +413,6 @@ is a fresh copy of the file you can use:
 
 Fresh copy of [manage.py](dj4e_install/manage.py.txt)
 
-Django 3.x to Django 4.x issues
--------------------------------
-
-In general Django 4.x is quite compatible with Django 3.x and Django 2.x.  You might find
-small errors if you started a project on an earlier version of Django and upgraded to
-Django 4.x mid-project.  One common error is that the `url()` feature used in various `urls.py`
-files changed form 3.x to 4.x.  If you see something like the following error:
-
-    from django.conf.urls import url
-    ImportError: Cannot import 'url' from 'django.conf.urls'
-
-It is quite easy to fix.  The 'url()' function is now renamed and moves into a different
-area of the Django library in 4.x.   Remove the above line and find an import from `djanjo.urls`
-and add a `re_path` to it like the following:
-
-    from django.urls import include, path, re_path
-                                           ^^^^^^^ Add this
-
-Then find lines that call `url( ..` and change them to be `re_path( ...` - the calling
-patterns are the same between `url` and `re_path` so no other changes are needed.
-
-The good news is that `re_path` also works with the Django 3.x library so once you make
-the change you don't have to undo the change when going back to Django 3.x.
-
-Here is a <a href="https://stackoverflow.com/a/71628531/1994792" target="_blank">StackOverflow answer</a>
-that covers this topic.  It actually shows two ways to fix this - but the cleaner and more future-proof
-approach is just changing to use `re_path` as shown above.
-
 Starting Over Fresh
 -------------------
 
