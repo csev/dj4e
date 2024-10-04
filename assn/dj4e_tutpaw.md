@@ -1,24 +1,91 @@
 
-Running Django Project Tutorials on PythonAnywhere
-==================================================
+Dealing with Errors in Django Projects on Python Anywhere
+=========================================================
 
-The recommendation is to read this document completely before starting
-and also read the text from the tutorial completely before starting to
-write code.
+When you get stuck on something while developing your Django Application
+on PythonAnywhere this page has some possible solutions.
 
-You will encounter a lot of problems if you jump right in and start
-cutting and pasting.
-
-The rest of theis document is here to help you with problems you might encounter 
-while building the tutorial on PythonAnywhere.
-
+* When everything works but your application says 'Something went wrong :-('
 * What happens when you don't activate your virtual environment (django42)
 * Your line 16 seems to have a syntax error in the text editor in `manage.py`
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
 * What to do when the tutorial tells you to access 'localhost:8000'
 * How and when you exit the Django shell (>>> prompt)
-* When everything works but your application says 'Something went wrong :-('
+
+When everything works but your application says 'Something went wrong :-('
+--------------------------------------------------------------------------
+
+When you have made some changes to your application and reloaded your web application
+and navigate to your web page and you get an error message that says "Something went wrong :("
+like this:
+
+<center><img src="dj4e_errors/went-wrong.png" alt="An error page showing 'Something went wrong' from a PythonAnywhere application" style="border: 1px black solid; width:50%;"></center>
+
+To fix this problem, start a console / bash shell on your account and make sure you are in your virtual
+environment.  Then type these commands:
+
+    cd ~/django_projects/mysite
+    python manage.py check
+
+This can give one of two possible outputs.  If things are going well the last line of output will be:
+
+    System check identified no issues (0 silenced).
+
+If there is an error, it will kbe pretty verbose:
+
+    Traceback (most recent call last):
+        File "/home/dj4e/django_projects/mysite/manage.py", line 21, in <module>
+            main()
+        File "/home/dj4e/django_projects/mysite/manage.py", line 17, in main
+            execute_from_command_line(sys.argv)
+
+        (About 20 more lines of traceback)
+
+        File "/home/dj4e/django_projects/mysite/mysite/urls.py", line 20, in <module>
+            path('polls/', include('pollz.urls')),
+        File "/home/dj4e/.virtualenvs/django4/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+            urlconf_module = import_module(urlconf_module)
+        File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+            return _bootstrap._gcd_import(name[level:], package, level)
+        File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+        File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+        File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+        File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+        File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+        File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+        File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+     ModuleNotFoundError: No module named 'pollz'
+
+This is a mess of output but you can get some clues.  The file it is upset about is `/home/dj4e/django_projects/mysite/mysite/urls.py`
+and the what went wrong was that I mis-spelled `polls` as `pollz`.  
+
+To solve this, in another tab edit the file, save it and re-run 
+
+    python manage.py check
+
+Until there are no errors.  Then try to reload your application and go back to the application page to see if you
+there is no "Something went wrong" error any more.
+
+If you see "Something went wrong" and `check` shows no errors
+-------------------------------------------------------------
+
+In a rare situation, `python manage.py check` shows no errors but your
+application will still not load successfully.
+
+To dig further you will need to look through the error log
+under the `Web` tab on PythonAnywhere:
+
+<center><img src="dj4e_install/error_logs.png" alt="An image showing the three log links under the Web tab in PythonAnywhere" style="border: 1px black solid;"></center>
+
+Load the the `error` log and scroll to the very bottom to find the most
+recent log error messages.  It can be quite long and take a while to get to the bottom.
+When you get to the bottom, you will likely find some kind of error message.  It will likely
+be a traceback and many lines long.  Most of the traceback is showing the Django files
+your application is using.  So you will need to lok carefully and find where it is mentioning
+a problem with something in one of your files.
+
+This is a little tricky - so you need to be a bit of a detective to figure things out.
 
 You *must* be in your virtual environment
 ---------------------------------------
@@ -189,19 +256,3 @@ Then you edit your `models.py` and *re-start* the Django shell from the
 
 After a while you will understand that you need to be in `bash` (dollar sign prompt)
 to run bash commands and be in the Django shell (>>> prompt) to run Django commands.
-
-When everything works but your application says 'Something went wrong :-('
---------------------------------------------------------------------------
-
-If your application passed a `check` but fails to
-load or reload, you might get an error message that looks
-like <a href="dj4e_install/pyaw_error.htm" target="_blank">this</a>.
-
-If you get an error, you will need to look through the error logs
-under the `Web` tab on PythonAnywhere:
-
-<center><img src="dj4e_install/error_logs.png" alt="An image showing the three log links under the Web tab in PythonAnywhere" style="border: 1px black solid;"></center>
-
-First check the `error` log and then check the `server` log.
-Make sure to scroll through the logs to the end to find the most recent error.
-
