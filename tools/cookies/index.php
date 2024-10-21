@@ -76,8 +76,8 @@ unset($_SESSION['post_data']);
 
 ?>
 <p>
-This application has stored two cookies in your browser.  You need to use "Developer
-Mode" in your browser to complete this assignment:
+This page has stored two cookies in your browser.  You need to use "Developer
+Mode" or "Inspect Element" on this page in your browser to complete this assignment:
 <ul>
 <li>You need to find the value of the cookie named <b>dj4e_secret_cookie</b> and enter it below</li>
 <li>You need to find and delete the cookie named <b>dj4e_destroy_cookie</b> <i>before</i> pressing "Submit" below.
