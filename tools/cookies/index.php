@@ -93,7 +93,16 @@ value="<?= htmlentities($oldcookie) ?>"/></p>
 <input type="submit">
 </form>
 </p>
+<p>
+If you lose your Session as soon as you submit the above form, it probably means that you have anti-tracking settings
+and/or add-ins turned on.   If you are having session loss problems, either turn off tracking and/or add ons or just use
+a different browser to do this assignment.
+</p>
 <?php
+if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
+    echo("<p>Current Http User Agent browser value: <b>".htmlentities($_SERVER['HTTP_USER_AGENT'])."</b></p>\n");
+}
+
 if ( $USER->instructor ) {
 echo('<a href="sendgrade.php" class="btn btn-default">Grade Send</a> ');
 echo("\n<hr/>");
