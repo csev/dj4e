@@ -95,12 +95,13 @@ value="<?= htmlentities($oldcookie) ?>"/></p>
 </p>
 <p>
 If you lose your Session as soon as you submit the above form, it probably means that you have anti-tracking settings
-and/or add-ins turned on.   If you are having session loss problems, either turn off tracking and/or add ons or just use
+and/or add-ins turned on.   If you are having session loss problems while doing this assignment, either turn off
+tracking blockers and/or add ons or just use
 a different browser to do this assignment.
 </p>
 <?php
 if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
-    echo("<p>Current Http User Agent browser value: <b>".htmlentities($_SERVER['HTTP_USER_AGENT'])."</b></p>\n");
+    echo("<p>Tsugi will discard your session if the HTTP_USER_AGENT browser value changes. Current value: <br/><b>".htmlentities($_SERVER['HTTP_USER_AGENT'])."</b></p>\n");
 }
 
 if ( $USER->instructor ) {
