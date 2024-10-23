@@ -1416,6 +1416,10 @@
     "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.  It is a great time to review important concepts in the course in the context of your first complete application.",
     "videos" : [
     {
+        "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+        "youtube": "zuCxAR3-CzA"
+    },
+    {
         "title": "Review: URL Routing (6:59)",
         "youtube": "AQFC13D2mRM"
     },
