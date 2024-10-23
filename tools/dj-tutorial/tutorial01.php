@@ -7,9 +7,11 @@ line_out("Autograder Django Tutorial 01");
 ?>
 <p>
 Assignment instructions:
-<a href="https://www.dj4e.com/assn/dj4e_install.md" target="_blank">
+<a href="../../assn/dj4e_install.md" class="btn btn-info" target="_blank">
 https://www.dj4e.com/assn/dj4e_install.md
 </a>.
+</p>
+<p>
 This assignment will cover the material in
 Part 1 of the Django tutorial at
 <a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/" target="_blank">

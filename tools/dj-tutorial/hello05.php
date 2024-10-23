@@ -10,7 +10,7 @@ $cookie_name = 'dj4e_cookie';
 <h1>DIY Hello World / Sessions</h1>
 <p>
 The instructions for this assignment are at
-<a href="../../assn/dj4e_hello.md" target="_blank">dj4e_hello.md</a>
+<a href="../../assn/dj4e_hello.md" class="btn btn-info" target="_blank">dj4e_hello.md</a>
 </a>.
 This assignment adds two new applications (main and hello) to your project
 where you built your tutorial solutions.  In addition to
