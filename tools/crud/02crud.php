@@ -1,5 +1,7 @@
 <?php
 
+use \Tsugi\Util\U;
+
 require_once "webauto.php";
 require_once "names.php";
 
@@ -7,6 +9,18 @@ require_once "names.php";
 $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
+
+if ( $LAUNCH->user && $LAUNCH->user->instructor ) {
+    if ( U::isNotEmpty(U::get($_REQUEST, 'reset')) ) {
+        unset($_SESSION['userpw']);
+        unset($_SESSION['useraccount']);
+    } else if ( U::isNotEmpty(U::get($_REQUEST, 'userpw')) && U::isNotEmpty(U::get($_REQUEST, 'useraccount')) ) {
+        $userpw =  U::get($_REQUEST, 'userpw');
+        $_SESSION['userpw'] =  $userpw;
+        $useraccount =  U::get($_REQUEST, 'useraccount');
+        $_SESSION['useraccount'] =  $useraccount;
+    }
+}
 
 $MT = new \Tsugi\Util\Mersenne_Twister($code);
 $shuffled = $MT->shuffle($names);
@@ -20,7 +34,10 @@ $meta = '<meta name="dj4e" content="'.$check.'">';
 
 $adminpw = substr(getMD5(),4,9);
 $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
+$userpw =  U::get($_SESSION, 'userpw', $userpw);
 $useraccount = 'dj4e_user';
+$useraccount =  U::get($_SESSION, 'useraccount', $useraccount);
+
 line_out("Create, Read, Update, and Delete (CRUD)")
 ?>
 <a href="<?= $assignment_url ?>" class="btn btn-info" target="_blank"><?= $assignment_url_text ?></a>
@@ -38,6 +55,17 @@ Password: <?= htmlentities($userpw) ?>
 </pre>
 You can use any email address you like.
 </p>
+<?php if ( $LAUNCH->user && $LAUNCH->user->instructor ) { ?>
+<p>
+As an instructor, you can change the user account and password in order to test a student site with their account/password.
+<form method="get">
+Account: <input type="text" name="useraccount"> <br/>
+Password: <input type="text" name="userpw"> <br/>
+<input type="submit" value="Submit">
+<input type="submit" value="Reset" name="reset">
+</form>
+</p>
+<?php } ?>
 <p>
 You should edit or add a <b>meta</b> tag in your <b>&lt;head&gt;</b> area of each page you generate
 as shown below:
@@ -49,7 +77,6 @@ to <em>remove it or replace</em> it with the above tag.
 </p>
 
 <?php
-
 $url = getUrl('http://crud.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
@@ -88,7 +115,6 @@ require("meta_check.php");
 
 $add_lookup_url = webauto_get_url_from_href($crawler,"Add $lookup_article $lookup_lower");
 $view_lookup_url = webauto_get_url_from_href($crawler,"View $lookup_lower_plural");
-
 
 line_out("Checking for old $lookup_lower_plural from previous autograder runs...");
 $savepassed = $passed;
