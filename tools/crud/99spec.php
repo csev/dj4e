@@ -288,8 +288,10 @@ for your views. You do not need to make a form if you are for any view that exte
 generic views create a Form objects for each view automatically.
 </li>
 <li>
-Copy and adapt the appropriate templates to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b> following the naming
-conventions for the templates.
+Copy and adapt the appropriate templates from the <b>autos</b> sample code 
+to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b>
+following the naming conventions for the templates.  It is important to base your templates on the <b>autos</b> sample
+code rather than writing them from scratch so as to match the markup patterns expected by the autograder.
 </li><li>
 If you have not already done so,
 create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
