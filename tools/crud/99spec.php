@@ -246,15 +246,18 @@ You do not need to change the <b>main</b> or <b>lookup</b> urls
 in <b><?= $SPEC->main_lower_plural ?>/urls.py</b> -
 <?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
 <p>
-You should change the 'name=' values and class name on the paths from the sample application so you don't conflict
-with the 'autos' application:
+You should change the 'name=' values and class name on the paths from the
+sample application as follows so you don't conflict with the 'autos' application:
 <pre>
-
 urlpatterns = [
     path('', views.<?= $SPEC->main_title ?>List.as_view(), name='all'),
     path('main/create/', views.<?= $SPEC->main_title ?>Create.as_view(), name='<?= $SPEC->main_lower ?>_create'),
     path('main/&lt;int:pk&gt;/update/', views.<?= $SPEC->main_title ?>Update.as_view(), name='<?= $SPEC->main_lower ?>_update'),
-    ...
+    path('main/&lt;int:pk&gt;/delete/', views.<?= $SPEC->main_title ?>Delete.as_view(), name='<?= $SPEC->main_lower ?>_delete'),
+    path('lookup/', views.<?= $SPEC->lookup_title ?>View.as_view(), name='<?= $SPEC->lookup_lower ?>_list'),
+    path('lookup/create/', views.<?= $SPEC->lookup_title ?>Create.as_view(), name='<?= $SPEC->lookup_lower ?>_create'),
+    path('lookup/<int:pk>/update/', views.<?= $SPEC->lookup_title ?>Update.as_view(), name='<?= $SPEC->lookup_lower ?>_update'),
+    path('lookup/<int:pk>/delete/', views.<?= $SPEC->lookup_title ?>Delete.as_view(), name='<?= $SPEC->lookup_lower ?>_delete'),
 ]
 </pre>
 </p>
@@ -285,7 +288,7 @@ for your views. You do not need to make a form if you are for any view that exte
 generic views create a Form objects for each view automatically.
 </li>
 <li>
-Add the appropriate templates to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b> following the naming
+Copy and adapt the appropriate templates to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b> following the naming
 conventions for the templates.
 </li><li>
 If you have not already done so,
