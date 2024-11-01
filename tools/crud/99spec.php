@@ -250,7 +250,7 @@ You should change the 'name=' values and class name on the paths from the
 sample application as follows so you don't conflict with the 'autos' application:
 <pre>
 urlpatterns = [
-    path('', views.<?= $SPEC->main_title ?>List.as_view(), name='all'),
+    path('', views.MainView.as_view(), name='all'),
     path('main/create/', views.<?= $SPEC->main_title ?>Create.as_view(), name='<?= $SPEC->main_lower ?>_create'),
     path('main/&lt;int:pk&gt;/update/', views.<?= $SPEC->main_title ?>Update.as_view(), name='<?= $SPEC->main_lower ?>_update'),
     path('main/&lt;int:pk&gt;/delete/', views.<?= $SPEC->main_title ?>Delete.as_view(), name='<?= $SPEC->main_lower ?>_delete'),
@@ -264,20 +264,19 @@ urlpatterns = [
 <?php } ?>
 
 </li>
+<?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
 <li>
 You should add a route to your <b>django_projects/mysite/mysite/urls.py</b> as follows:
 <pre>
 urlpatterns = [
-    path('', include('home.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-<?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
-    path('autos/', include('autos.urls')),
-<?php } ?>
+
+    ... Keep all the url patterns you already have and add a pattern for this application
+
     path('<?= $SPEC->main_lower_plural ?>/', include('<?= $SPEC->main_lower_plural ?>.urls')),
 ]
 </pre>
 </li>
+<?php } ?>
 <li>
 Edit the <b><?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views for the
 list, edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
