@@ -256,8 +256,8 @@ urlpatterns = [
     path('main/&lt;int:pk&gt;/delete/', views.<?= $SPEC->main_title ?>Delete.as_view(), name='<?= $SPEC->main_lower ?>_delete'),
     path('lookup/', views.<?= $SPEC->lookup_title ?>View.as_view(), name='<?= $SPEC->lookup_lower ?>_list'),
     path('lookup/create/', views.<?= $SPEC->lookup_title ?>Create.as_view(), name='<?= $SPEC->lookup_lower ?>_create'),
-    path('lookup/<int:pk>/update/', views.<?= $SPEC->lookup_title ?>Update.as_view(), name='<?= $SPEC->lookup_lower ?>_update'),
-    path('lookup/<int:pk>/delete/', views.<?= $SPEC->lookup_title ?>Delete.as_view(), name='<?= $SPEC->lookup_lower ?>_delete'),
+    path('lookup/&lt;int:pk&gt;/update/', views.<?= $SPEC->lookup_title ?>Update.as_view(), name='<?= $SPEC->lookup_lower ?>_update'),
+    path('lookup/&lt;int:pk&gt;/delete/', views.<?= $SPEC->lookup_title ?>Delete.as_view(), name='<?= $SPEC->lookup_lower ?>_delete'),
 ]
 </pre>
 </p>
