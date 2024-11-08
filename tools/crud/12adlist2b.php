@@ -23,7 +23,8 @@ $now = date('H:i:s');
 line_out("Building Classified Ad Site #2");
 
 ?>
-<a href="../../assn/dj4e_ads2b.md" target="_blank">
+Specification:
+<a href="../../assn/dj4e_ads2b.md" class="btn btn-info" target="_blank">
 https://www.dj4e.com/assn/dj4e_ads2b.md</a>
 </a>
 <p>
