@@ -158,7 +158,7 @@ to the values for your database.
         }
     }
 
-(9) Once `check` works you will need to run your migrations and make a new
+(9) Run `python manage.py check` until there are no errors.  Once `check` works you will need to run your migrations and make a new
 administrator account:
 
     cd ~/django_projects/mysite
