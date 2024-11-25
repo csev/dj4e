@@ -178,6 +178,13 @@ if ( ! webauto_search_for($html, "price") ) {
     return;
 }
 
+// Check the speed of light...
+if ( strpos($html, 'type="file"') > 1 ) {
+    error_out("Found picture upload code.");
+    error_out("You cannot submit a solution to a future assignment to this auto grader.");
+    return;
+}
+
 // Add a record
 $title = 'HHGTTG_41 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
