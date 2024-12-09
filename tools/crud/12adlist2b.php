@@ -102,7 +102,7 @@ if ( ! webauto_testrun($url) ) {
 
     if ( ! webauto_search_for($html, $ad_title) ) {
         error_out('Could not find an ad with a title of: '.$ad_title);
-        error_out('Auto grading will not continue until you manually add a title as desceibed above.');
+        error_out('Auto grading will not continue until you manually add a title as described above.');
         error_out('');
         return;
     }
