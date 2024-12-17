@@ -128,7 +128,7 @@ function webauto_check_test() {
     $meta = '<meta name="dj4e" content="'.$check.'">';
     $adminpw = 'dj4e_42_!';
     $useraccount = 'dj4e_user1';
-    $userpw = 'Meow_81e728_41!';
+    $userpw = 'Meow_81e728_41';
     $user1account = 'dj4e_user1';
     $user1pw = 'Meow_81e728_41';
     $user2account = 'dj4e_user2';
