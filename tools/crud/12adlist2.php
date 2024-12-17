@@ -209,7 +209,13 @@ webauto_search_for_menu($html);
 // Use the comment form
 line_out('Looking for comment form and submit button.');
 $form = webauto_get_form_with_button($crawler,'Submit');
-webauto_change_form($form, 'comment', $title."_comment");
+
+// Use the comment form - sometimes the field is "comment" and sometimes it is "text"
+if ( strpos($html, '"comment"') > 0 ) {
+  webauto_change_form($form, 'comment', $title."_comment");
+} else {
+  webauto_change_form($form, 'text', $title."_comment");
+}
 
 line_out('Submitting the comment form');
 $crawler = webauto_submit_form($client, $form);
