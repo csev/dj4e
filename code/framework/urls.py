@@ -1,17 +1,16 @@
 
-import mini_django
+from mini_django import HttpRequest, HttpResponse
 import views
 
 # This is similar to Django's urls.py
-def router(request: dict, response: dict):
-    path = request['path']
-    print('==== Routing to path:', path);
-    if path == '/' : 
-        views.root(request, response)
-    elif path == '/dj4e' : 
-        views.dj4e(request, response)
-    elif path == '/js4e' : 
-        views.js4e(request, response)
+def router(request: HttpRequest) -> HttpResponse:
+    print('==== Routing to path:', request.path);
+    if request.path == '/' : 
+        return views.root(request)
+    elif request.path.startswith('/dj4e') : 
+        return views.dj4e(request)
+    elif request.path == '/js4e' : 
+        return views.js4e(request)
     else :
-        views.default(request, response)
+        return views.default(request)
 
