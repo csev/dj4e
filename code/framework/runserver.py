@@ -1,4 +1,3 @@
-
 import mini_django
 import urls
 

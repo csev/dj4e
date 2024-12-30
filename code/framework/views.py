@@ -5,15 +5,17 @@ from mini_django import HttpRequest, HttpResponse
 
 def root(req: HttpRequest) -> HttpResponse:
     res = HttpResponse()
-    res.headers['Content-Type'] = 'text/plain; charset=utf-8'
+    res.headers['Content-Type'] = 'text/html; charset=utf-8'
+    res.println("<html><head></head><body>")
     res.println("This is the page at the root path, try another path")
     res.println("Try /dj4e /js4e /ca4e or /broken")
+    res.println("</body></html>")
     return res
 
 def dj4e(req: HttpRequest) -> HttpResponse:
     res = HttpResponse()
-    res.headers['Content-Type'] = 'text/html; charset=utf-8'
-    res.println("<html><body><h1>Django is fun</h1></body>")
+    res.headers['Content-Type'] = 'text/plain; charset=utf-8'
+    res.println("Django is fun")
     return res
 
 def js4e(req: HttpRequest) -> HttpResponse:

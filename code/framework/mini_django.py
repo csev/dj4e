@@ -6,6 +6,7 @@ from socket import *
 import traceback, json
 from dataclasses import dataclass
 from dataclasses import field
+import sys
 
 @dataclass
 class HttpRequest:
@@ -65,9 +66,12 @@ def responseSend(clientsocket, response: HttpResponse) :
             clientsocket.sendall(value.encode())
             clientsocket.sendall("\r\n".encode())
     
+
         clientsocket.sendall("\r\n".encode())
         chars = 0
         for line in response._body:
+            line = patchAutograder(line)
+
             chars += len(line)
             clientsocket.sendall(line.replace("\n", "\r\n").encode())
             clientsocket.sendall("\r\n".encode())
@@ -78,11 +82,26 @@ def responseSend(clientsocket, response: HttpResponse) :
         print(response)
         print(traceback.format_exc())
 
+# If we are sending HTML, include the endpoint for the DJ4E JavaScript autograder
+# For local dev testing, this can be run as
+# python runserver.py 9000 http://localhost:8888/dj4e/tools/jsauto/autograder.js
+
+def patchAutograder(line: str) -> str:
+    if line.find('</body>') == -1 : return line
+    dj4e_autograder = "https://www.dj4e.com/tools/jsauto/autograder.js"
+    if len(sys.argv) > 2 :
+        dj4e_autograder = sys.argv[2]
+    return line.replace('</body>', '\n<script src="'+dj4e_autograder+'"></script>\n</body>');
 
 def httpServer(router):
+    port = 9000
+    if len(sys.argv) > 1 :
+        port = int(sys.argv[1])
+
+    print('\n================ Starting mini_django server on '+str(port))
     serversocket = socket(AF_INET, SOCK_STREAM)
     try :
-        serversocket.bind(('localhost',9000))
+        serversocket.bind(('localhost',port))
         serversocket.listen(5)
         while(1):
             print('\n================ Waiting for the Next Request')
