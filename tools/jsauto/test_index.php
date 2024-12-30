@@ -18,7 +18,7 @@ Placeholder
 <br/>
 <center>
 <script>
-document.write('<iframe style="width:95%; height=800px;" id="myframe"');
+document.write('<iframe style="width:95%; height:600;" id="myframe"');
 document.write('src="'+baseurl+'">');
 document.write('</iframe>');
 </script>

@@ -31,7 +31,7 @@ def parseRequest(rd:str) -> HttpRequest:
     if ipos < 1 : 
         print('Incorrectly formatted request input')
         print(repr(rd))
-        return Null
+        return None
 
     # Find the blank line between HEAD and BODY
     head = rd[0:ipos-1]
