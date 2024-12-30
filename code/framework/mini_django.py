@@ -3,7 +3,7 @@
 # https://stackoverflow.com/questions/10091271/how-can-i-implement-a-simple-web-server-using-python-without-using-any-libraries
 
 from socket import *
-import traceback
+import traceback, json
 from dataclasses import dataclass
 from dataclasses import field
 
@@ -66,16 +66,20 @@ def responseSend(clientsocket, response: HttpResponse) :
             clientsocket.sendall("\r\n".encode())
     
         clientsocket.sendall("\r\n".encode())
+        chars = 0
         for line in response._body:
+            chars += len(line)
             clientsocket.sendall(line.replace("\n", "\r\n").encode())
             clientsocket.sendall("\r\n".encode())
+        print("==== Sent",chars,"characters body output")
+
     except Exception as exc :
         print(exc)
         print(response)
         print(traceback.format_exc())
 
 
-def httpServer(handler):
+def httpServer(router):
     serversocket = socket(AF_INET, SOCK_STREAM)
     try :
         serversocket.bind(('localhost',9000))
@@ -89,14 +93,17 @@ def httpServer(handler):
             print(rd)
             request = parseRequest(rd)
 
-            response = handler(request)
-            if not isinstance(response, HttpResponse) :
-                print(" ")
-                print("Response returned from handler is not of type HttpResponse")
-                print(response)
-                response = HttpResponse()
-                response.println("Response is not of type HttpResponse")
-                response.code = "500"
+            # If we did not get a valid request, send a 500
+            if not isinstance(request, HttpRequest) :
+                response = view_fail(request, "500", "Request could not be parsed")
+
+            # Send valid request to the router (urls.py)
+            else:
+                response = router(request)
+
+                # If we did not get a valid response, log it and send back a 500
+                if not isinstance(response, HttpResponse) :
+                    response = view_fail(request, "500", "Response returned from router / view is not of type HttpResponse")
 
             try:
                 responseSend(clientsocket, response)
@@ -113,5 +120,33 @@ def httpServer(handler):
 
     print("Closing socket")
     serversocket.close()
+
+def view_fail(req: HttpRequest, code: str, failure: str) -> HttpResponse:
+    res = HttpResponse()
+
+    print(" ")
+    print("Sending view_fail, code="+code+" failure="+failure)
+
+    res.code = code
+
+    res.headers['Content-Type'] = 'text/html; charset=utf-8'
+
+    res.println('<html><body>')
+    if res.code == "404" :
+        res.println('<div style="background-color: rgb(255, 255, 204);">')
+    else :
+        res.println('<div style="background-color: pink;">')
+
+    res.println('<b>Page has errors</b>')
+    res.println('<div><b>Request Method:</b> '+req.method+"</div>")
+    res.println('<div><b>Request URL:</b> '+req.path+'</div>')
+    res.println('<div><b>Response Failure:</b> '+failure+'</div>')
+    res.println('<div><b>Response Code:</b> '+res.code+'</div>')
+    res.println("</div><pre>")
+    res.println("Valid paths: /dj4e /js4e or /404")
+    res.println("\nRequest header data:")
+    res.println(json.dumps(req.headers, indent=4))
+    res.println("</pre></body></html>")
+    return res
 
 
