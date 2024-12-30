@@ -54,20 +54,26 @@ def parseRequest(rd:str) -> HttpRequest:
 
 def responseSend(clientsocket, response: HttpResponse) :
 
-    print('==== Sending Response Headers')
-    firstline = "HTTP/1.1 "+response.code+" OK\r\n"
-    clientsocket.sendall(firstline.encode())
-    for key, value in response.headers.items():
-        print(key+': '+value)
-        clientsocket.sendall(key.encode())
-        clientsocket.sendall(": ".encode())
-        clientsocket.sendall(value.encode())
+    try:
+        print('==== Sending Response Headers')
+        firstline = "HTTP/1.1 "+response.code+" OK\r\n"
+        clientsocket.sendall(firstline.encode())
+        for key, value in response.headers.items():
+            print(key+': '+value)
+            clientsocket.sendall(key.encode())
+            clientsocket.sendall(": ".encode())
+            clientsocket.sendall(value.encode())
+            clientsocket.sendall("\r\n".encode())
+    
         clientsocket.sendall("\r\n".encode())
+        for line in response._body:
+            clientsocket.sendall(line.replace("\n", "\r\n").encode())
+            clientsocket.sendall("\r\n".encode())
+    except Exception as exc :
+        print(exc)
+        print(response)
+        print(traceback.format_exc())
 
-    clientsocket.sendall("\r\n".encode())
-    for line in response._body:
-        clientsocket.sendall(line.replace("\n", "\r\n").encode())
-        clientsocket.sendall("\r\n".encode())
 
 def httpServer(handler):
     serversocket = socket(AF_INET, SOCK_STREAM)
@@ -84,6 +90,13 @@ def httpServer(handler):
             request = parseRequest(rd)
 
             response = handler(request)
+            if not isinstance(response, HttpResponse) :
+                print(" ")
+                print("Response returned from handler is not of type HttpResponse")
+                print(response)
+                response = HttpResponse()
+                response.println("Response is not of type HttpResponse")
+                response.code = "500"
 
             try:
                 responseSend(clientsocket, response)
