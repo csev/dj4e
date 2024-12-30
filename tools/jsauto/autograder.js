@@ -47,6 +47,12 @@ window.addEventListener(
   "message",
   (event) => {
     console.log('in frame event', event);
+    if ( event.data.command == 'ping' ) {
+        const retval ={'text': event.data.text};
+        console.log('returning', retval);
+        event.source.postMessage(retval, event.origin);
+        return;
+    }
     if ( event.data.command == 'getdomsize' ) {
         console.log(document.documentElement.clientWidth, document.documentElement.clientHeight);
         const retval ={'width': document.documentElement.clientWidth, 'height': document.documentElement.clientHeight};

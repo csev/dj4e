@@ -32,6 +32,7 @@ var currentStep = -1;
 var json = `
 	{
     "steps" : [
+        {"command": "ping", "text": "42" },
         {"command": "switchurl", "text": "/owner" },
         {"command": "searchfor", "text": "Hello"},
         {"command": "searchforwarn", "text": "A12345"},
@@ -54,6 +55,14 @@ window.addEventListener(
     const step = steps[currentStep];
     console.log('in parent', event, step);
     // Processing here...
+    if ( step.command == "ping" ) {
+        console.log('event.data', event.data);
+        if ( event.data.text == 42 ) {
+            console.log("Ping success");
+        } else {
+            console.log("Ping fail");
+        }
+    }
     moveToNextStep();
   },
   false,
