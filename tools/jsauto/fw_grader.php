@@ -34,13 +34,11 @@ switch($step) {
 case "P01":
     $text = $response->text;
     if ( $text == "42" ) error_log("Groovy!");
-    error_log($text);
     echo(json_encode($steps[1]));
     break;
 
 case "P02":
     $text = $response->text;
-    error_log($text);
     echo(json_encode($steps[0]));
     break;
 
