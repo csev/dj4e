@@ -17,8 +17,11 @@ $check = webauto_get_check();
 ?>
 Add the following to your <b>mysite/polls/views.py</b> with the required information above.
 <pre>
-    def owner(request):
-       return HttpResponse("Hello, world. <?= $check ?> is the polls index.")
+    from django.http import HttpRequest
+    def owner(request: HttpRequest) -&gt; HttpResponse:
+        response = HttpResponse()
+        response.write("Hello, world. <?= $check ?> is the polls index.")
+        return response
 </pre>
 Make sure to check the file <b>mysite/polls/urls.py</b> to insure that the 
 the path to the <b>owner</b> view is properly routed:
