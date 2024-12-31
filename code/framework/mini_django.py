@@ -42,8 +42,8 @@ def parseRequest(rd:str) -> HttpRequest:
         firstline = lines[0]
         pieces = firstline.split(' ')
         if len(pieces) >= 2 :
-            retval.method = pieces[0]
-            retval.path = pieces[1]
+            retval.method = pieces[0] or 'Missing';
+            retval.path = pieces[1] or 'Missing';
 
     # Accept-Language: en-US,en;q=0.5
     for line in lines:
