@@ -100,6 +100,7 @@ fetch('fw_grader.php') // api for the get request
         console.log('First step', step)
         currentStep = step;
         document.getElementById('nextjson').disabled = false;
+        document.getElementById('stepinfo').textContent = step.message;
     });
 
 

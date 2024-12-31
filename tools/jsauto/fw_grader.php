@@ -20,7 +20,7 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
 switch($step) {
 
 case "P00":
-    $retval = '{"step": "P01", "command": "ping", "text": "42"}';
+    $retval = '{"step": "P01", "command": "ping", "text": "42", "message": "Check for correct page load"}';
     break;
 
 case "P01":
@@ -30,12 +30,10 @@ case "P01":
     break;
 
 case "P02":
-    $text = $response->text;
-    $retval = '{"step": "P03", "command": "ping", "text": "42", "message": "Check for correct page load"}';
+    $retval = '{"step": "P03", "command": "searchfor", "text": "404", "message": "Check for 404 in returned text"}';
     break;
 
 case "P03":
-    $text = $response->text;
     $retval = '{"step": "P04", "command": "switchurl", "text": "/", "message": "Switch to / url"}';
     break;
 
@@ -44,12 +42,11 @@ case "P04":
     break;
 
 case "P05":
-    $text = $response->text;
     $retval = '{"step": "P06", "command": "switchurl", "text": "/broken", "message": "Switch to /broken url"}';
     break;
 
 case "P06":
-    $retval = '{"step": "P07", "command": "ping", "text": "42", "message": "Check for correct page load"}';
+    $retval = '{"step": "P07", "command": "searchfor", "text": "500", "message": "Check for 500 in returned text"}';
     break;
 
 case "P07":
