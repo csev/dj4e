@@ -102,16 +102,23 @@ $baseUrl = "http://localhost:9000";
 var baseurl = "<?= $baseUrl ?>";
 </script>
 
+<p>
 Url to test:
 <input type="text" name="baseurl" style="width:60%;" value="<?= $baseUrl ?>"
-/></br>
-
+/>
+</p>
+<p>
 <button onclick="doNextStep();" id="nextjson" disabled>Run Next Step:</button>
 <span id="stepinfo">
 Placeholder
 </span>
+</p>
+<p>
+<span id="currentUrl">
+</span>
+<span id="currentStep">
+</p>
 
-<br/>
 <center>
 <iframe style="width:95%; height:600px;" id="myframe" src="<?= $baseUrl ?>">
 </iframe>
@@ -183,6 +190,7 @@ function doNextStep() {
             currenturl = (baseurl + currentStep.text);
             console.log('Switching to', currenturl);
             document.getElementById('myframe').src = currenturl;
+            document.getElementById('currentUrl').textContent = currenturl;
             advanceStep({"text": "success"});
             return;
     }
@@ -200,6 +208,7 @@ fetch('<?php echo(addSession('fw_grader.php')) ?>')
         currentStep = step;
         document.getElementById('nextjson').disabled = false;
         document.getElementById('stepinfo').textContent = step.message;
+        document.getElementById('currentUrl').textContent = baseurl;
     });
 
 
