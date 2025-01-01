@@ -2,7 +2,7 @@
 
 $REGISTER_LTI2 = array(
 "name" => "Django JavaScript Autograder",
-"FontAwesome" => "fa-js",
+"FontAwesome" => "fa-joomla",
 "short_name" => "JavaScript Autograder",
 "description" => "This is an autograder for Django assignments from www.dj4e.com.",
 "messages" => array("launch", "launch_grade")

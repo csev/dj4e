@@ -26,6 +26,16 @@ if ( SettingsForm::isSettingsPost() ) {
     return;
 }
 
+// All the assignments we support
+$assignments = array(
+    'tutorial01.php' => 'Writing your first Django app, (part 1)',
+    'tutorial02.php' => 'Models and administration (part 2)',
+    'tutorial03.php' => 'Writing your first Django app (part 3)',
+    'tutorial04.php' => 'Writing your first Django app (part 4)',
+    'hello05.php' => 'Hello world / sessions',
+    'guess.php' => 'A guessing game',
+);
+
 $LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
 $assn = Settings::linkGet('exercise');
 $delay = Settings::linkGet('delay');
@@ -67,32 +77,51 @@ if ( $LAUNCH->link && $LAUNCH->user && $LAUNCH->user->instructor ) {
 // View
 $OUTPUT->header();
 
+$OUTPUT->bodyStart();
+$OUTPUT->topNav($menu);
+
+// Settings button and dialog
+
+if ( $LAUNCH->user->instructor ) {
+    SettingsForm::start();
+    SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
+    SettingsForm::text('delay',__('The number of seconds between retries.  Leave blank or set to zero to allow immediate retries.'));
+    SettingsForm::text('delay_tries',__('The number of attmpts before the delay kicks in.  Leave blank or set to zero to trigger immediate delays.'));
+    SettingsForm::dueDate();
+    SettingsForm::done();
+    SettingsForm::end();
+}
+
+$OUTPUT->flashMessages();
+
+$baseUrl = "http://localhost:9000";
 ?>
 <h1>JavaScript Autograder</h1>
 
 <script>
-// var baseurl = "https://djtutorial.dj4e.com/polls4/";
-var baseurl = "http://localhost:9000";
+var baseurl = "<?= $baseUrl ?>";
 </script>
 
 Url to test:
-<input type="text" name="baseurl" style="width:60%;" value="http://localhost:9000"
+<input type="text" name="baseurl" style="width:60%;" value="<?= $baseUrl ?>"
 /></br>
 
-<button onclick="doNextStep();" id="nextjson" disabled>Next JSON</button>
+<button onclick="doNextStep();" id="nextjson" disabled>Run Next Step:</button>
 <span id="stepinfo">
 Placeholder
 </span>
 
 <br/>
 <center>
-<script>
-document.write('<iframe style="width:95%; height:600;" id="myframe"');
-document.write('src="'+baseurl+'">');
-document.write('</iframe>');
-</script>
+<iframe style="width:95%; height:600px;" id="myframe" src="<?= $baseUrl ?>">
+</iframe>
 </center>
 
+<?php
+
+$OUTPUT->footerStart();
+
+?>
 
 <script>
 var currenturl = baseurl;
@@ -178,5 +207,5 @@ fetch('<?php echo(addSession('fw_grader.php')) ?>')
 </script>
 <?php
 
-$OUTPUT->footer();
+$OUTPUT->footerEnd();
 
