@@ -159,6 +159,22 @@ var currentUrl = baseurl;
 var currentStep;
 var currentStepCount = 0;
 
+var postMessageTimeout = false;
+
+function stopWithError(message) {
+    console.error('Test halted', message);
+    document.getElementById('stepinfo').textContent = message;
+    document.getElementById('nextstep').disabled = true;
+    document.getElementById('nextstep').classList.remove("btn-primary");
+    document.getElementById('nextstep').classList.add("btn-danger");
+    addResultLog(message);
+}
+
+function postMessageFail () {
+    error_message = "Error communicating message to autograder within frame";
+    stopWithError(error_message);
+}
+
 function advanceStep(responseObject) {
 
     const bodystr = JSON.stringify({
@@ -249,8 +265,14 @@ function doNextStep() {
     }
     console.log('Sending...', currentStep, currentUrl);
     addResultLog("In Progress");
-    document.getElementById('myframe').contentWindow.postMessage(currentStep, currentUrl);
-    console.log('sent...');
+    try {
+        document.getElementById('myframe').contentWindow.postMessage(currentStep, currentUrl);
+        console.log('sent...');
+        postMessageTimeout = setTimeout(postMessageFail, 3000);
+        document.getElementById('nextstep').disabled = true;
+    } catch (error) {
+        stopWithError("Error sending message to autograder within frame:" + error);
+    }
 }
 
 console.log("loading the first step");
@@ -275,14 +297,7 @@ fetch('<?php echo(addSession($assn)) ?>')
         document.getElementById('nextstep').disabled = false;
         document.getElementById('currentUrl').textContent = baseurl;
     }).catch(error => {
-        // Handle any errors
-        const error_message = 'Network Error:' + error;
-        addResultLog(error_message);
-        document.getElementById('stepinfo').textContent = error_message;
-        document.getElementById('nextstep').disabled = true;
-        document.getElementById('nextstep').classList.remove("btn-primary");
-        document.getElementById('nextstep').classList.add("btn-danger");
-        console.error(error_message);
+        stopWithError('Network Error:' + error);
     });
 
 
