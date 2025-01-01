@@ -43,51 +43,42 @@ $stepsPassed = U::get($_SESSION, "stepspassed", array());
 
 if ( $step != 0 ) participationPoints($currentGrade, 60.0);
 
-$ret = array();
-$ret['step'] = $step+1; // Can override later
+$retval = array();
+$retval['step'] = $step+1; // Can override later
 
-switch($step) {
-case 0:
-    $retval = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
-    break;
+$checkstep = 0;
 
-case 1:
+if ( $step == $checkstep++ ) {
+    $nextstep = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
+
+} else if ( $step == $checkstep++ ) {
     $text = $response->text;
     if ( $text == "42" ) requiredPoints($currentGrade, $step, 20);
-    $retval = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
-    break;
+    $nextstep = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
 
-case 2:
-    $retval = '{"command": "searchfor", "text": "404", "message": "Check for 404 in returned text"}';
-    break;
+} else if ( $step == $checkstep++ ) {
+    $nextstep = '{"command": "searchfor", "text": "404", "message": "Check for 404 in returned text"}';
 
-case 3:
+} else if ( $step == $checkstep++ ) {
     requiredPoints($currentGrade, $step, 20);
-    $retval = '{"command": "switchurl", "text": "/", "message": "Switch to / url"}';
-    break;
+    $nextstep = '{"command": "switchurl", "text": "/", "message": "Switch to / url"}';
 
-case 4:
-    $retval = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
-    break;
+} else if ( $step == $checkstep++ ) {
+    $nextstep = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
 
-case 5:
-    $retval = '{"command": "switchurl", "text": "/broken", "message": "Switch to /broken url"}';
-    break;
+} else if ( $step == $checkstep++ ) {
+    $nextstep = '{"command": "switchurl", "text": "/broken", "message": "Switch to /broken url"}';
 
-case 6:
-    $retval = '{"command": "searchfor", "text": "500", "message": "Check for 500 in returned text"}';
-    break;
+} else if ( $step == $checkstep++ ) {
+    $nextstep = '{"command": "searchfor", "text": "500", "message": "Check for 500 in returned text"}';
 
-case 7:
+} else if ( $step == $checkstep++ ) {
     requiredPoints($currentGrade, $step, 20);
-    $ret['step'] = 2; // Loop around
-    $retval = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
-    break;
+    $retval['step'] = 2; // Loop around
+    $nextstep = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
 
-default:
-
-    $retval = '{"command": "stop", "text": "bad state", "message": "Fell into invalid state"}';
-    break;
+} else {
+    $nextstep = '{"command": "stop", "text": "bad state", "message": "Fell into invalid state"}';
 }
 
 // $gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
@@ -95,10 +86,10 @@ default:
 
 if ( $currentGrade != $oldGrade ) $_SESSION["currentgrade"] = $currentGrade;
 
-$ret['grade'] = $currentGrade;
-$command = json_decode($retval, true);
-$tosend = array_merge($ret, $command);
-$tosendstr = json_encode($tosend);
+$retval['grade'] = $currentGrade;
+$nextstep = json_decode($nextstep, true);
+$retval = array_merge($retval, $nextstep);
 
-error_log("Next step: ".$tosendstr);
-echo($tosendstr);
+$retval = json_encode($retval);
+error_log("Next step: ".$retval);
+echo($retval);
