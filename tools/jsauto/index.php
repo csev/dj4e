@@ -171,6 +171,8 @@ function stopWithError(message) {
 }
 
 function postMessageFail () {
+    if ( postMessageTimeout ) clearTimeout(postMessageTimeout);
+    postMessageTimeout = false;
     error_message = "Error communicating message to autograder within frame";
     stopWithError(error_message);
 }
@@ -209,7 +211,7 @@ function advanceStep(responseObject) {
         currentStepCount += 1;
         addResultLog("Ready");
         document.getElementById('stepinfo').textContent = data.message;
-
+        document.getElementById('nextstep').disabled = false;
      })
      .catch(error => {
         // Handle any errors
@@ -237,6 +239,9 @@ window.addEventListener(
   "message",
   (event) => {
     console.log('in parent', event, currentStep);
+
+    if ( postMessageTimeout ) clearTimeout(postMessageTimeout);
+    postMessageTimeout = false;
 
     advanceStep(event.data);
 
@@ -268,7 +273,7 @@ function doNextStep() {
     try {
         document.getElementById('myframe').contentWindow.postMessage(currentStep, currentUrl);
         console.log('sent...');
-        postMessageTimeout = setTimeout(postMessageFail, 3000);
+        postMessageTimeout = setTimeout(postMessageFail, 5000);
         document.getElementById('nextstep').disabled = true;
     } catch (error) {
         stopWithError("Error sending message to autograder within frame:" + error);
