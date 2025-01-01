@@ -1,5 +1,12 @@
 <?php
 
+require_once "../config.php";
+
+use \Tsugi\Util\U;
+use \Tsugi\Core\LTIX;
+
+$LAUNCH = LTIX::requireData();
+
 header("Content-type:application/json");
 
 function isValidJSON($str) {
@@ -14,50 +21,84 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
     $step = $decoded_input->step->step;
     $response = $decoded_input->response;
 } else {
-    $step = "P00";
+    $step = 0;
 }
 
+function participationPoints(&$currentGrade, $maxParticipationPoints) {
+    if ( $currentGrade >= 100.0 ) return;
+    if ( $currentGrade < $maxParticipationPoints) $currentGrade += 10.0;
+}
+
+function requiredPoints(&$currentGrade, $step, $points) {
+    if ( $currentGrade >= 100.0 ) return;
+    // Check if this step already counted
+    $currentGrade += $points;
+    if ( $currentGrade >= 100.0 ) $currentGrade = 100.0;
+}
+
+$currentGrade = U::get($_SESSION, "currentgrade", 0.0);
+$oldGrade = $currentGrade;
+$gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
+$stepsPassed = U::get($_SESSION, "stepspassed", array());
+
+if ( $step != 0 ) participationPoints($currentGrade, 60.0);
+
+$ret = array();
+$ret['step'] = $step+1; // Can override later
+
 switch($step) {
-
-case "P00":
-    $retval = '{"step": "P01", "command": "ping", "text": "42", "message": "Check for correct page load"}';
+case 0:
+    $retval = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
     break;
 
-case "P01":
+case 1:
     $text = $response->text;
-    if ( $text == "42" ) error_log("Groovy!");
-    $retval = '{"step": "P02", "command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
+    if ( $text == "42" ) requiredPoints($currentGrade, $step, 20);
+    $retval = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
     break;
 
-case "P02":
-    $retval = '{"step": "P03", "command": "searchfor", "text": "404", "message": "Check for 404 in returned text"}';
+case 2:
+    $retval = '{"command": "searchfor", "text": "404", "message": "Check for 404 in returned text"}';
     break;
 
-case "P03":
-    $retval = '{"step": "P04", "command": "switchurl", "text": "/", "message": "Switch to / url"}';
+case 3:
+    requiredPoints($currentGrade, $step, 20);
+    $retval = '{"command": "switchurl", "text": "/", "message": "Switch to / url"}';
     break;
 
-case "P04":
-    $retval = '{"step": "P05", "command": "ping", "text": "42", "message": "Check for correct page load"}';
+case 4:
+    $retval = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
     break;
 
-case "P05":
-    $retval = '{"step": "P06", "command": "switchurl", "text": "/broken", "message": "Switch to /broken url"}';
+case 5:
+    $retval = '{"command": "switchurl", "text": "/broken", "message": "Switch to /broken url"}';
     break;
 
-case "P06":
-    $retval = '{"step": "P07", "command": "searchfor", "text": "500", "message": "Check for 500 in returned text"}';
+case 6:
+    $retval = '{"command": "searchfor", "text": "500", "message": "Check for 500 in returned text"}';
     break;
 
-case "P07":
-    $retval = '{"step": "P02", "command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
+case 7:
+    requiredPoints($currentGrade, $step, 20);
+    $ret['step'] = 2; // Loop around
+    $retval = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
     break;
 
 default:
 
-    $retval = "Yada!";
+    $retval = '{"command": "stop", "text": "bad state", "message": "Fell into invalid state"}';
     break;
 }
 
-error_log("Next step: ".$retval);
-echo($retval);
+// $gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
+// $stepsPassed = U::get($_SESSION, "stepspassed", array());
+
+if ( $currentGrade != $oldGrade ) $_SESSION["currentgrade"] = $currentGrade;
+
+$ret['grade'] = $currentGrade;
+$command = json_decode($retval, true);
+$tosend = array_merge($ret, $command);
+$tosendstr = json_encode($tosend);
+
+error_log("Next step: ".$tosendstr);
+echo($tosendstr);

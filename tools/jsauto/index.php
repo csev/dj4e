@@ -57,11 +57,7 @@ if ( $delay >= 0 && $when > 0 && $tries > $delay_tries) {
 
 // Get any due date information
 $dueDate = SettingsForm::getDueDate();
-// Let the assignment handle the POST
-if ( count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
-    require($assn);
-    return;
-}
+$penalty = $dueDate->penalty;
 
 $menu = false;
 if ( $LAUNCH->link && $LAUNCH->user && $LAUNCH->user->instructor ) {
@@ -94,6 +90,11 @@ if ( $LAUNCH->user->instructor ) {
 
 $OUTPUT->flashMessages();
 
+if ( $dueDate->message ) {
+    echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
+}
+
+
 $baseUrl = "http://localhost:9000";
 ?>
 <div id="tabs">
@@ -109,7 +110,7 @@ Url to test:
 />
 </p>
 <p>
-<button onclick="doNextStep();" id="nextjson" disabled>Run Next Step:</button>
+<button onclick="doNextStep();" id="nextstep" class="btn btn-primary" disabled>Run Next Step:</button>
 <span id="stepinfo">
 Placeholder
 </span>
@@ -169,7 +170,16 @@ function advanceStep(responseObject) {
         },
         body: bodystr,
       })
-      .then(response => response.json())
+      .then(response => response.text())
+      .then(body => {
+          try {
+              return JSON.parse(body);
+          } catch (error) {
+              console.log("Error Parsing JSON response from server:");
+              console.log(body);
+              throw error;
+          }
+      })
       .then(data => {
         // Handle the response data
         addResultLog("Completed");
@@ -181,8 +191,12 @@ function advanceStep(responseObject) {
 
      })
      .catch(error => {
-       // Handle any errors
-       console.error('Error:', error);
+        // Handle any errors
+        document.getElementById('stepinfo').textContent = 'Network Error:' + error;
+        document.getElementById('nextstep').disabled = true;
+        document.getElementById('nextstep').classList.remove("btn-primary");
+        document.getElementById('nextstep').classList.add("btn-danger");
+        console.error('Error:', error);
      });
 }
 
@@ -191,7 +205,10 @@ function addResultLog(message) {
     if ( $('#'+resultId).length == 0 ) {
         $("#resultlog").append("<li id=\""+resultId+"\">last item</li>");
     }
-    const result = message + ": " + currentStep.message;
+    var result = message;
+    if ( currentStep ) {
+        result = message + ": " + currentStep.message + " (" + currentStep.grade + " points)";
+    }
     document.getElementById(resultId).textContent = result;
 }
 
@@ -233,15 +250,34 @@ function doNextStep() {
 
 console.log("loading the first step");
 // Get the first currentStep
+currentStep = false;
 fetch('<?php echo(addSession('fw_grader.php')) ?>')
-    .then(response => response.json())
+    .then(response => response.text())
+    .then(body => {
+        try {
+            return JSON.parse(body);
+        } catch (error) {
+            console.log("Error Parsing JSON response from server:");
+            console.log(body);
+            throw error;
+        }
+    })
     .then(step => {
         console.log('First step', step)
         currentStep = step;
         addResultLog("Ready");
-        document.getElementById('nextjson').disabled = false;
         document.getElementById('stepinfo').textContent = step.message;
+        document.getElementById('nextstep').disabled = false;
         document.getElementById('currentUrl').textContent = baseurl;
+    }).catch(error => {
+        // Handle any errors
+        const error_message = 'Network Error:' + error;
+        addResultLog(error_message);
+        document.getElementById('stepinfo').textContent = error_message;
+        document.getElementById('nextstep').disabled = true;
+        document.getElementById('nextstep').classList.remove("btn-primary");
+        document.getElementById('nextstep').classList.add("btn-danger");
+        console.error(error_message);
     });
 
 
