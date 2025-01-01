@@ -28,12 +28,7 @@ if ( SettingsForm::isSettingsPost() ) {
 
 // All the assignments we support
 $assignments = array(
-    'tutorial01.php' => 'Writing your first Django app, (part 1)',
-    'tutorial02.php' => 'Models and administration (part 2)',
-    'tutorial03.php' => 'Writing your first Django app (part 3)',
-    'tutorial04.php' => 'Writing your first Django app (part 4)',
-    'hello05.php' => 'Hello world / sessions',
-    'guess.php' => 'A guessing game',
+    'mini_01.php' => 'Testing the mini_django framework out of the box',
 );
 
 $LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
@@ -89,6 +84,16 @@ if ( $LAUNCH->user->instructor ) {
 }
 
 $OUTPUT->flashMessages();
+
+if ( ! is_string($assn) ) {
+    if ( $USER->instructor ) {
+        echo("<p>Please use settings to select an assignment for this tool.</p>\n");
+    } else {
+        echo("<p>This tool needs to be configured - please see your instructor.</p>\n");
+    }
+    $OUTPUT->footer();
+    return;
+}
 
 if ( $dueDate->message ) {
     echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
@@ -163,7 +168,7 @@ function advanceStep(responseObject) {
 
     console.log("Body ", bodystr);
 
-    fetch('<?php echo(addSession('fw_grader.php')) ?>', {
+    fetch('<?php echo(addSession($assn)) ?>', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -251,7 +256,7 @@ function doNextStep() {
 console.log("loading the first step");
 // Get the first currentStep
 currentStep = false;
-fetch('<?php echo(addSession('fw_grader.php')) ?>')
+fetch('<?php echo(addSession($assn)) ?>')
     .then(response => response.text())
     .then(body => {
         try {
