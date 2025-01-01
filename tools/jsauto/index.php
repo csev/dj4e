@@ -96,12 +96,13 @@ $OUTPUT->flashMessages();
 
 $baseUrl = "http://localhost:9000";
 ?>
-<h1>JavaScript Autograder</h1>
-
-<script>
-var baseurl = "<?= $baseUrl ?>";
-</script>
-
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">AutoGrader</a></li>
+    <li><a href="#tabs-2">Instructions</a></li>
+    <li><a href="#tabs-3">Result Log</a></li>
+  </ul>
+  <div id="tabs-1">
 <p>
 Url to test:
 <input type="text" name="baseurl" style="width:60%;" value="<?= $baseUrl ?>"
@@ -124,6 +125,17 @@ Placeholder
 </iframe>
 </center>
 
+  </div>
+  <div id="tabs-2">
+Instructions go here.
+  </div>
+  <div id="tabs-3">
+<ol id="resultlog">
+<li>Test started at <?= $baseUrl ?> (<?= date('l jS \of F Y h:i:s A'); ?>)</li>
+</ul>
+</div>
+</div>
+
 <?php
 
 $OUTPUT->footerStart();
@@ -131,9 +143,15 @@ $OUTPUT->footerStart();
 ?>
 
 <script>
-var currenturl = baseurl;
+$( function() {
+    $( "#tabs" ).tabs();
+} );
 
+var baseurl = "<?= $baseUrl ?>";
+
+var currentUrl = baseurl;
 var currentStep;
+var currentStepCount = 0;
 
 function advanceStep(responseObject) {
 
@@ -154,8 +172,11 @@ function advanceStep(responseObject) {
       .then(response => response.json())
       .then(data => {
         // Handle the response data
+        addResultLog("Completed");
         console.log('Next Step', data);
         currentStep = data;
+        currentStepCount += 1;
+        addResultLog("Ready");
         document.getElementById('stepinfo').textContent = data.message;
 
      })
@@ -163,6 +184,15 @@ function advanceStep(responseObject) {
        // Handle any errors
        console.error('Error:', error);
      });
+}
+
+function addResultLog(message) {
+    const resultId = "result_" + currentStepCount;
+    if ( $('#'+resultId).length == 0 ) {
+        $("#resultlog").append("<li id=\""+resultId+"\">last item</li>");
+    }
+    const result = message + ": " + currentStep.message;
+    document.getElementById(resultId).textContent = result;
 }
 
 window.addEventListener(
@@ -179,23 +209,25 @@ window.addEventListener(
 function newUrl(newurl) {
     console.log("Switching to new url", newurl);
     baseurl = newurl;
-    currenturl = baseurl;
-    document.getElementById('myframe').src = currenturl;
+    currentUrl = baseurl;
+    document.getElementById('myframe').src = currentUrl;
     advanceStep({"text": "success"});
 }
 
 function doNextStep() {
     console.log(currentStep)
     if ( currentStep.command == 'switchurl' ) {
-            currenturl = (baseurl + currentStep.text);
-            console.log('Switching to', currenturl);
-            document.getElementById('myframe').src = currenturl;
-            document.getElementById('currentUrl').textContent = currenturl;
+            currentUrl = (baseurl + currentStep.text);
+            console.log('Switching to', currentUrl);
+            document.getElementById('myframe').src = currentUrl;
+            document.getElementById('currentUrl').textContent = currentUrl;
             advanceStep({"text": "success"});
+            addResultLog("Complete");
             return;
     }
-    console.log('Sending...', currentStep, currenturl);
-    document.getElementById('myframe').contentWindow.postMessage(currentStep, currenturl);
+    console.log('Sending...', currentStep, currentUrl);
+    addResultLog("In Progress");
+    document.getElementById('myframe').contentWindow.postMessage(currentStep, currentUrl);
     console.log('sent...');
 }
 
@@ -206,6 +238,7 @@ fetch('<?php echo(addSession('fw_grader.php')) ?>')
     .then(step => {
         console.log('First step', step)
         currentStep = step;
+        addResultLog("Ready");
         document.getElementById('nextjson').disabled = false;
         document.getElementById('stepinfo').textContent = step.message;
         document.getElementById('currentUrl').textContent = baseurl;
