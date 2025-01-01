@@ -1,6 +1,7 @@
 <?php
 
 require_once "../config.php";
+require_once "jsauto_util.php";
 
 use \Tsugi\Util\U;
 use \Tsugi\Core\LTIX;
@@ -8,11 +9,6 @@ use \Tsugi\Core\LTIX;
 $LAUNCH = LTIX::requireData();
 
 header("Content-type:application/json");
-
-function isValidJSON($str) {
-   json_decode($str);
-   return json_last_error() == JSON_ERROR_NONE;
-}
 
 $json_params = file_get_contents("php://input");
 if (strlen($json_params) > 0 && isValidJSON($json_params)) {
@@ -22,18 +18,6 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
     $response = $decoded_input->response;
 } else {
     $step = 0;
-}
-
-function participationPoints(&$currentGrade, $maxParticipationPoints) {
-    if ( $currentGrade >= 100.0 ) return;
-    if ( $currentGrade < $maxParticipationPoints) $currentGrade += 10.0;
-}
-
-function requiredPoints(&$currentGrade, $step, $points) {
-    if ( $currentGrade >= 100.0 ) return;
-    // Check if this step already counted
-    $currentGrade += $points;
-    if ( $currentGrade >= 100.0 ) $currentGrade = 100.0;
 }
 
 $currentGrade = U::get($_SESSION, "currentgrade", 0.0);
@@ -47,7 +31,6 @@ $retval = array();
 $retval['step'] = $step+1; // Can override later
 
 $checkstep = 0;
-
 if ( $step == $checkstep++ ) {
     $nextstep = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
 
@@ -60,8 +43,12 @@ if ( $step == $checkstep++ ) {
     $nextstep = '{"command": "searchfor", "text": "404", "message": "Check for 404 in returned text"}';
 
 } else if ( $step == $checkstep++ ) {
-    requiredPoints($currentGrade, $step, 20);
-    $nextstep = '{"command": "switchurl", "text": "/", "message": "Switch to / url"}';
+    if ( $response === true ) {
+        requiredPoints($currentGrade, $step, 20);
+        $nextstep = '{"command": "switchurl", "text": "/", "message": "Switch to / url"}';
+    } else {
+        $nextstep = '{"command": "complete", "text": "finished", "message": "Test not completed"}';
+    }
 
 } else if ( $step == $checkstep++ ) {
     $nextstep = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
@@ -73,9 +60,10 @@ if ( $step == $checkstep++ ) {
     $nextstep = '{"command": "searchfor", "text": "500", "message": "Check for 500 in returned text"}';
 
 } else if ( $step == $checkstep++ ) {
-    requiredPoints($currentGrade, $step, 20);
-    $retval['step'] = 2; // Loop around
-    $nextstep = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
+    $currentGrade = 100.0;
+    // $retval['step'] = 2; // Loop around
+    // $nextstep = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
+    $nextstep = '{"command": "complete", "text": "success", "message": "Test complete"}';
 
 } else {
     $nextstep = '{"command": "stop", "text": "bad state", "message": "Fell into invalid state"}';

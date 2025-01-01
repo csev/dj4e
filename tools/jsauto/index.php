@@ -212,6 +212,15 @@ function advanceStep(responseObject) {
         addResultLog("Ready");
         document.getElementById('stepinfo').textContent = data.message;
         document.getElementById('nextstep').disabled = false;
+        if ( currentStep.command == 'complete' ) {
+            addResultLog("Complete");
+            document.getElementById('nextstep').disabled = true;
+            if ( currentStep.text != "success" ) {
+                document.getElementById('nextstep').classList.remove("btn-primary");
+                document.getElementById('nextstep').classList.add("btn-warning");
+            }
+            return;
+        }
      })
      .catch(error => {
         // Handle any errors
