@@ -5,10 +5,15 @@ require_once "jsauto_util.php";
 
 use \Tsugi\Util\U;
 use \Tsugi\Core\LTIX;
+use \Tsugi\UI\SettingsForm;
 
 $LAUNCH = LTIX::requireData();
 
 header("Content-type:application/json");
+
+// Get any due date information
+$dueDate = SettingsForm::getDueDate();
+$penalty = $dueDate->penalty;
 
 $json_params = file_get_contents("php://input");
 if (strlen($json_params) > 0 && isValidJSON($json_params)) {
@@ -22,7 +27,6 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
 
 $currentGrade = U::get($_SESSION, "currentgrade", 0.0);
 $oldGrade = $currentGrade;
-$gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
 
 if ( $step != 0 ) participationPoints($currentGrade, 60.0);
 
@@ -67,12 +71,15 @@ if ( $step == $checkstep++ ) {
     $nextstep = '{"command": "stop", "text": "bad state", "message": "Fell into invalid state"}';
 }
 
-// $gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
-
 $retval['grade'] = $currentGrade;
 $_SESSION['currentgrade'] = $currentGrade;
 $nextstep = json_decode($nextstep, true);
 $retval = array_merge($retval, $nextstep);
+
+$sendGrade = webauto_compute_effective_score(100.0, $currentGrade, $penalty);
+$scoredetail = webauto_send_score($sendGrade);
+error_log("sendGrade=".$sendGrade." detail=".$scoredetail);
+$retval['detail'] = $scoredetail == true ? "Score sent ".($sendGrade*100) : htmlentities($scoredetail);
 
 $retval = json_encode($retval);
 error_log("Next step: ".$retval);

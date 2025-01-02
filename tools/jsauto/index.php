@@ -95,11 +95,6 @@ if ( ! is_string($assn) ) {
     return;
 }
 
-if ( $dueDate->message ) {
-    echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
-}
-
-
 $baseUrl = "http://localhost:9000";
 ?>
 <div id="tabs">
@@ -110,6 +105,11 @@ $baseUrl = "http://localhost:9000";
   </ul>
   <div id="tabs-1">
 <?php
+
+if ( $dueDate->message ) {
+    echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
+}
+
 $instructions = str_replace(".php", ".htm", $assn);
 if ( file_exists($instructions) ) {
     include $instructions;
@@ -119,6 +119,11 @@ if ( file_exists($instructions) ) {
 ?>
   </div>
   <div id="tabs-2">
+<?php
+if ( $dueDate->message ) {
+    echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
+}
+?>
 <p>
 Url to test:
 <input type="text" name="baseurl" style="width:60%;" value="<?= $baseUrl ?>"
@@ -144,6 +149,11 @@ Placeholder
 
   </div>
   <div id="tabs-3">
+<?php
+if ( $dueDate->message ) {
+    echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
+}
+?>
 <ol id="resultlog">
 <li>Test started at <?= $baseUrl ?> (<?= date('l jS \of F Y h:i:s A'); ?>)</li>
 </ul>
@@ -247,7 +257,12 @@ function addResultLog(message) {
     }
     var result = message;
     if ( currentStep ) {
-        result = message + ": " + currentStep.message + " (" + currentStep.grade + " points)";
+        result = message + ": " + currentStep.message;
+        if ( (currentStep.detail ?? false) && (currentStep.command ?? null) == "complete") {
+            result = result + " (" + currentStep.detail + ")";
+        } else {
+            result = result + " (" + currentStep.grade + " points)";
+        }
     }
     document.getElementById(resultId).textContent = result;
 }
