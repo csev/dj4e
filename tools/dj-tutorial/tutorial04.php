@@ -19,7 +19,7 @@ $check = webauto_get_check();
 Even though this exercise refactors three of your views as generic views, you
 can keep the "owner" view as an old-style view in your <b>mysite/polls/views.py</b>.
 <pre>
-    from django.http import HttpRequest
+    from django.http import HttpRequest, HttpResponse
     def owner(request: HttpRequest) -&gt; HttpResponse:
         response = HttpResponse()
         response.write("Hello, world. <?= $check ?> is the polls index.")

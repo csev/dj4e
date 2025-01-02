@@ -17,7 +17,7 @@ $check = webauto_get_check();
 ?>
 Add the following to your <b>mysite/polls/views.py</b> with the required information above.
 <pre>
-    from django.http import HttpRequest
+    from django.http import HttpRequest, HttpResponse
     def owner(request: HttpRequest) -&gt; HttpResponse:
         response = HttpResponse()
         response.write("Hello, world. <?= $check ?> is the polls index.")
