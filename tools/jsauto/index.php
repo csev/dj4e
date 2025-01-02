@@ -136,10 +136,11 @@ Placeholder
 </span>
 <button onclick="window.location.reload();" class="btn btn-normal" style="float:right;">Restart Test</button>
 </p>
-<p>
-<span id="currentUrl">
+<div style="border: 2px dashed black;">
+<p style="padding-left: 12px;">
+Autograder browser URL: 
+<span style="border: 1px solid black" id="currentUrl">
 </span>
-<span id="currentStep">
 </p>
 
 <center>
@@ -147,6 +148,7 @@ Placeholder
 </iframe>
 </center>
 
+</div>
   </div>
   <div id="tabs-3">
 <?php
