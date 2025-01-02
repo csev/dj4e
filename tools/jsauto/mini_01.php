@@ -13,7 +13,7 @@ header("Content-type:application/json");
 $json_params = file_get_contents("php://input");
 if (strlen($json_params) > 0 && isValidJSON($json_params)) {
     $decoded_input = json_decode($json_params);
-    error_log("Response: ".json_encode($decoded_input));
+    error_log("Incoming JSON: ".json_encode($decoded_input));
     $step = $decoded_input->step->step;
     $response = $decoded_input->response;
 } else {
@@ -23,7 +23,6 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)) {
 $currentGrade = U::get($_SESSION, "currentgrade", 0.0);
 $oldGrade = $currentGrade;
 $gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
-$stepsPassed = U::get($_SESSION, "stepspassed", array());
 
 if ( $step != 0 ) participationPoints($currentGrade, 60.0);
 
@@ -70,7 +69,6 @@ if ( $step == $checkstep++ ) {
 }
 
 // $gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
-// $stepsPassed = U::get($_SESSION, "stepspassed", array());
 
 if ( $currentGrade != $oldGrade ) $_SESSION["currentgrade"] = $currentGrade;
 
