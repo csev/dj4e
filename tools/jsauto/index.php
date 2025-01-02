@@ -191,7 +191,7 @@ function stopWithError(message) {
 function postMessageFail () {
     if ( postMessageTimeout ) clearTimeout(postMessageTimeout);
     postMessageTimeout = false;
-    error_message = "Error communicating message to autograder within frame";
+    error_message = "Error communicating to autograder endpoint within frame";
     stopWithError(error_message);
 }
 
@@ -202,7 +202,7 @@ function advanceStep(responseObject) {
           response: responseObject,
     });
 
-    console.log("Body ", bodystr);
+    console.debug("Body ", bodystr);
 
     fetch('<?php echo(addSession($assn)) ?>', {
         method: 'POST',
@@ -216,15 +216,15 @@ function advanceStep(responseObject) {
           try {
               return JSON.parse(body);
           } catch (error) {
-              console.log("Error Parsing JSON response from server:");
-              console.log(body);
+              console.error("Error Parsing JSON response from server:");
+              console.error(body);
               throw error;
           }
       })
       .then(data => {
         // Handle the response data
+        console.debug('Retrieved next step', data);
         addResultLog("Completed");
-        console.log('Next Step', data);
         currentStep = data;
         currentStepCount += 1;
         addResultLog("Ready");
@@ -270,7 +270,7 @@ function addResultLog(message) {
 window.addEventListener(
   "message",
   (event) => {
-    console.log('in parent', event, currentStep);
+    console.log('Reieved autograder respnse in parent frame', event, currentStep);
 
     if ( postMessageTimeout ) clearTimeout(postMessageTimeout);
     postMessageTimeout = false;
@@ -290,7 +290,7 @@ function newUrl(newurl) {
 }
 
 function doNextStep() {
-    console.log(currentStep)
+    console.debug('doNextStep, currentStep=', currentStep)
     if ( currentStep.command == 'switchurl' ) {
             currentUrl = (baseurl + currentStep.text);
             console.log('Switching to', currentUrl);
@@ -300,11 +300,10 @@ function doNextStep() {
             addResultLog("Complete");
             return;
     }
-    console.log('Sending...', currentStep, currentUrl);
+    console.log('Sending message to auto graded iframe', currentUrl, currentStep);
     addResultLog("In Progress");
     try {
         document.getElementById('myframe').contentWindow.postMessage(currentStep, currentUrl);
-        console.log('sent...');
         postMessageTimeout = setTimeout(postMessageFail, 5000);
         document.getElementById('nextstep').disabled = true;
     } catch (error) {
@@ -312,7 +311,7 @@ function doNextStep() {
     }
 }
 
-console.log("loading the first step");
+console.log("Loading the first autograder step");
 // Get the first currentStep
 currentStep = false;
 fetch('<?php echo(addSession($assn)) ?>')
@@ -327,7 +326,7 @@ fetch('<?php echo(addSession($assn)) ?>')
         }
     })
     .then(step => {
-        console.log('First step', step)
+        console.log('First step loaded', step)
         currentStep = step;
         addResultLog("Ready");
         document.getElementById('stepinfo').textContent = step.message;
