@@ -104,11 +104,21 @@ $baseUrl = "http://localhost:9000";
 ?>
 <div id="tabs">
   <ul>
-    <li><a href="#tabs-1">AutoGrader</a></li>
-    <li><a href="#tabs-2">Instructions</a></li>
+    <li><a href="#tabs-1">Instructions</a></li>
+    <li><a href="#tabs-2">Autograder</a></li>
     <li><a href="#tabs-3">Result Log</a></li>
   </ul>
   <div id="tabs-1">
+<?php
+$instructions = str_replace(".php", ".htm", $assn);
+if ( file_exists($instructions) ) {
+    include $instructions;
+} else {
+    echo("<p>Instructions go here.</p>\n");
+}
+?>
+  </div>
+  <div id="tabs-2">
 <p>
 Url to test:
 <input type="text" name="baseurl" style="width:60%;" value="<?= $baseUrl ?>"
@@ -131,16 +141,6 @@ Placeholder
 </iframe>
 </center>
 
-  </div>
-  <div id="tabs-2">
-<?php
-$instructions = str_replace(".php", ".htm", $assn);
-if ( file_exists($instructions) ) {
-    include $instructions;
-} else {
-    echo("<p>Instructions go here.</p>\n");
-}
-?>
   </div>
   <div id="tabs-3">
 <ol id="resultlog">
