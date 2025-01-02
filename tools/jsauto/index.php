@@ -133,7 +133,14 @@ Placeholder
 
   </div>
   <div id="tabs-2">
-Instructions go here.
+<?php
+$instructions = str_replace(".php", ".htm", $assn);
+if ( file_exists($instructions) ) {
+    include $instructions;
+} else {
+    echo("<p>Instructions go here.</p>\n");
+}
+?>
   </div>
   <div id="tabs-3">
 <ol id="resultlog">
@@ -210,7 +217,7 @@ function advanceStep(responseObject) {
         currentStep = data;
         currentStepCount += 1;
         addResultLog("Ready");
-        document.getElementById('stepinfo').textContent = data.message;
+        document.getElementById('stepinfo').textContent = data.message + " (" + data.grade + " points)";
         document.getElementById('nextstep').disabled = false;
         if ( currentStep.command == 'complete' ) {
             addResultLog("Complete");

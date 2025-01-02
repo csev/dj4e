@@ -31,11 +31,12 @@ $retval['step'] = $step+1; // Can override later
 
 $checkstep = 0;
 if ( $step == $checkstep++ ) {
+    $currentGrade = 0.0;
+    $_SESSION["currentgrade"] = 0.0;
     $nextstep = '{"command": "ping", "text": "42", "message": "Check for correct page load"}';
 
 } else if ( $step == $checkstep++ ) {
     $text = $response->text;
-    if ( $text == "42" ) requiredPoints($currentGrade, $step, 20);
     $nextstep = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
 
 } else if ( $step == $checkstep++ ) {
@@ -60,8 +61,6 @@ if ( $step == $checkstep++ ) {
 
 } else if ( $step == $checkstep++ ) {
     $currentGrade = 100.0;
-    // $retval['step'] = 2; // Loop around
-    // $nextstep = '{"command": "switchurl", "text": "/missing", "message": "Switch to /missing url"}';
     $nextstep = '{"command": "complete", "text": "success", "message": "Test complete"}';
 
 } else {
@@ -70,9 +69,8 @@ if ( $step == $checkstep++ ) {
 
 // $gradeSendOnce = U::get($_SESSION, "gradesendonce", 0.0);
 
-if ( $currentGrade != $oldGrade ) $_SESSION["currentgrade"] = $currentGrade;
-
 $retval['grade'] = $currentGrade;
+$_SESSION['currentgrade'] = $currentGrade;
 $nextstep = json_decode($nextstep, true);
 $retval = array_merge($retval, $nextstep);
 
