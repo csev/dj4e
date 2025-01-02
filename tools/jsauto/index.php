@@ -57,11 +57,11 @@ $penalty = $dueDate->penalty;
 $menu = false;
 if ( $LAUNCH->link && $LAUNCH->user && $LAUNCH->user->instructor ) {
     $menu = new \Tsugi\UI\MenuSet();
-    $menu->addLeft('Student Data', 'grades.php');
-    $menu->addLeft('Send Grade', 'sendgrade.php');
-    if ( $CFG->launchactivity ) {
-        $menu->addRight(__('Launches'), 'analytics');
-    }
+    // $menu->addLeft('Student Data', 'grades.php');
+    // $menu->addLeft('Send Grade', 'sendgrade.php');
+    // if ( $CFG->launchactivity ) {
+        // $menu->addRight(__('Launches'), 'analytics');
+    // }
     $menu->addRight(__('Settings'), '#', /* push */ false, SettingsForm::attr());
 }
 
@@ -129,6 +129,7 @@ Url to test:
 <span id="stepinfo">
 Placeholder
 </span>
+<button onclick="window.location.reload();" class="btn btn-normal" style="float:right;">Restart Test</button>
 </p>
 <p>
 <span id="currentUrl">

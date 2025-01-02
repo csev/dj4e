@@ -124,6 +124,25 @@
                 "value": "http_headers.php"
             }
         ]
+        },
+        {
+            "title" : "Autograder: Run a local web server",
+            "launch" : "tools/jsauto/?exercise=mini_01.php",
+            "resource_link_id" : "dj4e_01_rrc_mini",
+            "custom" : [
+                {
+                    "key": "exercise",
+                    "value": "mini_01.php"
+                },
+                {
+                    "key": "tries",
+                    "value": "11"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
         }
     ]
 },
