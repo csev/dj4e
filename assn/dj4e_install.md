@@ -410,9 +410,8 @@ Possible Errors
 ---------------
 
 There are many possible errors you might encounter.  We have an entire page of error
-recovery instructions that you might want to bookmark:
-
-<a href="dj4e_errors.md" target="_blank">https://www.dj4e.com/assn/dj4e_errors.md</a>
+recovery instructions that you might want 
+to bookmark <a href="dj4e_errors.md" target="_blank">https://www.dj4e.com/assn/dj4e_errors.md</a>
 
 You may want to come back to this file throughout the course when you make a small change and end
 up with an error.
