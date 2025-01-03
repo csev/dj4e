@@ -24,7 +24,7 @@ And if the problem persists use a different browser to test.
 Setting Up Your Environment
 ---------------------------
 
-Once you have created your PYAW account, start a `bash` shell
+Once you have created your PythonAnywhere account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 4.2.
 
     mkvirtualenv django42 --python=/usr/bin/python3.9
@@ -149,8 +149,8 @@ Building Your Application
 -------------------------
 
 Now that we have your Django set up and you have retrieved the sample 
-code for DJ4E, lets
-build your first application in the PYAW shell:
+code for DJ4E and installed required libraries, lets build your first application
+in the PythonAnywhere console / bash shell:
 
     cd ~
     mkdir django_projects
@@ -159,6 +159,41 @@ Once you have made a folder in your home directory, lets go into that folder and
 
     cd ~/django_projects
     django-admin startproject mysite
+
+At this point `startproject` has created a folder named `mysite` with the following files and
+sub-folders.
+
+    mysite/
+        manage.py
+        mysite/
+            __init__.py
+           asgi.py
+           settings.py
+           urls.py
+           wsgi.py
+
+While it seems a bit counter-intuituve, there is folder called `mysite` within the folder
+`mysite`.  We tend to refer to this folder as `mysite/mysite` to make sure we are talking
+about the project-wide settings.  The files in this project-wide folder are have the following purposes:
+
+* `manage.py` this is a Python script that is use to run commands to administer your
+Django server.  Example `manage.py` commands we will use eventually are `check`, `createsuperuser`,
+`migrate`, etc.  We never change this file.
+
+* `mysite/settings.py` contains your overall project-wide configuration.  You set up application
+loading, database connections and other global variables for your project in this file.  When you
+reload your application under the `Web` tab on PythonAnywhere the `mysite/settings.py` is the first
+file that PythonAnywhere reads to start your application.
+
+* `mysite/urls.py` contains the overall URL prefix mapping.  If you look at this file, you will
+see that URLs with the prefix of `/admin` are routed to the built-in Django administration screens
+which we will use much later.
+
+* `mysite/wgsi.py` and `mysite/agsi.py` are the starting points to plug our application into a hosting system
+like PythonAnywhere.  We never change these files.
+
+You only should run the `startproject` command once - it will fail if you try to run it twice.  There
+are instructions to delete then entire `mysite` foder and start over at the bottom of these insnstructions.
 
 At this point, keep your shell open in one tab and open the PythonAnywhere *Files* application
 in another browser tab and navigate to the `~/django_projects/mysite/mysite/settings.py` and change
@@ -177,7 +212,7 @@ Running Your Application
 Now that we have built your first application, we need to tell PythonAnywhere where to look
 to run your application as a web server so you can test it.
 
-In the PYAW web interface navigate to the `Web` tab to create a new web application.  You do not need
+In the PythonAnywhere web interface navigate to the `Web` tab to create a new web application.  You do not need
 to upgrade your account - they give you one application like *drchuck.pythonanywhere.com* - use this
 free application for the course.
 
@@ -215,10 +250,10 @@ This is slightly different from the sample in the PythonAnywhere tutorial.
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
-Once the above configuration is complete, go back to the top of the PYAW
+Once the above configuration is complete, go back to the top of the PythonAnywhere
 Web tab, `Reload` your web application, wait a few seconds and check
 that it is up and visiting the URL for your application shown in in the Web
-tab on PYAW like:
+tab on PythonAnywhere like:
 
     http://(your-account).pythonanywhere.com/
 
@@ -251,31 +286,94 @@ if you are reading any Django instructions that say to do a `runserver`, instead
 Adding Your Polls Application
 -----------------------------
 
-At this point, you can add the polls application from the first Django tutorial.
-We are jumping into the middle of this tutorial because
-the first part of the tutorial is installing and configuring Django in general.
+At this point, we are going to add the polls application from the first
+<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
+Django tutorial</a>.  The instructions below are specialized on how to do the first tutorial
+specifically on PythonAnywhere.
 
-Start at the step where we make the `polls` application:
+First create the `polls` application.  A Django "project" is contains multiple Django "applications".
+The `polls` application is the first of several that we will build in this course.  Each application
+will be stored in its own folder under `mysite`.
 
     cd ~/django_projects/mysite
     python manage.py startapp polls
 
-Continue to follow the steps outlined in
-<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
-Django tutorial</a>
-until you reach the part where the tutorial tells you to run this command:
+You should only run this command once.   It creates a new folder under `mysite` called `polls`
+with the following skeleton files for your new application:
 
-    python manage.py runserver     # <-- Never run this on pythonanywhere
+    mysite/
+        manage.py
+        mysite/
+            __init__.py
+           asgi.py
+           settings.py
+           urls.py
+           wsgi.py
+         polls/
+            __init__.py
+            admin.py
+            apps.py
+            migrations
+                __init__.py
+            models.py
+            tests.py
+            views.py
 
-Do __not__ run the `runserver` command on PythonAnywhere.  Instead run the following command:
+Write your first view in the `mysite/polls/views.py` file:
 
+    from django.http import HttpResponse
+
+    def index(request):
+        return HttpResponse("Hello, world. You're at the polls index.")
+
+Then create the `mysite/polls/urls.py` and put the following code into it:
+
+    from django.urls import path
+
+    from . import views
+
+    urlpatterns = [
+        path("", views.index, name="index"),
+    ]
+
+Then edit the `mysite/mysite/urls.py` and insert a new `include()` line for the 
+new `mysite/polls/urls.py`:
+
+    from django.contrib import admin
+    from django.urls import include, path
+
+    urlpatterns = [
+        path("polls/", include("polls.urls")),
+        path("admin/", admin.site.urls),
+    ]
+
+The idea behind `include()` is to make it easy to organize the URL names across 
+multiple application folders.
+Since the urls "within" polls are in their own URL configuration file (`mysite/polls/urls.py`),
+they can be mounted under `/polls/`, or under `/fun_polls/`, or under `/content/polls/`,
+or any other path root, and the within-application poll URLs will still work relative
+to that path root.
+
+At this point you have created a new view (named `index`), added a route to 
+the view in `polls/urls.py`, and mounted the urls for the `polls` application
+into the project-wide URL routing file `mysite/urls.py`.  There are two files
+named `urls.py` in two different folders.  One file is for the overall (soon to be
+multi-application) project (`mysite`) and the other file is for your *first*
+application (`polls`).
+
+To see if you have made the modifications correctly, run the following commands
+in a bash shell console on PythonAnywhere:
+
+    cd ~/django_projects/mysite 
     python manage.py check
 
-The `check` does a check for syntax and logic errors in your Django application.
+Running this command checks for syntax and logic errors in your Django application.
 It is easier to fix errors in the command line.
 
-And when there are no errors, you are done with the Django Tutorial, come back to these
-instructions - and navigate to the `Web` tab in Python anywhere
+<b>Important:</b> If you find an error, you need to stop and go back and fix the error,
+running `python manage.py check` repeatedly until there are no errors.
+
+Once there are no error, navigate to the `Web` tab in PythonAnywhere
 and `Reload` your application and then test your application by navigating to:
 
     (your-account).pythonanywhere.com
@@ -285,7 +383,8 @@ You should see a page that looks like:
 <center><img src="dj4e_install/pyaw_404.png" alt="An image showing a 404 Not found response" style="border: 1px black solid;"></center>
 
 This page is a "404 Error" which means that Django could not find a route in your application for the
-"empty path".  Because you have `DEBUG = true` in your `settings.py`, Django tells you have not yet told
+"empty path".  Because you have `DEBUG = true` in your `mysite/mysite/settings.py`,
+Django tells you have not yet told
 it how to route the "empty path" *and* it tells you all the paths it knows how to route.
 
 This 404 error is OK at this point in the tutorial.  Later we will add a route in 
@@ -300,40 +399,23 @@ You should see a line that looks like:
 
 Going forward, every time we make changes to our application, we should run
 
+    cd ~/django_projects/mysite
     python manage.py check
 
 in the shell, and when that shows no errors, navigate to the `Web`, press `Reload`,
-and then go to your web site to test your changes.  This pattern of change, reload, and test
-will become second nature after a while.
+and then go to your web site to test your changes.  This pattern of change, check,
+reload, and test will become second nature after a while.
 
 Possible Errors
 ---------------
 
-If your application passed a `check` but fails to
-load or reload, you might get an error message that looks
-like <a href="dj4e_install/pyaw_error.htm" target="_blank">this</a>.
+There are many possible errors you might encounter.  We have an entire page of error
+recovery instructions that you might want to bookmark:
 
-If you get an error, you will need to look through the error logs
-under the `Web` tab on PythonAnywhere:
+<a href="dj4e_errors.md" target="_blank">https://www.dj4e.com/assn/dj4e_errors.md</a>
 
-<center><img src="dj4e_install/error_logs.png" alt="An image showing the three log links under the Web tab in PythonAnywhere" style="border: 1px black solid;"></center>
-
-First check the `error` log and then check the `server` log.
-Make sure to scroll through the logs to the end to find the most recent error.
-
-Do you have two mysite folders?
--------------------------------
-
-For some reason students who finish this assignment often end up making their `mysite` folder twice.
-They end up with a folder in their home directory and in their `django_projects` subfolder.
-
-<center><img src="dj4e_install/install_cleanup.png" alt="An image showing a mysite folder in django_projects and in the home directory with instructions to remove the one in the home directory" style="border: 1px black solid; width:80%;"></center>
-
-It is a good idea to remove the extra folder in your home directory after making sure that the right
-code is in your `django_projects/mysite` folder.   It is really frustrating to have two folders and
-do a bunch of work in one of the folders that does not actually affect your running application.
-
-So you might as well clean this up right away if you see it.
+You may want to come back to this file throughout the course when you make a small change and end
+up with an error.
 
 Editing Files on PythonAnywhere
 -------------------------------
@@ -368,50 +450,6 @@ If you aleady know some _other_ command line text editor in Linux, you can use i
 you will find that it often quicker and easier to make small edits to files in the command line
 rather than a full screen UI.  And once you start deploying real applications in production
 environments like Google, Amazon, Microsoft, etc.. all you will have is command line.
-
-
-More on Your manage.py File
----------------------------
-
-You may get lots of errors when you run `manage.py` - the errors are never
-in the file itself and you will never need to edit `manage.py` to fix a problem
-with your program.
-
-Sometimes if you run
-
-    python manage.py ....
-
-Sometimes it even says there is a syntax error in `manage.py` like this:
-
-    $ python manage.py check
-      File "manage.py", line 16
-        ) from exc
-             ^
-    SyntaxError: invalid syntax
-
-This is because you are running python 2.x and not python 3.x.  The file is not
-valid syntax for python2.  If you are runing python2, it probably means you are
-not in the correct virtual environment.  If you check the python version:
-
-    $ python --version
-    Python 2.7.12
-
-And it is 2.x, you have bigger problems that need to be fixed first.
-
-If you open `manage.py` in the file editor, it will show a syntax error on line
-16 - this is because it is looking at the file as Python 2 (sound familiar).
-If this bothers you, you can change the first line of the file (change nothing else)
-to be:
-
-    #!/usr/bin/env python3
-
-This is called the "Hashbang" and is a specially formatted comment that indicates what
-kind of code the file contains.
-
-And if you are reading this after you made a mistake and edited your `manage.py` - here
-is a fresh copy of the file you can use:
-
-Fresh copy of [manage.py](dj4e_install/manage.py.txt)
 
 Starting Over Fresh
 -------------------

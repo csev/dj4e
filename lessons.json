@@ -86,6 +86,11 @@
             "title" : "Understanding Browser Developer Mode (9:43)",
             "media" : "lesson-02-http/06-dev-mode-walkthrough.mov",
             "youtube" : "0JsWY3pmdak"
+        },
+        {
+            "title" : "Exploring the Mini Django Web Server (36:58)",
+            "media" : "lesson-02-http/07-Web-04-Mini-Django.m4v",
+            "youtube" : "q6LGpiVPwaA"
         }
     ],
     "references" : [
@@ -115,10 +120,10 @@
             ]
         },
         {
-        "title" : "Autograder: Request-Response Cycle",
-        "launch" : "tools/http/",
-        "resource_link_id" : "dj4e_01_rrc",
-        "custom" : [
+            "title" : "Autograder: Request-Response Cycle",
+            "launch" : "tools/http/",
+            "resource_link_id" : "dj4e_01_rrc",
+            "custom" : [
             {
                 "key": "exercise",
                 "value": "http_headers.php"

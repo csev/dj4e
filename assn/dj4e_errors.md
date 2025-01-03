@@ -11,6 +11,7 @@ on PythonAnywhere this page has some possible solutions.
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
 * What to do when the tutorial tells you to access 'localhost:8000'
+* How to fix two `mysite` folders
 * How and when you exit the Django shell (>>> prompt)
 
 When everything works but your application says 'Something went wrong :-('
@@ -21,6 +22,12 @@ and navigate to your web page and you get an error message that says "Something 
 like this:
 
 <center><img src="dj4e_errors/went-wrong.png" alt="An error page showing 'Something went wrong' from a PythonAnywhere application" style="border: 1px black solid; width:50%;"></center>
+
+You can see how to debug this error in a video:
+
+<a href="https://www.youtube.com/watch?v=9h9r_jfQG8E" target="_blank">Fixing Django Errors on PythonAnywhere (19:38)</a>
+
+The following are instructions you can follow to diagnose and fix the 'Something went wrong error :('.
 
 To fix this problem, start a console / bash shell on your account and make sure you are in your virtual
 environment.  Then type these commands:
@@ -149,6 +156,11 @@ If you came here after you tried to fix the syntax error and made it worse, simp
 look closely at every line of <a href="dj4e_tutpaw/file-manage-py-good.png" target="_blank">the correct file</a>
 and fix your file.  Usually the problem is indentation, a line has been deleted or something was moved around.
 
+And if you are reading this after you made a mistake and edited your `manage.py` - here
+is a fresh copy of the file you can use:
+
+Fresh copy of [manage.py](dj4e_install/manage.py.txt) (link)
+
 If you see a `SyntaxError` in 'manage.py' in the shell
 ------------------------------------------------------
 
@@ -166,7 +178,7 @@ Do *not* edit your `manage.py` file - the problem is never in that file.
 There are several possible reasons for this:
 
 * Check your virtual environment (above)
-* Make sure you have not edited you `manage.py` (above)
+* Make sure you have not edited your `manage.py` (above)
 
 Don't use `runserver` on PythonAnywhere
 ---------------------------------------
@@ -212,8 +224,22 @@ Add the `polls` to your URL.
 You do not need to add `django_projects` or `mysite` to your URL - this is all captured
 in the settings under the 'Web' tab in the PythonAnywhere user interface.
 
+Do you have two mysite folders?
+-------------------------------
+
+For some reason students who finish this assignment often end up making their `mysite` folder twice.
+They end up with a folder in their home directory and in their `django_projects` subfolder.
+
+<center><img src="dj4e_install/install_cleanup.png" alt="An image showing a mysite folder in django_projects and in the home directory with instructions to remove the one in the home directory" style="border: 1px black solid; width:80%;"></center>
+
+It is a good idea to remove the extra folder in your home directory after making sure that the right
+code is in your `django_projects/mysite` folder.   It is really frustrating to have two folders and
+do a bunch of work in one of the folders that does not actually affect your running application.
+
+So you might as well clean this up right away if you see it.
+
 How and when you exit the Django shell
--------------------------------------- 
+--------------------------------------
 
 In tutorial 2, you edit `models.py` and run the Django Shell, then you edit
 the `models.py` file again and then run the shell again. What the tutorial does
@@ -256,3 +282,6 @@ Then you edit your `models.py` and *re-start* the Django shell from the
 
 After a while you will understand that you need to be in `bash` (dollar sign prompt)
 to run bash commands and be in the Django shell (>>> prompt) to run Django commands.
+
+
+
