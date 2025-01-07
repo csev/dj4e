@@ -133,13 +133,13 @@ if ( $dueDate->message ) {
 ?>
 <p>
 Here is the specification for this assignment:
-<a href="https://www.dj4e.com/assn/dj4e_html.md" target="_blank">
+<a href="https://www.dj4e.com/assn/dj4e_html.md" class="btn btn-default" target="_blank">
 https://www.dj4e.com/assn/dj4e_html.md
 </a>
 </p>
 <p>
 Make sure that your code passes 
-the <a href="https://validator.w3.org/nu/" target="_blank">W3C HTML Validator</a>
+the <a href="https://validator.w3.org/nu/" class="btn btn-default" target="_blank">W3C HTML Validator</a>
 before submitting this assignment.
 </p>
 <p>
