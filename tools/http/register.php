@@ -1,9 +1,9 @@
 <?php
 
 $REGISTER_LTI2 = array(
-"name" => "HTTP Autograder",
+"name" => "HTTP Headers",
 "FontAwesome" => "fa-server",
-"short_name" => "HTTP Autograder",
+"short_name" => "HTTP Headers",
 "description" => "This is an autograder for HTTP assignments from www.dj4e.com.",
 "messages" => array("launch", "launch_grade")
 );

@@ -152,7 +152,10 @@ Make sure your title tag in the HTML contains this string along with the rest of
 <?php
 
 $url = getUrl('https://drchuck.pythonanywhere.com/site/dj4e.htm');
-if ( $url === false ) return;
+if ( $url === false ) {
+    $OUTPUT->footer();
+    return;
+}
 $passed = 0;
 
 if ( ! isset($_SESSION['html_data']) ) {
