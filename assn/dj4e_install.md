@@ -163,16 +163,17 @@ Once you have made a folder in your home directory, lets go into that folder and
 At this point `startproject` has created a folder named `mysite` with the following files and
 sub-folders.
 
-    mysite/
-        manage.py
+    django_projects/
         mysite/
-            __init__.py
-           asgi.py
-           settings.py
-           urls.py
-           wsgi.py
+            manage.py
+            mysite/
+                __init__.py
+               asgi.py
+               settings.py
+               urls.py
+               wsgi.py
 
-While it seems a bit counter-intuituve, there is folder called `mysite` within the folder
+While it seems a bit counter-intuitive, there is folder called `mysite` within the folder
 `mysite`.  We tend to refer to this folder as `mysite/mysite` to make sure we are talking
 about the project-wide settings.  The files in this project-wide folder are have the following purposes:
 
@@ -301,23 +302,24 @@ will be stored in its own folder under `mysite`.
 You should only run this command once.   It creates a new folder under `mysite` called `polls`
 with the following skeleton files for your new application:
 
-    mysite/
-        manage.py
+    django_projects/
         mysite/
-            __init__.py
-           asgi.py
-           settings.py
-           urls.py
-           wsgi.py
-         polls/
-            __init__.py
-            admin.py
-            apps.py
-            migrations
+            manage.py
+            mysite/
                 __init__.py
-            models.py
-            tests.py
-            views.py
+               asgi.py
+               settings.py
+               urls.py
+               wsgi.py
+             polls/
+                __init__.py
+                admin.py
+                apps.py
+                migrations
+                    __init__.py
+                models.py
+                tests.py
+                views.py
 
 Write your first view in the `mysite/polls/views.py` file:
 
@@ -355,8 +357,8 @@ or any other path root, and the within-application poll URLs will still work rel
 to that path root.
 
 At this point you have created a new view (named `index`), added a route to 
-the view in `polls/urls.py`, and mounted the urls for the `polls` application
-into the project-wide URL routing file `mysite/urls.py`.  There are two files
+the view in `mysite/polls/urls.py`, and mounted the urls for the `polls` application
+into the project-wide URL routing file `mysite/mysite/urls.py`.  There are two files
 named `urls.py` in two different folders.  One file is for the overall (soon to be
 multi-application) project (`mysite`) and the other file is for your *first*
 application (`polls`).
