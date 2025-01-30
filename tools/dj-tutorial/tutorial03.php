@@ -15,7 +15,7 @@ https://docs.djangoproject.com/en/4.2/intro/tutorial03/</a>.
 nameNote();
 $check = webauto_get_check();
 ?>
-Add the following to your <b>mysite/polls/views.py</b> with the required information above.
+Merge the following into your <b>mysite/polls/views.py</b> with the required information above.
 <pre>
     from django.http import HttpRequest, HttpResponse
     def owner(request: HttpRequest) -&gt; HttpResponse:
