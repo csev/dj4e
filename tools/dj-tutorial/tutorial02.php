@@ -31,7 +31,7 @@ Insert at least three choices and associate them with your question.  One of the
 should be "42".  
 (<a href="tutorial02/choice_detail.png" target="_blank">Example</a>)
 When you have stored this data, submit your Django admin url to the autograder.
-<b>Hint:</b> To use the admin interface to insert this data, modify the <b>polls/models.py</b> to also
+<b>Hint:</b> To use the admin interface to insert this data, modify the <b>polls/admin.py</b> to also
 import the <b>Choice</b> model following the pattern of importing the <b>Question</b> model.
 </p>
 <?php
