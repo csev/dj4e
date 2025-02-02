@@ -15,6 +15,10 @@
     {
       "title": "Image (JPG or PNG) of your blocks.css passing the W3 CSS validator",
       "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your browser showing your index.htm page inspecting the 'DJ4E' element.",
+      "type": "image"
     }
   ],
   "totalpoints": 10,

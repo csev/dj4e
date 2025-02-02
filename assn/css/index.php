@@ -39,9 +39,10 @@ Using only CSS.
 <h1>Pre-Requisites</h1>
 <p>
 <ul>
-<li><p>Please install the <a href="http://chrispederick.com/work/web-developer/" target="_blank">
-Web Developer Toolkit</a> for your browser from Chris Pedrick and know how to use it to
-disable CSS styles.</p></li>
+<li><p>Please figure out how to use "inspect element" in your prowser.
+We will be using what in effect is a built-in browser debugger for many
+tasks in this course.
+</p></li>
 </ul>
 </p>
 <h1>Tasks</h1>
@@ -89,8 +90,9 @@ in your CSS instead of the separate "border" values makes the CSS validtor "happ
 </p></li>
 </ul>
 <p>
-Note - that as you change files like `blocks.css` you may need to make sure that when you hit 'refresh'
-that a new copy of the file is loaded.  One some browsers, you can press 'Shift-Refresh' to force a reload
+Note - that as you change files like `blocks.css` you may need to
+ make sure that when you hit 'refresh' that a new copy of the file is loaded.
+On some browsers, you can press 'Shift-Refresh' to force a reload
 of the cache so you get a fresh copy of the file.
 </p>
 <h1>What To Hand In</h1>
@@ -112,6 +114,13 @@ foreach($json->parts as $part ) {
 <center>
 <a href="06-css-validator.png" target="_blank">
 <img src="06-css-validator.png" width="80%" border="2px"></a>
+</center>
+</p>
+<p>Using Inspect Element:
+<p>
+<center>
+<a href="04-inspect-element.png" target="_blank">
+<img src="04-inspect-element.png" width="80%" border="2px"></a>
 </center>
 </p>
 
