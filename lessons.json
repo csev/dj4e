@@ -407,10 +407,6 @@
             "href" : "{apphome}/code/css.zip"
         },
         {
-            "title" : "Web Developer Plugin by Chris Pedrick",
-            "href" : "https://chrispederick.com/"
-        },
-        {
             "title" : "CSS Cheat Sheet by Leslie Frank",
             "href" : "http://www.lesliefranke.com/files/reference/csscheatsheet.html"
         }
@@ -459,7 +455,7 @@
       "type": "image"
     },
     {
-      "title": "Image (JPG or PNG) of your browser at www.dj4e.com inspecting the navigation element to find its background color",
+      "title": "Image (JPG or PNG) of your browser showing your index.htm page inspecting the 'DJ4E' element.",
       "type": "image"
     }
   ],
