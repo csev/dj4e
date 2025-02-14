@@ -101,6 +101,10 @@
         {
             "title" : "What Happens When You Click a Link? - Computerphile",
             "href" : "https://www.youtube.com/watch?v=keo0dglCj7I"
+        },
+        {
+            "title" : "Mini Django Slides",
+            "href" : "{apphome}/lectures/mini_django.pptx"
         }
     ],
     "lti" : [
