@@ -17,19 +17,21 @@ $sample = "https://drchuck.pythonanywhere.com/solo1";
 
 ?>
 <p>
-You are to create a new application in your <b>mysite</b> called <b>solo1</b>.  Do this in the bash shell and 
+You are to create a new application in your <b>mysite</b> called <b>solo1</b>.  Do this in the bash shell and
 do this only once:
 <pre>
 cd ~/django_projects/mysite
 python manage.py startapp solo1
 </pre>
-You need to add a <b>mysite/solo1/urls.py</b>, update your <b>mysite/mysite/settings.py</b> and <b>mysite/mysite/urls.py</b> files.  You might want to review
-the <a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/" target="_blank">Django Tutorial 1</a> to review whow these files are edited.
+You need to add a <b>mysite/solo1/urls.py</b>, update your <b>mysite/polls/views.py</b>,
+<b>mysite/mysite/settings.py</b> and <b>mysite/mysite/urls.py</b> files.  You might want to review
+the <a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/" target="_blank">Django Tutorial 1</a> to
+review how these files are edited.
 Make sure to edit the <b>mysite/mysite</b> files inserting new lines - do not break these files by replacing their entire content.  You will need to keep
 all your applications (i.e. like polls) working without breaking them.
 </p>
 <p>
-In your application you need to create one view that responde to the empty ("") path with the following output:
+In your application you need to create one view that responds to the empty ("") path with the following output:
 <pre>
 <b><?= $quote ?></b>
 </pre>
