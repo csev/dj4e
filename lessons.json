@@ -135,7 +135,7 @@
         ]
         },
         {
-            "title" : "Autograder: Run a local web server",
+            "title" : "Autograder: Run mini_django on your computer",
             "launch" : "tools/jsauto/?exercise=mini_01.php",
             "resource_link_id" : "dj4e_01_rrc_mini",
             "custom" : [
