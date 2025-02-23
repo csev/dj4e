@@ -130,7 +130,10 @@ Url to test:
 />
 </p>
 <p>
-<button onclick="doNextStep();" id="nextstep" class="btn btn-primary" disabled>Run Next Step:</button>
+<button onclick="doNextStep();" id="nextstep" class="btn btn-primary" disabled>
+    <span id="nextstep-text">Run Next Step</span>
+    <i id="spinner" class="fa fa-spinner fa-spin" style="display: none;"></i>
+</button>
 <span id="stepinfo">
 Placeholder
 </span>
@@ -180,10 +183,12 @@ var currentStep;
 var currentStepCount = 0;
 
 var postMessageTimeout = false;
+var spinnerTimeout = null;
 
 function stopWithError(message) {
     console.error('Test halted', message);
     document.getElementById('stepinfo').textContent = message;
+    document.getElementById('nextstep-text').textContent = "Test Halted";
     document.getElementById('nextstep').disabled = true;
     document.getElementById('nextstep').classList.remove("btn-primary");
     document.getElementById('nextstep').classList.add("btn-danger");
@@ -195,6 +200,31 @@ function postMessageFail () {
     postMessageTimeout = false;
     error_message = "Error communicating to autograder endpoint within frame";
     stopWithError(error_message);
+}
+
+function showSpinner() {
+    // Clear any existing timeout
+    if (spinnerTimeout) {
+        clearTimeout(spinnerTimeout);
+    }
+    
+    // Set new timeout to show spinner after 1 second
+    spinnerTimeout = setTimeout(() => {
+        document.getElementById('nextstep-text').textContent = "Test Running";
+        document.getElementById('spinner').style.display = 'inline-block';
+        spinnerTimeout = null;
+    }, 1000);
+}
+
+function hideSpinner() {
+    // If there's a pending show operation, cancel it
+    if (spinnerTimeout) {
+        clearTimeout(spinnerTimeout);
+        spinnerTimeout = null;
+    }
+    // Hide the spinner if it's showing
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('nextstep-text').textContent = "Run Next Step";
 }
 
 function advanceStep(responseObject) {
@@ -224,6 +254,7 @@ function advanceStep(responseObject) {
           }
       })
       .then(data => {
+        hideSpinner();  // Hide spinner when step completes
         // Handle the response data
         console.debug('Retrieved next step', data);
         addResultLog("Completed");
@@ -235,7 +266,10 @@ function advanceStep(responseObject) {
         if ( currentStep.command == 'complete' ) {
             addResultLog("Complete");
             document.getElementById('nextstep').disabled = true;
-            if ( currentStep.text != "success" ) {
+            if ( currentStep.text == "success" ) {
+                document.getElementById('nextstep-text').textContent = "Test Complete";
+            } else {
+                document.getElementById('nextstep-text').textContent = "Test In Progress";
                 document.getElementById('nextstep').classList.remove("btn-primary");
                 document.getElementById('nextstep').classList.add("btn-warning");
             }
@@ -243,8 +277,10 @@ function advanceStep(responseObject) {
         }
      })
      .catch(error => {
+        hideSpinner();  // Hide spinner on error
         // Handle any errors
         document.getElementById('stepinfo').textContent = 'Network Error:' + error;
+        document.getElementById('nextstep-text').textContent = "Test Halted";
         document.getElementById('nextstep').disabled = true;
         document.getElementById('nextstep').classList.remove("btn-primary");
         document.getElementById('nextstep').classList.add("btn-danger");
@@ -272,7 +308,7 @@ function addResultLog(message) {
 window.addEventListener(
   "message",
   (event) => {
-    console.log('Reieved autograder respnse in parent frame', event, currentStep);
+    console.log('Recieved autograder respnse in parent frame', event, currentStep);
 
     if ( postMessageTimeout ) clearTimeout(postMessageTimeout);
     postMessageTimeout = false;
@@ -292,6 +328,7 @@ function newUrl(newurl) {
 }
 
 function doNextStep() {
+    showSpinner();  // Show spinner when step starts
     console.debug('doNextStep, currentStep=', currentStep)
     if ( currentStep.command == 'switchurl' ) {
             currentUrl = (baseurl + currentStep.text);
@@ -300,15 +337,17 @@ function doNextStep() {
             document.getElementById('currentUrl').textContent = currentUrl;
             advanceStep({"text": "success"});
             addResultLog("Complete");
+            hideSpinner();  // Add this line to hide spinner for switchurl case
             return;
     }
     console.log('Sending message to auto graded iframe', currentUrl, currentStep);
     addResultLog("In Progress");
     try {
         document.getElementById('myframe').contentWindow.postMessage(currentStep, currentUrl);
-        postMessageTimeout = setTimeout(postMessageFail, 5000);
+        postMessageTimeout = setTimeout(postMessageFail, 10000);
         document.getElementById('nextstep').disabled = true;
     } catch (error) {
+        hideSpinner();  // Add this line to hide spinner on error
         stopWithError("Error sending message to autograder within frame:" + error);
     }
 }
