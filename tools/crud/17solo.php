@@ -48,6 +48,8 @@ You can log into the sample application using:
 <pre>
 dj4e_user1 / Meow_81e728_41
 </pre>
+The sample application will go through all the autograder steps but fail at the very end because it does not implement
+the specifications at this moment.
 <p>
 <b>Your</b> application must require a log in before it can be used.  The auto grader
 will use the following account to log in to your application:
