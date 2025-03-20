@@ -42,7 +42,8 @@ $assignments = array(
     '13adlist3.php' => 'AdList #3',
     '14adlist4.php' => 'AdList #4',
     '16solo.php' => 'First Solo',
-    '15solo.php' => 'Random Solo',
+    '15solo.php' => 'Random Solo (old)',
+    '17solo.php' => 'Second (Random) Solo',
 );
 
 $oldsettings = Settings::linkGetAll();
