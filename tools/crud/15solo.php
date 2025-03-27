@@ -29,7 +29,7 @@ if ($reverse == 'yes') $result = strrev($result);
 
 if ( $case == 'upper' ) $result = strtoupper($result);
 else if ( $case == 'casefold' ) $result = strtolower($result);
-else if ( $case == 'title' ) $result = ucwords($result);
+else if ( $case == 'title' ) $result = ucwords(strtolower($result));
 
 ?>
 <form method="post" action="<?= $sample ?>/launch/" target="_blank">
