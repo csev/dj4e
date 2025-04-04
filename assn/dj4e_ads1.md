@@ -8,7 +8,9 @@ https://chucklist.dj4e.com/m1
 
 This web site is a classified ad web site.   People can view ads without logging in
 and if they log in, they can create their own ads.   It uses a social login
-that allows logging in using github accounts.
+that allows logging in using github accounts.  You can log into this site using 
+an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the 
+two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 You will build this application by borrowing parts and pieces from the code that runs
 

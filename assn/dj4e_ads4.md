@@ -6,6 +6,10 @@ functionality equivalent to:
 
 https://chucklist.dj4e.com/m4
 
+You can log into this site using
+an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
+
 *Important*: The number of lines you need to add to your code is *relatively* small.  Take your time
 read the sample code carefully - only make changes that you understand.  Wholesale cutting and
 pasting sample code will make it almost impossible to complete this assignment.

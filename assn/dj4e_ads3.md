@@ -6,6 +6,10 @@ equivalent to:
 
 https://chucklist.dj4e.com/m3
 
+You can log into this site using
+an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
+
 We will add a favoriting capability to your previous milestone by borrowing more parts and pieces from the code that runs:
 
 https://samples.dj4e.com/

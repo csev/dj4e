@@ -8,6 +8,9 @@ https://chucklist.dj4e.com/m2
 
 The primary additions from the previous milestone are to add add comments for each ad.
 You must keep all the features from previous assignments working.
+You can log into this site using
+an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 You will build this application by borrowing parts and pieces from the code that runs
 
