@@ -1,4 +1,4 @@
-import {html, css, LitElement} from 'https://cdn.jsdelivr.net/gh/lit/dist@2.4.0/core/lit-core.min.js';
+import {html, LitElement} from 'https://cdn.jsdelivr.net/gh/lit/dist@2.4.0/core/lit-core.min.js';
 
 // https://stackoverflow.com/questions/68614776/using-lit-with-javascript-and-no-build-tools
 
