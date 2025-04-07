@@ -264,56 +264,84 @@ $crawler = webauto_get_url($client, $url, "Going from the detail page to the ad 
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
-// ad/3/favorite
+// ad/3/toggle
 
-preg_match_all("#'([a-z0-9/]*/[0-9]+/favorite[^\"]*)'#",$html,$matches);
+preg_match_all("#'([a-z0-9/]*/[0-9]+/toggle[^\"]*)'#",$html,$matches);
 // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
 
+$togglefound = false;
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
     foreach($matches[1] as $match ) {
         line_out("Retrieving $match");
         $crawler = $client->request('POST', $match);
         if ( $crawler === false ) {
-            error_out("Error POSTING to favorite url: ".$match);
+            error_out("Error POSTING to toggle url: ".$match);
             return;
         }
         $response = $client->getResponse();
         $status = $response->getStatusCode();
         if ( $status !== 200 ) {
-            error_out("Error posting to favorite url: ".$match." status=".$status);
+            error_out("Error posting to toggle url: ".$match." status=".$status);
             return;
         }
-        success_out("Favorited success");
+        success_out("Toggle success");
+        $togglefound = true;
         break;
     } 
-} else {
-    error_out("Could not find link to favorite 'ad/nnn/favorite'");
-    return;
 }
+
+// ad/3/favorite
+
+preg_match_all("#'([a-z0-9/]*/[0-9]+/favorite[^\"]*)'#",$html,$matches);
+// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
+
+if ( ! $togglefound ) {
+    if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
+        foreach($matches[1] as $match ) {
+            line_out("Retrieving $match");
+            $crawler = $client->request('POST', $match);
+            if ( $crawler === false ) {
+                error_out("Error POSTING to favorite url: ".$match);
+                return;
+            }
+            $response = $client->getResponse();
+            $status = $response->getStatusCode();
+            if ( $status !== 200 ) {
+                error_out("Error posting to favorite url: ".$match." status=".$status);
+                return;
+            }
+            success_out("Favorited success");
+            break;
+        } 
+    } else {
+        error_out("Could not find link to favorite 'ad/nnn/favorite'");
+        return;
+    }
 
 // ad/3/unfavorite
 
-preg_match_all("#'([a-z0-9/]*/[0-9]+/unfavorite[^\"]*)'#",$html,$matches);
+    preg_match_all("#'([a-z0-9/]*/[0-9]+/unfavorite[^\"]*)'#",$html,$matches);
 
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
-    foreach($matches[1] as $match ) {
-        $crawler = $client->request('POST', $match);
-        if ( $crawler === false ) {
-            error_out("Error POSTING to unfavorite url: ".$match);
-            return;
-        }
-        $response = $client->getResponse();
-        $status = $response->getStatusCode();
-        if ( $status !== 200 ) {
-            error_out("Error posting to unfavorite url: ".$match." status=".$status);
-            return;
-        }
-        success_out("UnFavorite success");
-        break;
-    } 
-} else {
-    error_out('Could not find link to favorite ad/nnn/unfavorite');
-    return;
+    if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
+        foreach($matches[1] as $match ) {
+            $crawler = $client->request('POST', $match);
+            if ( $crawler === false ) {
+                error_out("Error POSTING to unfavorite url: ".$match);
+                return;
+            }
+            $response = $client->getResponse();
+            $status = $response->getStatusCode();
+            if ( $status !== 200 ) {
+                error_out("Error posting to unfavorite url: ".$match." status=".$status);
+                return;
+            }
+            success_out("UnFavorite success");
+            break;
+        } 
+    } else {
+        error_out('Could not find link to favorite ad/nnn/unfavorite');
+        return;
+    }
 }
 
 line_out('');
