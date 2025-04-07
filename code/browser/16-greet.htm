@@ -1,0 +1,16 @@
+<ul>
+    <li><dj4e-greeting></dj4e-greeting></li>
+    <li><dj4e-greeting name="World"></dj4e-greeting></li>
+    <li><dj4e-greeting name="First" id="1234" ></dj4e-greeting></li>
+</ul>
+<button onclick="doChange();">Click Me</button>
+
+<script type="module" src="./16-dj4e-greet.js"></script>
+<script>
+    function doChange() {
+        document.getElementById('1234').setAttribute('name', 'Second');
+    }
+</script>
+
+</body>
+</html>
