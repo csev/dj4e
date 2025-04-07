@@ -99,14 +99,16 @@ Of course do the migrations once you have modified the model.
 (3) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.  Make sure to use the
-`related_name` from your `models.py` when retrienving the favorites in your view.
+`related_name` from your `models.py` when retrieving the favorites in your view.
 
-(4) Alter your `ad_list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
-parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
+(4) Create a folder `mysite/site/wc` and copy the 
+file `dj4e-samples/site/wc/dj4e-favstar.js` int0 the `wc` folder.
+
+(5) Alter your `ad_list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+parts that show the stars based on the list of favorites for this user and the `favToggle()` JavaScript
 code at the end.
 
-(5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
-from `dj4e-samples/favwc/views.py` into your `views.py`.
+(6) Pull in and adapt `ToggleFavoriteView` from `dj4e-samples/favwc/views.py` into your `views.py`.
 
 Manual Testing
 --------------
