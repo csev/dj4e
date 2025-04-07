@@ -14,6 +14,12 @@ We will add a favoriting capability to your previous milestone by borrowing more
 
 https://samples.dj4e.com/
 
+Lets make sure you have the latest copy of the `dj4e-samples` code with the following commands:
+
+    cd ~/dj4e-samples
+    git pull
+    cd ~/django_projects/mysite
+
 Do All of the Challenges
 ------------------------
 
