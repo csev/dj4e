@@ -40,6 +40,7 @@ $assignments = array(
     '12adlist2.php' => 'AdList #2 - Pictures + Comments',
     '12adlist2b.php' => 'AdList #2B - Comments only',
     '13adlist3.php' => 'AdList #3',
+    '13adlist3w.php' => 'AdList #3 (Web Components)',
     '14adlist4.php' => 'AdList #4',
     '16solo.php' => 'First Solo',
     '15solo.php' => 'Random Solo (old)',

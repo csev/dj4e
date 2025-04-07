@@ -46,7 +46,7 @@ from this auto grader.  You may need to re-launch the application from the auto 
 to re-check the specifications after some time passes.
 You can log into the sample application using:
 <pre>
-dj4e_user1 / Meow_81e728_41
+solo_user / Racing_42
 </pre>
 The sample application will go through all the autograder steps but fail at the very end because it does not implement
 the specifications at this moment.

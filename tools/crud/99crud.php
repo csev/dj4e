@@ -128,7 +128,13 @@ $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
 line_out("It looks like we created $SPEC->lookup_article $SPEC->lookup_lower named $lookup_new :)");
 
-// Update our item in the lookup table
+// Check which page we are on.....
+
+$link_back = "View $SPEC->lookup_lower_plural";
+if ( strpos($html,$link_back) < 1 ) {
+	$crawler = webauto_get_url($client, $main_url, "Going back to main page...");
+	$html = webauto_get_html($crawler);
+}
 
 $view_lookup_url = webauto_get_url_from_href($crawler,"View $SPEC->lookup_lower_plural");
 $crawler = webauto_get_url($client, $view_lookup_url, "Retrieving view page...");

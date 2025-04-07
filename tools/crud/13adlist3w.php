@@ -24,7 +24,7 @@ line_out("Building Classified Ad Site #3");
 
 ?>
 Specification: 
-<a href="../../assn/dj4e_ads3.md" class="btn btn-info" target="_blank">
+<a href="../../assn/dj4e_ads3w.md" class="btn btn-info" target="_blank">
 https://www.dj4e.com/assn/dj4e_ads3.md</a>
 </a>
 <p>
