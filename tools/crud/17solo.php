@@ -53,10 +53,9 @@ the specifications at this moment.
 <p>
 <b>Your</b> application must require a log in before it can be used.  The auto grader
 will use the following account to log in to your application:
-<pre>
-<?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
-</pre>
 <?php
+print_user_and_password($user1account, $user1pw);
+
 $url = getUrl($sample);
 if ( $url === false ) return;
 

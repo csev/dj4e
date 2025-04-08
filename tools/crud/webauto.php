@@ -751,3 +751,13 @@ function check_code_and_version($crawler) {
     $RESULT->setJSON(json_encode($json));
 }
 
+function print_user_and_password($user1account, $user1pw, $user2account=null, $user2pw=null) {
+?>
+<pre>
+<span id="account1"><?= htmlentities($user1account) ?></span> (<a href="#" onclick="copyToClipboard(this, $('#account1').text());return false;">copy</a>) / <span id="password1"><?= htmlentities($user1pw) ?></span> (<a href="#" onclick="copyToClipboard(this, $('#password1').text());return false;">copy</a>)
+<?php if ( is_string($user2account) ) { ?>
+<span id="account2"><?= htmlentities($user2account) ?></span> (<a href="#" onclick="copyToClipboard(this, $('#account2').text());return false;">copy</a>) / <span id="password2"><?= htmlentities($user2pw) ?></span> (<a href="#" onclick="copyToClipboard(this, $('#password2').text());return false;">copy</a>)
+<?php } ?>
+</pre>
+<?php
+}

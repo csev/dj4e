@@ -29,9 +29,10 @@ https://www.dj4e.com/assn/dj4e_ads3.md</a>
 </a>
 <p>
 You should already have two users and a <b>meta</b> tag.
+<?php
+print_user_and_password($user1account, $user1pw, $user2account, $user2pw);
+?>
 <pre>
-<?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
-<?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?> 
 <?= htmlentities($meta) ?>
 </pre>
 Your application should either be at the '/' path or the '/ads' path.

@@ -34,10 +34,9 @@ https://www.dj4e.com/assn/dj4e_ads1.md</a>
 <p>
 Create two non-super users, by logging into the <b>/admin</b> URL of your application
 using a superuser account:
-<pre>
-<?= htmlentities($user1account) ?> / <?= htmlentities($user1pw) ?>  
-<?= htmlentities($user2account) ?> / <?= htmlentities($user2pw) ?>
-</pre>
+<?php
+print_user_and_password($user1account, $user1pw, $user2account, $user2pw);
+?>
 You should have this <b>meta</b> tag in the <b>&lt;head&gt;</b> of each page:
 <pre>
 <?= htmlentities($meta) ?>
