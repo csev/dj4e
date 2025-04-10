@@ -2047,8 +2047,17 @@
             "youtube" : "_QVcbmGqm2o"
         },
         {
-            "title" : "Using Fetch to make Network Requests in JavaScript (7:00)",
-            "youtube" : "LbKfSzuHWyM"
+            "title" : "Using Fetch to make Network Requests in JavaScript (6:27)",
+            "youtube" : "m1MBEktyC7U",
+            "youtube_2025_04" : "LbKfSzuHWyM",
+            "media": " JS-03-Browser-05-Fetch.m4v",
+            "date": "2025-04-10"
+        },
+        {
+            "title" : "Creating our own HTML Tags using Web Components (11:06)",
+            "youtube" : "ZEQBZ_r2pvQ",
+            "media": "JS-03-Browser-06-WC.m4v",
+            "date": "2025-04-10"
         }
     ],
     "references" :
