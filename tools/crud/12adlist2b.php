@@ -57,6 +57,7 @@ Don't use either of the above accounts to add the ad or it will be deleted at th
 
 $url = getUrl('https://chucklist.dj4e.com/m2');
 if ( $url === false ) return;
+warn_about_ngrok($url);
 
 webauto_check_test();
 $passed = 0;

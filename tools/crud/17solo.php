@@ -58,6 +58,7 @@ print_user_and_password($user1account, $user1pw);
 
 $url = getUrl($sample);
 if ( $url === false ) return;
+warn_about_ngrok($url);
 
 webauto_check_test();
 $passed = 0;

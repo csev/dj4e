@@ -38,6 +38,7 @@ You should add an identifiying <b>meta</b> tag in your <b>&lt;head&gt;</b> area 
 $url = getUrl('https://crud.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
+warn_about_ngrok($url);
 
 $url = trimSlash($url);
 

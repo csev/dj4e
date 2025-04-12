@@ -56,6 +56,7 @@ the initial list of ads after it logs in.
 
 $url = getUrl('https://chucklist.dj4e.com/mp');
 if ( $url === false ) return;
+warn_about_ngrok($url);
 
 webauto_check_test();
 $passed = 0;

@@ -41,6 +41,7 @@ This string will be different for each student and change roughly every 60 minut
 <?php
 $url = getUrl($sample);
 if ( $url === false ) return;
+warn_about_ngrok($url);
 
 $passed = 0;
 

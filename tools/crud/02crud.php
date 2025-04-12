@@ -80,6 +80,7 @@ to <em>remove it or replace</em> it with the above tag.
 $url = getUrl('http://crud.dj4e.com/');
 if ( $url === false ) return;
 $passed = 0;
+warn_about_ngrok($url);
 
 webauto_check_test();
 

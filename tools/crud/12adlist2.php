@@ -40,6 +40,7 @@ to support more than one variant of the code at the same time.
 
 $url = getUrl('https://chucklist.dj4e.com/m2');
 if ( $url === false ) return;
+warn_about_ngrok($url);
 
 webauto_check_test();
 $passed = 0;

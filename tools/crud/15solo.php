@@ -57,6 +57,7 @@ will use the following account to log in to your application:
 <?php
 $url = getUrl($sample);
 if ( $url === false ) return;
+warn_about_ngrok($url);
 
 webauto_check_test();
 $passed = 0;
