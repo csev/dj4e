@@ -53,4 +53,14 @@ Just as a note - I think this could be fixed in `mime/Part/TextPart.php` but it
 won't be a simple 1-line fix (I tried).
 
 
+How to patch
+------------
+
+	vi tsugi/vendor/symfony/browser-kit/AbstractBrowser.php
+
+Go to line 358 (approx) and add the code to set the files parameter to an empty array.
+
+
+
 -- Chuck Sat Apr 12 11:04:41 EDT 2025
+
