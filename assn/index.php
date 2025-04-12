@@ -104,8 +104,6 @@ function onSelect() {
   <option <?= x_sel("dj4e_hello.md") ?>>Hello Session World</option>
   <option <?= x_sel("dj4e_batch.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Login / Autos CRUD</option>
-  <option <?= x_sel("dj4e_local.md") ?>>Installing Django Locally</option>
-  <option <?= x_sel("dj4e_github.md") ?>>Using GitHub</option>
   <option <?= x_sel("dj4e_ads1.md") ?>>AdList Milestone #1</option>
   <option <?= x_sel("dj4e_ads1b.md") ?>>AdList Pictures</option>
   <option <?= x_sel("dj4e_ads2.md") ?>>AdList Milestone #2</option>
@@ -137,8 +135,6 @@ These assignments are designed for use with Django
 <li><a href="dj4e_hello.md">Hello Session World</a></li>
 <li><a href="dj4e_batch.md">Batch Loading Data</a></li>
 <li><a href="dj4e_autos.md">Login / Autos CRUD</a></li>
-<li><a href="dj4e_github.md">Using GitHub</a></li>
-<li><a href="dj4e_local.md">Installing Django Locally</a></li>
 <li><a href="dj4e_ads1.md">AdList Milestone #1</a></li>
 <li><a href="dj4e_ads1b.md">AdList Pictures</a></li>
 <li><a href="dj4e_ads2.md">AdList Milestone #2</a></li>

@@ -159,7 +159,7 @@
     "title": "Installing Django on PythonAnywhere",
     "anchor": "dj4e_install",
     "icon" : "fa-clone",
-    "description": "This walks through the installation steps for Django on PythonAnywhere.",
+    "description": "This walks through the installation steps for Django on PythonAnywhere.  If you cannot use PythonAnywhere, you can also install Django locally and submit assignments your local computer for grading.  Installing Django locally will be described in an upcoming lesson.",
     "discussions" : [
         {
         "title" : "Installing Django on PythonAnywhere",
@@ -1497,6 +1497,70 @@
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+{
+    "title": "Putting Django Projects into GitHub (Optional)",
+    "anchor": "dj4e_github",
+    "icon" : "fa-github",
+    "description": "This exercise uploads your Django projects on PythonAnywhere to a private repository on GitHub if you have access to private repositories.  Please do not put your assignments in a public GitHub repository. Github provides free private repositories for small numbers of collaborators.",
+    "discussions" : [
+        {
+        "title" : "Putting Django Projects into GitHub",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_17_git"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Using GitHub with Django and PythonAnywhere (6:55)",
+        "youtube": "9FJwue2Eqao"
+    }
+   ],
+    "assignment" : "{apphome}/assn/dj4e_github.md",
+    "references" : [
+        {
+            "title" : "GitHub",
+            "href" : "https://www.github.com/"
+        },
+        {
+            "title" : "Unlimited Free Private Repositories on GitHub",
+            "href" : "https://blog.github.com/changelog/2019-01-08-pricing-changes/"
+        },
+        {
+            "title" : "GitHub for Students",
+            "href" : "https://education.github.com/students"
+        },
+        {
+            "title" : "Caching your GitHub password in Linux",
+            "href" : "https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux"
+        }
+    ]
+},
+{
+    "title": "Installing Django locally (optional)",
+    "anchor": "dj4e_local",
+    "icon" : "fa-clone",
+    "description": "This is an optional exercise to install Django locally to both speed your development cycles and to play with the sample code.  The next module inludes quite a bit of new code so you will be able to develop more quickly with Django installed locally.  You can submit your assignments from your local computer using a technology called 'ngrok'.",
+    "discussions" : [
+        {
+        "title" : "Installing Django Locally",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_18_local"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Submitting Assignments Using ngrok (6:06)",
+        "youtube": "WLWuMjDDSa4"
+    }
+   ],
+    "assignment" : "{apphome}/assn/dj4e_local.md",
+    "references" : [
+        {
+            "title" : "Using ngrok to submit a local application to the Autograder",
+            "href" : "{apphome}/ngrok"
         }
     ]
 },
