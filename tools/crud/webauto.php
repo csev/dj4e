@@ -765,7 +765,7 @@ function print_user_and_password($user1account, $user1pw, $user2account=null, $u
 function warn_about_ngrok($url) {
     if ( ! is_string($url) ) return;
     if ( str_contains($url, 'pythonanywhere.com') ) return;
-    // if ( str_contains($url, 'dj4e.com') ) return;
+    if ( str_contains($url, 'dj4e.com') ) return;
     if ( str_contains($url, 'localhost') ) return;
 ?>
 <p>This works with assignments on <a href="https://www.pythonanywhere.com/" target="_blank">PythonAnywhere</a>.  You <b>may</b> be able to pass the
