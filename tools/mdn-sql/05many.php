@@ -144,7 +144,7 @@ upload your SQLite3 database here:<br/>
 <input type="submit">
 <p>
 Do the assignment at
-<a href="../../assn/mdn/dj4e_load.md" target="_blank">https://www.dj4e.com/assn/mdn/dj4e_load.md</a>
+<a href="../../assn/mdn/dj4e_load.md" target="_blank" class="btn btn-info">https://www.dj4e.com/assn/mdn/dj4e_load.md</a>
 </p>
 <p>
 When the

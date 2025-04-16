@@ -6,7 +6,7 @@ line_out("Installing Django on PythonAnywhere");
 
 ?>
 <p>
-<a href="../../assn/mdn/paw_install.md" target="_blank">
+<a href="../../assn/mdn/paw_install.md" target="_blank" class="btn btn-info">
 https://www.dj4e.com/assn/mdn/paw_install.md</a>
 </a>
 </p>

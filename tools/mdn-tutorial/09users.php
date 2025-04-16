@@ -23,7 +23,7 @@ $userpw = "Meow_" . substr(getMD5(),1,6). '_42';
 $useraccount = 'dj4e_user';
 line_out("Exploring Django Users (MDN)");
 ?>
-<a href="../../assn/mdn/paw_users.md" target="_blank">
+<a href="../../assn/mdn/paw_users.md" target="_blank" class="btn btn-info">
 https://www.dj4e.com/assn/mdn/paw_users.md</a>
 </a>
 <p>

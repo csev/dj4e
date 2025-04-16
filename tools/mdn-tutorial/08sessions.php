@@ -19,7 +19,7 @@ $meta = '<meta name="dj4e" content="'.$check.'">';
 $adminpw = substr(getMD5(),4,9);
 line_out("Exploring Django Views (MDN)");
 ?>
-<a href="../../assn/mdn/paw_sessions.md" target="_blank">
+<a href="../../assn/mdn/paw_sessions.md" target="_blank" class="btn btn-info">
 https://www.dj4e.com/assn/mdn/paw_sessions.md</a>
 </a>
 </p>
