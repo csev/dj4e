@@ -33,7 +33,7 @@ navigating to the <b>/admin</b> path in your application, logging in
 with your superuser account and creating the new account in the admin UI.  By
 default the new user will not have staff or superuser permissions.
 <pre>
-Password: <span id="account"><?= $useraccount ?></span> (<a href="#" onclick="copyToClipboard(this, $('#account').text());return false;">copy</a>)
+Account: <span id="account"><?= $useraccount ?></span> (<a href="#" onclick="copyToClipboard(this, $('#account').text());return false;">copy</a>)
 Password: <span id="pass"><?= $userpw ?></span> (<a href="#" onclick="copyToClipboard(this, $('#pass').text());return false;">copy</a>)
 </pre>
 You can use any email address you like.
