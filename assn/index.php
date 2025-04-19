@@ -112,6 +112,7 @@ function onSelect() {
 </select>
 </div>
 <?php
+    if ( file_exists("assn_note.html") ) require_once("assn_note.html");
     $Parsedown = new Parsedown();
     echo $Parsedown->text($contents);
 } else {
