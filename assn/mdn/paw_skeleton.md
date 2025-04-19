@@ -26,9 +26,9 @@ Checking Your Installation
 We assume that you have a Django virtual environment all set up from your
 previous assignments.  Start a shell and type:
 
-    workon django42
+    python -m django --version
 
-Of course always make sure to type this command when you start a fresh shell.
+It should put out a version like `4.2.7`
 
 We will start the MDN tutorial at step 3.  You can read the first two steps -
 but you can start at the "Skeleton Website" step.
@@ -42,10 +42,9 @@ points for haing *too many* features implemented.
 Since you already have a `dango_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
-	workon django42
     cd ~/django_projects
     django-admin startproject locallibrary
-	cd locallibrary
+    cd locallibrary
 
 Edit the file `locallibrary/settings.py` and make the following changes:
 
@@ -76,16 +75,38 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 starting with the command:
 
     cd ~/django_projects/locallibrary
-	python manage.py startapp catalog
+    python manage.py startapp catalog
 
-When you get to this section and are editing `locallibrary/urls.py`, do not add `permanent=True`
-if the tutorial tells you to do so - just leave it out.  Not so good:
+When you get to get to the instructions in the tutorual where you are
+editing `locallibrary/urls.py`, *do not add* `permanent=True`
+if the tutorial tells you to do so - just leave it out. 
+
+Don't do this:
 
         path('', RedirectView.as_view(url='catalog/', permanent=True)),
 
-Better:
+Do this instead:
 
         path('', RedirectView.as_view(url='catalog/')),
+
+At some point the instructions tell you to run
+
+	python manage.py makemigrations
+
+If you get an error - do not proceed any further in the tutorial until the `makemigrations`
+works.  A `makemigrations` error might look like
+
+    File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+    File "<frozen importlib._bootstrap_external>", line 983, in get_code
+    File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+    File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+    File "/home/mdntutorial/django_projects/locallibrary/locallibrary/urls.py", line 35
+      ]
+    ^
+    SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' on line 34
+
+Figure out what is wrong and fix it, and re-run `makemigrations` until it succeeds and then
+proceed with the tutorial.
 
 Continue with the tutorial until it tells you to `python manage.py runserver` - instead do
 
@@ -95,6 +116,9 @@ and keep running `check` until there are no errors.
 
 Remember that on PythonAnywhere, we __never__ do a `runserver` but instead use the Web
 tab to point to and start our Django application.
+
+Also we never navigate to `http://localhost:8000` - our web server is on PythonAnywhere and the next
+section reconfigures your PythonAnywhere account to server the new `locallibrary` project.
 
 Switching Your Web Application to a New Project
 -----------------------------------------------
@@ -125,6 +149,8 @@ When you visit the page,
 you *should* get an error, 'Page not found(404)'
 (<a href="paw_skeleton/webapp_final.png" target="_blank">Sample Image</a>).
 We are stopping this tutorial when the web site is still incomplete so that is normal.
+
+You can ignore the instructions about putting everything in a github repo - it is not requried for this assignment.
 
 Common Problems and How to Fix Them
 -----------------------------------

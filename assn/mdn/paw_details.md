@@ -6,7 +6,7 @@ In this assignment we will add detail pages for books and authors.
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views
 
 If you are submitting this assignment to the DJ4E autograder for this assignment,
-yu should check the autograder for specific instructions that
+you should check the autograder for specific instructions that
 the autograder requires for this assignment.
 
 Complete the following sections of the Views tutorial:
@@ -15,16 +15,15 @@ Complete the following sections of the Views tutorial:
 
         cd ~/django_projects/locallibrary/catalog
 
-* Edit `urls.py` and add the `BookListView` and `BookDetailView` lines to the `urlpatterns` list.
+* Edit `catalog/urls.py` and add the `BookListView` and `BookDetailView` lines to the `urlpatterns` list.
 
         urlpatterns = [
             path('', views.index, name='index'),
             path('books/', views.BookListView.as_view(), name='books'),
             path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
         ]
-        ...
 
-* Edit `views.py` for the views.index as suggested in the tutorial, adding these lines
+* Edit `catalog/views.py` for the views.index as suggested in the tutorial, adding these lines
 
         from django.views import generic
 
@@ -38,12 +37,12 @@ Complete the following sections of the Views tutorial:
     Since list and detail views are so common in programming Django provides us classes for us to reuse/extend.
     This saves us a lot of typing almost the same thing over and over again.
 
-* You will have to make the `catalog` folder under the `templates` folder
+* You will have to make the `catalog` folder under the `templates` folder if it does not already exist
 
         cd ~/django_projects/locallibrary/catalog
         mkdir templates/catalog
 
-* Create the files `templates/catalog/book_list.html` and `templates/catalog/book_detail.html` as per
+* Create the files `catalog/templates/catalog/book_list.html` and `catalog/templates/catalog/book_detail.html` as per
     the tutorial.
 
 * Add pagination the pagination code to `templates/base_generic.html` and make sure you have at least

@@ -30,11 +30,11 @@ Complete the following sections of the Views tutorial:
         mkdir static
         mkdir static/css
 
-* Create the file `templates/base_generic.html`as suggested.  The tutorial shows a simple version and then a more complex version with some CSS files - create the more complex version.  The autograder may require the addition of a `<meta>` tag in the `<head>` area of the base template.
+* Create the file `catalog/templates/base_generic.html`as suggested.  The tutorial shows a simple version and then a more complex version with some CSS files - create the more complex version.  The autograder may require the addition of a `<meta>` tag in the `<head>` area of the base template.
 
-* Create the file `static/css/styles.css` as suggested
+* Create the file `catalog/static/css/styles.css` as suggested
 
-* Create the file `templates/index.html`as suggested but replace the string "Mozilla Developer Network!" with something else.  You do not need to use your name if you don't want to - it just must be something other than the text in the tutorial.
+* Create the file `catalog/templates/index.html`as suggested but replace the string "Mozilla Developer Network!" with something else.  You do not need to use your name if you don't want to - it just must be something other than the text in the tutorial.
 
 
 * Reload your application under the `Web` tab in
@@ -43,15 +43,11 @@ Complete the following sections of the Views tutorial:
 * Visit the catalog site
 <a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
 
-When you make changes to configuration files like `urls.py` or `views.py` it is always a good idea to reload
+When you make changes to configuration files like `urls.py` or `views.py` or templates it is always a good idea to reload
 your web application on
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 under the `Web` tab and `Reload` the web server to re-read your updated configuration files.
 
-Generally the server automatically detects changes to templates or static files
-without requiring your application to be reloaded.  There is not harm in reloading your 
-web application too often.  If you made a change and dont think you are seeing the change,
-reload the web application.
 
 Common Problems and How to Fix Them
 -----------------------------------

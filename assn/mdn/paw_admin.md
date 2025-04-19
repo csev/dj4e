@@ -31,7 +31,7 @@ your PythonAnywhere site (i.e. like
 
 Just as a reminder, when you are running on PythonAnywhere you **do not need** to do a:
 
-    python manage.py runserver  # Don't do this on PythonAnywhere
+    python manage.py runserver  # Don't ever do this on PythonAnywhere
 
 Everytime you make a configuration change.  But if you are running on
 PythonAnywhere and make a configuration change you **do** need to

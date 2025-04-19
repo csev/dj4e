@@ -10,66 +10,59 @@ You can view a
 <a href="https://www.youtube.com/watch?v=2-QFePlm7GA&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=5" target="_blank">video walkthrough</a> of this assignment.
 
 Read and understand the tutorial, and when you get to the section titled
-<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models#Defining_the_LocalLibrary_Models" target="_blank">Defining the LocalLibrary Models</a>, 
+<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models#Defining_the_LocalLibrary_Models" target="_blank">Defining the LocalLibrary Models</a>,
 go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell.
 
 Lets go into the locallibrary project:
 
-    workon django42
     cd ~/django_projects/locallibrary
 
 Make sure that you have properly edited the `locallibrary/settings.py` file
 to register your catalog
 application within the locallibrary project by adding `CatalogConfig` line.
 
-Edit the file `catalog/models.py` and add the `Genre` model using as described in the tutorial.
-You can edit the file with `nano`, `vi`, or the PythonAnywhere Files tab interface.  Once you have added
-the model, run the migrations from `~/django_projects/locallibrary`
-
-    python manage.py makemigrations
-    python manage.py migrate
-
-Lets take a quick look at the contents of the `~/django_projects/locallibrary/db.sqlite3` file in your bash shell:
-
-    $ cd ~/django_projects/locallibrary
-    $ sqlite3 db.sqlite3 
-    SQLite version 3.11.0 2016-02-15 17:29:24
-    Enter ".help" for usage hints.
-    sqlite> .tables
-    auth_group                  catalog_genre
-    auth_group_permissions      django_admin_log
-    auth_permission             django_content_type
-    auth_user                   django_migrations
-    auth_user_groups            django_session
-    auth_user_user_permissions
-    sqlite> .mode column
-    sqlite> select * from catalog_genre;
-    sqlite> .schema catalog_genre
-    CREATE TABLE "catalog_genre" (
-        "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
-        "name" varchar(200) NOT NULL);
-    sqlite> .quit  
-
-You can learn more about the command line mode of `sqlite3` at their web site:
-
-https://www.sqlite.org/cli.html
-
-Continue editing the `catalog/models.py` file and add the Book, BookInstance, and Author models
-according to the tutorial.
-
-Also add the `Language` model to your `models.py` as discussed in the "Challenge" section 
-at the end of the tutorial.  It is OK if you look at their solution in github to get the code.
-
-Once your models.py file is complete, run the migrations again:
+Edit the file `catalog/models.py` and add the `Genre`, `Book`, `BookInstance`, and `Author` models
+as described in the tutorial.  Once you have added models models, run the migrations
+from `~/django_projects/locallibrary`
 
     cd ~/django_projects/locallibrary
     python manage.py makemigrations
+
+    Migrations for 'catalog':
+      catalog/migrations/0001_initial.py
+        - Create model Author
+        - Create model Book
+        - Create model BookInstance
+        - Create model Genre
+        - Create constraint genre_name_case_insensitive_unique on model genre
+        - Add field book to bookinstance
+        - Add field author to book
+        - Add field genre to book
+
+If the `makemigrations` encounters errors, stop, fix the error and re-run `makemigrations` until
+it is successfull.
+
     python manage.py migrate
 
-You can repeat the process of editing the `models.py` file and re-running the migrations until you get them
-right.
+Then add the `Language` model to your `models.py` as discussed in the "Challenge" section
+at the end of the tutorial.  It is OK if you look at their solution in github to get the code.
+
+Since we have changed the `models.py`, we need to run the migrations again:
+
+    cd ~/django_projects/locallibrary
+    python manage.py makemigrations
+
+    Migrations for 'catalog':
+      catalog/migrations/0002_language_and_more.py
+        - Create model Language
+        - Create constraint language_name_case_insensitive_unique on model language
+
+You can repeat the process of editing the `models.py` file and re-running the makemigrations until you get them
+right and then run `migrate` to actually create/update the tables in the database.
+
+    python manage.py migrate
 
 If you are using the autograder for this assignment, you will need to upload the
 `~/django_projects/locallibrary/db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
