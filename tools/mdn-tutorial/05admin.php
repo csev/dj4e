@@ -31,7 +31,7 @@ this autograder to log in and check your work with the following information:
 Account: <?= htmlentities($adminuser) ?> 
 Password: <?= htmlentities($adminpw) ?>
 </pre>
-If you are creating the account with the admin interface, make sure to give the user "staff" role.
+If you are creating the account with the admin interface, make sure to give the user "staff" and "admin" roles.
 You can use any email address you like.
 </p>
 <p>
