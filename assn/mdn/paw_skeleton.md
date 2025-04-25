@@ -39,7 +39,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 grading of one assignment before starting on the next assignment.  The autograder deducts
 points for haing *too many* features implemented.
 
-Since you already have a `dango_projects` folder your first step in the tutorial does
+Since you already have a `django_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
     cd ~/django_projects
@@ -133,7 +133,18 @@ with your PYAW account):
     Working directory: /home/drchuck/django_projects/locallibrary
 
 **Important:** Edit the *WGSI Configuration File* and change `mysite` to `locallibrary` in two places
-and save it.
+and save it.  Your *WGSI Configuration File* should look as follows after you edit it:
+
+    import os
+    import sys
+
+    path = os.path.expanduser('~/django_projects/locallibrary')
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'locallibrary.settings'
+    from django.core.wsgi import get_wsgi_application
+    from django.contrib.staticfiles.handlers import StaticFilesHandler
+    application = StaticFilesHandler(get_wsgi_application())
 
 The virtual environment should already be set up and does not need to change.
 
