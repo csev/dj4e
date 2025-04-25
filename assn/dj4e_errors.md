@@ -5,6 +5,7 @@ Dealing with Errors in Django Projects on Python Anywhere
 When you get stuck on something while developing your Django Application
 on PythonAnywhere this page has some possible solutions.
 
+* What happens when your PythonAnywhere account expires after 90 days?
 * When everything works but your application says 'Something went wrong :-('
 * What happens when you don't activate your virtual environment (django42)
 * Your line 16 seems to have a syntax error in the text editor in `manage.py`
@@ -13,6 +14,22 @@ on PythonAnywhere this page has some possible solutions.
 * What to do when the tutorial tells you to access 'localhost:8000'
 * How to fix two `mysite` folders
 * How and when you exit the Django shell (>>> prompt)
+
+What happens when your PythonAnywhere account expires after 90 days
+-------------------------------------------------------------------
+
+PythonAnywhere free accounts are great and can be used forever but at least once every 90 days you need to log in and press the "Run until 3 months from now" button under the `Web` tab. 
+
+<a href="dj4e_errors/web_renew.png" target="_blank">Extending your free PythonAnywhere account</a> (screenshot)
+
+When your account expires you will see a "Coming Soon" message when you attempt to access your web site.
+The good news is you are one click away from extending the expiration date.  None of your files, databases,
+or configuration is removed - when you extend the datam and press "Reload" your site will be back as
+if nothing happened.
+
+You can extend by 90 days any time - it does not hurt to extend your account even before it has
+expired.  So if things are weird - one of the first things to check is whether your
+PythonAnywhere account has expired.
 
 When everything works but your application says 'Something went wrong :-('
 --------------------------------------------------------------------------

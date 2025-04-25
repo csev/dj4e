@@ -175,6 +175,13 @@ If you reload your web application and get the "Something went wrong :("
 page when you access your web application, check on the "error.log" link
 and scroll to the very bottom to see why your application will not start.
 
+If you reload your application and get a messgage like "Coming soon", your
+PythonAnywhere account might have expired
+(<a href="paw_skeleton/web_renew.png" target="_blank">screen shot</a>).  All you need to
+extend your account is go into PythonAnywhere -> Web -> "Run until 3 months from today" and then
+Reload your web application.  You do not lose files, databases or configuration when your account
+"expires" - once you extend it they all come back.
+
 Starting Over
 -------------
 
