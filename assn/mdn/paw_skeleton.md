@@ -77,7 +77,7 @@ starting with the command:
     cd ~/django_projects/locallibrary
     python manage.py startapp catalog
 
-When you get to get to the instructions in the tutorual where you are
+When you get to get to the instructions in the tutorial where you are
 editing `locallibrary/urls.py`, *do not add* `permanent=True`
 if the tutorial tells you to do so - just leave it out. 
 

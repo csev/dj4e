@@ -14,12 +14,15 @@ https://www.dj4e.com/assn/mdn/paw_skeleton.md</a>
 If you are building your application on PythonAnywhere, your grading
 url should look like:
 <pre>
-http://mdntutorial.pythonanywhere.com/catalog/
+https://mdntutorial.pythonanywhere.com/
 </pre>
+With your PythonAnywhere account in place of "mdntutorial".
 <?php
 
-$url = getUrl('https://www.dj4e.com/assn/mdn/paw_skeleton/index.htm');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
+// Make sure we get a 404
+if ( str_contains($url, "mdntutorial.pythonanywhere.com") ) $url .= '404';
 $passed = 0;
 
 $path = $url;

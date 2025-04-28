@@ -43,12 +43,12 @@ Book: <?= htmlentities($book_title) ?>
 You can use any values you like for the Summary, ISBN, and Genre fields.
 </p>
 <p>
-Make sure to include '/admin' in your site url below.
+Make sure to replace 'mdntutorial' with your PythonAnywhere account and include '/admin' the url below.
 </p>
 <?php
 
 
-$url = getUrl('http://mdntutorial.pythonanywhere.com/admin');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/admin');
 if ( $url === false ) return;
 $passed = 0;
 
@@ -71,6 +71,7 @@ if ( $retval === true ) {
     $passed += 9;
 } else {
     error_out('It looks like you have submitted a website with a later tutorial already completed.');
+    if ( ! webauto_testrun($url) ) return;
 }
 
 

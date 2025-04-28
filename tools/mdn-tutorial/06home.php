@@ -38,11 +38,14 @@ You need to add the following line to your <b>base_generic.html</b> file within 
 <pre>
 <?= htmlentities($meta) ?>
 </pre>
-Make sure to put this all on one line and with no extra spaces within the tag.
+Make sure to put the meta tag all on one line and with no extra spaces within the tag.
+</p>
+<p>
+In the url below replace 'mdntutorial' with your PythonAnywhere account name.
 </p>
 <?php
 
-$url = getUrl('http://mdntutorial.pythonanywhere.com/');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
 
