@@ -12,16 +12,27 @@ https://www.dj4e.com/assn/mdn/paw_install.md</a>
 </p>
 <?php
 
-$url = getUrl('https://www.dj4e.com/assn/mdn/paw_install/index.htm');
+$url = getUrl('https://mdntutorial.pythonanywhere.com/');
 if ( $url === false ) return;
 $passed = 0;
+
+if ( strpos($url,'mdntutorial.pythonanywhere.com') !== false ) {
+?>
+<p>
+This is the sample solution.   The output should look like this:
+<a href="https://www.dj4e.com/assn/mdn/paw_skeleton/webapp_final.png" targetg="_blank">screen shot</a>.
+</p>
+<?php
+    error_out("Not graded - sample solution");
+    return;
+}
 
 $path = $url;
 if ( strpos($url,'index.htm') !== false ) {
     $path = dirname($path);
 }
 
-$csspath = $path . '/static/admin/css/fonts.css';
+$csspath = $path . '/static/admin/css/base.css';
 
 error_log("MDNInstall".$url);
 
@@ -49,13 +60,9 @@ ALLOWED_HOSTS = ['*']
 <?php
     return;
 }
-webauto_search_for($html, 'The install worked successfully! Congratulations!');
+$found = webauto_search_for($html, 'The install worked successfully!');
 
-if ( strpos($url,'dj4e.com') !== false ) {
-    error_out("Not graded - sample solution");
-    return;
-}
-
+line_out("Checking is the Django admin is installed and functioning...");
 // Make sure static is set up properly
 $crawler = webauto_get_url($client, $csspath);
 $response = $client->getResponse();
@@ -66,16 +73,6 @@ if ( $status != 200 ) {
 } else {
     success_out("Loaded $csspath");
     $passed += 1;
-}
-
-if ( strpos($url,'mdntutorial.pythonanywhere.com') !== false ) {
-    error_out("Not graded - sample solution");
-    return;
-}
-
-if ( strpos($url,'dj4e.com') !== false ) {
-    error_out("Not graded - sample solution");
-    return;
 }
 
 // -------
