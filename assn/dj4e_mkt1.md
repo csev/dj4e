@@ -17,6 +17,11 @@ https://samples.dj4e.com/
 
 and combining them into a single application.
 
+The autograder expects that you will copy and adapt code from the provided examples.  If
+you just build a "roughly equivalent application" (perhaps using AI) that seems to work
+OK - the autograder might be looking for a different pattern in the HTML of your
+application and reject your application.
+
 Initial Setup
 -------------
 
@@ -45,7 +50,7 @@ this site - weird but true.
     cd ~/django_projects/market
     python manage.py startapp mkt
 
-(2) Then add the application to your `market/market/settings.py`
+(2) Then add the application to your `market/config/settings.py`
 
 INSTALLED_APPS = [
 
@@ -56,7 +61,7 @@ INSTALLED_APPS = [
     'mkt.apps.MktConfig',
 ]
 
-(3) Then edit your `market/market/urls.py` to add a route to the new application:
+(3) Then edit your `market/config/urls.py` to add a route to the new application:
 
 (4) Use this in your `mkt/model.py`:
 
@@ -227,7 +232,7 @@ after you update the file and press 'Refresh' and/or switch browsers.  Sometimes
 is "too effective" on a favicon so to force a real reload (command/ctrl + shift + r) to check if the new
 favicon is really being served you can add a GET parameter to the URL to force it to be re-retrieved:
 
-    https://chucklist.dj4e.com/favicon.ico?x=42
+    https://market.dj4e.com/favicon.ico?x=42
 
 Change the `x` value to something else if you want to test over and over.
 
@@ -292,19 +297,11 @@ The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program w
 Some Common Errors in This Assignment
 -------------------------------------
 
-Since you are in effect starting with a brand new `market/settings.py` and `market/urls.py`, you might
+Since you are in effect starting with a brand new `config/settings.py` and `config/urls.py`, you might
 find a few problems when you are running `python manage.py check` - I will keep a list of the common
 problems and their solutions here:
 
-(1) If you see an error message "TypeError: 'module' object is not iterable" when you are
-running `python manage.py check`, this maybe because you mistakenly
-edited the `ROOT_URLCONF` value in `settings.py`  - your value should be:
-
-    ROOT_URLCONF = 'market.urls'
-
-More will be added as the problems are identified.
-
-(2) If you have a problem running `migrate` or `makemigrations` in step 10 above, you might want
+(1) If you have a problem running `migrate` or `makemigrations` in step 10 above, you might want
 to start with a fresh MySQL database.  Since we are using a MYSQL server, we can't
 just delete the SQLite file and start over - but it is not much more difficult.
 
@@ -317,7 +314,7 @@ like this - type the command `SHOW DATABASES;` to find your database:
     | Database           |
     +--------------------+
     | information_schema |
-    | dj4e$chucklist     |
+    | dj4e$market        |
     | dj4e$default       |
     +--------------------+
     3 rows in set (4.05 sec)
@@ -330,11 +327,11 @@ alone.
 Pick the database you are using (in your `settings.py`) and issuer the `USE` command to select
 the database and run the `SHOW TABLES;` command:
 
-    mysql> use dj4e$chucklist;
+    mysql> use dj4e$market;
     Database changed
     mysql> SHOW TABLES;
     +----------------------------+
-    | Tables_in_dj4e$chucklist   |
+    | Tables_in_dj4e$market      |
     +----------------------------+
     | mkt_ad                     |
     | django_admin_log           |
