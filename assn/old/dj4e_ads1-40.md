@@ -161,7 +161,7 @@ value for the `DATABASES` variable and comment it out.
 
 Add an entry to point Django at your newly created MySQL database.  In this example,
 your PythonAnywhere account is `drchuck` and the database you created is `ads` and
-the password you set for the database is `phone_8675309`.   Change the sample values below
+the password you set for the database is `phone_153742`.   Change the sample values below
 to the values for your database.
 
     DATABASES = {
@@ -169,7 +169,7 @@ to the values for your database.
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'drchuck$ads',
             'USER': 'drchuck',
-            'PASSWORD': 'phone_8675309',
+            'PASSWORD': 'phone_153742',
             'HOST': 'drchuck.mysql.pythonanywhere-services.com',
              'OPTIONS': {
                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
