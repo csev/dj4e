@@ -774,4 +774,23 @@ autograder with a Django application hosted elsewhere or accessible through a re
 <?php
 }
 
+function webauto_dump_html($html) {
+    echo("<pre>\n");
+    echo(htmlentities($html));
+    echo("</pre>\n");
+}
 
+function warn_about_testrun($url) {
+   if ( webauto_testrun($url) ) {
+       line_out("You are running the autograder on a test server - ".$url);
+       line_out("This submission will not generate a grade");
+   }
+}
+
+function webauto_append_suffix($url, $suffix) {
+    $newurl = $url . '/' . $suffix;
+    $newurl = substr($newurl, 0, 8).str_replace('//', '/', substr($newurl, 8));
+    $newurl = substr($newurl, 0, 8).str_replace('//', '/', substr($newurl, 8));
+    $newurl = substr($newurl, 0, 8).str_replace('//', '/', substr($newurl, 8));
+    return $newurl;
+}
