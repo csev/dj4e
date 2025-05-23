@@ -158,6 +158,10 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
     global $USER, $OUTPUT, $access_code;
     global $base_url_path, $URL_IN_USE;
     global $SECONDS_BEFORE_RETRY;
+    global $passed, $failed;
+
+    if ( !isset($passed) ) $passed = 0;
+    if ( !isset($failed) ) $failed = 0;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -275,14 +279,13 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
 }
 
 function checkPostRedirect($client) {
-    global $passed;
+    global $passed, $failed;
     line_out("Checking to see if the POST redirected to a GET");
     $method = $client->getRequest()->getMethod();
     if ( $method == "GET" ) {
-        $passed++;
         markTestPassed("POST Redirect Check");
     } else {
-        error_out('Expecting POST to Redirected to a GET - found '.$method);
+        markTestFailed('Expecting POST to Redirected to a GET - found '.$method);
     }
 }
 
@@ -294,6 +297,16 @@ function markTestPassed($message=false) {
         success_out("Test completed.");
     }
     $passed++;
+}
+
+function markTestFailed($message=false) {
+    global $failed;
+    if ( $message ) {
+        error_out("Test failed: ".$message);
+    } else {
+        error_out("Test failed.");
+    }
+    $failed++;
 }
 
 function webauto_test_passed($grade, $url) {
@@ -339,13 +352,13 @@ function webauto_test_passed($grade, $url) {
     if ( strlen($success) > 0 ) {
         success_out($success);
         error_log($success);
-		echo("\n<!--\n");
-   		$OUTPUT->dumpDebugArray($debug_log);
-		echo("\n-->\n");
+	echo("\n<!--\n");
+   	$OUTPUT->dumpDebugArray($debug_log);
+	echo("\n-->\n");
     } else if ( strlen($failure) > 0 ) {
         error_out($failure);
         error_log($failure);
-   		$OUTPUT->dumpDebugArray($debug_log);
+   	$OUTPUT->dumpDebugArray($debug_log);
     } else {
         error_log("No status");
     }
@@ -408,7 +421,7 @@ function webauto_check_post_redirect($client) {
     if ( $method == "get" ) {
         $passed++;
     } else {
-        error_out('Expecting POST to Redirect to GET - found '.$method);
+        markTestFailed('Expecting POST to Redirect to GET - found '.$method);
     }
 }
 
@@ -484,7 +497,7 @@ function webauto_get_form_with_button($crawler,$text, $text2=false)
         markTestPassed('Found form with "'.$text.'" button');
         return $form;
     } catch(Exception $ex) {
-        error_out($msg);
+        markTestFailed($msg);
         throw new Exception($msg);
     }
 }
@@ -506,7 +519,7 @@ function webauto_get_href($crawler,$text, $message=false)
         markTestPassed('Found an anchor tag with "'.$text.'" button');
         return $link;
     } catch(Exception $ex) {
-        error_out($msg);
+        markTestFailed($msg);
         throw new Exception($msg);
     }
 }
@@ -580,7 +593,7 @@ function webauto_search_for($html, $needle, $ignorecase=true)
         markTestPassed("Found '$needle'");
         return true;
     } else {
-        error_out("Could not find '$needle'");
+        markTestFailed("Could not find '$needle'");
         return false;
     }
 }
@@ -591,7 +604,7 @@ function webauto_search_for_not($html, $needle, $message=false)
         markTestPassed("Did not find '$needle' (test passed - it is not supposed to be in the output)");
         return true;
     } else {
-        error_out("Should not have found '$needle' ".$message);
+        markTestFailed("Should not have found '$needle' ".$message);
         return false;
     }
 }
@@ -613,7 +626,7 @@ function webauto_search_for_menu($html)
         markTestPassed("Found menu bar at the top of the page");
         return true;
     } else {
-        error_out("Could not find menu bar at the top of the page");
+        markTestFailed("Could not find menu bar at the top of the page");
         return false;
     }
 }
@@ -649,7 +662,7 @@ function webauto_retrieve_url($client, $url, $message=false) {
 function webauto_dont_want($html, $needle)
 {
     if ( stripos($html,$needle) > 0 ) {
-        error_out("Found something that should not be there: '$needle'");
+        markTestFailed("Found something that should not be there: '$needle'");
         return true;
     } else {
         markTestPassed("Did not find '$needle'");

@@ -139,17 +139,13 @@ webauto_search_for($html, "config.urls");
 
 // TODO: Check for speed of light
 
-if ( webauto_testrun($url) ) {
-    error_out("Not graded - sample solution");
-    return;
-}
-
 // -------
-line_out(' ');
-echo("<!-- Raw score $passed -->\n");
-// echo("  -- Raw score $passed \n");
-$perfect = 27;
+$perfect = $passed + $failed;
 if ( $passed < 0 ) $passed = 0;
+
+line_out(' ');
+line_out("Raw score: passed=$passed failed=$failed");
+
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 if ( webauto_testrun($url) ) {
