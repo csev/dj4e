@@ -46,12 +46,15 @@ webauto_check_test();
 $testrun = webauto_testrun($url);
 warn_about_testrun($url);
 
+$base_url = U::get_base_url($url);
+
 $passed = 0;
 
 webauto_setup();
 
-// Start the actual test
-$crawler = webauto_get_url($client, $url);
+// --
+$newurl = webauto_append_suffix($base_url, "/home");
+$crawler = webauto_get_url($client, $newurl);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
@@ -78,17 +81,15 @@ if ( !$testrun && ! webauto_search_for($html, $check) ) {
    error_out("Add the DJ4E_CODE value to settings.py as descried above");
 }
 
-// Make sure the page is also available at /home
-$newurl = webauto_append_suffix($url, "/home");
-
-$crawler = webauto_get_url($client, $newurl);
+// Make sure the page is also available at /
+$crawler = webauto_get_url($client, $base_url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
 webauto_search_for($html, "Welcome");
 
 // --------
-$newurl = webauto_append_suffix($url, "/admin");
+$newurl = webauto_append_suffix($base_url, "/admin");
 
 $crawler = webauto_get_url($client, $newurl);
 if ( $crawler === false ) return;
@@ -99,7 +100,7 @@ webauto_search_for($html, "Username");
 
 
 // --------
-$newurl = webauto_append_suffix($url, "/accounts/login");
+$newurl = webauto_append_suffix($base_url, "/accounts/login");
 
 $crawler = webauto_get_url($client, $newurl);
 if ( $crawler === false ) return;
@@ -113,7 +114,7 @@ webauto_search_for($html, "bootstrap");
 line_out(" ");
 line_out("Accesing an incorrect url to generate a 404...");
 
-$newurl = webauto_append_suffix($url, "/missing");
+$newurl = webauto_append_suffix($base_url, "/missing");
 
 $crawler = webauto_get_url($client, $newurl);
 if ( $crawler === false ) return;
