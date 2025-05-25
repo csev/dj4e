@@ -4,7 +4,7 @@ Building a Marketplace Web Site
 
 In this assignment, you will build a web site that is roughly equivalent to
 
-https://market.dj4e.com/
+https://market.dj4e.com/m1
 
 This web site is a classified ad web site.   People can view ads without logging in
 and if they log in, they can create their own ads. You can log into this site using 
