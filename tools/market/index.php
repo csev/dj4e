@@ -28,7 +28,7 @@ if ( SettingsForm::isSettingsPost() ) {
 
 // All the assignments we support
 $assignments = array(
-    '30market0.php' => 'Market 0',
+    '00Market-Setup.php' => 'Market Initial Setup',
 );
 
 $oldsettings = Settings::linkGetAll();
