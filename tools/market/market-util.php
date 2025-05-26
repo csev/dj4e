@@ -82,17 +82,53 @@ function market_check_basics($client, $base_url, $check, $testrun) {
 
 }
 
+// Must be called from a menu page
+function market_do_login($client, $crawler, $user, $password) {
+
+    $login_url = webauto_get_url_from_href($crawler,'Login');
+
+    $crawler = webauto_get_url($client, $login_url, "Logging in as $user");
+    $html = webauto_get_html($crawler);
+
+    // Use the log_in form
+    $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
+    webauto_change_form($form, 'username', $user);
+    webauto_change_form($form, 'password', $password);
+
+    $crawler = webauto_submit_form($client, $form);
+    $html = webauto_get_html($crawler); 
+    webauto_search_for_menu($html);
+
+    if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return false;
+
+    return $crawler;
+} 
+
+function market_do_logout($client, $crawler) {
+    $logout_form = webauto_get_form_with_button($crawler,'Logout', 'Logout Locally');
+    $crawler = webauto_submit_form($client, $logout_form);
+    $html = webauto_get_html($crawler);
+    webauto_search_for_menu($html);
+    return $crawler;
+}
+
+// Clean up old ads on either account - log out before calling
+// and it will log out after deleting the ads
 function market_delete_old($client, $url, $check, $testrun) {
     global $passed, $failed, $nograde;
     global $user1account, $user1pw, $user2account, $user2pw, $check;
 
-    $crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to start the autograder");
+    $crawler = webauto_get_url($client, $url, "At this point, ads created from prior runs wll be deleted");
     if ( $crawler === false ) return;
     $html = webauto_get_html($crawler);
 
     webauto_search_for_menu($html);
 
-    line_out("Deleting any old ads belonging to User 1");
+
+    $crawler = market_do_login($client, $crawler, $user1account, $user1pw);
+    if ( $crawler === false ) return;
+    $html = webauto_get_html($crawler);
+
     // Cleanup old ads
     $save_passed = $passed;
     $save_failed = $failed;
@@ -100,53 +136,54 @@ function market_delete_old($client, $url, $check, $testrun) {
     preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
     // echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
     
+    $deletecount = 0;
     if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         foreach($matches[1] as $match ) {
-            $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
+            line_out("Loading delete page for old record");
+            $crawler = webauto_get_url($client, $match);
             $html = webauto_get_html($crawler);
             $form = webauto_get_form_with_button($crawler,'Yes, delete.');
             $crawler = webauto_submit_form($client, $form);
             $html = webauto_get_html($crawler);
+	    $deletecount++;
         } 
     }
 
-    $logout_form = webauto_get_form_with_button($crawler,'Logout', 'Logout Locally');
-    $crawler = webauto_submit_form($client, $logout_form);
+    line_bold("$user1account deleted $deletecount ads from previous autograder runs");
+    echo("<hr/>");
+
+    $crawler = market_do_logout($client, $crawler);
+
+    header_out("Deleting any old ads belonging to User 2");
+    
+    $crawler = market_do_login($client, $crawler, $user2account, $user2pw);
+    if ( $crawler === false ) return;
     $html = webauto_get_html($crawler);
-    webauto_search_for_menu($html);
-    
-    $login_url = webauto_get_url_from_href($crawler,'Login');
-    
-    $crawler = webauto_get_url($client, $login_url, "Logging in as $user2account");
-    $html = webauto_get_html($crawler);
-    
-    // Use the log_in form
-    $form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
-    webauto_change_form($form, 'username', $user2account);
-    webauto_change_form($form, 'password', $user2pw);
-    
-    $crawler = webauto_submit_form($client, $form);
-    $html = webauto_get_html($crawler);
-    
-    if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return false;
-    
-    line_out("Deleting any old ads belonging to User 2");
-    // Cleanup old ads
-    $saved = $passed;
+
+    $deletecount = 0;
     // preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
     preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
     if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         foreach($matches[1] as $match ) {
-            $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
+            line_out("Loading delete page for old record");
+            $crawler = webauto_get_url($client, $match);
             $html = webauto_get_html($crawler);
             $form = webauto_get_form_with_button($crawler,'Yes, delete.');
             $crawler = webauto_submit_form($client, $form);
             $html = webauto_get_html($crawler);
             webauto_search_for_menu($html);
+	    $deletecount++;
         }
     }
+
+    line_bold("$user2account deleted $deletecount ads from previous autograder runs");
+    echo("<hr/>");
+
+    market_do_logout($client, $crawler);
+
     $passed = $save_passed;
     $failed = $save_failed;
 
     return true;
 }
+

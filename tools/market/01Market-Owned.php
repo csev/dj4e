@@ -84,26 +84,14 @@ if ( $retval === False ) {
 }
 
 webauto_search_for_menu($html);
-$login_url = webauto_get_url_from_href($crawler,'Login');
-
-$crawler = webauto_get_url($client, $login_url, "Logging in as $user1account");
-$html = webauto_get_html($crawler);
-
-// Use the log_in form
-$form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
-webauto_change_form($form, 'username', $user1account);
-webauto_change_form($form, 'password', $user1pw);
-
-$crawler = webauto_submit_form($client, $form);
-$html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
-
-if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
-
 // First, check if there is a manually entered title in the ad list
 // unless of course this is a test run...
 if ( ! webauto_testrun($url) ) {
+
     line_out('Looking for your manually created entry: '.$ad_title);
+
+    $crawler = market_do_login($client, $crawler, $user1account, $user1pw);
+    if ( $crawler === false ) return;
 
     if ( ! webauto_search_for($html, $ad_title) ) {
         error_out('Could not find an ad with a title of: '.$ad_title);
@@ -131,18 +119,26 @@ if ( ! webauto_testrun($url) ) {
 
     line_out("Congratulations your manually created entry looks good!");
 
-    $crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to start the autograder");
+    $crawler = webauto_get_url($client, $url, "Going to the ad list view");
     if ( $crawler === false ) return;
     $html = webauto_get_html($crawler);
 
     webauto_search_for_menu($html);
 
+    $crawler = market_do_logout($client, $crawler);
+
 } /* End if ( webauto_testrun() ) */
 
-
+// Clean up old ads on either account - log out before calling
+// and it will log out after deleting the ads
 if ( ! market_delete_old($client, $url, $check, $testrun) ) return;
 
-$crawler = webauto_get_url($client, $url, "Retrieving the main list url");
+line_out("At this point, ads created from prior runs should be deleted, login and add a new ad");
+
+$crawler = market_do_login($client, $crawler, $user2account, $user2pw);
+if ( $crawler === false ) return;
+
+$crawler = webauto_get_url($client, $url, "Retrieving the ad list url");
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
@@ -170,10 +166,11 @@ preg_match_all("'\"([a-z0-9/]*/[0-9]+/update[^\"]*)\"'",$html,$matches);
 if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     if ( count($matches[1]) != 1 ) {
         error_out("Expecting User 2 to have an update link for item that was just created with a url like /ad/nnn/update - found ".count($matches[1]));
+        error_out("Perhaps the old ads were not correctly deleted.");
         return;
     }
     $match = $matches[1][0];
-    $crawler = webauto_get_url($client, $match, "Loading edit page for old record");
+    $crawler = webauto_get_url($client, $match, "Loading edit page for record we just created");
     $html = webauto_get_html($crawler);
     $form = webauto_get_form_with_button($crawler,'Submit');
     webauto_change_form($form, 'title', $title."_updated");
@@ -185,11 +182,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     return;
 }
 
-$logout_form = webauto_get_form_with_button($crawler,'Logout', 'Logout Locally');
-$crawler = webauto_submit_form($client, $logout_form);
-$html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
-
+$crawler = market_do_logout($client, $crawler);
 
 // -------
 line_out(' ');

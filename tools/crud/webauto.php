@@ -642,8 +642,8 @@ function webauto_retrieve_url($client, $url, $message=false) {
     global $base_url_path;
     global $webauto_http_status;
     line_out(" ");
-    if ( $message ) echo("<b>".htmlentities($message)."</b><br/>\n");
-    echo("<hr/><b>Loading URL:</b> ".htmlentities($url));
+    if ( $message ) header_out($message);
+    echo("<b>Loading URL:</b> ".htmlentities($url));
     $the_url = str_replace('"',"&quot;", $url);
     if ( strpos($the_url, '/') === 0 ) $the_url = $base_url_path . $the_url;
     echo(' (<a href="'.$the_url.'" target="_blank">Open URL</a>)');
@@ -808,3 +808,13 @@ function webauto_append_suffix($url, $suffix) {
     $newurl = substr($newurl, 0, 8).str_replace('//', '/', substr($newurl, 8));
     return $newurl;
 }
+
+function header_out($message) {
+    echo('<hr/>');
+    line_bold($message);
+}
+
+function line_bold($message) {
+    echo('<b>'.htmlentities($message).'</b><br/>');
+}
+
