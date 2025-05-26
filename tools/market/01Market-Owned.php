@@ -3,6 +3,7 @@
 require_once "../crud/webauto.php";
 require_once "../crud/names.php";
 require_once "../crud/ad_titles.php";
+require_once "market-util.php";
 
 use \Tsugi\Util\U;
 
@@ -60,7 +61,11 @@ if ( $url === false ) return;
 warn_about_ngrok($url);
 
 webauto_check_test();
+$testrun = webauto_testrun($url);
+if ( str_starts_with($testrun, "http://localhost:8000") ) $testrun = false;
+
 $passed = 0;
+$failed = 0;
 
 webauto_setup();
 
@@ -135,151 +140,11 @@ if ( ! webauto_testrun($url) ) {
 } /* End if ( webauto_testrun() ) */
 
 
-line_out("Deleting any old ads belonging to User 1");
-// Cleanup old ads
-$saved = $passed;
-// preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
-// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
+if ( ! market_delete_old($client, $url, $check, $testrun) ) return;
 
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
-    foreach($matches[1] as $match ) {
-        $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
-        $html = webauto_get_html($crawler);
-        $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-        $crawler = webauto_submit_form($client, $form);
-        $html = webauto_get_html($crawler);
-    } 
-}
-$passed = $saved;
-
-$create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
-$crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
-$html = webauto_get_html($crawler);
-
-if ( ! webauto_search_for_not($html, "owner") ) {
-    error_out('The owner field is not supposed to appear in the create form.');
-    return;
-}
-
-if ( ! webauto_search_for($html, "price") ) {
-    error_out('The price field is missing on the create form - check the field_list in views.py');
-    return;
-}
-
-// Check the speed of light...
-if ( strpos($html, 'type="file"') > 1 ) {
-    error_out("Found picture upload code.");
-    error_out("You cannot submit a solution to a future assignment to this auto grader.");
-    return;
-}
-
-// Add a record
-$title = 'HHGTTG_41 '.$now;
-$form = webauto_get_form_with_button($crawler,'Submit');
-webauto_change_form($form, 'title', $title);
-webauto_change_form($form, 'price', '0.41');
-webauto_change_form($form, 'text', 'Low cost Vogon poetry.');
-
-$crawler = webauto_submit_form($client, $form);
-$html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
-
-if ( ! webauto_search_for($html, $title) ) {
-    error_out('Tried to create a record and cannot find the record in the list view');
-    return;
-}
-
-// Check the detail page
-$detail_url = webauto_get_url_from_href($crawler,$title, "(Could not link to the detail page on the list view)");
-$crawler = webauto_get_url($client, $detail_url, "Loading detail page");
-$html = webauto_get_html($crawler);
-if ( ! webauto_search_for($html, $title) ) {
-    error_out("Did not find '$title' on detail page");
-    return;
-}
-if ( ! webauto_search_for($html, 'Price', true) ) {
-    error_out("Did not find price on detail page");
-    return;
-}
-if ( ! webauto_search_for_not($html, "owner") ) {
-    error_out('The owner field is not supposed to appear in the detail form.');
-    return;
-}
-
-$crawler = webauto_get_url($client, $url, "Going from the detail page to the ad list view to update the ad that User 1 just created");
+$crawler = webauto_get_url($client, $url, "Retrieving the main list url");
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
-
-// Look for the edit entry
-// preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/update[^\"]*)\"'",$html,$matches);
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
-    if ( count($matches[1]) != 1 ) {
-        error_out("Expecting User 1 to have an update link for item that was just created with a url like /ad/nnn/update - found ".count($matches[1]));
-        return;
-    }
-    $match = $matches[1][0];
-    $crawler = webauto_get_url($client, $match, "Loading edit page for old record");
-    $html = webauto_get_html($crawler);
-    $form = webauto_get_form_with_button($crawler,'Submit');
-    webauto_change_form($form, 'title', $title."_updated");
-    $crawler = webauto_submit_form($client, $form);
-    $html = webauto_get_html($crawler);
-    webauto_search_for($html,$title."_updated");
-} else {
-    error_out("Could not find an update link for the item that User 1 just created with a url like /ad/nnn/update - found ".count($matches[1]));
-    return;
-}
-
-$logout_form = webauto_get_form_with_button($crawler,'Logout', 'Logout Locally');
-$crawler = webauto_submit_form($client, $logout_form);
-$html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
-
-success_out("Completed first user, moving to second user...");
-
-// Do it again with the second user
-
-$crawler = webauto_get_url($client, $url);
-if ( $crawler === false ) return;
-$html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
-
-require("../crud/meta_check.php");
-
-$login_url = webauto_get_url_from_href($crawler,'Login');
-
-
-$crawler = webauto_get_url($client, $login_url, "Logging in as $user2account");
-$html = webauto_get_html($crawler);
-
-// Use the log_in form
-$form = webauto_get_form_with_button($crawler,'Login', 'Login Locally');
-webauto_change_form($form, 'username', $user2account);
-webauto_change_form($form, 'password', $user2pw);
-
-$crawler = webauto_submit_form($client, $form);
-$html = webauto_get_html($crawler);
-
-if ( webauto_dont_want($html, "Your username and password didn't match. Please try again.") ) return;
-
-line_out("Deleting any old ads belonging to User 2");
-// Cleanup old ads
-$saved = $passed;
-// preg_match_all("'/ad/[0-9]+/delete'",$html,$matches);
-preg_match_all("'\"([a-z0-9/]*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
-if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
-    foreach($matches[1] as $match ) {
-        $crawler = webauto_get_url($client, $match, "Loading delete page for old record");
-        $html = webauto_get_html($crawler);
-        $form = webauto_get_form_with_button($crawler,'Yes, delete.');
-        $crawler = webauto_submit_form($client, $form);
-        $html = webauto_get_html($crawler);
-        webauto_search_for_menu($html);
-    }
-}
-$passed = $saved;
 
 $create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
 $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
