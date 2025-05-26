@@ -47,7 +47,7 @@ webauto_check_test();
 warn_about_testrun($url);
 
 $testrun = webauto_testrun($url);
-$testrun = false;
+if ( str_starts_with($testrun, "http://localhost:8000") ) $testrun = false;
 
 $base_url = U::get_base_url($url);
 
@@ -55,9 +55,10 @@ $passed = 0;
 
 webauto_setup();
 
+// Check the /home, /admin, /accounts/login, and 404 pages
 market_check_basics($client, $base_url, $check, $testrun);
 
-// Make sure the page is also available at /
+// Make sure the page is also available at / for this first autograder
 $crawler = webauto_get_url($client, $base_url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);

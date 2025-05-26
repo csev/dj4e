@@ -45,7 +45,6 @@ $assignments = array(
     '16solo.php' => 'First Solo',
     '15solo.php' => 'Random Solo (old)',
     '17solo.php' => 'Second (Random) Solo',
-    '30market0.php' => 'Market 0',
 );
 
 $oldsettings = Settings::linkGetAll();
