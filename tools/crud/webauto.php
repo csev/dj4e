@@ -158,10 +158,11 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
     global $USER, $OUTPUT, $access_code;
     global $base_url_path, $URL_IN_USE;
     global $SECONDS_BEFORE_RETRY;
-    global $passed, $failed;
+    global $passed, $failed, $nograde;
 
     if ( !isset($passed) ) $passed = 0;
     if ( !isset($failed) ) $failed = 0;
+    if ( !isset($nograde) ) $nograde = false;
 
     if ( isset($access_code) && $access_code ) {
         if ( isset($_GET['code']) ) {
@@ -506,7 +507,7 @@ function webauto_get_href($crawler,$text, $message=false)
 {
     if ( $crawler == false ) return false;
     $html = $crawler->html();
-    $msg = 'Did not find anchor tag with"'.$text.'"';
+    $msg = 'Did not find anchor tag with "'.$text.'"';
     if ( is_string($message) ) $msg .= ' ' . $message;
     if ( strpos($html, $text) === false) {
         if ( stripos($html, $text) !== false ) $msg .= ' (check your case)';
