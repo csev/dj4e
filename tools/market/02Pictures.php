@@ -21,10 +21,9 @@ $ad_title = $ad_titles[($code+1) % count($ad_titles)];
 
 $now = date('H:i:s');
 
-echo("<h2>Building MarketPlace with Pictures</h2>\n");
+echo("<h2>MarketPlace with Pictures</h2>\n");
 
 $OUTPUT->welcomeUserCourse();
-
 
 ?>
 Specification:

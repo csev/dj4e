@@ -21,7 +21,7 @@ $ad_title = $ad_titles[($code+1) % count($ad_titles)];
 
 $now = date('H:i:s');
 
-echo("<h2>Building MarketPlace with Comments</h2>\n");
+echo("<h2>MarketPlace with Comments</h2>\n");
 
 $OUTPUT->welcomeUserCourse();
 
@@ -252,7 +252,6 @@ if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
 
-
 // Look for the edit entry
 line_out("Looking through the main view to update the ad that User 2 just created");
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
@@ -276,6 +275,57 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
     error_out("Could not find an update link for the item that User 2 just created with a url like /ad/nnn/update - found ".count($matches[1]));
     return;
 }
+
+// Lets add a comment form
+line_out('Looking for the detail page so we can add a comment');
+$detail_url = webauto_get_url_from_href($crawler,$title."_updated");
+$crawler = webauto_get_url($client, $detail_url, "Loading detail page...");
+$html = webauto_get_html($crawler);
+webauto_search_for_menu($html); 
+
+// Use the comment form - sometimes the field is "comment" and sometimes it is "text"
+line_out('Looking for comment form and submit button.');
+$form = webauto_get_form_with_button($crawler,'Submit');
+if ( strpos($html, '"comment"') > 0 ) {
+    webauto_change_form($form, 'comment', $title."_comment");
+} else {
+    webauto_change_form($form, 'text', $title."_comment");
+}
+
+line_out('Submitting the comment form');
+$crawler = webauto_submit_form($client, $form);
+$html = webauto_get_html($crawler);
+
+if ( ! webauto_search_for($html, $title."_comment") ) {
+    error_out('Added a comment but could not find it on the next screen');
+    return;
+}
+
+
+line_out('Deleteing that comment..');
+// comment/3/delete
+
+preg_match_all("'\"([a-z0-9/]*comment*/[0-9]+/delete[^\"]*)\"'",$html,$matches);
+// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
+
+if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
+    foreach($matches[1] as $match ) {
+        $crawler = webauto_get_url($client, $match, "Loading delete page for comment");
+        $html = webauto_get_html($crawler);
+        $form = webauto_get_form_with_button($crawler,'Yes, delete.');
+        $crawler = webauto_submit_form($client, $form);
+        $html = webauto_get_html($crawler);
+        if ( ! webauto_search_for_not($html, $title."_comment") ) {
+            error('It appears that the comment was not deleted.');
+            return;
+        }
+        break;
+    }
+} else {
+    error_out('Could not find link to delete comment comment/nnn/delete');
+    return;
+}
+
 
 $crawler = market_do_logout($client, $crawler);
 
