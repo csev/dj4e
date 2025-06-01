@@ -30,6 +30,7 @@ if ( SettingsForm::isSettingsPost() ) {
 $assignments = array(
     '00Market-Setup.php' => 'Market Initial Setup',
     '01Market-Owned.php' => 'Market Owned Rows',
+    '02Pictures.php' => 'Market With Pictures',
 );
 
 $oldsettings = Settings::linkGetAll();
@@ -143,8 +144,6 @@ $OUTPUT->flashMessages();
 $code = $USER->id+$LINK->id+$CONTEXT->id;
 if ( ! $USER->displayname || $USER->displayname == '' ) {
     // echo('<p style="color:blue;">Auto grader launched without a student name.</p>'.PHP_EOL);
-} else {
-    $OUTPUT->welcomeUserCourse();
 }
 
 if ( ! $password_ok ) {

@@ -20,8 +20,6 @@ check_code_and_version($crawler);
 // "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
 $dj4e_code = webauto_get_meta($crawler, 'dj4e-code');
 
-var_dump($dj4e_code);
-
 if ( ! $dj4e_code || strlen($dj4e_code) < 1 ) {
     error_out('You seem to be missing the required meta name="dj4e-code" tag.  Check the assignment document.');
     $meta_good = false;
