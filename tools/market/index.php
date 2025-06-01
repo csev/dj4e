@@ -32,6 +32,7 @@ $assignments = array(
     '01Market-Owned.php' => 'Market Owned Rows',
     '02Pictures.php' => 'Market With Pictures',
     '03Comments.php' => 'Market With Comments',
+    '04Favorites.php' => 'Market With Favorites',
 );
 
 $oldsettings = Settings::linkGetAll();
