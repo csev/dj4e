@@ -21,15 +21,14 @@ $ad_title = $ad_titles[($code+1) % count($ad_titles)];
 
 $now = date('H:i:s');
 
-echo("<h2>Building MarketPlace with Owned Rows</h2>\n");
+echo("<h2>Building MarketPlace with Comments</h2>\n");
 
 $OUTPUT->welcomeUserCourse();
 
-
 ?>
 Specification:
-<a href="../../assn/dj4e_mkt1.md" class="btn btn-info" target="_blank">
-https://www.dj4e.com/assn/dj4e_mkt1.md</a>
+<a href="../../assn/dj4e_mkt3.md" class="btn btn-info" target="_blank">
+https://www.dj4e.com/assn/dj4e_mkt3.md</a>
 </a>
 <p>
 Create two non-super users, by logging into the <b>/admin</b> URL of your application
@@ -55,7 +54,7 @@ the initial list of ads after it logs in.
 Don't use either of the above accounts to add the ad or it will be deleted at the beginning of each run.
 </p>
 <?php
-$url = getUrl('https://market.dj4e.com/m1');
+$url = getUrl('https://market.dj4e.com/m3');
 if ( $url === false ) return;
 warn_about_ngrok($url);
 
@@ -116,6 +115,11 @@ if ( ! webauto_testrun($url) ) {
         return;
     }
 
+    if ( ! webauto_search_for_not($html, 'name="comment"' ) ) {
+    	error_out('The comments field is not supposed to appear in the detail form.');
+    	return;
+    }
+
     line_out("Congratulations your manually created entry looks good!");
 
     $crawler = webauto_get_url($client, $url, "Going to the ad list view");
@@ -146,12 +150,58 @@ $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page..
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
+if ( ! webauto_search_for($html, "price") ) {
+    error_out('The price field is missing on the create form - check the field_list in views.py');
+    return;
+}   
+
+if ( ! webauto_search_for_not($html, 'name="comment"') ) {
+    error_out('The comments field is not supposed to appear in the create form.');
+    return;
+}
+
+// Sanity check the new ad page
+if ( strpos($html, 'type="file"') > 1 ) {
+    markTestPassed("Found upload button on Create Ad form");
+} else {
+    error_out("Create Ad form cannot upload a file");
+    return;
+}
+
+if ( strpos($html, 'window.File') > 1 ) {
+    markTestPassed("Found JavaScript to check the size of the uploaded file on Create Ad form");
+} else {
+    markTestFailed("Create Ad page appears to be missing JavaScript to check the size of the uploaded file");
+    return;
+}
+
+if ( strpos($html, 'multipart/form-data') > 1 ) {
+    markTestPassed('Found enctype="multipart/form-data" on Create Ad form');
+} else {
+    markTestFailed('Create Ad form requires enctype="multipart/form-data"');
+    return;
+}
+
+if ( ! strpos($html, 'csrfmiddlewaretoken') > 1 ) {
+    error_out('Create Ad form requires csrfmiddlewaretoken');
+    return;
+}
+
+if ( ! strpos($html, 'name="picture"') > 1 ) {
+    error_out('Create Ad form requires an input name="picture" on Create Ad form');
+    return;
+}
+
+
 // Use the create ad form
 $title = 'HHGTTG_42 '.$now;
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'title', $title);
 webauto_change_form($form, 'price', '0.42');
 webauto_change_form($form, 'text', 'Towels - guaranteed to impress Vogons.');
+
+$picturepath = dirname(__FILE__) . "/Sakaiger.png";
+webauto_change_form($form, 'picture', $picturepath);
 
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
@@ -173,31 +223,34 @@ $crawler_detail = webauto_get_url($client, $detail_url, "Loading detail page");
 $html = webauto_get_html($crawler_detail);
 
 if ( ! webauto_search_for($html, $title, true) ) {
-    error_out("Did not find $title on detail page"); 
+    error_out("Did not find $title on detail page");
     return;
-}       
-        
+}
+
 if ( ! webauto_search_for($html, 'Price', true) ) {
     error_out("Did not find price on detail page");
     return;
-}   
+}
+
+if ( ! webauto_search_for($html, '.overlay', true) ) {
+    error_out("Did not find CSS rule to style the picture overlay");
+    return;
+}
 
 if ( ! webauto_search_for_not($html, "owner") ) {
     error_out('The owner field is not supposed to appear in the detail form.');
     return;
-}   
-    
-if ( ! webauto_search_for_not($html, '.overlay', true) ) {
-    error_out("There should not be an overlay CSS class");
-    return;
-}       
-    
-if ( ! webauto_search_for_not($html, 'name="comment"' ) ) {
-    error_out('The comments field is not supposed to appear in the detail form.');
+}
+
+if ( ! webauto_search_for($html, 'name="comment"' ) ) {
+    error_out('The comments field is supposed to appear in the detail form.');
     return;
 }
-    
+
 $crawler = webauto_get_url($client, $url, "Retrieving the ad list url");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
 
 
 // Look for the edit entry

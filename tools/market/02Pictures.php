@@ -10,7 +10,6 @@ use \Tsugi\Util\U;
 $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
-// HACK $check = "1679091c5a880faf6fb5e6087eb1b2dc";
 
 $meta = '<meta name="dj4e" content="'.$check.'">';
 
@@ -19,9 +18,6 @@ $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
 $user2account = 'dj4e_user2';
 $user2pw = "Meow_42_" . substr(getMD5(),1,6);
 $ad_title = $ad_titles[($code+1) % count($ad_titles)];
-
-// HACK $user1pw = "Meow_679091_41";
-// HACK $user2pw = "Meow_42_679091";
 
 $now = date('H:i:s');
 
@@ -216,6 +212,47 @@ if ( ! webauto_search_for($html, $title) ) {
     error_out('Tried to create a record and cannot find the record in the list view');
     return;
 }
+
+$crawler = webauto_get_url($client, $url, "Retrieving the ad list url");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
+
+// Check the detail page
+$detail_url = webauto_get_url_from_href($crawler,$title, "(Could not link to the detail page on the list view)");
+$crawler_detail = webauto_get_url($client, $detail_url, "Loading detail page");
+$html = webauto_get_html($crawler_detail);
+
+if ( ! webauto_search_for($html, $title, true) ) {
+    error_out("Did not find $title on detail page");
+    return;
+}
+
+if ( ! webauto_search_for($html, 'Price', true) ) {
+    error_out("Did not find price on detail page");
+    return;
+}
+
+if ( ! webauto_search_for($html, '.overlay', true) ) {
+    error_out("Did not find CSS rule to style the picture overlay");
+    return;
+}
+
+if ( ! webauto_search_for_not($html, "owner") ) {
+    error_out('The owner field is not supposed to appear in the detail form.');
+    return;
+}
+
+if ( ! webauto_search_for_not($html, 'name="comment"' ) ) {
+    error_out('The comments field is not supposed to appear in the detail form.');
+    return;
+}
+
+$crawler = webauto_get_url($client, $url, "Retrieving the ad list url");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
+
 
 // Look for the edit entry
 line_out("Looking through the main view to update the ad that User 2 just created");

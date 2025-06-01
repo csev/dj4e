@@ -31,6 +31,7 @@ $assignments = array(
     '00Market-Setup.php' => 'Market Initial Setup',
     '01Market-Owned.php' => 'Market Owned Rows',
     '02Pictures.php' => 'Market With Pictures',
+    '03Comments.php' => 'Market With Comments',
 );
 
 $oldsettings = Settings::linkGetAll();
