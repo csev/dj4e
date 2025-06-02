@@ -1558,7 +1558,7 @@
 {
     "title": "Classified Ads #1",
     "anchor": "dj4e_ads1",
-    "icon" : "fa-newspaper",
+    "icon" : "fa-store",
     "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
@@ -1757,7 +1757,7 @@
 {
     "title": "Classified Ads + Pictures",
     "anchor": "dj4e_ads1b",
-    "icon" : "fa-code",
+    "icon" : "fa-camera",
     "description": "We add pictures to our classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads1b.md",
     "discussions" : [
@@ -1900,7 +1900,7 @@
 {
     "title": "Classified Ads + Comments",
     "anchor": "dj4e_ads2",
-    "icon" : "fa-code",
+    "icon" : "fa-comment",
     "description": "We add comments to our classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_ads2b.md",
     "discussions" : [
@@ -2089,9 +2089,9 @@
     ]
 },
 {
-    "title": "Classified Ads #3",
+    "title": "Classified Ads Favorites #3",
     "anchor": "dj4e_ads3",
-    "icon" : "fa-newspaper",
+    "icon" : "fa-star",
     "description": "We add favorites to our classified ads application.",
     "discussions" : [
         {
@@ -2196,7 +2196,7 @@
     ]
 },
 {
-    "title": "Classified Ads #4",
+    "title": "Classified Ads Search #4",
     "anchor": "dj4e_ads4",
     "icon" : "fa-search",
     "description": "We add search a feature our classified ads application.",
@@ -2232,7 +2232,7 @@
         ]
         },
         {
-        "title": "Peer Graded: Ads4 User Interface",
+        "title": "Peer Graded: Market 4 User Interface",
         "launch" : "mod/peer-grade/",
         "resource_link_id" : "peer_ads_4",
         "custom" : [
@@ -2240,7 +2240,7 @@
                 "key": "config",
                 "json":
 {
-  "title": "Ads4 Look and Feel",
+  "title": "Market 5 Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -2297,7 +2297,7 @@
 {
     "title": "Building an Application on Your Own",
     "anchor": "dj4e_solo",
-    "icon" : "fa-search",
+    "icon" : "fa-compass",
     "description": "This week - in the auto grader - you will be presented with a sample application and you are to replicate its fuctionality.  There is no new material - but you might want to look back and review some material to help with this assignment.",
     "discussions" : [
         {
@@ -2428,7 +2428,7 @@
 {
     "title": "Project Overview",
     "anchor": "pr_description",
-    "icon" : "fa-address-card",
+    "icon" : "fa-project-diagram",
     "description": "Introduce your project to the rest of the class.",
     "assignment" : "{apphome}/project/01_description.md",
     "discussions" : [
@@ -2494,7 +2494,7 @@
 {
     "title": "Project Milestone 2",
     "anchor": "pr_02_milestone",
-    "icon" : "fa-comment",
+    "icon" : "fa-project-diagram",
     "description": "Introduce your project to the rest of the class.",
     "assignment" : "{apphome}/project/02_revision.md",
     "discussions" : [
@@ -2560,7 +2560,7 @@
 {
     "title": "Project Milestone 3",
     "anchor": "pr_03_milestone",
-    "icon" : "fa-comment",
+    "icon" : "fa-project-diagram",
     "description": "Design a first verson of the user interface (UI) for your project.",
     "assignment" : "{apphome}/project/03_userinterface.md",
     "discussions" : [
@@ -2642,7 +2642,7 @@
 {
     "title": "Project Milestone 4",
     "anchor": "pr_04_milestone",
-    "icon" : "fa-comment",
+    "icon" : "fa-project-diagram",
     "description": "Design a first verson of the data model (UI) for your project.",
     "assignment" : "{apphome}/project/04_model.md",
     "discussions" : [
@@ -2717,7 +2717,7 @@
 {
     "title": "Project Milestone 5 - Project Review",
     "anchor": "pr_05_milestone",
-    "icon" : "fa-comment",
+    "icon" : "fa-project-diagram",
     "description": "This is a project review to get feedback to help you for the final project submission.",
     "discussions" : [
         {
@@ -2852,6 +2852,439 @@
         }
         ]
 },
+
+
+
+{
+    "title": "MarketPlace (m1)",
+    "anchor": "dj4e_mkt1",
+    "icon" : "fa-store",
+    "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
+    "assignment" : "{apphome}/assn/dj4e_mkt1.md",
+    "slides": "lectures/DJ-12-Owned-Rows.pptx",
+    "todo": "How to switch Django to MySQL on PythonAnywhere",
+    "discussions" : [
+        {
+        "title" : "Classified Ads #1",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt1"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)",
+            "youtube" : "kQORvrIzsZs"
+        },
+        {
+            "title" : "Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
+            "youtube" : "iHvJZ_lvXB4"
+        },
+        {
+            "title" : "Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)",
+            "youtube" : "nuz_zXWoCo8"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Marketplace #1",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_mkt1",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "01Market-Owned.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Crispy Forms",
+            "href": "https://samples.dj4e.com/crispy/"
+        },
+        {
+            "title" : "Ownership of Rows",
+            "href": "https://samples.dj4e.com/myarts/"
+        },
+        {
+            "title" : "Chapter 14: Python Objects (review)",
+            "href" : "https://www.py4e.com/html3/14-objects"
+        },
+        {
+            "title" : "Bootstrap / Menus",
+            "href": "https://samples.dj4e.com/menu/"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/m1"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+
+{
+    "title": "Marketplace + Pictures (2)",
+    "anchor": "dj4e_mkt2",
+    "icon" : "fa-camera",
+    "description": "We add pictures to our classified ads application.",
+    "assignment" : "{apphome}/assn/dj4e_mkt2.md",
+    "discussions" : [
+        {
+        "title" : "Classified Ads + Pictures",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt2"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Walking through the DJ4E Pictures (pics) Sample Code (33:06)",
+            "youtube" : "tanl9CthvHE"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Marketplace + Pictures",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_mkt2",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "02Pictures.php"
+            }
+        ]
+        },
+        {
+        "title": "Peer Graded: Menus and Pictures",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "dj4e_peer_mkt2",
+        "custom" : [
+            {
+                "key": "config",
+                "json": 
+{
+  "title": "Menus and Pictures",
+  "description": "In this assignment you will take some screen shots to deomstrate the look and feel of your application..",
+  "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "assignment" : "http://www.dj4e.com/assn/dj4e_mkt2.md",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of a detail page showing a picture to the right of the Ad, edit and update buttons, and the top menu",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of an Ad detail page showing the picture maximized as an overlay",
+      "type": "image"
+    }
+  ],
+  "totalpoints": 10,
+  "instructorpoints": 0,
+  "peerpoints": 4,
+  "assesspoints":3,
+  "minassess": 2,
+  "maxassess": 6,
+  "flag": true,
+  "resubmit":"on"
+}
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample DJ4E Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Adding Pictures",
+            "href": "https://samples.dj4e.com/pics/"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/m2"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+
+{
+    "title": "Marketplace + Comments (3)",
+    "anchor": "dj4e_mkt3",
+    "icon" : "fa-comment",
+    "description": "We add comments to our classified ads application.",
+    "assignment" : "{apphome}/assn/dj4e_mkt3b.md",
+    "discussions" : [
+        {
+        "title" : "Marketplace + Comments (3)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt3"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Walking through the DJ4E Forums (forums) Sample Code (25:28)",
+            "youtube" : "mgcj3V56X-A"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Ad List + Comments",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_mkt3b",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "03Comments.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample DJ4E Code",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Forums and Comments",
+            "href": "https://samples.dj4e.com/forums/"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/m3"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+
+{
+    "title": "Marketplace - Favorites (4)",
+    "anchor": "dj4e_mkt4",
+    "icon" : "fa-star",
+    "description": "We add favorites to our classified ads application.",
+    "discussions" : [
+        {
+        "title" : "Marketplace - Favorites (4)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt4"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "DJ4E Samples Walkthrough - Favicon (4:11)",
+        "youtube": "C1WGD5hFdT8"
+    },
+    {
+        "title": "DJ4E Samples Walkthrough - Social Login (8:47)",
+        "youtube": "NctpQ-2Kdtw"
+    },
+    {
+        "title": "DJ4E Samples Walkthrough - Favorites (34:17)",
+        "youtube": "CFF0WQLj1as",
+        "youtube_pre_2025": "6cq-ehBHkwc"
+    }
+   ],
+    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
+    "lti" : [
+        {
+        "title" : "Marketplace - Favorites (4)",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_mkt4",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "13adlist3.php"
+            }
+        ]
+        },
+        {
+        "title": "Peer Graded: Market 4 User Interface",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "peer_mkt4",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Market 4 Look and Feel",
+  "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of your home (all ads) page showing at least two stars filled in (Maximum 2MB per file)",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your home (all ads) page showing at least two stars not-filled in (Maximum 2MB per file)",
+      "type": "image"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample Code on Github",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Social Login with Github",
+            "href": "https://python-social-auth.readthedocs.io/en/latest/configuration/django.html"
+        },
+        {
+            "title" : "Sample Code Server",
+            "href": "https://samples.dj4e.com/"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/m4"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+
+{
+    "title": "Marketplace - Search (5)",
+    "anchor": "dj4e_mkt5",
+    "icon" : "fa-search",
+    "description": "We add search a feature our classified ads application.",
+    "todo" : "Add tags, drop down autofill, auto add",
+    "discussions" : [
+        {
+        "title" : "Marketplace #5",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt5"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "DJ4E Samples Walkthrough - search (well) (21:30)",
+        "youtube": "4pOExZHnL9k"
+    },
+    {
+        "title": "DJ4E Samples Walkthrough - myarts (review) (30:13)",
+        "youtube" : "iHvJZ_lvXB4"
+    }
+   ],
+    "assignment" : "{apphome}/assn/dj4e_mkt5.md",
+    "lti" : [
+        {
+        "title" : "Auto-grader: Marketplace - Search (5)",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_mkt5",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "05Search.php"
+            }
+        ]
+        },
+        {
+        "title": "Peer Graded: Market 5 User Interface",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "peer_mkt5",
+        "custom" : [
+            {
+                "key": "config",
+                "json":
+{
+  "title": "Market 5 Look and Feel",
+  "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
+  "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of your home (all ads) page including the url / address bar without a search active (Maximum 2MB per file)",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your home (all ads) page including the url / address bar with a search active (Maximum 2MB per file)",
+      "type": "image"
+    }
+  ],
+  "gallery": "off",
+  "totalpoints": "10",
+  "instructorpoints": "0",
+  "peerpoints": "6",
+  "rating": "0",
+  "assesspoints": "2",
+  "minassess": "2",
+  "maxassess": "5",
+  "resubmit": "always",
+  "autopeer": "300000",
+  "notepublic": "false",
+  "flag": "true",
+  "galleryformat": "card"
+}
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Sample Code on Github",
+            "href": "https://github.com/csev/dj4e-samples"
+        },
+        {
+            "title" : "Sample Code Server",
+            "href": "https://samples.dj4e.com/"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/m5"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+
+
 {
     "title": "MDN Tutorial (Legacy)",
     "anchor": "mdn_legacy",
