@@ -1,13 +1,14 @@
-Classified Ad Web Site - Milestone 4
-====================================
+
+Classified Ad Web Site - Search - Milestone 5
+=============================================
 
 In this assignment, you will expand your classified ads web site to add search and tags
 functionality equivalent to:
 
-https://chucklist.dj4e.com/m4
+https://market.dj4e.com/m5
 
 You can log into this site using
-an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+an account: <b>facebook</b> and a password of <b>Marketnn!</b> where "nn" is the
 two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 *Important*: The number of lines you need to add to your code is *relatively* small.  Take your time
@@ -96,3 +97,4 @@ for a word in any of the three places.
 * Note the "?search=" in the location bar in your browser while you are doing searched
 
 * Clear the search and see all of the results and verify there is no "?search=" get parameter
+

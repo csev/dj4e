@@ -1,13 +1,14 @@
-Classified Ad Web Site - Milestone 3
-====================================
+
+Classified Ad Web Site - Favorites - Milestone 4
+================================================
 
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:
 
-https://chucklist.dj4e.com/m3
+https://market.dj4e.com/m4
 
 You can log into this site using
-an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+an account: <b>facebook</b> and a password of <b>Marketnn!</b> where "nn" is the
 two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 We will add a favoriting capability to your previous milestone by borrowing more parts and pieces from the code that runs:
@@ -32,15 +33,15 @@ after you update the file and press 'Refresh' and/or switch browsers.  Sometimes
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
 you can add a GET parameter tho the URL to forc it to be re-retrieved:
 
-    https://chucklist.dj4e.com/favicon.ico?x=42
+    https://market.dj4e.com/favicon.ico?x=42
 
 Change the `x` value to something else if you want to test over and over.
 
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
-secret.   The documentation is in comments of `mysite/mysite/github_settings.py`.
+`market/config/github_settings.py` and go through the process on github to get your client ID and
+secret.   The documentation is in comments of `market/config/github_settings.py`.
 
 To get your key and secret from github, go to:
 <a href="https://github.com/settings/developers" target="_blank">https://github.com/settings/developers</a>
@@ -65,7 +66,7 @@ In this section, you will pull bits and pieces of the `favs` sample application
 into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
 ads.
 
-(1) Add this to your `ads/model.py`, taking inspiration from `dj4e-samples/favs/models.py`
+(1) Add this to your `mkt/model.py`, taking inspiration from `dj4e-samples/favs/models.py`
 
     class Ad(models.Model) :
 

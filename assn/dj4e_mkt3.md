@@ -1,15 +1,16 @@
-Classified Ad Web Site - Milestone 2
-====================================
+
+Classified Ad Web Site - Comments - Milestone 3
+===============================================
 
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:
 
-https://chucklist.dj4e.com/m2
+https://market.dj4e.com/m3
 
 The primary additions from the previous milestone are to add add comments for each ad.
 You must keep all the features from previous assignments working.
 You can log into this site using
-an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+an account: <b>facebook</b> and a password of <b>Marketnn!</b> where "nn" is the
 two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 You will build this application by borrowing parts and pieces from the code that runs
@@ -61,9 +62,9 @@ the migrations once you have modified the model successfully.
 
 (3) Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
 and create the `CommentForm` and pass them into your
-`templates/ads/ad_detail.html` template through the context.
+`templates/mkt/ad_detail.html` template through the context.
 
-(4) Adapt the `templates/ads/ad_detail.html` template to show comments and show a delete icon
+(4) Adapt the `templates/mkt/ad_detail.html` template to show comments and show a delete icon
 when a comment belongs to the current logged in user.
 
 (5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
@@ -126,18 +127,18 @@ after you update the file and press 'Refresh' and/or switch browsers.  Sometimes
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
 you can add a GET parameter to the URL to force it to be re-retrieved:
 
-    https://chucklist.dj4e.com/favicon.ico?x=42
+    https://market.dj4e.com/favicon.ico?x=42
 
 Change the `x` value to something else if you want to test over and over.
 
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
+`market/config/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `mysite/mysite/github_settings.py`.
+and at the end of your `market/config/github_settings.py`.
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead

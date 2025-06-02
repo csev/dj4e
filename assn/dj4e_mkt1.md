@@ -1,6 +1,6 @@
 
-Building a Marketplace Web Site
-===============================
+Building a Marketplace Web Site - Owned Rows - Milestone 1
+==========================================================
 
 In this assignment, you will build a web site that is roughly equivalent to
 
@@ -8,7 +8,7 @@ https://market.dj4e.com/m1
 
 This web site is a classified ad web site.   People can view ads without logging in
 and if they log in, they can create their own ads. You can log into this site using 
-an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the 
+an account: <b>facebook</b> and a password of <b>Marketnn!</b> where "nn" is the 
 two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 You will build this application by borrowing parts and pieces from the code that runs
@@ -239,11 +239,11 @@ Change the `x` value to something else if you want to test over and over.
 (3) To make the social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
+`market/config/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `mysite/mysite/github_settings.py`.
+and at the end of your `market/config/github_settings.py`.
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead

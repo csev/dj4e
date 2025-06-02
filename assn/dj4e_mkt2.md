@@ -1,22 +1,28 @@
-Classified Ads + Pictures
-=========================
+
+Classified Ads + Pictures (Milestone 2)
+=======================================
 
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:
 
-https://chucklist.dj4e.com/mp
+https://market.dj4e.com/m2
 
 The primary additions from the previous milestone are to add an image to each ad and
 keep all the features from the previous version of the application.
 You can log into this site using
-an account: <b>dj4e_crud</b> and a password of <b>passwordnn</b> where "nn" is the
+an account: <b>facebook</b> and a password of <b>Marketnn!</b> where "nn" is the
 two-digit number of Dr. Chuck's race car or the numeric value for asterisk in the ASCII character set.
 
 You will build this application by borrowing parts and pieces from the code that runs
 
 https://samples.dj4e.com/
 
-and combining them into a single application.
+and adding code to your previous version of this application.  You need to complete 
+the previous assignment and pass the autograder, and get a grade before attempting
+this assignment.
+
+The autograder will re-test all the features of the previous assignment to make sure they
+continue to work as you add new features.
 
 __Important Note:__ If you find you have a problem saving files in the PythonAnywhere
 system using their browser-based editor, you might need to turn off your ad blocker for
@@ -28,7 +34,7 @@ Adding Pictures to the Ads Application
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `ads/model.py`, taking inspiration from `dj4e-samples/pics/models.py`
+(1) Add this to your `mkt/model.py`, taking inspiration from `dj4e-samples/pics/models.py`
 
     class Ad(models.Model) :
 
@@ -62,19 +68,19 @@ to:
             model = Ad
             fields = ['title', 'text', 'picture', 'price']
 
-Leave the other bits of `ads/forms.py` alone.  Only change the name of the model in the
+Leave the other bits of `mkt/forms.py` alone.  Only change the name of the model in the
 above two lines.
 
 (3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
-`PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
+`PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `mkt/views.py`.
 These new views don't inherit from owner.py because they manage the `owner` column in the `get()`
 and `post()` methods.
 
-(4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
+(4) Alter your `templates/mkt/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
 attribute to the `form` tag.
 
-(5) Alter the `templates/ads/ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
+(5) Alter the `templates/mkt/ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
@@ -121,18 +127,18 @@ after you update the file and press 'Refresh' and/or switch browsers.  Sometimes
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
 you can add a GET parameter to the URL to force it to be re-retrieved:
 
-    https://chucklist.dj4e.com/favicon.ico?x=42
+    https://market.dj4e.com/favicon.ico?x=42
 
 Change the `x` value to something else if you want to test over and over.
 
 (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
-`mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
+`market/config/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
-and at the end of your `mysite/mysite/github_settings.py`.
+and at the end of your `market/config/github_settings.py`.
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
 using github login on localhost - make sure that you register `http://127.0.0.1:8000/` instead
