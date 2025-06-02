@@ -76,11 +76,11 @@ above two lines.
 These new views don't inherit from owner.py because they manage the `owner` column in the `get()`
 and `post()` methods.
 
-(4) Alter your `templates/mkt/form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
+(4) Alter your `mkt/templates/mkt/form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
 attribute to the `form` tag.
 
-(5) Alter the `templates/mkt/detail.html` template by looking through `pics/templates/pics/detail.html` and
+(5) Alter the `mkt/templates/mkt/detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
