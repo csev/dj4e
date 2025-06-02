@@ -71,7 +71,7 @@ In this section, you will pull bits and pieces of the `favwc` sample application
 into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
 ads.
 
-(1) Add this to your `ads/model.py`, taking inspiration from `dj4e-samples/favwc/models.py`
+(1) Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
 
     class Ad(models.Model) :
 

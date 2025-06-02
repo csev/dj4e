@@ -63,7 +63,7 @@ INSTALLED_APPS = [
 
 (3) Then edit your `market/config/urls.py` to add a route to the new application:
 
-(4) Use this in your `mkt/model.py`:
+(4) Use this in your `mkt/models.py`:
 
     from django.db import models
     from django.core.validators import MinLengthValidator

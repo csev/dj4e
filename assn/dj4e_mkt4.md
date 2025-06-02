@@ -66,7 +66,7 @@ In this section, you will pull bits and pieces of the `favs` sample application
 into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
 ads.
 
-(1) Add this to your `mkt/model.py`, taking inspiration from `dj4e-samples/favs/models.py`
+(1) Add this to your `mkt/models.py`, taking inspiration from `dj4e-samples/favs/models.py`
 
     class Ad(models.Model) :
 
@@ -103,7 +103,7 @@ Of course do the migrations once you have modified the model.
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(4) Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
+(4) Alter your `list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
 parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
 code at the end.
 

@@ -206,7 +206,7 @@ this site - weird but true.
 
 Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py`.
 
-(2) Use this in your `ads/model.py`:
+(2) Use this in your `ads/models.py`:
 
     from django.db import models
     from django.core.validators import MinLengthValidator
