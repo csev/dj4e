@@ -327,6 +327,64 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
 }
 
 
+// Now check the favorite
+
+$crawler = webauto_get_url($client, $url, "Going to the ad list view to check favorite toggle via ajax");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
+if ( ! webauto_search_for($html, "dj4e-favstar") ) {
+    error_out('Could not find dj4e-star web component in markup');
+    return;
+}
+
+if ( ! webauto_search_for($html, "dj4e-favstar.js") ) {
+    error_out('It does not look like you included the dj4e-favstar.js web component code');
+    return;
+}
+
+if ( ! webauto_search_for($html, 'type="module"') ) {
+    error_out('It does not look like you included the dj4e-favstar.js web component code');
+    return;
+}
+
+if ( ! webauto_search_for($html, "toggle") ) {
+    error_out('Could not find JavaScript funciton to toggle the favorite');
+    return;
+}
+
+
+// ad/3/toggle
+
+preg_match_all("#'([a-z0-9/]*/[0-9]+/toggle[^\"]*)'#",$html,$matches);
+// echo("\n<pre>\n");var_dump($matches);echo("\n</pre>\n");
+
+$togglefound = false;
+if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count($matches[1]) > 0 ) {
+    foreach($matches[1] as $match ) {
+        line_out("Retrieving $match");
+        $crawler = $client->request('POST', $match);
+        if ( $crawler === false ) {
+            error_out("Error POSTING to toggle url: ".$match);
+            return;
+        }
+        $response = $client->getResponse();
+        $status = $response->getStatusCode();
+        if ( $status !== 200 ) {
+            error_out("Error posting to toggle url: ".$match." status=".$status);
+            return;
+        }
+        success_out("Toggle success message: ".$response->getContent());
+        $togglefound = true;
+        break;
+    }
+}
+
+$crawler = webauto_get_url($client, $url, "Going to the ad list view to logout and omcplete test");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
+
 $crawler = market_do_logout($client, $crawler);
 
 // -------

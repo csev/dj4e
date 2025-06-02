@@ -81,6 +81,21 @@ if ( $retval === False ) {
     $meta_good = false;
 }
 
+if ( ! webauto_search_for_not($html, "dj4e-favstar") ) {
+    error_out('You should not be using the dj4e-star web component in markup');
+    return;
+}
+
+if ( ! webauto_search_for_not($html, "dj4e-favstar.js") ) {
+    error_out('You should not be using the dj4e-star web component in markup');
+    return;
+}   
+
+if ( ! webauto_search_for_not($html, 'type="module"') ) {
+    error_out('You should not be using the dj4e-star web component in markup');
+    return;
+}
+
 webauto_search_for_menu($html);
 // First, check if there is a manually entered title in the ad list
 // unless of course this is a test run...
