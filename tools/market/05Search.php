@@ -21,7 +21,7 @@ $ad_title = $ad_titles[($code+1) % count($ad_titles)];
 
 $now = date('H:i:s');
 
-echo("<h2>MarketPlace with Comments</h2>\n");
+echo("<h2>MarketPlace with Search</h2>\n");
 
 $OUTPUT->welcomeUserCourse();
 
@@ -54,7 +54,7 @@ the initial list of ads after it logs in.
 Don't use either of the above accounts to add the ad or it will be deleted at the beginning of each run.
 </p>
 <?php
-$url = getUrl('https://market.dj4e.com/m4');
+$url = getUrl('https://market.dj4e.com/m5');
 if ( $url === false ) return;
 warn_about_ngrok($url);
 
@@ -251,8 +251,6 @@ $crawler = webauto_get_url($client, $url, "Retrieving the ad list url");
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
-
-// Look for the edit entry
 line_out("Looking through the main view to update the ad that User 2 just created");
 // preg_match_all("'/ad/[0-9]+/update'",$html,$matches);
 preg_match_all("'\"([a-z0-9/]*/[0-9]+/update[^\"]*)\"'",$html,$matches);
@@ -380,10 +378,50 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
     }
 }
 
-$crawler = webauto_get_url($client, $url, "Going to the ad list view to logout and complete test");
+$crawler = webauto_get_url($client, $url, "Going to the ad list view to test search");
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
 
+
+// Search for nothing matching...
+$not_found = "4242421234542";
+// $not_found = "HHG";
+$search_url = $url . "?search=" . $not_found;
+
+line_out("Loading search url...");
+$crawler = webauto_get_url($client, $search_url);
+if ( $crawler === false ) return;
+
+$html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
+
+$matches = array();
+$match_count = preg_match_all('#href=[ ]*"[^"]*ad/[0-9]+#',$html,$matches);
+// echo("<pre>\n");print_r($matches);echo("\n</pre>\n");
+if ( $match_count > 0 ) {
+    error_out("Search for '$not_found' should return zero ads.");
+    return;
+}
+$passed++;
+
+// Search for something we expect to be there: HHGTTG_42 05:36:18
+$search_url = $url . "?search=" . urlencode($title);
+line_out("Loading search url...");
+$crawler = webauto_get_url($client, $search_url);
+if ( $crawler === false ) return;
+
+$html = webauto_get_html($crawler);
+webauto_search_for_menu($html);
+
+if ( ! webauto_search_for($html, $title) ) {
+    error_out("Did not find '$title' on detail page");
+    return;
+}
+
+
+$crawler = webauto_get_url($client, $url, "Going to the ad list view to logout and complete test");
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
 
 $crawler = market_do_logout($client, $crawler);
 

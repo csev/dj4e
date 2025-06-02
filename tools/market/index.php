@@ -33,6 +33,7 @@ $assignments = array(
     '02Pictures.php' => 'Market With Pictures',
     '03Comments.php' => 'Market With Comments',
     '04Favorites.php' => 'Market With Favorites',
+    '05Search.php' => 'Market With Search',
 );
 
 $oldsettings = Settings::linkGetAll();
