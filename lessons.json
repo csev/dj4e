@@ -2853,10 +2853,8 @@
         ]
 },
 
-
-
 {
-    "title": "MarketPlace (m1)",
+    "title": "MarketPlace (1)",
     "anchor": "dj4e_mkt1",
     "icon" : "fa-store",
     "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
@@ -2865,7 +2863,7 @@
     "todo": "How to switch Django to MySQL on PythonAnywhere",
     "discussions" : [
         {
-        "title" : "Classified Ads #1",
+        "title" : "Marketplace #1",
         "launch" : "mod/tdiscus/",
         "resource_link_id": "discuss_mkt1"
         }
@@ -2887,7 +2885,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Marketplace #1",
-        "launch" : "tools/crud/",
+        "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt1",
         "custom" : [
             {
@@ -2951,7 +2949,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Marketplace + Pictures",
-        "launch" : "tools/crud/",
+        "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt2",
         "custom" : [
             {
@@ -2963,7 +2961,7 @@
         {
         "title": "Peer Graded: Menus and Pictures",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "dj4e_peer_mkt2",
+        "resource_link_id" : "dj4e_mkt2_peer",
         "custom" : [
             {
                 "key": "config",
@@ -3025,7 +3023,7 @@
     "anchor": "dj4e_mkt3",
     "icon" : "fa-comment",
     "description": "We add comments to our classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_mkt3b.md",
+    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
     "discussions" : [
         {
         "title" : "Marketplace + Comments (3)",
@@ -3042,8 +3040,8 @@
     "lti" : [
         {
         "title" : "Auto-grader: Ad List + Comments",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_mkt3b",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt3",
         "custom" : [
             {
                 "key": "exercise",
@@ -3106,26 +3104,26 @@
     "assignment" : "{apphome}/assn/dj4e_mkt4.md",
     "lti" : [
         {
-        "title" : "Marketplace - Favorites (4)",
-        "launch" : "tools/crud/",
+        "title" : "Autograder: Marketplace - Favorites (4)",
+        "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt4",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "13adlist3.php"
+                "value": "04Favorites.php"
             }
         ]
         },
         {
-        "title": "Peer Graded: Market 4 User Interface",
+        "title": "Peer Graded: Market 4 Favorites User Interface",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "peer_mkt4",
+        "resource_link_id" : "dj4e_mkt4_peer",
         "custom" : [
             {
                 "key": "config",
                 "json":
 {
-  "title": "Market 4 Look and Feel",
+  "title": "Market 4 Favorites Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -3211,7 +3209,7 @@
     "lti" : [
         {
         "title" : "Auto-grader: Marketplace - Search (5)",
-        "launch" : "tools/crud/",
+        "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt5",
         "custom" : [
             {
@@ -3221,7 +3219,7 @@
         ]
         },
         {
-        "title": "Peer Graded: Market 5 User Interface",
+        "title": "Peer Graded: Market 5 Search User Interface",
         "launch" : "mod/peer-grade/",
         "resource_link_id" : "peer_mkt5",
         "custom" : [
@@ -3229,7 +3227,7 @@
                 "key": "config",
                 "json":
 {
-  "title": "Market 5 Look and Feel",
+  "title": "Market 5 Search Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
