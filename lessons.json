@@ -2854,6 +2854,55 @@
 },
 
 {
+    "title": "MarketPlace Setup",
+    "anchor": "dj4e_mkt0",
+    "icon" : "fa-store",
+    "description": "We start the Marketplace application by checking out a copy of a GitHib repository and getting it running on PythonAnywhere.",
+    "assignment" : "{apphome}/assn/dj4e_mkt0.md",
+    "discussions" : [
+        {
+        "title" : "Marketplace Setup",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt0"
+        }
+    ],
+    "todo" : "Walk throught setup",
+    "videos" : [
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Marketplace Setup",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt0",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "00Market-Setup.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Github repository with the initial Market code and install instructions",
+            "href": "https://market.dj4e.com/home"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/home"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+
+{
     "title": "MarketPlace (1)",
     "anchor": "dj4e_mkt1",
     "icon" : "fa-store",
@@ -2891,6 +2940,10 @@
             {
                 "key": "exercise",
                 "value": "01Market-Owned.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt0"
             }
         ]
         }
