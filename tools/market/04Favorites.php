@@ -21,7 +21,7 @@ $ad_title = $ad_titles[($code+1) % count($ad_titles)];
 
 $now = date('H:i:s');
 
-echo("<h2>MarketPlace with Comments</h2>\n");
+echo("<h2>MarketPlace with Comments (4)</h2>\n");
 
 $OUTPUT->welcomeUserCourse();
 
@@ -30,6 +30,9 @@ Specification:
 <a href="../../assn/dj4e_mkt4.md" class="btn btn-info" target="_blank">
 https://www.dj4e.com/assn/dj4e_mkt4.md</a>
 </a>
+<?php
+market_check_prereq($prereq, $prereq_title, $prereq_grade); 
+?>
 <p>
 Create two non-super users, by logging into the <b>/admin</b> URL of your application
 using a superuser account:

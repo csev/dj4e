@@ -47,6 +47,8 @@ if ( strlen(U::get($_POST, "password", '')) > 0  ) {
 
 $LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
 $assn = Settings::linkGet('exercise');
+$prereq = Settings::linkGet('prereq');
+if ( is_string($prereq) ) $prereq = str_replace("x", "", $prereq);
 $delay = Settings::linkGet('delay');
 $delay_tries = Settings::linkGet('delay_tries');
 
@@ -130,10 +132,44 @@ function webauto_check_test() {
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 
+        $sql = "SELECT DISTINCT L.link_id AS link_id, L.title AS link_title
+            FROM {$CFG->dbprefix}lti_context AS C 
+            JOIN {$CFG->dbprefix}lti_link AS L
+	    WHERE C.context_id = :CID AND L.link_id <> :LID";
+        $rows = $PDOX->allRowsDie($sql, array(":CID" => $LAUNCH->context->id, ":LID" => $LAUNCH->link->id));
+$links = array();
+foreach($rows as $row) {
+  $links["x".$row['link_id']] = $row['link_title'];
+}
+
+$prereq_grade = 0;
+$prereq_title = false;
+if ( is_numeric($prereq) ) {
+
+        // Make sure we have a valid link_id
+        $sql = "SELECT L.link_id AS link_id, L.title AS title
+            FROM {$CFG->dbprefix}lti_context AS C 
+            JOIN {$CFG->dbprefix}lti_link AS L
+	    WHERE C.context_id = :CID AND L.link_id = :LID";
+        $rows = $PDOX->allRowsDie($sql, array(":CID" => $LAUNCH->context->id, ":LID" => $prereq));
+
+	if ( count($rows) > 0 ) {
+            $prereq_title = $rows[0]['title'];
+            $sql = "SELECT R.grade AS grade
+                FROM {$CFG->dbprefix}lti_result AS R 
+	        WHERE R.user_id = :UID AND R.link_id = :LID";
+            $rows = $PDOX->allRowsDie($sql, array(":UID" => $LAUNCH->user->id, ":LID" => $prereq));
+	    if ( count($rows) > 0 ) $prereq_grade = $rows[0]['grade'];
+        }
+}
+
 // Settings button and dialog
 if ( $LAUNCH->user->instructor ) {
     SettingsForm::start();
     SettingsForm::select("exercise", __('Please select an assignment'),$assignments);
+    if ( count($links) > 0 ) {
+        SettingsForm::select("prereq", __('Please select a prerequisite (optional)'), $links);
+    }
     SettingsForm::text("password", __('Set a password to protect this assignment'));
     SettingsForm::text('delay',__('The number of seconds between retries.  Leave blank or set to zero to allow immediate retries.'));
     SettingsForm::text('delay_tries',__('The number of attmpts before the delay kicks in.  Leave blank or set to zero to trigger immediate delays.'));

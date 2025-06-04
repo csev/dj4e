@@ -2884,7 +2884,7 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Marketplace #1",
+        "title" : "Auto-grader: Marketplace (1)",
         "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt1",
         "custom" : [
@@ -2948,7 +2948,7 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Marketplace + Pictures",
+        "title" : "Auto-grader: Marketplace + Pictures (2)",
         "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt2",
         "custom" : [
@@ -3039,7 +3039,7 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List + Comments",
+        "title" : "Auto-grader: Ad List + Comments (3)",
         "launch" : "tools/market/",
         "resource_link_id" : "dj4e_mkt3",
         "custom" : [

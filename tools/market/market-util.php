@@ -187,3 +187,20 @@ function market_delete_old($client, $url, $check, $testrun) {
     return true;
 }
 
+function market_check_prereq($prereq, $prereq_title, $prereq_grade ) {
+
+    if ( ! is_string($prereq_title) || strlen($prereq_title) < 1 ) return;
+    if ( is_numeric($prereq_grade) && $prereq_grade > 0.0 ) return;
+?>
+<p style="color:red;">
+Note that you have not yet finished an earlier assignment:
+<?= $prereq_title ?>
+</p>
+<p style="color:red;">
+You need to complete the assignments and earn a grade in assignment order because the autograder (a) expects all the features
+of the prior assignment to continue working and (b) earlier assignments cannot be autograded if advanced features are detected.
+</p>
+<?php 
+
+}
+

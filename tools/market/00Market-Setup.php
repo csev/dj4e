@@ -25,7 +25,7 @@ $ad_title = $ad_titles[($code+1) % count($ad_titles)];
 
 $now = date('H:i:s');
 
-line_out("Building Marketplace - Initial Setup");
+echo("<h2>Building Marketplace - Initial Setup</h2>\n");
 
 ?>
 Specification:
