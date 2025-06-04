@@ -198,7 +198,8 @@ Note that you have not yet finished an earlier assignment:
 </p>
 <p style="color:red;">
 You need to complete the assignments and earn a grade in assignment order because the autograder (a) expects all the features
-of the prior assignment to continue working and (b) earlier assignments cannot be autograded if advanced features are detected.
+of the prior assignment to continue working in later assignments and (b) earlier assignments cannot be autograded if
+features from later assignments are detected in your solution.
 </p>
 <?php 
 

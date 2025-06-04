@@ -45,10 +45,9 @@ if ( strlen(U::get($_POST, "password", '')) > 0  ) {
     return;
 }
 
-$LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
+$LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise', 'prereq'));
 $assn = Settings::linkGet('exercise');
 $prereq = Settings::linkGet('prereq');
-if ( is_string($prereq) ) $prereq = str_replace("x", "", $prereq);
 $delay = Settings::linkGet('delay');
 $delay_tries = Settings::linkGet('delay_tries');
 
@@ -132,33 +131,34 @@ function webauto_check_test() {
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
 
-        $sql = "SELECT DISTINCT L.link_id AS link_id, L.title AS link_title
+        $sql = "SELECT DISTINCT L.link_key AS link_key, L.title AS link_title
             FROM {$CFG->dbprefix}lti_context AS C 
             JOIN {$CFG->dbprefix}lti_link AS L
 	    WHERE C.context_id = :CID AND L.link_id <> :LID";
         $rows = $PDOX->allRowsDie($sql, array(":CID" => $LAUNCH->context->id, ":LID" => $LAUNCH->link->id));
 $links = array();
 foreach($rows as $row) {
-  $links["x".$row['link_id']] = $row['link_title'];
+  $links[$row['link_key']] = $row['link_title'];
 }
 
 $prereq_grade = 0;
 $prereq_title = false;
-if ( is_numeric($prereq) ) {
+if ( is_string($prereq) && strlen($prereq) > 0 ) {
 
         // Make sure we have a valid link_id
         $sql = "SELECT L.link_id AS link_id, L.title AS title
             FROM {$CFG->dbprefix}lti_context AS C 
             JOIN {$CFG->dbprefix}lti_link AS L
-	    WHERE C.context_id = :CID AND L.link_id = :LID";
-        $rows = $PDOX->allRowsDie($sql, array(":CID" => $LAUNCH->context->id, ":LID" => $prereq));
+	    WHERE C.context_id = :CID AND L.link_key = :KID";
+        $rows = $PDOX->allRowsDie($sql, array(":CID" => $LAUNCH->context->id, ":KID" => $prereq));
 
 	if ( count($rows) > 0 ) {
             $prereq_title = $rows[0]['title'];
+            $link_id = $rows[0]['link_id'];
             $sql = "SELECT R.grade AS grade
                 FROM {$CFG->dbprefix}lti_result AS R 
 	        WHERE R.user_id = :UID AND R.link_id = :LID";
-            $rows = $PDOX->allRowsDie($sql, array(":UID" => $LAUNCH->user->id, ":LID" => $prereq));
+            $rows = $PDOX->allRowsDie($sql, array(":UID" => $LAUNCH->user->id, ":LID" => $link_id));
 	    if ( count($rows) > 0 ) $prereq_grade = $rows[0]['grade'];
         }
 }

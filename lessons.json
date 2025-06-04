@@ -2955,6 +2955,10 @@
             {
                 "key": "exercise",
                 "value": "02Pictures.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt1"
             }
         ]
         },
@@ -3046,6 +3050,10 @@
             {
                 "key": "exercise",
                 "value": "03Comments.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt2"
             }
         ]
         }
@@ -3111,6 +3119,10 @@
             {
                 "key": "exercise",
                 "value": "04Favorites.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt3"
             }
         ]
         },
@@ -3215,6 +3227,10 @@
             {
                 "key": "exercise",
                 "value": "05Search.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt4"
             }
         ]
         },
