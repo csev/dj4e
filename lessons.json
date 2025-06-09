@@ -2866,7 +2866,7 @@
         "resource_link_id": "discuss_mkt0"
         }
     ],
-    "todo" : "Walk throught setup",
+    "todo" : "Walk through setup",
     "videos" : [
     ],
     "lti" : [
@@ -2884,8 +2884,8 @@
     ],
     "references" : [
         {
-            "title" : "Github repository with the initial Market code and install instructions",
-            "href": "https://market.dj4e.com/home"
+            "title" : "Github repository with the initial Marketplace code and install instructions",
+            "href": "https://github.com/csev/dj4e-market"
         },
         {
             "title" : "Reference Implementation",
@@ -2906,7 +2906,7 @@
     "title": "MarketPlace (1)",
     "anchor": "dj4e_mkt1",
     "icon" : "fa-store",
-    "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
+    "description": "We explore crispy forms and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
     "assignment" : "{apphome}/assn/dj4e_mkt1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "todo": "How to switch Django to MySQL on PythonAnywhere",
