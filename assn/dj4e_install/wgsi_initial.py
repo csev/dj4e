@@ -1,5 +1,5 @@
 # This file contains the WSGI configuration required to serve up your
-# web application at http://yada.dj4e.com/
+# web application at http://csev.pythonanywhere.com/
 # It works by setting the variable 'application' to a WSGI handler of some
 # description.
 #
@@ -64,7 +64,7 @@ def application(environ, start_response):
 #
 #import sys
 #
-#path = '/home/dj4e/path/to/my/app
+#path = '/home/csev/path/to/my/app
 #if path not in sys.path:
 #    sys.path.append(path)
 #
@@ -76,9 +76,9 @@ def application(environ, start_response):
 #import os
 #import sys
 #
-## assuming your django settings file is at '/home/dj4e/mysite/mysite/settings.py'
-## and your manage.py is is at '/home/dj4e/mysite/manage.py'
-#path = '/home/dj4e/mysite'
+## assuming your django settings file is at '/home/csev/mysite/mysite/settings.py'
+## and your manage.py is is at '/home/csev/mysite/manage.py'
+#path = '/home/csev/mysite'
 #if path not in sys.path:
 #    sys.path.append(path)
 #
@@ -98,13 +98,13 @@ def application(environ, start_response):
 #
 #import sys
 #
-## The "/home/dj4e" below specifies your home
+## The "/home/csev" below specifies your home
 ## directory -- the rest should be the directory you uploaded your Flask
 ## code to underneath the home directory.  So if you just ran
 ## "git clone git@github.com/myusername/myproject.git"
 ## ...or uploaded files to the directory "myproject", then you should
-## specify "/home/dj4e/myproject"
-#path = '/home/dj4e/path/to/flask_app_directory'
+## specify "/home/csev/myproject"
+#path = '/home/csev/path/to/flask_app_directory'
 #if path not in sys.path:
 #    sys.path.append(path)
 #
