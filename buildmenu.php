@@ -33,7 +33,7 @@ function buildMenu() {
         if ( file_exists('privacy.php') ) {
             $submenu->addLink('Privacy', $R.'privacy');
         }
-        $submenu->addLink('Versions', $R.'versions');
+        $submenu->addLink('Django Versions', $R.'versions');
         if ( $CFG->providekeys ) {
             $submenu->addLink('LMS Integration', $T . 'settings');
         }

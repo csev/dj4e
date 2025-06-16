@@ -1,5 +1,11 @@
-Installing Django on PythonAnywhere
-===================================
+Installing Django 5.2 on PythonAnywhere
+=======================================
+
+**Note** **Note** Starting May 2025, this course is transistioning from using
+Django 4.2 to Django 5.2 - If you started the course using Django 4.2 - you
+can finish the course using Django 4.2 but if you are starting the course June 2025
+or later, you should use Django 5.2.  If you want to use Django 4.2, please follow the
+<a href="dj4e_install.md">install instructions for Django 4.2</a> to install Django 4.2.
 
 Before you start this assignment, you should already have signed up for a
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>

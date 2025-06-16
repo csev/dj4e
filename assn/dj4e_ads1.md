@@ -2,6 +2,10 @@
 Building a Classified Ad Web Site (Django 4.2)
 ==============================================
 
+**Note** this assignment is designed to be completed using Django 4.2.  Starting May 2025,
+this series of assignments will be replaced by the "Marketplace" series of assignments.
+This assignment is here for those who started the course before May 2025.
+
 In this assignment, you will build a web site that is roughly equivalent to
 
 https://chucklist.dj4e.com/m1
@@ -30,7 +34,7 @@ Once you have the samples checked out (either before or just now), install the r
 
     workon django42
     cd ~/dj4e-samples
-    git checkout main
+    git checkout django42
     git pull
     pip install -r requirements42.txt
     python manage.py check

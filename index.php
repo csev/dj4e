@@ -43,6 +43,13 @@ We use the free
 to deploy and test our Django projects and applications.  You can keep using this hosting environent
 to develop and deploy your Django applications after you complete the course.
 </p>
+<p>
+<b>Note</b> Starting May 2025, this course is transistioning from using
+Django 4.2 to Django 5.2 and from the Ads series of assigments to the new Marketplace assignments.
+If you started the course using Django 4.2  and the Ads series of assignmentss, you
+can finish the course using Django 4.2 but if you are starting the course June 2025
+or later, you should use Django 5.2 and complete the Marketplace assignments.
+</p>
 <?php
 $month = date('n');
 $email = U::get($_SESSION, 'email');
