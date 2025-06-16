@@ -88,6 +88,7 @@ as the course progresses and install some important additional Django software l
     cd ~
     git clone https://github.com/csev/dj4e-samples
     cd ~/dj4e-samples
+    git checkout django42
     pip install -r requirements42.txt
 
 The `pip` command can also take a few minutes to complete.  Once it finishes and you
