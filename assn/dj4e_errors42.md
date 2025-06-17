@@ -1,13 +1,16 @@
 
-Dealing with Errors in Django 5.2 Projects on PythonAnywhere
+Dealing with Errors in Django 4.2 Projects on PythonAnywhere
 ============================================================
+
+**NOTE** If you are using Django 5.2, please see the updated
+version of <a href="dj4e_errors52.md">Handling errors in Django 5.2 on PythonAnywhere</a>.
 
 When you get stuck on something while developing your Django Application
 on PythonAnywhere this page has some possible solutions.
 
 * What happens when your PythonAnywhere account expires after 90 days?
 * When everything works but your application says 'Something went wrong :-('
-* What happens when you don't activate your virtual environment (.ve52)
+* What happens when you don't activate your virtual environment (django42)
 * Your line 16 seems to have a syntax error in the text editor in `manage.py`
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
@@ -59,25 +62,29 @@ This can give one of two possible outputs.  If things are going well the last li
 If there is an error, it will be pretty verbose:
 
     Traceback (most recent call last):
-     ... Many lines deleted ...
-    File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-      return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-    File "/home/csev/django_projects/mysite/mysite/urls.py", line 5, in <module>
-      path("polls/", include("pollz.urls")),
-                   ~~~~~~~^^^^^^^^^^^^^^
-    File "/home/csev/.ve52/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
-      urlconf_module = import_module(urlconf_module)
-    File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
-      return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-    File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
-    ModuleNotFoundError: No module named 'pollz'
+        File "/home/dj4e/django_projects/mysite/manage.py", line 21, in <module>
+            main()
+        File "/home/dj4e/django_projects/mysite/manage.py", line 17, in main
+            execute_from_command_line(sys.argv)
 
-This is a mess of output but you can get some clues.  The file it is upset about 
-is `/home/csev/django_projects/mysite/mysite/urls.py`
+        (About 20 more lines of traceback)
+
+        File "/home/dj4e/django_projects/mysite/mysite/urls.py", line 20, in <module>
+            path('polls/', include('pollz.urls')),
+        File "/home/dj4e/.virtualenvs/django4/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+            urlconf_module = import_module(urlconf_module)
+        File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+            return _bootstrap._gcd_import(name[level:], package, level)
+        File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+        File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+        File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+        File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+        File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+        File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+        File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+     ModuleNotFoundError: No module named 'pollz'
+
+This is a mess of output but you can get some clues.  The file it is upset about is `/home/dj4e/django_projects/mysite/mysite/urls.py`
 and the what went wrong was that I mis-spelled `polls` as `pollz`.  
 
 To solve this, in another tab edit the file, save it and re-run 
@@ -115,26 +122,25 @@ lots of things will fail.  You will not have access to the correct version
 of Python and you will not have a proper installation of Django.  You can always
 check which python you are running using the `--version` option.
 
-In the example below we are running Python 2.7.12 and Djando 1.11
+In the example below we are running Python 2.7.12 (bad)
 without the virtual environment and once we activate into the virtual environment we are 
-using Python 3.13 and Django 5.2.
+using Python 3.8 and Django 3.1.
 
     17:33 ~ $ python --version
     Python 2.7.12
     17:33 ~ $ python -m django --version
     1.11.26
+    17:33 ~ $ workon django42
+    (django42) 17:33 ~ $ python --version
+    Python 3.9.5
+    (django42) 17:36 ~ $ python -m django --version
+    4.2.7
+    (django42) 17:33 ~ $ 
 
-    17:33 ~ $ source ~/.ve52/bin/activate
-    (.ve52) 17:33 ~ $ python --version
-    Python 3.13.1
-    (.ve52) 17:36 ~ $ python -m django --version
-    5.2
-    (.ve52) 17:33 ~ $ 
-
-Each time you start a new bash shell, you need to type `source ~/.ve52/bin/activate`.  If you
-leave and come back to a shell that is still running, if you see the '(.ve52)'
-in your prompt - you do not have to re-run the `source` command.  It just needs
-to be done once per shell (or done automatically in the `.bashrc`).
+Each time you start a new bash shell, you need to type `workon django42`.  If you
+leave and come back to a shell that is still running, if you see the '(django42)'
+in your prompt - you do not have to re-run the `workon` command.  It just needs
+to be done once per shell.
 
 There are several errors that you might get if your virtual environment is
 not activated:
@@ -156,8 +162,7 @@ it will show a little red "X" on line 16 or 17 indicating a syntax error.
 
 <img src="dj4e_tutpaw/file-manage-py-bad.png" style="width: 80%;"/>
 
-The problem (much like the virtual environment problem) is that the editor is parsing the file using
-the wrong version of Python.  The text editor
+The problem (much like the virtual environment problem) is the wrong version of Python.  The text editor
 is looking at the file as a Python 2.x file and not as a Python 3.x file.  So the file
 <a href="dj4e_tutpaw/file-manage-py-bad.png" target="_blank">shows a syntax error</a>.
 
@@ -188,8 +193,7 @@ once you can run `check` and there are no errors.  If you see this error:
              ^
     SyntaxError: invalid syntax
 
-Do *not* edit your `manage.py` file - the problem is never in that file unless
-you changed it.
+Do *not* edit your `manage.py` file - the problem is never in that file.
 
 There are several possible reasons for this:
 
@@ -218,7 +222,7 @@ press reload and then check if your application worked.
 Don't Use `localhost` URLs on PythonAnywhere
 --------------------------------------------
 
-Usually, during a Django tutorial, it tells you to `python manage.py runserver` it
+Usually, right after the tutorial tells you to `python manage.py runserver` it
 tells you to navigate to a url that looks like:
 
     http://127.0.0.1:8000/
@@ -263,7 +267,7 @@ not mention is the need to exit and restart the shell any time you change
 `models.py`.  The tutorial tells you to run the shell again but it does not
 tell you to exit the existing shell first - so you might see an error like this:
 
-    (.ve52) 17:16 ~/django_projects/mysite $ python manage.py shell
+    (django42) 17:16 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some django shell stuff
@@ -277,24 +281,24 @@ tell you to exit the existing shell first - so you might see an error like this:
 
 The correct way is to exit the shell and restart it.
 
-    (.ve52) 17:20 ~/django_projects/mysite $ python manage.py shell
+    (django42) 17:20 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some django shell stuff
 
     >>> quit()
-    (.ve52) 17:20 ~/django_projects/mysite $ 
+    (django42) 17:20 ~/django_projects/mysite (master)$ 
 
 Then you edit your `models.py` and *re-start* the Django shell from the
 `bash` console:
 
-    (.ve52) 17:24 ~/django_projects/mysite $ python manage.py shell
+    (django42) 17:24 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some more django shell stuff
 
     >>> quit()
-    (.ve52) 17:20 ~/django_projects/mysite $ 
+    (django42) 17:20 ~/django_projects/mysite (master)$ 
 
 After a while you will understand that you need to be in `bash` (dollar sign prompt)
 to run bash commands and be in the Django shell (>>> prompt) to run Django commands.
