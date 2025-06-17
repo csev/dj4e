@@ -1,6 +1,6 @@
 
-Classified Ad Web Site - Search - Milestone 5
-=============================================
+Marketplace - Search - Milestone 5
+==================================
 
 In this assignment, you will expand your classified ads web site to add search and tags
 functionality equivalent to:

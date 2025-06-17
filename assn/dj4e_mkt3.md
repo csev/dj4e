@@ -1,6 +1,6 @@
 
-Classified Ad Web Site - Comments - Milestone 3
-===============================================
+Marketplace - Comments - Milestone 3
+====================================
 
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:

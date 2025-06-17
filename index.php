@@ -46,7 +46,7 @@ to develop and deploy your Django applications after you complete the course.
 <p>
 <b>Note</b> Starting May 2025, this course is transistioning from using
 Django 4.2 to Django 5.2 and from the Ads series of assigments to the new Marketplace assignments.
-If you started the course using Django 4.2  and the Ads series of assignmentss, you
+If you started the course using Django 4.2  and the Ads series of assignments, you
 can finish the course using Django 4.2 but if you are starting the course June 2025
 or later, you should use Django 5.2 and complete the Marketplace assignments.
 </p>

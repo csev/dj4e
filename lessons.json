@@ -1,7 +1,8 @@
 {
 
 "title": "Django for Everybody (DJ4E)",
-"description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
+"description" : "As of June 2025, this course is transitioning from Django 4.2 to Django 5.3 and moving from the Ads series of assignments to the Marketplace series of assignments.  You will find the Django 4.2 Ads assignments at the bottom of the list of lessons.",
+"old_description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
 "count": true,
 "required_modules": [
     "https://github.com/tsugitools/gift",
@@ -223,7 +224,7 @@
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title" : "Setting up the django.org tutorial on PythonAnywhere",
@@ -315,7 +316,7 @@
     "references" : [
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -646,7 +647,7 @@
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -815,7 +816,7 @@
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1092,7 +1093,7 @@
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1164,7 +1165,7 @@
     "references" : [
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1429,7 +1430,7 @@
     "references" : [
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1492,7 +1493,55 @@
     "references" : [
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
+        },
+        {
+            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+        }
+    ]
+},
+{
+    "title": "MarketPlace Setup",
+    "anchor": "dj4e_mkt0",
+    "icon" : "fa-store",
+    "description": "We start the Django 5.2 Marketplace application by checking out a copy of a GitHib repository and getting it running on PythonAnywhere.",
+    "assignment" : "{apphome}/assn/dj4e_mkt0.md",
+    "discussions" : [
+        {
+        "title" : "Marketplace Setup",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_mkt0"
+        }
+    ],
+    "todo" : "Walk through setup",
+    "videos" : [
+    ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: Marketplace Setup",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt0",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "00Market-Setup.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Github repository with the initial Marketplace code and install instructions",
+            "href": "https://github.com/csev/dj4e-market"
+        },
+        {
+            "title" : "Reference Implementation",
+            "href": "https://market.dj4e.com/home"
+        },
+        {
+            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1556,18 +1605,18 @@
     ]
 },
 {
-    "title": "Classified Ads #1",
-    "anchor": "dj4e_ads1",
+    "title": "MarketPlace (1)",
+    "anchor": "dj4e_mkt1",
     "icon" : "fa-store",
-    "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_ads1.md",
+    "description": "We explore crispy forms and bootstrap menus and then use owned rows we write the first iteration of the marketplace application.",
+    "assignment" : "{apphome}/assn/dj4e_mkt1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "todo": "How to switch Django to MySQL on PythonAnywhere",
     "discussions" : [
         {
-        "title" : "Classified Ads #1",
+        "title" : "Marketplace #1",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_20_ads1"
+        "resource_link_id": "discuss_mkt1"
         }
     ],
     "videos" : [
@@ -1586,13 +1635,17 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List #1",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads1",
+        "title" : "Auto-grader: Marketplace (1)",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt1",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "11adlist1.php"
+                "value": "01Market-Owned.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt0"
             }
         ]
         }
@@ -1616,11 +1669,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://chucklist.dj4e.com/"
+            "href": "https://market.dj4e.com/m1"
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1755,16 +1808,16 @@
     ]
 },
 {
-    "title": "Classified Ads + Pictures",
-    "anchor": "dj4e_ads1b",
+    "title": "Marketplace + Pictures (2)",
+    "anchor": "dj4e_mkt2",
     "icon" : "fa-camera",
     "description": "We add pictures to our classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_ads1b.md",
+    "assignment" : "{apphome}/assn/dj4e_mkt2.md",
     "discussions" : [
         {
         "title" : "Classified Ads + Pictures",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_24_ads1b"
+        "resource_link_id": "discuss_mkt2"
         }
     ],
     "videos" : [
@@ -1775,20 +1828,24 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List + Pictures",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads1b",
+        "title" : "Auto-grader: Marketplace + Pictures (2)",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt2",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "11adlist1b.php"
+                "value": "02Pictures.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt1"
             }
         ]
         },
         {
         "title": "Peer Graded: Menus and Pictures",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "dj4e_peer_ads1b",
+        "resource_link_id" : "dj4e_mkt2_peer",
         "custom" : [
             {
                 "key": "config",
@@ -1797,7 +1854,7 @@
   "title": "Menus and Pictures",
   "description": "In this assignment you will take some screen shots to deomstrate the look and feel of your application..",
   "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
-  "assignment" : "http://www.dj4e.com/assn/dj4e_ads1b.md",
+  "assignment" : "http://www.dj4e.com/assn/dj4e_mkt2.md",
   "parts": [
     {
       "title": "Image (JPG or PNG) of a detail page showing a picture to the right of the Ad, edit and update buttons, and the top menu",
@@ -1832,11 +1889,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://chucklist.dj4e.com/mp"
+            "href": "https://market.dj4e.com/m2"
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -1898,16 +1955,16 @@
     ]
 },
 {
-    "title": "Classified Ads + Comments",
-    "anchor": "dj4e_ads2",
+    "title": "Marketplace + Comments (3)",
+    "anchor": "dj4e_mkt3",
     "icon" : "fa-comment",
-    "description": "We add comments to our classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_ads2b.md",
+    "description": "We add comments to our marketplace application.",
+    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
     "discussions" : [
         {
-        "title" : "Classified Ads #2",
+        "title" : "Marketplace + Comments (3)",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_24_ads2"
+        "resource_link_id": "discuss_mkt3"
         }
     ],
     "videos" : [
@@ -1918,13 +1975,17 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List + Comments",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads2b",
+        "title" : "Auto-grader: Marketplace + Comments (3)",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt3",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "12adlist2b.php"
+                "value": "03Comments.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt2"
             }
         ]
         }
@@ -1940,11 +2001,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://chucklist.dj4e.com/m2"
+            "href": "https://market.dj4e.com/m3"
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -2089,15 +2150,15 @@
     ]
 },
 {
-    "title": "Classified Ads Favorites #3",
-    "anchor": "dj4e_ads3",
+    "title": "Marketplace - Favorites (4)",
+    "anchor": "dj4e_mkt4",
     "icon" : "fa-star",
-    "description": "We add favorites to our classified ads application.",
+    "description": "We add favorites to our marketplace application.",
     "discussions" : [
         {
-        "title" : "Classified Ads #3",
+        "title" : "Marketplace - Favorites (4)",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_27_ads3"
+        "resource_link_id": "discuss_mkt4"
         }
     ],
     "videos" : [
@@ -2115,29 +2176,33 @@
         "youtube_pre_2025": "6cq-ehBHkwc"
     }
    ],
-    "assignment" : "{apphome}/assn/dj4e_ads3.md",
+    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List #3",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads3",
+        "title" : "Autograder: Marketplace - Favorites (4)",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt4",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "13adlist3.php"
+                "value": "04Favorites.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt3"
             }
         ]
         },
         {
-        "title": "Peer Graded: Ads3 User Interface",
+        "title": "Peer Graded: Market 4 Favorites User Interface",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "peer_ads_3",
+        "resource_link_id" : "dj4e_mkt4_peer",
         "custom" : [
             {
                 "key": "config",
                 "json":
 {
-  "title": "Ads3 Look and Feel",
+  "title": "Market 4 Favorites Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -2183,11 +2248,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://chucklist.dj4e.com/m3"
+            "href": "https://market.dj4e.com/m4"
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -2196,16 +2261,16 @@
     ]
 },
 {
-    "title": "Classified Ads Search #4",
-    "anchor": "dj4e_ads4",
+    "title": "Marketplace - Search (5)",
+    "anchor": "dj4e_mkt5",
     "icon" : "fa-search",
-    "description": "We add search a feature our classified ads application.",
+    "description": "We add search a feature our marketplace application.",
     "todo" : "Add tags, drop down autofill, auto add",
     "discussions" : [
         {
-        "title" : "Classified Ads #4",
+        "title" : "Marketplace #5",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_28_ads4"
+        "resource_link_id": "discuss_mkt5"
         }
     ],
     "videos" : [
@@ -2218,29 +2283,33 @@
         "youtube" : "iHvJZ_lvXB4"
     }
    ],
-    "assignment" : "{apphome}/assn/dj4e_ads4.md",
+    "assignment" : "{apphome}/assn/dj4e_mkt5.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List #4",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_ads4",
+        "title" : "Auto-grader: Marketplace - Search (5)",
+        "launch" : "tools/market/",
+        "resource_link_id" : "dj4e_mkt5",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "14adlist4.php"
+                "value": "05Search.php"
+            },
+            {
+                "key": "prereq",
+                "value": "dj4e_mkt4"
             }
         ]
         },
         {
-        "title": "Peer Graded: Market 4 User Interface",
+        "title": "Peer Graded: Marketplace Search User Interface",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "peer_ads_4",
+        "resource_link_id" : "peer_mkt5",
         "custom" : [
             {
                 "key": "config",
                 "json":
 {
-  "title": "Market 5 Look and Feel",
+  "title": "Marketplace Search Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -2282,11 +2351,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://chucklist.dj4e.com/m4"
+            "href": "https://market.dj4e.com/m5"
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -2349,7 +2418,7 @@
     "references" : [
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -2417,7 +2486,7 @@
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -2853,68 +2922,25 @@
         ]
 },
 
-{
-    "title": "MarketPlace Setup",
-    "anchor": "dj4e_mkt0",
-    "icon" : "fa-store",
-    "description": "We start the Marketplace application by checking out a copy of a GitHib repository and getting it running on PythonAnywhere.",
-    "assignment" : "{apphome}/assn/dj4e_mkt0.md",
-    "discussions" : [
-        {
-        "title" : "Marketplace Setup",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_mkt0"
-        }
-    ],
-    "todo" : "Walk through setup",
-    "videos" : [
-    ],
-    "lti" : [
-        {
-        "title" : "Auto-grader: Marketplace Setup",
-        "launch" : "tools/market/",
-        "resource_link_id" : "dj4e_mkt0",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "00Market-Setup.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Github repository with the initial Marketplace code and install instructions",
-            "href": "https://github.com/csev/dj4e-market"
-        },
-        {
-            "title" : "Reference Implementation",
-            "href": "https://market.dj4e.com/home"
-        },
-        {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
-        },
-        {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
-        }
-    ]
-},
+
+
+
+
+
 
 {
-    "title": "MarketPlace (1)",
-    "anchor": "dj4e_mkt1",
+    "title": "Classified Ads #1 (Django 4.2)",
+    "anchor": "dj4e_ads1",
     "icon" : "fa-store",
-    "description": "We explore crispy forms and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_mkt1.md",
+    "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
+    "assignment" : "{apphome}/assn/dj4e_ads1.md",
     "slides": "lectures/DJ-12-Owned-Rows.pptx",
     "todo": "How to switch Django to MySQL on PythonAnywhere",
     "discussions" : [
         {
-        "title" : "Marketplace #1",
+        "title" : "Classified Ads #1",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_mkt1"
+        "resource_link_id": "discuss_20_ads1"
         }
     ],
     "videos" : [
@@ -2933,17 +2959,13 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Marketplace (1)",
-        "launch" : "tools/market/",
-        "resource_link_id" : "dj4e_mkt1",
+        "title" : "Auto-grader: Ad List #1",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads1",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "01Market-Owned.php"
-            },
-            {
-                "key": "prereq",
-                "value": "dj4e_mkt0"
+                "value": "11adlist1.php"
             }
         ]
         }
@@ -2967,30 +2989,30 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://market.dj4e.com/m1"
+            "href": "https://chucklist.dj4e.com/"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "title" : "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors42.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "title": "Fixing Django 4.2 Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
         }
     ]
 },
 
 {
-    "title": "Marketplace + Pictures (2)",
-    "anchor": "dj4e_mkt2",
+    "title": "Classified Ads + Pictures (Django 4.2)",
+    "anchor": "dj4e_ads1b",
     "icon" : "fa-camera",
     "description": "We add pictures to our classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_mkt2.md",
+    "assignment" : "{apphome}/assn/dj4e_ads1b.md",
     "discussions" : [
         {
         "title" : "Classified Ads + Pictures",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_mkt2"
+        "resource_link_id": "discuss_24_ads1b"
         }
     ],
     "videos" : [
@@ -3001,24 +3023,20 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Marketplace + Pictures (2)",
-        "launch" : "tools/market/",
-        "resource_link_id" : "dj4e_mkt2",
+        "title" : "Auto-grader: Ad List + Pictures",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads1b",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "02Pictures.php"
-            },
-            {
-                "key": "prereq",
-                "value": "dj4e_mkt1"
+                "value": "11adlist1b.php"
             }
         ]
         },
         {
         "title": "Peer Graded: Menus and Pictures",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "dj4e_mkt2_peer",
+        "resource_link_id" : "dj4e_peer_ads1b",
         "custom" : [
             {
                 "key": "config",
@@ -3027,7 +3045,7 @@
   "title": "Menus and Pictures",
   "description": "In this assignment you will take some screen shots to deomstrate the look and feel of your application..",
   "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
-  "assignment" : "http://www.dj4e.com/assn/dj4e_mkt2.md",
+  "assignment" : "http://www.dj4e.com/assn/dj4e_ads1b.md",
   "parts": [
     {
       "title": "Image (JPG or PNG) of a detail page showing a picture to the right of the Ad, edit and update buttons, and the top menu",
@@ -3062,30 +3080,30 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://market.dj4e.com/m2"
+            "href": "https://chucklist.dj4e.com/mp"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "title" : "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors42.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "title": "Fixing Django 4.2 Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
         }
     ]
 },
 
 {
-    "title": "Marketplace + Comments (3)",
-    "anchor": "dj4e_mkt3",
+    "title": "Classified Ads + Comments (Django 4.2)",
+    "anchor": "dj4e_ads2",
     "icon" : "fa-comment",
     "description": "We add comments to our classified ads application.",
-    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
+    "assignment" : "{apphome}/assn/dj4e_ads2b.md",
     "discussions" : [
         {
-        "title" : "Marketplace + Comments (3)",
+        "title" : "Classified Ads #2",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_mkt3"
+        "resource_link_id": "discuss_24_ads2"
         }
     ],
     "videos" : [
@@ -3096,17 +3114,13 @@
     ],
     "lti" : [
         {
-        "title" : "Auto-grader: Ad List + Comments (3)",
-        "launch" : "tools/market/",
-        "resource_link_id" : "dj4e_mkt3",
+        "title" : "Auto-grader: Ad List + Comments",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads2b",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "03Comments.php"
-            },
-            {
-                "key": "prereq",
-                "value": "dj4e_mkt2"
+                "value": "12adlist2b.php"
             }
         ]
         }
@@ -3122,29 +3136,29 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://market.dj4e.com/m3"
+            "href": "https://chucklist.dj4e.com/m2"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "title" : "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors42.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "title": "Fixing Django 4.2 Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
         }
     ]
 },
 
 {
-    "title": "Marketplace - Favorites (4)",
-    "anchor": "dj4e_mkt4",
+    "title": "Classified Ads Favorites #3 (Django 4.2)",
+    "anchor": "dj4e_ads3",
     "icon" : "fa-star",
     "description": "We add favorites to our classified ads application.",
     "discussions" : [
         {
-        "title" : "Marketplace - Favorites (4)",
+        "title" : "Classified Ads #3",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_mkt4"
+        "resource_link_id": "discuss_27_ads3"
         }
     ],
     "videos" : [
@@ -3162,33 +3176,29 @@
         "youtube_pre_2025": "6cq-ehBHkwc"
     }
    ],
-    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
+    "assignment" : "{apphome}/assn/dj4e_ads3.md",
     "lti" : [
         {
-        "title" : "Autograder: Marketplace - Favorites (4)",
-        "launch" : "tools/market/",
-        "resource_link_id" : "dj4e_mkt4",
+        "title" : "Auto-grader: Ad List #3",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads3",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "04Favorites.php"
-            },
-            {
-                "key": "prereq",
-                "value": "dj4e_mkt3"
+                "value": "13adlist3.php"
             }
         ]
         },
         {
-        "title": "Peer Graded: Market 4 Favorites User Interface",
+        "title": "Peer Graded: Ads3 User Interface",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "dj4e_mkt4_peer",
+        "resource_link_id" : "peer_ads_3",
         "custom" : [
             {
                 "key": "config",
                 "json":
 {
-  "title": "Market 4 Favorites Look and Feel",
+  "title": "Ads3 Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -3234,11 +3244,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://market.dj4e.com/m4"
+            "href": "https://chucklist.dj4e.com/m3"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "title" : "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors42.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -3248,16 +3258,16 @@
 },
 
 {
-    "title": "Marketplace - Search (5)",
-    "anchor": "dj4e_mkt5",
+    "title": "Classified Ads Search #4 (Django 4.2)",
+    "anchor": "dj4e_ads4",
     "icon" : "fa-search",
     "description": "We add search a feature our classified ads application.",
     "todo" : "Add tags, drop down autofill, auto add",
     "discussions" : [
         {
-        "title" : "Marketplace #5",
+        "title" : "Classified Ads #4",
         "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_mkt5"
+        "resource_link_id": "discuss_28_ads4"
         }
     ],
     "videos" : [
@@ -3270,33 +3280,29 @@
         "youtube" : "iHvJZ_lvXB4"
     }
    ],
-    "assignment" : "{apphome}/assn/dj4e_mkt5.md",
+    "assignment" : "{apphome}/assn/dj4e_ads4.md",
     "lti" : [
         {
-        "title" : "Auto-grader: Marketplace - Search (5)",
-        "launch" : "tools/market/",
-        "resource_link_id" : "dj4e_mkt5",
+        "title" : "Auto-grader: Ad List #4",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_ads4",
         "custom" : [
             {
                 "key": "exercise",
-                "value": "05Search.php"
-            },
-            {
-                "key": "prereq",
-                "value": "dj4e_mkt4"
+                "value": "14adlist4.php"
             }
         ]
         },
         {
-        "title": "Peer Graded: Market 5 Search User Interface",
+        "title": "Peer Graded: Market 4 User Interface",
         "launch" : "mod/peer-grade/",
-        "resource_link_id" : "peer_mkt5",
+        "resource_link_id" : "peer_ads_4",
         "custom" : [
             {
                 "key": "config",
                 "json":
 {
-  "title": "Market 5 Search Look and Feel",
+  "title": "Market 5 Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -3338,11 +3344,11 @@
         },
         {
             "title" : "Reference Implementation",
-            "href": "https://market.dj4e.com/m5"
+            "href": "https://chucklist.dj4e.com/m4"
         },
         {
             "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors.md"
+            "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
             "title": "Fixing Django Errors on PythonAnywhere (19:39)",
@@ -3350,7 +3356,6 @@
         }
     ]
 },
-
 
 {
     "title": "MDN Tutorial (Legacy)",

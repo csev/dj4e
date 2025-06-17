@@ -1,6 +1,6 @@
 
-Classified Ad Web Site - Favorites - Milestone 4
-================================================
+Marketplace - Favorites - Milestone 4
+=====================================
 
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:

@@ -1,6 +1,6 @@
 
-Classified Ads + Pictures (Milestone 2)
-=======================================
+Marketplace - Pictures - Milestone 2
+====================================
 
 In this assignment, you will expand your classified ads web site to add functionality
 equivalent to:

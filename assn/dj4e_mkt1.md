@@ -1,6 +1,6 @@
 
-Building a Marketplace Web Site - Owned Rows - Milestone 1
-==========================================================
+Marketplace - Owned Rows - Milestone 1
+======================================
 
 In this assignment, you will build a web site that is roughly equivalent to
 
