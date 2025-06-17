@@ -1,7 +1,7 @@
 Installing Django 5.2 on PythonAnywhere
 =======================================
 
-**Note** **Note** Starting May 2025, this course is transistioning from using
+**Note** Starting May 2025, this course is transistioning from using
 Django 4.2 to Django 5.2 - If you started the course using Django 4.2 - you
 can finish the course using Django 4.2 but if you are starting the course June 2025
 or later, you should use Django 5.2.  If you want to use Django 4.2, please follow the
@@ -13,26 +13,15 @@ account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.
 
 You can view a
-<a href="https://www.youtube.com/watch?v=TODO" target="_blank">video walkthrough</a>
-of installing Django 5.2.
-
-**Note:** If you are submitting these assignments to the auto grader you
-should complete each assignment and then submit it and get full credit before
-moving on to the next assignment.  Because the assignments build on one another
-the application that you have build by the last step of the tutorial
-will no longer pass the earlier autograders.
-
-**Note:** Sometimes browser plugins like add blockers or privacy tools break your use
-of PythonAnywhere's browser-based development environment.  If you experience weird problems
-like a hung browser, first turn off some of your extensions/addons/plugins.
-And if the problem persists use a different browser to test.   
+<a href="https://www.youtube.com/watch?v=gefkAEEfujs" target="_blank">video walkthrough
+of installing Django 5.2</a>.
 
 Checking Your Current Virtual Environment
 -----------------------------------------
 
-Once you have created your PythonAnywhere account, start a `bash` shell
+Once you have created your PythonAnywhere account, start a `bash` shell under `Consoles`
 and set up a virtual environment with Python 3.x and Django 5.2.  First lets
-make sure you don't already have a Django 5.2 environment set up.  If your
+make sure you don't already have a Django 5.2 environment or other virtual environment set up.  If your
 shell prompt looks as folows, you are all set up and can skip to
 "Installing the Sample Code for DJ4E".
 
