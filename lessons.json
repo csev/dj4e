@@ -175,8 +175,8 @@
         "youtube": "gefkAEEfujs"
     },
     {
-        "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-        "youtube": "9h9r_jfQG8E"
+        "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+        "youtube": "IYH_BkpHf3s"
     },
     {
         "title": "How the Autograder Works (9:13)",
@@ -319,8 +319,8 @@
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         },
         {
             "title" : "HTML Sample Code (Browse)",
@@ -646,12 +646,12 @@
             "href": "https://sqlitebrowser.org/"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -815,12 +815,12 @@
             "href": "https://docs.djangoproject.com/en/5.2/intro/tutorial03/"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         },
         {
             "title" : "Django URL Routing",
@@ -1092,12 +1092,12 @@
             "href": "https://docs.djangoproject.com/en/5.2/intro/tutorial04/"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -1164,12 +1164,12 @@
     ],
     "references" : [
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -1429,12 +1429,12 @@
     ],
     "references" : [
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -1492,12 +1492,12 @@
     ],
     "references" : [
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -1540,12 +1540,12 @@
             "href": "https://market.dj4e.com/home"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -1672,12 +1672,12 @@
             "href": "https://market.dj4e.com/m1"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -1892,12 +1892,12 @@
             "href": "https://market.dj4e.com/m2"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -2004,12 +2004,12 @@
             "href": "https://market.dj4e.com/m3"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -2251,12 +2251,12 @@
             "href": "https://market.dj4e.com/m4"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -2354,12 +2354,12 @@
             "href": "https://market.dj4e.com/m5"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -2417,12 +2417,12 @@
     ],
     "references" : [
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -2485,12 +2485,12 @@
             "href": "https://github.com/csev/dj4e-samples"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
@@ -3251,7 +3251,7 @@
             "href" : "{apphome}/assn/dj4e_errors42.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "title": "Fixing Django 4.2 Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
         }
     ]
@@ -3294,7 +3294,7 @@
         ]
         },
         {
-        "title": "Peer Graded: Market 4 User Interface",
+        "title": "Peer Graded: Ads 4 User Interface",
         "launch" : "mod/peer-grade/",
         "resource_link_id" : "peer_ads_4",
         "custom" : [
@@ -3302,7 +3302,7 @@
                 "key": "config",
                 "json":
 {
-  "title": "Market 5 Look and Feel",
+  "title": "Ads 5 Look and Feel",
   "description": "This is an assignment to make sure that your user interface properly supports the stars in the favorites.",
   "grading": "This assignment is worth 10 points. 6 points come from your peers and 4 points come from you grading other student's submissions. Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
   "parts": [
@@ -3347,11 +3347,11 @@
             "href": "https://chucklist.dj4e.com/m4"
         },
         {
-            "title" : "Fixing Django Errors on PythonAnywhere (Handout)",
+            "title" : "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
         {
-            "title": "Fixing Django Errors on PythonAnywhere (19:39)",
+            "title": "Fixing Django 4.2 Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=9h9r_jfQG8E"
         }
     ]

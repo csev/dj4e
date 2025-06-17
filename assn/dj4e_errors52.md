@@ -42,7 +42,7 @@ like this:
 
 You can see how to debug this error in a video:
 
-<a href="https://www.youtube.com/watch?v=9h9r_jfQG8E" target="_blank">Fixing Django Errors on PythonAnywhere (19:38)</a>
+<a href="https://www.youtube.com/watch?v=IYH_BkpHf3s" target="_blank">Fixing Django 5.2 Errors on PythonAnywhere (19:39)</a>
 
 The following are instructions you can follow to diagnose and fix the 'Something went wrong error :('.
 
