@@ -7,8 +7,8 @@ $qtext = 'Answer to the Ultimate Question';
 <h1>Django Tutorial 04</h1>
 <p>
 For this assignment work through Part 4 of the Django tutorial at
-<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial04/" class="btn btn-info" target="_blank">
-https://docs.djangoproject.com/en/4.2/intro/tutorial04/</a>.
+<a href="https://docs.djangoproject.com/en/5.2/intro/tutorial04/" class="btn btn-info" target="_blank">
+https://docs.djangoproject.com/en/5.2/intro/tutorial04/</a>.
 </a>
 </p>
 <?php
