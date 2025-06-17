@@ -1514,8 +1514,11 @@
         "resource_link_id": "discuss_mkt0"
         }
     ],
-    "todo" : "Walk through setup",
     "videos" : [
+    {
+        "title": " DJ4E Marketplace - Initial Setup / Install  (13:42)",
+        "youtube": "a3CODtpZCLM"
+    }
     ],
     "lti" : [
         {
