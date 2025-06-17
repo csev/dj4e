@@ -1,16 +1,13 @@
 
-Dealing with Errors in Django 4.2 Projects on PythonAnywhere
+Dealing with Errors in Django 5.2 Projects on PythonAnywhere
 ============================================================
-
-**NOTE** If you are using Django 5.2, please see the updated
-version of <a href="dj4e_errors52.md">Handling errors in Django 5.2 on PythonAnywhere</a>.
 
 When you get stuck on something while developing your Django Application
 on PythonAnywhere this page has some possible solutions.
 
 * What happens when your PythonAnywhere account expires after 90 days?
 * When everything works but your application says 'Something went wrong :-('
-* What happens when you don't activate your virtual environment (django42)
+* What happens when you don't activate your virtual environment (.ve52)
 * Your line 16 seems to have a syntax error in the text editor in `manage.py`
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
@@ -71,7 +68,7 @@ If there is an error, it will be pretty verbose:
 
         File "/home/dj4e/django_projects/mysite/mysite/urls.py", line 20, in <module>
             path('polls/', include('pollz.urls')),
-        File "/home/dj4e/.virtualenvs/django4/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
+        File "/home/dj4e/.ve52/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
             urlconf_module = import_module(urlconf_module)
         File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
             return _bootstrap._gcd_import(name[level:], package, level)
@@ -130,17 +127,17 @@ using Python 3.8 and Django 3.1.
     Python 2.7.12
     17:33 ~ $ python -m django --version
     1.11.26
-    17:33 ~ $ workon django42
-    (django42) 17:33 ~ $ python --version
+    17:33 ~ $ source ~/.ve52/bin/activate
+    (.ve52) 17:33 ~ $ python --version
     Python 3.9.5
-    (django42) 17:36 ~ $ python -m django --version
+    (.ve52) 17:36 ~ $ python -m django --version
     4.2.7
-    (django42) 17:33 ~ $ 
+    (.ve52) 17:33 ~ $ 
 
-Each time you start a new bash shell, you need to type `workon django42`.  If you
-leave and come back to a shell that is still running, if you see the '(django42)'
-in your prompt - you do not have to re-run the `workon` command.  It just needs
-to be done once per shell.
+Each time you start a new bash shell, you need to type ` source ~/.ve52/bin/activate`.  If you
+leave and come back to a shell that is still running, if you see the '(.ve52)'
+in your prompt - you do not have to re-run the `source` command.  It just needs
+to be done once per shell (or done automatically in the `.bashrc`).
 
 There are several errors that you might get if your virtual environment is
 not activated:
@@ -267,7 +264,7 @@ not mention is the need to exit and restart the shell any time you change
 `models.py`.  The tutorial tells you to run the shell again but it does not
 tell you to exit the existing shell first - so you might see an error like this:
 
-    (django42) 17:16 ~/django_projects/mysite (master)$ python manage.py shell
+    (.ve52) 17:16 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some django shell stuff
@@ -281,24 +278,24 @@ tell you to exit the existing shell first - so you might see an error like this:
 
 The correct way is to exit the shell and restart it.
 
-    (django42) 17:20 ~/django_projects/mysite (master)$ python manage.py shell
+    (.ve52) 17:20 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some django shell stuff
 
     >>> quit()
-    (django42) 17:20 ~/django_projects/mysite (master)$ 
+    (.ve52) 17:20 ~/django_projects/mysite (master)$ 
 
 Then you edit your `models.py` and *re-start* the Django shell from the
 `bash` console:
 
-    (django42) 17:24 ~/django_projects/mysite (master)$ python manage.py shell
+    (.ve52) 17:24 ~/django_projects/mysite (master)$ python manage.py shell
     Type "help", "copyright", "credits" or "license" for more information.
     (InteractiveConsole)
     >>> # Do some more django shell stuff
 
     >>> quit()
-    (django42) 17:20 ~/django_projects/mysite (master)$ 
+    (.ve52) 17:20 ~/django_projects/mysite (master)$ 
 
 After a while you will understand that you need to be in `bash` (dollar sign prompt)
 to run bash commands and be in the Django shell (>>> prompt) to run Django commands.

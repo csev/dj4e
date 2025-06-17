@@ -13,7 +13,7 @@ account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.
 
 You can view a
-<a href="https://www.youtube.com/watch?v=ZsEu-jyy2qY" target="_blank">video walkthrough</a>
+<a href="https://www.youtube.com/watch?v=TODO" target="_blank">video walkthrough</a>
 of installing Django 5.2.
 
 **Note:** If you are submitting these assignments to the auto grader you
@@ -300,7 +300,7 @@ tab on PythonAnywhere like:
     http://(your-account).pythonanywhere.com/
 
 Here is a
-<a href="dj4e_install/index.htm" target="_blank">Sample</a>
+<a href="dj4e_install/index52.htm" target="_blank">Sample</a>
 of what the resulting page should look like.
 
 Just as a note, you *never* run the `runserver` command on PythonAnywhere.
@@ -309,27 +309,22 @@ Just as a note, you *never* run the `runserver` command on PythonAnywhere.
 
 If you try to do `runserver` on PythonAnywhere it, you will see an error message like this
 
-    00:26 ~/django_projects/mysite (master)$ python manage.py runserver
+    (.ve52) 00:10 ~/django_projects/mysite $python manage.py runserver
     Watching for file changes with StatReloader
     Performing system checks...
     System check identified no issues (0 silenced).
-    September 14, 2021 - 00:26:16
-    Django version 2.2.7, using settings 'mysite.settings'
-    Starting development server at http://127.0.0.1:8000/
-    Quit the server with CONTROL-C.
     Error: That port is already in use.
-    00:26 ~/django_projects/mysite (master)$
 
 This will *never* work on PythonAnywhere.  You run / restart your server on
 PythonAnywhere using the "reload" button on your `Web` tab.  So
 if you are reading any Django instructions that say to do a `runserver`, instead do a
-`check` and then reload the application in the PythonAnywhere web UI.
+`check`  in the shell and then reload the application in the PythonAnywhere web UI.
 
 Adding Your Polls Application
 -----------------------------
 
 At this point, we are going to add the polls application from the first
-<a href="https://docs.djangoproject.com/en/4.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
+<a href="https://docs.djangoproject.com/en/5.2/intro/tutorial01/#creating-the-polls-app" target="_blank">
 Django tutorial</a>.  The instructions below are specialized on how to do the first tutorial
 specifically on PythonAnywhere.
 
@@ -379,8 +374,10 @@ Then create the `mysite/polls/urls.py` and put the following code into it:
         path("", views.index, name="index"),
     ]
 
-Then edit the `mysite/mysite/urls.py` and insert a new `include()` line for the 
-new `mysite/polls/urls.py`:
+Then replace the contents of the `mysite/mysite/urls.py` as following to activate the
+`mysite/polls/urls.py` file at the `/polls` URL path in your application.
+
+    # mysite/mysite/urls.py from DJ4E
 
     from django.contrib import admin
     from django.urls import include, path
@@ -395,7 +392,7 @@ multiple application folders.
 Since the urls "within" polls are in their own URL configuration file (`mysite/polls/urls.py`),
 they can be mounted under `/polls/`, or under `/fun_polls/`, or under `/content/polls/`,
 or any other path root, and the within-application poll URLs will still work relative
-to that path root.
+to that URL path root.
 
 At this point you have created a new view (named `index`), added a route to 
 the view in `mysite/polls/urls.py`, and mounted the urls for the `polls` application

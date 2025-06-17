@@ -1,4 +1,3 @@
-Record how to use the autograder
 
 Record designing and drawing a data model
 

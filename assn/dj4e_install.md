@@ -266,7 +266,7 @@ tab on PythonAnywhere like:
     http://(your-account).pythonanywhere.com/
 
 Here is a
-<a href="dj4e_install/index.htm" target="_blank">Sample</a>
+<a href="dj4e_install/index42.htm" target="_blank">Sample</a>
 of what the resulting page should look like.
 
 Just as a note, you *never* run the `runserver` command on PythonAnywhere.
