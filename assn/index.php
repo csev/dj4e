@@ -109,7 +109,7 @@ function onSelect() {
 </script>
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
-  <option <?= x_sel("dj4e_install.md") ?>>Django and PythonAnywhere</option>
+  <option <?= x_sel("dj4e_install52.md") ?>>Django 5.2 and PythonAnywhere</option>
   <option <?= x_sel("dj4e_shell.md") ?>>Using the Linux Command Line Interface (Shell)</option>
   <option <?= x_sel("dj4e_html.md") ?>>Adding HTML</option>
   <option <?= x_sel("dj4e_tut01.md") ?>>Serving Dynamic Content</option>
@@ -140,7 +140,7 @@ These assignments are designed for use with Django
 </p>
 </p>
 <ul>
-<li><a href="dj4e_install.md">Django and PythonAnywhere</a></li>
+<li><a href="dj4e_install52.md">Django 5.2 and PythonAnywhere</a></li>
 <li><a href="dj4e_shell.md">Using the Linux Command Line Interface (Shell)</a></li>
 <li><a href="dj4e_html.md">Adding HTML</a></li>
 <li><a href="dj4e_tut01.md">Serving Dynamic Content</a></li>

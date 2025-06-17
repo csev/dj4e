@@ -16,7 +16,7 @@ Django Releases
 June 2025
 
 Django 5.2
-Switch form Ads assignments to Marketplace assignments
+Switch from Ads assignments to Marketplace assignments
 Introduce Web Components using LitElement.
 </pre>
 <h2>Previous Versions of this Course</h2>
