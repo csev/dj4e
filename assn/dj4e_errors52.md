@@ -59,29 +59,25 @@ This can give one of two possible outputs.  If things are going well the last li
 If there is an error, it will be pretty verbose:
 
     Traceback (most recent call last):
-        File "/home/dj4e/django_projects/mysite/manage.py", line 21, in <module>
-            main()
-        File "/home/dj4e/django_projects/mysite/manage.py", line 17, in main
-            execute_from_command_line(sys.argv)
+     ... Many lines deleted ...
+    File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+      return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+    File "/home/csev/django_projects/mysite/mysite/urls.py", line 5, in <module>
+      path("polls/", include("pollz.urls")),
+                   ~~~~~~~^^^^^^^^^^^^^^
+    File "/home/csev/.ve52/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+      urlconf_module = import_module(urlconf_module)
+    File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+      return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+    File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+    ModuleNotFoundError: No module named 'pollz'
 
-        (About 20 more lines of traceback)
-
-        File "/home/dj4e/django_projects/mysite/mysite/urls.py", line 20, in <module>
-            path('polls/', include('pollz.urls')),
-        File "/home/dj4e/.ve52/lib/python3.9/site-packages/django/urls/conf.py", line 38, in include
-            urlconf_module = import_module(urlconf_module)
-        File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
-            return _bootstrap._gcd_import(name[level:], package, level)
-        File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-        File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-        File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
-        File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-        File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-        File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-        File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-     ModuleNotFoundError: No module named 'pollz'
-
-This is a mess of output but you can get some clues.  The file it is upset about is `/home/dj4e/django_projects/mysite/mysite/urls.py`
+This is a mess of output but you can get some clues.  The file it is upset about 
+is `/home/csev/django_projects/mysite/mysite/urls.py`
 and the what went wrong was that I mis-spelled `polls` as `pollz`.  
 
 To solve this, in another tab edit the file, save it and re-run 
