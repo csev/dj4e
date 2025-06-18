@@ -230,7 +230,7 @@ which we will use much later.
 like PythonAnywhere.  We never change these files.
 
 You only should run the `startproject` command once - it will fail if you try to run it twice.  There
-are instructions to delete then entire `mysite` foder and start over at the bottom of these insnstructions.
+are instructions to delete then entire `mysite` folder and start over at the bottom of these instructions.
 
 At this point, keep your shell open in one tab and open the PythonAnywhere *Files* application
 in another browser tab and navigate to the `~/django_projects/mysite/mysite/settings.py` and change
