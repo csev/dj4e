@@ -1,7 +1,7 @@
 Installing Django 5.2 on PythonAnywhere
 =======================================
 
-**Note** Starting May 2025, this course is transistioning from using
+**Note** Starting May 2025, this course is transitioning from using
 Django 4.2 to Django 5.2 - If you started the course using Django 4.2 - you
 can finish the course using Django 4.2 but if you are starting the course June 2025
 or later, you should use Django 5.2.  If you want to use Django 4.2, please follow the
@@ -22,7 +22,7 @@ Checking Your Current Virtual Environment
 Once you have created your PythonAnywhere account, start a `bash` shell under `Consoles`
 and set up a virtual environment with Python 3.x and Django 5.2.  First lets
 make sure you don't already have a Django 5.2 environment or other virtual environment set up.  If your
-shell prompt looks as folows, you are all set up and can skip to
+shell prompt looks as follows, you are all set up and can skip to
 "Installing the Sample Code for DJ4E".
 
     (.ve52) 14:15 ~ $
@@ -37,7 +37,7 @@ command.
 
     source ~/.ve52/bin/activate
 
-If you have a Django 5.2 environemt your prompt will change to look like:
+If you have a Django 5.2 environment your prompt will change to look like:
 
     (.ve52) 14:15 ~ $
 
@@ -46,7 +46,7 @@ Yay, you do not need to install a virtual environment, you can skip ahead to "In
 Installing a Django 5.2 Virtual Environment
 -------------------------------------------
 
-If after all the above checks, you do not have a Django 5.2 virtual environement installed,
+If after all the above checks, you do not have a Django 5.2 virtual environment installed,
 lets install one.  First lets make sure your shell has no current virtual environment
 by de-activating any current virtual environment:
 
@@ -66,8 +66,8 @@ the Python version:
     source ~/.ve52/bin/activate
     python --version
 
-The Python version should be at least 3.10. It will most likely
-be 3.12 or later. Once you verify your Python version is correct, run:
+The Python version should be at least 3.10, and is currently
+3.13 or later. Once you verify your Python version is correct, run:
 
     pip install --upgrade pip
     pip install django==5.2 ## this may take a couple of minutes
@@ -121,7 +121,7 @@ as the course progresses and install some important additional Django software l
     pip install -r requirements52.txt
 
 The `pip` command can also take a few minutes to complete.  Once it finishes and you
-get the `$` prompt again, check for a good instlal by running:
+get the `$` prompt again, check for a good install by running:
 
     cd ~/dj4e-samples
     python manage.py check
@@ -249,13 +249,13 @@ Running Your Application
 Now that we have built your first application, we need to tell PythonAnywhere where to look
 to run your application as a web server so you can test it.
 
-In the PythonAnywhere web interface navigate to the `Web` tab to create a new web application.  You do not need
+In the PythonAnywhere web interface, navigate to the `Web` tab, and click the `+ Add a new web app` button to create a new web application.  You do not need
 to upgrade your account - they give you one application like *drchuck.pythonanywhere.com* - use this
 free application for the course.
 
 When making the new application, do *not* create a "Django application" - instead,
 select `manual configuration` and match the Python version to the version that you used in
-your virtual environment above.  Once the webapp is created, you need to
+your virtual environment above (PythonAnywhere’s latest system image currently defaults to Python 3.13).  Once the webapp is created, you need to
 make a few changes to the settings for the web app and your application.
 
     Source code: /home/drchuck/django_projects/mysite
@@ -474,7 +474,7 @@ position your cursor between the braces and press the
 done.  To save the file, you type `:wq` followed by `enter`.  If you get lost press `escape` `:q!`
 `enter` to get out of the file without saving.
 
-If you aleady know some _other_ command line text editor in Linux, you can use it to edit files.  In general,
+If you already know some _other_ command line text editor in Linux, you can use it to edit files.  In general,
 you will find that it often quicker and easier to make small edits to files in the command line
 rather than a full screen UI.  And once you start deploying real applications in production
 environments like Google, Amazon, Microsoft, etc.. all you will have is command line.
