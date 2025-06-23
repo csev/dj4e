@@ -159,7 +159,7 @@ to be:
         <a class="navbar-brand" href="{% url 'mkt:all' %}">{{ settings.APP_NAME }}</a>
         <ul class="navbar-nav">
           {% url 'mkt:all' as x %}
-          <li {% if request.get_full_ == x %}class="active"{% endif %}>
+          <li {% if request.get_full_path == x %}class="active"{% endif %}>
               <a class="nav-link" href="{% url 'mkt:all' %}" role="button">Ads</a></li>
         </ul>
         <ul class="navbar-nav">
