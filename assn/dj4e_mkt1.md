@@ -62,7 +62,7 @@ INSTALLED_APPS = [
 ]
 
 (3) Then edit your `market/config/urls.py` to replace the "root" route to go to 
-the new `mkt` application and keep the `/home` route goig to the home application:
+the new `mkt` application and keep the `/home` route going to the home application:
 
     path('', include('mkt.urls')),       # Route root path to mkt
     path('home/', include('home.urls')), # Keep
