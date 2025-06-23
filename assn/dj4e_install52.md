@@ -249,7 +249,13 @@ Running Your Application
 Now that we have built your first application, we need to tell PythonAnywhere where to look
 to run your application as a web server so you can test it.
 
+<<<<<<< Updated upstream
 In the PythonAnywhere web interface, navigate to the `Web` tab, and click the `+ Add a new web app` button to create a new web application.  You do not need
+=======
+In the PythonAnywhere web interface, navigate to the Web tab, and click
+the '+Add a new web app' button to create a new web application..
+You do not need
+>>>>>>> Stashed changes
 to upgrade your account - they give you one application like *drchuck.pythonanywhere.com* - use this
 free application for the course.
 
@@ -264,6 +270,10 @@ make a few changes to the settings for the web app and your application.
     Virtualenv: /home/drchuck/.ve52
 
 Replace `drchuck` with your account on PythonAnywhere.
+
+The default Python version depends on which PythonAnywhere system image your account is using.
+PythonAnywhere’s newest system image (as of March 2025) defaults to Python 3.13
+(https://blog.pythonanywhere.com/219/).
 
 Then edit the *WGSI Configuration File* and put the following code into it.
 __Make sure to delete the existing content__ of the *WGSI Configuration File*
