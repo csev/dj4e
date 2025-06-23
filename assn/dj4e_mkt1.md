@@ -63,6 +63,9 @@ INSTALLED_APPS = [
 
 (3) Then edit your `market/config/urls.py` to add a route to the new application:
 
+    path('', include('home.urls')),
+    path('mkt/', include('mkt.urls')), # Add
+
 (4) Use this in your `mkt/models.py`:
 
     from django.db import models
@@ -132,7 +135,7 @@ Adding the Bootstrap menu to the top of the page
 
 Next we will add the bootstrap navigation bar to the top of your application as shown in:
 
-https://chuckplace.dj4e.com/
+https://market.dj4e.com/m1/
 
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation with
 gravatar when the user logs in.
@@ -151,12 +154,12 @@ to be:
     {% extends 'base_bootstrap.html' %}
     {% load app_tags %} <!-- see home/templatetags/app_tags.py and dj4e-samples/settings.py -->
     {% block navbar %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius:10px !important">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'mkt:all' %}">{{ settings.APP_NAME }}</a>
         <ul class="navbar-nav">
           {% url 'mkt:all' as x %}
-          <li {% if request.get_full_path == x %}class="active"{% endif %}>
+          <li {% if request.get_full_ == x %}class="active"{% endif %}>
               <a class="nav-link" href="{% url 'mkt:all' %}" role="button">Ads</a></li>
         </ul>
         <ul class="navbar-nav">
