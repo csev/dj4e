@@ -173,7 +173,13 @@ to be:
                 <img style="width: 25px;" src="{{ user|gravatar:60 }}"/><b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="rightnavDropdown">
-                <li><a class="dropdown-item" href="{% url 'logout' %}?next={% url 'mkt:all' %}">Logout</a></li>
+                <li>
+                    <form action="{% url 'logout' %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{% url 'mkt:all' %}">
+                        <button class="dropdown-item btn btn-link" type="submit">Logout</button>
+                    </form>
+                </li>
             </ul>
            </li>
            {% else %}
