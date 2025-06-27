@@ -1963,7 +1963,7 @@
     "anchor": "dj4e_mkt3",
     "icon" : "fa-comment",
     "description": "We add comments to our marketplace application.",
-    "assignment" : "{apphome}/assn/dj4e_mkt4.md",
+    "assignment" : "{apphome}/assn/dj4e_mkt3.md",
     "discussions" : [
         {
         "title" : "Marketplace + Comments (3)",
