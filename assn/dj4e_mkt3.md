@@ -78,7 +78,7 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
         path('ad/<int:pk>/comment',
             views.CommentCreateView.as_view(), name='ad_comment_create'),
         path('comment/<int:pk>/delete',
-            views.CommentDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_comment_delete'),
+            views.CommentDeleteView.as_view(success_url=reverse_lazy('mkt:all')), name='ad_comment_delete'),
     ]
 
 (7) Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
