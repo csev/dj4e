@@ -29,9 +29,9 @@ so make sure to give an email address to the user you create with `createsuperus
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
-after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
+after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
-you can add a GET parameter tho the URL to forc it to be re-retrieved:
+you can add a GET parameter tho the URL to force it to be re-retrieved:
 
     https://market.dj4e.com/favicon.ico?x=42
 
@@ -59,14 +59,14 @@ use localhost, you probably will get an error message when you login like:
 `The redirect_uri MUST match the registered callback URL for this application.`
 
 
-Adding Favorites to the Ads Application
+Adding Favorites to the Mkt Application
 -----------------------------------------
 
-In this section, you will pull bits and pieces of the `favs` sample application
-into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
-ads.
+In this section, you will pull bits and pieces of the `favwc` sample application
+into your `mkt` application to add support for logged in users to "favorite" and "un-favorite"
+ads. We will also create a custom web component to implement this favorites feature.
 
-(1) Add this to your `mkt/models.py`, taking inspiration from `dj4e-samples/favs/models.py`
+(1) Add this to your `mkt/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
 
     class Ad(models.Model) :
 
@@ -90,25 +90,68 @@ ads.
 
 Of course do the migrations once you have modified the model.
 
-(2) Add two routes to your `urls.py` for the favorite features
+(2) Add the following route to your `urls.py` for the favorites feature:
 
     ...
-    path('ad/<int:pk>/favorite',
-        views.AddFavoriteView.as_view(), name='ad_favorite'),
-    path('ad/<int:pk>/unfavorite',
-        views.DeleteFavoriteView.as_view(), name='ad_unfavorite'),
+    path('ad/<int:pk>/toggle', views.ToggleFavoriteView.as_view(), name='ad_toggle'),
     ...
 
-(3) Look at how `ThingListView` from `dj4e-samples/favs/views.py`
+(3) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(4) Alter your `list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
-parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
-code at the end.
+(4) Create the file `mkt/static/dj4e-favstar.js` and add the following Javascript code for our custom web component:
 
-(5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
-from `dj4e-samples/favs/views.py` into your `views.py`.
+    import { html, LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm";
+
+    export class DJ4EFavoriteStar extends LitElement {
+
+        static properties = {
+            fav: { type: Boolean },
+        };
+
+        // Don't use Shadow-DOM 
+        createRenderRoot() { return this; }
+
+        render() {
+
+            return html`
+            <span class="fa-stack" style="vertical-align: middle;">
+                <i class="fa fa-star fa-stack-1x" 
+                   style="${this.fav ? "" : "display: none;"} color: orange;">
+                </i>
+                <i class="fa fa-star-o fa-stack-1x"></i>
+            </span>
+            `
+        }
+    }
+
+    customElements.define('dj4e-favstar', DJ4EFavoriteStar);
+
+
+(5) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+`dj4e-favstar` web component to show the stars based on the list of favorites for this user and the `favToggle()` JavaScript
+code at the end. You will have to adapt the `dj4e-favstar` web component code in your template to work in your app.  
+We will also need to load the `dj4e-favstar.js` file we created earlier into our template to use the web component. To do this, add the `load static` template tag near the top of your `list.html` template:
+
+    ...
+    {% extends "base_menu.html" %}
+    {% load static %} <!-- add this -->
+    {% block content %}
+    ...
+
+Then add the script tag for `dj4e-favstar.js` at the bottom of the `list.html` template:
+
+    ...
+    <script type="module" src="{% static 'dj4e-favstar.js' %}"></script> <!-- add this -->
+    {% endblock %}
+    ...
+
+Again, be sure the file `dj4e-favstar.js` is in the `mkt/static/` directory so the {% static … %} helper can find it.
+
+
+(6) Pull in and adapt `ToggleFavoriteView`
+from `dj4e-samples/favwc/views.py` into your `views.py`.
 
 Manual Testing
 --------------
@@ -128,7 +171,7 @@ after refresh as it was when you clicked on the star
 * Do several favorite and unfavorite operations pressing 'refresh' after each change and make sure
 the star "sticks" (i.e. has the same value as when you clicked it)
 
-The most common problem is that when you click onthe star if looks good on the screen but the
+The most common problem is that when you click on the star it looks good on the screen but the
 fact that this is not a favorites (or not) did not get recorded in the server.
 Often you will need to check the developer network console in your browser to find errors
 in the AJAX code.
