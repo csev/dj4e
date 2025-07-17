@@ -249,14 +249,10 @@ Running Your Application
 Now that we have built your first application, we need to tell PythonAnywhere where to look
 to run your application as a web server so you can test it.
 
-<<<<<<< Updated upstream
-In the PythonAnywhere web interface, navigate to the `Web` tab, and click the `+ Add a new web app` button to create a new web application.  You do not need
-=======
-In the PythonAnywhere web interface, navigate to the Web tab, and click
-the '+Add a new web app' button to create a new web application..
-You do not need
->>>>>>> Stashed changes
-to upgrade your account - they give you one application like *drchuck.pythonanywhere.com* - use this
+In the PythonAnywhere web interface, navigate to the `Web` tab, and
+click the `+ Add a new web app` button to create a new web
+application.  You do not need to upgrade your account - they
+give you one application like *drchuck.pythonanywhere.com* - use this
 free application for the course.
 
 When making the new application, do *not* create a "Django application" - instead,
