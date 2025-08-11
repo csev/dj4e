@@ -1,8 +1,7 @@
 {
 
 "title": "Django for Everybody (DJ4E)",
-"description" : "As of June 2025, this course is transitioning from Django 4.2 to Django 5.3 and moving from the Ads series of assignments to the Marketplace series of assignments.  You will find the Django 4.2 Ads assignments at the bottom of the list of lessons.",
-"old_description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
+"description" : "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
 "count": true,
 "required_modules": [
     "https://github.com/tsugitools/gift",
@@ -2500,6 +2499,7 @@
 },
 {
     "title": "Project Overview",
+    "hidden": "true",
     "anchor": "pr_description",
     "icon" : "fa-project-diagram",
     "description": "Introduce your project to the rest of the class.",
@@ -2566,6 +2566,7 @@
 },
 {
     "title": "Project Milestone 2",
+    "hidden": "true",
     "anchor": "pr_02_milestone",
     "icon" : "fa-project-diagram",
     "description": "Introduce your project to the rest of the class.",
@@ -2632,6 +2633,7 @@
 },
 {
     "title": "Project Milestone 3",
+    "hidden": "true",
     "anchor": "pr_03_milestone",
     "icon" : "fa-project-diagram",
     "description": "Design a first verson of the user interface (UI) for your project.",
@@ -2714,6 +2716,7 @@
 },
 {
     "title": "Project Milestone 4",
+    "hidden": "true",
     "anchor": "pr_04_milestone",
     "icon" : "fa-project-diagram",
     "description": "Design a first verson of the data model (UI) for your project.",
@@ -2789,6 +2792,7 @@
 },
 {
     "title": "Project Milestone 5 - Project Review",
+    "hidden": "true",
     "anchor": "pr_05_milestone",
     "icon" : "fa-project-diagram",
     "description": "This is a project review to get feedback to help you for the final project submission.",
@@ -2858,6 +2862,7 @@
 },
 {
     "title": "Project Milestone 6 - Final Report",
+    "hidden": "true",
     "anchor": "pr_06_milestone",
     "icon" : "fa-comment",
     "description": "This is the final project submission.",
@@ -2925,15 +2930,9 @@
         }
         ]
 },
-
-
-
-
-
-
-
 {
     "title": "Classified Ads #1 (Django 4.2)",
+    "hidden": "true",
     "anchor": "dj4e_ads1",
     "icon" : "fa-store",
     "description": "We explore crispy forms, and bootstrap menus and then use owned rows we write the first iteration of the classified ads application.",
@@ -3008,6 +3007,7 @@
 
 {
     "title": "Classified Ads + Pictures (Django 4.2)",
+    "hidden": "true",
     "anchor": "dj4e_ads1b",
     "icon" : "fa-camera",
     "description": "We add pictures to our classified ads application.",
@@ -3099,6 +3099,7 @@
 
 {
     "title": "Classified Ads + Comments (Django 4.2)",
+    "hidden": "true",
     "anchor": "dj4e_ads2",
     "icon" : "fa-comment",
     "description": "We add comments to our classified ads application.",
@@ -3155,6 +3156,7 @@
 
 {
     "title": "Classified Ads Favorites #3 (Django 4.2)",
+    "hidden": "true",
     "anchor": "dj4e_ads3",
     "icon" : "fa-star",
     "description": "We add favorites to our classified ads application.",
@@ -3263,6 +3265,7 @@
 
 {
     "title": "Classified Ads Search #4 (Django 4.2)",
+    "hidden": "true",
     "anchor": "dj4e_ads4",
     "icon" : "fa-search",
     "description": "We add search a feature our classified ads application.",
