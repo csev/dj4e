@@ -11,7 +11,7 @@ Activate a virtual environment if needed.
 
 cd dj4e-samples
 git pull                          # incase there are updates
-pip install -r requirements4.txt  # to make sure that all the utilities are there
+pip install -r requirements52.txt # to make sure that all the utilities are there
 
 python manage.py check           # Make sure things are set up
 python manage.py makemigrations  # Probably won't find any changes
