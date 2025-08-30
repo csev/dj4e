@@ -29,7 +29,7 @@
 
 <li><p>
 <a href="https://github.com/csev/sakai/blob/plus/plus/tool/src/main/java/org/sakaiproject/plus/tool/PlusConfiguration.java" target="_blank">PlusConfiguration</a> ↔️
-(like WGSIConfig in PythonAnywhere)
+(like WSGIConfig in PythonAnywhere)
 </p></li>
 
 <li><p>

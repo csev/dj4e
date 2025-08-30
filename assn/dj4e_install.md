@@ -242,8 +242,8 @@ so you never have to type "workon django42" and it makes sure your virtual
 envronment is properly set up and configured.
 <a href="dj4e_install/web_tab.png" target="_blank">Sample image</a>
 
-Then edit the *WGSI Configuration File* and put the following code into it.
-__Make sure to delete the existing content__ of the *WGSI Configuration File* file and completely
+Then edit the *WSGI Configuration File* and put the following code into it.
+__Make sure to delete the existing content__ of the *WSGI Configuration File* file and completely
 replace it with the text below.
 This is slightly different from the sample in the PythonAnywhere tutorial.
 

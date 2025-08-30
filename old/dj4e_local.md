@@ -49,7 +49,7 @@ project.   This makes for much quicker edit-test cycles.
 
 * You can use a real developer text editor like VScode or Cursor
 
-* No more need to change the WGSI configuration file when you want to switch between
+* No more need to change the WSGI configuration file when you want to switch between
 your project and some sample code - you can even run more than one application at the
 same time on different ports.
 

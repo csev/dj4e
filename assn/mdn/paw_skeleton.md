@@ -132,8 +132,8 @@ with your PYAW account):
     Source code: /home/drchuck/django_projects/locallibrary
     Working directory: /home/drchuck/django_projects/locallibrary
 
-**Important:** Edit the *WGSI Configuration File* and change `mysite` to `locallibrary` in two places
-and save it.  Your *WGSI Configuration File* should look as follows after you edit it:
+**Important:** Edit the *WSGI Configuration File* and change `mysite` to `locallibrary` in two places
+and save it.  Your *WSGI Configuration File* should look as follows after you edit it:
 
     import os
     import sys

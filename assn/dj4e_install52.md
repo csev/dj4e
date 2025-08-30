@@ -271,8 +271,8 @@ The default Python version depends on which PythonAnywhere system image your acc
 PythonAnywhere’s newest system image (as of March 2025) defaults to Python 3.13
 (https://blog.pythonanywhere.com/219/).
 
-Then edit the *WGSI Configuration File* and put the following code into it.
-__Make sure to delete the existing content__ of the *WGSI Configuration File*
+Then edit the *WSGI Configuration File* and put the following code into it.
+__Make sure to delete the existing content__ of the *WSGI Configuration File*
 and completely replace it with the text below.
 This is slightly different from the sample in the PythonAnywhere tutorial.
 
