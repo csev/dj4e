@@ -19,9 +19,9 @@ Using the Shell on PythonAnywhere, make two folders
     mkdir ~/django_projects/mysite/site
     mkdir ~/django_projects/mysite/site/subfolder
 
-Create a file at `~/django_projects/mysite/site/hello.txt` with the text "Hello World".
+Using Files on PythonAnywhere, create a file at `~/django_projects/mysite/site/hello.txt` with the text "Hello World".
 
-Create a file at `~/django_projects/mysite/site/subfolder/hello.html` with this text:
+Using Files on PythonAnywhere, create a file at `~/django_projects/mysite/site/subfolder/hello.html` with this text:
 
     <h1>Hello World</h1>
 
