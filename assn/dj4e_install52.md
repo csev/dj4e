@@ -92,10 +92,8 @@ Automatically Enabling Your Virtual Environment
 -----------------------------------------------
 
 Each time you start a new shell, you will need to activate your virtual environment.  It
-is a lot simpler to do this automatically every time you login by editing the `.bashrc` file
+is a lot simpler to do this automatically every time you login by editing the `/home/(your-account)/.bashrc` file
 in *your* home directory.
-
-    /home/(your-account)/.bashrc
 
 Go to the end of that file, add a blank line and the following lines:
 
