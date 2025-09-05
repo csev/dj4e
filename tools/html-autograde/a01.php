@@ -33,10 +33,6 @@ if ( tagExists($dom, 'h1') ) $grade++;
 progressMessage($grade,$possgrade);
 
 $possgrade++;
-if ( tagExists($dom, 'div') ) $grade++;
-progressMessage($grade,$possgrade);
-
-$possgrade++;
 if ( tagExists($dom, 'strong') ) $grade++;
 progressMessage($grade,$possgrade);
 
@@ -61,16 +57,6 @@ if ( $count >= 1 ) {
 } else {
     $grade++;
     goodmessage('Did not find any i (italics) tags');
-}
-progressMessage($grade,$possgrade);
-
-$possgrade++;
-$count = getTagCount($dom, 'span');
-if ( $count >= 1 ) {
-    $grade++;
-    goodmessage('Found at least one span tag');
-} else {
-    badmessage('Wanted at least one span tag, found '.$count."\n");
 }
 progressMessage($grade,$possgrade);
 
