@@ -17,7 +17,7 @@ $message = $check;
 ?>
 Here is a sample of what you might put into your <b>views.py</b>.
 <pre>
-    return HttpResponse("Hello, world. <?= $message ?> is the polls index.")
+    return HttpResponse("Hello, world. <?= $message ?> You're at the polls index.")
 </pre>
 Also you will need to edit the file <b>mysite/mysite/settings.py</b> and
 edit the <b>ALLOWED_HOSTS</b> to look as follows:

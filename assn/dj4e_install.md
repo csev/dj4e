@@ -326,14 +326,16 @@ with the following skeleton files for your new application:
                 tests.py
                 views.py
 
-Write your first view in the `mysite/polls/views.py` file:
+Write your first view in the `django_projects/mysite/polls/views.py` file:
 
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("Hello, world. You're at the polls index.")
 
-Then create the `mysite/polls/urls.py` and put the following code into it:
+Note: You may need to update the text of the above string to pass the autograder.
+
+Then create the `django_projects/mysite/polls/urls.py` and put the following code into it:
 
     from django.urls import path
 
@@ -343,8 +345,8 @@ Then create the `mysite/polls/urls.py` and put the following code into it:
         path("", views.index, name="index"),
     ]
 
-Then edit the `mysite/mysite/urls.py` and insert a new `include()` line for the 
-new `mysite/polls/urls.py`:
+Then edit the `django_projects/mysite/mysite/urls.py` and insert a new `include()` line for the 
+new `django_projects/mysite/polls/urls.py`:
 
     from django.contrib import admin
     from django.urls import include, path
@@ -356,13 +358,13 @@ new `mysite/polls/urls.py`:
 
 The idea behind `include()` is to make it easy to organize the URL names across 
 multiple application folders.
-Since the urls "within" polls are in their own URL configuration file (`mysite/polls/urls.py`),
+Since the urls "within" polls are in their own URL configuration file (`django_projects/mysite/polls/urls.py`),
 they can be mounted under `/polls/`, or under `/fun_polls/`, or under `/content/polls/`,
 or any other path root, and the within-application poll URLs will still work relative
 to that path root.
 
 At this point you have created a new view (named `index`), added a route to 
-the view in `mysite/polls/urls.py`, and mounted the urls for the `polls` application
+the view in `django_projects/mysite/polls/urls.py`, and mounted the urls for the `polls` application
 into the project-wide URL routing file `mysite/mysite/urls.py`.  There are two files
 named `urls.py` in two different folders.  One file is for the overall (soon to be
 multi-application) project (`mysite`) and the other file is for your *first*
