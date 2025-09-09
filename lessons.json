@@ -1211,12 +1211,6 @@
         "youtube": "aGtY4xkirsE",
         "notes" : "revised 2021-01 truncated reference to m-2-m at end formerly ZdLpAtfWfZk",
         "project": "DJ 03 Many 05 Shell"
-    },
-    {
-        "title": "Loading One-to-Many Data using a Script (12:16)",
-        "youtube": "4DZlvtTvSrY",
-        "notes": "Reused the first part of the many_load video - added a new ending cats_load",
-        "project" : "DJ 03 Many 06 Batch"
     }
    ],
     "assignment" : "{apphome}/assn/dj4e_batch.md",
@@ -1932,11 +1926,6 @@
         "title": "Many-To-Many Data Models for Courses and Membership (8:38)",
         "youtube": "kY_1a057phM",
         "project" : "DJ 04 Many 03 Course"
-    },
-    {
-        "title": "Building a Django Script to Load Data from CSV (16:50)",
-        "youtube": "E8y_6S2Fc5s",
-        "project" : "DJ 04 Many 04 Batch"
     }
    ],
     "lti" : [

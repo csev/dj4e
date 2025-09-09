@@ -1,0 +1,116 @@
+
+To Do
+
+Record versions video.
+
+Completed on www.dj4e.com
+
+Video walkthrough of install52
+Edit tsugi_settings.php
+Edit versions.php
+Change all the links in lessons.json
+Change index in assn to point to mkt
+Walkthrough Market 0 (from github)
+
+Coursera
+
+Course 1
+
+W2 
+Video: Installing Django on PythonAnywhere - new video for 5.2
+Reading: Lecture Resources
+   Keep the "PythonAnywhere" link
+   Remove second bullet "You will use..."
+   Remove the entire second section "Resource you might find useful..."
+   Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
+   These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+Auto-grader: Installing Django - update assignment text to point to new errors video for 5.2
+
+W4 
+App Item: Peer graded Cascating Style Sheets (remove)
+
+Course 2 
+
+W1
+Reading: Lecture Resources
+   Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
+   These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+
+Course 3
+
+Old Outline:
+Cookies and Sessions
+Users and Authentication
+Django Forms
+One to Many Data Models
+Owned Rows (Will move to Course 4)
+Many to Many Data Models
+
+New Outline:
+Cookies and Sessions
+Users and Authentication
+Django Forms
+One to Many Data Models
+
+W1
+Reading: Lecture Resources
+   Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
+   These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+
+W4
+Video: Loading One-to-Many Data using a Django Batch Script (remove)
+
+W5 (Owned Rows)
+Move to Course 4 (with changes below)
+
+W6 (any to many) 
+Move to Course 4 with changes below
+
+Course 4
+
+This course will need to be renamed to be "Building Applications in Django" and its description will need changing.
+
+Old Outline:
+JavaScript
+OO JavaScript
+JavaScript and the Browser (Pictures + Comments)
+JSON and Ajax (Favorites)
+Ads4 Search (will be removed)
+
+New Outline:
+Setting up a New Application - Welcome stuff + Mkt0
+Owned Rows (from Course 3) + Mkt1
+JavaScript
+OO JavaScript
+JavaScript in the Browser + mkt2 - Pictures
+Many to Many + mkt3 - Comments
+JSON / AJAX + mkt4 - Favorites
+
+New Week 1: (welcome + new material + assigment)
+   All the welcome stuff + Marketplace Setup https://www.dj4e.com/lessons/dj4e_mkt0
+   Reading: Lecture Resources
+     Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
+     These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+
+New Week 2: (Owned Rows from Course 3)
+   App Item: Auto-grader: Ad List #1 - Replace with Mkt 1
+
+New Week 3 (JavaScript): Unchanged
+
+New Week 4 (JavaScript OO): Unchanged
+
+New Week 5 (JavaScript and the Browser)
+   Add Web Components Lecture (needs to get branding from CAI media)
+   Assignment is mkt2 - Pictures
+
+New Week 6 Many-to-Many from Course 3)
+   Video (new week 5): Building a Django Batch Script to Load Data from CSV (remove)
+   Assignment: mkt3 + Comments
+
+New Week 7 (JSON / AJAX)
+   Add Web Components Walkthrough
+   Assignment: mkt4 + Favorites
+
+Remove Search #5
+
+
