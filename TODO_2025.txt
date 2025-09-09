@@ -16,7 +16,24 @@ Coursera
 
 Course 1
 
-W2 
+Old Outline:
+Dynamic Web
+Install Django
+HTML
+CSS
+SQL
+
+New Outline:
+Install Django
+Learn Shell (New from http://www.dj4e.com/lessons/dj4e_shell)
+HTML
+CSS
+SQL
+Dynamic Web
+
+Move Week 1 (Dynamic Web Content) to the last (new) week in Course 1
+
+New Week 1 (formerly Week 2)
 Video: Installing Django on PythonAnywhere - new video for 5.2
 Reading: Lecture Resources
    Keep the "PythonAnywhere" link
@@ -26,15 +43,21 @@ Reading: Lecture Resources
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
 Auto-grader: Installing Django - update assignment text to point to new errors video for 5.2
 
-W4 
+New Week 2 - Shell
+   One new Lecture for media to process and add branding
+
+W4
 App Item: Peer graded Cascating Style Sheets (remove)
 
-Course 2 
+Course 2
 
 W1
 Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+
+W5
+Add new Solo1 Assignment
 
 Course 3
 
@@ -51,6 +74,7 @@ Cookies and Sessions
 Users and Authentication
 Django Forms
 One to Many Data Models
+Solo2 Assignment
 
 W1
 Reading: Lecture Resources
@@ -63,8 +87,12 @@ Video: Loading One-to-Many Data using a Django Batch Script (remove)
 W5 (Owned Rows)
 Move to Course 4 (with changes below)
 
-W6 (any to many) 
+W6 (any to many)
 Move to Course 4 with changes below
+
+New Week 5
+- Solo2 Assignment
+Optional Mini Django?
 
 Course 4
 

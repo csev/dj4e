@@ -44,118 +44,6 @@
     ]
 },
 {
-    "title": "Introduction to Dynamic Web Content",
-    "anchor": "rrc",
-    "icon" : "fa-refresh",
-    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
-    "slides": "lectures/Web-01-HTTP.pptx",
-    "discussions" : [
-        {
-        "title" : "Introduction to Dynamic Web Content",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_01_intro"
-        }
-    ],
-    "videos" : [
-        {
-            "title" : "Web Applications and the Request/Response Cycle (6:04)",
-            "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
-            "youtube" : "ZT8uqIEG92o"
-        },
-        {
-            "title" : "Exploring the HyperText Transfer Protocol (16:28)",
-            "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
-            "youtube" : "Q5YIrYkrVXg"
-        },
-        {
-            "title" : "Using Sockets to Make Network Connections in Python (6:34)",
-            "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
-            "youtube" : "RDvlb_XgVyI"
-        },
-        {
-            "title" : "Building a Simple Web Browser in Python (8:39)",
-            "media": "lesson-02-http/04-Web-01-HTTP-04-Browser.m4v",
-            "youtube" : "Fxgw_BxZg2I"
-        },
-        {
-            "title" : "Building a Simple HTTP Server in Python (16:07)",
-            "media": "lesson-02-http/05-Web-01-HTTP-05-Server.m4v",
-            "youtube" : "PNt8zXl7EJ0"
-        },
-        {
-            "title" : "Understanding Browser Developer Mode (9:43)",
-            "media" : "lesson-02-http/06-dev-mode-walkthrough.mov",
-            "youtube" : "0JsWY3pmdak"
-        },
-        {
-            "title" : "Exploring the Mini Django Web Server (36:58)",
-            "media" : "lesson-02-http/07-Web-04-Mini-Django.m4v",
-            "youtube" : "q6LGpiVPwaA"
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Hypertext Transfer Protocol",
-            "href" : "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
-        },
-        {
-            "title" : "What Happens When You Click a Link? - Computerphile",
-            "href" : "https://www.youtube.com/watch?v=keo0dglCj7I"
-        },
-        {
-            "title" : "Mini Django Slides",
-            "href" : "{apphome}/lectures/Web-04-Mini-Django.pptx"
-        }
-    ],
-    "lti" : [
-        {
-            "title" : "Quiz: Request-Response Cycle",
-            "launch" : "mod/gift/?quiz=01-Request-Response.txt",
-            "resource_link_id" : "dj4e_01_rrc_quiz",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "3"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        },
-        {
-            "title" : "Autograder: Request-Response Cycle",
-            "launch" : "tools/http/",
-            "resource_link_id" : "dj4e_01_rrc",
-            "custom" : [
-            {
-                "key": "exercise",
-                "value": "http_headers.php"
-            }
-        ]
-        },
-        {
-            "title" : "Autograder: Run mini_django on your computer",
-            "launch" : "tools/jsauto/?exercise=mini_01.php",
-            "resource_link_id" : "dj4e_01_rrc_mini",
-            "custom" : [
-                {
-                    "key": "exercise",
-                    "value": "mini_01.php"
-                },
-                {
-                    "key": "tries",
-                    "value": "3"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        }
-    ]
-},
-{
     "title": "Installing Django on PythonAnywhere",
     "anchor": "dj4e_install",
     "icon" : "fa-clone",
@@ -476,6 +364,118 @@
         ]
         }
         ]
+},
+{
+    "title": "Introduction to Dynamic Web Content",
+    "anchor": "rrc",
+    "icon" : "fa-refresh",
+    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
+    "slides": "lectures/Web-01-HTTP.pptx",
+    "discussions" : [
+        {
+        "title" : "Introduction to Dynamic Web Content",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_01_intro"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "Web Applications and the Request/Response Cycle (6:04)",
+            "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
+            "youtube" : "ZT8uqIEG92o"
+        },
+        {
+            "title" : "Exploring the HyperText Transfer Protocol (16:28)",
+            "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
+            "youtube" : "Q5YIrYkrVXg"
+        },
+        {
+            "title" : "Using Sockets to Make Network Connections in Python (6:34)",
+            "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
+            "youtube" : "RDvlb_XgVyI"
+        },
+        {
+            "title" : "Building a Simple Web Browser in Python (8:39)",
+            "media": "lesson-02-http/04-Web-01-HTTP-04-Browser.m4v",
+            "youtube" : "Fxgw_BxZg2I"
+        },
+        {
+            "title" : "Building a Simple HTTP Server in Python (16:07)",
+            "media": "lesson-02-http/05-Web-01-HTTP-05-Server.m4v",
+            "youtube" : "PNt8zXl7EJ0"
+        },
+        {
+            "title" : "Understanding Browser Developer Mode (9:43)",
+            "media" : "lesson-02-http/06-dev-mode-walkthrough.mov",
+            "youtube" : "0JsWY3pmdak"
+        },
+        {
+            "title" : "Exploring the Mini Django Web Server (36:58)",
+            "media" : "lesson-02-http/07-Web-04-Mini-Django.m4v",
+            "youtube" : "q6LGpiVPwaA"
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Hypertext Transfer Protocol",
+            "href" : "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
+        },
+        {
+            "title" : "What Happens When You Click a Link? - Computerphile",
+            "href" : "https://www.youtube.com/watch?v=keo0dglCj7I"
+        },
+        {
+            "title" : "Mini Django Slides",
+            "href" : "{apphome}/lectures/Web-04-Mini-Django.pptx"
+        }
+    ],
+    "lti" : [
+        {
+            "title" : "Quiz: Request-Response Cycle",
+            "launch" : "mod/gift/?quiz=01-Request-Response.txt",
+            "resource_link_id" : "dj4e_01_rrc_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
+            "title" : "Autograder: Request-Response Cycle",
+            "launch" : "tools/http/",
+            "resource_link_id" : "dj4e_01_rrc",
+            "custom" : [
+            {
+                "key": "exercise",
+                "value": "http_headers.php"
+            }
+        ]
+        },
+        {
+            "title" : "Autograder: Run mini_django on your computer",
+            "launch" : "tools/jsauto/?exercise=mini_01.php",
+            "resource_link_id" : "dj4e_01_rrc_mini",
+            "custom" : [
+                {
+                    "key": "exercise",
+                    "value": "mini_01.php"
+                },
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ]
 },
 {
     "title": "Basic SQL",
