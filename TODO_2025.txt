@@ -3,15 +3,6 @@ To Do
 
 Record versions video.
 
-Completed on www.dj4e.com
-
-Video walkthrough of install52
-Edit tsugi_settings.php
-Edit versions.php
-Change all the links in lessons.json
-Change index in assn to point to mkt
-Walkthrough Market 0 (from github)
-
 Coursera
 
 Course 1
@@ -34,7 +25,7 @@ Dynamic Web
 Move Week 1 (Dynamic Web Content) to the last (new) week in Course 1
 
 New Week 1 (formerly Week 2)
-Video: Installing Django on PythonAnywhere - new video for 5.2
+New Media Video: FCP / DJ4E-F25 / 01_paw_install_52 / 01_paw_install_52
 Reading: Lecture Resources
    Keep the "PythonAnywhere" link
    Remove second bullet "You will use..."
@@ -43,7 +34,8 @@ Reading: Lecture Resources
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
 Auto-grader: Installing Django - update assignment text to point to new errors video for 5.2
 
-New Week 2 - Shell
+Completely New Week 2 - Shell
+   New Media Video: FCP: DJ4E-F25 / Shell-01 / Shell-01
    One new Lecture for media to process and add branding
 
 W4
@@ -116,6 +108,7 @@ JSON / AJAX + mkt4 - Favorites
 
 New Week 1: (welcome + new material + assigment)
    All the welcome stuff + Marketplace Setup https://www.dj4e.com/lessons/dj4e_mkt0
+   New Media Video: FCPX: DJ4E-F25 / mkt_00_setup / mkt_00_setup
    Reading: Lecture Resources
      Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
      These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
@@ -129,6 +122,7 @@ New Week 4 (JavaScript OO): Unchanged
 
 New Week 5 (JavaScript and the Browser)
    Add Web Components Lecture (needs to get branding from CAI media)
+   FCPX: DJ4E-F25 / JS-03-Browser - JS-03-Browser-06-WC 
    Assignment is mkt2 - Pictures
 
 New Week 6 Many-to-Many from Course 3)
