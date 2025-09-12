@@ -94,7 +94,8 @@ in your CSS instead of the separate "border" values makes the CSS validtor "happ
 Note - that as you change files like `blocks.css` you may need to
  make sure that when you hit 'refresh' that a new copy of the file is loaded.
 On some browsers, you can press 'Shift-Refresh' to force a reload
-of the cache so you get a fresh copy of the file.
+of the cache so you get a fresh copy of the file.  Another way to make sure files are reloaded
+is to opne the "Inspect" dialog and under the network tab select "Disable Cache".
 </p>
 <h1>What To Hand In</h1>
 <p>
