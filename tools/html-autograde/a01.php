@@ -76,7 +76,7 @@ progressMessage($grade,$possgrade);
 
 $possgrade++;
 $count = getTagCount($dom, 'a');
-if ( $count == 3 ) {
+if ( $count >= 3 && $count <= 10 ) {
     $grade++;
     goodmessage('Found three a (anchor) tags');
 } else {
