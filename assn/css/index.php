@@ -72,7 +72,7 @@ file in your browser.
 of margin and padding.  It is probably simplest to use
 <a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank">fixed positioning</a>
 to get the
-boxes to be "sticky" to the corners of the screen even when you resize.  Make the boxes
+boxes to stay near to the corners of the screen even when you resize.  Make the boxes
 width be <b>25%</b> so the width changes as you resize your browser.</p></li>
 <li><p>Center the link at the top of the page.  Use your developer console / inspect element
 feature of your browser to visit <a href="https://www.dj4e.com/" target="_blank">
