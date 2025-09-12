@@ -78,7 +78,8 @@ width be <b>25%</b> so the width changes as you resize your browser.</p></li>
 feature of your browser to visit <a href="https://www.dj4e.com/" target="_blank">
 https://www.dj4e.com/</a> and figure out the background color, font, and text color
 used in the top navigation bar and replicate for the link to DJ4E
-in your <b>index.htm</b>.
+in your <b>index.htm</b>.  Don't worry about matching the screen shot exactly with the font in your screen shot because it turns out the same 
+font in different browsers might look differently.
 </p></li>
 You might find that using the
 <a href="https://www.w3schools.com/css/css_border_shorthand.asp" target="_blank">border shortcut</a>
