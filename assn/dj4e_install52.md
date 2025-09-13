@@ -58,16 +58,28 @@ not in a virtual environment:
 
     bash: deactivate: command not found
 
-Now lets install a new virtual environment in your home directory (~) and check
-the Python version:
+Now lets install a new virtual environment in your home directory (~) with a version of Python
+that supports Django 5.2.  The Python version should be 3.10 - 3.13 with a preference toward
+the later releases.  We will attempt to run a particular version of Python to create a virtual envionment
+that includes that version.  
 
     cd ~
-    python -m venv .ve52
+    python3.13 -m venv .ve52
+
+If this works without error, you are in good shape.  If you get a message like 
+
+    python3.13: command not found
+
+Try the `python` command above with 3.12, 3.11, and 3.10 until one works.   Hopefully your
+PythonAnywhere account has at least one Python version that supports Django 5.2.
+
+Once the above `venv` creation is  complete, activate your virtual environment and check the python
+version inside the virtual environment.
+
     source ~/.ve52/bin/activate
     python --version
 
-The Python version should be at least 3.10, and is currently
-3.13 or later. Once you verify your Python version is correct, run:
+Once you verify your Python version is correct, run:
 
     pip install --upgrade pip
     pip install django==5.2 ## this may take a couple of minutes
@@ -265,9 +277,12 @@ make a few changes to the settings for the web app and your application.
 
 Replace `drchuck` with your account on PythonAnywhere.
 
-The default Python version depends on which PythonAnywhere system image your account is using.
-PythonAnywhere’s newest system image (as of March 2025) defaults to Python 3.13
-(https://blog.pythonanywhere.com/219/).
+Set the Python version to your application to the version of Python that is in your virtual
+environment when you created it above.   You can always go into your virtual environment and
+check the Python version in the Console / Shell:
+
+    source ~/.ve52/bin/activate
+    python --version
 
 Then edit the *WSGI Configuration File* and put the following code into it.
 __Make sure to delete the existing content__ of the *WSGI Configuration File*
