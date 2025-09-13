@@ -72,7 +72,7 @@ you should see something like the following:
     python3.11          python3.12-config   python3.13t         python3.9m
     12:06 ~ $ python3.
 
-If Python 3.13 is available, we will use it to create out virtual environment to support
+If Python 3.13 is available, we will use it to create our virtual environment to support
 Django 5.2 using the following Python command including the version number.
 
     cd ~
