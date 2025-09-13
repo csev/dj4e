@@ -60,20 +60,32 @@ not in a virtual environment:
 
 Now lets install a new virtual environment in your home directory (~) with a version of Python
 that supports Django 5.2.  The Python version should be 3.10 - 3.13 with a preference toward
-the later releases.  We will attempt to run a particular version of Python to create a virtual envionment
-that includes that version.  
+the later releases.
+
+You can figure out figure out exactly which versions of Python are available in your
+Linux shell (a.k.a. PythonAnywhere console) type `python3.` and then press the `Tab` key twice and
+you should see something like the following:
+
+    12:06 ~ $ python3.
+    python3.10          python3.11-config   python3.13          python3.13t-config
+    python3.10-config   python3.12          python3.13-config   python3.9
+    python3.11          python3.12-config   python3.13t         python3.9m
+    12:06 ~ $ python3.
+
+If Python 3.13 is available, we will use it to create out virtual environment to support
+Django 5.2 using the following Python command including the version number.
 
     cd ~
     python3.13 -m venv .ve52
 
-If this works without error, you are in good shape.  If you get a message like 
+If this works without error, you are in good shape.  If you get a message like
 
     python3.13: command not found
 
 Try the `python` command above with 3.12, 3.11, and 3.10 until one works.   Hopefully your
 PythonAnywhere account has at least one Python version that supports Django 5.2.
 
-Once the above `venv` creation is  complete, activate your virtual environment and check the python
+Once the above `venv` creation is successfull, activate your virtual environment and verify the python
 version inside the virtual environment.
 
     source ~/.ve52/bin/activate
@@ -84,7 +96,7 @@ Once you verify your Python version is correct, run:
     pip install --upgrade pip
     pip install django==5.2 ## this may take a couple of minutes
 
-Sometimes these two commands take a long time.  Run them one at a time in the 
+Sometimes these two commands take a long time.  Run them one at a time in the
 shell.  When the servers are running slowly, each command can take more than ten
 minutes to finish.  Be patient and wait until you see the `$` prompt indicating
 the command is complete before continuing.  After they are complete, check your
