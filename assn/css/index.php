@@ -68,6 +68,14 @@ https://your-account.pythonanywhere.com/site/css/index.htm
 file in your browser.
 (<a href="https://dj4e.pythonanywhere.com/site/css/index.htm" target="_blank">Example that *looks* correct but is not a solution at all</a>)
 </p></li>
+<li><p>
+<b>Note</b> - that as you change files like `blocks.css` you may need to
+ make sure that when you hit 'refresh' that a new copy of the file is loaded.
+On some browsers, you can press 'Shift-Refresh' to force a reload
+of the cache so you get a fresh copy of the file.  Another way to make sure files are reloaded
+is to open the "Inspect" dialog and under the network tab select "Disable Cache".
+Here is an example of <a href="05-no-cache.png" target="_blank">turning off cache in the developer console</a>.
+</p></li>
 <li><p>The four boxes have five pixel borders with different colors and five pixels
 of margin and padding.  It is probably simplest to use
 <a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank">fixed positioning</a>
@@ -90,13 +98,6 @@ in your CSS instead of the separate "border" values makes the CSS validtor "happ
 </pre>
 </p></li>
 </ul>
-<p>
-Note - that as you change files like `blocks.css` you may need to
- make sure that when you hit 'refresh' that a new copy of the file is loaded.
-On some browsers, you can press 'Shift-Refresh' to force a reload
-of the cache so you get a fresh copy of the file.  Another way to make sure files are reloaded
-is to opne the "Inspect" dialog and under the network tab select "Disable Cache".
-</p>
 <h1>What To Hand In</h1>
 <p>
 For this assignment you will hand in:
