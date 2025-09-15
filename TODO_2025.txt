@@ -136,3 +136,32 @@ New Week 7 (JSON / AJAX)
 Remove Search #5
 
 
+Media 2025 Updates
+------------------
+
+The media is transferred separately to Sean on a drive so it can be included in the CAI archival materials.
+
+01_paw_install_52 
+
+This is a replacement for the Django 4.2 install video in Course 1 Week 2 - "Installing Django on PythonAnywhere"
+
+favwc-walkthrough
+
+This is a new walkthrough - it replaces "Walkthrough: DJ4E Favorites (favs) Sample Code" in Course 4 week 4 (JSON / AJAX)
+
+JS-03-Browser
+
+JS-03-Browser-06-WC - This is a new lecture topic - web components.  Topics 1-5 stay - This goes into Course 4 Week 3 (JavaScript and the Browser)
+
+mkt_00_setup
+
+This is a new video - as we pull out the "set up" from Ads 1 - it becomes "Marketplace 0"
+
+paw_errors
+
+paw_errors_52 replaces the looking for errors, at several places in the course.
+
+Shell-01
+
+This is a whole new week in Course 1.
+
