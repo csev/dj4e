@@ -860,7 +860,10 @@
     "anchor": "Objects",
     "icon" : "fa-cubes",
     "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
-    "slides": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+    "slides": [
+        "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+        "{apphome}/lectures/PY-01-Variables.pptx"
+    ],
     "discussions" : [
         {
         "title" : "Object-Oriented Programming in Python",
@@ -869,10 +872,6 @@
         }
     ],
     "references" : [
-        {
-            "title" : "Slides: The True Story of Python Assignment Statements",
-            "href" : "{apphome}/lectures/PY-01-Variables.pptx"
-        },
         {
             "title" : "Chapter 14: Python Objects",
             "href" : "https://www.py4e.com/html3/14-objects"
@@ -908,6 +907,11 @@
             "youtube" : "cOf7g_E2G8g",
             "media" : "14-Objects-D-2023-12-28.m4v",
             "youtube-2016" : "EE9PaHPPm2w"
+        },
+        {
+            "title" : "The True Story of Python Assignment Statements",
+            "youtube" : "zoD2GY11dcY",
+            "media" : "05-14-Py-01-Variables-2025-09.m4v"
         }
     ],
     "lti" : [
