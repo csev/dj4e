@@ -48,6 +48,13 @@ Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
 
+
+W3 
+
+New Fifth lecture in Objects about Python and variable
+   New Media Video: FCP: DJ4E-F25 / PY-01-Variables / PY-01-Variables
+   New Powerpoint lectures/PY-01-Variables.pptx
+
 W5
 Add new Solo1 Assignment
 
@@ -160,6 +167,10 @@ This is a new video - as we pull out the "set up" from Ads 1 - it becomes "Marke
 paw_errors
 
 paw_errors_52 replaces the looking for errors, at several places in the course.
+
+PY-01-Variables
+
+A new fifth lecture on the Object Oriented section
 
 Shell-01
 
