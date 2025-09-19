@@ -19,7 +19,8 @@ Once you have completed tutorial, make a second admin user with the following in
 Account: dj4e
 Password: <?= htmlentities($adminpw) ?>
 </pre>
-You can use any email address you like.
+You can use any email address you like.  If you make the user using the Django Admin interface,
+make sure to set `Superuser` and `Staff status` for your new user.
 </p>
 <p>
 Using the Django shell or the Django administration user interface, insert a
