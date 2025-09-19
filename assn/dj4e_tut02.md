@@ -32,6 +32,9 @@ it does not echo your characters so folks can't observe your password.
 It looks like your typing is not working - but it is - simply
 type the letters and then enter - you will enter your password twice to verify.
 
+Also when you are running `python manage.py shell` - to exit the shell and get back to `bash`
+use the `quit()` command.
+
 Also as a reminder, you never use `runserver` on PythonAnywhere:
 
     python manage.py runserver     # <-- Never run this on pythonanywhere
