@@ -13,7 +13,7 @@ Follow the instructions in this tutorial:
 
 https://docs.djangoproject.com/en/5.2/intro/tutorial02/
 
-Read all these notes before starting the tutorial - ti will save you a lot of time.
+Skim all the notes below before starting the tutorial - it will save you a lot of time.
 
 Notes for PythonAnywhere
 ------------------------
@@ -22,8 +22,9 @@ Notes for PythonAnywhere
 should also import the `Choice` model following the pattern of importing the `Question` model.
 It will make completing the assignment a lot easier.
 
-**Important:** DO not go back to tutorial1 on the django web site and create the folder `djangotutorial`
-- you already have this folder called `django_projects`.  Make sure to do all your work in `django_projects`
+**Important:** Do not go back to tutorial1 on the Django web site and create the folder `djangotutorial`
+- you already have this folder from the first assignment called `django_projects`.
+Make sure to do all your work in `~/django_projects/myite`
 and not `djangotutorial`.
 
 Also as a reminder, you never use `runserver` on PythonAnywhere:
@@ -36,8 +37,9 @@ Instead after you change files, run
 
 And then go to the the PythonAnywhere Web tab and press Reload.
 
-Also when it tells you to navigate to a `localhost` like
+Also when it tells you to navigate to a `localhost` or `127.0.0.1` like
 
+    http://127.0.0.1:8000/admin
     http://localhost:8000/admin
 
 Instead nagivate to the same path on your PythonAnywhere site:

@@ -11,7 +11,7 @@ on PythonAnywhere this page has some possible solutions.
 * Your line 16 seems to have a syntax error in the text editor in `manage.py`
 * What to do when you see 'SyntaxError' when running `manage.py`
 * What to do when the tutorial tells you to do a `python manage.py runserver`
-* What to do when the tutorial tells you to access 'localhost:8000'
+* What to do when the tutorial tells you to access 'localhost:8000' or '127.0.0.1:8000'
 * How to fix two `mysite` folders
 * How and when you exit the Django shell (>>> prompt)
 
