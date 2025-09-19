@@ -13,12 +13,18 @@ Follow the instructions in this tutorial:
 
 https://docs.djangoproject.com/en/5.2/intro/tutorial02/
 
+Read all these notes before starting the tutorial - ti will save you a lot of time.
+
 Notes for PythonAnywhere
 ------------------------
 
 **Hint:** At the point where the tutorial tells you to modify the `polls/admin.py` you
 should also import the `Choice` model following the pattern of importing the `Question` model.
-It will make comepleting the assignment a lot easier.
+It will make completing the assignment a lot easier.
+
+**Important:** DO not go back to tutorial1 on the django web site and create the folder `djangotutorial`
+- you already have this folder called `django_projects`.  Make sure to do all your work in `django_projects`
+and not `djangotutorial`.
 
 Also as a reminder, you never use `runserver` on PythonAnywhere:
 
