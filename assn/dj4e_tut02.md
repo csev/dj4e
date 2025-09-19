@@ -16,7 +16,11 @@ https://docs.djangoproject.com/en/5.2/intro/tutorial02/
 Notes for PythonAnywhere
 ------------------------
 
-Remember that you never use `runserver` on PythonAnywhere:
+**Hint:** At the point where the tutorial tells you to modify the polls/admin.py you
+should also import the Choice model following the pattern of importing the Question model.
+It will make comepleting the assignment a lot easier.
+
+Also as a reminder, you never use `runserver` on PythonAnywhere:
 
     python manage.py runserver     # <-- Never run this on pythonanywhere
 
