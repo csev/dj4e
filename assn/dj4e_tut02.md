@@ -27,6 +27,11 @@ It will make completing the assignment a lot easier.
 Make sure to do all your work in `~/django_projects/myite`
 and not `djangotutorial`.
 
+Note that when you are typing a password for the `createsuperuser` command in the tutorial,
+it does not echo your characters so folks can't observe your password.
+It looks like your typing is not working - but it is - simply
+type the letters and then enter - you will enter your password twice to verify.
+
 Also as a reminder, you never use `runserver` on PythonAnywhere:
 
     python manage.py runserver     # <-- Never run this on pythonanywhere
