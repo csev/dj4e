@@ -369,7 +369,7 @@
     "title": "Introduction to Dynamic Web Content",
     "anchor": "rrc",
     "icon" : "fa-refresh",
-    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
+    "description": "We look at the basic structure of a web application and how a web browser interacts with a web server at the protocol level.   We explore the Request-Response Cycle that is the basis of the Hypertext Transfer Protocol (HTTP).",
     "slides": "lectures/Web-01-HTTP.pptx",
     "discussions" : [
         {
@@ -379,6 +379,10 @@
         }
     ],
     "videos" : [
+        {
+            "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+            "youtube": "zuCxAR3-CzA"
+        },
         {
             "title" : "Web Applications and the Request/Response Cycle (6:04)",
             "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
@@ -408,6 +412,10 @@
             "title" : "Understanding Browser Developer Mode (9:43)",
             "media" : "lesson-02-http/06-dev-mode-walkthrough.mov",
             "youtube" : "0JsWY3pmdak"
+        },
+        {
+            "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+            "youtube": "zuCxAR3-CzA"
         },
         {
             "title" : "Exploring the Mini Django Web Server (36:58)",
