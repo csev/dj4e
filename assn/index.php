@@ -114,6 +114,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_html.md") ?>>Adding HTML</option>
   <option <?= x_sel("dj4e_tut01.md") ?>>Serving Dynamic Content</option>
   <option <?= x_sel("dj4e_errors52.md") ?>>Debugging Django 5.2 Errors</option>
+  <option <?= x_sel("dj4e_checkup52.md") ?>>Looking for Common Configuration Errors</option>
   <option <?= x_sel("dj4e_tut02.md") ?>>Django Models</option>
   <option <?= x_sel("dj4e_tut03.md") ?>>Django Views</option>
   <option <?= x_sel("dj4e_tut04.md") ?>>Django Forms</option>
@@ -154,6 +155,7 @@ These assignments are designed for use with Django
 <li><a href="dj4e_tut01.md">Serving Dynamic Content</a></li>
 <li><a href="dj4e_tutpaw.md">PythonAnywhere and Django Tutorials</a></li>
 <li><a href="dj4e_errors52.md">Debugging Django 5.2 Errors</a></li>
+<li><a href="dj4e_checkup52.md">Looking for Common Configuration Errors</a></li>
 <li><a href="dj4e_tut02.md">Django Models</a></li>
 <li><a href="dj4e_tut03.md">Django Views</a></li>
 <li><a href="dj4e_tut04.md">Django Forms</a></li>
