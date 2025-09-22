@@ -47,7 +47,10 @@ What Might Be Wrong
 
 The checkup checks if you are running in the right virtual enviroment and if
 the Python version and Django version in the virtual environment are correct.
-If not you might see errors like this:
+It also checks your folder structure for common mistakes and patches 
+your `manage.py` to add some PythonAnywhere specific code.
+
+If there are errors, you might see messages like these:
 
 * You are not running in a virtual environment, please consult the DJ4E install instructions.
 
@@ -71,3 +74,4 @@ learning objectives of the course - you should get some help if you need to to f
 
 Over time as new mistakes are found in office hours or help sessions we can add new checks
 to the checkup tool to make the logistics of this course easier for everyone.
+
