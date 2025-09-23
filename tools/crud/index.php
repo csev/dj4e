@@ -43,7 +43,6 @@ $assignments = array(
     '13adlist3w.php' => 'AdList #3 (Web Components)',
     '14adlist4.php' => 'AdList #4',
     '16solo.php' => 'First Solo',
-    '15solo.php' => 'Random Solo (old)',
     '17solo.php' => 'Second (Random) Solo',
 );
 
