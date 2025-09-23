@@ -30,6 +30,9 @@ Complete the following sections of the Views tutorial:
         mkdir static
         mkdir static/css
 
+    Note that the tutorial mentions folder and file names like `/django-locallibrary-tutorial/catalog/templates/` the actual path
+    for this folder on your PythonAnywhere account is `~/django_projects/locallibrary/catalog/templates/`
+
 * Create the file `catalog/templates/base_generic.html`as suggested.  The tutorial shows a simple version and then a more complex version with some CSS files - create the more complex version.  The autograder may require the addition of a `<meta>` tag in the `<head>` area of the base template.
 
 * Create the file `catalog/static/css/styles.css` as suggested

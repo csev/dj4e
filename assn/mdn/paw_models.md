@@ -47,9 +47,33 @@ it is successfull.
     python manage.py migrate
 
 Then add the `Language` model to your `models.py` as discussed in the "Challenge" section
-at the end of the tutorial.  It is OK if you look at their solution in github to get the code.
+at the end of the tutorial.  You can skim and think through the "design a model" part of the
+tutorial - but for the sake of time, here is a Language model you can use:
 
-Since we have changed the `models.py`, we need to run the migrations again:
+    class Language(models.Model):
+        """Model representing a Language (e.g. English, French, Japanese, etc.)"""
+        name = models.CharField(max_length=200,
+                            unique=True,
+                            help_text="Enter the book's natural language (e.g. English, French, Japanese etc.)")
+
+        def get_absolute_url(self):
+            """Returns the url to access a particular language instance."""
+            return reverse('language-detail', args=[str(self.id)])
+
+        def __str__(self):
+            """String for representing the Model object (in Admin site etc.)"""
+            return self.name
+
+    class Meta:
+            constraints = [
+                UniqueConstraint(
+                    Lower('name'),
+                    name='language_name_case_insensitive_unique',
+                    violation_error_message = "Language already exists (case insensitive match)"
+                ),
+            ]
+
+Since we have changed the `models.py` by adding the `Language` model, we need to run the migrations again:
 
     cd ~/django_projects/locallibrary
     python manage.py makemigrations

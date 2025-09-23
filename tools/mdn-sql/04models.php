@@ -69,6 +69,7 @@ if ( isset($_FILES['database']) ) {
     if ( ! runQuery($db, 'SELECT id, title, summary, isbn, author_id FROM catalog_book') ) return;
     if ( ! runQuery($db, 'SELECT id, imprint, due_back, status, book_id FROM catalog_bookinstance') ) return;
     if ( ! runQuery($db, 'SELECT id, book_id, genre_id FROM catalog_book_genre') ) return;
+    if ( ! runQuery($db, 'SELECT id, name FROM catalog_language') ) return;
 
     $gradetosend = 1.0;
     $scorestr = "Your answer is correct, score saved.";
@@ -129,7 +130,7 @@ file to the autograder.
 </p>
 <p>
 This autograder checks the schemas of the five tables
-(catalog_author, catalog_book, catalog_book_genre, catalog_bookinstance, and catalog_genre)
+(catalog_author, catalog_book, catalog_book_genre, catalog_bookinstance, catalog_genre, and catalog_language)
 that will be created when the assignment is completed properly.
 </p>
 </form>
