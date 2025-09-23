@@ -1016,14 +1016,14 @@
             "youtube" : "ZT8uqIEG92o"
         },
         {
-            "title" : "Exploring the HyperText Transfer Protocol (16:28)",
-            "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
-            "youtube" : "Q5YIrYkrVXg"
-        },
-        {
             "title" : "Using Sockets to Make Network Connections in Python (6:34)",
             "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
             "youtube" : "RDvlb_XgVyI"
+        },
+        {
+            "title" : "Exploring the HyperText Transfer Protocol (16:28)",
+            "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
+            "youtube" : "Q5YIrYkrVXg"
         },
         {
             "title" : "Building a Simple Web Browser in Python (8:39)",
@@ -1116,7 +1116,7 @@
     "title": "Building an Application on Your Own",
     "anchor": "dj4e_solo",
     "icon" : "fa-compass",
-    "description": "In this lesson you will be presented with a sample application and you are to replicate its fuctionality.  There is no new material - but you might want to review material to help with this assignment.",
+    "description": "In this lesson you will be presented a specification for a simple application. There is no new material - but you might want to review material to help with this assignment.",
     "discussions" : [
         {
         "title" : "A Solo Appplication",
@@ -1126,29 +1126,17 @@
     ],
     "videos" : [
     {
-        "title": "(Review) Using Sessions in Django",
-        "project" : "DJ-08-Cookies-02-Sessions",
-        "youtube": "RjykNmVdcgI"
+        "title": "Review: URL Routing (6:59)",
+        "youtube": "AQFC13D2mRM"
     },
     {
-        "title": "(Review) Login and Views in Django",
-        "project" : "DJ-09-Login-03-Views",
-        "youtube": "n5Xwqz1IJck"
+        "title": "Review: Templates (10:05)",
+        "youtube": "mTvWrpMGWBA"
     },
     {
-        "title": "(Review) Django Views",
+        "title": "Review: Views (6:19)",
         "youtube": "9Qk4vJMssMo",
         "project": "DJ 06 Views 02 Views"
-    },
-    {
-        "title": "(Review) Using Templates in Django",
-        "youtube": "mTvWrpMGWBA",
-        "project": "DJ 06 Views 04 Templates"
-    },
-    {
-        "title": "(Review) Implementing POST Redirect in Django",
-        "project" : "DJ-10-Forms-06-Redirect",
-        "youtube": "a_ahU4F1V2g"
     }
    ],
     "lti" : [
@@ -1554,6 +1542,69 @@
             {
                 "key": "exercise",
                 "value": "99cats.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors52.md"
+        },
+        {
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
+        }
+    ]
+},
+{
+    "title": "Building an Second Application on Your Own",
+    "anchor": "dj4e_solo2",
+    "icon" : "fa-compass",
+    "description": "In this lesson you will be presented with a sample application and you are to replicate its fuctionality.  There is no new material - but you might want to review material to help with this assignment.",
+    "discussions" : [
+        {
+        "title" : "A Second Solo Appplication",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_29_solo2"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "(Review) Using Sessions in Django",
+        "project" : "DJ-08-Cookies-02-Sessions",
+        "youtube": "RjykNmVdcgI"
+    },
+    {
+        "title": "(Review) Login and Views in Django",
+        "project" : "DJ-09-Login-03-Views",
+        "youtube": "n5Xwqz1IJck"
+    },
+    {
+        "title": "(Review) Django Views",
+        "youtube": "9Qk4vJMssMo",
+        "project": "DJ 06 Views 02 Views"
+    },
+    {
+        "title": "(Review) Using Templates in Django",
+        "youtube": "mTvWrpMGWBA",
+        "project": "DJ 06 Views 04 Templates"
+    },
+    {
+        "title": "(Review) Implementing POST Redirect in Django",
+        "project" : "DJ-10-Forms-06-Redirect",
+        "youtube": "a_ahU4F1V2g"
+    }
+   ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: An Second Solo Application",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_app_solo2",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "17solo.php"
             }
         ]
         }
