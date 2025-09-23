@@ -1,7 +1,6 @@
 <?php
 require_once "../config.php";
 
-
 use \Tsugi\Core\Settings;
 use \Tsugi\Core\LTIX;
 use \Tsugi\UI\SettingsForm;

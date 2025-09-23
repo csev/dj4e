@@ -59,7 +59,10 @@ Go find the `STATIC_URL` line in `settings.py` and add the following two lines b
 Continue with the Tutorial
 --------------------------
 
-Then continue with the tutorial at the step *Creating the catalog application*:
+Read this entire section before you start the tutorial.  In particular when the
+tutorial tells you to `runserver` come back to these instructions.
+
+We will start the tutorial at the step *Creating the catalog application*:
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#creating_the_catalog_application
 
@@ -111,17 +114,21 @@ tab to point to and start our Django application.
 Also we never navigate to `http://localhost:8000` - our web server is on PythonAnywhere and the next
 section reconfigures your PythonAnywhere account to server the new `locallibrary` project.
 
-Switching Your Web Application to a New Project
------------------------------------------------
+The tutorial talks about backing your code up to github - this is not necessary unless you are familiar
+familiar with github and want to back things up.  In general most students get stuck on the github part
+so we don't recommend it.
+
+Switching Your Web Application to a New Project (instead of runserver)
+----------------------------------------------------------------------
 
 We need to go into the `Web` tab in PythonAnywhere and *switch* which project your
 account is serving at your application URL.
 
-Scroll down to the *Code:* section and make the following settings (replace 'drchuck'
+Scroll down to the *Code:* section and make the following settings (replace 'mdntutorial'
 with your PYAW account):
 
-    Source code: /home/drchuck/django_projects/locallibrary
-    Working directory: /home/drchuck/django_projects/locallibrary
+    Source code: /home/mdntutorial/django_projects/locallibrary
+    Working directory: /home/mdntutorial/django_projects/locallibrary
 
 **Important:** Edit the *WSGI Configuration File* and change `mysite` to `locallibrary` in two places
 and save it.  Your *WSGI Configuration File* should look as follows after you edit it:
@@ -137,15 +144,15 @@ and save it.  Your *WSGI Configuration File* should look as follows after you ed
     from django.contrib.staticfiles.handlers import StaticFilesHandler
     application = StaticFilesHandler(get_wsgi_application())
 
-The virtual environment should already be set up and does not need to change.
+The virtual environment and Python version should already be set up and does not need to change.
 
-    Virtualenv: /home/drchuck/.ve52
+    Virtualenv: /home/mdntutorial/.ve52
 
-Change `drchuck` above to your PythonAnywhere account name.
+Change `mdntutorial` above to your PythonAnywhere account name.
 
 Then `Reload` your web application and visit its url to make sure you get the expected output.
 
-    http://drchuck.pythonanywhere.com/catalog/
+    http://mdntutorial.pythonanywhere.com/catalog/
 
 When you visit the page,
 you *should* get an error, 'Page not found(404)'
