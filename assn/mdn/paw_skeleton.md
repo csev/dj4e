@@ -1,15 +1,12 @@
 Starting the MDN Tutorial
 =========================
 
-__You should not do this assignment until you are completely finished with all
-of your Ads assignments.__
-
 This assignment will switch your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account to a brand new <b>project</b>.  We won't delete your <b>mysite</b>
 project - we will make a new project and point your PythonAnywhere Web application at
-this new project - so your previous project will disapper from the web - but
-still be there if you wanted to switch back.
+this new project - so your previous work will disapper from the web - but
+the source code for your previous work still be there if you wanted to switch back.
 
 __NOTE:__ If you find a complete solution to this assignment somewhere out there, do
 *not* use it for these assignments.  The autograders expect you to do these assignments
@@ -28,7 +25,7 @@ previous assignments.  Start a shell and type:
 
     python -m django --version
 
-It should put out a version like `4.2.7`
+It should show a version like `3.11.11`
 
 We will start the MDN tutorial at step 3.  You can read the first two steps -
 but you can start at the "Skeleton Website" step.
@@ -52,18 +49,12 @@ Edit the file `locallibrary/settings.py` and make the following changes:
 
     ALLOWED_HOSTS = ['*']               # Change
 
-The tutorial does not tell you how to set the `STATIC_ROOT` value in your `settings.py`
-so that you can serve static files.  Go find the `STATIC_URL` line in `settings.py` 
-and add the `STATIC_ROOT` line below it.
+Go find the `STATIC_URL` line in `settings.py` and add the following two lines below it.
 
-    STATIC_URL = '/static/'
+    STATIC_URL = '/static/'  # Existing line in settings.py
 
+    import os
     STATIC_ROOT = os.path.join(BASE_DIR, 'catalog/static')  # New line
-
-In order use the `os` library, you need to add an import to the top of your `settings.py`:
-
-     import os
-
 
 Continue with the Tutorial
 --------------------------
@@ -148,7 +139,7 @@ and save it.  Your *WSGI Configuration File* should look as follows after you ed
 
 The virtual environment should already be set up and does not need to change.
 
-    Virtualenv: /home/drchuck/.virtualenvs/django42
+    Virtualenv: /home/drchuck/.ve52
 
 Change `drchuck` above to your PythonAnywhere account name.
 
