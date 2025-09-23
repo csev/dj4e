@@ -70,7 +70,7 @@ you want to loop through all the books for a particular author, use the followin
 References
 ----------
 
-https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/
+https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/
 
-https://docs.djangoproject.com/en/4.2/topics/db/queries/#following-relationships-backward
+https://docs.djangoproject.com/en/5.2/topics/db/queries/#following-relationships-backward
 

@@ -62,18 +62,18 @@ If you see and error message like:
 It probably means that you have not set up your virtual environment under 
 the `Web` tab.  
 
-If you did the installation properly and created a `django42`
+If you did the installation properly and created a `.ve52`
 virtual environment, the virtual environment under the `Web` tab should be set to:
 
-    /home/drchuck/.virtualenvs/django42
+    /home/mdntutorial/.ve52
 
-Replacing "drchuck" with your PythonAnywhere account name.
+Replacing "mdntutorial" with your PythonAnywhere account name.
 
 
 References
 ----------
 
-https://docs.djangoproject.com/en/4.2/ref/views/
+https://docs.djangoproject.com/en/5.2/ref/views/
 
 https://stackoverflow.com/questions/30430131/get-the-file-path-for-a-static-file-in-django-code
 
