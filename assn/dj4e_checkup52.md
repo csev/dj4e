@@ -3,19 +3,20 @@ Scanning your PythonAnywhere Account for Common Errors
 ======================================================
 
 Over the years, many students have following the instructions for this class
-ad completed the assignments without mis-interpreting instructions.  But
+have completed the assignments following the provided instructions.  But
 sometimes things go wrong and students lose track of where they are
-at in the instructions and they start looking on the Internet for solutions
+at in the instructions and they start Internet search or AI for solutions
 or going back and trying to re-do steps that have already been completed.
 
 Sometimes you are following a tutorial online and the assignment has instructed
 you to do some steps differently on PythonAnywhere.  Sometimes the "do
 this a little differently" recommedation is difficult to remmber
-while doing an assignment.
+while doing an assignment and instructions get done out of order or
+more then once.
 
-It does not matter how something got slightly messed up on your PythonAnywhere
-account.  We have built a tool to catch and let you know about some of the most common mistakes.
-
+We have built a tool to catch and let you know about some of the
+common mistakes that happen when something goes wrong in the middle
+of the instructions for an assignment.
 
 You should probably run this checkup tool between assignments.  Reasonable
 times might be before you start the next assignment or after you complete the
