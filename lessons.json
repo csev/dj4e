@@ -993,6 +993,57 @@
     ]
 },
 {
+    "title": "Building an Application on Your Own",
+    "anchor": "dj4e_solo",
+    "icon" : "fa-compass",
+    "description": "In this lesson you will be presented a specification for a simple application. There is no new material - but you might want to review material to help with this assignment.",
+    "discussions" : [
+        {
+        "title" : "A Solo Appplication",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_29_solo"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Review: URL Routing (6:59)",
+        "youtube": "AQFC13D2mRM"
+    },
+    {
+        "title": "Review: Templates (10:05)",
+        "youtube": "mTvWrpMGWBA"
+    },
+    {
+        "title": "Review: Views (6:19)",
+        "youtube": "9Qk4vJMssMo",
+        "project": "DJ 06 Views 02 Views"
+    }
+   ],
+    "lti" : [
+        {
+        "title" : "Auto-grader: An Application of Your Own",
+        "launch" : "tools/crud/",
+        "resource_link_id" : "dj4e_app_solo",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "16solo.php"
+            }
+        ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors52.md"
+        },
+        {
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
+        }
+    ]
+},
+{
     "title": "How Dynamic Web Content Works",
     "anchor": "rrc",
     "icon" : "fa-refresh",
@@ -1109,57 +1160,6 @@
                     "value": "601"
                 }
             ]
-        }
-    ]
-},
-{
-    "title": "Building an Application on Your Own",
-    "anchor": "dj4e_solo",
-    "icon" : "fa-compass",
-    "description": "In this lesson you will be presented a specification for a simple application. There is no new material - but you might want to review material to help with this assignment.",
-    "discussions" : [
-        {
-        "title" : "A Solo Appplication",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_29_solo"
-        }
-    ],
-    "videos" : [
-    {
-        "title": "Review: URL Routing (6:59)",
-        "youtube": "AQFC13D2mRM"
-    },
-    {
-        "title": "Review: Templates (10:05)",
-        "youtube": "mTvWrpMGWBA"
-    },
-    {
-        "title": "Review: Views (6:19)",
-        "youtube": "9Qk4vJMssMo",
-        "project": "DJ 06 Views 02 Views"
-    }
-   ],
-    "lti" : [
-        {
-        "title" : "Auto-grader: An Application of Your Own",
-        "launch" : "tools/crud/",
-        "resource_link_id" : "dj4e_app_solo",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "16solo.php"
-            }
-        ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors52.md"
-        },
-        {
-            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
 },
