@@ -24,7 +24,7 @@ cd ~/django_projects/mysite
 python manage.py startapp solo1
 </pre>
 You need to add a <b>mysite/solo1/urls.py</b>, update your <b>mysite/solo1/views.py</b>,
-<b>mysite/mysite/settings.py</b> and <b>mysite/mysite/urls.py</b> files.  Yuo can look at your own code
+<b>mysite/mysite/settings.py</b> and <b>mysite/mysite/urls.py</b> files.  You can look at your own code.
 Make sure to edit the <b>mysite/mysite</b> files inserting new lines - do not break these files by replacing
 their entire content.  You will need to keep all your applications (i.e. like polls) working without breaking them.
 </p>
