@@ -43,6 +43,7 @@ App Item: Peer graded Cascating Style Sheets (remove)
 
 Course 2 (Week 8-12 in dj4e.com)
 
+
 W1
 Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
@@ -83,6 +84,7 @@ W1
 Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+   New Bonus - Flying
 
 W4
 Video: Loading One-to-Many Data using a Django Batch Script (remove)
@@ -94,8 +96,8 @@ W6 (many to many)
 Move to Course 4 with changes below
 
 New Week 5
-- Solo2 Assignment
-Optional Mini Django?
+Solo2 Assignment
+Mini Django?
 
 Course 4 (22-32 on dj4e.com)
 
