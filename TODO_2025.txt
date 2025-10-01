@@ -14,15 +14,15 @@ HTML
 CSS
 SQL
 
-New Outline:
-Install Django
+New Outline: (1-7 on dj4e.com)
+Install Django (Tutorial 1)
 Learn Shell (New from http://www.dj4e.com/lessons/dj4e_shell)
 HTML
 CSS
 SQL
-Dynamic Web
+Models (Tutorial 2)
 
-Move Week 1 (Dynamic Web Content) to the last (new) week in Course 1
+Move Week 1 (Dynamic Web Content) to the Course 3 Week 2
 
 New Week 1 (formerly Week 2)
 New Media Video: FCP / DJ4E-F25 / 01_paw_install_52 / 01_paw_install_52
@@ -41,7 +41,7 @@ Completely New Week 2 - Shell
 W4
 App Item: Peer graded Cascating Style Sheets (remove)
 
-Course 2
+Course 2 (Week 8-12 in dj4e.com)
 
 W1
 Reading: Lecture Resources
@@ -56,9 +56,8 @@ New Fifth lecture in Objects about Python and variable
    New Powerpoint lectures/PY-01-Variables.pptx
 
 W5
-Add new Solo1 Assignment
 
-Course 3
+Course 3 (13-21 on dj4e.com)
 
 Old Outline:
 Cookies and Sessions
@@ -69,11 +68,16 @@ Owned Rows (Will move to Course 4)
 Many to Many Data Models
 
 New Outline:
+Solo1 Assignment
+Web Technologies / Sockets
 Cookies and Sessions
 Users and Authentication
 Django Forms
 One to Many Data Models
+Autos
+Cats
 Solo2 Assignment
+
 
 W1
 Reading: Lecture Resources
@@ -86,14 +90,14 @@ Video: Loading One-to-Many Data using a Django Batch Script (remove)
 W5 (Owned Rows)
 Move to Course 4 (with changes below)
 
-W6 (any to many)
+W6 (many to many)
 Move to Course 4 with changes below
 
 New Week 5
 - Solo2 Assignment
 Optional Mini Django?
 
-Course 4
+Course 4 (22-32 on dj4e.com)
 
 This course will need to be renamed to be "Building Applications in Django" and its description will need changing.
 
