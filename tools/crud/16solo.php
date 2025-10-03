@@ -45,6 +45,16 @@ $passed = 0;
 
 webauto_setup();
 
+// Check for polls
+$pollsurl = str_replace("/solo1", "/polls", $url);
+
+// Start the actual test
+$crawler = webauto_get_url($client, $pollsurl);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+
+webauto_search_for($html, "Answer");
+
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
 if ( $crawler === false ) return;
