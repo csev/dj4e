@@ -89,6 +89,7 @@ line_out("Looking for HTML form with 'Vote' button");
 $form = webauto_get_form_with_button($crawler,'Vote');
 
 $value = webauto_get_radio_button_choice($form,'choice','42');
+
 if ( is_string($value) ) {
     markTestPassed("Found choice radio button with a label of '42'");
 } else {

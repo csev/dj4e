@@ -440,19 +440,66 @@ function webauto_get_radio_button_choice($form,$field_name,$choice)
         }
     }
 
-    $formnode = $form->getFormNode();
     $value = false;
     $allNodes = webauto_recurse_children($form->getFormNode());
     // foreach($formnode->childNodes as $node){
+    // Loop through and find all the radios
+    $labels = array();
+    $radios = array();
     foreach($allNodes as $node){
-        if ( $node->nodeName == "input" ) {
+       if ( $node->nodeName == "#text") continue;
+       // echo("\n<pre>Node name \n");echo($node->nodeName);echo("\n</pre>\n");
+       if ( $node->nodeName == "label") {
+            $for = $node->getAttribute("for");
+            $text = $node->textContent;
+            // echo("\n<pre>\n for: $for text: $text\n</pre>\n");
+            if ( is_string($for) && is_string($text) && strlen($for) > 0 && strlen($text) > 0 ) {
+              $labels[] = array($text, $for);
+            }
+          continue;
+       }
+
+       if ( $node->nodeName == 'input' && $node->getAttribute("type") == "radio" ) {
+            $id = $node->getAttribute("id");
             $value = $node->getAttribute("value");
-            continue;
-        }
-        if ( $node->nodeName == "label" && trim($node->nodeValue) == trim($choice) ) {
-            if (is_string($value) ) return $value;
-        }
+            // echo("\n<pre>\n id: $id value: $value\n</pre>\n");
+            if ( is_string($id) && is_string($value) && strlen($id) > 0 && strlen($value) > 0 ) {
+              $radios[] = array($id, $value);
+            }
+          continue;
+       }
     }
+    // echo("\n<pre> ---- \n");var_dump($labels);var_dump($radios);echo("\n</pre>\n");
+
+    $failure = false;
+    if ( count($labels) < 1 ) {
+      error_out("Could not find any label tags with 'for' attributes");
+      $failure = true;
+    }
+
+    if ( count($radios) < 1 ) {
+      error_out("Could not find any radio inputs with 'id' attributes");
+      $failure = true;
+    }
+
+    if ( $failure ) {
+        echo("\n<!--- \n");var_dump($labels);var_dump($radios);echo("\n-->\n");
+        return false;
+    }
+
+    foreach($labels as $label) {
+        if ( $choice == $label[0] ) {
+            $id = $label[1];
+            foreach($radios as $radio) {
+                if ( $id == $radio[0] ) {
+                    $value = $radio[1];
+                    line_out("Found choice=$choice value=$value");
+                    return $value;
+                }
+            }
+         }
+     }
+
     error_out("Could not form input '$field_name' with label of '$choice'");
     return false;
 }
