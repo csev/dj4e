@@ -37,9 +37,6 @@ Completely New Week 2 - Shell
    New Media Video: FCP: DJ4E-F25 / Shell-01 / Shell-01
    One new Lecture for media to process and add branding
 
-W4
-App Item: Peer graded Cascating Style Sheets (remove)
-
 Course 2 (Week 8-12 in dj4e.com)
 
 W1
@@ -47,12 +44,18 @@ Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
 
+W3 - Split in Two Weeks
 
-W3 
-
-New Fifth lecture in Objects about Python and variable
+W3A
+   All the OO lectures and new assignment statement
    New Media Video: FCP: DJ4E-F25 / PY-01-Variables / PY-01-Variables
    New Powerpoint lectures/PY-01-Variables.pptx
+
+W3B
+   All the Generic Views Stuff
+
+W4
+App Item: Peer graded Cascating Style Sheets (remove)
 
 
 Course 3 (13-21 on dj4e.com)
