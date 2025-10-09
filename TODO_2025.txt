@@ -20,7 +20,6 @@ Learn Shell (New from http://www.dj4e.com/lessons/dj4e_shell)
 HTML
 CSS
 SQL
-Models (Tutorial 2)
 
 Move Week 1 (Dynamic Web Content) to the Course 3 Week 2
 
@@ -43,7 +42,6 @@ App Item: Peer graded Cascating Style Sheets (remove)
 
 Course 2 (Week 8-12 in dj4e.com)
 
-
 W1
 Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
@@ -56,7 +54,6 @@ New Fifth lecture in Objects about Python and variable
    New Media Video: FCP: DJ4E-F25 / PY-01-Variables / PY-01-Variables
    New Powerpoint lectures/PY-01-Variables.pptx
 
-W5
 
 Course 3 (13-21 on dj4e.com)
 
@@ -66,7 +63,7 @@ Users and Authentication
 Django Forms
 One to Many Data Models
 Owned Rows (Will move to Course 4)
-Many to Many Data Models
+Many to Many Data Models (Will move to Course 4)
 
 New Outline:
 Solo1 Assignment
