@@ -24,6 +24,7 @@ SQL
 Move Week 1 (Dynamic Web Content) to the Course 3 Week 2
 
 New Week 1 (formerly Week 2)
+
 New Media Video: FCP / DJ4E-F25 / 01_paw_install_52 / 01_paw_install_52
 Reading: Lecture Resources
    Keep the "PythonAnywhere" link
@@ -31,6 +32,7 @@ Reading: Lecture Resources
    Remove the entire second section "Resource you might find useful..."
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+   Remove all the Dynamic Web Content Videos
 Auto-grader: Installing Django - update assignment text to point to new errors video for 5.2
 
 Completely New Week 2 - Shell
@@ -39,10 +41,20 @@ Completely New Week 2 - Shell
 
 Course 2 (Week 8-12 in dj4e.com)
 
-W1
-Reading: Lecture Resources
+W1 - Split into Two
+
+W1A - MVC / Welcome
+
+Keep all that are not moved into W1B below
+
+Edit Reading: Lecture Resources
    Add a link to https://www.dj4e.com/assn/dj4e_errors52.md and errors_52 video
    These documents describe common solutions to errors you might encounter while developing Django applications: Document / Video
+
+W1B - Model / Tutorial 2
+
+
+
 
 W3 - Split in Two Weeks
 
