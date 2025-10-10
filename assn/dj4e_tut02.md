@@ -18,14 +18,18 @@ Skim all the notes below before starting the tutorial - it will save you a lot o
 Notes for PythonAnywhere
 ------------------------
 
+**Important:** Do not go back to tutorial1 on the Django web site and create the folder `djangotutorial`
+- you already have this folder from the first assignment called `django_projects`.
+
+Make sure to do all your work in `~/django_projects/myite`
+and not `djangotutorial`.  You can always type this command
+to make sure you are in the correct folder in a PythonAnywhere shell:
+
+    cd ~/django_projects/mysite
+
 **Hint:** At the point where the tutorial tells you to modify the `polls/admin.py` you
 should also import the `Choice` model following the pattern of importing the `Question` model.
 It will make completing the assignment a lot easier.
-
-**Important:** Do not go back to tutorial1 on the Django web site and create the folder `djangotutorial`
-- you already have this folder from the first assignment called `django_projects`.
-Make sure to do all your work in `~/django_projects/myite`
-and not `djangotutorial`.
 
 Note that when you are typing a password for the `createsuperuser` command in the tutorial,
 it does not echo your characters so folks can't observe your password.
