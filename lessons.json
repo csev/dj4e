@@ -448,6 +448,59 @@
     ]
 },
 {
+    "title": "Understanding Model View Controller (MVC)",
+    "anchor": "dj4e_mvc",
+    "icon" : "fa-home",
+    "description": "We cover the concept of the Model-View-Controller (MVC) in web applications.",
+    "slides": "lectures/DJ-05-MVC.pptx",
+    "discussions" : [
+        {
+        "title" : "Understanding Model View Controller (MVC)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_07_mvc"
+        }
+    ],
+    "videos" : [
+    {
+        "title": "Model View Controller in Django (7:07)",
+        "media": "lesson-09-mvc/01-DJ-05-MVC.m4v",
+        "youtube": "XvWG5KMncOU",
+        "project": "DJ 05 MVC"
+    }
+   ],
+    "lti" : [
+        {
+            "title" : "Quiz: Model-View-Controller",
+            "launch" : "mod/gift/?quiz=05-MVC.txt",
+            "resource_link_id" : "dj4e_01_mvc_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Model-View-Controller (Wikipedia)",
+            "href": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
+        },
+        {
+            "title" : "Django and MVC (FAQ)",
+            "href": "https://docs.djangoproject.com/en/5.2/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names"
+        },
+        {
+            "title" : "Two MVC Approaches: Python/Django versus Java/Spring MVC",
+            "href": "{apphome}/rosetta"
+        }
+    ]
+},
+{
     "title": "Django Data Models",
     "anchor": "dj4e_modules",
     "icon" : "fa-database",
@@ -539,59 +592,6 @@
         {
             "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
             "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
-        }
-    ]
-},
-{
-    "title": "Understanding Model View Controller (MVC)",
-    "anchor": "dj4e_mvc",
-    "icon" : "fa-home",
-    "description": "We cover the concept of the Model-View-Controller (MVC) in web applications.",
-    "slides": "lectures/DJ-05-MVC.pptx",
-    "discussions" : [
-        {
-        "title" : "Understanding Model View Controller (MVC)",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_07_mvc"
-        }
-    ],
-    "videos" : [
-    {
-        "title": "Model View Controller in Django (7:07)",
-        "media": "lesson-09-mvc/01-DJ-05-MVC.m4v",
-        "youtube": "XvWG5KMncOU",
-        "project": "DJ 05 MVC"
-    }
-   ],
-    "lti" : [
-        {
-            "title" : "Quiz: Model-View-Controller",
-            "launch" : "mod/gift/?quiz=05-MVC.txt",
-            "resource_link_id" : "dj4e_01_mvc_quiz",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "3"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Model-View-Controller (Wikipedia)",
-            "href": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
-        },
-        {
-            "title" : "Django and MVC (FAQ)",
-            "href": "https://docs.djangoproject.com/en/5.2/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names"
-        },
-        {
-            "title" : "Two MVC Approaches: Python/Django versus Java/Spring MVC",
-            "href": "{apphome}/rosetta"
         }
     ]
 },
