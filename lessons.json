@@ -137,9 +137,10 @@
     ],
     "videos" : [
     {
-        "title": "Using the Command Line Shell on PythonAnywhere (19:01)",
+        "title": "Using the Command Line Shell on PythonAnywhere (5.2) (18.28)",
         "media": "lesson-04-shell/01-01_paw_shell.m4v",
-        "youtube": "bNjwj7BKJAo"
+        "FCP": "Shell-01-DJ52",
+        "youtube": "a7YIQb8juQk"
     }
   ],
     "lti" : [
