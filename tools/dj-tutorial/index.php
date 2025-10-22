@@ -29,6 +29,7 @@ if ( SettingsForm::isSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     'tutorial01.php' => 'Writing your first Django app, (part 1)',
+    'tutorial01-52.php' => 'Writing your first Django app, (part 1)',
     'tutorial02.php' => 'Models and administration (part 2)',
     'tutorial03.php' => 'Writing your first Django app (part 3)',
     'tutorial04.php' => 'Writing your first Django app (part 4)',
