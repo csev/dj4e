@@ -84,8 +84,13 @@ warn_about_ngrok($url);
 
 webauto_check_test();
 
+$suffix = '/'  . $main_lower_plural;
+if ( strpos($url, $suffix) > 0 ) {
+  $url = substr($url, 0, strpos($url, $suffix));
+}
+
 $admin = $url . 'admin';
-$main_url = trimSlash($url) . '/'  . $main_lower_plural;
+$main_url = trimSlash($url) . $suffix;
 
 webauto_setup();
 
