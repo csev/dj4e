@@ -25,7 +25,7 @@ previous assignments.  Start a shell and type:
 
     python -m django --version
 
-It should show a version like `3.11.11`
+It should show a version like `5.2`
 
 We will start the MDN tutorial at step 3.  You can read the first two steps -
 but you can start at the "Skeleton Website" step.
@@ -59,8 +59,8 @@ Go find the `STATIC_URL` line in `settings.py` and add the following two lines b
 Continue with the Tutorial
 --------------------------
 
-Read this entire section before you start the tutorial.  In particular when the
-tutorial tells you to `runserver` come back to these instructions.
+**Read this entire section before you start the tutorial.  In particular when the
+tutorial tells you to `runserver` come back to these instructions.**
 
 We will start the tutorial at the step *Creating the catalog application*:
 
