@@ -41,7 +41,7 @@ not require a `mkdir` command - instead:
 
     cd ~/django_projects
     django-admin startproject locallibrary
-    cd locallibrary
+    cd ~/django_projects/locallibrary
 
 Edit the file `locallibrary/settings.py` and make the following changes:
 
