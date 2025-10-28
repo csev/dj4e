@@ -187,6 +187,8 @@ If you pasted in too much stuff or deleted a large amount of text, and want to s
 it is quite easy.  We just rename the `locallibrary` folder:
 
 	cd ~/django_projects
+    rm -rf broken1
     mv locallibrary broken1
 
 and then go to the top of this file and do everything over starting with `startproject`.
+
