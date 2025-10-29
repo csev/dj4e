@@ -36,9 +36,6 @@ from `~/django_projects/locallibrary`
         - Create model Book
         - Create model BookInstance
         - Create model Genre
-        - Create constraint genre_name_case_insensitive_unique on model genre
-        - Add field book to bookinstance
-        - Add field author to book
         - Add field genre to book
 
 If the `makemigrations` encounters errors, stop, fix the error and re-run `makemigrations` until
@@ -79,9 +76,10 @@ Since we have changed the `models.py` by adding the `Language` model, we need to
     python manage.py makemigrations
 
     Migrations for 'catalog':
-      catalog/migrations/0002_language_and_more.py
-        - Create model Language
-        - Create constraint language_name_case_insensitive_unique on model language
+      catalog/migrations/0002_language.py
+        + Create model Language
+          catalog/migrations/0002_language_and_more.py
+            - Create model Language
 
 You can repeat the process of editing the `models.py` file and re-running the makemigrations until you get them
 right and then run `migrate` to actually create/update the tables in the database.
