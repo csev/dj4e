@@ -86,9 +86,9 @@ Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file
 
 * Edit the `autos/views.py` file to add views for the list, create, update, and delete views for both autos and makes based on the sample code.
 
-* Create/Edit the `autos/urls.py` file to add routes for views for both autos and makes
+* Create/Edit the `autos/urls.py` file to add routes for views for both autos and makes based on the sample code.
 
-* Create/Edit the `autos/forms.py` file to add the form for MakeForm
+* Create/Edit the `autos/forms.py` file to add the form for MakeForm 
 
 * In your `views.py` file, you can start out using the `Make` views from the sample code, but once you
 have the application working, you should come back and rewrite the `Make` views using the same patterns as the `Auto` views.
