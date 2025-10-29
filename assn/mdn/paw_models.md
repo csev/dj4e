@@ -78,8 +78,6 @@ Since we have changed the `models.py` by adding the `Language` model, we need to
     Migrations for 'catalog':
       catalog/migrations/0002_language.py
         + Create model Language
-          catalog/migrations/0002_language_and_more.py
-            - Create model Language
 
 You can repeat the process of editing the `models.py` file and re-running the makemigrations until you get them
 right and then run `migrate` to actually create/update the tables in the database.
