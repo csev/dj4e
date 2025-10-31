@@ -26,7 +26,7 @@ https://www.dj4e.com/assn/mdn/paw_details.md</a>
 <?php
 ?>
 </p>
-As part of this assignment, you must not have the `dj4e` superuser or change its password.
+As part of this assignment, you must not have the `dj4e` superuser and staff status or change its password.
 This assignment will mark points off if it <i>can</i> log in to superuser account.
 <pre>
 Account: dj4e
