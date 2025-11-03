@@ -108,15 +108,6 @@ if ( $retval === False ) {
     $passed += 2;
 }
 
-// Checking if a later tutorial is already working
-$books_url = webauto_get_url_from_href($crawler,'All books');
-
-if ( ! webauto_testrun($url) && strpos($books_url, 'catalog/books') > 0 ) {
-    error_out('It looks like your "All books" link from a future graded exercise is already working..');
-    error_out('10 point deduction...');
-    $passed -= 10;
-}
-
 // Make sure static is set up properly
 line_out("Checking to see if you are serving your CSS files properly...");
 $crawler = webauto_get_url($client, $css_url);
