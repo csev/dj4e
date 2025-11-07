@@ -91,7 +91,8 @@ the new `mkt` application and keep the `/home` route going to the home applicati
 (5) Copy the `owner.py` file from `dj4e-samples/myarts` to your `mkt` folder.  This is the one file you <b>do not</b>
 have to change at all (thanks to object orientation 😊).
 
-(6) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in the `myarts` folder will require significant
+(6) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in 
+the `myarts` folder will require significant
 adaptation to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
 view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
@@ -104,7 +105,8 @@ templates in `mkt/templates/mkt`.
 
 (8) When you are implementing the update and delete views, make sure to follow the url patterns
 for the update and delete operations.  They should be of the form `/ad/<int:pk>/update`
-and `/ad/<int:pk>/delete`.  Something like the following should work in your `market/mkt/urls.py`:
+and `/ad/<int:pk>/delete`.  Something like the following should work when you create
+your `market/mkt/urls.py`:
 
     from django.urls import path, reverse_lazy
     from . import views
