@@ -11,6 +11,8 @@ $code = $USER->id+$CONTEXT->id;
 
 $check = webauto_get_check_full();
 
+$number = 1;
+
 $meta = '<meta name="dj4e" content="'.$check.'">';
 
 $user1account = 'dj4e_user1';
@@ -53,6 +55,10 @@ echo($ad_title);
 The autograder will not run unless it sees an ad with the above title in
 the initial list of ads after it logs in.
 Don't use either of the above accounts to add the ad or it will be deleted at the beginning of each run.
+</p>
+<p>
+The reference implementation uses '/m<?= $number ?>' as the starting url.  You should not
+include '/m<?= $number ?>' when you submit your url.
 </p>
 <?php
 $url = getUrl('https://market.dj4e.com/m1');
