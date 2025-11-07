@@ -16,7 +16,7 @@ Initial Setup
 
 We provide an initial github repository for you to checkout and install on PythonAnywhere
 with most of the base code already built so you can add your application.  To install the application,
-follow the instructions in the `READMD.md` at:
+follow the instructions in the `README.md` at:
 
 https://github.com/csev/dj4e-market
 

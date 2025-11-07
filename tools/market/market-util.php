@@ -68,6 +68,7 @@ function market_check_basics($client, $base_url, $check, $testrun) {
         $passed++;
     } else {
         error_out("Accessing the '/missing' url did *not* generate a 404 error");
+        error_out("Make sure DEBUG = True in your 'config/settings.py'");
         $failed++;
     }
 
