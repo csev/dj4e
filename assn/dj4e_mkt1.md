@@ -104,7 +104,7 @@ templates in `mkt/templates/mkt`.
 
 (8) When you are implementing the update and delete views, make sure to follow the url patterns
 for the update and delete operations.  They should be of the form `/ad/<int:pk>/update`
-and `/ad/<int:pk>/delete`.  Something like the following should work in your `urls.py`:
+and `/ad/<int:pk>/delete`.  Something like the following should work in your `market/mkt/urls.py`:
 
     from django.urls import path, reverse_lazy
     from . import views
