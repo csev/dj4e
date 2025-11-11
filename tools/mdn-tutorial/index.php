@@ -61,8 +61,12 @@ if ( count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
 
 // Test info
 function webauto_check_test() {
+    global $RESULT;
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw;
-    if ( ! webauto_testrun($url) ) return;
+    if ( ! webauto_testrun($url) ) {
+      if ( is_object($RESULT) ) $RESULT->recordAttempt();
+      return;
+    }
     error_out('Test run - switching to sample data');
     $first_name = 'Jamal';
     $last_name = 'Michaella';

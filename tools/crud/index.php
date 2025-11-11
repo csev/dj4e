@@ -116,9 +116,13 @@ function sendToIframe(id, html) {
 <?php
 
 function webauto_check_test() {
+    global $RESULT;
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
     global $user1account, $user1pw, $user2account, $user2pw, $check;
-    if ( ! webauto_testrun($url) ) return;
+    if ( ! webauto_testrun($url) ) {
+      if ( is_object($RESULT) ) $RESULT->recordAttempt();
+      return;
+    }
     error_out('Test run - switching to sample data');
     $first_name = 'Jamal';
     $last_name = 'Michaella';
