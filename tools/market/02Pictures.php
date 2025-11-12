@@ -41,10 +41,12 @@ using a superuser account:
 <?php
 print_user_and_password($user1account, $user1pw, $user2account, $user2pw);
 ?>
-You should have this <b>meta</b> tag in the <b>&lt;head&gt;</b> of each page:
+You should find and *replace* the content value in the <b>meta</b> tag in
+your <b>base_bootstrap.html</b> template to be:
 <pre>
 <?= htmlentities($meta) ?>
 </pre>
+Don't comment out the <b>meta</b> tag and keep two versions - just fix existing <b>meta</b> tag in the file.
 </p>
 <p>
 Before you run this autograder, you should log into your application using your <b>administrator</b> account and manually add
