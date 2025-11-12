@@ -33,6 +33,9 @@ Specification:
 <a href="../../assn/dj4e_mkt1.md" class="btn btn-info" target="_blank">
 https://www.dj4e.com/assn/dj4e_mkt1.md</a>
 </a>
+<?php
+market_check_prereq($prereq, $prereq_title, $prereq_grade);
+?>
 <p>
 Create two non-super users, by logging into the <b>/admin</b> URL of your application
 using a superuser account:
