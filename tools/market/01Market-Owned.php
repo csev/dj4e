@@ -119,7 +119,7 @@ if ( ! webauto_testrun($url) ) {
         return;
     }
     if ( ! webauto_search_for($html_detail, 'Price', true) ) {
-        error_out("Did not find price on detail page");
+        error_out("Did not find price on detail page.  Look at the detail template and realize that in addition to title and text, the Ad model also has a price field which must be shown with a prefix of 'Price: ' in the output");
         return;
     }
     if ( ! webauto_search_for_not($html_detail, "owner") ) {
@@ -156,6 +156,11 @@ $create_ad_url = webauto_get_url_from_href($crawler,"Create Ad");
 $crawler = webauto_get_url($client, $create_ad_url, "Retrieving create ad page...");
 $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
+
+if ( ! webauto_search_for($html, 'Price', true) ) {
+   error_out("Did not find price on the create page.  Look at the sample code views.py and read the comments closely to find how to add 'price' to your form in your views.py");
+   return;
+}
 
 // Use the create ad form
 $title = 'HHGTTG_42 '.$now;
