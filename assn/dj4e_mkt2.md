@@ -34,7 +34,7 @@ Adding Pictures to the Ads Application
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `mkt/model.py`, taking inspiration from `dj4e-samples/pics/models.py`
+(1) Add this to your `mkt/models.py`, taking inspiration from `dj4e-samples/pics/models.py`
 
     class Ad(models.Model) :
 
@@ -63,7 +63,7 @@ to:
     ...
     from mkt.models import Ad
     ...
-    from ads.humanize import naturalsize
+    from mkt.humanize import naturalsize
     ...
             model = Ad
             fields = ['title', 'text', 'picture', 'price']
