@@ -62,12 +62,12 @@ the migrations once you have modified the model successfully.
 
 (3) Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
 and create the `CommentForm` and pass them into your
-`mkt/templates/mkt/detail.html` template through the context.
+`mkt/templates/mkt/ad_detail.html` template through the context.
 
-(4) Adapt the `mkt/templates/mkt/detail.html` template to show comments and show a delete icon
+(4) Adapt the `mkt/templates/mkt/ad_detail.html` template to show comments and show a delete icon
 when a comment belongs to the current logged in user.
 
-(5) Also add the ability to add a comment to an ad in `detail.html` when the user is logged in by looking
+(5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
 at the techniques in `forums/templates/forums/detail.html`.
 
 (6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
