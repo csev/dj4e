@@ -204,6 +204,7 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
                 }
             }
             setTimeout(decrement_counter, "1000");
+
             </script>
         ');
     }
@@ -213,7 +214,7 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
         if ( $SECONDS_BEFORE_RETRY > 2 && ! $USER->instructor ) {
             echo(' disabled ');
         }
-        echo('onclick="$(\'#test-rerun\').text(\'Test running...\');');
+        echo('onclick="$(\'#test-rerun\').text(\'Test running...\');greyOut();');
         echo('window.location.href = window.location.href; return false;">');
         if ( $SECONDS_BEFORE_RETRY > 2 ) {
             echo('Please wait <span id="countdown">... </span> (rate limit)');
@@ -221,6 +222,26 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
             echo("Re-run this test");
         }
         echo("</a></p>\n");
+        echo('<script>
+            function hideBelow() {
+                const marker = document.getElementById("disappear-start");
+
+                let sibling = marker.nextSibling;
+                while (sibling) {
+                    let next = sibling.nextSibling;
+                    sibling.remove();
+                    sibling = next;
+                }
+
+            }
+            function greyOut() {
+                document.querySelectorAll("#disappear-start ~ *").forEach(el => {
+                    el.style.opacity = "0.4";          // greyed-out look
+                    el.style.pointerEvents = "none";   // makes it feel disabled
+                    el.style.filter = "grayscale(100%)";
+                });
+            }
+        </script>');
 
         if ( isset($_SESSION['lti']) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));

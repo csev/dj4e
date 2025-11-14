@@ -68,6 +68,7 @@ include '/m<?= $number ?>' when you submit your url.
 <?php
 $url = getUrl('https://market.dj4e.com/m1');
 if ( $url === false ) return;
+echo('<div id="disappear-start"></div>'."\n");
 warn_about_ngrok($url);
 
 webauto_check_test();
