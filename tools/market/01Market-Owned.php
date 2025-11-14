@@ -209,7 +209,8 @@ if ( ! webauto_search_for_not($html, 'name="comment"' ) ) {
 }
     
 $crawler = webauto_get_url($client, $url, "Retrieving the ad list url");
-
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
 
 // Look for the edit entry
 line_out("Looking through the main view to update the ad that User 2 just created");
