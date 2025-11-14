@@ -158,7 +158,7 @@ $html = webauto_get_html($crawler);
 webauto_search_for_menu($html);
 
 if ( ! webauto_search_for($html, 'Price', true) ) {
-   error_out("Did not find price on the create page.  Look at the sample code views.py and read the comments closely to find how to add 'price' to your form in your views.py");
+   error_out("Did not find price on the create page.  Look at the sample code views.py in myarts and read the comments closely to find how to add 'price' to your form in your views.py");
    return;
 }
 
