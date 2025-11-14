@@ -76,7 +76,7 @@ above two lines.
 These new views don't inherit from owner.py because they manage the `owner` column in the `get()`
 and `post()` methods.
 
-(4) Alter your `mkt/templates/mkt/form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
+(4) Alter your `mkt/templates/mkt/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
 attribute to the `form` tag.
 
