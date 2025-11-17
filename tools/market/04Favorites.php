@@ -100,6 +100,7 @@ if ( ! webauto_testrun($url) ) {
 
     $crawler = market_do_login($client, $crawler, $user1account, $user1pw);
     if ( $crawler === false ) return;
+    $html = webauto_get_html($crawler);
 
     if ( ! webauto_search_for($html, $ad_title) ) {
         error_out('Could not find an ad with a title of: '.$ad_title);
