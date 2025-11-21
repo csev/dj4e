@@ -42,7 +42,6 @@ Change the `x` value to something else if you want to test over and over.
 github_settings-dist.py</a>, copy it into
 `market/config/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of `market/config/github_settings.py`.
-If you only have a file called `github_settings-dist.py` make a copy of it as `github_settings.py` before you edit the file.
 
 
 To get your key and secret from github, go to:

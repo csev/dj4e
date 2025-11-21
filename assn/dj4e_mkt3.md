@@ -139,7 +139,6 @@ secret.   The documentation is in comments of the file.  Also take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
 and at the end of your `market/config/github_settings.py`.
-If you only have a file called `github_settings-dist.py` make a copy of it as `github_settings.py` before you edit the file.
 
 
 You can register two applications with github - one on localhost and one on PythonAnywhere.  If you are
