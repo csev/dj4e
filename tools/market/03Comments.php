@@ -198,6 +198,7 @@ if ( strpos($html, 'window.File') > 1 ) {
     markTestPassed("Found JavaScript to check the size of the uploaded file on Create Ad form");
 } else {
     markTestFailed("Create Ad page appears to be missing JavaScript to check the size of the uploaded file");
+    error_out("The autograder looks for a specific code pattern—based on the sample code you were supposed to adapt for this page—to verify the file size. AI-generated code might work in your browser but still fail the autograder.");
     return;
 }
 
