@@ -384,6 +384,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
         $status = $response->getStatusCode();
         if ( $status !== 200 ) {
             error_out("Error posting to toggle url: ".$match." status=".$status);
+            error_out("To see errors when AJAX / JSON is being use you need to use the developer console and watch the network traffic - you can see the detail of the error in the http response in he network tab");
             return;
         }
         success_out("Toggle success message: ".$response->getContent());
