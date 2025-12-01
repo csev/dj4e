@@ -360,8 +360,9 @@ if ( ! webauto_search_for($html, 'type="module"') ) {
     return;
 }
 
-if ( ! webauto_search_for($html, "toggle") ) {
-    error_out('Could not find JavaScript funciton to toggle the favorite');
+if ( ! webauto_search_for($html, "function favToggle") ) {
+    error_out('Could not find JavaScript function favToggle() to toggle the favorite');
+    error_out("Perhaps you failed to include JavaScript from the sample code list template");
     return;
 }
 
@@ -378,13 +379,16 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
         $crawler = $client->request('POST', $match);
         if ( $crawler === false ) {
             error_out("Error POSTING to toggle url: ".$match);
+            error_out("To see errors when AJAX / JSON is being used you need to (a) run your application, (b) open the developer console, (c) press the favorite star, (d) check the console output, (d) check the network traffic for a URL that returns an error, and then (e) you look a the detail of the error in the http response in the network tab");
+            error_out("Also check your ToggleFavoriteView view and make sure it does not have any references to 'thing' that should to be 'ads'");
             return;
         }
         $response = $client->getResponse();
         $status = $response->getStatusCode();
         if ( $status !== 200 ) {
             error_out("Error posting to toggle url: ".$match." status=".$status);
-            error_out("To see errors when AJAX / JSON is being use you need to use the developer console and watch the network traffic - you can see the detail of the error in the http response in he network tab");
+            error_out("To see errors when AJAX / JSON is being used you need to (a) run your application, (b) open the developer console, (c) press the favorite star, (d) check the console output, (d) check the network traffic for a URL that returns an error, and then (e) you look a the detail of the error in the http response in the network tab");
+            error_out("Also check your ToggleFavoriteView view and make sure it does not have any references to 'thing' that should to be 'ads'");
             return;
         }
         success_out("Toggle success message: ".$response->getContent());
