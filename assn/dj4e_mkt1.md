@@ -168,7 +168,7 @@ to be:
         <ul class="navbar-nav">
           {% if user.is_authenticated %}
           <li>
-             <a class="nav-link" href="{% url 'mkt:create' %}">Create Ad</a>
+             <a class="nav-link" href="{% url 'mkt:ad_create' %}">Create Ad</a>
           </li>
           <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="rightnavDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
