@@ -170,6 +170,27 @@ Here is an example screen shot of a <a href="dj4e_mkt4/mkt4_javascript_error.png
 Here is an example screen shot of a <a href="dj4e_mkt4/mkt4_view_error.png" target="_blank">View Error Traceback</a> in the developer console.
 
 
+Note About using AI with this Assignment
+----------------------------------------
+
+By this point in the course, you should already have the earlier assignments working 
+correctly. While it’s fine to use AI to help diagnose specific errors, one of the worst
+approaches is to take a file you’ve been developing for weeks, hand it to an AI, 
+and paste back a completely rewritten version without reviewing it carefully.
+
+AI-generated solutions often “work” in the sense that they run without crashing, but 
+they may remove or alter details the autograder expects. This can cause confusing 
+autograder failures that are very hard to untangle.
+
+There are many ways to solve these assignments that are roughly equivalent, but the 
+autograder is not checking for just any equivalent solution. It's verifying that you’ve 
+adapted the provided sample code in the expected ways.
+
+If AI produces a solution that is only “approximately” like the samples, it probably 
+won’t pass. And if AI overwrites working code you already built and have working perfectly, 
+you may find yourself needing to start over from the beginning.
+
+
 Manual Testing
 --------------
 
