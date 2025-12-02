@@ -101,7 +101,8 @@ Of course do the migrations once you have modified the model.
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(4) Create the file `mkt/static/dj4e-favstar.js` and add the following Javascript code for our custom web component:
+(4) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
+file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for our custom web component: <!-- remove this after 2025 -->
 
     import { html, LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm";
 
@@ -131,28 +132,43 @@ to your `AdListView` to retrieve the favorites for the current logged in user.
 
 
 (5) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
-`dj4e-favstar` web component to show the stars based on the list of favorites for this user and the `favToggle()` JavaScript
-code at the end. You will have to adapt the `dj4e-favstar` web component code in your template to work in your app.  
-We will also need to load the `dj4e-favstar.js` file we created earlier into our template to use the web component. To do this, add the `load static` template tag near the top of your `list.html` template:
+`dj4e-favstar` web component in the list of ads, to show the stars based on the list of favorites for the current logged in user
+and the `favToggle()` function and web component module include JavaScript (as shown below):
 
-    ...
     {% extends "base_menu.html" %}
-    {% load static %} <!-- add this -->
     {% block content %}
-    ...
-
-Then add the script tag for `dj4e-favstar.js` at the bottom of the `list.html` template:
 
     ...
-    <script type="module" src="{% static 'dj4e-favstar.js' %}"></script> <!-- add this -->
+
+    <script>  <!-- add this -->
+    function favToggle(element, url) {
+        console.log('POSTing to', url);
+        fetch(url, { method: 'POST', body: '{}' } )
+        .then((response) => {
+            console.log(url, 'success');
+            element.toggleAttribute('fav');
+        }).catch((error) => {
+            alert('Url failed with '+error+' '+url);
+        });
+    }
+    </script>
+    <script type="module" src="/site/wc/dj4e-favstar.js"></script>
+
     {% endblock %}
     ...
 
-Again, be sure the file `dj4e-favstar.js` is in the `mkt/static/` directory so the {% static … %} helper can find it.
-
-
 (6) Pull in and adapt `ToggleFavoriteView`
-from `dj4e-samples/favwc/views.py` into your `views.py`.
+from `dj4e-samples/favwc/views.py` into your `views.py`.  This view will be called using AJAX in the `favToggle()` function
+above.  Edit this view carefully - if you make a mistake in this method, it will not be shown on the screen like
+your other views.  The best way
+to debug it is to (a) run your application, (b) open the developer console, (c) press the favorite star, (d) check the
+console output for any errors, (e) check the network traffic tab in the developer console for a URL that returns an error,
+and then (f) you look a the detail of the error in the http response in the network tab of the developer console.
+
+Here is an example screen shot of a <a href="dj4e_mkt4/mkt4_javascript_error.png" target="_blank">JavaScript Error</a> in the developer console.
+
+Here is an example screen shot of a <a href="dj4e_mkt4/mkt4_view_error.png" target="_blank">View Error Traceback</a> in the developer console.
+
 
 Manual Testing
 --------------
