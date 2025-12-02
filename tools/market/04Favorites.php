@@ -379,7 +379,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
         $crawler = $client->request('POST', $match);
         if ( $crawler === false ) {
             error_out("Error POSTING to toggle url: ".$match);
-            error_out("To see errors when AJAX / JSON is being used you need to (a) run your application, (b) open the developer console, (c) press the favorite star, (d) check the console output, (d) check the network traffic for a URL that returns an error, and then (e) you look a the detail of the error in the http response in the network tab");
+            error_out("Please see the instructions on how to debug the JavaScript bits using developer console.");
             error_out("Also check your ToggleFavoriteView view and make sure it does not have any references to 'thing' that should to be 'ads'");
             return;
         }
@@ -387,7 +387,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) && count(
         $status = $response->getStatusCode();
         if ( $status !== 200 ) {
             error_out("Error posting to toggle url: ".$match." status=".$status);
-            error_out("To see errors when AJAX / JSON is being used you need to (a) run your application, (b) open the developer console, (c) press the favorite star, (d) check the console output, (d) check the network traffic for a URL that returns an error, and then (e) you look a the detail of the error in the http response in the network tab");
+            error_out("Please see the instructions on how to debug the JavaScript bits using developer console.");
             error_out("Also check your ToggleFavoriteView view and make sure it does not have any references to 'thing' that should to be 'ads'");
             return;
         }
