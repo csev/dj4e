@@ -37,8 +37,7 @@ adapted the provided sample code in the expected ways.
 
 If AI produces a solution that is only “approximately” like the samples, it probably
 won’t pass. And if AI overwrites working code you already built and have working perfectly,
-you may find yourself needing to start over from the beginning.
-
+you may find yourself needing to start over from the beginning. <!-- And yes — the irony of asking AI to help write a warning about overusing AI is not lost on us. -->
 
 Adding Comments to the Ads Application
 --------------------------------------
