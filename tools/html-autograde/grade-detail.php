@@ -37,7 +37,7 @@ echo("<p>Submitted URL:</p>\n");
 $json = json_decode($row['json']);
 if ( is_object($json) && isset($json->url)) {
     echo("<p><a href=\"".safe_href($json->url)."\" target=\"_new\">");;
-    echo(htmlent_utf8($json->url));
+    echo(htmlentities($json->url));
     echo("</a></p>\n");
 }
 
