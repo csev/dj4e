@@ -92,17 +92,11 @@ ads. We will also create a custom web component to implement this favorites feat
 (2) Do `python manage.py makemigrations` and `python manage.py migrate` once
 you have modified the model.
 
-(3) Add the following route to your `urls.py` for the favorites feature:
-
-    ...
-    path('ad/<int:pk>/toggle', views.ToggleFavoriteView.as_view(), name='ad_toggle'),
-    ...
-
-(4) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
+(3) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(5) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
+(4) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
 file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for our custom web component: <!-- remove this after 2025 -->
 
     import { html, LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm";
@@ -132,7 +126,7 @@ file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for 
     customElements.define('dj4e-favstar', DJ4EFavoriteStar);
 
 
-(6) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+(5) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
 `dj4e-favstar` web component in the list of ads, to show the stars based on the list of favorites for the current logged in user
 and the `favToggle()` function and web component module include JavaScript (as shown below):
 
@@ -158,7 +152,19 @@ and the `favToggle()` function and web component module include JavaScript (as s
     {% endblock %}
     ...
 
-(7) Pull in and adapt `ToggleFavoriteView`
+(6) At this point, you can reload your application and go to the main page with all of your
+ads listed, each ad should have a blank start and if you click on the star, nothing will
+happen.  You can view developer console in your browser and you will see a `404 not found`
+on a url that looks like `ad/42/toggle`.   We need to add a route and a view for that url
+pattern.
+
+(7) Add the following route to your `urls.py` for the favorites feature:
+
+    ...
+    path('ad/<int:pk>/toggle', views.ToggleFavoriteView.as_view(), name='ad_toggle'),
+    ...
+
+(8) Pull in and adapt `ToggleFavoriteView`
 from `dj4e-samples/favwc/views.py` into your `views.py`.  This view will be called using AJAX in the `favToggle()` function
 above.  Edit this view carefully - if you make a mistake in this method, it will not be shown on the screen like
 your other views.  The best way
