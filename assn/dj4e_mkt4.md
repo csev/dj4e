@@ -153,10 +153,12 @@ and the `favToggle()` function and web component module include JavaScript (as s
     ...
 
 (6) At this point, you can reload your application and go to the main page with all of your
-ads listed, each ad should have a blank start and if you click on the star, nothing will
-happen.  You can view developer console in your browser and you will see a `404 not found`
+ads listed, each ad should have a blank start and if you click on the star, it will change
+color, but if you refresh the page, the favorites will not be "sticky" because you are missing the server code to store the favorite when the key is pressed.  The JavaScript is running
+`favPost()` but the server code is failing and returning an error to your application.
+You can view developer console in your browser and you will see a `404 not found`
 on a url that looks like `ad/42/toggle`.   We need to add a route and a view for that url
-pattern.
+pattern so that the favorites can be stored.
 
 (7) Add the following route to your `urls.py` for the favorites feature:
 
