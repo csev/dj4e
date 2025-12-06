@@ -329,8 +329,8 @@ to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?><
 following the naming conventions for the templates.  It is important to base your templates on the <b>autos</b> sample
 code rather than writing them from scratch so as to match the markup patterns expected by the autograder.
 <?php if ( $folder == 'market' ) { ?>
-Note that the views in this application should extend <b>base_bootstrap.html</b> not <b>base_menu.html</b>since it
-does not need a top menu.
+Note that the views in this application should extend <b>base_bootstrap.html</b> not <b>base_menu.html</b>
+since this application does not need a top menu.
 <?php } ?>
 </li>
 <?php if ( $folder == 'mysite' ) { ?>
