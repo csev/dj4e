@@ -39,11 +39,14 @@ Password: <span id="pass"><?= $userpw ?></span> (<a href="#" onclick="copyToClip
 You can use any email address you like.
 </p>
 <p>
-You should edit or add a <b>meta</b> tag in your <b>&lt;head&gt;</b> area of each page you generate
-as shown below:
+You should find the following <b>meta</b> tag in your <b>&lt;head&gt;</b> area of your <b>base_bootstrap.html</b>
+and make sure it looks like this:
 <pre>
 <?= htmlentities($meta) ?> 
 </pre>
+If there is already a meta tag with the value "42-42" <b>make sure</b>
+to <em>remove it or replace</em> it with the above tag.   Do not comment the old <b>meta</b> tag out and 
+add the new one.
 </p>
 
 <?php

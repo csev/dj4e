@@ -6,6 +6,12 @@ require("../../dj4e_django_version.php");
 
 if ( ! isset($_GET['assn'] ) ) die('No assignment');
 if ( ! isset($_GET['type'] ) ) die('No assignment type');
+$folder = $_GET['folder'] ?? 'mysite';
+if ( $folder == 'mysite' ) {
+  $settings = 'mysite';
+} else {
+  $settings = 'config';
+}
 
 $DO_ZIP = false;
 
@@ -90,13 +96,22 @@ Date:  _______________
         echo('This exam is');
     }
 ?>
+
 open-book, open notes, open network, and you can use
 any of your prior work for the class to complete the exam.
-You cannot listen to audio or watch any videos during the exam.
 You cannot get any help from any other person. You also cannot give
-any help to any other person. We will grade partial
+any help to any other person. 
+You can use AI for this exam but we recommend limiting AI to helping you
+with diagnosing bugs rather than writing or rewriting your code which often
+keeps the autograder from giving you a grade.
+<?php if ( ! $online ) { ?>
+You cannot listen to audio or watch any videos during the exam.
+We will grade partial
 solutions so you should hand in your work at the end of the
-exam even is it is not 100% complete. Please do not discuss the
+exam even is it is not 100% complete.
+<?php } ?>
+
+Please do not discuss the
 nature of the exam with anyone except the teaching staff until
 we tell you that all students have completed the exam.
 </p>
@@ -149,30 +164,31 @@ Here are some general specifications for this <?= $SPEC->assignment_type_lower ?
 <ul>
 <li>
 Your application should support logging in and logging out.  If you
-have this working in the autos assignment, you should not need to change anything.
+have this working from a previous assignment, you should not need to change anything.
 <li>
 The auto-grader-required <b>meta</b> tag must be in the head area for all of the pages
 for this <?= $SPEC->assignment_type_lower ?>.  This is likely already set 
 up from a previous assignment.
 </li>
 <li>
-This can be added as a new application to your <b>mysite</b> project.  You do not have to remove
+This can be added as a new application to your <b><?= $folder ?></b> project.  You do not have to remove
 existing applications, simply add a new <b><?= $SPEC->main_lower_plural ?></b> application.
-Activate any virtual environment you need (if any) and go into your `django_projects` folder
-and start a new application in your `mysite` project (this project already should have
-<?php if ($SPEC->main_lower_plural == 'autos') { ?>
-a 'hello' application from a previous assignment):
+Activate any virtual environment you need (if any) and go into your <b>django_projects</b> folder
+and start a new application in your <b><?= $folder ?></b> project (this project already should have
+<?php if ( $folder == 'market' ) { ?>
+a <b>mkt</b> application from previous assignments:
+<?php } else if ($SPEC->main_lower_plural == 'autos') { ?>
+a <b>hello</b> application from a previous assignment):
 <?php } else { ?>
-'hello' and 'autos' applications from previous assignments):
+<b>hello</b> and 'autos' applications from previous assignments):
 <?php } ?>
 <pre>
-    workon django<?= $DJ4E_DJANGO_VERISION_SHORT ?> 
-    cd ~/django_projects/mysite
-    python manage.py startapp <?= $SPEC->main_lower_plural ?>
+    cd ~/django_projects/<?= $folder ?> 
+    python manage.py startapp <?= $SPEC->main_lower_plural ?> 
 </pre>
 </li>
 <li>
-Edit the <b>django_projects/mysite/mysite/settings.py</b> to update the INSTALLED_APPS:
+Edit the <b>django_projects/<?= $folder ?>/<?= $settings ?>/settings.py</b> to update the INSTALLED_APPS:
 <pre>
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -181,8 +197,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home.apps.HomeConfig',
+<?php if ( $folder == 'mysite' ) { ?>
     'autos.apps.AutosConfig',
+<?php } else { ?>
+    # Additions (from requirements.txt)
+    'django.contrib.humanize',
+    'django_extensions',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'rest_framework',
+    'social_django',
+    'taggit',
+    'mkt.apps.MktConfig',
+<?php } ?>
+    'home.apps.HomeConfig',
 <?php if ($SPEC->main_lower_plural != 'autos') { ?>
     '<?= $SPEC->main_lower_plural ?>.apps.<?= ucfirst($SPEC->title_plural) ?>Config',    &lt;---- Add this
 <?php } ?>
@@ -228,8 +256,9 @@ foreach($SPEC->fields as $field ) {
 <li>
 Run the commands to perform the migrations until they work with no errors.
 </li>
+<?php if ( $folder == 'mysite' ) { ?>
 <li>
-Add a link to <b>django_projects/mysite/home/templates/home/main.html</b> that has the text for the top-level page.
+Add a link to <b>django_projects/<?= $folder ?>/home/templates/home/main.html</b> that has the text for the top-level page.
 <pre>
     &lt;ul&gt;
 <?php if ($SPEC->main_lower_plural != 'autos') { ?>
@@ -239,6 +268,7 @@ Add a link to <b>django_projects/mysite/home/templates/home/main.html</b> that h
     &lt;ul&gt;
 </pre>
 </li>
+<?php } ?>
 <li>
 Create the <b><?= $SPEC->main_lower_plural ?>/urls.py</b> file to add routes for the list,
 edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
@@ -247,7 +277,7 @@ in <b><?= $SPEC->main_lower_plural ?>/urls.py</b> -
 <?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
 <p>
 You should change the 'name=' values and class name on the paths from the
-sample application as follows so you don't conflict with the 'autos' application:
+sample application as follows so you don't conflict with existing applications:
 <pre>
 urlpatterns = [
     path('', views.MainView.as_view(), name='all'),
@@ -266,7 +296,7 @@ urlpatterns = [
 </li>
 <?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
 <li>
-You should add a route to your <b>django_projects/mysite/mysite/urls.py</b> as follows:
+You should add a route to your <b>django_projects/<?= $folder ?>/<?= $settings ?>/urls.py</b> as follows:
 <pre>
 urlpatterns = [
 
@@ -277,6 +307,10 @@ urlpatterns = [
 </pre>
 </li>
 <?php } ?>
+<li>For the remaining tasks, you should copy and adapt code from the <b>dj4e-samples/autos</b> sample code
+code rather than writing them from scratch or having AI wirte them so as to match the markup patterns
+expected by the autograder.
+</li>
 <li>
 Edit the <b><?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views for the
 list, edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
@@ -291,10 +325,17 @@ Copy and adapt the appropriate templates from the <b>autos</b> sample code
 to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b>
 following the naming conventions for the templates.  It is important to base your templates on the <b>autos</b> sample
 code rather than writing them from scratch so as to match the markup patterns expected by the autograder.
-</li><li>
+<?php if ( $folder == 'market' ) { ?>
+Note that the views in this application should extend <b>base_bootstrap.html</b> not <b>base_menu.html</b>since it
+does not need a top menu.
+<?php } ?>
+</li>
+<?php if ( $folder == 'mysite' ) { ?>
+<li>
 If you have not already done so,
 create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
 </li>
+<?php } ?>
 <li>
 Edit <b><?= $SPEC->main_lower_plural ?>/admin.py</b> to add the <?= $SPEC->main_title ?> and <?= $SPEC->lookup_title ?> models to the
 Django administration interface.
@@ -311,7 +352,7 @@ a lot of time by running a quick hand-check of your application.  Errors
 are much easier to see in a browser than in the autograder.  Do all these steps:
 <ul>
 <li>Log in to your application</li>
-<li>Go to the main page to list all the <?= $SPEC->main_lower_plural ?></li>
+<li>Go to the main page at <b>/<?= $SPEC->main_lower_plural ?></b> to list all the <?= $SPEC->main_lower_plural ?></li>
 <li>Add <?= $SPEC->lookup_article ?> new <?= $SPEC->lookup_lower ?></li>
 <li>View all the <?= $SPEC->lookup_lower_plural ?></li>
 <li>Update <?= $SPEC->lookup_article ?> <?= $SPEC->lookup_lower ?></li>
@@ -342,22 +383,17 @@ the same way we have been doing assignments all along.
 Please see the process for handing in the <?= $SPEC->assignment_type_lower ?> at the end of this document.
 </p>
 <p>
-If the autograder complains about a missing "dj4e" meta tag, add or edit it in
-your <b>home/templates/base_bootstrap.html</b> file:
-<pre>
-&lt;meta name="dj4e" content="--provided-by-autograder--"&gt;
-</pre>
-If the autograder does not find the tag, it will run all the tests but
-will not treat the grade as official.
+If the autograder complains about a missing "dj4e" meta tag, you need to check
+your <b>home/templates/base_bootstrap.html</b> file to make sure your
+<b>dj4e-code</b> tag looks as follows:
 </p>
-<p>
-If the autograder complains about a missing "dj4e-code" meta tag, add or edit it in
-your <b>home/templates/base_bootstrap.html</b> file:
 <pre>
 &lt;meta name="dj4e-code" content="<span id="dj4e-code">missing</span>"&gt;
 </pre>
 If you are adding an application to an existing Django project that you have already run through
 the autograder, you probably already have good value for both meta tags in your template file.
+If the autograder does not find the tag, it will run all the tests but
+will not treat the grade as official.
 </p>
 <h1>What To Hand In</h1>
 <p>
@@ -369,13 +405,13 @@ Please also have in a ZIP of your source code of your new application
 in case there is a need to verify your work or assign partial credit.
 </p>
 <p>
-If you are doing your work on PythonAnywhere, go into a console shell and create a ZIP file as follows:
+Go into a console shell on PythonAnywhere and create a ZIP file as follows:
 <pre>
-    cd ~/django_projects/mysite
+    cd ~/django_projects/<?= $folder ?>
     rm -f <?= $SPEC->main_lower_plural ?>.zip
     zip -r <?= $SPEC->main_lower_plural ?>.zip <?= $SPEC->main_lower_plural ?> -x '*pycache*'
 </pre>
-Then download the ZIP file from `django_projects/mysite` using the
+Then download the ZIP file from <b>django_projects/<?= $folder ?></b> using the
 Files tab of PythonAnywhere and upload the ZIP file back up to the LMS.  Some browsers
 (i.e. Safari on the Mac) automatically extract the ZIP into a folder.  If this
 happens simply compress it again to make a ZIP to upload.

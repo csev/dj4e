@@ -10,6 +10,9 @@ function patchSpec($SPEC) {
     if ( isset($SPEC->online) && $SPEC->online ) {
         $SPEC->assignment_url .= "&online=true";
     }
+    if ( isset($SPEC->folder) && strlen($SPEC->folder) > 0 ) {
+        $SPEC->assignment_url .= "&folder=".urlencode(base64_encode($SPEC->folder));
+    }
 }
 
 function prePatchSpec($SPEC) {
