@@ -6,11 +6,14 @@ require("../../dj4e_django_version.php");
 
 if ( ! isset($_GET['assn'] ) ) die('No assignment');
 if ( ! isset($_GET['type'] ) ) die('No assignment type');
-$folder = $_GET['folder'] ?? 'mysite';
+if ( isset($_GET['folder'] ) ) $folder = base64_decode($_GET['folder']);
 if ( $folder == 'mysite' ) {
   $settings = 'mysite';
-} else {
+} else if ( $folder == 'market' ) {
   $settings = 'config';
+} else {
+  $folder = 'mysite';
+  $settings = 'mysite';
 }
 
 $DO_ZIP = false;
