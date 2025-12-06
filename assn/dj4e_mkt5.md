@@ -18,22 +18,22 @@ pasting sample code will make it almost impossible to complete this assignment.
 This is somewhat like the kind of real work you do when you have a working application and want to add a feature
 the the application.  First - don't break what you have working.
 
-Tagging Your Previous Assignment
---------------------------------
+Taking a Snapshot of Your Previous Assignment using git
+-------------------------------------------------------
 
-In case you make a mistake while modifying your code, we want to take a snapshot of your working Milestone 4
-code before we start editing.  Only do this once and only do this once you have fully completed the previous
+We want to take a snapshot of your working Milestone 4 code using the `git` version management
+tool before we start editing Milestone 5.  Only do this *once and only once* after you have fully completed the previous
 milestone and before you start editing your files for this assignment.  Run these commands:
 
     cd ~/django_projects/market
-    git tag             # Make sure you don't already have a mkt4 tag (only do this onece!)
+    git tag             # Make sure you don't already have a mkt4 tag (only do this once!)
 
     git add .
     git commit -a -m mkt4
     git tag -a mkt4 -m mkt4
     git tag             # Make sure you do have a mkt4 tag
 
-Once you have created a tag succesfully for the previous assignment, if you make a mistake (or if AI makes a mistake)
+Once you have created a tag successfully for the previous assignment, if you make a mistake (or if AI makes a mistake)
 and you paste it into your code and break everything, you can decide to throw everything away and start over where
 you left off at the end of the previous assignment by running:
 
