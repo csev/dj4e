@@ -17,6 +17,10 @@ function market_check_basics($client, $base_url, $check, $testrun) {
        error_out("Make sure to change APP_NAME in settings.py to your own application name");
     }
 
+    if ( !$testrun && webauto_dont_want($html, "Chucks Marketplace") ) {
+       error_out("Make sure to change APP_NAME in settings.py to your own application name");
+    }
+
     if ( !$testrun && webauto_dont_want($html, "reference implementation") ) {
        error_out("You should folow the assignment instructions versus reverse engineering the assignment from the sample solution output");
     }
