@@ -24,7 +24,8 @@ Taking a Snapshot of Your Previous Assignment using git
 We want to take a snapshot of your working Milestone 4 code using the `git` version management
 tool before we start editing Milestone 5.  Only do this *once and only once* after you have fully completed the previous
 milestone and before you start editing your files for this assignment.
-First set up your github identity using the commands below:
+
+If you have not already done so, first set up your github identity using the commands below:
 
     git config --global user.email "youremail@example.com"
     git config -global user. name "Your name"
