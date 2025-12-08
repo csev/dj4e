@@ -23,7 +23,13 @@ Taking a Snapshot of Your Previous Assignment using git
 
 We want to take a snapshot of your working Milestone 4 code using the `git` version management
 tool before we start editing Milestone 5.  Only do this *once and only once* after you have fully completed the previous
-milestone and before you start editing your files for this assignment.  Run these commands:
+milestone and before you start editing your files for this assignment.
+First set up your github identity using the commands below:
+
+    git config --global user.email "youremail@example.com"
+    git config -global user. name "Your name"
+
+Then run these commands:
 
     cd ~/django_projects/market
     git tag             # Make sure you don't already have a mkt4 tag (only do this once!)
