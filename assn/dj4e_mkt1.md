@@ -317,8 +317,9 @@ problems and their solutions here:
 to start with a fresh MySQL database.  Since we are using a MYSQL server, we can't
 just delete the SQLite file and start over - but it is not much more difficult.
 
-First go into `Consoles` and start a `MySQL` console.  You should go into a shell and see a prompt
-like this - type the command `SHOW DATABASES;` to find your database:
+First, go to Consoles and start a MySQL console.
+
+You should see a shell prompt that looks something like this. Type SHOW DATABASES; to list the databases on your server:
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     mysql> SHOW DATABASES;
@@ -332,18 +333,24 @@ like this - type the command `SHOW DATABASES;` to find your database:
     3 rows in set (4.05 sec)
     mysql>
 
-Note - <b>never touch</b> the `information_schema` database - if you mess with this you break your entire MySQL
-installation and may need to create a completely new PythonAnywhere account.   Leave `information_schema`
-alone.
+Important: Never modify or delete the `information_schema` database. It 
+ontains MySQL’s internal metadata. Changing it can break your MySQL
+installation and may require creating a new PythonAnywhere account.
+Leave `information_schema` completely alone.
 
-Pick the database you are using (in your `settings.py`) and issuer the `USE` command to select
-the database and run the `SHOW TABLES;` command:
+From the list of databases, choose the one that ends with `$market`.
+(`dj4e` is just an example account name—your prefix will be different.)
 
-    mysql> use dj4e$market;
+Use the USE command to switch to your database:
+
+    mysql> use yourname$market;
     Database changed
+
+Then run the the `SHOW TABLES;` command:
+
     mysql> SHOW TABLES;
     +----------------------------+
-    | Tables_in_dj4e$market      |
+    | Tables_in_yourname$market  |
     +----------------------------+
     | mkt_ad                     |
     | django_admin_log           |
