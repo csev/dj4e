@@ -27,8 +27,9 @@ milestone and before you start editing your files for this assignment.
 
 If you have not already done so, first set up your github identity using the commands below:
 
+    cd ~/django_projects/market
     git config --global user.email "youremail@example.com"
-    git config -global user. name "Your name"
+    git config --global user.name "Your name"
 
 Then run these commands:
 
