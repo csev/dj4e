@@ -11,7 +11,7 @@
 </p></li>
 
 <li><p>
-<a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html" target="_blank">Spring MVC Web Framework Dcumentation</a>
+<a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html" target="_blank">Spring MVC Web Framework Documentation</a>
 </p></li>
 
 <li><p>

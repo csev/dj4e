@@ -1,7 +1,7 @@
 <?php include("top.php");?>
 <?php include("nav.php");?>
 <h1>Django for Everybody Versions</h1>
-<p>As time passes and Django releases new vesions, this course
+<p>As time passes and Django releases new versions, this course
 needs to be updated.  Very little changes from one version of Django
 to the next so if this course is not using the *latest* version of
 Django it is usually no problem.  You may see demonstration videos
