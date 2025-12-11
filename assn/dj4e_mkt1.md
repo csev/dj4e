@@ -306,81 +306,19 @@ The `grep` command is the <a href="https://en.wikipedia.org/wiki/Grep" target="_
 Expression Parser"</a> and is one of the most useful Linux commands to know.
 The 'r' means 'recursive' and the 'i' means 'ignore case.   The `grep` program will save you so much time 😊.
 
-Some Common Errors in This Assignment
--------------------------------------
+Resetting Your Database
+------------------------
 
-Since you are in effect starting with a brand new `config/settings.py` and `config/urls.py`, you might
-find a few problems when you are running `python manage.py check` - I will keep a list of the common
-problems and their solutions here:
+If you encounter problems with migrations or need to start with a fresh database,
+you can use the automated database reset script. This is particularly useful when
+you have made a series of changes to `models.py` and migration files become confused
+causing `makemigrations` to fail.
 
-(1) If you have a problem running `migrate` or `makemigrations` in step 10 above, you might want
-to start with a fresh MySQL database.  Since we are using a MYSQL server, we can't
-just delete the SQLite file and start over - but it is not much more difficult.
+For detailed instructions on how to reset your database and migration files, see
+[DB_RESET.md](https://github.com/csev/dj4e-market/blob/main/DB_RESET.md).
 
-First, go to Consoles and start a MySQL console.
+The reset script will:
+- Drop all tables in your database
+- Delete all migration files (except `__init__.py`)
+- Allow you to start fresh with `makemigrations` and `migrate`
 
-You should see a shell prompt that looks something like this. Type SHOW DATABASES; to list the databases on your server:
-
-    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-    mysql> SHOW DATABASES;
-    +--------------------+
-    | Database           |
-    +--------------------+
-    | information_schema |
-    | dj4e$market        |
-    | dj4e$default       |
-    +--------------------+
-    3 rows in set (4.05 sec)
-    mysql>
-
-Important: Never modify or delete the `information_schema` database. It 
-ontains MySQL’s internal metadata. Changing it can break your MySQL
-installation and may require creating a new PythonAnywhere account.
-Leave `information_schema` completely alone.
-
-From the list of databases, choose the one that ends with `$market`.
-(`dj4e` is just an example account name—your prefix will be different.)
-
-Use the USE command to switch to your database:
-
-    mysql> use yourname$market;
-    Database changed
-
-Then run the the `SHOW TABLES;` command:
-
-    mysql> SHOW TABLES;
-    +----------------------------+
-    | Tables_in_yourname$market  |
-    +----------------------------+
-    | mkt_ad                     |
-    | django_admin_log           |
-    | django_content_type        |
-    | django_migrations          |
-    | django_session             |
-    | social_auth_association    |
-    | social_auth_code           |
-    | social_auth_nonce          |
-    | social_auth_partial        |
-    | social_auth_usersocialauth |
-    +----------------------------+
-    10 rows in set (0.00 sec)
-    mysql>
-
-Then we will get rid of the `mkt_ad` table and its associated migration records:
-
-    mysql> DROP TABLE mkt_ad;
-    mysql> DELETE FROM django_migrations WHERE app='mkt';
-
-Then, in the bash shell, you can remove and re-make the migrations
-
-    cd ~/django_projects/market
-    rm mkt/migrations/00*
-
-Then go back to step 9 and pick up with the `makemigrations` and `migrate` steps as well as
-`createuser` is needed.
-
-<script>
-var d= new Date();
-var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
-document.getElementById("dj4e-code").innerHTML = code;
-</script>
