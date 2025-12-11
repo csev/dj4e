@@ -44,6 +44,9 @@ Then run these commands:
 The whole `~/django_projects/market` folder is a `git` repository so you can use `git` for many cool
 things.  But for now we are just making sure you have a "re-spawn" point if AI breaks your code badly.
 
+The instructions to "revert" to the saved tag are at the bottom of this
+document.  Hopefully you won't need to use them.
+
 Adding Search
 -------------
 
