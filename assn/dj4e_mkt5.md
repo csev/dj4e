@@ -16,7 +16,7 @@ read the sample code carefully - only make changes that you understand.  Wholesa
 pasting sample code will make it almost impossible to complete this assignment.
 
 This is somewhat like the kind of real work you do when you have a working application and want to add a feature
-the the application.  First - don't break what you have working.
+to the application.  First - don't break what you have working.
 
 Taking a Snapshot of Your Previous Assignment using git
 -------------------------------------------------------
@@ -55,14 +55,14 @@ the title and text:
 
 https://samples.dj4e.com/well/
 
-To avoid getting too much broken at one time - it is probably a good idea to make search work
-and then further evolve your code to support tags.
+To avoid getting too much broken at one time - it is probably a good idea to make search work and then further evolve your code to support tags.
 
 Adding Support for Tags
 -----------------------
 
-The `tagme` application adds a `tags` field to the model and and adds support for tags
-to the user interface and search code.
+The `tagme` application adds a `tags` field to the model and adds support for tags
+to the user interface and search code.  Make sure the tags field has `blank=True` in the
+`models.py` (take a look at the sample code) so that the field can be left blank while creating or updating an Ad.
 
 https://samples.dj4e.com/tagme/
 
@@ -75,8 +75,7 @@ looking at the `tagme` code to verify what you are doing.
 
 There is a bit of an extra wrinkle when adapting the approach in `tagme` because we are
 using a ModelForm in order to process uploaded pictures.  The key is that you have to
-save the tags after the form has been copied to the model and the model has been saved because
-the tags are stored using a many-to-many data model.
+save the tags after the form has been copied to the model and the model has been saved because the tags are stored using a many-to-many data model.
 
 https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
 
@@ -100,8 +99,7 @@ save the model.  This code is in both the insert and edit views:
 
 You need to add the `save_m2m()` call *after* the instance was saved.
 
-Finally, the detail template for the `tagme` application contains code that can be adapted to
-display the tags in your application.
+Finally, the detail template for the `tagme` application contains code that can be adapted to display the tags in your application.
 
 Note About using AI with this Assignment
 ----------------------------------------
@@ -144,7 +142,7 @@ for a word in any of the three places.
 
 * Search for some text that is only in a tag and verify that the correct ads come back.
 
-* Note the "?search=" in the location bar in your browser while you are doing searched
+* Note the "?search=" in the location bar in your browser while you are doing searches
 
 * Clear the search and see all of the results and verify there is no "?search=" get parameter
 
@@ -178,7 +176,7 @@ The reset script will:
 Discarding Code Changes and Going back to the Mkt4 Tag
 ------------------------------------------------------
 
-If if you make a mistake (or if AI makes a mistake) and you paste it into your code and break everything (i.e. not
+If you make a mistake (or if AI makes a mistake) and you paste it into your code and break everything (i.e. not
 migrations and `models.py`)
 you can decide to reset your code base to the tag your created above (if you created a tag).
 Follow these instructions - move slowly and if things blow up - get help.
