@@ -155,14 +155,14 @@ are a set of manual test steps:
 * Log in to your application on the first account
 * Create an ad with a picture
 * In the all ads list make sure that the edit / delete button shows correctly
-* View its details click on the picture to see that it fulls the screen
+* View its details click on the picture to see that it fills the screen
 * Update the ad, check that the details are correct
 * Delete the ad - just to make sure it works - the autograder gets grumpy if it cannot delete an ad
 * Create two more ads
 * Make two comments on an ad - make sure you can see the delete button on your comments
 * Delete one of your comments
 * Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
-* Go into one the ad you commented on above - make sure to see the comment from the first user
+* Go into the ad you commented on above - make sure to see the comment from the first user
 and make sure there is **no** delete button
 * Make two new comments - make sure you *do* see the delete button for your comments but not for
 the other user's comments
@@ -176,7 +176,7 @@ You will have to finish these by the next assignment - so you might as well work
 And they are fun.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
+avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 

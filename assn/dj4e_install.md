@@ -180,9 +180,9 @@ sub-folders.
 
 While it seems a bit counter-intuitive, there is folder called `mysite` within the folder
 `mysite`.  We tend to refer to this folder as `mysite/mysite` to make sure we are talking
-about the project-wide settings.  The files in this project-wide folder are have the following purposes:
+about the project-wide settings.  The files in this project-wide folder have the following purposes:
 
-* `manage.py` this is a Python script that is use to run commands to administer your
+* `manage.py` this is a Python script that is used to run commands to administer your
 Django server.  Example `manage.py` commands we will use eventually are `check`, `createsuperuser`,
 `migrate`, etc.  We never change this file.
 
@@ -258,7 +258,7 @@ This is slightly different from the sample in the PythonAnywhere tutorial.
 
 Once the above configuration is complete, go back to the top of the PythonAnywhere
 Web tab, `Reload` your web application, wait a few seconds and check
-that it is up and visiting the URL for your application shown in in the Web
+that it is up and visiting the URL for your application shown in the Web
 tab on PythonAnywhere like:
 
     http://(your-account).pythonanywhere.com/

@@ -47,7 +47,7 @@ Instead after you change files, run
 
     python manage.py check
 
-And then go to the the PythonAnywhere Web tab and press Reload.
+And then go to the PythonAnywhere Web tab and press Reload.
 
 Also when it tells you to navigate to a `localhost` or `127.0.0.1` like
 

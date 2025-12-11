@@ -98,7 +98,7 @@ under the `Web` tab on PythonAnywhere:
 
 <center><img src="dj4e_install/error_logs.png" alt="An image showing the three log links under the Web tab in PythonAnywhere" style="border: 1px black solid;"></center>
 
-Load the the `error` log and scroll to the very bottom to find the most
+Load the `error` log and scroll to the very bottom to find the most
 recent log error messages.  It can be quite long and take a while to get to the bottom.
 When you get to the bottom, you will likely find some kind of error message.  It will likely
 be a traceback and many lines long.  Most of the traceback is showing the Django files

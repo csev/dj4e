@@ -359,7 +359,7 @@ are a set of manual test steps:
 * Delete the ad - just to make sure it works
 * Create two more ads
 * Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
-* Go into one the detail for the ad created by the other user -  make sure you **do not** see edit / delete buttons
+* Go into the detail for the ad created by the other user -  make sure you **do not** see edit / delete buttons
 * Create a new ad on the second account
 * Make sure that in the "all ads list" the edit / delete buttons are only present on the ads the second user "owns"
 * Delete the ad
@@ -369,14 +369,14 @@ Fun Challenges
 --------------
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
-anything you like - it does not have to be a picture of you.  The gravatar is associated an email address
+avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
+anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
-after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browswer caching
+after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
 is "too effective" on a favicon so to force a real reload (command/ctrl + shift + r) to check if the new
 favicon is really being served you can add a GET parameter to the URL to force it to be re-retrieved:
 
@@ -450,7 +450,7 @@ find a few problems when you are running `python manage.py check` - I will keep 
 problems and their solutions here:
 
 (1) If you see an error message "TypeError: 'module' object is not iterable" when you are
-running `python manage.py check`, this maybe because you mistakenly
+running `python manage.py check`, this may be because you mistakenly
 edited the `ROOT_URLCONF` value in `settings.py`  - your value should be:
 
     ROOT_URLCONF = 'mysite.urls'

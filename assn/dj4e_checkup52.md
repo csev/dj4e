@@ -72,7 +72,7 @@ should remove ~/djangotutorial to avoid confusion
 should remove ~/mysite to avoid confusion
 
 There are lots of ways to end up in these situations.  Figuring these out and fixing them is not part of the
-learning objectives of the course - you should get some help if you need to to fix things up.
+learning objectives of the course - you should get some help if you need to fix things up.
 
 Over time as new mistakes are found in office hours or help sessions we can add new checks
 to the checkup tool to make the logistics of this course easier for everyone.

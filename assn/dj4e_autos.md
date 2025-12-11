@@ -121,7 +121,7 @@ with a fresh database.
 and log in to the application.
 
 * Create the necessary template files in `autos/templates/autos` to support your views.
-Note that the the second sub folder under `templates` is there to
+Note that the second sub folder under `templates` is there to
 make sure that templates are not inadvertently shared across multiple applications within a Django project.
 
 * Find the line in your `base_bootstrap.html` that looks like this:

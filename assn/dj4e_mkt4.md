@@ -22,8 +22,8 @@ At this point all of the challenges should be working - not all will be tested
 by the autograder - but we will separately check them.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
-anything you like - it does not have to be a picture of you.  The gravatar is associated an email address
+avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
+anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
 (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
@@ -31,7 +31,7 @@ at https://favicon.io/favicon-generator/ - it might not change instantly after y
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
 is "too effective" on a favicon so to force a real reload to check if the new favicon is really being served
-you can add a GET parameter tho the URL to force it to be re-retrieved:
+you can add a GET parameter to the URL to force it to be re-retrieved:
 
     https://market.dj4e.com/favicon.ico?x=42
 
@@ -164,7 +164,7 @@ and the `favToggle()` function and web component module include JavaScript (as s
     ...
 
 (6) At this point, you can reload your application and go to the main page with all of your
-ads listed, each ad should have a blank start and if you click on the star, it will change
+ads listed, each ad should have a blank star and if you click on the star, it will change
 color, but if you refresh the page, the favorites will not be "sticky" because you are missing the server code to store the favorite when the key is pressed.  The JavaScript is running
 `favPost()` but the server code is failing and returning an error to your application.
 You can view developer console in your browser and you will see a `404 not found`
