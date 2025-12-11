@@ -14,11 +14,12 @@ $check = webauto_get_check_full();
 
 $meta = '<meta name="dj4e" content="'.$check.'">';
 
-$user1account = 'dj4e_user1';
-$user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
-$user2account = 'dj4e_user2';
-$user2pw = "Meow_42_" . substr(getMD5(),1,6);
-$ad_title = $ad_titles[($code+1) % count($ad_titles)];
+$creds = market_get_user_credentials($code);
+$user1account = $creds['user1account'];
+$user1pw = $creds['user1pw'];
+$user2account = $creds['user2account'];
+$user2pw = $creds['user2pw'];
+$ad_title = market_get_ad_title($code, $ad_titles);
 
 // HACK $user1pw = "Meow_679091_41";
 // HACK $user2pw = "Meow_42_679091";

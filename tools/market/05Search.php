@@ -15,11 +15,12 @@ $check = webauto_get_check_full();
 
 $meta = '<meta name="dj4e" content="'.$check.'">';
 
-$user1account = 'dj4e_user1';
-$user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
-$user2account = 'dj4e_user2';
-$user2pw = "Meow_42_" . substr(getMD5(),1,6);
-$ad_title = $ad_titles[($code+1) % count($ad_titles)];
+$creds = market_get_user_credentials($code);
+$user1account = $creds['user1account'];
+$user1pw = $creds['user1pw'];
+$user2account = $creds['user2account'];
+$user2pw = $creds['user2pw'];
+$ad_title = market_get_ad_title($code, $ad_titles);
 
 $now = date('H:i:s');
 
@@ -40,6 +41,7 @@ Create two non-super users, by logging into the <b>/admin</b> URL of your applic
 using a superuser account:
 <?php
 print_user_and_password($user1account, $user1pw, $user2account, $user2pw);
+market_instructor_form();
 ?>
 You should have this <b>meta</b> tag in the <b>&lt;head&gt;</b> of each page:
 <pre>

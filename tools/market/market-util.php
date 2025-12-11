@@ -210,3 +210,98 @@ features from later assignments are detected in your solution.
 
 }
 
+// Handle instructor override for user accounts
+// Returns array with user1account, user1pw, user2account, user2pw
+// Allows partial updates - can set just user1 or just user2
+function market_get_user_credentials($code) {
+    global $LAUNCH;
+    
+    if ( $LAUNCH->user && $LAUNCH->user->instructor ) {
+        if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'reset')) ) {
+            unset($_SESSION['user1pw']);
+            unset($_SESSION['user1account']);
+            unset($_SESSION['user2pw']);
+            unset($_SESSION['user2account']);
+            unset($_SESSION['ad_title']);
+        } else {
+            // Allow partial updates - update only the fields that are provided
+            if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user1account')) ) {
+                $user1account =  \Tsugi\Util\U::get($_REQUEST, 'user1account');
+                $_SESSION['user1account'] =  $user1account;
+            }
+            if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user1pw')) ) {
+                $user1pw =  \Tsugi\Util\U::get($_REQUEST, 'user1pw');
+                $_SESSION['user1pw'] =  $user1pw;
+            }
+            if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user2account')) ) {
+                $user2account =  \Tsugi\Util\U::get($_REQUEST, 'user2account');
+                $_SESSION['user2account'] =  $user2account;
+            }
+            if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user2pw')) ) {
+                $user2pw =  \Tsugi\Util\U::get($_REQUEST, 'user2pw');
+                $_SESSION['user2pw'] =  $user2pw;
+            }
+            if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'ad_title')) ) {
+                $ad_title =  \Tsugi\Util\U::get($_REQUEST, 'ad_title');
+                $_SESSION['ad_title'] =  $ad_title;
+            }
+        }
+    }
+
+    $user1account = 'dj4e_user1';
+    $user1pw = "Meow_" . substr(getMD5(),1,6). '_41';
+    $user1pw =  \Tsugi\Util\U::get($_SESSION, 'user1pw', $user1pw);
+    $user1account =  \Tsugi\Util\U::get($_SESSION, 'user1account', $user1account);
+    $user2account = 'dj4e_user2';
+    $user2pw = "Meow_42_" . substr(getMD5(),1,6);
+    $user2pw =  \Tsugi\Util\U::get($_SESSION, 'user2pw', $user2pw);
+    $user2account =  \Tsugi\Util\U::get($_SESSION, 'user2account', $user2account);
+    
+    return array(
+        'user1account' => $user1account,
+        'user1pw' => $user1pw,
+        'user2account' => $user2account,
+        'user2pw' => $user2pw
+    );
+}
+
+// Get the required ad title with instructor override support
+function market_get_ad_title($code, $ad_titles) {
+    global $LAUNCH;
+    
+    if ( $LAUNCH->user && $LAUNCH->user->instructor ) {
+        if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'reset')) ) {
+            unset($_SESSION['ad_title']);
+        } else if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'ad_title')) ) {
+            $ad_title =  \Tsugi\Util\U::get($_REQUEST, 'ad_title');
+            $_SESSION['ad_title'] =  $ad_title;
+        }
+    }
+    
+    $default_ad_title = $ad_titles[($code+1) % count($ad_titles)];
+    $ad_title = \Tsugi\Util\U::get($_SESSION, 'ad_title', $default_ad_title);
+    
+    return $ad_title;
+}
+
+// Display instructor form for overriding user credentials and ad title
+function market_instructor_form() {
+    global $LAUNCH;
+    
+    if ( ! ($LAUNCH->user && $LAUNCH->user->instructor) ) return;
+?>
+<p>
+As an instructor, you can change the user accounts, passwords, and required ad title in order to test a student site with their values.
+<form method="get">
+User 1 Account: <input type="text" name="user1account"> <br/>
+User 1 Password: <input type="text" name="user1pw"> <br/>
+User 2 Account: <input type="text" name="user2account"> <br/>
+User 2 Password: <input type="text" name="user2pw"> <br/>
+Required Ad Title: <input type="text" name="ad_title"> <br/>
+<input type="submit" value="Submit">
+<input type="submit" value="Reset" name="reset">
+</form>
+</p>
+<?php
+}
+
