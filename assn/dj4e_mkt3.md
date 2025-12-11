@@ -152,11 +152,11 @@ you can add a GET parameter to the URL to force it to be re-retrieved:
 Change the `x` value to something else if you want to test over and over.
 
 (3) Make social login work.  Take a look at
-<a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
+<a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `market/config/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
-<a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/urls.py" target="_blank">
+<a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
 and at the end of your `market/config/github_settings.py`.
 

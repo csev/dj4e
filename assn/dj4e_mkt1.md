@@ -249,11 +249,11 @@ favicon is really being served you can add a GET parameter to the URL to force i
 Change the `x` value to something else if you want to test over and over.
 
 (3) To make the social login work.  Take a look at
-<a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
+<a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `market/config/github_settings.py` and go through the process on github to get your client ID and
 secret.   The documentation is in comments of the file.  Also take a look at
-<a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/urls.py" target="_blank">
+<a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/urls.py" target="_blank">
 dj4e-samples/urls.py</a> and make sure that the "Switch to social login" code is correct
 and at the end of your `market/config/github_settings.py`.
 
@@ -314,8 +314,13 @@ you can use the automated database reset script. This is particularly useful whe
 you have made a series of changes to `models.py` and migration files become confused
 causing `makemigrations` to fail.
 
-For detailed instructions on how to reset your database and migration files, see
-[DB_RESET.md](https://github.com/csev/dj4e-market/blob/main/DB_RESET.md).
+We have provided a Python script that completely resets your Django project's database and
+removes all migration files, allowing you to start fresh with a clean database
+schema. This is particularly useful when migration files have become corrupted
+or when you need to restructure your models significantly.
+
+For detailed documentation and instructions, see 
+[README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/DB_RESET.md)
 
 The reset script will:
 - Drop all tables in your database

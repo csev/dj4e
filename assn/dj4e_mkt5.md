@@ -41,13 +41,6 @@ Then run these commands:
     git tag -a mkt4 -m mkt4
     git tag             # Make sure you do have a mkt4 tag
 
-Once you have created a tag successfully for the previous assignment, if you make a mistake (or if AI makes a mistake)
-and you paste it into your code and break everything, you can decide to throw everything away and start over where
-you left off at the end of the previous assignment by running:
-
-    cd ~/django_projects/market
-    git reset --hard mkt4
-
 The whole `~/django_projects/market` folder is a `git` repository so you can use `git` for many cool
 things.  But for now we are just making sure you have a "re-spawn" point if AI breaks your code badly.
 
@@ -151,4 +144,53 @@ for a word in any of the three places.
 * Note the "?search=" in the location bar in your browser while you are doing searched
 
 * Clear the search and see all of the results and verify there is no "?search=" get parameter
+
+Resetting Your Database
+------------------------
+
+If `python manage.py check` is working and `python manage.py makemigrations` is working, 
+you may have made a series of changes to `models.py` and mis-match between your migration files
+and database have become confused causing `makemigrations` to fail.
+
+We have provided a Python script that completely resets your Django project's database and
+removes all migration files, allowing you to start fresh with a clean database
+schema. This is particularly useful when migration files have become corrupted
+or when you need to restructure your models significantly.
+
+First we update the samples code so you have the latest helper scripts.
+
+    cd ~/dj4e-samples/
+    git checkout django52
+    git pull origin django52
+
+Then follow the instructions at
+[README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/DB_RESET.md)
+
+The reset script will:
+- Drop all tables in your database
+- Delete all migration files (except `__init__.py`)
+- Allow you to start fresh with `makemigrations` and `migrate`
+
+Discarding Code Changes and Going back to the Mkt4 Tag
+------------------------------------------------------
+
+If if you make a mistake (or if AI makes a mistake) and you paste it into your code and break everything (i.e. not
+migrations and `models.py`)
+you can decide to reset your code base to the tag your created above (if you created a tag).
+Follow these instructions - move slowly and if things blow up - get help.
+
+If `python manage.py check` is working and `python manage.py makemigrations` is not working, you may not need
+to throw your code away and might want to try a database reset below first.
+
+First we update the samples code so you have the latest helper scripts.
+
+    cd ~/dj4e-samples/
+    git checkout django52
+    git pull origin django52
+
+Then follow the instructions at
+[README_DB.md](github.com/csev/dj4e-samples/blob/django52/tools/README_GIT.md)
+
+If you go back, and have discarded your code changes - you probably need to reset your database as well
+as shown in the previous section.
 
