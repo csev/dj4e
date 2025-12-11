@@ -322,3 +322,9 @@ The reset script will:
 - Delete all migration files (except `__init__.py`)
 - Allow you to start fresh with `makemigrations` and `migrate`
 
+<script>
+var d= new Date();
+var code = "42"+((Math.floor(d.getTime()/1234567)*123456)+42)
+document.getElementById("dj4e-code").innerHTML = code;
+</script>
+
