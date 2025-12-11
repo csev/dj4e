@@ -320,7 +320,7 @@ schema. This is particularly useful when migration files have become corrupted
 or when you need to restructure your models significantly.
 
 For detailed documentation and instructions, see 
-[README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/DB_RESET.md)
+[README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/README_DB.md)
 
 The reset script will:
 - Drop all tables in your database

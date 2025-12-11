@@ -152,7 +152,8 @@ Resetting Your Database
 ------------------------
 
 If `python manage.py check` is working and `python manage.py makemigrations` is working, 
-you may have made a series of changes to `models.py` and mis-match between your migration files
+you may have made a series of changes to `models.py` and ended up with a
+mis-match between your migration files
 and database have become confused causing `makemigrations` to fail.
 
 We have provided a Python script that completely resets your Django project's database and
@@ -167,7 +168,7 @@ First we update the samples code so you have the latest helper scripts.
     git pull origin django52
 
 Then follow the instructions at
-[README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/DB_RESET.md)
+[README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/README_DB.md)
 
 The reset script will:
 - Drop all tables in your database
@@ -192,7 +193,7 @@ First we update the samples code so you have the latest helper scripts.
     git pull origin django52
 
 Then follow the instructions at
-[README_DB.md](github.com/csev/dj4e-samples/blob/django52/tools/README_GIT.md)
+[README_GIT.md](https://github.com/csev/dj4e-samples/blob/django52/tools/README_GIT.md)
 
 If you go back, and have discarded your code changes - you probably need to reset your database as well
 as shown in the previous section.
