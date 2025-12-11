@@ -183,7 +183,7 @@ you can decide to reset your code base to the tag your created above (if you cre
 Follow these instructions - move slowly and if things blow up - get help.
 
 If `python manage.py check` is working and `python manage.py makemigrations` is not working, you may not need
-to throw your code away and might want to try a database reset below first.
+to throw your code away and might want to try a database reset first.
 
 First we update the samples code so you have the latest helper scripts.
 
