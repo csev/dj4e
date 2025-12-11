@@ -13,7 +13,7 @@ be looking at the `dj4e-samples` code and figuring out how to read and adapt sam
 You should make sure to get the latest updates by doing the following:
 
     cd ~/dj4e-samples
-    git pull
+    git pull origin django52
 
 In general, be careful copying code from `dj4e-samples` - it often has much more
 code than your program needs - so know what you are looking at before you copy

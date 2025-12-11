@@ -29,13 +29,14 @@ If you have never checked out the sample code on PythonAnywhere you can:
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
+    cd ~/dj4e-samples
+    git checkout django42
+    git pull origin django42
 
 Once you have the samples checked out (either before or just now), install the requirements:
 
     workon django42
-    cd ~/dj4e-samples
-    git checkout django42
-    git pull
+    pip install --upgrade pip
     pip install -r requirements42.txt
     python manage.py check
 

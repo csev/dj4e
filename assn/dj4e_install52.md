@@ -140,6 +140,8 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd ~/dj4e-samples
     git checkout django52
+    git pull origin django52
+    pip install --upgrade pip
     pip install -r requirements52.txt
 
 The `pip` command can also take a few minutes to complete.  Once it finishes and you
@@ -201,7 +203,7 @@ If you are doing this for the first time, it should run some migrations and crea
 
 The `dj4e-samples` folder is reference material that you can use through
 out the course.   From time to time we might make changes to this and ask you to
-do a `git pull` to get the latest version of the code.
+do a `git pull origin django52` to get the latest version of the code.
 
 Building Your Application
 -------------------------

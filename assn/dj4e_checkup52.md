@@ -25,7 +25,8 @@ previous assignment.
 Running the Checkup Tool on PythonAnywhere
 ==========================================
 
-The checkup tool is installed in your `~/dj4e-samples` folder when you did the
+The [checkup](https://github.com/csev/dj4e-samples/blob/django52/tools/README_CHECKUP.md)
+tool is installed in your `~/dj4e-samples` folder when you did the
 first assignment to install Django on PythonAnywhere.
 
 The following commands will get the latest version of the checkup tool and run
@@ -33,7 +34,7 @@ it:
 
     cd ~/dj4e-samples
     git checkout django52
-    git pull
+    git pull origin django52
 
     bash ~/dj4e-samples/tools/checkup.sh
 

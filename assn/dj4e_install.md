@@ -32,6 +32,7 @@ Once you have created your PythonAnywhere account, start a `bash` shell
 and set up a virtual environment with Python 3.x and Django 4.2.
 
     mkvirtualenv django42 --python=/usr/bin/python3.9
+    pip install --upgrade pip
     pip install django==4.2.7 ## this may take a couple of minutes
 
 Sometimes these two commands take a long time.  Run them one at a time in the 
@@ -85,6 +86,7 @@ as the course progresses and install some important additional Django software l
     git clone https://github.com/csev/dj4e-samples
     cd ~/dj4e-samples
     git checkout django42
+    pip install --upgrade pip
     pip install -r requirements42.txt
 
 The `pip` command can also take a few minutes to complete.  Once it finishes and you
@@ -146,7 +148,7 @@ If you are doing this for the first time, it should run some migrations and crea
 
 The `dj4e-samples` folder is reference material that you can use through
 out the course.   From time to time we might make changes to this and ask you to
-do a `git pull` to get the latest version of the code.
+do a `git pull origin django52` to get the latest version of the code.
 
 Building Your Application
 -------------------------

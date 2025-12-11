@@ -17,7 +17,8 @@ https://samples.dj4e.com/
 Lets make sure you have the latest copy of the `dj4e-samples` code with the following commands:
 
     cd ~/dj4e-samples
-    git pull
+    git checkout django42
+    git pull origin django42
     cd ~/django_projects/mysite
 
 Do All of the Challenges
