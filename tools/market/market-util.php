@@ -226,23 +226,23 @@ function market_get_user_credentials($code) {
         } else {
             // Allow partial updates - update only the fields that are provided
             if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user1account')) ) {
-                $user1account =  \Tsugi\Util\U::get($_REQUEST, 'user1account');
+                $user1account = trim(\Tsugi\Util\U::get($_REQUEST, 'user1account'));
                 $_SESSION['user1account'] =  $user1account;
             }
             if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user1pw')) ) {
-                $user1pw =  \Tsugi\Util\U::get($_REQUEST, 'user1pw');
+                $user1pw = trim(\Tsugi\Util\U::get($_REQUEST, 'user1pw'));
                 $_SESSION['user1pw'] =  $user1pw;
             }
             if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user2account')) ) {
-                $user2account =  \Tsugi\Util\U::get($_REQUEST, 'user2account');
+                $user2account = trim(\Tsugi\Util\U::get($_REQUEST, 'user2account'));
                 $_SESSION['user2account'] =  $user2account;
             }
             if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'user2pw')) ) {
-                $user2pw =  \Tsugi\Util\U::get($_REQUEST, 'user2pw');
+                $user2pw = trim(\Tsugi\Util\U::get($_REQUEST, 'user2pw'));
                 $_SESSION['user2pw'] =  $user2pw;
             }
             if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'ad_title')) ) {
-                $ad_title =  \Tsugi\Util\U::get($_REQUEST, 'ad_title');
+                $ad_title = trim(\Tsugi\Util\U::get($_REQUEST, 'ad_title'));
                 $_SESSION['ad_title'] =  $ad_title;
             }
         }
@@ -273,7 +273,7 @@ function market_get_ad_title($code, $ad_titles) {
         if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'reset')) ) {
             unset($_SESSION['ad_title']);
         } else if ( \Tsugi\Util\U::isNotEmpty(\Tsugi\Util\U::get($_REQUEST, 'ad_title')) ) {
-            $ad_title =  \Tsugi\Util\U::get($_REQUEST, 'ad_title');
+            $ad_title = trim(\Tsugi\Util\U::get($_REQUEST, 'ad_title'));
             $_SESSION['ad_title'] =  $ad_title;
         }
     }
