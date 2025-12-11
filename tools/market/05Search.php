@@ -219,12 +219,13 @@ webauto_change_form($form, 'picture', $picturepath);
 
 $crawler = webauto_submit_form($client, $form);
 $html = webauto_get_html($crawler);
-webauto_search_for_menu($html);
 
 if ( ! webauto_search_for_not($html, 'This field is required' ) ) {
     error_out('Could not submit form, check if there is a field which is required that should not be required.');
     return;
 }
+
+webauto_search_for_menu($html);
 
 if ( ! webauto_search_for($html, $title) ) {
     error_out('Tried to create a record and cannot find the record in the list view');

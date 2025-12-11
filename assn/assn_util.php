@@ -28,7 +28,7 @@ function loadPeer($file) {
         echo("Invalid JSON:\n\n");
         echo($string);
         echo("</pre>\n");
-        die("<p>Internal error contact instructor</p>\n");
+        die("<p>Internal error - contact instructor</p>\n");
     }
     return $json;
 }

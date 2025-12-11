@@ -147,7 +147,6 @@ These are the assignments for Django for Everybody (DJ4E).
 These assignments are designed for use with Django 
 <?= $CFG->getExtension('django_version') ?>.
 </p>
-</p>
 <ul>
 <li><a href="dj4e_install52.md">Django 5.2 and PythonAnywhere</a></li>
 <li><a href="dj4e_shell52.md">Using the Linux Command Line Interface (Shell)</a></li>
