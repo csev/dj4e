@@ -92,11 +92,14 @@ ads. We will also create a custom web component to implement this favorites feat
 (2) Do `python manage.py makemigrations` and `python manage.py migrate` once
 you have modified the model.
 
-(3) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
+(3) Edit your `mkt/admin.py` and add the `Fav` model to the `/admin` UI so you can
+look at Favs in the Admin user interface.
+
+(4) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(4) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
+(5) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
 file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for our custom web component: <!-- remove this after 2025 -->
 
     import { html, LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm";
@@ -126,7 +129,7 @@ file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for 
     customElements.define('dj4e-favstar', DJ4EFavoriteStar);
 
 
-(5) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+(6) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
 `dj4e-favstar` web component in the list of ads, to show the stars based on the list of favorites for the current logged in user
 and the `favToggle()` function and web component module include JavaScript (as shown below):
 
@@ -140,10 +143,18 @@ and the `favToggle()` function and web component module include JavaScript (as s
         console.log('POSTing to', url);
         fetch(url, { method: 'POST', body: '{}' } )
         .then((response) => {
-            console.log(url, 'success');
+            if (!response.ok) { // Check if the response status is in the 2xx range (success)
+                console.log("If you see this error, it is likely in ToggleFavoriteView()");
+                console.log("Note: It is easier to diagnose this error FireFox.");
+                throw new Error(`AJAX/fetch error status: ${response.status}, see developer console.`)
+            }
+            return response.text();
+        })
+        .then((response) => {
+            console.log(url, response);
             element.toggleAttribute('fav');
         }).catch((error) => {
-            alert('Url failed with '+error+' '+url);
+            alert(`Url ${url} failed ${error}`);
         });
     }
     </script>
