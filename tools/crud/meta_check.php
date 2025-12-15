@@ -35,7 +35,7 @@ if ( ! $dj4e_code || strlen($dj4e_code) < 1 ) {
         $now = time();
         if ( ($then + 180*24*60*60) < $now ) {
             error_log('Expired dj4e-code '.$dj4e_code.' user:'.$USER->id.' '.$USER->email." ".$USER->displayname);
-            error_out('Your meta name="dj4e-code" tag is out of date.  Check the assignment document.');
+            error_out('Your meta name="dj4e-code" tag is out of date.  Check the Owned Rows assignment document.');
             $meta_good = false;
         }
     }
@@ -45,7 +45,7 @@ if ( $meta_good ) {
    $passed++;
 } else {
    $failed++;
-   $nograde = "Problem with meta tag(s) - check assignment instructions";
+   $nograde = "Problem with meta tag(s) - check Autograder and Owned Rows assignment instructions";
 }
 
 // TODO: Check version too :)
