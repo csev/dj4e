@@ -314,7 +314,8 @@ urlpatterns = [
 your <b>django_projects/mysite/autos</b> code or from
 the <b>dj4e-samples/autos</b> sample code
 rather than writing them from scratch or having AI
-write them so as to match the markup patterns expected by the autograder.
+write them so as to match the markup patterns expected by the autograder.  If you did well on the <b>autos</b>
+assignment you probably will find it easier to adapt your own code from <b>django_projects/mysite/autos</b>.
 </li>
 <li>
 Edit the <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views for the
