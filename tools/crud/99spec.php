@@ -222,7 +222,7 @@ INSTALLED_APPS = [
 </li>
 <li>
 <p>
-Edit the <b><?= $SPEC->main_lower_plural ?>/models.py</b> file to add <?= $SPEC->main_title ?> and <?= $SPEC->lookup_title ?> models
+Edit the <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/models.py</b> file to add <?= $SPEC->main_title ?> and <?= $SPEC->lookup_title ?> models
 as shown below with a foreign key from <?= $SPEC->main_title ?> to <?= $SPEC->lookup_title ?>.
 <pre>
 from django.db import models
@@ -315,17 +315,17 @@ code rather than writing them from scratch or having AI wirte them so as to matc
 expected by the autograder.
 </li>
 <li>
-Edit the <b><?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views for the
+Edit the <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/views.py</b> file to add/edit views for the
 list, edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
 </li>
 <li>
-Create/edit the <b><?= $SPEC->main_lower_plural ?>/forms.py</b> file to add/edit the forms that you need
+Create/edit the <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/forms.py</b> file to add/edit the forms that you need
 for your views. You do not need to make a form if you are for any view that extends a generic view because because
 generic views create a Form objects for each view automatically.
 </li>
 <li>
 Copy and adapt the appropriate templates from the <b>autos</b> sample code 
-to <b><?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b>
+to <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/templates/<?= $SPEC->main_lower_plural ?></b>
 following the naming conventions for the templates.  It is important to base your templates on the <b>autos</b> sample
 code rather than writing them from scratch so as to match the markup patterns expected by the autograder.
 <?php if ( $folder == 'market' ) { ?>
@@ -340,7 +340,7 @@ create the necessary templates in <b>mysite/home/templates/registration</b> to s
 </li>
 <?php } ?>
 <li>
-Edit <b><?= $SPEC->main_lower_plural ?>/admin.py</b> to add the <?= $SPEC->main_title ?> and <?= $SPEC->lookup_title ?> models to the
+Edit <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/admin.py</b> to add the <?= $SPEC->main_title ?> and <?= $SPEC->lookup_title ?> models to the
 Django administration interface.
 </li>
 <li>
