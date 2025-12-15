@@ -336,7 +336,7 @@ since this application does not need a top menu.
 <?php if ( $folder == 'mysite' ) { ?>
 <li>
 If you have not already done so,
-create the necessary templates in <b>home/templates/registration</b> to support the login / log out views.
+create the necessary templates in <b>mysite/home/templates/registration</b> to support the login / log out views.
 </li>
 <?php } ?>
 <li>
@@ -386,8 +386,8 @@ the same way we have been doing assignments all along.
 Please see the process for handing in the <?= $SPEC->assignment_type_lower ?> at the end of this document.
 </p>
 <p>
-If the autograder complains about a missing "dj4e" meta tag, you need to check
-your <b>home/templates/base_bootstrap.html</b> file to make sure your
+If the autograder complains about a missing "dj4e-code" meta tag, you need to check
+your <b>django_projects/<?= $folder ?>/home/templates/base_bootstrap.html</b> file to make sure your
 <b>dj4e-code</b> tag looks as follows:
 </p>
 <pre>
