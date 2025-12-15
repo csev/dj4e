@@ -273,10 +273,10 @@ Add a link to <b>django_projects/<?= $folder ?>/home/templates/home/main.html</b
 </li>
 <?php } ?>
 <li>
-Create the <b><?= $SPEC->main_lower_plural ?>/urls.py</b> file to add routes for the list,
+Create the <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/urls.py</b> file to add routes for the list,
 edit, and delete pages for both <?= $SPEC->main_lower_plural ?> and <?= $SPEC->lookup_lower_plural ?>.
 You do not need to change the <b>main</b> or <b>lookup</b> urls
-in <b><?= $SPEC->main_lower_plural ?>/urls.py</b> -
+in <b>django_projects/<?= $folder ?>/<?= $SPEC->main_lower_plural ?>/urls.py</b> -
 <?php if ( $SPEC->main_lower_plural != 'autos' ) { ?>
 <p>
 You should change the 'name=' values and class name on the paths from the
