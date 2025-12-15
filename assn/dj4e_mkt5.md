@@ -21,16 +21,19 @@ to the application.  First - don't break what you have working.
 Taking a Snapshot of Your Previous Assignment using git
 -------------------------------------------------------
 
-We want to take a snapshot of your working Milestone 4 code using the `git` version management
-tool before we start editing Milestone 5.  Only do this *once and only once*
-after you have fully completed the previous
-milestone and before you start editing your files for this assignment.
+We want to take a snapshot of your previous assignment code using the `git` version management
+tool before we start making schanges to your code.  Only do this *once and only once*
+after you have fully completed the previous assignment before you start
+editing your files for this assignment.
 
-If you have not already done so, first set up your github identity using the commands below:
+You should already have your github identity set up.  The following should print your name
 
-    cd ~/django_projects/market
-    git config --global user.email "youremail@example.com"
-    git config --global user.name "Your name"
+    git config --global user.name 
+
+If you do not see your name, following the instructions  to configure git at
+[dj4e-samples/README.md](https://github.com/csev/dj4e-samples/blob/django52/README.md#setting-up-git-source-code-managment-on-pythonanywhere)
+    
+Once your git account is configured, run these commands:
 
 Then run these commands:
 
@@ -174,8 +177,8 @@ The reset script will:
 - Delete all migration files (except `__init__.py`)
 - Allow you to start fresh with `makemigrations` and `migrate`
 
-Discarding Code Changes and Going back to the Mkt4 Tag
-------------------------------------------------------
+Discarding Code Changes and Going back to  a previous version of your code
+--------------------------------------------------------------------------
 
 If you make a mistake (or if AI makes a mistake) and you paste it into your code and break everything (i.e. not
 migrations and `models.py`)

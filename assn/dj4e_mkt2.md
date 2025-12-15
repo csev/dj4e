@@ -48,6 +48,37 @@ If AI produces a solution that is only “approximately” like the samples, it 
 won’t pass. And if AI overwrites working code you already built and have working perfectly, 
 you may find yourself needing to start over from the beginning. <!-- And yes — the irony of asking AI to help write a warning about overusing AI is not lost on us. -->
 
+Before you Start: Taking a Snapshot of Your Previous Assignment
+---------------------------------------------------------------
+
+We want to take a snapshot of your previous assignment code using the `git` version management
+tool before we start making schanges to your code.  Only do this *once and only once*
+after you have fully completed the previous assignment before you start
+editing your files for this assignment.
+
+You should already have your github identity set up.  The following should print your name
+
+    git config --global user.name 
+
+If you do not see your name, following the instructions  to configure git at
+[dj4e-samples/README.md](https://github.com/csev/dj4e-samples/blob/django52/README.md#setting-up-git-source-code-managment-on-pythonanywhere)
+    
+Once your git account is configured, run these commands:
+    
+    cd ~/django_projects/market
+    git tag             # Make sure you don't already have a mkt1 tag (only do this once!)
+
+    git add .
+    git commit -a -m mkt1
+    git tag -a mkt1 -m mkt1
+    git tag             # Make sure you do have a mkt1 tag
+
+The whole `~/django_projects/market` folder is a `git` repository so you can use `git` for many cool
+things.  But for now we are just making sure you have a "re-spawn" point if AI breaks your code badly.
+
+The instructions to "revert" to the saved tag are at the bottom of this
+document.  Hopefully you won't need to use them.
+
 Adding Pictures to the Ads Application
 --------------------------------------
 
@@ -166,3 +197,58 @@ using github login on localhost - make sure that you register `http://127.0.0.1:
 of `http://localhost:8000/` and use that in your browser to test your site.  If you
 use localhost, you probably will get the `The redirect_uri MUST match the registered callback
 URL for this application.` error message when you use social login.
+
+
+Resetting Your Database
+------------------------
+    
+If `python manage.py check` is working and `python manage.py makemigrations` is working,
+you may have made a series of changes to `models.py` and ended up with a
+mis-match between your migration files
+and database have become confused causing `makemigrations` to fail.
+
+We have provided a Python script that completely resets your Django project's database and
+removes all migration files, allowing you to start fresh with a clean database
+schema. This is particularly useful when migration files have become corrupted
+or when you need to restructure your models significantly.
+
+First we update the samples code so you have the latest helper scripts.
+
+    cd ~/dj4e-samples/
+    git checkout django52
+    git pull origin django52
+
+Then follow the instructions at
+[dj4e-samples/tools/README_DB.md](https://github.com/csev/dj4e-samples/blob/django52/tools/README_DB.md)
+
+The reset script will:
+- Drop all tables in your database
+- Delete all migration files (except `__init__.py`)
+- Allow you to start fresh with `makemigrations` and `migrate`
+
+
+
+Discarding Code Changes and Going back to an earlier tag
+---------------------------------------------------------
+
+If you make a mistake (or if AI makes a mistake) and you paste it into your code and break everything (i.e. not
+migrations and `models.py`)
+you can decide to reset your code base to the tag your created above (if you created a tag).
+Follow these instructions - move slowly and if things blow up - get help.
+
+If `python manage.py check` is working and `python manage.py makemigrations` is not working, you may not need
+to throw your code away and might want to try a database reset first.
+
+First we update the samples code so you have the latest helper scripts.
+
+    cd ~/dj4e-samples/
+    git checkout django52
+    git pull origin django52
+
+Then follow the instructions at
+[dj4e-samples/tools/README_GIT.md](https://github.com/csev/dj4e-samples/blob/django52/tools/README_GIT.md)
+
+If you go back, and have discarded your code changes - you probably need to reset your database as well
+as shown in the previous section.
+
+
