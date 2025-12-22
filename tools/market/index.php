@@ -186,7 +186,7 @@ if ( $LAUNCH->user->instructor ) {
     }
     SettingsForm::text("password", __('Set a password to protect this assignment'));
     SettingsForm::text('delay',__('The number of seconds between retries.  Leave blank or set to zero to allow immediate retries.'));
-    SettingsForm::text('delay_tries',__('The number of attmpts before the delay kicks in.  Leave blank or set to zero to trigger immediate delays.'));
+    SettingsForm::text('delay_tries',__('The number of attempts before the delay kicks in.  Leave blank or set to zero to trigger immediate delays.'));
     SettingsForm::dueDate();
     SettingsForm::done();
     SettingsForm::end();

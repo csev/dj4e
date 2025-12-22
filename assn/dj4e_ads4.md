@@ -15,7 +15,7 @@ read the sample code carefully - only make changes that you understand.  Wholesa
 pasting sample code will make it almost impossible to complete this assignment.
 
 This is somewhat like the kind of real work you do when you have a working application and want to add a feature
-the the application.  First - don't break what you have working.
+to the application.  First - don't break what you have working.
 
 Adding Search
 -------------

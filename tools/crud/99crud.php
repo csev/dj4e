@@ -123,7 +123,7 @@ $crawler = webauto_get_url($client, $add_lookup_url, "Retrieving the 'Add $SPEC-
 $html = webauto_get_html($crawler);
 
 
-// Add an item the the lookup table
+// Add an item to the lookup table
 $lookup_new = "LU_42_" . rand(0,100);
 $form = webauto_get_form_with_button($crawler,'Submit');
 webauto_change_form($form, 'name', $lookup_new);

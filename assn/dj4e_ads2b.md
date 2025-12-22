@@ -115,7 +115,7 @@ You will have to finish these by the next assignment - so you might as well work
 And they are fun.
 
 (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
-avatar when you log in in your application and elsewhere with gravatar enabled apps. The gravatar can be
+avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
