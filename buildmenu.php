@@ -53,7 +53,7 @@ function buildMenu() {
     } else {
         $set->addRight('Login', $T.'login.php');
     }
-    $set->addRight('Instructor', 'https://online.dr-chuck.com');
+    $set->addRight('Instructor', 'https://online.dr-chuck.com', true, array('target' => '_self'));
 
     return $set;
 }
