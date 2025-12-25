@@ -30,9 +30,6 @@ You can take this course and receive a certificate at:
 <ul>
 <li><a href="https://www.coursera.org/specializations/django" target="_blank">Coursera: Django for Everybody Specialization</a></li>
 <li><a href="https://www.edx.org/xseries/michiganx-django-for-everybody" target="_blank">edX: Django for Everybody XSeries Program</a></li>
-<!--
-<li><a href="https://www.futurelearn.com/programs/django" target="_blank">FutureLearn: Django for Everybody</a></li>
--->
 <li><a href="https://www.youtube.com/watch?v=o0XbHvKxw7Y" target="_blank">FreeCodeCamp: Django for Everybody</a>
 <li><a href="https://online.umich.edu/series/django/" target="_blank">Free certificates for University of Michigan students and staff</a></li>
 </ul>
@@ -42,13 +39,6 @@ We use the free
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a> hosting environment
 to deploy and test our Django projects and applications.  You can keep using this hosting environment
 to develop and deploy your Django applications after you complete the course.
-</p>
-<p>
-<b>Note</b> Starting May 2025, this course is transitioning from using
-Django 4.2 to Django 5.2 and from the Ads series of assignments to the new Marketplace assignments.
-If you started the course using Django 4.2  and the Ads series of assignments, you
-can finish the course using Django 4.2 but if you are starting the course June 2025
-or later, you should use Django 5.2 and complete the Marketplace assignments.
 </p>
 <?php
 $month = date('n');
