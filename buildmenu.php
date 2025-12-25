@@ -4,12 +4,13 @@ function buildMenu() {
     global $CFG;
     $R = $CFG->apphome . '/';
     $T = $CFG->wwwroot . '/';
+    $L = $CFG->wwwroot . '/lms/';
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
     $set = new \Tsugi\UI\MenuSet();
     $set->setHome($CFG->servicename, $CFG->apphome);
 
     if ( isset($CFG->lessons) ) {
-        $set->addLeft('Lessons', $R.'lessons');
+        $set->addLeft('Lessons', $L.'lessons');
     }
     if ( isset($CFG->tdiscus) && $CFG->tdiscus ) $set->addLeft('Discussions', $R.'discussions');
     if ( isset($_SESSION['id']) ) {

@@ -22,8 +22,6 @@ $CFG->theme = array(
 
 $CFG->context_title = "Django for Everybody";
 
-$CFG->lessons = $CFG->dirroot.'/../lessons.json';
-
 $CFG->giftquizzes = $CFG->dirroot.'/../dj4e-private/quiz';
 
 $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
@@ -31,6 +29,12 @@ $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
 $CFG->tdiscus = $CFG->apphome . '/mod/tdiscus/';
 
 $CFG->launcherror = $CFG->apphome . "/launcherror";
+
+$CFG->lessons = $CFG->dirroot.'/../lessons.json';
+
+$CFG->setExtension('lessons2_enable', true);
+$CFG->setExtension('lessons_debug_conversion', false);
+$CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
 
 $CFG->setExtension('django_version', '5.2');
 $CFG->setExtension('django_version_short', '52');
