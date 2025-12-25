@@ -1895,160 +1895,6 @@
             ]
         },
         {
-            "title": "Django Generic Views",
-            "anchor": "django_generic",
-            "icon": "fa-align-left",
-            "slides": "lectures/DJ-07-Views-Generic.pptx",
-            "description": "We look at the generic views capability within Django.",
-            "discussions": [
-                {
-                    "title": "Django Generic Views",
-                    "launch": "mod/tdiscus/",
-                    "resource_link_id": "discuss_10_generic"
-                }
-            ],
-            "videos": [
-                {
-                    "title": "Understanding Django Generic Views (16:28)",
-                    "youtube": "uPRabryhv5k",
-                    "project": "DJ 07 Views 08 Generic"
-                }
-            ],
-            "lti": [
-                {
-                    "title": "Quiz: Generic Views",
-                    "launch": "mod/gift/?quiz=07-Views-Generic.txt",
-                    "resource_link_id": "dj4e_07_generic_quiz",
-                    "custom": [
-                        {
-                            "key": "tries",
-                            "value": "3"
-                        },
-                        {
-                            "key": "delay",
-                            "value": "601"
-                        }
-                    ]
-                }
-            ],
-            "references": [
-                {
-                    "title": "Review: Object-Oriented Programming in Python",
-                    "href": "https://www.py4e.com/lessons/Objects"
-                },
-                {
-                    "title": "Writing your first Django app, part 4 (Tutorial)",
-                    "href": "https://docs.djangoproject.com/en/5.2/intro/tutorial04/"
-                },
-                {
-                    "title": "Django Template Tags and Filters",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/templates/builtins/"
-                },
-                {
-                    "title": "Django Documentation: Generic display views",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/"
-                },
-                {
-                    "title": "Django Documentation: Generic list display views",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
-                },
-                {
-                    "title": "Django Documentation: Generic detail display views",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
-                }
-            ],
-            "items": [
-                {
-                    "type": "header",
-                    "text": "Slides",
-                    "level": 2
-                },
-                {
-                    "type": "slide",
-                    "title": "DJ-07-Views-Generic.pptx",
-                    "href": "{apphome}/lectures/DJ-07-Views-Generic.pptx"
-                },
-                {
-                    "type": "header",
-                    "text": "Videos",
-                    "level": 2
-                },
-                {
-                    "type": "video",
-                    "title": "Understanding Django Generic Views (16:28)",
-                    "youtube": "uPRabryhv5k",
-                    "project": "DJ 07 Views 08 Generic"
-                },
-                {
-                    "type": "header",
-                    "text": "References",
-                    "level": 2
-                },
-                {
-                    "type": "reference",
-                    "title": "Review: Object-Oriented Programming in Python",
-                    "href": "https://www.py4e.com/lessons/Objects"
-                },
-                {
-                    "type": "reference",
-                    "title": "Writing your first Django app, part 4 (Tutorial)",
-                    "href": "https://docs.djangoproject.com/en/5.2/intro/tutorial04/"
-                },
-                {
-                    "type": "reference",
-                    "title": "Django Template Tags and Filters",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/templates/builtins/"
-                },
-                {
-                    "type": "reference",
-                    "title": "Django Documentation: Generic display views",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/"
-                },
-                {
-                    "type": "reference",
-                    "title": "Django Documentation: Generic list display views",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
-                },
-                {
-                    "type": "reference",
-                    "title": "Django Documentation: Generic detail display views",
-                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
-                },
-                {
-                    "type": "header",
-                    "text": "Discussions",
-                    "level": 2
-                },
-                {
-                    "type": "discussion",
-                    "title": "Django Generic Views",
-                    "launch": "mod/tdiscus/",
-                    "resource_link_id": "discuss_10_generic"
-                },
-                {
-                    "type": "header",
-                    "text": "Tools",
-                    "level": 2
-                },
-                {
-                    "type": "lti",
-                    "title": "Quiz: Generic Views",
-                    "launch": "mod/gift/?quiz=07-Views-Generic.txt",
-                    "resource_link_id": "dj4e_07_generic_quiz",
-                    "custom": [
-                        {
-                            "key": "tries",
-                            "value": "3"
-                        },
-                        {
-                            "key": "delay",
-                            "value": "601"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "title": "Forms in HTTP and HTML",
             "anchor": "dj4e_forms_html",
             "icon": "fa-table",
@@ -2282,6 +2128,160 @@
                     "title": "Quiz: Django Tutorial 4",
                     "launch": "mod/gift/?quiz=DJ-TUT4.txt",
                     "resource_link_id": "dj4e_tut4_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Django Generic Views",
+            "anchor": "django_generic",
+            "icon": "fa-align-left",
+            "slides": "lectures/DJ-07-Views-Generic.pptx",
+            "description": "We look at the generic views capability within Django.",
+            "discussions": [
+                {
+                    "title": "Django Generic Views",
+                    "launch": "mod/tdiscus/",
+                    "resource_link_id": "discuss_10_generic"
+                }
+            ],
+            "videos": [
+                {
+                    "title": "Understanding Django Generic Views (16:28)",
+                    "youtube": "uPRabryhv5k",
+                    "project": "DJ 07 Views 08 Generic"
+                }
+            ],
+            "lti": [
+                {
+                    "title": "Quiz: Generic Views",
+                    "launch": "mod/gift/?quiz=07-Views-Generic.txt",
+                    "resource_link_id": "dj4e_07_generic_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                }
+            ],
+            "references": [
+                {
+                    "title": "Review: Object-Oriented Programming in Python",
+                    "href": "https://www.py4e.com/lessons/Objects"
+                },
+                {
+                    "title": "Writing your first Django app, part 4 (Tutorial)",
+                    "href": "https://docs.djangoproject.com/en/5.2/intro/tutorial04/"
+                },
+                {
+                    "title": "Django Template Tags and Filters",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/templates/builtins/"
+                },
+                {
+                    "title": "Django Documentation: Generic display views",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/"
+                },
+                {
+                    "title": "Django Documentation: Generic list display views",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
+                },
+                {
+                    "title": "Django Documentation: Generic detail display views",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
+                }
+            ],
+            "items": [
+                {
+                    "type": "header",
+                    "text": "Slides",
+                    "level": 2
+                },
+                {
+                    "type": "slide",
+                    "title": "DJ-07-Views-Generic.pptx",
+                    "href": "{apphome}/lectures/DJ-07-Views-Generic.pptx"
+                },
+                {
+                    "type": "header",
+                    "text": "Videos",
+                    "level": 2
+                },
+                {
+                    "type": "video",
+                    "title": "Understanding Django Generic Views (16:28)",
+                    "youtube": "uPRabryhv5k",
+                    "project": "DJ 07 Views 08 Generic"
+                },
+                {
+                    "type": "header",
+                    "text": "References",
+                    "level": 2
+                },
+                {
+                    "type": "reference",
+                    "title": "Review: Object-Oriented Programming in Python",
+                    "href": "https://www.py4e.com/lessons/Objects"
+                },
+                {
+                    "type": "reference",
+                    "title": "Writing your first Django app, part 4 (Tutorial)",
+                    "href": "https://docs.djangoproject.com/en/5.2/intro/tutorial04/"
+                },
+                {
+                    "type": "reference",
+                    "title": "Django Template Tags and Filters",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/templates/builtins/"
+                },
+                {
+                    "type": "reference",
+                    "title": "Django Documentation: Generic display views",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/"
+                },
+                {
+                    "type": "reference",
+                    "title": "Django Documentation: Generic list display views",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.ListView"
+                },
+                {
+                    "type": "reference",
+                    "title": "Django Documentation: Generic detail display views",
+                    "href": "https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView"
+                },
+                {
+                    "type": "header",
+                    "text": "Discussions",
+                    "level": 2
+                },
+                {
+                    "type": "discussion",
+                    "title": "Django Generic Views",
+                    "launch": "mod/tdiscus/",
+                    "resource_link_id": "discuss_10_generic"
+                },
+                {
+                    "type": "header",
+                    "text": "Tools",
+                    "level": 2
+                },
+                {
+                    "type": "lti",
+                    "title": "Quiz: Generic Views",
+                    "launch": "mod/gift/?quiz=07-Views-Generic.txt",
+                    "resource_link_id": "dj4e_07_generic_quiz",
                     "custom": [
                         {
                             "key": "tries",
