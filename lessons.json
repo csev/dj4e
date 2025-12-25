@@ -1599,7 +1599,7 @@
    ],
     "lti" : [
         {
-        "title" : "Auto-grader: An Second Solo Application",
+        "title" : "Auto-grader: A Second Solo Application",
         "launch" : "tools/crud/",
         "resource_link_id" : "dj4e_app_solo2",
         "custom" : [
