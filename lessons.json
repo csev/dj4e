@@ -806,8 +806,23 @@
     "lti" : [
         {
             "title" : "Quiz: Object-Oriented Programming",
-            "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
+            "launch" : "mod/gift/?quiz=06-Python-Objects.txt",
             "resource_link_id" : "dj4e_16_oo_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
+            "title" : "Quiz: Python Assignment Statements",
+            "launch" : "mod/gift/?quiz=06-Python-Assignments.txt",
+            "resource_link_id" : "dj4e_06_oo_quiz",
             "custom" : [
                 {
                     "key": "tries",
@@ -1144,6 +1159,21 @@
         ]
         },
         {
+            "title" : "Quiz: The Big Picture of a Django Application",
+            "launch" : "mod/gift/?quiz=08-BigPicture.txt",
+            "resource_link_id" : "dj4e_08_big_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
             "title" : "Autograder: Run mini_django on your computer",
             "launch" : "tools/jsauto/?exercise=mini_01.php",
             "resource_link_id" : "dj4e_01_rrc_mini",
@@ -1281,7 +1311,7 @@
     "lti" : [
         {
             "title" : "Quiz: One to Many Data Models",
-            "launch" : "mod/gift/?quiz=DB-02-One-To-Many.txt",
+            "launch" : "mod/gift/?quiz=DB-03-One-To-Many.txt",
             "resource_link_id" : "dj4e_db_one_quiz",
             "custom" : [
                 {
