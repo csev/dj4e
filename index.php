@@ -47,7 +47,7 @@ if ( ($month == 1 || $month == 9 ) && U::endsWith($email, $warn_domain) ) {
 ?>
 <p style="border: 2px red solid; margin: 5px; padding: 5px;">
 You are logged in using an <?= $warn_domain ?> email address.  If you are taking
-this course for credit, you need to do your assignments through the campus LMS
+this course for credit (SI664 or SI357), you need to do your assignments through the campus LMS
 (i.e. Canvas) to get credit for the assignments.
 </p>
 <?php

@@ -1,10 +1,19 @@
 <?php
 
+use \Tsugi\Util\U;
+
 function buildMenu() {
     global $CFG;
     $R = $CFG->apphome . '/';
     $T = $CFG->wwwroot . '/';
     $L = $CFG->wwwroot . '/lms/';
+    $A = $L . 'announce';
+
+    // Generate URLs using rest_path and addSession
+    $json_url = U::addSession($A . '/json.php');
+    $dismiss_url = U::addSession($A . '/dismiss.php');
+    $view_url = U::addSession($A . '/index.php');
+
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
     $set = new \Tsugi\UI\MenuSet();
     $set->setHome($CFG->servicename, $CFG->apphome);
@@ -34,8 +43,10 @@ function buildMenu() {
         if ( file_exists('privacy.php') ) {
             $submenu->addLink('Privacy', $R.'privacy');
         }
-        $submenu->addLink('Django Versions', $R.'versions');
-        if ( $CFG->providekeys ) {
+        $submenu->addLink('Announcements', $L.'announce');
+        $submenu->addLink('Grades', $L.'grades');
+        $submenu->addLink('Pages', $L.'pages');
+        if ( U::get($_SESSION, "isinstructor", false) ) {
             $submenu->addLink('LMS Integration', $T . 'settings');
         }
         if ( isset($CFG->google_classroom_secret) ) {
@@ -44,6 +55,7 @@ function buildMenu() {
         if ( isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true" ) {
             $submenu->addLink('Administer', $T . 'admin/');
         }
+        $submenu->addLink('Django Versions', $R.'versions');
         $submenu->addLink('Logout', $R.'logout');
         if ( isset($_SESSION['avatar']) ) {
             $set->addRight('<img src="'.$_SESSION['avatar'].'" title="'.htmlentities(__('User Profile Menu - Includes logout')).'" style="height: 2em;"/>', $submenu);
@@ -55,6 +67,10 @@ function buildMenu() {
         $set->addRight('Login', $T.'login.php');
     }
     $set->addRight('Instructor', 'https://online.dr-chuck.com', true, array('target' => '_self'));
+
+    if ( isset($_SESSION['id']) ) {
+        $set->addRight('<tsugi-announce json-url="'. htmlspecialchars($json_url) . '" dismiss-url="'. htmlspecialchars($dismiss_url) . '" view-url="'. htmlspecialchars($view_url) . '"> </tsugi-announce>', false);
+    }
 
     return $set;
 }
