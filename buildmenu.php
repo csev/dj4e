@@ -46,9 +46,7 @@ function buildMenu() {
         $submenu->addLink('Announcements', $L.'announce');
         $submenu->addLink('Grades', $L.'grades');
         $submenu->addLink('Pages', $L.'pages');
-        if ( U::get($_SESSION, "isinstructor", false) ) {
-            $submenu->addLink('LMS Integration', $T . 'settings');
-        }
+        $submenu->addLink('LMS Integration', $T . 'settings');
         if ( isset($CFG->google_classroom_secret) ) {
             $submenu->addLink('Google Classroom', $T.'gclass/login');
         }
