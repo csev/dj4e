@@ -172,201 +172,6 @@
     ]
 },
 {
-    "title": "HyperText Markup Language (HTML)",
-    "anchor": "html",
-    "icon" : "fa-html5",
-    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
-    "slides": "lectures/Web-02-HTML.pptx",
-    "discussions" : [
-        {
-        "title" : "HyperText Markup Language (HTML)",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_03_html"
-        }
-    ],
-    "videos" : [
-        {
-            "title" : "HTML - HyperText Markup Language (Part 1) (5:53)",
-            "media": "lesson-05-html/01-Web-02-HTML-A.m4v",
-            "youtube" : "yWmJSO5xQlU"
-        },
-        {
-            "title" : "HTML - HyperText Markup Language (Part 2) (13:52)",
-            "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
-            "youtube" : "fh3omoEiebQ"
-        },
-        {
-            "title" : "HTML - Sample Code Walkthrough (13:58)",
-            "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
-            "youtube" : "wYc6l28v7Cs"
-        }
-    ],
-    "references" : [
-        {
-            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-            "href" : "{apphome}/assn/dj4e_errors52.md"
-        },
-        {
-            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
-            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
-        },
-        {
-            "title" : "HTML Sample Code (Browse)",
-            "href" : "{apphome}/code/html/index.htm"
-        },
-        {
-            "title" : "HTML Sample Code (Download ZIP)",
-            "href" : "{apphome}/code/html.zip"
-        }
-    ],
-    "assignment" : "{apphome}/assn/dj4e_html.md",
-    "lti" : [
-        {
-            "title" : "Quiz: HTML",
-            "launch" : "mod/gift/?quiz=00-HTML.txt",
-            "resource_link_id" : "dj4e_01_html_quiz",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "3"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        },
-        {
-        "title" : "Autograder: HyperText Markup Language (HTML)",
-        "launch" : "tools/html-autograde/",
-        "resource_link_id" : "html_01",
-        "custom" : [
-            {
-                "key": "exercise",
-                "value": "a01.php"
-            }
-        ]
-        }
-    ]
-},
-{
-    "title": "Cascading Style Sheets (CSS)",
-    "anchor": "css",
-    "icon" : "fa-css3",
-    "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
-    "slides": "lectures/Web-03-CSS.ppt",
-    "discussions" : [
-        {
-        "title" : "Cascading Style Sheets (CSS)",
-        "launch" : "mod/tdiscus/",
-        "resource_link_id": "discuss_04_css"
-        }
-    ],
-    "videos" : [
-        {
-            "title" : "CSS - Cascading Style Sheets - (Part 1) (12:47)",
-            "media" : "lesson-06-css/01-Web-02-CSS-A.m4v",
-            "youtube" : "blWx62Js7T0"
-        },
-        {
-            "title" : "CSS - Cascading Style Sheets - (Part 2) (15:03)",
-            "media": "lesson-06-css/02-Web-02-CSS-B.m4v",
-            "youtube" : "nMU8wMgasJ8"
-        },
-        {
-            "title" : "CSS - Cascading Style Sheets - (Part 3) (13:40)",
-            "media": "lesson-06-css/03-Web-02-CSS-C.m4v",
-            "youtube" : "7KWtFdqXiqE"
-        },
-        {
-            "title" : "CSS - Sample Code Walkthrough (Part 1) (13:26)",
-            "media": "lesson-06-css/04-Web-03-CSS-Code-A.m4v",
-            "youtube" : "2Eu96WnoHBY"
-        },
-        {
-            "title" : "CSS - Sample Code Walkthrough (Part 2) (25:49)",
-            "media": "lesson-06-css/05-Web-03-CSS-Code-B.m4v",
-            "youtube" : "MHqI-PKBl_A"
-        }
-    ],
-    "assignment" : "{apphome}/assn/css/index.php",
-    "references" : [
-        {
-            "title" : "CSS Sample Code (Browse)",
-            "href" : "{apphome}/code/css/index.htm"
-        },
-        {
-            "title" : "CSS Sample Code (Download ZIP)",
-            "href" : "{apphome}/code/css.zip"
-        },
-        {
-            "title" : "CSS Cheat Sheet by Leslie Frank",
-            "href" : "http://www.lesliefranke.com/files/reference/csscheatsheet.html"
-        }
-    ],
-    "lti" : [
-        {
-        "title" : "Quiz: CSS",
-        "launch" : "mod/gift/?quiz=00-CSS.txt",
-        "resource_link_id" : "php_01_css_quiz",
-            "custom" : [
-                {
-                    "key": "tries",
-                    "value": "3"
-                },
-                {
-                    "key": "delay",
-                    "value": "601"
-                }
-            ]
-        },
-        {
-        "title": "Peer Graded: Cascading Style Sheets (CSS)",
-        "launch" : "mod/peer-grade/",
-        "resource_link_id" : "css",
-        "custom" : [
-            {
-                "key": "config",
-                "json": 
-{
-  "title": "Cascading Style Sheets",
-  "description": "In this assignment you will develop a Cascading Style Sheet (CSS) to control, the look, feel, and layout of some provide HTML content.",
-  "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
-  "assignment" : "{apphome}/assn/css/index.php",
-  "parts": [
-    {
-      "title": "Image (JPG or PNG) of your index.htm with the styling applied",
-      "type": "image"
-    },
-    {
-      "title": "Please paste the source code of your blocks.css file",
-      "type": "code",
-      "code": "css"
-    },
-    {
-      "title": "Image (JPG or PNG) of your blocks.css passing the W3 CSS validator",
-      "type": "image"
-    },
-    {
-      "title": "Image (JPG or PNG) of your browser showing your index.htm page inspecting the 'DJ4E' element.",
-      "type": "image"
-    }
-  ],
-  "totalpoints": 10,
-  "instructorpoints": 0,
-  "peerpoints": 4,
-  "assesspoints":3,
-  "minassess": 2,
-  "maxassess": 6,
-  "flag": true,
-  "resubmit":"on"
-}
-            }
-        ]
-        }
-        ]
-},
-{
     "title": "Basic SQL",
     "anchor": "dj4e_basic_sql",
     "icon" : "fa-database",
@@ -634,6 +439,201 @@
             "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
         }
     ]
+},
+{
+    "title": "HyperText Markup Language (HTML)",
+    "anchor": "html",
+    "icon" : "fa-html5",
+    "description": "We briefly cover the basics of the HyperText Markup Language (HTML) that is the markup for web pages.  The recorded lectures are from Web Applications for Everybody.",
+    "slides": "lectures/Web-02-HTML.pptx",
+    "discussions" : [
+        {
+        "title" : "HyperText Markup Language (HTML)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_03_html"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "HTML - HyperText Markup Language (Part 1) (5:53)",
+            "media": "lesson-05-html/01-Web-02-HTML-A.m4v",
+            "youtube" : "yWmJSO5xQlU"
+        },
+        {
+            "title" : "HTML - HyperText Markup Language (Part 2) (13:52)",
+            "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
+            "youtube" : "fh3omoEiebQ"
+        },
+        {
+            "title" : "HTML - Sample Code Walkthrough (13:58)",
+            "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
+            "youtube" : "wYc6l28v7Cs"
+        }
+    ],
+    "references" : [
+        {
+            "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
+            "href" : "{apphome}/assn/dj4e_errors52.md"
+        },
+        {
+            "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+            "href" : "https://www.youtube.com/watch?v=IYH_BkpHf3s"
+        },
+        {
+            "title" : "HTML Sample Code (Browse)",
+            "href" : "{apphome}/code/html/index.htm"
+        },
+        {
+            "title" : "HTML Sample Code (Download ZIP)",
+            "href" : "{apphome}/code/html.zip"
+        }
+    ],
+    "assignment" : "{apphome}/assn/dj4e_html.md",
+    "lti" : [
+        {
+            "title" : "Quiz: HTML",
+            "launch" : "mod/gift/?quiz=00-HTML.txt",
+            "resource_link_id" : "dj4e_01_html_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
+        "title" : "Autograder: HyperText Markup Language (HTML)",
+        "launch" : "tools/html-autograde/",
+        "resource_link_id" : "html_01",
+        "custom" : [
+            {
+                "key": "exercise",
+                "value": "a01.php"
+            }
+        ]
+        }
+    ]
+},
+{
+    "title": "Cascading Style Sheets (CSS)",
+    "anchor": "css",
+    "icon" : "fa-css3",
+    "description": "We briefly cover the basics of cascading Style Sheets (CSS) that allow us to style the markup for web pages.",
+    "slides": "lectures/Web-03-CSS.ppt",
+    "discussions" : [
+        {
+        "title" : "Cascading Style Sheets (CSS)",
+        "launch" : "mod/tdiscus/",
+        "resource_link_id": "discuss_04_css"
+        }
+    ],
+    "videos" : [
+        {
+            "title" : "CSS - Cascading Style Sheets - (Part 1) (12:47)",
+            "media" : "lesson-06-css/01-Web-02-CSS-A.m4v",
+            "youtube" : "blWx62Js7T0"
+        },
+        {
+            "title" : "CSS - Cascading Style Sheets - (Part 2) (15:03)",
+            "media": "lesson-06-css/02-Web-02-CSS-B.m4v",
+            "youtube" : "nMU8wMgasJ8"
+        },
+        {
+            "title" : "CSS - Cascading Style Sheets - (Part 3) (13:40)",
+            "media": "lesson-06-css/03-Web-02-CSS-C.m4v",
+            "youtube" : "7KWtFdqXiqE"
+        },
+        {
+            "title" : "CSS - Sample Code Walkthrough (Part 1) (13:26)",
+            "media": "lesson-06-css/04-Web-03-CSS-Code-A.m4v",
+            "youtube" : "2Eu96WnoHBY"
+        },
+        {
+            "title" : "CSS - Sample Code Walkthrough (Part 2) (25:49)",
+            "media": "lesson-06-css/05-Web-03-CSS-Code-B.m4v",
+            "youtube" : "MHqI-PKBl_A"
+        }
+    ],
+    "assignment" : "{apphome}/assn/css/index.php",
+    "references" : [
+        {
+            "title" : "CSS Sample Code (Browse)",
+            "href" : "{apphome}/code/css/index.htm"
+        },
+        {
+            "title" : "CSS Sample Code (Download ZIP)",
+            "href" : "{apphome}/code/css.zip"
+        },
+        {
+            "title" : "CSS Cheat Sheet by Leslie Frank",
+            "href" : "http://www.lesliefranke.com/files/reference/csscheatsheet.html"
+        }
+    ],
+    "lti" : [
+        {
+        "title" : "Quiz: CSS",
+        "launch" : "mod/gift/?quiz=00-CSS.txt",
+        "resource_link_id" : "php_01_css_quiz",
+            "custom" : [
+                {
+                    "key": "tries",
+                    "value": "3"
+                },
+                {
+                    "key": "delay",
+                    "value": "601"
+                }
+            ]
+        },
+        {
+        "title": "Peer Graded: Cascading Style Sheets (CSS)",
+        "launch" : "mod/peer-grade/",
+        "resource_link_id" : "css",
+        "custom" : [
+            {
+                "key": "config",
+                "json": 
+{
+  "title": "Cascading Style Sheets",
+  "description": "In this assignment you will develop a Cascading Style Sheet (CSS) to control, the look, feel, and layout of some provide HTML content.",
+  "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
+  "assignment" : "{apphome}/assn/css/index.php",
+  "parts": [
+    {
+      "title": "Image (JPG or PNG) of your index.htm with the styling applied",
+      "type": "image"
+    },
+    {
+      "title": "Please paste the source code of your blocks.css file",
+      "type": "code",
+      "code": "css"
+    },
+    {
+      "title": "Image (JPG or PNG) of your blocks.css passing the W3 CSS validator",
+      "type": "image"
+    },
+    {
+      "title": "Image (JPG or PNG) of your browser showing your index.htm page inspecting the 'DJ4E' element.",
+      "type": "image"
+    }
+  ],
+  "totalpoints": 10,
+  "instructorpoints": 0,
+  "peerpoints": 4,
+  "assesspoints":3,
+  "minassess": 2,
+  "maxassess": 6,
+  "flag": true,
+  "resubmit":"on"
+}
+            }
+        ]
+        }
+        ]
 },
 {
     "title": "Understanding Model View Controller (MVC)",
