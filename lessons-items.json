@@ -1029,6 +1029,219 @@
             ]
         },
         {
+            "title": "Object-Oriented Programming in Python",
+            "anchor": "Objects",
+            "icon": "fa-cubes",
+            "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
+            "slides": [
+                "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+                "{apphome}/lectures/PY-01-Variables.pptx"
+            ],
+            "discussions": [
+                {
+                    "title": "Object-Oriented Programming in Python",
+                    "launch": "mod/tdiscus/",
+                    "resource_link_id": "discuss_09_objects"
+                }
+            ],
+            "references": [
+                {
+                    "title": "Chapter 14: Python Objects",
+                    "href": "https://www.py4e.com/html3/14-objects"
+                },
+                {
+                    "title": "Quora: Is C++ Object Oriented or Procedural?",
+                    "href": "https://www.quora.com/Is-C-object-oriented-or-procedural/answer/Chuck-Severance"
+                }
+            ],
+            "videos": [
+                {
+                    "title": "Objects - Introduction - Part 1 (10:40)",
+                    "youtube_preplus": "u9xZE5t9Y30",
+                    "youtube": "MafXTB8UXIg"
+                },
+                {
+                    "title": "Objects - A Sample Class - Part 2 (8:22)",
+                    "youtube_preplud": "xYSY7JwpqTM",
+                    "youtube": "cBgtQK6vhN4",
+                    "media": "14-Objects-B-2023-12-28.m4v",
+                    "youtube-2016": "b2vc5uzUfoE"
+                },
+                {
+                    "title": "Objects - Lifecycle - Part 3 (6:09)",
+                    "youtube_preplus": "7A5PEOK-AF0",
+                    "youtube": "QSaHfuMf5QI",
+                    "media": "14-Objects-C-2023-12-28.m4v",
+                    "youtube-2016": "bal0Fv6QE9w"
+                },
+                {
+                    "title": "Objects - Inheritance - Part 4 (7:34)",
+                    "youtube_preplus": "VzVaj8orzOE",
+                    "youtube": "cOf7g_E2G8g",
+                    "media": "14-Objects-D-2023-12-28.m4v",
+                    "youtube-2016": "EE9PaHPPm2w"
+                },
+                {
+                    "title": "The True Story of Python Assignment Statements (7:30)",
+                    "youtube": "zoD2GY11dcY",
+                    "media": "05-14-Py-01-Variables-2025-09.m4v"
+                }
+            ],
+            "lti": [
+                {
+                    "title": "Quiz: Object-Oriented Programming",
+                    "launch": "mod/gift/?quiz=06-Python-Objects.txt",
+                    "resource_link_id": "dj4e_16_oo_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                },
+                {
+                    "title": "Quiz: Python Assignment Statements",
+                    "launch": "mod/gift/?quiz=06-Python-Assignments.txt",
+                    "resource_link_id": "dj4e_06_assign_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "type": "header",
+                    "text": "Slides",
+                    "level": 2
+                },
+                {
+                    "type": "slide",
+                    "title": "Pythonlearn-14-Objects.pptx",
+                    "href": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx"
+                },
+                {
+                    "type": "slide",
+                    "title": "PY-01-Variables.pptx",
+                    "href": "{apphome}/{apphome}/lectures/PY-01-Variables.pptx"
+                },
+                {
+                    "type": "header",
+                    "text": "Videos",
+                    "level": 2
+                },
+                {
+                    "type": "video",
+                    "title": "Objects - Introduction - Part 1 (10:40)",
+                    "youtube_preplus": "u9xZE5t9Y30",
+                    "youtube": "MafXTB8UXIg"
+                },
+                {
+                    "type": "video",
+                    "title": "Objects - A Sample Class - Part 2 (8:22)",
+                    "youtube_preplud": "xYSY7JwpqTM",
+                    "youtube": "cBgtQK6vhN4",
+                    "media": "14-Objects-B-2023-12-28.m4v",
+                    "youtube-2016": "b2vc5uzUfoE"
+                },
+                {
+                    "type": "video",
+                    "title": "Objects - Lifecycle - Part 3 (6:09)",
+                    "youtube_preplus": "7A5PEOK-AF0",
+                    "youtube": "QSaHfuMf5QI",
+                    "media": "14-Objects-C-2023-12-28.m4v",
+                    "youtube-2016": "bal0Fv6QE9w"
+                },
+                {
+                    "type": "video",
+                    "title": "Objects - Inheritance - Part 4 (7:34)",
+                    "youtube_preplus": "VzVaj8orzOE",
+                    "youtube": "cOf7g_E2G8g",
+                    "media": "14-Objects-D-2023-12-28.m4v",
+                    "youtube-2016": "EE9PaHPPm2w"
+                },
+                {
+                    "type": "video",
+                    "title": "The True Story of Python Assignment Statements (7:30)",
+                    "youtube": "zoD2GY11dcY",
+                    "media": "05-14-Py-01-Variables-2025-09.m4v"
+                },
+                {
+                    "type": "header",
+                    "text": "References",
+                    "level": 2
+                },
+                {
+                    "type": "reference",
+                    "title": "Chapter 14: Python Objects",
+                    "href": "https://www.py4e.com/html3/14-objects"
+                },
+                {
+                    "type": "reference",
+                    "title": "Quora: Is C++ Object Oriented or Procedural?",
+                    "href": "https://www.quora.com/Is-C-object-oriented-or-procedural/answer/Chuck-Severance"
+                },
+                {
+                    "type": "header",
+                    "text": "Discussions",
+                    "level": 2
+                },
+                {
+                    "type": "discussion",
+                    "title": "Object-Oriented Programming in Python",
+                    "launch": "mod/tdiscus/",
+                    "resource_link_id": "discuss_09_objects"
+                },
+                {
+                    "type": "header",
+                    "text": "Tools",
+                    "level": 2
+                },
+                {
+                    "type": "lti",
+                    "title": "Quiz: Object-Oriented Programming",
+                    "launch": "mod/gift/?quiz=06-Python-Objects.txt",
+                    "resource_link_id": "dj4e_16_oo_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Quiz: Assignment Statements",
+                    "launch": "mod/gift/?quiz=06-Python-Assignments.txt",
+                    "resource_link_id": "dj4e_06_assign_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Django Data Models",
             "anchor": "dj4e_modules",
             "icon": "fa-database",
@@ -1699,219 +1912,6 @@
                     "title": "Quiz: Django Tutorial 3",
                     "launch": "mod/gift/?quiz=DJ-TUT3.txt",
                     "resource_link_id": "dj4e_tut3_quiz",
-                    "custom": [
-                        {
-                            "key": "tries",
-                            "value": "3"
-                        },
-                        {
-                            "key": "delay",
-                            "value": "601"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Object-Oriented Programming in Python",
-            "anchor": "Objects",
-            "icon": "fa-cubes",
-            "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
-            "slides": [
-                "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
-                "{apphome}/lectures/PY-01-Variables.pptx"
-            ],
-            "discussions": [
-                {
-                    "title": "Object-Oriented Programming in Python",
-                    "launch": "mod/tdiscus/",
-                    "resource_link_id": "discuss_09_objects"
-                }
-            ],
-            "references": [
-                {
-                    "title": "Chapter 14: Python Objects",
-                    "href": "https://www.py4e.com/html3/14-objects"
-                },
-                {
-                    "title": "Quora: Is C++ Object Oriented or Procedural?",
-                    "href": "https://www.quora.com/Is-C-object-oriented-or-procedural/answer/Chuck-Severance"
-                }
-            ],
-            "videos": [
-                {
-                    "title": "Objects - Introduction - Part 1 (10:40)",
-                    "youtube_preplus": "u9xZE5t9Y30",
-                    "youtube": "MafXTB8UXIg"
-                },
-                {
-                    "title": "Objects - A Sample Class - Part 2 (8:22)",
-                    "youtube_preplud": "xYSY7JwpqTM",
-                    "youtube": "cBgtQK6vhN4",
-                    "media": "14-Objects-B-2023-12-28.m4v",
-                    "youtube-2016": "b2vc5uzUfoE"
-                },
-                {
-                    "title": "Objects - Lifecycle - Part 3 (6:09)",
-                    "youtube_preplus": "7A5PEOK-AF0",
-                    "youtube": "QSaHfuMf5QI",
-                    "media": "14-Objects-C-2023-12-28.m4v",
-                    "youtube-2016": "bal0Fv6QE9w"
-                },
-                {
-                    "title": "Objects - Inheritance - Part 4 (7:34)",
-                    "youtube_preplus": "VzVaj8orzOE",
-                    "youtube": "cOf7g_E2G8g",
-                    "media": "14-Objects-D-2023-12-28.m4v",
-                    "youtube-2016": "EE9PaHPPm2w"
-                },
-                {
-                    "title": "The True Story of Python Assignment Statements (7:30)",
-                    "youtube": "zoD2GY11dcY",
-                    "media": "05-14-Py-01-Variables-2025-09.m4v"
-                }
-            ],
-            "lti": [
-                {
-                    "title": "Quiz: Object-Oriented Programming",
-                    "launch": "mod/gift/?quiz=06-Python-Objects.txt",
-                    "resource_link_id": "dj4e_16_oo_quiz",
-                    "custom": [
-                        {
-                            "key": "tries",
-                            "value": "3"
-                        },
-                        {
-                            "key": "delay",
-                            "value": "601"
-                        }
-                    ]
-                },
-                {
-                    "title": "Quiz: Python Assignment Statements",
-                    "launch": "mod/gift/?quiz=06-Python-Assignments.txt",
-                    "resource_link_id": "dj4e_06_assign_quiz",
-                    "custom": [
-                        {
-                            "key": "tries",
-                            "value": "3"
-                        },
-                        {
-                            "key": "delay",
-                            "value": "601"
-                        }
-                    ]
-                }
-            ],
-            "items": [
-                {
-                    "type": "header",
-                    "text": "Slides",
-                    "level": 2
-                },
-                {
-                    "type": "slide",
-                    "title": "Pythonlearn-14-Objects.pptx",
-                    "href": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx"
-                },
-                {
-                    "type": "slide",
-                    "title": "PY-01-Variables.pptx",
-                    "href": "{apphome}/{apphome}/lectures/PY-01-Variables.pptx"
-                },
-                {
-                    "type": "header",
-                    "text": "Videos",
-                    "level": 2
-                },
-                {
-                    "type": "video",
-                    "title": "Objects - Introduction - Part 1 (10:40)",
-                    "youtube_preplus": "u9xZE5t9Y30",
-                    "youtube": "MafXTB8UXIg"
-                },
-                {
-                    "type": "video",
-                    "title": "Objects - A Sample Class - Part 2 (8:22)",
-                    "youtube_preplud": "xYSY7JwpqTM",
-                    "youtube": "cBgtQK6vhN4",
-                    "media": "14-Objects-B-2023-12-28.m4v",
-                    "youtube-2016": "b2vc5uzUfoE"
-                },
-                {
-                    "type": "video",
-                    "title": "Objects - Lifecycle - Part 3 (6:09)",
-                    "youtube_preplus": "7A5PEOK-AF0",
-                    "youtube": "QSaHfuMf5QI",
-                    "media": "14-Objects-C-2023-12-28.m4v",
-                    "youtube-2016": "bal0Fv6QE9w"
-                },
-                {
-                    "type": "video",
-                    "title": "Objects - Inheritance - Part 4 (7:34)",
-                    "youtube_preplus": "VzVaj8orzOE",
-                    "youtube": "cOf7g_E2G8g",
-                    "media": "14-Objects-D-2023-12-28.m4v",
-                    "youtube-2016": "EE9PaHPPm2w"
-                },
-                {
-                    "type": "video",
-                    "title": "The True Story of Python Assignment Statements (7:30)",
-                    "youtube": "zoD2GY11dcY",
-                    "media": "05-14-Py-01-Variables-2025-09.m4v"
-                },
-                {
-                    "type": "header",
-                    "text": "References",
-                    "level": 2
-                },
-                {
-                    "type": "reference",
-                    "title": "Chapter 14: Python Objects",
-                    "href": "https://www.py4e.com/html3/14-objects"
-                },
-                {
-                    "type": "reference",
-                    "title": "Quora: Is C++ Object Oriented or Procedural?",
-                    "href": "https://www.quora.com/Is-C-object-oriented-or-procedural/answer/Chuck-Severance"
-                },
-                {
-                    "type": "header",
-                    "text": "Discussions",
-                    "level": 2
-                },
-                {
-                    "type": "discussion",
-                    "title": "Object-Oriented Programming in Python",
-                    "launch": "mod/tdiscus/",
-                    "resource_link_id": "discuss_09_objects"
-                },
-                {
-                    "type": "header",
-                    "text": "Tools",
-                    "level": 2
-                },
-                {
-                    "type": "lti",
-                    "title": "Quiz: Object-Oriented Programming",
-                    "launch": "mod/gift/?quiz=06-Python-Objects.txt",
-                    "resource_link_id": "dj4e_16_oo_quiz",
-                    "custom": [
-                        {
-                            "key": "tries",
-                            "value": "3"
-                        },
-                        {
-                            "key": "delay",
-                            "value": "601"
-                        }
-                    ]
-                },
-                {
-                    "type": "lti",
-                    "title": "Quiz: Assignment Statements",
-                    "launch": "mod/gift/?quiz=06-Python-Assignments.txt",
-                    "resource_link_id": "dj4e_06_assign_quiz",
                     "custom": [
                         {
                             "key": "tries",
