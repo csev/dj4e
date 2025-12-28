@@ -1,0 +1,2 @@
+Re-record how the autograder works.
+
