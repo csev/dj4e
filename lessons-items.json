@@ -2461,10 +2461,6 @@
             ],
             "videos": [
                 {
-                    "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
-                    "youtube": "zuCxAR3-CzA"
-                },
-                {
                     "title": "Web Applications and the Request/Response Cycle (6:04)",
                     "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
                     "youtube": "ZT8uqIEG92o"
