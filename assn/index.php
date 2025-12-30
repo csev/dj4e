@@ -96,7 +96,6 @@ a:active {
 
 </style>
 <?php
-$OUTPUT->bodyStart();
 // $OUTPUT->topNav();
 
 if ( $contents != false ) {
