@@ -27,6 +27,7 @@ You need to add a <b>mysite/solo1/urls.py</b>, update your <b>mysite/solo1/views
 <b>mysite/mysite/settings.py</b> and <b>mysite/mysite/urls.py</b> files.  You can look at your own code.
 Make sure to edit the <b>mysite/mysite</b> files inserting new lines - do not break these files by replacing
 their entire content.  You will need to keep all your applications (i.e. like polls) working without breaking them.
+The autograder will check the <b>polls</b> application to makes sure it is still working.
 </p>
 <p>
 In your application you need to create one view that responds to the empty ("") path with the following output:

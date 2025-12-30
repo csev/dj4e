@@ -106,13 +106,17 @@ function showHTML($message, $html, $showSource=false) {
     global $OUTPUT;
     global $webauto_http_status;
     global $SHOW_SOURCE;
+    global $WEBAUTO_EXPECT_ERROR;
+
     if ( $showSource || (isset($SHOW_SOURCE) && $SHOW_SOURCE)) {
         togglePre("", "<pre>\n".htmlentities($html)."\n</pre>\n");
     } else {
         togglePre("", $html);
     }
     $pos = strpos($html,'<b>Fatal error</b>');
-    if ( $webauto_http_status != 200 ) {
+    if ( isset($WEBAUTO_EXPECT_ERROR) && is_array($WEBAUTO_EXPECT_ERROR) && in_array($webauto_http_status, $WEBAUTO_EXPECT_ERROR) ) {
+        line_out("Page returned exptected HTTP status=$webauto_http_status");
+    } else if ( $webauto_http_status != 200 ) {
         error_out("Page may have errors, HTTP status=$webauto_http_status");
     } else if ( $pos !== false ) {
         error_out("Your application seems to have a fatal error");
@@ -886,3 +890,12 @@ function line_bold($message) {
     echo('<b>'.htmlentities($message).'</b><br/>');
 }
 
+function webauto_expect_error(int $code) {
+    global $WEBAUTO_EXPECT_ERROR;
+    if ( !isset($WEBAUTO_EXPECT_ERROR) || ! is_array($WEBAUTO_EXPECT_ERROR) || $code == -1 ) {
+        $WEBAUTO_EXPECT_ERROR = array();
+    }
+    $WEBAUTO_EXPECT_ERROR[] = $code;
+}
+
+    

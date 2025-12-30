@@ -55,11 +55,12 @@ error_log("Hello05 ".$url);
 webauto_setup();
 
 // Check that top page
+webauto_expect_error(404);
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler === false ) return;
 $html = webauto_get_html($crawler);
-if (  stripos($html,'Page not found') !== false ) {
-    line_out("Hey - that top page is always a 404 - no problem - lets keep going :) ");
+if ( stripos($html,'Page not found') !== false ) {
+    line_out("Top page is expected to return 404 - so while it is an HTTP error, it is not an autograder error :) ");
     $passed++;
 }
 
