@@ -431,6 +431,10 @@
             "href": "https://sqlitebrowser.org/"
         },
         {
+            "title" : "A Bug Fix to Django Tutorial 2",
+            "href": "https://code.djangoproject.com/ticket/36625"
+        },
+        {
             "title" : "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
             "href" : "{apphome}/assn/dj4e_errors52.md"
         },
