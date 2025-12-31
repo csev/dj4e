@@ -1,2 +1,9 @@
 Re-record how the autograder works.
+Update autograder howto on Coursera
+
+Re-Record install_52
+Update install_52 on Coursera
+
+Re-Record errors_52
+Update errors_52 on Coursera
 
