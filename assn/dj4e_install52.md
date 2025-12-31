@@ -474,8 +474,15 @@ There are many possible errors you might encounter.  We have an entire page of e
 recovery instructions that you might want 
 to bookmark (<a href="dj4e_errors52.md" target="_blank">Fixing Common Django Errors</a>)
 
-You may want to come back to this file throughout the course when you make a small change and end
-up with an error.
+We have built a tool inside of the `dj4e-samples` folder that does a kind of "Check Up"
+on your installation. You should be able to run it at various points and it will see things
+like you put a file in the wrong place or other small configuration error.  It tries to catch
+little errors for you that we have found that many students make.  Simply run this command:
+
+    bash ~/dj4e-samples/tools/checkup.sh 
+
+You may want to come back to this section throughout the course when you make a small
+change and end up with an error.
 
 Starting Over Fresh
 -------------------
