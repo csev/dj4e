@@ -70,19 +70,21 @@
                 {
                     "type": "video",
                     "title": "Installing Django 5.2 on PythonAnywhere (31:59)",
-                    "media": "dj4e-media/lesson-03-install/01-01_paw_install_52_new.m4v",
+                    "media": "dj4e-media/lesson-03-install/03-01-paw_install52_new.m4v",
                     "youtube": "Aba5ZCfua8k"
                 },
                 {
                     "type": "video",
-                    "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
-                    "youtube": "IYH_BkpHf3s"
+                    "title": "How the Autograder Works (10:42)",
+                    "media": "dj4e-media/lesson-03-paw/03-01-DJ-00-AutoGrader.m4v",
+                    "youtube": "zQvzXkiwILM"
                 },
                 {
                     "type": "video",
-                    "title": "How the Autograder Works (9:13)",
+                    "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
                     "media": "lesson-03-paw/02-01_paw_install_errors.m4v",
-                    "youtube": "n5_xdz2Zo3A"
+                    "todo": "Re-record for 2026",
+                    "youtube": "IYH_BkpHf3s"
                 },
                 {
                     "type": "header",
@@ -102,7 +104,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -121,7 +123,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_install52.md"
+                    "href": "{apphome}/assn/dj4e_install52.md"
                 },
                 {
                     "type": "header",
@@ -184,6 +186,7 @@
                     "type": "video",
                     "title": "Using the Command Line Shell on PythonAnywhere (5.2) (18.28)",
                     "media": "lesson-04-shell/01-01_paw_shell.m4v",
+                    "todo": "Re-record for 2026",
                     "FCP": "Shell-01-DJ52",
                     "youtube": "a7YIQb8juQk"
                 },
@@ -195,7 +198,7 @@
                 {
                     "type": "reference",
                     "title": "Using the Shell on PythonAnywhere",
-                    "href": "{apphome}/{apphome}/assn/dj4e_shell52.md"
+                    "href": "{apphome}/assn/dj4e_shell52.md"
                 },
                 {
                     "type": "reference",
@@ -284,7 +287,7 @@
                 {
                     "type": "reference",
                     "title": "Sample SQLite Command Line Operations (SQL-01-Basics.txt)",
-                    "href": "{apphome}/{apphome}/lectures/SQL-01-Basics.txt"
+                    "href": "{apphome}/lectures/SQL-01-Basics.txt"
                 },
                 {
                     "type": "reference",
@@ -375,7 +378,7 @@
                 {
                     "type": "slide",
                     "title": "PY-01-Variables.pptx",
-                    "href": "{apphome}/{apphome}/lectures/PY-01-Variables.pptx"
+                    "href": "{apphome}/lectures/PY-01-Variables.pptx"
                 },
                 {
                     "type": "header",
@@ -546,7 +549,7 @@
                 {
                     "type": "reference",
                     "title": "Django Data Model Commands (DJ-02-Model-Single.txt)",
-                    "href": "{apphome}/{apphome}/lectures/DJ-02-Model-Single.txt"
+                    "href": "{apphome}/lectures/DJ-02-Model-Single.txt"
                 },
                 {
                     "type": "reference",
@@ -566,7 +569,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -668,7 +671,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -678,12 +681,12 @@
                 {
                     "type": "reference",
                     "title": "HTML Sample Code (Browse)",
-                    "href": "{apphome}/{apphome}/code/html/index.htm"
+                    "href": "{apphome}/code/html/index.htm"
                 },
                 {
                     "type": "reference",
                     "title": "HTML Sample Code (Download ZIP)",
-                    "href": "{apphome}/{apphome}/code/html.zip"
+                    "href": "{apphome}/code/html.zip"
                 },
                 {
                     "type": "header",
@@ -692,7 +695,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_html.md"
+                    "href": "{apphome}/assn/dj4e_html.md"
                 },
                 {
                     "type": "header",
@@ -800,12 +803,12 @@
                 {
                     "type": "reference",
                     "title": "CSS Sample Code (Browse)",
-                    "href": "{apphome}/{apphome}/code/css/index.htm"
+                    "href": "{apphome}/code/css/index.htm"
                 },
                 {
                     "type": "reference",
                     "title": "CSS Sample Code (Download ZIP)",
-                    "href": "{apphome}/{apphome}/code/css.zip"
+                    "href": "{apphome}/code/css.zip"
                 },
                 {
                     "type": "reference",
@@ -819,7 +822,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/css/index.php"
+                    "href": "{apphome}/assn/css/index.php"
                 },
                 {
                     "type": "header",
@@ -946,7 +949,7 @@
                 {
                     "type": "reference",
                     "title": "Two MVC Approaches: Python/Django versus Java/Spring MVC",
-                    "href": "{apphome}/{apphome}/rosetta"
+                    "href": "{apphome}/rosetta"
                 },
                 {
                     "type": "header",
@@ -1066,7 +1069,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -1252,7 +1255,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -1454,7 +1457,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -1714,7 +1717,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -1728,7 +1731,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_hello.md"
+                    "href": "{apphome}/assn/dj4e_hello.md"
                 },
                 {
                     "type": "header",
@@ -1859,7 +1862,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_batch.md"
+                    "href": "{apphome}/assn/dj4e_batch.md"
                 },
                 {
                     "type": "header",
@@ -2120,7 +2123,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -2134,7 +2137,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_autos.md"
+                    "href": "{apphome}/assn/dj4e_autos.md"
                 },
                 {
                     "type": "header",
@@ -2282,7 +2285,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -2357,7 +2360,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -2430,7 +2433,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -2444,7 +2447,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_mkt0.md"
+                    "href": "{apphome}/assn/dj4e_mkt0.md"
                 },
                 {
                     "type": "header",
@@ -2634,7 +2637,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -2648,7 +2651,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_mkt1.md"
+                    "href": "{apphome}/assn/dj4e_mkt1.md"
                 },
                 {
                     "type": "header",
@@ -2916,7 +2919,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -2930,7 +2933,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_mkt2.md"
+                    "href": "{apphome}/assn/dj4e_mkt2.md"
                 },
                 {
                     "type": "header",
@@ -3115,7 +3118,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -3129,7 +3132,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_mkt3.md"
+                    "href": "{apphome}/assn/dj4e_mkt3.md"
                 },
                 {
                     "type": "header",
@@ -3422,7 +3425,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -3436,7 +3439,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_mkt4.md"
+                    "href": "{apphome}/assn/dj4e_mkt4.md"
                 },
                 {
                     "type": "header",
@@ -3556,7 +3559,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -3570,7 +3573,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_mkt5.md"
+                    "href": "{apphome}/assn/dj4e_mkt5.md"
                 },
                 {
                     "type": "header",
@@ -3685,7 +3688,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -3750,7 +3753,7 @@
                 {
                     "type": "reference",
                     "title": "Project Specification",
-                    "href": "{apphome}/{apphome}/project/00_overview.md"
+                    "href": "{apphome}/project/00_overview.md"
                 },
                 {
                     "type": "reference",
@@ -3764,7 +3767,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/project/01_description.md"
+                    "href": "{apphome}/project/01_description.md"
                 },
                 {
                     "type": "header",
@@ -3840,7 +3843,7 @@
                 {
                     "type": "reference",
                     "title": "Project Specification",
-                    "href": "{apphome}/{apphome}/project/00_overview.md"
+                    "href": "{apphome}/project/00_overview.md"
                 },
                 {
                     "type": "reference",
@@ -3854,7 +3857,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/project/02_revision.md"
+                    "href": "{apphome}/project/02_revision.md"
                 },
                 {
                     "type": "header",
@@ -3930,7 +3933,7 @@
                 {
                     "type": "reference",
                     "title": "Project Specification",
-                    "href": "{apphome}/{apphome}/project/00_overview.md"
+                    "href": "{apphome}/project/00_overview.md"
                 },
                 {
                     "type": "reference",
@@ -3944,7 +3947,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/project/03_userinterface.md"
+                    "href": "{apphome}/project/03_userinterface.md"
                 },
                 {
                     "type": "header",
@@ -4036,7 +4039,7 @@
                 {
                     "type": "reference",
                     "title": "Project Specification",
-                    "href": "{apphome}/{apphome}/project/00_overview.md"
+                    "href": "{apphome}/project/00_overview.md"
                 },
                 {
                     "type": "reference",
@@ -4050,7 +4053,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/project/04_model.md"
+                    "href": "{apphome}/project/04_model.md"
                 },
                 {
                     "type": "header",
@@ -4134,7 +4137,7 @@
                 {
                     "type": "reference",
                     "title": "Project Specification",
-                    "href": "{apphome}/{apphome}/project/00_overview.md"
+                    "href": "{apphome}/project/00_overview.md"
                 },
                 {
                     "type": "header",
@@ -4217,7 +4220,7 @@
                 {
                     "type": "reference",
                     "title": "Project Specification",
-                    "href": "{apphome}/{apphome}/project/00_overview.md"
+                    "href": "{apphome}/project/00_overview.md"
                 },
                 {
                     "type": "header",
@@ -4358,7 +4361,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors42.md"
+                    "href": "{apphome}/assn/dj4e_errors42.md"
                 },
                 {
                     "type": "reference",
@@ -4372,7 +4375,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_ads1.md"
+                    "href": "{apphome}/assn/dj4e_ads1.md"
                 },
                 {
                     "type": "header",
@@ -4445,7 +4448,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors42.md"
+                    "href": "{apphome}/assn/dj4e_errors42.md"
                 },
                 {
                     "type": "reference",
@@ -4459,7 +4462,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_ads1b.md"
+                    "href": "{apphome}/assn/dj4e_ads1b.md"
                 },
                 {
                     "type": "header",
@@ -4567,7 +4570,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors42.md"
+                    "href": "{apphome}/assn/dj4e_errors42.md"
                 },
                 {
                     "type": "reference",
@@ -4581,7 +4584,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_ads2b.md"
+                    "href": "{apphome}/assn/dj4e_ads2b.md"
                 },
                 {
                     "type": "header",
@@ -4669,7 +4672,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors42.md"
+                    "href": "{apphome}/assn/dj4e_errors42.md"
                 },
                 {
                     "type": "reference",
@@ -4683,7 +4686,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_ads3.md"
+                    "href": "{apphome}/assn/dj4e_ads3.md"
                 },
                 {
                     "type": "header",
@@ -4800,7 +4803,7 @@
                 {
                     "type": "reference",
                     "title": "Fixing Django 4.2 Errors on PythonAnywhere (Handout)",
-                    "href": "{apphome}/{apphome}/assn/dj4e_errors52.md"
+                    "href": "{apphome}/assn/dj4e_errors52.md"
                 },
                 {
                     "type": "reference",
@@ -4814,7 +4817,7 @@
                 },
                 {
                     "type": "assignment",
-                    "href": "{apphome}/{apphome}/assn/dj4e_ads4.md"
+                    "href": "{apphome}/assn/dj4e_ads4.md"
                 },
                 {
                     "type": "header",

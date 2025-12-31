@@ -1,9 +1,15 @@
-Re-record how the autograder works.
 Update autograder howto on Coursera
 
-Re-Record install_52
 Update install_52 on Coursera
 
 Re-Record errors_52
 Update errors_52 on Coursera
+
+Re-record Shell_52
+Update shell_52 on Coursera
+
+Done.
+
+Re-Record install_52 - In CSEV, SI357, Lessons
+Re-record aitograder - In CSEV, SI357,
 
