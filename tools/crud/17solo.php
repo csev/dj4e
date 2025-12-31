@@ -3,6 +3,8 @@
 require_once "../crud/webauto.php";
 require_once "../crud/names.php";
 
+$USE_MARKET = true;
+
 $code = $USER->id+$CONTEXT->id;
 $timecode = $code;
 $timecode = $timecode + intval((time() / (60*60*24)));
@@ -21,7 +23,11 @@ $field1 = 'Hello world';
 $field2 = $names[$timecode % count($names)] .' ' . ($timecode % 100);
 
 $sample = "http://localhost:8000/solo2";
-$sample = "https://chucklist.dj4e.com/solo2";
+if ( $USE_MARKET ) {
+  $sample = "https://market.dj4e.com/solo2";
+} else {
+   $sample = "https://dj4e.pythonanywhere.com/solo2";
+}
 
 // Compute result
 $result = trim($field1) . ' ' . trim($field2);
@@ -65,15 +71,7 @@ $passed = 0;
 
 webauto_setup();
 
-// Check for polls
-$pollsurl = str_replace("/solo2", "/polls", $url);
-
-// Start the actual test
-$crawler = webauto_get_url($client, $pollsurl);
-if ( $crawler === false ) return;
-$html = webauto_get_html($crawler);
-
-webauto_search_for($html, "Answer");
+$using_dj4e_impl = strpos($url, "dj4e.pythonanywhere.com") > 0;
 
 // Start the actual test
 $crawler = webauto_get_url($client, $url);
