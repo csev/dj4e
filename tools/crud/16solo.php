@@ -13,7 +13,7 @@ $quote = $quotes[$quotepos][1];
 
 
 $sample = "http://localhost:8000/solo1";
-$sample = "https://dj4e.pythonanywhere.com/solo1";
+$sample = "https://djtutorial.dj4e.com/solo1";
 
 ?>
 <p>
@@ -47,7 +47,11 @@ $passed = 0;
 webauto_setup();
 
 // Check for polls
-$pollsurl = str_replace("/solo1", "/polls", $url);
+if ( strpos($url, "djtutorial.dj4e.com") > 0 ) {
+    $pollsurl = str_replace("/solo1", "/polls4", $url);
+} else {
+    $pollsurl = str_replace("/solo1", "/polls", $url);
+}
 
 // Start the actual test
 $crawler = webauto_get_url($client, $pollsurl);
