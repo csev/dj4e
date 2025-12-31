@@ -13,7 +13,7 @@ $quote = $quotes[$quotepos][1];
 
 
 $sample = "http://localhost:8000/solo1";
-$sample = "https://drchuck.pythonanywhere.com/solo1";
+$sample = "https://dj4e.pythonanywhere.com/solo1";
 
 ?>
 <p>

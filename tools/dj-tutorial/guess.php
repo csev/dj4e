@@ -7,7 +7,7 @@ $code = $USER->id+$CONTEXT->id;
 $secret = ($code % 90) + 3;
 
 $sample = "http://localhost:8000/guess/";
-$sample = "https://drchuck.pythonanywhere.com/guess/";
+$sample = "https://dj4e.pythonanywhere.com/guess/";
 
 ?>
 <form method="post" action="<?= $sample ?>" target="_blank">

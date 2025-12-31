@@ -44,7 +44,7 @@ Then submit your Django base site (i.e. with no path) to this autograder.
 </p>
 <?php
 
-$url = getUrl('http://drchuck.pythonanywhere.com');
+$url = getUrl('http://dj4e.pythonanywhere.com');
 if ( U::endsWith($url, '/hello') ) $url = str_replace('/hello', '', $url);
 if ( U::endsWith($url, '/hello/') ) $url = str_replace('/hello/', '', $url);
 if ( $url === false ) return;
