@@ -352,7 +352,7 @@ with the following skeleton files for your new application:
                 tests.py
                 views.py
 
-Write your first view in the `mysite/polls/views.py` file:
+Write your first view in the `mysite/polls/views.py` file.  Replace its contents with:
 
     from django.http import HttpResponse
 
