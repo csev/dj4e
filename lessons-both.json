@@ -868,7 +868,6 @@
                     "href": "https://sqlitebrowser.org/"
                 },
                 {
-                    "type": "reference",
                     "title" : "A Bug Fix to Django Tutorial 2",
                     "href": "https://code.djangoproject.com/ticket/36625"
                 },
@@ -949,6 +948,11 @@
                     "type": "reference",
                     "title": "SQLite Browser",
                     "href": "https://sqlitebrowser.org/"
+                },
+                {
+                    "type": "reference",
+                    "title" : "A Bug Fix to Django Tutorial 2",
+                    "href": "https://code.djangoproject.com/ticket/36625"
                 },
                 {
                     "type": "reference",
