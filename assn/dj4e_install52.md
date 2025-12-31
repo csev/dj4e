@@ -151,32 +151,6 @@ This is the normal output of running `check`:
     Using registration/login.html as the login template
     System check identified no issues (0 silenced).
 
-If you see a SyntaxError
-------------------------
-
-If the `check` identifies errors, do not go on to the rest of the assignment
-once you can run `check` and there are no errors.  If you see this error:
-
-    python manage.py check
-      File "manage.py", line 17
-        ) from exc
-             ^
-    SyntaxError: invalid syntax
-
-Do *not* edit your `manage.py` file - the problem is never in that file.
-
-There are several possible reasons for this:
-
-*   It can mean that you are not running in the virtual environment (`.ve52`) and mistakenly
-running Python 2 instead of Python 3.  There is *no error* in `manage.py` - it is valid
-Python 3 syntax that confuses Python 2.
-
-* It can mean that you have edited your `manage.py` file and have introduced a syntax error.  Take a look
-at this <a href="dj4e_install/manage-py.png" target="_blank">screen shot of a working manage.py</a> and check if
-there are any differences.   While you are there you can change line 1 from 'python' to 'python3' and the syntax
-error indication will go away.  Often the mistakes are on the indentation of lines 16 and 17.  Check and match
-the indentation in the screen shot exactly.
-
 When running 'check' works
 --------------------------
 
@@ -200,7 +174,7 @@ The `dj4e-samples` folder is reference material that you can use through
 out the course.   From time to time we might make changes to this and ask you to
 do the following commands to get the latest version of the code.
 
-    cd ~/dj42-samples
+    cd ~/dj43-samples
     git pull origin django52
 
 Building Your Application
@@ -395,7 +369,7 @@ Then create the `mysite/polls/urls.py` and put the following code into it:
         path("", views.index, name="index"),
     ]
 
-Then replace the contents of the `mysite/mysite/urls.py` as following to activate the
+Then replace the contents of the `mysite/mysite/urls.py` with the following to activate the
 `mysite/polls/urls.py` file at the `/polls` URL path in your application.
 
     # mysite/mysite/urls.py from DJ4E
@@ -434,7 +408,7 @@ It is easier to fix errors in the command line.
 <b>Important:</b> If you find an error, you need to stop and go back and fix the error,
 running `python manage.py check` repeatedly until there are no errors.
 
-Once there are no error, navigate to the `Web` tab in PythonAnywhere
+Once there are no errors, navigate to the `Web` tab in PythonAnywhere
 and `Reload` your application and then test your application by navigating to:
 
     (your-account).pythonanywhere.com
