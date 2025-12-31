@@ -110,8 +110,9 @@ Automatically Enabling Your Virtual Environment
 -----------------------------------------------
 
 Each time you start a new shell, you will need to activate your virtual environment.  It
-is a lot simpler to do this automatically every time you login by editing the `/home/(your-account)/.bashrc` file
-in *your* home directory.
+is a lot simpler to do this automatically every time you login by
+editing the `/home/(your-account)/.bashrc` file in *your* home directory
+using the `Files` tab on the PythonAnywhere web site.
 
 Go to the end of that file, add a blank line and the following lines:
 
@@ -197,7 +198,10 @@ If you are doing this for the first time, it should run some migrations and crea
 
 The `dj4e-samples` folder is reference material that you can use through
 out the course.   From time to time we might make changes to this and ask you to
-do a `git pull origin django52` to get the latest version of the code.
+do the following commands to get the latest version of the code.
+
+    cd ~/dj42-samples
+    git pull origin django52
 
 Building Your Application
 -------------------------
@@ -275,7 +279,8 @@ free application for the course.
 
 When making the new application, do *not* create a "Django application" - instead,
 select `manual configuration` and match the Python version to the version that you used in
-your virtual environment above (PythonAnywhere’s latest system image currently defaults to Python 3.13).  Once the webapp is created, you need to
+your virtual environment above (PythonAnywhere’s latest system image currently
+defaults to Python 3.13).  Once the webapp is created, you need to
 make a few changes to the settings for the web app and your application.
 
     Source code: /home/drchuck/django_projects/mysite
@@ -481,8 +486,7 @@ to clear things out:
 
 * Remove all of your running consoles under the www.pythonanywhere.com Consoles tab
 
-* Open a new __bash__ console from the Consoles tab.  Do not run
-the __workon__ command and run the following commands:
+* Open a new __bash__ console from the Consoles tab and run the following commands:
 
         cd ~
         rm -rf .ve52
@@ -493,7 +497,7 @@ the __workon__ command and run the following commands:
 It may give you errors - this is OK.  We just want to make sure that
 no processes are left hanging on to old files.
 
-Then close your console, and delete it under the Consoles tab and go up to the very beginning
+Then close all your consoles, and delete them under the Consoles tab and go up to the very beginning
 of this handout and start over.
 
 We did not remove any of the configuration changes under the Web tab -
