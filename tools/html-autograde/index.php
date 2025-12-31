@@ -151,7 +151,7 @@ Make sure your title tag in the HTML contains this string along with the rest of
 <p>
 <?php
 
-$url = getUrl('https://drchuck.pythonanywhere.com/site/dj4e.htm');
+$url = getUrl('https://djtutorial.dj4e.com/site/dj4e.htm');
 if ( $url === false ) {
     $OUTPUT->footer();
     return;
