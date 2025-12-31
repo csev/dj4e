@@ -7,7 +7,7 @@ account and be logged in on your account.  You should be able to complete all
 of the exercises in this course using a free PythonAnywhere account.
 
 You can view a
-<a href="https://www.youtube.com/watch?v=gefkAEEfujs" target="_blank">video walkthrough
+<a href="https://www.youtube.com/watch?v=Aba5ZCfua8k" target="_blank">video walkthrough
 of installing Django 5.2</a>.
 
 Checking Your Current Virtual Environment
