@@ -1,14 +1,23 @@
-Update autograder howto on Coursera
+
+TODO 2026
+---------
 
 Update install_52 on Coursera
+    "media": "dj4e-media/lesson-03-install/03-01-paw_install52_new.m4v",
+    "FCP": "DJ4E-Demos/01_paw_install52_new/01_paw_install52_new",
+
+Update autograder howto on Coursera
+    "media": "dj4e-media/lesson-03-paw/03-01-DJ-00-AutoGrader.m4v",
+    "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
 
 Re-Record errors_52
 Update errors_52 on Coursera
 
-Re-record Shell_52
+(low priortity) Re-record Shell_52
 Update shell_52 on Coursera
 
-Done.
+DONE
+----
 
 Re-Record install_52 - In CSEV, SI357, Lessons
 Re-record aitograder - In CSEV, SI357,

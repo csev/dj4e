@@ -71,12 +71,14 @@
                     "type": "video",
                     "title": "Installing Django 5.2 on PythonAnywhere (31:59)",
                     "media": "dj4e-media/lesson-03-install/03-01-paw_install52_new.m4v",
+                    "FCP": "DJ4E-Demos/01_paw_install52_new/01_paw_install52_new",
                     "youtube": "Aba5ZCfua8k"
                 },
                 {
                     "type": "video",
                     "title": "How the Autograder Works (10:42)",
                     "media": "dj4e-media/lesson-03-paw/03-01-DJ-00-AutoGrader.m4v",
+                    "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
                     "youtube": "zQvzXkiwILM"
                 },
                 {
