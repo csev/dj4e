@@ -1,5 +1,46 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
+
+    # --- Anti-bot: common probes (site is NOT WordPress) ---
+    # Return 404 to look nonexistent (often reduces retries). Use [F,L,NS] for 403 instead.
+
+    # WordPress probes
+    RewriteRule ^wp-login\.php$ - [R=404,L,NS]
+    RewriteRule ^xmlrpc\.php$ - [R=404,L,NS]
+    RewriteRule ^wp-admin/ - [R=404,L,NS]
+    RewriteRule ^wp-content/ - [R=404,L,NS]
+    RewriteRule ^wp-includes/ - [R=404,L,NS]
+    RewriteRule ^wp-json/ - [R=404,L,NS]
+    RewriteRule ^readme\.html$ - [R=404,L,NS]
+    RewriteRule ^license\.txt$ - [R=404,L,NS]
+
+    # Environment / secret / repo / backup file probes
+    RewriteRule ^\.env$ - [R=404,L,NS]
+    RewriteRule ^\.git/ - [R=404,L,NS]
+    RewriteRule ^\.svn/ - [R=404,L,NS]
+    RewriteRule ^\.hg/ - [R=404,L,NS]
+    RewriteRule ^\.DS_Store$ - [R=404,L,NS]
+    RewriteRule ^(composer\.(json|lock)|package\.json|yarn\.lock|pnpm-lock\.yaml)$ - [R=404,L,NS]
+    RewriteRule ^(phpunit\.xml|phpunit\.xml\.dist)$ - [R=404,L,NS]
+
+    # Common framework / admin panels / installers (very frequently scanned)
+    RewriteRule ^(phpmyadmin|pma|mysqladmin)/ - [R=404,L,NS]
+    RewriteRule ^(admin|administrator|login|user/login|signin|signup)$ - [R=404,L,NS]
+    RewriteRule ^(setup|install|installer|wp-setup)\.php$ - [R=404,L,NS]
+
+    # Common “info” / debug endpoints
+    RewriteRule ^(phpinfo|info)\.php$ - [R=404,L,NS]
+    RewriteRule ^server-status$ - [R=404,L,NS]
+
+    # Shell / CGI / vendor exploits (common wordlists)
+    RewriteRule ^cgi-bin/ - [R=404,L,NS]
+    RewriteRule ^vendor/ - [R=404,L,NS]
+
+    # Backup / swap / editor temp files anywhere in the URL path
+    RewriteRule (^|/).*\.(bak|old|orig|save|swp|swo|tmp|temp)$ - [R=404,L,NS]
+
+    # --- End anti-bot block ---
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} !=/favicon.ico
