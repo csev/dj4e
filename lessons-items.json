@@ -51,7 +51,7 @@
                 {
                     "type": "discussion",
                     "title": "Welcome to Django for Everybody",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/{apphome}/mod/tdiscus/",
                     "resource_link_id": "discussion_welcome"
                 }
             ]
@@ -135,7 +135,7 @@
                 {
                     "type": "discussion",
                     "title": "Installing Django on PythonAnywhere",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_02_install"
                 },
                 {
@@ -146,7 +146,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 1 Concepts",
-                    "launch": "mod/gift/?quiz=DJ-TUT1.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT1.txt",
                     "resource_link_id": "dj4e_01_tut_quiz",
                     "custom": [
                         {
@@ -162,7 +162,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Installing Django",
-                    "launch": "tools/dj-tutorial/",
+                    "launch": "{apphome}/tools/dj-tutorial/",
                     "resource_link_id": "dj4e_install",
                     "custom": [
                         {
@@ -215,7 +215,7 @@
                 {
                     "type": "discussion",
                     "title": "Using the Command Shell on PythonAnywhere",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_00_shell"
                 },
                 {
@@ -226,7 +226,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Using the Linux Command Line",
-                    "launch": "mod/gift/?quiz=00-Shell.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=00-Shell.txt",
                     "resource_link_id": "dj4e_00_shell_quiz",
                     "custom": [
                         {
@@ -319,7 +319,7 @@
                 {
                     "type": "discussion",
                     "title": "Basic SQL",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_05_sql"
                 },
                 {
@@ -330,7 +330,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: SQL",
-                    "launch": "mod/gift/?quiz=04-SQL.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=04-SQL.txt",
                     "resource_link_id": "dj4e_04_sql_quiz",
                     "custom": [
                         {
@@ -346,7 +346,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Basic SQL",
-                    "launch": "tools/sqlite/?exercise=single_lite.php",
+                    "launch": "{apphome}/tools/sqlite/?exercise=single_lite.php",
                     "resource_link_id": "dj4e_basic_sql",
                     "custom": [
                         {
@@ -446,7 +446,7 @@
                 {
                     "type": "discussion",
                     "title": "Object-Oriented Programming in Python",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_09_objects"
                 },
                 {
@@ -457,7 +457,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Object-Oriented Programming",
-                    "launch": "mod/gift/?quiz=06-Python-Objects.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=06-Python-Objects.txt",
                     "resource_link_id": "dj4e_16_oo_quiz",
                     "custom": [
                         {
@@ -473,7 +473,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Assignment Statements",
-                    "launch": "mod/gift/?quiz=06-Python-Assignments.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=06-Python-Assignments.txt",
                     "resource_link_id": "dj4e_06_assign_quiz",
                     "custom": [
                         {
@@ -586,7 +586,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Data Models",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_06_model"
                 },
                 {
@@ -597,7 +597,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Tutorial part 2",
-                    "launch": "tools/dj-tutorial/",
+                    "launch": "{apphome}/tools/dj-tutorial/",
                     "resource_link_id": "dj4e_tut_2",
                     "learning_objectives": "models / admin",
                     "custom": [
@@ -610,7 +610,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 2",
-                    "launch": "mod/gift/?quiz=DJ-TUT2.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT2.txt",
                     "resource_link_id": "dj4e_03_tut2_quiz",
                     "custom": [
                         {
@@ -707,7 +707,7 @@
                 {
                     "type": "discussion",
                     "title": "HyperText Markup Language (HTML)",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_03_html"
                 },
                 {
@@ -718,7 +718,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: HTML",
-                    "launch": "mod/gift/?quiz=00-HTML.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=00-HTML.txt",
                     "resource_link_id": "dj4e_01_html_quiz",
                     "custom": [
                         {
@@ -734,7 +734,7 @@
                 {
                     "type": "lti",
                     "title": "Autograder: HyperText Markup Language (HTML)",
-                    "launch": "tools/html-autograde/",
+                    "launch": "{apphome}/tools/html-autograde/",
                     "resource_link_id": "html_01",
                     "custom": [
                         {
@@ -834,7 +834,7 @@
                 {
                     "type": "discussion",
                     "title": "Cascading Style Sheets (CSS)",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_04_css"
                 },
                 {
@@ -845,7 +845,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: CSS",
-                    "launch": "mod/gift/?quiz=00-CSS.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=00-CSS.txt",
                     "resource_link_id": "php_01_css_quiz",
                     "custom": [
                         {
@@ -861,7 +861,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Cascading Style Sheets (CSS)",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "css",
                     "custom": [
                         {
@@ -961,7 +961,7 @@
                 {
                     "type": "discussion",
                     "title": "Understanding Model View Controller (MVC)",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_07_mvc"
                 },
                 {
@@ -972,7 +972,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Model-View-Controller",
-                    "launch": "mod/gift/?quiz=05-MVC.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=05-MVC.txt",
                     "resource_link_id": "dj4e_01_mvc_quiz",
                     "custom": [
                         {
@@ -1126,7 +1126,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Views and Templates",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_08_views"
                 },
                 {
@@ -1137,7 +1137,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Views and Templates",
-                    "launch": "mod/gift/?quiz=06-Views-Templates.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=06-Views-Templates.txt",
                     "resource_link_id": "dj4e_06_views_quiz",
                     "custom": [
                         {
@@ -1153,7 +1153,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Tutorial part 3",
-                    "launch": "tools/dj-tutorial/",
+                    "launch": "{apphome}/tools/dj-tutorial/",
                     "resource_link_id": "dj4e_tut_3",
                     "learning_objectives": "Views / templates",
                     "custom": [
@@ -1166,7 +1166,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 3",
-                    "launch": "mod/gift/?quiz=DJ-TUT3.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT3.txt",
                     "resource_link_id": "dj4e_tut3_quiz",
                     "custom": [
                         {
@@ -1272,7 +1272,7 @@
                 {
                     "type": "discussion",
                     "title": "Forms in HTTP and HTML",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_11_forms"
                 },
                 {
@@ -1283,7 +1283,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: HTML Forms",
-                    "launch": "mod/gift/?quiz=10-Forms-HTML.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=10-Forms-HTML.txt",
                     "resource_link_id": "dj4e_html_forms_quiz",
                     "custom": [
                         {
@@ -1299,7 +1299,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Tutorial part 4",
-                    "launch": "tools/dj-tutorial/",
+                    "launch": "{apphome}/tools/dj-tutorial/",
                     "resource_link_id": "dj4e_tut_4",
                     "learning_objectives": "Forms / CSRF / DB update / Generic Views",
                     "custom": [
@@ -1312,7 +1312,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 4",
-                    "launch": "mod/gift/?quiz=DJ-TUT4.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT4.txt",
                     "resource_link_id": "dj4e_tut4_quiz",
                     "custom": [
                         {
@@ -1398,7 +1398,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Generic Views",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_10_generic"
                 },
                 {
@@ -1409,7 +1409,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Generic Views",
-                    "launch": "mod/gift/?quiz=07-Views-Generic.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=07-Views-Generic.txt",
                     "resource_link_id": "dj4e_07_generic_quiz",
                     "custom": [
                         {
@@ -1474,7 +1474,7 @@
                 {
                     "type": "discussion",
                     "title": "A Solo Appplication",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_29_solo"
                 },
                 {
@@ -1485,7 +1485,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: An Application of Your Own",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_app_solo",
                     "custom": [
                         {
@@ -1602,7 +1602,7 @@
                 {
                     "type": "discussion",
                     "title": "Introduction to Dynamic Web Content",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_01_intro"
                 },
                 {
@@ -1613,7 +1613,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Request-Response Cycle",
-                    "launch": "mod/gift/?quiz=01-Request-Response.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=01-Request-Response.txt",
                     "resource_link_id": "dj4e_01_rrc_quiz",
                     "custom": [
                         {
@@ -1629,7 +1629,7 @@
                 {
                     "type": "lti",
                     "title": "Autograder: Request-Response Cycle",
-                    "launch": "tools/http/",
+                    "launch": "{apphome}/tools/http/",
                     "resource_link_id": "dj4e_01_rrc",
                     "custom": [
                         {
@@ -1641,7 +1641,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: The Big Picture of a Django Application",
-                    "launch": "mod/gift/?quiz=08-BigPicture.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=08-BigPicture.txt",
                     "resource_link_id": "dj4e_08_big_quiz",
                     "custom": [
                         {
@@ -1657,7 +1657,7 @@
                 {
                     "type": "lti",
                     "title": "Autograder: Run mini_django on your computer",
-                    "launch": "tools/jsauto/?exercise=mini_01.php",
+                    "launch": "{apphome}/tools/jsauto/?exercise=mini_01.php",
                     "resource_link_id": "dj4e_01_rrc_mini",
                     "custom": [
                         {
@@ -1743,7 +1743,7 @@
                 {
                     "type": "discussion",
                     "title": "Cookies and Sessions",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_12_sessions"
                 },
                 {
@@ -1754,7 +1754,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Cookies and Sessions",
-                    "launch": "mod/gift/?quiz=09-Cookies-Sessions.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=09-Cookies-Sessions.txt",
                     "resource_link_id": "dj4e_09_cookie_quiz",
                     "custom": [
                         {
@@ -1770,14 +1770,14 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Cookies!",
-                    "launch": "tools/cookies/",
+                    "launch": "{apphome}/tools/cookies/",
                     "learning_objectives": "Cookies",
                     "resource_link_id": "dj4e_cookie"
                 },
                 {
                     "type": "lti",
                     "title": "Auto-grader: Hello World",
-                    "launch": "tools/dj-tutorial/",
+                    "launch": "{apphome}/tools/dj-tutorial/",
                     "learning_objectives": "Cookies / Sessions / DIY",
                     "resource_link_id": "dj4e_hello",
                     "custom": [
@@ -1874,7 +1874,7 @@
                 {
                     "type": "discussion",
                     "title": "One-To-Many Data Models",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_15_one"
                 },
                 {
@@ -1885,7 +1885,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: One to Many Data Models",
-                    "launch": "mod/gift/?quiz=DB-03-One-To-Many.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=DB-03-One-To-Many.txt",
                     "resource_link_id": "dj4e_db_one_quiz",
                     "custom": [
                         {
@@ -1901,7 +1901,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Polls Data Model",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "peer_model",
                     "custom": [
                         {
@@ -1936,7 +1936,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: One-to-Many Polls Data",
-                    "launch": "tools/sqlite/",
+                    "launch": "{apphome}/tools/sqlite/",
                     "resource_link_id": "dj4e_batch",
                     "custom": [
                         {
@@ -1995,7 +1995,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Users and Authentication",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_13_users"
                 },
                 {
@@ -2006,7 +2006,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Login and Authentication",
-                    "launch": "mod/gift/?quiz=10-Login.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=10-Login.txt",
                     "resource_link_id": "dj4e_10_login_quiz",
                     "custom": [
                         {
@@ -2073,7 +2073,7 @@
                 {
                     "type": "discussion",
                     "title": "Forms in Django",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_14_forms"
                 },
                 {
@@ -2084,7 +2084,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Forms",
-                    "launch": "mod/gift/?quiz=11-Django-Forms.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=11-Django-Forms.txt",
                     "resource_link_id": "dj4e_forms_django",
                     "custom": [
                         {
@@ -2149,7 +2149,7 @@
                 {
                     "type": "discussion",
                     "title": "Autos CRUD Application",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_16_autos"
                 },
                 {
@@ -2160,7 +2160,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Autos CRUD",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_autos",
                     "custom": [
                         {
@@ -2213,7 +2213,7 @@
             "lti": [
                 {
                     "title": "Auto-grader: Cats CRUD",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_cats",
                     "custom": [
                         {
@@ -2302,7 +2302,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Cats CRUD",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_cats",
                     "custom": [
                         {
@@ -2377,7 +2377,7 @@
                 {
                     "type": "discussion",
                     "title": "A Second Solo Appplication",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_29_solo2"
                 },
                 {
@@ -2388,7 +2388,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: A Second Solo Application",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_app_solo2",
                     "custom": [
                         {
@@ -2459,7 +2459,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace Setup",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_mkt0"
                 },
                 {
@@ -2470,7 +2470,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Marketplace Setup",
-                    "launch": "tools/market/",
+                    "launch": "{apphome}/tools/market/",
                     "resource_link_id": "dj4e_mkt0",
                     "custom": [
                         {
@@ -2541,7 +2541,7 @@
                 {
                     "type": "discussion",
                     "title": "Owned Rows",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_19_owned"
                 },
                 {
@@ -2552,7 +2552,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Owned Rows",
-                    "launch": "mod/gift/?quiz=12-Owned-Rows.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=12-Owned-Rows.txt",
                     "resource_link_id": "dj4e_12_owned",
                     "custom": [
                         {
@@ -2663,7 +2663,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace #1",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_mkt1"
                 },
                 {
@@ -2674,7 +2674,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Marketplace (1)",
-                    "launch": "tools/market/",
+                    "launch": "{apphome}/tools/market/",
                     "resource_link_id": "dj4e_mkt1",
                     "custom": [
                         {
@@ -2764,7 +2764,7 @@
                 {
                     "type": "discussion",
                     "title": "JavaScript",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_22_javascript"
                 },
                 {
@@ -2775,7 +2775,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: JavaScript",
-                    "launch": "mod/gift/?quiz=JS-01-JavaScript.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=JS-01-JavaScript.txt",
                     "resource_link_id": "js_01_javascript_quiz",
                     "custom": [
                         {
@@ -2855,7 +2855,7 @@
                 {
                     "type": "discussion",
                     "title": "Object Oriented Programming in JavaScript",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_23_oojs"
                 },
                 {
@@ -2866,7 +2866,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: JavaScript Objects",
-                    "launch": "mod/gift/?quiz=JS-02-Objects.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=JS-02-Objects.txt",
                     "resource_link_id": "js_02_js_objects_quiz",
                     "custom": [
                         {
@@ -2945,7 +2945,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads + Pictures",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_mkt2"
                 },
                 {
@@ -2956,7 +2956,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Marketplace + Pictures (2)",
-                    "launch": "tools/market/",
+                    "launch": "{apphome}/tools/market/",
                     "resource_link_id": "dj4e_mkt2",
                     "custom": [
                         {
@@ -2972,7 +2972,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Menus and Pictures",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "dj4e_mkt2_peer",
                     "custom": [
                         {
@@ -3054,7 +3054,7 @@
                 {
                     "type": "discussion",
                     "title": "Many-To-Many Data Models",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_21_many"
                 },
                 {
@@ -3065,7 +3065,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Many-To-Many",
-                    "launch": "mod/gift/?quiz=DB-04-Many-To-Many.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=DB-04-Many-To-Many.txt",
                     "resource_link_id": "dj4e_db_04_many",
                     "custom": [
                         {
@@ -3144,7 +3144,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace + Comments (3)",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_mkt3"
                 },
                 {
@@ -3155,7 +3155,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Marketplace + Comments (3)",
-                    "launch": "tools/market/",
+                    "launch": "{apphome}/tools/market/",
                     "resource_link_id": "dj4e_mkt3",
                     "custom": [
                         {
@@ -3250,7 +3250,7 @@
                 {
                     "type": "discussion",
                     "title": "JavaScript in the Browser",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_25_browser"
                 },
                 {
@@ -3261,7 +3261,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Browser and JavaScript",
-                    "launch": "mod/gift/?quiz=JS-03-Browser.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=JS-03-Browser.txt",
                     "resource_link_id": "js_03_browser",
                     "custom": [
                         {
@@ -3346,7 +3346,7 @@
                 {
                     "type": "discussion",
                     "title": "JSON / AJAX",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_26_ajax"
                 },
                 {
@@ -3357,7 +3357,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: JSON",
-                    "launch": "mod/gift/?quiz=JS-04-AJAX-JSON.txt",
+                    "launch": "{apphome}/mod/gift/?quiz=JS-04-AJAX-JSON.txt",
                     "resource_link_id": "js_04_json",
                     "custom": [
                         {
@@ -3451,7 +3451,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace - Favorites (4)",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_mkt4"
                 },
                 {
@@ -3462,7 +3462,7 @@
                 {
                     "type": "lti",
                     "title": "Autograder: Marketplace - Favorites (4)",
-                    "launch": "tools/market/",
+                    "launch": "{apphome}/tools/market/",
                     "resource_link_id": "dj4e_mkt4",
                     "custom": [
                         {
@@ -3478,7 +3478,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Market 4 Favorites User Interface",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "dj4e_mkt4_peer",
                     "custom": [
                         {
@@ -3585,7 +3585,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace #5",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_mkt5"
                 },
                 {
@@ -3596,7 +3596,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Marketplace - Search (5)",
-                    "launch": "tools/market/",
+                    "launch": "{apphome}/tools/market/",
                     "resource_link_id": "dj4e_mkt5",
                     "custom": [
                         {
@@ -3612,7 +3612,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Marketplace Search User Interface",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "peer_mkt5",
                     "custom": [
                         {
@@ -3705,7 +3705,7 @@
                 {
                     "type": "discussion",
                     "title": "CRUD Practice",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_29_crud"
                 },
                 {
@@ -3716,7 +3716,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Autos CRUD Practice",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_crud2_autos",
                     "custom": [
                         {
@@ -3728,7 +3728,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Cats CRUD Practice",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_crud2_cats",
                     "custom": [
                         {
@@ -3779,7 +3779,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Overview",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_30_project"
                 },
                 {
@@ -3790,7 +3790,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Project Description",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "pr_description",
                     "custom": [
                         {
@@ -3869,7 +3869,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 2",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_31_pr2"
                 },
                 {
@@ -3880,7 +3880,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Project Revision",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "pr_02_milestone",
                     "custom": [
                         {
@@ -3959,7 +3959,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 3",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_32_pr3"
                 },
                 {
@@ -3970,7 +3970,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: UI Design (1)",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "pr_03_milestone",
                     "custom": [
                         {
@@ -4065,7 +4065,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 4",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_33_pr4"
                 },
                 {
@@ -4076,7 +4076,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Data Model",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "pr_04_milestone",
                     "custom": [
                         {
@@ -4149,7 +4149,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 5 - Project Review",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_34_pr5"
                 },
                 {
@@ -4160,7 +4160,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Project Review",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "pr_05_milestone",
                     "custom": [
                         {
@@ -4232,7 +4232,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 6 - Final Report",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_35_pr6"
                 },
                 {
@@ -4243,7 +4243,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Final Project",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "pr_06_milestone",
                     "custom": [
                         {
@@ -4387,7 +4387,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #1",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_20_ads1"
                 },
                 {
@@ -4398,7 +4398,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Ad List #1",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_ads1",
                     "custom": [
                         {
@@ -4474,7 +4474,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads + Pictures",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_24_ads1b"
                 },
                 {
@@ -4485,7 +4485,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Ad List + Pictures",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_ads1b",
                     "custom": [
                         {
@@ -4497,7 +4497,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Menus and Pictures",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "dj4e_peer_ads1b",
                     "custom": [
                         {
@@ -4596,7 +4596,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #2",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_24_ads2"
                 },
                 {
@@ -4607,7 +4607,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Ad List + Comments",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_ads2b",
                     "custom": [
                         {
@@ -4698,7 +4698,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #3",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_27_ads3"
                 },
                 {
@@ -4709,7 +4709,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Ad List #3",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_ads3",
                     "custom": [
                         {
@@ -4721,7 +4721,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Ads3 User Interface",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "peer_ads_3",
                     "custom": [
                         {
@@ -4829,7 +4829,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #4",
-                    "launch": "mod/tdiscus/",
+                    "launch": "{apphome}/mod/tdiscus/",
                     "resource_link_id": "discuss_28_ads4"
                 },
                 {
@@ -4840,7 +4840,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Ad List #4",
-                    "launch": "tools/crud/",
+                    "launch": "{apphome}/tools/crud/",
                     "resource_link_id": "dj4e_ads4",
                     "custom": [
                         {
@@ -4852,7 +4852,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Ads 4 User Interface",
-                    "launch": "mod/peer-grade/",
+                    "launch": "{apphome}/mod/peer-grade/",
                     "resource_link_id": "peer_ads_4",
                     "custom": [
                         {
@@ -4904,7 +4904,7 @@
             "lti": [
                 {
                     "title": "Auto-grader: MDN Skeleton Web Site",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_skeleton",
                     "custom": [
                         {
@@ -4915,7 +4915,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Models",
-                    "launch": "tools/mdn-sql/",
+                    "launch": "{apphome}/tools/mdn-sql/",
                     "resource_link_id": "mdn_modules",
                     "custom": [
                         {
@@ -4926,7 +4926,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Admin",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_admin",
                     "custom": [
                         {
@@ -4937,7 +4937,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Home Page",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_home",
                     "custom": [
                         {
@@ -4948,7 +4948,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Detail Pages",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_detail",
                     "custom": [
                         {
@@ -4959,7 +4959,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Sessions",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_sessions",
                     "custom": [
                         {
@@ -4970,7 +4970,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Users",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_users",
                     "custom": [
                         {
@@ -4981,7 +4981,7 @@
                 },
                 {
                     "title": "Auto-grader: Django Forms",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_forms",
                     "custom": [
                         {
@@ -5010,7 +5010,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: MDN Skeleton Web Site",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_skeleton",
                     "custom": [
                         {
@@ -5022,7 +5022,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Models",
-                    "launch": "tools/mdn-sql/",
+                    "launch": "{apphome}/tools/mdn-sql/",
                     "resource_link_id": "mdn_modules",
                     "custom": [
                         {
@@ -5034,7 +5034,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Admin",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_admin",
                     "custom": [
                         {
@@ -5046,7 +5046,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Home Page",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_home",
                     "custom": [
                         {
@@ -5058,7 +5058,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Detail Pages",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_detail",
                     "custom": [
                         {
@@ -5070,7 +5070,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Sessions",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_sessions",
                     "custom": [
                         {
@@ -5082,7 +5082,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Users",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_users",
                     "custom": [
                         {
@@ -5094,7 +5094,7 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Django Forms",
-                    "launch": "tools/mdn-tutorial/",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
                     "resource_link_id": "mdn_forms",
                     "custom": [
                         {
