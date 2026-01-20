@@ -94,6 +94,12 @@ a:active {
   text-decoration: underline;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse; /* Merges borders for a single line look */
+    padding: 8px; /* Adds space inside cells */
+  }
+
 </style>
 <?php
 // $OUTPUT->topNav();

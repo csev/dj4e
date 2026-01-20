@@ -1,6 +1,6 @@
 
-Django Project Tutorial 2
-=========================
+Django Project Tutorial 2 - On PythonAnywhere
+=============================================
 
 Learning Objectives:
 
@@ -9,54 +9,73 @@ Learning Objectives:
 * Understand the django admin feature
 * Understand databases and Django migration
 
-Follow the instructions in this tutorial:
+
+We are going to do the second tutorial from the Django project web site.  That tutorial
+is generic and can be used in many situations including developing locally on your own
+computer - but we need to do the tutorial on PythonAnywhere.
+
+**Important:** Do not go back to tutorial1 on the Django web site and create the folder `djangotutorial`.
+You already have this folder from the first assignment in this class called `~/django_projects/mysite`.
+
+So we need a mapping between what the tutorial says and what you do on PythonAnywhere -
+A Rosetta stone as it were.  This table maps from what the tutorial says to how you
+do it in PythonAnywhere.  In general, you are doing the the same thing in a different
+place or in a different way.
+
+| Django Project Tutorial | On PythonAnywhere | 
+| -------------- | ------------ |
+| Open up `mysite/settings.py` | Open `django_projects/mysite/mysite/settings.py` in the Files editor |
+| `cd  djangotutorial` | `cd ~/django_projects/mysite` |
+| `python manage.py migrate` | In the console / shell: <br/> `cd ~/django_projects/mysite`<br/> `python manage.py migrate` |
+| Edit the `polls/models.py` | Open `django_projects/mysite/polls/models.py` in the Files editor |
+| `python manage.py makemigrations polls` | In the console / shell: <br/> `cd ~/django_projects/mysite`<br/> `python manage.py makemigrations polls` | 
+| `python manage.py sqlmigrate polls 0001` | In the console / shell: <br/> `cd ~/django_projects/mysite`<br/> `python manage.py sqlmigrate polls 0001` | 
+| `python manage.py shell` | In the console / shell: <br/> `cd ~/django_projects/mysite`<br/> `python manage.py shell` |
+| `python manage.py createsuperuser` | In the console / shell: <br/> `cd ~/django_projects/mysite`<br/> `python manage.py createsuperuser` |
+| `python manage.py runserver` | In the console / shell: <br/> `cd ~/django_projects/mysite`<br/> `python manage.py check` <br/> If there are no errors from `check`, reload your web application in the Web Tab  or in a text editor |
+| Open `http://127.0.0.1:8000/admin/` in your browser | Open `https://(your-account).pythonanywhere.com/admin/` (with your account) in your browser |
+
+After a few assignments, you won't need this "Rosetta Stone" / "Cheat Sheet" mapping between generic
+DJango instructions and PythonAnywhere. You will be able to look at generic 
+Django instructions and map thme on to "how we do it on PythonAnywhere".
+
+Django Project Tutorial 2
+-------------------------
+
+Armed with the above mapping, follow the instructions in this tutorial:
 
 https://docs.djangoproject.com/en/5.2/intro/tutorial02/
 
-Skim all the notes below before starting the tutorial - it will save you a lot of time.
+One suggestion, when the tutorial tells you to put the following in `~/django_projects/mysite/polls/admin.py`:
 
-Notes for PythonAnywhere
-------------------------
+    from django.contrib import admin
 
-**Important:** Do not go back to tutorial1 on the Django web site and create the folder `djangotutorial`
-- you already have this folder from the first assignment called `django_projects`.
+    from .models import Question
 
-Make sure to do all your work in `~/django_projects/myite`
-and not `djangotutorial`.  You can always type this command
-to make sure you are in the correct folder in a PythonAnywhere shell:
+    admin.site.register(Question)
 
-    cd ~/django_projects/mysite
+Insert the following instead:
 
-**Hint:** At the point where the tutorial tells you to modify the `polls/admin.py` you
-should also import the `Choice` model following the pattern of importing the `Question` model.
-It will make completing the assignment a lot easier.
+    from django.contrib import admin
 
-Note that when you are typing a password for the `createsuperuser` command in the tutorial,
-it does not echo your characters so folks can't observe your password.
-It looks like your typing is not working - but it is - simply
-type the letters and then enter - you will enter your password twice to verify.
+    from .models import Question
+    from .models import Choice
 
-Also when you are running `python manage.py shell` - to exit the shell and get back to `bash`
-use the `quit()` command.
+    admin.site.register(Question)
+    admin.site.register(Choice)
 
-Also as a reminder, you never use `runserver` on PythonAnywhere:
+It makes it easier to edit questions and choices in the Admin UI.
 
-    python manage.py runserver     # <-- Never run this on pythonanywhere
+Also when you are shown code samples like:
 
-Instead after you change files, run
 
-    python manage.py check
+    class Question(models.Model):
+        # ...
+        def __str__(self):
+            return self.question_text
 
-And then go to the PythonAnywhere Web tab and press Reload.
-
-Also when it tells you to navigate to a `localhost` or `127.0.0.1` like
-
-    http://127.0.0.1:8000/admin
-    http://localhost:8000/admin
-
-Instead nagivate to the same path on your PythonAnywhere site:
-
-    (your-account).pythonanywhere.com/admin
+The `...` means that you are supposed to keep the information in the file that is already there and
+add two new lines.
 
 If You Create an admin User and Need to Change its Password
 ------------------------------------------------------------

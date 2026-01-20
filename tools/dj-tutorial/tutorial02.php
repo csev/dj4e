@@ -10,7 +10,9 @@ $qtext = 'Answer to the Ultimate Question';
 <p>
 For this assignment work through Part 2 of the Django tutorial at
 <a href="../../assn/dj4e_tut02.md" class="btn btn-info" target="_blank">
-https://www.dj4e.com/assn/dj4e_tut02.md</a>.
+https://www.dj4e.com/assn/dj4e_tut02.md</a>.  Pay close attention to
+the mapping of commands from the Django tutotial to how you do things
+on PythonAnywhere.
 </a>
 </p>
 <p>
