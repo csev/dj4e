@@ -27,12 +27,11 @@ The 'nn' is a 2-digit number that by now, you should be able to easily guess.
 Making a New Application
 ------------------------
 
-Activate any virtual environment you need (if any) and go into your `django_projects` folder
+Make sure you are in your virtual environment and go into your `django_projects` folder
 and start a new application in your `mysite` project (this project already should have the 'hello'
 application from a
 <a href="dj4e_hello.md">previous assignment</a>).
 
-    workon django42      # or django4 as needed
     cd ~/django_projects/mysite
     python manage.py startapp autos
 
@@ -66,7 +65,8 @@ Here are some tasks:
 * Go into your `dj4e-samples` folder and do a `git pull` to get the latest version of the samples code.
 
 * Create `mysite/home/templates/registration` folders and copy the
-(<a href="https://github.com/csev/dj4e-samples/blob/main/home/templates/registration/login.html" target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
+(<a href="https://github.com/csev/dj4e-samples/blob/main/home/templates/registration/login.html" 
+target="_blank">login.html</a>) template from `dj4e-samples` into `mysite/home/templates/registration/login.html`.
 
 * Copy the file from `dj4e-samples/home/templates/base_bootstrap.html` into
 your `mysite/home/templates/base_bootstrap.html` - this will be used in your `autos/templates` and make our HTML look
@@ -78,7 +78,7 @@ You can follow the pattern of the `HomeConfig` line in that file.
 
 * Edit `mysite/mysite/urls.py` and
 add the `accounts/` path so you can use the Django built in login features.
-(<a href="https://docs.djangoproject.com/en/4.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
+(<a href="https://docs.djangoproject.com/en/5.2/topics/auth/default/#module-django.contrib.auth.views" target="_blank">Authentication Views</a>).
 Also edit `mysite/mysite/urls.py` to route `autos/` urls to `autos/urls.py` file.
 
         path('accounts/', include('django.contrib.auth.urls')),  # Add
