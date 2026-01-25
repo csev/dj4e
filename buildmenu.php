@@ -6,20 +6,16 @@ function buildMenu() {
     global $CFG;
     $R = $CFG->apphome . '/';
     $T = $CFG->wwwroot . '/';
-    $L = $CFG->wwwroot . '/lms/';
-    $A = $L . 'announce';
-
-    // Generate URLs using rest_path and addSession
-    $json_url = U::addSession($A . '/json.php');
-    $dismiss_url = U::addSession($A . '/dismiss.php');
-    $view_url = U::addSession($A . '/index.php');
+    $json_url = $R . 'announcements/json';
+    $dismiss_url = $R . 'announcements/dismiss';
+    $view_url = $R . 'announcements';
 
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
     $set = new \Tsugi\UI\MenuSet();
     $set->setHome($CFG->servicename, $CFG->apphome);
 
     if ( isset($CFG->lessons) ) {
-        $set->addLeft('Lessons', $L.'lessons');
+        $set->addLeft('Lessons', $R.'lessons');
     }
     if ( isset($CFG->tdiscus) && $CFG->tdiscus ) $set->addLeft('Discussions', $R.'discussions');
     if ( isset($_SESSION['id']) ) {
@@ -43,9 +39,9 @@ function buildMenu() {
         if ( file_exists('privacy.php') ) {
             $submenu->addLink('Privacy', $R.'privacy');
         }
-        $submenu->addLink('Announcements', $L.'announce');
-        $submenu->addLink('Grades', $L.'grades');
-        $submenu->addLink('Pages', $L.'pages');
+        $submenu->addLink('Announcements', $R.'announcements');
+        $submenu->addLink('Grades', $R.'grades');
+        $submenu->addLink('Pages', $R.'pages');
         $submenu->addLink('LMS Integration', $T . 'settings');
         if ( isset($CFG->google_classroom_secret) ) {
             $submenu->addLink('Google Classroom', $T.'gclass/login');
