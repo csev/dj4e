@@ -533,6 +533,13 @@
                 },
                 {
                     "type": "video",
+                    "title": "Demonstration: Django Project Tutorial 2 (29:20)",
+                    "media": "lesson-08-models/03-04_paw_models_2026.m4v",
+                    "project": "DJ4E-Demos tutorial02 tutorial02",
+                    "youtube": "VmWRxV6iAPI"
+                },
+                {
+                    "type": "video",
                     "title": "Demonstration: Resetting your Django database on PythonAnywhere (5:47)",
                     "media": "lesson-08-models/04-tut2-reset-database-edit.mov",
                     "project": "tut2 reset database edit",
