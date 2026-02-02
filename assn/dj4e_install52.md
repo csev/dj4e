@@ -174,7 +174,7 @@ The `dj4e-samples` folder is reference material that you can use through
 out the course.   From time to time we might make changes to this and ask you to
 do the following commands to get the latest version of the code.
 
-    cd ~/dj43-samples
+    cd ~/dj4e-samples
     git pull origin django52
 
 Building Your Application
