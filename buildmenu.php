@@ -6,9 +6,6 @@ function buildMenu() {
     global $CFG;
     $R = $CFG->apphome . '/';
     $T = $CFG->wwwroot . '/';
-    $json_url = $R . 'announcements/json';
-    $dismiss_url = $R . 'announcements/dismiss';
-    $view_url = $R . 'announcements';
 
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
     $set = new \Tsugi\UI\MenuSet();
@@ -41,6 +38,7 @@ function buildMenu() {
             $submenu->addLink('Privacy', $R.'privacy');
         }
         $submenu->addLink('Announcements', $R.'announcements');
+        $submenu->addLink('Notifications', $R.'notifications');
         $submenu->addLink('Grades', $R.'grades');
         $submenu->addLink('Pages', $R.'pages');
         $submenu->addLink('LMS Integration', $T . 'settings');
