@@ -38,6 +38,8 @@ $CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
 
 $CFG->google_login_redirect = $CFG->apphome . "/login";
 
+$CFG->service_worker = true;
+
 $CFG->setExtension('django_version', '5.2');
 $CFG->setExtension('django_version_short', '52');
 
