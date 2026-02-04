@@ -27,7 +27,7 @@
     RewriteRule ^(phpmyadmin|pma|mysqladmin)/ - [R=404,L,NS]
     # Allow /login to pass through to the application
     RewriteCond %{REQUEST_URI} !^/login$
-    RewriteRule ^(admin|administrator|login|user/login|signin|signup)$ - [R=404,L,NS]
+    RewriteRule ^(admin|administrator|user/login|signin|signup)$ - [R=404,L,NS]
     RewriteRule ^(setup|install|installer|wp-setup)\.php$ - [R=404,L,NS]
 
     # Common “info” / debug endpoints
