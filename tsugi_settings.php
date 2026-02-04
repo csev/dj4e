@@ -36,6 +36,10 @@ $CFG->setExtension('lessons2_enable', true);
 $CFG->setExtension('lessons_debug_conversion', false);
 $CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
 
+$CFG->google_login_redirect = $CFG->apphome . "/login";
+
+$CFG->service_worker = true;
+
 $CFG->setExtension('django_version', '5.2');
 $CFG->setExtension('django_version_short', '52');
 

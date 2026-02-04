@@ -1,9 +1,12 @@
 <?php
 
+// Service worker registration and notifications web component are now loaded
+// in Output.php footerStart() method
+
 $foot = '
 <p style="font-size: 75%; margin-top: 5em;">
 Copyright Creative Commons Attribution 3.0 - Charles R. Severance
-</p><script type="module" src="' . htmlspecialchars($CFG->wwwroot.'/lms/announce/tsugi-announce.js') .'"></script>';
+</p>';
 
 $OUTPUT->setAppFooter($foot);
 
