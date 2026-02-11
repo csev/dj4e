@@ -3,7 +3,7 @@ Using a Virtual Environment on PythonAnywhere
 
 Using a virtual environment is essential to everything you do in this course.  If you start a
 new console / shell and do not activate the correct virtual environment - literally nothing will work,
-you will get confused thinking yuor code is broken and start editing files and breaking your application
+you will get confused thinking your code is broken and start editing files and breaking your application
 while the only thing you needed to do was activate the virtual environment.
 
 In this document we show how to check your virtual envronment, activate yiur virtual environment, and

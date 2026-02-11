@@ -1508,11 +1508,6 @@
             "anchor": "rrc",
             "icon": "fa-refresh",
             "description": "Now that we have covered most of the components of a Django web application through the Django tutorials, it is a good time to review the structure of a Django application and also look at some of the low level details on how web browsers work with web servers.",
-            "slides": [
-                "lectures/00-Big-Picture.pptx",
-                "lectures/Web-01-HTTP.pptx",
-                "lectures/Web-04-Mini-Django.pptx"
-            ],
             "items": [
                 {
                     "type": "header",
@@ -1528,11 +1523,6 @@
                     "type": "slide",
                     "title": "Web-01-HTTP.pptx",
                     "href": "{apphome}/lectures/Web-01-HTTP.pptx"
-                },
-                {
-                    "type": "slide",
-                    "title": "Web-04-Mini-Django.pptx",
-                    "href": "{apphome}/lectures/Web-04-Mini-Django.pptx"
                 },
                 {
                     "type": "header",
@@ -1579,12 +1569,6 @@
                     "title": "Understanding Browser Developer Mode (9:43)",
                     "media": "lesson-02-http/06-dev-mode-walkthrough.mov",
                     "youtube": "0JsWY3pmdak"
-                },
-                {
-                    "type": "video",
-                    "title": "Exploring the Mini Django Web Server (36:58)",
-                    "media": "lesson-02-http/07-Web-04-Mini-Django.m4v",
-                    "youtube": "q6LGpiVPwaA"
                 },
                 {
                     "type": "header",
@@ -1660,6 +1644,66 @@
                             "value": "601"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "title": "The Mini Django Web Server",
+            "anchor": "mini",
+            "icon": "fa-truck",
+            "description": "details on how web browsers work with web servers.",
+            "items": [
+                {
+                    "type": "header",
+                    "text": "Slides",
+                    "level": 2
+                },
+                {
+                    "type": "slide",
+                    "title": "Web-04-Mini-Django.pptx",
+                    "href": "{apphome}/lectures/Web-04-Mini-Django.pptx"
+                },
+                {
+                    "type": "header",
+                    "text": "Videos",
+                    "level": 2
+                },
+                {
+                    "type": "video",
+                    "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+                    "youtube": "zuCxAR3-CzA"
+                },
+                {
+                    "type": "video",
+                    "title": "Exploring the Mini Django Web Server (36:58)",
+                    "media": "lesson-02-http/07-Web-04-Mini-Django.m4v",
+                    "youtube": "q6LGpiVPwaA"
+                },
+                {
+                    "type": "header",
+                    "text": "References",
+                    "level": 2
+                },
+                {
+                    "type": "reference",
+                    "title": "What Happens When You Click a Link? - Computerphile",
+                    "href": "https://www.youtube.com/watch?v=keo0dglCj7I"
+                },
+                {
+                    "type": "header",
+                    "text": "Discussions",
+                    "level": 2
+                },
+                {
+                    "type": "discussion",
+                    "title": "The Mini Django Web Server",
+                    "launch": "{apphome}/mod/tdiscus/",
+                    "resource_link_id": "discuss_01_mini"
+                },
+                {
+                    "type": "header",
+                    "text": "Tools",
+                    "level": 2
                 },
                 {
                     "type": "lti",
