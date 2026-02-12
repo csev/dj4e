@@ -1648,10 +1648,10 @@
             ]
         },
         {
-            "title": "The Mini Django Web Server",
+            "title": "Mini Django Web Server",
             "anchor": "mini",
             "icon": "fa-truck",
-            "description": "details on how web browsers work with web servers.",
+            "description": "In this module, we install and run a very small implementation of the 'Django' web server.  It is only a few hundred lines of code and demonstrates the techniques used in the Django application.",
             "items": [
                 {
                     "type": "header",
