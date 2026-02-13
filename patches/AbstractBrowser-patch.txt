@@ -1,0 +1,14 @@
+diff --git a/vendor/symfony/browser-kit/AbstractBrowser.php b/vendor/symfony/browser-kit/AbstractBrowser.php
+index 6d26b8698..bd320ee28 100644
+--- a/vendor/symfony/browser-kit/AbstractBrowser.php
++++ b/vendor/symfony/browser-kit/AbstractBrowser.php
+@@ -352,6 +352,7 @@ abstract class AbstractBrowser
+ 
+         $server['HTTPS'] = 'https' === parse_url($uri, \PHP_URL_SCHEME);
+ 
++       $files = [];  // DJ4E hack
+         $this->internalRequest = new Request($uri, $method, $parameters, $files, $this->cookieJar->allValues($uri), $server, $content);
+ 
+         $this->request = $this->filterRequest($this->internalRequest);
+
+
