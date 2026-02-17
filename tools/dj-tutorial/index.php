@@ -35,6 +35,7 @@ $assignments = array(
     'tutorial04.php' => 'Writing your first Django app (part 4)',
     'hello05.php' => 'Hello world / sessions',
     'guess.php' => 'A guessing game',
+    'checkup.php' => 'Checkup',
 );
 
 $LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
