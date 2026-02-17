@@ -1778,14 +1778,14 @@
                     "href": "https://www.youtube.com/watch?v=IYH_BkpHf3s"
                 },
                 {
+                    "type": "reference",
+                    "title": "Scanning for Common Errors in PythonAnywhere",
+                    "href": "{apphome}/assn/dj4e_checkup52.md"
+                },
+                {
                     "type": "header",
                     "text": "Assignment",
                     "level": 2
-                },
-                {
-                    "title": "Assignment: Code Checkup (ungraded)",
-                    "type": "assignment",
-                    "href": "{apphome}/assn/dj4e_checkup52.md"
                 },
                 {
                     "title": "Assignment: Cookies and Sessions",
@@ -1821,6 +1821,19 @@
                         {
                             "key": "delay",
                             "value": "601"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: Code Checkup!",
+                    "launch": "{apphome}/tools/dj-tutorial/",
+                    "learning_objectives": "Getting rid of cruft.",
+                    "resource_link_id": "dj4e_checkup1",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "checkup.php"
                         }
                     ]
                 },

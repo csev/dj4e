@@ -42,7 +42,7 @@ If there are no issues, it should say:
 
     Checkup complete
 
-You can go back to working on your assignments :)
+It will include your home directory and a simple digital signature.
 
 What Might Be Wrong
 ===================
