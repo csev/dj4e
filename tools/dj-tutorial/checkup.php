@@ -62,6 +62,15 @@ if ( $word1 !== 'Checkup' || $word2 !== 'complete' ) {
     return;
 }
 
+if ( strpos($param3, '/home/') !== 0 ) {
+    error_out("The third parameter (path) must start with /home/");
+    line_out("You entered: ".htmlentities($param3));
+    ?>
+    <p><a href="javascript:history.back()" class="btn btn-default">Try again</a></p>
+    <?php
+    return;
+}
+
 $expected_hash = substr(md5($param3), 0, 6);
 if ( $value4 !== $expected_hash ) {
     error_out("The fourth value must be the first six characters of the MD5 hash of the third parameter.");
