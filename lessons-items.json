@@ -1783,6 +1783,12 @@
                     "level": 2
                 },
                 {
+                    "title": "Assignment: Code Checkup (ungraded)",
+                    "type": "assignment",
+                    "href": "{apphome}/assn/dj4e_checkup52.md"
+                },
+                {
+                    "title": "Assignment: Cookies and Sessions",
                     "type": "assignment",
                     "href": "{apphome}/assn/dj4e_hello.md"
                 },

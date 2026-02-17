@@ -40,7 +40,7 @@ it:
 
 If there are no issues, it should say:
 
-    Checkout complete
+    Checkup complete
 
 You can go back to working on your assignments :)
 
