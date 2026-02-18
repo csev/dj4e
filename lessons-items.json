@@ -5174,6 +5174,175 @@
                     ]
                 }
             ]
+        },
+        {
+            "title": "Django Girls (Legacy)",
+            "anchor": "django_girls",
+            "icon": "fa-heart",
+            "description": "A set of assignments based on the Django Girls tutorial. Build a blog step by step on PythonAnywhere.",
+            "references": [
+                {
+                    "title": "Django Girls Tutorial",
+                    "href": "https://tutorial.djangogirls.org/en/"
+                }
+            ],
+            "lti": [
+                {
+                    "title": "Auto-grader: 01 – startproject",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_01",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "01_startproject.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: 03 – admin",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_03",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "03_admin.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: 05 – html",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_05",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "05_html.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: 07 – templates",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_07",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "07_templates.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: 08 – css",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_08",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "08_css.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: 10 – detail",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_10",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "10_detail.php"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "type": "header",
+                    "text": "References",
+                    "level": 2
+                },
+                {
+                    "type": "reference",
+                    "title": "Django Girls Tutorial",
+                    "href": "https://tutorial.djangogirls.org/en/"
+                },
+                {
+                    "type": "header",
+                    "text": "Tools",
+                    "level": 2
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: 01 – startproject",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_01",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "01_startproject.php"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: 03 – admin",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_03",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "03_admin.php"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: 05 – html",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_05",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "05_html.php"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: 07 – templates",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_07",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "07_templates.php"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: 08 – css",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_08",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "08_css.php"
+                        }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: 10 – detail",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_10",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "10_detail.php"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
