@@ -425,35 +425,3 @@ Change it to this:
 ```
 
 Since you're likely logged in, if you refresh the page, you won't see anything different. Load the page in a different browser or an incognito window (called "InPrivate" in Windows Edge), though, and you'll see that the link doesn't show up, and the icon doesn't display either!
-
-## One more thing: deploy time!
-
-Let's see if all this works on PythonAnywhere. Time for another deploy!
-
-* First, commit your new code, and push it up to GitHub:
-
-{% filename %}command-line{% endfilename %}
-```
-$ git status
-$ git add .
-$ git status
-$ git commit -m "Added views to create/edit blog post inside the site."
-$ git push
-```
-
-* Then, in a [PythonAnywhere Bash console](https://www.pythonanywhere.com/consoles/):
-
-{% filename %}PythonAnywhere command-line{% endfilename %}
-```
-$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
-$ git pull
-[...]
-```
-
-(Remember to substitute `<your-pythonanywhere-domain>` with your actual PythonAnywhere subdomain, without the angle-brackets.)
-
-
-* Finally, hop on over to the ["Web" page](https://www.pythonanywhere.com/web_app_setup/) (use the menu button in the upper right of the console) and hit **Reload**. Refresh your https://subdomain.pythonanywhere.com blog to see the changes.
-
-
-And that should be it. Congrats! :)
