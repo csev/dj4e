@@ -92,6 +92,17 @@ function md_path_to_slug($md_path) {
 }
 
 /**
+ * Attribution footer for Django Girls tutorial content.
+ */
+function render_django_girls_footer() {
+    return '<footer class="django-girls-attribution" style="margin-top:2rem;padding-top:1rem;border-top:1px solid #ddd;font-size:0.8em;color:#666;">' .
+        'This material is adapted from the <a href="https://tutorial.djangogirls.org/">Django Girls tutorial</a> for use on PythonAnywhere, ' .
+        'and used under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. ' .
+        'To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a>.' .
+        '</footer>';
+}
+
+/**
  * Render a table-of-contents dropdown (like mdn). Base path is '' for root, '../' for chapters.
  */
 function render_toc_dropdown($base_path, $current_slug) {
