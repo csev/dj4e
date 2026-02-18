@@ -24,11 +24,11 @@ In the shell, you should run the following command. **Don't forget to add the pe
 
 > The period `.` is crucial because it tells the script to install Django in your current directory (for which the period `.` is a short-hand reference).
 
-> **Note** When typing the command above, remember that you only type the part which starts by `django-admin`.
-The `(.ve52) ~/djangogirls$` part shown here is just example of the prompt that will be inviting your input on your command line.
+> **Note** When typing the command above, remember that you only type the part which starts with `django-admin`.
+The `(.ve52) ~/djangogirls$` part shown here is just an example of the prompt that will be inviting your input on your command line.  The prompt also shows the current path.
 
 You only need to do `startproject` once.  If things get really messed up, you can start over by going into your
-home folder under `Files` and deleting the `djangogirls` folder and then re-unning the `startproject` command above.
+home folder under `Files` and deleting the `djangogirls` folder and then re-running the `startproject` command above.
 
 `django-admin.py` is a script that will create the directories and files for you. You should now have a directory structure which looks like this:
 
@@ -48,7 +48,7 @@ djangogirls
 
 The `settings.py` file contains the configuration of your website.
 
-Remember when we talked about a mail carrier checking where to deliver a letter? `urls.py` file contains a list of patterns used by `urlresolver`.
+Remember when we talked about a mail carrier checking where to deliver a letter? The `urls.py` file contains a list of patterns used by `urlresolver`.
 
 Let's ignore the other files for now as we won't change them. The only thing to remember is not to delete them by accident!
 
@@ -57,35 +57,7 @@ Let's ignore the other files for now as we won't change them. The only thing to 
 
 Let's make some changes in `mysite/settings.py`. Open the file using the file editor.
 
-#### Changing the Timezone
-
-It would be nice to have the correct time on our website. Go to [Wikipedia's list of time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) and copy your relevant time zone (TZ) (e.g. `Europe/Berlin`).
-
-In `settings.py`, find the line that contains `TIME_ZONE` and modify it to choose your own timezone.  For example:
-
-{% filename %}mysite/settings.py{% endfilename %}
-```python
-TIME_ZONE = 'Europe/Berlin'
-```
-
-> **Note**: Timezones should be in the Region/City format, so eg "EDT" is not valid, but "America/Detroit" is.
-
-
-#### Changing the Language
-
-A language code consists of the language, e.g. `en` for English or `de` for German, and the country code, e.g. `de` for Germany or `ch` for Switzerland. If English is not your native language, you can add this to change the default buttons and notifications from Django to be in your language. So you would have "Cancel" button translated into the language you defined here. [Django comes with a lot of prepared translations](https://docs.djangoproject.com/en/5.2/ref/settings/#language-code).
-
-If you want a different language, change the language code by changing the following line:
-
-{% filename %}mysite/settings.py{% endfilename %}
-```python
-LANGUAGE_CODE = 'de-ch'
-```
-
-
-#### Other settings
-
-We'll also need to add a path for static files.
+We'll need to add a path for static files.
 (We'll find out all about static files and CSS later in the tutorial.)
 Go down to the *end* of the file,
 and just underneath the `STATIC_URL` entry, add a new one called `STATIC_ROOT`:
@@ -104,11 +76,11 @@ This won't match our hostname on PythonAnywhere once we deploy our application s
 ALLOWED_HOSTS = ['*']
 ```
 
-## Set up a database
+## Configuring a database
 
 There's a lot of different database software that can store data for your site. We'll use the default one, `sqlite3`.
 
-This is already set up in this part of your `mysite/settings.py` file:
+This is already set up in this part of your `mysite/settings.py` file so you don't need to change this - just take a look at it.
 
 {% filename %}mysite/settings.py{% endfilename %}
 ```python
@@ -119,6 +91,25 @@ DATABASES = {
     }
 }
 ```
+
+Later we can switch from 'sqlite3' to 'MySQL' for our database by editing this section of `mysite/settings.py`.  For now, using 'sqlite3' makes things very easy. It's great for development and testing but doesn't have enough performance for production.
+
+## Checking for errors after you make changes to your application
+
+When you edit a file, you might introduce an error that will stop your Django application from running and processing
+web requests.  So from time to time, you should go into the console / shell and go into the directory that contains the `manage.py` file (the `~/djangogirls` directory). In the console, in that directory, we can verify that our web server will start by running `python manage.py check`:
+
+{% filename %}command-line{% endfilename %}
+```
+(.ve52) ~/djangogirls$ python manage.py check
+System check identified no issues (0 silenced).
+```
+If the output says 'no issues' that is good.  If you do `check` and get a traceback **STOP NOW** and fix the errors
+and re-run `check` until the errors are gone.   There is no point proceeding when `check` shows errors -- **NOTHING ELSE WILL WORK**.
+
+> Django tracebacks (long error messages) are notoriously complex and most of the text is not relevant to the actual error.  Don't be intimidated by a lot of text.  Just copy the text of the error and the command you typed, and hand it to an AI Large Language Model. AI can read this and extract a simpler explanation and possibly even suggest a solution to the problem.  
+
+> It is great when AI says "edit this line in this file".   It is really bad when AI says, "replace your entire settings.py with this text".  Replacing an entire file may fix one thing and then break five other things.  If you use AI the wrong way - the only option you have is to remove the `djangogirls` folder and start at `startproject` above.
 
 To create a database for our blog, let's run the following in the console: `python manage.py migrate` (we need to be in the `djangogirls` directory that contains the `manage.py` file). If that goes well, you should see something like this:
 
@@ -150,18 +141,9 @@ Running migrations:
 
 And we're done! Time to start the web server and see if our website is working!
 
-## Doing a final check of the changes you made to your application
-
-You need to be in the directory that contains the `manage.py` file (the `~/djangogirls` directory). In the console, we can verify that our web server will start by running `python manage.py check`:
-
-{% filename %}command-line{% endfilename %}
-```
-(.ve52) ~/djangogirls$ python manage.py check
-```
-
 ## Routing your PythonAnywhere domain name to your new Django project
 
-You will need to route your web domain name to the folder containing your  new Django project.  Go to the `Web` tab
+You will need to route your web domain name to the folder containing your new Django project.  Go to the `Web` tab
 on PythonAnywhere, and scroll down and make the following changes:
 
     Source code: /home/drchuck/djangogirls
@@ -190,8 +172,8 @@ This is slightly different from the sample in the PythonAnywhere tutorial.
 
 Once the above configuration is complete, go back to the top of the PythonAnywhere
 Web tab, `Reload` your web application, wait a few seconds and check
-that it is up and visiting the URL for your application shown in the Web
-tab on PythonAnywhere like:
+that it is up, then visit the URL for your application shown in the Web
+tab on PythonAnywhere:
 
 {% filename %}browser{% endfilename %}
 ```
