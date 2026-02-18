@@ -115,6 +115,7 @@ function render_toc_dropdown($base_path, $current_slug) {
         $selected = ($slug === $current_slug) ? ' selected' : '';
         $options[] = '<option value="' . htmlspecialchars($href) . '"' . $selected . '>' . htmlspecialchars($title) . '</option>';
     }
+    $options[] = '<option value="' . htmlspecialchars($base_path . 'clear_account.php') . '">Change PythonAnywhere Account</option>';
     return implode("\n  ", $options);
 }
 
@@ -126,7 +127,9 @@ function render_markdown($md_path, $md_dir) {
     $raw = file_get_contents($full_path);
     $raw = process_template_syntax($raw);
     $raw = str_replace('myvenv', '.ve52', $raw);  // PythonAnywhere venv name
-    $raw = str_replace('http://127.0.0.1:8000', 'https://account.pythonanywhere.com', $raw);
+    $account = (!empty($_COOKIE['pythonanywhere_account']) && preg_match('/^[a-zA-Z0-9]+$/', $_COOKIE['pythonanywhere_account']))
+        ? $_COOKIE['pythonanywhere_account'] : 'account';
+    $raw = str_replace('http://127.0.0.1:8000', 'https://' . $account . '.pythonanywhere.com', $raw);
     // Full path for mysite/ file references (PythonAnywhere structure)
     $raw = preg_replace('#(?<!djangogirls/)mysite/#', '~/djangogirls/mysite/', $raw);
     $base = md_path_to_slug($md_path);

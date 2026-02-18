@@ -6,6 +6,10 @@
 if (!isset($chapter_dir)) {
     die('$chapter_dir not set');
 }
+if ( ! defined('COOKIE_SESSION') ) define('COOKIE_SESSION', true);
+require_once __DIR__ . '/../../tsugi/config.php';
+$paw_account_base = '../';  // for check_account login page styles when in a chapter
+require_once __DIR__ . '/inc/check_account.php';
 $md_dir = __DIR__;  // django-girls/ when chapter.php is in django-girls/
 $md_path = $chapter_dir . '/README.md';
 require_once $md_dir . '/inc/functions.php';
@@ -23,8 +27,6 @@ $body = render_markdown($md_path, $md_dir);
 $current_slug = $chapter_dir;
 $base_path = '../';
 
-if ( ! defined('COOKIE_SESSION') ) define('COOKIE_SESSION', true);
-require_once __DIR__ . '/../../tsugi/config.php';
 require_once __DIR__ . '/../../top.php';
 require_once __DIR__ . '/../../nav.php';
 ?>

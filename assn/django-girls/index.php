@@ -4,6 +4,7 @@
  */
 if ( ! defined('COOKIE_SESSION') ) define('COOKIE_SESSION', true);
 require_once __DIR__ . '/../../tsugi/config.php';
+require_once __DIR__ . '/inc/check_account.php';
 require_once __DIR__ . '/inc/functions.php';
 
 $md_dir = __DIR__;
