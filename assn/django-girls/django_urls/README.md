@@ -17,10 +17,6 @@ Let's open up the `mysite/urls.py` file in your code editor of choice and see wh
 
 {% filename %}mysite/urls.py{% endfilename %}
 ```python
-"""mysite URL Configuration
-
-[...]
-"""
 from django.contrib import admin
 from django.urls import path
 
@@ -30,8 +26,6 @@ urlpatterns = [
 ```
 
 As you can see, Django has already put something here for us.
-
-Lines between triple quotes (`'''` or `"""`) are called docstrings – you can write them at the top of a file, class or method to describe what it does. They won't be run by Python.
 
 The admin URL, which you visited in the previous chapter, is already here:
 
@@ -91,7 +85,7 @@ As you can see, we're now assigning a `view` called `post_list` to the root URL.
 
 The last part, `name='post_list'`, is the name of the URL that will be used to identify the view. This can be the same as the name of the view but it can also be something completely different. We will be using the named URLs later in the project, so it is important to name each URL in the app. We should also try to keep the names of URLs unique and easy to remember.
 
-If you try to visit http://127.0.0.1:8000/ now, then you'll find some sort of 'web page not available' message. This is because the server (remember typing `runserver`?) is no longer running. Take a look at your server console window to find out why.
+If you try to visit http://127.0.0.1:8000/ now, then you may find some sort of 'Something went wrong' message. This is because you are part-way through making changes to the server and things are not in a finished state.  If you do `python manage.py check` you might see a traceback.
 
 {% filename %}{{ warning_icon }} command-line{% endfilename %}
 
@@ -109,7 +103,8 @@ AttributeError: module 'blog.views' has no attribute 'post_list'
 ```
 
 Your console is showing an error, but don't worry – it's actually pretty useful: It's telling you that there is __no attribute 'post_list'__. That's the name of the *view* that Django is trying to find and use, but we haven't created it yet. At this stage, your `/admin/` will also not work. No worries – we will get there.
-If you see a different error message, try restarting your web server. To do that, in the console window that is running the web server, stop it by pressing Ctrl+C (the Control and C keys together). On Windows, you might have to press Ctrl+Break. Then you need to restart the web server by running a `python manage.py runserver` command.
+
+Whenever you see this kind of traceback error - it can be quite useful to copy it and past it into an AI Large Language Model.  These LLMs know a lot about Django and the console and can often lok at a long, complex traceback and summarize it for you quite nicely.
 
 
 > If you want to know more about Django URLconfs, look at the official documentation: https://docs.djangoproject.com/en/5.2/topics/http/urls/

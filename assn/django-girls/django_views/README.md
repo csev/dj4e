@@ -37,12 +37,21 @@ def post_list(request):
 
 As you can see, we created a function (`def`) called `post_list` that takes `request` and will `return` the value it gets from calling another function `render` that will render (put together) our template `blog/post_list.html`.
 
-Save the file, go to http://127.0.0.1:8000/ and see what we've got.
+Save the file, reload your web application, go to http://127.0.0.1:8000/ and see what we've got. 
 
 Another error! Read what's going on now:
 
 ![Error](images/error.png)
 
 This shows that the server is running again, at least, but it still doesn't look right, does it? Don't worry, it's just an error page, nothing to be scared of! Just like the error messages in the console, these are actually pretty useful. You can read that the *TemplateDoesNotExist*. Let's fix this bug and create a template in the next chapter!
+
+If the error is not as shown above or you get a "Something went wrong" error, you may need to
+check your overall server setup by running:
+
+    cd ~/djangogirls
+    python manage.py check
+
+And fix any errors that you see.   Keep running `python manage.py check` until all the errors are fixed and then try
+to reload your web application and visit http://127.0.0.1:8000/
 
 > Learn more about Django views by reading the official documentation: https://docs.djangoproject.com/en/5.2/topics/http/views/

@@ -71,11 +71,6 @@ To keep everything tidy, we will create a separate application inside our projec
 (.ve52) ~/djangogirls$ python manage.py startapp blog
 ```
 
-{% filename %}Windows:{% endfilename %}
-```
-(.ve52) C:\Users\Name\djangogirls> python manage.py startapp blog
-```
-
 You will notice that a new `blog` directory is created and it contains a number of files now. The directories and files in our project should look like this:
 
 ```

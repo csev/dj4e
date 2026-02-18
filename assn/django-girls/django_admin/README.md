@@ -27,11 +27,6 @@ To log in, you need to create a *superuser* - a user account that has control ov
 (.ve52) ~/djangogirls$ python manage.py createsuperuser
 ```
 
-{% filename %}Windows:{% endfilename %}
-```
-(.ve52) C:\Users\Name\djangogirls> python manage.py createsuperuser
-```
-
 When prompted, type your username (lowercase, no spaces), email address, and password. **Don't worry that you can't see the password you're typing in – that's how it's supposed to be.** Type it in and press `enter` to continue. The output should look like this (where the username and email should be your own ones):
 
 ```
