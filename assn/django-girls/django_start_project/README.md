@@ -110,8 +110,6 @@ This won't match our hostname on PythonAnywhere once we deploy our application s
 ALLOWED_HOSTS = ['*']
 ```
 
-> **Note**: Also add `.amazonaws.com` to the `ALLOWED_HOSTS` if you are using cloud9
-
 ## Set up a database
 
 There's a lot of different database software that can store data for your site. We'll use the default one, `sqlite3`.
