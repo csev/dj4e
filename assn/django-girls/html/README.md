@@ -27,7 +27,7 @@ blog
 
 And now create a `post_list.html` file (just leave it blank for now) inside the `blog/templates/blog` directory.
 
-Then restart your web server.
+Then restart your web server and reload your web page.
 
 See how your website looks now: http://127.0.0.1:8000/
 

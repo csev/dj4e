@@ -72,6 +72,16 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 ```
+After you edit and save the files, it's a great time to do a `check` to see if you have introduced any errors
+into your application.  Open up your shell console and type this command in the `~/djangogirls` folder:
+
+{% filename %}command-line{% endfilename %}
+```
+(.ve52) ~/djangogirls$ python manage.py check
+```
+
+Of course fix any errors before proceeding - it is best to fix the errors after you have made a few small changes
+rather than having the errors show up later after you have made even more changes and have to deal with multiple errors at the same time.
 
 That's it! Time to go back to our template and display this QuerySet!
 

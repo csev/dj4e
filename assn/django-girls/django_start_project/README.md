@@ -13,7 +13,7 @@ The first step is to start a new Django project. Basically, this means that we'l
 
 The names of some files and directories are very important for Django. You should not rename the files that we are about to create. Moving them to a different place is also not a good idea. Django needs to maintain a certain structure to be able to find important things.
 
-> Remember to run everything in the virtualenv. If you don't see a prefix `(.ve52)` in your console, you need to activate your virtualenv. We explained how to do that in the __Django installation__.
+> Remember to run everything in the virtualenv. If you don't see a prefix `(.ve52)` in your console, activate it by running `source .ve52/bin/activate` in the shell.
 
 In the shell, you should run the following command. **Don't forget to add the period (or dot) `.` at the end!**
 
