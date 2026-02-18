@@ -1,8 +1,10 @@
 <?php
 /**
  * Django Girls 05 – html
- * Verifies basic HTML structure.
- * Corresponds to: Introduction to HTML
+ * Verifies grade_check, URL routing, and HTML structure.
+ * Combines urls + html: at the end of Django URLs/views the code is broken
+ * (TemplateDoesNotExist) until you add the post_list template.
+ * Corresponds to: Django URLs, Django views, Introduction to HTML
  */
 
 require_once __DIR__ . "/../crud/webauto.php";
@@ -11,6 +13,8 @@ line_out("Django Girls 05 – html");
 ?>
 <p>
 Assignment:
+<a href="../../assn/django-girls/django_urls/" target="_blank" class="btn btn-info">Django URLs</a>
+<a href="../../assn/django-girls/django_views/" target="_blank" class="btn btn-info">Django views</a>
 <a href="../../assn/django-girls/html/" target="_blank" class="btn btn-info">Introduction to HTML</a>
 </p>
 <p>
@@ -43,18 +47,32 @@ if ( $crawler !== false ) {
     }
 }
 
-// Main page has HTML structure
+// Main page: Django Girls Blog, My first post, My second post
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler !== false ) {
     $html = webauto_get_html($crawler);
-    if ( stripos($html, '<html') !== false || stripos($html, '<body') !== false ) {
-        success_out("Page has HTML structure");
+    if ( stripos($html, 'Django Girls Blog') !== false ) {
+        success_out("Found 'Django Girls Blog'");
         $passed++;
+    } else {
+        line_out("Expected 'Django Girls Blog' on main page");
+    }
+    if ( stripos($html, 'My first post') !== false ) {
+        success_out("Found 'My first post'");
+        $passed++;
+    } else {
+        line_out("Expected 'My first post' (add posts via admin, ORM chapter)");
+    }
+    if ( stripos($html, 'My second post') !== false ) {
+        success_out("Found 'My second post'");
+        $passed++;
+    } else {
+        line_out("Expected 'My second post' (add posts via admin, ORM chapter)");
     }
 }
 
 line_out(' ');
-$perfect = 2;
+$perfect = 4;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

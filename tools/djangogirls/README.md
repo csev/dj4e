@@ -10,8 +10,7 @@ Students deploy their blog on PythonAnywhere (e.g. `https://USERNAME.pythonanywh
 |---|-----|-------------|------------------|
 | 01 | startproject | Project created and deployed | Starting a New Django Project! |
 | 03 | admin | Django admin configured | Django admin |
-| 04 | urls | grade_check view and URL routing | Django URLs, Django views |
-| 05 | html | Basic HTML structure | Introduction to HTML |
+| 05 | html | grade_check, URLs, and HTML (post_list template) | Django URLs, views, Introduction to HTML |
 | 06 | dynamic | Dynamic data in templates | Dynamic data in templates |
 | 07 | templates | Post list template | Django templates |
 | 08 | css | Stylesheets linked | CSS – make it pretty |
@@ -20,7 +19,7 @@ Students deploy their blog on PythonAnywhere (e.g. `https://USERNAME.pythonanywh
 
 ## Student Setup
 
-- **04-urls onward**: Update `views.py` so `grade_check` returns your unique check string (shown by the autograder)
+- **05-html onward**: Update `views.py` so `grade_check` returns your unique check string (shown by the autograder)
 - **06-dynamic, 10-detail**: Add at least one post via Django admin
 
 ## Technical

@@ -29,7 +29,6 @@ if ( SettingsForm::isSettingsPost() ) {
 $assignments = array(
     '01_startproject.php' => '01 – startproject',
     '03_admin.php' => '03 – admin',
-    '04_urls.php' => '04 – urls',
     '05_html.php' => '05 – html',
     '06_dynamic.php' => '06 – dynamic',
     '07_templates.php' => '07 – templates',
