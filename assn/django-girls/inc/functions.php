@@ -68,7 +68,7 @@ function get_chapters() {
     return [
         ['README.md', 'Introduction'],
         ['django/README.md', 'What is Django?'],
-        ['django_start_project/README.md', 'Starting a new Django Project!'],
+        ['django_start_project/README.md', 'Starting a New Django Project!'],
         ['django_models/README.md', 'Django models'],
         ['django_admin/README.md', 'Django admin'],
         ['django_urls/README.md', 'Django URLs'],
