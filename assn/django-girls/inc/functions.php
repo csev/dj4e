@@ -79,7 +79,7 @@ function get_chapters() {
         ['django_templates/README.md', 'Django templates'],
         ['css/README.md', 'CSS – make it pretty'],
         ['template_extending/README.md', 'Template extending'],
-        ['extend_your_application/README.md', 'Extend your application'],
+        ['extend_your_application/README.md', 'Add a Detail Page'],
         ['whats_next/README.md', "What's next?"],
     ];
 }
