@@ -14,7 +14,6 @@ Every page on the Internet needs its own URL. This way your application knows wh
 
 Let's open up the `mysite/urls.py` file in your code editor of choice and see what it looks like:
 
-
 {% filename %}mysite/urls.py{% endfilename %}
 ```python
 from django.contrib import admin
@@ -25,7 +24,8 @@ urlpatterns = [
 ]
 ```
 
-As you can see, Django has already put something here for us.
+As you can see, Django has already put something here for us. 
+The file also includes some comments at the top.
 
 The admin URL, which you visited in the previous chapter, is already here:
 
@@ -58,7 +58,7 @@ urlpatterns = [
 ]
 ```
 
-Django will now redirect everything that comes into 'http://127.0.0.1:8000/' to `blog.urls` and looks for further instructions there.
+Django will now redirect everything that comes into 'http://127.0.0.1:8000/' to `blog.urls`, where it will look for further instructions.
 
 ## blog.urls
 
@@ -72,12 +72,13 @@ from . import views
 
 Here we're importing Django's function `path` and all of our `views` from the `blog` application. (We don't have any yet, but we will get to that in a minute!)
 
-After that, we can add our first URL pattern:
+After that, we can modify `blog/urls.py` and add our first two URL patterns:
 
 {% filename %}blog/urls.py{% endfilename %}
 ```python
 urlpatterns = [
     path('', views.post_list, name='post_list'),
+    path('grade_check', views.grade_check, name='grade_check'),
 ]
 ```
 
@@ -85,26 +86,31 @@ As you can see, we're now assigning a `view` called `post_list` to the root URL.
 
 The last part, `name='post_list'`, is the name of the URL that will be used to identify the view. This can be the same as the name of the view but it can also be something completely different. We will be using the named URLs later in the project, so it is important to name each URL in the app. We should also try to keep the names of URLs unique and easy to remember.
 
+The `grade_check` path will be used later as part of autograding.  The url http://127.0.0.1:8000/grade_check will be routed to the `grade_check` function in `views.py`. More on that later.
+
+> Note that `blog/uls.py` is Python code; it is defining a Python list and assigning it to the `urlpatterns` variable. It is a list of `path` objects.  Django will go through the list when a request is received and try to match the incoming url to one of the `path` patterns so it can route the request to the correct view.
+
 If you try to visit http://127.0.0.1:8000/ now, then you may find some sort of 'Something went wrong' message. This is because you are part-way through making changes to the server and things are not in a finished state.  If you do `python manage.py check` you might see a traceback.
 
 {% filename %}{{ warning_icon }} command-line{% endfilename %}
 
 ```
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/Users/ola/djangogirls/blog/urls.py", line 5, in <module>
+  ...
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/csev/django/djangogirls/blog/urls.py", line 5, in <module>
     path('', views.post_list, name='post_list'),
+             ^^^^^^^^^^^^^^^
 AttributeError: module 'blog.views' has no attribute 'post_list'
 ```
 
 Your console is showing an error, but don't worry – it's actually pretty useful: It's telling you that there is __no attribute 'post_list'__. That's the name of the *view* that Django is trying to find and use, but we haven't created it yet. At this stage, your `/admin/` will also not work. No worries – we will get there.
 
-Whenever you see this kind of traceback error - it can be quite useful to copy it and past it into an AI Large Language Model.  These LLMs know a lot about Django and the console and can often lok at a long, complex traceback and summarize it for you quite nicely.
+> Whenever you see this kind of traceback error - it can be quite useful to copy it and paste it into an AI Large Language Model.  These LLMs know a lot about Django and the console and can often look at a long, complex traceback and summarize it for you quite nicely.
 
 
 > If you want to know more about Django URLconfs, look at the official documentation: https://docs.djangoproject.com/en/5.2/topics/http/urls/

@@ -14,13 +14,13 @@ admin.site.register(Post)
 
 As you can see, we import (include) the Post model defined in the previous chapter. To make our model visible on the admin page, we need to register the model with `admin.site.register(Post)`.
 
-OK, time to look at our Post model. Remember to run `python manage.py runserver` in the console to run the web server. Go to your browser and type the address http://127.0.0.1:8000/admin/. You will see a login page like this:
+OK, time to look at our Post model. Since we have cnaged some files, remember to run `python manage.py check` in the console to see if there are any errors. As always fix any errors that you see from `check` before continuing.  Then go to the `Web` tab in PythonAnywhere and press 'Reload`. Go to your browser and type the address http://127.0.0.1:8000/admin/. You will see a login page like this:
 
 ![Login page](images/login_page2.png)
 
 To log in, you need to create a *superuser* - a user account that has control over everything on the site. Go back to the command line, type `python manage.py createsuperuser`, and press enter.
 
-> Remember, to write new commands while the web server is running, open a new terminal window and activate your virtualenv. We reviewed how to write new commands in the <b>Starting a new Django Project!</b> chapter, in the <b>Starting the web server</b> section.
+> You will find that things work best if you use multiple PythonAnywhere tabs in your browser.  One 'Files' tab to edit files, one tab with a bash console so you can run `python manage,py check` and other commands, one 'Web' tab to reload your applicationm and one tab that points to http://127.0.0.1:8000/ so you can refresh your web page and see changes.
 
 {% filename %}the shell{% endfilename %}
 ```

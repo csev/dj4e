@@ -49,6 +49,7 @@ function onTocSelect() { window.location = document.getElementById('chapters').v
 </div>
 <div class="django-girls-content content">
 <?php echo $body; ?>
+<?php echo render_next_button($current_slug, $base_path); ?>
 <?php echo render_django_girls_footer(); ?>
 </div>
 <?php

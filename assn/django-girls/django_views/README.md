@@ -27,17 +27,24 @@ Not too much stuff here yet.
 
 Remember that lines starting with `#` are comments – this means that those lines won't be run by Python.
 
-Let's create a *view* as the comment suggests. Add the following minimal view below it:
+Let's edit the file and add two *views* as the comment suggests. Add the following minimal views below it:
 
 {% filename %}blog/views.py{% endfilename %}
 ```python
 def post_list(request):
     return render(request, 'blog/post_list.html', {})
+
+from django.http import HttpResponse
+
+def grade_check(request):
+    return HttpResponse("The autograder will ask you to change this string")
 ```
 
-As you can see, we created a function (`def`) called `post_list` that takes `request` and will `return` the value it gets from calling another function `render` that will render (put together) our template `blog/post_list.html`.
+As you can see, we created a function (`def`) called `post_list` that takes `request` and will `return` the value it gets from calling another function `render` that will render (put together) our template `blog/post_list.html`.  We also created `grade_check` as a placeholder.
 
 Save the file, reload your web application, go to http://127.0.0.1:8000/ and see what we've got. 
+
+> Remeber that if you have keep multiple browser tabs open, you can quickly edit, reload and refresh.
 
 Another error! Read what's going on now:
 
@@ -53,5 +60,10 @@ check your overall server setup by running:
 
 And fix any errors that you see.   Keep running `python manage.py check` until all the errors are fixed and then try
 to reload your web application and visit http://127.0.0.1:8000/
+
+You can also visit http://127.0.0.1:8000/grade_check and see the output of the second view.  Assuming you have made no
+mistakes it should work and show the following in your browser:
+
+    The autograder will ask you to change this string
 
 > Learn more about Django views by reading the official documentation: https://docs.djangoproject.com/en/5.2/topics/http/views/

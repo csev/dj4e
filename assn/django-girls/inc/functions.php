@@ -91,6 +91,25 @@ function md_path_to_slug($md_path) {
 }
 
 /**
+ * Next chapter button. Returns empty string if on last chapter.
+ */
+function render_next_button($current_slug, $base_path) {
+    $chapters = get_chapters();
+    $found = false;
+    foreach ($chapters as $ch) {
+        $slug = md_path_to_slug($ch[0]);
+        if ($found) {
+            $href = ($slug === '') ? $base_path . 'index.php' : $base_path . $slug . '/index.php';
+            return '<p class="django-next-nav" style="margin-top:2rem; margin-bottom:0;"><a href="' . htmlspecialchars($href) . '" class="btn btn-primary">Next: ' . htmlspecialchars($ch[1]) . ' →</a></p>';
+        }
+        if ($slug === $current_slug) {
+            $found = true;
+        }
+    }
+    return '';
+}
+
+/**
  * Attribution footer for Django Girls tutorial content.
  */
 function render_django_girls_footer() {

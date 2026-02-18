@@ -76,6 +76,8 @@ This won't match our hostname on PythonAnywhere once we deploy our application s
 ALLOWED_HOSTS = ['*']
 ```
 
+Leave `DEBUG=True` in `settings.py` because we are not in production and you need to see error detail while doing development so you can figure out what went wrong.
+
 ## Configuring a database
 
 There's a lot of different database software that can store data for your site. We'll use the default one, `sqlite3`.
