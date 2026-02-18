@@ -57,17 +57,6 @@ Let's ignore the other files for now as we won't change them. The only thing to 
 
 Let's make some changes in `mysite/settings.py`. Open the file using the file editor.
 
-We'll need to add a path for static files.
-(We'll find out all about static files and CSS later in the tutorial.)
-Go down to the *end* of the file,
-and just underneath the `STATIC_URL` entry, add a new one called `STATIC_ROOT`:
-
-{% filename %}mysite/settings.py{% endfilename %}
-```python
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
-```
-
 When `DEBUG` is `True` and `ALLOWED_HOSTS` is empty, the host is validated against `['localhost', '127.0.0.1', '[::1]']`.
 This won't match our hostname on PythonAnywhere once we deploy our application so we will change the following setting:
 
@@ -78,7 +67,7 @@ ALLOWED_HOSTS = ['*']
 
 Leave `DEBUG=True` in `settings.py` because we are not in production and you need to see error detail while doing development so you can figure out what went wrong.
 
-## Configuring a database
+## Configuring a database (later)
 
 There's a lot of different database software that can store data for your site. We'll use the default one, `sqlite3`.
 

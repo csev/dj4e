@@ -25,7 +25,6 @@ Try this in your `blog/templates/blog/post_list.html` template. Open it up in th
 
 As you can see, all we've got is this:
 
-{% filename %}blog/templates/blog/post_list.html{% endfilename %}
 ```html
 <QuerySet [<Post: My second post>, <Post: My first post>]>
 ```
@@ -39,7 +38,7 @@ This means that Django understands it as a list of objects. Remember from __Intr
 {% endfor %}
 ```
 
-Try this in your template.  Make sure to reload your web application after every file change.
+Try this in your template.  Make sure to reload your web application and refresh your browser page after every file change.
 
 ![Figure 13.2](images/step2.png)
 
