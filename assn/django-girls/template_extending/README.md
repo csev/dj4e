@@ -142,6 +142,12 @@ Only one thing left. We need to connect these two templates together.  This is w
 {% endblock %}
 ```
 
-That's it! Save the file, and check if your website is still working properly. :)
+That's it! Save the file, reload your application refresh your web page, and check if your website is still working properly. :)
 
-> If you get the error `TemplateDoesNotExist`, that means that there is no `blog/base.html` file and you have `runserver` running in the console. Try to stop it (by pressing Ctrl+C – the Control and C keys together) and restart it by running a `python manage.py runserver` command.
+If it is not running properly, go into your console and type
+
+    cd ~/djangogirls
+    python manage.py check
+
+And fix any errors that are shown.  The whole 'when things go wrong go into the shell and run check' is a big part of
+debugging Django applicatons.

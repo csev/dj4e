@@ -134,7 +134,7 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 ```
 
-Yes. It is time to refresh the page: http://127.0.0.1:8000/
+Yes. It is time to reload your application and refresh the page: http://127.0.0.1:8000/
 
 ![Post list view](images/post_list2.png)
 

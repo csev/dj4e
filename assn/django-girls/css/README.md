@@ -73,9 +73,9 @@ But let's do at least a little. Maybe we could change the color of our headers?
 To understand colors, computers use special codes. These codes start with `#` followed by 6 letters (A–F) and numbers (0–9). For example, the code for blue is `#0000FF`. You can find the color codes for many colors here: https://www.colorpicker.com/. You may also use predefined [named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color), such as `red` and `green`.
 
 
-In your `blog/static/css/blog.css` file you should add the following code:
+In your `blog/static/blog/css/blog.css` file you should add the following code:
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog/static/blog/css/blog.css{% endfilename %}
 ```css
 h1 a, h2 a {
     color: #C25100;
@@ -145,7 +145,7 @@ OK, save the file, reload your web application, and refresh the site in your bro
 
 Nice work! Maybe we would also like to give our website a little air and increase the margin on the left side? Let's try this!
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog/static/blog/css/blog.css{% endfilename %}
 ```css
 body {
     padding-left: 15px;
@@ -163,11 +163,11 @@ Maybe we can customize the font in our header? Paste this into your `<head>` in 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext">
 ```
 
-Again, check the order and place it before the link to `blog/static/css/blog.css`. This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
+Again, check the order and place it before the link to `css/blog.css`. This line will import a font called *Lobster* from Google Fonts (https://www.google.com/fonts).
 
-Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `blog/static/css/blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
+Find the `h1 a` declaration block (the code between braces `{` and `}`) in the CSS file `blog/static/blog/css/blog.css`.  Now add the line `font-family: 'Lobster';` between the braces, and refresh the page:
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog/static/blog/css/blog.css{% endfilename %}
 ```css
 h1 a, h2 a {
     color: #C25100;
@@ -204,9 +204,9 @@ And now add a class `post` to your `article` containing a blog post.
 </article>
 ```
 
-We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web that can help you understand the following code. For now, copy and paste it into your `blog/static/css/blog.css` file:
+We will now add declaration blocks to different selectors. Selectors starting with `.` relate to classes. There are many great tutorials and explanations about CSS on the Web that can help you understand the following code. For now, copy and paste it into your `blog/static/blog/css/blog.css` file:
 
-{% filename %}blog/static/css/blog.css{% endfilename %}
+{% filename %}blog/static/blog/css/blog.css{% endfilename %}
 ```css
 .page-header {
     background-color: #C25100;
