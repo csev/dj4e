@@ -1,8 +1,9 @@
 <?php
 /**
  * Django Girls 10 – detail
- * Verifies post detail page and links.
- * Corresponds to: Add a Detail Page
+ * Verifies base template, post detail page, and links.
+ * Combines Template extending + Add a Detail Page.
+ * Corresponds to: Template extending, Add a Detail Page
  */
 
 require_once __DIR__ . "/../crud/webauto.php";
@@ -11,6 +12,7 @@ line_out("Django Girls 10 – detail");
 ?>
 <p>
 Assignment:
+<a href="../../assn/django-girls/template_extending/" target="_blank" class="btn btn-info">Template extending</a>
 <a href="../../assn/django-girls/extend_your_application/" target="_blank" class="btn btn-info">Add a Detail Page</a>
 </p>
 <p>
@@ -43,10 +45,16 @@ if ( $crawler !== false ) {
     }
 }
 
-// Post list has links to detail
+// Base template (CSS + content) and post list links
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler !== false ) {
     $html = webauto_get_html($crawler);
+    $has_css = stripos($html, 'stylesheet') !== false || stripos($html, '.css') !== false;
+    $has_content = strlen($html) > 500 && stripos($html, 'Exception Value') === false;
+    if ( $has_css && $has_content ) {
+        success_out("Base template structure (CSS + content)");
+        $passed++;
+    }
     if ( stripos($html, '/post/') !== false ) {
         success_out("Post list links to detail pages");
         $passed++;
@@ -69,7 +77,7 @@ if ( $crawler !== false ) {
 }
 
 line_out(' ');
-$perfect = 4;
+$perfect = 5;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

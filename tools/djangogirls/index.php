@@ -32,7 +32,6 @@ $assignments = array(
     '05_html.php' => '05 – html',
     '07_templates.php' => '07 – templates',
     '08_css.php' => '08 – css',
-    '09_base.php' => '09 – base',
     '10_detail.php' => '10 – detail',
 );
 

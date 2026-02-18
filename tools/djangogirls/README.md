@@ -13,8 +13,7 @@ Students deploy their blog on PythonAnywhere (e.g. `https://USERNAME.pythonanywh
 | 05 | html | grade_check, URLs, and HTML (post_list template) | Django URLs, views, Introduction to HTML |
 | 07 | templates | Post list template with dynamic data | Django ORM, Dynamic data in templates, Django templates |
 | 08 | css | Stylesheets linked | CSS – make it pretty |
-| 09 | base | Template extending (base template) | Template extending |
-| 10 | detail | Post detail page and links | Add a Detail Page |
+| 10 | detail | Base template, post detail page and links | Template extending, Add a Detail Page |
 
 ## Student Setup
 
