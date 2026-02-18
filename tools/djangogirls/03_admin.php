@@ -19,6 +19,7 @@ Assignment:
 <a href="../../assn/django-girls/django_models/" target="_blank" class="btn btn-info">Django models</a>
 <a href="../../assn/django-girls/django_admin/" target="_blank" class="btn btn-info">Django admin</a>
 </p>
+<p class="text-warning"><b>Work only on the above tutorials until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
 <p>
 Create an admin user with <b>this exact account and password</b> so the autograder can log in and explore admin:
 </p>
@@ -44,6 +45,19 @@ warn_about_ngrok($url);
 $url = trimSlash($url);
 
 webauto_setup();
+
+// Speed-of-light: 03 must not have grade_check (from step 05)
+$grade_check_url = $url . '/grade_check';
+$crawler = webauto_retrieve_url($client, $grade_check_url);
+if ( $crawler !== false ) {
+    $gc_html = webauto_get_html($crawler);
+    $check = webauto_get_check();
+    if ( $check && stripos($gc_html, $check) !== false ) {
+        error_out("grade_check detected – that is from a later step. Complete steps in order.");
+        line_out(' ');
+        return;
+    }
+}
 
 // Speed-of-light: root URL must still show default "Welcome to Django" page, not the blog
 $crawler = webauto_retrieve_url($client, $url);

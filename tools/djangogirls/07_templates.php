@@ -16,11 +16,12 @@ Assignment:
 <a href="../../assn/django-girls/dynamic_data_in_templates/" target="_blank" class="btn btn-info">Dynamic data in templates</a>
 <a href="../../assn/django-girls/django_templates/" target="_blank" class="btn btn-info">Django templates</a>
 </p>
+<p class="text-warning"><b>Work only on the above tutorials until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
 <p>
 Enter the URL of your Django Girls blog. Add posts via admin (see ORM chapter).
 </p>
 <?php
-nameNote();
+nameNote(false, true);
 
 $url = getUrl('https://YOURUSERNAME.pythonanywhere.com');
 if ( $url === false ) return;

@@ -13,12 +13,11 @@ line_out("Django Girls 01 – startproject");
 Assignment:
 <a href="../../assn/django-girls/django_start_project/" target="_blank" class="btn btn-info">Starting a New Django Project!</a>
 </p>
+<p class="text-warning"><b>Work only on the above tutorials until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
 <p>
 Enter the URL of your Django project on PythonAnywhere.
 </p>
 <?php
-nameNote();
-
 $url = getUrl('https://YOURUSERNAME.pythonanywhere.com');
 if ( $url === false ) return;
 
@@ -27,6 +26,19 @@ warn_about_ngrok($url);
 $url = trimSlash($url);
 
 webauto_setup();
+
+// Speed-of-light: 01 must not have grade_check (from step 05)
+$grade_check_url = $url . '/grade_check';
+$crawler = webauto_retrieve_url($client, $grade_check_url);
+if ( $crawler !== false ) {
+    $html = webauto_get_html($crawler);
+    $check = webauto_get_check();
+    if ( $check && stripos($html, $check) !== false ) {
+        error_out("grade_check detected – that is from a later step. Complete steps in order.");
+        line_out(' ');
+        return;
+    }
+}
 
 // Site must load (basic deployment)
 $crawler = webauto_retrieve_url($client, $url);

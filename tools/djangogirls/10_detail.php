@@ -15,11 +15,12 @@ Assignment:
 <a href="../../assn/django-girls/template_extending/" target="_blank" class="btn btn-info">Template extending</a>
 <a href="../../assn/django-girls/extend_your_application/" target="_blank" class="btn btn-info">Add a Detail Page</a>
 </p>
+<p class="text-warning"><b>Work only on the above tutorials until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
 <p>
 Enter the URL of your Django Girls blog. Ensure you have at least one post in the admin.
 </p>
 <?php
-nameNote();
+nameNote(false, true);
 
 $url = getUrl('https://YOURUSERNAME.pythonanywhere.com');
 if ( $url === false ) return;

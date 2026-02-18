@@ -138,7 +138,7 @@ function titleNote() {
     nameNote(true);
 }
 
-function nameNote($title=false) {
+function nameNote($title=false, $grade_check=false) {
     global $USER, $LINK, $CONTEXT;
     global $check;
     // $check = substr(md5($USER->id+$LINK->id+$CONTEXT->id),0,8);
@@ -148,7 +148,9 @@ function nameNote($title=false) {
 To receive a grade for this assignment, include
 <?php
 echo("this string <strong>".$check."</strong> \n");
-if ( $title ) {
+if ( $grade_check ) {
+    echo('in the output of your grade_check view.');
+} elseif ( $title ) {
     echo('in the &lt;title&gt; tag in all the pages of your application.');
 } else {
     echo('on the pages of your application.');
@@ -214,56 +216,63 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
     }
 
     if ( isset($_GET['url']) ) {
-        echo('<p><a href="#" class="btn btn-primary" id="test-rerun" ');
-        if ( $SECONDS_BEFORE_RETRY > 2 && ! $USER->instructor ) {
-            echo(' disabled ');
-        }
-        echo('onclick="$(\'#test-rerun\').text(\'Test running...\');greyOut();');
-        echo('window.location.href = window.location.href; return false;">');
-        if ( $SECONDS_BEFORE_RETRY > 2 ) {
-            echo('Please wait <span id="countdown">... </span> (rate limit)');
-        } else {
-            echo("Re-run this test");
-        }
-        echo("</a></p>\n");
-        echo('<script>
-            function hideBelow() {
-                const marker = document.getElementById("disappear-start");
-
-                let sibling = marker.nextSibling;
-                while (sibling) {
-                    let next = sibling.nextSibling;
-                    sibling.remove();
-                    sibling = next;
-                }
-
-            }
-            function greyOut() {
-                document.querySelectorAll("#disappear-start ~ *").forEach(el => {
-                    el.style.opacity = "0.4";          // greyed-out look
-                    el.style.pointerEvents = "none";   // makes it feel disabled
-                    el.style.filter = "grayscale(100%)";
-                });
-            }
-        </script>');
-
-        if ( isset($_SESSION['lti']) ) {
-            $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
-        }
-
+        $url_valid = false;
         try {
             $pieces = parse_url(trim($_GET['url']));
-            if ( isset($pieces['scheme']) && isset($pieces['host']) ) {
-                $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
-                if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
-                    $base_url_path .= ':' . $pieces['port'];
-                }
-                $URL_IN_USE = $_GET['url'];
-                return trim($URL_IN_USE);
+            if ( $pieces && isset($pieces['scheme']) && isset($pieces['host']) ) {
+                $url_valid = true;
             }
-            echo("<p>Badly formatted URL</p>\n");
         } catch(Exception $e) {
+            $url_valid = false;
+        }
+
+        if ( !$url_valid ) {
             echo("<p>Badly formatted URL</p>\n");
+        } else {
+            $base_url_path = $pieces['scheme'] . '://' . $pieces['host'];
+            if ( isset($pieces['port']) && $pieces['port'] != 0 && $pieces['port'] != 80 && $pieces['port'] != 443 ) {
+                $base_url_path .= ':' . $pieces['port'];
+            }
+            $URL_IN_USE = $_GET['url'];
+
+            echo('<p><a href="#" class="btn btn-primary" id="test-rerun" ');
+            if ( $SECONDS_BEFORE_RETRY > 2 && ! $USER->instructor ) {
+                echo(' disabled ');
+            }
+            echo('onclick="$(\'#test-rerun\').text(\'Test running...\');greyOut();');
+            echo('window.location.href = window.location.href; return false;">');
+            if ( $SECONDS_BEFORE_RETRY > 2 ) {
+                echo('Please wait <span id="countdown">... </span> (rate limit)');
+            } else {
+                echo("Re-run this test");
+            }
+            echo("</a></p>\n");
+            echo('<script>
+                function hideBelow() {
+                    const marker = document.getElementById("disappear-start");
+
+                    let sibling = marker.nextSibling;
+                    while (sibling) {
+                        let next = sibling.nextSibling;
+                        sibling.remove();
+                        sibling = next;
+                    }
+
+                }
+                function greyOut() {
+                    document.querySelectorAll("#disappear-start ~ *").forEach(el => {
+                        el.style.opacity = "0.4";          // greyed-out look
+                        el.style.pointerEvents = "none";   // makes it feel disabled
+                        el.style.filter = "grayscale(100%)";
+                    });
+                }
+            </script>');
+
+            if ( isset($_SESSION['lti']) ) {
+                $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
+            }
+
+            return trim($URL_IN_USE);
         }
     }
 
