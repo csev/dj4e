@@ -39,7 +39,7 @@ This means that Django understands it as a list of objects. Remember from __Intr
 {% endfor %}
 ```
 
-Try this in your template.
+Try this in your template.  Make sure to reload your web application after every file change.
 
 ![Figure 13.2](images/step2.png)
 
@@ -67,39 +67,6 @@ It works! But we want the posts to be displayed like the static posts we created
 Have you noticed that we used a slightly different notation this time (`{{ post.title }}` or `{{ post.text }}`)? We are accessing data in each of the fields defined in our `Post` model. Also, the `|linebreaksbr` is piping the posts' text through a filter to convert line-breaks into paragraphs.
 
 
-## One more thing
-
-It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps…
-
-* First, push your code to GitHub
-
-{% filename %}command-line{% endfilename %}
-```
-$ git status
-[...]
-$ git add .
-$ git status
-[...]
-$ git commit -m "Modified templates to display posts from database."
-[...]
-$ git push
-```
-
-* Then, log back in to [PythonAnywhere](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one), and run:
-
-{% filename %}PythonAnywhere command-line{% endfilename %}
-```
-$ cd <your-pythonanywhere-domain>.pythonanywhere.com
-$ git pull
-[...]
-```
-
-(Remember to substitute `<your-pythonanywhere-domain>` with your actual PythonAnywhere subdomain, without the angle-brackets.)
-
-* Finally, hop on over to the ["Web" page](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app. (To reach other PythonAnywhere pages from the console, use the menu button in the upper right corner.) Your update should be live on https://subdomain.pythonanywhere.com -- check it out in the browser! If the blog posts on your PythonAnywhere site don't match the posts appearing on the blog hosted on your local server, that's OK. The databases on your local computer and Python Anywhere don't sync with the rest of your files.
-
-
-Congrats! Now go ahead and try adding a new post in your Django admin (remember to add published_date!) Make sure you are in the Django admin for your pythonanywhere site, https://subdomain.pythonanywhere.com/admin. Then refresh your page to see if the post appears there.
 
 Works like a charm? We're proud! Step away from your computer for a bit – you have earned a break. :)
 

@@ -4,7 +4,6 @@ What's a template, you may ask?
 
 A template is a file that we can re-use to present different information in a consistent format – for example, you could use a template to help you write a letter because although each letter might contain a different message and be addressed to a different person, they will share the same format.
 
-A Django template's format is described in a language called HTML (that's the HTML we mentioned in the first chapter, __How the Internet works__).
 
 ## What is HTML?
 
@@ -28,13 +27,14 @@ blog
 
 And now create a `post_list.html` file (just leave it blank for now) inside the `blog/templates/blog` directory.
 
-See how your website looks now: http://127.0.0.1:8000/
+Then restart your web server.
 
-> If you still have an error `TemplateDoesNotExist`, try to restart your server. Go to the command line, stop the server by pressing Ctrl+C (Control and C keys together) and start it again by running a `python manage.py runserver` command.
+See how your website looks now: http://127.0.0.1:8000/
 
 ![Figure 11.1](images/step1.png)
 
-No error anymore! Congratulations! :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.
+No error anymore! Congratulations! :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.  Again if you see an 'Something went wrong' error, identify and
+fix the error with `python manage.py check` and reload the web server.
 
 Open the new file in the code editor, and add the following:
 
@@ -162,65 +162,3 @@ Yaaay! But so far, our template only ever displays exactly __the same informatio
 
 What we really want to do is display real posts added in our Django admin – and that's where we're going next.
 
-## One more thing:  deploy!
-
-It'd be good to see all this out and live on the Internet, right?  Let's do another PythonAnywhere deploy:
-
-### Commit, and push your code up to GitHub
-
-First off, let's see what files have changed since we last deployed (run these commands locally, not on PythonAnywhere):
-
-{% filename %}command-line{% endfilename %}
-```
-$ git status
-```
-
-Make sure you're in the `djangogirls` directory and let's tell `git` to include all the changes in this directory:
-
-{% filename %}command-line{% endfilename %}
-```
-$ git add .
-```
-
-Before we upload all the files, let's check what `git` will be uploading (all the files that `git` will upload should now appear in green):
-
-{% filename %}command-line{% endfilename %}
-```
-$ git status
-```
-
-We're almost there, now it's time to tell it to save this change in its history. We're going to give it a "commit message" where we describe what we've changed. You can type anything you'd like at this stage, but it's helpful to type something descriptive so that, in the future, you can remember what you've done.
-
-{% filename %}command-line{% endfilename %}
-```
-$ git commit -m "Changed the HTML for the site."
-```
-
-> __Note__ Make sure you use double quotes around the commit message.
-
-Once we've done that, we upload (push) our changes up to GitHub:
-
-{% filename %}command-line{% endfilename %}
-```
-$ git push
-```
-
-### Pull your new code down to PythonAnywhere, and reload your web app
-
-* Open up the [PythonAnywhere consoles page](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one). Then, run:
-
-{% filename %}PythonAnywhere command-line{% endfilename %}
-```
-$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
-$ git pull
-[...]
-```
-
-You'll need to substitute `<your-pythonanywhere-domain>` with your actual PythonAnywhere subdomain name, without the angle-brackets. Your subdomain name is normally your PythonAnywhere user name, but in some cases it might be a bit different (such as if your user name contains capital letters). So if this command doesn't work, use the `ls` (list files) command to find your actual subdomain/folder name, and then `cd` to there.
-
-Now watch your code getting downloaded. If you want to check that it's arrived, you can hop over to the **"Files" page** and view your code on PythonAnywhere (you can reach other PythonAnywhere pages from the menu button on the console page).
-
-
-* Finally, hop on over to the ["Web" page](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app.
-
-Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)
