@@ -1,8 +1,9 @@
 <?php
 /**
  * Django Girls 07 – templates
- * Verifies Django templates (post_list).
- * Corresponds to: Django templates
+ * Verifies Django templates with dynamic data (post_list).
+ * Combines dynamic data in templates + Django templates.
+ * Corresponds to: Django ORM, Dynamic data in templates, Django templates
  */
 
 require_once __DIR__ . "/../crud/webauto.php";
@@ -11,10 +12,12 @@ line_out("Django Girls 07 – templates");
 ?>
 <p>
 Assignment:
+<a href="../../assn/django-girls/django_orm/" target="_blank" class="btn btn-info">Django ORM</a>
+<a href="../../assn/django-girls/dynamic_data_in_templates/" target="_blank" class="btn btn-info">Dynamic data in templates</a>
 <a href="../../assn/django-girls/django_templates/" target="_blank" class="btn btn-info">Django templates</a>
 </p>
 <p>
-Enter the URL of your Django Girls blog.
+Enter the URL of your Django Girls blog. Add posts via admin (see ORM chapter).
 </p>
 <?php
 nameNote();
@@ -51,10 +54,10 @@ if ( $crawler !== false ) {
         stripos($html, "class='post'") !== false || stripos($html, 'post_list') !== false;
     $has_content = strlen($html) > 500 && stripos($html, 'Exception Value') === false;
     if ( $has_structure ) {
-        success_out("Post list template renders");
+        success_out("Post list template with dynamic data renders");
         $passed++;
     } elseif ( $has_content ) {
-        success_out("Main page loads");
+        success_out("Main page loads (add posts via admin to see dynamic data)");
         $passed++;
     }
 }

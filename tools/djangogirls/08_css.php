@@ -43,7 +43,7 @@ if ( $crawler !== false ) {
     }
 }
 
-// Stylesheet linked
+// Stylesheet linked and fetch to verify content
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler !== false ) {
     $html = webauto_get_html($crawler);
@@ -51,10 +51,54 @@ if ( $crawler !== false ) {
         success_out("Stylesheet linked");
         $passed++;
     }
+
+    // Find and fetch the custom stylesheet (blog.css) - attributes may be in any order
+    $css_url = null;
+    if ( preg_match_all('#<link\s[^>]*?href=["\']([^"\']+\.css)["\'][^>]*>#i', $html, $matches) ) {
+        foreach ( $matches[1] as $css_href ) {
+            if ( stripos($css_href, 'bootstrap') === false && stripos($css_href, 'cdn.') === false ) {
+                $css_url = (strpos($css_href, 'http') === 0) ? $css_href : rtrim($url, '/') . (strpos($css_href, '/') === 0 ? $css_href : '/' . $css_href);
+                break;
+            }
+        }
+    }
+
+    if ( $css_url ) {
+        try {
+            $httpClient = \Symfony\Component\HttpClient\HttpClient::create(['verify_peer' => false, 'verify_host' => false]);
+            $response = $httpClient->request('GET', $css_url);
+            $css_content = $response->getContent();
+        } catch ( \Exception $e ) {
+            $css_content = '';
+        }
+        if ( strlen($css_content) > 0 ) {
+            togglePre(_m('Retrieved CSS'), "<pre>\n" . htmlspecialchars($css_content) . "\n</pre>");
+            $expected = [
+                '.page-header' => '.page-header',
+                '#C25100' => '#C25100 (Django Girls orange)',
+                'Lobster' => "'Lobster', cursive",
+                '.post' => '.post',
+                '.date' => '.date',
+                '.btn-secondary' => '.btn-secondary',
+            ];
+            foreach ( $expected as $needle => $label ) {
+                if ( stripos($css_content, $needle) !== false ) {
+                    success_out("CSS: $label");
+                    $passed++;
+                } else {
+                    line_out("CSS: $label (missing)");
+                }
+            }
+        } else {
+            line_out("Could not fetch stylesheet from " . htmlspecialchars($css_url));
+        }
+    } else {
+        line_out("Could not find custom stylesheet URL (link to blog.css)");
+    }
 }
 
 line_out(' ');
-$perfect = 2;
+$perfect = 8;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

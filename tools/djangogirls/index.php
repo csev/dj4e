@@ -30,7 +30,6 @@ $assignments = array(
     '01_startproject.php' => '01 – startproject',
     '03_admin.php' => '03 – admin',
     '05_html.php' => '05 – html',
-    '06_dynamic.php' => '06 – dynamic',
     '07_templates.php' => '07 – templates',
     '08_css.php' => '08 – css',
     '09_base.php' => '09 – base',
