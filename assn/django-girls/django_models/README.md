@@ -66,7 +66,7 @@ You can think of a model in the database as a spreadsheet with columns (fields) 
 
 To keep everything tidy, we will create a separate application inside our project. It is very nice to have everything organized from the very beginning. To create an application we need to run the following command in the console (from `djangogirls` directory where `manage.py` file is):
 
-{% filename %}macOS and Linux:{% endfilename %}
+{% filename %}the shell{% endfilename %}
 ```
 (.ve52) ~/djangogirls$ python manage.py startapp blog
 ```
@@ -97,8 +97,6 @@ djangogirls
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── .ve52
-│   └── ...
 └── requirements.txt
 
 ```

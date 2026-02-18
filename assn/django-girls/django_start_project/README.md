@@ -13,12 +13,12 @@ The first step is to start a new Django project. Basically, this means that we'l
 
 The names of some files and directories are very important for Django. You should not rename the files that we are about to create. Moving them to a different place is also not a good idea. Django needs to maintain a certain structure to be able to find important things.
 
-> Remember to run everything in the virtualenv. If you don't see a prefix `(.ve52)` in your console, you need to activate your virtualenv. We explained how to do that in the __Django installation__ chapter in the __Working with virtualenv__ part. Typing `.ve52\Scripts\activate` on Windows or
-`source .ve52/bin/activate` on macOS or Linux will do this for you.
+> Remember to run everything in the virtualenv. If you don't see a prefix `(.ve52)` in your console, you need to activate your virtualenv. We explained how to do that in the __Django installation__ 
+`source .ve52/bin/activate` in the shell will do this for you.
 
-<!--sec data-title="Create project: macOS or Linux" data-id="django_start_project_OSX_Linux" data-collapse=true ces-->
+<!--sec data-title="Create project: the shell" data-id="django_start_project_OSX_Linux" data-collapse=true ces-->
 
-In your macOS or Linux console, you should run the following command. **Don't forget to add the period (or dot) `.` at the end!**
+In the shell, you should run the following command. **Don't forget to add the period (or dot) `.` at the end!**
 
 {% filename %}command-line{% endfilename %}
 ```
@@ -29,21 +29,6 @@ In your macOS or Linux console, you should run the following command. **Don't fo
 
 > **Note** When typing the command above, remember that you only type the part which starts by `django-admin`.
 The `(.ve52) ~/djangogirls$` part shown here is just example of the prompt that will be inviting your input on your command line.
-
-<!--endsec-->
-
-<!--sec data-title="Create project: Windows" data-id="django_start_project_windows" data-collapse=true ces-->
-
-On Windows you should run the following command. **(Don't forget to add the period (or dot) `.` at the end)**:
-
-{% filename %}command-line{% endfilename %}
-```
-(.ve52) C:\Users\Name\djangogirls> django-admin.exe startproject mysite .
-```
-> The period `.` is crucial because it tells the script to install Django in your current directory (for which the period `.` is a short-hand reference).
-
-> **Note** When typing the command above, remember that you only type the part which starts by `django-admin.exe`.
-The `(.ve52) C:\Users\Name\djangogirls>` part shown here is just example of the prompt that will be inviting your input on your command line.
 
 <!--endsec-->
 
@@ -62,7 +47,6 @@ djangogirls
 │   └── ...
 └── requirements.txt
 ```
-> **Note**: in your directory structure, you will also see your `.ve52` directory that we created before.
 
 `manage.py` is a script that helps with management of the site. With it we will be able (among other things) to start a web server on our computer without installing anything else.
 
@@ -123,51 +107,10 @@ This won't match our hostname on PythonAnywhere once we deploy our application s
 
 {% filename %}mysite/settings.py{% endfilename %}
 ```python
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 ```
 
-> **Note**: If you're using a Chromebook, add this line at the bottom of your settings.py file:
-> `MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'`
-
-> Also add `.amazonaws.com` to the `ALLOWED_HOSTS` if you are using cloud9
-
-> If you are hosting your project on `Glitch.com`, let us protect the Django secret key that needs to
-> remain confidential (otherwise, anyone remixing your project could see it):
->
->   * First, we are going to create a random secret key.
->     Open the Glitch terminal again, and type the following command:
->
->     {% filename %}command-line{% endfilename %}
->     ```bash
->     python -c 'from django.core.management.utils import get_random_secret_key; \
->           print(get_random_secret_key())'
->     ```
->     This should display a long random string, perfect to use as a secret key for your brand new Django web site.
->     We will now paste this key into a `.env` file that Glitch will only show you if you are the owner of the web site.
->
->   * Create a file `.env` at the root of your project and add the following property in it:
->
->     {% filename %}.env{% endfilename %}
->     ```bash
->     # Here, inside the single quotes, you can cut and paste the random key generated above
->     SECRET='3!0k#7ds5mp^-x$lqs2%le6v97h#@xopab&oj5y7d=hxe511jl'
->     ```
->   * Then update the Django settings file to inject this secret value and set the Django web site name:
->
->     {% filename %}mysite/settings.py{% endfilename %}
->     ```python
->     import os
->
->     SECRET_KEY = os.getenv('SECRET')
->     ```
->   * And a little further down in the same file, we inject the name of your new Glitch website:
->
->     {% filename %}mysite/settings.py{% endfilename %}
->     ```python
->     ALLOWED_HOSTS = [os.getenv('PROJECT_DOMAIN') + ".glitch.me"]
->     ```
->     The `PROJECT_DOMAIN` value is automatically generated by Glitch.
->     It will correspond to the name of your project.
+> **Note**: Also add `.amazonaws.com` to the `ALLOWED_HOSTS` if you are using cloud9
 
 ## Set up a database
 
@@ -224,20 +167,6 @@ You need to be in the directory that contains the `manage.py` file (the `djangog
 (.ve52) ~/djangogirls$ python manage.py runserver
 ```
 
-If you are on a Chromebook, use this command instead:
-
-{% filename %}Cloud 9{% endfilename %}
-```
-(.ve52) ~/djangogirls$ python manage.py runserver 0.0.0.0:8080
-```
-or this one if you are using Glitch:
-
-{% filename %}Glitch.com terminal{% endfilename %}
-```
-$ refresh
-
-```
-
 If you are on Windows and this fails with `UnicodeDecodeError`, use this command instead:
 
 {% filename %}command-line{% endfilename %}
@@ -251,17 +180,6 @@ Now you need to check that your website is running. Open your browser (Firefox, 
 {% filename %}browser{% endfilename %}
 ```
 http://127.0.0.1:8000/
-```
-
-If you're using a Chromebook and Cloud9, instead click the URL in the pop-up window that should have appeared in the upper right corner of the command window where the web server is running. The URL will look something like:
-
-{% filename %}browser{% endfilename %}
-```
-https://<a bunch of letters and numbers>.vfs.cloud9.us-west-2.amazonaws.com
-```
-or on Glitch:
-```
-https://name-of-your-glitch-project.glitch.me
 ```
 
 You can open this in another browser window and you should see the Django install worked page.

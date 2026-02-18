@@ -14,25 +14,17 @@ The deployment process can be illustrated as follows:
 
 ![](../deploy/images/deployment_local.png)
 
-If you’re using a **Chromebook** and [GitHub Codespaces](https://github.com/codespaces), your setup will look a bit different. All code-related changes are made not locally on your **Chromebook**, but in the Cloud Environment provided by GitHub.
-
-The deployment process on **Chromebook** and Cloud environment can be illustrated as follows:
-
-![](../deploy/images/deployment_cloud.png)
-
 # Git
 
 > **Note** If you already did the [installation steps](../installation/README.md), there's no need to do this again – you can skip to the next section and start creating your Git repository.
 
 {% include "/deploy/install_git.md" %}
 
-> **Note** If you're using a **Chromebook** and have already completed the **Chromebook** Installation [part](../chromebook_setup/README.md), you've already created the repository and can **skip** all commands from the "Starting our Git repository" and "Ignoring files" chapters. You can continue from the "First Git commands" chapter.  While you’re welcome to read these chapters, the Terminal commands can be skipped. 
-
 ## Starting our Git repository
 
 Git tracks changes to a particular set of files in what's called a code repository (or "repo" for short). Let's start one for our project. Open up your console and run these commands, in the `djangogirls` directory:
 
-> **Note** Check your current working directory with a `pwd` (macOS/Linux) or `cd` (Windows) command before initializing the repository. You should be in the `djangogirls` folder.
+> **Note** Check your current working directory with a `pwd` (the shell) or `cd` (Windows) command before initializing the repository. You should be in the `djangogirls` folder.
 
 {% filename %}command-line{% endfilename %}
 ```

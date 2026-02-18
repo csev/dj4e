@@ -33,7 +33,7 @@ function process_template_syntax($text) {
                 $title = $titleMatch[1];
                 // Keep: Linux variants only (PythonAnywhere/Linux target)
                 $keep = preg_match(
-                    '/Linux|Debian|Ubuntu|Fedora|openSUSE|macOS and Linux|Linux and macOS|macOS or Linux/i',
+                    '/Linux|Debian|Ubuntu|Fedora|openSUSE|macOS and Linux|Linux and macOS|macOS or Linux|the shell/i',
                     $title
                 );
                 if (!$keep) {
