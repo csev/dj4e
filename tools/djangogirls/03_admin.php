@@ -45,6 +45,20 @@ $url = trimSlash($url);
 
 webauto_setup();
 
+// Speed-of-light: root URL must still show default "Welcome to Django" page, not the blog
+$crawler = webauto_retrieve_url($client, $url);
+if ( $crawler === false ) return;
+$html = webauto_get_html($crawler);
+$has_default = stripos($html, 'The install worked successfully') !== false || stripos($html, 'It worked') !== false;
+$has_blog = stripos($html, 'Django Girls Blog') !== false;
+if ( $has_blog || !$has_default ) {
+    error_out("Root URL (/) must still show the default Django welcome page, not the blog. Complete steps in order.");
+    line_out(' ');
+    return;
+}
+success_out("Root URL still shows default Django page");
+$passed++;
+
 // Admin login page
 $admin_url = $url . '/admin/';
 $crawler = webauto_retrieve_url($client, $admin_url);
@@ -84,7 +98,7 @@ try {
 }
 
 line_out(' ');
-$perfect = 3;
+$perfect = 4;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 

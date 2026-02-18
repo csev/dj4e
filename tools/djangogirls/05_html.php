@@ -48,26 +48,36 @@ if ( $crawler !== false ) {
 }
 
 // Main page: Django Girls Blog, My first post, My second post
+$future_detected = false;
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler !== false ) {
     $html = webauto_get_html($crawler);
-    if ( stripos($html, 'Django Girls Blog') !== false ) {
+    // Speed-of-light: 05 must not show structure from 07+ or CSS from 08
+    $has_future_structure = stripos($html, 'class="post"') !== false || stripos($html, "class='post'") !== false ||
+        stripos($html, 'page-header') !== false;
+    $has_css_links = stripos($html, 'stylesheet') !== false || stripos($html, 'blog.css') !== false ||
+        preg_match('#<link[^>]+\.css#i', $html);
+    if ( $has_future_structure || $has_css_links ) {
+        error_out("Code from a later step detected (class=\"post\", page-header, or CSS links). Complete steps in order.");
+        $future_detected = true;
+    }
+    if ( !$future_detected && stripos($html, 'Django Girls Blog') !== false ) {
         success_out("Found 'Django Girls Blog'");
         $passed++;
-    } else {
+    } elseif ( !$future_detected ) {
         line_out("Expected 'Django Girls Blog' on main page");
     }
-    if ( stripos($html, 'My first post') !== false ) {
+    if ( !$future_detected && stripos($html, 'My first post') !== false ) {
         success_out("Found 'My first post'");
         $passed++;
     } else {
-        line_out("Expected 'My first post' (add posts via admin, ORM chapter)");
+        if ( !$future_detected ) line_out("Expected 'My first post' (add posts via admin, ORM chapter)");
     }
-    if ( stripos($html, 'My second post') !== false ) {
+    if ( !$future_detected && stripos($html, 'My second post') !== false ) {
         success_out("Found 'My second post'");
         $passed++;
     } else {
-        line_out("Expected 'My second post' (add posts via admin, ORM chapter)");
+        if ( !$future_detected ) line_out("Expected 'My second post' (add posts via admin, ORM chapter)");
     }
 }
 
@@ -78,6 +88,10 @@ $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 if ( webauto_testrun($url) ) {
     error_out("Not graded - sample solution");
+    return;
+}
+if ( $future_detected ) {
+    error_out("No grade sent – complete steps in order.");
     return;
 }
 if ( !$grade_check_ok ) {

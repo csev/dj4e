@@ -44,10 +44,16 @@ if ( $crawler !== false ) {
 }
 
 // Stylesheet linked and fetch to verify content
+$future_detected = false;
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler !== false ) {
     $html = webauto_get_html($crawler);
-    if ( stripos($html, 'stylesheet') !== false || stripos($html, '.css') !== false ) {
+    // Speed-of-light: 08 must not show post detail links from step 10
+    if ( preg_match('#href=["\'][^"\']*\/post\/\d#', $html) || stripos($html, '"/post/') !== false || stripos($html, "'/post/") !== false ) {
+        error_out("Code from a later step detected (post detail links /post/1/, etc.). Complete steps in order.");
+        $future_detected = true;
+    }
+    if ( !$future_detected && ( stripos($html, 'stylesheet') !== false || stripos($html, '.css') !== false ) ) {
         success_out("Stylesheet linked");
         $passed++;
     }
@@ -83,9 +89,11 @@ if ( $crawler !== false ) {
             ];
             foreach ( $expected as $needle => $label ) {
                 if ( stripos($css_content, $needle) !== false ) {
-                    success_out("CSS: $label");
-                    $passed++;
-                } else {
+                    if ( !$future_detected ) {
+                        success_out("CSS: $label");
+                        $passed++;
+                    }
+                } elseif ( !$future_detected ) {
                     line_out("CSS: $label (missing)");
                 }
             }
@@ -104,6 +112,10 @@ $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 if ( webauto_testrun($url) ) {
     error_out("Not graded - sample solution");
+    return;
+}
+if ( $future_detected ) {
+    error_out("No grade sent – complete steps in order.");
     return;
 }
 if ( !$grade_check_ok ) {

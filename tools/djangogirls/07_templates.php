@@ -47,12 +47,24 @@ if ( $crawler !== false ) {
 }
 
 // Post list template
+$future_detected = false;
 $crawler = webauto_retrieve_url($client, $url);
 if ( $crawler !== false ) {
     $html = webauto_get_html($crawler);
-    $has_structure = stripos($html, 'article') !== false || stripos($html, 'class="post"') !== false ||
-        stripos($html, "class='post'") !== false || stripos($html, 'post_list') !== false;
-    $has_content = strlen($html) > 500 && stripos($html, 'Exception Value') === false;
+    // Speed-of-light: 07 must not show content from step 08 (CSS) or step 10 (detail links)
+    $has_css_from_08 = stripos($html, 'stylesheet') !== false || stripos($html, 'blog.css') !== false ||
+        preg_match('#<link[^>]+\.css#i', $html);
+    $has_detail_links = preg_match('#href=["\'][^"\']*\/post\/\d#', $html) || stripos($html, '"/post/') !== false || stripos($html, "'/post/") !== false;
+    if ( $has_css_from_08 || $has_detail_links ) {
+        $parts = [];
+        if ( $has_css_from_08 ) $parts[] = 'CSS/styling (step 08)';
+        if ( $has_detail_links ) $parts[] = 'post detail links (step 10)';
+        error_out("Code from a later step detected (" . implode(', ', $parts) . "). Complete steps in order.");
+        $future_detected = true;
+    }
+    $has_structure = !$future_detected && ( stripos($html, 'article') !== false || stripos($html, 'class="post"') !== false ||
+        stripos($html, "class='post'") !== false || stripos($html, 'post_list') !== false );
+    $has_content = !$future_detected && strlen($html) > 500 && stripos($html, 'Exception Value') === false;
     if ( $has_structure ) {
         success_out("Post list template with dynamic data renders");
         $passed++;
@@ -69,6 +81,10 @@ $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
 if ( webauto_testrun($url) ) {
     error_out("Not graded - sample solution");
+    return;
+}
+if ( $future_detected ) {
+    error_out("No grade sent – complete steps in order.");
     return;
 }
 if ( !$grade_check_ok ) {

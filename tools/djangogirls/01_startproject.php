@@ -39,7 +39,8 @@ if ( stripos($html, 'Exception Value') !== false || stripos($html, 'Traceback') 
     success_out("Found default Django welcome page");
     $passed++;
 } else {
-    line_out("Expected to find: The install worked successfully! Congratulations!");
+    error_out("Default Django welcome page not found at the root URL.");
+    line_out("Assignments must be completed in order. The root URL should show \"The install worked successfully! Congratulations!\"");
 }
 
 line_out(' ');

@@ -73,11 +73,20 @@ if ( $crawler !== false ) {
         if ( stripos($detail_html, 'article') !== false || stripos($detail_html, 'class="post"') !== false ) {
             $passed++;
         }
+        // Detail page must extend base: "Django Girls Blog" link back to home in header
+        $has_base_link = stripos($detail_html, 'Django Girls Blog') !== false &&
+            ( stripos($detail_html, 'href="/"') !== false || stripos($detail_html, "href='/'") !== false );
+        if ( $has_base_link ) {
+            success_out("Detail page extends base (Django Girls Blog link in header)");
+            $passed++;
+        } else {
+            line_out("Detail page should extend base template with 'Django Girls Blog' link to /");
+        }
     }
 }
 
 line_out(' ');
-$perfect = 5;
+$perfect = 6;
 if ( $passed < 0 ) $passed = 0;
 $score = webauto_compute_effective_score($perfect, $passed, $penalty);
 
