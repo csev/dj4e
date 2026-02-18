@@ -25,12 +25,17 @@ if ( SettingsForm::isSettingsPost() ) {
     return;
 }
 
-// Django Girls tutorial milestones
+// Django Girls tutorial milestones (matches assn/django-girls folder tags)
 $assignments = array(
-    '01_grade_check.php' => '01 – Grade Check (views & URLs)',
-    '02_post_list.php' => '02 – Post List (templates)',
-    '03_post_detail.php' => '03 – Post Detail (Add a Detail Page)',
-    '04_blog_complete.php' => '04 – Blog Complete (styling)',
+    '01_startproject.php' => '01 – startproject',
+    '03_admin.php' => '03 – admin',
+    '04_urls.php' => '04 – urls',
+    '05_html.php' => '05 – html',
+    '06_dynamic.php' => '06 – dynamic',
+    '07_templates.php' => '07 – templates',
+    '08_css.php' => '08 – css',
+    '09_base.php' => '09 – base',
+    '10_detail.php' => '10 – detail',
 );
 
 $LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));

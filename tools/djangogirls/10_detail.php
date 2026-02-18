@@ -1,13 +1,13 @@
 <?php
 /**
- * Django Girls Milestone 03: Post Detail
- * Verifies that individual post pages work (post/<pk>/).
- * Corresponds to: Add a Detail Page chapter.
+ * Django Girls 10 – detail
+ * Verifies post detail page and links.
+ * Corresponds to: Add a Detail Page
  */
 
 require_once __DIR__ . "/../crud/webauto.php";
 
-line_out("Django Girls Milestone 03: Post Detail");
+line_out("Django Girls 10 – detail");
 ?>
 <p>
 Assignment:
@@ -28,36 +28,32 @@ $url = trimSlash($url);
 
 webauto_setup();
 
-// Verify grade_check
+$grade_check_ok = false;
 $grade_url = $url . '/grade_check';
 $crawler = webauto_retrieve_url($client, $grade_url);
-if ( $crawler === false ) return;
-
-$html = webauto_get_html($crawler);
-$check = webauto_get_check();
-$grade_check_ok = false;
-if ( $check && stripos($html, $check) !== false ) {
-    $passed++;
-    $grade_check_ok = true;
-} else {
-    error_out("grade_check must return your check string ('$check').");
-    error_out("Tests continue below, but no grade will be sent until grade_check passes.");
+if ( $crawler !== false ) {
+    $html = webauto_get_html($crawler);
+    $check = webauto_get_check();
+    if ( $check && stripos($html, $check) !== false ) {
+        $passed++;
+        $grade_check_ok = true;
+    } else {
+        error_out("grade_check must return your check string ('$check').");
+        error_out("Tests continue below, but no grade will be sent until grade_check passes.");
+    }
 }
 
-// Get main page and look for link to post detail
+// Post list has links to detail
 $crawler = webauto_retrieve_url($client, $url);
-if ( $crawler === false ) return;
-
-$html = webauto_get_html($crawler);
-
-// Look for link to /post/1/ or similar in post list
-$has_post_link = stripos($html, '/post/') !== false;
-if ( $has_post_link ) {
-    success_out("Found link to post detail");
-    $passed++;
+if ( $crawler !== false ) {
+    $html = webauto_get_html($crawler);
+    if ( stripos($html, '/post/') !== false ) {
+        success_out("Post list links to detail pages");
+        $passed++;
+    }
 }
 
-// Try to fetch /post/1/ - post detail page
+// Post detail page loads
 $detail_url = $url . '/post/1/';
 $crawler = webauto_retrieve_url($client, $detail_url);
 if ( $crawler !== false ) {
