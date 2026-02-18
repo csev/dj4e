@@ -20,7 +20,7 @@ OK, time to look at our Post model. Remember to run `python manage.py runserver`
 
 To log in, you need to create a *superuser* - a user account that has control over everything on the site. Go back to the command line, type `python manage.py createsuperuser`, and press enter.
 
-> Remember, to write new commands while the web server is running, open a new terminal window and activate your virtualenv. We reviewed how to write new commands in the <b>Your first Django project!</b> chapter, in the <b>Starting the web server</b> section.
+> Remember, to write new commands while the web server is running, open a new terminal window and activate your virtualenv. We reviewed how to write new commands in the <b>Starting a new Django Project!</b> chapter, in the <b>Starting the web server</b> section.
 
 {% filename %}the shell{% endfilename %}
 ```

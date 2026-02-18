@@ -1,4 +1,4 @@
-# Your first Django project!
+# Starting a new Django Project!
 
 > Part of this chapter is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
 
@@ -13,10 +13,7 @@ The first step is to start a new Django project. Basically, this means that we'l
 
 The names of some files and directories are very important for Django. You should not rename the files that we are about to create. Moving them to a different place is also not a good idea. Django needs to maintain a certain structure to be able to find important things.
 
-> Remember to run everything in the virtualenv. If you don't see a prefix `(.ve52)` in your console, you need to activate your virtualenv. We explained how to do that in the __Django installation__ 
-`source .ve52/bin/activate` in the shell will do this for you.
-
-<!--sec data-title="Create project: the shell" data-id="django_start_project_OSX_Linux" data-collapse=true ces-->
+> Remember to run everything in the virtualenv. If you don't see a prefix `(.ve52)` in your console, you need to activate your virtualenv. We explained how to do that in the __Django installation__.
 
 In the shell, you should run the following command. **Don't forget to add the period (or dot) `.` at the end!**
 
@@ -30,7 +27,8 @@ In the shell, you should run the following command. **Don't forget to add the pe
 > **Note** When typing the command above, remember that you only type the part which starts by `django-admin`.
 The `(.ve52) ~/djangogirls$` part shown here is just example of the prompt that will be inviting your input on your command line.
 
-<!--endsec-->
+You only need to do `startproject` once.  If things get really messed up, you can start over by going into your
+home folder under `Files` and deleting the `djangogirls` folder and then re-unning the `startproject` command above.
 
 `django-admin.py` is a script that will create the directories and files for you. You should now have a directory structure which looks like this:
 
@@ -43,8 +41,6 @@ djangogirls
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── .ve52
-│   └── ...
 └── requirements.txt
 ```
 
@@ -59,9 +55,7 @@ Let's ignore the other files for now as we won't change them. The only thing to 
 
 ## Changing settings
 
-Let's make some changes in `mysite/settings.py`. Open the file using the code editor you installed earlier.
-
-**Note**: Keep in mind that `settings.py` is a regular file, like any other. You can open it from inside the code editor, using the "File -> Open" menu action. This should get you the usual window in which you can navigate to your `settings.py` file and select it. Alternatively, you can open the file by navigating to the `djangogirls/` folder on your desktop and right-clicking on it. Then, select your code editor from the list. Selecting the editor is important as you might have other programs installed that can open the file but will not let you edit it.
+Let's make some changes in `mysite/settings.py`. Open the file using the file editor.
 
 #### Changing the Timezone
 
@@ -79,7 +73,7 @@ TIME_ZONE = 'Europe/Berlin'
 
 #### Changing the Language
 
-A language code consist of the language, e.g. `en` for English or `de` for German, and the country code, e.g. `de` for Germany or `ch` for Switzerland. If English is not your native language, you can add this to change the default buttons and notifications from Django to be in your language. So you would have "Cancel" button translated into the language you defined here. [Django comes with a lot of prepared translations](https://docs.djangoproject.com/en/5.2/ref/settings/#language-code).
+A language code consists of the language, e.g. `en` for English or `de` for German, and the country code, e.g. `de` for Germany or `ch` for Switzerland. If English is not your native language, you can add this to change the default buttons and notifications from Django to be in your language. So you would have "Cancel" button translated into the language you defined here. [Django comes with a lot of prepared translations](https://docs.djangoproject.com/en/5.2/ref/settings/#language-code).
 
 If you want a different language, change the language code by changing the following line:
 
@@ -156,24 +150,48 @@ Running migrations:
 
 And we're done! Time to start the web server and see if our website is working!
 
-## Starting the web server
+## Doing a final check of the changes you made to your application
 
-You need to be in the directory that contains the `manage.py` file (the `djangogirls` directory). In the console, we can start the web server by running `python manage.py runserver`:
-
-{% filename %}command-line{% endfilename %}
-```
-(.ve52) ~/djangogirls$ python manage.py runserver
-```
-
-If you are on Windows and this fails with `UnicodeDecodeError`, use this command instead:
+You need to be in the directory that contains the `manage.py` file (the `~/djangogirls` directory). In the console, we can verify that our web server will start by running `python manage.py check`:
 
 {% filename %}command-line{% endfilename %}
 ```
-(.ve52) ~/djangogirls$ python manage.py runserver 0:8000
+(.ve52) ~/djangogirls$ python manage.py check
 ```
 
+## Routing your PythonAnywhere domain name to your new Django project
 
-Now you need to check that your website is running. Open your browser (Firefox, Chrome, Safari, Internet Explorer or whatever you use) and enter this address:
+You will need to route your web domain name to the folder containing your  new Django project.  Go to the `Web` tab
+on PythonAnywhere, and scroll down and make the following changes:
+
+    Source code: /home/drchuck/djangogirls
+    Working directory: /home/drchuck/djangogirls
+    
+The virtual environment should already be set to:
+
+    Virtualenv: /home/drchuck/.ve52
+
+Then edit the *WSGI Configuration File* and put the following code into it.
+
+__Make sure to delete the existing content__ of the *WSGI Configuration File*
+and completely replace it with the text below.
+This is slightly different from the sample in the PythonAnywhere tutorial.
+
+    import os
+    import sys
+
+    path = os.path.expanduser('~/djangogirls')
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+    from django.core.wsgi import get_wsgi_application
+    from django.contrib.staticfiles.handlers import StaticFilesHandler
+    application = StaticFilesHandler(get_wsgi_application())
+
+Once the above configuration is complete, go back to the top of the PythonAnywhere
+Web tab, `Reload` your web application, wait a few seconds and check
+that it is up and visiting the URL for your application shown in the Web
+tab on PythonAnywhere like:
 
 {% filename %}browser{% endfilename %}
 ```
@@ -185,11 +203,5 @@ You can open this in another browser window and you should see the Django instal
 Congratulations! You've just created your first website and run it using a web server! Isn't that awesome?
 
 ![Install worked!](images/install_worked.png)
-
-Note that a command window can only run one thing at a time, and the command window you opened earlier is running the web server. As long as the web server is running and waiting for additional incoming requests, the terminal will accept new text but will not execute new commands.
-
-> We reviewed how web servers work in the <b>How the Internet works</b> chapter.
-
-To type additional commands while the web server is running, open a new terminal window and activate your virtualenv -- to review instructions on how to open a second terminal window, see [Introduction to the command line](../intro_to_command_line/README.md). To stop the web server, switch back to the window in which it's running and press CTRL+C - Control and C keys together (on Windows, you might have to press Ctrl+Break).
 
 Ready for the next step? It's time to create some content!

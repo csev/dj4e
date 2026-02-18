@@ -68,10 +68,9 @@ function get_chapters() {
     return [
         ['README.md', 'Introduction'],
         ['django/README.md', 'What is Django?'],
-        ['django_start_project/README.md', 'Your first Django project!'],
+        ['django_start_project/README.md', 'Starting a new Django Project!'],
         ['django_models/README.md', 'Django models'],
         ['django_admin/README.md', 'Django admin'],
-        ['deploy/README.md', 'Deploy!'],
         ['django_urls/README.md', 'Django URLs'],
         ['django_views/README.md', 'Django views – time to create!'],
         ['html/README.md', 'Introduction to HTML'],
@@ -130,6 +129,7 @@ function render_markdown($md_path, $md_dir) {
     $account = (!empty($_COOKIE['pythonanywhere_account']) && preg_match('/^[a-zA-Z0-9]+$/', $_COOKIE['pythonanywhere_account']))
         ? $_COOKIE['pythonanywhere_account'] : 'account';
     $raw = str_replace('http://127.0.0.1:8000', 'https://' . $account . '.pythonanywhere.com', $raw);
+    $raw = str_replace('/home/drchuck/', '/home/' . $account . '/', $raw);
     // Full path for mysite/ file references (PythonAnywhere structure)
     $raw = preg_replace('#(?<!djangogirls/)mysite/#', '~/djangogirls/mysite/', $raw);
     $base = md_path_to_slug($md_path);
