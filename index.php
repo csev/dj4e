@@ -3,6 +3,7 @@ use \Tsugi\Util\U;
 use \Tsugi\Util\Net;
 use \Tsugi\Core\LTIX;
 use \Tsugi\UI\Output;
+use \Tsugi\UI\Pages;
 
 require "top.php";
 require "nav.php";
@@ -23,6 +24,15 @@ code {
 <iframe width="400" height="225" src="https://www.youtube.com/embed/oxJQB4f2MMs?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 <h1>Django for Everybody</h1>
+<?php
+$front_page_text = null;
+if ( isset($_SESSION['id']) && isset($_SESSION['context_id']) ) $front_page_text = Pages::getFrontPageText($_SESSION['context_id']);
+if ( $front_page_text ) {
+    echo("<p>\n");
+    echo $front_page_text;
+    echo("</p>\n");
+} 
+?>
 <p>
 This web site is building a set of free materials, lectures, and assignments to help students
 learn the Django web development framework.  
