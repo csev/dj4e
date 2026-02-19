@@ -145,7 +145,7 @@ function render_markdown($md_path, $md_dir) {
     $raw = process_template_syntax($raw);
     $raw = str_replace('myvenv', '.ve52', $raw);  // PythonAnywhere venv name
     $account = (!empty($_COOKIE['pythonanywhere_account']) && preg_match('/^[a-zA-Z0-9]+$/', $_COOKIE['pythonanywhere_account']))
-        ? $_COOKIE['pythonanywhere_account'] : 'account';
+        ? $_COOKIE['pythonanywhere_account'] : 'goblue';
     $raw = str_replace('http://127.0.0.1:8000', 'https://' . $account . '.pythonanywhere.com', $raw);
     $raw = str_replace('/home/drchuck/', '/home/' . $account . '/', $raw);
     // Full path for mysite/ file references (PythonAnywhere structure)

@@ -31,6 +31,7 @@ $CFG->tdiscus = $CFG->apphome . '/mod/tdiscus/';
 $CFG->launcherror = $CFG->apphome . "/launcherror";
 
 $CFG->lessons = $CFG->dirroot.'/../lessons.json';
+$CFG->youtube_playlist = 'PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z';
 
 $CFG->setExtension('lessons2_enable', true);
 $CFG->setExtension('lessons_debug_conversion', false);

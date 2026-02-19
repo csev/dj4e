@@ -24,6 +24,12 @@ if (!empty($_COOKIE[$cookie_name]) && preg_match('/^[a-zA-Z0-9]+$/', $_COOKIE[$c
 }
 
 // No valid cookie: show login page
+$form_value = 'goblue';  // Default when no cookie
+if ( isset($account) ) {
+    $form_value = $account;  // From failed POST validation
+} elseif ( !empty($_GET['former']) && preg_match('/^[a-zA-Z0-9]+$/', $_GET['former']) ) {
+    $form_value = $_GET['former'];  // From "Change PythonAnywhere Account"
+}
 require_once __DIR__ . '/../../../top.php';
 require_once __DIR__ . '/../../../nav.php';
 ?>
@@ -45,12 +51,12 @@ body { max-width: none !important; margin: 0 !important; }
 <div class="paw-login-box">
     <h2>PythonAnywhere Account</h2>
     <p>To personalize the tutorial links for your PythonAnywhere site, enter your account name:</p>
-    <form method="post" action="">
+    <form method="post" action="" autocomplete="off">
         <div class="form-group">
             <label for="paw-account">Account name</label>
             <input type="text" id="paw-account" name="<?php echo htmlspecialchars($cookie_name); ?>" 
-                   placeholder="e.g. johndoe" autocomplete="username" 
-                   value="<?php echo isset($account) ? htmlspecialchars($account) : ''; ?>">
+                   placeholder="e.g. johndoe" autocomplete="off" 
+                   value="<?php echo htmlspecialchars($form_value); ?>">
             <?php if (!empty($account_error)): ?>
             <div class="error"><?php echo htmlspecialchars($account_error); ?></div>
             <?php endif; ?>
