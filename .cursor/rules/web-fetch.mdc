@@ -1,0 +1,20 @@
+---
+description: Use curl or wget when retrieving webpages - no browser automation or JS execution
+alwaysApply: true
+---
+
+# Web Page Retrieval
+
+When you need to retrieve or fetch webpage content:
+
+- **Always use `curl` or `wget`** for HTTP requests
+- **Never use** browser automation (e.g., MCP browser tools, Playwright, Puppeteer)
+- **Never use** JavaScript execution in a browser to retrieve content
+
+Example:
+
+```bash
+curl -s "https://example.com/page"
+# or
+wget -qO- "https://example.com/page"
+```
