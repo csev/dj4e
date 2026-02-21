@@ -10,7 +10,7 @@ require_once "../crud/webauto.php";
      Here are the instructions for running the checkup script:
      </p>
         <p>
-     <a href="../../assn/dj4e_checkup52.md" target="_blank">https://www.dj4e.com/assn/dj4e_checkup52.md</a>
+     <a href="../../assn/dj4e_checkup52.md" target="_blank" rel="noopener noreferrer" aria-label="Assignment instructions (opens in new tab)">https://www.dj4e.com/assn/dj4e_checkup52.md</a>
      </p>
      <p>
         When the checkup script is run, it will output a string that you need to copy and paste into the form below.

@@ -92,10 +92,9 @@ function togglePre($title, $html) {
     echo("<script> var retrieve_".$div_id." = '".base64_encode($html)."';</script>\n");
     echo('<strong>'.htmlpre_utf8($title));
     echo(' '.strlen($html).' '.$detail."\n");
-    echo('<a href="#" onclick="sendToIframe('.$div_id.', atob(retrieve_'.$div_id.'));dataToggle('."'".$div_id."'".');');
-    echo(';return false;" class="btn btn-primary">');
-    echo($text."</a></strong>\n");
-    echo('<iframe id="'.$div_id.'" style="display:none; border: solid green 3px; width:90%; height: 300px;">'."\n");
+    echo('<button type="button" class="btn btn-primary" aria-controls="'.$div_id.'" aria-expanded="false" onclick="sendToIframe('.$div_id.', atob(retrieve_'.$div_id.'));if(typeof dataToggle===\'function\')dataToggle('."'".$div_id."'".');var e=document.getElementById('."'".$div_id."'".');this.setAttribute(\'aria-expanded\',e&&e.style.display===\'block\');">');
+    echo($text."</button></strong>\n");
+    echo('<iframe id="'.$div_id.'" title="Retrieved page content from your application" style="display:none; border: solid green 3px; width:90%; height: 300px;">'."\n");
     echo("<pre>\n");
     echo(htmlpre_utf8($html));
     echo("</pre>\n");
@@ -235,18 +234,18 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
             }
             $URL_IN_USE = $_GET['url'];
 
-            echo('<p><a href="#" class="btn btn-primary" id="test-rerun" ');
+            echo('<p><button type="button" class="btn btn-primary" id="test-rerun" ');
             if ( $SECONDS_BEFORE_RETRY > 2 && ! $USER->instructor ) {
                 echo(' disabled ');
             }
             echo('onclick="$(\'#test-rerun\').text(\'Test running...\');greyOut();');
-            echo('window.location.href = window.location.href; return false;">');
+            echo('window.location.href = window.location.href;">');
             if ( $SECONDS_BEFORE_RETRY > 2 ) {
                 echo('Please wait <span id="countdown">... </span> (rate limit)');
             } else {
                 echo("Re-run this test");
             }
-            echo("</a></p>\n");
+            echo("</button></p>\n");
             echo('<script>
                 function hideBelow() {
                     const marker = document.getElementById("disappear-start");
@@ -265,6 +264,12 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
                         el.style.pointerEvents = "none";   // makes it feel disabled
                         el.style.filter = "grayscale(100%)";
                     });
+                }
+                function dataToggle(divName) {
+                    var ele = document.getElementById(divName);
+                    if (ele) {
+                        ele.style.display = (ele.style.display == "block") ? "none" : "block";
+                    }
                 }
             </script>');
 
@@ -727,7 +732,7 @@ function webauto_retrieve_url($client, $url, $message=false) {
     echo("<b>Loading URL:</b> ".htmlentities($url));
     $the_url = str_replace('"',"&quot;", $url);
     if ( strpos($the_url, '/') === 0 ) $the_url = $base_url_path . $the_url;
-    echo(' (<a href="'.$the_url.'" target="_blank">Open URL</a>)');
+    echo(' (<a href="'.$the_url.'" target="_blank" rel="noopener noreferrer" aria-label="Open URL in new tab">Open URL</a>)');
     echo("<br/>\n");
     flush();
     try {
@@ -863,7 +868,7 @@ function warn_about_ngrok($url) {
     if ( str_contains($url, 'dj4e.com') ) return;
     if ( str_contains($url, 'localhost') ) return;
 ?>
-<p>This works with assignments on <a href="https://www.pythonanywhere.com/" target="_blank">PythonAnywhere</a>.  You <b>may</b> be able to pass the
+<p>This works with assignments on <a href="https://www.pythonanywhere.com/" target="_blank" rel="noopener noreferrer">PythonAnywhere</a>.  You <b>may</b> be able to pass the
 autograder with a Django application hosted elsewhere or accessible through a reverse proxy like <b>ngrok</b> but you might also encounter problems.
 </p>
 <?php

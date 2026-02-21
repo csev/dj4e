@@ -9,7 +9,7 @@ $qtext = 'Answer to the Ultimate Question';
 <h1>Django Tutorial 02</h1>
 <p>
 For this assignment work through Part 2 of the Django tutorial at
-<a href="../../assn/dj4e_tut02.md" class="btn btn-info" target="_blank">
+<a href="../../assn/dj4e_tut02.md" class="btn btn-info" target="_blank" rel="noopener noreferrer" aria-label="Assignment instructions (opens in new tab)">
 https://www.dj4e.com/assn/dj4e_tut02.md</a>.  Pay close attention to
 the mapping of commands from the Django tutotial to how you do things
 on PythonAnywhere.
@@ -26,13 +26,13 @@ make sure to set `Superuser` and `Staff status` for your new user.
 </p>
 <p>
 Using the Django shell or the Django administration user interface, insert a
-<a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy" target="_blank">question</a> with the exact text:
+<a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy" target="_blank" rel="noopener noreferrer" aria-label="Wikipedia reference (opens in new tab)">question</a> with the exact text:
 <pre>
 <?= $qtext ?>
 </pre>
 Insert at least three choices and associate them with your question.  One of the choices
 should be "42".  
-(<a href="tutorial02/choice_detail.png" target="_blank">Example</a>)
+(<a href="tutorial02/choice_detail.png" target="_blank" rel="noopener noreferrer" aria-label="Example image (opens in new tab)">Example</a>)
 When you have stored this data, submit your Django admin url to the autograder.
 <b>Hint:</b> To use the admin interface to insert this data, modify the <b>polls/admin.py</b> to also
 import the <b>Choice</b> model following the pattern of importing the <b>Question</b> model.
