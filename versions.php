@@ -8,11 +8,9 @@ Django it is usually no problem.  You may see demonstration videos
 with older versions of Django that work with a later version of Django.
 </p>
 <p>
-<a href="https://docs.djangoproject.com/en/5.2/releases/" target="_blank">
-Django Releases
-</a></p>
+<a href="https://docs.djangoproject.com/en/5.2/releases/" target="_blank" rel="noopener noreferrer" aria-label="Django releases documentation, opens in new window">Django Releases</a></p>
 <h2>Current Version of this Course</h2>
-<pre>
+<pre aria-label="Current version release notes">
 June 2025
 
 Django 5.2
@@ -20,7 +18,7 @@ Switch from Ads assignments to Marketplace assignments
 Introduce Web Components using LitElement.
 </pre>
 <h2>Previous Versions of this Course</h2>
-<pre>
+<pre aria-label="Previous version release notes">
 September 2023
 
 Django 4.2

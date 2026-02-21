@@ -1,6 +1,6 @@
 <?php include("top.php");?>
 <?php include("nav.php");?>
-        <h2>Privacy Policy</h2>
+        <h1>Privacy Policy</h1>
 <p>This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.</p>
 <p><strong>What personal information do we collect from the people that visit our blog, website or app?</strong></p>
 <p>When ordering or registering on our site, as appropriate, you may be asked to enter your name, email address or other details to help you with your experience.</p>
@@ -15,8 +15,8 @@
 <p>Gather analytics data that is only used to monitor and improve the site.</p>
 <p><strong>If users disable cookies in their browser:</strong></p>
 <p>If you turn cookies off, you won't be able to log in to the site directly.</p>
-<p>You <b>can</b> use the learning tools on this system when launched from an LMS with cookies turned off since
-the learning applications <i>neither use nor require cookies</i> and will have full function even when cookies are turned off.
+<p>You <strong>can</strong> use the learning tools on this system when launched from an LMS with cookies turned off since
+the learning applications <em>neither use nor require cookies</em> and will have full function even when cookies are turned off.
 </p>
 <p><strong>Third-party disclosure</strong></p>
 <p>We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.</p>
@@ -63,11 +63,13 @@ Much of the software used in this company is open source so you can examine/audi
 </p>
 <p><strong>Notifications</strong> </p>
 <p>In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur: We will notify you via email</p>
-<p>If there are any questions regarding this privacy policy, you may contact us using the information below.<br></p>
+<p>If there are any questions regarding this privacy policy, you may contact us using the information below.</p>
+<address style="font-style: normal;">
 <pre><code>Python for Everybody (py4e.com)
 1537 Holbrook Drive
 Holt, Michigan 48842
 United States</code></pre>
+</address>
 <p>Last edited: 27-Nov-2017</p>
 <?php include("footer.php"); ?>
 
