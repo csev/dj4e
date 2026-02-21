@@ -13,7 +13,6 @@ function buildMenu() {
 
     if ( isset($CFG->lessons) ) {
         $set->addLeft('Lessons', $R.'lessons');
-        // $set->addLeft('Lessons', $R.'/tsugi/lms/lessons');
     }
     if ( isset($CFG->tdiscus) && $CFG->tdiscus ) $set->addLeft('Discussions', $R.'discussions');
     if ( isset($_SESSION['id']) ) {
