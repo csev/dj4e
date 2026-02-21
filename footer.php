@@ -4,7 +4,7 @@
 // in Output.php footerStart() method
 
 $foot = '
-<p style="font-size: 75%; margin-top: 5em;">
+<p style="font-size: 0.875rem; color: #333; margin-top: 5em;">
 Copyright Creative Commons Attribution 4.0 - Charles R. Severance
 </p>';
 
