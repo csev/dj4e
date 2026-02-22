@@ -78,19 +78,19 @@ a[target="_blank"]:after {
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
   margin: 0 3px 0 5px;
 }
-a:link {
+#main-content a:link {
   text-decoration: underline;
 }
 
-a:visited {
+#main-content a:visited {
   text-decoration: underline;
 }
 
-a:hover {
+#main-content a:hover {
   text-decoration: underline;
 }
 
-a:active {
+#main-content a:active {
   text-decoration: underline;
 }
 
@@ -113,6 +113,7 @@ function onSelect() {
 }
 </script>
 <div style="float:right">
+<label for="chapters" class="sr-only">Jump to chapter or assignment</label>
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("dj4e_install52.md") ?>>Django 5.2 and PythonAnywhere</option>
   <option <?= x_sel("dj4e_shell52.md") ?>>Using the Linux Command Line Interface (Shell)</option>
