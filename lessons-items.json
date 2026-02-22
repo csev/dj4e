@@ -5177,6 +5177,7 @@
         },
         {
             "title": "Django Girls (Legacy)",
+            "hidden": true,
             "anchor": "django_girls",
             "icon": "fa-heart",
             "description": "A set of assignments based on the Django Girls tutorial. Build a blog step by step on PythonAnywhere.",

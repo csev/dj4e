@@ -1,4 +1,6 @@
 
+Redo CSS - Use WAVE
+
 Record designing and drawing a data model
 
 SOLO Ideas
