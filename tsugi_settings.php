@@ -36,10 +36,13 @@ $CFG->youtube_playlist = 'PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z';
 $CFG->setExtension('lessons2_enable', true);
 $CFG->setExtension('lessons_debug_conversion', false);
 $CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
+// $CFG->lessons = $CFG->dirroot.'/../lessons-mini.json';
 
 $CFG->google_login_redirect = $CFG->apphome . "/login";
 
 $CFG->service_worker = true;
+
+$CFG->setExtension('canvas_assignment_extension', true);
 
 $CFG->setExtension('django_version', '5.2');
 $CFG->setExtension('django_version_short', '52');

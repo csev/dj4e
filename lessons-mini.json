@@ -1,0 +1,56 @@
+{
+    "title": "Django for Everybody (DJ4E)",
+    "description": "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
+    "count": true,
+    "required_modules": [
+        "https://github.com/tsugitools/gift",
+        "https://github.com/tsugitools/youtube",
+        "https://github.com/tsugitools/peer-grade",
+        "https://github.com/tsugitools/tdiscus"
+    ],
+    "badges": [],
+    "modules": [
+        {
+            "title": "Using the Command Line Shell on PythonAnywhere",
+            "anchor": "dj4e_shell",
+            "icon": "fa-dollar",
+            "description": "During this class you will be using the command line interface (shell) to work with Linux on PythonAnywhere.  Since Linux is the operating system used by most of the cloud servers in production, it is good for you to have a basic understanding of the Linux command line interface.  In this section we do a quick overview of using the Shell on PythonAnywhere. For this module you watch a video and take a quiz.",
+            "items": [
+                {
+                    "type": "header",
+                    "text": "Videos",
+                    "level": 2
+                },
+                {
+                    "type": "video",
+                    "title": "Using the Command Line Shell on PythonAnywhere (5.2) (18.28)",
+                    "media": "lesson-04-shell/01-01_paw_shell.m4v",
+                    "todo": "Re-record for 2026",
+                    "FCP": "Shell-01-DJ52",
+                    "youtube": "a7YIQb8juQk"
+                },
+                {
+                    "type": "header",
+                    "text": "Tools",
+                    "level": 2
+                },
+                {
+                    "type": "lti",
+                    "title": "Quiz: Using the Linux Command Line",
+                    "launch": "{apphome}/mod/gift/?quiz=00-Shell.txt",
+                    "resource_link_id": "dj4e_00_shell_quiz",
+                    "custom": [
+                        {
+                            "key": "tries",
+                            "value": "3"
+                        },
+                        {
+                            "key": "delay",
+                            "value": "601"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
