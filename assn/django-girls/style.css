@@ -12,3 +12,19 @@ a { color: #e91e8b; }
 .toc-link { display: inline-block; padding: 0.5em; color: #e91e8b; font-weight: 500; }
 .content { margin: 2em 0; }
 img { max-width: 100%; height: auto; }
+
+/* Stop notice: dark red callout with stop sign on the right, text wraps around */
+.stop-notice {
+  background: #721c24;
+  color: #fff;
+  padding: 1rem 1.25rem;
+  margin: 1.5em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.stop-notice .stop-sign {
+  float: right;
+  margin: 0 0 0.5em 1em;
+  flex-shrink: 0;
+}
+.stop-notice p { margin: 0; }

@@ -326,4 +326,14 @@ Don't be afraid to tinker with this CSS a little bit and try to change some thin
 
 We really recommend taking the free online courses "Basic HTML & HTML5" and "Basic CSS" on [freeCodeCamp](https://learn.freecodecamp.org/). They can help you learn all about making your websites prettier with HTML and CSS.
 
+<div class="stop-notice">
+<span class="stop-sign" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 64 64">
+  <polygon points="8,4 56,4 60,16 60,48 56,60 8,60 4,48 4,16" fill="#cc0000" stroke="white" stroke-width="2"/>
+  <text x="32" y="40" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">STOP</text>
+</svg>
+</span>
+<p><strong>Note</strong> — If you are working on this tutorial as an assignment and submitting your results to an autograder, stop here and submit your work to the autograder before moving to the next step or the autograder will refuse to grade this step, as each autograder checks to see if &quot;too much&quot; has been done to ensure that you pass each interim autograder with the correct partial solution before proceeding.</p>
+</div>
+
 Ready for the next chapter?! :)
