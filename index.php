@@ -21,7 +21,7 @@ code {
 
 <div id="container">
 <div style="margin-left: 10px; float:right">
-<iframe width="400" height="225" src="https://www.youtube.com/embed/oxJQB4f2MMs?rel=0" frameborder="0" allowfullscreen title="Django for Everybody course introduction video"></iframe>
+<iframe width="400" height="225" src="https://www.youtube.com/embed/oxJQB4f2MMs?list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&rel=0" frameborder="0" allowfullscreen title="Django for Everybody course introduction video"></iframe>
 </div>
 <h1>Django for Everybody</h1>
 <?php
