@@ -5182,12 +5182,6 @@
             "anchor": "django_girls",
             "icon": "fa-heart",
             "description": "A set of assignments based on the Django Girls tutorial. Build a blog step by step on PythonAnywhere.",
-            "references": [
-                {
-                    "title": "Django Girls Tutorial",
-                    "href": "https://tutorial.djangogirls.org/en/"
-                }
-            ],
             "lti": [
                 {
                     "title": "Auto-grader: Start Project (1)",
@@ -5257,16 +5251,6 @@
                 }
             ],
             "items": [
-                {
-                    "type": "header",
-                    "text": "References",
-                    "level": 2
-                },
-                {
-                    "type": "reference",
-                    "title": "Django Girls Tutorial",
-                    "href": "https://tutorial.djangogirls.org/en/"
-                },
                 {
                     "type": "header",
                     "text": "Tools",
