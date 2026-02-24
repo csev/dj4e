@@ -5190,7 +5190,7 @@
             ],
             "lti": [
                 {
-                    "title": "Auto-grader: Start Project (1, 2)",
+                    "title": "Auto-grader: Start Project (1)",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_01",
                     "custom": [
@@ -5274,7 +5274,8 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Auto-grader: Start Project (1, 2)",
+                    "title": "Auto-grader: Start Project (1)",
+                    "tutorials": "start",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_01",
                     "custom": [
@@ -5286,7 +5287,8 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Auto-grader: Admin (3, 4)",
+                    "title": "Auto-grader: Admin (2, 3)",
+                    "tutorials": "models, admin",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_03",
                     "custom": [
@@ -5298,7 +5300,8 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Auto-grader: HTML (5, 6)",
+                    "title": "Auto-grader: HTML (4, 5, 6)",
+                    "tutorials": "urls, views, html",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_05",
                     "custom": [
@@ -5310,7 +5313,8 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Auto-grader: Templates (7)",
+                    "title": "Auto-grader: Templates (7, 8, 9)",
+                    "modules": "orm, dynamic, templates",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_07",
                     "custom": [
@@ -5322,7 +5326,8 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Auto-grader: CSS (8, 9)",
+                    "title": "Auto-grader: CSS (10)",
+                    "modules": "css",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_08",
                     "custom": [
@@ -5334,7 +5339,8 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Auto-grader: Detail (10)",
+                    "title": "Auto-grader: Detail (11, 12)",
+                    "modules": "extending, detail",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_10",
                     "custom": [
