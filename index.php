@@ -46,7 +46,7 @@ You can take this course and receive a certificate at:
 </p>
 <p>
 We use the free 
-<a href="https://www.pythonanywhere.com" target="_blank" rel="noopener noreferrer">PythonAnywhere</a> hosting environment
+<a href="https://www.pythonanywhere.com" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">PythonAnywhere</a> hosting environment
 to deploy and test our Django projects and applications.  You can keep using this hosting environment
 to develop and deploy your Django applications after you complete the course.
 </p>
@@ -65,12 +65,12 @@ this course for credit (SI664 or SI357), you need to do your assignments through
 ?>
 <h2>Technology</h2>
 <p>
-This site uses <a href="http://www.tsugi.org" target="_blank" rel="noopener noreferrer">Tsugi</a> 
+This site uses <a href="http://www.tsugi.org" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Tsugi</a> 
 framework to embed a learning 
 management system into this site and handle the autograders.  
 If you are interested in collaborating
 to build these kinds of sites for yourself, please see the 
-<a href="http://www.tsugi.org" target="_blank" rel="noopener noreferrer">tsugi.org</a> website.
+<a href="http://www.tsugi.org" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">tsugi.org</a> website.
 </p>
 <h3>Copyright</h3>
 <p>
