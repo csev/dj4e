@@ -38,6 +38,8 @@ $CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
 
 $CFG->google_login_redirect = $CFG->apphome . "/login";
 
+$CFG->sessionlifetime = 12*60*60;  // 12 hours
+
 $CFG->service_worker = true;
 
 $CFG->setExtension('canvas_assignment_extension', true);
