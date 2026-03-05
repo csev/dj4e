@@ -45,7 +45,7 @@ function webauto_compute_effective_score($perfect, $passed, $penalty) {
 function webauto_send_score($grade) {
     global $USER, $OUTPUT;
 
-    if ( ! isset($_SESSION['lti']) ) {
+    if ( ! isset($_SESSION[TSUGI_SESSION_LTI]) ) {
         return 'Not setup to return a grade..';
     }
 
@@ -53,7 +53,7 @@ function webauto_send_score($grade) {
         return 'Instructor grades are not sent..';
     }
 
-    $LTI = $_SESSION['lti'];
+    $LTI = $_SESSION[TSUGI_SESSION_LTI];
 
     $old_grade = isset($LTI['grade']) ? $LTI['grade'] : 0.0;
 

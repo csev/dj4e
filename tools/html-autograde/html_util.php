@@ -182,7 +182,7 @@ function getUrl($sample) {
 
     if ( isset($_GET['url']) ) {
         echo('<p><a href="#" onclick="window.location.href = window.location.href; return false;">Re-run this test</a></p>'."\n");
-        if ( isset($_SESSION['lti']) ) {
+        if ( isset($_SESSION[TSUGI_SESSION_LTI]) ) {
             $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
         }
         return $_GET['url'];

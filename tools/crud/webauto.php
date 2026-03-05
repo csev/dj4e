@@ -1,4 +1,5 @@
 <?php
+
 \Tsugi\Core\LTIX::getConnection();
 
 use \Tsugi\Util\U;
@@ -273,7 +274,7 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
                 }
             </script>');
 
-            if ( isset($_SESSION['lti']) ) {
+            if ( isset($_SESSION[TSUGI_SESSION_LTI]) ) {
                 $retval = GradeUtil::gradeUpdateJson(array("url" => $_GET['url']));
             }
 
@@ -354,7 +355,7 @@ function webauto_test_passed($grade, $url) {
 
     success_out("Test completed - congratulations");
 
-    if ( ! isset($_SESSION['lti']) ) {
+    if ( ! isset($_SESSION[TSUGI_SESSION_LTI]) ) {
         line_out('Not setup to return a grade..');
         return false;
     }
@@ -364,7 +365,7 @@ function webauto_test_passed($grade, $url) {
         return false;
     }
 
-    $LTI = $_SESSION['lti'];
+    $LTI = $_SESSION[TSUGI_SESSION_LTI];
 
     $old_grade = isset($LTI['grade']) ? $LTI['grade'] : 0.0;
 
