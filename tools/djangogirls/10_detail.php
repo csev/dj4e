@@ -15,7 +15,7 @@ Assignment:
 <a href="../../assn/django-girls/template_extending/" target="_blank" class="btn btn-info">Template extending</a>
 <a href="../../assn/django-girls/extend_your_application/" target="_blank" class="btn btn-info">Add a Detail Page</a>
 </p>
-<p class="text-warning"><b>Work only on the above tutorials until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
+<p class="text-warning"><b>Work only on the above tutorial(s) until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
 <p>
 Enter the URL of your Django Girls blog. Ensure you have at least one post in the admin.
 </p>
@@ -26,7 +26,7 @@ $url = getUrl('https://YOURUSERNAME.pythonanywhere.com');
 if ( $url === false ) return;
 
 $passed = 0;
-warn_about_ngrok($url);
+$pythonanywhere_ok = require_pythonanywhere($url);
 $url = trimSlash($url);
 
 webauto_setup();
@@ -99,4 +99,10 @@ if ( !$grade_check_ok ) {
     error_out("Score above is for feedback only. No grade sent – fix grade_check first.");
     return;
 }
-if ( $score > 0.0 ) webauto_test_passed($score, $url);
+if ( $score > 0.0 ) {
+    if ( $pythonanywhere_ok ) {
+        webauto_test_passed($score, $url);
+    } else {
+        error_out("No grade sent – this assignment must be run on PythonAnywhere to receive a grade.");
+    }
+}

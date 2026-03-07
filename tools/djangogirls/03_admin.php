@@ -19,7 +19,7 @@ Assignment:
 <a href="../../assn/django-girls/django_models/" target="_blank" class="btn btn-info">Django models</a>
 <a href="../../assn/django-girls/django_admin/" target="_blank" class="btn btn-info">Django admin</a>
 </p>
-<p class="text-warning"><b>Work only on the above tutorials until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
+<p class="text-warning"><b>Work only on the above tutorial(s) until you pass this autograder.</b> If you work on later tutorials, your site will not pass this autograder.</p>
 <p>
 Create an admin user with <b>this exact account and password</b> so the autograder can log in and explore admin:
 </p>
@@ -41,23 +41,28 @@ $url = getUrl('https://YOURUSERNAME.pythonanywhere.com');
 if ( $url === false ) return;
 
 $passed = 0;
-warn_about_ngrok($url);
+$pythonanywhere_ok = require_pythonanywhere($url);
 $url = trimSlash($url);
 
 webauto_setup();
 
 // Speed-of-light: 03 must not have grade_check (from step 05)
+// If grade_check returns a valid page (no error), they have implemented it too early
+speed_of_light_check();
 $grade_check_url = $url . '/grade_check';
 $crawler = webauto_retrieve_url($client, $grade_check_url);
 if ( $crawler !== false ) {
-    $gc_html = webauto_get_html($crawler);
-    $check = webauto_get_check();
-    if ( $check && stripos($gc_html, $check) !== false ) {
-        error_out("grade_check detected – that is from a later step. Complete steps in order.");
-        line_out(' ');
+    global $webauto_http_status;
+    $gc_html = $crawler->html();
+    $status = isset($webauto_http_status) ? $webauto_http_status : 0;
+    $has_django_error = stripos($gc_html, 'Traceback') !== false || stripos($gc_html, 'Exception Value') !== false;
+    $is_http_error = $status >= 400;
+    if ( !$has_django_error && !$is_http_error ) {
+        speed_of_light_exceeded();
         return;
     }
 }
+success_out("Speed of light not exceeded (that is a good thing).");
 
 // Speed-of-light: root URL must still show default "Welcome to Django" page, not the blog
 $crawler = webauto_retrieve_url($client, $url);
@@ -120,4 +125,10 @@ if ( webauto_testrun($url) ) {
     error_out("Not graded - sample solution");
     return;
 }
-if ( $score > 0.0 ) webauto_test_passed($score, $url);
+if ( $score > 0.0 ) {
+    if ( $pythonanywhere_ok ) {
+        webauto_test_passed($score, $url);
+    } else {
+        error_out("No grade sent – this assignment must be run on PythonAnywhere to receive a grade.");
+    }
+}

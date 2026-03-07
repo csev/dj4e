@@ -863,6 +863,27 @@ function print_user_and_password($user1account, $user1pw, $user2account=null, $u
 <?php
 }
 
+/**
+ * Require PythonAnywhere for grade to be sent. Call before running tests.
+ * Returns true if URL is from PythonAnywhere (grade will be sent).
+ * Returns false and outputs message if not (tests run but no grade sent).
+ */
+function require_pythonanywhere($url) {
+    if ( ! is_string($url) ) return true;
+    if ( str_contains($url, 'pythonanywhere.com') ) return true;
+    line_out("To receive a grade for this assignment it must be run on PythonAnywhere. The test will be run but no grade will be sent.");
+    return false;
+}
+
+function speed_of_light_check() {
+    line_out("Checking to see that no later tutorials have been completed...");
+}
+
+function speed_of_light_exceeded() {
+    error_out("Speed of light exceeded - you cannot submit the solution to a later assignment to an earlier autograder.");
+    line_out(' ');
+}
+
 function warn_about_ngrok($url) {
     if ( ! is_string($url) ) return;
     if ( str_contains($url, 'pythonanywhere.com') ) return;
