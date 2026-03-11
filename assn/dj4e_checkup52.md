@@ -2,11 +2,11 @@
 Scanning your PythonAnywhere Account for Common Errors
 ======================================================
 
-Over the years, many students have following the instructions for this class
-have completed the assignments following the provided instructions.  But
-sometimes things go wrong and students lose track of where they are
-at in the instructions and they start Internet search or AI for solutions
-or going back and trying to re-do steps that have already been completed.
+Over the years, many students have followed the instructions for this class 
+and have completed the assignments following the provided instructions. 
+But sometimes things go wrong and students lose track of where they are 
+at in the instructions and they start an Internet search or use AI for 
+solutions or go back and try to re-do steps that have already been completed.
 
 Sometimes you are following a tutorial online and the assignment has instructed
 you to do some steps differently on PythonAnywhere.  Sometimes the "do
