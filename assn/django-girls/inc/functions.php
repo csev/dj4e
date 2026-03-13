@@ -81,6 +81,7 @@ function get_chapters() {
         ['template_extending/README.md', 'Template extending'],
         ['extend_your_application/README.md', 'Add a Detail Page'],
         ['whats_next/README.md', "What's next?"],
+        ['reset_application/README.md', 'Reset Your Application'],
     ];
 }
 
@@ -93,11 +94,18 @@ function md_path_to_slug($md_path) {
  * Next chapter button. Returns empty string if on last chapter.
  */
 function render_next_button($current_slug, $base_path) {
+    if ($current_slug === 'reset_application') {
+        $href = $base_path . 'django_start_project/index.php';
+        return '<p class="django-next-nav" style="margin-top:2rem; margin-bottom:0;"><a href="' . htmlspecialchars($href) . '" class="btn btn-primary">Next: Starting a New Django Project! →</a></p>';
+    }
     $chapters = get_chapters();
     $found = false;
     foreach ($chapters as $ch) {
         $slug = md_path_to_slug($ch[0]);
         if ($found) {
+            if ($slug === 'reset_application') {
+                return '';  // Don't link to Reset from What's next
+            }
             $href = ($slug === '') ? $base_path . 'index.php' : $base_path . $slug . '/index.php';
             return '<p class="django-next-nav" style="margin-top:2rem; margin-bottom:0;"><a href="' . htmlspecialchars($href) . '" class="btn btn-primary">Next: ' . htmlspecialchars($ch[1]) . ' →</a></p>';
         }
