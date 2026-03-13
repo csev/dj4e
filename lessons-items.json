@@ -5239,7 +5239,7 @@
                     ]
                 },
                 {
-                    "title": "Auto-grader: Tempates, Detail (11, 12)",
+                    "title": "Auto-grader: Templates, Detail (11, 12)",
                     "launch": "{apphome}/tools/djangogirls/",
                     "resource_link_id": "djangogirls_10",
                     "custom": [
