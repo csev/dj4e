@@ -27,12 +27,12 @@ if ( SettingsForm::isSettingsPost() ) {
 
 // Django Girls tutorial milestones (matches assn/django-girls folder tags)
 $assignments = array(
-    '01_startproject.php' => '01 – startproject',
-    '03_admin.php' => '03 – admin',
-    '05_html.php' => '05 – html',
-    '07_templates.php' => '07 – templates',
-    '08_css.php' => '08 – css',
-    '10_detail.php' => '10 – detail',
+    '01_startproject.php' => 'Start (1/6)',
+    '03_admin.php' => 'Models, Admin (2/6)',
+    '05_html.php' => 'URLs, Views, HTML (3/6)',
+    '07_templates.php' => 'ORM, Data, Templates (4/6)',
+    '08_css.php' => 'CSS (5/6)',
+    '10_detail.php' => 'Templates, Detail (6/6)',
 );
 
 $LAUNCH->link->settingsDefaultsFromCustom(array('delay', 'delay_tries', 'exercise'));
