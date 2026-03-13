@@ -7,7 +7,7 @@
 
 require_once __DIR__ . "/../crud/webauto.php";
 
-line_out("Django Girls 08 – css");
+line_out("Django Girls (5/6)");
 ?>
 <p>
 Assignment:

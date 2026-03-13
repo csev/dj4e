@@ -9,7 +9,7 @@
 
 require_once __DIR__ . "/../crud/webauto.php";
 
-line_out("Django Girls 05 – html");
+line_out("Django Girls (3/6)");
 ?>
 <p>
 Assignment:

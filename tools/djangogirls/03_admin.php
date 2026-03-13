@@ -12,7 +12,7 @@ $hash = webauto_get_check_full();
 $admin_user = 'dj4e_ola';
 $admin_pass = substr($hash, 4, 10);
 
-line_out("Django Girls 03 – admin");
+line_out("Django Girls (2/6)");
 ?>
 <p>
 Assignment:
