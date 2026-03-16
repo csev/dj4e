@@ -19,6 +19,10 @@ In the shell, you should run the following command. **Don't forget to add the pe
 
 {% filename %}command-line{% endfilename %}
 ```
+(.ve52) ~$ cd
+(.ve52) ~$ mkdir ~/djangogirls
+(.ve52) ~$ cd ~/djangogirls
+
 (.ve52) ~/djangogirls$ django-admin startproject mysite .
 ```
 
@@ -27,8 +31,9 @@ In the shell, you should run the following command. **Don't forget to add the pe
 > **Note** When typing the command above, remember that you only type the part which starts with `django-admin`.
 The `(.ve52) ~/djangogirls$` part shown here is just an example of the prompt that will be inviting your input on your command line.  The prompt also shows the current path.
 
-You only need to do `startproject` once.  If things get really messed up, you can start over by going into your
-home folder under `Files` and deleting the `djangogirls` folder and then re-running the `startproject` command above.
+You only need to do create the `djangogirls` directory and run `startproject` once.  If things get really messed
+up, you can start over by going into your
+home folder under `Files` and deleting the `djangogirls` folder and then re-running the commands above.
 
 `django-admin.py` is a script that will create the directories and files for you. You should now have a directory structure which looks like this:
 
