@@ -89,6 +89,7 @@ function onSelect() {
   <option <?= x_sel("paw_sessions.md") ?>>Django Sessions</option>
   <option <?= x_sel("paw_users.md") ?>>Django Users</option>
   <option <?= x_sel("paw_forms.md") ?>>Django Forms</option>
+  <option <?= x_sel("paw_switching.md") ?>>Switching Applications</option>
 </select>
 </div>
 <?php
@@ -108,6 +109,7 @@ These are the assignments for Django for Everybody (DJ4E).
 <li><a href="paw_sessions.md">Django Sessions</a></li>
 <li><a href="paw_users.md">Django Users</a></li>
 <li><a href="paw_forms.md">Django Forms</a></li>
+<li><a href="paw_switching.md">Switching Applications</a></li>
 </ul>
 <p>
 If you find a mistake in these pages, feel free to send me a fix using

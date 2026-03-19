@@ -81,6 +81,7 @@ function get_chapters() {
         ['template_extending/README.md', 'Template extending'],
         ['extend_your_application/README.md', 'Add a Detail Page'],
         ['whats_next/README.md', "What's next?"],
+        ['switching_applications/README.md', 'Switching Applications'],
         ['reset_application/README.md', 'Reset Your Application'],
     ];
 }
@@ -95,7 +96,7 @@ function md_path_to_slug($md_path) {
  */
 function render_next_button($current_slug, $base_path) {
     if ($current_slug === 'reset_application') {
-        $href = $base_path . 'django_start_project/index.php';
+        $href = $base_path . 'django_start_project/';
         return '<p class="django-next-nav" style="margin-top:2rem; margin-bottom:0;"><a href="' . htmlspecialchars($href) . '" class="btn btn-primary">Next: Starting a New Django Project! →</a></p>';
     }
     $chapters = get_chapters();
@@ -103,10 +104,10 @@ function render_next_button($current_slug, $base_path) {
     foreach ($chapters as $ch) {
         $slug = md_path_to_slug($ch[0]);
         if ($found) {
-            if ($slug === 'reset_application') {
-                return '';  // Don't link to Reset from What's next
+            if ($slug === 'switching_applications' || $slug === 'reset_application') {
+                return '';  // Don't link to Switching Applications or Reset from What's next
             }
-            $href = ($slug === '') ? $base_path . 'index.php' : $base_path . $slug . '/index.php';
+            $href = ($slug === '') ? ($base_path ?: './') : $base_path . $slug . '/';
             return '<p class="django-next-nav" style="margin-top:2rem; margin-bottom:0;"><a href="' . htmlspecialchars($href) . '" class="btn btn-primary">Next: ' . htmlspecialchars($ch[1]) . ' →</a></p>';
         }
         if ($slug === $current_slug) {
@@ -136,7 +137,7 @@ function render_toc_dropdown($base_path, $current_slug) {
     foreach ($chapters as $ch) {
         list($md_path, $title) = $ch;
         $slug = md_path_to_slug($md_path);
-        $href = ($slug === '') ? $base_path . 'index.php' : $base_path . $slug . '/index.php';
+        $href = ($slug === '') ? ($base_path ?: './') : $base_path . $slug . '/';
         $selected = ($slug === $current_slug) ? ' selected' : '';
         $options[] = '<option value="' . htmlspecialchars($href) . '"' . $selected . '>' . htmlspecialchars($title) . '</option>';
     }
