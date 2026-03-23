@@ -25,9 +25,11 @@ function market_check_basics($client, $base_url, $check, $testrun) {
        error_out("You should folow the assignment instructions versus reverse engineering the assignment from the sample solution output");
     }
 
+/*
     if ( ! webauto_search_for($html, "django.db.backends.mysql") ) {
        error_out("Make sure to switch from SQLite to MySQL in your settings.py");
     }
+*/
 
     if ( !$testrun && ! webauto_search_for($html, $check) ) {
        error_out("Add the DJ4E_CODE value to settings.py as descried above");
