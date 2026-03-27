@@ -139,6 +139,7 @@ function onSelect() {
 <label for="chapters" class="sr-only">Jump to chapter or assignment</label>
 <select id="chapters" onchange="onSelect();">
   <option <?= x_sel("dj4e_install52.md") ?>>Django 5.2 and PythonAnywhere</option>
+  <option <?= x_sel_local52_group() ?>>Installing Django 5.2 On Localhost</option>
   <option <?= x_sel("dj4e_shell52.md") ?>>Using the Linux Command Line Interface (Shell)</option>
   <option <?= x_sel("dj4e_html.md") ?>>Adding HTML</option>
   <option <?= x_sel("dj4e_tut01.md") ?>>Serving Dynamic Content</option>
@@ -150,7 +151,6 @@ function onSelect() {
   <option <?= x_sel("dj4e_hello.md") ?>>Hello Session World</option>
   <option <?= x_sel("dj4e_batch.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Login / Autos CRUD</option>
-  <option <?= x_sel_local52_group() ?>>Installing Django 5.2 On Localhost</option>
   <option <?= x_sel("dj4e_mkt0.md") ?>>Marketplace Setup</option>
   <option <?= x_sel("dj4e_mkt1.md") ?>>Marketplace Owned Rows</option>
   <option <?= x_sel("dj4e_mkt2.md") ?>>Marketplace Pictures</option>
