@@ -29,7 +29,9 @@ if ( SettingsForm::isSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     '00Market-Setup.php' => 'Market Initial Setup',
+    '00Market-Setup-LocalhostRun.php' => 'Market Initial Setup (localhost.run URLs only)',
     '01Market-Owned.php' => 'Market Owned Rows',
+    '01Market-Owned-LocalhostRun.php' => 'Market Owned Rows (localhost.run URLs only)',
     '02Pictures.php' => 'Market With Pictures',
     '03Comments.php' => 'Market With Comments',
     '04Favorites.php' => 'Market With Favorites',

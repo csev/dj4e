@@ -54,8 +54,31 @@ if ( $file !== false ) {
 function x_sel($file) {
     global $HTML_FILE;
     $retval = 'value="'.$file.'"';
-    if ( strpos($HTML_FILE, $file) === 0 ) {
+    if ( isset($HTML_FILE) && strpos($HTML_FILE, $file) === 0 ) {
         $retval .= " selected";
+    }
+    return $retval;
+}
+
+/** Selected when viewing any of the local-install docs (hub + per-platform). Option value is the hub URL. */
+function x_sel_local52_group() {
+    global $HTML_FILE;
+    $hub = 'dj4e_local52.md';
+    $group = array(
+        'dj4e_local52.md',
+        'dj4e_windows52.md',
+        'dj4e_mac52.md',
+        'dj4e_linux52.md',
+        'dj4e_wsl52.md',
+    );
+    $retval = 'value="'.$hub.'"';
+    if ( isset($HTML_FILE) ) {
+        foreach ( $group as $f ) {
+            if ( strpos($HTML_FILE, $f) === 0 ) {
+                $retval .= ' selected';
+                break;
+            }
+        }
     }
     return $retval;
 }
@@ -127,6 +150,7 @@ function onSelect() {
   <option <?= x_sel("dj4e_hello.md") ?>>Hello Session World</option>
   <option <?= x_sel("dj4e_batch.md") ?>>Batch Loading Data</option>
   <option <?= x_sel("dj4e_autos.md") ?>>Login / Autos CRUD</option>
+  <option <?= x_sel_local52_group() ?>>Installing Django 5.2 On Localhost</option>
   <option <?= x_sel("dj4e_mkt0.md") ?>>Marketplace Setup</option>
   <option <?= x_sel("dj4e_mkt1.md") ?>>Marketplace Owned Rows</option>
   <option <?= x_sel("dj4e_mkt2.md") ?>>Marketplace Pictures</option>
@@ -167,6 +191,7 @@ These assignments are designed for use with Django
 <li><a href="dj4e_hello.md">Hello Session World</a></li>
 <li><a href="dj4e_batch.md">Batch Loading Data</a></li>
 <li><a href="dj4e_autos.md">Login / Autos CRUD</a></li>
+<li><a href="dj4e_local52.md">Installing Django 5.2 On Localhost</a></li>
 <li><a href="dj4e_mkt0.md">Marketplace Setup</a></li>
 <li><a href="dj4e_mkt1.md">Marketplace Owned Rows</a></li>
 <li><a href="dj4e_mkt2.md">Marketplace Pictures</a></li>

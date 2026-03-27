@@ -1,5 +1,26 @@
 <?php
 
+/**
+ * True if the URL host is a tunnel hostname issued by localhost.run
+ * (see course docs: e.g. https://xxxxx.lhr.lt from ssh -R ... localhost.run).
+ */
+function market_url_is_localhost_run_tunnel($url) {
+    $pieces = parse_url(trim($url));
+    if ( ! $pieces || empty($pieces['host']) ) {
+        return false;
+    }
+    $host = strtolower($pieces['host']);
+    if ( $host === 'localhost.run' ) {
+        return true;
+    }
+    if ( str_ends_with($host, '.localhost.run') ) {
+        return true;
+    }
+    if ( str_ends_with($host, '.lhr.lt') ) {
+        return true;
+    }
+    return false;
+}
 
 function market_check_basics($client, $base_url, $check, $testrun) {
     global $passed, $failed, $fatal;
