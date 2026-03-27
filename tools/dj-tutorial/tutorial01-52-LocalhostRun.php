@@ -13,8 +13,8 @@ line_out("Autograder Django Tutorial 01 (localhost.run)");
 </div>
 <p>
 Assignment instructions:
-<a href="../../assn/dj4e_install52.md" class="btn btn-info" target="_blank" rel="noopener noreferrer" aria-label="Assignment instructions (opens in new tab)">
-https://www.dj4e.com/assn/dj4e_install52.md
+<a href="../../assn/dj4e_local52.md" class="btn btn-info" target="_blank" rel="noopener noreferrer" aria-label="Assignment instructions (opens in new tab)">
+https://www.dj4e.com/assn/dj4e_local52.md
 </a>.
 </p>
 <?php
