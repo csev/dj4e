@@ -31,7 +31,7 @@ echo("<h2>Building Marketplace - Initial Setup (localhost.run)</h2>\n");
 ?>
 <div class="alert alert-info">
 <p><strong>This autograder only accepts public URLs from <a href="https://localhost.run" target="_blank">localhost.run</a> tunnels</strong>
-(for example a hostname ending in <code>.lhr.lt</code>, as printed when you run
+(for example a hostname ending in <code>.lhr.lt</code> or <code>.lhr.life</code>, as printed when you run
 <code>ssh -R 80:localhost:8000 localhost.run</code>). Other hosts (ngrok, PythonAnywhere, etc.) are not accepted here.</p>
 </div>
 Specification:
@@ -48,7 +48,7 @@ DJ4E_CODE = '<?= $check ?>'
 $url = getUrl('');
 if ( $url === false ) return;
 if ( ! market_url_is_localhost_run_tunnel($url) ) {
-    error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong>).');
+    error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong> or <strong>.lhr.life</strong>).');
     error_out('Use the SSH tunnel from the local Django install guide; do not submit ngrok or other hosts to this version of the autograder.');
     return;
 }

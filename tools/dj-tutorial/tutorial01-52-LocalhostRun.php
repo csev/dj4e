@@ -8,7 +8,7 @@ line_out("Autograder Django Tutorial 01 (localhost.run)");
 ?>
 <div class="alert alert-info">
 <p><strong>This autograder only accepts public URLs from <a href="https://localhost.run" target="_blank" rel="noopener noreferrer">localhost.run</a> tunnels</strong>
-(for example a hostname ending in <code>.lhr.lt</code>, as printed when you run
+(for example a hostname ending in <code>.lhr.lt</code> or <code>.lhr.life</code>, as printed when you run
 <code>ssh -R 80:localhost:8000 localhost.run</code>). Other hosts are not accepted here.</p>
 </div>
 <p>
@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['*']
 $url = getUrl('http://djtutorial.dj4e.com/polls');
 if ( $url === false ) return;
 if ( ! market_url_is_localhost_run_tunnel($url) ) {
-    error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong>).');
+    error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong> or <strong>.lhr.life</strong>).');
     error_out('Use the SSH tunnel from the local Django install guide; do not submit other tunnel hosts to this version of the autograder.');
     return;
 }
