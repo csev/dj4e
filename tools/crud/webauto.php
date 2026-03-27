@@ -160,7 +160,34 @@ if ( $grade_check ) {
 <?php
 }
 
-function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
+/**
+ * Href to the current autograder page with the `url` query parameter removed.
+ * Preserves other query parameters; uses addSession() when defined (Tsugi).
+ */
+function webauto_grade_tool_href_without_url_param() {
+    $uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+    $path = parse_url($uri, PHP_URL_PATH);
+    $script = ($path && $path !== '/') ? basename($path) : 'index.php';
+    if ( $script === '' || strpos($script, '.') === false ) {
+        $script = 'index.php';
+    }
+    $query = array();
+    if ( ! empty($_SERVER['QUERY_STRING']) ) {
+        parse_str($_SERVER['QUERY_STRING'], $query);
+    }
+    unset($query['url']);
+    $href = $script;
+    $qs = http_build_query($query);
+    if ( $qs !== '' ) {
+        $href .= '?' . $qs;
+    }
+    if ( function_exists('addSession') ) {
+        $href = addSession($href);
+    }
+    return $href;
+}
+
+function getUrl($sample, $SECONDS_BEFORE_RETRY=0, $show_change_url_button = false) {
     global $USER, $OUTPUT, $access_code;
     global $base_url_path, $URL_IN_USE;
     global $SECONDS_BEFORE_RETRY;
@@ -246,7 +273,12 @@ function getUrl($sample, $SECONDS_BEFORE_RETRY=0) {
             } else {
                 echo("Re-run this test");
             }
-            echo("</button></p>\n");
+            echo("</button>");
+            if ( $show_change_url_button ) {
+                $change_href = webauto_grade_tool_href_without_url_param();
+                echo(' <a class="btn btn-default" href="'.htmlspecialchars($change_href, ENT_QUOTES, 'UTF-8').'">Change URL</a>');
+            }
+            echo("</p>\n");
             echo('<script>
                 function hideBelow() {
                     const marker = document.getElementById("disappear-start");

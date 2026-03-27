@@ -45,7 +45,7 @@ DJ4E_CODE = '<?= $check ?>'
 </pre>
 </p>
 <?php
-$url = getUrl('');
+$url = getUrl('', 0, true);
 if ( $url === false ) return;
 if ( ! market_url_is_localhost_run_tunnel($url) ) {
     error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong> or <strong>.lhr.life</strong>).');

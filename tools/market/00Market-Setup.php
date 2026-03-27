@@ -40,7 +40,7 @@ DJ4E_CODE = '<?= $check ?>'
 </pre>
 </p>
 <?php
-$url = getUrl('');
+$url = getUrl('', 0, true);
 if ( $url === false ) return;
 echo('<div id="disappear-start"></div>'."\n");
 warn_about_ngrok($url);

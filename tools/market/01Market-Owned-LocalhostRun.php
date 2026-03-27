@@ -73,7 +73,7 @@ The reference implementation uses '/m<?= $number ?>' as the starting url.  You s
 include '/m<?= $number ?>' when you submit your url.
 </p>
 <?php
-$url = getUrl('https://market.dj4e.com/m1');
+$url = getUrl('https://market.dj4e.com/m1', 0, true);
 if ( $url === false ) return;
 if ( ! market_url_is_localhost_run_tunnel($url) ) {
     error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong> or <strong>.lhr.life</strong>).');
