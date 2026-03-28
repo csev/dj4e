@@ -84,9 +84,13 @@ Ensure your virtual environment is activated. Create your project folder and Dja
     cd django_projects
     django-admin startproject mysite
 
-Edit `mysite/mysite/settings.py` and set:
+In `mysite/mysite/settings.py`, edit **ALLOWED_HOSTS** and add **CSRF_TRUSTED_ORIGINS** (that setting is not in a fresh project by default—add it next to **ALLOWED_HOSTS**):
 
     ALLOWED_HOSTS = [ '*' ]
+    CSRF_TRUSTED_ORIGINS = [
+        "https://*.pythonanywhere.com",
+        "https://*.lhr.life",
+    ]
 
 Leave `DEBUG = True`. Save the file.
 
