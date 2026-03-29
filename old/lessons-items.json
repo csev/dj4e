@@ -362,6 +362,10 @@
             "anchor": "Objects",
             "icon": "fa-cubes",
             "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
+            "slides": [
+                "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+                "{apphome}/lectures/PY-01-Variables.pptx"
+            ],
             "items": [
                 {
                     "type": "header",
@@ -568,7 +572,7 @@
                 },
                 {
                     "type": "reference",
-                    "title": "A Bug Fix to Django Tutorial 2",
+                    "title" : "A Bug Fix to Django Tutorial 2",
                     "href": "https://code.djangoproject.com/ticket/36625"
                 },
                 {
@@ -2242,6 +2246,63 @@
             "anchor": "dj4e_cats",
             "icon": "fa-paw",
             "description": "This module will build a second CRUD application to make sure you know how to make new applications according to a specification.  It is a great time to review important concepts in the course in the context of your first complete application.",
+            "videos": [
+                {
+                    "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+                    "youtube": "zuCxAR3-CzA"
+                },
+                {
+                    "title": "Review: URL Routing (6:59)",
+                    "youtube": "AQFC13D2mRM"
+                },
+                {
+                    "title": "Review: Templates (10:05)",
+                    "youtube": "mTvWrpMGWBA"
+                },
+                {
+                    "title": "Review: Views (6:19)",
+                    "youtube": "9Qk4vJMssMo"
+                },
+                {
+                    "title": "Review: Reversing URLs (12:52)",
+                    "youtube": "YT60BZJjySg"
+                },
+                {
+                    "title": "Review: Template Inheritance (6:05)",
+                    "youtube": "IMgml67lH9Y"
+                },
+                {
+                    "title": "Review: Generic Views (16:28)",
+                    "youtube": "uPRabryhv5k"
+                },
+                {
+                    "title": "Review: Django Forms (13:56)",
+                    "youtube": "bYlgvmAPrp0"
+                }
+            ],
+            "lti": [
+                {
+                    "title": "Auto-grader: Cats CRUD",
+                    "launch": "{apphome}/tools/crud/",
+                    "resource_link_id": "dj4e_cats",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "99cats.php"
+                        }
+                    ]
+                }
+            ],
+            "references": [
+                {
+                    "title": "Fixing Django 5.2 Errors on PythonAnywhere (Handout)",
+                    "href": "{apphome}/assn/dj4e_errors52.md"
+                },
+                {
+                    "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+                    "href": "https://www.youtube.com/watch?v=IYH_BkpHf3s"
+                }
+            ],
             "items": [
                 {
                     "type": "header",
@@ -4905,6 +4966,102 @@
             "hidden": true,
             "icon": "fa-comment",
             "description": "This is a set of assignments centered around the Mozilla Developer Network Django tutorial.",
+            "references": [
+                {
+                    "title": "MDN Skeleton Web Site",
+                    "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
+                }
+            ],
+            "lti": [
+                {
+                    "title": "Auto-grader: MDN Skeleton Web Site",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_skeleton",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "03skeleton.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Models",
+                    "launch": "{apphome}/tools/mdn-sql/",
+                    "resource_link_id": "mdn_modules",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "04models.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Admin",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_admin",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "05admin.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Home Page",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_home",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "06home.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Detail Pages",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_detail",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "07details.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Sessions",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_sessions",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "08sessions.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Users",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_users",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "09users.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Django Forms",
+                    "launch": "{apphome}/tools/mdn-tutorial/",
+                    "resource_link_id": "mdn_forms",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "10forms.php"
+                        }
+                    ]
+                }
+            ],
             "items": [
                 {
                     "type": "header",
@@ -5025,6 +5182,74 @@
             "anchor": "django_girls",
             "icon": "fa-heart",
             "description": "A set of assignments based on the Django Girls tutorial. Build a blog step by step on PythonAnywhere.",
+            "lti": [
+                {
+                    "title": "Auto-grader: Start Project (1)",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_01",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "01_startproject.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Models, Admin (2, 3)",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_03",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "03_admin.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: URLs, Views, and HTML (4, 5, 6)",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_05",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "05_html.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: ORM, Data, Templates (7, 8, 9)",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_07",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "07_templates.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: CSS (10)",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_08",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "08_css.php"
+                        }
+                    ]
+                },
+                {
+                    "title": "Auto-grader: Templates, Detail (11, 12)",
+                    "launch": "{apphome}/tools/djangogirls/",
+                    "resource_link_id": "djangogirls_10",
+                    "custom": [
+                        {
+                            "key": "exercise",
+                            "value": "10_detail.php"
+                        }
+                    ]
+                }
+            ],
             "items": [
                 {
                     "type": "header",
