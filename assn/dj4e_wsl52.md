@@ -3,7 +3,7 @@ Installing Django 5.2 Locally (WSL)
 
 This document is for **Windows Subsystem for Linux** (WSL). You run Linux commands inside WSL (for example **Ubuntu** from the Microsoft Store) while staying on a Windows machine. The flow matches native Linux; this page adds only WSL setup and a few Windows-specific tips.
 
-When you complete this, you will have a URL from localhost.run (e.g. `https://xxxxx.lhr.lt`) that you can submit to the "Install" autograder.
+When you complete this, you will have a URL from localhost.run (e.g. `https://xxxxx.lhr.life`) that you can submit to the "Install" autograder.
 
 **Other platforms:** [Windows (native)](dj4e_windows52.md) · [Linux](dj4e_linux52.md) · [Mac](dj4e_mac52.md) · [Overview](dj4e_local52.md)
 
@@ -139,9 +139,9 @@ Verify:
 Running Your Server and Exposing with localhost.run
 ---------------------------------------------------
 
-You need **two WSL terminal windows** (or tabs)—for example two **Ubuntu** windows.
+You need **two WSL terminal windows** (or tabs)—for example two **Ubuntu** windows: **first terminal** for Django below, **second terminal** for localhost.run.
 
-**Terminal 1 – Django server**
+**Terminal 1** (your **first terminal**) – Django server
 
     cd ~
     source .ve52/bin/activate
@@ -150,13 +150,15 @@ You need **two WSL terminal windows** (or tabs)—for example two **Ubuntu** win
 
 Leave this running. The server listens on `http://127.0.0.1:8000/`.
 
-**Terminal 2 – localhost.run tunnel**
+**Terminal 2** (your **second terminal**) – localhost.run tunnel
+
+In your **second terminal**, run:
 
     ssh -R 80:localhost:8000 localhost.run
 
 Leave this running. localhost.run will print a public URL, for example:
 
-    Forwarding HTTP traffic from https://xxxxx-xx-xx-xx-xx.lhr.lt
+    Forwarding HTTP traffic from https://xxxxx-xx-xx-xx-xx.lhr.life
 
 That URL is what you submit to the Install autograder.
 
@@ -164,15 +166,15 @@ That URL is what you submit to the Install autograder.
 
 - In **Windows** Edge or Chrome, try `http://127.0.0.1:8000/polls` or `http://localhost:8000/polls`. Recent WSL versions forward `localhost` from Windows to your WSL services.
 - If the page does not load, run `python manage.py runserver 0.0.0.0:8000` instead, then in a WSL terminal run `hostname -I` and open `http://<first-ip>:8000/polls` from Windows (or search for “WSL localhost forwarding” for your Windows version).
-- Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.lt/polls`).
+- Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`).
 
 You should see: "Hello, world. You're at the polls index."
 
 Submitting to the Autograder
 ---------------------------
 
-1. Keep **Terminal 1** (runserver) and **Terminal 2** (ssh tunnel) running
-2. Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.lt`)
+1. Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
+2. Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
 3. Submit that URL to the DJ4E Install autograder
 
 The autograder will fetch your site through localhost.run. Each time you restart the SSH tunnel, the URL may change; if it does, submit the new URL.
@@ -183,10 +185,10 @@ Workflow: Change, Check, Restart, Test
 When you change code:
 
 1. Run `python manage.py check` to catch errors
-2. Stop the server (Ctrl+C in Terminal 1) and start it again: `python manage.py runserver`
+2. Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
 3. Test at `http://127.0.0.1:8000/` or your localhost.run URL
 
-The tunnel (Terminal 2) can stay running; you only need to restart the Django server.
+Your **second terminal** (Terminal 2, the tunnel) can stay running; you only need to restart the Django server.
 
 Checkup Tool
 -----------
@@ -202,7 +204,7 @@ See <a href="dj4e_errors52.md" target="_blank">Fixing Common Django Errors</a> f
 
 If `ssh -R 80:localhost:8000 localhost.run` fails:
 
-- Ensure the Django server is running in the other terminal
+- Ensure the Django server is running in your **first terminal**
 - Some networks block outbound SSH (port 22); try a different network
 
 Starting Over

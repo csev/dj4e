@@ -32,8 +32,9 @@ $OUTPUT->welcomeUserCourse();
 ?>
 <div class="alert alert-info">
 <p><strong>This autograder only accepts public URLs from <a href="https://localhost.run" target="_blank">localhost.run</a> tunnels</strong>
-(for example a hostname ending in <code>.lhr.lt</code> or <code>.lhr.life</code>, as printed when you run
-<code>ssh -R 80:localhost:8000 localhost.run</code>). Other hosts (ngrok, PythonAnywhere, etc.) are not accepted here.</p>
+(for example a hostname ending in <code>.lhr.life</code>, as printed when you run
+<code>ssh -R 80:localhost:8000 localhost.run</code> in a <strong>second terminal</strong> while
+<code>python manage.py runserver</code> stays running in your first terminal). Other hosts (ngrok, PythonAnywhere, etc.) are not accepted here.</p>
 </div>
 Specification:
 <a href="../../assn/dj4e_mkt1.md" class="btn btn-info" target="_blank">
@@ -77,7 +78,7 @@ $url = getUrl('https://market.dj4e.com/m1', 0, true);
 if ( $url === false ) return;
 if ( ! market_url_is_localhost_run_tunnel($url) ) {
     error_out('This assignment only accepts URLs whose hostname is provided by localhost.run (e.g. ending in <strong>.lhr.lt</strong> or <strong>.lhr.life</strong>).');
-    error_out('Use the SSH tunnel from the local Django install guide; do not submit ngrok or other hosts to this version of the autograder.');
+    error_out('Use the SSH tunnel from the local Django install guide: run <code>ssh -R 80:localhost:8000 localhost.run</code> in a <strong>second terminal</strong> while <code>python manage.py runserver</code> runs in your first. Do not submit ngrok or other hosts to this version of the autograder.');
     return;
 }
 echo('<div id="disappear-start"></div>'."\n");

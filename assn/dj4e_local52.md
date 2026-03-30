@@ -12,7 +12,7 @@ Use the guide for **your** operating system. Each walks through running Django 5
 | **Mac** | [dj4e_mac52.md](dj4e_mac52.md) |
 | **Linux** | [dj4e_linux52.md](dj4e_linux52.md) |
 
-When you finish, you will have a localhost.run URL (for example `https://xxxxx.lhr.lt`) to submit to the Install autograder.
+When you finish, you will have a localhost.run URL (for example `https://xxxxx.lhr.life`) to submit to the Install autograder.
 
 **Troubleshooting:** [Fixing Common Django Errors](dj4e_errors52.md)
 
