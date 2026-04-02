@@ -48,10 +48,3 @@ $CFG->setExtension('canvas_assignment_extension', true);
 $CFG->setExtension('django_version', '5.2');
 $CFG->setExtension('django_version_short', '52');
 
-$buildmenu = $CFG->dirroot."/../buildmenu.php";
-if ( file_exists($buildmenu) ) {
-    require_once $buildmenu;
-    $CFG->defaultmenu = buildMenu();
-}
-
-
