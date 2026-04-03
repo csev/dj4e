@@ -61,6 +61,7 @@ In XAMPP, click MySQL Config > my.ini.
 3. Clone Tsugi:
 
 * git clone https://github.com/csev/dj4e.git .
+* cd dj4e
 * git clone https://github.com/csev/tsugi.git
 
 4. Configure Tsugi:
