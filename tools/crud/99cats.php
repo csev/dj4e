@@ -4,6 +4,8 @@ require_once "99fields.php";
 
 $SPEC = $CRUD_FIELDS->cats;
 $SPEC->assignment_type_lower = 'assignment';
+$SPEC->folder = 'mysite';
+
 // $SPEC->assignment_type_lower = 'sample exam';
 patchSpec($SPEC);
 

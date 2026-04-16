@@ -51,7 +51,7 @@ add the new one.
 
 <?php
 
-$url = getUrl('http://crud.dj4e.com/');
+$url = getUrl('');
 if ( $url === false ) return;
 $passed = 0;
 warn_about_ngrok($url);

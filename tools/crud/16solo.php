@@ -13,7 +13,7 @@ $quote = $quotes[$quotepos][1];
 
 
 $sample = "http://localhost:8000/solo1";
-$sample = "https://djtutorial.dj4e.com/solo1";
+$sample = "https://dj4e.pythonanywhere.com/solo1/";
 
 ?>
 <p>
@@ -36,9 +36,10 @@ In your application you need to create one view that responds to the empty ("") 
 </pre>
 <p>
 This string will be different for each student and change roughly every 60 minutes.
-<p>
+</p>
+<p>Sample implementation: <a href="<?= $sample ?>" target="_blank"><?= $sample ?></a></p>
 <?php
-$url = getUrl($sample);
+$url = getUrl('');
 if ( $url === false ) return;
 warn_about_ngrok($url);
 
