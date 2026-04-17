@@ -125,11 +125,13 @@ your `market/mkt/urls.py`:
 
 (9) As you build the application, use `check` periodically as you complete some of the code.
 
+    cd ~/django_projects/market
     python manage.py check
 
 (10) Once your application is mostly complete and can pass the `check`
 without error, add the new models to your migrations and database tables:
 
+    cd ~/django_projects/market
     python manage.py makemigrations
     python manage.py migrate
 
