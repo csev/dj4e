@@ -21,6 +21,7 @@ $CFG->theme = array(
 );
 
 $CFG->context_title = "Django for Everybody";
+$CFG->tool_folders = array("admin", "../tools", "../mod", "tool");
 
 $CFG->giftquizzes = $CFG->dirroot.'/../dj4e-private/quiz';
 
