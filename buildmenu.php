@@ -8,17 +8,16 @@ function buildMenu() {
     $T = $CFG->wwwroot . '/';
 
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
+    $showCalendarDueUi = isset($_SESSION['id'])
+        && U::isNotEmpty($CFG->lessons)
+        && \Tsugi\Grades\GradeUtil::showDueDates(U::get($_SESSION, 'context_id', 0));
     $set = new \Tsugi\UI\MenuSet();
     $set->setHome($CFG->servicename, $CFG->apphome);
 
     if ( isset($CFG->lessons) ) {
         $set->addLeft('Lessons', $R.'lessons');
     }
-    if ( isset($_SESSION['id']) ) {
-        $set->addLeft('My Progress', $R.'assignments');
-    } else {
-        $set->addLeft('Assignments', $R.'assn');
-    }
+    $set->addLeft('Courses', $R.'coursesredirect.php');
 
     if ( isset($_SESSION['id']) ) {
         $submenu = new \Tsugi\UI\Menu();
@@ -57,10 +56,16 @@ function buildMenu() {
     } else {
         $set->addRight('Login', $R.'login');
     }
-    $set->addRight('Courses', $R.'coursesredirect.php');
-
     if ( isset($_SESSION['id']) ) {
         $set->addRight('<tsugi-notifications api-url="'. htmlspecialchars($T . 'api/notifications.php') . '" notifications-view-url="'. htmlspecialchars($R . 'notifications') . '" announcements-view-url="'. htmlspecialchars($R . 'announcements') . '"></tsugi-notifications>', false);
+        if ( $showCalendarDueUi ) {
+            $set->addRight(
+                '<tsugi-calendar-due api-url="'. htmlspecialchars($R . 'calendar/json') . '" lessons-url="'. htmlspecialchars($R . 'lessons') . '"></tsugi-calendar-due>',
+                false,
+                true,
+                'hidden-xs tsugi-wc-nav-item'
+            );
+        }
         if ( isset($CFG->tdiscus) && $CFG->tdiscus ) {
             $set->addRight(
                 '<tsugi-discussions api-url="'. htmlspecialchars($R . 'discussions/json') . '" discussions-url="'. htmlspecialchars($R . 'discussions') . '"></tsugi-discussions>',
