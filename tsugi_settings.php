@@ -27,13 +27,8 @@ $CFG->giftquizzes = $CFG->dirroot.'/../dj4e-private/quiz';
 
 $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
 
-$CFG->tdiscus = $CFG->apphome . '/mod/tdiscus/';
+$CFG->tdiscus = $CFG->wwwroot . '/tool/tdiscus/';
 
-#$CFG->lessons = $CFG->dirroot.'/../lessons.json';
-#$CFG->setExtension('lessons2_enable', true);
-#$CFG->setExtension('lessons_debug_conversion', false);
-
-// $CFG->lessons = $CFG->dirroot.'/../lessons-mini.json';
 $CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
 
 $CFG->youtube_playlist = 'PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z';

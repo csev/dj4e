@@ -3,10 +3,7 @@
     "description": "Hello and welcome to my site where you can work through these modules and learn develop Python / Django database-backed web applications.",
     "count": true,
     "required_modules": [
-        "https://github.com/tsugitools/gift",
-        "https://github.com/tsugitools/youtube",
-        "https://github.com/tsugitools/peer-grade",
-        "https://github.com/tsugitools/tdiscus"
+        "https://github.com/tsugitools/youtube"
     ],
     "badges": [],
     "modules": [
@@ -51,7 +48,7 @@
                 {
                     "type": "discussion",
                     "title": "Welcome to Django for Everybody",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discussion_welcome"
                 }
             ]
@@ -135,7 +132,7 @@
                 {
                     "type": "discussion",
                     "title": "Installing Django on PythonAnywhere",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_02_install"
                 },
                 {
@@ -146,7 +143,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 1 Concepts",
-                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT1.txt",
+                    "launch": "tsugi/tool/gift/?quiz=DJ-TUT1.txt",
                     "resource_link_id": "dj4e_01_tut_quiz",
                     "custom": [
                         {
@@ -215,7 +212,7 @@
                 {
                     "type": "discussion",
                     "title": "Using the Command Shell on PythonAnywhere",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_00_shell"
                 },
                 {
@@ -226,7 +223,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Using the Linux Command Line",
-                    "launch": "{apphome}/mod/gift/?quiz=00-Shell.txt",
+                    "launch": "tsugi/tool/gift/?quiz=00-Shell.txt",
                     "resource_link_id": "dj4e_00_shell_quiz",
                     "custom": [
                         {
@@ -319,7 +316,7 @@
                 {
                     "type": "discussion",
                     "title": "Basic SQL",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_05_sql"
                 },
                 {
@@ -330,7 +327,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: SQL",
-                    "launch": "{apphome}/mod/gift/?quiz=04-SQL.txt",
+                    "launch": "tsugi/tool/gift/?quiz=04-SQL.txt",
                     "resource_link_id": "dj4e_04_sql_quiz",
                     "custom": [
                         {
@@ -442,7 +439,7 @@
                 {
                     "type": "discussion",
                     "title": "Object-Oriented Programming in Python",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_09_objects"
                 },
                 {
@@ -453,7 +450,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Object-Oriented Programming",
-                    "launch": "{apphome}/mod/gift/?quiz=06-Python-Objects.txt",
+                    "launch": "tsugi/tool/gift/?quiz=06-Python-Objects.txt",
                     "resource_link_id": "dj4e_16_oo_quiz",
                     "custom": [
                         {
@@ -469,7 +466,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Assignment Statements",
-                    "launch": "{apphome}/mod/gift/?quiz=06-Python-Assignments.txt",
+                    "launch": "tsugi/tool/gift/?quiz=06-Python-Assignments.txt",
                     "resource_link_id": "dj4e_06_assign_quiz",
                     "custom": [
                         {
@@ -589,7 +586,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Data Models",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_06_model"
                 },
                 {
@@ -613,7 +610,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 2",
-                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT2.txt",
+                    "launch": "tsugi/tool/gift/?quiz=DJ-TUT2.txt",
                     "resource_link_id": "dj4e_03_tut2_quiz",
                     "custom": [
                         {
@@ -710,7 +707,7 @@
                 {
                     "type": "discussion",
                     "title": "HyperText Markup Language (HTML)",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_03_html"
                 },
                 {
@@ -721,7 +718,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: HTML",
-                    "launch": "{apphome}/mod/gift/?quiz=00-HTML.txt",
+                    "launch": "tsugi/tool/gift/?quiz=00-HTML.txt",
                     "resource_link_id": "dj4e_01_html_quiz",
                     "custom": [
                         {
@@ -837,7 +834,7 @@
                 {
                     "type": "discussion",
                     "title": "Cascading Style Sheets (CSS)",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_04_css"
                 },
                 {
@@ -848,7 +845,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: CSS",
-                    "launch": "{apphome}/mod/gift/?quiz=00-CSS.txt",
+                    "launch": "tsugi/tool/gift/?quiz=00-CSS.txt",
                     "resource_link_id": "php_01_css_quiz",
                     "custom": [
                         {
@@ -864,7 +861,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Cascading Style Sheets (CSS)",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "css",
                     "custom": [
                         {
@@ -964,7 +961,7 @@
                 {
                     "type": "discussion",
                     "title": "Understanding Model View Controller (MVC)",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_07_mvc"
                 },
                 {
@@ -975,7 +972,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Model-View-Controller",
-                    "launch": "{apphome}/mod/gift/?quiz=05-MVC.txt",
+                    "launch": "tsugi/tool/gift/?quiz=05-MVC.txt",
                     "resource_link_id": "dj4e_01_mvc_quiz",
                     "custom": [
                         {
@@ -1129,7 +1126,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Views and Templates",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_08_views"
                 },
                 {
@@ -1140,7 +1137,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Views and Templates",
-                    "launch": "{apphome}/mod/gift/?quiz=06-Views-Templates.txt",
+                    "launch": "tsugi/tool/gift/?quiz=06-Views-Templates.txt",
                     "resource_link_id": "dj4e_06_views_quiz",
                     "custom": [
                         {
@@ -1169,7 +1166,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 3",
-                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT3.txt",
+                    "launch": "tsugi/tool/gift/?quiz=DJ-TUT3.txt",
                     "resource_link_id": "dj4e_tut3_quiz",
                     "custom": [
                         {
@@ -1275,7 +1272,7 @@
                 {
                     "type": "discussion",
                     "title": "Forms in HTTP and HTML",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_11_forms"
                 },
                 {
@@ -1286,7 +1283,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: HTML Forms",
-                    "launch": "{apphome}/mod/gift/?quiz=10-Forms-HTML.txt",
+                    "launch": "tsugi/tool/gift/?quiz=10-Forms-HTML.txt",
                     "resource_link_id": "dj4e_html_forms_quiz",
                     "custom": [
                         {
@@ -1315,7 +1312,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Tutorial 4",
-                    "launch": "{apphome}/mod/gift/?quiz=DJ-TUT4.txt",
+                    "launch": "tsugi/tool/gift/?quiz=DJ-TUT4.txt",
                     "resource_link_id": "dj4e_tut4_quiz",
                     "custom": [
                         {
@@ -1401,7 +1398,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Generic Views",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_10_generic"
                 },
                 {
@@ -1412,7 +1409,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Generic Views",
-                    "launch": "{apphome}/mod/gift/?quiz=07-Views-Generic.txt",
+                    "launch": "tsugi/tool/gift/?quiz=07-Views-Generic.txt",
                     "resource_link_id": "dj4e_07_generic_quiz",
                     "custom": [
                         {
@@ -1477,7 +1474,7 @@
                 {
                     "type": "discussion",
                     "title": "A Solo Appplication",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_29_solo"
                 },
                 {
@@ -1589,7 +1586,7 @@
                 {
                     "type": "discussion",
                     "title": "Introduction to Dynamic Web Content",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_01_intro"
                 },
                 {
@@ -1600,7 +1597,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Request-Response Cycle",
-                    "launch": "{apphome}/mod/gift/?quiz=01-Request-Response.txt",
+                    "launch": "tsugi/tool/gift/?quiz=01-Request-Response.txt",
                     "resource_link_id": "dj4e_01_rrc_quiz",
                     "custom": [
                         {
@@ -1628,7 +1625,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: The Big Picture of a Django Application",
-                    "launch": "{apphome}/mod/gift/?quiz=08-BigPicture.txt",
+                    "launch": "tsugi/tool/gift/?quiz=08-BigPicture.txt",
                     "resource_link_id": "dj4e_08_big_quiz",
                     "custom": [
                         {
@@ -1693,7 +1690,7 @@
                 {
                     "type": "discussion",
                     "title": "The Mini Django Web Server",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_01_mini"
                 },
                 {
@@ -1796,7 +1793,7 @@
                 {
                     "type": "discussion",
                     "title": "Cookies and Sessions",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_12_sessions"
                 },
                 {
@@ -1807,7 +1804,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Cookies and Sessions",
-                    "launch": "{apphome}/mod/gift/?quiz=09-Cookies-Sessions.txt",
+                    "launch": "tsugi/tool/gift/?quiz=09-Cookies-Sessions.txt",
                     "resource_link_id": "dj4e_09_cookie_quiz",
                     "custom": [
                         {
@@ -1940,7 +1937,7 @@
                 {
                     "type": "discussion",
                     "title": "One-To-Many Data Models",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_15_one"
                 },
                 {
@@ -1951,7 +1948,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: One to Many Data Models",
-                    "launch": "{apphome}/mod/gift/?quiz=DB-03-One-To-Many.txt",
+                    "launch": "tsugi/tool/gift/?quiz=DB-03-One-To-Many.txt",
                     "resource_link_id": "dj4e_db_one_quiz",
                     "custom": [
                         {
@@ -1967,7 +1964,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Polls Data Model",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "peer_model",
                     "custom": [
                         {
@@ -2061,7 +2058,7 @@
                 {
                     "type": "discussion",
                     "title": "Django Users and Authentication",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_13_users"
                 },
                 {
@@ -2072,7 +2069,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Login and Authentication",
-                    "launch": "{apphome}/mod/gift/?quiz=10-Login.txt",
+                    "launch": "tsugi/tool/gift/?quiz=10-Login.txt",
                     "resource_link_id": "dj4e_10_login_quiz",
                     "custom": [
                         {
@@ -2139,7 +2136,7 @@
                 {
                     "type": "discussion",
                     "title": "Forms in Django",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_14_forms"
                 },
                 {
@@ -2150,7 +2147,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Django Forms",
-                    "launch": "{apphome}/mod/gift/?quiz=11-Django-Forms.txt",
+                    "launch": "tsugi/tool/gift/?quiz=11-Django-Forms.txt",
                     "resource_link_id": "dj4e_forms_django",
                     "custom": [
                         {
@@ -2215,7 +2212,7 @@
                 {
                     "type": "discussion",
                     "title": "Autos CRUD Application",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_16_autos"
                 },
                 {
@@ -2386,7 +2383,7 @@
                 {
                     "type": "discussion",
                     "title": "A Second Solo Appplication",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_29_solo2"
                 },
                 {
@@ -2468,7 +2465,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace Setup",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_mkt0"
                 },
                 {
@@ -2550,7 +2547,7 @@
                 {
                     "type": "discussion",
                     "title": "Owned Rows",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_19_owned"
                 },
                 {
@@ -2561,7 +2558,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Owned Rows",
-                    "launch": "{apphome}/mod/gift/?quiz=12-Owned-Rows.txt",
+                    "launch": "tsugi/tool/gift/?quiz=12-Owned-Rows.txt",
                     "resource_link_id": "dj4e_12_owned",
                     "custom": [
                         {
@@ -2672,7 +2669,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace #1",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_mkt1"
                 },
                 {
@@ -2773,7 +2770,7 @@
                 {
                     "type": "discussion",
                     "title": "JavaScript",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_22_javascript"
                 },
                 {
@@ -2784,7 +2781,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: JavaScript",
-                    "launch": "{apphome}/mod/gift/?quiz=JS-01-JavaScript.txt",
+                    "launch": "tsugi/tool/gift/?quiz=JS-01-JavaScript.txt",
                     "resource_link_id": "js_01_javascript_quiz",
                     "custom": [
                         {
@@ -2864,7 +2861,7 @@
                 {
                     "type": "discussion",
                     "title": "Object Oriented Programming in JavaScript",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_23_oojs"
                 },
                 {
@@ -2875,7 +2872,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: JavaScript Objects",
-                    "launch": "{apphome}/mod/gift/?quiz=JS-02-Objects.txt",
+                    "launch": "tsugi/tool/gift/?quiz=JS-02-Objects.txt",
                     "resource_link_id": "js_02_js_objects_quiz",
                     "custom": [
                         {
@@ -2954,7 +2951,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads + Pictures",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_mkt2"
                 },
                 {
@@ -2981,7 +2978,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Menus and Pictures",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "dj4e_mkt2_peer",
                     "custom": [
                         {
@@ -3063,7 +3060,7 @@
                 {
                     "type": "discussion",
                     "title": "Many-To-Many Data Models",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_21_many"
                 },
                 {
@@ -3074,7 +3071,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Many-To-Many",
-                    "launch": "{apphome}/mod/gift/?quiz=DB-04-Many-To-Many.txt",
+                    "launch": "tsugi/tool/gift/?quiz=DB-04-Many-To-Many.txt",
                     "resource_link_id": "dj4e_db_04_many",
                     "custom": [
                         {
@@ -3153,7 +3150,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace + Comments (3)",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_mkt3"
                 },
                 {
@@ -3259,7 +3256,7 @@
                 {
                     "type": "discussion",
                     "title": "JavaScript in the Browser",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_25_browser"
                 },
                 {
@@ -3270,7 +3267,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: Browser and JavaScript",
-                    "launch": "{apphome}/mod/gift/?quiz=JS-03-Browser.txt",
+                    "launch": "tsugi/tool/gift/?quiz=JS-03-Browser.txt",
                     "resource_link_id": "js_03_browser",
                     "custom": [
                         {
@@ -3355,7 +3352,7 @@
                 {
                     "type": "discussion",
                     "title": "JSON / AJAX",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_26_ajax"
                 },
                 {
@@ -3366,7 +3363,7 @@
                 {
                     "type": "lti",
                     "title": "Quiz: JSON",
-                    "launch": "{apphome}/mod/gift/?quiz=JS-04-AJAX-JSON.txt",
+                    "launch": "tsugi/tool/gift/?quiz=JS-04-AJAX-JSON.txt",
                     "resource_link_id": "js_04_json",
                     "custom": [
                         {
@@ -3460,7 +3457,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace - Favorites (4)",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_mkt4"
                 },
                 {
@@ -3487,7 +3484,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Market 4 Favorites User Interface",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "dj4e_mkt4_peer",
                     "custom": [
                         {
@@ -3594,7 +3591,7 @@
                 {
                     "type": "discussion",
                     "title": "Marketplace #5",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_mkt5"
                 },
                 {
@@ -3621,7 +3618,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Marketplace Search User Interface",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "peer_mkt5",
                     "custom": [
                         {
@@ -3714,7 +3711,7 @@
                 {
                     "type": "discussion",
                     "title": "CRUD Practice",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_29_crud"
                 },
                 {
@@ -3788,7 +3785,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Overview",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_30_project"
                 },
                 {
@@ -3799,7 +3796,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Project Description",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "pr_description",
                     "custom": [
                         {
@@ -3878,7 +3875,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 2",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_31_pr2"
                 },
                 {
@@ -3889,7 +3886,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Project Revision",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "pr_02_milestone",
                     "custom": [
                         {
@@ -3968,7 +3965,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 3",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_32_pr3"
                 },
                 {
@@ -3979,7 +3976,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: UI Design (1)",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "pr_03_milestone",
                     "custom": [
                         {
@@ -4074,7 +4071,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 4",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_33_pr4"
                 },
                 {
@@ -4085,7 +4082,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Data Model",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "pr_04_milestone",
                     "custom": [
                         {
@@ -4158,7 +4155,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 5 - Project Review",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_34_pr5"
                 },
                 {
@@ -4169,7 +4166,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Project Review",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "pr_05_milestone",
                     "custom": [
                         {
@@ -4241,7 +4238,7 @@
                 {
                     "type": "discussion",
                     "title": "Project Milestone 6 - Final Report",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_35_pr6"
                 },
                 {
@@ -4252,7 +4249,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Final Project",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "pr_06_milestone",
                     "custom": [
                         {
@@ -4396,7 +4393,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #1",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_20_ads1"
                 },
                 {
@@ -4483,7 +4480,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads + Pictures",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_24_ads1b"
                 },
                 {
@@ -4506,7 +4503,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Menus and Pictures",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "dj4e_peer_ads1b",
                     "custom": [
                         {
@@ -4605,7 +4602,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #2",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_24_ads2"
                 },
                 {
@@ -4707,7 +4704,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #3",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_27_ads3"
                 },
                 {
@@ -4730,7 +4727,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Ads3 User Interface",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "peer_ads_3",
                     "custom": [
                         {
@@ -4838,7 +4835,7 @@
                 {
                     "type": "discussion",
                     "title": "Classified Ads #4",
-                    "launch": "{apphome}/mod/tdiscus/",
+                    "launch": "tsugi/tool/tdiscus/",
                     "resource_link_id": "discuss_28_ads4"
                 },
                 {
@@ -4861,7 +4858,7 @@
                 {
                     "type": "lti",
                     "title": "Peer Graded: Ads 4 User Interface",
-                    "launch": "{apphome}/mod/peer-grade/",
+                    "launch": "tsugi/tool/peer-grade/",
                     "resource_link_id": "peer_ads_4",
                     "custom": [
                         {
