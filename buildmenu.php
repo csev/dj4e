@@ -17,7 +17,9 @@ function buildMenu() {
     if ( isset($CFG->lessons) ) {
         $set->addLeft('Lessons', $R.'lessons');
     }
-    $set->addLeft('Courses', $R.'coursesredirect.php');
+    if ( isset($_SESSION['id']) ) {
+        $set->addLeft('Assignments', $R.'assignments');
+    }
 
     if ( isset($_SESSION['id']) ) {
         $submenu = new \Tsugi\UI\Menu();
@@ -38,6 +40,7 @@ function buildMenu() {
         $submenu->addLink('Notifications', $R.'notifications');
         $submenu->addLink('Grades', $R.'grades');
         $submenu->addLink('Pages', $R.'pages');
+        $submenu->addLink('Courses', $R.'coursesredirect.php');
         $submenu->addLink('LMS Integration', $T . 'settings');
         if ( isset($CFG->google_classroom_secret) ) {
             $submenu->addLink('Google Classroom', $T.'gclass/login');
@@ -55,6 +58,7 @@ function buildMenu() {
         }
     } else {
         $set->addRight('Login', $R.'login');
+        $set->addRight('Courses', $R.'coursesredirect.php');
     }
     if ( isset($_SESSION['id']) ) {
         $set->addRight('<tsugi-notifications api-url="'. htmlspecialchars($T . 'api/notifications.php') . '" notifications-view-url="'. htmlspecialchars($R . 'notifications') . '" announcements-view-url="'. htmlspecialchars($R . 'announcements') . '"></tsugi-notifications>', false);
