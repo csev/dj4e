@@ -29,7 +29,7 @@ $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
 
 $CFG->tdiscus = $CFG->wwwroot . '/tool/tdiscus/';
 
-$CFG->lessons = $CFG->dirroot.'/../lessons-items.json';
+$CFG->lessons = $CFG->dirroot.'/../lessons.json';
 
 $CFG->youtube_playlist = 'PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z';
 
