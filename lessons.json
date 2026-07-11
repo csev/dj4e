@@ -74,7 +74,7 @@
                 {
                     "type": "video",
                     "title": "How the Autograder Works (10:42)",
-                    "media": "lesson-03-paw/03-01-DJ-00-AutoGrader.m4v",
+                    "media": "lesson-03-install/03-01-DJ-00-AutoGrader.m4v",
                     "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
                     "youtube": "zQvzXkiwILM"
                 },
@@ -391,7 +391,7 @@
                     "title": "Objects - A Sample Class - Part 2 (8:22)",
                     "youtube_preplud": "xYSY7JwpqTM",
                     "youtube": "cBgtQK6vhN4",
-                    "media": "14-Objects-B-2023-12-28.m4v",
+                    "media": "lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v",
                     "youtube-2016": "b2vc5uzUfoE"
                 },
                 {
@@ -399,7 +399,7 @@
                     "title": "Objects - Lifecycle - Part 3 (6:09)",
                     "youtube_preplus": "7A5PEOK-AF0",
                     "youtube": "QSaHfuMf5QI",
-                    "media": "14-Objects-C-2023-12-28.m4v",
+                    "media": "lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v",
                     "youtube-2016": "bal0Fv6QE9w"
                 },
                 {
@@ -407,14 +407,14 @@
                     "title": "Objects - Inheritance - Part 4 (7:34)",
                     "youtube_preplus": "VzVaj8orzOE",
                     "youtube": "cOf7g_E2G8g",
-                    "media": "14-Objects-D-2023-12-28.m4v",
+                    "media": "lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v",
                     "youtube-2016": "EE9PaHPPm2w"
                 },
                 {
                     "type": "video",
                     "title": "The True Story of Python Assignment Statements (7:30)",
                     "youtube": "zoD2GY11dcY",
-                    "media": "05-14-Py-01-Variables-2025-09.m4v"
+                    "media": "lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v"
                 },
                 {
                     "type": "header",
@@ -2419,8 +2419,8 @@
                 },
                 {
                     "type": "video",
-                    "title": " DJ4E Marketplace - Initial Setup / Install  (9:46)",
-                    "media": "lesson-02-mkt0-setup/01-mkt_00_setup.m4v",
+                    "title": "DJ4E Marketplace - Initial Setup / Install  (9:46)",
+                    "media": "lesson-20-mkt0-setup/01-mkt_00_setup.m4v",
                     "youtube": "9WZHLlOyoXY"
                 },
                 {
@@ -3223,14 +3223,14 @@
                     "title": "Using Fetch to make Network Requests in JavaScript (6:27)",
                     "youtube": "m1MBEktyC7U",
                     "youtube_2025_04": "LbKfSzuHWyM",
-                    "media": " JS-03-Browser-05-Fetch.m4v",
+                    "media": "lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v",
                     "date": "2025-04-10"
                 },
                 {
                     "type": "video",
                     "title": "Creating our own HTML Tags using Web Components (11:06)",
                     "youtube": "ZEQBZ_r2pvQ",
-                    "media": "JS-03-Browser-06-WC.m4v",
+                    "media": "lesson-29-browser/06-JS-03-Browser-06-WC.m4v",
                     "date": "2025-04-10"
                 },
                 {
