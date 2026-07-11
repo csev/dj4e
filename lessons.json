@@ -20,7 +20,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "Welcome to Django for Everybody (7:33)",
+                    "title": "DJ 01.01 Welcome to Django for Everybody (7:33)",
                     "youtube": "oxJQB4f2MMs",
                     "media": "lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v",
                     "youtube-2018": "KH_-vhsfxjg"
@@ -66,21 +66,21 @@
                 },
                 {
                     "type": "video",
-                    "title": "Installing Django 5.2 on PythonAnywhere (31:59)",
+                    "title": "DJ 03.03 Installing Django 5.2 on PythonAnywhere (31:59)",
                     "media": "lesson-03-install/03-01-paw_install52_new.m4v",
                     "FCP": "DJ4E-Demos/01_paw_install52_new/01_paw_install52_new",
                     "youtube": "Aba5ZCfua8k"
                 },
                 {
                     "type": "video",
-                    "title": "How the Autograder Works (10:42)",
+                    "title": "DJ 03.03 How the Autograder Works (10:42)",
                     "media": "lesson-03-install/03-01-DJ-00-AutoGrader.m4v",
                     "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
                     "youtube": "zQvzXkiwILM"
                 },
                 {
                     "type": "video",
-                    "title": "Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
+                    "title": "DJ 03.02 Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
                     "media": "lesson-03-paw/02-01_paw_install_errors.m4v",
                     "todo": "Re-record for 2026",
                     "youtube": "IYH_BkpHf3s"
@@ -183,7 +183,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "Using the Command Line Shell on PythonAnywhere (5.2) (18.28)",
+                    "title": "DJ 04.01 Using the Command Line Shell on PythonAnywhere (5.2) (18.28)",
                     "media": "lesson-04-shell/01-01_paw_shell.m4v",
                     "todo": "Re-record for 2026",
                     "FCP": "Shell-01-DJ52",
@@ -261,20 +261,20 @@
                 },
                 {
                     "type": "video",
-                    "title": "How Databases Work (18:57)",
+                    "title": "DJ 07.01 How Databases Work (18:57)",
                     "media": "lesson-07-sql/01-SQL-01-Basic-01.m4v",
                     "youtube": "C1QXYMNTEVs"
                 },
                 {
                     "type": "video",
-                    "title": "Introduction to Structured Query Language (SQL) (11:45)",
+                    "title": "DJ 07.02 Introduction to Structured Query Language (SQL) (11:45)",
                     "media": "lesson-07-sql/02-SQL-01-Basic-02.m4v",
                     "note": "Audio is messed up in FCPX",
                     "youtube": "wtU7Pp6VFoE"
                 },
                 {
                     "type": "video",
-                    "title": "Demonstration: Basic SQL (6:36)",
+                    "title": "DJ 07.03 Demonstration: Basic SQL (6:36)",
                     "media": "lesson-07-sql/03-sql-01-basic.m4v",
                     "youtube": "2Or6_sSyl7c"
                 },
@@ -382,13 +382,14 @@
                 },
                 {
                     "type": "video",
-                    "title": "Objects - Introduction - Part 1 (10:40)",
+                    "title": "DJ 11.01 Objects - Introduction - Part 1 (10:40)",
                     "youtube_preplus": "u9xZE5t9Y30",
-                    "youtube": "MafXTB8UXIg"
+                    "youtube": "MafXTB8UXIg",
+                    "media": "lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Objects - A Sample Class - Part 2 (8:22)",
+                    "title": "DJ 11.02 Objects - A Sample Class - Part 2 (8:22)",
                     "youtube_preplud": "xYSY7JwpqTM",
                     "youtube": "cBgtQK6vhN4",
                     "media": "lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v",
@@ -396,7 +397,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "Objects - Lifecycle - Part 3 (6:09)",
+                    "title": "DJ 11.03 Objects - Lifecycle - Part 3 (6:09)",
                     "youtube_preplus": "7A5PEOK-AF0",
                     "youtube": "QSaHfuMf5QI",
                     "media": "lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v",
@@ -404,7 +405,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "Objects - Inheritance - Part 4 (7:34)",
+                    "title": "DJ 11.04 Objects - Inheritance - Part 4 (7:34)",
                     "youtube_preplus": "VzVaj8orzOE",
                     "youtube": "cOf7g_E2G8g",
                     "media": "lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v",
@@ -412,7 +413,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "The True Story of Python Assignment Statements (7:30)",
+                    "title": "DJ 11.05 The True Story of Python Assignment Statements (7:30)",
                     "youtube": "zoD2GY11dcY",
                     "media": "lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v"
                 },
@@ -505,14 +506,14 @@
                 },
                 {
                     "type": "video",
-                    "title": "Django Data Models (19:59)",
+                    "title": "DJ 08.01 Django Data Models (19:59)",
                     "media": "lesson-08-models/01-DJ-02-Models.m4v",
                     "note": "Audio is messed up in FCPX",
                     "youtube": "AqsPifp-ccc"
                 },
                 {
                     "type": "video",
-                    "title": "Data Model Migration in Django (7:54)",
+                    "title": "DJ 08.02 Data Model Migration in Django (7:54)",
                     "youtube": "YqARGlI6bGc",
                     "media": "lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v",
                     "todo": "Need to make migration fit better in DJ-02",
@@ -520,20 +521,20 @@
                 },
                 {
                     "type": "video",
-                    "title": "Demonstration: Django Single Table Models (11:09)",
+                    "title": "DJ 08.03 Demonstration: Django Single Table Models (11:09)",
                     "media": "lesson-08-models/03-04_paw_models.m4v",
                     "youtube": "p5K5hFiJ-GI"
                 },
                 {
                     "type": "video",
-                    "title": "Demonstration: Django Project Tutorial 2 (29:20)",
+                    "title": "DJ 08.03 Demonstration: Django Project Tutorial 2 (29:20)",
                     "media": "lesson-08-models/03-04_paw_models_2026.m4v",
                     "project": "DJ4E-Demos tutorial02 tutorial02",
                     "youtube": "VmWRxV6iAPI"
                 },
                 {
                     "type": "video",
-                    "title": "Demonstration: Resetting your Django database on PythonAnywhere (5:47)",
+                    "title": "DJ 08.04 Demonstration: Resetting your Django database on PythonAnywhere (5:47)",
                     "media": "lesson-08-models/04-tut2-reset-database-edit.mov",
                     "project": "tut2 reset database edit",
                     "youtube": "GOQIJbTSzoQ"
@@ -649,19 +650,19 @@
                 },
                 {
                     "type": "video",
-                    "title": "HTML - HyperText Markup Language (Part 1) (5:53)",
+                    "title": "DJ 05.01 HTML - HyperText Markup Language (Part 1) (5:53)",
                     "media": "lesson-05-html/01-Web-02-HTML-A.m4v",
                     "youtube": "yWmJSO5xQlU"
                 },
                 {
                     "type": "video",
-                    "title": "HTML - HyperText Markup Language (Part 2) (13:52)",
+                    "title": "DJ 05.02 HTML - HyperText Markup Language (Part 2) (13:52)",
                     "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
                     "youtube": "fh3omoEiebQ"
                 },
                 {
                     "type": "video",
-                    "title": "HTML - Sample Code Walkthrough (13:58)",
+                    "title": "DJ 05.03 HTML - Sample Code Walkthrough (13:58)",
                     "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
                     "youtube": "wYc6l28v7Cs"
                 },
@@ -769,31 +770,31 @@
                 },
                 {
                     "type": "video",
-                    "title": "CSS - Cascading Style Sheets - (Part 1) (12:47)",
+                    "title": "DJ 06.01 CSS - Cascading Style Sheets - (Part 1) (12:47)",
                     "media": "lesson-06-css/01-Web-02-CSS-A.m4v",
                     "youtube": "blWx62Js7T0"
                 },
                 {
                     "type": "video",
-                    "title": "CSS - Cascading Style Sheets - (Part 2) (15:03)",
+                    "title": "DJ 06.02 CSS - Cascading Style Sheets - (Part 2) (15:03)",
                     "media": "lesson-06-css/02-Web-02-CSS-B.m4v",
                     "youtube": "nMU8wMgasJ8"
                 },
                 {
                     "type": "video",
-                    "title": "CSS - Cascading Style Sheets - (Part 3) (13:40)",
+                    "title": "DJ 06.03 CSS - Cascading Style Sheets - (Part 3) (13:40)",
                     "media": "lesson-06-css/03-Web-02-CSS-C.m4v",
                     "youtube": "7KWtFdqXiqE"
                 },
                 {
                     "type": "video",
-                    "title": "CSS - Sample Code Walkthrough (Part 1) (13:26)",
+                    "title": "DJ 06.04 CSS - Sample Code Walkthrough (Part 1) (13:26)",
                     "media": "lesson-06-css/04-Web-03-CSS-Code-A.m4v",
                     "youtube": "2Eu96WnoHBY"
                 },
                 {
                     "type": "video",
-                    "title": "CSS - Sample Code Walkthrough (Part 2) (25:49)",
+                    "title": "DJ 06.05 CSS - Sample Code Walkthrough (Part 2) (25:49)",
                     "media": "lesson-06-css/05-Web-03-CSS-Code-B.m4v",
                     "youtube": "MHqI-PKBl_A"
                 },
@@ -928,7 +929,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "Model View Controller in Django (7:07)",
+                    "title": "DJ 09.01 Model View Controller in Django (7:07)",
                     "media": "lesson-09-mvc/01-DJ-05-MVC.m4v",
                     "youtube": "XvWG5KMncOU",
                     "project": "DJ 05 MVC"
@@ -1011,49 +1012,49 @@
                 },
                 {
                     "type": "video",
-                    "title": "URL Routing in Django (6:59)",
+                    "title": "DJ 10.01 URL Routing in Django (6:59)",
                     "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v",
                     "youtube": "AQFC13D2mRM",
                     "project": "DJ 06 Views 01 Urls"
                 },
                 {
                     "type": "video",
-                    "title": "Django Views (6:19)",
+                    "title": "DJ 10.02 Django Views (6:19)",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v",
                     "youtube": "9Qk4vJMssMo",
                     "project": "DJ 06 Views 02 Views"
                 },
                 {
                     "type": "video",
-                    "title": "Inside Django Views and HTML Escaping in Django (15:36)",
+                    "title": "DJ 10.03 Inside Django Views and HTML Escaping in Django (15:36)",
                     "media": "lesson-10-views/03-DJ-06-Views-03-Detail.m4v",
                     "youtube": "SAAWE4Hz6Mk",
                     "project": "DJ 06 Views 03 Detail"
                 },
                 {
                     "type": "video",
-                    "title": "Using Templates in Django (10:05)",
+                    "title": "DJ 10.04 Using Templates in Django (10:05)",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v",
                     "youtube": "mTvWrpMGWBA",
                     "project": "DJ 06 Views 04 Templates"
                 },
                 {
                     "type": "video",
-                    "title": "Using the Django Template Language (DTL) (11:00)",
+                    "title": "DJ 10.05 Using the Django Template Language (DTL) (11:00)",
                     "media": "lesson-10-views/05-DJ-06-Views-05-DTL.m4v",
                     "youtube": "teL44ugGpSs",
                     "project": "DJ 06 Views 05 DTL"
                 },
                 {
                     "type": "video",
-                    "title": "Django Template Inheritance (6:06)",
+                    "title": "DJ 10.06 Django Template Inheritance (6:06)",
                     "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v",
                     "youtube": "IMgml67lH9Y",
                     "project": "DJ 06 Views 06 Inherit"
                 },
                 {
                     "type": "video",
-                    "title": "Reversing Django URLs (12:52)",
+                    "title": "DJ 10.07 Reversing Django URLs (12:52)",
                     "media": "lesson-10-views/07-DJ-06-Views-07-Reverse.m4v",
                     "youtube": "YT60BZJjySg",
                     "project": "DJ 06 Views 07 Reverse"
@@ -1205,39 +1206,45 @@
                 },
                 {
                     "type": "video",
-                    "title": "Forms, GET, POST, and HTTP (8:19)",
+                    "title": "DJ 13.01 Forms, GET, POST, and HTTP (8:19)",
                     "project": "DJ-10-Forms-01-getpost",
-                    "youtube": "KqH0Pu2ZnIg"
+                    "youtube": "KqH0Pu2ZnIg",
+                    "media": "lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Building HTML Forms (11:49)",
+                    "title": "DJ 13.02 Building HTML Forms (11:49)",
                     "project": "DJ-10-Forms-02-HTML",
-                    "youtube": "iXgnkxwzZzM"
+                    "youtube": "iXgnkxwzZzM",
+                    "media": "lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Forms and Cross Site Request Forgery (CSRF) (5:52)",
+                    "title": "DJ 13.03 Forms and Cross Site Request Forgery (CSRF) (5:52)",
                     "project": "DJ-10-Forms-03-CSRF",
-                    "youtube": "j-vdshWK9Lc"
+                    "youtube": "j-vdshWK9Lc",
+                    "media": "lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "CSRF Support in Django (9:16)",
+                    "title": "DJ 13.04 CSRF Support in Django (9:16)",
                     "project": "DJ-10-Forms-04-Form-CSRF",
-                    "youtube": "w9Y6tIVGUTI"
+                    "youtube": "w9Y6tIVGUTI",
+                    "media": "lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "The POST Refresh Pattern (3:26)",
+                    "title": "DJ 13.05 The POST Refresh Pattern (3:26)",
                     "project": "DJ-10-Forms-05-Refresh",
-                    "youtube": "Cug7pkRWQM0"
+                    "youtube": "Cug7pkRWQM0",
+                    "media": "lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Implementing POST Redirect in Django (8:04)",
+                    "title": "DJ 13.06 Implementing POST Redirect in Django (8:04)",
                     "project": "DJ-10-Forms-06-Redirect",
-                    "youtube": "a_ahU4F1V2g"
+                    "youtube": "a_ahU4F1V2g",
+                    "media": "lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v"
                 },
                 {
                     "type": "header",
@@ -1351,9 +1358,10 @@
                 },
                 {
                     "type": "video",
-                    "title": "Understanding Django Generic Views (16:28)",
+                    "title": "DJ 12.01 Understanding Django Generic Views (16:28)",
                     "youtube": "uPRabryhv5k",
-                    "project": "DJ 07 Views 08 Generic"
+                    "project": "DJ 07 Views 08 Generic",
+                    "media": "lesson-12-generic/01-DJ-06-Views-08-Generic.m4v"
                 },
                 {
                     "type": "header",
@@ -1437,19 +1445,22 @@
                 },
                 {
                     "type": "video",
-                    "title": "Review: URL Routing (6:59)",
-                    "youtube": "AQFC13D2mRM"
+                    "title": "DJ 10.01 Review: URL Routing (6:59)",
+                    "youtube": "AQFC13D2mRM",
+                    "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Templates (10:05)",
-                    "youtube": "mTvWrpMGWBA"
+                    "title": "DJ 10.04 Review: Templates (10:05)",
+                    "youtube": "mTvWrpMGWBA",
+                    "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Views (6:19)",
+                    "title": "DJ 10.02 Review: Views (6:19)",
                     "youtube": "9Qk4vJMssMo",
-                    "project": "DJ 06 Views 02 Views"
+                    "project": "DJ 06 Views 02 Views",
+                    "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
                     "type": "header",
@@ -1524,42 +1535,43 @@
                 },
                 {
                     "type": "video",
-                    "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
-                    "youtube": "zuCxAR3-CzA"
+                    "title": "DJ 02.08 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+                    "youtube": "zuCxAR3-CzA",
+                    "media": "lesson-02-http/08-DJ-11-BigPicture.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Web Applications and the Request/Response Cycle (6:04)",
+                    "title": "DJ 02.01 Web Applications and the Request/Response Cycle (6:04)",
                     "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
                     "youtube": "ZT8uqIEG92o"
                 },
                 {
                     "type": "video",
-                    "title": "Using Sockets to Make Network Connections in Python (6:34)",
+                    "title": "DJ 02.02 Using Sockets to Make Network Connections in Python (6:34)",
                     "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
                     "youtube": "RDvlb_XgVyI"
                 },
                 {
                     "type": "video",
-                    "title": "Exploring the HyperText Transfer Protocol (16:28)",
+                    "title": "DJ 02.03 Exploring the HyperText Transfer Protocol (16:28)",
                     "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
                     "youtube": "Q5YIrYkrVXg"
                 },
                 {
                     "type": "video",
-                    "title": "Building a Simple Web Browser in Python (8:39)",
+                    "title": "DJ 02.04 Building a Simple Web Browser in Python (8:39)",
                     "media": "lesson-02-http/04-Web-01-HTTP-04-Browser.m4v",
                     "youtube": "Fxgw_BxZg2I"
                 },
                 {
                     "type": "video",
-                    "title": "Building a Simple HTTP Server in Python (16:07)",
+                    "title": "DJ 02.05 Building a Simple HTTP Server in Python (16:07)",
                     "media": "lesson-02-http/05-Web-01-HTTP-05-Server.m4v",
                     "youtube": "PNt8zXl7EJ0"
                 },
                 {
                     "type": "video",
-                    "title": "Understanding Browser Developer Mode (9:43)",
+                    "title": "DJ 02.06 Understanding Browser Developer Mode (9:43)",
                     "media": "lesson-02-http/06-dev-mode-walkthrough.mov",
                     "youtube": "0JsWY3pmdak"
                 },
@@ -1663,12 +1675,13 @@
                 },
                 {
                     "type": "video",
-                    "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
-                    "youtube": "zuCxAR3-CzA"
+                    "title": "DJ 02.08 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+                    "youtube": "zuCxAR3-CzA",
+                    "media": "lesson-02-http/08-DJ-11-BigPicture.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Exploring the Mini Django Web Server (36:58)",
+                    "title": "DJ 02.07 Exploring the Mini Django Web Server (36:58)",
                     "media": "lesson-02-http/07-Web-04-Mini-Django.m4v",
                     "youtube": "q6LGpiVPwaA"
                 },
@@ -1745,15 +1758,17 @@
                 },
                 {
                     "type": "video",
-                    "title": "Cookies in Browsers and Django (9:43)",
+                    "title": "DJ 14.01 Cookies in Browsers and Django (9:43)",
                     "project": "DJ-08-Cookies-01-Cookies",
-                    "youtube": "C75IW38hKI8"
+                    "youtube": "C75IW38hKI8",
+                    "media": "lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Using Sessions in Django (12:33)",
+                    "title": "DJ 14.02 Using Sessions in Django (12:33)",
                     "project": "DJ-08-Cookies-02-Sessions",
-                    "youtube": "RjykNmVdcgI"
+                    "youtube": "RjykNmVdcgI",
+                    "media": "lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v"
                 },
                 {
                     "type": "header",
@@ -1876,34 +1891,39 @@
                 },
                 {
                     "type": "video",
-                    "title": "One-to-Many Models Overview (5:52)",
+                    "title": "DJ 15.01 One-to-Many Models Overview (5:52)",
                     "youtube": "vgyYEE7XDzw",
-                    "project": "DJ 03 Many 01 Overview"
+                    "project": "DJ 03 Many 01 Overview",
+                    "media": "lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Removing Replication in One-to-Many Models (8:36)",
+                    "title": "DJ 15.02 Removing Replication in One-to-Many Models (8:36)",
                     "youtube": "JCQYxILYNIE",
-                    "project": "DJ 03 Many 02 Replication"
+                    "project": "DJ 03 Many 02 Replication",
+                    "media": "lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Storing Primary and Foreign Keys in a Database (2:46)",
+                    "title": "DJ 15.03 Storing Primary and Foreign Keys in a Database (2:46)",
                     "youtube": "xmyE-zQaBEI",
-                    "project": "DJ 03 Many 03 Physical"
+                    "project": "DJ 03 Many 03 Physical",
+                    "media": "lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Representing One-To-Many Models in Django (9:56)",
+                    "title": "DJ 15.04 Representing One-To-Many Models in Django (9:56)",
                     "youtube": "9t-bP963_jY",
-                    "project": "DJ 03 Many 04 Django"
+                    "project": "DJ 03 Many 04 Django",
+                    "media": "lesson-15-one-many/04-DJ-03-Many-04-Django.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Using the Django Shell to Explore One-to-Many Models (7:45)",
+                    "title": "DJ 15.05 Using the Django Shell to Explore One-to-Many Models (7:45)",
                     "youtube": "aGtY4xkirsE",
                     "notes": "revised 2021-01 truncated reference to m-2-m at end formerly ZdLpAtfWfZk",
-                    "project": "DJ 03 Many 05 Shell"
+                    "project": "DJ 03 Many 05 Shell",
+                    "media": "lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v"
                 },
                 {
                     "type": "header",
@@ -2034,21 +2054,24 @@
                 },
                 {
                     "type": "video",
-                    "title": "Creating and Managing Users in Django (3:45)",
+                    "title": "DJ 16.01 Creating and Managing Users in Django (3:45)",
                     "project": "DJ-09-Login-01-Users",
-                    "youtube": "E_X5Kr6xmNY"
+                    "youtube": "E_X5Kr6xmNY",
+                    "media": "lesson-16-users/01-DJ-09-Login-01-Users.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Login and Logout URLs in Django (7:24)",
+                    "title": "DJ 16.02 Login and Logout URLs in Django (7:24)",
                     "project": "DJ-09-Login-02-Urls",
-                    "youtube": "tNofsgLH7c4"
+                    "youtube": "tNofsgLH7c4",
+                    "media": "lesson-16-users/02-DJ-09-Login-02-Urls.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Login and Views in Django (10:15)",
+                    "title": "DJ 16.03 Login and Views in Django (10:15)",
                     "project": "DJ-09-Login-03-Views",
-                    "youtube": "n5Xwqz1IJck"
+                    "youtube": "n5Xwqz1IJck",
+                    "media": "lesson-16-users/03-DJ-09-Login-03-Views.m4v"
                 },
                 {
                     "type": "header",
@@ -2108,15 +2131,17 @@
                 },
                 {
                     "type": "video",
-                    "title": "Using Django Forms Capabilities (13:26)",
+                    "title": "DJ 17.01 Using Django Forms Capabilities (13:26)",
                     "project": "DJ-10-Forms-07-FormsPy",
-                    "youtube": "bYlgvmAPrp0"
+                    "youtube": "bYlgvmAPrp0",
+                    "media": "lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Data Validation with Django Forms (9:12)",
+                    "title": "DJ 17.02 Data Validation with Django Forms (9:12)",
                     "project": "DJ-10-Forms-08-Validation",
-                    "youtube": "kRXiMIFKzoQ"
+                    "youtube": "kRXiMIFKzoQ",
+                    "media": "lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v"
                 },
                 {
                     "type": "header",
@@ -2176,9 +2201,10 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walkthrough of the DJ4E Autos Sample - Generic Edit Forms (36:12)",
+                    "title": "DJ 18.01 Walkthrough of the DJ4E Autos Sample - Generic Edit Forms (36:12)",
                     "project": "samples autos walkthrough",
-                    "youtube": "3kHgAE-MidA"
+                    "youtube": "3kHgAE-MidA",
+                    "media": "lesson-18-autos/01-samples-autos-walkthrough.mov"
                 },
                 {
                     "type": "header",
@@ -2247,43 +2273,51 @@
                 },
                 {
                     "type": "video",
-                    "title": "The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
-                    "youtube": "zuCxAR3-CzA"
+                    "title": "DJ 02.08 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)",
+                    "youtube": "zuCxAR3-CzA",
+                    "media": "lesson-02-http/08-DJ-11-BigPicture.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: URL Routing (6:59)",
-                    "youtube": "AQFC13D2mRM"
+                    "title": "DJ 10.01 Review: URL Routing (6:59)",
+                    "youtube": "AQFC13D2mRM",
+                    "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Templates (10:05)",
-                    "youtube": "mTvWrpMGWBA"
+                    "title": "DJ 10.04 Review: Templates (10:05)",
+                    "youtube": "mTvWrpMGWBA",
+                    "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Views (6:19)",
-                    "youtube": "9Qk4vJMssMo"
+                    "title": "DJ 10.02 Review: Views (6:19)",
+                    "youtube": "9Qk4vJMssMo",
+                    "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Reversing URLs (12:52)",
-                    "youtube": "YT60BZJjySg"
+                    "title": "DJ 10.07 Review: Reversing URLs (12:52)",
+                    "youtube": "YT60BZJjySg",
+                    "media": "lesson-10-views/07-DJ-06-Views-07-Reverse.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Template Inheritance (6:05)",
-                    "youtube": "IMgml67lH9Y"
+                    "title": "DJ 10.06 Review: Template Inheritance (6:05)",
+                    "youtube": "IMgml67lH9Y",
+                    "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Generic Views (16:28)",
-                    "youtube": "uPRabryhv5k"
+                    "title": "DJ 12.01 Review: Generic Views (16:28)",
+                    "youtube": "uPRabryhv5k",
+                    "media": "lesson-12-generic/01-DJ-06-Views-08-Generic.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Review: Django Forms (13:56)",
-                    "youtube": "bYlgvmAPrp0"
+                    "title": "DJ 17.01 Review: Django Forms (13:56)",
+                    "youtube": "bYlgvmAPrp0",
+                    "media": "lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v"
                 },
                 {
                     "type": "header",
@@ -2332,33 +2366,38 @@
                 },
                 {
                     "type": "video",
-                    "title": "(Review) Using Sessions in Django",
+                    "title": "DJ 14.02 (Review) Using Sessions in Django",
                     "project": "DJ-08-Cookies-02-Sessions",
-                    "youtube": "RjykNmVdcgI"
+                    "youtube": "RjykNmVdcgI",
+                    "media": "lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "(Review) Login and Views in Django",
+                    "title": "DJ 16.03 (Review) Login and Views in Django",
                     "project": "DJ-09-Login-03-Views",
-                    "youtube": "n5Xwqz1IJck"
+                    "youtube": "n5Xwqz1IJck",
+                    "media": "lesson-16-users/03-DJ-09-Login-03-Views.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "(Review) Django Views",
+                    "title": "DJ 10.02 (Review) Django Views",
                     "youtube": "9Qk4vJMssMo",
-                    "project": "DJ 06 Views 02 Views"
+                    "project": "DJ 06 Views 02 Views",
+                    "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "(Review) Using Templates in Django",
+                    "title": "DJ 10.04 (Review) Using Templates in Django",
                     "youtube": "mTvWrpMGWBA",
-                    "project": "DJ 06 Views 04 Templates"
+                    "project": "DJ 06 Views 04 Templates",
+                    "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "(Review) Implementing POST Redirect in Django",
+                    "title": "DJ 13.06 (Review) Implementing POST Redirect in Django",
                     "project": "DJ-10-Forms-06-Redirect",
-                    "youtube": "a_ahU4F1V2g"
+                    "youtube": "a_ahU4F1V2g",
+                    "media": "lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v"
                 },
                 {
                     "type": "header",
@@ -2419,7 +2458,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Marketplace - Initial Setup / Install  (9:46)",
+                    "title": "DJ 20.01 DJ4E Marketplace - Initial Setup / Install  (9:46)",
                     "media": "lesson-20-mkt0-setup/01-mkt_00_setup.m4v",
                     "youtube": "9WZHLlOyoXY"
                 },
@@ -2511,18 +2550,21 @@
                 },
                 {
                     "type": "video",
-                    "title": "Owned Rows in Django - Overview (6:02)",
-                    "youtube": "YTK-Sx4OUqs"
+                    "title": "DJ 22.01 Owned Rows in Django - Overview (6:02)",
+                    "youtube": "YTK-Sx4OUqs",
+                    "media": "lesson-22-owned/01-DJ-12-Owned-01.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Generic Views Review (10:17)",
-                    "youtube": "z4iJ3Njbc9g"
+                    "title": "DJ 22.02 Generic Views Review (10:17)",
+                    "youtube": "z4iJ3Njbc9g",
+                    "media": "lesson-22-owned/02-DJ-12-Owned-02.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Owned Rows in Django - owner.py (13:03)",
-                    "youtube": "hznUKCsk8X8"
+                    "title": "DJ 22.03 Owned Rows in Django - owner.py (13:03)",
+                    "youtube": "hznUKCsk8X8",
+                    "media": "lesson-22-owned/03-DJ-12-Owned-03.m4v"
                 },
                 {
                     "type": "header",
@@ -2599,18 +2641,21 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)",
-                    "youtube": "kQORvrIzsZs"
+                    "title": "DJ 23.01 Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)",
+                    "youtube": "kQORvrIzsZs",
+                    "media": "lesson-23-ads1/01-samples-crispy-walkthrough-23.mov"
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
-                    "youtube": "iHvJZ_lvXB4"
+                    "title": "DJ 23.02 Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
+                    "youtube": "iHvJZ_lvXB4",
+                    "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)",
-                    "youtube": "nuz_zXWoCo8"
+                    "title": "DJ 23.03 Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)",
+                    "youtube": "nuz_zXWoCo8",
+                    "media": "lesson-23-ads1/03-samples-menu-walkthrough-edited.mov"
                 },
                 {
                     "type": "header",
@@ -2719,28 +2764,33 @@
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript - Overview and History (9:59)",
-                    "youtube": "xBpKUM1CTBQ"
+                    "title": "DJ 24.01 JavaScript - Overview and History (9:59)",
+                    "youtube": "xBpKUM1CTBQ",
+                    "media": "lesson-24-javascript/01-JS-01-01-JavaScript.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript - In the Browser (14:02)",
-                    "youtube": "wnUhEMhEeDs"
+                    "title": "DJ 24.02 JavaScript - In the Browser (14:02)",
+                    "youtube": "wnUhEMhEeDs",
+                    "media": "lesson-24-javascript/02-JS-01-02-Browser.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript - The Language (16:57)",
-                    "youtube": "BtIhwBPeyp4"
+                    "title": "DJ 24.03 JavaScript - The Language (16:57)",
+                    "youtube": "BtIhwBPeyp4",
+                    "media": "lesson-24-javascript/03-JS-01-03-Language.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript - Functions and Arrays (7:03)",
-                    "youtube": "a7wPzoX9o_8"
+                    "title": "DJ 24.04 JavaScript - Functions and Arrays (7:03)",
+                    "youtube": "a7wPzoX9o_8",
+                    "media": "lesson-24-javascript/04-JS-01-04-Functions-Arrays.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript - Loops and Conditional (6:37)",
-                    "youtube": "XtKhAo9IO5Q"
+                    "title": "DJ 24.05 JavaScript - Loops and Conditional (6:37)",
+                    "youtube": "XtKhAo9IO5Q",
+                    "media": "lesson-24-javascript/05-JS-01-05-If-Loops.m4v"
                 },
                 {
                     "type": "header",
@@ -2820,13 +2870,15 @@
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript Object Oriented Concepts (4:21)",
-                    "youtube": "N_ZB9VnXDWo"
+                    "title": "DJ 25.01 JavaScript Object Oriented Concepts (4:21)",
+                    "youtube": "N_ZB9VnXDWo",
+                    "media": "lesson-25-jsoo/01-JS-02-01-Overview.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Building Classes and Objects in JavaScript (13:13)",
-                    "youtube": "DLWYj1_j1Is"
+                    "title": "DJ 25.02 Building Classes and Objects in JavaScript (13:13)",
+                    "youtube": "DLWYj1_j1Is",
+                    "media": "lesson-25-jsoo/02-JS-02-02-Code.m4v"
                 },
                 {
                     "type": "header",
@@ -2901,8 +2953,9 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Pictures (pics) Sample Code (33:06)",
-                    "youtube": "tanl9CthvHE"
+                    "title": "DJ 26.01 Walking through the DJ4E Pictures (pics) Sample Code (33:06)",
+                    "youtube": "tanl9CthvHE",
+                    "media": "lesson-26-ads-pictures/01-samples-pics-combined.mov"
                 },
                 {
                     "type": "header",
@@ -3036,21 +3089,24 @@
                 },
                 {
                     "type": "video",
-                    "title": "Many-to-Many Overview (5:34)",
+                    "title": "DJ 27.01 Many-to-Many Overview (5:34)",
                     "youtube": "JI4ZOFOubLY",
-                    "project": "DJ 04 Many 01 Overview"
+                    "project": "DJ 04 Many 01 Overview",
+                    "media": "lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "A Simple Many-To-Many Example in Django (12:35)",
+                    "title": "DJ 27.02 A Simple Many-To-Many Example in Django (12:35)",
                     "youtube": "gf2-J9YOMcc",
-                    "project": "DJ 04 Many 02 Many"
+                    "project": "DJ 04 Many 02 Many",
+                    "media": "lesson-27-many-many/02-DJ-04-Many-02-Many.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Many-To-Many Data Models for Courses and Membership (8:38)",
+                    "title": "DJ 27.03 Many-To-Many Data Models for Courses and Membership (8:38)",
                     "youtube": "kY_1a057phM",
-                    "project": "DJ 04 Many 03 Course"
+                    "project": "DJ 04 Many 03 Course",
+                    "media": "lesson-27-many-many/03-DJ-04-Many-03-Course.m4v"
                 },
                 {
                     "type": "header",
@@ -3100,8 +3156,9 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Forums (forums) Sample Code (25:28)",
-                    "youtube": "mgcj3V56X-A"
+                    "title": "DJ 28.01 Walking through the DJ4E Forums (forums) Sample Code (25:28)",
+                    "youtube": "mgcj3V56X-A",
+                    "media": "lesson-28-ads-comments/01-samples-forums-walkthrough.mov"
                 },
                 {
                     "type": "header",
@@ -3200,27 +3257,31 @@
                 },
                 {
                     "type": "video",
-                    "title": "The JavaScript Execution Model In the Browser (8:24)",
-                    "youtube": "tkZcNu-RGQA"
+                    "title": "DJ 29.01 The JavaScript Execution Model In the Browser (8:24)",
+                    "youtube": "tkZcNu-RGQA",
+                    "media": "lesson-29-browser/01-JS-03-Browser-01-Execution.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Working with the Document Object Model (DOM) in JavaScript (5:40)",
-                    "youtube": "dPpGAYZGrgs"
+                    "title": "DJ 29.02 Working with the Document Object Model (DOM) in JavaScript (5:40)",
+                    "youtube": "dPpGAYZGrgs",
+                    "media": "lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Modifying the Document Object Model (DOM) in JavaScript (8:24)",
-                    "youtube": "x-TaJHWs4nU"
+                    "title": "DJ 29.03 Modifying the Document Object Model (DOM) in JavaScript (8:24)",
+                    "youtube": "x-TaJHWs4nU",
+                    "media": "lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "JavaScript Events in the Browser (7:54)",
-                    "youtube": "_QVcbmGqm2o"
+                    "title": "DJ 29.04 JavaScript Events in the Browser (7:54)",
+                    "youtube": "_QVcbmGqm2o",
+                    "media": "lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Using Fetch to make Network Requests in JavaScript (6:27)",
+                    "title": "DJ 29.05 Using Fetch to make Network Requests in JavaScript (6:27)",
                     "youtube": "m1MBEktyC7U",
                     "youtube_2025_04": "LbKfSzuHWyM",
                     "media": "lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v",
@@ -3228,7 +3289,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "Creating our own HTML Tags using Web Components (11:06)",
+                    "title": "DJ 29.06 Creating our own HTML Tags using Web Components (11:06)",
                     "youtube": "ZEQBZ_r2pvQ",
                     "media": "lesson-29-browser/06-JS-03-Browser-06-WC.m4v",
                     "date": "2025-04-10"
@@ -3306,23 +3367,27 @@
                 },
                 {
                     "type": "video",
-                    "title": "JSON - JavaScript Object Notation (8:34)",
-                    "youtube": "thhKcuHNQzo"
+                    "title": "DJ 30.01 JSON - JavaScript Object Notation (8:34)",
+                    "youtube": "thhKcuHNQzo",
+                    "media": "lesson-30-json/01-JS-04-JSON-01-JSON.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E JSON / Fetch (fetch) Sample Code (21:53)",
-                    "youtube": "KcgPJYil5Do"
+                    "title": "DJ 30.02 Walking through the DJ4E JSON / Fetch (fetch) Sample Code (21:53)",
+                    "youtube": "KcgPJYil5Do",
+                    "media": "lesson-30-json/02-samples-fetch-walkthrough-23.mov"
                 },
                 {
                     "type": "video",
-                    "title": "JSON - AJAX and CHAT (8:05)",
-                    "youtube": "PJ1LkwGcOsk"
+                    "title": "DJ 30.03 JSON - AJAX and CHAT (8:05)",
+                    "youtube": "PJ1LkwGcOsk",
+                    "media": "lesson-30-json/03-JS-04-JSON-02-Chat.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E JSON (chat) Sample Code (16:03)",
-                    "youtube": "v5CKyLS701M"
+                    "title": "DJ 30.04 Walking through the DJ4E JSON (chat) Sample Code (16:03)",
+                    "youtube": "v5CKyLS701M",
+                    "media": "lesson-30-json/04-samples-chat-walkthrough-23.mov"
                 },
                 {
                     "type": "header",
@@ -3391,19 +3456,22 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - Favicon (4:11)",
-                    "youtube": "C1WGD5hFdT8"
+                    "title": "DJ 31.01 DJ4E Samples Walkthrough - Favicon (4:11)",
+                    "youtube": "C1WGD5hFdT8",
+                    "media": "lesson-31-ads3/01-samples-favicon-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - Social Login (8:47)",
-                    "youtube": "NctpQ-2Kdtw"
+                    "title": "DJ 31.02 DJ4E Samples Walkthrough - Social Login (8:47)",
+                    "youtube": "NctpQ-2Kdtw",
+                    "media": "lesson-31-ads3/02-samples-social-github-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - Favorites (34:17)",
+                    "title": "DJ 31.03 DJ4E Samples Walkthrough - Favorites (34:17)",
                     "youtube": "CFF0WQLj1as",
-                    "youtube_pre_2025": "6cq-ehBHkwc"
+                    "youtube_pre_2025": "6cq-ehBHkwc",
+                    "media": "lesson-31-ads3/03-samples-favs-720.mov"
                 },
                 {
                     "type": "header",
@@ -3536,13 +3604,15 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - search (well) (21:30)",
-                    "youtube": "4pOExZHnL9k"
+                    "title": "DJ 32.01 DJ4E Samples Walkthrough - search (well) (21:30)",
+                    "youtube": "4pOExZHnL9k",
+                    "media": "lesson-32-ads-search/01-samples-well-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - myarts (review) (30:13)",
-                    "youtube": "iHvJZ_lvXB4"
+                    "title": "DJ 23.02 DJ4E Samples Walkthrough - myarts (review) (30:13)",
+                    "youtube": "iHvJZ_lvXB4",
+                    "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
                     "type": "header",
@@ -4323,18 +4393,21 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)",
-                    "youtube": "kQORvrIzsZs"
+                    "title": "DJ 23.01 Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)",
+                    "youtube": "kQORvrIzsZs",
+                    "media": "lesson-23-ads1/01-samples-crispy-walkthrough-23.mov"
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
-                    "youtube": "iHvJZ_lvXB4"
+                    "title": "DJ 23.02 Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
+                    "youtube": "iHvJZ_lvXB4",
+                    "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)",
-                    "youtube": "nuz_zXWoCo8"
+                    "title": "DJ 23.03 Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)",
+                    "youtube": "nuz_zXWoCo8",
+                    "media": "lesson-23-ads1/03-samples-menu-walkthrough-edited.mov"
                 },
                 {
                     "type": "header",
@@ -4430,8 +4503,9 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Pictures (pics) Sample Code (33:06)",
-                    "youtube": "tanl9CthvHE"
+                    "title": "DJ 26.01 Walking through the DJ4E Pictures (pics) Sample Code (33:06)",
+                    "youtube": "tanl9CthvHE",
+                    "media": "lesson-26-ads-pictures/01-samples-pics-combined.mov"
                 },
                 {
                     "type": "header",
@@ -4552,8 +4626,9 @@
                 },
                 {
                     "type": "video",
-                    "title": "Walking through the DJ4E Forums (forums) Sample Code (25:28)",
-                    "youtube": "mgcj3V56X-A"
+                    "title": "DJ 28.01 Walking through the DJ4E Forums (forums) Sample Code (25:28)",
+                    "youtube": "mgcj3V56X-A",
+                    "media": "lesson-28-ads-comments/01-samples-forums-walkthrough.mov"
                 },
                 {
                     "type": "header",
@@ -4638,19 +4713,22 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - Favicon (4:11)",
-                    "youtube": "C1WGD5hFdT8"
+                    "title": "DJ 31.01 DJ4E Samples Walkthrough - Favicon (4:11)",
+                    "youtube": "C1WGD5hFdT8",
+                    "media": "lesson-31-ads3/01-samples-favicon-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - Social Login (8:47)",
-                    "youtube": "NctpQ-2Kdtw"
+                    "title": "DJ 31.02 DJ4E Samples Walkthrough - Social Login (8:47)",
+                    "youtube": "NctpQ-2Kdtw",
+                    "media": "lesson-31-ads3/02-samples-social-github-walkthrough.mov"
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - Favorites (34:17)",
+                    "title": "DJ 31.03 DJ4E Samples Walkthrough - Favorites (34:17)",
                     "youtube": "CFF0WQLj1as",
-                    "youtube_pre_2025": "6cq-ehBHkwc"
+                    "youtube_pre_2025": "6cq-ehBHkwc",
+                    "media": "lesson-31-ads3/03-samples-favs-720.mov"
                 },
                 {
                     "type": "header",
@@ -4780,13 +4858,15 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - search (well) (21:30)",
+                    "title": "DJ 32.01 DJ4E Samples Walkthrough - search (well) (21:30)",
+                    "media": "lesson-32-ads-search/01-samples-well-walkthrough.mov",
                     "youtube": "4pOExZHnL9k"
                 },
                 {
                     "type": "video",
-                    "title": "DJ4E Samples Walkthrough - myarts (review) (30:13)",
-                    "youtube": "iHvJZ_lvXB4"
+                    "title": "DJ 23.02 DJ4E Samples Walkthrough - myarts (review) (30:13)",
+                    "youtube": "iHvJZ_lvXB4",
+                    "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
                     "type": "header",
