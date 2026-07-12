@@ -19,6 +19,7 @@ from typing import Any
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
+from ruamel.yaml.scalarstring import LiteralScalarString
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -298,7 +299,12 @@ def load_youtube_playlist(playlist_path: Path) -> list[dict[str, Any]]:
 def index_youtube_playlist(
     playlist: list[dict[str, Any]],
 ) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
-    """Index playlist entries by id, normalized title, and basename (no folder)."""
+    """Index playlist entries by id, normalized title, and optional basename.
+
+    Essential playlist JSONL fields: id, title, description, duration,
+    playlist_index. A filename/_filename field is optional; when present, the
+    basename (folder may be missing) is also indexed for matching.
+    """
     by_id: dict[str, dict[str, Any]] = {}
     by_title: dict[str, dict[str, Any]] = {}
     by_basename: dict[str, dict[str, Any]] = {}
@@ -332,7 +338,7 @@ def match_youtube_entry(
     by_title: dict[str, dict[str, Any]],
     by_basename: dict[str, dict[str, Any]],
 ) -> dict[str, Any] | None:
-    """Match a media file to a playlist entry via id, basename, then title."""
+    """Match a media file to a playlist entry via id, title, then basename."""
     if lesson_youtube_id and lesson_youtube_id in by_id:
         entry = by_id[lesson_youtube_id]
         yt_title = entry.get("title") or ""
@@ -347,12 +353,6 @@ def match_youtube_entry(
                 )
         return entry
 
-    basename = Path(rel_name).name
-    stem = Path(rel_name).stem
-    for key in (basename, stem):
-        if key in by_basename:
-            return by_basename[key]
-
     if lesson_title:
         normalized = normalize_title(lesson_title)
         if normalized in by_title:
@@ -360,6 +360,12 @@ def match_youtube_entry(
         for yt_norm, entry in by_title.items():
             if normalized and (normalized in yt_norm or yt_norm in normalized):
                 return entry
+
+    basename = Path(rel_name).name
+    stem = Path(rel_name).stem
+    for key in (basename, stem):
+        if key in by_basename:
+            return by_basename[key]
 
     return None
 
@@ -372,6 +378,23 @@ def choose_field(existing: Any, incoming: Any, *, force: bool) -> Any:
     if force or empty_value(existing):
         return incoming if not empty_value(incoming) else existing
     return existing
+
+
+def as_literal_description(value: Any) -> Any:
+    """Store descriptions as YAML literal block scalars (|)."""
+    if value is None:
+        return None
+    if isinstance(value, LiteralScalarString):
+        return value
+    if not isinstance(value, str):
+        return value
+    text = value.strip("\n")
+    if not text:
+        return None
+    # Literal scalars look cleaner with a trailing newline.
+    if not text.endswith("\n"):
+        text = text + "\n"
+    return LiteralScalarString(text)
 
 
 def load_media_files(files_path: Path) -> list[str]:
@@ -562,8 +585,8 @@ def ordered_entry(
     preserved["youtube_id"] = choose_field(
         preserved["youtube_id"], youtube_id, force=force_youtube
     )
-    preserved["description"] = choose_field(
-        preserved["description"], description, force=force_youtube
+    preserved["description"] = as_literal_description(
+        choose_field(preserved["description"], description, force=force_youtube)
     )
     # Always preserve manually set kaltura_id.
     preserved["kaltura_id"] = existing.get("kaltura_id", None)
