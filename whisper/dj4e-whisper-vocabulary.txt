@@ -1,0 +1,256 @@
+DJ4E
+Django for Everybody
+Dr. Chuck
+Charles Severance
+Severance
+DJ4E samples
+dj4e.com
+www.dj4e.com
+dr-chuck.com
+py4e.com
+Tsugi
+Sakai
+Apereo
+University of Michigan
+UMSI
+PythonAnywhere
+GitHub
+Stack Overflow
+
+Django
+Python
+JavaScript
+jQuery
+AJAX
+JSON
+HTML
+HTML5
+CSS
+SQL
+SQLite
+MySQL
+PostgreSQL
+HTTP
+HTTPS
+TCP
+IP
+URL
+URI
+REST
+API
+DOM
+XML
+CSV
+UTF-8
+ASCII
+IETF
+RFC
+W3C
+CERN
+
+Model View Controller
+MVC
+Object Relational Mapper
+ORM
+Don't Repeat Yourself
+DRY
+Create Read Update Delete
+CRUD
+Web Server Gateway Interface
+WSGI
+Asynchronous Server Gateway Interface
+ASGI
+
+manage.py
+settings.py
+urls.py
+views.py
+models.py
+forms.py
+admin.py
+apps.py
+wsgi.py
+asgi.py
+base.html
+main.html
+login.html
+form.html
+index.html
+
+runserver
+makemigrations
+migrate
+createsuperuser
+shell_plus
+collectstatic
+INSTALLED_APPS
+urlpatterns
+URLconf
+app_name
+include
+path
+reverse
+reverse_lazy
+render
+redirect
+get_object_or_404
+HttpRequest
+HttpResponse
+HttpResponseRedirect
+
+Model
+ModelForm
+QuerySet
+objects
+filter
+exclude
+get
+all
+order_by
+get_or_create
+save
+delete
+primary key
+foreign key
+ForeignKey
+ManyToManyField
+OneToOneField
+CharField
+TextField
+IntegerField
+BigIntegerField
+FloatField
+DecimalField
+BooleanField
+DateField
+DateTimeField
+EmailField
+URLField
+FileField
+ImageField
+AutoField
+BigAutoField
+SlugField
+max_length
+on_delete
+CASCADE
+SET_NULL
+related_name
+auto_now
+auto_now_add
+
+class-based views
+generic views
+View
+TemplateView
+ListView
+DetailView
+CreateView
+UpdateView
+DeleteView
+LoginView
+LoginRequiredMixin
+ModelFormMixin
+as_view
+get_queryset
+get_context_data
+get_success_url
+form_valid
+template_name
+success_url
+object_list
+
+Django template language
+DTL
+template inheritance
+template context
+context processor
+block content
+extends
+include
+forloop
+csrf_token
+CSRF
+cross-site request forgery
+XSS
+cross-site scripting
+middleware
+SecurityMiddleware
+SessionMiddleware
+CommonMiddleware
+CsrfViewMiddleware
+AuthenticationMiddleware
+MessageMiddleware
+XFrameOptionsMiddleware
+
+GET
+POST
+request-response
+request line
+status code
+Content-Type
+User-Agent
+Last-Modified
+cookies
+sessions
+session cookie
+django_session
+is_authenticated
+login required
+logout
+
+one-to-many
+many-to-many
+many-to-one
+junction table
+through table
+referential integrity
+normalization
+SELECT
+FROM
+WHERE
+ORDER BY
+INSERT INTO
+VALUES
+UPDATE
+DELETE FROM
+CREATE TABLE
+DROP TABLE
+PRIMARY KEY
+AUTOINCREMENT
+VARCHAR
+INTEGER
+NULL
+NOT NULL
+UNIQUE
+INDEX
+REFERENCES
+DEFERRABLE
+INITIALLY DEFERRED
+
+Berners-Lee
+Tim Berners-Lee
+Mozilla
+Firefox
+Chrome
+developer tools
+network tab
+console.log
+DOMContentLoaded
+fetch
+Promise
+callback
+event listener
+single-threaded
+multi-threaded
+web worker
+LitElement
+web component
+
+auto-grader
+LTI
+Learning Tools Interoperability
+LMS
+learning management system
+MOOC
+massive open online course

@@ -1,0 +1,101 @@
+ - Hello, and welcome to another walk-through for Django
+ for everybody.
+ This is kind of a supplement to tutorial two.
+ In tutorial two, you're playing with models.py,
+ and if you go through the tutorial,
+ they'll have you do a thing, and then they'll do another thing,
+ and they're kind of showing you migrations
+ and how the migrations happen.
+ And if you get 'em to have a mistake,
+ you know, if you make a mistake, then you
+ can get to the point where you need help or whatever,
+ and sometimes it's easier to just wipe out your database.
+ But if you've added a question or added some choices
+ or built models, you've got to do all that stuff.
+ But it's sometimes just easier to redo some of those things.
+ So I'm going to show you what to do if your model/database gets
+ messed up.
+ And like your manage.py make migrations and migrate
+ are not doing what you think, or they're giving you weird errors.
+ Now, if they're getting a syntax error,
+ make sure you do a Python manage.py check, right,
+ before you declare that your database is messed up.
+ So let me go into my site.
+ So here I am now.
+ Here's all my files.
+ So here I should do it, but before I declare that the database
+ is a problem, manage.py check.
+ Oh, I messed that up.
+ I'm in my virtual environment, of course.
+ OK, so we got no issues now.
+ So that's good.
+ So I've got a couple of commands here.
+ Let me explain this.
+ Before I'm going to actually delete these,
+ I want to show you where the migration--
+ I'll probably show you this.
+ So I have a thing called polls2, and I got all the polls running.
+ So this is like in tutorial 2.
+ The migrations are in files with a number,
+ and they're Python files.
+ So if you recall, migrations are portable representations
+ of what happens in the database.
+ And then the migrate creates the file db.sqlite.
+ So if you want to really start over,
+ you've got to get rid of both the migrations and the db.sqlite
+ file, and then you can start completely fresh.
+ I mean, you can sort of do parts of them,
+ but I'm like, if you're messed up here in tutorial 2,
+ it's probably easier to just get rid of them both.
+ So at this point, my application is going to stop working.
+ So I get rid of the migrations, and then I
+ get rid of my database.
+ And so at this point, the only thing
+ I've got that has to do with anything
+ that has to do with my database is a few models.py files.
+ And this is where we are editing our code,
+ and so this polls to models.py.
+ And my particular example is the code
+ that's going to be effective, because just because I've
+ got all the versions running at the same time,
+ that's why you're seeing this.
+ So the next thing you do is python3 or python manage.py
+ make migrations.
+ So what make migrations is doing is
+ it's reading all these models.py files,
+ and it's writing this file.
+ So I got rid of that file, but now if I do an ls,
+ you'll see that it's come back.
+ And sometimes you might see an 002, et cetera,
+ and then you throw it away, and you make it fresh,
+ and you should only see an 001.
+ And then you can say python manage py migrate.
+ And then that, well, if you'll do an ls--
+ let me Control-C there.
+ If I do an ls, you'll see that there--
+ wait a second.
+ How come that-- no, the dbsqlite3 is zero size.
+ So I'm going to do python3 or python manage--
+ sorry, my mac migrate.
+ So that's reading these files, plus a whole bunch
+ of other ones, and actually creating databases.
+ So now if I say ls minus l, my dbsqlite3 is back,
+ and I might have to create a super user.
+ If I created a super user account,
+ then I'm going to have to create one again.
+ And so I'm going to do that.
+ j4e choc.
+ Csave@umrsh.edu.
+ I should make my passwords easier to type.
+ Now at this point, things should start working.
+ But again, if I created any data,
+ like a question or something, it was gone.
+ It was gone at that moment.
+ When I got rid of that database, dbsqlite3,
+ it is literally gone.
+ So it's gone now, and away we go.
+ And again, this is just if you can't
+ seem to make these migrations or migrates work,
+ back up, start over, and then reduce some of the work.
+ And that probably will be a good way to get things done.
+ Cheers.

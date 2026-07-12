@@ -1,0 +1,1247 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+ (upbeat jazz music)
+
+00:00:03.000 --> 00:00:12.440
+ Hello, and welcome to Django for Everybody.
+
+00:00:12.440 --> 00:00:14.800
+ Today we're gonna talk about using the shell.
+
+00:00:14.800 --> 00:00:16.680
+ It's one of the early assignments in the class,
+
+00:00:16.680 --> 00:00:19.600
+ and I just kinda wanna walk you through things.
+
+00:00:19.600 --> 00:00:20.640
+ Now you might ask yourself,
+
+00:00:20.640 --> 00:00:23.880
+ why are we using this old-fashioned command line interface?
+
+00:00:23.880 --> 00:00:26.160
+ Everything that I do is pointing quick, clicky,
+
+00:00:26.160 --> 00:00:28.280
+ or I just move my finger and things work.
+
+00:00:28.280 --> 00:00:30.600
+ And the answer is yes, for end users,
+
+00:00:30.600 --> 00:00:32.560
+ we try to make things as easy as possible,
+
+00:00:32.560 --> 00:00:36.720
+ but there's always a server behind that kind of cool stuff
+
+00:00:36.720 --> 00:00:37.840
+ that you're building.
+
+00:00:37.840 --> 00:00:40.760
+ And that server, 99% of the time,
+
+00:00:40.760 --> 00:00:43.160
+ doesn't have a clicky graphical user interface,
+
+00:00:43.160 --> 00:00:46.320
+ it has a command line interface, a textual interface,
+
+00:00:46.320 --> 00:00:47.160
+ where it gives you a prompt,
+
+00:00:47.160 --> 00:00:48.360
+ you type some stuff and you hit enter,
+
+00:00:48.360 --> 00:00:50.440
+ you type some more stuff and you hit enter.
+
+00:00:50.440 --> 00:00:55.440
+ And Linux is by far the most popular server system
+
+00:00:55.440 --> 00:00:56.560
+ on the planet.
+
+00:00:56.560 --> 00:01:00.040
+ And so if you're anywhere near the server,
+
+00:01:00.040 --> 00:01:02.920
+ it doesn't hurt to understand a little bit how this works.
+
+00:01:02.920 --> 00:01:04.520
+ You don't have to be a wizard,
+
+00:01:04.520 --> 00:01:06.280
+ but the whole idea of this assignment
+
+00:01:06.280 --> 00:01:09.360
+ is to give you some sense of what you're dealing with
+
+00:01:09.360 --> 00:01:12.800
+ and weird things that might happen
+
+00:01:12.800 --> 00:01:14.840
+ while you're using this command line.
+
+00:01:14.840 --> 00:01:17.440
+ So we're gonna use Python Anywhere as we do in the class,
+
+00:01:17.440 --> 00:01:21.280
+ but the concept of the shell and the Linux user interface,
+
+00:01:21.280 --> 00:01:23.640
+ that's universal across servers.
+
+00:01:23.640 --> 00:01:25.440
+ Python Anywhere just gives you a free one.
+
+00:01:25.440 --> 00:01:28.080
+ Otherwise, you'd get one from Amazon or Google
+
+00:01:28.080 --> 00:01:30.000
+ or Windows Azure.
+
+00:01:30.000 --> 00:01:32.280
+ So here you are, you're logged into Python Anywhere.
+
+00:01:32.280 --> 00:01:35.320
+ You go into the consoles tab and you can start a new console.
+
+00:01:35.320 --> 00:01:38.280
+ And the console, you can just run Python interactively
+
+00:01:38.280 --> 00:01:39.240
+ if you want.
+
+00:01:39.240 --> 00:01:41.200
+ You can run a MySQL shell that connects
+
+00:01:41.200 --> 00:01:43.720
+ to your MySQL database, which we'll have later.
+
+00:01:43.720 --> 00:01:46.720
+ I prefer to not use any of these things
+
+00:01:46.720 --> 00:01:49.040
+ except the bash shell.
+
+00:01:49.040 --> 00:01:52.680
+ The bash is just, there's variations
+
+00:01:52.680 --> 00:01:54.520
+ in the Linux user interface.
+
+00:01:54.520 --> 00:01:56.320
+ And bash is just one of them.
+
+00:01:56.320 --> 00:01:57.920
+ And so you may not use bash.
+
+00:01:57.920 --> 00:02:01.400
+ You may use the SH or something else,
+
+00:02:01.400 --> 00:02:04.240
+ but they all kind of have common things
+
+00:02:04.240 --> 00:02:06.320
+ with little tiny subtle differences.
+
+00:02:06.320 --> 00:02:08.000
+ So I'm gonna start a bash shell.
+
+00:02:08.000 --> 00:02:09.560
+ And it's gonna take a little bit here
+
+00:02:09.560 --> 00:02:11.680
+ to go da-da-da-da-da-da-da-da-da,
+
+00:02:11.680 --> 00:02:13.400
+ do its little thing here.
+
+00:02:13.400 --> 00:02:14.680
+ And it's setting things up.
+
+00:02:14.680 --> 00:02:17.240
+ Part of this is that there are hundreds of thousands
+
+00:02:17.240 --> 00:02:18.560
+ of people using Python Anywhere
+
+00:02:18.560 --> 00:02:21.360
+ and it has to build your own interface.
+
+00:02:21.360 --> 00:02:24.400
+ Now, the dollar sign prompt is traditionally
+
+00:02:24.400 --> 00:02:26.880
+ the prompt that says it's waiting for input.
+
+00:02:26.880 --> 00:02:31.000
+ So I can type a command and then I can hit enter.
+
+00:02:31.000 --> 00:02:33.920
+ And it says that is not a good command.
+
+00:02:33.920 --> 00:02:36.640
+ There is a help, it's called man.
+
+00:02:36.640 --> 00:02:41.040
+ Man LS that tells you, so that's the LS command,
+
+00:02:41.040 --> 00:02:43.280
+ like what is in the LS command?
+
+00:02:43.280 --> 00:02:44.880
+ And then it goes into a page.
+
+00:02:44.880 --> 00:02:47.000
+ Now you'll notice that we're not scrolling here.
+
+00:02:47.000 --> 00:02:49.000
+ It pauses at the bottom.
+
+00:02:49.000 --> 00:02:51.880
+ And I'm gonna hit the Q key to get out of that.
+
+00:02:51.880 --> 00:02:53.720
+ So man is kind of like your help.
+
+00:02:53.720 --> 00:02:55.760
+ And man stands for manual.
+
+00:02:55.760 --> 00:02:58.440
+ Back in the days when you had big books, right?
+
+00:02:58.440 --> 00:03:00.160
+ You had these big books that were the manuals
+
+00:03:00.160 --> 00:03:02.520
+ that you would reach up on your shelf and open it up.
+
+00:03:02.520 --> 00:03:05.840
+ This is an online version of a great big book.
+
+00:03:05.840 --> 00:03:08.560
+ So the first thing in this class in particular
+
+00:03:08.560 --> 00:03:10.360
+ that you have to learn how to do,
+
+00:03:10.360 --> 00:03:12.680
+ and there's a whole assignment to set up
+
+00:03:12.680 --> 00:03:17.080
+ your Django environment with the right version of Python.
+
+00:03:17.080 --> 00:03:21.080
+ And so I'm gonna just activate what's called
+
+00:03:21.080 --> 00:03:23.560
+ a virtual environment that I've already got set up.
+
+00:03:23.560 --> 00:03:25.160
+ The rest of these, many of these commands
+
+00:03:25.160 --> 00:03:26.960
+ would work without that.
+
+00:03:26.960 --> 00:03:29.200
+ But here on Python Anywhere, we tend to build that.
+
+00:03:29.200 --> 00:03:31.480
+ And that's a separate assignment where you set that up.
+
+00:03:31.480 --> 00:03:34.080
+ So I'm gonna do work on Django 4.
+
+00:03:34.080 --> 00:03:38.080
+ Okay, now that means, and in the prompt you see changes
+
+00:03:38.080 --> 00:03:40.520
+ to say you're working in a Python virtual environment
+
+00:03:40.520 --> 00:03:41.640
+ named Django 4.
+
+00:03:41.640 --> 00:03:43.880
+ The first thing you wanna do to verify
+
+00:03:43.880 --> 00:03:46.520
+ that things are working well is check the version
+
+00:03:46.520 --> 00:03:49.760
+ by typing python --version.
+
+00:03:49.760 --> 00:03:51.720
+ And that tells you what version of Python.
+
+00:03:51.720 --> 00:03:55.520
+ At this point, you should be using a relatively high version
+
+00:03:55.520 --> 00:03:58.840
+ of Python, Python say 3.8 or later.
+
+00:03:58.840 --> 00:04:03.520
+ And then a relatively recent Django version.
+
+00:04:03.520 --> 00:04:06.000
+ And so this is my system and it's running
+
+00:04:06.000 --> 00:04:11.000
+ Django version 4.0.17, I have it 4.0.7.
+
+00:04:11.000 --> 00:04:13.400
+ So that's just a typing command.
+
+00:04:13.400 --> 00:04:14.840
+ And you'll notice I'm hitting the enter key
+
+00:04:14.840 --> 00:04:17.200
+ at the end of these things and then something happens.
+
+00:04:17.200 --> 00:04:20.600
+ And so now I'm in my virtual environment and that's good.
+
+00:04:22.680 --> 00:04:23.880
+ And this talks about that.
+
+00:04:23.880 --> 00:04:27.000
+ So let's talk about some shell commands.
+
+00:04:27.000 --> 00:04:29.240
+ So the first shell command is ls,
+
+00:04:29.240 --> 00:04:30.920
+ I showed you the man page for that.
+
+00:04:30.920 --> 00:04:33.000
+ And that lists the current files
+
+00:04:33.000 --> 00:04:35.880
+ in the current working directory.
+
+00:04:35.880 --> 00:04:38.320
+ ls -l lists them with some detail,
+
+00:04:38.320 --> 00:04:41.040
+ including the size and the last modification date
+
+00:04:41.040 --> 00:04:42.760
+ and the owner of the file.
+
+00:04:42.760 --> 00:04:45.600
+ And that little drwx stuff on the left,
+
+00:04:45.600 --> 00:04:47.480
+ well, that's the permissions.
+
+00:04:47.480 --> 00:04:51.040
+ And there is rwx, rwx, rwx,
+
+00:04:51.040 --> 00:04:55.120
+ and one is the permission that the owner would have,
+
+00:04:55.120 --> 00:04:56.360
+ fellow members of their group,
+
+00:04:56.360 --> 00:04:58.360
+ and then anyone including anonymous users.
+
+00:04:58.360 --> 00:05:00.760
+ And so you notice that we have more permission,
+
+00:05:00.760 --> 00:05:05.760
+ we have lots more permissions than others.
+
+00:05:05.760 --> 00:05:10.920
+ So the next command is pwd, pwd, print working directory.
+
+00:05:10.920 --> 00:05:16.000
+ And so what happens is Unix, Linux is a multi-user system
+
+00:05:16.000 --> 00:05:18.440
+ and our account name is dj4e.
+
+00:05:18.440 --> 00:05:21.560
+ And so /home is where all the home directories are.
+
+00:05:21.560 --> 00:05:24.120
+ And home dj4e is the home directory
+
+00:05:24.120 --> 00:05:26.640
+ for the user named dj4e.
+
+00:05:26.640 --> 00:05:29.360
+ So cd is change directory.
+
+00:05:29.360 --> 00:05:32.080
+ Now, if you type cd by itself,
+
+00:05:32.080 --> 00:05:35.000
+ you go back to your home directory.
+
+00:05:35.000 --> 00:05:37.360
+ So if I go cd space Django project,
+
+00:05:37.360 --> 00:05:39.000
+ oh, and this is another thing.
+
+00:05:39.000 --> 00:05:40.840
+ There is what's called command line completion.
+
+00:05:40.840 --> 00:05:43.240
+ So I know that I'm typing a directory here that exists,
+
+00:05:43.240 --> 00:05:47.080
+ djan tab underscore tab,
+
+00:05:47.080 --> 00:05:49.040
+ and then I don't have to know all the names.
+
+00:05:49.040 --> 00:05:51.640
+ You see that Django projects is one of my folders.
+
+00:05:51.640 --> 00:05:55.680
+ And if it's unique, it completes it for it.
+
+00:05:55.680 --> 00:05:58.440
+ So as I'm typing, if I need to complete a file name
+
+00:05:58.440 --> 00:06:00.640
+ or a folder name, I can use the tab key.
+
+00:06:00.640 --> 00:06:04.480
+ The other thing about this, if I do a pwd,
+
+00:06:04.480 --> 00:06:07.840
+ you can see now I'm in home dj4e Django projects
+
+00:06:07.840 --> 00:06:09.320
+ and it's given me a context, right?
+
+00:06:09.320 --> 00:06:10.480
+ I'm still in my home directory,
+
+00:06:10.480 --> 00:06:12.880
+ but now I'm going down into folders
+
+00:06:12.880 --> 00:06:15.440
+ and directories and files.
+
+00:06:15.440 --> 00:06:17.520
+ Now, if I type the command cd,
+
+00:06:17.520 --> 00:06:20.320
+ it will go back to my home directory
+
+00:06:20.320 --> 00:06:22.920
+ 'cause now I'm down in a subdirectory
+
+00:06:22.920 --> 00:06:26.120
+ and I do a pwd and you see I'm back in my home directory.
+
+00:06:26.120 --> 00:06:29.360
+ Here's another trick that I really want you to learn.
+
+00:06:29.360 --> 00:06:32.200
+ Up arrow, you can scroll, I'm up arrow, down arrow,
+
+00:06:32.200 --> 00:06:34.040
+ up arrow, up arrow, up arrow.
+
+00:06:34.040 --> 00:06:37.640
+ I can scroll up to a previous command and then hit enter
+
+00:06:37.640 --> 00:06:39.280
+ and then run it again.
+
+00:06:39.280 --> 00:06:42.160
+ This will save you a bunch of time, okay?
+
+00:06:42.160 --> 00:06:43.960
+ So I'm sitting in this folder.
+
+00:06:43.960 --> 00:06:45.680
+ So let's go back and take a look at the other things
+
+00:06:45.680 --> 00:06:46.520
+ I want to cover.
+
+00:06:46.520 --> 00:06:52.520
+ You can use the tilde on a cd command
+
+00:06:52.520 --> 00:06:54.520
+ and you'll see that it's showing this tilde
+
+00:06:54.520 --> 00:06:59.000
+ in the current prompt, cd tilde slash Django underscore
+
+00:06:59.000 --> 00:07:01.400
+ projects and that will go all the way up to the home
+
+00:07:01.400 --> 00:07:02.760
+ directory and then work its way down.
+
+00:07:02.760 --> 00:07:04.520
+ So if you're like, where am I?
+
+00:07:04.520 --> 00:07:07.840
+ You can say, go to tilde slash and then you know
+
+00:07:07.840 --> 00:07:09.880
+ what that folder name is.
+
+00:07:09.880 --> 00:07:13.560
+ Let's see, do I have any files here?
+
+00:07:13.560 --> 00:07:16.280
+ I can remove, let's go back into my home directory,
+
+00:07:16.280 --> 00:07:18.320
+ do an ls and see some files.
+
+00:07:18.320 --> 00:07:22.960
+ DB.zap, let's just get rid of it, rm db.zap.
+
+00:07:22.960 --> 00:07:26.600
+ Boop, it's gone.
+
+00:07:26.600 --> 00:07:30.400
+ Now we didn't put it in the trash can, we removed it.
+
+00:07:30.400 --> 00:07:31.240
+ It does it.
+
+00:07:31.240 --> 00:07:33.360
+ So you'll notice that db.zap is no longer
+
+00:07:33.360 --> 00:07:35.040
+ in my list of files.
+
+00:07:35.040 --> 00:07:39.800
+ So be careful with the rm command,
+
+00:07:39.800 --> 00:07:41.920
+ but it's quite powerful and useful.
+
+00:07:44.400 --> 00:07:45.640
+ (clears throat)
+
+00:07:45.640 --> 00:07:50.640
+ So this grep command, grep searches all the files.
+
+00:07:50.640 --> 00:07:54.760
+ So if you look, I've got lots and lots and lots of files.
+
+00:07:54.760 --> 00:07:59.160
+ And so I'm going to say, grep minus r,
+
+00:07:59.160 --> 00:08:03.680
+ that means recursive, for a string autoscreate star
+
+00:08:03.680 --> 00:08:04.600
+ in all my files.
+
+00:08:04.600 --> 00:08:06.880
+ Now I got a lot of files here, so this is gonna be
+
+00:08:06.880 --> 00:08:10.160
+ a long grep, but sometimes, and it works from the current
+
+00:08:10.160 --> 00:08:13.520
+ working directory, let me go into cd jango projects.
+
+00:08:13.520 --> 00:08:20.200
+ And then let's go into, let's see if, no,
+
+00:08:20.200 --> 00:08:22.880
+ let's go into my ads.
+
+00:08:22.880 --> 00:08:25.400
+ Chucklist, I think it might be called Chucklist, yeah.
+
+00:08:25.400 --> 00:08:28.160
+ So this is one of my, you know, later we'll get this,
+
+00:08:28.160 --> 00:08:29.680
+ but I'm gonna run this grep command,
+
+00:08:29.680 --> 00:08:34.160
+ and it's gonna find every example in every file
+
+00:08:34.160 --> 00:08:39.160
+ in this folder and below, where the string autos_create
+
+00:08:40.040 --> 00:08:44.120
+ exists, so that means grep minus r means recursively,
+
+00:08:44.120 --> 00:08:47.880
+ go deep and down the tree, autos_create is whatever string
+
+00:08:47.880 --> 00:08:51.120
+ you wanna put in, and then star means all the files,
+
+00:08:51.120 --> 00:08:53.800
+ but then it recursively goes through all the files.
+
+00:08:53.800 --> 00:08:56.440
+ And so you will see, oh, I didn't have that.
+
+00:08:56.440 --> 00:09:01.440
+ Let's see, autoscreate, let's look for the word,
+
+00:09:01.440 --> 00:09:04.360
+ I don't know, model.
+
+00:09:04.360 --> 00:09:07.240
+ Let's look for the word model in all of these files
+
+00:09:07.240 --> 00:09:09.360
+ and below, so there you go.
+
+00:09:09.360 --> 00:09:13.680
+ So now I can see that this is the file.
+
+00:09:13.680 --> 00:09:16.600
+ Some of these files, like pycache, are junk,
+
+00:09:16.600 --> 00:09:19.280
+ but, you know, let's see, where have I got a model
+
+00:09:19.280 --> 00:09:21.440
+ in my file, right there.
+
+00:09:21.440 --> 00:09:24.520
+ Ads for, so there's this, it shows me the file name
+
+00:09:24.520 --> 00:09:28.040
+ and the string, and usually what you're looking for
+
+00:09:28.040 --> 00:09:29.920
+ is maybe a typographical error that you've seen
+
+00:09:29.920 --> 00:09:31.440
+ in an error message.
+
+00:09:31.440 --> 00:09:33.400
+ So that's the shell interface, and again,
+
+00:09:33.400 --> 00:09:36.080
+ part of what I wanna show you is for you to know
+
+00:09:36.080 --> 00:09:37.520
+ when you're talking to the shell,
+
+00:09:37.520 --> 00:09:39.280
+ 'cause you're not always talking to the shell.
+
+00:09:39.280 --> 00:09:40.840
+ If it ends in a dollar sign prompt,
+
+00:09:40.840 --> 00:09:42.320
+ usually you're talking to the shell.
+
+00:09:42.320 --> 00:09:44.160
+ So let's take a look at what it might look like
+
+00:09:44.160 --> 00:09:46.440
+ in different situations.
+
+00:09:46.440 --> 00:09:49.280
+ So sometimes you just run Python interactively,
+
+00:09:49.280 --> 00:09:50.640
+ and if you've taken a Python course,
+
+00:09:50.640 --> 00:09:54.760
+ this is the REPL, the read, evaluate, something loop.
+
+00:09:54.760 --> 00:09:57.760
+ So you just type Python,
+
+00:09:57.760 --> 00:09:59.360
+ and it's running Python interactively.
+
+00:09:59.360 --> 00:10:02.240
+ Now you're still sitting in a prompt, okay?
+
+00:10:02.240 --> 00:10:05.540
+ And so now that's not the same thing.
+
+00:10:05.540 --> 00:10:07.000
+ That's not Linux talking to you,
+
+00:10:07.000 --> 00:10:08.400
+ that's Python talking to you.
+
+00:10:08.400 --> 00:10:10.440
+ You're running the command Python on Linux,
+
+00:10:10.440 --> 00:10:12.920
+ and that Python command is asking for input.
+
+00:10:12.920 --> 00:10:15.120
+ So it expects you to type Python.
+
+00:10:15.120 --> 00:10:18.760
+ Hello world, of course we're gonna type hello world.
+
+00:10:18.760 --> 00:10:23.060
+ And that reads the Python, parses it, and then executes it.
+
+00:10:23.060 --> 00:10:25.360
+ Now if you're in this and you type ls,
+
+00:10:25.360 --> 00:10:26.680
+ it's like I don't know what to do.
+
+00:10:26.680 --> 00:10:30.040
+ I have no idea, pwd, I have no idea what you're doing,
+
+00:10:30.040 --> 00:10:31.640
+ 'cause you're not in the shell.
+
+00:10:31.640 --> 00:10:33.240
+ So students come to me and go like,
+
+00:10:33.240 --> 00:10:36.280
+ I keep typing pwd and it's giving me name errors.
+
+00:10:36.280 --> 00:10:39.260
+ Like, well, that's 'cause you're in Python, not in the shell.
+
+00:10:39.260 --> 00:10:41.640
+ So you have to know how to exit.
+
+00:10:41.640 --> 00:10:44.960
+ And you do that with quit, open paren, close paren, enter.
+
+00:10:44.960 --> 00:10:48.340
+ And now you're back to the happy little dollar sign prompt.
+
+00:10:48.340 --> 00:10:51.160
+ And now you can say pwd and it will work, right?
+
+00:10:51.160 --> 00:10:55.160
+ So part of it is recognizing what you're interacting with
+
+00:10:55.160 --> 00:10:57.680
+ based on what the prompt looks like.
+
+00:10:57.680 --> 00:11:00.000
+ Okay, so that's the Python interface.
+
+00:11:00.000 --> 00:11:05.000
+ Now, if you end up with a more than one line Python statement,
+
+00:11:05.920 --> 00:11:09.440
+ that three chevrons prompts turns into a dot, dot, dot.
+
+00:11:09.440 --> 00:11:10.760
+ Let me show you how that works.
+
+00:11:10.760 --> 00:11:12.200
+ So I'm gonna run Python again.
+
+00:11:12.200 --> 00:11:14.920
+ I'm just cursoring up Python.
+
+00:11:14.920 --> 00:11:19.920
+ And I can say for i in range five, colon.
+
+00:11:19.920 --> 00:11:24.000
+ Now you see that the prompt is turned into a dot, dot, dot.
+
+00:11:24.000 --> 00:11:25.500
+ And I have to do an indent, of course.
+
+00:11:25.500 --> 00:11:28.640
+ One, two, three, four, five, print i.
+
+00:11:28.640 --> 00:11:32.480
+ And it's still thinking that I'm in this for loop.
+
+00:11:32.480 --> 00:11:34.280
+ And so it's saying, are you still doing more stuff
+
+00:11:34.280 --> 00:11:35.100
+ in the for loop?
+
+00:11:35.100 --> 00:11:36.440
+ Let me put another line in this for loop.
+
+00:11:36.440 --> 00:11:40.640
+ I could say print second line.
+
+00:11:40.640 --> 00:11:44.680
+ And then I can hit the enter and say,
+
+00:11:44.680 --> 00:11:45.960
+ I'm done with the for loop.
+
+00:11:45.960 --> 00:11:48.280
+ And then we'll actually read the for loop,
+
+00:11:48.280 --> 00:11:50.480
+ run the for loop, execute it five times
+
+00:11:50.480 --> 00:11:52.640
+ with i being zero, one, two, three, four.
+
+00:11:52.640 --> 00:11:54.760
+ But the body loop has two things.
+
+00:11:54.760 --> 00:11:57.240
+ And then when it's done with this sort of continuation,
+
+00:11:57.240 --> 00:12:00.280
+ dot, dot, dot is like, I need more, I'm not done yet.
+
+00:12:00.280 --> 00:12:02.600
+ Whatever you typed, it's not finished.
+
+00:12:02.600 --> 00:12:05.160
+ Now I'm back to the standard Chevron prompt,
+
+00:12:05.160 --> 00:12:06.920
+ at which case I would type quit.
+
+00:12:06.920 --> 00:12:09.960
+ And now I'm back to the shell prompt.
+
+00:12:09.960 --> 00:12:11.960
+ See, the whole idea is to be able to record,
+
+00:12:11.960 --> 00:12:14.520
+ it's like, don't get lost because it's asking,
+
+00:12:14.520 --> 00:12:16.180
+ you're talking to the wrong thing.
+
+00:12:16.180 --> 00:12:19.560
+ Okay, so that's one thing.
+
+00:12:19.560 --> 00:12:23.760
+ Now, later we'll have you talking to your database.
+
+00:12:23.760 --> 00:12:26.240
+ And SQLite is one of the databases that we use.
+
+00:12:26.240 --> 00:12:30.780
+ And so we can, I'm gonna go back into my home directory,
+
+00:12:30.780 --> 00:12:34.520
+ cd pwd ls.
+
+00:12:34.520 --> 00:12:37.200
+ And so we see this file db.sqlite3,
+
+00:12:37.200 --> 00:12:39.840
+ that is where SQLite stores its data.
+
+00:12:39.840 --> 00:12:43.120
+ So all the command is sqlite3,
+
+00:12:43.120 --> 00:12:45.680
+ and then you give it as a parameter,
+
+00:12:45.680 --> 00:12:49.680
+ the name of the file, db.sqlite3, right?
+
+00:12:49.680 --> 00:12:51.560
+ So that's gonna read that.
+
+00:12:51.560 --> 00:12:53.520
+ And now you see the prompt has changed
+
+00:12:53.520 --> 00:12:56.280
+ to sqlite greater than.
+
+00:12:56.280 --> 00:12:59.580
+ And that's because I can't say ls here.
+
+00:12:59.580 --> 00:13:00.760
+ It's like, what do you mean?
+
+00:13:00.760 --> 00:13:02.920
+ This also shows the continuation prompt,
+
+00:13:02.920 --> 00:13:05.400
+ because it expects commands to stop.
+
+00:13:05.400 --> 00:13:10.400
+ What is happening to me?
+
+00:13:10.400 --> 00:13:12.880
+ It just stays in this dot, dot, dot arrow.
+
+00:13:12.880 --> 00:13:17.880
+ And that's because all SQL commands end in semicolon.
+
+00:13:17.880 --> 00:13:20.760
+ And so it's just like, I haven't seen a semicolon yet,
+
+00:13:20.760 --> 00:13:22.400
+ so you must still be typing.
+
+00:13:22.400 --> 00:13:26.400
+ Now it's like, oh, you just, not only did you do some,
+
+00:13:26.400 --> 00:13:27.640
+ I finally got a semicolon,
+
+00:13:27.640 --> 00:13:31.460
+ but it's still terrible SQL, structured query language, okay?
+
+00:13:31.460 --> 00:13:36.840
+ So this sqlite or the dot, dot, dot arrow, right?
+
+00:13:36.840 --> 00:13:40.160
+ That is sqlite or the sqlite continuation,
+
+00:13:40.160 --> 00:13:43.040
+ 'cause that's what we're dealing with with the dot, dot, dot.
+
+00:13:43.040 --> 00:13:44.520
+ And a lot of students get confused
+
+00:13:44.520 --> 00:13:47.040
+ when they see that dot, dot, dot arrow,
+
+00:13:47.040 --> 00:13:48.840
+ and then I'm like, just type a semicolon.
+
+00:13:48.840 --> 00:13:50.500
+ They're like, yeah, I was just trying to get it
+
+00:13:50.500 --> 00:13:54.200
+ to stop asking me stuff, okay?
+
+00:13:54.200 --> 00:13:56.540
+ But, so that's not what you type.
+
+00:13:56.540 --> 00:13:58.880
+ What we are going to type is a command.
+
+00:13:58.880 --> 00:14:00.960
+ There's two kinds of commands.
+
+00:14:00.960 --> 00:14:03.760
+ Dot tables is one kind of command.
+
+00:14:03.760 --> 00:14:05.400
+ The commands that start with dot
+
+00:14:05.400 --> 00:14:10.400
+ are actually commands to sqlite to itself.
+
+00:14:10.400 --> 00:14:13.960
+ And that dot table says, what tables are in this database?
+
+00:14:13.960 --> 00:14:18.380
+ Oh, and this one doesn't have any tables.
+
+00:14:18.380 --> 00:14:19.680
+ So I'm gonna get out of this one
+
+00:14:19.680 --> 00:14:21.500
+ and go into a database that has tables,
+
+00:14:21.500 --> 00:14:23.540
+ 'cause this is the one in my home directory.
+
+00:14:23.540 --> 00:14:27.080
+ And so I'm gonna say dot quit to get out of this.
+
+00:14:27.080 --> 00:14:28.280
+ Ah, how do I get out, right?
+
+00:14:28.280 --> 00:14:29.240
+ You'll notice I even had it.
+
+00:14:29.240 --> 00:14:31.280
+ I don't even remember what this is.
+
+00:14:31.280 --> 00:14:33.540
+ So I'm gonna go into Django projects.
+
+00:14:33.540 --> 00:14:36.360
+ I'm gonna go into MySite,
+
+00:14:36.360 --> 00:14:38.600
+ which is the place you're gonna be working on doing LS,
+
+00:14:38.600 --> 00:14:41.540
+ and you'll see that I got a dbusqlite here as well.
+
+00:14:41.540 --> 00:14:44.900
+ It's a different one because it is just a different one.
+
+00:14:44.900 --> 00:14:46.020
+ I had one in my home directory,
+
+00:14:46.020 --> 00:14:49.260
+ now I got one two folders down in Django projects MySite.
+
+00:14:52.400 --> 00:14:55.520
+ Keep in tab and then db.sqlite.
+
+00:14:55.520 --> 00:14:57.560
+ Now I'm gonna say dot tables,
+
+00:14:57.560 --> 00:14:59.000
+ and I'm gonna have a bunch of tables.
+
+00:14:59.000 --> 00:15:01.840
+ Look at that, I got a whole bunch of tables.
+
+00:15:01.840 --> 00:15:04.160
+ And this is not exactly your code, this is my code.
+
+00:15:04.160 --> 00:15:06.360
+ This is later in the semester.
+
+00:15:06.360 --> 00:15:11.360
+ But I can say select star from polls to underscore choice.
+
+00:15:11.360 --> 00:15:17.880
+ Now that is an SQL command and you'll learn about that later.
+
+00:15:17.880 --> 00:15:19.360
+ It does end in a semicolon.
+
+00:15:19.360 --> 00:15:21.760
+ It's got, you know, select is one of the things
+
+00:15:21.760 --> 00:15:24.040
+ I could type, update, delete, you know.
+
+00:15:24.040 --> 00:15:26.600
+ We'll learn a bit of SQL as the course progresses.
+
+00:15:26.600 --> 00:15:30.060
+ Oh, I didn't type it right.
+
+00:15:30.060 --> 00:15:31.640
+ But watch, I'm gonna use the up arrow key.
+
+00:15:31.640 --> 00:15:35.560
+ Up arrow, back, back, back, back, back, back, back, back.
+
+00:15:35.560 --> 00:15:38.800
+ Oh, for polls, two, choice, boom.
+
+00:15:38.800 --> 00:15:40.560
+ So that's the two lines that are in there.
+
+00:15:40.560 --> 00:15:44.200
+ And again, later you will understand what that is.
+
+00:15:44.200 --> 00:15:46.080
+ And then to get out of this, I type dot quit,
+
+00:15:46.080 --> 00:15:47.400
+ which is different than the Python,
+
+00:15:47.400 --> 00:15:49.780
+ which is quit, open, paren, close, paren.
+
+00:15:49.780 --> 00:15:52.640
+ So you gotta remember that if you're in one of these things,
+
+00:15:52.640 --> 00:15:56.540
+ you got to get out of that.
+
+00:15:56.540 --> 00:15:59.920
+ Okay, so that's another thing.
+
+00:15:59.920 --> 00:16:02.620
+ Then there is the Django shell.
+
+00:16:02.620 --> 00:16:04.240
+ And we'll use that later.
+
+00:16:04.240 --> 00:16:07.560
+ And you can say, and so this has to work in a folder
+
+00:16:07.560 --> 00:16:12.900
+ that has the file manage.py in it.
+
+00:16:12.900 --> 00:16:15.240
+ And that's basically a Python project.
+
+00:16:15.240 --> 00:16:17.400
+ And you have to run the manage.py
+
+00:16:20.680 --> 00:16:24.400
+ Python manage.py that says run the manage.py file.
+
+00:16:24.400 --> 00:16:26.960
+ And then I'm gonna give it another command called shell.
+
+00:16:26.960 --> 00:16:28.920
+ So that says load up manage.py
+
+00:16:28.920 --> 00:16:31.920
+ and then drop me into a Django shell.
+
+00:16:31.920 --> 00:16:35.160
+ So you'll do a lot of things to say Python manage.py
+
+00:16:35.160 --> 00:16:37.400
+ and like Python manage.py check,
+
+00:16:37.400 --> 00:16:39.440
+ which we check to see if there's something broken
+
+00:16:39.440 --> 00:16:43.360
+ in our configuration for this application for this project.
+
+00:16:43.360 --> 00:16:44.880
+ And the answer is, oh, you're not broken.
+
+00:16:44.880 --> 00:16:45.840
+ So that's good.
+
+00:16:45.840 --> 00:16:46.840
+ But I wanna show you the shell
+
+00:16:46.840 --> 00:16:48.680
+ because I'm trying to show you user interfaces
+
+00:16:48.680 --> 00:16:52.400
+ that you might get stuck into and how to get out of those.
+
+00:16:52.400 --> 00:16:56.480
+ So now you notice that it looks exactly like the Python shell
+
+00:16:56.480 --> 00:16:58.800
+ and I can type Python commands.
+
+00:16:58.800 --> 00:17:00.680
+ And you might say, okay, what's the difference?
+
+00:17:00.680 --> 00:17:02.400
+ I can type print hello world.
+
+00:17:02.400 --> 00:17:03.440
+ And it says hello world.
+
+00:17:03.440 --> 00:17:06.160
+ I can say quit open print to close print.
+
+00:17:06.160 --> 00:17:09.360
+ But what's happened is Python has run manage.py
+
+00:17:09.360 --> 00:17:11.740
+ and loaded your entire Django application
+
+00:17:11.740 --> 00:17:14.160
+ into this Python instance.
+
+00:17:14.160 --> 00:17:16.360
+ And so there are commands like,
+
+00:17:16.360 --> 00:17:19.520
+ and let me find a command here, from,
+
+00:17:19.520 --> 00:17:26.480
+ now this is a Python statement.
+
+00:17:26.480 --> 00:17:30.840
+ Now, I think I gotta change this
+
+00:17:30.840 --> 00:17:32.520
+ in this particular thing to be poles too.
+
+00:17:32.520 --> 00:17:34.020
+ For yours, it'll be poles.
+
+00:17:34.020 --> 00:17:36.640
+ Yeah, so that ran a Python,
+
+00:17:36.640 --> 00:17:39.880
+ but it imported a bunch of code from my models.py file.
+
+00:17:39.880 --> 00:17:42.320
+ Again, later in the course, okay.
+
+00:17:42.320 --> 00:17:44.780
+ And then I can run a command
+
+00:17:44.780 --> 00:17:47.580
+ to create an in-memory model
+
+00:17:47.580 --> 00:17:50.280
+ to create a brand new question in this model.
+
+00:17:50.280 --> 00:17:53.880
+ Oops, I didn't mean to do the quit.
+
+00:17:53.880 --> 00:17:57.520
+ And so that actually, I mean, we can print Q
+
+00:17:57.520 --> 00:17:58.780
+ to see what's in Q.
+
+00:17:58.780 --> 00:18:02.240
+ Yeah, it's a question and it's got the text
+
+00:18:02.240 --> 00:18:04.120
+ of hello world in, we could save it.
+
+00:18:04.120 --> 00:18:07.540
+ And so there are things you can do in the Django shell
+
+00:18:07.540 --> 00:18:08.880
+ that you can't do in the Python shell,
+
+00:18:08.880 --> 00:18:12.920
+ but it's a Python shell plus a bunch of preloaded Django stuff.
+
+00:18:12.920 --> 00:18:15.800
+ So you might have a continuation line,
+
+00:18:15.800 --> 00:18:19.520
+ but then you leave by quit, open print, close print.
+
+00:18:19.520 --> 00:18:22.400
+ And now we're back to the Linux command prompt
+
+00:18:22.400 --> 00:18:24.480
+ because there's a dollar sign there.
+
+00:18:24.480 --> 00:18:29.160
+ LS minus L, PWD, all that Linux stuff is working.
+
+00:18:29.160 --> 00:18:31.720
+ And so that's basically my quick introduction.
+
+00:18:31.720 --> 00:18:34.480
+ Again, you'll learn all this as we go.
+
+00:18:34.480 --> 00:18:36.200
+ There's a lot more to it.
+
+00:18:36.200 --> 00:18:39.840
+ And we'll give you each of these commands.
+
+00:18:39.840 --> 00:18:42.140
+ You'll have whole sets of commands to do.
+
+00:18:42.140 --> 00:18:44.080
+ And I just wanted you at this beginning
+
+00:18:44.080 --> 00:18:47.160
+ to get a kind of a picture of what's going on
+
+00:18:47.160 --> 00:18:50.120
+ in the command line interface, okay?
+
+00:18:50.120 --> 00:18:50.960
+ Cheers.
+
+00:18:50.960 --> 00:18:53.540
+ (upbeat music)
+

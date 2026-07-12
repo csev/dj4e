@@ -1,0 +1,235 @@
+ Welcome back.
+ So let's talk about some of the basic syntax of HTML.
+ The first thing is to look at the overall document layout.
+ And they start with an HTML tag.
+ You might have a thing called a doctype up here, and we can put in one if we like.
+ But HTML is the outer tag, and then there is a head tag and an end head tag.
+ And this is sort of non-printing information.
+ We set styling up, we declare the title of a page, perhaps load some JavaScript.
+ And then the printable page of the content is in between a body tag.
+ And mostly what we're gonna talk about is the stuff that we put in as page content.
+ So you'll find that there are special file names that we use.
+ It really has to do with the fact that what we do is we make a directory within
+ the web server.
+ And when we go visit the directory,
+ the web server looks through a series of files that it's configured to look to.
+ Things like index.html, index.htm, or index.php, and
+ each one has a slightly different order and a slightly different set of things.
+ It might even be called default.htm or default.asp if you're on a Windows box.
+ It is configurable, so different systems do things differently.
+ But usually index.htm is probably the safest thing unless you're doing php,
+ which we will be doing later in index.php.
+ And so those are usually the safe bet.
+ Now when you're viewing things off of disk, which we can do, if you download all
+ the code that I've got in HTML.zip, then you'll have to open the index.html by hand.
+ So we can put multiple files in the same directory, and
+ then we can use them in what are called relative links.
+ And so we can easily create links between one file and another.
+ And so you'll tend to see, if you look at the zip file,
+ that you've got a whole bunch of files in the same directory.
+ And with little anchor tags, they point back and forth between each one.
+ And so, like I said, you got tags, like the paragraph tag, the strong tag,
+ and the emphasize tag.
+ They have to start, they have to stop.
+ But another thing that's really important about HTML is the fact that
+ most of the time we are logically marking up the text.
+ And so we're saying we want this stuff right here to be a paragraph.
+ But the end of the lines that we put in the HTML that we write are not really
+ that important.
+ What happens is, is depending on the width of the browser,
+ if you change the width of the browser, the text will be rewrapped.
+ And that's because there's still a paragraph, but
+ we don't wanna hard code it, cuz we're not working on paper.
+ Sometimes browsers are really large, sometimes browsers are really small.
+ Sometimes you're on a phone, right?
+ And on a phone, browser's really small.
+ And so you don't want to tell exactly how many pixels it is wide,
+ except when you start doing really fancy layout.
+ But in things like paragraphs, you just say, hey,
+ make it a paragraph and re-wrap it.
+ And the re-wrapping then also changes how tall the pages are,
+ because the narrower pages kind of extends the page down.
+ But the white space inside of the HTML is really generally ignored, and
+ the lines are generally ignored.
+ There are some tags, like the pre-tag, that changes that.
+ So white space is respected, and new lines are respected.
+ But most of the time, we just let the browser re-wrap things.
+ And it's good.
+ You have beginning tags and ending tags.
+ So here's a beginning tag, and then here's the ending tag.
+ The slash is our indication of an ending, and they're paired.
+ And they're also nested.
+ So this p tag has a strong tag within it and an m tag within it, and
+ that's totally okay, because this whole thing is a paragraph, and
+ this is a piece of bold text.
+ So they have beginning and end, and slash is the end.
+ You can also have self-closing tags that have an image tag
+ that has a slash, and that means that you don't have to have a slash image over here.
+ That's the same, you just put a slash here and it self-closes.
+ Another thing that you will get used to is the fact that you can put on
+ the opening tag attributes, so key value pairs.
+ And you'll go define what the, you'll go to the documentation on the image tag and
+ it'll say, put a source attribute on to say what picture,
+ what file we want to display as the picture.
+ The image tag is to show pictures, basically.
+ So given that less than and greater than and
+ other things are special characters,
+ we have to have a way to print the special characters.
+ So how do we print a special character?
+ Well, we use ampersand LT semicolon, and there's a whole list of these things.
+ HTML special characters, and you can look them up.
+ And you don't, there's some that are kind of fun, like the special characters for
+ the deck of the cards, there's mathematical special characters.
+ And you go look these up and you can find them.
+ The key thing is you don't, they're cute and
+ you'll see that I'll use some of these arrows in the things that I'm doing.
+ But the key ones that you really need to know about are less than greater than and
+ ampersand.
+ And just because ampersand becomes a special character, less than greater than or
+ ampersand are really the special characters in HTML.
+ And so to represent less than, you do ampersand LT, ampersand GT, and
+ ampersand ampersand, and P semicolon to get those things right.
+ HTML comments, like in any programming language, any situation,
+ the start of an HTML comment is less than exclamation dash dash.
+ It's a little clunky, but we just wanna make sure it's really clear.
+ And so dash dash less than, comments can go across many lines,
+ if that's what you wanna do.
+ So that works as well.
+ Links is a critical element of HTML, it's why search engines work.
+ It's why when I first saw it, I'm like, I click on a thing and
+ there's a new page, isn't that amazing, right?
+ And so hyperlinks is the H in HTML, it's the H in HTTP.
+ And so it is how we in effect use this thing that we're sort of just scribbling
+ on to create knowledge that Google then can extract.
+ And so the anchor tag, the a tag, is the tag that we use to do these things.
+ And so there's a header one, a paragraph, and
+ the anchor tag has, this is the start tag, and this is the end tag.
+ And so the text that's clickable is second page.
+ And you can see that it's clickable right there.
+ It is styled with a underline and blue to indicate that it's a link.
+ And so there is the href, which stands for hypertext reference.
+ And then it's an attribute, so it's key value with double quotes.
+ And then this is another URL.
+ And so that's like, in effect, putting that URL up and
+ going into that next page, so it's a hot spot.
+ In the early days, and I'll show you a few of these,
+ these links were like the coolest thing ever.
+ And so we made them pretty colors, like the blue with the dash.
+ People didn't sort of, when they first saw the web,
+ they didn't know to click places, so we sort of styled them quite brightly.
+ And then because you were often scanning and searching the whole web,
+ cuz the web wasn't so big in the beginning,
+ we would mark them as purple after you'd been to it.
+ So you could sort of slowly but surely work your way through the whole internet
+ as it existed back in the old days, and keep track of the ones so
+ you didn't have to go back to the ones that you'd seen before.
+ And that was an absolute link, and here's one with a relative link.
+ And that assumes that we are now in the same folder,
+ same directory on the server, where we have a href.
+ And so here's the start tag, here's the end tag, and
+ then first page is the clickable stuff.
+ And you'll note that that is a purple link, because I have already been there,
+ because page1.htm was exactly where I just came from.
+ And so you click on that, and then you can go back and forth.
+ And those are the pages we played with in the HTTP lecture.
+ And so these absolute references are references that start with HTTP or
+ HTTPS or whatever, and relative references don't.
+ And so that basically means that this page1.htm file has to be in the same
+ folder as whatever file we happen to be viewing right now on the same server.
+ So if you wanna switch folders or switch servers,
+ you have to use absolute references.
+ And if you are just moving between files on the same server,
+ you can use relative references.
+ Images are a lot of fun, and CSS will see how to wrap text.
+ One of my favorite things was to wrap text.
+ There is an image tag, which we saw before, image, and
+ then the source equals is the attribute, and then it quotes the name of the file.
+ And it can either be an image that's all by itself.
+ In this case, this paragraph is what we're seeing.
+ And you can see that this image is a tiny image, but
+ it's sort of like, blah, blah, blah, blah.
+ The image right here works kinda like a character.
+ You gotta be careful, cuz the images can be really big.
+ That's why I made a tiny image.
+ And you could even, for example, in this case, I have an anchor tag.
+ And the clickable part of the anchor tag is an image.
+ So if you click right there, that will move you to lists.htm.
+ And so you can make an image be a hypertext reference as well.
+ Now we're gonna do much more with these things, and
+ this is just, at this point, the basics.
+ Lists are an important part of HTML.
+ There's ordered lists and unordered lists.
+ And so the unordered list starts with a UL tag and ends with a UL tag.
+ And then that sort of bounds the whole list.
+ And then each list element starts with an li, list item, and /li.
+ And I want a little bit of spacing.
+ If you don't put them in paragraphs, you don't quite get the default spacing.
+ This blank line's really coming from the paragraphs.
+ So I'm putting a list of paragraphs, basically.
+ It doesn't have to be a list of paragraphs.
+ You could make a little denser list with a list of links or something.
+ But I'm putting paragraphs in.
+ And so you can see that I have li to end li, li to end li.
+ I'm putting some links in here, etc, etc.
+ And so dot, dot, dot, dot, and it puts all the bullets in.
+ It does the indenting automatically.
+ We'll see in a bit how we can control all that formatting and
+ do different things if we wanna do those different things.
+ But for now, we're just going to play with the default formatting and
+ learn the HTML, which is our way of representing that we wanna list on
+ the screen, but we're not so fancy about exactly how it's supposed to look.
+ So in HTML, we really are looking for the meaning of the page,
+ not how pretty it is.
+ Tables, tables have a bit of a checkered past.
+ In the early days, people tended to use tables to lay pages out on grids.
+ And they would just put a paragraph here, and a paragraph here, and
+ then a paragraph underneath it.
+ And they would move them around, and
+ they would put images in some of the table cells.
+ And that turned out to be really bad.
+ And that notion of tables as graphic layout is long gone.
+ And we use CSS now, which is the next lecture.
+ So but tables were always a good idea for tabular data.
+ And so if you have something that sort of makes sense is like a list of cars with
+ some make model mileage columns and a list, then you mark them up.
+ And so the table markup is pretty straightforward.
+ We start a table with the table tag.
+ And then we have a series of rows using the tr tag, tr to /tr.
+ And then if there's a header line, which can be formatted a little bit different,
+ we do a th to /th.
+ And then this basically says it's gonna be a three column table because we have
+ three table headers, one, two, three.
+ And then we're gonna put TDs for the data.
+ TD stands for data, one, two, three.
+ And so that's the Ford, Edge, and then the mileage of that, and on, and on, and on,
+ and on as we go.
+ And so it's not hard to build them.
+ You kind of have to keep track of how many of these things you've got.
+ And there are tricks where you can make a table that has like four things, but
+ then in one row, this expands so that that's, I can't erase it, can't erase it.
+ So there are ways to do things where a data element spans more than one column.
+ Call span, for example, but the key to tables is that we use them for tables.
+ We don't use them for
+ arranging things that are not themselves row, row, row, row, row.
+ So I'm gonna stop there.
+ I'm gonna record some exploration of some sample code at
+ www.wafore.webapplicationsforeverybody.com/code/html.
+ And I really am intending that you will, these are very simple pages, but
+ the idea is to look at them in developer mode and take a look at them.
+ And then you can see how the various things work.
+ And you can also then look at the source code and see, here's how a pre-tag works.
+ Or where's the pre-tag?
+ No, yeah.
+ So look at the source code, take a look at things, and
+ show that the line wrapping does not actually matter.
+ We look at pre-tag in another one.
+ So I'll record some walkthroughs of all this sample code, but
+ I encourage you to take a look at it cuz it has a lot of good examples of
+ the basics of HTML.
+ And so HTML is a continually evolving thing.
+ It's a very creative space.
+ It's a lot of fun.
+ We have to avoid the temptation of trying to make everything look pretty in
+ the HTML, but instead, delegate that to the CSS,
+ which is what we're gonna talk about next.
+ [MUSIC]

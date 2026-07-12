@@ -1,0 +1,182 @@
+ - Hello, welcome to a simple demonstration.
+ Today we're gonna go through one of the handouts
+ of running some of the command line SQLite commands.
+ And this is just a flat text file.
+ It's kinda easy, 'cause you can sort of
+ cut and paste everything, so it's not too bad.
+ So here we are in my Python Anywhere.
+ I'm gonna start a bash console.
+ And I'm gonna do this whole thing.
+ I've got my Django stuff here.
+ Hang on, let me line this up a little better
+ so you can see it.
+ There we go.
+ So here's my Django.
+ I'm in my home directory.
+ I'm gonna remove, 'cause I did this before, zip SQLite.
+ And so this is, we're just gonna do this on a silly file.
+ I'm not gonna go into any of my Django projects
+ or anything like that.
+ I'm just gonna make a file to use SQLite.
+ So the command to start SQLite
+ is a command line SQLite3, if it's installed on your system.
+ And this is gonna do all the database storage
+ in a file named zip.sqlite3.
+ So now we're in the command line.
+ And you can look up, I've got some documentation
+ on the different things.
+ There are several kinds of command line.
+ One is to show the output in column form
+ for the select statements, so we'll turn that on.
+ Now this is our first SQL statement.
+ We're gonna create a table with users.
+ This ID long string, that assigns a unique
+ increasing number to every row that we put in.
+ And the name and email are just columns that have text.
+ Okay.
+ And so, if we are successful, this is a continuation
+ because we didn't put the semicolon, so it keeps on going.
+ And so now we can ask.tables.
+ And we see that we have a single table.
+ We can ask what the shape of that,
+ which is just gonna echo.
+ And we can ask what shape that is.
+ Now let's do some simple.
+ So the insert statement in SQL, basically insert into,
+ it's a keyword.
+ Users is the name of a table in our database.
+ Name email are the column names, and then values,
+ there's a one-to-one correspondence between
+ like chuck and name, and csev@umich.edu and email.
+ And so I have a number of different insert statements.
+ SQL statements in this command line end with a semicolon.
+ And so that added a row.
+ We can take a look with this select statement
+ at what we've got.
+ So we see one row, it assigned it a key.
+ That's the ID, that's the name, and that's the email.
+ Now I can paste a bunch of these things in at the same time.
+ Save us a little bit of time.
+ Zoom, zoom, hit enter.
+ And I can up arrow to go back to the select star from users.
+ And now we see these are the folks that were inserted.
+ We got six rows.
+ And then the delete statement, delete from.
+ So SQL sometimes has what seems like redundant things,
+ and it's a bit more of a wordy language.
+ It could say delete users, but it's like delete from users
+ rolls better off the tongue.
+ So this is a table, and then where is a part,
+ you'll see where clauses on all kinds of SQL statements.
+ And if you said delete from users,
+ it would actually delete all the records.
+ Maybe I'll do that right down here at the bottom.
+ But I'm gonna say I wanna go in and delete the record
+ where this is true.
+ Now there might be more than one record.
+ This currently happens to be only one record that has this.
+ Better grab that semicolon.
+ And so it's gonna change that.
+ So I'll delete one record.
+ So that Ted is gone, three, four.
+ Oh wait, no, we put Ted in twice,
+ and it got rid of both of them.
+ Wonder if there was a mistake there.
+ Yeah, I probably need to edit this file.
+ Maybe when you look at this file, it won't be there.
+ Oh, that's not, maybe I'll leave it there.
+ That's pretty cool.
+ Now here's another thing.
+ So this deleted to users, if I run it again,
+ it's not really an error.
+ If I see there's nothing deleted,
+ because I expressed a thing, a thing about SQL,
+ when I said delete all the records from users
+ where this is true, and there were none for which it was true,
+ that's just fine.
+ I could say, you know,
+ or email equals that at blat dot that.
+ You'd think that might be an error,
+ but it just, there were no, this never was true.
+ This where was never true.
+ So it looked through all the records that were in the table,
+ and it was never true, so nothing got deleted.
+ So that's the delete statement.
+ Now the upper lower case stuff, yeah, I'm just kinda,
+ I like the upper case.
+ I like to put all my keywords in upper case,
+ and then tables, sometimes I don't do upper lower,
+ but I tend to use the keywords.
+ So update says to update the table users.
+ Set is we're gonna make a change in there.
+ Column name equals new value, and a where clause.
+ And again, if this where clause wasn't there,
+ it would apply to all of them.
+ So this is gonna only set the name to Charles in one place.
+ And now, if I do a select,
+ you see that this record here got changed there.
+ So you can reach in with a where clause
+ and update a single comment with an update statement.
+ You can put a where clause on a select,
+ so you only see a single row.
+ So you only see that row.
+ You can add to a select an order by a column,
+ and that column could be in ascending order.
+ Ascending, doot, doot, doot, doot, doot, going up.
+ And then do the same thing.
+ Select star from users, order by name, descending.
+ So that's gonna go descending, doot, doot, doot, doot, doot.
+ Sally, Kristen, Colleen, Charles, down they go.
+ So that's it.
+ Now, we can drop table users.
+ And so this is basically the CRUD.
+ Insert, CRUD is create, read, update, delete.
+ Here it would be insert, select, update, delete.
+ But CRUD is sort of kind of the classic concept.
+ So we can drop this table users, but how about I do this?
+ Let me show you this, what happens if I say
+ update user set name equals Charles.
+ Implied in each one of these SQL statements
+ is it applies to all of them.
+ So we got all these records.
+ Update user set name equals Charles without a where clause.
+ And then I say select star from users.
+ And you think, oh, that, it did exactly what we told us.
+ We didn't say where clause, right?
+ You know, that means all the records are affected.
+ So this update users sort of implies all of the records.
+ Now, if we say delete from users
+ and then don't put a where clause there,
+ you're gonna see what happens.
+ Delete from users, no where clause.
+ Implied all of the rows.
+ And now I do a select and there is nothing.
+ So that's why these where clauses are so important
+ on like updates and deletes just so that we know
+ what rows they're supposed to apply to
+ 'cause by default they apply to all rows.
+ That's why you don't see loops in SQL
+ because every statement like the update,
+ the select and the delete, they're kind of loops
+ automatically and you have to sort of shut them down
+ with an if statement as it were, which is that where clause.
+ And the last thing we can get is we can drop,
+ we can just get rid of the table.
+ That's another SQL statement.
+ If we look at .tables, we see we have one
+ and then we say drop table users, put a semicolon there
+ and then say .tables and there are no tables left.
+ And then I say .quit.
+ And now I've got this file called zip.sqlite3
+ and I can get rid of it without hurting,
+ this is just, this isn't a database that's running
+ with a server or anything makes any difference.
+ So I hope this is useful to you.
+ This is a great way for you to sort of look around.
+ We look for tables, we do selects,
+ we figure out what's going on.
+ We can sometimes debug our code by looking
+ at our databases at a very low level.
+ So I hope this has been helpful to you.
+ Cheers.
+ (upbeat music)

@@ -1,0 +1,611 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.700
+ Okay, so now we're going to actually play with a little bit of structured query language, SQL.
+
+00:00:04.700 --> 00:00:12.060
+ Now, you can grab, at this URL, you can grab the instructions that I'm using so you can cut and paste it in.
+
+00:00:12.060 --> 00:00:16.520
+ Now, the key thing that you've got to do is you've got to find your way to a shell.
+
+00:00:16.520 --> 00:00:21.700
+ If you're using something like Python Anywhere, you go ahead and open a command line.
+
+00:00:21.700 --> 00:00:25.200
+ Now, if we're using Python Anywhere, most of what we're doing is running Django applications,
+
+00:00:25.200 --> 00:00:33.000
+ but you can really just use Python Anywhere as a, use Python Anywhere as a Unix platform.
+
+00:00:33.000 --> 00:00:37.300
+ And so, get to a dollar sign prompt, these commands can run on a Mac, they can,
+
+00:00:37.300 --> 00:00:42.120
+ I don't know if you can get them working on Windows, but any Linux system, but you can also run it on Python Anywhere.
+
+00:00:42.120 --> 00:00:46.100
+ So, there's a command to Linux called sqlite3, and then you give it a file name.
+
+00:00:46.100 --> 00:00:51.160
+ So, sqlite, as I mentioned, is a very simple database because it does all of its work in one file.
+
+00:00:51.160 --> 00:00:55.760
+ It's not a, it's not a slouch as a database in terms of its performance and scalability.
+
+00:00:55.760 --> 00:01:00.260
+ What it's not good at is handling hundreds of people hitting it at the same time
+
+00:01:00.260 --> 00:01:06.760
+ and having the database software resolve all those simultaneous accesses.
+
+00:01:06.760 --> 00:01:13.000
+ But if you type sqlite, you end up in a command line where you get this prompt, sqlite, you know, arrow,
+
+00:01:13.000 --> 00:01:20.460
+ and there's commands you can type, like .tables says, hey, in this database, which is in this case zip.sqlite3,
+
+00:01:20.460 --> 00:01:24.560
+ in this database, what tables exist, and it says there are no tables.
+
+00:01:24.560 --> 00:01:26.360
+ And then you create some tables.
+
+00:01:26.360 --> 00:01:31.560
+ Now, this is our first SQL statement, and so you'll learn something about SQL
+
+00:01:31.560 --> 00:01:36.700
+ as it looks a little different than other programming languages, and so you say create table.
+
+00:01:36.700 --> 00:01:37.900
+ That's one statement.
+
+00:01:37.900 --> 00:01:40.920
+ You can create things other than tables, and then you have a table name.
+
+00:01:40.920 --> 00:01:46.100
+ So, and then you have some parentheses, right, and then you have a series of statements
+
+00:01:46.100 --> 00:01:48.900
+ about the table that you're working with.
+
+00:01:48.900 --> 00:01:53.520
+ And so there's just this little language, and there's a name of a column.
+
+00:01:53.520 --> 00:01:57.860
+ So these are three columns that we're putting in, id, name, and email.
+
+00:01:57.860 --> 00:01:59.960
+ And we have a type.
+
+00:01:59.960 --> 00:02:01.100
+ This is an integer.
+
+00:02:01.100 --> 00:02:04.260
+ Varchar means variable length string field.
+
+00:02:04.260 --> 00:02:06.160
+ Not null means it's required.
+
+00:02:06.160 --> 00:02:08.960
+ Primary key means that it's an auto increment,
+
+00:02:08.960 --> 00:02:10.660
+ meaning it's going to be supplied by the database.
+
+00:02:10.660 --> 00:02:13.820
+ It gives us like a handle for every row.
+
+00:02:13.820 --> 00:02:17.920
+ And then Varchar 128 says it's up to 128 characters.
+
+00:02:17.920 --> 00:02:23.460
+ Now, a key to this is that we're making sort of a contract here.
+
+00:02:23.460 --> 00:02:29.500
+ And so when we say you gotta do this with 128 characters, you can't put 129 in.
+
+00:02:29.500 --> 00:02:35.100
+ You can put up to 128, and if you put 129, your database query blows up.
+
+00:02:35.100 --> 00:02:38.020
+ And you're like, oh, that's not very nice.
+
+00:02:38.020 --> 00:02:40.420
+ And the answer is, well, you told it 128, so
+
+00:02:40.420 --> 00:02:43.060
+ it could optimize how it's going to store the data on disk.
+
+00:02:43.060 --> 00:02:49.160
+ If you've made this 1,000, it might store it in a different way than if you store 128.
+
+00:02:49.160 --> 00:02:52.700
+ And so the key is you can make any contract you want, but
+
+00:02:52.700 --> 00:02:54.460
+ you gotta live by the contract that you make.
+
+00:02:54.460 --> 00:02:56.300
+ And so it's not the database hates you.
+
+00:02:56.300 --> 00:02:58.700
+ It's you said I'm gonna do 128, and when you do 29,
+
+00:02:58.700 --> 00:03:00.900
+ it says you're violating our contract.
+
+00:03:00.900 --> 00:03:02.740
+ And so it's up to you.
+
+00:03:02.740 --> 00:03:07.700
+ So this whole create table ending in a semicolon, that is a single SQL statement.
+
+00:03:07.700 --> 00:03:09.420
+ And so we can type it in.
+
+00:03:09.420 --> 00:03:10.860
+ We can type it in multiple lines, and
+
+00:03:10.860 --> 00:03:14.460
+ you can kinda see how SQLite's using this dot, dot, dot thing to tell you that it's
+
+00:03:14.460 --> 00:03:15.860
+ in a continuation.
+
+00:03:15.860 --> 00:03:19.100
+ And then finally you finish it all and you put a semicolon at the end, and
+
+00:03:19.100 --> 00:03:20.460
+ then it does it.
+
+00:03:20.460 --> 00:03:24.420
+ And then we can ask using dot tables, we can say, is there a table?
+
+00:03:24.420 --> 00:03:26.820
+ And yes, it says, yes, it's users.
+
+00:03:26.820 --> 00:03:30.420
+ And then there's a command, an SQLite command called dot schema.
+
+00:03:30.420 --> 00:03:32.900
+ And that says, tell me the schema of users.
+
+00:03:32.900 --> 00:03:36.700
+ Now that's in case you hadn't just typed in the create statement.
+
+00:03:36.700 --> 00:03:38.780
+ It tells you what create statement it would be.
+
+00:03:38.780 --> 00:03:43.180
+ And so part of what the database stores in this file SQLite
+
+00:03:43.180 --> 00:03:46.980
+ is not only the data for this table called users that you just created, but
+
+00:03:46.980 --> 00:03:48.060
+ it also stores the schema.
+
+00:03:48.060 --> 00:03:50.980
+ And so you can say, hey, what schema is it?
+
+00:03:50.980 --> 00:03:54.940
+ So if I sent you one of these files, like you might upload to my autograder,
+
+00:03:54.940 --> 00:03:59.340
+ for example, I can inquire into that file using SQLite, and I say, what schema?
+
+00:03:59.340 --> 00:04:00.580
+ What tables are here?
+
+00:04:00.580 --> 00:04:01.900
+ And then I can start looking at the tables.
+
+00:04:01.900 --> 00:04:06.060
+ As a matter of fact, that's how I grade these assignments inside of the computer.
+
+00:04:08.300 --> 00:04:10.340
+ And so this is just sort of going through some.
+
+00:04:10.340 --> 00:04:11.860
+ There's a lot of SQL, but
+
+00:04:11.860 --> 00:04:14.700
+ the basics is actually surprisingly easy to understand.
+
+00:04:14.700 --> 00:04:20.120
+ And so insert into, one of the things that SQL does,
+
+00:04:20.120 --> 00:04:23.220
+ is it tends to use more than one word.
+
+00:04:23.220 --> 00:04:28.340
+ And it wants to be something, I've met people who have used SQL in their jobs.
+
+00:04:28.340 --> 00:04:32.980
+ And they just type it, and they don't realize how amazing what they're doing is.
+
+00:04:32.980 --> 00:04:38.540
+ They're like, well, just insert, or I delete some stuff, or I select it to read it.
+
+00:04:38.540 --> 00:04:42.820
+ So it was designed to be easy, cuz if we go back to the basics of SQL,
+
+00:04:42.820 --> 00:04:45.340
+ it was like, look, there's a lot of complexity down there.
+
+00:04:45.340 --> 00:04:48.860
+ We wanna hide that complexity, we wanna hand something easy to users.
+
+00:04:48.860 --> 00:04:53.300
+ And I write a lot of very complex SQL, and it's a very sophisticated skill.
+
+00:04:53.300 --> 00:04:57.700
+ But simple SQL is something I think literally everybody should know how to do.
+
+00:04:57.700 --> 00:05:00.060
+ So insert into, then you have a table name, and
+
+00:05:00.060 --> 00:05:02.760
+ then you have a parenthesis list of the columns.
+
+00:05:02.760 --> 00:05:05.460
+ Now, these are the columns that you named in your create statement.
+
+00:05:05.460 --> 00:05:07.140
+ And then values is a keyword.
+
+00:05:07.140 --> 00:05:09.740
+ And then there's a one to one correspondence between
+
+00:05:09.740 --> 00:05:11.540
+ the values that you're gonna put in the columns.
+
+00:05:11.540 --> 00:05:14.340
+ And these happen to be strings, so we have little quotes around them.
+
+00:05:14.340 --> 00:05:17.420
+ They could be integers, they could be dates, they could be all kinds of things,
+
+00:05:17.420 --> 00:05:19.260
+ floating point numbers, etc.
+
+00:05:19.260 --> 00:05:20.940
+ And then this has to meet the schema.
+
+00:05:20.940 --> 00:05:25.420
+ You can't go putting a number into a string field or a string into a number field.
+
+00:05:25.420 --> 00:05:29.340
+ And again, so that would blow up if you can make all kinds of errors.
+
+00:05:29.340 --> 00:05:32.580
+ You can either have syntax errors like you forget the word into or something, or
+
+00:05:32.580 --> 00:05:35.980
+ you can have errors that are bad, that your data is bad, right?
+
+00:05:35.980 --> 00:05:41.540
+ So that's the insert statement, and that adds a row to the end of a table.
+
+00:05:41.540 --> 00:05:47.860
+ The delete statement says delete from, and then a table name, and then a where clause.
+
+00:05:47.860 --> 00:05:49.940
+ We're gonna see where clause is a lot in SQL.
+
+00:05:49.940 --> 00:05:56.140
+ And the key thing is that every, I sort of mentioned in the very beginning that
+
+00:05:56.140 --> 00:05:57.900
+ there's kind of no loops in SQL.
+
+00:05:57.900 --> 00:06:00.460
+ And that's one of the reasons that we sort of love SQL,
+
+00:06:00.460 --> 00:06:02.300
+ is you don't have to write loops.
+
+00:06:02.300 --> 00:06:05.920
+ And that's because there's kind of an implied loop at the beginning of
+
+00:06:05.920 --> 00:06:06.540
+ these commands.
+
+00:06:06.540 --> 00:06:16.340
+ So when you say delete from users, that means delete all rows from users, right?
+
+00:06:16.340 --> 00:06:20.180
+ Delete all rows, delete everything from users.
+
+00:06:20.180 --> 00:06:23.540
+ So if you don't put this where clause on, if you don't put that where clause on,
+
+00:06:23.540 --> 00:06:25.740
+ it actually deletes everything in there.
+
+00:06:25.740 --> 00:06:28.140
+ Cuz it's like delete all the rows from users.
+
+00:06:28.140 --> 00:06:32.300
+ That's the way you can kinda phrase it that way, delete all rows from users.
+
+00:06:32.300 --> 00:06:34.620
+ Now the all rows part isn't really there.
+
+00:06:34.620 --> 00:06:39.460
+ But that just means that it's really important to have a where clause so
+
+00:06:39.460 --> 00:06:41.780
+ that you're not actually deleting all the rows.
+
+00:06:41.780 --> 00:06:45.940
+ It's saying delete all the rows from users where the email is equal to
+
+00:06:45.940 --> 00:06:46.860
+ ted@umich.edu.
+
+00:06:46.860 --> 00:06:52.620
+ And so what that is, is there's an implied loop of all rows on this delete statement.
+
+00:06:52.620 --> 00:06:55.540
+ And the where clause reduces that down to actually one or
+
+00:06:55.540 --> 00:07:00.220
+ a couple of rows depending on those rows where this is like an if statement.
+
+00:07:00.220 --> 00:07:03.980
+ So this whole thing is like a loop with an if inside of it.
+
+00:07:03.980 --> 00:07:05.540
+ That's how it works.
+
+00:07:05.540 --> 00:07:08.420
+ And this is why a lot of people like it is cuz you don't have to write loops.
+
+00:07:08.420 --> 00:07:12.340
+ Because these things sort of like are loops, they have loops built in.
+
+00:07:12.340 --> 00:07:17.180
+ So, but this would delete one or a couple of rows depending on whether we had more
+
+00:07:17.180 --> 00:07:21.820
+ than one row in this where the email was ted@umich.edu.
+
+00:07:21.820 --> 00:07:24.900
+ Update is really kinda cool.
+
+00:07:24.900 --> 00:07:26.180
+ You can really zero in.
+
+00:07:26.180 --> 00:07:28.540
+ You can zero in to rows and columns.
+
+00:07:28.540 --> 00:07:32.180
+ And again, update users, which is the name of the table.
+
+00:07:32.180 --> 00:07:38.140
+ Set is, and then name equals, which is the field name and new value.
+
+00:07:38.140 --> 00:07:41.060
+ And so you can get any, you can do all the columns.
+
+00:07:41.060 --> 00:07:42.200
+ You can do one of the columns.
+
+00:07:42.200 --> 00:07:44.180
+ You can really zone in on this.
+
+00:07:44.180 --> 00:07:45.180
+ And then there's a where clause.
+
+00:07:45.180 --> 00:07:47.460
+ Because if you don't put a where clause on the update,
+
+00:07:47.460 --> 00:07:51.260
+ it implies that this is for all rows.
+
+00:07:51.260 --> 00:07:53.780
+ And you don't really wanna set the name to be Charles for all the rows.
+
+00:07:53.780 --> 00:07:55.660
+ You just wanna set the name to be Charles.
+
+00:07:55.660 --> 00:07:56.780
+ Where this is true.
+
+00:07:56.780 --> 00:08:02.220
+ Because again, this, you could think of this as like update all rows.
+
+00:08:02.220 --> 00:08:07.220
+ All rows in users set where.
+
+00:08:07.220 --> 00:08:11.140
+ And so you just always gotta be thinking that there, it's in.
+
+00:08:11.140 --> 00:08:15.100
+ So then, so the reading is done with select.
+
+00:08:15.100 --> 00:08:18.900
+ I wish that it would be create, read, update, delete.
+
+00:08:18.900 --> 00:08:23.180
+ The create is insert, read is select, update is update, and delete is delete.
+
+00:08:23.180 --> 00:08:25.280
+ Select is the way that we read stuff out.
+
+00:08:25.280 --> 00:08:29.260
+ And so select basically takes a list of columns.
+
+00:08:29.260 --> 00:08:32.580
+ Like select name, comma, email, or select star.
+
+00:08:32.580 --> 00:08:34.300
+ And from, and then a table name.
+
+00:08:34.300 --> 00:08:39.740
+ So this select star from users is quite the, almost always the first thing you type.
+
+00:08:39.740 --> 00:08:43.060
+ Select star from user, select star from book, select star from whatever.
+
+00:08:43.060 --> 00:08:46.500
+ You can also put a where clause on a select.
+
+00:08:46.500 --> 00:08:51.100
+ Because this again has this implied all rows kind of a thing going on.
+
+00:08:51.100 --> 00:08:55.780
+ And so select all rows from users where email equals c7 human study.
+
+00:08:55.780 --> 00:08:59.940
+ And that, that reads much better when you kind of add that all rows logic to it.
+
+00:08:59.940 --> 00:09:05.740
+ Databases are good by, with, good at searching.
+
+00:09:05.740 --> 00:09:10.180
+ We can do things like add indexes to the databases that make searching and
+
+00:09:10.180 --> 00:09:11.660
+ ordering even better.
+
+00:09:11.660 --> 00:09:14.820
+ So we might say that email, please, while you're maintaining this data,
+
+00:09:14.820 --> 00:09:16.700
+ in addition to maintaining the data,
+
+00:09:16.700 --> 00:09:19.580
+ maintain an index that has a sense of the order of these records.
+
+00:09:19.580 --> 00:09:23.700
+ So if I want to sort them ascending or descending, then I can get that, and
+
+00:09:23.700 --> 00:09:26.180
+ I can get that to be efficient.
+
+00:09:26.180 --> 00:09:30.340
+ And so the, you know, order by is just a thing you throw on the end.
+
+00:09:30.340 --> 00:09:32.380
+ You can add a where clause here as well, and
+
+00:09:32.380 --> 00:09:35.100
+ you can have ascending and descending sorts, and it worked great.
+
+00:09:35.100 --> 00:09:42.540
+ So this is sort of the first 60% of any SQL is the basic
+
+00:09:42.540 --> 00:09:45.260
+ insert, delete, update, and read.
+
+00:09:45.260 --> 00:09:46.740
+ And so that is not hard.
+
+00:09:47.980 --> 00:09:52.500
+ And the beauty is, is this essence of SQL, the middle part of SQL,
+
+00:09:52.500 --> 00:09:55.900
+ is portable across all the databases that I just described.
+
+00:09:55.900 --> 00:09:58.980
+ Because every one of those databases that's a modern database,
+
+00:09:58.980 --> 00:10:02.540
+ was invented after the invention of SQL.
+
+00:10:02.540 --> 00:10:04.500
+ And so life is pretty good.
+
+00:10:04.500 --> 00:10:08.380
+ Now, there are differences, because when they first built SQL in like,
+
+00:10:08.380 --> 00:10:12.740
+ I think '87, I don't know, forgot that time.
+
+00:10:12.740 --> 00:10:17.820
+ But when they first built it, they did not realize how powerful they were going to be.
+
+00:10:17.820 --> 00:10:21.380
+ And so they, there's a bunch of features that got added by the vendors that were
+
+00:10:21.380 --> 00:10:25.260
+ extensions, and some of them are sort of standardized.
+
+00:10:25.260 --> 00:10:26.900
+ There's another round of standardization, but
+
+00:10:26.900 --> 00:10:29.200
+ then there's a whole bunch of features that are a little different.
+
+00:10:29.200 --> 00:10:33.460
+ But they have, because of competition, they have conceptually the same ideas.
+
+00:10:33.460 --> 00:10:37.180
+ Like, there's like a limit clause that limits the number of rows, or
+
+00:10:37.180 --> 00:10:39.060
+ starts after a certain number of rows.
+
+00:10:39.060 --> 00:10:41.380
+ And it's a little different from one database to the other.
+
+00:10:41.380 --> 00:10:43.180
+ So, but this is just a summary.
+
+00:10:43.180 --> 00:10:44.020
+ You should know this.
+
+00:10:44.020 --> 00:10:46.540
+ You should just know this forever and ever and ever.
+
+00:10:46.540 --> 00:10:48.620
+ And then as you run into a different database,
+
+00:10:48.620 --> 00:10:51.100
+ then you'll learn different features for that.
+
+00:10:51.100 --> 00:10:55.940
+ A tool that you might want to install on your laptop, if you want to start playing
+
+00:10:55.940 --> 00:11:00.660
+ with these SQLite files and not just using the command line, is called SQLite browser.
+
+00:11:00.660 --> 00:11:01.580
+ You can download it.
+
+00:11:01.580 --> 00:11:03.500
+ It runs on lots of different systems.
+
+00:11:03.500 --> 00:11:06.180
+ You can then open these .sqlite3 files.
+
+00:11:06.180 --> 00:11:11.020
+ And you can do stuff to it, including execute the SQL commands right in there.
+
+00:11:11.020 --> 00:11:14.460
+ And so, a lot of people find this a more interesting and
+
+00:11:14.460 --> 00:11:17.100
+ easy way to interact with these files.
+
+00:11:17.100 --> 00:11:23.220
+ And so, that kind of sums up our really quick introduction to single table SQL.
+
+00:11:23.220 --> 00:11:27.260
+ Up next, we'll talk a little bit about multiple table SQL and relationships.
+
+00:11:27.260 --> 00:11:31.580
+ And then we'll also talk about how we connect this all to Django
+
+00:11:31.580 --> 00:11:33.100
+ through an object relational mapper.
+
+00:11:33.100 --> 00:11:34.100
+ So, see you soon.
+
+00:11:34.100 --> 00:11:44.100
+ [MUSIC]
+

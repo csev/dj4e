@@ -1,0 +1,203 @@
+ Okay, so now we're going to actually play with a little bit of structured query language, SQL.
+ Now, you can grab, at this URL, you can grab the instructions that I'm using so you can cut and paste it in.
+ Now, the key thing that you've got to do is you've got to find your way to a shell.
+ If you're using something like Python Anywhere, you go ahead and open a command line.
+ Now, if we're using Python Anywhere, most of what we're doing is running Django applications,
+ but you can really just use Python Anywhere as a, use Python Anywhere as a Unix platform.
+ And so, get to a dollar sign prompt, these commands can run on a Mac, they can,
+ I don't know if you can get them working on Windows, but any Linux system, but you can also run it on Python Anywhere.
+ So, there's a command to Linux called sqlite3, and then you give it a file name.
+ So, sqlite, as I mentioned, is a very simple database because it does all of its work in one file.
+ It's not a, it's not a slouch as a database in terms of its performance and scalability.
+ What it's not good at is handling hundreds of people hitting it at the same time
+ and having the database software resolve all those simultaneous accesses.
+ But if you type sqlite, you end up in a command line where you get this prompt, sqlite, you know, arrow,
+ and there's commands you can type, like .tables says, hey, in this database, which is in this case zip.sqlite3,
+ in this database, what tables exist, and it says there are no tables.
+ And then you create some tables.
+ Now, this is our first SQL statement, and so you'll learn something about SQL
+ as it looks a little different than other programming languages, and so you say create table.
+ That's one statement.
+ You can create things other than tables, and then you have a table name.
+ So, and then you have some parentheses, right, and then you have a series of statements
+ about the table that you're working with.
+ And so there's just this little language, and there's a name of a column.
+ So these are three columns that we're putting in, id, name, and email.
+ And we have a type.
+ This is an integer.
+ Varchar means variable length string field.
+ Not null means it's required.
+ Primary key means that it's an auto increment,
+ meaning it's going to be supplied by the database.
+ It gives us like a handle for every row.
+ And then Varchar 128 says it's up to 128 characters.
+ Now, a key to this is that we're making sort of a contract here.
+ And so when we say you gotta do this with 128 characters, you can't put 129 in.
+ You can put up to 128, and if you put 129, your database query blows up.
+ And you're like, oh, that's not very nice.
+ And the answer is, well, you told it 128, so
+ it could optimize how it's going to store the data on disk.
+ If you've made this 1,000, it might store it in a different way than if you store 128.
+ And so the key is you can make any contract you want, but
+ you gotta live by the contract that you make.
+ And so it's not the database hates you.
+ It's you said I'm gonna do 128, and when you do 29,
+ it says you're violating our contract.
+ And so it's up to you.
+ So this whole create table ending in a semicolon, that is a single SQL statement.
+ And so we can type it in.
+ We can type it in multiple lines, and
+ you can kinda see how SQLite's using this dot, dot, dot thing to tell you that it's
+ in a continuation.
+ And then finally you finish it all and you put a semicolon at the end, and
+ then it does it.
+ And then we can ask using dot tables, we can say, is there a table?
+ And yes, it says, yes, it's users.
+ And then there's a command, an SQLite command called dot schema.
+ And that says, tell me the schema of users.
+ Now that's in case you hadn't just typed in the create statement.
+ It tells you what create statement it would be.
+ And so part of what the database stores in this file SQLite
+ is not only the data for this table called users that you just created, but
+ it also stores the schema.
+ And so you can say, hey, what schema is it?
+ So if I sent you one of these files, like you might upload to my autograder,
+ for example, I can inquire into that file using SQLite, and I say, what schema?
+ What tables are here?
+ And then I can start looking at the tables.
+ As a matter of fact, that's how I grade these assignments inside of the computer.
+ And so this is just sort of going through some.
+ There's a lot of SQL, but
+ the basics is actually surprisingly easy to understand.
+ And so insert into, one of the things that SQL does,
+ is it tends to use more than one word.
+ And it wants to be something, I've met people who have used SQL in their jobs.
+ And they just type it, and they don't realize how amazing what they're doing is.
+ They're like, well, just insert, or I delete some stuff, or I select it to read it.
+ So it was designed to be easy, cuz if we go back to the basics of SQL,
+ it was like, look, there's a lot of complexity down there.
+ We wanna hide that complexity, we wanna hand something easy to users.
+ And I write a lot of very complex SQL, and it's a very sophisticated skill.
+ But simple SQL is something I think literally everybody should know how to do.
+ So insert into, then you have a table name, and
+ then you have a parenthesis list of the columns.
+ Now, these are the columns that you named in your create statement.
+ And then values is a keyword.
+ And then there's a one to one correspondence between
+ the values that you're gonna put in the columns.
+ And these happen to be strings, so we have little quotes around them.
+ They could be integers, they could be dates, they could be all kinds of things,
+ floating point numbers, etc.
+ And then this has to meet the schema.
+ You can't go putting a number into a string field or a string into a number field.
+ And again, so that would blow up if you can make all kinds of errors.
+ You can either have syntax errors like you forget the word into or something, or
+ you can have errors that are bad, that your data is bad, right?
+ So that's the insert statement, and that adds a row to the end of a table.
+ The delete statement says delete from, and then a table name, and then a where clause.
+ We're gonna see where clause is a lot in SQL.
+ And the key thing is that every, I sort of mentioned in the very beginning that
+ there's kind of no loops in SQL.
+ And that's one of the reasons that we sort of love SQL,
+ is you don't have to write loops.
+ And that's because there's kind of an implied loop at the beginning of
+ these commands.
+ So when you say delete from users, that means delete all rows from users, right?
+ Delete all rows, delete everything from users.
+ So if you don't put this where clause on, if you don't put that where clause on,
+ it actually deletes everything in there.
+ Cuz it's like delete all the rows from users.
+ That's the way you can kinda phrase it that way, delete all rows from users.
+ Now the all rows part isn't really there.
+ But that just means that it's really important to have a where clause so
+ that you're not actually deleting all the rows.
+ It's saying delete all the rows from users where the email is equal to
+ ted@umich.edu.
+ And so what that is, is there's an implied loop of all rows on this delete statement.
+ And the where clause reduces that down to actually one or
+ a couple of rows depending on those rows where this is like an if statement.
+ So this whole thing is like a loop with an if inside of it.
+ That's how it works.
+ And this is why a lot of people like it is cuz you don't have to write loops.
+ Because these things sort of like are loops, they have loops built in.
+ So, but this would delete one or a couple of rows depending on whether we had more
+ than one row in this where the email was ted@umich.edu.
+ Update is really kinda cool.
+ You can really zero in.
+ You can zero in to rows and columns.
+ And again, update users, which is the name of the table.
+ Set is, and then name equals, which is the field name and new value.
+ And so you can get any, you can do all the columns.
+ You can do one of the columns.
+ You can really zone in on this.
+ And then there's a where clause.
+ Because if you don't put a where clause on the update,
+ it implies that this is for all rows.
+ And you don't really wanna set the name to be Charles for all the rows.
+ You just wanna set the name to be Charles.
+ Where this is true.
+ Because again, this, you could think of this as like update all rows.
+ All rows in users set where.
+ And so you just always gotta be thinking that there, it's in.
+ So then, so the reading is done with select.
+ I wish that it would be create, read, update, delete.
+ The create is insert, read is select, update is update, and delete is delete.
+ Select is the way that we read stuff out.
+ And so select basically takes a list of columns.
+ Like select name, comma, email, or select star.
+ And from, and then a table name.
+ So this select star from users is quite the, almost always the first thing you type.
+ Select star from user, select star from book, select star from whatever.
+ You can also put a where clause on a select.
+ Because this again has this implied all rows kind of a thing going on.
+ And so select all rows from users where email equals c7 human study.
+ And that, that reads much better when you kind of add that all rows logic to it.
+ Databases are good by, with, good at searching.
+ We can do things like add indexes to the databases that make searching and
+ ordering even better.
+ So we might say that email, please, while you're maintaining this data,
+ in addition to maintaining the data,
+ maintain an index that has a sense of the order of these records.
+ So if I want to sort them ascending or descending, then I can get that, and
+ I can get that to be efficient.
+ And so the, you know, order by is just a thing you throw on the end.
+ You can add a where clause here as well, and
+ you can have ascending and descending sorts, and it worked great.
+ So this is sort of the first 60% of any SQL is the basic
+ insert, delete, update, and read.
+ And so that is not hard.
+ And the beauty is, is this essence of SQL, the middle part of SQL,
+ is portable across all the databases that I just described.
+ Because every one of those databases that's a modern database,
+ was invented after the invention of SQL.
+ And so life is pretty good.
+ Now, there are differences, because when they first built SQL in like,
+ I think '87, I don't know, forgot that time.
+ But when they first built it, they did not realize how powerful they were going to be.
+ And so they, there's a bunch of features that got added by the vendors that were
+ extensions, and some of them are sort of standardized.
+ There's another round of standardization, but
+ then there's a whole bunch of features that are a little different.
+ But they have, because of competition, they have conceptually the same ideas.
+ Like, there's like a limit clause that limits the number of rows, or
+ starts after a certain number of rows.
+ And it's a little different from one database to the other.
+ So, but this is just a summary.
+ You should know this.
+ You should just know this forever and ever and ever.
+ And then as you run into a different database,
+ then you'll learn different features for that.
+ A tool that you might want to install on your laptop, if you want to start playing
+ with these SQLite files and not just using the command line, is called SQLite browser.
+ You can download it.
+ It runs on lots of different systems.
+ You can then open these .sqlite3 files.
+ And you can do stuff to it, including execute the SQL commands right in there.
+ And so, a lot of people find this a more interesting and
+ easy way to interact with these files.
+ And so, that kind of sums up our really quick introduction to single table SQL.
+ Up next, we'll talk a little bit about multiple table SQL and relationships.
+ And then we'll also talk about how we connect this all to Django
+ through an object relational mapper.
+ So, see you soon.
+ [MUSIC]

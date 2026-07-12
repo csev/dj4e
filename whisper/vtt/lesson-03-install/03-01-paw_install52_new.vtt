@@ -1,0 +1,1133 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.000
+ Hello everybody, and welcome to a very important code walkthrough for Django For Everybody.
+
+00:00:07.000 --> 00:00:12.000
+ What we're going to walk through today is getting your account set up. It's pretty long.
+
+00:00:12.000 --> 00:00:16.000
+ You can see there's a lot of stuff here, so we're going to just slowly walk through it all
+
+00:00:16.000 --> 00:00:21.000
+ so that you have a good reference to get this thing taken care of.
+
+00:00:21.000 --> 00:00:29.000
+ Okay? So, what you've got to do, you've got to go to pythonanywhere.com and you've got to sign up for an account now.
+
+00:00:29.000 --> 00:00:34.000
+ They're all free. I mentioned that these Python Anywhere are good folks, okay?
+
+00:00:34.000 --> 00:00:40.000
+ Just go to the sign up process and when you get here, you can start going through the next steps.
+
+00:00:40.000 --> 00:00:46.000
+ Okay? So here we go. So we're going to start a shell under the console.
+
+00:00:46.000 --> 00:00:54.000
+ So let's go here, go to consoles, and start what's called a bash shell.
+
+00:00:54.000 --> 00:01:04.000
+ Now, this is in a fresh clean environment, and so it's really important when you do this that you look at the prompt.
+
+00:01:04.000 --> 00:01:11.000
+ It might say something like Django 4.2 or .ve52 or something else.
+
+00:01:11.000 --> 00:01:15.000
+ And so the first thing it tells you to do is check a few things.
+
+00:01:15.000 --> 00:01:19.000
+ It says, "Hey, do you already have a virtual environment for Django 5.2 installed?"
+
+00:01:19.000 --> 00:01:23.000
+ If you did, meaning you may have gone through this already once, you don't have to go through everything again.
+
+00:01:23.000 --> 00:01:29.000
+ If you're coming from an earlier version of the class, you may have a Django 4.2 environment.
+
+00:01:29.000 --> 00:01:33.000
+ We don't want you to use Django 4.2. We've moved to Django 5.2.
+
+00:01:33.000 --> 00:01:41.000
+ So the first thing we're going to try to do is just go into here and see if somehow we have installed it, but it's not yet activated.
+
+00:01:41.000 --> 00:01:45.000
+ So this is the command. And so that says, "Nope, you can't do that."
+
+00:01:45.000 --> 00:01:50.000
+ And that's because I haven't created the virtual environment yet.
+
+00:01:50.000 --> 00:01:56.000
+ Let's move that over there. OK, I haven't created the virtual environment yet.
+
+00:01:56.000 --> 00:02:00.000
+ And so it'll change to this, but it doesn't do it. So now we've got to keep going.
+
+00:02:00.000 --> 00:02:04.000
+ So now we're going to go and we're going to actually create a Django 5.2 environment.
+
+00:02:04.000 --> 00:02:07.000
+ Cd tilde, that's a command to go into your home directory.
+
+00:02:07.000 --> 00:02:11.000
+ pwd tells you where you're at. My home directory is home Dr. Chuck.
+
+00:02:11.000 --> 00:02:14.000
+ Dr. Chuck is the name of my Python Anywhere account.
+
+00:02:14.000 --> 00:02:20.000
+ I'm going to type deactivate. Hashtags here are comments. Type deactivate.
+
+00:02:20.000 --> 00:02:25.000
+ And I would expect that it would say deactivate command not found because this is a fresh account.
+
+00:02:25.000 --> 00:02:28.000
+ I've never set up a virtual environment. So that's totally OK.
+
+00:02:28.000 --> 00:02:32.000
+ We're just being extra safe. Deactivate command not found.
+
+00:02:32.000 --> 00:02:35.000
+ Now we've got to figure out what version of Python we have.
+
+00:02:35.000 --> 00:02:41.000
+ And I like to do that by typing Python 3. and then hitting the tab key.
+
+00:02:41.000 --> 00:02:45.000
+ So I hit the tab key twice. You didn't see that. I hit the tab key twice.
+
+00:02:45.000 --> 00:02:54.000
+ And it says in this Linux environment, I've got all the way from Python 3.7 to Python 3.13.
+
+00:02:54.000 --> 00:03:00.000
+ And that's called command line completion when you type a command that's partial and you hit the tab.
+
+00:03:00.000 --> 00:03:06.000
+ So what I'm going to do is I'm going to take one in the middle. I'm going to start with Python 3.
+
+00:03:06.000 --> 00:03:14.000
+ So let me back, back, back. So now I'm back here. I just hit enter. You can always hit enter.
+
+00:03:14.000 --> 00:03:22.000
+ And so I'm going to say we're already in the home directory.
+
+00:03:22.000 --> 00:03:26.000
+ And we're going to create a virtual environment. So a virtual environment is it's a place
+
+00:03:26.000 --> 00:03:35.000
+ so that you can install stuff into your virtual environment without modifying system configuration.
+
+00:03:35.000 --> 00:03:40.000
+ So this might take a little while. And especially if a whole bunch of students are doing it at the same time
+
+00:03:40.000 --> 00:03:45.000
+ or you're just starting. And so be patient. You'll notice it's taking a while for me.
+
+00:03:45.000 --> 00:03:52.000
+ Oh, it worked. Didn't take that long. So now that finished.
+
+00:03:52.000 --> 00:04:01.000
+ And then I can say, and this source command, tilled, that's your home directory, .ve52 is a hidden directory, bin activate.
+
+00:04:01.000 --> 00:04:09.000
+ That is going to load instead of the system's Python configuration, your Python configuration.
+
+00:04:09.000 --> 00:04:15.000
+ So now you can type Python minus minus version and it's Python 3.13.
+
+00:04:15.000 --> 00:04:20.000
+ And that's because you're in a virtual environment. It's like you have now you control the system.
+
+00:04:20.000 --> 00:04:24.000
+ That's what a virtual environment is. And this is super useful anytime you're doing Python.
+
+00:04:24.000 --> 00:04:31.000
+ So feel free to go look up virtual environment and then we're going to install some stuff.
+
+00:04:31.000 --> 00:04:39.000
+ Pip is the Python package installation program. And so the first thing we're going to do is upgrade the pip.
+
+00:04:39.000 --> 00:04:48.000
+ And it's upgrading it from 24 to 25. You just do this because otherwise pip will complain all the time.
+
+00:04:48.000 --> 00:04:55.000
+ So again, there's this command called pip. And now you are installing a new version of pip.
+
+00:04:55.000 --> 00:05:02.000
+ So that finished. We can even, I think, type pip minus minus version.
+
+00:05:02.000 --> 00:05:09.000
+ Yeah, we're pip 25.3. Now we're going to start installing some libraries.
+
+00:05:09.000 --> 00:05:26.000
+ And so Python doesn't come with Django built in. But now what we're basically making is the Django library installed and available to your Python in this virtual environment.
+
+00:05:26.000 --> 00:05:39.000
+ OK, so that finished. It took a little while. Took about 30 seconds. But now we have installed Django and we can say what version of Django Python minus m Django dash dash version.
+
+00:05:39.000 --> 00:05:47.000
+ And I can type that and it says you got Python version 5.2. And again, we're doing things like a system administrator we're doing.
+
+00:05:47.000 --> 00:05:53.000
+ But because we have the virtual environment, we're having our own little playground to do this.
+
+00:05:53.000 --> 00:06:01.000
+ OK, so now you remember that this is the command to always activate it. But you do not want to do that.
+
+00:06:01.000 --> 00:06:07.000
+ You don't want to come into my office hours and say it's not nothing's working. And I'm like, did you type the source command and then whatever.
+
+00:06:07.000 --> 00:06:14.000
+ So what we're going to do is we're doing something very simple and make it so that you're never going to have to type this source command again.
+
+00:06:14.000 --> 00:06:22.000
+ So follow very carefully. I'm going to go into the files tab. I always open things in a new tab. So I'm opening the files in a new tab.
+
+00:06:22.000 --> 00:06:28.000
+ And I'm in my home directory. So there are some subdirectories in my home directory and there are some files in my home directory.
+
+00:06:28.000 --> 00:06:34.000
+ And so my home directory is home Dr. Chuck. And then there's this file called bash RC.
+
+00:06:34.000 --> 00:06:43.000
+ Bash RC is the thing that the system runs every time a shell, a bash shell. And we'll talk more about this later starts.
+
+00:06:43.000 --> 00:06:53.000
+ So what I want you to do is I want to put some two lines in the bottom of that.
+
+00:06:53.000 --> 00:07:13.000
+ And if you want to have more fun, say I'll echo hello from my dot bash RC. Type this correctly. Oops. Bach RC.
+
+00:07:13.000 --> 00:07:20.000
+ So you'll just do this. So I'll save this. Now, the key thing is, is this doesn't run immediately.
+
+00:07:20.000 --> 00:07:25.000
+ So what I have to do is get out of this console and then get back in.
+
+00:07:25.000 --> 00:07:30.000
+ So I'm going to go into my consoles tab and I'm going to destroy that console. It doesn't exist anymore.
+
+00:07:30.000 --> 00:07:39.000
+ I'm going to start a new bash console. This time it should run my bash RC.
+
+00:07:39.000 --> 00:07:50.000
+ Hey, it said hello for my bash RC. I'll go edit that and take that out for later. You can put hello, grand leader, whatever you want to say in there.
+
+00:07:50.000 --> 00:07:57.000
+ OK, so now what we have is you'll notice we are in our virtual environment. That's just a little percent the C's of VE 5 2.
+
+00:07:57.000 --> 00:08:04.000
+ And if you do this right for the rest of the semester or the class, you're not going to have to type the source command.
+
+00:08:04.000 --> 00:08:14.000
+ OK, so now we're going to install some sample code. So a lot of this course is based on sample code.
+
+00:08:14.000 --> 00:08:22.000
+ And so we're going to go into our you'll see me till that goes into my home directory. P.W.D. home doctor Chuck and then the git command.
+
+00:08:22.000 --> 00:08:35.000
+ There's a git repository. And that's going to copy all this stuff from the git repository into my Python Anywhere account.
+
+00:08:35.000 --> 00:08:43.000
+ And that didn't take long. By the way, here is that git repository. And this is the lectures. The lectures cover all this stuff.
+
+00:08:43.000 --> 00:08:49.000
+ This is super useful stuff. I use it when I write applications myself. So my git checkout finished.
+
+00:08:49.000 --> 00:08:58.000
+ Do not sort of blast these in. Type them in one at a time. You only have to do this stuff once. Type them in one at a time.
+
+00:08:58.000 --> 00:09:05.000
+ And we're going to just make sure you are already on the Django 5 2 branch. That's what this says.
+
+00:09:05.000 --> 00:09:11.000
+ And then we're going to get again Paul. These are redundant because it's all fresh.
+
+00:09:11.000 --> 00:09:19.000
+ But sometimes you had to grab a new version and then we're going to upgrade pip again. I think this is redundant because we already did it once.
+
+00:09:19.000 --> 00:09:27.000
+ And it'll probably tell us. Yeah, you told us that was redundant. But you didn't know how it was started in case you're using an old one.
+
+00:09:27.000 --> 00:09:35.000
+ And now we're going to run the big big one pip install minus our requirements five to dot txt.
+
+00:09:35.000 --> 00:09:44.000
+ So what this does is it reads this file that says our Django. Not only do we need Django, but we need about 15 other libraries in our Django.
+
+00:09:44.000 --> 00:09:49.000
+ And those are called dependencies and they're listed in the file requirements five to dot txt.
+
+00:09:49.000 --> 00:09:59.000
+ And you can look at that file. And so now it's downloading a bunch of code and it's installing it in our system.
+
+00:09:59.000 --> 00:10:06.000
+ So that took about two minutes and it paused at times for a very long time. So don't be too surprised.
+
+00:10:06.000 --> 00:10:14.000
+ Almost take time. So now we're done. And so now we're going to actually start using that software that we just checked out.
+
+00:10:14.000 --> 00:10:21.000
+ We're going to go into the folder DJ free dash samples under your home directory. P W D. You can see that.
+
+00:10:21.000 --> 00:10:26.000
+ And then we're going to do Python managed by check. And this is a command you're going to really get used to.
+
+00:10:26.000 --> 00:10:36.000
+ This is actually saying there's a whole bunch of files here. Is this current directory a valid Python project?
+
+00:10:36.000 --> 00:10:43.000
+ OK, so I'm going to type Python managed by check and this is going to load a whole bunch of things.
+
+00:10:43.000 --> 00:10:48.000
+ It's going to load a whole bunch of software. Look at settings dot p y. Look at URLs dot p y.
+
+00:10:48.000 --> 00:10:53.000
+ And it would have complained mightily. But this is code that hopefully when you check it out, I didn't break it.
+
+00:10:53.000 --> 00:10:59.000
+ This is my code. So it's not broken. So that's good. It's ran. OK.
+
+00:10:59.000 --> 00:11:04.000
+ And then if you see a syntax there, blah, blah, blah, this this is not likely.
+
+00:11:04.000 --> 00:11:10.000
+ But at some point, once running check works, if running check doesn't work, then you kind of got to figure out why and start over.
+
+00:11:10.000 --> 00:11:19.000
+ But it should. And you're going to run Python managed by make migrations all one word.
+
+00:11:19.000 --> 00:11:25.000
+ And it says no changes detected. And that's because the migrations or Python files will learn about them in a bit.
+
+00:11:25.000 --> 00:11:31.000
+ And they're all stored in that GitHub repository. They're all up to date. And then migrate actually creates a database.
+
+00:11:31.000 --> 00:11:39.000
+ And so this is going to read the migrations and apply the migrations to create a database in this current directory.
+
+00:11:39.000 --> 00:11:44.000
+ And this is doing it for all these applications. It's doing it for Django itself, et cetera, et cetera.
+
+00:11:44.000 --> 00:11:53.000
+ OK. So that's going well as well. So if you need to get a new version of this.
+
+00:11:53.000 --> 00:11:59.000
+ I just did this. Oops. That's supposed to be DJ for E. I'll fix that in a bit.
+
+00:11:59.000 --> 00:12:14.000
+ CD CD tilled slash DJ for E samples. Sometimes I only find typos and then I can say.
+
+00:12:14.000 --> 00:12:18.000
+ Get pull origin Django five to nothing changed in that repo.
+
+00:12:18.000 --> 00:12:24.000
+ So we're good. We're up to date. But sometimes you want to get the latest version of my stuff so that you have it.
+
+00:12:24.000 --> 00:12:34.000
+ OK. So now we're going to switch to building the application. And so we've got that with sample code that kind of that also proved to you that Django is properly set up in your virtual environment.
+
+00:12:34.000 --> 00:12:41.000
+ That's why I have you do that is get you started with a known good Django application so that when you start making these other ones.
+
+00:12:41.000 --> 00:12:47.000
+ So the first thing we do is see detailed to go in my home directory, which is home doctor Chuck.
+
+00:12:47.000 --> 00:12:55.000
+ And then we are going to make a folder called Django projects. We're going to do a lot of work in this folder.
+
+00:12:55.000 --> 00:13:05.000
+ Make Durr Django underscore projects. And then I'm going to say CD CD tilled slash Django underscore projects enter.
+
+00:13:05.000 --> 00:13:10.000
+ And now my working directory with PWD is home doctor Chuck Django underscore projects.
+
+00:13:10.000 --> 00:13:17.000
+ I'm doing that because one of the things about this shell prompt is where am I at in the hierarchy?
+
+00:13:17.000 --> 00:13:22.000
+ If you're looking in your files, let's go back to home doctor Chuck in the files.
+
+00:13:22.000 --> 00:13:28.000
+ I created this folder called DJ free samples and you can see the hierarchy a little better.
+
+00:13:28.000 --> 00:13:33.000
+ We got a project called DJ free underscore projects home doctor Chuck DJ free projects.
+
+00:13:33.000 --> 00:13:40.000
+ And so you can sort of do this stuff and see this stuff and you will be editing these files like in DJ free samples.
+
+00:13:40.000 --> 00:13:49.000
+ You can look at the requirements file, for example, DJ free home doctor Chuck DJ free samples requirements five to dot txt.
+
+00:13:49.000 --> 00:13:55.000
+ That talks to you about all the versions of the library stuff that we're using in this course.
+
+00:13:55.000 --> 00:14:01.000
+ But I type PWD in the command line over and over in the Django projects.
+
+00:14:01.000 --> 00:14:07.000
+ PWD home doctor Chuck Django underscore projects back to the instructions.
+
+00:14:07.000 --> 00:14:16.000
+ Now we're going to type this command once unless you mess it up and delete it all.
+
+00:14:16.000 --> 00:14:22.000
+ Django admin start project my site.
+
+00:14:22.000 --> 00:14:26.000
+ Now that created a whole bunch of folders.
+
+00:14:26.000 --> 00:14:32.000
+ OK, let's go take a look at that Django projects created a whole bunch of folders.
+
+00:14:32.000 --> 00:14:35.000
+ Django home doctor Chuck Django projects my site.
+
+00:14:35.000 --> 00:14:39.000
+ There is a whole bunch of files and folders that it created for us.
+
+00:14:39.000 --> 00:14:47.000
+ That's one of the things people like about Django is you just say, hey, start me an application and it kind of builds you a blank application.
+
+00:14:47.000 --> 00:14:52.000
+ So here's the documentation for what all of those files are and some descriptions, those files.
+
+00:14:52.000 --> 00:14:54.000
+ It'd be a good idea for you to read them.
+
+00:14:54.000 --> 00:14:59.000
+ So now we're going to do some changes in those files.
+
+00:14:59.000 --> 00:15:02.000
+ So we're going to start with your Django projects, my site, my site.
+
+00:15:02.000 --> 00:15:07.000
+ And you'll get tired of hearing me say Django projects, my site, my site.
+
+00:15:07.000 --> 00:15:13.000
+ So Django projects.
+
+00:15:13.000 --> 00:15:23.000
+ The my site folder for our project named my site.
+
+00:15:23.000 --> 00:15:26.000
+ And then we're going to go into settings.py.
+
+00:15:26.000 --> 00:15:29.000
+ This will feel weird to you.
+
+00:15:29.000 --> 00:15:30.000
+ But eventually.
+
+00:15:30.000 --> 00:15:34.000
+ And so we're being told to go find a line about my 28.
+
+00:15:34.000 --> 00:15:37.000
+ Let's see if my prediction is right.
+
+00:15:37.000 --> 00:15:42.000
+ And we are supposed to add here quote, asterisk quote.
+
+00:15:42.000 --> 00:15:44.000
+ Let's see what else it wants us to do in there.
+
+00:15:44.000 --> 00:15:46.000
+ Come back.
+
+00:15:46.000 --> 00:15:49.000
+ Oh, and leave the debug true.
+
+00:15:49.000 --> 00:15:54.000
+ Even though it says it's a security warning problem is if you leave it, turn it to false, you won't get error messages.
+
+00:15:54.000 --> 00:15:57.000
+ And by the way, just helping you out here.
+
+00:15:57.000 --> 00:16:02.000
+ See this little asterisk that shows up in the tab that says settings.py is not saved.
+
+00:16:02.000 --> 00:16:04.000
+ That's helping you out.
+
+00:16:04.000 --> 00:16:06.000
+ OK, this is probably also a good time.
+
+00:16:06.000 --> 00:16:07.000
+ I'm saving it.
+
+00:16:07.000 --> 00:16:09.000
+ You see, it's working a little bit.
+
+00:16:09.000 --> 00:16:10.000
+ Now it saved it.
+
+00:16:10.000 --> 00:16:17.000
+ If you have problems like with this save operation, you may have an ad blocker or some kind of weird thing.
+
+00:16:17.000 --> 00:16:23.000
+ Make sure if your browser is too clever, you may need to do this on a different browser.
+
+00:16:23.000 --> 00:16:29.000
+ OK, because we're using the web to do a lot of cool stuff because we're using the editor and all that stuff.
+
+00:16:29.000 --> 00:16:33.000
+ OK, so now we're going to run the application.
+
+00:16:33.000 --> 00:16:41.000
+ So the problem is, is that normally at this point we would type a command in the command line to start the server up.
+
+00:16:41.000 --> 00:16:44.000
+ And then we would talk to the server when a browser.
+
+00:16:44.000 --> 00:16:48.000
+ The problem is, is that you are running on Python Anywhere.
+
+00:16:48.000 --> 00:16:51.000
+ You really are running on the Internet.
+
+00:16:51.000 --> 00:16:55.000
+ And so you need to let's see what's there right now.
+
+00:16:55.000 --> 00:16:58.000
+ Let's see what's going on at drchuck.pythonanywhere.com.
+
+00:16:58.000 --> 00:16:59.000
+ Yeah.
+
+00:16:59.000 --> 00:17:08.000
+ So when you got your Python Anywhere account, it's they made you a website.
+
+00:17:08.000 --> 00:17:13.000
+ Now we're building this website and we're not done building it because we haven't told Python Anywhere where the source code is.
+
+00:17:13.000 --> 00:17:17.000
+ To run your application.
+
+00:17:17.000 --> 00:17:31.000
+ OK, so we're going to go to the Web tab and under the Web tab, this is where you tell Python Anywhere what to set things up as.
+
+00:17:31.000 --> 00:17:37.000
+ So it says go here and then you're going to go scroll down.
+
+00:17:37.000 --> 00:17:39.000
+ Now I've already done some of this.
+
+00:17:39.000 --> 00:17:47.000
+ OK, so this one's kind of so you'll have to follow the instructions at a new Web app, select manual configuration.
+
+00:17:47.000 --> 00:17:50.000
+ And then there it once it's created, you're going to make some changes.
+
+00:17:50.000 --> 00:17:55.000
+ Now, I already went through this process because I just cleaned out my account.
+
+00:17:55.000 --> 00:17:59.000
+ And so my Web app is kind of a mess.
+
+00:17:59.000 --> 00:18:05.000
+ OK, this source code and working directory broken, broken this whiskey configuration file.
+
+00:18:05.000 --> 00:18:09.000
+ That's OK, we'll get these right.
+
+00:18:09.000 --> 00:18:14.000
+ So you're going to have to change home doctor Chuck, but everything else in this can be the same.
+
+00:18:14.000 --> 00:18:17.000
+ So where it says, where's the source code?
+
+00:18:17.000 --> 00:18:19.000
+ It is.
+
+00:18:19.000 --> 00:18:22.000
+ Home doctor yours thing.
+
+00:18:22.000 --> 00:18:26.000
+ And then the working directory is the same.
+
+00:18:26.000 --> 00:18:31.000
+ You can see I'm losing all my error messages because these files exist.
+
+00:18:31.000 --> 00:18:41.000
+ OK, and then the virtual environment is VE 52.
+
+00:18:41.000 --> 00:18:45.000
+ And it's like complaining because it seems to have the right and wrong Python version.
+
+00:18:45.000 --> 00:18:50.000
+ And I'm going to change this to go to 313 and save it.
+
+00:18:50.000 --> 00:18:52.000
+ Now, interestingly, now they match.
+
+00:18:52.000 --> 00:18:56.000
+ Watch, I have to refresh the page and now they're right.
+
+00:18:56.000 --> 00:18:59.000
+ OK, so I've got this VE 52 set.
+
+00:18:59.000 --> 00:19:03.000
+ That's the virtual environment that you built home doctor Chuck Django projects in my site.
+
+00:19:03.000 --> 00:19:08.000
+ That's the source code to your Django application and the working directory.
+
+00:19:08.000 --> 00:19:10.000
+ That's where the database is going to be.
+
+00:19:10.000 --> 00:19:13.000
+ And then we have another thing to do.
+
+00:19:13.000 --> 00:19:23.000
+ And that is we're going to edit the whiskey configuration file and copy this whole thing in.
+
+00:19:23.000 --> 00:19:26.000
+ You're going to find that mine is already copied to this.
+
+00:19:26.000 --> 00:19:32.000
+ And then you start with a very fresh setup.
+
+00:19:32.000 --> 00:19:43.000
+ This has a bunch of stuff and test this sample that this is gets you to the point where it starts your Django projects and runs it.
+
+00:19:43.000 --> 00:19:50.000
+ OK, so now I have set these three values source code, working directory and virtual environment.
+
+00:19:50.000 --> 00:19:53.000
+ And then I've updated the whiskey configuration.
+
+00:19:53.000 --> 00:19:59.000
+ Now what you do is you tell and go back to the Web tab, go up to the top.
+
+00:19:59.000 --> 00:20:07.000
+ So I've now told Python Anywhere where to find the code to listen to Dr. Chuck Python Anywhere dot com.
+
+00:20:07.000 --> 00:20:18.000
+ It still doesn't as made me has not made the connection until you say reload Dr. Chuck Python Anywhere dot com.
+
+00:20:18.000 --> 00:20:27.000
+ And now it's Python Anywhere is making the connection between the files in your folder and this domain name.
+
+00:20:27.000 --> 00:20:41.000
+ And so there you go. OK, so you have now made a connection from a URL that Python Anywhere gave you into these files.
+
+00:20:41.000 --> 00:20:45.000
+ So we're in Django projects, my site.
+
+00:20:45.000 --> 00:20:49.000
+ So this is now your application and whatever you build there.
+
+00:20:49.000 --> 00:20:52.000
+ And so we don't have anything yet.
+
+00:20:52.000 --> 00:21:01.000
+ So Django has this thing that says, hey, you're going to do this polling application, which is exactly what we're going to do because we're going to use the Django tutorial.
+
+00:21:01.000 --> 00:21:15.000
+ OK, so when you get this, make that right side little rocket taken off, Django is working and you have correctly connected between an external URL and your internal code base.
+
+00:21:15.000 --> 00:21:26.000
+ This part here, code and virtual environment, determines what code is run at that Dr. Chuck Python Anywhere dot URL.
+
+00:21:26.000 --> 00:21:32.000
+ OK, go back to the instructions. Yeah, don't type run server.
+
+00:21:32.000 --> 00:21:39.000
+ We'll fix that in a minute. If you try to type run server, let's go here.
+
+00:21:39.000 --> 00:21:42.000
+ And we're in my site.
+
+00:21:42.000 --> 00:21:48.000
+ And it tells you to run Python ManagePy run server. It's going to blow up.
+
+00:21:48.000 --> 00:21:51.000
+ Yeah, you don't have migrations, but it says that port is already in use.
+
+00:21:51.000 --> 00:21:58.000
+ And that's because you're in a shared environment and you don't get access to direct network ports.
+
+00:21:58.000 --> 00:22:03.000
+ You have to go through that web tab. OK, so just run server doesn't work.
+
+00:22:03.000 --> 00:22:11.000
+ And all the other tutorials when you're running it locally on your own computer, not on a cloud based software as a service system.
+
+00:22:11.000 --> 00:22:16.000
+ So don't do it. And it says error that port is already in use. So it's OK.
+
+00:22:16.000 --> 00:22:21.000
+ What we do is instead we every time we think about run server, we type check.
+
+00:22:21.000 --> 00:22:26.000
+ And that loads up our application and says, oh, our application is in great shape and it'll load.
+
+00:22:26.000 --> 00:22:33.000
+ It should load. And then when the reload does, it does that check and then connects it back up.
+
+00:22:33.000 --> 00:22:41.000
+ OK, so we're going to add a polls application.
+
+00:22:41.000 --> 00:22:46.000
+ So I'm going to cd tilde slash Django underscore projects slash my site.
+
+00:22:46.000 --> 00:22:50.000
+ PWD, I'm actually in home. Dr. Chuck Django projects my site.
+
+00:22:50.000 --> 00:22:55.000
+ Your home directory will be different. And then I'm going to start my application called polls.
+
+00:22:55.000 --> 00:22:59.000
+ It's going to create a sub folder within my site.
+
+00:22:59.000 --> 00:23:05.000
+ Python ManagePy start app polls. And again, it's going to make a bunch of files.
+
+00:23:05.000 --> 00:23:12.000
+ A quick way to do it is go over here, I'm going to hit the refresh and you see that there should be a polls folder.
+
+00:23:12.000 --> 00:23:19.000
+ And that command we just typed created all these files. OK.
+
+00:23:19.000 --> 00:23:23.000
+ So all these files got created and you can read all that stuff.
+
+00:23:23.000 --> 00:23:28.000
+ So then it says go into my site polls views dot py.
+
+00:23:28.000 --> 00:23:34.000
+ It's going to my site polls views dot py.
+
+00:23:34.000 --> 00:23:39.000
+ And this says create your views here. And the instructions say let's make a view.
+
+00:23:39.000 --> 00:23:47.000
+ And we're going to learn a bunch of stuff for now. We're just going to paste this in.
+
+00:23:47.000 --> 00:23:50.000
+ OK, so I've got that.
+
+00:23:50.000 --> 00:23:55.000
+ We'll save it.
+
+00:23:55.000 --> 00:23:59.000
+ This is complaining because it's not used. We'll take it out. Let's take it out.
+
+00:23:59.000 --> 00:24:04.000
+ We'll put it back in later so we won't have any errors. Look how pretty that is.
+
+00:24:04.000 --> 00:24:09.000
+ OK, so now we've made a view and now we're going to go in, add a polls.
+
+00:24:09.000 --> 00:24:13.000
+ We're going to create a file, create the file polls URLs dot py.
+
+00:24:13.000 --> 00:24:20.000
+ So let's go back into the polls folder. Got to be in the polls folder and I'm going to do URLs dot py.
+
+00:24:20.000 --> 00:24:26.000
+ Don't add a space before it or after it. I get students all the time that kind of do it too fast.
+
+00:24:26.000 --> 00:24:33.000
+ I'm going to create a new file URLs dot py Django projects my site polls URLs dot py.
+
+00:24:33.000 --> 00:24:36.000
+ And I'm going to copy this stuff in.
+
+00:24:36.000 --> 00:24:40.000
+ It's a tutorial. So it's about copying and pasting. You just got to get it right.
+
+00:24:40.000 --> 00:24:45.000
+ So now I'm going to say save.
+
+00:24:45.000 --> 00:24:54.000
+ And then, oops, and then we're going to go into my site, my site URLs dot py.
+
+00:24:54.000 --> 00:24:58.000
+ So there is my site, my site.
+
+00:24:58.000 --> 00:25:01.000
+ Now, this is the system mind URLs dot py.
+
+00:25:01.000 --> 00:25:09.000
+ And this is distributing all of the URLs in your system, all URLs for the whole system out to different Django applications.
+
+00:25:09.000 --> 00:25:15.000
+ And so it tells you to basically.
+
+00:25:15.000 --> 00:25:21.000
+ We can just replace this. We'll just grab all this and replace it.
+
+00:25:21.000 --> 00:25:25.000
+ So this admin was already there and that will use that admin later.
+
+00:25:25.000 --> 00:25:33.000
+ Actually, tutorial uses the admin right away polls is that polls URLs you just created to says mount this up for the whole thing.
+
+00:25:33.000 --> 00:25:35.000
+ And then we save it.
+
+00:25:35.000 --> 00:25:41.000
+ And you notice there was a star there and the star went away in my tab to tell me that it got saved.
+
+00:25:41.000 --> 00:25:43.000
+ And so you can read all this stuff.
+
+00:25:43.000 --> 00:25:48.000
+ And so now it's really important to keep checking this.
+
+00:25:48.000 --> 00:25:56.000
+ So we're already in my site, but it won't hurt to double double go into CD Tilt slash Django underscore project slash my site.
+
+00:25:56.000 --> 00:25:59.000
+ And then type Python managed dot py check.
+
+00:25:59.000 --> 00:26:04.000
+ And what's really going on here, you're saying, did I make an error or a typographical mistake?
+
+00:26:04.000 --> 00:26:08.000
+ Let's go ahead and make an error.
+
+00:26:08.000 --> 00:26:10.000
+ Make an error.
+
+00:26:10.000 --> 00:26:11.000
+ This is Python code.
+
+00:26:11.000 --> 00:26:13.000
+ It's got to be syntactically correct.
+
+00:26:13.000 --> 00:26:15.000
+ So now I just did a Python error.
+
+00:26:15.000 --> 00:26:17.000
+ By the way, it tells right here that's a syntax error.
+
+00:26:17.000 --> 00:26:20.000
+ But let's just bear with me for a second.
+
+00:26:20.000 --> 00:26:25.000
+ Now I'm going to say Python managed by check syntax error.
+
+00:26:25.000 --> 00:26:27.000
+ Perhaps you forgot a common.
+
+00:26:27.000 --> 00:26:28.000
+ So this is not too bad.
+
+00:26:28.000 --> 00:26:29.000
+ We knew what error we made.
+
+00:26:29.000 --> 00:26:30.000
+ We put that in there.
+
+00:26:30.000 --> 00:26:31.000
+ It was telling us all the time.
+
+00:26:31.000 --> 00:26:34.000
+ But sometimes it's a little more subtle.
+
+00:26:34.000 --> 00:26:37.000
+ Now, this is a great time to use A.I. if you have access to A.I.
+
+00:26:37.000 --> 00:26:40.000
+ So this is what's called a trace pack.
+
+00:26:40.000 --> 00:26:46.000
+ And, you know, it's hard to read even for someone who knows what they're doing.
+
+00:26:46.000 --> 00:26:50.000
+ Usually something useful is in the last few lines.
+
+00:26:50.000 --> 00:26:54.000
+ But it turns out that artificial intelligence loves this stuff.
+
+00:26:54.000 --> 00:26:56.000
+ So I'm going to copy all this stuff.
+
+00:26:56.000 --> 00:26:58.000
+ I'm going to use highlight, start highlighting.
+
+00:26:58.000 --> 00:27:05.000
+ I'm going to scroll up and shift highlight right there.
+
+00:27:05.000 --> 00:27:07.000
+ And then I'm going to copy that.
+
+00:27:07.000 --> 00:27:09.000
+ And I'm going to go paste this into chat GPT.
+
+00:27:09.000 --> 00:27:12.000
+ And let's see what chat GPT thinks.
+
+00:27:12.000 --> 00:27:15.000
+ I paste that whole mess into chat GPT.
+
+00:27:15.000 --> 00:27:17.000
+ You think it looks like crap.
+
+00:27:17.000 --> 00:27:21.000
+ But chat GPT is like, this is so lovely.
+
+00:27:21.000 --> 00:27:22.000
+ OK.
+
+00:27:22.000 --> 00:27:24.000
+ You have invalid Python code in home.
+
+00:27:24.000 --> 00:27:27.000
+ Dr. Chuck Django Projects URLs.Py.
+
+00:27:27.000 --> 00:27:30.000
+ Specifically a line 10 that says make an error.
+
+00:27:30.000 --> 00:27:31.000
+ So it can't even do it.
+
+00:27:31.000 --> 00:27:33.000
+ It can't even import your URL configuration.
+
+00:27:33.000 --> 00:27:35.000
+ So how to read the trace pack.
+
+00:27:35.000 --> 00:27:38.000
+ I mean, this is really great.
+
+00:27:38.000 --> 00:27:39.000
+ Python raises this.
+
+00:27:39.000 --> 00:27:41.000
+ You probably place the line holder.
+
+00:27:41.000 --> 00:27:42.000
+ It is blah, blah, blah.
+
+00:27:42.000 --> 00:27:43.000
+ OK, whatever.
+
+00:27:43.000 --> 00:27:44.000
+ You get the idea.
+
+00:27:44.000 --> 00:27:46.000
+ When you get one of these ugly trace backs, feel free to read it.
+
+00:27:46.000 --> 00:27:48.000
+ It doesn't hurt to read it.
+
+00:27:48.000 --> 00:27:52.000
+ But also feel free to just paste it into chat GPT.
+
+00:27:52.000 --> 00:27:55.000
+ Because chat GPT thinks it's really pretty.
+
+00:27:55.000 --> 00:27:56.000
+ Right?
+
+00:27:56.000 --> 00:27:58.000
+ And so we're going to save it.
+
+00:27:58.000 --> 00:27:59.000
+ Now here's another cool thing.
+
+00:27:59.000 --> 00:28:01.000
+ I'm going to hit the up arrow.
+
+00:28:01.000 --> 00:28:02.000
+ So I hit the up arrow.
+
+00:28:02.000 --> 00:28:05.000
+ And it knows the last command I typed was Python managed by check.
+
+00:28:05.000 --> 00:28:07.000
+ And so it's going to do it again.
+
+00:28:07.000 --> 00:28:09.000
+ Python managed by check.
+
+00:28:09.000 --> 00:28:10.000
+ And now it's quiet.
+
+00:28:10.000 --> 00:28:11.000
+ No URLs.
+
+00:28:11.000 --> 00:28:12.000
+ No error.
+
+00:28:12.000 --> 00:28:14.000
+ No blowing up.
+
+00:28:14.000 --> 00:28:15.000
+ No messing around.
+
+00:28:15.000 --> 00:28:16.000
+ OK?
+
+00:28:16.000 --> 00:28:18.000
+ And so that's neat.
+
+00:28:18.000 --> 00:28:24.000
+ Then once you have no errors, then you go back to your web tab and you hit reload.
+
+00:28:24.000 --> 00:28:25.000
+ But hang on.
+
+00:28:25.000 --> 00:28:28.000
+ Let me show you a faster way.
+
+00:28:28.000 --> 00:28:35.000
+ You can reload your web application right here on the right side of the screen next to the hamburger menu.
+
+00:28:35.000 --> 00:28:37.000
+ You press reload.
+
+00:28:37.000 --> 00:28:40.000
+ And that's the same as going to the web tab.
+
+00:28:40.000 --> 00:28:42.000
+ You notice a little spinner that says we're reloading.
+
+00:28:42.000 --> 00:28:43.000
+ Hang on.
+
+00:28:43.000 --> 00:28:44.000
+ Hang on.
+
+00:28:44.000 --> 00:28:45.000
+ Don't get too impatient.
+
+00:28:45.000 --> 00:28:46.000
+ I always get too impatient.
+
+00:28:46.000 --> 00:28:47.000
+ But I'll wait.
+
+00:28:47.000 --> 00:28:48.000
+ OK.
+
+00:28:48.000 --> 00:29:00.000
+ Now that's the same as going to the web tab and hitting the reload to reassociate and reread all your code and connect it to drchuckpythonanywhere.com.
+
+00:29:00.000 --> 00:29:01.000
+ And so this is a 404.not file.
+
+00:29:01.000 --> 00:29:02.000
+ But that's OK.
+
+00:29:02.000 --> 00:29:07.000
+ What it tells us is that there is a route to the polls application.
+
+00:29:07.000 --> 00:29:11.000
+ And I'm sure the instructions will tell us to do this like, oh, look, you see a page that looks like this.
+
+00:29:11.000 --> 00:29:14.000
+ It's supposed to look like that.
+
+00:29:14.000 --> 00:29:16.000
+ And that's all good.
+
+00:29:16.000 --> 00:29:26.000
+ And then all you do is you just add polls to the end of that URL.
+
+00:29:26.000 --> 00:29:28.000
+ And it's working.
+
+00:29:28.000 --> 00:29:40.000
+ So what's going on here is if you go into my site, polls, views, eventually that set of URL slash polls URL says I'm going to run this code.
+
+00:29:40.000 --> 00:29:46.000
+ And this code says when I get a request at that particular URL, return this response.
+
+00:29:46.000 --> 00:29:48.000
+ And so that's the response that comes back.
+
+00:29:48.000 --> 00:29:55.000
+ So you now have a piece of Django code that can do anything you want it to do.
+
+00:29:55.000 --> 00:29:58.000
+ So I'm going to make a change.
+
+00:29:58.000 --> 00:30:07.000
+ Hello, DJ for the world.
+
+00:30:07.000 --> 00:30:12.000
+ And then you save it and then you reload your application.
+
+00:30:12.000 --> 00:30:15.000
+ This is reloading it inside Python anywhere.
+
+00:30:15.000 --> 00:30:18.000
+ And then you see I'm I'm impatient.
+
+00:30:18.000 --> 00:30:21.000
+ I got to wait until the little spinner finishes.
+
+00:30:21.000 --> 00:30:27.000
+ Then I reloaded the I reaccess the application from my browser.
+
+00:30:27.000 --> 00:30:29.000
+ See, you're at the polls index.
+
+00:30:29.000 --> 00:30:30.000
+ Hello, DJ free world.
+
+00:30:30.000 --> 00:30:31.000
+ You're at the polls index.
+
+00:30:31.000 --> 00:30:33.000
+ I'm having too much fun.
+
+00:30:33.000 --> 00:30:35.000
+ What's my instructions?
+
+00:30:35.000 --> 00:30:36.000
+ That's it.
+
+00:30:36.000 --> 00:30:38.000
+ We're done here.
+
+00:30:38.000 --> 00:30:40.000
+ So there you go.
+
+00:30:40.000 --> 00:30:43.000
+ There is one thing you might want to do.
+
+00:30:43.000 --> 00:30:57.000
+ And that is we have built a tool based on helping thousands of students that looks for mistakes that you've made and and sort of anticipates mistakes that you might make.
+
+00:30:57.000 --> 00:31:03.000
+ And you can type this command kind of any time as you're cruising around doing all this stuff.
+
+00:31:03.000 --> 00:31:06.000
+ I'll take the clear command here to clear it out.
+
+00:31:06.000 --> 00:31:12.000
+ Bash space tilled slash DJ free sample slash tools slash checkup dot SH.
+
+00:31:12.000 --> 00:31:15.000
+ You check this out when you checked out DJ free samples.
+
+00:31:15.000 --> 00:31:16.000
+ OK.
+
+00:31:16.000 --> 00:31:21.000
+ And so what that did is that looked for mistakes that are commonly made by students.
+
+00:31:21.000 --> 00:31:26.000
+ The kinds of mistakes it looks for are files in the wrong location, et cetera, et cetera.
+
+00:31:26.000 --> 00:31:35.000
+ So you can type this kind of almost any time you want, especially if you especially if you were looking at instructions and you made I didn't make mistakes.
+
+00:31:35.000 --> 00:31:41.000
+ But if you go back and forth and you miss something and you don't do something right, it's a pain in the neck.
+
+00:31:41.000 --> 00:31:46.000
+ I hope that helps you get through your initial installation of Django for Django for everybody.
+
+00:31:46.000 --> 00:31:47.000
+ We'll see you on the net.
+
+00:31:47.000 --> 00:31:48.000
+ Cheers.
+

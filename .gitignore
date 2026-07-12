@@ -33,3 +33,4 @@ mod
 tsugi
 __pycache__
 cron.txt
+.whisper-tmp

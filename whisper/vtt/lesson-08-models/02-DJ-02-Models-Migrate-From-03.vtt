@@ -1,0 +1,410 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.960
+ >> So it's pretty easy to get confused when you're first looking at data models,
+
+00:00:03.960 --> 00:00:06.600
+ migrations, and the database itself.
+
+00:00:06.600 --> 00:00:10.560
+ And so I wanna go through this in a little bit more detail.
+
+00:00:10.560 --> 00:00:16.560
+ So the make migrations is what reads the models.py files.
+
+00:00:16.560 --> 00:00:19.200
+ And then it creates what are called migrations.
+
+00:00:19.200 --> 00:00:24.520
+ And the key thing is this is guided by the list of applications and settings.py.
+
+00:00:24.520 --> 00:00:28.080
+ So if you make a new thing and make a new application, and
+
+00:00:28.080 --> 00:00:31.200
+ you edit the model file and you try to run and make migrations and
+
+00:00:31.200 --> 00:00:33.800
+ it doesn't see anything, you're like, what did it just do?
+
+00:00:33.800 --> 00:00:35.720
+ Well, did you edit your settings.py?
+
+00:00:35.720 --> 00:00:38.680
+ Cuz there is a thing called installed apps in your settings.py.
+
+00:00:38.680 --> 00:00:43.040
+ Now migrations are portable across databases.
+
+00:00:43.040 --> 00:00:47.560
+ This means that the migration is a logical description of what
+
+00:00:47.560 --> 00:00:51.400
+ the tables should look like, and they're an evolution.
+
+00:00:51.400 --> 00:00:55.520
+ What they mean is like the first version of this table from the first models.py
+
+00:00:55.520 --> 00:00:58.200
+ when migrations was first run is 001.
+
+00:00:58.200 --> 00:01:02.040
+ And then if you change models.py and you run a migration again,
+
+00:01:02.040 --> 00:01:08.040
+ it looks at the changes from the migration 001 to models.py and then 002.
+
+00:01:08.040 --> 00:01:12.000
+ And then 002 is not like wipe it all out and start over.
+
+00:01:12.000 --> 00:01:16.200
+ It's like, wait, you just added one column, I'll go ahead and add that column.
+
+00:01:16.200 --> 00:01:18.880
+ But it's not done it in a way that's actual SQL.
+
+00:01:18.880 --> 00:01:22.000
+ So migrations are themselves kind of Python like.
+
+00:01:23.160 --> 00:01:26.720
+ And they're portable across databases, which means that you might on your
+
+00:01:26.720 --> 00:01:31.160
+ computer use SQLite and in production you might use MySQL.
+
+00:01:31.160 --> 00:01:33.160
+ And the migrations are the same for both of them.
+
+00:01:33.160 --> 00:01:35.600
+ Cuz they're just saying, here's the columns, here's the types,
+
+00:01:35.600 --> 00:01:37.320
+ here's what they're supposed to be.
+
+00:01:37.320 --> 00:01:42.040
+ Now, contrast that with a migrate command.
+
+00:01:42.040 --> 00:01:45.400
+ The migrate command reads all the migrations and
+
+00:01:45.400 --> 00:01:50.200
+ then knows what database it's talking to and runs the SQL commands to create
+
+00:01:50.200 --> 00:01:53.440
+ the necessary tables and/or evolve the necessary tables.
+
+00:01:53.440 --> 00:01:56.800
+ So it looks and says, here's the first migration, here's the second migration,
+
+00:01:56.800 --> 00:01:58.160
+ here's the third migration.
+
+00:01:58.160 --> 00:02:01.080
+ I'll make the table, I'll change the table, I'll change the table,
+
+00:02:01.080 --> 00:02:01.800
+ I'll change the table.
+
+00:02:01.800 --> 00:02:05.320
+ And at the end of all the migration, the migrate then goes through all
+
+00:02:05.320 --> 00:02:10.280
+ the migrations and then has a database table that reflects the sum total
+
+00:02:10.280 --> 00:02:16.600
+ of the migrations, which also reflects the latest models.py file.
+
+00:02:16.600 --> 00:02:21.000
+ So it's a little complex, it has to do with database portability and
+
+00:02:21.000 --> 00:02:25.240
+ the fact that we want to separate out the portable parts of this from
+
+00:02:25.240 --> 00:02:27.360
+ the non-portable parts to this.
+
+00:02:27.360 --> 00:02:32.120
+ So if you look at the make migrations, and here's in djfree samples,
+
+00:02:32.120 --> 00:02:34.980
+ my little sample stuff, there's lots of models in there.
+
+00:02:34.980 --> 00:02:37.880
+ And if you take a look at all the models.py, you see that for
+
+00:02:37.880 --> 00:02:43.720
+ every application in the djfree samples project, you see a models.py file.
+
+00:02:43.720 --> 00:02:49.040
+ And that's a Python code, that's class, book, blah, blah, blah.
+
+00:02:49.040 --> 00:02:52.960
+ That's very portable, and that's how we, in our Python code,
+
+00:02:52.960 --> 00:02:56.540
+ in our Django code, see the database model.
+
+00:02:56.540 --> 00:03:00.720
+ And when you run the make migration, that produces these migrations files.
+
+00:03:00.720 --> 00:03:05.440
+ And they're just in like autos, migrations, 001 initial.py, etc.
+
+00:03:05.440 --> 00:03:10.040
+ And so you see some of the ones I have here, there's actually two of them.
+
+00:03:10.040 --> 00:03:14.800
+ So it sort of made the first one, and then I must have changed the models file.
+
+00:03:14.800 --> 00:03:19.760
+ And then I ran make migrations again, and it showed, it recorded how that model
+
+00:03:19.760 --> 00:03:23.200
+ changed from the first version of the models file to the second version.
+
+00:03:23.200 --> 00:03:26.840
+ If you can look at these, don't edit them.
+
+00:03:26.840 --> 00:03:29.400
+ You can check them into GitHub, but don't edit these.
+
+00:03:29.400 --> 00:03:33.280
+ But take a look, they're a very portable representation.
+
+00:03:33.280 --> 00:03:35.960
+ They kind of look like the models.py file.
+
+00:03:35.960 --> 00:03:37.000
+ You're not supposed to change them.
+
+00:03:37.000 --> 00:03:40.600
+ You're supposed to generate them with make migrations.
+
+00:03:40.600 --> 00:03:42.800
+ And again, those can go into GitHub.
+
+00:03:42.800 --> 00:03:47.960
+ Now, the migrate basically reads all those migration files.
+
+00:03:47.960 --> 00:03:51.480
+ And not just one, but if there's a sequence of migration files,
+
+00:03:51.480 --> 00:03:54.280
+ it applies them all in order as needed.
+
+00:03:54.280 --> 00:03:58.000
+ And if the database has the first and second migration applied, but
+
+00:03:58.000 --> 00:03:59.960
+ not the third one, it knows that.
+
+00:03:59.960 --> 00:04:03.360
+ And it says, you know what, I'm gonna just tweak this database that already exists,
+
+00:04:03.360 --> 00:04:07.160
+ it's already running, and then add a column or change the width of a column or
+
+00:04:07.160 --> 00:04:11.320
+ whatever it is that you've asked to be done by editing your models.py.
+
+00:04:11.320 --> 00:04:14.040
+ So when the migrate is done,
+
+00:04:14.040 --> 00:04:17.520
+ you then end up with a whole bunch of tables in your database.
+
+00:04:17.520 --> 00:04:20.400
+ And they're all based on the name of the application and
+
+00:04:20.400 --> 00:04:23.680
+ the name of the model within the application.
+
+00:04:23.680 --> 00:04:30.440
+ And so somewhere in here is book one book, book one instance, and book one lang.
+
+00:04:30.440 --> 00:04:31.960
+ They're all sitting there.
+
+00:04:31.960 --> 00:04:33.160
+ And so those are all the tables.
+
+00:04:33.160 --> 00:04:36.640
+ And we took a look at those tables before, but that's the migrate.
+
+00:04:36.640 --> 00:04:41.040
+ That goes from all the little migrations spread across all the applications in
+
+00:04:41.040 --> 00:04:46.120
+ this project and then puts a database together that has all those things.
+
+00:04:46.120 --> 00:04:49.920
+ And I keep saying that the migrations are all about evolution, right?
+
+00:04:49.920 --> 00:04:56.880
+ Cuz if you take a look here, you see one little table called Django Migrations.
+
+00:04:56.880 --> 00:05:00.480
+ And what Django's doing in that Django Migrations table is remembering
+
+00:05:00.480 --> 00:05:03.520
+ which of those migrations have already been applied to this database.
+
+00:05:03.520 --> 00:05:05.000
+ So as it's going through the migrations,
+
+00:05:05.000 --> 00:05:08.320
+ it says here's one that's not yet done in this database, so
+
+00:05:08.320 --> 00:05:10.320
+ I gotta tweak the database just a little bit.
+
+00:05:10.320 --> 00:05:13.040
+ So it remembers the migrations that have been done.
+
+00:05:13.040 --> 00:05:19.040
+ It's pretty fascinating and in these little tiny applications,
+
+00:05:19.040 --> 00:05:23.440
+ we don't always need to be so clever about that.
+
+00:05:23.440 --> 00:05:27.360
+ So sometimes what you wanna do is just like, hmm, I'm confused.
+
+00:05:27.360 --> 00:05:28.840
+ I'm gonna rerun the make migrate.
+
+00:05:28.840 --> 00:05:30.160
+ Cuz you're not really running production.
+
+00:05:30.160 --> 00:05:32.080
+ You're just really doing it over and over again.
+
+00:05:32.080 --> 00:05:34.880
+ So you can rerun the make migrate.
+
+00:05:34.880 --> 00:05:38.880
+ And the way you do this is you basically simply delete the file.
+
+00:05:38.880 --> 00:05:40.520
+ You can delete these files.
+
+00:05:40.520 --> 00:05:43.400
+ I would delete all the ones that start with zero, right?
+
+00:05:43.400 --> 00:05:48.240
+ If you're gonna rerun make migrate, just rerun make migrations,
+
+00:05:48.240 --> 00:05:52.200
+ delete all the ones that start with zero.
+
+00:05:52.200 --> 00:05:56.280
+ And this is an application, migrations, and then get rid of all these.
+
+00:05:56.280 --> 00:05:59.420
+ And then you can rerun the make migrations.
+
+00:05:59.420 --> 00:06:02.320
+ And it will read your models.py file and
+
+00:06:02.320 --> 00:06:07.960
+ then it will do all of the necessary things to recreate the migration file.
+
+00:06:07.960 --> 00:06:10.520
+ Right, now that's not the database.
+
+00:06:10.520 --> 00:06:13.680
+ That is the instructions on how to create the database.
+
+00:06:13.680 --> 00:06:15.320
+ Okay, so that's how you rerun make migrate.
+
+00:06:15.320 --> 00:06:17.920
+ You can run migrate from scratch.
+
+00:06:17.920 --> 00:06:19.360
+ This is actually easier.
+
+00:06:19.360 --> 00:06:23.560
+ So you can kind of wipe out the migrations for one application.
+
+00:06:23.560 --> 00:06:26.720
+ And I did that, just wiped out the book one here.
+
+00:06:26.720 --> 00:06:28.480
+ That's what I did and started over.
+
+00:06:28.480 --> 00:06:33.600
+ But you can wipe out the entire, all the migrations and all the database and
+
+00:06:33.600 --> 00:06:37.880
+ everything by just removing the file in this case cuz we're running SQLite.
+
+00:06:37.880 --> 00:06:41.680
+ Just wipe out the file rmdb.sqlite cuz after migrate,
+
+00:06:41.680 --> 00:06:44.400
+ that's where everything ends up is in that file.
+
+00:06:44.400 --> 00:06:46.280
+ So then you wipe that out, it's gone.
+
+00:06:46.280 --> 00:06:49.120
+ Now you might have created an administrator account or something and
+
+00:06:49.120 --> 00:06:50.040
+ you're gonna wipe that out too.
+
+00:06:50.040 --> 00:06:53.720
+ You're gonna write the data out, you're gonna wipe the tables out, it's all gone.
+
+00:06:53.720 --> 00:06:54.960
+ That's one thing I like about SQLite.
+
+00:06:54.960 --> 00:06:58.160
+ You remove this one file and it's literally all gone.
+
+00:06:58.160 --> 00:07:02.900
+ And then you rerun python manage3 migrate and it reads all the migrations and
+
+00:07:02.900 --> 00:07:06.200
+ makes you a nice, clean, perfect, empty database.
+
+00:07:06.200 --> 00:07:09.960
+ So if you're kind of stuck and you're not afraid of losing your data,
+
+00:07:09.960 --> 00:07:12.080
+ which in most of the beginning programmers,
+
+00:07:12.080 --> 00:07:15.840
+ it's okay to wipe out your SQLite thing and run migrate again.
+
+00:07:15.840 --> 00:07:17.560
+ Just go ahead and try it.
+
+00:07:17.560 --> 00:07:21.680
+ Like I said, if you made an admin account, well, you gotta make it again.
+
+00:07:21.680 --> 00:07:22.840
+ But that's the worst that you can do.
+
+00:07:22.840 --> 00:07:25.960
+ So at least in these beginning applications.
+
+00:07:27.440 --> 00:07:30.360
+ So now that we've talked about how to come up with a data model,
+
+00:07:30.360 --> 00:07:34.760
+ how to encode it in Django model.py, how to do migrations and
+
+00:07:34.760 --> 00:07:37.480
+ how to migrate stuff and how to make a database out of it.
+
+00:07:37.480 --> 00:07:41.320
+ Now we're gonna talk about the kind of Python code that you can run to
+
+00:07:41.320 --> 00:07:43.400
+ update these models in the database.
+
+00:07:43.400 --> 00:07:53.400
+ [MUSIC]
+

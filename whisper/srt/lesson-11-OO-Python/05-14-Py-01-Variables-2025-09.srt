@@ -1,0 +1,628 @@
+1
+00:00:00,000 --> 00:00:09,460
+ [MUSIC PLAYING]
+
+2
+00:00:09,460 --> 00:00:10,580
+ Hello.
+
+3
+00:00:10,580 --> 00:00:12,460
+ I have a confession to make.
+
+4
+00:00:12,460 --> 00:00:13,980
+ Perhaps you've taken a class from me
+
+5
+00:00:13,980 --> 00:00:20,420
+ where I misled you on what's going on in Python.
+
+6
+00:00:20,420 --> 00:00:23,220
+ First, we've got to take a look into the past.
+
+7
+00:00:23,220 --> 00:00:27,460
+ The following two slides are from chapter two of my Python
+
+8
+00:00:27,460 --> 00:00:30,400
+ for everybody textbook and course that's
+
+9
+00:00:30,400 --> 00:00:32,460
+ available all over the place.
+
+10
+00:00:32,460 --> 00:00:36,060
+ It's introduced more people to programming in the millions
+
+11
+00:00:36,060 --> 00:00:38,500
+ than any other course in the world.
+
+12
+00:00:38,500 --> 00:00:40,460
+ These slides are misleading.
+
+13
+00:00:40,460 --> 00:00:44,140
+ And at worst, they are 100% wrong.
+
+14
+00:00:44,140 --> 00:00:47,580
+ Let's take a look at the slides and see why.
+
+15
+00:00:47,580 --> 00:00:48,980
+ Here's a slide.
+
+16
+00:00:48,980 --> 00:00:51,340
+ It's like the fifth slide of that class.
+
+17
+00:00:51,340 --> 00:00:53,340
+ A variable is a named place in memory
+
+18
+00:00:53,340 --> 00:00:55,580
+ where a programmer can store data and then later
+
+19
+00:00:55,580 --> 00:00:57,980
+ retrieve it using the name of the variable.
+
+20
+00:00:57,980 --> 00:01:00,140
+ Programmers get to choose the names of the variables.
+
+21
+00:01:00,140 --> 00:01:01,820
+ They're like labels in memory location.
+
+22
+00:01:01,820 --> 00:01:04,180
+ And you can change the contents of a variable
+
+23
+00:01:04,180 --> 00:01:05,500
+ in a later statement.
+
+24
+00:01:05,500 --> 00:01:08,580
+ So x equals 12 takes a little drawer, labels it x,
+
+25
+00:01:08,580 --> 00:01:10,140
+ puts a 12 in there.
+
+26
+00:01:10,140 --> 00:01:14,980
+ y equals 14 puts a 14 in a drawer and labels it y.
+
+27
+00:01:14,980 --> 00:01:18,820
+ But then if you change it like x equals 100 later,
+
+28
+00:01:18,820 --> 00:01:24,700
+ that replaces the value 12.2 with the value 100.
+
+29
+00:01:24,700 --> 00:01:26,660
+ This is what's really happening.
+
+30
+00:01:26,660 --> 00:01:29,340
+ A Python variable is a symbolic name
+
+31
+00:01:29,340 --> 00:01:34,140
+ that is a pointer or reference to an object.
+
+32
+00:01:34,140 --> 00:01:36,020
+ You can kind of see why I didn't explain this
+
+33
+00:01:36,020 --> 00:01:37,420
+ in the very beginning.
+
+34
+00:01:37,420 --> 00:01:39,460
+ We actually can use the ID function
+
+35
+00:01:39,460 --> 00:01:43,420
+ to say, where is this variable pointing to?
+
+36
+00:01:43,420 --> 00:01:47,620
+ Now, not all Pythons-- this is the CPython, the Python that
+
+37
+00:01:47,620 --> 00:01:50,500
+ is written in C, the CPython.
+
+38
+00:01:50,500 --> 00:01:53,060
+ We can ask it, where is it?
+
+39
+00:01:53,060 --> 00:01:55,460
+ So if we say x equals 42 and then y equals x,
+
+40
+00:01:55,460 --> 00:01:58,460
+ you'd think that'd be two locations in memory.
+
+41
+00:01:58,460 --> 00:01:59,740
+ But it's not.
+
+42
+00:01:59,740 --> 00:02:02,620
+ It's two pointers to one location in memory.
+
+43
+00:02:02,620 --> 00:02:04,420
+ And we can figure this out by saying,
+
+44
+00:02:04,420 --> 00:02:07,540
+ print id of x, which is like, hey, where
+
+45
+00:02:07,540 --> 00:02:09,180
+ would we find x in memory?
+
+46
+00:02:09,180 --> 00:02:10,140
+ And it's got a number.
+
+47
+00:02:10,140 --> 00:02:15,300
+ And then we say, print id of y, and it's the same place.
+
+48
+00:02:15,300 --> 00:02:19,020
+ So we only have 142.
+
+49
+00:02:19,020 --> 00:02:20,620
+ We don't have two 42s.
+
+50
+00:02:20,620 --> 00:02:22,780
+ But we have an x pointer and a y pointer
+
+51
+00:02:22,780 --> 00:02:23,700
+ that points to it.
+
+52
+00:02:23,700 --> 00:02:29,500
+ So for example, we can say, take the object 300.
+
+53
+00:02:29,500 --> 00:02:31,180
+ It's an integer.
+
+54
+00:02:31,180 --> 00:02:33,140
+ We say x equals 300.
+
+55
+00:02:33,140 --> 00:02:36,020
+ The 300 exists somewhere.
+
+56
+00:02:36,020 --> 00:02:39,060
+ And x, when we say x equals 300, it
+
+57
+00:02:39,060 --> 00:02:41,820
+ points at that object that exists somewhere.
+
+58
+00:02:41,820 --> 00:02:44,060
+ And it has a location.
+
+59
+00:02:44,060 --> 00:02:47,260
+ And then what happens, if we say x equals 2,000,
+
+60
+00:02:47,260 --> 00:02:51,340
+ the 2,000 is a different object in a different location.
+
+61
+00:02:51,340 --> 00:02:54,420
+ And x then points to the 2,000.
+
+62
+00:02:54,420 --> 00:02:57,880
+ The old object, integer 300, may still be there.
+
+63
+00:02:57,880 --> 00:02:59,860
+ But it's on what we'd call a free list.
+
+64
+00:02:59,860 --> 00:03:01,260
+ Some might be on a free list.
+
+65
+00:03:01,260 --> 00:03:05,620
+ But the idea is that you're changing the pointer x
+
+66
+00:03:05,620 --> 00:03:08,940
+ to point to the integer 2,000, rather than changing
+
+67
+00:03:08,940 --> 00:03:12,260
+ the contents of a drawer labeled x to be 2,000.
+
+68
+00:03:12,260 --> 00:03:13,940
+ Again, if we say y equals x, you'll
+
+69
+00:03:13,940 --> 00:03:17,140
+ see that y does not make a copy of 2,000.
+
+70
+00:03:17,140 --> 00:03:22,060
+ It simply points to where the same 2,000 that x is pointing
+
+71
+00:03:22,060 --> 00:03:22,620
+ to.
+
+72
+00:03:22,620 --> 00:03:27,380
+ So y equals x says, take the address that x points to
+
+73
+00:03:27,380 --> 00:03:30,880
+ and put that address in y.
+
+74
+00:03:30,880 --> 00:03:34,940
+ Now, if we switch to more complex objects like a list,
+
+75
+00:03:34,940 --> 00:03:37,060
+ it makes a little more sense.
+
+76
+00:03:37,060 --> 00:03:39,980
+ x equals list says, let's make a list.
+
+77
+00:03:39,980 --> 00:03:42,200
+ And we can say, print ID of x.
+
+78
+00:03:42,200 --> 00:03:44,860
+ And that says, this is where it's at.
+
+79
+00:03:44,860 --> 00:03:47,140
+ And we can append hello to it.
+
+80
+00:03:47,140 --> 00:03:50,820
+ Now, the thing is, that didn't change where x was.
+
+81
+00:03:50,820 --> 00:03:53,220
+ But it did change what was in x.
+
+82
+00:03:53,220 --> 00:03:55,900
+ So x append hello adds hello to the end of my list.
+
+83
+00:03:55,900 --> 00:03:57,460
+ And I can say, where's x?
+
+84
+00:03:57,460 --> 00:03:58,540
+ Print ID of x.
+
+85
+00:03:58,540 --> 00:04:01,660
+ And it's in the same location.
+
+86
+00:04:01,660 --> 00:04:03,780
+ Now, if I make a copy--
+
+87
+00:04:03,780 --> 00:04:04,900
+ not exactly a copy.
+
+88
+00:04:04,900 --> 00:04:08,900
+ When I say y equals x, that makes a new y
+
+89
+00:04:08,900 --> 00:04:11,500
+ that points at the same place.
+
+90
+00:04:11,500 --> 00:04:16,740
+ And that's why, if we do an x.append world and print y,
+
+91
+00:04:16,740 --> 00:04:19,500
+ we see hello world, even though we appended to x.
+
+92
+00:04:19,500 --> 00:04:25,500
+ And that is because y and x are pointing to the same place.
+
+93
+00:04:25,500 --> 00:04:31,480
+ So y equals x is not copying, as we might expect in the drawer
+
+94
+00:04:31,480 --> 00:04:32,020
+ analogy.
+
+95
+00:04:32,020 --> 00:04:33,300
+ It's not copying it.
+
+96
+00:04:33,300 --> 00:04:35,340
+ It's just adding a new pointer.
+
+97
+00:04:35,340 --> 00:04:40,020
+ Now, sometimes you actually want to make
+
+98
+00:04:40,020 --> 00:04:41,300
+ a full copy of something.
+
+99
+00:04:41,300 --> 00:04:43,380
+ You got a list?
+
+100
+00:04:43,380 --> 00:04:45,340
+ You want an independent list.
+
+101
+00:04:45,340 --> 00:04:48,780
+ And so this is a pattern that we would call a copy constructor.
+
+102
+00:04:48,780 --> 00:04:50,780
+ There's other ways to describe this.
+
+103
+00:04:50,780 --> 00:04:53,780
+ We make a list, x equals list, print ID of x.
+
+104
+00:04:53,780 --> 00:04:54,940
+ It's at a location.
+
+105
+00:04:54,940 --> 00:04:56,220
+ We append hello to it.
+
+106
+00:04:56,220 --> 00:04:58,100
+ x is in the same place.
+
+107
+00:04:58,100 --> 00:05:03,020
+ Now, instead of saying y equals x, we say y equals list parenx.
+
+108
+00:05:03,020 --> 00:05:05,860
+ List is the constructor for lists.
+
+109
+00:05:05,860 --> 00:05:08,820
+ And that says, read through the list x
+
+110
+00:05:08,820 --> 00:05:11,960
+ and make full and independent copies of everything
+
+111
+00:05:11,960 --> 00:05:15,340
+ in that list and make a new list and have y point to that.
+
+112
+00:05:15,340 --> 00:05:16,940
+ That's what it's saying.
+
+113
+00:05:16,940 --> 00:05:19,940
+ So if we say, where is y, print ID of y,
+
+114
+00:05:19,940 --> 00:05:22,820
+ we see that the x is in one location
+
+115
+00:05:22,820 --> 00:05:25,940
+ and the y is a list that's in another location.
+
+116
+00:05:25,940 --> 00:05:29,780
+ And then if we add world to x and we print it,
+
+117
+00:05:29,780 --> 00:05:31,060
+ we see hello world.
+
+118
+00:05:31,060 --> 00:05:33,840
+ But y, because it's an independent copy stored
+
+119
+00:05:33,840 --> 00:05:38,340
+ at a different location, print y just says hello.
+
+120
+00:05:38,340 --> 00:05:41,500
+ So that is a copy constructor.
+
+121
+00:05:41,500 --> 00:05:46,060
+ So if you ask ChatGPT, what's a Python variable?
+
+122
+00:05:46,060 --> 00:05:47,700
+ ChatGPT is wrong.
+
+123
+00:05:47,700 --> 00:05:49,420
+ It is bought into the simplification.
+
+124
+00:05:49,420 --> 00:05:51,220
+ Now, if you dig in a little deeper,
+
+125
+00:05:51,220 --> 00:05:53,700
+ you can say, are you sure it's not a location,
+
+126
+00:05:53,700 --> 00:05:56,060
+ but it really a pointer to a location?
+
+127
+00:05:56,060 --> 00:05:58,060
+ Blah, blah, blah, blah, blah, blah, blah, blah.
+
+128
+00:05:58,060 --> 00:06:01,840
+ But perhaps it's because so many textbooks like mine
+
+129
+00:06:01,840 --> 00:06:05,340
+ start in the beginning with that grand oversimplification.
+
+130
+00:06:05,340 --> 00:06:09,700
+ Now, I'm very, very sorry to have misled you back
+
+131
+00:06:09,700 --> 00:06:11,500
+ in Python for everybody.
+
+132
+00:06:11,500 --> 00:06:15,540
+ But the notion of a variable being a drawer is not wrong.
+
+133
+00:06:15,540 --> 00:06:17,860
+ It's just wrong in Python.
+
+134
+00:06:17,860 --> 00:06:21,920
+ Things like languages like C or Fortran or COBOL,
+
+135
+00:06:21,920 --> 00:06:24,000
+ they tend to have this drawer model
+
+136
+00:06:24,000 --> 00:06:26,260
+ where the variable x is one drawer
+
+137
+00:06:26,260 --> 00:06:27,820
+ and the variable y is another drawer
+
+138
+00:06:27,820 --> 00:06:29,420
+ and they have independent things.
+
+139
+00:06:29,420 --> 00:06:32,720
+ When you get around to it, when you learn C,
+
+140
+00:06:32,720 --> 00:06:35,780
+ and I recommend my C programming for everybody course,
+
+141
+00:06:35,780 --> 00:06:40,700
+ www.ccfree.com, in chapters five and six of that,
+
+142
+00:06:40,700 --> 00:06:43,740
+ you learn about pointers and data.
+
+143
+00:06:43,740 --> 00:06:46,780
+ And the difference, the key here is that Python
+
+144
+00:06:46,780 --> 00:06:48,180
+ was written in C.
+
+145
+00:06:48,180 --> 00:06:52,860
+ In the internal implementation of Python, it's C code.
+
+146
+00:06:52,860 --> 00:06:55,140
+ And so the notion of a pointer and the data
+
+147
+00:06:55,140 --> 00:06:58,700
+ that the pointer points to is completely natural in C.
+
+148
+00:06:58,700 --> 00:07:00,980
+ It's just been sort of hidden for us.
+
+149
+00:07:00,980 --> 00:07:04,020
+ We can take a look at it using the ID function
+
+150
+00:07:04,020 --> 00:07:06,060
+ and get a sense of how variables
+
+151
+00:07:06,060 --> 00:07:08,500
+ and assignment statements really work.
+
+152
+00:07:08,500 --> 00:07:11,480
+ So again, sorry to have misled you.
+
+153
+00:07:11,480 --> 00:07:14,020
+ I guess it's better late than never for me to talk to you
+
+154
+00:07:14,020 --> 00:07:17,380
+ about the real way that assignment statements work
+
+155
+00:07:17,380 --> 00:07:18,340
+ in Python.
+
+156
+00:07:18,340 --> 00:07:19,180
+ Cheers.
+
+157
+00:07:19,180 --> 00:07:21,760
+ (upbeat music)
+

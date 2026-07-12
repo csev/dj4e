@@ -1,0 +1,284 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.240
+ Hello and welcome to our lecture on HTML, the hypertext markup language.
+
+00:00:05.240 --> 00:00:08.880
+ So we're gonna place this in the context of our request-response cycle and
+
+00:00:08.880 --> 00:00:12.240
+ sort of here's us in the request-response cycle in our browser and
+
+00:00:12.240 --> 00:00:13.360
+ what we're seeing.
+
+00:00:13.360 --> 00:00:15.960
+ We make a click, it goes across the network to the web server,
+
+00:00:15.960 --> 00:00:19.680
+ runs some code, maybe talks to a database, formats up some new stuff and
+
+00:00:19.680 --> 00:00:25.200
+ we get the response, then HTML comes out and then that's parsed to make the DOM.
+
+00:00:25.200 --> 00:00:28.400
+ And what we see is the document object model.
+
+00:00:28.400 --> 00:00:32.080
+ And we're gonna ignore most of that in this lecture.
+
+00:00:32.080 --> 00:00:34.640
+ We are really only gonna talk about this part here and
+
+00:00:34.640 --> 00:00:36.400
+ that is what this response is.
+
+00:00:36.400 --> 00:00:40.240
+ It's HTML and it is parsed and it's read through and
+
+00:00:40.240 --> 00:00:45.200
+ it's used to construct the document object model which then shows what we see.
+
+00:00:45.200 --> 00:00:51.360
+ And so HTML is just a technique of using some special characters,
+
+00:00:51.360 --> 00:00:55.840
+ less than and greater than, to add tags to indicate what we wanna see.
+
+00:00:55.840 --> 00:01:02.000
+ Like the paragraph tag, the paragraph tag, that's a paragraph tag.
+
+00:01:02.000 --> 00:01:06.680
+ Strong tag makes things bold, emphasize tag and a paragraph tag.
+
+00:01:06.680 --> 00:01:11.200
+ And so we have these tags and we just mark up, we're communicating meaning.
+
+00:01:11.200 --> 00:01:15.640
+ If you're old enough to remember what word processors used to have ways to look
+
+00:01:15.640 --> 00:01:20.240
+ at the actual codes that were being stored in the word processor file.
+
+00:01:20.240 --> 00:01:24.620
+ So the web is, the HTML and hypertext transport protocol and
+
+00:01:24.620 --> 00:01:27.500
+ all that stuff is a relatively recent invention.
+
+00:01:27.500 --> 00:01:31.800
+ And we're doing so many cool things with it, it's continuously evolving.
+
+00:01:31.800 --> 00:01:36.880
+ And really, we're less than 20 years old and so
+
+00:01:36.880 --> 00:01:40.480
+ we're doing so much with it, it's continuously evolving.
+
+00:01:40.480 --> 00:01:44.760
+ So HTML and CSS are really kind of at the edge.
+
+00:01:44.760 --> 00:01:46.760
+ Looking back in the early days,
+
+00:01:46.760 --> 00:01:50.160
+ if we take a look at what HTML was really intended to do,
+
+00:01:50.160 --> 00:01:53.520
+ it worked on a next computer in the early 1990s.
+
+00:01:53.520 --> 00:01:58.240
+ And so this is the next browser, which came from CERN, and
+
+00:01:58.240 --> 00:02:02.880
+ it had everything in a new window, images were not shown in line.
+
+00:02:02.880 --> 00:02:05.480
+ And then there was the NCSA mosaic browser,
+
+00:02:05.480 --> 00:02:09.840
+ which was the first browser that was universally available on Unix,
+
+00:02:09.840 --> 00:02:11.720
+ Windows and Macintosh.
+
+00:02:11.720 --> 00:02:16.680
+ And you see things like gray background and blue links and
+
+00:02:16.680 --> 00:02:19.800
+ highlighted links that you visited in purple.
+
+00:02:19.800 --> 00:02:24.500
+ And so in the early days, it was nothing like what we see today.
+
+00:02:24.500 --> 00:02:28.400
+ In the early days, we were just amazed and happy that we could see a link and
+
+00:02:28.400 --> 00:02:30.800
+ you'd click a link and something would happen.
+
+00:02:30.800 --> 00:02:36.020
+ But today, money is to be made based on making stuff super beautiful and
+
+00:02:36.020 --> 00:02:39.880
+ the number of pixels and how things line up and how things are shoved over and
+
+00:02:39.880 --> 00:02:41.360
+ how navigation looks.
+
+00:02:41.360 --> 00:02:46.480
+ And so today, we need to create beautiful web pages, whereas in the old days,
+
+00:02:46.480 --> 00:02:50.480
+ we were just amazed to have web pages that worked in the first place.
+
+00:02:50.480 --> 00:02:52.480
+ And of course, computers have gotten much faster,
+
+00:02:52.480 --> 00:02:55.160
+ capable of handling video and images.
+
+00:02:55.160 --> 00:02:59.100
+ Back in the old days, images were costly, both for network bandwidth and
+
+00:02:59.100 --> 00:03:01.120
+ for the time it took your computer to display them.
+
+00:03:01.120 --> 00:03:04.040
+ And so that just affected how we did it.
+
+00:03:04.040 --> 00:03:06.040
+ And it's kind of fun to use the Wayback Machine,
+
+00:03:06.040 --> 00:03:09.000
+ otherwise known as the Internet Archive, to go back and
+
+00:03:09.000 --> 00:03:13.840
+ look at some of these older web pages and realize that it's still amazing that a lot
+
+00:03:13.840 --> 00:03:15.880
+ of them pretty much work.
+
+00:03:15.880 --> 00:03:21.040
+ And in the good old days, HTML was kind of a wild west.
+
+00:03:21.040 --> 00:03:26.000
+ The browsers did not want to show broken HTML as broken HTML.
+
+00:03:26.000 --> 00:03:28.240
+ And so they compensated for it.
+
+00:03:28.240 --> 00:03:32.920
+ And so in the old days, we had things like tags that could be uppercase.
+
+00:03:32.920 --> 00:03:35.760
+ We would have a paragraph tag that didn't finish.
+
+00:03:35.760 --> 00:03:39.600
+ We would have li tags that didn't finish.
+
+00:03:39.600 --> 00:03:43.200
+ We would have attributes that didn't even have double quotes in them.
+
+00:03:43.200 --> 00:03:44.680
+ So there was all kinds of stuff.
+
+00:03:44.680 --> 00:03:47.520
+ And literally, you could take this bad page, and
+
+00:03:47.520 --> 00:03:50.680
+ you could put it into a web browser, and it will still display.
+
+00:03:50.680 --> 00:03:54.400
+ So HTML wallet technically is a very precise language, and
+
+00:03:54.400 --> 00:03:56.080
+ you can make syntax errors.
+
+00:03:56.080 --> 00:03:59.800
+ Browsers are extremely flexible in terms of parsing it.
+
+00:03:59.800 --> 00:04:02.080
+ Now, you're not gonna get predictable results,
+
+00:04:02.080 --> 00:04:04.120
+ like browsers can go into what's called quirks mode.
+
+00:04:04.120 --> 00:04:09.400
+ And so in order to create the standards environment that we have today,
+
+00:04:09.400 --> 00:04:13.400
+ Tim Berners-Lee, one of the original founders of the World Wide Web,
+
+00:04:13.400 --> 00:04:17.840
+ helped found an organization called the World Wide Web Consortium, or the W3C.
+
+00:04:17.840 --> 00:04:21.560
+ And it really decided that instead of just letting people write a browser and
+
+00:04:21.560 --> 00:04:25.400
+ having HTML be defined by the browser, instead they would write a spec for
+
+00:04:25.400 --> 00:04:29.960
+ what HTML was, and then multiple vendors could produce the browsers.
+
+00:04:29.960 --> 00:04:34.800
+ And it took a while for this to become successful, but
+
+00:04:34.800 --> 00:04:38.160
+ there was a need for every vendor to build a web browser.
+
+00:04:38.160 --> 00:04:40.720
+ And so they worked with the World Wide Web Consortium.
+
+00:04:40.720 --> 00:04:47.000
+ And like the mid and late 90s, '95, '96, well, '94 through '98, '99,
+
+00:04:47.000 --> 00:04:50.960
+ the World Wide Web Consortium created a lot of wonderful standards around
+
+00:04:50.960 --> 00:04:51.720
+ the World Wide Web.
+
+00:04:51.720 --> 00:04:58.720
+ Now, once we started having rules, then we tend to want to follow those rules.
+
+00:04:58.720 --> 00:05:02.000
+ And so tags need to be lowercase.
+
+00:05:02.000 --> 00:05:06.240
+ Attributes like this image source equals have to have double quotes around them.
+
+00:05:06.240 --> 00:05:10.320
+ You have to have open tags and closed tags, open tags and closed tags.
+
+00:05:10.320 --> 00:05:14.600
+ And so there's a set of rules, and now we are much more precise about our HTML.
+
+00:05:14.600 --> 00:05:19.480
+ And we try to write it as precise as we can so that we get the best performance and
+
+00:05:19.480 --> 00:05:23.400
+ the best sort of rendering out of the browsers that we can possibly get.
+
+00:05:23.400 --> 00:05:26.400
+ Because if you don't write precise HTML,
+
+00:05:26.400 --> 00:05:29.400
+ then the browsers are gonna make decisions as to how to render things.
+
+00:05:29.400 --> 00:05:31.600
+ Whereas if you write precise HTML,
+
+00:05:31.600 --> 00:05:35.440
+ then you really are in control of how the browser lays things out.
+
+00:05:35.440 --> 00:05:39.840
+ So up next, we're gonna talk about HTML itself, look at some HTML documents.
+
+00:05:39.840 --> 00:05:42.480
+ And take a look at the syntax of HTML.
+
+00:05:42.480 --> 00:05:52.480
+ [MUSIC]
+

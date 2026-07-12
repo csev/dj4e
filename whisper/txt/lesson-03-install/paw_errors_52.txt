@@ -1,0 +1,215 @@
+ Hello, and welcome to my virtual office hours where I try to help you work through various kinds of Django, broken Django applications that you're running on Python Anywhere as part of my Django for everybody effort.
+ So there's two basic errors that you run into, and you run into them because you're coding along in your thing, you save a file, you hit the reload button, and then something's not working the way you expect it.
+ The sort of most frustrating thing is the startup failure, and this is where you see the something went wrong when you navigate to your application on Python Anywhere.
+ What this really said is we're trying to get your application started, and we have failed in doing that, and we don't know what to do.
+ We can't show your application because it doesn't run. Your application is so broken that Python Anywhere can't even start it.
+ So you can start an application, and if you start it, you can still have bugs or problems in your application, and those are these yellow screens, the trace back, and you'll get used to learning these yellow screens.
+ Some of them are easier to solve than others, and sometimes the answer is right there in front of you, like it is in this one that says, hey, line 6 and views.py is wrong, and it tells you what's wrong, that HTTPS response is not defined.
+ And then sort of other times you've got to scroll up and down, and you've got to pass tracebacks and ignore this stuff and kind of read between the lines. It's part of programming, these things called tracebacks, especially when you're using a library like Django.
+ There's a bunch of library code that it's deep in a light piece of library code using something you've given it, and it blows up, and you kind of got to figure out where it is that your part starts and their part ends, and it's a little bit tricky.
+ So we'll do a couple of these things. So let's start with startup failure. So let's go ahead and take a look at my application. This is the application, so while students are running this at this exact moment, they're a little confused because my sample application is currently broken.
+ Here we are, my sample Django tutorial pulls application. Hit refresh, and it says something went wrong. Now, it says if this is your site, you should check the logs to determine what the problem is.
+ Now, that's not the easy way, that's the hard way. I would say if it's your site, you should check your logs or run, go into your folder and run python managepy check to see what the problem is.
+ So, usually this happens when you press the reload button. You can press the reload button either in your files, when you're editing a file and you hit the reload button in the file, that's the fast way.
+ But this reload, now the key thing is, is that your application when it's running is sitting on one of the Python Anywhere servers ready to receive requests.
+ And when you make a change, you want your changes to reflect in that application, so you reload it. Now see this spinny thing? There's actually a lot of things that are going on when that spinny thing has happened.
+ So, I'll just show you some of the things. This web page is configuring the interface between your application and Python Anywhere.
+ And you should never need to change this, but I'll just point out some of the things that are happening as you're starting.
+ So first, to start your application, it changes into your source code folder, because that's where manage.py is, that's where views.py is, that's where all your stuff is at.
+ And then it changes into the working directory, and the key to that directory is that's where your like db.sqlite file is, and all you need to do is to get these right.
+ The other thing that's important, and I wish this was in slightly different order, is the virtual environment.
+ Now, right now, we're working with Django 2.4.2, and so you have to know this. The very first assignment goes through in great detail how to set this up.
+ You shouldn't have to change it. It might have some error saying, oh, that's not there or something. And in each of these, you've got to put your own name in this.
+ Right, djfree is my account name. And then once it goes into the virtual environment, it runs this WSGI configuration file.
+ This is the equivalent of python manage.py run server. That's the command you're never supposed to run in the command line.
+ I'll go ahead and run it in the command line, and you'll see what happens. And again, we set this up in the very first assignment, and you shouldn't have to change it.
+ So if you made a few changes to your code inside your application, and it's blowing up, you generally don't suspect any of this.
+ You suspect that it's the code in your application, because this web app setup is outside your application, guiding Python Anywhere to get things started.
+ Now, once Python Anywhere is starting in your application, it is starting in your settings.py.
+ So the next thing that runs as it attempts to start is settings.py. And then it runs urls.py.
+ And you see mine are a little more complex than yours and has different versions in it, because I've been building all this stuff for a long time.
+ And then within settings.py, you have these installed applications, and then that tells it to go through each of the folders here and fire those up.
+ So you can have a mistake in your polls application, right?
+ And so that's what's going on. And if at the end of, you know, if somehow in the middle of settings.py it's failing, right?
+ If it doesn't, if it gets through here okay, and you don't have errors in your code, that's so bad, it runs.
+ It doesn't mean you have no bugs, it just means that you don't get the "something went wrong" error.
+ So it has to have made it through the end of settings.py and through the end of like your urls.py polls.
+ It's going to load views, it's going to load urls, it's going to load models, admin, and apps.
+ You can make a typo in any one of these things that is fatal to the startup.
+ And so the key thing is, wow, that's a lot to look at.
+ And so we got to save ourselves, and all we know is that something went wrong.
+ So what I tell you is to go into consoles and create a bash console.
+ You can, if you end up with extra consoles, you can just wipe them out, you're only allowed to have two.
+ So I'm going to start a bash console.
+ Now every time you start a bash console, you've got a few things that you just got to check over and over and over again.
+ First is, here comes, here comes, there we go.
+ First is, are you in the correct virtual environment?
+ And again, depending on the course, when you're taking the course, this may change.
+ But the virtual environment sets the Python version, the Django version, and all of the dependencies.
+ Now that was set up in the very first assignment.
+ And also in the very first assignment, it sets you up to automatically go into that.
+ Now you can do things like Python minus minus version to see what version you're at.
+ So the virtual environment.
+ Now the interesting thing is that virtual environment is matched here.
+ That Django 4.2 is the name of your virtual environment.
+ So it's important that this string match this string.
+ Then the other thing that you see in this bash prompt is the tilt, which means home directory.
+ So if I do pwd, you see that I'm in home dj4e.
+ So this is where you have to type over and over and over again, tilt slash Django.
+ And we set this all up in the very first Django projects my site.
+ And so then that's where, so if you look at pwd now, you see it's in home dj4e Django projects my site.
+ Well, if you look at web, it's matching.
+ So that's where all your source code is.
+ That's where your working directory is.
+ So if I go into here and I do ls minus l, you see that my dbsqlite is here.
+ So web app setup, right?
+ Working directory says that's, it should say the working directory where you will read my SQLite.
+ Now, again, you shouldn't suspect this.
+ You just probably made a change in one of your other files.
+ So the short answer is you get to something went wrong.
+ You're going to get bash console.
+ You change directory into Django projects my site.
+ And then you type python.
+ So you'll notice manage.py is in this folder.
+ Manage py check.
+ So what manage.py check is doing is it's literally going through the exact same set of steps of reload django tutorial.gjfree.com.
+ It's you're already in the folder.
+ You're seeing the settings.py.
+ So this is loading the settings.
+ This is if I go in here, right, go back.
+ Check is inside your application, loading settings, loading URLs.
+ And then based on settings, it is then loading all of the applications that are listed in settings.
+ If you have a folder here and there's no application listed for it in settings, models.py won't load, et cetera.
+ OK, so python manage py check loads and parses and looks for errors in all that python code.
+ Now, what we see here is it's blowing up and that's good.
+ Python anywhere can't start us and I can't start it manually because as it's loading things up, as it's going through all those files, it's blowing up.
+ Now, here it's a trace back and I apologize for how hard these trace backs are to read.
+ But there's some patterns to look at.
+ Right.
+ This is that's a Django library file.
+ You probably can ignore most of the stuff.
+ It's Django.
+ It's Django.
+ And like, OK, now here we go.
+ We are running the import of URLs.py and my site, my site.
+ That's fine.
+ That doesn't mean this is necessarily broken.
+ Right. Because it's in the middle of importing that.
+ And now it's trying to import the views.py, import the URLs from my polls, import the views from my polls.
+ And now at the very end, this is like chances are good.
+ This is what's really wrong.
+ So it says line one in module polls views.py.
+ There is this is the line of code and it says no module name Django HTTPS.
+ So like, oh, OK, let's go in there.
+ So let's go into polls views.py.
+ And I must have pasted this wrong.
+ So it's not really Django HTTP.
+ It's Django HTTPS.
+ So now I save it.
+ Now, a lot of you will be tempted to just hit the reload here and then go test it again.
+ Right. And that's not a bad thing.
+ But the way I like to do it is I like to run the check again.
+ And then when the check works, then I feel really confident because sometimes you've made more than one mistake.
+ So it's really quick to run check, edit a file, save it, run check, edit a file, save it.
+ And when you get to the point where check is happy, then you can go and reload your entire application.
+ So now it's running and running and running and reloading that application.
+ Basically configs, settings, pie, URLs, et cetera.
+ So now I go back here and I hit refresh and it works.
+ And so I'm fine.
+ So there is one other place.
+ So I'm going to go back and make that mistake again.
+ I just put that mistake back in, save it and then reload it.
+ So sometimes it's just like one in 20.
+ There's something so subtle that Python ManagePy checks.
+ This one ManagePy would check.
+ But if you get to the point where you're still getting the error, there is a place that you can look at.
+ So there are two logs that we can find interesting.
+ So I'm going to start by looking at the error log.
+ And the key to the error log is these are anything that's gone wrong.
+ But for a very long time, there's all kinds of things that are going wrong in this application.
+ So this is in sort of chronological order.
+ So you've got to go to the bottom to see the most recent one.
+ And so what you'll notice is that what we're seeing in this error log is exactly the same output that we saw here.
+ And it's just less convenient.
+ And so what are we complaining about?
+ Line one, it tells us that's the problem.
+ It's in that file, which we already saw that.
+ And so we've got all these exceptions. There we go.
+ So that's a little bit different order.
+ It's showing the things that are wrong.
+ So now let me go ahead and fix it and reload it.
+ Fix it. Reload it. Save it. Reload it.
+ OK. So that's our first walkthrough of a startup failure.
+ So now we're going to make another mistake and then we're going to blow it up.
+ OK. And to see a trace back screen.
+ So now I've made a different mistake.
+ A mistake that is a trace back error.
+ OK. So let's go back and take a look at the status of our application.
+ And now miraculously, it comes up.
+ Right. So the previous error was it just won't start.
+ But now it won't start and it's got a bug in your code.
+ What's nice about that is when you're seeing one of these yellow trace back screens,
+ it means pretty much everything that's on this web page worked flawlessly.
+ And it got to your application.
+ It got to your files.
+ It got through your settings and your URLs.
+ Doesn't mean there's not bugs in them.
+ OK. But it means that it's running code.
+ And as it's running code, something is failing.
+ So it's not failing during loading.
+ It's failing because it's executing a request.
+ So now it's making it into my view.
+ And so these are called trace backs.
+ And there are sometimes quite a bit of information.
+ It tries as hard as it can for the simplest ones to summarize here in this yellow part what's going on.
+ And I made a really simple error.
+ OK. And so it's right here.
+ But sometimes you've got to look down here and you've got to find your way.
+ And sometimes these trace backs are a lot longer.
+ But eventually you kind of work your way through the errors.
+ These aren't really errors in Django.
+ These are places where the error is happening in Django.
+ And eventually you find the variable that are the line that's causing your problem.
+ So then you go like, oh, OK, cool.
+ I'm going to go edit that views.py in polls, right?
+ My site, polls, views.py.
+ And it's line six.
+ Now, before I fix this, you'll notice that there are these little yellow triangles.
+ And these little yellow triangles are from your text editor.
+ And they're kind of pre-parsing this and looking for errors.
+ And it's found two errors in what we're doing.
+ The first error is I took this import HTTP response, which is from the sample code.
+ And I import, it says it's imported but not used.
+ And then if we go on line six, it says there is no name HTTPS response.
+ Well, that's because I put this S in just to mess it up.
+ But here's the thing.
+ These files all loaded.
+ But in the code when it executes is when this is getting so.
+ Everything worked, right?
+ The urls.py found its way.
+ The views loaded.
+ They had few enough problems that they loaded.
+ It made it through here, loading, and it made it through views.py.
+ If you look at the previous one, it didn't load.
+ I just changed one thing here.
+ And it made it all the way to my application before it blew up.
+ Now it's running the application where I have to do a request.
+ Blowing up with the something went wrong before you even send it a request, it's already broken.
+ So I'm going to just fix this.
+ So you'll notice that when I hit the save button, all the little upside down arrows, the little yellow triangles go away.
+ So that's a good sign.
+ Not a guarantee.
+ But it's trying to help you avoid mistakes.
+ Sometimes you're cutting and pasting things in here.
+ You've cut and pasted something twice, et cetera, et cetera, et cetera.
+ And hit reload on this.
+ And there it works.
+ That basically is the kinds of things when you see a traceback.
+ There are all kinds of things that can go wrong with a traceback.
+ You can have a missing template file.
+ You can have a syntax error in a template file.
+ You can have an include that wasn't included the right way.
+ Your database migrations may not have been.
+ And you just kind of got to read all this stuff at the top and get used to it.
+ And so I hope that this has been helpful and helps you to be able to debug some of your applications.
+ Cheers.

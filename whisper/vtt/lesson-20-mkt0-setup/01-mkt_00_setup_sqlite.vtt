@@ -1,0 +1,428 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+ Hello and welcome to yet another walk-through for Django for Everybody.
+
+00:00:05.000 --> 00:00:12.000
+ This is a walk-through of the first lesson where we start working on the Marketplace assignment.
+
+00:00:12.000 --> 00:00:14.000
+ So there is the Marketplace setup.
+
+00:00:14.000 --> 00:00:19.000
+ And so this is something you do before you start working on Marketplace.
+
+00:00:19.000 --> 00:00:23.000
+ We're going to start this using a GitHub, which is a little bit different.
+
+00:00:23.000 --> 00:00:26.000
+ It makes it sort of easier and then a little bit different.
+
+00:00:26.000 --> 00:00:32.000
+ So we go to the assignment specification and then it says we're going to build this.
+
+00:00:32.000 --> 00:00:37.000
+ The whole Marketplace website has got ads and tags.
+
+00:00:37.000 --> 00:00:39.000
+ And by the time you're all done, you'll have many, many features.
+
+00:00:39.000 --> 00:00:41.000
+ But we're just going to get it started now.
+
+00:00:41.000 --> 00:00:43.000
+ And there is a GitHub repo.
+
+00:00:43.000 --> 00:00:50.000
+ So instead of having you type a bunch of stuff, I've given you kind of an empty application in GitHub.
+
+00:00:50.000 --> 00:00:56.000
+ And so you are going to follow the instructions on GitHub, which is common.
+
+00:00:56.000 --> 00:00:57.000
+ You'll find Django projects.
+
+00:00:57.000 --> 00:00:58.000
+ There's a readme here.
+
+00:00:58.000 --> 00:01:00.000
+ So this is my Marketplace.
+
+00:01:00.000 --> 00:01:02.000
+ And so this is the starter.
+
+00:01:02.000 --> 00:01:04.000
+ So these instructions are how to do it.
+
+00:01:04.000 --> 00:01:13.000
+ So we're going to start by going to Python Anywhere.
+
+00:01:13.000 --> 00:01:19.000
+ Okay, so if we look at our files here, we have Django projects, which is where we're going to install it.
+
+00:01:19.000 --> 00:01:24.000
+ My site, that's the thing that you've been using to do all the applications up to this point.
+
+00:01:24.000 --> 00:01:28.000
+ And so we're going to create a new Django project.
+
+00:01:28.000 --> 00:01:30.000
+ So the first Django project is my site.
+
+00:01:30.000 --> 00:01:34.000
+ And the next Django project is going to be called Market.
+
+00:01:34.000 --> 00:01:40.000
+ Okay, so let's go into consoles and start up.
+
+00:01:40.000 --> 00:01:41.000
+ Let's get rid of that one.
+
+00:01:41.000 --> 00:01:46.000
+ Start a fresh bash console.
+
+00:01:46.000 --> 00:01:52.000
+ So the instructions here are in this GitHub repository.
+
+00:01:52.000 --> 00:01:59.000
+ Okay, so the first thing to do is check to see if you already have a Django 5.2 virtual environment.
+
+00:01:59.000 --> 00:02:02.000
+ CD Tilt.
+
+00:02:02.000 --> 00:02:05.000
+ Now, the fact that it says VE 5.2, that should be a clue right there.
+
+00:02:05.000 --> 00:02:07.000
+ But we'll do it anyways.
+
+00:02:07.000 --> 00:02:13.000
+ And you'll see that we're going to, this is the folder in your home directory, Tilt slash dot VE 5.2.
+
+00:02:13.000 --> 00:02:15.000
+ And there's stuff there.
+
+00:02:15.000 --> 00:02:22.000
+ And if you look at the instructions, it says, oh, if the output looks like this, which it does, then you've got one.
+
+00:02:22.000 --> 00:02:25.000
+ Okay, great, great.
+
+00:02:25.000 --> 00:02:29.000
+ This is, you can ignore this now because you don't have to do any of this stuff.
+
+00:02:29.000 --> 00:02:33.000
+ And then once you're ready to go, we're going to do the install.
+
+00:02:33.000 --> 00:02:37.000
+ So we've got to be in our home directory.
+
+00:02:37.000 --> 00:02:41.000
+ And we need to be in the 5.2 virtual environment.
+
+00:02:41.000 --> 00:02:44.000
+ Okay, so then we're going to start running these commands one at a time.
+
+00:02:44.000 --> 00:02:47.000
+ And I like using this little clock check all thing.
+
+00:02:47.000 --> 00:02:53.000
+ It gets kind of, you want to look at the output of every one of these things.
+
+00:02:53.000 --> 00:02:55.000
+ So this is the get command.
+
+00:02:55.000 --> 00:03:00.000
+ And the get should already be installed on, so we're in Django projects.
+
+00:03:00.000 --> 00:03:07.000
+ Now, if we take a look at our files, hit reload here, you will see now that now there's a market.
+
+00:03:07.000 --> 00:03:14.000
+ And there's a bunch of stuff in market, and it's kind of similar to what we had in my site.
+
+00:03:14.000 --> 00:03:15.000
+ You know, it sets up a bunch of stuff.
+
+00:03:15.000 --> 00:03:19.000
+ There's a manage.py and a home file config.
+
+00:03:19.000 --> 00:03:24.000
+ Now, the key thing here, if you take a look, well, let's just, let's follow it.
+
+00:03:24.000 --> 00:03:27.000
+ CD market.
+
+00:03:27.000 --> 00:03:32.000
+ So now we're in that, we're in a home directory Django projects market.
+
+00:03:32.000 --> 00:03:37.000
+ And we'll check our Python version.
+
+00:03:37.000 --> 00:03:42.000
+ And the Python version is 3.13, which is perfectly fine, because that's in our virtual environment.
+
+00:03:42.000 --> 00:03:48.000
+ Now, if you just, you may, these may not do much if you've already got your latest pip.
+
+00:03:48.000 --> 00:03:50.000
+ And it'll probably say, ah, you're already good.
+
+00:03:50.000 --> 00:03:51.000
+ You got the latest pip.
+
+00:03:51.000 --> 00:03:55.000
+ And let's do pip minus install our requirements.txt.
+
+00:03:55.000 --> 00:03:58.000
+ And I might look at that and say, you've already got it, because you've already got a virtual environment.
+
+00:03:58.000 --> 00:04:00.000
+ This is just adding a bunch of stuff.
+
+00:04:00.000 --> 00:04:06.000
+ So you just said, it's great, you got everything you needed from when you installed the DJ free samples before.
+
+00:04:06.000 --> 00:04:10.000
+ And let's just for double checking, check to see if we got Django.
+
+00:04:10.000 --> 00:04:12.000
+ And here we are in a virtual environment, we got Django 5.2.
+
+00:04:12.000 --> 00:04:15.000
+ So we are in good shape, right?
+
+00:04:15.000 --> 00:04:20.000
+ So depending on what you see, you may need to do more or less of this.
+
+00:04:20.000 --> 00:04:27.000
+ So now, you'll notice, as I said before, there is no market market.
+
+00:04:27.000 --> 00:04:31.000
+ There's a file, I changed the name of this to config, and you can file the patterns here.
+
+00:04:31.000 --> 00:04:34.000
+ So settings.py is in market config.
+
+00:04:34.000 --> 00:04:38.000
+ A lot of developers don't like the market market pattern.
+
+00:04:38.000 --> 00:04:43.000
+ I want to change the name of the project folder and the project configuration folder to be two different things.
+
+00:04:43.000 --> 00:04:48.000
+ So I followed that pattern here just to give you a little different way of thinking about it, okay?
+
+00:04:48.000 --> 00:04:59.000
+ And so we'll be in our home directory, I mean our project directory, and do python managepy check in the market directory.
+
+00:04:59.000 --> 00:05:01.000
+ And that's good.
+
+00:05:01.000 --> 00:05:05.000
+ If you have problems, you should, something went wrong.
+
+00:05:05.000 --> 00:05:07.000
+ And so it worked okay.
+
+00:05:07.000 --> 00:05:11.000
+ So we've already installed the application, and I put everything in there that you need.
+
+00:05:11.000 --> 00:05:17.000
+ Now there's a few things that you're going to have to do.
+
+00:05:17.000 --> 00:05:21.000
+ And again, in all these things, if you get an error, slow down.
+
+00:05:21.000 --> 00:05:26.000
+ So now we're going to, we're already in this folder, but we'll type it again.
+
+00:05:26.000 --> 00:05:29.000
+ So we're in our Django projects market.
+
+00:05:29.000 --> 00:05:32.000
+ And then we're going to make migrations.
+
+00:05:32.000 --> 00:05:36.000
+ Chances are good this will not give us any output.
+
+00:05:36.000 --> 00:05:38.000
+ Oops.
+
+00:05:38.000 --> 00:05:40.000
+ Yeah, no changes. That's okay.
+
+00:05:40.000 --> 00:05:45.000
+ Because that make migrations, as by now I hope you know, doesn't really touch the database.
+
+00:05:45.000 --> 00:05:48.000
+ It just looks at the models.py files.
+
+00:05:48.000 --> 00:05:52.000
+ And now we're going to do a python managepy migrate.
+
+00:05:52.000 --> 00:05:55.000
+ And so this is actually, now this is really important.
+
+00:05:55.000 --> 00:05:58.000
+ And then I'm going to create a super user.
+
+00:05:58.000 --> 00:06:04.000
+ Now you might have created a super user before, but we just changed a database and made it all fresh again.
+
+00:06:04.000 --> 00:06:10.000
+ So I'm going to call a super user, and I'm going to call it admin.
+
+00:06:10.000 --> 00:06:25.000
+ And I'm not going to give it an email address.
+
+00:06:25.000 --> 00:06:33.000
+ Yeah, I had to write that down so I don't forget it and then I have to reset it.
+
+00:06:33.000 --> 00:06:36.000
+ Okay, so we had to create a super user.
+
+00:06:36.000 --> 00:06:44.000
+ Now what we're going to do is go to the web tab and switch.
+
+00:06:44.000 --> 00:06:47.000
+ So remember this is the run server.
+
+00:06:47.000 --> 00:06:49.000
+ And so you've got a couple things here.
+
+00:06:49.000 --> 00:06:50.000
+ So we're going to change this.
+
+00:06:50.000 --> 00:06:56.000
+ Everything should be the same, except we're just going to make this be market.
+
+00:06:56.000 --> 00:07:01.000
+ And you can have many applications in here, but you only can have one active at the same time.
+
+00:07:01.000 --> 00:07:05.000
+ So you can actually switch back and forth.
+
+00:07:05.000 --> 00:07:08.000
+ So I make that be market.
+
+00:07:08.000 --> 00:07:10.000
+ And the virtual environment is right.
+
+00:07:10.000 --> 00:07:13.000
+ And then if we look at our instructions.
+
+00:07:13.000 --> 00:07:17.000
+ So it said source code and working directory, fix that.
+
+00:07:17.000 --> 00:07:20.000
+ And then we're going to edit this stuff.
+
+00:07:20.000 --> 00:07:24.000
+ This is in the WSGI configuration file.
+
+00:07:24.000 --> 00:07:26.000
+ And again, this goes into my site.
+
+00:07:26.000 --> 00:07:28.000
+ You can kind of guess what this is.
+
+00:07:28.000 --> 00:07:31.000
+ It's going to change this word my site to my site and this to config.
+
+00:07:31.000 --> 00:07:33.000
+ But I'm just going to paste them in and it will do all that.
+
+00:07:33.000 --> 00:07:36.000
+ So we're going in the market, folders the market.
+
+00:07:36.000 --> 00:07:41.000
+ But config, that's that new settings.py is in a folder named config now.
+
+00:07:41.000 --> 00:07:44.000
+ And so that's why it says config settings.
+
+00:07:44.000 --> 00:07:50.000
+ You can switch back and forth between market and my site if you want.
+
+00:07:50.000 --> 00:07:53.000
+ So let's go back to the web tab now.
+
+00:07:53.000 --> 00:07:54.000
+ So we got our WSGI done.
+
+00:07:54.000 --> 00:07:58.000
+ We've got our virtual environment is correct from before.
+
+00:07:58.000 --> 00:08:02.000
+ We had that before for the first part of the class.
+
+00:08:02.000 --> 00:08:05.000
+ So let's take a look at the application.
+
+00:08:05.000 --> 00:08:09.000
+ Ah, well, let's go to the web tab and let's reload it.
+
+00:08:09.000 --> 00:08:18.000
+ And let's then see if it works.
+
+00:08:18.000 --> 00:08:19.000
+ And there you go.
+
+00:08:19.000 --> 00:08:24.000
+ So you got some other things that you're going to do as you do stuff in here.
+
+00:08:24.000 --> 00:08:30.000
+ But if we go into these instructions, we'll see that, you know, it shows so.
+
+00:08:30.000 --> 00:08:35.000
+ We'll go to home/home.
+
+00:08:35.000 --> 00:08:37.000
+ That's there.
+
+00:08:37.000 --> 00:08:42.000
+ We'll go to /favicon.ico.
+
+00:08:42.000 --> 00:08:45.000
+ And that's the icon that shows up.
+
+00:08:45.000 --> 00:08:48.000
+ How come that's not showing up?
+
+00:08:48.000 --> 00:08:52.000
+ Oh, I see. See there you got that icon that shows up.
+
+00:08:52.000 --> 00:08:55.000
+ And then we'll do one more thing here.
+
+00:08:55.000 --> 00:08:59.000
+ Go back to the instructions and we'll go to admin.
+
+00:08:59.000 --> 00:09:06.000
+ And I name my account Admin.
+
+00:09:06.000 --> 00:09:12.000
+ And there we are.
+
+00:09:12.000 --> 00:09:15.000
+ OK, and so now you have this all set up.
+
+00:09:15.000 --> 00:09:19.000
+ And so you pretty much have finished the README at this point.
+
+00:09:19.000 --> 00:09:20.000
+ README is done.
+
+00:09:20.000 --> 00:09:22.000
+ And you have finished this initial setup.
+
+00:09:22.000 --> 00:09:26.000
+ OK, so I hope you found that useful.
+
+00:09:26.000 --> 00:09:34.000
+ And then you'll go on to the next step and the autograders, et cetera, after you finish this.
+
+00:09:34.000 --> 00:09:35.000
+ Cheers.
+
