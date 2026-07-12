@@ -1,5 +1,36 @@
 # Media tooling
 
+## Generate YouTube descriptions from transcripts
+
+From a whisper folder that contains `txt/...` (for example `../whisper`):
+
+```bash
+whisper-desc
+```
+
+Or:
+
+```bash
+python3 media/whisper-desc.py --root ../whisper
+```
+
+Writes `desc/...` files with the same relative names as `txt/...`, in this format:
+
+```
+title
+
+tag1, tag2, tag3
+
+two paragraph description
+```
+
+Requires a running Ollama server. Defaults to model `qwen3:4b` at
+`http://localhost:11434`. Override with `--model`, `--host`, or the
+`OLLAMA_MODEL` / `OLLAMA_HOST` environment variables. Use `--force` to
+overwrite existing `desc/` files.
+
+`~/bin/whisper-desc` should symlink to `media/whisper-desc.py`.
+
 ## Generate `media.yaml`
 
 1. Refresh the YouTube playlist metadata (recommended before generating).

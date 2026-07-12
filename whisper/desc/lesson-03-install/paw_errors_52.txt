@@ -1,0 +1,7 @@
+Django Startup Failures and Traceback Debugging on Python Anywhere
+
+Django, Python Anywhere, startup failure, traceback, debug, virtual environment, manage.py check, settings.py, urls.py, views.py
+
+The lecture demonstrates debugging common errors in Django applications hosted on Python Anywhere. It specifically covers startup failures where the application won't start at all, and traceback errors that occur after the application loads but fails during a request. For startup failures, the solution involves checking the virtual environment and working directory using the `python manage.py check` command to identify configuration issues before they prevent application startup.
+
+The transcript provides a step-by-step walkthrough of diagnosing a startup failure by running `python manage.py check` in the bash console, identifying the error in the code (such as a typo in an import statement), and fixing the issue. It also illustrates how to interpret traceback errors, which indicate that the application is running but fails during a specific request, often due to code errors in views.py or template files. The lecture emphasizes the importance of using the `manage.py check` tool to catch errors before they manifest as full startup failures and the role of the virtual environment in managing Django dependencies.

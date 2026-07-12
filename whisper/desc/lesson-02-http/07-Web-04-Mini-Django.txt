@@ -1,0 +1,7 @@
+Mini Django Web Server: Minimal HTTP Routing and View Implementation
+
+mini django, http server, routing, views, python
+
+Mini Django is a minimal implementation of the Django web framework, under 200 lines of Python code. It is designed to be readable and understandable for learners to grasp the core HTTP routing and view handling concepts.
+
+The framework processes HTTP requests by parsing the request, routing to a view function via a simple if-else pattern in urls.py, and returning HTTP responses with headers and body data.

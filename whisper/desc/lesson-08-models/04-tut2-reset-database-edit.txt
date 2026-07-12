@@ -1,0 +1,7 @@
+Django Database Reset When Models Go Wrong
+
+django, migrations, database reset, models, manage.py, make migrations, migrate
+
+This lecture details a reset procedure for Django's database and migrations when model operations encounter errors, serving as a supplement to tutorial two.
+
+The reset process requires deleting the migration files and the SQLite database file (db.sqlite), followed by generating new migrations and applying them via `python manage.py make migrations` and `python manage.py migrate`. Existing data in the database is lost during this reset.

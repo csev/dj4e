@@ -1,0 +1,7 @@
+Basic SQL Operations with SQLite
+
+SQLite, SQL, Database, Table, Primary Key, Varchar, Integer, Not Null, Insert, Delete, Update, Select, Where Clause
+
+This lecture covers the basics of SQLite, a single-file database system, and introduces fundamental SQL commands for creating tables with defined columns and constraints such as primary keys and not null fields.
+
+It demonstrates core SQL operations including insert, delete, update, and select statements with where clauses to target specific rows, and explains the absence of explicit loops in these operations. The lecture also mentions that SQLite stores the database schema and supports indexing for efficient data handling.

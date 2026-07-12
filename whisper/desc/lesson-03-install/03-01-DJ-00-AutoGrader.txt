@@ -1,0 +1,7 @@
+Django Assignment Auto-Grader Process
+
+Django, auto-grader, assignment testing, web crawler, LTI, HTTP, HTML, PHP
+
+The Django auto-grader is a PHP-based tool that evaluates student assignments by sending HTTP requests to the deployed application and checking HTML responses for required strings.
+
+It utilizes Learning Tools Interoperability (LTI) to send grades to learning management systems and performs up to 50 HTTP request-response cycles to validate the application.

@@ -1,0 +1,7 @@
+SQLite Command Line Basics: Create, Read, Update, Delete Tables
+
+sqlite, command line, sqlite3, create table, insert, select, update, delete, where clause, order by, crud
+
+This lecture demonstrates basic SQLite command line operations for file-based databases. It includes creating a table, inserting records, selecting data, updating rows, and deleting entries.
+
+The session highlights the necessity of WHERE clauses in update and delete statements to target specific records, as omitting them affects all rows. It also explains how SQLite handles empty result sets without errors.

@@ -1,0 +1,7 @@
+Setting Up Django 5.2 on Python Anywhere
+
+Python Anywhere, Django 5.2, virtual environment, pip, requirements.txt, django project, django app, urls configuration, manage.py
+
+The lecture provides a step-by-step guide for setting up Django 5.2 on Python Anywhere. It covers creating a virtual environment using Python 3.13, activating it, upgrading pip, and installing Django. The process includes verifying the installation with `python manage.py check` and initializing a sample project.
+
+The lecture then details configuring Python Anywhere's web service to link the Django application to the domain by specifying the source code directory, working directory, and virtual environment. It concludes with creating a basic "polls" application and setting up URL routing and views.

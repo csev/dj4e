@@ -1,0 +1,7 @@
+Python Variables: Pointers, Not Drawers
+
+Python, variables, pointers, objects, CPython, ID function
+
+This lecture corrects a common misconception about Python variables. While introductory materials often describe variables as named storage locations (drawers) that hold values, Python's CPython implementation treats variables as pointers to objects. This distinction is essential for understanding Python's memory model.
+
+The `id()` function in CPython returns the memory address of an object. When two variables are assigned the same value (e.g., `y = x`), they share the same memory location, meaning they point to the same object. For mutable objects like lists, the operation `y = x` creates a shared reference, so modifications to `x` affect `y`. A shallow copy (via `x.copy()`) creates a new list with references to the same elements, while a deep copy duplicates the entire structure.

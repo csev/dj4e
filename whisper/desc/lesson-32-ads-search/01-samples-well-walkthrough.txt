@@ -1,0 +1,7 @@
+Django WELL Sample: Idempotent Search Implementation with GET Requests
+
+Django, GET request, idempotent URLs, search implementation, queryset filtering, related names, url patterns
+
+The lecture details the Django WELL sample application, a clone of MyArts with a search feature implemented via GET requests for idempotency. This allows search terms to be bookmarked without altering the application state. The application uses a `Post` model with a `post_owner` related name to prevent naming conflicts across Django applications.
+
+The search functionality filters posts using Django's queryset to match terms in both title and text fields via `Q` objects. The lecture also introduces a pattern where views are defined in `urls.py` by extending generic views, which centralizes view configuration and simplifies application renaming.

@@ -1,0 +1,7 @@
+SQL History, Schema Design, and CRUD Operations
+
+sql, database history, schema, crud, relational databases, nist
+
+The lecture covers the historical context of database systems, starting with tape-based storage in the 1950s-1960s that required sequential access and hours of nightly processing for banks. This was followed by the introduction of disk drives in the 1970s, which improved access speed but necessitated research into storage optimization.
+
+The US National Institute of Standards and Technology (NIST) established SQL as a standard to prevent vendor lock-in, allowing databases to be interchanged without code rewriting. SQL abstracts physical storage details, enabling the definition of a schema that specifies data structure and types, which allows database engines to optimize storage and efficiently perform CRUD operations.
