@@ -222,7 +222,7 @@ entries:
 
       The lecture details basic HTML tags and their attributes, including hyperlinks (using the <a> tag with href attributes), image tags, and unordered lists (with <ul> and <li> tags). It also explains HTML special characters and their entity representations (e.g., &lt; for less than), the use of HTML comments, and the distinction between absolute and relative links for resource references, as well as the web server's default file naming conventions (e.g., index.html).
   lesson-05-html/03-Web-02-HTML-Code.m4v:
-    title: DJ 05.03 Code Walk Through HTML (13:58)
+    title: DJ 05.03 Code Walk Through HTML (13:34)
     youtube_id: wYc6l28v7Cs
     kaltura_id: null
     size: 315268951
@@ -318,7 +318,7 @@ entries:
 
       It demonstrates core SQL operations including insert, delete, update, and select statements with where clauses to target specific rows, and explains the absence of explicit loops in these operations. The lecture also mentions that SQLite stores the database schema and supports indexing for efficient data handling.
   lesson-07-sql/03-sql-01-basic.m4v:
-    title: 'DJ 07.03 Demonstration: Basic SQL (6:36)'
+    title: 'DJ 07.03 Demonstration: Basic SQL (8:39)'
     youtube_id: 2Or6_sSyl7c
     kaltura_id: null
     size: 203949001
@@ -354,7 +354,7 @@ entries:
 
       The `migrate` command applies these migration files in order to update the database schema, tracking applied migrations in a Django Migrations table. In SQLite environments, the database can be reset by deleting the SQLite file (e.g., `rm db.sqlite`), though this requires recreating admin accounts and data.
   lesson-08-models/03-04_paw_models.m4v:
-    title: 'DJ 08.03 Demonstration: Django Single Table Models (11:09)'
+    title: 'DJ 08.03 Demonstration: Django Single Table Models (11:31)'
     youtube_id: p5K5hFiJ-GI
     kaltura_id: null
     size: 337752681
@@ -1205,7 +1205,7 @@ entries:
 
       samples social github walkthrough
   lesson-31-ads3/03-samples-favs-720.mov:
-    title: DJ 31.03 Walking through the DJ4E Favorites (favwc) Sample Code (34:17)
+    title: DJ 31.03 Walking through the DJ4E Favorites (favwc) Sample Code (30:20)
     youtube_id: CFF0WQLj1as
     kaltura_id: null
     size: 800409093
