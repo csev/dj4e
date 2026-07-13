@@ -168,13 +168,13 @@
  header that says this is where you're supposed to be, and the browser immediately turns around
  and does a get to that URL, simple.htm, and then that's what we see, and then this 404,
  interestingly, the three statuses I talked to you about, is because at this new location,
- djfree.com/simple.htm, there's no favicon, remember the favicon is the thing that shows
+ DJ4E.com/simple.htm, there's no favicon, remember the favicon is the thing that shows
  up like right there in the top tab bars, the favicon, and I don't have a favicon, at least
- not now, or djfree, I should put a favicon there, but we get to see a 404, and all that
+ not now, or DJ4E, I should put a favicon there, but we get to see a 404, and all that
  means is the browser looked for a favicon and didn't find it.
  So we see a 302, which is moved, with a location header, and then we see a get, which returns
  then a 200, which is a success, and we see the document, and then we see a 404, because
- it tries to grab the favicon, and so the HTML you get back from djfree.com/simple.htm, that's
+ it tries to grab the favicon, and so the HTML you get back from DJ4E.com/simple.htm, that's
  this simple page with a simple link, okay, so that's how the redirect works.
  So that's a series of views, both the input, class base, function base, and to both the
  HTTP response and the HTTP redirect response.

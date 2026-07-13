@@ -488,7 +488,7 @@
 
 123
 00:06:17,440 --> 00:06:23,920
- a browser. So here we have a very simple view. And the sample code is up there on djfree.com
+ a browser. So here we have a very simple view. And the sample code is up there on DJ4E.com
 
 124
 00:06:23,920 --> 00:06:32,800

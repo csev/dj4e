@@ -52,7 +52,7 @@
  You shouldn't have to change it.
  It might have some error saying, oh, that's not there or something.
  And in each of these, you've got to put your own name in this.
- Right, djfree is my account name.
+ Right, DJ4E is my account name.
  And then once it goes into the virtual environment, it runs this WSGI configuration file.
  This is the equivalent of python manage.py run server.
  That's the command you're never supposed to run in the command line.

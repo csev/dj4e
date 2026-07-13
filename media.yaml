@@ -236,9 +236,9 @@ entries:
     duration_text: 13:53
     tags: html, document structure, head, body, hyperlinks, relative links, absolute links, image tags, list tags
     description: |
-      The lecture covers the foundational structure of an HTML document, including the doctype declaration, the <html> root element, the <head> section for metadata and non-printing content, and the <body> section for visible page content. It emphasizes that the <head> contains elements such as the page title, styling information, and scripts, while the <body> holds the actual content that users see.
+      The lecture covers the foundational structure of an HTML document, including the doctype declaration, the `html` root element, the `head` section for metadata and non-printing content, and the `body` section for visible page content. It emphasizes that the `head` contains elements such as the page title, styling information, and scripts, while the `body` holds the actual content that users see.
 
-      The lecture details basic HTML tags and their attributes, including hyperlinks (using the <a> tag with href attributes), image tags, and unordered lists (with <ul> and <li> tags). It also explains HTML special characters and their entity representations (e.g., &lt; for less than), the use of HTML comments, and the distinction between absolute and relative links for resource references, as well as the web server's default file naming conventions (e.g., index.html).
+      The lecture details basic HTML tags and their attributes, including hyperlinks (using the `a` tag with href attributes), image tags, and unordered lists (with `ul` and `li` tags). It also explains HTML special characters and their entity representations (e.g., &lt; for less than), the use of HTML comments, and the distinction between absolute and relative links for resource references, as well as the web server's default file naming conventions (e.g., index.html).
   lesson-05-html/03-Web-02-HTML-Code.m4v:
     title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
     youtube_id: wYc6l28v7Cs
@@ -470,7 +470,7 @@ entries:
     duration_text: 15:36
     tags: cross-site scripting, html escaping, django, user input validation, http redirects, security vulnerabilities
     description: |
-      The lecture explains how unescaped user input in web applications can lead to cross-site scripting (XSS) vulnerabilities. When developers concatenate user-provided data directly into HTML responses without proper sanitization, attackers can inject malicious JavaScript. For example, user input like "script alert owned" executes in the browser, potentially stealing session cookies or compromising user data. The solution involves escaping user input using HTML entities (e.g., converting `<` to `&lt;` and `>` to `&gt;`) to prevent code execution.
+      The lecture explains how unescaped user input in web applications can lead to cross-site scripting (XSS) vulnerabilities. When developers concatenate user-provided data directly into HTML responses without proper sanitization, attackers can inject malicious JavaScript. For example, user input like "script alert owned" executes in the browser, potentially stealing session cookies or compromising user data. The solution involves escaping user input using HTML entities (e.g., converting `‹` to `&lt;` and `›` to `&gt;`) to prevent code execution.
 
       Django's handling of URL parameters and HTTP responses is discussed as part of the security context. The framework automatically parses integer parameters from URLs (e.g., `rest` in paths) and requires escaping user input before rendering HTML. The lecture also demonstrates 302 redirects using HTTP response headers, where the browser follows a location header to a new URL after a redirect, as seen in the bounce example.
   lesson-10-views/04-DJ-06-Views-04-Templates.m4v:

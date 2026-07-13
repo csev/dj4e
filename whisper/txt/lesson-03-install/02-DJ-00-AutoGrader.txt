@@ -62,13 +62,13 @@
  it to the autograder.
  And so you go in from your learning management system, launches into djangoforeverybody.com
  with an LTI token, and then you press the evaluate button.
- And then what happens is djfree.com makes its own connections to your website and it
+ And then what happens is DJ4E.com makes its own connections to your website and it
  sends requests and it receives HTML back and it reads that HTML.
  And based on what that HTML is, it either says, whoops, I got the wrong thing, or it
  goes on and then eventually, using Learning Tools Interoperability, it sends a grade back
  to Canvas or Coursera.
  And the first autograder that we're gonna show here really just does one, but you can
- get toward the end and djfree.com will make up to 50 request response cycles.
+ get toward the end and DJ4E.com will make up to 50 request response cycles.
  And it's got a lot of debug output and so you're gonna have to scroll down.
  I'll probably make another video in the second half so you can see some of the techniques
  when the autograder gets a lot more sophisticated.
@@ -101,7 +101,7 @@
  So this is gonna grade drchuckpythonanywhere.com/polls.
  Now you'll notice that I always give you a reference implementation.
  And so this is just a thing.
- If you go up here, djtutorial.djfree.com/polls, you see I have a reference implementation.
+ If you go up here, djtutorial.DJ4E.com/polls, you see I have a reference implementation.
  And I have this here so that you don't have to put yours in first.
  You can see how the autograder works.
  So I'm gonna press evaluate.

@@ -511,13 +511,13 @@ WEBVTT
  interestingly, the three statuses I talked to you about, is because at this new location,
 
 00:14:20.280 --> 00:14:27.360
- djfree.com/simple.htm, there's no favicon, remember the favicon is the thing that shows
+ DJ4E.com/simple.htm, there's no favicon, remember the favicon is the thing that shows
 
 00:14:27.360 --> 00:14:33.480
  up like right there in the top tab bars, the favicon, and I don't have a favicon, at least
 
 00:14:33.480 --> 00:14:38.360
- not now, or djfree, I should put a favicon there, but we get to see a 404, and all that
+ not now, or DJ4E, I should put a favicon there, but we get to see a 404, and all that
 
 00:14:38.360 --> 00:14:42.440
  means is the browser looked for a favicon and didn't find it.
@@ -529,7 +529,7 @@ WEBVTT
  then a 200, which is a success, and we see the document, and then we see a 404, because
 
 00:14:53.640 --> 00:15:01.060
- it tries to grab the favicon, and so the HTML you get back from djfree.com/simple.htm, that's
+ it tries to grab the favicon, and so the HTML you get back from DJ4E.com/simple.htm, that's
 
 00:15:01.060 --> 00:15:07.040
  this simple page with a simple link, okay, so that's how the redirect works.

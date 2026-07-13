@@ -199,16 +199,16 @@ WEBVTT
  So if I go to the web setup, this is the configuration for
 
 00:04:56.040 --> 00:04:59.000
- djfree.pythonanywhere.com.
+ dj4e.pythonanywhere.com.
 
 00:04:59.000 --> 00:05:02.760
- So if I go to djfree.pythonanywhere.com,
+ So if I go to dj4e.pythonanywhere.com,
 
 00:05:02.760 --> 00:05:08.720
  that routes to my application running in Python Anywhere.
 
 00:05:08.720 --> 00:05:11.320
- So djfree.pythonanywhere.com.
+ So dj4e.pythonanywhere.com.
 
 00:05:11.320 --> 00:05:19.500
  And so this somehow has got a domain name, and it routes into a Linux system,
@@ -223,7 +223,7 @@ WEBVTT
  you don't really have to worry too much about the first part,
 
 00:05:32.640 --> 00:05:36.480
- djfree.pythonanywhere.com, but you do have to worry about what you're going to,
+ dj4e.pythonanywhere.com, but you do have to worry about what you're going to,
 
 00:05:36.480 --> 00:05:40.960
  how you're going to handle, and how you're going to write the rest of this URL, right?
@@ -346,7 +346,7 @@ WEBVTT
  So it's like load up all the URLs for the whole app when it says root.
 
 00:07:58.200 --> 00:08:05.280
- What it means is anything after djfree.pythonanywhere.com/.
+ What it means is anything after dj4e.pythonanywhere.com/.
 
 00:08:05.280 --> 00:08:10.280
  That top part is the root of your application's URL hierarchy.
@@ -481,7 +481,7 @@ WEBVTT
  So we're looking inside this application to route within the application.
 
 00:11:09.800 --> 00:11:16.080
- The part that's inside the application is after djfree, pythonanywhere.com/poll/.
+ The part that's inside the application is after DJ4E, pythonanywhere.com/poll/.
 
 00:11:16.080 --> 00:11:22.240
  And then whatever you put in there, it looks up in the urls.py in polls.

@@ -680,7 +680,7 @@
 
 171
 00:14:20,280 --> 00:14:27,360
- djfree.com/simple.htm, there's no favicon, remember the favicon is the thing that shows
+ DJ4E.com/simple.htm, there's no favicon, remember the favicon is the thing that shows
 
 172
 00:14:27,360 --> 00:14:33,480
@@ -688,7 +688,7 @@
 
 173
 00:14:33,480 --> 00:14:38,360
- not now, or djfree, I should put a favicon there, but we get to see a 404, and all that
+ not now, or DJ4E, I should put a favicon there, but we get to see a 404, and all that
 
 174
 00:14:38,360 --> 00:14:42,440
@@ -704,7 +704,7 @@
 
 177
 00:14:53,640 --> 00:15:01,060
- it tries to grab the favicon, and so the HTML you get back from djfree.com/simple.htm, that's
+ it tries to grab the favicon, and so the HTML you get back from DJ4E.com/simple.htm, that's
 
 178
 00:15:01,060 --> 00:15:07,040

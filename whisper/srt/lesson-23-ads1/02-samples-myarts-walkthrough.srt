@@ -364,11 +364,11 @@
 
 92
 00:04:49,560 --> 00:04:53,160
- csev-- it's all jammed together in djfree.
+ csev-- it's all jammed together in DJ4E.
 
 93
 00:04:53,160 --> 00:04:56,440
- So this is row one for djfree and csev.
+ So this is row one for DJ4E and csev.
 
 94
 00:04:56,440 --> 00:04:59,480

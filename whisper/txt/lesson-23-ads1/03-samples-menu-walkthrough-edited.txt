@@ -6,8 +6,8 @@
  inside of a dropdown, and then we have kind of like a login dropdown, I'm already logged
  in, I'll log out, and then it switches when I'm logged in.
  When I'm logged in, it shows my Gravatar.
- When I want to log in, I'll log in as csev, djfree, 42, exclamation, come on, actually
- I think, let's call this djfree, I think will work.
+ When I want to log in, I'll log in as csev, DJ4E, 42, exclamation, come on, actually
+ I think, let's call this DJ4E, I think will work.
  Yeah, so that shows a little picture based on your email address, and so I'll show you
  how all these things work.
  But again, we're talking multiple pages.

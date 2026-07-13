@@ -6,6 +6,7 @@
 # and has a clear course-specific correction.
 
 www.djfree.com	www.dj4e.com
+djfree.pythonanywhere.com   dj4e.pythonanywhere.com
 DJFree samples	DJ4E Samples
 djfree samples	dj4e-samples
 djfree-samples	dj4e-samples
@@ -30,6 +31,8 @@ Jquery	jQuery
 Sqlite	SQLite
 MyArts	myarts
 Nginx	nginx
+djfree  DJ4E
+DJFree  DJ4E
 
 # Review-before-enabling candidates (context-dependent)
 # my dot dot slash MyArts owner	../myarts/owner.py

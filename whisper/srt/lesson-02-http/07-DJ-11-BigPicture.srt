@@ -264,11 +264,11 @@
 
 67
 00:04:56,040 --> 00:04:59,000
- djfree.pythonanywhere.com.
+ dj4e.pythonanywhere.com.
 
 68
 00:04:59,000 --> 00:05:02,760
- So if I go to djfree.pythonanywhere.com,
+ So if I go to dj4e.pythonanywhere.com,
 
 69
 00:05:02,760 --> 00:05:08,720
@@ -276,7 +276,7 @@
 
 70
 00:05:08,720 --> 00:05:11,320
- So djfree.pythonanywhere.com.
+ So dj4e.pythonanywhere.com.
 
 71
 00:05:11,320 --> 00:05:19,500
@@ -296,7 +296,7 @@
 
 75
 00:05:32,640 --> 00:05:36,480
- djfree.pythonanywhere.com, but you do have to worry about what you're going to,
+ dj4e.pythonanywhere.com, but you do have to worry about what you're going to,
 
 76
 00:05:36,480 --> 00:05:40,960
@@ -460,7 +460,7 @@
 
 116
 00:07:58,200 --> 00:08:05,280
- What it means is anything after djfree.pythonanywhere.com/.
+ What it means is anything after dj4e.pythonanywhere.com/.
 
 117
 00:08:05,280 --> 00:08:10,280
@@ -640,7 +640,7 @@
 
 161
 00:11:09,800 --> 00:11:16,080
- The part that's inside the application is after djfree, pythonanywhere.com/poll/.
+ The part that's inside the application is after DJ4E, pythonanywhere.com/poll/.
 
 162
 00:11:16,080 --> 00:11:22,240

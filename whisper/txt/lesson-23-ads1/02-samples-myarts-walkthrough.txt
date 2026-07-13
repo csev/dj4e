@@ -89,8 +89,8 @@
  So let's just try saying, select star from auth user.
  So we should see a bunch of rows.
  And so there are my users.
- csev-- it's all jammed together in djfree.
- So this is row one for djfree and csev.
+ csev-- it's all jammed together in DJ4E.
+ So this is row one for DJ4E and csev.
  So there is a table and a model.
  The difference is we're not allowed
  to know that this is the user model in the auth application.

@@ -193,7 +193,7 @@ WEBVTT
  with an LTI token, and then you press the evaluate button.
 
 00:03:55.160 --> 00:04:01.820
- And then what happens is djfree.com makes its own connections to your website and it
+ And then what happens is DJ4E.com makes its own connections to your website and it
 
 00:04:01.820 --> 00:04:06.140
  sends requests and it receives HTML back and it reads that HTML.
@@ -211,7 +211,7 @@ WEBVTT
  And the first autograder that we're gonna show here really just does one, but you can
 
 00:04:24.140 --> 00:04:30.380
- get toward the end and djfree.com will make up to 50 request response cycles.
+ get toward the end and DJ4E.com will make up to 50 request response cycles.
 
 00:04:30.380 --> 00:04:34.540
  And it's got a lot of debug output and so you're gonna have to scroll down.
@@ -310,7 +310,7 @@ WEBVTT
  And so this is just a thing.
 
 00:06:23.940 --> 00:06:30.340
- If you go up here, djtutorial.djfree.com/polls, you see I have a reference implementation.
+ If you go up here, djtutorial.DJ4E.com/polls, you see I have a reference implementation.
 
 00:06:30.340 --> 00:06:33.460
  And I have this here so that you don't have to put yours in first.

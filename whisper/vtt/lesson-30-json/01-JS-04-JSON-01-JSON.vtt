@@ -367,7 +367,7 @@ WEBVTT
  is when we can produce code inside of the server in, say, Python and then send it to
 
 00:06:17.440 --> 00:06:23.920
- a browser. So here we have a very simple view. And the sample code is up there on djfree.com
+ a browser. So here we have a very simple view. And the sample code is up there on DJ4E.com
 
 00:06:23.920 --> 00:06:32.800
  for you to look at. And we are going to have a JSON fun path. This is going to be a function
