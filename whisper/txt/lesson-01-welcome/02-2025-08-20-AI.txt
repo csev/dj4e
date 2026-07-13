@@ -1,189 +1,252 @@
- Hello and welcome to my lecture where I share my thoughts on the use of artificial intelligence in programming classes.
- My name is Charles Severance and I'm a professor at the University of Michigan School of Information in Ann Arbor, Michigan.
- So you may know me from some of my online classes, Python for Everybody, 3 Million Students, the largest programming class in the world,
- Django for Everybody, C Programming for Everybody.
- I'm building a series of curriculums, a series of courses that lead towards what I call a master programmer,
- which is a way to get people to become very skilled programmers in shorter time by giving the essential foundations of programming rather than a four-year degree.
- So it's much less than a four-year degree. That's my goal right now is to make programmers faster and better.
- So the goals of this presentation are not to make policy for my course or any other course.
- Policies really depend on the course and the goals of the course and the course material and the instructor.
- So don't use this as like telling your teacher that somehow they should change their policies because of Dr. Chuck's talk.
- These are just my experiences and opinions and ways I've learned things over time and my theories
- and how I try to explain to my students about the good and the bad about using AI when working in a program, taking a programming class.
- So to AI or not to AI, that is the question. Well, I think the answer is you have to use it.
- From now on, AI is part of software development. You can't deny that.
- You're not going to get a job if you say, well, I don't use AI. Well, you better use it.
- I want you to learn how to use it to make you a better programmer, not how to not make you a better programmer.
- They're like, oh, AI is good enough. And any AI technique that I teach or anyone else teaches is going to be out of date so quickly.
- Everything is changing. Every couple of months, things get better.
- Sometimes I'm using a piece of AI and it's stuck on something and I'll set it aside and come back in another month and the models will change.
- And I'll like, what about that? And it's like, oh, yeah, I'll fix that for you. Like, oh, great.
- But one thing I think is permanent forever, the better you understand programming and the foundations of programming, the better you're going to be at using AI to help you develop software.
- The dangers of AI is that using AI does not mean that you don't need to learn anything in a programming class or in a job.
- Believe me, if the only thing you can do is do what AI does for you, then you're probably not going to get a very good job.
- And if you're taking a class, you become a better programmer, but then you rely on AI to actually not study the class material and not learn the class material.
- And the first and then the first part of the course, it's particularly perilous because then you you just wasted all your time and money, took a course and I didn't learn anything.
- And AI caused you to not learn anything. My thinking on this has evolved over time.
- We first heard about AI like I was in the middle of teaching winter semester, twenty, twenty three.
- We had a quick, quick faculty meeting. We pretty much all without without even coordinating, we just knew that we weren't going to prohibit AI in programming classes.
- We wanted to find a way to teach with AI and we wanted to find a way to use AI wisely.
+ Hello, and welcome to my lecture where I share my thoughts on the use of artificial intelligence
+ in programming classes.
+ My name is Charles Severance, and I'm a professor at the University of Michigan School of Information
+ in Ann Arbor, Michigan.
+ So you may know me from some of my online classes, Python for Everybody, Three Million
+ Students, the largest programming class in the world, Django for Everybody, C Programming
+ for Everybody.
+ And I'm building a series of curriculums, a series of courses that lead towards what
+ I call a master programmer, which is a way to get people to become very skilled programmers
+ in shorter time by giving the essential foundations of programming rather than a four-year degree.
+ So it's much less than a four-year degree.
+ That's my goal right now is to make programmers faster and better.
+ So the goals of this presentation are not to make policy for my course or any other
+ course.
+ Policies really depend on the course and the goals of the course and the course material
+ and the instructor.
+ So don't use this as like telling your teacher that somehow they should change their policies
+ because of Dr. Chuck's talk.
+ These are just my experiences and opinions and ways I've learned things over time and
+ my theories and how I try to explain to my students about the good and the bad about
+ using AI when working in a programming, taking a programming class.
+ So to AI or not to AI, that is the question.
+ Well, I think the answer is you have to use it.
+ From now on, AI is part of software development.
+ You can't deny that.
+ You're not going to get a job if you say, "Well, I don't use AI."
+ Well, you better use it.
+ I want you to learn how to use it to make you a better programmer, not how to not make
+ you a better programmer.
+ It's like, "Oh, AI is good enough."
+ And any AI technique that I teach or anyone else teaches is going to be out of date so
+ quickly.
+ Everything is changing.
+ Every couple of months, things get better.
+ Sometimes I'm using a piece of AI and it's stuck on something and I'll set it aside and
+ come back in another month and the models will change and I'll like, "What about that?"
+ And it's like, "Oh, yeah, I'll fix that for you."
+ I'm like, "Oh, great."
+ But one thing I think is permanent forever, the better you understand programming and the
+ foundations of programming, the better you're going to be at using AI to help you develop
+ software.
+ The dangers of AI is that using AI does not mean that you don't need to learn anything
+ in a programming class or in a job.
+ Believe me, if the only thing you can do is do what AI does for you, then you're probably
+ not going to get a very good job.
+ And if you're taking a class, you become a better programmer, but then you rely on AI
+ to actually not study the class material and not learn the class material.
+ And then the first part of the course, it's particularly perilous because then you just
+ wasted all your time and money, took a course, and now you didn't learn anything.
+ And AI caused you to not learn anything.
+ My thinking on this has evolved over time.
+ So we first heard about AI, like I was in the middle of teaching winter semester 2023.
+ We had a quick faculty meeting.
+ We pretty much all, without you coordinating, we just knew that we weren't going to prohibit
+ AI in programming classes.
+ We wanted to find a way to teach with AI, and we wanted to find a way to use AI wisely.
  So for about a year, year and a half, I kind of adjusted my class.
- More paper stuff, et cetera, et cetera.
- And it had mixed results. The thing I didn't like about it was and this is true going back over a decade.
- Every time I build something that tries to force students to do something my way rather than the easiest way for them,
- I harm the students who want to learn and I don't really stop the students who don't want to learn from taking the easy way out.
- So really from last semester onward, I'm just treating AI like Stack Overflow.
- I'm not uniquely thinking about it, not doing anything to help it, not do anything to stop it.
- As a teacher, you might think it's great to go to college and snap your fingers and get A's in all your classes.
- And in one day you get a degree and you graduate and you want to get a great job.
+ More paper stuff, et cetera, et cetera, and it had mixed results.
+ The thing I didn't like about it was, and this is true going back over a decade, every
+ time I build something that tries to force students to do something my way rather than
+ the easiest way for them, I harm the students who want to learn, and I don't really stop
+ the students who don't want to learn from taking the easy way out.
+ So really, from last semester onward, I'm just treating AI like Stack Overflow.
+ I'm not uniquely thinking about it, not doing anything to help it, not doing anything to
+ stop it.
+ As a teacher, you might think it's great to go to college and snap your fingers and get
+ A's in all your classes, and in one day, you get a degree and you graduate, and you want
+ to get a great job.
  Unfortunately, when you go to school, you're supposed to learn something.
- So I'm a teacher and I'm part of your schooling.
- So I feel that my job is to take some set of materials, maybe programming language, and change how you know about it.
- Right. You don't know something before and you do know something after.
- And I got 15 weeks to do that. And believe me, I don't want to waste your time. I really don't.
- If I could grab a little USB thing and plug it into the back of your neck like they did in the Matrix and teach you something,
- I would invent that and I would do that.
- The human mind just does not accept new knowledge that fast.
- And so we have to come up with a way. And we only have 15 weeks or 10 weeks or whatever.
+ So I'm a teacher, and I'm part of your schooling.
+ So I feel that my job is to take some set of materials, maybe a programming language,
+ and change how you know about it.
+ You don't know something before, and you do know something after, and I got 15 weeks to
+ do that.
+ And believe me, I don't want to waste your time.
+ I really don't.
+ If I could grab a little USB thing and plug it into the back of your neck like they did
+ in the Matrix and teach you something, I would invent that, and I would do that.
+ The human mind just does not accept new knowledge that fast, okay?
+ And so we have to come up with a way, and we only have 15 weeks or 10 weeks or whatever.
  So we have a short period of time and a lot of material to cover.
  So how do we take a lot of material and cover it in a short period of time?
- And the answer is you break it into small, doable chunks.
- The education word for this is the zone of proximal development.
- And that is the way you learn is someone like me with an assignment or whatever pushes you outside your comfort zone just a little bit.
- And then we hang out with you and help you through that and then you learn something.
- And then a week later, you got a new comfort zone. We push you just a little bit out of that comfort zone.
- So we're keeping you under a little bit of stress each week that hopefully you're adding some stuff up and you're retaining it.
+ And the answer is, you break it into small, doable chunks.
+ The education word for this is the zone of proximal development, and that is the way
+ you learn is someone like me with an assignment or whatever pushes you outside your comfort
+ zone just a little bit, and then we hang out with you and help you through that, and then
+ you learn something.
+ And then a week later, you got a new comfort zone, we push you just a little bit out of
+ that comfort zone.
+ So we're keeping you under a little bit of stress each week that hopefully you're adding
+ some stuff up and you're retaining it.
  So some teachers teach too much in a week and then you don't retain it.
- I try to figure out how much I can teach you in one week that you will retain so your knowledge builds.
- Naturally, what you find is in the beginning of classes,
- the amount that I can teach you in a week is smaller than what I can in later, right?
- Because in the later classes, I can assume that you'd remember most of the stuff that I've already taught you in earlier classes.
- And this is just natural. It's how you build classes.
- The problem is, is these simple early assignments are much easier for you to complete.
- And so students who are tired, who are busy, who just came off of a summer vacation,
- they're like, well, I don't really want to work hard this week. I'm going to work twice as hard next week.
- So I'm going to have AI do the homework this week. Yay.
- So they do that and they're like, whew, I got 100% and AI did it.
- And then they promise that the second week they'll work twice as hard, learn everything in the first week and everything in the second week.
- And they're like, oh, wow, I wonder if AI could do this second week homework.
+ I try to figure out how much I can teach you in one week that you will retain so your knowledge
+ builds.
+ Naturally, what you find is in the beginning of classes, the amount that I can teach you
+ in a week is smaller than what I can in later, right?
+ Because in the later classes, I can assume that all you'd remember most of the stuff
+ that I've already taught you in earlier classes.
+ And this is just natural, it's how you build classes.
+ The problem is, is these simple early assignments are much easier for you to complete, so students
+ who are tired, who are busy, who just came off of a summer vacation, they're like, "Well,
+ I don't really want to work hard this week, I'm going to work twice as hard next week,
+ so I'm going to have AI do the homework this week, yay."
+ So they do that and they're like, "Shoo, I got 100% and AI did it."
+ And then they promise that the second week, they'll work twice as hard and learn everything
+ in the first week and everything in the second week.
+ And they're like, "Oh wow, I wonder if AI could do this second week homework."
  And then they do have AI do the second week homework.
- And they keep doing this, not because they're bad. Students are bad. I mean, students are mostly tired.
- School is hard, especially when you're taking a course that has a schedule
- and a teacher like me that's telling you what to do every week.
- When I finally graduated with my PhD, someone asked me, do you miss school?
- I said, I don't want any more deadlines. I don't want to be told to do any homework on a time.
- Learning's fun, but having deadlines isn't. Unfortunately, those two things are connected.
+ And they keep doing this, not because they're bad, students are bad, I mean students are
+ mostly tired.
+ School is hard, especially when you're taking a course that has a schedule and a teacher
+ like me that's telling you what to do every week.
+ When I finally graduated with my PhD, someone asked me, "Do you miss school?"
+ I said, "I don't want any more deadlines, I don't want to be told to do any homework
+ on a time."
+ Learning's fun, but having deadlines isn't.
+ Unfortunately, those two things are connected.
  If you're not forced to do something, you will delay it.
- So here's the problem. Let's just say weeks one through five in this particular course are tractable for AI.
- And AI is not really learning anything. AI is no smarter at week five than it was at week one.
- OK, you're not teaching AI anything as you're going through this.
+ So here's the problem, let's just say weeks one through five in this particular course
+ are tractable for AI.
+ And AI is not really learning anything.
+ AI is no smarter at week five than it was at week one.
+ You're not teaching AI anything as you're going through this.
  If you went through it, you'd be learning something.
  But AI is already smarter than you and smarter than whatever.
- So the problem is, is that you get to week six and for whatever reason, AI can't solve your problem.
- So then what you're forced to do in week six is you're really forced to either drop the class
- or you have to learn six weeks of material in one week.
+ So the problem is, is that you get to week six and for whatever reason, AI can't solve
+ your problem.
+ So then what you're forced to do in week six is you're really forced to either drop the
+ class or you have to learn six weeks of material in one week.
  And you've been tired and busy and you've got other classes and it doesn't happen.
- And seven days later, the class is going to take another step. Seven more days, class taking another step.
- And this is part of the class where the class is starting to speed up. We call it the knee of the curve.
+ And seven days later, the class is going to take another step, seven more days, class
+ is taking another step.
+ And this is part of the class where the class is starting to speed up, we call it the knee
+ of the curve.
  So you picked the exact wrong time to not know what was going on in this class.
- Usually you have to drop the class or get a very low grade in the class because about the one third to one half point
- is the place in most classes where programming classes where AI just can't do it.
+ And usually you have to drop the class or get a very low grade in the class because
+ about the one third to one half point is the place in most programming classes where AI
+ just can't do it.
  Before AI, I always made my assessments real work.
  So writing Django applications is the learning objective of the course.
  Then I want my assignments to be writing Django applications.
- And so the key thing there is if I want you to know how to do something and then use AI to do it,
- but you actually learn how to do it and AI makes it better for you.
- Great. I just taught you how to use AI to solve the learning objective of my course,
- which you will then be able to do when you get in your job.
+ And so the key thing there is, if I want you to know how to do something and then use AI
+ to do it, but you actually learn how to do it and AI makes it better for you, great,
+ I just taught you how to use AI to solve the learning objective of my course, which you
+ will then be able to do when you get in your job.
  So my assignments integrate across many sources.
- I mentioned I don't give you a little single paragraph that completely describes it and then grade that.
- No, you got to look at sample code. You got to look at some code walkthroughs and demos.
+ I mentioned I don't give you a little single paragraph that completely describes it and
+ then grade that.
+ No, you got to look at sample code.
+ You got to look at some code walkthroughs and demos.
  I'm explaining concepts, right?
- So then what you got to do is you got to learn the concepts and then you got to pull from places
- and you got to synthesize all that together.
- And so the problem is, is that AI just wants to look at a few paragraphs
- and then write some code because it can't do that.
- Like, let's write a database application to store and retrieve autos and auto data.
- Well, that's not what my assignments are. My assignments are look at this code, adapt it,
- look at that code, adapt it, look at this, read this thing, adapt it, watch this lecture,
- adapt all that stuff together and synthesize it together and then build a piece of software,
- not just to solve the problem, but to solve the problem using the techniques that you saw
- in all the stuff that was in the class.
- Now, that doesn't mean that you can't give AI enough context.
- If you were really organized and you figured out every single asset that was in the course this week
- and you could somehow feed it into AI and build AI's understanding up and said, OK,
- now using the stuff I just gave you, write an auto tracking, automobile tracking application.
- You might get it. It might. It's not dumb. It might.
- And if you are smart enough to give it enough context to solve one of my assignments,
- I actually kind of gained some respect for you.
- And my teaching assistants will sit down in a meeting and tell me, oh, yeah, I feed it all into AI.
- I've got these 14 things in AI and I tell it to write the code.
- They probably fed the sample solution in as well.
- And so, yeah, the AI is pretty smart at that point.
- So my autograders for the software look for specific techniques, not just any old technique,
- but the specific techniques from the material, my course materials in your solution.
- You can't just take and argue with me.
- It says you told me to write an automobile database and I wrote an automobile database.
- Too bad it didn't pass the autograder.
+ So then what you got to do is you got to learn the concepts and then you got to pull from
+ places and you got to synthesize all that together.
+ And so the problem is, is that AI just wants to look at a few paragraphs and then write
+ some code because it can't do that.
+ Like let's write a database application to store and retrieve autos and auto data.
+ Well, that's not what my assignments are.
+ My assignments are look at this code, adapt it, look at that code, adapt it, look at this,
+ read this thing, adapt it, watch this lecture, adapt all that stuff together and synthesize
+ it together and then build a piece of software, not just to solve the problem, but to solve
+ the problem using the techniques that you saw in all the stuff that was in the class.
+ Now that doesn't mean that you can't give AI enough context.
+ If you were really organized and you figured out every single asset that was in the course
+ this week and you could somehow feed it into AI and build AI's understanding up and said,
+ okay, now using the stuff I just gave you, write an auto tracking, automobile tracking
+ application.
+ You might get it.
+ It might.
+ It's not dumb.
+ It might.
+ And if you are smart enough to give it enough context to solve one of my assignments, I
+ actually kind of gained some respect for you.
+ And my teaching assistants will sit down in a meeting and tell me, oh yeah, I feed it
+ all into AI.
+ I've got these 14 things in AI and then I tell it to write the code, boof, they probably
+ fed the sample solution in as well.
+ And so yeah, the AI is pretty smart at that point.
+ So my auto graders for the software look for specific techniques, not just any old technique,
+ but the specific techniques from my course materials in your solution.
+ You can't just take and argue with me and say, you told me to write an automobile database
+ and I wrote an automobile database.
+ Too bad it didn't pass the auto grader.
  Another technique I have is cumulative exams.
- So like in week 1, 2, 3, and 4, in order to discourage you from just using AI, I say there'll be a midterm.
- And that midterm will be cumulative.
- And so if you take weeks 1 through 5 plus a little bit and you think you can do that in one week with AI, great.
- Good luck with you. The exams are going to be more difficult.
- They are going to be potentially as difficult as weeks 1 through 5 combined.
- And if you know everything in week 1 through 5, they're pretty easy.
+ So like in week one, two, three, and four, in order to discourage you from just using
+ AI, I say there'll be a midterm and that midterm will be cumulative.
+ And so if you take weeks one through five plus a little bit and you think you can do
+ that in one week with AI, great, good luck with you.
+ The exams are going to be more difficult.
+ They're going to be potentially as difficult as weeks one through five combined.
+ And if you know everything in week one through five, they're pretty easy.
  But if you don't, you're not going to do it.
  And so I generally use about half or a little under half of my scores.
- Grades are calculated based on exams.
- And so if you get 100% on the assignments and you don't do well on the exams, you kind of have a 50% in the class.
- And so that's another motivation to not just depend on AI because AI won't be able to do the exam for you.
- And so, I mean, I do let people do some exams online,
- but sometimes they're just so big that AI can't get it right and the autograders, like I said, are too specific.
+ Exams are calculated based on exams.
+ And so if you get 100% on the exam assignments and you don't do well on the exams, you kind
+ of have a 50% in the class.
+ And so that's another motivation to not just depend on AI because AI won't be able to do
+ the exam for you.
+ And so, I mean, I do let people do some exams online, but sometimes they're just so big
+ that AI can't get it right and the auto graders, like I said, are too specific.
  So here's my recommendations.
  Don't just rush to the assignments and just smash them out with AI.
  I understand you're tired and you don't have enough time.
- The problem is, is that that strategy will initially lead off into success,
- but that will reinforce your bad choice of not studying, right?
- If you skim the material before and at least while you're working and if AI is helping you,
- maybe some pieces will stick in your mind as you're going through.
+ The problem is, is that that strategy will initially lead often to success, but that'll
+ reinforce your bad choice of not studying, right?
+ If you skim the material before and at least while you're working, and if AI is helping
+ you, maybe some pieces will stick in your mind as you're going through.
  And don't be so impatient in the first few weeks.
  The first few weeks are the easy part of the class on purpose.
- So if you don't give yourself a chance to learn in the easy part of the class,
- you're not going to learn in the hard part of the class.
- Now, if you already know the material because that's the easy class for you.
- Great. You'll be using AI. You know how to use AI.
- You could do it in your sleep. So that's not the student I'm talking to.
+ So if you don't give yourself a chance to learn in the easy part of the class, you're
+ not going to learn in the hard part of the class.
+ Now, if you already know the material because that's the easy class for you, great.
+ You'll be using AI.
+ You know how to use AI.
+ You could do it in your sleep.
+ So that's not the student I'm talking to.
  I'm talking about the student that's actually learning this material.
- And again, the key is a programming course designed to stretch you and teach you a little bit more every week
- so that when you're done, you can do something big.
+ And again, the key is a programming course designed to stretch you and teach you a little
+ bit more every week so that when you're done, you can do something big.
  AI is great and getting better.
- This is a circuit layout tool that I'm building for a course,
- an upcoming course I'm going to teach called Computer Architecture for Everybody.
+ This is a circuit layout tool that I'm building for a course, an upcoming course I'm going
+ to teach called computer architecture for everybody.
  Hardware, how chips are made.
- This is based on a piece of software that I learned in grad school like 25 plus years ago called Magic.
- It came from a university in California, Berkeley.
- That's why it's called Mystic because it's like my own version of Magic.
- This does circuit layout. All those layers are polysilicon, n-dope, silicon, p-dope, silicon, metal.
- You don't need to know this. It's not a hardware class.
+ This is based on a piece of software that I learned in grad school like 25 plus years
+ ago called magic, came from my University of California, Berkeley.
+ That's why it's called Mystic because it's like my own version of magic.
+ This does circuit layout.
+ All those layers are polysilicon, n-dope, silicon, p-dope, silicon, metal.
+ You don't need to know this.
+ It's not a hardware class.
  And literally, I just talked AI through building all this.
  This is only a couple hundred lines of code.
- And it's a reasonable facsimile of this semi-professional software called Magic.
- And the only part that I really helped in was the circuit simulation
- because maybe the AI will figure that out too eventually.
+ And it's a reasonable facsimile of this semi-professional software called magic.
+ And the only part that I really helped in was the circuit simulation because that, you
+ know, maybe the AI will figure that out too eventually.
  But I used some recursion and some other tricks to make the little pluses and minuses go.
  But I've been doing these kinds of small tasks with AI for a while.
- And I'll just say, I'm really starting to believe.
- I'm starting to believe that AI is more of a partner than like barely capable of doing the simplest things.
- And as I increasingly trust and believe in AI as my partner,
- I'm starting to communicate with it as if it's more intelligent.
- So my conversations with AI are longer, more jargon-loaded,
- as if I was talking to someone who is almost as good as me.
- And I will say that as I increase the sophistication with which I communicate with AI,
- I am getting better results from AI.
- And so this goes back to if you're good at programming and you're good at understanding problems,
- then your communication with AI can be at a much higher level with much more detail
- and you will get better results.
+ And I'll just say I'm really starting to believe.
+ I'm starting to believe that AI is more of a partner than like barely capable of doing
+ the simplest things.
+ And as I increasingly trust and believe in AI as my partner, I'm starting to communicate
+ with it as if it's more intelligent.
+ So my conversations with AI are longer, more jargon loaded, as if I was talking to someone
+ who is almost as good as me.
+ And so, and I will say that as I increase the sophistication with which I communicate
+ with AI, I am getting better results from AI.
+ And so this goes back to, if you're good at programming and you're good at understanding
+ problems, then your communication with AI can be at a much higher level with much more
+ detail and you'll get better results.
  So thanks for listening.
- I hope to see you in class or online, perhaps in the Ann Arbor campus or perhaps in an online venue.
+ I hope to see you in class or online, perhaps in the Ann Arbor campus or perhaps in an online
+ venue.
  Cheers.
- (jazz piano music)

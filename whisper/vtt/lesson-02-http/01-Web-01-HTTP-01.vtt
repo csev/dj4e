@@ -1,169 +1,169 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.800
- -Hello, and welcome to our lecture on dynamic web content.
+00:00:00.000 --> 00:00:04.840
+ Hello, and welcome to our lecture on dynamic web content.
 
-00:00:04.800 --> 00:00:07.160
+00:00:04.840 --> 00:00:07.200
  It may seem kind of weird to be talking about building web
 
-00:00:07.160 --> 00:00:09.680
- applications, and when we start out
+00:00:07.200 --> 00:00:09.680
+ applications, and to when we start out
 
-00:00:09.680 --> 00:00:11.800
+00:00:09.680 --> 00:00:11.840
  talking about building web applications,
 
-00:00:11.800 --> 00:00:14.320
+00:00:11.840 --> 00:00:14.320
  that we're going to talk about protocols and stuff.
 
-00:00:14.320 --> 00:00:18.440
+00:00:14.320 --> 00:00:18.360
  But in a way, when you are building a web application,
 
-00:00:18.440 --> 00:00:19.960
+00:00:18.360 --> 00:00:19.980
  if you don't understand the protocol,
 
-00:00:19.960 --> 00:00:21.200
+00:00:19.980 --> 00:00:21.240
  and you just sort of say, I changed
 
-00:00:21.200 --> 00:00:23.080
+00:00:21.240 --> 00:00:23.120
  this little bit of code, and I hit refresh,
 
-00:00:23.080 --> 00:00:26.040
+00:00:23.120 --> 00:00:26.080
  and some magic happened, you really
 
-00:00:26.040 --> 00:00:29.480
+00:00:26.080 --> 00:00:29.520
  are cheating yourself in terms of becoming
 
-00:00:29.480 --> 00:00:31.760
+00:00:29.520 --> 00:00:31.800
  a really good web application developer.
 
-00:00:31.760 --> 00:00:33.440
+00:00:31.800 --> 00:00:33.480
  Because ultimately, these protocols
 
-00:00:33.440 --> 00:00:35.200
+00:00:33.480 --> 00:00:35.240
  are what enable web applications.
 
-00:00:35.200 --> 00:00:39.040
+00:00:35.240 --> 00:00:39.080
  And as you go forward and use frameworks,
 
-00:00:39.040 --> 00:00:42.000
+00:00:39.080 --> 00:00:42.040
  you don't need to know all these things in detail.
 
-00:00:42.000 --> 00:00:44.960
+00:00:42.040 --> 00:00:45.040
  But when you debug your applications, you absolutely do.
 
-00:00:44.960 --> 00:00:49.560
- And I don't know if you've had your Firefox console
+00:00:45.040 --> 00:00:49.600
+ And I don't know if you've had your Firefox console,
 
-00:00:49.560 --> 00:00:51.600
- or looked at things and watched.
+00:00:49.600 --> 00:00:51.640
+ or looked at things, and watched.
 
-00:00:51.600 --> 00:00:53.840
+00:00:51.640 --> 00:00:53.880
  There's so much complexity going on.
 
-00:00:53.840 --> 00:00:57.160
+00:00:53.880 --> 00:00:57.200
  And when you're using a web application,
 
-00:00:57.160 --> 00:01:00.240
+00:00:57.200 --> 00:01:00.360
  hopefully everything works, and that complexity is hidden from you.
 
-00:01:00.240 --> 00:01:03.320
- So if you have some interest in this
+00:01:00.360 --> 00:01:03.360
+ So if you have some interest in this,
 
-00:01:03.320 --> 00:01:05.720
+00:01:03.360 --> 00:01:05.760
  and want to go even lower to sort of more of the network
 
-00:01:05.720 --> 00:01:09.680
+00:01:05.760 --> 00:01:09.720
  protocols, not just the HTTP protocols,
 
-00:01:09.680 --> 00:01:12.880
+00:01:09.720 --> 00:01:12.920
  I've written a free book on networking called Introduction
 
-00:01:12.880 --> 00:01:16.480
- to Networking-- How the Internet Works that you are welcome.
+00:01:12.920 --> 00:01:16.560
+ to Networking, How the Internet Works, that you are welcome.
 
-00:01:16.480 --> 00:01:19.360
+00:01:16.560 --> 00:01:19.400
  You can buy a print if you want, but it's also completely free,
 
-00:01:19.360 --> 00:01:22.720
+00:01:19.400 --> 00:01:22.840
  like every book that I write these days.
 
-00:01:22.720 --> 00:01:25.400
+00:01:22.840 --> 00:01:25.440
  And so if we take a look at what we're
 
-00:01:25.400 --> 00:01:27.800
+00:01:25.440 --> 00:01:27.840
  going to really be talking about in this lecture
 
-00:01:27.800 --> 00:01:30.520
+00:01:27.840 --> 00:01:30.560
  and in this web application course,
 
-00:01:30.520 --> 00:01:33.640
+00:01:30.560 --> 00:01:33.680
  is the technologies, the different technologies
 
-00:01:33.640 --> 00:01:36.520
+00:01:33.680 --> 00:01:36.560
  that are used to, in effect, produce a web page, right?
 
-00:01:36.520 --> 00:01:38.200
+00:01:36.560 --> 00:01:38.480
  So we have a web page over here.
 
-00:01:38.200 --> 00:01:40.800
- You go to URL, dub, dub, dub, data,
+00:01:38.480 --> 00:01:40.840
+ You go to URL, dub, dub, dub, data--
 
-00:01:40.800 --> 00:01:45.320
+00:01:40.840 --> 00:01:45.360
  I mean, data.pr4e.org/page1.htm.
 
-00:01:45.320 --> 00:01:47.720
+00:01:45.360 --> 00:01:47.760
  And here comes a page.
 
-00:01:47.720 --> 00:01:50.240
+00:01:47.760 --> 00:01:50.280
  And this is like a super simple page.
 
-00:01:50.240 --> 00:01:52.040
+00:01:50.280 --> 00:01:52.080
  But there are so many technologies,
 
-00:01:52.040 --> 00:01:55.840
- like how browsers work with JavaScript and jQuery and CSS
+00:01:52.080 --> 00:01:55.880
+ like how browsers work with JavaScript, and jQuery, and CSS,
 
-00:01:55.840 --> 00:01:58.800
- and eventually Vue and things like that.
+00:01:55.880 --> 00:01:58.840
+ and eventually Vue, and things like that.
 
-00:01:58.800 --> 00:02:00.960
+00:01:58.840 --> 00:02:01.000
  That's a whole set of front-end technologies.
 
-00:02:00.960 --> 00:02:03.320
+00:02:01.000 --> 00:02:03.360
  And then there's sort of back-end technologies,
 
-00:02:03.320 --> 00:02:05.760
- like Django or Flask and databases.
+00:02:03.360 --> 00:02:05.800
+ like Django, or Flask, and databases.
 
-00:02:05.760 --> 00:02:09.160
- And we're going to learn-- my focus in this class
+00:02:05.800 --> 00:02:08.120
+ And we're going to learn--
 
-00:02:09.160 --> 00:02:11.160
- is less about how to make it all look beautiful,
+00:02:08.120 --> 00:02:10.080
+ my focus in this class is less about how
 
-00:02:11.160 --> 00:02:14.320
- although that's important, and more about how
+00:02:10.080 --> 00:02:13.040
+ to make it all look beautiful, although that's important,
 
-00:02:14.320 --> 00:02:17.120
- to deal with the back-end.
+00:02:13.040 --> 00:02:17.160
+ and more about how to deal with the back-end.
 
-00:02:17.120 --> 00:02:19.480
+00:02:17.160 --> 00:02:19.480
  So what we're going to see is these technologies that
 
-00:02:19.480 --> 00:02:22.000
- define the look and feel and the interactivity
+00:02:19.480 --> 00:02:22.440
+ define the look and feel and the interactivity of your web
 
-00:02:22.000 --> 00:02:26.720
- of your web pages, but also then how data and HTML, CSS,
+00:02:22.440 --> 00:02:27.520
+ pages, but also then how data and HTML, CSS, and JavaScript
 
-00:02:26.720 --> 00:02:29.800
- and JavaScript are served up by the remote server.
+00:02:27.520 --> 00:02:29.800
+ are served up by the remote server.
 
 00:02:29.800 --> 00:02:31.840
  And so the internet here is in the middle.
 
 00:02:31.840 --> 00:02:34.960
- The browser is sitting on your laptop or your phone
+ The browser is sitting on your laptop, or your phone,
 
 00:02:34.960 --> 00:02:37.160
  or whatever, and it has all these technologies built
@@ -180,13 +180,13 @@ WEBVTT
 00:02:44.000 --> 00:02:47.920
  And so the simplest version of this protocol
 
-00:02:47.920 --> 00:02:49.720
- is that you click on a tag.
+00:02:47.920 --> 00:02:50.840
+ is that you click on a tag, and when you click on that tag,
 
-00:02:49.720 --> 00:02:53.680
- And when you click on that tag, you get a new web page.
+00:02:50.840 --> 00:02:53.720
+ you get a new web page.
 
-00:02:53.680 --> 00:02:55.880
+00:02:53.720 --> 00:02:55.880
  Now, if you watch your debug console,
 
 00:02:55.880 --> 00:02:59.360
@@ -195,113 +195,113 @@ WEBVTT
 00:02:59.360 --> 00:03:01.840
  cycles used to construct the page.
 
-00:03:01.840 --> 00:03:03.920
+00:03:01.840 --> 00:03:04.040
  But in a sense, they're all the same.
 
-00:03:03.920 --> 00:03:06.320
+00:03:04.040 --> 00:03:06.360
  Now, as we move to things like HTTP/2,
 
-00:03:06.320 --> 00:03:08.840
+00:03:06.360 --> 00:03:08.880
  there are ways to pull down multiple documents
 
-00:03:08.840 --> 00:03:10.080
- in a single connection.
+00:03:08.880 --> 00:03:10.400
+ in a single connection, but we'll
 
-00:03:10.080 --> 00:03:12.120
- But we'll stick with the old HTTP/1
+00:03:10.400 --> 00:03:13.960
+ stick with the old HTTP/1 way of thinking about it.
 
-00:03:12.120 --> 00:03:13.920
- way of thinking about it.
-
-00:03:13.920 --> 00:03:16.280
+00:03:13.960 --> 00:03:16.300
  In the simplest form, the browser
 
-00:03:16.280 --> 00:03:18.880
- asks for a document and then retrieves the document
+00:03:16.300 --> 00:03:18.760
+ asks for a document, and then retrieves the document,
 
-00:03:18.880 --> 00:03:19.960
+00:03:18.760 --> 00:03:19.960
  and then shows the document.
 
-00:03:19.960 --> 00:03:23.720
+00:03:19.960 --> 00:03:23.840
  And that is the basic request response cycle.
 
-00:03:23.720 --> 00:03:26.000
+00:03:23.840 --> 00:03:26.040
  So if you look at how this works,
 
-00:03:26.000 --> 00:03:28.280
+00:03:26.040 --> 00:03:28.320
  that browser is an application running
 
-00:03:28.280 --> 00:03:31.440
- inside your computer on your laptop or your phone.
+00:03:28.320 --> 00:03:31.440
+ inside your computer on your laptop, or your phone.
 
-00:03:31.440 --> 00:03:32.920
+00:03:31.440 --> 00:03:32.960
  That is a piece of code.
 
-00:03:32.920 --> 00:03:35.520
+00:03:32.960 --> 00:03:35.560
  And in that, it's got a connection
 
-00:03:35.520 --> 00:03:38.600
- to the screen or the keyboard or the mouse or whatever.
+00:03:35.560 --> 00:03:38.640
+ to the screen, or the keyboard, or the mouse, or whatever.
 
-00:03:38.600 --> 00:03:41.600
+00:03:38.640 --> 00:03:41.640
  And it's watching for events, meaning
 
-00:03:41.600 --> 00:03:44.640
- that you're going to go and you're going to click somewhere.
+00:03:41.640 --> 00:03:44.680
+ that you're going to go, and you're going to click somewhere.
 
-00:03:44.640 --> 00:03:46.400
+00:03:44.680 --> 00:03:46.440
  And then this application is going
 
-00:03:46.400 --> 00:03:48.000
+00:03:46.440 --> 00:03:47.940
  to respond to the events.
 
-00:03:48.000 --> 00:03:49.640
+00:03:47.940 --> 00:03:49.600
  So on a web page, in the simplest case,
 
-00:03:49.640 --> 00:03:52.680
- you got stuff that you can click on and stuff that you can't.
+00:03:49.600 --> 00:03:51.200
+ you've got stuff that you can click on,
 
-00:03:52.680 --> 00:03:55.120
+00:03:51.200 --> 00:03:52.720
+ and stuff that you can't.
+
+00:03:52.720 --> 00:03:55.160
  And you go find your way through whatever
 
-00:03:55.120 --> 00:03:57.080
+00:03:55.160 --> 00:03:57.120
  to click on part of that web page.
 
-00:03:57.080 --> 00:04:00.360
+00:03:57.120 --> 00:04:00.400
  And that click is intercepted by the application,
 
-00:04:00.360 --> 00:04:04.080
- whether it's Chrome or Firefox or Safari running
+00:04:00.400 --> 00:04:04.120
+ whether it's Chrome, or Firefox, or Safari, running
 
-00:04:04.080 --> 00:04:06.920
+00:04:04.120 --> 00:04:06.960
  on your piece of equipment.
 
-00:04:06.920 --> 00:04:09.640
+00:04:06.960 --> 00:04:09.680
  And then that application then opens
 
-00:04:09.640 --> 00:04:13.880
+00:04:09.680 --> 00:04:13.880
  what's called a network socket, a socket across the network
 
-00:04:13.880 --> 00:04:17.920
- to a web server and sends a request.
+00:04:13.880 --> 00:04:17.880
+ to a web server, and sends a request.
 
-00:04:17.920 --> 00:04:19.640
+00:04:17.880 --> 00:04:19.640
  And that request, as we'll see in a bit,
 
 00:04:19.640 --> 00:04:21.960
  is a specially formatted request.
 
-00:04:21.960 --> 00:04:23.720
- It has a get command.
+00:04:21.960 --> 00:04:24.200
+ It has a get command, and then it
 
-00:04:23.720 --> 00:04:27.040
- And then it has the URL that it wants to get from the web server.
+00:04:24.200 --> 00:04:27.040
+ has the URL that it wants to get from the web server.
 
 00:04:27.040 --> 00:04:31.000
  And then the web server does a bunch of work inside itself,
 
 00:04:31.000 --> 00:04:34.040
- a bunch of work inside itself, maybe reading disk spiles
+ a bunch of work inside itself, maybe reading disk files,
 
 00:04:34.040 --> 00:04:36.360
  and running the programs, generating
@@ -312,23 +312,23 @@ WEBVTT
 00:04:38.040 --> 00:04:40.160
  And then it sends the response back
 
-00:04:40.160 --> 00:04:41.960
+00:04:40.160 --> 00:04:41.940
  on that same socket connection.
 
-00:04:41.960 --> 00:04:44.360
- So there's like this socket connection
+00:04:41.940 --> 00:04:44.880
+ So there's like this socket connection through which
 
-00:04:44.360 --> 00:04:47.080
- through which all of this stuff is viewed.
+00:04:44.880 --> 00:04:47.080
+ all of this stuff is viewed.
 
-00:04:47.080 --> 00:04:51.440
+00:04:47.080 --> 00:04:51.420
  And so the HTML is kind of the basic thing that comes back.
 
-00:04:51.440 --> 00:04:54.400
- As we go further, we'll see that it's not just HTML that comes
+00:04:51.420 --> 00:04:53.520
+ As we go further, we'll see that it's not just
 
-00:04:54.400 --> 00:04:57.200
- back, but other things as well come back.
+00:04:53.520 --> 00:04:57.200
+ HTML that comes back, but other things as well that come back.
 
 00:04:57.200 --> 00:05:01.200
  And so when the browser receives that HTML, then it says,
@@ -336,31 +336,25 @@ WEBVTT
 00:05:01.200 --> 00:05:02.840
  oh, I know what HTML is.
 
-00:05:02.840 --> 00:05:05.520
+00:05:02.840 --> 00:05:05.560
  I've got this header one tag.
 
-00:05:05.520 --> 00:05:07.640
+00:05:05.560 --> 00:05:07.640
  Here, let me change the color of this thing
 
-00:05:07.640 --> 00:05:09.080
- so you can see that.
+00:05:07.640 --> 00:05:11.400
+ so you can see it a little better.
 
-00:05:09.080 --> 00:05:11.360
- See it a little better.
-
-00:05:11.360 --> 00:05:12.800
+00:05:11.400 --> 00:05:12.840
  Yellow is way better.
 
-00:05:12.800 --> 00:05:17.240
+00:05:12.840 --> 00:05:17.280
  OK, so when the browser receives this page,
 
-00:05:17.240 --> 00:05:18.840
- it sort of sees it.
+00:05:17.280 --> 00:05:20.000
+ it sort of sees it, and it looks at it.
 
-00:05:18.840 --> 00:05:19.960
- And it looks at it.
-
-00:05:19.960 --> 00:05:21.800
+00:05:20.000 --> 00:05:21.800
  And then it looks at all the HTML.
 
 00:05:21.800 --> 00:05:25.960
@@ -372,27 +366,24 @@ WEBVTT
 00:05:30.080 --> 00:05:31.560
  and how to make it look beautiful.
 
-00:05:31.560 --> 00:05:34.280
- But ultimately, something in that HTML plus its CSS
+00:05:31.560 --> 00:05:34.240
+ But ultimately, something in that HTML, plus its CSS,
 
-00:05:34.280 --> 00:05:37.720
- plus its JavaScript leads to a visual display of the page.
+00:05:34.240 --> 00:05:37.680
+ plus its JavaScript, leads to a visual display of the page.
 
-00:05:37.720 --> 00:05:39.720
+00:05:37.680 --> 00:05:39.760
  And then that's the thing you see.
 
-00:05:39.720 --> 00:05:42.640
- And so this is the request response.
-
-00:05:42.640 --> 00:05:45.240
- Cycle.
+00:05:39.760 --> 00:05:45.240
+ And so this is the request-response cycle.
 
 00:05:45.240 --> 00:05:48.240
  So up next, we're going to talk about what these network
 
-00:05:48.240 --> 00:05:50.840
- sockets are or the things that fundamentally
+00:05:48.240 --> 00:05:51.740
+ sockets are or the things that fundamentally underlie
 
-00:05:50.840 --> 00:05:54.240
- underlie this request response cycle.
+00:05:51.740 --> 00:05:54.280
+ this request-response cycle.
 

@@ -79,7 +79,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 03.02 How the Autograder Works (10:42)",
+                    "title": "DJ 03.02 Using the Autograder in Django for Everybody (10:42)",
                     "media": "lesson-03-install/02-DJ-00-AutoGrader.m4v",
                     "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
                     "youtube": "zQvzXkiwILM"
@@ -518,7 +518,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 08.01 Django Data Models (19:59)",
+                    "title": "DJ 08.01 Introduction to Django Models (19:59)",
                     "media": "lesson-08-models/01-DJ-02-Models.m4v",
                     "note": "Audio is messed up in FCPX",
                     "youtube": "AqsPifp-ccc"
@@ -674,7 +674,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 05.03 HTML - Sample Code Walkthrough (13:58)",
+                    "title": "DJ 05.03 Code Walk Through HTML (13:58)",
                     "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
                     "youtube": "wYc6l28v7Cs"
                 },
@@ -1059,7 +1059,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.06 Django Template Inheritance (6:06)",
+                    "title": "DJ 10.06 Inheritance in Django Templates (6:06)",
                     "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v",
                     "youtube": "IMgml67lH9Y",
                     "project": "DJ 06 Views 06 Inherit"
@@ -2894,7 +2894,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 25.02 Building Classes and Objects in JavaScript (13:13)",
+                    "title": "DJ 25.02 JavaScript Object Oriented Classes (13:13)",
                     "youtube": "DLWYj1_j1Is",
                     "media": "lesson-25-jsoo/02-JS-02-02-Code.m4v"
                 },
@@ -3474,7 +3474,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 31.01 DJ4E Samples Walkthrough - Favicon (4:11)",
+                    "title": "DJ 31.01 Walking through the DJ4E Favicon Sample Code (4:11)",
                     "youtube": "C1WGD5hFdT8",
                     "media": "lesson-31-ads3/01-samples-favicon-walkthrough.mov"
                 },
@@ -3486,7 +3486,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 31.03 DJ4E Samples Walkthrough - Favorites (34:17)",
+                    "title": "DJ 31.03 Walking through the DJ4E Favorites (favwc) Sample Code (34:17)",
                     "youtube": "CFF0WQLj1as",
                     "youtube_pre_2025": "6cq-ehBHkwc",
                     "media": "lesson-31-ads3/03-samples-favs-720.mov"
@@ -4731,7 +4731,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 31.01 DJ4E Samples Walkthrough - Favicon (4:11)",
+                    "title": "DJ 31.01 Walking through the DJ4E Favicon Sample Code (4:11)",
                     "youtube": "C1WGD5hFdT8",
                     "media": "lesson-31-ads3/01-samples-favicon-walkthrough.mov"
                 },
@@ -4743,7 +4743,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 31.03 DJ4E Samples Walkthrough - Favorites (34:17)",
+                    "title": "DJ 31.03 Walking through the DJ4E Favorites (favwc) Sample Code (34:17)",
                     "youtube": "CFF0WQLj1as",
                     "youtube_pre_2025": "6cq-ehBHkwc",
                     "media": "lesson-31-ads3/03-samples-favs-720.mov"

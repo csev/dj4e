@@ -21,10 +21,10 @@ WEBVTT
 00:00:17.360 --> 00:00:19.700
  And as computers were going to share data,
 
-00:00:19.700 --> 00:00:22.280
+00:00:19.700 --> 00:00:22.320
  and some computers were going to have data, and other computers
 
-00:00:22.280 --> 00:00:25.680
+00:00:22.320 --> 00:00:25.680
  were going to want data, they thought, oh, the way to do this
 
 00:00:25.680 --> 00:00:27.600
@@ -84,14 +84,14 @@ WEBVTT
 00:01:11.120 --> 00:01:15.840
  And it's the way the phone system in our world
 
-00:01:15.840 --> 00:01:17.080
- scales to all the people.
+00:01:15.840 --> 00:01:17.280
+ scales to all the people, and it's
 
-00:01:17.080 --> 00:01:19.500
- And it's the way the internet scales to all the people
+00:01:17.280 --> 00:01:19.360
+ the way the internet scales to all the people that
 
-00:01:19.500 --> 00:01:21.360
- that want to use that internet.
+00:01:19.360 --> 00:01:21.360
+ want to use that internet.
 
 00:01:21.360 --> 00:01:25.760
  So this is made inside of software
@@ -111,13 +111,13 @@ WEBVTT
 00:01:39.720 --> 00:01:42.920
  Once they answer, there is a two-way communication.
 
-00:01:42.920 --> 00:01:46.640
- It's kind of like a file, except that you can simultaneously
+00:01:42.920 --> 00:01:45.600
+ It's kind of like a file, except that you
 
-00:01:46.640 --> 00:01:48.360
- read from the file and write from the file,
+00:01:45.600 --> 00:01:48.320
+ can simultaneously read from the file and write from the file,
 
-00:01:48.360 --> 00:01:50.880
+00:01:48.320 --> 00:01:50.880
  although it's important for the two cooperating
 
 00:01:50.880 --> 00:01:53.760
@@ -127,7 +127,7 @@ WEBVTT
  and who's going to write first, because it's
 
 00:01:55.960 --> 00:01:58.360
- like when you pick the phone up after it rings,
+ like if when you pick the phone up after it rings,
 
 00:01:58.360 --> 00:02:00.840
  we all know to say, hello.
@@ -169,7 +169,7 @@ WEBVTT
  It actually is talking to another program.
 
 00:02:29.760 --> 00:02:32.000
- So even when it's just retrieving a file,
+ And so even when it's just retrieving a file,
 
 00:02:32.000 --> 00:02:34.880
  it's talking to an application on that server.
@@ -192,10 +192,10 @@ WEBVTT
 00:02:45.840 --> 00:02:46.440
  back out.
 
-00:02:46.440 --> 00:02:48.320
+00:02:46.440 --> 00:02:48.360
  We can't just say, oh, the pictures are there.
 
-00:02:48.320 --> 00:02:49.400
+00:02:48.360 --> 00:02:49.400
  You can grab them.
 
 00:02:49.400 --> 00:02:52.520
@@ -207,17 +207,17 @@ WEBVTT
 00:02:54.640 --> 00:02:58.200
  decides, if you are allowed to see this picture, I will send it.
 
-00:02:58.200 --> 00:03:01.240
+00:02:58.200 --> 00:03:01.120
  If you're not allowed to see the picture, I will not send it.
 
-00:03:01.240 --> 00:03:03.400
+00:03:01.120 --> 00:03:03.400
  And so that's where it's a piece of software
 
-00:03:03.400 --> 00:03:06.600
+00:03:03.400 --> 00:03:06.560
  that you're talking, even if you're looking at a picture.
 
-00:03:06.600 --> 00:03:08.360
- Sometimes that software is really simple,
+00:03:06.560 --> 00:03:08.360
+ Sometimes that software is really simple
 
 00:03:08.360 --> 00:03:11.280
  and you barely notice it.
@@ -231,58 +231,58 @@ WEBVTT
 00:03:15.200 --> 00:03:18.560
  It is really two pieces of computer software
 
-00:03:18.560 --> 00:03:20.040
+00:03:18.560 --> 00:03:20.000
  talking to each other.
 
-00:03:20.040 --> 00:03:22.440
+00:03:20.000 --> 00:03:22.400
  And we use the internet as that intermediary
 
-00:03:22.440 --> 00:03:26.160
+00:03:22.400 --> 00:03:26.240
  to allow that conversation to happen.
 
-00:03:26.160 --> 00:03:29.160
+00:03:26.240 --> 00:03:29.160
  So if you read my book about the TCP/IP,
 
-00:03:29.160 --> 00:03:31.240
+00:03:29.160 --> 00:03:31.200
  you'll learn this in super great detail.
 
-00:03:31.240 --> 00:03:36.280
+00:03:31.200 --> 00:03:36.240
  But every computer has an IP address.
 
-00:03:36.280 --> 00:03:37.360
+00:03:36.240 --> 00:03:37.320
  It is a number.
 
-00:03:37.360 --> 00:03:38.680
+00:03:37.320 --> 00:03:38.660
  There are two kinds of addresses.
 
-00:03:38.680 --> 00:03:41.880
+00:03:38.660 --> 00:03:41.840
  There's IPv4 and IPv6.
 
-00:03:41.880 --> 00:03:45.800
+00:03:41.840 --> 00:03:45.760
  IPv4 version 4 is the one that's got four dotted numbers,
 
-00:03:45.800 --> 00:03:51.280
+00:03:45.760 --> 00:03:51.280
  like 142.16.42.14.
 
-00:03:51.280 --> 00:03:52.720
- But within each of those, they have
+00:03:51.280 --> 00:03:52.920
+ But within each of those, they have what's
 
-00:03:52.720 --> 00:03:55.000
- what's called a TCP port number.
+00:03:52.920 --> 00:03:55.000
+ called a TCP port number.
 
-00:03:55.000 --> 00:03:57.280
+00:03:55.000 --> 00:03:57.240
  And because this whole internet thing
 
-00:03:57.280 --> 00:03:59.320
+00:03:57.240 --> 00:03:59.280
  is applications talking to applications,
 
-00:03:59.320 --> 00:04:02.920
+00:03:59.280 --> 00:04:02.880
  we need to have a good way to know which application we're
 
-00:04:02.920 --> 00:04:03.440
+00:04:02.880 --> 00:04:03.400
  talking to.
 
-00:04:03.440 --> 00:04:06.120
+00:04:03.400 --> 00:04:06.120
  And that's where TCP port numbers come in.
 
 00:04:06.120 --> 00:04:10.360
@@ -309,11 +309,8 @@ WEBVTT
 00:04:30.840 --> 00:04:32.840
  And so you can look these things up.
 
-00:04:32.840 --> 00:04:36.000
- Port 25 is used for email, server-to-server
-
-00:04:36.000 --> 00:04:37.320
- communication.
+00:04:32.840 --> 00:04:37.320
+ Port 25 is used for email, server-to-server communication.
 
 00:04:37.320 --> 00:04:39.600
  In the old days, we used this thing called Telnet.
@@ -336,10 +333,10 @@ WEBVTT
 00:04:52.560 --> 00:04:54.200
  being forwarded from somewhere.
 
-00:04:54.200 --> 00:04:57.200
+00:04:54.200 --> 00:04:57.180
  And they all talk, and they connect to an IP address.
 
-00:04:57.200 --> 00:05:02.440
+00:04:57.180 --> 00:05:02.440
  In this case, 7420828177 is the IP address of this computer.
 
 00:05:02.440 --> 00:05:04.960
@@ -351,87 +348,84 @@ WEBVTT
 00:05:08.440 --> 00:05:10.880
  And each of the arrows in between them
 
-00:05:10.880 --> 00:05:12.200
+00:05:10.880 --> 00:05:12.320
  is a separate protocol.
 
-00:05:12.200 --> 00:05:14.120
+00:05:12.320 --> 00:05:14.160
  So if you're talking to an email server,
 
-00:05:14.120 --> 00:05:15.940
+00:05:14.160 --> 00:05:15.820
  you expect to talk an email protocol.
 
-00:05:15.940 --> 00:05:17.520
+00:05:15.820 --> 00:05:17.480
  And if you're talking to a login server,
 
-00:05:17.520 --> 00:05:18.560
+00:05:17.480 --> 00:05:18.560
  you have a login protocol.
 
-00:05:18.560 --> 00:05:19.940
+00:05:18.560 --> 00:05:19.820
  That's kind of the simplest one.
 
-00:05:19.940 --> 00:05:21.080
+00:05:19.820 --> 00:05:21.120
  Or a web server.
 
-00:05:21.080 --> 00:05:24.520
+00:05:21.120 --> 00:05:24.560
  Web server can be on port 80 if it's unsecure.
 
-00:05:24.520 --> 00:05:28.560
+00:05:24.560 --> 00:05:28.600
  Preferred, of course, is HTTPS, which is on port 443.
 
-00:05:28.560 --> 00:05:32.160
- If you have a mail application like, say,
+00:05:28.600 --> 00:05:32.840
+ If you have a mail application, like say Thunderbird,
 
-00:05:32.160 --> 00:05:34.160
- Thunderbird that's reading Gmail,
+00:05:32.840 --> 00:05:36.580
+ that's reading Gmail, it talks to ports 109 or 110
 
-00:05:34.160 --> 00:05:37.640
- it talks to ports 109 or 110 or a couple of other ones
+00:05:36.580 --> 00:05:39.800
+ or a couple of other ones that are ways for a mailbox
 
-00:05:37.640 --> 00:05:40.880
- that are ways for a mailbox application
+00:05:39.800 --> 00:05:43.800
+ application to talk a protocol to a server-based mailbox
 
-00:05:40.880 --> 00:05:43.760
- to talk a protocol to a server-based mailbox
-
-00:05:43.760 --> 00:05:46.600
+00:05:43.800 --> 00:05:46.600
  to retrieve the new messages or delete a message or view
 
-00:05:46.600 --> 00:05:48.200
+00:05:46.600 --> 00:05:48.240
  a message or whatever.
 
-00:05:48.200 --> 00:05:52.560
+00:05:48.240 --> 00:05:52.640
  So there are these ports on servers that have protocols.
 
-00:05:52.560 --> 00:05:55.660
+00:05:52.640 --> 00:05:55.640
  And then we can build software on our clients
 
-00:05:55.660 --> 00:05:58.640
+00:05:55.640 --> 00:05:58.680
  that talk these protocols.
 
-00:05:58.640 --> 00:06:00.920
+00:05:58.680 --> 00:06:01.040
  The one we're going to be playing with the most
 
-00:06:00.920 --> 00:06:02.680
+00:06:01.040 --> 00:06:02.680
  in development mode is port 80.
 
 00:06:02.680 --> 00:06:08.000
  And in production mode, port 443 for the HTTP for web documents,
 
-00:06:08.000 --> 00:06:10.720
- basically, and web application documents.
+00:06:08.000 --> 00:06:10.760
+ basically in web application documents.
 
-00:06:10.720 --> 00:06:13.480
+00:06:10.760 --> 00:06:13.520
  So up next, we're going to take a quick look at the hypertext
 
-00:06:13.480 --> 00:06:15.040
+00:06:13.520 --> 00:06:15.080
  transfer protocol.
 
-00:06:15.040 --> 00:06:17.800
+00:06:15.080 --> 00:06:17.840
  I always want to call it hypertext transport protocol,
 
-00:06:17.800 --> 00:06:18.960
+00:06:17.840 --> 00:06:19.000
  HTTP.
 
-00:06:18.960 --> 00:06:24.760
+00:06:19.000 --> 00:06:24.520
  And that is the protocol that we talk to port 80 or port 443.
 

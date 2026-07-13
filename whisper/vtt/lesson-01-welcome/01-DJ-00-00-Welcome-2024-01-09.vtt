@@ -1,209 +1,491 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:08.000
- Hello. Welcome to Django for Everybody. My name is Charles Severance and I've developed these materials that I hope you find useful.
+00:00:00.000 --> 00:00:03.560
+ - Hello, welcome to Django for Everybody.
 
-00:00:08.000 --> 00:00:16.000
- So one of the things I like to do whenever I start teaching a class is explain why I chose to teach this material.
+00:00:03.560 --> 00:00:05.840
+ My name is Charles Severance, and I've developed
 
-00:00:16.000 --> 00:00:23.000
- In particular, why Django? To explain why Django, I have to go back into the past a little bit.
+00:00:05.840 --> 00:00:08.100
+ these materials that I hope you find useful.
 
-00:00:23.000 --> 00:00:34.000
- I have been teaching here at the School of Information, University of Michigan, since 2007, I've been teaching web development.
+00:00:08.100 --> 00:00:10.520
+ So one of the things I like to do
 
-00:00:34.000 --> 00:00:45.000
- And if we go all the way back to the beginning, I think we started with PHP, then we did Ruby on Rails, and then we did Google App Engine.
+00:00:10.520 --> 00:00:13.160
+ whenever I start teaching a class
 
-00:00:45.000 --> 00:00:53.000
- I even wrote a textbook for O'Reilly and Associates about Google App Engine. We used that textbook for a while.
+00:00:13.160 --> 00:00:16.880
+ is explain why I chose to teach this material,
 
-00:00:53.000 --> 00:01:02.000
- It was based on Django 1.0 and then they changed Google App Engine and I didn't like that because it broke my book.
+00:00:16.880 --> 00:00:19.640
+ in particular, why Django?
 
-00:01:02.000 --> 00:01:17.000
- And then we switched to PHP and then we did Flask and then we did Django. So there's a whole litany of different web development frameworks we've used over the years.
+00:00:19.640 --> 00:00:22.160
+ To explain why Django, I have to go back
 
-00:01:17.000 --> 00:01:22.000
- And that's kind of how web development is. There's always something new, always something different.
+00:00:22.160 --> 00:00:23.620
+ into the past a little bit.
 
-00:01:22.000 --> 00:01:33.000
- So right before I was teaching Django for everybody, I was teaching PHP and I had been teaching that for five years and I just love that class.
+00:00:23.620 --> 00:00:28.120
+ I have been teaching here at the School of Information,
 
-00:01:33.000 --> 00:01:39.000
- We teach Python for most of our beginning students and just that's a great first language.
+00:00:28.120 --> 00:00:32.400
+ University of Michigan since 2007.
 
-00:01:39.000 --> 00:01:49.000
- That course that I built that taught Python to beginners evolved into the course Python for Everybody, which is one of the most popular programming courses in the world.
+00:00:32.400 --> 00:00:34.720
+ I've been teaching web development.
 
-00:01:49.000 --> 00:01:57.000
- And one of the things that I wanted to do was teach a second language, not just more Python, so that's why I really like teaching PHP.
+00:00:34.720 --> 00:00:37.920
+ And if we go all the way back to the beginning,
 
-00:01:57.000 --> 00:02:09.000
- And I developed that course for five years, but it wasn't just a PHP class. It was HTML, it's CSS, JavaScript, jQuery, JSON, PHP.
+00:00:37.920 --> 00:00:42.920
+ I think we started with PHP, then we did Ruby on Rails,
 
-00:02:09.000 --> 00:02:18.000
- And I love teaching that class, but at some point the curriculum committee wanted it to be Python across the board.
+00:00:42.920 --> 00:00:46.400
+ and then we did Google App Engine.
 
-00:02:18.000 --> 00:02:25.000
- I love that course and I turned it into web applications for everybody and that's available also online.
+00:00:46.400 --> 00:00:50.060
+ I even wrote a textbook for O'Reilly and Associates
 
-00:02:25.000 --> 00:02:36.000
- And so I had a year to convert from PHP to Python. And so during that year I asked myself the question, would I teach Flask or Django?
+00:00:50.060 --> 00:00:51.400
+ about Google App Engine.
 
-00:02:36.000 --> 00:02:42.000
- And I had a semester sabbatical and during that time someone taught the class in Flask.
+00:00:51.400 --> 00:00:53.440
+ We used that textbook for a while.
 
-00:02:42.000 --> 00:02:50.000
- And I looked at what they were accomplishing in the 15th week of the Flask class and I'm like, oh, there's so much low level stuff you have to learn.
+00:00:53.440 --> 00:00:55.800
+ That was based on Django 1.0,
 
-00:02:50.000 --> 00:02:57.000
- And so I was like, I'm not sure I like Flask, but I had a year. So I asked everyone I knew who was pretty sharp.
+00:00:55.800 --> 00:00:58.680
+ and then they changed Google App Engine,
 
-00:02:57.000 --> 00:03:04.000
- I said, would you prefer Flask or Django? And the strange thing is I got different answers.
+00:00:58.680 --> 00:01:02.560
+ and didn't like that 'cause it broke my book.
 
-00:03:04.000 --> 00:03:12.000
- Half the people said Flask is great, Django is terrible, and the other half the people said Django is great, Flask is terrible, which was inconclusive.
+00:01:02.560 --> 00:01:07.560
+ And then we switched to PHP, and then we did Flask,
 
-00:03:12.000 --> 00:03:19.000
- And then I changed the question. I said, if you were going to teach only one of Flask or Django, which one would you teach first?
+00:01:07.560 --> 00:01:10.280
+ and then we did Django.
 
-00:03:19.000 --> 00:03:24.000
- And at that point, Django was pretty much the consensus agreement.
+00:01:10.280 --> 00:01:12.560
+ So there's a whole litany
 
-00:03:24.000 --> 00:03:32.000
- And that's because Flask is a very powerful tool in the hands of strong developers.
+00:01:12.560 --> 00:01:16.000
+ of different web development frameworks
 
-00:03:32.000 --> 00:03:43.000
- So if you're teaching, taking a React class or a Progressive Web Applications class and you just want kind of a little back end and you know what you're doing,
+00:01:16.000 --> 00:01:17.340
+ we've used over the years,
 
-00:03:43.000 --> 00:03:47.000
- Flask is great because you whip up a little microservice and away it goes.
+00:01:17.340 --> 00:01:19.000
+ and that's kinda how web development is.
 
-00:03:47.000 --> 00:03:56.000
- But Django, if you don't know anything, Django gives you a road to follow. You go down this road and you will learn and you will build something.
+00:01:19.000 --> 00:01:22.000
+ There's always something new, always something different.
 
-00:03:56.000 --> 00:04:04.000
- And so I started developing this class. It took me a couple of years to get it right. I iterate a lot.
+00:01:22.000 --> 00:01:27.000
+ So right before I was teaching Django for everybody,
 
-00:04:04.000 --> 00:04:10.000
- I'm an engineer and I love to iterate. After a couple of years, I said, OK, I think I like it.
+00:01:27.000 --> 00:01:28.560
+ I was teaching PHP,
 
-00:04:10.000 --> 00:04:15.000
- And so I turned it into this DJ for E, Django for everybody. It became a MOOC.
+00:01:28.560 --> 00:01:30.800
+ and I had been teaching that for five years,
 
-00:04:15.000 --> 00:04:21.000
+00:01:30.800 --> 00:01:33.220
+ and I just loved that class.
+
+00:01:33.220 --> 00:01:36.600
+ We teach Python for most of our beginning students,
+
+00:01:36.600 --> 00:01:39.680
+ and just that's a great first language.
+
+00:01:39.680 --> 00:01:42.520
+ That course that I built that taught Python to beginners
+
+00:01:42.520 --> 00:01:45.580
+ evolved into the course Python for Everybody,
+
+00:01:45.580 --> 00:01:48.480
+ which is one of the most popular programming courses
+
+00:01:48.480 --> 00:01:49.600
+ in the world.
+
+00:01:49.600 --> 00:01:51.400
+ And one of the things that I wanted to do
+
+00:01:51.400 --> 00:01:54.800
+ was teach a second language, not just more Python.
+
+00:01:54.800 --> 00:01:57.440
+ So that's why I really like teaching PHP.
+
+00:01:57.440 --> 00:02:00.040
+ And I developed that course for five years,
+
+00:02:00.040 --> 00:02:01.760
+ but it wasn't just a PHP class.
+
+00:02:01.760 --> 00:02:06.760
+ It was HTML, it's CSS, JavaScript, jQuery, JSON, PHP.
+
+00:02:06.760 --> 00:02:13.360
+ And I loved teaching that class,
+
+00:02:13.360 --> 00:02:15.600
+ but at some point the curriculum committee
+
+00:02:15.600 --> 00:02:18.500
+ wanted it to be Python across the board.
+
+00:02:18.500 --> 00:02:19.340
+ I loved that course,
+
+00:02:19.340 --> 00:02:22.040
+ and I turned it into web applications for everybody,
+
+00:02:22.040 --> 00:02:25.680
+ and that's available also online.
+
+00:02:25.680 --> 00:02:30.240
+ And so I had a year to convert from PHP to Python.
+
+00:02:30.240 --> 00:02:34.280
+ And so during that year, I asked myself the question,
+
+00:02:34.280 --> 00:02:36.040
+ would I teach Flask or Django?
+
+00:02:36.040 --> 00:02:38.560
+ And I had a semester sabbatical,
+
+00:02:38.560 --> 00:02:42.160
+ and during that time someone taught the class in Flask.
+
+00:02:42.160 --> 00:02:44.540
+ And I looked at what they were accomplishing
+
+00:02:44.540 --> 00:02:46.920
+ in the 15th week of the Flask class,
+
+00:02:46.920 --> 00:02:49.480
+ and I'm like, oh, there's so much low-level stuff
+
+00:02:49.480 --> 00:02:50.880
+ you have to learn.
+
+00:02:50.880 --> 00:02:53.300
+ And so I was like, eh, I'm not sure I like Flask.
+
+00:02:53.300 --> 00:02:56.520
+ But I had a year, so I asked everyone I knew,
+
+00:02:56.520 --> 00:02:59.020
+ who was pretty sharp, I said,
+
+00:02:59.020 --> 00:03:01.640
+ would you prefer Flask or Django?
+
+00:03:01.640 --> 00:03:04.600
+ And the strange thing is I got different answers.
+
+00:03:04.600 --> 00:03:07.680
+ Half the people said, Flask is great, Django's terrible,
+
+00:03:07.680 --> 00:03:10.080
+ and the other half the people said, Django's great,
+
+00:03:10.080 --> 00:03:12.840
+ Flask is terrible, which was inconclusive.
+
+00:03:12.840 --> 00:03:14.560
+ And then I changed the question.
+
+00:03:14.560 --> 00:03:18.160
+ I said, if you were gonna teach only one of Flask or Django,
+
+00:03:18.160 --> 00:03:19.880
+ which one would you teach first?
+
+00:03:19.880 --> 00:03:21.760
+ And at that point,
+
+00:03:21.760 --> 00:03:24.760
+ Django was pretty much the consensus agreement.
+
+00:03:24.760 --> 00:03:29.760
+ And that's because Flask is a very powerful tool
+
+00:03:29.760 --> 00:03:33.000
+ in the hands of strong developers.
+
+00:03:33.000 --> 00:03:37.260
+ So if you're taking a React class
+
+00:03:37.260 --> 00:03:40.720
+ or a Progressive Web Applications class,
+
+00:03:40.720 --> 00:03:42.920
+ and you just want kind of a little backend,
+
+00:03:42.920 --> 00:03:43.960
+ and you know what you're doing,
+
+00:03:43.960 --> 00:03:46.520
+ Flask is great, 'cause you whip up a little microservice
+
+00:03:46.520 --> 00:03:47.880
+ and away it goes.
+
+00:03:47.880 --> 00:03:50.480
+ But Django, if you don't know anything,
+
+00:03:50.480 --> 00:03:52.040
+ Django gives you a road to follow.
+
+00:03:52.040 --> 00:03:54.320
+ You go down this road, and you will learn,
+
+00:03:54.320 --> 00:03:55.800
+ and you will build something.
+
+00:03:55.800 --> 00:04:00.880
+ And so I started developing this class.
+
+00:04:00.880 --> 00:04:02.880
+ It took me a couple years to get it right.
+
+00:04:02.880 --> 00:04:03.920
+ I iterate a lot.
+
+00:04:03.920 --> 00:04:06.480
+ I'm an engineer, and I love to iterate.
+
+00:04:06.480 --> 00:04:09.880
+ After a couple years, I said, okay, I think I like it.
+
+00:04:09.880 --> 00:04:13.680
+ And so I turned it into this DJ for E, Django for everybody.
+
+00:04:13.680 --> 00:04:14.780
+ It became a MOOC.
+
+00:04:14.780 --> 00:04:20.800
  And so I'm really impressed at how far we get.
 
-00:04:21.000 --> 00:04:26.000
- And the reason is, is with Django, because there's kind of a road and you follow the road.
+00:04:20.800 --> 00:04:23.320
+ And the reason is, is with Django,
 
-00:04:26.000 --> 00:04:40.000
- At the end, my students have a nicely working website that has Ajax working, has pictures working, has single sign-on using OAuth working and all these things.
+00:04:23.320 --> 00:04:26.960
+ because there's kind of a road, and you follow the road.
 
-00:04:40.000 --> 00:04:43.000
+00:04:26.960 --> 00:04:31.520
+ At the end, my students have a nicely working website
+
+00:04:31.520 --> 00:04:35.320
+ that has Ajax working, has pictures working,
+
+00:04:35.320 --> 00:04:39.440
+ has single sign-on using OAuth working,
+
+00:04:39.440 --> 00:04:40.560
+ and all these things.
+
+00:04:40.560 --> 00:04:43.040
  And we learn about Bootstrap and a whole bunch of things.
 
-00:04:43.000 --> 00:04:48.000
- And if you look at their website, you know, it's a beginner, but it is a complete website.
+00:04:43.040 --> 00:04:46.340
+ And if you look at their website, it's a beginner,
 
-00:04:48.000 --> 00:04:54.000
- And because we use Python Anywhere, they are hosting it from the first week.
+00:04:46.340 --> 00:04:48.300
+ but it is a complete website.
 
-00:04:54.000 --> 00:05:00.000
- So every assignment is in a hosted Python Anywhere instance of Django for them.
+00:04:48.300 --> 00:04:50.960
+ And because we use Python Anywhere,
 
-00:05:00.000 --> 00:05:05.000
- And so they're learning how to host. And I think that's of all the things I've taught up to this point.
+00:04:50.960 --> 00:04:54.440
+ they are hosting it from the first week.
 
-00:05:05.000 --> 00:05:13.000
- I never, other than Google App Engine, I never could get the students to have in effect a URL at the end of the course.
+00:04:54.440 --> 00:04:59.000
+ So every assignment is in a hosted Python Anywhere instance
 
-00:05:13.000 --> 00:05:22.000
- This is a great second class, once you kind of know Python, to learn how to use Python to do something.
+00:04:59.000 --> 00:05:00.040
+ of Django for them.
 
-00:05:22.000 --> 00:05:30.000
- It's advanced Python. It's using things that you might have seen in initial Python class, but not really developed skill in.
+00:05:00.040 --> 00:05:01.440
+ And so they're learning how to host.
 
-00:05:30.000 --> 00:05:36.000
- And the particular skill that this class really is going to teach you is object oriented programming.
+00:05:01.440 --> 00:05:04.560
+ And I think that's, of all the things I've taught
 
-00:05:36.000 --> 00:05:43.000
- And I'll just say, object oriented programming is probably one of the most important concepts in programming.
+00:05:04.560 --> 00:05:08.040
+ up to this point, I never, other than Google App Engine,
 
-00:05:43.000 --> 00:05:49.000
- And it's also the most difficult concept to teach and learn.
+00:05:08.040 --> 00:05:11.800
+ I never could get the students to have in effect a URL
 
-00:05:49.000 --> 00:05:55.000
- That's because if you just take a class and you have a chapter on object orientation, you'll see a bunch of syntax.
+00:05:11.800 --> 00:05:13.680
+ at the end of the course.
 
-00:05:55.000 --> 00:05:57.000
- But you do not know why you're using that syntax.
+00:05:13.680 --> 00:05:18.680
+ This is a great second class, once you kind of know Python,
 
-00:05:57.000 --> 00:06:01.000
- Whereas in Django, on the first day you're building objects.
+00:05:18.680 --> 00:05:22.720
+ to learn how to use Python to do something.
 
-00:06:01.000 --> 00:06:08.000
- Django itself is an object and you're like overriding bits and pieces inside of this big object.
+00:05:22.720 --> 00:05:24.560
+ It's advanced Python.
 
-00:06:08.000 --> 00:06:10.000
+00:05:24.560 --> 00:05:27.160
+ It's using things that you might have seen
+
+00:05:27.160 --> 00:05:30.960
+ in initial Python class, but not really developed skill in.
+
+00:05:30.960 --> 00:05:33.160
+ And the particular skill that this class really
+
+00:05:33.160 --> 00:05:36.480
+ is going to teach you is object-oriented programming.
+
+00:05:36.480 --> 00:05:39.620
+ And I'll just say, object-oriented programming
+
+00:05:39.620 --> 00:05:42.760
+ is probably one of the most important concepts
+
+00:05:42.760 --> 00:05:47.680
+ in programming, and it's also the most difficult concept
+
+00:05:47.680 --> 00:05:48.960
+ to teach and learn.
+
+00:05:48.960 --> 00:05:51.920
+ That's because if you just take a class
+
+00:05:51.920 --> 00:05:53.820
+ and you have a chapter on object orientation,
+
+00:05:53.820 --> 00:05:54.960
+ you'll see a bunch of syntax,
+
+00:05:54.960 --> 00:05:57.360
+ but you do not know why you're using that syntax.
+
+00:05:57.360 --> 00:06:00.280
+ Whereas in Django, on the first day,
+
+00:06:00.280 --> 00:06:02.260
+ you're building objects.
+
+00:06:02.260 --> 00:06:04.160
+ Django itself is an object,
+
+00:06:04.160 --> 00:06:06.680
+ and you're like overriding bits and pieces
+
+00:06:06.680 --> 00:06:08.080
+ inside of this big object.
+
+00:06:08.080 --> 00:06:09.800
  And then there's objects within objects.
 
-00:06:10.000 --> 00:06:17.000
- And so it's a wonderful, wonderful way to teach object oriented programming in Django.
+00:06:09.800 --> 00:06:14.600
+ And so it's a wonderful, wonderful way
 
-00:06:17.000 --> 00:06:22.000
- And so in this class, I review Python's object oriented programming.
+00:06:14.600 --> 00:06:17.280
+ to teach object-oriented programming in Django.
 
-00:06:22.000 --> 00:06:30.000
- I feature all of the use of objects in Django when I say object many, many times, just like I'm saying in this little intro video.
+00:06:17.280 --> 00:06:19.000
+ And so in this class,
 
-00:06:30.000 --> 00:06:33.000
- But then we also later look at JavaScript.
+00:06:19.000 --> 00:06:21.960
+ I review Python's object-oriented programming.
 
-00:06:33.000 --> 00:06:37.000
- And then we look at object oriented programming in JavaScript as well.
+00:06:21.960 --> 00:06:25.040
+ I feature all of the use of objects in Django
 
-00:06:37.000 --> 00:06:39.000
+00:06:25.040 --> 00:06:27.400
+ when I say object many, many times,
+
+00:06:27.400 --> 00:06:29.960
+ just like I'm saying in this little intro video.
+
+00:06:29.960 --> 00:06:32.920
+ But then we also later look at JavaScript,
+
+00:06:32.920 --> 00:06:34.960
+ and then we look at object-oriented programming
+
+00:06:34.960 --> 00:06:36.880
+ in JavaScript as well.
+
+00:06:36.880 --> 00:06:38.200
  And they're different.
 
-00:06:39.000 --> 00:06:49.000
- The execution model for Python and the execution model for JavaScript object orientation is a little bit different.
+00:06:38.200 --> 00:06:40.400
+ The execution model for
 
-00:06:49.000 --> 00:06:55.000
- And so for me, that sort of compare and contrast is a really great opportunity as a teacher
+00:06:40.400 --> 00:06:44.880
+ Python and the execution model
 
-00:06:55.000 --> 00:07:02.000
- to get students to understand the principles of object orientation and not be just looking at the various syntaxes.
+00:06:44.880 --> 00:06:47.160
+ for JavaScript object-orientation
 
-00:07:02.000 --> 00:07:08.000
- So with that, welcome to a course that I think is a great course and I hope that you enjoy it.
+00:06:47.160 --> 00:06:48.780
+ is a little bit different.
 
-00:07:08.000 --> 00:07:10.000
+00:06:48.780 --> 00:06:51.800
+ And so for me, that sort of compare and contrast
+
+00:06:51.800 --> 00:06:54.800
+ is a really great opportunity as a teacher
+
+00:06:54.800 --> 00:06:56.600
+ to get students to understand
+
+00:06:56.600 --> 00:06:59.040
+ the core principles of object-orientation
+
+00:06:59.040 --> 00:07:02.560
+ and not be just looking at the various syntaxes.
+
+00:07:02.560 --> 00:07:04.540
+ So with that, welcome to a course
+
+00:07:04.540 --> 00:07:06.280
+ that I think is a great course,
+
+00:07:06.280 --> 00:07:08.000
+ and I hope that you enjoy it.
+
+00:07:08.000 --> 00:07:09.660
  And I wish you luck.
 
-00:07:10.000 --> 00:07:11.000
+00:07:09.660 --> 00:07:11.040
  Take your time.
 
-00:07:11.000 --> 00:07:13.000
+00:07:11.040 --> 00:07:12.080
  Don't rush.
 
-00:07:13.000 --> 00:07:16.000
+00:07:12.080 --> 00:07:16.040
  These kind of learning experiences are precious.
 
-00:07:16.000 --> 00:07:18.000
+00:07:16.040 --> 00:07:18.040
  And take your time and learn everything.
 
-00:07:18.000 --> 00:07:20.000
- And I wish you nothing but the best.
+00:07:18.040 --> 00:07:20.600
+ And I wish you nothing but the best,
 
-00:07:20.000 --> 00:07:22.000
- And I hope to see you online.
+00:07:20.600 --> 00:07:22.440
+ and hope to see you online.
 
-00:07:22.000 --> 00:07:23.000
+00:07:22.440 --> 00:07:23.280
  Cheers.
 
-00:07:25.000 --> 00:07:33.000
- [music]
+00:07:23.280 --> 00:07:25.860
+ (upbeat music)
 

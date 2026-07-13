@@ -26,21 +26,21 @@
  And so there's this connect, talk, disconnect.
  Connect, talk, disconnect.
  And it's the way the phone system in our world
- scales to all the people.
- And it's the way the internet scales to all the people
- that want to use that internet.
+ scales to all the people, and it's
+ the way the internet scales to all the people that
+ want to use that internet.
  So this is made inside of software
  using an abstraction, our library, called Sockets.
  And Sockets really are computer phone calls.
  You know where you're going to call.
  You can start the call, wait for them to answer.
  Once they answer, there is a two-way communication.
- It's kind of like a file, except that you can simultaneously
- read from the file and write from the file,
+ It's kind of like a file, except that you
+ can simultaneously read from the file and write from the file,
  although it's important for the two cooperating
  pieces of software to know who's going to read first
  and who's going to write first, because it's
- like when you pick the phone up after it rings,
+ like if when you pick the phone up after it rings,
  we all know to say, hello.
  And that's kind of a protocol.
  Who talks first is a protocol.
@@ -54,7 +54,7 @@
  as the browser on your laptop or phone
  as talking to data on the server.
  It actually is talking to another program.
- So even when it's just retrieving a file,
+ And so even when it's just retrieving a file,
  it's talking to an application on that server.
  And that application is reading the file and sending it out.
  And we'll see that eventually how
@@ -70,7 +70,7 @@
  If you're not allowed to see the picture, I will not send it.
  And so that's where it's a piece of software
  that you're talking, even if you're looking at a picture.
- Sometimes that software is really simple,
+ Sometimes that software is really simple
  and you barely notice it.
  But there is software in the loop.
  It's not like you just go straight to data.
@@ -86,8 +86,8 @@
  There's IPv4 and IPv6.
  IPv4 version 4 is the one that's got four dotted numbers,
  like 142.16.42.14.
- But within each of those, they have
- what's called a TCP port number.
+ But within each of those, they have what's
+ called a TCP port number.
  And because this whole internet thing
  is applications talking to applications,
  we need to have a good way to know which application we're
@@ -101,8 +101,7 @@
  within that address, or a phone number and an extension
  within that phone number.
  And so you can look these things up.
- Port 25 is used for email, server-to-server
- communication.
+ Port 25 is used for email, server-to-server communication.
  In the old days, we used this thing called Telnet.
  We'll talk about that on port 23.
  And so the client is on the right-hand side.
@@ -124,11 +123,10 @@
  Or a web server.
  Web server can be on port 80 if it's unsecure.
  Preferred, of course, is HTTPS, which is on port 443.
- If you have a mail application like, say,
- Thunderbird that's reading Gmail,
- it talks to ports 109 or 110 or a couple of other ones
- that are ways for a mailbox application
- to talk a protocol to a server-based mailbox
+ If you have a mail application, like say Thunderbird,
+ that's reading Gmail, it talks to ports 109 or 110
+ or a couple of other ones that are ways for a mailbox
+ application to talk a protocol to a server-based mailbox
  to retrieve the new messages or delete a message or view
  a message or whatever.
  So there are these ports on servers that have protocols.
@@ -137,7 +135,7 @@
  The one we're going to be playing with the most
  in development mode is port 80.
  And in production mode, port 443 for the HTTP for web documents,
- basically, and web application documents.
+ basically in web application documents.
  So up next, we're going to take a quick look at the hypertext
  transfer protocol.
  I always want to call it hypertext transport protocol,

@@ -1,4 +1,4 @@
-Batch started: Mon Jul 13 10:32:22 EDT 2026
+Batch started: Mon Jul 13 11:43:16 EDT 2026
 MEDIA_ROOT=/Users/csev/Desktop/teach/dj4e-media
 WHISPER_ROOT=/Users/csev/htdocs/dj4e/whisper
 COURSE_HINT=Django for Everybody, DJ4E, Django, Python, web development, Dr. Chuck, Chuck Severance
@@ -8,18 +8,122 @@ WHISPER=whisper-cli
 MODEL=/Users/csev/models/ggml-medium.bin
 VOCAB_FILES:
   /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-vocabulary.txt
-REPLACEMENTS_FILE=none
+REPLACEMENTS_FILES:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
 LOG_FILE=/Users/csev/htdocs/dj4e/whisper/whisper-batch.log
 TXT_DIR=/Users/csev/htdocs/dj4e/whisper/txt
 VTT_DIR=/Users/csev/htdocs/dj4e/whisper/vtt
 SRT_DIR=/Users/csev/htdocs/dj4e/whisper/srt
 TMP_DIR=/Users/csev/htdocs/dj4e/whisper/.whisper-tmp
-RUN_TMP_DIR=/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096
+RUN_TMP_DIR=/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666
 SUPPORTS_PROMPT=1
-FORCE=0
+FORCE=1
 QUIET_WHISPER=1
 ==================================================
-SKIP: lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v (found existing transcript)
+
+==================================================
+MEDIA: lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v
+OUTPUT STEM: lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09
+STEP 1: Extracting audio with ffmpeg...
+STEP 2: Running whisper-cli...
+whisper_init_from_file_with_params_no_state: loading model from '/Users/csev/models/ggml-medium.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 1
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.007 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   Apple M1 Pro
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 26800.60 MB
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1024
+whisper_model_load: n_audio_head  = 16
+whisper_model_load: n_audio_layer = 24
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1024
+whisper_model_load: n_text_head   = 16
+whisper_model_load: n_text_layer  = 24
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 4 (medium)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:        Metal total size =  1533.14 MB
+whisper_model_load: model size    = 1533.14 MB
+whisper_backend_init_gpu: device 0: Metal (type: 1)
+whisper_backend_init_gpu: found GPU device 0: Metal (type: 1, cnt: 0)
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1 Pro
+ggml_metal_init: picking default device: Apple M1 Pro
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   50.33 MB
+whisper_init_state: kv cross size =  150.99 MB
+whisper_init_state: kv pad  size  =    6.29 MB
+whisper_init_state: compute buffer (conv)   =   29.53 MB
+whisper_init_state: compute buffer (encode) =   53.12 MB
+whisper_init_state: compute buffer (cross)  =   20.02 MB
+whisper_init_state: compute buffer (decode) =   99.12 MB
+
+system_info: n_threads = 4 / 10 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+
+main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/audio.wav' (7245120 samples, 452.8 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+whisper_tokenize: too many resulting tokens: 1405 (max 1024)
+output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.txt'
+output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.vtt'
+output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.srt'
+
+whisper_print_timings:     load time =   534.61 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   173.48 ms
+whisper_print_timings:   sample time =  2518.65 ms /  9185 runs (     0.27 ms per run)
+whisper_print_timings:   encode time =  6570.76 ms /    16 runs (   410.67 ms per run)
+whisper_print_timings:   decode time =    58.69 ms /     6 runs (     9.78 ms per run)
+whisper_print_timings:   batchd time = 22674.77 ms /  9099 runs (     2.49 ms per run)
+whisper_print_timings:   prompt time =  1262.63 ms /  3632 runs (     0.35 ms per run)
+whisper_print_timings:    total time = 34240.09 ms
+ggml_metal_free: deallocating
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.txt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.txt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.vtt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.vtt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.srt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__01-DJ-00-00-Welcome-2024-01-09/output.srt
+DONE: lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v
+TIMING:
+  FFMPEG : 00:00:00
+  WHISPER: 00:00:35
+  TOTAL  : 00:00:35
 
 ==================================================
 MEDIA: lesson-01-welcome/02-2025-08-20-AI.m4v
@@ -87,40 +191,47 @@ whisper_init_state: compute buffer (decode) =   99.12 MB
 
 system_info: n_threads = 4 / 10 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
 
-main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-01-welcome__02-2025-08-20-AI/audio.wav' (15622123 samples, 976.4 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/audio.wav' (15622123 samples, 976.4 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
 
-whisper_tokenize: too many resulting tokens: 1081 (max 1024)
-output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-01-welcome__02-2025-08-20-AI/output.txt'
-output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-01-welcome__02-2025-08-20-AI/output.vtt'
-output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-01-welcome__02-2025-08-20-AI/output.srt'
+whisper_tokenize: too many resulting tokens: 1403 (max 1024)
+output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.txt'
+output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.vtt'
+output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.srt'
 
-whisper_print_timings:     load time =   581.38 ms
+whisper_print_timings:     load time =   495.96 ms
 whisper_print_timings:     fallbacks =   0 p /   0 h
-whisper_print_timings:      mel time =   364.73 ms
-whisper_print_timings:   sample time =  5435.34 ms / 19625 runs (     0.28 ms per run)
-whisper_print_timings:   encode time = 15156.08 ms /    37 runs (   409.62 ms per run)
-whisper_print_timings:   decode time =   713.03 ms /    74 runs (     9.64 ms per run)
-whisper_print_timings:   batchd time = 49080.37 ms / 19369 runs (     2.53 ms per run)
-whisper_print_timings:   prompt time =  2840.93 ms /  8172 runs (     0.35 ms per run)
-whisper_print_timings:    total time = 75002.38 ms
+whisper_print_timings:      mel time =   364.60 ms
+whisper_print_timings:   sample time =  5599.43 ms / 20442 runs (     0.27 ms per run)
+whisper_print_timings:   encode time = 14728.39 ms /    36 runs (   409.12 ms per run)
+whisper_print_timings:   decode time =   400.62 ms /    42 runs (     9.54 ms per run)
+whisper_print_timings:   batchd time = 50840.87 ms / 20220 runs (     2.51 ms per run)
+whisper_print_timings:   prompt time =  2847.19 ms /  8172 runs (     0.35 ms per run)
+whisper_print_timings:    total time = 76100.45 ms
 ggml_metal_free: deallocating
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.txt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.txt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.vtt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.vtt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.srt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-01-welcome__02-2025-08-20-AI/output.srt
 DONE: lesson-01-welcome/02-2025-08-20-AI.m4v
 TIMING:
   FFMPEG : 00:00:01
-  WHISPER: 00:01:15
-  TOTAL  : 00:01:16
-SKIP: lesson-02-http/01-Web-01-HTTP-01.m4v (found existing transcript)
-SKIP: lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v (found existing transcript)
-SKIP: lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v (found existing transcript)
-SKIP: lesson-02-http/04-Web-01-HTTP-04-Browser.m4v (found existing transcript)
-SKIP: lesson-02-http/05-Web-01-HTTP-05-Server.m4v (found existing transcript)
-SKIP: lesson-02-http/06-dev-mode-walkthrough.mov (found existing transcript)
-SKIP: lesson-02-http/07-DJ-11-BigPicture.m4v (found existing transcript)
-SKIP: lesson-02-http/08-Web-04-Mini-Django.m4v (found existing transcript)
+  WHISPER: 00:01:17
+  TOTAL  : 00:01:18
 
 ==================================================
-MEDIA: lesson-02-http/09-DJ-01-Hosting-02-1080.mov
-OUTPUT STEM: lesson-02-http/09-DJ-01-Hosting-02-1080
+MEDIA: lesson-02-http/01-Web-01-HTTP-01.m4v
+OUTPUT STEM: lesson-02-http/01-Web-01-HTTP-01
 STEP 1: Extracting audio with ffmpeg...
 STEP 2: Running whisper-cli...
 whisper_init_from_file_with_params_no_state: loading model from '/Users/csev/models/ggml-medium.bin'
@@ -184,209 +295,214 @@ whisper_init_state: compute buffer (decode) =   99.12 MB
 
 system_info: n_threads = 4 / 10 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
 
-main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-02-http__09-DJ-01-Hosting-02-1080/audio.wav' (4341077 samples, 271.3 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/audio.wav' (5816640 samples, 363.5 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
 
-whisper_tokenize: too many resulting tokens: 1082 (max 1024)
-output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-02-http__09-DJ-01-Hosting-02-1080/output.txt'
-output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-02-http__09-DJ-01-Hosting-02-1080/output.vtt'
-output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-02-http__09-DJ-01-Hosting-02-1080/output.srt'
+whisper_tokenize: too many resulting tokens: 1402 (max 1024)
+output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.txt'
+output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.vtt'
+output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.srt'
 
-whisper_print_timings:     load time =   478.01 ms
-whisper_print_timings:     fallbacks =   3 p /   0 h
-whisper_print_timings:      mel time =   101.54 ms
-whisper_print_timings:   sample time =  1616.75 ms /  5809 runs (     0.28 ms per run)
-whisper_print_timings:   encode time =  5334.19 ms /    13 runs (   410.32 ms per run)
-whisper_print_timings:   decode time =   450.16 ms /    47 runs (     9.58 ms per run)
-whisper_print_timings:   batchd time = 14855.29 ms /  5688 runs (     2.61 ms per run)
-whisper_print_timings:   prompt time =  1108.70 ms /  3178 runs (     0.35 ms per run)
-whisper_print_timings:    total time = 24300.56 ms
-ggml_metal_free: deallocating
-DONE: lesson-02-http/09-DJ-01-Hosting-02-1080.mov
-TIMING:
-  FFMPEG : 00:00:01
-  WHISPER: 00:00:24
-  TOTAL  : 00:00:25
-SKIP: lesson-03-install/01-paw_install52_new.m4v (found existing transcript)
-SKIP: lesson-03-install/02-DJ-00-AutoGrader.m4v (found existing transcript)
-
-==================================================
-MEDIA: lesson-03-install/03-DJ-01-Hosting-01-1080.mov
-OUTPUT STEM: lesson-03-install/03-DJ-01-Hosting-01-1080
-STEP 1: Extracting audio with ffmpeg...
-STEP 2: Running whisper-cli...
-whisper_init_from_file_with_params_no_state: loading model from '/Users/csev/models/ggml-medium.bin'
-whisper_init_with_params_no_state: use gpu    = 1
-whisper_init_with_params_no_state: flash attn = 1
-whisper_init_with_params_no_state: gpu_device = 0
-whisper_init_with_params_no_state: dtw        = 0
-ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
-ggml_metal_library_init: using embedded metal library
-ggml_metal_library_init: loaded in 0.007 sec
-ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
-ggml_metal_device_init: GPU name:   Apple M1 Pro
-ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
-ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
-ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
-ggml_metal_device_init: simdgroup reduction   = true
-ggml_metal_device_init: simdgroup matrix mul. = true
-ggml_metal_device_init: has unified memory    = true
-ggml_metal_device_init: has bfloat            = true
-ggml_metal_device_init: has tensor            = false
-ggml_metal_device_init: use residency sets    = true
-ggml_metal_device_init: use shared buffers    = true
-ggml_metal_device_init: recommendedMaxWorkingSetSize  = 26800.60 MB
-whisper_init_with_params_no_state: devices    = 3
-whisper_init_with_params_no_state: backends   = 3
-whisper_model_load: loading model
-whisper_model_load: n_vocab       = 51865
-whisper_model_load: n_audio_ctx   = 1500
-whisper_model_load: n_audio_state = 1024
-whisper_model_load: n_audio_head  = 16
-whisper_model_load: n_audio_layer = 24
-whisper_model_load: n_text_ctx    = 448
-whisper_model_load: n_text_state  = 1024
-whisper_model_load: n_text_head   = 16
-whisper_model_load: n_text_layer  = 24
-whisper_model_load: n_mels        = 80
-whisper_model_load: ftype         = 1
-whisper_model_load: qntvr         = 0
-whisper_model_load: type          = 4 (medium)
-whisper_model_load: adding 1608 extra tokens
-whisper_model_load: n_langs       = 99
-whisper_model_load:        Metal total size =  1533.14 MB
-whisper_model_load: model size    = 1533.14 MB
-whisper_backend_init_gpu: device 0: Metal (type: 1)
-whisper_backend_init_gpu: found GPU device 0: Metal (type: 1, cnt: 0)
-whisper_backend_init_gpu: using Metal backend
-ggml_metal_init: allocating
-ggml_metal_init: found device: Apple M1 Pro
-ggml_metal_init: picking default device: Apple M1 Pro
-ggml_metal_init: use fusion         = true
-ggml_metal_init: use concurrency    = true
-ggml_metal_init: use graph optimize = true
-whisper_backend_init: using BLAS backend
-whisper_init_state: kv self size  =   50.33 MB
-whisper_init_state: kv cross size =  150.99 MB
-whisper_init_state: kv pad  size  =    6.29 MB
-whisper_init_state: compute buffer (conv)   =   29.53 MB
-whisper_init_state: compute buffer (encode) =   53.12 MB
-whisper_init_state: compute buffer (cross)  =   20.02 MB
-whisper_init_state: compute buffer (decode) =   99.12 MB
-
-system_info: n_threads = 4 / 10 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
-
-main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-03-install__03-DJ-01-Hosting-01-1080/audio.wav' (6786389 samples, 424.1 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
-
-whisper_tokenize: too many resulting tokens: 1082 (max 1024)
-output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-03-install__03-DJ-01-Hosting-01-1080/output.txt'
-output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-03-install__03-DJ-01-Hosting-01-1080/output.vtt'
-output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-95096/work-lesson-03-install__03-DJ-01-Hosting-01-1080/output.srt'
-
-whisper_print_timings:     load time =   479.91 ms
+whisper_print_timings:     load time =   674.10 ms
 whisper_print_timings:     fallbacks =   0 p /   0 h
-whisper_print_timings:      mel time =   157.55 ms
-whisper_print_timings:   sample time =  2520.46 ms /  9100 runs (     0.28 ms per run)
-whisper_print_timings:   encode time =  6145.21 ms /    15 runs (   409.68 ms per run)
-whisper_print_timings:   decode time =   117.66 ms /    12 runs (     9.81 ms per run)
-whisper_print_timings:   batchd time = 22888.29 ms /  9013 runs (     2.54 ms per run)
-whisper_print_timings:   prompt time =  1186.78 ms /  3405 runs (     0.35 ms per run)
-whisper_print_timings:    total time = 33859.69 ms
+whisper_print_timings:      mel time =   138.52 ms
+whisper_print_timings:   sample time =  2248.56 ms /  7735 runs (     0.29 ms per run)
+whisper_print_timings:   encode time =  5368.57 ms /    13 runs (   412.97 ms per run)
+whisper_print_timings:   decode time =   337.04 ms /    35 runs (     9.63 ms per run)
+whisper_print_timings:   batchd time = 19175.26 ms /  7635 runs (     2.51 ms per run)
+whisper_print_timings:   prompt time =  1027.08 ms /  2951 runs (     0.35 ms per run)
+whisper_print_timings:    total time = 29397.63 ms
 ggml_metal_free: deallocating
-DONE: lesson-03-install/03-DJ-01-Hosting-01-1080.mov
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.txt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.txt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.vtt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.vtt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.srt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__01-Web-01-HTTP-01/output.srt
+DONE: lesson-02-http/01-Web-01-HTTP-01.m4v
 TIMING:
   FFMPEG : 00:00:00
-  WHISPER: 00:00:34
-  TOTAL  : 00:00:34
-SKIP: lesson-03-install/04-paw_install_errors_52.m4v (found existing transcript)
-SKIP: lesson-04-shell/01-01_paw_shell.m4v (found existing transcript)
-SKIP: lesson-05-html/01-Web-02-HTML-A.m4v (found existing transcript)
-SKIP: lesson-05-html/02-Web-02-HTML-B.m4v (found existing transcript)
-SKIP: lesson-05-html/03-Web-02-HTML-Code.m4v (found existing transcript)
-SKIP: lesson-06-css/01-Web-02-CSS-A.m4v (found existing transcript)
-SKIP: lesson-06-css/02-Web-02-CSS-B.m4v (found existing transcript)
-SKIP: lesson-06-css/03-Web-02-CSS-C.m4v (found existing transcript)
-SKIP: lesson-06-css/04-Web-03-CSS-Code-A.m4v (found existing transcript)
-SKIP: lesson-06-css/05-Web-03-CSS-Code-B.m4v (found existing transcript)
-SKIP: lesson-07-sql/01-SQL-01-Basic-01.m4v (found existing transcript)
-SKIP: lesson-07-sql/02-SQL-01-Basic-02.m4v (found existing transcript)
-SKIP: lesson-07-sql/03-sql-01-basic.m4v (found existing transcript)
-SKIP: lesson-08-models/01-DJ-02-Models.m4v (found existing transcript)
-SKIP: lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v (found existing transcript)
-SKIP: lesson-08-models/03-04_paw_models.m4v (found existing transcript)
-SKIP: lesson-08-models/03-04_paw_models_2026.m4v (found existing transcript)
-SKIP: lesson-08-models/04-tut2-reset-database-edit.mov (found existing transcript)
-SKIP: lesson-09-mvc/01-DJ-05-MVC.m4v (found existing transcript)
-SKIP: lesson-10-views/01-DJ-06-Views-01-Urls.m4v (found existing transcript)
-SKIP: lesson-10-views/02-DJ-06-Views-02-Views.m4v (found existing transcript)
-SKIP: lesson-10-views/03-DJ-06-Views-03-Detail.m4v (found existing transcript)
-SKIP: lesson-10-views/04-DJ-06-Views-04-Templates.m4v (found existing transcript)
-SKIP: lesson-10-views/05-DJ-06-Views-05-DTL.m4v (found existing transcript)
-SKIP: lesson-10-views/06-DJ-06-Views-06-Inherit.m4v (found existing transcript)
-SKIP: lesson-10-views/07-DJ-06-Views-07-Reverse.m4v (found existing transcript)
-SKIP: lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v (found existing transcript)
-SKIP: lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v (found existing transcript)
-SKIP: lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v (found existing transcript)
-SKIP: lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v (found existing transcript)
-SKIP: lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v (found existing transcript)
-SKIP: lesson-12-generic/01-DJ-06-Views-08-Generic.m4v (found existing transcript)
-SKIP: lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v (found existing transcript)
-SKIP: lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v (found existing transcript)
-SKIP: lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v (found existing transcript)
-SKIP: lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v (found existing transcript)
-SKIP: lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v (found existing transcript)
-SKIP: lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v (found existing transcript)
-SKIP: lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v (found existing transcript)
-SKIP: lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v (found existing transcript)
-SKIP: lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v (found existing transcript)
-SKIP: lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v (found existing transcript)
-SKIP: lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v (found existing transcript)
-SKIP: lesson-15-one-many/04-DJ-03-Many-04-Django.m4v (found existing transcript)
-SKIP: lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v (found existing transcript)
-SKIP: lesson-16-users/01-DJ-09-Login-01-Users.m4v (found existing transcript)
-SKIP: lesson-16-users/02-DJ-09-Login-02-Urls.m4v (found existing transcript)
-SKIP: lesson-16-users/03-DJ-09-Login-03-Views.m4v (found existing transcript)
-SKIP: lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v (found existing transcript)
-SKIP: lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v (found existing transcript)
-SKIP: lesson-18-autos/01-samples-autos-walkthrough.mov (found existing transcript)
-SKIP: lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v (found existing transcript)
-SKIP: lesson-22-owned/01-DJ-12-Owned-01.m4v (found existing transcript)
-SKIP: lesson-22-owned/02-DJ-12-Owned-02.m4v (found existing transcript)
-SKIP: lesson-22-owned/03-DJ-12-Owned-03.m4v (found existing transcript)
-SKIP: lesson-23-ads1/01-samples-crispy-walkthrough-23.mov (found existing transcript)
-SKIP: lesson-23-ads1/02-samples-myarts-walkthrough.mov (found existing transcript)
-SKIP: lesson-23-ads1/03-samples-menu-walkthrough-edited.mov (found existing transcript)
-SKIP: lesson-24-javascript/01-JS-01-01-JavaScript.m4v (found existing transcript)
-SKIP: lesson-24-javascript/02-JS-01-02-Browser.m4v (found existing transcript)
-SKIP: lesson-24-javascript/03-JS-01-03-Language.m4v (found existing transcript)
-SKIP: lesson-24-javascript/04-JS-01-04-Functions-Arrays.m4v (found existing transcript)
-SKIP: lesson-24-javascript/05-JS-01-05-If-Loops.m4v (found existing transcript)
-SKIP: lesson-25-jsoo/01-JS-02-01-Overview.m4v (found existing transcript)
-SKIP: lesson-25-jsoo/02-JS-02-02-Code.m4v (found existing transcript)
-SKIP: lesson-26-ads-pictures/01-samples-pics-combined.mov (found existing transcript)
-SKIP: lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v (found existing transcript)
-SKIP: lesson-27-many-many/02-DJ-04-Many-02-Many.m4v (found existing transcript)
-SKIP: lesson-27-many-many/03-DJ-04-Many-03-Course.m4v (found existing transcript)
-SKIP: lesson-28-ads-comments/01-samples-forums-walkthrough.mov (found existing transcript)
-SKIP: lesson-29-browser/01-JS-03-Browser-01-Execution.m4v (found existing transcript)
-SKIP: lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v (found existing transcript)
-SKIP: lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v (found existing transcript)
-SKIP: lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v (found existing transcript)
-SKIP: lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v (found existing transcript)
-SKIP: lesson-29-browser/06-JS-03-Browser-06-WC.m4v (found existing transcript)
-SKIP: lesson-30-json/01-JS-04-JSON-01-JSON.m4v (found existing transcript)
-SKIP: lesson-30-json/02-samples-fetch-walkthrough-23.mov (found existing transcript)
-SKIP: lesson-30-json/03-JS-04-JSON-02-Chat.m4v (found existing transcript)
-SKIP: lesson-30-json/04-samples-chat-walkthrough-23.mov (found existing transcript)
-SKIP: lesson-31-ads3/01-samples-favicon-walkthrough.mov (found existing transcript)
-SKIP: lesson-31-ads3/02-samples-social-github-walkthrough.mov (found existing transcript)
-SKIP: lesson-31-ads3/03-samples-favs-720.mov (found existing transcript)
-SKIP: lesson-32-ads-search/01-samples-well-walkthrough.mov (found existing transcript)
+  WHISPER: 00:00:30
+  TOTAL  : 00:00:30
 
 ==================================================
-Batch finished: Mon Jul 13 10:34:39 EDT 2026
-TOTAL=98
-DONE=3
-SKIPPED=95
-FAILED=0
-LOG=/Users/csev/htdocs/dj4e/whisper/whisper-batch.log
+MEDIA: lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v
+OUTPUT STEM: lesson-02-http/02-Web-01-HTTP-02-Sockets
+STEP 1: Extracting audio with ffmpeg...
+STEP 2: Running whisper-cli...
+whisper_init_from_file_with_params_no_state: loading model from '/Users/csev/models/ggml-medium.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 1
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.007 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   Apple M1 Pro
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 26800.60 MB
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1024
+whisper_model_load: n_audio_head  = 16
+whisper_model_load: n_audio_layer = 24
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1024
+whisper_model_load: n_text_head   = 16
+whisper_model_load: n_text_layer  = 24
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 4 (medium)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:        Metal total size =  1533.14 MB
+whisper_model_load: model size    = 1533.14 MB
+whisper_backend_init_gpu: device 0: Metal (type: 1)
+whisper_backend_init_gpu: found GPU device 0: Metal (type: 1, cnt: 0)
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1 Pro
+ggml_metal_init: picking default device: Apple M1 Pro
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   50.33 MB
+whisper_init_state: kv cross size =  150.99 MB
+whisper_init_state: kv pad  size  =    6.29 MB
+whisper_init_state: compute buffer (conv)   =   29.53 MB
+whisper_init_state: compute buffer (encode) =   53.12 MB
+whisper_init_state: compute buffer (cross)  =   20.02 MB
+whisper_init_state: compute buffer (decode) =   99.12 MB
+
+system_info: n_threads = 4 / 10 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+
+main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/audio.wav' (6309184 samples, 394.3 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+whisper_tokenize: too many resulting tokens: 1405 (max 1024)
+output_txt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.txt'
+output_vtt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.vtt'
+output_srt: saving output to '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.srt'
+
+whisper_print_timings:     load time =   573.99 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   150.91 ms
+whisper_print_timings:   sample time =  2407.24 ms /  8425 runs (     0.29 ms per run)
+whisper_print_timings:   encode time =  5748.56 ms /    14 runs (   410.61 ms per run)
+whisper_print_timings:   decode time =   163.35 ms /    17 runs (     9.61 ms per run)
+whisper_print_timings:   batchd time = 20939.63 ms /  8338 runs (     2.51 ms per run)
+whisper_print_timings:   prompt time =  1105.99 ms /  3178 runs (     0.35 ms per run)
+whisper_print_timings:    total time = 31439.92 ms
+ggml_metal_free: deallocating
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.txt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.txt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.vtt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.vtt
+CLEANUP: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.srt
+Replacements:
+  /Users/csev/htdocs/dj4e/whisper/dj4e-whisper-replacements.txt
+Files: 1
+NO CHANGES: /Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__02-Web-01-HTTP-02-Sockets/output.srt
+DONE: lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v
+TIMING:
+  FFMPEG : 00:00:01
+  WHISPER: 00:00:32
+  TOTAL  : 00:00:33
+
 ==================================================
+MEDIA: lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v
+OUTPUT STEM: lesson-02-http/03-Web-01-HTTP-03-HTTP
+STEP 1: Extracting audio with ffmpeg...
+STEP 2: Running whisper-cli...
+whisper_init_from_file_with_params_no_state: loading model from '/Users/csev/models/ggml-medium.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 1
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.018 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   Apple M1 Pro
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 26800.60 MB
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1024
+whisper_model_load: n_audio_head  = 16
+whisper_model_load: n_audio_layer = 24
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1024
+whisper_model_load: n_text_head   = 16
+whisper_model_load: n_text_layer  = 24
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 4 (medium)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:        Metal total size =  1533.14 MB
+whisper_model_load: model size    = 1533.14 MB
+whisper_backend_init_gpu: device 0: Metal (type: 1)
+whisper_backend_init_gpu: found GPU device 0: Metal (type: 1, cnt: 0)
+whisper_backend_init_gpu: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1 Pro
+ggml_metal_init: picking default device: Apple M1 Pro
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   50.33 MB
+whisper_init_state: kv cross size =  150.99 MB
+whisper_init_state: kv pad  size  =    6.29 MB
+whisper_init_state: compute buffer (conv)   =   29.53 MB
+whisper_init_state: compute buffer (encode) =   53.12 MB
+whisper_init_state: compute buffer (cross)  =   20.02 MB
+whisper_init_state: compute buffer (decode) =   99.12 MB
+
+system_info: n_threads = 4 / 10 | WHISPER : COREML = 0 | OPENVINO = 0 | Metal : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | ACCELERATE = 1 | REPACK = 1 | 
+
+main: processing '/Users/csev/htdocs/dj4e/whisper/.whisper-tmp/run-16666/work-lesson-02-http__03-Web-01-HTTP-03-HTTP/audio.wav' (15813269 samples, 988.3 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+whisper_tokenize: too many resulting tokens: 1403 (max 1024)
