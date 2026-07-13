@@ -1,7 +1,7 @@
-Document Object Model vs HTML Source Code
+Document Object Model vs Source Code in HTML
 
-Document Object Model, HTML, Source Code, DOM, Relative Links, Target Attribute
+document object model, html, source code, dom, browser, relative links, special characters, image tags, tables, html parsing, developer tools
 
-This lecture demonstrates the difference between HTML source code and the Document Object Model (DOM) in web development. It shows how the browser parses HTML files to create a structured DOM representation that is distinct from the original source code.
+The lecture explains the difference between HTML source code and the document object model (DOM). Source code is the original content delivered by the server, while the DOM is the browser's internal representation of the page structure.
 
-The session covers practical examples including the pre tag, lists, tables, relative links, target attributes, and special characters. It explains how the DOM dynamically changes without altering the source code and how the browser automatically corrects minor HTML errors to form a valid DOM representation.
+The DOM automatically corrects common HTML errors such as inconsistent tag casing, unterminated tags, and missing quotation marks. The lecture demonstrates how JavaScript can modify the DOM to update the page without changing the source code.

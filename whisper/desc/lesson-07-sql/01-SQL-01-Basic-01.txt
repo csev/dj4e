@@ -1,7 +1,7 @@
-SQL History, Schema Design, and CRUD Operations
+SQL: History and Database Abstraction
 
-sql, database history, schema, crud, relational databases, nist
+SQL, relational databases, database schema, NIST, database abstraction, tape storage
 
-The lecture covers the historical context of database systems, starting with tape-based storage in the 1950s-1960s that required sequential access and hours of nightly processing for banks. This was followed by the introduction of disk drives in the 1970s, which improved access speed but necessitated research into storage optimization.
+Early database systems used tape storage, which lacked random access and required manual nightly processing of transactions. Banks sorted and updated account balances by copying data from physical tapes, a process that could take hours.
 
-The US National Institute of Standards and Technology (NIST) established SQL as a standard to prevent vendor lock-in, allowing databases to be interchanged without code rewriting. SQL abstracts physical storage details, enabling the definition of a schema that specifies data structure and types, which allows database engines to optimize storage and efficiently perform CRUD operations.
+The U.S. National Institute of Standards and Technology (NIST) standardized SQL in the 1960s and 1970s to prevent vendor lock-in and enable cross-vendor database compatibility. This abstraction layer allows applications to define a schema without concern for physical storage details, supporting systems like SQLite, PostgreSQL, MySQL, and Oracle.

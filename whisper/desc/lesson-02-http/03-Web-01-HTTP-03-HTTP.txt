@@ -1,7 +1,7 @@
-HTTP Protocol: History and URL Structure
+History of HTTP and URL Structure
 
-HTTP, URL, RFC, IETF, HTTP request, HTTP response
+HTTP, URL, RFC, IETF, HTTP request, HTTP response, status code
 
-The HTTP protocol was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN to retrieve documents and images. It introduced the URL structure, which combines a protocol (e.g., HTTP, FTP), a host (domain name resolvable to an IP address), and a document path. This design enabled multiple protocols within a single address and became the dominant web protocol after 1990.
+Hypertext Transfer Protocol (HTTP) was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN. It serves as a simple protocol for browsers to communicate with servers and retrieve documents and images. The Uniform Resource Locator (URL) structure includes a protocol, a host (domain name), and a document path, with domain names resolving to IP addresses.
 
-HTTP operates via a request-response mechanism where a client sends a GET request to a server, which responds with a status line (e.g., 200 OK or 404 Not Found) and the requested document. The protocol is defined in open standards (RFCs) maintained by the IETF, ensuring interoperability across diverse systems without proprietary constraints.
+HTTP uses a request-response mechanism where a client sends a request to a server, which responds with a status code and the requested resource. The status code (e.g., 200 OK or 404 Not Found) indicates the outcome of the request, and the response contains headers and the resource data. The protocol is standardized through Request for Comments (RFCs) by the Internet Engineering Task Force (IETF).

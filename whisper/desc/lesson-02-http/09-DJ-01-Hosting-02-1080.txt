@@ -1,7 +1,7 @@
-How Virtual Hosting Works on Shared Server Hardware
+Virtual Hosting: One Server for Multiple Domains
 
-virtual hosting, HTTP request, domain routing, NGINX, configuration file, PythonAnywhere
+virtual hosting, http, get request, nginx, wsgi, domain name, configuration file, home directory
 
-Virtual hosting enables multiple domain names to operate on a single server instance by using the domain name specified in HTTP requests to route traffic to the correct application. This technique allows organizations like PythonAnywhere to manage numerous websites using minimal hardware resources while maintaining isolation between different domains.
+Virtual hosting enables a single physical server to manage multiple domain names by using the domain specified in the HTTP GET request. This technique allows organizations like Python Anywhere to support numerous websites with minimal hardware resources. The server identifies the correct domain from the request and routes it to the appropriate application.
 
-The system relies on configuration files, such as PythonAnywhere's WGSI file, which define application directories and routing rules. NGINX acts as the front-end server to direct incoming HTTP requests to the appropriate application instance based on the domain name in the request, ensuring each application runs independently within the shared infrastructure.
+The implementation typically involves a web server such as nginx, which uses configuration files to map each domain to a specific application directory. The WSGI configuration file, stored outside the user's data space, defines the application's home directory and startup parameters, ensuring isolation between different applications.

@@ -1,7 +1,7 @@
 Django Request-Response Cycle and Project Structure
 
-Django, request-response cycle, project structure, URL routing, views, templates
+Django, request-response cycle, settings.py, urls.py, applications, views, templates, routing
 
-This lecture describes Django's request-response cycle and the hierarchical project structure, including settings.py and applications.
+The lecture describes the request-response cycle in Django applications. A browser request is routed to a Django application running on a Linux server, which processes the request by interacting with application files and resources, then returns a response to the browser.
 
-Requests are routed through project-level URLs to application views, which return responses to the browser using templates.
+The Django project structure includes a settings.py file for configuration and application definitions, a project-level urls.py for root URL routing, and application-specific files including urls.py and views.py. Templates are used to render the final HTML response.

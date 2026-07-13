@@ -1,7 +1,7 @@
-AI in Programming Classes: Learning Fundamentals Before Tool Use
+AI in Programming Classes: Charles Severance's Approach
 
-programming education, ai in programming courses, zone of proximal development, cumulative exams, autograding, programming fundamentals, ai partnerships
+programming education, AI tools, curriculum design, zone of proximal development, cumulative exams, auto graders, software development
 
-Charles Severance, a professor at the University of Michigan, explains that the early part of programming courses is particularly perilous if students rely on AI without learning the fundamentals. This can result in wasted time and money, as students may not gain any knowledge from the course.
+Charles Severance, a professor at the University of Michigan School of Information, discusses the integration of AI in programming education. He argues that AI is now an essential part of software development and must be used by students to become better programmers. Severance, who teaches large courses such as Python for Everybody (with three million students) and Django for Everybody, emphasizes the importance of programming fundamentals over AI dependency.
 
-Severance details his course design strategies to counteract AI dependency, including assignments that require synthesizing concepts from multiple course materials, cumulative exams that test knowledge across weeks, and autograders that verify specific techniques taught. He notes that early course weeks are intentionally designed to be manageable to build foundational understanding, ensuring students can effectively use AI in more complex scenarios.
+His approach includes designing assignments that require synthesizing multiple course concepts, using cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific techniques. Severance observes that AI can handle initial assignments but fails at the "knee of the curve" (around week six), where the complexity increases. This strategy ensures students build foundational skills before using AI effectively.

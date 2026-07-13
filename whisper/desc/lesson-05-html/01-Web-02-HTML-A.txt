@@ -1,7 +1,7 @@
-HTML History and Evolution: From Early Browsers to Modern Standards
+HTML: Request-Response Cycle and Historical Evolution
 
-HTML, HTML history, World Wide Web Consortium, W3C, HTML syntax, browser quirks mode, document object model, request-response cycle, early web, HTML standards
+html, dom, w3c, browser, quirks mode, request-response cycle, html syntax
 
-This lecture examines HTML's historical development from its 1990s origins at CERN to modern web standards. It covers early browser implementations like NCSA Mosaic that enabled cross-platform web access, and the initial limitations of HTML such as the absence of inline images and basic link styling with gray backgrounds and blue text. The discussion highlights how early HTML prioritized basic functionality over visual presentation.
+In the request-response cycle, a user's click triggers a request to a web server. The server processes the request and returns an HTML response, which the browser parses to construct the Document Object Model (DOM).
 
-The lecture explains the shift toward standardized HTML through the World Wide Web Consortium (W3C) from 1994 to 1999, which established rules for lowercase tags, attribute quoting, and proper tag closure. Modern HTML requires precise syntax to ensure predictable rendering across browsers, avoiding inconsistent behaviors like quirks mode that occurred in earlier inconsistent implementations.
+HTML originated in the early 1990s with simple implementations. The World Wide Web Consortium (W3C) developed standards to enforce precise HTML syntax, including lowercase tags and double-quoted attributes, reducing browser-specific quirks modes and improving rendering consistency.

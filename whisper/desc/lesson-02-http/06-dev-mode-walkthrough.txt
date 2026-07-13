@@ -1,7 +1,7 @@
-Browser Console Fundamentals: Request-Response Cycles and DOM Debugging
+Browser Debugger Console: Network Requests and DOM
 
-browser console, request response cycle, document object model, http status codes, network tab, chrome developer tools, firefox developer tools
+browser debugger console, network requests, document object model, dom, request response cycle, http status codes, firefox, chrome, safari
 
-This lecture demonstrates browser console functionality across Firefox and Chrome. It explains the request-response cycle in HTTP protocols, including status codes like 200 (success) and 404 (not found), request headers, and response headers. The console shows real-time interactions such as document object model parsing, network requests, and JavaScript debugging capabilities.
+The browser debugger console is a tool accessible in modern browsers such as Firefox and Chrome. It can be opened via browser menus (e.g., Firefox: Tools › Developer › JavaScript Console) and provides features including the document object model (DOM), JavaScript console, network request monitoring, and CSS debugging.
 
-The session details how browsers handle complex web pages through multiple request-response cycles. It illustrates that a single page load can involve dozens of requests (e.g., 44 requests for a typical page), including CSS, JavaScript, fonts, and other resources. The console also covers debugging features like DOM manipulation, network monitoring, and cache control settings for development workflows.
+The request-response cycle involves a browser sending a GET request to a server and receiving HTTP responses with status codes like 200, 404, and 500. Complex web pages require multiple network requests (e.g., 44 for 1.6 MB of data) with download times up to one second. Safari is less suitable for debugging due to its limited console features.

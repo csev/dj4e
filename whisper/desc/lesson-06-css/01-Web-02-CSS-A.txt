@@ -1,7 +1,7 @@
-CSS: Styling Web Pages After HTML
+CSS: Styling the Document Object Model
 
-CSS, HTML, Document Object Model, Request Response Cycle, Web Developer, Accessibility, Separation of Concerns
+html, css, document-object-model, request-response-cycle, accessibility, css-selectors, browser-compatibility
 
-This lecture introduces CSS as the styling layer that modifies the Document Object Model (DOM) after HTML is parsed from a request-response cycle. It demonstrates how CSS files define visual presentation using examples from webapplicationsforeverybody.com.
+The lecture covers the fundamentals of Cascading Style Sheets (CSS) and their role in the request-response cycle. CSS is applied to the Document Object Model (DOM) to define visual presentation, following the process where browsers fetch HTML, parse it into the DOM, and then apply CSS rules.
 
-The lecture covers the importance of clean HTML for accessibility and the separation of concerns in web development. It explains that CSS enables precise pixel-perfect layouts across browsers and provides practical tools like the Web Developer plugin for debugging CSS.
+The lecture emphasizes CSS's importance for browser compatibility and accessibility. It explains that well-structured HTML remains functional without CSS, and the Web Developer plugin by Chris Pedrick is introduced as a tool for CSS debugging. This separation of concerns allows for specialized development roles in web applications.

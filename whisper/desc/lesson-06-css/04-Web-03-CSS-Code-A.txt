@@ -1,7 +1,7 @@
-Understanding CSS Cascading and Selectors for Web Development
+Cascading Style Sheets Fundamentals
 
-CSS, Cascading Style Sheets, CSS selectors, CSS cascading, HTML5, navigation bar, font families, borders, margins, padding, inline elements, block elements
+css, selectors, cascading, font-family, borders, margins, padding, id, class, inline, block, html5
 
-This lecture demonstrates the fundamentals of Cascading Style Sheets (CSS) for web development. It explains how CSS styles are applied to HTML elements through selectors, showing examples of color properties, font families, and spacing controls like margins and padding. The instructor illustrates the cascading behavior where styles from multiple sources are resolved to determine the final appearance of elements.
+This lecture covers the fundamentals of Cascading Style Sheets (CSS) for styling web content.
 
-The session covers key technical concepts including element selectors (body, H1), class and ID selectors, and how inline versus block elements (span vs div) affect styling. It also demonstrates practical applications such as styling navigation bars with HTML5 elements and implementing responsive design principles through CSS rules.
+It explains the cascading mechanism and demonstrates key CSS properties such as font families, borders, margins, and padding. It also discusses the use of IDs and classes for targeted styling, the distinction between inline and block elements, and how CSS can style HTML5 navigation components.

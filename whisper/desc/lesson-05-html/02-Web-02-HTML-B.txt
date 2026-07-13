@@ -1,7 +1,7 @@
-HTML Basic Syntax and Document Structure
+Basic HTML Document Structure and Tags
 
-html, document structure, head, body, hyperlinks, relative links, absolute links, image tags, list tags
+html, head, body, tags, relative links, absolute links, img, a, ul, li, table, tr, th, td
 
-The lecture covers the foundational structure of an HTML document, including the doctype declaration, the `html` root element, the `head` section for metadata and non-printing content, and the `body` section for visible page content. It emphasizes that the `head` contains elements such as the page title, styling information, and scripts, while the `body` holds the actual content that users see.
+The lecture explains the fundamental structure of an HTML document, starting with the doctype (optional), followed by the `html` element that contains the `head` (for non-printing metadata) and `body` (for printable content). The `head` section includes the page title, styles, and scripts.
 
-The lecture details basic HTML tags and their attributes, including hyperlinks (using the `a` tag with href attributes), image tags, and unordered lists (with `ul` and `li` tags). It also explains HTML special characters and their entity representations (e.g., &lt; for less than), the use of HTML comments, and the distinction between absolute and relative links for resource references, as well as the web server's default file naming conventions (e.g., index.html).
+Key concepts covered include the use of `img` for images, `a` for hyperlinks with `href` attributes (supporting relative and absolute URLs), `ul` and `li` for unordered lists, and `table`, `tr`, `th`, `td` for tabular data. The lecture emphasizes that tables should be used for tabular data and not for layout, and that HTML focuses on semantic meaning rather than visual presentation.

@@ -1,7 +1,7 @@
-Django for Everybody: Linux Command Line Basics
+Django Shell: Linux Command Line Interface
 
-Bash, Command line, Django shell, Linux, SQLite, Python shell
+bash, shell, linux, django, sqlite, python
 
-This lecture introduces the Linux command line interface as the primary environment for server operations, focusing on Bash shell commands essential for Django development. It covers basic navigation with `ls`, `pwd`, and `cd`, file manipulation using `rm`, text search via `grep`, and documentation through `man`. The session also explains command line completion using the tab key and the history feature for re-executing previous commands.
+This lecture covers the Linux command line interface, specifically the bash shell, and essential commands including ls, pwd, cd, and rm. It also demonstrates command line completion using the tab key and navigating command history with up and down arrow keys.
 
-The lecture distinguishes between the Linux shell, Python interactive shell (REPL), and Django shell, highlighting how to recognize and exit each environment. It demonstrates SQLite database interaction and practical commands for Django development, such as running the Django shell with `python manage.py shell` and using the `quit` command to exit.
+The lecture explains the differences between the Python shell (REPL), Django shell, and SQLite database access. It shows how to interact with these interfaces, including running SQL queries and using the Django shell for application-specific commands.

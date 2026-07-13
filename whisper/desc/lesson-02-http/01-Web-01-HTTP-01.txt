@@ -1,7 +1,7 @@
-Web Request-Response Cycle for Dynamic Content
+Web Request-Response Cycle Fundamentals
 
-request-response cycle, http, browser, web server, network socket, html, css, javascript
+html, css, javascript, http, request-response-cycle, web-server, browser, socket
 
-This lecture details the request-response cycle as the fundamental mechanism for delivering dynamic web content. Understanding this cycle is essential for web developers to effectively build and debug applications, as it reveals the underlying protocol interactions that enable web functionality.
+This lecture describes the fundamental request-response cycle in web applications. When a user interacts with a web page, the browser sends an HTTP request to a web server, which responds with HTML content that the browser renders using CSS and JavaScript.
 
-The cycle begins when a browser sends a request to a web server via a network socket. The server processes the request, potentially accessing data sources, and returns a response containing HTML and other resources. The browser then renders the HTML using CSS and JavaScript to produce the visible web page.
+The course emphasizes the network protocols and back-end technologies required for building and debugging web applications, including the role of HTTP, web servers, and network sockets.
