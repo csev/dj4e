@@ -1,259 +1,250 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.120
+00:00:00.000 --> 00:00:01.960
  - Hello, and welcome to our lecture on forms.
 
-00:00:02.120 --> 00:00:04.400
+00:00:01.960 --> 00:00:04.280
  There's actually quite a few lectures here,
 
-00:00:04.400 --> 00:00:05.960
- 'cause we're gonna talk about how forms work
+00:00:04.280 --> 00:00:07.240
+ 'cause we're gonna talk about how forms work in HTML and HTTP,
 
-00:00:05.960 --> 00:00:08.600
- in HTML and HTTP, and then we're gonna talk about
+00:00:07.240 --> 00:00:10.480
+ and then we're gonna talk about how they work in django.
 
-00:00:08.600 --> 00:00:10.640
- how they work in Django.
-
-00:00:10.640 --> 00:00:15.260
+00:00:10.480 --> 00:00:15.160
  So, forms are the way that we put HTML in browsers
 
-00:00:15.260 --> 00:00:17.160
+00:00:15.160 --> 00:00:17.000
  that have fill-in-the-blank areas.
 
-00:00:17.160 --> 00:00:21.080
- And so the idea is that you draw some fields
+00:00:17.000 --> 00:00:21.000
+ And so, the idea is that you draw some fields
 
-00:00:21.080 --> 00:00:22.680
+00:00:21.000 --> 00:00:22.560
  and some places for the user to type,
 
-00:00:22.680 --> 00:00:25.660
+00:00:22.560 --> 00:00:25.560
  and then you have some way of sending the data
 
-00:00:25.660 --> 00:00:26.660
+00:00:25.560 --> 00:00:26.520
  up to the server.
 
-00:00:26.660 --> 00:00:29.780
+00:00:26.520 --> 00:00:29.720
  And so, we'll take a look at a number of different ways
 
-00:00:29.780 --> 00:00:33.080
+00:00:29.720 --> 00:00:33.000
  to gather this stuff and send it to a server.
 
-00:00:33.080 --> 00:00:36.380
+00:00:33.000 --> 00:00:36.280
  There are two basic ways to talk to the server
 
-00:00:36.380 --> 00:00:38.200
+00:00:36.280 --> 00:00:38.120
  with form data.
 
-00:00:38.200 --> 00:00:39.680
+00:00:38.120 --> 00:00:39.600
  We've been, everything we've been doing
 
-00:00:39.680 --> 00:00:42.480
+00:00:39.600 --> 00:00:42.400
  when you do an anchor tag is a get request,
 
-00:00:42.480 --> 00:00:45.720
+00:00:42.400 --> 00:00:45.360
  which means you're gonna get a document and show it.
 
-00:00:45.720 --> 00:00:47.760
+00:00:45.360 --> 00:00:47.680
  And you can put parameters on the end of those,
 
-00:00:47.760 --> 00:00:51.160
- like the question mark, question mark guess equals 42,
+00:00:47.680 --> 00:00:51.040
+ like the question mark, question mark guess equals 42.
 
-00:00:51.160 --> 00:00:53.440
- you can put that on the end of a URL.
+00:00:51.040 --> 00:00:53.360
+ You can put that on the end of a URL.
 
-00:00:53.440 --> 00:00:55.120
+00:00:53.360 --> 00:00:55.080
  But then, what we're gonna really introduce
 
-00:00:55.120 --> 00:00:58.080
+00:00:55.080 --> 00:00:58.000
  and talk more about is the notion of posting data.
 
-00:00:58.080 --> 00:01:02.280
- So, in forms you can actually do getting or posting.
+00:00:58.000 --> 00:01:02.200
+ So, in forms, you can actually do getting or posting.
 
-00:01:02.280 --> 00:01:06.740
+00:01:02.200 --> 00:01:05.680
  And so, let's take a look at some code here.
 
-00:01:06.740 --> 00:01:10.140
+00:01:05.680 --> 00:01:10.040
  So, this is a little bit of utility code
 
-00:01:10.140 --> 00:01:14.280
+00:01:10.040 --> 00:01:14.200
  that I'm gonna use over and over and over again
 
-00:01:14.280 --> 00:01:17.760
+00:01:14.200 --> 00:01:17.680
  because the get data and the post data
 
-00:01:17.760 --> 00:01:21.340
+00:01:17.680 --> 00:01:21.240
  and even the cookie data and stuff come in as dictionaries.
 
-00:01:21.340 --> 00:01:23.520
+00:01:21.240 --> 00:01:23.160
  They look like dictionaries, key value pairs.
 
-00:01:23.520 --> 00:01:26.340
+00:01:23.160 --> 00:01:26.240
  And so, I just wanted a way to dump the data.
 
-00:01:26.340 --> 00:01:29.040
- So, I want a little label, pressure call that guy label,
+00:01:26.240 --> 00:01:28.840
+ I want a little label, probably should call that guy label,
 
-00:01:29.040 --> 00:01:30.100
+00:01:28.840 --> 00:01:29.800
  and then a dictionary.
 
-00:01:30.100 --> 00:01:33.160
+00:01:29.800 --> 00:01:32.960
  And so, I'm just gonna retrieve, go through all the items
 
-00:01:33.160 --> 00:01:36.920
+00:01:32.960 --> 00:01:36.760
  and call HTML escape so that we just don't end up
 
-00:01:36.920 --> 00:01:39.920
+00:01:36.760 --> 00:01:41.760
  with a cross-site scripting injection.
 
-00:01:39.920 --> 00:01:43.460
+00:01:41.760 --> 00:01:43.280
  Just print the keys and values out
 
-00:01:43.460 --> 00:01:45.220
+00:01:43.280 --> 00:01:45.040
  and put some paragraph tags and stuff like that.
 
-00:01:45.220 --> 00:01:47.060
+00:01:45.040 --> 00:01:46.880
  So, it's just a way to dump this out
 
-00:01:47.060 --> 00:01:49.300
+00:01:46.880 --> 00:01:49.160
  so I can show it to you and not put this code
 
-00:01:49.300 --> 00:01:50.560
+00:01:49.160 --> 00:01:50.360
  on every one of my slides.
 
-00:01:50.560 --> 00:01:53.640
+00:01:50.360 --> 00:01:53.280
  So, just remember that that's what dump data does.
 
-00:01:53.640 --> 00:01:57.420
+00:01:53.280 --> 00:01:57.280
  And here is a little form that prints out a form
 
-00:01:57.420 --> 00:01:59.600
+00:01:57.280 --> 00:01:59.440
  and then retrieves the form.
 
-00:01:59.600 --> 00:02:01.040
+00:01:59.440 --> 00:02:00.880
  So, you'll note the dump data.
 
-00:02:01.040 --> 00:02:02.900
+00:02:00.880 --> 00:02:02.800
  If there is no data in request.get,
 
-00:02:02.900 --> 00:02:04.760
+00:02:02.800 --> 00:02:04.600
  it doesn't print anything out.
 
-00:02:04.760 --> 00:02:08.240
+00:02:04.600 --> 00:02:08.120
  But this ends up producing a form, right?
 
-00:02:08.240 --> 00:02:10.960
+00:02:08.120 --> 00:02:10.840
  And there's a form tag, there's an input tag.
 
-00:02:10.960 --> 00:02:12.720
+00:02:10.840 --> 00:02:12.960
  Input is the painting.
 
-00:02:12.720 --> 00:02:14.360
- You know, just put some text out
+00:02:12.960 --> 00:02:15.080
+ Just put some text out and then this label,
 
-00:02:14.360 --> 00:02:16.080
- and then this label, this box here
+00:02:15.080 --> 00:02:17.720
+ this box here is the input type equals text name
 
-00:02:16.080 --> 00:02:19.040
- is the input type equals text name equals guess,
+00:02:17.720 --> 00:02:19.820
+ equals guess, size equals 40,
 
-00:02:19.040 --> 00:02:22.000
- size equals 40, and then we put a submit button out.
+00:02:19.820 --> 00:02:21.840
+ and then we put a submit button out.
 
-00:02:22.000 --> 00:02:23.760
- And we can type some stuff in
+00:02:21.840 --> 00:02:24.520
+ And we can type some stuff in and we can hit
 
-00:02:23.760 --> 00:02:26.640
- and we can hit the submit button, type 42 in,
+00:02:24.520 --> 00:02:27.960
+ the submit button, type 42 in, and hit submit button.
 
-00:02:26.640 --> 00:02:28.040
- and hit submit button.
-
-00:02:28.040 --> 00:02:31.400
+00:02:27.960 --> 00:02:31.320
  And you will notice that once this submit button is hit,
 
-00:02:31.400 --> 00:02:34.880
+00:02:31.320 --> 00:02:34.840
  it adds automatically onto the end of the URL
 
-00:02:34.880 --> 00:02:37.800
+00:02:34.840 --> 00:02:37.720
  that it came from, question mark guess equals 42.
 
-00:02:37.800 --> 00:02:40.640
+00:02:37.720 --> 00:02:40.580
  And then it sends that back and does another get request,
 
-00:02:40.640 --> 00:02:42.560
+00:02:40.580 --> 00:02:42.520
  but this time it does a get request
 
-00:02:42.560 --> 00:02:44.400
+00:02:42.520 --> 00:02:44.320
  with question mark equals 42.
 
-00:02:44.400 --> 00:02:46.640
+00:02:44.320 --> 00:02:46.600
  In comes this, this guess equals 42
 
-00:02:46.640 --> 00:02:49.840
- is put onto the request.get, and then we dump it out
+00:02:46.600 --> 00:02:49.800
+ is put onto the request.get and then we dump it out
 
-00:02:49.840 --> 00:02:52.920
+00:02:49.800 --> 00:02:52.920
  so we get to see the key value pair of guess equals 42.
 
-00:02:52.920 --> 00:02:55.900
+00:02:52.920 --> 00:02:55.880
  And again, Django's taking care of all that parsing
 
-00:02:55.900 --> 00:02:57.960
+00:02:55.880 --> 00:02:57.940
  and everything before we get to it.
 
-00:02:57.960 --> 00:03:01.880
+00:02:57.940 --> 00:03:01.880
  Now, this is pretty much the exact same thing.
 
-00:03:01.880 --> 00:03:04.600
+00:03:01.880 --> 00:03:04.580
  Later we're gonna talk about this CSRF exempt.
 
-00:03:04.600 --> 00:03:07.440
+00:03:04.580 --> 00:03:07.400
  This is to keep it as simple as possible for now.
 
-00:03:07.440 --> 00:03:09.520
- And all we have to do is tell that
+00:03:07.400 --> 00:03:10.000
+ And all we have to do is tell that we would like
 
-00:03:09.520 --> 00:03:12.840
- we would like to communicate this same form of data,
+00:03:10.000 --> 00:03:12.840
+ to communicate this same form of data,
 
-00:03:12.840 --> 00:03:15.160
- one input field, and a submit button.
+00:03:12.840 --> 00:03:15.140
+ one input field and a submit button.
 
-00:03:15.160 --> 00:03:17.280
- We're gonna communicate this to the,
+00:03:15.140 --> 00:03:17.920
+ We're gonna communicate this from the browser
 
-00:03:17.280 --> 00:03:19.760
- from the browser to the server using the POST method.
+00:03:17.920 --> 00:03:19.760
+ to the server using the POST method.
 
 00:03:19.760 --> 00:03:22.840
  So this is a communication to the browser
 
-00:03:22.840 --> 00:03:25.840
+00:03:22.840 --> 00:03:25.860
  when the server says, I would like to send this data
 
-00:03:25.840 --> 00:03:29.060
+00:03:25.860 --> 00:03:29.060
  using the technique of POST, not the technique of GET.
 
-00:03:29.060 --> 00:03:31.720
- And so, you know, it prints out,
+00:03:29.060 --> 00:03:32.880
+ And so, you know, it prints out, we put in the number,
 
-00:03:31.720 --> 00:03:33.720
- we put in the number, we submit it,
+00:03:32.880 --> 00:03:35.120
+ we submit it, and so the first thing that you'll notice
 
-00:03:33.720 --> 00:03:35.120
- and so the first thing that you'll notice
+00:03:35.120 --> 00:03:38.320
+ is there's no key value pairs, and that's because the POST
 
-00:03:35.120 --> 00:03:36.800
- is there's no key value pairs,
+00:03:38.320 --> 00:03:40.640
+ actually transports the data to the server
 
-00:03:36.800 --> 00:03:39.640
- and that's because the POST actually transports the data
-
-00:03:39.640 --> 00:03:41.800
- to the server in a different way.
+00:03:40.640 --> 00:03:41.800
+ in a different way.
 
 00:03:41.800 --> 00:03:45.840
  And it appears in a different key value pair.
@@ -261,17 +252,17 @@ WEBVTT
 00:03:45.840 --> 00:03:47.640
  We can tell whether it's a POST or a GET,
 
-00:03:47.640 --> 00:03:49.360
+00:03:47.640 --> 00:03:49.400
  and if it's a GET, we get our GET parameters
 
-00:03:49.360 --> 00:03:51.260
- and request.GET, and if it's a POST,
+00:03:49.400 --> 00:03:51.280
+ in request.get, and if it's a POST,
 
-00:03:51.260 --> 00:03:53.680
- we get our POST parameters and request.POST.
+00:03:51.280 --> 00:03:53.680
+ we get our POST parameters in request.post.
 
 00:03:53.680 --> 00:03:56.420
- And so we still get the same guess keyword
+ And so we still get the same GUESS keyword
 
 00:03:56.420 --> 00:03:59.620
  equals the number 42, okay?
@@ -279,62 +270,62 @@ WEBVTT
 00:03:59.620 --> 00:04:03.280
  And so that's simply the two ways of transporting it.
 
-00:04:03.280 --> 00:04:05.860
+00:04:03.280 --> 00:04:05.880
  And this is talking about those two ways, right?
 
-00:04:05.860 --> 00:04:09.200
+00:04:05.880 --> 00:04:09.200
  The browser has a form, you know, blah, blah, blah,
 
 00:04:09.200 --> 00:04:12.360
- input type equals guess, and the name field,
+ input type equals GUESS, and the name field,
 
 00:04:12.360 --> 00:04:15.860
- name equals guess, is the field that is going to tell
+ name equals GUESS, is the field that is going to tell
 
 00:04:15.860 --> 00:04:17.680
  what the key value pair is.
 
-00:04:17.680 --> 00:04:19.800
- So if you're going to put a POST,
+00:04:17.680 --> 00:04:21.040
+ So if you're gonna put a POST, I mean, you're gonna hit
 
-00:04:19.800 --> 00:04:23.800
- I mean, you're going to hit the submit button on a GET form,
+00:04:21.040 --> 00:04:24.680
+ the submit button on a GET form, it does a GET
 
-00:04:23.800 --> 00:04:26.880
- it does a GET to wherever it came from, right?
+00:04:24.680 --> 00:04:26.760
+ to wherever it came from, right?
 
-00:04:26.880 --> 00:04:29.520
+00:04:26.760 --> 00:04:29.520
  And then it pens the key value pair to the end.
 
 00:04:29.520 --> 00:04:31.840
  And again, that goes into Django, which parses it
 
-00:04:31.840 --> 00:04:35.000
- and puts it in request.GET, et cetera, et cetera, et cetera.
+00:04:31.840 --> 00:04:34.880
+ and puts it in request.get, et cetera, et cetera, et cetera.
 
-00:04:35.000 --> 00:04:39.200
+00:04:34.880 --> 00:04:39.200
  And if all you do is you tell it with a method equals POST,
 
-00:04:39.200 --> 00:04:40.880
+00:04:39.200 --> 00:04:40.860
  then it chooses a different way.
 
-00:04:40.880 --> 00:04:43.800
+00:04:40.860 --> 00:04:43.780
  So the POST is going to the same URL,
 
-00:04:43.800 --> 00:04:45.360
- but there are no parameters here.
+00:04:43.780 --> 00:04:45.280
+ but there are no parameters here,
 
-00:04:45.360 --> 00:04:48.360
- And so there's a series of headers, like, you know,
+00:04:45.280 --> 00:04:48.340
+ and so there's a series of headers, like, you know,
 
-00:04:48.360 --> 00:04:52.160
+00:04:48.340 --> 00:04:52.160
  what is my preferred language, et cetera, et cetera,
 
-00:04:52.160 --> 00:04:55.280
- what I'm using for my browser,
+00:04:52.160 --> 00:04:56.220
+ what I'm using for my browser, the content type
 
-00:04:55.280 --> 00:04:58.440
- the content type is this application URL form encoded,
+00:04:56.220 --> 00:04:58.440
+ is this application URL form encoded,
 
 00:04:58.440 --> 00:04:59.880
  and that's talking about this.
@@ -354,103 +345,103 @@ WEBVTT
 00:05:11.840 --> 00:05:14.480
  So it leaves a blank line, it's very symmetric
 
-00:05:14.480 --> 00:05:16.960
+00:05:14.480 --> 00:05:16.980
  with how the server sends us pages back,
 
-00:05:16.960 --> 00:05:18.880
+00:05:16.980 --> 00:05:18.840
  and then guess equals 42.
 
-00:05:18.880 --> 00:05:21.160
+00:05:18.840 --> 00:05:21.120
  Now, there's some complexity here,
 
-00:05:21.160 --> 00:05:24.480
+00:05:21.120 --> 00:05:24.460
  and there's some complexity in that POST data,
 
-00:05:24.480 --> 00:05:27.400
+00:05:24.460 --> 00:05:27.360
  and there is some complexity in the GET parameters
 
-00:05:27.400 --> 00:05:29.320
+00:05:27.360 --> 00:05:29.280
  where if you're sending special characters,
 
-00:05:29.320 --> 00:05:31.040
+00:05:29.280 --> 00:05:31.000
  there's ways they have to be encoded,
 
-00:05:31.040 --> 00:05:32.280
+00:05:31.000 --> 00:05:32.240
  but we're gonna ignore that for now.
 
-00:05:32.280 --> 00:05:35.320
+00:05:32.240 --> 00:05:35.280
  Just understand that the reason you don't see
 
-00:05:35.320 --> 00:05:38.120
+00:05:35.280 --> 00:05:38.080
  the parameters on the POST request
 
-00:05:38.120 --> 00:05:39.760
+00:05:38.080 --> 00:05:39.720
  is the data has been transported,
 
-00:05:39.760 --> 00:05:42.960
+00:05:39.720 --> 00:05:42.920
  it is part of the HTTP connection,
 
-00:05:42.960 --> 00:05:44.560
+00:05:42.920 --> 00:05:44.480
  and it's later on in the connection
 
-00:05:44.560 --> 00:05:48.120
+00:05:44.480 --> 00:05:48.100
  after all the headers have been sent.
 
-00:05:48.120 --> 00:05:51.040
+00:05:48.100 --> 00:05:51.000
  So you might say it doesn't matter.
 
-00:05:51.040 --> 00:05:53.680
+00:05:51.000 --> 00:05:53.660
  Well, it does matter.
 
-00:05:53.680 --> 00:05:55.320
+00:05:53.660 --> 00:05:55.280
  So there's a couple of simple rules.
 
-00:05:55.320 --> 00:05:56.920
- The POST needs to be used
+00:05:55.280 --> 00:05:57.320
+ The POST needs to be used when data
 
-00:05:56.920 --> 00:05:59.000
- when data is going to be created or modified,
+00:05:57.320 --> 00:05:59.000
+ is going to be created or modified,
 
-00:05:59.000 --> 00:06:02.040
+00:05:59.000 --> 00:06:02.000
  and we'll see situations where we force this,
 
-00:06:02.040 --> 00:06:05.280
+00:06:02.000 --> 00:06:05.240
  where you don't wanna delete something on a GET request.
 
-00:06:05.280 --> 00:06:09.480
+00:06:05.240 --> 00:06:09.440
  If you're reading or searching, GET is great.
 
-00:06:10.680 --> 00:06:13.520
+00:06:10.660 --> 00:06:13.520
  It should never be used to insert, modify, or delete data,
 
 00:06:13.520 --> 00:06:16.120
- anything that's gonna change the state of the system.
+ anything that's gonna change the state of the system,
 
-00:06:16.120 --> 00:06:18.200
- And part of the problem is
+00:06:16.120 --> 00:06:18.440
+ and part of the problem is that
 
-00:06:18.200 --> 00:06:20.240
- is that web spiders will find GET requests.
+00:06:18.440 --> 00:06:20.240
+ web spiders will find GET requests.
 
 00:06:20.240 --> 00:06:22.960
  So you might, if you build a bad application,
 
-00:06:22.960 --> 00:06:26.760
+00:06:22.960 --> 00:06:26.740
  like a catalog of bearings, for example,
 
-00:06:26.760 --> 00:06:31.160
+00:06:26.740 --> 00:06:31.160
  and you have a delete that happens to be a GET request,
 
 00:06:31.160 --> 00:06:36.160
  and a web spider grabs your page and hits all those URLs,
 
-00:06:36.160 --> 00:06:37.920
+00:06:36.160 --> 00:06:37.900
  you might find that the web spider
 
-00:06:37.920 --> 00:06:39.800
+00:06:37.900 --> 00:06:39.780
  just wiped out your database.
 
-00:06:39.800 --> 00:06:42.720
+00:06:39.780 --> 00:06:42.720
  So web spiders do not follow POSTs
 
 00:06:42.720 --> 00:06:44.440
@@ -474,22 +465,22 @@ WEBVTT
 00:06:57.040 --> 00:07:00.720
  So the idea is if you say blah, blah, blah,
 
-00:07:00.720 --> 00:07:01.720
- guess equals 42,
+00:07:00.720 --> 00:07:02.600
+ guess equals 42, it's supposed to kind of
 
-00:07:01.720 --> 00:07:04.160
- it's supposed to kind of give you back the same page.
+00:07:02.600 --> 00:07:04.160
+ give you back the same page.
 
 00:07:04.160 --> 00:07:09.160
- Now, that's like saying blah, blah, blah, current calendar.
+ Now, that's like saying blah, blah, blah, current calendar,
 
 00:07:09.680 --> 00:07:11.080
- Well, what is the current calendar?
+ well, what is the current calendar?
 
-00:07:11.080 --> 00:07:13.360
+00:07:11.080 --> 00:07:13.380
  It might be, it's not identical,
 
-00:07:13.360 --> 00:07:15.720
+00:07:13.380 --> 00:07:15.720
  but it is sort of semantically the same thing.
 
 00:07:15.720 --> 00:07:18.120
@@ -499,7 +490,7 @@ WEBVTT
  You can bookmark a GET URL,
 
 00:07:19.920 --> 00:07:24.560
- but not, like you might say, where's my inbox?
+ but not like you might say, where's my inbox?
 
 00:07:24.560 --> 00:07:27.200
  Here's a URL to my inbox in some kind of a system
@@ -507,10 +498,10 @@ WEBVTT
 00:07:27.200 --> 00:07:28.640
  to read my data.
 
-00:07:28.640 --> 00:07:31.120
+00:07:28.640 --> 00:07:31.140
  And so you can bookmark that and go back to your inbox.
 
-00:07:31.120 --> 00:07:32.860
+00:07:31.140 --> 00:07:32.860
  It should be a GET request.
 
 00:07:32.860 --> 00:07:35.040
@@ -543,24 +534,21 @@ WEBVTT
 00:07:53.960 --> 00:07:55.320
  and you have to use POST.
 
-00:07:55.320 --> 00:07:57.060
+00:07:55.320 --> 00:07:57.080
  And it also has the advantage that POST
 
-00:07:57.060 --> 00:07:58.000
- doesn't mess up your,
-
-00:07:58.000 --> 00:08:00.200
- keeps your URLs looking prettier.
+00:07:57.080 --> 00:08:00.200
+ doesn't mess up your, it keeps your URLs looking prettier.
 
 00:08:00.200 --> 00:08:02.440
- So next, we're just gonna do a quick review
+ So next we're just gonna do a quick review
 
 00:08:02.440 --> 00:08:05.600
  of the kinds of things that you can do in forms and HTML
 
-00:08:05.600 --> 00:08:08.780
- on different kind of input tags we can show in our HTML.
+00:08:05.600 --> 00:08:08.620
+ and different kind of input tags we can show in our HTML.
 
-00:08:08.780 --> 00:08:11.360
+00:08:08.620 --> 00:08:11.200
  (upbeat music)
 

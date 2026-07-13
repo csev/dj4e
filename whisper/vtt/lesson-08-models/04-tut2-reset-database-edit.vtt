@@ -1,305 +1,191 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.860
- - Hello, and welcome to another walk-through for Django
+00:00:00.000 --> 00:00:05.380
+ Hello and welcome to another walkthrough for Django for Everybody.
 
-00:00:03.860 --> 00:00:05.260
- for everybody.
-
-00:00:05.260 --> 00:00:08.780
+00:00:05.380 --> 00:00:08.860
  This is kind of a supplement to tutorial two.
 
-00:00:08.780 --> 00:00:11.360
- In tutorial two, you're playing with models.py,
+00:00:08.860 --> 00:00:13.300
+ In tutorial two you're playing with models dot py and if you go through the tutorial
 
-00:00:11.360 --> 00:00:13.420
- and if you go through the tutorial,
+00:00:13.300 --> 00:00:17.180
+ they'll have you do a thing and then they'll do another thing and they're kind of showing
 
-00:00:13.420 --> 00:00:16.580
- they'll have you do a thing, and then they'll do another thing,
+00:00:17.180 --> 00:00:23.380
+ you migrations and how the migrations happen.
 
-00:00:16.580 --> 00:00:18.260
- and they're kind of showing you migrations
+00:00:23.380 --> 00:00:31.140
+ If you have a mistake, you know, if you make a mistake then you can get to the point where
 
-00:00:18.260 --> 00:00:21.980
- and how the migrations happen.
+00:00:31.140 --> 00:00:36.460
+ you need help or whatever and sometimes it's easier to just like wipe out your database.
 
-00:00:21.980 --> 00:00:26.260
- And if you get 'em to have a mistake,
+00:00:36.460 --> 00:00:41.060
+ But if you've added a question or added some choices or built models, you've got to do
 
-00:00:26.260 --> 00:00:30.260
- you know, if you make a mistake, then you
+00:00:41.060 --> 00:00:42.180
+ all that stuff.
 
-00:00:30.260 --> 00:00:32.780
- can get to the point where you need help or whatever,
-
-00:00:32.780 --> 00:00:36.260
- and sometimes it's easier to just wipe out your database.
-
-00:00:36.260 --> 00:00:39.300
- But if you've added a question or added some choices
-
-00:00:39.300 --> 00:00:41.940
- or built models, you've got to do all that stuff.
-
-00:00:41.940 --> 00:00:46.060
+00:00:42.180 --> 00:00:46.060
  But it's sometimes just easier to redo some of those things.
 
-00:00:46.060 --> 00:00:50.540
- So I'm going to show you what to do if your model/database gets
+00:00:46.060 --> 00:00:51.380
+ So I'm going to show you what to do if your model slash database gets messed up and like
 
-00:00:50.540 --> 00:00:51.100
- messed up.
+00:00:51.380 --> 00:00:55.700
+ your manage dot py make migrations and migrate are not doing what you think or they're giving
 
-00:00:51.100 --> 00:00:53.900
- And like your manage.py make migrations and migrate
+00:00:55.700 --> 00:00:57.100
+ you weird errors.
 
-00:00:53.900 --> 00:00:57.020
- are not doing what you think, or they're giving you weird errors.
+00:00:57.100 --> 00:01:01.660
+ Now if they're getting a syntax error, make sure you do a Python manage py check right
 
-00:00:57.020 --> 00:00:59.100
- Now, if they're getting a syntax error,
-
-00:00:59.100 --> 00:01:01.780
- make sure you do a Python manage.py check, right,
-
-00:01:01.780 --> 00:01:05.420
+00:01:01.660 --> 00:01:05.620
  before you declare that your database is messed up.
 
-00:01:05.420 --> 00:01:14.300
+00:01:05.620 --> 00:01:14.420
  So let me go into my site.
 
-00:01:14.300 --> 00:01:15.340
+00:01:14.420 --> 00:01:15.420
  So here I am now.
 
-00:01:15.340 --> 00:01:16.260
+00:01:15.420 --> 00:01:19.020
  Here's all my files.
 
-00:01:20.700 --> 00:01:25.140
- So here I should do it, but before I declare that the database
+00:01:19.020 --> 00:01:26.800
+ So just so you so so here I should do it before I declare that the database is a problem.
 
-00:01:25.140 --> 00:01:28.300
- is a problem, manage.py check.
+00:01:26.800 --> 00:01:40.460
+ Manage dot py check and oops oh I messed that up.
 
-00:01:28.300 --> 00:01:35.660
- Oh, I messed that up.
+00:01:40.460 --> 00:01:43.460
+ I'm in my virtual environment of course.
 
-00:01:35.660 --> 00:01:44.380
- I'm in my virtual environment, of course.
+00:01:43.460 --> 00:01:46.660
+ Okay, so we got no issues now.
 
-00:01:44.380 --> 00:01:46.580
- OK, so we got no issues now.
-
-00:01:46.580 --> 00:01:48.540
+00:01:46.660 --> 00:01:48.580
  So that's good.
 
-00:01:48.540 --> 00:01:50.820
- So I've got a couple of commands here.
+00:01:48.580 --> 00:01:51.040
+ So there's I got a couple of commands here.
 
-00:01:50.820 --> 00:01:51.660
- Let me explain this.
+00:01:51.040 --> 00:01:54.140
+ Let me explain this before I'm going to actually delete these.
 
-00:01:51.660 --> 00:01:54.140
- Before I'm going to actually delete these,
+00:01:54.140 --> 00:01:59.920
+ I want to show you where the migration I probably showed you this.
 
-00:01:54.140 --> 00:01:56.500
- I want to show you where the migration--
+00:01:59.920 --> 00:02:03.420
+ So I have a thing called polls to and I got all the polls running.
 
-00:01:56.500 --> 00:01:59.780
- I'll probably show you this.
+00:02:03.420 --> 00:02:10.700
+ So this is like in tutorial to the migrations are in files with this with a number and their
 
-00:01:59.780 --> 00:02:03.340
- So I have a thing called polls2, and I got all the polls running.
+00:02:10.700 --> 00:02:11.700
+ Python files.
 
-00:02:03.340 --> 00:02:05.700
- So this is like in tutorial 2.
+00:02:11.700 --> 00:02:17.700
+ So if you recall migrations are portable representations of what happens in the database.
 
-00:02:05.700 --> 00:02:10.500
- The migrations are in files with a number,
-
-00:02:10.500 --> 00:02:11.500
- and they're Python files.
-
-00:02:11.500 --> 00:02:15.420
- So if you recall, migrations are portable representations
-
-00:02:15.420 --> 00:02:17.620
- of what happens in the database.
-
-00:02:17.620 --> 00:02:24.380
+00:02:17.700 --> 00:02:24.500
  And then the migrate creates the file db.sqlite.
 
-00:02:24.380 --> 00:02:27.620
- So if you want to really start over,
+00:02:24.500 --> 00:02:29.500
+ So you need if you want to really start over you got to get rid of both the migrations
 
-00:02:27.620 --> 00:02:31.940
- you've got to get rid of both the migrations and the db.sqlite
+00:02:29.500 --> 00:02:37.460
+ and the db.sqlite file and then you can start completely fresh if you I mean you can sort
 
-00:02:31.940 --> 00:02:36.580
- file, and then you can start completely fresh.
+00:02:37.460 --> 00:02:42.380
+ of do parts of them but I'm like if you're messed up here tutorial to it's probably easier
 
-00:02:36.580 --> 00:02:38.340
- I mean, you can sort of do parts of them,
+00:02:42.380 --> 00:02:43.740
+ to just get rid of them both.
 
-00:02:38.340 --> 00:02:41.460
- but I'm like, if you're messed up here in tutorial 2,
+00:02:43.740 --> 00:02:47.460
+ So at this point my application is going to stop working.
 
-00:02:41.460 --> 00:02:43.660
- it's probably easier to just get rid of them both.
+00:02:47.460 --> 00:02:54.420
+ So I get rid of the migrations and then I get rid of my database.
 
-00:02:43.660 --> 00:02:47.340
- So at this point, my application is going to stop working.
+00:02:54.420 --> 00:02:59.820
+ And so at this point the only thing I got that has to do with anything with my database
 
-00:02:47.340 --> 00:02:51.460
- So I get rid of the migrations, and then I
+00:02:59.820 --> 00:03:04.220
+ is a few models dot py files.
 
-00:02:51.460 --> 00:02:54.300
- get rid of my database.
+00:03:04.220 --> 00:03:07.300
+ And this is where we are editing our code.
 
-00:02:54.300 --> 00:02:56.060
- And so at this point, the only thing
+00:03:07.300 --> 00:03:12.940
+ And so this polls to models py in my particular example is the code that's going to be effective
 
-00:02:56.060 --> 00:02:58.220
- I've got that has to do with anything
+00:03:12.940 --> 00:03:17.420
+ because I just because I've got all the versions of running at the same time.
 
-00:02:58.220 --> 00:03:03.900
- that has to do with my database is a few models.py files.
+00:03:17.420 --> 00:03:19.420
+ That's why you're seeing this.
 
-00:03:03.900 --> 00:03:07.140
- And this is where we are editing our code,
+00:03:19.420 --> 00:03:28.220
+ So the next thing you do is Python 3 or Python manage py make migrations.
 
-00:03:07.140 --> 00:03:09.380
- and so this polls to models.py.
+00:03:28.220 --> 00:03:33.660
+ So what make migrations is doing is it's reading all these models dot py files and it's writing
 
-00:03:09.380 --> 00:03:11.820
- And my particular example is the code
+00:03:33.660 --> 00:03:35.100
+ this file.
 
-00:03:11.820 --> 00:03:14.900
- that's going to be effective, because just because I've
+00:03:35.100 --> 00:03:40.700
+ So I got rid of that file but now if I do an ls you'll see that it's come back and sometimes
 
-00:03:14.900 --> 00:03:17.260
- got all the versions running at the same time,
+00:03:40.700 --> 00:03:45.420
+ you might see an 02 etc. and then you throw it away and you make it fresh and you should
 
-00:03:17.260 --> 00:03:19.300
- that's why you're seeing this.
+00:03:45.420 --> 00:03:53.220
+ only see an 01 and then you can say Python manage py migrate.
 
-00:03:19.300 --> 00:03:25.180
- So the next thing you do is python3 or python manage.py
+00:03:53.220 --> 00:04:00.300
+ And then that well if you'll do an ls let me control c there if I do an ls you'll see
 
-00:03:25.180 --> 00:03:28.100
- make migrations.
+00:04:00.300 --> 00:04:07.780
+ that there wait a second how come that the dbsqlite3 is zero size.
 
-00:03:28.100 --> 00:03:29.780
- So what make migrations is doing is
+00:04:07.780 --> 00:04:18.820
+ So I'm going to do Python 3 Python manage sorry my Mac migrate.
 
-00:03:29.780 --> 00:03:32.740
- it's reading all these models.py files,
+00:04:18.820 --> 00:04:24.500
+ So that's reading that's reading these files plus a whole bunch of other ones and actually
 
-00:03:32.740 --> 00:03:34.980
- and it's writing this file.
+00:04:24.500 --> 00:04:25.500
+ creating databases.
 
-00:03:34.980 --> 00:03:38.220
- So I got rid of that file, but now if I do an ls,
+00:04:25.500 --> 00:04:33.000
+ And so now if I say ls -l my dbsqlite3 is back and I might have to create a super user
 
-00:03:38.220 --> 00:03:40.180
- you'll see that it's come back.
+00:04:33.000 --> 00:04:38.740
+ if I if I created a super user account then I'm going to have to create one again right.
 
-00:03:40.180 --> 00:03:42.740
- And sometimes you might see an 002, et cetera,
+00:04:38.740 --> 00:05:06.140
+ And so I'm going to do that vj4e choke csev@umarsh.edu.
 
-00:03:42.740 --> 00:03:45.140
- and then you throw it away, and you make it fresh,
+00:05:06.140 --> 00:05:17.220
+ I should make my passwords easier to type now at this point things should start working
 
-00:03:45.140 --> 00:03:47.060
- and you should only see an 001.
+00:05:17.220 --> 00:05:24.140
+ but again if I created any data like a question or something it was gone it was going at that
 
-00:03:47.060 --> 00:03:53.100
- And then you can say python manage py migrate.
+00:05:24.140 --> 00:05:28.900
+ moment when I got rid of that database dbsqlite3 it is literally gone.
 
-00:03:53.100 --> 00:03:58.300
- And then that, well, if you'll do an ls--
+00:05:28.900 --> 00:05:36.760
+ So it's gone now and away we go and so I and again this is just if you can't seem to make
 
-00:03:58.300 --> 00:03:59.260
- let me Control-C there.
+00:05:36.760 --> 00:05:41.780
+ these migrations or migrates work back up start over and then redo some of the work
 
-00:03:59.260 --> 00:04:01.780
- If I do an ls, you'll see that there--
-
-00:04:01.780 --> 00:04:02.580
- wait a second.
-
-00:04:02.580 --> 00:04:07.620
- How come that-- no, the dbsqlite3 is zero size.
-
-00:04:07.620 --> 00:04:12.780
- So I'm going to do python3 or python manage--
-
-00:04:12.780 --> 00:04:18.700
- sorry, my mac migrate.
-
-00:04:18.700 --> 00:04:23.300
- So that's reading these files, plus a whole bunch
-
-00:04:23.300 --> 00:04:25.540
- of other ones, and actually creating databases.
-
-00:04:25.540 --> 00:04:30.820
- So now if I say ls minus l, my dbsqlite3 is back,
-
-00:04:30.820 --> 00:04:33.380
- and I might have to create a super user.
-
-00:04:33.380 --> 00:04:35.740
- If I created a super user account,
-
-00:04:35.740 --> 00:04:38.460
- then I'm going to have to create one again.
-
-00:04:38.460 --> 00:04:40.100
- And so I'm going to do that.
-
-00:04:42.780 --> 00:04:47.780
- j4e choc.
-
-00:04:47.780 --> 00:04:49.260
- Csave@umrsh.edu.
-
-00:05:12.500 --> 00:05:14.580
- I should make my passwords easier to type.
-
-00:05:14.580 --> 00:05:17.340
- Now at this point, things should start working.
-
-00:05:17.340 --> 00:05:21.340
- But again, if I created any data,
-
-00:05:21.340 --> 00:05:23.380
- like a question or something, it was gone.
-
-00:05:23.380 --> 00:05:24.580
- It was gone at that moment.
-
-00:05:24.580 --> 00:05:27.500
- When I got rid of that database, dbsqlite3,
-
-00:05:27.500 --> 00:05:28.780
- it is literally gone.
-
-00:05:28.780 --> 00:05:33.940
- So it's gone now, and away we go.
-
-00:05:33.940 --> 00:05:36.180
- And again, this is just if you can't
-
-00:05:36.180 --> 00:05:38.820
- seem to make these migrations or migrates work,
-
-00:05:38.820 --> 00:05:41.860
- back up, start over, and then reduce some of the work.
-
-00:05:41.860 --> 00:05:45.740
- And that probably will be a good way to get things done.
-
-00:05:45.740 --> 00:05:47.280
- Cheers.
+00:05:41.780 --> 00:05:46.140
+ and that probably will be a good way to get things done cheers.
 

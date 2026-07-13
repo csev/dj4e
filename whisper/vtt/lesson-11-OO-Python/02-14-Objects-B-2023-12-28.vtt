@@ -1,7 +1,7 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:03.040
- - Okay, so now that we've gotten through the definitions,
+ Okay, so now that we've gotten through the definitions,
 
 00:00:03.040 --> 00:00:05.480
  let's work into some sample code.
@@ -33,489 +33,513 @@ WEBVTT
 00:00:26.640 --> 00:00:28.800
  There's clearly a sort of a snowflake class
 
-00:00:28.800 --> 00:00:30.820
+00:00:28.800 --> 00:00:30.800
  and a gingerbread man class.
 
-00:00:30.820 --> 00:00:32.800
+00:00:30.800 --> 00:00:32.720
  That's an object, object, object.
 
-00:00:32.800 --> 00:00:35.980
+00:00:32.720 --> 00:00:35.960
  Somewhere out here, there is a snowflake class
 
-00:00:35.980 --> 00:00:37.700
+00:00:35.960 --> 00:00:37.660
  and a gingerbread class.
 
-00:00:37.700 --> 00:00:41.480
+00:00:37.660 --> 00:00:41.480
  But we got a snowman object and a snowman object
 
-00:00:41.480 --> 00:00:42.640
+00:00:41.480 --> 00:00:42.580
  and a snowman class.
 
-00:00:42.640 --> 00:00:44.720
+00:00:42.580 --> 00:00:44.740
  So class is the template.
 
-00:00:44.720 --> 00:00:49.560
+00:00:44.740 --> 00:00:49.520
  Object is the instance.
 
-00:00:49.560 --> 00:00:50.840
+00:00:49.520 --> 00:00:50.800
  So here's a bit of Python code.
 
-00:00:50.840 --> 00:00:53.680
+00:00:50.800 --> 00:00:53.640
  So let's take a look at what we got here.
 
-00:00:53.680 --> 00:00:56.360
- Class is a new reserved word, kind of like DEF.
+00:00:53.640 --> 00:00:56.360
+ Class is a new reserved word, kind of like def.
 
-00:00:56.360 --> 00:00:57.720
+00:00:56.360 --> 00:00:57.680
  We have the name of the class.
 
-00:00:57.720 --> 00:00:59.380
+00:00:57.680 --> 00:00:59.340
  That is a name that we choose.
 
-00:00:59.380 --> 00:01:01.960
+00:00:59.340 --> 00:01:01.940
  That's the name by which we'll refer to this class
 
-00:01:01.960 --> 00:01:04.100
+00:01:01.940 --> 00:01:04.080
  for the rest of this program.
 
-00:01:04.100 --> 00:01:06.040
+00:01:04.080 --> 00:01:05.980
  And it has a colon at the end of it,
 
-00:01:06.040 --> 00:01:08.160
- which means it starts an indented block,
+00:01:05.980 --> 00:01:08.140
+ and which means it starts an indented block,
 
-00:01:08.160 --> 00:01:10.380
- which ends when we de-indent.
+00:01:08.140 --> 00:01:10.360
+ which ends when we deindent.
 
-00:01:10.380 --> 00:01:12.440
+00:01:10.360 --> 00:01:12.420
  Inside the class, there are generally two things.
 
-00:01:12.440 --> 00:01:14.100
+00:01:12.420 --> 00:01:14.080
  There is some data, and this just looks like
 
-00:01:14.100 --> 00:01:17.220
+00:01:14.080 --> 00:01:17.160
  an assignment statement in the class, x equals zero.
 
-00:01:17.220 --> 00:01:19.000
- And then there is a DEF.
+00:01:17.160 --> 00:01:18.480
+ And then there is a def.
 
-00:01:19.000 --> 00:01:20.840
- This looks just like a function.
+00:01:18.480 --> 00:01:20.800
+ Def, this looks just like a function,
 
-00:01:20.840 --> 00:01:23.740
- And then it starts with a DEF, has a colon, indents.
+00:01:20.800 --> 00:01:23.720
+ and then it starts with a def, has a colon, indents.
 
-00:01:23.740 --> 00:01:26.040
+00:01:23.720 --> 00:01:26.000
  So that function finishes right there.
 
-00:01:26.040 --> 00:01:28.240
+00:01:26.000 --> 00:01:28.180
  The difference is this is a method
 
-00:01:28.240 --> 00:01:30.360
+00:01:28.180 --> 00:01:30.320
  because it lives inside of a class.
 
-00:01:30.360 --> 00:01:32.820
+00:01:30.320 --> 00:01:32.780
  And so there is no function called party.
 
-00:01:32.820 --> 00:01:37.240
+00:01:32.780 --> 00:01:37.220
  There's a function called party within party animal class.
 
-00:01:37.240 --> 00:01:39.660
+00:01:37.220 --> 00:01:39.640
  And we'll talk in a second about this self thing.
 
-00:01:39.660 --> 00:01:41.640
+00:01:39.640 --> 00:01:41.540
  It is the way that inside this code
 
-00:01:41.640 --> 00:01:44.480
+00:01:41.540 --> 00:01:44.440
  we refer back to that variable.
 
-00:01:44.480 --> 00:01:46.640
+00:01:44.440 --> 00:01:46.640
  So this is not actually executing any code.
 
-00:01:46.640 --> 00:01:48.820
+00:01:46.640 --> 00:01:48.780
  It's sort of remembering the template,
 
-00:01:48.820 --> 00:01:51.460
+00:01:48.780 --> 00:01:51.440
  defining the class party animal.
 
-00:01:51.460 --> 00:01:53.560
+00:01:51.440 --> 00:01:53.540
  This is what we call constructing.
 
-00:01:53.560 --> 00:01:57.440
- We're constructing using the party animal template or class.
+00:01:53.540 --> 00:01:56.580
+ We're constructing, using the party animal template
 
-00:01:57.440 --> 00:01:59.280
- We are making a party animal.
+00:01:56.580 --> 00:01:59.240
+ or class, we are making a party animal.
 
-00:01:59.280 --> 00:02:03.380
+00:01:59.240 --> 00:02:03.340
  And then once we make that, we stick it in the variable an.
 
-00:02:03.380 --> 00:02:06.240
+00:02:03.340 --> 00:02:06.260
  And then we're going to call this party animal,
 
-00:02:06.240 --> 00:02:09.880
+00:02:06.260 --> 00:02:09.840
  this party method, three times one, two, three.
 
-00:02:09.880 --> 00:02:12.420
+00:02:09.840 --> 00:02:12.360
  Now this self thing, and we'll take a look at the self.
 
-00:02:12.420 --> 00:02:16.080
+00:02:12.360 --> 00:02:16.040
  The self ends up being an alias of an.
 
-00:02:16.080 --> 00:02:17.720
+00:02:16.040 --> 00:02:17.680
  And so you can look at this syntax.
 
-00:02:17.720 --> 00:02:20.260
+00:02:17.680 --> 00:02:20.240
  It's just kind of an equivalent of this syntax.
 
-00:02:20.260 --> 00:02:24.180
- It's calling the party method within the party animal class
+00:02:20.240 --> 00:02:22.200
+ It's calling the party method
 
-00:02:24.180 --> 00:02:27.600
+00:02:22.200 --> 00:02:24.120
+ within the party animal class
+
+00:02:24.120 --> 00:02:27.520
  and passing the instance in as the first parameter.
 
-00:02:27.600 --> 00:02:31.480
+00:02:27.520 --> 00:02:31.400
  And so self ends up being an alias of an
 
-00:02:31.480 --> 00:02:33.000
+00:02:31.400 --> 00:02:32.920
  each time these are called.
 
-00:02:33.000 --> 00:02:37.080
+00:02:32.920 --> 00:02:37.040
  This syntax is a short version of that syntax.
 
-00:02:37.080 --> 00:02:39.260
+00:02:37.040 --> 00:02:39.200
  So if we watch how this executes,
 
-00:02:39.260 --> 00:02:43.300
+00:02:39.200 --> 00:02:43.240
  it starts up here, it just defines it,
 
-00:02:43.300 --> 00:02:45.920
+00:02:43.240 --> 00:02:45.840
  and then we construct it.
 
-00:02:45.920 --> 00:02:48.940
+00:02:45.840 --> 00:02:48.840
  And that's what basically constructing it,
 
-00:02:48.940 --> 00:02:51.520
+00:02:48.840 --> 00:02:51.400
  we know how to construct it because we look at the class
 
-00:02:51.520 --> 00:02:54.520
+00:02:51.400 --> 00:02:54.440
  and we make a variable x, we make some code party,
 
-00:02:54.520 --> 00:02:57.240
- and then we construct that, that's what the party animal does,
+00:02:54.440 --> 00:02:55.800
+ and then we construct that.
 
-00:02:57.240 --> 00:02:59.720
- and then we assign that into an.
+00:02:55.800 --> 00:02:57.160
+ That's what the party animal does.
 
-00:02:59.720 --> 00:03:03.180
+00:02:57.160 --> 00:02:59.640
+ And then we assign that into an.
+
+00:02:59.640 --> 00:03:03.120
  And so an is now pointing at that.
 
-00:03:03.180 --> 00:03:05.740
+00:03:03.120 --> 00:03:05.640
  Then when we call the party method,
 
-00:03:05.740 --> 00:03:09.280
+00:03:05.640 --> 00:03:09.640
  that basically takes this an and passes it in
 
-00:03:09.280 --> 00:03:13.600
+00:03:09.640 --> 00:03:13.520
  as the first parameter, which is used as self.
 
-00:03:13.600 --> 00:03:16.840
+00:03:13.520 --> 00:03:16.800
  And so self.x, which is what we're doing
 
-00:03:16.840 --> 00:03:18.220
- in this line right here,
+00:03:16.800 --> 00:03:19.480
+ in this line right here, self.x is a variable.
 
-00:03:18.220 --> 00:03:21.800
- self.x is a variable, x starts out as zero.
+00:03:19.480 --> 00:03:24.480
+ x starts out as zero, x starts out as zero,
 
-00:03:21.800 --> 00:03:25.720
- X starts out as zero, because when it was constructed,
+00:03:24.480 --> 00:03:26.920
+ because when it was constructed it was set to zero.
 
-00:03:25.720 --> 00:03:27.820
- it was set to zero, so we're in here,
+00:03:26.920 --> 00:03:29.880
+ So we're in here, an is an alias of self.
 
-00:03:27.820 --> 00:03:31.640
- an is an alias of self, and now it looks up self.x,
+00:03:29.880 --> 00:03:32.360
+ And now it looks up self.x, which is zero,
 
-00:03:31.640 --> 00:03:34.920
- which is zero, adds one to it, and so this becomes one.
+00:03:32.360 --> 00:03:34.920
+ adds one to it, and so this becomes one.
 
 00:03:34.920 --> 00:03:37.840
  And then we print so far, so far one.
 
-00:03:37.840 --> 00:03:39.420
- And then the code returns, and it goes down
+00:03:37.840 --> 00:03:39.440
+ And then the code returns and it goes down
 
-00:03:39.420 --> 00:03:40.780
+00:03:39.440 --> 00:03:40.760
  and does it again.
 
-00:03:40.780 --> 00:03:44.100
+00:03:40.760 --> 00:03:44.080
  And x becomes two, prints out so far two,
 
-00:03:44.100 --> 00:03:46.640
- comes back down, and does the last time,
+00:03:44.080 --> 00:03:47.680
+ comes back down, and does the last time, calls it again.
 
-00:03:46.640 --> 00:03:49.960
- calls it again, self.x is two, add one to it,
+00:03:47.680 --> 00:03:50.840
+ Self.x is two, add one to it and stick it back in,
 
-00:03:49.960 --> 00:03:52.540
- and stick it back in, so this becomes three,
+00:03:50.840 --> 00:03:53.760
+ so this becomes three, and we print out three.
 
-00:03:52.540 --> 00:03:55.600
- and we print out three, and then the program finishes.
+00:03:53.760 --> 00:03:55.400
+ And then the program finishes.
 
-00:03:55.600 --> 00:03:59.440
- And so you can think of this as constructing the object,
+00:03:55.400 --> 00:03:59.400
+ And so you can think of this as constructing the object
 
-00:03:59.440 --> 00:04:03.360
+00:03:59.400 --> 00:04:03.480
  and then associating it with this an variable.
 
-00:04:03.360 --> 00:04:07.940
+00:04:03.480 --> 00:04:07.920
  Now, we've created this object, we can play around
 
-00:04:07.940 --> 00:04:10.540
+00:04:07.920 --> 00:04:10.440
  with things we've played around before with Durantype.
 
-00:04:10.540 --> 00:04:14.700
- We use Durantype to kind of inspect variables and types
+00:04:10.440 --> 00:04:14.480
+ We use Durantype to kind of inspect variables
 
-00:04:15.900 --> 00:04:20.560
- and objects, so we've been using objects all along.
+00:04:14.480 --> 00:04:17.280
+ and types and objects.
 
-00:04:20.560 --> 00:04:23.540
- We, this code here says, "Hey, make me an empty list."
+00:04:17.280 --> 00:04:20.480
+ So we've been using objects all along.
 
-00:04:23.540 --> 00:04:25.960
- Well, it turns out that what we're saying is
+00:04:20.480 --> 00:04:23.440
+ We, this code here says, hey, make me an empty list.
 
-00:04:25.960 --> 00:04:30.060
- there is already a list class inside of Python,
+00:04:23.440 --> 00:04:25.800
+ Well, it turns out that what we're saying
 
-00:04:30.060 --> 00:04:32.460
- and we're constructing an empty list,
+00:04:25.800 --> 00:04:30.040
+ is there is already a list class inside of Python
 
-00:04:32.460 --> 00:04:34.740
- and when we get back this empty list,
+00:04:30.040 --> 00:04:32.400
+ and we're constructing an empty list.
 
-00:04:34.740 --> 00:04:37.120
+00:04:32.400 --> 00:04:34.680
+ And when we get back this empty list,
+
+00:04:34.680 --> 00:04:37.040
  we're assigning that into x.
 
-00:04:37.120 --> 00:04:41.280
+00:04:37.040 --> 00:04:41.240
  So x, in a sense, contains or points to an empty list.
 
-00:04:41.280 --> 00:04:43.240
- So then we say, "Hey, what is in x?
+00:04:41.240 --> 00:04:43.220
+ So then we say, hey, what is in x?
 
-00:04:43.240 --> 00:04:44.480
- "What kind of thing is x?"
+00:04:43.220 --> 00:04:44.480
+ What kind of thing is x?
 
-00:04:44.480 --> 00:04:47.720
- Well, it's a list, this is a thing, it's a list type.
+00:04:44.480 --> 00:04:45.800
+ Well, it's a list.
 
-00:04:47.720 --> 00:04:50.720
- Let's have a list of things in them, and, you know,
+00:04:45.800 --> 00:04:47.560
+ This is a thing, it's a list type.
 
-00:04:50.720 --> 00:04:53.320
- use append, and all the things we've been doing before,
+00:04:47.560 --> 00:04:50.080
+ Let's have a list of things in them.
 
-00:04:53.320 --> 00:04:54.480
+00:04:50.080 --> 00:04:53.240
+ And use append and all the things we've been doing before,
+
+00:04:53.240 --> 00:04:54.360
  they're just objects.
 
-00:04:54.480 --> 00:04:56.760
+00:04:54.360 --> 00:04:56.680
  And then the dir, if you remember the dir,
 
-00:04:56.760 --> 00:04:59.080
+00:04:56.680 --> 00:04:59.000
  the dir is the capabilities.
 
-00:04:59.080 --> 00:05:00.940
+00:04:59.000 --> 00:05:00.920
  And there's all these internal capabilities
 
-00:05:00.940 --> 00:05:04.100
+00:05:00.920 --> 00:05:04.040
  that do things like implement the bracket operator, et cetera,
 
-00:05:04.100 --> 00:05:06.440
- those double underscore ones, we can ignore them,
+00:05:04.040 --> 00:05:05.580
+ those double underscore ones.
 
-00:05:06.440 --> 00:05:08.140
- although you can even look them up and figure out
+00:05:05.580 --> 00:05:07.640
+ We can ignore them, although you can even look them up
 
-00:05:08.140 --> 00:05:09.720
- what they mean if you feel like it.
+00:05:07.640 --> 00:05:09.640
+ and figure out what they mean if you feel like it.
 
-00:05:09.720 --> 00:05:13.280
- But the methods that we tend to call are in this class,
+00:05:09.640 --> 00:05:13.200
+ But the methods that we tend to call are in this class.
 
-00:05:13.280 --> 00:05:18.280
- and so things like x.sort, I've always told you,
+00:05:13.200 --> 00:05:18.200
+ And so things like x.sort, I've always told you,
 
-00:05:18.280 --> 00:05:21.340
- that is the sort method within the x thing,
+00:05:18.200 --> 00:05:21.260
+ that is the sort method within the x thing.
 
-00:05:21.340 --> 00:05:24.180
- and the dot operator is the operator that we use
+00:05:21.260 --> 00:05:23.520
+ And the dot operator is the operator
 
-00:05:24.180 --> 00:05:26.360
- to look something up within an object.
+00:05:23.520 --> 00:05:26.240
+ that we use to look something up within an object.
 
-00:05:26.360 --> 00:05:29.300
- And so you've been using the syntax all along,
+00:05:26.240 --> 00:05:29.200
+ And so you've been using the syntax all along.
 
-00:05:29.300 --> 00:05:33.500
+00:05:29.200 --> 00:05:33.480
  x.sort, dictionary.items, all of those are methods
 
-00:05:33.500 --> 00:05:36.000
+00:05:33.480 --> 00:05:36.080
  within the corresponding class.
 
-00:05:36.000 --> 00:05:39.040
+00:05:36.080 --> 00:05:39.000
  If we take a look at this line of code
 
-00:05:39.040 --> 00:05:41.280
+00:05:39.000 --> 00:05:41.160
  that we've been doing for a very long time,
 
-00:05:41.280 --> 00:05:43.740
+00:05:41.160 --> 00:05:43.600
  which says, oh, stick hello there into y.
 
-00:05:43.740 --> 00:05:47.760
- It's, if I reword that as more o-o or object-oriented,
+00:05:43.600 --> 00:05:47.640
+ If I reword that as more OO or object-oriented,
 
-00:05:47.760 --> 00:05:50.100
+00:05:47.640 --> 00:05:49.960
  what this single quote does says,
 
-00:05:50.100 --> 00:05:54.660
+00:05:49.960 --> 00:05:54.560
  make me a string object and put some text in it,
 
-00:05:54.660 --> 00:05:57.380
+00:05:54.560 --> 00:05:57.280
  and then when that is done being constructed,
 
-00:05:57.380 --> 00:05:59.840
+00:05:57.280 --> 00:05:59.640
  stick that into y, right?
 
-00:05:59.840 --> 00:06:03.980
+00:05:59.640 --> 00:06:03.880
  And so y now points to a string object
 
-00:06:03.980 --> 00:06:06.680
+00:06:03.880 --> 00:06:06.560
  that's been pre-initialized to the string hello there.
 
-00:06:06.680 --> 00:06:09.560
- Now that's a long way of saying hello there ends up in y,
+00:06:06.560 --> 00:06:09.440
+ Now that's a long way of saying hello there ends up in y.
 
-00:06:09.560 --> 00:06:12.440
- but in o-o terms, we can talk about that.
+00:06:09.440 --> 00:06:12.320
+ But in OO terms we can talk about that.
 
-00:06:12.440 --> 00:06:14.620
+00:06:12.320 --> 00:06:14.640
  If we do a dir of that, we see a whole bunch
 
-00:06:14.620 --> 00:06:18.580
- of internal methods, which have double underscores,
+00:06:14.640 --> 00:06:18.440
+ of internal methods, which have double underscores.
 
-00:06:18.580 --> 00:06:20.800
- and then we see all kinds of methods that we've been using.
+00:06:18.440 --> 00:06:20.720
+ And then we see all kinds of methods that we've been using.
 
-00:06:20.800 --> 00:06:23.240
- We've been using methods like upper,
+00:06:20.720 --> 00:06:23.120
+ We've been using methods like upper.
 
-00:06:23.240 --> 00:06:25.560
- we've been using methods like find,
+00:06:23.120 --> 00:06:25.480
+ We've been using methods like find.
 
-00:06:25.560 --> 00:06:29.140
- we've been using methods like rstrip, right?
+00:06:25.480 --> 00:06:30.480
+ We've been using methods like rstrip, right?
 
-00:06:29.140 --> 00:06:32.100
+00:06:30.480 --> 00:06:32.000
  We've been using these methods.
 
-00:06:32.100 --> 00:06:35.340
- So we go on like y.rstrip, parenthesis.
+00:06:32.000 --> 00:06:37.000
+ So we're going to like y.rstrip, parenthesis.
 
-00:06:37.320 --> 00:06:40.780
- Again, that's a method, that's an object,
+00:06:37.180 --> 00:06:40.680
+ Again, that's a method, that's an object.
 
-00:06:40.780 --> 00:06:42.140
- not a class, it's an object,
+00:06:40.680 --> 00:06:42.020
+ Not a class, it's an object.
 
-00:06:42.140 --> 00:06:45.380
- and that is the object lookup operator.
+00:06:42.020 --> 00:06:44.520
+ And that is the object lookup operator.
 
-00:06:45.380 --> 00:06:50.060
+00:06:44.520 --> 00:06:49.960
  Now if we do the same thing to code that we've built,
 
-00:06:50.060 --> 00:06:51.360
- or a class that we've built,
+00:06:49.960 --> 00:06:51.260
+ or a class that we've built.
 
-00:06:51.360 --> 00:06:54.120
- so now we have a party animal class,
+00:06:51.260 --> 00:06:54.000
+ So now we have a party animal class.
 
-00:06:54.120 --> 00:06:56.780
- remember this up to here is just definition,
+00:06:54.000 --> 00:06:56.640
+ Remember this up to here is just definition.
 
-00:06:56.780 --> 00:06:59.680
- now we construct it and we store it in an,
+00:06:56.640 --> 00:06:59.560
+ Now we construct it and we store it in an.
 
-00:06:59.680 --> 00:07:01.520
- so an is a variable that contains
+00:06:59.560 --> 00:07:02.060
+ So an is a variable that contains an object
 
-00:07:01.520 --> 00:07:03.940
- an object of type party animal.
+00:07:02.060 --> 00:07:03.820
+ of type party animal.
 
-00:07:03.940 --> 00:07:07.340
- We ask it what type it is, and it prints out here,
+00:07:03.820 --> 00:07:07.240
+ We ask it what type it is and it prints out here.
 
-00:07:07.340 --> 00:07:11.820
- it says this is a class, and it's main_party_animal,
+00:07:07.240 --> 00:07:09.520
+ It says this is a class.
 
-00:07:11.820 --> 00:07:14.700
- and this whole thing here is the underscore main,
+00:07:09.520 --> 00:07:11.720
+ And it's main underscore party animal.
 
-00:07:14.700 --> 00:07:16.980
- it's scoped_main, but you can see
+00:07:11.720 --> 00:07:14.600
+ And this whole thing here is the underscore main.
 
-00:07:16.980 --> 00:07:19.140
- that you have made a new type.
+00:07:14.600 --> 00:07:16.280
+ It's scoped underscore main.
 
-00:07:19.140 --> 00:07:22.180
+00:07:16.280 --> 00:07:19.040
+ But you can see that you have made a new type.
+
+00:07:19.040 --> 00:07:21.920
  You built a type by using this class keyword.
 
-00:07:22.180 --> 00:07:25.480
- And then we use the dir, remember dir looks for capabilities,
+00:07:21.920 --> 00:07:23.040
+ And then we use the dir.
 
-00:07:25.480 --> 00:07:27.560
- and again, you will see,
+00:07:23.040 --> 00:07:25.380
+ Remember dir looks for capabilities.
 
-00:07:27.560 --> 00:07:30.980
- you'll see a whole bunch of underscore things,
+00:07:25.380 --> 00:07:30.380
+ And again, you will see a whole bunch of underscore things.
 
-00:07:30.980 --> 00:07:32.780
- they have meaning, you can look them up,
+00:07:30.380 --> 00:07:32.680
+ They have meaning, you can look them up.
 
-00:07:32.780 --> 00:07:34.280
- but eventually you'll see the two things
+00:07:32.680 --> 00:07:34.240
+ But eventually you'll see the two things
 
-00:07:34.280 --> 00:07:36.720
- that you've put in it, one is the method party,
+00:07:34.240 --> 00:07:35.240
+ that you've put in it.
 
-00:07:36.720 --> 00:07:39.860
- and the other is the attribute, or field X.
+00:07:35.240 --> 00:07:38.320
+ One is the method party, and the other is the attribute,
 
-00:07:39.860 --> 00:07:44.460
+00:07:38.320 --> 00:07:39.800
+ or field X.
+
+00:07:39.800 --> 00:07:44.400
  And again, these are the things that you can say an.x,
 
-00:07:44.460 --> 00:07:48.620
- or an.party, 'cause this dot is the object operator,
+00:07:44.400 --> 00:07:47.020
+ or an.party.
 
-00:07:48.620 --> 00:07:52.920
+00:07:47.020 --> 00:07:50.760
+ 'Cause this dot is the object operator,
+
+00:07:50.760 --> 00:07:52.840
  the object lookup operator that says,
 
-00:07:52.920 --> 00:07:55.600
- lookup in the object and the thing X,
+00:07:52.840 --> 00:07:55.560
+ look up in the object an the thing X,
 
-00:07:55.600 --> 00:07:59.760
- or lookup in the object and the thing party, okay?
+00:07:55.560 --> 00:07:58.360
+ or look up in the object an the thing party.
 
-00:08:01.740 --> 00:08:03.200
- So up next, we'll talk a little bit
+00:07:58.360 --> 00:07:59.200
+ Okay?
 
-00:08:03.200 --> 00:08:06.040
+00:08:01.640 --> 00:08:03.160
+ So up next we'll talk a little bit
+
+00:08:03.160 --> 00:08:05.960
  about how objects are created and destroyed.
 
-00:08:06.040 --> 00:08:09.040
- We also call that object lifecycle.
+00:08:05.960 --> 00:08:08.180
+ We also call that object life cycle.
 

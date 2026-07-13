@@ -1,60 +1,60 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.760
- - Hello and welcome to another walkthrough for Django for everybody.
+00:00:00.000 --> 00:00:05.000
+ Hello and welcome to another walkthrough for Django for everybody.
 
-00:00:05.760 --> 00:00:08.640
+00:00:05.000 --> 00:00:08.680
  In this walkthrough, we're going to walk through
 
-00:00:08.640 --> 00:00:10.800
+00:00:08.680 --> 00:00:10.840
  Django project tutorial four,
 
-00:00:10.800 --> 00:00:12.720
+00:00:10.840 --> 00:00:12.760
  except we're doing it on Python anywhere
 
-00:00:12.720 --> 00:00:16.600
+00:00:12.760 --> 00:00:16.600
  because we do everything for this class on Python anywhere.
 
-00:00:16.600 --> 00:00:20.240
+00:00:16.600 --> 00:00:20.280
  And so the key thing is, is this Django tutorial,
 
-00:00:20.240 --> 00:00:21.680
+00:00:20.280 --> 00:00:21.720
  this is tutorial two.
 
-00:00:21.680 --> 00:00:26.720
+00:00:21.720 --> 00:00:26.760
  The tutorial is from the Django project website is great,
 
-00:00:26.720 --> 00:00:28.120
+00:00:26.760 --> 00:00:28.160
  but it's generic, right?
 
-00:00:28.120 --> 00:00:30.880
+00:00:28.160 --> 00:00:30.920
  The tutorial is generic and can be used in many situations,
 
-00:00:30.880 --> 00:00:34.800
+00:00:30.920 --> 00:00:34.840
  including just using your own computer to do development.
 
-00:00:34.800 --> 00:00:38.600
+00:00:34.840 --> 00:00:38.640
  But we have to accomplish this on Python anywhere.
 
-00:00:38.600 --> 00:00:41.880
+00:00:38.640 --> 00:00:41.920
  And so if you get stuck, don't go back to tutorial one
 
-00:00:41.880 --> 00:00:44.160
+00:00:41.920 --> 00:00:44.200
  because you already finished tutorial one
 
-00:00:44.160 --> 00:00:46.040
+00:00:44.200 --> 00:00:46.080
  based on the instructions I gave you
 
-00:00:46.040 --> 00:00:47.960
+00:00:46.080 --> 00:00:48.000
  on how to do it on Python anywhere.
 
-00:00:47.960 --> 00:00:52.000
+00:00:48.000 --> 00:00:52.040
  So I gave you my own instructions for the tutorial one,
 
-00:00:52.000 --> 00:00:55.320
+00:00:52.040 --> 00:00:55.360
  but now I'm gonna give you the instructions for tutorial two
 
-00:00:55.320 --> 00:00:58.200
+00:00:55.360 --> 00:00:58.200
  that have to do with Python anywhere.
 
 00:00:58.200 --> 00:01:01.040
@@ -66,11 +66,11 @@ WEBVTT
 00:01:03.240 --> 00:01:05.640
  like open my site settings.py.
 
-00:01:05.640 --> 00:01:07.480
+00:01:05.640 --> 00:01:07.440
  Let's go find that, right?
 
-00:01:07.480 --> 00:01:11.040
- It says open up my site settings.py.
+00:01:07.440 --> 00:01:11.040
+ It says, open up my site settings.py.
 
 00:01:11.040 --> 00:01:12.940
  That's not exactly what it is what you do,
@@ -81,62 +81,65 @@ WEBVTT
 00:01:15.800 --> 00:01:20.420
  It's in Django projects, my site, my site settings.py.
 
-00:01:20.420 --> 00:01:21.660
- When they tell you, if they tell you to go
+00:01:20.420 --> 00:01:21.480
+ When they tell you, if they tell you
 
-00:01:21.660 --> 00:01:24.120
- into Django tutorial, which is the folder they created,
+00:01:21.480 --> 00:01:24.120
+ to go into Django tutorial, which is the folder they created,
 
-00:01:24.120 --> 00:01:25.660
+00:01:24.120 --> 00:01:25.680
  we're not gonna do that.
 
-00:01:25.660 --> 00:01:28.480
+00:01:25.680 --> 00:01:28.480
  We're gonna cd tilde, tilde the squiggle
 
 00:01:28.480 --> 00:01:32.640
  is your home directory, django_projects/mysite, okay?
 
 00:01:32.640 --> 00:01:35.560
- And I'll go through these, but you can come back.
+ And I'll go through these, but you can come back,
 
 00:01:35.560 --> 00:01:38.280
- And if you're typing a command and it doesn't seem to work,
+ and if you're typing a command and it doesn't seem to work,
 
-00:01:38.280 --> 00:01:40.000
+00:01:38.280 --> 00:01:39.980
  you might be in the wrong folder,
 
-00:01:40.000 --> 00:01:44.160
+00:01:39.980 --> 00:01:44.160
  or if you type manage run server, it's gonna blow up, right?
 
 00:01:44.160 --> 00:01:47.200
- And so you wanna do the things.
+ And so you wanna do the things,
 
 00:01:47.200 --> 00:01:49.860
- It tells you that you're supposed to say
+ it tells you that you're supposed to say,
 
 00:01:49.860 --> 00:01:53.920
- cd tilde django_projects/mysite python manage py check.
+ cd tilde django projects, my site, Python manage py check.
 
 00:01:53.920 --> 00:01:56.640
  And then you reload the web application, the web tab.
 
-00:01:56.640 --> 00:02:00.600
- So I'm gonna do all these things and try to call out
+00:01:56.640 --> 00:01:58.900
+ So I'm gonna do all these things
 
-00:02:00.600 --> 00:02:03.480
- each of the times where we're doing
+00:01:58.900 --> 00:02:01.940
+ and try to call out each of the times
 
-00:02:03.480 --> 00:02:06.880
- what the tutorial is saying, we're just doing it
+00:02:01.940 --> 00:02:05.480
+ where we're doing what the tutorial is saying,
 
-00:02:06.880 --> 00:02:09.300
- the way it has to be done on Python anywhere.
+00:02:05.480 --> 00:02:08.080
+ we're just doing it the way it has to be done
+
+00:02:08.080 --> 00:02:09.300
+ on Python anywhere.
 
 00:02:09.300 --> 00:02:13.380
  So armed with the above mapping, let's go do the tutorial.
 
 00:02:13.380 --> 00:02:14.500
- Now when you're doing this work,
+ Now, when you're doing this work,
 
 00:02:14.500 --> 00:02:16.520
  it's important to kinda keep track.
@@ -172,10 +175,10 @@ WEBVTT
  or right here, or whatever.
 
 00:02:45.960 --> 00:02:47.680
- So know where you got stuck.
+ So know where you got stuck,
 
 00:02:47.680 --> 00:02:49.060
- Or if you're down on this tutorial
+ or if you're down on this tutorial
 
 00:02:49.060 --> 00:02:50.560
  and you're like working on this part right here
@@ -192,14 +195,14 @@ WEBVTT
 00:02:56.720 --> 00:03:00.840
  Okay, so let's go ahead and go through it.
 
-00:03:00.840 --> 00:03:03.560
- So the cheat sheet, you can always come back
+00:03:00.840 --> 00:03:02.700
+ So the cheat sheet,
 
-00:03:03.560 --> 00:03:05.280
- to the cheat sheet, but we're just going
+00:03:02.700 --> 00:03:04.420
+ you can always come back to the cheat sheet,
 
-00:03:05.280 --> 00:03:07.460
- to start doing the instructions.
+00:03:04.420 --> 00:03:07.460
+ but we're just going to start doing the instructions.
 
 00:03:07.460 --> 00:03:09.020
  So here we go, database setup.
@@ -220,10 +223,10 @@ WEBVTT
  So you'll see how I'm always opening things in new tabs.
 
 00:03:24.200 --> 00:03:26.140
- I'm gonna start editing files.
+ I'm gonna start editing files,
 
 00:03:26.140 --> 00:03:30.480
- And you're going to go into Django projects, mysite,
+ and you're going to go into Django projects, mysite,
 
 00:03:30.480 --> 00:03:32.520
  and then there's a folder called mysite
@@ -519,13 +522,13 @@ WEBVTT
 00:07:56.480 --> 00:08:00.080
  and it said, let's do all the migrations
 
-00:08:00.080 --> 00:08:04.980
+00:08:00.080 --> 00:08:04.960
  for these applications that make up our Django project.
 
-00:08:04.980 --> 00:08:06.980
- I'm gonna build another one in a second.
+00:08:04.960 --> 00:08:06.960
+ We're gonna build another one in a second.
 
-00:08:06.980 --> 00:08:10.080
+00:08:06.960 --> 00:08:10.080
  Come back, Chuck, okay.
 
 00:08:12.520 --> 00:08:14.480
@@ -552,10 +555,13 @@ WEBVTT
 00:08:38.560 --> 00:08:41.600
  oops, that copy did not work so well.
 
-00:08:42.600 --> 00:08:47.600
- I'm gonna copy this, copy, go to models.py and paste.
+00:08:42.760 --> 00:08:45.700
+ I'm gonna copy this.
 
-00:08:47.600 --> 00:08:51.040
+00:08:45.700 --> 00:08:50.200
+ Copy, go to models.py and paste.
+
+00:08:50.200 --> 00:08:51.040
  There we go.
 
 00:08:51.040 --> 00:08:54.500
@@ -564,10 +570,10 @@ WEBVTT
 00:08:54.500 --> 00:08:56.040
  You can make a mistake, right?
 
-00:08:56.040 --> 00:09:00.000
+00:08:56.040 --> 00:09:00.080
  I can like just screw up the indentation here, right?
 
-00:09:00.000 --> 00:09:03.900
+00:09:00.080 --> 00:09:03.900
  And it'll blow up.
 
 00:09:03.900 --> 00:09:06.760
@@ -577,7 +583,7 @@ WEBVTT
  So then you're gonna have to say, save.
 
 00:09:11.540 --> 00:09:14.480
- Okay, and then it tells what it wants us to do here.
+ Okay, and then tell us what it wants us to do here.
 
 00:09:14.480 --> 00:09:18.360
  So these are, it's gonna be a table,
@@ -601,13 +607,13 @@ WEBVTT
  Okay, so we're going to activate this model.
 
 00:09:37.520 --> 00:09:42.520
- So we have to tell our Django that we have added a polls app
+ So we have to tell our Django that we have added a poles app,
 
 00:09:42.520 --> 00:09:46.840
  otherwise it will not go read models.py.
 
 00:09:46.840 --> 00:09:50.280
- So we're gonna take this polls apps, polls config,
+ So we're gonna take this poles apps, poles config,
 
 00:09:50.280 --> 00:09:53.820
  and go into my site, settings.py.
@@ -619,19 +625,19 @@ WEBVTT
  Go in and add one line to installed apps.
 
 00:10:07.520 --> 00:10:11.080
- Polls, apps, polls config.
+ Poles, apps, poles config.
 
 00:10:11.080 --> 00:10:12.320
  Then we're gonna save it.
 
 00:10:12.320 --> 00:10:18.720
- Now Django knows how to include the polls app.
+ Now Django knows how to include the poles app.
 
 00:10:18.720 --> 00:10:20.360
  Let's run another command.
 
 00:10:20.360 --> 00:10:24.600
- Now, python manage.py make migrations polls.
+ Now, python manage.py make migrations poles.
 
 00:10:24.600 --> 00:10:29.400
  It is important that this runs in the folder
@@ -640,7 +646,7 @@ WEBVTT
  that has the manage.py in it.
 
 00:10:37.160 --> 00:10:40.760
- So I'd have to cd into tilde slash Django project
+ So I'd have to cd into tilde slash django project
 
 00:10:40.760 --> 00:10:42.320
  slash my site.
@@ -655,15 +661,15 @@ WEBVTT
  So let's go back and copy it.
 
 00:10:49.760 --> 00:10:57.860
- Python manage.py make migrations polls.
+ Python manage.py make migrations poles.
 
 00:10:57.860 --> 00:11:02.520
  So, and it tells us that's what it's supposed to look like.
 
-00:11:05.760 --> 00:11:07.560
+00:11:05.760 --> 00:11:07.520
  That's what it's supposed to look like.
 
-00:11:07.560 --> 00:11:12.560
+00:11:07.520 --> 00:11:12.560
  And then, so it turns out that there are two steps
 
 00:11:12.560 --> 00:11:14.200
@@ -705,29 +711,29 @@ WEBVTT
 00:11:58.040 --> 00:12:01.680
  It shows us what it's going to run, okay?
 
-00:12:01.680 --> 00:12:03.980
+00:12:01.680 --> 00:12:03.960
  So now we wanna actually run the migrate.
 
-00:12:03.980 --> 00:12:07.400
+00:12:03.960 --> 00:12:07.380
  So migrate knows,
 
-00:12:07.400 --> 00:12:12.080
+00:12:07.380 --> 00:12:12.080
  migrate knows which ones have run
 
 00:12:12.080 --> 00:12:15.040
  and it knows that these have already run,
 
 00:12:15.040 --> 00:12:17.720
- but we've got a new one in polls
+ but we've got a new one in poles
 
 00:12:17.720 --> 00:12:20.720
- and it's just gonna run the migrations for polls.
+ and it's just gonna run the migrations for poles.
 
 00:12:20.720 --> 00:12:24.440
  And now it has created a database table for us.
 
 00:12:24.440 --> 00:12:26.040
- So there's a polls table now.
+ So there's a poles table now.
 
 00:12:26.040 --> 00:12:31.040
  So the migrate command takes all the migrations
@@ -751,7 +757,7 @@ WEBVTT
  you have to do two steps.
 
 00:12:47.040 --> 00:12:49.200
- You run Python manage py make migrations
+ You run python manage py make migrations
 
 00:12:49.200 --> 00:12:52.040
  to make migrations for the changes in models,
@@ -802,13 +808,13 @@ WEBVTT
  it says make sure you're in the console
 
 00:13:36.920 --> 00:13:38.320
- and you're in the right folder,
+ and you're in the right folder.
 
 00:13:38.320 --> 00:13:40.040
- but we are in the right folder.
+ But we are in the right folder,
 
 00:13:40.040 --> 00:13:44.520
- So we're just gonna grab manage py shell.
+ so we're just gonna grab manage py shell.
 
 00:13:44.520 --> 00:13:51.160
  Now, this is running, this is loading all of Django up
@@ -817,19 +823,19 @@ WEBVTT
  and giving you an interactive prompt.
 
 00:13:53.480 --> 00:13:56.040
- Now this prompt is a Python prompt,
+ Now this prompt is a python prompt,
 
 00:13:56.040 --> 00:13:58.680
  but it also includes all of Django loaded up.
 
-00:13:58.680 --> 00:14:01.160
+00:13:58.680 --> 00:14:01.120
  So I can say print hello world
 
-00:14:01.160 --> 00:14:04.160
- and it's the three Chevron prompt.
+00:14:01.120 --> 00:14:04.140
+ and it's the three chevron prompt.
 
-00:14:04.160 --> 00:14:10.360
- So this is Python, it's just Python.
+00:14:04.140 --> 00:14:10.360
+ So this is python, it's just python.
 
 00:14:10.360 --> 00:14:15.360
  So what we're doing in this is we are playing with
@@ -840,7 +846,7 @@ WEBVTT
 00:14:21.540 --> 00:14:23.160
  because they're in manage.py.
 
-00:14:23.160 --> 00:14:26.960
+00:14:23.160 --> 00:14:27.000
  So if we say question objects all, okay?
 
 00:14:29.000 --> 00:14:34.000
@@ -852,19 +858,19 @@ WEBVTT
 00:14:40.040 --> 00:14:44.960
  Follow this, follow these instructions.
 
-00:14:44.960 --> 00:14:53.080
- And that's an import because we're just running Python.
+00:14:44.960 --> 00:14:52.940
+ And that's an import 'cause we're just running python.
 
-00:14:56.800 --> 00:15:01.720
+00:14:56.820 --> 00:15:01.740
  We're creating a new question object
 
-00:15:01.720 --> 00:15:03.820
+00:15:01.740 --> 00:15:03.840
  and we're putting it in the variable queue.
 
-00:15:03.820 --> 00:15:09.540
+00:15:03.840 --> 00:15:09.480
  And then we're gonna store it in the database.
 
-00:15:09.540 --> 00:15:20.000
+00:15:09.480 --> 00:15:20.000
  And then we're gonna see that it has a row number,
 
 00:15:20.000 --> 00:15:21.400
@@ -873,10 +879,10 @@ WEBVTT
 00:15:21.400 --> 00:15:24.580
  So that's row number one in the database.
 
-00:15:27.480 --> 00:15:32.480
+00:15:27.800 --> 00:15:32.800
  So we have this variable queue and it has a attribute,
 
-00:15:32.480 --> 00:15:36.080
+00:15:32.800 --> 00:15:36.080
  object orientation, the question text,
 
 00:15:36.080 --> 00:15:38.680
@@ -891,7 +897,7 @@ WEBVTT
 00:15:48.540 --> 00:15:51.100
  So by taking this variable, the queue is the question
 
-00:15:51.100 --> 00:15:55.300
+00:15:51.100 --> 00:15:55.280
  and dot question text is an attribute within the question.
 
 00:15:56.400 --> 00:15:57.720
@@ -900,16 +906,16 @@ WEBVTT
 00:15:57.720 --> 00:16:01.840
  Now we've changed it inside the memory
 
-00:16:01.840 --> 00:16:03.520
- of our Python application,
+00:16:01.840 --> 00:16:03.540
+ of our python application,
 
-00:16:03.520 --> 00:16:05.700
+00:16:03.540 --> 00:16:05.720
  but we haven't yet put it back into the database.
 
-00:16:05.700 --> 00:16:08.620
+00:16:05.720 --> 00:16:08.600
  And so we have to type queue.save.
 
-00:16:08.620 --> 00:16:19.080
+00:16:08.600 --> 00:16:19.080
  Oops, queue.save to store it in the database.
 
 00:16:19.080 --> 00:16:24.980
@@ -919,10 +925,10 @@ WEBVTT
  So they want us to make some changes to our models.py.
 
 00:16:29.680 --> 00:16:34.200
- So let's go find our models.py,
+ So let's go find our models.py.
 
 00:16:34.200 --> 00:16:38.960
- my site, polls, models.py.
+ My site, polls, models.py.
 
 00:16:38.960 --> 00:16:41.560
  You gotta get used to where these little things are.
@@ -966,50 +972,44 @@ WEBVTT
 00:17:17.400 --> 00:17:20.960
  And I got an indentation error, so I gotta fix that.
 
-00:17:20.960 --> 00:17:22.160
- This is Python after all,
+00:17:20.960 --> 00:17:24.080
+ This is Python after all, so you gotta follow all these rules.
 
-00:17:22.160 --> 00:17:24.040
- so you gotta follow all these rules.
-
-00:17:24.040 --> 00:17:29.040
+00:17:24.080 --> 00:17:29.080
  So now we have affected the choice model
 
-00:17:29.040 --> 00:17:30.160
+00:17:29.080 --> 00:17:30.200
  and the questions model.
 
-00:17:30.160 --> 00:17:31.320
+00:17:30.200 --> 00:17:31.360
  So I'm gonna hit save.
 
-00:17:31.320 --> 00:17:35.920
- And then we've added these
+00:17:31.360 --> 00:17:38.800
+ And then we've added these because double underscore str,
 
-00:17:35.920 --> 00:17:40.060
- because the double underscore str,
-
-00:17:40.060 --> 00:17:42.360
+00:17:38.800 --> 00:17:42.400
  when you take an object and print it,
 
-00:17:42.360 --> 00:17:43.680
+00:17:42.400 --> 00:17:43.720
  it converts it to a string
 
-00:17:43.680 --> 00:17:46.000
+00:17:43.720 --> 00:17:46.040
  using this particular built-in method.
 
-00:17:46.000 --> 00:17:49.480
+00:17:46.040 --> 00:17:49.520
  So you get to decide how you want stuff to happen.
 
-00:17:52.960 --> 00:17:57.680
+00:17:51.960 --> 00:17:56.960
  And you can also add some code to this.
 
-00:17:57.680 --> 00:18:00.360
+00:17:56.960 --> 00:18:00.360
  You can add some methods to your models.
 
-00:18:00.360 --> 00:18:01.680
+00:18:00.360 --> 00:18:01.720
  So I'm gonna just grab this bit.
 
-00:18:01.680 --> 00:18:04.560
- Remember the dot dot dot says add that.
+00:18:01.720 --> 00:18:04.560
+ Remember, the dot dot dot says add that.
 
 00:18:04.560 --> 00:18:13.000
  So I'm gonna save it.
@@ -1026,25 +1026,25 @@ WEBVTT
 00:18:16.780 --> 00:18:18.080
  Oh, undefined time zone.
 
-00:18:18.080 --> 00:18:20.340
+00:18:18.080 --> 00:18:20.360
  Well, it told us what to do.
 
-00:18:20.340 --> 00:18:24.900
- You gotta import, you got some imports you gotta add here.
+00:18:20.360 --> 00:18:24.920
+ You got some imports you gotta add here.
 
-00:18:24.900 --> 00:18:28.880
+00:18:24.920 --> 00:18:28.880
  Don't wipe stuff out, just keep adding it.
 
-00:18:28.880 --> 00:18:30.900
+00:18:28.880 --> 00:18:30.920
  So I'll add those imports up here.
 
-00:18:30.900 --> 00:18:33.240
+00:18:30.920 --> 00:18:33.240
  Now I'm gonna end up with this one twice.
 
-00:18:33.240 --> 00:18:36.360
+00:18:33.240 --> 00:18:36.340
  So I'll delete the duplicate and now I'll save it
 
-00:18:36.360 --> 00:18:38.380
+00:18:36.340 --> 00:18:38.380
  and the little error message goes away.
 
 00:18:38.380 --> 00:18:45.680
@@ -1062,10 +1062,10 @@ WEBVTT
 00:18:54.580 --> 00:18:55.420
  Exit.
 
-00:18:55.420 --> 00:19:03.240
+00:18:55.420 --> 00:19:04.240
  So now we're out of Python and back into bash.
 
-00:19:03.240 --> 00:19:07.480
+00:19:04.240 --> 00:19:07.480
  And all we're gonna do is we're gonna restart the shell.
 
 00:19:07.480 --> 00:19:09.240
@@ -1081,7 +1081,7 @@ WEBVTT
  and then hit enter, okay?
 
 00:19:19.440 --> 00:19:22.360
- So you'll notice it imported a bunch of stuff for us.
+ So you'll notice like it imported a bunch of stuff for us.
 
 00:19:22.360 --> 00:19:25.180
  So let's set up our Django application.
@@ -1101,10 +1101,10 @@ WEBVTT
 00:19:42.100 --> 00:19:45.760
  So I'm gonna let you do the rest of this yourself.
 
-00:19:48.240 --> 00:19:50.320
+00:19:48.240 --> 00:19:50.340
  Just do all this, it should work.
 
-00:19:50.320 --> 00:19:54.920
+00:19:50.340 --> 00:19:54.920
  You gotta add some things, you're gonna grab a question
 
 00:19:54.920 --> 00:19:57.200
@@ -1128,11 +1128,11 @@ WEBVTT
 00:20:15.800 --> 00:20:20.440
  Exit to get out and get back to the bash console.
 
-00:20:20.440 --> 00:20:24.440
- So when you see three chevrons and you need to get out,
+00:20:20.440 --> 00:20:23.000
+ So when you see three chevrons
 
-00:20:24.440 --> 00:20:25.640
- go to the bash console.
+00:20:23.000 --> 00:20:25.640
+ and you need to get out, go to the bash console.
 
 00:20:25.640 --> 00:20:27.360
  If you wanna go back into the shell, you can.
@@ -1146,10 +1146,10 @@ WEBVTT
 00:20:37.400 --> 00:20:40.560
  is use the Django administrator.
 
-00:20:40.560 --> 00:20:43.400
+00:20:40.560 --> 00:20:43.380
  And we're gonna type python manage py create super user.
 
-00:20:43.400 --> 00:20:46.520
+00:20:43.380 --> 00:20:46.520
  And again, you have to be in the right folder
 
 00:20:46.520 --> 00:20:47.520
@@ -1161,13 +1161,13 @@ WEBVTT
 00:20:49.640 --> 00:20:52.360
  So I'm gonna make a user, I'm gonna call admin.
 
-00:20:52.360 --> 00:20:58.160
+00:20:52.360 --> 00:20:58.180
  The email address doesn't matter.
 
-00:20:58.160 --> 00:21:07.200
+00:20:58.180 --> 00:21:07.220
  So I gave it a crappy password, but I don't care.
 
-00:21:07.200 --> 00:21:10.120
+00:21:07.220 --> 00:21:10.120
  So I'm gonna use it anyway.
 
 00:21:10.120 --> 00:21:14.520
@@ -1182,10 +1182,10 @@ WEBVTT
 00:21:23.720 --> 00:21:26.440
  it's not echoing, okay, and that's normal.
 
-00:21:26.440 --> 00:21:27.720
+00:21:26.440 --> 00:21:27.700
  Don't freak out.
 
-00:21:27.720 --> 00:21:29.840
+00:21:27.700 --> 00:21:29.840
  It echoes when you type the username
 
 00:21:29.840 --> 00:21:32.280
@@ -1200,32 +1200,32 @@ WEBVTT
 00:21:39.120 --> 00:21:44.120
  Okay, so here is the thing that makes it most complex.
 
-00:21:44.120 --> 00:21:46.760
- Let's see what happens
+00:21:44.120 --> 00:21:47.360
+ Let's see what happens when I type
 
-00:21:46.760 --> 00:21:49.160
- when I type python manage py run server.
+00:21:47.360 --> 00:21:49.160
+ python manage py run server.
 
-00:21:49.160 --> 00:21:53.800
+00:21:49.160 --> 00:21:53.820
  Yeah, you'll get a different error message.
 
-00:21:53.800 --> 00:21:57.720
- I've got this thing that kinda patches the manage.py
+00:21:53.820 --> 00:21:56.640
+ I've got this thing that kinda patches
 
-00:21:57.720 --> 00:21:58.720
- to complain about it,
+00:21:56.640 --> 00:21:58.760
+ the manage.py to complain about it,
 
-00:21:58.720 --> 00:22:01.920
+00:21:58.760 --> 00:22:01.940
  that you're not supposed to run server on Python anywhere.
 
-00:22:01.920 --> 00:22:04.520
+00:22:01.940 --> 00:22:04.560
  You'll get some funky error message
 
-00:22:04.520 --> 00:22:07.960
+00:22:04.560 --> 00:22:08.000
  that will be like ports not available or not in use.
 
-00:22:07.960 --> 00:22:11.080
- It says you're supposed to run python manage py check.
+00:22:08.000 --> 00:22:11.080
+ Says you're supposed to run python manage py check.
 
 00:22:11.080 --> 00:22:15.760
  And if you go look at my thing, it says,
@@ -1236,13 +1236,13 @@ WEBVTT
 00:22:18.320 --> 00:22:22.400
  go into my site and type python manage py check.
 
-00:22:22.400 --> 00:22:25.000
+00:22:22.400 --> 00:22:24.980
  So check is like checking,
 
-00:22:25.000 --> 00:22:28.880
+00:22:24.980 --> 00:22:28.840
  run server checks the configuration and runs the server.
 
-00:22:28.880 --> 00:22:32.480
+00:22:28.840 --> 00:22:32.480
  You get, all we're gonna do is check the configuration.
 
 00:22:32.480 --> 00:22:35.760
@@ -1251,10 +1251,10 @@ WEBVTT
 00:22:35.760 --> 00:22:40.520
  But then you have got to go reload your application
 
-00:22:40.520 --> 00:22:42.920
+00:22:40.520 --> 00:22:42.940
  in the web tab or text editor.
 
-00:22:42.920 --> 00:22:45.600
+00:22:42.940 --> 00:22:45.600
  So we got this web tab, there's this reload
 
 00:22:45.600 --> 00:22:47.440
@@ -1278,64 +1278,67 @@ WEBVTT
 00:23:00.560 --> 00:23:02.360
  And that's this button here.
 
-00:23:02.360 --> 00:23:05.600
+00:23:02.360 --> 00:23:05.580
  This says reload drchuckpythonanywhere.com.
 
-00:23:05.600 --> 00:23:08.120
+00:23:05.580 --> 00:23:08.080
  This takes a while, so you gotta wait
 
-00:23:08.120 --> 00:23:10.560
+00:23:08.080 --> 00:23:10.520
  and it's like gotta spinny thing
 
-00:23:10.560 --> 00:23:12.560
+00:23:10.520 --> 00:23:12.520
  and it sometimes takes 30 seconds.
 
-00:23:35.600 --> 00:23:38.360
- (mouse clicking)
-
-00:23:38.360 --> 00:23:49.720
+00:23:35.720 --> 00:23:39.680
  Now sometimes it takes too long and I wanna do it again.
 
-00:23:49.720 --> 00:23:54.720
+00:23:39.680 --> 00:23:44.680
  So, how come it's not working?
 
-00:23:54.720 --> 00:23:59.000
+00:23:44.680 --> 00:23:49.840
  So I'm gonna go here and I'll say reload drchuckpythonanywhere.com.
 
-00:23:59.000 --> 00:24:01.000
+00:23:49.840 --> 00:23:51.320
  It should have worked.
 
-00:24:05.280 --> 00:24:06.440
+00:23:51.320 --> 00:23:57.440
+ It's up here, it should have worked.
+
+00:23:57.440 --> 00:24:01.560
+ So I'm gonna go here and I'm gonna say reload drchuckpythonanywhere.com.
+
+00:24:01.560 --> 00:24:06.480
  It's up, okay.
 
-00:24:06.440 --> 00:24:09.880
- So I don't know why it's up now.
+00:24:06.480 --> 00:24:09.920
+ So I don't know why it's up down.
 
-00:24:09.880 --> 00:24:12.800
+00:24:09.920 --> 00:24:12.840
  Just took a little while, okay.
 
-00:24:12.800 --> 00:24:17.080
- So, and this is your actual website, drchuck.
+00:24:12.840 --> 00:24:16.360
+ So, and this is your actual website.
 
-00:24:17.080 --> 00:24:19.360
- I call it youraccount.pythonanywhere.com
+00:24:16.360 --> 00:24:19.400
+ Dr. Chuck, I call it youraccount.pythonanywhere.com
 
-00:24:19.360 --> 00:24:21.200
- and I'm gonna open this in a new tab.
+00:24:19.400 --> 00:24:21.200
+ and I'm gonna open this in a new tab
 
-00:24:21.200 --> 00:24:24.680
- And this has got your polls.
+00:24:21.200 --> 00:24:24.720
+ and this has got your polls.
 
-00:24:24.680 --> 00:24:28.600
+00:24:24.720 --> 00:24:28.640
  If we go to /polls, you can see your tutorial one
 
-00:24:28.600 --> 00:24:30.280
+00:24:28.640 --> 00:24:30.320
  is still there, right?
 
-00:24:33.200 --> 00:24:36.040
- But if you recall where there's this admin
+00:24:32.560 --> 00:24:36.080
+ But if you recall, where there's this admin
 
-00:24:36.040 --> 00:24:40.080
+00:24:36.080 --> 00:24:40.080
  and that admin is there because in the urls.py,
 
 00:24:40.080 --> 00:24:45.080
@@ -1359,242 +1362,200 @@ WEBVTT
 00:24:59.520 --> 00:25:03.160
  and you have the administrator user interface, okay.
 
-00:25:04.200 --> 00:25:08.400
- So now I can go to /admin.
+00:25:03.160 --> 00:25:09.240
+ So now I can go to /admin, oops, admin.
 
-00:25:08.400 --> 00:25:10.600
- Oops, admin.
-
-00:25:10.600 --> 00:25:12.840
+00:25:09.240 --> 00:25:12.880
  And there we go.
 
-00:25:12.840 --> 00:25:14.880
+00:25:12.880 --> 00:25:14.920
  So let's see what we're doing.
 
-00:25:14.880 --> 00:25:19.080
+00:25:14.920 --> 00:25:19.140
  So, and it's telling you to go to localhost,
 
-00:25:19.080 --> 00:25:20.880
+00:25:19.140 --> 00:25:20.940
  but that's wrong too.
 
-00:25:20.880 --> 00:25:25.240
+00:25:20.940 --> 00:25:25.300
  And that's also in open localhost,
 
-00:25:25.240 --> 00:25:27.040
- open your account on pythonanywhere.admin.
+00:25:25.300 --> 00:25:27.080
+ open your account on Python Anywhere admin.
 
-00:25:27.040 --> 00:25:29.160
- So it's telling you, this is the, again,
+00:25:27.080 --> 00:25:30.120
+ So it's telling you, this is the, again, the Rosetta stone
 
-00:25:29.160 --> 00:25:32.080
- the Rosetta Stone that's telling you when it says this,
+00:25:30.120 --> 00:25:33.520
+ that's telling you when it says this, you have to do that.
 
-00:25:32.080 --> 00:25:34.320
- you have to do that.
-
-00:25:34.320 --> 00:25:39.320
+00:25:33.520 --> 00:25:39.400
  Okay, so what the heck did I give myself a password?
 
-00:25:39.320 --> 00:25:40.800
- So I called it admin.
+00:25:39.400 --> 00:25:42.280
+ So I called it admin, I know what the password is.
 
-00:25:40.800 --> 00:25:42.200
- I know what the password is.
+00:25:42.280 --> 00:25:46.340
+ So I've got to go in here and I got to type the admin account
 
-00:25:42.200 --> 00:25:43.280
- So I've got to go in here
+00:25:46.340 --> 00:25:51.340
+ and the password to log in.
 
-00:25:43.280 --> 00:25:47.360
- and I got to type the admin account and the password
-
-00:25:47.360 --> 00:25:55.360
- to log in.
-
-00:25:59.680 --> 00:26:03.960
+00:25:58.080 --> 00:26:03.080
  Okay, so now I am in the administration user interface.
 
-00:26:03.960 --> 00:26:05.760
+00:26:03.080 --> 00:26:05.840
  I can add a user here.
 
-00:26:05.760 --> 00:26:07.640
+00:26:05.840 --> 00:26:07.720
  We don't generally do anything with groups.
 
-00:26:07.640 --> 00:26:12.400
+00:26:07.720 --> 00:26:12.480
  So now we have logged in to the administration user interface.
 
-00:26:12.400 --> 00:26:14.400
+00:26:12.480 --> 00:26:14.480
  So we see we got groups and users.
 
-00:26:14.400 --> 00:26:16.720
+00:26:14.480 --> 00:26:16.800
  Now what we want to do is take the database tables
 
-00:26:16.720 --> 00:26:20.880
+00:26:16.800 --> 00:26:20.940
  that we just created, the question and the choice,
 
-00:26:20.880 --> 00:26:22.760
+00:26:20.940 --> 00:26:22.840
  and we want to put this
 
-00:26:22.760 --> 00:26:24.880
+00:26:22.840 --> 00:26:24.940
  into the administration user interface.
 
-00:26:24.880 --> 00:26:29.320
+00:26:24.940 --> 00:26:29.400
  We want our question and choices to appear in there.
 
-00:26:29.320 --> 00:26:31.400
+00:26:29.400 --> 00:26:31.480
  And this is what it's going to tell us how to do.
 
-00:26:31.400 --> 00:26:35.440
+00:26:31.480 --> 00:26:35.440
  And so you can go and edit the file pollsadmin.py
 
-00:26:35.440 --> 00:26:37.360
- and copy all this stuff
+00:26:35.440 --> 00:26:40.440
+ and copy all this stuff into my site, pollsadmin.py.
 
-00:26:37.360 --> 00:26:44.320
- into my site, pollsadmin.py.
+00:26:40.440 --> 00:26:53.560
+ And we'll save this and then we'll reload our application.
 
-00:26:44.320 --> 00:26:50.720
- And we'll save this.
+00:26:53.560 --> 00:26:56.560
+ Every time you save a file, you got to reload the application.
 
-00:26:50.720 --> 00:26:53.560
- And then we'll reload our application.
-
-00:26:53.560 --> 00:26:54.640
- Every time you save a file,
-
-00:26:54.640 --> 00:26:56.400
- you got to reload the application.
-
-00:27:00.080 --> 00:27:03.080
+00:26:56.560 --> 00:27:05.560
  And now you got to go back and reload your website.
 
-00:27:03.080 --> 00:27:05.840
+00:27:05.560 --> 00:27:08.240
  And now you've got a questions area.
 
-00:27:05.840 --> 00:27:06.680
- And if you go in there,
+00:27:08.240 --> 00:27:10.200
+ And if you go in there, you see the one question
 
-00:27:06.680 --> 00:27:09.120
- you see the one question that you created
+00:27:10.200 --> 00:27:13.860
+ that you created in the Django shell.
 
-00:27:09.120 --> 00:27:11.280
- in the Django shell.
-
-00:27:11.280 --> 00:27:13.680
+00:27:13.860 --> 00:27:16.320
  You created this question and it's sitting there.
 
-00:27:13.680 --> 00:27:16.840
+00:27:16.320 --> 00:27:19.360
  Now for the autograder,
 
-00:27:16.840 --> 00:27:19.120
+00:27:19.360 --> 00:27:21.640
  you're going to have to add a question and some choices.
 
-00:27:19.120 --> 00:27:21.800
+00:27:21.640 --> 00:27:24.360
  And so if you take a look in my little autograder,
 
-00:27:21.800 --> 00:27:22.640
+00:27:24.360 --> 00:27:25.280
  it gives you a little clue.
 
-00:27:22.640 --> 00:27:24.680
+00:27:25.280 --> 00:27:27.240
  It says, when it tells you to put this
 
-00:27:24.680 --> 00:27:27.240
+00:27:27.240 --> 00:27:30.440
  into my site, pollsadmin.py,
 
-00:27:27.240 --> 00:27:29.880
- put this in instead.
+00:27:30.440 --> 00:27:34.600
+ put this in instead and it'll make your job a lot easier
 
-00:27:29.880 --> 00:27:31.520
- And it'll make your job a lot easier
+00:27:34.600 --> 00:27:37.040
+ because this is registering the question model
 
-00:27:31.520 --> 00:27:34.080
- because this is registering the question model.
+00:27:37.040 --> 00:27:39.400
+ and we got to register both the question model
 
-00:27:34.080 --> 00:27:36.480
- And we got to register both the question model
-
-00:27:36.480 --> 00:27:37.760
+00:27:39.400 --> 00:27:40.640
  and the choice model.
 
-00:27:37.760 --> 00:27:40.800
- So I saved it.
+00:27:40.640 --> 00:27:44.940
+ So I saved it, then I'm going to hit reload.
 
-00:27:40.800 --> 00:27:42.040
- Then I'm going to hit reload.
-
-00:27:42.040 --> 00:27:51.440
+00:27:52.400 --> 00:27:54.400
  And now I'm going to go back to the admin.
 
-00:27:51.440 --> 00:27:54.080
+00:27:54.400 --> 00:27:57.180
  Let's go to home.
 
-00:27:54.080 --> 00:27:57.440
+00:27:57.180 --> 00:28:00.480
  So now you see we've got both choices and questions.
 
-00:27:57.440 --> 00:27:58.680
- So you can add a choice.
+00:28:00.480 --> 00:28:02.680
+ So you can add a choice, you can add a question,
 
-00:27:58.680 --> 00:27:59.520
- You can add a question.
+00:28:02.680 --> 00:28:04.080
+ you can add a user.
 
-00:27:59.520 --> 00:28:00.960
- You can add a user.
-
-00:28:00.960 --> 00:28:02.920
+00:28:04.080 --> 00:28:06.280
  I'm going to let you do that all on your own.
 
-00:28:02.920 --> 00:28:06.680
- And so it tells you how to do this.
+00:28:06.280 --> 00:28:09.680
+ And so it tells you how to do this
 
-00:28:06.680 --> 00:28:08.440
- And I'm going to let you do that.
+00:28:09.680 --> 00:28:11.520
+ and I'm going to let you do that.
 
-00:28:08.440 --> 00:28:10.680
+00:28:11.520 --> 00:28:13.760
  The autograder has you do some things.
 
-00:28:10.680 --> 00:28:14.480
+00:28:13.760 --> 00:28:17.520
  So I'll let you do the rest of that on your own.
 
-00:28:14.480 --> 00:28:18.880
+00:28:17.520 --> 00:28:21.880
  So I hope that this has been helpful for you
 
-00:28:18.880 --> 00:28:20.800
- to do Django tutorial two.
+00:28:21.880 --> 00:28:26.600
+ to do Django Tutorial 2, but mapping it to Python Anywhere.
 
-00:28:20.800 --> 00:28:22.800
- But I'm going to show you how to do that.
-
-00:28:22.800 --> 00:28:25.560
- But I'm going to show you how to do Django tutorial two.
-
-00:28:25.560 --> 00:28:28.560
- But mapping it to Python Anywhere.
-
-00:28:28.560 --> 00:28:33.560
+00:28:26.600 --> 00:28:31.600
  And that's where this little tutorial to Python Anywhere.
 
-00:28:33.560 --> 00:28:36.800
- I'm not going to give you this mapping every assignment.
+00:28:31.600 --> 00:28:35.240
+ I'm not going to give you this mapping every assignment,
 
-00:28:36.800 --> 00:28:39.880
- Because after a while, it says Python managed by shell.
+00:28:35.240 --> 00:28:38.080
+ because after a while it says, Python ManagedPy shell.
 
-00:28:39.880 --> 00:28:41.160
+00:28:38.080 --> 00:28:39.320
  You should know where to type that.
 
-00:28:41.160 --> 00:28:42.920
- Or Python managed by run server.
+00:28:39.320 --> 00:28:41.280
+ Or Python ManagedPy run server.
 
-00:28:42.920 --> 00:28:45.600
- You should know to run managed by check
+00:28:41.280 --> 00:28:43.800
+ You should know to run ManagedPy check
 
-00:28:45.600 --> 00:28:47.480
+00:28:43.800 --> 00:28:45.880
  and hit the little reload button.
 
-00:28:47.480 --> 00:28:50.760
+00:28:45.880 --> 00:28:49.200
  And then go hit the refresh on your application.
 
-00:28:50.760 --> 00:28:53.560
- I just kind of did this because it's the first one
+00:28:49.200 --> 00:28:53.560
+ Okay, so I just kind of did this because it's the first one
 
 00:28:53.560 --> 00:28:57.760
  where you've got to read some content on the internet
@@ -1602,21 +1563,21 @@ WEBVTT
 00:28:57.760 --> 00:28:59.760
  and then map it to Python Anywhere.
 
-00:28:59.760 --> 00:29:02.720
+00:28:59.760 --> 00:29:02.760
  And so part of the skill is learning how to do these things
 
-00:29:02.720 --> 00:29:05.800
+00:29:02.760 --> 00:29:05.840
  on Python Anywhere.
 
-00:29:05.800 --> 00:29:06.640
- Okay.
+00:29:05.840 --> 00:29:07.800
+ Okay, I hope this helps.
 
-00:29:06.640 --> 00:29:07.760
- I hope this helps.
-
-00:29:07.760 --> 00:29:08.600
+00:29:07.800 --> 00:29:08.620
  Cheers.
 
-00:29:08.600 --> 00:29:11.180
+00:29:08.620 --> 00:29:11.200
  (upbeat music)
+
+00:29:15.880 --> 00:29:18.800
+ (jazz piano music)
 

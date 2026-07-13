@@ -1,492 +1,1072 @@
 1
-00:00:00,000 --> 00:00:05,640
- So now we're going to do a real, simple run-through of the kinds of things that you can do in HTML and forms.
+00:00:00,000 --> 00:00:02,480
+ So now we're going to do a real simple run-through
 
 2
-00:00:05,640 --> 00:00:13,120
- This is only the beginning and there's so many great online resources for how to do forms in HTML.
+00:00:02,480 --> 00:00:06,600
+ of the kinds of things that you can do in HTML and forms.
 
 3
-00:00:13,120 --> 00:00:17,880
- So I've already showed you the basic text field, we'll talk about the password field, radio button,
+00:00:06,600 --> 00:00:08,840
+ This is only the beginning and there's so many great
 
 4
-00:00:17,880 --> 00:00:25,280
- checkbox, select and drop-down, and I just got kind of this one HTML page that you can view the source of and borrow.
+00:00:08,840 --> 00:00:13,180
+ online resources for how to do forms in HTML.
 
 5
-00:00:25,280 --> 00:00:29,120
- I kind of write this stuff up for me for a quick reference.
+00:00:13,180 --> 00:00:15,560
+ So I've already showed you the basic text field.
 
 6
-00:00:29,120 --> 00:00:34,160
- So we've already talked about the text field, right?
+00:00:15,560 --> 00:00:17,900
+ We'll talk about the password field, radio button,
 
 7
-00:00:34,160 --> 00:00:39,160
- So input type equals text and then the name is the value.
+00:00:17,900 --> 00:00:19,880
+ checkbox, select and drop-down.
 
 8
-00:00:39,160 --> 00:00:41,360
- The ID, don't get too stuck on the ID.
+00:00:19,880 --> 00:00:22,200
+ And I just got kind of this one HTML page
 
 9
-00:00:41,360 --> 00:00:50,440
- The ID has to do with how you associate the label tag with the field and so that that knows that somehow account and this text box are connected.
+00:00:22,200 --> 00:00:25,320
+ that you can view the source of and borrow.
 
 10
-00:00:50,440 --> 00:00:57,160
- So the ID is more of a browser thing and the name equals is the thing that's going to be sent to the browser.
+00:00:25,320 --> 00:00:29,140
+ I kind of write this stuff up for me for a quick reference.
 
 11
-00:00:57,160 --> 00:01:03,040
- So the browser is always going to get key value pairs and so, you know, when we type Beth and we hit submit,
+00:00:29,140 --> 00:00:34,140
+ So we've already talked about the text field, right?
 
 12
-00:01:03,040 --> 00:01:07,720
- then we're going to get the incoming post data is going to have the value account equals Beth.
+00:00:34,140 --> 00:00:39,140
+ So input type equals text and then the name is the value.
 
 13
-00:01:07,720 --> 00:01:18,000
- Now, if you look at password, that's a type, password for all intents and purposes is a text type and it shows it so people can't shoulder surf and see what it is.
+00:00:39,140 --> 00:00:41,400
+ The ID, don't get too stuck on the ID.
 
 14
-00:01:18,000 --> 00:01:23,840
- Of course, they can watch you type your password, but it shows asterisks in the box while you're typing.
+00:00:41,400 --> 00:00:45,000
+ The ID has to do with how you associate the label tag
 
 15
-00:01:23,840 --> 00:01:35,080
- But then it's important to realize that once the data is submitted, the data is submitted in plain text and until here's another one, another nickname.
+00:00:45,000 --> 00:00:47,880
+ with the field and so that that knows that somehow
 
 16
-00:01:35,080 --> 00:01:38,240
- So Nick equals and I see Kate.
+00:00:47,880 --> 00:00:50,440
+ a count and this text box are connected.
 
 17
-00:01:38,240 --> 00:01:42,880
- So that's that's basically the variance of the input types of text.
+00:00:50,440 --> 00:00:52,880
+ So the ID is more of a browser thing
 
 18
-00:01:42,880 --> 00:01:47,400
- Hidden type equals hidden is another one where you just don't see it in the user interface.
+00:00:52,880 --> 00:00:56,640
+ and the name equals is the thing that's gonna be sent
 
 19
-00:01:47,400 --> 00:01:51,040
- We're going to use one of those input type equals in a bit.
+00:00:56,640 --> 00:00:57,480
+ to the browser.
 
 20
-00:01:51,040 --> 00:01:56,640
- A radio button is designed for situations where there you can only pick one of two things.
+00:00:57,480 --> 00:01:00,920
+ So the browser's always gonna get key value pairs.
 
 21
-00:01:56,640 --> 00:01:58,560
- So when you hit AM, the PM goes off.
+00:01:00,920 --> 00:01:03,160
+ And so when we type beth and we hit submit,
 
 22
-00:01:58,560 --> 00:02:03,480
- When you hit PM, the AM goes off and you can actually have a whole bunch of them and you can click them.
+00:01:03,160 --> 00:01:04,800
+ then we're gonna get the incoming post data
 
 23
-00:02:03,480 --> 00:02:08,800
- Now, now they're they're drawn together because they're type equals radio and then the name is identical.
+00:01:04,800 --> 00:01:07,840
+ is gonna have the value account equals beth.
 
 24
-00:02:08,800 --> 00:02:12,000
- And interestingly, you can scatter these literally all over the page.
+00:01:07,840 --> 00:01:10,160
+ Now if you look at password, that's a type.
 
 25
-00:02:12,000 --> 00:02:15,920
- It doesn't lead to very good user interface, but the way you go.
+00:01:10,160 --> 00:01:13,160
+ Password for all intents and purposes is a text type.
 
 26
-00:02:15,920 --> 00:02:25,480
- And so what happens is, is again, no matter how many of these you put with a name equals when, no matter where you put them on the page, if you click one, all the others are going to turn off.
+00:01:13,160 --> 00:01:17,360
+ And it shows it so people can't shoulder surf
 
 27
-00:02:25,480 --> 00:02:28,640
- And so the one that's clicked, they all have different values.
+00:01:17,360 --> 00:01:18,200
+ and see what it is.
 
 28
-00:02:28,640 --> 00:02:39,600
- And so what will happen is whatever one is clicked at the moment that you actually send it, that will be the key value pair where when equals PM because only one can be selected.
+00:01:18,200 --> 00:01:20,200
+ Of course they can watch you type your password,
 
 29
-00:02:39,600 --> 00:02:43,520
- And it's up to you to make these things unique or you don't maybe don't want to be unique.
+00:01:20,200 --> 00:01:23,960
+ but it shows asterisks in the box while you're typing.
 
 30
-00:02:43,520 --> 00:02:45,600
- You do whatever you want.
+00:01:23,960 --> 00:01:26,360
+ But then it's important to realize that once the data
 
 31
-00:02:45,600 --> 00:02:48,440
- And so in this case, the PM one is selected.
+00:01:26,360 --> 00:01:30,080
+ is submitted, the data is submitted in plain text.
 
 32
-00:02:48,440 --> 00:02:52,640
- So we see when equals PM in the incoming post data.
+00:01:30,080 --> 00:01:34,240
+ And so here's another one, another nickname.
 
 33
-00:02:52,640 --> 00:02:55,000
- So that's a radio button.
+00:01:34,240 --> 00:01:38,320
+ So nick equals N-I-C-K.
 
 34
-00:02:55,000 --> 00:02:57,040
- So this is a checkbox.
+00:01:38,320 --> 00:01:42,960
+ So that's basically the variance of the input types of text.
 
 35
-00:02:57,040 --> 00:03:01,760
- This is more probably more useful in many ways.
+00:01:42,960 --> 00:01:45,680
+ Hidden, type equals hidden is another one
 
 36
-00:03:01,760 --> 00:03:06,360
- Checkboxes, you can have as many that you want and each of them are individual and distinct.
+00:01:45,680 --> 00:01:47,460
+ where you just don't see it in the user interface.
 
 37
-00:03:06,360 --> 00:03:14,440
- So if you take a look, for example, you see that you have different names to class one, class two and class three.
+00:01:47,460 --> 00:01:49,360
+ We're gonna use one of those input type equals hidden
 
 38
-00:03:14,440 --> 00:03:22,480
- So that each checkbox has its own name, but the checkboxes are actually just little checkboxes.
+00:01:49,360 --> 00:01:50,200
+ in a bit.
 
 39
-00:03:22,480 --> 00:03:23,880
- The text here is just text.
+00:01:50,200 --> 00:01:54,560
+ A radio button is designed for situations where there
 
 40
-00:03:23,880 --> 00:03:26,480
- The text is not really a critical part of it.
+00:01:54,560 --> 00:01:56,720
+ you can only pick one of two things.
 
 41
-00:03:26,480 --> 00:03:31,840
- The value is what will get sent if that checkbox is checked.
+00:01:56,720 --> 00:01:58,620
+ So when you hit A-M, the P-M goes off.
 
 42
-00:03:31,840 --> 00:03:36,680
- And so in this example, we've checked pie free and SI 539.
+00:01:58,620 --> 00:02:00,240
+ When you hit P-M, the A-M goes off.
 
 43
-00:03:36,680 --> 00:03:42,560
- And you'll notice that two of them have values and one of them doesn't.
+00:02:00,240 --> 00:02:02,180
+ And you can actually have a whole bunch of them
 
 44
-00:03:42,560 --> 00:03:45,760
- Now, the key is often you're just checking to see if the data is there.
+00:02:02,180 --> 00:02:04,000
+ and you can click them.
 
 45
-00:03:45,760 --> 00:03:51,480
- In this case, class three is not in the post data and class one is on.
+00:02:04,000 --> 00:02:07,560
+ Now they're drawn together because they're type equals radio
 
 46
-00:03:51,480 --> 00:03:52,400
- That's the default.
+00:02:07,560 --> 00:02:08,880
+ and then the name is identical.
 
 47
-00:03:52,400 --> 00:03:59,040
- If you don't say value equals, it's like value equals on or whatever the value is that you put in that checkbox.
+00:02:08,880 --> 00:02:10,960
+ And interestingly, you can scatter these
 
 48
-00:03:59,040 --> 00:04:01,120
- And so you get to decide these.
+00:02:10,960 --> 00:02:12,080
+ literally all over the page.
 
 49
-00:04:01,120 --> 00:04:10,640
- You might easily think that you don't need any values whatsoever because you're really looking for the name of the field and you want the name of the field to be distinct.
+00:02:12,080 --> 00:02:14,480
+ It doesn't lead to very good user interface,
 
 50
-00:04:10,640 --> 00:04:13,560
- And so again, you can check as many of the checkboxes as you want.
+00:02:14,480 --> 00:02:15,960
+ but the way you go.
 
 51
-00:04:13,560 --> 00:04:14,280
- You can uncheck them.
+00:02:15,960 --> 00:02:17,680
+ And so what happens is, is again,
 
 52
-00:04:14,280 --> 00:04:17,320
- You can check none of them and you can check all of them.
+00:02:17,680 --> 00:02:20,620
+ no matter how many of these you put with a name equals when,
 
 53
-00:04:17,320 --> 00:04:18,600
- So those are checkboxes.
+00:02:20,620 --> 00:02:22,460
+ no matter where you put them on the page,
 
 54
-00:04:18,600 --> 00:04:27,600
- So to describe a drop down, a drop down is a multiple choice option basically for a single value that's going to be sent back to you.
+00:02:22,460 --> 00:02:25,520
+ if you click one, all the others are gonna turn off.
 
 55
-00:04:27,600 --> 00:04:36,520
- And so we have a select, which is the whole thing, and that gives the name the key, the keyword that is going to be sent back to.
+00:02:25,520 --> 00:02:27,040
+ And so the one that's clicked,
 
 56
-00:04:36,520 --> 00:04:38,360
- And then we have a series of options.
+00:02:27,040 --> 00:02:28,680
+ they all have different values.
 
 57
-00:04:38,360 --> 00:04:42,320
- And you'll notice there's no value on the select, but each option has its own value.
+00:02:28,680 --> 00:02:30,920
+ And so what'll happen is whatever one is clicked
 
 58
-00:04:42,320 --> 00:04:45,720
- Right. So I happen to be going zero, one, two, and these are strings, not numbers.
+00:02:30,920 --> 00:02:33,420
+ at the moment that you actually send it,
 
 59
+00:02:33,420 --> 00:02:37,640
+ that will be the key value pair where when equals P-M,
+
+60
+00:02:37,640 --> 00:02:39,600
+ 'cause only one can be selected,
+
+61
+00:02:39,600 --> 00:02:41,680
+ and it's up to you to make these things unique.
+
+62
+00:02:41,680 --> 00:02:43,560
+ Or you don't, maybe you don't want them unique.
+
+63
+00:02:43,560 --> 00:02:45,620
+ You do whatever you want.
+
+64
+00:02:45,620 --> 00:02:48,500
+ And so in this case, the P-M one is selected,
+
+65
+00:02:48,500 --> 00:02:52,700
+ so we see when equals P-M in the incoming post data.
+
+66
+00:02:52,700 --> 00:02:53,980
+ So that's a radio button.
+
+67
+00:02:53,980 --> 00:02:57,060
+ So this is a checkbox.
+
+68
+00:02:57,060 --> 00:03:01,820
+ This is more, probably more useful in many ways.
+
+69
+00:03:01,820 --> 00:03:03,960
+ Checkboxes, you can have as many that you want,
+
+70
+00:03:03,960 --> 00:03:06,400
+ and each of them are individual and distinct.
+
+71
+00:03:06,400 --> 00:03:08,500
+ So if you take a look, for example,
+
+72
+00:03:08,500 --> 00:03:11,520
+ you see that you have different names,
+
+73
+00:03:11,520 --> 00:03:14,480
+ class one, class two, and class three, right?
+
+74
+00:03:14,480 --> 00:03:19,480
+ So that each checkbox has its own name,
+
+75
+00:03:19,480 --> 00:03:22,520
+ but the checkboxes are actually just little checkboxes.
+
+76
+00:03:22,520 --> 00:03:23,960
+ The text here is just text.
+
+77
+00:03:23,960 --> 00:03:26,520
+ The text is not really a critical part of it.
+
+78
+00:03:26,520 --> 00:03:30,520
+ The value, value is what will get sent
+
+79
+00:03:30,520 --> 00:03:31,880
+ if that checkbox is checked.
+
+80
+00:03:31,880 --> 00:03:36,680
+ And so in this example, we've checked pi-free and si-539,
+
+81
+00:03:36,680 --> 00:03:40,260
+ and you'll notice that two of them have values,
+
+82
+00:03:40,260 --> 00:03:42,600
+ and one of them doesn't.
+
+83
+00:03:42,600 --> 00:03:44,560
+ Now the key is often you're just checking
+
+84
+00:03:44,560 --> 00:03:45,840
+ to see if the data's there.
+
+85
+00:03:45,840 --> 00:03:50,080
+ In this case, class three is not in the post data,
+
+86
+00:03:50,080 --> 00:03:51,560
+ and class one is on.
+
+87
+00:03:51,560 --> 00:03:52,480
+ That's the default.
+
+88
+00:03:52,480 --> 00:03:56,200
+ If you don't say value equals, it's like value equals on,
+
+89
+00:03:56,200 --> 00:03:59,120
+ or whatever the value is that you put in that checkbox.
+
+90
+00:03:59,120 --> 00:04:01,140
+ And so you get to decide these.
+
+91
+00:04:01,140 --> 00:04:02,760
+ You might easily think that you don't need
+
+92
+00:04:02,760 --> 00:04:05,240
+ any values whatsoever, because you're really looking
+
+93
+00:04:05,240 --> 00:04:06,900
+ for the name of the field,
+
+94
+00:04:06,900 --> 00:04:09,400
+ and you want the name of the field to be distinct.
+
+95
+00:04:10,680 --> 00:04:13,080
+ And so again, you can check as many of the checkboxes
+
+96
+00:04:13,080 --> 00:04:13,920
+ as you want.
+
+97
+00:04:13,920 --> 00:04:15,640
+ You can uncheck 'em, you can check none of 'em,
+
+98
+00:04:15,640 --> 00:04:17,340
+ and you can check all of 'em.
+
+99
+00:04:17,340 --> 00:04:18,640
+ So those are checkboxes.
+
+100
+00:04:18,640 --> 00:04:20,160
+ So to describe a drop-down,
+
+101
+00:04:20,160 --> 00:04:23,720
+ a drop-down is a multiple choice option, basically,
+
+102
+00:04:23,720 --> 00:04:26,620
+ for a single value that's gonna be sent back to you.
+
+103
+00:04:26,620 --> 00:04:32,000
+ And so we have a select, which is the whole thing,
+
+104
+00:04:32,000 --> 00:04:34,680
+ and that gives the name the keyword
+
+105
+00:04:34,680 --> 00:04:36,480
+ that it's gonna be sent back to.
+
+106
+00:04:36,480 --> 00:04:38,320
+ And then we have a series of options,
+
+107
+00:04:38,320 --> 00:04:40,280
+ and you'll notice there's no value on the select,
+
+108
+00:04:40,280 --> 00:04:42,560
+ but each option has its own value, right?
+
+109
+00:04:42,560 --> 00:04:43,940
+ So I happen to be going zero, one, two,
+
+110
+00:04:43,940 --> 00:04:45,720
+ and these are strings, not numbers.
+
+111
 00:04:45,720 --> 00:04:49,280
  They often are just numbers to make our lives simple.
 
-60
-00:04:49,280 --> 00:04:52,680
+112
+00:04:49,280 --> 00:04:52,520
  And then you have some text, et cetera, et cetera, et cetera.
 
-61
-00:04:52,680 --> 00:04:53,760
- And so you pick one.
+113
+00:04:52,520 --> 00:04:55,460
+ And so you pick one, in this case I leave it default,
 
-62
-00:04:53,760 --> 00:04:56,640
- In this case, I leave it default and I hit the submit.
+114
+00:04:55,460 --> 00:04:59,120
+ and I hit the submit, so soda is gonna be equal to zero.
 
-63
-00:04:56,640 --> 00:04:59,080
- So soda is going to be equal to zero.
+115
+00:04:59,120 --> 00:05:01,460
+ So this happened to be the one that's selected
 
-64
-00:04:59,080 --> 00:05:02,960
- So this happened to be the one that selected when we hit submit.
+116
+00:05:01,460 --> 00:05:03,720
+ when we hit submit, okay?
 
-65
-00:05:02,960 --> 00:05:05,560
- OK, so that's what a select looks like.
+117
+00:05:03,720 --> 00:05:05,560
+ So that's what a select looks like.
 
-66
+118
 00:05:05,560 --> 00:05:10,200
- You can also make a select that has some defaulted one.
+ You can also make a select that has some defaulted one,
 
-67
-00:05:10,200 --> 00:05:12,680
- And so you just put selected on one of them.
+119
+00:05:10,200 --> 00:05:12,640
+ and so you just put selected on one of 'em.
 
-68
-00:05:12,680 --> 00:05:14,520
- So that means it's the drop down.
+120
+00:05:12,640 --> 00:05:14,520
+ So that means it's the dropdown.
 
-69
+121
 00:05:14,520 --> 00:05:15,680
  They're all there, right?
 
-70
-00:05:15,680 --> 00:05:16,120
+122
+00:05:15,680 --> 00:05:16,520
  They're all there.
 
-71
-00:05:16,120 --> 00:05:23,000
- If you click on this thing, you'll see if you click on which snack you're going to see all the different snacks, peanuts is preselected.
+123
+00:05:16,520 --> 00:05:18,400
+ If you click on this thing, you'll see,
 
-72
-00:05:23,000 --> 00:05:29,760
- And if I don't change it and hit submit, then we're going to see snack equals the value, which is peanuts.
+124
+00:05:18,400 --> 00:05:19,600
+ if you click on which snack,
 
-73
-00:05:29,760 --> 00:05:34,360
- So that's an example that you don't have to make numbers, although it's really common to be using numbers.
+125
+00:05:19,600 --> 00:05:21,820
+ you're gonna see all the different snacks.
 
-74
-00:05:34,360 --> 00:05:38,280
- So that's a drop down with a default other than the first item.
+126
+00:05:21,820 --> 00:05:23,040
+ Peanuts is preselected.
 
-75
-00:05:38,280 --> 00:05:42,520
- The default is it's the first item unless you do it otherwise.
+127
+00:05:23,040 --> 00:05:25,320
+ And if I don't change it and hit submit,
 
-76
-00:05:42,520 --> 00:05:48,920
- When you're typing in comments or a blog post, big long blob of text, you use a text area tag.
+128
+00:05:25,320 --> 00:05:28,720
+ then we're gonna see snack equals the value,
 
-77
-00:05:48,920 --> 00:05:52,600
- The text area tag is a little bit different in that it doesn't have a value equals.
+129
+00:05:28,720 --> 00:05:29,780
+ which is peanuts.
 
-78
-00:05:52,600 --> 00:05:56,000
+130
+00:05:29,780 --> 00:05:32,260
+ So that's an example that you don't have to make numbers,
+
+131
+00:05:32,260 --> 00:05:34,400
+ although it's really common to be using numbers.
+
+132
+00:05:34,400 --> 00:05:37,200
+ So that's a dropdown with a default
+
+133
+00:05:37,200 --> 00:05:38,320
+ other than the first item.
+
+134
+00:05:38,320 --> 00:05:40,160
+ The default is it's the first item
+
+135
+00:05:40,160 --> 00:05:42,540
+ unless you do it otherwise.
+
+136
+00:05:42,540 --> 00:05:45,280
+ When you're typing in comments or a blog post,
+
+137
+00:05:45,280 --> 00:05:48,920
+ big long blob of text, you use a text area tag.
+
+138
+00:05:48,920 --> 00:05:50,920
+ The text area tag is a little bit different
+
+139
+00:05:50,920 --> 00:05:52,640
+ in that it doesn't have a value equals.
+
+140
+00:05:52,640 --> 00:05:54,360
  It does have a name equals.
 
-79
-00:05:56,000 --> 00:06:00,520
- It has rows and columns to tell how tall it is and how wide it is.
+141
+00:05:54,360 --> 00:05:58,620
+ It has rows and columns to tell how tall it is
 
-80
-00:06:00,520 --> 00:06:05,280
- There are clever styling libraries that make these a little prettier.
+142
+00:05:58,620 --> 00:06:00,520
+ and how wide it is.
 
-81
-00:06:05,280 --> 00:06:10,840
- But basically what it is, it's a series of text, including paragraphs, including new lines, et cetera.
+143
+00:06:00,520 --> 00:06:02,780
+ There are clever styling libraries
 
-82
-00:06:10,840 --> 00:06:16,200
- And you're just allowed to type with new lines and edit and cursor around in here and build all kind of stuff.
+144
+00:06:02,780 --> 00:06:05,280
+ that make these a little prettier.
 
-83
-00:06:16,200 --> 00:06:20,280
+145
+00:06:05,280 --> 00:06:08,000
+ But basically what it is, it's a series of text,
+
+146
+00:06:08,000 --> 00:06:10,840
+ including paragraphs, including new lines, et cetera.
+
+147
+00:06:10,840 --> 00:06:12,800
+ And you're just allowed to type with new lines
+
+148
+00:06:12,800 --> 00:06:14,400
+ and edit and cursor around in here
+
+149
+00:06:14,400 --> 00:06:16,200
+ and build all kind of stuff.
+
+150
+00:06:16,200 --> 00:06:20,320
  And then you send it in and you can put default text in here.
 
-84
-00:06:20,280 --> 00:06:21,280
- You can edit the text.
+151
+00:06:20,320 --> 00:06:22,400
+ You can edit the text, you can change it,
 
-85
-00:06:21,280 --> 00:06:22,400
- You can change it.
+152
+00:06:22,400 --> 00:06:24,280
+ and it comes in as a key value pair
 
-86
-00:06:22,400 --> 00:06:28,440
- And it comes in as a key value pair with new lines and everything and any weird spacing that you might put in.
+153
+00:06:24,280 --> 00:06:26,120
+ with new lines and everything
 
-87
-00:06:28,440 --> 00:06:38,960
- But it's basically a block of text like a comment or like a like a comment or a blog post or something like that.
+154
+00:06:26,120 --> 00:06:28,440
+ and any weird spacing that you might put in.
 
-88
-00:06:38,960 --> 00:06:43,320
+155
+00:06:28,440 --> 00:06:31,880
+ But it's basically a block of text like a comment
+
+156
+00:06:31,880 --> 00:06:36,880
+ or like a comment or a blog post or something like that.
+
+157
+00:06:39,000 --> 00:06:43,360
  So the last thing on this page here is the submit button.
 
-89
-00:06:43,320 --> 00:06:48,240
- And so you can make a type equals submit and you can give it a name.
+158
+00:06:43,360 --> 00:06:46,520
+ And so you can make a type equals submit
 
-90
-00:06:48,240 --> 00:06:51,520
+159
+00:06:46,520 --> 00:06:48,240
+ and you can give it a name.
+
+160
+00:06:48,240 --> 00:06:51,560
  And again, that's a key value pair and a value.
 
-91
-00:06:51,520 --> 00:06:58,040
- Now, the submit is a little bit weird in that the value actually appears on the submit.
+161
+00:06:51,560 --> 00:06:53,600
+ Now, the submit is a little bit weird
 
-92
-00:06:58,040 --> 00:07:06,560
- But what we tend to do is this submit and if you were in a multi-language environment, you're going to want that to be whatever language of the user.
+162
+00:06:53,600 --> 00:06:57,680
+ in that the value actually appears on the submit.
 
-93
-00:07:06,560 --> 00:07:15,000
- So usually what we do is we I name, carefully name the variables or the name of the form.
+163
+00:06:57,680 --> 00:07:01,020
+ What we tend to do is the submit,
 
-94
-00:07:15,000 --> 00:07:17,040
- And then I check for this to exist.
+164
+00:07:01,020 --> 00:07:02,920
+ and if you were in a multi-language environment,
 
-95
-00:07:17,040 --> 00:07:27,040
- And if I have a bunch of buttons, I name them differently and don't really actually look at this text because that text might want to be translated at some point in time.
+165
+00:07:02,920 --> 00:07:06,440
+ you're gonna want that to be whatever language of the user.
 
-96
-00:07:27,040 --> 00:07:29,040
+166
+00:07:06,440 --> 00:07:08,960
+ So usually what we do is I name,
+
+167
+00:07:08,960 --> 00:07:13,960
+ carefully name the variables or the name of the form,
+
+168
+00:07:13,960 --> 00:07:16,920
+ and then I check for this to exist.
+
+169
+00:07:16,920 --> 00:07:20,640
+ And if I have a bunch of buttons, I name them differently
+
+170
+00:07:20,640 --> 00:07:22,860
+ and don't really actually look at this text
+
+171
+00:07:22,860 --> 00:07:25,520
+ because that text might wanna be translated
+
+172
+00:07:25,520 --> 00:07:26,920
+ at some point in time.
+
+173
+00:07:26,920 --> 00:07:28,920
  So that's an input type.
 
-97
-00:07:29,040 --> 00:07:30,840
+174
+00:07:28,920 --> 00:07:30,720
  Input type equals button.
 
-98
-00:07:30,840 --> 00:07:38,240
- This is a little pattern where I'm going to do like an escape or a back or something like that.
+175
+00:07:30,720 --> 00:07:34,280
+ This is a little pattern where I'm gonna do like an escape
 
-99
-00:07:38,240 --> 00:07:44,760
- And then sometimes it's easier just to do some little JavaScript and what this little JavaScript chunk is.
+176
+00:07:34,280 --> 00:07:38,120
+ or a back or something like that.
 
-100
-00:07:44,760 --> 00:07:51,600
- Location.href equals quote www.dj4e.com return false.
+177
+00:07:38,120 --> 00:07:41,080
+ And then sometimes it's easier just to do
 
-101
-00:07:51,600 --> 00:08:05,280
- What this says is it actually sort of when you press this escape button, it goes up in the browser and in effect pastes this little URL into the URL bar and then hits enter and return false keeps the form from being submitted.
+178
+00:07:41,080 --> 00:07:43,760
+ some little JavaScript and what this little JavaScript chunk
 
-102
-00:08:05,280 --> 00:08:12,320
- And so this is a way that I often will put a simple cancel or escape or something else in a form.
+179
+00:07:43,760 --> 00:07:48,760
+ is, location.hrf equals quote www.dj4e.com, return false.
 
-103
-00:08:12,320 --> 00:08:20,920
- Just if I know the URL I want to go back to or go to, then you can put it in here and on click location.href.
+180
+00:07:48,760 --> 00:07:53,700
+ What this says is it actually sort of when you press
 
-104
-00:08:20,920 --> 00:08:27,680
- So those are the input types that have been around for probably 20 years.
+181
+00:07:53,700 --> 00:07:55,720
+ this escape button, it goes up in the browser
 
-105
-00:08:27,680 --> 00:08:30,400
+182
+00:07:55,720 --> 00:08:00,640
+ and in effect pastes this little URL into the URL bar
+
+183
+00:08:00,640 --> 00:08:03,800
+ and then hits enter and return false keeps the form
+
+184
+00:08:03,800 --> 00:08:04,960
+ from being submitted.
+
+185
+00:08:04,960 --> 00:08:09,060
+ And so this is a way that I often will put a simple cancel
+
+186
+00:08:09,060 --> 00:08:12,120
+ or escape or something else in a form.
+
+187
+00:08:12,120 --> 00:08:15,720
+ Just if I know the URL I want to go back to or go to,
+
+188
+00:08:15,720 --> 00:08:19,480
+ then you can put it in here and unclick location.hrf.
+
+189
+00:08:19,480 --> 00:08:23,720
+ So those are the input types that have been around
+
+190
+00:08:23,720 --> 00:08:27,600
+ for probably 20 years.
+
+191
+00:08:27,600 --> 00:08:29,400
  Yeah, at least 20, 25 years.
 
-106
-00:08:30,400 --> 00:08:39,240
- HTML5 is a more recent phenomenon, although by now it's pretty well supported in most browsers, to find a whole new set of input types.
+192
+00:08:29,400 --> 00:08:32,520
+ HTML5 is a more recent phenomenon,
 
-107
-00:08:39,240 --> 00:08:49,040
- And what's nice about this is we were slowly but surely building complex libraries to solve all these problems, but now we can use these input types and now each browser can support them to their own way.
+193
+00:08:32,520 --> 00:08:35,080
+ although by now it's pretty well supported
 
-108
-00:08:49,040 --> 00:08:52,240
+194
+00:08:35,080 --> 00:08:39,160
+ in most browsers, defined a whole new set of input types.
+
+195
+00:08:39,160 --> 00:08:41,240
+ And what's nice about this is we were slowly
+
+196
+00:08:41,240 --> 00:08:43,040
+ but surely building complex libraries
+
+197
+00:08:43,040 --> 00:08:44,560
+ to solve all these problems.
+
+198
+00:08:44,560 --> 00:08:46,200
+ But now we can use these input types
+
+199
+00:08:46,200 --> 00:08:48,920
+ and now each browser can support them to their own way.
+
+200
+00:08:48,920 --> 00:08:52,020
  And they all fall back to type equals text.
 
-109
-00:08:52,240 --> 00:08:56,360
- And so if you have a really old browser, these don't cause trouble.
+201
+00:08:52,020 --> 00:08:54,320
+ And so if you have a really old browser,
 
-110
-00:08:56,360 --> 00:09:00,120
+202
+00:08:54,320 --> 00:08:56,160
+ these don't cause trouble.
+
+203
+00:08:56,160 --> 00:08:59,840
  So here's just some samples of some things.
 
-111
-00:09:00,120 --> 00:09:06,760
- So type equals color is a color picker and that's going to pop up a color picker, let you cruise around.
+204
+00:08:59,840 --> 00:09:03,760
+ So type equals color is a color picker,
 
-112
-00:09:06,760 --> 00:09:12,600
- That color picker is defined by the browser and usually the operating system and so you'll pick a color.
+205
+00:09:03,760 --> 00:09:05,240
+ and that's gonna pop up a color picker,
 
-113
-00:09:12,600 --> 00:09:23,920
- And that color is going to go in in hex format and that's the red, the green and the blue and so that's what colors look like.
+206
+00:09:05,240 --> 00:09:06,520
+ let you cruise around.
 
-114
-00:09:23,920 --> 00:09:36,760
- You can have type equals date and so here's a date and they pop in here, you're going to pop up a date picker for the birthday, you'll pop up a date picker and you'll be able to kind of move around and pick a date and then that'll put that date in as a string.
+207
+00:09:06,520 --> 00:09:09,280
+ That color picker is defined by the browser
 
-115
-00:09:36,760 --> 00:09:41,280
- They're all going to turn into strings when they're being sent in.
+208
+00:09:09,280 --> 00:09:10,880
+ and usually the operating system.
 
-116
-00:09:41,280 --> 00:09:51,040
- There's a couple of other ones like email, name equals email, that basically does validation that says it's got to have an @ sign, there's some rules about what is and isn't a valid email.
+209
+00:09:10,880 --> 00:09:12,360
+ And so you'll pick a color.
 
-117
-00:09:51,040 --> 00:09:57,120
- And so this will refuse to submit this form unless there's a valid email in there.
+210
+00:09:12,360 --> 00:09:16,680
+ And then that color is going to go in in hex format.
 
-118
-00:09:57,120 --> 00:10:10,720
- The same is true for number, if you put something that's like 25 and it's not between one and five with min and max here, if we're going to refuse to submit the form, the same is true for a type equals URL.
+211
+00:09:16,680 --> 00:09:19,880
+ And that's the red, the green, and the blue.
 
-119
-00:10:10,720 --> 00:10:30,240
- There's really a validation on the form to say, look, you can't put something in here that's not a valid URL and just to prove that it doesn't matter, if you make any type, which flying doesn't exist, you can type something in and it just functions as a text field and so in a way all these fall back to text fields.
+212
+00:09:19,880 --> 00:09:22,260
+ And so that's what colors look like.
 
-120
-00:10:30,240 --> 00:10:57,280
- The key thing is, is when you hit the submit button, normally that gathers up the form and sends it to the server, but when you use this HTML5 validation like date, number, email, URL, it actually will, before it, before it, you hit the submit button, before it actually sends it, it's going to do a quick validation on these things and it will actually stop and say, you know what, you didn't get that one right and it just refuses to submit.
+213
+00:09:22,260 --> 00:09:25,440
+ You can have type equals date.
 
-121
-00:10:57,280 --> 00:11:06,320
- You can't override that in your application. What happens is, is the data doesn't get submitted at all until, so the browser blocks the submission of the data.
+214
+00:09:25,440 --> 00:09:27,360
+ And so here's a date and they pop in here.
 
-122
-00:11:06,320 --> 00:11:27,200
- Now, if it's not an HTML5 browser, it's going to get submitted with no validation whatsoever, so we still have to kind of check this data for sanity, which we'll talk about soon about how to do that in the server, but this is quite nice because it gives your user some immediate feedback, kind of customized to the browser so the browser takes some responsibility for helping get the user to type the right stuff in.
+215
+00:09:27,360 --> 00:09:28,920
+ You're gonna pop up a date picker.
 
-123
-00:11:28,240 --> 00:11:38,240
- And so that is a romp through HTML forms. You will learn so much more. I just wanted to kind of cover some of them in case you hadn't seen it in a while.
+216
+00:09:28,920 --> 00:09:30,760
+ For the birthday, you'll pop up a date picker
+
+217
+00:09:30,760 --> 00:09:32,640
+ and you'll be able to kind of move around
+
+218
+00:09:32,640 --> 00:09:35,600
+ and pick a date and then that'll put that date in
+
+219
+00:09:35,600 --> 00:09:36,520
+ as a string.
+
+220
+00:09:36,520 --> 00:09:38,320
+ They're all gonna turn into strings
+
+221
+00:09:38,320 --> 00:09:39,680
+ when they're being sent in.
+
+222
+00:09:39,680 --> 00:09:44,600
+ A couple of the other ones like email, name equals email.
+
+223
+00:09:44,600 --> 00:09:46,520
+ That basically does validation that says
+
+224
+00:09:46,520 --> 00:09:47,960
+ it's gotta have an at sign.
+
+225
+00:09:47,960 --> 00:09:50,800
+ There's some rules about what is and isn't a valid email.
+
+226
+00:09:50,800 --> 00:09:53,820
+ And so this will refuse to submit this form
+
+227
+00:09:53,820 --> 00:09:56,920
+ unless there's a valid email in there.
+
+228
+00:09:56,920 --> 00:09:58,840
+ The same is true for number.
+
+229
+00:09:58,840 --> 00:10:02,240
+ You, if you put something that's like 25
+
+230
+00:10:02,240 --> 00:10:05,640
+ and it's not between one and five with min and max here,
+
+231
+00:10:05,640 --> 00:10:07,880
+ is we're gonna refuse to submit the form.
+
+232
+00:10:07,880 --> 00:10:10,440
+ The same is true for a type equals URL.
+
+233
+00:10:10,440 --> 00:10:13,000
+ It's really a validation on the form to say look,
+
+234
+00:10:13,000 --> 00:10:16,080
+ you can't put something in here that's not a valid URL.
+
+235
+00:10:16,080 --> 00:10:20,080
+ And just to prove that it doesn't matter,
+
+236
+00:10:20,080 --> 00:10:23,320
+ if you make any type, which flying doesn't exist,
+
+237
+00:10:23,320 --> 00:10:25,920
+ you can type something in and it just functions
+
+238
+00:10:25,920 --> 00:10:26,760
+ as a text field.
+
+239
+00:10:26,760 --> 00:10:29,960
+ And so in a way all these fall back to text fields.
+
+240
+00:10:29,960 --> 00:10:33,340
+ Now the key thing is is when you hit the submit button,
+
+241
+00:10:33,340 --> 00:10:35,880
+ normally that gathers up the form
+
+242
+00:10:35,880 --> 00:10:37,380
+ and sends it to the server.
+
+243
+00:10:37,380 --> 00:10:40,080
+ But when you use this HTML5 validation
+
+244
+00:10:40,080 --> 00:10:42,800
+ like date, number, email, URL,
+
+245
+00:10:42,800 --> 00:10:44,900
+ it actually will before it,
+
+246
+00:10:44,900 --> 00:10:47,560
+ before it you hit the submit button,
+
+247
+00:10:47,560 --> 00:10:48,920
+ before it actually sends it,
+
+248
+00:10:48,920 --> 00:10:52,120
+ it's gonna do a quick validation on these things.
+
+249
+00:10:52,120 --> 00:10:54,320
+ And it will actually stop and say you know what,
+
+250
+00:10:54,320 --> 00:10:55,640
+ you didn't get that one right.
+
+251
+00:10:55,640 --> 00:10:57,040
+ And it just refuses to submit.
+
+252
+00:10:57,040 --> 00:10:59,440
+ So you can't override that in your application.
+
+253
+00:10:59,440 --> 00:11:02,840
+ What happens is is the data doesn't get submitted at all
+
+254
+00:11:02,840 --> 00:11:06,200
+ until, so the browser blocks the submission of the data.
+
+255
+00:11:06,200 --> 00:11:08,580
+ Now if it's not an HTML5 browser,
+
+256
+00:11:08,580 --> 00:11:11,320
+ it's gonna get submitted with no validation whatsoever.
+
+257
+00:11:11,320 --> 00:11:14,160
+ So we still have to kind of check this data for sanity,
+
+258
+00:11:14,160 --> 00:11:16,760
+ which we'll talk about soon about how to do that.
+
+259
+00:11:16,760 --> 00:11:18,400
+ In the server, but this is quite nice
+
+260
+00:11:18,400 --> 00:11:21,120
+ because it gives your user some immediate feedback,
+
+261
+00:11:21,120 --> 00:11:22,560
+ kind of customized to the browser,
+
+262
+00:11:22,560 --> 00:11:24,880
+ so the browser takes some responsibility
+
+263
+00:11:24,880 --> 00:11:27,480
+ for helping get the user to type the right stuff in.
+
+264
+00:11:27,480 --> 00:11:32,920
+ And so that is a romp through HTML forms.
+
+265
+00:11:32,920 --> 00:11:34,480
+ You will learn so much more.
+
+266
+00:11:34,480 --> 00:11:36,440
+ I just wanted to kind of cover some of them
+
+267
+00:11:36,440 --> 00:11:38,640
+ in case you hadn't seen it in a while.
+
+268
+00:11:38,640 --> 00:11:41,220
+ (upbeat music)
 

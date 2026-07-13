@@ -13,6 +13,7 @@ entries:
     md5: 6e850e61ed50644b9e6f119ce350c542
     duration: 453
     duration_text: 07:33
+    tags: Django, Python, Object oriented programming, Web development, MOOC
     description: |
       This lecture introduces the "Django for Everybody" course, explaining Charles Severance's decision to use Django for students who already know Python. The choice was made after comparing Django and Flask, with Django providing a clear learning path for building functional web applications without excessive low-level complexity.
 
@@ -25,6 +26,7 @@ entries:
     md5: 266f968a0c66ee208a9204a94f4d071e
     duration: 976
     duration_text: 16:16
+    tags: programming education, ai in programming courses, zone of proximal development, cumulative exams, autograding, programming fundamentals, ai partnerships
     description: |
       Charles Severance, a professor at the University of Michigan, explains that the early part of programming courses is particularly perilous if students rely on AI without learning the fundamentals. This can result in wasted time and money, as students may not gain any knowledge from the course.
 
@@ -37,6 +39,7 @@ entries:
     md5: 8666d1ecc4b0d43586da418d03519fd9
     duration: 364
     duration_text: 06:04
+    tags: request-response cycle, http, browser, web server, network socket, html, css, javascript
     description: |
       This lecture details the request-response cycle as the fundamental mechanism for delivering dynamic web content. Understanding this cycle is essential for web developers to effectively build and debug applications, as it reveals the underlying protocol interactions that enable web functionality.
 
@@ -49,6 +52,7 @@ entries:
     md5: 3c2c565da7264b9f5c95e2f9844a4464
     duration: 394
     duration_text: 06:34
+    tags: network sockets, tcp, ip, ipv4, ipv6, tcp ports, http, https, telnet
     description: |
       Network sockets provide a communication mechanism for computer applications, modeled after phone calls. This design involves establishing a connection, exchanging data, and disconnecting, which was conceived in the 1960s to handle network communication without requiring permanent connections for scalability.
 
@@ -61,6 +65,7 @@ entries:
     md5: b1dfc3195151772bf59e708a0f7102c1
     duration: 988
     duration_text: 16:28
+    tags: HTTP, URL, RFC, IETF, HTTP request, HTTP response
     description: |
       The HTTP protocol was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN to retrieve documents and images. It introduced the URL structure, which combines a protocol (e.g., HTTP, FTP), a host (domain name resolvable to an IP address), and a document path. This design enabled multiple protocols within a single address and became the dominant web protocol after 1990.
 
@@ -73,6 +78,7 @@ entries:
     md5: 2c3957962f46ab94307b8b241da9bae8
     duration: 519
     duration_text: 08:39
+    tags: Python, Sockets, HTTP, Web Client, UTF-8, Encoding
     description: |
       This lecture demonstrates creating a minimal Python client that functions as a browser to send HTTP requests to a server. The client uses socket programming to connect to a specified domain (e.g., data.pr4e.org) on port 80, constructs an HTTP GET request, and receives the server's response.
 
@@ -85,6 +91,7 @@ entries:
     md5: 44bf6e8a5f66c61a3295c63a1f7e122f
     duration: 967
     duration_text: 16:07
+    tags: python, web server, socket programming, http, get request, http response, utf-8
     description: |
       The lecture demonstrates building a minimal HTTP web server and client in Python using socket programming. The server listens on port 9000 and returns a static HTML page containing "hello world" for any HTTP GET request. The client connects to the server via a socket and sends a GET request.
 
@@ -97,6 +104,7 @@ entries:
     md5: 0ff2868949406aa6aa75904e200326fa
     duration: 583
     duration_text: 09:43
+    tags: browser console, request response cycle, document object model, http status codes, network tab, chrome developer tools, firefox developer tools
     description: |
       This lecture demonstrates browser console functionality across Firefox and Chrome. It explains the request-response cycle in HTTP protocols, including status codes like 200 (success) and 404 (not found), request headers, and response headers. The console shows real-time interactions such as document object model parsing, network requests, and JavaScript debugging capabilities.
 
@@ -109,6 +117,7 @@ entries:
     md5: bc166ff05f80e2cb3d69d65e2aea05b2
     duration: 1035
     duration_text: 17:15
+    tags: Django, request-response cycle, project structure, URL routing, views, templates
     description: |
       This lecture describes Django's request-response cycle and the hierarchical project structure, including settings.py and applications.
 
@@ -121,6 +130,7 @@ entries:
     md5: def458f93c42ad8b395c4a76dd340948
     duration: 2219
     duration_text: 36:59
+    tags: mini django, http server, routing, views, python
     description: |
       Mini Django is a minimal implementation of the Django web framework, under 200 lines of Python code. It is designed to be readable and understandable for learners to grasp the core HTTP routing and view handling concepts.
 
@@ -133,6 +143,7 @@ entries:
     md5: 34db47320ed4fa0ab842b1e559ccccaf
     duration: 271
     duration_text: 04:31
+    tags: virtual hosting, HTTP request, domain routing, NGINX, configuration file, PythonAnywhere
     description: |
       Virtual hosting enables multiple domain names to operate on a single server instance by using the domain name specified in HTTP requests to route traffic to the correct application. This technique allows organizations like PythonAnywhere to manage numerous websites using minimal hardware resources while maintaining isolation between different domains.
 
@@ -145,6 +156,7 @@ entries:
     md5: c08f5987579475723ac5ef6461cf5997
     duration: 1918
     duration_text: 31:58
+    tags: Python Anywhere, Django 5.2, virtual environment, pip, requirements.txt, django project, django app, urls configuration, manage.py
     description: |
       The lecture provides a step-by-step guide for setting up Django 5.2 on Python Anywhere. It covers creating a virtual environment using Python 3.13, activating it, upgrading pip, and installing Django. The process includes verifying the installation with `python manage.py check` and initializing a sample project.
 
@@ -157,6 +169,7 @@ entries:
     md5: 81a287b0b4d4d371708e397f3a04d3cb
     duration: 642
     duration_text: 10:42
+    tags: Django, auto-grader, assignment testing, web crawler, LTI, HTTP, HTML, PHP
     description: |
       The Django auto-grader is a PHP-based tool that evaluates student assignments by sending HTTP requests to the deployed application and checking HTML responses for required strings.
 
@@ -169,6 +182,7 @@ entries:
     md5: a0238756779742226515fc3a8fa8a38e
     duration: 424
     duration_text: 07:04
+    tags: Django, project structure, applications, settings.py, urls.py, views.py, models.py, admin.py, forms.py, templates
     description: |
       This lecture covers the fundamental structure of a Django project, distinguishing between projects and applications. A project serves as a website and contains project-wide configuration files including settings.py, urls.py, and wsgi.py. Applications, which can be shared across projects, include files such as models.py, views.py, admin.py, forms.py, and templates.
 
@@ -181,6 +195,7 @@ entries:
     md5: af93e420b0815fdd9c7e1fafc71f5e64
     duration: 1178
     duration_text: 19:38
+    tags: Django, Python Anywhere, startup failure, traceback, debug, virtual environment, manage.py check, settings.py, urls.py, views.py
     description: |
       The lecture demonstrates debugging common errors in Django applications hosted on Python Anywhere. It specifically covers startup failures where the application won't start at all, and traceback errors that occur after the application loads but fails during a request. For startup failures, the solution involves checking the virtual environment and working directory using the `python manage.py check` command to identify configuration issues before they prevent application startup.
 
@@ -193,6 +208,7 @@ entries:
     md5: 4d190cfafdbb30c984ea109056a675ac
     duration: 1107
     duration_text: 18:27
+    tags: Bash, Command line, Django shell, Linux, SQLite, Python shell
     description: |
       This lecture introduces the Linux command line interface as the primary environment for server operations, focusing on Bash shell commands essential for Django development. It covers basic navigation with `ls`, `pwd`, and `cd`, file manipulation using `rm`, text search via `grep`, and documentation through `man`. The session also explains command line completion using the tab key and the history feature for re-executing previous commands.
 
@@ -205,6 +221,7 @@ entries:
     md5: 97a8a9ef2d2f53a1cd22e97f291c634c
     duration: 353
     duration_text: 05:53
+    tags: HTML, HTML history, World Wide Web Consortium, W3C, HTML syntax, browser quirks mode, document object model, request-response cycle, early web, HTML standards
     description: |
       This lecture examines HTML's historical development from its 1990s origins at CERN to modern web standards. It covers early browser implementations like NCSA Mosaic that enabled cross-platform web access, and the initial limitations of HTML such as the absence of inline images and basic link styling with gray backgrounds and blue text. The discussion highlights how early HTML prioritized basic functionality over visual presentation.
 
@@ -217,6 +234,7 @@ entries:
     md5: 0f08651f557381879c8dd52f02299dcd
     duration: 833
     duration_text: 13:53
+    tags: html, document structure, head, body, hyperlinks, relative links, absolute links, image tags, list tags
     description: |
       The lecture covers the foundational structure of an HTML document, including the doctype declaration, the <html> root element, the <head> section for metadata and non-printing content, and the <body> section for visible page content. It emphasizes that the <head> contains elements such as the page title, styling information, and scripts, while the <body> holds the actual content that users see.
 
@@ -229,6 +247,7 @@ entries:
     md5: b3b074ea3592fd41817dbcd0754005f4
     duration: 814
     duration_text: 13:34
+    tags: Document Object Model, HTML, Source Code, DOM, Relative Links, Target Attribute
     description: |
       This lecture demonstrates the difference between HTML source code and the Document Object Model (DOM) in web development. It shows how the browser parses HTML files to create a structured DOM representation that is distinct from the original source code.
 
@@ -241,6 +260,7 @@ entries:
     md5: 59a342b5694042c4f024fdd9549a5692
     duration: 767
     duration_text: 12:47
+    tags: CSS, HTML, Document Object Model, Request Response Cycle, Web Developer, Accessibility, Separation of Concerns
     description: |
       This lecture introduces CSS as the styling layer that modifies the Document Object Model (DOM) after HTML is parsed from a request-response cycle. It demonstrates how CSS files define visual presentation using examples from webapplicationsforeverybody.com.
 
@@ -253,6 +273,7 @@ entries:
     md5: 7a5838546d6d1d045a40f8a2dad6ae6b
     duration: 903
     duration_text: 15:03
+    tags: CSS, HTML, inline styles, internal stylesheet, external stylesheet, cascading, span, div
     description: |
       The lecture details three fundamental approaches for applying CSS styles to HTML elements: using the style attribute for inline styles, embedding CSS in a style tag within the head section, and linking to an external CSS stylesheet file. It explains that CSS rules cascade such that styles closer to the target element in the document hierarchy have higher priority.
 
@@ -265,6 +286,7 @@ entries:
     md5: 7adffde9563034f1472bc68c3c78db9a
     duration: 819
     duration_text: 13:39
+    tags: css, images, floating, clear, colors, rgb, hex, font-families, font-fallbacks, links, hover, visited, active
     description: |
       This lecture covers fundamental CSS techniques for styling web content, including floating images to the right, using margins for spacing, defining color schemes with named colors and RGB hex values, configuring font families with fallbacks, and styling hyperlinks with distinct states.
 
@@ -277,6 +299,7 @@ entries:
     md5: 6c71df887f6be733bef3e7094cef9432
     duration: 805
     duration_text: 13:25
+    tags: CSS, Cascading Style Sheets, CSS selectors, CSS cascading, HTML5, navigation bar, font families, borders, margins, padding, inline elements, block elements
     description: |
       This lecture demonstrates the fundamentals of Cascading Style Sheets (CSS) for web development. It explains how CSS styles are applied to HTML elements through selectors, showing examples of color properties, font families, and spacing controls like margins and padding. The instructor illustrates the cascading behavior where styles from multiple sources are resolved to determine the final appearance of elements.
 
@@ -289,6 +312,7 @@ entries:
     md5: bfb68803532a83af00787f3c8b0aa34f
     duration: 1549
     duration_text: 25:49
+    tags: css, fonts, colors, box-model, positioning, z-index, float, anchor-tags, web-safe-colors
     description: |
       The lecture covers core CSS concepts including font handling with default and custom fonts (using fallbacks), color specifications via HTML color names and hexadecimal codes, and anchor tag states (unvisited, visited, hover, active).
 
@@ -301,6 +325,7 @@ entries:
     md5: 57c079a6bd957d1d06b6ba79f65d001c
     duration: 1137
     duration_text: 18:57
+    tags: sql, database history, schema, crud, relational databases, nist
     description: |
       The lecture covers the historical context of database systems, starting with tape-based storage in the 1950s-1960s that required sequential access and hours of nightly processing for banks. This was followed by the introduction of disk drives in the 1970s, which improved access speed but necessitated research into storage optimization.
 
@@ -313,6 +338,7 @@ entries:
     md5: 2aa5930b957181089429369b080b37b6
     duration: 704
     duration_text: 11:44
+    tags: SQLite, SQL, Database, Table, Primary Key, Varchar, Integer, Not Null, Insert, Delete, Update, Select, Where Clause
     description: |
       This lecture covers the basics of SQLite, a single-file database system, and introduces fundamental SQL commands for creating tables with defined columns and constraints such as primary keys and not null fields.
 
@@ -325,6 +351,7 @@ entries:
     md5: 46e0cd86570e6a671b777eafbd48d0fd
     duration: 519
     duration_text: 08:39
+    tags: sqlite, command line, sqlite3, create table, insert, select, update, delete, where clause, order by, crud
     description: |
       This lecture demonstrates basic SQLite command line operations for file-based databases. It includes creating a table, inserting records, selecting data, updating rows, and deleting entries.
 
@@ -337,6 +364,7 @@ entries:
     md5: 5db52885718a7f74cf4907436dec2019
     duration: 1199
     duration_text: 19:59
+    tags: Django models, ORM, migrations, database schema
     description: |
       Django models are Python classes defined in an application's models.py file that map to database tables. These classes extend Django's Model class to define fields such as CharField with a maximum length, enabling the creation of database tables through migrations.
 
@@ -349,6 +377,7 @@ entries:
     md5: 1a5c66a44d35d200b73c62b52d7d7e52
     duration: 474
     duration_text: 07:54
+    tags: Django migrations, database evolution, models.py, migration files, database portability, SQLite
     description: |
       Django migrations are Python-based files generated by `make migrations` that describe incremental database schema changes. These files are portable across database types like SQLite and MySQL, and follow a versioned sequence starting from 001_initial.py. Each migration file represents the evolution from previous models.py definitions without wiping existing databases.
 
@@ -361,6 +390,7 @@ entries:
     md5: d17b2fa88202aca6b25fc6acc79b698e
     duration: 691
     duration_text: 11:31
+    tags: Django, Models, Migrations, ORM, SQLite, Git
     description: |
       The lecture demonstrates creating Django models for a local library application, including author, book, book instance, and genre models. It covers defining model fields, adding foreign keys, and generating model files within the project.
 
@@ -373,6 +403,7 @@ entries:
     md5: d70b3e2d65af95f8c4eb67afbfd0f739
     duration: 1760
     duration_text: 29:20
+    tags: Django, Python Anywhere, Django migrations, Django models, Django shell, Django admin, superuser, database migration, application reload
     description: |
       This lecture provides a step-by-step walkthrough of Django tutorial two, customized for the Python Anywhere hosting platform. It details the specific command-line operations and file paths required when using Python Anywhere, including navigating to the project directory and executing migration commands.
 
@@ -385,6 +416,7 @@ entries:
     md5: 1026f4f2dc9f35aff059934adeca0bd6
     duration: 347
     duration_text: 05:47
+    tags: django, migrations, database reset, models, manage.py, make migrations, migrate
     description: |
       This lecture details a reset procedure for Django's database and migrations when model operations encounter errors, serving as a supplement to tutorial two.
 
@@ -397,6 +429,7 @@ entries:
     md5: 634d7df2b7c8b8a8eebbc5868f0faab7
     duration: 427
     duration_text: 07:07
+    tags: model view controller, web server, request response cycle, controller, view, model, database, django, urls, views, models
     description: |
       The lecture explains that Model View Controller (MVC) is a universal architectural pattern for web development, independent of programming languages and operating systems. It divides web server functionality into three distinct components: the controller handles request routing and sequence of operations, the view produces output (typically HTML), and the model manages data storage and retrieval from databases.
 
@@ -409,6 +442,7 @@ entries:
     md5: 2b1fd4e24a27be6bffcc9d17c85cd08b
     duration: 419
     duration_text: 06:59
+    tags: Django, views.py, templates, URL dispatcher, URL routing, application views, database interaction
     description: |
       The lecture explains how Django views handle incoming HTTP requests and interact with models and templates to generate application output. Views serve as the central component where business logic executes, processing form data, database operations, and rendering HTML templates. This layer bridges user requests with database operations and frontend presentation.
 
@@ -421,6 +455,7 @@ entries:
     md5: abf0aabff173f44183e48a00aa8568b6
     duration: 379
     duration_text: 06:19
+    tags: django, template_view, request_object, response_object, query_parameters, get
     description: |
       The lecture demonstrates a Django template view that requires no Python code. This pre-defined view uses a static HTML file (views/main.html) and returns it directly to the browser without database interactions. The implementation leverages Django's built-in template view class.
 
@@ -433,6 +468,7 @@ entries:
     md5: 8f3c2418bb0a059dd1b98ab8bc2786fe
     duration: 936
     duration_text: 15:36
+    tags: cross-site scripting, html escaping, django, user input validation, http redirects, security vulnerabilities
     description: |
       The lecture explains how unescaped user input in web applications can lead to cross-site scripting (XSS) vulnerabilities. When developers concatenate user-provided data directly into HTML responses without proper sanitization, attackers can inject malicious JavaScript. For example, user input like "script alert owned" executes in the browser, potentially stealing session cookies or compromising user data. The solution involves escaping user input using HTML entities (e.g., converting `<` to `&lt;` and `>` to `&gt;`) to prevent code execution.
 
@@ -445,6 +481,7 @@ entries:
     md5: 615c03b6763272b3d6ff7a95f07ce67c
     duration: 605
     duration_text: 10:05
+    tags: Django, templates, context, variable insertion, double curly braces
     description: |
       Django templates dynamically generate HTML by merging data from a context dictionary with template files. The template engine uses double curly braces syntax (e.g., `{{ variable }}`) to insert context variables into the template structure.
 
@@ -457,6 +494,7 @@ entries:
     md5: 49b9e017a0b7a96190ffa9651abce141
     duration: 659
     duration_text: 10:59
+    tags: Django template language, context variables, HTML escaping, safe filter, substitution, for loops, if conditions
     description: |
       Django's template language uses double curly braces for variable substitution and automatically escapes HTML content to prevent cross-site scripting attacks. Context variables are passed from the application and rendered without requiring manual escaping.
 
@@ -469,6 +507,7 @@ entries:
     md5: 1932106873247ce98b686b95d7e34085
     duration: 365
     duration_text: 06:05
+    tags: Django, template inheritance, base template, block tags, template rendering, reusable templates
     description: |
       Django's template inheritance system allows reusing common HTML structures across multiple pages by defining a base template that contains shared elements. This technique prevents repetitive code, such as navigation menus, by centralizing consistent sections in the base template while enabling individual pages to extend it with specific content.
 
@@ -481,6 +520,7 @@ entries:
     md5: 648d7ec42f2a8087b2db7293a07af059
     duration: 772
     duration_text: 12:52
+    tags: Django, URL mapping, URL reversing, reverse lookup, reverse function, reverse_lazy, URL namespaces
     description: |
       Django's URL mapping and reversing features allow generating links between pages without hard-coding URL strings. This approach improves maintainability by enabling application reuse across projects and preventing breakage when application names or structures change. The system uses named patterns in `urls.py` to reference views, which are then resolved through reverse lookups.
 
@@ -493,6 +533,7 @@ entries:
     md5: de0da2c5e764ee989b07437597646d58
     duration: 640
     duration_text: 10:40
+    tags: python, object-oriented programming, objects, classes, methods, attributes, terminology
     description: |
       This lecture provides an introduction to the key terminology in Python object-oriented programming for beginners. It focuses on understanding foundational concepts without requiring immediate implementation of object-oriented code. The session explains why this terminology is essential for reading Python documentation and working with libraries that use objects.
 
@@ -505,6 +546,7 @@ entries:
     md5: 8f5a3e8979ade3a11dda37f289802370
     duration: 501
     duration_text: 08:21
+    tags: Python, class, object, instance, self, method, attribute, dir
     description: |
       The lecture explains the distinction between a class (a template) and an object (an instance) in Python. It demonstrates a `PartyAnimal` class with an attribute `x` (initial value 0) and a method `party` that increments `x`. The `self` keyword within class methods refers to the object instance.
 
@@ -517,6 +559,7 @@ entries:
     md5: ec05670c7a5a4cd8ea9a0665f88fc9fa
     duration: 369
     duration_text: 06:09
+    tags: python, object life cycle, constructor, destructor, instance variables
     description: |
       The lecture explains Python's object life cycle, detailing how objects are created and destroyed. Constructors, named `__init__`, automatically initialize object state when instantiated, while destructors, named `__del__`, handle cleanup when objects are no longer referenced. These special methods allow developers to intervene at critical moments without explicit calls.
 
@@ -529,6 +572,7 @@ entries:
     md5: bee7a351fa8b8998130a6267beda4eb2
     duration: 454
     duration_text: 07:34
+    tags: object-oriented programming, inheritance, parent class, child class, subclass, code reuse
     description: |
       Inheritance is a form of code reuse in object-oriented programming where a new class extends an existing class to inherit its attributes and methods. The lecture illustrates this with the FootballFan class extending the PartyAnimal class, which inherits attributes such as name and the party method while adding a points variable and a touchdown method.
 
@@ -541,6 +585,7 @@ entries:
     md5: ad4a450261797abb0848d5383d5aa0ef
     duration: 449
     duration_text: 07:29
+    tags: Python, variables, pointers, objects, CPython, ID function
     description: |
       This lecture corrects a common misconception about Python variables. While introductory materials often describe variables as named storage locations (drawers) that hold values, Python's CPython implementation treats variables as pointers to objects. This distinction is essential for understanding Python's memory model.
 
@@ -553,6 +598,7 @@ entries:
     md5: b9a91397b455a4b1d1869f8134744c0b
     duration: 988
     duration_text: 16:28
+    tags: Django, generic views, model-based views, DRY principle, ListView
     description: |
       This lecture explains how Django generic views enable the creation of reusable list and detail views through model-based configuration. By extending the `ListView` class and specifying a single model attribute, developers can generate consistent user interfaces for multiple data models without repeating code.
 
@@ -565,6 +611,7 @@ entries:
     md5: 0b46e67de14dbe07836dcd0f6d1a794a
     duration: 499
     duration_text: 08:19
+    tags: HTML forms, GET request, POST request, Django, form data
     description: |
       This lecture explains how HTML forms interact with HTTP methods in Django. Form data can be sent via GET requests (appending query parameters to the URL) or POST requests (transmitting form-encoded data in the request body). Django parses both into dictionaries: request.GET for GET data and request.POST for POST data.
 
@@ -577,6 +624,7 @@ entries:
     md5: 124e69b3685087ca18f7714650bf505f
     duration: 709
     duration_text: 11:49
+    tags: HTML forms, input types, text field, password field, radio button, checkbox, select, text area, submit button, HTML5 validation
     description: |
       This lecture covers fundamental HTML form elements including text fields, password fields, radio buttons, checkboxes, select dropdowns, text areas, and submit buttons. It explains how the 'name' attribute defines key-value pairs for form data submission and the role of the 'id' attribute in associating labels with form fields.
 
@@ -589,6 +637,7 @@ entries:
     md5: b301d9943268892ecd4fdfddf82c7644
     duration: 352
     duration_text: 05:52
+    tags: cross-site request forgery, csrf token, session cookies, form security, django
     description: |
       Cross-Site Request Forgery (CSRF) is a security vulnerability that allows attackers to execute unintended actions on a user's behalf by exploiting session cookies. The attack occurs when a user logged into a legitimate site is tricked into submitting a form on a malicious site that targets the same backend server.
 
@@ -601,6 +650,7 @@ entries:
     md5: 7946cbb007e684592df1645648f2f130
     duration: 556
     duration_text: 09:16
+    tags: Django, CSRF, Cross-Site Request Forgery, CSRF token, template tag, csrf_token, form security, POST request
     description: |
       The lecture covers Django's implementation of CSRF protection for form submissions. It explains how Django generates a unique CSRF token per user session and requires it to be included in POST requests to authenticate the request and prevent cross-site request forgery attacks.
 
@@ -613,6 +663,7 @@ entries:
     md5: 70debc98870c86f7b110c50448ed88a2
     duration: 206
     duration_text: 03:26
+    tags: CSRF, POST requests, form submission, browser refresh, Post-Redirect-Get, web security
     description: |
       This lecture explains a common web application issue where refreshing a page after submitting a form via POST causes the browser to resend the form data. The problem occurs because the browser treats POST requests as potentially dangerous actions that could be re-executed, triggering security warnings and unintended duplicate operations like re-transferring funds.
 
@@ -625,6 +676,7 @@ entries:
     md5: fdda1f5a02fa638c8dc7c323f9004d48
     duration: 484
     duration_text: 08:04
+    tags: post-redirect-get, redirect, flash messages, session, form submission
     description: |
       The lecture addresses the problem of duplicate form submissions caused by refreshing a page after a POST request. It demonstrates the post-redirect-get pattern where a 302 redirect is returned at the end of a POST request, triggering a new GET request to the same URL. This prevents the browser from re-executing the POST operation on refresh.
 
@@ -637,6 +689,7 @@ entries:
     md5: 17ec8a595445e5add1f4ee5584a3406a
     duration: 583
     duration_text: 09:43
+    tags: cookies, sessions, browser, server, session cookies, persistent cookies
     description: |
       Cookies are browser-based data segments stored by servers to track user sessions. They are set during initial requests and sent with subsequent requests to the server. Cookies can be session cookies (expiring when the browser closes) or persistent cookies (with defined expiration dates).
 
@@ -649,6 +702,7 @@ entries:
     md5: e347591b8cbcacf521e0023fff03c820
     duration: 753
     duration_text: 12:33
+    tags: Django, session middleware, session cookies, session identifier, database storage, session data
     description: |
       Django's session middleware uses a session cookie containing a unique session identifier (a large random number) to associate incoming HTTP requests with server-stored session data. This mechanism allows the server to maintain user-specific state across multiple requests without requiring the browser to send additional data for each request.
 
@@ -661,6 +715,7 @@ entries:
     md5: e73c1e6dc17ad84471f0422a6b8cf9e4
     duration: 352
     duration_text: 05:52
+    tags: Django, data modeling, one-to-many, database normalization, model.py, admin.py, integer keys
     description: |
       This lecture introduces foundational data modeling concepts in Django, specifically focusing on one-to-many relationships as the first topic. It emphasizes the critical importance of efficient data storage and retrieval, explaining that poor design choices could cause severe performance issues in large-scale applications.
 
@@ -673,6 +728,7 @@ entries:
     md5: b88eda3b177930896b411a4c31d916b8
     duration: 516
     duration_text: 08:36
+    tags: vertical replication, relational database, many-to-one relationships, data modeling, cardinality, database normalization
     description: |
       The lecture demonstrates how spreadsheet-based data modeling leads to vertical replication problems when representing library book instances. It identifies repeated strings like book titles, languages, and genres across multiple rows as inefficient and error-prone, especially when scaling to millions of records. This replication creates storage overhead and complicates updates, as changes require searching through duplicated data instead of modifying a single source.
 
@@ -685,6 +741,7 @@ entries:
     md5: b04fe0304ec00d45fdc57193bf9f9fd3
     duration: 166
     duration_text: 02:46
+    tags: primary key, foreign key, database links, table relationships, auto-increment, indexing
     description: |
       This lecture explains how to represent relationships between database tables using primary keys and foreign keys. Primary keys serve as unique identifiers for each row within a table, acting as the destination endpoint for connections. Foreign keys, named with conventions like "book_id", establish links from one table to another by referencing the primary key of another table.
 
@@ -697,6 +754,7 @@ entries:
     md5: 5cb21018f0db46c210bfa8e00d94b47f
     duration: 596
     duration_text: 09:56
+    tags: Django, foreign key, migrations, models, on delete, cascade, set null
     description: |
       This lecture explains how Django data models implement foreign key relationships for one-to-many table linking, including the automatic addition of an ID fields and the configuration of null and on delete parameters.
 
@@ -709,6 +767,7 @@ entries:
     md5: 0296bcedb356e69fa698d46c03cd74d0
     duration: 465
     duration_text: 07:45
+    tags: Django shell, Django models, object creation, save method, foreign keys, primary keys
     description: |
       The lecture demonstrates creating and saving model objects in the Django shell. The shell preloads Django settings and applications, enabling direct interaction with models. It shows constructing objects in memory (e.g., `lang = Language(name='en')`), saving them to the database via the `save()` method, and establishing relationships using primary keys and foreign keys.
 
@@ -721,6 +780,7 @@ entries:
     md5: f8ca22c3dd55d403ec994f914f8e9035
     duration: 225
     duration_text: 03:45
+    tags: Django, superuser, admin interface, login, logout, SQLite, migrations
     description: |
       Django includes a built-in authentication system that starts with creating a superuser. This process requires a username, email address, and password, with the email used for password recovery. The superuser has full permissions and is necessary for accessing the Django admin interface.
 
@@ -733,6 +793,7 @@ entries:
     md5: c907a7b8a9208e44a888bcdf39875d9e
     duration: 443
     duration_text: 07:23
+    tags: Django, sessions, login, logout, authentication, reverse lookup, next parameter
     description: |
       Django user authentication uses sessions to store user-specific data. Logging in updates the session with details like name and email, while logging out removes this information. The system requires adding django.contrib.auth to installed apps and configuring project-level URLs for login and logout views.
 
@@ -745,6 +806,7 @@ entries:
     md5: 16cdc0d21ba48a747fefb00d523d1354
     duration: 616
     duration_text: 10:16
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -757,6 +819,7 @@ entries:
     md5: a883650c250b1978249f50311f2a08e5
     duration: 806
     duration_text: 13:26
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -769,6 +832,7 @@ entries:
     md5: e73074325664b19d5f61564d7b007d8b
     duration: 553
     duration_text: 09:13
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -781,6 +845,7 @@ entries:
     md5: 120f91475882da421f71f3e2acc8c4d5
     duration: 2173
     duration_text: 36:13
+    tags: null
     description: |
       https://samples.dj4e.com/
 
@@ -793,6 +858,7 @@ entries:
     md5: a4167197da8e408b49f6fce716a4ad9a
     duration: 585
     duration_text: 09:45
+    tags: Django, Marketplace, Virtual Environment, Project Setup, Migrations, Superuser, WSGI
     description: |
       This lecture details the initial setup steps for a Django project dedicated to the Marketplace assignment. It creates a project named "market" with a separate configuration directory "config" to avoid the "market market" naming pattern. The process includes verifying the Python 3.13 virtual environment, installing Django 5.2, and executing initial migrations.
 
@@ -805,6 +871,7 @@ entries:
     md5: 109263db658a02a8e2a759cb951925eb
     duration: 362
     duration_text: 06:02
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -817,6 +884,7 @@ entries:
     md5: b5984b9df186ef5c203bf7b878749a0c
     duration: 617
     duration_text: 10:17
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -829,6 +897,7 @@ entries:
     md5: 69263bab9795ab53901eadef47d32c06
     duration: 783
     duration_text: 13:03
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -841,6 +910,7 @@ entries:
     md5: 1e0a1bc19832b05c2b78338635b891ec
     duration: 554
     duration_text: 09:14
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -854,6 +924,7 @@ entries:
     md5: 5ebb39ac0065ddd232afe7de67faf8af
     duration: 1813
     duration_text: 30:13
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -869,6 +940,7 @@ entries:
     md5: 8326f149b71bf50934e34e62587dbe42
     duration: 861
     duration_text: 14:21
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -884,6 +956,7 @@ entries:
     md5: 76985df5e533c7a6674e548028b1d473
     duration: 599
     duration_text: 09:59
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -898,6 +971,7 @@ entries:
     md5: be574fce2e50c4a8423960af4b679ac1
     duration: 842
     duration_text: 14:02
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -912,6 +986,7 @@ entries:
     md5: 97be087c576368a315726876964f9af9
     duration: 1017
     duration_text: 16:57
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -928,6 +1003,7 @@ entries:
     md5: c71fa8513c84a6bd715de1ee8d626005
     duration: 422
     duration_text: 07:02
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -942,6 +1018,7 @@ entries:
     md5: a10d87c295296dbc6e3268023b1c6b86
     duration: 397
     duration_text: 06:37
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -958,6 +1035,7 @@ entries:
     md5: 80f4477c3717bc3f3dc6b0215e08af92
     duration: 260
     duration_text: 04:20
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -972,6 +1050,7 @@ entries:
     md5: 784dea00372a30cfae900602a4848d69
     duration: 793
     duration_text: 13:13
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -988,6 +1067,7 @@ entries:
     md5: ea597d2a7dde53beb59f5191d11d4c70
     duration: 1986
     duration_text: 33:06
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1005,6 +1085,7 @@ entries:
     md5: f86acaffa8c1b6dee537a180469cc6d3
     duration: 334
     duration_text: 05:34
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -1017,6 +1098,7 @@ entries:
     md5: c2cfb78b5e165d2dc06f7f087e2f0bee
     duration: 755
     duration_text: 12:35
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -1029,6 +1111,7 @@ entries:
     md5: 7891d10d5ca6801a6733f33c1f06d93f
     duration: 518
     duration_text: 08:38
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -1041,6 +1124,7 @@ entries:
     md5: d62ffe15f846107fa5d49942fbf34970
     duration: 1528
     duration_text: 25:28
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1057,6 +1141,7 @@ entries:
     md5: aabf440bc42ab158818ee4f5454a079b
     duration: 504
     duration_text: 08:24
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -1069,6 +1154,7 @@ entries:
     md5: 1b8b30ac381829c2788231d5c3d834f4
     duration: 340
     duration_text: 05:40
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
       Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
@@ -1080,6 +1166,7 @@ entries:
     md5: 3cafca8dee0cec70a274eab4774fa4d8
     duration: 504
     duration_text: 08:24
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -1092,6 +1179,7 @@ entries:
     md5: be22cb3be0e3b17461561e8015c04750
     duration: 474
     duration_text: 07:54
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -1104,6 +1192,7 @@ entries:
     md5: 5396a3f71afeece6b601041990df6166
     duration: 386
     duration_text: 06:26
+    tags: javascript, fetch api, asynchronous programming, promises, network requests, web development
     description: |
       This lecture explains JavaScript network events, focusing on asynchronous request-response cycles. The fetch API initiates network operations by taking a URL and returning a promise that represents the pending response, ensuring code execution never blocks the browser.
 
@@ -1116,6 +1205,7 @@ entries:
     md5: 236f85c68284f53428b588273eee5236
     duration: 665
     duration_text: 11:05
+    tags: lit element, custom html tags, web components, browser templates, client-side rendering, javascript components
     description: |
       This lecture demonstrates creating reusable custom HTML tags using Lit Element to implement web components. The approach focuses on avoiding code repetition through the DRY principle, as seen in the implementation of a simple greeting component that dynamically updates its content based on user interaction. The example shows how to define a custom element with attributes, handle DOM events, and render templates within the browser environment.
 
@@ -1128,6 +1218,7 @@ entries:
     md5: baed3f5bbe5150ff33e9c850260f6025
     duration: 514
     duration_text: 08:34
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -1140,6 +1231,7 @@ entries:
     md5: 29c2b340b653a673ffb320cad21d027c
     duration: 1313
     duration_text: 21:53
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1153,6 +1245,7 @@ entries:
     md5: 15f6ab6f9fa87a38b3dde4d3b659e95e
     duration: 485
     duration_text: 08:05
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -1165,6 +1258,7 @@ entries:
     md5: 416a9c6503ea9f881930d1a73630491e
     duration: 963
     duration_text: 16:03
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1178,6 +1272,7 @@ entries:
     md5: 1368bed1d361ca78785f31e99f1617ad
     duration: 251
     duration_text: 04:11
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1195,6 +1290,7 @@ entries:
     md5: ba347407d7e60b5504eca97a85e33ca9
     duration: 527
     duration_text: 08:47
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1212,6 +1308,7 @@ entries:
     md5: 8c89cfebf0e128fe38a82ddce37ca294
     duration: 1820
     duration_text: 30:20
+    tags: null
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -1225,6 +1322,7 @@ entries:
     md5: d7195aad587d208c02c495d28f010dbf
     duration: 1290
     duration_text: 21:30
+    tags: Django, GET request, idempotent URLs, search implementation, queryset filtering, related names, url patterns
     description: |
       The lecture details the Django WELL sample application, a clone of MyArts with a search feature implemented via GET requests for idempotency. This allows search terms to be bookmarked without altering the application state. The application uses a `Post` model with a `post_owner` related name to prevent naming conflicts across Django applications.
 

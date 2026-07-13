@@ -3,11 +3,11 @@
  So welcome back.
 
 2
-00:00:00,780 --> 00:00:04,080
+00:00:00,780 --> 00:00:04,060
  Now we're gonna talk about some, making our stuff look a little prettier with
 
 3
-00:00:04,080 --> 00:00:06,920
+00:00:04,060 --> 00:00:06,920
  imagers and how we can play with images, colors, and fonts.
 
 4
@@ -15,20 +15,20 @@
  So CSS and images are a lot of fun.
 
 5
-00:00:11,240 --> 00:00:13,000
+00:00:11,240 --> 00:00:13,020
  We can fool around with them.
 
 6
-00:00:13,000 --> 00:00:14,200
+00:00:13,020 --> 00:00:14,200
  We can move them around.
 
 7
-00:00:14,200 --> 00:00:19,300
- Actually, this for me years ago was the thing that in 1994 that made me
+00:00:14,200 --> 00:00:17,720
+ Actually, this for me years ago was the thing that,
 
 8
-00:00:19,300 --> 00:00:22,360
- fall in love with the World Wide Web.
+00:00:17,720 --> 00:00:22,360
+ in 1994, that made me fall in love with the World Wide Web.
 
 9
 00:00:22,360 --> 00:00:25,280
@@ -36,7 +36,7 @@
 
 10
 00:00:25,280 --> 00:00:29,240
- picture of me, and I love pictures of me, and then I float it to the right, and
+ picture of me, and I love pictures of me, and then float it to the right, and
 
 11
 00:00:29,240 --> 00:00:30,760
@@ -47,16 +47,16 @@
  And so that's what I've done with CSS.
 
 13
-00:00:32,240 --> 00:00:35,340
+00:00:32,240 --> 00:00:35,320
  So let's take a look at how I've done that.
 
 14
-00:00:35,340 --> 00:00:41,280
- So if you look in line here, the navigation, which I'll show you when I go
+00:00:35,320 --> 00:00:41,120
+ So if you look in line here, the navigation, which I'll show you in when I
 
 15
-00:00:41,280 --> 00:00:43,800
- through the code walk through how the navigation works.
+00:00:41,120 --> 00:00:43,800
+ go through the code walk, through how the navigation works.
 
 16
 00:00:43,800 --> 00:00:47,120
@@ -72,7 +72,7 @@
 
 19
 00:00:51,080 --> 00:00:54,840
- But what I do is when I say float, that actually, and
+ But what I do is, when I say float, that actually, and
 
 20
 00:00:54,840 --> 00:00:57,760
@@ -95,144 +95,144 @@
  And it floats to the right, but then it's vertically aligned.
 
 25
-00:01:09,760 --> 00:01:12,640
- So the next thing you see is this header 1.
+00:01:09,760 --> 00:01:14,160
+ So the next thing you see is this header one, this header one CSS.
 
 26
-00:01:12,640 --> 00:01:16,840
- This header 1, I mean, there's a typo there, I gotta fix that.
+00:01:14,160 --> 00:01:16,840
+ I mean, there's a typo there, I gotta fix that.
 
 27
-00:01:16,840 --> 00:01:19,160
- So I'll pretend that that was an h1 there.
+00:01:16,840 --> 00:01:20,240
+ So I'll pretend that that was an h1 there, but that's okay.
 
 28
-00:01:19,160 --> 00:01:20,240
- But that's okay.
-
-29
 00:01:20,240 --> 00:01:24,560
  So this header, that quirks mode, I should have run this all through
 
-30
+29
 00:01:26,280 --> 00:01:28,440
  the validator to make sure I'm okay.
 
-31
+30
 00:01:28,440 --> 00:01:33,760
- But okay, so the top box of this CSS and image is h1 is right here.
+ But okay, so the top box of this CSS and images h1 is right here.
 
-32
+31
 00:01:33,760 --> 00:01:36,840
  And then this floats over, but then it top aligns.
 
-33
+32
 00:01:36,840 --> 00:01:40,320
  Now you can change this alignment if you like, but it top aligns here.
 
-34
+33
 00:01:40,320 --> 00:01:44,200
  And then it actually looks at the width, in this case, the width of the picture.
 
-35
+34
 00:01:44,200 --> 00:01:47,320
  But you can also control the width up here in the CSS.
 
-36
+35
 00:01:47,320 --> 00:01:49,800
  And then it carves out this space.
 
-37
+36
 00:01:49,800 --> 00:01:51,960
  And then I do a margin of 1m.
 
+37
+00:01:51,960 --> 00:02:01,440
+ And so on m, so you sort of sometimes wish they would put default formatting on.
+
 38
-00:01:51,960 --> 00:02:01,420
- And so on m, so you sort of sometimes wish they would put default formatting on,
+00:02:01,440 --> 00:02:04,960
+ But then they kind of tend not to put default formatting on.
 
 39
-00:02:01,420 --> 00:02:04,920
- but then they kind of tend not to put default formatting on.
-
-40
-00:02:04,920 --> 00:02:07,320
+00:02:04,960 --> 00:02:07,320
  Because if they did, then you have to turn that off.
 
-41
+40
 00:02:07,320 --> 00:02:11,200
  And so I wanted some white space, and so I had to put some white space around it.
 
-42
+41
 00:02:11,200 --> 00:02:13,280
  And so I said, I'd like a margin of 1m.
 
-43
-00:02:13,280 --> 00:02:18,480
+42
+00:02:13,280 --> 00:02:18,520
  And so that puts a little bit of space here, and here, and actually here as well.
 
-44
-00:02:18,480 --> 00:02:21,040
+43
+00:02:18,520 --> 00:02:21,060
  So you see that this lines up over there.
 
-45
-00:02:21,040 --> 00:02:23,960
+44
+00:02:21,060 --> 00:02:23,940
  And then that talks about what is a 1m.
 
-46
-00:02:23,960 --> 00:02:30,120
+45
+00:02:23,940 --> 00:02:30,120
  So 1m, I could have said 5 pixels, 5px, and that would have been fine.
 
-47
+46
 00:02:30,120 --> 00:02:34,520
- But 1m is basically the width of the letter m roughly.
+ But 1m is basically the width of the letter m, roughly.
+
+47
+00:02:34,520 --> 00:02:40,240
+ It's sort of, it is a width that changes with the size and nature of the font.
 
 48
-00:02:34,520 --> 00:02:40,240
- It is a width that changes with the size and nature of the font.
+00:02:40,240 --> 00:02:44,320
+ I think of it as the width of an m, and I think that might be a soft definition of
 
 49
-00:02:40,240 --> 00:02:44,400
- I think of it as the width of an m, and I think that might be a soft definition of it,
+00:02:44,320 --> 00:02:46,120
+ it, but I don't think it's a precise definition of it.
 
 50
-00:02:44,400 --> 00:02:46,120
- but I don't think it's a precise definition of it.
-
-51
 00:02:46,120 --> 00:02:48,360
  But that's what I did.
 
-52
+51
 00:02:48,360 --> 00:02:53,480
  So float right, hoist it, and sends it over here, and then shoves this over.
 
-53
+52
 00:02:53,480 --> 00:02:59,720
- So that this text is now, it reserves this space, the text is wrapped basically.
+ So that this text is now, it reserves this space, the text is wrapped, basically.
 
-54
+53
 00:02:59,720 --> 00:03:04,080
  And then I held out some space just for prettiness, right?
 
-55
+54
 00:03:04,080 --> 00:03:06,680
  And so that's like CSS is making it look pretty.
 
-56
+55
 00:03:06,680 --> 00:03:12,120
- Now what happens here is, sometimes you wanna basically force,
+ Now, what happens here is, sometimes you wanna basically force,
 
-57
+56
 00:03:12,120 --> 00:03:15,960
  after this float has happened, something back to the left margin.
 
+57
+00:03:15,960 --> 00:03:19,820
+ And there's this clear equals all that says clear any floats,
+
 58
-00:03:15,960 --> 00:03:21,400
- And there's this clear = all that says clear any floats is what it's really saying.
+00:03:19,820 --> 00:03:21,400
+ is what it's really saying.
 
 59
 00:03:21,400 --> 00:03:26,440
- And so it means that even though this, if it wasn't for clear = all,
+ And so it means that even though this, if it wasn't for clear equals all,
 
 60
 00:03:26,440 --> 00:03:29,400
@@ -248,7 +248,7 @@
 
 63
 00:03:35,560 --> 00:03:39,240
- But no matter what the size is, after the br clear = all,
+ But no matter what the size is, after the br clear equals all,
 
 64
 00:03:39,240 --> 00:03:43,880
@@ -264,11 +264,11 @@
 
 67
 00:03:50,800 --> 00:03:52,400
- then it would get longer and it would continue on.
+ then it would get longer, and it would continue on.
 
 68
 00:03:52,400 --> 00:03:56,560
- But if you want control over that, you can with a br clear = all.
+ But if you want control over that, you can with the br clear equals all.
 
 69
 00:03:56,560 --> 00:04:01,080
@@ -292,18 +292,18 @@
 
 74
 00:04:10,520 --> 00:04:12,360
- you could even make this a clickable link.
+ you can even make this a clickable link.
 
 75
-00:04:12,360 --> 00:04:16,640
- But that's really just, this part here is just HTML, not CSS.
+00:04:12,360 --> 00:04:16,600
+ But that's really just this part here is just HTML, not CSS.
 
 76
-00:04:16,640 --> 00:04:21,540
+00:04:16,600 --> 00:04:21,560
  But I could have if I wanted to change the width and the height of this.
 
 77
-00:04:21,540 --> 00:04:24,980
+00:04:21,560 --> 00:04:24,980
  That'd be kind of fun, make this guy be like the width of an M, and
 
 78
@@ -311,12 +311,12 @@
  then you'd see it more like a character.
 
 79
-00:04:26,760 --> 00:04:33,000
- So there's a bunch of colors, and the colors have to do with,
+00:04:26,760 --> 00:04:30,080
+ So there's a bunch of colors.
 
 80
-00:04:33,000 --> 00:04:37,240
- there's the simple thing for us simple folks.
+00:04:30,080 --> 00:04:37,240
+ And the colors have to do with the simple thing for us simple folks.
 
 81
 00:04:37,240 --> 00:04:40,400
@@ -327,19 +327,19 @@
  And especially if you're doing a developer and you're just trying to
 
 83
-00:04:43,520 --> 00:04:44,840
+00:04:43,520 --> 00:04:44,800
  get basic stuff working.
 
 84
-00:04:44,840 --> 00:04:48,720
- I often use colors in my testing, like put the border red.
+00:04:44,800 --> 00:04:48,720
+ I often use colors in my testing that like put the border red.
 
 85
-00:04:48,720 --> 00:04:51,880
+00:04:48,720 --> 00:04:51,840
  I do that all the time to say, where was that div at anyway?
 
 86
-00:04:51,880 --> 00:04:56,280
+00:04:51,840 --> 00:04:56,280
  So I'll throw a one pixel border around it, red border, like that's where it is.
 
 87
@@ -347,84 +347,84 @@
  Although the Chris Pedrick plugin has a thing where it puts one pixel borders
 
 88
-00:05:00,120 --> 00:05:01,920
- around everything for you automatically.
+00:05:00,120 --> 00:05:02,320
+ around everything for you automatically, but whatever.
 
 89
-00:05:01,920 --> 00:05:05,800
- But whatever, these are not necessarily most graphically beautiful colors,
+00:05:02,320 --> 00:05:05,800
+ These are not necessarily most graphically beautiful colors,
 
 90
-00:05:05,800 --> 00:05:09,120
+00:05:05,800 --> 00:05:09,080
  even though I like them cuz they're super primary in terms of primary colors and
 
 91
-00:05:09,120 --> 00:05:13,680
- strong, you'll see that I kind of use those colors in my slides a lot.
+00:05:09,080 --> 00:05:13,680
+ strong, and you'll see that I kinda use those colors in my slides a lot.
 
 92
 00:05:13,680 --> 00:05:15,840
  Because I'm not a graphic artist, of course.
 
 93
-00:05:15,840 --> 00:05:18,640
+00:05:15,840 --> 00:05:18,600
  I just like, the greenest I can be is good.
 
 94
-00:05:18,640 --> 00:05:22,280
+00:05:18,600 --> 00:05:22,260
  So there's 16 official colors, and they're here.
 
 95
-00:05:22,280 --> 00:05:29,960
+00:05:22,260 --> 00:05:30,200
  Once you get a little more sophisticated, you can use precise colors from,
 
 96
-00:05:29,960 --> 00:05:35,520
- like I think this is a 32 bit, yeah.
+00:05:30,200 --> 00:05:35,520
+ I think this is a 32 bit, yeah.
 
 97
-00:05:35,520 --> 00:05:40,040
- So these precise colors are the ones that start with pound sign.
+00:05:35,520 --> 00:05:40,340
+ So this precise colors are the ones that start with pound sign, and so
 
 98
-00:05:40,040 --> 00:05:43,280
- And so pound sign, and these are hexadecimal numbers.
+00:05:40,340 --> 00:05:43,280
+ pound sign, and these are hexadecimal numbers.
 
 99
-00:05:43,280 --> 00:05:47,240
- These two numbers are effectively 0 through 255.
+00:05:43,280 --> 00:05:48,080
+ These two numbers are effectively 0 through 255, but they're in hex.
 
 100
-00:05:47,240 --> 00:05:53,240
- But they're in hex, so hexes like A, B, C, D, E, F are actually numbers.
+00:05:48,080 --> 00:05:54,400
+ So hexes like A, B, C, D, E, F are actually numbers, 0 through 9.
 
 101
-00:05:53,240 --> 00:05:58,640
- 0 through 9, this is actually 10, 11, 12, 13, this is 15.
+00:05:54,400 --> 00:05:58,620
+ This is actually 10, 11, 12, 13, this is 15.
 
 102
-00:05:58,640 --> 00:06:03,440
+00:05:58,620 --> 00:06:03,440
  And so E is bigger than 9, and F is bigger than E.
 
 103
-00:06:03,440 --> 00:06:09,520
- But basically these are 0 through 256, that's a three top below 0 through 256 numbers.
+00:06:03,440 --> 00:06:08,560
+ But basically these are 0 through 256, that's a three top of those 0 through 256
 
 104
+00:06:08,560 --> 00:06:09,520
+ numbers.
+
+105
 00:06:09,520 --> 00:06:11,880
  And so the more red you put in, the higher this is.
 
-105
+106
 00:06:11,880 --> 00:06:14,040
  The more green you put in, the higher that is.
 
-106
-00:06:14,040 --> 00:06:16,400
- And the more blue you put in, the higher that is.
-
 107
-00:06:16,400 --> 00:06:18,720
- So RGB, red, green, blue.
+00:06:14,040 --> 00:06:18,720
+ And the more blue you put in, the higher that is, so RGB, red, green, blue.
 
 108
 00:06:18,720 --> 00:06:21,440
@@ -432,7 +432,7 @@
 
 109
 00:06:21,440 --> 00:06:25,480
- you might be changing this, but you're just changing these numbers, ultimately.
+ you might be changing this, but you're just changing these numbers ultimately.
 
 110
 00:06:25,480 --> 00:06:28,600
@@ -443,16 +443,16 @@
  So white is all Fs, and so if you turn it all on, it's white.
 
 112
-00:06:37,560 --> 00:06:41,720
- If you turn it all off, it's black, the absence color is black.
+00:06:37,560 --> 00:06:42,960
+ If you turn it all off, it's black, the absence color is black, red, green.
 
 113
-00:06:41,720 --> 00:06:45,920
- Red, green, so you turn, that's max, max, and max.
+00:06:42,960 --> 00:06:47,680
+ So that's max, max, and max, and so you can make sort of a pure red,
 
 114
-00:06:45,920 --> 00:06:48,880
- And so you can make sort of a pure red, pure green, and pure blue.
+00:06:47,680 --> 00:06:48,880
+ pure green, and pure blue.
 
 115
 00:06:48,880 --> 00:06:52,840
@@ -464,11 +464,11 @@
 
 117
 00:06:54,400 --> 00:06:59,720
- There are sites that help you pick palettes for your pages, etc., etc., etc.
+ There are sites that help you pick palettes for your pages, etc, etc, etc.
 
 118
 00:06:59,720 --> 00:07:05,240
- There is also a, sometimes these colors can have a transparency, and
+ There is also a, sometimes these colors can have a transparency and
 
 119
 00:07:05,240 --> 00:07:09,680
@@ -479,12 +479,12 @@
  might be.
 
 121
-00:07:10,200 --> 00:07:14,080
+00:07:10,200 --> 00:07:14,040
  So fonts are also important.
 
 122
-00:07:14,080 --> 00:07:20,080
- The default font is a Times Roman, because that's what computers had in 1994.
+00:07:14,040 --> 00:07:20,080
+ The default font is a Times Roman because that's what computers had in 1994.
 
 123
 00:07:20,080 --> 00:07:23,120
@@ -495,450 +495,446 @@
  They're not so bad on print, but they're ugly on screens.
 
 125
-00:07:26,480 --> 00:07:29,520
- And so I tend to want a Sans Serif font.
+00:07:26,480 --> 00:07:31,080
+ And so I tend to want a sans-serif font, it's too bad that they, and
 
 126
-00:07:29,520 --> 00:07:33,120
- It's too bad that they, and maybe they have changed in some browser default for
+00:07:31,080 --> 00:07:34,200
+ maybe they have changed in some browser default for sans-serif.
 
 127
-00:07:33,120 --> 00:07:34,200
- Sans Serif.
+00:07:34,200 --> 00:07:37,160
+ I just change it to sans-serif all the time I want.
 
 128
-00:07:34,200 --> 00:07:37,160
- I just change it to Sans Serif all the time I want.
+00:07:37,160 --> 00:07:42,720
+ Now if you look at fonts, the font family is kind of a special tag in that
 
 129
-00:07:37,160 --> 00:07:41,320
- Now, if you look at fonts, the font family is kind of a special tag,
+00:07:42,720 --> 00:07:45,520
+ you ask it a set of fonts.
 
 130
-00:07:41,320 --> 00:07:45,520
- in that you ask it a set of fonts.
-
-131
 00:07:45,520 --> 00:07:48,360
  And what you're really doing is you're setting a priority.
 
-132
+131
 00:07:48,360 --> 00:07:51,400
- And the problem is, is depending on whether you're on Windows, or Mac, or
+ And the problem is, is depending on whether you're on Windows or Mac, or
 
-133
+132
 00:07:51,400 --> 00:07:54,960
  which version of Windows, or which browser, or what fonts they've had installed,
 
-134
-00:07:54,960 --> 00:07:59,320
+133
+00:07:56,320 --> 00:07:59,320
  you can, fonts might not be there.
 
-135
+134
 00:07:59,320 --> 00:08:03,000
  And so what you basically do is you basically say, okay, I would like this.
 
-136
-00:08:03,000 --> 00:08:05,000
+135
+00:08:03,000 --> 00:08:04,960
  I think this is a Microsoft font.
 
-137
-00:08:05,000 --> 00:08:07,280
+136
+00:08:04,960 --> 00:08:07,300
  And if that font's not there, then I would like this font.
 
-138
-00:08:07,280 --> 00:08:10,240
+137
+00:08:07,300 --> 00:08:10,240
  And I think that might be also a Microsoft font.
 
-139
-00:08:10,240 --> 00:08:12,380
+138
+00:08:10,240 --> 00:08:12,400
  And if that font's not there, then there's Arial.
 
-140
-00:08:12,380 --> 00:08:13,880
+139
+00:08:12,400 --> 00:08:13,880
  See how much I know about graphic arts?
 
-141
+140
 00:08:13,880 --> 00:08:14,640
  I have no idea.
 
-142
+141
 00:08:14,640 --> 00:08:16,440
  I think this might be a Mac font.
 
-143
+142
 00:08:16,440 --> 00:08:21,240
- And if that font doesn't work, default into the fallback font Sans Serif.
+ And if that font doesn't work, default into the fallback font sans-serif.
+
+143
+00:08:21,240 --> 00:08:25,280
+ And there is always going to be a serif font, Times New Roman-like, sans-serif,
 
 144
-00:08:21,240 --> 00:08:25,280
- And there is always going to be a Serif font, Times New Roman-like, Sans Serif,
+00:08:25,280 --> 00:08:29,300
+ Arial-like, Monospace, which is Courier-like, Curse of Infantasy,
 
 145
-00:08:25,280 --> 00:08:29,320
- Arial-like, Mono Space, which is Courier-like, Cursive and Fantasy,
-
-146
-00:08:29,320 --> 00:08:30,680
+00:08:29,300 --> 00:08:31,080
  which are whatever.
 
-147
-00:08:30,680 --> 00:08:35,800
+146
+00:08:31,080 --> 00:08:35,780
  And so all browsers are supposed to have those fallback fonts.
 
-148
-00:08:35,800 --> 00:08:38,320
+147
+00:08:35,780 --> 00:08:38,280
  And so you tend to see them here at the very end.
 
+148
+00:08:38,280 --> 00:08:41,560
+ And so when you see me, I usually will say Arial sans-serif or
+
 149
-00:08:38,320 --> 00:08:41,600
- And so when you see me, I usually will say Arial Sans Serif or
+00:08:41,560 --> 00:08:43,720
+ something like that, just to get sans-serif.
 
 150
-00:08:41,600 --> 00:08:43,760
- something like that, just to get Sans Serif.
-
-151
-00:08:43,760 --> 00:08:48,000
+00:08:43,720 --> 00:08:47,960
  Although it's quite common, the more sophisticated a page is, the more likely.
 
-152
-00:08:48,000 --> 00:08:52,320
+151
+00:08:47,960 --> 00:08:52,320
  And the other thing that's increasingly the case is people are downloading fonts
 
-153
-00:08:52,320 --> 00:08:55,280
+152
+00:08:52,320 --> 00:08:55,240
  and having special, beautiful web fonts.
 
-154
-00:08:55,280 --> 00:08:58,040
- And then they download them, and then they put that font in here, but
+153
+00:08:55,240 --> 00:08:58,040
+ And then they download them and then they put that font in here, but
 
-155
+154
 00:08:58,040 --> 00:08:59,600
  then they probably still have fallback fonts.
 
-156
+155
 00:08:59,600 --> 00:09:04,280
  So font family is kind of a weird and unique and
 
-157
+156
 00:09:04,280 --> 00:09:07,480
  glorious thing that leads to some really gorgeous web pages.
 
-158
+157
 00:09:07,480 --> 00:09:12,240
  Cuz so much graphic arts work is going into making wedge pages beautiful.
 
-159
+158
 00:09:12,240 --> 00:09:15,520
  And we're going way beyond the operating system installed fonts and
 
-160
+159
 00:09:15,520 --> 00:09:17,480
  having pages that download their own fonts.
 
-161
+160
 00:09:18,720 --> 00:09:23,040
  Things that you can do is set the things to bold, italic, text decoration.
 
-162
+161
 00:09:23,040 --> 00:09:27,080
  Remember, links have underlines and we can turn them on or off.
 
-163
-00:09:27,080 --> 00:09:35,080
- Font sizes are kinda troublesome in that you can set them to pixels.
+162
+00:09:27,080 --> 00:09:35,040
+ Font sizes are kind of troublesome in that you can set them to pixels.
 
-164
-00:09:35,080 --> 00:09:38,800
+163
+00:09:35,040 --> 00:09:38,800
  But then you're in danger if you get to a certain kind of a screen size or
 
-165
+164
 00:09:38,800 --> 00:09:41,040
  people start zooming the screen and stuff.
 
-166
+165
 00:09:41,040 --> 00:09:44,040
  And so you can tend to use these relative ones, but
 
-167
+166
 00:09:44,040 --> 00:09:48,760
  they're not as guaranteed as you might like them to be.
 
-168
-00:09:48,760 --> 00:09:53,400
+167
+00:09:48,760 --> 00:09:53,360
  And so just these are a little bit tricky.
 
-169
-00:09:53,400 --> 00:09:57,280
+168
+00:09:53,360 --> 00:09:56,640
  Absolute font sizes are a little bit dangerous.
 
-170
-00:09:57,280 --> 00:10:01,480
+169
+00:09:56,640 --> 00:10:01,480
  I tend to just go like, here's my font, here's the one that's a little larger,
 
-171
+170
 00:10:01,480 --> 00:10:03,200
- here's a little smaller if I need that.
+ here's a little smaller, if I need that.
+
+171
+00:10:03,200 --> 00:10:08,200
+ So most of the time I'm tending to do things that are smaller.
 
 172
-00:10:03,200 --> 00:10:08,200
- So most of the time I'm tending to do things that are like smaller.
+00:10:08,200 --> 00:10:09,920
+ If I'm putting a copyright statement and
 
 173
-00:10:08,200 --> 00:10:09,920
- If I'm putting like a copyright statement and
+00:10:09,920 --> 00:10:13,960
+ I don't wanna distract from the main page, I'll just make it a little small.
 
 174
-00:10:09,920 --> 00:10:11,520
- I don't wanna distract from the main page.
+00:10:13,960 --> 00:10:17,960
+ I'll say, okay, make this small or extra small.
 
 175
-00:10:11,520 --> 00:10:18,000
- I'll just make it a little small, I'll say, okay, make this small or extra small.
-
-176
-00:10:18,000 --> 00:10:21,120
+00:10:17,960 --> 00:10:21,120
  And what if it doesn't turn out to be that much smaller?
 
-177
+176
 00:10:21,120 --> 00:10:22,040
  It doesn't matter.
 
-178
+177
 00:10:22,040 --> 00:10:27,000
  I'm just kinda trying to, so I'm not an expert in how to use those.
 
+178
+00:10:27,000 --> 00:10:29,200
+ I tend to use them as simply as I possibly can,
+
 179
-00:10:27,000 --> 00:10:29,840
- I tend to use them as simply as I possibly can cuz they're not as
+00:10:29,200 --> 00:10:31,560
+ cuz they're not as predictable as it would be nice if they were.
 
 180
-00:10:29,840 --> 00:10:31,600
- predictable as it would be nice if they were.
+00:10:31,560 --> 00:10:35,720
+ So links were in a big part of the early web.
 
 181
-00:10:31,600 --> 00:10:36,240
- So links were in a big part of the early web and
+00:10:35,720 --> 00:10:40,200
+ And it's called hypertext markup language, hypertext transport layer,
 
 182
-00:10:36,240 --> 00:10:40,240
- it's called hypertext markup language, hypertext transport layer,
-
-183
-00:10:40,240 --> 00:10:42,080
+00:10:40,200 --> 00:10:42,080
  hypertext, hypertext, hypertext.
 
-184
-00:10:42,080 --> 00:10:44,380
+183
+00:10:42,080 --> 00:10:44,400
  And so links got really special treatment.
 
-185
-00:10:44,380 --> 00:10:48,760
+184
+00:10:44,400 --> 00:10:48,760
  They used to be blue before you clicked on them and
 
-186
+185
 00:10:48,760 --> 00:10:50,680
  purple after you clicked on them.
 
-187
+186
 00:10:50,680 --> 00:10:53,200
  The blue was to jump out at you and say, please click me.
 
+187
+00:10:53,200 --> 00:10:57,600
+ And the purple was to say, I've been there, because a lot of what you did in
+
 188
-00:10:53,200 --> 00:10:57,640
- And the purple was to say, I've been there because a lot of what you did in
+00:10:57,600 --> 00:11:01,160
+ the early web is you wandered from place to place to place to place is like,
 
 189
-00:10:57,640 --> 00:11:00,680
- the early web is you wandered from place to place to place to place.
+00:11:01,160 --> 00:11:03,280
+ I found a new thing, let me explore this.
 
 190
-00:11:00,680 --> 00:11:03,280
- It's like, I found a new thing, let me explore this.
+00:11:03,280 --> 00:11:05,640
+ And so you're always exploring by clicking links.
 
 191
-00:11:03,280 --> 00:11:05,640
- And so you're always like exploring by clicking links.
-
-192
-00:11:05,640 --> 00:11:08,080
+00:11:05,640 --> 00:11:08,040
  Once we got to the point where people assumed the web,
 
-193
-00:11:08,080 --> 00:11:12,300
+192
+00:11:08,040 --> 00:11:12,260
  these links didn't need to be blue and garish colors to teach us these things,
 
-194
-00:11:12,300 --> 00:11:14,480
+193
+00:11:12,260 --> 00:11:14,440
  cuz people just clicked on everything.
 
-195
-00:11:14,480 --> 00:11:17,320
+194
+00:11:14,440 --> 00:11:17,280
  And so it became more important to make things pretty.
 
-196
-00:11:17,320 --> 00:11:21,080
+195
+00:11:17,280 --> 00:11:20,640
  So we have a lot of control as to how we style links.
 
-197
-00:11:21,080 --> 00:11:27,520
+196
+00:11:20,640 --> 00:11:27,500
  We can say the A tag, we've already colored an A tag with just the A at the top.
 
-198
-00:11:27,520 --> 00:11:31,640
+197
+00:11:27,500 --> 00:11:31,600
  You can basically say an unvisited link is supposed to have the color black.
 
-199
-00:11:31,640 --> 00:11:33,880
+198
+00:11:31,600 --> 00:11:33,840
  After the visit, it's supposed to be gray.
 
-200
-00:11:33,880 --> 00:11:37,200
+199
+00:11:33,840 --> 00:11:37,160
  While you're hovering over top of it, it's supposed to have text decoration and
 
-201
-00:11:37,200 --> 00:11:40,480
- none and be black, white with a background of navy.
+200
+00:11:37,160 --> 00:11:40,480
+ none of them being black, white with a background of navy.
 
-202
+201
 00:11:40,480 --> 00:11:42,600
  And then active is not so heavily used.
 
-203
+202
 00:11:42,600 --> 00:11:45,720
  It's once you've clicked on the link while the page is loaded.
 
-204
+203
 00:11:45,720 --> 00:11:49,720
  So it's a way to kinda maybe disable it or turn it to color so
 
-205
-00:11:49,720 --> 00:11:52,920
+204
+00:11:49,720 --> 00:11:52,880
  people think, I better wait until this next page loads.
 
-206
-00:11:52,920 --> 00:11:54,680
+205
+00:11:52,880 --> 00:11:54,680
  And so when I do the recording, you'll see this.
 
-207
+206
 00:11:54,680 --> 00:11:57,560
  It's a lot easier to see this dynamically.
 
-208
+207
 00:11:57,560 --> 00:12:00,320
  And so there's a whole bunch more samples that I have.
 
-209
+208
 00:12:00,320 --> 00:12:03,240
  And I'll record some walkthroughs of every single one of the samples.
 
-210
+209
 00:12:03,240 --> 00:12:06,240
  And so you can take a look at that at web applications for
 
-211
+210
 00:12:06,240 --> 00:12:07,920
  everybody or in the recordings.
 
-212
-00:12:07,920 --> 00:12:11,800
+211
+00:12:07,920 --> 00:12:13,080
  So this has been a zoom through CSS.
 
-213
-00:12:11,800 --> 00:12:16,160
+212
+00:12:13,080 --> 00:12:16,160
  CSS is quite the art and science and it's evolutionary.
 
-214
+213
 00:12:16,160 --> 00:12:17,800
  I mean, people specialize in this.
 
-215
+214
 00:12:17,800 --> 00:12:18,840
  They're very good at it.
 
-216
+215
 00:12:18,840 --> 00:12:21,120
  It's a modern form of graphic arts.
 
-217
+216
 00:12:21,120 --> 00:12:24,240
- The basics are there and I think every programmer who does anything on the web
+ The basics are there, and I think every programmer who does anything on the web
 
-218
+217
 00:12:24,240 --> 00:12:27,240
  should know the basics of HTML.
 
-219
-00:12:27,240 --> 00:12:32,440
+218
+00:12:27,240 --> 00:12:34,240
  They keep moving things better with things like nav tags and bootstrap, etc.
 
+219
+00:12:34,240 --> 00:12:39,100
+ And while there will always be edgy new things in CSS, and so
+
 220
-00:12:32,440 --> 00:12:38,800
- And while there will always be edgy new things in CSS.
+00:12:39,100 --> 00:12:43,840
+ sometimes you'll see CSS with these Moz fields, which are from Mozilla for
 
 221
-00:12:38,800 --> 00:12:43,880
- And so sometimes you'll see CSS with these Moz fields which are from Mozilla for
+00:12:43,840 --> 00:12:47,080
+ the Firefox, but people are always pushing that boundary.
 
 222
-00:12:43,880 --> 00:12:45,120
- the Firefox.
+00:12:47,080 --> 00:12:50,080
+ And before you couldn't put rounded corners on things, but
 
 223
-00:12:45,120 --> 00:12:47,120
- But people are always pushing that boundary.
+00:12:50,080 --> 00:12:53,720
+ then the browsers added extensions to put rounded corners on things.
 
 224
-00:12:47,120 --> 00:12:49,960
- And before you couldn't put rounded corners on things.
-
-225
-00:12:49,960 --> 00:12:53,760
- But then the browsers added extensions to put rounded corners on things.
-
-226
-00:12:53,760 --> 00:12:55,520
+00:12:53,720 --> 00:12:55,480
  And then everybody kind of agreed on that.
 
-227
-00:12:55,520 --> 00:12:59,380
+225
+00:12:55,480 --> 00:12:59,360
  So CSS is kind of always gonna get better and better and better because for
 
+226
+00:12:59,360 --> 00:13:03,880
+ the mobile and desktop, they really wanna create as beautiful experiences
+
+227
+00:13:03,880 --> 00:13:06,600
+ as possible and use standards wherever possible.
+
 228
-00:12:59,380 --> 00:13:04,480
- the mobile and desktop, they really want to create as beautiful experiences possible
-
-229
-00:13:04,480 --> 00:13:06,580
- and use standards wherever possible.
-
-230
-00:13:06,580 --> 00:13:09,400
+00:13:06,600 --> 00:13:09,400
  And so the basics are there.
 
-231
-00:13:09,400 --> 00:13:13,120
+229
+00:13:09,400 --> 00:13:13,160
  You can do so many wonderful things, especially if you pull in something like
 
-232
-00:13:13,120 --> 00:13:17,760
+230
+00:13:13,160 --> 00:13:17,760
  a bootstrap that just kind of cleans up the rough edges of HTML and
 
-233
+231
 00:13:17,760 --> 00:13:21,960
  makes it generally pretty and takes a lot of responsibility off of you.
 
-234
-00:13:21,960 --> 00:13:26,840
+232
+00:13:21,960 --> 00:13:26,880
  But you can certainly make a lifetime study of CSS if you like.
 
-235
-00:13:26,840 --> 00:13:29,440
- So I hope you found this useful, I will see you on the net.
+233
+00:13:26,880 --> 00:13:28,480
+ So I hope you found this useful.
 
-236
-00:13:29,440 --> 00:13:39,440
+234
+00:13:28,480 --> 00:13:29,600
+ I will see you on the net.
+
+235
+00:13:29,600 --> 00:13:39,600
  [MUSIC]
 

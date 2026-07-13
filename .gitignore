@@ -34,3 +34,6 @@ tsugi
 __pycache__
 cron.txt
 .whisper-tmp
+youtube/client_secret.json
+youtube/youtube-oauth-token.json
+**/client_secret*.json

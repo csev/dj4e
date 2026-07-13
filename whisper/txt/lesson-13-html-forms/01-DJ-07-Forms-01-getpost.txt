@@ -1,11 +1,10 @@
  - Hello, and welcome to our lecture on forms.
  There's actually quite a few lectures here,
- 'cause we're gonna talk about how forms work
- in HTML and HTTP, and then we're gonna talk about
- how they work in Django.
+ 'cause we're gonna talk about how forms work in HTML and HTTP,
+ and then we're gonna talk about how they work in django.
  So, forms are the way that we put HTML in browsers
  that have fill-in-the-blank areas.
- And so the idea is that you draw some fields
+ And so, the idea is that you draw some fields
  and some places for the user to type,
  and then you have some way of sending the data
  up to the server.
@@ -17,11 +16,11 @@
  when you do an anchor tag is a get request,
  which means you're gonna get a document and show it.
  And you can put parameters on the end of those,
- like the question mark, question mark guess equals 42,
- you can put that on the end of a URL.
+ like the question mark, question mark guess equals 42.
+ You can put that on the end of a URL.
  But then, what we're gonna really introduce
  and talk more about is the notion of posting data.
- So, in forms you can actually do getting or posting.
+ So, in forms, you can actually do getting or posting.
  And so, let's take a look at some code here.
  So, this is a little bit of utility code
  that I'm gonna use over and over and over again
@@ -29,7 +28,7 @@
  and even the cookie data and stuff come in as dictionaries.
  They look like dictionaries, key value pairs.
  And so, I just wanted a way to dump the data.
- So, I want a little label, pressure call that guy label,
+ I want a little label, probably should call that guy label,
  and then a dictionary.
  And so, I'm just gonna retrieve, go through all the items
  and call HTML escape so that we just don't end up
@@ -48,13 +47,12 @@
  But this ends up producing a form, right?
  And there's a form tag, there's an input tag.
  Input is the painting.
- You know, just put some text out
- and then this label, this box here
- is the input type equals text name equals guess,
- size equals 40, and then we put a submit button out.
- And we can type some stuff in
- and we can hit the submit button, type 42 in,
- and hit submit button.
+ Just put some text out and then this label,
+ this box here is the input type equals text name
+ equals guess, size equals 40,
+ and then we put a submit button out.
+ And we can type some stuff in and we can hit
+ the submit button, type 42 in, and hit submit button.
  And you will notice that once this submit button is hit,
  it adds automatically onto the end of the URL
  that it came from, question mark guess equals 42.
@@ -62,54 +60,53 @@
  but this time it does a get request
  with question mark equals 42.
  In comes this, this guess equals 42
- is put onto the request.get, and then we dump it out
+ is put onto the request.get and then we dump it out
  so we get to see the key value pair of guess equals 42.
  And again, Django's taking care of all that parsing
  and everything before we get to it.
  Now, this is pretty much the exact same thing.
  Later we're gonna talk about this CSRF exempt.
  This is to keep it as simple as possible for now.
- And all we have to do is tell that
- we would like to communicate this same form of data,
- one input field, and a submit button.
- We're gonna communicate this to the,
- from the browser to the server using the POST method.
+ And all we have to do is tell that we would like
+ to communicate this same form of data,
+ one input field and a submit button.
+ We're gonna communicate this from the browser
+ to the server using the POST method.
  So this is a communication to the browser
  when the server says, I would like to send this data
  using the technique of POST, not the technique of GET.
- And so, you know, it prints out,
- we put in the number, we submit it,
- and so the first thing that you'll notice
- is there's no key value pairs,
- and that's because the POST actually transports the data
- to the server in a different way.
+ And so, you know, it prints out, we put in the number,
+ we submit it, and so the first thing that you'll notice
+ is there's no key value pairs, and that's because the POST
+ actually transports the data to the server
+ in a different way.
  And it appears in a different key value pair.
  We can tell whether it's a POST or a GET,
  and if it's a GET, we get our GET parameters
- and request.GET, and if it's a POST,
- we get our POST parameters and request.POST.
- And so we still get the same guess keyword
+ in request.get, and if it's a POST,
+ we get our POST parameters in request.post.
+ And so we still get the same GUESS keyword
  equals the number 42, okay?
  And so that's simply the two ways of transporting it.
  And this is talking about those two ways, right?
  The browser has a form, you know, blah, blah, blah,
- input type equals guess, and the name field,
- name equals guess, is the field that is going to tell
+ input type equals GUESS, and the name field,
+ name equals GUESS, is the field that is going to tell
  what the key value pair is.
- So if you're going to put a POST,
- I mean, you're going to hit the submit button on a GET form,
- it does a GET to wherever it came from, right?
+ So if you're gonna put a POST, I mean, you're gonna hit
+ the submit button on a GET form, it does a GET
+ to wherever it came from, right?
  And then it pens the key value pair to the end.
  And again, that goes into Django, which parses it
- and puts it in request.GET, et cetera, et cetera, et cetera.
+ and puts it in request.get, et cetera, et cetera, et cetera.
  And if all you do is you tell it with a method equals POST,
  then it chooses a different way.
  So the POST is going to the same URL,
- but there are no parameters here.
- And so there's a series of headers, like, you know,
+ but there are no parameters here,
+ and so there's a series of headers, like, you know,
  what is my preferred language, et cetera, et cetera,
- what I'm using for my browser,
- the content type is this application URL form encoded,
+ what I'm using for my browser, the content type
+ is this application URL form encoded,
  and that's talking about this.
  Now remember, this is going into the server,
  so the content type coming out tells if it's an HTML page
@@ -133,15 +130,15 @@
  So you might say it doesn't matter.
  Well, it does matter.
  So there's a couple of simple rules.
- The POST needs to be used
- when data is going to be created or modified,
+ The POST needs to be used when data
+ is going to be created or modified,
  and we'll see situations where we force this,
  where you don't wanna delete something on a GET request.
  If you're reading or searching, GET is great.
  It should never be used to insert, modify, or delete data,
- anything that's gonna change the state of the system.
- And part of the problem is
- is that web spiders will find GET requests.
+ anything that's gonna change the state of the system,
+ and part of the problem is that
+ web spiders will find GET requests.
  So you might, if you build a bad application,
  like a catalog of bearings, for example,
  and you have a delete that happens to be a GET request,
@@ -156,15 +153,15 @@
  unless, of course, it's doing some kind of automation.
  So GET URLs are supposed to be idempotent.
  So the idea is if you say blah, blah, blah,
- guess equals 42,
- it's supposed to kind of give you back the same page.
- Now, that's like saying blah, blah, blah, current calendar.
- Well, what is the current calendar?
+ guess equals 42, it's supposed to kind of
+ give you back the same page.
+ Now, that's like saying blah, blah, blah, current calendar,
+ well, what is the current calendar?
  It might be, it's not identical,
  but it is sort of semantically the same thing.
  So you're supposed to be able to go bookmark a GET.
  You can bookmark a GET URL,
- but not, like you might say, where's my inbox?
+ but not like you might say, where's my inbox?
  Here's a URL to my inbox in some kind of a system
  to read my data.
  And so you can bookmark that and go back to your inbox.
@@ -180,9 +177,8 @@
  then all of a sudden the GET is impossible
  and you have to use POST.
  And it also has the advantage that POST
- doesn't mess up your,
- keeps your URLs looking prettier.
- So next, we're just gonna do a quick review
+ doesn't mess up your, it keeps your URLs looking prettier.
+ So next we're just gonna do a quick review
  of the kinds of things that you can do in forms and HTML
- on different kind of input tags we can show in our HTML.
+ and different kind of input tags we can show in our HTML.
  (upbeat music)

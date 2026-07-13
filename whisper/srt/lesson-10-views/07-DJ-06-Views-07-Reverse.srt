@@ -7,11 +7,11 @@
  and URL reversing.
 
 3
-00:00:04,200 --> 00:00:06,760
- This has to do with basically routing,
+00:00:04,200 --> 00:00:06,780
+ This has to do with basically routing
 
 4
-00:00:06,760 --> 00:00:10,080
+00:00:06,780 --> 00:00:10,080
  and it really allows us to generate links
 
 5
@@ -20,7 +20,7 @@
 
 6
 00:00:11,500 --> 00:00:12,800
- So we're in the middle of a page,
+ So we're in the middle of a page
 
 7
 00:00:12,800 --> 00:00:14,760
@@ -35,28 +35,28 @@
  So again, we're sitting here in the middle of our code,
 
 10
-00:00:21,100 --> 00:00:22,480
- we're in the views,
+00:00:21,100 --> 00:00:23,820
+ we're in the views, and this URL mapping
 
 11
-00:00:22,480 --> 00:00:26,640
- and this URL mapping is basically a set of functions
+00:00:23,820 --> 00:00:26,640
+ is basically a set of functions
 
 12
 00:00:26,640 --> 00:00:29,680
- that allow us to read the urls.py.
+ that allow us to read the URLs dot py.
 
 13
-00:00:29,680 --> 00:00:31,800
+00:00:29,680 --> 00:00:31,780
  In a way, if all these functions didn't exist
 
 14
-00:00:31,800 --> 00:00:34,040
- that allowed us to read urls.py,
+00:00:31,780 --> 00:00:34,020
+ that allowed us to read URLs dot py,
 
 15
-00:00:34,040 --> 00:00:35,800
- we would write a bunch of functions to do that,
+00:00:34,020 --> 00:00:35,800
+ we would write a bunch of functions to do that
 
 16
 00:00:35,800 --> 00:00:37,720
@@ -67,12 +67,12 @@
  And so often these are used in the view.
 
 18
-00:00:40,840 --> 00:00:41,900
+00:00:40,840 --> 00:00:41,880
  Sometimes they're actually used
 
 19
-00:00:41,900 --> 00:00:44,400
- right inside urls.py to come up.
+00:00:41,880 --> 00:00:44,400
+ right inside URLs dot py to come up.
 
 20
 00:00:44,400 --> 00:00:47,280
@@ -84,11 +84,11 @@
 
 22
 00:00:48,960 --> 00:00:51,080
- And sometimes views have just a URL,
+ And sometimes views have just a URL
 
 23
 00:00:51,080 --> 00:00:53,380
- and sometimes they're a URL plus a parameter,
+ and sometimes they're a URL plus a parameter
 
 24
 00:00:53,380 --> 00:00:55,160
@@ -99,647 +99,647 @@
  And so it's like, give me a link to a view, please.
 
 26
-00:00:59,160 --> 00:01:02,040
- And then Django looks in the urls.py,
+00:00:59,160 --> 00:01:02,020
+ And then Django looks in the URLs dot py,
 
 27
-00:01:02,040 --> 00:01:04,000
- potentially across the applications,
+00:01:02,020 --> 00:01:05,400
+ potentially across applications and gives you that string.
 
 28
-00:01:04,000 --> 00:01:05,400
- and gives you that string.
-
-29
-00:01:05,400 --> 00:01:07,920
+00:01:05,400 --> 00:01:07,880
  And it's just to avoid hard coding the strings.
 
-30
-00:01:07,920 --> 00:01:10,040
+29
+00:01:07,880 --> 00:01:10,000
  It's really the idea.
 
-31
-00:01:10,040 --> 00:01:11,540
+30
+00:01:10,000 --> 00:01:11,520
  And so this is just a common problem.
 
-32
-00:01:11,540 --> 00:01:14,480
+31
+00:01:11,520 --> 00:01:14,440
  This is the documentation right from the Django website.
 
-33
-00:01:14,480 --> 00:01:15,800
+32
+00:01:14,440 --> 00:01:15,780
  You don't wanna hard code these things.
 
-34
-00:01:15,800 --> 00:01:19,720
+33
+00:01:15,780 --> 00:01:19,680
  You actually can, but then if you rename an application,
 
-35
-00:01:19,720 --> 00:01:21,680
+34
+00:01:19,680 --> 00:01:21,640
  the whole idea is you could make a Django project
 
-36
-00:01:21,680 --> 00:01:24,160
- that had four or five applications,
+35
+00:01:21,640 --> 00:01:24,120
+ that had four or five applications
 
-37
-00:01:24,160 --> 00:01:25,320
+36
+00:01:24,120 --> 00:01:25,280
  and then you could reuse some of those
 
+37
+00:01:25,280 --> 00:01:27,520
+ in a different Django project and add some more applications
+
 38
-00:01:25,320 --> 00:01:26,400
- in a different Django project
+00:01:27,520 --> 00:01:30,120
+ so you don't want these applications
 
 39
-00:01:26,400 --> 00:01:27,560
- and add some more applications.
-
-40
-00:01:27,560 --> 00:01:30,160
- So you don't want these applications
-
-41
-00:01:30,160 --> 00:01:33,760
+00:01:30,120 --> 00:01:33,720
  to have too many hard coded decisions.
 
-42
-00:01:33,760 --> 00:01:36,720
+40
+00:01:33,720 --> 00:01:36,680
  And it might be easier to hard code some of these things,
 
-43
-00:01:36,720 --> 00:01:41,160
- but it is actually, in the long run,
+41
+00:01:36,680 --> 00:01:41,100
+ but it is actually in the long run,
 
-44
-00:01:41,160 --> 00:01:42,960
+42
+00:01:41,100 --> 00:01:42,920
  much easier from a maintenance perspective.
 
-45
-00:01:42,960 --> 00:01:45,320
+43
+00:01:42,920 --> 00:01:45,280
  And so it's just a, it's better maintenance.
 
-46
-00:01:45,320 --> 00:01:47,980
- It's another don't repeat yourself,
+44
+00:01:45,280 --> 00:01:47,940
+ It's another, don't repeat yourself
 
-47
-00:01:47,980 --> 00:01:50,760
+45
+00:01:47,940 --> 00:01:50,720
  or doing a table lookup rather than hard coding strings.
 
-48
-00:01:50,760 --> 00:01:53,680
+46
+00:01:50,720 --> 00:01:53,640
  It also lets you hunt around in your code
 
-49
-00:01:53,680 --> 00:01:55,280
+47
+00:01:53,640 --> 00:01:55,240
  to see where it is that you're talking
 
-50
-00:01:55,280 --> 00:01:56,640
+48
+00:01:55,240 --> 00:01:56,600
  to that other application.
 
+49
+00:01:56,600 --> 00:01:58,040
+ 'Cause we're gonna do login eventually.
+
+50
+00:01:58,040 --> 00:01:59,360
+ Login is another place.
+
 51
-00:01:56,640 --> 00:01:58,080
- 'Cause we're gonna do login eventually,
-
-52
-00:01:58,080 --> 00:01:59,400
- and login is another place.
-
-53
-00:01:59,400 --> 00:02:00,920
+00:01:59,360 --> 00:02:00,880
  It's not in our application,
 
-54
-00:02:00,920 --> 00:02:03,660
+52
+00:02:00,880 --> 00:02:03,620
  but our application is gonna have to generate login URLs
 
-55
-00:02:03,660 --> 00:02:05,200
+53
+00:02:03,620 --> 00:02:05,160
  by asking the login application,
 
-56
-00:02:05,200 --> 00:02:07,240
+54
+00:02:05,160 --> 00:02:07,200
  hey, what's the URL to log in?
 
-57
-00:02:07,240 --> 00:02:08,680
+55
+00:02:07,200 --> 00:02:08,640
  What's the URL to log out?
 
-58
-00:02:08,680 --> 00:02:11,400
+56
+00:02:08,640 --> 00:02:11,360
  And that's where we'll mostly start doing this.
 
-59
-00:02:11,400 --> 00:02:12,520
- So I wanna talk about it now,
+57
+00:02:11,360 --> 00:02:12,480
+ So I wanna talk about it now
 
-60
-00:02:12,520 --> 00:02:14,360
+58
+00:02:12,480 --> 00:02:14,320
  so when we get to log in and log out,
 
-61
-00:02:14,360 --> 00:02:16,320
+59
+00:02:14,320 --> 00:02:16,280
  you'll have that make more sense to you.
 
-62
-00:02:16,320 --> 00:02:19,060
+60
+00:02:16,280 --> 00:02:19,020
  And it also is some of the stuff that you're doing
 
-63
-00:02:19,060 --> 00:02:22,960
+61
+00:02:19,020 --> 00:02:22,920
  from the tutorials, you're putting these reverse
 
-64
-00:02:22,960 --> 00:02:25,320
- lookup things in, and you may or may not know what they are.
+62
+00:02:22,920 --> 00:02:25,280
+ lookup things in and you may or may not know what they are.
 
-65
-00:02:25,320 --> 00:02:27,400
+63
+00:02:25,280 --> 00:02:27,400
  And my goal here is to give you a little sense
 
-66
+64
 00:02:27,400 --> 00:02:29,640
  of what really they're there for.
 
-67
+65
 00:02:29,640 --> 00:02:31,600
  So let's take a look at an example.
 
+66
+00:02:31,600 --> 00:02:34,040
+ So here we have our urls.py.
+
+67
+00:02:34,040 --> 00:02:36,560
+ And most of it, I mean, this is the application route.
+
 68
-00:02:31,600 --> 00:02:35,160
- So here we have our urls.py, and most of it,
+00:02:36,560 --> 00:02:37,760
+ So if you're looking in the samples,
 
 69
-00:02:35,160 --> 00:02:36,560
- I mean, this is the application route,
-
-70
-00:02:36,560 --> 00:02:37,760
- so if you're looking in the samples,
-
-71
 00:02:37,760 --> 00:02:39,280
  it's in the route application.
 
-72
-00:02:39,280 --> 00:02:41,860
+70
+00:02:39,280 --> 00:02:41,880
  The main thing that we've added is some names.
 
-73
-00:02:41,860 --> 00:02:45,080
+71
+00:02:41,880 --> 00:02:45,080
  Names are here to look up these paths.
 
-74
+72
 00:02:45,080 --> 00:02:47,400
- We don't really wanna look it up by this path mapping,
+ We don't really wanna look it up by this path mapping
 
-75
+73
 00:02:47,400 --> 00:02:49,040
  'cause that could actually change.
 
-76
+74
 00:02:49,040 --> 00:02:53,400
- So we're basically saying this view in your views.py,
+ So we're basically saying this view in views.py,
 
-77
-00:02:53,400 --> 00:02:56,240
- second view, is gonna be referenceable
+75
+00:02:53,400 --> 00:02:56,200
+ second view is gonna be referenceable
 
-78
-00:02:56,240 --> 00:02:57,840
+76
+00:02:56,200 --> 00:02:57,800
  by this second dash view.
 
-79
-00:02:57,840 --> 00:03:00,600
+77
+00:02:57,800 --> 00:03:00,560
  I named them differently very much on purpose.
 
-80
-00:03:00,600 --> 00:03:04,800
+78
+00:03:00,560 --> 00:03:04,760
  So here's what happens if you just go to the route/route,
 
+79
+00:03:04,760 --> 00:03:09,760
+ the name of my application, it pulls up this main/html.
+
+80
+00:03:09,760 --> 00:03:11,340
+ And so the first thing I wanna show you
+
 81
-00:03:04,800 --> 00:03:07,320
- the name of my application.
+00:03:11,340 --> 00:03:14,000
+ is what a hard-coded URL looks like.
 
 82
-00:03:07,320 --> 00:03:10,400
- It pulls up this main/html, and so the first thing
-
-83
-00:03:10,400 --> 00:03:14,040
- I wanna show you is what a hard-coded URL looks like.
-
-84
-00:03:14,040 --> 00:03:16,640
+00:03:14,000 --> 00:03:16,640
  Now we know that, blah, blah, blah,
 
+83
+00:03:16,640 --> 00:03:20,640
+ samples/route/second is gonna go to that second view
+
+84
+00:03:20,640 --> 00:03:22,200
+ 'cause the application's name is route
+
 85
-00:03:16,640 --> 00:03:20,680
- samples/route/second is gonna go to that second view,
-
-86
-00:03:20,680 --> 00:03:22,240
- 'cause the application's name is route,
-
-87
-00:03:22,240 --> 00:03:25,640
+00:03:22,200 --> 00:03:25,640
  and the view name is second, and that's good.
 
-88
+86
 00:03:25,640 --> 00:03:27,600
  That will work, it's not gonna break,
 
-89
-00:03:27,600 --> 00:03:29,260
+87
+00:03:27,600 --> 00:03:29,240
  but this is where you lose flexibility
 
-90
-00:03:29,260 --> 00:03:31,240
- as you try to recombine the applications
+88
+00:03:29,240 --> 00:03:31,240
+ as you try to recombine applications
 
-91
+89
 00:03:31,240 --> 00:03:32,960
- from one end to the other.
+ from one into the other.
 
-92
-00:03:32,960 --> 00:03:37,100
+90
+00:03:32,960 --> 00:03:37,120
  And so in a sense, what we're asking to do here
 
-93
-00:03:37,100 --> 00:03:39,980
- is we're going to instead use this URL utility,
+91
+00:03:37,120 --> 00:03:39,980
+ is we're going to instead use this URL utility.
 
-94
+92
 00:03:39,980 --> 00:03:44,600
- and so in our template, we use curly brace percent,
+ And so in our template, we use curly brace percent,
 
-95
+93
 00:03:44,600 --> 00:03:46,720
  and then we're running a utility
 
-96
+94
 00:03:46,720 --> 00:03:49,840
  that's been plugged into the template system
 
-97
+95
 00:03:49,840 --> 00:03:53,040
- that is like, when we're running the URL function,
+ that is like when we're running the URL function,
 
-98
+96
 00:03:53,040 --> 00:03:55,440
  as it were, and we're gonna pass a string to it,
 
-99
+97
 00:03:55,440 --> 00:03:58,240
- and that is, within the route application,
+ and that is within the route application,
 
-100
+98
 00:03:58,240 --> 00:03:59,800
  the view that is named second view.
 
-101
+99
 00:03:59,800 --> 00:04:04,000
- So that goes into this file, routeurls.py,
+ So that goes into this file, the route/route/urls.py,
 
-102
+100
 00:04:04,000 --> 00:04:06,560
  read down the views until it finds second view,
 
-103
+101
 00:04:06,560 --> 00:04:11,560
  and then it reverse-generates the path that works for that.
 
-104
+102
 00:04:11,560 --> 00:04:14,560
- Now in this case, these two strings are gonna be the same,
+ Now in this case, these two strings are gonna be the same.
 
-105
+103
 00:04:14,560 --> 00:04:18,760
- and yes, that looks a little uglier,
+ And yes, that looks a little uglier,
 
-106
+104
 00:04:18,760 --> 00:04:21,240
  but the key is that we can make changes here,
 
-107
+105
 00:04:21,240 --> 00:04:24,680
  and this will not, the top one, route/second,
 
-108
-00:04:24,680 --> 00:04:26,180
+106
+00:04:24,680 --> 00:04:26,160
  will not reflect the changes,
 
-109
-00:04:26,180 --> 00:04:27,600
+107
+00:04:26,160 --> 00:04:27,600
  but if we're looking it up by name,
 
-110
+108
 00:04:27,600 --> 00:04:29,480
  we can do all kinds of crazy things
 
-111
+109
 00:04:29,480 --> 00:04:32,500
  and remap stuff quite naturally.
 
-112
+110
 00:04:32,500 --> 00:04:35,160
  And so again, it's just this URL command,
 
-113
+111
 00:04:35,160 --> 00:04:39,500
  the name of the view, the application, colon, the view.
 
-114
+112
 00:04:39,500 --> 00:04:42,400
  So this is what it looks like when it's all said and done.
 
-115
+113
 00:04:42,400 --> 00:04:44,040
- There's no parameters to this,
+ There's no parameters to this.
 
-116
+114
 00:04:44,040 --> 00:04:45,780
- so if you take a look at this,
+ So if you take a look at this,
 
-117
+115
 00:04:45,780 --> 00:04:49,440
  this route/second view ends up under this hard-coded,
 
-118
+116
 00:04:49,440 --> 00:04:51,800
  the route/second view, the hard-coded ones,
 
-119
+117
 00:04:51,800 --> 00:04:54,360
  ends up under the string in the URL output,
 
-120
+118
 00:04:54,360 --> 00:04:55,600
  I mean the page output.
 
-121
+119
 00:04:55,600 --> 00:05:00,740
  We just see the, it's /route/first is the thing
 
-122
+120
 00:05:00,740 --> 00:05:03,640
  that comes out from running the code URL
 
-123
+121
 00:05:03,640 --> 00:05:05,560
  and passing route colon first view in,
 
-124
-00:05:05,560 --> 00:05:07,040
+122
+00:05:05,560 --> 00:05:07,020
  so that's what it looks up.
 
-125
-00:05:07,040 --> 00:05:11,520
- And we can make a link, this is now in a href,
+123
+00:05:07,020 --> 00:05:10,200
+ And we can make a link.
 
-126
+124
+00:05:10,200 --> 00:05:11,520
+ This is now in a href,
+
+125
 00:05:11,520 --> 00:05:16,220
  and the actual path is sitting there in the href.
 
-127
+126
 00:05:16,220 --> 00:05:18,800
  So now we're going to see how we do this
 
-128
+127
 00:05:18,800 --> 00:05:20,920
  when we're going from one application to another.
 
-129
+128
 00:05:20,920 --> 00:05:24,200
  So an application we're gonna look at in just a bit
 
-130
+129
 00:05:24,200 --> 00:05:25,920
  is this thing called the generic views,
 
-131
+130
 00:05:25,920 --> 00:05:28,040
  it's application called gview.
 
-132
+131
 00:05:28,040 --> 00:05:30,120
  And we wanna make a link to that application,
 
-133
+132
 00:05:30,120 --> 00:05:31,900
- and we know that there are two views,
+ and we know that there are two views.
+
+133
+00:05:31,900 --> 00:05:34,120
+ There's a list view and a detail view.
 
 134
-00:05:31,900 --> 00:05:34,120
- there's a list view and a detail view,
+00:05:34,120 --> 00:05:38,880
+ And all we have to do is go take a look at the urls.py,
 
 135
-00:05:34,120 --> 00:05:38,880
- and all we have to do is go take a look at the urls.py,
-
-136
 00:05:38,880 --> 00:05:41,300
  and we know that it's an application,
 
+136
+00:05:41,300 --> 00:05:42,960
+ it's an application gview,
+
 137
-00:05:41,300 --> 00:05:43,760
- it's an application gview, and there's a,
+00:05:42,960 --> 00:05:46,040
+ and this view has a name and that view has a name.
 
 138
-00:05:43,760 --> 00:05:46,040
- this view has a name and that view has a name.
-
-139
-00:05:46,040 --> 00:05:49,760
+00:05:46,040 --> 00:05:49,780
  The view that is all the cats has got a name of cats,
 
-140
-00:05:49,760 --> 00:05:53,080
+139
+00:05:49,780 --> 00:05:53,080
  and the view for a single cat is cat.
 
+140
+00:05:53,080 --> 00:05:55,640
+ But the cat one takes a parameter.
+
 141
-00:05:53,080 --> 00:05:56,600
- But the cat one takes a parameter, it's an integer number,
+00:05:55,640 --> 00:05:59,800
+ It's an integer number, which is cat number 42 or whatever.
 
 142
-00:05:56,600 --> 00:05:59,800
- which is cat number 42 or whatever.
-
-143
 00:05:59,800 --> 00:06:02,840
  And so we're sitting here in the route application,
 
-144
+143
 00:06:02,840 --> 00:06:05,500
  route application, main.html,
 
-145
+144
 00:06:05,500 --> 00:06:08,240
  and we can now go create a URL
 
-146
+145
 00:06:08,240 --> 00:06:11,600
  that actually is pointing to another application
 
-147
+146
 00:06:11,600 --> 00:06:13,920
  and a view within that other application.
 
-148
+147
 00:06:13,920 --> 00:06:16,680
  So this is a URL for gview cats,
 
-149
+148
 00:06:16,680 --> 00:06:18,280
  and that'll just look it up.
 
-150
+149
 00:06:18,280 --> 00:06:21,400
  So now we don't even have to know what the URL patterns are
 
-151
+150
 00:06:21,400 --> 00:06:24,140
  inside of gview/cats.
 
-152
+151
 00:06:24,140 --> 00:06:28,320
  Now, we can look at gview cat, which is this URL,
 
-153
+152
 00:06:28,320 --> 00:06:30,120
  but you'll notice that this has a parameter,
 
-154
+153
 00:06:30,120 --> 00:06:32,280
  and so we actually have to add a second parameter,
 
-155
+154
 00:06:32,280 --> 00:06:33,960
  which is that 42 number.
 
+155
+00:06:33,960 --> 00:06:35,760
+ And so this will generate the URL
+
 156
-00:06:33,960 --> 00:06:36,160
- And so this will generate the URL straight
+00:06:35,760 --> 00:06:38,680
+ straight to the detail page for a single cat.
 
 157
-00:06:36,160 --> 00:06:39,520
- to the detail page for a single cat.
-
-158
-00:06:39,520 --> 00:06:41,960
+00:06:38,680 --> 00:06:42,000
  Now, there's a lot of nice stuff about this.
 
-159
-00:06:41,960 --> 00:06:44,200
+158
+00:06:42,000 --> 00:06:44,240
  So for example, if you omit this,
 
-160
-00:06:44,200 --> 00:06:47,160
+159
+00:06:44,240 --> 00:06:47,200
  it's going to look this gview cat up and find it
 
+160
+00:06:47,200 --> 00:06:49,200
+ and say, you know what, I'm supposed to have an integer,
+
 161
-00:06:47,160 --> 00:06:49,160
- and say, you know what, I'm supposed to have an integer.
+00:06:49,200 --> 00:06:52,360
+ and it'll blow up on you, right, if you get that wrong.
 
 162
-00:06:49,160 --> 00:06:52,320
- And it'll blow up on you, right, if you get that wrong.
-
-163
-00:06:52,320 --> 00:06:55,880
+00:06:52,360 --> 00:06:55,920
  Or if you put a 42 on this one, on the gview cats,
 
-164
-00:06:55,880 --> 00:06:57,760
+163
+00:06:55,920 --> 00:06:57,780
  you're not supposed to have a number on that.
 
-165
-00:06:57,760 --> 00:06:59,860
+164
+00:06:57,780 --> 00:06:59,900
  But gview cat, you are supposed to have a number.
 
+165
+00:06:59,900 --> 00:07:01,120
+ So this is one of the nice things
+
 166
-00:06:59,860 --> 00:07:03,360
- So this is one of the nice things about this reverse URL
+00:07:01,120 --> 00:07:04,200
+ about this reverse URL lookup
 
 167
-00:07:03,360 --> 00:07:07,080
- lookup, in that we can, there's some error checking
+00:07:04,200 --> 00:07:07,680
+ in that we can, there's some error checking that goes on,
 
 168
-00:07:07,080 --> 00:07:10,200
- that goes on, 'cause if it could just blow up silently,
+00:07:07,680 --> 00:07:10,240
+ 'cause if it could just blow up silently,
 
 169
-00:07:10,200 --> 00:07:12,340
+00:07:10,240 --> 00:07:12,360
  and in many ways, when the code blows up silently,
 
 170
-00:07:12,340 --> 00:07:15,480
- it's worse than blowing up in a spectacular fashion.
+00:07:12,360 --> 00:07:15,520
+ it's worse than blowing up in a spectacular fashion,
 
 171
-00:07:15,480 --> 00:07:17,940
- 'Cause if it blows up in a spectacular fashion,
+00:07:15,520 --> 00:07:17,980
+ 'cause if it blows up in a spectacular fashion,
 
 172
-00:07:17,940 --> 00:07:19,020
+00:07:17,980 --> 00:07:19,060
  you can fix it.
 
 173
-00:07:19,020 --> 00:07:22,720
+00:07:19,060 --> 00:07:22,740
  So this is what it looks like.
 
 174
-00:07:22,720 --> 00:07:26,880
+00:07:22,740 --> 00:07:26,920
  So this gview cats URL and gview cat 42,
 
 175
-00:07:26,880 --> 00:07:28,680
+00:07:26,920 --> 00:07:28,720
  this one that actually is the detail page
 
 176
-00:07:28,680 --> 00:07:33,120
- that demands a parameter, it constructs that just fine.
+00:07:28,720 --> 00:07:33,720
+ that demands a parameter, it constructs that just fine, okay?
 
 177
-00:07:33,120 --> 00:07:38,120
- Okay, so that's going from the route application
+00:07:34,960 --> 00:07:38,320
+ So that's going from the route application
 
 178
-00:07:38,120 --> 00:07:42,800
+00:07:38,320 --> 00:07:42,760
  to the gview application.
 
 179
-00:07:42,800 --> 00:07:46,600
+00:07:42,760 --> 00:07:46,560
  Now, you can also, this is kind of subtle,
 
 180
-00:07:46,600 --> 00:07:49,400
- and we will need it when we start doing social login
+00:07:46,560 --> 00:07:48,280
+ and we will need it when we start
 
 181
-00:07:49,400 --> 00:07:50,600
- using GitHub.
+00:07:48,280 --> 00:07:50,560
+ doing social login using GitHub.
 
 182
-00:07:50,600 --> 00:07:53,600
+00:07:50,560 --> 00:07:53,560
  So I'll just mention it, 'cause we're deep in it right now.
 
 183
-00:07:53,600 --> 00:07:58,360
- And so basically, this is actually the overall
+00:07:53,560 --> 00:07:57,320
+ And so basically, this is actually
 
 184
-00:07:58,360 --> 00:08:00,960
- dj4e-samples-urls.py, and that's the one
+00:07:57,320 --> 00:08:00,360
+ the overall dj4e-samples urls.py,
 
 185
-00:08:00,960 --> 00:08:02,480
- that's pulling all the URLs together,
+00:08:00,360 --> 00:08:02,460
+ and that's the one that's pulling all the URLs together,
 
 186
-00:08:02,480 --> 00:08:05,440
+00:08:02,460 --> 00:08:05,440
  kind of in the same folder as settings.py.
 
 187
@@ -759,402 +759,410 @@
  to reference them.
 
 191
-00:08:15,540 --> 00:08:18,200
- So you can actually name them, you can reference them
+00:08:15,540 --> 00:08:17,440
+ So you can actually name them,
 
 192
-00:08:18,200 --> 00:08:20,200
- with the name they were already given
+00:08:17,440 --> 00:08:20,200
+ you can reference them with the name they were already given
 
 193
 00:08:20,200 --> 00:08:22,320
  by the application that we're talking to,
 
 194
-00:08:22,320 --> 00:08:24,200
- or we can say, you know what, I'm gonna call these
+00:08:22,320 --> 00:08:23,480
+ or we can say, you know what,
 
 195
-00:08:24,200 --> 00:08:27,020
- social colon, or nsroute colon.
+00:08:23,480 --> 00:08:27,020
+ I'm gonna call these social colon, or nsroute colon.
 
 196
-00:08:27,020 --> 00:08:29,180
+00:08:27,020 --> 00:08:29,200
  So if we take this route application
 
 197
-00:08:29,180 --> 00:08:32,440
- and include all those URLs, and we're gonna
+00:08:29,200 --> 00:08:31,160
+ and include all those URLs,
 
 198
-00:08:32,440 --> 00:08:35,520
- use a namespace of nsroute, you still can say
+00:08:31,160 --> 00:08:34,760
+ and we're gonna use a namespace of nsroute,
 
 199
-00:08:35,520 --> 00:08:38,400
- route colon, or you can also say nsroute.
+00:08:34,760 --> 00:08:36,440
+ you still can say route colon,
 
 200
-00:08:38,400 --> 00:08:40,840
- And so you can see that in this example, right?
+00:08:36,440 --> 00:08:38,360
+ or you can also say nsroute.
 
 201
-00:08:40,840 --> 00:08:43,340
- We can go to the second view of route,
+00:08:38,360 --> 00:08:40,800
+ And so you can see that in this example, right?
 
 202
-00:08:43,340 --> 00:08:45,700
- or we can go to the second view of ns.
+00:08:40,800 --> 00:08:43,300
+ We can go to the second view of route,
 
 203
-00:08:45,700 --> 00:08:48,680
- And so there's route, route is the way, one way in,
+00:08:43,300 --> 00:08:45,680
+ or we can go to the second view of ns.
 
 204
-00:08:48,680 --> 00:08:51,840
- but nsroute is our own way in, in case we somewhere
+00:08:45,680 --> 00:08:48,640
+ And so there's route, route is one way in,
 
 205
-00:08:51,840 --> 00:08:54,040
- have an application named route or something like that.
+00:08:48,640 --> 00:08:50,800
+ but nsroute is our own way in,
 
 206
-00:08:54,040 --> 00:08:57,620
- And so this allows for a second way to access
+00:08:50,800 --> 00:08:53,180
+ in case we somewhere have an application named route
 
 207
-00:08:57,620 --> 00:09:00,720
- these URLs using a namespace.
+00:08:53,180 --> 00:08:54,020
+ or something like that.
 
 208
-00:09:00,720 --> 00:09:05,720
- And it's not in the urls.py in each application,
+00:08:54,020 --> 00:08:56,520
+ And so this allows for a second way
 
 209
-00:09:05,720 --> 00:09:09,400
- it is in the urls.py for the Django project.
+00:08:56,520 --> 00:09:00,680
+ to access these URLs using a namespace.
 
 210
+00:09:00,680 --> 00:09:05,680
+ And it's not in the urls.py in each application,
+
+211
+00:09:05,680 --> 00:09:09,400
+ it is in the urls.py for the Django project.
+
+212
 00:09:09,400 --> 00:09:12,520
  So I just finished showing you all that in the templates,
 
-211
+213
 00:09:12,520 --> 00:09:14,080
  but we can also do this in Python.
 
-212
+214
 00:09:14,080 --> 00:09:16,840
  And we'll find that sometimes in like models.py
 
-213
+215
 00:09:16,840 --> 00:09:20,200
  or views.py, or even sometimes in admin.py,
 
-214
+216
 00:09:20,200 --> 00:09:23,000
  we'll need to sort of be able to find a view
 
-215
+217
 00:09:23,000 --> 00:09:25,560
  in the same or another application
 
-216
+218
 00:09:25,560 --> 00:09:28,080
  and automatically construct it.
 
-217
+219
 00:09:28,080 --> 00:09:31,360
  Sometimes in forms.py, we're gonna do it as well.
 
-218
+220
 00:09:31,360 --> 00:09:35,600
  And so this, you tend to call this reverse or reverse lazy
 
-219
+221
 00:09:35,600 --> 00:09:36,600
  to look these things up.
 
-220
+222
 00:09:36,600 --> 00:09:39,920
  And the URL feature inside of the template
 
-221
+223
 00:09:39,920 --> 00:09:43,460
  is pretty much just calling this reverse lazy automatically
 
-222
+224
 00:09:43,460 --> 00:09:45,600
  'cause the parameters are kind of the same.
 
-223
+225
 00:09:45,600 --> 00:09:48,040
  So I just wanna show you how to do some of those things
 
-224
+226
 00:09:48,040 --> 00:09:50,440
  that I just showed you in templates,
 
-225
+227
 00:09:50,440 --> 00:09:54,880
  how you can do them in Python as well.
 
-226
+228
 00:09:54,880 --> 00:09:56,040
  So here's the one in templates,
 
-227
+229
 00:09:56,040 --> 00:09:58,460
  we just have this little plugin to a template
 
-228
+230
 00:09:58,460 --> 00:09:59,920
  called the URL plugin.
 
-229
+231
 00:09:59,920 --> 00:10:03,400
  It takes one parameter and looks up in the urls.py
 
-230
+232
 00:10:03,400 --> 00:10:06,480
  of the first application, the URL name, first view.
 
-231
+233
 00:10:06,480 --> 00:10:08,360
  Maybe there's parameters, in this case there's not,
 
-232
+234
 00:10:08,360 --> 00:10:13,360
  and then it generates a path to that /route/first, right?
 
-233
+235
 00:10:13,360 --> 00:10:16,180
  And so that's how you do it.
 
-234
+236
 00:10:16,180 --> 00:10:19,240
  It's really under the covers calling this reverse lazy.
 
-235
+237
 00:10:19,240 --> 00:10:21,480
  And so these reverse and reverse lazy
 
-236
+238
 00:10:21,480 --> 00:10:26,480
  are from the Django.urls library.
 
-237
+239
 00:10:26,480 --> 00:10:31,640
  And so in this view, there's nothing tricky about this view,
 
-238
+240
 00:10:31,640 --> 00:10:33,880
  it's just a class-based view, we have a get method,
 
-239
+241
 00:10:33,880 --> 00:10:35,900
  we pass in all the request stuff.
 
-240
+242
 00:10:35,900 --> 00:10:37,720
  But basically we can call reverse lazy
 
-241
+243
 00:10:37,720 --> 00:10:39,440
  and pass it the exact same string,
 
-242
+244
 00:10:39,440 --> 00:10:41,040
  this exact same string,
 
-243
+245
 00:10:41,040 --> 00:10:43,480
  which is go into the gview application,
 
-244
+246
 00:10:43,480 --> 00:10:45,880
  work your way down until you find the cats,
 
-245
+247
 00:10:45,880 --> 00:10:47,560
  or go into the gview application,
 
-246
+248
 00:10:47,560 --> 00:10:49,560
  go in and find the one for dogs,
 
-247
+249
 00:10:49,560 --> 00:10:52,680
- or in this case, this is the dog btail,
+ or in this case, this is the dog beattail,
 
-248
+250
 00:10:52,680 --> 00:10:55,300
  and it requires a number, and so this gview dog,
 
-249
-00:10:55,300 --> 00:10:59,120
+251
+00:10:55,300 --> 00:10:59,100
  go find that one, and then the second parameter is 42,
 
-250
-00:10:59,120 --> 00:11:00,860
+252
+00:10:59,100 --> 00:11:00,860
  so make me one for that.
 
-251
+253
 00:11:00,860 --> 00:11:05,420
  And in Python, u, u2, and u3 are all just strings,
 
-252
+254
 00:11:05,420 --> 00:11:08,100
  which I'm passing in through some context,
 
-253
+255
 00:11:08,100 --> 00:11:10,360
  under the variables x1, x2, and x3.
 
-254
+256
 00:11:10,360 --> 00:11:13,560
  They're really lousy choices of variable names,
 
-255
+257
 00:11:13,560 --> 00:11:15,020
  but I do that sometimes to point out
 
-256
+258
 00:11:15,020 --> 00:11:16,400
  that they're arbitrary and capricious,
 
-257
+259
 00:11:16,400 --> 00:11:18,120
  and all they have to do is match.
 
-258
+260
 00:11:18,120 --> 00:11:21,680
  And so then like the x1 matches in this substitution,
 
-259
-00:11:21,680 --> 00:11:23,440
+261
+00:11:21,680 --> 00:11:23,400
  now we're just doing string substitutions,
 
-260
-00:11:23,440 --> 00:11:26,000
+262
+00:11:23,400 --> 00:11:25,960
  which is different than calling the URL,
 
-261
-00:11:26,000 --> 00:11:27,920
+263
+00:11:25,960 --> 00:11:27,900
  but it's still just a bunch of strings.
 
-262
-00:11:27,920 --> 00:11:31,160
- You call reverse lazy in your Python code,
-
-263
-00:11:31,160 --> 00:11:33,560
- and now you're just pulling that string into
-
 264
-00:11:33,560 --> 00:11:35,020
- with double curly braces.
+00:11:27,900 --> 00:11:31,120
+ You called reverse lazy in your Python code,
 
 265
-00:11:35,020 --> 00:11:40,240
- And so this is how it ultimately works.
+00:11:31,120 --> 00:11:33,520
+ and now you're just pulling that string into,
 
 266
-00:11:40,240 --> 00:11:41,840
- We can, you know, we get these,
+00:11:33,520 --> 00:11:35,000
+ with double curly braces.
 
 267
-00:11:41,840 --> 00:11:43,920
- we're just showing how this output turns out,
+00:11:35,000 --> 00:11:40,200
+ And so this is how it ultimately works.
 
 268
-00:11:43,920 --> 00:11:47,440
- where we go reverse lazy for gview cats, gview dogs,
+00:11:40,200 --> 00:11:41,800
+ We can, you know, we get these,
 
 269
-00:11:47,440 --> 00:11:49,840
- or gview dog with an argument of 42.
+00:11:41,800 --> 00:11:43,880
+ we're just showing how this output turns out,
 
 270
-00:11:49,840 --> 00:11:52,120
- We pass it in, we replace it,
+00:11:43,880 --> 00:11:47,400
+ where we go reverse lazy for gview cats, gview dogs,
 
 271
+00:11:47,400 --> 00:11:49,840
+ or gview dog with an argument of 42,
+
+272
+00:11:49,840 --> 00:11:52,120
+ we pass it in, we replace it,
+
+273
 00:11:52,120 --> 00:11:54,400
  and so this is how it prints out gview cats,
 
-272
+274
 00:11:54,400 --> 00:11:58,360
- slash gview dogs, slash gview dog 42.
+ slash gview dog, slash gview dog 42.
 
-273
+275
 00:11:58,360 --> 00:12:02,320
  And so that's how that reversing works in Python.
 
-274
+276
 00:12:02,320 --> 00:12:04,480
  And you'll see that certain situations,
 
-275
+277
 00:12:04,480 --> 00:12:05,560
  whether you're like in a model,
 
-276
+278
 00:12:05,560 --> 00:12:06,520
  sometimes you're in a model,
 
-277
+279
 00:12:06,520 --> 00:12:08,920
  it's very common in a model to wanna put something
 
-278
+280
 00:12:08,920 --> 00:12:10,680
  about the reverse in it.
 
-279
+281
 00:12:10,680 --> 00:12:15,680
  And the reverse lazy says delay until later to look it up.
 
-280
-00:12:15,740 --> 00:12:20,240
- So up next, we're gonna put this all together
-
-281
-00:12:20,240 --> 00:12:23,480
- and ultimately start writing using the generic views
-
 282
-00:12:23,480 --> 00:12:25,960
- because we're gonna look at list pages and detail pages,
+00:12:15,740 --> 00:12:20,200
+ So up next, we're gonna put this all together,
 
 283
-00:12:25,960 --> 00:12:27,960
- and in time, we're gonna look about delete pages
+00:12:20,200 --> 00:12:23,440
+ and ultimately start writing using the generic views,
 
 284
-00:12:27,960 --> 00:12:29,160
- and update pages.
+00:12:23,440 --> 00:12:25,920
+ because we're gonna look at list pages and detail pages,
 
 285
-00:12:29,160 --> 00:12:31,360
- And Django has these wonderful features
+00:12:25,920 --> 00:12:27,920
+ and in time, we're gonna look about delete pages
 
 286
-00:12:31,360 --> 00:12:36,160
- that make it work really simply with very little code.
+00:12:27,920 --> 00:12:29,120
+ and update pages.
 
 287
-00:12:36,160 --> 00:12:37,320
- Well, we wanna talk about it
+00:12:29,120 --> 00:12:31,340
+ And Django has these wonderful features
 
 288
-00:12:37,320 --> 00:12:40,400
- because sometimes the less code you write,
+00:12:31,340 --> 00:12:36,140
+ that make it work really simply with very little code.
 
 289
-00:12:40,400 --> 00:12:41,860
- the harder it is to understand.
+00:12:36,140 --> 00:12:37,280
+ Well, we wanna talk about it,
 
 290
-00:12:45,880 --> 00:12:48,460
+00:12:37,280 --> 00:12:40,360
+ because sometimes the less code you write,
+
+291
+00:12:40,360 --> 00:12:41,860
+ the harder it is to understand.
+
+292
+00:12:45,840 --> 00:12:48,420
  (upbeat music)
 

@@ -7,6 +7,8 @@ live in [`media-util`](../../media-util/README.md)
 ## Files here
 
 - `youtube-playlist.jsonl` — playlist dump used when building `media.yaml`
+- `client_secret.json` — OAuth Desktop client (gitignored; for push updates)
+- `youtube-oauth-token.json` — cached OAuth token after first consent
 
 Course env (repo root): `../media.env`
 
@@ -34,6 +36,10 @@ whisper-desc
 
 # 6. Build media.yaml
 bootstrap-media-yaml.py
+
+# 7. Push titles/descriptions to YouTube (optional; OAuth required)
+update-youtube-from-media.py         # dry-run
+# update-youtube-from-media.py --apply
 ```
 
 See the media-util [INSTALL.md](../../media-util/INSTALL.md) and

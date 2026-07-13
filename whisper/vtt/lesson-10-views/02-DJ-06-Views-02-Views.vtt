@@ -1,110 +1,377 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:08.000
- So now we're going to take a look at the code that actually writes the views, the code effectively in VIEWS.py.
+00:00:00.000 --> 00:00:02.520
+ So now we're gonna take a look at the code
 
-00:00:08.000 --> 00:00:17.000
- Now the first view that we're going to take a look at is one where we're not even writing any code at all, and this is that pre-defined view, that template view.
+00:00:02.520 --> 00:00:04.640
+ that actually writes the views,
 
-00:00:17.000 --> 00:00:29.000
- And again, template view is a class that's given to us from Django, template view, and you pass it a parameter, so we're actually kind of calling a function here.
+00:00:04.640 --> 00:00:07.980
+ the code effectively in views dot py.
 
-00:00:29.000 --> 00:00:36.000
- And passing a template name to it, and that is a file, views main.html.
+00:00:07.980 --> 00:00:10.960
+ Now the first view that we're gonna take a look at
 
-00:00:36.000 --> 00:00:43.000
- So this is the application views, there's a subfolder called templates, and then I'll talk about this in a bit.
+00:00:10.960 --> 00:00:13.520
+ is one where we're not even writing any code at all,
 
-00:00:43.000 --> 00:00:53.000
- We repeat the application name twice, so that's a little bit weird, but it has to do with the fact that these names are global across all of the applications.
+00:00:13.520 --> 00:00:17.120
+ and this is that predefined view, that template view.
 
-00:00:53.000 --> 00:01:07.000
- And so you want there to be possibly more than one main.html, and so that's why you have this extra folder name, and you put this there even though that feels a little bit redundant, but it's okay.
+00:00:17.120 --> 00:00:20.400
+ And again, template view is code that a class
 
-00:01:07.000 --> 00:01:19.000
- And so this is just a static HTML file, I'm not going to read any data from a database, I'm not going to write any data to the database, I'm just going to read this file and send it back to the browser.
+00:00:20.400 --> 00:00:25.400
+ that's given to us from django, template view,
 
-00:01:19.000 --> 00:01:32.000
- And that's a common thing, where we just have a file that we want to send back to the browser, and so we just don't even have to write any Python code, other than add this entry into the URL patterns in urls.py.
+00:00:25.400 --> 00:00:27.600
+ and you pass it a parameter,
 
-00:01:32.000 --> 00:01:35.000
- So that's a view where you wrote no Python code.
+00:00:27.600 --> 00:00:29.920
+ so we're actually kind of calling a function here,
 
-00:01:35.000 --> 00:01:41.000
- Now, for the parts where you're going to write Python code for a view, you're going to be passed in variables.
+00:00:29.920 --> 00:00:32.800
+ and passing a template name to it,
 
-00:01:41.000 --> 00:01:52.000
- The variables are all about the request object, the request object is all the data coming in, and the response object is something you produce in the view, and you send it all back.
+00:00:32.800 --> 00:00:37.060
+ and that is a file, views, main.html.
 
-00:01:52.000 --> 00:02:02.000
- So, the request object is an object instance of class HTTP request, this is a predefined Django, and there's just a whole bunch of things.
+00:00:37.060 --> 00:00:39.760
+ So this is the application views,
 
-00:02:02.000 --> 00:02:18.000
- The scheme, now what is the scheme, whether or not it's secure or insecure HTTPS, the body, it's a string, so there's like about 20 or 30 attributes, we're going to use some of them, but you don't have to use all of them, but you can go look up the documentation,
+00:00:39.760 --> 00:00:41.840
+ there's a subfolder called templates,
 
-00:02:18.000 --> 00:02:25.000
- and the more sophisticated your application becomes, the more likely you're going to have to go digging in to find some little bit of the incoming request.
+00:00:41.840 --> 00:00:43.680
+ and then I'll talk about this in a bit,
 
-00:02:25.000 --> 00:02:37.000
- You could think of this request data as all that data you see in your browser debugger, about what data was sent to the server, that all ends up somewhere in this object.
+00:00:43.680 --> 00:00:45.840
+ we repeat the application name twice,
 
-00:02:37.000 --> 00:02:46.000
- Now, when we return from a view, we have to send a response back, and so the response is something that we create inside of our view.
+00:00:45.840 --> 00:00:47.520
+ so that's a little bit weird,
 
-00:02:46.000 --> 00:02:55.000
- It might be simply text that's HTML, or it might be a redirect object, redirect response that says, "Hey, go to a different page."
+00:00:47.520 --> 00:00:49.800
+ but it has to do with the fact that these names
 
-00:02:55.000 --> 00:03:03.000
- And so, we make that, the main job at the end of the view is to produce a response and then return it back to Django.
+00:00:49.800 --> 00:00:53.800
+ are global across all of the applications,
 
-00:03:03.000 --> 00:03:16.000
- And so, here is a very simple view. So, here we're saying, you know, we're in the views application, we're going to go to the view funky, right?
+00:00:53.800 --> 00:00:56.480
+ and so you want there to be possibly
 
-00:03:16.000 --> 00:03:30.000
- And so, in the urls.py, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
+00:00:56.480 --> 00:00:58.760
+ more than one main.html,
 
-00:03:30.000 --> 00:03:41.000
- And so, when it sees this, all the data coming into the request shows up in this variable that is the first parameter sent to that function.
+00:00:58.760 --> 00:01:01.760
+ and so that's why you have this extra folder name,
 
-00:03:41.000 --> 00:03:55.000
- So, that's what this is saying in urls.py. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
+00:01:01.760 --> 00:01:04.980
+ and you put this there, even though that feels
 
-00:03:55.000 --> 00:04:05.000
- Now, in this, I'm not really going to do anything with that request object because I'm always returning the exact same thing.
+00:01:04.980 --> 00:01:07.440
+ a little bit redundant, but it's okay.
 
-00:04:05.000 --> 00:04:16.000
- And so, I just have a nice triple quoted string and some HTML with less than's and greater than's, and I'm going to basically return, it is my job in the view to give back a response.
+00:01:07.440 --> 00:01:11.560
+ And so this is just a static HTML file,
 
-00:04:16.000 --> 00:04:25.000
- There's a couple, two main types of them, one is an HTTP response, which is just like a body of text, and that's what I'm sending here.
+00:01:11.560 --> 00:01:13.760
+ I'm not gonna read any data from a database,
 
-00:04:25.000 --> 00:04:35.000
- I'm sending an HTTP response, that's a constructor, we're constructing an HTTP response object, and taking that string that I put in there, and away we go.
+00:01:13.760 --> 00:01:16.160
+ I'm not gonna write any data to the database,
 
-00:04:35.000 --> 00:04:46.000
- Okay, and so that basically, if you hit this path, you're going to get this page back, and it sort of looks like that when it's all said and done.
+00:01:16.160 --> 00:01:17.620
+ I'm just gonna read this file
 
-00:04:46.000 --> 00:04:57.000
- Okay, so now we want to talk about how we can get at parameters. So, I mentioned that this request object that comes in to your view function has all the data from the request.
+00:01:17.620 --> 00:01:19.600
+ and send it back to the browser,
 
-00:04:57.000 --> 00:05:11.000
- Well, if we send to a view with this question mark, key value pairs, that's guess equals 42 on there, and we're going to route danger to views.danger and urls.py,
+00:01:19.600 --> 00:01:21.960
+ and that's a common thing, where we just have a file
 
-00:05:11.000 --> 00:05:19.000
- and so all this data is wrapped up in this variable called request, passed into the function name danger.
+00:01:21.960 --> 00:01:23.840
+ that we wanna send back to the browser,
 
-00:05:19.000 --> 00:05:32.000
- And so, inside of request is some data. Request.GET is a dictionary of the key value pairs that are on that URL.
+00:01:23.840 --> 00:01:27.000
+ and so we just don't even have to write any Python code
 
-00:05:32.000 --> 00:05:41.000
- So, to pull the 42 out, we can say request.get, bracket, quote, guess, quote, and that pulls that out.
+00:01:27.000 --> 00:01:30.800
+ other than add this entry into the URL patterns
 
-00:05:41.000 --> 00:05:52.000
- And so, that's all we've got here is a really simple HTML page, and we are replacing that little chunk with 42, and so whatever this number is comes back out in the output.
+00:01:30.800 --> 00:01:34.960
+ in urls.py, so that's a view where you wrote no Python code.
 
-00:05:52.000 --> 00:06:01.000
- So, your guess was 42. So, that's how we pass get data into a view.
+00:01:34.960 --> 00:01:38.160
+ Now, for the parts where you're gonna write Python code
 
-00:06:01.000 --> 00:06:19.000
- Now, up next, I'm going to explain to you exactly why it is I called that function danger.
+00:01:38.160 --> 00:01:42.000
+ for a view, you're gonna be passed in variables,
+
+00:01:42.000 --> 00:01:44.720
+ the variables are all about the request object,
+
+00:01:44.720 --> 00:01:47.440
+ the request object is all the data coming in,
+
+00:01:47.440 --> 00:01:51.000
+ and the response object is something you produce in the view,
+
+00:01:51.000 --> 00:01:52.800
+ and you send it all back.
+
+00:01:52.800 --> 00:01:57.000
+ So, the request object is an object instance
+
+00:01:57.000 --> 00:02:00.800
+ of class HTTP request, this is a predefined Django,
+
+00:02:00.800 --> 00:02:03.080
+ and there's just a whole bunch of things.
+
+00:02:03.080 --> 00:02:05.280
+ The scheme, now what is the scheme?
+
+00:02:05.280 --> 00:02:08.120
+ Whether or not it's secure or insecure HTTPS,
+
+00:02:08.120 --> 00:02:10.180
+ the body, it's a string.
+
+00:02:10.180 --> 00:02:13.920
+ So, there's like about 20 or 30 attributes,
+
+00:02:13.920 --> 00:02:15.420
+ we're gonna use some of them,
+
+00:02:15.420 --> 00:02:16.680
+ but you don't have to use all of them,
+
+00:02:16.680 --> 00:02:18.960
+ but you can go look up the documentation,
+
+00:02:18.960 --> 00:02:21.400
+ and the more sophisticated your application becomes,
+
+00:02:21.400 --> 00:02:23.240
+ the more likely you're gonna have to go digging in
+
+00:02:23.240 --> 00:02:26.040
+ to find some little bit of the incoming request.
+
+00:02:26.040 --> 00:02:28.560
+ You could think of this request data
+
+00:02:28.560 --> 00:02:32.720
+ as all that data you see in your browser debugger,
+
+00:02:32.720 --> 00:02:34.520
+ about what data was sent to the server,
+
+00:02:34.520 --> 00:02:37.520
+ that all ends up somewhere in this object.
+
+00:02:37.520 --> 00:02:40.600
+ Now, when we return from a view,
+
+00:02:40.600 --> 00:02:42.760
+ we have to send a response back,
+
+00:02:42.760 --> 00:02:44.680
+ and so the response is something
+
+00:02:44.680 --> 00:02:47.240
+ that we create inside of our view,
+
+00:02:47.240 --> 00:02:49.800
+ it might be simply text that's HTML,
+
+00:02:49.800 --> 00:02:52.400
+ or it might be a redirect object,
+
+00:02:52.400 --> 00:02:55.680
+ redirect response that says, hey, go to a different page.
+
+00:02:55.680 --> 00:03:00.120
+ And so, we make that, the main job at the end of the view
+
+00:03:00.120 --> 00:03:01.680
+ is to produce a response,
+
+00:03:01.680 --> 00:03:03.420
+ and then return it back to Django.
+
+00:03:03.420 --> 00:03:08.600
+ And so, here is a very simple view.
+
+00:03:08.600 --> 00:03:12.680
+ So, here we're saying, you know,
+
+00:03:12.680 --> 00:03:14.120
+ we're in the views application,
+
+00:03:14.120 --> 00:03:16.360
+ we're gonna go to the view funky, right?
+
+00:03:16.360 --> 00:03:21.360
+ And so, in the URLs PY, we say map/funky
+
+00:03:21.360 --> 00:03:26.400
+ to this function named funky.
+
+00:03:26.400 --> 00:03:31.040
+ It's a funky function, that's why I call it funky.
+
+00:03:31.040 --> 00:03:34.880
+ And so, when it sees this,
+
+00:03:34.880 --> 00:03:36.800
+ all the data coming into the request
+
+00:03:36.800 --> 00:03:38.720
+ shows up in this variable,
+
+00:03:38.720 --> 00:03:41.880
+ that is the first parameter sent to that function.
+
+00:03:41.880 --> 00:03:45.680
+ So, that's what this is saying in URLs.PY.
+
+00:03:45.680 --> 00:03:49.320
+ Take everything that goes to view/funky,
+
+00:03:49.320 --> 00:03:52.240
+ gather up all the request data from the browser,
+
+00:03:52.240 --> 00:03:56.020
+ put it in an object, and then pass that request object in.
+
+00:03:56.020 --> 00:04:00.280
+ Now, in this, I'm not really going to do anything
+
+00:04:00.280 --> 00:04:02.000
+ with that request object,
+
+00:04:02.000 --> 00:04:05.880
+ because I'm always returning the exact same thing.
+
+00:04:05.880 --> 00:04:07.760
+ And so, I just have a nice triple quoted string
+
+00:04:07.760 --> 00:04:10.580
+ and some HTML with less than's and greater than's,
+
+00:04:10.580 --> 00:04:13.480
+ and I'm going to basically return,
+
+00:04:13.480 --> 00:04:16.920
+ it is my job in the view to give back a response.
+
+00:04:16.920 --> 00:04:19.040
+ There's a couple, two main types of them,
+
+00:04:19.040 --> 00:04:20.640
+ one is an HTTP response,
+
+00:04:20.640 --> 00:04:23.480
+ which is just like a body of text,
+
+00:04:23.480 --> 00:04:24.640
+ and that's what I'm sending here.
+
+00:04:24.640 --> 00:04:28.040
+ I'm sending an HTTP response, that's a constructor,
+
+00:04:28.040 --> 00:04:30.680
+ we're constructing an HTTP response object,
+
+00:04:30.680 --> 00:04:33.760
+ and taking that string that I put in there,
+
+00:04:33.760 --> 00:04:35.560
+ and away we go, okay?
+
+00:04:35.560 --> 00:04:39.460
+ And so, that basically, if you hit this path,
+
+00:04:39.460 --> 00:04:41.760
+ you're gonna get this page back,
+
+00:04:41.760 --> 00:04:45.960
+ and it sort of looks like that when it's all said and done.
+
+00:04:45.960 --> 00:04:48.060
+ Okay, so now, we want to talk about
+
+00:04:48.060 --> 00:04:49.960
+ how we can get at parameters.
+
+00:04:49.960 --> 00:04:52.280
+ So, I mentioned that this request object
+
+00:04:52.280 --> 00:04:54.920
+ that comes in to your view function
+
+00:04:54.920 --> 00:04:57.100
+ has all the data from the request.
+
+00:04:57.100 --> 00:05:02.100
+ Well, if we send to a view with this question mark,
+
+00:05:02.100 --> 00:05:06.760
+ key value pairs, that's guess equals 42 on there,
+
+00:05:06.760 --> 00:05:09.320
+ and we're gonna route danger to views.danger
+
+00:05:09.320 --> 00:05:14.260
+ and urls.py, and so all this data is wrapped up
+
+00:05:14.260 --> 00:05:16.560
+ in this variable called request,
+
+00:05:16.560 --> 00:05:19.040
+ passed into the function named danger.
+
+00:05:19.040 --> 00:05:23.440
+ And so, inside of request is some data.
+
+00:05:23.440 --> 00:05:28.440
+ Request.GET is a dictionary of the key value pairs
+
+00:05:28.440 --> 00:05:32.360
+ that are on that URL.
+
+00:05:32.360 --> 00:05:37.360
+ So, to pull the 42 out, we can say request.get bracket,
+
+00:05:38.040 --> 00:05:41.240
+ quote, guess, quote, and that pulls that out.
+
+00:05:41.240 --> 00:05:42.680
+ And so, that's all we've got here
+
+00:05:42.680 --> 00:05:44.720
+ is a really simple HTML page,
+
+00:05:44.720 --> 00:05:48.520
+ and we are replacing that little chunk with 42.
+
+00:05:48.520 --> 00:05:51.720
+ And so, whatever this number is comes back out
+
+00:05:51.720 --> 00:05:55.460
+ in the output, so your guess was 42.
+
+00:05:55.460 --> 00:05:59.920
+ So, that's how we pass get data into a view.
+
+00:05:59.920 --> 00:06:04.240
+ Now, up next, I'm gonna explain to you
+
+00:06:04.240 --> 00:06:08.740
+ exactly why it is I called that function danger.
+
+00:06:08.740 --> 00:06:11.320
+ (upbeat music)
 

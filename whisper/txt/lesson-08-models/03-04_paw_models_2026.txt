@@ -1,4 +1,4 @@
- - Hello and welcome to another walkthrough for Django for everybody.
+ Hello and welcome to another walkthrough for Django for everybody.
  In this walkthrough, we're going to walk through
  Django project tutorial four,
  except we're doing it on Python anywhere
@@ -21,29 +21,30 @@
  So the tutorial will say something
  like open my site settings.py.
  Let's go find that, right?
- It says open up my site settings.py.
+ It says, open up my site settings.py.
  That's not exactly what it is what you do,
  but where that is on Python anywhere is important.
  It's in Django projects, my site, my site settings.py.
- When they tell you, if they tell you to go
- into Django tutorial, which is the folder they created,
+ When they tell you, if they tell you
+ to go into Django tutorial, which is the folder they created,
  we're not gonna do that.
  We're gonna cd tilde, tilde the squiggle
  is your home directory, django_projects/mysite, okay?
- And I'll go through these, but you can come back.
- And if you're typing a command and it doesn't seem to work,
+ And I'll go through these, but you can come back,
+ and if you're typing a command and it doesn't seem to work,
  you might be in the wrong folder,
  or if you type manage run server, it's gonna blow up, right?
- And so you wanna do the things.
- It tells you that you're supposed to say
- cd tilde django_projects/mysite python manage py check.
+ And so you wanna do the things,
+ it tells you that you're supposed to say,
+ cd tilde django projects, my site, Python manage py check.
  And then you reload the web application, the web tab.
- So I'm gonna do all these things and try to call out
- each of the times where we're doing
- what the tutorial is saying, we're just doing it
- the way it has to be done on Python anywhere.
+ So I'm gonna do all these things
+ and try to call out each of the times
+ where we're doing what the tutorial is saying,
+ we're just doing it the way it has to be done
+ on Python anywhere.
  So armed with the above mapping, let's go do the tutorial.
- Now when you're doing this work,
+ Now, when you're doing this work,
  it's important to kinda keep track.
  I like to use lots of tabs while I'm doing things.
  And so I know that this is where I'm at
@@ -55,24 +56,24 @@
  If you get stuck, remember, maybe even take a screenshot
  that says this is where I got stuck,
  or right here, or whatever.
- So know where you got stuck.
- Or if you're down on this tutorial
+ So know where you got stuck,
+ or if you're down on this tutorial
  and you're like working on this part right here
  and that's not working, take a screenshot
  so that you remember what's not working
  if you're gonna need some help.
  Okay, so let's go ahead and go through it.
- So the cheat sheet, you can always come back
- to the cheat sheet, but we're just going
- to start doing the instructions.
+ So the cheat sheet,
+ you can always come back to the cheat sheet,
+ but we're just going to start doing the instructions.
  So here we go, database setup.
  We're gonna set up a database.
  We're gonna open mysitesettings.py.
  Well, let's go find where that's at on,
  and this is there from our doing of tutorial one.
  So you'll see how I'm always opening things in new tabs.
- I'm gonna start editing files.
- And you're going to go into Django projects, mysite,
+ I'm gonna start editing files,
+ and you're going to go into Django projects, mysite,
  and then there's a folder called mysite
  within the mysite folder, mysite, mysite,
  and then polls is the thing that you did
@@ -172,7 +173,7 @@
  So it looked at the installed apps,
  and it said, let's do all the migrations
  for these applications that make up our Django project.
- I'm gonna build another one in a second.
+ We're gonna build another one in a second.
  Come back, Chuck, okay.
  So we're gonna create some models.
  We're gonna create our own models.
@@ -182,7 +183,8 @@
  So this is an empty thing that Django created
  when it made a stub application, but we're gonna put,
  oops, that copy did not work so well.
- I'm gonna copy this, copy, go to models.py and paste.
+ I'm gonna copy this.
+ Copy, go to models.py and paste.
  There we go.
  So this is some Python, and it's Python.
  You can make a mistake, right?
@@ -190,7 +192,7 @@
  And it'll blow up.
  So you gotta write good Python, but here it is.
  So then you're gonna have to say, save.
- Okay, and then it tells what it wants us to do here.
+ Okay, and then tell us what it wants us to do here.
  So these are, it's gonna be a table,
  a question table with two columns
  and a choice table with three columns,
@@ -198,25 +200,25 @@
  that points back to a row in the questions.
  And that's all in the SQL part.
  Okay, so we're going to activate this model.
- So we have to tell our Django that we have added a polls app
+ So we have to tell our Django that we have added a poles app,
  otherwise it will not go read models.py.
- So we're gonna take this polls apps, polls config,
+ So we're gonna take this poles apps, poles config,
  and go into my site, settings.py.
  We're done here, my site, my site, settings.py.
  Go in and add one line to installed apps.
- Polls, apps, polls config.
+ Poles, apps, poles config.
  Then we're gonna save it.
- Now Django knows how to include the polls app.
+ Now Django knows how to include the poles app.
  Let's run another command.
- Now, python manage.py make migrations polls.
+ Now, python manage.py make migrations poles.
  It is important that this runs in the folder
  that has the manage.py in it.
- So I'd have to cd into tilde slash Django project
+ So I'd have to cd into tilde slash django project
  slash my site.
  But then I'm in that and I can say, oops,
  I didn't copy it all right.
  So let's go back and copy it.
- Python manage.py make migrations polls.
+ Python manage.py make migrations poles.
  So, and it tells us that's what it's supposed to look like.
  That's what it's supposed to look like.
  And then, so it turns out that there are two steps
@@ -237,10 +239,10 @@
  So migrate knows,
  migrate knows which ones have run
  and it knows that these have already run,
- but we've got a new one in polls
- and it's just gonna run the migrations for polls.
+ but we've got a new one in poles
+ and it's just gonna run the migrations for poles.
  And now it has created a database table for us.
- So there's a polls table now.
+ So there's a poles table now.
  So the migrate command takes all the migrations
  that haven't been applied,
  Django tracks which ones have been applied,
@@ -248,7 +250,7 @@
  keeping the database caught up with the migrations.
  So if you ever change your models.py,
  you have to do two steps.
- You run Python manage py make migrations
+ You run python manage py make migrations
  to make migrations for the changes in models,
  and then you run migrate.
  Now I'm gonna run these right now
@@ -265,16 +267,16 @@
  And so this, if you go back, you can check.
  When it's telling you to run the shell,
  it says make sure you're in the console
- and you're in the right folder,
- but we are in the right folder.
- So we're just gonna grab manage py shell.
+ and you're in the right folder.
+ But we are in the right folder,
+ so we're just gonna grab manage py shell.
  Now, this is running, this is loading all of Django up
  and giving you an interactive prompt.
- Now this prompt is a Python prompt,
+ Now this prompt is a python prompt,
  but it also includes all of Django loaded up.
  So I can say print hello world
- and it's the three Chevron prompt.
- So this is Python, it's just Python.
+ and it's the three chevron prompt.
+ So this is python, it's just python.
  So what we're doing in this is we are playing with
  the question objects, which were auto loaded
  because they're in manage.py.
@@ -282,7 +284,7 @@
  So I will let you do these.
  I'm gonna edit this out and so you can do this stuff.
  Follow this, follow these instructions.
- And that's an import because we're just running Python.
+ And that's an import 'cause we're just running python.
  We're creating a new question object
  and we're putting it in the variable queue.
  And then we're gonna store it in the database.
@@ -298,14 +300,14 @@
  and dot question text is an attribute within the question.
  So we can change it.
  Now we've changed it inside the memory
- of our Python application,
+ of our python application,
  but we haven't yet put it back into the database.
  And so we have to type queue.save.
  Oops, queue.save to store it in the database.
  Okay, so now that's stored in the database.
  So they want us to make some changes to our models.py.
- So let's go find our models.py,
- my site, polls, models.py.
+ So let's go find our models.py.
+ My site, polls, models.py.
  You gotta get used to where these little things are.
  Now this is a little hard part of this particular tutorial.
  Whenever you see dot dot like this,
@@ -320,13 +322,11 @@
  for you to copy these lines up here
  and it means to copy this line into the choice model.
  And I got an indentation error, so I gotta fix that.
- This is Python after all,
- so you gotta follow all these rules.
+ This is Python after all, so you gotta follow all these rules.
  So now we have affected the choice model
  and the questions model.
  So I'm gonna hit save.
- And then we've added these
- because the double underscore str,
+ And then we've added these because double underscore str,
  when you take an object and print it,
  it converts it to a string
  using this particular built-in method.
@@ -334,14 +334,14 @@
  And you can also add some code to this.
  You can add some methods to your models.
  So I'm gonna just grab this bit.
- Remember the dot dot dot says add that.
+ Remember, the dot dot dot says add that.
  So I'm gonna save it.
  Oops, gonna save it.
  Now it's complaining.
  What's it complaining about?
  Oh, undefined time zone.
  Well, it told us what to do.
- You gotta import, you got some imports you gotta add here.
+ You got some imports you gotta add here.
  Don't wipe stuff out, just keep adding it.
  So I'll add those imports up here.
  Now I'm gonna end up with this one twice.
@@ -358,7 +358,7 @@
  python manage py shell, and so I'm back in.
  So I hit the up arrow key to rerun the previous command
  and then hit enter, okay?
- So you'll notice it imported a bunch of stuff for us.
+ So you'll notice like it imported a bunch of stuff for us.
  So let's set up our Django application.
  So let's continue on with the question objects all.
  So there you go, there's one question there.
@@ -374,8 +374,8 @@
  exit to get out.
  So dot dot dot, do all that work.
  Exit to get out and get back to the bash console.
- So when you see three chevrons and you need to get out,
- go to the bash console.
+ So when you see three chevrons
+ and you need to get out, go to the bash console.
  If you wanna go back into the shell, you can.
  You can go in and out of the shell as many times as you want.
  Okay, so the next thing we're gonna do
@@ -398,15 +398,15 @@
  but it doesn't echo.
  You just gotta type init enter.
  Okay, so here is the thing that makes it most complex.
- Let's see what happens
- when I type python manage py run server.
+ Let's see what happens when I type
+ python manage py run server.
  Yeah, you'll get a different error message.
- I've got this thing that kinda patches the manage.py
- to complain about it,
+ I've got this thing that kinda patches
+ the manage.py to complain about it,
  that you're not supposed to run server on Python anywhere.
  You'll get some funky error message
  that will be like ports not available or not in use.
- It says you're supposed to run python manage py check.
+ Says you're supposed to run python manage py check.
  And if you go look at my thing, it says,
  when it says to run python manage py run server,
  go into my site and type python manage py check.
@@ -428,21 +428,22 @@
  This takes a while, so you gotta wait
  and it's like gotta spinny thing
  and it sometimes takes 30 seconds.
- (mouse clicking)
  Now sometimes it takes too long and I wanna do it again.
  So, how come it's not working?
  So I'm gonna go here and I'll say reload drchuckpythonanywhere.com.
  It should have worked.
+ It's up here, it should have worked.
+ So I'm gonna go here and I'm gonna say reload drchuckpythonanywhere.com.
  It's up, okay.
- So I don't know why it's up now.
+ So I don't know why it's up down.
  Just took a little while, okay.
- So, and this is your actual website, drchuck.
- I call it youraccount.pythonanywhere.com
- and I'm gonna open this in a new tab.
- And this has got your polls.
+ So, and this is your actual website.
+ Dr. Chuck, I call it youraccount.pythonanywhere.com
+ and I'm gonna open this in a new tab
+ and this has got your polls.
  If we go to /polls, you can see your tutorial one
  is still there, right?
- But if you recall where there's this admin
+ But if you recall, where there's this admin
  and that admin is there because in the urls.py,
  my site, my site, urls.py,
  you basically imported, this is part of Django,
@@ -451,23 +452,19 @@
  at the path /admin.
  You mounted your polls application at the paths polls
  and you have the administrator user interface, okay.
- So now I can go to /admin.
- Oops, admin.
+ So now I can go to /admin, oops, admin.
  And there we go.
  So let's see what we're doing.
  So, and it's telling you to go to localhost,
  but that's wrong too.
  And that's also in open localhost,
- open your account on pythonanywhere.admin.
- So it's telling you, this is the, again,
- the Rosetta Stone that's telling you when it says this,
- you have to do that.
+ open your account on Python Anywhere admin.
+ So it's telling you, this is the, again, the Rosetta stone
+ that's telling you when it says this, you have to do that.
  Okay, so what the heck did I give myself a password?
- So I called it admin.
- I know what the password is.
- So I've got to go in here
- and I got to type the admin account and the password
- to log in.
+ So I called it admin, I know what the password is.
+ So I've got to go in here and I got to type the admin account
+ and the password to log in.
  Okay, so now I am in the administration user interface.
  I can add a user here.
  We don't generally do anything with groups.
@@ -480,17 +477,13 @@
  We want our question and choices to appear in there.
  And this is what it's going to tell us how to do.
  And so you can go and edit the file pollsadmin.py
- and copy all this stuff
- into my site, pollsadmin.py.
- And we'll save this.
- And then we'll reload our application.
- Every time you save a file,
- you got to reload the application.
+ and copy all this stuff into my site, pollsadmin.py.
+ And we'll save this and then we'll reload our application.
+ Every time you save a file, you got to reload the application.
  And now you got to go back and reload your website.
  And now you've got a questions area.
- And if you go in there,
- you see the one question that you created
- in the Django shell.
+ And if you go in there, you see the one question
+ that you created in the Django shell.
  You created this question and it's sitting there.
  Now for the autograder,
  you're going to have to add a question and some choices.
@@ -498,43 +491,37 @@
  it gives you a little clue.
  It says, when it tells you to put this
  into my site, pollsadmin.py,
- put this in instead.
- And it'll make your job a lot easier
- because this is registering the question model.
- And we got to register both the question model
+ put this in instead and it'll make your job a lot easier
+ because this is registering the question model
+ and we got to register both the question model
  and the choice model.
- So I saved it.
- Then I'm going to hit reload.
+ So I saved it, then I'm going to hit reload.
  And now I'm going to go back to the admin.
  Let's go to home.
  So now you see we've got both choices and questions.
- So you can add a choice.
- You can add a question.
- You can add a user.
+ So you can add a choice, you can add a question,
+ you can add a user.
  I'm going to let you do that all on your own.
- And so it tells you how to do this.
- And I'm going to let you do that.
+ And so it tells you how to do this
+ and I'm going to let you do that.
  The autograder has you do some things.
  So I'll let you do the rest of that on your own.
  So I hope that this has been helpful for you
- to do Django tutorial two.
- But I'm going to show you how to do that.
- But I'm going to show you how to do Django tutorial two.
- But mapping it to Python Anywhere.
+ to do Django Tutorial 2, but mapping it to Python Anywhere.
  And that's where this little tutorial to Python Anywhere.
- I'm not going to give you this mapping every assignment.
- Because after a while, it says Python managed by shell.
+ I'm not going to give you this mapping every assignment,
+ because after a while it says, Python ManagedPy shell.
  You should know where to type that.
- Or Python managed by run server.
- You should know to run managed by check
+ Or Python ManagedPy run server.
+ You should know to run ManagedPy check
  and hit the little reload button.
  And then go hit the refresh on your application.
- I just kind of did this because it's the first one
+ Okay, so I just kind of did this because it's the first one
  where you've got to read some content on the internet
  and then map it to Python Anywhere.
  And so part of the skill is learning how to do these things
  on Python Anywhere.
- Okay.
- I hope this helps.
+ Okay, I hope this helps.
  Cheers.
  (upbeat music)
+ (jazz piano music)

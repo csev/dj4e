@@ -1,872 +1,876 @@
 1
-00:00:00,000 --> 00:00:02,640
+00:00:00,000 --> 00:00:02,660
  - Hello, now we're gonna talk about the other half
 
 2
-00:00:02,640 --> 00:00:04,860
+00:00:02,660 --> 00:00:04,860
  of the views, the templates.
 
 3
 00:00:04,860 --> 00:00:08,620
- So the templates are our way of creating HTML.
+ So the templates are a way of creating HTML.
 
 4
-00:00:08,620 --> 00:00:12,780
+00:00:08,620 --> 00:00:12,840
  And again, just to ground everything that we've got here,
 
 5
-00:00:12,780 --> 00:00:15,480
- you know, we're in the views, and the views are really
+00:00:12,840 --> 00:00:16,420
+ we're in the views, and the views are really sort of the code,
 
 6
-00:00:15,480 --> 00:00:17,820
- sort of the code, the Python code that we drive.
+00:00:16,420 --> 00:00:17,820
+ the Python code that we drive.
 
 7
-00:00:17,820 --> 00:00:20,820
- We're gonna get the forms in a bit, but views kind of
+00:00:17,820 --> 00:00:19,720
+ We're gonna get the forms in a bit,
 
 8
-00:00:20,820 --> 00:00:24,220
- merge stuff from the templates, merge stuff from the models,
+00:00:19,720 --> 00:00:22,420
+ but views kind of merge stuff from the templates,
 
 9
-00:00:24,220 --> 00:00:27,660
- put, you know, send stuff in and make pages, right?
+00:00:22,420 --> 00:00:25,300
+ merge stuff from the models,
 
 10
-00:00:27,660 --> 00:00:30,260
- So this is going to look a lot like HTML.
+00:00:25,300 --> 00:00:27,680
+ send stuff in and make pages, right?
 
 11
-00:00:30,260 --> 00:00:34,300
- It doesn't have to be HTML, it can be things but,
+00:00:27,680 --> 00:00:30,280
+ So this is going to look a lot like HTML.
 
 12
-00:00:34,300 --> 00:00:37,260
- other than HTML, but templates in our class
+00:00:30,280 --> 00:00:32,080
+ It doesn't have to be HTML.
 
 13
-00:00:37,260 --> 00:00:41,180
- will mostly be HTML, and so they're kind of the last
+00:00:32,080 --> 00:00:35,520
+ It can be things other than HTML,
 
 14
-00:00:41,180 --> 00:00:44,860
- little piece of the puzzle to start building user interfaces.
+00:00:35,520 --> 00:00:39,840
+ but templates in our class will mostly be HTML.
 
 15
-00:00:44,860 --> 00:00:47,880
- And from this point on, we're going to be, you know,
+00:00:39,840 --> 00:00:42,760
+ And so they're kind of the last little piece of the puzzle
 
 16
-00:00:47,880 --> 00:00:51,000
- making user interfaces rather than introducing the parts
+00:00:42,760 --> 00:00:44,880
+ to start building user interfaces.
 
 17
-00:00:51,000 --> 00:00:54,100
- of a Django application that have the user interface.
+00:00:44,880 --> 00:00:48,480
+ And from this point on, we're going to be making user
 
 18
+00:00:48,480 --> 00:00:51,020
+ interfaces rather than introducing the parts
+
+19
+00:00:51,020 --> 00:00:54,100
+ of a Django application that have the user interface.
+
+20
 00:00:54,100 --> 00:00:57,760
  So this is the text from the Django website.
 
-19
-00:00:57,760 --> 00:01:01,580
- You know, it's about convenient ways to generate
-
-20
-00:01:01,580 --> 00:01:04,700
- HTML dynamically, and there's a couple of different
-
 21
-00:01:04,700 --> 00:01:07,420
- templating engines, we're using the default one,
+00:00:57,760 --> 00:01:03,300
+ It's about convenient ways to generate HTML dynamically,
 
 22
-00:01:07,420 --> 00:01:11,660
- and there is some data that we pass into the template.
+00:01:03,300 --> 00:01:05,540
+ and there's a couple of different templating engines.
 
 23
-00:01:11,660 --> 00:01:13,860
- There's a process that's called rendering,
+00:01:05,540 --> 00:01:07,420
+ We're using the default one.
 
 24
-00:01:13,860 --> 00:01:17,780
- and then we get the HTML back, and we return to the browser
+00:01:07,420 --> 00:01:11,620
+ And there is some data that we pass into the template.
 
 25
-00:01:17,780 --> 00:01:20,760
- with that HTTP response, which we've already been doing.
+00:01:11,620 --> 00:01:13,840
+ There's a process that's called rendering,
 
 26
-00:01:20,760 --> 00:01:23,780
- It's not, the request-response cycle is the same.
+00:01:13,840 --> 00:01:15,500
+ and then we get the HTML back,
 
 27
-00:01:23,780 --> 00:01:26,040
- The difference is, instead of writing Python code
+00:01:15,500 --> 00:01:19,220
+ and we return to the browser with that HTTP response,
 
 28
-00:01:26,040 --> 00:01:28,260
- to concatenate a bunch of things together,
+00:01:19,220 --> 00:01:20,740
+ which we've already been doing.
 
 29
-00:01:28,260 --> 00:01:31,060
- we are going to use a template engine.
+00:01:20,740 --> 00:01:23,740
+ It's not the request-response cycle is the same.
 
 30
+00:01:23,740 --> 00:01:26,060
+ The difference is instead of writing Python code
+
+31
+00:01:26,060 --> 00:01:28,280
+ to concatenate a bunch of things together,
+
+32
+00:01:28,280 --> 00:01:31,060
+ we are going to use a template engine.
+
+33
 00:01:31,060 --> 00:01:33,440
  So this is the kind of stuff that we've been doing all along.
 
-31
-00:01:33,440 --> 00:01:36,860
+34
+00:01:33,440 --> 00:01:37,980
  We have a class and a view, a view class,
 
-32
-00:01:36,860 --> 00:01:40,340
+35
+00:01:37,980 --> 00:01:40,380
  REST main view that extends this view.
 
-33
-00:01:40,340 --> 00:01:42,300
+36
+00:01:40,380 --> 00:01:42,320
  In comes perhaps the request object,
 
-34
-00:01:42,300 --> 00:01:44,460
+37
+00:01:42,320 --> 00:01:44,460
  and then maybe even another parameter.
 
-35
-00:01:44,460 --> 00:01:46,720
+38
+00:01:44,460 --> 00:01:46,700
  That's not changing.
 
-36
-00:01:46,720 --> 00:01:49,020
+39
+00:01:46,700 --> 00:01:49,040
  What we're doing here is we're using concatenation.
 
-37
-00:01:49,020 --> 00:01:51,100
+40
+00:01:49,040 --> 00:01:51,100
  Concatenation, these little plus signs.
 
-38
+41
 00:01:51,100 --> 00:01:53,580
  Escaping, we're doing all the escaping and concatenating,
 
-39
-00:01:53,580 --> 00:01:56,020
+42
+00:01:53,580 --> 00:01:56,040
  and then we are sending back a response.
 
-40
-00:01:56,020 --> 00:01:57,620
+43
+00:01:56,040 --> 00:01:57,640
  So what goes back as a response,
 
-41
-00:01:57,620 --> 00:02:00,200
+44
+00:01:57,640 --> 00:02:00,200
  what comes in as a request, what goes back as a response.
 
-42
-00:02:00,200 --> 00:02:02,780
- We're still gonna do that, we're just gonna
-
-43
-00:02:02,780 --> 00:02:05,360
- get rid of that middle bit and make it a little prettier
-
-44
-00:02:05,360 --> 00:02:07,360
- and make it a little more sense.
-
 45
-00:02:07,360 --> 00:02:11,240
- If you look at that, oops, if you look at that,
+00:02:00,200 --> 00:02:01,340
+ We're still gonna do that.
 
 46
-00:02:11,240 --> 00:02:13,700
- if you look at it, you gotta get it syntactically right.
+00:02:01,340 --> 00:02:04,020
+ We're just gonna get rid of that middle bit
 
 47
-00:02:13,700 --> 00:02:17,180
- You got indentation problems, that's three lines of Python.
+00:02:04,020 --> 00:02:05,380
+ and make it a little prettier
 
 48
-00:02:17,180 --> 00:02:19,180
- I'm using triple quotes, I'm using plus,
+00:02:05,380 --> 00:02:07,340
+ and make it a little more sense.
 
 49
-00:02:19,180 --> 00:02:22,200
- I gotta get all that matching together.
+00:02:07,340 --> 00:02:11,260
+ If you look at that, oops, if you look at that,
 
 50
-00:02:22,200 --> 00:02:25,940
- And then eventually, the HTML is going back,
+00:02:11,260 --> 00:02:13,740
+ if you look at it, you gotta get it syntactically right.
 
 51
-00:02:25,940 --> 00:02:27,600
- I'll be using single quotes, double quotes,
+00:02:13,740 --> 00:02:17,180
+ You got indentation problems, that's three lines of Python.
 
 52
-00:02:27,600 --> 00:02:29,220
- and all those kinds of things.
+00:02:17,180 --> 00:02:19,180
+ I'm using triple quotes, I'm using plus.
 
 53
-00:02:29,220 --> 00:02:31,820
- And JavaScript's gonna look really ugly here.
+00:02:19,180 --> 00:02:22,220
+ I gotta get all that matching together.
 
 54
-00:02:31,820 --> 00:02:34,320
- Indenting of the HTML kind of will fight
+00:02:22,220 --> 00:02:25,860
+ And then eventually, the HTML is going back.
 
 55
-00:02:34,320 --> 00:02:35,720
- with the indenting of the Python.
+00:02:25,860 --> 00:02:27,540
+ I'll be using single quotes, double quotes,
 
 56
-00:02:35,720 --> 00:02:39,400
- So this is just general, I mean, I've only done short ones,
+00:02:27,540 --> 00:02:29,140
+ and all those kinds of things.
 
 57
-00:02:39,400 --> 00:02:40,600
- 'cause I only wanted to show you a little bit
+00:02:29,140 --> 00:02:31,760
+ And JavaScript's gonna look really ugly here.
 
 58
-00:02:40,600 --> 00:02:42,400
- before we showed you templates.
+00:02:31,760 --> 00:02:34,260
+ Indenting of the HTML kinda will fight
 
 59
-00:02:42,400 --> 00:02:45,900
- So the basic process is a bit of software,
+00:02:34,260 --> 00:02:35,680
+ with the indenting of the Python.
 
 60
-00:02:45,900 --> 00:02:50,040
- a template software that Django provides us.
+00:02:35,680 --> 00:02:39,380
+ So this is just general, I mean, I've only done short ones,
 
 61
-00:02:50,040 --> 00:02:52,880
- We're using the built-in Django one.
+00:02:39,380 --> 00:02:40,520
+ 'cause I only wanted to show you a little bit
 
 62
-00:02:52,880 --> 00:02:55,180
- And basically template is some HTML
+00:02:40,520 --> 00:02:42,360
+ before we showed you templates.
 
 63
-00:02:55,180 --> 00:02:58,520
- with some hotspots in it that says put data here.
+00:02:42,360 --> 00:02:45,860
+ So the basic process is a bit of software,
 
 64
-00:02:58,520 --> 00:03:00,720
- And then the rest of it is just HTML.
+00:02:45,860 --> 00:02:50,000
+ a template software that Django provides us.
 
 65
-00:03:00,720 --> 00:03:05,020
- And then we pass the data in, in some kind of an object,
+00:02:50,000 --> 00:02:52,840
+ We're using the built-in Django one.
 
 66
-00:03:05,020 --> 00:03:06,660
- you know, dictionary, et cetera.
+00:02:52,840 --> 00:02:55,180
+ And basically, template is some HTML
 
 67
-00:03:06,660 --> 00:03:10,720
- And then a bit of code pulls all that stuff together
+00:02:55,180 --> 00:02:58,500
+ with some hotspots in it that says put data here.
 
 68
-00:03:10,720 --> 00:03:15,020
- and then produces the HTML with all the data placed in it.
+00:02:58,500 --> 00:03:00,680
+ And then the rest of it is just HTML.
 
 69
-00:03:15,020 --> 00:03:17,000
- Often the render data that we're passing
+00:03:00,680 --> 00:03:05,000
+ And then we pass the data in, in some kind of an object,
 
 70
-00:03:17,000 --> 00:03:19,220
- and it's coming from a model, for example.
+00:03:05,000 --> 00:03:06,620
+ you know, dictionary, et cetera.
 
 71
-00:03:19,220 --> 00:03:20,880
- You know, we might talk to a database,
+00:03:06,620 --> 00:03:10,700
+ And then a bit of code pulls all that stuff together
 
 72
-00:03:20,880 --> 00:03:24,020
- load up a bunch of rows, and then put it in.
+00:03:10,700 --> 00:03:15,000
+ and then produces the HTML with all the data placed in it.
 
 73
-00:03:24,020 --> 00:03:26,720
- But in the simplest form, what we've got
+00:03:15,000 --> 00:03:16,960
+ Often the render data that we're passing
 
 74
-00:03:26,720 --> 00:03:28,500
- is we've got like a little dictionary,
+00:03:16,960 --> 00:03:19,200
+ and it's coming from a model, for example.
 
 75
-00:03:28,500 --> 00:03:32,200
- call this the context, you could call it the render data,
+00:03:19,200 --> 00:03:20,880
+ You know, we might talk to a database,
 
 76
+00:03:20,880 --> 00:03:24,040
+ load up a bunch of rows, and then put it in.
+
+77
+00:03:24,040 --> 00:03:26,700
+ But in the simplest form, what we've got
+
+78
+00:03:26,700 --> 00:03:28,480
+ is we've got like a little dictionary,
+
+79
+00:03:28,480 --> 00:03:32,200
+ call this the context, you could call it the render data,
+
+80
 00:03:32,200 --> 00:03:34,300
  and then you have the render template.
 
-77
+81
 00:03:34,300 --> 00:03:36,200
- So the render template is really HTML,
+ So the render template is really HTML.
 
-78
-00:03:36,200 --> 00:03:38,940
- and that's what makes it a lot easier to look at,
+82
+00:03:36,200 --> 00:03:38,920
+ And that's what makes it a lot easier to look at,
 
-79
-00:03:38,940 --> 00:03:40,800
+83
+00:03:38,920 --> 00:03:40,820
  because you're not putting double quotes around anything,
 
-80
-00:03:40,800 --> 00:03:44,460
+84
+00:03:40,820 --> 00:03:44,460
  there's no concatenation, but there are special characters.
 
-81
+85
 00:03:44,460 --> 00:03:47,600
  And what the double curly brace surrounding it says
 
-82
-00:03:47,600 --> 00:03:51,340
+86
+00:03:47,600 --> 00:03:51,320
  is instead of that, take this bit out and replace it
 
-83
-00:03:51,340 --> 00:03:54,720
+87
+00:03:51,320 --> 00:03:54,720
  with whatever's in the variable dat from the render data.
 
-84
+88
 00:03:54,720 --> 00:03:57,400
  And so that's how, when it's all said and done,
 
-85
-00:03:57,400 --> 00:03:59,980
+89
+00:03:57,400 --> 00:03:59,960
  this is replaced in the fun stuff,
 
-86
-00:03:59,980 --> 00:04:03,840
+90
+00:03:59,960 --> 00:04:03,840
  replaces curly brace, curly brace dat in the final output.
 
-87
+91
 00:04:03,840 --> 00:04:05,480
  And if you thought about it for a while,
 
-88
-00:04:05,480 --> 00:04:07,040
+92
+00:04:05,480 --> 00:04:07,020
  you could probably write a render engine.
 
-89
-00:04:07,040 --> 00:04:08,440
+93
+00:04:07,020 --> 00:04:08,440
  They're not that hard.
 
-90
-00:04:08,440 --> 00:04:10,700
+94
+00:04:08,440 --> 00:04:10,680
  Now you'll see they have some sophisticated features
 
-91
-00:04:10,700 --> 00:04:12,340
+95
+00:04:10,680 --> 00:04:12,340
  eventually, so you probably don't want to write
 
-92
-00:04:12,340 --> 00:04:14,700
+96
+00:04:12,340 --> 00:04:14,680
  your own render engine, but you could imagine
 
-93
-00:04:14,700 --> 00:04:18,740
- a Python assignment where I say write me a function
-
-94
-00:04:18,740 --> 00:04:20,740
- that takes a dictionary that looks like that,
-
-95
-00:04:20,740 --> 00:04:24,320
- and then with key value dat fun stuff,
-
-96
-00:04:24,320 --> 00:04:26,540
- and then take some text file, has curly brace,
-
 97
-00:04:26,540 --> 00:04:28,680
- curly brace dat, curly brace, curly brace,
+00:04:14,680 --> 00:04:18,700
+ a Python assignment where I say, write me a function
 
 98
-00:04:28,680 --> 00:04:31,600
- and then find that and then replace it with that string.
+00:04:18,700 --> 00:04:20,680
+ that takes a dictionary that looks like that,
 
 99
-00:04:31,600 --> 00:04:33,300
- You could write that code.
+00:04:20,680 --> 00:04:24,240
+ and then, you know, key value dat fun stuff,
 
 100
-00:04:33,300 --> 00:04:34,600
- You don't want to write that code.
+00:04:24,240 --> 00:04:26,520
+ and then take some text file that has curly brace,
 
 101
-00:04:34,600 --> 00:04:37,240
- Django has already written that code for you.
+00:04:26,520 --> 00:04:28,640
+ curly brace dat, curly brace, curly brace,
 
 102
-00:04:37,240 --> 00:04:38,820
- So here's the code in action.
+00:04:28,640 --> 00:04:31,520
+ and then find that and then replace it with that string.
 
 103
-00:04:38,820 --> 00:04:41,860
- And so this is, we're gonna call this,
+00:04:31,520 --> 00:04:33,240
+ You could write that code.
 
 104
-00:04:41,860 --> 00:04:45,520
- we're in the application named tmpl, temple.
+00:04:33,240 --> 00:04:34,520
+ You don't want to write that code.
 
 105
-00:04:45,520 --> 00:04:49,500
- And so we have the application temple,
+00:04:34,520 --> 00:04:37,180
+ Django has already written that code for you.
 
 106
-00:04:49,500 --> 00:04:52,360
- we have the view game, and then we have a number 200,
+00:04:37,180 --> 00:04:38,720
+ So here's the code in action.
 
 107
-00:04:52,360 --> 00:04:55,120
- and that's what we put in our urls.py
+00:04:38,720 --> 00:04:41,800
+ And so this is, we're gonna call this,
 
 108
-00:04:55,120 --> 00:04:58,400
- to route the game view and take one parameter.
+00:04:41,800 --> 00:04:45,540
+ we're in the application named tmpl, temple.
 
 109
-00:04:58,400 --> 00:05:01,240
- Remember that slugs are a special version of strings
+00:04:45,540 --> 00:04:49,440
+ And so we have the application temple,
 
 110
-00:05:01,240 --> 00:05:04,120
- that are letters, numbers, and dashes, I believe.
+00:04:49,440 --> 00:04:52,280
+ we have the view game, and then we have a number 200,
 
 111
-00:05:04,120 --> 00:05:07,280
- And so the entire request coming in from the browser
+00:04:52,280 --> 00:04:55,080
+ and that's what we put in our urls.py
 
 112
-00:05:07,280 --> 00:05:09,220
- is coming into the variable request.
+00:04:55,080 --> 00:04:58,320
+ to route the game view and take one parameter.
 
 113
-00:05:09,220 --> 00:05:12,140
- This number 200 is coming in the variable,
+00:04:58,320 --> 00:05:01,200
+ Remember that slugs are a special version of strings
 
 114
-00:05:12,140 --> 00:05:15,260
- from the url is coming in the variable guess.
+00:05:01,200 --> 00:05:04,080
+ that are letters, numbers, and dashes, I believe.
 
 115
-00:05:15,260 --> 00:05:19,500
- And so instead of us concatenating together,
+00:05:04,080 --> 00:05:07,240
+ And so the entire request coming in from the browser
 
 116
-00:05:19,500 --> 00:05:21,960
- we are going to create a context.
+00:05:07,240 --> 00:05:09,160
+ is coming into the variable request.
 
 117
-00:05:21,960 --> 00:05:24,180
- What I call a context was just as a dictionary
+00:05:09,160 --> 00:05:12,100
+ This number 200 is coming in the variable,
 
 118
-00:05:24,180 --> 00:05:25,900
- of key value pairs.
+00:05:12,100 --> 00:05:15,200
+ from the url is coming in the variable guess,
 
 119
-00:05:25,900 --> 00:05:29,460
- And the key for guess is g-u-e-s-s, it's a string.
+00:05:15,200 --> 00:05:19,440
+ and so instead of us concatenating together,
 
 120
-00:05:29,460 --> 00:05:32,080
- That guess will matter inside the template.
+00:05:19,440 --> 00:05:21,920
+ we are going to create a context,
 
 121
-00:05:32,080 --> 00:05:33,840
- And then we pull this number 200
+00:05:21,920 --> 00:05:24,160
+ what I call a context, was just as a dictionary
 
 122
-00:05:33,840 --> 00:05:36,640
- and we convert it to an integer, and then we pass it in.
+00:05:24,160 --> 00:05:25,840
+ of key value pairs.
 
 123
-00:05:36,640 --> 00:05:39,500
- And this render, we pass it the request object,
+00:05:25,840 --> 00:05:29,400
+ And the key for guess is g-u-e-s-s, it's a string.
 
 124
-00:05:39,500 --> 00:05:41,940
- we pass it the name of a template,
+00:05:29,400 --> 00:05:32,040
+ That guess will matter inside the template,
 
 125
-00:05:41,940 --> 00:05:45,880
- and then we pass the context, the key value pairs,
+00:05:32,040 --> 00:05:33,840
+ and then we pull this number 200
 
 126
-00:05:45,880 --> 00:05:48,160
- to be substituted in that.
+00:05:33,840 --> 00:05:36,480
+ and we convert it to an integer, and then we pass it in.
 
 127
-00:05:48,160 --> 00:05:49,800
- So let's take a look.
+00:05:36,480 --> 00:05:39,520
+ And this render, we pass it the request object,
 
 128
-00:05:49,800 --> 00:05:52,320
- So if we look at this template,
+00:05:39,520 --> 00:05:41,920
+ we pass it the name of a template,
 
 129
-00:05:52,320 --> 00:05:55,340
- it has a series of curly brace like hotspots,
+00:05:41,920 --> 00:05:45,880
+ and then we pass the context, the key value pairs,
 
 130
-00:05:55,340 --> 00:05:58,960
- places where you would replace stuff.
+00:05:45,880 --> 00:05:48,120
+ to be substituted in that.
 
 131
-00:05:58,960 --> 00:06:01,360
- And so the double curly brace just says
+00:05:48,120 --> 00:05:49,760
+ So let's take a look.
 
 132
-00:06:01,360 --> 00:06:04,800
- retrieve the string that is under guess and put it in,
+00:05:49,760 --> 00:05:52,300
+ So if we look at this template,
 
 133
-00:06:04,800 --> 00:06:07,800
- and so that's how we get your guess was 200
+00:05:52,300 --> 00:05:55,320
+ it has a series of curly brace, like hotspots,
 
 134
-00:06:07,800 --> 00:06:09,420
- in the ultimate output.
+00:05:55,320 --> 00:05:58,760
+ places where you would replace stuff.
 
 135
-00:06:09,420 --> 00:06:11,860
- And then we have curly brace percent
+00:05:58,760 --> 00:06:01,360
+ And so the double curly brace just says
 
 136
-00:06:11,860 --> 00:06:13,800
- all the way to percent curly brace,
+00:06:01,360 --> 00:06:04,840
+ retrieve the string that is under guess, and put it in,
 
 137
-00:06:13,800 --> 00:06:16,280
- and this is a series of if then else's.
+00:06:04,840 --> 00:06:09,400
+ so that's how we get your guess was 200 in the ultimate output.
 
 138
-00:06:16,280 --> 00:06:17,760
- So you can put logic in here too.
+00:06:09,400 --> 00:06:11,800
+ And then we have curly brace percent,
 
 139
-00:06:17,760 --> 00:06:21,240
- You don't have to just take this string and put it in.
+00:06:11,800 --> 00:06:13,720
+ all the way to percent curly brace,
 
 140
-00:06:21,240 --> 00:06:22,960
- So what we're doing is we're basically saying
+00:06:13,720 --> 00:06:16,280
+ and this is a series of if then else's.
 
 141
-00:06:22,960 --> 00:06:26,080
- if the guess is less than 42, we print out too low.
+00:06:16,280 --> 00:06:17,720
+ So you can put logic in here, too.
 
 142
-00:06:26,080 --> 00:06:29,360
- If it's above 42, we print too high.
+00:06:17,720 --> 00:06:21,200
+ You don't have to just take this string and put it in.
 
 143
-00:06:29,360 --> 00:06:32,280
- And of course, if it is 42, we print out just right.
+00:06:21,200 --> 00:06:22,880
+ So what we're doing is we're basically saying
 
 144
-00:06:32,280 --> 00:06:34,000
- And since our guess was 200,
+00:06:22,880 --> 00:06:26,000
+ if the guess is less than 42, we print out too low.
 
 145
-00:06:34,000 --> 00:06:36,000
- it prints out too high.
+00:06:26,000 --> 00:06:29,280
+ If it's above 42, we print too high,
 
 146
-00:06:36,000 --> 00:06:41,640
- And so basically this makes this view code a lot simpler
+00:06:29,280 --> 00:06:32,200
+ and of course, if it is 42, we print out just right.
 
 147
-00:06:41,640 --> 00:06:44,280
- and doesn't put a less than's and greater than's
+00:06:32,200 --> 00:06:33,960
+ And since our guess was 200,
 
 148
+00:06:33,960 --> 00:06:36,880
+ it prints out too high.
+
+149
+00:06:36,880 --> 00:06:41,520
+ And so basically, this makes this view code a lot simpler
+
+150
+00:06:41,520 --> 00:06:44,280
+ and doesn't put a less than's and greater than's
+
+151
 00:06:44,280 --> 00:06:45,600
  and concatenations.
 
-149
+152
 00:06:45,600 --> 00:06:48,460
  It's all substituted by this render routine.
 
-150
+153
 00:06:48,460 --> 00:06:51,960
  Now the render routine returns an HTTP response request,
 
-151
+154
 00:06:51,960 --> 00:06:54,640
  so when we get that back, we just return it.
 
-152
+155
 00:06:54,640 --> 00:06:57,940
  So we hand back to Django the HTTP response request,
 
-153
-00:06:57,940 --> 00:07:01,940
+156
+00:06:57,940 --> 00:07:02,940
  and then the page is displayed in our browser.
 
-154
-00:07:02,960 --> 00:07:05,180
- And remember that we have a Django project,
-
-155
-00:07:05,180 --> 00:07:06,720
- and this is the Django project.
-
-156
-00:07:06,720 --> 00:07:09,520
- In my case, the Django project is dj4e-samples,
-
 157
-00:07:09,520 --> 00:07:12,240
- and I have a bunch of little applications.
+00:07:02,960 --> 00:07:05,080
+ Remember that we have a Django project,
 
 158
-00:07:12,240 --> 00:07:13,760
- All these things, as a matter of fact,
+00:07:05,080 --> 00:07:06,640
+ and this is the Django project.
 
 159
-00:07:13,760 --> 00:07:16,060
- Temple is the one we're working at right now.
+00:07:06,640 --> 00:07:09,480
+ In my case, the Django project is dj4e-samples,
 
 160
-00:07:16,060 --> 00:07:18,840
- Those are just the different pieces of sample source code
+00:07:09,480 --> 00:07:12,160
+ and I have a bunch of little applications.
 
 161
-00:07:18,840 --> 00:07:21,440
- that I've built for this class to talk about.
+00:07:12,160 --> 00:07:13,760
+ All these things, as a matter of fact,
 
 162
-00:07:21,440 --> 00:07:23,800
- And so those are applications.
+00:07:13,760 --> 00:07:16,000
+ Temple is the one we're working at right now.
 
 163
-00:07:23,800 --> 00:07:26,480
- So it's just that Django terminology.
+00:07:16,000 --> 00:07:18,820
+ Those are just the different pieces of sample source code
 
 164
-00:07:26,480 --> 00:07:29,920
- Project made up of one or more applications and folders.
+00:07:18,820 --> 00:07:21,360
+ that I've built for this class to talk about.
 
 165
-00:07:29,920 --> 00:07:31,540
- Okay.
+00:07:21,360 --> 00:07:23,680
+ And so those are applications.
 
 166
-00:07:31,540 --> 00:07:33,660
- And so the problem is, is these templates,
+00:07:23,680 --> 00:07:26,400
+ So it's just that Django terminology.
 
 167
-00:07:33,660 --> 00:07:37,800
- when Django starts up based on the settings.py,
+00:07:26,400 --> 00:07:29,800
+ Project made up of one or more applications and folders.
 
 168
-00:07:37,800 --> 00:07:39,640
- it loads all these files up.
+00:07:29,800 --> 00:07:31,320
+ Okay.
 
 169
-00:07:39,640 --> 00:07:41,140
- Loads them all up.
+00:07:31,320 --> 00:07:33,840
+ And so the problem is is these templates,
 
 170
-00:07:41,140 --> 00:07:44,140
- And so it loads them all up,
+00:07:33,840 --> 00:07:37,640
+ when Django starts up, based on the settings.py,
 
 171
-00:07:44,140 --> 00:07:46,840
- and the templates are actually global,
+00:07:37,640 --> 00:07:41,000
+ it loads all these files up, loads them all up.
 
 172
-00:07:46,840 --> 00:07:48,000
- and we'll see this in a bit.
+00:07:41,000 --> 00:07:43,960
+ And so it loads them all up,
 
 173
-00:07:48,000 --> 00:07:51,140
- They're global across all of the applications.
+00:07:43,960 --> 00:07:46,720
+ and the templates are actually global,
 
 174
-00:07:51,140 --> 00:07:55,300
- And so the problem is, is that if you have a template name
+00:07:46,720 --> 00:07:47,800
+ and we'll see this in a bit.
 
 175
-00:07:55,300 --> 00:08:00,040
- like detail.html, and you have a whole bunch of applications
+00:07:47,800 --> 00:07:51,000
+ They're global across all of the applications.
 
 176
-00:08:00,040 --> 00:08:02,780
- like I do, all of which wanna have a template name
+00:07:51,000 --> 00:07:56,000
+ And so the problem is is that if you have a template name
 
 177
-00:08:02,780 --> 00:08:05,640
- detail.html, it doesn't work.
+00:07:56,000 --> 00:08:00,000
+ like detail.html, and you have a whole bunch of applications
 
 178
-00:08:05,640 --> 00:08:09,620
- 'Cause which detail.html, it'd be template/detail
+00:08:00,000 --> 00:08:02,760
+ like I do, all of which wanna have a template name
 
 179
-00:08:09,620 --> 00:08:12,000
- in two folders, it's not clear which one
+00:08:02,760 --> 00:08:05,600
+ detail.html, it doesn't work.
 
 180
-00:08:12,000 --> 00:08:13,840
- you're talking about.
+00:08:05,600 --> 00:08:10,600
+ 'Cause which detail.html be template/detail in two folders,
 
 181
-00:08:13,840 --> 00:08:16,040
- So we've adopted a convention that we take
+00:08:10,600 --> 00:08:13,800
+ it's not clear which one you're talking about.
 
 182
-00:08:16,040 --> 00:08:18,860
- the application name, and we make a subfolder
+00:08:13,800 --> 00:08:16,000
+ So we've adopted a convention that we take
 
 183
-00:08:18,860 --> 00:08:21,800
- inside of templates that's the application name,
+00:08:16,000 --> 00:08:18,840
+ the application name and we make a subfolder
 
 184
-00:08:21,800 --> 00:08:25,720
- and then we use this fabs/detail.html,
+00:08:18,840 --> 00:08:21,760
+ inside of templates that's the application name,
 
 185
-00:08:25,720 --> 00:08:29,440
- or pics/detail.html as the name of the template.
+00:08:21,760 --> 00:08:25,680
+ and then we use this favs/detail.html
 
 186
-00:08:29,440 --> 00:08:32,240
- So in a sense, we're introducing a subfolder,
+00:08:25,680 --> 00:08:29,400
+ or pics/detail.html as the name of the template.
 
 187
-00:08:32,240 --> 00:08:33,960
- and it's a little jarring at first,
+00:08:29,400 --> 00:08:32,200
+ So in a sense, we're introducing a subfolder,
 
 188
-00:08:33,960 --> 00:08:36,060
- 'cause you see it's the same.
+00:08:32,200 --> 00:08:33,880
+ and it's a little jarring at first,
 
 189
-00:08:36,060 --> 00:08:37,320
- It's a good convention.
+00:08:33,880 --> 00:08:35,960
+ 'cause you see it's the same.
 
 190
-00:08:37,320 --> 00:08:40,880
- I mean, it's unfortunate we have to have the convention,
+00:08:35,960 --> 00:08:37,240
+ It's a good convention.
 
 191
-00:08:40,880 --> 00:08:43,680
- but because these names end up being global
+00:08:37,240 --> 00:08:40,800
+ I mean, it's unfortunate we have to have the convention,
 
 192
-00:08:43,680 --> 00:08:47,700
- across your entire Django project in each application,
+00:08:40,800 --> 00:08:43,640
+ but because these names end up being global
 
 193
-00:08:47,700 --> 00:08:51,480
- and to get them a name, to get them properly named,
+00:08:43,640 --> 00:08:46,640
+ across your entire Django project,
 
 194
-00:08:51,480 --> 00:08:55,400
- it's necessary to introduce this extra level of redirection.
+00:08:46,640 --> 00:08:51,440
+ in each application, to get them properly named,
 
 195
-00:08:55,400 --> 00:08:58,280
- We get the logins, there's templates that are stored
+00:08:51,440 --> 00:08:55,320
+ it's necessary to introduce this extra level of redirection.
 
 196
-00:08:58,280 --> 00:09:00,920
- outside in other applications, so sometimes you wanna
+00:08:55,320 --> 00:08:58,280
+ We get the logins, there's templates that are stored
 
 197
-00:09:00,920 --> 00:09:02,800
- get a template in some other application,
+00:08:58,280 --> 00:09:00,880
+ outside in other applications, so sometimes you wanna
 
 198
-00:09:02,800 --> 00:09:07,040
- so there's all kind of reasons this is a great idea.
+00:09:00,880 --> 00:09:02,760
+ get a template in some other application.
 
 199
-00:09:07,040 --> 00:09:08,920
- It just isn't the prettiest thing in the world.
+00:09:02,760 --> 00:09:07,000
+ So there's all kind of reasons this is a great idea.
 
 200
-00:09:08,920 --> 00:09:11,840
- So just, when you see it, don't freak out,
+00:09:07,000 --> 00:09:08,880
+ It just isn't the prettiest thing in the world.
 
 201
-00:09:11,840 --> 00:09:15,540
- I try to call it out in the slides.
+00:09:08,880 --> 00:09:11,800
+ So just, when you see it, don't freak out.
 
 202
-00:09:15,540 --> 00:09:17,780
- And so we put these paths that includes
+00:09:11,800 --> 00:09:15,520
+ I try to call it out in the slides.
 
 203
-00:09:17,780 --> 00:09:20,160
- the application name twice.
+00:09:15,520 --> 00:09:17,760
+ And so we put these paths that includes
 
 204
-00:09:20,160 --> 00:09:23,640
- It's weird, but it is necessary to do this
+00:09:17,760 --> 00:09:20,120
+ the application name twice.
 
 205
-00:09:23,640 --> 00:09:27,960
- because of the notion that all these template names
+00:09:20,120 --> 00:09:23,600
+ It's weird, but it is necessary to do this
 
 206
-00:09:27,960 --> 00:09:30,440
- are global across the entire application,
+00:09:23,600 --> 00:09:27,920
+ because of the notion that all these template names
 
 207
-00:09:30,440 --> 00:09:32,600
- but if then we called this the template name
+00:09:27,920 --> 00:09:30,400
+ are global across the entire application,
 
 208
-00:09:32,600 --> 00:09:35,560
- with the name of the application prefixed, away it goes.
+00:09:30,400 --> 00:09:32,560
+ but if then we called this the template name
 
 209
-00:09:35,560 --> 00:09:37,440
- Django could've made that a little easier for us,
+00:09:32,560 --> 00:09:35,520
+ with the name of the application prefixed, away it goes.
 
 210
-00:09:37,440 --> 00:09:40,880
- but they basically didn't, and so we have to do this.
+00:09:35,520 --> 00:09:37,400
+ Django could've made that a little easier for us,
 
 211
-00:09:40,880 --> 00:09:43,720
- But everybody does it the same way.
+00:09:37,400 --> 00:09:40,840
+ but they basically didn't, and so we have to do this.
 
 212
-00:09:43,720 --> 00:09:45,800
- So now what I wanna talk about is
+00:09:40,840 --> 00:09:43,680
+ But everybody does it the same way.
 
 213
-00:09:45,800 --> 00:09:47,440
- the actual templating language itself.
+00:09:43,680 --> 00:09:45,760
+ So now what I wanna talk about is
 
 214
-00:09:47,440 --> 00:09:49,920
- I showed you a couple examples, the double curly braces,
+00:09:45,760 --> 00:09:47,400
+ the actual templating language itself.
 
 215
-00:09:49,920 --> 00:09:51,740
- but it turns out there are lots of things
+00:09:47,400 --> 00:09:49,880
+ I showed you a couple examples, the double curly braces,
 
 216
-00:09:51,740 --> 00:09:53,680
- that you can do with double curly braces
+00:09:49,880 --> 00:09:51,720
+ but it turns out there are lots of things
 
 217
-00:09:53,680 --> 00:09:55,040
- in the template language.
+00:09:51,720 --> 00:09:53,640
+ that you can do with double curly braces
 
 218
+00:09:53,640 --> 00:09:55,040
+ in the template language.
+
+219
 00:09:55,040 --> 00:09:57,960
  (jazz piano music)
 

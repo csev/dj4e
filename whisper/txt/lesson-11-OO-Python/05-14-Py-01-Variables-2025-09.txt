@@ -1,29 +1,28 @@
- [MUSIC PLAYING]
- Hello.
- I have a confession to make.
+ (soft piano music)
+ - Hello, I have a confession to make.
  Perhaps you've taken a class from me
  where I misled you on what's going on in Python.
- First, we've got to take a look into the past.
- The following two slides are from chapter two of my Python
- for everybody textbook and course that's
- available all over the place.
- It's introduced more people to programming in the millions
- than any other course in the world.
- These slides are misleading.
- And at worst, they are 100% wrong.
+ But first we gotta take a look into the past.
+ The following two slides are from chapter two
+ of my Python for everybody textbook and course
+ that's available all over the place.
+ It's introduced more people to programming
+ in the millions than any other course in the world.
+ These slides are misleading,
+ and at worst, they are 100% wrong.
  Let's take a look at the slides and see why.
  Here's a slide.
  It's like the fifth slide of that class.
  A variable is a named place in memory
- where a programmer can store data and then later
- retrieve it using the name of the variable.
+ where a programmer can store data
+ and then later retrieve it using the name of the variable.
  Programmers get to choose the names of the variables.
- They're like labels in memory location.
- And you can change the contents of a variable
+ They're like labels in memory location,
+ and you can change the contents of a variable
  in a later statement.
- So x equals 12 takes a little drawer, labels it x,
- puts a 12 in there.
- y equals 14 puts a 14 in a drawer and labels it y.
+ So x equals 12, takes a little drawer,
+ labels it x, puts a 12 in there.
+ Y equals 14, puts a 14 in a drawer and labels it y.
  But then if you change it like x equals 100 later,
  that replaces the value 12.2 with the value 100.
  This is what's really happening.
@@ -31,127 +30,118 @@
  that is a pointer or reference to an object.
  You can kind of see why I didn't explain this
  in the very beginning.
- We actually can use the ID function
- to say, where is this variable pointing to?
- Now, not all Pythons-- this is the CPython, the Python that
- is written in C, the CPython.
- We can ask it, where is it?
+ We actually can use the ID function to say,
+ where is this variable pointing to?
+ Now, not all Pythons, this is the CPython,
+ the Python that is written in C.
+ The CPython, we can ask it, where is it?
  So if we say x equals 42 and then y equals x,
- you'd think that'd be two locations in memory.
- But it's not.
+ you'd think that'd be two locations in memory,
+ but it's not.
  It's two pointers to one location in memory.
- And we can figure this out by saying,
- print id of x, which is like, hey, where
- would we find x in memory?
+ And we can figure this out by saying print ID of x,
+ which is like, hey, where would we find x in memory?
  And it's got a number.
- And then we say, print id of y, and it's the same place.
- So we only have 142.
- We don't have two 42s.
- But we have an x pointer and a y pointer
+ And then we say print ID of y, and it's the same place.
+ So we only have one 42, we don't have two 42s,
+ but we have an x pointer and a y pointer
  that points to it.
- So for example, we can say, take the object 300.
- It's an integer.
- We say x equals 300.
- The 300 exists somewhere.
- And x, when we say x equals 300, it
- points at that object that exists somewhere.
- And it has a location.
+ So for example, we can say, you know,
+ take the object 300, it's an integer.
+ We say x equals 300, the 300 exists somewhere,
+ and x, when we say x equals 300,
+ it points at that object that exists somewhere
+ and it has a location.
  And then what happens, if we say x equals 2,000,
- the 2,000 is a different object in a different location.
- And x then points to the 2,000.
- The old object, integer 300, may still be there.
- But it's on what we'd call a free list.
- Some might be on a free list.
- But the idea is that you're changing the pointer x
- to point to the integer 2,000, rather than changing
+ the 2,000 is a different object in a different location,
+ and x then points to the 2,000.
+ The old object integer 300 may still be there,
+ but it's on what we'd call a free list.
+ Some might be on a free list,
+ but the idea is that you're changing the pointer x
+ to point to the integer 2,000 rather than changing
  the contents of a drawer labeled x to be 2,000.
- Again, if we say y equals x, you'll
- see that y does not make a copy of 2,000.
- It simply points to where the same 2,000 that x is pointing
- to.
+ Again, if we say y equals x,
+ you'll see that y does not make a copy of 2,000.
+ It simply points to where the same 2,000
+ that x is pointing to.
  So y equals x says, take the address that x points to
- and put that address in y.
+ and put that address in y, okay?
  Now, if we switch to more complex objects like a list,
  it makes a little more sense.
- x equals list says, let's make a list.
- And we can say, print ID of x.
- And that says, this is where it's at.
+ x equals list says, let's make a list,
+ and we can say, print id of x,
+ and that says, this is where it's at.
  And we can append hello to it.
- Now, the thing is, that didn't change where x was.
- But it did change what was in x.
- So x append hello adds hello to the end of my list.
- And I can say, where's x?
- Print ID of x.
- And it's in the same location.
- Now, if I make a copy--
- not exactly a copy.
- When I say y equals x, that makes a new y
+ Now, the thing is, that didn't change where x was,
+ but it did change what was in x.
+ So x append hello adds hello to the end of my list,
+ and I can say, where's x?
+ Print id of x, and it's in the same location, okay?
+ Now, if I make a copy, not exactly a copy,
+ when I say y equals x, that makes a new y
  that points at the same place.
  And that's why, if we do an x.append world and print y,
- we see hello world, even though we appended to x.
- And that is because y and x are pointing to the same place.
- So y equals x is not copying, as we might expect in the drawer
- analogy.
- It's not copying it.
- It's just adding a new pointer.
- Now, sometimes you actually want to make
- a full copy of something.
- You got a list?
- You want an independent list.
- And so this is a pattern that we would call a copy constructor.
- There's other ways to describe this.
- We make a list, x equals list, print ID of x.
- It's at a location.
- We append hello to it.
+ we see hello world, even though we appended to x,
+ and that is because y and x are pointing to the same place.
+ So y equals x is not copying,
+ as we might expect in the drawer analogy,
+ it's not copying it, it's just adding a new pointer.
+ Now, sometimes you actually want
+ to make a full copy of something.
+ You got a list, you want an independent list.
+ And so, this is a pattern that we would call
+ copy constructor, there's other ways to describe this.
+ We make a list, x equals list, print id of x,
+ it's at a location, we append hello to it,
  x is in the same place.
- Now, instead of saying y equals x, we say y equals list parenx.
- List is the constructor for lists.
- And that says, read through the list x
- and make full and independent copies of everything
- in that list and make a new list and have y point to that.
- That's what it's saying.
- So if we say, where is y, print ID of y,
- we see that the x is in one location
+ Now, instead of saying y equals x,
+ we say y equals list paren x,
+ list is the constructor for lists.
+ And that says, read through the list x,
+ and make full and independent copies
+ of everything in that list, and make a new list,
+ and have y point to that, that's what it's saying.
+ So if we say, where is y, print id of y,
+ we see that the x is in one location,
  and the y is a list that's in another location.
- And then if we add world to x and we print it,
- we see hello world.
- But y, because it's an independent copy stored
- at a different location, print y just says hello.
- So that is a copy constructor.
- So if you ask ChatGPT, what's a Python variable?
- ChatGPT is wrong.
- It is bought into the simplification.
+ And then, if we add world to x, and we print it,
+ we see hello world, but y, because it's an independent copy
+ stored at a different location, print y just says hello.
+ Okay, so that is a copy constructor.
+ So if you ask chat GPT, like, what's a Python variable?
+ Chat GPT is wrong, it is bought into the simplification.
  Now, if you dig in a little deeper,
  you can say, are you sure it's not a location,
- but it really a pointer to a location?
- Blah, blah, blah, blah, blah, blah, blah, blah.
+ but it really a pointer to a location,
+ blah, blah, blah, blah, blah, blah, blah, blah.
  But perhaps it's because so many textbooks like mine
  start in the beginning with that grand oversimplification.
- Now, I'm very, very sorry to have misled you back
- in Python for everybody.
- But the notion of a variable being a drawer is not wrong.
- It's just wrong in Python.
- Things like languages like C or Fortran or COBOL,
+ Now, I'm very, very sorry to have misled you
+ back in Python for everybody.
+ But the notion of a variable being a drawer is not wrong,
+ it's just wrong in Python.
+ Things like languages like C, or Fortran, or COBOL,
  they tend to have this drawer model
- where the variable x is one drawer
- and the variable y is another drawer
+ where the variable x is one drawer,
+ and the variable y is another drawer,
  and they have independent things.
  When you get around to it, when you learn C,
  and I recommend my C programming for everybody course,
  www.ccfree.com, in chapters five and six of that,
  you learn about pointers and data.
- And the difference, the key here is that Python
- was written in C.
- In the internal implementation of Python, it's C code.
- And so the notion of a pointer and the data
- that the pointer points to is completely natural in C.
- It's just been sort of hidden for us.
- We can take a look at it using the ID function
+ And the key here is that Python was written in C,
+ in the internal implementation of Python, it's C code.
+ And so the notion of a pointer,
+ and the data that the pointer points to,
+ is completely natural in C,
+ it's just been sort of hidden for us.
+ We can take a look at it using the ID function,
  and get a sense of how variables
  and assignment statements really work.
  So again, sorry to have misled you.
- I guess it's better late than never for me to talk to you
- about the real way that assignment statements work
- in Python.
+ I guess it's better late than never
+ for me to talk to you about the real way
+ that assignment statements work in Python.
  Cheers.
  (upbeat music)

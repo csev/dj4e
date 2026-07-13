@@ -1,343 +1,337 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.780
+00:00:00.000 --> 00:00:02.740
  - Hello, welcome to a simple demonstration.
 
-00:00:02.780 --> 00:00:04.980
- Today we're gonna go through one of the handouts
+00:00:02.740 --> 00:00:04.940
+ Today, we're gonna go through one of the handouts
 
-00:00:04.980 --> 00:00:09.260
- of running some of the command line SQLite commands.
+00:00:04.940 --> 00:00:09.220
+ of running some of the command line SQLite commands,
 
-00:00:09.260 --> 00:00:11.520
- And this is just a flat text file.
+00:00:09.220 --> 00:00:11.440
+ and this is just a flat text file.
 
-00:00:11.520 --> 00:00:12.940
- It's kinda easy, 'cause you can sort of
+00:00:11.440 --> 00:00:12.900
+ It's kinda easy 'cause you can sort of
 
-00:00:12.940 --> 00:00:15.460
+00:00:12.900 --> 00:00:15.380
  cut and paste everything, so it's not too bad.
 
-00:00:15.460 --> 00:00:19.020
+00:00:15.380 --> 00:00:18.940
  So here we are in my Python Anywhere.
 
-00:00:19.020 --> 00:00:21.600
- I'm gonna start a bash console.
+00:00:18.940 --> 00:00:21.540
+ I'm gonna start a bash console,
 
-00:00:21.600 --> 00:00:23.940
- And I'm gonna do this whole thing.
+00:00:21.540 --> 00:00:23.860
+ and I'm gonna do this whole thing.
 
-00:00:23.940 --> 00:00:26.980
- I've got my Django stuff here.
+00:00:23.860 --> 00:00:26.900
+ I've got my django stuff here.
 
-00:00:26.980 --> 00:00:28.420
+00:00:26.900 --> 00:00:28.340
  Hang on, let me line this up a little better
 
-00:00:28.420 --> 00:00:29.500
- so you can see it.
+00:00:28.340 --> 00:00:30.640
+ so you can see it, there we go.
 
-00:00:29.500 --> 00:00:30.580
- There we go.
+00:00:30.640 --> 00:00:32.340
+ So here's my django.
 
-00:00:30.580 --> 00:00:32.300
- So here's my Django.
-
-00:00:32.300 --> 00:00:34.460
+00:00:32.340 --> 00:00:34.500
  I'm in my home directory.
 
-00:00:34.460 --> 00:00:40.300
+00:00:34.500 --> 00:00:40.340
  I'm gonna remove, 'cause I did this before, zip SQLite.
 
-00:00:40.300 --> 00:00:42.460
+00:00:40.340 --> 00:00:42.500
  And so this is, we're just gonna do this on a silly file.
 
-00:00:42.460 --> 00:00:44.220
- I'm not gonna go into any of my Django projects
+00:00:42.500 --> 00:00:44.260
+ I'm not gonna go into any of my django projects
 
-00:00:44.220 --> 00:00:45.060
+00:00:44.260 --> 00:00:45.100
  or anything like that.
 
-00:00:45.060 --> 00:00:48.500
+00:00:45.100 --> 00:00:48.520
  I'm just gonna make a file to use SQLite.
 
-00:00:48.500 --> 00:00:51.220
+00:00:48.520 --> 00:00:51.260
  So the command to start SQLite
 
-00:00:51.220 --> 00:00:55.220
+00:00:51.260 --> 00:00:55.280
  is a command line SQLite3, if it's installed on your system.
 
-00:00:55.220 --> 00:00:57.100
+00:00:55.280 --> 00:00:57.140
  And this is gonna do all the database storage
 
-00:00:57.100 --> 00:00:59.680
+00:00:57.140 --> 00:00:59.640
  in a file named zip.sqlite3.
 
-00:00:59.680 --> 00:01:02.700
+00:00:59.640 --> 00:01:02.660
  So now we're in the command line.
 
-00:01:02.700 --> 00:01:05.340
+00:01:02.660 --> 00:01:05.360
  And you can look up, I've got some documentation
 
-00:01:05.340 --> 00:01:07.720
+00:01:05.360 --> 00:01:07.700
  on the different things.
 
-00:01:07.720 --> 00:01:11.220
+00:01:07.700 --> 00:01:11.220
  There are several kinds of command line.
 
-00:01:11.220 --> 00:01:13.880
+00:01:11.220 --> 00:01:13.860
  One is to show the output in column form
 
-00:01:13.880 --> 00:01:16.520
+00:01:13.860 --> 00:01:16.500
  for the select statements, so we'll turn that on.
 
-00:01:16.520 --> 00:01:18.380
+00:01:16.500 --> 00:01:18.340
  Now this is our first SQL statement.
 
-00:01:18.380 --> 00:01:20.500
+00:01:18.340 --> 00:01:20.480
  We're gonna create a table with users.
 
-00:01:20.500 --> 00:01:24.180
+00:01:20.480 --> 00:01:24.140
  This ID long string, that assigns a unique
 
-00:01:24.180 --> 00:01:26.880
+00:01:24.140 --> 00:01:26.860
  increasing number to every row that we put in.
 
-00:01:26.880 --> 00:01:31.040
+00:01:26.860 --> 00:01:31.020
  And the name and email are just columns that have text.
 
-00:01:31.040 --> 00:01:33.440
+00:01:31.020 --> 00:01:33.360
  Okay.
 
-00:01:33.440 --> 00:01:40.420
- And so, if we are successful, this is a continuation
+00:01:33.360 --> 00:01:40.340
+ And so if we are successful, this is a continuation
 
-00:01:40.420 --> 00:01:44.180
+00:01:40.340 --> 00:01:44.140
  because we didn't put the semicolon, so it keeps on going.
 
-00:01:44.180 --> 00:01:47.380
+00:01:44.140 --> 00:01:47.300
  And so now we can ask.tables.
 
-00:01:47.380 --> 00:01:51.060
+00:01:47.300 --> 00:01:50.980
  And we see that we have a single table.
 
-00:01:51.060 --> 00:01:53.100
+00:01:50.980 --> 00:01:53.020
  We can ask what the shape of that,
 
-00:01:53.100 --> 00:01:55.100
+00:01:53.020 --> 00:01:55.020
  which is just gonna echo.
 
-00:01:57.700 --> 00:02:00.620
+00:01:57.860 --> 00:02:00.780
  And we can ask what shape that is.
 
-00:02:00.620 --> 00:02:05.660
- Now let's do some simple.
+00:02:00.780 --> 00:02:07.460
+ Now let's do some simple, so the insert statement in SQL,
 
-00:02:05.660 --> 00:02:08.880
- So the insert statement in SQL, basically insert into,
+00:02:07.460 --> 00:02:10.120
+ basically insert into, it's a keyword.
 
-00:02:08.880 --> 00:02:10.200
- it's a keyword.
-
-00:02:10.200 --> 00:02:13.880
+00:02:10.120 --> 00:02:13.820
  Users is the name of a table in our database.
 
-00:02:13.880 --> 00:02:16.600
- Name email are the column names, and then values,
+00:02:13.820 --> 00:02:16.540
+ Name, email are the column names, and then values,
 
-00:02:16.600 --> 00:02:18.640
- there's a one-to-one correspondence between
+00:02:16.540 --> 00:02:18.140
+ there's a one-to-one correspondence
 
-00:02:18.640 --> 00:02:22.560
- like chuck and name, and csev@umich.edu and email.
+00:02:18.140 --> 00:02:22.460
+ between like chuck and name, and csev@umich.edu and email.
 
-00:02:22.560 --> 00:02:26.360
+00:02:22.460 --> 00:02:26.260
  And so I have a number of different insert statements.
 
-00:02:26.360 --> 00:02:30.040
- SQL statements in this command line end with a semicolon.
+00:02:26.260 --> 00:02:30.100
+ The SQL statements in this command line end with a semicolon.
 
-00:02:30.040 --> 00:02:31.960
+00:02:30.100 --> 00:02:32.100
  And so that added a row.
 
-00:02:31.960 --> 00:02:35.200
- We can take a look with this select statement
+00:02:32.100 --> 00:02:35.220
+ We can take a look with this SELECT statement
 
-00:02:35.200 --> 00:02:37.400
+00:02:35.220 --> 00:02:37.460
  at what we've got.
 
-00:02:37.400 --> 00:02:39.820
+00:02:37.460 --> 00:02:39.860
  So we see one row, it assigned it a key.
 
-00:02:39.820 --> 00:02:43.360
+00:02:39.860 --> 00:02:43.420
  That's the ID, that's the name, and that's the email.
 
-00:02:43.360 --> 00:02:47.120
+00:02:43.420 --> 00:02:47.180
  Now I can paste a bunch of these things in at the same time.
 
-00:02:47.120 --> 00:02:49.200
+00:02:47.180 --> 00:02:49.260
  Save us a little bit of time.
 
-00:02:49.200 --> 00:02:51.040
+00:02:49.260 --> 00:02:51.100
  Zoom, zoom, hit enter.
 
-00:02:51.040 --> 00:02:55.200
- And I can up arrow to go back to the select star from users.
+00:02:51.100 --> 00:02:55.220
+ And I can up arrow to go back to the SELECT star from users.
 
-00:02:55.200 --> 00:02:59.080
+00:02:55.220 --> 00:02:59.100
  And now we see these are the folks that were inserted.
 
-00:02:59.080 --> 00:03:02.120
+00:02:59.100 --> 00:03:02.100
  We got six rows.
 
-00:03:02.120 --> 00:03:05.360
- And then the delete statement, delete from.
+00:03:02.100 --> 00:03:05.340
+ And then the DELETE statement, DELETE FROM.
 
-00:03:05.360 --> 00:03:08.320
+00:03:05.340 --> 00:03:08.340
  So SQL sometimes has what seems like redundant things,
 
-00:03:08.320 --> 00:03:12.160
+00:03:08.340 --> 00:03:12.140
  and it's a bit more of a wordy language.
 
-00:03:12.160 --> 00:03:14.960
- It could say delete users, but it's like delete from users
+00:03:12.140 --> 00:03:14.940
+ It could say DELETE USERS, but it's like DELETE FROM USERS
 
-00:03:14.960 --> 00:03:16.840
+00:03:14.940 --> 00:03:16.820
  rolls better off the tongue.
 
-00:03:16.840 --> 00:03:20.360
- So this is a table, and then where is a part,
+00:03:16.820 --> 00:03:20.340
+ So this is a table, and then WHERE is a part.
 
-00:03:20.360 --> 00:03:23.480
- you'll see where clauses on all kinds of SQL statements.
+00:03:20.340 --> 00:03:23.500
+ You'll see WHERE clauses on all kinds of SQL statements.
 
-00:03:23.480 --> 00:03:25.080
- And if you said delete from users,
+00:03:23.500 --> 00:03:25.060
+ And if you said DELETE FROM USERS,
 
-00:03:25.080 --> 00:03:26.720
+00:03:25.060 --> 00:03:26.700
  it would actually delete all the records.
 
-00:03:26.720 --> 00:03:29.240
+00:03:26.700 --> 00:03:29.220
  Maybe I'll do that right down here at the bottom.
 
-00:03:29.240 --> 00:03:31.760
- But I'm gonna say I wanna go in and delete the record
+00:03:29.220 --> 00:03:31.740
+ But I'm gonna say, I wanna go in and DELETE the record
 
-00:03:31.760 --> 00:03:32.720
+00:03:31.740 --> 00:03:32.740
  where this is true.
 
-00:03:32.720 --> 00:03:34.440
+00:03:32.740 --> 00:03:34.420
  Now there might be more than one record.
 
-00:03:34.440 --> 00:03:39.000
+00:03:34.420 --> 00:03:38.980
  This currently happens to be only one record that has this.
 
-00:03:39.000 --> 00:03:40.720
+00:03:38.980 --> 00:03:40.420
  Better grab that semicolon.
 
-00:03:40.720 --> 00:03:42.400
+00:03:40.420 --> 00:03:42.380
  And so it's gonna change that.
 
-00:03:42.400 --> 00:03:44.200
- So I'll delete one record.
+00:03:42.380 --> 00:03:44.180
+ So I'll DELETE one record.
 
-00:03:44.200 --> 00:03:50.200
- So that Ted is gone, three, four.
+00:03:44.180 --> 00:03:50.180
+ So that TED is gone, three, four.
 
-00:03:50.200 --> 00:03:52.220
- Oh wait, no, we put Ted in twice,
+00:03:50.180 --> 00:03:52.220
+ Oh wait, no, we put TED in twice,
 
-00:03:52.220 --> 00:03:54.080
+00:03:52.220 --> 00:03:54.100
  and it got rid of both of them.
 
-00:03:54.080 --> 00:03:55.880
- Wonder if there was a mistake there.
+00:03:54.100 --> 00:03:56.780
+ I wonder if there was a mistake there.
 
-00:03:55.880 --> 00:03:58.720
+00:03:56.780 --> 00:03:58.700
  Yeah, I probably need to edit this file.
 
-00:03:58.720 --> 00:04:00.120
- Maybe when you look at this file, it won't be there.
+00:03:58.700 --> 00:04:00.100
+ Maybe when you look at this file it won't be there.
 
-00:04:00.120 --> 00:04:01.920
+00:04:00.100 --> 00:04:01.940
  Oh, that's not, maybe I'll leave it there.
 
-00:04:01.920 --> 00:04:02.960
+00:04:01.940 --> 00:04:02.980
  That's pretty cool.
 
-00:04:02.960 --> 00:04:04.960
+00:04:02.980 --> 00:04:05.260
  Now here's another thing.
 
-00:04:04.960 --> 00:04:08.720
- So this deleted to users, if I run it again,
+00:04:05.260 --> 00:04:08.700
+ So this DELETE TO USERS, if I run it again,
 
-00:04:08.720 --> 00:04:10.220
+00:04:08.700 --> 00:04:10.220
  it's not really an error.
 
-00:04:10.220 --> 00:04:13.600
+00:04:10.220 --> 00:04:13.620
  If I see there's nothing deleted,
 
-00:04:13.600 --> 00:04:16.520
- because I expressed a thing, a thing about SQL,
+00:04:13.620 --> 00:04:16.540
+ because I expressed a thing, a thing about SQL.
 
-00:04:16.520 --> 00:04:19.560
- when I said delete all the records from users
+00:04:16.540 --> 00:04:19.540
+ When I said DELETE ALL THE RECORDS FROM USERS
 
-00:04:19.560 --> 00:04:23.320
+00:04:19.540 --> 00:04:23.340
  where this is true, and there were none for which it was true,
 
-00:04:23.320 --> 00:04:24.240
+00:04:23.340 --> 00:04:24.260
  that's just fine.
 
-00:04:24.240 --> 00:04:26.360
+00:04:24.260 --> 00:04:26.360
  I could say, you know,
 
-00:04:26.360 --> 00:04:32.880
- or email equals that at blat dot that.
+00:04:26.360 --> 00:04:32.900
+ or email equals that @blatt.that.
 
-00:04:32.880 --> 00:04:34.720
+00:04:32.900 --> 00:04:34.700
  You'd think that might be an error,
 
-00:04:34.720 --> 00:04:36.940
+00:04:34.700 --> 00:04:36.940
  but it just, there were no, this never was true.
 
 00:04:36.940 --> 00:04:38.460
  This where was never true.
 
-00:04:38.460 --> 00:04:40.280
- So it looked through all the records that were in the table,
+00:04:38.460 --> 00:04:40.300
+ So it looked through all the records that were in the table
 
-00:04:40.280 --> 00:04:42.520
+00:04:40.300 --> 00:04:42.500
  and it was never true, so nothing got deleted.
 
-00:04:42.520 --> 00:04:44.600
- So that's the delete statement.
+00:04:42.500 --> 00:04:44.600
+ So that's the DELETE statement.
 
-00:04:44.600 --> 00:04:48.600
- Now the upper lower case stuff, yeah, I'm just kinda,
+00:04:44.600 --> 00:04:46.580
+ Now the upper lower case stuff,
 
-00:04:48.600 --> 00:04:49.700
- I like the upper case.
+00:04:46.580 --> 00:04:49.700
+ yeah, I'm just kinda, I like the upper case.
 
-00:04:49.700 --> 00:04:51.840
+00:04:49.700 --> 00:04:51.860
  I like to put all my keywords in upper case,
 
-00:04:51.840 --> 00:04:55.000
+00:04:51.860 --> 00:04:54.980
  and then tables, sometimes I don't do upper lower,
 
-00:04:55.000 --> 00:04:57.720
+00:04:54.980 --> 00:04:57.700
  but I tend to use the keywords.
 
-00:04:57.720 --> 00:05:00.920
- So update says to update the table users.
+00:04:57.700 --> 00:05:00.900
+ So UPDATE says to update the table users.
 
-00:05:00.920 --> 00:05:03.920
- Set is we're gonna make a change in there.
+00:05:00.900 --> 00:05:03.900
+ SET is we're gonna make a change in there.
 
-00:05:03.920 --> 00:05:07.920
- Column name equals new value, and a where clause.
+00:05:03.900 --> 00:05:07.900
+ Column name equals new value and a WHERE clause.
 
-00:05:07.920 --> 00:05:10.200
- And again, if this where clause wasn't there,
+00:05:07.900 --> 00:05:10.200
+ And again, if this WHERE clause wasn't there,
 
 00:05:10.200 --> 00:05:12.020
  it would apply to all of them.
@@ -345,43 +339,43 @@ WEBVTT
 00:05:12.020 --> 00:05:17.020
  So this is gonna only set the name to Charles in one place.
 
-00:05:17.020 --> 00:05:20.960
- And now, if I do a select,
+00:05:17.420 --> 00:05:22.420
+ And now, if I do a SELECT, you see that this record here
 
-00:05:20.960 --> 00:05:23.520
- you see that this record here got changed there.
+00:05:22.420 --> 00:05:23.660
+ got changed there.
 
-00:05:23.520 --> 00:05:25.720
- So you can reach in with a where clause
+00:05:23.660 --> 00:05:25.720
+ So you can reach in with a WHERE clause
 
 00:05:25.720 --> 00:05:29.060
- and update a single comment with an update statement.
+ and update a single comment with an UPDATE statement.
 
-00:05:29.060 --> 00:05:33.120
- You can put a where clause on a select,
+00:05:29.060 --> 00:05:33.140
+ You can put a WHERE clause on a SELECT,
 
-00:05:33.120 --> 00:05:35.200
- so you only see a single row.
+00:05:33.140 --> 00:05:37.160
+ so you only see a single row, choop.
 
-00:05:35.200 --> 00:05:38.480
+00:05:37.160 --> 00:05:38.500
  So you only see that row.
 
-00:05:38.480 --> 00:05:44.100
- You can add to a select an order by a column,
+00:05:38.500 --> 00:05:44.100
+ You can add to a SELECT an ORDER BY a column,
 
 00:05:44.100 --> 00:05:47.060
- and that column could be in ascending order.
+ and that column could be in ascending order,
 
-00:05:47.060 --> 00:05:49.920
- Ascending, doot, doot, doot, doot, doot, going up.
+00:05:47.060 --> 00:05:49.900
+ ascending, doot, doot, doot, doot, doot, going up.
 
-00:05:49.920 --> 00:05:51.880
- And then do the same thing.
+00:05:49.900 --> 00:05:51.880
+ And then do the same thing,
 
-00:05:51.880 --> 00:05:55.080
- Select star from users, order by name, descending.
+00:05:51.880 --> 00:05:55.100
+ SELECT * FROM USERS ORDER BY NAME, descending.
 
-00:05:55.080 --> 00:05:59.060
+00:05:55.100 --> 00:05:59.060
  So that's gonna go descending, doot, doot, doot, doot, doot.
 
 00:05:59.060 --> 00:06:02.040
@@ -390,159 +384,168 @@ WEBVTT
 00:06:02.040 --> 00:06:02.880
  So that's it.
 
-00:06:02.880 --> 00:06:04.680
- Now, we can drop table users.
+00:06:02.880 --> 00:06:04.700
+ Now, we can drop table users,
 
-00:06:04.680 --> 00:06:07.020
- And so this is basically the CRUD.
+00:06:04.700 --> 00:06:07.020
+ and so this is basically the CRUD.
 
 00:06:07.020 --> 00:06:11.640
- Insert, CRUD is create, read, update, delete.
+ INSERT, CRUD is CREATE, READ, UPDATE, DELETE.
 
-00:06:11.640 --> 00:06:15.640
- Here it would be insert, select, update, delete.
+00:06:11.640 --> 00:06:15.660
+ Here it would be INSERT, SELECT, UPDATE, DELETE.
 
-00:06:15.640 --> 00:06:18.320
+00:06:15.660 --> 00:06:18.300
  But CRUD is sort of kind of the classic concept.
 
-00:06:18.320 --> 00:06:22.480
+00:06:18.300 --> 00:06:22.460
  So we can drop this table users, but how about I do this?
 
-00:06:22.480 --> 00:06:25.960
- Let me show you this, what happens if I say
+00:06:22.460 --> 00:06:25.940
+ Let me show you this, what happens if I say,
 
-00:06:25.960 --> 00:06:28.400
- update user set name equals Charles.
+00:06:25.940 --> 00:06:28.420
+ UPDATE USERS, SET NAME = CHARLES.
 
-00:06:28.400 --> 00:06:30.800
- Implied in each one of these SQL statements
+00:06:28.420 --> 00:06:31.980
+ Implied in each one of these SQL statements is,
 
-00:06:30.800 --> 00:06:33.320
- is it applies to all of them.
+00:06:31.980 --> 00:06:33.300
+ it applies to all of them.
 
-00:06:33.320 --> 00:06:35.520
- So we got all these records.
+00:06:33.300 --> 00:06:35.540
+ So we got all these records,
 
-00:06:35.520 --> 00:06:39.860
- Update user set name equals Charles without a where clause.
+00:06:35.540 --> 00:06:39.860
+ UPDATE USERS, SET NAME = CHARLES, without a WHERE clause.
 
-00:06:39.860 --> 00:06:42.520
- And then I say select star from users.
+00:06:39.860 --> 00:06:42.500
+ And then I say, SELECT * FROM USERS.
 
-00:06:42.520 --> 00:06:45.240
- And you think, oh, that, it did exactly what we told us.
+00:06:42.500 --> 00:06:45.220
+ Now you think, oh, that, it did exactly what we told us.
 
-00:06:45.240 --> 00:06:48.300
- We didn't say where clause, right?
+00:06:45.220 --> 00:06:48.300
+ We didn't say WHERE clause, right?
 
-00:06:48.300 --> 00:06:51.000
- You know, that means all the records are affected.
+00:06:48.300 --> 00:06:51.020
+ And that means all the records are affected.
 
-00:06:51.000 --> 00:06:55.760
- So this update users sort of implies all of the records.
+00:06:51.020 --> 00:06:55.760
+ So this UPDATE USERS sort of implies all of the records.
 
 00:06:55.760 --> 00:06:59.560
- Now, if we say delete from users
+ Now, if we say DELETE FROM USERS,
 
-00:06:59.560 --> 00:07:01.720
- and then don't put a where clause there,
+00:06:59.560 --> 00:07:01.700
+ and then don't put a WHERE clause there,
 
-00:07:01.720 --> 00:07:03.920
+00:07:01.700 --> 00:07:03.940
  you're gonna see what happens.
 
-00:07:03.920 --> 00:07:06.000
- Delete from users, no where clause.
+00:07:03.940 --> 00:07:06.020
+ DELETE FROM USERS, no WHERE clause,
 
-00:07:06.000 --> 00:07:08.880
- Implied all of the rows.
+00:07:06.020 --> 00:07:08.880
+ implied all of the rows.
 
 00:07:08.880 --> 00:07:11.820
- And now I do a select and there is nothing.
+ And now I do a SELECT, and there is nothing.
 
-00:07:11.820 --> 00:07:15.780
- So that's why these where clauses are so important
+00:07:12.820 --> 00:07:15.780
+ So that's why these WHERE clauses are so important
 
-00:07:15.780 --> 00:07:18.960
- on like updates and deletes just so that we know
+00:07:15.780 --> 00:07:18.100
+ on updates and deletes,
 
-00:07:18.960 --> 00:07:20.760
- what rows they're supposed to apply to
+00:07:18.100 --> 00:07:20.740
+ just so that we know what rows they're supposed to apply to,
 
-00:07:20.760 --> 00:07:23.460
- 'cause by default they apply to all rows.
+00:07:20.740 --> 00:07:23.460
+ 'cause by default, they apply to all rows.
 
-00:07:23.460 --> 00:07:25.160
- That's why you don't see loops in SQL
+00:07:23.460 --> 00:07:25.180
+ That's why you don't see loops in SQL,
 
-00:07:25.160 --> 00:07:28.780
- because every statement like the update,
+00:07:25.180 --> 00:07:28.780
+ because every statement, like the UPDATE,
 
-00:07:28.780 --> 00:07:31.980
- the select and the delete, they're kind of loops
+00:07:28.780 --> 00:07:31.060
+ the SELECT, and the DELETE,
 
-00:07:31.980 --> 00:07:34.180
- automatically and you have to sort of shut them down
+00:07:31.060 --> 00:07:32.700
+ they're kind of loops automatically,
 
-00:07:34.180 --> 00:07:37.680
- with an if statement as it were, which is that where clause.
+00:07:32.700 --> 00:07:34.180
+ and you have to sort of shut them down
 
-00:07:37.680 --> 00:07:40.000
+00:07:34.180 --> 00:07:37.580
+ with an IF statement, as it were, which is that WHERE clause.
+
+00:07:37.580 --> 00:07:39.980
  And the last thing we can get is we can drop,
 
-00:07:40.000 --> 00:07:41.040
- we can just get rid of the table.
+00:07:39.980 --> 00:07:41.020
+ we can just get rid of the table,
 
-00:07:41.040 --> 00:07:43.040
- That's another SQL statement.
+00:07:41.020 --> 00:07:43.060
+ so that's another SQL statement.
 
-00:07:43.040 --> 00:07:45.760
- If we look at .tables, we see we have one
+00:07:43.060 --> 00:07:45.780
+ If we look at .tables, we see we have one,
 
-00:07:45.760 --> 00:07:49.080
- and then we say drop table users, put a semicolon there
+00:07:45.780 --> 00:07:47.580
+ and then we say DROP TABLE USERS,
 
-00:07:49.080 --> 00:07:53.940
- and then say .tables and there are no tables left.
+00:07:47.580 --> 00:07:50.580
+ put a semicolon there, and then say .tables,
+
+00:07:50.580 --> 00:07:53.940
+ and there are no tables left.
 
 00:07:53.940 --> 00:07:55.160
  And then I say .quit.
 
-00:07:55.160 --> 00:08:00.000
- And now I've got this file called zip.sqlite3
+00:07:55.160 --> 00:08:00.020
+ And now I've got this file called zip.sqlite3,
 
-00:08:00.000 --> 00:08:02.760
+00:08:00.020 --> 00:08:02.740
  and I can get rid of it without hurting,
 
-00:08:02.760 --> 00:08:05.480
- this is just, this isn't a database that's running
+00:08:02.740 --> 00:08:04.980
+ this is just, this isn't a database
 
-00:08:05.480 --> 00:08:08.560
- with a server or anything makes any difference.
+00:08:04.980 --> 00:08:06.260
+ that's running with a server,
 
-00:08:08.560 --> 00:08:10.980
+00:08:06.260 --> 00:08:08.580
+ or anything makes any difference.
+
+00:08:08.580 --> 00:08:10.980
  So I hope this is useful to you.
 
-00:08:10.980 --> 00:08:14.120
+00:08:10.980 --> 00:08:14.100
  This is a great way for you to sort of look around.
 
-00:08:14.120 --> 00:08:16.040
+00:08:14.100 --> 00:08:16.040
  We look for tables, we do selects,
 
 00:08:16.040 --> 00:08:17.560
  we figure out what's going on.
 
-00:08:17.560 --> 00:08:19.520
- We can sometimes debug our code by looking
+00:08:17.560 --> 00:08:19.020
+ We can sometimes debug our code
 
-00:08:19.520 --> 00:08:22.860
- at our databases at a very low level.
+00:08:19.020 --> 00:08:22.860
+ by looking at our databases at a very low level.
 
-00:08:22.860 --> 00:08:24.520
+00:08:22.860 --> 00:08:24.500
  So I hope this has been helpful to you.
 
-00:08:24.520 --> 00:08:25.360
+00:08:24.500 --> 00:08:25.340
  Cheers.
 
-00:08:25.360 --> 00:08:27.940
+00:08:25.340 --> 00:08:27.920
  (upbeat music)
 

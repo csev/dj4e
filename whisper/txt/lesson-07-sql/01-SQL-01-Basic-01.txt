@@ -1,9 +1,9 @@
- - Hello and welcome to our lecture on SQL.
+ - Hello, and welcome to our lecture on SQL.
  So this is a very, very short introduction to SQL.
- I love SQL, I was talking to a student the other day
- and they were like, "SQL's my favorite language."
- And I said, "I have to agree that SQL
- "is my favorite language, too."
+ I love SQL, I was talking to a student the other day,
+ and they were like, SQL's my favorite language.
+ And I said, I have to agree
+ that SQL is my favorite language, too.
  Because SQL is so beautiful,
  you don't even need to write loops in SQL.
  We write loops in languages like Python
@@ -18,133 +18,128 @@
  And so, SQL is a great way to organize data,
  but a lot of work has gone into keeping that data organized
  and making it simple.
- So there's a, it's like there's this abstraction
+ So there's a, it's like there's this abstraction,
  and it's a lot of work to make that abstraction work.
  So I want to start out with a little bit of history,
  sort of before databases.
- And you might think, "Well, before databases,
- "how could that be?"
- Well, you know, it's in the old days
+ And you might think, well, before databases,
+ how could that be?
+ Well, you know, it's in the old days,
  and if you watch old computer, movies featuring computers,
  you see pictures that have these,
  you see pictures that have these tape machines
- in the background and they're spinning.
- And the spinning of the tape machine is the sort of
- physical manifestation of computation.
+ in the background, and they're spinning.
+ And the spinning of the tape machine is the,
+ sort of physical manifestation of computation.
  And it had to do with the fact that in the old days,
  computers did not have enough data
  to store all of their data in the memory or on a disk.
  We didn't even have disks in the early days.
  In the early days, tapes were what we had.
- And we used kind of a variation of audio tapes.
- And instead of on audio, they contained data, zeros and ones.
+ And we used kind of a variation of audio tapes,
+ and instead of on audio, they contained data, zeros and ones.
  And so the way things would work in the old days
  so that you could have a database, as it were,
  was the database was all of your data recorded onto a tape.
- And the key thing to a tape is that it was a physical thing
+ And the key thing to a tape is that it was a physical thing,
  and so you had to rewind it and go forwards and backwards.
  And most of you probably never even have seen a cassette tape
- or a track tape or a reel-to-reel tape.
- But it's a physical, long, thousand foot piece of plastic
+ or a track tape or a reel-to-reel tape,
+ but it's a physical, long, thousand-foot piece of plastic,
  and to get the data at the end,
  you had to spin it until you got there.
  And so it wasn't what we call random access,
  which means that in a random access,
  whether it's memory or the disk drive,
  random access allows you to get to any place
- roughly in a fixed amount of time.
- Whereas if you're close to something on a tape,
+ roughly in a fixed amount of time,
+ whereas if you're close to something on a tape,
  you can get to it very quickly.
  If you're far away, you gotta go, "Boo!"
  and then wait and then come back.
  So this led to a pattern where every night,
  we would take the tape from yesterday's account balances.
- Let's just say we're a bank
+ Let's just say we're a bank,
  and we're people coming up the window,
- putting in money, taking out money.
- And then what we would do
+ putting in money, taking out money,
+ and then what we would do
  is we would put all of the transactions,
  sometimes on physically punched cards,
  and then we would sort them, right?
- And let's just say we have 26 accounts
- and you know, person C shows up with a little,
- you know, adds $10 and person F shows up
- and subtracts $10 and et cetera, et cetera.
+ And let's just say we have 26 accounts,
+ and person C shows up with a little,
+ adds $10, and person F shows up and subtracts $10,
+ and et cetera, et cetera.
  And then what we would have at night,
- we would get these all sorted
+ we would get these all sorted,
  and there were physical machines
  that would actually sort these in the earliest of days.
  And then we would have the old balance A, B, C, D, E, F
  sitting on a tape in order, sorted in order.
  And we would start a process after the bank closed
- where we would read the first record off the tape, like A.
- We would read the first transaction off the cards
+ where we would read the first record off the tape, like A,
+ we would read the first transaction off the cards,
  and we would compare them.
  And if the tape was earlier than the transaction or lower,
- we would just copy it.
- So we'd copy it.
- And then so the B would compare to the C
- and B would get copied and then C would come across.
- And then we'd realize that the C data,
+ we would just copy it, so we'd copy it.
+ And then so the B would compare to the C,
+ and B would get copied, and then C would come across,
+ and then we'd realize that the C data,
  we would have to update the C data
- and add $10 to the balance.
- And then we'd write that.
+ and add $10 to the balance, and then we'd write that.
  And you'll notice as we're writing this,
  we are sorting, it's in sorted order.
- Then we would copy D, we have nothing for D
+ Then we would copy D, we have nothing for D,
  and it would just get copied.
- We copy E, we'd have nothing for E
+ We would copy E, we'd have nothing for E,
  and it would just get copied.
  And then we would have, oops,
  forgot to put F on this picture.
- We would have F and we'd subtract 10 and we would copy it.
+ We would have F, and we'd subtract 10,
+ and we would copy it.
  And then we would be done.
  We would be done with the kind of stuff
  that we had to do that night.
  And then what we would do is we'd have this new updated data
- that was all sorted in account order.
- And then the next night we would move the tape,
- the new would be the old tape
+ that was all sorted in account order,
+ and then the next night we would move the tape,
+ the new would be the old tape,
  and we would do it over and over and over again.
  And sometimes these processes would run for four or five
- hours 'cause the tapes were long
+ hours 'cause the tapes were long,
  or it got to be multiple tapes.
  And so a lot of computing was done sort of
  after the banks closed at five o'clock.
- Then a group of people would come in.
- We called them operators and they would mount these tapes
- and run these jobs and just sit there
+ Then a group of people would come in,
+ we called them operators, and they would mount these tapes
+ and run these jobs, and just sit there
  and watch these tapes spin as the data was being copied
  from one to the other.
  And so, yeah, that's pretty cool.
  Thankfully, that's not how we do it anymore.
  The thing that made it so we don't have to do this
  is the invention of disk drives.
- And disk drives are magnetic media just like tape drives,
- but the difference was is they were
- on these spinning platters.
- And so what you could do is the data was
- in series of concentric circles on these platters
+ And disk drives are magnetic media, just like tape drives,
+ but the difference was is they were on these spinning platters.
+ And so what you could do is the data was in series
+ of concentric circles on these platters,
  and then you had a head that could move in and out rapidly.
  And so the speed at which you could access data
  was a combination with the speed at which the head
- could move to a certain cylinder
+ could move to a certain cylinder,
  and you had to wait until the data came around.
- And so sometimes you would have a, you know,
- 5,400 revolution per minute.
- So that means that 5,400, 5,000 times per minute,
- which is 100 times a second.
- Can I get there?
+ And so sometimes you would have a 5,400 revolution
+ per minute, so that means that 5,400, 5,000 times per minute,
+ which is 100 times a second, can I get there?
  Yeah, 100 times a second.
  Yeah, 100 times a second.
  100 times a second, you'd wait a hundredth of a second
- for it.
- And so this is way better than waiting
+ for it, and so this is way better than waiting
  like a minute and a half, two minutes,
  even 10 minutes to spin up a tape.
- And so the problem was is then we're like, okay,
- now that we have this wonderful technology
- and we can store all of our nightly data on a disk
+ And so the problem was is then we're like,
+ okay, now that we have this wonderful technology
+ and we can store all of our nightly data on a disk,
  'cause it's enough space, how do we build technology
  to make really good use of this?
  And a lot of research, a lot of computer science,
@@ -152,8 +147,8 @@
  how to best use this new disk thing.
  I remember talking to people like,
  'cause we used to use floppy disk works
- where they were much slower so they didn't go 5,400.
- So it might take a quarter of a second to move the head
+ where they were much slower, so they didn't go 5,400,
+ so it might take a quarter of a second to move the head
  and it might take almost a second to spin it around,
  which was still way faster than 10 minutes, right?
  So it's like about a second to get to anywhere
@@ -161,117 +156,131 @@
  And we would build approaches to storing data
  and we would start with this physical thing
  and you would hear it grunting and moving
- and grunting and moving.
- And then you would come up with a better way
- to store the data and then it'd grunt and move less
+ and grunting and moving, and then you would come up
+ with a better way to store the data,
+ and then it'd grunt and move less
  and your thing would go faster.
  So this was like a research thing.
  It was like, it was good old days
  when computers actually made noises
  and you could, it could change your code inside computers.
- And the first thing of course we did was just took
+ And the first thing, of course, we did was just took
  those sequential master updates and put them on,
  but that turned out to not be the best.
- And that was sort of the researches,
+ And that was sort of the research is,
  not just how can we do what we used to do on data
- that couldn't be random accessed, randomly accessed,
- and instead say let's take advantage of it.
+ that couldn't be randomly accessed
+ and instead say, let's take advantage of it.
  And so a lot of research, a lot of vendors,
  there was a lot of very expensive software
- that people bought to say, look, you know,
- you're a bank and you really and truly wanna,
- you know, know how this works.
+ that people bought to say, look, you're a bank
+ and you really and truly wanna know how this works.
  And so what happened was is in the 60s and 70s,
  the computer vendors were fighting
- and they would come up with a technique
- which, you know, compared to our current database technique
- was just trivially simple.
- But it took a lot of work back then.
- And they would fight with all the other computer vendors
- and they would say our index sequential mechanism is better
- and vendor two would say our network approach is better.
+ and they would come up with a technique,
+ which compared to our current database technique
+ was just trivially simple, but it took a lot of work
+ back then and they would fight
+ with all the other computer vendors.
+ And they would say, our index sequential mechanism
+ is better and vendor two would say,
+ our network approach is better.
  And then they would sit and they would sort of struggle
  with each other and then the poor customers would be like,
  I don't even know what you're talking about.
  And so then they would just buy the stuff from the vendor
  who took them out to golf or the best lunch
  or took them on a trip to Florida.
- And then they would just, you know, adapt to whatever that
- vendor did.
- And so it was really kind of scary because we were moving
- into a place where you were locked into a vendor.
+ And then they would just adapt to whatever that vendor did.
+ And so it was really kind of scary
+ because we were moving into a place
+ where you were locked into a vendor.
  And then once you're locked into a vendor,
  you're in bad shape.
  And so the US government in particular had a ton of money
- and were buying tons of computers, both, you know,
- for normal data processing and for strategic things like,
- you know, military stuff.
- And so they were buying tons of computers and they knew
- that these vendors, if they got to the point
- where they locked them into a single vendor,
+ and were buying tons of computers,
+ both for normal data processing
+ and for strategic things like military stuff.
+ And so they were buying tons of computers
+ and they knew that these vendors,
+ if they got to the point where they locked them
+ into a single vendor,
  that the vendor would just be able to dictate the price.
  And so the federal government through NIST,
  the National Institute of Standards and Technology,
  decided that databases needed a standard.
  They needed a way so that we could talk to any database
  from any vendor using the same technique
- and not have to, you know, do one vendor.
+ and not have to do one vendor.
  And then if you switched vendors,
  you had to completely rewrite your software.
- And so they didn't, the NIST didn't specify how this
- abstraction, the standard was going to work.
+ And so they didn't,
+ the NIST didn't specify how this abstraction,
+ the standard was going to work.
  They just brought the vendors in and said,
- we're gonna stop using your software if you don't come up
- with a standard.
- And it was a perfect time because even though the vendors
- thought they had everything was perfect and wonderful,
+ we're gonna stop using your software
+ if you don't come up with a standard.
+ And it was a perfect time
+ because even though the vendors thought they had,
+ everything was perfect and wonderful,
  there was a lot of upside.
- And in particular, there was this concept of relational
- databases, which back then was more of a mathematical theory
- of a better way to store and retrieve data than it was
- a practically implemented available technology.
- And so SQL, and this is Liz Fong, who I went and I did
- an interview at NIST.
- She talks about the early days, it's a great interview.
- The early days of how this SQL standard really made so much
- sense and really fixed the industry and got the industry
- working really nicely and I recommend that you take a look
- at this video, just so you can kind of see.
- Now, what SQL basically said was, is that let's not worry
- so much about where that data is actually on disk.
- Because the earlier database approaches were, we programmers
- would know that there was cylinders and positions and we
- would place things in certain ways and we would make indexes
- and we would look at the indexes ourselves.
- So all kind of different things, we would read to one place
- on the disk and that would have an address of the next place
- we're supposed to read on the disk.
- And they said, you know what, let's not worry so much
+ And in particular, there was this concept
+ of relational databases, which back then
+ was more of a mathematical theory
+ of a better way to store and retrieve data
+ than it was a practically implemented available technology.
+ And so SQL, and this is Liz Fong,
+ who I went and I did an interview at NIST.
+ She talks about the early days.
+ It's a great interview.
+ The early days of how this SQL standard
+ really made so much sense and really fixed the industry
+ and got the industry working really nicely.
+ And I recommend that you take a look at this video
+ just so you can kind of see.
+ Now, what SQL basically said was
+ is that let's not worry so much
+ about where that data is actually on disk
+ because the earlier database approaches
+ where we programmers would know
+ that there was cylinders and positions
+ and we would place things in certain ways
+ and we would make indexes
+ and we would look at the indexes ourselves,
+ all kind of different things.
+ Or we would read to one place on the disk
+ and that would have an address
+ of the next place we're supposed to read on the disk.
+ And they said, you know what?
+ Let's not worry so much
  about the physical storage structure on the disk.
- But instead, let's come up with a language by which we can
- express what we want to read, write, update, and delete
- on the disk in a really simple language.
- And then we can build a piece of software that there could be
- many disk formats underneath that and then we could all
- sort of just use this language and you could buy vendor A
- and use this language and vendor B and use this language
- and then you could even benchmark it and say, here's a bunch
- of stuff in this language, which vendor can run this faster?
- And so the NIST also had a series of benchmarks, TPC,
- or some of the benchmarks.
- And so what they did is they basically made it so that this
- was like a beautiful and simple language.
+ But instead, let's come up with a language
+ by which we can express what we want to read, write,
+ update and delete on the disk
+ and a really simple language.
+ And then we can build a piece of software
+ that there could be many disk formats underneath that.
+ And then we could all sort of just use this language
+ and you could buy vendor A and use this language
+ and vendor B and use this language.
+ And then you could even benchmark it and say,
+ here's a bunch of stuff in this language.
+ Which vendor can run this faster?
+ And so the NIST also had a series of benchmarks,
+ TPC or some of the benchmarks.
+ And so what they did is they basically made it
+ so that this was like a beautiful and simple language.
  And it's what we call SQL, I think at some point
  it was called the Simple Query Language.
  And it is the language that we use to talk to databases.
- And the interesting thing is what SQL allowed us to do,
- really in the '60s and '70s when it first came out,
- was to talk to the old style databases,
+ And the interesting thing is what SQL allowed us to do
+ really in the 60s and 70s when it first came out
+ was to talk to the old style databases
  like index sequential and network style databases.
- And as this new form called relational databases,
- which had like this awesome mathematical underpinning,
- but was implemented badly in the first time,
- we could just say, oh, we're kind of, this is all,
+ And as this new form called relational databases
+ which had like this awesome mathematical underpinning
+ of what was implemented badly in the first time,
+ we could just say, oh, we're kinda, this is all,
  when the performance of relational databases
  got to the point where it was as good
  as the other databases, then we could just switch
@@ -279,29 +288,28 @@
  So it allowed an amazing innovation over a 10
  or even 15 year period where the abstraction
  allowed us to improve databases in a wonderful way
- without really having to change how we as programmers
- used them.
+ without really having to change how we as programmers used them.
  Pretty dang awesome, I'll be honest.
  And so I've been talking about this idea
  of relational databases and relational databases,
  and I'll admit that when I first saw relational databases
  in the early 1980s, I'm like, this is crap.
  Because again, I could hear floppy disks
- and I knew that we were moving the thing
+ and I knew that we were moving a thing
  and I had so much awareness of what was going on
  and I loved that awareness.
  And the relational databases sort of like hid that,
- hid what was going on behind this layer
+ hid what was going on behind this layer,
  and it turned out that whenever I used it,
  it was slower 'cause it wasn't yet clever.
  And so relational databases started out
  as a mathematical idea as the theoretical best way
  to represent networks of data with columns and rows
- and connections and joins and we'll talk about
- all that eventually.
+ and connections and joins,
+ and we'll talk about all that eventually.
  And it was a beautiful idea and the mathematics was right.
  It just took a long time to get to the point
- where it turned, the superior mathematics
+ where it turned the superior mathematics
  of relational databases worked out better
  than the highly cleverly optimized
  previous generation database systems.
@@ -311,7 +319,7 @@
  PostgreSQL and MySQL are open source.
  PostgreSQL is probably the more intricate
  and complex and rich.
- Oracle is a intricate, complex and rich database
+ Oracle is a intricate, complex, and rich database
  that's available for lots and lots of money.
  And Microsoft has a database called SQL Server.
  And all these databases that we're seeing evolved
@@ -319,46 +327,46 @@
  So they just kind of built SQL.
  There was legacy databases that kind of learned SQL.
  And there's lots of other databases.
- SQLite is what we're actually gonna use with this course
- and it's super cool, super fast.
- And on your cell phone,
- you probably have 40 copies of SQLite.
- And in your car, you probably have 40 copies of SQLite
+ SQLite is what we're actually gonna use with this course.
+ And it's super cool, super fast,
+ and on your cell phone, you probably have 40 copies
+ of SQLite, and in your car,
+ you probably have 40 copies of SQLite,
  'cause it's a real tiny embedded database.
- It's not really good for a production scale
+ It's not really good for production scale,
  when you got 100 users simultaneously hitting a website.
- PostgreSQL, MySQL or Oracle or SQL Server
- are really kind of online multi-processing data,
+ PostgreSQL, MySQL, or Oracle, or SQL Server
+ are really kind of online, multi-processing data,
  real multi-processing databases.
  But SQLite is great because it's really simple.
  It stores everything in one file.
  We can move the file around, et cetera.
- So I love SQLite and in this class and in this thing,
+ So I love SQLite, and in this class, and in this thing,
  we're gonna talk about SQLite,
- but everything we talk about
- applies to all of these different database systems.
+ but everything we talk about applies
+ to all of these different database systems.
  So the first thing that you've gotta do
  when you are gonna work with a database
  is you gotta come up with a contract
  between you and the database
  as to what the shape of the columns are,
  how wide the columns are,
- what kind of data you're gonna store in this.
- And it then informs how the database software
- is going to structure that database like on the disk.
+ what kind of data you're gonna store in this,
+ and it then informs how the database software
+ is going to structure that database, like on the disk.
  And part of what you're doing
  is you're allowing the database software,
- MySQL or PostgreSQL or SQLite,
+ MySQL, or PostgreSQL, or SQLite,
  to super optimize its storage.
  I mean, it's so much smarter than you.
- Something like Oracle or MySQL or PostgreSQL
+ Something like Oracle, or MySQL, or PostgreSQL
  probably represents a billion dollars, if not more,
- of research and development
+ of research and development,
  and about the best way to store and retrieve data.
  And you just don't even need to know any of that.
  You just say, look, I'm gonna have these columns,
  it's gonna have 100 characters of text,
- then I'm gonna have an integer
+ then I'm gonna have an integer,
  and then a floating point number,
  then 3,000 characters of text,
  and you worry about all that detail.
@@ -368,21 +376,20 @@
  And so there's this thing where you have to
  make a contract at the beginning and say,
  this is exactly how I'm gonna lay out the data
- as I talk to the database system.
- And then you can figure out how to lay out the data
+ as I talk to the database system,
+ and then you can figure out how to lay out the data
  in the actual disk.
- And so that's called the schema or the database model.
+ And so that's called the schema, or the database model.
  And building a database model is itself a cool thing.
- So if you're building a complex application,
- you have these models and they have connections
+ So if you're given building a complex application,
+ you have these models, and they have connections,
  and we'll eventually talk about all that stuff.
  But it's a critical thing to say that that's a contract
- between you and the database software
+ between you and the database software,
  so the database software can optimize
  the storage of the database.
  Now once you have given the schema,
- then you can write queries that, you know,
- depend on that schema.
+ then you can write queries that depend on that schema.
  So you might have a column called email
  and a column called name.
  And then you can insert data into the database
@@ -404,13 +411,13 @@
  Come here, come here.
  You are not behaving.
  So this is Shelby.
- Hi Shelby.
+ Hi, Shelby.
  This is Shelby.
  This is my puppy.
  I'm trying to keep her out of the cage
  and let her sit and get by my feet.
- And she's got some chew toys.
- Hi Shelby.
+ She's got some chew toys.
+ Hi, Shelby.
  This is Shelby and she is interrupting.
  You're interrupting my lecture, but you're cute.
  So quit chewing on a pen.

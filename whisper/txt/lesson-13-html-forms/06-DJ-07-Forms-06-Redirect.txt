@@ -1,14 +1,15 @@
- So now we're going to solve the problem of a post followed
- by a refresh, and we're going to use something we've talked
- about before, we're going to use a redirect, right?
- So the basic rule is, never send HTML as a result
+ So now we're going to solve the problem of a post
+ followed by a refresh.
+ And we're going to use something we've talked about before.
+ We're going to use a redirect, right?
+ So the basic rule is never send HTML as a result
  at the end of a post request.
  In a sense, if you're gonna return something
  at the end of the post method, return a redirect.
  Don't return HTML.
- Now, we gotta eventually get them some HTML,
- so we redirect to a page that we know,
- and then that will cause a GET request,
+ Now, we gotta eventually get them some HTML.
+ So we redirect to a page that we know,
+ and then that will cause a get request,
  and then that page is what we will show.
  So the question is, handle post, send a redirect,
  and then redirect to where?
@@ -18,16 +19,16 @@
  and I'm gonna move the user's browser from here to here.
  So redirecting, when we're redirecting,
  in a sense, that's a controller function.
- So we often do our redirects from the views,
- or saying here, you're at the end of this view,
+ So we often do our redirects from the views.
+ Or we're saying here, you're at the end of this view,
  you know what, I don't actually want
  to show you a page right now.
  I'm gonna send you to another page
- so that that page you see with a GET request.
+ so that that page you see with a get request.
  Now, we often send ourselves back to the exact same page.
- We take a post on a page, and then we redirect
- right back to the same page.
- So to remember, we got 200 OK, which is a nice page.
+ We take a post on a page,
+ and then we redirect right back to the same page.
+ So to remember, we got 200 okay, which is a nice page.
  We got 404 not found.
  We saw 403 not authorized before,
  and 302 is found and moved,
@@ -36,7 +37,7 @@
  to a site completely outside of our site.
  So this is a diagram from Wikipedia
  that's talking about the post redirect,
- and on the left side, we have the problem
+ and on the left side we have the problem
  where the user fills out some kind of a form,
  does a post, changes the data in the server,
  we send back a 200 request,
@@ -52,9 +53,9 @@
  and then send a 302 redirect,
  and then the browser instantly goes blink, blink, blink,
  there's no, you know, the browser instantly turns this
- into a get, potentially, right back to our same page,
- and then we send the page back
- that says your order was successful, or whatever,
+ into a get, potentially right back to our same page,
+ and then we send the page back that says
+ your order was successful, or whatever,
  and then if the user refreshes that,
  it just says over and over, your order was successful, okay.
  Now, one of the things we're gonna also show you
@@ -77,7 +78,7 @@
  This is actually the nice way to do this, right?
  So when we first go to the page,
  we're gonna go do a get request.
- We're gonna see if there's a message,
+ We're going to see if there's a message,
  that's that incoming message,
  but it's the first time, so there is no message,
  we'll talk about that in a second.
@@ -88,21 +89,24 @@
  so you'll see no message, right?
  So the first time through in a get request,
  it runs this template, there is no message,
- and then the CSRF token is there, and so we get to see
- that as our get request, okay?
- So that is the get request, so we then put in our guest,
+ and then the CSRF token is there,
+ and so we get to see that as our get request, okay?
+ So that is the get request,
+ so we then put in our guest,
  and then we press the submit button.
- That gathers all that data up,
+ That gathers all that data up
  and sends a post to the browser.
  And so that post will end up, after CSRF checking,
  will come here, because it's a post.
- And so what we're going to do is we're going to grab
- the guest, which now is coming from the post data,
+ And so what we're going to do
+ is we're going to grab the guest,
+ which now is coming from the post data,
  we're gonna check it, and message is just a message
- of too high, too low, et cetera.
- And now, instead of rendering, which is what we did before,
- we rendered right here, we're actually just gonna set that
- into the session under message, we're gonna store it,
+ of too high, too low, et cetera,
+ and now instead of rendering,
+ which is what we did before we rendered right here,
+ we're actually just gonna set that into the session
+ under message, we're gonna store it,
  and then we're gonna send a redirect,
  and we're gonna send a redirect to request.path,
  which means that we're actually telling the browser
@@ -116,15 +120,15 @@
  We get the post, we grab the guest, we check the guest,
  and we store our response to the guest in the session,
  and then we redirect back to ourselves,
- which comes into the get.
- We pull the message out of the session,
+ which comes into the get,
+ we pull the message out of the session,
  we delete the message from the session,
  and then we actually render the page.
  So you get the original get request,
  you type in your guest, hit the submit button,
- went to the URL awesome, but it came back with a 302,
- not with a 200, and with a location that says
- go back to get post awesome.
+ went to the URL awesome,
+ but it came back with a 302, not with a 200,
+ and with a location that says go back to get post awesome.
  So that's the same URL that we posted to,
  we posted to the URL.
  And if we look underneath the response,
@@ -132,7 +136,7 @@
  So on the post request, there is nothing in the response,
  there is no page, because what we're seeing here
  is the result of this get request, okay?
- So what happens is that the browser sees the 302,
+ So what happens is is that the browser sees the 302,
  sees the location, and immediately turns around
  and does a get request.
  And then that get request has this page,
@@ -142,7 +146,7 @@
  and we can see the data that's associated with it,
  and it's got, this one actually has a real response,
  it's a real 200, and then we have the real page,
- and that renders it, and then it grabs the favicon,
+ and that renders it, and then it grabs the favicon
  just so that it can put a nice cute little favicon up there.
  Now, if we hit refresh, so we sit on this page,
  and we hit the refresh, then what'll happen
@@ -160,21 +164,21 @@
  If you're sending a screen back at the bottom
  of a post message after the data's been handled,
  then it's a mistake.
- So the steps are, we go to the page,
- we do a get request, there is no message,
- so we get sort of the page with no message.
- Then we do a post request, the post request comes in,
- we check the guests, we put the message in the session,
- and then we redirect, and then it comes back
- to a second get, pulls the message out of the session,
+ So the steps are we go to the page, we do a get request,
+ there is no message, so we get sort of the page
+ with no message, then we do a post request,
+ the post request comes in, we check the guest,
+ we put the message in the session, and then we redirect,
+ and then it comes back to a second get,
+ pulls the message out of the session,
  deletes the message from the session,
  and then renders it with the message and everything.
  And that's called flash message, flash message pattern,
  in particular because we're deleting it
  after we've shown it to the user.
  So next we're gonna switch to how Django actually
- has forms.py and makes it easy to construct forms.
- So we're not gonna be writing a bunch of input tags,
+ has forms.py and makes it easy to construct forms,
+ so we're not gonna be writing a bunch of input tags,
  or option tags, or select tags.
  Django makes this a lot easier for us.
  (upbeat music)

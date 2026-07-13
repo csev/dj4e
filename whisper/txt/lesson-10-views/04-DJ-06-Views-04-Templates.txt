@@ -1,30 +1,33 @@
  - Hello, now we're gonna talk about the other half
  of the views, the templates.
- So the templates are our way of creating HTML.
+ So the templates are a way of creating HTML.
  And again, just to ground everything that we've got here,
- you know, we're in the views, and the views are really
- sort of the code, the Python code that we drive.
- We're gonna get the forms in a bit, but views kind of
- merge stuff from the templates, merge stuff from the models,
- put, you know, send stuff in and make pages, right?
+ we're in the views, and the views are really sort of the code,
+ the Python code that we drive.
+ We're gonna get the forms in a bit,
+ but views kind of merge stuff from the templates,
+ merge stuff from the models,
+ send stuff in and make pages, right?
  So this is going to look a lot like HTML.
- It doesn't have to be HTML, it can be things but,
- other than HTML, but templates in our class
- will mostly be HTML, and so they're kind of the last
- little piece of the puzzle to start building user interfaces.
- And from this point on, we're going to be, you know,
- making user interfaces rather than introducing the parts
+ It doesn't have to be HTML.
+ It can be things other than HTML,
+ but templates in our class will mostly be HTML.
+ And so they're kind of the last little piece of the puzzle
+ to start building user interfaces.
+ And from this point on, we're going to be making user
+ interfaces rather than introducing the parts
  of a Django application that have the user interface.
  So this is the text from the Django website.
- You know, it's about convenient ways to generate
- HTML dynamically, and there's a couple of different
- templating engines, we're using the default one,
- and there is some data that we pass into the template.
+ It's about convenient ways to generate HTML dynamically,
+ and there's a couple of different templating engines.
+ We're using the default one.
+ And there is some data that we pass into the template.
  There's a process that's called rendering,
- and then we get the HTML back, and we return to the browser
- with that HTTP response, which we've already been doing.
- It's not, the request-response cycle is the same.
- The difference is, instead of writing Python code
+ and then we get the HTML back,
+ and we return to the browser with that HTTP response,
+ which we've already been doing.
+ It's not the request-response cycle is the same.
+ The difference is instead of writing Python code
  to concatenate a bunch of things together,
  we are going to use a template engine.
  So this is the kind of stuff that we've been doing all along.
@@ -39,19 +42,20 @@
  and then we are sending back a response.
  So what goes back as a response,
  what comes in as a request, what goes back as a response.
- We're still gonna do that, we're just gonna
- get rid of that middle bit and make it a little prettier
+ We're still gonna do that.
+ We're just gonna get rid of that middle bit
+ and make it a little prettier
  and make it a little more sense.
  If you look at that, oops, if you look at that,
  if you look at it, you gotta get it syntactically right.
  You got indentation problems, that's three lines of Python.
- I'm using triple quotes, I'm using plus,
+ I'm using triple quotes, I'm using plus.
  I gotta get all that matching together.
- And then eventually, the HTML is going back,
+ And then eventually, the HTML is going back.
  I'll be using single quotes, double quotes,
  and all those kinds of things.
  And JavaScript's gonna look really ugly here.
- Indenting of the HTML kind of will fight
+ Indenting of the HTML kinda will fight
  with the indenting of the Python.
  So this is just general, I mean, I've only done short ones,
  'cause I only wanted to show you a little bit
@@ -59,7 +63,7 @@
  So the basic process is a bit of software,
  a template software that Django provides us.
  We're using the built-in Django one.
- And basically template is some HTML
+ And basically, template is some HTML
  with some hotspots in it that says put data here.
  And then the rest of it is just HTML.
  And then we pass the data in, in some kind of an object,
@@ -74,8 +78,8 @@
  is we've got like a little dictionary,
  call this the context, you could call it the render data,
  and then you have the render template.
- So the render template is really HTML,
- and that's what makes it a lot easier to look at,
+ So the render template is really HTML.
+ And that's what makes it a lot easier to look at,
  because you're not putting double quotes around anything,
  there's no concatenation, but there are special characters.
  And what the double curly brace surrounding it says
@@ -90,10 +94,10 @@
  Now you'll see they have some sophisticated features
  eventually, so you probably don't want to write
  your own render engine, but you could imagine
- a Python assignment where I say write me a function
+ a Python assignment where I say, write me a function
  that takes a dictionary that looks like that,
- and then with key value dat fun stuff,
- and then take some text file, has curly brace,
+ and then, you know, key value dat fun stuff,
+ and then take some text file that has curly brace,
  curly brace dat, curly brace, curly brace,
  and then find that and then replace it with that string.
  You could write that code.
@@ -111,14 +115,14 @@
  And so the entire request coming in from the browser
  is coming into the variable request.
  This number 200 is coming in the variable,
- from the url is coming in the variable guess.
- And so instead of us concatenating together,
- we are going to create a context.
- What I call a context was just as a dictionary
+ from the url is coming in the variable guess,
+ and so instead of us concatenating together,
+ we are going to create a context,
+ what I call a context, was just as a dictionary
  of key value pairs.
  And the key for guess is g-u-e-s-s, it's a string.
- That guess will matter inside the template.
- And then we pull this number 200
+ That guess will matter inside the template,
+ and then we pull this number 200
  and we convert it to an integer, and then we pass it in.
  And this render, we pass it the request object,
  we pass it the name of a template,
@@ -126,24 +130,23 @@
  to be substituted in that.
  So let's take a look.
  So if we look at this template,
- it has a series of curly brace like hotspots,
+ it has a series of curly brace, like hotspots,
  places where you would replace stuff.
  And so the double curly brace just says
- retrieve the string that is under guess and put it in,
- and so that's how we get your guess was 200
- in the ultimate output.
- And then we have curly brace percent
+ retrieve the string that is under guess, and put it in,
+ so that's how we get your guess was 200 in the ultimate output.
+ And then we have curly brace percent,
  all the way to percent curly brace,
  and this is a series of if then else's.
- So you can put logic in here too.
+ So you can put logic in here, too.
  You don't have to just take this string and put it in.
  So what we're doing is we're basically saying
  if the guess is less than 42, we print out too low.
- If it's above 42, we print too high.
- And of course, if it is 42, we print out just right.
+ If it's above 42, we print too high,
+ and of course, if it is 42, we print out just right.
  And since our guess was 200,
  it prints out too high.
- And so basically this makes this view code a lot simpler
+ And so basically, this makes this view code a lot simpler
  and doesn't put a less than's and greater than's
  and concatenations.
  It's all substituted by this render routine.
@@ -151,7 +154,7 @@
  so when we get that back, we just return it.
  So we hand back to Django the HTTP response request,
  and then the page is displayed in our browser.
- And remember that we have a Django project,
+ Remember that we have a Django project,
  and this is the Django project.
  In my case, the Django project is dj4e-samples,
  and I have a bunch of little applications.
@@ -163,25 +166,23 @@
  So it's just that Django terminology.
  Project made up of one or more applications and folders.
  Okay.
- And so the problem is, is these templates,
- when Django starts up based on the settings.py,
- it loads all these files up.
- Loads them all up.
+ And so the problem is is these templates,
+ when Django starts up, based on the settings.py,
+ it loads all these files up, loads them all up.
  And so it loads them all up,
  and the templates are actually global,
  and we'll see this in a bit.
  They're global across all of the applications.
- And so the problem is, is that if you have a template name
+ And so the problem is is that if you have a template name
  like detail.html, and you have a whole bunch of applications
  like I do, all of which wanna have a template name
  detail.html, it doesn't work.
- 'Cause which detail.html, it'd be template/detail
- in two folders, it's not clear which one
- you're talking about.
+ 'Cause which detail.html be template/detail in two folders,
+ it's not clear which one you're talking about.
  So we've adopted a convention that we take
- the application name, and we make a subfolder
+ the application name and we make a subfolder
  inside of templates that's the application name,
- and then we use this fabs/detail.html,
+ and then we use this favs/detail.html
  or pics/detail.html as the name of the template.
  So in a sense, we're introducing a subfolder,
  and it's a little jarring at first,
@@ -189,15 +190,15 @@
  It's a good convention.
  I mean, it's unfortunate we have to have the convention,
  but because these names end up being global
- across your entire Django project in each application,
- and to get them a name, to get them properly named,
+ across your entire Django project,
+ in each application, to get them properly named,
  it's necessary to introduce this extra level of redirection.
  We get the logins, there's templates that are stored
  outside in other applications, so sometimes you wanna
- get a template in some other application,
- so there's all kind of reasons this is a great idea.
+ get a template in some other application.
+ So there's all kind of reasons this is a great idea.
  It just isn't the prettiest thing in the world.
- So just, when you see it, don't freak out,
+ So just, when you see it, don't freak out.
  I try to call it out in the slides.
  And so we put these paths that includes
  the application name twice.

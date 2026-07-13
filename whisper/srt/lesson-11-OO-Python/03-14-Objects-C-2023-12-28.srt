@@ -1,316 +1,536 @@
 1
-00:00:00,000 --> 00:00:03,240
- - Now I'm gonna talk a little bit about object life cycle and what we mean by object life
+00:00:00,000 --> 00:00:02,160
+ Now I'm gonna talk a little bit about Object Lifecycle.
 
 2
-00:00:03,240 --> 00:00:08,000
- cycle is the act of creating and destroying these objects and I've been using this term
+00:00:02,160 --> 00:00:05,360
+ And what we mean by Object Lifecycle is the act of creating
 
 3
-00:00:08,000 --> 00:00:14,640
- constructor already and so when we declare a variable whether it's a string or a dictionary
+00:00:05,360 --> 00:00:06,480
+ and destroying these objects.
 
 4
-00:00:14,640 --> 00:00:18,740
- or a party animal whether we create them and then they're discarded and there's all this
+00:00:06,480 --> 00:00:09,880
+ And I've been using this term constructor already.
 
 5
-00:00:18,740 --> 00:00:24,460
- dynamic memory that comes and goes and we as the writers of objects have the ability
+00:00:09,880 --> 00:00:13,960
+ And so when we declare a variable, whether it's a string
 
 6
-00:00:24,460 --> 00:00:29,940
- to insert ourselves at the moment of object creation and at the moment of object destruction
+00:00:13,960 --> 00:00:16,680
+ or a dictionary or a party animal, whether we create them
 
 7
-00:00:29,940 --> 00:00:34,940
- and we make special functions that we call the constructor, the object constructor or
+00:00:16,680 --> 00:00:19,280
+ and then they're discarded, and there's all this dynamic
 
 8
-00:00:34,940 --> 00:00:40,300
- the class constructor and the destructor and we don't actually explicitly call them.
+00:00:19,280 --> 00:00:23,560
+ memory that comes and goes, and we as the writers of objects
 
 9
-00:00:40,300 --> 00:00:46,780
- They're called automatically by Python on our behalf and so the constructor is much
+00:00:23,560 --> 00:00:26,860
+ have the ability to insert ourselves at the moment
 
 10
-00:00:46,780 --> 00:00:47,960
- more commonly used.
+00:00:26,860 --> 00:00:29,960
+ of object creation and at the moment of object destruction.
 
 11
-00:00:47,960 --> 00:00:53,340
- It's used to set up any initial values of variables if necessary, et cetera, et cetera.
+00:00:29,960 --> 00:00:33,780
+ And we make special functions that we call the constructor,
 
 12
-00:00:53,340 --> 00:00:58,980
- Destructors will cover them but they're used very rarely.
+00:00:33,780 --> 00:00:36,360
+ the object constructor, or the class constructor,
 
 13
-00:00:58,980 --> 00:01:01,080
- So here's a bit of code that we've got.
+00:00:36,360 --> 00:00:37,600
+ and the destructor.
 
 14
-00:01:01,080 --> 00:01:05,920
- It's our party animal and a lot of it is the same as what we've been doing so far.
+00:00:37,600 --> 00:00:40,200
+ And we don't actually explicitly call them.
 
 15
-00:01:05,920 --> 00:01:10,940
- So we have this variable X and the constructor has a special name, underscore underscore
+00:00:40,200 --> 00:00:44,680
+ They're called automatically by Python on our behalf.
 
 16
-00:01:10,940 --> 00:01:12,940
- init underscore.
+00:00:44,680 --> 00:00:47,880
+ And so the constructor is much more commonly used.
 
 17
-00:01:12,940 --> 00:01:17,660
- Again we pass in the instance of the object self and in this one all we're gonna do is
+00:00:47,880 --> 00:00:50,600
+ It's used to set up any initial values of variables
 
 18
-00:01:17,660 --> 00:01:22,180
- print out that you're constructed and here's this code that we've had before and now we
+00:00:50,600 --> 00:00:52,720
+ if necessary, et cetera, et cetera.
 
 19
-00:01:22,180 --> 00:01:27,420
- have underscore underscore del and then we pass in self and we'll just print out that
+00:00:52,720 --> 00:00:58,880
+ Destructors, we'll cover them, but they're used very rarely.
 
 20
-00:01:27,420 --> 00:01:35,660
- we're being destructed and what the current value of X is for that particular instance.
+00:00:58,880 --> 00:01:01,000
+ So here's a bit of code that we've got.
 
 21
-00:01:35,660 --> 00:01:38,200
- So let's go ahead and run this.
+00:01:01,000 --> 00:01:02,440
+ It's our party animal, and a lot of it
 
 22
-00:01:38,200 --> 00:01:44,060
- This is the constructing of it and so in this case this line right here is causing the IAM
+00:01:02,440 --> 00:01:05,920
+ is the same as what we've been doing so far.
 
 23
-00:01:44,060 --> 00:01:46,460
- constructed message to come out.
+00:01:05,920 --> 00:01:08,680
+ So we have this variable x, and the constructor
 
 24
-00:01:46,460 --> 00:01:53,600
- Then we do and party, an party and that says one and two and here's an interesting thing.
+00:01:08,680 --> 00:01:12,680
+ has a special name, underscore, underscore, init, underscore.
 
 25
-00:01:53,600 --> 00:02:00,020
- We're actually gonna destroy this variable by throwing away an no longer points at that
+00:01:12,680 --> 00:01:16,360
+ Again, we pass in the instance of the object, self.
 
 26
-00:02:00,020 --> 00:02:01,020
- object.
+00:01:16,360 --> 00:01:18,440
+ And in this one, all we're going to do is print out
 
 27
-00:02:01,020 --> 00:02:06,060
- An's gonna point to 42 so we're gonna sort of overwrite an and put 42 in it and at that
+00:01:18,440 --> 00:01:20,000
+ that you're constructed.
 
 28
-00:02:06,060 --> 00:02:11,780
- point Python's like oh this whole little object that I just created somewhere it's out here.
+00:01:20,000 --> 00:01:21,920
+ And here's this code that we've had before.
 
 29
-00:02:11,780 --> 00:02:18,220
- It's vaporizing it and throwing it away and so before this line completes it actually
+00:01:21,920 --> 00:01:24,120
+ And now we have underscore, underscore, del,
 
 30
-00:02:18,220 --> 00:02:22,600
- calls our destructor on our behalf and so that message comes out.
+00:01:24,120 --> 00:01:25,560
+ and then we pass in self.
 
 31
-00:02:22,600 --> 00:02:27,840
- So we are allowed as the builder of these objects to add these little chunks of code
+00:01:25,560 --> 00:01:28,280
+ And we'll just print out that we're being destructed
 
 32
-00:02:27,840 --> 00:02:32,140
- that says I want to be involved at the moment this object is created and I want to be involved
+00:01:28,280 --> 00:01:31,040
+ and what the current value of x is
 
 33
-00:02:32,140 --> 00:02:35,060
- at the moment that this object is destroyed.
+00:01:31,040 --> 00:01:32,720
+ for that particular instance.
 
 34
-00:02:35,060 --> 00:02:41,300
- Now in this last line an is no longer a party animal, an is now an integer.
+00:01:32,720 --> 00:01:38,080
+ So let's go ahead and run this.
 
 35
-00:02:41,300 --> 00:02:47,100
- It's got a 42 in it, it's gone, it's been created, it was used and then it was destroyed.
+00:01:38,080 --> 00:01:40,160
+ This is the constructing of it.
 
 36
-00:02:47,100 --> 00:02:52,660
- So you gotta be careful if you overwrite something you can sort of throw the object away.
+00:01:40,160 --> 00:01:43,120
+ And so in this case, this line right here
 
 37
-00:02:52,660 --> 00:02:57,460
- So the constructor is a special block of code that's called when the object is created to
+00:01:43,120 --> 00:01:46,360
+ is causing the I am constructed message to come out.
 
 38
-00:02:57,460 --> 00:03:01,420
- set the object up.
+00:01:46,360 --> 00:01:52,200
+ Then we do an party, an party, and that says one and two.
 
 39
-00:03:01,420 --> 00:03:06,300
- So we can create lots of instances, everything we've done so far is we make a class and then
+00:01:52,200 --> 00:01:53,540
+ And here's an interesting thing.
 
 40
-00:03:06,300 --> 00:03:11,820
- we create one instance, one object and each of these objects end up being stored in its
+00:01:53,540 --> 00:01:55,920
+ We're actually going to destroy this variable
 
 41
-00:03:11,820 --> 00:03:12,820
- own variable.
+00:01:55,920 --> 00:02:00,560
+ by throwing away an no longer points at that object.
 
 42
-00:03:12,820 --> 00:03:16,200
- We have a variable an and we've been using it but the more interesting thing begins to
+00:02:00,560 --> 00:02:02,040
+ An's going to point to 42.
 
 43
-00:03:16,200 --> 00:03:21,820
- happen when we have multiple instances of the same class sitting in different variables
+00:02:02,040 --> 00:02:05,120
+ So we're going to sort of overwrite an and put 42 in it.
 
 44
-00:03:21,820 --> 00:03:24,700
- and it has its own copy of the instance variables.
+00:02:05,120 --> 00:02:08,680
+ And at that point, Python's like, oh, this whole little object
 
 45
-00:03:24,700 --> 00:03:27,120
- So let's take a look at this.
+00:02:08,680 --> 00:02:11,640
+ that I just created, somewhere it's out here,
 
 46
-00:03:27,120 --> 00:03:34,980
- So this code here I've taken out the destructor and it shows a little bit more information.
+00:02:11,640 --> 00:02:15,080
+ it's vaporizing it and throwing it away.
 
 47
-00:03:34,980 --> 00:03:38,800
- So now we're gonna put two variables in here, we're gonna have a current score or whatever
+00:02:15,080 --> 00:02:17,840
+ And so before this line completes,
 
 48
-00:03:38,800 --> 00:03:40,740
- and a name.
+00:02:17,840 --> 00:02:20,760
+ it actually calls our destructor on our behalf.
 
 49
-00:03:40,740 --> 00:03:46,020
- And this time we're going to add a parameter onto the constructor and so the self comes
+00:02:20,760 --> 00:02:22,520
+ And so that message comes out.
 
 50
-00:03:46,020 --> 00:03:51,820
- in sort of automatically as the object is being constructed but if we put a parameter
+00:02:22,520 --> 00:02:26,000
+ So we are allowed, as the builder of these objects,
 
 51
-00:03:51,820 --> 00:03:58,380
- on the constructor call which is this party animal call then this comes in as the z variable.
+00:02:26,000 --> 00:02:28,440
+ to add these little chunks of code that says,
 
 52
-00:03:58,380 --> 00:04:03,900
- And so self is the object itself and z, this first parameter, is whatever parameter we
+00:02:28,440 --> 00:02:31,240
+ I want to be involved at the moment this object is created
 
 53
-00:04:03,900 --> 00:04:04,900
- put here.
+00:02:31,240 --> 00:02:33,920
+ and I want to be involved at the moment that this object is
 
 54
-00:04:04,900 --> 00:04:08,380
- Everything we've done so far has no parameter here but now we have a parameter here.
+00:02:33,920 --> 00:02:34,960
+ destroyed.
 
 55
-00:04:08,380 --> 00:04:13,420
- And then that means that when we call this constructor name is gonna be Sally in this
+00:02:34,960 --> 00:02:39,200
+ Now, in this last line, an is no longer a party animal.
 
 56
-00:04:13,420 --> 00:04:19,140
- particular thing and then it'll say oh self.name which will be Sally who's been constructed.
+00:02:39,200 --> 00:02:41,680
+ An is now an integer.
 
 57
-00:04:19,140 --> 00:04:24,340
- And so then we have this and that object is now constructed and then we put it in the
+00:02:41,680 --> 00:02:42,900
+ It's got a 42 in it.
 
 58
-00:04:24,340 --> 00:04:28,860
- variable s and then we call the party method on that and we construct a different one.
+00:02:42,900 --> 00:02:43,560
+ It's gone.
 
 59
-00:04:28,860 --> 00:04:37,460
- And so this time it calls and z is Jim and we basically have another copy of this.
+00:02:43,560 --> 00:02:44,520
+ It's been created.
 
 60
-00:04:37,460 --> 00:04:44,020
- As it runs down here when this is called it makes one instance and stores that in the
+00:02:44,520 --> 00:02:45,120
+ It was used.
 
 61
-00:04:44,020 --> 00:04:45,020
- variable s.
+00:02:45,120 --> 00:02:47,000
+ And then it was destroyed.
 
 62
-00:04:45,020 --> 00:04:48,740
- And there's a variable x in there, there's a name in there, there's an init method in
+00:02:47,000 --> 00:02:49,240
+ So you've got to be careful if you overwrite something.
 
 63
-00:04:48,740 --> 00:04:50,460
- party and that's all in here.
+00:02:49,240 --> 00:02:52,680
+ You've got to sort of throw the object away.
 
 64
-00:04:50,460 --> 00:04:51,780
- All that stuff is in here.
+00:02:52,680 --> 00:02:55,680
+ So the constructor is a special block of code
 
 65
-00:04:51,780 --> 00:04:58,560
- And now we say let's make and that's gonna have Sally in there on s party then this turns
+00:02:55,680 --> 00:02:58,840
+ that's called when the object is created to set the object up.
 
 66
-00:04:58,560 --> 00:04:59,560
- into a one.
+00:02:58,840 --> 00:03:03,400
+ So we can create lots of instances.
 
 67
-00:04:59,560 --> 00:05:02,860
- Then we're gonna do another constructor and so it's gonna make a whole new thing and it's
+00:03:03,400 --> 00:03:06,120
+ Everything we've done so far is we make a class
 
 68
-00:05:02,860 --> 00:05:06,260
- gonna store that in j and this one's gonna have Jim in it.
+00:03:06,120 --> 00:03:09,080
+ and then we create one instance, one object.
 
 69
-00:05:06,260 --> 00:05:11,720
- And then we're gonna call j party, that turns that into a one and then s party will cause
+00:03:09,080 --> 00:03:11,200
+ And each of these objects ends up
 
 70
-00:05:11,720 --> 00:05:13,980
- this to be a two.
+00:03:11,200 --> 00:03:12,560
+ being stored in its own variable.
 
 71
-00:05:13,980 --> 00:05:20,140
- So what happens is we have now two objects, one in the variable s and one in the variable
+00:03:12,560 --> 00:03:14,520
+ We have a variable an and we've been using it.
 
 72
-00:05:20,140 --> 00:05:24,020
- j and they have separate copies of their instance variables.
+00:03:14,520 --> 00:03:16,200
+ But the more interesting thing begins
 
 73
-00:05:24,020 --> 00:05:28,900
- These are the instance variables or the object fields or whatever, but they're the variables.
+00:03:16,200 --> 00:03:18,760
+ to happen when we have multiple instances
 
 74
-00:05:28,900 --> 00:05:34,220
- But the key is that every time we do a new construction it duplicates this and there's
+00:03:18,760 --> 00:03:21,880
+ of the same class sitting in different variables.
 
 75
-00:05:34,220 --> 00:05:35,540
- another copy of it.
+00:03:21,880 --> 00:03:24,640
+ And it has its own copy of the instance variables.
 
 76
-00:05:35,540 --> 00:05:46,460
- So there's an x within s, so s.x is this variable and j.x is that variable, okay.
+00:03:24,640 --> 00:03:27,040
+ So let's take a look at this.
 
 77
-00:05:46,460 --> 00:05:51,900
- So the next thing we'll talk about is inheritance and that's the idea of taking one class and
+00:03:27,040 --> 00:03:32,880
+ So this code here, I've taken out the destructor.
 
 78
-00:05:51,900 --> 00:05:53,460
- extending it to make something new.
+00:03:32,880 --> 00:03:35,000
+ And it shows a little bit more information.
 
 79
-00:06:05,540 --> 00:06:08,460
- (jazz piano music)
+00:03:35,000 --> 00:03:37,080
+ So now we're going to put two variables in here.
+
+80
+00:03:37,080 --> 00:03:40,440
+ We're going to have a current score or whatever and a name.
+
+81
+00:03:40,440 --> 00:03:43,720
+ And this time, we're going to add a parameter
+
+82
+00:03:43,720 --> 00:03:45,080
+ onto the constructor.
+
+83
+00:03:45,080 --> 00:03:48,120
+ And so the self comes in sort of automatically
+
+84
+00:03:48,120 --> 00:03:50,120
+ as the object is being constructed.
+
+85
+00:03:50,120 --> 00:03:53,240
+ But if we put a parameter on the constructor call, which
+
+86
+00:03:53,240 --> 00:03:58,280
+ is this party animal call, then this comes in as the z variable.
+
+87
+00:03:58,280 --> 00:04:00,760
+ And so self is the object itself.
+
+88
+00:04:00,760 --> 00:04:04,320
+ And z, this first parameter, is whatever parameter we put here.
+
+89
+00:04:04,320 --> 00:04:06,560
+ Everything we've done so far has no parameter here.
+
+90
+00:04:06,560 --> 00:04:08,280
+ But now we have a parameter here.
+
+91
+00:04:08,280 --> 00:04:11,960
+ And then that means that when we call this constructor,
+
+92
+00:04:11,960 --> 00:04:14,800
+ name is going to be Sally in this particular thing.
+
+93
+00:04:14,800 --> 00:04:16,680
+ And then I'll say, oh, self.name,
+
+94
+00:04:16,680 --> 00:04:18,800
+ which will be Sally has been constructed.
+
+95
+00:04:18,800 --> 00:04:21,200
+ And so then we have this.
+
+96
+00:04:21,200 --> 00:04:23,480
+ And that object is now constructed.
+
+97
+00:04:23,480 --> 00:04:25,640
+ And then we put it in the variable s.
+
+98
+00:04:25,640 --> 00:04:27,480
+ And then we call the party method on that.
+
+99
+00:04:27,480 --> 00:04:28,800
+ And we construct a different one.
+
+100
+00:04:28,800 --> 00:04:30,280
+ And so this time, it calls.
+
+101
+00:04:30,280 --> 00:04:32,880
+ And z is Jim.
+
+102
+00:04:32,880 --> 00:04:37,320
+ And we basically have another copy of this.
+
+103
+00:04:37,320 --> 00:04:40,280
+ As it runs down here, when this is called,
+
+104
+00:04:40,280 --> 00:04:44,920
+ it makes one instance and stores that in the variable s.
+
+105
+00:04:44,920 --> 00:04:46,600
+ And there's a variable x in there.
+
+106
+00:04:46,600 --> 00:04:47,600
+ There's a name in there.
+
+107
+00:04:47,600 --> 00:04:49,200
+ There's an init method in party.
+
+108
+00:04:49,200 --> 00:04:50,360
+ And that's all in here.
+
+109
+00:04:50,360 --> 00:04:51,680
+ All that stuff is in here.
+
+110
+00:04:51,680 --> 00:04:53,760
+ And now we say, let's make-- and that's
+
+111
+00:04:53,760 --> 00:04:57,000
+ going to have Sally in there.
+
+112
+00:04:57,000 --> 00:04:59,240
+ On s.party, then this turns into a one.
+
+113
+00:04:59,240 --> 00:05:01,080
+ Then we're going to do another constructor.
+
+114
+00:05:01,080 --> 00:05:02,880
+ And so it's going to make a whole new thing.
+
+115
+00:05:02,880 --> 00:05:04,560
+ And it's going to store that in j.
+
+116
+00:05:04,560 --> 00:05:06,160
+ And this one's going to have Jim in it.
+
+117
+00:05:06,160 --> 00:05:08,960
+ And then we're going to call j.party.
+
+118
+00:05:08,960 --> 00:05:10,440
+ That turns that into a one.
+
+119
+00:05:10,440 --> 00:05:13,800
+ And then s.party will cause this to be a two.
+
+120
+00:05:13,800 --> 00:05:18,480
+ And so what happens is we have now two objects, one
+
+121
+00:05:18,480 --> 00:05:21,000
+ in the variable s and one in the variable j.
+
+122
+00:05:21,000 --> 00:05:23,760
+ And they have separate copies of their instance variables.
+
+123
+00:05:23,760 --> 00:05:27,000
+ These are the instance variables or the object fields
+
+124
+00:05:27,000 --> 00:05:27,520
+ or whatever.
+
+125
+00:05:27,520 --> 00:05:28,760
+ But they're the variables.
+
+126
+00:05:28,760 --> 00:05:32,400
+ But the key is that every time we do a new construction,
+
+127
+00:05:32,400 --> 00:05:34,000
+ it duplicates this.
+
+128
+00:05:34,000 --> 00:05:35,560
+ And there's another copy of it.
+
+129
+00:05:35,560 --> 00:05:37,440
+ So there's an x within s.
+
+130
+00:05:37,440 --> 00:05:46,360
+ So s.x is this variable, and j.x is that variable.
+
+131
+00:05:46,360 --> 00:05:48,680
+ So the next thing we'll talk about is inheritance.
+
+132
+00:05:48,680 --> 00:05:51,640
+ And that's the idea of taking one class
+
+133
+00:05:51,640 --> 00:05:53,480
+ and extending it to make something new.
+
+134
+00:06:07,440 --> 00:06:10,020
+ (upbeat music)
 

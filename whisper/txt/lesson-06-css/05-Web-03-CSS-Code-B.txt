@@ -1,286 +1,234 @@
- so welcome back now we're going to now we're going to take a look at some more
- examples we're not going to the one thing we're not going to look at is
- exactly how this navigation bar works at least until a little bit later so the
- next thing we want to take a look at is how fonts work and there's a couple of
- ways that you can put fonts into a file there are default fonts that every
- browser is required to produce like serif sans serif monospace cursive and
- fantasy and so they you don't exactly know what's going on but they're they're
- often used as fallback fonts and and so you can have those there are any any
- font that is on the system like aerial or Helvetica and so if you're gonna use
- aerial not all systems have aerial although most of them do these days and
- you have to have more than one font now another thing that's really common these
- days is to include a font somehow you find out about a font and here's a lotto
- font and you go look it up on the web and you find oh we include this and so I
- included this link because I found this really cool font lotto and this extends
- the browser the browser then learns about this font it downloads the font
- caches them and keeps them in the browser and then I can make a font that's lotto
- but I just in case I'm off the internet you know and I can't download this thing
- I have sans serif is a fallback for lotto so lotto is a fancy font etc etc so
- there's there's aerial and built-in fonts etc etc and so that's that's how
- fonts work colors there's a lot of cool stuff about colors there's a couple
- different things ignore the nav for the moment I'm just using span tags here
- there's some default colors in the earliest of browsers these days we have
- all these fancy ones and you can go look these up and you just google for HTML
- colors and there's a bunch of names and then they're consistent across browsers
- but there's there's like twelve or so really solid names that are in all
- browsers since the beginning of time but more modern browsers have a better
- palette of colors although really good graphic artists want to have much better
- control of colors and so this is the pound sign says that this is a hexadecimal
- number and it's got two digits hex means they go all the way up to F so F is an A
- through F our numbers 8b is the red level 45 is the green level and 13 is
- the blue level and so this is a brownish color and then there's what's called
- web safe colors where you just have this ends up being 88 44 11 but it sort of
- reduces the number of potential colors if you were mixing colors from various
- sources and so and then in HTML 5 you can see this color picker when you have
- a form which we'll talk about in a bit it's a color of color form for modern
- browsers and then you can pop up with this button a color picker and I've got
- a little thing to print out what the color would be and so it just when I
- picked the green it basically puts zero zero FF that's red green and blue it
- puts that in into this thing which then the program could use you know could
- read this or JavaScript could read it or what a server code could read it but
- right now we're just kind of playing with the picker and we pick a different
- color and so that that magenta is all the red none of the green and all of the
- blue and orange is all the red some of the green and none of the blue so those
- are all just really strong colors and so that's what's called an HTML color
- picker anchor tags in the old days anchor tags were kind of funky they were
- blue if you hadn't yet visited them and they were purple if you had visited them
- and so this one I've obviously clicked on and so we have a whole series of
- styling mechanisms that we can have if we take a look at these I have put these
- all in the inside of an ID tag of cool so this is this is basically saying find
- the ID tag of cool and then style anchor tags to make them a font-weight bold so
- let's take a look here so I got one one paragraph that has this this one here
- and then I have a paragraph with an ID tag of cool and that's basically so I
- don't have to style usually you wouldn't say I'm only styling the anchor tags
- inside of you know if I'm only I'm only stand the anchor tags inside the a pair
- a tag that has an ID of cool but that way I can have the default on this one
- that was my way of keeping the default so normally you would just say a so a
- links is red if it's visited it's orange and so this one's been visited so you
- don't see the red it means it's unvisited hover you can change it so you
- notice when I hover in the text decoration goes away the underscore goes
- away and I have a color of text font color of white and a background color of
- Navy and then there is one last moment and I click on this one and that will
- click there's one last moment that's really hard to catch and that is the
- moment of active if it the web was slow and you clicked on it then it would tell
- the user in the old days this made more sense that it would turn red and then
- blink away I don't know if we'll even see it it kind of saw you sort of saw it so
- there was a color while you click on it yeah there was you might not see it in
- the in the screen but that's what the act that's what the the active means is
- you've clicked on it but it hasn't yet been retrieved and then like a moment
- letter the whole page goes away another thing we can do is we can play with
- images okay and so here is an image one of the things that's really fun to do
- with images is float them to the right or float them to the left and then what
- happens is is that the image the text is drawn around the image so it wraps
- around the image and you'll notice where I floated this left oh I kind of got rid
- of everything I floated it left before the h1 and so what happens is the h1 top
- of the h1 in the top top of the image I'll line up and then all the text
- afterwards all the text afterwards wraps around it and so you'll notice that I've
- got the image first and then the h1 second and that what the float sort of
- disconnects the image from the normal line of flow floats it over and then
- takes this next thing and the next paragraph and use saves the space for
- the image and shoves everything shoves the margin over so that it comes over
- here now once you start floating images you got to learn about this clear equals
- all because if we want this next paragraph like this one we want it we
- want we don't want this paragraph for whatever reason to be on the image now
- if it goes far enough you see this this this paragraph here moves back to the
- left margin and then this next one starts there but if the browser is wider
- and the text is there's not so much text we don't want this to be up in here and
- so you say be our clericals all so between this paragraph and this
- paragraph we do be our clear equals all and you can put images right in the
- middle of the text like a character you don't have to have them by themselves
- and you can even make an image that's a clickable link and so you can click on
- that image now see in CSS stands for cascading style sheets and so the idea
- is is that the tag that's closest has more precedence than a further away tag
- unless you say important okay so here we have some style here we have a body tag
- border style of dotted red and red a border color that's red and important
- and border width that's five pixels background color which is kind of a
- grayish that's that gray and an extra padding so we've got put some extra
- padding all the way around it and extra margin
- and so so if we take a look at this we take a look at this paragraph right here
- we see some things and we take a look at what we've got so we've inherited this
- we've got a border style of color we it wants to have a border color of green but
- it doesn't because it says the border style is solid so the border style of
- solid is down here in the second style tag so the second style tag has
- precedence because it's closer to the paragraph and so we tried this we tried
- to say border color green but that one was overridden so otherwise this would
- have a solid green border except that this red important is up there and so
- that the red important wins and you can see it really easily here that this was
- overridden and this is the one that's this this border color problem the
- previous one is taking precedence okay and so this is the second one and it
- would normally take precedence over this one except that this important is sort
- of like it it is overriding the one that's closer so another example of
- closer is the style tag okay and so here we go this is border this is the we're
- putting this I mean style attribute we're saying border style equals -
- border color equals blue and so the border style equals look the border
- style equals - holds on but our attempt to make the border color blue is
- overridden again by the red important right so important is up above that okay
- and so this is this - is winning and this blue is not winning because there is an
- overriding red above it I mean there's an overriding red important above it and so
- if you want to override an important tag yay we override an important tag right
- here we basically say I want a border style - come over here border style -
- and I want the border color to be blue and this is important so now this one's
- closer and it says important so among all the important ones the closest is
- important one wins so now we see that the border color actually takes here and
- we are overriding the far away this one got this one here from farther away got
- overridden because of this one and so you can do that now in general while
- I've shown you how important works you shouldn't do too much with important
- because usually you're taking CSS's from other places and and you're patching
- it and you can end up with really inconsistent looks and feels with
- important usually when you see important it means kind of something's wrong and
- you're fighting with a framework or something else so let's take a look at
- some blocks and so let's see background color my each one's colored blue and I'm
- gonna put some padding and a margin and so div P and H1 sort of live in a box
- you have sort of like the actual so let's take a look and say this paragraph
- right here that's probably the thing to do this is just a plain old paragraph
- nothing special right there we go that's a paragraph right there so so let's talk
- about the padding and the margin right so working from the inside out there is
- the actual text that is and it's wrapped and so if this if I change the width of
- this this whole block changes right it gets taller and narrower but at some
- point the in inner part this inner part right here is the inner part is however
- large it becomes and that in this case it's 318 by 38 pixels right and then
- what happens is we sort of work from the out work from the inside out so let's
- I'll go down here and see the box model so the inside of this the actual text is
- 619 pixels by 19 pixels and then I've asked to add 10 pixels of padding and
- that is between this sort of text and the border and then the border itself
- has a width and I specified that border width right I said I want a 5 pixel
- border width and so the border width takes up 5 pixels and then there is
- outside of that there is margin and so margin is space notice that the padding
- and the text itself has the background of the block border has its own color
- and then the the margin as the background of the color of the
- background document okay so this is the margin here it's the color of the
- background document right so content padding border margin and then but the
- padding inherits from the text in the box from a background and the margin
- inherits from the background document and you can have different background
- colors etc etc etc this is an oh by the way this is an ordered list that we've
- got going on right here okay so that's CSS boxes we can change the size of
- these boxes it's it's a little tricky so and so here we have auto sizing div
- where we're not mentioning anything about the height if we take a look at
- the box model here we see that this one is simply you know the size of the text
- plus the padding plus the border plus the margin and that's sort of how how
- that box gets sized you can say that you want to set the size of the box okay so
- I'm going to set that to be three M's three M's is three characters but if you
- look I have too much in here and so you'll see that even though this box is
- three characters tall it's four lines and so the three would fit but the fourth
- one doesn't and so just overflows you can also so three M's it's good to set
- sizes and M's when you can because then if the if someone makes the screen
- larger oops I didn't mean that this one if someone makes this larger or smaller
- now the problem is well I don't know about if we'd call it a problem but in
- the old days if you set a height in pixels and you zoom the screen the box
- that where you set height and M's would zoom and the one that you set in pixels
- wouldn't but they decided to make zooming work otherwise zooming so many
- people made boxes in pixels that they made it so that the the zooming would
- pretend that pixels are really M's so it kind of converts pixels to M's but you're
- really technically you're supposed to avoid using pixels when you really mean
- characters if you want three lines don't look at your font and say I'll make this
- 40 pixels in order to do that and again we still in this box we still have
- overflowing text and so we have a couple things we can do when we want to change
- the overflow we can tell a box that we would like the the overflow to make a
- little scroll bar and so here's here's that same stuff in it you can see we
- got a little tiny baby scroll bar and it it didn't sort of blurp blop out of the
- box right and you and even if the scroll fits you see you get little scroll bars
- but you can't scroll it because there's only one line there and it fits in the
- box and then another thing that you can do is you can just say chop it off right
- chop it off now one thing with some Tava script you can put a little more here
- and that expands the box or pops a bylog or whatever but we're not gonna worry
- about that for now for now we're just saying overflow hidden means lay this
- out as much as you need and then you know throw this text away it's just not
- there anymore like where did all this all this text go
- but it doesn't show it because we told it to chop it off okay so on to the next
- one you can move these things around messy there we go let's make this a
- little different okay so so by default I'll show you the HTML in a second for
- this or maybe just do view source let's do view source okay so if you just say
- div div they just follow after each other and I've given them border because
- to make them a little picture give them some border some padding and some margin
- just so they don't touch each other too much so by default blocks just so I got
- a little border both on all sides a little bit of space between them and a
- nice so they you know however big they get this one gets bigger and I put a
- width on them just so that so that they wouldn't move around and that's there's
- a width on it right there 10 M's 10 characters wide so they just follow each
- other and then you can say okay you know this block right here this number three
- would lay out right here but I have told the number three block I've told the
- number three block that I want to move relative to where you would normally be
- 20 pixels to the left and 20 pixels down from the top and so this block it lays
- out exactly as if it belongs right here and then we shoved it over and moved it
- down and and it came over top of the number four block and so there you go and
- so the the text afterwards this number four block just comes next and it's it's
- basically it's as if this laid out without that without the position
- relative and then this came afterwards but then we sort of just shifted it and
- that's why this overlaps because this corner here is where three would have
- finished and I'm with a normal layout so you got to be careful with relative I
- mean you don't usually want to make it so that they sort of blop on top of each
- other okay and so now we're in four and then we're gonna look at five and six
- and so five is what's called fixed text and you'll see I'm the five comes right
- here but because I've got this is position fixed this is fixed relative to
- the window so it's 20 pixels up from the bottom and 30% of the way from the left
- margin so you can see that this is 30% of the way from the left margin and it's
- the bottom of it is 20 pixels up from the bottom and you'll see that that
- green box never moves and that is because the fixed text is relative to
- the window and that's how we actually get this little link that never goes
- away and so there's a link that never goes away absolute text it's I don't
- know why they call it fixed and absolute but absolute text is a little bit
- different it's relative to the parent element and so in this div right here
- the parent element is the body tag and so when it's saying I would like this to
- be 40 pixels from the top and 30 pixels from the 30% of the way from the left
- that means it's relative to the body tag and so the body tag starts up here and
- so this has been sized 30% from there and whatever 40 pixels down and notice
- that that one goes with the scrolling right so that one goes with the
- scrolling and you'll also notice that between four five and six there's like
- it's as if there's nothing here but if you look at the document five and six
- are sitting there and that's because they are plucked out of the normal
- rendering stream and so they don't take up any space between four and seven so
- they're there they don't count in sort of the normal layout as the page is being
- laid out and so so here's number seven for example actually number eight so
- here's number eight and so this is positioned relative with a left of
- negative 100 1000 pixels and so in a sense this stuff right here has been
- shoved off the screen to the left and so that's that's what how we often will put
- text on that nobody sees just move it to the left but it takes up the vertical
- space anyways because it was just relative it would have normally laid out
- here but the left shoved it over there and so that's basically some some layout
- and so now we're going to talk about Z index let's take a look at the source
- code here and so a Z index is the ability to what happens when things
- overlap okay and so this is a div number one has a Z index of 100 a number two
- has a Z index of negative 100 zero is sort of the background document and it
- works out pretty straightforward and I'm just moving these so they have to lay on
- top of each other you know and so you see this this one here is negative 100
- so it's kind of behind everything this one is positive 100 so it's in front of
- everything and this number three is yeah it's and I just put that there to be in
- the original document at the with no Z index whatsoever and so it's behind this
- thing that has a Z index of a hundred okay and so that's Z index like this
- little note way over here by the right margin says Z index is kind of tricky
- everyone tries to be on top and you'll put Z index of a hundred and then you'll
- find that the navigation put itself as the index of a thousand or something
- like that right and and so Z index is hard to debug and hard to fiddle with but
- at least now you know that Z index is there when things look weird and they're
- overlapping in weird ways Z index is what you're taking advantage of and so
- now we'll take a look at kind of how this navigation works okay and and so
- here's a couple things that the navigation does the body of course is
- font family's Ariel sans serif the navigation bar itself
- source on this so we can look at the navigation bar the navigation bar itself
- this block it's a block tag right that has a position of light gray and I've
- given it a height of 3m so it's like three lines and if I zoom this page in
- and out right that bit gets bigger and smaller don't get back to a hundred
- percent it's three lines tall and I guess I didn't mean to say aerial fence
- and serif I did that in case someone else wanted to change the body tech I
- guess so then I have within I want you will tags within the nav and that's one
- of the nice things about this nav being its own tag I can style just the you
- wells inside here okay and so what I'm doing here is I'm saying I don't want
- any little circles little dots little bullets I don't want any of those I want
- to take away any padding that it has by default this is one of those things that
- this you well inherits let's go down here and take a look at this and you'll
- see that this you well right here so what's happening is this is the things
- that I've said in my CSS and I'm overriding some default things it's
- normally would be display it's a display block that's okay and so I
- overrode the list type style and continuing on the list item inside of
- nav that's what it is nav and list item I wanted I wanted to make that so let's
- let's inspect this guy right here inspect so if you look here so and oh
- and I've got a class of back and so the I have this position absolute which is
- relative to the parent right here and I have 20 pixels to the left of that upper
- left-hand corner and so that's how this comes over here and and then I have a
- color dark blue because it's inside it's a nav an anchor tag within an anchor
- tag within an LI tag within a nav that's what this is saying dark blue text
- decoration of none and so that's where that's where I get this color blue and
- no underlines and then this is the dot back and so I use a back class to just
- to push it for position this right here and then I use the forward class to
- position this relative on the right 20 pixels from the right and so that's how
- I make the navigation bar work and CSS is really a a lot of work we we learn a
- lot about CSS and and this is just a really short introduction to get you a
- sense of what the basic mechanics of CSS are thanks for watching
+ so welcome back now we're gonna now we're gonna take a look at some more examples we're not going to
+ the one thing we're not going to look at is exactly how this navigation bar works at least until
+ a little bit later so the next thing we want to take a look at is how fonts work and there's a
+ couple of ways that you can put fonts into a file there are default fonts that every browser is
+ required to produce like serif sans serif monospace cursive and fantasy and so they you don't exactly
+ know what's going on but they're they're often used as fallback fonts and and so you can have
+ those there are any any font that is on the system like ariel or helvetica and so if you're going to
+ use ariel not all systems have ariel although most of them do these days and you have to have more
+ than one font now another thing that's really common these days is to include a font somehow
+ you find out about a font and here's a lotto font and you go look it up on the web and you find oh
+ include this and so i included this link because i found this really cool font lotto and this extends
+ the browser the browser then learns about this font it downloads the font caches them and keeps
+ them in the browser and then i can make a font that's lotto but i just in case i'm off the
+ internet you know and i can't download this thing i have sans serif as a fallback for lotto so lotto
+ is a fancy font etc etc so there's there's ariel and built-in fonts etc etc and so that's
+ how fonts work colors there's a lot of cool stuff about colors there's a couple different
+ things ignore the nav for the moment i'm just using span tags here there's some default colors
+ in the earliest of browsers these days we have all these fancy ones and you can go look these up and
+ you just google for html colors and there's a bunch of names and then they're consistent across
+ browsers but there's there's like 12 or so really solid names that are in all browsers since the
+ beginning of time but more modern browsers have a better palette of colors although really good
+ graphic artists want to have a much better control of colors and so this is the pound sign says that
+ this is a hexadecimal number and it's got two digits hex means they go all the way up to f so
+ f is an a through fr numbers 8b is the red level 45 is the green level and 13 is the blue level
+ and so this is a brownish color and then there's what's called websafe colors where you just have
+ this ends up being 88 44 11 but it sort of reduces the number of potential colors if you
+ were mixing colors from various sources and so and then in html5 you can see this color picker
+ when you have a form which we'll talk about in a bit it's a color of color form for modern
+ browsers and then you can pop up with this button a color picker and i've got a little
+ thing to print out what the color would be and so it just when i pick the green it basically puts
+ 00ff that's red green and blue it puts that in into this thing which then the program could use
+ you know it could read this or javascript could read it or a server code could read it but right
+ now we're just kind of playing with the picker and we pick a different color and so that that magenta
+ is all the red none of the green and all of the blue and orange is all the red some of the green
+ and none of the blue so those are all just really strong colors and so that's what's called an html
+ color picker anchor tags um in the old days anchor tags were kind of funky they were blue if you hadn't
+ yet visited them and they were uh purple if you had visited them and so this one i've obviously
+ clicked on and so we have a whole series of styling mechanisms that we can have um if we take a look
+ at these um i have put these all in the inside of an id tag of cool so this is this is basically
+ saying find the id tag of cool and then style anchor tags to make them a font weight bold
+ so let's take a look here so i got one one paragraph that has this this one here and then
+ i have a paragraph with an id tag of cool and that's basically so i don't have to style usually you
+ wouldn't say i'm only styling the anchor tags inside of um you know if i'm only i'm only
+ staying staying the anchor tags inside the a pair uh a tag that has an id of cool but that way i can
+ have the default on this one that was my way of keeping the default so normally you would just say
+ a so a uh links is red if it's visited it's orange and so this one's been visited so you
+ don't see the red it means it's unvisited um hover you can change it so you notice when i hover in
+ the text decoration goes away the underscore goes away and i have a color of text font color of white
+ and a background color of navy and then there is one last moment and i click on this one and i will
+ click there's one last moment that's really hard to catch and that is the moment of active if it the
+ web was slow and you clicked on it then it would tell the user in the old days this made more sense
+ that it would turn red and then blink away i don't know if we'll even see it it kind of saw you sort
+ of saw it so there was a color while you click on it yeah there it was um you might not see it
+ in the in the screen but that's what the uh that's what the um the active means is you've clicked on
+ it but it hasn't yet been retrieved and then like a moment letter the whole page goes away
+ another thing we can do is we can play with images okay and so um here is an image um
+ one of the things that's really fun to do with images is float them to the right or float them
+ to the left and then what happens is is that the uh image the text is drawn around the image so
+ it wraps around the image and you'll notice where i floated this left oh i kind of got rid of
+ everything i floated it left before the h1 and so what happens is the h1 top of the h1 in the top
+ the image i'll line up and then all the text afterwards um all the text afterwards wraps around
+ it and so you'll notice that i've got the image first and then the h1 second and that what the
+ float sort of disconnects the image from the normal line of flow floats it over and then takes
+ this next thing and the next paragraph and use saves the space for the image and shoves everything
+ shoves the margin over so that it comes over here now once you start floating images you
+ got to learn about this clear equals all because if we want this next paragraph like this one we
+ want to we want we don't want this paragraph for whatever reason to be on the image now if it goes
+ far enough you see this this this paragraph here moves back to the left margin and then this next
+ one starts there but if if the browser is wider and the text is there's not so much text we don't
+ want this to be up in here and so you say br clear equals all so between this paragraph and this
+ paragraph we do br clear equals all and um you can put images right in the middle of the text like a
+ character you don't have to have them by themselves and you can even make an image that's a clickable
+ link and so you can click on that image now c and css stands for cascading style sheets and so the
+ idea is is that the tag that's closest has more precedence than a further away tag unless you
+ say important okay so here we have some style um here we have a uh a body tag uh border style
+ of dotted red and red a border color that's red and important and border width that's five pixels
+ background color uh which is kind of a grayish that's that gray and an extra padding so we've
+ got put some extra padding um all the way around it and extra margin um and so
+ so if we take a look at this we take a look at this paragraph right here we see some things and
+ we take a look at what we've got so we've inherited this we we got a border style of color we it wants
+ to have a border color of green but it doesn't because um it says the border style is solid
+ so the border style of solid is down here in the second style tag so the second style tag has
+ precedence because it's closer to the paragraph and so we tried to we tried to say border color
+ green but that one was overridden so otherwise this would have a solid green border except that
+ this red important is up there and so that the red important wins and you can see it really easily
+ here that this was overridden and this is the one this this this border color problem the previous
+ one is taking precedence okay and so this is the second one and it would normally take precedence
+ over this one except that this important is is sort of like it it is overriding the one that's
+ closer so another example of closer is the style tag okay and so here we go this is border this is
+ the we're putting this i mean style attribute we're saying border style equals dash border color
+ equals blue and so the border style equals the border style equals dash holds on but our attempt
+ to make the border color blue is overridden again by the red important right so important is up
+ above that okay and so this this this dashed is winning and this blue is not winning because
+ there is an overriding red above it i mean there's an overriding red important above it
+ and so if you want to override an important tag yay we override an important tag right here
+ we basically say i want a border style dashed come over here border style dashed and i want the border
+ color to be blue and this is important so now this one's closer and it says important so among all
+ the important ones the closest is important one wins so now we see that the border color actually
+ takes here and um we are overriding the far away this one got this one here from farther away got
+ overwritten because of this one and so you can do that now in general while i've shown you how
+ important works you shouldn't do too much with important because usually you're taking csss from
+ other places and and um you're you're you're patching it and you can end up with really
+ inconsistent looks and feels with with important usually when you see important it means kind of
+ something's wrong and you're fighting with a framework or something else so let's take a
+ look at some blocks um and so let's see background color why each one's colored blue
+ and i'm going to put some padding and a margin um and so div p and h1 sort of live in a box
+ you have sort of like the actual uh so let's take a look at say this paragraph right here that's
+ probably the thing to do this is just a plain old paragraph nothing special right there we go that's
+ a paragraph right there so so let's talk about the padding and the margin right so working from the
+ inside out there is the actual text that is and it's wrapped and so if this if i change the width
+ of this this whole block changes right it gets taller and narrower but at some point the in
+ inner part this inner part right here is uh the inner part is however large it becomes and that
+ in this case it's 318 by 38 pixels right and then what happens is we sort of work from the out work
+ from the inside out so let's i'll go down here and see the box model so the inside of this the actual
+ text is 619 pixels by 19 pixels and then i've asked to add 10 pixels of padding and that is between
+ this sort of text and the border and then the border itself has a width and i specified that
+ border width um right i said i want a five pixel border width and so the border width takes up five
+ pixels and then there is outside of that there is margin and so margin is space notice that the
+ padding and the text itself has the background of the block border has its own color and then
+ the the margin as the background of the color of the background document okay so this is the
+ margin here it's the color of the background document right so content padding border margin
+ and then but the padding inherits from the text in the box from a background
+ and the margin inherits from the background document
+ and you can have different background colors etc etc etc this is an uh oh by the way this is an
+ ordered list that we've got going on right here okay so that's css boxes we can change the size
+ of these boxes it's uh it's a little tricky so uh and so here we have a auto sizing div where
+ we're not mentioning anything about the height if we take a look at the box model here we see that
+ this one is simply you know the size of the text plus the padding plus the border plus the margin
+ and that's sort of how how that box gets sized you can say that you want to set the size of the box
+ okay so i'm going to set that to be three m's three m's is three characters um but if you look
+ i have too much in here and so you'll see that even though this box is three characters tall
+ uh it's four lines and so the three would fit but the fourth one doesn't and so just overflows
+ you can also so three m's it's good to set sizes and m's when you can because then if the if someone
+ makes the screen larger oops i didn't mean that i just wonder if someone makes this larger or smaller
+ now the problem is well i don't know about if we call it a problem but in the old days if you
+ set a height in pixels and you zoom the screen the box that where you set height and m's would zoom
+ and the one that you set in pixels wouldn't but they decided to make zooming work otherwise
+ zooming so many people made boxes in pixels that they made it so that the the zooming would pretend
+ that pixels are really m's so it kind of converts pixels to m's but you're really technically you're
+ supposed to avoid using pixels when you really mean uh characters if you want three lines don't
+ look at your font and say i'll make this 40 pixels in order to do that and again we still in this box
+ we still have uh overflowing text and so we have a couple things we can do when we want to uh change
+ the overflow we can tell a box that we would like the the overflow to make a little scroll bar
+ and so here's here's that same stuff and you can see we got a little tiny baby scroll bar
+ and it it didn't sort of blurp blop out of the box right and you and even if the scroll fits
+ you see you get little scroll bars but you can't scroll it because there's only one line there and
+ it fits in the box and then another thing that you can do is you can uh just say chop it off
+ right chop it off now one thing with some tava script you can put a little more here and that
+ expands the box or pops a by-log or whatever but we're not gonna worry about that for now
+ for now we're just saying overflow hidden means lay this out as much as you need and then you know
+ throw this text away it's just not there anymore like where did all this all this text go but it
+ doesn't show it because we told it to chop it off okay so on to the next one you can move these
+ things around uh this is a little messy there we go let's make this a little different okay so
+ so by default i'll show you the html in a second for this or maybe just do view source let's do
+ view source okay so if you just say div div they just follow after each other um and i've given
+ them border because to make them a little picture give them some border some padding and some margin
+ just so they don't touch each other too much so by default blocks just so i got a little border
+ both on all sides a little bit of space between them and a nice so they you know however big they
+ get this one gets bigger and i put a width on them just so that so that they wouldn't move around
+ and that's there's a width on it right there 10 m's 10 characters wide so they just follow each
+ other and then you can say okay you know this block right here this number three would lay
+ out right here but i have told the number three block i've told the number three block that i want
+ to move relative to where you would normally be 20 pixels to the left and 20 pixels uh down from the
+ top and so this block it lays out exactly as if it belongs right here and then we shoved it over
+ and moved it down and and it came over top of the number four block and so there you go and so the
+ the text afterwards this number four block just comes next and it's it's basically it's as if
+ this laid out without that without the position relative and then this came afterwards but then
+ we sort of just shifted it and that's why this overlaps because this corner here is where three
+ would have finished and with a normal layout so you got to be careful with relative i mean you
+ don't usually want to make it so that they uh sort of blop on top of each other okay and so now we're
+ in four and then we're going to look at five and six and so five is what's called fixed text and
+ you'll see i'm the five comes right here but because i've got this as position fixed this
+ is fixed relative to the window so it's 20 pixels up from the bottom and 30 of the way from the left
+ margin so you can see that this is uh 30 of the way from the left margin and it's uh the bottom
+ of it is 20 pixels up from the bottom and you'll see that that green box never moves and that is
+ because the fixed text is relative to the window and that's how we actually get this little link
+ that never goes away and so there's a link that never goes away um absolute text it's i don't know
+ why they call it fixed and absolute but absolute text is a little bit different it's relative to
+ the parent element and so in this div right here the parent element is the body tag and so when
+ it's saying i would like this to be uh 40 pixels from the top and 30 pixels from the 30 percent of
+ the way from the left that means it's relative to the body tag and so the body tag starts up here
+ and so this has been sized 30 from there and whatever 40 pixels down and notice that that
+ one goes with the scrolling right so that one goes with the scrolling and you'll also notice
+ that between four five and six there's like it's as if there's nothing here but if you look at the
+ document five and six are sitting there and that's because they are plucked out of the normal
+ rendering stream and so they don't take up any space between four and seven so they're
+ they're they're they don't count in sort of the normal layout as the page is being laid out
+ and so so here's number seven for example actually number eight so here's number eight
+ and so this is uh positioned relative with a left of negative 100 1000 pixels and so in a sense this
+ stuff right here has been shoved off the screen to the left and so that's that's what how we often
+ will put text on that nobody sees just move it to the left but it takes up the vertical space anyways
+ because it was just relative it would have normally laid out here but the left shoved it over there
+ and so that's basically uh some some layout and so uh now we're going to talk about z index
+ let's take a look at the source code here
+ and so a z index is the ability to what happens when things overlap okay and so this is a div
+ number one has a z index of 100 a number two has a z index of negative 100 zero is sort of the
+ background document and it works out pretty straightforward and i'm just moving these so
+ they have to lay on top of each other um you know and so you see this this one here is negative
+ 100 so it's kind of behind everything um this one is uh positive 100 so it's in front of everything
+ and this number three is um yeah it's and i just put that there to be in the original document
+ at the with no z index whatsoever and so it's behind this thing that has a z index of 100
+ okay and so that's z index um like this little note way over here by the right margin says
+ z index is uh kind of tricky everyone tries to be on top and um you'll put z index of 100 and then
+ you'll find that the navigation put itself as the index of a thousand or something like that right
+ and um and so z index is hard to debug and hard to fiddle with but at least now you know
+ that z index is the when things look weird and they're overlapping in weird ways z index is what
+ you're taking advantage of and so now we'll take a look at kind of how this navigation works okay
+ and um and so here's a couple things that the navigation does uh the body of course is font
+ family ariel sans serif the navigation bar itself the nav that's i guess i'll do a view source on
+ this so we can look at the navigation bar uh the navigation bar itself this block it's a block tag
+ right that has a position of light gray and i've given it a height of three m so it's like
+ three lines and if i zoom this page in and out
+ right that gets bigger and smaller don't get back to 100 um it's three lines tall and i guess i
+ didn't mean to say ariel sans serif i did that in case someone else wanted to change the body tag i
+ guess um so then i have within i want ul tags within the nav and that's one of the nice things
+ about this nav being its own tag i can style just the ul's inside here okay and so what i'm doing
+ here is i'm saying uh i i don't want any uh little uh circles little dots little bullets i don't want
+ any of those i want to take away any padding that it has by default this is one of those things that
+ this ul inherits um let's go down here and take a look at this and you'll see that um
+ this ul right here um so what's happening is this is the things that i've said in my css and i'm
+ overriding some default things uh it's normally would be display uh it's a display block that's
+ okay um and so i i overrode the the the list type style um and continuing on uh the list item inside
+ of nav that's what it is nav and list item i wanted i wanted to make that so let's uh let's
+ inspect this guy right here inspect so uh if you look here uh so and oh and i've got a class of
+ back and so the i have this position absolute which is relative to the parent right here and
+ i have 20 pixels to the left of that upper left hand corner and so that's how this comes over here
+ and um and then i have a color dark blue because it's inside it's a nav an anchor tag within
+ an anchor tag within an li tag within a nav that's what this is saying
+ dark blue text decoration of none and so that's where that's where i get this color blue and no
+ underlines um and then this is the dot back and so i use a back class to just to push it for
+ position this right here and then i use the forward class to position this relative on the right 20
+ pixels from the right and so that's how i make the navigation bar work and css is really a
+ a lot of work we we learn a lot about css uh and and this is just a really short introduction
+ to get you a sense of what the basic mechanics of css are uh thanks for watching

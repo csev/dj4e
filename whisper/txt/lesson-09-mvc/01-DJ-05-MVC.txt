@@ -1,15 +1,16 @@
  Now I want to talk a little bit about a concept,
- model view controller, it's not super essential
- to understanding how everything works in web servers,
+ ModelViewController.
+ It's not super essential to understanding
+ how everything works in web servers,
  but it's a great set of terminology
- that we use among web developers,
- and I think as you move into your role as a web developer,
+ that we use among web developers.
+ And I think as you move into your role as a web developer,
  you ought to understand this.
  So this is a picture of the request-response cycle.
  At the bottom we have the browser,
- and at the top we have a web server talking on port 80,
- the user clicks on a page, clicks on a link,
- and the browser intercepts that link,
+ and at the top we have a web server talking on port 80.
+ The user clicks on a page, clicks on a link,
+ the browser intercepts that link,
  opens a connection up to the web server,
  sends a get request, the web server does its work,
  and returns a web page.
@@ -17,43 +18,44 @@
  And now we're going to, as in much of this class,
  really expand what we're going to do
  when we're in that web server.
- So that's where we're gonna take a look at this.
- So basically model view controller
- is really a set of terms that allow us to say,
- this aspect, this part of the work
- that's gonna be done in the web server,
- it's either the model, it's the view, or the controller.
+ So that's where we're going to take a look at this.
+ So basically ModelViewController is really a set of terms
+ that allow us to say this aspect,
+ this part of the work that's going to be done
+ in the web server, it's either the model,
+ it's the view or the controller.
  And so the most value that it has is to say,
  oh, that part right there, that's controller.
- So model view controller is independent
+ So ModelViewController is independent
  of the programming language that you use,
  independent of the operating system that you use.
  It's pretty universal across the concept,
  as an architecture, as a way of talking about web servers.
  So the three parts of it, it'd be probably better
- to call it controller view model,
- or model controller view model, or something like that.
- But model view controller rolls off our tongue better.
- So the definition in my mind of these terms
+ to call it ControllerViewModel,
+ or ModelControllerViewModel, or something like that.
+ But ModelViewController rolls off our tongue better.
+ So the definition, in my mind, of these terms
  is the controller is this sort of abstract idea
  of what happens next, what is the sequence of events
  that happen, and then where do we start from,
  what do we do when we get a request,
- and then afterwards, where do we go at the end of that?
+ and then afterwards, where do we go at the end of that.
  The view is all the stuff we see.
  It usually is at the end of the request response cycle,
  we produce a view and we return the view back.
  And one of the things that the request response cycle
  often does is either interacts by storing data
- in a database, like an insert, or it edits something
- and puts it in a database, or it just reads stuff
- from the database and shows it to us in the view.
+ in a database, like an insert,
+ or it edits something and puts it in a database,
+ or it just reads stuff from the database
+ and shows it to us in the view.
  And so that's called the model.
  The database itself, and sort of the notion
  that we have persistent storage inside the application,
  that's what we call the model.
- The view is what we see, and the controller's kind of the glue
- that puts it all together.
+ The view is what we see, and the controller
+ is kind of the glue that puts it all together.
  So the controller orchestrates all this stuff.
  And so sometimes you don't say that's the controller,
  but the controller is like several places
@@ -62,7 +64,7 @@
  that we often have to do for each request.
  Sometimes if it's like a form that's been sent to us,
  we have some data that we have to receive,
- validate, and then process,
+ validate and then process,
  and then store it in a database maybe.
  And so that's often thought of as the model work.
  Then once we've done that, we make a decision,
@@ -70,7 +72,8 @@
  What do we want to show next?
  What page to show next?
  Maybe we show them a thank you page,
- or maybe we send them back to the top page of the application.
+ or maybe we send them back to the top page
+ of the application.
  And so once we know what page we're gonna send back to them,
  then that page has some data
  that we might have to pull from the database.
@@ -79,9 +82,9 @@
  some HTML response, and then put it back.
  So these are the four typical steps that we break down.
  Say, in comes an HTTP request.
- First thing we do is if it has data
- that we're supposed to do something with, we handle it.
- Maybe store that data in a database.
+ First thing we do is if it has data that we're supposed
+ to do something with, we handle it,
+ maybe store that data in a database.
  Then we talk to the database and retrieve more data
  to produce the next output that we're gonna make.
  And then we produce the HTML or the other form of output,
@@ -90,18 +93,16 @@
  the Django application is pretty much
  a model view controller application
  in that the routing is very much the controller.
- It is that which we, it's like, here comes a URL.
- It's a request for something.
- Where do we go?
+ It is that which we, it's like, here comes a URL,
+ it's a request for something, where do we go?
  And so when you write urls.py,
  you're informing the controller.
- So the urls.py, I would say,
- is part of the controller action, the controller activity.
+ So the urls.py I would say is part of the controller action,
+ the controller activity.
  The views is named the view.
  So the view is a little bit controller
  in that sometimes the view is storing some data
- in the database.
- Sometimes that's the job of the view.
+ in the database, sometimes that's the job of the view.
  Here comes some data before the view produces
  the next output.
  It actually has to store what came in on this request.
@@ -109,45 +110,47 @@
  like it might decide, you know, I don't want you,
  this is the wrong page now that we've processed your data.
  I'm just gonna send you over to some other page.
- That's kind of a controller activity.
+ That's kind of controller activity.
  So it might say, I'll store the data.
  It might, let's see here, can I, yeah.
- So it might say, you know, here I go.
- I'm gonna store some data.
- And then I'm actually just gonna send you
+ So it might say, you know, here I go,
+ I'm gonna store some data,
+ and then I'm actually just gonna send you
  to a different place.
  So I'm not even gonna give you an HTML.
- And we'll talk about that redirect.
- That's called a redirect in a bit.
- Sometimes there is no data.
- And so sometimes you get some data,
+ And we'll talk about that redirect,
+ that's called a redirect in a bit.
+ Sometimes there is no data,
+ and so sometimes you get some data,
  you route it to the right view,
  and maybe some data has to be retrieved from the database,
  merged together, and result is processed.
  So when we think of views.py,
- that is, to me, both the controller and the view production.
+ that is to me, both the controller and the view production.
  So sometimes it's making decisions about where to go next.
  Sometimes it's just handling incoming data
  or sending data out.
- And similarly, the models is taken from Model View Controller
- because the models.py is where we basically do all the work
- to talk to the database, whether it is storing stuff
- in the database or retrieving stuff in the database.
- We use the Django model capability to implement the concept
- in Model View Controller of models.
+ And similarly, the models is taken from model view controller
+ because the models.py is where we basically
+ do all the work to talk to the database,
+ whether it is storing stuff in the database
+ or retrieving stuff in the database.
+ We use the Django model capability
+ to implement the concept in model view controller of models.
  So just a quick summary.
- I like to think of urls.py
+ I like to think of urls.py,
  and some of the views.py is the controller.
  The models, of course, is all the things
  that talk to the database.
  And then the views are like the second half of views.py.
- So produce using templates and forms.py and et cetera,
- et cetera to produce the output and send it out.
- And so that's how I map the Model View Controller
+ So produce using templates and forms.py,
+ and et cetera, et cetera, to produce the output
+ and send it out.
+ And so that's how I map the model view controller
  onto the Django architecture.
  And again, Django architecture was probably inspired
- by the Model View Controller.
- And that's why it takes some of its names
+ by the model view controller,
+ and that's why it takes some of its names
  of some of its capabilities
- from the Model View Controller concept.
+ from the model view controller concept.
  (upbeat music)

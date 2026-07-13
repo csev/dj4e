@@ -5,36 +5,36 @@
  to talk about URLs, which are simple.
  It says when you get the request with a URL of this format,
  choose a view and send it to that view.
- We're going to talk a lot about views.py and templates
+ We're going to talk a lot about views dot py and templates
  in an upcoming lecture.
  We'll talk about forms.
- And we spent a bunch of time talking about models.py
+ And we spent a bunch of time talking about models dot py
  and how the models can talk to Python code,
- talk to the shell, how the models can
- inform how we write to the database
+ talk to the shell, how the models get
+ in for how we write to the database
  and how we read from the database.
  So we're starting to fill parts in.
  As we put the views together, we're
  really starting to really create our entire application.
  And I know it's taken a while to get to the point
  where we can get to the point where we see the whole thing.
- So I just want to say that from time to time, wherever you have
- dj-free samples, whether it's on your laptop
- or whether it's on Python Anywhere,
- you should do a get pull from time to time,
+ So I just want to say that from time to time, wherever you
+ have dj-free samples, whether it's on your laptop
+ or whether it's on Python anywhere,
+ you should do a get pull from time to time
  because I'm always working on these samples.
- And I want you to make sure you have the latest
- copies of these samples.
- Sometimes I add little bits of-- I don't change the samples,
- but I add bits of documentation as I'm like, oh,
- I should have added that.
+ And I want you to make sure you have
+ the latest copies of these samples.
+ Sometimes I add little bits.
+ I don't change the samples, but I add bits of documentation
+ as I'm like, oh, I should have added that.
  So views are like the core of the application.
  I mean, the URLs find their way to views.
  Models tend to serve the needs of views,
  act as this layer to allow views to write and read
  the database.
  And so the views.py has a model aspect
- in that it handles incoming data.
+ and it handles incoming data.
  When we get the forms and post data,
  then we copy that into the database.
  The views.py decides sometimes whether or not
@@ -56,9 +56,9 @@
  So remember that Django has a project.
  And then underneath that, there's
  one or more applications.
- And each of the DJ free samples, you
- see lots of applications, each application
- kind of to show a little bit of sample code for a topic.
+ And each of the DJ free samples, you see lots of applications.
+ Each application kind of to show a little bit of sample
+ code for a topic.
  And so that second part of the URL,
  that is the application name.
  And for all intents and purposes,
@@ -94,7 +94,7 @@
  All that stuff is wrapped up into this request object, which
  we'll talk about in a second.
  And that view function looks at that request object,
- decides what to do, talks to the database, maybe,
+ decides what to do, talks to the database maybe,
  and then sends back a response, whether it's
  a redirect or some HTML.
  And the function is kind of the low level thing.
@@ -125,11 +125,13 @@
  And so it's already there.
  And that's why we go into Django views generic import template
  view.
- And we're going to say, you know what, I wrote that template.
+ And we're going to say, you know what, I'm going to route--
+ I mean, I wrote that template.
  But I just don't want to write the code to go send that.
  We just read that template and send it back.
  And so this is a predefined bit of Django that does this for us.
- Sort of the more old school thing is this syntax right here.
+ Sort of the more old school thing
+ is this syntax right here.
  And basically from.import views pulls in views slash views.py.
  And then this, you will see our functions inside there.
  And then these are classes also from our views.py

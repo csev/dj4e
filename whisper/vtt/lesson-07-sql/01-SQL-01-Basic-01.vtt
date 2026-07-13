@@ -1,520 +1,505 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.760
- - Hello and welcome to our lecture on SQL.
+00:00:00.000 --> 00:00:02.780
+ - Hello, and welcome to our lecture on SQL.
 
-00:00:02.760 --> 00:00:06.920
+00:00:02.780 --> 00:00:06.940
  So this is a very, very short introduction to SQL.
 
-00:00:06.920 --> 00:00:11.380
- I love SQL, I was talking to a student the other day
+00:00:06.940 --> 00:00:11.380
+ I love SQL, I was talking to a student the other day,
 
 00:00:11.380 --> 00:00:13.880
- and they were like, "SQL's my favorite language."
+ and they were like, SQL's my favorite language.
 
-00:00:13.880 --> 00:00:15.940
- And I said, "I have to agree that SQL
+00:00:13.880 --> 00:00:15.260
+ And I said, I have to agree
 
-00:00:15.940 --> 00:00:18.600
- "is my favorite language, too."
+00:00:15.260 --> 00:00:18.340
+ that SQL is my favorite language, too.
 
-00:00:18.600 --> 00:00:21.240
+00:00:18.340 --> 00:00:21.260
  Because SQL is so beautiful,
 
-00:00:21.240 --> 00:00:23.220
+00:00:21.260 --> 00:00:23.240
  you don't even need to write loops in SQL.
 
-00:00:23.220 --> 00:00:25.160
+00:00:23.240 --> 00:00:25.160
  We write loops in languages like Python
 
 00:00:25.160 --> 00:00:27.120
  just because we have to.
 
-00:00:27.120 --> 00:00:30.840
+00:00:27.120 --> 00:00:30.860
  The problem is, is that SQL is just, is perfect,
 
-00:00:30.840 --> 00:00:33.240
+00:00:30.860 --> 00:00:33.300
  but it's not the way we could write something
 
-00:00:33.240 --> 00:00:36.120
+00:00:33.300 --> 00:00:36.120
  as complex as Linux or Python.
 
-00:00:36.120 --> 00:00:38.740
+00:00:36.120 --> 00:00:38.700
  And so SQL's not really the way computers think.
 
-00:00:38.740 --> 00:00:41.900
+00:00:38.700 --> 00:00:41.900
  We have these things called database engines.
 
 00:00:41.900 --> 00:00:44.580
  And these database engines make things work
 
-00:00:44.580 --> 00:00:46.180
+00:00:44.580 --> 00:00:46.200
  really, really well.
 
-00:00:46.180 --> 00:00:49.500
+00:00:46.200 --> 00:00:49.500
  And so, SQL is a great way to organize data,
 
-00:00:49.500 --> 00:00:53.300
+00:00:49.500 --> 00:00:53.340
  but a lot of work has gone into keeping that data organized
 
-00:00:53.300 --> 00:00:54.480
+00:00:53.340 --> 00:00:54.460
  and making it simple.
 
-00:00:54.480 --> 00:00:56.920
- So there's a, it's like there's this abstraction
+00:00:54.460 --> 00:00:56.940
+ So there's a, it's like there's this abstraction,
 
-00:00:56.920 --> 00:01:00.360
+00:00:56.940 --> 00:01:00.360
  and it's a lot of work to make that abstraction work.
 
-00:01:00.360 --> 00:01:02.400
+00:01:00.360 --> 00:01:02.380
  So I want to start out with a little bit of history,
 
-00:01:02.400 --> 00:01:04.780
+00:01:02.380 --> 00:01:04.780
  sort of before databases.
 
-00:01:04.780 --> 00:01:08.940
- And you might think, "Well, before databases,
+00:01:04.780 --> 00:01:09.080
+ And you might think, well, before databases,
 
-00:01:08.940 --> 00:01:09.920
- "how could that be?"
+00:01:09.080 --> 00:01:09.920
+ how could that be?
 
-00:01:09.920 --> 00:01:11.620
- Well, you know, it's in the old days
+00:01:09.920 --> 00:01:11.580
+ Well, you know, it's in the old days,
 
-00:01:11.620 --> 00:01:15.620
+00:01:11.580 --> 00:01:15.620
  and if you watch old computer, movies featuring computers,
 
-00:01:15.620 --> 00:01:18.920
+00:01:15.620 --> 00:01:18.960
  you see pictures that have these,
 
-00:01:18.920 --> 00:01:20.840
+00:01:18.960 --> 00:01:20.800
  you see pictures that have these tape machines
 
-00:01:20.840 --> 00:01:22.220
- in the background and they're spinning.
+00:01:20.800 --> 00:01:22.220
+ in the background, and they're spinning.
 
-00:01:22.220 --> 00:01:25.480
- And the spinning of the tape machine is the sort of
+00:01:22.220 --> 00:01:25.180
+ And the spinning of the tape machine is the,
 
-00:01:25.480 --> 00:01:28.500
- physical manifestation of computation.
+00:01:25.180 --> 00:01:28.580
+ sort of physical manifestation of computation.
 
-00:01:28.500 --> 00:01:31.200
+00:01:28.580 --> 00:01:31.220
  And it had to do with the fact that in the old days,
 
-00:01:31.200 --> 00:01:33.840
+00:01:31.220 --> 00:01:33.920
  computers did not have enough data
 
-00:01:33.840 --> 00:01:37.000
+00:01:33.920 --> 00:01:37.060
  to store all of their data in the memory or on a disk.
 
-00:01:37.000 --> 00:01:39.620
+00:01:37.060 --> 00:01:39.700
  We didn't even have disks in the early days.
 
-00:01:39.620 --> 00:01:41.440
+00:01:39.700 --> 00:01:42.000
  In the early days, tapes were what we had.
 
-00:01:41.440 --> 00:01:44.560
- And we used kind of a variation of audio tapes.
+00:01:42.000 --> 00:01:44.620
+ And we used kind of a variation of audio tapes,
 
-00:01:44.560 --> 00:01:48.840
- And instead of on audio, they contained data, zeros and ones.
+00:01:44.620 --> 00:01:48.940
+ and instead of on audio, they contained data, zeros and ones.
 
-00:01:48.840 --> 00:01:50.920
+00:01:48.940 --> 00:01:50.940
  And so the way things would work in the old days
 
-00:01:50.920 --> 00:01:53.500
+00:01:50.940 --> 00:01:53.540
  so that you could have a database, as it were,
 
-00:01:53.500 --> 00:01:57.560
+00:01:53.540 --> 00:01:57.540
  was the database was all of your data recorded onto a tape.
 
-00:01:57.560 --> 00:02:01.800
- And the key thing to a tape is that it was a physical thing
+00:01:57.540 --> 00:02:01.780
+ And the key thing to a tape is that it was a physical thing,
 
-00:02:01.800 --> 00:02:04.500
+00:02:01.780 --> 00:02:04.500
  and so you had to rewind it and go forwards and backwards.
 
-00:02:04.500 --> 00:02:07.920
+00:02:04.500 --> 00:02:07.900
  And most of you probably never even have seen a cassette tape
 
-00:02:07.920 --> 00:02:09.800
- or a track tape or a reel-to-reel tape.
+00:02:07.900 --> 00:02:09.800
+ or a track tape or a reel-to-reel tape,
 
 00:02:09.800 --> 00:02:14.600
- But it's a physical, long, thousand foot piece of plastic
+ but it's a physical, long, thousand-foot piece of plastic,
 
-00:02:14.600 --> 00:02:16.280
+00:02:14.600 --> 00:02:16.300
  and to get the data at the end,
 
-00:02:16.280 --> 00:02:19.000
+00:02:16.300 --> 00:02:18.980
  you had to spin it until you got there.
 
-00:02:19.000 --> 00:02:21.320
+00:02:18.980 --> 00:02:21.340
  And so it wasn't what we call random access,
 
-00:02:21.320 --> 00:02:23.220
+00:02:21.340 --> 00:02:23.220
  which means that in a random access,
 
-00:02:23.220 --> 00:02:25.480
+00:02:23.220 --> 00:02:25.500
  whether it's memory or the disk drive,
 
-00:02:25.480 --> 00:02:27.920
+00:02:25.500 --> 00:02:27.940
  random access allows you to get to any place
 
-00:02:27.920 --> 00:02:29.760
- roughly in a fixed amount of time.
+00:02:27.940 --> 00:02:29.740
+ roughly in a fixed amount of time,
 
-00:02:29.760 --> 00:02:32.200
- Whereas if you're close to something on a tape,
+00:02:29.740 --> 00:02:32.180
+ whereas if you're close to something on a tape,
 
-00:02:32.200 --> 00:02:33.480
+00:02:32.180 --> 00:02:33.460
  you can get to it very quickly.
 
-00:02:33.480 --> 00:02:35.760
+00:02:33.460 --> 00:02:35.780
  If you're far away, you gotta go, "Boo!"
 
-00:02:35.760 --> 00:02:38.280
+00:02:35.780 --> 00:02:38.300
  and then wait and then come back.
 
-00:02:38.280 --> 00:02:43.280
+00:02:38.300 --> 00:02:43.620
  So this led to a pattern where every night,
 
-00:02:43.280 --> 00:02:47.540
+00:02:43.620 --> 00:02:47.540
  we would take the tape from yesterday's account balances.
 
 00:02:47.540 --> 00:02:49.040
- Let's just say we're a bank
+ Let's just say we're a bank,
 
-00:02:49.040 --> 00:02:51.000
+00:02:49.040 --> 00:02:50.980
  and we're people coming up the window,
 
-00:02:51.000 --> 00:02:52.760
- putting in money, taking out money.
+00:02:50.980 --> 00:02:52.780
+ putting in money, taking out money,
 
-00:02:52.760 --> 00:02:54.040
- And then what we would do
+00:02:52.780 --> 00:02:54.020
+ and then what we would do
 
-00:02:54.040 --> 00:02:56.120
+00:02:54.020 --> 00:02:56.100
  is we would put all of the transactions,
 
-00:02:56.120 --> 00:02:58.720
+00:02:56.100 --> 00:02:58.740
  sometimes on physically punched cards,
 
-00:02:58.720 --> 00:03:01.080
+00:02:58.740 --> 00:03:01.080
  and then we would sort them, right?
 
-00:03:01.080 --> 00:03:03.680
- And let's just say we have 26 accounts
+00:03:01.080 --> 00:03:03.700
+ And let's just say we have 26 accounts,
 
-00:03:03.680 --> 00:03:07.160
- and you know, person C shows up with a little,
+00:03:03.700 --> 00:03:07.300
+ and person C shows up with a little,
 
-00:03:07.160 --> 00:03:11.000
- you know, adds $10 and person F shows up
+00:03:07.300 --> 00:03:13.000
+ adds $10, and person F shows up and subtracts $10,
 
-00:03:11.000 --> 00:03:14.960
- and subtracts $10 and et cetera, et cetera.
+00:03:13.000 --> 00:03:14.940
+ and et cetera, et cetera.
 
-00:03:14.960 --> 00:03:17.280
+00:03:14.940 --> 00:03:17.260
  And then what we would have at night,
 
-00:03:17.280 --> 00:03:18.440
- we would get these all sorted
+00:03:17.260 --> 00:03:18.460
+ we would get these all sorted,
 
-00:03:18.440 --> 00:03:19.820
+00:03:18.460 --> 00:03:19.820
  and there were physical machines
 
-00:03:19.820 --> 00:03:22.880
+00:03:19.820 --> 00:03:22.860
  that would actually sort these in the earliest of days.
 
-00:03:22.880 --> 00:03:27.880
+00:03:22.860 --> 00:03:27.860
  And then we would have the old balance A, B, C, D, E, F
 
-00:03:27.880 --> 00:03:33.120
+00:03:27.860 --> 00:03:33.120
  sitting on a tape in order, sorted in order.
 
-00:03:33.120 --> 00:03:36.520
+00:03:33.120 --> 00:03:36.540
  And we would start a process after the bank closed
 
-00:03:36.520 --> 00:03:41.120
- where we would read the first record off the tape, like A.
+00:03:36.540 --> 00:03:41.140
+ where we would read the first record off the tape, like A,
 
-00:03:41.120 --> 00:03:46.120
- We would read the first transaction off the cards
+00:03:41.140 --> 00:03:46.140
+ we would read the first transaction off the cards,
 
-00:03:46.120 --> 00:03:47.580
+00:03:46.140 --> 00:03:47.580
  and we would compare them.
 
 00:03:47.580 --> 00:03:52.580
  And if the tape was earlier than the transaction or lower,
 
-00:03:52.580 --> 00:03:54.920
- we would just copy it.
+00:03:52.580 --> 00:03:56.060
+ we would just copy it, so we'd copy it.
 
-00:03:54.920 --> 00:03:56.080
- So we'd copy it.
+00:03:56.060 --> 00:03:58.940
+ And then so the B would compare to the C,
 
-00:03:56.080 --> 00:03:58.920
- And then so the B would compare to the C
+00:03:58.940 --> 00:04:01.700
+ and B would get copied, and then C would come across,
 
-00:03:58.920 --> 00:04:01.720
- and B would get copied and then C would come across.
+00:04:01.700 --> 00:04:03.980
+ and then we'd realize that the C data,
 
-00:04:01.720 --> 00:04:03.960
- And then we'd realize that the C data,
-
-00:04:03.960 --> 00:04:06.200
+00:04:03.980 --> 00:04:06.220
  we would have to update the C data
 
-00:04:06.200 --> 00:04:08.160
- and add $10 to the balance.
+00:04:06.220 --> 00:04:09.300
+ and add $10 to the balance, and then we'd write that.
 
-00:04:08.160 --> 00:04:09.320
- And then we'd write that.
-
-00:04:09.320 --> 00:04:10.940
+00:04:09.300 --> 00:04:10.940
  And you'll notice as we're writing this,
 
-00:04:10.940 --> 00:04:13.000
+00:04:10.940 --> 00:04:13.020
  we are sorting, it's in sorted order.
 
-00:04:13.000 --> 00:04:15.240
- Then we would copy D, we have nothing for D
+00:04:13.020 --> 00:04:15.260
+ Then we would copy D, we have nothing for D,
 
-00:04:15.240 --> 00:04:16.720
+00:04:15.260 --> 00:04:16.700
  and it would just get copied.
 
-00:04:16.720 --> 00:04:19.080
- We copy E, we'd have nothing for E
+00:04:16.700 --> 00:04:19.060
+ We would copy E, we'd have nothing for E,
 
-00:04:19.080 --> 00:04:20.360
+00:04:19.060 --> 00:04:20.340
  and it would just get copied.
 
-00:04:20.360 --> 00:04:21.760
+00:04:20.340 --> 00:04:21.760
  And then we would have, oops,
 
-00:04:21.760 --> 00:04:23.440
+00:04:21.760 --> 00:04:23.460
  forgot to put F on this picture.
 
-00:04:23.440 --> 00:04:26.120
- We would have F and we'd subtract 10 and we would copy it.
+00:04:23.460 --> 00:04:25.100
+ We would have F, and we'd subtract 10,
 
-00:04:26.120 --> 00:04:27.380
+00:04:25.100 --> 00:04:26.100
+ and we would copy it.
+
+00:04:26.100 --> 00:04:27.380
  And then we would be done.
 
 00:04:27.380 --> 00:04:28.820
  We would be done with the kind of stuff
 
-00:04:28.820 --> 00:04:31.040
+00:04:28.820 --> 00:04:31.060
  that we had to do that night.
 
-00:04:31.040 --> 00:04:34.120
+00:04:31.060 --> 00:04:34.140
  And then what we would do is we'd have this new updated data
 
-00:04:34.120 --> 00:04:36.600
- that was all sorted in account order.
+00:04:34.140 --> 00:04:36.580
+ that was all sorted in account order,
 
-00:04:36.600 --> 00:04:39.740
- And then the next night we would move the tape,
+00:04:36.580 --> 00:04:39.740
+ and then the next night we would move the tape,
 
-00:04:39.740 --> 00:04:41.600
- the new would be the old tape
+00:04:39.740 --> 00:04:41.580
+ the new would be the old tape,
 
-00:04:41.600 --> 00:04:43.760
+00:04:41.580 --> 00:04:43.760
  and we would do it over and over and over again.
 
 00:04:43.760 --> 00:04:47.040
  And sometimes these processes would run for four or five
 
-00:04:47.040 --> 00:04:48.600
- hours 'cause the tapes were long
+00:04:47.040 --> 00:04:48.580
+ hours 'cause the tapes were long,
 
-00:04:48.600 --> 00:04:50.440
+00:04:48.580 --> 00:04:50.420
  or it got to be multiple tapes.
 
-00:04:50.440 --> 00:04:53.920
+00:04:50.420 --> 00:04:53.900
  And so a lot of computing was done sort of
 
-00:04:53.920 --> 00:04:55.980
+00:04:53.900 --> 00:04:55.980
  after the banks closed at five o'clock.
 
-00:04:55.980 --> 00:04:57.560
- Then a group of people would come in.
+00:04:55.980 --> 00:04:57.540
+ Then a group of people would come in,
 
-00:04:57.560 --> 00:04:59.800
- We called them operators and they would mount these tapes
+00:04:57.540 --> 00:04:59.780
+ we called them operators, and they would mount these tapes
 
-00:04:59.800 --> 00:05:01.760
- and run these jobs and just sit there
+00:04:59.780 --> 00:05:01.740
+ and run these jobs, and just sit there
 
-00:05:01.760 --> 00:05:04.440
+00:05:01.740 --> 00:05:04.420
  and watch these tapes spin as the data was being copied
 
-00:05:04.440 --> 00:05:05.840
+00:05:04.420 --> 00:05:05.840
  from one to the other.
 
-00:05:05.840 --> 00:05:09.760
+00:05:05.840 --> 00:05:09.740
  And so, yeah, that's pretty cool.
 
-00:05:09.760 --> 00:05:12.440
+00:05:09.740 --> 00:05:12.440
  Thankfully, that's not how we do it anymore.
 
-00:05:12.440 --> 00:05:14.600
+00:05:12.440 --> 00:05:14.580
  The thing that made it so we don't have to do this
 
-00:05:14.600 --> 00:05:16.540
+00:05:14.580 --> 00:05:16.540
  is the invention of disk drives.
 
-00:05:16.540 --> 00:05:22.520
- And disk drives are magnetic media just like tape drives,
+00:05:16.540 --> 00:05:22.500
+ And disk drives are magnetic media, just like tape drives,
 
-00:05:22.520 --> 00:05:24.640
- but the difference was is they were
+00:05:22.500 --> 00:05:26.100
+ but the difference was is they were on these spinning platters.
 
-00:05:24.640 --> 00:05:26.100
- on these spinning platters.
+00:05:26.100 --> 00:05:30.340
+ And so what you could do is the data was in series
 
-00:05:26.100 --> 00:05:29.600
- And so what you could do is the data was
+00:05:30.340 --> 00:05:32.540
+ of concentric circles on these platters,
 
-00:05:29.600 --> 00:05:32.520
- in series of concentric circles on these platters
-
-00:05:32.520 --> 00:05:35.840
+00:05:32.540 --> 00:05:35.860
  and then you had a head that could move in and out rapidly.
 
-00:05:35.840 --> 00:05:38.360
+00:05:35.860 --> 00:05:38.340
  And so the speed at which you could access data
 
-00:05:38.360 --> 00:05:40.540
+00:05:38.340 --> 00:05:40.540
  was a combination with the speed at which the head
 
-00:05:40.540 --> 00:05:42.680
- could move to a certain cylinder
+00:05:40.540 --> 00:05:42.660
+ could move to a certain cylinder,
 
-00:05:42.680 --> 00:05:45.480
+00:05:42.660 --> 00:05:45.460
  and you had to wait until the data came around.
 
-00:05:45.480 --> 00:05:47.920
- And so sometimes you would have a, you know,
+00:05:45.460 --> 00:05:49.620
+ And so sometimes you would have a 5,400 revolution
 
-00:05:47.920 --> 00:05:50.160
- 5,400 revolution per minute.
+00:05:49.620 --> 00:05:54.220
+ per minute, so that means that 5,400, 5,000 times per minute,
 
-00:05:50.160 --> 00:05:54.240
- So that means that 5,400, 5,000 times per minute,
+00:05:54.220 --> 00:05:58.580
+ which is 100 times a second, can I get there?
 
-00:05:54.240 --> 00:05:58.200
- which is 100 times a second.
-
-00:05:58.200 --> 00:05:59.020
- Can I get there?
-
-00:05:59.020 --> 00:05:59.920
+00:05:58.580 --> 00:05:59.780
  Yeah, 100 times a second.
 
-00:05:59.920 --> 00:06:02.280
+00:05:59.780 --> 00:06:02.280
  Yeah, 100 times a second.
 
-00:06:02.280 --> 00:06:05.520
+00:06:02.280 --> 00:06:05.500
  100 times a second, you'd wait a hundredth of a second
 
-00:06:05.520 --> 00:06:06.360
- for it.
+00:06:05.500 --> 00:06:08.540
+ for it, and so this is way better than waiting
 
-00:06:06.360 --> 00:06:08.560
- And so this is way better than waiting
-
-00:06:08.560 --> 00:06:11.240
+00:06:08.540 --> 00:06:11.240
  like a minute and a half, two minutes,
 
-00:06:11.240 --> 00:06:13.240
+00:06:11.240 --> 00:06:13.220
  even 10 minutes to spin up a tape.
 
-00:06:13.240 --> 00:06:16.480
- And so the problem was is then we're like, okay,
+00:06:13.220 --> 00:06:16.100
+ And so the problem was is then we're like,
 
-00:06:16.480 --> 00:06:18.440
- now that we have this wonderful technology
+00:06:16.100 --> 00:06:18.420
+ okay, now that we have this wonderful technology
 
-00:06:18.440 --> 00:06:21.120
- and we can store all of our nightly data on a disk
+00:06:18.420 --> 00:06:21.120
+ and we can store all of our nightly data on a disk,
 
 00:06:21.120 --> 00:06:24.580
  'cause it's enough space, how do we build technology
 
-00:06:24.580 --> 00:06:25.960
+00:06:24.580 --> 00:06:25.940
  to make really good use of this?
 
-00:06:25.960 --> 00:06:28.960
+00:06:25.940 --> 00:06:28.940
  And a lot of research, a lot of computer science,
 
-00:06:28.960 --> 00:06:32.820
+00:06:28.940 --> 00:06:32.820
  a lot of vendor research went into understanding
 
-00:06:32.820 --> 00:06:35.400
+00:06:32.820 --> 00:06:35.380
  how to best use this new disk thing.
 
-00:06:35.400 --> 00:06:37.500
+00:06:35.380 --> 00:06:37.500
  I remember talking to people like,
 
-00:06:37.500 --> 00:06:39.240
+00:06:37.500 --> 00:06:39.260
  'cause we used to use floppy disk works
 
-00:06:39.240 --> 00:06:43.080
- where they were much slower so they didn't go 5,400.
+00:06:39.260 --> 00:06:43.100
+ where they were much slower, so they didn't go 5,400,
 
-00:06:43.080 --> 00:06:46.560
- So it might take a quarter of a second to move the head
+00:06:43.100 --> 00:06:46.540
+ so it might take a quarter of a second to move the head
 
-00:06:46.560 --> 00:06:50.000
+00:06:46.540 --> 00:06:49.980
  and it might take almost a second to spin it around,
 
-00:06:50.000 --> 00:06:52.380
+00:06:49.980 --> 00:06:52.380
  which was still way faster than 10 minutes, right?
 
-00:06:52.380 --> 00:06:54.320
+00:06:52.380 --> 00:06:54.340
  So it's like about a second to get to anywhere
 
-00:06:54.320 --> 00:06:56.160
+00:06:54.340 --> 00:06:56.180
  on a floppy disk.
 
-00:06:56.160 --> 00:06:59.480
+00:06:56.180 --> 00:06:59.500
  And we would build approaches to storing data
 
-00:06:59.480 --> 00:07:01.900
+00:06:59.500 --> 00:07:01.900
  and we would start with this physical thing
 
 00:07:01.900 --> 00:07:03.500
  and you would hear it grunting and moving
 
-00:07:03.500 --> 00:07:04.420
- and grunting and moving.
+00:07:03.500 --> 00:07:05.220
+ and grunting and moving, and then you would come up
 
-00:07:04.420 --> 00:07:05.760
- And then you would come up with a better way
+00:07:05.220 --> 00:07:06.780
+ with a better way to store the data,
 
-00:07:05.760 --> 00:07:08.360
- to store the data and then it'd grunt and move less
+00:07:06.780 --> 00:07:08.380
+ and then it'd grunt and move less
 
-00:07:08.360 --> 00:07:09.960
+00:07:08.380 --> 00:07:09.980
  and your thing would go faster.
 
-00:07:09.960 --> 00:07:11.460
+00:07:09.980 --> 00:07:11.460
  So this was like a research thing.
 
 00:07:11.460 --> 00:07:13.620
  It was like, it was good old days
 
-00:07:13.620 --> 00:07:15.480
+00:07:13.620 --> 00:07:15.460
  when computers actually made noises
 
-00:07:15.480 --> 00:07:18.760
+00:07:15.460 --> 00:07:18.760
  and you could, it could change your code inside computers.
 
 00:07:18.760 --> 00:07:22.120
- And the first thing of course we did was just took
+ And the first thing, of course, we did was just took
 
 00:07:22.120 --> 00:07:24.380
  those sequential master updates and put them on,
@@ -523,776 +508,812 @@ WEBVTT
  but that turned out to not be the best.
 
 00:07:26.280 --> 00:07:27.880
- And that was sort of the researches,
+ And that was sort of the research is,
 
 00:07:27.880 --> 00:07:30.640
  not just how can we do what we used to do on data
 
-00:07:30.640 --> 00:07:33.440
- that couldn't be random accessed, randomly accessed,
+00:07:30.640 --> 00:07:33.420
+ that couldn't be randomly accessed
 
-00:07:33.440 --> 00:07:36.320
- and instead say let's take advantage of it.
+00:07:33.420 --> 00:07:36.320
+ and instead say, let's take advantage of it.
 
-00:07:36.320 --> 00:07:39.040
+00:07:36.320 --> 00:07:39.060
  And so a lot of research, a lot of vendors,
 
-00:07:39.040 --> 00:07:41.680
+00:07:39.060 --> 00:07:41.700
  there was a lot of very expensive software
 
-00:07:41.680 --> 00:07:44.340
- that people bought to say, look, you know,
+00:07:41.700 --> 00:07:45.060
+ that people bought to say, look, you're a bank
 
-00:07:44.340 --> 00:07:47.120
- you're a bank and you really and truly wanna,
+00:07:45.060 --> 00:07:49.340
+ and you really and truly wanna know how this works.
 
-00:07:47.120 --> 00:07:49.360
- you know, know how this works.
-
-00:07:49.360 --> 00:07:53.040
+00:07:49.340 --> 00:07:53.060
  And so what happened was is in the 60s and 70s,
 
-00:07:53.040 --> 00:07:55.840
+00:07:53.060 --> 00:07:55.840
  the computer vendors were fighting
 
-00:07:55.840 --> 00:07:58.120
- and they would come up with a technique
+00:07:55.840 --> 00:07:58.140
+ and they would come up with a technique,
 
-00:07:58.120 --> 00:08:01.000
- which, you know, compared to our current database technique
+00:07:58.140 --> 00:08:00.980
+ which compared to our current database technique
 
-00:08:01.000 --> 00:08:02.920
- was just trivially simple.
+00:08:00.980 --> 00:08:03.940
+ was just trivially simple, but it took a lot of work
 
-00:08:02.920 --> 00:08:04.720
- But it took a lot of work back then.
+00:08:03.940 --> 00:08:07.420
+ back then and they would fight
 
-00:08:04.720 --> 00:08:08.680
- And they would fight with all the other computer vendors
+00:08:07.420 --> 00:08:08.700
+ with all the other computer vendors.
 
-00:08:08.680 --> 00:08:12.360
- and they would say our index sequential mechanism is better
+00:08:08.700 --> 00:08:11.300
+ And they would say, our index sequential mechanism
 
-00:08:12.360 --> 00:08:16.040
- and vendor two would say our network approach is better.
+00:08:11.300 --> 00:08:13.560
+ is better and vendor two would say,
 
-00:08:16.040 --> 00:08:17.800
+00:08:13.560 --> 00:08:16.040
+ our network approach is better.
+
+00:08:16.040 --> 00:08:17.780
  And then they would sit and they would sort of struggle
 
-00:08:17.800 --> 00:08:20.560
+00:08:17.780 --> 00:08:20.540
  with each other and then the poor customers would be like,
 
-00:08:20.560 --> 00:08:22.160
+00:08:20.540 --> 00:08:22.140
  I don't even know what you're talking about.
 
-00:08:22.160 --> 00:08:25.360
+00:08:22.140 --> 00:08:25.340
  And so then they would just buy the stuff from the vendor
 
-00:08:25.360 --> 00:08:28.760
+00:08:25.340 --> 00:08:28.780
  who took them out to golf or the best lunch
 
-00:08:28.760 --> 00:08:30.600
+00:08:28.780 --> 00:08:30.580
  or took them on a trip to Florida.
 
-00:08:30.600 --> 00:08:32.760
- And then they would just, you know, adapt to whatever that
+00:08:30.580 --> 00:08:33.620
+ And then they would just adapt to whatever that vendor did.
 
-00:08:32.760 --> 00:08:33.600
- vendor did.
+00:08:34.940 --> 00:08:37.740
+ And so it was really kind of scary
 
-00:08:33.600 --> 00:08:39.640
- And so it was really kind of scary because we were moving
+00:08:37.740 --> 00:08:40.380
+ because we were moving into a place
 
-00:08:39.640 --> 00:08:42.600
- into a place where you were locked into a vendor.
+00:08:40.380 --> 00:08:42.640
+ where you were locked into a vendor.
 
-00:08:42.600 --> 00:08:45.040
+00:08:42.640 --> 00:08:45.100
  And then once you're locked into a vendor,
 
-00:08:45.040 --> 00:08:45.880
+00:08:45.100 --> 00:08:45.940
  you're in bad shape.
 
-00:08:45.880 --> 00:08:49.640
+00:08:45.940 --> 00:08:49.700
  And so the US government in particular had a ton of money
 
-00:08:49.640 --> 00:08:51.760
- and were buying tons of computers, both, you know,
+00:08:49.700 --> 00:08:51.160
+ and were buying tons of computers,
 
-00:08:51.760 --> 00:08:56.760
- for normal data processing and for strategic things like,
+00:08:51.160 --> 00:08:53.800
+ both for normal data processing
 
-00:08:58.040 --> 00:09:00.560
- you know, military stuff.
+00:08:53.800 --> 00:08:57.800
+ and for strategic things like military stuff.
 
-00:09:00.560 --> 00:09:02.720
- And so they were buying tons of computers and they knew
+00:08:57.800 --> 00:09:02.160
+ And so they were buying tons of computers
 
-00:09:02.720 --> 00:09:05.200
- that these vendors, if they got to the point
+00:09:02.160 --> 00:09:04.140
+ and they knew that these vendors,
 
-00:09:05.200 --> 00:09:07.660
- where they locked them into a single vendor,
+00:09:04.140 --> 00:09:06.100
+ if they got to the point where they locked them
 
-00:09:07.660 --> 00:09:10.840
+00:09:06.100 --> 00:09:07.700
+ into a single vendor,
+
+00:09:07.700 --> 00:09:10.860
  that the vendor would just be able to dictate the price.
 
-00:09:10.840 --> 00:09:14.520
+00:09:10.860 --> 00:09:14.540
  And so the federal government through NIST,
 
-00:09:14.520 --> 00:09:17.440
+00:09:14.540 --> 00:09:17.480
  the National Institute of Standards and Technology,
 
-00:09:17.440 --> 00:09:20.280
+00:09:17.480 --> 00:09:20.300
  decided that databases needed a standard.
 
-00:09:20.280 --> 00:09:23.860
+00:09:20.300 --> 00:09:23.900
  They needed a way so that we could talk to any database
 
-00:09:23.860 --> 00:09:26.160
+00:09:23.900 --> 00:09:26.180
  from any vendor using the same technique
 
-00:09:27.360 --> 00:09:31.600
- and not have to, you know, do one vendor.
+00:09:26.180 --> 00:09:31.640
+ and not have to do one vendor.
 
-00:09:31.600 --> 00:09:32.660
+00:09:31.640 --> 00:09:32.700
  And then if you switched vendors,
 
-00:09:32.660 --> 00:09:34.400
+00:09:32.700 --> 00:09:34.420
  you had to completely rewrite your software.
 
-00:09:34.400 --> 00:09:38.800
- And so they didn't, the NIST didn't specify how this
+00:09:34.420 --> 00:09:35.260
+ And so they didn't,
 
-00:09:38.800 --> 00:09:41.520
- abstraction, the standard was going to work.
+00:09:35.260 --> 00:09:39.780
+ the NIST didn't specify how this abstraction,
 
-00:09:41.520 --> 00:09:43.160
+00:09:39.780 --> 00:09:41.540
+ the standard was going to work.
+
+00:09:41.540 --> 00:09:43.220
  They just brought the vendors in and said,
 
-00:09:43.160 --> 00:09:46.760
- we're gonna stop using your software if you don't come up
+00:09:43.220 --> 00:09:45.640
+ we're gonna stop using your software
 
-00:09:46.760 --> 00:09:48.200
- with a standard.
+00:09:45.640 --> 00:09:48.220
+ if you don't come up with a standard.
 
-00:09:48.200 --> 00:09:51.220
- And it was a perfect time because even though the vendors
+00:09:48.220 --> 00:09:50.060
+ And it was a perfect time
 
-00:09:51.220 --> 00:09:54.300
- thought they had everything was perfect and wonderful,
+00:09:50.060 --> 00:09:52.220
+ because even though the vendors thought they had,
 
-00:09:55.680 --> 00:09:57.920
+00:09:52.220 --> 00:09:54.340
+ everything was perfect and wonderful,
+
+00:09:54.340 --> 00:09:57.900
  there was a lot of upside.
 
-00:09:57.920 --> 00:10:00.240
- And in particular, there was this concept of relational
+00:09:57.900 --> 00:09:59.740
+ And in particular, there was this concept
 
-00:10:00.240 --> 00:10:04.120
- databases, which back then was more of a mathematical theory
+00:09:59.740 --> 00:10:02.020
+ of relational databases, which back then
 
-00:10:04.120 --> 00:10:06.560
- of a better way to store and retrieve data than it was
+00:10:02.020 --> 00:10:04.140
+ was more of a mathematical theory
 
-00:10:06.560 --> 00:10:09.280
- a practically implemented available technology.
+00:10:04.140 --> 00:10:05.980
+ of a better way to store and retrieve data
 
-00:10:09.280 --> 00:10:13.460
- And so SQL, and this is Liz Fong, who I went and I did
+00:10:05.980 --> 00:10:09.300
+ than it was a practically implemented available technology.
 
-00:10:13.460 --> 00:10:14.300
- an interview at NIST.
+00:10:09.300 --> 00:10:11.980
+ And so SQL, and this is Liz Fong,
 
-00:10:14.300 --> 00:10:17.340
- She talks about the early days, it's a great interview.
+00:10:11.980 --> 00:10:14.260
+ who I went and I did an interview at NIST.
 
-00:10:17.340 --> 00:10:21.480
- The early days of how this SQL standard really made so much
+00:10:14.260 --> 00:10:15.940
+ She talks about the early days.
 
-00:10:21.480 --> 00:10:24.280
- sense and really fixed the industry and got the industry
+00:10:15.940 --> 00:10:17.340
+ It's a great interview.
 
-00:10:24.280 --> 00:10:27.580
- working really nicely and I recommend that you take a look
+00:10:17.340 --> 00:10:19.900
+ The early days of how this SQL standard
 
-00:10:27.580 --> 00:10:31.200
- at this video, just so you can kind of see.
+00:10:19.900 --> 00:10:23.500
+ really made so much sense and really fixed the industry
 
-00:10:31.200 --> 00:10:36.000
- Now, what SQL basically said was, is that let's not worry
+00:10:23.500 --> 00:10:25.180
+ and got the industry working really nicely.
 
-00:10:36.000 --> 00:10:39.600
- so much about where that data is actually on disk.
+00:10:25.180 --> 00:10:29.440
+ And I recommend that you take a look at this video
 
-00:10:39.600 --> 00:10:43.680
- Because the earlier database approaches were, we programmers
+00:10:29.440 --> 00:10:31.180
+ just so you can kind of see.
 
-00:10:43.680 --> 00:10:46.860
- would know that there was cylinders and positions and we
+00:10:31.180 --> 00:10:34.100
+ Now, what SQL basically said was
 
-00:10:46.860 --> 00:10:50.240
- would place things in certain ways and we would make indexes
+00:10:34.100 --> 00:10:37.260
+ is that let's not worry so much
 
-00:10:50.240 --> 00:10:52.320
- and we would look at the indexes ourselves.
+00:10:37.260 --> 00:10:39.580
+ about where that data is actually on disk
 
-00:10:52.320 --> 00:10:55.600
- So all kind of different things, we would read to one place
+00:10:39.580 --> 00:10:41.920
+ because the earlier database approaches
 
-00:10:55.600 --> 00:10:57.960
- on the disk and that would have an address of the next place
+00:10:41.920 --> 00:10:44.220
+ where we programmers would know
 
-00:10:57.960 --> 00:10:59.720
- we're supposed to read on the disk.
+00:10:44.220 --> 00:10:46.660
+ that there was cylinders and positions
 
-00:10:59.720 --> 00:11:04.480
- And they said, you know what, let's not worry so much
+00:10:46.660 --> 00:10:48.660
+ and we would place things in certain ways
 
-00:11:04.480 --> 00:11:07.480
+00:10:48.660 --> 00:10:50.220
+ and we would make indexes
+
+00:10:50.220 --> 00:10:52.340
+ and we would look at the indexes ourselves,
+
+00:10:52.340 --> 00:10:53.780
+ all kind of different things.
+
+00:10:53.780 --> 00:10:56.140
+ Or we would read to one place on the disk
+
+00:10:56.140 --> 00:10:57.300
+ and that would have an address
+
+00:10:57.300 --> 00:10:59.700
+ of the next place we're supposed to read on the disk.
+
+00:10:59.700 --> 00:11:02.500
+ And they said, you know what?
+
+00:11:02.500 --> 00:11:04.500
+ Let's not worry so much
+
+00:11:04.500 --> 00:11:07.500
  about the physical storage structure on the disk.
 
-00:11:07.480 --> 00:11:12.240
- But instead, let's come up with a language by which we can
+00:11:07.500 --> 00:11:11.500
+ But instead, let's come up with a language
 
-00:11:12.240 --> 00:11:17.240
- express what we want to read, write, update, and delete
+00:11:11.500 --> 00:11:16.500
+ by which we can express what we want to read, write,
 
-00:11:17.240 --> 00:11:19.840
- on the disk in a really simple language.
+00:11:16.500 --> 00:11:17.860
+ update and delete on the disk
 
-00:11:19.840 --> 00:11:23.120
- And then we can build a piece of software that there could be
+00:11:17.860 --> 00:11:19.820
+ and a really simple language.
 
-00:11:23.120 --> 00:11:26.840
- many disk formats underneath that and then we could all
+00:11:19.820 --> 00:11:21.380
+ And then we can build a piece of software
 
-00:11:26.840 --> 00:11:30.160
- sort of just use this language and you could buy vendor A
+00:11:21.380 --> 00:11:25.060
+ that there could be many disk formats underneath that.
 
-00:11:30.160 --> 00:11:32.400
- and use this language and vendor B and use this language
+00:11:25.060 --> 00:11:28.380
+ And then we could all sort of just use this language
 
-00:11:32.400 --> 00:11:35.280
- and then you could even benchmark it and say, here's a bunch
+00:11:28.380 --> 00:11:31.100
+ and you could buy vendor A and use this language
 
-00:11:35.280 --> 00:11:38.400
- of stuff in this language, which vendor can run this faster?
+00:11:31.100 --> 00:11:32.380
+ and vendor B and use this language.
 
-00:11:38.400 --> 00:11:43.400
- And so the NIST also had a series of benchmarks, TPC,
+00:11:32.380 --> 00:11:34.680
+ And then you could even benchmark it and say,
 
-00:11:43.400 --> 00:11:44.800
- or some of the benchmarks.
+00:11:34.680 --> 00:11:36.420
+ here's a bunch of stuff in this language.
 
-00:11:46.320 --> 00:11:50.560
- And so what they did is they basically made it so that this
+00:11:36.420 --> 00:11:38.420
+ Which vendor can run this faster?
 
-00:11:50.560 --> 00:11:52.720
- was like a beautiful and simple language.
+00:11:38.420 --> 00:11:42.380
+ And so the NIST also had a series of benchmarks,
 
-00:11:52.720 --> 00:11:55.800
+00:11:42.380 --> 00:11:44.820
+ TPC or some of the benchmarks.
+
+00:11:44.820 --> 00:11:49.980
+ And so what they did is they basically made it
+
+00:11:49.980 --> 00:11:52.720
+ so that this was like a beautiful and simple language.
+
+00:11:52.720 --> 00:11:55.820
  And it's what we call SQL, I think at some point
 
-00:11:55.800 --> 00:11:58.640
+00:11:55.820 --> 00:11:58.460
  it was called the Simple Query Language.
 
-00:11:58.640 --> 00:12:01.840
+00:11:58.460 --> 00:12:01.900
  And it is the language that we use to talk to databases.
 
-00:12:01.840 --> 00:12:05.760
- And the interesting thing is what SQL allowed us to do,
+00:12:01.900 --> 00:12:05.780
+ And the interesting thing is what SQL allowed us to do
 
-00:12:05.760 --> 00:12:08.800
- really in the '60s and '70s when it first came out,
+00:12:05.780 --> 00:12:08.860
+ really in the 60s and 70s when it first came out
 
-00:12:08.800 --> 00:12:11.920
- was to talk to the old style databases,
+00:12:08.860 --> 00:12:11.940
+ was to talk to the old style databases
 
-00:12:11.920 --> 00:12:15.160
+00:12:11.940 --> 00:12:15.200
  like index sequential and network style databases.
 
-00:12:15.160 --> 00:12:18.280
- And as this new form called relational databases,
+00:12:15.200 --> 00:12:18.300
+ And as this new form called relational databases
 
-00:12:18.280 --> 00:12:20.960
- which had like this awesome mathematical underpinning,
+00:12:18.300 --> 00:12:21.020
+ which had like this awesome mathematical underpinning
 
-00:12:20.960 --> 00:12:23.160
- but was implemented badly in the first time,
+00:12:21.020 --> 00:12:23.320
+ of what was implemented badly in the first time,
 
-00:12:23.160 --> 00:12:26.200
- we could just say, oh, we're kind of, this is all,
+00:12:23.320 --> 00:12:25.880
+ we could just say, oh, we're kinda, this is all,
 
-00:12:26.200 --> 00:12:28.640
+00:12:25.880 --> 00:12:28.760
  when the performance of relational databases
 
-00:12:28.640 --> 00:12:30.560
+00:12:28.760 --> 00:12:30.720
  got to the point where it was as good
 
-00:12:30.560 --> 00:12:34.840
+00:12:30.720 --> 00:12:34.940
  as the other databases, then we could just switch
 
-00:12:34.840 --> 00:12:36.800
+00:12:34.940 --> 00:12:36.920
  and we could talk the same SQL.
 
-00:12:36.800 --> 00:12:40.520
+00:12:36.920 --> 00:12:40.640
  So it allowed an amazing innovation over a 10
 
-00:12:40.520 --> 00:12:44.040
+00:12:40.640 --> 00:12:44.140
  or even 15 year period where the abstraction
 
-00:12:44.040 --> 00:12:48.400
+00:12:44.140 --> 00:12:48.580
  allowed us to improve databases in a wonderful way
 
-00:12:48.400 --> 00:12:50.800
- without really having to change how we as programmers
+00:12:48.580 --> 00:12:52.140
+ without really having to change how we as programmers used them.
 
-00:12:50.800 --> 00:12:51.960
- used them.
-
-00:12:51.960 --> 00:12:54.400
+00:12:52.140 --> 00:12:55.940
  Pretty dang awesome, I'll be honest.
 
-00:12:54.400 --> 00:12:57.400
+00:12:55.940 --> 00:12:57.540
  And so I've been talking about this idea
 
-00:12:57.400 --> 00:12:59.680
+00:12:57.540 --> 00:12:59.780
  of relational databases and relational databases,
 
-00:12:59.680 --> 00:13:02.280
+00:12:59.780 --> 00:13:02.400
  and I'll admit that when I first saw relational databases
 
-00:13:02.280 --> 00:13:05.320
+00:13:02.400 --> 00:13:05.500
  in the early 1980s, I'm like, this is crap.
 
-00:13:05.320 --> 00:13:08.080
+00:13:05.500 --> 00:13:08.180
  Because again, I could hear floppy disks
 
-00:13:08.080 --> 00:13:09.560
- and I knew that we were moving the thing
+00:13:08.180 --> 00:13:09.700
+ and I knew that we were moving a thing
 
-00:13:09.560 --> 00:13:11.600
+00:13:09.700 --> 00:13:11.700
  and I had so much awareness of what was going on
 
-00:13:11.600 --> 00:13:13.640
+00:13:11.700 --> 00:13:14.060
  and I loved that awareness.
 
-00:13:13.640 --> 00:13:16.680
+00:13:14.060 --> 00:13:16.820
  And the relational databases sort of like hid that,
 
-00:13:16.680 --> 00:13:19.920
- hid what was going on behind this layer
+00:13:16.820 --> 00:13:19.940
+ hid what was going on behind this layer,
 
-00:13:19.920 --> 00:13:22.280
+00:13:19.940 --> 00:13:22.300
  and it turned out that whenever I used it,
 
-00:13:22.280 --> 00:13:25.240
+00:13:22.300 --> 00:13:25.260
  it was slower 'cause it wasn't yet clever.
 
-00:13:25.240 --> 00:13:27.200
+00:13:25.260 --> 00:13:27.220
  And so relational databases started out
 
-00:13:27.200 --> 00:13:29.720
+00:13:27.220 --> 00:13:29.700
  as a mathematical idea as the theoretical best way
 
-00:13:29.720 --> 00:13:33.320
+00:13:29.700 --> 00:13:33.340
  to represent networks of data with columns and rows
 
-00:13:33.320 --> 00:13:35.360
- and connections and joins and we'll talk about
+00:13:33.340 --> 00:13:34.620
+ and connections and joins,
 
-00:13:35.360 --> 00:13:36.560
- all that eventually.
+00:13:34.620 --> 00:13:36.700
+ and we'll talk about all that eventually.
 
-00:13:36.560 --> 00:13:42.120
+00:13:36.700 --> 00:13:42.140
  And it was a beautiful idea and the mathematics was right.
 
-00:13:42.120 --> 00:13:45.520
+00:13:42.140 --> 00:13:45.540
  It just took a long time to get to the point
 
-00:13:45.520 --> 00:13:48.760
- where it turned, the superior mathematics
+00:13:45.540 --> 00:13:48.740
+ where it turned the superior mathematics
 
-00:13:48.760 --> 00:13:53.760
+00:13:48.740 --> 00:13:53.740
  of relational databases worked out better
 
-00:13:53.760 --> 00:13:55.920
+00:13:53.740 --> 00:13:55.940
  than the highly cleverly optimized
 
-00:13:55.920 --> 00:13:58.280
+00:13:55.940 --> 00:13:58.280
  previous generation database systems.
 
 00:13:58.280 --> 00:14:01.480
  So there's a lot of common database systems
 
-00:14:01.480 --> 00:14:03.520
+00:14:01.480 --> 00:14:03.540
  that you'll run across.
 
-00:14:03.520 --> 00:14:06.760
+00:14:03.540 --> 00:14:06.740
  Some of them are open source, some of them are commercial.
 
-00:14:06.760 --> 00:14:10.400
+00:14:06.740 --> 00:14:10.380
  PostgreSQL and MySQL are open source.
 
-00:14:10.400 --> 00:14:12.320
+00:14:10.380 --> 00:14:12.300
  PostgreSQL is probably the more intricate
 
-00:14:12.320 --> 00:14:13.400
+00:14:12.300 --> 00:14:13.420
  and complex and rich.
 
-00:14:13.400 --> 00:14:16.640
- Oracle is a intricate, complex and rich database
+00:14:13.420 --> 00:14:16.620
+ Oracle is a intricate, complex, and rich database
 
-00:14:16.640 --> 00:14:18.800
+00:14:16.620 --> 00:14:18.660
  that's available for lots and lots of money.
 
-00:14:18.800 --> 00:14:22.440
+00:14:18.660 --> 00:14:22.420
  And Microsoft has a database called SQL Server.
 
-00:14:22.440 --> 00:14:25.640
+00:14:22.420 --> 00:14:25.640
  And all these databases that we're seeing evolved
 
-00:14:25.640 --> 00:14:29.240
+00:14:25.640 --> 00:14:29.220
  in a sense after the SQL spec existed.
 
-00:14:29.240 --> 00:14:30.960
+00:14:29.220 --> 00:14:30.980
  So they just kind of built SQL.
 
-00:14:30.960 --> 00:14:34.200
+00:14:30.980 --> 00:14:34.200
  There was legacy databases that kind of learned SQL.
 
-00:14:34.200 --> 00:14:36.480
+00:14:34.200 --> 00:14:36.460
  And there's lots of other databases.
 
-00:14:36.480 --> 00:14:40.200
- SQLite is what we're actually gonna use with this course
+00:14:36.460 --> 00:14:40.180
+ SQLite is what we're actually gonna use with this course.
 
-00:14:40.200 --> 00:14:43.120
- and it's super cool, super fast.
+00:14:40.180 --> 00:14:43.100
+ And it's super cool, super fast,
 
-00:14:43.120 --> 00:14:45.080
- And on your cell phone,
+00:14:43.100 --> 00:14:47.260
+ and on your cell phone, you probably have 40 copies
 
-00:14:45.080 --> 00:14:48.040
- you probably have 40 copies of SQLite.
+00:14:47.260 --> 00:14:48.660
+ of SQLite, and in your car,
 
-00:14:48.040 --> 00:14:50.800
- And in your car, you probably have 40 copies of SQLite
+00:14:48.660 --> 00:14:50.800
+ you probably have 40 copies of SQLite,
 
-00:14:50.800 --> 00:14:52.760
+00:14:50.800 --> 00:14:52.740
  'cause it's a real tiny embedded database.
 
-00:14:52.760 --> 00:14:55.880
- It's not really good for a production scale
+00:14:52.740 --> 00:14:55.900
+ It's not really good for production scale,
 
-00:14:55.880 --> 00:14:59.120
+00:14:55.900 --> 00:14:59.140
  when you got 100 users simultaneously hitting a website.
 
-00:14:59.120 --> 00:15:02.040
- PostgreSQL, MySQL or Oracle or SQL Server
+00:14:59.140 --> 00:15:02.020
+ PostgreSQL, MySQL, or Oracle, or SQL Server
 
-00:15:02.040 --> 00:15:05.000
- are really kind of online multi-processing data,
+00:15:02.020 --> 00:15:05.020
+ are really kind of online, multi-processing data,
 
-00:15:05.000 --> 00:15:07.200
+00:15:05.020 --> 00:15:07.200
  real multi-processing databases.
 
-00:15:07.200 --> 00:15:09.680
+00:15:07.200 --> 00:15:09.700
  But SQLite is great because it's really simple.
 
-00:15:09.680 --> 00:15:11.000
+00:15:09.700 --> 00:15:11.020
  It stores everything in one file.
 
-00:15:11.000 --> 00:15:13.080
+00:15:11.020 --> 00:15:13.060
  We can move the file around, et cetera.
 
-00:15:13.080 --> 00:15:17.560
- So I love SQLite and in this class and in this thing,
+00:15:13.060 --> 00:15:17.580
+ So I love SQLite, and in this class, and in this thing,
 
-00:15:17.560 --> 00:15:19.200
+00:15:17.580 --> 00:15:19.220
  we're gonna talk about SQLite,
 
-00:15:19.200 --> 00:15:21.360
- but everything we talk about
+00:15:19.220 --> 00:15:21.980
+ but everything we talk about applies
 
-00:15:21.360 --> 00:15:24.680
- applies to all of these different database systems.
+00:15:21.980 --> 00:15:24.680
+ to all of these different database systems.
 
-00:15:24.680 --> 00:15:27.040
+00:15:24.680 --> 00:15:27.020
  So the first thing that you've gotta do
 
-00:15:27.040 --> 00:15:29.000
+00:15:27.020 --> 00:15:28.980
  when you are gonna work with a database
 
-00:15:29.000 --> 00:15:30.640
+00:15:28.980 --> 00:15:30.660
  is you gotta come up with a contract
 
-00:15:30.640 --> 00:15:32.120
+00:15:30.660 --> 00:15:32.100
  between you and the database
 
-00:15:32.120 --> 00:15:34.280
+00:15:32.100 --> 00:15:34.300
  as to what the shape of the columns are,
 
-00:15:34.280 --> 00:15:35.240
+00:15:34.300 --> 00:15:35.260
  how wide the columns are,
 
-00:15:35.240 --> 00:15:37.240
- what kind of data you're gonna store in this.
+00:15:35.260 --> 00:15:37.240
+ what kind of data you're gonna store in this,
 
-00:15:37.240 --> 00:15:40.840
- And it then informs how the database software
+00:15:37.240 --> 00:15:40.860
+ and it then informs how the database software
 
-00:15:40.840 --> 00:15:43.680
- is going to structure that database like on the disk.
+00:15:40.860 --> 00:15:43.620
+ is going to structure that database, like on the disk.
 
-00:15:43.680 --> 00:15:45.280
+00:15:43.620 --> 00:15:45.260
  And part of what you're doing
 
-00:15:45.280 --> 00:15:47.000
+00:15:45.260 --> 00:15:46.980
  is you're allowing the database software,
 
-00:15:47.000 --> 00:15:49.440
- MySQL or PostgreSQL or SQLite,
+00:15:46.980 --> 00:15:49.420
+ MySQL, or PostgreSQL, or SQLite,
 
-00:15:49.440 --> 00:15:51.440
+00:15:49.420 --> 00:15:51.400
  to super optimize its storage.
 
-00:15:51.440 --> 00:15:53.640
+00:15:51.400 --> 00:15:53.600
  I mean, it's so much smarter than you.
 
-00:15:53.640 --> 00:15:56.080
- Something like Oracle or MySQL or PostgreSQL
+00:15:53.600 --> 00:15:56.020
+ Something like Oracle, or MySQL, or PostgreSQL
 
-00:15:56.080 --> 00:15:59.640
+00:15:56.020 --> 00:15:59.620
  probably represents a billion dollars, if not more,
 
-00:15:59.640 --> 00:16:00.840
- of research and development
+00:15:59.620 --> 00:16:00.820
+ of research and development,
 
-00:16:00.840 --> 00:16:02.960
+00:16:00.820 --> 00:16:02.900
  and about the best way to store and retrieve data.
 
-00:16:02.960 --> 00:16:06.720
+00:16:02.900 --> 00:16:06.680
  And you just don't even need to know any of that.
 
-00:16:06.720 --> 00:16:09.480
+00:16:06.680 --> 00:16:09.460
  You just say, look, I'm gonna have these columns,
 
-00:16:09.480 --> 00:16:11.280
+00:16:09.460 --> 00:16:11.220
  it's gonna have 100 characters of text,
 
-00:16:11.280 --> 00:16:12.200
- then I'm gonna have an integer
+00:16:11.220 --> 00:16:12.180
+ then I'm gonna have an integer,
 
-00:16:12.200 --> 00:16:13.320
+00:16:12.180 --> 00:16:13.280
  and then a floating point number,
 
-00:16:13.320 --> 00:16:15.200
+00:16:13.280 --> 00:16:15.140
  then 3,000 characters of text,
 
-00:16:15.200 --> 00:16:17.880
+00:16:15.140 --> 00:16:17.820
  and you worry about all that detail.
 
-00:16:17.880 --> 00:16:20.120
+00:16:17.820 --> 00:16:20.100
  But the key is, is if you just say,
 
-00:16:20.120 --> 00:16:22.280
+00:16:20.100 --> 00:16:22.220
  ah, I'll store anything I want,
 
-00:16:22.280 --> 00:16:23.600
+00:16:22.220 --> 00:16:23.580
  then it can't optimize.
 
-00:16:23.600 --> 00:16:25.560
+00:16:23.580 --> 00:16:25.540
  And so there's this thing where you have to
 
-00:16:25.560 --> 00:16:27.760
+00:16:25.540 --> 00:16:27.720
  make a contract at the beginning and say,
 
-00:16:27.760 --> 00:16:30.400
+00:16:27.720 --> 00:16:30.340
  this is exactly how I'm gonna lay out the data
 
-00:16:30.400 --> 00:16:32.280
- as I talk to the database system.
+00:16:30.340 --> 00:16:32.220
+ as I talk to the database system,
 
-00:16:32.280 --> 00:16:36.040
- And then you can figure out how to lay out the data
+00:16:32.220 --> 00:16:36.020
+ and then you can figure out how to lay out the data
 
-00:16:36.040 --> 00:16:37.680
+00:16:36.020 --> 00:16:37.620
  in the actual disk.
 
-00:16:37.680 --> 00:16:40.760
- And so that's called the schema or the database model.
+00:16:37.620 --> 00:16:40.700
+ And so that's called the schema, or the database model.
 
-00:16:40.760 --> 00:16:44.520
+00:16:40.700 --> 00:16:44.460
  And building a database model is itself a cool thing.
 
-00:16:44.520 --> 00:16:48.200
- So if you're building a complex application,
+00:16:44.460 --> 00:16:48.140
+ So if you're given building a complex application,
 
-00:16:48.200 --> 00:16:50.000
- you have these models and they have connections
+00:16:48.140 --> 00:16:49.980
+ you have these models, and they have connections,
 
-00:16:50.000 --> 00:16:52.640
+00:16:49.980 --> 00:16:52.620
  and we'll eventually talk about all that stuff.
 
-00:16:52.640 --> 00:16:54.960
+00:16:52.620 --> 00:16:54.900
  But it's a critical thing to say that that's a contract
 
-00:16:54.960 --> 00:16:56.800
- between you and the database software
+00:16:54.900 --> 00:16:56.740
+ between you and the database software,
 
-00:16:56.800 --> 00:16:59.480
+00:16:56.740 --> 00:16:59.420
  so the database software can optimize
 
-00:16:59.480 --> 00:17:00.520
+00:16:59.420 --> 00:17:00.500
  the storage of the database.
 
-00:17:00.520 --> 00:17:03.920
+00:17:00.500 --> 00:17:03.860
  Now once you have given the schema,
 
-00:17:03.920 --> 00:17:06.840
- then you can write queries that, you know,
+00:17:03.860 --> 00:17:07.780
+ then you can write queries that depend on that schema.
 
-00:17:06.840 --> 00:17:07.800
- depend on that schema.
-
-00:17:07.800 --> 00:17:09.160
+00:17:07.780 --> 00:17:09.140
  So you might have a column called email
 
-00:17:09.160 --> 00:17:10.440
+00:17:09.140 --> 00:17:10.380
  and a column called name.
 
-00:17:10.440 --> 00:17:13.000
+00:17:10.380 --> 00:17:12.980
  And then you can insert data into the database
 
-00:17:13.000 --> 00:17:13.920
+00:17:12.980 --> 00:17:13.900
  using that schema.
 
-00:17:13.920 --> 00:17:15.960
+00:17:13.900 --> 00:17:15.940
  You can retrieve data using the schema.
 
-00:17:15.960 --> 00:17:17.800
+00:17:15.940 --> 00:17:17.780
  You can change data sort of somewhere
 
-00:17:17.800 --> 00:17:19.320
+00:17:17.780 --> 00:17:19.300
  deep inside the database.
 
-00:17:19.320 --> 00:17:21.480
+00:17:19.300 --> 00:17:21.460
  And then you can delete data.
 
-00:17:21.480 --> 00:17:23.000
+00:17:21.460 --> 00:17:22.980
  Hang on a sec.
 
-00:17:23.000 --> 00:17:24.040
+00:17:22.980 --> 00:17:24.020
  Whoa, hi there.
 
-00:17:24.040 --> 00:17:25.840
+00:17:24.020 --> 00:17:25.820
  What are you doing down there?
 
-00:17:25.840 --> 00:17:27.200
+00:17:25.820 --> 00:17:27.180
  Oh, dang it.
 
-00:17:27.200 --> 00:17:28.520
+00:17:27.180 --> 00:17:28.480
  Sorry, sorry.
 
-00:17:28.520 --> 00:17:31.700
+00:17:28.480 --> 00:17:31.660
  You are a bad creature.
 
-00:17:33.160 --> 00:17:34.000
+00:17:33.140 --> 00:17:33.980
  Look at that.
 
-00:17:34.000 --> 00:17:37.200
+00:17:33.980 --> 00:17:37.220
  I was wondering what that noise was.
 
-00:17:37.200 --> 00:17:39.640
+00:17:37.220 --> 00:17:39.620
  Come here, come here, come here.
 
-00:17:39.640 --> 00:17:41.160
+00:17:39.620 --> 00:17:41.140
  I gotta introduce you to all these folks.
 
-00:17:41.160 --> 00:17:43.520
+00:17:41.140 --> 00:17:43.500
  Come here, come here.
 
-00:17:43.520 --> 00:17:47.040
+00:17:43.500 --> 00:17:47.020
  You are not behaving.
 
-00:17:47.040 --> 00:17:50.160
+00:17:47.020 --> 00:17:50.180
  So this is Shelby.
 
-00:17:50.160 --> 00:17:51.320
- Hi Shelby.
+00:17:50.180 --> 00:17:51.340
+ Hi, Shelby.
 
-00:17:51.320 --> 00:17:52.760
+00:17:51.340 --> 00:17:52.740
  This is Shelby.
 
-00:17:52.760 --> 00:17:53.720
+00:17:52.740 --> 00:17:53.740
  This is my puppy.
 
-00:17:53.720 --> 00:17:57.080
+00:17:53.740 --> 00:17:57.060
  I'm trying to keep her out of the cage
 
-00:17:57.080 --> 00:17:59.400
+00:17:57.060 --> 00:17:59.420
  and let her sit and get by my feet.
 
-00:17:59.400 --> 00:18:00.920
- And she's got some chew toys.
+00:17:59.420 --> 00:18:00.900
+ She's got some chew toys.
 
-00:18:00.920 --> 00:18:01.760
- Hi Shelby.
+00:18:00.900 --> 00:18:01.740
+ Hi, Shelby.
 
-00:18:03.000 --> 00:18:06.240
+00:18:02.980 --> 00:18:06.220
  This is Shelby and she is interrupting.
 
-00:18:06.240 --> 00:18:09.080
+00:18:06.220 --> 00:18:09.060
  You're interrupting my lecture, but you're cute.
 
-00:18:09.080 --> 00:18:10.640
+00:18:09.060 --> 00:18:10.660
  So quit chewing on a pen.
 
-00:18:10.640 --> 00:18:12.960
+00:18:10.660 --> 00:18:12.940
  Chew on your chew toys that I gave you, okay?
 
-00:18:12.960 --> 00:18:15.160
+00:18:12.940 --> 00:18:15.140
  Let me get through this lecture.
 
-00:18:15.160 --> 00:18:17.280
+00:18:15.140 --> 00:18:17.260
  Okay, you can get down.
 
-00:18:17.280 --> 00:18:19.360
+00:18:17.260 --> 00:18:19.340
  Just quit chewing on a...
 
-00:18:19.360 --> 00:18:20.920
+00:18:19.340 --> 00:18:20.940
  Sorry about that.
 
-00:18:20.920 --> 00:18:23.440
+00:18:20.940 --> 00:18:23.420
  Dog introduction, dog interruption.
 
-00:18:23.440 --> 00:18:24.920
+00:18:23.420 --> 00:18:24.940
  I was just hearing chewing noises
 
-00:18:24.920 --> 00:18:26.560
+00:18:24.940 --> 00:18:26.540
  and I thought I took everything
 
-00:18:26.560 --> 00:18:28.880
+00:18:26.540 --> 00:18:28.860
  but then there was one pen on the floor.
 
-00:18:28.880 --> 00:18:32.800
+00:18:28.860 --> 00:18:32.780
  And so the pen, poor pen, meets Mr. Puppy.
 
-00:18:32.800 --> 00:18:34.320
+00:18:32.780 --> 00:18:34.260
  Oh well.
 
-00:18:34.320 --> 00:18:35.280
+00:18:34.260 --> 00:18:35.260
  Okay, where was I?
 
-00:18:35.280 --> 00:18:40.760
+00:18:35.260 --> 00:18:40.700
  SQL, CRUD, create, read, update and delete data.
 
-00:18:40.760 --> 00:18:45.160
+00:18:40.700 --> 00:18:45.100
  And so our next step is to actually do some SQL
 
-00:18:45.160 --> 00:18:46.840
+00:18:45.100 --> 00:18:46.820
  and create a database.
 
-00:18:46.840 --> 00:18:49.420
+00:18:46.820 --> 00:18:49.400
  (upbeat music)
 

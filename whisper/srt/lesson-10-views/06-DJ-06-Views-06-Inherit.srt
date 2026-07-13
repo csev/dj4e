@@ -1,384 +1,392 @@
 1
-00:00:00,000 --> 00:00:03,960
+00:00:00,000 --> 00:00:04,000
  So now we're going to talk about a technique called template inheritance.
 
 2
-00:00:03,960 --> 00:00:08,920
- And this and other times, it's a great time to review object-oriented programming,
+00:00:04,000 --> 00:00:08,960
+ And this and other times it's a great time to review object-oriented programming,
 
 3
-00:00:08,920 --> 00:00:13,640
+00:00:08,960 --> 00:00:13,680
  cuz I'm just gonna like use object-oriented programming definitions and
 
 4
-00:00:13,640 --> 00:00:16,480
+00:00:13,680 --> 00:00:16,520
  words and not completely explain them.
 
 5
-00:00:16,480 --> 00:00:19,760
+00:00:16,520 --> 00:00:19,800
  So you gotta know what a class is, you know what self is, those kinds of things.
 
 6
-00:00:19,760 --> 00:00:23,800
+00:00:19,800 --> 00:00:23,820
  And I've got a great online lesson that you can go read and listen to and
 
 7
-00:00:23,800 --> 00:00:27,560
+00:00:23,820 --> 00:00:27,600
  understand objects and I'll explain it to you in 30 or 40 minutes.
 
 8
-00:00:27,560 --> 00:00:31,200
- So inheritance actually from that lecture
+00:00:27,600 --> 00:00:31,200
+ So inheritance, actually from that lecture,
 
 9
 00:00:31,200 --> 00:00:34,840
  is the notion in object-oriented programming to not repeat yourself.
 
 10
-00:00:34,840 --> 00:00:41,200
- You have some kind of a shape and then you make a bunch of objects that mirror
+00:00:34,840 --> 00:00:39,560
+ You have some kind of a shape, and
 
 11
-00:00:41,200 --> 00:00:45,320
- that shape, but you can also with inheritance you can have a shape that
+00:00:39,560 --> 00:00:42,800
+ then you make a bunch of objects that mirror that shape.
 
 12
-00:00:45,320 --> 00:00:49,320
- makes another shape like a shape in general that's a triangle.
+00:00:42,800 --> 00:00:46,680
+ But you can also, with inheritance, you can have a shape that makes another shape,
 
 13
-00:00:49,320 --> 00:00:52,520
- And so you can inherit that all triangles have everything shapes have and
+00:00:46,680 --> 00:00:49,320
+ like a shape in general that's a triangle.
 
 14
-00:00:52,520 --> 00:00:56,080
- all squares have everything shapes have and all circles.
+00:00:49,320 --> 00:00:52,520
+ And so you can inherit that all triangles have everything shapes have, and
 
 15
+00:00:52,520 --> 00:00:56,080
+ all squares have everything shapes have, and all circles.
+
+16
 00:00:56,080 --> 00:00:59,920
  And it's just a way of capturing information once,
 
-16
-00:00:59,920 --> 00:01:03,080
- writing code once and then not repeating yourself.
-
 17
-00:01:03,080 --> 00:01:08,840
- Functions are a form of DRY, don't repeat yourself, modules are.
+00:00:59,920 --> 00:01:03,120
+ writing code once, and then not repeating yourself.
 
 18
-00:01:08,840 --> 00:01:14,160
- But inheritance is the key and inheritance kinda can get in our way as programmers
+00:01:03,120 --> 00:01:08,840
+ Functions are a form of DRY, don't repeat yourself, modules are,
 
 19
+00:01:08,840 --> 00:01:11,080
+ but inheritance is the key.
+
+20
+00:01:11,080 --> 00:01:14,160
+ And inheritance kinda can get in our way as programmers,
+
+21
 00:01:14,160 --> 00:01:17,960
  because it leads to smaller and smaller code.
 
-20
-00:01:17,960 --> 00:01:22,000
- If we're gonna make five things, each of these five things is really small because
-
-21
-00:01:22,000 --> 00:01:26,920
- we make a big thing over here and we inherit all five of those things from it.
-
 22
+00:01:17,960 --> 00:01:21,740
+ If we're gonna make five things, each of these five things is really small,
+
+23
+00:01:21,740 --> 00:01:24,520
+ because we make a big thing over here, and
+
+24
+00:01:24,520 --> 00:01:26,920
+ we inherit all five of those things from it.
+
+25
 00:01:26,920 --> 00:01:29,680
  But then you look at it and like, I don't understand that, right?
 
-23
-00:01:29,680 --> 00:01:32,960
- I don't understand these only one line functions.
-
-24
-00:01:32,960 --> 00:01:33,640
- What are they doing?
-
-25
-00:01:33,640 --> 00:01:38,560
- Well, the answer is there's 50 lines out here that we're inheriting from.
-
 26
+00:01:29,680 --> 00:01:33,640
+ I don't understand these only one line functions, what are they doing?
+
+27
+00:01:33,640 --> 00:01:38,560
+ Well, the answer is, there's 50 lines out here that we're inheriting from.
+
+28
 00:01:38,560 --> 00:01:39,920
  So we'll see some of that.
 
-27
+29
 00:01:39,920 --> 00:01:45,360
  I'll try to kinda allude to that part where, look, there's magic over there.
 
-28
+30
 00:01:45,360 --> 00:01:48,200
  And a lot of what you do in Django is use classes and
 
-29
+31
 00:01:48,200 --> 00:01:52,200
  objects that you didn't even create, meaning that they've got data in them,
 
-30
-00:01:52,200 --> 00:01:55,200
+32
+00:01:52,200 --> 00:01:55,180
  like .scheme or request.scheme.
 
-31
-00:01:55,200 --> 00:02:01,480
- And so this is just also a way of trying to simplify the way you handle sort of
-
-32
-00:02:01,480 --> 00:02:03,360
- things, objects that are handed to you, and
-
 33
-00:02:03,360 --> 00:02:05,600
- then you hand objects to other parts of Django.
+00:01:55,180 --> 00:01:59,040
+ And so this is just also a way of trying to simplify
 
 34
-00:02:05,600 --> 00:02:11,960
- So template rendering basically says, okay,
+00:01:59,040 --> 00:02:03,160
+ the way you handle sort of things, objects that are handed to you.
 
 35
-00:02:11,960 --> 00:02:14,160
- here's some rendered data and here's a template.
+00:02:03,160 --> 00:02:05,560
+ And then you hand objects to other parts of Django.
 
 36
-00:02:15,280 --> 00:02:18,600
- What happens now is there's this thing called a base template.
+00:02:05,560 --> 00:02:11,960
+ So template rendering basically says, okay,
 
 37
-00:02:18,600 --> 00:02:22,240
- And the base template and the template combine together to be sort of like
+00:02:11,960 --> 00:02:14,120
+ here's some rendered data and here's a template.
 
 38
-00:02:22,240 --> 00:02:25,880
- the ultimate template, and then you pass in the rendered data and
+00:02:14,120 --> 00:02:18,640
+ What happens now is there's this thing called a base template.
 
 39
-00:02:25,880 --> 00:02:27,680
- produce the rendered output.
+00:02:18,640 --> 00:02:22,180
+ And the base template and the template combine together to be sort of like,
 
 40
-00:02:27,680 --> 00:02:32,160
- So let's just say that we had a bunch of pages and
+00:02:22,180 --> 00:02:23,720
+ the ultimate template.
 
 41
-00:02:32,160 --> 00:02:34,040
- we were doing the same thing over and over again.
+00:02:23,720 --> 00:02:27,640
+ And then you pass in the rendered data and produce the rendered output.
 
 42
-00:02:34,040 --> 00:02:37,760
- Now we will soon do this with navigation cuz you wanna put a menu at the top of
+00:02:27,640 --> 00:02:32,100
+ So let's just say that we had a bunch of pages and
 
 43
-00:02:37,760 --> 00:02:43,000
- every page and literally that menu could be 40 or 50 lines of HTML.
+00:02:32,100 --> 00:02:34,000
+ we were doing the same thing over and over again.
 
 44
-00:02:43,000 --> 00:02:46,720
- And you do not wanna repeat that menu every time at the top of the page.
+00:02:34,000 --> 00:02:37,720
+ Now we will soon do this with navigation cuz you wanna put a menu at the top of
 
 45
-00:02:46,720 --> 00:02:51,880
- So you wanna put that one place and then you wanna make many pages that have
+00:02:37,720 --> 00:02:42,960
+ every page and literally that menu could be 40 or 50 lines of HTML.
 
 46
-00:02:51,880 --> 00:02:54,520
- the same top navigation so that your pages,
+00:02:42,960 --> 00:02:46,680
+ And you do not wanna repeat that menu every time at the top of the page.
 
 47
-00:02:54,520 --> 00:02:58,040
- as you go between them, look like the navigation is the same.
+00:02:46,680 --> 00:02:49,440
+ So you wanna put that one place and
 
 48
-00:02:58,040 --> 00:03:00,400
- So we're gonna do this in a very, very simple way.
+00:02:49,440 --> 00:02:53,480
+ then you wanna make many pages that have the same top navigation.
 
 49
-00:03:00,400 --> 00:03:05,040
- So we have one template, this cond.html that we've been playing with.
+00:02:53,480 --> 00:02:58,000
+ So that your pages, as you go between them, look like the navigation is the same.
 
 50
-00:03:05,040 --> 00:03:09,280
- You'll notice it has some HTML and a title and a body tag and some of this.
+00:02:58,000 --> 00:03:00,360
+ So we're gonna do this in a very, very simple way.
 
 51
-00:03:09,280 --> 00:03:11,560
- And then it's got this stuff.
+00:03:00,360 --> 00:03:05,000
+ So we have one template, this cond.html that we've been playing with.
 
 52
-00:03:11,560 --> 00:03:17,280
- Well, let's say we wanted a bunch of pages that had that everything but the body.
+00:03:05,000 --> 00:03:09,320
+ You'll notice it has some HTML and a title and a body tag and some of this and
 
 53
-00:03:17,280 --> 00:03:22,800
- So what we basically then do is we take parts of this,
+00:03:09,320 --> 00:03:11,480
+ then it's got this stuff.
 
 54
-00:03:22,800 --> 00:03:25,720
- like the repeated parts, and we put it into a template.
+00:03:11,480 --> 00:03:17,240
+ Well let's say we wanted a bunch of pages that had that everything but the body.
 
 55
-00:03:25,720 --> 00:03:32,560
- And then we take the part that we're gonna change every time and
+00:03:17,240 --> 00:03:22,760
+ So what we basically then do is, we take parts of this,
 
 56
-00:03:32,560 --> 00:03:35,720
- we put it into a template that then extends.
+00:03:22,760 --> 00:03:25,720
+ like the repeated parts and we put it into a template.
 
 57
-00:03:35,720 --> 00:03:41,360
- So see this one here has one line that says extends temple-based.html.
+00:03:25,720 --> 00:03:32,520
+ And then we take the part that we're gonna change every time and
 
 58
-00:03:41,360 --> 00:03:46,100
- So this one uses everything in here but then adds some stuff, okay?
+00:03:32,520 --> 00:03:35,760
+ we put it into a template that then extends.
 
 59
-00:03:46,100 --> 00:03:51,880
- So the basic idea is we split this one big template into reusable parts and
+00:03:35,760 --> 00:03:41,320
+ So see this one here has one line that says extends temple based on HTML.
 
 60
-00:03:51,880 --> 00:03:53,400
- non-reusable parts.
+00:03:41,320 --> 00:03:46,080
+ So this one uses everything in here but then add some stuff, okay?
 
 61
+00:03:46,080 --> 00:03:51,880
+ So the basic idea is we split this one big template into reusable parts and
+
+62
+00:03:51,880 --> 00:03:53,400
+ non reusable parts.
+
+63
 00:03:53,400 --> 00:03:57,200
  And then we have a bunch of templates that come off of base.
 
-62
-00:03:57,200 --> 00:03:59,640
- We call it base, commonly in object-oriented world,
-
-63
-00:03:59,640 --> 00:04:02,200
- because it's like the thing that we're basing it on.
-
 64
+00:03:57,200 --> 00:04:00,800
+ We call it base commonly in object oriented world because it's like the thing
+
+65
+00:04:00,800 --> 00:04:02,200
+ that we're basing it on.
+
+66
 00:04:02,200 --> 00:04:05,200
  So this is the base and then we're gonna build on it.
 
-65
+67
 00:04:05,200 --> 00:04:07,440
- Base builds something else on top of it.
+ Base build something else on top of it.
 
-66
+68
 00:04:07,440 --> 00:04:10,520
  So how this works in practice, we have a view here.
 
-67
+69
 00:04:10,520 --> 00:04:12,680
  We're gonna call this view game two, right?
 
-68
+70
 00:04:12,680 --> 00:04:15,400
  So we're gonna use the URL game two.
 
-69
+71
 00:04:15,400 --> 00:04:16,680
- We have a class-based view.
+ We have a class based view.
 
-70
+72
 00:04:16,680 --> 00:04:18,400
  We have a get method in there.
 
-71
+73
 00:04:18,400 --> 00:04:20,400
  The request data comes in as request.
 
-72
-00:04:20,400 --> 00:04:25,420
+74
+00:04:20,400 --> 00:04:25,400
  We told it to parse the slug off the end and pass it to us in the variable guess.
 
-73
-00:04:25,420 --> 00:04:28,880
+75
+00:04:25,400 --> 00:04:28,880
  We make a template, which is exactly what we did before,
 
-74
+76
 00:04:28,880 --> 00:04:32,440
  where we have a key of guess and the value is the actual guess itself.
 
-75
+77
 00:04:32,440 --> 00:04:36,240
  And then we pass that template in the variable x into render and
 
-76
+78
 00:04:36,240 --> 00:04:41,560
  we tell it to go read temple con two, which is the second conditional one.
 
-77
-00:04:41,560 --> 00:04:45,080
- And the thing is, is there's nothing in the Python code,
-
-78
-00:04:45,080 --> 00:04:48,240
- in the views.py, that knows about the base.
-
 79
-00:04:48,240 --> 00:04:53,560
- What happens is the only place that the base is in the,
+00:04:41,560 --> 00:04:46,160
+ And the thing is there's nothing in the Python code, in the views.py,
 
 80
-00:04:53,560 --> 00:04:58,120
- the only place that the base is noted is in the con two template itself.
+00:04:46,160 --> 00:04:48,240
+ that knows about the base.
 
 81
-00:04:58,120 --> 00:05:01,000
- It says, hey, go grab this one and extend it.
+00:04:48,240 --> 00:04:53,520
+ What happens is the only place that the base is noted is in
 
 82
+00:04:53,520 --> 00:05:01,000
+ the con two template itself that says, hey, go grab this one and extend it.
+
+83
 00:05:01,000 --> 00:05:05,120
  Now the way it works is it starts out a little counterintuitive.
 
-83
+84
 00:05:05,120 --> 00:05:09,360
  It says start with, it really says start with this template here and
 
-84
-00:05:09,360 --> 00:05:14,080
+85
+00:05:09,360 --> 00:05:14,040
  then push this content into the base template.
 
-85
-00:05:14,080 --> 00:05:18,280
- And this block content and end block, it basically,
-
 86
-00:05:18,280 --> 00:05:23,180
- that tells what I want to replace, you're replacing blocks in the base template.
+00:05:14,040 --> 00:05:16,240
+ And this block content and end block,
 
 87
-00:05:23,180 --> 00:05:28,120
- So all the stuff in the con2.html that is between the block and
+00:05:16,240 --> 00:05:20,400
+ it basically that tells what I want to replace.
 
 88
-00:05:28,120 --> 00:05:32,000
- the end block is what is then pushed into the base template.
+00:05:20,400 --> 00:05:23,160
+ You're replacing blocks in the base template.
 
 89
+00:05:23,160 --> 00:05:28,080
+ So all the stuff in the con2.html that is between the block and
+
+90
+00:05:28,080 --> 00:05:32,000
+ the end block is what is then pushed into the base template.
+
+91
 00:05:32,000 --> 00:05:35,760
  And then in a sense, the base template, with those blocks replaced,
 
-90
-00:05:35,760 --> 00:05:38,720
- is what is returned as a result of the render and
-
-91
-00:05:38,720 --> 00:05:42,500
- then returned to Django as the HTTP response.
-
 92
-00:05:42,500 --> 00:05:43,640
- We're gonna use these a lot.
+00:05:35,760 --> 00:05:40,320
+ is what is returned as a result of the render and then returned to Django as
 
 93
+00:05:40,320 --> 00:05:42,520
+ the HTTP response.
+
+94
+00:05:42,520 --> 00:05:43,640
+ We're gonna use these a lot.
+
+95
 00:05:43,640 --> 00:05:47,160
  When we start doing navigation, we're gonna go crazy with these things.
 
-94
-00:05:47,160 --> 00:05:51,120
+96
+00:05:47,160 --> 00:05:51,160
  So up next, we wanna talk about URL mapping and reversing,
 
-95
-00:05:51,120 --> 00:05:55,280
+97
+00:05:51,160 --> 00:05:55,320
  where we have to actually make a link in one page to a different page.
 
-96
-00:05:55,280 --> 00:06:05,280
+98
+00:05:55,320 --> 00:06:05,320
  [MUSIC]
 

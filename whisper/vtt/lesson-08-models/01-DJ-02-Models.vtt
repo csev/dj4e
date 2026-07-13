@@ -1,160 +1,169 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.920
- - Hello, and welcome to our lecture on simple Django models.
+00:00:00.000 --> 00:00:03.980
+ - Hello and welcome to our lecture on simple django models.
 
-00:00:03.920 --> 00:00:06.820
+00:00:03.980 --> 00:00:06.880
  Now, as you've seen in previous lectures,
 
-00:00:06.820 --> 00:00:09.000
+00:00:06.880 --> 00:00:09.040
  we talked about SQL, structured query language,
 
-00:00:09.000 --> 00:00:10.560
+00:00:09.040 --> 00:00:10.620
  and that's how we talk to databases,
 
-00:00:10.560 --> 00:00:13.320
+00:00:10.620 --> 00:00:13.380
  and it's beautiful because it allows portability
 
-00:00:13.320 --> 00:00:15.720
+00:00:13.380 --> 00:00:15.780
  up to a point across databases,
 
-00:00:15.720 --> 00:00:19.420
- and we talked about all the CREATE TABLE stuff,
+00:00:15.780 --> 00:00:19.480
+ and we talked about all the create table stuff,
 
-00:00:19.420 --> 00:00:22.720
+00:00:19.480 --> 00:00:22.780
  and so this is just a bit of review where, you know,
 
-00:00:22.720 --> 00:00:26.760
- we can type these commands to SQLite, we run SQLite,
+00:00:22.780 --> 00:00:25.240
+ we can type these commands to SQLite.
 
-00:00:26.760 --> 00:00:28.800
- we run a CREATE TABLE statement,
+00:00:25.240 --> 00:00:28.880
+ We run SQLite, we run a create table statement,
 
-00:00:28.800 --> 00:00:31.560
+00:00:28.880 --> 00:00:31.600
  and, you know, we do it, and it's a dot tables that we go,
 
-00:00:31.560 --> 00:00:33.000
+00:00:31.600 --> 00:00:33.040
  we can ask kind of schema users,
 
-00:00:33.000 --> 00:00:36.120
+00:00:33.040 --> 00:00:36.180
  we did all this in a previous lecture,
 
-00:00:36.120 --> 00:00:39.120
+00:00:36.180 --> 00:00:40.800
  and so that's basically how SQL works,
 
-00:00:39.120 --> 00:00:43.900
+00:00:40.800 --> 00:00:43.940
  and here's a series of SQL commands from a previous lecture,
 
-00:00:43.900 --> 00:00:47.260
- just kind of as review, it's pretty simple, CRUD.
+00:00:43.940 --> 00:00:47.300
+ just kind of as review, it's pretty simple, crud.
 
-00:00:47.260 --> 00:00:50.600
+00:00:47.300 --> 00:00:50.660
  Now, one of the problems is, as I mentioned,
 
-00:00:50.600 --> 00:00:53.960
+00:00:50.660 --> 00:00:54.020
  is that different databases like PostgreSQL and MySQL
 
-00:00:53.960 --> 00:00:55.460
+00:00:54.020 --> 00:00:55.540
  do all this stuff identical,
 
-00:00:55.460 --> 00:00:59.160
- but then some more subtle things like how foreign keys work,
+00:00:55.540 --> 00:00:57.500
+ but then some more subtle things,
 
-00:00:59.160 --> 00:01:03.560
- which we'll learn in a bit, or how they do limits,
+00:00:57.500 --> 00:01:00.720
+ like how foreign keys work, which we'll learn in a bit,
 
-00:01:03.560 --> 00:01:06.960
+00:01:00.720 --> 00:01:03.660
+ or how they do limits,
+
+00:01:03.660 --> 00:01:07.100
  like pulling like 25, next 25, next 25,
 
-00:01:06.960 --> 00:01:09.200
+00:01:07.100 --> 00:01:09.100
  that's a little bit different,
 
-00:01:09.200 --> 00:01:11.200
- and so if you want to build an application
+00:01:09.100 --> 00:01:11.300
+ and so if you wanna build an application
 
-00:01:11.200 --> 00:01:14.160
+00:01:11.300 --> 00:01:14.260
  that talks across more than one database,
 
-00:01:14.160 --> 00:01:16.160
- you've got to think a little bit,
+00:01:14.260 --> 00:01:16.060
+ you gotta think a little bit,
 
-00:01:16.160 --> 00:01:17.960
+00:01:16.060 --> 00:01:18.020
  and one solution to this,
 
-00:01:17.960 --> 00:01:22.100
+00:01:18.020 --> 00:01:22.180
  also to kind of limit the fancy SQL you have to learn,
 
-00:01:22.100 --> 00:01:26.260
- I like to say that you can learn the first 60% of SQL
+00:01:22.180 --> 00:01:26.020
+ I like to say that, you know,
 
-00:01:26.260 --> 00:01:29.860
- in about three hours,
+00:01:26.020 --> 00:01:29.940
+ you can learn the first 60% of SQL in about three hours,
 
-00:01:29.860 --> 00:01:34.060
+00:01:29.940 --> 00:01:33.920
  and the last 40% is literally a lifetime,
 
-00:01:34.060 --> 00:01:37.400
- and so advanced SQL is difficult to do,
+00:01:33.920 --> 00:01:38.560
+ I mean, and so it's, advanced SQL is difficult to do,
 
-00:01:37.400 --> 00:01:42.460
+00:01:38.560 --> 00:01:42.540
  it's really hard to teach a class in advanced SQL,
 
-00:01:42.460 --> 00:01:44.360
+00:01:42.540 --> 00:01:44.500
  I can teach you advanced features,
 
-00:01:44.360 --> 00:01:46.200
+00:01:44.500 --> 00:01:46.360
  but then there are so many features
 
-00:01:46.200 --> 00:01:48.060
+00:01:46.360 --> 00:01:48.140
  that you just can't learn in a class,
 
-00:01:48.060 --> 00:01:49.660
+00:01:48.140 --> 00:01:49.820
  because which database you're using,
 
-00:01:49.660 --> 00:01:52.600
- and they're different for every database.
+00:01:49.820 --> 00:01:51.620
+ they're different for every database.
 
-00:01:52.600 --> 00:01:56.200
- So one thing that's happened in the past decade or so
+00:01:51.620 --> 00:01:54.360
+ So one of the things that's happened
 
-00:01:56.200 --> 00:01:59.900
- is the emergence of what's called Object Relational Mappers,
+00:01:54.360 --> 00:01:56.260
+ in the past decade or so,
 
-00:01:59.900 --> 00:02:03.360
+00:01:56.260 --> 00:01:59.980
+ is the emergence of what's called object relational mappers,
+
+00:01:59.980 --> 00:02:03.420
  and that is to, you have the physical database layer,
 
-00:02:03.360 --> 00:02:05.800
+00:02:03.420 --> 00:02:05.820
  and then you have SQL, which is an abstraction,
 
-00:02:05.800 --> 00:02:07.900
+00:02:05.820 --> 00:02:07.980
  it's a imperfect abstraction,
 
-00:02:07.900 --> 00:02:10.560
- and then Django builds another abstraction on top of that
+00:02:07.980 --> 00:02:10.620
+ and then Django builds another abstraction on top of that,
 
-00:02:10.560 --> 00:02:12.000
- called Object Relational Mappers,
+00:02:10.620 --> 00:02:12.020
+ called object relational mappers,
 
-00:02:12.000 --> 00:02:15.200
+00:02:12.020 --> 00:02:15.260
  so we just create a Python object,
 
-00:02:15.200 --> 00:02:17.360
- and we ask that to be placed in the table.
+00:02:15.260 --> 00:02:17.400
+ and we ask that to be placed in the table,
 
-00:02:17.360 --> 00:02:20.800
- Now, the object may have a name and an email address,
+00:02:17.400 --> 00:02:20.860
+ now the object may have a name, an email address,
 
-00:02:20.800 --> 00:02:23.700
- and a birthday or something in it,
+00:02:20.860 --> 00:02:23.720
+ and you know, a birthday or something in it,
 
-00:02:23.700 --> 00:02:25.920
+00:02:23.720 --> 00:02:25.940
  it can have all kinds of data in that object,
 
-00:02:25.920 --> 00:02:29.200
+00:02:25.940 --> 00:02:29.220
  and then that maps into a name and an email address,
 
-00:02:29.200 --> 00:02:32.260
- and we have to tell it, do we want this to be indexed,
+00:02:29.220 --> 00:02:30.580
+ and we have to tell it like,
+
+00:02:30.580 --> 00:02:32.260
+ do we want this to be indexed,
 
 00:02:32.260 --> 00:02:33.360
  and all these other kinds of things,
@@ -162,382 +171,391 @@ WEBVTT
 00:02:33.360 --> 00:02:35.220
  we communicate through the ORM,
 
-00:02:35.220 --> 00:02:37.160
+00:02:35.220 --> 00:02:37.180
  so we leave the ORM alone.
 
-00:02:37.160 --> 00:02:40.320
+00:02:37.180 --> 00:02:40.340
  Now in Django, as we get more advanced,
 
-00:02:40.320 --> 00:02:42.260
+00:02:40.340 --> 00:02:42.260
  you can also sort of bypass the ORM,
 
-00:02:42.260 --> 00:02:46.360
- because the way the objects are mapped into the tables
+00:02:42.260 --> 00:02:46.340
+ because the way the objects are mapped into the tables,
 
-00:02:46.360 --> 00:02:50.500
+00:02:46.340 --> 00:02:50.460
  is predictable, the names of the columns is predictable,
 
-00:02:50.500 --> 00:02:54.760
- and so it's kind of like it's a shortcut for,
+00:02:50.460 --> 00:02:53.620
+ and so it's kind of like it's a shortcut
 
-00:02:54.760 --> 00:02:58.360
- I like to think it's like the 80% of the most common things
+00:02:53.620 --> 00:02:56.940
+ for, I like to think it's like the 80%
 
-00:02:58.360 --> 00:02:59.800
- you do with a database are easily done
+00:02:56.940 --> 00:02:59.300
+ of the most common things you do with a database,
 
-00:02:59.800 --> 00:03:03.760
- with an object-relational model, but object ORM,
+00:02:59.300 --> 00:03:01.180
+ are easily done with an object relational model,
 
-00:03:03.760 --> 00:03:08.760
+00:03:01.180 --> 00:03:02.340
+ but object ORM,
+
+00:03:02.340 --> 00:03:08.840
  but ultimately, once you get to the more advanced things,
 
-00:03:08.760 --> 00:03:11.060
+00:03:08.840 --> 00:03:11.120
  you tend to not be able to do that with an ORM,
 
-00:03:11.060 --> 00:03:14.100
+00:03:11.120 --> 00:03:14.140
  you get to the point where writing the SQL
 
-00:03:14.100 --> 00:03:15.460
+00:03:14.140 --> 00:03:15.560
  is easier than using the ORM,
 
-00:03:15.460 --> 00:03:17.960
+00:03:15.560 --> 00:03:18.040
  but for about 80%, writing ORM code
 
-00:03:17.960 --> 00:03:20.200
+00:03:18.040 --> 00:03:21.520
  is way easier than writing the SQL.
 
-00:03:20.200 --> 00:03:24.220
- The other thing that ORM does is it allows you to
+00:03:21.520 --> 00:03:25.560
+ The other thing that ORM does, is it allows you to
 
-00:03:24.220 --> 00:03:30.420
- have multiple databases, because the ORM code inside of Django
+00:03:25.560 --> 00:03:28.960
+ have multiple databases, because the ORM code
 
-00:03:30.420 --> 00:03:35.560
- knows the difference between SQLite, PostgreSQL, and MySQL,
+00:03:28.960 --> 00:03:32.760
+ inside of Django, knows the difference between
 
-00:03:35.560 --> 00:03:38.820
+00:03:32.760 --> 00:03:35.700
+ SQLite, PostgreSQL, and MySQL,
+
+00:03:35.700 --> 00:03:38.940
  and so you could actually start an application
 
-00:03:38.820 --> 00:03:40.860
+00:03:38.940 --> 00:03:40.980
  that uses SQLite during all your development,
 
-00:03:40.860 --> 00:03:42.220
+00:03:40.980 --> 00:03:42.300
  and then when you're devoted to production,
 
-00:03:42.220 --> 00:03:43.320
+00:03:42.300 --> 00:03:43.460
  you just go like, you know what,
 
-00:03:43.320 --> 00:03:46.060
+00:03:43.460 --> 00:03:46.180
  let's just use MySQL or PostgreSQL instead,
 
-00:03:46.060 --> 00:03:47.260
+00:03:46.180 --> 00:03:48.440
  and that's quite cool.
 
-00:03:47.260 --> 00:03:51.220
- I find them limiting, and so just I want you to know
+00:03:48.440 --> 00:03:50.420
+ I find them limiting, and so just,
 
-00:03:51.220 --> 00:03:54.400
- both how to use objects and how to use SQL,
+00:03:50.420 --> 00:03:52.560
+ I want you to know both how to use objects,
 
-00:03:54.400 --> 00:03:56.560
- but understand that most of what you're going to do
+00:03:52.560 --> 00:03:55.860
+ and how to use SQL, but understand that most of what
 
-00:03:56.560 --> 00:03:58.360
- is to use the object-relational mapping,
+00:03:55.860 --> 00:03:58.360
+ you're going to do is to use the object relational mapping,
 
-00:03:58.360 --> 00:04:02.360
+00:03:58.360 --> 00:04:01.360
  and we get a lot of power with this.
 
-00:04:02.360 --> 00:04:07.260
- So if we look at sort of the way we communicate
+00:04:01.360 --> 00:04:07.220
+ So, if we look at sort of the way we communicate
 
-00:04:07.260 --> 00:04:09.760
- to the database or the way we define the database,
+00:04:07.220 --> 00:04:11.060
+ to the database, or the way we define the database,
 
-00:04:11.060 --> 00:04:16.060
- in SQL we create a table, and that right there is portable,
+00:04:11.060 --> 00:04:15.220
+ in SQL, we create a table, and that right there is portable,
 
-00:04:16.060 --> 00:04:18.520
+00:04:15.220 --> 00:04:18.520
  but once you start doing things like adding
 
 00:04:18.520 --> 00:04:20.160
- auto-increment columns and things like that,
+ auto increment columns and things like that,
 
-00:04:20.160 --> 00:04:23.920
- it stops being portable, and so that's the way we do it,
+00:04:20.160 --> 00:04:22.660
+ it stops being portable.
 
-00:04:23.920 --> 00:04:26.820
- but in Django, the way we do this is we have a file
+00:04:22.660 --> 00:04:25.180
+ And so that's the way we do it, but in Django,
 
-00:04:26.820 --> 00:04:31.820
- called models.py, and it's in the application folder,
+00:04:25.180 --> 00:04:28.620
+ the way we do this is we have a file called models.py,
 
-00:04:31.820 --> 00:04:34.700
+00:04:28.620 --> 00:04:32.100
+ and it's in the application folder,
+
+00:04:32.100 --> 00:04:34.700
  and then we are going to use object orientation,
 
-00:04:34.700 --> 00:04:37.900
+00:04:34.700 --> 00:04:37.860
  so we're gonna, from Django.db, that's a package,
 
-00:04:37.900 --> 00:04:42.800
+00:04:37.860 --> 00:04:42.820
  we're gonna import models, and models is now a class,
 
-00:04:42.800 --> 00:04:45.420
+00:04:42.820 --> 00:04:46.380
  and we're gonna create a class called user,
 
-00:04:45.420 --> 00:04:49.560
+00:04:46.380 --> 00:04:49.740
  this is going to be equivalent to the name of the table,
 
-00:04:49.560 --> 00:04:53.660
- and we're going, and the definition,
+00:04:49.740 --> 00:04:53.900
+ and the definition, we're gonna extend models.model,
 
-00:04:53.660 --> 00:04:56.000
- we're gonna extend models.model,
+00:04:53.900 --> 00:04:59.180
+ and so there's a lot of it, this is called extending,
 
-00:04:56.000 --> 00:04:59.120
- and so there's a lot of, this is called extending,
-
-00:04:59.120 --> 00:05:03.000
+00:04:59.180 --> 00:05:02.980
  it's called inheritance, we're gonna get a lot of features
 
-00:05:03.000 --> 00:05:05.760
- and functionality, excuse me.
+00:05:02.980 --> 00:05:05.480
+ and functionality, excuse me,
 
-00:05:08.900 --> 00:05:10.760
- We're gonna get a lot of features and functionality
+00:05:05.480 --> 00:05:10.820
+ we're gonna get a lot of features and functionality
 
-00:05:10.760 --> 00:05:14.320
+00:05:10.820 --> 00:05:14.260
  from this code, so there's probably 20,000 lines
 
-00:05:14.320 --> 00:05:17.100
+00:05:14.260 --> 00:05:17.140
  of fancy code that we didn't write that we're using
 
-00:05:17.100 --> 00:05:20.520
- by extending models.model, we're getting all that,
+00:05:17.140 --> 00:05:20.720
+ by extending models.model, we're getting all that.
 
-00:05:20.520 --> 00:05:22.800
- and then within here we create a couple of attributes
+00:05:20.720 --> 00:05:22.860
+ And then within here, we create a couple of attributes
 
-00:05:22.800 --> 00:05:25.260
+00:05:22.860 --> 00:05:25.280
  that basically says give me a character field,
 
-00:05:25.260 --> 00:05:29.520
+00:05:25.280 --> 00:05:29.540
  models is a class, char field is a method within that class,
 
-00:05:29.520 --> 00:05:32.920
+00:05:29.540 --> 00:05:32.940
  max length equals 128, and that gives us the name.
 
-00:05:32.920 --> 00:05:35.860
+00:05:32.940 --> 00:05:35.900
  These two things are equivalent, and what happens is,
 
-00:05:35.860 --> 00:05:37.900
+00:05:35.900 --> 00:05:37.900
  is when we build this, and we do what's called
 
 00:05:37.900 --> 00:05:41.220
- run a migration, then Django will make this table for us,
+ run on migration, then Django will make this table for us,
 
-00:05:41.220 --> 00:05:44.320
+00:05:41.220 --> 00:05:44.340
  but then we have this abstraction that we can use
 
-00:05:44.320 --> 00:05:45.460
+00:05:44.340 --> 00:05:45.500
  to talk to it.
 
-00:05:45.460 --> 00:05:49.560
+00:05:46.980 --> 00:05:49.540
  So this is called a migration, and so you have to be
 
-00:05:49.560 --> 00:05:54.060
+00:05:49.540 --> 00:05:54.100
  in the projects folder, and so once you create a migration
 
-00:05:54.060 --> 00:05:58.860
+00:05:54.100 --> 00:05:58.840
  inside of your Django application, then you go up
 
-00:05:58.860 --> 00:06:02.100
+00:05:58.840 --> 00:06:02.140
  into the Django project, and you say python3 manage.py,
 
-00:06:02.100 --> 00:06:06.560
- now manage.py is kind of like the thing that starts
+00:06:02.140 --> 00:06:05.940
+ now manage.py is kind of like the thing
 
-00:06:06.560 --> 00:06:10.760
- everything, so make migrations is actually creating files,
+00:06:05.940 --> 00:06:08.980
+ that starts everything, so make migrations
 
-00:06:10.760 --> 00:06:14.320
- 'cause the idea with migrations is that you would debug
+00:06:08.980 --> 00:06:12.460
+ is actually creating files, 'cause the idea with migrations
 
-00:06:14.320 --> 00:06:17.580
- your migrations on your development environment,
+00:06:12.460 --> 00:06:15.580
+ is that you would debug your migrations,
 
-00:06:17.580 --> 00:06:20.760
- and then once you know, you would move them to production.
+00:06:15.580 --> 00:06:18.760
+ like on your development environment, and then once you know,
 
-00:06:20.760 --> 00:06:23.000
+00:06:18.760 --> 00:06:20.760
+ you would move them to production.
+
+00:06:20.760 --> 00:06:23.020
  So you'd make the migrations in development environment,
 
-00:06:23.000 --> 00:06:24.920
- you'd get them right, and then you'd check them
+00:06:23.020 --> 00:06:24.940
+ you'd get them right, and then you'd like check them
 
-00:06:24.920 --> 00:06:27.680
+00:06:24.940 --> 00:06:27.680
  into GitHub perhaps, and then in production,
 
 00:06:27.680 --> 00:06:30.120
  you would pull your migrations out of GitHub,
 
-00:06:30.120 --> 00:06:34.280
+00:06:30.120 --> 00:06:32.920
  and then the migrate, so the make migrations,
 
-00:06:34.280 --> 00:06:37.940
+00:06:32.920 --> 00:06:37.940
  the make migrations bit, that is creating a set
 
-00:06:37.940 --> 00:06:40.920
+00:06:37.940 --> 00:06:40.940
  of migration scripts, and you can see that it's making
 
-00:06:40.920 --> 00:06:42.660
- these files, and they're actual files, and you can go
+00:06:40.940 --> 00:06:42.960
+ these files, and they're actual files, and you can go find
 
-00:06:42.660 --> 00:06:45.920
- find those files, like 001 initial py,
+00:06:42.960 --> 00:06:46.900
+ those files, like oh, one initial py, and then the migrate
 
-00:06:45.920 --> 00:06:48.680
- and then the migrate is reading the migrations,
+00:06:46.900 --> 00:06:50.420
+ is reading the migrations, and then actually changing
 
-00:06:48.680 --> 00:06:51.640
- and then actually changing the database.
+00:06:50.420 --> 00:06:53.860
+ the database, so that's the one where you might be able
 
-00:06:51.640 --> 00:06:54.300
- So that's the one where you might be able to make
+00:06:53.860 --> 00:06:56.860
+ to make a migration, and it doesn't matter what database
 
-00:06:54.300 --> 00:06:56.860
- a migration, and it doesn't matter what database
-
-00:06:56.860 --> 00:06:59.560
+00:06:56.860 --> 00:06:59.540
  you're gonna use, could be your development in SQLite,
 
-00:06:59.560 --> 00:07:04.460
- production in MySQL, you would do migrate in both of those,
+00:06:59.540 --> 00:07:03.480
+ and production in MySQL, you would do migrate
 
-00:07:04.460 --> 00:07:07.260
- and in your development, it would make an SQLite database,
+00:07:03.480 --> 00:07:05.660
+ in both of those, and in your development,
 
-00:07:07.260 --> 00:07:09.440
- and in your production, it would make an MySQL database,
+00:07:05.660 --> 00:07:07.940
+ it would make an SQLite database, and in your production,
 
-00:07:09.440 --> 00:07:12.760
- put the tables in, and the SQL might even be quite subtle,
+00:07:07.940 --> 00:07:10.460
+ it would make a MySQL database, put the tables in,
 
-00:07:12.760 --> 00:07:15.040
+00:07:10.460 --> 00:07:12.800
+ and the SQL might even be quite subtle,
+
+00:07:12.800 --> 00:07:15.100
  and it will be subtly different between them,
 
-00:07:15.040 --> 00:07:17.600
+00:07:15.100 --> 00:07:17.680
  but you don't care, so migrate is the act
 
-00:07:17.600 --> 00:07:19.760
+00:07:17.680 --> 00:07:19.820
  of creating the database.
 
-00:07:19.760 --> 00:07:22.200
- Now, in our development environments,
+00:07:19.820 --> 00:07:22.860
+ Now in our development environments, we're gonna be creating
 
-00:07:22.200 --> 00:07:26.240
- we're gonna be creating a file called db.sqlite3,
+00:07:22.860 --> 00:07:27.860
+ a file called db.sqlite3, and so if you get all messed up,
 
-00:07:26.240 --> 00:07:28.720
- and so if you get all messed up, you don't have
+00:07:27.860 --> 00:07:30.020
+ you don't have to remake your migrations,
 
-00:07:28.720 --> 00:07:30.700
- to remake your migrations, they're just sitting there
+00:07:30.020 --> 00:07:31.540
+ they're just sitting there kind of as part
 
-00:07:30.700 --> 00:07:32.820
- kind of as part of your source code,
+00:07:31.540 --> 00:07:33.940
+ of your source code, and you can like get rid
 
-00:07:32.820 --> 00:07:35.700
- and you can get rid of the db.sqlite3 file,
+00:07:33.940 --> 00:07:37.340
+ of the db.sqlite3 file, and then run the migrations again,
 
-00:07:35.700 --> 00:07:39.520
- and then run the migrations again, if you get kinda messed up.
+00:07:37.340 --> 00:07:39.580
+ if you get kinda messed up.
 
-00:07:39.520 --> 00:07:42.620
- So the make migrations reads this,
+00:07:39.580 --> 00:07:43.180
+ So the make migrations reads this, and creates
 
-00:07:42.620 --> 00:07:44.220
- and creates these other little files.
+00:07:43.180 --> 00:07:45.140
+ these other little files, you can take a look at them,
 
-00:07:44.220 --> 00:07:46.160
- You can take a look at 'em, they're kind of like
+00:07:45.140 --> 00:07:47.380
+ they're kind of like Django's internal files,
 
-00:07:46.160 --> 00:07:48.200
- Django's internal files, they're Python,
+00:07:47.380 --> 00:07:49.620
+ they're Python, it's just you're not gonna write them
 
-00:07:48.200 --> 00:07:51.180
- it's just you're not gonna write them by yourself,
+00:07:49.620 --> 00:07:54.620
+ by yourself, but then the migrate reads the 001 initial.py,
 
-00:07:51.180 --> 00:07:54.840
- but then the migrate reads the 001 initial dot py,
-
-00:07:54.840 --> 00:07:57.540
+00:07:54.620 --> 00:07:57.580
  and then actually creates SQL commands,
 
-00:07:57.540 --> 00:08:00.380
+00:07:57.580 --> 00:08:00.420
  and runs those SQL commands for us.
 
-00:08:00.380 --> 00:08:03.580
- And so if we jump after we've done this,
+00:08:00.420 --> 00:08:03.620
+ And so if we jump, after we've done this,
 
-00:08:03.580 --> 00:08:07.580
- we see this file db.sqlite3, and we can jump in
+00:08:03.620 --> 00:08:07.580
+ we see this file db.sqlite3, and we can jump in,
 
-00:08:07.580 --> 00:08:10.160
- and take a look, again, you have to be in the right folder,
+00:08:07.580 --> 00:08:10.180
+ and take a look, again you have to be in the right folder,
 
-00:08:10.160 --> 00:08:13.560
+00:08:10.180 --> 00:08:13.600
  so you'd be in the Django_projects,
 
-00:08:13.560 --> 00:08:15.160
+00:08:13.600 --> 00:08:15.180
  and then the folder of the project,
 
-00:08:15.160 --> 00:08:17.280
+00:08:15.180 --> 00:08:17.300
  but there'd be a file called db.sqlite3,
 
-00:08:17.280 --> 00:08:22.160
+00:08:17.300 --> 00:08:22.180
  go into a Linux command line, type sqlite3, db.sqlite3,
 
-00:08:22.160 --> 00:08:24.480
+00:08:22.180 --> 00:08:24.500
  and you will find a whole bunch of things.
 
-00:08:24.480 --> 00:08:26.780
+00:08:24.500 --> 00:08:26.820
  And when you go into sqlite and you type .tables,
 
-00:08:26.780 --> 00:08:29.980
+00:08:26.820 --> 00:08:29.960
  you will see that Django has a bunch of migrations
 
-00:08:29.980 --> 00:08:33.300
+00:08:29.960 --> 00:08:33.280
  that are all there from the sessions,
 
-00:08:33.300 --> 00:08:34.820
+00:08:33.280 --> 00:08:34.820
  and stuff we're gonna learn how to use later,
 
-00:08:34.820 --> 00:08:36.700
- authorization, et cetera, et cetera.
+00:08:34.820 --> 00:08:36.680
+ authorization, et cetera, et cetera,
 
-00:08:36.700 --> 00:08:39.860
- But then the particular data model that you created,
+00:08:36.680 --> 00:08:39.860
+ but then the particular data model that you created,
 
-00:08:39.860 --> 00:08:43.820
- which is a user data model, there's a table in there for that.
+00:08:39.860 --> 00:08:41.660
+ which is a user data model,
+
+00:08:41.660 --> 00:08:43.820
+ there's a table in there for that.
 
 00:08:43.820 --> 00:08:47.380
  And if we use the schema command of sqlite3,
 
-00:08:47.380 --> 00:08:49.180
- and we say, hey, what is in that user model
+00:08:47.380 --> 00:08:50.700
+ and we say, hey, what is in that user_model_user table,
 
-00:08:49.180 --> 00:08:53.320
- underscore user table, and it's a create statement, right?
+00:08:50.700 --> 00:08:53.340
+ and it's you see a create statement, right?
 
-00:08:53.320 --> 00:08:55.520
+00:08:53.340 --> 00:08:55.500
  And so this is the actual create statement
 
-00:08:55.520 --> 00:09:00.520
+00:08:55.500 --> 00:09:00.500
  that the Django sent to sqlite to create the table.
 
-00:09:00.520 --> 00:09:02.740
+00:09:00.500 --> 00:09:02.740
  And I was talking about some of these things
 
 00:09:02.740 --> 00:09:03.660
@@ -549,31 +567,31 @@ WEBVTT
 00:09:05.340 --> 00:09:06.940
  ID, name, email, et cetera.
 
-00:09:06.940 --> 00:09:09.180
- It asks the ID field for you automatically.
+00:09:06.940 --> 00:09:09.220
+ It adds the ID field for you automatically.
 
-00:09:09.180 --> 00:09:10.420
+00:09:09.220 --> 00:09:10.420
  And most of it's portable,
 
 00:09:10.420 --> 00:09:12.020
  like this part here is quite portable,
 
-00:09:12.020 --> 00:09:15.520
+00:09:12.020 --> 00:09:15.500
  but this ID statement here, primary key auto increment,
 
-00:09:15.520 --> 00:09:18.380
+00:09:15.500 --> 00:09:18.380
  turns out that if you're in MySQL, or Oracle,
 
-00:09:18.380 --> 00:09:21.640
- or PostgreSQL, or sqlite, that's a little different,
+00:09:18.380 --> 00:09:21.620
+ or PostgreSQL, or SQLite, that's a little different,
 
-00:09:21.640 --> 00:09:24.200
+00:09:21.620 --> 00:09:24.200
  but literally the migrate takes care of all that,
 
-00:09:24.200 --> 00:09:26.300
+00:09:24.200 --> 00:09:26.320
  because the migrate knows that thing,
 
-00:09:26.300 --> 00:09:27.900
+00:09:26.320 --> 00:09:27.900
  and as MySQL changes,
 
 00:09:27.900 --> 00:09:30.260
@@ -582,29 +600,29 @@ WEBVTT
 00:09:30.260 --> 00:09:33.860
  but as MySQL changes, then the Django stuff changes,
 
-00:09:33.860 --> 00:09:36.000
+00:09:33.860 --> 00:09:35.980
  and it all kind of works out.
 
-00:09:36.000 --> 00:09:38.580
- And so you can sort of run these commands,
+00:09:35.980 --> 00:09:38.580
+ And so you can sort of run these commands
 
 00:09:38.580 --> 00:09:40.340
  and then sneak back into the database,
 
-00:09:40.340 --> 00:09:41.480
+00:09:40.340 --> 00:09:41.500
  and you can see what they've done,
 
-00:09:41.480 --> 00:09:44.380
+00:09:41.500 --> 00:09:44.380
  but it's all very predictable.
 
 00:09:44.380 --> 00:09:50.140
- I'm gonna spill my coffee on my computer.
+ Do you wanna spill my coffee on my computer?
 
-00:09:51.020 --> 00:09:55.020
+00:09:50.140 --> 00:09:55.000
  So you can also talk, you're talking at the low level
 
-00:09:55.020 --> 00:09:56.340
- when you're running the sqlite command,
+00:09:55.000 --> 00:09:56.340
+ when you run the SQLite command,
 
 00:09:56.340 --> 00:09:57.820
  but you can also be in that folder,
@@ -621,11 +639,11 @@ WEBVTT
 00:10:06.160 --> 00:10:07.180
  and you see the prompt change
 
-00:10:07.180 --> 00:10:10.240
- from dollar sign to three chevrons.
+00:10:07.180 --> 00:10:10.260
+ from dollar sign to three chevrons,
 
-00:10:10.240 --> 00:10:13.980
- And it's not the same as the Python shell,
+00:10:10.260 --> 00:10:13.980
+ and it's not the same as the Python shell,
 
 00:10:13.980 --> 00:10:16.480
  although it is the same as the Python shell,
@@ -633,17 +651,17 @@ WEBVTT
 00:10:16.480 --> 00:10:19.140
  with a whole bunch of Django libraries that are pre-mounted.
 
-00:10:19.140 --> 00:10:22.380
- Okay, and so if you just say Python three,
+00:10:19.140 --> 00:10:23.060
+ Okay, and so if you just say Python 3, you'll get this,
 
-00:10:22.380 --> 00:10:24.700
- you'll get this, but this next command
+00:10:23.060 --> 00:10:26.580
+ but this next command that is from user model,
 
-00:10:24.700 --> 00:10:27.540
- that is from user model, models, import user,
+00:10:26.580 --> 00:10:28.880
+ models import user, that will fail
 
-00:10:27.540 --> 00:10:31.460
- that will fail unless you let manage.py start your shell,
+00:10:28.880 --> 00:10:31.460
+ unless you let manage.py start your shell,
 
 00:10:31.460 --> 00:10:34.340
  because again, it loads a bunch of objects
@@ -654,13 +672,13 @@ WEBVTT
 00:10:36.500 --> 00:10:39.040
  and then all of a sudden user model.models works,
 
-00:10:39.040 --> 00:10:41.640
+00:10:39.040 --> 00:10:41.660
  users there, et cetera, okay?
 
-00:10:41.640 --> 00:10:46.640
+00:10:41.660 --> 00:10:46.660
  So this is pulling from your models.py file that you built,
 
-00:10:47.800 --> 00:10:50.860
+00:10:46.660 --> 00:10:50.860
  and so user model is the application name,
 
 00:10:50.860 --> 00:10:53.160
@@ -670,13 +688,13 @@ WEBVTT
  we import the user model, which is in this case a class,
 
 00:10:56.380 --> 00:11:01.020
- user is a class, and we're going to do a constructor call.
+ user is a class, and we're going to do a constructor call,
 
 00:11:01.020 --> 00:11:03.340
- And so we're gonna say, let's make a new user,
+ and so we're going to say let's make a new user,
 
 00:11:03.340 --> 00:11:07.160
- set the name to Kristen and the email to that email,
+ set the name to Kristen, and the email to that email,
 
 00:11:07.160 --> 00:11:09.820
  and this actually has not done anything in the database,
@@ -685,19 +703,22 @@ WEBVTT
  this creates, in effect, just a Python variable,
 
 00:11:13.940 --> 00:11:16.740
- and then to force it to be written to the database,
+ and then to force it to read written to the database,
 
 00:11:16.740 --> 00:11:19.580
  we call u.save, and so save is a method
 
-00:11:19.580 --> 00:11:22.700
- on this new user object, capital user,
+00:11:19.580 --> 00:11:21.340
+ on this new user object.
 
-00:11:22.700 --> 00:11:26.740
- capital user is a class, we're using a constructor
+00:11:21.340 --> 00:11:25.220
+ Capital user, capital user is a class,
 
-00:11:26.740 --> 00:11:29.980
- to construct from the class an actual instance, an object,
+00:11:25.220 --> 00:11:28.460
+ we're using a constructor to construct from the class
+
+00:11:28.460 --> 00:11:29.980
+ an actual instance, an object,
 
 00:11:29.980 --> 00:11:32.340
  and then we get that into u, the instance object,
@@ -717,20 +738,23 @@ WEBVTT
 00:11:44.500 --> 00:11:46.580
  if you look at these, they start pretty predictably
 
-00:11:46.580 --> 00:11:49.020
- at one, two, three, four, five, but if you're getting
+00:11:46.580 --> 00:11:48.300
+ at one, two, three, four, five,
 
-00:11:49.020 --> 00:11:50.980
- a bunch of things coming in from a bunch of places,
+00:11:48.300 --> 00:11:49.940
+ but if you're getting a bunch of things coming in
 
-00:11:50.980 --> 00:11:55.220
- then the database just assigns each object, each row,
+00:11:49.940 --> 00:11:52.820
+ from a bunch of places, then the database just assigns
 
-00:11:55.220 --> 00:11:58.820
- and that's part of that whole auto increment thing,
+00:11:52.820 --> 00:11:57.540
+ each object, each row, and that's part of that whole
 
-00:11:58.820 --> 00:12:02.220
- come on, go back up, this whole auto increment thing,
+00:11:57.540 --> 00:12:00.060
+ auto increment thing, come on, go back up,
+
+00:12:00.060 --> 00:12:02.220
+ this whole auto increment thing,
 
 00:12:02.220 --> 00:12:05.380
  that says, hey database, I'm gonna put your records in,
@@ -750,10 +774,10 @@ WEBVTT
 00:12:14.260 --> 00:12:16.020
  by saying, oh, print u.id.
 
-00:12:16.020 --> 00:12:18.720
+00:12:16.020 --> 00:12:18.740
  Now if you printed u.id before you did the save,
 
-00:12:18.720 --> 00:12:21.620
+00:12:18.740 --> 00:12:21.620
  it wouldn't exist, and then print u.email,
 
 00:12:21.620 --> 00:12:24.260
@@ -762,20 +786,23 @@ WEBVTT
 00:12:24.260 --> 00:12:29.260
  but now this is not only in your u variable,
 
-00:12:29.260 --> 00:12:32.000
+00:12:29.260 --> 00:12:31.980
  but it's also in the database as well, okay?
 
-00:12:32.000 --> 00:12:39.000
- Now, we can dig a little bit into how this object
+00:12:31.980 --> 00:12:38.420
+ Now, we can dig a little bit into
 
-00:12:39.000 --> 00:12:42.980
- relational mapping is working, and so if you're
+00:12:38.420 --> 00:12:41.340
+ how this object relational mapping is working,
 
-00:12:42.980 --> 00:12:45.420
- in the middle, you're doing things like that last statement,
+00:12:41.340 --> 00:12:43.340
+ and so if you're in the middle,
+
+00:12:43.340 --> 00:12:45.420
+ you're doing things like that last statement,
 
 00:12:45.420 --> 00:12:49.300
- you can from Django DB import connection,
+ you can, from Django DB import connection,
 
 00:12:49.300 --> 00:12:51.220
  and then ask connection.queries,
@@ -790,10 +817,10 @@ WEBVTT
  how it started, the fact that it ran an insert statement,
 
 00:12:58.820 --> 00:13:00.980
- and again, this looks kinda familiar,
+ and again, this looks kind of familiar,
 
 00:13:00.980 --> 00:13:04.940
- it's making up SQL for you, for that insert,
+ it's making up SQL for you for that insert,
 
 00:13:04.940 --> 00:13:07.720
  the save statement, right, that save statement there,
@@ -810,11 +837,11 @@ WEBVTT
 00:13:17.060 --> 00:13:18.900
  you don't need to know insert into or whatever,
 
-00:13:18.900 --> 00:13:21.740
+00:13:18.900 --> 00:13:21.780
  'cause the object relational model does it for you, right?
 
-00:13:21.740 --> 00:13:23.660
- And this is kinda what we did before,
+00:13:21.780 --> 00:13:23.660
+ And this is kind of what we did before,
 
 00:13:23.660 --> 00:13:26.340
  insert into capital users by hand.
@@ -832,31 +859,31 @@ WEBVTT
  And so you can do basic CRUD operations
 
 00:13:38.440 --> 00:13:40.760
- with this object relational mapper,
+ with this object relational mapper.
 
-00:13:41.780 --> 00:13:45.960
- the save is the insert, you can select,
+00:13:40.760 --> 00:13:45.980
+ The save is the insert, you can select,
 
-00:13:45.960 --> 00:13:50.960
- is basically user object values, that's like select star,
+00:13:45.980 --> 00:13:49.460
+ is basically user object values,
 
-00:13:50.960 --> 00:13:53.220
- so give me all of the objects,
+00:13:49.460 --> 00:13:53.220
+ that's like select star, so give me all of the objects.
 
 00:13:53.220 --> 00:13:56.660
- a where clause is user objects filter,
+ A where clause is user objects filter,
 
 00:13:56.660 --> 00:13:58.140
- and there's your where clause,
+ and there's your where clause.
 
 00:13:58.140 --> 00:13:59.900
- this is a, email's a column name,
+ This is a, email's a column name,
 
 00:13:59.900 --> 00:14:03.100
- and csev@umich.edu is a value in that column,
+ and csev@umich.edu is a value in that column.
 
 00:14:03.100 --> 00:14:05.140
- values is actually go get 'em,
+ Values is actually go get 'em,
 
 00:14:05.140 --> 00:14:07.540
  so you can create kind of a query,
@@ -868,34 +895,31 @@ WEBVTT
  you get sort of a query that's not yet executed,
 
 00:14:12.300 --> 00:14:14.860
- and then value says, go do it, do it now.
+ and then values says go do it, do it now.
 
-00:14:14.860 --> 00:14:22.180
- So you can do a different,
+00:14:20.260 --> 00:14:23.220
+ So you can do a different, you can delete something,
 
-00:14:22.180 --> 00:14:23.820
- you can delete something where you say,
-
-00:14:23.820 --> 00:14:25.580
- and so this is a little different syntax,
+00:14:23.220 --> 00:14:25.580
+ where you say, and so this is a little different syntax,
 
 00:14:25.580 --> 00:14:28.140
- this is kind of a selector that says,
+ this is kind of a selector that says
 
-00:14:28.140 --> 00:14:29.820
+00:14:28.140 --> 00:14:29.840
  these are the variables to select,
 
-00:14:29.820 --> 00:14:32.620
+00:14:29.840 --> 00:14:32.620
  and .delete says, I mean the rows to select,
 
-00:14:32.620 --> 00:14:34.620
+00:14:32.620 --> 00:14:34.500
  and then delete those rows.
 
-00:14:34.620 --> 00:14:36.100
- Value says, retrieve the rows,
+00:14:34.500 --> 00:14:36.100
+ So value says retrieve the rows,
 
 00:14:36.100 --> 00:14:38.140
- delete says, get rid of the rows,
+ delete says get rid of the rows,
 
 00:14:38.140 --> 00:14:40.460
  and then you can, again, the same kind of thing,
@@ -915,14 +939,14 @@ WEBVTT
 00:14:51.500 --> 00:14:55.140
  and there are things that correspond to lots of the SQL,
 
-00:14:55.140 --> 00:14:57.380
- like give me all these values,
+00:14:55.140 --> 00:14:58.780
+ like give me all these values, order by email,
 
-00:14:57.380 --> 00:14:59.860
- order by email, et cetera, et cetera, et cetera,
+00:14:58.780 --> 00:14:59.840
+ et cetera, et cetera, et cetera.
 
-00:14:59.860 --> 00:15:04.460
- so it's kind of a one-to-one mapping,
+00:14:59.840 --> 00:15:04.460
+ So it's kind of a one-to-one mapping,
 
 00:15:04.460 --> 00:15:08.660
  and you will, again, you're gonna do a lot of programming
@@ -931,7 +955,7 @@ WEBVTT
  using this ORM in Django,
 
 00:15:12.020 --> 00:15:14.500
- and every once in a while, you'll sneak down to SQL,
+ and every once in a while you'll sneak down to SQL,
 
 00:15:14.500 --> 00:15:18.340
  and that's why I sort of teach you the SQL first,
@@ -939,26 +963,26 @@ WEBVTT
 00:15:18.340 --> 00:15:20.660
  and there's lots and lots of fields
 
-00:15:20.660 --> 00:15:23.500
+00:15:20.660 --> 00:15:23.480
  that might not actually be represented
 
-00:15:23.500 --> 00:15:26.800
- exactly the same way in the database,
+00:15:23.480 --> 00:15:26.820
+ exactly the same way in the database.
 
-00:15:26.800 --> 00:15:29.020
- so for example, an email field,
+00:15:26.820 --> 00:15:29.020
+ So for example, an email field.
 
 00:15:29.020 --> 00:15:31.560
- databases commonly don't have email fields,
+ Databases commonly don't have email fields.
 
-00:15:31.560 --> 00:15:33.260
- there might be some databases that have emails,
+00:15:31.560 --> 00:15:33.240
+ There might be some databases that have emails,
 
-00:15:33.260 --> 00:15:34.660
+00:15:33.240 --> 00:15:34.660
  and others that don't,
 
 00:15:34.660 --> 00:15:36.420
- but because the object relational mapper
+ but because the object-relational mapper
 
 00:15:36.420 --> 00:15:38.780
  is a layer between you and the database,
@@ -969,23 +993,20 @@ WEBVTT
 00:15:41.460 --> 00:15:43.260
  then it can add rules and stuff,
 
-00:15:43.260 --> 00:15:46.040
+00:15:43.260 --> 00:15:46.060
  like validity checking, et cetera,
 
-00:15:46.040 --> 00:15:46.880
- to say you know what,
-
-00:15:46.880 --> 00:15:48.660
- that doesn't look like an email address,
+00:15:46.060 --> 00:15:48.660
+ to say you know what, that doesn't look like an email address.
 
 00:15:48.660 --> 00:15:50.220
- and so there's all of these things,
+ And so there's all of these things,
 
-00:15:50.220 --> 00:15:52.060
- and these are very useful,
+00:15:50.220 --> 00:15:52.820
+ and these are very useful.
 
-00:15:52.060 --> 00:15:55.260
- and later we'll talk about connecting tables,
+00:15:52.820 --> 00:15:55.260
+ And later we'll talk about connecting tables,
 
 00:15:55.260 --> 00:15:56.820
  and we'll use things like foreign keys,
@@ -999,77 +1020,77 @@ WEBVTT
 00:16:02.440 --> 00:16:04.600
  and more about the connections between tables,
 
-00:16:04.600 --> 00:16:08.260
- which we'll talk in coming up soon,
+00:16:04.600 --> 00:16:07.420
+ which we'll talk in coming up soon.
 
-00:16:08.260 --> 00:16:11.520
- and so just to give you sort of a bit of a sense
+00:16:07.420 --> 00:16:11.520
+ And so just to give you sort of a bit of a sense
 
-00:16:11.520 --> 00:16:16.140
+00:16:11.520 --> 00:16:16.120
  of where you're at, this is our application, right,
 
-00:16:16.140 --> 00:16:17.860
+00:16:16.120 --> 00:16:17.820
  and so we have a browser on the left-hand side
 
-00:16:17.860 --> 00:16:19.620
- with a user doing some clicking,
+00:16:17.820 --> 00:16:20.740
+ with a user doing some clicking.
 
-00:16:19.620 --> 00:16:23.960
- by now you may have created a urls.py file,
+00:16:20.740 --> 00:16:23.980
+ By now you may have created a urls.py file,
 
-00:16:23.960 --> 00:16:27.340
+00:16:23.980 --> 00:16:27.360
  and that takes the syntax of the get request,
 
-00:16:27.340 --> 00:16:29.900
+00:16:27.360 --> 00:16:30.100
  slash this, slash that, slash whatever,
 
-00:16:29.900 --> 00:16:31.800
+00:16:30.100 --> 00:16:31.780
  and routes it to a particular view
 
-00:16:31.800 --> 00:16:34.080
- coming from the views.py file,
+00:16:31.780 --> 00:16:34.100
+ coming from the views.py file.
 
-00:16:34.080 --> 00:16:36.700
- you may or may not have made one of those,
+00:16:34.100 --> 00:16:36.700
+ You may or may not have made one of those.
 
-00:16:36.700 --> 00:16:39.280
- templates and forms help produce output,
+00:16:36.700 --> 00:16:40.220
+ Templates and forms help produce output,
 
-00:16:39.280 --> 00:16:42.520
+00:16:40.220 --> 00:16:42.500
  but the models are our interaction
 
-00:16:42.520 --> 00:16:44.140
- between us and the database,
+00:16:42.500 --> 00:16:44.280
+ between us and the database.
 
-00:16:44.140 --> 00:16:46.820
- and so the actual code we write in Django
+00:16:44.280 --> 00:16:46.840
+ And so the actual code we write in Django
 
-00:16:46.820 --> 00:16:49.800
+00:16:46.840 --> 00:16:49.820
  can talk through the models to the database,
 
-00:16:49.800 --> 00:16:51.060
+00:16:49.820 --> 00:16:51.060
  which you may not have done yet,
 
 00:16:51.060 --> 00:16:53.900
  but this shell is talking through the Django models
 
-00:16:53.900 --> 00:16:55.420
- to the database as well,
+00:16:53.900 --> 00:16:55.580
+ to the database as well.
 
-00:16:55.420 --> 00:16:58.180
- and if you're starting to use the admin user interface,
+00:16:55.580 --> 00:16:58.200
+ And if you're starting to use the admin user interface,
 
-00:16:58.180 --> 00:17:00.900
+00:16:58.200 --> 00:17:00.900
  the admin user interface talks to the database
 
-00:17:00.900 --> 00:17:03.040
- through the models, and it's informed
+00:17:00.900 --> 00:17:03.940
+ to the models, and it's informed by the kind of things
 
-00:17:03.040 --> 00:17:06.060
- by the kind of things that you add to admin.py,
+00:17:03.940 --> 00:17:06.060
+ that you add to admin.py.
 
 00:17:06.060 --> 00:17:08.340
- if you wanna use the Django admin interface
+ If you want to use the Django admin interface
 
 00:17:08.340 --> 00:17:11.100
  and have your model shown a particular way,
@@ -1078,28 +1099,31 @@ WEBVTT
  it's got a bunch of defaults,
 
 00:17:12.180 --> 00:17:14.220
- but often you wanna override those defaults,
+ but often you want to override those defaults,
 
 00:17:14.220 --> 00:17:15.780
- and so that's what you put in,
+ and so that's what you put in.
 
 00:17:15.780 --> 00:17:19.420
- and the model.py file informs this connection
+ And the model.py file informs this connection
 
-00:17:19.420 --> 00:17:22.220
- between the database, and it also sort of informs
+00:17:19.420 --> 00:17:20.460
+ between the database,
 
-00:17:22.220 --> 00:17:24.020
- the kind of code you write here,
+00:17:20.460 --> 00:17:22.860
+ and it also sort of informs the kind of code
 
-00:17:24.020 --> 00:17:27.620
- in a view code, in Python, or in the Python shell,
+00:17:22.860 --> 00:17:25.980
+ you write here in a view code, in Python,
 
-00:17:27.620 --> 00:17:31.200
- that's kind of a Django shell, which is a Python shell,
+00:17:25.980 --> 00:17:27.620
+ or in the Python shell.
 
-00:17:31.200 --> 00:17:34.540
- with all that stuff added to it.
+00:17:27.620 --> 00:17:29.740
+ That's kind of the Django shell,
+
+00:17:29.740 --> 00:17:34.540
+ which is a Python shell with all that stuff added to it.
 
 00:17:34.540 --> 00:17:37.020
  Okay, so this model.py is critical
@@ -1108,54 +1132,54 @@ WEBVTT
  to defining our relationship between all of our Python code
 
 00:17:40.680 --> 00:17:44.860
- and the admin user interface and the actual database,
+ and the admin user interface and the actual database.
 
 00:17:44.860 --> 00:17:49.860
- and so you'll see a recorded demo
+ And so you'll see a recorded demo
 
 00:17:49.860 --> 00:17:51.780
  where I go through a bunch of those things,
 
 00:17:51.780 --> 00:17:52.940
- which I kinda just showed you,
+ which I kind of just showed you.
 
 00:17:52.940 --> 00:17:55.340
- it's just actually doing it in a demo form,
+ It's just actually doing it in a demo form,
 
 00:17:55.340 --> 00:17:57.580
- but it's all mostly in this lecture,
+ but it's all mostly in this lecture.
 
-00:17:57.580 --> 00:18:01.120
- and so the Django model is Django's version
+00:17:57.580 --> 00:18:01.100
+ And so the Django model is Django's version
 
-00:18:01.120 --> 00:18:03.500
+00:18:01.100 --> 00:18:03.500
  of an object-relational mapper.
 
 00:18:03.500 --> 00:18:06.580
  You can write Python code after a while,
 
-00:18:06.580 --> 00:18:09.500
+00:18:06.580 --> 00:18:09.480
  especially if you have an IDE
 
-00:18:09.500 --> 00:18:11.860
+00:18:09.480 --> 00:18:11.860
  that can show you what objects have and stuff.
 
 00:18:11.860 --> 00:18:13.500
  You tender, it's a lot easier to write,
 
-00:18:13.500 --> 00:18:15.960
+00:18:13.500 --> 00:18:15.940
  whereas SQL, you have to know it and write it.
 
-00:18:15.960 --> 00:18:19.380
+00:18:15.940 --> 00:18:19.380
  You gain database portability.
 
 00:18:19.380 --> 00:18:20.860
  You can create these migrations
 
-00:18:20.860 --> 00:18:23.680
- to both build your initial schema in your database,
+00:18:20.860 --> 00:18:23.700
+ to both build your initial schema in your database
 
-00:18:23.680 --> 00:18:26.420
+00:18:23.700 --> 00:18:26.420
  and then evolve that schema as your application evolves.
 
 00:18:26.420 --> 00:18:28.100
@@ -1170,90 +1194,99 @@ WEBVTT
 00:18:32.340 --> 00:18:33.620
  to version two of your database,
 
-00:18:33.620 --> 00:18:36.320
- it is kinda frustrating and difficult.
+00:18:33.620 --> 00:18:37.000
+ it is kind of frustrating and difficult.
 
-00:18:36.320 --> 00:18:40.260
+00:18:37.000 --> 00:18:40.280
  Sometime migrating and evolving a database
 
-00:18:40.260 --> 00:18:41.380
+00:18:40.280 --> 00:18:41.420
  is harder than actually writing
 
-00:18:41.380 --> 00:18:43.380
- the SQL code in the first place,
+00:18:41.420 --> 00:18:43.420
+ the SQL code in the first place.
 
-00:18:43.380 --> 00:18:44.940
- and Django gives you right out of the box
+00:18:43.420 --> 00:18:44.980
+ And Django gives you right out of the box
 
-00:18:44.940 --> 00:18:47.100
+00:18:44.980 --> 00:18:47.120
  this really cool administrator interface.
 
-00:18:47.100 --> 00:18:51.980
- The models.py and admin.py when forms that,
+00:18:47.120 --> 00:18:52.040
+ The models.py and admin.py will inform that.
 
-00:18:51.980 --> 00:18:53.900
- and later we're gonna have all this automatic
+00:18:52.040 --> 00:18:53.460
+ And later we're gonna have all this
 
-00:18:53.900 --> 00:18:56.620
- form generation, and so what we're doing here
+00:18:53.460 --> 00:18:54.660
+ automatic form generation.
 
-00:18:56.620 --> 00:18:58.520
- is it seems like we put like three lines of code
+00:18:54.660 --> 00:18:57.180
+ And so what we're doing here is it seems like
 
-00:18:58.520 --> 00:19:01.140
- into some file, and then a whole bunch of magic happens,
+00:18:57.180 --> 00:18:59.380
+ we put like three lines of code into some file
 
-00:19:01.140 --> 00:19:03.100
- and that's really how Django works,
+00:18:59.380 --> 00:19:01.180
+ and then a whole bunch of magic happens.
 
-00:19:03.100 --> 00:19:05.580
- and the idea is that way you as the developer
+00:19:01.180 --> 00:19:03.140
+ And that's really how Django works.
 
-00:19:05.580 --> 00:19:08.420
+00:19:03.140 --> 00:19:05.580
+ And the idea is that way you as the developer
+
+00:19:05.580 --> 00:19:08.440
  can focus on the columns of your database
 
-00:19:08.420 --> 00:19:10.040
- and the forms that you wanna put up,
+00:19:08.440 --> 00:19:10.060
+ and the forms that you wanna put up
 
-00:19:10.040 --> 00:19:13.820
+00:19:10.060 --> 00:19:13.820
  and spend less and less time sort of manually building
 
-00:19:13.820 --> 00:19:18.360
- HTML that's very sort of brittle,
+00:19:13.820 --> 00:19:18.380
+ HTML that's very sort of brittle
 
-00:19:18.360 --> 00:19:21.260
- and SQL that's less brittle but still brittle,
+00:19:18.380 --> 00:19:21.260
+ and SQL that's less brittle but still brittle.
 
-00:19:21.260 --> 00:19:24.260
- and so that's the idea, and so it's a little hard
+00:19:21.260 --> 00:19:22.460
+ And so that's the idea.
 
-00:19:24.260 --> 00:19:27.140
- when you're getting started because you're like just,
+00:19:22.460 --> 00:19:25.420
+ And so it's a little hard when you're getting started
 
-00:19:27.140 --> 00:19:28.900
- the amount of code you write is so small,
+00:19:25.420 --> 00:19:28.900
+ because the amount of code you write is so small
 
 00:19:28.900 --> 00:19:32.380
- and the amount of, what that accomplishes is so great,
+ and what that accomplishes is so great.
 
-00:19:32.380 --> 00:19:33.740
- but after a while when you get all these little
+00:19:32.380 --> 00:19:34.700
+ But after a while when you get all these little tiny pieces
 
-00:19:33.740 --> 00:19:36.660
- tiny pieces figured out, then all of a sudden
+00:19:34.700 --> 00:19:37.380
+ figured out then all of a sudden you're like okay
 
-00:19:36.660 --> 00:19:39.480
- you're like okay, now I wanna solve that end user's problem,
+00:19:37.380 --> 00:19:39.480
+ now I wanna solve that end user's problem
 
 00:19:39.480 --> 00:19:41.420
  and you can spend all your time solving that problem
 
-00:19:41.420 --> 00:19:44.260
- rather than just making databases and those kinds of things.
+00:19:41.420 --> 00:19:43.020
+ rather than just making databases
 
-00:19:44.260 --> 00:19:49.080
- So, see you in the next lecture, cheers.
+00:19:43.020 --> 00:19:44.260
+ and those kinds of things.
 
-00:19:49.080 --> 00:19:51.660
+00:19:44.260 --> 00:19:48.220
+ So see you in the next lecture.
+
+00:19:48.220 --> 00:19:49.060
+ Cheers.
+
+00:19:49.060 --> 00:19:51.640
  (upbeat music)
 

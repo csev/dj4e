@@ -1,1144 +1,936 @@
 1
-00:00:00,000 --> 00:00:02,680
- so welcome back now we're going to now we're going to take a look at some more
+00:00:00,000 --> 00:00:04,560
+ so welcome back now we're gonna now we're gonna take a look at some more examples we're not going to
 
 2
-00:00:02,680 --> 00:00:06,000
- examples we're not going to the one thing we're not going to look at is
+00:00:04,560 --> 00:00:08,720
+ the one thing we're not going to look at is exactly how this navigation bar works at least until
 
 3
-00:00:06,000 --> 00:00:10,400
- exactly how this navigation bar works at least until a little bit later so the
+00:00:08,720 --> 00:00:15,520
+ a little bit later so the next thing we want to take a look at is how fonts work and there's a
 
 4
-00:00:10,400 --> 00:00:15,960
- next thing we want to take a look at is how fonts work and there's a couple of
+00:00:15,520 --> 00:00:20,880
+ couple of ways that you can put fonts into a file there are default fonts that every browser is
 
 5
-00:00:15,960 --> 00:00:20,480
- ways that you can put fonts into a file there are default fonts that every
+00:00:20,880 --> 00:00:28,240
+ required to produce like serif sans serif monospace cursive and fantasy and so they you don't exactly
 
 6
-00:00:20,480 --> 00:00:25,760
- browser is required to produce like serif sans serif monospace cursive and
+00:00:28,240 --> 00:00:34,560
+ know what's going on but they're they're often used as fallback fonts and and so you can have
 
 7
-00:00:25,760 --> 00:00:29,960
- fantasy and so they you don't exactly know what's going on but they're they're
+00:00:34,560 --> 00:00:40,240
+ those there are any any font that is on the system like ariel or helvetica and so if you're going to
 
 8
-00:00:29,960 --> 00:00:36,000
- often used as fallback fonts and and so you can have those there are any any
+00:00:40,240 --> 00:00:45,760
+ use ariel not all systems have ariel although most of them do these days and you have to have more
 
 9
-00:00:36,000 --> 00:00:40,440
- font that is on the system like aerial or Helvetica and so if you're gonna use
+00:00:45,760 --> 00:00:51,760
+ than one font now another thing that's really common these days is to include a font somehow
 
 10
-00:00:40,440 --> 00:00:44,640
- aerial not all systems have aerial although most of them do these days and
+00:00:51,760 --> 00:00:57,680
+ you find out about a font and here's a lotto font and you go look it up on the web and you find oh
 
 11
-00:00:44,640 --> 00:00:48,200
- you have to have more than one font now another thing that's really common these
+00:00:57,680 --> 00:01:03,920
+ include this and so i included this link because i found this really cool font lotto and this extends
 
 12
-00:00:48,200 --> 00:00:53,840
- days is to include a font somehow you find out about a font and here's a lotto
+00:01:03,920 --> 00:01:08,480
+ the browser the browser then learns about this font it downloads the font caches them and keeps
 
 13
-00:00:53,840 --> 00:00:58,680
- font and you go look it up on the web and you find oh we include this and so I
+00:01:08,480 --> 00:01:13,600
+ them in the browser and then i can make a font that's lotto but i just in case i'm off the
 
 14
-00:00:58,680 --> 00:01:04,000
- included this link because I found this really cool font lotto and this extends
+00:01:13,600 --> 00:01:20,160
+ internet you know and i can't download this thing i have sans serif as a fallback for lotto so lotto
 
 15
-00:01:04,000 --> 00:01:07,360
- the browser the browser then learns about this font it downloads the font
+00:01:20,160 --> 00:01:27,440
+ is a fancy font etc etc so there's there's ariel and built-in fonts etc etc and so that's
 
 16
-00:01:07,360 --> 00:01:11,320
- caches them and keeps them in the browser and then I can make a font that's lotto
+00:01:27,680 --> 00:01:35,680
+ how fonts work colors there's a lot of cool stuff about colors there's a couple different
 
 17
-00:01:11,320 --> 00:01:15,800
- but I just in case I'm off the internet you know and I can't download this thing
+00:01:35,680 --> 00:01:44,240
+ things ignore the nav for the moment i'm just using span tags here there's some default colors
 
 18
-00:01:15,800 --> 00:01:22,880
- I have sans serif is a fallback for lotto so lotto is a fancy font etc etc so
+00:01:44,240 --> 00:01:49,520
+ in the earliest of browsers these days we have all these fancy ones and you can go look these up and
 
 19
-00:01:22,880 --> 00:01:28,040
- there's there's aerial and built-in fonts etc etc and so that's that's how
+00:01:49,520 --> 00:01:54,400
+ you just google for html colors and there's a bunch of names and then they're consistent across
 
 20
-00:01:28,040 --> 00:01:35,560
- fonts work colors there's a lot of cool stuff about colors there's a couple
+00:01:54,400 --> 00:02:00,160
+ browsers but there's there's like 12 or so really solid names that are in all browsers since the
 
 21
-00:01:35,560 --> 00:01:41,840
- different things ignore the nav for the moment I'm just using span tags here
+00:02:00,160 --> 00:02:06,240
+ beginning of time but more modern browsers have a better palette of colors although really good
 
 22
-00:01:41,840 --> 00:01:46,920
- there's some default colors in the earliest of browsers these days we have
+00:02:06,240 --> 00:02:14,480
+ graphic artists want to have a much better control of colors and so this is the pound sign says that
 
 23
-00:01:46,920 --> 00:01:51,040
- all these fancy ones and you can go look these up and you just google for HTML
+00:02:14,480 --> 00:02:20,880
+ this is a hexadecimal number and it's got two digits hex means they go all the way up to f so
 
 24
-00:01:51,040 --> 00:01:55,080
- colors and there's a bunch of names and then they're consistent across browsers
+00:02:20,880 --> 00:02:28,560
+ f is an a through fr numbers 8b is the red level 45 is the green level and 13 is the blue level
 
 25
-00:01:55,080 --> 00:01:59,480
- but there's there's like twelve or so really solid names that are in all
+00:02:28,560 --> 00:02:34,160
+ and so this is a brownish color and then there's what's called websafe colors where you just have
 
 26
-00:01:59,480 --> 00:02:04,360
- browsers since the beginning of time but more modern browsers have a better
+00:02:34,160 --> 00:02:41,520
+ this ends up being 88 44 11 but it sort of reduces the number of potential colors if you
 
 27
-00:02:04,360 --> 00:02:09,920
- palette of colors although really good graphic artists want to have much better
+00:02:41,520 --> 00:02:49,680
+ were mixing colors from various sources and so and then in html5 you can see this color picker
 
 28
-00:02:09,920 --> 00:02:15,560
- control of colors and so this is the pound sign says that this is a hexadecimal
+00:02:50,480 --> 00:02:55,520
+ when you have a form which we'll talk about in a bit it's a color of color form for modern
 
 29
-00:02:15,560 --> 00:02:21,800
- number and it's got two digits hex means they go all the way up to F so F is an A
+00:02:55,520 --> 00:03:00,640
+ browsers and then you can pop up with this button a color picker and i've got a little
 
 30
-00:02:21,800 --> 00:02:27,640
- through F our numbers 8b is the red level 45 is the green level and 13 is
+00:03:00,640 --> 00:03:06,800
+ thing to print out what the color would be and so it just when i pick the green it basically puts
 
 31
-00:02:27,640 --> 00:02:32,600
- the blue level and so this is a brownish color and then there's what's called
+00:03:06,800 --> 00:03:13,440
+ 00ff that's red green and blue it puts that in into this thing which then the program could use
 
 32
-00:02:32,600 --> 00:02:39,400
- web safe colors where you just have this ends up being 88 44 11 but it sort of
+00:03:13,440 --> 00:03:19,440
+ you know it could read this or javascript could read it or a server code could read it but right
 
 33
-00:02:39,400 --> 00:02:43,240
- reduces the number of potential colors if you were mixing colors from various
+00:03:19,440 --> 00:03:24,480
+ now we're just kind of playing with the picker and we pick a different color and so that that magenta
 
 34
-00:02:43,240 --> 00:02:51,160
- sources and so and then in HTML 5 you can see this color picker when you have
+00:03:24,480 --> 00:03:34,240
+ is all the red none of the green and all of the blue and orange is all the red some of the green
 
 35
-00:02:51,160 --> 00:02:55,680
- a form which we'll talk about in a bit it's a color of color form for modern
+00:03:34,240 --> 00:03:39,440
+ and none of the blue so those are all just really strong colors and so that's what's called an html
 
 36
-00:02:55,680 --> 00:03:00,520
- browsers and then you can pop up with this button a color picker and I've got
+00:03:39,440 --> 00:03:49,520
+ color picker anchor tags um in the old days anchor tags were kind of funky they were blue if you hadn't
 
 37
-00:03:00,520 --> 00:03:04,320
- a little thing to print out what the color would be and so it just when I
+00:03:49,520 --> 00:03:55,120
+ yet visited them and they were uh purple if you had visited them and so this one i've obviously
 
 38
-00:03:04,320 --> 00:03:09,580
- picked the green it basically puts zero zero FF that's red green and blue it
+00:03:55,120 --> 00:04:02,560
+ clicked on and so we have a whole series of styling mechanisms that we can have um if we take a look
 
 39
-00:03:09,580 --> 00:03:15,120
- puts that in into this thing which then the program could use you know could
+00:04:02,560 --> 00:04:10,320
+ at these um i have put these all in the inside of an id tag of cool so this is this is basically
 
 40
-00:03:15,120 --> 00:03:19,480
- read this or JavaScript could read it or what a server code could read it but
+00:04:10,320 --> 00:04:15,520
+ saying find the id tag of cool and then style anchor tags to make them a font weight bold
 
 41
-00:03:19,480 --> 00:03:22,640
- right now we're just kind of playing with the picker and we pick a different
+00:04:15,520 --> 00:04:22,880
+ so let's take a look here so i got one one paragraph that has this this one here and then
 
 42
-00:03:22,640 --> 00:03:27,480
- color and so that that magenta is all the red none of the green and all of the
+00:04:22,880 --> 00:04:27,200
+ i have a paragraph with an id tag of cool and that's basically so i don't have to style usually you
 
 43
-00:03:27,480 --> 00:03:35,960
- blue and orange is all the red some of the green and none of the blue so those
+00:04:27,200 --> 00:04:33,520
+ wouldn't say i'm only styling the anchor tags inside of um you know if i'm only i'm only
 
 44
-00:03:35,960 --> 00:03:39,780
- are all just really strong colors and so that's what's called an HTML color
+00:04:33,520 --> 00:04:38,640
+ staying staying the anchor tags inside the a pair uh a tag that has an id of cool but that way i can
 
 45
-00:03:39,780 --> 00:03:48,920
- picker anchor tags in the old days anchor tags were kind of funky they were
+00:04:38,640 --> 00:04:43,920
+ have the default on this one that was my way of keeping the default so normally you would just say
 
 46
-00:03:48,920 --> 00:03:54,120
- blue if you hadn't yet visited them and they were purple if you had visited them
+00:04:43,920 --> 00:04:52,880
+ a so a uh links is red if it's visited it's orange and so this one's been visited so you
 
 47
-00:03:54,120 --> 00:03:58,520
- and so this one I've obviously clicked on and so we have a whole series of
+00:04:52,880 --> 00:04:58,800
+ don't see the red it means it's unvisited um hover you can change it so you notice when i hover in
 
 48
-00:03:58,520 --> 00:04:05,320
- styling mechanisms that we can have if we take a look at these I have put these
+00:04:58,800 --> 00:05:05,840
+ the text decoration goes away the underscore goes away and i have a color of text font color of white
 
 49
-00:04:05,320 --> 00:04:10,960
- all in the inside of an ID tag of cool so this is this is basically saying find
+00:05:05,840 --> 00:05:11,840
+ and a background color of navy and then there is one last moment and i click on this one and i will
 
 50
-00:04:10,960 --> 00:04:18,720
- the ID tag of cool and then style anchor tags to make them a font-weight bold so
+00:05:11,840 --> 00:05:18,640
+ click there's one last moment that's really hard to catch and that is the moment of active if it the
 
 51
-00:04:18,720 --> 00:04:22,320
- let's take a look here so I got one one paragraph that has this this one here
+00:05:18,640 --> 00:05:24,400
+ web was slow and you clicked on it then it would tell the user in the old days this made more sense
 
 52
-00:04:22,320 --> 00:04:26,080
- and then I have a paragraph with an ID tag of cool and that's basically so I
+00:05:24,400 --> 00:05:29,360
+ that it would turn red and then blink away i don't know if we'll even see it it kind of saw you sort
 
 53
-00:04:26,080 --> 00:04:29,560
- don't have to style usually you wouldn't say I'm only styling the anchor tags
+00:05:29,360 --> 00:05:35,920
+ of saw it so there was a color while you click on it yeah there it was um you might not see it
 
 54
-00:04:29,560 --> 00:04:35,980
- inside of you know if I'm only I'm only stand the anchor tags inside the a pair
+00:05:35,920 --> 00:05:43,440
+ in the in the screen but that's what the uh that's what the um the active means is you've clicked on
 
 55
-00:04:35,980 --> 00:04:40,040
- a tag that has an ID of cool but that way I can have the default on this one
+00:05:43,440 --> 00:05:47,760
+ it but it hasn't yet been retrieved and then like a moment letter the whole page goes away
 
 56
-00:04:40,040 --> 00:04:46,880
- that was my way of keeping the default so normally you would just say a so a
+00:05:49,040 --> 00:05:56,160
+ another thing we can do is we can play with images okay and so um here is an image um
 
 57
-00:04:46,880 --> 00:04:52,960
- links is red if it's visited it's orange and so this one's been visited so you
+00:05:56,160 --> 00:06:01,440
+ one of the things that's really fun to do with images is float them to the right or float them
 
 58
-00:04:52,960 --> 00:04:57,520
- don't see the red it means it's unvisited hover you can change it so you
+00:06:01,440 --> 00:06:08,960
+ to the left and then what happens is is that the uh image the text is drawn around the image so
 
 59
-00:04:57,520 --> 00:05:02,080
- notice when I hover in the text decoration goes away the underscore goes
+00:06:08,960 --> 00:06:13,440
+ it wraps around the image and you'll notice where i floated this left oh i kind of got rid of
 
 60
-00:05:02,080 --> 00:05:07,000
- away and I have a color of text font color of white and a background color of
+00:06:13,440 --> 00:06:18,480
+ everything i floated it left before the h1 and so what happens is the h1 top of the h1 in the top
 
 61
-00:05:07,000 --> 00:05:11,920
- Navy and then there is one last moment and I click on this one and that will
+00:06:19,040 --> 00:06:27,840
+ the image i'll line up and then all the text afterwards um all the text afterwards wraps around
 
 62
-00:05:11,920 --> 00:05:16,200
- click there's one last moment that's really hard to catch and that is the
+00:06:27,840 --> 00:06:33,520
+ it and so you'll notice that i've got the image first and then the h1 second and that what the
 
 63
-00:05:16,200 --> 00:05:21,320
- moment of active if it the web was slow and you clicked on it then it would tell
+00:06:33,520 --> 00:06:39,280
+ float sort of disconnects the image from the normal line of flow floats it over and then takes
 
 64
-00:05:21,320 --> 00:05:26,560
- the user in the old days this made more sense that it would turn red and then
+00:06:39,280 --> 00:06:46,160
+ this next thing and the next paragraph and use saves the space for the image and shoves everything
 
 65
-00:05:26,560 --> 00:05:30,700
- blink away I don't know if we'll even see it it kind of saw you sort of saw it so
+00:06:46,160 --> 00:06:52,720
+ shoves the margin over so that it comes over here now once you start floating images you
 
 66
-00:05:30,700 --> 00:05:36,760
- there was a color while you click on it yeah there was you might not see it in
+00:06:52,720 --> 00:06:58,000
+ got to learn about this clear equals all because if we want this next paragraph like this one we
 
 67
-00:05:36,760 --> 00:05:42,840
- the in the screen but that's what the act that's what the the active means is
+00:06:58,000 --> 00:07:03,520
+ want to we want we don't want this paragraph for whatever reason to be on the image now if it goes
 
 68
-00:05:42,840 --> 00:05:46,360
- you've clicked on it but it hasn't yet been retrieved and then like a moment
+00:07:03,520 --> 00:07:10,720
+ far enough you see this this this paragraph here moves back to the left margin and then this next
 
 69
-00:05:46,360 --> 00:05:50,720
- letter the whole page goes away another thing we can do is we can play with
+00:07:10,720 --> 00:07:15,680
+ one starts there but if if the browser is wider and the text is there's not so much text we don't
 
 70
-00:05:50,720 --> 00:05:58,720
- images okay and so here is an image one of the things that's really fun to do
+00:07:15,680 --> 00:07:21,200
+ want this to be up in here and so you say br clear equals all so between this paragraph and this
 
 71
-00:05:58,720 --> 00:06:02,480
- with images is float them to the right or float them to the left and then what
+00:07:21,200 --> 00:07:29,040
+ paragraph we do br clear equals all and um you can put images right in the middle of the text like a
 
 72
-00:06:02,480 --> 00:06:09,440
- happens is is that the image the text is drawn around the image so it wraps
+00:07:29,040 --> 00:07:35,360
+ character you don't have to have them by themselves and you can even make an image that's a clickable
 
 73
-00:06:09,440 --> 00:06:13,440
- around the image and you'll notice where I floated this left oh I kind of got rid
+00:07:35,360 --> 00:07:44,880
+ link and so you can click on that image now c and css stands for cascading style sheets and so the
 
 74
-00:06:13,440 --> 00:06:17,760
- of everything I floated it left before the h1 and so what happens is the h1 top
+00:07:44,880 --> 00:07:51,840
+ idea is is that the tag that's closest has more precedence than a further away tag unless you
 
 75
-00:06:17,760 --> 00:06:21,560
- of the h1 in the top top of the image I'll line up and then all the text
+00:07:51,840 --> 00:08:03,840
+ say important okay so here we have some style um here we have a uh a body tag uh border style
 
 76
-00:06:21,560 --> 00:06:29,960
- afterwards all the text afterwards wraps around it and so you'll notice that I've
+00:08:03,840 --> 00:08:09,360
+ of dotted red and red a border color that's red and important and border width that's five pixels
 
 77
-00:06:29,960 --> 00:06:34,800
- got the image first and then the h1 second and that what the float sort of
+00:08:09,360 --> 00:08:15,200
+ background color uh which is kind of a grayish that's that gray and an extra padding so we've
 
 78
-00:06:34,800 --> 00:06:39,000
- disconnects the image from the normal line of flow floats it over and then
+00:08:15,200 --> 00:08:26,000
+ got put some extra padding um all the way around it and extra margin um and so
 
 79
-00:06:39,000 --> 00:06:44,840
- takes this next thing and the next paragraph and use saves the space for
+00:08:26,000 --> 00:08:38,160
+ so if we take a look at this we take a look at this paragraph right here we see some things and
 
 80
-00:06:44,840 --> 00:06:49,720
- the image and shoves everything shoves the margin over so that it comes over
+00:08:38,160 --> 00:08:43,680
+ we take a look at what we've got so we've inherited this we we got a border style of color we it wants
 
 81
-00:06:49,720 --> 00:06:54,160
- here now once you start floating images you got to learn about this clear equals
+00:08:43,680 --> 00:08:51,280
+ to have a border color of green but it doesn't because um it says the border style is solid
 
 82
-00:06:54,160 --> 00:06:58,800
- all because if we want this next paragraph like this one we want it we
+00:08:51,280 --> 00:08:57,920
+ so the border style of solid is down here in the second style tag so the second style tag has
 
 83
-00:06:58,800 --> 00:07:02,480
- want we don't want this paragraph for whatever reason to be on the image now
+00:08:57,920 --> 00:09:04,000
+ precedence because it's closer to the paragraph and so we tried to we tried to say border color
 
 84
-00:07:02,480 --> 00:07:09,080
- if it goes far enough you see this this this paragraph here moves back to the
+00:09:04,000 --> 00:09:10,240
+ green but that one was overridden so otherwise this would have a solid green border except that
 
 85
-00:07:09,080 --> 00:07:13,120
- left margin and then this next one starts there but if the browser is wider
+00:09:10,240 --> 00:09:15,520
+ this red important is up there and so that the red important wins and you can see it really easily
 
 86
-00:07:13,120 --> 00:07:17,560
- and the text is there's not so much text we don't want this to be up in here and
+00:09:15,520 --> 00:09:21,040
+ here that this was overridden and this is the one this this this border color problem the previous
 
 87
-00:07:17,560 --> 00:07:21,240
- so you say be our clericals all so between this paragraph and this
+00:09:21,040 --> 00:09:28,720
+ one is taking precedence okay and so this is the second one and it would normally take precedence
 
 88
-00:07:21,240 --> 00:07:28,200
- paragraph we do be our clear equals all and you can put images right in the
+00:09:29,280 --> 00:09:36,240
+ over this one except that this important is is sort of like it it is overriding the one that's
 
 89
-00:07:28,200 --> 00:07:30,680
- middle of the text like a character you don't have to have them by themselves
+00:09:36,240 --> 00:09:43,360
+ closer so another example of closer is the style tag okay and so here we go this is border this is
 
 90
-00:07:30,680 --> 00:07:36,600
- and you can even make an image that's a clickable link and so you can click on
+00:09:43,360 --> 00:09:48,000
+ the we're putting this i mean style attribute we're saying border style equals dash border color
 
 91
-00:07:36,600 --> 00:07:45,280
- that image now see in CSS stands for cascading style sheets and so the idea
+00:09:48,000 --> 00:09:55,360
+ equals blue and so the border style equals the border style equals dash holds on but our attempt
 
 92
-00:07:45,280 --> 00:07:51,200
- is is that the tag that's closest has more precedence than a further away tag
+00:09:55,360 --> 00:10:01,200
+ to make the border color blue is overridden again by the red important right so important is up
 
 93
-00:07:51,200 --> 00:08:02,560
- unless you say important okay so here we have some style here we have a body tag
+00:10:01,200 --> 00:10:07,520
+ above that okay and so this this this dashed is winning and this blue is not winning because
 
 94
-00:08:02,560 --> 00:08:07,600
- border style of dotted red and red a border color that's red and important
+00:10:07,520 --> 00:10:11,600
+ there is an overriding red above it i mean there's an overriding red important above it
 
 95
-00:08:07,600 --> 00:08:11,960
- and border width that's five pixels background color which is kind of a
+00:10:11,600 --> 00:10:21,840
+ and so if you want to override an important tag yay we override an important tag right here
 
 96
-00:08:11,960 --> 00:08:16,080
- grayish that's that gray and an extra padding so we've got put some extra
+00:10:21,840 --> 00:10:29,840
+ we basically say i want a border style dashed come over here border style dashed and i want the border
 
 97
-00:08:16,080 --> 00:08:21,440
- padding all the way around it and extra margin
+00:10:29,840 --> 00:10:34,800
+ color to be blue and this is important so now this one's closer and it says important so among all
 
 98
-00:08:24,920 --> 00:08:36,880
- and so so if we take a look at this we take a look at this paragraph right here
+00:10:34,800 --> 00:10:39,760
+ the important ones the closest is important one wins so now we see that the border color actually
 
 99
-00:08:36,880 --> 00:08:41,360
- we see some things and we take a look at what we've got so we've inherited this
+00:10:39,760 --> 00:10:45,840
+ takes here and um we are overriding the far away this one got this one here from farther away got
 
 100
-00:08:41,360 --> 00:08:45,720
- we've got a border style of color we it wants to have a border color of green but
+00:10:45,840 --> 00:10:53,280
+ overwritten because of this one and so you can do that now in general while i've shown you how
 
 101
-00:08:45,720 --> 00:08:52,440
- it doesn't because it says the border style is solid so the border style of
+00:10:53,280 --> 00:10:58,400
+ important works you shouldn't do too much with important because usually you're taking csss from
 
 102
-00:08:52,440 --> 00:08:57,880
- solid is down here in the second style tag so the second style tag has
+00:10:58,400 --> 00:11:03,520
+ other places and and um you're you're you're patching it and you can end up with really
 
 103
-00:08:57,880 --> 00:09:03,160
- precedence because it's closer to the paragraph and so we tried this we tried
+00:11:03,520 --> 00:11:08,560
+ inconsistent looks and feels with with important usually when you see important it means kind of
 
 104
-00:09:03,160 --> 00:09:07,280
- to say border color green but that one was overridden so otherwise this would
+00:11:08,560 --> 00:11:14,800
+ something's wrong and you're fighting with a framework or something else so let's take a
 
 105
-00:09:07,280 --> 00:09:12,760
- have a solid green border except that this red important is up there and so
+00:11:14,800 --> 00:11:25,680
+ look at some blocks um and so let's see background color why each one's colored blue
 
 106
-00:09:12,760 --> 00:09:16,560
- that the red important wins and you can see it really easily here that this was
+00:11:25,680 --> 00:11:34,160
+ and i'm going to put some padding and a margin um and so div p and h1 sort of live in a box
 
 107
-00:09:16,560 --> 00:09:20,680
- overridden and this is the one that's this this border color problem the
+00:11:34,160 --> 00:11:40,480
+ you have sort of like the actual uh so let's take a look at say this paragraph right here that's
 
 108
-00:09:20,680 --> 00:09:27,520
- previous one is taking precedence okay and so this is the second one and it
+00:11:40,480 --> 00:11:45,520
+ probably the thing to do this is just a plain old paragraph nothing special right there we go that's
 
 109
-00:09:27,520 --> 00:09:33,760
- would normally take precedence over this one except that this important is sort
+00:11:45,520 --> 00:11:54,560
+ a paragraph right there so so let's talk about the padding and the margin right so working from the
 
 110
-00:09:33,760 --> 00:09:38,360
- of like it it is overriding the one that's closer so another example of
+00:11:54,560 --> 00:12:01,120
+ inside out there is the actual text that is and it's wrapped and so if this if i change the width
 
 111
-00:09:38,360 --> 00:09:43,960
- closer is the style tag okay and so here we go this is border this is the we're
+00:12:01,120 --> 00:12:07,120
+ of this this whole block changes right it gets taller and narrower but at some point the in
 
 112
-00:09:43,960 --> 00:09:47,360
- putting this I mean style attribute we're saying border style equals -
+00:12:07,120 --> 00:12:15,920
+ inner part this inner part right here is uh the inner part is however large it becomes and that
 
 113
-00:09:47,360 --> 00:09:52,760
- border color equals blue and so the border style equals look the border
+00:12:15,920 --> 00:12:23,520
+ in this case it's 318 by 38 pixels right and then what happens is we sort of work from the out work
 
 114
-00:09:52,760 --> 00:09:56,840
- style equals - holds on but our attempt to make the border color blue is
+00:12:23,520 --> 00:12:28,640
+ from the inside out so let's i'll go down here and see the box model so the inside of this the actual
 
 115
-00:09:56,840 --> 00:10:02,840
- overridden again by the red important right so important is up above that okay
+00:12:28,640 --> 00:12:36,560
+ text is 619 pixels by 19 pixels and then i've asked to add 10 pixels of padding and that is between
 
 116
-00:10:02,840 --> 00:10:08,040
- and so this is this - is winning and this blue is not winning because there is an
+00:12:36,560 --> 00:12:42,560
+ this sort of text and the border and then the border itself has a width and i specified that
 
 117
-00:10:08,040 --> 00:10:14,920
- overriding red above it I mean there's an overriding red important above it and so
+00:12:42,560 --> 00:12:49,920
+ border width um right i said i want a five pixel border width and so the border width takes up five
 
 118
-00:10:14,920 --> 00:10:21,240
- if you want to override an important tag yay we override an important tag right
+00:12:49,920 --> 00:12:58,560
+ pixels and then there is outside of that there is margin and so margin is space notice that the
 
 119
-00:10:21,240 --> 00:10:29,000
- here we basically say I want a border style - come over here border style -
+00:12:58,560 --> 00:13:04,400
+ padding and the text itself has the background of the block border has its own color and then
 
 120
-00:10:29,000 --> 00:10:32,720
- and I want the border color to be blue and this is important so now this one's
+00:13:04,960 --> 00:13:11,040
+ the the margin as the background of the color of the background document okay so this is the
 
 121
-00:10:32,720 --> 00:10:36,440
- closer and it says important so among all the important ones the closest is
+00:13:11,040 --> 00:13:18,400
+ margin here it's the color of the background document right so content padding border margin
 
 122
-00:10:36,440 --> 00:10:40,760
- important one wins so now we see that the border color actually takes here and
+00:13:18,400 --> 00:13:23,520
+ and then but the padding inherits from the text in the box from a background
 
 123
-00:10:40,760 --> 00:10:45,920
- we are overriding the far away this one got this one here from farther away got
+00:13:23,520 --> 00:13:25,920
+ and the margin inherits from the background document
 
 124
-00:10:45,920 --> 00:10:52,560
- overridden because of this one and so you can do that now in general while
+00:13:31,040 --> 00:13:36,560
+ and you can have different background colors etc etc etc this is an uh oh by the way this is an
 
 125
-00:10:52,560 --> 00:10:56,160
- I've shown you how important works you shouldn't do too much with important
+00:13:36,560 --> 00:13:42,800
+ ordered list that we've got going on right here okay so that's css boxes we can change the size
 
 126
-00:10:56,160 --> 00:11:02,040
- because usually you're taking CSS's from other places and and you're patching
+00:13:42,800 --> 00:13:50,000
+ of these boxes it's uh it's a little tricky so uh and so here we have a auto sizing div where
 
 127
-00:11:02,040 --> 00:11:05,480
- it and you can end up with really inconsistent looks and feels with
+00:13:50,000 --> 00:13:54,800
+ we're not mentioning anything about the height if we take a look at the box model here we see that
 
 128
-00:11:05,480 --> 00:11:09,640
- important usually when you see important it means kind of something's wrong and
+00:13:54,800 --> 00:14:00,720
+ this one is simply you know the size of the text plus the padding plus the border plus the margin
 
 129
-00:11:09,640 --> 00:11:15,240
- you're fighting with a framework or something else so let's take a look at
+00:14:00,720 --> 00:14:07,520
+ and that's sort of how how that box gets sized you can say that you want to set the size of the box
 
 130
-00:11:15,240 --> 00:11:27,680
- some blocks and so let's see background color my each one's colored blue and I'm
+00:14:07,520 --> 00:14:14,800
+ okay so i'm going to set that to be three m's three m's is three characters um but if you look
 
 131
-00:11:27,680 --> 00:11:34,080
- gonna put some padding and a margin and so div P and H1 sort of live in a box
+00:14:14,800 --> 00:14:19,680
+ i have too much in here and so you'll see that even though this box is three characters tall
 
 132
-00:11:34,080 --> 00:11:40,040
- you have sort of like the actual so let's take a look and say this paragraph
+00:14:19,680 --> 00:14:25,760
+ uh it's four lines and so the three would fit but the fourth one doesn't and so just overflows
 
 133
-00:11:40,040 --> 00:11:42,960
- right here that's probably the thing to do this is just a plain old paragraph
+00:14:26,320 --> 00:14:32,960
+ you can also so three m's it's good to set sizes and m's when you can because then if the if someone
 
 134
-00:11:42,960 --> 00:11:51,880
- nothing special right there we go that's a paragraph right there so so let's talk
+00:14:32,960 --> 00:14:40,160
+ makes the screen larger oops i didn't mean that i just wonder if someone makes this larger or smaller
 
 135
-00:11:51,880 --> 00:11:56,360
- about the padding and the margin right so working from the inside out there is
+00:14:40,160 --> 00:14:46,560
+ now the problem is well i don't know about if we call it a problem but in the old days if you
 
 136
-00:11:56,360 --> 00:12:01,360
- the actual text that is and it's wrapped and so if this if I change the width of
+00:14:46,560 --> 00:14:52,720
+ set a height in pixels and you zoom the screen the box that where you set height and m's would zoom
 
 137
-00:12:01,360 --> 00:12:06,320
- this this whole block changes right it gets taller and narrower but at some
+00:14:52,720 --> 00:14:57,600
+ and the one that you set in pixels wouldn't but they decided to make zooming work otherwise
 
 138
-00:12:06,320 --> 00:12:14,840
- point the in inner part this inner part right here is the inner part is however
+00:14:57,600 --> 00:15:03,440
+ zooming so many people made boxes in pixels that they made it so that the the zooming would pretend
 
 139
-00:12:14,840 --> 00:12:19,920
- large it becomes and that in this case it's 318 by 38 pixels right and then
+00:15:03,440 --> 00:15:08,880
+ that pixels are really m's so it kind of converts pixels to m's but you're really technically you're
 
 140
-00:12:19,920 --> 00:12:24,920
- what happens is we sort of work from the out work from the inside out so let's
+00:15:08,880 --> 00:15:14,720
+ supposed to avoid using pixels when you really mean uh characters if you want three lines don't
 
 141
-00:12:24,920 --> 00:12:29,200
- I'll go down here and see the box model so the inside of this the actual text is
+00:15:14,720 --> 00:15:20,320
+ look at your font and say i'll make this 40 pixels in order to do that and again we still in this box
 
 142
-00:12:29,200 --> 00:12:34,960
- 619 pixels by 19 pixels and then I've asked to add 10 pixels of padding and
+00:15:20,320 --> 00:15:26,560
+ we still have uh overflowing text and so we have a couple things we can do when we want to uh change
 
 143
-00:12:34,960 --> 00:12:40,480
- that is between this sort of text and the border and then the border itself
+00:15:26,560 --> 00:15:32,640
+ the overflow we can tell a box that we would like the the overflow to make a little scroll bar
 
 144
-00:12:40,480 --> 00:12:47,880
- has a width and I specified that border width right I said I want a 5 pixel
+00:15:32,640 --> 00:15:38,320
+ and so here's here's that same stuff and you can see we got a little tiny baby scroll bar
 
 145
-00:12:47,880 --> 00:12:51,800
- border width and so the border width takes up 5 pixels and then there is
+00:15:38,320 --> 00:15:44,080
+ and it it didn't sort of blurp blop out of the box right and you and even if the scroll fits
 
 146
-00:12:51,800 --> 00:12:59,040
- outside of that there is margin and so margin is space notice that the padding
+00:15:44,080 --> 00:15:48,400
+ you see you get little scroll bars but you can't scroll it because there's only one line there and
 
 147
-00:12:59,040 --> 00:13:03,680
- and the text itself has the background of the block border has its own color
+00:15:48,400 --> 00:15:58,160
+ it fits in the box and then another thing that you can do is you can uh just say chop it off
 
 148
-00:13:03,680 --> 00:13:08,680
- and then the the margin as the background of the color of the
+00:15:58,160 --> 00:16:02,960
+ right chop it off now one thing with some tava script you can put a little more here and that
 
 149
-00:13:08,680 --> 00:13:12,360
- background document okay so this is the margin here it's the color of the
+00:16:02,960 --> 00:16:07,200
+ expands the box or pops a by-log or whatever but we're not gonna worry about that for now
 
 150
-00:13:12,360 --> 00:13:19,720
- background document right so content padding border margin and then but the
+00:16:07,200 --> 00:16:13,760
+ for now we're just saying overflow hidden means lay this out as much as you need and then you know
 
 151
-00:13:19,720 --> 00:13:24,360
- padding inherits from the text in the box from a background and the margin
+00:16:13,760 --> 00:16:20,880
+ throw this text away it's just not there anymore like where did all this all this text go but it
 
 152
-00:13:24,360 --> 00:13:32,640
- inherits from the background document and you can have different background
+00:16:20,880 --> 00:16:33,520
+ doesn't show it because we told it to chop it off okay so on to the next one you can move these
 
 153
-00:13:32,640 --> 00:13:37,480
- colors etc etc etc this is an oh by the way this is an ordered list that we've
+00:16:33,520 --> 00:16:40,560
+ things around uh this is a little messy there we go let's make this a little different okay so
 
 154
-00:13:37,480 --> 00:13:43,040
- got going on right here okay so that's CSS boxes we can change the size of
+00:16:41,760 --> 00:16:47,040
+ so by default i'll show you the html in a second for this or maybe just do view source let's do
 
 155
-00:13:43,040 --> 00:13:49,920
- these boxes it's it's a little tricky so and so here we have auto sizing div
+00:16:47,040 --> 00:16:59,760
+ view source okay so if you just say div div they just follow after each other um and i've given
 
 156
-00:13:49,920 --> 00:13:53,360
- where we're not mentioning anything about the height if we take a look at
+00:16:59,760 --> 00:17:03,920
+ them border because to make them a little picture give them some border some padding and some margin
 
 157
-00:13:53,360 --> 00:13:58,000
- the box model here we see that this one is simply you know the size of the text
+00:17:03,920 --> 00:17:08,960
+ just so they don't touch each other too much so by default blocks just so i got a little border
 
 158
-00:13:58,000 --> 00:14:02,480
- plus the padding plus the border plus the margin and that's sort of how how
+00:17:08,960 --> 00:17:13,840
+ both on all sides a little bit of space between them and a nice so they you know however big they
 
 159
-00:14:02,480 --> 00:14:09,200
- that box gets sized you can say that you want to set the size of the box okay so
+00:17:13,840 --> 00:17:18,800
+ get this one gets bigger and i put a width on them just so that so that they wouldn't move around
 
 160
-00:14:09,200 --> 00:14:14,240
- I'm going to set that to be three M's three M's is three characters but if you
+00:17:18,800 --> 00:17:24,400
+ and that's there's a width on it right there 10 m's 10 characters wide so they just follow each
 
 161
-00:14:14,240 --> 00:14:18,680
- look I have too much in here and so you'll see that even though this box is
+00:17:24,400 --> 00:17:29,200
+ other and then you can say okay you know this block right here this number three would lay
 
 162
-00:14:18,680 --> 00:14:23,600
- three characters tall it's four lines and so the three would fit but the fourth
+00:17:29,200 --> 00:17:37,440
+ out right here but i have told the number three block i've told the number three block that i want
 
 163
-00:14:23,600 --> 00:14:29,240
- one doesn't and so just overflows you can also so three M's it's good to set
+00:17:37,440 --> 00:17:44,480
+ to move relative to where you would normally be 20 pixels to the left and 20 pixels uh down from the
 
 164
-00:14:29,240 --> 00:14:33,720
- sizes and M's when you can because then if the if someone makes the screen
+00:17:44,480 --> 00:17:50,560
+ top and so this block it lays out exactly as if it belongs right here and then we shoved it over
 
 165
-00:14:33,720 --> 00:14:39,680
- larger oops I didn't mean that this one if someone makes this larger or smaller
+00:17:50,560 --> 00:17:57,920
+ and moved it down and and it came over top of the number four block and so there you go and so the
 
 166
-00:14:39,680 --> 00:14:45,520
- now the problem is well I don't know about if we'd call it a problem but in
+00:17:57,920 --> 00:18:05,840
+ the text afterwards this number four block just comes next and it's it's basically it's as if
 
 167
-00:14:45,520 --> 00:14:50,640
- the old days if you set a height in pixels and you zoom the screen the box
+00:18:05,840 --> 00:18:11,440
+ this laid out without that without the position relative and then this came afterwards but then
 
 168
-00:14:50,640 --> 00:14:54,240
- that where you set height and M's would zoom and the one that you set in pixels
+00:18:11,440 --> 00:18:17,440
+ we sort of just shifted it and that's why this overlaps because this corner here is where three
 
 169
-00:14:54,240 --> 00:14:58,360
- wouldn't but they decided to make zooming work otherwise zooming so many
+00:18:17,440 --> 00:18:21,920
+ would have finished and with a normal layout so you got to be careful with relative i mean you
 
 170
-00:14:58,360 --> 00:15:03,120
- people made boxes in pixels that they made it so that the the zooming would
+00:18:21,920 --> 00:18:28,640
+ don't usually want to make it so that they uh sort of blop on top of each other okay and so now we're
 
 171
-00:15:03,120 --> 00:15:07,720
- pretend that pixels are really M's so it kind of converts pixels to M's but you're
+00:18:28,640 --> 00:18:34,320
+ in four and then we're going to look at five and six and so five is what's called fixed text and
 
 172
-00:15:07,720 --> 00:15:11,920
- really technically you're supposed to avoid using pixels when you really mean
+00:18:34,320 --> 00:18:41,520
+ you'll see i'm the five comes right here but because i've got this as position fixed this
 
 173
-00:15:11,920 --> 00:15:16,360
- characters if you want three lines don't look at your font and say I'll make this
+00:18:41,520 --> 00:18:48,880
+ is fixed relative to the window so it's 20 pixels up from the bottom and 30 of the way from the left
 
 174
-00:15:16,360 --> 00:15:21,240
- 40 pixels in order to do that and again we still in this box we still have
+00:18:48,880 --> 00:18:55,680
+ margin so you can see that this is uh 30 of the way from the left margin and it's uh the bottom
 
 175
-00:15:21,240 --> 00:15:26,560
- overflowing text and so we have a couple things we can do when we want to change
+00:18:55,680 --> 00:19:03,600
+ of it is 20 pixels up from the bottom and you'll see that that green box never moves and that is
 
 176
-00:15:26,560 --> 00:15:31,960
- the overflow we can tell a box that we would like the the overflow to make a
+00:19:03,600 --> 00:19:09,680
+ because the fixed text is relative to the window and that's how we actually get this little link
 
 177
-00:15:31,960 --> 00:15:36,600
- little scroll bar and so here's here's that same stuff in it you can see we
+00:19:09,680 --> 00:19:15,760
+ that never goes away and so there's a link that never goes away um absolute text it's i don't know
 
 178
-00:15:36,600 --> 00:15:41,240
- got a little tiny baby scroll bar and it it didn't sort of blurp blop out of the
+00:19:15,760 --> 00:19:20,480
+ why they call it fixed and absolute but absolute text is a little bit different it's relative to
 
 179
-00:15:41,240 --> 00:15:45,520
- box right and you and even if the scroll fits you see you get little scroll bars
+00:19:20,480 --> 00:19:26,480
+ the parent element and so in this div right here the parent element is the body tag and so when
 
 180
-00:15:45,520 --> 00:15:49,080
- but you can't scroll it because there's only one line there and it fits in the
+00:19:26,480 --> 00:19:32,880
+ it's saying i would like this to be uh 40 pixels from the top and 30 pixels from the 30 percent of
 
 181
-00:15:49,080 --> 00:15:58,960
- box and then another thing that you can do is you can just say chop it off right
+00:19:32,880 --> 00:19:38,560
+ the way from the left that means it's relative to the body tag and so the body tag starts up here
 
 182
-00:15:58,960 --> 00:16:02,760
- chop it off now one thing with some Tava script you can put a little more here
+00:19:38,560 --> 00:19:46,000
+ and so this has been sized 30 from there and whatever 40 pixels down and notice that that
 
 183
-00:16:02,760 --> 00:16:06,200
- and that expands the box or pops a bylog or whatever but we're not gonna worry
+00:19:46,000 --> 00:19:51,760
+ one goes with the scrolling right so that one goes with the scrolling and you'll also notice
 
 184
-00:16:06,200 --> 00:16:10,800
- about that for now for now we're just saying overflow hidden means lay this
+00:19:51,760 --> 00:19:57,040
+ that between four five and six there's like it's as if there's nothing here but if you look at the
 
 185
-00:16:10,800 --> 00:16:15,400
- out as much as you need and then you know throw this text away it's just not
+00:19:57,040 --> 00:20:01,840
+ document five and six are sitting there and that's because they are plucked out of the normal
 
 186
-00:16:15,400 --> 00:16:20,160
- there anymore like where did all this all this text go
+00:20:01,840 --> 00:20:07,120
+ rendering stream and so they don't take up any space between four and seven so they're
 
 187
-00:16:20,160 --> 00:16:31,800
- but it doesn't show it because we told it to chop it off okay so on to the next
+00:20:07,120 --> 00:20:12,320
+ they're they're they don't count in sort of the normal layout as the page is being laid out
 
 188
-00:16:31,800 --> 00:16:38,800
- one you can move these things around messy there we go let's make this a
+00:20:12,320 --> 00:20:23,840
+ and so so here's number seven for example actually number eight so here's number eight
 
 189
-00:16:38,800 --> 00:16:44,640
- little different okay so so by default I'll show you the HTML in a second for
+00:20:23,840 --> 00:20:32,400
+ and so this is uh positioned relative with a left of negative 100 1000 pixels and so in a sense this
 
 190
-00:16:44,640 --> 00:16:55,280
- this or maybe just do view source let's do view source okay so if you just say
+00:20:32,400 --> 00:20:37,760
+ stuff right here has been shoved off the screen to the left and so that's that's what how we often
 
 191
-00:16:55,280 --> 00:17:00,820
- div div they just follow after each other and I've given them border because
+00:20:37,760 --> 00:20:43,280
+ will put text on that nobody sees just move it to the left but it takes up the vertical space anyways
 
 192
-00:17:00,820 --> 00:17:03,960
- to make them a little picture give them some border some padding and some margin
+00:20:43,280 --> 00:20:49,040
+ because it was just relative it would have normally laid out here but the left shoved it over there
 
 193
-00:17:03,960 --> 00:17:08,440
- just so they don't touch each other too much so by default blocks just so I got
+00:20:49,040 --> 00:20:58,880
+ and so that's basically uh some some layout and so uh now we're going to talk about z index
 
 194
-00:17:08,440 --> 00:17:11,920
- a little border both on all sides a little bit of space between them and a
+00:20:58,880 --> 00:21:00,560
+ let's take a look at the source code here
 
 195
-00:17:11,920 --> 00:17:16,400
- nice so they you know however big they get this one gets bigger and I put a
+00:21:00,560 --> 00:21:10,080
+ and so a z index is the ability to what happens when things overlap okay and so this is a div
 
 196
-00:17:16,400 --> 00:17:19,480
- width on them just so that so that they wouldn't move around and that's there's
+00:21:10,080 --> 00:21:15,520
+ number one has a z index of 100 a number two has a z index of negative 100 zero is sort of the
 
 197
-00:17:19,480 --> 00:17:24,360
- a width on it right there 10 M's 10 characters wide so they just follow each
+00:21:15,520 --> 00:21:19,680
+ background document and it works out pretty straightforward and i'm just moving these so
 
 198
-00:17:24,360 --> 00:17:28,840
- other and then you can say okay you know this block right here this number three
+00:21:19,680 --> 00:21:26,080
+ they have to lay on top of each other um you know and so you see this this one here is negative
 
 199
-00:17:28,840 --> 00:17:35,600
- would lay out right here but I have told the number three block I've told the
+00:21:26,080 --> 00:21:33,120
+ 100 so it's kind of behind everything um this one is uh positive 100 so it's in front of everything
 
 200
-00:17:35,600 --> 00:17:39,720
- number three block that I want to move relative to where you would normally be
+00:21:33,120 --> 00:21:44,160
+ and this number three is um yeah it's and i just put that there to be in the original document
 
 201
-00:17:39,720 --> 00:17:46,960
- 20 pixels to the left and 20 pixels down from the top and so this block it lays
+00:21:44,160 --> 00:21:49,760
+ at the with no z index whatsoever and so it's behind this thing that has a z index of 100
 
 202
-00:17:46,960 --> 00:17:51,160
- out exactly as if it belongs right here and then we shoved it over and moved it
+00:21:49,760 --> 00:21:57,520
+ okay and so that's z index um like this little note way over here by the right margin says
 
 203
-00:17:51,160 --> 00:17:56,560
- down and and it came over top of the number four block and so there you go and
+00:21:57,520 --> 00:22:03,600
+ z index is uh kind of tricky everyone tries to be on top and um you'll put z index of 100 and then
 
 204
-00:17:56,560 --> 00:18:04,400
- so the the text afterwards this number four block just comes next and it's it's
+00:22:03,600 --> 00:22:08,080
+ you'll find that the navigation put itself as the index of a thousand or something like that right
 
 205
-00:18:04,400 --> 00:18:08,520
- basically it's as if this laid out without that without the position
+00:22:08,640 --> 00:22:14,160
+ and um and so z index is hard to debug and hard to fiddle with but at least now you know
 
 206
-00:18:08,520 --> 00:18:13,320
- relative and then this came afterwards but then we sort of just shifted it and
+00:22:14,160 --> 00:22:20,240
+ that z index is the when things look weird and they're overlapping in weird ways z index is what
 
 207
-00:18:13,320 --> 00:18:17,800
- that's why this overlaps because this corner here is where three would have
+00:22:20,240 --> 00:22:26,560
+ you're taking advantage of and so now we'll take a look at kind of how this navigation works okay
 
 208
-00:18:17,800 --> 00:18:21,680
- finished and I'm with a normal layout so you got to be careful with relative I
+00:22:26,560 --> 00:22:33,280
+ and um and so here's a couple things that the navigation does uh the body of course is font
 
 209
-00:18:21,680 --> 00:18:25,200
- mean you don't usually want to make it so that they sort of blop on top of each
+00:22:33,280 --> 00:22:40,400
+ family ariel sans serif the navigation bar itself the nav that's i guess i'll do a view source on
 
 210
-00:18:25,200 --> 00:18:31,080
- other okay and so now we're in four and then we're gonna look at five and six
+00:22:40,400 --> 00:22:47,680
+ this so we can look at the navigation bar uh the navigation bar itself this block it's a block tag
 
 211
-00:18:31,080 --> 00:18:37,080
- and so five is what's called fixed text and you'll see I'm the five comes right
+00:22:47,680 --> 00:22:53,200
+ right that has a position of light gray and i've given it a height of three m so it's like
 
 212
-00:18:37,080 --> 00:18:43,160
- here but because I've got this is position fixed this is fixed relative to
+00:22:53,200 --> 00:22:56,640
+ three lines and if i zoom this page in and out
 
 213
-00:18:43,160 --> 00:18:48,840
- the window so it's 20 pixels up from the bottom and 30% of the way from the left
+00:22:58,880 --> 00:23:05,840
+ right that gets bigger and smaller don't get back to 100 um it's three lines tall and i guess i
 
 214
-00:18:48,840 --> 00:18:54,480
- margin so you can see that this is 30% of the way from the left margin and it's
+00:23:05,840 --> 00:23:10,720
+ didn't mean to say ariel sans serif i did that in case someone else wanted to change the body tag i
 
 215
-00:18:54,480 --> 00:19:01,200
- the bottom of it is 20 pixels up from the bottom and you'll see that that
+00:23:10,720 --> 00:23:17,360
+ guess um so then i have within i want ul tags within the nav and that's one of the nice things
 
 216
-00:19:01,200 --> 00:19:06,120
- green box never moves and that is because the fixed text is relative to
+00:23:17,360 --> 00:23:24,640
+ about this nav being its own tag i can style just the ul's inside here okay and so what i'm doing
 
 217
-00:19:06,120 --> 00:19:10,360
- the window and that's how we actually get this little link that never goes
+00:23:24,640 --> 00:23:32,000
+ here is i'm saying uh i i don't want any uh little uh circles little dots little bullets i don't want
 
 218
-00:19:10,360 --> 00:19:15,760
- away and so there's a link that never goes away absolute text it's I don't
+00:23:32,000 --> 00:23:36,480
+ any of those i want to take away any padding that it has by default this is one of those things that
 
 219
-00:19:15,760 --> 00:19:18,960
- know why they call it fixed and absolute but absolute text is a little bit
+00:23:36,480 --> 00:23:43,040
+ this ul inherits um let's go down here and take a look at this and you'll see that um
 
 220
-00:19:18,960 --> 00:19:22,760
- different it's relative to the parent element and so in this div right here
+00:23:43,040 --> 00:23:50,640
+ this ul right here um so what's happening is this is the things that i've said in my css and i'm
 
 221
-00:19:22,760 --> 00:19:28,240
- the parent element is the body tag and so when it's saying I would like this to
+00:23:50,640 --> 00:23:57,120
+ overriding some default things uh it's normally would be display uh it's a display block that's
 
 222
-00:19:28,240 --> 00:19:33,800
- be 40 pixels from the top and 30 pixels from the 30% of the way from the left
+00:23:57,120 --> 00:24:11,680
+ okay um and so i i overrode the the the list type style um and continuing on uh the list item inside
 
 223
-00:19:33,800 --> 00:19:38,480
- that means it's relative to the body tag and so the body tag starts up here and
+00:24:11,680 --> 00:24:17,040
+ of nav that's what it is nav and list item i wanted i wanted to make that so let's uh let's
 
 224
-00:19:38,480 --> 00:19:45,740
- so this has been sized 30% from there and whatever 40 pixels down and notice
+00:24:17,040 --> 00:24:26,640
+ inspect this guy right here inspect so uh if you look here uh so and oh and i've got a class of
 
 225
-00:19:45,740 --> 00:19:49,640
- that that one goes with the scrolling right so that one goes with the
+00:24:26,640 --> 00:24:32,160
+ back and so the i have this position absolute which is relative to the parent right here and
 
 226
-00:19:49,640 --> 00:19:54,560
- scrolling and you'll also notice that between four five and six there's like
+00:24:32,160 --> 00:24:38,880
+ i have 20 pixels to the left of that upper left hand corner and so that's how this comes over here
 
 227
-00:19:54,560 --> 00:19:58,640
- it's as if there's nothing here but if you look at the document five and six
+00:24:38,880 --> 00:24:47,520
+ and um and then i have a color dark blue because it's inside it's a nav an anchor tag within
 
 228
-00:19:58,640 --> 00:20:01,920
- are sitting there and that's because they are plucked out of the normal
+00:24:47,520 --> 00:24:52,640
+ an anchor tag within an li tag within a nav that's what this is saying
 
 229
-00:20:01,920 --> 00:20:06,580
- rendering stream and so they don't take up any space between four and seven so
+00:24:52,640 --> 00:24:57,680
+ dark blue text decoration of none and so that's where that's where i get this color blue and no
 
 230
-00:20:06,580 --> 00:20:11,900
- they're there they don't count in sort of the normal layout as the page is being
+00:24:57,680 --> 00:25:08,080
+ underlines um and then this is the dot back and so i use a back class to just to push it for
 
 231
-00:20:11,900 --> 00:20:22,640
- laid out and so so here's number seven for example actually number eight so
+00:25:08,080 --> 00:25:16,080
+ position this right here and then i use the forward class to position this relative on the right 20
 
 232
-00:20:22,640 --> 00:20:28,080
- here's number eight and so this is positioned relative with a left of
+00:25:16,080 --> 00:25:24,400
+ pixels from the right and so that's how i make the navigation bar work and css is really a
 
 233
-00:20:28,080 --> 00:20:33,960
- negative 100 1000 pixels and so in a sense this stuff right here has been
+00:25:24,400 --> 00:25:33,520
+ a lot of work we we learn a lot about css uh and and this is just a really short introduction
 
 234
-00:20:33,960 --> 00:20:38,240
- shoved off the screen to the left and so that's that's what how we often will put
-
-235
-00:20:38,240 --> 00:20:42,680
- text on that nobody sees just move it to the left but it takes up the vertical
-
-236
-00:20:42,680 --> 00:20:45,720
- space anyways because it was just relative it would have normally laid out
-
-237
-00:20:45,720 --> 00:20:53,360
- here but the left shoved it over there and so that's basically some some layout
-
-238
-00:20:53,360 --> 00:21:00,040
- and so now we're going to talk about Z index let's take a look at the source
-
-239
-00:21:00,040 --> 00:21:07,320
- code here and so a Z index is the ability to what happens when things
-
-240
-00:21:07,320 --> 00:21:13,040
- overlap okay and so this is a div number one has a Z index of 100 a number two
-
-241
-00:21:13,040 --> 00:21:17,200
- has a Z index of negative 100 zero is sort of the background document and it
-
-242
-00:21:17,200 --> 00:21:20,520
- works out pretty straightforward and I'm just moving these so they have to lay on
-
-243
-00:21:20,520 --> 00:21:26,600
- top of each other you know and so you see this this one here is negative 100
-
-244
-00:21:26,600 --> 00:21:32,640
- so it's kind of behind everything this one is positive 100 so it's in front of
-
-245
-00:21:32,640 --> 00:21:42,560
- everything and this number three is yeah it's and I just put that there to be in
-
-246
-00:21:42,560 --> 00:21:47,360
- the original document at the with no Z index whatsoever and so it's behind this
-
-247
-00:21:47,360 --> 00:21:55,320
- thing that has a Z index of a hundred okay and so that's Z index like this
-
-248
-00:21:55,320 --> 00:21:59,160
- little note way over here by the right margin says Z index is kind of tricky
-
-249
-00:21:59,160 --> 00:22:03,840
- everyone tries to be on top and you'll put Z index of a hundred and then you'll
-
-250
-00:22:03,840 --> 00:22:07,440
- find that the navigation put itself as the index of a thousand or something
-
-251
-00:22:07,440 --> 00:22:13,400
- like that right and and so Z index is hard to debug and hard to fiddle with but
-
-252
-00:22:13,400 --> 00:22:17,400
- at least now you know that Z index is there when things look weird and they're
-
-253
-00:22:17,400 --> 00:22:22,800
- overlapping in weird ways Z index is what you're taking advantage of and so
-
-254
-00:22:22,800 --> 00:22:29,520
- now we'll take a look at kind of how this navigation works okay and and so
-
-255
-00:22:29,520 --> 00:22:33,040
- here's a couple things that the navigation does the body of course is
-
-256
-00:22:33,040 --> 00:22:39,560
- font family's Ariel sans serif the navigation bar itself
-
-257
-00:22:39,560 --> 00:22:45,080
- source on this so we can look at the navigation bar the navigation bar itself
-
-258
-00:22:45,080 --> 00:22:51,120
- this block it's a block tag right that has a position of light gray and I've
-
-259
-00:22:51,120 --> 00:22:55,880
- given it a height of 3m so it's like three lines and if I zoom this page in
-
-260
-00:22:55,880 --> 00:23:02,760
- and out right that bit gets bigger and smaller don't get back to a hundred
-
-261
-00:23:02,760 --> 00:23:07,160
- percent it's three lines tall and I guess I didn't mean to say aerial fence
-
-262
-00:23:07,160 --> 00:23:10,800
- and serif I did that in case someone else wanted to change the body tech I
-
-263
-00:23:10,800 --> 00:23:16,800
- guess so then I have within I want you will tags within the nav and that's one
-
-264
-00:23:16,800 --> 00:23:21,040
- of the nice things about this nav being its own tag I can style just the you
-
-265
-00:23:21,040 --> 00:23:27,200
- wells inside here okay and so what I'm doing here is I'm saying I don't want
-
-266
-00:23:27,200 --> 00:23:32,920
- any little circles little dots little bullets I don't want any of those I want
-
-267
-00:23:32,920 --> 00:23:35,920
- to take away any padding that it has by default this is one of those things that
-
-268
-00:23:35,920 --> 00:23:41,800
- this you well inherits let's go down here and take a look at this and you'll
-
-269
-00:23:41,800 --> 00:23:48,640
- see that this you well right here so what's happening is this is the things
-
-270
-00:23:48,640 --> 00:23:53,400
- that I've said in my CSS and I'm overriding some default things it's
-
-271
-00:23:53,400 --> 00:24:00,040
- normally would be display it's a display block that's okay and so I
-
-272
-00:24:00,040 --> 00:24:11,920
- overrode the list type style and continuing on the list item inside of
-
-273
-00:24:11,920 --> 00:24:16,640
- nav that's what it is nav and list item I wanted I wanted to make that so let's
-
-274
-00:24:16,640 --> 00:24:25,760
- let's inspect this guy right here inspect so if you look here so and oh
-
-275
-00:24:25,760 --> 00:24:29,800
- and I've got a class of back and so the I have this position absolute which is
-
-276
-00:24:29,800 --> 00:24:35,800
- relative to the parent right here and I have 20 pixels to the left of that upper
-
-277
-00:24:35,800 --> 00:24:41,040
- left-hand corner and so that's how this comes over here and and then I have a
-
-278
-00:24:41,040 --> 00:24:49,240
- color dark blue because it's inside it's a nav an anchor tag within an anchor
-
-279
-00:24:49,240 --> 00:24:53,520
- tag within an LI tag within a nav that's what this is saying dark blue text
-
-280
-00:24:53,520 --> 00:24:57,600
- decoration of none and so that's where that's where I get this color blue and
-
-281
-00:24:57,600 --> 00:25:06,480
- no underlines and then this is the dot back and so I use a back class to just
-
-282
-00:25:06,480 --> 00:25:12,160
- to push it for position this right here and then I use the forward class to
-
-283
-00:25:12,160 --> 00:25:17,960
- position this relative on the right 20 pixels from the right and so that's how
-
-284
-00:25:17,960 --> 00:25:27,880
- I make the navigation bar work and CSS is really a a lot of work we we learn a
-
-285
-00:25:27,880 --> 00:25:34,320
- lot about CSS and and this is just a really short introduction to get you a
-
-286
-00:25:34,320 --> 00:25:50,640
- sense of what the basic mechanics of CSS are thanks for watching
+00:25:33,520 --> 00:25:48,400
+ to get you a sense of what the basic mechanics of css are uh thanks for watching
 

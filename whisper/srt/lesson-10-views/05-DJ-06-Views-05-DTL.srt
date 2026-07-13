@@ -1,508 +1,888 @@
 1
-00:00:00,000 --> 00:00:03,700
- so now we're going to talk about the actual template language as I mentioned
+00:00:00,000 --> 00:00:03,160
+ - So now we're gonna talk about the actual template language.
 
 2
-00:00:03,700 --> 00:00:08,040
- before there's more than one templating language we're using the default one and
+00:00:03,160 --> 00:00:05,160
+ As I mentioned before, there's more than one
 
 3
-00:00:08,040 --> 00:00:11,760
- I think it's actually one of the better ones this whole notion of double curly
+00:00:05,160 --> 00:00:08,020
+ templating language, we're using the default one.
 
 4
-00:00:11,760 --> 00:00:18,120
- braces there's all kind of template templating engines and a lot of them use
+00:00:08,020 --> 00:00:10,480
+ And I think it's actually one of the better ones,
 
 5
-00:00:18,120 --> 00:00:22,400
- these double curly braces sometimes there's a one called mustache because the
+00:00:10,480 --> 00:00:12,920
+ this whole notion of double curly braces.
 
 6
-00:00:22,400 --> 00:00:27,520
- curly braces look like a mustache so there's double curly braces you learn it
+00:00:12,920 --> 00:00:16,720
+ There's all kind of templating engines,
 
 7
-00:00:27,520 --> 00:00:32,920
- in Django and you'll find it all kinds of other places I've used it in front end
+00:00:16,720 --> 00:00:19,660
+ and a lot of 'em use these double curly braces.
 
 8
-00:00:32,920 --> 00:00:36,640
- processing this is back-end processing because we're doing all the substitution
+00:00:19,660 --> 00:00:21,680
+ Sometimes there's a one called mustache,
 
 9
-00:00:36,640 --> 00:00:40,560
- in the back end so there's there's basically a couple things you can do the
+00:00:21,680 --> 00:00:25,040
+ because the curly braces look like a mustache.
 
 10
-00:00:40,560 --> 00:00:45,960
- double curly braces do substitution and one thing that's cool about this if you
+00:00:25,040 --> 00:00:28,140
+ So there's double curly braces, you learn it in django,
 
 11
-00:00:45,960 --> 00:00:49,200
- recall I talked about how you have to escape data that came from the user
+00:00:28,140 --> 00:00:31,540
+ and you'll find it all kinds of other places.
 
 12
-00:00:49,200 --> 00:00:53,640
- anything in the double curly braces is automatically escaped as a matter of fact
+00:00:31,540 --> 00:00:34,040
+ I've used it in front-end processing,
 
 13
-00:00:53,640 --> 00:00:57,880
- you have to do something to not escape it because it turns out that 98% of the
+00:00:34,040 --> 00:00:35,920
+ this is back-end processing, 'cause we're doing
 
 14
-00:00:57,880 --> 00:01:01,600
- time you want to escape data that you're printing out because it doesn't change
+00:00:35,920 --> 00:00:37,840
+ all the substitution in the back-end.
 
 15
-00:01:01,600 --> 00:01:06,140
- what it looks like but it does make sure that it's safe if you add this what this
+00:00:37,840 --> 00:00:40,440
+ So there's basically a couple things you can do,
 
 16
-00:01:06,140 --> 00:01:10,800
- vertical bar safe afterwards this vertical bar safe afterwards that's like
+00:00:40,440 --> 00:00:44,520
+ the double curly braces, do substitution,
 
 17
-00:01:10,800 --> 00:01:15,760
- a modifier I think it's called a filter in Django that says look don't run this
+00:00:44,520 --> 00:00:46,440
+ and one thing that's cool about this, if you recall,
 
 18
-00:01:15,760 --> 00:01:21,240
- don't run that filter on it to do the HTML entities just do it as is I know
+00:00:46,440 --> 00:00:48,420
+ I talked about how you have to escape data
 
 19
-00:01:21,240 --> 00:01:24,640
- there may be HTML in that but I've taken care of that because I am the
+00:00:48,420 --> 00:00:51,360
+ that came from the user, anything in the double curly braces
 
 20
-00:01:24,640 --> 00:01:31,440
- application developer you can call functions like with the code is the
+00:00:51,360 --> 00:00:53,680
+ is automatically escaped, as a matter of fact,
 
 21
-00:01:31,440 --> 00:01:36,920
- percent curly brace percent and in there you you tend to call a code this is like
+00:00:53,680 --> 00:00:55,440
+ you have to do something to not escape it,
 
 22
-00:01:36,920 --> 00:01:41,760
- code this is like calling a method or a utility code and so the first part of
+00:00:55,440 --> 00:00:58,440
+ 'cause it turns out that 98% of the time,
 
 23
-00:01:41,760 --> 00:01:45,760
- this is what you're calling and then later you can have some parameters so
+00:00:58,440 --> 00:01:00,960
+ you wanna escape data that you're printing out,
 
 24
-00:01:45,760 --> 00:01:52,440
- this URL says I want to find the URL for the view cat detail and I'm going to take
+00:01:00,960 --> 00:01:02,780
+ 'cause it doesn't change what it looks like,
 
 25
-00:01:52,440 --> 00:01:56,760
- the number that is the current cat primary key for the cat record and put
+00:01:02,780 --> 00:01:04,760
+ but it does make sure that it's safe.
 
 26
-00:01:56,760 --> 00:02:02,960
- that on as the URL as well the author in this case is a and we'll see this later
+00:01:04,760 --> 00:01:08,340
+ If you add this vertical bar safe afterwards,
 
 27
-00:02:02,960 --> 00:02:09,240
- as a model item and get absolute URL is a method inside that model item you can
+00:01:08,340 --> 00:01:11,880
+ this vertical bar safe afterwards, that's like a modifier,
 
 28
-00:02:09,240 --> 00:02:14,040
- have sort of ifs and if then else's and pretty it's kind of Python like which is
+00:01:11,880 --> 00:01:13,920
+ I think it's called a filter in django,
 
 29
-00:02:14,040 --> 00:02:18,480
- nice and that you don't really have to learn new things there is looping code
+00:01:13,920 --> 00:01:17,960
+ that says look, don't run this, don't run that filter on it
 
 30
-00:02:18,480 --> 00:02:22,600
- that's in there like a for loop that we'll talk about in a bit and then there
+00:01:17,960 --> 00:01:21,120
+ to do the HTML entities, just do it as is,
 
 31
-00:02:22,600 --> 00:02:27,640
- is X blocks that can be replaced so you can have a template that sort of pulls
+00:01:21,120 --> 00:01:22,680
+ I know there may be HTML in that,
 
 32
-00:02:27,640 --> 00:02:30,840
- in another template and then substitutes in part of it so you can have whole
+00:01:22,680 --> 00:01:24,580
+ but I've taken care of that because I am
 
 33
-00:02:30,840 --> 00:02:35,240
- blocks of substitution not just little strings of substitution and so we'll
+00:01:24,580 --> 00:01:26,600
+ the application developer.
 
 34
-00:02:35,240 --> 00:02:40,440
- talk about each of these in turn so here we go we'll start with a real simple one
+00:01:26,600 --> 00:01:30,760
+ You can call functions, the code is the curly brace percent,
 
 35
-00:02:40,440 --> 00:02:46,160
- and we're not and you'll notice that in this particular simple one we have no
+00:01:30,760 --> 00:01:37,320
+ and there you tend to call a code, this is like code,
 
 36
-00:02:46,160 --> 00:02:50,920
- parameters on the command on the URL we so we don't have any parameters here I'm
+00:01:37,320 --> 00:01:40,780
+ this is like calling a method or a utility code,
 
 37
-00:02:50,920 --> 00:02:56,480
- going back to a non class style just a simple function and I'm not sending a
+00:01:40,780 --> 00:01:43,240
+ and so the first part of this is what you're calling,
 
 38
-00:02:56,480 --> 00:03:00,520
- context the context would be the third parameter on the render call and so I'm
+00:01:43,240 --> 00:01:45,740
+ and then later, you can have some parameters,
 
 39
-00:03:00,520 --> 00:03:06,720
- just saying hey and this is what you do when you just have some static HTML that
+00:01:45,740 --> 00:01:49,900
+ so this URL says, I wanna find a URL for the view cat detail,
 
 40
-00:03:06,720 --> 00:03:09,320
- you don't really need to change anything and so that's what's sitting in here it's
+00:01:49,900 --> 00:01:54,380
+ and I'm gonna take the number that is the current cat
 
 41
-00:03:09,320 --> 00:03:14,600
- just a simple page there's this thing called a built-in template view class
+00:01:54,380 --> 00:01:56,520
+ as the primary key for the cat record,
 
 42
-00:03:14,600 --> 00:03:18,640
- that sort of does exactly this thing that just grabs a template turns it in
+00:01:56,520 --> 00:01:59,460
+ and put that on as the URL as well.
 
 43
-00:03:18,640 --> 00:03:23,520
- HDB grabs a file turns into an HDB response and sends it back to Django so
+00:01:59,460 --> 00:02:03,240
+ The author in this case is a, and we'll see this later,
 
 44
-00:03:23,520 --> 00:03:29,000
- that's just a super simple template now here's one we're going to take a
+00:02:03,240 --> 00:02:07,040
+ is a model item, and getAbsoluteURL is a method
 
 45
-00:03:29,000 --> 00:03:34,480
- parameter to the context and I'm not taking it from the command line quite yet
+00:02:07,040 --> 00:02:09,080
+ inside that model item.
 
 46
-00:03:34,480 --> 00:03:40,000
- I'm just going to make the parameter always be 42 and and the key is this is
+00:02:09,080 --> 00:02:12,120
+ You can have sort of ifs and ifs and else's,
 
 47
-00:03:40,000 --> 00:03:46,040
- a key and this is a value so zap in this case is the key and 42 is the value I
+00:02:12,120 --> 00:02:14,580
+ and it's kind of Python-like, which is nice,
 
 48
-00:03:46,040 --> 00:03:51,320
- often call this variable context but the fact that's just a mnemonic memory thing
+00:02:14,580 --> 00:02:17,620
+ in that you don't really have to learn new things.
 
 49
-00:03:51,320 --> 00:03:57,440
- for me context or CTX is what I tend to call it and now I'm passing in the
+00:02:17,620 --> 00:02:19,940
+ There is looping code that's in there,
 
 50
-00:03:57,440 --> 00:04:03,240
- temple the template this template here the guest guest of HTML template and it
+00:02:19,940 --> 00:02:22,200
+ like a for loop that we'll talk about in a bit,
 
 51
-00:04:03,240 --> 00:04:10,680
- has one little curly brace substitution and remember that does escaping for us
+00:02:22,200 --> 00:02:25,560
+ and then there is blocks that can be replaced,
 
 52
-00:04:10,680 --> 00:04:13,480
- automatically so there's no need to use escape the way there was when we're
+00:02:25,560 --> 00:02:27,860
+ so you can have a template that sort of pulls in
 
 53
-00:04:13,480 --> 00:04:17,920
- doing this by a concatenation that alone is a good reason to use templates and so
+00:02:27,860 --> 00:02:30,100
+ another template and then substitutes in part of it,
 
 54
-00:04:17,920 --> 00:04:22,560
- this ends up sending out your guess is 42 so this is just really focusing on
+00:02:30,100 --> 00:02:32,620
+ so you can have whole blocks of substitution,
 
 55
-00:04:22,560 --> 00:04:27,840
- what's in that context and how the things come out of the context this name
+00:02:32,620 --> 00:02:35,040
+ not just little strings of substitution,
 
 56
-00:04:27,840 --> 00:04:32,960
- here zap in the context means pull the thing out of the context under the
+00:02:35,040 --> 00:02:38,240
+ and so we'll talk about each of these in turn.
 
 57
-00:04:32,960 --> 00:04:39,560
- string name zap and then it substitutes the results like the 42 so instead of it
+00:02:38,240 --> 00:02:41,300
+ So here we go, we'll start with a real simple one,
 
 58
-00:04:39,560 --> 00:04:44,640
- saying guess was zap it's your guess is 42 so that's that's really focusing on
+00:02:41,300 --> 00:02:45,640
+ and you'll notice that in this particular simple one,
 
 59
-00:04:44,640 --> 00:04:50,440
- the substitution so this is showing us how we do the safe stuff in case you
+00:02:45,640 --> 00:02:48,300
+ we have no parameters on the URL,
 
 60
-00:04:50,440 --> 00:04:54,500
- actually want to pass some HTML into a template and actually want it to render
+00:02:48,300 --> 00:02:51,160
+ so we don't have any parameters here.
 
 61
-00:04:54,500 --> 00:05:03,080
- as HTML not as HTML entities or HTML and any style so we're sending in a
+00:02:51,160 --> 00:02:53,340
+ I'm going back to a non-class style,
 
 62
-00:05:03,080 --> 00:05:07,360
- thing that's bold with a B and less than B that's HTML it's got less than and
+00:02:53,340 --> 00:02:57,180
+ just a simple function, and I'm not sending a context.
 
 63
-00:05:07,360 --> 00:05:13,840
- greater than in it and then we got zap and so you can see that the zap comes
+00:02:57,180 --> 00:03:00,260
+ The context would be the third parameter on the render call,
 
 64
-00:05:13,840 --> 00:05:18,960
- out as 42 it's it's a shame entities but has no special characters but if we
+00:03:00,260 --> 00:03:04,180
+ and so I'm just saying, hey, and this is what you do
 
 65
-00:05:18,960 --> 00:05:23,640
- escape text text is the one with the the HTML can end the characters that
+00:03:04,180 --> 00:03:06,680
+ when you just have some static HTML
 
 66
-00:05:23,640 --> 00:05:28,400
- automatically escapes it so that you see the less than and greater than in the
+00:03:06,680 --> 00:03:08,200
+ that you don't really need to change anything,
 
 67
-00:05:28,400 --> 00:05:35,360
- browser output escaped less than B bold greater than B right and if you say text
+00:03:08,200 --> 00:03:09,280
+ and so that's what's sitting in here,
 
 68
-00:05:35,360 --> 00:05:39,280
- and then add the safe filter to the end of it that says don't escape it and so
+00:03:09,280 --> 00:03:11,680
+ it's just a simple page.
 
 69
-00:05:39,280 --> 00:05:44,120
- then this bold goes right into the HTML document and instead of you seeing the
+00:03:11,680 --> 00:03:14,860
+ There's this thing called a built-in template view class
 
 70
-00:05:44,120 --> 00:05:47,080
- less than and greater than you're actually seeing the text turn to bold
+00:03:14,860 --> 00:03:16,820
+ that sort of does exactly this thing,
 
 71
-00:05:47,080 --> 00:05:52,280
- now usually the bad bad folks that are trying to get into your computer are not
+00:03:16,820 --> 00:03:19,380
+ that just grabs a template, turns it into an HDB,
 
 72
-00:05:52,280 --> 00:05:55,520
- just turning your text to bold they're trying to run JavaScript and all we're
+00:03:19,380 --> 00:03:22,080
+ grabs a file, turns it into an HDB response,
 
 73
-00:05:55,520 --> 00:05:59,720
- showing here is that whatever less than and greater than would be in that
+00:03:22,080 --> 00:03:23,520
+ and sends it back to Django,
 
 74
-00:05:59,720 --> 00:06:04,440
- context value TXT they're going to end up literally in the document and the
+00:03:23,520 --> 00:03:26,860
+ so that's just a super simple template.
 
 75
-00:06:04,440 --> 00:06:08,760
- browser is going to interpret them as HTML I mean there's just no way that
+00:03:26,860 --> 00:03:31,820
+ Now here's one, we're gonna take a parameter to the context,
 
 76
-00:06:08,760 --> 00:06:13,960
- somehow your browser knows the the HTML that came from your program versus the
+00:03:31,820 --> 00:03:35,380
+ and I'm not taking it from the command line quite yet,
 
 77
-00:06:13,960 --> 00:06:18,000
- HTML that came from a context variable because by the time it gets to the
+00:03:35,380 --> 00:03:38,300
+ I'm just gonna make the parameter always be 42,
 
 78
-00:06:18,000 --> 00:06:23,200
- browser it's all one thing so it doesn't know oh wow that that's dangerous that
+00:03:38,300 --> 00:03:42,400
+ and the key is, this is a key, and this is a value,
 
 79
-00:06:23,200 --> 00:06:27,800
- came from a variable now by the time the response goes back to the browser it's
+00:03:42,400 --> 00:03:46,580
+ so zap in this case is the key, and 42 is the value.
 
 80
-00:06:27,800 --> 00:06:36,680
- just a blob of text now we can talk about some loops here I am passing in
+00:03:46,580 --> 00:03:48,840
+ I often call this variable context,
 
 81
-00:06:36,680 --> 00:06:41,320
- two arrays Apple orange banana and lychee and then I'm passing another
+00:03:48,840 --> 00:03:52,440
+ but the fact that's just a mnemonic memory thing for me,
 
 82
-00:06:41,320 --> 00:06:46,440
- array called N with peanut and cashew and then I'm going to create a context
+00:03:52,440 --> 00:03:55,080
+ context or CTX is what I tend to call it,
 
 83
-00:06:46,440 --> 00:06:51,520
- and in that context I'm going to have fruits point at the list F nuts pointed
+00:03:55,080 --> 00:03:58,080
+ and now I'm passing in the template,
 
 84
-00:06:51,520 --> 00:06:58,560
- the list and list N and then zap is just the string 42 and do I even use zap in
+00:03:58,080 --> 00:04:03,040
+ this template here, the guest.html template,
 
 85
-00:06:58,560 --> 00:07:04,040
- this one no I think there's another place that it no oh yeah yeah it's I
+00:04:03,040 --> 00:04:06,760
+ and it has one little curly brace substitution,
 
 86
-00:07:04,040 --> 00:07:09,120
- just don't have it in the the so here's the here's the template a part of the
+00:04:06,760 --> 00:04:11,400
+ and remember that does escaping for us automatically,
 
 87
-00:07:09,120 --> 00:07:13,720
- template it's not looking at zap and so here's the key so you we got this for
+00:04:11,400 --> 00:04:13,280
+ so there's no need to use escape the way there was
 
 88
-00:07:13,720 --> 00:07:19,220
- loop for X in fruits well fruits is looking up something in the context
+00:04:13,280 --> 00:04:15,200
+ when we were doing this by a concatenation.
 
 89
-00:07:19,220 --> 00:07:25,680
- under the key fruits their string they don't look like strings in they don't
+00:04:15,200 --> 00:04:17,720
+ That alone is a good reason to use templates,
 
 90
-00:07:25,680 --> 00:07:32,080
- look like strings in the template but it looks up there and it finds a list so
+00:04:17,720 --> 00:04:20,820
+ and so this ends up sending out your guess is 42,
 
 91
-00:07:32,080 --> 00:07:36,760
- that little list F is what really is going on here and F is a list of apple
+00:04:20,820 --> 00:04:24,480
+ so this is just really focusing on what's in that context,
 
 92
-00:07:36,760 --> 00:07:41,760
- orange banana lychee and then X becomes the iteration variable that's only within
+00:04:24,480 --> 00:04:27,320
+ and how the things come out of the context.
 
 93
-00:07:41,760 --> 00:07:46,440
- the template and then I'm going to print it out and then I'm going to end it so
+00:04:27,320 --> 00:04:30,760
+ This name here, zap in the context,
 
 94
-00:07:46,440 --> 00:07:51,000
- that's like the start and end of a for loop apple orange banana lychee now
+00:04:30,760 --> 00:04:32,480
+ means pull the thing out of the context
 
 95
-00:07:51,000 --> 00:07:55,760
- you'll notice that I have an LI tag which is the list item tag and it just
+00:04:32,480 --> 00:04:36,880
+ under the string name zap, and then it substitutes
 
 96
-00:07:55,760 --> 00:08:01,960
- generates all that HTML and again the double curly braces are doing HTML
+00:04:36,880 --> 00:04:40,040
+ the results, like the 42, so instead of it saying
 
 97
-00:08:01,960 --> 00:08:10,560
- entity escaping automatically so so we take a look at nuts so we ask is that is
+00:04:40,040 --> 00:04:42,420
+ guess was zap, it's your guess is 42,
 
 98
-00:08:10,560 --> 00:08:15,320
- nuts present because that's a way to tell if there are if variables present
+00:04:42,420 --> 00:04:46,920
+ so that's really focusing on the substitution.
 
 99
-00:08:15,320 --> 00:08:20,760
- or absent if it's absent I'm going to ask another filter on the end saying how
+00:04:46,920 --> 00:04:49,820
+ So this is showing us how we do the save stuff
 
 100
-00:08:20,760 --> 00:08:28,880
- long was it okay and so this is just this is the n nuts is the n list and it
+00:04:49,820 --> 00:04:53,360
+ in case you actually want to pass some HTML into a template
 
 101
-00:08:28,880 --> 00:08:32,720
- has a length of 2 which means it has two elements in it and so we see the number
+00:04:53,360 --> 00:04:56,040
+ and actually want it to render as HTML,
 
 102
-00:08:32,720 --> 00:08:37,320
- 2 and so you can do various things so this is and this is an if then else the
+00:04:56,040 --> 00:04:59,460
+ not as HTML entities, or HTML entity style.
 
 103
-00:08:37,320 --> 00:08:45,200
- syntax of an if then else and with curly brace curly brace percent now we can pass
+00:04:59,460 --> 00:05:04,840
+ So we're sending in a thing that's bold with a B
 
 104
-00:08:45,200 --> 00:08:52,200
- objects within objects and so it's a little tricky we have a context in this
+00:05:04,840 --> 00:05:06,680
+ and a less than B, that's HTML,
 
 105
-00:08:52,200 --> 00:09:00,000
- X variable and the sort of the outer key is pointing the key is outer is pointing
+00:05:06,680 --> 00:05:08,680
+ it's got less than's and greater than's in it,
 
 106
-00:09:00,000 --> 00:09:05,040
- to another dictionary and in that dictionary there is on a key of inner
+00:05:08,680 --> 00:05:13,300
+ and then we got zap, and so you can see that
 
 107
-00:09:05,040 --> 00:09:10,880
- with a value of 42 and then we render the nested out HTML and you see the
+00:05:13,300 --> 00:05:17,140
+ zap comes out as 42, it's HTML entities
 
 108
-00:09:10,880 --> 00:09:18,880
- outer but then outer dot inner that's so outer is is that object and then object
+00:05:17,140 --> 00:05:20,280
+ but has no special characters, but if we escape text,
 
 109
-00:09:18,880 --> 00:09:25,360
- dot inner then this thing becomes 42 ok so you can kind of walk through objects
+00:05:20,280 --> 00:05:23,400
+ text is the one with the HTML entity characters,
 
 110
-00:09:25,360 --> 00:09:31,880
- if you have a hierarchical objects objects that are objects that contain
+00:05:23,400 --> 00:05:25,920
+ that automatically escapes it so that you see
 
 111
-00:09:31,880 --> 00:09:35,920
- objects or list that contain objects or any number of hierarchical structure of
+00:05:25,920 --> 00:05:29,800
+ the less than's and greater than's in the browser output,
 
 112
-00:09:35,920 --> 00:09:43,560
- list and objects you can walk through them so here's just another simple
+00:05:29,800 --> 00:05:33,040
+ escaped, less than B, bold, greater than B, right?
 
 113
-00:09:43,560 --> 00:09:48,640
- example this one has data coming in instead of hard-coded so we again have
+00:05:33,040 --> 00:05:36,720
+ And if you say text and then add the save filter
 
 114
-00:09:48,640 --> 00:09:55,800
- you know game 200 and we're running into game view it's a class lot view and the
+00:05:36,720 --> 00:05:39,040
+ to the end of it, that says don't escape it,
 
 115
-00:09:55,800 --> 00:09:59,160
- 200 comes in as the parameter because we said it's the parameter that comes
+00:05:39,040 --> 00:05:42,920
+ and so then this bold goes right into the HTML document,
 
 116
-00:09:59,160 --> 00:10:04,200
- after the word game and so guess comes in is 200 it's a string at this point it
+00:05:42,920 --> 00:05:45,360
+ and instead of you seeing the less than's and greater than's,
 
 117
-00:10:04,200 --> 00:10:09,120
- hasn't been converted to an integer so when Django pulls these off well it's a
+00:05:45,360 --> 00:05:47,680
+ you're actually seeing the text turn to bold.
 
 118
-00:10:09,120 --> 00:10:11,920
- it does some validation based on the types but it doesn't actually
+00:05:47,680 --> 00:05:51,120
+ Now usually the bad folks that are trying to get into
 
 119
-00:10:11,920 --> 00:10:17,320
- necessarily convert them and so we're going to create a context X equals get
+00:05:51,120 --> 00:05:53,920
+ your computer are not just turning your text to bold,
 
 120
-00:10:17,320 --> 00:10:22,440
- you know a key of guess and convert it to an integer to pass it in and then
+00:05:53,920 --> 00:05:55,200
+ they're trying to run JavaScript,
 
 121
-00:10:22,440 --> 00:10:27,400
- we're going to pass the context in and the template in and so the the word guess
+00:05:55,200 --> 00:05:56,880
+ and all we're showing here is that
 
 122
-00:10:27,400 --> 00:10:32,160
- is going to come out and we sort of saw this the guess is 200 and then depending
+00:05:56,880 --> 00:05:59,440
+ whatever less than's and greater than's would be
 
 123
-00:10:32,160 --> 00:10:36,760
- on the if-then-else logic it's going to say in this case too high because your
+00:05:59,440 --> 00:06:02,760
+ in that context value TXT, they're gonna end up
 
 124
-00:10:36,760 --> 00:10:42,200
- guess was 200 and of course the right answer is always 42 so now we're going
+00:06:02,760 --> 00:06:04,880
+ literally in the document and the browser
 
 125
-00:10:42,200 --> 00:10:46,800
- to talk a little bit about how you manage a common text going from one
+00:06:04,880 --> 00:06:07,360
+ is going to interpret them as HTML.
 
 126
-00:10:46,800 --> 00:10:51,080
- template to another through template inheritance
+00:06:07,360 --> 00:06:10,440
+ I mean there's just no way that somehow your browser knows
 
 127
-00:10:57,400 --> 00:10:59,280
- (jazzy piano music)
+00:06:10,440 --> 00:06:13,560
+ the HTML that came from your program
+
+128
+00:06:13,560 --> 00:06:16,600
+ versus the HTML that came from a context variable,
+
+129
+00:06:16,600 --> 00:06:19,080
+ because by the time it gets to the browser,
+
+130
+00:06:19,080 --> 00:06:21,280
+ it's all one thing, and so it doesn't know,
+
+131
+00:06:21,280 --> 00:06:24,300
+ oh wow, that's dangerous, that came from a variable.
+
+132
+00:06:24,300 --> 00:06:27,680
+ Now by the time the response goes back to the browser,
+
+133
+00:06:27,680 --> 00:06:29,480
+ it's just a blob of text.
+
+134
+00:06:29,480 --> 00:06:33,060
+ Now we can talk about some loops here.
+
+135
+00:06:33,060 --> 00:06:38,640
+ I am passing in two arrays,
+
+136
+00:06:38,640 --> 00:06:40,440
+ apple, orange, banana, and lychee,
+
+137
+00:06:40,440 --> 00:06:41,800
+ and then I'm passing another array
+
+138
+00:06:41,800 --> 00:06:44,160
+ called n with peanut and cashew,
+
+139
+00:06:44,160 --> 00:06:46,840
+ and then I'm going to create a context,
+
+140
+00:06:46,840 --> 00:06:49,080
+ and in that context I'm gonna have fruits
+
+141
+00:06:49,080 --> 00:06:53,880
+ point at the list f, nuts point at the list n,
+
+142
+00:06:53,880 --> 00:06:56,760
+ and then zap is just the string 42,
+
+143
+00:06:56,760 --> 00:07:00,040
+ and do I even use zap in this one?
+
+144
+00:07:00,040 --> 00:07:02,680
+ No, I think there's another place that it,
+
+145
+00:07:02,680 --> 00:07:05,300
+ no, oh yeah, yeah, I just don't have it in the,
+
+146
+00:07:07,240 --> 00:07:10,000
+ so here's the template, a part of the template,
+
+147
+00:07:10,000 --> 00:07:12,520
+ it's not looking at zap, and so here's the key,
+
+148
+00:07:12,520 --> 00:07:16,280
+ so we got this for loop, four x in fruits,
+
+149
+00:07:16,280 --> 00:07:19,280
+ well fruits is looking up something in the context
+
+150
+00:07:19,280 --> 00:07:23,280
+ under the key fruits, they don't look like strings in,
+
+151
+00:07:23,280 --> 00:07:27,740
+ they don't look like strings in the template,
+
+152
+00:07:27,740 --> 00:07:31,920
+ but it looks up there and it finds a list,
+
+153
+00:07:31,920 --> 00:07:35,280
+ so that little list f is what really is going on here,
+
+154
+00:07:35,280 --> 00:07:38,720
+ and f is a list of apple, orange, banana, lychee,
+
+155
+00:07:38,720 --> 00:07:41,120
+ and then x becomes the iteration variable,
+
+156
+00:07:41,120 --> 00:07:43,660
+ that's only within the template,
+
+157
+00:07:43,660 --> 00:07:45,520
+ and then I'm gonna print it out,
+
+158
+00:07:45,520 --> 00:07:46,360
+ and then I'm gonna end it,
+
+159
+00:07:46,360 --> 00:07:49,440
+ so that's like the start and end of a for loop,
+
+160
+00:07:49,440 --> 00:07:50,880
+ apple, orange, banana, lychee.
+
+161
+00:07:50,880 --> 00:07:53,400
+ Now, you'll notice that I have an li tag,
+
+162
+00:07:53,400 --> 00:07:55,120
+ which is the list item tag,
+
+163
+00:07:55,120 --> 00:07:57,640
+ and it just generates all that HTML,
+
+164
+00:07:57,640 --> 00:08:00,900
+ and again, the double curly braces
+
+165
+00:08:00,900 --> 00:08:03,740
+ are doing HTML entity escaping automatically.
+
+166
+00:08:05,080 --> 00:08:09,160
+ So, we take a look at nuts,
+
+167
+00:08:09,160 --> 00:08:11,400
+ so we ask is nuts present,
+
+168
+00:08:11,400 --> 00:08:16,400
+ 'cause that's a way to tell if variables present or absent,
+
+169
+00:08:16,400 --> 00:08:20,160
+ if it's absent, I'm going to ask another filter on the end
+
+170
+00:08:20,160 --> 00:08:22,320
+ saying how long was it, okay,
+
+171
+00:08:22,320 --> 00:08:25,160
+ and so this is just, this is the n,
+
+172
+00:08:25,160 --> 00:08:30,120
+ nuts is the n list, and it has a length of two,
+
+173
+00:08:30,120 --> 00:08:31,680
+ which means it has two elements in it,
+
+174
+00:08:31,680 --> 00:08:33,600
+ and so we see the number two,
+
+175
+00:08:33,600 --> 00:08:35,200
+ and so you can do various things,
+
+176
+00:08:35,200 --> 00:08:37,200
+ so this is, and this is an if then else,
+
+177
+00:08:37,200 --> 00:08:39,380
+ the syntax of an if then else,
+
+178
+00:08:39,380 --> 00:08:42,360
+ with curly brace, curly brace percent.
+
+179
+00:08:42,360 --> 00:08:47,840
+ Now, we can pass objects within objects,
+
+180
+00:08:47,840 --> 00:08:50,180
+ and so, it's a little tricky,
+
+181
+00:08:50,180 --> 00:08:53,340
+ we have a context in this x variable,
+
+182
+00:08:53,340 --> 00:08:58,320
+ and the, sort of the outer key is pointing,
+
+183
+00:08:58,320 --> 00:09:02,000
+ the key is, outer is pointing to another dictionary,
+
+184
+00:09:02,000 --> 00:09:05,240
+ and in that dictionary, there is a key of inner
+
+185
+00:09:05,240 --> 00:09:09,720
+ with a value of 42, and then we render the nested.html,
+
+186
+00:09:09,720 --> 00:09:11,820
+ and you see the outer,
+
+187
+00:09:11,820 --> 00:09:15,280
+ but then outer.inner, that's,
+
+188
+00:09:15,280 --> 00:09:20,120
+ so outer is that object, and then object.inner,
+
+189
+00:09:20,120 --> 00:09:23,280
+ then this thing becomes 42, okay,
+
+190
+00:09:23,280 --> 00:09:25,440
+ so you can kind of walk through objects
+
+191
+00:09:25,440 --> 00:09:29,420
+ if you have hierarchical objects,
+
+192
+00:09:29,420 --> 00:09:32,400
+ objects that are, objects that contain objects,
+
+193
+00:09:32,400 --> 00:09:33,760
+ or lists that contain objects,
+
+194
+00:09:33,760 --> 00:09:35,840
+ or any number of hierarchical structure
+
+195
+00:09:35,840 --> 00:09:39,920
+ of lists and objects, you can walk through them.
+
+196
+00:09:39,920 --> 00:09:44,120
+ So here's just another simple example,
+
+197
+00:09:44,120 --> 00:09:47,600
+ this one has data coming in instead of hard coded,
+
+198
+00:09:47,600 --> 00:09:50,760
+ so we again have, you know, game 200,
+
+199
+00:09:50,760 --> 00:09:53,280
+ and we're running into game view,
+
+200
+00:09:53,280 --> 00:09:57,520
+ it's a class view, and the 200 comes in as the parameter,
+
+201
+00:09:57,520 --> 00:09:58,880
+ because we said it's the parameter
+
+202
+00:09:58,880 --> 00:10:00,680
+ that comes after the word game,
+
+203
+00:10:00,680 --> 00:10:03,000
+ and so guess comes in as 200,
+
+204
+00:10:03,000 --> 00:10:04,200
+ it's a string at this point,
+
+205
+00:10:04,200 --> 00:10:06,080
+ it hasn't been converted to an integer,
+
+206
+00:10:06,080 --> 00:10:08,640
+ so when Django pulls these off,
+
+207
+00:10:08,640 --> 00:10:11,320
+ well, it does some validation based on the types,
+
+208
+00:10:11,320 --> 00:10:14,720
+ but it doesn't actually necessarily convert them,
+
+209
+00:10:14,720 --> 00:10:16,420
+ and so we're going to create a context,
+
+210
+00:10:16,420 --> 00:10:19,200
+ x equals, you know, a key of guess,
+
+211
+00:10:19,200 --> 00:10:22,240
+ and convert it to an integer to pass it in,
+
+212
+00:10:22,240 --> 00:10:24,480
+ and then we're gonna pass the context in
+
+213
+00:10:24,480 --> 00:10:27,560
+ and the template in, and so the word guess
+
+214
+00:10:27,560 --> 00:10:30,060
+ is gonna come out, and we sort of saw this,
+
+215
+00:10:30,060 --> 00:10:33,020
+ the guess is 200, and then depending on the if then else
+
+216
+00:10:33,020 --> 00:10:35,580
+ logic, it's gonna say, in this case,
+
+217
+00:10:35,580 --> 00:10:37,620
+ too high, because your guess was 200,
+
+218
+00:10:37,620 --> 00:10:41,540
+ and of course the right answer is always 42.
+
+219
+00:10:41,540 --> 00:10:43,720
+ So now we're gonna talk a little bit about
+
+220
+00:10:43,720 --> 00:10:47,400
+ how you manage a common text going from one template
+
+221
+00:10:47,400 --> 00:10:50,580
+ to another through template inheritance.
+
+222
+00:10:57,560 --> 00:10:59,320
+ (jazz music)
 

@@ -1,420 +1,396 @@
 1
-00:00:00,000 --> 00:00:05,340
- So the last topic we'll talk about here in object orientation is the notion of inheritance.
+00:00:00,000 --> 00:00:05,300
+ So, the last topic we'll talk about here in object orientation is the notion of inheritance.
 
 2
-00:00:05,340 --> 00:00:11,820
+00:00:05,300 --> 00:00:11,800
  And this is a form of code reuse, and it's one of the more advanced aspects of object-oriented programming.
 
 3
-00:00:11,820 --> 00:00:16,400
- So just kind of understand what it is at a high level, and then you know where to come back to
+00:00:11,800 --> 00:00:16,400
+ So, just kind of understand what it is at a high level, and then you know where to come back to
 
 4
 00:00:16,400 --> 00:00:19,960
  when you need to learn a bit more about inheritance.
 
 5
-00:00:19,960 --> 00:00:23,820
- So the idea is, instead of making a new class from scratch,
+00:00:19,960 --> 00:00:23,800
+ So, the idea is, instead of making a new class from scratch,
 
 6
-00:00:23,820 --> 00:00:26,760
+00:00:23,800 --> 00:00:26,760
  we actually make a new class by starting with an existing class.
 
 7
-00:00:26,760 --> 00:00:31,320
- We are extending it, or another word for this is sub-classing.
+00:00:26,760 --> 00:00:31,260
+ We are extending it, or another word for this is subclassing.
 
 8
-00:00:31,320 --> 00:00:36,340
+00:00:31,260 --> 00:00:36,300
  And it's sort of a situation where you're like, I've got this code, and I've got this data,
 
 9
-00:00:36,340 --> 00:00:40,680
+00:00:36,300 --> 00:00:40,660
  and I just need to add a few things to it, and then I'll have a whole new thing.
 
 10
-00:00:40,680 --> 00:00:45,720
+00:00:40,660 --> 00:00:45,700
  And as you design objects and what we call object hierarchies, you often do this.
 
 11
-00:00:45,720 --> 00:00:50,360
+00:00:45,700 --> 00:00:50,300
  And it's a form of sort of real clever code reuse.
 
 12
-00:00:50,360 --> 00:00:56,360
+00:00:50,300 --> 00:00:56,300
  But again, don't necessarily think that you're supposed to know when to use this or why to use this.
 
 13
-00:00:56,360 --> 00:01:00,220
+00:00:56,300 --> 00:01:00,200
  Right now, it's just terminology, okay, just terminology.
 
 14
-00:01:00,220 --> 00:01:02,740
+00:01:00,200 --> 00:01:02,700
  We have what call these as parent-child relationships.
 
 15
-00:01:02,740 --> 00:01:07,400
+00:01:02,700 --> 00:01:07,300
  The original class is called a parent, and the new class is called the child class.
 
 16
-00:01:07,400 --> 00:01:10,560
- So sub-classes are another word for this.
+00:01:07,300 --> 00:01:10,500
+ So, subclasses are another word for this.
 
 17
-00:01:10,560 --> 00:01:12,640
- You have a class, and then you sub-class it.
+00:01:10,500 --> 00:01:12,600
+ You have a class, and then you subclass it.
 
 18
-00:01:12,640 --> 00:01:17,520
- I think extending and inheriting and parent-child are probably better ways of expressing it
+00:01:12,600 --> 00:01:19,200
+ I think extending and inheriting and parent-child are probably better ways of expressing it than subclassing.
 
 19
-00:01:17,520 --> 00:01:19,240
- than sub-classing.
+00:01:19,200 --> 00:01:20,600
+ So, here's a bit of code.
 
 20
-00:01:19,240 --> 00:01:22,600
- So here's a bit of code, let's take a look at this.
+00:01:20,600 --> 00:01:22,600
+ Let's take a look at this.
 
 21
-00:01:22,600 --> 00:01:27,480
- This is, this code's unchanged, it's the party animal code that we've been saying all along.
+00:01:22,600 --> 00:01:27,400
+ This code's unchanged, it's the party animal code that we've been saying all along.
 
 22
-00:01:27,480 --> 00:01:30,880
+00:01:27,400 --> 00:01:30,800
  It's the one that we construct and put a name in.
 
 23
-00:01:30,880 --> 00:01:32,800
+00:01:30,800 --> 00:01:32,800
  And now what we're going to do is extend it.
 
 24
-00:01:32,800 --> 00:01:36,760
- And so you'll notice that this code down here is the part that's doing the extending.
+00:01:32,800 --> 00:01:36,800
+ And so, you'll notice that this code down here is the part that's doing the extending.
 
 25
-00:01:36,760 --> 00:01:41,840
- So we're making a new class, football fan, and by putting in parentheses before the colon,
+00:01:36,800 --> 00:01:43,100
+ So, we're making a new class, football fan, and by putting in parentheses before the colon, party animal,
 
 26
-00:01:41,840 --> 00:01:47,160
- party animal, that says football fan inherits everything that is party animal,
+00:01:43,100 --> 00:01:50,500
+ that says football fan inherits everything that is party animal, meaning the X, the name, the init, the party,
 
 27
-00:01:47,160 --> 00:01:53,840
- meaning the X, the name, the init, the party, all those methods and data are sitting there.
+00:01:50,500 --> 00:01:55,500
+ all those methods and data are sitting there, and now we're going to add a new variable.
 
 28
-00:01:53,840 --> 00:01:55,640
- And now we're going to add a new variable.
+00:01:55,500 --> 00:02:01,300
+ So, football fan has, in addition to all those other variables, has points, and it has a touchdown method.
 
 29
-00:01:55,640 --> 00:01:59,840
- So football fan has, in addition to all those other variables, has points, and it has a
-
-30
-00:01:59,840 --> 00:02:01,760
- touchdown method.
-
-31
-00:02:01,760 --> 00:02:06,000
+00:02:01,300 --> 00:02:05,900
  And we add seven to the points, and then we call the party, and that does that.
 
+30
+00:02:05,900 --> 00:02:12,800
+ So, this is calling this method, because football fan includes X, name, and party, and init, and everything,
+
+31
+00:02:12,800 --> 00:02:14,700
+ and all this stuff, this constructor.
+
 32
-00:02:06,000 --> 00:02:12,280
- So this is calling this method, because football fan includes X, name, and party, and init,
+00:02:14,700 --> 00:02:20,200
+ So, this football fan is really an amalgamation of all these things together.
 
 33
-00:02:12,280 --> 00:02:15,120
- and everything, and all this, this constructor.
-
-34
-00:02:15,120 --> 00:02:20,520
- So this football fan is really an amalgamation of all these things together.
-
-35
-00:02:20,520 --> 00:02:24,340
+00:02:20,200 --> 00:02:24,000
  Party animal is just this stuff, right?
 
-36
-00:02:24,340 --> 00:02:25,800
- And so we still have two classes.
+34
+00:02:24,000 --> 00:02:25,700
+ And so, we still have two classes.
 
-37
-00:02:25,800 --> 00:02:26,880
+35
+00:02:25,700 --> 00:02:26,800
  We don't just have one.
 
-38
-00:02:26,880 --> 00:02:29,180
+36
+00:02:26,800 --> 00:02:29,000
  We didn't erase the party animal class.
 
+37
+00:02:29,000 --> 00:02:31,400
+ And so, we take a look at the code that we can run here.
+
+38
+00:02:31,400 --> 00:02:34,500
+ We can say, oh, okay, let's make a party animal, Sally.
+
 39
-00:02:29,180 --> 00:02:31,540
- And so we take a look at the code that we can run here.
+00:02:34,500 --> 00:02:43,200
+ And so, that constructs an object like this, and then stores that in S, with an X starting out at zero.
 
 40
-00:02:31,540 --> 00:02:34,640
- We can say, oh, okay, let's make a party animal, sally.
+00:02:43,200 --> 00:02:49,900
+ And then we call S party, oops, better change that color, starts out at zero.
 
 41
-00:02:34,640 --> 00:02:41,940
- And so that constructs an object like this, and then stores that in S, with an X starting
+00:02:49,900 --> 00:02:53,500
+ And then we call the party method, and that changes it to one, okay?
 
 42
-00:02:41,940 --> 00:02:50,040
- out at zero, and then we call S party, oops, better change that color, starts out at zero,
+00:02:53,500 --> 00:02:57,900
+ And so, this is, this bit of code, it's as if this part doesn't matter at all,
 
 43
-00:02:50,040 --> 00:02:53,560
- and then we call the party method, and that changes it to one, okay?
+00:02:57,900 --> 00:02:59,600
+ because it is a party animal.
 
 44
-00:02:53,560 --> 00:02:59,480
- And so this bit of code, it's as if this part doesn't matter at all, because it is a party
-
-45
-00:02:59,480 --> 00:03:00,480
- animal.
-
-46
-00:03:00,480 --> 00:03:01,480
+00:02:59,600 --> 00:03:01,000
  It's not a football fan.
 
+45
+00:03:01,000 --> 00:03:08,900
+ But now, if we take a look at this code down here, take this code down here,
+
+46
+00:03:08,900 --> 00:03:12,800
+ we're going to construct a football fan, and pass in gym.
+
 47
-00:03:01,480 --> 00:03:09,240
- But now, if we take a look at this code down here, take this code down here, we're going
+00:03:12,800 --> 00:03:16,300
+ So, that actually uses the underscore, init, from party animal,
 
 48
-00:03:09,240 --> 00:03:12,920
- to construct a football fan and pass in Jim.
+00:03:16,300 --> 00:03:19,600
+ because we extended party animal to make football fan.
 
 49
-00:03:12,920 --> 00:03:18,240
- So that actually uses the underscore knit from party animal, because we extended party
+00:03:19,600 --> 00:03:22,400
+ So, we inherited all of the good that was in there.
 
 50
-00:03:18,240 --> 00:03:19,760
- animal to make football fans.
+00:03:22,400 --> 00:03:26,600
+ So, there it's going to make a name, a variable X, which is going to start at zero,
 
 51
-00:03:19,760 --> 00:03:22,580
- So we inherited all of the good that was in there.
+00:03:26,600 --> 00:03:31,900
+ a variable name that's going to have gym in it, and a variable points that's going to have a zero in it.
 
 52
-00:03:22,580 --> 00:03:27,040
- So there it's gonna make a name, a variable X, which is gonna start at zero, a variable
+00:03:31,900 --> 00:03:37,500
+ So, this J variable has more things in it than the S variable has.
 
 53
-00:03:27,040 --> 00:03:32,080
- name that's gonna have Jim in it, and a variable points that's gonna have a zero in it.
+00:03:37,500 --> 00:03:46,000
+ And so, we can call the J party, and if we call J party, that goes here and adds one to X, right?
 
 54
-00:03:32,080 --> 00:03:37,660
- So this J variable has more things in it than the S variable has.
+00:03:46,000 --> 00:03:49,000
+ So, that adds one to X, and then we call J touchdown.
 
 55
-00:03:37,660 --> 00:03:44,240
- And so we can call the J party, and if we call J party, that goes here and adds one
+00:03:49,000 --> 00:03:54,700
+ Well, that comes down in here, and adds seven to the points, right?
 
 56
-00:03:44,240 --> 00:03:45,240
- to X, right?
-
-57
-00:03:45,240 --> 00:03:51,420
- So that adds one to X, and then we call J touchdown, well, that comes down in here,
-
-58
-00:03:51,420 --> 00:03:54,780
- and adds seven to the points, right?
-
-59
-00:03:54,780 --> 00:03:56,760
+00:03:54,700 --> 00:03:56,700
  And then calls party within us.
 
+57
+00:03:56,700 --> 00:04:03,300
+ And so, self.party is the current object, i.e. self and J are the same thing, right?
+
+58
+00:04:03,300 --> 00:04:09,700
+ Self.party, and then it goes up here, and passes self in, and it adds one to the X.
+
+59
+00:04:09,700 --> 00:04:12,000
+ In this case, of this J variable.
+
 60
-00:03:56,760 --> 00:04:03,560
- And so self.party is the current object, i.e. self and J are the same thing, right?
+00:04:12,000 --> 00:04:14,300
+ So, this becomes two.
 
 61
-00:04:03,560 --> 00:04:10,000
- Self.party, and then it goes up here and passes self in, and it adds one to the X, in this
+00:04:14,300 --> 00:04:19,400
+ And that's where it prints out, it prints out, you know, seven and two, and away you go.
 
 62
-00:04:10,000 --> 00:04:12,120
- case of this J variable.
+00:04:19,400 --> 00:04:27,700
+ And so, it's a way for you to kind of take all this stuff and stuff it into a class by making a new class,
 
 63
-00:04:12,120 --> 00:04:19,560
- So this becomes two, and that's where it prints out seven and two, and away you go.
+00:04:27,700 --> 00:04:32,600
+ and just add the extending bits, the bits that are in addition to the other stuff.
 
 64
-00:04:19,560 --> 00:04:26,640
- And so it's a way for you to kind of take all this stuff and stuff it into a class by
+00:04:32,600 --> 00:04:37,500
+ So, like I said, inheritance is a powerful and wonderful concept.
 
 65
-00:04:26,640 --> 00:04:31,660
- making a new class and just add the extending bits, the bits that are in addition to the
+00:04:37,500 --> 00:04:46,500
+ It's a form of, excellent form of reuse, but basically, the whole purpose of this lecture was
 
 66
-00:04:31,660 --> 00:04:32,740
- other stuff.
+00:04:46,500 --> 00:04:51,700
+ so that I could in the future just use these words, and you would understand them as compared to,
 
 67
-00:04:32,740 --> 00:04:39,620
- So like I said, inheritance is a powerful and wonderful concept, it's a form of, excellent
+00:04:51,700 --> 00:04:55,900
+ I just want to say method, and I've been saying method all along in this high time that I defined it.
 
 68
-00:04:39,620 --> 00:04:47,440
- form of reuse, but basically the whole purpose of this lecture was so that I could in the
+00:04:55,900 --> 00:04:58,600
+ So, let's just review one last time.
 
 69
-00:04:47,440 --> 00:04:52,160
- future just use these words and you would understand them as compared to, I just want
-
-70
-00:04:52,160 --> 00:04:55,480
- to say method, and I've been saying method all along in this high time that I defined
-
-71
-00:04:55,480 --> 00:04:56,480
- it.
-
-72
-00:04:56,480 --> 00:04:59,020
- So let's just review one last time.
-
-73
-00:04:59,020 --> 00:05:04,420
+00:04:58,600 --> 00:05:04,100
  Class is a template, it is not actually a thing, it is a shape of a thing.
 
+70
+00:05:04,100 --> 00:05:08,300
+ And we define it and say, when we make one of these things, it's going to have these variables in it,
+
+71
+00:05:08,300 --> 00:05:10,400
+ it's going to have these methods in it.
+
+72
+00:05:10,400 --> 00:05:15,800
+ Attributes, variables within a class, a method is a function that's inside of a class.
+
+73
+00:05:15,800 --> 00:05:20,200
+ Object is once we construct a class, we get back an object.
+
 74
-00:05:04,420 --> 00:05:07,640
- And we define it and say when we make one of these things, it's going to have these
+00:05:20,200 --> 00:05:25,200
+ And so, object here is the snowman cookies.
 
 75
-00:05:07,640 --> 00:05:10,640
- variables in it, it's going to have these methods in it.
-
-76
-00:05:10,640 --> 00:05:16,320
- Attributes, variables within a class, method is a function that's inside of a class, object
-
-77
-00:05:16,320 --> 00:05:20,360
- is once we construct a class, we get back an object.
-
-78
-00:05:20,360 --> 00:05:25,680
- And so object here is the snowman cookies.
-
-79
-00:05:25,680 --> 00:05:28,480
+00:05:25,200 --> 00:05:28,200
  Class is the snowman cookie cutter.
 
+76
+00:05:28,200 --> 00:05:37,000
+ And a constructor is a bit of code that sets up our object, our instance, when it first is created.
+
+77
+00:05:37,000 --> 00:05:44,100
+ And inheritance is this ability to create a new class, but take all and import and affect all the capabilities
+
+78
+00:05:44,100 --> 00:05:46,300
+ of an existing class.
+
+79
+00:05:46,300 --> 00:05:50,800
+ So, object-oriented is awesome.
+
 80
-00:05:28,480 --> 00:05:35,740
- And a constructor is a bit of code that sets up our object, our instance, when it first
+00:05:50,800 --> 00:05:54,700
+ For the rest of this class, we're not going to write any object code, we're not going to use class at all,
 
 81
-00:05:35,740 --> 00:05:37,160
- is created.
+00:05:54,700 --> 00:05:59,000
+ but we're going to use objects, and literally, you've been using objects from the beginning of this course.
 
 82
-00:05:37,160 --> 00:05:42,680
- And inheritance is this ability to create a new class, but take all and import and affect
+00:05:59,000 --> 00:06:08,800
+ As soon as you said print, whoops, as soon as you said, you know, x equals high, that's an object.
 
 83
-00:05:42,680 --> 00:05:46,500
- all the capabilities of an existing class.
+00:06:08,800 --> 00:06:14,200
+ And as soon as you said x.upper, you were calling a method, right?
 
 84
-00:05:46,500 --> 00:05:50,920
- So object-oriented is awesome.
+00:06:14,200 --> 00:06:16,400
+ You've been calling a method all along.
 
 85
-00:05:50,920 --> 00:05:53,560
- For the rest of this class, we're not going to write any object code, we're not going
+00:06:16,400 --> 00:06:24,500
+ When you're doing something like fh equals open, this thing you're getting back, that's an object.
 
 86
-00:05:53,560 --> 00:05:57,340
- to use class at all, but we are going to use objects, and literally you've been using objects
+00:06:24,500 --> 00:06:29,900
+ And then you do fh.read or whatever, you're calling a method in the dot operator.
 
 87
-00:05:57,340 --> 00:05:59,180
- from the beginning of this course.
-
-88
-00:05:59,180 --> 00:06:08,920
- As soon as you said print, whoops, as soon as you said x equals high, that's an object.
-
-89
-00:06:08,920 --> 00:06:14,880
- And as soon as you said x.upper, you were calling a method, right, you've been calling
-
-90
-00:06:14,880 --> 00:06:16,520
- a method all along.
-
-91
-00:06:16,520 --> 00:06:23,380
- When you're doing something like fh equals open, this thing you're getting back, that's
-
-92
-00:06:23,380 --> 00:06:30,040
- an object, and then you do fh.read or whatever, you're calling a method in the dot operator.
-
-93
-00:06:30,040 --> 00:06:32,140
+00:06:29,900 --> 00:06:32,100
  So you've been using objects all along.
 
-94
-00:06:32,140 --> 00:06:37,560
- I now am just finally explaining to you when I say call the read method or call the upper
+88
+00:06:32,100 --> 00:06:38,100
+ I now am just finally explaining to you when I say call the read method, or call the upper method,
 
-95
-00:06:37,560 --> 00:06:40,760
- method or what's this little dot and why is that there.
+89
+00:06:38,100 --> 00:06:40,600
+ or what's this little dot and why is that there?
 
-96
-00:06:40,760 --> 00:06:47,200
- So again, it's time for us to understand that, but it will take you a long time before you
+90
+00:06:40,600 --> 00:06:48,600
+ So again, it's time for us to understand that, but it will take you a long time before you encounter a problem
 
-97
-00:06:47,200 --> 00:06:52,860
- encounter a problem that's large enough where as part of your solution you're going to make
+91
+00:06:48,600 --> 00:06:53,800
+ that's large enough where, as part of your solution, you're going to make a new object.
 
-98
-00:06:52,860 --> 00:06:53,920
- a new object.
-
-99
-00:06:53,920 --> 00:06:58,240
+92
+00:06:53,800 --> 00:06:55,800
  But when you do, it's really a powerful thing.
 
-100
-00:06:58,240 --> 00:07:02,000
- It's a really bad idea for me as a teacher to say, oh, write a bunch of objects.
+93
+00:06:55,800 --> 00:07:01,200
+ I mean, it's a really bad idea for me as a teacher to say, oh, write a bunch of objects.
 
-101
-00:07:02,000 --> 00:07:03,520
- It's premature for that.
+94
+00:07:01,200 --> 00:07:03,300
+ It's like, it's premature for that.
 
-102
-00:07:03,520 --> 00:07:08,720
- It's later is when you will actually learn how to use objects and you'll be like, oh,
+95
+00:07:03,300 --> 00:07:08,100
+ It's later is when you will actually learn how to use objects and you'll be like,
 
-103
-00:07:08,720 --> 00:07:12,000
- thank heaven that these objects are here, okay?
+96
+00:07:08,100 --> 00:07:11,900
+ oh, thank heaven that these objects are here, okay?
 
-104
-00:07:12,000 --> 00:07:15,720
- So that's all for now, thanks for listening, see you on the net.
+97
+00:07:11,900 --> 00:07:14,300
+ So that's all for now.
 
-105
-00:07:22,860 --> 00:07:32,860
- [MUSIC]
+98
+00:07:14,300 --> 00:07:16,200
+ Thanks for listening. See you on the net.
+
+99
+00:07:24,300 --> 00:07:34,300
+ [ Music ]
 

@@ -4,8 +4,8 @@
  and just do form after form after form.
  So I call this little section Post-Refresh Oops.
  So remember this little page not so long ago
- where I'm like, "Look, it's great.
- "We did the CSRF and we checked it and it worked great
+ where I'm like, "Look, it's great, we did the CSRF
+ "and we checked it and it worked great
  "and we put the CSRF token in and it's all good."
  Well, it turns out from the heights of success
  is the depths of failure, but it's not too bad,
@@ -15,22 +15,23 @@
  which is exactly what we just did,
  and then you hit the refresh button on your browser,
  the browser is going to resend the post request.
- If you go back, I said post requests are things that change.
+ And if you go back, I said,
+ post requests are things that change.
  So for example, if you are transferring money
  from your account to someone else's
  and then you hit the transfer button, it's a post,
- and the money gets transferred, and then transfer successful.
+ and the money gets transferred, and then transfer is successful.
  And then if you hit refresh, you're gonna post it again.
  And so the refresh basically reruns
  the entire previous transaction.
  It doesn't just grab the page, it sends the post data again.
- So if you transferred $100 in one post and you hit refresh,
- you're gonna transfer $100 again.
+ So if you transferred $100 in one post,
+ and you hit refresh, you're gonna transfer $100 again.
  So what happens is is that because the browsers know
  that posts are potentially dangerous to the server,
- the user will get a pop-up, not from you,
- but from the browser to say, hey,
- this person who built this server application
+ the user will get a pop-up.
+ Not from you, but from the browser to say,
+ hey, this person who built this server application
  left you sitting on a post, and you hit refresh,
  and I'm gonna about post it again.
  So are you sure you really wanna do that?
@@ -38,10 +39,10 @@
  barely knows what's a refresh, and it looks like a mess.
  So the way to do this is you go to the page,
  you type in 42, you hit submit query,
- and it'll say congratulations, and you look at it,
- and then you press the refresh button,
- the refresh button, the reload button,
- and you press the reload button, and it says,
+ and it'll say congratulations.
+ You look at it, and then you press the refresh button.
+ The refresh button, the reload button.
+ And you press the reload button, and it says,
  to display this page, Firefox must send information
  that will repeat an action, such as a search order
  confirmation that was performed earlier,
@@ -51,21 +52,23 @@
  was a little sloppy, and Firefox is like,
  I'm really not sure if we should do this,
  so I'm gonna ask the user, but it doesn't exactly know
- what to ask the user, it doesn't know what you just did,
- and so it's a yucky message, and what we wanna do
- as programmers is avoid this.
+ what to ask the user, it doesn't know what you just did.
+ And so, it's a yucky message.
+ And what we wanna do as programmers is avoid this.
  We want all the message, all the user experience
- coming from us, not having the browsers take over
- some of these things, and so it's just bad practice
- in general to send a 200 post, to take a post request,
+ coming from us, not having the browsers
+ take over some of these things.
+ And so it's just bad practice in general
+ to send a 200 post, to take a post request
  and then send a 200 with an HTML page back, okay?
- And so it's just ugly, and it sits in the browser ass,
- it's out of your control, it's ugly, it's bad usability,
- so we can do a little bit of work to make this never happen.
+ And so, it's just ugly, it sits in the browser ass,
+ it's out of your control, it's ugly, it's bad usability.
+ So we can do a little bit of work
+ to make this never happen.
  So that's what we wanna do here.
- So the way we do this is through what we call
- post redirect refresh.
+ So, the way we do this is through what we call
+ post, redirect, refresh.
  So up next, we're gonna show how we're gonna fix all this
- using a post redirect get refresh.
+ using a post, redirect, get, refresh.
  These titles keep getting longer and longer.
  (upbeat music)

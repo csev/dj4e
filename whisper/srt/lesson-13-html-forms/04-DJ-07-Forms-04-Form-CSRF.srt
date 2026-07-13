@@ -1,372 +1,800 @@
 1
-00:00:00,000 --> 00:00:05,040
- So now that we've introduced CSRF conceptually, let's talk about how we actually implemented
+00:00:00,000 --> 00:00:02,720
+ So now that we've introduced CSRF conceptually,
 
 2
-00:00:05,040 --> 00:00:11,600
- running in Django. So if you remember, I didn't really point this out too much when we went through
+00:00:02,720 --> 00:00:05,120
+ let's talk about how we actually implement it
 
 3
-00:00:11,600 --> 00:00:17,920
- it. This was my first form where I showed you how data could be transported to the server using a
+00:00:05,120 --> 00:00:06,200
+ running in Django.
 
 4
-00:00:17,920 --> 00:00:24,880
- POST request. If you look at the top, I have this little annotation, @csrf_exempt, and there's a
+00:00:06,200 --> 00:00:10,720
+ So if you remember, I didn't really point this out
 
 5
-00:00:24,880 --> 00:00:30,800
- little import above it in the views file. And what I was basically telling Django is don't blow this
+00:00:10,720 --> 00:00:11,900
+ too much when we went through it.
 
 6
-00:00:30,800 --> 00:00:37,360
- up because I'm not handling CSRF properly. So what we're going to do is we're going to do the exact
+00:00:11,900 --> 00:00:16,260
+ This was my first form where I showed you how data
 
 7
-00:00:37,360 --> 00:00:43,120
- same view, except we're just not going to have that little thing. So we'll call this one fail form,
+00:00:16,260 --> 00:00:19,600
+ could be transported to the server using a POST request.
 
 8
-00:00:43,120 --> 00:00:49,200
- and we're going to throw out a form, we're going to press submit. Everything looks fine. The only
+00:00:19,600 --> 00:00:22,720
+ If you look at the top, I have this little annotation
 
 9
-00:00:49,200 --> 00:00:56,720
- difference is is I did not turn off CSRF processing. So on a POST request, CSRF processing is on by
+00:00:22,720 --> 00:00:25,840
+ @csrf_exempt, and there's a little import above it
 
 10
-00:00:56,720 --> 00:01:02,080
- default, which means that we have to do something explicitly when we're making POST forms. But I
+00:00:25,840 --> 00:00:29,980
+ in the views file, and what I was basically telling Django
 
 11
-00:01:02,080 --> 00:01:08,000
- didn't do it yet, so this is what happens if you don't do it. So you get a, you know, you get a
+00:00:29,980 --> 00:00:34,720
+ is don't blow this up because I'm not handling CSRF properly.
 
 12
-00:01:08,000 --> 00:01:14,000
- form and you press the, you know, type some stuff in and you hit submit query, and boom, you get this
+00:00:34,720 --> 00:00:38,720
+ So what we're gonna do is we're gonna do the exact same view
 
 13
-00:01:14,000 --> 00:01:20,400
- forbidden message. That's a 403. So among all the HTTP responses, we've got 200, which is okay. We
+00:00:38,720 --> 00:00:41,240
+ except we're just not gonna have that little thing.
 
 14
-00:01:20,400 --> 00:01:26,560
- got 302, which is moved, and we got 404, which is not found. 403 is you're not getting this page,
+00:00:41,240 --> 00:00:43,240
+ So we'll call this one fail form,
 
 15
-00:01:26,560 --> 00:01:31,520
- but not because I don't have it, but because you're not authorized to do it. So this is it
+00:00:43,240 --> 00:00:46,360
+ and we're gonna throw out a form,
 
 16
-00:01:31,520 --> 00:01:37,520
- aborting and stopping the POST. So it comes in, it looked up the session, and everything looked good,
+00:00:46,360 --> 00:00:49,040
+ we're gonna press submit, everything looks fine,
 
 17
-00:01:37,520 --> 00:01:44,240
- except the CSRF did not match. Now, this, we are a legit server, so what we've got to do is we've
+00:00:49,040 --> 00:00:53,900
+ the only difference is I did not turn off CSRF processing.
 
 18
-00:01:44,240 --> 00:01:52,400
- got to actually add the CSRF to the POST on the way out, okay? So this is the exact same POST,
+00:00:53,900 --> 00:00:57,400
+ So on a POST request, CSRF processing is on by default,
 
 19
-00:01:52,400 --> 00:01:56,800
- and I'm doing this kind of at a low level, and I'll show you, we'll show you a much easier way
+00:00:57,400 --> 00:01:00,140
+ which means that we have to do something explicitly
 
 20
-00:01:56,800 --> 00:02:03,120
- to do it in a minute. So we have an input hidden. I just happen to know that CSRF middleware token
+00:01:00,140 --> 00:01:03,420
+ when we're making POST forms, but I didn't do it yet,
 
 21
-00:02:03,120 --> 00:02:07,520
- is the proper name for it, and I'm just gonna have a placeholder, which is underscore underscore token,
+00:01:03,420 --> 00:01:06,060
+ so this is what happens if you don't do it.
 
 22
-00:02:07,520 --> 00:02:13,040
- and so then what I'm gonna do is I'm gonna clock to that middleware, CSRF, get token.
+00:01:06,060 --> 00:01:10,680
+ So you get a form and you press the,
 
 23
-00:02:13,040 --> 00:02:17,520
- Now, that token is probably just a number sitting in the session, but I don't need to know that. I
+00:01:10,680 --> 00:01:13,040
+ type some stuff in and you hit submit query,
 
 24
-00:02:17,520 --> 00:02:21,840
- just say, hey, give me the token for the current request. Request is, of course, all that data
+00:01:13,040 --> 00:01:15,080
+ and boom, you get this forbidden message.
 
 25
-00:02:21,840 --> 00:02:25,840
- that's coming in. It's got the sessions, got everything else in it. So hey, give me that token.
+00:01:15,080 --> 00:01:19,120
+ That's a 403, so among all the HTTP responses,
 
 26
-00:02:25,840 --> 00:02:30,720
- This is a big, long string, which is really just a big, long, random number, a big, long, random
+00:01:19,120 --> 00:01:21,160
+ we've got 200, which is okay, we've got 302,
 
 27
-00:02:30,720 --> 00:02:34,320
- string, and then what I'm gonna do is take whatever that big, long, random number is,
+00:01:21,160 --> 00:01:24,460
+ which is moved, and we've got 404, which is not found.
 
 28
-00:02:34,320 --> 00:02:39,360
- and I'm gonna replace this little bit with a stir, a simple replace, and then I'm gonna send that out.
+00:01:24,460 --> 00:01:26,760
+ 403 is you're not getting this page,
 
 29
-00:02:39,360 --> 00:02:47,840
- So this time, when we go to that page, you'll see that now we have an input type equals hidden,
+00:01:26,760 --> 00:01:28,480
+ but not because I don't have it,
 
 30
-00:02:47,840 --> 00:02:52,960
- name equals CSRF middleware token, and then the big, long middleware token, whatever that is,
+00:01:28,480 --> 00:01:30,780
+ but because you're not authorized to do it.
 
 31
-00:02:52,960 --> 00:03:00,080
- and then now when we submit it, it bundles up both the guess and the middleware token,
+00:01:30,780 --> 00:01:33,660
+ So this is it aborting and stopping the POST,
 
 32
-00:03:00,080 --> 00:03:06,000
- and it actually bundles up to submit as well if it's got a name, and sends that in as post data.
+00:01:33,660 --> 00:01:36,280
+ so it comes in, it looked up the session,
 
 33
-00:03:06,000 --> 00:03:12,080
- So now when it dumps out, you see, oh, well, you got guess equals 42 and CSRF middleware. Now,
+00:01:36,280 --> 00:01:39,620
+ and everything looked good except the CSRF did not match.
 
 34
-00:03:12,080 --> 00:03:17,280
- by the time it's got to this point, we're not really doing the checking here. The checking was
+00:01:39,620 --> 00:01:44,040
+ Now, we are a legit server, so what we've gotta do
 
 35
-00:03:17,280 --> 00:03:22,320
- done before the view started, and so if we go back to the view here, the checking is done
+00:01:44,040 --> 00:01:46,720
+ is we've gotta actually add the CSRF
 
 36
-00:03:23,360 --> 00:03:30,320
- before it gets to here. When you're dispatching from urls.py to this, and it says, hmm,
+00:01:46,720 --> 00:01:49,800
+ to the POST on the way out, okay?
 
 37
-00:03:30,320 --> 00:03:34,880
- you didn't tell me not to do CSRF, and it's not done properly, so I'm gonna blow you up.
+00:01:49,800 --> 00:01:53,160
+ So this is the exact same POST,
 
 38
-00:03:34,880 --> 00:03:38,880
- So if it's gonna work, it's already worked. The fact that we've come in here and we're dumping
+00:01:53,160 --> 00:01:55,400
+ and I'm doing this kind of at a low level,
 
 39
-00:03:38,880 --> 00:03:44,080
- this stuff out of the post, that's just sort of like we see it, but it would have blown up before
+00:01:55,400 --> 00:01:58,060
+ and I'll show you a much easier way to do it in a minute.
 
 40
-00:03:44,080 --> 00:03:49,040
- it would have even got to our code at that point, but we do get it and see it as post data.
+00:01:58,060 --> 00:02:00,920
+ So we have an input hidden, I just happen to know
 
 41
-00:03:49,040 --> 00:03:55,040
- We don't need to, because by the very fact that our view is running means that the CSRF
+00:02:00,920 --> 00:02:04,920
+ that CSRF middleware token is the proper name for it,
 
 42
-00:03:55,040 --> 00:04:02,720
- processing has been successful. And again, the rogue system has to somehow get its hands on this,
+00:02:04,920 --> 00:02:06,360
+ and I'm just gonna have a placeholder,
 
 43
-00:04:02,720 --> 00:04:06,800
- the actual number of the CSRF, and that changes every time you log in, and literally it could
+00:02:06,360 --> 00:02:08,320
+ which is underscore underscore token,
 
 44
-00:04:06,800 --> 00:04:11,680
- change every hour or so or whatever. And so it's a hard number to guess, and it's a hard number to
+00:02:08,320 --> 00:02:10,560
+ and so then what I'm gonna do is I'm gonna talk
 
 45
-00:04:11,680 --> 00:04:18,880
- get your hands on. Now, that manual thing is not the easiest way to put this in. There's an easy
+00:02:10,560 --> 00:02:13,280
+ to that middleware, CSRF, get token.
 
 46
-00:04:18,880 --> 00:04:25,680
- way in CSRF. You simply say, so here's our form, here's our slash form. I do all the stuff I want
+00:02:13,280 --> 00:02:15,000
+ Now, that token is probably just a number
 
 47
-00:04:25,680 --> 00:04:32,240
- to do that I want to do, and then I use the code. It is called template tag. When you have CSRF
+00:02:15,000 --> 00:02:17,560
+ sitting in the session, but I don't need to know that,
 
 48
-00:04:32,240 --> 00:04:38,720
- enabled in your Python, you have a template tag of CSRF underscore token, and that emits the input,
+00:02:17,560 --> 00:02:20,440
+ I just say, hey, give me the token for the current request.
 
 49
-00:04:38,720 --> 00:04:44,240
- the type equals hidden, the write name, and all that stuff. So you, as the developer using templates,
+00:02:20,440 --> 00:02:22,780
+ Request is, of course, all that data that's coming in,
 
 50
-00:04:44,240 --> 00:04:52,240
- you don't have to know anything about that. And so that's how we do CSRF, and the only other thing
+00:02:22,780 --> 00:02:24,840
+ it's got the session, it's got everything else in it.
 
 51
-00:04:52,240 --> 00:04:56,320
- we got is guessing game, and then we're going to pass a message into that, and we're going to do
+00:02:24,840 --> 00:02:28,120
+ So hey, give me that token, this is a big, long string,
 
 52
-00:04:56,320 --> 00:05:01,680
- that in a bit. We're going to use this for a whole bunch of little examples, so kind of remember this
+00:02:28,120 --> 00:02:30,160
+ which is really just a big, long, random number,
 
 53
-00:05:01,680 --> 00:05:07,120
- particular guest.html template. But the key right now that we're talking about is the fact that we've
+00:02:30,160 --> 00:02:32,520
+ a big, long, random string, and then what I'm gonna do
 
 54
-00:05:07,120 --> 00:05:11,920
- got this CSRF token in. Now, I'm going to write a bunch of guessing games, and these guessing games
+00:02:32,520 --> 00:02:34,540
+ is take whatever that big, long, random number is,
 
 55
-00:05:11,920 --> 00:05:16,320
- I'm actually going to start checking the guesses. So I'm going to have a function in this view
+00:02:34,540 --> 00:02:36,600
+ and I'm gonna replace this little bit with a stir,
 
 56
-00:05:16,320 --> 00:05:22,320
- that's called check guess, and it's pretty simple. It returns a string or false. If the guess is an
+00:02:36,600 --> 00:02:39,800
+ a simple replace, and then I'm gonna send that out.
 
 57
-00:05:22,320 --> 00:05:28,640
- actual non-false thing, we check to see if it's too low, too high, or right on time, or if it
+00:02:39,800 --> 00:02:44,800
+ So this time, when we go to that page,
 
 58
-00:05:28,640 --> 00:05:36,880
- doesn't convert, if this guess throws a trace back, well, then we'll say bad_format = guess,
+00:02:44,800 --> 00:02:48,060
+ you'll see that now we have an input type equals hidden,
 
 59
-00:05:36,880 --> 00:05:40,880
- and then just because it probably came from the user, we're going to escape it and then send that
+00:02:48,060 --> 00:02:50,400
+ name equals CSRF middleware token,
 
 60
-00:05:40,880 --> 00:05:47,760
- back. So whatever it does, we're going to send back a nice little message going back. And so here
+00:02:50,400 --> 00:02:53,920
+ and then the big, long middleware token, whatever that is,
 
 61
-00:05:47,760 --> 00:05:57,840
- is a simple guessing game that we're going to do, and so we're using a class-based view this time.
+00:02:53,920 --> 00:02:56,080
+ and then now when we submit it,
 
 62
-00:05:57,840 --> 00:06:03,520
- Of course, we extend the class view, and remember how it works is it's not just a function. We
+00:02:56,080 --> 00:03:00,200
+ it bundles up both the guess and the middleware token,
 
 63
-00:06:03,520 --> 00:06:08,240
- actually have two methods. One is a get request, and the get is called when we're receiving get
+00:03:00,200 --> 00:03:02,800
+ and it actually bundles up the submit as well,
 
 64
-00:06:08,240 --> 00:06:14,320
- request, and the post is called when we're receiving a post request. This alone is one of the nice
+00:03:02,800 --> 00:03:06,180
+ if it's got a name, and sends that in as post data.
 
 65
-00:06:14,320 --> 00:06:19,360
- reasons to do this. You don't actually have to say if it's a get, do one thing, if it's a post,
+00:03:06,180 --> 00:03:08,160
+ So now when it dumps out, you see,
 
 66
-00:06:19,360 --> 00:06:24,880
- do another thing. We just have two methods, and Django properly routes the requests in,
+00:03:08,160 --> 00:03:11,920
+ oh, well, you got guess equals 42 and CSRF middleware.
 
 67
-00:06:24,880 --> 00:06:32,800
- okay? And so this is going to be a form post. So on the get, we just render with no messages.
+00:03:11,920 --> 00:03:15,160
+ Now, by the time it's got to this point,
 
 68
-00:06:32,800 --> 00:06:38,800
- We render with no messages, and we have a CSRF token that goes out, so we just render it.
+00:03:15,160 --> 00:03:16,720
+ we're not really doing the checking here,
 
 69
-00:06:38,800 --> 00:06:44,160
- Then we'll click the button so that this render right here will produce this page. Then we type
+00:03:16,720 --> 00:03:19,360
+ the checking was done before the view started.
 
 70
-00:06:44,160 --> 00:06:50,800
- in the guess of 42, and we hit submit query, and then that bundles it all up, including CSRF,
+00:03:19,360 --> 00:03:21,240
+ And so if we go back to the view here,
 
 71
-00:06:50,800 --> 00:06:57,040
- and goes to the post. Now the CSRF, as long as we put it in that template, we don't have care,
+00:03:21,240 --> 00:03:25,220
+ the checking is done before it gets to here.
 
 72
-00:06:57,040 --> 00:07:02,720
- because before that post method gets activated, CSRF has been processed, and we get a 403 if the
+00:03:25,220 --> 00:03:29,280
+ When you're dispatching from urls.py to this,
 
 73
-00:07:02,720 --> 00:07:09,840
- CSRF isn't right. So if we go back up here, and you don't put this in, and you run this code,
+00:03:29,280 --> 00:03:32,360
+ and it says, hmm, you didn't tell me not to do CSRF,
 
 74
-00:07:09,840 --> 00:07:16,400
- this CSRF token, you don't put it in, then it's never going to make it to the post. I mean,
+00:03:32,360 --> 00:03:35,000
+ and it's not done properly, so I'm gonna blow you up.
 
 75
-00:07:16,400 --> 00:07:22,160
- it blows up in route to the post if the CSRF doesn't happen. But we've got CSRF, and it's
+00:03:35,000 --> 00:03:37,160
+ So if it's gonna work, it's already worked.
 
 76
-00:07:22,160 --> 00:07:27,200
- all automatic, we just throw that one line inside of our form, and that's all we've got to do. So
+00:03:37,160 --> 00:03:38,360
+ The fact that we've come in here
 
 77
-00:07:27,200 --> 00:07:35,280
- we put 42 in, we hit submit query, pass the CSRF, it comes in, so we grab the post data,
+00:03:38,360 --> 00:03:40,600
+ and we're dumping this stuff out of the post,
 
 78
-00:07:35,280 --> 00:07:39,760
- the guess from the post data, we call my little check message, check guess, that's going to give
+00:03:40,600 --> 00:03:42,560
+ that's just sort of like we see it,
 
 79
-00:07:39,760 --> 00:07:44,720
- me that little message, whether it's too low, too high, or some kind of other mistake, and then I'm
+00:03:42,560 --> 00:03:44,760
+ but it would have blown up before
 
 80
-00:07:44,720 --> 00:07:52,080
- going to pass in a context, the string message has that string, and if then we go, I have it down here,
+00:03:44,760 --> 00:03:47,000
+ it would have even got to our code at that point.
 
 81
-00:07:52,080 --> 00:07:57,120
- no, have it up here, so then the message comes out. So this, you'll notice I've surrounded this
+00:03:47,000 --> 00:03:49,160
+ But we do get it and see it as post data.
 
 82
-00:07:57,120 --> 00:08:02,400
- by an if, so this message is false or not present, then it doesn't put anything out. But if it is,
+00:03:49,160 --> 00:03:52,320
+ We don't need to because by the very fact
 
 83
-00:08:02,400 --> 00:08:10,800
- it actually puts the message out. And so out comes the guess, and so this is what it looks like when
+00:03:52,320 --> 00:03:55,720
+ that our view is running means that the CSRF processing
 
 84
-00:08:10,800 --> 00:08:17,280
- we do a get request, we see this, then we're going to see all this stuff, we're going to type our
+00:03:55,720 --> 00:03:58,000
+ has been successful, okay?
 
 85
-00:08:17,280 --> 00:08:21,440
- number in, we're going to hit submit query, and then it's going to fire up a post request.
+00:03:58,000 --> 00:04:01,060
+ And again, the rogue system has to somehow
 
 86
-00:08:21,440 --> 00:08:26,960
- And so then it's going to come back into the post request, it's going to get the guess from the post
+00:04:01,060 --> 00:04:04,360
+ get its hands on this, the actual number of the CSRF,
 
 87
-00:08:26,960 --> 00:08:32,160
- data, it's going to check it, and then it's going to pass the message in, and so the message is going
+00:04:04,360 --> 00:04:05,960
+ and that changes every time you log in.
 
 88
-00:08:32,160 --> 00:08:39,920
- to come out here, and then we're going to return that page. And so you're going to see something like
+00:04:05,960 --> 00:04:09,320
+ And literally, it could change every hour or so or whatever.
 
 89
-00:08:39,920 --> 00:08:47,040
- congratulations 42. So that took, that was part of the post, and so we now have made a successful
+00:04:09,320 --> 00:04:11,200
+ And so it's a hard number to guess
 
 90
-00:08:47,040 --> 00:08:53,520
- guessing game. So next we're going to talk about, just when we get something working,
+00:04:11,200 --> 00:04:13,920
+ and it's a hard number to get your hands on.
 
 91
-00:08:53,520 --> 00:08:59,360
- there's always something that we have to say, oh, but there's a little detail that we forgot about.
+00:04:13,920 --> 00:04:18,440
+ Now, that manual thing is not the easiest way to put this in.
 
 92
-00:08:59,360 --> 00:09:04,960
- So up next, we'll talk about post and refresh, which is a little problem that we're just going
+00:04:18,440 --> 00:04:20,560
+ There's an easy way in CSRF.
 
 93
-00:09:04,960 --> 00:09:15,680
- to have to fix.
+00:04:20,560 --> 00:04:24,680
+ You simply say, so here's our form, here's our slash form.
+
+94
+00:04:24,680 --> 00:04:27,480
+ I do all the stuff I wanna do that I wanna do
+
+95
+00:04:27,480 --> 00:04:31,120
+ and then I use the code, it is called template tag.
+
+96
+00:04:31,120 --> 00:04:34,080
+ When you have CSRF enabled in your Python,
+
+97
+00:04:34,080 --> 00:04:37,040
+ you have a template tag of CSRF underscore token.
+
+98
+00:04:37,040 --> 00:04:39,880
+ And that emits the input, the type equals hidden,
+
+99
+00:04:39,880 --> 00:04:41,680
+ the write name, and all that stuff.
+
+100
+00:04:41,680 --> 00:04:44,380
+ So you, as the developer using templates,
+
+101
+00:04:44,380 --> 00:04:48,380
+ you don't have to know anything about that, okay?
+
+102
+00:04:48,380 --> 00:04:51,480
+ And so this, that's how we do CSRF.
+
+103
+00:04:51,480 --> 00:04:53,380
+ And the only other thing we got is guessing game
+
+104
+00:04:53,380 --> 00:04:55,840
+ and then we're gonna pass a message into that
+
+105
+00:04:55,840 --> 00:04:58,080
+ and we're gonna do that in a bit.
+
+106
+00:04:58,080 --> 00:05:00,740
+ We're gonna use this for a whole bunch of little examples.
+
+107
+00:05:00,740 --> 00:05:04,520
+ So kind of remember this particular guest.html template.
+
+108
+00:05:04,520 --> 00:05:06,440
+ But the key right now that we're talking about
+
+109
+00:05:06,440 --> 00:05:09,220
+ is the fact that we've got this CSRF token in.
+
+110
+00:05:09,220 --> 00:05:11,160
+ Now, I'm gonna write a bunch of guessing games
+
+111
+00:05:11,160 --> 00:05:12,040
+ and these guessing games,
+
+112
+00:05:12,040 --> 00:05:14,960
+ I'm actually going to start checking the guesses.
+
+113
+00:05:14,960 --> 00:05:16,460
+ So I'm gonna have a function in this view
+
+114
+00:05:16,460 --> 00:05:18,240
+ that's got called check guess.
+
+115
+00:05:18,240 --> 00:05:19,160
+ And it's pretty simple.
+
+116
+00:05:19,160 --> 00:05:21,360
+ It returns a string or false.
+
+117
+00:05:21,360 --> 00:05:24,100
+ If the guess is an actual non-false thing,
+
+118
+00:05:24,100 --> 00:05:26,560
+ we check to see if it's too low, too high,
+
+119
+00:05:26,560 --> 00:05:27,960
+ or right on time.
+
+120
+00:05:27,960 --> 00:05:32,380
+ Or if it doesn't compute, if it doesn't convert,
+
+121
+00:05:32,380 --> 00:05:34,580
+ if this guess throws a trace back,
+
+122
+00:05:34,580 --> 00:05:37,000
+ well, then we'll say bad format equals guess
+
+123
+00:05:37,000 --> 00:05:39,360
+ and then just because it probably came from the user,
+
+124
+00:05:39,360 --> 00:05:41,220
+ we're gonna escape it and then send that back.
+
+125
+00:05:41,220 --> 00:05:42,480
+ So whatever it does,
+
+126
+00:05:42,480 --> 00:05:45,960
+ we're gonna send back a nice little message going back.
+
+127
+00:05:47,160 --> 00:05:49,920
+ And so here is a simple guessing game
+
+128
+00:05:49,920 --> 00:05:51,520
+ that we're going to do.
+
+129
+00:05:51,520 --> 00:05:56,520
+ And so we're using a class-based view this time.
+
+130
+00:05:56,520 --> 00:06:00,640
+ Of course, we extend the class view.
+
+131
+00:06:00,640 --> 00:06:03,480
+ And remember how it works is it's not just a function.
+
+132
+00:06:03,480 --> 00:06:04,560
+ We actually have two methods.
+
+133
+00:06:04,560 --> 00:06:05,720
+ One is a get request.
+
+134
+00:06:05,720 --> 00:06:09,180
+ And the get is called when we're receiving get request.
+
+135
+00:06:09,180 --> 00:06:12,280
+ And the post is called when we're receiving a post request.
+
+136
+00:06:12,280 --> 00:06:15,500
+ This alone is one of the nice reasons to do this.
+
+137
+00:06:15,500 --> 00:06:18,920
+ You don't actually have to say, if it's a get do one thing,
+
+138
+00:06:18,920 --> 00:06:20,120
+ if it's a post do another thing.
+
+139
+00:06:20,120 --> 00:06:21,560
+ We just have two methods.
+
+140
+00:06:21,560 --> 00:06:25,360
+ And Django properly routes the requests in.
+
+141
+00:06:25,360 --> 00:06:28,200
+ And so this is gonna be a form post.
+
+142
+00:06:28,200 --> 00:06:32,960
+ So on the get, we just render with no messages.
+
+143
+00:06:32,960 --> 00:06:34,680
+ We render with no messages.
+
+144
+00:06:34,680 --> 00:06:38,060
+ And we have a CSRF token that goes out,
+
+145
+00:06:38,060 --> 00:06:39,800
+ so we just render it.
+
+146
+00:06:39,800 --> 00:06:42,600
+ Then we'll click the button so that this render right here
+
+147
+00:06:42,600 --> 00:06:43,720
+ will produce this page.
+
+148
+00:06:43,720 --> 00:06:47,560
+ Then we type in the guess of 42 and we hit submit query.
+
+149
+00:06:47,560 --> 00:06:50,960
+ And then that bundles it all up including CSRF
+
+150
+00:06:50,960 --> 00:06:52,240
+ and goes to the post.
+
+151
+00:06:52,240 --> 00:06:56,380
+ Now the CSRF, as long as we put it in that template,
+
+152
+00:06:56,380 --> 00:06:58,900
+ we don't have to care because before that post method
+
+153
+00:06:58,900 --> 00:07:01,520
+ gets activated, CSRF has been processed.
+
+154
+00:07:01,520 --> 00:07:04,320
+ And we get a 403 if the CSRF isn't right.
+
+155
+00:07:04,320 --> 00:07:08,880
+ So if we go back up here, you don't put this in,
+
+156
+00:07:08,880 --> 00:07:12,240
+ and you run this code, the CSRF token, you don't put it in,
+
+157
+00:07:12,240 --> 00:07:15,920
+ then it's never gonna make it to the post.
+
+158
+00:07:15,920 --> 00:07:19,000
+ I mean, it blows up in route to the post
+
+159
+00:07:19,000 --> 00:07:20,820
+ if the CSRF doesn't happen.
+
+160
+00:07:20,820 --> 00:07:23,040
+ But we've got CSRF and it's all automatic.
+
+161
+00:07:23,040 --> 00:07:25,420
+ We just throw that one line inside of our form
+
+162
+00:07:25,420 --> 00:07:27,040
+ and that's all we've gotta do.
+
+163
+00:07:27,040 --> 00:07:31,400
+ So we put 42 in, we hit submit query,
+
+164
+00:07:31,400 --> 00:07:33,540
+ pass the CSRF, it comes in.
+
+165
+00:07:33,540 --> 00:07:36,940
+ So we grab the post data, the guess from the post data.
+
+166
+00:07:36,940 --> 00:07:38,760
+ We call my little check message,
+
+167
+00:07:38,760 --> 00:07:40,920
+ check guess that's gonna give me that little message,
+
+168
+00:07:40,920 --> 00:07:42,680
+ whether it's too low, too high,
+
+169
+00:07:42,680 --> 00:07:44,440
+ or some kind of other mistake.
+
+170
+00:07:44,440 --> 00:07:46,600
+ And then I'm gonna pass in a context,
+
+171
+00:07:46,600 --> 00:07:49,840
+ the string message has that string.
+
+172
+00:07:49,840 --> 00:07:52,160
+ And if then we go, do I have it down here?
+
+173
+00:07:52,160 --> 00:07:53,840
+ No, have it up here.
+
+174
+00:07:53,840 --> 00:07:55,140
+ So then the message comes out.
+
+175
+00:07:55,140 --> 00:07:57,840
+ So this, you'll notice I've surrounded this by an if,
+
+176
+00:07:57,840 --> 00:08:00,400
+ so the message is false or not present,
+
+177
+00:08:00,400 --> 00:08:01,880
+ then it doesn't put anything out.
+
+178
+00:08:01,880 --> 00:08:04,280
+ But if it is, it actually puts the message out.
+
+179
+00:08:04,280 --> 00:08:08,560
+ And so out comes the guess.
+
+180
+00:08:08,560 --> 00:08:10,680
+ And so this is what it looks like
+
+181
+00:08:10,680 --> 00:08:13,840
+ when we do a get request, we see this,
+
+182
+00:08:13,840 --> 00:08:16,840
+ then we're gonna see all this stuff,
+
+183
+00:08:16,840 --> 00:08:19,240
+ we're gonna type our number in, we're gonna hit submit query,
+
+184
+00:08:19,240 --> 00:08:22,200
+ and then it's gonna fire up a post request.
+
+185
+00:08:22,200 --> 00:08:24,820
+ And so then it's gonna come back into the post request,
+
+186
+00:08:24,820 --> 00:08:27,740
+ it's gonna get the guess from the post data,
+
+187
+00:08:27,740 --> 00:08:29,080
+ it's gonna check it,
+
+188
+00:08:29,080 --> 00:08:31,160
+ and then it's gonna pass the message in,
+
+189
+00:08:31,160 --> 00:08:33,520
+ and so the message is gonna come out here,
+
+190
+00:08:33,520 --> 00:08:38,280
+ and then we're gonna return that page.
+
+191
+00:08:38,280 --> 00:08:41,920
+ And so you're gonna see something like congratulations 42.
+
+192
+00:08:41,920 --> 00:08:44,360
+ So that took, that was part of the post.
+
+193
+00:08:44,360 --> 00:08:49,240
+ And so we now have made a successful guessing game.
+
+194
+00:08:49,240 --> 00:08:51,100
+ So next we're gonna talk about,
+
+195
+00:08:51,100 --> 00:08:53,640
+ just when we get something working,
+
+196
+00:08:53,640 --> 00:08:56,240
+ there's always something that we have to say,
+
+197
+00:08:56,240 --> 00:08:59,480
+ oh, but there's a little detail that we forgot about.
+
+198
+00:08:59,480 --> 00:09:03,320
+ So up next, we'll talk about post and refresh,
+
+199
+00:09:03,320 --> 00:09:06,360
+ which is a little problem that we're just gonna have to fix.
+
+200
+00:09:06,360 --> 00:09:08,940
+ (upbeat music)
 

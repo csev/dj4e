@@ -1,37 +1,40 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.120
- So now we're going to solve the problem of a post followed
+00:00:00.000 --> 00:00:02.780
+ So now we're going to solve the problem of a post
 
-00:00:03.120 --> 00:00:06.000
- by a refresh, and we're going to use something we've talked
+00:00:02.780 --> 00:00:04.420
+ followed by a refresh.
 
-00:00:06.000 --> 00:00:09.200
- about before, we're going to use a redirect, right?
+00:00:04.420 --> 00:00:06.620
+ And we're going to use something we've talked about before.
 
-00:00:09.200 --> 00:00:13.200
- So the basic rule is, never send HTML as a result
+00:00:06.620 --> 00:00:09.200
+ We're going to use a redirect, right?
 
-00:00:13.200 --> 00:00:14.400
+00:00:09.200 --> 00:00:13.220
+ So the basic rule is never send HTML as a result
+
+00:00:13.220 --> 00:00:14.380
  at the end of a post request.
 
-00:00:14.400 --> 00:00:16.480
+00:00:14.380 --> 00:00:16.480
  In a sense, if you're gonna return something
 
 00:00:16.480 --> 00:00:19.720
  at the end of the post method, return a redirect.
 
-00:00:19.720 --> 00:00:21.080
+00:00:19.720 --> 00:00:21.100
  Don't return HTML.
 
-00:00:21.080 --> 00:00:24.040
- Now, we gotta eventually get them some HTML,
+00:00:21.100 --> 00:00:24.020
+ Now, we gotta eventually get them some HTML.
 
-00:00:24.040 --> 00:00:26.360
- so we redirect to a page that we know,
+00:00:24.020 --> 00:00:26.360
+ So we redirect to a page that we know,
 
 00:00:26.360 --> 00:00:28.780
- and then that will cause a GET request,
+ and then that will cause a get request,
 
 00:00:28.780 --> 00:00:30.600
  and then that page is what we will show.
@@ -48,10 +51,10 @@ WEBVTT
 00:00:38.320 --> 00:00:40.380
  We talk about model view controller, right?
 
-00:00:40.380 --> 00:00:42.440
+00:00:40.380 --> 00:00:42.460
  Controller is, oh, something happened,
 
-00:00:42.440 --> 00:00:44.940
+00:00:42.460 --> 00:00:44.940
  and I'm gonna move the user's browser from here to here.
 
 00:00:44.940 --> 00:00:47.200
@@ -61,87 +64,87 @@ WEBVTT
  in a sense, that's a controller function.
 
 00:00:49.120 --> 00:00:51.960
- So we often do our redirects from the views,
+ So we often do our redirects from the views.
 
-00:00:51.960 --> 00:00:54.480
- or saying here, you're at the end of this view,
+00:00:51.960 --> 00:00:54.500
+ Or we're saying here, you're at the end of this view,
 
-00:00:54.480 --> 00:00:55.700
+00:00:54.500 --> 00:00:55.700
  you know what, I don't actually want
 
-00:00:55.700 --> 00:00:57.080
+00:00:55.700 --> 00:00:57.060
  to show you a page right now.
 
-00:00:57.080 --> 00:00:58.540
+00:00:57.060 --> 00:00:58.540
  I'm gonna send you to another page
 
-00:00:58.540 --> 00:01:00.720
- so that that page you see with a GET request.
+00:00:58.540 --> 00:01:00.780
+ so that that page you see with a get request.
 
-00:01:00.720 --> 00:01:03.680
+00:01:00.780 --> 00:01:03.740
  Now, we often send ourselves back to the exact same page.
 
-00:01:03.680 --> 00:01:06.720
- We take a post on a page, and then we redirect
+00:01:03.740 --> 00:01:05.900
+ We take a post on a page,
 
-00:01:06.720 --> 00:01:09.300
- right back to the same page.
+00:01:05.900 --> 00:01:09.340
+ and then we redirect right back to the same page.
 
-00:01:09.300 --> 00:01:13.620
- So to remember, we got 200 OK, which is a nice page.
+00:01:09.340 --> 00:01:13.660
+ So to remember, we got 200 okay, which is a nice page.
 
-00:01:13.620 --> 00:01:15.600
+00:01:13.660 --> 00:01:15.660
  We got 404 not found.
 
-00:01:15.600 --> 00:01:18.080
+00:01:15.660 --> 00:01:18.140
  We saw 403 not authorized before,
 
-00:01:18.080 --> 00:01:19.600
+00:01:18.140 --> 00:01:19.620
  and 302 is found and moved,
 
-00:01:19.600 --> 00:01:22.280
+00:01:19.620 --> 00:01:22.300
  and we're gonna reuse this redirect capability,
 
-00:01:22.280 --> 00:01:24.680
+00:01:22.300 --> 00:01:24.740
  but we're not gonna do a, like, wild redirect
 
-00:01:24.680 --> 00:01:26.880
+00:01:24.740 --> 00:01:26.900
  to a site completely outside of our site.
 
-00:01:28.000 --> 00:01:30.920
+00:01:28.060 --> 00:01:30.940
  So this is a diagram from Wikipedia
 
-00:01:30.920 --> 00:01:33.720
+00:01:30.940 --> 00:01:33.740
  that's talking about the post redirect,
 
-00:01:33.720 --> 00:01:35.880
- and on the left side, we have the problem
+00:01:33.740 --> 00:01:35.900
+ and on the left side we have the problem
 
-00:01:35.880 --> 00:01:38.080
+00:01:35.900 --> 00:01:38.100
  where the user fills out some kind of a form,
 
-00:01:38.080 --> 00:01:40.980
+00:01:38.100 --> 00:01:40.980
  does a post, changes the data in the server,
 
-00:01:40.980 --> 00:01:43.240
+00:01:40.980 --> 00:01:43.220
  we send back a 200 request,
 
-00:01:43.240 --> 00:01:44.840
+00:01:43.220 --> 00:01:44.860
  says your order was successful,
 
-00:01:44.840 --> 00:01:47.080
+00:01:44.860 --> 00:01:47.100
  and then the user hits the refresh button.
 
-00:01:47.080 --> 00:01:49.640
+00:01:47.100 --> 00:01:49.640
  Now, the key is this only happens if user hits refresh,
 
-00:01:49.640 --> 00:01:52.960
+00:01:49.640 --> 00:01:52.980
  and then the browser asks, are you sure you wanna do that?
 
-00:01:52.960 --> 00:01:55.240
+00:01:52.980 --> 00:01:55.220
  And if you say yes, then it's gonna order twice,
 
-00:01:55.240 --> 00:01:57.520
+00:01:55.220 --> 00:01:57.520
  or deduct the database twice.
 
 00:01:57.520 --> 00:02:02.520
@@ -150,393 +153,402 @@ WEBVTT
 00:02:02.520 --> 00:02:05.060
  click a submit, send a post request,
 
-00:02:05.060 --> 00:02:08.880
+00:02:05.060 --> 00:02:08.900
  do the actual transaction, insert an order, or do whatever,
 
-00:02:08.880 --> 00:02:11.040
+00:02:08.900 --> 00:02:11.020
  and then send a 302 redirect,
 
-00:02:11.040 --> 00:02:13.560
+00:02:11.020 --> 00:02:13.560
  and then the browser instantly goes blink, blink, blink,
 
 00:02:13.560 --> 00:02:15.960
  there's no, you know, the browser instantly turns this
 
-00:02:15.960 --> 00:02:20.560
- into a get, potentially, right back to our same page,
+00:02:15.960 --> 00:02:20.540
+ into a get, potentially right back to our same page,
 
-00:02:20.560 --> 00:02:22.680
- and then we send the page back
+00:02:20.540 --> 00:02:22.980
+ and then we send the page back that says
 
-00:02:22.680 --> 00:02:25.040
- that says your order was successful, or whatever,
+00:02:22.980 --> 00:02:25.060
+ your order was successful, or whatever,
 
-00:02:25.040 --> 00:02:26.560
+00:02:25.060 --> 00:02:26.540
  and then if the user refreshes that,
 
-00:02:26.560 --> 00:02:30.640
+00:02:26.540 --> 00:02:30.660
  it just says over and over, your order was successful, okay.
 
-00:02:30.640 --> 00:02:33.120
+00:02:30.660 --> 00:02:33.140
  Now, one of the things we're gonna also show you
 
-00:02:33.120 --> 00:02:35.800
+00:02:33.140 --> 00:02:35.780
  when we do this is that we might actually have
 
-00:02:35.800 --> 00:02:38.680
+00:02:35.780 --> 00:02:38.660
  some kind of a message in that moment of post,
 
-00:02:38.680 --> 00:02:40.280
+00:02:38.660 --> 00:02:40.340
  'cause that's where we got the post data,
 
-00:02:40.280 --> 00:02:44.200
+00:02:40.340 --> 00:02:44.180
  and then we've gotta pass that to the next request,
 
-00:02:44.200 --> 00:02:45.920
+00:02:44.180 --> 00:02:45.940
  and we're gonna use the session to do that,
 
-00:02:45.920 --> 00:02:47.440
+00:02:45.940 --> 00:02:47.440
  and then the message can come out.
 
-00:02:47.440 --> 00:02:49.800
+00:02:47.440 --> 00:02:49.780
  So this whole your order was successful,
 
-00:02:49.800 --> 00:02:52.960
+00:02:49.780 --> 00:02:52.980
  often it knows the order was successful in the post code,
 
-00:02:52.960 --> 00:02:56.040
+00:02:52.980 --> 00:02:56.020
  so we have to send this to the next request,
 
-00:02:56.040 --> 00:03:00.120
+00:02:56.020 --> 00:03:00.100
  and we use the session to get it from the post request
 
-00:03:00.120 --> 00:03:01.680
+00:03:00.100 --> 00:03:01.660
  to the next get request,
 
-00:03:01.680 --> 00:03:04.400
+00:03:01.660 --> 00:03:04.360
  and that's a technique called flash messages,
 
-00:03:04.400 --> 00:03:07.160
+00:03:04.360 --> 00:03:06.780
  and I'll show a simple way of doing that,
 
-00:03:07.160 --> 00:03:09.400
+00:03:06.780 --> 00:03:09.380
  and then later we'll show a more complex way
 
-00:03:09.400 --> 00:03:11.680
+00:03:09.380 --> 00:03:11.620
  to do this Django style.
 
-00:03:11.680 --> 00:03:15.200
+00:03:11.620 --> 00:03:15.180
  Okay, so here we go.
 
-00:03:15.200 --> 00:03:18.880
+00:03:15.180 --> 00:03:18.820
  This is actually the nice way to do this, right?
 
-00:03:18.880 --> 00:03:22.720
+00:03:18.820 --> 00:03:22.680
  So when we first go to the page,
 
-00:03:22.720 --> 00:03:24.800
+00:03:22.680 --> 00:03:24.780
  we're gonna go do a get request.
 
-00:03:24.800 --> 00:03:27.520
- We're gonna see if there's a message,
+00:03:24.780 --> 00:03:27.460
+ We're going to see if there's a message,
 
-00:03:27.520 --> 00:03:29.160
+00:03:27.460 --> 00:03:29.140
  that's that incoming message,
 
-00:03:29.160 --> 00:03:31.080
+00:03:29.140 --> 00:03:31.020
  but it's the first time, so there is no message,
 
-00:03:31.080 --> 00:03:33.040
+00:03:31.020 --> 00:03:33.020
  we'll talk about that in a second.
 
-00:03:33.040 --> 00:03:35.000
+00:03:33.020 --> 00:03:34.980
  If there is a message, once we've got it,
 
-00:03:35.000 --> 00:03:37.640
+00:03:34.980 --> 00:03:37.620
  we're gonna delete it from the session,
 
-00:03:37.640 --> 00:03:41.400
+00:03:37.620 --> 00:03:41.380
  and then we're just going to send the guest.html
 
-00:03:41.400 --> 00:03:44.880
+00:03:41.380 --> 00:03:44.860
  with the message, but the first time to message is false,
 
-00:03:44.880 --> 00:03:47.280
+00:03:44.860 --> 00:03:47.260
  so you'll see no message, right?
 
-00:03:47.280 --> 00:03:49.280
+00:03:47.260 --> 00:03:49.220
  So the first time through in a get request,
 
-00:03:49.280 --> 00:03:52.600
+00:03:49.220 --> 00:03:52.580
  it runs this template, there is no message,
 
-00:03:52.600 --> 00:03:55.680
- and then the CSRF token is there, and so we get to see
+00:03:52.580 --> 00:03:54.260
+ and then the CSRF token is there,
 
-00:03:55.680 --> 00:03:57.920
- that as our get request, okay?
+00:03:54.260 --> 00:03:57.960
+ and so we get to see that as our get request, okay?
 
-00:03:57.920 --> 00:04:03.640
- So that is the get request, so we then put in our guest,
+00:03:57.960 --> 00:04:00.820
+ So that is the get request,
 
-00:04:03.640 --> 00:04:05.320
+00:04:00.820 --> 00:04:03.620
+ so we then put in our guest,
+
+00:04:03.620 --> 00:04:05.300
  and then we press the submit button.
 
-00:04:05.320 --> 00:04:07.240
- That gathers all that data up,
+00:04:05.300 --> 00:04:07.260
+ That gathers all that data up
 
-00:04:07.240 --> 00:04:10.240
+00:04:07.260 --> 00:04:10.240
  and sends a post to the browser.
 
-00:04:10.240 --> 00:04:15.600
+00:04:10.240 --> 00:04:15.580
  And so that post will end up, after CSRF checking,
 
-00:04:15.600 --> 00:04:17.960
+00:04:15.580 --> 00:04:17.960
  will come here, because it's a post.
 
-00:04:17.960 --> 00:04:22.520
- And so what we're going to do is we're going to grab
+00:04:17.960 --> 00:04:21.160
+ And so what we're going to do
 
-00:04:22.520 --> 00:04:26.400
- the guest, which now is coming from the post data,
+00:04:21.160 --> 00:04:23.740
+ is we're going to grab the guest,
 
-00:04:26.400 --> 00:04:29.040
+00:04:23.740 --> 00:04:26.420
+ which now is coming from the post data,
+
+00:04:26.420 --> 00:04:29.060
  we're gonna check it, and message is just a message
 
-00:04:29.040 --> 00:04:31.040
- of too high, too low, et cetera.
+00:04:29.060 --> 00:04:31.020
+ of too high, too low, et cetera,
 
-00:04:31.040 --> 00:04:33.640
- And now, instead of rendering, which is what we did before,
+00:04:31.020 --> 00:04:32.520
+ and now instead of rendering,
 
-00:04:33.640 --> 00:04:36.880
- we rendered right here, we're actually just gonna set that
+00:04:32.520 --> 00:04:35.100
+ which is what we did before we rendered right here,
 
-00:04:36.880 --> 00:04:40.440
- into the session under message, we're gonna store it,
+00:04:35.100 --> 00:04:38.340
+ we're actually just gonna set that into the session
 
-00:04:40.440 --> 00:04:42.080
+00:04:38.340 --> 00:04:40.440
+ under message, we're gonna store it,
+
+00:04:40.440 --> 00:04:42.060
  and then we're gonna send a redirect,
 
-00:04:42.080 --> 00:04:45.800
+00:04:42.060 --> 00:04:45.780
  and we're gonna send a redirect to request.path,
 
-00:04:45.800 --> 00:04:47.760
+00:04:45.780 --> 00:04:47.780
  which means that we're actually telling the browser
 
-00:04:47.760 --> 00:04:50.080
+00:04:47.780 --> 00:04:50.060
  to do a get request right back to us,
 
-00:04:50.080 --> 00:04:51.760
+00:04:50.060 --> 00:04:51.740
  which means it's gonna come in here,
 
-00:04:51.760 --> 00:04:53.160
+00:04:51.740 --> 00:04:53.180
  then it's gonna read the message,
 
-00:04:53.160 --> 00:04:56.040
+00:04:53.180 --> 00:04:56.020
  and then the message is gonna come out here.
 
-00:04:56.040 --> 00:04:57.200
+00:04:56.020 --> 00:04:57.180
  Okay?
 
-00:04:57.200 --> 00:04:58.680
+00:04:57.180 --> 00:04:58.660
  So that's how the post happens.
 
-00:04:58.680 --> 00:05:00.080
+00:04:58.660 --> 00:05:00.060
  Let's go through that again.
 
-00:05:00.080 --> 00:05:04.640
+00:05:00.060 --> 00:05:04.620
  We get the post, we grab the guest, we check the guest,
 
-00:05:04.640 --> 00:05:08.280
+00:05:04.620 --> 00:05:08.300
  and we store our response to the guest in the session,
 
-00:05:08.280 --> 00:05:10.520
+00:05:08.300 --> 00:05:10.540
  and then we redirect back to ourselves,
 
-00:05:10.520 --> 00:05:11.960
- which comes into the get.
+00:05:10.540 --> 00:05:11.960
+ which comes into the get,
 
-00:05:11.960 --> 00:05:14.120
- We pull the message out of the session,
+00:05:11.960 --> 00:05:14.140
+ we pull the message out of the session,
 
-00:05:14.120 --> 00:05:16.080
+00:05:14.140 --> 00:05:16.100
  we delete the message from the session,
 
-00:05:16.080 --> 00:05:18.000
+00:05:16.100 --> 00:05:18.020
  and then we actually render the page.
 
-00:05:18.000 --> 00:05:19.920
+00:05:18.020 --> 00:05:19.900
  So you get the original get request,
 
-00:05:19.920 --> 00:05:22.960
+00:05:19.900 --> 00:05:23.800
  you type in your guest, hit the submit button,
 
-00:05:22.960 --> 00:05:28.800
- went to the URL awesome, but it came back with a 302,
+00:05:23.800 --> 00:05:26.260
+ went to the URL awesome,
 
-00:05:28.800 --> 00:05:31.760
- not with a 200, and with a location that says
+00:05:26.260 --> 00:05:30.480
+ but it came back with a 302, not with a 200,
 
-00:05:31.760 --> 00:05:33.720
- go back to get post awesome.
+00:05:30.480 --> 00:05:33.700
+ and with a location that says go back to get post awesome.
 
-00:05:33.720 --> 00:05:35.880
+00:05:33.700 --> 00:05:35.860
  So that's the same URL that we posted to,
 
-00:05:35.880 --> 00:05:37.560
+00:05:35.860 --> 00:05:37.580
  we posted to the URL.
 
-00:05:37.560 --> 00:05:40.640
+00:05:37.580 --> 00:05:40.620
  And if we look underneath the response,
 
-00:05:40.640 --> 00:05:43.040
+00:05:40.620 --> 00:05:43.060
  we'll find that that's empty, okay?
 
-00:05:43.040 --> 00:05:46.920
+00:05:43.060 --> 00:05:46.900
  So on the post request, there is nothing in the response,
 
-00:05:46.920 --> 00:05:49.440
+00:05:46.900 --> 00:05:49.440
  there is no page, because what we're seeing here
 
-00:05:49.440 --> 00:05:52.360
+00:05:49.440 --> 00:05:52.340
  is the result of this get request, okay?
 
-00:05:52.360 --> 00:05:56.000
- So what happens is that the browser sees the 302,
+00:05:52.340 --> 00:05:56.020
+ So what happens is is that the browser sees the 302,
 
-00:05:56.000 --> 00:05:58.560
+00:05:56.020 --> 00:05:58.540
  sees the location, and immediately turns around
 
-00:05:58.560 --> 00:05:59.920
+00:05:58.540 --> 00:05:59.900
  and does a get request.
 
-00:05:59.920 --> 00:06:03.680
+00:05:59.900 --> 00:06:03.660
  And then that get request has this page,
 
-00:06:03.680 --> 00:06:05.120
+00:06:03.660 --> 00:06:05.100
  and then it's gonna get a favicon,
 
-00:06:05.120 --> 00:06:07.480
+00:06:05.100 --> 00:06:07.500
  which is just another get request.
 
-00:06:07.480 --> 00:06:09.000
+00:06:07.500 --> 00:06:09.020
  And so this is the get after the redirect,
 
-00:06:09.000 --> 00:06:11.440
+00:06:09.020 --> 00:06:11.460
  and we can see the data that's associated with it,
 
-00:06:11.440 --> 00:06:14.520
+00:06:11.460 --> 00:06:14.500
  and it's got, this one actually has a real response,
 
-00:06:14.520 --> 00:06:17.120
+00:06:14.500 --> 00:06:17.100
  it's a real 200, and then we have the real page,
 
-00:06:17.120 --> 00:06:19.360
- and that renders it, and then it grabs the favicon,
+00:06:17.100 --> 00:06:19.500
+ and that renders it, and then it grabs the favicon
 
-00:06:19.360 --> 00:06:23.520
+00:06:19.500 --> 00:06:23.540
  just so that it can put a nice cute little favicon up there.
 
-00:06:23.520 --> 00:06:27.720
+00:06:23.540 --> 00:06:27.740
  Now, if we hit refresh, so we sit on this page,
 
-00:06:27.720 --> 00:06:31.320
+00:06:27.740 --> 00:06:31.360
  and we hit the refresh, then what'll happen
 
-00:06:31.320 --> 00:06:34.240
+00:06:31.360 --> 00:06:34.260
  is it'll rerun the most recent thing,
 
-00:06:34.240 --> 00:06:37.000
+00:06:34.260 --> 00:06:37.020
  and the most recent thing that we got was this get request,
 
-00:06:37.000 --> 00:06:39.000
+00:06:37.020 --> 00:06:39.020
  which means it does another get request.
 
-00:06:39.000 --> 00:06:40.840
+00:06:39.020 --> 00:06:40.900
  Whereas before, it was redoing the post request,
 
-00:06:40.840 --> 00:06:42.280
+00:06:40.900 --> 00:06:42.340
  and that's why it was complaining.
 
-00:06:42.280 --> 00:06:44.840
+00:06:42.340 --> 00:06:44.860
  So you get no message, you get no problem,
 
-00:06:44.840 --> 00:06:46.200
+00:06:44.860 --> 00:06:46.220
  you get absolutely nothing.
 
-00:06:46.200 --> 00:06:48.520
+00:06:46.220 --> 00:06:48.500
  So it's actually really quite pretty.
 
-00:06:48.520 --> 00:06:51.320
+00:06:48.500 --> 00:06:51.280
  So here is the pretty little way of doing it.
 
-00:06:51.320 --> 00:06:55.280
+00:06:51.280 --> 00:06:55.260
  And the simple rule is, the first rule is,
 
-00:06:55.280 --> 00:06:59.040
+00:06:55.260 --> 00:06:59.020
  at the bottom of a post method, you should be redirecting.
 
-00:06:59.040 --> 00:07:02.240
+00:06:59.020 --> 00:07:02.260
  If you're sending a screen back at the bottom
 
-00:07:02.240 --> 00:07:04.960
+00:07:02.260 --> 00:07:04.920
  of a post message after the data's been handled,
 
-00:07:04.960 --> 00:07:06.600
+00:07:04.920 --> 00:07:06.580
  then it's a mistake.
 
-00:07:06.600 --> 00:07:08.640
- So the steps are, we go to the page,
+00:07:06.580 --> 00:07:09.500
+ So the steps are we go to the page, we do a get request,
 
-00:07:08.640 --> 00:07:10.360
- we do a get request, there is no message,
+00:07:09.500 --> 00:07:11.460
+ there is no message, so we get sort of the page
 
-00:07:10.360 --> 00:07:12.720
- so we get sort of the page with no message.
+00:07:11.460 --> 00:07:13.980
+ with no message, then we do a post request,
 
-00:07:12.720 --> 00:07:15.520
- Then we do a post request, the post request comes in,
+00:07:13.980 --> 00:07:16.780
+ the post request comes in, we check the guest,
 
-00:07:15.520 --> 00:07:18.280
- we check the guests, we put the message in the session,
+00:07:16.780 --> 00:07:19.460
+ we put the message in the session, and then we redirect,
 
-00:07:18.280 --> 00:07:20.120
- and then we redirect, and then it comes back
+00:07:19.460 --> 00:07:21.620
+ and then it comes back to a second get,
 
-00:07:20.120 --> 00:07:23.720
- to a second get, pulls the message out of the session,
+00:07:21.620 --> 00:07:23.780
+ pulls the message out of the session,
 
-00:07:23.720 --> 00:07:25.880
+00:07:23.780 --> 00:07:25.920
  deletes the message from the session,
 
-00:07:25.880 --> 00:07:28.840
+00:07:25.920 --> 00:07:28.860
  and then renders it with the message and everything.
 
-00:07:28.840 --> 00:07:33.040
+00:07:28.860 --> 00:07:33.100
  And that's called flash message, flash message pattern,
 
-00:07:33.040 --> 00:07:35.960
+00:07:33.100 --> 00:07:36.000
  in particular because we're deleting it
 
-00:07:35.960 --> 00:07:37.640
+00:07:36.000 --> 00:07:37.660
  after we've shown it to the user.
 
-00:07:37.640 --> 00:07:42.480
+00:07:37.660 --> 00:07:42.500
  So next we're gonna switch to how Django actually
 
-00:07:42.480 --> 00:07:46.280
- has forms.py and makes it easy to construct forms.
+00:07:42.500 --> 00:07:46.340
+ has forms.py and makes it easy to construct forms,
 
-00:07:46.280 --> 00:07:48.800
- So we're not gonna be writing a bunch of input tags,
+00:07:46.340 --> 00:07:48.820
+ so we're not gonna be writing a bunch of input tags,
 
-00:07:48.800 --> 00:07:51.720
+00:07:48.820 --> 00:07:51.740
  or option tags, or select tags.
 
-00:07:51.720 --> 00:07:53.820
+00:07:51.740 --> 00:07:53.860
  Django makes this a lot easier for us.
 
-00:07:53.820 --> 00:07:56.400
+00:07:53.860 --> 00:07:56.440
  (upbeat music)
 

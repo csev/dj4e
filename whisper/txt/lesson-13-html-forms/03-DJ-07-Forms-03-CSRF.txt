@@ -1,24 +1,33 @@
- Now that we've talked about forms a bit, I want to talk a little bit about security in forms.
- I want to talk about a security issue called cross-site request forgery, or CSRF.
+ Now that we've talked about forms a bit,
+ I want to talk a little bit about security in forms.
+ I want to talk about a security issue
+ called Cross Site Request Forgery, or CSRF.
  So the idea of a CSRF attack is that a rogue site,
- it has to do with cookies and how cookies get sent to sites.
+ it has to do with cookies and how cookies get sent to site.
  So let's say you're logged into a MySite,
  and a rogue site generates a page that's going to post.
- And on every form, you can post to a site other than the one it came from.
- And so if I can get data that I want to send to the legitimate server,
- the rogue site can set up a post, and then if I can convince you to hit the button,
- then it will grab the cookie and send it to the legitimate server that you're already logged into,
+ And on every form, you can post to a site
+ other than the one it came from.
+ And so if I can get data that I want to send
+ to the legitimate server, the rogue site can set up a post,
+ and then if I can mention you to hit the button,
+ then it will grab the cookie and send it
+ to the legitimate server that you're already logged into,
  and perhaps do something dangerous.
- And so the rogue server doesn't need to know the cookie.
- The rogue server just needs to convince you to click on a rogue form to send to the request server.
- So the defense for CSRF is to, don't be confused with session.
- It is going to use session.
+ And so the rogue server doesn't need to know the cookie,
+ the rogue server just needs to convince you
+ to click on a rogue form to send to the request server.
+ So the defense for CSRF is don't be confused with Session.
+ It is going to use Session.
  We're going to grab another large random number,
- and we're going to call it the CSRF token, and we're going to stick that in the session.
- And then what we do is every time we send a form out that's coming from our server,
- we add a little input hidden tag that has this CSRF token.
- And then when the post comes in, we check the CSRF token that's coming in and the post data,
- and then we check it against the one that's in the session,
+ and we're going to call it the CSRF token,
+ and we're going to stick that in the Session.
+ And then what we do is every time we send a form out
+ that's coming from our server,
+ we add a little input hidden tag that has this CSRF token,
+ and then when the post comes in,
+ we check the CSRF token that's coming in in the post data,
+ and then we check it against the one that's in the Session,
  and then rejects it if it doesn't match.
  So here's a picture of how this works, right?
  So we'll have a legitimate server, right?
@@ -26,64 +35,79 @@
  and it's going to post back to this same server.
  The action is the URL to send the post data to,
  and we got some key value pairs and a submit button, right?
- So you hit the submit button, and it's going to come back to the server.
- Now, one of the things that the browser is supposed to do is pull the cookies
- for that server and send it.
+ So you hit the submit button,
+ and it's going to come back to the server.
+ Now one of the things that the browser is supposed to do
+ is pull the cookies for that server and send it.
  So it sends it both a post and the data,
- but it also sends the session ID cookie.
- And then what happens is is that the Django gets its hands on it,
- it looks up the session ID, pulls it in,
- and notices that it's CSEV and I've been logged as an instructor,
- and then I can actually change this grade and set the grade, and it works.
- Okay, now, here is what happens when you get to a CSRF attack.
- So somehow a page gets sent to the server, right, sent from a rogue server,
- and it just has this form, method equals post, action equals DJ.
+ but it also sends the Session ID cookie.
+ And then what happens is that the Django gets its hands on it,
+ it looks up the Session ID, pulls it in,
+ and notices that it's CSEV and I've been logged
+ as an instructor, and then I can actually change this grade
+ and set the grade, and it works.
+ Okay, now here is what happens when you get to a CSRF attack.
+ So somehow a page gets sent to the server, right?
+ Sent from a rogue server, and it just has this form.
+ Method equals post, action equals DJ.
  It's not the action, it's going to a different place.
  And it puts sort of a new grade and then a submit.
- So what happens is is this submit comes in,
- and the browser dutifully appends the cookie to it, and it sends it.
- Now, you had to be tricked into getting to this page and
- sometimes tricked into submitting the page.
- But once the post comes in, it has legit cookie in it.
- The cookie is used to look up the session and re-associate it.
- And we can check in the session that the user is indeed logged in, and
- we'll let the thing set the grade to 1.0.
- So this would be a way if you could convince a logged in instructor
- to run a post form that you created, you could basically change your grades.
- So that's how it works.
- That's how a CSRF attack.
- You have to be tricked twice first.
- But there's ways in JavaScript to make it so
- it's hardly noticeable that you get tricked.
- So if you do this with CSRF, the legit server basically adds another value,
- not the session ID, but another value in the session,
- which is a large randomly chosen number.
- And then when a page comes out, it's a legit page, and
- it uses a type hidden variable and puts the CSRF value in.
- Now you hit the submit button, and the CSRF is coming in as post data.
- The regular data, the grade data is coming in, and
- the browser dutifully appends the session.
- And so then using the session cookie, it re-associates the session.
- It says, yep, you're C7, you're the instructor, and the CSRF works.
- CSRF matches, so let's go ahead and let you set the grade.
+ So what happens is this submit comes in,
+ and the browser dutifully appends the cookie to it,
+ and it sends it.
+ Now you had to be tricked into getting to this page
+ and sometimes tricked into submitting the page,
+ but once the post comes in, it has legit cookie in it.
+ The cookie is used to look up the Session and reassociate it,
+ and we can check in the Session
+ that the user is indeed logged in,
+ and we'll let the thing set the grade to 1.0.
+ So this would be a way if you could convince
+ a logged in instructor to run a post form that you created,
+ you could basically change your grades.
+ So that's how it works, that's how a CSRF attack.
+ You have to be tricked twice first,
+ but there's ways in JavaScript to make it
+ so it's hardly noticeable that you get tricked.
+ So if you do this with CSRF, the legit server
+ basically adds another value, not the Session ID,
+ but another value in the Session,
+ which is a large randomly chosen number,
+ and then when a page comes out, it's a legit page,
+ and it uses a type hidden variable
+ and puts the CSRF value in.
+ Now you hit the Submit button,
+ and the CSRF is coming in as post data,
+ the regular data, the grade data is coming in,
+ and the browser dutifully appends the Session,
+ and so then using the Session cookie,
+ it reassociates the Session, says,
+ "Yup, you're C7, you're the instructor,
+ "and the CSRF works, CSRF matches,
+ "so let's go ahead and let you set the grade."
  So we let them in.
- With the attack blocked, because the rogue server can generate a page, but
- it doesn't know what the CSRF is, so who knows what the CSRF is?
- So it generates it, maybe it can put a CSRF, but it doesn't know it.
- So then the post happens, and all the data gets gathered up, and so
- it sends the CSRF, but it's not the right CSRF.
- The session ID is sent in, and so the session is pulled in.
- We know it's user C7, we know it's instructor, but we're gonna check to see
- if the CSRF matches, and then it blows up.
- And so then you just refuse the post, probably log the user out, and
- then log some kind of a security error.
- So the idea is, is by having this little CSRF number in the session,
- we can then take care of that.
- So like most things, Django comes out of the box with CSRF protection built in.
- Just like the session, we've got CSRF middleware just dropped in, and
- actually it works automatically, you don't even have to ask for it to work.
- Once you have a session, it starts putting out CSRF things.
- So up next, we'll talk about, now that we know the concept of CSRF,
- we'll talk about how we're going to use CSRF inside of forms to implement
- sort of CSRF protection.
- [MUSIC]
+ With the attack blocked, because the rogue server
+ can generate a page, but it doesn't know what the CSRF is,
+ so who knows what the CSRF is, so it generates it,
+ maybe it can put a CSRF, but it doesn't know it,
+ so then the post happens, and all the data gets gathered up,
+ and so it sends the CSRF, but it's not the right CSRF,
+ the Session ID is sent in, and so the Session is pulled in,
+ we know it's user C7, we know it's instructor,
+ but we're gonna check to see if the CSRF matches,
+ and then it blows up, and so then you just refuse the post,
+ probably log the user out,
+ and then log some kind of a security error.
+ So the idea is, is by having this little CSRF number
+ in the Session, we can then take care of that.
+ So, like most things, Django comes out of the box
+ with CSRF protection built in, just like the Session,
+ we've got CSRF middleware just dropped in,
+ and actually it works automatically,
+ you don't even have to ask for it to work.
+ Once you have a Session, it starts putting out CSRF things.
+ So up next, we'll talk about,
+ now that we know the concept of CSRF,
+ we'll talk about how we're going to use CSRF
+ inside of forms to implement sort of CSRF protection.
+ (jazz music)

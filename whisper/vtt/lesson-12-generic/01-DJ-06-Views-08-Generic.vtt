@@ -1,773 +1,1040 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.220
- We're on to our last mini lecture about views and it's a big one, it's about generic views.
+00:00:00.000 --> 00:00:02.300
+ We're on to our last mini lecture about views,
 
-00:00:04.220 --> 00:00:09.760
- It's a really big lecture so that we end up with little tiny views with one line of code.
+00:00:02.300 --> 00:00:04.200
+ and it's a big one, it's about generic views.
 
-00:00:09.760 --> 00:00:15.360
- So I've been building up views and we've talked about inheritance with the templates and
+00:00:04.200 --> 00:00:07.040
+ It's a really big lecture so that we end up
 
-00:00:15.360 --> 00:00:17.520
- now we're going to talk about inheritance and views.
+00:00:07.040 --> 00:00:09.760
+ with little tiny views with one line of code.
 
-00:00:17.520 --> 00:00:20.840
+00:00:09.760 --> 00:00:11.620
+ So I've been building up views,
+
+00:00:11.620 --> 00:00:15.240
+ and we've talked about inheritance with the templates,
+
+00:00:15.240 --> 00:00:17.540
+ and now we're gonna talk about inheritance and views.
+
+00:00:17.540 --> 00:00:20.860
  And we've been inheriting all along with views.
 
-00:00:20.840 --> 00:00:24.640
- So here we are in the views.py, this whole thing,
+00:00:20.860 --> 00:00:23.460
+ So here we are in the views dot py.
 
-00:00:24.640 --> 00:00:30.760
- these particular kinds of views, we define them in views.py.
+00:00:23.460 --> 00:00:28.180
+ This whole thing, these particular kinds of views,
 
-00:00:30.760 --> 00:00:34.640
- But they're very informed by the content of model.py.
+00:00:28.180 --> 00:00:30.780
+ we define them in views dot py,
 
-00:00:34.640 --> 00:00:39.600
- Which means that views are constructed automatically
+00:00:30.780 --> 00:00:34.640
+ but they're very informed by the content of model dot py,
 
-00:00:39.600 --> 00:00:41.800
- just looking at the data in the models.py.
+00:00:34.640 --> 00:00:39.580
+ which means that views are constructed automatically
 
-00:00:41.800 --> 00:00:45.560
+00:00:39.580 --> 00:00:41.840
+ just looking at the data in the models dot py.
+
+00:00:41.840 --> 00:00:45.540
  So it's again sort of the logic of don't repeat yourself.
 
-00:00:45.560 --> 00:00:50.600
- If you have a thing in models.py, you've defined exactly what the fields are.
+00:00:45.540 --> 00:00:48.260
+ If you have a thing in models dot py,
 
-00:00:50.600 --> 00:00:54.800
- And things like what the help text is for this field and what the description for
+00:00:48.260 --> 00:00:50.580
+ you've defined exactly what the fields are,
 
-00:00:54.800 --> 00:00:59.320
- the field is, that has nothing to do with the database but it can inform the views.
+00:00:50.580 --> 00:00:53.500
+ and things like what the help text is for this field,
 
-00:00:59.320 --> 00:01:04.160
- And so it's just a way for, you'll see how it all fits together nicely.
+00:00:53.500 --> 00:00:55.560
+ and what the description for the field is,
 
-00:01:04.160 --> 00:01:08.400
- But sometimes when we use these super awesome techniques we end up with a little
+00:00:55.560 --> 00:00:57.460
+ that has nothing to do with the database,
 
-00:01:08.400 --> 00:01:13.000
- tiny bit of code and it's really important to deeply understand that tiny bit of code.
+00:00:57.460 --> 00:00:59.300
+ but it can inform the views.
 
-00:01:13.000 --> 00:01:17.400
- Because you can sort of just fade away and not realize what's going on.
+00:00:59.300 --> 00:01:01.620
+ And so it's just a way for,
 
-00:01:17.400 --> 00:01:21.640
- Because this code is so cleverly reusing a ton of other code and
+00:01:01.620 --> 00:01:04.140
+ you'll see how it all fits together nicely,
 
-00:01:21.640 --> 00:01:23.880
- pulling stuff in from other places.
+00:01:04.140 --> 00:01:07.900
+ but sometimes when we use these super awesome techniques,
 
-00:01:23.880 --> 00:01:29.140
- So if you go all the way back to, we talked about SQL,
+00:01:07.900 --> 00:01:09.220
+ we end up with a little tiny bit of code,
 
-00:01:29.140 --> 00:01:34.000
- the four basic operations are put data in a database, get data out of a database,
+00:01:09.220 --> 00:01:11.460
+ and it's really important to deeply understand
 
-00:01:34.000 --> 00:01:35.880
+00:01:11.460 --> 00:01:12.980
+ that tiny bit of code,
+
+00:01:12.980 --> 00:01:15.540
+ because you can sort of just fade away
+
+00:01:15.540 --> 00:01:17.380
+ and not realize what's going on,
+
+00:01:17.380 --> 00:01:21.480
+ because this code is so cleverly reusing a ton of other code
+
+00:01:21.480 --> 00:01:24.120
+ and pulling stuff in from other places.
+
+00:01:25.700 --> 00:01:29.140
+ So if you go all the way back to we talked about SQL,
+
+00:01:29.140 --> 00:01:32.340
+ the four basic operations are put data in a database,
+
+00:01:32.340 --> 00:01:34.000
+ get data out of a database,
+
+00:01:34.000 --> 00:01:35.860
  delete that data, or update that data.
 
-00:01:35.880 --> 00:01:39.880
+00:01:35.860 --> 00:01:39.820
  Crud, create, read, update, and delete.
 
-00:01:39.880 --> 00:01:44.680
- And we're gonna build a bunch of things, whether they're add things,
+00:01:39.820 --> 00:01:42.600
+ And we're gonna build a bunch of things,
 
-00:01:44.680 --> 00:01:48.280
- they're auto things, where we gotta insert an auto, update an auto,
+00:01:42.600 --> 00:01:45.780
+ whether they're ads, add things, or auto things,
 
-00:01:48.280 --> 00:01:52.760
- delete an auto, list all the autos, insert a cat, delete a cat,
+00:01:45.780 --> 00:01:47.540
+ where we gotta insert an auto,
 
-00:01:52.760 --> 00:01:54.960
+00:01:47.540 --> 00:01:50.180
+ update an auto, delete an auto, list all the autos,
+
+00:01:50.180 --> 00:01:52.740
+ insert a cat, delete a cat,
+
+00:01:52.740 --> 00:01:54.780
  list all the cats, update a cat, right?
 
-00:01:54.960 --> 00:01:59.120
- And so we have a bunch of user interfaces that we're gonna build over and
+00:01:54.780 --> 00:01:57.460
+ And so we have a bunch of user interfaces
 
-00:01:59.120 --> 00:02:00.080
- over and over again.
+00:01:57.460 --> 00:01:59.900
+ that we're gonna build over and over and over again,
 
-00:02:00.080 --> 00:02:04.480
- And as you build your own projects, you'll probably have four or five tables and
+00:01:59.900 --> 00:02:01.820
+ and as you build your own projects,
 
-00:02:04.480 --> 00:02:07.560
- then little crud user interfaces for each of the tables.
+00:02:01.820 --> 00:02:04.340
+ you'll probably have four or five tables,
 
-00:02:07.560 --> 00:02:09.320
- And sometimes you make them a little different and
+00:02:04.340 --> 00:02:07.540
+ and then little crud user interfaces for each of the tables.
 
-00:02:09.320 --> 00:02:11.760
- there's pretty stuff on them and they're customized.
+00:02:07.540 --> 00:02:09.260
+ And sometimes you make them a little different,
 
-00:02:11.760 --> 00:02:17.120
- But surprisingly often, these things just look the same and
+00:02:09.260 --> 00:02:11.760
+ and there's pretty stuff on them, and they're customized,
 
-00:02:17.120 --> 00:02:19.080
- we end up repeating ourselves,
+00:02:11.760 --> 00:02:16.760
+ but surprisingly often, these things just look the same,
 
-00:02:19.080 --> 00:02:23.620
+00:02:16.760 --> 00:02:19.100
+ and we end up repeating ourselves,
+
+00:02:19.100 --> 00:02:23.560
  which is something we don't wanna do as software developers.
 
-00:02:23.620 --> 00:02:27.760
+00:02:23.560 --> 00:02:27.780
  So here is a simple crud application.
 
-00:02:27.760 --> 00:02:31.840
+00:02:27.780 --> 00:02:30.360
  It's the cur, create, and read.
 
-00:02:31.840 --> 00:02:37.960
- No, actually, this one here is only read and detail.
+00:02:30.360 --> 00:02:38.020
+ Or no, actually, this one here is only read and detail.
 
-00:02:37.960 --> 00:02:40.760
- So we have a list of cats and then you click on the cat list and
+00:02:38.020 --> 00:02:40.640
+ So we have a list of cats, and then you click on the cat list,
 
-00:02:40.760 --> 00:02:45.480
- then you see the data for a particular cat and then a link back to the list.
+00:02:40.640 --> 00:02:43.180
+ and then you see the data for a particular cat,
 
-00:02:45.480 --> 00:02:50.200
- So this is like a detail page, but we're gonna do a lot more than that.
+00:02:43.180 --> 00:02:45.460
+ and then a link back to the list.
 
-00:02:50.200 --> 00:02:54.800
- But I just wanna show you how these generic views work by keeping
+00:02:45.460 --> 00:02:48.760
+ So this is like a detail page.
 
-00:02:54.800 --> 00:02:56.480
- things very, very simple.
+00:02:48.760 --> 00:02:50.180
+ But we're gonna do a lot more than that,
 
-00:02:56.480 --> 00:03:01.200
- So we're gonna talk about a generic view in the list in the detail,
+00:02:50.180 --> 00:02:52.760
+ but I just wanna show you how these generic views,
 
-00:03:01.200 --> 00:03:03.920
+00:02:52.760 --> 00:02:56.500
+ work by keeping things very, very simple.
+
+00:02:56.500 --> 00:03:00.040
+ So we're gonna talk about a generic view
+
+00:03:00.040 --> 00:03:01.220
+ in the list and the detail,
+
+00:03:01.220 --> 00:03:03.860
  which are two of several generic views.
 
-00:03:03.920 --> 00:03:09.920
- So this is our gview application, and here's the urls.py.
+00:03:03.860 --> 00:03:06.860
+ So this is our gview application,
+
+00:03:06.860 --> 00:03:09.920
+ and here's the urls.py.
 
 00:03:09.920 --> 00:03:14.620
  In this gview, it has a list of cats, an individual cat,
 
-00:03:14.620 --> 00:03:15.960
- a list of dogs, an individual dog.
+00:03:14.620 --> 00:03:15.980
+ a list of dogs, an individual dog,
 
-00:03:15.960 --> 00:03:18.600
- And so you see this sort of repetition.
+00:03:15.980 --> 00:03:18.540
+ and so you see this sort of repetition.
 
-00:03:18.600 --> 00:03:21.320
- And I'm putting so many of these in here because I'm gonna show you sort of
+00:03:18.540 --> 00:03:20.300
+ And I'm putting so many of these in here,
 
-00:03:21.320 --> 00:03:24.520
- different approaches to implement them using less and
+00:03:20.300 --> 00:03:22.120
+ because I'm gonna show you sort of different approaches
 
-00:03:24.520 --> 00:03:26.680
- more detail and less and more inheritance.
+00:03:22.120 --> 00:03:25.260
+ to implement them using less and more detail
 
-00:03:26.680 --> 00:03:28.840
- So they're all kind of the same.
+00:03:25.260 --> 00:03:26.760
+ and less and more inheritance.
 
-00:03:28.840 --> 00:03:34.360
- I give them a name, some have integer primary keys, and away you go.
+00:03:26.760 --> 00:03:31.000
+ So they're all kind of the same, I give them a name.
 
-00:03:34.360 --> 00:03:37.360
- And so here is the cat list.
+00:03:31.000 --> 00:03:35.540
+ Some have integer primary keys, and away you go.
 
-00:03:37.360 --> 00:03:39.440
- I'm gonna start with a template.
+00:03:35.540 --> 00:03:39.460
+ And so here is the cat list, I'm gonna start with a template.
 
-00:03:39.440 --> 00:03:43.800
- So we're going to expect in the cat list template that there is a context variable
+00:03:39.460 --> 00:03:42.120
+ So we're going to expect in the cat list template
 
-00:03:43.800 --> 00:03:49.560
- called cat_list, and that is a list of cat objects.
+00:03:42.120 --> 00:03:46.520
+ that there is a context variable called cat_list,
 
-00:03:49.560 --> 00:03:52.520
+00:03:46.520 --> 00:03:49.600
+ and that is a list of cat objects.
+
+00:03:49.600 --> 00:03:52.600
  And then we are going to iterate through the cat list,
 
-00:03:52.520 --> 00:03:57.520
- however many cats there are, with inside of a list and generate an li tag.
+00:03:52.600 --> 00:03:54.320
+ however many cats there are,
 
-00:03:57.520 --> 00:04:02.560
- And then create a link URL, and then pull out the name of the cat.
+00:03:54.320 --> 00:03:57.620
+ with inside of a list and generate an li tag,
 
-00:04:02.560 --> 00:04:06.440
- So the cat has name, and the cat has a primary key.
+00:03:57.620 --> 00:04:00.580
+ and then create a link url,
 
-00:04:06.440 --> 00:04:11.160
- And so we are going to generate a link to the cat Sophie, and
+00:04:00.580 --> 00:04:02.740
+ and then pull out the name of the cat.
 
-00:04:11.160 --> 00:04:16.760
- underneath that link is the link to /cat/12, whatever that number is.
+00:04:02.740 --> 00:04:06.500
+ So the cat has a name, and the cat has a primary key,
 
-00:04:16.760 --> 00:04:20.720
- And if the cat list is empty, we're gonna say there are no cats in the database.
+00:04:06.500 --> 00:04:10.880
+ and so we are going to generate a link to the cat Sophie,
 
-00:04:20.720 --> 00:04:25.040
- Now we've actually got a script that you use to preload all of this data.
+00:04:10.880 --> 00:04:15.300
+ and underneath that link is the link to /cat/12,
 
-00:04:25.040 --> 00:04:29.840
- So there's instructions in the sample code as to how to preload that data.
+00:04:15.300 --> 00:04:16.800
+ whatever that number is.
 
-00:04:29.840 --> 00:04:31.840
- Take a look at the readme for it.
+00:04:16.800 --> 00:04:19.000
+ And if the cat list is empty,
 
-00:04:33.960 --> 00:04:38.920
- And so if we're in the detail page, we're going to pass a cat object in, and
+00:04:19.000 --> 00:04:20.800
+ we're going to say there are no cats in the database.
 
-00:04:38.920 --> 00:04:44.240
- that has a name, and then we want a link to go back to the cat list.
+00:04:20.800 --> 00:04:22.400
+ Now we've actually got a script
 
-00:04:44.240 --> 00:04:48.160
- And so again, we're using something from the previous lecture where we're using
+00:04:22.400 --> 00:04:25.080
+ that you use to preload all of this data,
 
-00:04:48.160 --> 00:04:55.400
- the URL macro, passing in the name of a view within an application.
+00:04:25.080 --> 00:04:28.620
+ so there's instructions in the sample code
 
-00:04:55.400 --> 00:04:59.880
- So this is the gv applications, the cat view, and then that makes a, for
+00:04:28.620 --> 00:04:29.920
+ as to how to preload that data,
 
-00:04:59.880 --> 00:05:05.360
- an href, that makes a valid link with the string go back to list to be the thing
+00:04:29.920 --> 00:04:32.580
+ take a look at the readme for it.
 
-00:05:05.360 --> 00:05:07.320
- that that does.
+00:04:32.580 --> 00:04:36.460
+ And so if we're in the detail page,
 
-00:05:07.320 --> 00:05:14.600
- So we're gonna build all this stuff, and that's the basic idea that template and
+00:04:36.460 --> 00:04:38.880
+ we're going to pass a cat object in,
 
-00:05:14.600 --> 00:05:16.960
- the HTML, that's how we're going to do it.
+00:04:38.880 --> 00:04:42.160
+ and that has a name, and then we want a link
 
-00:05:16.960 --> 00:05:19.120
- But we're gonna look at how the views work.
+00:04:42.160 --> 00:04:44.280
+ to go back to the cat list.
 
-00:05:19.120 --> 00:05:22.680
+00:04:44.280 --> 00:04:45.640
+ And so again, we're using something
+
+00:04:45.640 --> 00:04:47.560
+ from the immediate previous lecture,
+
+00:04:47.560 --> 00:04:50.820
+ where we're using the url macro,
+
+00:04:50.820 --> 00:04:55.460
+ passing in the name of a view within an application,
+
+00:04:55.460 --> 00:04:58.140
+ so this is the gv applications, the cat view,
+
+00:04:58.140 --> 00:05:00.520
+ and then that makes a, for an href,
+
+00:05:00.520 --> 00:05:04.160
+ that makes a valid link with the string go back to list
+
+00:05:04.160 --> 00:05:07.320
+ to be the thing that that does.
+
+00:05:07.320 --> 00:05:10.760
+ So we're going to build all this stuff,
+
+00:05:10.760 --> 00:05:15.240
+ and that's the basic idea that template and the HTML,
+
+00:05:15.240 --> 00:05:17.000
+ that's how we're going to do it,
+
+00:05:17.000 --> 00:05:19.120
+ but we're going to look at how the views work.
+
+00:05:19.120 --> 00:05:22.740
  And again, this is a reminder of the dry principle,
 
-00:05:22.680 --> 00:05:25.240
+00:05:22.740 --> 00:05:25.260
  the don't repeat yourself principle.
 
-00:05:25.240 --> 00:05:29.400
- Again, sometimes this dry principle gets us in trouble because the idea is that
+00:05:25.260 --> 00:05:27.820
+ Again, sometimes this dry principle gets us in trouble
 
-00:05:29.400 --> 00:05:34.640
- some bit of logic is placed one place and reused as many places as possible.
+00:05:27.820 --> 00:05:31.280
+ because we, the idea is that some bit of logic
 
-00:05:34.640 --> 00:05:40.440
- Cuz don't repeat yourself would probably be as well described by calling reuse,
+00:05:31.280 --> 00:05:34.700
+ is placed one place and reused as many places as possible,
 
-00:05:40.440 --> 00:05:41.720
- reuse, reuse, reuse.
+00:05:34.700 --> 00:05:37.780
+ 'cause don't repeat yourself would probably,
 
-00:05:41.720 --> 00:05:44.480
- Do it once and then reuse it as many times as possible.
+00:05:37.780 --> 00:05:41.760
+ as well described by Colin, reuse, reuse, reuse, reuse.
 
-00:05:44.480 --> 00:05:46.440
- So that if you have to fix it and you got a bug in it,
+00:05:41.760 --> 00:05:44.500
+ Do it once and then reuse it as many times as possible,
 
-00:05:46.440 --> 00:05:49.640
- you don't have to find the 49 places that you put all this code.
+00:05:44.500 --> 00:05:46.500
+ so that if you have to fix it and you got a bug in it,
 
-00:05:49.640 --> 00:05:57.240
- And because we do the same thing over and over and over again, cats, dogs, horses,
+00:05:46.500 --> 00:05:48.400
+ you don't have to find the 49 places
 
-00:05:57.240 --> 00:06:00.440
- we do it over and over and over again, cars.
+00:05:48.400 --> 00:05:50.560
+ that you put all this code.
 
-00:06:00.440 --> 00:06:04.760
- The idea that you have a list view, a detail view, a edit view, etc.
+00:05:50.560 --> 00:05:55.740
+ And because we do the same thing over and over and over again,
 
-00:06:04.760 --> 00:06:05.800
- It's a common thing.
+00:05:55.740 --> 00:05:58.500
+ cats, dogs, horses, we do it over and over and over again,
 
-00:06:05.800 --> 00:06:07.680
- And really, if you're gonna do this stuff,
+00:05:58.500 --> 00:06:02.200
+ cars, the idea that you have a list view,
 
-00:06:07.680 --> 00:06:10.880
+00:06:02.200 --> 00:06:04.800
+ a detail view, an edit view, et cetera,
+
+00:06:04.800 --> 00:06:06.500
+ it's a common thing, and really,
+
+00:06:06.500 --> 00:06:07.740
+ if you're going to do this stuff,
+
+00:06:07.740 --> 00:06:10.920
  why not make it look consistent and function consistently?
 
-00:06:10.880 --> 00:06:14.480
- If you have one developer build the cat's editing interface and
+00:06:10.920 --> 00:06:14.380
+ If you have one developer build the cat's editing interface,
 
-00:06:14.480 --> 00:06:16.960
- another person develop the dog's editing interface.
+00:06:14.380 --> 00:06:17.020
+ and another person develop the dog's editing interface,
 
-00:06:16.960 --> 00:06:22.480
- And they go off in their own way and they got some groovy design.
+00:06:17.020 --> 00:06:20.060
+ and they go off the same, go off in their own way,
 
-00:06:22.480 --> 00:06:26.000
- But it's different, who cares, right?
+00:06:20.060 --> 00:06:22.540
+ and they got some groovy design,
 
-00:06:26.000 --> 00:06:28.160
- It's inconsistent, so consistent.
+00:06:22.540 --> 00:06:26.060
+ but it's different, who cares, right?
 
-00:06:28.160 --> 00:06:31.960
- You still want a beautiful design, but you want the cat's data and
+00:06:26.060 --> 00:06:28.180
+ It's inconsistent, so consistent,
 
-00:06:31.960 --> 00:06:35.680
- the dog's data to make sense with that consistent design.
+00:06:28.180 --> 00:06:29.420
+ you still want a beautiful design,
 
-00:06:35.680 --> 00:06:41.680
+00:06:29.420 --> 00:06:33.020
+ but you want the cat's data and the dog's data
+
+00:06:33.020 --> 00:06:35.940
+ to make sense with that consistent design.
+
+00:06:35.940 --> 00:06:41.680
  So both of them can have a nice design.
 
-00:06:41.680 --> 00:06:44.560
- So we got templates.
+00:06:41.680 --> 00:06:45.840
+ So, we got templates, the templates expect variables,
 
-00:06:44.560 --> 00:06:47.040
- The templates expect variables,
+00:06:45.840 --> 00:06:50.500
+ like the list expects a thing called cat_list
 
-00:06:47.040 --> 00:06:52.720
- like the list expects a thing called cat_list or dog_list or whatever.
+00:06:50.500 --> 00:06:55.320
+ or dog_list, or whatever, and then the cat detail
 
-00:06:52.720 --> 00:06:58.480
- And then the cat detail just has a cat variable in it, and then we call it.
+00:06:55.320 --> 00:06:58.540
+ just has a cat variable in it, and then we call it.
 
-00:06:58.480 --> 00:07:04.440
- So if we just forgot about all the stuff that we're about to learn and
+00:06:58.540 --> 00:07:01.960
+ So, if we just forgot about all the stuff
 
-00:07:04.440 --> 00:07:09.560
- we just wrote a view, it would look like this first one, this cat list view here.
+00:07:01.960 --> 00:07:06.220
+ that we're about to learn, and we just wrote a view,
 
-00:07:09.560 --> 00:07:11.720
- And so we would inherit from view.
+00:07:06.220 --> 00:07:09.540
+ it would look like this first one, this cat list view here.
 
-00:07:11.720 --> 00:07:13.760
- We're going to go to the database.
+00:07:09.540 --> 00:07:11.740
+ And so, we would inherit from view,
 
-00:07:13.760 --> 00:07:17.320
- We've imported the cat model, cat.objects.
+00:07:11.740 --> 00:07:13.780
+ we're going to go to the database,
 
-00:07:17.320 --> 00:07:22.120
- This is the way to query all the cat objects and get a list of cat objects and
+00:07:13.780 --> 00:07:17.340
+ we've imported the cat model, cat.objects,
 
-00:07:22.120 --> 00:07:23.320
- put it in the variable stuff.
+00:07:17.340 --> 00:07:20.340
+ this is the way to query all the cat objects
 
-00:07:23.320 --> 00:07:26.000
+00:07:20.340 --> 00:07:22.020
+ and get a list of cat objects,
+
+00:07:22.020 --> 00:07:23.340
+ and put it in the variable stuff.
+
+00:07:23.340 --> 00:07:26.000
  That's what cat.objects.all does.
 
-00:07:26.000 --> 00:07:27.880
- Now we've done this before like in the shell, but
+00:07:26.000 --> 00:07:27.800
+ Now, we've done this before, like in the shell,
 
-00:07:27.880 --> 00:07:30.680
- now we're doing it in actual Python code in the views.
+00:07:27.800 --> 00:07:30.660
+ but now we're doing it in actual Python code in the views.
 
-00:07:30.680 --> 00:07:33.040
+00:07:30.660 --> 00:07:33.040
  Like I said, views are where all the stuff happens.
 
-00:07:33.040 --> 00:07:36.960
- So that says make a database call, load all the cat records,
+00:07:33.040 --> 00:07:34.940
+ So that says, make a database call,
 
-00:07:36.960 --> 00:07:40.320
- turn them into objects, and give me a list of those objects.
+00:07:34.940 --> 00:07:38.500
+ load all the cat records, turn them into objects,
 
-00:07:40.320 --> 00:07:45.000
- And then I'm going to pass in the context into the template,
+00:07:38.500 --> 00:07:40.380
+ and give me a list of those objects,
 
-00:07:45.000 --> 00:07:49.520
- the gview/catlist.html, I'm going to pass an entire list.
+00:07:40.380 --> 00:07:45.080
+ and then I'm gonna pass, in the context, into the template,
 
-00:07:49.520 --> 00:07:52.560
- And if you go back and look, there was a little loop in the template that printed
+00:07:45.080 --> 00:07:49.600
+ the gview/catlist.html, I'm gonna pass an entire list.
 
-00:07:52.560 --> 00:07:57.600
- out Sophie, Frankie, and made links underneath them into the detail page, okay?
+00:07:49.600 --> 00:07:50.860
+ And if you go back and look,
 
-00:07:57.600 --> 00:08:04.880
- So this is how we would do it if we were going to not repeat ourselves, okay?
+00:07:50.860 --> 00:07:53.100
+ there was a little loop in the template that printed out,
 
-00:08:04.880 --> 00:08:10.920
- Now, this next way of doing it for the dogs, yeah,
+00:07:53.100 --> 00:07:55.180
+ you know, Sophie, Frankie, and made links underneath them
 
-00:08:10.920 --> 00:08:13.520
- for the dogs we're going to do it another way.
+00:07:55.180 --> 00:07:57.340
+ into the detail page.
 
-00:08:13.520 --> 00:08:19.800
- And so what we're going to do is it looks like it's more work,
+00:07:57.340 --> 00:07:58.800
+ Okay?
 
-00:08:19.800 --> 00:08:23.320
- but it's more reusable, so the stuff that we're doing here.
+00:07:58.800 --> 00:08:00.840
+ So, this is how we would do it
 
-00:08:23.320 --> 00:08:27.600
- So what we're doing is now we have a dog list view, which is just a class.
+00:08:00.840 --> 00:08:03.980
+ if we were going to not repeat ourselves.
 
-00:08:27.600 --> 00:08:33.720
- And we're going to create an attribute variable in this object called model.
+00:08:03.980 --> 00:08:04.980
+ Okay?
 
-00:08:33.720 --> 00:08:38.400
- And we're just going to say that this model for this particular one is dog.
+00:08:04.980 --> 00:08:08.640
+ Now, this next way of doing it, for the dogs,
 
-00:08:38.400 --> 00:08:43.440
- So the idea now is in this get method, we take this code right here and
+00:08:08.640 --> 00:08:13.520
+ yeah, for the dogs, we're gonna do it another way.
 
-00:08:43.440 --> 00:08:47.580
- every we said cat, make that be generic and
+00:08:13.520 --> 00:08:17.480
+ And so what we're going to do is,
 
-00:08:47.580 --> 00:08:51.400
- have it be driven by this one variable, okay?
+00:08:17.480 --> 00:08:21.520
+ it looks like it's more work, but it's more reusable.
 
-00:08:51.400 --> 00:08:56.080
- Now the tricky part that makes this a little tricky is sometimes we're just using
+00:08:21.520 --> 00:08:23.380
+ So the stuff that we're doing here.
 
-00:08:56.080 --> 00:09:01.760
- the model and then other times we are going to actually turn it into a text string.
+00:08:23.380 --> 00:08:25.980
+ So what we're doing is, now we have a dog list view,
 
-00:09:01.760 --> 00:09:09.280
- So if we take a look at this, boop, boop, we have this variable model.
+00:08:25.980 --> 00:08:30.140
+ which is just a class, and we're going to create
 
-00:09:09.280 --> 00:09:14.880
- And in the get request, self.model is the way refer to the particular instance
+00:08:30.140 --> 00:08:33.760
+ an attribute variable in this object called model.
 
-00:09:14.880 --> 00:09:16.560
- that we're in, that model variable.
+00:08:33.760 --> 00:08:35.980
+ And we're just gonna say that this model,
 
-00:09:16.560 --> 00:09:22.480
- And this little meta verbose underscore name title to lower case.
+00:08:35.980 --> 00:08:38.440
+ for this particular one, is dog.
 
-00:09:22.480 --> 00:09:27.200
- You could figure that out by yourself by going to Stack Overflow eventually.
+00:08:38.440 --> 00:08:41.760
+ So the idea now is, in this get method,
 
-00:09:27.200 --> 00:09:28.760
+00:08:41.760 --> 00:08:46.440
+ we take this code right here, and every set we said cat,
+
+00:08:46.440 --> 00:08:48.520
+ make that be generic and have it be driven
+
+00:08:48.520 --> 00:08:50.600
+ by this one variable.
+
+00:08:50.600 --> 00:08:51.440
+ Okay?
+
+00:08:51.440 --> 00:08:54.160
+ Now the tricky part that makes this a little tricky
+
+00:08:54.160 --> 00:08:57.820
+ is sometimes we're just using the model,
+
+00:08:57.820 --> 00:09:00.760
+ and then other times, we are going to actually
+
+00:09:00.760 --> 00:09:02.880
+ turn it into a text string.
+
+00:09:02.880 --> 00:09:06.140
+ So if we take a look at this, boop, boop,
+
+00:09:06.140 --> 00:09:10.300
+ we have this variable model, and in the get request,
+
+00:09:10.300 --> 00:09:14.840
+ self.model is the way refer to the particular instance
+
+00:09:14.840 --> 00:09:16.880
+ that we're in, that model variable,
+
+00:09:16.880 --> 00:09:20.760
+ and this little meta verbose underscore name title
+
+00:09:20.760 --> 00:09:25.280
+ to lowercase, you can figure that out by yourself
+
+00:09:25.280 --> 00:09:27.300
+ by going to Stack Overflow eventually.
+
+00:09:27.300 --> 00:09:28.820
  That's how I figured it out.
 
-00:09:28.760 --> 00:09:32.040
- I wanted to get a lower case version of the model name.
+00:09:28.820 --> 00:09:32.120
+ I wanted to get a lowercase version of the model name.
 
-00:09:32.040 --> 00:09:39.080
- So the model's name is a string dog, which is not the same as the dog model, okay?
+00:09:32.120 --> 00:09:35.280
+ So the model's name is a string dog,
 
-00:09:39.080 --> 00:09:44.320
- And so that just is a way, model name is gonna be lower case dog.
+00:09:35.280 --> 00:09:38.120
+ which is not the same as the dog model.
 
-00:09:44.320 --> 00:09:48.920
- But if model is cat, then model name will be lower case cat in this bit.
+00:09:38.120 --> 00:09:39.240
+ Okay?
 
-00:09:48.920 --> 00:09:50.640
+00:09:39.240 --> 00:09:43.640
+ And so that just is a way, model name is gonna be
+
+00:09:43.640 --> 00:09:45.920
+ lowercase dog, but if model is cat,
+
+00:09:45.920 --> 00:09:49.100
+ then model name will be lowercase cat in this bit.
+
+00:09:49.100 --> 00:09:50.880
  So I'm trying to make reusable code.
 
-00:09:50.640 --> 00:09:56.600
- So yes, the reusable code looks a little more complex because it's generic.
+00:09:50.880 --> 00:09:54.100
+ So yes, the reusable code looks a little more complex
 
-00:09:56.600 --> 00:10:01.600
- But you'll notice that I'm creating a variable called model name underscore list.
+00:09:54.100 --> 00:09:58.820
+ because it's generic, but you'll notice that I'm creating
 
-00:10:01.600 --> 00:10:03.160
- Because I'm just concatenating it together.
+00:09:58.820 --> 00:10:01.800
+ a variable called model name underscore list,
 
-00:10:03.160 --> 00:10:06.200
- So it's model name is gonna be dog underscore list.
+00:10:01.800 --> 00:10:03.300
+ because I'm just concatenating it together.
 
-00:10:06.200 --> 00:10:07.800
- So that's what's gonna happen.
+00:10:03.300 --> 00:10:06.320
+ So it's model name is gonna be dog underscore list,
 
-00:10:07.800 --> 00:10:11.080
+00:10:06.320 --> 00:10:07.880
+ so that's what's gonna happen.
+
+00:10:07.880 --> 00:10:11.180
  I am going to talk to the model and retrieve all the objects.
 
-00:10:11.080 --> 00:10:13.600
+00:10:11.180 --> 00:10:13.680
  That's okay, I don't have to change it to a string.
 
-00:10:13.600 --> 00:10:16.440
- Self.model is dog.objects.all.
+00:10:13.680 --> 00:10:17.280
+ Self.model is dog.objects.all, so then I'm gonna get
 
-00:10:16.440 --> 00:10:19.440
- So then I'm gonna get a list of all the objects and stuff.
+00:10:17.280 --> 00:10:19.500
+ a list of all the objects and stuff,
 
-00:10:19.440 --> 00:10:21.740
- And I'll put that in the context.
+00:10:19.500 --> 00:10:21.820
+ and I'll put that in the context,
 
-00:10:21.740 --> 00:10:27.000
- And then I'm gonna go get myself a template out of the gvue folder
+00:10:21.820 --> 00:10:25.200
+ and then I'm gonna go get myself a template
 
-00:10:27.000 --> 00:10:28.400
- with the model name underscore list.
+00:10:25.200 --> 00:10:28.520
+ out of the gvu folder with the model name underscore list,
 
-00:10:28.400 --> 00:10:32.360
- So that what used to be cat list in here is now dog underscore list.
+00:10:28.520 --> 00:10:30.900
+ so that what used to be cat list in here
 
-00:10:32.360 --> 00:10:37.640
- I'm concatenating it together and I passed the context in.
+00:10:30.900 --> 00:10:32.380
+ is now dog underscore list.
 
-00:10:37.640 --> 00:10:40.000
- And so then when that happens, then you get a dog list and
+00:10:32.380 --> 00:10:36.540
+ I'm concatenating it together, and I passed the context in,
 
-00:10:40.000 --> 00:10:41.840
- some list of dogs and away you go.
+00:10:36.540 --> 00:10:39.900
+ and so then when that happens, then you get a dog list
 
-00:10:41.840 --> 00:10:45.160
- So what I did is I generalized this code and put it in here.
+00:10:39.900 --> 00:10:41.860
+ and some list of dogs, and away you go.
 
-00:10:45.160 --> 00:10:49.880
- And then I passed in, in a sense, to the object that was made from the dog list
+00:10:41.860 --> 00:10:45.160
+ So what I did is I generalized this code and put it in here,
 
-00:10:49.880 --> 00:10:54.440
- view class, the actual model that I wanted it to operate on, okay?
+00:10:45.160 --> 00:10:48.440
+ and then I passed in, in a sense, to the object
 
-00:10:54.440 --> 00:11:00.640
+00:10:48.440 --> 00:10:51.000
+ that was made from the dog list view class,
+
+00:10:51.000 --> 00:10:54.120
+ the actual model that I wanted it to operate on.
+
+00:10:54.120 --> 00:10:54.960
+ Okay?
+
+00:10:57.140 --> 00:11:01.900
  So I do this to give you a sense of how this works.
 
-00:11:00.640 --> 00:11:07.200
- You can do the exact same thing for horses by doing this.
+00:11:01.900 --> 00:11:06.060
+ You can do the exact same thing for horses by doing this,
 
-00:11:07.720 --> 00:11:14.440
- And that is, you import the generic, Django views generic, right here.
+00:11:06.060 --> 00:11:10.660
+ and that is you import the generic,
 
-00:11:14.440 --> 00:11:18.040
- And you say, I'm gonna make a class called horse list views.
+00:11:10.660 --> 00:11:14.400
+ Django views generic, right here,
 
-00:11:18.040 --> 00:11:21.920
+00:11:14.400 --> 00:11:18.000
+ and you say I'm gonna make a class called horse list views.
+
+00:11:18.000 --> 00:11:21.940
  I'm gonna extend not just view, but generic list view.
 
-00:11:21.920 --> 00:11:23.320
+00:11:21.940 --> 00:11:23.360
  So this is a generic class.
 
-00:11:23.320 --> 00:11:25.600
+00:11:23.360 --> 00:11:25.560
  You can go look at the Django documentation for this.
 
-00:11:25.600 --> 00:11:29.320
- It's a generic class that does a list view in general.
+00:11:25.560 --> 00:11:29.320
+ It's a generic class that does a list view in general,
 
-00:11:29.320 --> 00:11:33.960
- And the rule for the class is you have to add one line here to say which model it
+00:11:29.320 --> 00:11:32.980
+ and the rule for the class is you have to add one line here
 
-00:11:33.960 --> 00:11:35.960
- functions on, and that's it.
+00:11:32.980 --> 00:11:37.300
+ to say which model it functions on, and that's it,
 
-00:11:35.960 --> 00:11:42.040
- And that's because the get code is already in this model.
+00:11:37.300 --> 00:11:42.100
+ and that's because the get code is already in this model.
 
-00:11:42.040 --> 00:11:43.920
+00:11:42.100 --> 00:11:43.940
  We're extending that model.
 
-00:11:43.920 --> 00:11:46.840
- We're inheriting all this code, not from dog list view, but
+00:11:43.940 --> 00:11:46.740
+ We're inheriting all this code, not from dog list view,
 
-00:11:46.840 --> 00:11:49.160
- instead from generic list view.
+00:11:46.740 --> 00:11:50.300
+ but instead from generic list view.
 
-00:11:49.160 --> 00:11:53.080
+00:11:50.300 --> 00:11:53.420
  So we took something that was five lines,
 
-00:11:53.080 --> 00:11:57.360
- a little more generalized, it's like eight lines, and now it's one line.
+00:11:53.420 --> 00:11:55.360
+ a little more generalized, it's like eight lines,
 
-00:11:57.360 --> 00:11:59.040
- And so that's how the extension works.
+00:11:55.360 --> 00:11:59.120
+ and now it's one line, and so that's how the extension works,
 
-00:11:59.040 --> 00:12:02.480
- But you have to trust, and you have to go read the documentation for
+00:11:59.120 --> 00:12:01.720
+ but you have to trust, and you have to go read
 
-00:12:02.480 --> 00:12:06.520
- Django list view, to know how it is that you inform it as to what model
+00:12:01.720 --> 00:12:04.180
+ the documentation for list view to know how it is
 
-00:12:06.520 --> 00:12:07.600
- you're supposed to use.
+00:12:04.180 --> 00:12:08.760
+ that you inform it as to what model you're supposed to use.
 
-00:12:07.600 --> 00:12:11.920
- So I wanna show you a little bit of how this is happening,
+00:12:08.760 --> 00:12:12.040
+ So I wanna show you a little bit of how this is happening
 
-00:12:11.920 --> 00:12:16.920
+00:12:12.040 --> 00:12:15.880
  by making one of these list views that's mine.
 
-00:12:16.920 --> 00:12:20.960
- It's not as cool as the real Django list view, just to give you a sense of what's
+00:12:15.880 --> 00:12:19.680
+ It's not as cool as the real Django list view,
 
-00:12:20.960 --> 00:12:24.040
- going on behind the scenes in the Django list view.
+00:12:19.680 --> 00:12:21.760
+ just to give you a sense of what's going on
 
-00:12:24.040 --> 00:12:30.280
- So if you say, so I'm gonna make a new class, dg4e list view.
+00:12:21.760 --> 00:12:25.460
+ behind the scenes in the Django list view.
 
-00:12:30.280 --> 00:12:34.720
- And then I'm gonna extend view, and then I'm gonna have a get method.
+00:12:25.460 --> 00:12:27.880
+ So if you say, so I'm gonna make a new class,
 
-00:12:34.720 --> 00:12:36.000
- And it's gonna be all this code.
+00:12:27.880 --> 00:12:32.760
+ dj4elistView, and then I'm gonna extend view,
 
-00:12:36.000 --> 00:12:37.880
- It's looking for a variable called model.
+00:12:32.760 --> 00:12:34.780
+ and then I'm gonna have a get method,
 
-00:12:37.880 --> 00:12:40.120
- And you'll notice that it's not defining model up here,
+00:12:34.780 --> 00:12:36.060
+ and it's gonna be all this code.
 
-00:12:40.120 --> 00:12:44.440
- cuz it's intended that this is a class that's going to be reused.
+00:12:36.060 --> 00:12:37.960
+ It's looking for a variable called model,
 
-00:12:44.440 --> 00:12:48.160
- So I'm gonna say, well, whatever the model is that's been set up here,
+00:12:37.960 --> 00:12:40.220
+ and you'll notice that it's not defining model up here,
 
-00:12:48.160 --> 00:12:54.120
- by the class that's being created while we're extending it, go grab that,
+00:12:40.220 --> 00:12:42.660
+ 'cause it's intended that this is a class
 
-00:12:54.120 --> 00:12:59.000
- convert it to a text, get the title of it, and then convert it to lower case,
+00:12:42.660 --> 00:12:44.480
+ that's going to be reused.
 
-00:12:59.000 --> 00:13:01.040
- make that model name.
+00:12:44.480 --> 00:12:46.960
+ So I'm gonna say, oh, well, whatever the model is
 
-00:13:01.040 --> 00:13:04.680
- Whatever the model is, retrieve all of its objects and put it into stuff, and
+00:12:46.960 --> 00:12:50.580
+ that's been set up here by the class
 
-00:13:04.680 --> 00:13:11.120
- then put model name underscore list, in this case car underscore list.
+00:12:50.580 --> 00:12:52.920
+ that's being created while we're extending it,
 
-00:13:11.120 --> 00:13:13.560
- And then pass that list into the template, and
+00:12:52.920 --> 00:12:57.300
+ go grab that, convert it to a text, get the title of it,
 
-00:13:13.560 --> 00:13:18.420
- then render g view car underscore list context, okay?
+00:12:57.300 --> 00:13:01.040
+ and then convert it to lowercase, make that model name.
 
-00:13:18.420 --> 00:13:21.600
- So this is not doing anything per se.
+00:13:01.040 --> 00:13:03.280
+ Whatever the model is, retrieve all of its objects
 
-00:13:21.600 --> 00:13:26.880
- Dj4e list view is creating a class that I'm gonna extend later.
+00:13:03.280 --> 00:13:07.660
+ and put it into stuff, and then put model name underscore list,
 
-00:13:26.880 --> 00:13:28.880
- And I'm gonna extend that two lines lighter.
+00:13:07.660 --> 00:13:11.080
+ you know, in this case, car underscore list,
 
-00:13:28.880 --> 00:13:34.160
- I'm making a car list view that extends dj4e list view.
+00:13:11.080 --> 00:13:13.420
+ and then pass that list into the template,
 
-00:13:34.160 --> 00:13:38.880
- And the only thing I need to do to get all of this code in here is extend it,
+00:13:13.420 --> 00:13:17.780
+ and then render, you know, gview car underscore list context.
 
-00:13:38.880 --> 00:13:42.040
+00:13:17.780 --> 00:13:21.600
+ Okay, so this is not doing anything per se.
+
+00:13:21.600 --> 00:13:25.120
+ DJ4EListView is creating a class
+
+00:13:25.120 --> 00:13:26.860
+ that I'm gonna extend later,
+
+00:13:26.860 --> 00:13:28.860
+ and I'm gonna extend that two lines lighter.
+
+00:13:28.860 --> 00:13:33.860
+ I'm making a car list view that extends DJ4EListView,
+
+00:13:33.860 --> 00:13:35.380
+ and the only thing I need to do
+
+00:13:35.380 --> 00:13:38.880
+ to get all of this code in here is extend it,
+
+00:13:38.880 --> 00:13:42.000
  and then I do need to add model equals car.
 
-00:13:42.040 --> 00:13:50.720
- So you'll notice that car list view has the exact same syntax as horse list view.
+00:13:42.000 --> 00:13:45.680
+ So you'll notice that car list view,
 
-00:13:50.720 --> 00:13:51.800
- Right?
+00:13:45.680 --> 00:13:48.580
+ car list view has the exact same syntax
 
-00:13:51.800 --> 00:13:55.800
- Horse list view, you basically tell it, the generic list view,
+00:13:48.580 --> 00:13:51.820
+ as horse list view, right?
 
-00:13:55.800 --> 00:13:59.240
- tell what model to work on, and then generic list view does it all.
+00:13:51.820 --> 00:13:54.820
+ Horse list view, you basically tell it,
 
-00:13:59.240 --> 00:14:03.400
- And if you look at car list view, it says use this generic list view that I just
+00:13:54.820 --> 00:13:57.060
+ the generic list view, tell what model to work on,
 
-00:14:03.400 --> 00:14:06.080
- invented to show you the source code of what it is.
+00:13:57.060 --> 00:13:59.220
+ and then generic list view does it all.
+
+00:13:59.220 --> 00:14:00.780
+ And if you look at car list view,
+
+00:14:00.780 --> 00:14:04.020
+ it says use this generic list view that I just invented
+
+00:14:04.020 --> 00:14:06.080
+ to show you the source code of what it is,
 
 00:14:06.080 --> 00:14:07.880
- That's the source code behind the scene.
+ that's the source code behind the scene.
 
-00:14:07.880 --> 00:14:10.960
- Like I said, it's way more complex and sophisticated than what I did.
+00:14:07.880 --> 00:14:09.300
+ Like I said, it's way more complex
 
-00:14:10.960 --> 00:14:15.160
- This is the crudest, simplest version of an extendable generic list view.
+00:14:09.300 --> 00:14:10.980
+ and sophisticated than what I did.
 
-00:14:15.160 --> 00:14:19.600
- But when it's all said and done, you don't write any of those versions.
+00:14:10.980 --> 00:14:13.040
+ This is the crudest, simplest version
 
-00:14:19.600 --> 00:14:22.160
+00:14:13.040 --> 00:14:16.540
+ of an extendable generic list view.
+
+00:14:16.540 --> 00:14:18.060
+ But when it's all said and done,
+
+00:14:18.060 --> 00:14:19.580
+ you don't write any of those versions.
+
+00:14:19.580 --> 00:14:22.180
  You literally make a list view and tell it what model it is.
 
-00:14:22.160 --> 00:14:24.000
- You make a cat view and tell it what model it is.
+00:14:22.180 --> 00:14:24.020
+ You make a cat view and tell it what model it is,
 
-00:14:24.000 --> 00:14:27.440
- And you just reuse the list view over and over and over again.
+00:14:24.020 --> 00:14:25.620
+ and you just reuse the list view
 
-00:14:27.440 --> 00:14:31.280
- So the fact that I give you four different ways to do this.
+00:14:25.620 --> 00:14:27.480
+ over and over and over again.
 
-00:14:31.280 --> 00:14:34.640
- Yeah, I think four different ways, maybe five.
+00:14:27.480 --> 00:14:31.280
+ So the fact that I give you four different ways to do this,
 
-00:14:34.640 --> 00:14:36.840
- Four or five different ways of doing this.
+00:14:31.280 --> 00:14:34.580
+ yeah, I think four different ways, maybe five,
 
-00:14:36.840 --> 00:14:38.360
- The real way to do it is one way.
+00:14:34.580 --> 00:14:36.820
+ four or five different ways to doing this,
 
-00:14:38.360 --> 00:14:41.920
- But when you look at code like that, you're like horse list view is an extending
+00:14:36.820 --> 00:14:38.340
+ the real way to do it is one way,
 
-00:14:41.920 --> 00:14:44.760
- generic list view and the model is horse.
+00:14:38.340 --> 00:14:39.700
+ but when you look at code like that,
 
-00:14:44.760 --> 00:14:45.800
- I'm trusting a lot.
+00:14:39.700 --> 00:14:42.820
+ you're like horse list view is an extending generic list view
 
-00:14:45.800 --> 00:14:47.440
- And the answer is yeah, you get used to it.
+00:14:42.820 --> 00:14:45.840
+ and the model is horse, I'm trusting a lot.
 
-00:14:47.440 --> 00:14:51.280
+00:14:45.840 --> 00:14:47.480
+ And the answer is, yeah, you get used to it.
+
+00:14:47.480 --> 00:14:51.280
  And now the code you have to write is only two lines of code.
 
-00:14:51.280 --> 00:14:55.000
- And you have to write the template still because it's gonna call your templates.
+00:14:51.280 --> 00:14:53.280
+ And you have to write the template still
 
-00:14:55.000 --> 00:14:59.120
- But it knows the name of the template by looking at that horse, right?
+00:14:53.280 --> 00:14:55.040
+ because it's gonna call your templates,
 
-00:14:59.120 --> 00:15:04.360
- It knows, yeah, horse_detail, right?
+00:14:55.040 --> 00:14:56.940
+ but it knows the name of the template
 
-00:15:04.360 --> 00:15:06.400
- Or horse_list.
+00:14:56.940 --> 00:14:59.100
+ by looking at that horse, right?
 
-00:15:06.400 --> 00:15:10.280
- And so this is the actual detail page that shows you the horse and
+00:14:59.100 --> 00:15:04.100
+ It knows, oh, horse, oh yeah, horse underscore detail, right?
 
-00:15:10.280 --> 00:15:13.080
- goes back to the list, etc., etc., etc.
+00:15:04.100 --> 00:15:06.420
+ Or horse underscore list.
 
-00:15:13.080 --> 00:15:15.760
+00:15:06.420 --> 00:15:08.780
+ And so this is the actual detail page
+
+00:15:08.780 --> 00:15:11.340
+ that shows you the horse and goes back to the list,
+
+00:15:11.340 --> 00:15:13.060
+ et cetera, et cetera, et cetera.
+
+00:15:13.060 --> 00:15:15.740
  And so using these generic views,
 
-00:15:15.760 --> 00:15:21.040
- you can make things really short and really succinct and really simple.
+00:15:15.740 --> 00:15:18.000
+ you can make things really short
 
-00:15:21.040 --> 00:15:23.280
+00:15:18.000 --> 00:15:20.980
+ and really succinct and really simple.
+
+00:15:20.980 --> 00:15:23.260
  So generic views are excellent.
 
-00:15:23.280 --> 00:15:27.080
- They allow us to produce lots of similar pages without repeating ourselves.
+00:15:23.260 --> 00:15:25.560
+ They allow us to produce lots of similar pages
 
-00:15:27.080 --> 00:15:32.560
+00:15:25.560 --> 00:15:27.280
+ without repeating ourselves.
+
+00:15:27.280 --> 00:15:31.680
  They keep your code consistent.
 
-00:15:32.560 --> 00:15:35.000
- The repeating yourself, doing the same thing over and
+00:15:31.680 --> 00:15:33.980
+ They don't, they're repeating yourself,
 
-00:15:35.000 --> 00:15:40.240
- over even seems quick to cut, paste, change, cut, paste, change, cut, paste, change.
+00:15:33.980 --> 00:15:35.180
+ doing the same thing over and over,
 
-00:15:40.240 --> 00:15:43.800
- If you really wanna build reliable code and code that's thousands and
+00:15:35.180 --> 00:15:37.560
+ even if it seems quick to cut, paste, change,
 
-00:15:43.800 --> 00:15:48.520
- thousands of lines with hundreds of features, you don't wanna be
+00:15:37.560 --> 00:15:40.200
+ cut, paste, change, cut, paste, change.
 
-00:15:48.520 --> 00:15:53.640
- pasting the same thing over and over, and so less lines of code means fewer mistakes.
+00:15:40.200 --> 00:15:41.860
+ If you really wanna build reliable code
 
-00:15:53.640 --> 00:15:56.960
+00:15:41.860 --> 00:15:44.660
+ and code that's thousands and thousands of lines
+
+00:15:44.660 --> 00:15:46.380
+ with hundreds of features,
+
+00:15:46.380 --> 00:15:47.940
+ you don't wanna be able to,
+
+00:15:47.940 --> 00:15:51.420
+ you don't wanna be pasting the same thing over and over.
+
+00:15:51.420 --> 00:15:53.660
+ And so less lines of code means fewer mistakes.
+
+00:15:53.660 --> 00:15:56.900
  So this is kind of the end of our talk about views.
 
-00:15:56.960 --> 00:16:00.520
+00:15:56.900 --> 00:16:00.540
  It's really where we're gonna start doing most of the work.
 
-00:16:00.520 --> 00:16:04.720
- The URLs, the models, they sort of don't get the kind of activity.
+00:16:00.540 --> 00:16:01.960
+ The URLs, the models,
 
-00:16:04.720 --> 00:16:09.400
- Although we are gonna talk upcoming about forms, which touch on views and
+00:16:01.960 --> 00:16:04.740
+ they sort of don't get the kind of activity.
 
-00:16:09.400 --> 00:16:12.040
- they touch on models and they touch on templates.
+00:16:04.740 --> 00:16:07.700
+ Although we are gonna talk about upcoming about forms,
 
-00:16:12.040 --> 00:16:16.280
- So forms are one of the things that lets us take our user experience and
+00:16:07.700 --> 00:16:10.460
+ which touch on views and they touch on models
 
-00:16:16.280 --> 00:16:18.500
- really up it, so we'll see you soon.
+00:16:10.460 --> 00:16:11.460
+ and they touch on templates.
 
-00:16:18.500 --> 00:16:28.500
- [MUSIC]
+00:16:11.460 --> 00:16:13.340
+ So forms are one of the things
+
+00:16:13.340 --> 00:16:17.240
+ that lets us take our user experience and really up it.
+
+00:16:17.240 --> 00:16:18.600
+ So we'll see you soon.
+
+00:16:18.600 --> 00:16:21.180
+ (upbeat music)
 
