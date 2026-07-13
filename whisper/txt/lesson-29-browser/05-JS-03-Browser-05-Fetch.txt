@@ -1,83 +1,135 @@
- So the last kind of events that we're going to talk about are network events.
- That is, code that runs as your JavaScript is talking to the network.
+ So the last kind of events that we're going to talk about
+ are network events.
+ That is code that runs as your JavaScript
+ is talking to the network.
  So we can do network operations in JavaScript.
- We can do the entire request-response cycle in JavaScript.
+ We can do the entire request response cycle in JavaScript.
  The problem is that this has to be an asynchronous process
  because we can't pause our code.
  We can't say stop and read from the server
  because otherwise the browser would lock up.
- So we have to kind of use events and we kind of chain these events together.
- We have a start the request and then give me an event when the request is restarted.
- And then as the data is being retrieved, when the data is all retrieved,
- then you process the request.
- And so there's a multi-step process and you do one step and then initiate the second step.
- And so that means that we're never in our JavaScript waiting for anything.
- We are responding to an event and then triggering another event
- and then responding to an event and triggering another event,
+ So we have to kind of use events
+ and we kind of chain these events together.
+ We have a start the request
+ and then give me an event when the request is restarted
+ and then as the data is being retrieved,
+ when the data is all retrieved, then you process the request.
+ And so there's a multi-step process
+ and you do one step and then initiate the second step.
+ And so that means that we're never in our JavaScript
+ waiting for anything.
+ We are responding to an event
+ and then triggering another event
+ and then responding to an event
+ and triggering another event,
  but never doing anything that waits in our code.
  This particular code is 14-fetch.htm.
- Now fetch is a function that's available and its parameter is a URL.
+ Now fetch is a function that's available
+ and its parameter is a URL.
  So I've got this URL called secret.txt.
  Now fetch returns what's called a promise.
- A promise is something that hasn't happened yet, but will happen.
- And then you say .then and the then code runs when the fetch has started.
- And so in this case, and I'm using this sort of short syntax
- because this inside the parentheses of the then you see a function
- that takes a single parameter as the variable response.
+ A promise is something that hasn't happened yet,
+ but will happen.
+ And then you say .then and the then code runs
+ when the fetch has started.
+ And so in this case,
+ and I'm using this sort of short syntax
+ 'cause this inside the parentheses of the then,
+ you see a function that takes a single parameter
+ as the variable response.
  That's my choice as a variable name.
  I console.log and then I return response.text.
- Now what that really is saying is now go retrieve that text which will take some time.
+ Now what that really is saying
+ is now go retrieve that text,
+ which will take some time.
  So response.text itself is another promise.
- And so the return value of the first then is itself a promise.
+ And so the return value of the first then
+ is itself a promise.
  And that's why you see the second then.
- Now the second then happens when the response.text has been retrieved.
- And now we're being handed that as a text string.
- And then it says let's run code and console.log that text string.
- So fetch starts and returns a promise.
- Then says when that promise completes run this code and then return another promise.
- And then the second then takes is runs after the second after the promise is retrieved.
- And then we're done.
- So you see there's three little steps.
- And each of those steps is instantaneous or as fast as we can do it and there's no waiting.
- And each time we have to register a function to respond to the request.
- So JavaScript calls us back, okay.
- And so you can kind of see this happen, right.
- The fetch starts.
- The first promise resolves and we see what the response is.
- Now if you look carefully, you see that the response is a 200.
- Which means it looks like we're doing well, right.
- And it has a readable stream, but we have not yet used the body, okay.
- So when it says body used equals false.
- That means that we sort of started the request and it looks like it's going to go well.
- And now we're given a chance to see what we're going once this request has started.
- Now by calling response.text.
- That's a method inside this response object that then says, oh, go back, make a new promise.
- And that promise will be fulfilled when we've actually retrieved the text.
- So at this moment where it says console log response, the text hasn't been retrieved yet.
- And so we're returning a promise to be fulfilled after the text is received.
- Then when that text receiving is finished, which might take, you know, two seconds or something.
- And it's like, oh, I've got some text.
- So I'm going to call you back, resolve that promise and pass the actual retrieved text string back into us.
- And so that's the only moment that what the server has given for secret.txt, which the secret of course is 42 is the text.
- That's when we can actually print it out.
- We can make this a little bit more succinct and then watch it as it happens.
+ Now the second then happens
+ when the response text has been retrieved
+ and now we're being handed that as a text string.
+ And then it says, let's run code
+ and console.log that text string.
+ So fetch starts and returns a promise,
+ then says when that promise completes, run this code,
+ and then return another promise.
+ And then the second then runs after the promise is retrieved
+ and then we're done.
+ So you see there's three little steps
+ and each of those steps is instantaneous
+ or as fast as we can do it.
+ And there's no waiting.
+ And each time we have to register a function
+ to respond to the request.
+ So JavaScript calls us back, okay?
+ And so you can kind of see this happen, right?
+ The fetch starts, the first promise resolves,
+ and we see what the response is.
+ Now if you look carefully,
+ you see that the response is a 200,
+ which means it looks like we're doing well, right?
+ And it has a readable stream,
+ but we have not yet used the body, okay?
+ So when it says body used equals false,
+ that means that we've sort of started the request
+ and it looks like it's gonna go well.
+ And now we're given a chance to see what we're going,
+ once this request has started.
+ Now by calling response.text,
+ that's a method inside this response object
+ that then says, oh, go back, make a new promise,
+ and that promise will be fulfilled
+ when we've actually retrieved the text.
+ So at this moment where it says console log response,
+ the text hasn't been retrieved yet,
+ and so we're returning a promise to be fulfilled
+ after the text is received.
+ Then when that text receiving is finished,
+ which might take two seconds or something,
+ then it's like, oh, I've got some text,
+ so I'm gonna call you back, resolve that promise,
+ and pass the actual retrieved text string back into us.
+ And so that's the only moment
+ that what the server has given for secret.txt,
+ which the secret of course is 42 is the text,
+ that's when we can actually print it out.
+ We can make this a little bit more succinct
+ and then watch it as it happens.
  So this is 15-fetch.
- So we're going to we're going to do something with this text instead of just printing it.
- And we're going to use kind of the more succinct contraction style of this function code and not put so many console logs in.
- I was putting console logs so you could see the steps that happen.
+ So we're gonna do something with this text
+ instead of just printing it,
+ and we're gonna use kind of the more succinct
+ contraction style of this function code
+ and not put so many console logs in.
+ I was putting console logs
+ so you could see the steps that happen.
  So this is a more typical way of doing something.
- So we're going to fetch secret.txt, which is your on the server.
- When that fetch is successfully started, we resolve the first promise and then we say, OK.
- And the first response arrow response text response is the parameter to the function.
- And response.text is calling the text method in that, which is the return value to this first promise, which is another promise.
- But that'll be it when that promise resolves it resolve to a text string.
- And that's why the second then says take a variable.
- Again, I could call text string X. It's just a variable in a function call.
- It's just a parameter function call.
- So call me back. Call me this function I'm making text string.
- And then get doc in that code is document get element ID by ID zap, which is that p tag.
- And I said it's inner text to be the text string that I retrieve from the server.
- And so you can kind of see that we can do things, we can get data from the server, and then we can move it into our document object model.
+ So we're gonna fetch secret.txt,
+ which is your on the server.
+ When that fetch has successfully started,
+ we resolve the first promise, and then we say, okay.
+ And the first response arrow response text,
+ response is the parameter to the function,
+ and response.text is calling the text method
+ in that, which is the return value to this first promise,
+ which is another promise, but that'll be it.
+ When that promise resolves, it'll resolve to a text string,
+ and that's where the second then says, take a variable.
+ Again, I could call text string x,
+ it's just a variable in a function call,
+ it's just a parameter in a function call.
+ So call me back, call me this function I'm making,
+ text string, and then get doc in that code
+ is document get element id by id zap,
+ which is that p tag, and I set its inner text
+ to be the text string that I retrieve from the server.
+ And so you can kind of see that we can do things,
+ we can get data from the server,
+ and then we can move it into our document object model.
  And I tried to do this in the simplest and smallest version.
- We will cover this in a lot more detail when we actually have something more important to retrieve like JSON, for example, JavaScript object notation, which is the next section.
- (jazzy piano music)
+ We will cover this in a lot more detail
+ when we actually have something more important to retrieve,
+ like JSON, for example, JavaScript Object Notation,
+ which is the next section.
+ (upbeat music)

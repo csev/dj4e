@@ -1,434 +1,998 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.460
- So now we're going to talk about how you use JavaScript in a browser and, as I said before,
+00:00:00.000 --> 00:00:02.900
+ So now we're gonna talk about how you use JavaScript
 
-00:00:04.460 --> 00:00:08.520
- this is just only one of the possible ways that you might use Java.
+00:00:02.900 --> 00:00:05.300
+ in a browser, and as I said before,
 
-00:00:08.520 --> 00:00:16.520
- But this is pretty much what we'd call vanilla Java, or basic Java, or Java without Vue, or Java without jQuery, or Java without Node.
+00:00:05.300 --> 00:00:07.620
+ this is just only one of the possible ways
 
-00:00:16.520 --> 00:00:24.720
- This was the original JavaScript purpose, right? It was to be in the browser, augment HTML.
+00:00:07.620 --> 00:00:09.980
+ that you might use Java, but this is pretty much
 
-00:00:25.360 --> 00:00:30.120
+00:00:09.980 --> 00:00:12.860
+ what we'd call vanilla Java, or basic Java,
+
+00:00:12.860 --> 00:00:15.780
+ or Java without view, or Java without jQuery,
+
+00:00:15.780 --> 00:00:17.060
+ or Java without node.
+
+00:00:17.060 --> 00:00:21.500
+ This was the original JavaScript purpose, right?
+
+00:00:21.500 --> 00:00:25.660
+ It was to be in the browser, augment HTML.
+
+00:00:25.660 --> 00:00:30.440
  So here we have a happy little bit of HTML.
 
-00:00:30.120 --> 00:00:34.320
- We've got some HTML, you've got a body, you've got a paragraph tag, and we've got this script tag.
+00:00:30.440 --> 00:00:32.060
+ We've got some HTML, you've got a body,
 
-00:00:34.320 --> 00:00:41.740
- So the script tag says we're moving out of HTML as syntax, and we are then writing some JavaScript code.
+00:00:32.060 --> 00:00:34.860
+ you've got a paragraph tag, and we've got this script tag.
 
-00:00:41.740 --> 00:00:44.280
+00:00:34.860 --> 00:00:38.860
+ So the script tag says we're moving out of HTML as syntax,
+
+00:00:38.860 --> 00:00:42.300
+ and we are then writing some JavaScript code.
+
+00:00:42.300 --> 00:00:44.840
  And we are talking to the document.
 
-00:00:44.280 --> 00:00:50.800
- Document, the DOM, is, in a sense, that part of your browser that's like the pixels that you're seeing.
+00:00:44.840 --> 00:00:48.740
+ Document, the DOM, is in a sense that part of your browser
 
-00:00:51.160 --> 00:00:59.160
- And so this JavaScript code can write to what you're seeing on the screen by going through this const, or this variable called document.
+00:00:48.740 --> 00:00:51.500
+ that's like the pixels that you're seeing.
 
-00:00:59.160 --> 00:01:07.380
- Document.write writes onto the screen, and so if you take a look at this code, it's, it's, um, it's coming down,
+00:00:51.500 --> 00:00:54.280
+ And so this JavaScript code can write
 
-00:01:07.380 --> 00:01:12.200
- it's, out comes the title, out comes the body, the paragraph comes out, then it drops into JavaScript,
+00:00:54.280 --> 00:00:55.840
+ to what you're seeing on the screen
 
-00:01:12.200 --> 00:01:18.360
- and then this little string gets written out, then it goes back in, the no script tag is in case there's no JavaScript,
+00:00:55.840 --> 00:00:59.620
+ by going through this variable called document.
 
-00:01:18.360 --> 00:01:21.740
- which is really rare these days, and then the paragraph comes out.
+00:00:59.620 --> 00:01:03.380
+ Document.write writes onto the screen.
 
-00:01:21.740 --> 00:01:29.440
- So the point is, is that this has created a three-line web page, the first and the third line come from HTML,
+00:01:03.380 --> 00:01:05.520
+ And so if you take a look at this code,
 
-00:01:29.440 --> 00:01:34.400
- and the second line comes from JavaScript. Not that this is a particularly useful example,
+00:01:05.520 --> 00:01:09.900
+ it's coming down, the title out comes to the body,
 
-00:01:34.400 --> 00:01:42.760
- it just points out that JavaScript has access to the screen when it's running inside of a web page.
+00:01:09.900 --> 00:01:12.620
+ the paragraph comes out, then it drops into JavaScript,
 
-00:01:42.760 --> 00:01:46.720
- That's powerful, and we're gonna drive a truck through all that.
+00:01:12.620 --> 00:01:14.620
+ and then this little string gets written out,
 
-00:01:47.200 --> 00:01:51.280
- So whenever I learn a new programming language, the first thing I got to do is print a debug statement.
+00:01:14.620 --> 00:01:16.140
+ then it goes back in.
 
-00:01:51.280 --> 00:01:59.120
- And the debug statement is called alert, and you say alert, you put a string in it, and it stops,
+00:01:16.140 --> 00:01:18.480
+ The no script tag is in case there's no JavaScript,
 
-00:01:59.120 --> 00:02:02.800
- it stops the program, and you have to press OK, then it continues on.
+00:01:18.480 --> 00:01:20.180
+ which is really rare these days,
 
-00:02:02.800 --> 00:02:06.880
- So that way I'm like, did that code run or not? And I just put a little alert hello world in there,
+00:01:20.180 --> 00:01:21.880
+ and then the paragraph comes out.
 
-00:02:06.880 --> 00:02:12.800
- and then poof, up it goes, and then just pops up a little dialogue, and you press OK, and it continues.
+00:01:21.880 --> 00:01:26.180
+ So the point is that this has created a three line web page,
 
-00:02:12.800 --> 00:02:19.040
- So that's really quite nice, and so here's a little example of that where we're cruising along,
+00:01:26.180 --> 00:01:29.620
+ the first and the third line come from HTML,
 
-00:02:19.040 --> 00:02:25.040
- the paragraph is written out, and one of the things that you'll notice is that this alert box
+00:01:29.620 --> 00:01:31.940
+ and the second line comes from JavaScript.
 
-00:02:25.040 --> 00:02:31.200
- actually stops the JavaScript. So we switch into JavaScript, the browser is still parsing the page,
+00:01:31.940 --> 00:01:35.300
+ Not that this is a particularly useful example.
 
-00:02:31.200 --> 00:02:37.280
- and you'll see sometimes the little spinner is still spinning. So it stops, it puts up the alert
+00:01:35.300 --> 00:01:39.780
+ It just points out that JavaScript has access
 
-00:02:37.280 --> 00:02:44.320
- dialogue box, here I am, and waits until you press OK. And in a sense, your browser is paused at that
+00:01:39.780 --> 00:01:42.820
+ to the screen when it's running inside of a web page.
 
-00:02:44.320 --> 00:02:49.280
- point, because literally it doesn't know what you're going to do, and this JavaScript has every right
+00:01:42.820 --> 00:01:45.900
+ That's powerful, and we're gonna drive a truck
 
-00:02:49.280 --> 00:02:54.880
- to change every bit of this page, because the JavaScript is in the page using a document.
+00:01:45.900 --> 00:01:47.320
+ through all that.
 
-00:02:54.880 --> 00:03:01.760
- So it pauses until you press OK, and then it picks back up, and then it will write hello world,
+00:01:47.320 --> 00:01:48.940
+ So whenever I learn a new programming language,
 
-00:03:01.760 --> 00:03:07.360
- and the second paragraph will come. But alert, you just stick it in your JavaScript, and whatever's
+00:01:48.940 --> 00:01:52.520
+ the first thing I gotta do is print a debug statement.
 
-00:03:07.360 --> 00:03:14.640
- happening, bang, it stops right there, and everything stops. And so that's a pretty cool thing,
+00:01:52.520 --> 00:01:55.660
+ And the debug statement is called alert,
 
-00:03:14.640 --> 00:03:20.240
- and so you can't use it too much, you can't use it in a loop, and if you do it too many times,
+00:01:55.660 --> 00:01:57.900
+ and you say alert, you put a string in it,
 
-00:03:20.240 --> 00:03:23.680
- your browser will be like, why is this page throwing up so many alert boxes? But
+00:01:57.900 --> 00:02:00.500
+ and it stops, it stops the program,
 
-00:03:23.680 --> 00:03:26.480
- in a pinch, it's the simplest thing.
+00:02:00.500 --> 00:02:02.920
+ and you have to press okay, then it continues on.
 
-00:03:29.360 --> 00:03:34.480
- So there's three ways to get JavaScript into your web page. One is inline in the document,
+00:02:02.920 --> 00:02:05.140
+ So that way I'm like, did that code run or not?
 
-00:03:34.480 --> 00:03:37.920
- and that's what I just showed you, with a da-da-da-da script, da-da-da-da slash script.
+00:02:05.140 --> 00:02:06.980
+ And I just put a little alert hello world in there,
 
-00:03:37.920 --> 00:03:43.200
- It can be, we've done, and we've done this before, it's part of an event in an HTML tag.
+00:02:06.980 --> 00:02:08.420
+ and then poof, up it goes.
 
-00:03:43.200 --> 00:03:48.880
- I'll show you that. Or you can put the JavaScript in its own little file, usually ending in .js.
+00:02:08.420 --> 00:02:10.400
+ And then just pops up a little dialogue,
 
-00:03:48.880 --> 00:03:55.680
- So here's the second one. This is the one where we're putting in an onclick method. And so we've
+00:02:10.400 --> 00:02:12.900
+ and you press okay, and it continues.
 
-00:03:55.680 --> 00:04:00.640
- been doing this, right? We've been doing onclick methods, where we'll have an href, and then
+00:02:12.900 --> 00:02:14.060
+ So that's really quite nice.
 
-00:04:00.640 --> 00:04:05.760
- onclick, and then say something. And in this one, this part here in the middle, that is just
+00:02:14.060 --> 00:02:17.140
+ And so here's a little example of that,
 
-00:04:05.760 --> 00:04:10.880
- JavaScript, and that's what has semicolons to end each line. White space doesn't matter, this isn't
+00:02:17.140 --> 00:02:21.920
+ where we're cruising along, the paragraph is written out.
 
-00:04:10.880 --> 00:04:18.800
- Python, don't need new lines, et cetera. So when we click on this click me button, that is going
+00:02:21.920 --> 00:02:23.200
+ And one of the things that you'll notice
 
-00:04:18.800 --> 00:04:24.800
- to start running this code. Now the page is already fully rendered, and the click me button
+00:02:23.200 --> 00:02:26.860
+ is that this alert box actually stops the JavaScript.
 
-00:04:24.800 --> 00:04:30.160
- is waiting to be clicked. And onclick, that's when a click happens, event-driven programming,
+00:02:26.860 --> 00:02:28.500
+ So we switch into JavaScript.
 
-00:04:30.160 --> 00:04:37.120
- then it runs the alert, pauses. Better change the color there. It runs the alert.
+00:02:28.500 --> 00:02:31.340
+ The browser is still parsing the page,
 
-00:04:37.120 --> 00:04:46.640
- How come I can't get it to be yellow? There it's yellow. Clear it, go back up,
+00:02:31.340 --> 00:02:35.120
+ and you'll see sometimes little spinner is still spinning.
 
-00:04:46.640 --> 00:04:53.600
- and be yellow. Thank you for being yellow. So you click on it, it runs this JavaScript,
+00:02:35.120 --> 00:02:38.420
+ So it stops, it puts up the alert dialogue box,
 
-00:04:53.600 --> 00:04:58.720
- which runs the alert, which pops the box up, then you press the OK, and then it continues on this
+00:02:38.420 --> 00:02:41.580
+ here I am, and waits until you press okay.
 
-00:04:58.720 --> 00:05:07.440
- code. Now the return false is telling the anchor tag not to follow the link, right? And so that
+00:02:41.580 --> 00:02:45.260
+ And in a sense, your browser is paused at that point.
 
-00:05:07.440 --> 00:05:12.480
- basically says, I, the onclick method, have processed this particular click. And so that's
+00:02:45.260 --> 00:02:47.700
+ 'Cause literally, it doesn't know what you're gonna do,
 
-00:05:12.480 --> 00:05:20.800
- what the return false does. So we are basically just have JavaScript in the middle of a tag that's
+00:02:47.700 --> 00:02:49.340
+ and this JavaScript has every right
 
-00:05:20.800 --> 00:05:28.240
- triggered when an event happens, so event-based programming. The other thing we can do is we can
+00:02:49.340 --> 00:02:50.820
+ to change every bit of this page,
 
-00:05:28.240 --> 00:05:33.840
- make this in a completely separate file. So we're going to have this file called script.js. Now it
+00:02:50.820 --> 00:02:55.100
+ 'cause the JavaScript is in the page, using a document.
 
-00:05:33.840 --> 00:05:37.920
- doesn't need a script tag, because it knows that it's JavaScript, so that's just code. This happens
+00:02:55.100 --> 00:02:58.540
+ So it pauses until you press okay,
 
-00:05:37.920 --> 00:05:43.200
- to be one line that's got a document.writeHelloWorld, and now we embed it with a script tag and a
+00:02:58.540 --> 00:02:59.660
+ and then it picks back up,
 
-00:05:43.200 --> 00:05:48.160
- slash script, but now we just say source equals script. It pulls it in, it loads and runs and
+00:02:59.660 --> 00:03:01.820
+ and then it will write hello world,
 
-00:05:48.160 --> 00:05:54.160
- parses that whole thing, and as a side effect, it writes out, you know, one paragraph, hello world,
+00:03:01.820 --> 00:03:04.060
+ and the second paragraph will come.
 
-00:05:54.160 --> 00:05:59.520
- and the second paragraph. And of course, usually this isn't doing work. Usually this is defining
+00:03:04.060 --> 00:03:06.620
+ But alert, you just stick it in your JavaScript,
 
-00:05:59.520 --> 00:06:05.120
- a bunch of functions that we're going to use later, and so usually this is script.js is a function,
+00:03:06.620 --> 00:03:09.340
+ and whatever's happening, bang, it stops right there,
 
-00:06:05.120 --> 00:06:09.760
- function, function, function, so we're kind of loading a library of functions that we're going
+00:03:09.340 --> 00:03:10.960
+ and everything stops.
 
-00:06:09.760 --> 00:06:15.040
- to use later, but I just put this document right so you can kind of see when it's happening as the
+00:03:10.960 --> 00:03:14.740
+ And so that's a pretty cool thing.
 
-00:06:15.040 --> 00:06:22.720
- document is loading. So in any programming language, we can make errors as a programmer,
+00:03:14.740 --> 00:03:17.820
+ And so it's a, you can't use it too much,
 
-00:06:22.720 --> 00:06:30.640
- right? We can make syntax errors. The problem is when you're looking at a webpage, and in that
+00:03:17.820 --> 00:03:18.860
+ you can't use it in a loop,
 
-00:06:30.640 --> 00:06:37.760
- webpage there's a JavaScript syntax error, they decided a long time ago not to bother the poor
+00:03:18.860 --> 00:03:20.360
+ and if you do it too many times,
 
-00:06:37.760 --> 00:06:43.120
- user with a JavaScript syntax error, because really the person, unless you're writing it in
+00:03:20.360 --> 00:03:21.200
+ your browser will be like,
 
-00:06:43.120 --> 00:06:50.400
- the first place, the person looking at the screen of, you know, amazon.com or drchuck.com,
+00:03:21.200 --> 00:03:23.580
+ "Why is this page throwing up so many alert boxes?"
 
-00:06:50.400 --> 00:06:55.840
- if I got a syntax error in drchuck.com, why tell you that there's a syntax error?
+00:03:23.580 --> 00:03:26.740
+ But in a pinch, it's the simplest thing.
 
-00:06:55.840 --> 00:07:02.480
- So what it actually does is it just like, well, I guess I'll stop running the JavaScript because
+00:03:26.740 --> 00:03:33.100
+ So there's three ways to get JavaScript into your web page.
 
-00:07:02.480 --> 00:07:06.320
- it's got a problem, but I'm not going to tell the user, which means my page is broken and I don't
+00:03:33.100 --> 00:03:34.660
+ One is inlining the document,
 
-00:07:06.320 --> 00:07:14.000
- even know that. So it stops, and so syntax errors happen, and it just stops the execution. So let's
+00:03:34.660 --> 00:03:35.660
+ and that's what I just showed you
 
-00:07:14.000 --> 00:07:19.840
- take a look at a little example here, a little example where we have two chunks of JavaScript.
+00:03:35.660 --> 00:03:38.620
+ with a da-da-da-da script, da-da-da-da slash script.
 
-00:07:19.840 --> 00:07:26.000
- We come in, we got the first one, and this first one has a syntax error, okay? And that means the
+00:03:38.620 --> 00:03:41.020
+ It can be, we've done, and we've done this before,
 
-00:07:26.000 --> 00:07:32.240
- alert's not going to work. Now what happens is, is it in effect ignores everything after that point.
+00:03:41.020 --> 00:03:43.380
+ it's part of an event in an HTML tag.
 
-00:07:32.240 --> 00:07:36.080
- If it's executing through a script file, it might be defining a bunch of functions. If it finds a
+00:03:43.380 --> 00:03:45.780
+ And we'll show you that, or you can put the JavaScript
 
-00:07:36.080 --> 00:07:41.200
- syntax error a third of the way through, the other two-thirds don't matter because it has stopped
+00:03:45.780 --> 00:03:49.740
+ in its own little file, usually ending in .js.
 
-00:07:41.200 --> 00:07:46.640
- parsing that file until the end of the script tag. And then when it sees a new script tag,
+00:03:49.740 --> 00:03:51.180
+ So here's the second one.
 
-00:07:46.640 --> 00:07:52.400
- hope springs eternal, and it starts parsing it again. And so that's why when this page runs,
+00:03:51.180 --> 00:03:55.100
+ This is the one where we're putting in an onClick method.
 
-00:07:52.400 --> 00:08:01.920
- when this page runs, you see first paragraph, this goes, blows up, which means it skips down to here,
+00:03:55.100 --> 00:03:57.340
+ And so we've been doing this, right?
 
-00:08:01.920 --> 00:08:07.360
- then you see two paragraph come out, and then you see the alert second time. You never see any of
+00:03:57.340 --> 00:03:58.940
+ We've been doing onClick methods,
 
-00:08:07.360 --> 00:08:14.400
- these alerts because that error is on the first line of the JavaScript, which invalidates the
+00:03:58.940 --> 00:04:01.460
+ where we'll have an href, and then onClick,
 
-00:08:14.400 --> 00:08:21.120
- rest of the JavaScript, but until another script tag. And sometimes what you're doing, you're like
+00:04:01.460 --> 00:04:02.340
+ and then say something.
 
-00:08:21.120 --> 00:08:24.240
- including one library, another library, and another library, and another library.
+00:04:02.340 --> 00:04:04.860
+ And in this one, this part here in the middle,
 
-00:08:24.240 --> 00:08:28.880
- If you have a syntax error in that library that you're including, most of that library won't
+00:04:04.860 --> 00:04:06.500
+ that is just JavaScript,
 
-00:08:28.880 --> 00:08:35.040
- actually be activated, right? But it doesn't mean if you have like five libraries that you're
+00:04:06.500 --> 00:04:09.100
+ and that's why it has semicolons to end each line.
 
-00:08:35.040 --> 00:08:38.880
- loading with five script tags, just because the first library has a syntax error, it can still
+00:04:09.100 --> 00:04:11.780
+ White space doesn't matter, this isn't Python.
 
-00:08:38.880 --> 00:08:45.680
- load the other four libraries. But it's just, it pumps. There could be hundreds of lines of code
+00:04:12.660 --> 00:04:14.340
+ Don't need new lines, et cetera.
 
-00:08:45.680 --> 00:08:51.680
- here, and it all is for naught because it saw a syntax error and ignored the rest of it up to the
+00:04:14.340 --> 00:04:18.340
+ So when we click on this Click Me button,
 
-00:08:51.680 --> 00:08:59.440
- end of that script tag. Now, the end user can't see the error, so when you're doing software
+00:04:18.340 --> 00:04:20.220
+ that is going to start running this code.
 
-00:08:59.440 --> 00:09:03.840
- development, you've got to put in extra effort because when you're like writing code and hitting
+00:04:20.220 --> 00:04:23.980
+ Now the page is already fully rendered,
 
-00:09:03.840 --> 00:09:08.960
- refresh, writing code and hitting refresh, well, yeah, that's the user hitting the refresh in the
+00:04:23.980 --> 00:04:26.300
+ and the Click Me button is waiting to be clicked.
 
-00:09:08.960 --> 00:09:14.160
- browser, but if you're writing JavaScript, you want to see what's wrong. And so we have places
+00:04:26.300 --> 00:04:28.620
+ And onClick, that's when a click happens,
 
-00:09:14.160 --> 00:09:18.800
- that we have to look to see if there are actually JavaScript errors in our code. And once we start
+00:04:28.620 --> 00:04:33.140
+ event-driven programming, then it runs the alert, pauses.
 
-00:09:18.800 --> 00:09:23.680
- developing JavaScript, I assure you that there will be errors in your code. There's always errors
+00:04:33.140 --> 00:04:34.660
+ Better change the color there.
 
-00:09:23.680 --> 00:09:31.840
- in my code. And so all of these situations, whether it be browsers, Firefox, Chrome, Safari,
+00:04:34.660 --> 00:04:37.540
+ It runs the alert.
 
-00:09:31.840 --> 00:09:37.120
- they all have some kind of a web developer console that you unlock. And then you can go, there's
+00:04:37.540 --> 00:04:41.500
+ Hmm, how come I can't get it to be yellow?
 
-00:09:37.120 --> 00:09:42.320
- always one of these tabs that says console, and console is all the error messages that are coming
+00:04:42.620 --> 00:04:43.460
+ There it's yellow.
 
-00:09:42.320 --> 00:09:48.320
- out. And so if you made that same bit of code and you had the console turned on, you would see a
+00:04:43.460 --> 00:04:49.180
+ Clear it, go back up, and be yellow.
 
-00:09:48.320 --> 00:09:54.160
- happy little error that says syntax error on line three of that file. I mean, it would just run the
+00:04:49.180 --> 00:04:50.500
+ Thank you for being yellow.
 
-00:09:54.160 --> 00:10:00.400
- okays later in the file, but it will tell us that. So you'll find that once you start developing
+00:04:50.500 --> 00:04:53.740
+ So you click on it, it runs this JavaScript,
 
-00:10:00.400 --> 00:10:06.400
- JavaScript, you're making a big mistake if you don't have this little developer console open
+00:04:53.740 --> 00:04:56.180
+ which runs the alert, which pops the box up.
 
-00:10:06.400 --> 00:10:11.760
- almost all the time, at least to the JavaScript console, because that's how you debug your
+00:04:56.180 --> 00:04:59.100
+ Then you press the OK, and then it continues on this code.
 
-00:10:11.760 --> 00:10:17.200
- JavaScript. It'll literally just like silently, you're like, hmm, I changed something and nothing
+00:04:59.100 --> 00:05:04.100
+ Now the return false is telling the anchor tag
 
-00:10:17.200 --> 00:10:21.120
- happened. I changed something and nothing happened. I'm going crazy. Well, look at the console.
+00:05:04.100 --> 00:05:06.740
+ not to follow the link, right?
 
-00:10:21.120 --> 00:10:25.920
- You changed something, but there was a syntax error above it. And so it didn't matter what you said
+00:05:06.740 --> 00:05:08.340
+ And so that basically says,
 
-00:10:25.920 --> 00:10:30.960
- after that. It really ignores everything after that. So that's why it's so important to have the
+00:05:08.340 --> 00:05:12.100
+ I, the onClick method, have processed this particular click.
 
-00:10:30.960 --> 00:10:36.560
- debugger console doing all the time. Thankfully, all modern browsers have a good debugger console.
+00:05:12.100 --> 00:05:14.140
+ And so that's what the return false does.
 
-00:10:36.560 --> 00:10:41.200
- In the old days, Firefox was the only one that had a thing called firebug, which was this console,
+00:05:14.140 --> 00:05:19.140
+ So we are basically just have JavaScript
 
-00:10:41.200 --> 00:10:46.080
- which had to install it and add it. And it's a person wrote it as an open source project.
+00:05:19.140 --> 00:05:21.460
+ in the middle of a tag that's triggered
 
-00:10:46.080 --> 00:10:51.200
- And it got so popular that people just put it into the browsers rather than making you install it.
+00:05:21.460 --> 00:05:22.820
+ when an event happens.
 
-00:10:51.200 --> 00:11:00.080
- So it was pretty cool. So back to debugging, there is a function called console.log and it
+00:05:22.820 --> 00:05:24.420
+ So event-based programming.
 
-00:11:00.080 --> 00:11:05.760
- allows you to log variables and strings and whatever. And unlike the alert, it just shows
+00:05:24.420 --> 00:05:29.020
+ The other thing we can do is we can make this
 
-00:11:05.760 --> 00:11:12.560
- up in that console. So you can put it inside of a loop. You don't have to press okay. It doesn't
+00:05:29.020 --> 00:05:30.900
+ in a completely separate file.
 
-00:11:12.560 --> 00:11:20.240
- stop anything. It's really more of a debug print. And so in this particular example,
+00:05:30.900 --> 00:05:33.540
+ So we're gonna have this file called script.js.
 
-00:11:20.240 --> 00:11:26.400
- it just runs. It doesn't stop. The alert stops everything. And so I use the alert like,
+00:05:33.540 --> 00:05:35.020
+ Now it doesn't need a script tag
 
-00:11:26.400 --> 00:11:31.440
- what is going on? But if I'm really debugging something like in a loop, I'll use console.log.
+00:05:35.020 --> 00:05:37.660
+ 'cause it knows that it's JavaScript, so that's just code.
 
-00:11:31.440 --> 00:11:36.960
- So it comes in. Console.log comes out. It says alert. I clicked on it. So you don't see that.
+00:05:37.660 --> 00:05:38.740
+ This happens to be one line
 
-00:11:36.960 --> 00:11:42.160
- The second log comes out and away you go. And so this is a better debugging mechanism.
+00:05:38.740 --> 00:05:41.140
+ that's got a document.writeHelloWorld,
 
-00:11:42.160 --> 00:11:46.080
- And if you look at systems that I've built when I have a really complex JavaScript,
+00:05:41.140 --> 00:05:43.980
+ and now we embed it with a script tag and a slash script,
 
-00:11:46.080 --> 00:11:52.640
- I will sometimes leave console.log statements in it. So if you use Sakai and you're at a school
+00:05:43.980 --> 00:05:46.020
+ but now we just say source equals script.
 
-00:11:52.640 --> 00:11:57.440
- that uses Sakai and you do console.log, you will see error messages in your production system
+00:05:46.020 --> 00:05:48.180
+ It pulls it in, it loads and runs
 
-00:11:57.440 --> 00:12:03.440
- that I left in there because of the parts of the code that were so, the JavaScript was so tricky.
+00:05:48.180 --> 00:05:50.380
+ and parses that whole thing.
 
-00:12:03.440 --> 00:12:08.720
- I'm like, I want to be able to talk to you if your stuff breaks. And I want any developer to
+00:05:50.380 --> 00:05:53.660
+ And as a side effect, it writes out one paragraph,
 
-00:12:08.720 --> 00:12:13.440
- be able to pop this window open and get a clue as to why some of the JavaScript stuff is breaking
+00:05:53.660 --> 00:05:55.620
+ hello world, and the second paragraph.
 
-00:12:13.440 --> 00:12:18.960
- because there's just so much complex JavaScript in it. And so I leave a few little debugging clues.
+00:05:55.620 --> 00:05:58.500
+ And of course, usually this isn't doing work.
 
-00:12:18.960 --> 00:12:25.600
- And if you go into the autograder, you can watch this. I just like debugging and it's sort of not
+00:05:58.500 --> 00:06:00.940
+ Usually this is defining a bunch of functions
 
-00:12:25.600 --> 00:12:30.720
- all that costly. I don't put a ton of them in because then it looks a little sloppy. But yeah,
+00:06:00.940 --> 00:06:02.340
+ that we're going to use later.
 
-00:12:30.720 --> 00:12:39.280
- I do put a few console.logs in. So you can use a debugger. It's a full-featured debugger.
+00:06:02.340 --> 00:06:04.620
+ And so usually this is script.js
 
-00:12:39.280 --> 00:12:43.520
- You can view the source. You can inspect. You probably by now have figured out how to
+00:06:04.620 --> 00:06:06.780
+ is a function, function, function, function,
 
-00:12:43.520 --> 00:12:48.080
- inspect elements. And what you're looking through there is the document object model.
+00:06:06.780 --> 00:06:09.500
+ so we're kind of loading a library of functions
 
-00:12:48.080 --> 00:12:52.800
- But they also have the full-featured debugger where if you're looking in the source code,
+00:06:09.500 --> 00:06:10.460
+ that we're gonna use later.
 
-00:12:52.800 --> 00:13:00.560
- you can go onto the line that you're interested in and click. And then that will set a breakpoint.
+00:06:10.460 --> 00:06:12.140
+ But I just put this document right
 
-00:13:00.560 --> 00:13:06.080
- And what you, but it doesn't, but usually the code's already executed. So you have to set the
+00:06:12.140 --> 00:06:14.740
+ so you can kind of see when it's happening
 
-00:13:06.080 --> 00:13:09.600
- breakpoint. Then you got to refresh the page and it remembers where you set the breakpoint. And then
+00:06:14.740 --> 00:06:16.900
+ as the document is loading.
 
-00:13:09.600 --> 00:13:16.000
- it stops it. Okay. And so you kind of set the breakpoint and then hit refresh. You'll figure it
+00:06:16.900 --> 00:06:20.660
+ So in any programming language,
 
-00:13:16.000 --> 00:13:22.240
- out because by the time it's all done, it can't go back in time. It's past that line. So you have to
+00:06:20.660 --> 00:06:23.220
+ we can make errors as a programmer, right?
 
-00:13:22.240 --> 00:13:28.640
- see the line, set the breakpoint, refresh the page. Then it knows to breakpoint, catch the breakpoint
+00:06:23.220 --> 00:06:25.300
+ We can make syntax errors.
 
-00:13:29.840 --> 00:13:33.920
- as it's going by rather than going back in time. Cause it doesn't remember.
+00:06:25.300 --> 00:06:30.300
+ The problem is when you're looking at a webpage
 
-00:13:33.920 --> 00:13:40.880
- It can't run time backwards, just forwards. So that gives you a little sense of what it is like
+00:06:30.300 --> 00:06:33.500
+ and in that webpage, there's a JavaScript syntax error.
 
-00:13:40.880 --> 00:13:46.320
- to do JavaScript in the browser. And now we're going to just look at JavaScript as if it were
+00:06:33.500 --> 00:06:36.620
+ They decided a long time ago
 
-00:13:46.320 --> 00:13:50.720
- a regular programming language. And this applies whether it's in the browser and the server and
+00:06:36.620 --> 00:06:40.340
+ not to bother the poor user with a JavaScript syntax error
 
-00:13:50.720 --> 00:14:02.000
- view or whatever.
+00:06:40.340 --> 00:06:42.180
+ because really the person,
+
+00:06:42.180 --> 00:06:44.260
+ unless you're writing it in the first place,
+
+00:06:44.260 --> 00:06:48.540
+ the person looking at the screen of amazon.com
+
+00:06:48.540 --> 00:06:53.540
+ or drchuck.com, if I got a syntax error in drchuck.com,
+
+00:06:53.540 --> 00:06:56.540
+ why tell you that there's a syntax error?
+
+00:06:56.540 --> 00:06:58.820
+ So what it actually does is it just like,
+
+00:06:58.820 --> 00:07:02.380
+ well, I guess I'll stop running the JavaScript
+
+00:07:02.380 --> 00:07:03.460
+ because it's got a problem,
+
+00:07:03.460 --> 00:07:04.660
+ but I'm not gonna tell the user,
+
+00:07:04.660 --> 00:07:07.580
+ which means my page is broken and I don't even know that.
+
+00:07:07.580 --> 00:07:11.220
+ So it stops and so syntax errors happen
+
+00:07:11.220 --> 00:07:13.860
+ and it just stops the execution.
+
+00:07:13.860 --> 00:07:17.380
+ So let's take a look at a little example here,
+
+00:07:17.380 --> 00:07:19.980
+ a little example where we have two chunks of JavaScript.
+
+00:07:19.980 --> 00:07:21.620
+ We come in, we got the first one
+
+00:07:21.620 --> 00:07:25.580
+ and this first one has a syntax error, okay?
+
+00:07:25.580 --> 00:07:27.460
+ And that means the alert's not gonna work.
+
+00:07:27.460 --> 00:07:31.220
+ Now what happens is it in effect ignores everything
+
+00:07:31.220 --> 00:07:32.380
+ after that point.
+
+00:07:32.380 --> 00:07:34.140
+ If it's executing through a script file,
+
+00:07:34.140 --> 00:07:35.660
+ it might be defining a bunch of functions.
+
+00:07:35.660 --> 00:07:38.940
+ If it finds a syntax error a third of the way through,
+
+00:07:38.940 --> 00:07:40.220
+ the other two thirds don't matter
+
+00:07:40.220 --> 00:07:43.340
+ because it has stopped parsing that file
+
+00:07:43.340 --> 00:07:45.420
+ until the end of the script tag.
+
+00:07:45.420 --> 00:07:46.840
+ And then when it sees a new script tag,
+
+00:07:46.840 --> 00:07:50.340
+ hope springs eternal and it starts parsing it again.
+
+00:07:50.340 --> 00:07:52.960
+ And so that's why when this page runs,
+
+00:07:52.960 --> 00:07:57.860
+ when this page runs, you see first paragraph,
+
+00:07:57.860 --> 00:08:02.100
+ this goes, blows up, which means it skips down to here,
+
+00:08:02.100 --> 00:08:04.580
+ then you see two paragraph come out
+
+00:08:04.580 --> 00:08:06.340
+ and then you see the alert second time.
+
+00:08:06.340 --> 00:08:08.500
+ You never see any of these alerts
+
+00:08:08.500 --> 00:08:11.860
+ because that error is on the first line of the JavaScript,
+
+00:08:11.860 --> 00:08:15.380
+ which invalidates the rest of the JavaScript,
+
+00:08:15.380 --> 00:08:18.260
+ but until another script tag.
+
+00:08:18.260 --> 00:08:20.500
+ And sometimes what you're doing,
+
+00:08:20.500 --> 00:08:22.980
+ you're like including one library, another library,
+
+00:08:22.980 --> 00:08:25.060
+ and another library, and another library.
+
+00:08:25.060 --> 00:08:26.620
+ If you have a syntax error in that library
+
+00:08:26.620 --> 00:08:27.700
+ that you're including,
+
+00:08:27.700 --> 00:08:30.940
+ most of that library won't actually be activated, right?
+
+00:08:30.940 --> 00:08:34.940
+ And, but it doesn't mean if you have like five libraries
+
+00:08:34.940 --> 00:08:36.540
+ that you're loading with five script tags,
+
+00:08:36.540 --> 00:08:38.380
+ just 'cause the first library has a syntax error,
+
+00:08:38.380 --> 00:08:41.100
+ it can still load the other four libraries.
+
+00:08:41.100 --> 00:08:43.660
+ But it's just, it pumps.
+
+00:08:43.660 --> 00:08:46.540
+ There could be hundreds of lines of code here
+
+00:08:46.540 --> 00:08:50.140
+ and it all is for naught because it saw a syntax error
+
+00:08:50.140 --> 00:08:53.140
+ and ignored the rest of it up to the end of that script tag.
+
+00:08:53.140 --> 00:08:57.660
+ Now, the end user can't see the error.
+
+00:08:57.660 --> 00:09:00.060
+ So when you're doing software development,
+
+00:09:00.060 --> 00:09:01.820
+ you gotta put in extra effort.
+
+00:09:01.820 --> 00:09:04.340
+ 'Cause when you're like writing code and hitting refresh,
+
+00:09:04.340 --> 00:09:05.780
+ writing code and hitting refresh,
+
+00:09:05.780 --> 00:09:08.820
+ well, yeah, that's the user hitting the refresh
+
+00:09:08.820 --> 00:09:10.860
+ in the browser, but if you're writing JavaScript,
+
+00:09:10.860 --> 00:09:12.540
+ you wanna see what's wrong.
+
+00:09:12.540 --> 00:09:15.100
+ And so we have places that we have to look
+
+00:09:15.100 --> 00:09:18.100
+ to see if there are actually JavaScript errors in our code.
+
+00:09:18.100 --> 00:09:20.060
+ And once we start developing JavaScript,
+
+00:09:20.060 --> 00:09:23.020
+ I assure you that there will be errors in your code.
+
+00:09:23.020 --> 00:09:24.660
+ There's always errors in my code.
+
+00:09:24.660 --> 00:09:28.220
+ And so all of these situations,
+
+00:09:28.220 --> 00:09:32.020
+ whether all these browsers, Firefox, Chrome, Safari,
+
+00:09:32.020 --> 00:09:34.260
+ they all have some kind of a web developer console
+
+00:09:34.260 --> 00:09:35.700
+ that you unlock.
+
+00:09:35.700 --> 00:09:38.620
+ And then you can go, there's always one of these tabs
+
+00:09:38.620 --> 00:09:39.660
+ that says console.
+
+00:09:39.660 --> 00:09:42.900
+ And console is all the error messages that are coming up.
+
+00:09:42.900 --> 00:09:45.660
+ And so if you made that same bit of code
+
+00:09:45.660 --> 00:09:47.580
+ and you had the console turned on,
+
+00:09:47.580 --> 00:09:49.700
+ you would see a happy little error
+
+00:09:49.700 --> 00:09:53.260
+ that says syntax error on line three of that file.
+
+00:09:53.260 --> 00:09:56.060
+ I mean, it would just run the okays later in the file,
+
+00:09:56.060 --> 00:09:58.220
+ but it will tell us that.
+
+00:09:58.220 --> 00:10:01.980
+ So you'll find that once you start developing JavaScript,
+
+00:10:01.980 --> 00:10:03.260
+ you're making a big mistake
+
+00:10:03.260 --> 00:10:06.460
+ if you don't have this little developer console open
+
+00:10:06.460 --> 00:10:10.060
+ almost all the time, at least to the JavaScript console,
+
+00:10:10.060 --> 00:10:13.060
+ because that's how you debug your JavaScript.
+
+00:10:13.060 --> 00:10:15.980
+ It'll literally just like silently, you're like,
+
+00:10:15.980 --> 00:10:17.860
+ hmm, I changed something and nothing happened.
+
+00:10:17.860 --> 00:10:19.300
+ I changed something and nothing happened.
+
+00:10:19.300 --> 00:10:20.260
+ I'm going crazy.
+
+00:10:20.260 --> 00:10:21.860
+ Well, look at the console.
+
+00:10:21.860 --> 00:10:23.020
+ You changed something,
+
+00:10:23.020 --> 00:10:24.780
+ but there was a syntax error above it.
+
+00:10:24.780 --> 00:10:26.620
+ And so it didn't matter what you said after that.
+
+00:10:26.620 --> 00:10:28.420
+ It really ignores everything after that.
+
+00:10:28.420 --> 00:10:30.820
+ So that's why it's so important
+
+00:10:30.820 --> 00:10:33.940
+ to have a debugger console doing all the time.
+
+00:10:33.940 --> 00:10:35.460
+ Thankfully, all modern browsers
+
+00:10:35.460 --> 00:10:36.740
+ have a good debugger console.
+
+00:10:36.740 --> 00:10:38.780
+ In the old days, Firefox was the only one
+
+00:10:38.780 --> 00:10:40.340
+ that had a thing called Firebug,
+
+00:10:40.340 --> 00:10:42.980
+ which was this console which had to install it and add it.
+
+00:10:42.980 --> 00:10:46.260
+ And it's a person wrote it as an open source project.
+
+00:10:46.260 --> 00:10:49.260
+ And it got so popular that people just put it
+
+00:10:49.260 --> 00:10:51.380
+ into the browsers rather than making you install it.
+
+00:10:51.380 --> 00:10:53.100
+ So it was pretty cool.
+
+00:10:54.420 --> 00:10:56.060
+ So back to debugging,
+
+00:10:56.060 --> 00:10:59.980
+ there is a function called console.log
+
+00:10:59.980 --> 00:11:01.860
+ and it allows you to log variables
+
+00:11:01.860 --> 00:11:03.340
+ and strings and whatever.
+
+00:11:03.340 --> 00:11:05.020
+ And unlike the alert,
+
+00:11:05.020 --> 00:11:06.940
+ it just shows up in that console.
+
+00:11:06.940 --> 00:11:09.100
+ That, that, that, that, that, that, that, that, that, that.
+
+00:11:09.100 --> 00:11:10.780
+ So you can put it inside of a loop.
+
+00:11:10.780 --> 00:11:12.300
+ You don't have to press okay.
+
+00:11:12.300 --> 00:11:13.980
+ It doesn't stop anything.
+
+00:11:13.980 --> 00:11:18.020
+ It's really more of a debug print, right?
+
+00:11:18.020 --> 00:11:21.140
+ And so in this particular example,
+
+00:11:21.140 --> 00:11:22.660
+ you know, it just runs.
+
+00:11:22.660 --> 00:11:23.540
+ It doesn't stop.
+
+00:11:23.540 --> 00:11:24.820
+ The alert stops everything.
+
+00:11:24.820 --> 00:11:27.980
+ And so I use the alert like, what is going on?
+
+00:11:27.980 --> 00:11:30.220
+ But if I'm really debugging something like in a loop,
+
+00:11:30.220 --> 00:11:31.620
+ I'll use console.log.
+
+00:11:31.620 --> 00:11:34.060
+ So it comes in, console.log comes out.
+
+00:11:34.060 --> 00:11:35.020
+ It says alert.
+
+00:11:35.020 --> 00:11:35.860
+ I clicked on it.
+
+00:11:35.860 --> 00:11:37.140
+ So you don't see that.
+
+00:11:37.140 --> 00:11:39.620
+ The second log comes out and away you go.
+
+00:11:39.620 --> 00:11:42.260
+ And so this, this is a better debugging mechanism.
+
+00:11:42.260 --> 00:11:44.180
+ And if you look at systems that I've built,
+
+00:11:44.180 --> 00:11:46.220
+ when I have a really complex JavaScript,
+
+00:11:46.220 --> 00:11:49.500
+ I will sometimes leave console.log statements in it.
+
+00:11:49.500 --> 00:11:51.580
+ So if you use Sakai
+
+00:11:51.580 --> 00:11:53.700
+ and you're at a school that uses Sakai
+
+00:11:53.700 --> 00:11:55.140
+ and you do console.log,
+
+00:11:55.140 --> 00:11:58.020
+ you will see error messages in your production system
+
+00:11:58.020 --> 00:12:00.500
+ that I left in there because of the parts of the code
+
+00:12:00.500 --> 00:12:03.620
+ that were so, the JavaScript was so tricky.
+
+00:12:03.620 --> 00:12:05.460
+ I'm like, I wanna be able to talk to you
+
+00:12:05.460 --> 00:12:06.940
+ if your stuff breaks.
+
+00:12:06.940 --> 00:12:10.740
+ And I want any developer to be able to pop this window open
+
+00:12:10.740 --> 00:12:13.140
+ and get a clue as to why some of the JavaScript stuff
+
+00:12:13.140 --> 00:12:14.380
+ is breaking, 'cause there's just so much
+
+00:12:14.380 --> 00:12:15.980
+ complex JavaScript in it.
+
+00:12:15.980 --> 00:12:19.060
+ And so I leave a few little debugging clues.
+
+00:12:19.060 --> 00:12:21.060
+ And if you go into the auto grader,
+
+00:12:21.060 --> 00:12:23.180
+ you can watch this.
+
+00:12:23.180 --> 00:12:26.580
+ I just like debugging and it's sort of not all that costly.
+
+00:12:26.580 --> 00:12:27.700
+ I don't put a ton of them in
+
+00:12:27.700 --> 00:12:30.340
+ 'cause then it looks a little sloppy.
+
+00:12:30.340 --> 00:12:33.780
+ But yeah, I do put a few console logs in.
+
+00:12:33.780 --> 00:12:38.180
+ So you can use a debugger.
+
+00:12:38.180 --> 00:12:39.420
+ It's a full featured debugger.
+
+00:12:39.420 --> 00:12:41.460
+ You can view the source, you can inspect.
+
+00:12:41.460 --> 00:12:43.260
+ You probably by now have figured out
+
+00:12:43.260 --> 00:12:44.420
+ how to inspect elements.
+
+00:12:44.420 --> 00:12:45.340
+ So you can look through the,
+
+00:12:45.340 --> 00:12:46.460
+ and what you're looking through there
+
+00:12:46.460 --> 00:12:48.220
+ is the document object model.
+
+00:12:48.220 --> 00:12:50.900
+ But they also have the full feature debugger
+
+00:12:50.900 --> 00:12:53.500
+ where if you're looking in the source code,
+
+00:12:53.500 --> 00:12:56.340
+ you can go on to the line that you're interested in
+
+00:12:56.340 --> 00:13:00.700
+ and click, and then that will set a break point.
+
+00:13:00.700 --> 00:13:01.940
+ And what you, but it doesn't,
+
+00:13:01.940 --> 00:13:04.300
+ but usually the code's already executed.
+
+00:13:04.300 --> 00:13:06.660
+ So you have to set the break point,
+
+00:13:06.660 --> 00:13:07.780
+ then you got to refresh the page,
+
+00:13:07.780 --> 00:13:09.380
+ and it remembers where you set the break point,
+
+00:13:09.380 --> 00:13:10.980
+ and then it stops it.
+
+00:13:10.980 --> 00:13:13.660
+ Okay, and so you kind of set the break point
+
+00:13:13.660 --> 00:13:16.260
+ and then hit refresh, you'll figure it out.
+
+00:13:16.260 --> 00:13:19.300
+ Because by the time it's all done,
+
+00:13:19.300 --> 00:13:20.780
+ it can't go back in time.
+
+00:13:20.780 --> 00:13:23.300
+ It's past that line, so you have to see the line,
+
+00:13:23.300 --> 00:13:25.420
+ set the break point, refresh the page,
+
+00:13:25.420 --> 00:13:28.860
+ then it knows to break point, catch the break point
+
+00:13:28.860 --> 00:13:32.540
+ as it's going by rather than going back in time
+
+00:13:32.540 --> 00:13:34.140
+ 'cause it doesn't remember.
+
+00:13:34.140 --> 00:13:36.540
+ It can't run time backwards, just forwards.
+
+00:13:36.540 --> 00:13:40.980
+ So that gives you a little sense of what it is like
+
+00:13:40.980 --> 00:13:43.420
+ to do JavaScript in the browser.
+
+00:13:43.420 --> 00:13:45.660
+ And now we're gonna just look at JavaScript
+
+00:13:45.660 --> 00:13:47.740
+ as if it were a regular programming language.
+
+00:13:47.740 --> 00:13:49.980
+ And this applies whether it's in the browser,
+
+00:13:49.980 --> 00:13:52.460
+ in the server, in Vue, or whatever.
+
+00:13:52.460 --> 00:13:55.040
+ (upbeat music)
 

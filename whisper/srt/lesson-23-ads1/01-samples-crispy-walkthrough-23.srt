@@ -1,756 +1,332 @@
 1
-00:00:00,000 --> 00:00:02,640
- and walkthrough for Django for everybody.
+00:00:00,000 --> 00:00:06,340
+ and this particular walkthrough, we're going to be playing with the crispy forms sample.
 
 2
-00:00:02,640 --> 00:00:04,760
- In this particular walkthrough, we're going to be playing
+00:00:06,340 --> 00:00:12,340
+ And so at a high level, we've been working on forms for a while, forms are some markup,
 
 3
-00:00:04,760 --> 00:00:07,680
- with the Crispy form sample.
+00:00:12,340 --> 00:00:21,340
+ and we make a form object and then we render that form using the built-in django form rendering capability.
 
 4
-00:00:07,680 --> 00:00:10,640
- And so at a high level, we've been working on forms
+00:00:21,340 --> 00:00:29,840
+ And if we look at the page, we do some source, we can see that here's the form, it generates all this stuff for us,
 
 5
-00:00:10,640 --> 00:00:13,120
- for a while, forms are some markup,
+00:00:29,840 --> 00:00:37,840
+ we didn't write this. And so what's cool about this is when we're using a form object, let's take a look here,
 
 6
-00:00:13,120 --> 00:00:18,000
- and we make a form object and then we render that form
+00:00:37,840 --> 00:00:44,840
+ form object, and then in our view, we're passing that into the template, we create the form object,
 
 7
-00:00:18,000 --> 00:00:21,760
- using the built-in Django form rendering capability.
+00:00:44,840 --> 00:00:53,340
+ put some old data into it, and then we send it into the template, and then we create a table tag,
 
 8
-00:00:21,760 --> 00:00:25,720
- And if we look at the page, we do some view source,
+00:00:53,340 --> 00:00:59,840
+ and then we issue the form as a table, all this form as table creates, the table tag starts here,
 
 9
-00:00:25,720 --> 00:00:28,520
- we can see that here's the form,
+00:00:59,840 --> 00:01:05,840
+ but then form as table is all these TRs and TDs, et cetera, et cetera, down to /table.
 
 10
-00:00:28,520 --> 00:00:31,360
- generates all this stuff for us, we didn't write this.
+00:01:05,840 --> 00:01:14,840
+ So from line 69 in my source code here, your source code be different, 39 and 69 all comes from this form as table.
 
 11
-00:00:31,360 --> 00:00:35,760
- And so what's cool about this is when we're using
+00:01:14,840 --> 00:01:26,840
+ And this is because we're creating a form object and then letting the templates and the built-in django capabilities render that form.
 
 12
-00:00:35,760 --> 00:00:39,760
- a form object, let's take a look here, form object,
+00:01:26,840 --> 00:01:38,840
+ Now, what's really cool is that because this object is well-defined, this is just an example of object-oriented programming allowing for flexibility,
 
 13
-00:00:39,760 --> 00:00:43,440
- and then in our view, we're passing that into the template,
+00:01:38,840 --> 00:01:48,840
+ we can substitute the code that goes from this object and renders to a form.
 
 14
-00:00:43,440 --> 00:00:46,720
- we create the form object, put some old data into it,
+00:01:48,840 --> 00:01:57,340
+ Let's go back here, right? That is form as table, that is as table as a method that's built into the form object that's built into django,
 
 15
-00:00:46,720 --> 00:00:49,120
- and then we send it into the template,
+00:01:57,340 --> 00:02:03,840
+ but we can extend django and say, you know what, we don't want to use your built-in form rendering.
 
 16
-00:00:49,120 --> 00:00:53,360
- and then we create a table tag,
+00:02:03,840 --> 00:02:09,840
+ We would rather use Crispy and Crispy is a library that we add to it.
 
 17
-00:00:53,360 --> 00:00:56,080
- and then we issue the form as a table,
+00:02:09,840 --> 00:02:17,840
+ So if we just take the exact same form and we take a look at it, it's like, look how pretty this is.
 
 18
-00:00:56,080 --> 00:01:00,120
- all this form as table creates, the table tag starts here,
+00:02:17,840 --> 00:02:26,840
+ It's got some curve boundaries and it's got this blue highlight and it tells what things are required with asterisks and it takes the whole width up.
 
 19
-00:01:00,120 --> 00:01:04,080
- but then form as table is all these TRs and TDs,
+00:02:26,840 --> 00:02:36,840
+ And that's a lot of HTML and CSS and if we do a view source of this, we'll see that at some point we have this big div, right?
 
 20
-00:01:04,080 --> 00:01:06,000
- et cetera, et cetera, down to slash table.
+00:02:36,840 --> 00:02:43,840
+ There's this big div and all that form there is this markup, asterisk and all that stuff, right?
 
 21
-00:01:06,000 --> 00:01:10,400
- So from line 69 in my source code here,
+00:02:43,840 --> 00:02:51,840
+ And there's CSS that makes all this work, et cetera, et cetera, et cetera, but we didn't write a single line of this HTML or CSS.
 
 22
-00:01:10,400 --> 00:01:13,000
- your source code be different, 39 and 69,
+00:02:51,840 --> 00:02:58,840
+ This group called the Crispy form people.
 
 23
-00:01:13,000 --> 00:01:15,240
- all comes from this form as table.
+00:02:58,840 --> 00:03:08,840
+ Let's take a look at the Crispy. So the people that built this library and all we have to do is make use of this library and then we can make our forms look pretty.
 
 24
-00:01:15,240 --> 00:01:18,480
- And this is because we're creating a form object
+00:03:08,840 --> 00:03:18,840
+ Now we have to do a little bit of work, but the key thing that's not going to change is if we take a look at our views.py in between, this view is the same.
 
 25
-00:01:18,480 --> 00:01:22,880
- and then letting the templates
+00:03:18,840 --> 00:03:25,840
+ And so if you look at urls.py, you see that we're using the same view, my view, and we're just switching templates.
 
 26
-00:01:22,880 --> 00:01:26,560
- and the built-in Django capabilities render that form.
+00:03:25,840 --> 00:03:30,840
+ We're going to run the template, the boring template and the awesome template.
 
 27
-00:01:26,560 --> 00:01:32,760
- Now, what's really cool is that because
+00:03:30,840 --> 00:03:33,840
+ We are looking at the boring template. We've done this before.
 
 28
-00:01:32,760 --> 00:01:34,640
- this object is well-defined,
+00:03:33,840 --> 00:03:43,840
+ We're saying we're going to give it a table tag and then render the form object as a table using the built in stuff.
 
 29
-00:01:34,640 --> 00:01:37,440
- this is just an example of object-oriented programming
+00:03:43,840 --> 00:03:50,840
+ But if we're going to do awesome, we're going to use the exact same view, right, the exact same view.
 
 30
-00:01:37,440 --> 00:01:42,160
- allowing for flexibility, we can substitute the code
+00:03:50,840 --> 00:03:56,840
+ And we're going to render a different template. In this case, we're going to render this template.
 
 31
-00:01:42,160 --> 00:01:46,400
- that goes from this object and renders to a form.
-
-32
-00:01:46,400 --> 00:01:50,160
- Let's go back here, right?
-
-33
-00:01:50,160 --> 00:01:53,840
- That is form as table, that is as table as the methods
-
-34
-00:01:53,840 --> 00:01:57,200
- that's built into the form object that's built into Django.
-
-35
-00:01:57,200 --> 00:02:00,120
- But we can extend Django and say,
-
-36
-00:02:00,120 --> 00:02:03,520
- you know what, we don't wanna use your built-in form rendering,
-
-37
-00:02:03,520 --> 00:02:06,960
- we would rather use Crispy.
-
-38
-00:02:06,960 --> 00:02:09,600
- And Crispy is a library that we add to it.
-
-39
-00:02:09,600 --> 00:02:12,880
- And so if we just take the exact same form
-
-40
-00:02:12,880 --> 00:02:15,680
- and we take a look at it, it's like,
-
-41
-00:02:15,680 --> 00:02:17,400
- look how pretty this is.
-
-42
-00:02:17,400 --> 00:02:19,760
- It's got some curve boundaries
-
-43
-00:02:19,760 --> 00:02:22,440
- and it's got this blue highlight
-
-44
-00:02:22,440 --> 00:02:25,200
- and it tells what things are required with asterisks
-
-45
-00:02:25,200 --> 00:02:27,040
- and it takes the whole width up.
-
-46
-00:02:27,040 --> 00:02:29,120
- And that's a lot of HTML and CSS.
-
-47
-00:02:29,120 --> 00:02:30,720
- And if we do a view source of this,
-
-48
-00:02:30,720 --> 00:02:35,720
- we'll see that at some point we have this big div, right?
-
-49
-00:02:35,720 --> 00:02:41,360
- There's this big div and all that form there is this markup,
-
-50
-00:02:41,360 --> 00:02:43,680
- asterisk and all that stuff, right?
-
-51
-00:02:43,680 --> 00:02:46,120
- And there's CSS that makes all this work,
-
-52
-00:02:46,120 --> 00:02:47,480
- et cetera, et cetera, et cetera.
-
-53
-00:02:47,480 --> 00:02:52,240
- But we didn't write a single line of this HTML or CSS,
-
-54
-00:02:52,240 --> 00:02:55,960
- this group called the Crispy form people.
-
-55
-00:02:55,960 --> 00:03:00,800
- Let's take a look at the Crispy,
-
-56
-00:03:00,800 --> 00:03:02,880
- so the people that built this library
-
-57
-00:03:02,880 --> 00:03:05,880
- and all we have to do is make use of this library
-
-58
-00:03:05,880 --> 00:03:08,760
- and then we can make our forms look pretty.
-
-59
-00:03:08,760 --> 00:03:10,560
- Now we have to do a little bit of work,
-
-60
-00:03:10,560 --> 00:03:12,520
- but the key thing that's not gonna change
-
-61
-00:03:12,520 --> 00:03:15,080
- is if we take a look at our views.py,
-
-62
-00:03:15,080 --> 00:03:18,960
- in between, this view is the same.
-
-63
-00:03:18,960 --> 00:03:21,520
- And so if you look at urls.py,
-
-64
-00:03:21,520 --> 00:03:24,680
- you see that we're using the same view, my view,
-
-65
-00:03:24,680 --> 00:03:26,080
- and we're just switching templates.
-
-66
-00:03:26,080 --> 00:03:27,680
- We're gonna run the template,
-
-67
-00:03:27,680 --> 00:03:30,840
- the boring template and the awesome template.
-
-68
-00:03:30,840 --> 00:03:32,840
- We are looking at the boring template,
-
-69
-00:03:32,840 --> 00:03:35,520
- we've done this before and we're saying,
-
-70
-00:03:35,520 --> 00:03:37,240
- we're gonna give it a table tag
-
-71
-00:03:37,240 --> 00:03:40,640
- and then render the form object as a table
-
-72
-00:03:40,640 --> 00:03:42,100
- using the built-in stuff.
-
-73
-00:03:43,960 --> 00:03:47,040
- But if we're going to do awesome,
-
-74
-00:03:47,040 --> 00:03:49,320
- we're gonna use the exact same view,
-
-75
-00:03:49,320 --> 00:03:51,120
- the exact same view,
-
-76
-00:03:51,120 --> 00:03:54,560
- and we're going to render a different template.
-
-77
-00:03:54,560 --> 00:03:56,800
- In this case, we're going to render this template.
-
-78
-00:03:56,800 --> 00:04:01,800
+00:03:56,840 --> 00:04:02,840
  Now, this template is very similar.
 
-79
-00:04:01,800 --> 00:04:05,600
- The main thing that's different here in the middle
+32
+00:04:02,840 --> 00:04:12,840
+ The main thing that's different here in the middle is we just take the form object, which is the same form object that came in right here in our context.
 
-80
-00:04:05,600 --> 00:04:07,760
- is we just take the form object,
+33
+00:04:12,840 --> 00:04:17,840
+ It's the same form object. And we say form vertical bar crispy.
 
-81
-00:04:07,760 --> 00:04:10,040
- which is the same form object that came in
+34
+00:04:17,840 --> 00:04:23,840
+ Now, if you read the crispy documentation, this is how you they have registered what's called a filter.
 
-82
-00:04:10,040 --> 00:04:13,200
- right here in our context,
+35
+00:04:23,840 --> 00:04:28,840
+ And there's a vertical bar as a Linux pipe operator. So we're kind of piping.
 
-83
-00:04:13,200 --> 00:04:14,940
- take the same form object,
+36
+00:04:28,840 --> 00:04:34,840
+ We're taking the form object and sending it through the crispy library and then that crispy.
 
-84
-00:04:14,940 --> 00:04:18,640
- and we save form vertical bar crispy.
+37
+00:04:34,840 --> 00:04:37,840
+ So you get CSRF token and you get input type equals submit.
 
-85
-00:04:18,640 --> 00:04:20,200
- Now, if you read the crispy documentation,
+38
+00:04:37,840 --> 00:04:43,840
+ And if we take a look at the source code, the CSRF token is there and input type equals submit.
 
-86
-00:04:20,200 --> 00:04:23,040
- this is how you, they have registered
+39
+00:04:43,840 --> 00:04:50,840
+ And everything from from lines 40 through 46 is coming from the crispy library.
 
-87
-00:04:23,040 --> 00:04:24,040
- what's called a filter,
+40
+00:04:50,840 --> 00:04:57,840
+ But we did not change how we defined our form. We did not change how we pass the form into the context.
 
-88
-00:04:24,040 --> 00:04:27,960
- and there's a vertical bar as a Linux pipe operator.
+41
+00:04:57,840 --> 00:05:05,840
+ We simply changed the template to say I would like to render this particular form object as a crispy form.
 
-89
-00:04:27,960 --> 00:04:29,160
- So we're kind of piping,
+42
+00:05:05,840 --> 00:05:09,840
+ And there's a couple of things that we have to do as kind of prerequisites to making this happen.
 
-90
-00:04:29,160 --> 00:04:30,320
- we're taking the form object
+43
+00:05:09,840 --> 00:05:14,840
+ So first off, you have to do this load thing. And that's just part of Django to say,
 
-91
-00:04:30,320 --> 00:04:33,680
- and sending it through the crispy library.
+44
+00:05:14,840 --> 00:05:19,840
+ I want the crispy forms tag library to be present in this particular template.
 
-92
-00:04:33,680 --> 00:04:35,320
- And then that crispy,
+45
+00:05:19,840 --> 00:05:24,840
+ And so we have to do this somewhere above where we access it.
 
-93
-00:04:35,320 --> 00:04:36,560
- so you've got CSRF token
-
-94
-00:04:36,560 --> 00:04:38,380
- and you've got input type equals submit.
-
-95
-00:04:38,380 --> 00:04:40,220
- And if we take a look at the source code,
-
-96
-00:04:40,220 --> 00:04:43,640
- the CSRF token is there and input type equals submit,
-
-97
-00:04:43,640 --> 00:04:48,540
- and everything from lines 40 through 46
-
-98
-00:04:48,540 --> 00:04:50,760
- is coming from the crispy library.
-
-99
-00:04:50,760 --> 00:04:54,340
- But we did not change how we defined our form,
-
-100
-00:04:54,340 --> 00:04:57,680
- we did not change how we passed the form into the context,
-
-101
-00:04:57,680 --> 00:05:00,920
- we simply changed the template to say,
-
-102
-00:05:00,920 --> 00:05:03,840
- I would like to render this particular form object
-
-103
-00:05:03,840 --> 00:05:05,600
- as a crispy form.
-
-104
-00:05:05,600 --> 00:05:07,180
- Now, there's a couple of things that we have to do
-
-105
-00:05:07,180 --> 00:05:09,960
- as kind of prerequisites to making this happen.
-
-106
-00:05:09,960 --> 00:05:12,200
- So first off, you have to do this load thing,
-
-107
-00:05:12,200 --> 00:05:14,560
- and that's just part of Django to say,
-
-108
-00:05:14,560 --> 00:05:18,060
- I want the crispy forms tag library to be present
-
-109
-00:05:18,060 --> 00:05:19,320
- in this particular template.
-
-110
-00:05:19,320 --> 00:05:21,560
- And so we have to do this somewhere
-
-111
-00:05:21,560 --> 00:05:24,180
- above where we access it.
-
-112
-00:05:24,180 --> 00:05:26,720
+46
+00:05:24,840 --> 00:05:26,840
  So that's the thing we have to do in the template.
 
-113
-00:05:26,720 --> 00:05:30,880
- I mean, literally these two lines, load crispy form tags,
-
-114
-00:05:30,880 --> 00:05:32,520
- and the load crispy form tags,
-
-115
-00:05:32,520 --> 00:05:35,800
- you see that doesn't actually generate any markup,
-
-116
-00:05:35,800 --> 00:05:39,320
- that just kind of prepares the template engine
-
-117
-00:05:39,320 --> 00:05:42,920
- to handle this form vertical bar crispy.
-
-118
-00:05:42,920 --> 00:05:45,240
- Now there's a couple of other things
-
-119
-00:05:45,240 --> 00:05:48,000
- that we have to do to make this work.
-
-120
-00:05:48,000 --> 00:05:51,560
- So the first thing we have to do is we have to
-
-121
-00:05:51,560 --> 00:05:54,080
- have in our settings.py, we have to,
-
-122
-00:05:54,080 --> 00:05:56,440
- in our installed apps, we have to tell it
-
-123
-00:05:56,440 --> 00:05:57,880
- that we need the crispy forms,
-
-124
-00:05:57,880 --> 00:06:00,280
- and we're using the bootstrap five.
-
-125
-00:06:00,280 --> 00:06:02,160
- There's a number of different,
-
-126
-00:06:02,160 --> 00:06:03,740
- I don't know if I can find it quick enough here,
-
-127
-00:06:03,740 --> 00:06:07,000
- there's a, somewhere here.
-
-128
-00:06:07,000 --> 00:06:08,580
- Let's go find the documentation.
-
-129
-00:06:10,200 --> 00:06:11,480
- The template packs.
-
-130
-00:06:11,480 --> 00:06:13,600
- And you'll see there's a series of template packs
-
-131
-00:06:13,600 --> 00:06:15,680
- that are for crispy, and we're using,
-
-132
-00:06:15,680 --> 00:06:18,640
- for now we're using the bootstrap five template pack.
-
-133
-00:06:18,640 --> 00:06:20,360
- And then there's a couple of variables,
-
-134
-00:06:20,360 --> 00:06:22,820
- and again, you can go read the crispy documentation,
-
-135
-00:06:22,820 --> 00:06:24,600
- but you need these two variables.
-
-136
-00:06:24,600 --> 00:06:28,160
- And that, when you're doing your web reload,
-
-137
-00:06:28,160 --> 00:06:31,120
- or your run server, or your manage.py check,
-
-138
-00:06:31,120 --> 00:06:35,960
- that's enough to get crispy working in your instance,
-
-139
-00:06:35,960 --> 00:06:38,340
- so that that's necessary.
-
-140
-00:06:38,340 --> 00:06:40,600
- Now one other thing that is necessary.
-
-141
-00:06:40,600 --> 00:06:43,800
- Let's see where we're at.
-
-142
-00:06:43,800 --> 00:06:49,080
- One other thing that's necessary is there's a series
-
-143
-00:06:49,080 --> 00:06:53,360
- of things that you installed a long time ago
-
-144
-00:06:53,360 --> 00:06:54,820
- using a pip command.
-
-145
-00:06:54,820 --> 00:06:58,400
- And so we installed the crispy bootstrap library.
-
-146
-00:06:58,400 --> 00:07:01,500
- This is pip installs Python extensions.
-
-147
-00:07:01,500 --> 00:07:04,340
- And somewhere else there is the crispy bootstrap,
-
-148
-00:07:04,340 --> 00:07:06,920
- and then I think we'll find something.
-
-149
-00:07:06,920 --> 00:07:08,320
- Let's just search for crispy.
-
-150
-00:07:08,320 --> 00:07:13,880
- Yeah, so we installed crispy forms,
-
-151
-00:07:13,880 --> 00:07:18,400
- and then we installed the render library for bootstrap five.
-
-152
-00:07:18,400 --> 00:07:21,440
- And so you may not recall when you did this,
-
-153
-00:07:21,440 --> 00:07:25,080
- but back in a long, long time ago,
-
-154
-00:07:25,080 --> 00:07:28,760
- in the very first assignment, when you're setting things up,
-
-155
-00:07:28,760 --> 00:07:32,600
- one of the things I had you do is I had you run pip install,
-
-156
-00:07:32,600 --> 00:07:34,160
- and the assignment may be a little different,
-
-157
-00:07:34,160 --> 00:07:36,280
- 'cause over time we have different versions of Django
-
-158
-00:07:36,280 --> 00:07:41,280
- and all that stuff, but this read this requirements file,
-
-159
-00:07:41,280 --> 00:07:44,960
- and it installed in your Python virtual environment,
-
-160
-00:07:44,960 --> 00:07:48,200
- the Django 4 environment or the .v environment,
-
-161
-00:07:48,200 --> 00:07:50,040
- and installed all these libraries.
-
-162
-00:07:50,040 --> 00:07:54,540
- And then in the settings, we activate these libraries,
-
-163
-00:07:54,540 --> 00:07:58,920
- activate the library, and then we configure the library.
-
-164
-00:07:58,920 --> 00:08:01,040
- And again, how did I figure all this out?
-
-165
-00:08:01,040 --> 00:08:04,900
- I go read the crispy documentation, right?
-
-166
-00:08:04,900 --> 00:08:06,760
- It told me how to do all this stuff,
-
-167
-00:08:06,760 --> 00:08:09,320
- and it talks about the crispy tag, et cetera.
-
-168
-00:08:09,320 --> 00:08:11,080
- It's the crispy filter.
-
-169
-00:08:11,080 --> 00:08:14,600
- I mean, you just stuff, see, it says crispy filter.
-
-170
-00:08:14,600 --> 00:08:17,800
- Take your form, put in load crispy form tags.
-
-171
-00:08:17,800 --> 00:08:19,280
- I mean, documentation's not too hard.
-
-172
-00:08:19,280 --> 00:08:24,280
- And again, I guess the key to this thing is that
-
-173
-00:08:24,280 --> 00:08:29,420
- it is an example of once we make an object,
-
-174
-00:08:29,420 --> 00:08:31,160
- we could have written a bunch of strings, right?
-
-175
-00:08:31,160 --> 00:08:33,000
- We could have made our form be a bunch of strings,
-
-176
-00:08:33,000 --> 00:08:37,360
- but instead we sort of follow the Django way
-
-177
-00:08:37,360 --> 00:08:41,360
- and make a form object that extends forms.form,
-
-178
-00:08:41,360 --> 00:08:45,320
- and then we pass that form object into our render,
-
-179
-00:08:45,320 --> 00:08:47,240
- and away we go, right?
-
-180
-00:08:47,240 --> 00:08:49,240
- And then we can then leverage,
-
-181
-00:08:49,240 --> 00:08:51,600
- because this is now a standard within Django,
-
-182
-00:08:51,600 --> 00:08:54,320
- what forms look like, someone can go ahead
-
-183
-00:08:54,320 --> 00:08:59,320
- and write a crazy and wonderful crispy form library
-
-184
-00:08:59,320 --> 00:09:00,800
- that drops in.
-
-185
-00:09:00,800 --> 00:09:03,880
- And so that's one of the beauties of making
-
-186
-00:09:03,880 --> 00:09:06,760
- Django so object-oriented.
-
-187
-00:09:06,760 --> 00:09:09,900
- So I think I'll stop there,
-
-188
-00:09:09,900 --> 00:09:13,220
- and there is our introduction to crispy forms.
-
-189
-00:09:13,220 --> 00:09:14,060
- Cheers.
+47
+00:05:26,840 --> 00:05:33,840
+ I mean, literally these two lines load crispy form tags and a little crispy form tags.
+
+48
+00:05:33,840 --> 00:05:35,840
+ See, that doesn't actually generate any markup.
+
+49
+00:05:35,840 --> 00:05:42,840
+ That just kind of prepares the template engine to handle this form vertical bar crispy.
+
+50
+00:05:42,840 --> 00:05:47,840
+ Now, there's a couple of other things that we have to do to make this work.
+
+51
+00:05:47,840 --> 00:05:54,840
+ So the first thing we have to do is we have to have in our settings.py, we have to in our installed apps,
+
+52
+00:05:54,840 --> 00:05:59,840
+ we have to tell it that we need the crispy forms and we're using the bootstrap five.
+
+53
+00:05:59,840 --> 00:06:03,840
+ There's a number of different, I don't know if I can find it quick enough here.
+
+54
+00:06:03,840 --> 00:06:11,840
+ There's a somewhere here. Let's go find the documentation template packs.
+
+55
+00:06:11,840 --> 00:06:14,840
+ And you'll see there's a series of template packs that are for crispy.
+
+56
+00:06:14,840 --> 00:06:18,840
+ And we're using for now we're using the bootstrap five template pack.
+
+57
+00:06:18,840 --> 00:06:20,840
+ And then there's a couple of variables.
+
+58
+00:06:20,840 --> 00:06:24,840
+ And again, you go read the crispy documentation, but you need these two variables.
+
+59
+00:06:24,840 --> 00:06:30,840
+ That when you're doing your web reload or your run server or your managed by check,
+
+60
+00:06:30,840 --> 00:06:37,840
+ that's enough to get crispy working in your instance so that that's necessary.
+
+61
+00:06:37,840 --> 00:06:45,840
+ Now, one other thing that is necessary, let's see where we're at.
+
+62
+00:06:45,840 --> 00:06:52,840
+ One other thing that's necessary is there's a series of things that you installed a long time ago
+
+63
+00:06:52,840 --> 00:06:57,840
+ using a pip command. And so we installed the crispy bootstrap library.
+
+64
+00:06:57,840 --> 00:07:03,840
+ This is pip installs Python extensions and somewhere else there is the crispy bootstrap.
+
+65
+00:07:03,840 --> 00:07:10,840
+ And then I think we'll find something. Let's just search for crispy.
+
+66
+00:07:10,840 --> 00:07:17,840
+ Yeah, so we installed crispy forms and then we installed the render library for bootstrap five.
+
+67
+00:07:17,840 --> 00:07:25,840
+ And so you may not recall when you did this, but back in a long, long time ago in the very first assignment,
+
+68
+00:07:25,840 --> 00:07:31,840
+ when you're setting things up, one of the things I had you do is I had you run pip install.
+
+69
+00:07:31,840 --> 00:07:37,840
+ And the assignment may be a little different because over time we have different versions of Django and all that stuff.
+
+70
+00:07:37,840 --> 00:07:44,840
+ But this read this requirements file and it installed in your Python virtual environment,
+
+71
+00:07:44,840 --> 00:07:49,840
+ the Django core environment or the dot V environment and installed all these libraries.
+
+72
+00:07:49,840 --> 00:07:58,840
+ And then in the settings, we activate these libraries, activate the library, and then we configure the library.
+
+73
+00:07:58,840 --> 00:08:04,840
+ And again, how did I figure all this out? I go read the crispy documentation, right?
+
+74
+00:08:04,840 --> 00:08:08,840
+ It told me how to do all this stuff. And it talks about the crispy tag, et cetera.
+
+75
+00:08:08,840 --> 00:08:17,840
+ It's the crispy filter. I mean, just stuff. See, it says crispy filter. Take your form, put in load crispy form tags.
+
+76
+00:08:17,840 --> 00:08:28,840
+ I mean, documentation is not too hard. And again, I guess the key to this thing is that it is an example of once we make an object,
+
+77
+00:08:28,840 --> 00:08:32,840
+ we could have written a bunch of strings, right? We could have made our form be a bunch of strings.
+
+78
+00:08:32,840 --> 00:08:40,840
+ But instead we sort of follow the Django way and make a form object that extends forms dot form.
+
+79
+00:08:40,840 --> 00:08:46,840
+ And then we pass that form object into our render and away we go. Right.
+
+80
+00:08:46,840 --> 00:08:52,840
+ And then we can then leverage because this is now a standard within Django what forms look like.
+
+81
+00:08:52,840 --> 00:09:00,840
+ Someone can go ahead and write a crazy and wonderful crispy form library that drops in.
+
+82
+00:09:00,840 --> 00:09:06,840
+ And so that's one of the beauties of making Django so object oriented.
+
+83
+00:09:06,840 --> 00:09:13,840
+ So I think I'll stop there. And there is our introduction to crispy forms. Cheers.
 

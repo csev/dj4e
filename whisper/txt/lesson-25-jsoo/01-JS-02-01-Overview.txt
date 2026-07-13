@@ -1,52 +1,96 @@
- Hello and welcome to our lecture on Object-Oriented Programming in JavaScript.
- I teach Object-Oriented Programming in Python, in PHP, and in JavaScript.
- And I use the same slides over and over and over again.
- And that's because Object-Oriented concepts are the same.
- So if you've taken other classes from me, you've seen some of these slides.
- They're adapted a little bit from JavaScript because JavaScript's Object-Oriented pattern is particularly awesome, right?
- But there's this concept of a class, which is like a template.
- There's a concept of code and data in a class.
- Whether you call the code method or message is up to you.
- Whether you call the data attributes or fields.
+ - Hello, and welcome to our lecture
+ on object-oriented programming in JavaScript.
+ I teach object-oriented programming in Python,
+ in PHP, and in JavaScript.
+ And I use the same slides over and over and over again,
+ and that's because object-oriented concepts are the same.
+ So if you've taken other classes from me,
+ you've seen some of these slides.
+ They're adapted a little bit from JavaScript,
+ 'cause JavaScript's object-oriented pattern
+ is particularly awesome, right?
+ But there's this concept of a class,
+ which is like a template.
+ There's a concept of code and data in a class,
+ whether you call the code method or message is up to you,
+ whether you call the data attributes or fields.
  And then an object is an instance of the class.
- And so the cookie cutter is the shape that's the class and the cookie itself that can be specialized.
- And it's an instance. Millions of cookies come from one cookie cutter.
- And that's Object-Oriented.
- So the key is the craft of it is building the cookie cutter so that it makes awesome cookies.
- So the class, like I said, is the template. It's a blueprint.
- It's not the actual thing, but it is the precise instructions on how to make the thing.
- An instance is once you make the cookie, you can have different frosting on it.
- You can have all kinds of other things.
- You can make subclasses, which is what we do for inheritance, which makes specialized versions of the class.
+ And so the cookie cutter is,
+ the cookie cutter is the shape that's the class,
+ and the cookie itself that can be specialized,
+ and it's an instance.
+ Millions of cookies come from one cookie cutter,
+ and that's object-oriented.
+ And so the key is, is the craft of it
+ is building the cookie cutter
+ so that it makes awesome cookies.
+ So the class, like I said, is the template,
+ it's a blueprint, it's not the actual thing,
+ but it is the precise instructions
+ on how to make the thing.
+ An instance is once you make the cookie,
+ you can have different frosting on it,
+ you can have all kinds of other things.
+ You can make subclasses,
+ which is what we do for inheritance,
+ which makes specialized versions of the class.
  Now, the methods are the code.
- So in classic programming, we think of like code and data structures, algorithms and data structures.
- Data structures are the shape of data and algorithms are the shape of the code, the way the code is made to work.
- The methods are the algorithms that make up the code part of every object.
- Every object has code and data, and often the code works on the data that's inside the object.
- Some Object-Oriented sort of schools of thought use method, and some use message.
- The more purist folks tend to use messages, like you're sending a message.
- Here's the object, not the class. You're sending a message to the object.
- I tend to use method because method is a bit of code that lives in there.
- That's just because I think of things from like Fortran or C, very procedural way of thinking.
- So objects in JavaScript are a little different.
- And if you've seen me talk about objects in Python or objects in PHP or even objects in Java,
- which I taught a lot of time ago, or C++, they're very different.
- And the key thing is it certainly is a storing reuse pattern.
- It is a mechanism to create data and code and put it into one kind of reusable thing.
- But the key thing is that the function keyword is actually, in a sense, an executable statement.
- And you can take and use the function keyword, and the function is, in a sense,
- calling a function that causes code to come back to you.
- So you can have the function create code and then assign it into the variable.
- These are called first-class functions.
- And it has to do with the fact that in first-class functions, you have this symmetry between code and data.
+ So in classic programming,
+ we think of like code and data structures,
+ the algorithms and data structures.
+ Data structures are the shape of data,
+ and algorithms are the shape of the code,
+ the way the code is made to work.
+ The methods are the algorithms
+ that make up the code part of every object.
+ Every object has code and data,
+ and often the code works on the data
+ that's inside the object.
+ Some object-oriented sort of schools of thought
+ use method, and some use message.
+ The more purist folks tend to use messages,
+ like you're sending a message, here's the object,
+ not the class, you're sending a message to the object.
+ I tend to use method,
+ 'cause method is a bit of code that lives in there,
+ and that's just 'cause I think of things
+ from like Fortran or C, very procedural way of thinking.
+ So objects in JavaScript are a little different,
+ and if you've seen me talk about objects in Python,
+ or objects in PHP, or even objects in Java,
+ which I taught a lot a long time ago,
+ or C++, they're very different.
+ And the key thing is,
+ it certainly is a storing reuse pattern.
+ It is a mechanism to create data and code
+ and put it into one kind of reusable thing.
+ But the key thing is, is that the function keyword
+ is actually, in a sense, an executable statement,
+ and you can take and use the function keyword,
+ and the function is, in a sense, calling a function
+ that causes code to come back to you.
+ So you can have the function create code
+ and then assign it into the variable.
+ These are called first-class functions,
+ and it has to do with the fact
+ that in first-class functions,
+ you have this symmetry between code and data.
  The code is just data.
- And of all of the modern programming languages, Lisp really was the original code-data kind of duality.
- There is very, very, very much throwback to the Lisp tradition of data and code look the same way
+ And of all of the modern programming languages,
+ Lisp really was the original code-data kind of duality.
+ JavaScript is very, very, very much throwback
+ to the Lisp tradition of data and code look the same way,
  or can be treated the same way.
- You can have X as a variable and you can assign it to be 42.
- You can have it be a string or you can have it be a function that adds two numbers together.
- And it's just X. And that is kind of elegant.
- So that's called first-class functions in that functions themselves are the code.
- So the code in systems is manipulable as data.
+ You can have X as a variable,
+ and you can assign it to be 42.
+ You can have it be a string,
+ or you can have it be a function
+ that adds two numbers together.
+ And it's just X, and that is kind of elegant.
+ So that's called first-class functions,
+ and that functions themselves are the code.
+ The code in systems is manipulable as data.
  Copy around, use it, reuse it, et cetera.
- So up next, we're going to take a look at how we put together a sample class in JavaScript.
+ So up next, we're gonna take a look
+ at how we put together a sample class in JavaScript.
+ (upbeat music)

@@ -1,15 +1,17 @@
- Hello and welcome to yet another walk-through for Django for Everybody.
- This is a walk-through of the first lesson where we start working on the Marketplace assignment.
+ Hello, and welcome to yet another walkthrough for Django for Everybody.
+ This is a walkthrough of the first lesson where we start working on the Marketplace
+ assignment.
  So there is the Marketplace setup.
  And so this is something you do before you start working on Marketplace.
- We're going to start this using a GitHub, which is a little bit different.
+ We're gonna start this using a GitHub, which is a little bit different.
  It makes it sort of easier and then a little bit different.
- So we go to the assignment specification and then it says we're going to build this.
- The whole Marketplace website has got ads and tags.
- And by the time you're all done, you'll have many, many features.
- But we're just going to get it started now.
+ So we go to the assignment specification, and then it says we're gonna build this.
+ The whole Marketplace website has got ads and tags, and by the time you're all done,
+ you'll have many, many features.
+ But we're just gonna get it started now.
  And there is a GitHub repo.
- So instead of having you type a bunch of stuff, I've given you kind of an empty application in GitHub.
+ So instead of having you type a bunch of stuff, I've given you kind of an empty application
+ in GitHub.
  And so you are going to follow the instructions on GitHub, which is common.
  You'll find Django projects.
  There's a readme here.
@@ -17,126 +19,92 @@
  And so this is the starter.
  So these instructions are how to do it.
  So we're going to start by going to Python Anywhere.
- Okay, so if we look at our files here, we have Django projects, which is where we're going to install it.
- My site, that's the thing that you've been using to do all the applications up to this point.
- And so we're going to create a new Django project.
- So the first Django project is my site.
- And the next Django project is going to be called Market.
- Okay, so let's go into consoles and start up.
- Let's get rid of that one.
- Start a fresh bash console.
- So the instructions here are in this GitHub repository.
- Okay, so the first thing to do is check to see if you already have a Django 5.2 virtual environment.
+ Okay, so if we look at our files here, we have Django projects, which is where we're
+ gonna install it, MySite.
+ That's the thing that you've been using to do all the applications up to this point.
+ And so we're gonna create a new Django project.
+ So the first Django project is MySite, and the next Django project is gonna be called
+ Market, okay?
+ So let's go into consoles and start up, let's get rid of that one, start a fresh bash console.
+ So the instructions here are in this GitHub repository, okay.
+ So the first thing to do is check to see if you already have a Django 5.2 virtual environment.
  CD Tilt.
- Now, the fact that it says VE 5.2, that should be a clue right there.
- But we'll do it anyways.
- And you'll see that we're going to, this is the folder in your home directory, Tilt slash dot VE 5.2.
- And there's stuff there.
- And if you look at the instructions, it says, oh, if the output looks like this, which it does, then you've got one.
+ Now the fact that it says VE 5.2, that should be a clue right there, but we'll do it anyways.
+ And you'll see that we're gonna, this is the folder in your home directory, Tilt slash
+ dot VE 5.2.
+ And there's stuff there, and if you look at the instructions, it says, oh, if the output
+ looks like this, which it does, then you've got one.
  Okay, great, great.
- This is, you can ignore this now because you don't have to do any of this stuff.
- And then once you're ready to go, we're going to do the install.
- So we've got to be in our home directory.
- And we need to be in the 5.2 virtual environment.
- Okay, so then we're going to start running these commands one at a time.
- And I like using this little clock check all thing.
- It gets kind of, you want to look at the output of every one of these things.
- So this is the get command.
- And the get should already be installed on, so we're in Django projects.
- Now, if we take a look at our files, hit reload here, you will see now that now there's a market.
- And there's a bunch of stuff in market, and it's kind of similar to what we had in my site.
- You know, it sets up a bunch of stuff.
- There's a manage.py and a home file config.
- Now, the key thing here, if you take a look, well, let's just, let's follow it.
- CD market.
- So now we're in that, we're in a home directory Django projects market.
- And we'll check our Python version.
- And the Python version is 3.13, which is perfectly fine, because that's in our virtual environment.
- Now, if you just, you may, these may not do much if you've already got your latest pip.
- And it'll probably say, ah, you're already good.
- You got the latest pip.
- And let's do pip minus install our requirements.txt.
- And I might look at that and say, you've already got it, because you've already got a virtual environment.
- This is just adding a bunch of stuff.
- So you just said, it's great, you got everything you needed from when you installed the DJ free samples before.
- And let's just for double checking, check to see if we got Django.
- And here we are in a virtual environment, we got Django 5.2.
- So we are in good shape, right?
+ You can ignore this now, because you don't have to do any of this stuff.
+ And then once you're ready to go, we're gonna do the install.
+ So we've gotta be in our home directory, and we need to be in the 5.2 virtual environment,
+ okay?
+ So then we're gonna start running these commands one at a time.
+ I don't like using this little clock check all thing, it gets kinda, you wanna look at
+ the output of every one of these things.
+ So this is the get command, and the get should already be installed on, so we're in Django
+ projects.
+ Now if we take a look at our files, hit reload here, you will see now that now there's a
+ market, and there's a bunch of stuff in market, and it's kinda similar to what we had in my
+ site.
+ It sets up a bunch of stuff, there's a manage.py and a home found config.
+ Now the key thing here if you take a look, well let's just, let's follow it.
+ CD market, so now we're in that, we're in a home directory, Django projects market,
+ and we'll check our Python version, and the Python version is 3.13, which is perfectly
+ fine because that's in our virtual environment.
+ Now if you just, you may, these may not do much if you've already got your latest pip,
+ and it'll probably say, you're already good, you got the latest pip, and let's do pip minus
+ install our requirements.txt, and I might look at that and say, you've already got it
+ because you already got a virtual environment, this is just adding a bunch of stuff.
+ So you see it just said, it's great, you got everything you needed from when you installed
+ the DJ free samples before, and let's just for double checking, check to see if we got
+ Django, and here we are in a virtual environment, we got Django 5.2, so we are in good shape.
  So depending on what you see, you may need to do more or less of this.
- So now, you'll notice, as I said before, there is no market market.
- There's a file, I changed the name of this to config, and you can file the patterns here.
- So settings.py is in market config.
- A lot of developers don't like the market market pattern.
- I want to change the name of the project folder and the project configuration folder to be two different things.
- So I followed that pattern here just to give you a little different way of thinking about it, okay?
- And so we'll be in our home directory, I mean our project directory, and do python managepy check in the market directory.
- And that's good.
- If you have problems, you should, something went wrong.
- And so it worked okay.
- So we've already installed the application, and I put everything in there that you need.
- Now there's a few things that you're going to have to do.
+ So now, you'll notice, as I said before, there is no market market, there's a file, I changed
+ the name of this to config, and you can file the patterns here, so settings.py is in market
+ config, a lot of developers don't like the market market pattern, and wanna change the
+ name of the project folder and the project configuration folder to be two different things,
+ so I followed that pattern here just to give you a little different way of thinking about
+ it, okay?
+ And so, we'll be in our home directory, I mean our project directory, and do python
+ manage.py check in the market directory, and that's good, if you have problems, something
+ went wrong, and so it worked okay.
+ So we've already installed the application, and I put everything in there that you need,
+ now there's a few things that you're gonna have to do.
  And again, in all these things, if you get an error, slow down.
- So now we're going to, we're already in this folder, but we'll type it again.
- So we're in our Django projects market.
- And then we're going to make migrations.
- Chances are good this will not give us any output.
- Oops.
- Yeah, no changes. That's okay.
- Because that make migrations, as by now I hope you know, doesn't really touch the database.
- It just looks at the models.py files.
- And now we're going to do a python managepy migrate.
- And so this is actually, now this is really important.
- And then I'm going to create a super user.
- Now you might have created a super user before, but we just changed a database and made it all fresh again.
- So I'm going to call a super user, and I'm going to call it admin.
- And I'm not going to give it an email address.
- Yeah, I had to write that down so I don't forget it and then I have to reset it.
- Okay, so we had to create a super user.
- Now what we're going to do is go to the web tab and switch.
- So remember this is the run server.
- And so you've got a couple things here.
- So we're going to change this.
- Everything should be the same, except we're just going to make this be market.
- And you can have many applications in here, but you only can have one active at the same time.
- So you can actually switch back and forth.
- So I make that be market.
- And the virtual environment is right.
- And then if we look at our instructions.
- So it said source code and working directory, fix that.
- And then we're going to edit this stuff.
- This is in the WSGI configuration file.
- And again, this goes into my site.
- You can kind of guess what this is.
- It's going to change this word my site to my site and this to config.
- But I'm just going to paste them in and it will do all that.
- So we're going in the market, folders the market.
- But config, that's that new settings.py is in a folder named config now.
- And so that's why it says config settings.
- You can switch back and forth between market and my site if you want.
- So let's go back to the web tab now.
- So we got our WSGI done.
- We've got our virtual environment is correct from before.
- We had that before for the first part of the class.
- So let's take a look at the application.
- Ah, well, let's go to the web tab and let's reload it.
- And let's then see if it works.
- And there you go.
- So you got some other things that you're going to do as you do stuff in here.
- But if we go into these instructions, we'll see that, you know, it shows so.
- We'll go to home/home.
- That's there.
- We'll go to /favicon.ico.
- And that's the icon that shows up.
- How come that's not showing up?
- Oh, I see. See there you got that icon that shows up.
- And then we'll do one more thing here.
- Go back to the instructions and we'll go to admin.
- And I name my account Admin.
- And there we are.
- OK, and so now you have this all set up.
- And so you pretty much have finished the README at this point.
- README is done.
- And you have finished this initial setup.
- OK, so I hope you found that useful.
- And then you'll go on to the next step and the autograders, et cetera, after you finish this.
- Cheers.
+ So now we're gonna, we're already in this folder, but we'll type it again, so we're
+ in our Django projects market, and then, we're gonna make migrations, chances are good this
+ will not give us any output, oops, yep, no changes, that's okay, 'cause that make migrations,
+ as by now I hope you know, doesn't really touch the database, it just looks at the models.py
+ files, and now we're gonna do a python manage.py migrate, and so this is actually, now this
+ is really important, and then I'm gonna create a super user, now you might have created a
+ super user before, but we just changed the database and made it all fresh again, so I'm
+ gonna call a super user, and I'm gonna call it admin, and I'm not gonna give it an email
+ address, yeah, I gotta write that down so I don't forget it, and then I have to reset
+ it.
+ Okay, so we had to create a super user, now what we're gonna do is go to the web tab,
+ and switch, so remember this is the run server, and so you've got a couple things here, so
+ we're gonna change this, everything should be the same except we're just gonna make this
+ be market, and you can have many applications in here, but you only can have one active
+ at the same time, so you can actually switch back and forth, so I make that be market,
+ and the virtual environment is right, and then if we look at our instructions, okay,
+ so it said source code and working directory, fix that, and then we're gonna edit this stuff,
+ this is in the WSGI configuration file, and again this goes into my site, you can kind
+ of guess what this is, it's gonna change this word my site to my site, and this to config,
+ but I'm just gonna paste them in, and it'll do all that, right, so we're going in the
+ market, folders to the market, but config, that's that new, remember it's settings.py,
+ is in a folder named config now, and so that's why it says config settings.
+ You can switch back and forth between market and my site if you want, okay, so let's go
+ back to the web tab now, so we got our WSGI done, we've got our virtual environment is
+ correct from before, we had that before for the first part of the class, so let's take
+ a look at the application, ah, well, let's go to the web tab and let's reload it, and
+ let's then see if it works, and there you go, so you got some other things that you're
+ gonna do as you do stuff in here, but if we go into these instructions, we'll see that,
+ yeah, it shows so, we'll go to the home/home, that's there, we'll go to /favicon.ico, and
+ that's the icon that shows up, how come that's not showing up, oh, there you go, oh, I see,
+ see there you got that icon that shows up, and then we'll do one more thing here, go
+ back to the instructions, and we'll go to admin, and I name my account admin, and there
+ we are, okay, and so now you have this all set up, and so you pretty much have finished
+ the readme at this point, readme's done, and you have finished this initial setup, okay,
+ so I hope you found that useful, and then you'll go on to the next step in the autograders
+ etc. after you finish this, cheers.

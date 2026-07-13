@@ -1,380 +1,479 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.000
- Hello and welcome to another walk-through for Django For Everybody.
+00:00:00.000 --> 00:00:04.040
+ Hello, and welcome to another walkthrough for Django for Everybody.
 
-00:00:04.000 --> 00:00:08.000
- In this walk-through we're going to look at social login.
+00:00:04.040 --> 00:00:08.240
+ In this walkthrough, we're going to look at social login,
 
-00:00:08.000 --> 00:00:11.000
- And we're going to use GitHub to do our login.
+00:00:08.240 --> 00:00:11.360
+ and we're going to use GitHub to do our login,
 
-00:00:11.000 --> 00:00:15.000
- And we're going to use a piece of code called social login framework.
+00:00:11.360 --> 00:00:14.560
+ and we're going to use a piece of code called social login
 
-00:00:15.000 --> 00:00:20.000
- And you can read this, this is the link documentation to social login.
+00:00:14.560 --> 00:00:17.160
+ framework, and you can read this.
 
-00:00:20.000 --> 00:00:22.000
+00:00:17.160 --> 00:00:19.960
+ This is the link documentation to social login.
+
+00:00:19.960 --> 00:00:21.480
  You can read through all this stuff.
 
-00:00:22.000 --> 00:00:25.000
+00:00:21.480 --> 00:00:24.640
  But I've actually, in my home, I've already done most of this.
 
-00:00:25.000 --> 00:00:29.000
- And if you've based some of your stuff on the settings.
+00:00:24.640 --> 00:00:29.520
+ And if you've based some of your stuff on the settings--
 
-00:00:29.000 --> 00:00:34.000
- So if you've been using my code for a while, every time you say manage.py,
+00:00:29.520 --> 00:00:32.400
+ so if you've been using my code for a while,
 
-00:00:34.000 --> 00:00:39.000
- it says if you want to use social login, please see this file.
+00:00:32.400 --> 00:00:34.920
+ every time you say manage.py, it says,
 
-00:00:39.000 --> 00:00:42.000
- And then, and which registration it's doing.
+00:00:34.920 --> 00:00:39.640
+ if you want to use social login, please see this file,
 
-00:00:42.000 --> 00:00:45.000
- And so, we're actually going to, not really, it's not really broken.
+00:00:39.640 --> 00:00:41.560
+ and which registration it's doing.
 
-00:00:45.000 --> 00:00:49.000
- But you'll notice now, I'm going to show you where these messages are coming from.
+00:00:41.560 --> 00:00:44.000
+ And so we're actually going to--
 
-00:00:49.000 --> 00:00:51.000
- And what we are about to change.
+00:00:44.000 --> 00:00:45.760
+ it's not really broken, but you'll notice.
 
-00:00:51.000 --> 00:00:56.000
- So, this one over here.
+00:00:45.760 --> 00:00:48.960
+ Now I'm going to show you where these messages are coming from
 
-00:00:56.000 --> 00:01:00.000
- So first off, where those messages are coming from is down here,
+00:00:48.960 --> 00:00:51.280
+ and what we are about to change.
 
-00:01:00.000 --> 00:01:04.000
- deep in the settings.py, byline 176.
+00:00:51.280 --> 00:00:56.600
+ So this one over here.
 
-00:01:04.000 --> 00:01:08.000
+00:00:56.600 --> 00:00:59.600
+ So first off, where those messages are coming from
+
+00:00:59.600 --> 00:01:04.360
+ is down here deep in the settings.py by line 176.
+
+00:01:04.360 --> 00:01:07.880
  It's going to import from GitHubsettings.py.
 
-00:01:08.000 --> 00:01:11.000
- And GitHubsettings.py is a file.
+00:01:07.880 --> 00:01:13.040
+ And GitHubsettings.py is a file, but this file doesn't yet exist.
 
-00:01:11.000 --> 00:01:13.000
- But this file doesn't yet exist.
+00:01:13.040 --> 00:01:18.200
+ So if you go into dj4e-samples,
 
-00:01:13.000 --> 00:01:21.000
- So if you go into dj4e-samples, you will see that there is a GitHubsettings dist,
+00:01:18.200 --> 00:01:21.320
+ you will see that there is a GitHubsettings dist,
 
-00:01:21.000 --> 00:01:24.000
+00:01:21.320 --> 00:01:24.000
  but there is not a GitHubsettings.py.
 
-00:01:24.000 --> 00:01:26.000
- So this blows up.
+00:01:24.000 --> 00:01:28.720
+ So this blows up, and otherwise, it prints that message.
 
-00:01:26.000 --> 00:01:29.000
- And otherwise, and it prints that message.
-
-00:01:29.000 --> 00:01:31.000
+00:01:28.720 --> 00:01:31.000
  So there's where that message happens.
 
-00:01:31.000 --> 00:01:34.000
- And so, if you look at the documentation,
+00:01:31.000 --> 00:01:33.600
+ And so if you look at the documentation,
 
-00:01:34.000 --> 00:01:39.000
+00:01:33.600 --> 00:01:39.520
  we're going to put the GitHub, oauth2, backend, et cetera, et cetera.
 
-00:01:39.000 --> 00:01:40.000
- Okay?
+00:01:39.520 --> 00:01:45.160
+ So what we need to do basically is we need to take this file.
 
-00:01:40.000 --> 00:01:45.000
- So, what we need to do, basically, is we need to take this file.
+00:01:45.160 --> 00:01:48.840
+ There is a file called GitHubsettingsdist.py,
 
-00:01:45.000 --> 00:01:49.000
- There is a file called GitHubsettingsdist.py.
+00:01:48.840 --> 00:02:02.160
+ and we have to make a new empty file called GitHubsettings.py.
 
-00:01:49.000 --> 00:02:02.000
- So now we have to make a new empty file called GitHubsettings.py.
-
-00:02:02.000 --> 00:02:05.000
+00:02:02.160 --> 00:02:04.840
  So create that new empty file.
 
-00:02:05.000 --> 00:02:09.000
- And then the first thing we're going to do is we're going to just take all of this
+00:02:04.840 --> 00:02:06.680
+ And then the first thing we're going to do
 
-00:02:09.000 --> 00:02:12.000
+00:02:06.680 --> 00:02:08.880
+ is we're going to just take all of this
+
+00:02:08.880 --> 00:02:11.640
  and we're going to paste it into it, so from the dist.
 
-00:02:12.000 --> 00:02:14.000
+00:02:11.640 --> 00:02:13.720
  So this idea of a file with a dist name,
 
-00:02:14.000 --> 00:02:17.000
- that means it's kind of the distribution file, it's not the real file.
+00:02:13.720 --> 00:02:15.640
+ that means it's kind of the distribution file.
 
-00:02:17.000 --> 00:02:21.000
+00:02:15.640 --> 00:02:17.320
+ It's not the real file.
+
+00:02:17.320 --> 00:02:22.000
  And so I'm just going to save this file for now.
 
-00:02:21.000 --> 00:02:24.000
- Now the problem, and so if I go here, back here,
+00:02:22.000 --> 00:02:26.640
+ And so if I go here, back here, I believe that at this point,
 
-00:02:24.000 --> 00:02:29.000
- I believe that at this point it won't say anything because we have a file.
+00:02:26.640 --> 00:02:30.240
+ it won't say anything, because we have a file.
 
-00:02:29.000 --> 00:02:30.000
- All right?
+00:02:30.240 --> 00:02:33.760
+ And it says we've switched to using-- it was using login,
 
-00:02:30.000 --> 00:02:33.000
- And it says we've switched to using, it was using login,
-
-00:02:33.000 --> 00:02:36.000
+00:02:33.760 --> 00:02:36.440
  and now it's using login social.
 
-00:02:36.000 --> 00:02:40.000
+00:02:36.440 --> 00:02:40.640
  And so the login is a registration template.
 
-00:02:40.000 --> 00:02:44.000
- So this was the login that you've been using until you turn the social on.
+00:02:40.640 --> 00:02:42.560
+ So this was the login that you've been using
 
-00:02:44.000 --> 00:02:49.000
- And it has some rules that says, you know, here's where you do the URL,
+00:02:42.560 --> 00:02:44.800
+ until you turn the social on.
 
-00:02:49.000 --> 00:02:52.000
- you get a form, et cetera, so you get to set this login.
+00:02:44.800 --> 00:02:49.480
+ And it has some rules that says, here's where you do the URL.
 
-00:02:52.000 --> 00:02:55.000
+00:02:49.480 --> 00:02:50.960
+ You get a form, et cetera.
+
+00:02:50.960 --> 00:02:52.280
+ So you get to set this login.
+
+00:02:52.280 --> 00:02:55.120
  It's a long time ago that we set this thing.
 
-00:02:55.000 --> 00:02:58.000
+00:02:55.120 --> 00:02:58.520
  But social login, if you read all the documentation,
 
-00:02:58.000 --> 00:03:01.000
+00:02:58.520 --> 00:03:01.960
  read all this documentation, social login,
 
-00:03:01.000 --> 00:03:04.000
+00:03:01.960 --> 00:03:04.480
  you have a different way of doing it.
 
-00:03:04.000 --> 00:03:10.000
- So this is asking if that social auth GitHub key has been set properly,
+00:03:04.480 --> 00:03:08.520
+ So this is asking if that social auth GitHub key
 
-00:03:10.000 --> 00:03:15.000
- and that's this key right here, and otherwise it's not set.
+00:03:08.520 --> 00:03:10.480
+ has been set properly.
 
-00:03:15.000 --> 00:03:22.000
- So if it gets set, then it's going to do a link to this social begin GitHub.
+00:03:10.480 --> 00:03:13.040
+ And that's this key right here.
 
-00:03:22.000 --> 00:03:26.000
- And this is something that's documented in this Django framework.
+00:03:13.040 --> 00:03:15.320
+ And otherwise, it's not set.
 
-00:03:26.000 --> 00:03:31.000
+00:03:15.320 --> 00:03:16.880
+ So if it gets set, then it's going
+
+00:03:16.880 --> 00:03:22.000
+ to do a link to this social begin GitHub.
+
+00:03:22.000 --> 00:03:24.520
+ And this is something that's documented
+
+00:03:24.520 --> 00:03:27.440
+ in this Django framework.
+
+00:03:27.440 --> 00:03:31.160
  So somewhere in here is the begin.
 
-00:03:31.000 --> 00:03:36.000
+00:03:31.160 --> 00:03:35.760
  Yeah, so this is an example of how you call Google.
 
-00:03:36.000 --> 00:03:38.000
+00:03:35.760 --> 00:03:38.080
  So you just do this social colon begin.
 
-00:03:38.000 --> 00:03:45.000
+00:03:38.080 --> 00:03:45.440
  And this social, going back to settings.py,
 
-00:03:45.000 --> 00:03:47.000
- oh, we've got to go into the urls.py.
+00:03:45.440 --> 00:03:47.240
+ oh, we got to go into the urls.py.
 
-00:03:47.000 --> 00:03:53.000
+00:03:47.240 --> 00:03:52.780
  So let me go here and then go into urls.py.
 
-00:03:53.000 --> 00:03:59.000
- So we do add something here, and that is that we find,
+00:03:52.780 --> 00:03:56.040
+ So we do add something here.
 
-00:03:59.000 --> 00:04:03.000
- we switch to social login, we try to import that same GitHub settings,
+00:03:56.040 --> 00:04:00.200
+ And that is that we find-- we switch to social login.
 
-00:04:03.000 --> 00:04:09.000
- and if we do get GitHub settings, we switch to using the different template,
+00:04:00.200 --> 00:04:03.200
+ We try to import that same GitHub settings.
 
-00:04:09.000 --> 00:04:18.000
- and you say template name and then use that as social for our social login.
+00:04:03.200 --> 00:04:05.600
+ And if we do get GitHub settings,
 
-00:04:18.000 --> 00:04:21.000
+00:04:05.600 --> 00:04:08.760
+ we switch to using the different template.
+
+00:04:08.760 --> 00:04:14.240
+ And you say template name and then
+
+00:04:14.240 --> 00:04:18.240
+ use that as social for our social login.
+
+00:04:18.240 --> 00:04:21.520
  And then it prints out this little error message.
 
-00:04:21.000 --> 00:04:26.000
- So that redirects to social login,
+00:04:21.520 --> 00:04:25.680
+ So that redirects to social login.
 
-00:04:26.000 --> 00:04:34.000
- and we also have OAuth, the namespace social for the social Django URLs.
+00:04:25.680 --> 00:04:31.640
+ And we also have OAuth, the namespace social
 
-00:04:34.000 --> 00:04:41.000
- Now that social Django URLs is configured by some of those settings.
+00:04:31.640 --> 00:04:33.880
+ for the social Django URLs.
 
-00:04:41.000 --> 00:04:45.000
- OK, so we have this file called GitHubsettings.py,
+00:04:33.880 --> 00:04:36.960
+ Now, that social Django URLs is configured
 
-00:04:45.000 --> 00:04:51.000
- but we can't use GitHub yet because we have to get a key and a secret.
+00:04:36.960 --> 00:04:38.400
+ by some of those settings.
 
-00:04:51.000 --> 00:04:54.000
+00:04:38.400 --> 00:04:45.040
+ So we have this file called GitHubsettings.py.
+
+00:04:45.040 --> 00:04:48.680
+ But we can't use GitHub yet, because we
+
+00:04:48.680 --> 00:04:51.000
+ have to get a key and a secret.
+
+00:04:51.000 --> 00:04:53.760
  And so the instructions are right here.
 
-00:04:54.000 --> 00:05:01.000
+00:04:53.760 --> 00:04:57.240
  So we go to GitHub, developer settings.
 
-00:05:01.000 --> 00:05:04.000
- Now I'm not going to show you the ones I'm using for the projects or the samples,
+00:04:57.240 --> 00:05:02.280
+ Now, I'm not going to show you the ones I'm
 
-00:05:04.000 --> 00:05:10.000
- but what you do is you just add a new OAuth app.
+00:05:02.280 --> 00:05:04.460
+ using for the projects or the samples.
 
-00:05:10.000 --> 00:05:16.000
- My cool app samples.
+00:05:04.460 --> 00:05:10.480
+ But what you do is you just add a new OAuth app, mycoolappsamples.
 
-00:05:16.000 --> 00:05:20.000
+00:05:10.480 --> 00:05:20.280
  And I give you some example things to put in here.
 
-00:05:20.000 --> 00:05:34.000
- So actually this home page is really samples, dj4e.com, samples.
+00:05:20.280 --> 00:05:31.600
+ So actually, this home page is really samplesdj4e.com,
 
-00:05:34.000 --> 00:05:39.000
- And then you've got to set the login, and this is what you're going to need.
+00:05:31.600 --> 00:05:34.040
+ samples.
 
-00:05:39.000 --> 00:05:44.000
+00:05:34.040 --> 00:05:37.600
+ And then you've got to set the login.
+
+00:05:37.600 --> 00:05:39.200
+ And this is what you're going to need.
+
+00:05:39.200 --> 00:05:40.440
  I'm only going to update it.
 
-00:05:44.000 --> 00:05:53.000
- I'm going to change this to be samples.dj4e.com.
+00:05:40.440 --> 00:05:45.720
+ The application, I'm going to change this
 
-00:05:53.000 --> 00:05:56.000
+00:05:45.720 --> 00:05:48.840
+ to be samples.dj4e.com.
+
+00:05:48.840 --> 00:05:56.120
  And then I register the application.
 
-00:05:56.000 --> 00:05:59.000
+00:05:56.120 --> 00:05:59.560
  And now I have an ID and a secret.
 
-00:05:59.000 --> 00:06:02.000
+00:05:59.560 --> 00:06:01.360
  Don't worry, I'm going to delete this later.
 
-00:06:02.000 --> 00:06:05.000
- So then what you do is you go into settings, not settings dist,
+00:06:02.240 --> 00:06:04.480
+ So then what you do is you go into Settings, not Settings
 
-00:06:05.000 --> 00:06:11.000
- and then you go in and you paste that in, and then you paste this secret in.
+00:06:04.480 --> 00:06:05.440
+ Dist.
 
-00:06:11.000 --> 00:06:14.000
+00:06:05.440 --> 00:06:08.920
+ And then you go in and you paste that in.
+
+00:06:08.920 --> 00:06:10.880
+ And then you paste this secret in.
+
+00:06:10.880 --> 00:06:13.200
  I hope I got the secret right.
 
-00:06:14.000 --> 00:06:16.000
- This secret.
+00:06:13.200 --> 00:06:15.280
+ Yeah, this secret.
 
-00:06:16.000 --> 00:06:19.000
+00:06:15.280 --> 00:06:18.720
  So now I save it.
 
-00:06:19.000 --> 00:06:28.000
- So I save it, and you go into my web tab, because this is my pay account.
+00:06:18.720 --> 00:06:20.000
+ So I save it.
 
-00:06:28.000 --> 00:06:32.000
- And I'm going to go samples and reload samples.
+00:06:20.000 --> 00:06:27.760
+ And you go into my web tab, because this is my pay account.
 
-00:06:32.000 --> 00:06:36.000
+00:06:27.760 --> 00:06:31.960
+ And I'm going to go Samples and Reload Samples.
+
+00:06:31.960 --> 00:06:35.720
  I'll just go over here and I'll do a manage.py check.
 
-00:06:36.000 --> 00:06:39.000
- And I hope everything is right still, but it's a good test.
+00:06:35.720 --> 00:06:37.960
+ And I hope everything is right still.
 
-00:06:39.000 --> 00:06:45.000
- And it is using the social login, and it looks fine.
+00:06:37.960 --> 00:06:38.880
+ But it's a good test.
 
-00:06:45.000 --> 00:06:47.000
+00:06:38.880 --> 00:06:42.400
+ And it is using the social login.
+
+00:06:42.400 --> 00:06:44.880
+ And it looks fine.
+
+00:06:44.880 --> 00:06:46.920
  So I've got that.
 
-00:06:47.000 --> 00:06:53.000
+00:06:46.920 --> 00:06:50.600
  Now let's just see what happens when I say log out.
 
-00:06:53.000 --> 00:07:00.000
- And now if I say log in, I get this login with GitHub, because I set that.
+00:06:53.280 --> 00:06:58.280
+ Now if I say log in, I get this login with GitHub,
 
-00:07:00.000 --> 00:07:03.000
+00:06:58.280 --> 00:06:59.840
+ because I set that.
+
+00:06:59.840 --> 00:07:03.360
  So if all goes well, I should be able to log into GitHub.
 
-00:07:03.000 --> 00:07:09.000
- Now what's happening is GitHub is asking Charles Severance, me, the logged in user,
+00:07:03.360 --> 00:07:07.760
+ Now what's happening is GitHub is asking Charles Severance,
 
-00:07:09.000 --> 00:07:13.000
- whether or not to share the data to my CoolApp samples.
+00:07:07.760 --> 00:07:09.400
+ me, the logged in user, whether or not
 
-00:07:13.000 --> 00:07:17.000
- So I'm going to authorize it, and then it's going to send back.
+00:07:09.400 --> 00:07:13.480
+ to share the data to my CoolApp samples.
 
-00:07:17.000 --> 00:07:19.000
+00:07:13.480 --> 00:07:14.760
+ So I'm going to authorize it.
+
+00:07:14.760 --> 00:07:16.840
+ And then it's going to send back.
+
+00:07:16.840 --> 00:07:18.880
  And then I'm logged in.
 
-00:07:19.000 --> 00:07:21.000
+00:07:18.880 --> 00:07:21.360
  And interestingly, now it knows who I am.
 
-00:07:21.000 --> 00:07:23.000
+00:07:21.360 --> 00:07:23.360
  It's a GitHub account.
 
-00:07:23.000 --> 00:07:26.000
- And if I go into-- where are we at?
+00:07:23.360 --> 00:07:26.080
+ Like if I go into-- where are we at?
 
-00:07:26.000 --> 00:07:28.000
- Where are the menus at?
+00:07:26.080 --> 00:07:28.480
+ Where's the menus at?
 
-00:07:28.000 --> 00:07:33.000
- Menu, because that is based on that email account.
+00:07:28.480 --> 00:07:29.600
+ Menu.
 
-00:07:33.000 --> 00:07:37.000
+00:07:29.600 --> 00:07:33.360
+ Because that is based on that email account.
+
+00:07:33.360 --> 00:07:37.480
  That's a Gravatar that's based on the email account.
 
-00:07:37.000 --> 00:07:40.000
- So now I'm logged in, and away it works.
+00:07:37.480 --> 00:07:40.240
+ So now I'm logged in and away it works.
 
-00:07:40.000 --> 00:07:43.000
+00:07:40.240 --> 00:07:43.080
  So that's the basic idea.
 
-00:07:43.000 --> 00:07:52.000
- It really comes down to create this GitHub settings, use the GitHub settings dist,
+00:07:43.080 --> 00:07:46.880
+ It really comes down to create this GitHub settings.
 
-00:07:52.000 --> 00:07:54.000
- and away you go.
+00:07:46.880 --> 00:07:48.680
+ Use the GitHub settings dist.
 
-00:07:54.000 --> 00:07:56.000
+00:07:51.760 --> 00:07:54.480
+ And away you go.
+
+00:07:54.480 --> 00:07:56.600
  Yeah, the GitHub settings dist.
 
-00:07:56.000 --> 00:08:02.000
- And you copy that into GitHub settings, and then you put your real account in there.
+00:07:56.600 --> 00:07:58.560
+ And you copy that into GitHub settings.
 
-00:08:02.000 --> 00:08:07.000
- Now I'm going to go ahead and go back and delete this application,
+00:07:58.560 --> 00:08:02.440
+ And then you put your real account in there.
 
-00:08:07.000 --> 00:08:10.000
- so you can't use my keys.
+00:08:02.440 --> 00:08:06.720
+ Now I'm going to go ahead and go back and delete
 
-00:08:10.000 --> 00:08:13.000
+00:08:06.720 --> 00:08:11.000
+ this application so you can't use my keys.
+
+00:08:11.000 --> 00:08:14.120
  Now it's not going to work anymore.
 
-00:08:13.000 --> 00:08:16.000
+00:08:14.120 --> 00:08:16.240
  So there I go.
 
-00:08:16.000 --> 00:08:20.000
- So I hope this was helpful to you, that it walked you through a little bit of what it takes
+00:08:16.240 --> 00:08:17.960
+ So I hope this was helpful to you,
 
-00:08:20.000 --> 00:08:23.000
- to get GitHub authentication working.
+00:08:17.960 --> 00:08:20.160
+ that it walked you through a little bit of what
 
-00:08:23.000 --> 00:08:27.000
- I would observe that the reason I chose GitHub is that you can do the same with Twitter
+00:08:20.160 --> 00:08:23.400
+ it takes to get GitHub authentication working.
 
-00:08:27.000 --> 00:08:30.000
+00:08:23.400 --> 00:08:25.560
+ I would observe that the reason I chose GitHub
+
+00:08:25.560 --> 00:08:27.280
+ is that you can do the same with Twitter,
+
+00:08:27.280 --> 00:08:30.360
  and you can do the same with Google, but they're a lot.
 
-00:08:30.000 --> 00:08:34.000
- They don't trust you as much, and so you have to do a lot more work to prove to them
+00:08:30.360 --> 00:08:31.600
+ They don't trust you as much.
 
-00:08:34.000 --> 00:08:40.000
- that you're worthy of using Google and Twitter instead of just-- or Facebook.
+00:08:31.600 --> 00:08:34.000
+ And so you have to do a lot more work to prove to them
 
-00:08:40.000 --> 00:08:43.000
+00:08:34.000 --> 00:08:38.400
+ that you're worthy of using Google and Twitter instead
+
+00:08:38.400 --> 00:08:40.200
+ of just-- or Facebook.
+
+00:08:40.200 --> 00:08:43.720
  Those are all much higher bars to get permission to use it.
 
-00:08:43.000 --> 00:08:45.000
+00:08:43.720 --> 00:08:44.800
  GitHub is really easy.
 
-00:08:45.000 --> 00:08:47.000
- So I hope this was helpful. Cheers.
+00:08:44.800 --> 00:08:46.520
+ So I hope this was helpful.
+
+00:08:46.520 --> 00:08:48.080
+ Cheers.
 

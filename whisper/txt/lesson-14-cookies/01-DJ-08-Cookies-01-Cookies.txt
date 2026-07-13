@@ -5,7 +5,7 @@
  and it's really important to keep them clear.
  So there's cookies, which are a browser concept.
  And then there are sessions, which are a server concept.
- When we write Python code in likeourviews.py,
+ When we write Python code in likerviews.py,
  we talk to the session.
  Cookies are essential to sessions.
  Cookies are used to look up which among the sessions
@@ -32,9 +32,9 @@
  at any moment which browser it is talking to.
  We don't maintain a permanent connection to these browsers.
  That's one of the reasons that the internet scales
- as high as it does, right?
- But that's, so we still have to have some way
- of distinguishing when a request comes in from this server
+ as hard as high as it does, right?
+ So we still have to have some way of distinguishing
+ when a request comes in from this server
  versus when it comes in from that server.
  And so what we wanna do is we want a way
  to basically put a little mark on each browser
@@ -42,17 +42,18 @@
  And so when you log in from this browser,
  I can know that it's you.
  So marking the browser is different from saying,
- I have browser 41, 42, 43, 44.
- And each browser ends up with a mark.
+ I have browser 41, 42, 43, 44,
+ and each browser ends up with a mark.
  In the early days, the web was pretty much
  a read-only medium.
  We didn't do a lot of logging in.
  We didn't do a lot of uploading.
  There were password mechanisms,
  but they were very, very clunky.
- And so all the browsers were pretty much reading
- the same information, and as long as you're not logging in
- and modifying stuff, it just doesn't matter.
+ And so all the browsers were pretty much
+ reading the same information,
+ and as long as you're not logging in and modifying stuff,
+ it just doesn't matter.
  So quickly, in the early days of the web,
  the idea of a cookie was created,
  and that was a way for the server
@@ -62,14 +63,15 @@
  sent by the browsers, and read by the servers.
  Now, it has nothing to do with logging in.
  It has to do with writing a little mark on every browser
- and then getting that browser mark back every time we ask it.
- So often when a server gets a first request from a web page
- that doesn't have its little mark on it,
+ and then getting that browser mark back
+ every time we ask it.
+ So often, when a server gets a first request
+ from a web page that doesn't have its little mark on it,
  it makes up a number and sends that cookie back.
- So it sets the cookie, there may be many interactions
- between the time you're starting to talk to a server
+ So it sets the cookie that there may be many interactions
+ between the time that you're starting to talk to a server
  and when you log in.
- But often the cookie is set immediately.
+ But often, the cookie is set immediately.
  But the key is, is that once I set that cookie,
  it's like storage for my server on your browser,
  and each of the servers, and that can be sort of
@@ -89,7 +91,7 @@
  We call those session cookies,
  which is kind of weird 'cause we often use them.
  We often use session cookies for sessions,
- but we still gotta keep them cookies.
+ but we still gotta keep 'em cookies.
  So here's a bit of sample code.
  So one of the things you can do is you can go
  into your browser console and you find something
@@ -97,40 +99,36 @@
  of the current page, the current website that you're on,
  that website's cookies are stored here.
  And so I'm looking at the cookies here,
- and I see there's only one cookie, the CFDUID.
- That's the server is using a proxy to help speed itself up.
- And so that cookie's not really part of our application.
+ and I see there's only one cookie, this CFDUID.
+ That's the server is using a proxy to help speed itself up,
+ and so that cookie's not really part of our application.
  And so what happens is there is no cookie.
- It's not set.
- And so we go in and click on this.
- If you give a browser a cookie.
- And it's going to route to this particular view.
+ It's not set, and so we go in and click on this.
+ If you give a browser a cookie,
+ and it's going to route to this particular view.
  And so in this, we're gonna do a print of request.cookies.
  So what happens is I mention that every time
  a web request comes in, all the cookies get sent in
  with that web request that are associated with that server.
- So we're gonna print them out.
- And they come in just like request.get, request.post,
+ So we're gonna print 'em out,
+ and they come in just like request.get, request.post,
  and request.cookies is Django's way
  of handing us all that information.
  And so in this case, I'm not actually going
  to send the response back in the return value.
  I'm actually gonna create the response.
- That's resphd response with a string.
- And then I'm gonna set some cookies.
+ That's resp htbresponse with a string,
+ and then I'm gonna set some cookies.
  So cookies are part of the response.
  They're actually part of the headers of the response.
  And I'm gonna just set one cookie.
- They're my names.
- I set 'em, this application.
- Cookie name zap to 42.
- And then a cookie named SakaiCar with a value of 42.
- And I give it 1,000 seconds.
+ They're my names, I set 'em, this application.
+ Cookie name zap to 42, and then a cookie name Sakai car
+ with a value of 42, and I give it 1,000 seconds.
  So that's, one is a session cookie,
  and the other is a cookie with a fixed expiration date.
- Now this 1,000 seconds,
- you can go much longer than 1,000 seconds
- if you start looking at the cookies
+ Now this 1,000 seconds, you can go much longer
+ than 1,000 seconds if you start looking at the cookies
  that you're talking to on the various things.
  These are year-long, multi-year cookies,
  et cetera, et cetera, et cetera.
@@ -145,7 +143,7 @@
  we're gonna send this code out,
  and it's gonna send two cookies back.
  And so what you can see here is you can see,
- if you look closely on the response headers,
+ if you look closely, on the response headers,
  two set cookie responses.
  So the response headers are like the content type,
  et cetera, et cetera, et cetera.
@@ -159,8 +157,8 @@
  and we take a look in our storage,
  what we're gonna see is that we now have two values.
  Sakai car is 42, Zap is also 42,
- Sakai car is going to expire a certain amount
- of time in the future and Zap is a session cookie
+ Sakai car is going to expire a certain amount of time
+ in the future and Zap is a session cookie
  'cause we gave it with no expiration,
  which means once I wanna close all the tabs
  in my browser and close the browser,
@@ -171,7 +169,7 @@
  it'll start sending that cookie.
  So that's a permanent cookie with an expiration date on it.
  Now that's pretty short expiration,
- 1,000 seconds is like, what, 20 minutes, I think,
+ 1000 seconds is like what, 20 minutes I think,
  and so that's gonna go away.
  But a lot of these cookies last much longer.
  So that's after the set cookie comes back from the server,
@@ -191,14 +189,15 @@
  and Zap and Sakai car.
  And so the way to think about this is
  when the browser first come in,
- first comes in to the server, it looks for the cookie.
- It might say, do I have this cookie already set?
+ first comes into the server, it looks for the cookie.
+ It might say do I have this cookie already set?
  Now my application that I wrote is real simple.
  And then you are gonna send the cookie back
  and then the browser stores the cookie inside the browser
  and then from that point forward,
  every time it makes a request, that comes in
- and we can see this in the variable request.cookies inside it.
+ and we can see this in the variable
+ request.cookies inside it.
  So we really only have to set it once,
  although the code I wrote sets it every time,
  but it doesn't matter.

@@ -1,43 +1,43 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.560
+00:00:00.000 --> 00:00:03.520
  Now let's talk about control structures, logic, loops,
 
-00:00:03.560 --> 00:00:04.680
+00:00:03.520 --> 00:00:04.640
  and all that kind of stuff.
 
-00:00:04.680 --> 00:00:07.240
- So the first kind of control structure we're gonna deal with
+00:00:04.640 --> 00:00:06.400
+ So the first kind of control structure
 
-00:00:07.240 --> 00:00:09.420
- is an if statement.
+00:00:06.400 --> 00:00:09.400
+ we're gonna deal with is an if statement.
 
-00:00:09.420 --> 00:00:11.480
+00:00:09.400 --> 00:00:11.440
  And every language has an if statement.
 
-00:00:11.480 --> 00:00:13.040
+00:00:11.440 --> 00:00:13.000
  We have a whole bunch of logical operators
 
-00:00:13.040 --> 00:00:14.560
+00:00:13.000 --> 00:00:14.520
  that we just got done talking about.
 
-00:00:14.560 --> 00:00:17.440
+00:00:14.520 --> 00:00:17.400
  Equals, the double equals is the question mark.
 
-00:00:17.440 --> 00:00:21.040
+00:00:17.400 --> 00:00:21.020
  Triple equals is the same as and same type as.
 
-00:00:21.040 --> 00:00:25.400
+00:00:21.020 --> 00:00:25.360
  Not equals the not, and then the and and the or.
 
-00:00:25.400 --> 00:00:30.000
- Double ampersand is and, and the double vertical bar is or.
+00:00:25.360 --> 00:00:30.000
+ The double ampersand is and, and the double vertical bar is or.
 
 00:00:30.000 --> 00:00:33.880
- And so triple equals and exclamation double equals.
+ And so triple equals and exclamation double equals,
 
 00:00:33.880 --> 00:00:35.880
- And curly braces are the way that we talk about
+ and curly braces are the way that we talk about
 
 00:00:35.880 --> 00:00:37.720
  the begin and end of the blocks
@@ -55,16 +55,16 @@ WEBVTT
  and that's going to lead to a true or a false.
 
 00:00:49.760 --> 00:00:53.040
- If it's true, of course the first block is gonna execute
+ If it's true, of course the first block is gonna execute,
 
 00:00:53.040 --> 00:00:57.000
- and then there's an else and then if that result is false,
+ and then there's an else, and then if that result is false,
 
-00:00:57.000 --> 00:00:58.560
- the question is false,
+00:00:57.000 --> 00:01:00.720
+ the question is false, then the else section
 
-00:00:58.560 --> 00:01:01.640
- then the else section is gonna execute.
+00:01:00.720 --> 00:01:01.640
+ is gonna execute.
 
 00:01:01.640 --> 00:01:03.720
  And there can be more than one line in here.
@@ -76,10 +76,10 @@ WEBVTT
  So when this code all runs, it basically comes in,
 
 00:01:10.880 --> 00:01:13.380
- answer is 42, then this is true,
+ answer is 42, then this is true.
 
 00:01:13.380 --> 00:01:15.240
- answer equals 42 is true.
+ Answer equals 42 is true.
 
 00:01:15.240 --> 00:01:16.760
  It runs console log hello world,
@@ -90,10 +90,10 @@ WEBVTT
 00:01:19.480 --> 00:01:22.800
  So the output of this is indeed hello world.
 
-00:01:22.800 --> 00:01:28.220
- There's multi-way ifs and you can hang them together
+00:01:23.720 --> 00:01:28.200
+ There's multi-way ifs, and you can hang them together
 
-00:01:28.220 --> 00:01:32.340
+00:01:28.200 --> 00:01:32.340
  just like with else ifs, just like in Python.
 
 00:01:32.340 --> 00:01:35.840
@@ -103,7 +103,7 @@ WEBVTT
  If this is false, if the first if is false,
 
 00:01:38.320 --> 00:01:41.120
- it checks the else if and as soon as that's true,
+ it checks the else if, and as soon as that's true,
 
 00:01:41.120 --> 00:01:44.080
  it runs that block of code and then hops out to the end.
@@ -111,7 +111,7 @@ WEBVTT
 00:01:44.080 --> 00:01:48.120
  It doesn't check all of the if questions simultaneously.
 
-00:01:49.520 --> 00:01:51.280
+00:01:48.120 --> 00:01:51.280
  And you can optionally have an else clause
 
 00:01:51.280 --> 00:01:54.920
@@ -120,26 +120,23 @@ WEBVTT
 00:01:54.920 --> 00:01:57.400
  then it just falls through and runs the code
 
-00:01:57.400 --> 00:01:58.880
+00:01:57.400 --> 00:01:58.860
  in the else block.
 
-00:01:58.880 --> 00:02:02.960
+00:01:58.860 --> 00:02:02.960
  You can have an indeterminate loop,
 
 00:02:02.960 --> 00:02:05.920
  a while loop that runs until something becomes true.
 
-00:02:05.920 --> 00:02:09.120
- It's a zero trip loop,
+00:02:05.920 --> 00:02:10.320
+ It's a zero trip loop, which means that it runs
 
-00:02:09.120 --> 00:02:11.560
- which means that it runs a minimum of zero times,
+00:02:10.320 --> 00:02:12.720
+ a minimum of zero times, which means it effectively
 
-00:02:11.560 --> 00:02:14.060
- which means it's effectively functions the first time through
-
-00:02:14.060 --> 00:02:15.680
- like an if statement.
+00:02:12.720 --> 00:02:15.680
+ functions the first time through like an if statement.
 
 00:02:15.680 --> 00:02:20.040
  So while fuel greater than one, do this thing in the block,
@@ -147,23 +144,23 @@ WEBVTT
 00:02:20.040 --> 00:02:22.280
  is really like an if fuel greater than run,
 
-00:02:22.280 --> 00:02:24.960
+00:02:22.280 --> 00:02:24.980
  if fuel is greater than one, do this block.
 
-00:02:24.960 --> 00:02:27.340
+00:02:24.980 --> 00:02:27.360
  Although in this case, I've built myself an infinite loop
 
-00:02:27.340 --> 00:02:29.520
- because fuel starts out at 10 and I say,
+00:02:27.360 --> 00:02:29.560
+ because fuel starts out at 10, and I say,
 
-00:02:29.520 --> 00:02:32.680
+00:02:29.560 --> 00:02:32.680
  while fuel is greater than one, console.log room,
 
 00:02:32.680 --> 00:02:34.720
- which means it's just gonna do that forever.
+ which means it's just gonna do that forever,
 
 00:02:34.720 --> 00:02:38.240
- And that's because I didn't change the iteration variable,
+ and that's because I didn't change the iteration variable,
 
 00:02:38.240 --> 00:02:41.040
  in this case fuel, and usually we construct these
@@ -171,7 +168,7 @@ WEBVTT
 00:02:41.040 --> 00:02:43.580
  in a way that they terminate eventually.
 
-00:02:44.480 --> 00:02:46.620
+00:02:43.580 --> 00:02:46.620
  And so I've done a much better job in the second one
 
 00:02:46.620 --> 00:02:48.120
@@ -180,53 +177,53 @@ WEBVTT
 00:02:48.120 --> 00:02:49.860
  while fuel is greater than one,
 
-00:02:49.860 --> 00:02:53.360
+00:02:49.860 --> 00:02:53.320
  and inside the loop I console.log room,
 
-00:02:53.360 --> 00:02:56.460
+00:02:53.320 --> 00:02:56.460
  and then I subtract one, and I go up and up and up and up,
 
-00:02:56.460 --> 00:02:59.480
- and then it's gonna go and then fuel will eventually
+00:02:56.460 --> 00:02:59.500
+ and then it's gonna go, and then fuel will eventually
 
-00:02:59.480 --> 00:03:01.960
- get to zero and then it will exit out the loop and finish.
+00:02:59.500 --> 00:03:01.960
+ get to zero, and then it will exit out the loop and finish.
 
 00:03:01.960 --> 00:03:04.860
  And so this here is an infinite loop,
 
-00:03:04.860 --> 00:03:07.480
+00:03:04.860 --> 00:03:07.500
  and this is a finite loop.
 
-00:03:07.480 --> 00:03:08.920
+00:03:07.500 --> 00:03:08.920
  While loops are always a little tricky
 
 00:03:08.920 --> 00:03:11.840
  'cause you've gotta construct the iteration variable
 
-00:03:11.840 --> 00:03:14.880
+00:03:11.840 --> 00:03:14.900
  or make sure you know how to get out of the loop.
 
-00:03:14.880 --> 00:03:19.840
- The for loop is a counted loop and it's going to run,
+00:03:15.900 --> 00:03:19.840
+ The for loop is a counted loop, and it's going to run,
 
 00:03:19.840 --> 00:03:21.040
  and so there's three parts to it,
 
-00:03:21.040 --> 00:03:23.240
+00:03:21.040 --> 00:03:23.280
  and they're separated by semicolons.
 
-00:03:23.240 --> 00:03:25.820
+00:03:23.280 --> 00:03:25.840
  It looks really complex, but it's not.
 
-00:03:25.820 --> 00:03:27.660
- So you make an iteration variable.
+00:03:25.840 --> 00:03:27.660
+ So you make an iteration variable,
 
-00:03:27.660 --> 00:03:30.400
- The first part up to the semicolon is the code
+00:03:27.660 --> 00:03:29.840
+ the first part up to the semicolon
 
-00:03:30.400 --> 00:03:33.120
- that runs before the loop starts.
+00:03:29.840 --> 00:03:33.120
+ is the code that runs before the loop starts.
 
 00:03:33.120 --> 00:03:36.500
  So I'm gonna set this variable count equals one.
@@ -234,14 +231,14 @@ WEBVTT
 00:03:36.500 --> 00:03:38.280
  The second part is like a while,
 
-00:03:38.280 --> 00:03:40.640
+00:03:38.280 --> 00:03:40.760
  and it's a top test zero trip loop,
 
-00:03:40.640 --> 00:03:43.640
+00:03:40.760 --> 00:03:43.640
  and as long as count remains less than or equal to six,
 
 00:03:43.640 --> 00:03:45.720
- then the body loop is gonna execute,
+ then the body of loop is gonna execute,
 
 00:03:45.720 --> 00:03:47.600
  and then each time at the bottom of the loop,
@@ -264,16 +261,16 @@ WEBVTT
 00:03:59.040 --> 00:04:01.920
  And so that's what's called a counted loop,
 
-00:04:01.920 --> 00:04:05.360
+00:04:01.920 --> 00:04:05.040
  where we have some variable that's just running through
 
-00:04:05.360 --> 00:04:06.680
- a set of numbers.
+00:04:05.040 --> 00:04:06.680
+ on a set of numbers.
 
 00:04:06.680 --> 00:04:09.800
  In Python, we would use range to do this kind of a thing.
 
-00:04:11.560 --> 00:04:16.000
+00:04:12.780 --> 00:04:16.000
  Now, like in Python, we've got the break statement,
 
 00:04:16.000 --> 00:04:18.760
@@ -282,19 +279,19 @@ WEBVTT
 00:04:18.760 --> 00:04:20.600
  I'm gonna get out of this loop.
 
-00:04:20.600 --> 00:04:23.240
+00:04:20.600 --> 00:04:23.260
  So if this line executes, it looks at the,
 
-00:04:23.240 --> 00:04:26.080
+00:04:23.260 --> 00:04:26.080
  if there's more than one loop, it's the innermost loop,
 
 00:04:26.080 --> 00:04:28.440
  and it just basically escapes the loop
 
-00:04:28.440 --> 00:04:30.720
+00:04:28.440 --> 00:04:30.740
  and moves on to the line of code
 
-00:04:30.720 --> 00:04:33.260
+00:04:30.740 --> 00:04:33.260
  that follows the loop immediately.
 
 00:04:33.260 --> 00:04:36.160
@@ -318,11 +315,11 @@ WEBVTT
 00:04:54.120 --> 00:04:56.720
  and go back up and do the next iteration,
 
-00:04:56.720 --> 00:05:00.120
- but the thing is this increment usually is this third part
+00:04:56.720 --> 00:04:58.840
+ but the thing is this increment
 
-00:05:00.120 --> 00:05:01.400
- of the for loop.
+00:04:58.840 --> 00:05:01.400
+ usually is this third part of the for loop.
 
 00:05:01.400 --> 00:05:03.480
  If you say continue, that actually runs.
@@ -333,14 +330,14 @@ WEBVTT
 00:05:06.840 --> 00:05:08.400
  and then it does the check,
 
-00:05:08.400 --> 00:05:10.700
- and then it either continues to run back here,
+00:05:08.400 --> 00:05:10.680
+ and then it either continues to run back here
 
-00:05:10.700 --> 00:05:15.000
- or it jumps out if count is now greater than 10.
+00:05:10.680 --> 00:05:15.040
+ or it jumps out if count is now greater than 10,
 
-00:05:15.000 --> 00:05:18.040
- And so continue works pretty much the same
+00:05:15.040 --> 00:05:18.040
+ and so continue works pretty much the same
 
 00:05:18.040 --> 00:05:23.040
  in loops in JavaScript as it does in Python.
@@ -351,19 +348,16 @@ WEBVTT
 00:05:28.680 --> 00:05:32.160
  and so here's an object that has three attributes,
 
-00:05:32.160 --> 00:05:34.040
- golf, tennis, and ping,
-
-00:05:34.040 --> 00:05:36.800
- and I can say for ball and balls,
+00:05:32.160 --> 00:05:36.800
+ golf, tennis, and ping, and I can say four ball and balls,
 
 00:05:36.800 --> 00:05:39.920
  and then that means that this iteration variable
 
-00:05:39.920 --> 00:05:42.960
+00:05:39.920 --> 00:05:42.940
  is gonna walk through the keys or the attributes.
 
-00:05:42.960 --> 00:05:46.200
+00:05:42.940 --> 00:05:46.200
  So it's gonna be golf, ping, and tennis,
 
 00:05:46.200 --> 00:05:48.480
@@ -372,54 +366,48 @@ WEBVTT
 00:05:48.480 --> 00:05:52.040
  to look up balls sub golf, balls sub tennis,
 
-00:05:52.040 --> 00:05:54.800
+00:05:52.040 --> 00:05:54.780
  and balls sub ping, and then print all those things out.
 
-00:05:54.800 --> 00:05:56.560
+00:05:54.780 --> 00:05:56.560
  So that's what's called a definite loop
 
-00:05:56.560 --> 00:06:00.740
+00:05:56.560 --> 00:06:00.760
  that's looping through an object that we're going to see.
 
-00:06:00.740 --> 00:06:02.120
+00:06:00.760 --> 00:06:02.120
  Now when you're looping through an array,
 
-00:06:02.120 --> 00:06:03.640
- which is a linear list,
+00:06:02.120 --> 00:06:05.320
+ which is a linear list, you actually use a counted loop,
 
-00:06:03.640 --> 00:06:06.680
- you actually use a counted loop, not a definite loop.
+00:06:05.320 --> 00:06:07.680
+ not a definite loop, but objects,
 
-00:06:06.680 --> 00:06:09.880
- But objects, which are like dictionaries,
+00:06:08.560 --> 00:06:09.880
+ which are like dictionaries,
 
 00:06:09.880 --> 00:06:11.520
  which are like associative arrays,
 
 00:06:11.520 --> 00:06:13.960
- will use definite loops to loop through them.
+ we use definite loops to loop through them.
 
-00:06:13.960 --> 00:06:18.680
+00:06:13.960 --> 00:06:18.700
  So that is a quick romp through JavaScript,
 
-00:06:18.680 --> 00:06:20.120
+00:06:18.700 --> 00:06:20.120
  not so much to get to the point
 
 00:06:20.120 --> 00:06:22.080
  where you can write a bunch of JavaScript,
 
-00:06:22.080 --> 00:06:23.200
- but so you can read it,
+00:06:22.080 --> 00:06:24.480
+ but so you can read it, and then when you get a syntax there,
 
-00:06:23.200 --> 00:06:24.460
- and then when you get a syntax there,
-
-00:06:24.460 --> 00:06:26.880
+00:06:24.480 --> 00:06:27.000
  hopefully you can fix it.
 
-00:06:26.880 --> 00:06:29.460
- (upbeat music)
-
-00:06:33.640 --> 00:06:36.220
+00:06:27.000 --> 00:06:29.580
  (upbeat music)
 

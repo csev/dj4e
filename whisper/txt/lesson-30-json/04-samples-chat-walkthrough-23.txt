@@ -1,38 +1,39 @@
- >> Welcome to another walk-through for Django for everybody.
- In this particular walk-through,
+ >> Welcome to another walkthrough for Django for everybody.
+ In this particular walkthrough,
  we are going to walk through the JSON sample code.
- It's an application of fetch, and Ajax, and setTimeout, and
+ It's an application of fetch and Ajax and setTimeout, and
  it brings a lot of these JavaScript in the browser ideas
  all together in one simple example.
  So the idea is we are doing something that's asynchronous.
- We're simulating two people logged into the same system.
+ We're going to have, we're simulating two people logged in to the same system.
  And wanting to see the messages from one screen to another.
- So let's, second message.
+ So let's second message.
  So this is one user.
- So the whole page re-displays, and we saw the spinner come up there.
+ So the whole page re-displays and we saw the spinner come up there.
  And so if we come back and we just go over to this other screen,
  second message shows up.
  And so we didn't do anything on this screen.
  We didn't refresh the screen.
  And so some asynchronous thing is happening.
- And so let's just take a look at the web developer tools.
+ And so let's just take a look at the developer tools.
  Let's take a look at the network.
  And so what's happening is there's a timer.
  And it's requesting this chat.
- And in this chat there is some JSON.
+ And in this chat, there is some JSON.
  If we take a look at the response, we get an array of these messages, right?
  Arrays are not really good style of JSON, so I apologize for that.
  So there's a timer that's running.
  And so this is just getting the, it looks like about every five seconds.
  And so if I go on, I'll just say third message over here.
- So what happens here is I'm doing a full post redirect.
- I'm posting and it's gonna do a post redirect and then a re-display.
+ So what happens here is I'm doing a full post, redirect, I'm posting.
+ And it's gonna do a post redirect and then a re-display.
  And it takes two seconds, we'll see that in a second.
  But then we have the third message.
  But over here, third message merely appears.
  And so it's doing it about every five seconds, which this is a polling pattern,
  which is a really bad user network resources, a really bad user server resources.
- So don't use the polling pattern, but it's the way I can show you this simplest, okay?
+ So don't use the polling pattern, but
+ it's the way I can show you this simplest, okay?
  And so let's take a look at how this is working.
  So let's start with urls.py.
  I've got the talk page, which is this main page.
@@ -49,52 +50,51 @@
  And then what we're going to do is we're going to update this, right?
  And then replace this text.
  And that's what we're going to do, is replace it by the JSON.
- And then over and over and over, we're going to delete this.
- You're not even seeing it, because it deletes this whole thing, and
- then it responds to it.
+ And then over and over and over, you're not even seeing it,
+ because it deletes this whole thing, and then it responds to it.
  And then what we also have is let's take a look at the chat messages.
  And so let's look at the raw data.
  And this is an array of message and time.
  And so it's using this thing called, let's take a look here.
- It's using this thing called, where is it, natural time, right?
+ It's using this thing called, where is it, where, natural time, right?
  Using natural time to make this one minute ago.
- And so if we take a look at this messages, we can, let's take a look at the browser
- tools, web developer tools, network tab, hit refresh here.
+ And so if we take a look at this messages, let's take a look at the browser tools,
+ web developer tools, network tab, hit refresh here.
  So we can see that this is got a, it's JSON, 125 characters,
  the response is JSON, we can see the raw version of it.
  So that's just us hitting the JSON endpoint by hand.
  So if we look at what goes on in the JSON endpoint,
  we are going to, this is just a cleanup message, so you can kind of ignore this.
- I'm going to get the most ten recent messages ordered by the created at time.
- And then I'm going to loop through those messages that I got from the data model.
+ I'm gonna get the most ten recent messages ordered by the created at time.
+ And then I'm gonna loop through those messages that I got from the data model.
  I guess I could take a look at the model.
  I got a simple data model here.
  I got the owner, user key, created at, updated at, and text, so not much to it.
- But I'm going to create these results, and I want to escape the text in the back end.
- Remember to do HTML entities, because I don't want to do it in the front end,
- because that will make my front end code a little too complex.
- So I'm just going to escape it in the back end.
+ But I'm gonna create these results, and I want to escape the text in the back end.
+ Remember to do HTML entities, cuz I don't wanna do it in the front end,
+ cuz that will make my front end code a little too complex.
+ So I'm just gonna escape it in the back end.
  I would not say that that's a good idea.
- And so all I'm going to do is I'm going to make, I'm going to escape the message
- text, and then I'm going to take the natural, make a natural time of the created at.
- And then I'm going to append it, and I'm going to return JSON response,
- safe equals false.
- And that has to do with like letting certain things go through.
+ And so all I'm gonna do is I'm gonna make, I'm gonna escape the message text and
+ then I'm gonna take the natural, make a natural time of the created at.
+ And then I'm gonna append it, and I'm gonna return JSON response, safe equals false.
+ And that has to do with letting certain things go through.
  But this is taking an array.
- Now I would, it is not best practice, it's actually bad practice to return an array,
- but we're going to keep this as simple as possible.
- And this is, we're just going to the model and getting the most ten recent messages,
- and then sort of creating an array of the kind of stuff we want to hand back.
- And so this message is, JSON is not just give me the data in the model,
- it's often give me the data, take the data from the model, do some augmentation to it,
- make it pretty, make it ready for display, and
+ Now, it is not best practice, it's actually bad practice to return an array.
+ But we're gonna keep this as simple as possible.
+ And this is, we're just going to the model and
+ getting the most ten recent messages, and then sort of creating an array of
+ the kind of stuff we wanna hand back.
+ And so this message is, JSON is not just give me the data in the model.
+ It's often give me the data, take the data from the model,
+ do some augmentation to it, make it pretty, make it ready for display, and
  then hand that back as the JSON response.
  And so that's the JSON response.
  And then if we take a look, how does that JSON response turn into this text?
- Well, if we take a look here, we are fetching that message's URL.
- And we're using the promises, not async/await.
+ Well, if we take a look here, we are fetching
+ that messages URL, and we're using the promises, not async away.
  We're doing, we're pulling the response back, and
- then we are taking the JSON post-parsing of the JSON, and we console log that.
+ then we are taking the JSON post parsing of the JSON, and we console log that.
  Let's view, let's do look at the browser tools here, web developer tools.
  Let's look at the console.
  And you see that it says I'm requesting the JSON, requesting the JSON.
@@ -106,13 +106,14 @@
  Not a string, right?
  It's the thing that causes it to go from a string to a JavaScript array,
  is response JSON.
- It says, parse the response as JSON, and
+ It says parse the response as JSON, and
  give me back the object that results from that, okay?
  And so at this point, this is, we've seen this kind of pattern before.
  And we get the JSON data.
- Now, what we're going to do is we are going to now do document_object_dom_modification.
- So the first thing we're going to do is wipe out, see this?
- This chat_content.div, we're gonna set its innerHTML to nothing,
+ Now, what we're going to do is we are going to now do document object modification,
+ DOM modification.
+ So the first thing we're going to do is wipe out.
+ See this, this chat content.div, we're gonna set its inner HTML to nothing,
  which actually deletes that spinner.
  So that's where the spinner is there, and then the spinner vanishes and
  is replaced by that text, okay?
@@ -121,14 +122,13 @@
  the document object model are not the same thing.
  The source that came from the server includes this spinner.
  But if I come back and I do an inspect element here,
- you see that chat_content doesn't have a spinner.
+ you see that chat content doesn't have a spinner.
  Now, this is because the document object model is being changed by the JavaScript.
  And the first thing it does is throws away the spinner.
  And again, JavaScript owns the document object model.
  So it can delete stuff, it can change stuff.
- And so you sort of saw that highlight happen where it sort of, this stuff comes
- and goes every five seconds.
- It wipes it all out, and then it builds it again.
+ And so you sort of saw that highlight happen, where it sort of, this stuff comes
+ and goes every five seconds, it wipes it all out, and then it builds it again.
  But it happens so quickly, we don't notice it as long as it's not changing.
  And again, I'm not telling you this, like pulling every five seconds is a great way
  to do it.
@@ -138,37 +138,34 @@
  But, so we're starting here, we wipe out the content, and
  then we just loop through rows, which is an array, it's got a length,
  we loop through it.
- And we're going to take getElementById, chat_content, innerHTML, and
+ And we're going to take getElementById, chatContent, innerHTML, and
  we're going to append this string.
- We're going to print a p tag.
- We're going to append the message.
+ We're going to print a p tag, we're going to append the message.
  We're going to append a br, two non-blank spaces, and then the time, and
  then a /p.
  And strangely enough, if you take a look at this in inspectElement,
  okay, it keeps vanishing.
- But here you go, you expect, this is coming from my JavaScript.
+ But here you go, you inspect, this is coming from my JavaScript.
  I'm building all that stuff, right?
  And it wipes out every five seconds, because that's just how it works.
- Okay, so you see that it's going to wipe out, and then regenerate it.
+ Okay, so you see that it's going to wipe out and then regenerate it.
  But if you look above, it doesn't even flash, right?
- Okay, so then, all we've got to do, and we can put a little catch in here.
+ Okay, so then all we've got to do, and we can put a little catch in here.
  Hey, let's make a mistake and see what happens here.
- Let's see if I can put something in this views.
- Let's mess this up, and watch it blow up.
- So you see, it blew up.
+ Let's see if I can put something in this views, let's mess this up.
+ And watch it blow up, so you see, it blew up.
  So that was when this catch just blew up and alerted the error.
- And when you write code, please put this catch in, at least alert the error.
+ Now, when you write code, please put this catch in, at least alert the error.
  And the key thing is, what error did we do?
  We just like totally screwed up the view, right?
- And let me show you one more thing.
- I'll keep this broken for the moment.
- Let's just hit refresh, and let's go into network, and hit refresh.
- And now it's gonna hit it, and you're gonna get a 500.
+ And let me show you one more thing, I'll keep this broken for the moment.
+ Let's just hit refresh, and let's go into network and hit refresh.
+ And now it's going to hit it, and you're going to get a 500.
  If you've got this catch, it tells you something.
  But to figure out what's really wrong, where's the bug in my code?
  You have to come in here, and you have to look at it, and
  then you have to look at the response.
- And then you have to move this guy up, and you say, at line 31 in get,
+ And then you have to move this guy up, and you say at line 31 in get,
  in views.py, xjson, look at that, it's line 31, I'm on line 31.
  So the point is, is if you don't put this alert in,
  you don't even know something went wrong.
@@ -178,35 +175,34 @@
  I mean, it only happens when I have a bug in my server code.
  So now I've taken the bug in my server code out, and I refresh it, and
  away it goes.
- So this chat, this catch here is cheap,
- cheap insurance that basically says, it doesn't just silently fail, right?
+ So this chat, this catch here is cheap, cheap insurance.
+ That basically says, it doesn't just silently fail, right?
  If I just made this a console, let's make this a console log, right?
  And you're just crude, let's go on console, let's clear it, let's hit refresh.
  Wait, and I gotta put the error back in, sorry.
  Okay, so it's working, it's working.
  Okay, it's blowing up, I got a console log.
- But the problem is, is that if you're not looking at the console log,
- and you just have this bug in there, and you say, happy days.
- Or, nothing works.
- And now all we see forever is the spinner.
- Because the Ajax request is not working.
+ But the problem is, is that, If you're not looking at the console log,
+ and you just have this bug in there, and you say, happy days,
+ or nothing works.
+ And now all we see forever is the spinner,
+ because the Ajax request is not working.
  And if you have the cleverness to turn on web developer tools, and see this,
- and go like, that sounds funky there.
- And then you go to network, and well, we gotta hit refresh,
- cuz the JavaScript set timeout.
- We haven't talked about set timeout, we'll talk about that in a second.
+ and go like, sounds funky there.
+ And then you go to network, and well, we gotta hit refresh cuz the JavaScript
+ set timeout, we haven't talked about set timeout, we'll talk about that in a second.
  When this blows up, you see the 500, and then you have to have the presence of mind
  to go in here, and look at the response, and go like, that's why the spinner is
  just sitting there and not working.
- Okay, so let me go ahead and fix this once and for all.
- And talk about how the timeout works.
- So let's clear the badness, let's hit refresh, let's have it work.
+ Okay, so let me go ahead and fix this once and for all, and
+ talk about how the timeout works.
+ So, let's clear the badness, let's hit refresh, let's have it work.
  Come on, there you go, let's go into the console.
  Now, there is one more thing that's going on here, and there is an event, right?
  Couple of events that are going on.
- So the first thing that we have to do is we have to get this function
- update message called, and so we do that.
- We define this function update message, right?
+ So the first thing that we have to do is,
+ we have to get this function update message called.
+ And so we do that, we define this function update message, right?
  And then, at the moment, while our DOM is being parsed,
  coming from the server, we're gonna add an event listener.
  DOM content loaded event listener,
@@ -218,15 +214,15 @@
  executed two seconds later, and the second parameter is two seconds later.
  So you'll see it waits two seconds, the spinner waits two seconds, and
  then it runs this function update message.
- So 1001, 1002, now it runs update message.
- We get the JSON, this code all runs.
+ So 1001, 1002, now it runs update message, we get the JSON.
+ This code all runs.
  But then what happens is when it's successful, and
  that's when this second promise is properly fulfilled,
- then it calls update message again, and don't do that.
+ then it calls update message again and, don't do that.
  I don't know what just happened there.
  Undo, undo, undo, undo, undo, undo, let's go back to the alert.
  Okay, so the second promise is resolved successfully.
- And it console logs it, and it updates the thing, just like we all talked about.
+ And it console logs it, and it updates the thing just like we all talked about.
  But the last thing it does is very important.
  It says, now run me again for 4,000.
  You'll note that I don't start the timer again if I blow up.
@@ -237,17 +233,17 @@
  It really means I messed up in the server.
  I messed up in the server.
  It's not like the world is broken.
- Now if the person's network goes down, because that network could go down at
- this point, I could lose a connection to the server, and
- alert will tell me that, tell the user that.
+ Now, if the person's network goes down,
+ cuz the network could go down at this point, I could lose a connection to
+ the server, and the alert will tell me that, tell the user that.
  I cannot retrieve blah, blah, blah, blah, blah, blah.
  Hopefully they get the sense that their network is bad.
  And so this is a real, as simple as I can make it, simple chat.
  Nothing's best practicing this.
  I'm using an array for my JSON.
- I am, I am polling every four seconds.
+ I am polling every four seconds.
  Don't do any of this.
  But it is a very simple, elegant,
  that brings together a number of these asynchronous ideas.
- And the notion of timers, and the notion of fetch, and all those things.
- And so it's a, it's a good, it's a good place to start.
+ And the notion of timers and the notion of fetch and all those things.
+ And so it's a good place to start.

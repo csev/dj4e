@@ -1,77 +1,142 @@
- so now we're going to talk about javascript functions and javascript arrays
- so functions use the function keyword unlike python this would be like in the
- def this would be like def in python and so we basically say you know
- function and then give the name of a function and then the parameters to the
- function and then you have a curly brace to start the function and then end the
- function this over here and then you have return to return the resulting value and
- that return defines the return value that's going to be used in some
- expression so you're cruising along you're in the middle of an expression you
- encounter a function it calls the function runs the call and then the
- return value is what is the residual that's placed in that plus so whatever
- that value is in this case it's going to add four and five and end up with nine
- as the result and prod equals nine
- so the so so the functions other than that are like most programming languages
- except when it comes to global variables and so
- most of the time when you're working with a function every variable that you
- design define inside the function is local to that function and so if you use
- the same variable outside the function now i'm doing this two lines away but
- really often this functions inside of a library and that doesn't even know what
- variables are being used outside of it and so by it by default these two are
- the same and that really i'm not really familiar of a lot of other programming
- languages where the default is that that's kind of a global variable if you
- don't make it worse it depends on whether this global variable is defined
- before or after turn two in this case i'm defining the global variable before
- and i say nothing special about gl and so it's global and so i set it to 123
- then i call this function and it sets it to 456 and when we're at come back from
- the function it's 456 so that's kind of weird it's this weird kind of super
- global by default which is not the way we usually like to run functions
- so what we do and it's really weird there's no other programming language
- that makes you say don't be global most other programming
- languages if they have a global capability and not all of them do
- they're like this is the weird one that's global and everything else is
- local what you do is if you don't say it's local it's going to be global
- so the var keyword basically says it's local
- it's just this is a variable and it's local and so i can say you know var gl
- equals 456 that means that that variable has no effect outside the function i.e.
- the function lives in its own little silo which is the way most functions
- usually work unless we explicitly bust out of the little silo so if in this
- case if we do gl equals 123 then we call function check and we look at gl even
- though inside a function there's a gl that's 456 not the same gl
- and so we get 123 when it's all said and done so that's really quite nice
- but you do put a lot of vars in and one of my biggest bugs in
- when i write javascript is to forget to put the var in so i now just kind of
- been punished enough to know always put the var in so you get what you kind of
- expect as a default in most other programming languages that all
- function define variables that are defined inside of a function
- are local unless you're very explicitly doing otherwise
- javascript has arrays they look a lot like python lists
- so here we have an array that's three strings
- javascript has an associative structure but it's not an associative array
- and it's it's more like a dictionary but it's not it's an object objects can be
- many many things and we'll talk a bunch we'll have a whole lecture on nothing
- but objects but right now they kind of look like a dictionary key value pair
- key value pair key is name value is chuck key is class value is dj for e
- and so that when you print that out away you go now you can say a sub zero
- which gives you x which is that first element and you can say b sub quote name
- quote you can do that be another way to say that is b dot name
- those two syntaxes and this confused the heck out of me when i was first learning
- javascript those two syntaxes mean the same thing they both are saying look up
- an attribute of the object b that's named name and again equivalent they are the same thing even
- though for every other language you ever look at you think those are very different creatures
- but not so in javascript and it has to do the fact that b is an object it is an object and so
- objects are the associative structures but they're even more powerful than associative arrays are in
- in some languages like directories
- linear arrays you can make linear arrays you can fill them up a couple different ways
- you can either fill them up you know we start and make an array and we can push some elements in
- don't like the name push i like append better that would be what we would say if we were in python
- if this were a list but it works push kind of pushes on to the end normally push means
- or push on to the beginning but in computer science push usually means push down not append but so i
- think python has a javascript there where where we say append in python we say push in javascript
- or we can just fill it up with the array we um array sub zero and array sub one and then we can
- fill up a nice linear array if we want and remember in javascript arrays are arrays they're not
- dictionaries they are lists in python they're you know python has lists and dictionaries
- and javascript has arrays and objects there's other syntaxes for making arrays you can say
- array and then just have a list of array the list of things that make up the array and you get an
- array or you just use the constant form that's square brackets and this looks exactly like how
- we would do it in python and so that works so so in that particular line you can write python in
- javascript if you so desire up next we're going to talk about control structures
+ So now we're going to talk about JavaScript functions
+ and JavaScript arrays.
+ So functions use the function keyword.
+ Unlike Python, this would be like in the DEF,
+ this would be like DEF in Python.
+ And so we basically say function and then
+ give the name of a function and then the parameters
+ to the function.
+ And then you have a curly brace to start the function
+ and then end the function.
+ This is over here.
+ And then you have return to return the resulting value.
+ And that return defines the return value
+ that's going to be used in some expression.
+ So you're cruising along, you're in the middle of an expression,
+ you encounter a function, it calls the function, runs the call,
+ and then the return value is what
+ is the residual that's placed in that plus.
+ So whatever that value is, in this case,
+ it's going to add 4 and 5 and end up with 9
+ as the result, and prod equals 9.
+ So the functions, other than that,
+ are like most programming languages,
+ except when it comes to global variables.
+ And so most of the time when you're working with a function,
+ every variable that you define inside the function
+ is local to that function.
+ And so if you use the same variable outside the function,
+ now I'm doing this two lines away,
+ but really often this function's inside of a library
+ and it doesn't even know what variables are
+ being used outside of it.
+ And so by default, these two are the same.
+ And I'm not really familiar of a lot of other programming
+ languages where the default is that that's
+ kind of a global variable if you don't make it worse.
+ It depends on whether this global variable is defined
+ before or after turn 2.
+ In this case, I'm defining the global variable before,
+ and I say nothing special about gl, and so it's global.
+ And so I set it to 123, then I call this function,
+ and it sets it to 456.
+ And when we come back from the function, it's 456.
+ So that's kind of weird.
+ It's this weird kind of super global
+ by default, which is not the way we usually
+ like to run functions.
+ So what we do, and it's really weird.
+ There's no other programming language that makes you say,
+ don't be global.
+ Most other programming languages,
+ if they have a global capability and not all of them do,
+ they're like, this is the weird one that's global
+ and everything else is local.
+ What you do is if you don't say it's local,
+ it's going to be global.
+ So the var keyword basically says, it's local.
+ It's just, this is a variable and it's local.
+ And so I can say, var gl equals 456.
+ That means that that variable has no effect
+ outside the function, i.e. the function lives
+ in its own little silo, which is the way
+ most functions usually work unless we explicitly
+ bust out of the little silo.
+ So in this case, if we do gl equals 123,
+ then we call function check, and we look at gl,
+ even though inside a function there's a gl that's 456,
+ not the same gl, and so we get 123
+ when it's all said and done.
+ So that's really quite nice.
+ But you do put a lot of vars in,
+ and one of my biggest bugs when I write JavaScript
+ is to forget to put the var in.
+ So I now just kind of been punished enough to know,
+ always put the var in so you get what you kind of expect
+ as a default in most other programming languages
+ that all variables that are defined inside of a function
+ are local unless you're very explicitly doing otherwise.
+ JavaScript has arrays.
+ They look a lot like Python lists.
+ So here we have an array that's three strings.
+ JavaScript has an associative structure,
+ but it's not an associative array,
+ and it's more like a dictionary, but it's not.
+ It's an object.
+ Objects can be many, many things,
+ and we'll talk a bunch, we'll have a whole lecture
+ on nothing but objects.
+ But right now they kind of look like a dictionary.
+ Key, value, pair, key, value, pair.
+ Key is name, value is chuck.
+ Key is class, value is dj for e.
+ And so when you print that out, away you go.
+ Now, you can say a sub zero, which gives you x,
+ which is that first element,
+ and you can say b sub quote, name, quote.
+ You can do that.
+ Another way to say that is b dot name.
+ Those two syntaxes, and this confused the heck out of me
+ when I was first learning JavaScript,
+ those two syntaxes mean the same thing.
+ They both are saying look up an attribute
+ of the object b that's named name.
+ And again, equivalently, they are the same thing,
+ even though for every other language you ever look at,
+ you think those are very different creatures,
+ but not so in JavaScript.
+ And it has to do with the fact that b is an object.
+ It is an object.
+ And so objects are the associative structures,
+ but they're even more powerful than associative arrays
+ are in some languages, like directories.
+ Linear arrays, you can make linear arrays.
+ You can fill them up a couple different ways.
+ You can either fill them up, you know,
+ we start and make an array,
+ and we can push some elements in.
+ I don't like the name push, I like append better.
+ That would be what we would say if we were in Python,
+ if this were a list, but it works.
+ Push kind of pushes onto the end.
+ Normally push means push onto the beginning,
+ but in computer science, push usually means push down,
+ not append, but so I think Python has a JavaScript there
+ where we say append in Python, we say push in JavaScript,
+ or we can just fill it up with the array,
+ array sub zero and array sub one,
+ and then we can fill up a nice linear array
+ if we want, and remember, in JavaScript,
+ arrays are arrays, they're not dictionaries,
+ they are lists.
+ In Python, Python has lists and dictionaries,
+ and JavaScript has arrays and objects.
+ There's other syntaxes for making arrays.
+ You can say array and then just have a list of things
+ that make up the array, and you get an array,
+ or you just use the constant form, that square brackets,
+ and this looks exactly like how we would do it in Python,
+ and so that works, so in that particular line,
+ you can write Python in JavaScript if you so desire.
+ Up next, we're gonna talk about control structures.
+ (upbeat music)

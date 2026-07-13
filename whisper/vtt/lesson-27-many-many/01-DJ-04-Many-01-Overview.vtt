@@ -1,194 +1,254 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.020
- so now we're in the second half of our data modeling exploration we've talked
+00:00:00.000 --> 00:00:04.520
+ So now we're in the second half of our data modeling exploration.
 
-00:00:05.020 --> 00:00:09.560
- about one-to-many and now we're going to talk about many-to-many just to remember
+00:00:04.520 --> 00:00:06.120
+ We've talked about one to many and
 
-00:00:09.560 --> 00:00:15.840
- we are in the in the bowels of a of a Django application and we're really very
+00:00:06.120 --> 00:00:08.720
+ now we're going to talk about many to many.
 
-00:00:15.840 --> 00:00:21.820
- much talking about the model.py file and how we mess with that we're talking a
+00:00:08.720 --> 00:00:14.960
+ Just to remember, we are in the bowels of a django application and
 
-00:00:21.820 --> 00:00:26.320
- little bit about the shell and how we can sort of look at the model.py and
+00:00:14.960 --> 00:00:21.320
+ we're really very much talking about the model.py file and how we mess with that.
 
-00:00:26.320 --> 00:00:31.480
- store stuff in the database how we can like migrate make migrations and update
+00:00:21.320 --> 00:00:23.280
+ We're talking a little bit about the shell and
 
-00:00:31.480 --> 00:00:36.520
- the database and and then read and write data from the database through the
+00:00:23.280 --> 00:00:28.080
+ how we can sort of look at the model.py and store stuff in the database.
 
-00:00:36.520 --> 00:00:40.840
- models and so this we're sort of narrowing in eventually we're going to
+00:00:28.080 --> 00:00:34.340
+ How we can like migrate, make migrations and update the database and
 
-00:00:40.840 --> 00:00:44.900
- see all the rest of the Django application the views the forms the
+00:00:34.340 --> 00:00:37.000
+ then read and write data from the database through the models.
 
-00:00:44.900 --> 00:00:49.160
- templates and done a little bit with routing and a little bit with admin but
+00:00:37.000 --> 00:00:40.480
+ And so, this, we're sort of narrowing in eventually.
 
-00:00:49.160 --> 00:00:52.680
- just remember that we're going to look at each of these pieces in turn and
+00:00:40.480 --> 00:00:44.200
+ We're gonna see all the rest of the django application, the views,
 
-00:00:52.680 --> 00:00:59.160
- eventually make some sense out of them so in this data model which I think is a
+00:00:44.200 --> 00:00:46.320
+ the forms, the templates.
 
-00:00:59.160 --> 00:01:05.480
- really cool data model because it shows a two one-to-many relationships and a and
+00:00:46.320 --> 00:00:49.000
+ And we've done a little bit with routing and a little bit with admin.
 
-00:01:05.480 --> 00:01:10.080
- two many-to-many relationships one very simple and one a little bit more complex
+00:00:49.000 --> 00:00:53.040
+ But just remember that we're gonna look at each of these pieces in turn and
 
-00:01:10.080 --> 00:01:15.520
- both the genre and the author are example of one-to-many and just sort of
+00:00:53.040 --> 00:00:55.760
+ eventually make some sense out of them.
 
-00:01:15.520 --> 00:01:19.840
- foreshadowing see the one dot dot asterisk there on both ends of the links
+00:00:55.760 --> 00:01:01.080
+ So, in this data model, which I think is a really cool data model because
 
-00:01:19.840 --> 00:01:25.320
- well that basically says one or more up to an infinite the other ones zero dot
+00:01:01.080 --> 00:01:07.320
+ it shows two one to many relationships and two many to many relationships.
 
-00:01:25.320 --> 00:01:30.020
- dot the lines kind of covering it zero or more and one or more so the one to
+00:01:07.320 --> 00:01:10.200
+ One very simple and one a little bit more complex.
 
-00:01:30.020 --> 00:01:35.640
- many has one on the one side sometimes it has zero on or one but one on one
+00:01:10.200 --> 00:01:14.680
+ Both the genre and the author are example of one to many.
 
-00:01:35.640 --> 00:01:40.680
- side and then zero dot dot star or one dot dot star so many to many is a
+00:01:14.680 --> 00:01:18.440
+ And just sort of foreshadowing, see the one dot dot asterisk there?
 
-00:01:40.680 --> 00:01:46.400
- different kind of creature so remember how in the last modeling exercise I
+00:01:18.440 --> 00:01:23.320
+ On both ends of the links, well that basically says one or more.
 
-00:01:46.400 --> 00:01:52.000
- kind of you'll notice I showed you genre and author and then I kind of stopped
+00:01:23.320 --> 00:01:27.200
+ Up to an infinite, the other one's zero dot dot, the line's kind of covering it.
 
-00:01:52.000 --> 00:01:57.320
- talking about them I only talked about language and book instance so in this
+00:01:27.200 --> 00:01:29.400
+ Zero or more and one or more.
 
-00:01:57.320 --> 00:02:01.040
- one we're going to talk about genre and author and that's because genre and
+00:01:29.400 --> 00:01:35.000
+ So the one to many has one on one side, sometimes it has zero or one.
 
-00:02:01.040 --> 00:02:06.960
- author are kind of problematic because really each book can have multiple
+00:01:35.000 --> 00:01:39.400
+ But one on one side and then zero dot dot star or one dot dot star.
 
-00:02:06.960 --> 00:02:12.560
- authors and each each book can be multiple genres and so in that previous
+00:01:39.400 --> 00:01:42.120
+ So many to many is a different kind of creature.
 
-00:02:12.560 --> 00:02:16.840
- lecture I kept these really simple and and you see this syntax here where I'm
+00:01:42.120 --> 00:01:48.960
+ So remember how in the last modeling exercise, I kinda, you'll notice,
 
-00:02:16.840 --> 00:02:20.840
- just kind of making a spreadsheet or another way to be thinking about it'd be
+00:01:48.960 --> 00:01:52.840
+ I showed you genre and author and then I kinda stopped talking about them.
 
-00:02:20.840 --> 00:02:26.160
- a single single wide table with all my data in one table but I'm starting to
+00:01:52.840 --> 00:01:55.000
+ I only talked about language and book instance.
 
-00:02:26.160 --> 00:02:30.300
- put commas in and so when you have commas in a user interface you think of
+00:01:55.000 --> 00:01:59.040
+ So in this one, we're gonna talk about genre and author.
 
-00:02:30.300 --> 00:02:33.960
- this as perhaps a multi select where you have a list of things and you can
+00:01:59.040 --> 00:02:03.520
+ And that's because genre and author are kinda problematic.
 
-00:02:33.960 --> 00:02:38.480
- highlight more than one of those things and so anytime you sort of see this
+00:02:03.520 --> 00:02:07.800
+ Cuz really, each book can have multiple authors.
 
-00:02:38.480 --> 00:02:44.840
- pattern it's another form of replication and that is that the Raspberry Pi book
+00:02:07.800 --> 00:02:10.960
+ And each book can be multiple genres.
 
-00:02:44.840 --> 00:02:49.480
- can be of the tech genre and the kids genre and the wizard stay up late book
+00:02:10.960 --> 00:02:14.680
+ And so, in that previous lecture, I kept these really simple.
 
-00:02:49.480 --> 00:02:53.600
- can be of the tech genre and the thinking genre right some books have one
+00:02:14.680 --> 00:02:18.680
+ And you see this syntax here where I'm just kinda making a spreadsheet.
 
-00:02:53.600 --> 00:02:59.000
- genre some books have two genres some books have one author some have two but
+00:02:18.680 --> 00:02:23.600
+ Or another way to be thinking about it would be a single, single wide table with
 
-00:02:59.000 --> 00:03:04.320
- then the problem is is they might have ten authors or twenty authors and so how
+00:02:23.600 --> 00:02:27.080
+ all my data in one table, but I'm starting to put commas in.
 
-00:03:04.320 --> 00:03:10.440
- do we represent these things and and if you're sort of looking at either a UI or
+00:02:27.080 --> 00:02:29.760
+ And so when you have commas in a user interface,
 
-00:03:10.440 --> 00:03:17.040
- or sort of a UI or just kind of a flat data table you start seeing these commas
+00:02:29.760 --> 00:02:33.760
+ you think of this as perhaps a multi-select, where you have a list of things and
 
-00:03:17.040 --> 00:03:20.960
- and as soon as you see the commas you think to yourself that is an indicator
+00:02:33.760 --> 00:02:36.440
+ you can highlight more than one of those things.
 
-00:03:20.960 --> 00:03:25.560
- that this might be a many-to-many relationship so if this were a one to
+00:02:36.440 --> 00:02:41.920
+ And so anytime you sort of see this pattern, it's another form of replication.
 
-00:03:25.560 --> 00:03:31.200
- one to many not one to one this was a one to many this was a one to many
+00:02:41.920 --> 00:02:46.800
+ And that is that the Raspberry Pi book can be of the tech genre and
 
-00:03:31.200 --> 00:03:35.200
- relationship sort of like what we did with languages we would have a book and
+00:02:46.800 --> 00:02:51.120
+ the kids genre, and the wizard stay up late book can be of the tech genre and
 
-00:03:35.200 --> 00:03:39.840
- that would have a genre foreign key in it that would point to a row in a genre
+00:02:51.120 --> 00:02:52.840
+ the thinking genre, right?
 
-00:03:39.840 --> 00:03:44.800
- table and that would make some sense right but that doesn't make sense
+00:02:52.840 --> 00:02:56.400
+ Some books have one genre, some books have two genres,
 
-00:03:44.800 --> 00:03:48.920
- because we have to have genres more than one and we you could basically decide
+00:02:56.400 --> 00:02:58.900
+ some books have one author, some have two.
 
-00:03:48.920 --> 00:03:52.620
- for your application developers that you can't have more than one genre but the
+00:02:58.900 --> 00:03:03.440
+ But then the problem is they might have ten authors or 20 authors.
 
-00:03:52.620 --> 00:03:56.520
- application developers would say sorry we're librarians and we know that
+00:03:03.440 --> 00:03:06.320
+ And so how do we represent these things?
 
-00:03:56.520 --> 00:03:59.880
- there's more than one genre so you the programmer have got to come up with a
+00:03:06.320 --> 00:03:13.020
+ And if you're sort of looking at either a UI or sort of a UI or
 
-00:03:59.880 --> 00:04:05.800
- data model that represents that and so if this was a one to many you could have
+00:03:13.020 --> 00:03:17.120
+ just kind of a flat data table, you start seeing these commas.
 
-00:04:05.800 --> 00:04:10.840
- like a genre ID and each book would be able to pick a row out of the genre and
+00:03:17.120 --> 00:03:19.600
+ And as soon as you see the commas, you think to yourself,
 
-00:04:10.840 --> 00:04:18.120
- so they would sort of mark themselves now this is another moment where it's a
+00:03:19.600 --> 00:03:24.680
+ that is an indicator that this might be a many-to-many relationship.
 
-00:04:18.120 --> 00:04:24.480
- warning sign and you're like well maybe we would just have two foreign keys and
+00:03:24.680 --> 00:03:30.480
+ So if this were a one-to-many, not one-to-one, this was a one-to-many.
 
-00:04:24.480 --> 00:04:29.280
- we just how about books are only allowed to have two genres you know maybe one's
+00:03:30.480 --> 00:03:34.040
+ This was a one-to-many relationship, sort of like what we did with languages.
 
-00:04:29.280 --> 00:04:35.560
- not enough but two's enough oh man let's make it three and so in and people who
+00:03:34.040 --> 00:03:38.800
+ We would have a book and that would have a genre foreign key in it that would point
 
-00:04:35.560 --> 00:04:39.480
- are doing data modeling earlier early in their career they were like yeah I'll
+00:03:38.800 --> 00:03:43.040
+ to a row and a genre table, and that would make some sense, right?
 
-00:04:39.480 --> 00:04:44.680
- just make a genre ID oh one genre ID oh two and then later like genre ID oh three
+00:03:43.040 --> 00:03:47.760
+ But that doesn't make sense because we have to have genres more than one.
 
-00:04:44.680 --> 00:04:51.800
- and away you go and this is completely wrong because genres of course is a weird
+00:03:47.760 --> 00:03:49.280
+ You could basically decide for
 
-00:04:51.800 --> 00:04:55.840
- example but if it's authors there are plenty of books with eight or nine ten
+00:03:49.280 --> 00:03:52.360
+ your application developers that you can't have more than one genre.
 
-00:04:55.840 --> 00:05:00.840
- eleven authors right and so this when you see yourself thinking this in your
+00:03:52.360 --> 00:03:55.320
+ But the application developers would say, sorry, we're librarians.
 
-00:05:00.840 --> 00:05:07.360
- head that like oh I'll just add a like an array of things here no and and it it
+00:03:55.320 --> 00:03:57.800
+ And we know that there's more than one genre.
 
-00:05:07.360 --> 00:05:13.840
- has to do with it it violates the basic notion of relations and connections and
+00:03:57.800 --> 00:03:59.000
+ So you, the programmer,
 
-00:05:13.840 --> 00:05:20.680
- how you model stuff to the extent that you can with connections and so that
+00:03:59.000 --> 00:04:02.760
+ have got to come up with a data model that represents that.
 
-00:05:20.680 --> 00:05:35.400
- leads us to what's called the many to many
+00:04:02.760 --> 00:04:07.600
+ And so if this was a one-to-many, you could have like a genre ID and
+
+00:04:07.600 --> 00:04:10.880
+ each book would be able to pick a row out of the genre, and
+
+00:04:10.880 --> 00:04:13.760
+ so they would sort of mark themselves.
+
+00:04:13.760 --> 00:04:19.480
+ Now, this is another moment where it's a warning sign.
+
+00:04:19.480 --> 00:04:24.360
+ And you're like, well, maybe we would just have two foreign keys.
+
+00:04:24.360 --> 00:04:28.760
+ And we just, how about books are only allowed to have two genres, you know?
+
+00:04:28.760 --> 00:04:30.960
+ Maybe one's not enough, but two's enough.
+
+00:04:30.960 --> 00:04:33.040
+ Oh, man, let's make it three.
+
+00:04:33.040 --> 00:04:38.520
+ And so, and people who are doing data modeling earlier, early in their career,
+
+00:04:38.520 --> 00:04:42.880
+ they were like, yeah, I'll just make a genre ID01, genre ID02, and
+
+00:04:42.880 --> 00:04:46.320
+ then later like genre ID03, and away you go.
+
+00:04:46.320 --> 00:04:49.680
+ And this is completely wrong.
+
+00:04:49.680 --> 00:04:52.280
+ Because genres, of course, is a weird example.
+
+00:04:52.280 --> 00:04:57.760
+ But if it's authors, there are plenty of books with 8 or 9, 10, 11 authors, right?
+
+00:04:57.760 --> 00:05:01.080
+ And so this, when you see yourself thinking this in your head,
+
+00:05:01.080 --> 00:05:05.840
+ it's like, I'll just add like an array of things here.
+
+00:05:05.840 --> 00:05:09.120
+ No, and it has to do with it.
+
+00:05:09.120 --> 00:05:14.320
+ It violates the basic notion of relations and connections, and
+
+00:05:14.320 --> 00:05:18.800
+ how you model stuff to the extent that you can with connections.
+
+00:05:18.800 --> 00:05:23.200
+ And so that leads us to what's called the many to many.
+
+00:05:23.200 --> 00:05:33.200
+ [MUSIC]
 

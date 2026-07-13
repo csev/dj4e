@@ -1,63 +1,115 @@
- So now we're gonna take a look inside of a generic edit view, and we wanna look at how it functions internally so that we can override and extend some of those functions so we can take the generic edit view and turn it into an edit view that supports an owned row.
- So this is a review, we've gone back a couple of lectures, this is the edit form flow, right, and I went through this in great and gory detail, so I'll just review it really quickly, right?
- So you're going, you've hit the edit button, right, so you do a get request to like /1 or /15, you're gonna grab that data, oops, you're gonna go in, you're gonna load the primary key 1 or 2 or 15, if you didn't find it, you're gonna send in 404 error,
- and then you're gonna fill the form with old data, the user's gonna edit that data, they're gonna post the good data, then the form is gonna be validated according to the form rules, remember the model kinda deals with the back end and the form kinda deals with the front end.
- So the validation is a form aspect, and then if there's an error, it goes back and allows you to redo it, and then if there's no error in the submitted data, then we load a new model up, we reload the model, check to see if that model is accessible, and accessible's gonna matter to a lot to us in a second.
- If it's there and you can read it, and you're legally allowed to read it, great, otherwise we're gonna give you a 404, as you're submitting the data, and that has to do with if they messed with the form or something, or they're submitting it to the wrong URL.
- But if we can get the data, we change the data, and we store the updated data, and then we do the success URL, right, so that's the basic form flow, we did that before, we did that with every one of our CRUDs, and we also looked at this documentation in the generic list view, it could be in some of the edit views.
- At some point you will see in the Django documentation, it's telling you how this class is functioning internally, how it's working its own magic inside itself.
- And this is method flowchart, first it's gonna call setup, then it's gonna call dispatch, check to see if the method's allowed, get its template name, get a query set, load the data from the database, get the context object name, get the context data, and then render to response.
- So you might say, why are they showing us all this?
- And the answer is because we can get our hands in and mess with these things, and these are like our access points into this generic list view class that allow us to dig in and make changes.
- So if we were to look at that same picture and think of it from the point of view of which methods are being called at the moment where this generic edit, in this case it's gonna be an edit view, this generic edit view is happening.
+ So now we're going to take a look inside of a generic edit view, and we want to look at how it functions internally so that we can override and extend some of those functions.
+ So we can take the generic edit view and turn it into an edit view that supports an owned row.
+ So this is a review, we've gone back a couple of lectures.
+ This is the edit form flow, right, and I went through this in great and gory detail, so I'll just review it really quickly, right?
+ So you're going, you've hit the edit button, right?
+ So you do a get request to like /1 or /15.
+ You're going to grab that data, oops.
+ You're going to go in, you're going to load the primary key 1 or 2 or 15.
+ If you didn't find it, you're going to send in 404 error, and then you're going to fill the form with old data.
+ The user is going to edit that data, they're going to post the good data.
+ Then the form is going to be validated, of course, according to the form rules.
+ Remember, the model kind of deals with the back end, and the form kind of deals with the front end.
+ So the validation is a form aspect, and then if there's an error, it goes back and allows you to redo it.
+ And then if there's no error in the submitted data, then we load a new model up, we reload the model,
+ check to see if that model is accessible, and accessible is going to matter to a lot to us in a second.
+ If it's there and you can read it, and you're legally allowed to read it, great, otherwise we're going to give you a 404.
+ As you're submitting the data, and that has to do with if they messed with the form or something, or they're submitting it to the wrong URL.
+ But if we can get the data, we change the data, and we store the updated data, and then we do the success URL, right?
+ So that's the basic form flow, we did that before, we did that with every one of our cruds.
+ And we also looked at this documentation in the generic list view, it could be in some of the edit views.
+ At some point you will see in the Django documentation, it's telling you how this class is functioning internally.
+ How it's working its own magic inside itself, and this is method flow chart.
+ First it's going to call setup, then it's called dispatch, check to see if the method's allowed.
+ Get its template name, get a query set, load the data from the database, get the context object name, get the context data, and then render to response.
+ And so you might say, why are they showing us all this?
+ And the answer is because we can get our hands in and mess with these things.
+ These are like our access points into this generic list view class that allow us to dig in and make changes.
+ And so if we were to look at that same picture and think of it from the point of view of which methods are being called
+ at the moment where this generic edit, in this case it's going to be an edit view, this generic edit view is happening.
  So here we go.
- So the get request comes in, it's got some primary key, so it does a get query set, and it reads this thing, and then it reads it using get query set. It's still reading it, but it happens to be doing it in a method called get query set.
- And if get query set works, or doesn't, then it keeps on going, then as it's rendering the template, it's going to get the context data by calling a method called get context data.
- This is another place that we're going to play with, and we're gonna inject ourselves into get context data.
- Then we'll do the edit, the post will come in, and then it's gonna do validation, but it does it in a method called form valid.
+ So the get request comes in, it's got some primary key, so it does a get query set.
+ And it reads this thing, and then it reads it using get query set.
+ It's still reading it, but it happens to be doing it in a method called get query set.
+ And if get query set works, or doesn't, then it keeps on going.
+ Then as it's rendering the template, it's going to get the context data by calling a method called get context data.
+ That's another place that we're going to play with.
+ We're going to inject ourselves into get context data.
+ Then we'll do the edit, the post will come in, and then it's going to do validation, but it does it in a method called form valid.
  So the first thing that happens upon the receipt of post is it checks to see if the form is valid.
  We are going to add our own little code into form valid as well.
- If it goes back, it does a render, so it's gonna use get context data. If it is good, there's no error, then it's going to actually call get query set again to get the data.
- And then it's gonna modify the data, and then it's gonna store the data. There's some name for this, but I didn't put it in.
- The point is, each of these moments where there's something critical going on, form valid get query set, that's a place where we can extend the behavior of this built in class without knowing too much about the class.
- I showed you at the end of a few lectures ago this crazy override. I did this crazy, crazy override where I made this weird equine view, and I have a model of car and a template name.
- And then I'm overriding get query set. So this is extending generic list view, but instead of using the get query set that's in generic list view, we're going to call our own get query set.
- So instead of reading car objects, we're gonna read horse objects, and then we're gonna return a list of them, and that's what the get query set has to do.
- The rule of get query set is you get called, you have to return a list. If we didn't write this code, it would do this except with car, but we did write this code. Why?
- Because we wanted to override it. Was there any logic to it? No, just because I wanted to show you crazy things, right? And so because I've overridden in the generic list view, it's not calling the generic list views query set at all, which would look at the model car, but instead it's calling mine that's in wacky equine view.
- And so when it prints out, you see a list of horses, not a list of cars, because I overrode what behavior was inside the list view class, which normally would be informed by that, but my code in here ignored it.
- Again, I have no purpose for this other than showing you that I can change the behavior of the parent class while creating a derived class. Now sometimes, in this case, I'm just completely overriding it, and it's like, I don't care what you were going to do before, I'm gonna do something completely different.
- I didn't have to know what the rules are, I had to know what the return, it took me a while to write this, and I might have even looked at some Django source code to figure this out, but eventually, through Stack Overflow, I figured this out.
- So this is not trivial to write, and I'm not expecting you to write this, I just want to show you the technique, like this keyword args, that's something, I'm sure at some point I knew what it was, but I just stole that off of Stack Overflow, like everybody does.
+ If it goes back, it does a render, so it's going to use get context data.
+ If it is good, there's no error, then it's going to actually call get query set again to get the data.
+ And then it's going to modify the data, and then it's going to store the data.
+ There's some name for this, but I didn't put it in.
+ The point is, each of these moments where there's something critical going on,
+ form valid get query set, that's a place where we can extend the behavior of this built in class
+ without knowing too much about the class.
+ And I showed you at the end of a few lectures ago this crazy override.
+ I did this crazy, crazy override where I made this weird equine view,
+ and I have a model of car and a template name, and then I'm overriding get query set.
+ So this is extending generic list view, but instead of using the get query set that's in generic list view,
+ we're going to call our own get query set, so instead of reading car objects, we're going to read horse objects.
+ And then we're going to return a list of them, and that's what the get query set has to do.
+ The rule of get query set is you get called, you have to return a list.
+ If we didn't write this code, it would do this except with car, but we did write this code.
+ Why? Because we wanted to override it.
+ Was there any logic to it? No, just because I wanted to show you crazy things, right?
+ And so because I've overridden in the generic list view, it's not calling the generic list views query set at all,
+ which would look at the model car, but instead it's calling mine that's in wacky equine view.
+ And so when it prints out, you see a list of horses, not a list of cars,
+ because I overrode what behavior was inside the list view class, which normally would be informed by that,
+ but my code in here ignored it.
+ Again, I have no purpose for this other than showing you that I can change the behavior of the parent class
+ while creating a derived class.
+ Now sometimes, in this case, I'm just completely overriding it, and it's like,
+ I don't care what you were going to do before, I'm going to do something completely different.
+ And you have to know what the rules are, I had to know what the return.
+ It took me a while to write this, and I might have even looked at some Django source code to figure this out.
+ But eventually, through Stack Overflow, I figured this out.
+ So this is not trivial to write, and I'm not expecting you to write this.
+ I just want to show you the technique, like this keyword args, that's something.
+ I'm sure at some point I knew what it was, but I just stole that off of Stack Overflow, like everybody does.
  So, in this def get query set, you'll see that I have just overridden and ignored the def query set from generic list view, okay?
- That's one way of overriding a method. Another way of overriding a method is this get context data. So what is get context data going to do?
+ That's one way of overriding a method.
+ Another way of overriding a method is this get context data.
+ So what is get context data going to do?
  Well, at some level, get context data is what puts in this crazy, this list, ends up going into horse list, right?
- So that's somehow this variable that I return here in query set ends up being put into my context is horse list, so then I can write this loop that prints that stuff out, and that's by convention, right?
- It actually looks at the type of this thing and says, oh, that's a list of horses, so it makes up the variable and puts it in the context.
- Now, where that's being done in generic list view is in a method called get context data.
- And so I actually don't want to completely replace get context data, although I probably could if I want, because this is so simple.
- What I actually want to do is I want to augment the context, and I want to throw something else in it.
+ So that's somehow this variable that I return here in query set ends up being put into my context is horse list.
+ So then I can write this loop that prints that stuff out.
+ And that's by convention, right?
+ It actually looks at the type of this thing and says, oh, that's a list of horses.
+ So it makes up the variable and puts it in the context.
+ Now where that's being done in generic list view is in a method called get context data.
+ And so I actually don't want to completely replace get context data, although I probably could if I want because this is so simple.
+ What I actually want to do is I want to augment the context and I want to throw something else in it.
  So what I want to do is I want to run the code from generic list view first.
- I want to get the context back from that, and then I want to add something to it, and then return sort of like this composite context, okay?
+ I want to get the context back from that and then I want to add something to it and then return sort of like this composite context, okay?
  And it's not, the syntax is a little scary, but it's okay.
- So let's take a look at get context data, just like anything, self is the instance, self is always the instance.
+ So let's take a look at get context data.
+ Just like anything, self is the instance, self is always the instance.
  KW args is just a way of taking all the parameters so I can pass them in.
- So what I'm gonna say is I'm going to say, hey, super.
+ So what I'm going to say is I'm going to say, hey, super.
  Super is like calling get context data in generic list view.
  So go into my super class, wacky equines view is a subclass, list view is my super class.
- Super get context data and pass whatever arguments were going in there, we're all good.
- So just call that, do it, and pass in all the arguments, and do whatever.
+ Super, get context data and pass whatever arguments were going in there.
+ We're all good.
+ So just call that, do it and pass in all the arguments and do whatever.
  And that's what ends up putting in horse list.
- And so at that point, context is gonna be a dictionary that has horse list in it.
- But then I want to put some more stuff in, so then that goes into generic list view and then comes back out of generic list view and gives me.
- If all I did is return context, then I really wouldn't have changed anything.
- But what I'm gonna do is I'm gonna throw in this little extra key called crazy thing and put the string crazy thing in it.
- And then I return all that and then eventually it goes into the template and this context finds its way into the template.
- And again, that's all inside of generic list view and eventually horse list is there because of the call to the super.
+ And so at that point, context is going to be a dictionary that has horse list in it.
+ But then I want to put some more stuff in.
+ So then that goes into generic list view and then comes back out of generic list view and gives me.
+ And if all I did is return to context, then I really wouldn't have changed anything.
+ But what I'm going to do is I'm going to throw in this little extra key called crazy thing and put the string crazy thing in it.
+ And then I return all that.
+ And then eventually it goes into the template and this context finds its way into the template.
+ And again, that's all inside of generic list view.
+ And eventually horse list is there because of the call to the super.
  And crazy thing is there just because I explicitly put it in.
  And so I have augmented without replacing.
- The first one I completely replaced get query set, and the second one I called the parent.
+ The first one I completely replaced get query set.
+ And the second one I called the parent.
  And then I augmented the return value and then returned kind of the combination of what the list view did and what I want to add to the list view.
- So we're gonna use both of these techniques coming up when we start talking about the owner list, the owner.py code.
+ So we're going to use both of these techniques coming up when we start talking about the owner list, the owner.py code.
  And how we can then jack in to this generic code and implement our owner field.
- So that's the next thing that we're gonna do.
+ So that's the next thing that we're going to do.

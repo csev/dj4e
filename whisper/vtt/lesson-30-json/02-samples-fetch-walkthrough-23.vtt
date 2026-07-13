@@ -1,750 +1,753 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.560
- another video walk-through for Django for everybody.
+00:00:00.000 --> 00:00:03.520
+ another video walkthrough for Django for everybody.
 
-00:00:03.560 --> 00:00:08.560
- In this particular sample, we're going to do JSON and fetch.
+00:00:03.520 --> 00:00:04.840
+ In this particular sample,
 
-00:00:08.560 --> 00:00:10.940
+00:00:04.840 --> 00:00:09.140
+ we're going to do JSON and Fetch.
+
+00:00:09.140 --> 00:00:10.900
  So here we are.
 
-00:00:10.940 --> 00:00:14.340
+00:00:10.900 --> 00:00:14.320
  The first thing to observe is that JSON
 
-00:00:14.340 --> 00:00:17.820
+00:00:14.320 --> 00:00:17.780
  is really just the syntax.
 
-00:00:17.820 --> 00:00:19.580
+00:00:17.780 --> 00:00:19.560
  So let's view source here.
 
-00:00:19.580 --> 00:00:24.780
+00:00:19.560 --> 00:00:24.740
  And then we're also gonna view the console in this one.
 
-00:00:24.780 --> 00:00:27.820
+00:00:24.740 --> 00:00:27.780
  Let's turn the console on.
 
-00:00:28.940 --> 00:00:33.940
- And then, let's up a bit, come on, move up a bit.
+00:00:28.920 --> 00:00:33.920
+ And then, set up a bit, come on, move up a bit.
 
-00:00:33.940 --> 00:00:37.940
+00:00:33.920 --> 00:00:37.940
  So here's the source code.
 
-00:00:37.940 --> 00:00:39.900
+00:00:37.940 --> 00:00:39.880
  This is just JavaScript.
 
-00:00:39.900 --> 00:00:41.900
- There's no JSON coming from the server,
+00:00:39.880 --> 00:00:41.880
+ There's no JSON coming from the server.
 
-00:00:41.900 --> 00:00:43.260
- it's just JavaScript.
+00:00:41.880 --> 00:00:43.280
+ It's just JavaScript.
 
-00:00:43.260 --> 00:00:44.660
+00:00:43.280 --> 00:00:44.660
  And I'm doing an assignment statement.
 
 00:00:44.660 --> 00:00:49.660
  This is the syntax for a JavaScript object constant,
 
-00:00:49.660 --> 00:00:54.900
+00:00:49.660 --> 00:00:54.920
  open curly brace, and then a series of string,
 
-00:00:54.900 --> 00:00:56.740
+00:00:54.920 --> 00:00:56.720
  key value, key value, key value,
 
-00:00:56.740 --> 00:00:58.540
- and the values can be strings,
+00:00:56.720 --> 00:00:58.560
+ and the values can be strings.
 
-00:00:58.540 --> 00:01:03.400
- they can be numbers, they can be booleans,
+00:00:58.560 --> 00:01:03.400
+ They can be numbers, they can be booleans,
 
-00:01:03.400 --> 00:01:05.260
- they can be arrays, and they object,
+00:01:03.400 --> 00:01:05.280
+ they can be arrays, and they object.
 
-00:01:05.260 --> 00:01:08.740
- you can even have an object within the object, right?
+00:01:05.280 --> 00:01:08.760
+ You can even have an object within the object, right?
 
-00:01:08.740 --> 00:01:11.700
+00:01:08.760 --> 00:01:11.720
  And so all we're doing here is creating a variable
 
-00:01:11.700 --> 00:01:14.700
+00:01:11.720 --> 00:01:14.720
  called who in JavaScript and then console logging it.
 
-00:01:14.700 --> 00:01:18.420
+00:01:14.720 --> 00:01:18.440
  And son of a gun, if that object,
 
-00:01:18.420 --> 00:01:20.660
+00:01:18.440 --> 00:01:20.680
  this is a parsed object, right?
 
-00:01:20.660 --> 00:01:21.860
+00:01:20.680 --> 00:01:21.900
  That is the JavaScript.
 
-00:01:21.860 --> 00:01:23.780
+00:01:21.900 --> 00:01:23.800
  I could have made a syntax error in here,
 
-00:01:23.780 --> 00:01:26.140
+00:01:23.800 --> 00:01:26.160
  and then JavaScript would say syntax error.
 
-00:01:26.140 --> 00:01:27.660
+00:01:26.160 --> 00:01:27.680
  But if that syntax is correct,
 
-00:01:27.660 --> 00:01:32.660
+00:01:27.680 --> 00:01:32.680
  that is just the syntax for a JavaScript object constant.
 
-00:01:32.660 --> 00:01:36.360
+00:01:32.680 --> 00:01:36.360
  And so the brilliance of JSON was,
 
-00:01:36.360 --> 00:01:41.900
+00:01:36.360 --> 00:01:41.880
  let's send that exact syntax back and forth
 
-00:01:41.900 --> 00:01:43.860
+00:01:41.880 --> 00:01:43.880
  across the network, right?
 
-00:01:43.860 --> 00:01:46.220
+00:01:43.880 --> 00:01:46.240
  That was the brilliance of it, okay?
 
-00:01:46.220 --> 00:01:50.940
+00:01:46.240 --> 00:01:50.960
  So let's actually do that in the simplest possible way.
 
-00:01:50.940 --> 00:01:55.940
+00:01:50.960 --> 00:01:55.960
  So it means that we can build views inside the browser
 
-00:01:58.660 --> 00:02:00.740
+00:01:58.680 --> 00:02:00.720
  and let me load this in the browser
 
-00:02:00.740 --> 00:02:02.300
+00:02:00.720 --> 00:02:02.320
  and let me turn on the console.
 
-00:02:02.300 --> 00:02:03.900
+00:02:02.320 --> 00:02:03.920
  Let me just turn on a console
 
-00:02:03.900 --> 00:02:05.820
+00:02:03.920 --> 00:02:05.840
  so you can see what's going on here.
 
-00:02:05.820 --> 00:02:07.740
+00:02:05.840 --> 00:02:07.720
  Let's start with web developer tools.
 
-00:02:07.740 --> 00:02:10.740
+00:02:07.720 --> 00:02:10.720
  Oh yeah, favicon, favicon, whatever.
 
-00:02:10.740 --> 00:02:14.020
+00:02:10.720 --> 00:02:14.020
  Let's go ahead and do that network here.
 
-00:02:14.020 --> 00:02:15.620
+00:02:14.020 --> 00:02:15.640
  So one of the things going on,
 
-00:02:15.620 --> 00:02:16.900
+00:02:15.640 --> 00:02:16.920
  let's take a look at this view here.
 
-00:02:16.900 --> 00:02:19.420
+00:02:16.920 --> 00:02:19.440
  This is the JSON fun view.
 
-00:02:19.420 --> 00:02:22.380
+00:02:19.440 --> 00:02:22.360
  And so this JSON fun view that we're hitting,
 
-00:02:22.380 --> 00:02:25.200
- it does a time sleep, which is actually quite foolish,
+00:02:22.360 --> 00:02:25.200
+ it does a time sleep, which is actually quite foolish.
 
 00:02:25.200 --> 00:02:28.600
- but I do that so you can kind of see when things start
+ But I do that so you can kind of see when things start
 
-00:02:28.600 --> 00:02:30.940
+00:02:28.600 --> 00:02:30.920
  and then when things finish.
 
-00:02:30.940 --> 00:02:33.780
+00:02:30.920 --> 00:02:33.760
  And so we have sitting here, this is Python now.
 
-00:02:33.780 --> 00:02:36.180
- And the ironic thing is this the syntax
+00:02:33.760 --> 00:02:35.400
+ And the ironic thing is this,
 
-00:02:36.180 --> 00:02:38.700
- for a Python dictionary is the same
+00:02:35.400 --> 00:02:37.920
+ the syntax for a Python dictionary
 
-00:02:38.700 --> 00:02:42.420
- as the syntax for a JavaScript object.
+00:02:37.920 --> 00:02:42.420
+ is the same as the syntax for a JavaScript object.
 
-00:02:42.420 --> 00:02:45.980
+00:02:42.420 --> 00:02:46.000
  I'd love to know like how explicitly that was.
 
-00:02:45.980 --> 00:02:48.700
+00:02:46.000 --> 00:02:48.700
  Both syntaxes, I mean, it's a sensible syntax.
 
-00:02:48.700 --> 00:02:50.140
+00:02:48.700 --> 00:02:50.160
  If I was inventing a language,
 
-00:02:50.140 --> 00:02:52.060
+00:02:50.160 --> 00:02:52.060
  I might use this exact same syntax.
 
-00:02:52.060 --> 00:02:56.020
+00:02:52.060 --> 00:02:56.000
  And so it's beautiful that JavaScript object syntax
 
-00:02:56.020 --> 00:03:00.420
+00:02:56.000 --> 00:03:00.360
  and Python constants for dictionaries
 
-00:03:00.420 --> 00:03:02.260
+00:03:00.360 --> 00:03:02.240
  are pretty much the same thing.
 
-00:03:02.260 --> 00:03:04.500
+00:03:02.240 --> 00:03:04.440
  And so we simply serialize these things,
 
-00:03:04.500 --> 00:03:06.240
+00:03:04.440 --> 00:03:06.200
  send them out and deserialize them.
 
-00:03:06.240 --> 00:03:08.880
+00:03:06.200 --> 00:03:08.840
  So what's going on in this JSON fun
 
-00:03:08.880 --> 00:03:11.300
+00:03:08.840 --> 00:03:11.280
  is we're sending back a JSON response.
 
-00:03:11.300 --> 00:03:15.300
+00:03:11.280 --> 00:03:15.240
  In the normal situation, in this home view,
 
-00:03:15.300 --> 00:03:18.240
- home view of course is this view right here,
+00:03:15.240 --> 00:03:18.200
+ home view, of course, is this view right here.
 
-00:03:18.240 --> 00:03:20.620
- we are sending back, this render request
+00:03:18.200 --> 00:03:20.600
+ We are sending back, this render request
 
-00:03:20.620 --> 00:03:23.780
+00:03:20.600 --> 00:03:23.760
  is sending back an HTTP response.
 
-00:03:23.780 --> 00:03:26.380
+00:03:23.760 --> 00:03:26.360
  I'm not, I import it, but I don't use it.
 
-00:03:26.380 --> 00:03:28.860
+00:03:26.360 --> 00:03:28.840
  The return value from render,
 
-00:03:28.860 --> 00:03:32.100
+00:03:28.840 --> 00:03:32.080
  which takes the request object fetch and optional context,
 
-00:03:32.100 --> 00:03:35.060
+00:03:32.080 --> 00:03:35.080
  that is an HTTP response.
 
-00:03:35.060 --> 00:03:36.660
+00:03:35.080 --> 00:03:36.680
  And so it knows that it HTML.
 
-00:03:36.660 --> 00:03:39.780
+00:03:36.680 --> 00:03:39.760
  And so if we just, if we do a view source on this one,
 
-00:03:39.780 --> 00:03:41.780
+00:03:39.760 --> 00:03:41.760
  not view source, let's do this.
 
-00:03:41.780 --> 00:03:44.580
- Browser tools, web developer tools,
+00:03:41.760 --> 00:03:44.560
+ Browser tools, web developer tools.
 
-00:03:44.580 --> 00:03:46.100
- let's go to the network tab.
+00:03:44.560 --> 00:03:46.080
+ Let's go to the network tab.
 
-00:03:46.100 --> 00:03:48.180
+00:03:46.080 --> 00:03:48.160
  Let's hit refresh on this one.
 
-00:03:48.180 --> 00:03:51.180
+00:03:48.160 --> 00:03:51.180
  And if we take a look at the request response cycle,
 
-00:03:51.180 --> 00:03:53.820
- response headers are like text HTML.
+00:03:51.180 --> 00:03:53.800
+ the response headers are like text HTML.
 
-00:03:53.820 --> 00:03:57.540
+00:03:53.800 --> 00:03:57.560
  And that's because this view,
 
-00:03:57.540 --> 00:04:01.220
+00:03:57.560 --> 00:04:01.200
  the home view is returning an HTTP response.
 
-00:04:01.220 --> 00:04:04.740
+00:04:01.200 --> 00:04:04.740
  And in that Django is setting all these things
 
-00:04:04.740 --> 00:04:07.300
+00:04:04.740 --> 00:04:07.280
  like content length and content type.
 
-00:04:07.300 --> 00:04:10.700
+00:04:07.280 --> 00:04:10.680
  But now we're gonna send back a JSON response.
 
-00:04:10.700 --> 00:04:15.180
+00:04:10.680 --> 00:04:15.200
  So we're telling, we're telling Django
 
-00:04:15.180 --> 00:04:16.860
+00:04:15.200 --> 00:04:16.840
  that we wanna send back JSON.
 
-00:04:16.860 --> 00:04:18.740
+00:04:16.840 --> 00:04:18.720
  And here's our dictionary in Python.
 
-00:04:18.740 --> 00:04:23.380
+00:04:18.720 --> 00:04:23.380
  So please serialize that as JSON,
 
-00:04:23.380 --> 00:04:26.540
+00:04:23.380 --> 00:04:26.520
  send it back and set the headers correctly.
 
-00:04:26.540 --> 00:04:29.460
- So if we look at this one and go in the network tab,
+00:04:26.520 --> 00:04:29.440
+ So if we look at this one and go to the network tab,
 
-00:04:29.460 --> 00:04:31.220
- when you hit refresh,
+00:04:29.440 --> 00:04:33.200
+ when you hit refresh, we see that there's a get request
 
-00:04:31.220 --> 00:04:33.180
- we see that there's a get request
-
-00:04:33.180 --> 00:04:37.420
+00:04:33.200 --> 00:04:37.440
  and the response headers now are quite different.
 
-00:04:37.420 --> 00:04:39.780
+00:04:37.440 --> 00:04:39.800
  Application JSON, it's got a content length,
 
-00:04:39.780 --> 00:04:41.140
+00:04:39.800 --> 00:04:41.120
  et cetera, et cetera.
 
-00:04:41.140 --> 00:04:43.420
+00:04:41.120 --> 00:04:43.440
  And if we look at the response,
 
-00:04:43.420 --> 00:04:46.660
- now my browser is doing like clever stuff making it pretty,
+00:04:43.440 --> 00:04:45.920
+ now my browser is doing like clever stuff,
 
-00:04:46.660 --> 00:04:48.220
- but let's just look at the raw thing.
+00:04:45.920 --> 00:04:48.240
+ making it pretty, but let's just look at the raw thing.
 
-00:04:48.220 --> 00:04:52.660
+00:04:48.240 --> 00:04:52.680
  This is the serialized key value store.
 
-00:04:52.660 --> 00:04:56.740
+00:04:52.680 --> 00:04:56.440
  This is literally the text that came back from the browser.
 
-00:04:56.740 --> 00:04:58.260
+00:04:56.440 --> 00:04:58.280
  Our browsers are trying to help us out.
 
-00:04:58.260 --> 00:05:01.700
+00:04:58.280 --> 00:05:01.720
  They're parsing it and turning it into a JavaScript object
 
-00:05:01.700 --> 00:05:03.900
+00:05:01.720 --> 00:05:03.920
  and showing it to us, right?
 
-00:05:03.900 --> 00:05:06.180
- And so raw, and this in up here,
+00:05:03.920 --> 00:05:06.200
+ And so raw and this in up here,
 
-00:05:06.180 --> 00:05:07.980
+00:05:06.200 --> 00:05:07.960
  you can see it says raw as well.
 
-00:05:07.980 --> 00:05:10.660
+00:05:07.960 --> 00:05:10.640
  You can go back and forth and see what's actually sent.
 
-00:05:10.660 --> 00:05:15.660
- So this string is created by JSON response when passed that.
+00:05:10.640 --> 00:05:14.440
+ So this string is created by JSON response
 
-00:05:16.100 --> 00:05:19.360
+00:05:14.440 --> 00:05:16.120
+ to and past that.
+
+00:05:16.120 --> 00:05:19.360
  Now that's serialization, deserialization.
 
 00:05:19.360 --> 00:05:22.060
  And I guess I call attention to it,
 
-00:05:22.060 --> 00:05:23.300
+00:05:22.060 --> 00:05:23.280
  but you can almost ignore it
 
-00:05:23.300 --> 00:05:28.300
+00:05:23.280 --> 00:05:28.280
  'cause it works so amazingly smoothly, okay?
 
-00:05:28.300 --> 00:05:31.180
+00:05:28.280 --> 00:05:31.200
  And so that is sort of the basic mechanisms
 
-00:05:31.180 --> 00:05:34.060
+00:05:31.200 --> 00:05:34.040
  of retrieving and producing.
 
-00:05:34.060 --> 00:05:39.060
- We produce the JSON inside our Python code, inside our view,
+00:05:34.040 --> 00:05:39.040
+ We produce the JSON inside our Python code, inside our view
 
-00:05:39.060 --> 00:05:42.700
+00:05:39.040 --> 00:05:42.720
  and then we send it back to the browser.
 
-00:05:42.700 --> 00:05:46.780
- And in this case, when we're doing just plain old JSON fun,
+00:05:42.720 --> 00:05:44.680
+ And in this case, when we're doing
 
-00:05:46.780 --> 00:05:52.580
- we're doing a GET request in the browser, okay?
+00:05:44.680 --> 00:05:46.800
+ just mere plain old JSON fun,
 
-00:05:52.580 --> 00:05:54.620
+00:05:46.800 --> 00:05:52.560
+ we're doing a get request in the browser, okay?
+
+00:05:52.560 --> 00:05:54.400
  But that's not typically how it's done.
 
-00:05:54.620 --> 00:05:56.300
- We do this to debug stuff, right?
+00:05:54.400 --> 00:05:56.280
+ I would do this to debug stuff, right?
 
-00:05:56.300 --> 00:05:59.460
- We go to these JSON URLs to see if they're blowing up.
+00:05:56.280 --> 00:05:59.400
+ We go to these JSON URLs to see if they're blowing up
 
-00:05:59.460 --> 00:06:01.620
- Because if the JSON URL blows up,
+00:05:59.400 --> 00:06:01.600
+ because if the JSON URL blows up,
 
-00:06:01.620 --> 00:06:03.060
+00:06:01.600 --> 00:06:03.040
  let me see if I can make it blow up.
 
-00:06:03.060 --> 00:06:04.640
+00:06:03.040 --> 00:06:04.600
  Let's see if I can make it blow up.
 
-00:06:04.640 --> 00:06:05.480
+00:06:04.600 --> 00:06:05.440
  I don't know.
 
-00:06:05.480 --> 00:06:09.420
+00:06:05.440 --> 00:06:09.400
  Let me take this comma out, right?
 
-00:06:09.420 --> 00:06:11.020
+00:06:09.400 --> 00:06:10.980
  I'll take this comma out.
 
-00:06:11.020 --> 00:06:13.260
+00:06:10.980 --> 00:06:13.220
  So that means I'm gonna have a syntax error.
 
-00:06:13.260 --> 00:06:18.100
- Oh, my server was so bad.
+00:06:13.220 --> 00:06:18.040
+ My server was so bad.
 
-00:06:18.100 --> 00:06:19.400
+00:06:18.040 --> 00:06:19.360
  My server won't write.
 
-00:06:19.400 --> 00:06:27.460
+00:06:19.360 --> 00:06:27.440
  Can't make a mistake if I try.
 
-00:06:27.460 --> 00:06:28.420
+00:06:27.440 --> 00:06:28.400
  Let's see if my server starts.
 
-00:06:28.420 --> 00:06:30.820
+00:06:28.400 --> 00:06:30.760
  Okay, at least my server restarted on that one.
 
-00:06:30.820 --> 00:06:33.760
+00:06:30.760 --> 00:06:33.720
  So now maybe I'll get a 500 error or something.
 
-00:06:33.760 --> 00:06:34.600
+00:06:33.720 --> 00:06:34.560
  Oops.
 
-00:06:40.180 --> 00:06:41.820
+00:06:40.160 --> 00:06:41.800
  Okay, so here's the key.
 
-00:06:41.820 --> 00:06:43.380
- So what you're going to find
+00:06:41.800 --> 00:06:44.560
+ So what you're going to find is that
 
-00:06:43.380 --> 00:06:47.020
- is that when this fetch happens,
+00:06:44.560 --> 00:06:48.560
+ when this fetch happens, you're going to get a 500 error.
 
-00:06:47.020 --> 00:06:48.580
- you're going to get a 500 error.
-
-00:06:48.580 --> 00:06:49.980
+00:06:48.560 --> 00:06:50.000
  And this is the output of it.
 
-00:06:49.980 --> 00:06:51.780
+00:06:50.000 --> 00:06:51.800
  Like it goes bad.
 
-00:06:51.780 --> 00:06:54.660
- Now the problem is, is you're going to have trouble later
+00:06:51.800 --> 00:06:54.660
+ Now the problem is is you're going to have trouble later
 
 00:06:54.660 --> 00:06:57.280
  when we're doing JSON using fetch.
 
-00:06:57.280 --> 00:06:59.180
+00:06:57.280 --> 00:06:59.200
  When things go wrong,
 
-00:06:59.180 --> 00:07:01.700
+00:06:59.200 --> 00:07:01.720
  you need to be able to find this response.
 
-00:07:01.700 --> 00:07:03.180
+00:07:01.720 --> 00:07:03.160
  It won't show up in your browser.
 
-00:07:03.180 --> 00:07:07.180
+00:07:03.160 --> 00:07:07.160
  It shows up in your debugger, right?
 
-00:07:07.180 --> 00:07:10.740
- And so the point is, is these are harder to debug,
+00:07:07.160 --> 00:07:10.720
+ And so the point is, is these are harder to debug.
 
-00:07:10.740 --> 00:07:13.540
- but sometimes you go to the URL explicitly
+00:07:10.720 --> 00:07:13.540
+ But sometimes you go to the URL explicitly
 
-00:07:13.540 --> 00:07:15.660
+00:07:13.540 --> 00:07:15.680
  and at least you see its output.
 
-00:07:15.660 --> 00:07:18.320
+00:07:15.680 --> 00:07:18.280
  And this is an output where I made a mistake.
 
-00:07:18.320 --> 00:07:21.860
+00:07:18.280 --> 00:07:21.840
  And okay, so let's just fix it all.
 
-00:07:21.860 --> 00:07:23.180
+00:07:21.840 --> 00:07:23.180
  Make sure it's working.
 
-00:07:23.180 --> 00:07:24.340
- So the rest of it worked.
+00:07:23.180 --> 00:07:24.360
+ So the rest of it work.
 
-00:07:24.340 --> 00:07:25.660
+00:07:24.360 --> 00:07:25.680
  Is it working?
 
-00:07:25.660 --> 00:07:26.500
+00:07:25.680 --> 00:07:26.500
  Yes, it's working.
 
 00:07:26.500 --> 00:07:29.100
  Okay, so you got that.
 
-00:07:29.100 --> 00:07:31.140
+00:07:29.100 --> 00:07:31.160
  So there's a special kind of view
 
-00:07:31.140 --> 00:07:33.420
- and a special kind of response type,
+00:07:31.160 --> 00:07:34.540
+ and a special kind of response type, a JSON response.
 
-00:07:33.420 --> 00:07:37.100
- a JSON response, and we pass it a key value store,
+00:07:34.540 --> 00:07:37.120
+ And we pass it a key value store,
 
-00:07:37.100 --> 00:07:40.100
+00:07:37.120 --> 00:07:40.120
  which in Python is a dictionary.
 
-00:07:40.100 --> 00:07:44.260
+00:07:40.120 --> 00:07:44.280
  Okay, enough of going directly.
 
-00:07:44.260 --> 00:07:46.220
+00:07:44.280 --> 00:07:46.240
  Now we're going to use the fetch API
 
-00:07:46.220 --> 00:07:47.460
+00:07:46.240 --> 00:07:47.480
  'cause that's really what we wanna do.
 
-00:07:47.460 --> 00:07:49.020
+00:07:47.480 --> 00:07:49.040
  We wanna fetch this data
 
-00:07:49.020 --> 00:07:50.540
- and then we wanna do something with it,
+00:07:49.040 --> 00:07:50.600
+ and then we wanna do something with it.
 
-00:07:50.540 --> 00:07:53.720
- perhaps show it in the user interface.
+00:07:50.600 --> 00:07:53.760
+ Perhaps show it in the user interface.
 
-00:07:53.720 --> 00:07:56.900
+00:07:53.760 --> 00:07:56.920
  So I have a couple of different bits of code here.
 
-00:07:56.900 --> 00:07:58.260
+00:07:56.920 --> 00:07:58.280
  There's two ways to do this.
 
-00:07:58.260 --> 00:07:59.100
+00:07:58.280 --> 00:07:59.120
  If you look at fetch,
 
-00:07:59.100 --> 00:08:03.880
- there's prom syntax and there is async await.
+00:07:59.120 --> 00:08:03.920
+ there's promise syntax and there is async await.
 
-00:08:03.880 --> 00:08:07.200
+00:08:03.920 --> 00:08:07.240
  And you can have a good time
 
-00:08:07.200 --> 00:08:09.820
+00:08:07.240 --> 00:08:09.840
  if you go to your search engine and type.
 
-00:08:09.820 --> 00:08:12.760
+00:08:09.840 --> 00:08:12.800
  Which is better, promises or async await?
 
-00:08:12.760 --> 00:08:15.860
+00:08:12.800 --> 00:08:15.880
  And the answer is you have a lot of reading to do
 
-00:08:15.860 --> 00:08:17.140
+00:08:15.880 --> 00:08:17.160
  'cause there's a lot of opinions
 
-00:08:17.140 --> 00:08:20.780
+00:08:17.160 --> 00:08:20.800
  as to whether promise syntax or async await.
 
-00:08:20.780 --> 00:08:23.640
+00:08:20.800 --> 00:08:23.680
  So let's take a quick look at this code.
 
-00:08:23.640 --> 00:08:29.580
+00:08:23.680 --> 00:08:29.620
  My opinion is this is the promise syntax
 
-00:08:29.580 --> 00:08:32.060
+00:08:29.620 --> 00:08:32.120
  where you start an asynchronous action
 
-00:08:32.060 --> 00:08:34.380
- and it returns a promise and then you wait
+00:08:32.120 --> 00:08:34.920
+ and it returns a promise and then you wait for,
 
-00:08:34.380 --> 00:08:37.940
- for when the promise resolves, you run some code.
+00:08:34.920 --> 00:08:37.840
+ when the promise resolves, you run some code.
 
-00:08:37.940 --> 00:08:40.740
+00:08:37.840 --> 00:08:40.800
  And that code itself might return another promise
 
-00:08:40.740 --> 00:08:43.460
+00:08:40.800 --> 00:08:43.500
  and then when that second promise resolves,
 
-00:08:43.460 --> 00:08:45.380
+00:08:43.500 --> 00:08:45.400
  it runs some more code.
 
-00:08:45.380 --> 00:08:48.980
+00:08:45.400 --> 00:08:49.020
  And then we have like a dot catch to say
 
-00:08:48.980 --> 00:08:52.020
+00:08:49.020 --> 00:08:52.080
  if something goes wrong in any of these three things,
 
-00:08:52.020 --> 00:08:55.340
+00:08:52.080 --> 00:08:55.400
  the starting, the first asynchronous step,
 
-00:08:55.340 --> 00:08:56.940
+00:08:55.400 --> 00:08:57.000
  the second asynchronous step,
 
-00:08:56.940 --> 00:08:59.060
+00:08:57.000 --> 00:08:59.080
  catch it and then give us an error.
 
-00:09:00.060 --> 00:09:04.460
+00:09:00.120 --> 00:09:04.480
  And so a lot of people tend to use this syntax here
 
-00:09:04.460 --> 00:09:08.020
+00:09:04.480 --> 00:09:08.040
  because it's succinct.
 
-00:09:08.020 --> 00:09:12.540
+00:09:08.040 --> 00:09:12.560
  The async code I think is way more powerful,
 
-00:09:12.540 --> 00:09:14.140
+00:09:12.560 --> 00:09:14.160
  feels more powerful to me
 
-00:09:14.140 --> 00:09:19.100
+00:09:14.160 --> 00:09:19.160
  because what you do is you do the fetch
 
-00:09:19.100 --> 00:09:21.820
+00:09:19.160 --> 00:09:21.880
  and you get back a value.
 
-00:09:21.820 --> 00:09:23.300
+00:09:21.880 --> 00:09:23.320
  Now that doesn't mean,
 
-00:09:23.300 --> 00:09:25.140
+00:09:23.320 --> 00:09:25.160
  that just means the fetch has started
 
-00:09:25.140 --> 00:09:28.920
+00:09:25.160 --> 00:09:28.960
  but you can check for the error on that fetch
 
-00:09:28.920 --> 00:09:31.660
+00:09:28.960 --> 00:09:31.680
  with a catch there and do something there
 
-00:09:31.660 --> 00:09:34.580
+00:09:31.680 --> 00:09:34.600
  and like quit and stop and not do the rest of it.
 
-00:09:34.580 --> 00:09:37.260
+00:09:34.600 --> 00:09:37.280
  Again, it's doing effectively a simple thing here.
 
-00:09:37.260 --> 00:09:39.100
- So you notice here I can console log it,
+00:09:37.280 --> 00:09:39.120
+ So you notice here, I can console log it.
 
-00:09:39.100 --> 00:09:41.180
- that doesn't mean the fetch is finished.
+00:09:39.120 --> 00:09:41.200
+ That doesn't mean the fetch is finished.
 
-00:09:41.180 --> 00:09:43.220
+00:09:41.200 --> 00:09:43.200
  But now what I can do is I can use an await
 
-00:09:43.220 --> 00:09:46.060
+00:09:43.200 --> 00:09:46.080
  to say, wait a second, finish this.
 
-00:09:46.060 --> 00:09:47.220
+00:09:46.080 --> 00:09:47.220
  I'm gonna just wait.
 
 00:09:47.220 --> 00:09:51.480
  Now this is making it at,
 
-00:09:51.480 --> 00:09:53.660
- I mean, I've said before that you're
+00:09:51.480 --> 00:09:52.760
+ I mean, I've said before
 
-00:09:53.660 --> 00:09:54.880
- in a threaded environment,
+00:09:52.760 --> 00:09:54.880
+ that you're in a threaded environment,
 
 00:09:54.880 --> 00:09:58.360
  you can't wait inside of JavaScript code.
 
-00:09:58.360 --> 00:09:59.620
+00:09:58.360 --> 00:09:59.600
  This is not really waiting.
 
-00:09:59.620 --> 00:10:01.940
+00:09:59.600 --> 00:10:01.960
  What this is doing, when you see the await,
 
-00:10:01.940 --> 00:10:05.160
+00:10:01.960 --> 00:10:05.160
  it's almost like the code has been broken into two halves.
 
-00:10:05.160 --> 00:10:08.820
- It runs this half and then when you say await,
+00:10:05.160 --> 00:10:06.800
+ It runs this half.
 
-00:10:08.820 --> 00:10:11.100
+00:10:06.800 --> 00:10:08.840
+ And then when you say await,
+
+00:10:08.840 --> 00:10:11.120
  it holds on to this half, right?
 
-00:10:11.100 --> 00:10:13.200
+00:10:11.120 --> 00:10:13.200
  Grabs the rest of the code
 
-00:10:13.200 --> 00:10:15.860
+00:10:13.200 --> 00:10:15.840
  and makes that be an event to be run.
 
-00:10:15.860 --> 00:10:20.380
+00:10:15.840 --> 00:10:20.360
  And so this await syntax does all that splitting of code,
 
-00:10:20.380 --> 00:10:22.100
+00:10:20.360 --> 00:10:22.080
  creating the event,
 
-00:10:22.100 --> 00:10:25.380
+00:10:22.080 --> 00:10:25.380
  indicating that the last half of this code
 
-00:10:25.380 --> 00:10:27.300
+00:10:25.380 --> 00:10:27.320
  is supposed to be run as a result of the event.
 
-00:10:27.300 --> 00:10:31.380
- So it's basically a way to kinda split this code in half
+00:10:27.320 --> 00:10:31.400
+ So it's basically a way to kinda split this code in half.
 
-00:10:31.380 --> 00:10:33.780
- and then when the event finishes,
+00:10:31.400 --> 00:10:34.720
+ And then when the event finishes, it's gonna pick up here.
 
-00:10:33.780 --> 00:10:34.700
- it's gonna pick up here.
-
-00:10:34.700 --> 00:10:36.820
+00:10:34.720 --> 00:10:36.840
  But we get to pretend it's procedural.
 
-00:10:36.820 --> 00:10:39.420
- We get to pretend we're in Python
+00:10:36.840 --> 00:10:39.420
+ We get to pretend we're in Python.
 
-00:10:39.420 --> 00:10:42.660
- and we get to pretend that we are doing an input
+00:10:39.420 --> 00:10:42.640
+ And we get to pretend that we are doing an input
 
-00:10:42.660 --> 00:10:44.720
+00:10:42.640 --> 00:10:44.720
  and waiting for the user to type whatever,
 
-00:10:44.720 --> 00:10:48.820
+00:10:44.720 --> 00:10:48.680
  or a request.retriever, whatever.
 
-00:10:48.820 --> 00:10:51.180
+00:10:48.680 --> 00:10:51.160
  And the key thing this await says,
 
-00:10:51.180 --> 00:10:53.500
+00:10:51.160 --> 00:10:53.480
  I understand that what I'm about to do is
 
-00:10:54.620 --> 00:10:57.740
- I've got an effective promise and it's started
+00:10:53.480 --> 00:10:56.460
+ I've got an effective promise
 
-00:10:57.740 --> 00:10:58.660
- but not finished,
+00:10:56.460 --> 00:10:58.640
+ and it's started but not finished,
 
-00:10:58.660 --> 00:11:02.820
+00:10:58.640 --> 00:11:02.800
  but I want to stop my current line of execution
 
-00:11:02.820 --> 00:11:05.420
+00:11:02.800 --> 00:11:05.400
  until it finishes, okay?
 
-00:11:05.420 --> 00:11:06.900
+00:11:05.400 --> 00:11:06.900
  So there are two ways to do it.
 
-00:11:06.900 --> 00:11:08.420
+00:11:06.900 --> 00:11:08.400
  You can do promises.
 
-00:11:08.420 --> 00:11:11.380
- You just look at this and you see that the await
+00:11:08.400 --> 00:11:09.240
+ You just look at this
 
-00:11:11.380 --> 00:11:13.340
- is a much longer bit of code,
+00:11:09.240 --> 00:11:13.360
+ and you see that the await is a much longer bit of code,
 
-00:11:13.340 --> 00:11:17.500
+00:11:13.360 --> 00:11:17.520
  partly because I put a lot more error checking into it
 
-00:11:17.500 --> 00:11:19.620
+00:11:17.520 --> 00:11:19.600
  and I got a lot of console logs, et cetera.
 
-00:11:19.620 --> 00:11:23.380
+00:11:19.600 --> 00:11:23.400
  And if you're doing something like react or a review
 
-00:11:23.380 --> 00:11:26.460
+00:11:23.400 --> 00:11:26.480
  or some kind of a progressive web application,
 
-00:11:26.460 --> 00:11:30.340
+00:11:26.480 --> 00:11:30.360
  you want the kind of control I think that await does.
 
-00:11:30.340 --> 00:11:34.340
- But in a normal thing, it's like do this thing.
+00:11:30.360 --> 00:11:34.340
+ But in a normal thing, it's like, do this thing.
 
-00:11:34.340 --> 00:11:37.540
+00:11:34.340 --> 00:11:37.560
  It works 99.99% of the time.
 
-00:11:37.540 --> 00:11:38.800
+00:11:37.560 --> 00:11:38.800
  Oh yeah, and there's a message.
 
 00:11:38.800 --> 00:11:40.260
@@ -753,633 +756,591 @@ WEBVTT
 00:11:40.260 --> 00:11:44.140
  So again, you can really argue both ways,
 
-00:11:44.140 --> 00:11:46.140
+00:11:44.140 --> 00:11:46.160
  whether the promise pattern
 
-00:11:46.140 --> 00:11:50.260
+00:11:46.160 --> 00:11:50.260
  or the async await pattern works better.
 
-00:11:50.260 --> 00:11:54.580
+00:11:50.260 --> 00:11:54.600
  So let's just look through this code right now.
 
-00:11:54.580 --> 00:11:58.820
+00:11:54.600 --> 00:11:58.840
  How come my developer console is not here?
 
-00:11:58.820 --> 00:12:00.580
+00:11:58.840 --> 00:12:00.600
  Developer console.
 
-00:12:00.580 --> 00:12:06.200
+00:12:00.600 --> 00:12:06.200
  Let's go into the console.
 
-00:12:06.200 --> 00:12:08.780
+00:12:06.200 --> 00:12:08.800
  There we go, console.
 
-00:12:08.780 --> 00:12:13.860
+00:12:08.800 --> 00:12:13.840
  And so what we're doing here is I am,
 
-00:12:13.860 --> 00:12:16.140
+00:12:13.840 --> 00:12:16.160
  so this is just doing load URL
 
-00:12:16.140 --> 00:12:17.780
+00:12:16.160 --> 00:12:17.800
  and it's doing a bunch of errors
 
-00:12:17.780 --> 00:12:22.780
- and when things fail, it sends messages.
+00:12:17.800 --> 00:12:22.800
+ and when things fail, it sends messages, okay?
 
-00:12:22.780 --> 00:12:29.460
- And so I'm calling this first with a completely broken URL
+00:12:22.800 --> 00:12:29.480
+ And so there are, so I'm calling this first
 
-00:12:29.460 --> 00:12:35.320
- that is not HTTP, which means the fetch blows up
+00:12:29.480 --> 00:12:33.600
+ with a completely broken URL that is not HTTP,
 
-00:12:35.320 --> 00:12:37.120
- before it starts the request.
+00:12:33.600 --> 00:12:35.320
+ which means the fetch blows up
 
-00:12:37.120 --> 00:12:41.760
+00:12:35.320 --> 00:12:38.680
+ before it starts the request, okay?
+
+00:12:38.680 --> 00:12:41.760
  Now slash broken is a valid URL.
 
-00:12:41.760 --> 00:12:45.020
+00:12:41.760 --> 00:12:45.040
  So that means that the fetch is going to start,
 
-00:12:45.020 --> 00:12:46.740
+00:12:45.040 --> 00:12:46.720
  but we're gonna get a 404.
 
-00:12:46.740 --> 00:12:50.900
+00:12:46.720 --> 00:12:50.880
  And so if I put in, let me just make a new tab here.
 
-00:12:50.900 --> 00:12:52.180
- So if I go to broken,
+00:12:50.880 --> 00:12:55.880
+ So if I go to broken, you get a 404, okay?
 
-00:12:52.180 --> 00:12:57.380
- you get a 404, okay?
-
-00:12:57.380 --> 00:13:00.500
+00:12:55.880 --> 00:13:00.480
  And so when we're doing a broken,
 
-00:13:00.500 --> 00:13:02.740
- I'm gonna get back a 404 and the question is,
+00:13:00.480 --> 00:13:02.720
+ I'm gonna get back a 404, and the question is,
 
-00:13:02.740 --> 00:13:05.740
+00:13:02.720 --> 00:13:05.720
  how does my error checking handle a 404?
 
-00:13:05.740 --> 00:13:09.880
+00:13:05.720 --> 00:13:09.860
  Now, if I go to fetch main, which is this page,
 
-00:13:09.880 --> 00:13:14.580
+00:13:09.860 --> 00:13:14.560
  I'm gonna get a 200, except I'm not getting JSON.
 
-00:13:14.580 --> 00:13:16.780
+00:13:14.560 --> 00:13:16.760
  And so then I'm gonna get JSON parse failure.
 
-00:13:16.780 --> 00:13:19.380
+00:13:16.760 --> 00:13:19.360
  So I'm trying to simulate all the kinds of errors
 
-00:13:19.380 --> 00:13:21.100
+00:13:19.360 --> 00:13:21.080
  that could happen.
 
-00:13:21.100 --> 00:13:26.100
+00:13:21.080 --> 00:13:26.080
  Bad URL, a 404, a 200 with the wrong kind of data,
 
-00:13:26.100 --> 00:13:29.300
- and then finally, we're gonna get the good stuff.
+00:13:26.080 --> 00:13:29.240
+ and then finally, we're gonna get the good stuff,
 
-00:13:29.300 --> 00:13:31.980
- And the good stuff is going to say,
+00:13:29.240 --> 00:13:31.960
+ and the good stuff is going to say,
 
-00:13:31.980 --> 00:13:33.980
+00:13:31.960 --> 00:13:33.960
  it's gonna actually change the thing.
 
-00:13:33.980 --> 00:13:36.900
+00:13:33.960 --> 00:13:36.860
  So let, so you see I'm trying to show
 
-00:13:36.900 --> 00:13:39.940
+00:13:36.860 --> 00:13:39.880
  all the possible error checking that can happen.
 
-00:13:39.940 --> 00:13:42.420
+00:13:39.880 --> 00:13:42.380
  So let's go ahead and without further ado,
 
-00:13:43.380 --> 00:13:48.380
+00:13:43.340 --> 00:13:48.340
  let's try to fetch a URL with bad syntax, right?
 
-00:13:48.380 --> 00:13:50.340
+00:13:48.340 --> 00:13:50.300
  So I get this type error.
 
-00:13:50.340 --> 00:13:53.220
+00:13:50.300 --> 00:13:53.180
  So that means that the catch, right?
 
-00:13:53.220 --> 00:13:56.860
+00:13:53.180 --> 00:13:56.820
  The catch happened, the error happened up here in fetch,
 
-00:13:56.860 --> 00:13:58.300
+00:13:56.820 --> 00:13:58.280
  the catch happened there.
 
-00:13:58.300 --> 00:14:00.260
+00:13:58.280 --> 00:14:00.240
  Now I'm gonna do a 404.
 
-00:14:00.260 --> 00:14:04.820
+00:14:00.240 --> 00:14:04.800
  Now this is kind of weird because the 404,
 
-00:14:04.820 --> 00:14:07.820
+00:14:04.800 --> 00:14:07.780
  I did get a response, right?
 
-00:14:07.820 --> 00:14:12.580
- I did get a response and then it was a 404 response,
+00:14:07.780 --> 00:14:12.540
+ I did get a response, and then it was a 404 response,
 
-00:14:12.580 --> 00:14:14.060
- but it also had some data.
+00:14:12.540 --> 00:14:14.000
+ but it also had some data,
 
-00:14:14.060 --> 00:14:16.300
- And then I tried to parse the data as JSON,
+00:14:14.000 --> 00:14:16.260
+ and then I tried to parse the data as JSON,
 
-00:14:16.300 --> 00:14:20.740
+00:14:16.260 --> 00:14:20.720
  and then this blew up that ran the catch, okay?
 
-00:14:20.740 --> 00:14:24.100
- So I got a 404 and then it blew up
+00:14:20.720 --> 00:14:24.060
+ So I got a 404, and then it blew up
 
-00:14:24.100 --> 00:14:27.540
- trying to turn it into JSON and then this catch triggered.
+00:14:24.060 --> 00:14:27.520
+ trying to turn it into JSON, and then this catch triggered.
 
-00:14:27.540 --> 00:14:31.580
+00:14:27.520 --> 00:14:31.560
  Now I'm gonna go to, this time I'm gonna go to
 
-00:14:31.580 --> 00:14:35.020
- a good URL that's not a 404.
+00:14:31.560 --> 00:14:36.000
+ a good URL that's not a 404, so I get a 200.
 
-00:14:35.020 --> 00:14:36.860
- So I get a 200, if I go to the network,
+00:14:36.000 --> 00:14:38.300
+ If I go to the network, you can see that I went to fetch
 
-00:14:36.860 --> 00:14:39.020
- you can see that I went to fetch and got a 200.
+00:14:38.300 --> 00:14:40.520
+ and got a 200, broken was a 404.
 
-00:14:39.020 --> 00:14:40.540
- Broken was a 404.
-
-00:14:40.540 --> 00:14:44.780
+00:14:40.520 --> 00:14:44.740
  Fetch is a, if I look at the response,
 
-00:14:44.780 --> 00:14:47.500
+00:14:44.740 --> 00:14:47.440
  you see that that's a 404, right?
 
-00:14:47.500 --> 00:14:49.140
+00:14:47.440 --> 00:14:49.160
  So you gotta come down here and you gotta say,
 
-00:14:49.140 --> 00:14:53.820
- "Oh, yeah, I did a fetch and it got a bad page," right?
+00:14:49.160 --> 00:14:53.760
+ oh, yeah, I did a fetch and it got a bad page, right?
 
-00:14:53.820 --> 00:14:56.220
- So this is, I've got some kind of a bug here.
+00:14:53.760 --> 00:14:57.840
+ So this is, I've got some kind of a bug here, okay?
 
-00:14:56.220 --> 00:15:02.060
- Okay, so fetch gave me a 200, but it's HTML, right?
+00:14:57.840 --> 00:15:02.040
+ So fetch gave me a 200, but it's HTML, right?
 
-00:15:02.060 --> 00:15:03.860
- If I look at it in raw, that's HTML.
+00:15:02.040 --> 00:15:03.800
+ If I look at it in raw, that's HTML,
 
-00:15:03.860 --> 00:15:05.180
- And so I couldn't parse it.
+00:15:03.800 --> 00:15:06.040
+ and so I couldn't parse it, and so the code
 
-00:15:05.180 --> 00:15:08.100
- And so the code that blew up in this situation
+00:15:06.040 --> 00:15:10.680
+ that blew up in this situation was this response.json.
 
-00:15:08.100 --> 00:15:10.220
- was this response.json.
+00:15:10.680 --> 00:15:14.040
+ Converting the response to JSON blew up,
 
-00:15:10.700 --> 00:15:14.060
- Converting the response to JSON blew up
-
-00:15:14.060 --> 00:15:15.300
+00:15:14.040 --> 00:15:15.280
  and so then I had a failure.
 
-00:15:15.300 --> 00:15:17.020
+00:15:15.280 --> 00:15:17.000
  Now the weird thing is I can't really tell
 
-00:15:17.020 --> 00:15:20.220
- the difference between a 404 and just bad JSON
+00:15:17.000 --> 00:15:20.160
+ the difference between a 404 and just bad JSON,
 
-00:15:20.220 --> 00:15:23.060
+00:15:20.160 --> 00:15:23.020
  'cause this 404 sent me back text as well, right?
 
-00:15:23.060 --> 00:15:25.380
- If you look at broken, it got text back.
+00:15:23.020 --> 00:15:25.340
+ If you look at broken, it got text back,
 
-00:15:25.380 --> 00:15:26.780
- It just wasn't JSON.
+00:15:25.340 --> 00:15:26.760
+ it just wasn't JSON.
 
-00:15:26.780 --> 00:15:29.340
- So now we're going to run through
+00:15:26.760 --> 00:15:29.280
+ So now we're going to run through,
 
-00:15:29.340 --> 00:15:31.820
+00:15:29.280 --> 00:15:31.800
  and the code that's finally gonna run
 
-00:15:31.820 --> 00:15:35.420
- is we're going to take this first.
+00:15:31.800 --> 00:15:35.360
+ is we're going to take this first,
 
-00:15:35.420 --> 00:15:38.380
- Let's retrieve the, I'll clear all this out.
+00:15:35.360 --> 00:15:38.320
+ let's retrieve the data, clear all this out.
 
-00:15:38.380 --> 00:15:39.980
- I'm gonna retrieve the data.
+00:15:38.320 --> 00:15:41.160
+ I'm gonna retrieve the data, I'm gonna get a 200.
 
-00:15:39.980 --> 00:15:41.180
- I'm gonna get a 200.
-
-00:15:41.180 --> 00:15:43.020
+00:15:41.160 --> 00:15:42.960
  Now you'll notice it took two seconds
 
-00:15:43.020 --> 00:15:47.300
+00:15:42.960 --> 00:15:47.240
  because of that view that waits two seconds, right?
 
-00:15:47.300 --> 00:15:49.700
+00:15:47.240 --> 00:15:49.680
  But then I got a 200, I got JSON,
 
-00:15:49.700 --> 00:15:53.100
- and the response was valid JSON.
+00:15:49.680 --> 00:15:53.080
+ and the response was valid JSON,
 
-00:15:53.100 --> 00:15:55.060
- And so now I'm in my,
+00:15:53.080 --> 00:15:58.080
+ and so now I'm in my, no, here, I'm in my code,
 
-00:15:55.060 --> 00:15:57.500
- no, here.
+00:15:58.080 --> 00:16:01.960
+ and data is that key value pair,
 
-00:15:57.500 --> 00:16:02.020
- I'm in my code and data is that key value pair.
+00:16:01.960 --> 00:16:06.080
+ and so I can say data.first, retrieved,
 
-00:16:02.020 --> 00:16:06.940
- And so I can say data.first retrieved my data,
+00:16:06.080 --> 00:16:09.920
+ my data, promise, it's green, it's all good, okay?
 
-00:16:06.940 --> 00:16:09.980
- promise, it's green, it's all good, okay?
-
-00:16:09.980 --> 00:16:11.740
+00:16:09.920 --> 00:16:11.680
  So you can also see in the console
 
-00:16:11.740 --> 00:16:14.780
+00:16:11.680 --> 00:16:14.720
  that I had the data object.
 
-00:16:14.780 --> 00:16:19.780
+00:16:14.720 --> 00:16:19.720
  So that's the data object that I put out in console.log, okay?
 
-00:16:19.780 --> 00:16:24.540
- So that's a walkthrough of the promised version of this.
+00:16:19.720 --> 00:16:24.480
+ So that's a walkthrough of the promised version of this,
 
-00:16:24.540 --> 00:16:26.380
- And again, I think you will probably tend
+00:16:24.480 --> 00:16:26.320
+ and again, I think you will probably tend
 
-00:16:26.380 --> 00:16:28.900
+00:16:26.320 --> 00:16:28.840
  to use the promised version of this,
 
-00:16:28.900 --> 00:16:31.980
+00:16:28.840 --> 00:16:31.920
  but the async await, if you're a more sophisticated programmer,
 
-00:16:31.980 --> 00:16:34.820
+00:16:31.920 --> 00:16:34.760
  I feel like I get a lot more control in async await.
 
-00:16:34.820 --> 00:16:37.860
+00:16:34.760 --> 00:16:37.800
  So let's do the exact same thing
 
-00:16:37.860 --> 00:16:41.460
+00:16:37.800 --> 00:16:41.440
  with this now async await.
 
-00:16:41.460 --> 00:16:42.780
+00:16:41.440 --> 00:16:42.720
  So we look at the top code,
 
-00:16:42.780 --> 00:16:44.740
+00:16:42.720 --> 00:16:44.680
  this top code is pretty much the same.
 
-00:16:44.740 --> 00:16:49.420
- First, we're gonna trigger a syntax error,
+00:16:44.680 --> 00:16:49.400
+ First we're gonna trigger a syntax error,
 
-00:16:49.420 --> 00:16:51.900
+00:16:49.400 --> 00:16:51.880
  which means the fetch itself is going to fail.
 
-00:16:51.900 --> 00:16:55.540
- Then we're going to trigger a 404.
+00:16:51.880 --> 00:16:55.520
+ Then we're going to trigger a 404,
 
-00:16:55.540 --> 00:16:58.500
- And then we're gonna get a 200 that gives us,
+00:16:55.520 --> 00:16:57.400
+ and then we're gonna get a 200
 
-00:16:58.500 --> 00:16:59.700
- doesn't give us JSON,
+00:16:57.400 --> 00:16:59.640
+ that doesn't give us JSON,
 
-00:16:59.700 --> 00:17:01.900
- so it's gonna fail the JSON parsing.
+00:16:59.640 --> 00:17:01.880
+ so it's gonna fail the JSON parsing,
 
-00:17:01.900 --> 00:17:04.900
- And then we're gonna make it successful, okay?
+00:17:01.880 --> 00:17:04.880
+ and then we're gonna make it successful, okay?
 
-00:17:04.900 --> 00:17:09.140
+00:17:04.880 --> 00:17:09.120
  And so that's what these buttons all do, right?
 
-00:17:09.140 --> 00:17:10.820
+00:17:09.120 --> 00:17:10.840
  So let's take a look at this.
 
-00:17:10.820 --> 00:17:12.900
+00:17:10.840 --> 00:17:12.880
  And so they're all calling this load URL.
 
-00:17:12.900 --> 00:17:20.820
+00:17:12.880 --> 00:17:20.800
  Okay, so this is cool.
 
-00:17:20.820 --> 00:17:24.920
+00:17:20.800 --> 00:17:24.920
  And so now what I can do is I can start the request
 
-00:17:24.920 --> 00:17:27.580
+00:17:24.920 --> 00:17:27.560
  and catch the error in the fetch, right?
 
-00:17:27.580 --> 00:17:29.380
+00:17:27.560 --> 00:17:29.360
  And this is the one I couldn't do here.
 
-00:17:29.380 --> 00:17:32.860
+00:17:29.360 --> 00:17:32.840
  So could not start fetch URL, and then I print the error.
 
-00:17:32.860 --> 00:17:34.020
+00:17:32.840 --> 00:17:34.840
  So let's run that.
 
-00:17:34.020 --> 00:17:37.940
+00:17:34.840 --> 00:17:37.920
  And then what's cool is I can quit, I can stop.
 
-00:17:37.940 --> 00:17:40.140
+00:17:37.920 --> 00:17:40.120
  I don't have to like run the catch.
 
-00:17:40.140 --> 00:17:42.340
+00:17:40.120 --> 00:17:42.280
  So this is nice.
 
-00:17:42.340 --> 00:17:46.780
+00:17:42.280 --> 00:17:46.760
  It did sort of like, it tells me exactly what happened.
 
-00:17:46.780 --> 00:17:51.660
+00:17:46.760 --> 00:17:51.640
  Now, if I do a 404, if I make a 404,
 
-00:17:51.660 --> 00:17:54.800
+00:17:51.640 --> 00:17:54.760
  that means that this fetch got a valid URL,
 
-00:17:54.800 --> 00:17:57.820
- and you'll see this console log request come out.
+00:17:54.760 --> 00:17:57.800
+ and you'll see this console log request come out,
 
-00:17:57.820 --> 00:17:59.420
- And then it's gonna do the await,
+00:17:57.800 --> 00:17:59.400
+ and then it's gonna do the await,
 
-00:17:59.420 --> 00:18:01.580
+00:17:59.400 --> 00:18:01.560
  and that await is gonna take two seconds,
 
-00:18:01.580 --> 00:18:04.180
+00:18:01.560 --> 00:18:04.200
  because that's where it actually,
 
-00:18:04.180 --> 00:18:05.020
+00:18:04.200 --> 00:18:05.040
  well, actually, no,
 
-00:18:05.020 --> 00:18:07.020
+00:18:05.040 --> 00:18:07.040
  we're not doing the one that waits two seconds.
 
-00:18:07.020 --> 00:18:09.260
+00:18:07.040 --> 00:18:09.240
  This await is gonna pause the code,
 
-00:18:09.260 --> 00:18:11.660
+00:18:09.240 --> 00:18:11.640
  and then we're gonna see the console log response.
 
-00:18:11.660 --> 00:18:17.740
+00:18:11.640 --> 00:18:17.720
  And then we're going to try to parse this, right?
 
-00:18:17.740 --> 00:18:21.300
+00:18:17.720 --> 00:18:21.280
  We're gonna be able to check to see
 
-00:18:21.300 --> 00:18:23.100
+00:18:21.280 --> 00:18:23.080
  that we didn't get a 200,
 
-00:18:23.100 --> 00:18:26.940
+00:18:23.080 --> 00:18:26.960
  and then come up with an error message there, okay?
 
-00:18:26.940 --> 00:18:28.660
- So let's do a 404.
+00:18:26.960 --> 00:18:30.200
+ So let's do a 404, let's clear this console,
 
-00:18:28.660 --> 00:18:31.900
- Let's clear this console, and let's make a 404 happen.
+00:18:30.200 --> 00:18:33.880
+ and let's make a 404 happen, boom, okay?
 
-00:18:31.900 --> 00:18:33.900
- Boom, okay.
+00:18:33.880 --> 00:18:38.360
+ So we got a response, the status was a 404,
 
-00:18:33.900 --> 00:18:35.820
- So we got a response.
+00:18:38.360 --> 00:18:41.680
+ and then we were able to process this,
 
-00:18:35.820 --> 00:18:38.340
- The status was a 404.
+00:18:41.680 --> 00:18:43.720
+ but the response not okay,
 
-00:18:38.340 --> 00:18:41.700
- And then we were able to process this,
+00:18:43.720 --> 00:18:48.720
+ and I was able to handle the exact same error
 
-00:18:41.700 --> 00:18:43.700
- but the response not okay.
-
-00:18:43.700 --> 00:18:48.700
- And I was able to handle the exact same error
-
-00:18:48.700 --> 00:18:51.140
+00:18:48.720 --> 00:18:51.120
  with some response statuses.
 
-00:18:51.140 --> 00:18:54.420
- I really could see, I knew this is a 404,
+00:18:51.120 --> 00:18:54.400
+ I really could see, I knew this was a 404,
 
-00:18:54.420 --> 00:18:56.620
+00:18:54.400 --> 00:18:56.600
  versus just something went wrong in general,
 
-00:18:56.620 --> 00:18:58.580
+00:18:56.600 --> 00:18:58.560
  which we did in the previous example.
 
-00:18:58.580 --> 00:19:02.660
+00:18:58.560 --> 00:19:02.640
  Okay, so now what we're gonna do is we've got this,
 
-00:19:02.660 --> 00:19:04.140
+00:19:02.640 --> 00:19:04.120
  if the response is okay,
 
-00:19:04.140 --> 00:19:06.100
+00:19:04.120 --> 00:19:06.080
  we're gonna do another await, right?
 
-00:19:06.100 --> 00:19:07.220
- And this, we're breaking it.
+00:19:06.080 --> 00:19:08.200
+ And this, we're breaking it, and again,
 
-00:19:07.220 --> 00:19:10.580
- And again, this breaks the code into the stuff above it,
+00:19:08.200 --> 00:19:10.520
+ this breaks the code into a stuff above it,
 
-00:19:10.580 --> 00:19:11.420
+00:19:10.520 --> 00:19:11.360
  and the stuff below it,
 
-00:19:11.420 --> 00:19:15.180
+00:19:11.360 --> 00:19:15.120
  and the stuff below it, in effect, is an error.
 
-00:19:15.180 --> 00:19:16.820
- And we can catch this one too.
+00:19:15.120 --> 00:19:16.760
+ And we can catch this one too,
 
-00:19:16.820 --> 00:19:19.660
- And that means that this response JSON
+00:19:16.760 --> 00:19:21.000
+ and that means that this response JSON can either succeed,
 
-00:19:19.660 --> 00:19:21.020
- can either succeed,
-
-00:19:21.020 --> 00:19:22.900
+00:19:21.000 --> 00:19:22.880
  at which point this code is going to run,
 
-00:19:22.900 --> 00:19:24.460
- or it's going to fail,
+00:19:22.880 --> 00:19:26.840
+ or it's going to fail, at which point this code is going to run.
 
-00:19:24.460 --> 00:19:27.820
- at which point this code is going to run, okay?
+00:19:26.840 --> 00:19:31.840
+ Okay, and so now we are going to go to a URL,
 
-00:19:27.820 --> 00:19:32.820
- And so now we are going to go to a URL.
+00:19:31.840 --> 00:19:36.520
+ let's go clear here, and let's look at the network,
 
-00:19:32.820 --> 00:19:34.860
- Let's go clear here.
+00:19:36.520 --> 00:19:39.720
+ let's clear this one, and let's go to a URL
 
-00:19:34.860 --> 00:19:36.540
- And let's look at the network.
+00:19:39.720 --> 00:19:44.440
+ that is a 200 URL, but it is not JSON.
 
-00:19:36.540 --> 00:19:38.020
- Let's clear this one.
-
-00:19:38.020 --> 00:19:42.100
- And let's go to a URL that is a 200 URL,
-
-00:19:42.100 --> 00:19:44.460
- but it is not JSON.
-
-00:19:44.460 --> 00:19:47.140
+00:19:44.440 --> 00:19:47.120
  So we retrieve it, we go to /fetch,
 
-00:19:47.140 --> 00:19:49.900
- we look at the response, and that is HTML.
+00:19:47.120 --> 00:19:49.880
+ we look at the response, and that is HTML,
 
-00:19:49.900 --> 00:19:53.020
- It's HTML in that response, right?
+00:19:49.880 --> 00:19:52.960
+ it's HTML in that response, right?
 
-00:19:53.020 --> 00:19:56.060
- And so this happens to be this page right here.
+00:19:52.960 --> 00:19:56.040
+ And so this happens to be this page right here,
 
-00:19:56.060 --> 00:19:58.820
- So don't get too worried about that.
+00:19:56.040 --> 00:19:58.800
+ so don't get too worried about that.
 
-00:19:58.820 --> 00:20:01.500
+00:19:58.800 --> 00:20:01.480
  Okay, and then if we look at our console,
 
-00:20:01.500 --> 00:20:03.900
+00:20:01.480 --> 00:20:03.880
  we see that we got a response,
 
-00:20:03.900 --> 00:20:06.140
+00:20:03.880 --> 00:20:06.080
  and the response had a 200,
 
-00:20:06.140 --> 00:20:09.780
+00:20:06.080 --> 00:20:09.760
  and we haven't yet used the body,
 
-00:20:09.780 --> 00:20:14.700
+00:20:09.760 --> 00:20:14.640
  but then this code right here, await response JSON,
 
-00:20:14.700 --> 00:20:19.220
+00:20:14.640 --> 00:20:19.200
  runs, and then eventually blows up, okay?
 
-00:20:19.220 --> 00:20:21.060
- And so then that blows up,
+00:20:19.200 --> 00:20:22.200
+ And so then that blows up, and we can quit,
 
-00:20:21.060 --> 00:20:24.580
- and we can quit, we can leave, right?
+00:20:22.200 --> 00:20:24.600
+ we can leave, right?
 
-00:20:24.580 --> 00:20:26.620
+00:20:24.600 --> 00:20:26.600
  And so there we go.
 
-00:20:26.620 --> 00:20:29.060
+00:20:26.600 --> 00:20:29.040
  So now let's do it successfully.
 
-00:20:29.060 --> 00:20:30.220
- Let me clear this.
+00:20:29.040 --> 00:20:32.240
+ Let me clear this, let me clear this,
 
-00:20:30.220 --> 00:20:32.260
- Let me clear this.
+00:20:32.240 --> 00:20:36.080
+ let me go to the URL,
 
-00:20:32.260 --> 00:20:36.060
- Let me go to the URL.
+00:20:36.080 --> 00:20:39.320
+ so eventually when it's all said and done,
 
-00:20:36.060 --> 00:20:39.740
- So eventually when it's all said and done,
-
-00:20:39.740 --> 00:20:42.140
+00:20:39.320 --> 00:20:42.160
  when we're happy with our object,
 
-00:20:42.140 --> 00:20:45.220
+00:20:42.160 --> 00:20:45.220
  we're going to change this to a green thing,
 
-00:20:45.220 --> 00:20:47.500
+00:20:45.220 --> 00:20:47.520
  but also watch for that two second thing,
 
-00:20:47.500 --> 00:20:49.420
- because the actual get,
+00:20:47.520 --> 00:20:50.840
+ because the actual get is gonna,
 
-00:20:50.820 --> 00:20:51.940
- is to watch the console.
+00:20:50.840 --> 00:20:51.960
+ let's watch the console,
 
-00:20:51.940 --> 00:20:53.020
- So I'll try to call out
+00:20:51.960 --> 00:20:53.080
+ so I'll try to call out
 
-00:20:53.020 --> 00:20:55.660
+00:20:53.080 --> 00:20:55.680
  when that two second delay is happening.
 
-00:20:55.660 --> 00:20:56.980
- So here we go.
+00:20:55.680 --> 00:20:58.320
+ So here we go, oh, gotta click here.
 
-00:20:56.980 --> 00:20:58.300
- Oh, gotta click here.
-
-00:20:58.300 --> 00:21:02.620
+00:20:58.320 --> 00:21:02.640
  1001, 1002, see?
 
-00:21:02.620 --> 00:21:05.700
+00:21:02.640 --> 00:21:05.760
  And so what happened was is we were starting the fetch,
 
-00:21:05.700 --> 00:21:08.860
+00:21:05.760 --> 00:21:08.920
  we got a promise with a state of pending,
 
-00:21:08.860 --> 00:21:11.820
+00:21:08.920 --> 00:21:11.860
  then we got a response with body used false,
 
-00:21:11.820 --> 00:21:13.500
- but a status of 200,
+00:21:11.860 --> 00:21:15.440
+ but a status of 200, and then we parsed the JSON data,
 
-00:21:13.500 --> 00:21:15.380
- and then we parsed the JSON data,
-
-00:21:15.380 --> 00:21:20.060
+00:21:15.440 --> 00:21:20.080
  and we got the object kind of exactly the way we did
 
-00:21:20.060 --> 00:21:21.780
- in the first thing.
+00:21:20.080 --> 00:21:21.840
+ in the first thing,
 
-00:21:21.780 --> 00:21:25.100
- And then we ran the success code,
+00:21:21.840 --> 00:21:25.120
+ and then we ran the success code,
 
-00:21:25.100 --> 00:21:27.540
- meaning that we parse the object data,
+00:21:25.120 --> 00:21:27.560
+ meaning that we parsed the object data,
 
-00:21:27.540 --> 00:21:29.460
+00:21:27.560 --> 00:21:29.520
  we see it, we grab the data,
 
-00:21:29.460 --> 00:21:33.060
+00:21:29.520 --> 00:21:33.080
  and we put it into first thing, okay?
 
-00:21:33.060 --> 00:21:35.820
- So that is a quick run through.
+00:21:33.080 --> 00:21:36.520
+ So that is a quick run through again,
 
-00:21:35.820 --> 00:21:39.660
- Again, I encourage you to ask the internet
+00:21:36.520 --> 00:21:41.040
+ I encourage you to ask the internet whether or not
 
-00:21:39.660 --> 00:21:44.660
- whether or not you should use promises or async await
+00:21:42.200 --> 00:21:46.120
+ you should use promises or async await
 
-00:21:44.660 --> 00:21:49.220
- and enjoy the discussion
-
-00:21:49.220 --> 00:21:50.360
- and the learning that you'll have,
+00:21:46.120 --> 00:21:50.360
+ and enjoy the discussion and the learning that you'll have,
 
 00:21:50.360 --> 00:21:52.440
  'cause I think there's place for both of them.
 
-00:21:52.440 --> 00:21:53.280
+00:21:52.440 --> 00:21:53.260
  Cheers.
 

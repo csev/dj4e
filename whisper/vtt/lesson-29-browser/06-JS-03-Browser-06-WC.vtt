@@ -1,287 +1,707 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:09.000
- Now I want to talk a little bit about how you or us, we can create our own tags and then use them throughout our markup.
+00:00:00.000 --> 00:00:04.140
+ Now I wanna talk a little bit about how you or us,
 
-00:00:09.000 --> 00:00:15.000
- So what is this whole thing about creating new tags? Well, programmers hate to repeat themselves.
+00:00:04.140 --> 00:00:06.520
+ we can create our own tags
 
-00:00:15.000 --> 00:00:22.000
- It's just from the third week of learning how to write software, it's all about don't repeat yourself, D-R-Y.
+00:00:06.520 --> 00:00:08.960
+ and then use them throughout our markup.
 
-00:00:22.000 --> 00:00:29.000
- And that's because if you write the same code over and over, especially if there are tiny changes in that code
+00:00:08.960 --> 00:00:13.000
+ So what is this whole thing about creating new tags?
 
-00:00:29.000 --> 00:00:36.000
- or little like if then else's, it really causes errors. And if you have a bunch of code, and by now you've seen this in this course,
+00:00:13.000 --> 00:00:15.600
+ Well, programmers hate to repeat themselves.
 
-00:00:36.000 --> 00:00:43.000
- if you cut and paste and make small changes and then paste and make small changes and paste and make small changes,
+00:00:15.600 --> 00:00:17.960
+ It's just from the third week
 
-00:00:43.000 --> 00:00:50.000
- it's convenient, you're repeating yourself and then making changes, but what if you started with a bug and all that stuff you pasted?
+00:00:17.960 --> 00:00:19.360
+ of learning how to write software,
 
-00:00:50.000 --> 00:00:57.000
- Or you find a bug later and now you've got 40 places and you've got to make the same tiny change. It's really frustrating.
+00:00:19.360 --> 00:00:23.000
+ it's all about don't repeat yourself, D-R-Y.
 
-00:00:57.000 --> 00:01:04.000
- And this just means that a big part of software is how to avoid repeating ourselves.
+00:00:23.000 --> 00:00:26.680
+ And that's because if you write the same code over and over,
 
-00:01:04.000 --> 00:01:11.000
- Things like functions with parameters, object-oriented approaches with base classes that we're extending,
+00:00:26.680 --> 00:00:29.220
+ especially if there are tiny changes in that code
 
-00:01:11.000 --> 00:01:17.000
- class-based views in Django versus just function views. I mean, the function views are simpler and easier to understand.
+00:00:29.220 --> 00:00:32.820
+ or little like if then else's, it really causes errors.
 
-00:01:17.000 --> 00:01:22.000
- Class-based views are beautiful and elegant, but hard to understand.
+00:00:32.820 --> 00:00:34.520
+ And if you have a bunch of code,
 
-00:01:22.000 --> 00:01:28.000
- Like templates, like the navigation that you've been building. If we say extends baseboostrap.html,
+00:00:34.520 --> 00:00:36.920
+ and by now you've seen this in this course,
 
-00:01:28.000 --> 00:01:37.000
- that's a way to not put the same navigation tech HTML in every page. And like the percent URL,
+00:00:36.920 --> 00:00:40.140
+ if you cut and paste and make small changes
 
-00:01:37.000 --> 00:01:42.000
- you can change the remap URLs and urls.py and not have to make changes in your templates.
+00:00:40.140 --> 00:00:41.800
+ and then paste and make small changes
 
-00:01:42.000 --> 00:01:46.000
+00:00:41.800 --> 00:00:46.120
+ and paste and make small changes, it's convenient.
+
+00:00:46.120 --> 00:00:48.420
+ You're repeating yourself and then making changes.
+
+00:00:48.420 --> 00:00:49.720
+ But what if you started with a bug
+
+00:00:49.720 --> 00:00:50.880
+ and all that stuff, you paste it,
+
+00:00:50.880 --> 00:00:54.140
+ or you find a bug later and now you got 40 places
+
+00:00:54.140 --> 00:00:55.740
+ and you gotta make the same tiny change.
+
+00:00:55.740 --> 00:00:57.520
+ It's really frustrating.
+
+00:00:57.520 --> 00:01:01.240
+ And this just means that a big part of software
+
+00:01:01.240 --> 00:01:03.560
+ is how to avoid repeating ourselves.
+
+00:01:03.560 --> 00:01:07.300
+ Things like functions with parameters,
+
+00:01:07.300 --> 00:01:09.780
+ object-oriented approaches with base classes
+
+00:01:09.780 --> 00:01:13.080
+ that we're extending, the class-based views in Django
+
+00:01:13.080 --> 00:01:14.480
+ versus just function views.
+
+00:01:14.480 --> 00:01:16.720
+ I mean, the function views are simpler
+
+00:01:16.720 --> 00:01:17.640
+ and easier to understand.
+
+00:01:17.640 --> 00:01:20.440
+ Class-based views are beautiful and elegant,
+
+00:01:20.440 --> 00:01:22.200
+ but hard to understand.
+
+00:01:22.200 --> 00:01:26.160
+ Like templates, like the navigation that you've been building.
+
+00:01:26.160 --> 00:01:28.600
+ It would say extends baseboostrap.html.
+
+00:01:28.600 --> 00:01:33.600
+ That's a way to not put the same navigation tech HTML
+
+00:01:33.600 --> 00:01:34.720
+ on every page.
+
+00:01:34.720 --> 00:01:39.040
+ And like the percent URL, you can change the remap URLs
+
+00:01:39.040 --> 00:01:42.160
+ and urls.py and not have to make changes in your templates.
+
+00:01:42.160 --> 00:01:45.380
  Again, we don't like to repeat ourselves.
 
-00:01:46.000 --> 00:01:53.000
- So what we've been doing up to this point is we've been doing all of our templating in the server.
+00:01:45.380 --> 00:01:49.240
+ So what we've been doing up to this point
 
-00:01:53.000 --> 00:02:00.000
- And so if you go way, way back to when we were just looking at views for the first time, this is a function-based view here.
+00:01:49.240 --> 00:01:53.720
+ is we've been doing all of our templating in the server.
 
-00:02:00.000 --> 00:02:07.000
- But you see this render. Now, if you recall what render does is it takes a template plus a context.
+00:01:53.720 --> 00:01:56.720
+ And so if you go way, way back to when we were just looking
 
-00:02:07.000 --> 00:02:15.000
- In this case, it's a dictionary that's mapping ZAP to 42 and says, render this, give me back some HTML.
+00:01:56.720 --> 00:01:58.160
+ at views for the first time,
 
-00:02:15.000 --> 00:02:20.000
- And then we send it back to the browser. And if you look at the template, you see we've got these little curly braces,
+00:01:58.160 --> 00:02:00.420
+ this is a function-based view here,
 
-00:02:20.000 --> 00:02:27.000
- double curly braces that says, ZAP says, go into the template and grab the ZAP value and put it in here.
+00:02:00.420 --> 00:02:02.200
+ but you see this render.
 
-00:02:27.000 --> 00:02:31.000
- And so this is just kind of our model view controller. And this is the big picture.
+00:02:02.200 --> 00:02:04.160
+ Now, if you recall what render does
 
-00:02:31.000 --> 00:02:37.000
- I promised you wouldn't see it very often after the middle of the class, but here it is again.
+00:02:04.160 --> 00:02:07.220
+ is it takes a template plus a context.
 
-00:02:37.000 --> 00:02:42.000
- And we take these templates, we pull data into the templates from the models.
+00:02:07.220 --> 00:02:11.080
+ In this case, it's a dictionary that's mapping zap to 42
 
-00:02:42.000 --> 00:02:50.000
- We make context and we send that back to the browser. Classic request response cycle model view controller.
+00:02:11.080 --> 00:02:15.640
+ and says, render this, give me back some HTML,
 
-00:02:50.000 --> 00:02:58.000
- So what we're going to do now is we're going to take a little tiny bit of that template processing and move it into the browser.
+00:02:15.640 --> 00:02:17.120
+ and then we send it back to the browser.
 
-00:02:58.000 --> 00:03:07.000
- We're still going to have a server-based template, but we're also going to have a little tiny template in the browser.
+00:02:17.120 --> 00:02:18.800
+ And if you look at the template,
 
-00:03:07.000 --> 00:03:14.000
- Let's take a look at how we would do this. And we're doing this by creating our own tag.
+00:02:18.800 --> 00:02:20.560
+ you see we've got these little curly braces,
 
-00:03:14.000 --> 00:03:20.000
- And so we have a tag. See, it says less than DJ free dash greeting greater than.
+00:02:20.560 --> 00:02:23.120
+ double curly braces that says zap says,
 
-00:03:20.000 --> 00:03:27.000
- That's a tag. It's a tag we invented. And so we can pass some parameters, attributes.
+00:02:23.120 --> 00:02:26.000
+ go into the template and grab the zap value
 
-00:03:27.000 --> 00:03:33.000
- We get to define what those attributes do. We can have a tag that has an ID on it so we can mess with it.
+00:02:26.000 --> 00:02:27.400
+ and put it in here.
 
-00:03:33.000 --> 00:03:42.000
- I put up a button that says click me and that script type equals module source equals dot slash 16 DJ free greet dot JS.
+00:02:27.400 --> 00:02:30.280
+ And so this is just kind of our model view controller.
 
-00:03:42.000 --> 00:03:48.000
- That's the code that adds the DJ free greeting tag to the browser.
+00:02:30.280 --> 00:02:31.920
+ And this is the big picture.
 
-00:03:48.000 --> 00:03:56.000
- So once that's imported, it goes and creates the tag and then we can use the tag.
+00:02:31.920 --> 00:02:34.380
+ I promised you wouldn't see it very often
 
-00:03:56.000 --> 00:04:02.000
- And then the little script is simply changing the name attribute. And so we're passing almost as a parameter.
+00:02:34.380 --> 00:02:37.600
+ after the middle of the class, but here it is again.
 
-00:04:02.000 --> 00:04:08.000
- Think of it like a function or a macro. It's like a HTML template, which we're about to see in a moment.
+00:02:37.600 --> 00:02:39.480
+ And we take these templates,
 
-00:04:08.000 --> 00:04:17.000
- So name is the thing we're passing in. And not only are we passing it in, but we can change it dynamically based on a DOM event.
+00:02:39.480 --> 00:02:42.360
+ we pull data into the templates from the models,
 
-00:04:17.000 --> 00:04:23.000
- And that's what the do change is doing. So let's take a look at what this template is.
+00:02:42.360 --> 00:02:45.380
+ we make context and we send that back to the browser,
 
-00:04:23.000 --> 00:04:30.000
- And so the concept of a custom element, that's something that's been in browsers for quite some time.
+00:02:45.380 --> 00:02:50.180
+ classic request response cycle model view controller.
 
-00:04:30.000 --> 00:04:38.000
- And if you just write your own custom element, you can do everything we're doing here, but it's a lot more verbose.
+00:02:50.180 --> 00:02:51.760
+ So what we're gonna do now
 
-00:04:38.000 --> 00:04:45.000
- And so what we do is using object orientation, we're grabbing a little tiny library called LitElement.
+00:02:51.760 --> 00:02:54.060
+ is we're gonna take a little tiny bit
 
-00:04:45.000 --> 00:04:50.000
- So LitElement is a custom element that has a lot of base capabilities into it.
+00:02:54.060 --> 00:02:57.880
+ of that template processing and move it into the browser.
 
-00:04:50.000 --> 00:05:00.000
- And so we're extending LitElement to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
+00:02:57.880 --> 00:03:00.780
+ We're still gonna have a server-based template,
 
-00:05:00.000 --> 00:05:08.000
- So in it, we tell it our interaction with the outside world and we say there is a property called name, which turns into an attribute on the tag.
+00:03:00.780 --> 00:03:05.120
+ but we're also gonna have a little tiny template
 
-00:05:08.000 --> 00:05:15.000
- If you look back at the tag, we have a constructor and we in that constructor, we call our parent super.
+00:03:05.120 --> 00:03:07.040
+ in the browser.
 
-00:05:15.000 --> 00:05:23.000
- That's the constructor of LitElement. And then we set our default value. So it's named somebody.
+00:03:07.040 --> 00:03:09.240
+ Let's take a look at how we would do this.
 
-00:05:23.000 --> 00:05:27.000
- And there's this whole thing. I won't go into it in great detail.
+00:03:09.240 --> 00:03:13.720
+ And we're doing this by creating our own tag.
 
-00:05:27.000 --> 00:05:39.000
- There's a thing called a shadow DOM where you can inherit the CSS and other styling from the enclosing document.
+00:03:13.720 --> 00:03:15.980
+ And so we have a tag.
 
-00:05:39.000 --> 00:05:43.000
- Or you can have your own CSS inside the LitElement.
+00:03:15.980 --> 00:03:19.800
+ See, it says less than DJ free dash greeting greater than,
 
-00:05:43.000 --> 00:05:51.000
- I'm choosing not to isolate my markup from the enclosing document.
+00:03:19.800 --> 00:03:21.160
+ that's a tag.
 
-00:05:51.000 --> 00:05:59.000
- And so I'm doing this create render route that says just put my macro, put my text into the enclosing document.
+00:03:21.160 --> 00:03:24.000
+ It's a tag we invented.
 
-00:05:59.000 --> 00:06:07.000
- And whatever HTML, whatever CSS, JavaScript libraries, et cetera, they're just inherited into my code.
+00:03:24.000 --> 00:03:27.000
+ And so we can pass some parameters attributes.
 
-00:06:07.000 --> 00:06:14.000
- You can make these web components in a way that they can go into any HTML and they bring their styling with them.
+00:03:27.000 --> 00:03:29.320
+ We get to define what those attributes do.
 
-00:06:14.000 --> 00:06:19.000
- I tend to use these where I'm going to build an application. I want my styling.
+00:03:29.320 --> 00:03:31.320
+ We can have a tag that has an ID on it
 
-00:06:19.000 --> 00:06:24.000
- I want my font and I want my colors and my spacing and whatever.
+00:03:31.320 --> 00:03:32.840
+ so we can mess with it.
 
-00:06:24.000 --> 00:06:30.000
- I want that to be like bootstrap across the whole thing, which is kind of how we're doing it in this class.
+00:03:32.840 --> 00:03:34.960
+ I put up a button that says click me.
 
-00:06:30.000 --> 00:06:42.000
- And so I don't like shadow DOM, but that's another approach is to make these templates super isolated using shadow DOM.
+00:03:34.960 --> 00:03:38.760
+ And that script type equals module source equals
 
-00:06:42.000 --> 00:06:45.000
+00:03:38.760 --> 00:03:41.960
+ dot slash 16 DJ free greet dot JS.
+
+00:03:41.960 --> 00:03:46.960
+ That's the code that adds the DJ free greeting tag
+
+00:03:46.960 --> 00:03:48.020
+ to the browser.
+
+00:03:48.020 --> 00:03:53.020
+ So once that's imported, it goes and creates the tag
+
+00:03:53.020 --> 00:03:54.880
+ and then we can use the tag.
+
+00:03:54.880 --> 00:03:58.400
+ And then the little script is simply
+
+00:03:58.400 --> 00:04:00.240
+ changing the name attribute.
+
+00:04:00.240 --> 00:04:02.280
+ And so we're passing almost as a parameter.
+
+00:04:02.280 --> 00:04:04.760
+ Think of it like a function or a macro.
+
+00:04:04.760 --> 00:04:06.320
+ It's like a HTML template,
+
+00:04:06.320 --> 00:04:08.020
+ which we're about to see in a moment.
+
+00:04:08.020 --> 00:04:10.280
+ So name is the thing we're passing in.
+
+00:04:10.280 --> 00:04:12.460
+ And not only are we passing it in,
+
+00:04:12.460 --> 00:04:17.060
+ but we can change it dynamically based on a DOM event.
+
+00:04:17.060 --> 00:04:19.000
+ And that's what the do change is doing.
+
+00:04:19.000 --> 00:04:23.080
+ So let's take a look at what this template is.
+
+00:04:23.080 --> 00:04:26.560
+ And so the concept of a custom element,
+
+00:04:26.560 --> 00:04:28.360
+ that's something that's been in browsers
+
+00:04:28.360 --> 00:04:30.080
+ for quite some time.
+
+00:04:30.080 --> 00:04:32.880
+ And if you just write your own custom element,
+
+00:04:32.880 --> 00:04:34.780
+ you can do everything we're doing here,
+
+00:04:34.780 --> 00:04:38.400
+ but it's a lot more verbose.
+
+00:04:38.400 --> 00:04:42.080
+ And so what we do is using object orientation,
+
+00:04:42.080 --> 00:04:45.680
+ we're grabbing a little tiny library called LitElement.
+
+00:04:45.680 --> 00:04:48.280
+ So LitElement is a custom element
+
+00:04:48.280 --> 00:04:50.720
+ that has a lot of base capabilities into it.
+
+00:04:50.720 --> 00:04:53.520
+ And so we're extending LitElement
+
+00:04:53.520 --> 00:04:56.120
+ to make a class called simple greeting.
+
+00:04:56.120 --> 00:04:58.840
+ And that just means there's a lot of boilerplate
+
+00:04:58.840 --> 00:05:01.000
+ that we don't have to repeat.
+
+00:05:01.000 --> 00:05:04.520
+ So in it, we tell it our interaction with the outside world.
+
+00:05:04.520 --> 00:05:06.520
+ And we say there is a property called name,
+
+00:05:06.520 --> 00:05:08.520
+ which turns into an attribute on the tag.
+
+00:05:08.520 --> 00:05:10.640
+ If you look back at the tag,
+
+00:05:10.640 --> 00:05:13.200
+ we have a constructor and we in that constructor,
+
+00:05:13.200 --> 00:05:15.760
+ we call our parent super,
+
+00:05:15.760 --> 00:05:18.040
+ that's the constructor of LitElement.
+
+00:05:18.040 --> 00:05:20.680
+ And then we set our default value.
+
+00:05:20.680 --> 00:05:22.360
+ So it's named somebody.
+
+00:05:22.360 --> 00:05:25.080
+ And there's this whole thing,
+
+00:05:25.080 --> 00:05:27.040
+ I won't go into it in great detail.
+
+00:05:27.040 --> 00:05:29.720
+ There's a thing called a shadow DOM,
+
+00:05:29.720 --> 00:05:34.720
+ where you can inherit the CSS and other styling
+
+00:05:34.720 --> 00:05:39.100
+ from the enclosing document,
+
+00:05:39.100 --> 00:05:43.360
+ or you can have your own CSS inside the LitElement.
+
+00:05:43.360 --> 00:05:47.160
+ I'm choosing not to isolate my markup
+
+00:05:47.160 --> 00:05:51.280
+ from the enclosing document.
+
+00:05:51.280 --> 00:05:54.000
+ And so I'm doing this create render root that says,
+
+00:05:54.000 --> 00:05:56.000
+ just put my macro,
+
+00:05:56.000 --> 00:05:58.800
+ put my text into the enclosing document.
+
+00:05:58.800 --> 00:06:02.640
+ And whatever HTML, whatever CSS,
+
+00:06:02.640 --> 00:06:04.440
+ JavaScript libraries, et cetera,
+
+00:06:04.440 --> 00:06:06.880
+ they're just inherited into my code.
+
+00:06:06.880 --> 00:06:09.960
+ You can make these web components in a way
+
+00:06:09.960 --> 00:06:12.000
+ that they can go into any HTML
+
+00:06:12.000 --> 00:06:14.620
+ and they bring their styling with them.
+
+00:06:14.620 --> 00:06:18.200
+ I tend to use these where I'm gonna build an application.
+
+00:06:18.200 --> 00:06:20.360
+ I want my styling, I want my font,
+
+00:06:20.360 --> 00:06:24.200
+ and I want my colors and my spacing and whatever.
+
+00:06:24.200 --> 00:06:26.960
+ I want that to be like bootstrap across the whole thing,
+
+00:06:26.960 --> 00:06:29.440
+ which is kind of how we're doing it in this class.
+
+00:06:29.440 --> 00:06:31.800
+ And so I don't like shadow DOM,
+
+00:06:31.800 --> 00:06:35.280
+ but that's another approach
+
+00:06:35.280 --> 00:06:36.960
+ is to make these templates
+
+00:06:36.960 --> 00:06:41.840
+ super isolated using shadow DOM.
+
+00:06:41.840 --> 00:06:44.440
  But the meat of all this is the render.
 
-00:06:45.000 --> 00:06:50.000
- And again, let's go back and think about the render in the view that I just showed you.
+00:06:44.440 --> 00:06:47.400
+ And again, let's go back and think about the render
 
-00:06:50.000 --> 00:06:56.000
- What is the render to? It takes some templated HTML and it makes replacements.
+00:06:47.400 --> 00:06:49.880
+ in the view that I just showed you.
 
-00:06:56.000 --> 00:07:01.000
- And notice that this one has curly braces, $this.name.
+00:06:49.880 --> 00:06:51.360
+ What is the render to?
 
-00:07:01.000 --> 00:07:08.000
- Well, this is the JavaScript object instance variable and .name is an object attribute.
+00:06:51.360 --> 00:06:55.800
+ It takes some templated HTML and it makes replacements.
 
-00:07:08.000 --> 00:07:12.000
- Let's go back. That's name equals. The attribute name equals world, name equals first.
+00:06:55.800 --> 00:06:59.720
+ And you'll notice that this one has curly braces.
 
-00:07:12.000 --> 00:07:19.000
- And then later I set that to be second. And the return HTML back quote, the back quote is very important.
+00:06:59.720 --> 00:07:01.000
+ $this.name.
 
-00:07:19.000 --> 00:07:23.000
- It's not a forward quote. It's a dynamically rendered template.
+00:07:01.000 --> 00:07:04.880
+ Well, this is the JavaScript object instance variable
 
-00:07:23.000 --> 00:07:32.000
- And what's cool about this is it's responsive, which means that if you change the name attribute on this DJ free greeting tag,
+00:07:04.880 --> 00:07:08.080
+ and .name is an object attribute.
 
-00:07:32.000 --> 00:07:36.000
+00:07:08.080 --> 00:07:09.200
+ Let's go back.
+
+00:07:09.200 --> 00:07:10.240
+ That's name equals.
+
+00:07:10.240 --> 00:07:12.600
+ The attribute name equals world, name equals first,
+
+00:07:12.600 --> 00:07:15.520
+ and then later I set that to be second.
+
+00:07:15.520 --> 00:07:17.840
+ And the return HTML back quote,
+
+00:07:17.840 --> 00:07:19.000
+ the back quote's very important.
+
+00:07:19.000 --> 00:07:20.160
+ It's not a forward quote.
+
+00:07:20.160 --> 00:07:23.640
+ It's a dynamically rendered template.
+
+00:07:23.640 --> 00:07:27.380
+ And what's cool about this is it's responsive,
+
+00:07:27.380 --> 00:07:30.400
+ which means that if you change the name attribute
+
+00:07:30.400 --> 00:07:32.720
+ on this DJ free greeting tag,
+
+00:07:32.720 --> 00:07:36.520
  that text in the browser will re-render with the new stuff.
 
-00:07:36.000 --> 00:07:43.000
- And so that's what's happening when you say click me and it turns from hello first to hello second.
+00:07:36.520 --> 00:07:40.360
+ And so that's what's happening when you say click me
 
-00:07:43.000 --> 00:07:48.000
- And so we're not going to have you write too many of these. I'm going to give them to you.
+00:07:40.360 --> 00:07:43.880
+ and it turns from hello first to hello second.
 
-00:07:48.000 --> 00:07:52.000
+00:07:43.880 --> 00:07:46.320
+ And so this is, we're not gonna have you write
+
+00:07:46.320 --> 00:07:47.160
+ too many of these.
+
+00:07:47.160 --> 00:07:48.400
+ I'm gonna give them to you.
+
+00:07:48.400 --> 00:07:52.400
  I'm just showing you how this sort of works.
 
-00:07:52.000 --> 00:08:00.000
- Now, this may seem familiar and you may have taken other classes or you may have learned about things like React or Vue or Svelte
+00:07:52.400 --> 00:07:54.160
+ Now, this may seem familiar
 
-00:08:00.000 --> 00:08:07.000
- or even Java server faces or JSP template tags or spring time leaf.
+00:07:54.160 --> 00:07:56.520
+ and you may have taken other classes
 
-00:08:07.000 --> 00:08:17.000
- There's all kinds of what I'll call custom component ecosystems, ways that you can have a tag that you invent, right?
+00:07:56.520 --> 00:07:58.720
+ or you may have learned about things like React
 
-00:08:17.000 --> 00:08:26.000
- Like in React, you can make a function called my button and then you have a new thing called my button and then you can use the my button tag.
+00:07:58.720 --> 00:08:03.720
+ or Vue or Svelte or even Java server faces
 
-00:08:26.000 --> 00:08:34.000
- And so there's many ways and I'm not going to tell you not to use React or Vue or Svelte.
+00:08:03.720 --> 00:08:07.800
+ or JSP template tags or spring time leaf.
 
-00:08:34.000 --> 00:08:38.000
- I like lit and I'm including lit here because it's kind of the simplest.
+00:08:07.800 --> 00:08:11.160
+ There's all kinds of what I'll call
 
-00:08:38.000 --> 00:08:44.000
- It's really almost a foundational capability rather than a fancy custom component ecosystem.
+00:08:11.160 --> 00:08:13.040
+ custom component ecosystems.
 
-00:08:44.000 --> 00:08:52.000
- And going forward, you know, this seems to me to be just a cool part of the browser and we can use it however we want.
+00:08:13.040 --> 00:08:17.560
+ Ways that you can have a tag that you invent, right?
 
-00:08:52.000 --> 00:09:01.000
- And if you look at the trend and the templating, not just the little bits of the template, but eventually whole templates
+00:08:17.560 --> 00:08:20.500
+ Like in React, you can make a function called my button
 
-00:09:01.000 --> 00:09:08.000
- and then much of the view, much of the controller moves into the browser.
+00:08:20.500 --> 00:08:24.400
+ and then you have a new thing called my button
 
-00:09:08.000 --> 00:09:17.000
- And in the most extreme, the controller and view end up completely in the browser. The model is partially in the browser and partially in the server.
+00:08:24.400 --> 00:08:26.280
+ and then you can use the my button tag, right?
 
-00:09:17.000 --> 00:09:25.000
- And then we have JSON and web services so that the actual persistent and permanent data is still stored in the server.
+00:08:26.280 --> 00:08:30.360
+ And so there's many ways
 
-00:09:25.000 --> 00:09:32.000
- But pretty much all the markup is in the browser and that makes it so that it can be very, very responsive.
+00:08:30.360 --> 00:08:32.080
+ and I'm not going to tell you
 
-00:09:32.000 --> 00:09:40.000
- And ironically, JSON is the next topic in this class. So we're first learning about how to make these tags
+00:08:32.080 --> 00:08:33.960
+ not to use React or Vue or Svelte.
 
-00:09:40.000 --> 00:09:44.000
- and then we'll learn how to feed data from the server in these tags.
+00:08:33.960 --> 00:08:36.160
+ I like lit and I'm including lit here
 
-00:09:44.000 --> 00:09:52.000
- And so a kind of a very modern futuristic application will tend to have the model view in the controller
+00:08:36.160 --> 00:08:37.880
+ 'cause it's kind of the simplest.
 
-00:09:52.000 --> 00:09:57.000
- often running mostly in JavaScript, any little bit from the server to get it started.
+00:08:37.880 --> 00:08:41.100
+ It's really almost a foundational capability
 
-00:09:57.000 --> 00:10:06.000
- But then you have this thing called REST web services and the views will read and write data in the database using REST web services.
+00:08:41.100 --> 00:08:44.680
+ rather than a fancy custom component ecosystem.
 
-00:10:06.000 --> 00:10:16.000
- And so that's kind of what we're going to go do next and that is how to talk and exchange data from the browser in JavaScript and the server.
+00:08:44.680 --> 00:08:48.040
+ And going forward, this seems to me
 
-00:10:16.000 --> 00:10:24.000
- So in this section, we talked about JavaScript and the browser, document object model, what is the window,
+00:08:48.040 --> 00:08:50.080
+ to be just a cool part of the browser
 
-00:10:24.000 --> 00:10:33.000
- adding handlers, adding DOM event handlers, window event handlers, how we can grab and change data in the document object model,
+00:08:50.080 --> 00:08:52.780
+ and we can use it however we want.
 
-00:10:33.000 --> 00:10:38.000
- how we can extend the document object model, how we can fiddle with the CSS like show and hide,
+00:08:52.780 --> 00:08:57.440
+ And if you look at the trend and the templating,
 
-00:10:38.000 --> 00:10:44.000
- and then how we can use fetch to make network requests and we finished making web components.
+00:08:57.440 --> 00:08:59.640
+ not just the little bits of the template,
 
-00:10:44.000 --> 00:10:55.000
- So there's a lot to this and it gets really fun when we start moving model data back and forth between the server and the JavaScript.
+00:08:59.640 --> 00:09:01.640
+ but eventually whole templates
+
+00:09:01.640 --> 00:09:04.120
+ and then much of the Vue,
+
+00:09:04.120 --> 00:09:08.700
+ much of the controller moves into the browser.
+
+00:09:08.700 --> 00:09:10.680
+ And in the most extreme,
+
+00:09:10.680 --> 00:09:13.140
+ the controller and Vue end up completely in the browser.
+
+00:09:13.140 --> 00:09:15.840
+ The model is partially in the browser
+
+00:09:15.840 --> 00:09:17.760
+ and partially in the server.
+
+00:09:17.760 --> 00:09:21.080
+ And then we have JSON and web services
+
+00:09:21.080 --> 00:09:24.040
+ so that the actual persistent and permanent data
+
+00:09:24.040 --> 00:09:26.160
+ is still stored in the server.
+
+00:09:26.160 --> 00:09:29.360
+ But pretty much all the markup is in the browser
+
+00:09:29.360 --> 00:09:32.800
+ and that makes it so that it can be very, very responsive.
+
+00:09:32.800 --> 00:09:36.740
+ And ironically, JSON is the next topic in this class.
+
+00:09:36.740 --> 00:09:40.000
+ So we're first learning about how to make these tags
+
+00:09:40.000 --> 00:09:41.820
+ and then we'll learn how to feed data
+
+00:09:41.820 --> 00:09:44.040
+ from the server in these tags.
+
+00:09:44.040 --> 00:09:49.040
+ And so a kind of a very modern futuristic application
+
+00:09:49.640 --> 00:09:52.620
+ will tend to have the model view in the controller
+
+00:09:52.620 --> 00:09:54.680
+ often running mostly in JavaScript.
+
+00:09:54.680 --> 00:09:57.240
+ You need a little bit from the server to get it started.
+
+00:09:57.240 --> 00:09:59.800
+ But then you have this thing called REST web services
+
+00:09:59.800 --> 00:10:03.800
+ and the views will read and write data in the database
+
+00:10:03.800 --> 00:10:06.080
+ using REST web services.
+
+00:10:06.080 --> 00:10:09.840
+ And so that's kind of what we're going to go do next.
+
+00:10:09.840 --> 00:10:13.200
+ And that is how to talk and exchange data
+
+00:10:13.200 --> 00:10:16.680
+ from the browser in JavaScript and the server.
+
+00:10:16.680 --> 00:10:19.920
+ So in this section, we talked about JavaScript
+
+00:10:19.920 --> 00:10:22.300
+ and the browser, document object model,
+
+00:10:22.300 --> 00:10:25.380
+ what is the window, adding handlers,
+
+00:10:25.380 --> 00:10:28.600
+ adding DOM event handlers, window event handlers,
+
+00:10:28.600 --> 00:10:32.560
+ how we can grab and change data in the document object model,
+
+00:10:32.560 --> 00:10:34.840
+ how we can extend the document object model,
+
+00:10:34.840 --> 00:10:37.640
+ how we can fiddle with the CSS like show and hide,
+
+00:10:37.640 --> 00:10:40.440
+ and then how we can use fetch to make network requests
+
+00:10:40.440 --> 00:10:43.800
+ and we finished making web components.
+
+00:10:43.800 --> 00:10:47.320
+ So there's a lot to this and it gets really fun
+
+00:10:47.320 --> 00:10:50.440
+ when we start moving model data back and forth
+
+00:10:50.440 --> 00:10:54.480
+ between the server and the JavaScript.
+
+00:10:54.480 --> 00:10:57.060
+ (upbeat music)
 

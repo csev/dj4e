@@ -1,206 +1,533 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:09.000
- So now I want to show you another example of many to many from an application that's near and dear to my heart and that's the autograder that I use for most of my online classes.
+00:00:00.000 --> 00:00:02.680
+ So now I want to show you another example of many-to-many
 
-00:00:09.000 --> 00:00:18.000
- So one of the things the autograder has to know is like who is in what course so that we can track grades based on people and courses.
+00:00:02.680 --> 00:00:04.880
+ from an application that's near and dear to my heart
 
-00:00:18.000 --> 00:00:26.000
- And so this is the data model and it's a little bit different syntax. You sort of see one to many. It's using what's called crow's feet.
+00:00:04.880 --> 00:00:06.600
+ and that's the autograder that I use
 
-00:00:26.000 --> 00:00:33.000
- And you see this little crow foot and that's like a many when it sort of spreads out and then you sort of have this one.
+00:00:06.600 --> 00:00:09.200
+ for most of my online classes.
 
-00:00:33.000 --> 00:00:40.000
- And there's various little ways and one or more or zero or more. And so there's little, it's called a crow's foot diagram.
+00:00:09.200 --> 00:00:11.880
+ So one of the things the autograder has to know
 
-00:00:40.000 --> 00:00:49.000
- But these diagrams ultimately are capturing the same thing whether these relationships are many to many or one to many and what the cardinality of each end of the relationship is.
+00:00:11.880 --> 00:00:14.660
+ is like who is in what course
 
-00:00:49.000 --> 00:01:00.000
- And this is showing a person table, a course table, and a membership table. And this is a very common thing that we have to solve in educational systems.
+00:00:14.660 --> 00:00:18.320
+ so that we can track grades based on people and courses.
 
-00:01:00.000 --> 00:01:09.000
- And it's a little bit more sophisticated than the previous one, which I thought was beautifully elegant and simple, but I want to show you this one as well.
+00:00:18.320 --> 00:00:20.680
+ And so this is the data model
 
-00:01:09.000 --> 00:01:19.000
- And so what we have here is basically a people are in courses, right? A person can be in many courses and a course can have many people.
+00:00:20.680 --> 00:00:22.720
+ and it's a little bit different syntax.
 
-00:01:19.000 --> 00:01:24.000
- So it's a many to many relationship. We create a through table. We'll call it a member table.
+00:00:22.720 --> 00:00:24.200
+ You sort of see one-to-many.
 
-00:01:24.000 --> 00:01:34.000
- We end up just like before with two one to many's pointing out or many to ones pointing outwards. So we have a person ID and a course ID in the member table.
+00:00:24.200 --> 00:00:26.760
+ It's using what's called crow's feet
 
-00:01:34.000 --> 00:01:43.000
- All three of these tables have primary keys of ID, ID and ID. And then we put the little tiny sort of virtual set in here.
+00:00:26.760 --> 00:00:28.360
+ and you see this little crow foot
 
-00:01:43.000 --> 00:01:52.000
- So that at a person you can just look at a virtual set of their courses and a course you can say who are the members of this course.
+00:00:28.360 --> 00:00:31.080
+ and that's like a many when it sort of spreads out
 
-00:01:52.000 --> 00:02:02.000
- Now we're gonna do one more thing that's a little bit different here and that is often the simplest of through tables is literally an ID and two foreign keys.
+00:00:31.080 --> 00:00:33.120
+ and then you sort of have this one
 
-00:02:02.000 --> 00:02:08.000
- And as a matter of fact, some people, Django doesn't like doing this, but some people don't even include the ID field.
+00:00:33.120 --> 00:00:34.880
+ and there's various little ways
 
-00:02:08.000 --> 00:02:17.000
- And they just make the combination of the two foreign keys as a unique ID inside. And if you're doing databases directly, you can actually do that.
+00:00:34.880 --> 00:00:37.800
+ and one or more or zero or more
 
-00:02:17.000 --> 00:02:26.000
- But here's a thing that you can also do. So if you think about in a teaching and learning situation, people aren't just members of courses.
+00:00:37.800 --> 00:00:40.560
+ and so there's little, it's called a crow's foot diagram.
 
-00:02:26.000 --> 00:02:36.000
- They are members of courses and they have a role. And is that role as a learner, a teaching assistant, or an instructor, or perhaps they're the departmental administrator, right?
+00:00:40.560 --> 00:00:43.920
+ But these diagrams ultimately are capturing the same thing
 
-00:02:36.000 --> 00:02:46.000
- And that is an attribute of the connection, right? The connection between a person and a course is the membership.
+00:00:43.920 --> 00:00:45.680
+ whether these relationships are many-to-many
 
-00:02:46.000 --> 00:02:52.000
- And oh, by the way, they're not just a member, they're a member with some metadata, okay?
+00:00:45.680 --> 00:00:47.700
+ or one-to-many and what the cardinality
 
-00:02:52.000 --> 00:02:59.000
- And so sometimes we add data to the through table and it's actually quite useful and it's really the only place to model this kind of data.
+00:00:47.700 --> 00:00:49.540
+ of each end of the relationship is.
 
-00:02:59.000 --> 00:03:05.000
- Because somebody might be in a course as a teacher and they might be in a different course as a student.
+00:00:49.540 --> 00:00:52.200
+ And this is showing a person table,
 
-00:03:05.000 --> 00:03:11.000
- So you can't just say this person is always a teacher or they're always a student. You can't say that. It depends on the context.
+00:00:52.200 --> 00:00:55.280
+ a course table and a membership table
 
-00:03:11.000 --> 00:03:21.000
- And so that's why at the connection between a particular person and a particular course, we actually model the role that they have in that course.
+00:00:55.280 --> 00:00:58.240
+ and this is a very common thing that we have to solve
 
-00:03:21.000 --> 00:03:27.000
- So here we go. So we're going to have a person in a course.
+00:00:58.240 --> 00:01:01.680
+ in educational systems and it's a little bit
 
-00:03:27.000 --> 00:03:36.000
- And we're going to have a through table, a membership. And so we're gonna send these things back and forth to each other.
+00:01:01.680 --> 00:01:04.040
+ more sophisticated than the previous one
 
-00:03:36.000 --> 00:03:44.000
- And this membership is the tricky one. And so we have a foreign key over to person and a foreign key over to course.
+00:01:04.040 --> 00:01:06.080
+ which I thought was beautifully elegant and simple
 
-00:03:44.000 --> 00:03:55.000
- And we're gonna model some information. We're gonna model a created date at, and this is a date time field. This is another feature that basically says let's make a created underscore at.
+00:01:06.080 --> 00:01:08.040
+ but I wanna show you this one as well.
 
-00:03:55.000 --> 00:04:05.000
- And dear Django, I'm not even gonna set this value. Please, when I create this, a new record here, populate this at the current date and time.
+00:01:08.040 --> 00:01:11.520
+ And so what we have here is basically
 
-00:04:05.000 --> 00:04:09.000
- And if I make a change to it, change the updated at.
+00:01:11.520 --> 00:01:16.360
+ a people are in courses, right?
 
-00:04:09.000 --> 00:04:19.000
- And it's a common pattern in lots of tables to put these two lines in. And it's so common that we often call them the same field.
+00:01:16.360 --> 00:01:17.880
+ A person can be in many courses
 
-00:04:19.000 --> 00:04:24.000
- So you'll look in somebody's Django model and you'll see created at and you'll see updated at.
+00:01:17.880 --> 00:01:19.080
+ and a course can have many people
 
-00:04:24.000 --> 00:04:31.000
- And so that's another thing we're modeling at the connection in the through table.
+00:01:19.080 --> 00:01:21.080
+ so it's a many-to-many relationship.
 
-00:04:31.000 --> 00:04:43.000
- And so the other thing we're going to do is have the role. Now the example that you use in local library, they make this role I think a string.
+00:01:21.080 --> 00:01:22.120
+ We create a through table.
 
-00:04:43.000 --> 00:04:55.000
- Which makes me kind of like feel bad cuz I don't like vertical replication of string. Even if they're sort of from a fixed vocabulary.
+00:01:22.120 --> 00:01:24.040
+ We'll call it a member table.
 
-00:04:55.000 --> 00:05:03.000
- So what we're gonna do here is we're gonna do something where we're going to create a set of integers and associate those integers with meaning.
+00:01:24.040 --> 00:01:29.040
+ We end up just like before with two one-to-many's pointing out
 
-00:05:03.000 --> 00:05:13.000
- And use them in the admin interface, etc. And so what I'm gonna do here is these learner IA, GSI, instructor and admin are just integer numbers.
+00:01:29.040 --> 00:01:30.860
+ or many-to-ones pointing outwards
 
-00:05:13.000 --> 00:05:27.000
- And then I'm going to say, I'm gonna make this little tuple of tuples or a list of tuples as it were. And the learner integer maps to the string learner so we can show that in the user interface.
+00:01:30.860 --> 00:01:34.720
+ so we have a person ID and a course ID in the member table.
 
-00:05:27.000 --> 00:05:35.000
- This here is a lot of UI stuff. So in the admin UI, this whole member choices thing affects the admin UI.
+00:01:34.720 --> 00:01:37.280
+ All three of these tables have primary keys
 
-00:05:35.000 --> 00:05:42.000
- When this is all said and done, we basically say the role is an integer field. And I like that because it's short and I love integers.
+00:01:37.280 --> 00:01:41.360
+ of ID, ID and ID and then we put the little tiny
 
-00:05:42.000 --> 00:05:47.000
- How many times have you heard me say I love integers? Integers are short and efficient.
+00:01:41.360 --> 00:01:45.380
+ sort of virtual set in here so that at a person
 
-00:05:47.000 --> 00:05:56.000
- And instead of just being any number, it really is the choices are pulled from this thing, which is these possible numbers.
+00:01:45.380 --> 00:01:47.960
+ you can just look at a virtual set of their courses
 
-00:05:56.000 --> 00:06:04.000
- Which is 1, 1,000, 2,000, 5,000 or 10,000. And the default value is learner, which means it's a 1.
+00:01:47.960 --> 00:01:51.380
+ and of course you can say who are the members of this course.
 
-00:06:04.000 --> 00:06:14.000
- So this is a nice, this is basically not, you could make an integer field and we could code in our Python code these numbers and these strings.
+00:01:52.660 --> 00:01:53.960
+ Now we're gonna do one more thing
 
-00:06:14.000 --> 00:06:25.000
- But there's a lot of value in using the administrator interface now and having these values known inside the data model rather than just coding them throughout all the Python code that we write.
+00:01:53.960 --> 00:01:55.220
+ that's a little bit different here
 
-00:06:25.000 --> 00:06:37.000
- So when this is all said and done, what we have is two foreign keys, you know, two outbound foreign keys like you would expect. Created an updated app that's totally maintained by Django for us.
+00:01:55.220 --> 00:01:58.940
+ and that is often the simplest of through tables
 
-00:06:37.000 --> 00:06:43.000
- And then modeled at the connection a role, like are you a teacher, are you a student? Okay.
+00:01:58.940 --> 00:02:03.060
+ is literally an ID and two foreign keys.
 
-00:06:43.000 --> 00:06:48.000
- And so that's a little more sophisticated kind of many to many model.
+00:02:03.060 --> 00:02:04.880
+ And as a matter of fact, some people,
 
-00:06:48.000 --> 00:06:58.000
- And we can talk to this in the Django shell, Python 3, many manage.py shell.
+00:02:04.880 --> 00:02:06.160
+ Django doesn't like doing this
 
-00:06:58.000 --> 00:07:07.000
- You know, we import the models from the application models that, this is really reading the models.py file from the many folder.
+00:02:06.160 --> 00:02:09.120
+ but some people don't even include the ID field
 
-00:07:07.000 --> 00:07:11.000
- Import the person model, the course model, membership, those are Python classes.
+00:02:09.120 --> 00:02:10.840
+ and they just make the combination
 
-00:07:11.000 --> 00:07:16.000
- We're going to make a person and save it. We're going to make a course and save it.
+00:02:10.840 --> 00:02:14.560
+ of the two foreign keys as a unique ID inside.
 
-00:07:16.000 --> 00:07:19.000
+00:02:14.560 --> 00:02:16.040
+ And if you're doing databases directly
+
+00:02:16.040 --> 00:02:17.420
+ you can actually do that.
+
+00:02:17.420 --> 00:02:20.620
+ But here's a thing that you can also do.
+
+00:02:20.620 --> 00:02:23.840
+ So if you think about in a teaching and learning situation
+
+00:02:23.840 --> 00:02:26.760
+ people aren't just members of courses.
+
+00:02:26.760 --> 00:02:28.840
+ They are members of courses and they have a role
+
+00:02:28.840 --> 00:02:32.400
+ and is that role as a learner, a teaching assistant
+
+00:02:32.400 --> 00:02:34.000
+ or an instructor or perhaps
+
+00:02:34.000 --> 00:02:36.340
+ they're the departmental administrator, right?
+
+00:02:36.340 --> 00:02:41.340
+ And that is an attribute of the connection, right?
+
+00:02:41.340 --> 00:02:44.200
+ The connection between a person and a course
+
+00:02:44.200 --> 00:02:47.320
+ is the membership and oh by the way
+
+00:02:47.320 --> 00:02:48.820
+ they're not just a member,
+
+00:02:48.820 --> 00:02:52.000
+ they're a member with some metadata, okay?
+
+00:02:52.000 --> 00:02:54.780
+ And so sometimes we add data to the through table
+
+00:02:54.780 --> 00:02:56.480
+ and it's actually quite useful
+
+00:02:56.480 --> 00:02:59.440
+ and it's really the only place to model this kind of data
+
+00:02:59.440 --> 00:03:03.100
+ because somebody might be in a course as a teacher
+
+00:03:03.100 --> 00:03:05.380
+ and they might be in a different course as a student
+
+00:03:05.380 --> 00:03:07.940
+ so you can't just say this person is always a teacher
+
+00:03:07.940 --> 00:03:10.040
+ or they're always a student, you can't say that.
+
+00:03:10.040 --> 00:03:12.560
+ It depends on the context and so that's why
+
+00:03:12.560 --> 00:03:15.040
+ at the connection between a particular person
+
+00:03:15.040 --> 00:03:17.880
+ and a particular course we actually model
+
+00:03:17.880 --> 00:03:21.020
+ the role that they have in that course.
+
+00:03:21.020 --> 00:03:23.480
+ So here we go.
+
+00:03:23.480 --> 00:03:26.880
+ So we're going to have a person in a course
+
+00:03:26.880 --> 00:03:32.800
+ and we're going to have a through table, a membership
+
+00:03:32.800 --> 00:03:34.820
+ and so we're gonna send these things
+
+00:03:34.820 --> 00:03:36.960
+ back and forth to each other
+
+00:03:36.960 --> 00:03:40.080
+ and this membership is the tricky one
+
+00:03:40.080 --> 00:03:42.800
+ and so we have a foreign key over to person
+
+00:03:42.800 --> 00:03:44.860
+ and a foreign key over to course
+
+00:03:44.860 --> 00:03:46.700
+ and we're gonna model some information.
+
+00:03:46.700 --> 00:03:49.160
+ We're gonna model a created date at
+
+00:03:49.160 --> 00:03:52.040
+ and this is a date time field, this is another feature
+
+00:03:52.040 --> 00:03:55.600
+ that basically says let's make a created underscore at
+
+00:03:55.600 --> 00:03:58.700
+ and dear Django, I'm not even gonna set this value.
+
+00:03:58.700 --> 00:04:02.400
+ Please, when I create this, a new record here,
+
+00:04:02.400 --> 00:04:06.180
+ populate this at the current date and time
+
+00:04:06.180 --> 00:04:09.640
+ and if I make a change to it, change the updated at
+
+00:04:09.640 --> 00:04:12.440
+ and this is a common pattern in lots of tables
+
+00:04:12.440 --> 00:04:17.160
+ to put these two lines in and it's so common
+
+00:04:17.160 --> 00:04:19.780
+ that we often call them the same field.
+
+00:04:19.780 --> 00:04:21.920
+ So you'll look in somebody's Django model
+
+00:04:21.920 --> 00:04:24.440
+ and you'll see created at and you'll see updated at
+
+00:04:24.440 --> 00:04:26.720
+ and so that's another thing we're modeling
+
+00:04:26.720 --> 00:04:31.720
+ at the connection in the through table
+
+00:04:31.720 --> 00:04:36.800
+ and so the other thing we're going to do is have the role.
+
+00:04:36.800 --> 00:04:40.800
+ Now the example that you use in local library,
+
+00:04:40.800 --> 00:04:43.480
+ they make this role I think a string
+
+00:04:43.480 --> 00:04:47.420
+ which makes me kind of like feel bad
+
+00:04:47.420 --> 00:04:49.920
+ 'cause I don't like vertical replication of string
+
+00:04:49.920 --> 00:04:55.520
+ even if they're sort of from a fixed vocabulary.
+
+00:04:55.520 --> 00:04:57.360
+ So what we're gonna do here is we're gonna do something
+
+00:04:57.360 --> 00:05:01.160
+ where we're going to create a set of integers
+
+00:05:01.160 --> 00:05:03.060
+ and associate those integers with meaning
+
+00:05:03.060 --> 00:05:05.720
+ and use them in the admin interface, et cetera
+
+00:05:05.720 --> 00:05:10.200
+ and so what I'm gonna do here is these learner IA, GSI,
+
+00:05:10.200 --> 00:05:13.400
+ instructor and admin are just integer numbers
+
+00:05:13.400 --> 00:05:15.760
+ and then I'm going to say I'm gonna make
+
+00:05:15.760 --> 00:05:20.760
+ this little tuple of tuples or a list of tuples as it were
+
+00:05:20.760 --> 00:05:25.340
+ and the learner integer maps to the string learner
+
+00:05:25.340 --> 00:05:27.440
+ so we can show that in the user interface.
+
+00:05:27.440 --> 00:05:30.940
+ This here is a lot of UI stuff so in the admin UI,
+
+00:05:30.940 --> 00:05:34.900
+ this whole member choices thing affects the admin UI.
+
+00:05:34.900 --> 00:05:37.180
+ When this is all said and done,
+
+00:05:37.180 --> 00:05:39.840
+ we basically say the role is an integer field
+
+00:05:39.840 --> 00:05:43.380
+ and I like that because it's short and I love integers.
+
+00:05:43.380 --> 00:05:45.200
+ How many times have you heard me say I love integers?
+
+00:05:45.200 --> 00:05:47.520
+ Integers are short and efficient
+
+00:05:47.520 --> 00:05:50.160
+ and instead of just being any number,
+
+00:05:50.160 --> 00:05:54.840
+ it really is the choices are pulled from this thing
+
+00:05:54.840 --> 00:05:56.880
+ which is these possible numbers
+
+00:05:56.880 --> 00:06:00.560
+ which is one, 1,000, 2,000, 5,000 or 10,000
+
+00:06:00.560 --> 00:06:04.400
+ and the default value is learner which means it's a one.
+
+00:06:04.400 --> 00:06:08.180
+ So this is a nice, this is basically not,
+
+00:06:08.180 --> 00:06:10.200
+ you could make an integer field and we could code
+
+00:06:10.200 --> 00:06:14.260
+ in our Python code these numbers and these strings
+
+00:06:14.260 --> 00:06:15.960
+ but there's a lot of value in using
+
+00:06:15.960 --> 00:06:17.760
+ the administrator interface now
+
+00:06:17.760 --> 00:06:21.320
+ and having these values known inside the data model
+
+00:06:21.320 --> 00:06:23.180
+ rather than just coding them throughout
+
+00:06:23.180 --> 00:06:24.880
+ all the Python code that we write.
+
+00:06:24.880 --> 00:06:27.360
+ So when this is all said and done,
+
+00:06:27.360 --> 00:06:30.120
+ what we have is two foreign keys,
+
+00:06:30.120 --> 00:06:32.920
+ two outbound foreign keys like you would expect,
+
+00:06:32.920 --> 00:06:35.680
+ a created and updated app that's totally maintained
+
+00:06:35.680 --> 00:06:39.320
+ by Django for us and then modeled at the connection
+
+00:06:39.320 --> 00:06:42.960
+ a role like are you a teacher, are you a student?
+
+00:06:42.960 --> 00:06:46.480
+ Okay, and so that's a little more sophisticated
+
+00:06:46.480 --> 00:06:50.400
+ kind of many-to-many model and we can talk to this
+
+00:06:50.400 --> 00:06:56.480
+ in the Django shell, Python 3, many manage.py shell.
+
+00:06:56.480 --> 00:07:02.820
+ You know, we import the models from the application models
+
+00:07:02.820 --> 00:07:05.660
+ that this is really reading the models.py file
+
+00:07:05.660 --> 00:07:08.720
+ from the many folder, import the person model,
+
+00:07:08.720 --> 00:07:12.160
+ the course model, membership, those are Python classes.
+
+00:07:12.160 --> 00:07:14.740
+ We're gonna make a person and save it.
+
+00:07:14.740 --> 00:07:17.020
+ We're gonna make a course and save it.
+
+00:07:17.020 --> 00:07:19.540
  We can check the ID to prove that.
 
-00:07:19.000 --> 00:07:24.000
- We can look at the, all of the members values, that's a, that's a query set.
+00:07:19.540 --> 00:07:22.600
+ We can look at all of the members values,
 
-00:07:24.000 --> 00:07:27.000
- And then with nothing in it.
+00:07:22.600 --> 00:07:27.600
+ that's a query set and then with nothing in it
 
-00:07:27.000 --> 00:07:33.000
- And then we can create a membership and we give membership.instructor, this is that number, right?
+00:07:27.600 --> 00:07:30.460
+ and then we can create a membership
 
-00:07:33.000 --> 00:07:36.000
- I think that was like 1,000 or 5,000, I think what that was.
+00:07:30.460 --> 00:07:32.000
+ and we give membership.instructor,
 
-00:07:36.000 --> 00:07:41.000
- And then coursesC, oops, how come it's not, there we go.
+00:07:32.000 --> 00:07:33.320
+ this is that number, right?
 
-00:07:41.000 --> 00:07:46.000
- CoursesC in person is P, that's taking from the P and C variable that we just created.
+00:07:33.320 --> 00:07:36.920
+ I think that was like 1,000 or 5,000 I think what that was
 
-00:07:46.000 --> 00:07:53.000
- We are basically populating the true table with the two objects from which we'll figure out what that foreign key is.
+00:07:36.920 --> 00:07:41.080
+ and then courses_c, whoops, how come it's not around?
 
-00:07:53.000 --> 00:07:57.000
- And then we save it, we can see that it's been saved by looking at ID.
+00:07:41.080 --> 00:07:43.040
+ There we go, courses_c in person is p,
 
-00:07:57.000 --> 00:08:03.000
- And so we can see these things like C members values now.
+00:07:43.040 --> 00:07:46.560
+ that's taking from the p and c variable that we just created.
 
-00:08:03.000 --> 00:08:07.000
- We can see that this is the person who is a member of that particular course.
+00:07:46.560 --> 00:07:49.120
+ We are basically populating the true table
 
-00:08:07.000 --> 00:08:12.000
- And we can see what courses Ted is in and Ted's in Woodcraft.
+00:07:49.120 --> 00:07:52.160
+ with the two objects from which we'll figure out
 
-00:08:12.000 --> 00:08:20.000
- And so this is just another example using the shell to talk to some many-to-many relations.
+00:07:52.160 --> 00:07:54.800
+ what that foreign key is and then we save it.
 
-00:08:20.000 --> 00:08:24.000
- So up next we're going to show how we do these shell-like operations.
+00:07:54.800 --> 00:07:57.200
+ We can see that it's been saved by looking at ID
 
-00:08:24.000 --> 00:08:27.000
- But we're actually going to just write Python code rather than typing Python code.
+00:07:59.040 --> 00:08:03.320
+ and so we can see these things like c members values now.
 
-00:08:27.000 --> 00:08:37.000
- [MUSIC]
+00:08:03.320 --> 00:08:05.200
+ We can see that this is the person
+
+00:08:05.200 --> 00:08:07.520
+ who is a member of that particular course
+
+00:08:07.520 --> 00:08:10.340
+ and we can see what courses Ted is in
+
+00:08:10.340 --> 00:08:12.280
+ and Ted's in Woodcraft.
+
+00:08:12.280 --> 00:08:16.240
+ And so this is just another example using the shell
+
+00:08:16.240 --> 00:08:20.200
+ to talk to some many-to-many relations.
+
+00:08:20.200 --> 00:08:21.640
+ So up next we're gonna show
+
+00:08:21.640 --> 00:08:24.260
+ how we do these shell-like operations
+
+00:08:24.260 --> 00:08:26.000
+ but we're actually gonna just write Python code
+
+00:08:26.000 --> 00:08:27.600
+ rather than typing Python code.
+
+00:08:27.600 --> 00:08:30.180
+ (upbeat music)
 

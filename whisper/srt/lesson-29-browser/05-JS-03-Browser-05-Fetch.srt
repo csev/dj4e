@@ -1,332 +1,540 @@
 1
-00:00:00,000 --> 00:00:03,300
- So the last kind of events that we're going to talk about are network events.
+00:00:00,000 --> 00:00:02,220
+ So the last kind of events that we're going to talk about
 
 2
-00:00:03,300 --> 00:00:08,800
- That is, code that runs as your JavaScript is talking to the network.
+00:00:02,220 --> 00:00:03,340
+ are network events.
 
 3
-00:00:08,800 --> 00:00:11,100
- So we can do network operations in JavaScript.
+00:00:03,340 --> 00:00:06,540
+ That is code that runs as your JavaScript
 
 4
-00:00:11,100 --> 00:00:17,640
- We can do the entire request-response cycle in JavaScript.
+00:00:06,540 --> 00:00:08,800
+ is talking to the network.
 
 5
-00:00:17,640 --> 00:00:22,200
- The problem is that this has to be an asynchronous process
+00:00:08,800 --> 00:00:11,140
+ So we can do network operations in JavaScript.
 
 6
-00:00:22,200 --> 00:00:25,140
- because we can't pause our code.
+00:00:11,140 --> 00:00:16,140
+ We can do the entire request response cycle in JavaScript.
 
 7
-00:00:25,140 --> 00:00:27,700
- We can't say stop and read from the server
+00:00:16,140 --> 00:00:22,240
+ The problem is that this has to be an asynchronous process
 
 8
-00:00:27,700 --> 00:00:30,540
- because otherwise the browser would lock up.
+00:00:22,240 --> 00:00:25,180
+ because we can't pause our code.
 
 9
-00:00:30,540 --> 00:00:34,500
- So we have to kind of use events and we kind of chain these events together.
+00:00:25,180 --> 00:00:27,740
+ We can't say stop and read from the server
 
 10
-00:00:34,500 --> 00:00:40,700
- We have a start the request and then give me an event when the request is restarted.
+00:00:27,740 --> 00:00:30,540
+ because otherwise the browser would lock up.
 
 11
-00:00:40,700 --> 00:00:45,140
- And then as the data is being retrieved, when the data is all retrieved,
+00:00:30,540 --> 00:00:32,540
+ So we have to kind of use events
 
 12
-00:00:45,140 --> 00:00:46,400
- then you process the request.
+00:00:32,540 --> 00:00:34,500
+ and we kind of chain these events together.
 
 13
-00:00:46,400 --> 00:00:52,300
- And so there's a multi-step process and you do one step and then initiate the second step.
+00:00:34,500 --> 00:00:36,620
+ We have a start the request
 
 14
-00:00:52,300 --> 00:00:58,000
- And so that means that we're never in our JavaScript waiting for anything.
+00:00:36,620 --> 00:00:40,660
+ and then give me an event when the request is restarted
 
 15
-00:00:58,000 --> 00:01:03,200
- We are responding to an event and then triggering another event
+00:00:40,660 --> 00:00:43,500
+ and then as the data is being retrieved,
 
 16
-00:01:03,200 --> 00:01:05,800
- and then responding to an event and triggering another event,
+00:00:43,500 --> 00:00:46,420
+ when the data is all retrieved, then you process the request.
 
 17
-00:01:05,800 --> 00:01:10,000
- but never doing anything that waits in our code.
+00:00:46,420 --> 00:00:49,720
+ And so there's a multi-step process
 
 18
-00:01:10,000 --> 00:01:13,400
- This particular code is 14-fetch.htm.
+00:00:49,720 --> 00:00:52,300
+ and you do one step and then initiate the second step.
 
 19
-00:01:13,400 --> 00:01:19,100
- Now fetch is a function that's available and its parameter is a URL.
+00:00:52,300 --> 00:00:56,220
+ And so that means that we're never in our JavaScript
 
 20
-00:01:19,100 --> 00:01:22,600
- So I've got this URL called secret.txt.
+00:00:56,220 --> 00:00:57,980
+ waiting for anything.
 
 21
-00:01:22,600 --> 00:01:25,800
- Now fetch returns what's called a promise.
+00:00:57,980 --> 00:01:01,780
+ We are responding to an event
 
 22
-00:01:25,800 --> 00:01:29,600
- A promise is something that hasn't happened yet, but will happen.
+00:01:01,780 --> 00:01:03,180
+ and then triggering another event
 
 23
-00:01:29,600 --> 00:01:38,500
- And then you say .then and the then code runs when the fetch has started.
+00:01:03,180 --> 00:01:04,420
+ and then responding to an event
 
 24
-00:01:38,500 --> 00:01:43,100
- And so in this case, and I'm using this sort of short syntax
+00:01:04,420 --> 00:01:05,820
+ and triggering another event,
 
 25
-00:01:43,100 --> 00:01:47,900
- because this inside the parentheses of the then you see a function
+00:01:05,820 --> 00:01:10,020
+ but never doing anything that waits in our code.
 
 26
-00:01:47,900 --> 00:01:51,000
- that takes a single parameter as the variable response.
+00:01:10,020 --> 00:01:13,420
+ This particular code is 14-fetch.htm.
 
 27
-00:01:51,000 --> 00:01:53,200
- That's my choice as a variable name.
+00:01:13,420 --> 00:01:17,500
+ Now fetch is a function that's available
 
 28
-00:01:53,200 --> 00:01:57,400
- I console.log and then I return response.text.
+00:01:17,500 --> 00:01:19,180
+ and its parameter is a URL.
 
 29
-00:01:57,400 --> 00:02:03,400
- Now what that really is saying is now go retrieve that text which will take some time.
+00:01:19,180 --> 00:01:22,620
+ So I've got this URL called secret.txt.
 
 30
-00:02:03,400 --> 00:02:07,200
- So response.text itself is another promise.
+00:01:22,620 --> 00:01:25,900
+ Now fetch returns what's called a promise.
 
 31
-00:02:07,200 --> 00:02:12,500
- And so the return value of the first then is itself a promise.
+00:01:25,900 --> 00:01:27,860
+ A promise is something that hasn't happened yet,
 
 32
-00:02:12,500 --> 00:02:14,800
- And that's why you see the second then.
+00:01:27,860 --> 00:01:29,620
+ but will happen.
 
 33
-00:02:14,800 --> 00:02:20,000
- Now the second then happens when the response.text has been retrieved.
+00:01:29,620 --> 00:01:34,620
+ And then you say .then and the then code runs
 
 34
-00:02:20,000 --> 00:02:23,800
- And now we're being handed that as a text string.
+00:01:34,620 --> 00:01:37,380
+ when the fetch has started.
 
 35
-00:02:23,800 --> 00:02:27,700
- And then it says let's run code and console.log that text string.
+00:01:37,380 --> 00:01:41,300
+ And so in this case,
 
 36
-00:02:27,700 --> 00:02:31,200
- So fetch starts and returns a promise.
+00:01:41,300 --> 00:01:43,180
+ and I'm using this sort of short syntax
 
 37
-00:02:31,200 --> 00:02:37,100
- Then says when that promise completes run this code and then return another promise.
+00:01:43,180 --> 00:01:46,560
+ 'cause this inside the parentheses of the then,
 
 38
-00:02:37,100 --> 00:02:43,100
- And then the second then takes is runs after the second after the promise is retrieved.
+00:01:46,560 --> 00:01:49,020
+ you see a function that takes a single parameter
 
 39
-00:02:43,100 --> 00:02:44,300
- And then we're done.
+00:01:49,020 --> 00:01:51,060
+ as the variable response.
 
 40
-00:02:44,300 --> 00:02:47,400
- So you see there's three little steps.
+00:01:51,060 --> 00:01:53,220
+ That's my choice as a variable name.
 
 41
-00:02:47,400 --> 00:02:51,900
- And each of those steps is instantaneous or as fast as we can do it and there's no waiting.
+00:01:53,220 --> 00:01:57,420
+ I console.log and then I return response.text.
 
 42
-00:02:51,900 --> 00:02:59,200
- And each time we have to register a function to respond to the request.
+00:01:57,420 --> 00:01:58,980
+ Now what that really is saying
 
 43
-00:02:59,200 --> 00:03:03,600
- So JavaScript calls us back, okay.
+00:01:58,980 --> 00:02:02,100
+ is now go retrieve that text,
 
 44
-00:03:03,600 --> 00:03:07,500
- And so you can kind of see this happen, right.
+00:02:02,100 --> 00:02:03,460
+ which will take some time.
 
 45
-00:03:07,500 --> 00:03:09,200
- The fetch starts.
+00:02:03,460 --> 00:02:07,260
+ So response.text itself is another promise.
 
 46
-00:03:09,200 --> 00:03:14,500
- The first promise resolves and we see what the response is.
+00:02:07,260 --> 00:02:11,160
+ And so the return value of the first then
 
 47
-00:03:14,500 --> 00:03:18,800
- Now if you look carefully, you see that the response is a 200.
+00:02:11,160 --> 00:02:12,500
+ is itself a promise.
 
 48
-00:03:18,800 --> 00:03:22,600
- Which means it looks like we're doing well, right.
+00:02:12,500 --> 00:02:14,880
+ And that's why you see the second then.
 
 49
-00:03:22,600 --> 00:03:30,100
- And it has a readable stream, but we have not yet used the body, okay.
+00:02:14,880 --> 00:02:17,220
+ Now the second then happens
 
 50
-00:03:30,100 --> 00:03:32,700
- So when it says body used equals false.
+00:02:17,220 --> 00:02:20,020
+ when the response text has been retrieved
 
 51
-00:03:32,700 --> 00:03:37,000
- That means that we sort of started the request and it looks like it's going to go well.
+00:02:20,020 --> 00:02:23,820
+ and now we're being handed that as a text string.
 
 52
-00:03:37,000 --> 00:03:41,400
- And now we're given a chance to see what we're going once this request has started.
+00:02:23,820 --> 00:02:26,040
+ And then it says, let's run code
 
 53
-00:03:41,400 --> 00:03:43,700
- Now by calling response.text.
+00:02:26,040 --> 00:02:27,740
+ and console.log that text string.
 
 54
-00:03:43,700 --> 00:03:51,400
- That's a method inside this response object that then says, oh, go back, make a new promise.
+00:02:27,740 --> 00:02:31,220
+ So fetch starts and returns a promise,
 
 55
-00:03:51,400 --> 00:03:54,500
- And that promise will be fulfilled when we've actually retrieved the text.
+00:02:31,220 --> 00:02:35,380
+ then says when that promise completes, run this code,
 
 56
-00:03:54,500 --> 00:03:59,800
- So at this moment where it says console log response, the text hasn't been retrieved yet.
+00:02:35,380 --> 00:02:37,120
+ and then return another promise.
 
 57
-00:03:59,800 --> 00:04:05,300
- And so we're returning a promise to be fulfilled after the text is received.
+00:02:37,120 --> 00:02:42,120
+ And then the second then runs after the promise is retrieved
 
 58
-00:04:05,300 --> 00:04:10,500
- Then when that text receiving is finished, which might take, you know, two seconds or something.
+00:02:42,120 --> 00:02:44,320
+ and then we're done.
 
 59
-00:04:10,500 --> 00:04:12,600
- And it's like, oh, I've got some text.
+00:02:44,320 --> 00:02:47,460
+ So you see there's three little steps
 
 60
-00:04:12,600 --> 00:04:19,700
- So I'm going to call you back, resolve that promise and pass the actual retrieved text string back into us.
+00:02:47,460 --> 00:02:49,380
+ and each of those steps is instantaneous
 
 61
-00:04:19,700 --> 00:04:27,300
- And so that's the only moment that what the server has given for secret.txt, which the secret of course is 42 is the text.
+00:02:49,380 --> 00:02:50,620
+ or as fast as we can do it.
 
 62
-00:04:27,300 --> 00:04:29,800
- That's when we can actually print it out.
+00:02:50,620 --> 00:02:51,980
+ And there's no waiting.
 
 63
-00:04:29,800 --> 00:04:34,100
- We can make this a little bit more succinct and then watch it as it happens.
+00:02:51,980 --> 00:02:55,020
+ And each time we have to register a function
 
 64
-00:04:34,100 --> 00:04:37,200
- So this is 15-fetch.
+00:02:55,020 --> 00:02:57,300
+ to respond to the request.
 
 65
-00:04:37,200 --> 00:04:41,900
- So we're going to we're going to do something with this text instead of just printing it.
+00:02:57,300 --> 00:03:03,460
+ So JavaScript calls us back, okay?
 
 66
-00:04:41,900 --> 00:04:50,700
- And we're going to use kind of the more succinct contraction style of this function code and not put so many console logs in.
+00:03:03,460 --> 00:03:07,620
+ And so you can kind of see this happen, right?
 
 67
-00:04:50,700 --> 00:04:53,800
- I was putting console logs so you could see the steps that happen.
+00:03:07,620 --> 00:03:12,000
+ The fetch starts, the first promise resolves,
 
 68
-00:04:53,800 --> 00:04:56,100
- So this is a more typical way of doing something.
+00:03:12,000 --> 00:03:14,620
+ and we see what the response is.
 
 69
-00:04:56,100 --> 00:05:00,600
- So we're going to fetch secret.txt, which is your on the server.
+00:03:14,620 --> 00:03:16,340
+ Now if you look carefully,
 
 70
-00:05:00,600 --> 00:05:07,900
- When that fetch is successfully started, we resolve the first promise and then we say, OK.
+00:03:16,340 --> 00:03:18,960
+ you see that the response is a 200,
 
 71
-00:05:07,900 --> 00:05:12,200
- And the first response arrow response text response is the parameter to the function.
+00:03:18,960 --> 00:03:21,500
+ which means it looks like we're doing well, right?
 
 72
-00:05:12,200 --> 00:05:21,200
- And response.text is calling the text method in that, which is the return value to this first promise, which is another promise.
+00:03:21,500 --> 00:03:27,700
+ And it has a readable stream,
 
 73
-00:05:21,200 --> 00:05:25,500
- But that'll be it when that promise resolves it resolve to a text string.
+00:03:27,700 --> 00:03:30,180
+ but we have not yet used the body, okay?
 
 74
-00:05:25,500 --> 00:05:28,800
- And that's why the second then says take a variable.
+00:03:30,180 --> 00:03:32,820
+ So when it says body used equals false,
 
 75
-00:05:28,800 --> 00:05:32,200
- Again, I could call text string X. It's just a variable in a function call.
+00:03:32,820 --> 00:03:35,460
+ that means that we've sort of started the request
 
 76
-00:05:32,200 --> 00:05:34,300
- It's just a parameter function call.
+00:03:35,460 --> 00:03:37,100
+ and it looks like it's gonna go well.
 
 77
-00:05:34,300 --> 00:05:39,600
- So call me back. Call me this function I'm making text string.
+00:03:37,100 --> 00:03:39,700
+ And now we're given a chance to see what we're going,
 
 78
-00:05:39,600 --> 00:05:48,900
- And then get doc in that code is document get element ID by ID zap, which is that p tag.
+00:03:39,700 --> 00:03:41,520
+ once this request has started.
 
 79
-00:05:48,900 --> 00:05:53,100
- And I said it's inner text to be the text string that I retrieve from the server.
+00:03:41,520 --> 00:03:43,840
+ Now by calling response.text,
 
 80
-00:05:53,100 --> 00:06:01,700
- And so you can kind of see that we can do things, we can get data from the server, and then we can move it into our document object model.
+00:03:43,840 --> 00:03:46,940
+ that's a method inside this response object
 
 81
-00:06:01,700 --> 00:06:05,900
- And I tried to do this in the simplest and smallest version.
+00:03:46,940 --> 00:03:51,500
+ that then says, oh, go back, make a new promise,
 
 82
-00:06:05,900 --> 00:06:16,100
- We will cover this in a lot more detail when we actually have something more important to retrieve like JSON, for example, JavaScript object notation, which is the next section.
+00:03:51,500 --> 00:03:52,980
+ and that promise will be fulfilled
 
 83
-00:06:23,100 --> 00:06:26,100
- (jazzy piano music)
+00:03:52,980 --> 00:03:54,600
+ when we've actually retrieved the text.
+
+84
+00:03:54,600 --> 00:03:57,820
+ So at this moment where it says console log response,
+
+85
+00:03:57,820 --> 00:03:59,900
+ the text hasn't been retrieved yet,
+
+86
+00:03:59,900 --> 00:04:03,300
+ and so we're returning a promise to be fulfilled
+
+87
+00:04:03,300 --> 00:04:05,380
+ after the text is received.
+
+88
+00:04:05,380 --> 00:04:07,860
+ Then when that text receiving is finished,
+
+89
+00:04:07,860 --> 00:04:10,580
+ which might take two seconds or something,
+
+90
+00:04:10,580 --> 00:04:12,640
+ then it's like, oh, I've got some text,
+
+91
+00:04:12,640 --> 00:04:16,260
+ so I'm gonna call you back, resolve that promise,
+
+92
+00:04:16,260 --> 00:04:19,740
+ and pass the actual retrieved text string back into us.
+
+93
+00:04:19,740 --> 00:04:22,140
+ And so that's the only moment
+
+94
+00:04:22,140 --> 00:04:25,020
+ that what the server has given for secret.txt,
+
+95
+00:04:25,020 --> 00:04:27,380
+ which the secret of course is 42 is the text,
+
+96
+00:04:27,380 --> 00:04:29,860
+ that's when we can actually print it out.
+
+97
+00:04:29,860 --> 00:04:32,600
+ We can make this a little bit more succinct
+
+98
+00:04:32,600 --> 00:04:34,220
+ and then watch it as it happens.
+
+99
+00:04:34,220 --> 00:04:37,240
+ So this is 15-fetch.
+
+100
+00:04:37,240 --> 00:04:40,600
+ So we're gonna do something with this text
+
+101
+00:04:40,600 --> 00:04:42,000
+ instead of just printing it,
+
+102
+00:04:42,000 --> 00:04:45,420
+ and we're gonna use kind of the more succinct
+
+103
+00:04:45,420 --> 00:04:48,180
+ contraction style of this function code
+
+104
+00:04:48,180 --> 00:04:50,700
+ and not put so many console logs in.
+
+105
+00:04:50,700 --> 00:04:51,780
+ I was putting console logs
+
+106
+00:04:51,780 --> 00:04:53,860
+ so you could see the steps that happen.
+
+107
+00:04:53,860 --> 00:04:56,120
+ So this is a more typical way of doing something.
+
+108
+00:04:56,120 --> 00:04:58,220
+ So we're gonna fetch secret.txt,
+
+109
+00:04:58,220 --> 00:04:59,700
+ which is your on the server.
+
+110
+00:04:59,700 --> 00:05:03,660
+ When that fetch has successfully started,
+
+111
+00:05:03,660 --> 00:05:08,000
+ we resolve the first promise, and then we say, okay.
+
+112
+00:05:08,000 --> 00:05:10,500
+ And the first response arrow response text,
+
+113
+00:05:10,500 --> 00:05:12,180
+ response is the parameter to the function,
+
+114
+00:05:12,180 --> 00:05:14,660
+ and response.text is calling the text method
+
+115
+00:05:14,660 --> 00:05:18,840
+ in that, which is the return value to this first promise,
+
+116
+00:05:18,840 --> 00:05:21,940
+ which is another promise, but that'll be it.
+
+117
+00:05:21,940 --> 00:05:25,540
+ When that promise resolves, it'll resolve to a text string,
+
+118
+00:05:25,540 --> 00:05:28,820
+ and that's where the second then says, take a variable.
+
+119
+00:05:28,820 --> 00:05:30,600
+ Again, I could call text string x,
+
+120
+00:05:30,600 --> 00:05:32,260
+ it's just a variable in a function call,
+
+121
+00:05:32,260 --> 00:05:34,340
+ it's just a parameter in a function call.
+
+122
+00:05:34,340 --> 00:05:38,260
+ So call me back, call me this function I'm making,
+
+123
+00:05:38,260 --> 00:05:42,900
+ text string, and then get doc in that code
+
+124
+00:05:42,900 --> 00:05:45,820
+ is document get element id by id zap,
+
+125
+00:05:45,820 --> 00:05:50,260
+ which is that p tag, and I set its inner text
+
+126
+00:05:50,260 --> 00:05:53,140
+ to be the text string that I retrieve from the server.
+
+127
+00:05:53,140 --> 00:05:57,720
+ And so you can kind of see that we can do things,
+
+128
+00:05:57,720 --> 00:05:59,300
+ we can get data from the server,
+
+129
+00:05:59,300 --> 00:06:01,700
+ and then we can move it into our document object model.
+
+130
+00:06:01,700 --> 00:06:05,940
+ And I tried to do this in the simplest and smallest version.
+
+131
+00:06:05,940 --> 00:06:08,660
+ We will cover this in a lot more detail
+
+132
+00:06:08,660 --> 00:06:11,300
+ when we actually have something more important to retrieve,
+
+133
+00:06:11,300 --> 00:06:14,440
+ like JSON, for example, JavaScript Object Notation,
+
+134
+00:06:14,440 --> 00:06:16,320
+ which is the next section.
+
+135
+00:06:16,320 --> 00:06:18,900
+ (upbeat music)
 

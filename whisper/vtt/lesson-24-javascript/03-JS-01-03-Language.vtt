@@ -1,665 +1,1076 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.960
- So now we're going to talk about JavaScript as a programming language.
+00:00:00.000 --> 00:00:01.800
+ So now we're going to talk about JavaScript
 
-00:00:02.960 --> 00:00:05.200
+00:00:01.800 --> 00:00:03.000
+ as a programming language.
+
+00:00:03.000 --> 00:00:05.240
  Now we're just going to talk about the syntax.
 
-00:00:05.200 --> 00:00:07.520
+00:00:05.240 --> 00:00:07.560
  So we'll start out, say, with comments.
 
-00:00:07.520 --> 00:00:09.720
+00:00:07.560 --> 00:00:09.720
  So I love the comments in JavaScript.
 
-00:00:09.720 --> 00:00:14.640
- There are two kinds of comments, and they have to do with what languages did the influencing.
+00:00:09.720 --> 00:00:11.300
+ There are two kinds of comments, and they
 
-00:00:14.640 --> 00:00:20.120
- And so the slash star, star slash, is a multi-line comment, right?
+00:00:11.300 --> 00:00:14.720
+ have to do with what languages did the influencing.
 
-00:00:20.120 --> 00:00:25.640
- So this is all comment from here all the way to here, and you can have new lines.
+00:00:14.720 --> 00:00:20.120
+ And so the slash star, star slash, is a multi-line comment.
 
-00:00:25.640 --> 00:00:27.920
+00:00:20.120 --> 00:00:24.640
+ So this is all comment from here all the way to here.
+
+00:00:24.640 --> 00:00:25.680
+ And you can have new lines.
+
+00:00:25.680 --> 00:00:28.000
  This is great for writing documentation.
 
-00:00:27.920 --> 00:00:30.080
+00:00:28.000 --> 00:00:30.080
  That comes from the C language.
 
-00:00:30.080 --> 00:00:32.040
+00:00:30.080 --> 00:00:32.160
  Java also supports it as well.
 
-00:00:32.040 --> 00:00:36.800
- And then the C++ language has slash slash to the end of the line.
+00:00:32.160 --> 00:00:35.700
+ And then the C++ language has slash slash
 
-00:00:36.800 --> 00:00:40.600
- Well, that's much more like the pound sign comment in Python.
+00:00:35.700 --> 00:00:37.040
+ to the end of the line.
 
-00:00:40.600 --> 00:00:43.000
+00:00:37.040 --> 00:00:40.640
+ That's much more like the pound sign comment in Python.
+
+00:00:40.640 --> 00:00:43.120
  But I like both of those styles.
 
-00:00:43.000 --> 00:00:47.520
- I like using these for documentation sections, and I like these for short comments.
+00:00:43.120 --> 00:00:45.620
+ I like using these for documentation sections,
 
-00:00:47.520 --> 00:00:48.960
+00:00:45.620 --> 00:00:47.600
+ and I like these for short comments.
+
+00:00:47.600 --> 00:00:49.020
  So nice.
 
-00:00:48.960 --> 00:00:50.240
+00:00:49.020 --> 00:00:50.320
  Thank you very much.
 
-00:00:50.240 --> 00:00:53.680
+00:00:50.320 --> 00:00:53.760
  White space and new lines do not matter.
 
-00:00:53.680 --> 00:00:58.640
- Statements end in a semicolon, it turns out that that's not technically true.
+00:00:53.760 --> 00:00:55.480
+ Statements end in a semicolon.
 
-00:00:58.640 --> 00:01:03.600
- But if you just pretend that all statements end in a semicolon, then if you move to Java
+00:00:55.480 --> 00:00:58.720
+ It turns out that that's not technically true.
 
-00:01:03.600 --> 00:01:10.400
- or C++ or C or PHP, then you're not like, oh, when do I have to put the semicolon on?
+00:00:58.720 --> 00:01:02.000
+ But if you just pretend that all statements end in a semicolon,
 
-00:01:10.400 --> 00:01:12.520
- Well, in those languages, you have to put it on just about everywhere.
+00:01:02.000 --> 00:01:07.280
+ then if you move to Java, or C++, or C, or PHP,
 
-00:01:12.520 --> 00:01:17.720
- So just put semicolons at the end of every line, and you can just pretend you're writing C.
+00:01:07.280 --> 00:01:09.040
+ then you're not like, oh, when do
 
-00:01:17.720 --> 00:01:20.720
- And then when you get to C, you'll be like, oh, this is just like JavaScript, even though
+00:01:09.040 --> 00:01:10.500
+ I have to put the semicolon on?
 
-00:01:20.720 --> 00:01:25.800
- under the implementation, it's very different, very, very different.
+00:01:10.500 --> 00:01:11.480
+ Well, in those languages, you have
 
-00:01:25.800 --> 00:01:32.080
- So here is just an example of some really nasty JavaScript where x equals three plus
+00:01:11.480 --> 00:01:12.960
+ to put it on just about everywhere.
 
-00:01:32.080 --> 00:01:37.320
- five times four on two lines, and then this line's jammed up, and console.log.
+00:01:12.960 --> 00:01:15.440
+ So just put semicolons at the end of every line,
 
-00:01:37.320 --> 00:01:38.320
- That's okay.
+00:01:15.440 --> 00:01:17.480
+ and you can just pretend you're writing C.
 
-00:01:38.320 --> 00:01:40.320
+00:01:17.480 --> 00:01:19.440
+ And then when you get to C, you'll be like, oh, this
+
+00:01:19.440 --> 00:01:21.960
+ is just like JavaScript, even though under the--
+
+00:01:21.960 --> 00:01:24.600
+ on the implementation, it's very different, very, very
+
+00:01:24.600 --> 00:01:25.720
+ different.
+
+00:01:25.720 --> 00:01:29.280
+ So here is just an example of some really nasty JavaScript
+
+00:01:29.280 --> 00:01:34.040
+ where x equals 3 plus 5 times 4 on two lines,
+
+00:01:34.040 --> 00:01:37.240
+ and then this line's jammed up and console.log.
+
+00:01:37.240 --> 00:01:38.120
+ That's OK.
+
+00:01:38.120 --> 00:01:41.000
  It just doesn't matter.
 
-00:01:40.320 --> 00:01:45.600
- JavaScript and these C-style languages just don't care what the white space is.
+00:01:41.000 --> 00:01:43.120
+ JavaScript and these C-style languages
 
-00:01:45.600 --> 00:01:50.680
- They're looking for characters, blah, blah, blah, blah, blah, blah.
+00:01:43.120 --> 00:01:45.520
+ just don't care what the white space is.
 
-00:01:50.680 --> 00:01:54.400
- Semicolon, that must be the end of the line, blah, blah, blah, blah, blah, blah, semicolon.
+00:01:45.520 --> 00:01:48.360
+ They're looking for characters.
 
-00:01:54.400 --> 00:01:55.560
+00:01:48.360 --> 00:01:51.000
+ Blah, blah, blah, blah, blah, blah, semicolon.
+
+00:01:51.000 --> 00:01:52.040
+ That must be the end of the line.
+
+00:01:52.040 --> 00:01:54.280
+ Blah, blah, blah, blah, blah, blah, semicolon.
+
+00:01:54.280 --> 00:01:55.560
  That's the end of the line.
 
-00:01:55.560 --> 00:02:04.800
- So just, the new line is just like another space-like character ultimately in these languages.
+00:01:55.560 --> 00:01:59.280
+ So just the new line is just like another space-like character
 
-00:02:04.800 --> 00:02:07.520
+00:01:59.280 --> 00:02:04.520
+ ultimately in these languages.
+
+00:02:04.520 --> 00:02:07.440
  Variable names are kind of normal.
 
-00:02:07.520 --> 00:02:09.480
+00:02:07.440 --> 00:02:09.520
  They can start with letters.
 
-00:02:09.480 --> 00:02:15.560
- I mean, they're letters and numbers and underscore and dollar sign, but they're not supposed
+00:02:09.520 --> 00:02:13.560
+ I mean, they're letters and numbers and underscore
 
-00:02:15.560 --> 00:02:18.320
+00:02:13.560 --> 00:02:15.560
+ and dollar sign, but they're not supposed
+
+00:02:15.560 --> 00:02:18.120
  to start with a number, and they are case sensitive.
 
-00:02:18.320 --> 00:02:19.660
- Just please.
+00:02:18.120 --> 00:02:20.920
+ Just please-- we use case sometimes
 
-00:02:19.660 --> 00:02:24.280
- We use case sometimes as a signal because different kinds of variables, we like either
+00:02:20.920 --> 00:02:23.560
+ as a signal because different kinds of variables
 
-00:02:24.280 --> 00:02:28.040
- camel case them or all uppercase.
+00:02:23.560 --> 00:02:28.040
+ we like either camel case them or all uppercase.
 
-00:02:28.040 --> 00:02:39.040
- I use case to signal things, and it turns out that because JavaScript sort of saw what
+00:02:28.040 --> 00:02:32.000
+ I use case to signal things.
 
-00:02:39.040 --> 00:02:44.040
- PHP and Perl looked like, they allowed dollar signs at the beginning variables because PHP
+00:02:32.000 --> 00:02:38.880
+ And it turns out that because JavaScript sort of saw
 
-00:02:44.040 --> 00:02:47.400
- and Perl are the places where dollar signs are allowed.
+00:02:38.880 --> 00:02:41.280
+ what PHP and Perl looked like, they
 
-00:02:47.400 --> 00:02:53.480
- But when people started writing JavaScript, they wanted to be more like Java.
+00:02:41.280 --> 00:02:43.440
+ allowed dollar signs at the beginning variables
 
-00:02:53.480 --> 00:02:58.000
- Java doesn't allow dollar signs in variables, and so there was kind of like this unwritten
+00:02:43.440 --> 00:02:45.160
+ because PHP and Perl are the places
 
-00:02:58.000 --> 00:03:03.640
- rule, which we will come back to, of just don't start a variable with dollar sign, even
+00:02:45.160 --> 00:02:47.000
+ where dollar signs are allowed.
 
-00:03:03.640 --> 00:03:05.240
- though JavaScript allows it.
+00:02:47.000 --> 00:02:50.760
+ But when people started writing JavaScript,
 
-00:03:05.240 --> 00:03:06.240
+00:02:50.760 --> 00:02:53.360
+ they wanted to be more like Java.
+
+00:02:53.360 --> 00:02:55.440
+ Java doesn't allow dollar signs in variables.
+
+00:02:55.440 --> 00:02:58.840
+ And so there was kind of like this unwritten rule, which
+
+00:02:58.840 --> 00:03:03.000
+ we will come back to, just don't start a variable with dollar
+
+00:03:03.000 --> 00:03:05.080
+ sign, even though JavaScript allows it.
+
+00:03:05.080 --> 00:03:06.200
  Just kind of don't do it.
 
-00:03:06.240 --> 00:03:08.320
+00:03:06.200 --> 00:03:08.080
  It's not cool.
 
-00:03:08.320 --> 00:03:14.960
- String constants, single quotes and double quotes function the exact same way.
+00:03:08.080 --> 00:03:12.960
+ String constants, single quotes and double quotes
 
-00:03:14.960 --> 00:03:17.720
+00:03:12.960 --> 00:03:15.000
+ function the exact same way.
+
+00:03:15.000 --> 00:03:18.200
  I like that a lot.
 
-00:03:17.720 --> 00:03:24.240
- Stylistically, what I tend to do is I tend to use single quotes as much as I can in JavaScript
+00:03:18.200 --> 00:03:22.000
+ Stylistically, what I tend to do is I tend to use single quotes
 
-00:03:24.240 --> 00:03:30.120
- because ultimately double quotes are part of HTML, and when I'm mixing my HTML in JavaScript,
+00:03:22.000 --> 00:03:25.800
+ as much as I can in JavaScript because ultimately,
 
-00:03:30.120 --> 00:03:34.360
- I tend to want to look at it and say that single quote is a JavaScript quote versus
+00:03:25.800 --> 00:03:27.760
+ double quotes are part of HTML.
 
-00:03:34.360 --> 00:03:36.280
- a HTML quote.
+00:03:27.760 --> 00:03:30.160
+ And when I'm mixing my HTML in JavaScript,
 
-00:03:36.280 --> 00:03:40.640
- So if we take a look at those little code, you see like this text equal JavaScript, that's
+00:03:30.160 --> 00:03:31.760
+ I tend to want to look at it and say
 
-00:03:40.640 --> 00:03:43.120
- in double quotes, and it has to be.
+00:03:31.760 --> 00:03:35.480
+ that single quote is a JavaScript quote versus a HTML
 
-00:03:43.120 --> 00:03:48.120
- So the one line and two line, I could use single quotes or double quotes for that, but
+00:03:35.480 --> 00:03:36.040
+ quote.
 
-00:03:48.120 --> 00:03:53.000
- for me, I try to use single quotes as much as possible when I'm in JavaScript.
+00:03:36.040 --> 00:03:37.740
+ So if we take a look at this little code,
 
-00:03:53.000 --> 00:03:56.400
- So I can take a look at this code and know HTML, JavaScript.
+00:03:37.740 --> 00:03:40.320
+ you see like this text equal JavaScript,
 
-00:03:56.400 --> 00:04:01.600
- If I'm in double quotes, I'm generally dealing with HTML, and because JavaScript is sometimes
+00:03:40.320 --> 00:03:41.600
+ that's in double quotes.
 
-00:04:01.600 --> 00:04:07.560
- writing HTML, it's writing double quotes into the document because it has to, because that's
+00:03:41.600 --> 00:03:42.960
+ And it has to be.
 
-00:04:07.560 --> 00:04:09.840
- how HTML requires it.
+00:03:42.960 --> 00:03:46.400
+ So the one line and two line, I could use single quotes
 
-00:04:09.840 --> 00:04:13.240
- So I have a single quote string that has a double quote in the middle of it because I'm
+00:03:46.400 --> 00:03:47.760
+ or double quotes for that.
 
-00:04:13.240 --> 00:04:14.880
- writing HTML in JavaScript.
+00:03:47.760 --> 00:03:50.240
+ But for me, I try to use single quotes
 
-00:04:14.880 --> 00:04:16.800
+00:03:50.240 --> 00:03:52.800
+ as much as possible when I'm in JavaScript.
+
+00:03:52.800 --> 00:03:56.720
+ So I can take a look at this code and know HTML JavaScript.
+
+00:03:56.720 --> 00:03:59.600
+ If I'm in double quotes, I'm generally dealing with HTML.
+
+00:03:59.600 --> 00:04:03.280
+ And because JavaScript is sometimes writing HTML,
+
+00:04:03.280 --> 00:04:06.200
+ it's writing double quotes into the document
+
+00:04:06.200 --> 00:04:09.640
+ because it has to because that's how HTML requires it.
+
+00:04:09.640 --> 00:04:11.380
+ So I have a single quote string that
+
+00:04:11.380 --> 00:04:12.840
+ has a double quote in the middle of it
+
+00:04:12.840 --> 00:04:15.280
+ because I'm writing HTML in JavaScript.
+
+00:04:15.280 --> 00:04:16.760
  That'll make more sense to you later.
 
-00:04:16.800 --> 00:04:22.600
- So you can do either one, and you'll see examples where JavaScript just uses double quotes,
+00:04:16.760 --> 00:04:19.520
+ So you can do either one, and you'll
 
-00:04:22.600 --> 00:04:27.120
- but I prefer single quotes as much as I possibly can.
+00:04:19.520 --> 00:04:22.480
+ see examples where JavaScript just uses double quotes.
 
-00:04:27.120 --> 00:04:36.060
- Unumeric constants are pretty much like every other language, but, but, there is only one
+00:04:22.480 --> 00:04:27.040
+ But I prefer single quotes as much as I possibly can.
 
-00:04:36.060 --> 00:04:37.240
- number type.
+00:04:27.040 --> 00:04:29.000
+ Unumeric constants are pretty much
 
-00:04:37.240 --> 00:04:41.760
- In most languages, there's like an integer and a floating point.
+00:04:29.000 --> 00:04:37.120
+ like every other language, but there is only one number type.
 
-00:04:41.760 --> 00:04:43.600
+00:04:37.120 --> 00:04:39.800
+ In most languages, there's like an integer and a floating
+
+00:04:39.800 --> 00:04:41.400
+ point.
+
+00:04:41.400 --> 00:04:43.440
  Sometimes there's double and float.
 
-00:04:43.600 --> 00:04:46.880
+00:04:43.440 --> 00:04:46.840
  There's different kinds of long integers.
 
-00:04:46.880 --> 00:04:52.720
- In JavaScript, I think in a way they were smart, and they basically made one type, one
+00:04:46.840 --> 00:04:50.280
+ In JavaScript, I think in a way they were smart.
 
-00:04:52.720 --> 00:04:55.160
- numeric type called number.
+00:04:50.280 --> 00:04:53.680
+ And they basically made one type, one numeric type
 
-00:04:55.160 --> 00:05:00.960
- And so for example, if you take five thirds, that is a floating point number, 1.666, repeating
+00:04:53.680 --> 00:04:55.080
+ called number.
 
-00:05:00.960 --> 00:05:01.960
- forever.
+00:04:55.080 --> 00:04:57.560
+ And so for example, if you take 5/3,
 
-00:05:01.960 --> 00:05:07.500
- If you want to turn that into an integer, you just truncate it, like math.trunc.
+00:04:57.560 --> 00:05:01.920
+ that is a floating point number, 1.666 repeating forever.
 
-00:05:07.500 --> 00:05:10.080
+00:05:01.920 --> 00:05:04.520
+ If you want to turn that into an integer,
+
+00:05:04.520 --> 00:05:07.280
+ you just truncate it like math.trunc.
+
+00:05:07.280 --> 00:05:10.040
  Math is a library that's in JavaScript.
 
-00:05:10.080 --> 00:05:14.120
- Now when you get back in X, it's still a floating point number.
+00:05:10.040 --> 00:05:14.000
+ Now when you get back an x, it's still a floating point number.
 
-00:05:14.120 --> 00:05:18.740
- It just is shown as an integer because you've chopped off the decimal part.
+00:05:14.000 --> 00:05:15.720
+ It just is shown as an integer because you've
 
-00:05:18.740 --> 00:05:23.440
- And so you have to be careful because they're really floating point numbers.
+00:05:15.720 --> 00:05:18.720
+ chopped off the decimal part.
 
-00:05:23.440 --> 00:05:27.440
- Every one of them, some of them are shown as integers when you print them out.
+00:05:18.720 --> 00:05:21.720
+ And so you have to be careful because they're really
 
-00:05:27.440 --> 00:05:32.380
+00:05:21.720 --> 00:05:23.200
+ floating point numbers.
+
+00:05:23.200 --> 00:05:26.280
+ Every one of them, some of them are shown as integers
+
+00:05:26.280 --> 00:05:27.280
+ when you print them out.
+
+00:05:27.280 --> 00:05:32.280
  But in general, there are no integers in JavaScript.
 
-00:05:32.380 --> 00:05:40.080
- So there's a whole bunch of operators, plus, minus, multiply, divide, truncate, you know,
+00:05:32.280 --> 00:05:35.200
+ So there's a whole bunch of operators, plus, minus,
 
-00:05:40.080 --> 00:05:45.560
- those are pretty much like every other programming language.
+00:05:35.200 --> 00:05:39.440
+ multiply, divide, truncate.
 
-00:05:45.560 --> 00:05:49.240
+00:05:39.440 --> 00:05:42.080
+ Those are pretty much like every other programming language.
+
+00:05:42.080 --> 00:05:48.840
  More operators like the modulo operator.
 
-00:05:49.240 --> 00:05:53.940
- Modulo operator is the percent sign, and that is the remainder operator.
+00:05:48.840 --> 00:05:51.880
+ Modulo operator is the percent sign.
 
-00:05:53.940 --> 00:05:59.880
+00:05:51.880 --> 00:05:53.800
+ And that is the remainder operator.
+
+00:05:53.800 --> 00:05:59.680
  So 45 divided by 7 is 6 remainder 3.
 
-00:05:59.880 --> 00:06:09.680
- And that remainder, you know, 45, 7 is 6, 42, 3, remainder 3.
+00:05:59.680 --> 00:06:09.560
+ And that remainder, 45, 7 is 6, 42, 3, remainder 3.
 
-00:06:09.680 --> 00:06:12.680
+00:06:09.560 --> 00:06:11.600
  That 3 is what goes there.
 
-00:06:12.680 --> 00:06:18.560
- So division with truncation will give you the 6, but the remainder will give you the
+00:06:11.600 --> 00:06:16.960
+ So division with truncation will give you the 6,
 
-00:06:18.560 --> 00:06:19.640
- 3.
+00:06:16.960 --> 00:06:19.480
+ but the remainder will give you the 3.
 
-00:06:19.640 --> 00:06:22.600
+00:06:19.480 --> 00:06:22.440
  And it turns out that that modulo is really quite useful.
 
-00:06:22.600 --> 00:06:29.360
- Like if you want to do something every hundredth time through an iteration, you take the iteration
+00:06:22.440 --> 00:06:26.720
+ Like if you want to do something every 100th time
 
-00:06:29.360 --> 00:06:31.000
- counter like 1, 2, 3.
+00:06:26.720 --> 00:06:29.800
+ through an iteration, you take the iteration counter,
 
-00:06:31.000 --> 00:06:36.720
- And if you modulo 100 and the result is 0, remainder 0, it's an even multiple of 100.
+00:06:29.800 --> 00:06:30.960
+ like 1, 2, 3.
 
-00:06:36.720 --> 00:06:38.740
+00:06:30.960 --> 00:06:34.480
+ And if you modulo 100 and the result is 0, remainder 0,
+
+00:06:34.480 --> 00:06:36.400
+ it's an even multiple of 100.
+
+00:06:36.400 --> 00:06:38.680
  And that means every 100 times you can do something.
 
-00:06:38.740 --> 00:06:42.680
+00:06:38.680 --> 00:06:42.600
  So we like modulo.
 
-00:06:42.680 --> 00:06:45.800
+00:06:42.600 --> 00:06:46.040
  There are side effect operators.
 
-00:06:45.800 --> 00:06:47.600
+00:06:46.040 --> 00:06:47.520
  Oops, come back.
 
-00:06:47.600 --> 00:06:54.160
- There are side effect operators, k++ says retrieve k, have it be part of an expression
+00:06:47.520 --> 00:06:49.280
+ There are side effect operators.
 
-00:06:54.160 --> 00:06:57.200
- perhaps, and then add one to it, store it back down.
+00:06:49.280 --> 00:06:54.960
+ K++ says, retrieve K, have it be part of an expression perhaps,
 
-00:06:57.200 --> 00:07:02.680
- So if I say k++, it says 3, but then afterwards k has become 4.
+00:06:54.960 --> 00:06:57.080
+ then add 1 to it, store it back down.
 
-00:07:02.680 --> 00:07:07.280
- So after it retrieved the k and printed it, then it turned it into 4.
+00:06:57.080 --> 00:07:00.320
+ So if I say K++, it says 3.
 
-00:07:07.280 --> 00:07:11.420
- These are, there's a very few places that we actually use these, and then we use them
+00:07:00.320 --> 00:07:02.560
+ But then afterwards, K has become 4.
 
-00:07:11.420 --> 00:07:17.360
- all the time, but in general, you can hurt yourself if you write too much of this stuff.
+00:07:02.560 --> 00:07:04.960
+ So after it retrieved the K and printed it,
 
-00:07:17.360 --> 00:07:24.760
- There is a pre-increment, minus, minus k, and that says subtract 1 from k, and then print
+00:07:04.960 --> 00:07:08.200
+ then it turned it into 4.
 
-00:07:24.760 --> 00:07:27.880
- it out, which is 3, and then the 3 goes back into k.
+00:07:08.200 --> 00:07:10.880
+ There's very few places that we actually use these.
 
-00:07:27.880 --> 00:07:35.840
- Okay, then there are some side effect operators, j is equal to, j plus equals is the same as
+00:07:10.880 --> 00:07:12.280
+ And then we use them all the time.
 
-00:07:35.840 --> 00:07:41.040
- j equals j plus 5, and the same is true for all these things.
+00:07:12.280 --> 00:07:15.480
+ But in general, you can hurt yourself
 
-00:07:41.040 --> 00:07:47.880
- Actually, this is just, that's a typo there, slash equals.
+00:07:15.480 --> 00:07:17.240
+ if you write too much of this stuff.
 
-00:07:47.880 --> 00:07:53.440
- And so most people do not use these formats, I just show them to you in case you ever see
+00:07:17.240 --> 00:07:20.680
+ There is a pre-increment, minus, minus K.
 
-00:07:53.440 --> 00:07:54.440
- some code.
+00:07:20.680 --> 00:07:25.120
+ And that says, subtract 1 from K, and then print it out,
 
-00:07:54.440 --> 00:07:58.480
- I always prefer to write my increments and decrements and divisions out.
+00:07:25.120 --> 00:07:26.280
+ which is 3.
 
-00:07:58.480 --> 00:08:04.320
- It's not particularly faster that way, it's just, it's a syntax.
+00:07:26.280 --> 00:07:30.040
+ And then the 3 goes back into K.
 
-00:08:04.320 --> 00:08:10.120
- This comes from C, all of these fancy bits come from the C language, and JavaScript was
+00:07:30.040 --> 00:07:34.080
+ Then there are some side effect operators.
 
-00:08:10.120 --> 00:08:17.760
- just, and Java do the same thing, and so those two languages are represented here, and so
+00:07:34.080 --> 00:07:38.520
+ J plus equals is the same as J equals J plus 5.
 
-00:08:17.760 --> 00:08:20.440
- that's why these operators are here.
+00:07:38.520 --> 00:07:42.720
+ And the same is true for all these things.
 
-00:08:20.440 --> 00:08:26.720
- Comparison operators, all C-style languages, one of the trickiest things you gotta realize
+00:07:42.720 --> 00:07:47.560
+ Actually, that's a typo there, slash equals.
 
-00:08:26.720 --> 00:08:31.240
- is that the single equal sign is an assignment statement, and I like to think of that as
+00:07:47.560 --> 00:07:51.720
+ And so most people do not use these formats.
 
-00:08:31.240 --> 00:08:35.540
- changing, so the 10 is being stored into the j.
+00:07:51.720 --> 00:07:54.400
+ I just show them to you in case you ever see some code.
 
-00:08:35.540 --> 00:08:37.280
- To say, is j equal to 10?
+00:07:54.400 --> 00:07:57.040
+ I always prefer to write my increments and decrements
 
-00:08:37.280 --> 00:08:42.920
- This is like a question mark, I wish this was like, question equals, that would be like,
+00:07:57.040 --> 00:07:59.040
+ and divisions out.
 
-00:08:42.920 --> 00:08:45.480
- is it equal to, but that's not what they do.
+00:07:59.040 --> 00:08:02.440
+ It's not particularly faster that way.
 
-00:08:45.480 --> 00:08:49.320
- They decided double equals was the one that was the question mark, and that's asking the
+00:08:02.440 --> 00:08:04.200
+ It's just a syntax.
 
-00:08:49.320 --> 00:08:54.060
- question is j equal to 10, and it returns a true or a false when it's evaluated.
+00:08:04.200 --> 00:08:07.720
+ This comes from C. All of these fancy bits
 
-00:08:54.060 --> 00:09:00.840
- So j equals 10 is true, j not equals 17, that's exclamation equal, again I wish this was question
+00:08:07.720 --> 00:08:09.280
+ come from the C language.
 
-00:09:00.840 --> 00:09:05.320
- mark equal, but you know, that's going back to 1972, I had to catch 'em and say no, don't
+00:08:09.280 --> 00:08:13.480
+ And JavaScript was just-- and Java do the same thing.
 
-00:09:05.320 --> 00:09:08.480
- make double equals, make question equal.
+00:08:13.480 --> 00:08:17.360
+ And so those two languages are represented here.
 
-00:09:08.480 --> 00:09:13.600
+00:08:17.360 --> 00:08:19.880
+ And so that's why these operators are here.
+
+00:08:19.880 --> 00:08:22.080
+ Comparison operators.
+
+00:08:22.080 --> 00:08:25.840
+ All C-style languages, one of the trickiest things
+
+00:08:25.840 --> 00:08:28.680
+ you've got to realize is that the single equal sign
+
+00:08:28.680 --> 00:08:29.960
+ is an assignment statement.
+
+00:08:29.960 --> 00:08:32.120
+ And I like to think of that as changing.
+
+00:08:32.120 --> 00:08:35.880
+ So the 10 is being stored into the J. To say,
+
+00:08:35.880 --> 00:08:37.120
+ is J equal to 10?
+
+00:08:37.120 --> 00:08:38.960
+ This is like a question mark.
+
+00:08:38.960 --> 00:08:41.920
+ I wish this was like question equals.
+
+00:08:41.920 --> 00:08:43.920
+ That would be like, is it equal to?
+
+00:08:43.920 --> 00:08:45.360
+ But that's not what they do.
+
+00:08:45.360 --> 00:08:47.600
+ They decided double equals was the one that
+
+00:08:47.600 --> 00:08:48.480
+ was the question mark.
+
+00:08:48.480 --> 00:08:51.560
+ And that's asking the question, is J equal to 10?
+
+00:08:51.560 --> 00:08:53.960
+ And it returns a true or a false when it's evaluated.
+
+00:08:53.960 --> 00:08:55.720
+ So J equals 10 is true.
+
+00:08:55.720 --> 00:08:57.120
+ J not equal 17.
+
+00:08:57.120 --> 00:08:59.400
+ That's exclamation equal.
+
+00:08:59.400 --> 00:09:01.440
+ Again, I wish this was question mark equal.
+
+00:09:01.440 --> 00:09:04.880
+ But that's-- going back to 1972, I had to catch them and say,
+
+00:09:04.880 --> 00:09:06.080
+ no, don't make double equals.
+
+00:09:06.080 --> 00:09:08.200
+ Make question equal.
+
+00:09:08.200 --> 00:09:13.440
  Not equal, less than, greater than, less than or equal to.
 
-00:09:13.600 --> 00:09:21.320
- Now, there's a special operator, and you see this in Python in the is and is not operator.
+00:09:13.440 --> 00:09:16.600
+ Now, there's a special operator.
 
-00:09:21.320 --> 00:09:27.220
- So the double equals is a comparison with type conversion.
+00:09:16.600 --> 00:09:21.160
+ And you see this in Python in the is and is not operator.
 
-00:09:27.220 --> 00:09:33.760
- So it says, can the left side of the double equals, the j, be converted eventually to
+00:09:21.160 --> 00:09:24.920
+ So the double equals is a comparison
 
-00:09:33.760 --> 00:09:35.760
- become equal to zero.
+00:09:24.920 --> 00:09:27.040
+ with type conversion.
 
-00:09:35.760 --> 00:09:45.040
- And so in this particular case, j is false, so it is of type Boolean, but a false can
+00:09:27.040 --> 00:09:31.240
+ So it says, can the left side of the double equals, the J,
 
-00:09:45.040 --> 00:09:50.960
- be coerced into zero, so false is equal to zero with some conversion.
+00:09:31.240 --> 00:09:35.560
+ be converted eventually to become equal to 0?
 
-00:09:50.960 --> 00:09:59.920
- But then, then, if we want to compare two things in terms of both their type and their
+00:09:35.560 --> 00:09:40.000
+ And so in this particular case, J is false.
 
-00:09:59.920 --> 00:10:07.080
- value with no type, implicit type conversion, if I say is j triple equals zero, that says
+00:09:40.000 --> 00:09:43.600
+ So it is of type Boolean.
 
-00:10:07.080 --> 00:10:15.040
- is j the same type as zero, which is a number, and has the same value, well j is a Boolean,
+00:09:43.600 --> 00:09:46.560
+ But a false can be coerced into 0.
 
-00:10:15.040 --> 00:10:18.560
- because it's true or false, and so this turns out to be false.
+00:09:46.560 --> 00:09:50.760
+ So false is equal to 0 with some conversion.
 
-00:10:18.560 --> 00:10:24.920
- So j is not triple equals, right, and j is not triple equals true, and so you have triple
+00:09:50.760 --> 00:09:58.760
+ But then, if we want to compare two things in terms of both
 
-00:10:24.920 --> 00:10:32.720
- equals and not, it's like not equal equal, but I call it not triple equals.
+00:09:58.760 --> 00:10:02.920
+ their type and their value with no implicit type conversion,
 
-00:10:32.720 --> 00:10:38.240
- So there's a whole series of logical operators, much like that, that return for you true and
+00:10:02.920 --> 00:10:06.400
+ if I say, is J triple equals 0?
 
-00:10:38.240 --> 00:10:41.520
- falses, and so we've got our greater than.
+00:10:06.400 --> 00:10:12.160
+ That says, is J the same type as 0, which is a number,
 
-00:10:41.520 --> 00:10:47.600
- So we've got double ampersand, which is and, so for the whole operation, for the whole
+00:10:12.160 --> 00:10:13.560
+ and has the same value?
 
-00:10:47.600 --> 00:10:50.500
- expression to be true, both sides have to be true.
+00:10:13.560 --> 00:10:16.440
+ Well, J is a Boolean, because it's true or false.
 
-00:10:50.500 --> 00:10:56.360
- So is k greater than one and j less than 10, and in this case, the answer is yes.
+00:10:16.440 --> 00:10:18.400
+ And so this turns out to be false.
 
-00:10:56.360 --> 00:11:03.600
- Is k greater than 10, no, and is j greater than 10, so that's true, but this one's false.
+00:10:18.400 --> 00:10:22.320
+ So J is not triple equals.
 
-00:11:03.600 --> 00:11:11.480
- False and true become false, or is k greater than 10 or j greater than 10, no, neither
+00:10:22.320 --> 00:10:24.040
+ And J is not triple equals true.
 
-00:11:11.480 --> 00:11:14.820
- are true, so the result is false.
+00:10:24.040 --> 00:10:26.440
+ And so you have triple equals and not--
 
-00:11:14.820 --> 00:11:18.880
- And then there is a unary not operator that you can put in front.
+00:10:26.440 --> 00:10:29.440
+ it's like not equal equal, but I call it not triple equals.
 
-00:11:18.880 --> 00:11:22.920
- That's like saying k greater than 10, well, that's false, but then if I apply a not to
+00:10:29.440 --> 00:10:34.760
+ So there's a whole series of logical operators,
 
-00:11:22.920 --> 00:11:26.560
- it, it becomes true.
+00:10:34.760 --> 00:10:39.480
+ much like that, that return for you true and falses.
 
-00:11:26.560 --> 00:11:29.800
+00:10:39.480 --> 00:10:41.360
+ And so we've got our greater than.
+
+00:10:41.360 --> 00:10:45.600
+ So we've got double ampersand, which is and.
+
+00:10:45.600 --> 00:10:48.160
+ So for the whole operation, for the whole expression
+
+00:10:48.160 --> 00:10:50.520
+ to be true, both sides have to be true.
+
+00:10:50.520 --> 00:10:53.720
+ So is K greater than 1 and J less than 10?
+
+00:10:53.720 --> 00:10:56.160
+ And in this case, the answer is yes.
+
+00:10:56.160 --> 00:10:58.240
+ Is K greater than 10?
+
+00:10:58.240 --> 00:10:59.080
+ No.
+
+00:10:59.080 --> 00:11:00.880
+ And is J greater than 10?
+
+00:11:00.880 --> 00:11:03.240
+ So that's true, but this one's false.
+
+00:11:03.240 --> 00:11:06.560
+ False and true become false.
+
+00:11:06.560 --> 00:11:10.640
+ Or is K greater than 10 or J greater than 10?
+
+00:11:10.640 --> 00:11:14.640
+ No, neither are true, so the result is false.
+
+00:11:14.640 --> 00:11:17.240
+ And then there is a unary not operator
+
+00:11:17.240 --> 00:11:18.680
+ that you can put in front.
+
+00:11:18.680 --> 00:11:21.560
+ That's like saying K greater than 10, well, that's false.
+
+00:11:21.560 --> 00:11:26.200
+ But then if I apply a not to it, it becomes true.
+
+00:11:26.200 --> 00:11:29.600
  String concatenation is a little different than Python.
 
-00:11:29.800 --> 00:11:35.720
- It uses the plus operator, but it will convert things to string, right?
+00:11:29.600 --> 00:11:34.560
+ It uses the plus operator, but it will convert things
 
-00:11:35.720 --> 00:11:42.000
- So x equals 12 is a number, and I'm adding a number to a string, and it's like, meh,
+00:11:34.560 --> 00:11:35.640
+ to string, right?
 
-00:11:42.000 --> 00:11:46.080
- I'll convert that into a string, and so that 12 becomes a string, and you end up with a
+00:11:35.640 --> 00:11:40.280
+ So X equals 12 is a number, and I'm adding a number
 
-00:11:46.080 --> 00:11:49.960
- string that's hello, 12 people with one, two characters.
+00:11:40.280 --> 00:11:42.760
+ to a string, and it's like, meh, I'll convert that
 
-00:11:49.960 --> 00:11:53.640
- The number 12 is long gone at that point, so there is a conversion.
+00:11:42.760 --> 00:11:45.480
+ into a string, and so that 12 becomes a string,
 
-00:11:53.640 --> 00:11:59.080
- Normally, if this were in Python, you'd say stir parenthesis to force it to a string.
+00:11:45.480 --> 00:11:47.680
+ and you end up with a string that's hello 12 people
 
-00:11:59.080 --> 00:12:02.360
+00:11:47.680 --> 00:11:49.920
+ with one, two characters.
+
+00:11:49.920 --> 00:11:52.080
+ The number 12 is long gone at that point.
+
+00:11:52.080 --> 00:11:53.760
+ So there is a conversion.
+
+00:11:53.760 --> 00:11:55.440
+ Normally, if this were in Python,
+
+00:11:55.440 --> 00:11:59.000
+ you'd say str parentheses to force it to a string.
+
+00:11:59.000 --> 00:12:02.280
  The plus is smart enough to automatically convert it.
 
-00:12:02.360 --> 00:12:08.880
- You can debate which of those things you prefer, and I can come down on either side of it.
+00:12:02.280 --> 00:12:04.720
+ You can debate which of those things you prefer,
 
-00:12:08.880 --> 00:12:12.480
- There is something to respect about Python that basically says, if you want it to be
+00:12:04.720 --> 00:12:08.720
+ and I can come down on either side of it.
 
-00:12:12.480 --> 00:12:15.000
- a string, you as the programmer should say it.
+00:12:08.720 --> 00:12:10.880
+ There is something to respect about Python
 
-00:12:15.000 --> 00:12:20.000
- Languages that are sort of loosey-goosey that do things to make it most convenient like
+00:12:10.880 --> 00:12:13.000
+ that basically says if you want it to be a string,
 
-00:12:20.000 --> 00:12:27.280
- PHP and JavaScript sometimes can get you into trouble, and this is where you can always
+00:12:13.000 --> 00:12:15.200
+ you as the programmer should say it.
 
-00:12:27.280 --> 00:12:33.640
- tell that NaN, if you see NaN in a user interface anywhere in the web, you're like, oh, somebody
+00:12:15.200 --> 00:12:17.680
+ Languages that are sort of loosey-goosey
 
-00:12:33.640 --> 00:12:39.740
- did a JavaScript calculation just like this, and something went wrong, because that's what
+00:12:17.680 --> 00:12:19.840
+ that do things to make it most convenient,
 
-00:12:39.740 --> 00:12:44.800
- happens when additions go wrong.
+00:12:19.840 --> 00:12:22.760
+ like PHP and JavaScript, sometimes can get you
 
-00:12:44.800 --> 00:12:47.880
+00:12:22.760 --> 00:12:27.760
+ into a trouble, and this is where you can always tell
+
+00:12:29.080 --> 00:12:29.920
+ NaN.
+
+00:12:29.920 --> 00:12:32.760
+ If you see NaN in a user interface anywhere in the web,
+
+00:12:32.760 --> 00:12:35.400
+ you're like, oh, somebody did a JavaScript calculation
+
+00:12:35.400 --> 00:12:39.000
+ just like this, and something went wrong,
+
+00:12:39.000 --> 00:12:44.000
+ 'cause that's what happens when additions go wrong.
+
+00:12:44.000 --> 00:12:46.720
  We'll see that in a second.
 
-00:12:47.880 --> 00:12:53.440
- Variable typing is a little confusing because we're using plus.
+00:12:46.720 --> 00:12:50.960
+ So variable typing is a little confusing
 
-00:12:53.440 --> 00:12:57.080
- Sometimes we're using it for concatenation, sometimes we're using it for addition.
+00:12:50.960 --> 00:12:53.120
+ because we're using plus.
 
-00:12:57.080 --> 00:13:01.240
- In this particular case, where we take the string 1, 2, 3 and add 10 to it, it sees that
+00:12:53.120 --> 00:12:54.760
+ Sometimes we're using it for concatenation.
 
-00:13:01.240 --> 00:13:04.400
- as a concatenation and gives us back a string.
+00:12:54.760 --> 00:12:56.920
+ Sometimes we're using it for addition.
 
-00:13:04.400 --> 00:13:11.280
- If we say the string 1, 2, 3 times 1, then it converts that to an integer times 1, and
+00:12:56.920 --> 00:12:59.060
+ So in this particular case where we take the string
 
-00:13:11.280 --> 00:13:16.080
- that's 10, so it becomes 133, but that is a number.
+00:12:59.060 --> 00:13:00.760
+ one, two, three, and add 10 to it,
 
-00:13:16.080 --> 00:13:19.120
- What happens if we take something that's not even a number?
+00:13:00.760 --> 00:13:04.280
+ it sees that as a concatenation and gives us back a string.
 
-00:13:19.120 --> 00:13:25.800
- Well, multiply it by 1, that is not a number, and then we add 10 to it, and it's still not
+00:13:04.280 --> 00:13:07.400
+ But if we say the string one, two, three times one,
 
-00:13:25.800 --> 00:13:32.200
- a number, and this is not a number, and that's why you see NaN on all these webpages like
+00:13:07.400 --> 00:13:11.160
+ then it converts that to an integer times one,
 
-00:13:32.200 --> 00:13:38.080
- percent complete, NaN, and that's because it was adding 1 to something like a fault,
+00:13:11.160 --> 00:13:12.160
+ and that's 10.
 
-00:13:38.080 --> 00:13:41.440
- you know, that wasn't a number and couldn't be conversed into a number, like a string
+00:13:12.160 --> 00:13:15.880
+ So it becomes 133, but that is a number.
 
-00:13:41.440 --> 00:13:44.840
- or something.
+00:13:15.880 --> 00:13:17.320
+ But what happens if we take something
 
-00:13:44.840 --> 00:13:50.040
- And once you get something that's a NaN, it's very, very, very sticky, but it doesn't blow
+00:13:17.320 --> 00:13:18.560
+ that's not even a number?
 
-00:13:50.040 --> 00:13:55.600
- up, it just keeps running and shows you NaN in your user interface.
+00:13:18.560 --> 00:13:21.560
+ Well, multiply it by one.
 
-00:13:55.600 --> 00:14:02.380
- So if a string can't be converted because of mathematical operation, you get a NaN.
+00:13:21.560 --> 00:13:24.120
+ That is not a number.
 
-00:14:02.380 --> 00:14:07.880
- There is a function called isNaN that gives you a true false, like is there a NaN, NaN
+00:13:24.120 --> 00:13:26.440
+ And then we add 10 to it, and it's still not a number,
 
-00:14:07.880 --> 00:14:13.720
- is a value, it's not the lack of a value, something like null or, null would be a lack
+00:13:26.440 --> 00:13:27.960
+ and this is not a number.
 
-00:14:13.720 --> 00:14:17.400
- of a value, or empty in Python would be the lack of a value.
+00:13:27.960 --> 00:13:31.480
+ And that's why you see nan on all these webpages,
 
-00:14:17.400 --> 00:14:23.520
- Is NaN is an actual value, it's just like a value that's the indication within a number,
+00:13:31.480 --> 00:13:35.000
+ like percent complete, nan.
 
-00:14:23.520 --> 00:14:25.520
- that is, it's a number.
+00:13:35.000 --> 00:13:36.880
+ And that's because it was adding one
 
-00:14:25.520 --> 00:14:30.040
- If you divide by 2, you get another value that's not really a value, it's a special
+00:13:36.880 --> 00:13:39.520
+ to something like a fault that wasn't a number
 
-00:14:30.040 --> 00:14:34.200
- value called infinity, and if you like add 1 to infinity, you still get infinity, if
+00:13:39.520 --> 00:13:40.920
+ and couldn't be conversed into a number,
 
-00:14:34.200 --> 00:14:38.400
- you subtract 1 from infinity, you still get infinity, there's no amount of 1s that you
+00:13:40.920 --> 00:13:42.220
+ like a string or something.
 
-00:14:38.400 --> 00:14:44.200
- can subtract from infinity to get anything less than infinity, because it's like infinity,
+00:13:42.220 --> 00:13:46.320
+ And once you get something that's a nan,
 
-00:14:44.200 --> 00:14:47.560
- and there's a function called isInfinity that lets you know if the variable you're
+00:13:46.320 --> 00:13:49.240
+ it's very, very, very sticky.
 
-00:14:47.560 --> 00:14:52.360
- working with is infinity.
+00:13:49.240 --> 00:13:50.640
+ But it doesn't blow up.
 
-00:14:52.360 --> 00:15:00.160
- So this seems kind of silly, but it turns out that in some ways JavaScript has one of
+00:13:50.640 --> 00:13:52.800
+ It just keeps running and shows you nan
 
-00:15:00.160 --> 00:15:09.080
- the coolest number classes, because it uses this internal number format called IEEE450,
+00:13:52.800 --> 00:13:54.120
+ in your user interface.
 
-00:15:09.080 --> 00:15:16.280
- 455 or something, and it's actually a scientifically thought out really good way to do number calculations,
+00:13:55.520 --> 00:13:58.240
+ So if a string can't be converted
 
-00:15:16.280 --> 00:15:20.840
- and so in some ways it does a better job of flowing point numbers than some other programming
+00:13:58.240 --> 00:14:02.280
+ because of mathematical operation, you get a nan.
 
-00:15:20.840 --> 00:15:26.160
- languages that just kind of do unpredictable things at things like infinity and dividing
+00:14:02.280 --> 00:14:04.600
+ There is a function called isnan
 
-00:15:26.160 --> 00:15:29.900
- by 0 or multiplying by an undefined or something.
+00:14:04.600 --> 00:14:07.720
+ that gives you a true/false, like is there a nan?
 
-00:15:29.900 --> 00:15:37.220
- So you've got to respect JavaScript because they stuck to their guns on numeric calculations
+00:14:07.720 --> 00:14:08.960
+ Nan is a value.
 
-00:15:37.220 --> 00:15:42.000
- and they're pure, they're the way computer science researchers suggest this is the way
+00:14:08.960 --> 00:14:10.760
+ It's not the lack of a value.
 
-00:15:42.000 --> 00:15:44.120
- you do it and that's exactly the way you do it.
+00:14:10.760 --> 00:14:14.360
+ Something like null would be a lack of a value,
 
-00:15:44.120 --> 00:15:49.360
- It seems a little weird, I make a little fun of it, but it's actually pretty cool.
+00:14:14.360 --> 00:14:17.320
+ or empty in Python would be the lack of a value.
 
-00:15:49.360 --> 00:15:52.440
- If you're in an untyped language and you're passed in like a variable and you want to
+00:14:17.320 --> 00:14:19.000
+ Isnan is an actual value.
 
-00:15:52.440 --> 00:15:58.360
- know is this a string or is this an array or is this an object, there is a unary function
+00:14:19.000 --> 00:14:21.720
+ It's just like a value that's the indication
 
-00:15:58.360 --> 00:16:04.520
- which is just takes one parameter type of, that's P-I-P-E-O-F, that's the function,
+00:14:21.720 --> 00:14:25.480
+ within a number that is, it's a number.
 
-00:16:04.520 --> 00:16:10.440
- that's like multiplication or minus sign, type of X, and that returns a string.
+00:14:25.480 --> 00:14:28.120
+ If you divide by two, you get another value
 
-00:16:10.440 --> 00:16:12.980
+00:14:28.120 --> 00:14:29.400
+ that's not really a value.
+
+00:14:29.400 --> 00:14:31.720
+ It's a special value called infinity.
+
+00:14:31.720 --> 00:14:34.120
+ And if you like add one to infinity, you still get infinity.
+
+00:14:34.120 --> 00:14:36.720
+ If you subtract one from infinity, you still get infinity.
+
+00:14:36.720 --> 00:14:39.200
+ There's no amount of ones that you can subtract
+
+00:14:39.200 --> 00:14:41.200
+ from infinity to get anything less than infinity
+
+00:14:41.200 --> 00:14:44.080
+ 'cause it's like infinity.
+
+00:14:44.080 --> 00:14:45.760
+ And there's a function called isinfinity
+
+00:14:45.760 --> 00:14:47.440
+ that lets you know if the variable
+
+00:14:47.440 --> 00:14:49.460
+ you're working with is infinity.
+
+00:14:52.240 --> 00:14:56.640
+ So this seems kind of silly,
+
+00:14:56.640 --> 00:14:58.320
+ but it turns out that in some ways,
+
+00:14:58.320 --> 00:15:01.640
+ JavaScript has one of the coolest number classes
+
+00:15:01.640 --> 00:15:04.920
+ because it uses this internal number format
+
+00:15:04.920 --> 00:15:09.920
+ called IEEE 450 something, 455 or something.
+
+00:15:09.920 --> 00:15:13.680
+ And it's actually a scientifically thought out,
+
+00:15:13.680 --> 00:15:15.960
+ really good way to do number calculations.
+
+00:15:15.960 --> 00:15:18.760
+ And so in some ways, it does a better job
+
+00:15:18.760 --> 00:15:20.880
+ of flowing point numbers than some other programming
+
+00:15:20.880 --> 00:15:24.120
+ languages that just kinda do unpredictable things
+
+00:15:24.120 --> 00:15:26.840
+ at things like infinity and dividing by zero
+
+00:15:26.840 --> 00:15:29.760
+ or multiplying by an undefined or something.
+
+00:15:29.760 --> 00:15:32.280
+ So you gotta respect JavaScript
+
+00:15:32.280 --> 00:15:37.200
+ because they stuck to their guns on numeric calculations
+
+00:15:37.200 --> 00:15:38.200
+ and they're pure.
+
+00:15:38.200 --> 00:15:41.560
+ They're the way computer science researchers suggest
+
+00:15:41.560 --> 00:15:42.520
+ this is the way you do it
+
+00:15:42.520 --> 00:15:44.240
+ and that's exactly the way you do it.
+
+00:15:44.240 --> 00:15:46.200
+ Seems a little weird, I make a little fun of it,
+
+00:15:46.200 --> 00:15:47.760
+ but it's actually pretty cool.
+
+00:15:49.160 --> 00:15:51.360
+ If you're in an untyped language and you're passed in
+
+00:15:51.360 --> 00:15:53.400
+ like a variable and you wanna know is this a string
+
+00:15:53.400 --> 00:15:55.480
+ or is this an array or is this an object,
+
+00:15:55.480 --> 00:15:58.360
+ there is a unary function,
+
+00:15:58.360 --> 00:16:01.360
+ which is just takes one parameter type of,
+
+00:16:01.360 --> 00:16:04.360
+ that's P-I-P-E-O-F, that's the function,
+
+00:16:04.360 --> 00:16:07.040
+ that's like multiplication or minus sign,
+
+00:16:07.040 --> 00:16:10.320
+ type of X and that returns a string.
+
+00:16:10.320 --> 00:16:12.840
  So type of a number is the string number.
 
-00:16:12.980 --> 00:16:19.680
- If we say what is Y, the string double Y, it's a string, and you can ask for a variable
+00:16:12.840 --> 00:16:16.960
+ If we say what is Y, well, the string double Y,
 
-00:16:19.680 --> 00:16:24.720
- that doesn't exist yet and that will be undefined, and so you can say is this variable defined
+00:16:16.960 --> 00:16:19.600
+ it's a string and you can ask for a variable
 
-00:16:24.720 --> 00:16:25.720
- yet?
+00:16:19.600 --> 00:16:23.120
+ that doesn't exist yet and that will be undefined.
 
-00:16:25.720 --> 00:16:26.720
+00:16:23.120 --> 00:16:25.000
+ And so you can say is this variable defined yet?
+
+00:16:25.000 --> 00:16:26.160
  Well, it's not defined yet.
 
-00:16:26.720 --> 00:16:30.040
- This is where you're writing code and maybe you pass the parameter and you don't know
+00:16:26.160 --> 00:16:28.240
+ So this is where you're writing code
 
-00:16:30.040 --> 00:16:33.880
- what it is and you say is it a string, is it an array, or whatever, so it's good to
+00:16:28.240 --> 00:16:30.800
+ and maybe pass the parameter and you don't know what it is
 
-00:16:33.880 --> 00:16:38.800
- be able to in an untyped environment to take a variable that you might have been given
+00:16:30.800 --> 00:16:33.240
+ and you say is it a string, is it an array or whatever.
 
-00:16:38.800 --> 00:16:43.240
+00:16:33.240 --> 00:16:36.880
+ So it's good to be able in an untyped environment
+
+00:16:36.880 --> 00:16:38.840
+ to take a variable that you might have been given
+
+00:16:38.840 --> 00:16:40.720
  by somebody else and check its type.
 
-00:16:43.240 --> 00:16:45.960
- So up next we're going to talk about functions and arrays.
+00:16:40.720 --> 00:16:46.440
+ So up next, we're gonna talk about functions and arrays.
+
+00:16:47.160 --> 00:16:49.740
+ (upbeat music)
 

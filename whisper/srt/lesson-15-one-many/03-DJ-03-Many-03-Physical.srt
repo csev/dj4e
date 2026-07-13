@@ -1,90 +1,90 @@
 1
-00:00:00,000 --> 00:00:05,320
+00:00:00,000 --> 00:00:05,300
  So now what we're going to do is we're going to talk about how we can represent links in a database.
 
 2
-00:00:05,320 --> 00:00:09,720
- And so up till now I've just been drawing arrows and just assuming that you know how to do them.
+00:00:05,300 --> 00:00:09,680
+ And so up to now I've just been drawing arrows and just assuming that you know how to do them.
 
 3
-00:00:09,720 --> 00:00:10,880
+00:00:09,680 --> 00:00:10,840
  And so here's some arrows, right?
 
 4
-00:00:10,880 --> 00:00:16,000
- We got some book instance rows that can somehow magically connect to some book rows,
+00:00:10,840 --> 00:00:15,960
+ We've got some book instance rows that can somehow magically connect to some book rows.
 
 5
-00:00:16,000 --> 00:00:20,720
- and some book rows that can magically connect to a language row.
+00:00:15,960 --> 00:00:20,680
+ And some book rows that can magically connect to a language row.
 
 6
-00:00:20,720 --> 00:00:23,000
+00:00:20,680 --> 00:00:22,960
  And so there's a way that we do this.
 
 7
-00:00:23,000 --> 00:00:28,440
- And we put what we call a key column in every one of our tables.
+00:00:22,960 --> 00:00:29,200
+ And we put what we call a key column in every one of our tables, key column.
 
 8
-00:00:28,440 --> 00:00:34,720
- Key column, we call this the primary key, and we often call the name of the column the ID.
+00:00:29,200 --> 00:00:34,680
+ We call this the primary key and we often call the name of the column the ID.
 
 9
-00:00:34,720 --> 00:00:38,160
- There's a way in the database to make it what's called auto-increment and
+00:00:34,680 --> 00:00:38,120
+ There is a way in the database to make it what's called auto increment and
 
 10
-00:00:38,160 --> 00:00:41,240
+00:00:38,120 --> 00:00:41,200
  primary key and index it so it's really fast.
 
 11
-00:00:41,240 --> 00:00:43,960
+00:00:41,200 --> 00:00:43,960
  And so that then becomes the handle.
 
 12
-00:00:43,960 --> 00:00:48,400
+00:00:43,960 --> 00:00:48,380
  The primary keys are like the destination endpoint of the arrows, right?
 
 13
-00:00:48,400 --> 00:00:54,680
+00:00:48,380 --> 00:00:54,640
  So that's how we say English becomes language number one.
 
 14
-00:00:54,680 --> 00:00:59,320
- And Wisdom of Crowds is book number one, and Introduction to Networking is book
+00:00:54,640 --> 00:00:57,360
+ And Wisdom of Crowds is book number one.
 
 15
-00:00:59,320 --> 00:01:00,560
- number two.
+00:00:57,360 --> 00:01:00,520
+ And Introduction to Networking is book number two.
 
 16
-00:01:00,560 --> 00:01:05,520
+00:01:00,520 --> 00:01:05,480
  And so the ID is something that we then can use throughout the rest of the system.
 
 17
-00:01:05,520 --> 00:01:09,680
+00:01:05,480 --> 00:01:09,640
  Integer replication is not a problem, okay?
 
 18
-00:01:09,680 --> 00:01:14,840
+00:01:09,640 --> 00:01:14,800
  And so then what we do is we put columns in that we call foreign keys, right?
 
 19
-00:01:14,840 --> 00:01:18,480
+00:01:14,800 --> 00:01:18,440
  And so those foreign keys are the starting point of the arrows, right?
 
 20
-00:01:18,480 --> 00:01:20,000
+00:01:18,440 --> 00:01:19,960
  So book_id.
 
 21
-00:01:20,000 --> 00:01:25,320
- Now by convention, we name these by the name of the table followed by an underscore
+00:01:19,960 --> 00:01:24,200
+ Now by convention, we name these by the name of the table,
 
 22
-00:01:25,320 --> 00:01:27,040
- followed by the word ID.
+00:01:24,200 --> 00:01:27,040
+ followed by an underscore, followed by the word ID.
 
 23
 00:01:27,040 --> 00:01:31,600
@@ -111,70 +111,62 @@
  Now in this example, I've just got one foreign key per table, but
 
 29
-00:01:47,680 --> 00:01:49,520
+00:01:47,680 --> 00:01:49,480
  you can have more than one foreign key per table.
 
 30
-00:01:49,520 --> 00:01:53,040
+00:01:49,480 --> 00:01:53,000
  There could be another column here that points off to another table.
 
 31
-00:01:53,040 --> 00:01:53,760
- But that's it.
+00:01:53,000 --> 00:01:54,680
+ But that's it, that's how we do it.
 
 32
-00:01:53,760 --> 00:01:54,680
- That's how we do it.
+00:01:54,680 --> 00:01:57,560
+ We just simply add these integer numbers and
 
 33
-00:01:54,680 --> 00:01:59,840
- We just simply add these integer numbers and then we kind of maintain them and
+00:01:57,560 --> 00:02:00,960
+ then we kind of maintain them and put them all together.
 
 34
-00:01:59,840 --> 00:02:01,000
- put them all together.
-
-35
-00:02:01,000 --> 00:02:08,200
+00:02:00,960 --> 00:02:08,200
  So like I said, the primary key is that column that we add and
 
-36
+35
 00:02:08,200 --> 00:02:10,320
  that is our handle for the rows.
 
-37
+36
 00:02:10,320 --> 00:02:13,320
  And then the foreign key is the column that we add to a table so
 
-38
+37
 00:02:13,320 --> 00:02:14,840
  that we can point to something.
 
-39
-00:02:16,680 --> 00:02:20,040
+38
+00:02:14,840 --> 00:02:20,000
  So basically once we create these foreign key columns and
 
-40
-00:02:20,040 --> 00:02:24,960
+39
+00:02:20,000 --> 00:02:24,960
  the primary key columns, we start being able to build using these links.
 
+40
+00:02:24,960 --> 00:02:29,400
+ We can build the links that replicate the data model that ends up being our picture.
+
 41
-00:02:24,960 --> 00:02:27,800
- We can build the links that replicate the data model
+00:02:29,400 --> 00:02:31,800
+ Okay, so that's how they work.
 
 42
-00:02:27,800 --> 00:02:30,000
- that ends up being our picture, okay?
-
-43
-00:02:30,000 --> 00:02:31,800
- And so that's how they work.
-
-44
-00:02:31,800 --> 00:02:36,040
+00:02:31,800 --> 00:02:36,000
  Up next, we're gonna talk about how we represent these links in Django.
 
-45
-00:02:36,040 --> 00:02:46,040
+43
+00:02:36,000 --> 00:02:46,000
  [MUSIC]
 

@@ -1,368 +1,1156 @@
 1
-00:00:00,000 --> 00:00:07,000
- So now I want to show you a little bit about how we build classes in JavaScript, how we build our own classes and how classes work internally.
+00:00:00,000 --> 00:00:02,440
+ So now I wanna show you a little bit about
 
 2
-00:00:07,000 --> 00:00:17,000
- You may have noticed that the coffee cup that I'm using during this JavaScript lecture has code on it and the code is somewhat JavaScript-y.
+00:00:02,440 --> 00:00:04,800
+ how we build classes in JavaScript,
 
 3
-00:00:17,000 --> 00:00:25,000
- I think it's JavaScript. It's C, Java, I think this would be C or JavaScript or Java.
+00:00:04,800 --> 00:00:06,100
+ so how we build our own classes
 
 4
-00:00:25,000 --> 00:00:31,000
- Because again, these are all related languages. So let's take a look at a sample class here.
+00:00:06,100 --> 00:00:07,840
+ and how classes work internally.
 
 5
-00:00:31,000 --> 00:00:37,000
- And so the first thing to notice is that it uses function as the keyword to define a class.
+00:00:07,840 --> 00:00:09,680
+ You may have noticed that the coffee cup
 
 6
-00:00:37,000 --> 00:00:48,000
- Now, you might see what's called ES6 classes and it's like a syntactic sugar that layers on top of this that makes the syntax look more like the other languages.
+00:00:09,680 --> 00:00:12,560
+ that I'm using during this JavaScript lecture
 
 7
-00:00:48,000 --> 00:00:57,000
- And so this is kind of like vanilla, the underlying actually how they work. And so I guess I'm glad that they've made syntax that looks like everything else.
+00:00:12,560 --> 00:00:17,560
+ has code on it, and the code is somewhat JavaScript-y.
 
 8
-00:00:57,000 --> 00:01:07,000
- But it really belies the elegance of the original way it works. The syntax doesn't change how it works. This is how it really works.
+00:00:17,560 --> 00:00:19,840
+ I think it's JavaScript.
 
 9
-00:01:07,000 --> 00:01:14,000
- And the thing that's super excellent about this is that it uses the function keyword. There's not a different keyword.
+00:00:19,840 --> 00:00:22,640
+ It's C, Java, I think this would be C,
 
 10
-00:01:14,000 --> 00:01:20,000
- Every other programming language, pretty much when they go into an object, they use a different than they're in their procedural.
+00:00:22,640 --> 00:00:25,720
+ or JavaScript, or Java, 'cause again,
 
 11
-00:01:20,000 --> 00:01:30,000
- So a class is a specialized function that as a side effect of its execution returns code and data.
+00:00:25,720 --> 00:00:27,920
+ these are all related languages.
 
 12
-00:01:30,000 --> 00:01:35,000
- Now, we'll see that we invoke it a little bit differently. So let's start and take a look at what we got here.
+00:00:27,920 --> 00:00:30,840
+ So let's take a look at a sample class here.
 
 13
-00:01:35,000 --> 00:01:42,000
- We got this function PartyAnimal, right? So PartyAnimal is the name of the class, but it's code.
+00:00:30,840 --> 00:00:33,320
+ And so the first thing to notice
 
 14
-00:01:42,000 --> 00:01:48,000
- And again, we have a curly brace to start it. And the thing that's different is there's this notion of this.
+00:00:33,320 --> 00:00:37,160
+ is that it uses function as the keyword to define a class.
 
 15
-00:01:48,000 --> 00:01:55,000
- So we make sort of an empty vessel that is going to be the object that we're going to use this class to populate.
+00:00:37,160 --> 00:00:40,800
+ Now, you might see what's called ES6 classes,
 
 16
-00:01:55,000 --> 00:01:59,000
- And then by running the code, we're actually populating that empty vessel.
+00:00:40,800 --> 00:00:44,520
+ and it's a like syntactic sugar that layers on top of this
 
 17
-00:01:59,000 --> 00:02:09,000
- So this dot x is going to create a member variable called x inside this, which is the empty vessel object that we're creating.
+00:00:44,520 --> 00:00:48,360
+ that makes the syntax look more like the other languages.
 
 18
-00:02:09,000 --> 00:02:14,000
- And then we're going to fill up. OK. And then we have this dot party.
+00:00:48,360 --> 00:00:50,000
+ And so this is kind of like vanilla,
 
 19
-00:02:14,000 --> 00:02:21,000
- This dot party is also a piece of data in the this object that we're about to create.
+00:00:50,000 --> 00:00:52,200
+ the underlying actually how they work.
 
 20
-00:02:21,000 --> 00:02:27,000
- And you'll notice that we're saying equals and then function. But this one is a little different.
+00:00:52,200 --> 00:00:55,800
+ And so I guess I'm glad that they've made syntax
 
 21
-00:02:27,000 --> 00:02:34,000
- You notice the function is unnamed. It is what we call an anonymous function because it doesn't have a name.
+00:00:55,800 --> 00:00:57,680
+ that looks like everything else,
 
 22
-00:02:34,000 --> 00:02:44,000
- So this the functions name is actually called party, but it just hasn't called party because we're storing the functions code in the instance variable called party.
+00:00:57,680 --> 00:01:00,360
+ but it really belies the elegance
 
 23
-00:02:44,000 --> 00:02:51,000
- But that's how we're going to call it. So in the party variable, we have the code that is those two lines.
+00:01:00,360 --> 00:01:02,200
+ of the original way it works.
 
 24
-00:02:51,000 --> 00:02:59,000
- And then within that method, now I'd call party a method to use the terminology within the party method.
+00:01:02,200 --> 00:01:04,760
+ The syntax doesn't change how it works.
 
 25
-00:02:59,000 --> 00:03:13,000
- This is the instance that we're talking about in Python. We use self for this right in different languages have this concept of the current object that we're part of this dot x is referencing.
+00:01:04,760 --> 00:01:07,240
+ This is how it really works.
 
 26
-00:03:13,000 --> 00:03:20,000
- Remember how we talked about global and local inside of functions. Well, this x is actually outside of the function.
+00:01:07,240 --> 00:01:09,660
+ And the things that's super excellent about this
 
 27
-00:03:20,000 --> 00:03:30,000
- So this is an advantage that this dot x is defined inside the function. And because this is defined before the function definition, it sees that right.
+00:01:09,660 --> 00:01:11,720
+ is that it uses the function keyword.
 
 28
-00:03:30,000 --> 00:03:37,000
- And so we're going to add one to that member variable. And then we're going to put out a console log message. And that's our entire object.
+00:01:11,720 --> 00:01:14,960
+ There's not a different keyword, okay?
 
 29
-00:03:37,000 --> 00:03:47,000
- It's got one attribute called x and one method called party. OK, so we could just call this this function party animal, but that's not what we do.
+00:01:14,960 --> 00:01:16,400
+ Every other programming language,
 
 30
-00:03:47,000 --> 00:04:01,000
- We have a new keyword called do and it says, look, don't just run this code, create an empty object and then use the party animal code to sort of fill out that object with a bit of code and a bit of data.
+00:01:16,400 --> 00:01:17,920
+ pretty much when they go into an object,
 
 31
-00:04:01,000 --> 00:04:08,000
- And so that says run all this. But instead of just running it, give me back the thing that eventually it produces.
+00:01:17,920 --> 00:01:20,400
+ they use a different than they're in their procedural.
 
 32
-00:04:08,000 --> 00:04:16,000
- It's as if there's like a return statement at the bottom of this thing at the bottom of party animal function and then give me back the object.
+00:01:20,400 --> 00:01:25,400
+ So a class is a specialized function
 
 33
-00:04:16,000 --> 00:04:22,000
- And now I have an object and it's got an accident and it's got a party in it.
+00:01:25,480 --> 00:01:29,680
+ that as a side effect of its execution returns code and data.
 
 34
-00:04:22,000 --> 00:04:30,000
- Then a N is where I store that object. So a N is my first instance of a party animal object.
+00:01:29,680 --> 00:01:32,040
+ Okay, now we'll see that we invoke it
 
 35
-00:04:30,000 --> 00:04:39,000
- But now I can talk to end up party and and called again and again. So I call and party three times. So I call the method party.
+00:01:32,040 --> 00:01:33,480
+ a little bit differently.
 
 36
-00:04:39,000 --> 00:04:54,000
- OK, so that is the basic mechanism. And so if we were to somewhat trace through this, this this part here, the function just as a template that it's remembering the template and naming it party animal.
+00:01:33,480 --> 00:01:35,760
+ So let's start and take a look at what we got here.
 
 37
-00:04:54,000 --> 00:05:04,000
- And at the point where we have an equals new party animal, JavaScript constructs this object and it's got two things in it. It's got an accident and it's got a party in it.
+00:01:35,760 --> 00:01:38,200
+ We got this function party animal, right?
 
 38
-00:05:04,000 --> 00:05:11,000
- X is data and party is code and then that's what it looks like. But it's got well actually know the construction.
+00:01:38,200 --> 00:01:41,940
+ So party animal is the name of the class, but it's code.
 
 39
-00:05:11,000 --> 00:05:24,000
- Let me change here. The construction also put a zero into this dot X and so it is a part of the creation around all this code to construct party animal and this got set to zero.
+00:01:41,940 --> 00:01:44,640
+ And again, we have a curly brace to start it.
 
 40
-00:05:24,000 --> 00:05:36,000
- So when we're at this next line of code before we call a N party for the first time, a N dot X is got a zero in it. Then we call a N party and it runs the code a N dot party.
+00:01:44,640 --> 00:01:45,720
+ And the thing that's different
 
 41
-00:05:36,000 --> 00:05:48,000
- This a N is an alias for this. And so in a sense, when it says this dot X, it really is a N dot X. Now we'll see in a second how when we do multiple instances, how that works.
+00:01:45,720 --> 00:01:47,780
+ is there's this notion of this.
 
 42
-00:05:48,000 --> 00:06:03,000
- So it runs the code and then it adds this to be one and then it prints out the first line and then it does it again and then it becomes two and prints out the second line and does it again, prints out three, makes it three and prints out the third line.
+00:01:47,780 --> 00:01:51,000
+ So we make sort of an empty vessel
 
 43
-00:06:03,000 --> 00:06:19,000
- So that's how this code works. This is the constructing or creation or taking the little cookie cutter and poof making a cookie out of cookie dough. You got a bunch of cookie dough. That's like a little object that doesn't exist.
+00:01:51,000 --> 00:01:52,600
+ that is going to be the object
 
 44
-00:06:19,000 --> 00:06:36,000
- It's got no form and then we take the template and we make the thing. So I mentioned the word constructor because there is this moment where it's actually building the object and filling it up with all the little pieces.
+00:01:52,600 --> 00:01:54,640
+ that we're gonna use this class to populate.
 
 45
-00:06:36,000 --> 00:06:55,000
- So objects are created, used by us, and then discarded. And there is this concept of a bit of code called the constructor in object oriented theory that says, look, I'm going to start an empty object and then I'll fill it with stuff and the constructor is the sort of filling it up so it's ready to do its job.
+00:01:54,640 --> 00:01:56,720
+ And then by running the code,
 
 46
-00:06:55,000 --> 00:07:08,000
- Once you're done constructing it. Destructors are a common concept and we talked about those when we talked about object oriented Python. You don't get to get a hold of the destructor inside of JavaScript. That's something that they just don't let you do.
+00:01:56,720 --> 00:01:58,600
+ we're actually populating that empty vessel.
 
 47
-00:07:08,000 --> 00:07:17,000
- And I think it philosophically has to do with the idea that you're in a web page, you're not going to be there for very long and that's really the earliest of days, right?
+00:01:58,600 --> 00:02:03,600
+ So this.x is going to create a member variable
 
 48
-00:07:17,000 --> 00:07:28,000
- These days with things like Vue and React, some of these JavaScript pages last a very long time and maybe it'd be useful to have destructors in there, but JavaScript didn't have them in the beginning.
+00:02:03,600 --> 00:02:06,600
+ called x inside this,
 
 49
-00:07:28,000 --> 00:07:50,000
- Okay, so the constructor is, in a sense, the moment where we are this new is triggering the constructor and what it basically does is creates basically a blank object that has nothing in it and then runs the code inside a function party animal to give some form to that object, right?
+00:02:06,600 --> 00:02:09,240
+ which is the empty vessel object that we're creating.
 
 50
-00:07:50,000 --> 00:08:02,000
- And so this right here is the constructor, right? And so I just put a console.log so you can kind of see where that happens. It says I'm in the constructor and then this thing works the exact same way.
+00:02:09,240 --> 00:02:11,360
+ And then we're gonna fill up, okay?
 
 51
-00:08:02,000 --> 00:08:07,000
- It's just a kind of instrumented the moment that we're in the constructor.
+00:02:11,360 --> 00:02:13,440
+ And then we have this.party.
 
 52
-00:08:07,000 --> 00:08:26,000
- Okay, and the purpose of the constructor and object orientation is to set the initial conditions of the object so that the object is ready to be used and like setting x to zero, setting x to zero is apparently for this object a necessary condition.
+00:02:13,440 --> 00:02:19,480
+ This.party is also a piece of data in the this object
 
 53
-00:08:26,000 --> 00:08:39,000
- So, once we have a template, cookie cutter, we have a class, party animals are class, then we can make many different objects. And then those objects have each independent data, that's the key to this, right?
+00:02:19,480 --> 00:02:21,720
+ that we're about to create.
 
 54
-00:08:39,000 --> 00:08:47,000
- And we call this having multiple instances or multiple objects that implement a particular class.
+00:02:21,720 --> 00:02:24,080
+ And you'll notice that we're saying equals
 
 55
-00:08:47,000 --> 00:08:48,000
- So here we go.
+00:02:24,080 --> 00:02:27,360
+ and then function, but this one is a little different.
 
 56
-00:08:48,000 --> 00:08:52,000
- Here's our same old party animal that we've been talking about all along.
+00:02:27,360 --> 00:02:29,380
+ You'll notice the function is unnamed.
 
 57
-00:08:52,000 --> 00:09:05,000
- Well, the only difference now is we actually give a parameter here. And so one of the things that this is going to do is as part of its construction, it is going to copy that first parameter into one of the instance variables.
+00:02:29,380 --> 00:02:32,040
+ It is what we call an anonymous function
 
 58
-00:09:05,000 --> 00:09:11,000
- So we're going to have two instance variables, this.x and this.name. And we're going to copy whatever that is.
+00:02:32,040 --> 00:02:33,800
+ 'cause it doesn't have a name.
 
 59
-00:09:11,000 --> 00:09:18,000
- Now, where does that come from? Well, it comes from the moment of construction when we're saying make me a new party animal. Oh, and here's a constructor parameter.
+00:02:33,800 --> 00:02:37,640
+ So the function's name is actually called party,
 
 60
-00:09:18,000 --> 00:09:23,000
- So that Sally goes in as nam. So this.name equals Sally.
+00:02:37,640 --> 00:02:38,920
+ but it just happens to be called party
 
 61
-00:09:23,000 --> 00:09:27,000
- This.x equals zero and then this.party is exactly the same way.
+00:02:38,920 --> 00:02:40,840
+ because we're storing the function's code
 
 62
-00:09:27,000 --> 00:09:40,000
- And so when we run this, when we run this, it comes in, it constructs Sally, setting that and it says build Sally, that's that nam.
+00:02:40,840 --> 00:02:44,260
+ in a instance variable called party.
 
 63
-00:09:40,000 --> 00:09:54,000
- And then we call Sally, s.party. So this is the actual object is in the variable s. We call s.party and this.name is Sally and it's equal to one.
+00:02:44,260 --> 00:02:46,080
+ But that's how we're gonna call it.
 
 64
-00:09:54,000 --> 00:10:02,000
- And then we make a new one. We make a new one. Going to make a new one, but this one's going to be called Jim.
+00:02:46,080 --> 00:02:48,160
+ So in the party variable,
 
 65
-00:10:02,000 --> 00:10:11,000
- So we make a second variable, a second instance variable. It's going to have a second copy of x and a nam and actually a copy of party, right?
+00:02:48,160 --> 00:02:51,400
+ we have the code that is those two lines.
 
 66
-00:10:11,000 --> 00:10:20,000
- And so then it will say built Jim and then we say j.party and then we set Jim to one and then s.party and that sets Sally to two.
+00:02:51,400 --> 00:02:53,760
+ And then within that method,
 
 67
-00:10:20,000 --> 00:10:28,000
- And so now the j variable and the s variable are completely independent variables.
+00:02:53,760 --> 00:02:57,240
+ now I'd call party a method to use the terminology.
 
 68
-00:10:28,000 --> 00:10:41,000
- And so halfway through, so when we're down to here, we've got this object, s.party, well, x starts out at zero and the name here is Sally, right?
+00:02:57,240 --> 00:02:59,040
+ Within the party method,
 
 69
-00:10:41,000 --> 00:10:49,000
- And then s.party comes and runs in here and prints out Sally equals one, right?
+00:02:59,040 --> 00:03:02,080
+ this is the instance that we're talking about.
 
 70
-00:10:49,000 --> 00:10:55,000
- And then comes back and then we're going to create a second one.
+00:03:02,080 --> 00:03:05,600
+ In Python, we use self for this, right?
 
 71
-00:10:55,000 --> 00:11:00,000
- So we've created a second one and that will be in the name j, in the variable j, right?
+00:03:05,600 --> 00:03:07,500
+ And different languages have this concept
 
 72
-00:11:00,000 --> 00:11:09,000
- So we've created one, oops, we've created one, create Jim, out comes built Jim.
+00:03:07,500 --> 00:03:09,640
+ of the current object that we're part of.
 
 73
-00:11:09,000 --> 00:11:17,000
- And then we call, and then this is zero, this is Sally, this is one, this is zero, this is Jim, right?
+00:03:09,640 --> 00:03:13,000
+ This.x is referencing,
 
 74
-00:11:17,000 --> 00:11:23,000
- And it says Jim equals one. And then we're going to call s.party here at the very end.
+00:03:13,000 --> 00:03:15,680
+ remember how we talked about global and local
 
 75
-00:11:23,000 --> 00:11:31,000
- And so it's going to run this party code again, except now this, well, this is an alias of s.
+00:03:15,680 --> 00:03:17,200
+ inside of functions?
 
 76
-00:11:31,000 --> 00:11:36,000
- So you can see how when we call j.party, this is an alias of j.
+00:03:17,200 --> 00:03:20,760
+ Well, this x is actually outside of the function.
 
 77
-00:11:36,000 --> 00:11:41,000
- And we call s.party, this is an alias of s. These are instance, instance.
+00:03:20,760 --> 00:03:23,640
+ So this is an advantage that this.x is defined
 
 78
-00:11:41,000 --> 00:11:46,000
- So s is one instance and j is another instance of it.
+00:03:23,640 --> 00:03:25,000
+ inside the function,
 
 79
-00:11:46,000 --> 00:11:57,000
- And so that's how we take one class and make multiple instances and each instance has their own independent copy of the variables.
+00:03:25,000 --> 00:03:28,680
+ and because this is defined before the function definition,
 
 80
-00:11:57,000 --> 00:12:02,000
- So that's a real quick introduction, mostly to get syntax.
+00:03:28,680 --> 00:03:30,880
+ it sees that, right?
 
 81
-00:12:02,000 --> 00:12:06,000
- I'm not going to ask you to write a bunch of objects, but we're going to use a ton of them.
+00:03:30,880 --> 00:03:33,040
+ And so we're gonna add one to that member variable,
 
 82
-00:12:06,000 --> 00:12:11,000
- And when you start learning about jQuery and document object model and all that stuff,
+00:03:33,040 --> 00:03:35,240
+ and then we're gonna put out a console log message,
 
 83
-00:12:11,000 --> 00:12:17,000
- this dot syntax and the methods and the member variables, the attributes, away you go.
+00:03:35,240 --> 00:03:37,580
+ and that's our entire object.
 
 84
-00:12:17,000 --> 00:12:21,000
- So you got to know all this stuff. So class is a template.
+00:03:37,580 --> 00:03:40,240
+ It's got one attribute called x
 
 85
-00:12:21,000 --> 00:12:25,000
- Method or message is the code that's inside of objects and classes.
+00:03:40,240 --> 00:03:43,140
+ and one method called party, okay?
 
 86
-00:12:25,000 --> 00:12:29,000
- And then attributes is the data inside objects and classes.
+00:03:43,140 --> 00:03:46,900
+ So we could just call this function party animal,
 
 87
-00:12:29,000 --> 00:12:35,000
- And then constructor is the code that runs as one of these things is created.
+00:03:46,900 --> 00:03:47,800
+ but that's not what we do.
 
 88
-00:12:35,000 --> 00:12:42,000
- So that's a real quick romp through object oriented JavaScript. It's actually in some ways one of the,
+00:03:47,800 --> 00:03:50,640
+ We have a new keyword called new.
 
 89
-00:12:42,000 --> 00:12:49,000
- I debate with myself whether I think the Python or the JavaScript object oriented pattern is more prettier.
+00:03:50,640 --> 00:03:54,360
+ And it says, look, don't just run this code.
 
 90
-00:12:49,000 --> 00:12:52,000
- I mean, there's other ones that aren't as pretty as these two.
+00:03:54,360 --> 00:03:56,200
+ Create an empty object,
 
 91
-00:12:52,000 --> 00:13:03,000
- So we in Python and JavaScript, I think we're fortunate to have two very mature and very advanced thinking in how to really build beautiful object oriented systems.
+00:03:56,200 --> 00:03:58,540
+ and then use the party animal code
 
 92
-00:13:05,000 --> 00:13:12,000
- [music]
+00:03:58,540 --> 00:04:00,140
+ to sort of fill out that object
+
+93
+00:04:00,140 --> 00:04:02,080
+ with a bit of code and a bit of data.
+
+94
+00:04:02,080 --> 00:04:04,260
+ And so that says, run all this,
+
+95
+00:04:04,260 --> 00:04:05,940
+ but instead of just running it,
+
+96
+00:04:05,940 --> 00:04:09,000
+ give me back the thing that eventually it produces.
+
+97
+00:04:09,000 --> 00:04:10,880
+ It's as if there's like a return statement
+
+98
+00:04:10,880 --> 00:04:12,880
+ at the bottom of this thing,
+
+99
+00:04:12,880 --> 00:04:15,360
+ at the bottom of party animal function.
+
+100
+00:04:15,360 --> 00:04:17,000
+ And then give me back the object,
+
+101
+00:04:17,000 --> 00:04:19,120
+ and now I have an object,
+
+102
+00:04:19,120 --> 00:04:22,320
+ and it's got an x in it, and it's got a party in it.
+
+103
+00:04:22,320 --> 00:04:25,000
+ Then an is where I store that object,
+
+104
+00:04:25,000 --> 00:04:30,000
+ so an is my first instance of a party animal object.
+
+105
+00:04:30,000 --> 00:04:33,500
+ But now I can talk to an.party
+
+106
+00:04:33,500 --> 00:04:34,920
+ and call it again.
+
+107
+00:04:34,920 --> 00:04:37,000
+ And again, that's why I call an.party three times.
+
+108
+00:04:37,000 --> 00:04:40,960
+ So I call the method party, okay?
+
+109
+00:04:40,960 --> 00:04:43,680
+ So that is the basic mechanism.
+
+110
+00:04:43,680 --> 00:04:47,760
+ And so if we were to somewhat trace through this,
+
+111
+00:04:47,760 --> 00:04:51,120
+ this part here, the function just is a template
+
+112
+00:04:51,120 --> 00:04:52,420
+ that it's remembering the template
+
+113
+00:04:52,420 --> 00:04:54,040
+ and naming it party animal.
+
+114
+00:04:54,040 --> 00:04:57,100
+ And at the point where we have an equals new party animal,
+
+115
+00:04:57,100 --> 00:05:00,360
+ JavaScript constructs this object,
+
+116
+00:05:00,360 --> 00:05:01,480
+ and it's got two things in it.
+
+117
+00:05:01,480 --> 00:05:03,880
+ It's got an x in it, and it's got a party in it.
+
+118
+00:05:03,880 --> 00:05:06,320
+ X is data, and party is code.
+
+119
+00:05:06,320 --> 00:05:07,800
+ And then that's what it looks like,
+
+120
+00:05:07,800 --> 00:05:11,240
+ but it's got, well, I actually know the construction.
+
+121
+00:05:11,240 --> 00:05:12,460
+ Let me change here.
+
+122
+00:05:12,460 --> 00:05:16,320
+ The construction also put a zero into this.x.
+
+123
+00:05:16,320 --> 00:05:19,000
+ And so as a part of the creation,
+
+124
+00:05:19,000 --> 00:05:22,520
+ it ran all this code to construct party animal,
+
+125
+00:05:22,520 --> 00:05:24,000
+ and this got set to zero.
+
+126
+00:05:24,000 --> 00:05:26,120
+ So when we're at this next line of code,
+
+127
+00:05:26,120 --> 00:05:29,040
+ before we call an.party for the first time,
+
+128
+00:05:29,040 --> 00:05:31,480
+ an.x has got a zero in it.
+
+129
+00:05:31,480 --> 00:05:36,120
+ Then we call an.party, and it runs the code an.party.
+
+130
+00:05:36,120 --> 00:05:40,120
+ This an is an alias for this.
+
+131
+00:05:40,120 --> 00:05:42,640
+ And so in a sense, when it says this.x,
+
+132
+00:05:42,640 --> 00:05:44,600
+ it really is an.x.
+
+133
+00:05:44,600 --> 00:05:47,440
+ Now we'll see in a second how, when we do multiple instances,
+
+134
+00:05:47,440 --> 00:05:48,540
+ how that works.
+
+135
+00:05:48,540 --> 00:05:51,840
+ So it runs the code, and then it adds this to be one,
+
+136
+00:05:51,840 --> 00:05:53,600
+ and then it prints out the first line,
+
+137
+00:05:53,600 --> 00:05:56,040
+ and then it does it again, and then it becomes two,
+
+138
+00:05:56,040 --> 00:05:58,400
+ and it prints out the second line, and it does it again,
+
+139
+00:05:58,400 --> 00:06:01,060
+ prints out three, makes it three,
+
+140
+00:06:01,060 --> 00:06:03,560
+ and prints out the third line.
+
+141
+00:06:03,560 --> 00:06:05,640
+ So that's how this code works.
+
+142
+00:06:05,640 --> 00:06:10,640
+ This is the constructing, or creation,
+
+143
+00:06:10,640 --> 00:06:14,320
+ or taking the little cookie cutter and poof,
+
+144
+00:06:14,320 --> 00:06:15,880
+ making a cookie out of cookie dough.
+
+145
+00:06:15,880 --> 00:06:17,240
+ You got a bunch of cookie dough,
+
+146
+00:06:17,240 --> 00:06:19,320
+ that's like a little object that doesn't exist.
+
+147
+00:06:19,320 --> 00:06:23,720
+ It's got no form, and then we take the template, poof,
+
+148
+00:06:23,720 --> 00:06:24,880
+ and we make the thing.
+
+149
+00:06:24,880 --> 00:06:29,840
+ So I mentioned the word constructor,
+
+150
+00:06:29,840 --> 00:06:33,320
+ 'cause there is this moment where it's actually building
+
+151
+00:06:33,320 --> 00:06:36,400
+ the object and filling it up with all the little pieces.
+
+152
+00:06:36,400 --> 00:06:41,400
+ So objects are created, used by us, and then discarded.
+
+153
+00:06:41,400 --> 00:06:44,240
+ And there is this concept of a bit of code
+
+154
+00:06:44,240 --> 00:06:47,160
+ called the constructor in object-oriented theory
+
+155
+00:06:47,160 --> 00:06:49,640
+ that says, look, I'm gonna start an empty object,
+
+156
+00:06:49,640 --> 00:06:51,100
+ and then I'll fill it with stuff.
+
+157
+00:06:51,100 --> 00:06:53,160
+ And the constructor is the sort of filling it up
+
+158
+00:06:53,160 --> 00:06:55,200
+ so it's ready to do its job
+
+159
+00:06:55,200 --> 00:06:56,940
+ once you're done constructing it.
+
+160
+00:06:56,940 --> 00:06:58,640
+ Destructors are a common concept,
+
+161
+00:06:58,640 --> 00:07:00,560
+ and we talked about those when we talked about
+
+162
+00:07:00,560 --> 00:07:02,240
+ object-oriented Python.
+
+163
+00:07:02,240 --> 00:07:04,440
+ You don't get to get ahold of the destructor
+
+164
+00:07:04,440 --> 00:07:05,600
+ inside of JavaScript.
+
+165
+00:07:05,600 --> 00:07:08,720
+ That's something that they just don't let you do.
+
+166
+00:07:08,720 --> 00:07:11,680
+ And I think it philosophically has to do with the idea
+
+167
+00:07:11,680 --> 00:07:13,720
+ that you're in a webpage, you're not gonna be there
+
+168
+00:07:13,720 --> 00:07:17,120
+ for very long, and that's really the earliest of days, right?
+
+169
+00:07:17,120 --> 00:07:19,560
+ These days, with things like Vue and React,
+
+170
+00:07:19,560 --> 00:07:22,320
+ some of these JavaScript pages last a very long time,
+
+171
+00:07:22,320 --> 00:07:25,160
+ and maybe it'd be useful to have destructors in there,
+
+172
+00:07:25,160 --> 00:07:27,560
+ but JavaScript didn't have them in the beginning.
+
+173
+00:07:27,560 --> 00:07:31,760
+ Okay, so the constructor is, in a sense,
+
+174
+00:07:31,760 --> 00:07:34,880
+ the moment where we are this new
+
+175
+00:07:34,880 --> 00:07:36,720
+ is triggering the constructor.
+
+176
+00:07:36,720 --> 00:07:39,600
+ And what it basically does is creates basically
+
+177
+00:07:39,600 --> 00:07:42,280
+ a blank object that has nothing in it,
+
+178
+00:07:42,280 --> 00:07:46,040
+ and then runs the code inside of function party animal
+
+179
+00:07:46,040 --> 00:07:50,520
+ to give some form to that object, right?
+
+180
+00:07:50,520 --> 00:07:54,240
+ And so this right here is the constructor, right?
+
+181
+00:07:54,240 --> 00:07:55,960
+ And so I just put a console.log
+
+182
+00:07:55,960 --> 00:07:58,280
+ so you can kind of see where that happens.
+
+183
+00:07:58,280 --> 00:07:59,680
+ It says I'm in the constructor,
+
+184
+00:07:59,680 --> 00:08:02,120
+ and then this thing works the exact same way.
+
+185
+00:08:02,120 --> 00:08:04,680
+ It's just a kind of instrumented the moment
+
+186
+00:08:04,680 --> 00:08:07,960
+ that we're in the constructor, okay?
+
+187
+00:08:07,960 --> 00:08:10,400
+ And the purpose of the constructor in object orientation
+
+188
+00:08:10,400 --> 00:08:14,360
+ is to set the initial conditions of the object
+
+189
+00:08:14,360 --> 00:08:17,080
+ so that the object is ready to be used.
+
+190
+00:08:17,080 --> 00:08:19,040
+ And like setting X to zero,
+
+191
+00:08:19,040 --> 00:08:22,200
+ setting X to zero is apparently for this object
+
+192
+00:08:22,200 --> 00:08:23,460
+ a necessary condition.
+
+193
+00:08:23,460 --> 00:08:29,040
+ So once we have a template, cookie cutter,
+
+194
+00:08:29,040 --> 00:08:31,400
+ we have a class, party animals are class,
+
+195
+00:08:31,400 --> 00:08:34,200
+ then we can make many different objects.
+
+196
+00:08:34,200 --> 00:08:36,840
+ And then those objects have each independent data.
+
+197
+00:08:36,840 --> 00:08:38,600
+ That's the key to this, right?
+
+198
+00:08:38,600 --> 00:08:41,560
+ And we call this having multiple instances
+
+199
+00:08:41,560 --> 00:08:45,360
+ or multiple objects that implement a particular class.
+
+200
+00:08:45,360 --> 00:08:47,920
+ So here we go.
+
+201
+00:08:47,920 --> 00:08:49,320
+ Here's our same old party animal
+
+202
+00:08:49,320 --> 00:08:51,880
+ that we've been talking about all along.
+
+203
+00:08:51,880 --> 00:08:55,240
+ The only difference now is we actually give a parameter here.
+
+204
+00:08:55,240 --> 00:08:57,280
+ And so one of the things that this is going to do
+
+205
+00:08:57,280 --> 00:08:59,940
+ is as part of its construction,
+
+206
+00:08:59,940 --> 00:09:03,080
+ it is gonna copy that first parameter
+
+207
+00:09:03,080 --> 00:09:04,820
+ into one of the instance variables.
+
+208
+00:09:04,820 --> 00:09:06,600
+ So we're gonna have two instance variables,
+
+209
+00:09:06,600 --> 00:09:08,920
+ this.x and this.name.
+
+210
+00:09:08,920 --> 00:09:11,000
+ And we're gonna copy whatever that is.
+
+211
+00:09:11,000 --> 00:09:12,640
+ Now, where does that come from?
+
+212
+00:09:12,640 --> 00:09:14,440
+ Well, it comes from the moment of construction
+
+213
+00:09:14,440 --> 00:09:16,540
+ when we're saying, make me a new party animal.
+
+214
+00:09:16,540 --> 00:09:18,360
+ Oh, and here's a constructor parameter.
+
+215
+00:09:18,360 --> 00:09:20,580
+ So that's Sally goes in as nam.
+
+216
+00:09:20,580 --> 00:09:22,440
+ So this.name equals Sally.
+
+217
+00:09:22,440 --> 00:09:24,880
+ This.x equals zero.
+
+218
+00:09:24,880 --> 00:09:27,560
+ And then this.party is exactly the same way.
+
+219
+00:09:27,560 --> 00:09:29,640
+ And so when we run this,
+
+220
+00:09:29,640 --> 00:09:33,440
+ when we run this, it comes in,
+
+221
+00:09:34,640 --> 00:09:37,920
+ it constructs Sally, setting that,
+
+222
+00:09:37,920 --> 00:09:40,520
+ and it says, build Sally, that's that nam.
+
+223
+00:09:40,520 --> 00:09:43,320
+ And then we call Sally, s.party.
+
+224
+00:09:43,320 --> 00:09:46,320
+ So this is the actual object is in the variable s.
+
+225
+00:09:46,320 --> 00:09:47,840
+ We call s.party.
+
+226
+00:09:47,840 --> 00:09:52,840
+ And this.name is Sally, and it's equal to one.
+
+227
+00:09:52,840 --> 00:09:57,400
+ And then we make a new one.
+
+228
+00:09:57,400 --> 00:10:00,120
+ We make a new one.
+
+229
+00:10:00,120 --> 00:10:02,400
+ Gonna make a new one, but this one's gonna be called Jim.
+
+230
+00:10:02,400 --> 00:10:04,880
+ So we make a second variable.
+
+231
+00:10:04,880 --> 00:10:06,400
+ A second instance variable.
+
+232
+00:10:06,400 --> 00:10:08,720
+ It's gonna be a second copy of x, and a nam,
+
+233
+00:10:08,720 --> 00:10:11,480
+ and actually a copy of party, right?
+
+234
+00:10:11,480 --> 00:10:14,400
+ And so then it'll say, built Jim.
+
+235
+00:10:14,400 --> 00:10:17,480
+ And then we say, j.party, and then we set Jim to one.
+
+236
+00:10:17,480 --> 00:10:19,840
+ And then s.party, and that sets Sally to two.
+
+237
+00:10:19,840 --> 00:10:22,680
+ And so now, the j.variable and the s.variable
+
+238
+00:10:22,680 --> 00:10:25,000
+ are completely independent variables.
+
+239
+00:10:25,000 --> 00:10:30,180
+ And so halfway through,
+
+240
+00:10:31,720 --> 00:10:35,280
+ so when we're down to here, we've got this object,
+
+241
+00:10:35,280 --> 00:10:37,840
+ s.party, well, x starts out at zero,
+
+242
+00:10:37,840 --> 00:10:41,360
+ and the name here is Sally, right?
+
+243
+00:10:41,360 --> 00:10:44,240
+ And then s.party comes and runs in here,
+
+244
+00:10:44,240 --> 00:10:48,160
+ and prints out Sally equals one, right?
+
+245
+00:10:48,160 --> 00:10:51,840
+ And then comes back, and then we're going to create
+
+246
+00:10:51,840 --> 00:10:53,080
+ a second one.
+
+247
+00:10:53,080 --> 00:10:57,000
+ So we've created a second one,
+
+248
+00:10:57,000 --> 00:11:00,720
+ and that'll be in the name j, in the variable j, right?
+
+249
+00:11:00,720 --> 00:11:04,000
+ So we've created one, oops.
+
+250
+00:11:04,000 --> 00:11:10,080
+ We've created one, create Jim, out comes built Jim,
+
+251
+00:11:10,080 --> 00:11:13,960
+ and then we call, and then this is zero, this is Sally,
+
+252
+00:11:13,960 --> 00:11:18,220
+ this is one, this is zero, this is Jim, right?
+
+253
+00:11:18,220 --> 00:11:21,080
+ And it says Jim equals one.
+
+254
+00:11:21,080 --> 00:11:23,960
+ And then we're gonna call s.party here at the very end,
+
+255
+00:11:23,960 --> 00:11:26,460
+ and so it's gonna run this party code again,
+
+256
+00:11:26,460 --> 00:11:31,460
+ except now this, well, this is an alias of s.
+
+257
+00:11:31,460 --> 00:11:34,360
+ So you can see how when we call j.party,
+
+258
+00:11:34,360 --> 00:11:37,440
+ this is an alias of j, and we call s.party,
+
+259
+00:11:37,440 --> 00:11:39,200
+ this is an alias of s.
+
+260
+00:11:39,200 --> 00:11:43,200
+ These are instance, instance, so s is one instance,
+
+261
+00:11:43,200 --> 00:11:46,140
+ and j is another instance of it.
+
+262
+00:11:46,140 --> 00:11:49,520
+ And so that's how we take one class
+
+263
+00:11:49,520 --> 00:11:52,720
+ and make multiple instances, and each instance
+
+264
+00:11:52,720 --> 00:11:57,280
+ has their own independent copy of the variables.
+
+265
+00:11:57,280 --> 00:12:02,280
+ So that's a real quick introduction, mostly to get syntax.
+
+266
+00:12:02,280 --> 00:12:04,840
+ I'm not gonna ask you to write a bunch of objects,
+
+267
+00:12:04,840 --> 00:12:06,460
+ but we're gonna use a ton of them,
+
+268
+00:12:06,460 --> 00:12:08,840
+ and when you start learning about jQuery
+
+269
+00:12:08,840 --> 00:12:11,280
+ and document object model and all that stuff,
+
+270
+00:12:11,280 --> 00:12:15,360
+ this dot syntax and the methods and the member variables,
+
+271
+00:12:15,360 --> 00:12:17,420
+ the attributes, away you go.
+
+272
+00:12:17,420 --> 00:12:18,760
+ So you gotta know all this stuff.
+
+273
+00:12:18,760 --> 00:12:22,400
+ So class is a template, method or message
+
+274
+00:12:22,400 --> 00:12:25,480
+ is the code that's inside of objects and classes,
+
+275
+00:12:25,480 --> 00:12:29,060
+ and then attributes is the data inside objects and classes,
+
+276
+00:12:29,060 --> 00:12:32,640
+ and then constructor is the code that runs
+
+277
+00:12:32,640 --> 00:12:35,320
+ as one of these things is created.
+
+278
+00:12:35,320 --> 00:12:37,320
+ So that's a real quick romp
+
+279
+00:12:37,320 --> 00:12:38,880
+ through object-oriented JavaScript.
+
+280
+00:12:38,880 --> 00:12:42,320
+ It's actually in some ways one of the,
+
+281
+00:12:42,320 --> 00:12:44,360
+ I debate with myself whether I think
+
+282
+00:12:44,360 --> 00:12:47,480
+ that the Python or the JavaScript object-oriented pattern
+
+283
+00:12:47,480 --> 00:12:48,800
+ is more prettier.
+
+284
+00:12:48,800 --> 00:12:51,320
+ I mean, there's other ones that aren't as pretty
+
+285
+00:12:51,320 --> 00:12:54,280
+ as these two, so we've, in Python and JavaScript,
+
+286
+00:12:54,280 --> 00:12:57,160
+ I think we're fortunate to have two very mature
+
+287
+00:12:57,160 --> 00:13:00,800
+ and very advanced thinking in how to really build
+
+288
+00:13:00,800 --> 00:13:02,600
+ beautiful object-oriented systems.
+
+289
+00:13:02,600 --> 00:13:05,180
+ (upbeat music)
 

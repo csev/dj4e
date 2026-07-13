@@ -1,40 +1,43 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.900
- So now we're going to take a look at the kind of Python code we can write to manipulate these data models.
+00:00:00.000 --> 00:00:05.880
+ So now we're gonna take a look at the kind of Python code we can write to manipulate these data models.
 
-00:00:05.900 --> 00:00:10.120
- So, to do this, we're going to use what I call the Django shell.
+00:00:05.880 --> 00:00:10.080
+ So to do this, we're gonna use what I call the Django shell.
 
-00:00:10.120 --> 00:00:15.300
- Now the Django shell looks a lot like the Python shell, except that there's a whole bunch of stuff pre-loaded.
+00:00:10.080 --> 00:00:13.220
+ Now the Django shell looks a lot like the Python shell,
 
-00:00:15.300 --> 00:00:19.280
+00:00:13.220 --> 00:00:15.240
+ except that there's a whole bunch of stuff preloaded.
+
+00:00:15.240 --> 00:00:19.240
  You can't just run Python 3 in interactive mode.
 
-00:00:19.280 --> 00:00:20.840
- You see the Shepparun prompt.
+00:00:19.240 --> 00:00:20.800
+ You see the chef run prompt.
 
-00:00:20.840 --> 00:00:22.480
- On Linux, you see a Bracket prompt.
+00:00:20.800 --> 00:00:22.440
+ On Linux you see a bracket prompt.
 
-00:00:22.480 --> 00:00:24.680
+00:00:22.440 --> 00:00:24.640
  It's the same shell.
 
-00:00:24.680 --> 00:00:30.240
+00:00:24.640 --> 00:00:30.220
  But in the Django shell, what happens is it actually reads the settings.py and
 
-00:00:30.240 --> 00:00:33.520
+00:00:30.220 --> 00:00:33.520
  goes and finds all the applications in settings.py and
 
 00:00:33.520 --> 00:00:36.760
- pre-loads the applications and then gives you a shell.
+ preloads the applications and then gives you a shell.
 
-00:00:36.760 --> 00:00:40.280
- So it's like there's a bunch of things that happen
+00:00:36.760 --> 00:00:41.880
+ So it's like there's a bunch of things that happen that's not just a shell that
 
-00:00:40.280 --> 00:00:43.780
- that's not just a shell that are done before you're in the shell.
+00:00:41.880 --> 00:00:43.780
+ are done before you're in the shell.
 
 00:00:43.780 --> 00:00:48.600
  And this statement of from book one models import book lang instance,
@@ -43,16 +46,16 @@ WEBVTT
  that wouldn't work if you just ran the Python shell by itself.
 
 00:00:51.880 --> 00:00:59.520
- That's because the book one application was loaded by Python3manage.py shell.
+ That's because the book one application was loaded by python3manage.py shell.
 
 00:00:59.520 --> 00:01:02.560
- After that, you've got all these things pre-loaded, but
+ After that, you've got all these things preloaded, but
 
-00:01:02.560 --> 00:01:06.840
- then you can pretty much run any Python that you want that messes with all of your
+00:01:02.560 --> 00:01:05.360
+ then you can pretty much run any Python that you want.
 
-00:01:06.840 --> 00:01:10.040
- Django classes and objects, etc, etc.
+00:01:05.360 --> 00:01:10.040
+ That messes with all of your Django classes and objects, etc, etc.
 
 00:01:10.040 --> 00:01:13.600
  So let's take a look at the kinds of things that we can do.
@@ -60,14 +63,14 @@ WEBVTT
 00:01:13.600 --> 00:01:18.560
  So if you remember, our data model was named lang for language.
 
-00:01:18.560 --> 00:01:23.200
- And so we can create a new object in memory with lang parenthesis name
+00:01:18.560 --> 00:01:23.540
+ And so we can create a new object in memory with lang parenthesis name equals
 
-00:01:23.200 --> 00:01:25.120
- equals quote en quote.
+00:01:23.540 --> 00:01:25.120
+ quote en quote.
 
 00:01:25.120 --> 00:01:29.120
- And that basically says, give me a new language object and
+ And that basically says give me a new language object and
 
 00:01:29.120 --> 00:01:34.000
  set the attribute name to be en.
@@ -93,10 +96,10 @@ WEBVTT
 00:01:48.480 --> 00:01:49.400
  It knows it's a language.
 
-00:01:49.400 --> 00:01:54.240
- Now, the save method, z.save, that is the thing that says, you know what?
+00:01:49.400 --> 00:01:54.260
+ Now the save method, z.save, that is the thing that says, you know what,
 
-00:01:54.240 --> 00:01:57.360
+00:01:54.260 --> 00:01:57.360
  I've got this thing in memory, please persist it to the database.
 
 00:01:57.360 --> 00:02:01.240
@@ -139,7 +142,7 @@ WEBVTT
  Now we don't use the ID, Django knows all about how IDs work.
 
 00:02:43.800 --> 00:02:47.440
- And so it knows when you're saying lang = z that it's gonna make a lang ID and
+ And so it knows when you're saying lang = z, that it's gonna make a lang ID and
 
 00:02:47.440 --> 00:02:50.840
  put the ID of the language row in.
@@ -172,13 +175,13 @@ WEBVTT
  So it's primary, it's the first book that we've inserted.
 
 00:03:14.680 --> 00:03:18.440
- So its primary key x.id is one.
+ So its primary key x.id is 1.
 
 00:03:18.440 --> 00:03:21.440
  And then we can make an instance.
 
 00:03:21.440 --> 00:03:25.360
- And the instance needs a due back, which is a date.
+ And the instance needs a do back, which is a date.
 
 00:03:25.360 --> 00:03:27.680
  And then it needs which book it is.
@@ -196,7 +199,7 @@ WEBVTT
  It's a book instance that points to the book that's in the variable x,
 
 00:03:42.120 --> 00:03:45.720
- which is py-free, isbn42.
+ which is pyfree, isbn42.
 
 00:03:45.720 --> 00:03:52.040
  And then we save that, And that has an ID.
@@ -204,10 +207,10 @@ WEBVTT
 00:03:52.040 --> 00:03:55.080
  So now we have created a language record.
 
-00:03:55.080 --> 00:03:57.780
+00:03:55.080 --> 00:03:57.800
  Then we created a book record that linked to the language record.
 
-00:03:57.780 --> 00:04:02.920
+00:03:57.800 --> 00:04:02.920
  And then we created a book instance record that linked to the book record, okay?
 
 00:04:02.920 --> 00:04:08.720
@@ -220,10 +223,10 @@ WEBVTT
  And what Django's doing in this situation is Django's trying to hide from us
 
 00:04:16.080 --> 00:04:18.640
- the whole idea of the foreign keys and the primary keys.
+ the whole idea of the foreign keys and the primary keys,
 
 00:04:18.640 --> 00:04:22.840
- Other than me asking what the ID is, it's not really something you have to do.
+ other than me asking what the ID is, it's not really something you have to do.
 
 00:04:22.840 --> 00:04:24.880
  So all those asking for the IDs aren't necessary.
@@ -240,16 +243,16 @@ WEBVTT
 00:04:33.120 --> 00:04:36.840
  So, so much of the bookkeeping of these one to many relationships or
 
-00:04:36.840 --> 00:04:41.440
- foreign key relationships in general in Django is just done automatically.
+00:04:36.840 --> 00:04:41.480
+ foreign key relationships in general, in Django is just done automatically.
 
-00:04:41.440 --> 00:04:46.680
+00:04:41.480 --> 00:04:46.680
  Now, we can retrieve these and we can sort of walk down these things,
 
-00:04:46.680 --> 00:04:47.720
+00:04:46.680 --> 00:04:47.700
  walk through these things.
 
-00:04:47.720 --> 00:04:52.800
+00:04:47.700 --> 00:04:52.800
  So here we are again in samples and we run the shell and we import our models.
 
 00:04:52.800 --> 00:04:58.920
@@ -258,17 +261,17 @@ WEBVTT
 00:04:58.920 --> 00:05:05.720
  It's book1.models.book and then a lot of the methods that we talk to
 
-00:05:05.720 --> 00:05:10.120
- inside of these classes are under the attribute.objects, which is,
+00:05:05.720 --> 00:05:09.520
+ inside of these classes are under the attribute.objects.
 
-00:05:10.120 --> 00:05:14.640
- you could think of it as all of the rows in a sense, or all the objects in this,
+00:05:09.520 --> 00:05:13.080
+ Which is, you could think of it as all of the rows in a sense, or
 
-00:05:14.640 --> 00:05:17.960
- in this model, all the rows in the table that lives there.
+00:05:13.080 --> 00:05:17.960
+ all the objects in this model, all the rows in the table that lives there.
 
 00:05:17.960 --> 00:05:21.600
- Book objects and then get is like, which one do you want?
+ Book objects and then get is like which one do you want?
 
 00:05:21.600 --> 00:05:24.960
  Get pk=1, pk means primary key.
@@ -276,11 +279,11 @@ WEBVTT
 00:05:24.960 --> 00:05:27.840
  I don't know, I think it would make more sense if we called this ID.
 
-00:05:27.840 --> 00:05:32.840
+00:05:27.840 --> 00:05:32.880
  But ID is the name of the column of the primary key is really just kind of
 
-00:05:32.840 --> 00:05:36.480
- a convention that's done 98% of the time.
+00:05:32.880 --> 00:05:36.480
+ like a convention that's done 98% of the time.
 
 00:05:36.480 --> 00:05:41.160
  It's not required, it's not the truth, but it's so common that it might as well be.
@@ -288,19 +291,19 @@ WEBVTT
 00:05:41.160 --> 00:05:47.360
  But pk really means primary key, which 9 out of 10 times is the column ID.
 
-00:05:47.360 --> 00:05:51.280
- So we're loading from the books table, we're pulling that in, and
+00:05:47.360 --> 00:05:51.200
+ So we're loading from the books table, we're pulling that in.
 
-00:05:51.280 --> 00:05:54.680
- we're getting the row number 1 from the books table.
+00:05:51.200 --> 00:05:54.680
+ And we're getting the row number 1 from the books table.
 
 00:05:54.680 --> 00:06:00.480
- So if you say what the title is, well, the title of that is py4e.
+ So if you say what the title is, well, the title of that is Py4e.
 
-00:06:00.480 --> 00:06:03.720
+00:06:00.480 --> 00:06:03.680
  Now, there's a title, but then there's lang.
 
-00:06:03.720 --> 00:06:07.800
+00:06:03.680 --> 00:06:07.800
  Lang is that foreign key that points to the language.
 
 00:06:07.800 --> 00:06:12.160
@@ -309,13 +312,16 @@ WEBVTT
 00:06:12.160 --> 00:06:16.280
  But x.lang.name is within that row, it's the name column.
 
-00:06:16.280 --> 00:06:21.160
- So we sort of walk down the little arrow and grab one of the elements out of that.
+00:06:16.280 --> 00:06:19.080
+ So we sort of walk down the little arrow and
 
-00:06:21.160 --> 00:06:26.120
+00:06:19.080 --> 00:06:21.160
+ grab one of the elements out of that.
+
+00:06:21.160 --> 00:06:26.140
  So it's like walking from a book to the corresponding language row and
 
-00:06:26.120 --> 00:06:28.440
+00:06:26.140 --> 00:06:28.440
  then pulling the name out of that corresponding language row.
 
 00:06:28.440 --> 00:06:31.040
@@ -328,28 +334,28 @@ WEBVTT
  And this is why the picture of the data model is so absolutely important, oops.
 
 00:06:41.720 --> 00:06:47.280
- And so now, we're gonna go grab the book instance number 1,
+ And so now we're gonna go grab the book instance number 1,
 
 00:06:47.280 --> 00:06:49.920
  the first row of the book instance table.
 
 00:06:49.920 --> 00:06:54.320
- So instance.objects get pk=1, that says give me that first row,
+ So instance.objects get pk equals 1, that says give me that first row,
 
 00:06:54.320 --> 00:06:56.440
  give it back to me in the variable y.
 
-00:06:56.440 --> 00:06:59.440
+00:06:56.440 --> 00:06:59.400
  What is the do back of this one, and then you can sort of walk it.
 
-00:06:59.440 --> 00:07:03.960
+00:06:59.400 --> 00:07:03.960
  You can say, I'm at a book instance, and I wanna follow the foreign key to
 
 00:07:03.960 --> 00:07:08.920
  the book table to get me a book, and then give me the title of that book, right?
 
 00:07:08.920 --> 00:07:11.880
- So from a book instance, you can walk to the book table, and
+ So from a book instance, you can walk to the book table and
 
 00:07:11.880 --> 00:07:15.640
  then get the title of the book, and then we get py free.
@@ -358,7 +364,7 @@ WEBVTT
  So you see this sort of starting from one row,
 
 00:07:19.840 --> 00:07:26.160
- walking to the corresponding row that's pointed to by this relationship.
+ walking to another corresponding row that's pointed to by this relationship.
 
 00:07:26.160 --> 00:07:28.720
  And that's the essence of this.
@@ -366,9 +372,9 @@ WEBVTT
 00:07:28.720 --> 00:07:30.200
  We're gonna do this a whole bunch.
 
-00:07:30.200 --> 00:07:34.600
+00:07:30.200 --> 00:07:34.520
  By the time we come back to this, this will all seem pretty straightforward.
 
-00:07:34.600 --> 00:07:44.600
+00:07:34.520 --> 00:07:44.520
  [MUSIC]
 

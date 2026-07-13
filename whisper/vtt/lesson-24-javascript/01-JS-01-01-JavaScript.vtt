@@ -1,353 +1,641 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.160
- Hello and welcome to our lecture about JavaScript. JavaScript is another
+00:00:00.000 --> 00:00:03.960
+ - Hello, and welcome to our lecture about JavaScript.
 
-00:00:05.160 --> 00:00:08.640
- programming language and it's, if the Python is the only language you know, it's
+00:00:03.960 --> 00:00:06.460
+ JavaScript is another programming language,
 
-00:00:08.640 --> 00:00:15.520
- quite a bit different than Python. So JavaScript was originally designed as an
+00:00:06.460 --> 00:00:08.540
+ and it's, if the Python is the only language you know,
 
-00:00:15.520 --> 00:00:21.660
- addition to HTML and CSS and it really started as a programming language inside
+00:00:08.540 --> 00:00:11.820
+ it's quite a bit different than Python.
 
-00:00:21.660 --> 00:00:26.040
- of the browser that runs right in the browser. Even though it's named like
+00:00:11.820 --> 00:00:15.140
+ So JavaScript was originally designed
 
-00:00:26.040 --> 00:00:32.800
- JavaScript, like Java, it's really more like Python in how it works and it,
+00:00:15.140 --> 00:00:18.380
+ as an addition to HTML and CSS,
 
-00:00:32.800 --> 00:00:38.880
- except that it has a C-like syntax and it's really an amazing language and a lot
+00:00:18.380 --> 00:00:21.340
+ and it really started as a programming language
 
-00:00:38.880 --> 00:00:42.240
- of people, for a lot of people, it's their number one language, their favorite
+00:00:21.340 --> 00:00:24.600
+ inside of the browser that runs right in the browser.
 
-00:00:42.240 --> 00:00:48.360
- language and so it's worth learning JavaScript even if you love Python. So
+00:00:24.600 --> 00:00:28.420
+ Even though it's named like JavaScript, like Java,
 
-00:00:48.360 --> 00:00:54.240
- JavaScript is an interesting language in that it was built very quickly in ten
+00:00:28.420 --> 00:00:32.280
+ it's really more like Python in how it works,
 
-00:00:54.240 --> 00:00:59.920
- days in 1995 by a fellow named Brennan Icke. Brennan was a PhD in physics and he
+00:00:32.280 --> 00:00:35.700
+ and it, except that it has a C-like syntax.
 
-00:00:59.920 --> 00:01:03.600
- knew a lot about programming languages and formal languages and how to build
+00:00:35.700 --> 00:00:37.940
+ And it's really an amazing language,
 
-00:01:03.600 --> 00:01:10.440
- compilers really fast and so the idea was to make a sort of a subversion of
+00:00:37.940 --> 00:00:40.060
+ and a lot of people, for a lot of people,
 
-00:01:10.440 --> 00:01:15.440
- Java, like a lightweight version of Java and put it in the browser. Today it's
+00:00:40.060 --> 00:00:42.700
+ it's their number one language, their favorite language,
 
-00:01:15.440 --> 00:01:20.280
- gone through a standardization process and it's called ECMA script and so if we
+00:00:42.700 --> 00:00:44.740
+ and so it's worth learning JavaScript,
 
-00:01:20.280 --> 00:01:26.800
- were to take a look at the history of programming languages, you know probably,
+00:00:44.740 --> 00:00:46.740
+ even if you love Python.
 
-00:01:26.800 --> 00:01:34.000
- oops, you know by now, you know Python, right? And Python is a great language and
+00:00:46.740 --> 00:00:51.860
+ So JavaScript is an interesting language
 
-00:01:34.000 --> 00:01:37.280
- JavaScript is the other language we're going to learn here and this just sort
+00:00:51.860 --> 00:00:55.620
+ in that it was built very quickly in 10 days in 1995
 
-00:01:37.280 --> 00:01:42.240
- of puts them in some context so that you understand a bit of the influences.
+00:00:55.620 --> 00:00:57.460
+ by a fellow named Brennan Icke.
 
-00:01:42.240 --> 00:01:47.440
- So in the very beginnings, in the 50s, 1950s, we programmed in assembly
+00:00:57.460 --> 00:00:59.780
+ Brennan was a PhD in physics,
 
-00:01:47.440 --> 00:01:51.360
- language and then most computers all they could do is numeric calculations
+00:00:59.780 --> 00:01:01.980
+ and he knew a lot about programming languages
 
-00:01:51.360 --> 00:01:57.760
- very well and so languages like Fortran came along. Probably the, there's lots of
+00:01:01.980 --> 00:01:05.940
+ and formal languages and how to build compilers really fast.
 
-00:01:57.760 --> 00:02:01.520
- languages and so if you go back to the 50s and the 60s, people were inventing
+00:01:05.940 --> 00:01:10.940
+ And so the idea was to make a sort of a subversion of Java,
 
-00:02:01.520 --> 00:02:07.760
- languages all the time. But a language that really for me changed everything
+00:01:10.940 --> 00:01:12.540
+ like a lightweight version of Java,
 
-00:02:07.760 --> 00:02:14.760
- was the C language. Invented in 1972 and I still want to do a really cool class on
+00:01:12.540 --> 00:01:14.340
+ and put it in the browser.
 
-00:02:14.760 --> 00:02:19.400
- C. C is not a good language to write everything in. It's a, it's very much
+00:01:14.340 --> 00:01:17.380
+ Today, it's gone through a standardization process,
 
-00:02:19.400 --> 00:02:24.080
- like a assembly language. It mirrors how computers really work which is kind of
+00:01:17.380 --> 00:01:19.580
+ and it's called ECMA script.
 
-00:02:24.080 --> 00:02:28.880
- different than how we program computers in a lot of ways. But the other thing
+00:01:19.580 --> 00:01:21.220
+ And so if we were to take a look
 
-00:02:28.880 --> 00:02:34.240
- that C was doing was it was acknowledging that computers were less
+00:01:21.220 --> 00:01:23.340
+ at the history of programming languages,
 
-00:02:34.240 --> 00:02:39.760
- and less about numerical computations and more and more about strings and
+00:01:25.260 --> 00:01:28.340
+ you know, probably, oops, you know by now,
 
-00:02:39.760 --> 00:02:45.840
- and you know words and messages and things like that. So if you, if you, you
+00:01:28.340 --> 00:01:30.020
+ you know Python, right?
 
-00:02:45.840 --> 00:02:51.040
- know, it's probably 95% of the calculations and computers have to do
+00:01:30.020 --> 00:01:33.900
+ And Python is a great language,
 
-00:02:51.040 --> 00:02:56.480
- with moving data around not numbers around and C was great at that. So all
+00:01:33.900 --> 00:01:36.100
+ and JavaScript is the other language we're gonna learn here.
 
-00:02:56.480 --> 00:03:02.080
- the languages I used up till I started using C, they were kind of a numeric
+00:01:36.100 --> 00:01:38.820
+ And this just sort of puts them in some context
 
-00:03:02.080 --> 00:03:05.840
- system that was sort of fighting to do characters well and the C was a very
+00:01:38.820 --> 00:01:42.340
+ so that you understand a bit of the influences.
 
-00:03:05.840 --> 00:03:10.160
- well done character system. So it became the language, C is the language that's a
+00:01:42.340 --> 00:01:46.220
+ So in the very beginnings, in the '50s, 1950s,
 
-00:03:10.160 --> 00:03:15.680
- kind of the mother language of all this. It's the Linux is written in C, Python
+00:01:46.220 --> 00:01:47.980
+ we programmed in assembly language,
 
-00:03:15.680 --> 00:03:23.480
- is written in C, PHP is written in C, JavaScript is probably written in C and
+00:01:47.980 --> 00:01:49.700
+ and then most computers,
 
-00:03:23.480 --> 00:03:29.040
- so it's like the lowest level language that we go to these days and when you're
+00:01:49.700 --> 00:01:52.340
+ all they could do is numeric calculations very well,
 
-00:03:29.040 --> 00:03:32.640
- writing a language and you want it to be fast the implementation of that language
+00:01:52.340 --> 00:01:55.260
+ and so languages like Fortran came along.
 
-00:03:32.640 --> 00:03:38.320
- is often written in C. C++ came from C as an object oriented variation and we
+00:01:55.260 --> 00:01:58.500
+ Probably there's lots of languages,
 
-00:03:38.320 --> 00:03:40.960
- talked a lot about object oriented Python. We're going to talk about object
+00:01:58.500 --> 00:02:00.620
+ and so if you go back to the '50s and the '60s,
 
-00:03:40.960 --> 00:03:49.080
- oriented JavaScript coming up and so C++ influenced a whole lot of systems that
+00:02:00.620 --> 00:02:03.140
+ people were inventing languages all the time.
 
-00:03:49.080 --> 00:03:55.960
- had to do in a sense object C++ influenced Python as well. And so C++
+00:02:03.140 --> 00:02:08.380
+ But a language that really, for me, changed everything
 
-00:03:55.960 --> 00:03:59.880
- has added an object oriented layer. It's actually probably the least object
+00:02:08.380 --> 00:02:12.700
+ was the C language, invented in 1972,
 
-00:03:59.880 --> 00:04:04.400
- oriented of any of these other languages on here but it had object oriented
+00:02:12.700 --> 00:02:16.140
+ and I still wanna do a really cool class on C.
 
-00:04:04.400 --> 00:04:14.280
- concepts. C# was Microsoft's version of that. Java was open source, the thing that
+00:02:16.140 --> 00:02:18.220
+ C's not a good language to write everything in.
 
-00:04:14.280 --> 00:04:19.120
- became the the sort of progenitor of JavaScript but again they're not as
+00:02:18.220 --> 00:02:20.860
+ It's very much like a assembly language.
 
-00:04:19.120 --> 00:04:25.200
- related as you might think. It's really JavaScript came from C more than it came
+00:02:20.860 --> 00:02:23.380
+ It mirrors how computers really work,
 
-00:04:25.200 --> 00:04:30.880
- from Java. There's a few things that are imitating Java and and so all of the
+00:02:23.380 --> 00:02:26.180
+ which is kind of different than how we program computers
 
-00:04:30.880 --> 00:04:38.440
- things above this line are semicolon and curly brace. They use semicolon and
+00:02:26.180 --> 00:02:27.740
+ in a lot of ways.
 
-00:04:38.440 --> 00:04:42.480
- curly brace to end lines and to begin and end blocks. Curly brace, beginning
+00:02:27.740 --> 00:02:30.620
+ But the other thing that C was doing was
 
-00:04:42.480 --> 00:04:46.160
- curly brace and end curly brace. And then there is this other set of programming
+00:02:30.620 --> 00:02:33.860
+ it was acknowledging that computers
 
-00:04:46.160 --> 00:04:50.000
- languages that don't use semicolon and curly brace and C was the first language
+00:02:33.860 --> 00:02:37.220
+ were less and less about numerical computations,
 
-00:04:50.000 --> 00:04:54.960
- that did the semicolon and curly brace. And so these languages that are kind of
+00:02:37.220 --> 00:02:41.740
+ and more about strings, and you know words,
 
-00:04:54.960 --> 00:05:02.440
- below this line, Bash, Perl, Python and PHP are really actually PHP is a
+00:02:41.740 --> 00:02:44.380
+ and messages, and things like that.
 
-00:05:02.440 --> 00:05:06.280
- semicolon and curly brace as well. Python is the language we've been learning and
+00:02:44.380 --> 00:02:49.380
+ So if you, you know, it's probably 95% of the calculations
 
-00:05:06.280 --> 00:05:10.960
- it's it's really the odd language. So we're going to learn a language that's
+00:02:50.020 --> 00:02:52.740
+ in computers have to do with moving data around,
 
-00:05:10.960 --> 00:05:15.240
- in the category that makes it easier for you to learn C or C++ or Java or
+00:02:52.740 --> 00:02:56.260
+ not numbers around, and C was great at that.
 
-00:05:15.240 --> 00:05:20.480
- Objective-C. So this is worth learning even though you know Python. There was
+00:02:56.260 --> 00:02:59.940
+ So all the languages I used up till I started using C,
 
-00:05:20.480 --> 00:05:25.400
- another movement that was sort of C is a very high performance language and
+00:02:59.940 --> 00:03:02.540
+ they were kind of a numeric system
 
-00:05:25.400 --> 00:05:30.800
- really aimed computer scientists to build complex systems like like Linux. But
+00:03:02.540 --> 00:03:04.700
+ that was sort of fighting to do characters well,
 
-00:05:30.800 --> 00:05:35.840
- then there were languages for like the end user that just got work done but
+00:03:04.700 --> 00:03:07.180
+ and the C was a very well done character system.
 
-00:05:35.840 --> 00:05:41.640
- weren't seen as like super performant for professionals etc etc etc. And so
+00:03:07.180 --> 00:03:09.900
+ And so it became the language, C is the language
 
-00:05:41.640 --> 00:05:45.920
- Bash which is the Linux shell where you're typing CD and LS if you're
+00:03:09.900 --> 00:03:11.980
+ that's kind of the mother language of all this.
 
-00:05:45.920 --> 00:05:50.020
- familiar with that. Perl was a report generation language that introduced the
+00:03:11.980 --> 00:03:16.980
+ It's the Linux is written in C, Python is written in C,
 
-00:05:50.020 --> 00:05:56.520
- concept of associative arrays and most people joke about Perl. I don't like
+00:03:17.580 --> 00:03:22.580
+ PHP is written in C, JavaScript is probably written in C.
 
-00:05:56.520 --> 00:05:59.760
- Perl because I can never read my code after I write it. I can write it but I
+00:03:22.580 --> 00:03:26.620
+ And so it's like the lowest level language
 
-00:05:59.760 --> 00:06:03.520
- can't read it afterwards. But it introduced a lot of wonderful concepts
+00:03:26.620 --> 00:03:28.020
+ that we go to these days.
 
-00:06:03.520 --> 00:06:09.640
- like associative arrays which we would call dictionaries in Python. And Perl
+00:03:28.020 --> 00:03:30.260
+ And when you're writing a language
 
-00:06:09.640 --> 00:06:13.320
- it really definitely influenced Python because of its ease of
+00:03:30.260 --> 00:03:31.460
+ and you want it to be fast,
 
-00:06:13.320 --> 00:06:18.200
- programming. So what Perl was really good at was allowing a person with very
+00:03:31.460 --> 00:03:35.060
+ the implementation of that language is often written in C.
 
-00:06:18.200 --> 00:06:23.000
- little formal training on data structures to be able to use associative
+00:03:35.060 --> 00:03:38.180
+ C++ came from C as an object-oriented variation,
 
-00:06:23.000 --> 00:06:26.920
- arrays and nested associative arrays to create pretty sophisticated data
+00:03:38.180 --> 00:03:40.100
+ and we talked a lot about object-oriented Python.
 
-00:06:26.920 --> 00:06:33.320
- structures. And Python came along with that and PHP also original PHP
+00:03:40.100 --> 00:03:42.620
+ We're gonna talk about object-oriented JavaScript coming up.
 
-00:06:33.320 --> 00:06:38.880
- stood for Perl hypertext processor. Now it doesn't stand for that but Perl and
+00:03:42.620 --> 00:03:47.620
+ And so C++ influenced a whole lot of systems
 
-00:06:38.880 --> 00:06:43.640
- Python and PHP are in this category of sort of interpreted easy to use
+00:03:47.620 --> 00:03:53.940
+ that had to do in a sense C++ influenced Python as well.
 
-00:06:43.640 --> 00:06:48.880
- languages with strings that work really nice and they just make life a lot
+00:03:53.940 --> 00:03:58.020
+ And so C++ has added an object-oriented layer.
 
-00:06:48.880 --> 00:06:54.680
- easier. In languages like C strings are very difficult. So if we take a
+00:03:58.020 --> 00:04:00.420
+ It's actually probably the least object-oriented
 
-00:06:54.680 --> 00:06:59.360
- look at this right we've learned Python and we're going to learn JavaScript next
+00:04:00.420 --> 00:04:03.500
+ of any of these other languages on here,
 
-00:06:59.360 --> 00:07:02.880
- and so we're moving in but again JavaScript you can think of as
+00:04:03.500 --> 00:04:05.940
+ but it had object-oriented concepts.
 
-00:07:02.880 --> 00:07:07.080
- unlocking a whole bunch of other languages and so it's worth learning it a
+00:04:05.940 --> 00:04:09.740
+ C# was Microsoft's version of that.
 
-00:07:07.080 --> 00:07:11.600
- little bit even though in this class we're not going to go into any great
+00:04:09.740 --> 00:04:14.740
+ Java was open source, the thing that became
 
-00:07:11.600 --> 00:07:14.800
- detail because mostly you're going to be cutting and pasting JavaScript and then
+00:04:14.740 --> 00:04:18.100
+ the sort of progenitor of JavaScript.
 
-00:07:14.800 --> 00:07:18.800
- tweaking it and reading it and debugging it. So we're really not focusing on
+00:04:18.100 --> 00:04:20.860
+ But again, they're not as related as you might think.
 
-00:07:18.800 --> 00:07:23.960
- writing too much new JavaScript. So there's a couple of situations where
+00:04:20.860 --> 00:04:24.340
+ It's really JavaScript came from C
 
-00:07:23.960 --> 00:07:29.480
- you'll find yourself writing some JavaScript. One is augmenting HTML. That
+00:04:24.340 --> 00:04:26.940
+ more than it came from Java.
 
-00:07:29.480 --> 00:07:33.680
- will be the first thing we'll do. There is this thing in the browser that runs
+00:04:26.940 --> 00:04:29.460
+ There's a few things that are imitating Java.
 
-00:07:33.680 --> 00:07:38.360
- JavaScript and the way it interacts with the browser's UI is through the document
+00:04:29.460 --> 00:04:33.060
+ And so all of the things above this line
 
-00:07:38.360 --> 00:07:43.960
- object model. You can add a library like jQuery to make that interaction easier
+00:04:33.060 --> 00:04:37.180
+ are semicolon and curly brace.
 
-00:07:43.960 --> 00:07:47.420
- because the document object models aren't as portable across browsers as we
+00:04:37.180 --> 00:04:39.940
+ They use semicolon and curly brace to end lines
 
-00:07:47.420 --> 00:07:52.920
- would like sometimes and then to keep going you find that you're building more
+00:04:39.940 --> 00:04:41.500
+ and to begin and end blocks.
 
-00:07:52.920 --> 00:07:56.520
- and more of your application logic in the browser and so they say you know
+00:04:41.500 --> 00:04:43.780
+ Curly brace, beginning curly brace, and end curly brace.
 
-00:07:56.520 --> 00:08:01.280
- what I just want to write the the model in view part maybe I mean the controller
+00:04:43.780 --> 00:04:46.620
+ And then there is this other set of programming languages
 
-00:08:01.280 --> 00:08:05.880
- in view part in the browser in JavaScript using a templating language
+00:04:46.620 --> 00:04:48.460
+ that don't use semicolon and curly brace.
 
-00:08:05.880 --> 00:08:11.200
- and you can use like viewer react to do that and then if you keep on going you
+00:04:48.460 --> 00:04:50.500
+ And C was the first language
 
-00:08:11.200 --> 00:08:14.600
- can add JavaScript is just a language and they've implemented it inside the
+00:04:50.500 --> 00:04:52.620
+ that did the semicolon and curly brace.
 
-00:08:14.600 --> 00:08:19.160
- server using as a server-based language and we would use Django and Python as
+00:04:52.620 --> 00:04:56.740
+ And so these languages that are kind of below this line,
 
-00:08:19.160 --> 00:08:22.440
- our server-based language but you can actually write your entire application
+00:04:56.740 --> 00:05:01.140
+ Bash, Perl, Python, and PHP are really,
 
-00:08:22.440 --> 00:08:27.360
- front to back in JavaScript and use something like node to run the server
+00:05:01.140 --> 00:05:04.460
+ actually PHP is a semicolon and curly brace as well.
 
-00:08:27.360 --> 00:08:32.360
- side of it that's actually talking to the database. So there's lots and lots
+00:05:04.460 --> 00:05:06.500
+ Python is the language we've been learning,
 
-00:08:32.360 --> 00:08:36.520
- JavaScript is just like you're you're opening the door into a lot of really
+00:05:06.500 --> 00:05:09.460
+ and it's really the odd language.
 
-00:08:36.520 --> 00:08:42.960
- wonderful capabilities. So like I said it is in the syntax family of Java and that
+00:05:09.460 --> 00:05:12.420
+ So we're going to learn a language that's in the category
 
-00:08:42.960 --> 00:08:49.200
- is that it has semicolons to end lines white space doesn't matter open curly
+00:05:12.420 --> 00:05:14.020
+ that makes it easier for you to learn C,
 
-00:08:49.200 --> 00:08:56.080
- brace and close curly brace start and end blocks whereas in in Python you just end
+00:05:14.020 --> 00:05:15.820
+ or C++, or Java, or Objective-C.
 
-00:08:56.080 --> 00:09:00.760
- the line and you indent to indicate a block of text and you de-indent to
+00:05:15.820 --> 00:05:20.140
+ And so this is worth learning, even though you know Python.
 
-00:09:00.760 --> 00:09:07.920
- indicate the end of that block of text. Now I will admit that Python is not my
+00:05:20.140 --> 00:05:23.060
+ There was another movement that was sort of,
 
-00:09:07.920 --> 00:09:15.240
- favorite syntax it is my favorite language in that I like its libraries I
+00:05:23.060 --> 00:05:25.260
+ C is a very high performance language
 
-00:09:15.240 --> 00:09:19.160
- like how it thinks about things I like its object oriented patterns I like a
+00:05:25.260 --> 00:05:27.860
+ and really aimed computer scientists
 
-00:09:19.160 --> 00:09:23.200
- lot about it but I do like my curly braces because for me I like to see the
+00:05:27.860 --> 00:05:30.660
+ to build complex systems like Linux.
 
-00:09:23.200 --> 00:09:27.080
- beginning and end of blocks whereas in Python you only see the beginning but
+00:05:30.660 --> 00:05:34.100
+ But then there were languages for like the end user
 
-00:09:27.080 --> 00:09:31.400
- that's okay I'm just saying that now you're going to see some of this syntax
+00:05:34.100 --> 00:05:36.940
+ that just got work done but weren't seen as like
 
-00:09:31.400 --> 00:09:34.760
- and it's look gonna look if Python's the only language you know it's gonna look
+00:05:36.940 --> 00:05:39.660
+ super performant for professionals,
 
-00:09:34.760 --> 00:09:38.240
- quite different. If you know Java it'd be like yeah of course I know that I've
+00:05:39.660 --> 00:05:41.340
+ et cetera, et cetera, et cetera.
 
-00:09:38.240 --> 00:09:44.800
- been programming that for a long time. So up next we're going to talk about how we
+00:05:41.340 --> 00:05:44.060
+ And so Bash, which is the Linux shell
 
-00:09:44.800 --> 00:09:49.720
- work with JavaScript when we're sitting in a browser.
+00:05:44.060 --> 00:05:46.940
+ where you're typing CD and LS if you're familiar with that.
 
-00:09:57.080 --> 00:09:58.480
- (upbeat music)
+00:05:46.940 --> 00:05:48.900
+ Perl was a report generation language
+
+00:05:48.900 --> 00:05:52.100
+ that introduced the concept of associative arrays.
+
+00:05:52.100 --> 00:05:55.900
+ And most people joke about Perl.
+
+00:05:55.900 --> 00:05:58.460
+ I don't like Perl 'cause I can never read my code
+
+00:05:58.460 --> 00:05:59.300
+ after I write it.
+
+00:05:59.300 --> 00:06:01.620
+ I can write it, but I can't read it afterwards.
+
+00:06:01.620 --> 00:06:03.580
+ But it introduced a lot of wonderful concepts
+
+00:06:03.580 --> 00:06:05.580
+ like associative arrays,
+
+00:06:05.580 --> 00:06:07.820
+ which we would call dictionaries in Python.
+
+00:06:07.820 --> 00:06:12.380
+ And Perl, it really definitely influenced Python
+
+00:06:12.380 --> 00:06:14.220
+ because of its ease of programming.
+
+00:06:14.220 --> 00:06:17.580
+ So what Perl was really good at was allowing a person
+
+00:06:17.580 --> 00:06:21.700
+ with very little formal training on data structures
+
+00:06:21.700 --> 00:06:23.420
+ to be able to use associative arrays
+
+00:06:23.420 --> 00:06:25.140
+ and nested associative arrays
+
+00:06:25.140 --> 00:06:27.780
+ to create pretty sophisticated data structures.
+
+00:06:27.780 --> 00:06:30.540
+ And Python came along with that.
+
+00:06:30.540 --> 00:06:33.700
+ And PHP also, original PHP stood
+
+00:06:33.700 --> 00:06:36.380
+ for Perl Hypertext Processor.
+
+00:06:36.380 --> 00:06:37.660
+ Now it doesn't stand for that.
+
+00:06:37.660 --> 00:06:41.300
+ But Perl and Python and PHP are in this category
+
+00:06:41.300 --> 00:06:44.580
+ of sort of interpreted, easy to use languages
+
+00:06:44.580 --> 00:06:46.700
+ with strings that work really nice.
+
+00:06:46.700 --> 00:06:49.340
+ And they just make life a lot easier.
+
+00:06:49.340 --> 00:06:52.540
+ In languages like C, strings are very difficult.
+
+00:06:52.540 --> 00:06:56.220
+ So if we take a look at this, right?
+
+00:06:56.220 --> 00:06:57.580
+ We've learned Python
+
+00:06:57.580 --> 00:06:59.380
+ and we're going to learn JavaScript next.
+
+00:06:59.380 --> 00:07:00.980
+ And so we're moving in.
+
+00:07:00.980 --> 00:07:02.780
+ But again, JavaScript you can think of
+
+00:07:02.780 --> 00:07:05.340
+ as unlocking a whole bunch of other languages.
+
+00:07:05.340 --> 00:07:08.100
+ And so it's worth learning it a little bit.
+
+00:07:08.100 --> 00:07:09.500
+ Even though in this class,
+
+00:07:09.500 --> 00:07:12.060
+ we're not going to go into any great detail
+
+00:07:12.060 --> 00:07:14.380
+ 'cause mostly you're gonna be cutting and pasting JavaScript
+
+00:07:14.380 --> 00:07:17.020
+ and then tweaking it and reading it and debugging it.
+
+00:07:17.020 --> 00:07:18.740
+ So we're really not focusing
+
+00:07:18.740 --> 00:07:21.220
+ on writing too much new JavaScript.
+
+00:07:21.220 --> 00:07:23.860
+ So there's a couple of situations
+
+00:07:23.860 --> 00:07:26.300
+ where you'll find yourself writing some JavaScript.
+
+00:07:26.300 --> 00:07:29.380
+ One is augmenting HTML.
+
+00:07:29.380 --> 00:07:30.980
+ That'll be the first thing we'll do.
+
+00:07:30.980 --> 00:07:34.460
+ There is this thing in the browser that runs JavaScript.
+
+00:07:34.460 --> 00:07:37.420
+ And the way it interacts with the browser's UI
+
+00:07:37.420 --> 00:07:39.900
+ is through the document object model.
+
+00:07:39.900 --> 00:07:42.340
+ You can add a library like jQuery
+
+00:07:42.340 --> 00:07:44.100
+ to make that interaction easier
+
+00:07:44.100 --> 00:07:45.460
+ 'cause the document object models
+
+00:07:45.460 --> 00:07:47.140
+ aren't as portable across browsers
+
+00:07:47.140 --> 00:07:48.700
+ as we would like sometimes.
+
+00:07:48.700 --> 00:07:51.780
+ And then to keep going,
+
+00:07:51.780 --> 00:07:53.300
+ you find that you're building more and more
+
+00:07:53.300 --> 00:07:55.460
+ of your application logic in the browser.
+
+00:07:55.460 --> 00:07:56.700
+ And so they say, you know what?
+
+00:07:56.700 --> 00:07:59.540
+ I just want to write the model in view part,
+
+00:07:59.540 --> 00:08:02.300
+ maybe, I mean, the controller in view part
+
+00:08:02.300 --> 00:08:06.420
+ in the browser in JavaScript using a templating language.
+
+00:08:06.420 --> 00:08:09.780
+ And you can use like Viewer React to do that.
+
+00:08:09.780 --> 00:08:11.100
+ And then if you keep on going,
+
+00:08:11.100 --> 00:08:12.980
+ you can add JavaScript as just a language.
+
+00:08:12.980 --> 00:08:15.180
+ And they've implemented it inside the server
+
+00:08:15.180 --> 00:08:17.340
+ using as a server-based language.
+
+00:08:17.340 --> 00:08:19.060
+ And we would use Django and Python
+
+00:08:19.060 --> 00:08:20.220
+ as our server-based language,
+
+00:08:20.220 --> 00:08:22.940
+ but you can actually write your entire application
+
+00:08:22.940 --> 00:08:25.260
+ front to back in JavaScript
+
+00:08:25.260 --> 00:08:28.020
+ and use something like Node to run the server side of it
+
+00:08:28.020 --> 00:08:30.020
+ that's actually talking to the database.
+
+00:08:30.020 --> 00:08:32.620
+ So there's lots and lots.
+
+00:08:32.620 --> 00:08:35.180
+ JavaScript is just like you're opening the door
+
+00:08:35.180 --> 00:08:38.060
+ into a lot of really wonderful capabilities.
+
+00:08:38.060 --> 00:08:42.660
+ So like I said, it is in the syntax family of Java,
+
+00:08:42.660 --> 00:08:46.860
+ and that is that it has semicolons to end lines,
+
+00:08:46.860 --> 00:08:48.620
+ whitespace doesn't matter,
+
+00:08:48.620 --> 00:08:51.380
+ open curly brace and close curly brace,
+
+00:08:51.380 --> 00:08:52.780
+ start and end blocks,
+
+00:08:52.780 --> 00:08:56.780
+ whereas in Python, you just end a line
+
+00:08:56.780 --> 00:08:59.900
+ and you indent to indicate a block of text
+
+00:08:59.900 --> 00:09:02.740
+ and you de-indent to indicate the end of that block of text.
+
+00:09:02.740 --> 00:09:07.740
+ Now, I will admit that Python is not my favorite syntax.
+
+00:09:07.740 --> 00:09:15.220
+ It is my favorite language in that I like its libraries,
+
+00:09:15.220 --> 00:09:16.740
+ I like how it thinks about things,
+
+00:09:16.740 --> 00:09:18.940
+ I like its object-oriented patterns.
+
+00:09:18.940 --> 00:09:21.740
+ I like a lot about it, but I do like my curly braces
+
+00:09:21.740 --> 00:09:24.420
+ because for me, I like to see the beginning and end of blocks,
+
+00:09:24.420 --> 00:09:27.020
+ whereas in Python, you only see the beginning,
+
+00:09:27.020 --> 00:09:28.220
+ but that's okay.
+
+00:09:28.220 --> 00:09:30.540
+ I'm just saying that now you're going to see
+
+00:09:30.540 --> 00:09:32.620
+ some of this syntax and it's gonna look,
+
+00:09:32.620 --> 00:09:34.340
+ if Python's the only language you know,
+
+00:09:34.340 --> 00:09:35.620
+ it's gonna look quite different.
+
+00:09:35.620 --> 00:09:36.860
+ If you know Java, you'll be like,
+
+00:09:36.860 --> 00:09:38.180
+ yeah, of course I know that.
+
+00:09:38.180 --> 00:09:40.180
+ I've been programming that for a long time.
+
+00:09:40.180 --> 00:09:44.580
+ So up next, we're gonna talk about
+
+00:09:44.580 --> 00:09:48.420
+ how we work with JavaScript when we're sitting in a browser.
+
+00:09:48.420 --> 00:09:53.420
+ (jazz music)
 

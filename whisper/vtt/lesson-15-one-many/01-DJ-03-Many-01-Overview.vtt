@@ -1,160 +1,166 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.120
+00:00:00.000 --> 00:00:03.080
  - Hello, and welcome to our lecture on data modeling.
 
-00:00:03.120 --> 00:00:04.740
+00:00:03.080 --> 00:00:04.700
  We're gonna have a couple lectures on data modeling.
 
-00:00:04.740 --> 00:00:06.620
- This first one is sort of the one-to-many,
+00:00:04.700 --> 00:00:06.580
+ This first one is sort of the one to many,
 
-00:00:06.620 --> 00:00:08.080
+00:00:06.580 --> 00:00:08.060
  which is the easiest to understand,
 
-00:00:08.080 --> 00:00:10.820
- and then we'll have another lecture on many-to-many.
+00:00:08.060 --> 00:00:10.760
+ and then we'll have another lecture on many to many.
 
-00:00:10.820 --> 00:00:14.500
+00:00:10.760 --> 00:00:14.520
  Just to give you sort of, we're still sort of building
 
-00:00:14.500 --> 00:00:16.800
- a Django application one piece at a time,
+00:00:14.520 --> 00:00:16.740
+ a django application one piece at a time,
 
-00:00:16.800 --> 00:00:20.540
- and we haven't built a whole Django application.
+00:00:16.740 --> 00:00:20.500
+ and we haven't built a whole django application.
 
-00:00:20.540 --> 00:00:24.540
- But basically, we're really focused on model.py,
+00:00:20.500 --> 00:00:25.060
+ But basically, we're really focused on model dot py,
 
-00:00:24.540 --> 00:00:29.820
+00:00:25.060 --> 00:00:29.740
  and a little bit more on admin to inform.
 
-00:00:29.820 --> 00:00:34.480
- So, model.py is where we define the structure of our database,
+00:00:29.740 --> 00:00:34.360
+ So model.py is where we define the structure of our database,
 
-00:00:34.480 --> 00:00:38.480
+00:00:34.360 --> 00:00:38.400
  and we see this database through data models,
 
-00:00:38.480 --> 00:00:42.120
+00:00:38.400 --> 00:00:42.060
  data model objects, and we can register our data models
 
-00:00:42.120 --> 00:00:46.100
+00:00:42.060 --> 00:00:45.960
  in admin.py, there's not too much in this admin.py.
 
-00:00:46.100 --> 00:00:47.860
+00:00:45.960 --> 00:00:47.820
  But we really, and so we're gonna be talking to things
 
-00:00:47.860 --> 00:00:50.620
+00:00:47.820 --> 00:00:50.520
  like the shell, or you can even run scripts in here.
 
-00:00:50.620 --> 00:00:53.440
- So, the whole thing, in this lecture,
+00:00:50.520 --> 00:00:53.360
+ So the whole thing in this lecture,
 
-00:00:53.440 --> 00:00:55.480
+00:00:53.360 --> 00:00:55.360
  we're not talking much about the routing,
 
-00:00:55.480 --> 00:00:57.620
+00:00:55.360 --> 00:00:57.520
  or the views, or forms, or templates.
 
-00:00:57.620 --> 00:01:00.560
- We're really focused down in this area
+00:00:57.520 --> 00:01:00.540
+ So we're really focused down in this area
 
-00:01:00.560 --> 00:01:02.620
- of our Django application, and it's okay.
+00:01:00.540 --> 00:01:02.560
+ of our django application, and it's okay.
 
-00:01:02.620 --> 00:01:03.860
+00:01:02.560 --> 00:01:03.820
  We'll get to the rest of them,
 
-00:01:03.860 --> 00:01:08.020
+00:01:03.820 --> 00:01:07.980
  and we're just kind of talking about the data modeling now.
 
-00:01:08.020 --> 00:01:11.020
+00:01:07.980 --> 00:01:11.060
  So, I came to databases late in life.
 
-00:01:11.020 --> 00:01:14.360
+00:01:11.060 --> 00:01:14.360
  I saw them a little bit in grad school,
 
 00:01:14.360 --> 00:01:15.500
  which was a very long time ago,
 
-00:01:15.500 --> 00:01:17.920
- and I didn't like relational database as much,
+00:01:15.500 --> 00:01:17.900
+ and I didn't like relational databases much,
 
-00:01:17.920 --> 00:01:22.680
- and I went to a job, and I had learned relational databases
+00:01:17.900 --> 00:01:21.920
+ and I went to a job, and I had to learn
 
-00:01:22.680 --> 00:01:26.920
- for the job, and I actually was a pretty advanced programmer
+00:01:21.920 --> 00:01:23.360
+ relational databases for the job,
 
-00:01:26.920 --> 00:01:30.440
- at that point in time, and so they taught me
+00:01:23.360 --> 00:01:26.960
+ and I actually was a pretty advanced programmer
 
-00:01:30.440 --> 00:01:33.600
- how to do data model design, and I picked it up really fast,
+00:01:26.960 --> 00:01:28.480
+ at that point in time.
 
-00:01:33.600 --> 00:01:36.560
+00:01:28.480 --> 00:01:32.200
+ And so they taught me how to do data model design,
+
+00:01:32.200 --> 00:01:33.700
+ and I picked it up really fast,
+
+00:01:33.700 --> 00:01:36.720
  and I like totally fell in love with databases.
 
-00:01:36.560 --> 00:01:41.100
- So, model design is a interesting problem to solve.
+00:01:36.720 --> 00:01:41.240
+ So model design is an interesting problem to solve.
 
-00:01:41.100 --> 00:01:44.660
+00:01:41.240 --> 00:01:44.720
  The basic idea really comes down to efficiency
 
-00:01:44.660 --> 00:01:46.800
+00:01:44.720 --> 00:01:46.920
  of storing and retrieving data.
 
-00:01:46.800 --> 00:01:48.280
+00:01:46.920 --> 00:01:48.360
  And it just comes down to like,
 
-00:01:48.280 --> 00:01:51.800
+00:01:48.360 --> 00:01:51.920
  if you build an online application like Facebook,
 
-00:01:51.800 --> 00:01:54.020
+00:01:51.920 --> 00:01:54.160
  and if you're not clever about how to store your data,
 
-00:01:54.020 --> 00:01:56.000
+00:01:54.160 --> 00:01:56.120
  and somehow every time you logged into Facebook,
 
-00:01:56.000 --> 00:01:59.420
+00:01:56.120 --> 00:01:59.580
  you had to read all the Facebook's data to finally log in,
 
-00:01:59.420 --> 00:02:03.420
- it would literally take you two to 3,000 hours
+00:01:59.580 --> 00:02:04.360
+ it would literally take you two to three thousand hours
 
-00:02:03.420 --> 00:02:06.640
+00:02:04.360 --> 00:02:06.700
  to log into Facebook if it had to read all of its data.
 
-00:02:06.640 --> 00:02:08.600
- Now, obviously, millions of people
+00:02:06.700 --> 00:02:09.000
+ Now obviously, millions of people log in
 
-00:02:08.600 --> 00:02:10.840
- log in per second in Facebook,
+00:02:09.000 --> 00:02:10.980
+ per second in Facebook,
 
-00:02:10.840 --> 00:02:12.680
+00:02:10.980 --> 00:02:12.800
  and so obviously they're a little faster than that.
 
-00:02:12.680 --> 00:02:15.040
- So, somewhere between days and days and days
+00:02:12.800 --> 00:02:15.160
+ So somewhere between days and days and days
 
-00:02:15.040 --> 00:02:17.540
+00:02:15.160 --> 00:02:17.640
  to read the data, and can read the data
 
-00:02:17.540 --> 00:02:19.160
+00:02:17.640 --> 00:02:19.280
  a million times a second,
 
-00:02:19.160 --> 00:02:20.920
+00:02:19.280 --> 00:02:21.040
  in there is where databases win.
 
-00:02:20.920 --> 00:02:24.040
- And so, at times, it seems like when we're building
+00:02:21.040 --> 00:02:24.120
+ And so at times, it seems like when we're building
 
-00:02:24.040 --> 00:02:26.160
- a data model, you're like, "Oh, this is so difficult,
+00:02:24.120 --> 00:02:26.220
+ a data model, you're like, oh, this is so difficult,
 
-00:02:26.160 --> 00:02:28.160
- "why are we working so hard?"
+00:02:26.220 --> 00:02:28.160
+ why are we working so hard?
 
 00:02:28.160 --> 00:02:30.920
  And the answer is, you just can't scale.
@@ -166,28 +172,28 @@ WEBVTT
  for simple data mining things,
 
 00:02:33.960 --> 00:02:35.560
- but databases are really important,
+ but databases are really important.
 
 00:02:35.560 --> 00:02:36.660
- and especially when you're building
+ And especially when you're building
 
 00:02:36.660 --> 00:02:39.200
  interactive online applications, speed's important.
 
 00:02:39.200 --> 00:02:43.560
- So, it turns out that, like most things in database,
+ So it turns out that, like most things in database,
 
 00:02:43.560 --> 00:02:45.340
  you can learn the basics pretty quick,
 
-00:02:45.340 --> 00:02:46.880
+00:02:45.340 --> 00:02:46.900
  and the rest of it is sort of an art form
 
-00:02:46.880 --> 00:02:49.520
+00:02:46.900 --> 00:02:49.520
  that you learn as you go.
 
 00:02:49.520 --> 00:02:52.520
- And so, the goal is to figure out the data
+ And so the goal is to figure out the data
 
 00:02:52.520 --> 00:02:54.640
  that you want to store in your application,
@@ -202,10 +208,10 @@ WEBVTT
  and then creating links between those tables.
 
 00:03:01.560 --> 00:03:03.840
- So, you kind of start with a sample data set.
+ So you kind of start with a sample data set.
 
 00:03:03.840 --> 00:03:05.240
- Now, this is where we're gonna end up,
+ Now this is where we're gonna end up,
 
 00:03:05.240 --> 00:03:07.660
  and this is the model for the data
@@ -220,16 +226,16 @@ WEBVTT
  over and over.
 
 00:03:13.320 --> 00:03:15.380
- So, this is the destination,
+ So this is the destination,
 
 00:03:15.380 --> 00:03:17.200
- but we're not gonna hit this destination,
+ but we're not gonna hit this destination.
 
 00:03:17.200 --> 00:03:19.520
- we're gonna start more with the data.
+ We're gonna start more with the data.
 
 00:03:19.520 --> 00:03:20.920
- Now, different applications,
+ Now different applications,
 
 00:03:20.920 --> 00:03:22.600
  when you work at different organizations,
@@ -238,13 +244,13 @@ WEBVTT
  you're going to find that the data model is very important.
 
 00:03:26.080 --> 00:03:28.040
- So, this is the data model of my autograder,
+ So this is the data model of my autograder,
 
 00:03:28.040 --> 00:03:30.840
- which is based on a framework I built called SUGI,
+ which is based on a framework I built called SUGI.
 
 00:03:30.840 --> 00:03:34.060
- and so, if you were to learn this thing,
+ And so if you were to learn this thing,
 
 00:03:34.060 --> 00:03:36.020
  early on I say, oh, and here's our data model,
@@ -252,23 +258,23 @@ WEBVTT
 00:03:36.020 --> 00:03:37.080
  and here's how we store stuff,
 
-00:03:37.080 --> 00:03:38.480
- and here's this, that, and the other thing,
+00:03:37.080 --> 00:03:38.840
+ and here's this, that, and the other thing.
 
-00:03:38.480 --> 00:03:41.760
- and this data model took a lot of time to get right,
+00:03:38.840 --> 00:03:41.760
+ And this data model took a lot of time to get right,
 
 00:03:41.760 --> 00:03:45.520
  and it's a real important part of the application.
 
 00:03:45.520 --> 00:03:47.680
- And another project I work on is called Sakai,
+ And another project I work on is called Sakai.
 
 00:03:47.680 --> 00:03:50.240
- it's a learning management system that's open source.
+ It's a learning management system that's open source.
 
 00:03:50.240 --> 00:03:53.080
- And, you know, this is a tiny fraction of the data model,
+ And this is a tiny fraction of the data model,
 
 00:03:53.080 --> 00:03:54.760
  but if you wanna work in this application,
@@ -285,11 +291,14 @@ WEBVTT
 00:04:00.840 --> 00:04:03.560
  it shows up kind of flat in the user interface,
 
-00:04:03.560 --> 00:04:06.760
- but eventually it's stored in very specific locations,
+00:04:03.560 --> 00:04:04.680
+ but eventually it's stored
 
-00:04:06.760 --> 00:04:08.740
- and linked, and that's why you see all these little boxes,
+00:04:04.680 --> 00:04:07.320
+ in very specific locations and linked.
+
+00:04:07.320 --> 00:04:08.740
+ And that's why you see all these little boxes,
 
 00:04:08.740 --> 00:04:09.580
  but then lines.
@@ -298,27 +307,27 @@ WEBVTT
  The lines are also the links between the various tables.
 
 00:04:12.960 --> 00:04:15.380
- So, there's a whole bunch of theory
+ So there's a whole bunch of theory
 
 00:04:15.380 --> 00:04:18.140
- about database normalization, and it's important,
+ about database normalization, and it's important.
 
-00:04:18.140 --> 00:04:20.040
- it really is, and if you take some time,
+00:04:18.140 --> 00:04:18.980
+ It really is.
 
-00:04:20.040 --> 00:04:22.240
- go ahead and read about it.
+00:04:18.980 --> 00:04:22.240
+ And if you take some time, go ahead and read about it.
 
-00:04:22.240 --> 00:04:24.960
- First normal form, second normal form, third normal form,
+00:04:22.240 --> 00:04:24.040
+ First normal form, second normal form,
 
-00:04:24.960 --> 00:04:27.640
- third normal form, version A and stuff.
+00:04:24.040 --> 00:04:27.640
+ third normal form, third normal form, version A and stuff.
 
-00:04:27.640 --> 00:04:28.900
- I'm not really into the math,
+00:04:27.640 --> 00:04:28.920
+ I'm not really into the math.
 
-00:04:28.900 --> 00:04:32.000
+00:04:28.920 --> 00:04:32.000
  I don't really wanna explain the math to you.
 
 00:04:32.000 --> 00:04:36.380
@@ -328,16 +337,16 @@ WEBVTT
  that it can be sort of distilled down to,
 
 00:04:40.620 --> 00:04:43.000
- don't replicate string data,
+ don't replicate string data.
 
-00:04:43.000 --> 00:04:44.920
- and what I mean by string data is like,
+00:04:43.000 --> 00:04:46.800
+ And what I mean by string data is like names and URLs
 
-00:04:44.920 --> 00:04:48.180
- names, and URLs, and things like that.
+00:04:46.800 --> 00:04:48.180
+ and things like that.
 
 00:04:49.520 --> 00:04:51.520
- So, in a system, ultimately,
+ So in a system, ultimately,
 
 00:04:51.520 --> 00:04:56.440
  if my email address is stored in text in that system,
@@ -345,17 +354,17 @@ WEBVTT
 00:04:56.440 --> 00:04:58.140
  it literally should be stored once.
 
-00:04:58.140 --> 00:05:00.200
- There should be no email address,
+00:04:58.140 --> 00:05:00.800
+ There should be no email address, email address,
 
-00:05:00.200 --> 00:05:01.440
- email address, email address.
+00:05:00.800 --> 00:05:01.640
+ email address.
 
-00:05:01.440 --> 00:05:04.000
+00:05:01.640 --> 00:05:04.000
  What you need is to have the email address one place,
 
 00:05:04.000 --> 00:05:06.040
- and then kind of give that email address a number,
+ and then kind of give that email address a number
 
 00:05:06.040 --> 00:05:08.320
  and all the places you wanna indicate
@@ -364,47 +373,50 @@ WEBVTT
  about that email address you used the number in.
 
 00:05:10.280 --> 00:05:12.840
- So, these integer numbers are the key.
+ So these integer numbers are the key.
 
 00:05:12.840 --> 00:05:16.400
- So, we create keys, which are the lookup handles,
+ So we create keys, which are the lookup handles,
 
 00:05:16.400 --> 00:05:18.000
- and then we point to those keys,
+ and then we point to those keys.
 
-00:05:18.000 --> 00:05:20.300
- and we use integers to make links between the tables,
+00:05:18.000 --> 00:05:20.320
+ And we use integers to make links between the tables
 
-00:05:20.300 --> 00:05:22.720
- 'cause integers are fast,
+00:05:20.320 --> 00:05:22.720
+ 'cause integers are fast.
 
-00:05:22.720 --> 00:05:24.540
- they're the thing that computers understand better.
+00:05:22.720 --> 00:05:24.560
+ They're the thing that computers understand better.
 
-00:05:24.540 --> 00:05:26.680
+00:05:24.560 --> 00:05:26.680
  They understand, computers understand
 
 00:05:26.680 --> 00:05:28.400
  and move integers around.
 
-00:05:28.400 --> 00:05:30.400
- They use less data, they calculate,
+00:05:28.400 --> 00:05:29.440
+ They use less data.
 
-00:05:30.400 --> 00:05:32.020
- they compare really fast,
+00:05:29.440 --> 00:05:30.400
+ They calculate.
 
-00:05:32.020 --> 00:05:34.420
- and so it's very, integers are very important.
+00:05:30.400 --> 00:05:32.040
+ They compare really fast.
 
-00:05:34.420 --> 00:05:39.240
- So, up next, we're gonna take a look at some example data,
+00:05:32.040 --> 00:05:34.440
+ And so it's very, integers are very important.
 
-00:05:39.240 --> 00:05:42.020
+00:05:34.440 --> 00:05:39.240
+ So up next, we're gonna take a look at some example data,
+
+00:05:39.240 --> 00:05:42.240
  and then we're gonna design a data model for that data.
 
-00:05:42.020 --> 00:05:44.600
+00:05:42.240 --> 00:05:44.820
  (upbeat music)
 
-00:05:48.000 --> 00:05:50.920
- (jazz piano music)
+00:05:48.000 --> 00:05:51.000
+ (jazzy piano music)
 

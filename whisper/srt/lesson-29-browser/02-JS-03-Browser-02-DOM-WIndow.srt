@@ -1,352 +1,508 @@
 1
-00:00:00,000 --> 00:00:03,460
- I mentioned that JavaScript owns the document-object model.
+00:00:00,000 --> 00:00:03,400
+ I mentioned that JavaScript owns the document object model.
 
 2
-00:00:03,460 --> 00:00:07,480
- The document-object model is what we see when we're looking at the browser.
+00:00:03,400 --> 00:00:05,980
+ The document object model is what we see
 
 3
-00:00:07,480 --> 00:00:12,820
- A browser parses the HTML, sometimes our JavaScript writes it, and then creates this object we
+00:00:05,980 --> 00:00:07,520
+ when we're looking at the browser.
 
 4
-00:00:12,820 --> 00:00:16,760
- call the document-object model, which is then displayed to the user through a window.
+00:00:07,520 --> 00:00:09,860
+ A browser parses the HTML, sometimes our JavaScript
 
 5
-00:00:16,760 --> 00:00:20,600
- A window is the subset of the document-object model.
+00:00:09,860 --> 00:00:12,720
+ writes it and then creates this object,
 
 6
-00:00:20,600 --> 00:00:25,360
- In whatever JavaScript we write, we can read, manipulate, and update the DOM.
+00:00:12,720 --> 00:00:14,600
+ we call the document object model,
 
 7
-00:00:25,360 --> 00:00:30,280
- And as soon as the DOM is updated, the user sees the updates through the window.
+00:00:14,600 --> 00:00:16,720
+ which is then displayed to the user through a window.
 
 8
-00:00:30,280 --> 00:00:35,320
- And we can also just go into the debugger and directly manipulate the document-object
+00:00:16,720 --> 00:00:19,440
+ A window is the subset of the document object model.
 
 9
-00:00:35,320 --> 00:00:36,400
- model.
+00:00:19,440 --> 00:00:22,380
+ In whatever JavaScript we write,
 
 10
-00:00:36,400 --> 00:00:40,580
- So if we go back to the 01 NoScript, there's no JavaScript in here.
+00:00:22,380 --> 00:00:25,200
+ we can read, manipulate, and update the DOM.
 
 11
-00:00:40,580 --> 00:00:45,320
- So you just go, it shows you a header and a paragraph, and that's the document-object
+00:00:25,200 --> 00:00:26,880
+ And as soon as the DOM is updated,
 
 12
-00:00:45,320 --> 00:00:46,320
- model.
+00:00:26,880 --> 00:00:30,080
+ the user sees the updates through the window.
 
 13
-00:00:46,320 --> 00:00:51,480
- But you'll note that if you go into Inspect Element and then go into that paragraph tag,
+00:00:30,080 --> 00:00:32,480
+ And we can also just go into the debugger
 
 14
-00:00:51,480 --> 00:00:55,480
- you can change and add the word cool.
+00:00:32,480 --> 00:00:36,220
+ and directly manipulate the document object model.
 
 15
-00:00:55,480 --> 00:01:00,680
- In a sense, the debugger is JavaScript, and you can actually type JavaScript commands into
+00:00:36,220 --> 00:00:38,560
+ So if we go back to the 01 NoScript,
 
 16
-00:01:00,680 --> 00:01:03,860
- the debugger if you do the right thing.
+00:00:38,560 --> 00:00:40,400
+ there's no JavaScript in here.
 
 17
-00:01:03,860 --> 00:01:08,520
- But the debugger is owning the document-object model as well.
+00:00:40,400 --> 00:00:44,080
+ So you just go, it shows you a header and a paragraph,
 
 18
-00:01:08,520 --> 00:01:11,400
- And so you simply can change the document-object model.
+00:00:44,080 --> 00:00:45,620
+ and that's the document object model.
 
 19
-00:01:11,400 --> 00:01:16,700
- And literally, it changes the UI, but truly the document-object model changes.
+00:00:45,620 --> 00:00:48,920
+ But you'll note that if you go into Inspect Element
 
 20
-00:01:16,700 --> 00:01:20,180
- So you can even change the kind of a tag you're dealing with.
+00:00:48,920 --> 00:00:51,300
+ and then go into that paragraph tag,
 
 21
-00:01:20,180 --> 00:01:21,800
- You could turn this into an anchor tag.
+00:00:51,300 --> 00:00:53,740
+ you can change and add the word cool.
 
 22
-00:01:21,800 --> 00:01:23,440
- You could add some hrefs.
+00:00:55,320 --> 00:00:57,920
+ In a sense the debugger is JavaScript, right?
 
 23
-00:01:23,440 --> 00:01:26,440
- You can change the document-object model.
+00:00:57,920 --> 00:01:00,480
+ And you can actually type JavaScript commands
 
 24
-00:01:26,440 --> 00:01:31,000
- You're displayed-- it just-- you change it, and you see it.
+00:01:00,480 --> 00:01:03,480
+ into the debugger if you do the right thing.
 
 25
-00:01:31,000 --> 00:01:33,920
- Now, I mentioned this thing called the window.
+00:01:03,480 --> 00:01:06,880
+ But the debugger is owning
 
 26
-00:01:33,920 --> 00:01:38,500
- There are two sort of foundational objects in JavaScript in the browser.
+00:01:06,880 --> 00:01:08,440
+ the document object model as well.
 
 27
-00:01:38,500 --> 00:01:39,500
- There's the DOM.
+00:01:08,440 --> 00:01:11,120
+ And so you simply can change the document object model.
 
 28
-00:01:39,500 --> 00:01:42,440
- And the DOM is an abstraction.
+00:01:11,120 --> 00:01:14,440
+ And literally, it changes the UI,
 
 29
-00:01:42,440 --> 00:01:45,480
- It is a structured hierarchy of tags.
+00:01:14,440 --> 00:01:16,600
+ but truly the document object model changes.
 
 30
-00:01:45,480 --> 00:01:47,600
- We call them elements.
+00:01:16,600 --> 00:01:18,560
+ So you can take a, you can even change
 
 31
-00:01:47,600 --> 00:01:50,260
- The window is how we see it.
+00:01:18,560 --> 00:01:20,080
+ the kind of a tag you're dealing with.
 
 32
-00:01:50,260 --> 00:01:54,920
- So you can think of this picture that I've been showing you, parsing the response, running
+00:01:20,080 --> 00:01:21,680
+ You could turn this into an anchor tag,
 
 33
-00:01:54,920 --> 00:02:01,120
- some JavaScript, and tweaking the document-object model, and showing it to the user.
+00:01:21,680 --> 00:01:23,160
+ you could add some hrefs.
 
 34
-00:02:01,120 --> 00:02:05,040
- And if you change the document-object model, it's immediately updated.
+00:01:23,160 --> 00:01:26,280
+ You can change the document object model.
 
 35
-00:02:05,040 --> 00:02:11,520
- On the left, that's kind of an oversimplification, because the way we actually view the document-object
+00:01:26,280 --> 00:01:31,160
+ You're displayed, it just, you change it and you see it.
 
 36
-00:02:11,520 --> 00:02:14,380
- model is through the window.
+00:01:31,160 --> 00:01:33,680
+ Now, I mentioned this thing called the window.
 
 37
-00:02:14,380 --> 00:02:20,320
- The window is what's on your screen, and probably the most easy way to demonstrate this is to
+00:01:33,680 --> 00:01:36,920
+ There are two sort of foundational objects
 
 38
-00:02:20,320 --> 00:02:24,920
- understand that the document-object model could be very large, and the window could
+00:01:36,920 --> 00:01:38,280
+ in JavaScript in the browser.
 
 39
-00:02:24,920 --> 00:02:26,360
- be very small.
+00:01:38,280 --> 00:01:42,280
+ There's the DOM, and the DOM is an abstraction.
 
 40
-00:02:26,360 --> 00:02:31,240
- And the document-object model doesn't change, and you can resize the window back and forth.
+00:01:42,280 --> 00:01:46,480
+ It is a structured hierarchy of tags, we call them elements.
 
 41
-00:02:31,240 --> 00:02:33,540
- So sometimes you see scroll bars.
+00:01:46,480 --> 00:01:50,080
+ The window is how we see it.
 
 42
-00:02:33,540 --> 00:02:38,080
- The scroll bar is not a notion in the document-object model.
+00:01:50,080 --> 00:01:52,960
+ So you can think of this picture that I've been showing you
 
 43
-00:02:38,080 --> 00:02:39,760
- It's a notion in the window.
+00:01:52,960 --> 00:01:55,880
+ of parsing the response, running some JavaScript,
 
 44
-00:02:39,760 --> 00:02:41,560
- The window has a certain height.
+00:01:55,880 --> 00:01:58,520
+ and tweaking the document object model
 
 45
-00:02:41,560 --> 00:02:47,560
- The document-object model may or may not completely fit in the window, and that has to do with
+00:01:58,520 --> 00:02:00,960
+ and showing it to the user.
 
 46
-00:02:47,560 --> 00:02:50,400
- the window height and so scroll bars.
+00:02:00,960 --> 00:02:02,680
+ And if you change the document object model,
 
 47
-00:02:50,400 --> 00:02:57,280
- And so for example, if you look at 06height.html, all it does is puts out the header, puts out
+00:02:02,680 --> 00:02:03,960
+ it's immediately updated.
 
 48
-00:02:57,280 --> 00:03:02,960
- the paragraph, and then prints out window height and window width, window.innerHeight
+00:02:03,960 --> 00:02:07,400
+ On the left, that's a kind of an oversimplification
 
 49
-00:03:02,960 --> 00:03:05,900
- and window.innerWidth.
+00:02:07,400 --> 00:02:12,080
+ because the way we actually view the document object model
 
 50
-00:03:05,900 --> 00:03:11,440
- These are the height of the window, not the document-object model, but the window through
+00:02:12,080 --> 00:02:14,320
+ is through the window.
 
 51
-00:03:11,440 --> 00:03:13,000
- which we're viewing it.
+00:02:14,320 --> 00:02:16,280
+ The window is what's on your screen.
 
 52
-00:03:13,000 --> 00:03:19,600
- And so if you show this page with the debugger turned on with a really tiny window, it says
+00:02:16,280 --> 00:02:20,120
+ And probably the most easy way to demonstrate this
 
 53
-00:03:19,600 --> 00:03:21,360
- that the height is 116.
+00:02:20,120 --> 00:02:22,560
+ is to understand that the document object model
 
 54
-00:03:21,360 --> 00:03:25,080
- If you make the window bigger and hit reload, it says the height's 256.
+00:02:22,560 --> 00:02:26,200
+ could be very large and the window could be very small.
 
 55
-00:03:25,080 --> 00:03:31,000
- So in JavaScript, we can ask questions about the window, and we can do things to the window.
+00:02:26,200 --> 00:02:28,160
+ And the document object model doesn't change
 
 56
-00:03:31,000 --> 00:03:34,080
- One thing we could do is we could scroll it up and down, and that's actually a common
+00:02:28,160 --> 00:02:31,120
+ and you can resize the window back and forth.
 
 57
-00:03:34,080 --> 00:03:35,860
- thing to do in JavaScript.
+00:02:31,120 --> 00:02:33,400
+ So sometimes you see scroll bars.
 
 58
-00:03:35,860 --> 00:03:39,040
- If you have a big document-object model, and you've got a scroll window, and you want to
+00:02:33,400 --> 00:02:37,960
+ The scroll bar is not a notion in the document object model,
 
 59
-00:03:39,040 --> 00:03:44,640
- show the user a particular thing, like go to bottom, JavaScript can scroll the window
+00:02:37,960 --> 00:02:39,680
+ it's a notion in the window.
 
 60
-00:03:44,640 --> 00:03:48,320
- down to the bottom or up or down.
+00:02:39,680 --> 00:02:41,440
+ The window has a certain height,
 
 61
-00:03:48,320 --> 00:03:50,400
- I don't get those right very well.
+00:02:41,440 --> 00:02:44,840
+ the document object model may or may not completely fit
 
 62
-00:03:50,400 --> 00:03:53,620
- But we can control the window.
+00:02:44,840 --> 00:02:48,280
+ in the window, and that has to do with the window height
 
 63
-00:03:53,620 --> 00:03:57,600
- In this case, we're simply asking it how tall you are and how wide you are, but we can also
+00:02:48,280 --> 00:02:50,280
+ and so scroll bars.
 
 64
-00:03:57,600 --> 00:03:59,760
- control it.
+00:02:50,280 --> 00:02:55,240
+ And so for example, if you look at 06height.html,
 
 65
-00:03:59,760 --> 00:04:06,560
- And so if we take a look now and we make 07scroll.htm, we can see that we have nine paragraphs
+00:02:55,240 --> 00:02:58,120
+ all it does is puts out the header, puts out the paragraph,
 
 66
-00:04:06,560 --> 00:04:07,560
- and a header.
+00:02:58,120 --> 00:03:01,960
+ and then prints out window height and window width,
 
 67
-00:04:07,560 --> 00:04:11,080
- That is the actual content.
+00:03:01,960 --> 00:03:04,480
+ window.innerHeight and window.innerWidth.
 
 68
-00:04:11,080 --> 00:04:14,040
- And if we have a tall window, we can see the whole document.
+00:03:04,480 --> 00:03:09,320
+ These are the height of the window,
 
 69
-00:04:14,040 --> 00:04:18,360
- But if we make the window smaller, then we can only see a subset of the document-object
+00:03:09,320 --> 00:03:10,600
+ not the document object model,
 
 70
-00:04:18,360 --> 00:04:19,360
- model.
+00:03:10,600 --> 00:03:12,720
+ but the window through which we're viewing it.
 
 71
-00:04:19,360 --> 00:04:23,240
- And so the window height changes, and if you look, you now have a scroll bar.
+00:03:12,720 --> 00:03:16,400
+ And so if you show this page with the debugger turned on
 
 72
-00:04:23,240 --> 00:04:24,400
- And what does the scroll bar do?
+00:03:16,400 --> 00:03:19,120
+ with a really tiny window,
 
 73
-00:04:24,400 --> 00:04:28,440
- Well, it just takes and moves the document-object model up and down.
+00:03:19,120 --> 00:03:21,280
+ it says that the height is 116.
 
 74
-00:04:28,440 --> 00:04:32,960
- Well, it moves the part of the document-object, our view to the document-object model up and
+00:03:21,280 --> 00:03:23,080
+ If you make the window bigger and hit reload,
 
 75
-00:04:32,960 --> 00:04:33,960
- down.
+00:03:23,080 --> 00:03:24,960
+ it says the height's 256.
 
 76
-00:04:33,960 --> 00:04:38,320
- And if you're doing an inspect element in some browsers, you will see that it's telling
+00:03:24,960 --> 00:03:29,600
+ So in JavaScript, we can ask questions about the window
 
 77
-00:04:38,320 --> 00:04:44,480
- us with little kind of annotations that the body is being scrolled right now, and up through
+00:03:29,600 --> 00:03:30,920
+ and we can do things to the window.
 
 78
-00:04:44,480 --> 00:04:50,920
- paragraph four is overflowed off the screen up, and paragraph seven, eight, and nine have
+00:03:30,920 --> 00:03:33,000
+ One thing we could do is we could scroll it up and down
 
 79
-00:04:50,920 --> 00:04:53,240
- overflowed and they've gone off the screen below.
+00:03:33,000 --> 00:03:35,760
+ and that's actually a common thing to do in JavaScript.
 
 80
-00:04:53,240 --> 00:04:57,680
- Now if you play with this and you resize it and refresh it and resize it and refresh it,
+00:03:35,760 --> 00:03:37,440
+ If you have a big document object model
 
 81
-00:04:57,680 --> 00:05:03,000
- you'll see this whole-- I mean, on the left, the whole thing shows, and so body is not indicated
+00:03:37,440 --> 00:03:38,480
+ and you got a scroll window
 
 82
-00:05:03,000 --> 00:05:09,080
- as the scrollable element, and the headers not overflow, et cetera.
+00:03:38,480 --> 00:03:41,040
+ and you wanna show the user a particular thing
 
 83
-00:05:09,080 --> 00:05:12,720
- So you can play with this, but play with it with different sizes, refresh it, and then
+00:03:41,040 --> 00:03:42,920
+ like go to bottom,
 
 84
-00:05:12,720 --> 00:05:17,880
- inspect element, and watch how the scroll, the overflow, and the scroll bar-- and in
+00:03:42,920 --> 00:03:46,400
+ JavaScript can scroll the window down to the bottom
 
 85
-00:05:17,880 --> 00:05:21,360
- this case, I'm not printing out height, but you would be seeing that the height would
+00:03:46,400 --> 00:03:50,160
+ or up or down, I don't get those right very well,
 
 86
-00:05:21,360 --> 00:05:23,760
- actually change.
+00:03:50,160 --> 00:03:53,520
+ but we can control the window.
 
 87
-00:05:23,760 --> 00:05:28,040
- So one of the things that we're going to do next is we're going to modify the document-object
+00:03:53,520 --> 00:03:56,080
+ In this case, we're simply asking it how tall you are
 
 88
-00:05:28,040 --> 00:05:37,560
- model in JavaScript.
+00:03:56,080 --> 00:03:56,960
+ and how wide you are,
+
+89
+00:03:56,960 --> 00:03:58,440
+ but we can also control it.
+
+90
+00:03:58,440 --> 00:04:04,000
+ And so if we take a look now and we make 07scroll.htm,
+
+91
+00:04:04,000 --> 00:04:07,280
+ we can see that we have nine paragraphs and a header.
+
+92
+00:04:07,280 --> 00:04:10,960
+ That is the actual content, okay?
+
+93
+00:04:10,960 --> 00:04:12,440
+ And if we have a tall window,
+
+94
+00:04:12,440 --> 00:04:13,920
+ we can see the whole document.
+
+95
+00:04:13,920 --> 00:04:15,640
+ But if we make the window smaller,
+
+96
+00:04:15,640 --> 00:04:19,200
+ then we can only see a subset of the document object model.
+
+97
+00:04:19,200 --> 00:04:21,480
+ So the window height changes
+
+98
+00:04:21,480 --> 00:04:23,160
+ and if you look, you now have a scroll bar
+
+99
+00:04:23,160 --> 00:04:24,440
+ and what does the scroll bar do?
+
+100
+00:04:24,440 --> 00:04:27,360
+ Well, it just takes and moves the document object model
+
+101
+00:04:27,360 --> 00:04:28,520
+ up and down.
+
+102
+00:04:28,520 --> 00:04:31,120
+ Well, it moves the part of the document object,
+
+103
+00:04:31,120 --> 00:04:33,720
+ our view to the document object model up and down.
+
+104
+00:04:33,720 --> 00:04:36,240
+ But if you're doing an inspect element in some browsers,
+
+105
+00:04:36,240 --> 00:04:38,640
+ you will see that it's telling us
+
+106
+00:04:38,640 --> 00:04:40,680
+ with little kind of annotations
+
+107
+00:04:40,680 --> 00:04:43,640
+ that the body is being scrolled right now
+
+108
+00:04:43,640 --> 00:04:46,960
+ and up through paragraph four is overflowed
+
+109
+00:04:46,960 --> 00:04:50,760
+ off the screen up and paragraph seven, eight, and nine
+
+110
+00:04:50,760 --> 00:04:53,080
+ have overflowed and they've gone off the screen below.
+
+111
+00:04:53,080 --> 00:04:55,840
+ Now, if you play with this and you resize it
+
+112
+00:04:55,840 --> 00:04:57,600
+ and refresh it and resize it and refresh it,
+
+113
+00:04:57,600 --> 00:04:59,840
+ you'll see this whole, I mean, you don't,
+
+114
+00:04:59,840 --> 00:05:01,440
+ on the left, the whole thing shows
+
+115
+00:05:01,440 --> 00:05:04,960
+ and so body is not indicated as the scrollable element.
+
+116
+00:05:04,960 --> 00:05:08,960
+ And the headers not overflow, et cetera.
+
+117
+00:05:08,960 --> 00:05:10,280
+ So you can play with this,
+
+118
+00:05:10,280 --> 00:05:12,440
+ but play with it with different sizes, refresh it,
+
+119
+00:05:12,440 --> 00:05:15,120
+ and then inspect element and watch how the scroll,
+
+120
+00:05:15,120 --> 00:05:17,640
+ the overflow, and the scroll bar.
+
+121
+00:05:17,640 --> 00:05:19,120
+ And in this case, I'm not printing out height,
+
+122
+00:05:19,120 --> 00:05:20,880
+ but you would be seeing that the height
+
+123
+00:05:20,880 --> 00:05:22,640
+ would actually change.
+
+124
+00:05:22,640 --> 00:05:25,280
+ So one of the things that we're gonna do next
+
+125
+00:05:25,280 --> 00:05:28,480
+ is we're gonna modify the document object model
+
+126
+00:05:28,480 --> 00:05:29,880
+ in JavaScript.
+
+127
+00:05:29,880 --> 00:05:32,460
+ (upbeat music)
 

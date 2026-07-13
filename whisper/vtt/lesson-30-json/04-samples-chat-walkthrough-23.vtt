@@ -1,16 +1,16 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:03.520
- >> Welcome to another walk-through for Django for everybody.
+ >> Welcome to another walkthrough for Django for everybody.
 
 00:00:03.520 --> 00:00:04.640
- In this particular walk-through,
+ In this particular walkthrough,
 
 00:00:04.640 --> 00:00:07.720
  we are going to walk through the JSON sample code.
 
 00:00:07.720 --> 00:00:11.240
- It's an application of fetch, and Ajax, and setTimeout, and
+ It's an application of fetch and Ajax and setTimeout, and
 
 00:00:11.240 --> 00:00:14.240
  it brings a lot of these JavaScript in the browser ideas
@@ -22,24 +22,24 @@ WEBVTT
  So the idea is we are doing something that's asynchronous.
 
 00:00:21.080 --> 00:00:26.120
- We're simulating two people logged into the same system.
+ We're going to have, we're simulating two people logged in to the same system.
 
 00:00:26.120 --> 00:00:32.080
  And wanting to see the messages from one screen to another.
 
 00:00:32.080 --> 00:00:34.520
- So let's, second message.
+ So let's second message.
 
 00:00:34.520 --> 00:00:35.600
  So this is one user.
 
 00:00:35.600 --> 00:00:47.120
- So the whole page re-displays, and we saw the spinner come up there.
+ So the whole page re-displays and we saw the spinner come up there.
 
-00:00:47.120 --> 00:00:50.040
+00:00:47.120 --> 00:00:50.080
  And so if we come back and we just go over to this other screen,
 
-00:00:50.040 --> 00:00:52.920
+00:00:50.080 --> 00:00:52.920
  second message shows up.
 
 00:00:52.920 --> 00:00:54.240
@@ -48,23 +48,23 @@ WEBVTT
 00:00:54.240 --> 00:00:55.920
  We didn't refresh the screen.
 
-00:00:55.920 --> 00:00:58.640
+00:00:55.920 --> 00:00:58.600
  And so some asynchronous thing is happening.
 
-00:00:58.640 --> 00:01:03.680
- And so let's just take a look at the web developer tools.
+00:00:58.600 --> 00:01:03.680
+ And so let's just take a look at the developer tools.
 
 00:01:03.680 --> 00:01:05.080
  Let's take a look at the network.
 
-00:01:05.080 --> 00:01:11.040
+00:01:05.080 --> 00:01:11.000
  And so what's happening is there's a timer.
 
-00:01:11.040 --> 00:01:13.360
+00:01:11.000 --> 00:01:13.320
  And it's requesting this chat.
 
-00:01:13.360 --> 00:01:15.560
- And in this chat there is some JSON.
+00:01:13.320 --> 00:01:15.560
+ And in this chat, there is some JSON.
 
 00:01:15.560 --> 00:01:21.520
  If we take a look at the response, we get an array of these messages, right?
@@ -78,14 +78,14 @@ WEBVTT
 00:01:26.960 --> 00:01:33.800
  And so this is just getting the, it looks like about every five seconds.
 
-00:01:33.800 --> 00:01:36.920
+00:01:33.800 --> 00:01:36.960
  And so if I go on, I'll just say third message over here.
 
-00:01:36.920 --> 00:01:42.160
- So what happens here is I'm doing a full post redirect.
+00:01:36.960 --> 00:01:43.320
+ So what happens here is I'm doing a full post, redirect, I'm posting.
 
-00:01:42.160 --> 00:01:45.960
- I'm posting and it's gonna do a post redirect and then a re-display.
+00:01:43.320 --> 00:01:45.960
+ And it's gonna do a post redirect and then a re-display.
 
 00:01:45.960 --> 00:01:49.240
  And it takes two seconds, we'll see that in a second.
@@ -102,194 +102,194 @@ WEBVTT
 00:01:57.680 --> 00:02:01.800
  which is a really bad user network resources, a really bad user server resources.
 
-00:02:01.800 --> 00:02:07.000
- So don't use the polling pattern, but it's the way I can show you this simplest, okay?
+00:02:01.800 --> 00:02:03.360
+ So don't use the polling pattern, but
 
-00:02:07.000 --> 00:02:12.200
+00:02:03.360 --> 00:02:07.040
+ it's the way I can show you this simplest, okay?
+
+00:02:07.040 --> 00:02:12.200
  And so let's take a look at how this is working.
 
-00:02:12.200 --> 00:02:14.600
+00:02:12.200 --> 00:02:14.640
  So let's start with urls.py.
 
-00:02:14.600 --> 00:02:17.640
+00:02:14.640 --> 00:02:17.640
  I've got the talk page, which is this main page.
 
 00:02:17.640 --> 00:02:22.400
  And then I've got a JSON page, a JSON endpoint called messages.
 
-00:02:22.400 --> 00:02:24.960
+00:02:22.400 --> 00:02:24.920
  And then I've got a little thing so that the spinner shows up.
 
-00:02:24.960 --> 00:02:26.680
+00:02:24.920 --> 00:02:26.640
  That's nothing fancy.
 
-00:02:26.680 --> 00:02:33.720
+00:02:26.640 --> 00:02:33.700
  So the main, we've got a get request, which simply renders this page.
 
-00:02:33.720 --> 00:02:36.480
+00:02:33.700 --> 00:02:36.440
  And let's take a look at talk.html.
 
-00:02:36.480 --> 00:02:41.240
+00:02:36.440 --> 00:02:41.200
  So we've got a form for the chat, we've got a CSRF token.
 
-00:02:41.240 --> 00:02:45.000
+00:02:41.200 --> 00:02:44.960
  And we got this div that starts with the spinner.
 
-00:02:45.000 --> 00:02:48.160
+00:02:44.960 --> 00:02:48.120
  And so if I come here and I just hit refresh,
 
-00:02:48.160 --> 00:02:50.680
+00:02:48.120 --> 00:02:50.640
  you will see for a moment that the spinner shows up.
 
-00:02:50.680 --> 00:02:53.960
+00:02:50.640 --> 00:02:53.940
  So this is the code that came from the server, is this spinner.
 
-00:02:53.960 --> 00:02:59.200
+00:02:53.940 --> 00:02:59.160
  And then what we're going to do is we're going to update this, right?
 
-00:02:59.200 --> 00:03:02.120
+00:02:59.160 --> 00:03:02.080
  And then replace this text.
 
-00:03:02.120 --> 00:03:06.640
+00:03:02.080 --> 00:03:06.600
  And that's what we're going to do, is replace it by the JSON.
 
-00:03:06.640 --> 00:03:09.200
- And then over and over and over, we're going to delete this.
+00:03:06.600 --> 00:03:10.240
+ And then over and over and over, you're not even seeing it,
 
-00:03:09.200 --> 00:03:12.560
- You're not even seeing it, because it deletes this whole thing, and
+00:03:10.240 --> 00:03:15.280
+ because it deletes this whole thing, and then it responds to it.
 
-00:03:12.560 --> 00:03:15.320
- then it responds to it.
-
-00:03:15.320 --> 00:03:22.360
+00:03:15.280 --> 00:03:22.320
  And then what we also have is let's take a look at the chat messages.
 
-00:03:22.360 --> 00:03:24.040
+00:03:22.320 --> 00:03:24.000
  And so let's look at the raw data.
 
-00:03:24.040 --> 00:03:28.560
+00:03:24.000 --> 00:03:28.520
  And this is an array of message and time.
 
-00:03:28.560 --> 00:03:32.520
+00:03:28.520 --> 00:03:32.480
  And so it's using this thing called, let's take a look here.
 
-00:03:32.520 --> 00:03:36.560
- It's using this thing called, where is it, natural time, right?
+00:03:32.480 --> 00:03:36.520
+ It's using this thing called, where is it, where, natural time, right?
 
-00:03:36.560 --> 00:03:39.960
+00:03:36.520 --> 00:03:39.920
  Using natural time to make this one minute ago.
 
-00:03:39.960 --> 00:03:48.560
- And so if we take a look at this messages, we can, let's take a look at the browser
+00:03:39.920 --> 00:03:49.000
+ And so if we take a look at this messages, let's take a look at the browser tools,
 
-00:03:48.560 --> 00:03:54.120
- tools, web developer tools, network tab, hit refresh here.
+00:03:49.000 --> 00:03:54.080
+ web developer tools, network tab, hit refresh here.
 
-00:03:54.120 --> 00:03:59.480
+00:03:54.080 --> 00:03:59.480
  So we can see that this is got a, it's JSON, 125 characters,
 
 00:03:59.480 --> 00:04:02.560
  the response is JSON, we can see the raw version of it.
 
-00:04:02.560 --> 00:04:06.840
+00:04:02.560 --> 00:04:06.800
  So that's just us hitting the JSON endpoint by hand.
 
-00:04:06.840 --> 00:04:10.360
+00:04:06.800 --> 00:04:10.340
  So if we look at what goes on in the JSON endpoint,
 
-00:04:10.360 --> 00:04:15.880
+00:04:10.340 --> 00:04:15.840
  we are going to, this is just a cleanup message, so you can kind of ignore this.
 
-00:04:15.880 --> 00:04:20.880
- I'm going to get the most ten recent messages ordered by the created at time.
+00:04:15.840 --> 00:04:20.840
+ I'm gonna get the most ten recent messages ordered by the created at time.
 
-00:04:20.880 --> 00:04:24.480
- And then I'm going to loop through those messages that I got from the data model.
+00:04:20.840 --> 00:04:24.400
+ And then I'm gonna loop through those messages that I got from the data model.
 
-00:04:24.480 --> 00:04:29.080
+00:04:24.400 --> 00:04:29.040
  I guess I could take a look at the model.
 
-00:04:29.080 --> 00:04:31.000
+00:04:29.040 --> 00:04:31.000
  I got a simple data model here.
 
 00:04:31.000 --> 00:04:38.960
  I got the owner, user key, created at, updated at, and text, so not much to it.
 
-00:04:38.960 --> 00:04:43.640
- But I'm going to create these results, and I want to escape the text in the back end.
+00:04:38.960 --> 00:04:43.680
+ But I'm gonna create these results, and I want to escape the text in the back end.
 
-00:04:43.640 --> 00:04:46.560
- Remember to do HTML entities, because I don't want to do it in the front end,
+00:04:43.680 --> 00:04:46.600
+ Remember to do HTML entities, cuz I don't wanna do it in the front end,
 
-00:04:46.560 --> 00:04:49.280
- because that will make my front end code a little too complex.
+00:04:46.600 --> 00:04:49.320
+ cuz that will make my front end code a little too complex.
 
-00:04:49.280 --> 00:04:51.320
- So I'm just going to escape it in the back end.
+00:04:49.320 --> 00:04:51.320
+ So I'm just gonna escape it in the back end.
 
 00:04:51.320 --> 00:04:52.960
  I would not say that that's a good idea.
 
-00:04:52.960 --> 00:04:57.480
- And so all I'm going to do is I'm going to make, I'm going to escape the message
+00:04:52.960 --> 00:04:58.000
+ And so all I'm gonna do is I'm gonna make, I'm gonna escape the message text and
 
-00:04:57.480 --> 00:05:02.200
- text, and then I'm going to take the natural, make a natural time of the created at.
+00:04:58.000 --> 00:05:02.200
+ then I'm gonna take the natural, make a natural time of the created at.
 
-00:05:02.200 --> 00:05:06.640
- And then I'm going to append it, and I'm going to return JSON response,
-
-00:05:06.640 --> 00:05:07.960
- safe equals false.
+00:05:02.200 --> 00:05:07.960
+ And then I'm gonna append it, and I'm gonna return JSON response, safe equals false.
 
 00:05:07.960 --> 00:05:11.400
- And that has to do with like letting certain things go through.
+ And that has to do with letting certain things go through.
 
 00:05:11.400 --> 00:05:13.240
  But this is taking an array.
 
 00:05:13.240 --> 00:05:17.840
- Now I would, it is not best practice, it's actually bad practice to return an array,
+ Now, it is not best practice, it's actually bad practice to return an array.
 
 00:05:17.840 --> 00:05:20.560
- but we're going to keep this as simple as possible.
+ But we're gonna keep this as simple as possible.
 
-00:05:20.560 --> 00:05:26.520
- And this is, we're just going to the model and getting the most ten recent messages,
+00:05:20.560 --> 00:05:24.800
+ And this is, we're just going to the model and
 
-00:05:26.520 --> 00:05:30.800
- and then sort of creating an array of the kind of stuff we want to hand back.
+00:05:24.800 --> 00:05:28.440
+ getting the most ten recent messages, and then sort of creating an array of
+
+00:05:28.440 --> 00:05:30.800
+ the kind of stuff we wanna hand back.
 
 00:05:30.800 --> 00:05:35.480
- And so this message is, JSON is not just give me the data in the model,
+ And so this message is, JSON is not just give me the data in the model.
 
-00:05:35.480 --> 00:05:40.720
- it's often give me the data, take the data from the model, do some augmentation to it,
+00:05:35.480 --> 00:05:39.280
+ It's often give me the data, take the data from the model,
 
-00:05:40.720 --> 00:05:43.280
- make it pretty, make it ready for display, and
+00:05:39.280 --> 00:05:43.280
+ do some augmentation to it, make it pretty, make it ready for display, and
 
-00:05:43.280 --> 00:05:47.240
+00:05:43.280 --> 00:05:48.480
  then hand that back as the JSON response.
 
-00:05:47.240 --> 00:05:51.200
+00:05:48.480 --> 00:05:51.180
  And so that's the JSON response.
 
-00:05:51.200 --> 00:05:56.680
+00:05:51.180 --> 00:05:56.680
  And then if we take a look, how does that JSON response turn into this text?
 
-00:05:56.680 --> 00:06:05.000
- Well, if we take a look here, we are fetching that message's URL.
+00:05:56.680 --> 00:06:01.800
+ Well, if we take a look here, we are fetching
 
-00:06:05.000 --> 00:06:10.560
- And we're using the promises, not async/await.
+00:06:01.800 --> 00:06:10.520
+ that messages URL, and we're using the promises, not async away.
 
-00:06:10.560 --> 00:06:14.400
+00:06:10.520 --> 00:06:14.400
  We're doing, we're pulling the response back, and
 
 00:06:14.400 --> 00:06:21.000
- then we are taking the JSON post-parsing of the JSON, and we console log that.
+ then we are taking the JSON post parsing of the JSON, and we console log that.
 
 00:06:21.000 --> 00:06:27.240
  Let's view, let's do look at the browser tools here, web developer tools.
@@ -300,10 +300,10 @@ WEBVTT
 00:06:28.760 --> 00:06:33.600
  And you see that it says I'm requesting the JSON, requesting the JSON.
 
-00:06:33.600 --> 00:06:38.680
+00:06:33.600 --> 00:06:38.720
  And then once the first and second promise resolves,
 
-00:06:38.680 --> 00:06:40.960
+00:06:38.720 --> 00:06:40.960
  I have this thing I call rows.
 
 00:06:40.960 --> 00:06:44.040
@@ -312,247 +312,238 @@ WEBVTT
 00:06:44.040 --> 00:06:47.720
  It is an array with all of these messages in it.
 
-00:06:47.720 --> 00:06:54.400
+00:06:47.720 --> 00:06:54.360
  And by this point in time, by this point in my code, that is a JavaScript array.
 
-00:06:54.400 --> 00:06:57.720
+00:06:54.360 --> 00:06:57.880
  Not a string, right?
 
-00:06:57.720 --> 00:07:03.280
+00:06:57.880 --> 00:07:03.240
  It's the thing that causes it to go from a string to a JavaScript array,
 
-00:07:03.280 --> 00:07:04.400
+00:07:03.240 --> 00:07:04.360
  is response JSON.
 
-00:07:04.400 --> 00:07:07.720
- It says, parse the response as JSON, and
+00:07:04.360 --> 00:07:07.680
+ It says parse the response as JSON, and
 
-00:07:07.720 --> 00:07:11.600
+00:07:07.680 --> 00:07:11.560
  give me back the object that results from that, okay?
 
-00:07:11.600 --> 00:07:17.480
+00:07:11.560 --> 00:07:17.440
  And so at this point, this is, we've seen this kind of pattern before.
 
-00:07:17.480 --> 00:07:20.080
+00:07:17.440 --> 00:07:20.060
  And we get the JSON data.
 
-00:07:20.080 --> 00:07:27.020
- Now, what we're going to do is we are going to now do document_object_dom_modification.
+00:07:20.060 --> 00:07:24.800
+ Now, what we're going to do is we are going to now do document object modification,
 
-00:07:27.020 --> 00:07:31.680
- So the first thing we're going to do is wipe out, see this?
+00:07:24.800 --> 00:07:27.000
+ DOM modification.
 
-00:07:31.680 --> 00:07:36.960
- This chat_content.div, we're gonna set its innerHTML to nothing,
+00:07:27.000 --> 00:07:30.760
+ So the first thing we're going to do is wipe out.
 
-00:07:36.960 --> 00:07:39.840
+00:07:30.760 --> 00:07:36.960
+ See this, this chat content.div, we're gonna set its inner HTML to nothing,
+
+00:07:36.960 --> 00:07:39.800
  which actually deletes that spinner.
 
-00:07:39.840 --> 00:07:45.040
+00:07:39.800 --> 00:07:45.040
  So that's where the spinner is there, and then the spinner vanishes and
 
-00:07:45.040 --> 00:07:47.880
+00:07:45.040 --> 00:07:47.840
  is replaced by that text, okay?
 
-00:07:47.880 --> 00:07:49.760
+00:07:47.840 --> 00:07:49.760
  So the thing that came from the server, as a matter of fact,
 
-00:07:49.760 --> 00:07:55.800
+00:07:49.760 --> 00:07:55.760
  if I do a view source here, this is a good example of where the source and
 
-00:07:55.800 --> 00:07:58.080
+00:07:55.760 --> 00:07:58.040
  the document object model are not the same thing.
 
-00:07:58.080 --> 00:08:02.240
+00:07:58.040 --> 00:08:02.240
  The source that came from the server includes this spinner.
 
 00:08:02.240 --> 00:08:04.840
  But if I come back and I do an inspect element here,
 
-00:08:04.840 --> 00:08:13.080
- you see that chat_content doesn't have a spinner.
+00:08:04.840 --> 00:08:13.040
+ you see that chat content doesn't have a spinner.
 
-00:08:13.080 --> 00:08:17.520
+00:08:13.040 --> 00:08:17.480
  Now, this is because the document object model is being changed by the JavaScript.
 
-00:08:17.520 --> 00:08:20.240
+00:08:17.480 --> 00:08:20.200
  And the first thing it does is throws away the spinner.
 
-00:08:20.240 --> 00:08:24.600
+00:08:20.200 --> 00:08:24.560
  And again, JavaScript owns the document object model.
 
-00:08:24.600 --> 00:08:26.960
+00:08:24.560 --> 00:08:26.960
  So it can delete stuff, it can change stuff.
 
-00:08:26.960 --> 00:08:31.640
- And so you sort of saw that highlight happen where it sort of, this stuff comes
+00:08:26.960 --> 00:08:31.600
+ And so you sort of saw that highlight happen, where it sort of, this stuff comes
 
-00:08:31.640 --> 00:08:33.080
- and goes every five seconds.
+00:08:31.600 --> 00:08:35.640
+ and goes every five seconds, it wipes it all out, and then it builds it again.
 
-00:08:33.080 --> 00:08:35.680
- It wipes it all out, and then it builds it again.
-
-00:08:35.680 --> 00:08:39.520
+00:08:35.640 --> 00:08:39.480
  But it happens so quickly, we don't notice it as long as it's not changing.
 
-00:08:39.520 --> 00:08:43.760
+00:08:39.480 --> 00:08:43.720
  And again, I'm not telling you this, like pulling every five seconds is a great way
 
-00:08:43.760 --> 00:08:44.360
+00:08:43.720 --> 00:08:44.320
  to do it.
 
-00:08:44.360 --> 00:08:48.120
+00:08:44.320 --> 00:08:48.080
  It's the quickest way to do it, but it is not a great way to do it, okay?
 
-00:08:48.120 --> 00:08:49.680
+00:08:48.080 --> 00:08:49.640
  There are many other things, and
 
-00:08:49.680 --> 00:08:51.840
+00:08:49.640 --> 00:08:51.800
  you can take an advanced JavaScript class to learn that.
 
-00:08:51.840 --> 00:08:56.000
+00:08:51.800 --> 00:08:55.960
  But, so we're starting here, we wipe out the content, and
 
-00:08:56.000 --> 00:08:59.720
+00:08:55.960 --> 00:08:59.680
  then we just loop through rows, which is an array, it's got a length,
 
-00:08:59.720 --> 00:09:01.160
+00:08:59.680 --> 00:09:01.120
  we loop through it.
 
-00:09:01.160 --> 00:09:06.120
- And we're going to take getElementById, chat_content, innerHTML, and
+00:09:01.120 --> 00:09:06.120
+ And we're going to take getElementById, chatContent, innerHTML, and
 
-00:09:06.120 --> 00:09:09.240
+00:09:06.120 --> 00:09:09.200
  we're going to append this string.
 
-00:09:09.240 --> 00:09:11.000
- We're going to print a p tag.
+00:09:09.200 --> 00:09:13.400
+ We're going to print a p tag, we're going to append the message.
 
-00:09:11.000 --> 00:09:13.440
- We're going to append the message.
-
-00:09:13.440 --> 00:09:18.360
+00:09:13.400 --> 00:09:18.320
  We're going to append a br, two non-blank spaces, and then the time, and
 
-00:09:18.360 --> 00:09:19.600
+00:09:18.320 --> 00:09:19.560
  then a /p.
 
-00:09:19.600 --> 00:09:23.240
+00:09:19.560 --> 00:09:23.160
  And strangely enough, if you take a look at this in inspectElement,
 
-00:09:23.240 --> 00:09:28.800
+00:09:23.160 --> 00:09:28.760
  okay, it keeps vanishing.
 
-00:09:28.800 --> 00:09:33.480
- But here you go, you expect, this is coming from my JavaScript.
+00:09:28.760 --> 00:09:33.440
+ But here you go, you inspect, this is coming from my JavaScript.
 
-00:09:33.480 --> 00:09:35.400
+00:09:33.440 --> 00:09:35.360
  I'm building all that stuff, right?
 
-00:09:35.400 --> 00:09:40.760
+00:09:35.360 --> 00:09:40.720
  And it wipes out every five seconds, because that's just how it works.
 
-00:09:40.760 --> 00:09:44.880
- Okay, so you see that it's going to wipe out, and then regenerate it.
+00:09:40.720 --> 00:09:44.880
+ Okay, so you see that it's going to wipe out and then regenerate it.
 
-00:09:44.880 --> 00:09:47.880
+00:09:44.880 --> 00:09:47.840
  But if you look above, it doesn't even flash, right?
 
-00:09:47.880 --> 00:09:55.480
- Okay, so then, all we've got to do, and we can put a little catch in here.
+00:09:47.840 --> 00:09:55.440
+ Okay, so then all we've got to do, and we can put a little catch in here.
 
-00:09:55.480 --> 00:09:57.680
+00:09:55.440 --> 00:09:57.640
  Hey, let's make a mistake and see what happens here.
 
-00:09:57.680 --> 00:10:00.360
- Let's see if I can put something in this views.
+00:09:57.640 --> 00:10:03.720
+ Let's see if I can put something in this views, let's mess this up.
 
-00:10:01.880 --> 00:10:06.480
- Let's mess this up, and watch it blow up.
-
-00:10:06.480 --> 00:10:07.840
- So you see, it blew up.
+00:10:03.720 --> 00:10:07.840
+ And watch it blow up, so you see, it blew up.
 
 00:10:07.840 --> 00:10:12.760
  So that was when this catch just blew up and alerted the error.
 
-00:10:12.760 --> 00:10:18.480
- And when you write code, please put this catch in, at least alert the error.
+00:10:12.760 --> 00:10:18.440
+ Now, when you write code, please put this catch in, at least alert the error.
 
-00:10:18.480 --> 00:10:20.800
+00:10:18.440 --> 00:10:20.800
  And the key thing is, what error did we do?
 
-00:10:20.800 --> 00:10:24.920
+00:10:20.800 --> 00:10:23.000
  We just like totally screwed up the view, right?
 
-00:10:24.920 --> 00:10:26.920
- And let me show you one more thing.
+00:10:23.000 --> 00:10:29.200
+ And let me show you one more thing, I'll keep this broken for the moment.
 
-00:10:26.920 --> 00:10:29.200
- I'll keep this broken for the moment.
+00:10:29.200 --> 00:10:32.600
+ Let's just hit refresh, and let's go into network and hit refresh.
 
-00:10:29.200 --> 00:10:32.640
- Let's just hit refresh, and let's go into network, and hit refresh.
+00:10:34.040 --> 00:10:37.280
+ And now it's going to hit it, and you're going to get a 500.
 
-00:10:32.640 --> 00:10:37.240
- And now it's gonna hit it, and you're gonna get a 500.
-
-00:10:37.240 --> 00:10:39.760
+00:10:37.280 --> 00:10:39.800
  If you've got this catch, it tells you something.
 
-00:10:39.760 --> 00:10:44.440
+00:10:39.800 --> 00:10:44.440
  But to figure out what's really wrong, where's the bug in my code?
 
 00:10:44.440 --> 00:10:46.600
  You have to come in here, and you have to look at it, and
 
-00:10:46.600 --> 00:10:48.680
+00:10:46.600 --> 00:10:48.720
  then you have to look at the response.
 
-00:10:48.680 --> 00:10:55.960
- And then you have to move this guy up, and you say, at line 31 in get,
+00:10:48.720 --> 00:10:56.000
+ And then you have to move this guy up, and you say at line 31 in get,
 
-00:10:55.960 --> 00:11:01.760
+00:10:56.000 --> 00:11:01.800
  in views.py, xjson, look at that, it's line 31, I'm on line 31.
 
-00:11:01.760 --> 00:11:04.760
+00:11:01.800 --> 00:11:04.800
  So the point is, is if you don't put this alert in,
 
-00:11:04.760 --> 00:11:07.320
+00:11:04.800 --> 00:11:07.360
  you don't even know something went wrong.
 
-00:11:07.320 --> 00:11:10.040
+00:11:07.360 --> 00:11:10.080
  And that alert is sitting right here in the catch.
 
-00:11:10.040 --> 00:11:14.040
+00:11:10.080 --> 00:11:14.080
  So, and again, you don't have to make this super beautiful, right?
 
-00:11:14.040 --> 00:11:18.400
+00:11:14.080 --> 00:11:18.440
  Just this is a good enough alert, because it's not supposed to happen.
 
-00:11:18.400 --> 00:11:21.000
+00:11:18.440 --> 00:11:21.040
  I mean, it only happens when I have a bug in my server code.
 
-00:11:21.000 --> 00:11:25.360
+00:11:21.040 --> 00:11:25.400
  So now I've taken the bug in my server code out, and I refresh it, and
 
-00:11:25.360 --> 00:11:26.000
+00:11:25.400 --> 00:11:26.000
  away it goes.
 
-00:11:26.000 --> 00:11:30.960
- So this chat, this catch here is cheap,
+00:11:26.000 --> 00:11:32.680
+ So this chat, this catch here is cheap, cheap insurance.
 
-00:11:30.960 --> 00:11:36.520
- cheap insurance that basically says, it doesn't just silently fail, right?
+00:11:32.680 --> 00:11:36.480
+ That basically says, it doesn't just silently fail, right?
 
-00:11:36.520 --> 00:11:41.240
+00:11:36.480 --> 00:11:41.360
  If I just made this a console, let's make this a console log, right?
 
-00:11:41.240 --> 00:11:50.800
+00:11:41.360 --> 00:11:50.800
  And you're just crude, let's go on console, let's clear it, let's hit refresh.
 
-00:11:50.800 --> 00:11:52.840
+00:11:50.800 --> 00:11:52.880
  Wait, and I gotta put the error back in, sorry.
 
 00:11:56.280 --> 00:11:57.600
@@ -562,87 +553,84 @@ WEBVTT
  Okay, it's blowing up, I got a console log.
 
 00:11:59.960 --> 00:12:07.120
- But the problem is, is that if you're not looking at the console log,
+ But the problem is, is that, If you're not looking at the console log,
 
 00:12:07.120 --> 00:12:12.840
- and you just have this bug in there, and you say, happy days.
+ and you just have this bug in there, and you say, happy days,
 
-00:12:12.840 --> 00:12:15.680
- Or, nothing works.
+00:12:12.840 --> 00:12:15.720
+ or nothing works.
 
-00:12:15.680 --> 00:12:23.560
- And now all we see forever is the spinner.
+00:12:15.720 --> 00:12:23.640
+ And now all we see forever is the spinner,
 
-00:12:24.880 --> 00:12:28.440
- Because the Ajax request is not working.
+00:12:24.880 --> 00:12:28.480
+ because the Ajax request is not working.
 
-00:12:28.440 --> 00:12:33.960
+00:12:28.480 --> 00:12:34.000
  And if you have the cleverness to turn on web developer tools, and see this,
 
-00:12:33.960 --> 00:12:36.320
- and go like, that sounds funky there.
+00:12:34.000 --> 00:12:36.320
+ and go like, sounds funky there.
 
-00:12:36.320 --> 00:12:41.120
- And then you go to network, and well, we gotta hit refresh,
+00:12:36.320 --> 00:12:42.000
+ And then you go to network, and well, we gotta hit refresh cuz the JavaScript
 
-00:12:41.120 --> 00:12:42.640
- cuz the JavaScript set timeout.
-
-00:12:42.640 --> 00:12:45.760
- We haven't talked about set timeout, we'll talk about that in a second.
+00:12:42.000 --> 00:12:45.760
+ set timeout, we haven't talked about set timeout, we'll talk about that in a second.
 
 00:12:45.760 --> 00:12:50.120
  When this blows up, you see the 500, and then you have to have the presence of mind
 
-00:12:50.120 --> 00:12:55.200
+00:12:50.120 --> 00:12:55.160
  to go in here, and look at the response, and go like, that's why the spinner is
 
-00:12:55.200 --> 00:12:57.000
+00:12:55.160 --> 00:12:57.000
  just sitting there and not working.
 
-00:12:57.000 --> 00:13:02.720
- Okay, so let me go ahead and fix this once and for all.
+00:12:57.000 --> 00:13:02.800
+ Okay, so let me go ahead and fix this once and for all, and
 
-00:13:02.720 --> 00:13:05.000
- And talk about how the timeout works.
+00:13:02.800 --> 00:13:04.960
+ talk about how the timeout works.
 
-00:13:05.000 --> 00:13:09.680
- So let's clear the badness, let's hit refresh, let's have it work.
+00:13:04.960 --> 00:13:09.640
+ So, let's clear the badness, let's hit refresh, let's have it work.
 
-00:13:09.680 --> 00:13:12.440
+00:13:09.640 --> 00:13:12.400
  Come on, there you go, let's go into the console.
 
-00:13:12.440 --> 00:13:18.600
+00:13:12.400 --> 00:13:18.560
  Now, there is one more thing that's going on here, and there is an event, right?
 
-00:13:18.600 --> 00:13:20.920
+00:13:18.560 --> 00:13:20.920
  Couple of events that are going on.
 
-00:13:20.920 --> 00:13:26.520
- So the first thing that we have to do is we have to get this function
+00:13:20.920 --> 00:13:24.320
+ So the first thing that we have to do is,
 
-00:13:26.520 --> 00:13:30.840
- update message called, and so we do that.
+00:13:24.320 --> 00:13:27.920
+ we have to get this function update message called.
 
-00:13:30.840 --> 00:13:35.120
- We define this function update message, right?
+00:13:27.920 --> 00:13:35.120
+ And so we do that, we define this function update message, right?
 
-00:13:35.120 --> 00:13:41.240
+00:13:35.120 --> 00:13:41.200
  And then, at the moment, while our DOM is being parsed,
 
-00:13:41.240 --> 00:13:44.200
+00:13:41.200 --> 00:13:44.200
  coming from the server, we're gonna add an event listener.
 
-00:13:44.200 --> 00:13:45.760
+00:13:44.200 --> 00:13:45.720
  DOM content loaded event listener,
 
-00:13:45.760 --> 00:13:49.240
+00:13:45.720 --> 00:13:48.640
  which basically waits until the whole page is finished.
 
-00:13:49.240 --> 00:13:51.160
+00:13:48.640 --> 00:13:51.120
  And we're gonna call setTimeout, we're gonna say,
 
-00:13:51.160 --> 00:13:53.240
+00:13:51.120 --> 00:13:53.240
  let's run the update message function.
 
 00:13:53.240 --> 00:13:57.120
@@ -651,20 +639,20 @@ WEBVTT
 00:13:57.120 --> 00:13:59.880
  It's, in effect, registering a string to be parsed and
 
-00:13:59.880 --> 00:14:04.520
+00:13:59.880 --> 00:14:04.480
  executed two seconds later, and the second parameter is two seconds later.
 
-00:14:04.520 --> 00:14:09.080
+00:14:04.480 --> 00:14:09.040
  So you'll see it waits two seconds, the spinner waits two seconds, and
 
-00:14:09.080 --> 00:14:11.560
+00:14:09.040 --> 00:14:11.520
  then it runs this function update message.
 
-00:14:13.880 --> 00:14:17.160
- So 1001, 1002, now it runs update message.
+00:14:13.880 --> 00:14:19.040
+ So 1001, 1002, now it runs update message, we get the JSON.
 
-00:14:17.160 --> 00:14:20.400
- We get the JSON, this code all runs.
+00:14:19.040 --> 00:14:20.400
+ This code all runs.
 
 00:14:20.400 --> 00:14:23.040
  But then what happens is when it's successful, and
@@ -673,7 +661,7 @@ WEBVTT
  that's when this second promise is properly fulfilled,
 
 00:14:26.320 --> 00:14:30.600
- then it calls update message again, and don't do that.
+ then it calls update message again and, don't do that.
 
 00:14:30.600 --> 00:14:31.760
  I don't know what just happened there.
@@ -684,10 +672,10 @@ WEBVTT
 00:14:35.000 --> 00:14:42.200
  Okay, so the second promise is resolved successfully.
 
-00:14:42.200 --> 00:14:45.680
- And it console logs it, and it updates the thing, just like we all talked about.
+00:14:42.200 --> 00:14:45.640
+ And it console logs it, and it updates the thing just like we all talked about.
 
-00:14:45.680 --> 00:14:47.840
+00:14:45.640 --> 00:14:47.840
  But the last thing it does is very important.
 
 00:14:47.840 --> 00:14:52.280
@@ -699,32 +687,32 @@ WEBVTT
 00:14:55.880 --> 00:14:57.360
  Like, what's the point?
 
-00:14:57.360 --> 00:15:01.280
+00:14:57.360 --> 00:15:01.240
  And that's why if it blows up, it doesn't keep trying.
 
-00:15:01.280 --> 00:15:05.240
+00:15:01.240 --> 00:15:05.240
  I could literally put the setTimeout down here, but I don't want to.
 
 00:15:05.240 --> 00:15:09.760
  I mean, at some point, this catch is exceedingly rare, right?
 
-00:15:09.760 --> 00:15:11.680
+00:15:09.760 --> 00:15:11.640
  It really means I messed up in the server.
 
-00:15:11.680 --> 00:15:12.880
+00:15:11.640 --> 00:15:12.880
  I messed up in the server.
 
 00:15:12.880 --> 00:15:15.080
  It's not like the world is broken.
 
-00:15:15.080 --> 00:15:19.920
- Now if the person's network goes down, because that network could go down at
+00:15:15.080 --> 00:15:18.400
+ Now, if the person's network goes down,
 
-00:15:19.920 --> 00:15:23.160
- this point, I could lose a connection to the server, and
+00:15:18.400 --> 00:15:21.360
+ cuz the network could go down at this point, I could lose a connection to
 
-00:15:23.160 --> 00:15:25.640
- alert will tell me that, tell the user that.
+00:15:21.360 --> 00:15:25.640
+ the server, and the alert will tell me that, tell the user that.
 
 00:15:25.640 --> 00:15:28.160
  I cannot retrieve blah, blah, blah, blah, blah, blah.
@@ -742,7 +730,7 @@ WEBVTT
  I'm using an array for my JSON.
 
 00:15:41.080 --> 00:15:44.480
- I am, I am polling every four seconds.
+ I am polling every four seconds.
 
 00:15:44.480 --> 00:15:46.640
  Don't do any of this.
@@ -754,8 +742,8 @@ WEBVTT
  that brings together a number of these asynchronous ideas.
 
 00:15:54.960 --> 00:15:59.640
- And the notion of timers, and the notion of fetch, and all those things.
+ And the notion of timers and the notion of fetch and all those things.
 
 00:15:59.640 --> 00:16:02.480
- And so it's a, it's a good, it's a good place to start.
+ And so it's a good place to start.
 

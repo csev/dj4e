@@ -22,18 +22,19 @@
  HTML is our markup format,
  and JSON is our data format.
  So, the web is pretty old now.
- We started on 2003, and the request-response cycle
- was pretty cool, and lots of software,
- lots of libraries, lots of languages knew how
- to talk back and forth across the internet and get data,
+ We started on 2003,
+ and the request-response cycle was pretty cool,
+ and lots of software, lots of libraries,
+ lots of languages knew how to talk back and forth
+ across the internet and get data,
  and the question was, is why don't we get something
- other than HTML, and then the argument became,
- what was the syntax that we should use?
- And you can look at my shirt here, somewhere here,
+ other than HTML, and then the argument became
+ what was the syntax that we should use,
+ and you can look at my shirt here, somewhere here,
  right there's my shirt, you got some curly braces,
  and then you got some slashes,
  and that actually turned out to be the argument.
- The argument was, whether or not you would use XML, right?
+ The argument was whether or not you would use XML, right?
  Whether you use XML or curly braces.
  Now, XML was the first thing,
  and if we hear the word Ajax, that x stands for XML,
@@ -52,8 +53,8 @@
  We gotta agree on it, so that we can write something
  in Python and read it in JavaScript,
  and similarly write it in PHP,
- and then read it in JavaScript.
- So we have to agree on a wire format.
+ and then read it in JavaScript,
+ so we have to agree on a wire format.
  And XML is one of the wire formats,
  we're not gonna talk about it,
  'cause that argument is kinda over.
@@ -70,22 +71,22 @@
  And then we have to say, oh, let's turn this into a string,
  'cause we have to send characters across the internet,
  and then when we receive it on the far end,
- we do what's called deserialize.
- And the word serial means that we're sending it
- kinda one character at a time,
+ we do what's called deserialize,
+ and the word serial means
+ that we're sending it kinda one character at a time,
  back in the old days when we used modems,
- and leased lines, and things like that.
- Though see my internet history for some of that.
- So we deserialize it, and it becomes sort of an object
- in JavaScript, in this case,
- if we're going from Python to JavaScript.
+ and leased lines, and things like that,
+ though see my internet history for some of that.
+ So we deserialize it,
+ and it becomes sort of an object in JavaScript,
+ in this case, if we're going from Python to JavaScript.
  But the idea is that the wire format
  is something we agree on,
  and so it doesn't matter what language we're dealing with,
  the wire format is something each language
- has to be able to serialize to send,
+ has to be able to serialize, to send,
  and deserialize to receive.
- So I have a video, an interview that I did a long time ago,
+ So I have a video, an interview that I did a long time ago
  with a fellow named Douglas Cockford,
  he does not claim he's the inventor of JSON,
  he's just the person who said,
@@ -94,97 +95,50 @@
  to the object literal notation, meaning the constant,
  what a constant is in JavaScript
  when you wanna just assign a constant.
- So we say x equals two, two's that constant,
- but you can also say x equals curly brace something.
+ So we say X equals two, two's that constant,
+ but you can also say X equals curly brace something.
  And so he's like, well, why don't we just use this?
  And he called it JSON, and he registered JSON.org,
  and it just turns out, I really wish I knew
  the extent to which imitating the Python dictionary syntax
  was part of the goal.
  In some ways, it's almost more similar
- to the Python dictionary syntax
- when you're doing key value pairs,
- when the keys are strings in Python dictionary.
- So this is some legitimate JavaScript code.
- This is a constant.
- I could say who equals X or I could see
- who equals open curly brace, name colon Chuck,
- age colon 29, college colon true, you know,
- strings, integers, Booleans, you can have lists
- and you can have objects within objects
- and lists within objects and blah, blah, blah, blah, blah,
- so it's a pretty simple syntax.
- I mean, part of the thing that Crockford argues
- is that it's just a syntax that any developer,
- if left alone long enough, would just invent it
- and I have to agree with that.
- I have to say that this syntax,
- I can't say, whoa, I don't like this.
- I wish I could improve on it somehow.
- So the JSON syntax is a,
- it's not exactly the same as a JavaScript syntax.
- It's kind of like, let's keep it simple
- and have a subset of the JavaScript object literal syntax.
- And so I've got some sample code that you can go play with
- and all it does is it says who equals open curly brace,
- blah, blah, blah, blah, blah, exactly the code
- I showed you before and console.log it.
- That's all it does.
- It doesn't print it.
- It doesn't send it across the network.
- It doesn't do anything.
- It just console.logs it and you see that
- that is the way we define a constant object.
- An object is a constant and so,
- but that's not so interesting.
- What is more interesting is when we can produce code
- inside of the server in say Python
- and then send it to a browser.
- So here we have a very simple view
- and the sample code is up there on djfree.com
- for you to look at
- and we are going to have a JSON fun path.
- This is gonna be a function style view.
- Time sleep is just so that when you play with a sample,
- you can kind of pause this for just a moment.
- Normally you wouldn't pause.
- So we just construct a dictionary.
- That's a Python dictionary and again, wow,
- it looks a lot like a JavaScript object
- but if you do it in PHP, it looks quite different
- or if you do it in Java, it looks quite different
- but it turns out in Python and JavaScript,
- they're very similar
- and then we're returning JSON response
- and then handing that dictionary.
- Now, normally when we have a normal HTML page,
- we're sending back an HTTP response
- and we're sending a string back
- but this time we're sending a JSON response
- and we're sending an object back.
- Django sees JSON response and says,
- I'm gonna set the headers the right way,
- I'm gonna serialize this
- and I'm gonna send this thing out as a string.
- And so if you go to this endpoint, JSON fun,
- and you look at it in raw data,
- you see that it's been compressed into a string.
- That's really curly brace and double quote, yada yada.
- Now you also see your browser sometimes shows it parsed,
- meaning it's showing it after parsing.
- So you can see the raw data before parsing
- and then you can actually see the JSON data after parsing.
- It's kind of the same thing,
- it's just one's a string and one is an object.
- And part and parcel of moving JSON back and forth
- to the browser is you got things like the content type
- which is application slash JSON rather than text slash HTML.
- And then there's other things like content size,
- et cetera, et cetera, et cetera.
- So that's about all there is to JSON.
- It's so simple, it's so elegant.
- So up next, we're gonna talk about doing a chat app
- which really brings together a lot of this JavaScript,
- JavaScript objects, JavaScript in the browser and JSON.
- (upbeat music)
- you
+ to Python dictionary syntax when you're doing key value pairs, when the keys are strings
+ in Python dictionary. So this is some legitimate JavaScript code. This is a constant. I could
+ say who equals X or I could see who equals open curly brace, name colon Chuck, age colon
+ 29, college colon true, you know, strings, integers, Booleans, you can have lists and
+ you can have objects within objects and lists within objects and blah blah blah blah blah
+ blah. So it's a pretty simple syntax. I mean, part of the thing that Crockford argues is
+ that it's just a syntax that any developer, if left alone long enough, would just invent
+ it. And I have to agree with that. I have to say that this syntax, I can't say, whoa,
+ I don't like this. I wish I could improve on it somehow. So the JSON syntax is not exactly
+ the same as the JavaScript syntax. It's kind of like, let's keep it simple and have a subset
+ of the JavaScript object literal syntax. And so I've got a sample, some sample code that
+ you can go play with. And all it does is it says who equals open curly brace, blah blah
+ blah, blah, blah, exactly the code I showed you before and console dot log it. That's
+ all it does. It doesn't print it. It doesn't send it across the network. It doesn't do
+ anything. It just console dot logs it. And you see that that is the way we define a constant
+ object. An object is a constant. But that's not so interesting. What is more interesting
+ is when we can produce code inside of the server in, say, Python and then send it to
+ a browser. So here we have a very simple view. And the sample code is up there on djfree.com
+ for you to look at. And we are going to have a JSON fun path. This is going to be a function
+ style view. Time sleep is just so that when you play with a sample, it pauses for just
+ a moment. Normally you wouldn't pause. So we just construct a dictionary. That's a Python
+ dictionary. And again, wow. It looks a lot like a JavaScript object. But if you do it
+ in PHP, it looks quite different. If you do it in Java, it looks quite different. But
+ it turns out in Python and JavaScript, they're very similar. And then we're returning JSON
+ response and then handing that dictionary. Now normally when we have a normal HTML page,
+ we're sending back an HTTP response. And we're sending a string back. But this time we're
+ sending a JSON response. And we're sending an object back. Django sees JSON response
+ and says, I'm going to set the headers the right way. I'm going to serialize this. And
+ I'm going to send this thing out as a string. And so if you go to this endpoint, JSON fun,
+ when you look at it in raw data, you see that it's been compressed into a string. That's
+ really curly brace, double quote, yada yada. Now you also see your browser sometimes shows
+ it parsed, meaning it's showing it after parsing. So you can see the raw data before parsing.
+ And then you can actually see the JSON data after parsing. It's kind of the same thing.
+ It's just one's a string and one is an object. And part and parcel of moving JSON back and
+ forth to the browser is you got things like the content type, which is application slash
+ JSON rather than text slash HTML. And then there's other things like content size, et
+ cetera, et cetera, et cetera. So that's about all there is to JSON. It's so simple. It's
+ so elegant. So up next, we're going to talk about doing a chat app, which really brings
+ together a lot of this JavaScript, JavaScript objects, JavaScript in the browser and JSON.

@@ -1,7 +1,7 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:02.960
- - So we've talked about how we reduce replication
+ So we've talked about how we reduce replication
 
 00:00:02.960 --> 00:00:06.600
  by moving data from sort of one table with too many columns
@@ -16,31 +16,31 @@ WEBVTT
  But we're really not gonna operate at that level
 
 00:00:13.040 --> 00:00:14.400
- 'cause this is a Django class
+ 'cause this is a django class
 
 00:00:14.400 --> 00:00:16.320
- and we're gonna do this in Django.
+ and we're gonna do this in django.
 
 00:00:16.320 --> 00:00:20.400
  And so we use data models in models.py to do this.
 
-00:00:20.400 --> 00:00:24.160
+00:00:20.400 --> 00:00:24.140
  And so a lot of the model field types are characters
 
-00:00:24.160 --> 00:00:28.240
+00:00:24.140 --> 00:00:28.240
  or numbers or dates or long text fields, et cetera.
 
-00:00:28.240 --> 00:00:32.200
- But some of them are special and used in this one-to-many
+00:00:28.240 --> 00:00:31.000
+ But some of them are special and used
 
-00:00:32.200 --> 00:00:34.400
- foreign key, many-to-many fields.
+00:00:31.000 --> 00:00:34.400
+ in this one-to-many, foreign key, many-to-many fields.
 
 00:00:34.400 --> 00:00:37.240
  These are the fields that we use to do the linking
 
 00:00:37.240 --> 00:00:38.680
- in our Django data model.
+ in our django data model.
 
 00:00:38.680 --> 00:00:41.440
  And so we'll take a look at how these all work.
@@ -61,7 +61,7 @@ WEBVTT
  We got a language, it's got a name.
 
 00:00:56.680 --> 00:00:59.520
- Now, one thing about Django is it automatically adds
+ Now one thing about django is it automatically adds
 
 00:00:59.520 --> 00:01:01.520
  the ID field and that's kinda nice.
@@ -76,7 +76,7 @@ WEBVTT
  And we don't even talk about the name of the foreign keys
 
 00:01:13.360 --> 00:01:15.840
- even though Django names them the way I just showed you
+ even though django names them the way I just showed you
 
 00:01:15.840 --> 00:01:18.360
  with the lang_id.
@@ -91,10 +91,10 @@ WEBVTT
  'cause it has an ID column automatically added
 
 00:01:25.520 --> 00:01:27.160
- by Django every time.
+ by django every time.
 
 00:01:27.160 --> 00:01:29.040
- The book table has an ID column,
+ The book table has an ID column
 
 00:01:29.040 --> 00:01:31.280
  so it's suitable for the destination of a link.
@@ -114,11 +114,14 @@ WEBVTT
 00:01:40.720 --> 00:01:41.640
  and the language table.
 
-00:01:41.640 --> 00:01:46.440
- So we're starting at the from or the start of the arrow
+00:01:41.640 --> 00:01:44.280
+ So we're putting, starting at the from
 
-00:01:46.440 --> 00:01:50.000
- and we're saying there is, we need to have a language.
+00:01:44.280 --> 00:01:47.760
+ or the start of the arrow and we're saying there is,
+
+00:01:47.760 --> 00:01:50.000
+ we need to have a language.
 
 00:01:50.000 --> 00:01:53.520
  But the language is not a string, it's not a number,
@@ -126,49 +129,49 @@ WEBVTT
 00:01:53.520 --> 00:01:55.560
  it is a foreign key.
 
-00:01:55.560 --> 00:01:58.400
+00:01:55.560 --> 00:01:58.440
  And it's a foreign key into the table called lang
 
-00:01:58.400 --> 00:02:02.280
+00:01:58.440 --> 00:02:02.320
  and this table called lang matches that table.
 
-00:02:02.280 --> 00:02:05.480
+00:02:02.320 --> 00:02:05.520
  And then we have a couple things.
 
-00:02:05.480 --> 00:02:07.000
+00:02:05.520 --> 00:02:07.040
  I'll talk about on delete in a second
 
-00:02:07.000 --> 00:02:09.840
+00:02:07.040 --> 00:02:09.880
  and then null equals true is whether or not it's required.
 
-00:02:09.840 --> 00:02:11.480
+00:02:09.880 --> 00:02:11.520
  And so what it's saying when null is true
 
-00:02:11.480 --> 00:02:13.320
+00:02:11.520 --> 00:02:13.360
  is we're allowing emptiness.
 
-00:02:13.320 --> 00:02:17.200
+00:02:13.360 --> 00:02:17.240
  So that means it's possible to have a record
 
-00:02:17.200 --> 00:02:20.720
+00:02:17.240 --> 00:02:20.760
  in the book table that doesn't have a language.
 
-00:02:20.720 --> 00:02:24.320
+00:02:20.760 --> 00:02:24.320
  And so that's what we're saying when we're saying null equals true.
 
 00:02:24.320 --> 00:02:28.400
- The instance table points to a book.
+ The instance table points to a book,
 
 00:02:28.400 --> 00:02:32.960
- It's a foreign key to the book model and it has a do back.
+ it's a foreign key to the book model and it has a do back.
 
-00:02:32.960 --> 00:02:37.400
+00:02:32.960 --> 00:02:37.440
  Now the status was in there and so I sort of shortened it a little bit.
 
-00:02:37.400 --> 00:02:40.120
+00:02:37.440 --> 00:02:40.160
  But we have a foreign key that points into it.
 
-00:02:40.120 --> 00:02:44.160
+00:02:40.160 --> 00:02:44.160
  And so again, we're defining where we have the beginnings of the arrows
 
 00:02:44.160 --> 00:02:47.080
@@ -195,13 +198,13 @@ WEBVTT
 00:03:11.280 --> 00:03:16.440
  where we have the arrow between book and language that's a many to one.
 
-00:03:16.440 --> 00:03:20.200
+00:03:16.440 --> 00:03:20.240
  And then a book instance to the book is a many to one as well.
 
-00:03:20.200 --> 00:03:25.560
+00:03:20.240 --> 00:03:25.600
  And so those foreign key links represent the arrows in this data model.
 
-00:03:25.560 --> 00:03:32.560
+00:03:25.600 --> 00:03:32.560
  Now just to sort of review, you might have done already some of these migrations.
 
 00:03:32.560 --> 00:03:36.120
@@ -228,26 +231,26 @@ WEBVTT
 00:03:56.920 --> 00:03:58.920
  the last run of make migrations.
 
-00:03:58.920 --> 00:04:04.200
+00:03:58.920 --> 00:04:04.160
  So make migrations actually creates files in your application
 
-00:04:04.200 --> 00:04:06.400
+00:04:04.160 --> 00:04:06.400
  based on the models.py.
 
 00:04:06.400 --> 00:04:10.600
- And it's a series of files, like 001 here, that's the first one.
+ And it's a series of files like 001 here, that's the first one.
 
 00:04:10.600 --> 00:04:13.240
  There might, if we changed it and then run make migrations again,
 
 00:04:13.240 --> 00:04:18.960
- there'd be an 002, and what it would do is the 002 is evolution beyond the 001.
+ there'd be an 02 and what it would do is the 02 is evolution beyond the 001.
 
-00:04:18.960 --> 00:04:23.440
- Now the migrations are portable, okay, in that they don't,
+00:04:18.960 --> 00:04:24.600
+ Now the migrations are portable, okay, in that they're not specific to
 
-00:04:23.440 --> 00:04:28.320
- they're not specific to the MySQL database, the SQLite database, etc.
+00:04:24.600 --> 00:04:28.320
+ the MySQL database, the SQLite database, etc.
 
 00:04:28.320 --> 00:04:31.960
  Now the migrate reads those migrations and
@@ -258,38 +261,41 @@ WEBVTT
 00:04:34.720 --> 00:04:39.080
  And so the migrate is mapping the portable representation of what's supposed
 
-00:04:39.080 --> 00:04:43.480
+00:04:39.080 --> 00:04:43.520
  to be in the database into the actual physical representation in the database.
 
-00:04:43.480 --> 00:04:46.880
+00:04:43.520 --> 00:04:46.920
  Now you'll notice if you run these both twice, once they work,
 
-00:04:46.880 --> 00:04:48.400
+00:04:46.920 --> 00:04:48.400
  they'll say no changes detected.
 
-00:04:48.400 --> 00:04:54.000
+00:04:48.400 --> 00:04:54.040
  Because in the case of the make migrations, it looks at your models and
 
-00:04:54.000 --> 00:04:58.240
- then looks at what's in the migrations already and says, it's a perfect match.
+00:04:54.040 --> 00:04:58.240
+ then looks at what's in the migrations already and says it's a perfect match.
 
-00:04:58.240 --> 00:05:01.040
+00:04:58.240 --> 00:05:01.080
  And then in the migrate, it looks at what's in the migrations and
 
-00:05:01.040 --> 00:05:05.480
- what's in the database table and says, everything's there, everything's been done.
+00:05:01.080 --> 00:05:05.480
+ what's in the database table and says everything's there, everything's been done.
 
 00:05:05.480 --> 00:05:10.120
- So this can be confusing because in my documentation,
+ So, this can be confusing because in my documentation,
 
 00:05:10.120 --> 00:05:13.200
  I'll say run a make migrations and you say no changes detected.
 
-00:05:13.200 --> 00:05:17.000
- Now there's another reason why you might get no changes detected and
+00:05:13.200 --> 00:05:16.880
+ Now there's another reason why you might get no changes detected.
 
-00:05:17.000 --> 00:05:24.440
- that is that you have to add it to the settings.py file before it's gonna be detected.
+00:05:16.880 --> 00:05:23.240
+ And that is that you have to add it to the settings.py file before you can,
+
+00:05:23.240 --> 00:05:24.440
+ it's gonna be detected.
 
 00:05:24.440 --> 00:05:27.800
  So you might have edited a model.py file and changed it.
@@ -297,37 +303,37 @@ WEBVTT
 00:05:27.800 --> 00:05:33.320
  But if the application is not in the settings.py, then it won't be detected.
 
-00:05:33.320 --> 00:05:37.840
+00:05:33.320 --> 00:05:37.800
  So the make migrations is reading through all the applications listed in
 
-00:05:37.840 --> 00:05:43.360
- the settings.py, checking for differences, deviations between models.py and
+00:05:37.800 --> 00:05:41.240
+ the settings.py, checking for differences,
 
-00:05:43.360 --> 00:05:44.560
- the migrations.
+00:05:41.240 --> 00:05:44.560
+ deviations between models.py and the migrations.
 
 00:05:44.560 --> 00:05:47.760
  It might be a little easier just to show you these things.
 
-00:05:47.760 --> 00:05:50.520
+00:05:47.760 --> 00:05:50.480
  Well, that's coming up, I'll show you those in a second.
 
-00:05:50.520 --> 00:05:57.160
+00:05:50.480 --> 00:05:57.160
  If we look at what the migrate does, the migrate creates the SQLite file.
 
-00:05:57.160 --> 00:05:59.400
- And so we can take a look at this file.
+00:05:57.160 --> 00:06:00.880
+ And so we can take a look at this file, you don't have to.
 
-00:05:59.400 --> 00:06:04.920
- You don't have to, but you can take a look at this file after you've run the migrate.
+00:06:00.880 --> 00:06:04.920
+ But you can take a look at this file after you've run the migrate.
 
 00:06:04.920 --> 00:06:10.080
  And you see, so I have a tables, book one percent.
 
-00:06:10.080 --> 00:06:12.740
+00:06:10.080 --> 00:06:12.720
  That's actually a wild card because the like statement,
 
-00:06:12.740 --> 00:06:14.920
+00:06:12.720 --> 00:06:14.920
  that's like the like statement in SQL.
 
 00:06:14.920 --> 00:06:18.160
@@ -343,13 +349,10 @@ WEBVTT
  book one underscore lang.
 
 00:06:23.920 --> 00:06:27.600
- Book one is the application because Django has project and
+ Book one is the application, cuz Django has project and
 
-00:06:27.600 --> 00:06:29.000
- then applications within project.
-
-00:06:29.000 --> 00:06:31.960
- And book one is the application that we're doing.
+00:06:27.600 --> 00:06:31.960
+ then applications within project, and book one is the application that we're doing.
 
 00:06:31.960 --> 00:06:37.200
  And then instance book and lang are the three models that we've specified
@@ -360,17 +363,17 @@ WEBVTT
 00:06:40.520 --> 00:06:43.400
  So if we take a look using the schema command of book one,
 
-00:06:43.400 --> 00:06:48.160
+00:06:43.400 --> 00:06:48.180
  we can see how the migrate statement produced the table.
 
-00:06:48.160 --> 00:06:51.040
+00:06:48.180 --> 00:06:51.040
  And so we created a book one dot underscore book.
 
-00:06:51.040 --> 00:06:54.920
+00:06:51.040 --> 00:06:54.880
  It has ID, auto increment, all that stuff from the SQL stuff.
 
-00:06:54.920 --> 00:07:00.280
- It's got a title, it's got ISPN, and then it's got this lang ID.
+00:06:56.240 --> 00:07:00.280
+ It's got a title, it's got ISBN, and then it's got this lang ID.
 
 00:07:00.280 --> 00:07:01.360
  That's the foreign key.
@@ -378,38 +381,35 @@ WEBVTT
 00:07:01.360 --> 00:07:04.480
  So it's actually building the foreign key the right way.
 
-00:07:04.480 --> 00:07:07.060
+00:07:04.480 --> 00:07:07.040
  Now in SQLite, there's one way of building foreign keys.
 
-00:07:07.060 --> 00:07:09.960
+00:07:07.040 --> 00:07:09.960
  In MySQL, there's a different way of building foreign keys.
 
-00:07:09.960 --> 00:07:14.400
- And so that's all something that the migrate operation understands
-
-00:07:14.400 --> 00:07:15.840
- how to build.
+00:07:09.960 --> 00:07:15.840
+ And so that's all something that the migrate operation understands how to build.
 
 00:07:15.840 --> 00:07:17.080
  And if you look at the language,
 
 00:07:17.080 --> 00:07:19.880
- you just see that there's an ID column that's automatically produced and
+ you just see that there's an ID column that's automatically produced, and
 
 00:07:19.880 --> 00:07:20.480
  then a name.
 
-00:07:20.480 --> 00:07:22.600
- And then if you look at the instance, you see an ID and
+00:07:20.480 --> 00:07:23.680
+ And then if you look at the instance, you see an ID and a dude back,
 
-00:07:22.600 --> 00:07:25.120
- a dude back, which is date.
+00:07:23.680 --> 00:07:25.120
+ which is date.
 
 00:07:25.120 --> 00:07:30.600
  And then you see the book ID, which is the foreign key into the book table.
 
 00:07:30.600 --> 00:07:35.560
- And so you can kinda see how these tables implement the links as described
+ And so you can kind of see how these tables implement the links as described
 
 00:07:35.560 --> 00:07:36.280
  in the picture.
@@ -439,7 +439,7 @@ WEBVTT
  And you've got, there's a couple of different things that you can do, but
 
 00:08:02.880 --> 00:08:05.720
- the two common things are, is cascade.
+ the two common things are is cascade.
 
 00:08:05.720 --> 00:08:09.960
  And what cascade says is that you're going to delete all the rows.
@@ -456,23 +456,20 @@ WEBVTT
 00:08:19.360 --> 00:08:21.880
  We're just gonna wipe out these and make them null.
 
-00:08:21.880 --> 00:08:24.320
- And in this English, I mean in this language,
-
-00:08:24.320 --> 00:08:27.040
- if we delete a language from the language table,
+00:08:21.880 --> 00:08:27.040
+ And in this language, if we delete a language from the language table,
 
 00:08:27.040 --> 00:08:30.240
  we probably just wanna set it to be null, okay?
 
-00:08:30.240 --> 00:08:37.480
- And so if you look, you'll see that the relationship between the book and
+00:08:30.240 --> 00:08:34.240
+ And so if you look, you'll see that the relationship between
 
-00:08:37.480 --> 00:08:40.880
- the language, which is right here, if we delete one of these things,
+00:08:34.240 --> 00:08:39.400
+ the book and the language, which is right here.
 
-00:08:40.880 --> 00:08:42.240
- we set it to null.
+00:08:39.400 --> 00:08:42.240
+ If we delete one of these things, we set it to null.
 
 00:08:42.240 --> 00:08:44.120
  We set the corresponding language to null.
@@ -490,7 +487,7 @@ WEBVTT
  Languages are allowed to be null.
 
 00:08:54.960 --> 00:08:59.400
- But if on the other hand we get rid of a book from our books table,
+ But if on the other hand, we get rid of a book from our books table,
 
 00:08:59.400 --> 00:09:03.960
  then we probably wanna wipe out all of the instances that are related to that book.
@@ -504,33 +501,33 @@ WEBVTT
 00:09:11.240 --> 00:09:14.960
  And so set null requires you to be able to say null equals true.
 
-00:09:14.960 --> 00:09:19.560
- So you have to say I am willing to allow nulls in this column.
+00:09:14.960 --> 00:09:19.480
+ So you have to say, I am willing to allow nulls in this column.
 
-00:09:19.560 --> 00:09:23.640
+00:09:19.480 --> 00:09:23.640
  And by the way, if the thing that this column points to is deleted,
 
 00:09:23.640 --> 00:09:26.640
  then set it to null, which means don't delete the row.
 
-00:09:26.640 --> 00:09:31.400
- Cascade means if the thing we're pointing to is deleted, then delete this row,
+00:09:26.640 --> 00:09:30.520
+ Cascade means if the thing we're pointing to is deleted,
 
-00:09:31.400 --> 00:09:33.520
- cuz we don't want inconsistent data.
+00:09:30.520 --> 00:09:33.520
+ then delete this row, cuz we don't want inconsistent data.
 
 00:09:33.520 --> 00:09:37.240
  We don't want those little things pointing off to absolutely nowhere and
 
-00:09:37.240 --> 00:09:38.920
+00:09:37.240 --> 00:09:38.880
  making absolutely no sense.
 
-00:09:38.920 --> 00:09:43.600
+00:09:38.880 --> 00:09:43.600
  So next I wanna go into a little more detail on models, migrations, and
 
-00:09:43.600 --> 00:09:45.920
- databases and how they work at a bit of a low level.
+00:09:43.600 --> 00:09:45.840
+ databases, and how they work at a bit of a low level.
 
-00:09:45.920 --> 00:09:55.920
+00:09:45.840 --> 00:09:55.840
  [MUSIC]
 

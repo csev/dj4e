@@ -1,660 +1,752 @@
 1
-00:00:00,000 --> 00:00:02,640
+00:00:00,000 --> 00:00:02,760
  So now we're going to do more than just console.log
 
 2
-00:00:02,640 --> 00:00:04,600
+00:00:02,760 --> 00:00:04,720
  so we can see what's going on in JavaScript,
 
 3
-00:00:04,600 --> 00:00:08,500
- but we're actually going to do modifying the document object model in JavaScript.
+00:00:04,720 --> 00:00:07,480
+ but we're actually going to do modifying the document object
 
 4
-00:00:08,500 --> 00:00:14,400
- So recall on the o1noscript.htm that I just used the debugger
+00:00:07,480 --> 00:00:09,120
+ model in JavaScript.
 
 5
-00:00:14,400 --> 00:00:16,980
- to modify the document object model, right?
+00:00:09,120 --> 00:00:13,320
+ So recall on the o1noscript.htm that I just
 
 6
-00:00:16,980 --> 00:00:19,440
- We modify the document object model,
+00:00:13,320 --> 00:00:17,800
+ used the debugger to modify the document object model, right?
 
 7
-00:00:19,440 --> 00:00:21,580
- and if it's visible through the window,
+00:00:17,800 --> 00:00:19,560
+ We modify the document object model,
 
 8
-00:00:21,580 --> 00:00:24,440
- then what we changed is instantly changed.
+00:00:19,560 --> 00:00:21,720
+ and if it's visible through the window,
 
 9
-00:00:24,440 --> 00:00:26,500
- So literally, we're running JavaScript on one end,
+00:00:21,720 --> 00:00:24,600
+ then what we changed is instantly changed.
 
 10
-00:00:26,500 --> 00:00:29,480
- and the UI just changes. It's like it instantaneously.
+00:00:24,600 --> 00:00:26,640
+ So literally, we're running JavaScript on one end,
 
 11
-00:00:29,600 --> 00:00:34,200
- Although if you make mistakes and you run code that runs too long,
+00:00:26,640 --> 00:00:28,200
+ and the UI just changes.
 
 12
-00:00:34,200 --> 00:00:35,540
- those changes will be delayed
+00:00:28,200 --> 00:00:29,640
+ It's like it instantaneously.
 
 13
-00:00:35,540 --> 00:00:37,940
- because we have to finish the JavaScript code
+00:00:29,640 --> 00:00:32,760
+ Although, if you make mistakes and you
 
 14
-00:00:37,940 --> 00:00:40,180
- and let the browser do the redisplay.
+00:00:32,760 --> 00:00:35,040
+ run code that runs too long, those changes
 
 15
-00:00:40,180 --> 00:00:42,240
- But we can change these by hand,
+00:00:35,040 --> 00:00:38,120
+ will be delayed because we have to finish the JavaScript code
 
 16
-00:00:42,240 --> 00:00:44,680
- but let's just do this instead with a trigger.
+00:00:38,120 --> 00:00:40,320
+ and let the browser do the redisplay.
 
 17
-00:00:44,680 --> 00:00:47,940
- And to trigger it, we have to be able to grab bits of the DOM
+00:00:40,320 --> 00:00:43,000
+ But we can change these by hand, but let's just
 
 18
-00:00:47,940 --> 00:00:49,940
- or query the document object model.
+00:00:43,000 --> 00:00:45,200
+ do this instead with a trigger.
 
 19
-00:00:49,940 --> 00:00:53,940
- Let's recall 03event.htm, and all we're showing here
+00:00:45,200 --> 00:00:48,080
+ And to trigger it, we have to be able to grab bits of the DOM
 
 20
-00:00:53,940 --> 00:00:57,000
- is that we can define a function in JavaScript,
+00:00:48,080 --> 00:00:50,040
+ or query the document object model.
 
 21
-00:00:57,140 --> 00:01:00,380
- then we can have an onClick method that calls my function
+00:00:50,040 --> 00:00:54,120
+ Let's recall o3event.htm, and all we're showing here
 
 22
-00:01:00,380 --> 00:01:01,940
- after the click happens.
+00:00:54,120 --> 00:00:57,120
+ is that we can define a function in JavaScript,
 
 23
-00:01:01,940 --> 00:01:04,340
- Again, remember that those quotes are important.
+00:00:57,120 --> 00:01:00,480
+ then we can have an onClick method that calls my function
 
 24
-00:01:04,340 --> 00:01:07,580
- onClick attribute is a string,
+00:01:00,480 --> 00:01:02,080
+ after the click happens.
 
 25
-00:01:07,580 --> 00:01:10,340
- which is only parsed at the moment that you click it,
+00:01:02,080 --> 00:01:02,920
+ Again, remember that.
 
 26
-00:01:10,340 --> 00:01:13,880
- and then func is called in that moment.
+00:01:02,920 --> 00:01:04,440
+ Those quotes are important.
 
 27
-00:01:13,880 --> 00:01:15,880
- So let's do something a little more interesting
+00:01:04,440 --> 00:01:07,920
+ onClick attribute is a string, which
 
 28
-00:01:15,880 --> 00:01:17,640
- in that onClick method.
+00:01:07,920 --> 00:01:10,440
+ is only parsed at the moment that you click it,
 
 29
-00:01:17,640 --> 00:01:22,040
- So the top part is still an ID tag, an h1,
+00:01:10,440 --> 00:01:13,960
+ and then func is called in that moment.
 
 30
-00:01:22,040 --> 00:01:23,940
- except now we put id equals fun,
+00:01:13,960 --> 00:01:16,040
+ So let's do something a little more interesting
 
 31
-00:01:23,940 --> 00:01:26,240
- and you can choose anything you want for the ID.
+00:01:16,040 --> 00:01:17,840
+ in that onClick method.
 
 32
-00:01:26,380 --> 00:01:28,140
- It's got to be unique across the whole document.
+00:01:17,840 --> 00:01:22,200
+ So the top part is still an ID tag, an h1,
 
 33
-00:01:28,140 --> 00:01:29,480
- Remember CSS.
+00:01:22,200 --> 00:01:24,120
+ except now we put id equals fun.
 
 34
-00:01:29,480 --> 00:01:32,780
- And then it has a bunch of attributes and methods.
+00:01:24,120 --> 00:01:26,400
+ And you can choose anything you want for the ID.
 
 35
-00:01:32,780 --> 00:01:34,340
- Elements have attributes and methods,
+00:01:26,400 --> 00:01:28,440
+ It's got to be unique across the whole document.
 
 36
-00:01:34,340 --> 00:01:36,480
- and one of them is innerHTML.
+00:01:28,440 --> 00:01:29,680
+ Remember CSS.
 
 37
-00:01:36,480 --> 00:01:42,500
- And I simply assign the innerHTML to a cool header.
+00:01:29,680 --> 00:01:33,000
+ And then it has a bunch of attributes and methods.
 
 38
-00:01:42,500 --> 00:01:45,240
- And that's how you basically see that change.
+00:01:33,000 --> 00:01:34,520
+ Elements have attributes and methods,
 
 39
-00:01:45,240 --> 00:01:46,680
- We're changing the element.
+00:01:34,520 --> 00:01:37,400
+ and one of them is innerHTML.
 
 40
-00:01:46,680 --> 00:01:49,180
- Now, an important part of this is the function ends,
+00:01:37,400 --> 00:01:42,720
+ And I simply assign the innerHTML to a cool header.
 
 41
-00:01:49,180 --> 00:01:51,480
- so it goes back into the browser
+00:01:42,720 --> 00:01:45,440
+ And that's how you basically see that change.
 
 42
-00:01:51,480 --> 00:01:53,800
- and the browser sees the change to the document object model
+00:01:45,440 --> 00:01:46,840
+ We're changing the element.
 
 43
-00:01:53,800 --> 00:01:54,940
- and then displays it.
+00:01:46,840 --> 00:01:50,200
+ Now, an important part of this is the function ends,
 
 44
-00:01:55,080 --> 00:01:58,500
- If we did something crazy in the last line of my func
+00:01:50,200 --> 00:01:51,680
+ so it goes back into the browser,
 
 45
-00:01:58,500 --> 00:02:03,300
- that did not give the thread back to the browser,
+00:01:51,680 --> 00:01:54,120
+ and the browser sees the change to the document object model
 
 46
-00:02:03,300 --> 00:02:06,540
- it might get messed up, but we're going to just return.
+00:01:54,120 --> 00:01:55,120
+ and then displays it.
 
 47
-00:02:06,540 --> 00:02:08,540
- We're going to make our change to document object model.
+00:01:55,120 --> 00:01:58,640
+ If we did something crazy in the last line of my func
 
 48
-00:02:08,540 --> 00:02:12,480
- This code here, console.log let lm equals console.log lm
+00:01:58,640 --> 00:02:03,480
+ that did not give the thread back to the browser,
 
 49
-00:02:12,480 --> 00:02:14,500
- innerHTML, that's really quick.
+00:02:03,480 --> 00:02:04,520
+ it might get messed up.
 
 50
-00:02:14,500 --> 00:02:16,840
- Just in a blink of an eye, that code runs,
+00:02:04,520 --> 00:02:06,260
+ But we're going to just return.
 
 51
-00:02:16,840 --> 00:02:18,800
- meaning there's nothing slow in it.
+00:02:06,260 --> 00:02:08,720
+ We're going to make our change to the document object model.
 
 52
-00:02:18,800 --> 00:02:21,400
- Everything happens fast. There's nothing to wait for.
+00:02:08,720 --> 00:02:12,360
+ This code here, console.log let lm equals console.log
 
 53
-00:02:21,400 --> 00:02:22,740
- So everything happens fast.
+00:02:12,360 --> 00:02:13,320
+ lm innerHTML.
 
 54
-00:02:22,880 --> 00:02:25,980
- We get the browser back to redisplay things.
+00:02:13,320 --> 00:02:14,640
+ That's really quick.
 
 55
-00:02:25,980 --> 00:02:28,400
- And so you can see when you click on it,
+00:02:14,640 --> 00:02:17,040
+ Just in a blink of an eye, that code runs,
 
 56
-00:02:28,400 --> 00:02:30,240
- you can see that it says, "I was clicked."
+00:02:17,040 --> 00:02:18,960
+ meaning there's nothing slow in it.
 
 57
-00:02:30,240 --> 00:02:32,240
- It goes and looks the element up and it says,
+00:02:18,960 --> 00:02:20,120
+ Everything happens fast.
 
 58
-00:02:32,240 --> 00:02:34,700
- "Oh, I just found an H1 tag."
+00:02:20,120 --> 00:02:21,560
+ There's nothing to wait for.
 
 59
-00:02:34,700 --> 00:02:37,900
- And then I set its innerHTML to be a cool header.
+00:02:21,560 --> 00:02:22,920
+ So everything happens fast.
 
 60
-00:02:37,900 --> 00:02:40,540
- I could have appended something
+00:02:22,920 --> 00:02:26,160
+ We get the browser back to redisplay things.
 
 61
-00:02:40,540 --> 00:02:43,340
- because I could have read innerHTML if I felt like it.
+00:02:26,160 --> 00:02:28,560
+ And so you can see, when you click on it,
 
 62
-00:02:43,340 --> 00:02:46,440
- But then as soon as that function finishes,
+00:02:28,560 --> 00:02:30,400
+ you can see that it says, I was clicked.
 
 63
-00:02:46,440 --> 00:02:50,680
- then the browser takes over and then redisplays the updated DOM.
+00:02:30,400 --> 00:02:31,960
+ It goes and looks the element up.
 
 64
-00:02:50,800 --> 00:02:54,600
- And again, everything that we did happens so rapidly
+00:02:31,960 --> 00:02:34,880
+ And it says, oh, I just found an h1 tag.
 
 65
-00:02:54,600 --> 00:02:56,980
- that you don't even notice it.
+00:02:34,880 --> 00:02:39,000
+ And then I set its innerHTML to be a cool header.
 
 66
-00:02:56,980 --> 00:02:59,380
- So now let's add some stuff to the DOM.
+00:02:39,000 --> 00:02:41,600
+ I could have appended something because I could have read
 
 67
-00:02:59,380 --> 00:03:04,380
- We can completely build a tag and we can add it to the DOM.
+00:02:41,600 --> 00:02:43,440
+ innerHTML if I felt like it.
 
 68
-00:03:04,380 --> 00:03:06,240
- Everything we've done so far is find a tag,
+00:02:43,440 --> 00:02:46,600
+ But then as soon as that function finishes,
 
 69
-00:03:06,240 --> 00:03:08,180
- mess with it and then put it back.
+00:02:46,600 --> 00:02:48,720
+ then the browser takes over and then
 
 70
-00:03:08,180 --> 00:03:09,880
- So let's add something to the DOM.
+00:02:48,720 --> 00:02:50,840
+ redisplays the updated DOM.
 
 71
-00:03:09,880 --> 00:03:15,100
- This is a little bit more intricate, but we're going...
+00:02:50,840 --> 00:02:52,280
+ And again, everything that we did
 
 72
-00:03:15,100 --> 00:03:19,500
- And this is a source code 09-append.htm
+00:02:52,280 --> 00:02:57,240
+ happens so rapidly that you don't even notice it.
 
 73
-00:03:19,640 --> 00:03:21,280
- if you want to go play with it.
+00:02:57,240 --> 00:02:59,520
+ So now let's add some stuff to the DOM.
 
 74
-00:03:21,280 --> 00:03:24,640
- So we're going to have a little button, an anchor tag,
+00:02:59,520 --> 00:03:03,000
+ We can completely build a tag.
 
 75
-00:03:24,640 --> 00:03:26,880
- and we're going to have an add, call the add function.
+00:03:03,000 --> 00:03:04,560
+ And we can add it to the DOM.
 
 76
-00:03:26,880 --> 00:03:29,700
- And then what you'll notice is we have a UL tag
+00:03:04,560 --> 00:03:07,080
+ Everything we've done so far is find a tag, mess with it,
 
 77
-00:03:29,700 --> 00:03:33,200
- and I've got an ID of Zap on the UL tag.
+00:03:07,080 --> 00:03:08,440
+ and then put it back.
 
 78
-00:03:33,200 --> 00:03:37,580
- And then the first item is li, list item tag and then /ul.
+00:03:08,440 --> 00:03:10,040
+ So let's add something to the DOM.
 
 79
-00:03:37,580 --> 00:03:40,740
- And then in the JavaScript,
+00:03:10,040 --> 00:03:14,280
+ This is a little bit more intricate.
 
 80
-00:03:40,740 --> 00:03:43,440
- I create a global variable called counter equals one.
+00:03:14,280 --> 00:03:19,640
+ But we are going-- and this is a source code, 09-append.htm,
 
 81
-00:03:43,440 --> 00:03:46,300
- And then I create a function called add.
+00:03:19,640 --> 00:03:21,560
+ if you want to go play with it.
 
 82
-00:03:46,440 --> 00:03:49,840
- And in that function, I go create a new create element.
+00:03:21,560 --> 00:03:24,840
+ So we're going to have a little button, an anchor tag.
 
 83
-00:03:49,840 --> 00:03:53,180
- Document.createElement says make me a new element.
+00:03:24,840 --> 00:03:27,640
+ And we're going to have an add, call the add function.
 
 84
-00:03:53,180 --> 00:03:57,480
- I want an element of a tag, an li tag.
+00:03:27,640 --> 00:03:29,880
+ And then what you'll notice is we have a ul tag.
 
 85
-00:03:57,480 --> 00:04:01,040
- And then I can set things. I can set its class name.
+00:03:29,880 --> 00:03:33,400
+ And I've got an ID of zap on the ul tag.
 
 86
-00:04:01,040 --> 00:04:03,340
- I can set its inner HTML.
+00:03:33,400 --> 00:03:38,960
+ And then the first item is li, list item tag, and then slash ul.
 
 87
-00:04:03,340 --> 00:04:05,440
- I'm concatenating the word the counter is
+00:03:38,960 --> 00:03:41,960
+ And then in the JavaScript, I create a global variable
 
 88
-00:04:05,440 --> 00:04:07,180
- and then I'm concatenating the number.
+00:03:41,960 --> 00:03:44,520
+ called counter equals 1.
 
 89
-00:04:07,180 --> 00:04:13,740
- And then I'm going to go document get element ID Zap.
+00:03:44,520 --> 00:03:46,520
+ And then I create a function called add.
 
 90
-00:04:13,880 --> 00:04:17,180
- Now, that is the UL tag, a pen child.
+00:03:46,520 --> 00:03:50,000
+ And in that function, I go create a new create element,
 
 91
-00:04:17,180 --> 00:04:20,040
- So the li tag is a child of the UL tag.
+00:03:50,000 --> 00:03:53,800
+ document.createElement says make me a new element.
 
 92
-00:04:20,040 --> 00:04:24,340
- And by saying a pen child, I say I want to make a new child of this UL tag.
+00:03:53,800 --> 00:03:58,320
+ I want an element of a tag, an li tag.
 
 93
-00:04:24,340 --> 00:04:27,700
- And so that's when you click it and then counter goes up by one.
+00:03:58,320 --> 00:03:59,720
+ And then I can set things.
 
 94
-00:04:27,700 --> 00:04:29,040
- And it's a global variable.
+00:03:59,720 --> 00:04:01,800
+ I can set its class name.
 
 95
-00:04:29,040 --> 00:04:32,100
- So kind of every time we call add, that counter goes up.
+00:04:01,800 --> 00:04:03,520
+ I can set its inner HTML.
 
 96
-00:04:32,100 --> 00:04:35,840
- So first item, you click it, it says the counter is one.
+00:04:03,520 --> 00:04:05,640
+ I'm concatenating the word the counter is.
 
 97
-00:04:35,840 --> 00:04:37,480
- You click it again, it adds counters too.
+00:04:05,640 --> 00:04:07,800
+ And then I'm concatenating the number.
 
 98
-00:04:37,480 --> 00:04:38,640
- Click it again, it adds counters too.
+00:04:07,800 --> 00:04:13,920
+ And then I'm going to go document get element ID zap.
 
 99
-00:04:38,640 --> 00:04:40,440
- You can do this as many times you like.
+00:04:13,920 --> 00:04:17,360
+ Now that is the ul tag, append child.
 
 100
-00:04:40,580 --> 00:04:45,580
- But the idea of making a new tag that's not connected to the document,
+00:04:17,360 --> 00:04:20,200
+ So the li tag is a child of the ul tag.
 
 101
-00:04:45,580 --> 00:04:48,580
- we make an li tag, we set some stuff in it,
+00:04:20,200 --> 00:04:21,560
+ And by saying append child, I say,
 
 102
-00:04:48,580 --> 00:04:51,680
- and then we plug it into the document with a pen child.
+00:04:21,560 --> 00:04:24,520
+ I want to make a new child of this ul tag.
 
 103
-00:04:51,680 --> 00:04:55,080
- If you look at the, it starts out with first item.
+00:04:24,520 --> 00:04:28,320
+ And so that's when you click it, and then counter goes up by 1.
 
 104
-00:04:55,080 --> 00:04:58,440
- And you'll notice, of course, that the more button
+00:04:28,320 --> 00:04:29,560
+ And it's a global variable.
 
 105
-00:04:58,440 --> 00:05:00,040
- has an event associated with it.
+00:04:29,560 --> 00:04:33,560
+ So every time we call add, that counter goes up.
 
 106
-00:05:00,040 --> 00:05:02,180
- We created that event with the onclick.
+00:04:33,560 --> 00:04:36,000
+ So first item, you click it, it says the counter is 1.
 
 107
-00:05:02,180 --> 00:05:06,280
- And then after we click it a couple times, boom, boom, boom,
+00:04:36,000 --> 00:04:37,640
+ You click it again, it adds counter is 2.
 
 108
-00:05:06,280 --> 00:05:08,200
- it just adds those things.
+00:04:37,640 --> 00:04:38,800
+ Click it again, add counter is 3.
 
 109
-00:05:08,340 --> 00:05:11,000
- So we can manipulate many things in the document object model
+00:04:38,800 --> 00:04:40,600
+ You can do this as many times you like.
 
 110
-00:05:11,000 --> 00:05:13,600
- from JavaScript, including changing the CSS,
+00:04:40,600 --> 00:04:44,200
+ But the idea of making a new tag that's
 
 111
-00:05:13,600 --> 00:05:16,700
- which means we can alter the look of things.
+00:04:44,200 --> 00:04:45,880
+ not connected to the document, we
 
 112
-00:05:16,700 --> 00:05:22,280
- And so in this, we've got a header tag with an idea of fun.
+00:04:45,880 --> 00:04:48,780
+ make an li tag, we set some stuff in it,
 
 113
-00:05:22,280 --> 00:05:25,700
- Again, the idea is a way for us to grab it in JavaScript, okay?
+00:04:48,780 --> 00:04:51,880
+ and then we plug it into the document with append child.
 
 114
-00:05:25,700 --> 00:05:29,100
- And then we're going to have a button with an idea of poof
+00:04:51,880 --> 00:04:53,320
+ If you look at the--
 
 115
-00:05:29,100 --> 00:05:32,980
- and a button, an idea of show that has the text hide and show.
+00:04:53,320 --> 00:04:55,280
+ it starts out with first item.
 
 116
-00:05:32,980 --> 00:05:37,240
- And we're going to do this using add event listener.
+00:04:55,280 --> 00:04:58,600
+ And you'll notice, of course, that the more button
 
 117
-00:05:37,380 --> 00:05:39,740
- There are shorter, we could have used the onclick,
+00:04:58,600 --> 00:05:00,240
+ has an event associated with it.
 
 118
-00:05:39,740 --> 00:05:41,800
- but I just want to kind of get used to the notion
+00:05:00,240 --> 00:05:03,800
+ We created that event with the onclick.
 
 119
-00:05:41,800 --> 00:05:45,240
- that one of the things you do toward the end of your document
+00:05:03,800 --> 00:05:06,480
+ And then after we click it a couple times, boom, boom, boom,
 
 120
-00:05:45,240 --> 00:05:47,440
- is you add all the event listeners.
+00:05:06,480 --> 00:05:08,400
+ it just adds those things.
 
 121
-00:05:47,440 --> 00:05:49,300
- So you have all the HTML that gets displayed,
+00:05:08,400 --> 00:05:11,200
+ So we can manipulate many things in the document object model
 
 122
-00:05:49,300 --> 00:05:51,980
- and then after that, you add event listeners.
+00:05:11,200 --> 00:05:14,000
+ from JavaScript, including changing the CSS, which
 
 123
-00:05:51,980 --> 00:05:56,340
- And so in that script, we do document, get element, ID, show,
+00:05:14,000 --> 00:05:17,600
+ means we can alter the look of things.
 
 124
-00:05:56,340 --> 00:05:58,700
- and then we're going to add an event listener.
+00:05:17,600 --> 00:05:22,480
+ And so in this, we've got a header tag with an idea fun.
 
 125
-00:05:58,700 --> 00:06:00,540
- And we're looking for the click event.
+00:05:22,480 --> 00:05:26,600
+ Again, the idea is a way for us to grab it in JavaScript.
 
 126
-00:06:00,540 --> 00:06:05,000
- And it says, open print, quote, click, quote, comma.
+00:05:26,600 --> 00:05:29,320
+ And then we're going to have a button with an idea poof
 
 127
-00:06:05,140 --> 00:06:07,840
- And then what I have is literally code.
+00:05:29,320 --> 00:05:34,520
+ and a button, an idea show that has the text hide and show.
 
 128
-00:06:07,840 --> 00:06:13,240
- And again, first class functions, the function keyword returns code
+00:05:34,520 --> 00:05:37,440
+ And we're going to do this using add event listener.
 
 129
-00:06:13,240 --> 00:06:18,400
- so that we are doing the second parameter to add event listener.
+00:05:37,440 --> 00:05:38,760
+ They are shorter.
 
 130
-00:06:18,400 --> 00:06:20,480
- So we're creating a function,
+00:05:38,760 --> 00:05:39,920
+ We could use the onclick.
 
 131
-00:06:20,480 --> 00:06:23,400
- but you'll notice the function currently has no parameters,
+00:05:39,920 --> 00:05:42,000
+ But I just want to kind of get used to the notion
 
 132
-00:06:23,400 --> 00:06:25,240
- and it has no name, open curly brace.
+00:05:42,000 --> 00:05:45,800
+ that one of the things you do toward the end of your document
 
 133
-00:06:25,240 --> 00:06:28,140
- It's an anonymous function, and it only has one line of code,
+00:05:45,800 --> 00:05:47,640
+ is you add all the event listeners.
 
 134
-00:06:28,140 --> 00:06:31,180
- document, get element, ID, fun, dot style.
+00:05:47,640 --> 00:05:49,600
+ So you have all the HTML that gets displayed.
 
 135
-00:06:31,180 --> 00:06:33,540
- That's how we get our hands on the CSS.
+00:05:49,600 --> 00:05:53,080
+ And then after that, you add event listeners.
 
 136
-00:06:33,680 --> 00:06:38,800
- Display is a CSS value, and we're going to set it to the string block.
+00:05:53,080 --> 00:05:56,560
+ And so in that script, we do document, getElement, id, show.
 
 137
-00:06:38,800 --> 00:06:40,540
- So that is our show.
+00:05:56,560 --> 00:05:58,920
+ And then we're going to add an event listener.
 
 138
-00:06:40,540 --> 00:06:44,100
- And we'll see that when we do the poof, the add event listener,
+00:05:58,920 --> 00:06:00,720
+ And we're looking for the click event.
 
 139
-00:06:44,100 --> 00:06:46,740
- you know, on the hide button,
+00:06:00,720 --> 00:06:05,200
+ And it says, open paren, quote, click, quote, comma.
 
 140
-00:06:46,740 --> 00:06:48,900
- we're going to have an event listener for clicking.
+00:06:05,200 --> 00:06:08,720
+ And then what I have is literally code.
 
 141
-00:06:48,900 --> 00:06:51,840
- And in this one, we're going to set the display none,
+00:06:08,720 --> 00:06:10,680
+ And again, first class functions.
 
 142
-00:06:51,840 --> 00:06:54,300
- which means it's going to hide, so you click on hide.
+00:06:10,680 --> 00:06:13,440
+ The function keyword returns code
 
 143
-00:06:54,300 --> 00:06:56,780
- But you'll see a slightly different syntax,
+00:06:13,440 --> 00:06:16,920
+ so that we are doing the second parameter
 
 144
-00:06:56,780 --> 00:06:58,300
- and you'll see the syntax a lot
+00:06:16,920 --> 00:06:19,480
+ to add event listener.
 
 145
-00:06:58,300 --> 00:07:02,980
- because that early JavaScript, there was only one syntax for this,
+00:06:19,480 --> 00:06:20,680
+ So we're creating a function.
 
 146
-00:07:03,100 --> 00:07:05,600
- and now there's sort of more clever syntaxes
+00:06:20,680 --> 00:06:23,560
+ But you'll notice the function currently has no parameters.
 
 147
-00:07:05,600 --> 00:07:07,340
- in later versions of JavaScript.
+00:06:23,560 --> 00:06:24,640
+ And it has no name.
 
 148
-00:07:07,340 --> 00:07:13,480
- And a key thing to remember is that this second example for the poof,
+00:06:24,640 --> 00:06:25,440
+ Open curly brace.
 
 149
-00:07:13,480 --> 00:07:18,200
- open parent element equals greater than,
+00:06:25,440 --> 00:06:26,920
+ It's an anonymous function.
 
 150
-00:07:18,200 --> 00:07:22,140
- which is kind of like a right arrow, equals document, get element, ID, fun.
+00:06:26,920 --> 00:06:28,280
+ And it only has one line of code.
 
 151
-00:07:22,140 --> 00:07:25,880
- This is a shortcut to define a function,
+00:06:28,280 --> 00:06:31,360
+ Document, getElement, id, fun.style.
 
 152
-00:07:25,880 --> 00:07:27,540
- to define a function with no name.
+00:06:31,360 --> 00:06:33,680
+ That's how we get our hands on the CSS.
 
 153
-00:07:27,540 --> 00:07:29,980
- And so for all intents and purposes,
+00:06:33,680 --> 00:06:36,600
+ Display is a CSS value.
 
 154
-00:07:30,100 --> 00:07:32,940
- these two bits of code are equivalent.
+00:06:36,600 --> 00:06:38,960
+ And we're going to set it to the string block.
 
 155
-00:07:32,940 --> 00:07:38,800
- We're saying when there is a click on the poof item,
+00:06:38,960 --> 00:06:41,200
+ So that is our show.
 
 156
-00:07:38,800 --> 00:07:42,480
- we're going to call this function that has no name,
+00:06:41,200 --> 00:06:43,680
+ And we'll see that when we do the poof, the add event
 
 157
-00:07:42,480 --> 00:07:44,280
- but it takes as one parameter of the event.
+00:06:43,680 --> 00:06:47,080
+ listener, on the hide button, we're
 
 158
-00:07:44,280 --> 00:07:46,700
- The event is a parameter to all these little events
+00:06:47,080 --> 00:06:49,860
+ going to have an event listener for clicking.
 
 159
-00:07:46,700 --> 00:07:50,480
- that the browser sets up when it calls us.
+00:06:49,860 --> 00:06:52,240
+ And in this one, we're going to set the display none, which
 
 160
-00:07:50,480 --> 00:07:51,940
- And then we're not going to use it, actually.
+00:06:52,240 --> 00:06:53,360
+ means it's going to hide.
 
 161
-00:07:51,940 --> 00:07:55,640
- We just say document, get element, ID, fun, style dot display equals none,
+00:06:53,360 --> 00:06:55,040
+ So you click on hide.
 
 162
-00:07:55,640 --> 00:07:58,180
- which makes it vanish. Okay?
+00:06:55,040 --> 00:06:56,960
+ But you'll see a slightly different syntax.
 
 163
-00:07:59,140 --> 00:08:04,600
- So if you run this, 13-css.htm, you click on hide, the header goes away.
+00:06:56,960 --> 00:07:01,360
+ And you'll see this syntax a lot because that early JavaScript,
 
 164
-00:08:04,600 --> 00:08:07,900
- You click on show, it comes back. You click on hide, it goes away.
+00:07:01,360 --> 00:07:03,160
+ there was only one syntax for this.
 
 165
-00:08:07,900 --> 00:08:13,800
+00:07:03,160 --> 00:07:05,800
+ And now there's sort of more clever syntaxes
+
+166
+00:07:05,800 --> 00:07:07,520
+ in later versions of JavaScript.
+
+167
+00:07:07,520 --> 00:07:12,640
+ And a key thing to remember is that this second example
+
+168
+00:07:12,640 --> 00:07:18,320
+ for the poof, open paren element, equals greater than,
+
+169
+00:07:18,320 --> 00:07:19,920
+ which is kind of like a right arrow,
+
+170
+00:07:19,920 --> 00:07:22,680
+ equals document, getElement, id, fun.
+
+171
+00:07:22,680 --> 00:07:26,080
+ This is a shortcut to define a function,
+
+172
+00:07:26,080 --> 00:07:28,200
+ define a function with no name.
+
+173
+00:07:28,200 --> 00:07:30,140
+ And so for all intents and purposes,
+
+174
+00:07:30,140 --> 00:07:34,360
+ these two bits of code are equivalent.
+
+175
+00:07:34,360 --> 00:07:39,720
+ We're saying when there is a click on the poof item,
+
+176
+00:07:39,720 --> 00:07:42,680
+ we're going to call this function that has no name,
+
+177
+00:07:42,680 --> 00:07:44,440
+ but it takes as one parameter of the event.
+
+178
+00:07:44,440 --> 00:07:48,400
+ The event is a parameter to all these little events
+
+179
+00:07:48,400 --> 00:07:50,360
+ that the browser sets up when it calls us.
+
+180
+00:07:50,360 --> 00:07:52,160
+ And then we're not going to use it, actually.
+
+181
+00:07:52,160 --> 00:07:54,200
+ We just say document, getElement, id, fun,
+
+182
+00:07:54,200 --> 00:07:59,200
+ style.display equals none, which makes it vanish.
+
+183
+00:07:59,200 --> 00:08:03,840
+ So if you run this, 13-css.htm, you click on hide.
+
+184
+00:08:03,840 --> 00:08:04,760
+ The header goes away.
+
+185
+00:08:04,760 --> 00:08:06,440
+ You click on show, it comes back.
+
+186
+00:08:06,440 --> 00:08:08,680
+ You click on hide, it goes away.
+
+187
+00:08:08,680 --> 00:08:13,480
  And so this is just an example of how you can modify CSS.
+
+188
+00:08:13,480 --> 00:08:16,820
+ [MUSIC PLAYING]
 

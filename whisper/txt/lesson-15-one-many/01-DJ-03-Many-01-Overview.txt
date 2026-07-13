@@ -1,36 +1,38 @@
  - Hello, and welcome to our lecture on data modeling.
  We're gonna have a couple lectures on data modeling.
- This first one is sort of the one-to-many,
+ This first one is sort of the one to many,
  which is the easiest to understand,
- and then we'll have another lecture on many-to-many.
+ and then we'll have another lecture on many to many.
  Just to give you sort of, we're still sort of building
- a Django application one piece at a time,
- and we haven't built a whole Django application.
- But basically, we're really focused on model.py,
+ a django application one piece at a time,
+ and we haven't built a whole django application.
+ But basically, we're really focused on model dot py,
  and a little bit more on admin to inform.
- So, model.py is where we define the structure of our database,
+ So model.py is where we define the structure of our database,
  and we see this database through data models,
  data model objects, and we can register our data models
  in admin.py, there's not too much in this admin.py.
  But we really, and so we're gonna be talking to things
  like the shell, or you can even run scripts in here.
- So, the whole thing, in this lecture,
+ So the whole thing in this lecture,
  we're not talking much about the routing,
  or the views, or forms, or templates.
- We're really focused down in this area
- of our Django application, and it's okay.
+ So we're really focused down in this area
+ of our django application, and it's okay.
  We'll get to the rest of them,
  and we're just kind of talking about the data modeling now.
  So, I came to databases late in life.
  I saw them a little bit in grad school,
  which was a very long time ago,
- and I didn't like relational database as much,
- and I went to a job, and I had learned relational databases
- for the job, and I actually was a pretty advanced programmer
- at that point in time, and so they taught me
- how to do data model design, and I picked it up really fast,
+ and I didn't like relational databases much,
+ and I went to a job, and I had to learn
+ relational databases for the job,
+ and I actually was a pretty advanced programmer
+ at that point in time.
+ And so they taught me how to do data model design,
+ and I picked it up really fast,
  and I like totally fell in love with databases.
- So, model design is a interesting problem to solve.
+ So model design is an interesting problem to solve.
  The basic idea really comes down to efficiency
  of storing and retrieving data.
  And it just comes down to like,
@@ -38,99 +40,101 @@
  and if you're not clever about how to store your data,
  and somehow every time you logged into Facebook,
  you had to read all the Facebook's data to finally log in,
- it would literally take you two to 3,000 hours
+ it would literally take you two to three thousand hours
  to log into Facebook if it had to read all of its data.
- Now, obviously, millions of people
- log in per second in Facebook,
+ Now obviously, millions of people log in
+ per second in Facebook,
  and so obviously they're a little faster than that.
- So, somewhere between days and days and days
+ So somewhere between days and days and days
  to read the data, and can read the data
  a million times a second,
  in there is where databases win.
- And so, at times, it seems like when we're building
- a data model, you're like, "Oh, this is so difficult,
- "why are we working so hard?"
+ And so at times, it seems like when we're building
+ a data model, you're like, oh, this is so difficult,
+ why are we working so hard?
  And the answer is, you just can't scale.
  I mean, you can read through your data
  for simple data mining things,
- but databases are really important,
- and especially when you're building
+ but databases are really important.
+ And especially when you're building
  interactive online applications, speed's important.
- So, it turns out that, like most things in database,
+ So it turns out that, like most things in database,
  you can learn the basics pretty quick,
  and the rest of it is sort of an art form
  that you learn as you go.
- And so, the goal is to figure out the data
+ And so the goal is to figure out the data
  that you want to store in your application,
  and then draw a picture,
  spreading that data across multiple tables,
  and then creating links between those tables.
- So, you kind of start with a sample data set.
- Now, this is where we're gonna end up,
+ So you kind of start with a sample data set.
+ Now this is where we're gonna end up,
  and this is the model for the data
  for this local library application that we're building,
  and this is the thing we're gonna keep coming back to
  over and over.
- So, this is the destination,
- but we're not gonna hit this destination,
- we're gonna start more with the data.
- Now, different applications,
+ So this is the destination,
+ but we're not gonna hit this destination.
+ We're gonna start more with the data.
+ Now different applications,
  when you work at different organizations,
  you're going to find that the data model is very important.
- So, this is the data model of my autograder,
- which is based on a framework I built called SUGI,
- and so, if you were to learn this thing,
+ So this is the data model of my autograder,
+ which is based on a framework I built called SUGI.
+ And so if you were to learn this thing,
  early on I say, oh, and here's our data model,
  and here's how we store stuff,
- and here's this, that, and the other thing,
- and this data model took a lot of time to get right,
+ and here's this, that, and the other thing.
+ And this data model took a lot of time to get right,
  and it's a real important part of the application.
- And another project I work on is called Sakai,
- it's a learning management system that's open source.
- And, you know, this is a tiny fraction of the data model,
+ And another project I work on is called Sakai.
+ It's a learning management system that's open source.
+ And this is a tiny fraction of the data model,
  but if you wanna work in this application,
  you wanna improve something or add a feature,
  you gotta figure out this data model,
  because where the data goes,
  it shows up kind of flat in the user interface,
- but eventually it's stored in very specific locations,
- and linked, and that's why you see all these little boxes,
+ but eventually it's stored
+ in very specific locations and linked.
+ And that's why you see all these little boxes,
  but then lines.
  The lines are also the links between the various tables.
- So, there's a whole bunch of theory
- about database normalization, and it's important,
- it really is, and if you take some time,
- go ahead and read about it.
- First normal form, second normal form, third normal form,
- third normal form, version A and stuff.
- I'm not really into the math,
+ So there's a whole bunch of theory
+ about database normalization, and it's important.
+ It really is.
+ And if you take some time, go ahead and read about it.
+ First normal form, second normal form,
+ third normal form, third normal form, version A and stuff.
+ I'm not really into the math.
  I don't really wanna explain the math to you.
  The key thing about database normalization, ultimately,
  that it can be sort of distilled down to,
- don't replicate string data,
- and what I mean by string data is like,
- names, and URLs, and things like that.
- So, in a system, ultimately,
+ don't replicate string data.
+ And what I mean by string data is like names and URLs
+ and things like that.
+ So in a system, ultimately,
  if my email address is stored in text in that system,
  it literally should be stored once.
- There should be no email address,
- email address, email address.
+ There should be no email address, email address,
+ email address.
  What you need is to have the email address one place,
- and then kind of give that email address a number,
+ and then kind of give that email address a number
  and all the places you wanna indicate
  about that email address you used the number in.
- So, these integer numbers are the key.
- So, we create keys, which are the lookup handles,
- and then we point to those keys,
- and we use integers to make links between the tables,
- 'cause integers are fast,
- they're the thing that computers understand better.
+ So these integer numbers are the key.
+ So we create keys, which are the lookup handles,
+ and then we point to those keys.
+ And we use integers to make links between the tables
+ 'cause integers are fast.
+ They're the thing that computers understand better.
  They understand, computers understand
  and move integers around.
- They use less data, they calculate,
- they compare really fast,
- and so it's very, integers are very important.
- So, up next, we're gonna take a look at some example data,
+ They use less data.
+ They calculate.
+ They compare really fast.
+ And so it's very, integers are very important.
+ So up next, we're gonna take a look at some example data,
  and then we're gonna design a data model for that data.
  (upbeat music)
- (jazz piano music)
+ (jazzy piano music)

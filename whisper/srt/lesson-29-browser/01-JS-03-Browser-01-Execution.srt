@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:03,480
- - Hello, and welcome to our lecture on JavaScript and the browser.
+ Hello, and welcome to our lecture on JavaScript and the browser.
 
 2
 00:00:03,480 --> 00:00:05,280
@@ -11,15 +11,15 @@
  but more importantly, it typically runs in the browser.
 
 4
-00:00:08,480 --> 00:00:11,440
+00:00:08,480 --> 00:00:11,480
  In the browser, there are some special things.
 
 5
-00:00:11,440 --> 00:00:13,440
+00:00:11,480 --> 00:00:13,480
  If you're just writing Python, right,
 
 6
-00:00:13,440 --> 00:00:16,080
+00:00:13,480 --> 00:00:16,080
  you've got this whole operating system,
 
 7
@@ -36,11 +36,11 @@
 
 10
 00:00:26,400 --> 00:00:29,080
- When the input comes, write a loop.
+ When the input comes, write a loop,
 
 11
 00:00:29,080 --> 00:00:33,920
- Make a URL lib request, wait for that request.
+ make a URL lib request, wait for that request.
 
 12
 00:00:33,920 --> 00:00:37,080
@@ -68,11 +68,11 @@
 
 18
 00:00:49,200 --> 00:00:54,360
- But that's not how it works in JavaScript and the browser.
+ But that's not how it works in JavaScript in the browser.
 
 19
 00:00:54,360 --> 00:00:55,480
- In the JavaScript and the browser,
+ In the JavaScript in the browser,
 
 20
 00:00:55,480 --> 00:00:59,080
@@ -124,7 +124,7 @@
 
 32
 00:01:26,320 --> 00:01:31,080
- than we do sort of in Python, just running on your laptop.
+ than we do sort of in Python just running on your laptop.
 
 33
 00:01:31,080 --> 00:01:34,360
@@ -143,12 +143,12 @@
  and then JavaScript runs.
 
 37
-00:01:41,160 --> 00:01:44,520
- You can take over, you can throw away
+00:01:41,160 --> 00:01:42,640
+ You can take over.
 
 38
-00:01:44,520 --> 00:01:46,800
- all the rest of the document if you want.
+00:01:42,640 --> 00:01:46,800
+ You can throw away all the rest of the document if you want.
 
 39
 00:01:46,800 --> 00:01:48,280
@@ -199,55 +199,55 @@
  And so to some degree we say set something up
 
 51
-00:02:18,080 --> 00:02:22,160
+00:02:18,080 --> 00:02:22,120
  and I'm handing you some code to handle this event.
 
 52
-00:02:22,160 --> 00:02:27,040
+00:02:22,120 --> 00:02:27,040
  So let's take a look at this 01noscript.htm.
 
 53
-00:02:27,040 --> 00:02:28,800
+00:02:27,040 --> 00:02:28,760
  This has no JavaScript.
 
 54
-00:02:28,800 --> 00:02:31,040
+00:02:28,760 --> 00:02:31,000
  And we've been talking about this all along
 
 55
-00:02:31,040 --> 00:02:32,800
+00:02:31,000 --> 00:02:32,760
  where something comes from the server.
 
 56
-00:02:32,800 --> 00:02:36,080
- Here we have a header tag, h1 tag, and a p tag.
+00:02:32,760 --> 00:02:36,040
+ Here we have a header tag, H1 tag, and a P tag.
 
 57
-00:02:36,080 --> 00:02:38,600
+00:02:36,040 --> 00:02:38,600
  We parse, the browser parses that response
 
 58
-00:02:38,600 --> 00:02:41,360
+00:02:38,600 --> 00:02:41,320
  and then writes the document object model.
 
 59
-00:02:41,360 --> 00:02:43,080
+00:02:41,320 --> 00:02:43,040
  And so when you do an inspect element,
 
 60
-00:02:43,080 --> 00:02:45,960
+00:02:43,040 --> 00:02:45,920
  you're actually not seeing the exact text
 
 61
-00:02:45,960 --> 00:02:48,440
+00:02:45,920 --> 00:02:48,400
  that came from the server.
 
 62
-00:02:48,440 --> 00:02:51,360
+00:02:48,400 --> 00:02:51,320
  You are seeing the document object model
 
 63
-00:02:51,360 --> 00:02:55,680
+00:02:51,320 --> 00:02:55,680
  that the browser created as it read that document.
 
 64
@@ -255,32 +255,32 @@
  And so this whole parse response.
 
 65
-00:02:57,000 --> 00:03:00,160
+00:02:57,000 --> 00:03:00,120
  And in this particular page, there is no JavaScript.
 
 66
-00:03:00,160 --> 00:03:02,000
+00:03:00,120 --> 00:03:01,960
  And so the JavaScript sort of is sitting there
 
 67
-00:03:02,000 --> 00:03:04,760
+00:03:01,960 --> 00:03:04,720
  in your browser, but it's not currently active.
 
 68
-00:03:04,760 --> 00:03:08,560
+00:03:04,720 --> 00:03:08,520
  Here is a completely different page.
 
 69
-00:03:08,560 --> 00:03:10,240
+00:03:08,520 --> 00:03:10,200
  And this is the sum total.
 
 70
-00:03:10,240 --> 00:03:14,520
- It's a script tag, document.write, document.write
+00:03:10,200 --> 00:03:12,680
+ It's a script tag, document.write,
 
 71
-00:03:14,520 --> 00:03:16,000
- and a script and a slash script.
+00:03:13,560 --> 00:03:16,000
+ document.write, and a slash script.
 
 72
 00:03:16,000 --> 00:03:18,920
@@ -291,356 +291,356 @@
  And that's because as the document is being parsed,
 
 74
-00:03:22,880 --> 00:03:26,840
- it sees the script tag and then it runs JavaScript, the code.
+00:03:22,880 --> 00:03:24,040
+ it sees the script tag,
 
 75
+00:03:24,040 --> 00:03:26,840
+ and then it runs JavaScript, the code.
+
+76
 00:03:26,840 --> 00:03:29,840
  Document is a predefined object,
 
-76
+77
 00:03:29,840 --> 00:03:31,960
  which is the document object model.
 
-77
+78
 00:03:31,960 --> 00:03:34,880
  Document.write allows you in JavaScript
 
-78
+79
 00:03:34,880 --> 00:03:37,840
  to write HTML into the DOM.
 
-79
+80
 00:03:37,840 --> 00:03:40,760
  So we write two lines, the exact same two lines
 
-80
+81
 00:03:40,760 --> 00:03:42,360
  that were in the previous example.
 
-81
-00:03:42,360 --> 00:03:44,000
+82
+00:03:42,360 --> 00:03:43,960
  And so when that's all said and done,
 
-82
-00:03:44,000 --> 00:03:45,200
+83
+00:03:43,960 --> 00:03:45,160
  we run the parse response.
 
-83
-00:03:45,200 --> 00:03:47,240
+84
+00:03:45,160 --> 00:03:47,200
  There's no HTML in this.
 
-84
-00:03:47,240 --> 00:03:50,320
+85
+00:03:47,200 --> 00:03:50,280
  I've exaggerated this to make the point, of course.
 
-85
-00:03:50,320 --> 00:03:52,600
- We parse the response, we run the JavaScript
-
 86
-00:03:52,600 --> 00:03:55,680
- and the JavaScript writes the document object model.
+00:03:50,280 --> 00:03:52,560
+ We parse the response, we run the JavaScript,
 
 87
-00:03:55,680 --> 00:03:57,840
- The DOM belongs to JavaScript.
+00:03:52,560 --> 00:03:55,640
+ and the JavaScript writes the document object model.
 
 88
-00:03:57,840 --> 00:04:01,360
- You, when you're writing JavaScript, you own the browser.
+00:03:55,640 --> 00:03:57,800
+ The DOM belongs to JavaScript.
 
 89
-00:04:01,360 --> 00:04:03,120
- You are in charge.
+00:03:57,800 --> 00:04:01,320
+ You, when you're writing JavaScript, you own the browser.
 
 90
-00:04:03,120 --> 00:04:06,360
- So if you look at the inspector,
+00:04:01,320 --> 00:04:03,080
+ You are in charge.
 
 91
-00:04:06,360 --> 00:04:08,400
- the source code that came was the script,
+00:04:03,080 --> 00:04:06,320
+ So if you look at the inspector,
 
 92
-00:04:08,400 --> 00:04:10,280
- these four lines of script and document.write,
+00:04:06,320 --> 00:04:08,360
+ the source code that came was the script,
 
 93
-00:04:10,280 --> 00:04:12,640
- document.write and script, slash script.
+00:04:08,360 --> 00:04:10,240
+ these four lines of script and document.write,
 
 94
+00:04:10,240 --> 00:04:12,640
+ document.write, and script/script.
+
+95
 00:04:12,640 --> 00:04:15,040
  But the document object model, when it's all said and done,
 
-95
+96
 00:04:15,040 --> 00:04:17,880
  is the same as in the previous example.
 
-96
+97
 00:04:17,880 --> 00:04:21,320
  Now, we've been doing this for a while.
 
-97
-00:04:21,320 --> 00:04:26,080
- We've been like making certain tags, like the anchor tag,
-
 98
-00:04:26,080 --> 00:04:29,800
- have an on click event, and then we call some JavaScript.
+00:04:21,320 --> 00:04:26,080
+ We've been making certain tags, like the anchor tag,
 
 99
-00:04:29,800 --> 00:04:33,080
- Now this is, my func, open, print, close, print, semi-column
+00:04:26,080 --> 00:04:29,800
+ have an onClick event, and then we call some JavaScript.
 
 100
+00:04:29,800 --> 00:04:33,080
+ Now this is my func, open, print, close, print, semicolon,
+
+101
 00:04:33,080 --> 00:04:35,840
  is some JavaScript, except it's inside of a string,
 
-101
+102
 00:04:35,840 --> 00:04:38,000
  which means it's being executed.
 
-102
-00:04:38,000 --> 00:04:41,880
+103
+00:04:38,000 --> 00:04:41,920
  It's actually being parsed and executed
 
-103
-00:04:41,880 --> 00:04:44,360
+104
+00:04:41,920 --> 00:04:44,440
  at the moment that the click happens.
 
-104
-00:04:44,360 --> 00:04:47,640
- And then in the script tag, we create a function
-
 105
-00:04:47,640 --> 00:04:50,400
- called my func and just put nice little console.log,
+00:04:44,440 --> 00:04:46,960
+ And then in the script tag,
 
 106
-00:04:50,400 --> 00:04:52,320
- I was clicked in there.
+00:04:46,960 --> 00:04:48,520
+ we create a function called my func,
 
 107
-00:04:52,320 --> 00:04:56,720
- So the way this works is the HTML comes,
+00:04:48,520 --> 00:04:52,360
+ and just put nice little console.log i was clicked in there.
 
 108
-00:04:56,720 --> 00:04:58,840
- JavaScript doesn't actually run during the parsing
+00:04:52,360 --> 00:04:56,720
+ So the way this works is the HTML comes,
 
 109
-00:04:58,840 --> 00:05:00,400
- except to create the function.
+00:04:56,720 --> 00:04:58,880
+ JavaScript doesn't actually run during the parsing,
 
 110
-00:05:00,400 --> 00:05:01,280
- There's no other thing.
+00:04:58,880 --> 00:05:01,320
+ except to create the function, there's no other thing.
 
 111
-00:05:01,280 --> 00:05:03,920
+00:05:01,320 --> 00:05:03,960
  It doesn't actually, the log doesn't come out.
 
 112
-00:05:03,920 --> 00:05:06,960
- But then later when the DOM is shown, there is an event.
+00:05:03,960 --> 00:05:07,000
+ But then later, when the DOM is shown, there is an event.
 
 113
-00:05:06,960 --> 00:05:08,880
- You can see that there's an event associated
+00:05:07,000 --> 00:05:08,320
+ You can see that there's an event
 
 114
-00:05:08,880 --> 00:05:09,760
- with that anchor tag.
+00:05:08,320 --> 00:05:09,800
+ associated with that anchor tag.
 
 115
-00:05:09,760 --> 00:05:12,960
+00:05:09,800 --> 00:05:13,000
  And if you look at the document object model with inspect,
 
 116
-00:05:12,960 --> 00:05:14,440
+00:05:13,000 --> 00:05:14,480
  you see, oh, this one has an event.
 
 117
-00:05:14,440 --> 00:05:16,600
- Well, it's kind of obvious this one has an event
+00:05:14,480 --> 00:05:16,640
+ Well, it's kind of obvious this one has an event,
 
 118
-00:05:16,600 --> 00:05:19,600
- because the on click is our way of indicating
+00:05:16,640 --> 00:05:19,640
+ because the onClick is our way of indicating
 
 119
-00:05:19,600 --> 00:05:20,760
+00:05:19,640 --> 00:05:20,800
  that there's an event.
 
 120
-00:05:20,760 --> 00:05:25,080
+00:05:20,800 --> 00:05:25,120
  Now, after the page shows up,
 
 121
-00:05:25,080 --> 00:05:28,680
+00:05:25,120 --> 00:05:28,720
  then you click on the word click me,
 
 122
-00:05:28,680 --> 00:05:31,280
+00:05:28,720 --> 00:05:31,320
  and then the JavaScript runs.
 
 123
-00:05:31,280 --> 00:05:33,880
- So the JavaScript is from a string,
+00:05:31,320 --> 00:05:33,920
+ So JavaScript is from a string,
 
 124
-00:05:33,880 --> 00:05:36,080
+00:05:33,920 --> 00:05:36,120
  the string is in a sense compiled or parsed
 
 125
-00:05:36,080 --> 00:05:39,080
- or whatever you wanna say, and then the code runs.
+00:05:36,120 --> 00:05:37,400
+ or whatever you wanna say.
 
 126
-00:05:39,080 --> 00:05:44,080
- And so the on click event is handed a string of source code.
+00:05:37,400 --> 00:05:39,120
+ And then the code runs.
 
 127
-00:05:44,080 --> 00:05:47,040
- And again, first class function.
+00:05:39,120 --> 00:05:44,120
+ And so the onClick event is handed a string of source code.
 
 128
-00:05:47,040 --> 00:05:48,920
- We've been doing this all along.
+00:05:44,120 --> 00:05:47,080
+ And again, first class function.
 
 129
-00:05:48,920 --> 00:05:51,760
- And if you go back and think about something we used to use,
+00:05:47,080 --> 00:05:48,960
+ We've been doing this all along.
 
 130
-00:05:51,760 --> 00:05:55,960
- we've been using on click for things like the cancel P
+00:05:48,960 --> 00:05:50,960
+ And if you go back and think about some of the things
 
 131
-00:05:55,960 --> 00:05:57,520
- so that we can do things in there.
+00:05:50,960 --> 00:05:52,880
+ we used to use, we've been using onClick
 
 132
-00:05:57,520 --> 00:06:00,840
- We still, it's just a way to indicate JavaScript.
+00:05:52,880 --> 00:05:56,000
+ for things like the cancelP,
 
 133
-00:06:00,840 --> 00:06:01,760
- You can call a function
+00:05:56,000 --> 00:05:57,560
+ so that we can do things in there.
 
 134
-00:06:01,760 --> 00:06:03,680
- or you can just put the JavaScript right there.
+00:05:57,560 --> 00:06:00,880
+ We still, it's just a way to indicate JavaScript.
 
 135
-00:06:03,680 --> 00:06:05,720
- Sometimes you'll see several lines of JavaScript
+00:06:00,880 --> 00:06:01,800
+ You can call a function,
 
 136
-00:06:05,720 --> 00:06:07,080
- in an on click method.
+00:06:01,800 --> 00:06:03,720
+ or you can just put the JavaScript right there.
 
 137
-00:06:07,080 --> 00:06:11,360
- Another way to run the code is as the result of a timer.
+00:06:03,720 --> 00:06:05,760
+ Sometimes you'll see several lines of JavaScript
 
 138
-00:06:11,360 --> 00:06:13,880
- So here we have a page, it's got an H1,
+00:06:05,760 --> 00:06:07,120
+ in an onClick method.
 
 139
-00:06:13,880 --> 00:06:15,840
- it's got a P tag and it's got some script.
+00:06:07,120 --> 00:06:11,400
+ Another way to run the code is as the result of a timer.
 
 140
-00:06:15,840 --> 00:06:18,040
- And that's all part of the parsing of the response.
+00:06:11,400 --> 00:06:13,920
+ So here we have a page, it's got an h1,
 
 141
-00:06:18,040 --> 00:06:20,400
- Now the script basically runs
+00:06:13,920 --> 00:06:15,880
+ it's got a p tag, and it's got some script.
 
 142
-00:06:20,400 --> 00:06:24,880
- and it says define a function called my func
+00:06:15,880 --> 00:06:18,080
+ And that's all part of the parsing of the response.
 
 143
-00:06:24,880 --> 00:06:27,560
- that says console log I was called when it's called later
+00:06:18,080 --> 00:06:20,520
+ Now the script basically runs,
 
 144
-00:06:27,560 --> 00:06:30,840
- and then set timeout my func 5000.
+00:06:20,520 --> 00:06:24,920
+ and it says define a function called my func,
 
 145
-00:06:30,840 --> 00:06:33,600
- What that basically says set timeout runs immediately
+00:06:24,920 --> 00:06:27,600
+ that says console log I was called when it's called later,
 
 146
-00:06:33,600 --> 00:06:34,800
- and returns immediately.
+00:06:27,600 --> 00:06:30,880
+ and then setTimeout my func 5000.
 
 147
-00:06:34,800 --> 00:06:35,800
- It does not wait.
+00:06:30,880 --> 00:06:32,080
+ What that basically says,
 
 148
-00:06:35,800 --> 00:06:37,400
- It's not like input in Python.
+00:06:32,080 --> 00:06:34,800
+ setTimeout runs immediately and returns immediately.
 
 149
-00:06:37,400 --> 00:06:38,400
- It doesn't wait.
+00:06:34,800 --> 00:06:37,440
+ It does not wait, it's not like input in Python.
 
 150
-00:06:38,400 --> 00:06:40,160
- It happens instantly.
+00:06:37,440 --> 00:06:40,200
+ It doesn't wait, it happens instantly.
 
 151
-00:06:40,160 --> 00:06:42,800
+00:06:40,200 --> 00:06:42,840
  You are registering a handler
 
 152
-00:06:42,800 --> 00:06:46,440
+00:06:42,840 --> 00:06:46,480
  that's triggered five seconds afterwards.
 
 153
-00:06:46,440 --> 00:06:48,240
+00:06:46,480 --> 00:06:48,280
  Then we say console log timer started.
 
 154
-00:06:48,240 --> 00:06:49,520
+00:06:48,280 --> 00:06:49,560
  So if you look at the output,
 
 155
-00:06:49,520 --> 00:06:52,120
+00:06:49,560 --> 00:06:52,160
  you see that the first thing that happened
 
 156
-00:06:52,120 --> 00:06:54,760
+00:06:52,160 --> 00:06:54,800
  was that the timer was started.
 
 157
-00:06:54,760 --> 00:06:58,600
- Now, if you ran this and you can 04 timer.htm,
+00:06:54,800 --> 00:06:58,640
+ Now if you ran this, and you can, o4timer.htm,
 
 158
-00:06:58,600 --> 00:07:01,440
- you run it and then you count five seconds
+00:06:58,640 --> 00:07:01,480
+ you run it, and then you count five seconds,
 
 159
-00:07:01,440 --> 00:07:02,840
+00:07:01,480 --> 00:07:02,860
  and then it says I was called.
 
 160
-00:07:02,840 --> 00:07:06,600
- So this is code that you defined and you said,
+00:07:02,860 --> 00:07:05,840
+ So this is code that you defined,
 
 161
-00:07:06,600 --> 00:07:09,480
- I want this code to run after a delay.
+00:07:05,840 --> 00:07:09,480
+ and you said I want this code to run after a delay.
 
 162
 00:07:09,480 --> 00:07:11,120
@@ -652,7 +652,7 @@
 
 164
 00:07:14,840 --> 00:07:16,800
- Now, if you take a look at this,
+ Now if you take a look at this,
 
 165
 00:07:16,800 --> 00:07:20,560
@@ -660,97 +660,101 @@
 
 166
 00:07:20,560 --> 00:07:23,480
- And so I've changed this 05 function.htm
+ And so I've changed this, o5function.htm
 
 167
-00:07:23,480 --> 00:07:24,720
+00:07:23,480 --> 00:07:24,700
  changes this a little bit.
 
 168
-00:07:24,720 --> 00:07:26,640
- Now notice there is no parentheses.
+00:07:24,700 --> 00:07:26,640
+ Now notice there is no parenthesis.
 
 169
 00:07:26,640 --> 00:07:28,480
- Now, if you put a parentheses after my func
+ Now if you put a parenthesis after my func
 
 170
 00:07:28,480 --> 00:07:30,000
- in the set timeout call,
+ in the setTimeout call,
 
 171
 00:07:30,000 --> 00:07:32,560
- it would actually then call my func
+ it would actually then call my func,
 
 172
-00:07:32,560 --> 00:07:35,120
- and the log would happen and then you'd get null back
+00:07:32,560 --> 00:07:33,680
+ and the log would happen,
 
 173
-00:07:35,120 --> 00:07:37,320
- and the set timeout would actually fail.
+00:07:33,680 --> 00:07:35,160
+ and then you'd get null back,
 
 174
-00:07:37,320 --> 00:07:40,480
- My func is itself with no parentheses
+00:07:35,160 --> 00:07:37,360
+ and the setTimeout would actually fail.
 
 175
-00:07:40,480 --> 00:07:41,720
- is a function reference.
+00:07:37,360 --> 00:07:40,520
+ My func is itself, with no parenthesis,
 
 176
-00:07:41,720 --> 00:07:45,840
- And we can see this by adding console log my func to it.
+00:07:40,520 --> 00:07:41,760
+ is a function reference.
 
 177
-00:07:45,840 --> 00:07:47,520
- So now if you watch the console,
+00:07:41,760 --> 00:07:45,880
+ And we can see this by adding console log my func to it.
 
 178
-00:07:47,520 --> 00:07:51,080
- you can see the variable my func being printed out.
+00:07:45,880 --> 00:07:47,560
+ So now if you watch the console,
 
 179
-00:07:51,080 --> 00:07:52,960
- And what does it show?
+00:07:47,560 --> 00:07:51,120
+ you can see the variable my func being printed out.
 
 180
-00:07:52,960 --> 00:07:54,360
- It shows a function.
+00:07:51,120 --> 00:07:53,000
+ And what does it show?
 
 181
-00:07:54,360 --> 00:07:57,920
- Like that's what's in my func with no parentheses.
+00:07:53,000 --> 00:07:54,400
+ It shows a function.
 
 182
-00:07:57,920 --> 00:07:59,840
- My func with a parentheses calls my func,
+00:07:54,400 --> 00:07:57,960
+ Like that's what's in my func with no parenthesis.
 
 183
-00:07:59,840 --> 00:08:02,720
- but my func without a parentheses is the,
+00:07:57,960 --> 00:07:59,880
+ My func with a parenthesis calls my func,
 
 184
+00:07:59,880 --> 00:08:02,720
+ but my func without a parenthesis is the,
+
+185
 00:08:02,720 --> 00:08:06,720
  in this case, parsed source code of the my func function.
 
-185
+186
 00:08:06,720 --> 00:08:09,000
  So first class functions are essential
 
-186
+187
 00:08:09,000 --> 00:08:10,520
  to all this eventing.
 
-187
+188
 00:08:10,520 --> 00:08:12,120
  So up next, we'll talk a little bit
 
-188
-00:08:12,120 --> 00:08:13,960
+189
+00:08:12,120 --> 00:08:13,940
  about the document object model.
 
-189
-00:08:13,960 --> 00:08:16,540
+190
+00:08:13,940 --> 00:08:16,520
  (upbeat music)
 

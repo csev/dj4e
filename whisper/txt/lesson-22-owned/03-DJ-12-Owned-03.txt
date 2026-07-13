@@ -1,53 +1,56 @@
- - So hello, with all that as lead up, we are going to finally start taking a look at how we actually build this owner list view.
+ So hello, with all that as lead up, we are going to finally start taking a look at how we actually build this OwnerListView.
  So let's take a look.
- So the basic idea is we're going to make a new class called owner list view, owner update view, owner create view,
- a whole series of classes that sort of mirror the generic ones, and we're going to add our own little sauce.
- And we are going to basically make our owner list view, which is going to extend generic list view.
- And we're going to extend owner list view to create article list view.
+ So the basic idea is we're going to make a new class called OwnerListView, OwnerUpdateView,
+ OwnerCreateView, a whole series of classes that sort of mirror the generic ones.
+ And we're going to add our own little sauce.
+ And we are going to basically make our OwnerListView,
+ which is going to extend generic list view.
+ And we're going to extend OwnerListView to create article list view.
  So the thing we ultimately end up with as our view is sort of three layers deep,
  where we have our view that extends another one of our views that extends a view that came from Django.
  And so there we go.
- And so things like article list, the HTML is the template, and all that convention,
- and the name of the variable article list, that's all convention, and we've been doing that quite a bit.
+ And so things like article list, the HTML as the template, and
+ all that convention and the name of the variable article list, that's all convention.
+ And we've been doing that quite a bit.
  So let's start with the models changes.
- Now in this model, everything except one line should be familiar to you and pretty comfortable.
+ Now, in this model, everything except one line should be familiar to you and
+ pretty comfortable.
  The only line that's a little bit different is this owner line.
  So it's just another field.
  It turns out to be an integer.
- It's a foreign key like all foreign keys are integers.
+ It's a foreign key, like all foreign keys are integers.
  And on delete models cascade, you have seen that before.
- That simply means if we have a bunch of articles that are linked to a user, and
+ That simply means if we have a bunch of articles that are linked to a user and
  we delete that user, it deletes the four articles that were associated with the user
  in order to keep the internal pointers consistent.
  So that part is all the same, quite comfortable, and you've been doing that for a while.
- Now settings off user model.
- We're importing settings from Django, and we are making a foreign key to a model that is not ours.
+ Now, settings off user model, we're importing settings from Django.
+ And we are making a foreign key to a model that is not ours.
  It is something that Django maintains.
  Django always has a user model somewhere.
  It may be named one thing or a different thing.
  We just don't know.
  We don't know what the name of the user model is.
  And so we have to ask Django for it.
- And Django conveniently always leaves it in this location.
- Settings.off user model.
- And it turns out if you wanna change it, you gotta change that variable.
+ And Django conveniently always leaves it in this location,
+ settings.authUserModel.
+ And turns out if you wanna change it, you gotta change that variable.
  But for us, we're not gonna change where it's at.
  Django's gonna set it for us and we're just going to use it.
  So there's two tables.
  There's this article table and some user table somewhere.
  And there's a foreign key relationship between them in a database level.
- And once you make this database, you could go see what the name of that table is,
- cuz it will show you the create statement that it actually used,
+ And once you make this database, you could go see what the name of that table is.
+ Cuz it will show you the create statement that it actually used,
  not that that matters.
- And so it's pretty much a normal old thing, like we've been making,
+ And so it's pretty much a normal old thing like we've been making,
  except it's got this extra owner column.
- And that's what we're gonna, that's the thing we're focusing on right now.
+ And that's the thing we're focusing on right now.
  Okay, so the views are gonna be pretty straightforward.
  The thing you're gonna see about the views is we're not gonna use the generic
- list view, the generic detail, blah, blah, blah.
+ list view, the generic detail, the generic blah, blah, blah.
  We're gonna make our own.
- These are made by us, myarts.owner.
- So we'll see owner.py in a second.
+ These are made by us, myarts.owner, so we'll see owner.py in a second.
  And so article list view, which is the, we got a urls.py that routes here,
  is gonna extend owner list view and say do this model.
  Things like the template name and everything,
@@ -55,12 +58,12 @@
  So we're gonna have a detail view, a create view.
  Now the one thing that's different about the create and
  update is there are two things.
- There's a form, which tells what shows up on the screen, and
- then there is the model back here that shows up what ends up in the database, right?
+ There's a form, which tells what shows up on the screen.
+ And then there is the model back here that shows up what ends up in the database, right?
  So the model, article model, is what's in the database.
  The form is what we show on the screen.
- So the model is which model is in the database, and
- fields are which model fields are to be put on the screen.
+ So the model is which model is in the database.
+ And fields are which model fields are to be put on the screen.
  We're not gonna show all of the fields on the screen.
  In particular, we are not putting the owner field in.
  Cuz we're not letting the user say this is owned by number 12.
@@ -69,21 +72,20 @@
  It's not something we let the user see.
  So we don't put owner in here.
  We put the title and the text.
- We don't put updated at or created at, all the things from the model.
+ We don't put updated at or created at all the things from the model.
  We have to tell that we want this to put in the form and that to put in the form.
- This is gonna be handled internally.
- And all these three are going to be handled internally.
+ This is gonna be handled internally and all these three are going to be handled
+ internally.
  Owner, created at and updated at are handled internally.
  Text and title are to be shown to the user.
- And so here we are in article create view.
- And we're saying this is the model and make a form based on that model.
- But only for two of the fields.
+ And so here we are in article create view and we're saying this is the model and
+ make a form based on that model but only for two of the fields.
  Ignore the other fields.
  The same for an update and then the delete, it doesn't use an actual form.
  So you just tell it which model it's gonna use.
  So again, this is a triumph of don't repeat yourself.
- All the brains of this operation are really, add an owner column, oops.
- Add an owner column and then extend these classes that we are about to make.
+ All the brains of this operation are really add an owner column, oops,
+ add an owner column and then extend these classes that we are about to make.
  Extend the classes that we're about to make.
  Now I wanna show you how to make the classes.
  So I show you the easy stuff, now we talk about the hard stuff.
@@ -93,8 +95,8 @@
  it says, I wanna show you the old data in a form.
  And I'm gonna call a function called get query set in generic update view, okay?
  And if I can't get anything, if I don't get anything, I'll give you an error.
- So this is like to a URL like /edit/2.
- And if the 2 is not in the database, then you're gonna get a 404.
+ So this is like to a URL like slash edit slash two.
+ And if the two is not in the database, then you're gonna get a 404.
  So we call get query set, okay?
  And so let's just take a look at get query set.
  So the way we're going to do this is because we're in the middle of an update,
@@ -103,49 +105,49 @@
  So what we're going to do is we're going to override the query set.
  And I just put print statement in for yucks.
  And so the first thing we're going to do is get the default query set.
- This is gonna pick the model that we're gonna query.
- And it's probably gonna say something like the primary key is whatever that
- number was, 2 or 14.
+ This is gonna pick the model that we're gonna query and
+ it's probably gonna say something like the primary key is whatever that number was,
+ 2 or 14.
  And so we're gonna actually get a query set back.
  And so that says super, go into owner update view.
- Owner update, no, not owner update view.
- Go into update view and go run its query set.
- And then give me back that query set.
+ Owner update, go into, no, not owner update view.
+ Go into update view and go run its query set and then give me back that query set.
  And then what I'm gonna do after I got that query set is add a and
  clause to filter it that says, okay, whatever that primary key was, fine.
  And the owner column of this model must match the current logged in user.
- And so it's like I'm adding a where clause and an and to the where clause.
+ And so it's like adding a where clause and an and to the where clause.
  The other thing that you'll notice here is login required mixin.
- I could have put login required mixin in the views.py.
- But I need to have this variable self-request user properly defined,
+ I could have put login required mixin in the views.py, but
+ I need to have this variable self-request user properly defined,
  which means any owner update view, you really can't use it unless you're logged in.
  So it's like I'm gonna put the login required mixin here.
  That's like a marker interface that says, look, if you're not logged in,
  send them to log in and then come back here.
  And if they can't log in, I'm never gonna let them run this code.
- Because if you let a non-login user run this code, it would blow up right there.
+ Because if you let a non-logged in user run this code,
+ it would blow up right there.
  So in a sense, this is like a guardian pattern to say,
- don't even bother coming in here if you're not properly logged in.
- And you don't have a user object properly passed in as request.user.
+ don't even bother coming in here if you're not properly logged in, and
+ you don't have a user object properly passed in as request.user.
  And so that's why I put login required mixin there.
- So the key here is we're going to do a where clause, that is where id equals 7 and
+ So the key here is we're going to do a where clause that is where ID equals 7 and
  owner equals 14, whatever the current logged in user is.
  And so that means that when you come in here,
  if you're trying to edit a thing, you're gonna get a 404, right?
- If it doesn't exist, you're gonna get a 404.
- Or if you don't own it, you're gonna get a 404, 404 is not found.
- And it's legit to say, it might be there, but you didn't find it.
- Cuz you were trying to read it for updating.
- So by changing the query set, in a sense, to return zero records,
+ If it doesn't exist, you're gonna get a 404, or
+ if you don't own it, you're gonna get a 404, 404 is not found.
+ And it's legit to say, it might be there, but you didn't find it,
+ cuz you were trying to read it for updating.
+ So by changing the query set, in a sense, to return zero records
  when you don't own the record, because this is an update view.
- If you look at the list view,
- it doesn't do any tricky stuff cuz you can list them all, right?
+ If you look at the list view, it doesn't do any tricky stuff,
+ cuz you can list them all, right?
  And so a list view is no big deal, a detail view is no big deal.
  But an update or a delete view, yeah, detail view and list view are good.
  But an update and a delete, you have an intention of modifying it.
  So we're not even gonna let you retrieve the record if you don't own it.
  So we do that by overriding query set, calling super, and
- then augmenting the query set when we get it back, so
+ then augmenting the query set when we get it back so
  that it accomplishes what we want to achieve.
  So the next thing we're gonna look at is how we actually store the data.
  And the storing of the data is in form valid.
@@ -155,48 +157,55 @@
  if it's a date, it's the right format, who knows what it does.
  But we're also going to override it and stick our own code in form valid.
  So yes, it's gonna do all those checks.
- But also, we're gonna do a little sneaky thing to make what we want to do
- that's gonna solve the create and the update situation.
+ But also, we're gonna do a little sneaky thing to make what we want to do.
+ That's gonna solve the create and the update situation.
  But it's mostly for the create.
- And so in the create view, it sends out a blank form, and then in comes the data.
- But we never showed owner.
+ And so in the create view, it sends out a blank form.
+ And then in comes the data, but we never showed owner.
  Let's go back a little bit, right?
  So if we're going create view, create view,
  the form that we're gonna send out is title and text.
  There is no owner field.
- Now, this owner is required, and so we have to get the owner in.
+ Now, this owner is required.
+ And so we have to get the owner in.
  So what we do here, it's really quite simple.
  We're going to, so there's, again, there's a form object,
- which is kind of like the UI side of things, and then there's a model object.
+ which is kind of like the UI side of things.
+ And then there's a model object.
  And so form.save commit equals false says just copy the data
- into an object as if we were going to store it, but don't actually store it.
+ into an object as if we were going to store it.
+ But don't actually store it.
  Commit equals false is make it, but don't store it.
- And then we're going to add the owner field, which is there,
- to be self-request user.
- Now, self-request user, remember, is like 16, it's some number.
- It's the primary key of the user, and so that's gonna copy 16 in here.
+ And then we're going to add the owner field,
+ which is there, to be self-request user.
+ Now self-request user, remember, is like 16.
+ It's some number.
+ It's the primary key of the user.
+ And so that's gonna copy 16 in here.
  And then we're gonna save it.
  But then we're also going to do the validation and
  call the super to do form validation for us.
  And so we're calling the create view form validation as well
  to make sure everything else is done properly, okay?
- Okay, so when it's all said and done, all we have to do to make an owner
- work in this situation is we add an owner column, foreign key to the right place.
+ Okay, so when it's all said and done,
+ all we have to do to make an owner work in this situation is
+ we add an owner column, foreign key to the right place.
  We import owner delete view.
- And then we just extend owner delete view to make article delete view and
- then tell it which model to work in.
+ And then we just extend owner delete view to make article delete view.
+ And then tell it which model to work in.
  And then the magic all happens.
- So I'm not gonna show you owner delete view, just you know that it's gonna force
- log in and it's gonna only let you delete rows that you own in the system.
- And so this is really a neat example of how you can use the object-oriented pattern
- to extend these existing things and give features that you wanna add to them.
- I'm gonna guess the first ten of these are gonna be just add an owner field,
- cuz it's such a common thing to have a database rows that have an owner field.
+ So I'm not gonna show you owner delete view.
+ Just you know that it's gonna force log in.
+ And it's gonna only let you delete rows that you own in the system.
+ And so this is really a neat example of how you can use the object oriented
+ pattern to extend these existing things and
+ give features that you wanna add to them.
+ I'm gonna guess the first ten of these are gonna be just add an owner field.
+ Cuz it's such a common thing to have a database rows that have an owner field.
  But we can do other things beyond just an owner field.
- And it, again, is a nice review of object orientation.
- I'm just gonna hit object orientation over and over and over and over again,
- because it's hard to get it.
- And I wanna tell it to you as many times as I can.
+ And it again is a nice review of object orientation.
+ I'm just gonna hit object orientation over, and over, and over, and over again.
+ Because it's hard to get it, and I wanna tell it to you as many times as I can.
  And again, I don't like putting, we don't like putting don't repeat yourself,
  lots of boilerplate to do this owner.
  You could do it all in a view, you really could, but you really don't want to.

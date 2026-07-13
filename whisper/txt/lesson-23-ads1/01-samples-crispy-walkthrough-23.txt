@@ -1,189 +1,83 @@
- and walkthrough for Django for everybody.
- In this particular walkthrough, we're going to be playing
- with the Crispy form sample.
- And so at a high level, we've been working on forms
- for a while, forms are some markup,
- and we make a form object and then we render that form
- using the built-in Django form rendering capability.
- And if we look at the page, we do some view source,
- we can see that here's the form,
- generates all this stuff for us, we didn't write this.
- And so what's cool about this is when we're using
- a form object, let's take a look here, form object,
- and then in our view, we're passing that into the template,
- we create the form object, put some old data into it,
- and then we send it into the template,
- and then we create a table tag,
- and then we issue the form as a table,
- all this form as table creates, the table tag starts here,
- but then form as table is all these TRs and TDs,
- et cetera, et cetera, down to slash table.
- So from line 69 in my source code here,
- your source code be different, 39 and 69,
- all comes from this form as table.
- And this is because we're creating a form object
- and then letting the templates
- and the built-in Django capabilities render that form.
- Now, what's really cool is that because
- this object is well-defined,
- this is just an example of object-oriented programming
- allowing for flexibility, we can substitute the code
- that goes from this object and renders to a form.
- Let's go back here, right?
- That is form as table, that is as table as the methods
- that's built into the form object that's built into Django.
- But we can extend Django and say,
- you know what, we don't wanna use your built-in form rendering,
- we would rather use Crispy.
- And Crispy is a library that we add to it.
- And so if we just take the exact same form
- and we take a look at it, it's like,
- look how pretty this is.
- It's got some curve boundaries
- and it's got this blue highlight
- and it tells what things are required with asterisks
- and it takes the whole width up.
- And that's a lot of HTML and CSS.
- And if we do a view source of this,
- we'll see that at some point we have this big div, right?
- There's this big div and all that form there is this markup,
- asterisk and all that stuff, right?
- And there's CSS that makes all this work,
- et cetera, et cetera, et cetera.
- But we didn't write a single line of this HTML or CSS,
- this group called the Crispy form people.
- Let's take a look at the Crispy,
- so the people that built this library
- and all we have to do is make use of this library
- and then we can make our forms look pretty.
- Now we have to do a little bit of work,
- but the key thing that's not gonna change
- is if we take a look at our views.py,
- in between, this view is the same.
- And so if you look at urls.py,
- you see that we're using the same view, my view,
- and we're just switching templates.
- We're gonna run the template,
- the boring template and the awesome template.
- We are looking at the boring template,
- we've done this before and we're saying,
- we're gonna give it a table tag
- and then render the form object as a table
- using the built-in stuff.
- But if we're going to do awesome,
- we're gonna use the exact same view,
- the exact same view,
- and we're going to render a different template.
- In this case, we're going to render this template.
+ and this particular walkthrough, we're going to be playing with the crispy forms sample.
+ And so at a high level, we've been working on forms for a while, forms are some markup,
+ and we make a form object and then we render that form using the built-in django form rendering capability.
+ And if we look at the page, we do some source, we can see that here's the form, it generates all this stuff for us,
+ we didn't write this. And so what's cool about this is when we're using a form object, let's take a look here,
+ form object, and then in our view, we're passing that into the template, we create the form object,
+ put some old data into it, and then we send it into the template, and then we create a table tag,
+ and then we issue the form as a table, all this form as table creates, the table tag starts here,
+ but then form as table is all these TRs and TDs, et cetera, et cetera, down to /table.
+ So from line 69 in my source code here, your source code be different, 39 and 69 all comes from this form as table.
+ And this is because we're creating a form object and then letting the templates and the built-in django capabilities render that form.
+ Now, what's really cool is that because this object is well-defined, this is just an example of object-oriented programming allowing for flexibility,
+ we can substitute the code that goes from this object and renders to a form.
+ Let's go back here, right? That is form as table, that is as table as a method that's built into the form object that's built into django,
+ but we can extend django and say, you know what, we don't want to use your built-in form rendering.
+ We would rather use Crispy and Crispy is a library that we add to it.
+ So if we just take the exact same form and we take a look at it, it's like, look how pretty this is.
+ It's got some curve boundaries and it's got this blue highlight and it tells what things are required with asterisks and it takes the whole width up.
+ And that's a lot of HTML and CSS and if we do a view source of this, we'll see that at some point we have this big div, right?
+ There's this big div and all that form there is this markup, asterisk and all that stuff, right?
+ And there's CSS that makes all this work, et cetera, et cetera, et cetera, but we didn't write a single line of this HTML or CSS.
+ This group called the Crispy form people.
+ Let's take a look at the Crispy. So the people that built this library and all we have to do is make use of this library and then we can make our forms look pretty.
+ Now we have to do a little bit of work, but the key thing that's not going to change is if we take a look at our views.py in between, this view is the same.
+ And so if you look at urls.py, you see that we're using the same view, my view, and we're just switching templates.
+ We're going to run the template, the boring template and the awesome template.
+ We are looking at the boring template. We've done this before.
+ We're saying we're going to give it a table tag and then render the form object as a table using the built in stuff.
+ But if we're going to do awesome, we're going to use the exact same view, right, the exact same view.
+ And we're going to render a different template. In this case, we're going to render this template.
  Now, this template is very similar.
- The main thing that's different here in the middle
- is we just take the form object,
- which is the same form object that came in
- right here in our context,
- take the same form object,
- and we save form vertical bar crispy.
- Now, if you read the crispy documentation,
- this is how you, they have registered
- what's called a filter,
- and there's a vertical bar as a Linux pipe operator.
- So we're kind of piping,
- we're taking the form object
- and sending it through the crispy library.
- And then that crispy,
- so you've got CSRF token
- and you've got input type equals submit.
- And if we take a look at the source code,
- the CSRF token is there and input type equals submit,
- and everything from lines 40 through 46
- is coming from the crispy library.
- But we did not change how we defined our form,
- we did not change how we passed the form into the context,
- we simply changed the template to say,
- I would like to render this particular form object
- as a crispy form.
- Now, there's a couple of things that we have to do
- as kind of prerequisites to making this happen.
- So first off, you have to do this load thing,
- and that's just part of Django to say,
- I want the crispy forms tag library to be present
- in this particular template.
- And so we have to do this somewhere
- above where we access it.
+ The main thing that's different here in the middle is we just take the form object, which is the same form object that came in right here in our context.
+ It's the same form object. And we say form vertical bar crispy.
+ Now, if you read the crispy documentation, this is how you they have registered what's called a filter.
+ And there's a vertical bar as a Linux pipe operator. So we're kind of piping.
+ We're taking the form object and sending it through the crispy library and then that crispy.
+ So you get CSRF token and you get input type equals submit.
+ And if we take a look at the source code, the CSRF token is there and input type equals submit.
+ And everything from from lines 40 through 46 is coming from the crispy library.
+ But we did not change how we defined our form. We did not change how we pass the form into the context.
+ We simply changed the template to say I would like to render this particular form object as a crispy form.
+ And there's a couple of things that we have to do as kind of prerequisites to making this happen.
+ So first off, you have to do this load thing. And that's just part of Django to say,
+ I want the crispy forms tag library to be present in this particular template.
+ And so we have to do this somewhere above where we access it.
  So that's the thing we have to do in the template.
- I mean, literally these two lines, load crispy form tags,
- and the load crispy form tags,
- you see that doesn't actually generate any markup,
- that just kind of prepares the template engine
- to handle this form vertical bar crispy.
- Now there's a couple of other things
- that we have to do to make this work.
- So the first thing we have to do is we have to
- have in our settings.py, we have to,
- in our installed apps, we have to tell it
- that we need the crispy forms,
- and we're using the bootstrap five.
- There's a number of different,
- I don't know if I can find it quick enough here,
- there's a, somewhere here.
- Let's go find the documentation.
- The template packs.
- And you'll see there's a series of template packs
- that are for crispy, and we're using,
- for now we're using the bootstrap five template pack.
- And then there's a couple of variables,
- and again, you can go read the crispy documentation,
- but you need these two variables.
- And that, when you're doing your web reload,
- or your run server, or your manage.py check,
- that's enough to get crispy working in your instance,
- so that that's necessary.
- Now one other thing that is necessary.
- Let's see where we're at.
- One other thing that's necessary is there's a series
- of things that you installed a long time ago
- using a pip command.
- And so we installed the crispy bootstrap library.
- This is pip installs Python extensions.
- And somewhere else there is the crispy bootstrap,
- and then I think we'll find something.
- Let's just search for crispy.
- Yeah, so we installed crispy forms,
- and then we installed the render library for bootstrap five.
- And so you may not recall when you did this,
- but back in a long, long time ago,
- in the very first assignment, when you're setting things up,
- one of the things I had you do is I had you run pip install,
- and the assignment may be a little different,
- 'cause over time we have different versions of Django
- and all that stuff, but this read this requirements file,
- and it installed in your Python virtual environment,
- the Django 4 environment or the .v environment,
- and installed all these libraries.
- And then in the settings, we activate these libraries,
- activate the library, and then we configure the library.
- And again, how did I figure all this out?
- I go read the crispy documentation, right?
- It told me how to do all this stuff,
- and it talks about the crispy tag, et cetera.
- It's the crispy filter.
- I mean, you just stuff, see, it says crispy filter.
- Take your form, put in load crispy form tags.
- I mean, documentation's not too hard.
- And again, I guess the key to this thing is that
- it is an example of once we make an object,
- we could have written a bunch of strings, right?
- We could have made our form be a bunch of strings,
- but instead we sort of follow the Django way
- and make a form object that extends forms.form,
- and then we pass that form object into our render,
- and away we go, right?
- And then we can then leverage,
- because this is now a standard within Django,
- what forms look like, someone can go ahead
- and write a crazy and wonderful crispy form library
- that drops in.
- And so that's one of the beauties of making
- Django so object-oriented.
- So I think I'll stop there,
- and there is our introduction to crispy forms.
- Cheers.
+ I mean, literally these two lines load crispy form tags and a little crispy form tags.
+ See, that doesn't actually generate any markup.
+ That just kind of prepares the template engine to handle this form vertical bar crispy.
+ Now, there's a couple of other things that we have to do to make this work.
+ So the first thing we have to do is we have to have in our settings.py, we have to in our installed apps,
+ we have to tell it that we need the crispy forms and we're using the bootstrap five.
+ There's a number of different, I don't know if I can find it quick enough here.
+ There's a somewhere here. Let's go find the documentation template packs.
+ And you'll see there's a series of template packs that are for crispy.
+ And we're using for now we're using the bootstrap five template pack.
+ And then there's a couple of variables.
+ And again, you go read the crispy documentation, but you need these two variables.
+ That when you're doing your web reload or your run server or your managed by check,
+ that's enough to get crispy working in your instance so that that's necessary.
+ Now, one other thing that is necessary, let's see where we're at.
+ One other thing that's necessary is there's a series of things that you installed a long time ago
+ using a pip command. And so we installed the crispy bootstrap library.
+ This is pip installs Python extensions and somewhere else there is the crispy bootstrap.
+ And then I think we'll find something. Let's just search for crispy.
+ Yeah, so we installed crispy forms and then we installed the render library for bootstrap five.
+ And so you may not recall when you did this, but back in a long, long time ago in the very first assignment,
+ when you're setting things up, one of the things I had you do is I had you run pip install.
+ And the assignment may be a little different because over time we have different versions of Django and all that stuff.
+ But this read this requirements file and it installed in your Python virtual environment,
+ the Django core environment or the dot V environment and installed all these libraries.
+ And then in the settings, we activate these libraries, activate the library, and then we configure the library.
+ And again, how did I figure all this out? I go read the crispy documentation, right?
+ It told me how to do all this stuff. And it talks about the crispy tag, et cetera.
+ It's the crispy filter. I mean, just stuff. See, it says crispy filter. Take your form, put in load crispy form tags.
+ I mean, documentation is not too hard. And again, I guess the key to this thing is that it is an example of once we make an object,
+ we could have written a bunch of strings, right? We could have made our form be a bunch of strings.
+ But instead we sort of follow the Django way and make a form object that extends forms dot form.
+ And then we pass that form object into our render and away we go. Right.
+ And then we can then leverage because this is now a standard within Django what forms look like.
+ Someone can go ahead and write a crazy and wonderful crispy form library that drops in.
+ And so that's one of the beauties of making Django so object oriented.
+ So I think I'll stop there. And there is our introduction to crispy forms. Cheers.

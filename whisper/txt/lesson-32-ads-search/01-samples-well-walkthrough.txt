@@ -1,179 +1,201 @@
- Hello and welcome to another walkthrough for Django for everybody. In this walkthrough, we're going to take a look at the sample code called WELL.
- The name WELL is based on a long-time early pre-internet forum in Berkeley, California, so you can go look up the WELL.
- The basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone of myarts.
- If you recall myarts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
- The only difference between this and the WELL is there's a search box here, so I can search for things that have YADA in them, and then I can clear the search box, and that's it.
- First, let's observe something that we can observe from the outside when I do a search.
- The search is a get parameter, and the reason for that is that get URLs are idempotent, so that basically says go to my blog and find all the blog posts that mention 123.
- I could put that in as, let me clear my search here, and I could do, let's search for DSS search here.
- This URL is the search for the ones that are DSS, so now I've bookmarked both these, and now that is going to be a short link to the ones that say DSS.
- So what I'm going to do is clear this search now, and this will show you something about idempotent URLs.
- I'm going to say yada456, I was here, submit.
- So now I have two that have the word yada in the title, but watch what happens when I go to the URL that I bookmarked.
- So I see now two posts. So the key of idempotent is not that you get the exact same page, you get the exact same logical page, not the exact same text every time.
- It's not like a cache that just clones the text.
- You know, I go to this before, and then I go to it now, and if I then delete this one, and then I go to this again, that's the ones that have yada in them.
- And so that's why we're going to do a search for yada.
- And it's really quite simple here. I'll show you everything, but let's just start with an inspect element so you can see what's going on here.
- The first little trick here is you can construct that URL, and this goes way back.
- This goes way back to a form without a method equals post, which means it's a get method, which means that this name equals search becomes...
- It just goes on, and it does a get request. So instead of doing a post request, which we've been doing for weeks now, this does a get request, and it adds a get parameter.
- And so we've got in our view, our main view, that is well, we're seeing a get parameter. It is not a different view. We're getting a view with a get parameter.
- And that also means that if I inspect element on this little undo icon that I made, all I'm doing is I'm making a link to /well without the parameter.
- So it's super easy. So like get rid of the search is just go to a different URL. I could have done it...
- Well, it is an anchor tag. It's a href tag. Look. So I've just gone to well, and it's not there. It's the same view.
- So searching, and if you were to go and take a look at how Amazon or Google, they do search, they're forever putting that stuff in the URL so that you can then bookmark them.
- And so I'll get rid of those bookmarks later. But you see how that is idempotent.
- When I said weeks ago, I said get URLs are idempotent. I can now sort of show you in code that we're writing how that works.
- OK, so let's take a look at our code. I'll clear my search here. The code here is pretty straightforward.
- We've got a really simple model that was pretty much taken straight from the myarts code.
- It's got a name. I called it post instead of articles because I've got all these applications running at the same time.
- So I have to change a few names here and there. Related name is when we're poking a lot of...
- We're putting a lot of foreign keys into owner across my Django project.
- So you've got to be careful to choose a name for related names so you don't end up with a collision.
- You can't just say owner or whatever. So I call this post owner so that you don't...
- Back in the owner model, back in this model right here, the auth user model,
- we're pushing, in effect, methods or attributes into that model. And so we've got to name them.
- And so this related name is really quite important to make sure across all of my applications.
- And what I mean is by all... These are all applications in one giant Django project.
- So this name here wants to be... And lots of these applications are using owner.
- And they're making a foreign key into the auth model, which is perfectly okay.
- It's just you've got to be careful about the related name. So that's why that's there.
- So let's take a look at the urls.py. The main URL that we're going to change is this one, right?
- It's the list view. And here it is in the list view. And I don't know which way to go first here.
- Let's compare and contrast this list view with the views in myarts.
- So in myarts, the list view, I could just borrow owner list view, which was like extended generic list view.
- I could just say my model's article and it was good. But now I've got to do a whole bunch more work here.
- So I actually am going to... And I might have been able to do this by sort of overriding a few methods
- like we have done in the past. But I just decided that I would simply write all the code.
- And so I'm just extending view here. So I'm only extending view to make post list view.
- I'm still following the pattern so I can say what the model is. I'm not sure I even use that.
- See if I use model. Yeah, I don't even need that template. I'm not using that.
- It was kind of... Yeah, so I'm using the template name here. So I still am going to use the template name.
- But I didn't need the model because the reason I didn't need the model is I'm just explicitly using post in all the places.
- So just get that so it's not... I mean, I don't like code that does nothing. It's always a mistake.
- OK, so the get request. Most of this is in a get request. There is no post here because in the list view,
- which is this view, there is no post. This form is a get request. That's a get request.
- And all it does is we are going to do a get request and we're going to do two versions of that get request.
- And we're going to have one version of the get request based on whether there's a search get parameter or not.
- So we're basically saying go grab a get parameter. Get parameter using the get method of a dictionary.
- Big uppercase get is the dictionary and lowercase get is the name of the method in Python.
- Search is the key and then default is false. If we get a string, then we've got to search and filter.
- But let's start with this. All we're doing here is we're grabbing the objects.
- And this is the kind of code that is done automatically in owner list view, which is then generic list view, right?
- So this is just, I'm just doing the code. Now the thing I get to do with this that's really nice is I can go through
- and augment this object list. So this is a list of objects and I'm going to change each object.
- And I'm going to add a field. Undo, undo, undo. I don't know what I just did. Undo, undo, undo.
- So this is an object. So objects is a list of objects and I'm going to grab it and I'm going to add a field.
- So you can sort of in the middle, you can add this natural dash updated.
- And I'm going to base it on updated at, which is the long ugly looking date.
- It's a real date, but it's a long ugly looking date. And I'm going to run that through the natural time filter,
- which again is something built into Django that puts in this 15 hours ago thing,
- which is much nicer than just putting the date out.
- And so we're going to send the objects in this post list, which is the list of objects.
- And then we're going to send the search value in just so we can show that.
- So that when we want to see this yada, so you can actually change this.
- So we want to put this back in. So we're going to pass that into the template
- and then we're going to render the template, dump queries as code just to show the queries that are actually being run,
- if I was running this locally. So let's take a look at the code.
- So for most of this, literally it's the same thing.
- So I'm just, I mean, it's basically looping through. It's doing a little bit more tricky stuff here.
- If the text is less than 100, I'm putting it all in. And in the list, I'm only going to put,
- so if the post is less, length is less than 100, slice is 0.99. I can't see that.
- Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by dj4e-samples.
- Who am I in this situation? Well, let's add a post, a title.
- 1, 2, 3, submit. Yeah. So it's showing this detail. That's what I was confused about.
- See this little detail? Oops, not with that end if. That post text length greater than 100.
- So there's actually a bug in this code right here. And since I'm running it on samples,
- it'll take me a while to get it updated. But I'll just point out that there's a bug here and I want to fix it.
- Because I really, this if, post owner ID, that's our standard like to show the edit and delete.
- And I inadvertently had this code that's showing the actual text. This is what I wanted to look like.
- I wanted a title and I wanted a short summary. So you'd have to go into here to get the whole summary,
- but the short summary of the text. So this code, when you run it again, you will see after I update all this
- and push it through GitHub and run it in production, I will fix this. Okay?
- And so that is what makes this, to keep that nice and short, 99 might be too long of a thing.
- I'd rather that stuck to one line, but whatever.
- Posted by the username in this case. There's the username. That's nice.
- And a URL into the post detail. So this is really straightforward stuff other than that little cool bit there,
- putting the summary in. But the only thing we've really added here is this form.
- And we are going to do a form. It's going to, because we haven't said action equals on the form tag,
- it is going to post right back to the same URL that it came to, I mean not post, it's going to do a get,
- because there's no method equals post here. It is going to get right back to this same URL.
- And I have the input with a placeholder. The placeholder is what gives me this little searchy bit thing.
- See that? It's not really string search. It's a placeholder if it's empty.
- And then I have value equals, oh no, undo, value equals search here,
- which is taking the old search value.
- Oh, zap was there. And so that's putting zap back in there. And of course it's escaping it.
- And so if we were, you know, there's no HTML entities problem here or whatever.
- And I put this in an if, right? And you don't have to put these on separate lines.
- You see me doing a lot of that where I'm having the if and end if on separate lines.
- But here I just have it like right in the middle of a line, and that just is going to emit that text in the middle of that line.
- I'm using a font awesome icon for the search so that I get this little search button.
- That's kind of cute. That's a thing called font awesome. You can go look that up.
- And then I have a link that goes back to well colon all.
- I could probably call this like a request.path or something because it really would be the same thing.
- Instead of URL well colon all, I could just go back to the request path, which would be slash well slash.
- But it doesn't matter. Well colon all is nice.
- And then I throw another font awesome in there, which gives me a little undo thing.
- And we've been using these little font awesome creatures for a while now.
- And so that's really all that is needed to get this new bit of user interface into the output.
- And so really the only thing left to show you is the code where it handles the search.
- So there is a filter. So post objects all order by.
- That's what happens if it's not searching.
- So what you see here is all we've done is instead of saying all, we say filter.
- And there's a couple of ways you can do filters.
- You can do like just if you're doing one field, this is a really funky syntax.
- It uses two underscores. Title is a field in models.py.
- Title is a field in models.py. Double underscore contains that is like an operator.
- And then this is a string value, which is just a string here in our Python code.
- Now I want to actually search through both the title and the text.
- So I'm going to have to make myself a combined search.
- So I'm going to make a query and I'm going to use this DB models queue, which means allow.
- I can create a query and I could do it in a really long, yucky query there.
- But I would like to I'm going to start with a query that says the title contains the string.
- And then I'm going to add to that an or clause.
- We're stuck in Python, right? It's not SQL.
- We're stuck in Python. So we've got to have this funky thing.
- So this says these two things create a thing that basically says if the title contains that string, whatever it was,
- that contains that string or if the text contains that string, select it.
- Now, instead of all, I put filter query. So I pull the query in and then select related.
- This is an efficiency thing that says, look, I'm going to actually look at all the data.
- So run that whole filter, run the user name, do a bunch of stuff.
- So I got a comment toward the bottom of this that talks about select related and then the order by and then show me just the first 10.
- That's the same. And there we go.
- And then we augment that. And then away we go.
- So search is either in this case, searches either the get request from the former get is that value in this particular instance or it is false.
- And then that triggers, of course, this bit of code in the template.
- So that's pretty much it. I mean, I certainly probably over talked it.
- It's not that complex.
- So I want to show you only one more thing for this before we wrap it up.
- And that is a new pattern. So you'll notice if you look in here, there is only one view.
- There is just the post list view. And if we take a look at articles, we've got these views, the detail view, the create view, the update view and the delete view.
- And they all extend owner create view and then just change these variables.
- I overwrote this list view because I had a whole bunch of other things I wanted to do that owner list view wasn't going to do for me.
- Right. And so what you'll notice that in the well, I don't have those. So let me show you how these are.
- And you'll notice I have edit views. Right. I got them. They're still there.
- And there are templates. CD templates.
- Well, templates are there. And as a matter of fact, in this one, I changed the default name of the templates because I'm kind of tired of putting underscores in front of certain things.
- But let me show you how I solve the problem of where are the views. They're actually fully in urls.py.
- So here is. So I import owner list view, owner detail view, owner create view and owner update view.
- And so what I'm saying is map the post slash int pk, which, of course, is the detail file. Right.
- Post int pk. And I would like you to call owner detail view, which is a class that's come from myarts.owner as view.
- And then you can put a series of key value pairs in that override the default values of say model and template name.
- And so I'm saying models equals models dot post. I know that that's the name of my model. Right.
- And then template name equals. And now I'm even saving and taking the app name, which happens to be sitting conveniently in a string here and concatenating at the detail slash HTML.
- And so that is the view. And of course, name equals is just part of the URLs thing.
- And you'll notice that when I do the create view, I set the success URL, the model, the template.
- And now, remember, I want to hide some of the fields. I want to show which fields are there and which fields aren't.
- Right. And so if we look at this views, you see like which fields you actually want to show, because I don't want to show the created at, et cetera, and updated at.
- Right. And the models. I don't want to put owner out. I don't want to put created at out. So I'm going to give a list.
- Give a list. Come back. I want to give a list of the fields I want to show on my create form.
- So, again, these are sort of class wide variables that turn into object very object instance variables when it makes this view and it overrides all these things.
- And so all the stuff that I was doing in views.py, I am now doing in urls.py. And just we're using owner create view.
- And you see an update, delete. They're all kind of there. Right. And so I don't actually need to put the views in.
- And this is really, it looks a little more complex, but I think it's a lot prettier than putting these silly views in over and over.
- So that's a pattern that you may want to use. It made it easier for me to rename from well to something else if I wanted to.
- Because really well is only hard coded one place in here. So that's kind of cool.
- Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave urls.py.
- And remember, we, I built this owner detail view to meet my needs. So things like template view, that's something that is just a bunch of code somebody wrote.
- So, okay. Well, I hope this walkthrough of the well sample application has been useful to you. Cheers.
+ Hello and welcome to another walkthrough for Django for Everybody. In this walkthrough
+ we're going to take a look at the sample code called WELL. The name WELL is based on
+ a long time early pre-internet forum in Berkeley, California. So you can go look up the WELL.
+ So the basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone
+ of myarts. So if you recall myarts, you had articles crud, article, article, submit, article
+ crud, delete, just a basic article crud. So the only difference between this and the WELL
+ is there's a search box here. So I can search for things that have Yada in them and then
+ I can clear the search box. And that's it. So first let's observe something that we can
+ observe from the outside. When I do a search, the search is a get parameter. And the reason
+ for that is that we want this, get parameters are, get URLs are idempotent. So that basically
+ says go to my blog and find all the blog posts that mention 123. So I could, I could put
+ that in as, let me clear my search here and I could do, let's search for DSS, DSS search
+ here. So that is, this URL is the search for the ones that are DSS. So now I've bookmarked
+ both of these and now that is going to be a short link to the ones that say DSS. So
+ what I'm going to do is clear this search now and this will show you something about
+ idempotent URLs. I'm going to say Yada 456, I was here, submit. So now I have two that
+ have the word Yada in the title. But watch what happens when I go to the URL that I bookmark.
+ So I see now two posts. So the key of idempotent is not that you get the exact same page, you
+ get the exact same logical page, not the exact same text every time. It's not like a cache
+ that just clones the text. You know, I go to this before and then I go to it now and
+ if I, if I then delete this one and then I go to this again, that's the ones that have
+ Yada in them. And so that's why we're going to do a search for Yada. And it's really quite
+ simple here. I'll show you everything but let's just start with an inspect element so
+ you can see what's going on here. The first little trick here is you can construct that
+ URL and we go, this goes way back, this goes way back to a form without a method equals
+ post, which means it's a get method, which means that this name equals search becomes,
+ it just goes on and it does a get request. So instead of doing a post request, which
+ we've been doing for weeks now, this does a get request and it adds a get parameter.
+ And so we've got in our view, our main view that is well, we're seeing a get parameter.
+ It is not a different view. We're getting a view with a get parameter. And that also
+ means that if I inspect element on this little undo icon that I made, inspect, all I'm doing
+ is I'm making a link to slash well without the parameter. So it's super easy. So like
+ get rid of the search is just go to a different URL. I could have done it, well, it is an
+ anchor tag. It's a href tag. Look, so I've just gone to well and it's not there. It's
+ the same view. So, so searching, and if you were to go and take a look at how Amazon or
+ Google, they do search, they are forever putting that stuff in the URL so that you can then
+ bookmark them. And so I'll get rid of those, I'll get rid of those bookmarks later, but
+ you see how that's, that is idempotent. That's the get, when I said weeks ago, I said get
+ URLs are idempotent. I can now sort of show you in code that we're writing how that works.
+ Okay. So let's take a look at our code. I'll clear my search here. The code here is pretty
+ straightforward. We've got a really simple model that was pretty much taken straight
+ from the myarts code. This is like a, it's, you know, it's got a, it's got a name. I
+ called it post instead of articles because I've got all these applications running at
+ the same time, so I have to change a few names here and there. Related name is when we're,
+ we're poking a lot of, we're putting a lot of foreign keys into owner across my all my
+ Django project. So you got to be careful to choose a name for related names so you don't
+ end up with a collision. You can't just say owner or whatever. So I call this post owner
+ so that you don't back in the owner model, back in this model right here, the auth user
+ model. They're, we're pushing in effect methods or attributes into that model. And so we got
+ to name them. And so this related name is really quite important to make sure across
+ all of my applications. And what I mean is by all, these are all applications in one
+ giant Django project. So this name here wants to be, and lots of these applications are
+ using owner and they're making a foreign key into the auth model, which is perfectly okay.
+ It's just, you got to be careful about the related name. Okay. So that's why that's there.
+ So let's take a look at the urls.py. The main URL that we're going to change is this one,
+ right? It's the list view. And here it is in the list view. And I don't know which way
+ to go first here. Uh, let's, let's compare and contrast this list view with the views
+ in my arts. So in, in my arts, the list view, I could just borrow owner list view, which
+ was like extended generic list view. And I just saved my model's article and it was good.
+ But now I got to do a whole bunch more work here. So I actually am going to, and I might
+ have been able to do this by sort of overriding a few methods like we have done in the past,
+ but I just decided that I would simply write all the code. And so I'm just extending view
+ here. So I'm only extending view to make post list view. I'm still following the pattern
+ so I can say what the model is. I'm not sure I even use that. See if I use model. Yeah,
+ I don't even need that template. I'm not using that. It was kind of, yeah, so I'm using the
+ template name here. So I still use the template name, but I didn't need the model because
+ I am, the reason I didn't need the model is I'm just explicitly using post in all the
+ places. And so just get that. So it's not, I mean, I don't like, I don't like code that
+ does nothing. It's all, it's all a mistake. Okay. So the get request, most of this is
+ in a get request. There is no post here because in the list view, the list view, which is
+ this view, there is no post. This form is a get request. That's a get request. And all
+ it does is we are going to do a get request and we're going to do two versions of that
+ get request. And we're going to have one version of the get request based on whether there's
+ a search get parameter or not. So we're basically saying go grab a get parameter, the get parameter
+ using the get method of a dictionary, the big uppercase get is the dictionary and lower
+ case get is the name of the method in Python. Search is the key and then default is false.
+ If we get a string, then we've got a search and filter. But let's start with this. All
+ we're doing here is we're grabbing the objects and this is the kind of code that is done
+ automatically in owner list view, which is then generic list view, right? So this is
+ just, I'm just doing the code. Now the thing I get to do with this that's really nice is
+ I can go through and augment this object list. So this is a list of objects and I'm going
+ to change each object and I'm going to add a field. Undo, undo, undo. I don't know what
+ I just did. Undo, undo, undo. That I wanted to. So this is an object. So objects is a
+ list of objects and I'm going to grab it and I'm going to add a field. So you can sort
+ of in the middle, you can add this natural dash updated. And I'm going to base it on
+ updated at, which is the long ugly looking date. It's a real date, but it's a long ugly
+ looking date. And I'm going to run that through the natural time filter, which again is something
+ built into Django that puts in this 15 hours ago thing, which is much nicer than just putting
+ the date out. Okay. And so we're going to send the objects in this post list, which
+ is the list of objects. And then we're going to send the search value in just so we can
+ show that. Yeah, so that, so that when we want to see this yada, so you can actually
+ change this, right? So we want to, we want to put this back in, right? So we're going
+ to pass that into the template and then we're going to render the template, dump queries
+ as code just to show the queries that are actually being run if I was running this locally.
+ So let's take a look at the code. So for most of this, literally it's the same thing. Okay.
+ So I'm just, I mean it, it's basically looping through, it's doing a little bit more tricky
+ stuff here. It's, if the text is less than a hundred, I'm putting it all in and in the
+ list, I'm only going to put, so if the post is less, the length is less than a hundred,
+ slice is zero nine nine. I can't see that. Yeah. Oh, that's cause I'm not the owner.
+ That's cause I'm not the owner posted by dj4e-samples. Who am I in this situation? Well,
+ what's that a post title? Zap one, two, three, submit. Yeah. So it's showing, it's showing
+ this detail that that's what I was confused about. See this little detail. Oops. Not with
+ that end if that post text length greater than a hundred. So there's actually a bug
+ in this code right here. And since I'm running it on samples, it will take me a while to
+ get it updated, but I'll just point out that there's a bug here and I'm going to fix it.
+ Because I really, this, this if post owner ID, that's our standard like to show the edit
+ and delete. And I inadvertently had this code that's showing the actual text. This is what
+ I wanted to look like. I wanted a title and I wanted a short summary. So you'd have to
+ go into here to get the whole summary, but the short summary of the text. So this code,
+ when you run it again, you will see after I update all this and push it through GitHub
+ and run it in production, I will fix this. Okay. And so that, that is what makes this
+ to keep that nice and short. 99 might be too long of a thing. I'd rather that stuck to
+ one line, but whatever, uh, posted by the username in this case, there's the username.
+ That's nice. Um, and a URL into the post detail. So this is really straightforward stuff other
+ than that little cool bit. They're putting the summary in. Um, but the, but the only
+ thing we really batted here is this form and we are going to, um, do a form. It's going
+ to, because we haven't said action equals on the form tag, it is going to post right
+ back to the same URL that it came to. I mean, not post, it's going to do a get because there's
+ no method equals post here is going to get right back to this same URL. And I have input
+ with a placeholder. The placeholder is what gives me this little searchy bit thing. See
+ that it's not really the string search. It's a placeholder if it's empty. And then I have
+ value equals, Oh no undo. Um, value equals search here, which is taking the old search
+ value, old search value zap was there. And so that that's putting zap back in there.
+ And of course it's escaping it. And so if we were, you know, there's no HTML entities
+ problem here or whatever. Um, and I put this in an if, right? And that you don't have to
+ put these on separate lines. You see me doing a lot of that where I'm having the if and
+ if on separate lines, but here I just have it like right in the middle of a line. And
+ that just is going to emit that text in the middle of that line. Uh, I'm using a font
+ awesome icon for the search so that I get this little search button. That's kind of
+ cute. That's a thing called font awesome. You can go look that up. And then I have a
+ link that goes back to well colon all. I could probably call this like a request dot path
+ or something. Cause it's really would be the same thing. Um, instead of URL welcome all,
+ I could just go back to the request path, which should be slash slash, but it doesn't
+ matter. Well colon all is nice. And then I throw another font awesome in there, which
+ gives me a little undo thing. And we've been using these little font awesome, uh, creatures
+ for a while now. And so that's really all that is needed to get this new bit of user
+ interface into the output. And so really the only thing left to show you is the code where
+ it handles the search. So there is, uh, a filter. So, um, post objects all order by.
+ That's what happens if it's not searching. So what you see here is all we've done is
+ instead of saying all we say filter and there's a couple of ways you can do filters. You can
+ do like just if you're doing one field, this is a really funky syntax. It uses two underscores
+ title, title is a field in models.py, right? Title is a field in models.py double underscore
+ contains that is like an operator. And then this is a string value, which is just a string
+ here in our Python code. Now I want to actually search through both the title and the text.
+ So I'm going to have to make myself a combined search. So I'm going to make a query and I'm
+ going to use this DB models queue, which means allow. I can create a query in and I could
+ do it in a really long yucky query there, but I would like to, I'm going to start with
+ a query that says the title contains the string and then I'm going to add to that an or clause
+ or stuck in Python, right? It's not SQL. We're stuck in Python. So we've got to have this
+ funky thing. So this says these two things create a thing that basically says if the
+ title contains this, that string, whatever it was, zap, so how it contains that string
+ or if the text contains that string, select it. And now instead of all, I put filter query.
+ So I pull the query in and then select related. This is an efficiency thing that says, look,
+ I'm going to actually look at all the data. Um, so run that whole filter, run the username,
+ do a bunch of stuff. So I got a comment toward the bottom of this that talks about select
+ related and then the order by, and then showing just the first 10, that's the same. And there
+ we go. And then we augment that and then away we go. And so search is either in this case,
+ search is either the get request from the former get is that value in this particular
+ instance or it is false. And then that triggers, of course, there's a bit of code in the template.
+ So that's pretty much it. I mean, I certainly probably over talked yet. It's not that complex.
+ So I want to show you only one more thing for this before we wrap it up. And that is
+ a new pattern. So you'll notice if you look in here, there is only one view. There is
+ just the post list view. And if we take a look at articles, we've got these views, the
+ detail view, the create view, the update view, and the delete view. And they all extend owner
+ create view and then just change these variables. I over wrote this list view because I had
+ a whole bunch of other things I wanted to do that owner list view wasn't going to do
+ for me. And so what you'll notice that in the well, I don't have those. So let me show
+ you how these are -- and you'll notice I have edit views. I got them. They're still there.
+ And there are templates. CD templates. Well, templates are there. And as a matter of fact,
+ in this one, I changed the default name of the templates because I'm kind of tired of
+ putting underscores in front of certain things. But let me show you how I solve the problem
+ of where are the views? They're actually fully in urls.py. So here is -- so I import owner
+ list view, owner detail view, owner create view, and owner update view. And so what I'm
+ saying is map the post slash int pk, which of course is the detail file, right, post
+ int pk. And I would like you to call owner detail view, which is a class that's come
+ from myarts.owner, as a view. And then you can put a series of key value pairs in that
+ override the default values of, say, model and template name. And so I'm saying models
+ equals models.post. I know that. That's the name of my model, right? And then template
+ name equals -- and now I'm even saving -- I'm taking the app name, which happens to be sitting
+ conveniently in a string here and concatenating it to detail/html. And so that is the view.
+ And of course, name equals is just part of the urls thing. And you'll notice that when
+ I do the create view, I set the success url, the model, the template. And now remember,
+ I want to hide some of the fields. I want to show which fields are there and which fields
+ aren't. And so if we look at this view, you see which fields you actually want to show.
+ Because I don't want to show the created at, et cetera, and the updated at. And the models,
+ I don't want to put owner out. I don't want to put created at out. So I'm going to give
+ a list. I'm going to give a list -- come back -- I'm going to give a list of the fields
+ I want to show on my create form. So again, these are sort of class-wide variables that
+ turn into object instance variables when it makes this view. And it overrides all these
+ things. And so all the stuff that I was doing in views.py, I am now doing in urls.py. And
+ just we're using owner create view. And you see in update, delete, they're all kind of
+ there, right? And so I don't actually need to put the views in. And this is really -- it
+ looks a little more complex, but I think it's a lot prettier than putting these silly views
+ in over and over. So that's a pattern that you may want to use. It made it easier for
+ me to rename from well to something else if I wanted to. Because really well is only hardcoded
+ one place in here. So that's kind of cool. Okay? So there's a couple of lessons here.
+ One is this searching. One is the search and how that works. But then also a new way to
+ create views that never really leave urls.py. And remember, we, I, built this owner detail
+ view to meet my needs. So things like template view, that's something that is just a bunch
+ of code somebody wrote. Okay. Well, I hope this walkthrough of the well sample application
+ has been useful to you. Cheers.

@@ -7,8 +7,15 @@ live in [`media-util`](../../media-util/README.md)
 ## Files here
 
 - `youtube-playlist.jsonl` — playlist dump used when building `media.yaml`
-- `client_secret.json` — OAuth Desktop client (gitignored; for push updates)
 - `youtube-oauth-token.json` — cached OAuth token after first consent
+
+OAuth client secret (Desktop app JSON) lives outside the course tree:
+
+```text
+~/.ssh/youtube_client_secret.json
+```
+
+(or set `YOUTUBE_CLIENT_SECRETS`). Smoke-test with `test-youtube-oauth.py`.
 
 Course env (repo root): `../media.env`
 

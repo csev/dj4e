@@ -1,207 +1,274 @@
- So now we talked about cookies and how the server can set
- cookies in the browser and how the browser has to give it back.
- Now we're gonna actually do something useful with it, and that is we're going to build sessions.
- And sessions is a place on the server where we record things like this user,
- such and so of user has logged in.
+ So now we talked about cookies and how the server
+ can set cookies in the browser and how the browser
+ has to give it back.
+ Now we're gonna actually do something useful with it,
+ and that is we're going to build Sessions.
+ And Sessions is a place on the server where we record
+ things like this user, such and so of user has logged in.
  So let's take a look at this.
- So inside the server, there is some code that we've enabled in Django called session middleware.
- And what it basically does is it kind of grabs every incoming request right before it comes in
- to urls.py and it sort of injects itself before urls.py runs.
- And what it does is it uses the particular cookie value, maybe 3e, comes in as a cookie.
- And then it actually grabs the particular session and associates it with our request.
+ So inside the server, there is some code that we've enabled
+ in Django called SessionMiddleware.
+ And what it basically does is it kind of grabs
+ every incoming request right before it comes in
+ to urls.py and it sort of injects itself
+ before urls.py runs.
+ And what it does is it uses the particular cookie value,
+ maybe three E, comes in as a cookie,
+ and then it actually grabs the particular session
+ and associates it with our request.
  And so by the time you're coming into one of your urls.py,
- one of your views from urls.py, what you find is the cookies have all been set.
- The session has been set up.
+ one of your views from urls.py, what you find is
+ the cookies have all been set, the session has been set up.
  It's made a session if necessary.
  It's looked up an old session if necessary.
  And so there's a whole bunch of sessions.
- And these sessions are stored in the database or on files or other kind of places.
- And there is pretty much one session object for each distinct browser that's out there.
- And we look them up by knowing what the cookie value was that we set it.
- And so one of the things the session middleware does is,
- if it doesn't see a cookie coming in, it actually like, well,
- I'll pick a large random number and then I'll send the cookie back.
+ And these sessions are stored in the database
+ or on files or other kind of places.
+ And there is pretty much one session object
+ for each distinct browser that's out there.
+ And we look them up by knowing what the cookie value was
+ that we set it.
+ And so one of the things that SessionMiddleware does
+ is if it doesn't see a cookie coming in,
+ it actually like, oh, well, I'll pick a large random number
+ and then I'll send the cookie back.
  I will create a new session and I'll send the cookie back.
- And then I'll be able to look that session up on all of the future requests.
- So, usually we just go ahead and start sessions.
- When we meet a new browser, it's simpler.
- I mean, you can sort of sometimes delay it to save a little bit of resources.
- But often for most applications, right away you start using sessions and
- then later you've logged a person in.
- You are going to mark each browser with some unique random number.
- And then when that cookie is sent back to us,
- then we can re-associate the session with the incoming request.
- So Django middleware handles the creation, deletion, the inserting of data,
- the deleting of data, and the updating of data in these sessions.
- The session identifier is a large random number that we put in a browser cookie.
- The first time we meet a browser and then we store using that same number,
- a bit of data on the server.
- And then later when that cookie comes back in on an upcoming request,
- we basically look up the session data and then re-associate it with the request
+ And then I'll be able to look that session up
+ on all of the future requests.
+ So usually we just go ahead and start sessions
+ when we need a new browser.
+ It's simpler.
+ I mean, you can sort of sometimes delay it
+ to save a little bit of resources.
+ But often for most applications right away,
+ you start using sessions and then later
+ you've logged a person in.
+ You are going to mark each browser
+ with some unique random number.
+ And then when that cookie sent back to us,
+ then we can re-associate the session
+ with the incoming request.
+ So Django Middleware handles the creation, deletion,
+ the inserting of data, the deleting of data,
+ and the updating of data in these sessions.
+ The session identifier is a large random number
+ that we put in a browser cookie.
+ First time we meet a browser and then we store
+ using that same number of bit of data on the server
+ and then later when that cookie comes back in
+ on an upcoming request, we basically look up
+ the session data and then re-associate it with request
  before we go through urls.py and into our views.
- So we have to enable this and if you used Django admin to create your project,
+ So we have to enable this.
+ And if you used Django Admin to create your project,
  this is already there.
- You can go ahead and look in your settings.py and you'll see that it's there.
- And you'll also notice that by now you've probably done a bunch of make migrations
+ You can go ahead and look in your settings.py
+ and you'll see that it's there.
+ And you'll also notice that by now
+ you've probably done a bunch of make migrations
  and migrates and you see it making a session table.
- So there's all kind of defaults that are set up so
- that most of your first Django applications are set up to A, support sessions and
- B, store sessions in the database.
- Which is a fine way to go for small to medium sized sites.
+ So there's all kind of defaults that are set up
+ so that most of your first Django applications
+ are set up to A, support sessions,
+ and B, store sessions in the database,
+ which is a fine way to go for small to medium sized sites.
  So like I said, they're gonna be stored in the database.
- You do this migration and you see that it's creating a sessions table for you.
- In your SQLite, db.sqlite3 database.
+ You do this migration and you see that it's creating
+ a sessions table for you
+ in your SQLite, db.sqlite3 database.
  So here we go.
- We have, as I said, out there, we've met these browsers.
- We've made a session object in our database and we've put a cookie in each one.
- So there's some kind of a cookie that they're all named the same.
+ We have, as I said, out there, we've met these browsers,
+ we've made a session object in our database,
+ and we've put a cookie in each one.
+ So there's some kind of a cookie
+ that they're all named the same.
  So we'll name these cookies session ID or something.
- And so what we've picked random numbers and we've marked them.
- And so what happens is, is that a browser, a browser comes in.
- A browser sends a request in and they send their cookie along with it.
- The Django middleware looks among all the sessions and
- then connects it up and then it does the request.
- So there's many browsers, each with a different number.
- And then there's many sessions, each with a different number.
+ And so what we've picked random numbers
+ and we've marked them.
+ And so what happens is, is that a browser comes in,
+ a browser sends a request in
+ and they send their cookie along with it.
+ The Django middleware looks among all the sessions
+ and then connects it up and then it does the request.
+ So there's many browsers, each with a different number,
+ and then there's many sessions,
+ each with a different number.
  And part of reconnecting is creating it.
- Now, if, if we look at this from the point of view of one browser and
- one session object, one session storage area.
- You know, at some point we come in and it, it re-associates the session and
- we're doing some work and we're writing some stuff into the session.
- And then we respond.
- We go to another request.
- We can read what we wrote.
- So we write stuff into the session, we can read it from another one.
+ Now, if we look at this from the point of view
+ of one browser and one session object,
+ one session storage area, you know,
+ at some point we come in and it re-associates the session
+ and we're doing some work and we're writing some stuff
+ into the session and then we respond.
+ We go to another request, we can read what we wrote.
+ So we write stuff into the session,
+ we can read it from another one.
  And then here we can read that same information.
- And then here we get a post.
- We read a bunch of information, but we write some more information.
- And so you can kind of think ultimately, just sort of at some level,
- relax about all the detail and realize that this session is a variable
+ And then here we get a post, we read a bunch of information
+ but we write some more information.
+ And so you can kind of think ultimately,
+ just sort of at some level, relax about all the detail
+ and realize that this session is a variable
  that lasts across many request response cycles.
- The, the cookie variable sort of also last across many request response cycles.
+ The cookie variable sort of also lasts across
+ many request response cycles.
  The get and the post data, they vanish.
- So the get data for the, for each one.
- You use it and you consume it or you store it in a database.
- But the get data from one request is not available on the next request.
- So we have to use things like sessions sometimes to store little bits of
- information so that in a later request we can get it back.
- So the, the request object has this little attribute called request session,
- which is basically a dictionary.
- We have, we can put keys in it.
- We can delete those keys.
- We can update those keys.
- We can call .get and retrieve a key to see if it's there, etc., etc.
- And so, in a sense, we just take request.session and
- treat it as a magical dictionary.
- Now, we have to remember that each browser has its own dictionary.
- But when we're in a view function, we're only dealing with one browser.
- And so that session is the one associated with that browser.
- So it's a, it's this persistent interface,
- persistent data that lasts across all these things.
- So here's a real tiny view function.
- And you can see in this view function what we're going to do is request.session.
- This is where request.session is where you see the session data.
- It's basically a dictionary.
- So we can say .get.
- Then we have a key and we have zero as the default.
- Num visits is the key.
- Zero is the default value.
- And then we're going to get that and add one to it.
- And then store that.
- And this is kind of like how we do counting.
- If we get it, if it was four before, we're going to go to plus one and get to five.
- If it's not there, we just set it to zero, so we set it to one.
- So somehow num visits is either one or one more than what was previously there.
- And so then what we see is we see the line that actually just stores it back
- into the session.
+ So the get data for each one, you use it
+ and you consume it or you store it in a database
+ but the get data from one request is not available
+ on the next request.
+ So we have to use things like sessions sometimes
+ to store little bits of information
+ so that in a later request we can get it back.
+ So the request object has this little attribute
+ called request session which is basically a dictionary.
+ We can put keys in it, we can delete those keys,
+ we can update those keys, we can call .get
+ and retrieve a key to see if it's there, et cetera, et cetera.
+ And so in a sense, we just take request.session
+ and treat it as a magical dictionary.
+ Now we have to remember that each browser
+ has its own dictionary but when we're in a view function,
+ we're only dealing with one browser
+ and so that session is the one associated with that browser.
+ So it's this persistent interface, persistent data
+ that lasts across all these things.
+ So here's a real tiny view function
+ and you can see in this view function
+ what we're going to do is request.session.
+ This is where request.session is where you see
+ the session data, it's basically a dictionary.
+ So we can say .get, then we have a key
+ and we have zero as the default, num visits is the key,
+ zero is the default value and then we're going to get that
+ and add one to it and then store that
+ and this is kind of like how we do counting.
+ If it's, if we get it, if it was four before,
+ we're going to go to plus one and get to five.
+ If it's not there, we just set it to zero,
+ so we set it to one.
+ So somehow num visits is either one
+ or one more than what was previously there
+ and so then what we see is we see the line
+ that actually just stores it back into the session.
  That's it, it's a dictionary, it's a magic dictionary.
- It existed before it came in, and we're just going to leave it there.
- And somehow magic things take care of updating all this stuff.
- And so the other thing that we're going to do is we're going to have this go up by
- one and if it gets over, we're going over four, then we're going to wipe it out.
+ It existed before it came in and we're just going
+ to leave it there and somehow magic things take care of,
+ updating all this stuff and so the other thing
+ that we're going to do is we're going to have this go
+ up by one and if it gets over, we're going over four,
+ then we're going to wipe it out.
  So this will count one, two, three, four, one, two, three, four.
- And well, actually, yeah, one, two, three, four, one, two, three, four.
- And so this del is just the standard Python syntax to remove a entry from a,
- to remove an entry from a dictionary.
- And then we just kind of print out the number of visits in our little string and
- our response.
+ And well actually, yeah, one, two, three, four,
+ one, two, three, four and so this del is just
+ the standard Python syntax to remove a entry from a,
+ to remove an entry from a dictionary
+ and then we just kind of print out the number of visits
+ in our little string and our response.
  And so if we go, we start, we have no cookie.
- That means that we also then have no session.
- And then we go into the session code, and
- you see that it has set a session cookie, right?
+ That means that we also then have no session
+ and then we go into the session code
+ and you see that it has set a session cookie, right?
  So we see a session cookie called sesh ID.
- That's got an expiration date, which is not a expire when the browser goes away
- session, and it's got some big long random number.
- And so that is basically the session ID until we get a new session.
- And as a side effect of that,
- we've also stored the value one inside the session in the server and printed it out.
+ It's got an expiration date which is,
+ it's not a expire when the browser goes away session
+ and it's got some big long random number
+ and so that is basically the session ID
+ until we get a new session.
+ And as a side effect of that, we've also stored
+ the value one inside the session in the server
+ and printed it out.
  So we went, we came in, we established a session.
  We didn't do any of that, right?
  If we look at our view here, we didn't establish the session.
- All we did is grab something out of it, and
- that's because the establishment of the session happens in the middleware that's
- kind of outside of us.
- And so the middleware happens before our code starts and after our code is done.
- And so the session stuff is just taken care of when we do that.
- So view count is one, and then what happens is when we just hit refresh,
+ All we did is grab something out of it
+ and that's because the establishment of the session
+ happens in the middleware that's kind of outside of us
+ and so the middleware happens before our code starts
+ and after our code is done.
+ And so the session stuff is just taken care of
+ when we do that.
+ So view count is one.
+ And then what happens is when we just hit refresh,
  it's going to send the cookie in for that session ID.
- It's going to load up the session that's gj2233.
- And then our code is going to add one to that number and
- store it back into the session, and then it's going to be two.
- And if we hit refresh, it would say three, four, then it would do a reset, we won.
- And so in this code, we just kind of say request.session and
- put stuff in it and read stuff out of it.
+ It's gonna load up the session that's GJ2233
+ and then our code is gonna add one to that number
+ and store it back into the session
+ and then it's gonna be two.
+ And if we hit refresh, it would say three, four,
+ then it would do a reset and we won.
+ And so in this code, we just kinda say request.session
+ and put stuff in it and read stuff out of it.
  And the cookie is the thing that looks that up.
- Now, if we wanted to take a look at what's in the session table,
- it's really just a session and you can see that it gets created by your migrate and
- your make migrations.
- So we can go right into the database, we can ask for the tables.
- We can see the django_session, and
- then we can say select star from django_session.
- And so that will show us the data that's there.
- And so what we're gonna see is the key, which is that session key.
- And then a time, and that's used to expire the session,
- cuz these sessions don't last forever.
- The Django middleware kind of cleans these up after a while.
- Otherwise, you'd have sessions that just lasted forever and ever and ever.
+ Now if we wanted to take a look at what's
+ in the session table, it's really just a session
+ and you can see that it gets created by your migrate
+ and your make migrations.
+ So we can go right into the database,
+ we can ask for the tables,
+ we can see the Django underscore session
+ and then we can say select star from Django underscore
+ session and so that will show us the data that's there.
+ And so what we're gonna see is the key,
+ which is that session key and then a time
+ and that's used to expire the session
+ 'cause these sessions don't last forever.
+ The Django middleware kinda cleans these up after a while,
+ otherwise you'd have sessions that just lasted
+ forever and ever and ever.
  And then the actual data is this big long string.
  So what this is, is this is actually an encoded string.
- And if you really wanna look at it, it's encoded using a technique called Base64.
- And there's a Base64 parsing library.
- Base64 is a way of taking arbitrary data and
- encoding it in basically letters and numbers upper and lower case.
- It's a little less dense.
- I mean, it kind of expands.
- It's not like a compression.
- It's the opposite of compression.
- It expands it, but it expands the data when it's encoded into Base64.
- But it also means that then you can store it.
- You don't have to worry about any special characters.
- Cuz sometimes when you're going like pasting single quotes and
- double quotes mess up, all that kind of stuff.
- By saying here's this string, I'm gonna encode it in Base64,
+ And if you really wanna look at it,
+ it's encoded using a technique called base64.
+ And there's a base64 parsing library.
+ Base64 is a way of taking arbitrary data
+ and encoding it in basically letters
+ and numbers upper and lower case.
+ It's a little less dense, I mean it kind of expands,
+ it's not like a compression,
+ it's the opposite of compression.
+ It expands it but makes, it expands the data
+ when it's encoded into base64,
+ but it also means that then you can store it.
+ You don't have to worry about any special characters
+ 'cause sometimes when you're going like pasting
+ single quotes and double quotes mess up,
+ all that kinda stuff, by saying here's this string,
+ I wanna encode it in base64,
  I basically am guaranteed that there will be no weird,
- weird characters that will cause some kind of problem farther on down the line.
- So if we take a look at our thing, and we grab the little thing,
- that's the Base64 encoded variable, if you decode this,
- we're gonna Base64 decode it, you see that ultimately it's just kind of like
- a little key value pair that looks pretty much like a dictionary.
+ weird characters that will cause some kind of problem
+ farther down the line.
+ So if we take a look at our thing
+ and we grab the little thing
+ that's the base64 encoded variable,
+ if you decode this, we're gonna base64 decode it,
+ you see that ultimately it's just kind of like
+ a little key value pair that looks pretty much
+ like a dictionary.
  It's a serialized version of a dictionary.
- It's a dictionary that has been put into a serialized form.
- And it's in also JSON format, and so we can actually sort of tear this apart and
- use the JSON library to load it up and see what we've got.
- So, so that's there, you don't have to worry too much about that.
- It's just somehow this big long thing is being read and written and read and
- written on every request response cycle.
- That is certainly read on every request response cycle.
- And it's written when you modify the data in the session.
+ It's a dictionary that has been put into a serialized form
+ and it's in also JSON format
+ and so we can actually sort of tear this apart
+ and use the JSON library to load it up
+ and see what we've got, so.
+ So that's there.
+ You don't have to worry too much about that,
+ it's just somehow this big long thing
+ is being read and written and read and written
+ on every request response cycle
+ that is certainly read on every request response cycle
+ and it's written when you modify the data in the session.
  So this has been a quick set of lectures.
- We talked about cookies, a way of marking each browser with a big random number.
- And then sessions, which are a bit of data that's stored in a database
- indexed by that large random number, and then each request comes in,
- we get the cookie back, and then we look up the session.
- The data, session data, key values, key value pairs,
- basically a dictionary, is all stored in there.
- So we talked a little bit about how we do request.session in Django to implement,
- to access session capabilities in our Django applications.
- [MUSIC]
+ We talked about cookies, a way of marking each browser
+ with a big random number and then sessions
+ which are a bit of data that's stored in a database
+ indexed by that large random number
+ and then each request comes in, we get the cookie back
+ and then we look up the session.
+ The session data, key values, key value pairs,
+ basically a dictionary is all stored in there
+ and so we talked a little bit about
+ how we do request.session in Django
+ to implement, to access session capabilities
+ in our Django applications.
+ (upbeat music)

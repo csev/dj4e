@@ -3,22 +3,22 @@ WEBVTT
 00:00:00.000 --> 00:00:01.940
  So now we're gonna talk about data validation.
 
-00:00:01.940 --> 00:00:04.980
- Data validation is what happens when you hit the Submit button
+00:00:01.940 --> 00:00:04.960
+ Data validation is what happens when you hit the submit button
 
-00:00:04.980 --> 00:00:08.060
+00:00:04.960 --> 00:00:08.060
  and then that data is sent to the server.
 
-00:00:08.060 --> 00:00:10.500
+00:00:08.060 --> 00:00:10.460
  And what the server does is it checks that post data
 
-00:00:10.500 --> 00:00:14.580
+00:00:10.460 --> 00:00:14.600
  that it's getting to see if it's proper according to its rules.
 
-00:00:14.580 --> 00:00:16.620
+00:00:14.600 --> 00:00:16.600
  So if you go back to this picture I showed you
 
-00:00:16.620 --> 00:00:20.020
+00:00:16.600 --> 00:00:20.020
  in the create form, the part we're talking about now
 
 00:00:20.020 --> 00:00:22.500
@@ -27,44 +27,44 @@ WEBVTT
 00:00:22.500 --> 00:00:24.560
  Where the user has entered their data,
 
-00:00:24.560 --> 00:00:26.180
- they've hit the Submit button,
+00:00:24.560 --> 00:00:26.200
+ they've hit the submit button,
 
-00:00:26.180 --> 00:00:28.900
+00:00:26.200 --> 00:00:28.900
  and we in the server are going to look at that data.
 
 00:00:28.900 --> 00:00:31.660
  And then we are going to decide if it's an error,
 
-00:00:31.660 --> 00:00:34.620
- send back a form, or store the data.
+00:00:31.660 --> 00:00:34.660
+ send back a form, or store the data,
 
-00:00:34.620 --> 00:00:36.620
- And we're actually sort of just have a comment
+00:00:34.660 --> 00:00:36.620
+ and we're actually sort of just have a comment
 
 00:00:36.620 --> 00:00:38.740
  say store the data, and then go to the success.
 
-00:00:38.740 --> 00:00:41.500
+00:00:38.740 --> 00:00:41.520
  So we're really looking at this part right here
 
-00:00:41.500 --> 00:00:43.860
+00:00:41.520 --> 00:00:43.900
  of receiving and validating the data
 
-00:00:43.860 --> 00:00:46.560
+00:00:43.900 --> 00:00:46.580
  and then taking all those actions, okay?
 
-00:00:46.560 --> 00:00:52.740
+00:00:46.580 --> 00:00:52.740
  So the idea of data errors is you're typing in a form
 
 00:00:52.740 --> 00:00:54.740
  and you forget your zip code.
 
-00:00:54.740 --> 00:00:57.240
+00:00:54.740 --> 00:00:57.260
  And you hit the button and a little red box pops up
 
-00:00:57.240 --> 00:00:59.460
- and says, "Zip code is required."
+00:00:57.260 --> 00:00:59.460
+ and says zip code is required.
 
 00:00:59.460 --> 00:01:02.060
  Now you can also tell the fields in the browser
@@ -72,10 +72,10 @@ WEBVTT
 00:01:02.060 --> 00:01:03.620
  that they're required so that the browser
 
-00:01:03.620 --> 00:01:05.060
+00:01:03.620 --> 00:01:05.080
  won't even send the data.
 
-00:01:05.060 --> 00:01:08.000
+00:01:05.080 --> 00:01:08.000
  That's different and not all browsers do that.
 
 00:01:08.000 --> 00:01:10.780
@@ -88,7 +88,7 @@ WEBVTT
  Now in this one I made it just to generate errors.
 
 00:01:16.980 --> 00:01:21.740
- I made a validator on that form, if you recall,
+ I made a validator on that form if you recall,
 
 00:01:21.740 --> 00:01:23.740
  that said that all the titles have to be
@@ -99,8 +99,11 @@ WEBVTT
 00:01:25.060 --> 00:01:25.940
  And here's a little message.
 
-00:01:25.940 --> 00:01:28.380
- Please enter two or more characters if that's not true.
+00:01:25.940 --> 00:01:27.200
+ Please enter two or more characters
+
+00:01:27.200 --> 00:01:28.380
+ if that's not true.
 
 00:01:28.380 --> 00:01:32.020
  'Cause otherwise the fact that it's not a string
@@ -133,7 +136,7 @@ WEBVTT
  I hit the submit button and now what I want to see
 
 00:01:53.700 --> 00:01:56.580
- isn't a thing that tells me what the errors are
+ is a thing that tells me what the errors are
 
 00:01:56.580 --> 00:01:58.820
  and gives me a chance to fix it,
@@ -141,17 +144,17 @@ WEBVTT
 00:01:58.820 --> 00:02:02.180
  including putting the old data that I just posted, right?
 
-00:02:02.180 --> 00:02:04.260
+00:02:02.180 --> 00:02:04.460
  So it gives me my post data back.
 
-00:02:04.260 --> 00:02:08.140
+00:02:04.460 --> 00:02:08.160
  And then I get a chance to resubmit.
 
-00:02:08.140 --> 00:02:14.040
- So again, here's the data form.
+00:02:08.160 --> 00:02:14.040
+ So again, here's the data form
 
 00:02:14.040 --> 00:02:17.380
- And the validator there, it's a min length validator.
+ and the validator there, it's a min length validator.
 
 00:02:17.380 --> 00:02:18.820
  If you go look at the documentation,
@@ -159,444 +162,435 @@ WEBVTT
 00:02:18.820 --> 00:02:21.380
  there's a jillion validators.
 
-00:02:21.380 --> 00:02:23.980
+00:02:21.380 --> 00:02:24.000
  This was really simple and it fits on a slide.
 
-00:02:23.980 --> 00:02:26.300
- So basically, in addition to whatever,
+00:02:24.000 --> 00:02:26.300
+ So basically in addition to whatever,
 
-00:02:26.300 --> 00:02:27.980
+00:02:26.300 --> 00:02:27.940
  the fact that it's gotta be a character field,
 
-00:02:27.980 --> 00:02:30.420
+00:02:27.940 --> 00:02:30.380
  I want it to be at least two characters.
 
-00:02:30.420 --> 00:02:34.140
+00:02:30.380 --> 00:02:34.100
  And that's not a crazy validator to have
 
-00:02:34.140 --> 00:02:36.940
+00:02:34.100 --> 00:02:36.900
  because you might have a post that says,
 
-00:02:36.940 --> 00:02:38.860
+00:02:36.900 --> 00:02:38.820
  look, you're not gonna have a title of one character
 
-00:02:38.860 --> 00:02:41.220
+00:02:38.820 --> 00:02:41.180
  when you're doing a blog post or something like that, right?
 
-00:02:41.220 --> 00:02:44.180
+00:02:41.180 --> 00:02:44.180
  You might say, look, at least five characters.
 
-00:02:44.180 --> 00:02:47.060
+00:02:44.180 --> 00:02:47.020
  So now we're gonna walk through that process.
 
-00:02:47.060 --> 00:02:50.100
+00:02:47.020 --> 00:02:50.080
  And so if you take a look at this code from the form,
 
-00:02:51.180 --> 00:02:53.300
+00:02:50.080 --> 00:02:53.260
  in comes a get request.
 
-00:02:53.300 --> 00:02:56.380
+00:02:53.260 --> 00:02:56.340
  And that get request is gonna show up with some old data.
 
-00:02:56.380 --> 00:02:59.860
+00:02:56.340 --> 00:02:59.820
  It's going to create the form with the initial settings.
 
-00:02:59.860 --> 00:03:01.180
+00:02:59.820 --> 00:03:01.140
  It's gonna build a context
 
-00:03:01.180 --> 00:03:03.460
- that it's gonna pass into the render.
+00:03:01.140 --> 00:03:03.420
+ that it's gonna pass into the render,
 
-00:03:03.460 --> 00:03:05.780
- Same render form that just makes the thing
+00:03:03.420 --> 00:03:05.740
+ same render form that just makes the thing
 
-00:03:05.780 --> 00:03:09.260
+00:03:05.740 --> 00:03:09.220
  with the table tags and CSRF and form post.
 
-00:03:09.260 --> 00:03:11.940
- And so at this point, we are a get request.
+00:03:09.220 --> 00:03:11.900
+ And so at this point, we are a get request,
 
-00:03:11.940 --> 00:03:13.340
- We are returning a 200,
+00:03:11.900 --> 00:03:13.300
+ we are returning a 200,
 
-00:03:13.340 --> 00:03:17.140
+00:03:13.300 --> 00:03:17.100
  which is returning the HTML for that page, right?
 
-00:03:17.140 --> 00:03:19.820
+00:03:17.100 --> 00:03:19.800
  So that's the first part of it.
 
-00:03:19.820 --> 00:03:22.620
- And that is in the edit process,
+00:03:19.800 --> 00:03:23.880
+ And that is in the edit process, get the old data,
 
-00:03:22.620 --> 00:03:26.300
- get the old data, show it to the user
+00:03:23.880 --> 00:03:27.380
+ show it to the user and give the user an opportunity
 
-00:03:26.300 --> 00:03:29.020
- and give the user an opportunity to change the data.
+00:03:27.380 --> 00:03:28.980
+ to change the data.
 
-00:03:29.020 --> 00:03:31.820
+00:03:28.980 --> 00:03:31.780
  So now we change the data, right?
 
-00:03:31.820 --> 00:03:34.820
- And let's just say we didn't make any mistakes.
+00:03:31.780 --> 00:03:34.780
+ And let's just say we didn't make any mistakes,
 
-00:03:34.820 --> 00:03:37.020
- You changed a few numbers, you hit the post,
+00:03:34.780 --> 00:03:36.980
+ you changed a few numbers, you hit the post,
 
-00:03:37.020 --> 00:03:38.460
+00:03:36.980 --> 00:03:38.420
  which gathers up all this stuff
 
-00:03:38.460 --> 00:03:41.540
+00:03:38.420 --> 00:03:41.500
  and sends it as a post request to the server.
 
-00:03:41.540 --> 00:03:43.900
- So then what happens is it comes into the post method.
+00:03:41.500 --> 00:03:43.860
+ So then what happens is it comes into the post method,
 
-00:03:43.900 --> 00:03:48.260
- See how these class based views are so dang pretty, right?
+00:03:43.860 --> 00:03:48.220
+ see how these class based views are so dang pretty, right?
 
-00:03:48.260 --> 00:03:49.080
+00:03:48.220 --> 00:03:49.060
  So pretty.
 
-00:03:50.540 --> 00:03:52.540
- And so request post, right?
+00:03:50.580 --> 00:03:53.300
+ And it comes, and so request post read all that data
 
-00:03:52.540 --> 00:03:55.740
- All that data coming from the form comes into request post.
+00:03:53.300 --> 00:03:55.740
+ coming from the form comes into request post.
 
-00:03:55.740 --> 00:03:57.740
+00:03:55.740 --> 00:03:57.780
  And you just construct the basic form and say,
 
-00:03:57.740 --> 00:04:02.740
+00:03:57.780 --> 00:04:01.780
  hey, basic form, your old data is from the post.
 
-00:04:02.740 --> 00:04:04.740
+00:04:01.780 --> 00:04:04.740
  And all the fields are named the right way
 
-00:04:04.740 --> 00:04:05.860
+00:04:04.740 --> 00:04:05.880
  and the key value pairs.
 
-00:04:05.860 --> 00:04:08.180
+00:04:05.880 --> 00:04:08.180
  I mean, this is basically a dictionary,
 
 00:04:08.180 --> 00:04:11.500
- but the form made the key value pairs.
+ but the form made the key value pairs,
 
 00:04:11.500 --> 00:04:14.060
- It knew what names to name all the forms.
+ it knew what names to name all the forms,
 
 00:04:14.060 --> 00:04:15.180
- So it named them.
+ so it named them.
 
 00:04:15.180 --> 00:04:16.940
- And so it's not surprising.
+ And so it's not surprising,
 
-00:04:16.940 --> 00:04:19.820
- It knows exactly what to expect in there, right?
+00:04:16.940 --> 00:04:20.060
+ it knows exactly what to expect in there, right?
 
-00:04:19.820 --> 00:04:22.300
+00:04:20.060 --> 00:04:22.340
  And so it takes a look at the post data
 
-00:04:22.300 --> 00:04:26.060
+00:04:22.340 --> 00:04:26.040
  and then it constructs us a form object, right?
 
-00:04:26.060 --> 00:04:27.540
- It constructs us a form object
+00:04:26.040 --> 00:04:29.820
+ It constructs us a form object and basically says,
 
-00:04:27.540 --> 00:04:32.540
- and basically says if there was a validation failure,
+00:04:29.820 --> 00:04:33.360
+ if there was a validation failure,
 
-00:04:32.540 --> 00:04:38.340
+00:04:33.360 --> 00:04:37.520
  if not form is valid, then we're gonna do one thing.
 
-00:04:38.340 --> 00:04:40.620
- But in this case, I didn't make any changes.
+00:04:37.520 --> 00:04:40.620
+ But in this case, I didn't make any changes,
 
-00:04:40.620 --> 00:04:41.740
- So form is valid.
+00:04:40.620 --> 00:04:42.940
+ so form is valid, so it drops down.
 
-00:04:41.740 --> 00:04:42.940
- So it drops down.
-
-00:04:42.940 --> 00:04:44.780
+00:04:42.940 --> 00:04:44.740
  This is where we would normally store the data
 
-00:04:44.780 --> 00:04:45.620
+00:04:44.740 --> 00:04:45.580
  off to the model.
 
-00:04:45.620 --> 00:04:48.140
- I'm keeping this really simple.
+00:04:45.580 --> 00:04:48.260
+ So I'm keeping this really simple.
 
-00:04:48.140 --> 00:04:52.460
+00:04:48.260 --> 00:04:52.560
  And then I'm gonna redirect with a 302 to form success.
 
-00:04:52.460 --> 00:04:55.180
+00:04:52.560 --> 00:04:55.280
  The other thing I might do is put a message in the session
 
-00:04:55.180 --> 00:04:57.740
- so that the message makes it into here.
+00:04:55.280 --> 00:04:57.820
+ so that the message makes it into here,
 
-00:04:57.740 --> 00:05:00.100
- But I'm keeping it simple.
+00:04:57.820 --> 00:05:00.200
+ but I'm keeping it simple.
 
-00:05:00.100 --> 00:05:01.580
+00:05:00.200 --> 00:05:01.640
  And the browser immediately comes back
 
-00:05:01.580 --> 00:05:04.300
- and does a get to /form/success.
+00:05:01.640 --> 00:05:04.380
+ and does a get to /form/success,
 
-00:05:04.300 --> 00:05:06.460
- And then I return, thank you very much.
+00:05:04.380 --> 00:05:06.580
+ and then I return, thank you very much.
 
-00:05:06.460 --> 00:05:08.100
+00:05:06.580 --> 00:05:08.160
  I might have pulled a message out,
 
-00:05:08.100 --> 00:05:09.900
+00:05:08.160 --> 00:05:09.980
  as we've seen in an example,
 
-00:05:09.900 --> 00:05:13.740
- where from the post method to the next get,
+00:05:09.980 --> 00:05:13.840
+ where I, from the post method to the next get,
 
-00:05:13.740 --> 00:05:16.540
- I drop a flash message into something.
+00:05:13.840 --> 00:05:16.600
+ I drop a flash message into something,
 
-00:05:16.540 --> 00:05:18.100
- But there's better ways to do that
+00:05:16.600 --> 00:05:18.160
+ but there's better ways to do that,
 
-00:05:18.100 --> 00:05:22.620
+00:05:18.160 --> 00:05:22.720
  and I'll show you that in an upcoming lecture series.
 
-00:05:22.620 --> 00:05:26.660
- And so that's the success flow and it works great.
+00:05:22.720 --> 00:05:26.760
+ And so that's the success flow, and it works great.
 
-00:05:26.660 --> 00:05:29.220
+00:05:26.760 --> 00:05:29.320
  Now, let's take a look at what goes wrong.
 
-00:05:29.220 --> 00:05:31.820
- So in this case, I got my form.
+00:05:29.320 --> 00:05:31.920
+ So in this case, I've got my form,
 
-00:05:31.820 --> 00:05:33.300
- I put in the wrong kind of title.
+00:05:31.920 --> 00:05:34.460
+ I put in the wrong kind of title, it's too short.
 
-00:05:33.300 --> 00:05:34.380
- It's too short.
+00:05:34.460 --> 00:05:36.640
+ I send a post, it gathers up all this data,
 
-00:05:34.380 --> 00:05:35.340
- I send a post.
+00:05:36.640 --> 00:05:38.200
+ sends it along with the post.
 
-00:05:35.340 --> 00:05:38.100
- It gathers up all this data, sends it along with the post.
+00:05:38.200 --> 00:05:40.560
+ That comes in in request.post.
 
-00:05:38.100 --> 00:05:40.340
- That comes in and request.post.
+00:05:40.560 --> 00:05:43.800
+ And so now, the form comes back,
 
-00:05:40.340 --> 00:05:44.860
- And so now, the form comes back
+00:05:43.800 --> 00:05:47.420
+ and now, form is valid as false,
 
-00:05:44.860 --> 00:05:47.420
- and now form is valid as false
-
-00:05:47.420 --> 00:05:50.060
+00:05:47.420 --> 00:05:50.020
  because I've violated a rule.
 
-00:05:50.060 --> 00:05:53.540
- Now, the interesting thing is in this form object
+00:05:50.020 --> 00:05:53.520
+ Now the interesting thing is, in this form object,
 
-00:05:53.540 --> 00:05:57.300
- is not only the old data, but also all the error messages
+00:05:53.520 --> 00:05:57.260
+ is not only the old data, but also all the error messages,
 
-00:05:57.300 --> 00:06:01.420
- because at this moment, it has constructed a form object
+00:05:57.260 --> 00:06:01.400
+ because at this moment, it has constructed a form object,
 
-00:06:01.420 --> 00:06:05.780
+00:06:01.400 --> 00:06:05.760
  and part of the form object is error messages, okay?
 
-00:06:06.860 --> 00:06:11.860
- So if it's not valid, let's make a little context, okay?
+00:06:05.760 --> 00:06:09.400
+ So, if it's not valid,
 
-00:06:11.860 --> 00:06:16.860
- Let's make a little context and pass that in
+00:06:09.400 --> 00:06:12.800
+ let's make a little context, okay?
 
-00:06:16.860 --> 00:06:23.460
- and then out it comes and at that point,
+00:06:12.800 --> 00:06:16.800
+ Let's make a little context, and pass that in,
 
-00:06:23.460 --> 00:06:27.700
+00:06:16.800 --> 00:06:21.980
+ and then out it comes, and at that point,
+
+00:06:21.980 --> 00:06:27.720
  that form as table is gonna print out all of this stuff,
 
-00:06:27.700 --> 00:06:29.860
+00:06:27.720 --> 00:06:29.860
  all those error messages come back.
 
 00:06:29.860 --> 00:06:31.020
  So I render it back.
 
-00:06:31.020 --> 00:06:35.100
- Now, I render it back and then of course you can submit it
+00:06:31.020 --> 00:06:34.120
+ Now, I render it back, and then of course,
 
-00:06:35.100 --> 00:06:36.900
- and maybe get to a success.
+00:06:34.120 --> 00:06:36.920
+ you can submit it and maybe get to a success.
 
-00:06:36.900 --> 00:06:39.420
- Now, there is one sort of interesting question
+00:06:36.920 --> 00:06:40.280
+ Now there is one sort of interesting question about this page,
 
-00:06:39.420 --> 00:06:42.100
- about this page which I have asked
+00:06:40.280 --> 00:06:44.440
+ which I have asked a Stack Overflow question about,
 
-00:06:42.100 --> 00:06:44.420
- a Stack Overflow question about
+00:06:44.440 --> 00:06:49.240
+ and I'm not sure I'm ecstatically happy about it,
 
-00:06:44.420 --> 00:06:49.260
- and I'm not sure I'm ecstatically happy about it
+00:06:49.240 --> 00:06:52.040
+ and that is, this pattern is exactly
 
-00:06:49.260 --> 00:06:52.060
- and that is this pattern is exactly
-
-00:06:52.060 --> 00:06:53.340
+00:06:52.040 --> 00:06:53.360
  how Django wants you to write it.
 
-00:06:53.340 --> 00:06:54.980
- It wants you to write this
+00:06:53.360 --> 00:06:56.320
+ It wants you to write this, and if you'll notice,
 
-00:06:54.980 --> 00:06:57.140
- and if you'll notice, I'm doing something
+00:06:56.320 --> 00:06:58.920
+ I'm doing something I told you not to do.
 
-00:06:57.140 --> 00:06:58.940
- I told you not to do.
-
-00:06:58.940 --> 00:07:00.860
+00:06:58.920 --> 00:07:00.840
  Django is telling me to do something
 
-00:07:00.860 --> 00:07:04.700
- that I don't wanna do and that is return a 200
+00:07:00.840 --> 00:07:02.800
+ that I don't wanna do, and that is,
 
-00:07:04.700 --> 00:07:06.580
- at the result of a post.
+00:07:02.800 --> 00:07:06.560
+ return a 200 at the result of a post.
 
-00:07:06.580 --> 00:07:08.020
- So I got a post.
+00:07:06.560 --> 00:07:08.920
+ So you'll, I got a post.
 
-00:07:08.020 --> 00:07:11.020
- Now, the key thing is that the thing
+00:07:08.920 --> 00:07:12.320
+ Now the key thing is, the thing that everyone will agree on
 
-00:07:11.020 --> 00:07:14.460
- that everyone will agree on is once you store data,
+00:07:12.320 --> 00:07:16.200
+ is once you store data, you have to return a redirect.
 
-00:07:14.460 --> 00:07:16.180
- you have to return a redirect
+00:07:16.200 --> 00:07:20.040
+ And so the Django people who've done this for years,
 
-00:07:16.180 --> 00:07:20.060
- and so the Django people who've done this for years,
+00:07:20.040 --> 00:07:24.640
+ they consider it okay to return the 200 on a page
 
-00:07:20.060 --> 00:07:23.500
- they consider it okay to return the 200
+00:07:24.640 --> 00:07:27.680
+ after a post if no data was changed.
 
-00:07:23.500 --> 00:07:27.660
- and a page after a post if no data was changed.
+00:07:27.680 --> 00:07:30.400
+ Now the problem is, if you hit refresh on this,
 
-00:07:27.660 --> 00:07:30.420
- Now, the problem is if you hit refresh on this,
+00:07:30.400 --> 00:07:32.560
+ you're gonna get the weird funky message.
 
-00:07:30.420 --> 00:07:32.580
- you're gonna get the weird funky message
+00:07:32.560 --> 00:07:34.680
+ But this is how Django works.
 
-00:07:32.580 --> 00:07:34.700
- but this is how Django works
+00:07:34.680 --> 00:07:37.680
+ And so, I don't know what to tell you.
 
-00:07:34.700 --> 00:07:37.660
- and so I don't know what to tell ya.
-
-00:07:37.660 --> 00:07:40.420
+00:07:37.680 --> 00:07:40.400
  I can write my forms differently.
 
-00:07:40.420 --> 00:07:41.980
- It's a few more lines of code in here
+00:07:40.400 --> 00:07:43.120
+ It's a few more lines of code in here, and I've written that,
 
-00:07:41.980 --> 00:07:44.660
- and I've written that and I've made it so that
+00:07:43.120 --> 00:07:46.320
+ and I've made it so that I pass the error message
 
-00:07:44.660 --> 00:07:47.580
- I pass the error message and I serialize the form
+00:07:46.320 --> 00:07:48.600
+ and I serialize the form and put it in the session
 
-00:07:47.580 --> 00:07:49.740
- and put it in the session and do something
+00:07:48.600 --> 00:07:49.480
+ and do something.
 
-00:07:49.740 --> 00:07:53.180
- but I'm not gonna fight city hall on that one.
+00:07:49.480 --> 00:07:53.160
+ But I'm not gonna fight City Hall on that one.
 
-00:07:53.180 --> 00:07:55.780
- I'm just gonna say if Django thinks it's fine,
+00:07:53.160 --> 00:07:55.760
+ I'm just gonna say, if Django thinks it's fine,
 
-00:07:55.780 --> 00:08:01.260
- the thing we do agree on is if you're gonna return a 200,
+00:07:55.760 --> 00:07:59.200
+ the thing we do agree on is,
 
-00:08:01.260 --> 00:08:03.540
- don't return a 200 after you've saved data
+00:07:59.200 --> 00:08:01.280
+ if you're gonna return a 200,
 
-00:08:03.540 --> 00:08:05.700
+00:08:01.280 --> 00:08:03.520
+ don't return a 200 after you've saved data,
+
+00:08:03.520 --> 00:08:05.680
  'cause then you'll double save the data.
 
-00:08:05.700 --> 00:08:07.860
- Like you'll double commit a transaction,
+00:08:05.680 --> 00:08:07.840
+ Like, you'll double commit a transaction,
 
-00:08:07.860 --> 00:08:10.020
+00:08:07.840 --> 00:08:10.040
  you'll do a transfer, you'll double order,
 
-00:08:10.020 --> 00:08:12.700
- you'll do whatever but in this case,
+00:08:10.040 --> 00:08:11.160
+ you'll do whatever.
 
-00:08:12.700 --> 00:08:14.700
- all we did is looked at the data, came back
+00:08:11.160 --> 00:08:14.040
+ But in this case, all we did is looked at the data,
 
-00:08:14.700 --> 00:08:16.340
- and then sent back an error message.
+00:08:14.040 --> 00:08:16.360
+ came back, and then sent back an error message.
 
-00:08:16.340 --> 00:08:20.820
- So you can look at the stack overflow
+00:08:16.360 --> 00:08:20.840
+ So, you can look at the stack overflow
 
-00:08:20.820 --> 00:08:22.980
+00:08:20.840 --> 00:08:22.960
  where I sort of argue for a little bit.
 
-00:08:22.980 --> 00:08:26.380
- So this has been a long lecture series.
+00:08:22.960 --> 00:08:26.400
+ So, this has been a long lecture series.
 
-00:08:26.380 --> 00:08:29.100
+00:08:26.400 --> 00:08:29.080
  We talked about HTML, we talked about HTTP,
 
-00:08:29.100 --> 00:08:31.540
+00:08:29.080 --> 00:08:31.520
  how get and post are different ways of doing it.
 
-00:08:31.540 --> 00:08:34.220
+00:08:31.520 --> 00:08:34.160
  We've talked about the idea of you can't,
 
-00:08:34.220 --> 00:08:35.980
+00:08:34.160 --> 00:08:35.960
  how to fix the refresh.
 
-00:08:35.980 --> 00:08:40.980
- We talked about cross site request forgery, CSRF
+00:08:35.960 --> 00:08:40.960
+ We talked about cross site request forgery, CSRF,
 
-00:08:40.980 --> 00:08:45.740
- and how Django handles CSRF and then toward the end here,
+00:08:40.960 --> 00:08:44.600
+ and how Django handles CSRF.
 
-00:08:45.740 --> 00:08:48.060
+00:08:44.600 --> 00:08:45.680
+ And then toward the end here,
+
+00:08:45.680 --> 00:08:48.040
  we've talked about how to define forms in Django
 
-00:08:48.060 --> 00:08:51.340
+00:08:48.040 --> 00:08:51.320
  to sort of outsource all that HTML generation
 
-00:08:51.340 --> 00:08:53.060
+00:08:51.320 --> 00:08:53.040
  and how we do validation.
 
-00:08:53.060 --> 00:08:55.220
+00:08:53.040 --> 00:08:55.200
  Now, there's much more to learn on this
 
-00:08:55.220 --> 00:08:57.940
- and we're going to learn more of the features
+00:08:55.200 --> 00:08:59.080
+ and we're going to learn more of the features of form objects
 
-00:08:57.940 --> 00:08:59.980
- of form objects as we go forward
+00:08:59.080 --> 00:09:02.400
+ as we go forward and build increasingly complex applications.
 
-00:08:59.980 --> 00:09:02.980
- and build increasingly complex applications.
-
-00:09:02.980 --> 00:09:05.560
+00:09:02.400 --> 00:09:04.980
  (upbeat music)
 

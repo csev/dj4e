@@ -2,9 +2,9 @@
  So you are probably at this point working on your autos assignment.
  This is our first real create, read, update, and delete assignment.
  And we're going to, a lot of what this assignment is,
- is to look at the code I've given you in DJ Free Samples and pull it in.
+ is to look at the code I've given you in DJ4E Samples and pull it in.
  Don't, do not clone the repository for this assignment.
- The DJ Free Samples is a monster.
+ The DJ4E Samples is a monster.
  It's got all kinds of stuff in it that's way too complex.
  And you do not want, you want to start with a nice clean application.
  Your previous assignment was to make a really tiny application.
@@ -13,30 +13,30 @@
  And so, so what this is, is this assignment is to evolve that using the sample code.
  But what I'm really going to do is I'm going to walk through the sample code
  because there's new concepts in this sample code.
- So this is more of a lecture about the sample code than exactly how to do
- the assignment.
+ So this is more of a lecture about the sample code,
+ than exactly how to do the assignment.
  But importantly, you need to understand every single line.
- Because literally, every program that we're going to write for
+ Because literally every program that we're going to write for
  the next n weeks is a variation on this crud, right?
  And so these views, these default views, the get or 404,
  all that stuff are really foundational things.
- And what we're going to find is the right way to write this code,
- like everything in Django, is really small and succinct, okay?
+ And what we're going to find is the right way to write this code like everything in
+ Django is really small and succinct, okay?
  So let's take a look at the code.
  Let's just, well, let's go ahead and run the code.
- Go to autos, and you gotta log in.
+ Go to autos, and you got to log in.
  And so the idea of this is there are two tables.
- There is a table of makes.
- So I'm going to add a make, and then I'm going to add an auto.
- And the cool thing about this is this is neon one, mileage one, two,
- three, four, Sakai car.
+ There is a table of makes, So I'm going to add a make.
+ And then I'm going to add an auto.
+ And the cool thing about this is this is Neon 1, Mileage 1, 2, 3, 4, Sakai car.
  And then I have this cool drop down.
  And so there's a whole bunch of forms going on here.
- There's drop downs, there's a many to one relationship going on.
+ There's drop downs.
+ There's a many to one relationship going on.
  Then I have this list, and I can update it and delete it.
  So that's where our full crud is.
- And so we can add makes, view makes, add autos.
- Et cetera, and so that's all the samples.
+ And so we can add makes, view makes, add autos, etc.
+ And so that's all the sample.
  So it's very close to what it is that you have to write.
  It's just don't go grabbing all that stuff.
  So let's start by taking a look.
@@ -47,11 +47,11 @@
  The code that, if I go here, back to samples, let me log out.
  The code that allows me to log in.
  So if I go straight to autos, see if I've logged out.
- Right, so you'll notice that what it does when I go straight to autos is it
- routes me to log in, and then with the next to go back to autos.
- So this view in autos, the /autos, has protected itself with login mixing.
+ Right, so you'll notice that what it does when I go straight to autos,
+ is it routes me to log in, and then with the next to go back to autos.
+ So this view in autos, the slash autos, has protected itself with login mixin.
  And so, and later we'll do login, your login won't quite look like this, but
- this is the one I have on samples where you don't have to make it pretty yet.
+ this is the one I have on samples, where you don't have to make it pretty yet.
  An upcoming assignment is gonna make everything pretty.
  So now we're at autos and we're logged in.
  Okay, and your application has to have some more things here.
@@ -59,13 +59,13 @@
  in this autos, right?
  So if we just, let's just review just briefly.
  Let's just review briefly about how the auto login works, right?
- So if I look at dj4e-samples/settings.py.
+ So if I look at dj4e-samples/settings.py,
  You need to have this auth plugged in, right?
  So that basically is, that's a bunch of code, some views, etc.
  That comes from Django, and
  that's been there all along when you did your start project.
- Of course, then somewhere in here we've gotta have the autos, wherever autos is.
- Yeah, autos app config, you get to pull the autos app in.
+ Of course, then somewhere in here, we've gotta have the autos,
+ wherever autos is, yeah, autos app config, you get to pull the autos app in.
  And if I take a look at dj4e-samples/urls.py, then I can find autos here.
  And there needs to be some kind of a link that basically says, at the top level,
  everything below autos is delegated to the urls file in autos.py.
@@ -74,95 +74,91 @@
  It's pre-installed for us.
  And the thing that we've gotta do is we've gotta build a,
  we've gotta provide this a template with the name registration.html.
- So I think I've got this in home/templates/registration, yes I do.
+ So I think I've got this in home/templates registration, yes, I do.
  So I've got actually two logins.
  I've got a really simple one is login.html.
  And this is the one I recommend that you start with.
- Later we'll use the social login.
- And this is very simple.
- It's a login page.
+ Later, we'll use the social login.
+ And this is very simple, it's a login page.
  It uses the Django forms capability.
- If form.errors, that means that there is a validation error and
- it came back and redisplayed this page and showed you an error.
- And then we make a simple post form with a URL that is a reverse look up to
+ If form.errors, that means that there was a validation error and
+ it came back and re-displayed this page and showed you an error.
+ And then we make a simple post form with a URL that is a reverse lookup to
  a view with the name of login.
- Then we put the CRSRF token in and then we take the form.
+ Then we put the CRSRF token in, and then we take the form.
  And I'm just making this with paragraph tags.
  And so that's a simple login.
- That's not the actual one that we're showing.
- And then the next is a hidden value that you've gotta pass in so
- that when you actually successfully log in,
- it knows to come back to autos when it's all done.
+ That's not the actual one we're showing.
+ And then the next is a hidden value that you've gotta pass in, so
+ that when you actually successfully log in, it knows to come back to autos
+ when it's all done.
  It come back here after the login has been done.
- And so that registration/login, you can put this in any of your applications.
- But you want to name it registration/login.html.
- So if I take a look real quick and I go into home templates,
- these are all the templates, and they do an LS.
- You'll see that I have a home templates home and a home templates registration.
- You can add more than one folder here.
- And if I do a look at what's in registration, you see that I've got
- this simple login and then later the more complex login that will give us
- the GitHub login capabilities.
- So we can log in using, what that means is login use social.
+ And so that registration/login, you can put this in any of your applications,
+ but you wanna name it registration/login.html.
+ So if I take a look real quick, and I go into home templates,
+ these are all the templates, and they do an ls,
+ you'll see that I have a home templates home and a home templates registration.
+ You can add more than one folder here, and if I do look at what's in
+ registration, you see that I've got this simple login, and
+ then later the more complex login that will give us the GitHub login capabilities.
+ So we can log in using, what that means is log in use social.
  The point is, is underneath this templates,
  you don't have to just have one subfolder, you can have more than one subfolders.
  And so that is the necessary configuration to make it so
- that when we tell our views to add the login mixin, which we'll see in just
- a second, when we tell our views to use the login mixin,
+ that when we tell our views to add the login mixin, which we'll see in just a second.
+ When we tell our views to use the login mixin,
  then it knows where to get the template from.
- So that's just part of it.
- And your instructions tell you how to do that.
+ So that's just part of it, and your instructions tell you how to do that.
  So any application that you're gonna build or any project you're gonna build,
  you have to put those in settings.py, urls.py, and then make the template.
  And then you have to start using login mixin, and
  then everything just magically starts coming together.
  So let's take a look at the actual autos application.
  We'll look at a couple of different things here, autos/urls.
- And I'm gonna do a multi, I'm gonna tab so I can switch back between files really fast.
+ And I'm gonna do a multi, I'm gonna tab so
+ I can switch back between files really fast.
  You probably have a better text editor than me.
- So I've got urls, I'm gonna take a look at the views.
- Nope, nope, nope, autos/views.py.
- Then I'm going to look at autos/model.py.
- And then I'm gonna look at autos/forms.py.
+ So I've got urls, I'm gonna take a look at the views, nope, nope, nope, autos.
+ Views.py, then I'm going to look at autos/model.py.
+ Models.py, and then I'm gonna look at autos/forms.py.
  And so let's sort of work through these four files, urls, views, models, forms.
  Probably let's do models first.
- So this is pretty straightforward.
+ So, this is pretty straightforward.
  We're going to make a make object class.
  It's gonna have one character field with some validators in it.
  We kind of played with that with forms.
  You can put validators in models.
- We've previously seen validators in form.
- But there's a validator that basically says we're not gonna accept data coming
- into this database table unless there's at least two characters.
+ We've previously seen validators in form, but there's a validator that basically says
+ we're not gonna accept data coming into this database table unless there's at
+ least two characters.
  These underscore underscore str, you've been doing this for a while.
  That basically is if you take a model object on actual make and you print it,
- it says which of the fields, in this case there's only one field.
+ it says which of the fields.
+ In this case, there's only one field.
  And so that just says when we're converting a model to a string,
  a model object to a string, we get to decide how that looks.
  Okay, and then we have an automobile.
  And it's got a nickname with a min length validator, max length of 200,
- a mileage which is an integer field, a comments which is a 300 character field.
+ a mileage, which is an integer field, a comments, which is a 300 character field.
  And then a foreign key into, this is a one to many or many to one relationship,
  not a many to many, just a foreign key into make.
  And then we're gonna do on delete cascade, which really means if you delete a make,
  then the corresponding auto entries will automatically be deleted.
  And so this is a pretty straightforward model, actually very, very simple.
- And once again, we're always defining this str underscore underscore self, so
- that we know that if you're just showing it like in the admin interface, or
- if you're just printing it, or just converting the model itself to a string,
- the field among these fields that is supposed to be used is the nickname field,
- just to show to end user.
+ And once again, we're always defining this str__self so that we know that we're just,
+ if you're just showing it like in the admin interface, or if you're just printing
+ it, or just converting the model itself to a string, the field among these fields
+ that is supposed to be used is the nickname field, just to show to end user.
  So that's the models file.
  Let's look at the forms file next.
  So the forms file is interesting because we've seen forms that are just forms by
- themselves, but this is a special kind of form, and then it's a model form.
- In that we normally, in the other models, we had all these fields, right?
- And we put them in, and it looked a lot like a model file,
- where we'd have a character field, a positive integer field.
- But what we're basically saying is, you know what?
- We're gonna make a form here.
- And really, all we wanna do is take all the fields from the make model,
- and make them form fields.
+ themselves, but this is a special kind of form and then it's a model form.
+ In that, we normally, in the other models, we had all these fields, right?
+ And we put them in and it looked a lot like a model file where we'd have a
+ character field, a positive integer field.
+ But what we're basically saying is, you know what, we're gonna make a form here.
+ And really, all we wanna do is take all the fields from the make model and
+ make them form fields.
  So a form and a model are two different things.
  A form is something that goes between sort of the view and the template.
  And as you'll see, it also goes down into the models automatically.
@@ -178,93 +174,91 @@
  You can give it a list of fields, underscore, underscore, all, underscore,
  underscore, is like a signal to say, just give me all of them.
  Now there might be some internal things like created at or
- updated at, or something that you don't wanna use.
+ updated at, or something that you don't want to use.
  So that's a form, remember how forms work, covered that before.
  Let's take a look at our URLs.
  Now, a lot of this looks pretty similar to things that we've done, right?
  We basically have a main table,
- which is our autos table and our lookup table, which is our makes table.
+ which is our autos table, and our lookup table, which is our makes table.
  And we have sort of three things.
  There is the main list view, which is list all the autos.
  There is the main, the make list view, which is list all the makes.
- And then we can make a new one, which doesn't have a primary key.
- Cuz part of the idea is the create is making a new thing,
- which is gonna generate a primary key.
- And then we're gonna have a update and a delete.
+ And then we can make a new one, which doesn't have a primary key,
+ because part of the idea is the create is making a new thing,
+ which is going to generate a primary key.
+ And then we're going to have a update and a delete.
  And so we have a read, a create, update, delete.
  So it's not exactly crud, but you see all four of these things.
- And so we've got views, and we name these views so
- that we can reference them in our views themselves and in our templates.
- So we can make links in between them, okay?
+ And so we've got views, and we name these views so that we can reference them in
+ our views themselves and in our templates, so
+ we can make links in between them, okay?
  Okay, so these are pretty straightforward and not all that different.
  So the fun starts to happen when we're in the views.py.
- So LoginRequiredMixin,
- if you remember from the AuthZ walkthrough,
- you just add this to a view, and it just basically says,
- you cannot get to this view unless you're logged in.
+ So login mixin, if you remember from the AuthZ walkthrough.
+ You just add this to a view, and
+ it just basically says you cannot get to this view unless you're logged in.
  And if you aren't logged in, it will bounce to the login.html file, and
  then bounce back after you're done.
- And so RogginRequiredMixin is all we need to do.
+ And so login require mixin is all we need to do.
  If you go with the AuthZ sample, you'll see like I did that by hand.
- But you don't wanna do it by hand, you just call LoginRequiredMixin.
+ But you don't want to do it by hand, you just call login mixin.
  Now, so this main view is a list view.
- And so let's go take a look at what this is gonna look like.
+ And so let's go take a look at what this is going to look like.
  This is the list view.
- So we're gonna take however many autos we have.
- We're gonna loop through that list.
- We're gonna retrieve all the autos from the database.
- Then we're gonna have an add the auto link, then a view the makes link,
- with a count of how many makes there are, and add a make.
+ So we're going to take however many autos we have.
+ We're going to loop through that list.
+ We're going to retrieve all the autos from the database.
+ Then we're going to have an add the auto link.
+ Then a view the makes link with a count of how many makes there are, and
+ add a make.
  So let me also then go into autos templates.
- Autos again, yeah, I'm sorry about that.
- And autolist, so this is the template that makes that.
+ Templates, autos again, yeah, I'm sorry about that, and autolist.
+ So this is the template that makes that.
  And so there's a few things that we get.
  We get an autolist.
- Now the names of these are not forced upon you, but
+ Now, the names of these are not forced upon you, but
  there's conventions that turn out in a moment.
- They're gonna look really useful, okay?
- So we're gonna get an autolist, and if we go back into our views,
- we see that we say get all of the objects from the auto table,
- all the auto class objects, retrieve them all,
- pass them in to the context as auto underscore list.
- Now we also wanna be able to show that little count, this number two.
- So we're gonna ask, go ahead to the make objects all, but
+ They're going to look really useful, okay?
+ So we're going to get an autolist.
+ And if we go back into our views, we see that we say get all of
+ the objects from the auto table, all the auto class objects,
+ retrieve them all, pass them in to the context as auto_list.
+ Now, we also want to be able to show that little count, this number two.
+ So we're going to ask, go ahead to the make objects all, but
  don't give me a list of them, count them and give me a number.
  So make count is stuck in there.
- And you'll see if make count is greater than zero,
- we can show the add an auto button.
- And it also somewhere, yeah, shows the make count, view all the makes,
- add a make, and the make count comes out here.
+ And you'll see, if make count is greater than zero,
+ we can add an auto button, and it also somewhere, yeah,
+ shows the make count, view all the makes, add a make, and the make count comes out here.
  So that's another thing we put in.
- The autolist we're going to go through, and that iteration variable of auto is
- gonna go through each of the separate things.
+ The autolist we're going to go through, and
+ that iteration variable of auto is going to go through each of the separate things.
  And nickname, make, etc., that's right straight out of the models.py file.
  There's the four things that every auto has.
  And we're just printing all this stuff out.
- You also get the primary key, and so we're gonna make a update URL.
- And that URL is to autos auto update.
- So if we look in urls.py, we see this auto update looks up.
- This gives us a path to the view.
+ You also get the primary key.
+ And so we're going to make a update URL, and that URL is to autos, auto update.
+ So if we look in urls.py, we see this auto update looks up,
+ this gives us a path to the view.
  But that particular path needs one parameter, which is a primary key.
  And so that means that this URL template tag autos has to have the auto ID.
  But because we're looping through the models, you got one, right?
- So, and you do an auto create, that's pretty straightforward.
- But one of the rules is you have to have at least one make before you can do
- an auto, because if you recall, add an auto has to have this drop down list
- populatable, and that's being pulled from the make table, okay?
- And so that's basically the way around this.
- That's the main view.
- Now, just like I showed you before, it turns out that there are.
+ So and you do an auto create, that's pretty straightforward.
+ But one of the rules is you have to have at least one make before you can do an auto.
+ Because if you recall, add an auto has to have this drop down list populateable, and
+ that's being pulled from the make table, okay?
+ And so that's basically the way around this, that's the main view.
+ Now, just like I showed you before, it turns out that there are,
  Here we go.
  Okay, obtain.
- Yeah, that's the autos view, so.
- And then if we do the make view, we're doing the same kind of thing.
- If we go and look at the make list, we're doing the same basic kind of thing.
- View all the makes.
+ Yeah, that's the autos view.
+ So, and then if we do the make view, we're doing the same kind of thing.
+ If we go and look at the make list, we're doing the same basic kind of thing,
+ view all the makes.
  This is the, and now we got update and delete.
  We are, this way you don't need to count.
- We just wanna grab all of the objects.
- We wanna put it in a context under make list.
+ We just want to grab all of the objects.
+ We want to put it in a context under make list.
  And then we do make list on HTML, and this is even simpler.
  It's just going through the make list, it comes in through the context.
  If there's none, we don't print this out.
@@ -272,26 +266,27 @@
  a delete button that goes to the update and delete.
  And of course those, if you look in urls.py, those also,
  the update and delete have primary key requirements.
- And so you have a primary key that you gotta pass in here to make that URL
- the proper kind of URL.
- And then just some links to go back to the various things so that we can get
- back to autos, view makes, add a new make, cancel, all that stuff, okay?
+ And so you have a primary key that you gotta pass in here to make that URL the
+ proper kind of URL.
+ And then just some links to go back to the various things so
+ that we can get back to autos, view makes,
+ add a new make, cancel, all that stuff, okay?
  So that is the views.py for listing the autos and the makes, okay?
- Now, we wanna make the make create view, okay?
+ Now, we want to make the make create view, okay?
  So if we take a look at the make create view, that is add a make.
- That's going to create this form, can make this bigger here.
- Come, create this form where we're gonna put in a thing called chevy, by.
- So we need a form, wait to make this form, right?
- And so we are going to, we're gonna make it a login required.
+ That's going to create this form, make this bigger here.
+ Create this form, we're gonna put in a thing called Chevy, VY.
+ So we need a way to make this form, right?
+ And so we're gonna make it a login required.
  We're not gonna let folks do this.
  We're going to have some variables that are class wide,
- like what template we wanna use.
+ like what template we want to use.
  And success URL is after we have done this right.
  Now, if you just submit it and it complains, it doesn't do it.
- But once you've done it right, where do you wanna go afterwards?
- So chevy, where do you wanna go afterwards?
+ But once you've done it right, where do you want to go afterwards?
+ So Chevy, where do you want to go afterwards?
  This is a controller function.
- Boom, I wanna go back to the auto list.
+ Boom, I want to go back to the auto list.
  And so the success URL is go to autos colon all,
  which in urls.py is this main view.
  That's the name of the main view, okay?
@@ -299,30 +294,32 @@
  If we do a get request, we're gonna build a form for the make.
  That comes from make form.
  But really, it comes from the make model, which is just one string field.
- As simple as that, right?
- We're reusing this, we're just saying let's make a form that pulls from here.
- We have to pass a form in because models can't be used
- to create this kind of a screen.
+ It's simple as that, right?
+ We're reusing this.
+ We're just saying, let's make a form that pulls from here.
+ We have to pass a form in because models
+ can't be used to create this kind of a screen.
  That screen comes from a form, okay?
  And so if we take a look at the template, oops.
  If we look at the make create template.
- Make form, so that's the template we're gonna use to make form.
+ Oh, make form.
+ So that is, yeah, that's the template we're gonna use to make form.
  We're gonna need form as table, right?
  So that's from how we did forms.
- Put the CSRF token, you make a table, that could be as paragraphs or as tables.
- But whatever, you need this form object.
+ Put the CSRF token, you make a table.
+ That could be as paragraphs or as tables, but whatever.
+ You need this form object.
  So you need to pass the form object in.
  And so here we are.
- We're gonna make a form and then we're gonna pass the form object in.
- And then we're gonna render to self.template, autos.makeform.html.
+ We're gonna make a form, and then we're gonna pass the form object in.
+ And then we're gonna render it at self.template, autos.makeform.html.
  And then we're gonna return that for the get.
- And then when we hit the button, the submit button, add a make.
+ And then when we hit the button, the submit button, add to make.
  We hit the submit button.
  It's going to do, it's coming into the post because we made a form post.
  Comes in, we're gonna take the, don't do that, that's terrible.
  I hate it when VI does that.
  But here we go, we're back.
- Yeah.
  So post comes in, request.post has all the key value pairs,
  which are these key value pairs as defined by the form.
  So let's make a make form with the initial data coming in from request post.
@@ -333,150 +330,140 @@
  If the validator rules are not followed, if not form is valid,
  we're just gonna send it back.
  And so if I, so this code here, this if form is not valid code,
- if I put in a single letter, a, and hit submit,
+ if I put in a single letter, A, and hit submit,
  it's gonna come back and re-render the form.
- And all that error stuff, all that stuff is all handled by this form code,
- this Django form code, figures out what is wrong, right?
+ And all that error stuff, all that stuff is all handled by this form code.
+ This Django form code figures out what is wrong, right?
  Let me move this over just a little bit so I can get back to it faster.
  There we go.
  It figures out what's wrong with it, makes an error message.
- The error message came from models.py, right here, no, right here.
- And then went through forms.py, cuz it is a form,
- ultimately, that we inherited from model form, get it?
+ The error message came from models.py.
+ Right here, no, right here.
+ And then went through forms.py, cuz it is a form ultimately that we
+ inherited from model form, get it?
  And so that's cool.
- So that's the error condition, and otherwise we do form.save.
+ So that's the error condition.
+ And otherwise, we do form.save.
  Now the thing here that's really super cool is because this form
  is a model form, it knows, and the field names are the same as the field names
  in the model, and so it actually does a save on the model itself.
- So in a way, the form contains the model data that came from the post request,
- and then it saves it, okay?
+ So in a way, the form contains the model data that came from
+ the post request, and then it saves it, okay?
  That saves the form, it puts it in.
  And then we just redirect back to the request URL.
  So this is pretty succinct, right?
  We pull in the old, we pull in the post data, we check to see if it's bad.
- If it's bad, we send it back, send the form back to the exact same template we did.
+ If it's bad, we send it back, send the form back to the exact template we did.
  And then we save it if it's good, and then we pop to the success URL.
  That is a beautiful thing.
- But just like in Django all the time, this is a far wordier thing to do,
- even though this is super succinct, and if you did this in any other,
- almost any other language, you'd be like, you know, 75 lines of code.
+ But just like in Django all the time, this is a far wordier thing to do.
+ Even though this is super succinct, and if you did this in any other,
+ almost any other language, you'd be like 75 lines of code.
  And here we have like 15 lines of code.
  But it turns out, in Django, there's almost always a more succinct way to do it.
  We have a generic create view.
  You can take a look at the documentation for this generic create view.
- Django views, generic edit.
- Let's just go and Google this stuff.
+ Django views, generic edit, let's just go and Google this stuff.
  I always just put a dot here, and this usually gets me right to,
- because that's the actual package in the class inside the package.
- Oh, no. Oh, no. Sorry.
- You thought that that was a domain name.
- So the search didn't work.
- But now I'll just say, you know, Django something look like.
- So at least it's going to do the search for me.
+ cuz that's the actual package in the class inside the package.
+ No, no, sorry.
+ It thought that that was a domain name, so the search didn't work.
+ But now I'll just say, Django something, it doesn't look like,
+ so at least it's gonna do the search for me.
  Generic editing views jump to the create view.
- So you can read through all this stuff, right?
- Generic create view.
- Actually, let's make a.
- Do I have a reference to this?
- So there you go.
- Take a look at that.
+ So you can read through all this stuff, right, generic create view.
+ Actually, let's make a, do I have a reference to this?
+ So there you go, take a look at that.
  Now, this, just like some of the other views that we've inherited,
  have a ton of functionality in them.
- So if I want to do an autocreate, this is all it takes.
- Now, autocreate and make create, for all intents and purposes,
+ So if I want to do an auto create, this is all it takes.
+ Now, auto create and make create, for all intents and purposes,
  do the exact same thing.
- So what happens in autocreate, because we're extending create view,
+ So what happens in auto create, because we're extending create view,
  we have three bits of metadata.
- We tell it which model we want to use, which fields from that model we want,
+ We tell it which model we wanna use, which fields from that model we want,
  and where the success URL to go is.
  And then this generates all this code.
  We inherited all that code.
  You'll notice that there's nothing hard coded in here, except the make form.
- Now, we don't even have to make a form for the auto.
- Because this code right here builds the form.
+ Now, we don't even have to make a form for
+ the auto, because this code right here builds the form.
  And not only that, but it uses this name,
  auto, to pick the template.
  So if I do auto_form, I have to use this, right?
  I use this, that's my base bootstrap, don't worry too much about that.
  And so it knows the name of the template that it's going to use.
- I don't even have to tell it which template to use in here.
- Because it derives the template, auto_form.html is the template.
+ I don't even have to tell it which template to use in here,
+ because it derives the template, auto_form.html is the template.
  Pretty cool, huh?
  Pretty awesome and cool.
- So it automatically finds that and the success URL.
+ So it automatically finds that, and the success URL.
  And so this is all that's needed.
  As a matter of fact, I could, in this make create,
- I could have deleted all this code from here to here,
- but instead just do a create view, by extending create view.
- So I'm just showing you this because I want you to see what's really going on.
+ I could have deleted all this code from here to here.
+ But instead, just do a create view, by extending create view.
+ So I'm just showing you this, because I want you to see what's really going on.
  But this is not how you write your code.
  This is how you write your code, okay?
- So now I want to show you the hard way of doing an update.
+ So now, I want to show you the hard way of doing an update.
  So what's an update?
  Let's take a look at the code.
- So let's take a look at View Makes.
+ So let's take a look at view makes.
  Update is the thing that happens when we go here.
  And that's going to go to make update.
  So here's make update.
  Here's urls.py.
- It's this one.
- Main, I mean, yeah, lookup primary key update, which then if you look under here,
- it's going to be autos lookup one update, right?
+ It's this one, main, I mean, yeah, lookup, primary key update,
+ which then if you look under here, it's going to be autos lookup one update, right?
  So I'm going to update the Chevy one.
- It has to read the old data, has to show it to you.
- And then let us update it.
+ It has to read the old data, has to show it to you, and then let us update it.
  And then submit it, checking, of course, for any validation errors.
  And then redirecting us back to a success URL.
  So if we look at the views, we're going to, again, foreshadowing.
  There's a much easier way to do this.
- So we set these variables, whichever the success URL,
- which template we want in the model, okay?
- And then we have a get request.
+ So we set these variables, which ever the success URL, which template we want in
+ the model, okay, and then we have a get request.
  And because in the urls.py, there's this int pk, we're passed in this pk value.
- Now, this get object or 404 is really cool, okay?
- So self.model, wait, sorry, this get object 404, self.model pk equals pk.
- That's this parameter, but we're passing pk equals and
- it's common that they are the same name.
+ Now, this git object or 404 is really cool, okay?
+ So self.model, wait, sorry, this git object 404.
+ Self.model pk equals pk, that's this parameter.
+ But we're passing pk equals, and it's common that they are the same name.
  But this is a parameter to get object or 404.
  The second one is the parameter that was called to our get.
- Self.model, of course, is make, all right?
+ Self.model, of course, is make, right?
  And get object or 404 basically checks to see if, so I'll do this update.
  Let's go to makes, let's do an update.
- And what it's doing is it's taking this number, this three here.
- Autos lookup three update, and it's retrieving the old data.
- Now, what happens if I inadvertently have a number that doesn't exist in
- the database, like 9,999, and I do a get request to that one.
- I get page not found 404, right?
- And so what's happening here is somehow you say, hey, load this object and
+ And what it's doing is it's taking this number, this three here,
+ autos lookup three update, and it's retrieving the old data.
+ Now, what happens if I inadvertently have a number that doesn't exist in the database,
+ like 9,999, and I do a get request to that one, I get page not found 404, right?
+ And so what's happening here is somehow, you say, hey, load this object and
  give it to me in the variable make, or just blow up and send out a 404 error, right?
  And so this is telling you what's going on,
  which of you you just know make matches the given query.
  Now, generally, you're not supposed to hand type these.
  Three works, and so it doesn't blow up.
- So get object or 404 is a way of loading the old data and
- then protecting and using that data or just blowing up.
+ So get object or 404 is a way of loading the old data and then protecting,
+ using that data, or just blowing up.
  So don't go any farther at that point.
- Now, then we're gonna make a form and we're gonna fill it with the old data.
- So instance, what the instance is make.
- So that's the object, make a make form.
- Here's a make form, all the fields from the model, inherit from the model make.
- And then pass it into the template makeform.html, which we just looked at.
- This form comes in, that's all we need.
- This is very generic looking.
- It really doesn't care too much.
+ Now, then we're gonna make a form, and we're gonna fill it with the old data.
+ So instance, what the instance is make, so that's the object.
+ Make a make form, here's a make form, all the fields from the model,
+ inherit from the model make, and then pass it into the template, make form.html.
+ Which we just looked at, this form comes in, that's all we need.
+ This is very generic looking, it really doesn't care too much.
  It's all pretty much encoded in this form, which is derived from the model.
  Then, of course, we type a bunch of stuff in, blah, blah, blah, and
- we hit submit, and it does exactly the same thing as the create.
- In that it does, well, first it has to do a get or 404,
+ then we hit Submit, and it does exactly the same thing as the create.
+ And then it does, well, first it has to do a get or 404,
  cuz we post to the thing with the primary key.
  We load it up to make sure we have an object to update.
- Then we create a new make form from that database and then change it.
- So this is like, this is the starting data, but then it alters it to the data.
+ Then we create a new make form from that database, and then change it.
+ So this is the starting data, but then it alters it to the data.
  So in this particular case, Chevrolet is the old value in the database.
- And if I say bowtie, request post will have bowtie.
+ And if I say, bowtie, request post will have bowtie.
  This will start as Chevrolet, but in this form object, then it will be bowtie.
- Of course, if it's not valid,
- we're gonna return an error message right back here.
+ Of course, if it's not valid, we're gonna return an error message right back here.
  And if it is valid, we're gonna save it.
  And so this new bowtie is going to be saved in there.
  And so if we view our makes, we see that it's now bowtie, right?
@@ -484,53 +471,53 @@
  Now, at this point, I would hope you could predict about what's gonna happen next.
  Auto-update extends update view, the generic editing view.
  It says which model it is, which fields you want, and
- where to go when it's successful, okay?
- And then it does everything that's in here, right?
+ where to go when it's successful.
+ Okay, and then it does everything that's in here, right?
  It does everything that's in here.
  And literally, I could go and say the exact same words for make delete,
  which is what happens when you go in here and you delete.
- And then you have a cancel, there's a, oops.
+ And then you have a cancel, there's a, there is a, oops.
  There is a confirm delete.
  And the name of this template is not randomly chosen.
- It's gotta be called the confirm delete.
- The model, confirm delete, right?
+ It's gotta be called the confirm delete, the model confirmed delete, right?
  And there you go, you got a CSRF token, you're handed the make as an object in
  this, so that produces this output.
- There's no form in this one.
- There's just the make that gets loaded by object or 404.
- And then it passes make in and renders it.
+ There's no form in this one, there's just the make that gets loaded
+ by object or 404, and then it passes a make in and renders it.
  And then when the post happens, it retrieves it.
  If it's there with a 404, again checking for bad data, and deleting it, and
  then hopping off to the success URL.
  And it doesn't take much to guess what I'm gonna do next.
  And that is, if you extend delete view, you get all that code for free.
- You just tell which model fields and where to go for success.
- And so the key thing is, is as you're doing your homework,
- I'm sure some of you are just gonna like copy and paste all this stuff.
+ You just tell which model, fields, and where to go for success.
+ And so the key thing is, is as you're doing your homework, I'm sure some of you
+ are just gonna like copy and paste all this stuff.
  That's wrong.
  This make create, the make create, the make update, and
  the make delete should be as short as auto create, auto update, and auto delete.
  Because you're gonna do this a lot, right?
  You're gonna do these generic editing views a lot.
- And we're gonna do CRUD over and over and over again.
- And you really do not want to write 15 lines of code.
+ And we're gonna do crud over and over and over again, and you really do not want
+ to write 15 lines of code.
  That's unnecessary repetition, unnecessary cutting and
- pasting and changing code, if you can keep it really simple.
- So I can basically build a full set of CRUD forms and
- CRUD functionality with validation for a model with this kind of code.
+ pasting and changing code if you can keep it really simple.
+ So I can basically build a full set of crud forms and crud functionality
+ with validation for a model with this kind of code.
  And then I don't even have to have a forms.py, I just have a models.py.
  So if you're doing your autos,
  you kind of would think I made a mistake if I'm making a forms.py.
  Because if I just use this views.py this way,
- instead of making all of them look like make update, then you're gonna save
- yourself a lot of time and energy and we have to modify these things.
+ instead of making all of them look like make update,
+ then you're gonna save yourself a lot of time and energy.
+ And we have to modify these things.
  It's a lot easier to find all the changes and then modify them.
  So that is a walk through of the sample code for autos.
  And you're gonna do an assignment on this, but don't just copy everything.
  I set this up so that the time you spend understanding what's going on,
- particularly in the views, URLs you'll probably just copy,
- models you'll just copy, the URLs you'll just copy.
- But the views, don't just copy it, figure out what's really going on and
- come up with the easier and more succinct way to do all this stuff, okay?
+ particularly in the views, right?
+ URLs you probably just copy, models you just copy, the URLs you'll just copy.
+ But the views, don't just copy it, figure out what's really going on.
+ And come up with the easier and more succinct way to do all this stuff, okay?
  Cuz Django is starting to look really beautiful at this point.
- So I hope you found this helpful, cheers.
+ So I hope you found this helpful.
+ Cheers.

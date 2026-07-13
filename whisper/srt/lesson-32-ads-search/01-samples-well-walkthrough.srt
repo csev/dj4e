@@ -1,716 +1,804 @@
 1
-00:00:00,000 --> 00:00:09,000
- Hello and welcome to another walkthrough for Django for everybody. In this walkthrough, we're going to take a look at the sample code called WELL.
+00:00:00,000 --> 00:00:05,440
+ Hello and welcome to another walkthrough for Django for Everybody. In this walkthrough
 
 2
-00:00:09,000 --> 00:00:22,000
- The name WELL is based on a long-time early pre-internet forum in Berkeley, California, so you can go look up the WELL.
+00:00:05,440 --> 00:00:12,440
+ we're going to take a look at the sample code called WELL. The name WELL is based on
 
 3
-00:00:22,000 --> 00:00:33,000
- The basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone of myarts.
+00:00:12,440 --> 00:00:23,080
+ a long time early pre-internet forum in Berkeley, California. So you can go look up the WELL.
 
 4
-00:00:33,000 --> 00:00:47,000
- If you recall myarts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
+00:00:23,080 --> 00:00:31,800
+ So the basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone
 
 5
-00:00:47,000 --> 00:01:00,000
- The only difference between this and the WELL is there's a search box here, so I can search for things that have YADA in them, and then I can clear the search box, and that's it.
+00:00:31,800 --> 00:00:43,040
+ of myarts. So if you recall myarts, you had articles crud, article, article, submit, article
 
 6
-00:01:00,000 --> 00:01:08,000
- First, let's observe something that we can observe from the outside when I do a search.
+00:00:43,040 --> 00:00:51,280
+ crud, delete, just a basic article crud. So the only difference between this and the WELL
 
 7
-00:01:08,000 --> 00:01:24,000
- The search is a get parameter, and the reason for that is that get URLs are idempotent, so that basically says go to my blog and find all the blog posts that mention 123.
+00:00:51,280 --> 00:00:57,200
+ is there's a search box here. So I can search for things that have Yada in them and then
 
 8
-00:01:24,000 --> 00:01:39,000
- I could put that in as, let me clear my search here, and I could do, let's search for DSS search here.
+00:00:57,200 --> 00:01:03,360
+ I can clear the search box. And that's it. So first let's observe something that we can
 
 9
-00:01:39,000 --> 00:01:51,000
- This URL is the search for the ones that are DSS, so now I've bookmarked both these, and now that is going to be a short link to the ones that say DSS.
+00:01:03,360 --> 00:01:10,960
+ observe from the outside. When I do a search, the search is a get parameter. And the reason
 
 10
-00:01:51,000 --> 00:01:57,000
- So what I'm going to do is clear this search now, and this will show you something about idempotent URLs.
+00:01:10,960 --> 00:01:18,640
+ for that is that we want this, get parameters are, get URLs are idempotent. So that basically
 
 11
-00:01:57,000 --> 00:02:04,000
- I'm going to say yada456, I was here, submit.
+00:01:18,640 --> 00:01:26,160
+ says go to my blog and find all the blog posts that mention 123. So I could, I could put
 
 12
-00:02:04,000 --> 00:02:14,000
- So now I have two that have the word yada in the title, but watch what happens when I go to the URL that I bookmarked.
+00:01:26,160 --> 00:01:36,640
+ that in as, let me clear my search here and I could do, let's search for DSS, DSS search
 
 13
-00:02:14,000 --> 00:02:27,000
- So I see now two posts. So the key of idempotent is not that you get the exact same page, you get the exact same logical page, not the exact same text every time.
+00:01:36,640 --> 00:01:45,440
+ here. So that is, this URL is the search for the ones that are DSS. So now I've bookmarked
 
 14
-00:02:27,000 --> 00:02:31,000
- It's not like a cache that just clones the text.
+00:01:45,440 --> 00:01:51,360
+ both of these and now that is going to be a short link to the ones that say DSS. So
 
 15
-00:02:31,000 --> 00:02:45,000
- You know, I go to this before, and then I go to it now, and if I then delete this one, and then I go to this again, that's the ones that have yada in them.
+00:01:51,360 --> 00:01:55,040
+ what I'm going to do is clear this search now and this will show you something about
 
 16
-00:02:45,000 --> 00:02:48,000
- And so that's why we're going to do a search for yada.
+00:01:55,040 --> 00:02:06,580
+ idempotent URLs. I'm going to say Yada 456, I was here, submit. So now I have two that
 
 17
-00:02:48,000 --> 00:02:57,000
- And it's really quite simple here. I'll show you everything, but let's just start with an inspect element so you can see what's going on here.
+00:02:06,580 --> 00:02:14,600
+ have the word Yada in the title. But watch what happens when I go to the URL that I bookmark.
 
 18
-00:02:57,000 --> 00:03:03,000
- The first little trick here is you can construct that URL, and this goes way back.
+00:02:14,600 --> 00:02:21,560
+ So I see now two posts. So the key of idempotent is not that you get the exact same page, you
 
 19
-00:03:03,000 --> 00:03:15,000
- This goes way back to a form without a method equals post, which means it's a get method, which means that this name equals search becomes...
+00:02:21,560 --> 00:02:28,840
+ get the exact same logical page, not the exact same text every time. It's not like a cache
 
 20
-00:03:15,000 --> 00:03:27,000
- It just goes on, and it does a get request. So instead of doing a post request, which we've been doing for weeks now, this does a get request, and it adds a get parameter.
+00:02:28,840 --> 00:02:36,520
+ that just clones the text. You know, I go to this before and then I go to it now and
 
 21
-00:03:27,000 --> 00:03:36,000
- And so we've got in our view, our main view, that is well, we're seeing a get parameter. It is not a different view. We're getting a view with a get parameter.
+00:02:36,520 --> 00:02:43,680
+ if I, if I then delete this one and then I go to this again, that's the ones that have
 
 22
-00:03:36,000 --> 00:03:50,000
- And that also means that if I inspect element on this little undo icon that I made, all I'm doing is I'm making a link to /well without the parameter.
+00:02:43,680 --> 00:02:49,080
+ Yada in them. And so that's why we're going to do a search for Yada. And it's really quite
 
 23
-00:03:50,000 --> 00:03:56,000
- So it's super easy. So like get rid of the search is just go to a different URL. I could have done it...
+00:02:49,080 --> 00:02:53,760
+ simple here. I'll show you everything but let's just start with an inspect element so
 
 24
-00:03:56,000 --> 00:04:03,000
- Well, it is an anchor tag. It's a href tag. Look. So I've just gone to well, and it's not there. It's the same view.
+00:02:53,760 --> 00:03:00,440
+ you can see what's going on here. The first little trick here is you can construct that
 
 25
-00:04:03,000 --> 00:04:19,000
- So searching, and if you were to go and take a look at how Amazon or Google, they do search, they're forever putting that stuff in the URL so that you can then bookmark them.
+00:03:00,440 --> 00:03:05,920
+ URL and we go, this goes way back, this goes way back to a form without a method equals
 
 26
-00:04:19,000 --> 00:04:26,000
- And so I'll get rid of those bookmarks later. But you see how that is idempotent.
+00:03:05,920 --> 00:03:15,160
+ post, which means it's a get method, which means that this name equals search becomes,
 
 27
-00:04:26,000 --> 00:04:34,000
- When I said weeks ago, I said get URLs are idempotent. I can now sort of show you in code that we're writing how that works.
+00:03:15,160 --> 00:03:20,000
+ it just goes on and it does a get request. So instead of doing a post request, which
 
 28
-00:04:34,000 --> 00:04:42,000
- OK, so let's take a look at our code. I'll clear my search here. The code here is pretty straightforward.
+00:03:20,000 --> 00:03:27,440
+ we've been doing for weeks now, this does a get request and it adds a get parameter.
 
 29
-00:04:42,000 --> 00:04:47,000
- We've got a really simple model that was pretty much taken straight from the myarts code.
+00:03:27,440 --> 00:03:32,400
+ And so we've got in our view, our main view that is well, we're seeing a get parameter.
 
 30
-00:04:47,000 --> 00:04:57,000
- It's got a name. I called it post instead of articles because I've got all these applications running at the same time.
+00:03:32,400 --> 00:03:37,080
+ It is not a different view. We're getting a view with a get parameter. And that also
 
 31
-00:04:57,000 --> 00:05:04,000
- So I have to change a few names here and there. Related name is when we're poking a lot of...
+00:03:37,080 --> 00:03:46,200
+ means that if I inspect element on this little undo icon that I made, inspect, all I'm doing
 
 32
-00:05:04,000 --> 00:05:09,000
- We're putting a lot of foreign keys into owner across my Django project.
+00:03:46,200 --> 00:03:52,560
+ is I'm making a link to slash well without the parameter. So it's super easy. So like
 
 33
-00:05:09,000 --> 00:05:14,000
- So you've got to be careful to choose a name for related names so you don't end up with a collision.
+00:03:52,560 --> 00:03:56,680
+ get rid of the search is just go to a different URL. I could have done it, well, it is an
 
 34
-00:05:14,000 --> 00:05:19,000
- You can't just say owner or whatever. So I call this post owner so that you don't...
+00:03:56,680 --> 00:04:01,160
+ anchor tag. It's a href tag. Look, so I've just gone to well and it's not there. It's
 
 35
-00:05:19,000 --> 00:05:27,000
- Back in the owner model, back in this model right here, the auth user model,
+00:04:01,160 --> 00:04:10,720
+ the same view. So, so searching, and if you were to go and take a look at how Amazon or
 
 36
-00:05:27,000 --> 00:05:34,000
- we're pushing, in effect, methods or attributes into that model. And so we've got to name them.
+00:04:10,720 --> 00:04:17,160
+ Google, they do search, they are forever putting that stuff in the URL so that you can then
 
 37
-00:05:34,000 --> 00:05:41,000
- And so this related name is really quite important to make sure across all of my applications.
+00:04:17,160 --> 00:04:22,600
+ bookmark them. And so I'll get rid of those, I'll get rid of those bookmarks later, but
 
 38
-00:05:41,000 --> 00:05:46,000
- And what I mean is by all... These are all applications in one giant Django project.
+00:04:22,600 --> 00:04:28,960
+ you see how that's, that is idempotent. That's the get, when I said weeks ago, I said get
 
 39
-00:05:46,000 --> 00:05:52,000
- So this name here wants to be... And lots of these applications are using owner.
+00:04:28,960 --> 00:04:35,360
+ URLs are idempotent. I can now sort of show you in code that we're writing how that works.
 
 40
-00:05:52,000 --> 00:05:55,000
- And they're making a foreign key into the auth model, which is perfectly okay.
+00:04:35,360 --> 00:04:41,200
+ Okay. So let's take a look at our code. I'll clear my search here. The code here is pretty
 
 41
-00:05:55,000 --> 00:06:01,000
- It's just you've got to be careful about the related name. So that's why that's there.
+00:04:41,200 --> 00:04:45,760
+ straightforward. We've got a really simple model that was pretty much taken straight
 
 42
-00:06:01,000 --> 00:06:08,000
- So let's take a look at the urls.py. The main URL that we're going to change is this one, right?
+00:04:45,760 --> 00:04:53,320
+ from the myarts code. This is like a, it's, you know, it's got a, it's got a name. I
 
 43
-00:06:08,000 --> 00:06:17,000
- It's the list view. And here it is in the list view. And I don't know which way to go first here.
+00:04:53,320 --> 00:04:56,760
+ called it post instead of articles because I've got all these applications running at
 
 44
-00:06:17,000 --> 00:06:24,000
- Let's compare and contrast this list view with the views in myarts.
+00:04:56,760 --> 00:05:01,680
+ the same time, so I have to change a few names here and there. Related name is when we're,
 
 45
-00:06:24,000 --> 00:06:33,000
- So in myarts, the list view, I could just borrow owner list view, which was like extended generic list view.
+00:05:01,680 --> 00:05:08,360
+ we're poking a lot of, we're putting a lot of foreign keys into owner across my all my
 
 46
-00:06:33,000 --> 00:06:40,000
- I could just say my model's article and it was good. But now I've got to do a whole bunch more work here.
+00:05:08,360 --> 00:05:13,480
+ Django project. So you got to be careful to choose a name for related names so you don't
 
 47
-00:06:40,000 --> 00:06:46,000
- So I actually am going to... And I might have been able to do this by sort of overriding a few methods
+00:05:13,480 --> 00:05:18,920
+ end up with a collision. You can't just say owner or whatever. So I call this post owner
 
 48
-00:06:46,000 --> 00:06:54,000
- like we have done in the past. But I just decided that I would simply write all the code.
+00:05:18,920 --> 00:05:24,880
+ so that you don't back in the owner model, back in this model right here, the auth user
 
 49
-00:06:54,000 --> 00:06:59,000
- And so I'm just extending view here. So I'm only extending view to make post list view.
+00:05:24,880 --> 00:05:33,840
+ model. They're, we're pushing in effect methods or attributes into that model. And so we got
 
 50
-00:06:59,000 --> 00:07:09,000
- I'm still following the pattern so I can say what the model is. I'm not sure I even use that.
+00:05:33,840 --> 00:05:39,200
+ to name them. And so this related name is really quite important to make sure across
 
 51
-00:07:09,000 --> 00:07:20,000
- See if I use model. Yeah, I don't even need that template. I'm not using that.
+00:05:39,200 --> 00:05:44,400
+ all of my applications. And what I mean is by all, these are all applications in one
 
 52
-00:07:20,000 --> 00:07:26,000
- It was kind of... Yeah, so I'm using the template name here. So I still am going to use the template name.
+00:05:44,400 --> 00:05:50,760
+ giant Django project. So this name here wants to be, and lots of these applications are
 
 53
-00:07:26,000 --> 00:07:34,000
- But I didn't need the model because the reason I didn't need the model is I'm just explicitly using post in all the places.
+00:05:50,760 --> 00:05:55,160
+ using owner and they're making a foreign key into the auth model, which is perfectly okay.
 
 54
-00:07:34,000 --> 00:07:41,000
- So just get that so it's not... I mean, I don't like code that does nothing. It's always a mistake.
+00:05:55,160 --> 00:06:01,040
+ It's just, you got to be careful about the related name. Okay. So that's why that's there.
 
 55
-00:07:41,000 --> 00:07:49,000
- OK, so the get request. Most of this is in a get request. There is no post here because in the list view,
+00:06:01,040 --> 00:06:07,440
+ So let's take a look at the urls.py. The main URL that we're going to change is this one,
 
 56
-00:07:49,000 --> 00:07:56,000
- which is this view, there is no post. This form is a get request. That's a get request.
+00:06:07,440 --> 00:06:15,200
+ right? It's the list view. And here it is in the list view. And I don't know which way
 
 57
-00:07:56,000 --> 00:08:02,000
- And all it does is we are going to do a get request and we're going to do two versions of that get request.
+00:06:15,200 --> 00:06:22,440
+ to go first here. Uh, let's, let's compare and contrast this list view with the views
 
 58
-00:08:02,000 --> 00:08:07,000
- And we're going to have one version of the get request based on whether there's a search get parameter or not.
+00:06:22,440 --> 00:06:29,880
+ in my arts. So in, in my arts, the list view, I could just borrow owner list view, which
 
 59
-00:08:07,000 --> 00:08:14,000
- So we're basically saying go grab a get parameter. Get parameter using the get method of a dictionary.
+00:06:29,880 --> 00:06:35,640
+ was like extended generic list view. And I just saved my model's article and it was good.
 
 60
-00:08:14,000 --> 00:08:22,000
- Big uppercase get is the dictionary and lowercase get is the name of the method in Python.
+00:06:35,640 --> 00:06:42,000
+ But now I got to do a whole bunch more work here. So I actually am going to, and I might
 
 61
-00:08:22,000 --> 00:08:29,000
- Search is the key and then default is false. If we get a string, then we've got to search and filter.
+00:06:42,000 --> 00:06:48,040
+ have been able to do this by sort of overriding a few methods like we have done in the past,
 
 62
-00:08:29,000 --> 00:08:34,000
- But let's start with this. All we're doing here is we're grabbing the objects.
+00:06:48,040 --> 00:06:54,880
+ but I just decided that I would simply write all the code. And so I'm just extending view
 
 63
-00:08:34,000 --> 00:08:41,000
- And this is the kind of code that is done automatically in owner list view, which is then generic list view, right?
+00:06:54,880 --> 00:07:00,620
+ here. So I'm only extending view to make post list view. I'm still following the pattern
 
 64
-00:08:41,000 --> 00:08:48,000
- So this is just, I'm just doing the code. Now the thing I get to do with this that's really nice is I can go through
+00:07:00,620 --> 00:07:12,060
+ so I can say what the model is. I'm not sure I even use that. See if I use model. Yeah,
 
 65
-00:08:48,000 --> 00:08:56,000
- and augment this object list. So this is a list of objects and I'm going to change each object.
+00:07:12,060 --> 00:07:22,440
+ I don't even need that template. I'm not using that. It was kind of, yeah, so I'm using the
 
 66
-00:08:56,000 --> 00:09:05,000
- And I'm going to add a field. Undo, undo, undo. I don't know what I just did. Undo, undo, undo.
+00:07:22,440 --> 00:07:27,520
+ template name here. So I still use the template name, but I didn't need the model because
 
 67
-00:09:05,000 --> 00:09:11,000
- So this is an object. So objects is a list of objects and I'm going to grab it and I'm going to add a field.
+00:07:27,520 --> 00:07:31,980
+ I am, the reason I didn't need the model is I'm just explicitly using post in all the
 
 68
-00:09:11,000 --> 00:09:16,000
- So you can sort of in the middle, you can add this natural dash updated.
+00:07:31,980 --> 00:07:38,920
+ places. And so just get that. So it's not, I mean, I don't like, I don't like code that
 
 69
-00:09:16,000 --> 00:09:21,000
- And I'm going to base it on updated at, which is the long ugly looking date.
+00:07:38,920 --> 00:07:44,520
+ does nothing. It's all, it's all a mistake. Okay. So the get request, most of this is
 
 70
-00:09:21,000 --> 00:09:26,000
- It's a real date, but it's a long ugly looking date. And I'm going to run that through the natural time filter,
+00:07:44,520 --> 00:07:49,880
+ in a get request. There is no post here because in the list view, the list view, which is
 
 71
-00:09:26,000 --> 00:09:31,000
- which again is something built into Django that puts in this 15 hours ago thing,
+00:07:49,880 --> 00:07:56,960
+ this view, there is no post. This form is a get request. That's a get request. And all
 
 72
-00:09:31,000 --> 00:09:36,000
- which is much nicer than just putting the date out.
+00:07:56,960 --> 00:08:01,440
+ it does is we are going to do a get request and we're going to do two versions of that
 
 73
-00:09:36,000 --> 00:09:43,000
- And so we're going to send the objects in this post list, which is the list of objects.
+00:08:01,440 --> 00:08:05,040
+ get request. And we're going to have one version of the get request based on whether there's
 
 74
-00:09:43,000 --> 00:09:49,000
- And then we're going to send the search value in just so we can show that.
+00:08:05,040 --> 00:08:12,000
+ a search get parameter or not. So we're basically saying go grab a get parameter, the get parameter
 
 75
-00:09:49,000 --> 00:09:57,000
- So that when we want to see this yada, so you can actually change this.
+00:08:12,000 --> 00:08:17,600
+ using the get method of a dictionary, the big uppercase get is the dictionary and lower
 
 76
-00:09:57,000 --> 00:10:02,000
- So we want to put this back in. So we're going to pass that into the template
+00:08:17,600 --> 00:08:25,040
+ case get is the name of the method in Python. Search is the key and then default is false.
 
 77
-00:10:02,000 --> 00:10:08,000
- and then we're going to render the template, dump queries as code just to show the queries that are actually being run,
+00:08:25,040 --> 00:08:31,240
+ If we get a string, then we've got a search and filter. But let's start with this. All
 
 78
-00:10:08,000 --> 00:10:13,000
- if I was running this locally. So let's take a look at the code.
+00:08:31,240 --> 00:08:36,640
+ we're doing here is we're grabbing the objects and this is the kind of code that is done
 
 79
-00:10:13,000 --> 00:10:18,000
- So for most of this, literally it's the same thing.
+00:08:36,640 --> 00:08:41,440
+ automatically in owner list view, which is then generic list view, right? So this is
 
 80
-00:10:18,000 --> 00:10:28,000
- So I'm just, I mean, it's basically looping through. It's doing a little bit more tricky stuff here.
+00:08:41,440 --> 00:08:46,960
+ just, I'm just doing the code. Now the thing I get to do with this that's really nice is
 
 81
-00:10:28,000 --> 00:10:36,000
- If the text is less than 100, I'm putting it all in. And in the list, I'm only going to put,
+00:08:46,960 --> 00:08:54,480
+ I can go through and augment this object list. So this is a list of objects and I'm going
 
 82
-00:10:36,000 --> 00:11:00,000
- so if the post is less, length is less than 100, slice is 0.99. I can't see that.
+00:08:54,480 --> 00:08:59,580
+ to change each object and I'm going to add a field. Undo, undo, undo. I don't know what
 
 83
-00:11:00,000 --> 00:11:07,000
- Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by dj4e-samples.
+00:08:59,580 --> 00:09:07,640
+ I just did. Undo, undo, undo. That I wanted to. So this is an object. So objects is a
 
 84
-00:11:07,000 --> 00:11:14,000
- Who am I in this situation? Well, let's add a post, a title.
+00:09:07,640 --> 00:09:12,760
+ list of objects and I'm going to grab it and I'm going to add a field. So you can sort
 
 85
-00:11:14,000 --> 00:11:23,000
- 1, 2, 3, submit. Yeah. So it's showing this detail. That's what I was confused about.
+00:09:12,760 --> 00:09:17,560
+ of in the middle, you can add this natural dash updated. And I'm going to base it on
 
 86
-00:11:23,000 --> 00:11:30,000
- See this little detail? Oops, not with that end if. That post text length greater than 100.
+00:09:17,560 --> 00:09:22,800
+ updated at, which is the long ugly looking date. It's a real date, but it's a long ugly
 
 87
-00:11:30,000 --> 00:11:34,000
- So there's actually a bug in this code right here. And since I'm running it on samples,
+00:09:22,800 --> 00:09:26,840
+ looking date. And I'm going to run that through the natural time filter, which again is something
 
 88
-00:11:34,000 --> 00:11:39,000
- it'll take me a while to get it updated. But I'll just point out that there's a bug here and I want to fix it.
+00:09:26,840 --> 00:09:32,760
+ built into Django that puts in this 15 hours ago thing, which is much nicer than just putting
 
 89
-00:11:39,000 --> 00:11:47,000
- Because I really, this if, post owner ID, that's our standard like to show the edit and delete.
+00:09:32,760 --> 00:09:42,040
+ the date out. Okay. And so we're going to send the objects in this post list, which
 
 90
-00:11:47,000 --> 00:11:53,000
- And I inadvertently had this code that's showing the actual text. This is what I wanted to look like.
+00:09:42,040 --> 00:09:48,120
+ is the list of objects. And then we're going to send the search value in just so we can
 
 91
-00:11:53,000 --> 00:11:59,000
- I wanted a title and I wanted a short summary. So you'd have to go into here to get the whole summary,
+00:09:48,120 --> 00:09:53,720
+ show that. Yeah, so that, so that when we want to see this yada, so you can actually
 
 92
-00:11:59,000 --> 00:12:06,000
- but the short summary of the text. So this code, when you run it again, you will see after I update all this
+00:09:53,720 --> 00:10:00,320
+ change this, right? So we want to, we want to put this back in, right? So we're going
 
 93
-00:12:06,000 --> 00:12:12,000
- and push it through GitHub and run it in production, I will fix this. Okay?
+00:10:00,320 --> 00:10:04,880
+ to pass that into the template and then we're going to render the template, dump queries
 
 94
-00:12:12,000 --> 00:12:19,000
- And so that is what makes this, to keep that nice and short, 99 might be too long of a thing.
+00:10:04,880 --> 00:10:10,280
+ as code just to show the queries that are actually being run if I was running this locally.
 
 95
-00:12:19,000 --> 00:12:24,000
- I'd rather that stuck to one line, but whatever.
+00:10:10,280 --> 00:10:18,960
+ So let's take a look at the code. So for most of this, literally it's the same thing. Okay.
 
 96
-00:12:24,000 --> 00:12:31,000
- Posted by the username in this case. There's the username. That's nice.
+00:10:18,960 --> 00:10:27,080
+ So I'm just, I mean it, it's basically looping through, it's doing a little bit more tricky
 
 97
-00:12:31,000 --> 00:12:37,000
- And a URL into the post detail. So this is really straightforward stuff other than that little cool bit there,
+00:10:27,080 --> 00:10:32,320
+ stuff here. It's, if the text is less than a hundred, I'm putting it all in and in the
 
 98
-00:12:37,000 --> 00:12:44,000
- putting the summary in. But the only thing we've really added here is this form.
+00:10:32,320 --> 00:10:40,600
+ list, I'm only going to put, so if the post is less, the length is less than a hundred,
 
 99
-00:12:44,000 --> 00:12:51,000
- And we are going to do a form. It's going to, because we haven't said action equals on the form tag,
+00:10:40,600 --> 00:11:02,760
+ slice is zero nine nine. I can't see that. Yeah. Oh, that's cause I'm not the owner.
 
 100
-00:12:51,000 --> 00:12:56,000
- it is going to post right back to the same URL that it came to, I mean not post, it's going to do a get,
+00:11:02,760 --> 00:11:08,680
+ That's cause I'm not the owner posted by dj4e-samples. Who am I in this situation? Well,
 
 101
-00:12:56,000 --> 00:13:01,000
- because there's no method equals post here. It is going to get right back to this same URL.
+00:11:08,680 --> 00:11:20,480
+ what's that a post title? Zap one, two, three, submit. Yeah. So it's showing, it's showing
 
 102
-00:13:01,000 --> 00:13:08,000
- And I have the input with a placeholder. The placeholder is what gives me this little searchy bit thing.
+00:11:20,480 --> 00:11:25,240
+ this detail that that's what I was confused about. See this little detail. Oops. Not with
 
 103
-00:13:08,000 --> 00:13:12,000
- See that? It's not really string search. It's a placeholder if it's empty.
+00:11:25,240 --> 00:11:30,720
+ that end if that post text length greater than a hundred. So there's actually a bug
 
 104
-00:13:12,000 --> 00:13:19,000
- And then I have value equals, oh no, undo, value equals search here,
+00:11:30,720 --> 00:11:34,880
+ in this code right here. And since I'm running it on samples, it will take me a while to
 
 105
-00:13:19,000 --> 00:13:25,000
- which is taking the old search value.
+00:11:34,880 --> 00:11:38,640
+ get it updated, but I'll just point out that there's a bug here and I'm going to fix it.
 
 106
-00:13:25,000 --> 00:13:32,000
- Oh, zap was there. And so that's putting zap back in there. And of course it's escaping it.
+00:11:38,640 --> 00:11:46,520
+ Because I really, this, this if post owner ID, that's our standard like to show the edit
 
 107
-00:13:32,000 --> 00:13:38,000
- And so if we were, you know, there's no HTML entities problem here or whatever.
+00:11:46,520 --> 00:11:52,360
+ and delete. And I inadvertently had this code that's showing the actual text. This is what
 
 108
-00:13:38,000 --> 00:13:44,000
- And I put this in an if, right? And you don't have to put these on separate lines.
+00:11:52,360 --> 00:11:57,080
+ I wanted to look like. I wanted a title and I wanted a short summary. So you'd have to
 
 109
-00:13:44,000 --> 00:13:48,000
- You see me doing a lot of that where I'm having the if and end if on separate lines.
+00:11:57,080 --> 00:12:02,680
+ go into here to get the whole summary, but the short summary of the text. So this code,
 
 110
-00:13:48,000 --> 00:13:54,000
- But here I just have it like right in the middle of a line, and that just is going to emit that text in the middle of that line.
+00:12:02,680 --> 00:12:07,560
+ when you run it again, you will see after I update all this and push it through GitHub
 
 111
-00:13:54,000 --> 00:14:02,000
- I'm using a font awesome icon for the search so that I get this little search button.
+00:12:07,560 --> 00:12:15,520
+ and run it in production, I will fix this. Okay. And so that, that is what makes this
 
 112
-00:14:02,000 --> 00:14:06,000
- That's kind of cute. That's a thing called font awesome. You can go look that up.
+00:12:15,520 --> 00:12:20,240
+ to keep that nice and short. 99 might be too long of a thing. I'd rather that stuck to
 
 113
-00:14:06,000 --> 00:14:11,000
- And then I have a link that goes back to well colon all.
+00:12:20,240 --> 00:12:28,200
+ one line, but whatever, uh, posted by the username in this case, there's the username.
 
 114
-00:14:11,000 --> 00:14:17,000
- I could probably call this like a request.path or something because it really would be the same thing.
+00:12:28,200 --> 00:12:35,280
+ That's nice. Um, and a URL into the post detail. So this is really straightforward stuff other
 
 115
-00:14:17,000 --> 00:14:23,000
- Instead of URL well colon all, I could just go back to the request path, which would be slash well slash.
+00:12:35,280 --> 00:12:41,000
+ than that little cool bit. They're putting the summary in. Um, but the, but the only
 
 116
-00:14:23,000 --> 00:14:26,000
- But it doesn't matter. Well colon all is nice.
+00:12:41,000 --> 00:12:47,800
+ thing we really batted here is this form and we are going to, um, do a form. It's going
 
 117
-00:14:26,000 --> 00:14:30,000
- And then I throw another font awesome in there, which gives me a little undo thing.
+00:12:47,800 --> 00:12:52,600
+ to, because we haven't said action equals on the form tag, it is going to post right
 
 118
-00:14:30,000 --> 00:14:35,000
- And we've been using these little font awesome creatures for a while now.
+00:12:52,600 --> 00:12:56,400
+ back to the same URL that it came to. I mean, not post, it's going to do a get because there's
 
 119
-00:14:35,000 --> 00:14:43,000
- And so that's really all that is needed to get this new bit of user interface into the output.
+00:12:56,400 --> 00:13:05,080
+ no method equals post here is going to get right back to this same URL. And I have input
 
 120
-00:14:43,000 --> 00:14:51,000
- And so really the only thing left to show you is the code where it handles the search.
+00:13:05,080 --> 00:13:08,640
+ with a placeholder. The placeholder is what gives me this little searchy bit thing. See
 
 121
-00:14:51,000 --> 00:15:01,000
- So there is a filter. So post objects all order by.
+00:13:08,640 --> 00:13:12,840
+ that it's not really the string search. It's a placeholder if it's empty. And then I have
 
 122
-00:15:01,000 --> 00:15:03,000
- That's what happens if it's not searching.
+00:13:12,840 --> 00:13:22,160
+ value equals, Oh no undo. Um, value equals search here, which is taking the old search
 
 123
-00:15:03,000 --> 00:15:09,000
- So what you see here is all we've done is instead of saying all, we say filter.
+00:13:22,160 --> 00:13:30,680
+ value, old search value zap was there. And so that that's putting zap back in there.
 
 124
-00:15:09,000 --> 00:15:12,000
- And there's a couple of ways you can do filters.
+00:13:30,680 --> 00:13:35,560
+ And of course it's escaping it. And so if we were, you know, there's no HTML entities
 
 125
-00:15:12,000 --> 00:15:17,000
- You can do like just if you're doing one field, this is a really funky syntax.
+00:13:35,560 --> 00:13:43,200
+ problem here or whatever. Um, and I put this in an if, right? And that you don't have to
 
 126
-00:15:17,000 --> 00:15:23,000
- It uses two underscores. Title is a field in models.py.
+00:13:43,200 --> 00:13:47,120
+ put these on separate lines. You see me doing a lot of that where I'm having the if and
 
 127
-00:15:23,000 --> 00:15:31,000
- Title is a field in models.py. Double underscore contains that is like an operator.
+00:13:47,120 --> 00:13:51,200
+ if on separate lines, but here I just have it like right in the middle of a line. And
 
 128
-00:15:31,000 --> 00:15:36,000
- And then this is a string value, which is just a string here in our Python code.
+00:13:51,200 --> 00:13:57,000
+ that just is going to emit that text in the middle of that line. Uh, I'm using a font
 
 129
-00:15:36,000 --> 00:15:41,000
- Now I want to actually search through both the title and the text.
+00:13:57,000 --> 00:14:02,560
+ awesome icon for the search so that I get this little search button. That's kind of
 
 130
-00:15:41,000 --> 00:15:44,000
- So I'm going to have to make myself a combined search.
+00:14:02,560 --> 00:14:08,560
+ cute. That's a thing called font awesome. You can go look that up. And then I have a
 
 131
-00:15:44,000 --> 00:15:49,000
- So I'm going to make a query and I'm going to use this DB models queue, which means allow.
+00:14:08,560 --> 00:14:14,400
+ link that goes back to well colon all. I could probably call this like a request dot path
 
 132
-00:15:49,000 --> 00:15:54,000
- I can create a query and I could do it in a really long, yucky query there.
+00:14:14,400 --> 00:14:19,300
+ or something. Cause it's really would be the same thing. Um, instead of URL welcome all,
 
 133
-00:15:54,000 --> 00:15:59,000
- But I would like to I'm going to start with a query that says the title contains the string.
+00:14:19,300 --> 00:14:23,480
+ I could just go back to the request path, which should be slash slash, but it doesn't
 
 134
-00:15:59,000 --> 00:16:04,000
- And then I'm going to add to that an or clause.
+00:14:23,480 --> 00:14:28,280
+ matter. Well colon all is nice. And then I throw another font awesome in there, which
 
 135
-00:16:04,000 --> 00:16:06,000
- We're stuck in Python, right? It's not SQL.
+00:14:28,280 --> 00:14:33,760
+ gives me a little undo thing. And we've been using these little font awesome, uh, creatures
 
 136
-00:16:06,000 --> 00:16:09,000
- We're stuck in Python. So we've got to have this funky thing.
+00:14:33,760 --> 00:14:40,200
+ for a while now. And so that's really all that is needed to get this new bit of user
 
 137
-00:16:09,000 --> 00:16:16,000
- So this says these two things create a thing that basically says if the title contains that string, whatever it was,
+00:14:40,200 --> 00:14:48,880
+ interface into the output. And so really the only thing left to show you is the code where
 
 138
-00:16:16,000 --> 00:16:22,000
- that contains that string or if the text contains that string, select it.
+00:14:48,880 --> 00:15:01,120
+ it handles the search. So there is, uh, a filter. So, um, post objects all order by.
 
 139
-00:16:22,000 --> 00:16:28,000
- Now, instead of all, I put filter query. So I pull the query in and then select related.
+00:15:01,120 --> 00:15:05,660
+ That's what happens if it's not searching. So what you see here is all we've done is
 
 140
-00:16:28,000 --> 00:16:34,000
- This is an efficiency thing that says, look, I'm going to actually look at all the data.
+00:15:05,660 --> 00:15:12,360
+ instead of saying all we say filter and there's a couple of ways you can do filters. You can
 
 141
-00:16:34,000 --> 00:16:38,000
- So run that whole filter, run the user name, do a bunch of stuff.
+00:15:12,360 --> 00:15:18,840
+ do like just if you're doing one field, this is a really funky syntax. It uses two underscores
 
 142
-00:16:38,000 --> 00:16:45,000
- So I got a comment toward the bottom of this that talks about select related and then the order by and then show me just the first 10.
+00:15:18,840 --> 00:15:28,520
+ title, title is a field in models.py, right? Title is a field in models.py double underscore
 
 143
-00:16:45,000 --> 00:16:47,000
- That's the same. And there we go.
+00:15:28,520 --> 00:15:34,400
+ contains that is like an operator. And then this is a string value, which is just a string
 
 144
-00:16:47,000 --> 00:16:50,000
- And then we augment that. And then away we go.
+00:15:34,400 --> 00:15:41,720
+ here in our Python code. Now I want to actually search through both the title and the text.
 
 145
-00:16:50,000 --> 00:16:59,000
- So search is either in this case, searches either the get request from the former get is that value in this particular instance or it is false.
+00:15:41,720 --> 00:15:46,680
+ So I'm going to have to make myself a combined search. So I'm going to make a query and I'm
 
 146
-00:16:59,000 --> 00:17:05,000
- And then that triggers, of course, this bit of code in the template.
+00:15:46,680 --> 00:15:51,240
+ going to use this DB models queue, which means allow. I can create a query in and I could
 
 147
-00:17:05,000 --> 00:17:10,000
- So that's pretty much it. I mean, I certainly probably over talked it.
+00:15:51,240 --> 00:15:56,200
+ do it in a really long yucky query there, but I would like to, I'm going to start with
 
 148
-00:17:10,000 --> 00:17:15,000
- It's not that complex.
+00:15:56,200 --> 00:16:04,000
+ a query that says the title contains the string and then I'm going to add to that an or clause
 
 149
-00:17:15,000 --> 00:17:19,000
- So I want to show you only one more thing for this before we wrap it up.
+00:16:04,000 --> 00:16:07,580
+ or stuck in Python, right? It's not SQL. We're stuck in Python. So we've got to have this
 
 150
-00:17:19,000 --> 00:17:26,000
- And that is a new pattern. So you'll notice if you look in here, there is only one view.
+00:16:07,580 --> 00:16:13,360
+ funky thing. So this says these two things create a thing that basically says if the
 
 151
-00:17:26,000 --> 00:17:36,000
- There is just the post list view. And if we take a look at articles, we've got these views, the detail view, the create view, the update view and the delete view.
+00:16:13,360 --> 00:16:18,440
+ title contains this, that string, whatever it was, zap, so how it contains that string
 
 152
-00:17:36,000 --> 00:17:41,000
- And they all extend owner create view and then just change these variables.
+00:16:18,440 --> 00:16:24,600
+ or if the text contains that string, select it. And now instead of all, I put filter query.
 
 153
-00:17:41,000 --> 00:17:48,000
- I overwrote this list view because I had a whole bunch of other things I wanted to do that owner list view wasn't going to do for me.
+00:16:24,600 --> 00:16:30,740
+ So I pull the query in and then select related. This is an efficiency thing that says, look,
 
 154
-00:17:48,000 --> 00:17:57,000
- Right. And so what you'll notice that in the well, I don't have those. So let me show you how these are.
+00:16:30,740 --> 00:16:37,120
+ I'm going to actually look at all the data. Um, so run that whole filter, run the username,
 
 155
-00:17:57,000 --> 00:18:02,000
- And you'll notice I have edit views. Right. I got them. They're still there.
+00:16:37,120 --> 00:16:41,480
+ do a bunch of stuff. So I got a comment toward the bottom of this that talks about select
 
 156
-00:18:02,000 --> 00:18:08,000
- And there are templates. CD templates.
+00:16:41,480 --> 00:16:46,440
+ related and then the order by, and then showing just the first 10, that's the same. And there
 
 157
-00:18:08,000 --> 00:18:19,000
- Well, templates are there. And as a matter of fact, in this one, I changed the default name of the templates because I'm kind of tired of putting underscores in front of certain things.
+00:16:46,440 --> 00:16:52,360
+ we go. And then we augment that and then away we go. And so search is either in this case,
 
 158
-00:18:19,000 --> 00:18:30,000
- But let me show you how I solve the problem of where are the views. They're actually fully in urls.py.
+00:16:52,360 --> 00:16:56,840
+ search is either the get request from the former get is that value in this particular
 
 159
-00:18:30,000 --> 00:18:39,000
- So here is. So I import owner list view, owner detail view, owner create view and owner update view.
+00:16:56,840 --> 00:17:04,980
+ instance or it is false. And then that triggers, of course, there's a bit of code in the template.
 
 160
-00:18:39,000 --> 00:18:45,000
- And so what I'm saying is map the post slash int pk, which, of course, is the detail file. Right.
+00:17:04,980 --> 00:17:14,880
+ So that's pretty much it. I mean, I certainly probably over talked yet. It's not that complex.
 
 161
-00:18:45,000 --> 00:18:55,000
- Post int pk. And I would like you to call owner detail view, which is a class that's come from myarts.owner as view.
+00:17:14,880 --> 00:17:19,600
+ So I want to show you only one more thing for this before we wrap it up. And that is
 
 162
-00:18:55,000 --> 00:19:03,000
- And then you can put a series of key value pairs in that override the default values of say model and template name.
+00:17:19,600 --> 00:17:26,600
+ a new pattern. So you'll notice if you look in here, there is only one view. There is
 
 163
-00:19:03,000 --> 00:19:09,000
- And so I'm saying models equals models dot post. I know that that's the name of my model. Right.
+00:17:26,600 --> 00:17:32,120
+ just the post list view. And if we take a look at articles, we've got these views, the
 
 164
-00:19:09,000 --> 00:19:20,000
- And then template name equals. And now I'm even saving and taking the app name, which happens to be sitting conveniently in a string here and concatenating at the detail slash HTML.
+00:17:32,120 --> 00:17:38,040
+ detail view, the create view, the update view, and the delete view. And they all extend owner
 
 165
-00:19:20,000 --> 00:19:27,000
- And so that is the view. And of course, name equals is just part of the URLs thing.
+00:17:38,040 --> 00:17:43,680
+ create view and then just change these variables. I over wrote this list view because I had
 
 166
-00:19:27,000 --> 00:19:34,000
- And you'll notice that when I do the create view, I set the success URL, the model, the template.
+00:17:43,680 --> 00:17:47,240
+ a whole bunch of other things I wanted to do that owner list view wasn't going to do
 
 167
-00:19:34,000 --> 00:19:40,000
- And now, remember, I want to hide some of the fields. I want to show which fields are there and which fields aren't.
+00:17:47,240 --> 00:17:55,920
+ for me. And so what you'll notice that in the well, I don't have those. So let me show
 
 168
-00:19:40,000 --> 00:19:49,000
- Right. And so if we look at this views, you see like which fields you actually want to show, because I don't want to show the created at, et cetera, and updated at.
+00:17:55,920 --> 00:18:02,600
+ you how these are -- and you'll notice I have edit views. I got them. They're still there.
 
 169
-00:19:49,000 --> 00:19:56,000
- Right. And the models. I don't want to put owner out. I don't want to put created at out. So I'm going to give a list.
+00:18:02,600 --> 00:18:12,800
+ And there are templates. CD templates. Well, templates are there. And as a matter of fact,
 
 170
-00:19:56,000 --> 00:20:01,000
- Give a list. Come back. I want to give a list of the fields I want to show on my create form.
+00:18:12,800 --> 00:18:16,720
+ in this one, I changed the default name of the templates because I'm kind of tired of
 
 171
-00:20:01,000 --> 00:20:10,000
- So, again, these are sort of class wide variables that turn into object very object instance variables when it makes this view and it overrides all these things.
+00:18:16,720 --> 00:18:22,240
+ putting underscores in front of certain things. But let me show you how I solve the problem
 
 172
-00:20:10,000 --> 00:20:20,000
- And so all the stuff that I was doing in views.py, I am now doing in urls.py. And just we're using owner create view.
+00:18:22,240 --> 00:18:35,120
+ of where are the views? They're actually fully in urls.py. So here is -- so I import owner
 
 173
-00:20:20,000 --> 00:20:29,000
- And you see an update, delete. They're all kind of there. Right. And so I don't actually need to put the views in.
+00:18:35,120 --> 00:18:39,360
+ list view, owner detail view, owner create view, and owner update view. And so what I'm
 
 174
-00:20:29,000 --> 00:20:36,000
- And this is really, it looks a little more complex, but I think it's a lot prettier than putting these silly views in over and over.
+00:18:39,360 --> 00:18:46,100
+ saying is map the post slash int pk, which of course is the detail file, right, post
 
 175
-00:20:36,000 --> 00:20:46,000
- So that's a pattern that you may want to use. It made it easier for me to rename from well to something else if I wanted to.
+00:18:46,100 --> 00:18:52,640
+ int pk. And I would like you to call owner detail view, which is a class that's come
 
 176
-00:20:46,000 --> 00:20:52,000
- Because really well is only hard coded one place in here. So that's kind of cool.
+00:18:52,640 --> 00:18:58,720
+ from myarts.owner, as a view. And then you can put a series of key value pairs in that
 
 177
-00:20:52,000 --> 00:21:08,000
- Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave urls.py.
+00:18:58,720 --> 00:19:04,800
+ override the default values of, say, model and template name. And so I'm saying models
 
 178
-00:21:08,000 --> 00:21:19,000
- And remember, we, I built this owner detail view to meet my needs. So things like template view, that's something that is just a bunch of code somebody wrote.
+00:19:04,800 --> 00:19:10,600
+ equals models.post. I know that. That's the name of my model, right? And then template
 
 179
-00:21:19,000 --> 00:21:29,000
- So, okay. Well, I hope this walkthrough of the well sample application has been useful to you. Cheers.
+00:19:10,600 --> 00:19:15,160
+ name equals -- and now I'm even saving -- I'm taking the app name, which happens to be sitting
+
+180
+00:19:15,160 --> 00:19:22,680
+ conveniently in a string here and concatenating it to detail/html. And so that is the view.
+
+181
+00:19:22,680 --> 00:19:28,200
+ And of course, name equals is just part of the urls thing. And you'll notice that when
+
+182
+00:19:28,200 --> 00:19:35,520
+ I do the create view, I set the success url, the model, the template. And now remember,
+
+183
+00:19:35,520 --> 00:19:39,640
+ I want to hide some of the fields. I want to show which fields are there and which fields
+
+184
+00:19:39,640 --> 00:19:45,900
+ aren't. And so if we look at this view, you see which fields you actually want to show.
+
+185
+00:19:45,900 --> 00:19:50,920
+ Because I don't want to show the created at, et cetera, and the updated at. And the models,
+
+186
+00:19:50,920 --> 00:19:54,320
+ I don't want to put owner out. I don't want to put created at out. So I'm going to give
+
+187
+00:19:54,320 --> 00:19:59,320
+ a list. I'm going to give a list -- come back -- I'm going to give a list of the fields
+
+188
+00:19:59,320 --> 00:20:03,880
+ I want to show on my create form. So again, these are sort of class-wide variables that
+
+189
+00:20:03,880 --> 00:20:09,480
+ turn into object instance variables when it makes this view. And it overrides all these
+
+190
+00:20:09,480 --> 00:20:17,600
+ things. And so all the stuff that I was doing in views.py, I am now doing in urls.py. And
+
+191
+00:20:17,600 --> 00:20:25,160
+ just we're using owner create view. And you see in update, delete, they're all kind of
+
+192
+00:20:25,160 --> 00:20:31,000
+ there, right? And so I don't actually need to put the views in. And this is really -- it
+
+193
+00:20:31,000 --> 00:20:34,600
+ looks a little more complex, but I think it's a lot prettier than putting these silly views
+
+194
+00:20:34,600 --> 00:20:41,580
+ in over and over. So that's a pattern that you may want to use. It made it easier for
+
+195
+00:20:41,580 --> 00:20:48,880
+ me to rename from well to something else if I wanted to. Because really well is only hardcoded
+
+196
+00:20:48,880 --> 00:20:57,640
+ one place in here. So that's kind of cool. Okay? So there's a couple of lessons here.
+
+197
+00:20:57,640 --> 00:21:04,920
+ One is this searching. One is the search and how that works. But then also a new way to
+
+198
+00:21:04,920 --> 00:21:11,720
+ create views that never really leave urls.py. And remember, we, I, built this owner detail
+
+199
+00:21:11,720 --> 00:21:17,600
+ view to meet my needs. So things like template view, that's something that is just a bunch
+
+200
+00:21:17,600 --> 00:21:25,040
+ of code somebody wrote. Okay. Well, I hope this walkthrough of the well sample application
+
+201
+00:21:25,040 --> 00:21:28,360
+ has been useful to you. Cheers.
 

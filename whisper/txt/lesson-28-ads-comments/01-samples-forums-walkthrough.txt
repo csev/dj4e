@@ -1,346 +1,247 @@
  Hello and welcome to another code walkthrough on Django for everybody.
- We're going to walk through some sample code today.
- It's the SIF code that really starts using the many-to-many work a bit, and it's our forums code.
+ We're gonna walk through some sample code today.
+ It's the CIF code that really starts using the many-to-many work a bit.
+ And it's our forums code, okay?
  So let's just walk through how it works.
  The idea, I've got two users logged in here, just two different users.
- This is also going to demonstrate the owner pattern again.
+ This is also gonna demonstrate the owner pattern again.
  So let's add a forum, forum, forum one, hello.
  So this is just crud at this point.
  And so this looks like most of the crud things that we've built.
  I won't go through and delete because the interesting part is here in the detail page.
  And so I can put a comment in, this is person, this is Firefox comment.
  So I've got one user logged in on Firefox, submit.
- And then I will refresh here in the other one, and I see forum one.
- So well, let me just make a comment, and this is Safari.
+ And then I will refresh here in the other one and I see forum one.
+ So let me just make a comment, and this is Safari.
  So you can see that this is the Firefox comment and the Safari comment.
- And now if I hit refresh here in forum three, you can see the Safari comment.
- And the Firefox comment, which I didn't even get my typographical error done right.
+ And now if I hit refresh here in forum three, you can see the Safari comment and the Firefox
+ comment, which I didn't even get my typographical error done right.
  Well, the key is now you see the delete button is appropriate.
  So the comments are owned.
- And what's even more important is, sorry about that typo, is there's multiple of them.
+ And what's even more important is sorry about that typo is there's multiple of them, right?
  So now if I just hit refresh here, you can see that and see these things happening.
- And so for one forum, each user can have many comments.
+ So there's, so for one forum, each user can have many comments, right?
  And so this has to be a many to many relationship.
- And if I go back to all forums, this guy sees the edit and the delete,
- and then this one does not see the edit and the delete.
+ So and then if I go back to all forums, this guy sees the edit and the delete, and then
+ this one does not see the edit and delete.
  So you get the idea that that's pretty much what it does.
  So let's take a look at the code here.
- There is not too much tricky in the urls.py.
- Most of the urls.py is like all CRUD things we've built.
- But the comment is yet another table, because there's really two tables here.
+ There is not too much tricky in the urls.py, most of the urls.py is like all crud things
+ we've built, but the comment is yet another table because there's really two tables here.
  There's the forum table and the comment table.
  And so we've done stuff like this where we've got two tables involved.
  There's actually three tables involved, but one of them is the user.
  So we'll come back to this a little bit.
- There's not too much outrageous or new in that.
- But we do have two models.
+ There's not too much outrageous or new in that, but we do have two models.
  So let's get that back on.
  The first model is the forum model.
  And this is other than this new many to many field, this is really very straightforward.
- It looks like almost everything we've been doing that's CRUD.
- It's got some fields and it's got an owner key.
+ It looks like almost everything we've been doing that's crud, it's got some fields and
+ it's got an owner key.
  And so again, there is a table out there.
  There is a model out there, the user model that's out there.
  And we're in effect drawing a picture.
- This is a one to many.
- Oops, let's draw this.
- Pen working.
- Pen, come on, pen.
- There we go.
- So owner is a one to many relationship.
- That is that there is a user table and then there is a forum table.
- And each user can have many forums.
- So each user can have many forums.
- So that is our table.
- Now what's going to happen is the interesting part is here.
- But let's first talk about the comment table.
+ This is a one to many, so that oops, let's draw this, pen working, and come on pen, there
+ we go.
+ So owner is a one to many relationship, that is that there is a user table and then there
+ is a forum table and each user can have many forums.
+ So each user can have many forums, so that is our table.
+ Now what's going to happen is the interesting part is here, but let's first talk about the
+ comment table.
  So the comment table is down here and the comment table has one user can have many comments
  and one forum can have many comments as well.
- And so because in a sense there is a -- let me change color here.
- Come on, change color.
- Let's go violet.
- Because there is a many to many relationship between users and forums
- with a little bit of comment data sitting right there in the middle.
- We have to model it as -- that has to be modeled as a completely separate table.
- So there's only two tables here, but really there's three tables here
- because the user table is participating in both of these models.
+ And so because in a sense there is a, let me change color here, come on change color,
+ let's go violet, because there is a many to many relationship between users and forums
+ with a little bit of comment data sitting right there in the middle, we have to model
+ it as, that has to be modeled as a completely separate table.
+ So there's only two tables here, but really there's three tables here because the user
+ table is participating in both of these models.
  And so we'll come back to the many to many field.
- So this is the comment.
- And like connection tables or junction tables or join tables, it has two foreign keys.
- It's the most important thing.
- It's the keys in each direction.
- I guess I should have changed that, right?
- So come on, give me -- can I draw?
- Yeah.
- Right, so we got the user table.
- We got the comment table.
- And we got the forum table.
- So forums can have many comments.
- Users can have many comments.
- These are forum.
- And so a user can have many forums.
- So this side of it is a forum key, and this is a forum key as well, right?
- Coming out of the comment table, there are two forum keys.
- And look at that.
- There's a forum key aimed at the forum model,
- and then a forum key coming out of the comment to the user model.
- Now again, we've talked about in the lectures,
- we've talked about modeling data at the connection.
- So the text that we're getting is the text --
- the text that we're getting at the modeling point is this text right here.
- It is the actual comment itself.
- And you could make a different table for it,
- but it's just as easy to model it right in the middle of the junction field.
- Okay? And so that's pretty much it.
- And we have to -- in the forums field, we are basically saying,
- "Look, we're going all the way through the comment model,
- and we're coming out the other end in the user model."
- This related name is really, really important, and that's basically a name --
- let me draw my picture again. I should have probably just drawn this picture and kept it.
- The user table, the forum table, and the comment table.
- The forum has many comments.
- The user has many comments.
- And so, in a sense, what we're seeing here is --
- this basically says that there is a relationship --
- dot, dot, dot, dot, dot, dot, dot --
- between forums and users, and it is in the comments table.
- The table that it goes through is the comments table.
- That's what the "through" means.
- And then the related name equals forum comments,
- is actually you're installing in the user object a method, an attribute,
- something in this user model that says "forum comments."
- So we're actually extending the user model.
- If we were looking at the user, we could say, "Hey, what are the forum comments for this user?"
- And that would give us a -- it would come over here, and it would give us a list of all the forums --
- actually, no, no, sorry, it would come over here and give us a list of all the comments.
- But this related name is the name of this attribute.
- And you don't necessarily need all the time to be able to do this,
- but the problem is after a while when you're plugging so many things into the user model,
- you can end up with name conflicts.
- And so it's good to name this thing even though we might not use it.
- So I hope that helps.
- So this is a pretty straightforward thing,
- other than the fact that the user model is our third table and we're using it in both places.
- So there is that.
- So the forms -- so the only place I'm using a form in here is this comment form.
- So I just made it -- and the reason that I made a comment form is that I wanted to be able to make it look pretty.
- I wanted to be able to use Crispy.
- And so instead of just making this comment form on the detail page out of HTML,
- I just made a form so I could use Crispy in the detail page.
- Okay, so that's the forms.
- The views are pretty straightforward, the create, the delete.
- We'll come back to comment, create, and comment, delete.
- They're not all that tricky either.
- Probably the trickiest thing going on in here is the forum detail view.
- And we're extending owner detail view and the template name and the model and all that stuff.
- And we're not -- there's no -- we're not going to post, actually.
- You'll see in a second.
- We're not going to post back to this.
- So we only need to get.
- And so if you look at owner detail view -- I guess I should open up another tab.
- This is dot dot my hearts owner.
- Owner detail view extends detail view, which basically demands a primary key.
- So there is this primary key value.
- Don't do that.
- Don't do that.
- Undo.
- There is this primary key value that's going to come in.
- And that's going to come in from the detail view, which is the second parameter, which is forums, forum three.
- So we're going to go grab and load that object.
- I could have made that a getter 404.
- I probably actually should have made that a getter 404.
- So that's going to load the forum object.
- And the forum object is the title and the text and the owner of the forum itself.
- But then what I'm going to do is I'm going to say go get me all of the comment objects filtered so that the forum value in the model equals the current forum.
- This forum -- that is the forum we just loaded.
- That's the forum key in the model.
- So the first one is this forum in models.
- And the second one is this variable.
- I could have changed this to be -- I'm not going to change it, but I could have changed this to be x.
- I could change this to be x.
- I'm not going to save it, although it might be.
- Maybe I'll just save it.
- Let's make sure I got all of comment forum, forum, forum.
- Let's just make this be x, too, because that's the variable.
- I hope I don't break the code by doing this.
- I'm trying to show you that this is a field in the model and this is just a variable in this view.
- Okay.
- So this is going to give us a list of comments.
- In a sense, this is kind of like a list view.
- If you're dealing with a list view, you've got to write a for loop to go through it in the thing.
- So we got all the comments for this thing.
- And we're passing in the comment forum.
- That's simply constructing it.
- It's constructing this comment forum.
- And then we're going to basically render the request.
- So we'll close that one.
- And so let's take a look at this detail page.
- This detail page is what generates this forum.
- A lot of it's pretty much the same.
- Check to see if you're the owner before you put up the little button, little pencils.
- That's quite nice.
- Print out the forum title.
- Print out the forum text.
- Print out this stuff is all the forum title, text, and how long go with the natural time.
- So that's pretty straightforward.
- So that's really not all that tricky.
- So then what we're going to do here is if the user is logged in.
- And so it turns out that this does not require log in.
- And so the only time we're going to show this comment, this comment form is if the user is logged in.
- So this part right here is if the user is logged in.
- BrClearEqualsAll is what stops, brings this stuff back to the left margin,
- even though I floated these things over using CSS.
- Load the crispy form tags.
- And then I'm going to build the form.
- That's this comment form that goes from the word comment, the word text, the submit button,
- and the all forms, which is just an on-click JavaScript that sends us back to the all forms page.
- And that is the end of the user authenticated.
- Because it turns out that seeing all this stuff, seeing the actual comments, that's OK.
- Non-logged in users can see it.
- And then if you recall, going back to the views, we sent in the comments.
- And the comments is a list of comments ordered by, in descending order, most recent first.
- And I guess you don't see it there, but they are most recent first.
- But at that point, we are just going to write a for loop to loop through all the comments,
- print out the comment text, print out the comment updated at.
- And if the owner of the comment is the current logged in user, put out a little trash icon.
- OK?
- Put out a little trash icon.
- Got it?
- So that generates the output.
- That generates this page.
- But let's take a look at a couple of things that we're going to do.
- So you see this first two things, right?
- We are actually going to post with action equals.
- This form right here, the comment form, blah, does not post back to forums detail page.
+ So this is the comment and like connection tables or junction tables or join tables it
+ has two foreign keys, it's the most important thing, it's the keys in each direction, I
+ guess I shouldn't change that right, so we got the user table, we got the comment table
+ and we got the forum table.
+ So forums can have many comments, users can have many comments, these are forum and so
+ a user can have many forums.
+ So this side of it is a foreign key and this is a foreign key as well, right, coming out
+ of the comment table there are two foreign keys and look at that, there's a forum key
+ aimed at the forum model and then a foreign key coming out of the comment to the user
+ model.
+ Now again we've talked about in the lectures, we've talked about modeling data at the connection,
+ so the text that we're getting is the text, the text that we're getting at the modeling
+ point is this text right here, it is the actual comment itself and you could make a different
+ table for it but it's just as easy to model it right in the middle of the junction field,
+ okay and so that's pretty much it and we have to in the forums field we are basically saying
+ look we're going all the way through the comment model and we're coming out the other end in
+ the user model.
+ This related name is really really important and that's basically a name, let me draw my
+ picture again, I should have probably just drawn this picture and kept it, the user table,
+ the forum table and the comment table, forum has many comments, user has many comments,
+ and so in a sense what we're seeing here is this basically says that there is a relationship
+ dot dot dot dot dot dot dot dot between forums and users and it is in the comments table,
+ the table that it goes through is the comments table, that's what the through means and then
+ the related name equals forum comments is actually you're installing in the user object
+ a method, an attribute, something in this user model that says forum comments so we're
+ actually extending the user model, if we were looking at the user we could say hey what
+ are the forum comments for this user and that would give us a, it would come over here and
+ it would come over here and give us a list of all the comments, but this related name
+ is the name of this attribute and you don't necessarily need all the time to be able to
+ do this but the problem is after a while when you're plugging so many things into the user
+ model you can end up with name conflicts and so it's good to name this thing even though
+ we might not use it so I hope that, hope that helps so this is a pretty straightforward
+ thing other than the fact that the user model is our third table and we're using it in both
+ places so there is that.
+ So the forms, so the only place I'm using a form in here is this comment form so I just
+ made it and the reason that I made a comment form is that I wanted to be able to make it
+ look pretty, I wanted to be able to use crispy and so instead of just making this comment
+ form on the detail page out of HTML I just made a form so I could use crispy in the detail
+ page.
+ So that's the forms, the views are pretty straightforward, the create, the delete, we'll
+ come back to comment create and comment delete, they're not all that tricky either, probably
+ the trickiest thing going on in here is the forum detail view and we're extending owner
+ detail view and the template name and the model and all that stuff and we're not, we're
+ not going to post actually, you'll see in a second, we're not going to post back to
+ this so we only need to get and so if you look at owner detail view, I guess I should
+ open up another tab, this is dot dot my hearts owner, owner detail view extends detail view
+ which basically demands a primary key and so there is this primary key value, don't
+ do that, don't do that, undo, there is this primary key value that's going to come in
+ and that's going to come in from the detail view which is the second parameter which is
+ forums, forum three, so we're going to go grab and load that object, I could have made
+ that a getter 404, I probably actually should have made that a getter 404, so that's going
+ to load the forum object and the forum object is the title and the text and the owner of
+ the forum itself but then what I'm going to do is I'm going to say go get me all of the
+ comment objects filtered so that the forum value in the model equals the current forum,
+ this forum, that is the forum we just loaded, that's the forum key in the model so the first
+ one is this forum in models and the second one is this variable, I could have, I could
+ have changed this to be, I'm not going to change it but I could have changed this to
+ be x, I could have changed this to be x, I'm not going to save it, although it might be,
+ maybe I'll just save it, make sure I've got all of comment forum, forum, forum, let's
+ just make this be x too because that's the variable, I hope I don't break the code by
+ doing this, I'm trying to show you that this is a field in the model and this is just a
+ variable in this view, right, okay, so this is going to give us a list of comments, in
+ a sense this is kind of like a list view, if you're dealing with a list view you've
+ got to write a for loop to go through it in the thing so we got all the comments for this
+ thing and we're passing in the comment forum, that's simply constructing it, it's constructing
+ this comment forum and then we're going to basically render the request, so we'll close
+ that one and so let's take a look at this detail page, this detail page is what generates
+ this forum, a lot of it's pretty much the same, check to see if you're the owner before
+ you put up the little button, little pencils, that's quite nice, print out the forum title,
+ print out the forum text, print out, this stuff is all the forum title, text and how
+ long ago it, with the natural time, so that's pretty straightforward, so that's really not
+ all that tricky, so then what we're going to do here is if the user is logged in, and
+ so it turns out that this does not require login and so the only time we're going to
+ show this comment form is if the user is logged in, so this part right here is if the user
+ is logged in, be our clear equals all is what stops, brings this stuff back to the left
+ margin even though I floated these things over using CSS, load the crispy form tags
+ and then I'm going to build the form, that's this comment form that goes from the word
+ comment, the word text, the submit button and the all forms which is just an on-click
+ JavaScript that sends us back to the all forms page and that is the end of the user authenticated
+ because it turns out that seeing all this stuff, seeing the actual comments, that's
+ okay, non-login users can see it and then if you recall, going back to the views, we
+ sent in the comments and the comments is a list of comments ordered by, in descending
+ order, most recent first and I guess you don't see it there but they are most recent first
+ but at that point we are just going to write a for loop to loop through all the comments,
+ print out the comment text, print out the comment updated at and if the owner of the
+ comment is the current logged in user, put out a little trash icon, put out a little
+ trash icon.
+ So that generates the output, that generates this page but let's take a look at a couple
+ of things that we're going to do.
+ So you see this, this first two things, right, we are actually going to post with action
+ equals this form right here, the comment form, blah, does not post back to forums detail
+ page.
  This is the forums detail page.
- If you look at it, it points us to posts to forum, comment, create.
- So let's go back to that.
- Forum, comment, create is right here.
- And so it's just going to run this comment, create view, passing in the primary key of the forum.
- OK?
+ If you look at it, it points to posts, forum, comment, create.
+ So let's go back to that, forum, comment, create is right here and so it's just going
+ to run this comment, create view, passing in the primary key of the forum, okay.
  So then if I go into my views, forum, create, no, comment, create view.
- So comment, create view is what's going to happen when I get this post, right?
- So the post is going to come in.
- There's going to be some comment field, which is this text field.
- And there is the primary key of the forum, not the comment.
+ So comment, create view is what's going to happen when I get this post, right.
+ So the post is going to come in, there's going to be a comment field which is this text field
+ and there is the primary key of the forum, not the comment.
  So now we are going to make the connection.
- This is where we're actually making the connection.
- And you'll notice that I'm just saying login required view in view,
- because I don't have an automated way to do this.
- And so I'm going to do it by hand.
- So we're in the post.
- We're going to go grab the forum object.
- I apply a primary key. There I am using a getter 404, so at least I blow up in the right way.
- Then what I'm going to do is I am going to-- let's go back to models.
- I've got to fill out the text field, the forum field, and the owner field.
- And the owner field are the two foreign keys.
- And-- come back, come back, come back.
- In the many to many, we have to have those objects available to us.
- So we are going to build a new comment that doesn't store-- this doesn't store in the database.
- The text field comes from the request post.
- The owner field is current request user.
- And the forum field, the foreign key in this middle connector table,
- is this forum object that we just loaded.
- And so that fully populates a comment object.
- It fully populates a comment object in that post method.
- And then all we have to do is we have to say, save it.
- So the comment.save takes that in-memory comment that we created with the two foreign keys in the comment
- and sticks it in the database.
+ This is where we're actually making the connection and you'll notice that I'm just saying login
+ required view in view because I don't have an automated way to do this and so I'm going
+ to do it by hand.
+ So we're in the post, we're going to go grab the forum object by applying primary key,
+ there I am using a getter 404 so at least I blow up in the right way.
+ Then what I'm going to do is I am going to, let's go back to models, I've got to fill
+ out the text field, the forum field and the owner field and the owner field are the two
+ foreign keys and come back, come back, come back, in the many to many we have to have
+ those objects available to us.
+ So we are going to build a new comment, this doesn't store it in the database, the text
+ field comes from the request post, the owner field is current request user and the forum
+ field, the foreign key in this middle connector table is this forum object that we just loaded.
+ So that fully populates a comment object, it fully populates a comment object in that
+ post method and then all we have to do is we have to say save it.
+ So the comment.save takes that in memory comment that we created with the two foreign keys
+ in the comment and sticks it in the database.
  And then all we have to do is redirect.
- Now what we want to redirect back to is we want to redirect back to this detail page,
- because we don't want to redirect back to ourselves, and we don't want to redirect back to all forums.
- And so we have-- when we hit submit, we want to come back here.
- So it just looks like that thing showed up.
- But really, it was a full request response cycle where it posted to comment create view.
- But after the post was done, it did a redirect.
- And we're doing a post redirect, so it's cool anyways.
+ Now what we want to redirect back to is we want to redirect back to this detail page
+ because we don't want to redirect back to ourselves and we don't want to redirect back
+ to all forums and so we have, when we hit submit we want to come back here so it just
+ looks like that thing showed up but really it was a full request response cycle where
+ it posted to comment create view but after the post was done it did a redirect and we're
+ doing a post redirect so it's cool anyways.
  And so this is a slightly different version of the reverse.
- It is the same concept as what we've seen all along,
- where we have a forum ID inside a second parameter to the URL, because the reverse in this URL thing--
- I wish they'd call this reverse, because that's what it's doing.
- The URL is just kind of a wrapper for reverse.
- Well, this is the two-parameter form.
- So we have a one-parameter form of URL, which is this one, which says go url forums colon all.
- It says, give me the URL to the view that is named all within forums.
- Here, I'm saying URL forums forum create forum ID.
- This is saying this one needs a primary key, because if you go into urls.py,
- the forum create demands a parameter.
- And so we're feeding it.
- But you can also feed that in in a reverse.
- And you do it with this funky format.
- I wish that was by position, but no, it's not.
- It's args keyword, and it's sending in a list of variables.
- And the variable is the primary key, which is the number, which is this 3.
- So redirecting to forum/forum/3, and that's where the 3 comes from.
- OK, so the only thing to look at next is what happens when I hit the Delete button.
+ It is the same concept as what we've seen all along where we have like a forum ID inside
+ a second parameter to the URL because the reverse in this URL thing, I wish they'd call
+ this reverse because that's what it's doing the URL is just kind of a wrapper for reverse.
+ Well this is the two parameter form.
+ So we have a one parameter form of URL which is this one which says go URL forums colon
+ all, says give me the URL to the view that is named all within forums.
+ Here I'm saying URL forums forum create forum ID.
+ This is saying this one needs a primary key because if you go into urls.py the forum create
+ demands a parameter and so we're feeding it but you can also feed that in in a reverse
+ and you do it with this funky format.
+ I wish that was by position but no it's not.
+ You have this args keyword and it's sending in a list of variables and the variable is
+ the primary key which is the number which is this three.
+ So redirecting to forum slash forum slash three and that's where the three comes from.
+ Okay.
+ So the only thing to look at next is what happens when I hit the delete button.
  So let's take a look at the detail page.
- So remember that we cannot delete in a get, but we have to delete in a post.
- OK, so in here, I am not-- this is the trash can.
- The trash can's not going to do the deleting.
- The trash can is going to link to forums/comment/delete with comment ID.
- So there's this number 3, but each of these comments has a comment ID.
- So let's just inspect.
- You can see in the bottom, it's comment 7.
- This one is comment 4.
- So that is the comment ID.
- Because we're looping in this code, we are looping through for comment and comments.
- So each comment has the primary key.
- So with all that, I am just going to click on it.
- And of course, we're going to have a verification page that turns the get into a post, in a sense.
- I mean, it's just a page.
- And so we've gone to comment/delete view.
- So forums/comment 7 delete.
- And if you look at the urls.py, forums/comment 7 delete.
- And we give it a name, and we're going to rope through to comment/delete view.
- So if we take a look at our comment/delete view, well, what's pretty cool is that we can mostly use owner/delete view.
- Because by now, we know that we're in the comment model.
- The template we're going to work with is comment/delete, which is pretty straightforward.
- So it's going to go find.
- And so you'll notice we don't have a get in here.
- We don't have a post in here.
- And that's because we're inheriting all that from owner/delete view.
- The owner/delete view.
- Now, the only thing we're overriding is the get of the success url.
- Because the success url, when we're all done, we want to go back to the forum.
- Not 7, but 3.
- See how we're going to go back to forum 3?
- And it looks like that just went away.
- And so the success url actually needs to be computed based on the current forum.
- And so we are overriding the get success url, which is part--
- not exactly of owner/delete view, but the models, the generic delete view.
- We are returning a string.
- And if you go and you read, self.object.forum-- self.object points to the current comment.
- So if this is-- we're in the middle of comment/for/delete.
- While we're running in this view, self.object is the comment.
- That's number 4, comment number 4.
- But comment number 4.forum is the primary key of the forum that this object belonged to.
- By the time-- oops.
- By the time we're here getting the success url, it's actually been deleted.
- But we still have an in-memory copy of it.
- So we're going to go to the forum's deep-- oh, no, no, no.
- I do not intend-- where was I?
- Dragging it by mistake, trying to highlight it.
- So it's been deleted, but we have it sitting here in the memory.
- And so we can get its former primary key-- we can get the forum's primary key.
- Object doesn't exist in the database anymore, but the memory copy does.
- And so we know what that number is.
- So then we go to this fancy reverse again with a parameter.
- And so that's how we get back.
- Let's see what happens in the cancel.
- Cancel, cancel-- oh, so it's the cancel, right.
- So the cancel does this.
- The cancel generates the url, forum detail, with a comment, which is the current object,
- and then a foreign key and a forum, and the primary key of the forum.
- So comment forum ID is what generates this url.
- And there is that url.
- It goes back to the forum detail page.
- So if I go cancel, it goes back to the right page.
- And that's because comment, you're walking the foreign key in this particular situation.
- So I think that we pretty much have covered everything.
- Just check the views.
- Yeah, we've covered pretty much everything that's unique in this particular bit of code.
- And again, the new part here is to have a connector model and then have a many-to-many field.
- The rest of this is very much similar to many of the other things that we have talked about.
- So I hope this has been helpful to you.
- And now you can start playing with many-to-many kinds of connections.
- Cheers.
+ So remember that we cannot delete in a get but we have to delete in a post.
+ So in here I am not, this is the trash can.
+ The trash can is not going to do the deleting.
+ The trash can is going to link to forums comment delete with comment ID.
+ So there's this number three but each of these comments has a comment ID.
+ So let's just inspect this is you can see in the bottom it's comment seven.
+ This one is comment four.
+ So that is the comment ID because we're looping in this code we are looping through for comment
+ and comments so each comment has the primary key.
+ So with all that I am just going to click on it and of course we're going to have a
+ verification page that turns the get into a post in a sense.
+ I mean it's just a page and so we've gone to comment delete view so forums comment seven
+ delete and if you look at the urls.py forums comment seven delete and we give it a name
+ and we're going to rope through to comment delete view so if we take a look at our comment
+ delete view well what's pretty cool is that we can mostly use owner delete view because
+ by now we know it the object we know that we're in the comment model the template we're
+ going to work with is comment delete which is pretty straightforward.
+ So it's going to go find and so you'll notice we don't have a get in here we don't have
+ a post in here and that's because we're inheriting all that from owner delete view you the owner
+ delete view now the only thing we're overriding is the get of the success url because the
+ success url when we're all done we want to go back to the forum not seven but three see
+ how we're going to go back to form three and it looks like that just went away and so the
+ success url is actually needs to be computed based on the current forum and so we are overriding
+ the get success url which is part not exactly of owner delete view but the models the generic
+ delete view we are returning a string and if you go and you read self.object.forum self.object
+ points to the current comment so if this is we're in the middle of comment for delete
+ while we're running in this view self.object is the comment right that's number four comment
+ number four but comment number four.forum is the primary key of the forum that this
+ object belonged to by the time oops by the time we're here getting the success url it's
+ actually been deleted but we still have a in memory copy of it so we're going to go
+ to the forums I do not intend dragging it by mistake trying to highlight it right so
+ it's been deleted but we have it sitting here in the memory and so we can get its former
+ primary key but we can get the forums primary key object doesn't exist in the database anymore
+ but the memory copy does and so we know what that number is so then we go to this fancy
+ reverse again with a parameter and so that's how we get back let's see what happens in
+ the cancel cancel cancel oh so it's the cancel right so the cancel does this the cancel generates
+ the url forum detail with a comment which is the current object and then a foreign key
+ into forum and the primary key of the forum so comment forum id is what generates this
+ url and there is that url it goes back to the forum detail page so if i go cancel it
+ goes back to the right page and that's because comment you can walk you're walking the foreign
+ key in this particular situation so i think that we pretty much have covered everything
+ just check the views yeah we've covered pretty much everything that's unique in this particular
+ bit of code and again the new part here is to have a connector model and then have a
+ many-to-many field the rest of this is very much similar to many of the other things that
+ we have talked about so i hope this has been helpful to you and now you can start playing
+ with many-to-many kinds of connections cheers

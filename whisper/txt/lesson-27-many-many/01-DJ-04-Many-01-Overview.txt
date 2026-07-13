@@ -1,64 +1,84 @@
- so now we're in the second half of our data modeling exploration we've talked
- about one-to-many and now we're going to talk about many-to-many just to remember
- we are in the in the bowels of a of a Django application and we're really very
- much talking about the model.py file and how we mess with that we're talking a
- little bit about the shell and how we can sort of look at the model.py and
- store stuff in the database how we can like migrate make migrations and update
- the database and and then read and write data from the database through the
- models and so this we're sort of narrowing in eventually we're going to
- see all the rest of the Django application the views the forms the
- templates and done a little bit with routing and a little bit with admin but
- just remember that we're going to look at each of these pieces in turn and
- eventually make some sense out of them so in this data model which I think is a
- really cool data model because it shows a two one-to-many relationships and a and
- two many-to-many relationships one very simple and one a little bit more complex
- both the genre and the author are example of one-to-many and just sort of
- foreshadowing see the one dot dot asterisk there on both ends of the links
- well that basically says one or more up to an infinite the other ones zero dot
- dot the lines kind of covering it zero or more and one or more so the one to
- many has one on the one side sometimes it has zero on or one but one on one
- side and then zero dot dot star or one dot dot star so many to many is a
- different kind of creature so remember how in the last modeling exercise I
- kind of you'll notice I showed you genre and author and then I kind of stopped
- talking about them I only talked about language and book instance so in this
- one we're going to talk about genre and author and that's because genre and
- author are kind of problematic because really each book can have multiple
- authors and each each book can be multiple genres and so in that previous
- lecture I kept these really simple and and you see this syntax here where I'm
- just kind of making a spreadsheet or another way to be thinking about it'd be
- a single single wide table with all my data in one table but I'm starting to
- put commas in and so when you have commas in a user interface you think of
- this as perhaps a multi select where you have a list of things and you can
- highlight more than one of those things and so anytime you sort of see this
- pattern it's another form of replication and that is that the Raspberry Pi book
- can be of the tech genre and the kids genre and the wizard stay up late book
- can be of the tech genre and the thinking genre right some books have one
- genre some books have two genres some books have one author some have two but
- then the problem is is they might have ten authors or twenty authors and so how
- do we represent these things and and if you're sort of looking at either a UI or
- or sort of a UI or just kind of a flat data table you start seeing these commas
- and as soon as you see the commas you think to yourself that is an indicator
- that this might be a many-to-many relationship so if this were a one to
- one to many not one to one this was a one to many this was a one to many
- relationship sort of like what we did with languages we would have a book and
- that would have a genre foreign key in it that would point to a row in a genre
- table and that would make some sense right but that doesn't make sense
- because we have to have genres more than one and we you could basically decide
- for your application developers that you can't have more than one genre but the
- application developers would say sorry we're librarians and we know that
- there's more than one genre so you the programmer have got to come up with a
- data model that represents that and so if this was a one to many you could have
- like a genre ID and each book would be able to pick a row out of the genre and
- so they would sort of mark themselves now this is another moment where it's a
- warning sign and you're like well maybe we would just have two foreign keys and
- we just how about books are only allowed to have two genres you know maybe one's
- not enough but two's enough oh man let's make it three and so in and people who
- are doing data modeling earlier early in their career they were like yeah I'll
- just make a genre ID oh one genre ID oh two and then later like genre ID oh three
- and away you go and this is completely wrong because genres of course is a weird
- example but if it's authors there are plenty of books with eight or nine ten
- eleven authors right and so this when you see yourself thinking this in your
- head that like oh I'll just add a like an array of things here no and and it it
- has to do with it it violates the basic notion of relations and connections and
- how you model stuff to the extent that you can with connections and so that
- leads us to what's called the many to many
+ So now we're in the second half of our data modeling exploration.
+ We've talked about one to many and
+ now we're going to talk about many to many.
+ Just to remember, we are in the bowels of a django application and
+ we're really very much talking about the model.py file and how we mess with that.
+ We're talking a little bit about the shell and
+ how we can sort of look at the model.py and store stuff in the database.
+ How we can like migrate, make migrations and update the database and
+ then read and write data from the database through the models.
+ And so, this, we're sort of narrowing in eventually.
+ We're gonna see all the rest of the django application, the views,
+ the forms, the templates.
+ And we've done a little bit with routing and a little bit with admin.
+ But just remember that we're gonna look at each of these pieces in turn and
+ eventually make some sense out of them.
+ So, in this data model, which I think is a really cool data model because
+ it shows two one to many relationships and two many to many relationships.
+ One very simple and one a little bit more complex.
+ Both the genre and the author are example of one to many.
+ And just sort of foreshadowing, see the one dot dot asterisk there?
+ On both ends of the links, well that basically says one or more.
+ Up to an infinite, the other one's zero dot dot, the line's kind of covering it.
+ Zero or more and one or more.
+ So the one to many has one on one side, sometimes it has zero or one.
+ But one on one side and then zero dot dot star or one dot dot star.
+ So many to many is a different kind of creature.
+ So remember how in the last modeling exercise, I kinda, you'll notice,
+ I showed you genre and author and then I kinda stopped talking about them.
+ I only talked about language and book instance.
+ So in this one, we're gonna talk about genre and author.
+ And that's because genre and author are kinda problematic.
+ Cuz really, each book can have multiple authors.
+ And each book can be multiple genres.
+ And so, in that previous lecture, I kept these really simple.
+ And you see this syntax here where I'm just kinda making a spreadsheet.
+ Or another way to be thinking about it would be a single, single wide table with
+ all my data in one table, but I'm starting to put commas in.
+ And so when you have commas in a user interface,
+ you think of this as perhaps a multi-select, where you have a list of things and
+ you can highlight more than one of those things.
+ And so anytime you sort of see this pattern, it's another form of replication.
+ And that is that the Raspberry Pi book can be of the tech genre and
+ the kids genre, and the wizard stay up late book can be of the tech genre and
+ the thinking genre, right?
+ Some books have one genre, some books have two genres,
+ some books have one author, some have two.
+ But then the problem is they might have ten authors or 20 authors.
+ And so how do we represent these things?
+ And if you're sort of looking at either a UI or sort of a UI or
+ just kind of a flat data table, you start seeing these commas.
+ And as soon as you see the commas, you think to yourself,
+ that is an indicator that this might be a many-to-many relationship.
+ So if this were a one-to-many, not one-to-one, this was a one-to-many.
+ This was a one-to-many relationship, sort of like what we did with languages.
+ We would have a book and that would have a genre foreign key in it that would point
+ to a row and a genre table, and that would make some sense, right?
+ But that doesn't make sense because we have to have genres more than one.
+ You could basically decide for
+ your application developers that you can't have more than one genre.
+ But the application developers would say, sorry, we're librarians.
+ And we know that there's more than one genre.
+ So you, the programmer,
+ have got to come up with a data model that represents that.
+ And so if this was a one-to-many, you could have like a genre ID and
+ each book would be able to pick a row out of the genre, and
+ so they would sort of mark themselves.
+ Now, this is another moment where it's a warning sign.
+ And you're like, well, maybe we would just have two foreign keys.
+ And we just, how about books are only allowed to have two genres, you know?
+ Maybe one's not enough, but two's enough.
+ Oh, man, let's make it three.
+ And so, and people who are doing data modeling earlier, early in their career,
+ they were like, yeah, I'll just make a genre ID01, genre ID02, and
+ then later like genre ID03, and away you go.
+ And this is completely wrong.
+ Because genres, of course, is a weird example.
+ But if it's authors, there are plenty of books with 8 or 9, 10, 11 authors, right?
+ And so this, when you see yourself thinking this in your head,
+ it's like, I'll just add like an array of things here.
+ No, and it has to do with it.
+ It violates the basic notion of relations and connections, and
+ how you model stuff to the extent that you can with connections.
+ And so that leads us to what's called the many to many.
+ [MUSIC]

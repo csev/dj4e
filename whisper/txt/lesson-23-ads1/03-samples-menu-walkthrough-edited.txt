@@ -2,138 +2,171 @@
  In this one, we're going to play with the Bootstrap menu.
  So what's a Bootstrap menu?
  A Bootstrap menu is a common bit that's going to be on a whole different set of pages.
- So in this particular menu, we're going to have like a page one, a page two, a page three inside of a dropdown,
- and then we have kind of like a login dropdown. I'm already logged in. I'll log out.
- And then it switches when I'm logged in. When I'm logged in, it shows my Gravatar.
- When I want to log in, I'll log in at CSEV.
- Actually, I think, let's call this DJ Free, I think will work. Yeah.
- So that shows a little picture based on your email address, and so I'll show you how all these things work.
- But again, we're talking multiple pages. Now, the couple things you'll see is we are changing the highlight of this.
- And so if I was to do a view source, these are completely different pages.
- And what you see is on the highlighted one, page two is the highlighted one.
- I have a list tag for page one and then a list tag class equals active for page two.
- And that's what makes this highlighted. So these are different pages.
- So in this menu, we have to know what current page we're on so we can look at the request path.
- It's page two. So we know to put active on the page two one.
+ So in this particular menu, we're going to have like a page one, a page two, a page three
+ inside of a dropdown, and then we have kind of like a login dropdown, I'm already logged
+ in, I'll log out, and then it switches when I'm logged in.
+ When I'm logged in, it shows my Gravatar.
+ When I want to log in, I'll log in as csev, djfree, 42, exclamation, come on, actually
+ I think, let's call this djfree, I think will work.
+ Yeah, so that shows a little picture based on your email address, and so I'll show you
+ how all these things work.
+ But again, we're talking multiple pages.
+ Now the couple things you'll see is we are changing the highlight of this, and so if
+ I was to do a View Source, these are completely different pages.
+ And what you see is on the highlighted one, page two is the highlighted one, I have a
+ list tag for page one, and then a list tag class equals active for page two, and that's
+ what makes this highlighted.
+ So these are different pages.
+ So in this menu we have to know what current page we're on, so we can look at the request
+ path, it's page two, so we know to put active on the page two one.
  So there'll be some logic inside this navigation bar.
- So let's take a look at some of the code. So I'm really going to do this all in templates.
- So you see I'm using template view in the urls.py and I just have I've got three pages that are all going to render the menu,
- main menu slash main menu HTML. And so there's nothing in the views of any importance because I just got template view that I'm using.
+ So let's take a look at some of the code.
+ So I'm really gonna do this all in templates.
+ So you see I'm using template view in the urls.py, and I just have, I've got three pages
+ that are all gonna render the menu, menu/mainmenuhtml, and so there's nothing in the views of any
+ importance because I just got template view that I'm using.
  So let's take a quick look at the actual menu.
- So it's really quite simple because one of the things you're going to do is you're going to have these pages and lots of them.
- So you don't want all of this HTML that's needed for this header sitting in every one of the pages.
- So we will use the extends mechanism in a template to say, oh, let's go and grab base menu dot HTML and start with that.
- So we've been working with base bootstrap and bootstrap uses all kinds of pages, but it doesn't have a menu.
- And it has areas that you can replace. We've been working with base bootstrap for a while, but now we want to do the menu.
- So what we're going to see is instead of extending base bootstrap, we're going to extend base menu.
- And that's our own local file. So you'll note that base menu extends base bootstrap.
- And this is the same base bootstrap we've been using all along.
- And what it basically does, this app tags, we'll talk about that in a second. That's how the Gravatar works.
- It is going to override this nav bar block. And you'll see that this goes all the way down.
- That's just one big nav tag. And so the nav bar comes in right here, right after we say div class equals container.
- And then we have this welcome. We have these flash messages, area for flash alerts. Those are the messages that say congratulations, you added a file.
- Congratulations, you deleted a file. And then the block content and then the end of this container div.
- So block content is what we're going to override here. And a block nav bar is what we're overriding in menu.
- So this is, so block nav bar is being overwritten. So we have one template that extends another template that extends another template.
- And so we're, just like any kind of object oriented, we're sort of specializing and further specializing and further specializing.
- So bootstrap can be used with or without a menu. But then once we add the menu to base bootstrap, then we have base menu.
- So this is the top part of the page. And every page simply extends base menu and then puts whatever content it is.
- It says just I would like a menu here. So let's take a look at the menu.
- So the first thing you do is you go, I'm using bootstrap. So if you go read up on bootstrap, it'll tell you this is how you make a menu.
- And it tells you how to use the nav tag and what classes to put on the nav tag, how the container works and the header and the brand and all these little classes.
- I didn't make this up. This is what bootstrap said. This is how bootstrap makes it pretty and dark and curvy little things and they all line up nice, et cetera, et cetera.
- So I had to read that. And so this pretty much is taken straight from some sample code, except for one little thing.
- And that is the mechanism by which I on different pages can highlight which page I'm on, which is a very common something you want to do in menus.
- And so we have a UL tag. And the UL tag is this list of things. And then you have an LI.
- And what we're doing here, this is a weird little bit of Django template language.
- We are causing the URL function to be called with a parameter of menu colon main to give us a path.
- So menu colon main is slash menu. If you look at URLs, it's menu colon main is this view.
- And it's the path that's just slash menu. And so this is like an assignment statement in the Django template language.
- And it leaves the value in XYZ. And now what I'm going to do is I want to put an if statement in.
- All these if statements have been multi-lined, but you don't have to make a multi-line. That is an if statement.
- If request.getFullPath is equal to XYZ, the variable I just computed, then emit class equals active.
- Otherwise, emit nothing. So again, now if we take a look at the source code, review the source of this,
- the source of the menu, we scroll down, we will see that the home has a class of active and the other ones do not have a class of active.
- And that's why home has this little extra dark box, just to give a little clue to our user that that's the one that we're working with.
- And so this little pattern is repeated over and over to see if we're on page one, if we're on page two.
- Then we do the construct the dropdown. And the dropdown is just, again, this comes straight from the bootstrap, right?
- And so we have the dropdown, we have another URL, we have a little page three link here and it shows up.
- And this is just the text to make a cool dropdown. And that's just bootstrap.
- Now we have a left, we have a list that is the left side of the nav bar and now we're starting on the right side of the nav bar,
- which is also an unnumbered list. So this is cool. So we basically have two versions.
- One is if the user is authenticated and then else if the user is not authenticated.
- So if the user is not authenticated, let's go ahead and log out here, if the user is not authenticated,
- we are just going to calculate a URL to the login page, which is slash account slash login.
- Let's pass a next to say come back here, right? Now, you know, come back to the main menu.
- So if you go to login, it will say next equals and it's come back here, right?
- And so that you construct that and you pass that login in.
- So I can do DJ free and I can log in and it will come back to the main menu, even though I clicked on it over here.
- OK, but now we're in this page. And in this case, user dot is authenticated is true.
- So we're going to construct a dropdown.
- And this shows the dropdown and takes the dropdown out.
- Here's here. Oh, and we're going to in the dropdown, we're going to say log out.
- But in the page, right. So this is the dropdown menu.
- So that's the menu within the dropdown that we turn on and off with a with a carrot.
- But here's the Gravatar. So this is an image tag source equals.
- And then we have oops, oops, oops, undo that.
- Then we have a double curly brace user piped through Gravatar with a size of 60, 60 pixel Gravatar.
- OK, so that is making this little image.
- So if we do it, let's do a quick inspect on that image.
- Inspect. OK, let's do just do resource this image is double Gravatar dot com.
- Avatar slash this long thing. OK.
- And if you go read on Avatar, Gravatar is a service.
- It's actually a Google service that you register your email.
- And this here is a hash of your email.
- And then that looks up and then gives you back this little URL.
- So if I was to take this URL right here, don't do that.
- I take this URL, put it HTTPS colon slash slash.
- It shows a little tiny picture of me.
- Right shows a little tiny picture of me.
- But the question is, how did this get generated?
- It got generated by passing the user object, which is the same as user that is authenticated,
- except I'm piping it through a tag that I invented called Gravatar.
- And again, this is code that is going to run just kind of like this URL code or whoever.
- Whatever these things are. Right.
- So what we have is we have a thing where we've loaded these app tags.
- OK, and so app tags are tags that we as developers can create.
- And then we can do things in it.
+ So it's really quite simple because one of the things you're gonna do is you're gonna
+ have these pages and lots of them, so you don't want all of this HTML that's needed
+ for this header sitting in every one of the pages.
+ So we will use the extends mechanism in a template to say, oh, let's go and grab basemenu.html
+ and start with that.
+ So we've been working with base bootstrap, and bootstrap uses all kinds of pages but
+ it doesn't have a menu, and it has areas that you can replace.
+ We've been working with base bootstrap for a while, but now we want to do the menu.
+ So what we're going to see is instead of extending base bootstrap, we're gonna extend basemenu,
+ and that's our own local file.
+ So you'll note that basemenu extends base bootstrap, and this is the same base bootstrap
+ we've been using all along.
+ And what it basically does, this app tags, we'll talk about that in a second, that's
+ how the Gravatar works, it is going to override this navbar block, and you'll see that this
+ goes all the way down, that's just one big nav tag.
+ And so the navbar comes in right here, right after we say div class equals container, and
+ then we have this welcome, we have these flash messages, area for flash alerts, those are
+ the messages that say congratulations, you added a file, congratulations, you deleted
+ a file.
+ And then the block content, and then the end of this container div.
+ So block content is what we're going to override here, and the block navbar is what we're overriding
+ in menu.
+ So block navbar is being overwritten.
+ So we have one template that extends another template that extends another template, and
+ so we're, just like any kind of object-oriented, we're sort of specializing and further specializing
+ and further specializing.
+ So bootstrap can be used with or without a menu, but then once we add the menu to base
+ bootstrap, then we have basemenu.
+ So this is the top part of the page, and every page simply extends basemenu, and then puts
+ whatever content it is, it says just, I would like a menu here.
+ So let's take a look at the menu.
+ So the first thing you do is you go, I'm using bootstrap.
+ So if you go read up on bootstrap, it'll tell you this is how you make a menu, and it tells
+ you how to use the nav tag, and what classes to put on the nav tag, how the container works,
+ and the header, and the brand, and all these little classes.
+ I didn't make this up.
+ This is what bootstrap said.
+ This is how bootstrap makes it pretty and dark and curvy little things, and they all
+ line up nice, et cetera, et cetera.
+ So I had to read that, and so this pretty much is taken straight from some sample code
+ except for one little thing, and that is the mechanism by which I, on different pages,
+ can highlight which page I'm on, which is a very common, something you wanna do in menus.
+ And so we have a UL tag, and the UL tag is this list of things, and then you have an
+ li, and what we're doing here, this is a weird little bit of Django template language.
+ We are causing the URL function to be called with a parameter of menu colon main to give
+ us a path, so boop, right?
+ Menu colon main is slash menu.
+ If you look at URLs, it's menu colon main is this view, and it's the path that's just
+ slash menu.
+ And so this is like an assignment statement in the Django template language, and it leaves
+ the value in x, y, z.
+ And now what I'm going to do is I'm gonna put an if statement in, and all these if statements
+ have been multi-lined, but you don't have to make a multi-line.
+ That is an if statement.
+ If request.getFullPath is equal to x, y, z, the variable I just computed, then emit class
+ equals active.
+ Otherwise, emit nothing.
+ So again, now if we take a look at the source code, review the source of this, view the
+ source of the menu, and we scroll down, we will see that the home has a class of active,
+ and the other ones do not have a class of active.
+ And that's why home has this little extra dark box, just to give a little clue to our
+ user that that's the one that we're working with.
+ And so this little pattern is repeated over and over to see if we're on page one, if we're
+ on page two, and then we do the construct the dropdown, and the dropdown is just, again,
+ this comes straight from the bootstrap, right?
+ And so we have the dropdown, we have another URL, we have a little page three link here,
+ and it shows up, and this is just the text to make a cool dropdown, okay?
+ And that's just bootstrap.
+ Now we have a left, we have a list that is the left side of the nav bar, and now we're
+ starting on the right side of the nav bar, which is also an unnumbered list.
+ So this is cool.
+ So we basically have two versions.
+ One is if the user is authenticated, and then else, if the user is not authenticated.
+ So if the user is not authenticated, let's go ahead and log out here, if the user is
+ not authenticated, we are just going to calculate a URL to the login page, which is /account/login.
+ Let's pass a next to say, "Come back here," right?
+ Now come back to the main menu.
+ So if you go to login, it will say next equals, and it's come back here, right?
+ And so that, you construct that and you pass that login in.
+ So I can do dj free, and I can log in, and it will come back to the main menu, even though
+ I clicked on it over here, okay?
+ But now we're in this page, and in this case, user.isAuthenticated is true.
+ So we're going to construct a drop down, and then this shows the drop down and takes the
+ drop down out.
+ In the drop down, we're going to say log out, but in the page, right?
+ So this is the drop down menu, so that's the menu within the drop down that we turn on
+ and off with a carrot, but here's the Gravatar.
+ So this is an image tag, source equals, and then we have, oops, oops, oops, undo that.
+ Then we have a double curly brace user piped through Gravatar with a size of 60, 60 pixel
+ Gravatar.
+ Okay, so that is making this little image, so if we do it, let's do a quick inspect on
+ that image.
+ Inspect, okay, let's do, just do view source.
+ This image is www.gravatar.com/avatar/thislongthing, okay?
+ And if you go read on avatar, Gravatar is a service, it's actually a Google service
+ that you register your email, and this here is a hash of your email, and then that looks
+ up and then gives you back this little URL.
+ So if I was to take this URL right here, oh, don't do that, just ask what I want, I take
+ this URL and I put it, HTTPS colon slash slash, it shows a little tiny picture of me, right?
+ It shows a little tiny picture of me, but the question is how did this get generated?
+ It got generated by passing the user object, which is the same as user.is authenticated,
+ except I'm piping it through a tag that I invented called Gravatar, and again, this
+ is code that is going to run, just kind of like this URL code or whoever, whatever these
+ things are, right?
+ So what we have is we have a thing where we've loaded these app tags, okay?
+ And so app tags are tags that we as developers can create, and then we can do things in it.
  So here's what's in app tags.
  So this is how you make a Gravatar.
- You take the user's email, you strip it, throw away any white space, you convert it to lowercase,
- you encode it in UTF-8, and then you use the MD5, which is a hashing function, and make a hex digest.
- And that hex digest, this is an MD5, this long ugly string 2D0A2F51.
- That is a one-way hash of the email address.
- And if you go put that in to a thing, then if you know it,
- so that you can't figure out a person's email address from their Gravatar,
- but you can from an email address figure out what the Gravatar is.
+ You take the user's email, you strip it, throw away any white space, you convert it to lower
+ case, you encode it in UTF-8, and then you use the MD5, which is a hashing function,
+ and make a hex digest, and that hex digest, this is an MD5, this long ugly string 2D0A2F51,
+ that is a one-way hash of the email address.
+ And if you go put that in to a thing, then if you know it, so that you can't figure out
+ a person's email address from their Gravatar, but you can from an email address figure out
+ what the Gravatar is.
  So this is not actually revealing the person's email address.
  So that's why we're using a one-way hash, an MD5 of the email address.
- And then I just construct the URL, put the hash in the right place, put the size, that 60 parameter.
- If you take a look, where are we at?
+ And then I just construct the URL, put the hash in the right place, put the size, that
+ 60 parameter, if you take a look, where are we at?
  This colon 60 is the second parameter to this code we wrote, so that 60 is size.
  So that's why it says 60 right there, S equals 60 right there.
- And then I'm going to use the format, and I'll put the hash in and the size in,
- and I'm going to turn that as a string, and that goes all the way back here,
- and then replaces this double curly brace.
+ And then I'm going to use the format, I'm going to use format, and I'll put the hash
+ in and the size in, and I'm going to turn that as a string, and that goes all the way
+ back here, and then replaces this double curly brace.
  So all those double curly braces and piping, that's just code somebody wrote.
- In this case, the Gravatar code is code that I wrote and we wrote, or you could write.
- And that produces this URL, so it's a convenient way to put that URL in there.
- And it's really pretty, and it works out very cool.
- So you write this code, and it's in home, template tags, aptags.py.
- And then you basically have to load it in your menu, where are we at?
- You have to go get aptags, and away you go.
- So that sums up how you can make a nice bootstrap menu
- and put it on your page through an extension mechanism.
+ In this case, the Gravatar code is code that I wrote, and we wrote, or you could write.
+ And that produces this URL.
+ So it's a convenient way to put that URL in there, and it's really pretty, and it works
+ out very cool.
+ So you write this code, and it's in home, template tags, aptags.py, and then you basically
+ have to load it in your menu, where are we at?
+ And you have to go get aptags, and away you go.
+ So that sums up how you can make a nice bootstrap menu and put it on your page through an extension
+ menu, an extension mechanism.
  So we're going to extend it, and then boom, you make a page.
  Then you extend it again, and that puts it on the next page.
- So it's pretty easy, it's pretty straightforward.
- There's a lot of HTML, but luckily I hand that to you in the dj4e-samples,
- and you're not going to have to modify that.
+ So it's pretty easy, it's pretty straightforward, there's a lot of HTML, but luckily I hand
+ that to you in the DJ Free Samples, and you're not going to have to modify that.
  It'll pretty much just work.
- You'll change what's in the menu.
- You'll be like putting different things in as the links and stuff.
- So you'll be working with this, but in general, most of the hard work is done.
- And as always, you can take a look at dj4e-samples,
- just like we always do for inspiration.
- I hope you found this helpful.
- Cheers.
+ You'll change what's in the menu, you'll be like putting different things in as the
+ links and stuff, so you'll be working with this.
+ But in general, most of the hard work is done, and as always, you can take a look at DJ Free
+ Samples, just like we always do for inspiration.
+ So I hope you found this helpful, cheers.

@@ -1,14 +1,14 @@
 1
-00:00:00,000 --> 00:00:02,180
- So now we're gonna take a look at what we do with Django
+00:00:00,000 --> 00:00:02,200
+ So, now we're gonna take a look at what we do with Django
 
 2
-00:00:02,180 --> 00:00:06,800
+00:00:02,200 --> 00:00:06,800
  to handle logging users into and out of our application.
 
 3
 00:00:06,800 --> 00:00:09,080
- So just, we talked about sessions recently
+ So, just, we talked about sessions recently,
 
 4
 00:00:09,080 --> 00:00:12,320
@@ -20,11 +20,11 @@
 
 6
 00:00:15,400 --> 00:00:18,760
- Logging in, in general, the most basic way of logging in
+ Logging in, in general, the most basic way of logging in,
 
 7
 00:00:18,760 --> 00:00:20,960
- depends on the existence of a session
+ depends on the existence of a session,
 
 8
 00:00:20,960 --> 00:00:23,160
@@ -32,7 +32,7 @@
 
 9
 00:00:23,160 --> 00:00:25,520
- about the current user and their name and their email
+ about the current user and their name and their email,
 
 10
 00:00:25,520 --> 00:00:27,200
@@ -43,31 +43,31 @@
  In the session, you could have multiple users
 
 12
-00:00:29,520 --> 00:00:30,920
+00:00:29,520 --> 00:00:30,960
  log in with one user, log out.
 
 13
-00:00:30,920 --> 00:00:33,020
+00:00:30,960 --> 00:00:33,000
  Log in with a different user, log out.
 
 14
-00:00:33,020 --> 00:00:34,440
+00:00:33,000 --> 00:00:34,440
  If you're just in the same browser,
 
 15
-00:00:34,440 --> 00:00:35,940
- you're gonna end up with the same session
+00:00:34,440 --> 00:00:35,960
+ you're gonna end up with the same session,
 
 16
-00:00:35,940 --> 00:00:37,640
+00:00:35,960 --> 00:00:37,640
  just associated with different users.
 
 17
-00:00:37,640 --> 00:00:41,380
- So remember, sessions and login are not the same thing.
+00:00:37,640 --> 00:00:41,400
+ So, remember, sessions and login are not the same thing.
 
 18
-00:00:41,380 --> 00:00:43,400
+00:00:41,400 --> 00:00:43,400
  Just like cookies and sessions are not the same thing,
 
 19
@@ -79,16 +79,16 @@
  But they all build on each other.
 
 21
-00:00:47,200 --> 00:00:50,540
- Sessions build on cookies and login builds on sessions.
+00:00:47,200 --> 00:00:50,520
+ Sessions build on cookies, and login builds on sessions.
 
 22
-00:00:50,540 --> 00:00:53,560
- So to make this all work,
+00:00:50,520 --> 00:00:53,560
+ So, to make this all work,
 
 23
 00:00:53,560 --> 00:00:55,360
- you have to add to your installed apps
+ you have to add to your installed apps,
 
 24
 00:00:55,360 --> 00:00:59,720
@@ -96,39 +96,39 @@
 
 25
 00:00:59,720 --> 00:01:03,240
- Now if you automatically built your project
+ Now, if you automatically built your project
 
 26
 00:01:03,240 --> 00:01:04,680
  and you've got a settings.py
 
 27
-00:01:04,680 --> 00:01:06,900
+00:01:04,680 --> 00:01:06,880
  that they're gonna just put this in automatically.
 
 28
-00:01:06,900 --> 00:01:09,700
- So this is just so you know when you're looking at it
+00:01:06,880 --> 00:01:09,720
+ So, this is just so you know when you're looking at it,
 
 29
-00:01:09,700 --> 00:01:12,580
+00:01:09,720 --> 00:01:12,560
  where it is that all this magic functionality comes from.
 
 30
-00:01:12,580 --> 00:01:14,740
+00:01:12,560 --> 00:01:14,720
  It comes from this installed apps.
 
 31
-00:01:14,740 --> 00:01:17,100
- Also for the login and log out,
+00:01:14,720 --> 00:01:17,080
+ Also, for the login and log out,
 
 32
-00:01:17,100 --> 00:01:20,420
- you're gonna have to add a path to your project wide.
+00:01:17,080 --> 00:01:20,400
+ you're gonna have to add a path to your project-wide.
 
 33
-00:01:20,420 --> 00:01:24,000
- So dj4esamples, dj4esamples, urls.py.
+00:01:20,400 --> 00:01:24,000
+ So, dj4esamples, dj4esamples, urls.py.
 
 34
 00:01:24,000 --> 00:01:25,680
@@ -139,12 +139,12 @@
  This is in your Django project.
 
 36
-00:01:27,400 --> 00:01:30,660
- And you add a path and there's a bunch of urls
+00:01:27,400 --> 00:01:30,640
+ And you add a path, and there's a bunch of urls,
 
 37
-00:01:30,660 --> 00:01:31,960
- and that gets all registered
+00:01:30,640 --> 00:01:31,960
+ and that gets all registered,
 
 38
 00:01:31,960 --> 00:01:34,880
@@ -152,545 +152,553 @@
 
 39
 00:01:34,880 --> 00:01:38,600
- And so that's how these urls are activated
+ And so, that's how these urls are activated
 
 40
-00:01:38,600 --> 00:01:42,220
+00:01:38,600 --> 00:01:42,200
  in your Django project.
 
 41
-00:01:42,220 --> 00:01:43,940
- So the applications.
+00:01:42,200 --> 00:01:43,960
+ So, the applications.
 
 42
-00:01:43,940 --> 00:01:48,940
- So the way we get the urls to the login and log out features
+00:01:43,960 --> 00:01:48,960
+ So, the way we get the urls to the login and log out features
 
 43
-00:01:48,940 --> 00:01:51,580
+00:01:48,960 --> 00:01:51,560
  is we use the reverse.
 
 44
-00:01:51,580 --> 00:01:53,540
+00:01:51,560 --> 00:01:53,520
  We've been using reverse all along.
 
 45
-00:01:53,540 --> 00:01:57,780
+00:01:53,520 --> 00:01:57,760
  Reverse is the way we look up for a particular view.
 
 46
-00:01:57,780 --> 00:02:01,500
+00:01:57,760 --> 00:02:01,480
  And in some urls.py, matter of fact,
 
 47
-00:02:01,500 --> 00:02:04,660
+00:02:01,480 --> 00:02:04,640
  in that Django contrib auth urls,
 
 48
-00:02:04,660 --> 00:02:06,940
- in that there is a name equals.
+00:02:04,640 --> 00:02:06,920
+ in that, there is a name equals.
 
 49
-00:02:06,940 --> 00:02:09,020
- And so there's a view in there that they've got
+00:02:06,920 --> 00:02:09,000
+ And so, there's a view in there that they've got
 
 50
-00:02:09,020 --> 00:02:11,340
- that we didn't write and it has a name equals
+00:02:09,000 --> 00:02:11,320
+ that we didn't write, and it has a name equals,
 
 51
-00:02:11,340 --> 00:02:14,100
- and has name equals login and a name equals logout.
+00:02:11,320 --> 00:02:14,080
+ and it has name equals login and a name equals logout.
 
 52
-00:02:14,100 --> 00:02:16,080
- And so we can do a reverse lookup
+00:02:14,080 --> 00:02:16,040
+ And so, we can do a reverse lookup
 
 53
-00:02:16,080 --> 00:02:19,140
+00:02:16,040 --> 00:02:19,120
  like we would have any of our views that we might have.
 
 54
-00:02:19,140 --> 00:02:23,220
- Say what is give me the url in this Django project
+00:02:19,120 --> 00:02:23,200
+ Say, what is, give me the url in this Django project
 
 55
-00:02:23,220 --> 00:02:27,360
+00:02:23,200 --> 00:02:27,320
  for the view named login or the view named logout.
 
 56
-00:02:27,360 --> 00:02:28,200
+00:02:27,320 --> 00:02:28,160
  And it's pretty simple.
 
 57
-00:02:28,200 --> 00:02:29,860
- You could even probably hard code these
+00:02:28,160 --> 00:02:29,840
+ You could even probably hardcode these,
 
 58
-00:02:29,860 --> 00:02:33,260
+00:02:29,840 --> 00:02:33,240
  but maybe the route isn't exactly a count slash, right?
 
 59
-00:02:33,260 --> 00:02:35,520
- And so maybe you call them something else.
+00:02:33,240 --> 00:02:35,480
+ And so, maybe you call them something else.
 
 60
-00:02:35,520 --> 00:02:36,980
- And so that's why we use the reverse
+00:02:35,480 --> 00:02:36,960
+ And so, that's why we use the reverse
 
 61
-00:02:36,980 --> 00:02:38,720
+00:02:36,960 --> 00:02:38,680
  to look these things up.
 
 62
-00:02:38,720 --> 00:02:42,520
- And so that's just a convenient way of doing it.
+00:02:38,680 --> 00:02:42,480
+ And so, that's just a convenient way of doing it.
 
 63
-00:02:42,520 --> 00:02:45,820
+00:02:42,480 --> 00:02:45,760
  Now, one of the things about logging in
 
 64
-00:02:45,820 --> 00:02:48,360
+00:02:45,760 --> 00:02:48,320
  is sometimes you have an application
 
 65
-00:02:48,360 --> 00:02:50,060
- and there's like a login button.
+00:02:48,320 --> 00:02:50,040
+ and there's like a login button,
 
 66
-00:02:50,060 --> 00:02:51,620
- But sometimes you just have pages
+00:02:50,040 --> 00:02:51,600
+ but sometimes you just have pages
 
 67
-00:02:51,620 --> 00:02:53,580
+00:02:51,600 --> 00:02:53,560
  that are protected by login.
 
 68
-00:02:53,580 --> 00:02:56,540
- And then when you go to a page,
+00:02:53,560 --> 00:02:56,480
+ And then, when you go to a page,
 
 69
-00:02:56,540 --> 00:02:58,420
+00:02:56,480 --> 00:02:58,360
  it says, oh wait, you gotta log in first.
 
 70
-00:02:58,420 --> 00:02:59,640
- And then after you log in,
+00:02:58,360 --> 00:02:59,600
+ And then, after you log in,
 
 71
-00:02:59,640 --> 00:03:01,700
- you'll notice it typically just takes you right back
+00:02:59,600 --> 00:03:01,120
+ you'll notice it typically just takes you
 
 72
-00:03:01,700 --> 00:03:03,560
- to the page that you want it to see.
+00:03:01,120 --> 00:03:03,520
+ right back to the page that you want it to see.
 
 73
-00:03:03,560 --> 00:03:07,100
- So you might bookmark a page when you're logged in
+00:03:03,520 --> 00:03:07,080
+ So, you might bookmark a page when you're logged in
 
 74
-00:03:07,100 --> 00:03:09,440
+00:03:07,080 --> 00:03:09,400
  and then you log out and then you click
 
 75
-00:03:09,440 --> 00:03:10,540
- on that bookmark page.
+00:03:09,400 --> 00:03:10,520
+ on that bookmark page,
 
 76
-00:03:10,540 --> 00:03:12,660
- But that requires that you be logged in.
+00:03:10,520 --> 00:03:12,600
+ but that requires that you be logged in.
 
 77
-00:03:12,660 --> 00:03:14,260
- So you're gonna go to the page.
+00:03:12,600 --> 00:03:14,200
+ So, you're gonna go to the page,
 
 78
-00:03:14,260 --> 00:03:16,580
- And then when you're done logging in,
+00:03:14,200 --> 00:03:16,520
+ and then when you're done logging in,
 
 79
-00:03:16,580 --> 00:03:18,180
+00:03:16,520 --> 00:03:18,120
  you wanna come right back to that page.
 
 80
-00:03:18,180 --> 00:03:20,360
- And so that's using redirecting.
+00:03:18,120 --> 00:03:20,320
+ And so, that's using redirecting,
 
 81
-00:03:20,360 --> 00:03:22,620
- But it's redirecting after login is successful
+00:03:20,320 --> 00:03:22,600
+ but it's redirecting after login is successful
 
 82
-00:03:22,620 --> 00:03:25,140
+00:03:22,600 --> 00:03:25,120
  or after logout is successful.
 
 83
-00:03:25,140 --> 00:03:26,820
+00:03:25,120 --> 00:03:26,800
  Logouts are almost always successful.
 
 84
-00:03:26,820 --> 00:03:28,460
- And so there's a parameter that we can add,
+00:03:26,800 --> 00:03:28,400
+ And so, there's a parameter that we can add,
 
 85
-00:03:28,460 --> 00:03:30,020
- a gap parameter that we can add.
+00:03:28,400 --> 00:03:30,000
+ a gap parameter that we can add,
 
 86
-00:03:30,020 --> 00:03:31,220
- And it's the next equals.
+00:03:30,000 --> 00:03:31,200
+ and it's the next equals,
 
 87
-00:03:31,220 --> 00:03:33,280
- And what we do is we give it a path.
+00:03:31,200 --> 00:03:33,240
+ and what we do is we give it a path.
 
 88
-00:03:33,280 --> 00:03:36,780
- And so here's a little bit of code
+00:03:33,240 --> 00:03:36,720
+ And so, here's a little bit of code
 
 89
-00:03:36,780 --> 00:03:39,580
+00:03:36,720 --> 00:03:39,560
  that we're gonna play with in my sample codes
 
 90
-00:03:39,580 --> 00:03:43,540
+00:03:39,560 --> 00:03:43,480
  under the AuthZ application.
 
 91
-00:03:43,540 --> 00:03:44,980
- And so I got a bunch of views
+00:03:43,480 --> 00:03:44,920
+ And so, I got a bunch of views
 
 92
-00:03:44,980 --> 00:03:47,300
- and I'm gonna give them some names
+00:03:44,920 --> 00:03:47,280
+ and I'm gonna give 'em some names
 
 93
-00:03:47,300 --> 00:03:48,420
+00:03:47,280 --> 00:03:48,360
  so that we can play with them.
 
 94
-00:03:48,420 --> 00:03:50,980
- So these are just the urls.py.
+00:03:48,360 --> 00:03:50,960
+ So, these are just the urls.py.
 
 95
-00:03:50,980 --> 00:03:54,820
- So if you take a look in this main.html template,
+00:03:50,960 --> 00:03:54,760
+ So, if you take a look in this main.html template,
 
 96
-00:03:54,820 --> 00:03:56,140
+00:03:54,760 --> 00:03:56,080
  you see a whole bunch of things.
 
 97
-00:03:56,140 --> 00:03:59,840
+00:03:56,080 --> 00:03:59,800
  You see this next feature in action.
 
 98
-00:03:59,840 --> 00:04:02,100
- So here's a couple things we can do.
+00:03:59,800 --> 00:04:02,080
+ So, here's a couple things we can do.
 
 99
-00:04:02,100 --> 00:04:05,180
- So there is this user object that in a sense is passed in.
+00:04:02,080 --> 00:04:03,680
+ So, there is this user object
 
 100
-00:04:05,180 --> 00:04:07,440
- You don't have to do anything to pass it in.
+00:04:03,680 --> 00:04:05,120
+ that in a sense is passed in.
 
 101
-00:04:07,440 --> 00:04:09,380
- There's this user object that sits there
+00:04:05,120 --> 00:04:07,400
+ You don't have to do anything to pass it in.
 
 102
-00:04:09,380 --> 00:04:13,380
- in your template context that's automatically.
+00:04:07,400 --> 00:04:09,360
+ There's this user object that sits there
 
 103
-00:04:13,380 --> 00:04:15,620
- We'll talk later about how you can sort of inject
+00:04:09,360 --> 00:04:13,360
+ in your template context that's automatically,
 
 104
-00:04:15,620 --> 00:04:19,140
- into every template certain little things
+00:04:13,360 --> 00:04:15,560
+ we'll talk later about how you can sort of inject
 
 105
-00:04:19,140 --> 00:04:20,220
- that you gotta inject.
+00:04:15,560 --> 00:04:18,280
+ into every template certain little miniature,
 
 106
-00:04:20,220 --> 00:04:22,580
- But the system injects this user.
+00:04:18,280 --> 00:04:20,200
+ certain little things that you gotta inject.
 
 107
-00:04:22,580 --> 00:04:25,220
- There is an attribute called isAuthenticated,
+00:04:20,200 --> 00:04:22,560
+ But, the system injects this user.
 
 108
-00:04:25,220 --> 00:04:26,820
- which is true or false,
+00:04:22,560 --> 00:04:25,200
+ There is an attribute called isAuthenticated,
 
 109
-00:04:26,820 --> 00:04:29,760
- to say whether you're not logged in or are logged in.
+00:04:25,200 --> 00:04:26,800
+ which is true or false,
 
 110
-00:04:29,760 --> 00:04:33,580
- And so if we see it, we say,
+00:04:26,800 --> 00:04:29,720
+ to say whether you're not logged in or are logged in.
 
 111
-00:04:33,580 --> 00:04:35,340
- oh, what's their person's full name?
+00:04:29,720 --> 00:04:33,560
+ And so, if we see it, we say,
 
 112
-00:04:35,340 --> 00:04:37,940
- User.email, user.id.
+00:04:33,560 --> 00:04:35,280
+ oh, what's their person's full name?
 
 113
-00:04:37,940 --> 00:04:39,460
- User id is the primary key.
+00:04:35,280 --> 00:04:37,880
+ User.email, user.id.
 
 114
-00:04:39,460 --> 00:04:42,460
- We might actually have a, later we'll have a foreign key
+00:04:37,880 --> 00:04:39,440
+ User.id is the primary key.
 
 115
-00:04:42,460 --> 00:04:44,020
- that goes into the user table.
+00:04:39,440 --> 00:04:42,440
+ We might actually have a, later we'll have a foreign key
 
 116
-00:04:44,020 --> 00:04:45,660
- And we need to know what the primary key
+00:04:42,440 --> 00:04:44,000
+ that goes into the user table,
 
 117
-00:04:45,660 --> 00:04:49,260
- of the current user is so we can populate our foreign key
+00:04:44,000 --> 00:04:45,680
+ and we need to know what the primary key
 
 118
-00:04:49,260 --> 00:04:52,140
- so when we like have a row and it's owned by such and so,
+00:04:45,680 --> 00:04:49,240
+ of the current user is so we can populate our foreign key
 
 119
-00:04:52,140 --> 00:04:53,900
- we're gonna actually put a foreign key into a table
+00:04:49,240 --> 00:04:52,160
+ so when we like have a row and it's owned by such and so,
 
 120
-00:04:53,900 --> 00:04:55,880
- that we didn't even create.
+00:04:52,160 --> 00:04:53,880
+ we're gonna actually put a foreign key into a table
 
 121
-00:04:55,880 --> 00:04:57,340
- But the thing I'm talking about now
+00:04:53,880 --> 00:04:55,880
+ that we didn't even create.
 
 122
-00:04:57,340 --> 00:05:00,300
- is you can get a URL, that URL tag,
+00:04:55,880 --> 00:04:59,400
+ But, the thing I'm talking about now is you can get a URL,
 
 123
-00:05:00,300 --> 00:05:02,180
- that's looking up the name of a view.
+00:04:59,400 --> 00:05:02,160
+ that URL tag, that's looking up the name of a view.
 
 124
-00:05:02,180 --> 00:05:04,020
- Log out is the name of a view.
+00:05:02,160 --> 00:05:04,000
+ Logout is the name of a view.
 
 125
-00:05:04,020 --> 00:05:05,780
- Log in is the name of a view.
+00:05:04,000 --> 00:05:05,800
+ Login is the name of a view.
 
 126
-00:05:05,780 --> 00:05:07,840
+00:05:05,800 --> 00:05:07,840
  And then we have this question mark next equals.
 
 127
-00:05:07,840 --> 00:05:10,940
- That's the parameter to say when you're all done
+00:05:07,840 --> 00:05:09,400
+ That's the parameter to say,
 
 128
-00:05:10,940 --> 00:05:15,340
- with that login or log out, go back to this particular URL.
+00:05:09,400 --> 00:05:12,720
+ when you're all done with that login or logout,
 
 129
-00:05:15,340 --> 00:05:20,340
- Okay, and so that says go to the URL
+00:05:12,720 --> 00:05:16,240
+ go back to this particular URL, okay?
 
 130
-00:05:20,340 --> 00:05:25,820
- that's in the Authsy application, the view named open.
+00:05:16,240 --> 00:05:17,240
+ And so,
 
 131
-00:05:25,820 --> 00:05:28,580
- And so that's one way of doing it.
+00:05:17,240 --> 00:05:21,320
+ and so that says, go to the URL
 
 132
-00:05:28,580 --> 00:05:30,380
- Another way, let's say you're in login,
+00:05:21,320 --> 00:05:25,840
+ that's in the Authzy application, the view named open.
 
 133
-00:05:30,380 --> 00:05:31,540
- we're gonna get the login URL
+00:05:25,840 --> 00:05:28,600
+ And so, that's one way of doing it.
 
 134
-00:05:31,540 --> 00:05:33,820
- and send ourselves back to the request path.
+00:05:28,600 --> 00:05:30,360
+ Another way, let's say here in login,
 
 135
-00:05:33,820 --> 00:05:36,220
- Request is another one of these things
+00:05:30,360 --> 00:05:31,520
+ we're gonna get the login URL
 
 136
-00:05:36,220 --> 00:05:38,560
- that's dropped in automatically for us.
+00:05:31,520 --> 00:05:33,840
+ and send ourselves back to the request path.
 
 137
-00:05:38,560 --> 00:05:41,820
- That is the current URL of the view we're at.
+00:05:33,840 --> 00:05:36,240
+ Request is another one of these things
 
 138
-00:05:41,820 --> 00:05:45,300
- So in a sense, this is a contraction
+00:05:36,240 --> 00:05:38,560
+ that's dropped in automatically for us.
 
 139
-00:05:45,300 --> 00:05:47,340
- that says go ahead and go to login,
+00:05:38,560 --> 00:05:41,800
+ That is the current URL of the view we're at.
 
 140
-00:05:47,340 --> 00:05:49,380
- and when you're back, come right back here.
+00:05:41,800 --> 00:05:45,880
+ So, in a sense, this is a contraction that says,
 
 141
-00:05:49,380 --> 00:05:51,880
- So login will login and then redirect
+00:05:45,880 --> 00:05:47,360
+ go ahead and go to login,
 
 142
-00:05:51,880 --> 00:05:54,760
- back to this page that we're on, whatever the page is.
+00:05:47,360 --> 00:05:49,360
+ and when you're back, come right back here.
 
 143
-00:05:54,760 --> 00:05:56,740
- 'Cause this is gonna be, this little main.html
+00:05:49,360 --> 00:05:52,720
+ So, login will login and then redirect back to this page
 
 144
-00:05:56,740 --> 00:05:59,060
- is used in a couple of my different views.
+00:05:52,720 --> 00:05:54,760
+ that we're on, whatever the page is.
 
 145
-00:05:59,060 --> 00:06:01,460
- So request.path is like come back here.
+00:05:54,760 --> 00:05:56,760
+ 'Cause this is gonna be, this little main.html
 
 146
-00:06:01,460 --> 00:06:04,180
- So that's a good pattern to know,
+00:05:56,760 --> 00:05:59,040
+ is used in a couple of my different views.
 
 147
-00:06:04,180 --> 00:06:07,100
- to just say login and come back to this current path
+00:05:59,040 --> 00:06:01,440
+ So, request.path is like, come back here.
 
 148
-00:06:07,100 --> 00:06:08,100
- when you're all done.
+00:06:01,440 --> 00:06:04,200
+ So, that's a good pattern to know,
 
 149
-00:06:09,380 --> 00:06:12,660
- And so here's just a bunch of connections to this thing.
+00:06:04,200 --> 00:06:07,080
+ to just say, login and come back to this current path
 
 150
-00:06:12,660 --> 00:06:15,540
- And we have, here's just all my links.
+00:06:07,080 --> 00:06:08,120
+ when you're all done.
 
 151
-00:06:15,540 --> 00:06:16,700
- And I have a couple of things.
+00:06:09,240 --> 00:06:12,640
+ And so, here's just a bunch of connections to this thing.
 
 152
-00:06:16,700 --> 00:06:20,620
- I have some no login required pages just to play around.
+00:06:12,640 --> 00:06:15,520
+ And we have, here's just all my links.
 
 153
-00:06:20,620 --> 00:06:24,240
- And then I have one that's protected by hand in Python.
+00:06:15,520 --> 00:06:16,680
+ And I have a couple of things.
 
 154
-00:06:24,240 --> 00:06:26,700
- And then one's required by a login mixin.
+00:06:16,680 --> 00:06:20,640
+ I have some no login required pages just to play around.
 
 155
-00:06:26,700 --> 00:06:28,460
- And then I sort of dump all that data.
+00:06:20,640 --> 00:06:24,240
+ And then I have one that's protected by hand in Python.
 
 156
-00:06:28,460 --> 00:06:30,700
- And I think I showed you that one already.
+00:06:24,240 --> 00:06:26,720
+ And then one's required by a login mixin.
 
 157
-00:06:30,700 --> 00:06:32,960
- So here is one of them, right?
+00:06:26,720 --> 00:06:28,480
+ And then I sort of dump all that data,
 
 158
-00:06:32,960 --> 00:06:34,060
- I showed that.
+00:06:28,480 --> 00:06:30,720
+ and I think I showed you that one already.
 
 159
-00:06:34,060 --> 00:06:36,700
- That's what this all looks like.
+00:06:30,720 --> 00:06:32,960
+ So, here is one of them, right?
 
 160
-00:06:36,700 --> 00:06:39,140
- You can see that these links have the next in there.
+00:06:32,960 --> 00:06:34,040
+ I showed that.
 
 161
-00:06:39,140 --> 00:06:41,500
- You can, this is how it turns out to be.
+00:06:34,040 --> 00:06:36,720
+ That's what this all looks like.
 
 162
-00:06:41,500 --> 00:06:42,580
- You get accounts login.
+00:06:36,720 --> 00:06:39,160
+ You can see that these links have the next in there.
 
 163
-00:06:42,580 --> 00:06:44,620
- Oops, come back, come back.
+00:06:39,160 --> 00:06:41,480
+ You can, this is how it turns out to be.
 
 164
-00:06:44,620 --> 00:06:47,340
- You go to accounts login, next equals authzopen.
+00:06:41,480 --> 00:06:42,600
+ You get accounts login.
 
 165
-00:06:47,340 --> 00:06:50,600
- And that's basically, I'm in this file right now.
+00:06:42,600 --> 00:06:44,640
+ Oops, come back, come back.
 
 166
-00:06:50,600 --> 00:06:51,820
- I'm in that URL.
+00:06:44,640 --> 00:06:47,360
+ You go to accounts login, next=authzopen.
 
 167
-00:06:51,820 --> 00:06:54,740
- And that says go ahead and log me in
+00:06:47,360 --> 00:06:50,600
+ And that's basically, I'm in this file right now.
 
 168
+00:06:50,600 --> 00:06:51,840
+ I'm in that URL.
+
+169
+00:06:51,840 --> 00:06:54,740
+ And that says, go ahead and log me in,
+
+170
 00:06:54,740 --> 00:06:59,740
  and then come back to this URL, to the authzopen.
 
-169
-00:06:59,740 --> 00:07:03,300
+171
+00:06:59,740 --> 00:07:03,280
  Here's an example of the logout URL
 
-170
-00:07:03,300 --> 00:07:05,060
+172
+00:07:03,280 --> 00:07:05,060
  with a next setup in it.
 
-171
-00:07:06,340 --> 00:07:08,500
- And so up next we're gonna talk about
-
-172
-00:07:08,500 --> 00:07:11,420
- not just how to get the users to go to the login page,
-
 173
-00:07:11,420 --> 00:07:13,460
- but how to configure the login page.
+00:07:05,060 --> 00:07:08,480
+ And so, up next, we're gonna talk about
 
 174
-00:07:13,460 --> 00:07:16,040
+00:07:08,480 --> 00:07:11,420
+ not just how to get the users to go to the login page,
+
+175
+00:07:11,420 --> 00:07:13,380
+ but how to configure the login page.
+
+176
+00:07:13,380 --> 00:07:15,960
  (upbeat music)
 

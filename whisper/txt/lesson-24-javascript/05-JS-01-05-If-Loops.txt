@@ -1,38 +1,38 @@
  Now let's talk about control structures, logic, loops,
  and all that kind of stuff.
- So the first kind of control structure we're gonna deal with
- is an if statement.
+ So the first kind of control structure
+ we're gonna deal with is an if statement.
  And every language has an if statement.
  We have a whole bunch of logical operators
  that we just got done talking about.
  Equals, the double equals is the question mark.
  Triple equals is the same as and same type as.
  Not equals the not, and then the and and the or.
- Double ampersand is and, and the double vertical bar is or.
- And so triple equals and exclamation double equals.
- And curly braces are the way that we talk about
+ The double ampersand is and, and the double vertical bar is or.
+ And so triple equals and exclamation double equals,
+ and curly braces are the way that we talk about
  the begin and end of the blocks
  that are affected by the if statement.
  So other than that, we say if parent c answer equals 42,
  this is kind of the question that we're gonna ask
  and that's going to lead to a true or a false.
- If it's true, of course the first block is gonna execute
- and then there's an else and then if that result is false,
- the question is false,
- then the else section is gonna execute.
+ If it's true, of course the first block is gonna execute,
+ and then there's an else, and then if that result is false,
+ the question is false, then the else section
+ is gonna execute.
  And there can be more than one line in here.
  I'm just showing one line to keep it small on the screen.
  So when this code all runs, it basically comes in,
- answer is 42, then this is true,
- answer equals 42 is true.
+ answer is 42, then this is true.
+ Answer equals 42 is true.
  It runs console log hello world,
  then skips the else clause and it's all done.
  So the output of this is indeed hello world.
- There's multi-way ifs and you can hang them together
+ There's multi-way ifs, and you can hang them together
  just like with else ifs, just like in Python.
  And it does it in order.
  If this is false, if the first if is false,
- it checks the else if and as soon as that's true,
+ it checks the else if, and as soon as that's true,
  it runs that block of code and then hops out to the end.
  It doesn't check all of the if questions simultaneously.
  And you can optionally have an else clause
@@ -41,18 +41,17 @@
  in the else block.
  You can have an indeterminate loop,
  a while loop that runs until something becomes true.
- It's a zero trip loop,
- which means that it runs a minimum of zero times,
- which means it's effectively functions the first time through
- like an if statement.
+ It's a zero trip loop, which means that it runs
+ a minimum of zero times, which means it effectively
+ functions the first time through like an if statement.
  So while fuel greater than one, do this thing in the block,
  is really like an if fuel greater than run,
  if fuel is greater than one, do this block.
  Although in this case, I've built myself an infinite loop
- because fuel starts out at 10 and I say,
+ because fuel starts out at 10, and I say,
  while fuel is greater than one, console.log room,
- which means it's just gonna do that forever.
- And that's because I didn't change the iteration variable,
+ which means it's just gonna do that forever,
+ and that's because I didn't change the iteration variable,
  in this case fuel, and usually we construct these
  in a way that they terminate eventually.
  And so I've done a much better job in the second one
@@ -60,25 +59,25 @@
  while fuel is greater than one,
  and inside the loop I console.log room,
  and then I subtract one, and I go up and up and up and up,
- and then it's gonna go and then fuel will eventually
- get to zero and then it will exit out the loop and finish.
+ and then it's gonna go, and then fuel will eventually
+ get to zero, and then it will exit out the loop and finish.
  And so this here is an infinite loop,
  and this is a finite loop.
  While loops are always a little tricky
  'cause you've gotta construct the iteration variable
  or make sure you know how to get out of the loop.
- The for loop is a counted loop and it's going to run,
+ The for loop is a counted loop, and it's going to run,
  and so there's three parts to it,
  and they're separated by semicolons.
  It looks really complex, but it's not.
- So you make an iteration variable.
- The first part up to the semicolon is the code
- that runs before the loop starts.
+ So you make an iteration variable,
+ the first part up to the semicolon
+ is the code that runs before the loop starts.
  So I'm gonna set this variable count equals one.
  The second part is like a while,
  and it's a top test zero trip loop,
  and as long as count remains less than or equal to six,
- then the body loop is gonna execute,
+ then the body of loop is gonna execute,
  and then each time at the bottom of the loop,
  we're gonna add one.
  So this is gonna go one, two, three, four, five, six.
@@ -87,7 +86,7 @@
  but then the loop is not going to run.
  And so that's what's called a counted loop,
  where we have some variable that's just running through
- a set of numbers.
+ on a set of numbers.
  In Python, we would use range to do this kind of a thing.
  Now, like in Python, we've got the break statement,
  and the break statement just says,
@@ -104,19 +103,18 @@
  Continue is another very useful thing.
  You can basically say, I wanna give up on this iteration
  and go back up and do the next iteration,
- but the thing is this increment usually is this third part
- of the for loop.
+ but the thing is this increment
+ usually is this third part of the for loop.
  If you say continue, that actually runs.
  So it actually, continue goes and does the plus plus,
  and then it does the check,
- and then it either continues to run back here,
- or it jumps out if count is now greater than 10.
- And so continue works pretty much the same
+ and then it either continues to run back here
+ or it jumps out if count is now greater than 10,
+ and so continue works pretty much the same
  in loops in JavaScript as it does in Python.
  So you can also loop through objects,
  and so here's an object that has three attributes,
- golf, tennis, and ping,
- and I can say for ball and balls,
+ golf, tennis, and ping, and I can say four ball and balls,
  and then that means that this iteration variable
  is gonna walk through the keys or the attributes.
  So it's gonna be golf, ping, and tennis,
@@ -126,16 +124,14 @@
  So that's what's called a definite loop
  that's looping through an object that we're going to see.
  Now when you're looping through an array,
- which is a linear list,
- you actually use a counted loop, not a definite loop.
- But objects, which are like dictionaries,
+ which is a linear list, you actually use a counted loop,
+ not a definite loop, but objects,
+ which are like dictionaries,
  which are like associative arrays,
- will use definite loops to loop through them.
+ we use definite loops to loop through them.
  So that is a quick romp through JavaScript,
  not so much to get to the point
  where you can write a bunch of JavaScript,
- but so you can read it,
- and then when you get a syntax there,
+ but so you can read it, and then when you get a syntax there,
  hopefully you can fix it.
- (upbeat music)
  (upbeat music)
