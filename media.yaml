@@ -1,5 +1,9 @@
+course_root: /Users/csev/htdocs/dj4e
 media_root: /Users/csev/Desktop/teach/dj4e-media
-www_root: /Users/csev/htdocs/dj4e
+whisper_root: /Users/csev/htdocs/dj4e/whisper
+youtube_dir: /Users/csev/htdocs/dj4e/youtube
+youtube_playlist: https://www.youtube.com/playlist?list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z
+course_hint: Django for Everybody, DJ4E, Django, Python, web development, Dr. Chuck, Chuck Severance
 entries:
   lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v:
     title: DJ 01.01 Welcome to Django for Everybody (7:33)
