@@ -32,11 +32,11 @@
  They'll see these URLs in the JavaScript and we just hope and they won't do it because they see it's a post request.
  So it's it. So if I hit refresh now, the data has been updated.
  So if I take a quick look at the admin user interface, admin and I look at faz, this is my this is my many.
- Well, let me just stay here. Right. So this means that the user DJ free likes raindrops.
- And so if I do a refresh here, so that means that me, the logged in user DJ free likes this.
+ Well, let me just stay here. Right. So this means that the user DJ4E likes raindrops.
+ And so if I do a refresh here, so that means that me, the logged in user DJ4E likes this.
  Now, if I say I would also like whiskered on kittens, it's going to update the database.
  See there. And then if I come over here, I can hit refresh and you see that DJ for he likes raindrops.
- And it's just a many to many table with an outward outward connection to raindrops on roses and another outward connection to the user DJ free.
+ And it's just a many to many table with an outward outward connection to raindrops on roses and another outward connection to the user DJ4E.
  I'm going to delete this. I'm going to delete this from within the administration.
  Now, this is exactly what the undelete button does now.
  The state of the system doesn't know that I deleted this in the background.
@@ -92,10 +92,10 @@
  And so I've got that.
  And actually, I'm importing it from a different from a different project.
  That's that's OK.
- This owner dot p y is in the my arts, but you might have it also locally, the owner dot p y.
+ This owner dot p y is in the myarts, but you might have it also locally, the owner dot p y.
  So so again, the whole idea here is, is that the owner field in the models v i models dot p y.
  This owner field is managed like in many of these by us creating.
- My dot dot slash my arts owner.
+ My dot dot slash myarts owner.
  And basically, we're creating this owner list view, the owner detail view, owner create view.
  And if you recall from these, these are the places where we've kind of overridden
  the original automatic create view, automatic update view, which we've used for lots of things.

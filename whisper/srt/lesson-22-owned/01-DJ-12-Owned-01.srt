@@ -248,7 +248,7 @@
 
 63
 00:03:05,680 --> 00:03:10,440
- and this is all from the DJ Free Samples My Arts example,
+ and this is all from the DJ4E Samples myarts example,
 
 64
 00:03:10,440 --> 00:03:13,360

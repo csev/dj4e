@@ -514,7 +514,7 @@ WEBVTT
  that.
 
 00:10:21.080 --> 00:10:23.600
- And then we're going to do python manage py check.
+ And then we're going to do python manage.py check.
 
 00:10:23.600 --> 00:10:26.600
  And this is a command you're going to really get used to.
@@ -526,7 +526,7 @@ WEBVTT
  Is this current directory a valid Python project?
 
 00:10:37.840 --> 00:10:42.520
- So I'm going to type python manage py check and this is going to load a whole bunch of
+ So I'm going to type python manage.py check and this is going to load a whole bunch of
 
 00:10:42.520 --> 00:10:43.520
  things.
@@ -565,7 +565,7 @@ WEBVTT
  But it should.
 
 00:11:12.120 --> 00:11:19.440
- And you're going to run python manage py make migrations, all one word.
+ And you're going to run python manage.py makemigrations, all one word.
 
 00:11:19.440 --> 00:11:23.280
  And it says no changes detected and that's because the migrations are Python files.
@@ -676,22 +676,22 @@ WEBVTT
  If you're looking in your files, let's go back to home Dr. Chuck in the files, I created
 
 00:13:23.120 --> 00:13:28.200
- this folder called DJ free samples and you can see the hierarchy a little better.
+ this folder called DJ4E samples and you can see the hierarchy a little better.
 
 00:13:28.200 --> 00:13:34.000
- We got the project called DJ free underscore projects, home Dr. Chuck DJ free projects.
+ We got the project called DJ4E underscore projects, home Dr. Chuck DJ4E projects.
 
 00:13:34.000 --> 00:13:38.860
  And so you can sort of do this stuff and see this stuff and you will be editing these files
 
 00:13:38.860 --> 00:13:41.120
- like in DJ free samples.
+ like in DJ4E samples.
 
 00:13:41.120 --> 00:13:44.420
  You can look at the requirements file.
 
 00:13:44.420 --> 00:13:50.480
- For example, DJ free home Dr. Chuck DJ free samples requirements five two dot txt that
+ For example, DJ4E home Dr. Chuck DJ4E samples requirements five two dot txt that
 
 00:13:50.480 --> 00:13:56.440
  talks to you about all the versions of the library stuff that we're using in this course.
@@ -1039,7 +1039,7 @@ WEBVTT
  If you try to type run server, let's go here, and we're in my site, and it tells you to
 
 00:21:43.080 --> 00:21:46.520
- run Python manage py run server, it's going to blow up.
+ run Python manage.py run server, it's going to blow up.
 
 00:21:46.520 --> 00:21:51.400
  Yeah, you don't have migrations, but it says that port is already in use.
@@ -1267,7 +1267,7 @@ WEBVTT
  for a second.
 
 00:26:19.960 --> 00:26:27.420
- Now I'm going to say Python manage py check, syntax error, perhaps you forgot a common.
+ Now I'm going to say Python manage.py check, syntax error, perhaps you forgot a common.
 
 00:26:27.420 --> 00:26:28.420
  So this is not too bad.

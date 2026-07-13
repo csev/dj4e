@@ -70,7 +70,7 @@
  Let's take a look at how we would do this.
  And we're doing this by creating our own tag.
  And so we have a tag.
- See, it says less than DJ free dash greeting greater than,
+ See, it says less than DJ4E dash greeting greater than,
  that's a tag.
  It's a tag we invented.
  And so we can pass some parameters attributes.
@@ -79,8 +79,8 @@
  so we can mess with it.
  I put up a button that says click me.
  And that script type equals module source equals
- dot slash 16 DJ free greet dot JS.
- That's the code that adds the DJ free greeting tag
+ dot slash 16 DJ4E greet dot JS.
+ That's the code that adds the DJ4E greeting tag
  to the browser.
  So once that's imported, it goes and creates the tag
  and then we can use the tag.
@@ -163,7 +163,7 @@
  It's a dynamically rendered template.
  And what's cool about this is it's responsive,
  which means that if you change the name attribute
- on this DJ free greeting tag,
+ on this DJ4E greeting tag,
  that text in the browser will re-render with the new stuff.
  And so that's what's happening when you say click me
  and it turns from hello first to hello second.

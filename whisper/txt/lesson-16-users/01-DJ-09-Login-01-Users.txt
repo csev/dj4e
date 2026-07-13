@@ -41,7 +41,7 @@
  This might be a good time to review what you're going to do
  when you wipe out your database.
  When you create that superuser, it just adds a row
- into a table in your DBSQL light.
+ into a table in your DBSQLite.
  And you can wipe this out any time.
  That's why I like using SQLite for development in Django.
  If you remove it, you've removed all the tables,

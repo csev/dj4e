@@ -127,7 +127,7 @@ WEBVTT
  So let's start by taking a look.
 
 00:02:33.680 --> 00:02:36.940
- So I'm here sitting in my DJ free samples.
+ So I'm here sitting in my DJ4E samples.
 
 00:02:36.940 --> 00:02:44.560
  And if you look, you see all of my various applications under a project.
@@ -154,7 +154,7 @@ WEBVTT
  is it routes me to log in, and then with the next to go back to autos.
 
 00:03:11.840 --> 00:03:19.640
- So this view in autos, the slash autos, has protected itself with login mixin.
+ So this view in autos, the slash autos, has protected itself with LoginRequiredMixin.
 
 00:03:19.640 --> 00:03:23.760
  And so, and later we'll do login, your login won't quite look like this, but
@@ -322,10 +322,10 @@ WEBVTT
  And so that is the necessary configuration to make it so
 
 00:06:54.720 --> 00:07:01.440
- that when we tell our views to add the login mixin, which we'll see in just a second.
+ that when we tell our views to add the LoginRequiredMixin, which we'll see in just a second.
 
 00:07:01.440 --> 00:07:04.200
- When we tell our views to use the login mixin,
+ When we tell our views to use the LoginRequiredMixin,
 
 00:07:04.200 --> 00:07:06.560
  then it knows where to get the template from.
@@ -340,7 +340,7 @@ WEBVTT
  you have to put those in settings.py, urls.py, and then make the template.
 
 00:07:20.560 --> 00:07:22.880
- And then you have to start using login mixin, and
+ And then you have to start using LoginRequiredMixin, and
 
 00:07:22.880 --> 00:07:25.520
  then everything just magically starts coming together.
@@ -589,7 +589,7 @@ WEBVTT
  So the fun starts to happen when we're in the views.py.
 
 00:12:58.680 --> 00:13:08.600
- So login mixin, if you remember from the AuthZ walkthrough.
+ So LoginRequiredMixin, if you remember from the AuthZ walkthrough.
 
 00:13:08.600 --> 00:13:10.680
  You just add this to a view, and
@@ -610,7 +610,7 @@ WEBVTT
  If you go with the AuthZ sample, you'll see like I did that by hand.
 
 00:13:31.200 --> 00:13:34.600
- But you don't want to do it by hand, you just call login mixin.
+ But you don't want to do it by hand, you just call LoginRequiredMixin.
 
 00:13:34.600 --> 00:13:40.040
  Now, so this main view is a list view.

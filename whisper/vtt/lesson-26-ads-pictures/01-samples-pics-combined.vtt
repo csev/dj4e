@@ -4,7 +4,7 @@ WEBVTT
  Hello, and welcome to another code walkthrough for Django for Everybody.
 
 00:00:05.660 --> 00:00:12.700
- In this, we're going to walk through the how to handle pictures, and in our DJ free samples,
+ In this, we're going to walk through the how to handle pictures, and in our DJ4E samples,
 
 00:00:12.700 --> 00:00:14.740
  I'm going to walk through the code.

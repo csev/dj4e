@@ -172,7 +172,7 @@ WEBVTT
  to go first here. Uh, let's, let's compare and contrast this list view with the views
 
 00:06:22.440 --> 00:06:29.880
- in my arts. So in, in my arts, the list view, I could just borrow owner list view, which
+ in myarts. So in, in myarts, the list view, I could just borrow owner list view, which
 
 00:06:29.880 --> 00:06:35.640
  was like extended generic list view. And I just saved my model's article and it was good.

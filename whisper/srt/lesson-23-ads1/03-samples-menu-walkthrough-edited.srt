@@ -428,7 +428,7 @@
 
 108
 00:08:33,560 --> 00:08:38,680
- So I can do dj free, and I can log in, and it will come back to the main menu, even though
+ So I can do DJ4E, and I can log in, and it will come back to the main menu, even though
 
 109
 00:08:38,680 --> 00:08:42,080

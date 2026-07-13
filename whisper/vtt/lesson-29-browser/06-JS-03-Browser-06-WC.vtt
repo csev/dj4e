@@ -217,7 +217,7 @@ WEBVTT
  And so we have a tag.
 
 00:03:15.980 --> 00:03:19.800
- See, it says less than DJ free dash greeting greater than,
+ See, it says less than DJ4E dash greeting greater than,
 
 00:03:19.800 --> 00:03:21.160
  that's a tag.
@@ -244,10 +244,10 @@ WEBVTT
  And that script type equals module source equals
 
 00:03:38.760 --> 00:03:41.960
- dot slash 16 DJ free greet dot JS.
+ dot slash 16 DJ4E greet dot JS.
 
 00:03:41.960 --> 00:03:46.960
- That's the code that adds the DJ free greeting tag
+ That's the code that adds the DJ4E greeting tag
 
 00:03:46.960 --> 00:03:48.020
  to the browser.
@@ -496,7 +496,7 @@ WEBVTT
  which means that if you change the name attribute
 
 00:07:30.400 --> 00:07:32.720
- on this DJ free greeting tag,
+ on this DJ4E greeting tag,
 
 00:07:32.720 --> 00:07:36.520
  that text in the browser will re-render with the new stuff.

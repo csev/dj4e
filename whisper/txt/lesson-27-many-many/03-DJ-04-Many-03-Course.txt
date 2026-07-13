@@ -142,7 +142,7 @@
  a role like are you a teacher, are you a student?
  Okay, and so that's a little more sophisticated
  kind of many-to-many model and we can talk to this
- in the Django shell, Python 3, many manage.py shell.
+ in the Django shell, Python 3, python manage.py shell.
  You know, we import the models from the application models
  that this is really reading the models.py file
  from the many folder, import the person model,

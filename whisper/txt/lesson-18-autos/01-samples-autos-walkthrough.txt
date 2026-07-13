@@ -40,7 +40,7 @@
  So it's very close to what it is that you have to write.
  It's just don't go grabbing all that stuff.
  So let's start by taking a look.
- So I'm here sitting in my DJ free samples.
+ So I'm here sitting in my DJ4E samples.
  And if you look, you see all of my various applications under a project.
  And so we've got the autos.
  But I really want to start with the authentication code.
@@ -49,7 +49,7 @@
  So if I go straight to autos, see if I've logged out.
  Right, so you'll notice that what it does when I go straight to autos,
  is it routes me to log in, and then with the next to go back to autos.
- So this view in autos, the slash autos, has protected itself with login mixin.
+ So this view in autos, the slash autos, has protected itself with LoginRequiredMixin.
  And so, and later we'll do login, your login won't quite look like this, but
  this is the one I have on samples, where you don't have to make it pretty yet.
  An upcoming assignment is gonna make everything pretty.
@@ -105,13 +105,13 @@
  The point is, is underneath this templates,
  you don't have to just have one subfolder, you can have more than one subfolders.
  And so that is the necessary configuration to make it so
- that when we tell our views to add the login mixin, which we'll see in just a second.
- When we tell our views to use the login mixin,
+ that when we tell our views to add the LoginRequiredMixin, which we'll see in just a second.
+ When we tell our views to use the LoginRequiredMixin,
  then it knows where to get the template from.
  So that's just part of it, and your instructions tell you how to do that.
  So any application that you're gonna build or any project you're gonna build,
  you have to put those in settings.py, urls.py, and then make the template.
- And then you have to start using login mixin, and
+ And then you have to start using LoginRequiredMixin, and
  then everything just magically starts coming together.
  So let's take a look at the actual autos application.
  We'll look at a couple of different things here, autos/urls.
@@ -194,14 +194,14 @@
  we can make links in between them, okay?
  Okay, so these are pretty straightforward and not all that different.
  So the fun starts to happen when we're in the views.py.
- So login mixin, if you remember from the AuthZ walkthrough.
+ So LoginRequiredMixin, if you remember from the AuthZ walkthrough.
  You just add this to a view, and
  it just basically says you cannot get to this view unless you're logged in.
  And if you aren't logged in, it will bounce to the login.html file, and
  then bounce back after you're done.
  And so login require mixin is all we need to do.
  If you go with the AuthZ sample, you'll see like I did that by hand.
- But you don't want to do it by hand, you just call login mixin.
+ But you don't want to do it by hand, you just call LoginRequiredMixin.
  Now, so this main view is a list view.
  And so let's go take a look at what this is going to look like.
  This is the list view.

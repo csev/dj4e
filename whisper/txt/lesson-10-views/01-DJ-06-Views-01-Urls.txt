@@ -56,7 +56,7 @@
  So remember that Django has a project.
  And then underneath that, there's
  one or more applications.
- And each of the DJ free samples, you see lots of applications.
+ And each of the DJ4E samples, you see lots of applications.
  Each application kind of to show a little bit of sample
  code for a topic.
  And so that second part of the URL,

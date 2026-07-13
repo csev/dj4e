@@ -128,7 +128,7 @@
 
 33
 00:01:52,460 --> 00:01:57,220
- If you recall, we've run the SQL light command in previous
+ If you recall, we've run the SQLite command in previous
 
 34
 00:01:57,220 --> 00:01:58,900
@@ -720,7 +720,7 @@
 
 181
 00:09:33,580 --> 00:09:37,660
- we're gonna give ourselves another tag in our git hub repo
+ we're gonna give ourselves another tag in our GitHub repo
 
 182
 00:09:37,660 --> 00:09:41,180
@@ -740,11 +740,11 @@
 
 186
 00:09:47,100 --> 00:09:49,980
- and then we'll upload the tags to git hub,
+ and then we'll upload the tags to GitHub,
 
 187
 00:09:49,980 --> 00:09:53,980
- and so if I look at git hub,
+ and so if I look at GitHub,
 
 188
 00:09:53,980 --> 00:10:00,620

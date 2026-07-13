@@ -97,7 +97,7 @@ WEBVTT
  And so here we are.
 
 00:01:52.460 --> 00:01:57.220
- If you recall, we've run the SQL light command in previous
+ If you recall, we've run the SQLite command in previous
 
 00:01:57.220 --> 00:01:58.900
  that we can see what's in here.
@@ -541,7 +541,7 @@ WEBVTT
  and so it's all set up, and just for our own sanity,
 
 00:09:33.580 --> 00:09:37.660
- we're gonna give ourselves another tag in our git hub repo
+ we're gonna give ourselves another tag in our GitHub repo
 
 00:09:37.660 --> 00:09:41.180
  just so we can keep track of the fact that,
@@ -556,10 +556,10 @@ WEBVTT
  'cause I knew what I was doing,
 
 00:09:47.100 --> 00:09:49.980
- and then we'll upload the tags to git hub,
+ and then we'll upload the tags to GitHub,
 
 00:09:49.980 --> 00:09:53.980
- and so if I look at git hub,
+ and so if I look at GitHub,
 
 00:09:53.980 --> 00:10:00.620
  csev Django projects,

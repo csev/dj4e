@@ -65,7 +65,7 @@
  And the browser is making many requests
  to this server, which is one piece of physical hardware.
  And then there's a little piece of software.
- Often it's an open source software called NGINX.
+ Often it's an open source software called nginx.
  And it has a whole bunch of configuration files
  that you put in in their user interface.
  And it has little instances of Django,
@@ -82,7 +82,7 @@
  for every single piece of software.
  And then within that is what I showed you before,
  and that is how the request works in your settings file.
- But the goal of NGINX is getting it to your front door
+ But the goal of nginx is getting it to your front door
  so that your application gets the requests
  that are destined for it.
  So this is both how these applications are combined

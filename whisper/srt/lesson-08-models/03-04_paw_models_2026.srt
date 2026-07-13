@@ -152,7 +152,7 @@
 
 39
 00:01:49,860 --> 00:01:53,920
- cd tilde django projects, my site, Python manage py check.
+ cd tilde django projects, my site, Python manage.py check.
 
 40
 00:01:53,920 --> 00:01:56,640
@@ -548,7 +548,7 @@
 
 138
 00:06:08,080 --> 00:06:10,120
- Python manage py migrate.
+ Python manage.py migrate.
 
 139
 00:06:10,120 --> 00:06:14,600
@@ -612,7 +612,7 @@
 
 154
 00:06:54,720 --> 00:06:58,000
- We're supposed to type Python manage py migrate.
+ We're supposed to type Python manage.py migrate.
 
 155
 00:06:58,000 --> 00:07:01,640
@@ -628,7 +628,7 @@
 
 158
 00:07:04,960 --> 00:07:06,700
- Python manage py migrate.
+ Python manage.py migrate.
 
 159
 00:07:06,700 --> 00:07:12,060
@@ -644,7 +644,7 @@
 
 162
 00:07:18,520 --> 00:07:21,520
- but this Python manage py migrate says,
+ but this Python manage.py migrate says,
 
 163
 00:07:21,520 --> 00:07:26,560
@@ -848,7 +848,7 @@
 
 213
 00:10:20,360 --> 00:10:24,600
- Now, python manage.py make migrations poles.
+ Now, python manage.py makemigrations poles.
 
 214
 00:10:24,600 --> 00:10:29,400
@@ -1008,7 +1008,7 @@
 
 253
 00:12:47,040 --> 00:12:49,200
- You run python manage py make migrations
+ You run python manage.py makemigrations
 
 254
 00:12:49,200 --> 00:12:52,040
@@ -1084,7 +1084,7 @@
 
 272
 00:13:40,040 --> 00:13:44,520
- so we're just gonna grab manage py shell.
+ so we're just gonna grab manage.py shell.
 
 273
 00:13:44,520 --> 00:13:51,160
@@ -1428,7 +1428,7 @@
 
 358
 00:19:09,240 --> 00:19:13,840
- python manage py shell, and so I'm back in.
+ python manage.py shell, and so I'm back in.
 
 359
 00:19:13,840 --> 00:19:16,360
@@ -1528,7 +1528,7 @@
 
 383
 00:20:40,560 --> 00:20:43,380
- And we're gonna type python manage py create super user.
+ And we're gonna type python manage.py create super user.
 
 384
 00:20:43,380 --> 00:20:46,520
@@ -1604,7 +1604,7 @@
 
 402
 00:21:47,360 --> 00:21:49,160
- python manage py run server.
+ python manage.py run server.
 
 403
 00:21:49,160 --> 00:21:53,820
@@ -1632,7 +1632,7 @@
 
 409
 00:22:08,000 --> 00:22:11,080
- Says you're supposed to run python manage py check.
+ Says you're supposed to run python manage.py check.
 
 410
 00:22:11,080 --> 00:22:15,760
@@ -1640,11 +1640,11 @@
 
 411
 00:22:15,760 --> 00:22:18,320
- when it says to run python manage py run server,
+ when it says to run python manage.py run server,
 
 412
 00:22:18,320 --> 00:22:22,400
- go into my site and type python manage py check.
+ go into my site and type python manage.py check.
 
 413
 00:22:22,400 --> 00:22:24,980

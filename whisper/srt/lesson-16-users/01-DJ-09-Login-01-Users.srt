@@ -172,7 +172,7 @@
 
 44
 00:01:50,320 --> 00:01:53,320
- into a table in your DBSQL light.
+ into a table in your DBSQLite.
 
 45
 00:01:53,320 --> 00:01:56,360

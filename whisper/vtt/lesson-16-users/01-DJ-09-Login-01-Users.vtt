@@ -130,7 +130,7 @@ WEBVTT
  When you create that superuser, it just adds a row
 
 00:01:50.320 --> 00:01:53.320
- into a table in your DBSQL light.
+ into a table in your DBSQLite.
 
 00:01:53.320 --> 00:01:56.360
  And you can wipe this out any time.

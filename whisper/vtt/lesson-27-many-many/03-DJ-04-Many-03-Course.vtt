@@ -433,7 +433,7 @@ WEBVTT
  kind of many-to-many model and we can talk to this
 
 00:06:50.400 --> 00:06:56.480
- in the Django shell, Python 3, many manage.py shell.
+ in the Django shell, Python 3, python manage.py shell.
 
 00:06:56.480 --> 00:07:02.820
  You know, we import the models from the application models

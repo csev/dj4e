@@ -167,7 +167,7 @@
  or I could have put it here.
  For me, just kind of after a while,
  I think this is prettier, because now I
- can look at all the names of my arts, et cetera.
+ can look at all the names of myarts, et cetera.
  So that's kind of nice.
  OK.
  So here's views.

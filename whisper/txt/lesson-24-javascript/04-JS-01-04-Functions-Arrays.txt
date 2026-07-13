@@ -89,7 +89,7 @@
  But right now they kind of look like a dictionary.
  Key, value, pair, key, value, pair.
  Key is name, value is chuck.
- Key is class, value is dj for e.
+ Key is class, value is DJ4E.
  And so when you print that out, away you go.
  Now, you can say a sub zero, which gives you x,
  which is that first element,

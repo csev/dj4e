@@ -202,7 +202,7 @@ WEBVTT
  And then there's a little piece of software.
 
 00:03:07.480 --> 00:03:11.000
- Often it's an open source software called NGINX.
+ Often it's an open source software called nginx.
 
 00:03:11.000 --> 00:03:14.080
  And it has a whole bunch of configuration files
@@ -253,7 +253,7 @@ WEBVTT
  and that is how the request works in your settings file.
 
 00:03:53.640 --> 00:03:57.040
- But the goal of NGINX is getting it to your front door
+ But the goal of nginx is getting it to your front door
 
 00:03:57.040 --> 00:03:59.320
  so that your application gets the requests

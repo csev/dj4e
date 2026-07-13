@@ -508,7 +508,7 @@
 
 128
 00:11:28,520 --> 00:11:34,760
- manage py run server. If this was Django on Python anywhere you would go and
+ manage.py run server. If this was Django on Python anywhere you would go and
 
 129
 00:11:34,760 --> 00:11:39,080
@@ -712,7 +712,7 @@
 
 179
 00:16:28,920 --> 00:16:38,320
- do is we're going to do another request and it tells us to add /dj for e and now
+ do is we're going to do another request and it tells us to add /DJ4E and now
 
 180
 00:16:38,320 --> 00:16:43,680
@@ -724,11 +724,11 @@
 
 182
 00:16:48,040 --> 00:16:53,600
- it so we receive the headers we've got a get for /dj for e so if you look here
+ it so we receive the headers we've got a get for /DJ4E so if you look here
 
 183
 00:16:53,600 --> 00:17:01,340
- let's go back to this get request this is a get with a path of dj free and and
+ let's go back to this get request this is a get with a path of DJ4E and and
 
 184
 00:17:01,340 --> 00:17:05,700
@@ -940,7 +940,7 @@
 
 236
 00:22:29,960 --> 00:22:35,240
- developing Django locally Python manage Python server if you're developing in
+ developing Django locally python manage.py runserver if you're developing in
 
 237
 00:22:35,240 --> 00:22:39,080
@@ -1012,7 +1012,7 @@
 
 254
 00:24:07,840 --> 00:24:13,600
- slash DJ free the headers which is being incoming headers that's going to be in a
+ slash DJ4E the headers which is being incoming headers that's going to be in a
 
 255
 00:24:13,600 --> 00:24:17,680
@@ -1296,7 +1296,7 @@
 
 325
 00:30:31,240 --> 00:30:37,360
- DJ free we're gonna call the DJ very view if it's start if it's equal to JS
+ DJ4E we're gonna call the DJ very view if it's start if it's equal to JS
 
 326
 00:30:37,360 --> 00:30:41,740
@@ -1456,7 +1456,7 @@
 
 365
 00:34:22,720 --> 00:34:30,040
- where we want the DJ free is sending back a single line of text the JS free
+ where we want the DJ4E is sending back a single line of text the JS free
 
 366
 00:34:30,040 --> 00:34:34,120
@@ -1472,7 +1472,7 @@
 
 369
 00:34:41,240 --> 00:34:45,960
- and the browser immediately comes back and comes back to this DJ free and that's
+ and the browser immediately comes back and comes back to this DJ4E and that's
 
 370
 00:34:45,960 --> 00:34:52,600
@@ -1484,11 +1484,11 @@
 
 372
 00:35:01,200 --> 00:35:05,080
- location to DJ free and then the browser in a blink of an eye without doing
+ location to DJ4E and then the browser in a blink of an eye without doing
 
 373
 00:35:05,080 --> 00:35:09,360
- without waiting for you does a get request a DJ free because that's what it
+ without waiting for you does a get request a DJ4E because that's what it
 
 374
 00:35:09,360 --> 00:35:14,340

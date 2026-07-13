@@ -364,7 +364,7 @@
 
 92
 00:04:26,480 --> 00:04:28,760
- Key is class, value is dj for e.
+ Key is class, value is DJ4E.
 
 93
 00:04:28,760 --> 00:04:31,780

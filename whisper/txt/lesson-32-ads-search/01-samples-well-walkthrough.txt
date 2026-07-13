@@ -55,7 +55,7 @@
  So let's take a look at the urls.py. The main URL that we're going to change is this one,
  right? It's the list view. And here it is in the list view. And I don't know which way
  to go first here. Uh, let's, let's compare and contrast this list view with the views
- in my arts. So in, in my arts, the list view, I could just borrow owner list view, which
+ in myarts. So in, in myarts, the list view, I could just borrow owner list view, which
  was like extended generic list view. And I just saved my model's article and it was good.
  But now I got to do a whole bunch more work here. So I actually am going to, and I might
  have been able to do this by sort of overriding a few methods like we have done in the past,

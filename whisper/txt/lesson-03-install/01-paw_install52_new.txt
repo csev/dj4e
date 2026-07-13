@@ -169,11 +169,11 @@
  And so now we're going to actually start using that software that we just checked out.
  We're going to go into the folder dj4e-samples under your home directory, pwd, you can see
  that.
- And then we're going to do python manage py check.
+ And then we're going to do python manage.py check.
  And this is a command you're going to really get used to.
  This is actually saying, there's a whole bunch of files here.
  Is this current directory a valid Python project?
- So I'm going to type python manage py check and this is going to load a whole bunch of
+ So I'm going to type python manage.py check and this is going to load a whole bunch of
  things.
  It's going to load a whole bunch of software.
  Look at settings.py, look at urls.py and it would have complained mightily.
@@ -186,7 +186,7 @@
  But at some point, once running check works, if running check doesn't work, then you kind
  of got to figure out why and start over.
  But it should.
- And you're going to run python manage py make migrations, all one word.
+ And you're going to run python manage.py makemigrations, all one word.
  And it says no changes detected and that's because the migrations are Python files.
  We'll learn about them in a bit.
  And they're all stored in that GitHub repository.
@@ -223,12 +223,12 @@
  I'm doing that because one of the things about this shell prompt is where am I at in the
  hierarchy?
  If you're looking in your files, let's go back to home Dr. Chuck in the files, I created
- this folder called DJ free samples and you can see the hierarchy a little better.
- We got the project called DJ free underscore projects, home Dr. Chuck DJ free projects.
+ this folder called DJ4E samples and you can see the hierarchy a little better.
+ We got the project called DJ4E underscore projects, home Dr. Chuck DJ4E projects.
  And so you can sort of do this stuff and see this stuff and you will be editing these files
- like in DJ free samples.
+ like in DJ4E samples.
  You can look at the requirements file.
- For example, DJ free home Dr. Chuck DJ free samples requirements five two dot txt that
+ For example, DJ4E home Dr. Chuck DJ4E samples requirements five two dot txt that
  talks to you about all the versions of the library stuff that we're using in this course.
  But I type PWD in the command line over and over in the Django projects, PWD home Dr.
  Chuck Django underscore projects.
@@ -344,7 +344,7 @@
  Yeah, don't type run server.
  We'll fix that in a minute.
  If you try to type run server, let's go here, and we're in my site, and it tells you to
- run Python manage py run server, it's going to blow up.
+ run Python manage.py run server, it's going to blow up.
  Yeah, you don't have migrations, but it says that port is already in use.
  And that's because you're in a shared environment and you don't get access to direct network
  ports.
@@ -420,7 +420,7 @@
  So now I just did a Python error.
  By the way, it tells right here, that's a syntax error, but let's just bear with me
  for a second.
- Now I'm going to say Python manage py check, syntax error, perhaps you forgot a common.
+ Now I'm going to say Python manage.py check, syntax error, perhaps you forgot a common.
  So this is not too bad.
  We knew what error we made.
  We put that in there.

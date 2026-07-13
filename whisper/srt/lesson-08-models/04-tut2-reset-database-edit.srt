@@ -52,7 +52,7 @@
 
 14
 00:00:57,100 --> 00:01:01,660
- Now if they're getting a syntax error, make sure you do a Python manage py check right
+ Now if they're getting a syntax error, make sure you do a Python manage.py check right
 
 15
 00:01:01,660 --> 00:01:05,620
@@ -172,7 +172,7 @@
 
 44
 00:03:19,420 --> 00:03:28,220
- So the next thing you do is Python 3 or Python manage py make migrations.
+ So the next thing you do is Python 3 or Python manage.py make migrations.
 
 45
 00:03:28,220 --> 00:03:33,660
@@ -192,7 +192,7 @@
 
 49
 00:03:45,420 --> 00:03:53,220
- only see an 01 and then you can say Python manage py migrate.
+ only see an 01 and then you can say Python manage.py migrate.
 
 50
 00:03:53,220 --> 00:04:00,300

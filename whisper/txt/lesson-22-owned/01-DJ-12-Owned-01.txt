@@ -60,7 +60,7 @@
  Now, in this owner view,
  we're going to do something quite similar.
  And that is, when we're going to have an article,
- and this is all from the DJ Free Samples My Arts example,
+ and this is all from the DJ4E Samples myarts example,
  we're going to extend owner list view.
  Now, if we were, and soon we will look inside
  owner list view and we will see that owner list view

@@ -103,10 +103,10 @@ WEBVTT
  So if I take a quick look at the admin user interface, admin and I look at faz, this is my this is my many.
 
 00:03:29.000 --> 00:03:34.000
- Well, let me just stay here. Right. So this means that the user DJ free likes raindrops.
+ Well, let me just stay here. Right. So this means that the user DJ4E likes raindrops.
 
 00:03:34.000 --> 00:03:41.000
- And so if I do a refresh here, so that means that me, the logged in user DJ free likes this.
+ And so if I do a refresh here, so that means that me, the logged in user DJ4E likes this.
 
 00:03:41.000 --> 00:03:47.000
  Now, if I say I would also like whiskered on kittens, it's going to update the database.
@@ -115,7 +115,7 @@ WEBVTT
  See there. And then if I come over here, I can hit refresh and you see that DJ for he likes raindrops.
 
 00:03:53.000 --> 00:04:00.000
- And it's just a many to many table with an outward outward connection to raindrops on roses and another outward connection to the user DJ free.
+ And it's just a many to many table with an outward outward connection to raindrops on roses and another outward connection to the user DJ4E.
 
 00:04:00.000 --> 00:04:06.000
  I'm going to delete this. I'm going to delete this from within the administration.
@@ -283,7 +283,7 @@ WEBVTT
  That's that's OK.
 
 00:09:48.000 --> 00:09:54.000
- This owner dot p y is in the my arts, but you might have it also locally, the owner dot p y.
+ This owner dot p y is in the myarts, but you might have it also locally, the owner dot p y.
 
 00:09:54.000 --> 00:10:03.000
  So so again, the whole idea here is, is that the owner field in the models v i models dot p y.
@@ -292,7 +292,7 @@ WEBVTT
  This owner field is managed like in many of these by us creating.
 
 00:10:11.000 --> 00:10:18.000
- My dot dot slash my arts owner.
+ My dot dot slash myarts owner.
 
 00:10:18.000 --> 00:10:23.000
  And basically, we're creating this owner list view, the owner detail view, owner create view.

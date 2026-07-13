@@ -576,7 +576,7 @@
 
 145
 00:06:50,400 --> 00:06:56,480
- in the Django shell, Python 3, many manage.py shell.
+ in the Django shell, Python 3, python manage.py shell.
 
 146
 00:06:56,480 --> 00:07:02,820

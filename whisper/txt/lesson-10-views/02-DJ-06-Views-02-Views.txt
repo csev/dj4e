@@ -69,7 +69,7 @@
  So, here we're saying, you know,
  we're in the views application,
  we're gonna go to the view funky, right?
- And so, in the URLs PY, we say map/funky
+ And so, in the urls.py, we say map/funky
  to this function named funky.
  It's a funky function, that's why I call it funky.
  And so, when it sees this,

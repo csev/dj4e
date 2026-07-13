@@ -11,7 +11,7 @@
  So I'm going to show you what to do if your model slash database gets messed up and like
  your manage dot py make migrations and migrate are not doing what you think or they're giving
  you weird errors.
- Now if they're getting a syntax error, make sure you do a Python manage py check right
+ Now if they're getting a syntax error, make sure you do a Python manage.py check right
  before you declare that your database is messed up.
  So let me go into my site.
  So here I am now.
@@ -41,12 +41,12 @@
  And so this polls to models py in my particular example is the code that's going to be effective
  because I just because I've got all the versions of running at the same time.
  That's why you're seeing this.
- So the next thing you do is Python 3 or Python manage py make migrations.
+ So the next thing you do is Python 3 or Python manage.py make migrations.
  So what make migrations is doing is it's reading all these models dot py files and it's writing
  this file.
  So I got rid of that file but now if I do an ls you'll see that it's come back and sometimes
  you might see an 02 etc. and then you throw it away and you make it fresh and you should
- only see an 01 and then you can say Python manage py migrate.
+ only see an 01 and then you can say Python manage.py migrate.
  And then that well if you'll do an ls let me control c there if I do an ls you'll see
  that there wait a second how come that the dbsqlite3 is zero size.
  So I'm going to do Python 3 Python manage sorry my Mac migrate.

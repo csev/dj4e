@@ -4,7 +4,7 @@
 
 2
 00:00:05,660 --> 00:00:12,700
- In this, we're going to walk through the how to handle pictures, and in our DJ free samples,
+ In this, we're going to walk through the how to handle pictures, and in our DJ4E samples,
 
 3
 00:00:12,700 --> 00:00:14,740

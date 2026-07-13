@@ -1,5 +1,5 @@
  Hello, and welcome to another code walkthrough for Django for Everybody.
- In this, we're going to walk through the how to handle pictures, and in our DJ free samples,
+ In this, we're going to walk through the how to handle pictures, and in our DJ4E samples,
  I'm going to walk through the code.
  So first, let's walk through just how it basically works.
  It's a CRUD application.

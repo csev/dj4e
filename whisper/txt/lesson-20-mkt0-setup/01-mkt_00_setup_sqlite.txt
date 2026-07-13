@@ -57,7 +57,7 @@
  install our requirements.txt, and I might look at that and say, you've already got it
  because you already got a virtual environment, this is just adding a bunch of stuff.
  So you see it just said, it's great, you got everything you needed from when you installed
- the DJ free samples before, and let's just for double checking, check to see if we got
+ the DJ4E samples before, and let's just for double checking, check to see if we got
  Django, and here we are in a virtual environment, we got Django 5.2, so we are in good shape.
  So depending on what you see, you may need to do more or less of this.
  So now, you'll notice, as I said before, there is no market market, there's a file, I changed

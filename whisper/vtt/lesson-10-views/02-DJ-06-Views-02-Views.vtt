@@ -214,7 +214,7 @@ WEBVTT
  we're gonna go to the view funky, right?
 
 00:03:16.360 --> 00:03:21.360
- And so, in the URLs PY, we say map/funky
+ And so, in the urls.py, we say map/funky
 
 00:03:21.360 --> 00:03:26.400
  to this function named funky.

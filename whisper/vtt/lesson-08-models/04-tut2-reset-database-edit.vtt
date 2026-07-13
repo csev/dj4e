@@ -40,7 +40,7 @@ WEBVTT
  you weird errors.
 
 00:00:57.100 --> 00:01:01.660
- Now if they're getting a syntax error, make sure you do a Python manage py check right
+ Now if they're getting a syntax error, make sure you do a Python manage.py check right
 
 00:01:01.660 --> 00:01:05.620
  before you declare that your database is messed up.
@@ -130,7 +130,7 @@ WEBVTT
  That's why you're seeing this.
 
 00:03:19.420 --> 00:03:28.220
- So the next thing you do is Python 3 or Python manage py make migrations.
+ So the next thing you do is Python 3 or Python manage.py make migrations.
 
 00:03:28.220 --> 00:03:33.660
  So what make migrations is doing is it's reading all these models dot py files and it's writing
@@ -145,7 +145,7 @@ WEBVTT
  you might see an 02 etc. and then you throw it away and you make it fresh and you should
 
 00:03:45.420 --> 00:03:53.220
- only see an 01 and then you can say Python manage py migrate.
+ only see an 01 and then you can say Python manage.py migrate.
 
 00:03:53.220 --> 00:04:00.300
  And then that well if you'll do an ls let me control c there if I do an ls you'll see

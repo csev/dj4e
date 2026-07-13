@@ -288,7 +288,7 @@
 
 73
 00:03:15,980 --> 00:03:19,800
- See, it says less than DJ free dash greeting greater than,
+ See, it says less than DJ4E dash greeting greater than,
 
 74
 00:03:19,800 --> 00:03:21,160
@@ -324,11 +324,11 @@
 
 82
 00:03:38,760 --> 00:03:41,960
- dot slash 16 DJ free greet dot JS.
+ dot slash 16 DJ4E greet dot JS.
 
 83
 00:03:41,960 --> 00:03:46,960
- That's the code that adds the DJ free greeting tag
+ That's the code that adds the DJ4E greeting tag
 
 84
 00:03:46,960 --> 00:03:48,020
@@ -660,7 +660,7 @@
 
 166
 00:07:30,400 --> 00:07:32,720
- on this DJ free greeting tag,
+ on this DJ4E greeting tag,
 
 167
 00:07:32,720 --> 00:07:36,520

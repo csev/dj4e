@@ -466,7 +466,7 @@ WEBVTT
  And then I have one that's protected by hand in Python.
 
 00:06:24.240 --> 00:06:26.720
- And then one's required by a login mixin.
+ And then one's required by a LoginRequiredMixin.
 
 00:06:26.720 --> 00:06:28.480
  And then I sort of dump all that data,

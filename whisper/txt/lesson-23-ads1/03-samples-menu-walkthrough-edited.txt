@@ -105,7 +105,7 @@
  Now come back to the main menu.
  So if you go to login, it will say next equals, and it's come back here, right?
  And so that, you construct that and you pass that login in.
- So I can do dj free, and I can log in, and it will come back to the main menu, even though
+ So I can do DJ4E, and I can log in, and it will come back to the main menu, even though
  I clicked on it over here, okay?
  But now we're in this page, and in this case, user.isAuthenticated is true.
  So we're going to construct a drop down, and then this shows the drop down and takes the

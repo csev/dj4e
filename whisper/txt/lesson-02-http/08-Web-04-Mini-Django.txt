@@ -125,7 +125,7 @@
  that for now, and away you go, and so if we go back to the readme now, it says
  "python run server dot py" so I'm going to copy that, and so what this does is it
  starts the Minijango server. If this was Django on your laptop you'd say Python
- manage py run server. If this was Django on Python anywhere you would go and
+ manage.py run server. If this was Django on Python anywhere you would go and
  reload your web server. Whatever this does is it causes it to start up and
  listen on a server port. So I have this thing starting on 9000, higher numbers
  tend to be used for development, lower numbers like 80 or
@@ -176,11 +176,11 @@
  thing that tells the browser that I don't I can't find this path that's the
  path I've asked for and I can't get it and the browser is perfectly happy with
  that and just doesn't put up a favicon for us. Okay so now what we're going to
- do is we're going to do another request and it tells us to add /dj for e and now
+ do is we're going to do another request and it tells us to add /DJ4E and now
  it's still this keeps asking for the favicon wish it would stop but it
  doesn't maybe I'll add favicon or maybe I'll have you add favicon support for
- it so we receive the headers we've got a get for /dj for e so if you look here
- let's go back to this get request this is a get with a path of dj free and and
+ it so we receive the headers we've got a get for /DJ4E so if you look here
+ let's go back to this get request this is a get with a path of DJ4E and and
  then all the headers of course and we have a valid route which you'll see
  this code in a second for the routing it sends response headers it says this is a
  this is a text slash plain so if we look at the response headers come back if we
@@ -233,7 +233,7 @@
  you some of the source code I guess I'll make this bigger now so again I am in my
  users CSF downloads mini Django main and it's got the source code and so let's
  start with the simplest file and this is in a sense kind of like if you're
- developing Django locally Python manage Python server if you're developing in
+ developing Django locally python manage.py runserver if you're developing in
  Python anywhere this is like the reload application button and we have to start
  this this is a process that's going to listen on a port and you do this by
  saying Python run server dot py you can switch to a different port with a
@@ -251,7 +251,7 @@
  you'll notice it's 174 lines okay so in this we've got a couple of things we
  create some data classes which these are just really lightweight objects we have
  a some just some data in here the method which is get the path which is like
- slash DJ free the headers which is being incoming headers that's going to be in a
+ slash DJ4E the headers which is being incoming headers that's going to be in a
  dictionary and then the body which is you know if it was a post or whatever
  the response which is what we're supposed to produce and send back we have
  an error code which is 200 okay normally we have some response headers and then
@@ -322,7 +322,7 @@
  statement routing to path right so that it has got the path out of the incoming
  request if it's a slash we're gonna run a function out of views see it doesn't
  import a views there's a function named root in views and if it starts with slash
- DJ free we're gonna call the DJ very view if it's start if it's equal to JS
+ DJ4E we're gonna call the DJ very view if it's start if it's equal to JS
  free we're gonna call that view if it's slash broken we're gonna call the broken
  view now if you look at Django URLs dot py they put all this into an array of
  tuples basically and in that array of tuples it's more complex than this but I
@@ -362,15 +362,15 @@
  works its way back up through the URLs back into the Django itself we get the
  response and then we send it back to the browser we're almost done so we have a
  series this is our application code right the URLs is just kind of to get us
- where we want the DJ free is sending back a single line of text the JS free
+ where we want the DJ4E is sending back a single line of text the JS free
  is sending a redirect and so we're telling it to send a code of 302 that's
  called a temporary direct and we're adding a header called the location
  which is where we want to redirect to so we return this it goes to the browser
- and the browser immediately comes back and comes back to this DJ free and that's
+ and the browser immediately comes back and comes back to this DJ4E and that's
  what you see when you go to slash J here let me hide this boom that's what you
  see when you go to JS for eat so first you see a 302 which sends back a
- location to DJ free and then the browser in a blink of an eye without doing
- without waiting for you does a get request a DJ free because that's what it
+ location to DJ4E and then the browser in a blink of an eye without doing
+ without waiting for you does a get request a DJ4E because that's what it
  was told to do so you return this goes all the way back to the browser the
  browser sees the 302 redirect sees the location and then comes back in and
  reads this code and that's how that works the only remaining view is the

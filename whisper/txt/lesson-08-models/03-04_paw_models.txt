@@ -30,7 +30,7 @@
  Local library is the configuration.
  We've been editing these files all along.
  And so here we are.
- If you recall, we've run the SQL light command in previous
+ If you recall, we've run the SQLite command in previous
  that we can see what's in here.
  We're gonna be adding some new tables.
  So we're going to edit the file catalog, models.py.
@@ -178,13 +178,13 @@
  and push it into our git repo.
  Okay, so now I typed in my password,
  and so it's all set up, and just for our own sanity,
- we're gonna give ourselves another tag in our git hub repo
+ we're gonna give ourselves another tag in our GitHub repo
  just so we can keep track of the fact that,
  'cause you might have made a couple of commits.
  We only made one commit, I did,
  'cause I knew what I was doing,
- and then we'll upload the tags to git hub,
- and so if I look at git hub,
+ and then we'll upload the tags to GitHub,
+ and so if I look at GitHub,
  csev Django projects,
  see we got five commits,
  that one we just did, and two releases,

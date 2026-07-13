@@ -36,7 +36,7 @@
  or if you type manage run server, it's gonna blow up, right?
  And so you wanna do the things,
  it tells you that you're supposed to say,
- cd tilde django projects, my site, Python manage py check.
+ cd tilde django projects, my site, Python manage.py check.
  And then you reload the web application, the web tab.
  So I'm gonna do all these things
  and try to call out each of the times
@@ -135,7 +135,7 @@
  If I'm sitting in files, it's home, Dr. Chuck,
  Django projects, my site, my site.
  Okay, and so let's go back and see what it's telling us to do.
- Python manage py migrate.
+ Python manage.py migrate.
  Looking here, it says cd django projects, my site.
  So that migrate command just has to be run in your folder.
  Part of it is if you're running this on your local computer,
@@ -151,15 +151,15 @@
  Don't open it, don't edit it, leave it alone.
  It was created by Python for us.
  Okay, so let's see what we're supposed to type.
- We're supposed to type Python manage py migrate.
+ We're supposed to type Python manage.py migrate.
  And this is going to, so let me show you something here.
  So there, oh, there is a database.
  Let's see if it's gonna work or not.
- Python manage py migrate.
+ Python manage.py migrate.
  Yeah, so this is a bunch of database tables
  that are being created for Django itself.
  Okay, you're gonna create your own in a little bit,
- but this Python manage py migrate says,
+ but this Python manage.py migrate says,
  create all the tables that are needed for in,
  and it wrote them in this file called a dbsqli3.
  Create all the files that are needed,
@@ -210,7 +210,7 @@
  Then we're gonna save it.
  Now Django knows how to include the poles app.
  Let's run another command.
- Now, python manage.py make migrations poles.
+ Now, python manage.py makemigrations poles.
  It is important that this runs in the folder
  that has the manage.py in it.
  So I'd have to cd into tilde slash django project
@@ -250,7 +250,7 @@
  keeping the database caught up with the migrations.
  So if you ever change your models.py,
  you have to do two steps.
- You run python manage py make migrations
+ You run python manage.py makemigrations
  to make migrations for the changes in models,
  and then you run migrate.
  Now I'm gonna run these right now
@@ -269,7 +269,7 @@
  it says make sure you're in the console
  and you're in the right folder.
  But we are in the right folder,
- so we're just gonna grab manage py shell.
+ so we're just gonna grab manage.py shell.
  Now, this is running, this is loading all of Django up
  and giving you an interactive prompt.
  Now this prompt is a python prompt,
@@ -355,7 +355,7 @@
  So now we're out of Python and back into bash.
  And all we're gonna do is we're gonna restart the shell.
  Now I'm gonna hit the up arrow key,
- python manage py shell, and so I'm back in.
+ python manage.py shell, and so I'm back in.
  So I hit the up arrow key to rerun the previous command
  and then hit enter, okay?
  So you'll notice like it imported a bunch of stuff for us.
@@ -380,7 +380,7 @@
  You can go in and out of the shell as many times as you want.
  Okay, so the next thing we're gonna do
  is use the Django administrator.
- And we're gonna type python manage py create super user.
+ And we're gonna type python manage.py create super user.
  And again, you have to be in the right folder
  when you're doing this.
  Django projects my site.
@@ -399,17 +399,17 @@
  You just gotta type init enter.
  Okay, so here is the thing that makes it most complex.
  Let's see what happens when I type
- python manage py run server.
+ python manage.py run server.
  Yeah, you'll get a different error message.
  I've got this thing that kinda patches
  the manage.py to complain about it,
  that you're not supposed to run server on Python anywhere.
  You'll get some funky error message
  that will be like ports not available or not in use.
- Says you're supposed to run python manage py check.
+ Says you're supposed to run python manage.py check.
  And if you go look at my thing, it says,
- when it says to run python manage py run server,
- go into my site and type python manage py check.
+ when it says to run python manage.py run server,
+ go into my site and type python manage.py check.
  So check is like checking,
  run server checks the configuration and runs the server.
  You get, all we're gonna do is check the configuration.

@@ -268,7 +268,7 @@
 
 68
 00:03:07,480 --> 00:03:11,000
- Often it's an open source software called NGINX.
+ Often it's an open source software called nginx.
 
 69
 00:03:11,000 --> 00:03:14,080
@@ -336,7 +336,7 @@
 
 85
 00:03:53,640 --> 00:03:57,040
- But the goal of NGINX is getting it to your front door
+ But the goal of nginx is getting it to your front door
 
 86
 00:03:57,040 --> 00:03:59,320

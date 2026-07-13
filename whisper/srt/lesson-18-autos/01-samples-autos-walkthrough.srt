@@ -168,7 +168,7 @@
 
 43
 00:02:33,680 --> 00:02:36,940
- So I'm here sitting in my DJ free samples.
+ So I'm here sitting in my DJ4E samples.
 
 44
 00:02:36,940 --> 00:02:44,560
@@ -204,7 +204,7 @@
 
 52
 00:03:11,840 --> 00:03:19,640
- So this view in autos, the slash autos, has protected itself with login mixin.
+ So this view in autos, the slash autos, has protected itself with LoginRequiredMixin.
 
 53
 00:03:19,640 --> 00:03:23,760
@@ -428,11 +428,11 @@
 
 108
 00:06:54,720 --> 00:07:01,440
- that when we tell our views to add the login mixin, which we'll see in just a second.
+ that when we tell our views to add the LoginRequiredMixin, which we'll see in just a second.
 
 109
 00:07:01,440 --> 00:07:04,200
- When we tell our views to use the login mixin,
+ When we tell our views to use the LoginRequiredMixin,
 
 110
 00:07:04,200 --> 00:07:06,560
@@ -452,7 +452,7 @@
 
 114
 00:07:20,560 --> 00:07:22,880
- And then you have to start using login mixin, and
+ And then you have to start using LoginRequiredMixin, and
 
 115
 00:07:22,880 --> 00:07:25,520
@@ -784,7 +784,7 @@
 
 197
 00:12:58,680 --> 00:13:08,600
- So login mixin, if you remember from the AuthZ walkthrough.
+ So LoginRequiredMixin, if you remember from the AuthZ walkthrough.
 
 198
 00:13:08,600 --> 00:13:10,680
@@ -812,7 +812,7 @@
 
 204
 00:13:31,200 --> 00:13:34,600
- But you don't want to do it by hand, you just call login mixin.
+ But you don't want to do it by hand, you just call LoginRequiredMixin.
 
 205
 00:13:34,600 --> 00:13:40,040
