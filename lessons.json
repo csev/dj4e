@@ -26,6 +26,12 @@
                     "youtube-2018": "KH_-vhsfxjg"
                 },
                 {
+                    "type": "video",
+                    "title": "DJ 01.02 Thoughts on the use of Artificial Intelligence in Programming Courses (16:16)",
+                    "youtube": "1u-gQ-d5Lv8",
+                    "media": "lesson-01-welcome/02-2025-08-20-AI.m4v"
+                },
+                {
                     "type": "header",
                     "text": "References",
                     "level": 2
@@ -2809,7 +2815,7 @@
                 },
                 {
                     "type": "reference",
-                    "title": "Bonus: Building JavaScript with with Brendan Eich",
+                    "title": "Bonus: Computing Conversations with Brendan Eich",
                     "href": "https://www.youtube.com/watch?v=IPxQ9kEaF8c"
                 },
                 {
