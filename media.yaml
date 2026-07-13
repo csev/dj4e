@@ -1,8 +1,8 @@
 media_root: /Users/csev/Desktop/teach/dj4e-media
 www_root: /Users/csev/htdocs/dj4e
 entries:
-  lesson-02-http/07-Web-04-Mini-Django.m4v:
-    title: DJ 02.07 Exploring the Mini Django Web Server (36:58)
+  lesson-02-http/08-Web-04-Mini-Django.m4v:
+    title: DJ 02.08 Exploring the Mini Django Web Server (36:58)
     youtube_id: q6LGpiVPwaA
     kaltura_id: null
     size: 835841221
@@ -14,8 +14,8 @@ entries:
       https://www.dj4e.com/
       https://github.com/csev/mini_django/
       http://www.dj4e.com/lectures/mini_django.pptx
-  lesson-02-http/08-DJ-11-BigPicture.m4v:
-    title: DJ 02.08 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)
+  lesson-02-http/07-DJ-11-BigPicture.m4v:
+    title: DJ 02.07 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)
     youtube_id: zuCxAR3-CzA
     kaltura_id: null
     size: 369078195
@@ -25,8 +25,8 @@ entries:
       This video looks at how the various files work together to produce a Django application on PythonAnywhere.
 
       https://www.dj4e.com/
-  lesson-03-install/03-01-DJ-00-AutoGrader.m4v:
-    title: DJ 03.03 How the Autograder Works (10:42)
+  lesson-03-install/02-DJ-00-AutoGrader.m4v:
+    title: DJ 03.02 How the Autograder Works (10:42)
     youtube_id: zQvzXkiwILM
     kaltura_id: null
     size: 201329460
@@ -34,8 +34,8 @@ entries:
     duration: 642
     description: |
       For additional materials and autograded assignments, please see www.dj4e.com
-  lesson-03-install/03-01-paw_install52_new.m4v:
-    title: DJ 03.03 Installing Django 5.2 on PythonAnywhere (31:59)
+  lesson-03-install/01-paw_install52_new.m4v:
+    title: DJ 03.01 Installing Django 5.2 on PythonAnywhere (31:59)
     youtube_id: Aba5ZCfua8k
     kaltura_id: null
     size: 894692080
@@ -43,13 +43,21 @@ entries:
     duration: 1918
     description: |
       Please visit http://www.dj4e.com to access free supporting materials, as well as interactive exercises.
-  lesson-03-install/02-01_paw_install_errors_52.m4v:
-    title: paw errors 52
-    youtube_id: null
+  lesson-03-install/04-paw_install_errors_52.m4v:
+    title: DJ 03.04 Fixing Django 5.2 Errors on PythonAnywhere (19:39)
+    youtube_id: IYH_BkpHf3s
     kaltura_id: null
     size: 543135960
     md5: af93e420b0815fdd9c7e1fafc71f5e64
     duration: 1178
+    description: null
+  lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
+    title: DJ 03.03 The Structure of a Django Application (7:04)
+    youtube_id: jmX27FrCqqs
+    kaltura_id: null
+    size: 360052905
+    md5: null
+    duration: 424
     description: null
   lesson-04-shell/01-01_paw_shell-DJ4.m4v:
     title: 01 01 paw shell DJ4
