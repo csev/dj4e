@@ -8,11 +8,11 @@
 
 3
 00:00:22,000 --> 00:00:33,000
- The basic idea of the WELL is it looks exactly like MyArts. It's pretty much a clone of MyArts.
+ The basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone of myarts.
 
 4
 00:00:33,000 --> 00:00:47,000
- If you recall MyArts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
+ If you recall myarts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
 
 5
 00:00:47,000 --> 00:01:00,000
@@ -112,7 +112,7 @@
 
 29
 00:04:42,000 --> 00:04:47,000
- We've got a really simple model that was pretty much taken straight from the MyArts code.
+ We've got a really simple model that was pretty much taken straight from the myarts code.
 
 30
 00:04:47,000 --> 00:04:57,000
@@ -164,7 +164,7 @@
 
 42
 00:06:01,000 --> 00:06:08,000
- So let's take a look at the URLs.py. The main URL that we're going to change is this one, right?
+ So let's take a look at the urls.py. The main URL that we're going to change is this one, right?
 
 43
 00:06:08,000 --> 00:06:17,000
@@ -172,11 +172,11 @@
 
 44
 00:06:17,000 --> 00:06:24,000
- Let's compare and contrast this list view with the views in MyArts.
+ Let's compare and contrast this list view with the views in myarts.
 
 45
 00:06:24,000 --> 00:06:33,000
- So in MyArts, the list view, I could just borrow owner list view, which was like extended generic list view.
+ So in myarts, the list view, I could just borrow owner list view, which was like extended generic list view.
 
 46
 00:06:33,000 --> 00:06:40,000
@@ -328,7 +328,7 @@
 
 83
 00:11:00,000 --> 00:11:07,000
- Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by djfree samples.
+ Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by dj4e-samples.
 
 84
 00:11:07,000 --> 00:11:14,000
@@ -628,7 +628,7 @@
 
 158
 00:18:19,000 --> 00:18:30,000
- But let me show you how I solve the problem of where are the views. They're actually fully in URLs.py.
+ But let me show you how I solve the problem of where are the views. They're actually fully in urls.py.
 
 159
 00:18:30,000 --> 00:18:39,000
@@ -684,7 +684,7 @@
 
 172
 00:20:10,000 --> 00:20:20,000
- And so all the stuff that I was doing in views.py, I am now doing in URLs.py. And just we're using owner create view.
+ And so all the stuff that I was doing in views.py, I am now doing in urls.py. And just we're using owner create view.
 
 173
 00:20:20,000 --> 00:20:29,000
@@ -704,7 +704,7 @@
 
 177
 00:20:52,000 --> 00:21:08,000
- Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave URLs.py.
+ Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave urls.py.
 
 178
 00:21:08,000 --> 00:21:19,000

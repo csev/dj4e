@@ -298,7 +298,7 @@ WEBVTT
  And then sometimes it's easier just to do some little JavaScript and what this little JavaScript chunk is.
 
 00:07:44.760 --> 00:07:51.600
- Location.href equals quote www.djfree.com return false.
+ Location.href equals quote www.dj4e.com return false.
 
 00:07:51.600 --> 00:08:05.280
  What this says is it actually sort of when you press this escape button, it goes up in the browser and in effect pastes this little URL into the URL bar and then hits enter and return false keeps the form from being submitted.

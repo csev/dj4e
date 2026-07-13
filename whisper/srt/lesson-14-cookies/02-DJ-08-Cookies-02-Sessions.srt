@@ -632,11 +632,11 @@
 
 159
 00:09:31,520 --> 00:09:34,920
- We can see the Django_session, and
+ We can see the django_session, and
 
 160
 00:09:34,920 --> 00:09:39,160
- then we can say select star from Django_session.
+ then we can say select star from django_session.
 
 161
 00:09:39,160 --> 00:09:42,280

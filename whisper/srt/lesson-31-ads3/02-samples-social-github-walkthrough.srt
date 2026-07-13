@@ -68,11 +68,11 @@
 
 18
 00:01:04,000 --> 00:01:08,000
- It's going to import from githubsettings.py.
+ It's going to import from GitHubsettings.py.
 
 19
 00:01:08,000 --> 00:01:11,000
- And githubsettings.py is a file.
+ And GitHubsettings.py is a file.
 
 20
 00:01:11,000 --> 00:01:13,000
@@ -80,11 +80,11 @@
 
 21
 00:01:13,000 --> 00:01:21,000
- So if you go into djfree samples, you will see that there is a githubsettings dist,
+ So if you go into dj4e-samples, you will see that there is a GitHubsettings dist,
 
 22
 00:01:21,000 --> 00:01:24,000
- but there is not a githubsettings.py.
+ but there is not a GitHubsettings.py.
 
 23
 00:01:24,000 --> 00:01:26,000
@@ -104,7 +104,7 @@
 
 27
 00:01:34,000 --> 00:01:39,000
- we're going to put the github, oauth2, backend, et cetera, et cetera.
+ we're going to put the GitHub, oauth2, backend, et cetera, et cetera.
 
 28
 00:01:39,000 --> 00:01:40,000
@@ -116,11 +116,11 @@
 
 30
 00:01:45,000 --> 00:01:49,000
- There is a file called githubsettingsdist.py.
+ There is a file called GitHubsettingsdist.py.
 
 31
 00:01:49,000 --> 00:02:02,000
- So now we have to make a new empty file called githubsettings.py.
+ So now we have to make a new empty file called GitHubsettings.py.
 
 32
 00:02:02,000 --> 00:02:05,000
@@ -232,11 +232,11 @@
 
 59
 00:03:45,000 --> 00:03:47,000
- oh, we've got to go into the URLs.py.
+ oh, we've got to go into the urls.py.
 
 60
 00:03:47,000 --> 00:03:53,000
- So let me go here and then go into URLs.py.
+ So let me go here and then go into urls.py.
 
 61
 00:03:53,000 --> 00:03:59,000
@@ -272,7 +272,7 @@
 
 69
 00:04:41,000 --> 00:04:45,000
- OK, so we have this file called githubsettings.py,
+ OK, so we have this file called GitHubsettings.py,
 
 70
 00:04:45,000 --> 00:04:51,000

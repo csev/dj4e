@@ -508,7 +508,7 @@
 
 128
 00:09:47,000 --> 00:09:50,000
- This owner.py is in the MyArts.
+ This owner.py is in the myarts.
 
 129
 00:09:50,000 --> 00:09:52,000
@@ -524,7 +524,7 @@
 
 132
 00:10:02,000 --> 00:10:18,000
- this owner field is managed, like in many of these, by us creating my dot dot slash MyArts owner.
+ this owner field is managed, like in many of these, by us creating my dot dot slash myarts.owner.
 
 133
 00:10:18,000 --> 00:10:23,000

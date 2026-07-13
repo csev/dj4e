@@ -125,11 +125,11 @@
  And so I've got that.
  And actually, I'm importing it from a different project.
  That's okay.
- This owner.py is in the MyArts.
+ This owner.py is in the myarts.
  But you might have it also locally.
  It'd be owner.py.
  So again, the whole idea here is that the owner field in the models, vimodels.py,
- this owner field is managed, like in many of these, by us creating my dot dot slash MyArts owner.
+ this owner field is managed, like in many of these, by us creating my dot dot slash myarts.owner.
  And basically, we're creating this owner list view, the owner detail view, owner create view.
  And if you recall from these, these are the places where we've kind of overridden the original
  automatic create view, automatic update view, which we've used for lots of things.

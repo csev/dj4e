@@ -295,7 +295,7 @@ WEBVTT
  for my Django for everybody class. We've got to start by going into GitHub and
 
 00:08:44.360 --> 00:08:54.280
- taking a look at my Minijango repository. You see github.com/csev/mini_jango
+ taking a look at my Minijango repository. You see GitHub.com/csev/mini_jango
 
 00:08:54.280 --> 00:09:01.600
  is where we find the code and in here we have a readme and then four source
@@ -316,7 +316,7 @@ WEBVTT
  git or you don't know how to use git you can just grab a zip file because
 
 00:09:25.360 --> 00:09:28.680
- github is really nice and that's how we're going to do it under this code
+ GitHub is really nice and that's how we're going to do it under this code
 
 00:09:28.680 --> 00:09:33.000
  button there's a thing called download zip and so that's just going to download
@@ -340,10 +340,10 @@ WEBVTT
  see the actual files and so these files Minijango readme run server they're all
 
 00:10:06.680 --> 00:10:10.840
- the same files that work you got on github is so now you're kind of done
+ the same files that work you got on GitHub is so now you're kind of done
 
 00:10:10.840 --> 00:10:16.600
- with with github okay so there's the downloads file and now I'm going to
+ with with GitHub okay so there's the downloads file and now I'm going to
 
 00:10:16.600 --> 00:10:22.600
  start a terminal and in Windows this is like a command shell in Windows you

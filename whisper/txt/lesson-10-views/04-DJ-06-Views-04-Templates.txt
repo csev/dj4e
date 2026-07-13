@@ -153,7 +153,7 @@
  and then the page is displayed in our browser.
  And remember that we have a Django project,
  and this is the Django project.
- In my case, the Django project is djfree-samples,
+ In my case, the Django project is dj4e-samples,
  and I have a bunch of little applications.
  All these things, as a matter of fact,
  Temple is the one we're working at right now.

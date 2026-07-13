@@ -124,7 +124,7 @@ WEBVTT
  the non-portable parts to this.
 
 00:02:27.360 --> 00:02:32.120
- So if you look at the make migrations, and here's in djfree samples,
+ So if you look at the make migrations, and here's in dj4e-samples,
 
 00:02:32.120 --> 00:02:34.980
  my little sample stuff, there's lots of models in there.
@@ -133,7 +133,7 @@ WEBVTT
  And if you take a look at all the models.py, you see that for
 
 00:02:37.880 --> 00:02:43.720
- every application in the djfree samples project, you see a models.py file.
+ every application in the dj4e-samples project, you see a models.py file.
 
 00:02:43.720 --> 00:02:49.040
  And that's a Python code, that's class, book, blah, blah, blah.

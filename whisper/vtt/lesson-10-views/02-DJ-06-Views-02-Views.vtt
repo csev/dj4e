@@ -61,13 +61,13 @@ WEBVTT
  And so, here is a very simple view. So, here we're saying, you know, we're in the views application, we're going to go to the view funky, right?
 
 00:03:16.000 --> 00:03:30.000
- And so, in the URLsPY, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
+ And so, in the urls.py, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
 
 00:03:30.000 --> 00:03:41.000
  And so, when it sees this, all the data coming into the request shows up in this variable that is the first parameter sent to that function.
 
 00:03:41.000 --> 00:03:55.000
- So, that's what this is saying in URLsPY. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
+ So, that's what this is saying in urls.py. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
 
 00:03:55.000 --> 00:04:05.000
  Now, in this, I'm not really going to do anything with that request object because I'm always returning the exact same thing.

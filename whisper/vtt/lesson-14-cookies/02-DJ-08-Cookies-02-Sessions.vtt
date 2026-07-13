@@ -475,10 +475,10 @@ WEBVTT
  So we can go right into the database, we can ask for the tables.
 
 00:09:31.520 --> 00:09:34.920
- We can see the Django_session, and
+ We can see the django_session, and
 
 00:09:34.920 --> 00:09:39.160
- then we can say select star from Django_session.
+ then we can say select star from django_session.
 
 00:09:39.160 --> 00:09:42.280
  And so that will show us the data that's there.

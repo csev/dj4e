@@ -25,8 +25,8 @@
  and then this one does not see the edit and the delete.
  So you get the idea that that's pretty much what it does.
  So let's take a look at the code here.
- There is not too much tricky in the URLs.py.
- Most of the URLs.py is like all CRUD things we've built.
+ There is not too much tricky in the urls.py.
+ Most of the urls.py is like all CRUD things we've built.
  But the comment is yet another table, because there's really two tables here.
  There's the forum table and the comment table.
  And so we've done stuff like this where we've got two tables involved.

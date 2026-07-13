@@ -80,7 +80,7 @@
 
 21
 00:03:16,000 --> 00:03:30,000
- And so, in the URLsPY, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
+ And so, in the urls.py, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
 
 22
 00:03:30,000 --> 00:03:41,000
@@ -88,7 +88,7 @@
 
 23
 00:03:41,000 --> 00:03:55,000
- So, that's what this is saying in URLsPY. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
+ So, that's what this is saying in urls.py. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
 
 24
 00:03:55,000 --> 00:04:05,000

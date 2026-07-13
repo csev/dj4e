@@ -124,13 +124,13 @@ WEBVTT
  And if you just write your own custom element, you can do everything we're doing here, but it's a lot more verbose.
 
 00:04:38.000 --> 00:04:45.000
- And so what we do is using object orientation, we're grabbing a little tiny library called lit element.
+ And so what we do is using object orientation, we're grabbing a little tiny library called LitElement.
 
 00:04:45.000 --> 00:04:50.000
- So lit element is a custom element that has a lot of base capabilities into it.
+ So LitElement is a custom element that has a lot of base capabilities into it.
 
 00:04:50.000 --> 00:05:00.000
- And so we're extending lit element to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
+ And so we're extending LitElement to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
 
 00:05:00.000 --> 00:05:08.000
  So in it, we tell it our interaction with the outside world and we say there is a property called name, which turns into an attribute on the tag.
@@ -139,7 +139,7 @@ WEBVTT
  If you look back at the tag, we have a constructor and we in that constructor, we call our parent super.
 
 00:05:15.000 --> 00:05:23.000
- That's the constructor of lit element. And then we set our default value. So it's named somebody.
+ That's the constructor of LitElement. And then we set our default value. So it's named somebody.
 
 00:05:23.000 --> 00:05:27.000
  And there's this whole thing. I won't go into it in great detail.
@@ -148,7 +148,7 @@ WEBVTT
  There's a thing called a shadow DOM where you can inherit the CSS and other styling from the enclosing document.
 
 00:05:39.000 --> 00:05:43.000
- Or you can have your own CSS inside the lit element.
+ Or you can have your own CSS inside the LitElement.
 
 00:05:43.000 --> 00:05:51.000
  I'm choosing not to isolate my markup from the enclosing document.

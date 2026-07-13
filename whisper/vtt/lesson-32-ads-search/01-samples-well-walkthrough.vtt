@@ -7,10 +7,10 @@ WEBVTT
  The name WELL is based on a long-time early pre-internet forum in Berkeley, California, so you can go look up the WELL.
 
 00:00:22.000 --> 00:00:33.000
- The basic idea of the WELL is it looks exactly like MyArts. It's pretty much a clone of MyArts.
+ The basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone of myarts.
 
 00:00:33.000 --> 00:00:47.000
- If you recall MyArts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
+ If you recall myarts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
 
 00:00:47.000 --> 00:01:00.000
  The only difference between this and the WELL is there's a search box here, so I can search for things that have YADA in them, and then I can clear the search box, and that's it.
@@ -85,7 +85,7 @@ WEBVTT
  OK, so let's take a look at our code. I'll clear my search here. The code here is pretty straightforward.
 
 00:04:42.000 --> 00:04:47.000
- We've got a really simple model that was pretty much taken straight from the MyArts code.
+ We've got a really simple model that was pretty much taken straight from the myarts code.
 
 00:04:47.000 --> 00:04:57.000
  It's got a name. I called it post instead of articles because I've got all these applications running at the same time.
@@ -124,16 +124,16 @@ WEBVTT
  It's just you've got to be careful about the related name. So that's why that's there.
 
 00:06:01.000 --> 00:06:08.000
- So let's take a look at the URLs.py. The main URL that we're going to change is this one, right?
+ So let's take a look at the urls.py. The main URL that we're going to change is this one, right?
 
 00:06:08.000 --> 00:06:17.000
  It's the list view. And here it is in the list view. And I don't know which way to go first here.
 
 00:06:17.000 --> 00:06:24.000
- Let's compare and contrast this list view with the views in MyArts.
+ Let's compare and contrast this list view with the views in myarts.
 
 00:06:24.000 --> 00:06:33.000
- So in MyArts, the list view, I could just borrow owner list view, which was like extended generic list view.
+ So in myarts, the list view, I could just borrow owner list view, which was like extended generic list view.
 
 00:06:33.000 --> 00:06:40.000
  I could just say my model's article and it was good. But now I've got to do a whole bunch more work here.
@@ -247,7 +247,7 @@ WEBVTT
  so if the post is less, length is less than 100, slice is 0.99. I can't see that.
 
 00:11:00.000 --> 00:11:07.000
- Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by djfree samples.
+ Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by dj4e-samples.
 
 00:11:07.000 --> 00:11:14.000
  Who am I in this situation? Well, let's add a post, a title.
@@ -472,7 +472,7 @@ WEBVTT
  Well, templates are there. And as a matter of fact, in this one, I changed the default name of the templates because I'm kind of tired of putting underscores in front of certain things.
 
 00:18:19.000 --> 00:18:30.000
- But let me show you how I solve the problem of where are the views. They're actually fully in URLs.py.
+ But let me show you how I solve the problem of where are the views. They're actually fully in urls.py.
 
 00:18:30.000 --> 00:18:39.000
  So here is. So I import owner list view, owner detail view, owner create view and owner update view.
@@ -514,7 +514,7 @@ WEBVTT
  So, again, these are sort of class wide variables that turn into object very object instance variables when it makes this view and it overrides all these things.
 
 00:20:10.000 --> 00:20:20.000
- And so all the stuff that I was doing in views.py, I am now doing in URLs.py. And just we're using owner create view.
+ And so all the stuff that I was doing in views.py, I am now doing in urls.py. And just we're using owner create view.
 
 00:20:20.000 --> 00:20:29.000
  And you see an update, delete. They're all kind of there. Right. And so I don't actually need to put the views in.
@@ -529,7 +529,7 @@ WEBVTT
  Because really well is only hard coded one place in here. So that's kind of cool.
 
 00:20:52.000 --> 00:21:08.000
- Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave URLs.py.
+ Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave urls.py.
 
 00:21:08.000 --> 00:21:19.000
  And remember, we, I built this owner detail view to meet my needs. So things like template view, that's something that is just a bunch of code somebody wrote.

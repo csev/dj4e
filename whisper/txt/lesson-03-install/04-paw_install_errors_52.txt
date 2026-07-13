@@ -91,7 +91,7 @@
  It's Django.
  It's Django.
  And like, OK, now here we go.
- We are running the import of URLs.py and my site, my site.
+ We are running the import of urls.py and my site, my site.
  That's fine.
  That doesn't mean this is necessarily broken.
  Right. Because it's in the middle of importing that.
@@ -120,8 +120,8 @@
  So I'm going to go back and make that mistake again.
  I just put that mistake back in, save it and then reload it.
  So sometimes it's just like one in 20.
- There's something so subtle that Python ManagePy checks.
- This one ManagePy would check.
+ There's something so subtle that Python manage.py checks.
+ This one manage.py would check.
  But if you get to the point where you're still getting the error, there is a place that you can look at.
  So there are two logs that we can find interesting.
  So I'm going to start by looking at the error log.

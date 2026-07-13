@@ -39,10 +39,10 @@
  So it's a little complex, it has to do with database portability and
  the fact that we want to separate out the portable parts of this from
  the non-portable parts to this.
- So if you look at the make migrations, and here's in djfree samples,
+ So if you look at the make migrations, and here's in dj4e-samples,
  my little sample stuff, there's lots of models in there.
  And if you take a look at all the models.py, you see that for
- every application in the djfree samples project, you see a models.py file.
+ every application in the dj4e-samples project, you see a models.py file.
  And that's a Python code, that's class, book, blah, blah, blah.
  That's very portable, and that's how we, in our Python code,
  in our Django code, see the database model.

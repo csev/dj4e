@@ -91,7 +91,7 @@
  And so I got a bunch of views
  and I'm gonna give them some names
  so that we can play with them.
- So these are just the URLs.py.
+ So these are just the urls.py.
  So if you take a look in this main.html template,
  you see a whole bunch of things.
  You see this next feature in action.

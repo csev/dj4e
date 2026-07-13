@@ -852,7 +852,7 @@
 
 214
 00:21:42,000 --> 00:21:48,000
- And it tells you to run Python ManagePy run server. It's going to blow up.
+ And it tells you to run Python manage.py run server. It's going to blow up.
 
 215
 00:21:48,000 --> 00:21:51,000
@@ -908,7 +908,7 @@
 
 228
 00:22:59,000 --> 00:23:05,000
- Python ManagePy start app polls. And again, it's going to make a bunch of files.
+ Python manage.py start app polls. And again, it's going to make a bunch of files.
 
 229
 00:23:05,000 --> 00:23:12,000

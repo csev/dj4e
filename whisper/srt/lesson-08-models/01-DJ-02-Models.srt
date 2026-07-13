@@ -68,7 +68,7 @@
 
 18
 00:00:50,600 --> 00:00:53,960
- is that different databases like Postgres and MySQL
+ is that different databases like PostgreSQL and MySQL
 
 19
 00:00:53,960 --> 00:00:55,460
@@ -284,7 +284,7 @@
 
 72
 00:03:30,420 --> 00:03:35,560
- knows the difference between SQLite, Postgres, and MySQL,
+ knows the difference between SQLite, PostgreSQL, and MySQL,
 
 73
 00:03:35,560 --> 00:03:38,820
@@ -304,7 +304,7 @@
 
 77
 00:03:43,320 --> 00:03:46,060
- let's just use MySQL or Postgres instead,
+ let's just use MySQL or PostgreSQL instead,
 
 78
 00:03:46,060 --> 00:03:47,260
@@ -752,7 +752,7 @@
 
 189
 00:09:18,380 --> 00:09:21,640
- or Postgres, or sqlite, that's a little different,
+ or PostgreSQL, or sqlite, that's a little different,
 
 190
 00:09:21,640 --> 00:09:24,200

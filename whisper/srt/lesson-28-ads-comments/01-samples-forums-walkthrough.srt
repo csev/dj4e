@@ -108,11 +108,11 @@
 
 28
 00:02:38,000 --> 00:02:43,000
- There is not too much tricky in the URLs.py.
+ There is not too much tricky in the urls.py.
 
 29
 00:02:43,000 --> 00:02:49,000
- Most of the URLs.py is like all CRUD things we've built.
+ Most of the urls.py is like all CRUD things we've built.
 
 30
 00:02:49,000 --> 00:02:52,000

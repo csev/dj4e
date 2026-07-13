@@ -1240,11 +1240,11 @@
 
 311
 00:14:06,760 --> 00:14:10,400
- Postgres and MySQL are open source.
+ PostgreSQL and MySQL are open source.
 
 312
 00:14:10,400 --> 00:14:12,320
- Postgres is probably the more intricate
+ PostgreSQL is probably the more intricate
 
 313
 00:14:12,320 --> 00:14:13,400
@@ -1316,7 +1316,7 @@
 
 330
 00:14:59,120 --> 00:15:02,040
- Postgres, MySQL or Oracle or SQL Server
+ PostgreSQL, MySQL or Oracle or SQL Server
 
 331
 00:15:02,040 --> 00:15:05,000
@@ -1400,7 +1400,7 @@
 
 351
 00:15:47,000 --> 00:15:49,440
- MySQL or Postgres or SQLite,
+ MySQL or PostgreSQL or SQLite,
 
 352
 00:15:49,440 --> 00:15:51,440
@@ -1412,7 +1412,7 @@
 
 354
 00:15:53,640 --> 00:15:56,080
- Something like Oracle or MySQL or Postgres
+ Something like Oracle or MySQL or PostgreSQL
 
 355
 00:15:56,080 --> 00:15:59,640

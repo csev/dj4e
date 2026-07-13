@@ -516,7 +516,7 @@
 
 130
 00:13:51,000 --> 00:13:57,000
- There's a lot of HTML, but luckily I hand that to you in the djfree samples,
+ There's a lot of HTML, but luckily I hand that to you in the dj4e-samples,
 
 131
 00:13:57,000 --> 00:13:59,000
@@ -540,7 +540,7 @@
 
 136
 00:14:12,000 --> 00:14:17,000
- And as always, you can take a look at djfree samples,
+ And as always, you can take a look at dj4e-samples,
 
 137
 00:14:17,000 --> 00:14:19,000

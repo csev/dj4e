@@ -931,10 +931,10 @@ WEBVTT
  Some of them are open source, some of them are commercial.
 
 00:14:06.760 --> 00:14:10.400
- Postgres and MySQL are open source.
+ PostgreSQL and MySQL are open source.
 
 00:14:10.400 --> 00:14:12.320
- Postgres is probably the more intricate
+ PostgreSQL is probably the more intricate
 
 00:14:12.320 --> 00:14:13.400
  and complex and rich.
@@ -988,7 +988,7 @@ WEBVTT
  when you got 100 users simultaneously hitting a website.
 
 00:14:59.120 --> 00:15:02.040
- Postgres, MySQL or Oracle or SQL Server
+ PostgreSQL, MySQL or Oracle or SQL Server
 
 00:15:02.040 --> 00:15:05.000
  are really kind of online multi-processing data,
@@ -1051,7 +1051,7 @@ WEBVTT
  is you're allowing the database software,
 
 00:15:47.000 --> 00:15:49.440
- MySQL or Postgres or SQLite,
+ MySQL or PostgreSQL or SQLite,
 
 00:15:49.440 --> 00:15:51.440
  to super optimize its storage.
@@ -1060,7 +1060,7 @@ WEBVTT
  I mean, it's so much smarter than you.
 
 00:15:53.640 --> 00:15:56.080
- Something like Oracle or MySQL or Postgres
+ Something like Oracle or MySQL or PostgreSQL
 
 00:15:56.080 --> 00:15:59.640
  probably represents a billion dollars, if not more,

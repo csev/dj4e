@@ -388,7 +388,7 @@ WEBVTT
  So it's pretty easy, it's pretty straightforward.
 
 00:13:51.000 --> 00:13:57.000
- There's a lot of HTML, but luckily I hand that to you in the djfree samples,
+ There's a lot of HTML, but luckily I hand that to you in the dj4e-samples,
 
 00:13:57.000 --> 00:13:59.000
  and you're not going to have to modify that.
@@ -406,7 +406,7 @@ WEBVTT
  So you'll be working with this, but in general, most of the hard work is done.
 
 00:14:12.000 --> 00:14:17.000
- And as always, you can take a look at djfree samples,
+ And as always, you can take a look at dj4e-samples,
 
 00:14:17.000 --> 00:14:19.000
  just like we always do for inspiration.

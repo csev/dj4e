@@ -1,34 +1,34 @@
 # DJ4E Whisper substitutions
 # Format: incorrect<TAB>correct
-# Apply longest phrases first and use case-sensitive replacement where practical.
+# Ordered most specific (longest) to least specific so shorter rules
+# do not clobber longer phrases (cleanup also sorts longest-first).
 # This list is intentionally conservative: each entry was seen in the supplied transcripts
 # and has a clear course-specific correction.
 
-DJFree	DJ4E
+www.djfree.com	www.dj4e.com
 DJFree samples	DJ4E Samples
 djfree samples	dj4e-samples
 djfree-samples	dj4e-samples
-www.djfree.com	www.dj4e.com
-
-LoginMixin	LoginRequiredMixin
-ManagePy	manage.py
-URLsPY	urls.py
-URLs.py	urls.py
-Django_session	django_session
-lit element	LitElement
-
-MyArts	myarts
 myarts article	myarts.Article
 MyArts article	myarts.Article
-myarts.owner	myarts.owner
+Django_session	django_session
+DJFreeSamples	DJ4E Samples
+DJFreesamples	DJ4E Samples
 MyArts owner	myarts.owner
-
+myarts.owner	myarts.owner
+lit element	LitElement
+LoginMixin	LoginRequiredMixin
+Javascript	JavaScript
+Postgres	PostgreSQL
+ManagePy	manage.py
+URLs.py	urls.py
+URLsPY	urls.py
+DJFree	DJ4E
 Github	GitHub
 github	GitHub
-Javascript	JavaScript
 Jquery	jQuery
 Sqlite	SQLite
-Postgres	PostgreSQL
+MyArts	myarts
 Nginx	nginx
 
 # Review-before-enabling candidates (context-dependent)

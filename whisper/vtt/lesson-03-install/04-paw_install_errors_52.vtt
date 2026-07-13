@@ -280,7 +280,7 @@ WEBVTT
  And like, OK, now here we go.
 
 00:11:19.000 --> 00:11:25.000
- We are running the import of URLs.py and my site, my site.
+ We are running the import of urls.py and my site, my site.
 
 00:11:25.000 --> 00:11:26.000
  That's fine.
@@ -367,10 +367,10 @@ WEBVTT
  So sometimes it's just like one in 20.
 
 00:13:20.000 --> 00:13:24.000
- There's something so subtle that Python ManagePy checks.
+ There's something so subtle that Python manage.py checks.
 
 00:13:24.000 --> 00:13:26.000
- This one ManagePy would check.
+ This one manage.py would check.
 
 00:13:26.000 --> 00:13:33.000
  But if you get to the point where you're still getting the error, there is a place that you can look at.

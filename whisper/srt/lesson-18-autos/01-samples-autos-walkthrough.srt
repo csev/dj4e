@@ -244,7 +244,7 @@
 
 62
 00:03:51,600 --> 00:03:56,440
- So if I look at djfree-samples/settings.py.
+ So if I look at dj4e-samples/settings.py.
 
 63
 00:03:56,440 --> 00:04:03,080
@@ -272,7 +272,7 @@
 
 69
 00:04:22,140 --> 00:04:29,960
- And if I take a look at djfree-samples/urls.py, then I can find autos here.
+ And if I take a look at dj4e-samples/urls.py, then I can find autos here.
 
 70
 00:04:29,960 --> 00:04:35,920
@@ -800,7 +800,7 @@
 
 201
 00:12:58,680 --> 00:13:03,360
- So LoginMixin,
+ So LoginRequiredMixin,
 
 202
 00:13:03,360 --> 00:13:08,600
@@ -832,7 +832,7 @@
 
 209
 00:13:31,200 --> 00:13:34,600
- But you don't wanna do it by hand, you just call LoginMixin.
+ But you don't wanna do it by hand, you just call LoginRequiredMixin.
 
 210
 00:13:35,720 --> 00:13:40,040

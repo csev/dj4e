@@ -96,14 +96,14 @@
  a 404 not found. So up next we're going to do a simple demo of downloading
  installing and running Minijango. So here's the demonstration of Minijango
  for my Django for everybody class. We've got to start by going into GitHub and
- taking a look at my Minijango repository. You see github.com/csev/mini_jango
+ taking a look at my Minijango repository. You see GitHub.com/csev/mini_jango
  is where we find the code and in here we have a readme and then four source
  files and this readme tells us where we're going to do we're going to start
  by downloading this code and then running it and we'll go go through this
  in a bit. So there are two ways that you can install this if you have git find
  some folder do a git clone and grab Minijango if you don't want to install
  git or you don't know how to use git you can just grab a zip file because
- github is really nice and that's how we're going to do it under this code
+ GitHub is really nice and that's how we're going to do it under this code
  button there's a thing called download zip and so that's just going to download
  it and it just downloaded it into my downloads folder so I'm going to click
  and see here's my downloads folder and on Windows it's a little trickier when
@@ -111,8 +111,8 @@
  easy I think on on the Windows you kind of to right click and extract it but on
  Mac you just double click it and it extracts it into real files so now we
  see the actual files and so these files Minijango readme run server they're all
- the same files that work you got on github is so now you're kind of done
- with with github okay so there's the downloads file and now I'm going to
+ the same files that work you got on GitHub is so now you're kind of done
+ with with GitHub okay so there's the downloads file and now I'm going to
  start a terminal and in Windows this is like a command shell in Windows you
  would type CD to see the current working directory and in Mac and Linux you say
  PWD to see the current working directory and my downloads are just in a

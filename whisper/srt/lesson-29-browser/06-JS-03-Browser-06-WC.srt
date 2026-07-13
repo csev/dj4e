@@ -164,15 +164,15 @@
 
 42
 00:04:38,000 --> 00:04:45,000
- And so what we do is using object orientation, we're grabbing a little tiny library called lit element.
+ And so what we do is using object orientation, we're grabbing a little tiny library called LitElement.
 
 43
 00:04:45,000 --> 00:04:50,000
- So lit element is a custom element that has a lot of base capabilities into it.
+ So LitElement is a custom element that has a lot of base capabilities into it.
 
 44
 00:04:50,000 --> 00:05:00,000
- And so we're extending lit element to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
+ And so we're extending LitElement to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
 
 45
 00:05:00,000 --> 00:05:08,000
@@ -184,7 +184,7 @@
 
 47
 00:05:15,000 --> 00:05:23,000
- That's the constructor of lit element. And then we set our default value. So it's named somebody.
+ That's the constructor of LitElement. And then we set our default value. So it's named somebody.
 
 48
 00:05:23,000 --> 00:05:27,000
@@ -196,7 +196,7 @@
 
 50
 00:05:39,000 --> 00:05:43,000
- Or you can have your own CSS inside the lit element.
+ Or you can have your own CSS inside the LitElement.
 
 51
 00:05:43,000 --> 00:05:51,000

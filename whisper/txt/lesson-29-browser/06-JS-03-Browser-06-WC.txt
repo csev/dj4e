@@ -39,15 +39,15 @@
  And that's what the do change is doing. So let's take a look at what this template is.
  And so the concept of a custom element, that's something that's been in browsers for quite some time.
  And if you just write your own custom element, you can do everything we're doing here, but it's a lot more verbose.
- And so what we do is using object orientation, we're grabbing a little tiny library called lit element.
- So lit element is a custom element that has a lot of base capabilities into it.
- And so we're extending lit element to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
+ And so what we do is using object orientation, we're grabbing a little tiny library called LitElement.
+ So LitElement is a custom element that has a lot of base capabilities into it.
+ And so we're extending LitElement to make a class called simple greeting. And that just means there's a lot of boilerplate that we don't have to repeat.
  So in it, we tell it our interaction with the outside world and we say there is a property called name, which turns into an attribute on the tag.
  If you look back at the tag, we have a constructor and we in that constructor, we call our parent super.
- That's the constructor of lit element. And then we set our default value. So it's named somebody.
+ That's the constructor of LitElement. And then we set our default value. So it's named somebody.
  And there's this whole thing. I won't go into it in great detail.
  There's a thing called a shadow DOM where you can inherit the CSS and other styling from the enclosing document.
- Or you can have your own CSS inside the lit element.
+ Or you can have your own CSS inside the LitElement.
  I'm choosing not to isolate my markup from the enclosing document.
  And so I'm doing this create render route that says just put my macro, put my text into the enclosing document.
  And whatever HTML, whatever CSS, JavaScript libraries, et cetera, they're just inherited into my code.

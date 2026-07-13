@@ -156,8 +156,8 @@
  it's really just a session and you can see that it gets created by your migrate and
  your make migrations.
  So we can go right into the database, we can ask for the tables.
- We can see the Django_session, and
- then we can say select star from Django_session.
+ We can see the django_session, and
+ then we can say select star from django_session.
  And so that will show us the data that's there.
  And so what we're gonna see is the key, which is that session key.
  And then a time, and that's used to expire the session,

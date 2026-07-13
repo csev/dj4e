@@ -9,21 +9,21 @@
  So again, we're sitting here in the middle of our code,
  we're in the views,
  and this URL mapping is basically a set of functions
- that allow us to read the URLs.py.
+ that allow us to read the urls.py.
  In a way, if all these functions didn't exist
- that allowed us to read URLs.py,
+ that allowed us to read urls.py,
  we would write a bunch of functions to do that,
  and so these are just now part of Django.
  And so often these are used in the view.
  Sometimes they're actually used
- right inside URLs.py to come up.
+ right inside urls.py to come up.
  So it's like, if you know the name of a view,
  what would be the URL to get to that view?
  And sometimes views have just a URL,
  and sometimes they're a URL plus a parameter,
  and that's all set up here.
  And so it's like, give me a link to a view, please.
- And then Django looks in the URLs.py,
+ And then Django looks in the urls.py,
  potentially across the applications,
  and gives you that string.
  And it's just to avoid hard coding the strings.
@@ -65,7 +65,7 @@
  And my goal here is to give you a little sense
  of what really they're there for.
  So let's take a look at an example.
- So here we have our URLs.py, and most of it,
+ So here we have our urls.py, and most of it,
  I mean, this is the application route,
  so if you're looking in the samples,
  it's in the route application.
@@ -181,7 +181,7 @@
  using GitHub.
  So I'll just mention it, 'cause we're deep in it right now.
  And so basically, this is actually the overall
- djfree-samples-urls.py, and that's the one
+ dj4e-samples-urls.py, and that's the one
  that's pulling all the URLs together,
  kind of in the same folder as settings.py.
  And so you're pulling in a bunch of URLs,

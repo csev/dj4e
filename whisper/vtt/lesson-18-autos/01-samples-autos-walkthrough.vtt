@@ -184,7 +184,7 @@ WEBVTT
  Let's just review briefly about how the auto login works, right?
 
 00:03:51.600 --> 00:03:56.440
- So if I look at djfree-samples/settings.py.
+ So if I look at dj4e-samples/settings.py.
 
 00:03:56.440 --> 00:04:03.080
  You need to have this auth plugged in, right?
@@ -205,7 +205,7 @@ WEBVTT
  Yeah, autos app config, you get to pull the autos app in.
 
 00:04:22.140 --> 00:04:29.960
- And if I take a look at djfree-samples/urls.py, then I can find autos here.
+ And if I take a look at dj4e-samples/urls.py, then I can find autos here.
 
 00:04:29.960 --> 00:04:35.920
  And there needs to be some kind of a link that basically says, at the top level,
@@ -601,7 +601,7 @@ WEBVTT
  So the fun starts to happen when we're in the views.py.
 
 00:12:58.680 --> 00:13:03.360
- So LoginMixin,
+ So LoginRequiredMixin,
 
 00:13:03.360 --> 00:13:08.600
  if you remember from the AuthZ walkthrough,
@@ -625,7 +625,7 @@ WEBVTT
  If you go with the AuthZ sample, you'll see like I did that by hand.
 
 00:13:31.200 --> 00:13:34.600
- But you don't wanna do it by hand, you just call LoginMixin.
+ But you don't wanna do it by hand, you just call LoginRequiredMixin.
 
 00:13:35.720 --> 00:13:40.040
  Now, so this main view is a list view.

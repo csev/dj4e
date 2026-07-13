@@ -211,7 +211,7 @@
  OK, go back to the instructions. Yeah, don't type run server.
  We'll fix that in a minute. If you try to type run server, let's go here.
  And we're in my site.
- And it tells you to run Python ManagePy run server. It's going to blow up.
+ And it tells you to run Python manage.py run server. It's going to blow up.
  Yeah, you don't have migrations, but it says that port is already in use.
  And that's because you're in a shared environment and you don't get access to direct network ports.
  You have to go through that web tab. OK, so just run server doesn't work.
@@ -225,7 +225,7 @@
  PWD, I'm actually in home. Dr. Chuck Django projects my site.
  Your home directory will be different. And then I'm going to start my application called polls.
  It's going to create a sub folder within my site.
- Python ManagePy start app polls. And again, it's going to make a bunch of files.
+ Python manage.py start app polls. And again, it's going to make a bunch of files.
  A quick way to do it is go over here, I'm going to hit the refresh and you see that there should be a polls folder.
  And that command we just typed created all these files. OK.
  So all these files got created and you can read all that stuff.

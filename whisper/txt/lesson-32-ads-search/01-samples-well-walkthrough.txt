@@ -1,7 +1,7 @@
  Hello and welcome to another walkthrough for Django for everybody. In this walkthrough, we're going to take a look at the sample code called WELL.
  The name WELL is based on a long-time early pre-internet forum in Berkeley, California, so you can go look up the WELL.
- The basic idea of the WELL is it looks exactly like MyArts. It's pretty much a clone of MyArts.
- If you recall MyArts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
+ The basic idea of the WELL is it looks exactly like myarts. It's pretty much a clone of myarts.
+ If you recall myarts, you had articles-crud, article, article-submit, article-crud, delete, just a basic article-crud.
  The only difference between this and the WELL is there's a search box here, so I can search for things that have YADA in them, and then I can clear the search box, and that's it.
  First, let's observe something that we can observe from the outside when I do a search.
  The search is a get parameter, and the reason for that is that get URLs are idempotent, so that basically says go to my blog and find all the blog posts that mention 123.
@@ -26,7 +26,7 @@
  And so I'll get rid of those bookmarks later. But you see how that is idempotent.
  When I said weeks ago, I said get URLs are idempotent. I can now sort of show you in code that we're writing how that works.
  OK, so let's take a look at our code. I'll clear my search here. The code here is pretty straightforward.
- We've got a really simple model that was pretty much taken straight from the MyArts code.
+ We've got a really simple model that was pretty much taken straight from the myarts code.
  It's got a name. I called it post instead of articles because I've got all these applications running at the same time.
  So I have to change a few names here and there. Related name is when we're poking a lot of...
  We're putting a lot of foreign keys into owner across my Django project.
@@ -39,10 +39,10 @@
  So this name here wants to be... And lots of these applications are using owner.
  And they're making a foreign key into the auth model, which is perfectly okay.
  It's just you've got to be careful about the related name. So that's why that's there.
- So let's take a look at the URLs.py. The main URL that we're going to change is this one, right?
+ So let's take a look at the urls.py. The main URL that we're going to change is this one, right?
  It's the list view. And here it is in the list view. And I don't know which way to go first here.
- Let's compare and contrast this list view with the views in MyArts.
- So in MyArts, the list view, I could just borrow owner list view, which was like extended generic list view.
+ Let's compare and contrast this list view with the views in myarts.
+ So in myarts, the list view, I could just borrow owner list view, which was like extended generic list view.
  I could just say my model's article and it was good. But now I've got to do a whole bunch more work here.
  So I actually am going to... And I might have been able to do this by sort of overriding a few methods
  like we have done in the past. But I just decided that I would simply write all the code.
@@ -80,7 +80,7 @@
  So I'm just, I mean, it's basically looping through. It's doing a little bit more tricky stuff here.
  If the text is less than 100, I'm putting it all in. And in the list, I'm only going to put,
  so if the post is less, length is less than 100, slice is 0.99. I can't see that.
- Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by djfree samples.
+ Oh, that's 'cause I'm not the owner. That's 'cause I'm not the owner hosted by dj4e-samples.
  Who am I in this situation? Well, let's add a post, a title.
  1, 2, 3, submit. Yeah. So it's showing this detail. That's what I was confused about.
  See this little detail? Oops, not with that end if. That post text length greater than 100.
@@ -155,7 +155,7 @@
  And you'll notice I have edit views. Right. I got them. They're still there.
  And there are templates. CD templates.
  Well, templates are there. And as a matter of fact, in this one, I changed the default name of the templates because I'm kind of tired of putting underscores in front of certain things.
- But let me show you how I solve the problem of where are the views. They're actually fully in URLs.py.
+ But let me show you how I solve the problem of where are the views. They're actually fully in urls.py.
  So here is. So I import owner list view, owner detail view, owner create view and owner update view.
  And so what I'm saying is map the post slash int pk, which, of course, is the detail file. Right.
  Post int pk. And I would like you to call owner detail view, which is a class that's come from myarts.owner as view.
@@ -169,11 +169,11 @@
  Right. And the models. I don't want to put owner out. I don't want to put created at out. So I'm going to give a list.
  Give a list. Come back. I want to give a list of the fields I want to show on my create form.
  So, again, these are sort of class wide variables that turn into object very object instance variables when it makes this view and it overrides all these things.
- And so all the stuff that I was doing in views.py, I am now doing in URLs.py. And just we're using owner create view.
+ And so all the stuff that I was doing in views.py, I am now doing in urls.py. And just we're using owner create view.
  And you see an update, delete. They're all kind of there. Right. And so I don't actually need to put the views in.
  And this is really, it looks a little more complex, but I think it's a lot prettier than putting these silly views in over and over.
  So that's a pattern that you may want to use. It made it easier for me to rename from well to something else if I wanted to.
  Because really well is only hard coded one place in here. So that's kind of cool.
- Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave URLs.py.
+ Okay. So there's a couple of lessons here. One is this searching. One is the search and how that works. But then also a new way to create views that never really leave urls.py.
  And remember, we, I built this owner detail view to meet my needs. So things like template view, that's something that is just a bunch of code somebody wrote.
  So, okay. Well, I hope this walkthrough of the well sample application has been useful to you. Cheers.

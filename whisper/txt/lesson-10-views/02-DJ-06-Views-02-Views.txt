@@ -18,9 +18,9 @@
  It might be simply text that's HTML, or it might be a redirect object, redirect response that says, "Hey, go to a different page."
  And so, we make that, the main job at the end of the view is to produce a response and then return it back to Django.
  And so, here is a very simple view. So, here we're saying, you know, we're in the views application, we're going to go to the view funky, right?
- And so, in the URLsPY, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
+ And so, in the urls.py, we say map/funky to this function named funky, it's a funky function, that's why I call it funky.
  And so, when it sees this, all the data coming into the request shows up in this variable that is the first parameter sent to that function.
- So, that's what this is saying in URLsPY. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
+ So, that's what this is saying in urls.py. Take everything that goes to view/funky, gather up all the request data from the browser, put it in an object, and then pass that request object in.
  Now, in this, I'm not really going to do anything with that request object because I'm always returning the exact same thing.
  And so, I just have a nice triple quoted string and some HTML with less than's and greater than's, and I'm going to basically return, it is my job in the view to give back a response.
  There's a couple, two main types of them, one is an HTTP response, which is just like a body of text, and that's what I'm sending here.

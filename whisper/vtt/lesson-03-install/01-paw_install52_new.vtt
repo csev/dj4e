@@ -640,7 +640,7 @@ WEBVTT
  And we're in my site.
 
 00:21:42.000 --> 00:21:48.000
- And it tells you to run Python ManagePy run server. It's going to blow up.
+ And it tells you to run Python manage.py run server. It's going to blow up.
 
 00:21:48.000 --> 00:21:51.000
  Yeah, you don't have migrations, but it says that port is already in use.
@@ -682,7 +682,7 @@ WEBVTT
  It's going to create a sub folder within my site.
 
 00:22:59.000 --> 00:23:05.000
- Python ManagePy start app polls. And again, it's going to make a bunch of files.
+ Python manage.py start app polls. And again, it's going to make a bunch of files.
 
 00:23:05.000 --> 00:23:12.000
  A quick way to do it is go over here, I'm going to hit the refresh and you see that there should be a polls folder.

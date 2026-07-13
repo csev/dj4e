@@ -308,8 +308,8 @@
  So there's a lot of common database systems
  that you'll run across.
  Some of them are open source, some of them are commercial.
- Postgres and MySQL are open source.
- Postgres is probably the more intricate
+ PostgreSQL and MySQL are open source.
+ PostgreSQL is probably the more intricate
  and complex and rich.
  Oracle is a intricate, complex and rich database
  that's available for lots and lots of money.
@@ -327,7 +327,7 @@
  'cause it's a real tiny embedded database.
  It's not really good for a production scale
  when you got 100 users simultaneously hitting a website.
- Postgres, MySQL or Oracle or SQL Server
+ PostgreSQL, MySQL or Oracle or SQL Server
  are really kind of online multi-processing data,
  real multi-processing databases.
  But SQLite is great because it's really simple.
@@ -348,10 +348,10 @@
  is going to structure that database like on the disk.
  And part of what you're doing
  is you're allowing the database software,
- MySQL or Postgres or SQLite,
+ MySQL or PostgreSQL or SQLite,
  to super optimize its storage.
  I mean, it's so much smarter than you.
- Something like Oracle or MySQL or Postgres
+ Something like Oracle or MySQL or PostgreSQL
  probably represents a billion dollars, if not more,
  of research and development
  and about the best way to store and retrieve data.

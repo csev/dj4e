@@ -97,7 +97,7 @@
  Input type equals button.
  This is a little pattern where I'm going to do like an escape or a back or something like that.
  And then sometimes it's easier just to do some little JavaScript and what this little JavaScript chunk is.
- Location.href equals quote www.djfree.com return false.
+ Location.href equals quote www.dj4e.com return false.
  What this says is it actually sort of when you press this escape button, it goes up in the browser and in effect pastes this little URL into the URL bar and then hits enter and return false keeps the form from being submitted.
  And so this is a way that I often will put a simple cancel or escape or something else in a form.
  Just if I know the URL I want to go back to or go to, then you can put it in here and on click location.href.

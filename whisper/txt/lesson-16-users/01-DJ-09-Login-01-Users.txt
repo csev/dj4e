@@ -1,6 +1,6 @@
  Our next topic is to talk about login and logout.
  Now just in general, I have this GitHub repository
- called DJFreeSamples, and every once in a while
+ called DJ4E Samples, and every once in a while
  you ought to see if I've found some bugs and fixed them,
  so go over to your samples and do a git pull.
  So every once in a while, just do that.

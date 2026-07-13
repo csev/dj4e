@@ -8,7 +8,7 @@
 
 3
 00:00:05,800 --> 00:00:08,140
- called DJFreeSamples, and every once in a while
+ called DJ4E Samples, and every once in a while
 
 4
 00:00:08,140 --> 00:00:11,600

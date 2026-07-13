@@ -44,7 +44,7 @@
 
 12
 00:00:26,640 --> 00:00:29,680
- that allow us to read the URLs.py.
+ that allow us to read the urls.py.
 
 13
 00:00:29,680 --> 00:00:31,800
@@ -52,7 +52,7 @@
 
 14
 00:00:31,800 --> 00:00:34,040
- that allowed us to read URLs.py,
+ that allowed us to read urls.py,
 
 15
 00:00:34,040 --> 00:00:35,800
@@ -72,7 +72,7 @@
 
 19
 00:00:41,900 --> 00:00:44,400
- right inside URLs.py to come up.
+ right inside urls.py to come up.
 
 20
 00:00:44,400 --> 00:00:47,280
@@ -100,7 +100,7 @@
 
 26
 00:00:59,160 --> 00:01:02,040
- And then Django looks in the URLs.py,
+ And then Django looks in the urls.py,
 
 27
 00:01:02,040 --> 00:01:04,000
@@ -268,7 +268,7 @@
 
 68
 00:02:31,600 --> 00:02:35,160
- So here we have our URLs.py, and most of it,
+ So here we have our urls.py, and most of it,
 
 69
 00:02:35,160 --> 00:02:36,560
@@ -732,7 +732,7 @@
 
 184
 00:07:58,360 --> 00:08:00,960
- djfree-samples-urls.py, and that's the one
+ dj4e-samples-urls.py, and that's the one
 
 185
 00:08:00,960 --> 00:08:02,480

@@ -59,14 +59,14 @@
  in this autos, right?
  So if we just, let's just review just briefly.
  Let's just review briefly about how the auto login works, right?
- So if I look at djfree-samples/settings.py.
+ So if I look at dj4e-samples/settings.py.
  You need to have this auth plugged in, right?
  So that basically is, that's a bunch of code, some views, etc.
  That comes from Django, and
  that's been there all along when you did your start project.
  Of course, then somewhere in here we've gotta have the autos, wherever autos is.
  Yeah, autos app config, you get to pull the autos app in.
- And if I take a look at djfree-samples/urls.py, then I can find autos here.
+ And if I take a look at dj4e-samples/urls.py, then I can find autos here.
  And there needs to be some kind of a link that basically says, at the top level,
  everything below autos is delegated to the urls file in autos.py.
  But also then, there is the accounts, right?
@@ -198,7 +198,7 @@
  So we can make links in between them, okay?
  Okay, so these are pretty straightforward and not all that different.
  So the fun starts to happen when we're in the views.py.
- So LoginMixin,
+ So LoginRequiredMixin,
  if you remember from the AuthZ walkthrough,
  you just add this to a view, and it just basically says,
  you cannot get to this view unless you're logged in.
@@ -206,7 +206,7 @@
  then bounce back after you're done.
  And so RogginRequiredMixin is all we need to do.
  If you go with the AuthZ sample, you'll see like I did that by hand.
- But you don't wanna do it by hand, you just call LoginMixin.
+ But you don't wanna do it by hand, you just call LoginRequiredMixin.
  Now, so this main view is a list view.
  And so let's go take a look at what this is gonna look like.
  This is the list view.

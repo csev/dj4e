@@ -196,10 +196,10 @@ WEBVTT
  And so there are my users.
 
 00:04:49.000 --> 00:04:54.000
- CSEV, you kind of--it's all jammed together in DJFree.
+ CSEV, you kind of--it's all jammed together in DJ4E.
 
 00:04:54.000 --> 00:04:57.000
- So this is row one for DJFree and CSEV.
+ So this is row one for DJ4E and CSEV.
 
 00:04:57.000 --> 00:05:00.000
  So there is a table and a model.
@@ -271,7 +271,7 @@ WEBVTT
  So that is our model.
 
 00:06:18.000 --> 00:06:24.000
- If we were to take a look at MyArts article,
+ If we were to take a look at myarts.Article,
 
 00:06:24.000 --> 00:06:28.000
  you will see that there is a foreign key right there.
@@ -280,7 +280,7 @@ WEBVTT
  There's a foreign key.
 
 00:06:29.000 --> 00:06:40.000
- And if we say select star from MyArts article, you will see that there is a foreign key in there.
+ And if we say select star from myarts.Article, you will see that there is a foreign key in there.
 
 00:06:40.000 --> 00:06:42.000
  So this row belongs to user one.
@@ -325,7 +325,7 @@ WEBVTT
  And so that makes my views even simpler.
 
 00:07:28.000 --> 00:07:31.000
- MyArts colon all points to that view.
+ myarts colon all points to that view.
 
 00:07:31.000 --> 00:07:37.000
  I think it actually is kind of prettier to put it in here because this is sort of a URL place.
@@ -514,7 +514,7 @@ WEBVTT
  OK.
 
 00:11:23.000 --> 00:11:31.000
- So what we'd seen before is I would create a view and then use it in my URLs.py, and it would extend another view.
+ So what we'd seen before is I would create a view and then use it in my urls.py, and it would extend another view.
 
 00:11:31.000 --> 00:11:36.000
  So now it's time to take a look at where this view is being defined.

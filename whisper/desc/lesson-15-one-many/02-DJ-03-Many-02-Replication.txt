@@ -1,0 +1,7 @@
+Avoiding Data Replication in Library Application Data Modeling
+
+vertical replication, relational database, many-to-one relationships, data modeling, cardinality, database normalization
+
+The lecture demonstrates how spreadsheet-based data modeling leads to vertical replication problems when representing library book instances. It identifies repeated strings like book titles, languages, and genres across multiple rows as inefficient and error-prone, especially when scaling to millions of records. This replication creates storage overhead and complicates updates, as changes require searching through duplicated data instead of modifying a single source.
+
+The solution involves splitting data into relational tables—book, language, and instance—with explicit many-to-one relationships. Each book instance links to a single book record, while languages are shared across multiple books. Cardinality constraints define that languages can have zero or more books (many-to-one), and books can have zero or more physical instances (many-to-one), ensuring data uniqueness and efficient updates through database relationships rather than replication.

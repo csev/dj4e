@@ -1,0 +1,7 @@
+Django Shell: Creating and Saving Model Objects with Relationships
+
+Django shell, Django models, object creation, save method, foreign keys, primary keys
+
+The lecture demonstrates creating and saving model objects in the Django shell. The shell preloads Django settings and applications, enabling direct interaction with models. It shows constructing objects in memory (e.g., `lang = Language(name='en')`), saving them to the database via the `save()` method, and establishing relationships using primary keys and foreign keys.
+
+The lecture also covers database queries and relationship traversal. It demonstrates using `objects` to retrieve model instances (e.g., `Book.objects.get(pk=1)`) and accessing related fields (e.g., `x.lang.name`). This illustrates Django's automatic management of foreign key relationships without requiring explicit ID values.

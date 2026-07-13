@@ -396,7 +396,7 @@
 
 100
 00:07:44,760 --> 00:07:51,600
- Location.href equals quote www.djfree.com return false.
+ Location.href equals quote www.dj4e.com return false.
 
 101
 00:07:51,600 --> 00:08:05,280

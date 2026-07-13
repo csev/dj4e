@@ -127,13 +127,13 @@
  So we're going to extend it, and then boom, you make a page.
  Then you extend it again, and that puts it on the next page.
  So it's pretty easy, it's pretty straightforward.
- There's a lot of HTML, but luckily I hand that to you in the djfree samples,
+ There's a lot of HTML, but luckily I hand that to you in the dj4e-samples,
  and you're not going to have to modify that.
  It'll pretty much just work.
  You'll change what's in the menu.
  You'll be like putting different things in as the links and stuff.
  So you'll be working with this, but in general, most of the hard work is done.
- And as always, you can take a look at djfree samples,
+ And as always, you can take a look at dj4e-samples,
  just like we always do for inspiration.
  I hope you found this helpful.
  Cheers.

@@ -21,7 +21,7 @@
  evaluate button.
  So this is a couple of slides I have on how the auto-grader works.
  So what is it?
- So the auto-grader is a piece of software that I wrote on www.djfree.com, it's launched
+ So the auto-grader is a piece of software that I wrote on www.dj4e.com, it's launched
  from Canvas or Coursera.
  That is going to grade your assignment, check to make sure it's okay.
  And it's a very simple program.

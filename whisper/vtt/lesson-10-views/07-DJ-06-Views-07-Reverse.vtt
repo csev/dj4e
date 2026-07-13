@@ -34,13 +34,13 @@ WEBVTT
  and this URL mapping is basically a set of functions
 
 00:00:26.640 --> 00:00:29.680
- that allow us to read the URLs.py.
+ that allow us to read the urls.py.
 
 00:00:29.680 --> 00:00:31.800
  In a way, if all these functions didn't exist
 
 00:00:31.800 --> 00:00:34.040
- that allowed us to read URLs.py,
+ that allowed us to read urls.py,
 
 00:00:34.040 --> 00:00:35.800
  we would write a bunch of functions to do that,
@@ -55,7 +55,7 @@ WEBVTT
  Sometimes they're actually used
 
 00:00:41.900 --> 00:00:44.400
- right inside URLs.py to come up.
+ right inside urls.py to come up.
 
 00:00:44.400 --> 00:00:47.280
  So it's like, if you know the name of a view,
@@ -76,7 +76,7 @@ WEBVTT
  And so it's like, give me a link to a view, please.
 
 00:00:59.160 --> 00:01:02.040
- And then Django looks in the URLs.py,
+ And then Django looks in the urls.py,
 
 00:01:02.040 --> 00:01:04.000
  potentially across the applications,
@@ -202,7 +202,7 @@ WEBVTT
  So let's take a look at an example.
 
 00:02:31.600 --> 00:02:35.160
- So here we have our URLs.py, and most of it,
+ So here we have our urls.py, and most of it,
 
 00:02:35.160 --> 00:02:36.560
  I mean, this is the application route,
@@ -550,7 +550,7 @@ WEBVTT
  And so basically, this is actually the overall
 
 00:07:58.360 --> 00:08:00.960
- djfree-samples-urls.py, and that's the one
+ dj4e-samples-urls.py, and that's the one
 
 00:08:00.960 --> 00:08:02.480
  that's pulling all the URLs together,

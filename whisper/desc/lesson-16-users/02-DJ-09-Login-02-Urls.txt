@@ -1,0 +1,7 @@
+Django User Authentication: Sessions, Login, and Logout
+
+Django, sessions, login, logout, authentication, reverse lookup, next parameter
+
+Django user authentication uses sessions to store user-specific data. Logging in updates the session with details like name and email, while logging out removes this information. The system requires adding django.contrib.auth to installed apps and configuring project-level URLs for login and logout views.
+
+The reverse lookup function retrieves login and logout URLs by view name. After authentication, the next parameter directs users to a specified URL, typically the page they were previously on, ensuring seamless redirection without manual URL handling.

@@ -15,20 +15,20 @@
  So, this one over here.
  So first off, where those messages are coming from is down here,
  deep in the settings.py, byline 176.
- It's going to import from githubsettings.py.
- And githubsettings.py is a file.
+ It's going to import from GitHubsettings.py.
+ And GitHubsettings.py is a file.
  But this file doesn't yet exist.
- So if you go into djfree samples, you will see that there is a githubsettings dist,
- but there is not a githubsettings.py.
+ So if you go into dj4e-samples, you will see that there is a GitHubsettings dist,
+ but there is not a GitHubsettings.py.
  So this blows up.
  And otherwise, and it prints that message.
  So there's where that message happens.
  And so, if you look at the documentation,
- we're going to put the github, oauth2, backend, et cetera, et cetera.
+ we're going to put the GitHub, oauth2, backend, et cetera, et cetera.
  Okay?
  So, what we need to do, basically, is we need to take this file.
- There is a file called githubsettingsdist.py.
- So now we have to make a new empty file called githubsettings.py.
+ There is a file called GitHubsettingsdist.py.
+ So now we have to make a new empty file called GitHubsettings.py.
  So create that new empty file.
  And then the first thing we're going to do is we're going to just take all of this
  and we're going to paste it into it, so from the dist.
@@ -56,8 +56,8 @@
  Yeah, so this is an example of how you call Google.
  So you just do this social colon begin.
  And this social, going back to settings.py,
- oh, we've got to go into the URLs.py.
- So let me go here and then go into URLs.py.
+ oh, we've got to go into the urls.py.
+ So let me go here and then go into urls.py.
  So we do add something here, and that is that we find,
  we switch to social login, we try to import that same GitHub settings,
  and if we do get GitHub settings, we switch to using the different template,
@@ -66,7 +66,7 @@
  So that redirects to social login,
  and we also have OAuth, the namespace social for the social Django URLs.
  Now that social Django URLs is configured by some of those settings.
- OK, so we have this file called githubsettings.py,
+ OK, so we have this file called GitHubsettings.py,
  but we can't use GitHub yet because we have to get a key and a secret.
  And so the instructions are right here.
  So we go to GitHub, developer settings.

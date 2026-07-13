@@ -280,7 +280,7 @@ WEBVTT
  so that we can play with them.
 
 00:03:48.420 --> 00:03:50.980
- So these are just the URLs.py.
+ So these are just the urls.py.
 
 00:03:50.980 --> 00:03:54.820
  So if you take a look in this main.html template,

@@ -1,0 +1,7 @@
+Database Link Representation Using Primary and Foreign Keys
+
+primary key, foreign key, database links, table relationships, auto-increment, indexing
+
+This lecture explains how to represent relationships between database tables using primary keys and foreign keys. Primary keys serve as unique identifiers for each row within a table, acting as the destination endpoint for connections. Foreign keys, named with conventions like "book_id", establish links from one table to another by referencing the primary key of another table.
+
+The implementation involves creating primary keys with auto-increment and indexing for efficiency, while foreign keys enable connections between tables. Each table typically includes primary keys for row identification and foreign keys to link to other tables, allowing the construction of the data model that replicates the intended relationships.
