@@ -1,0 +1,756 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Hello and welcome to my lecture where I share my thoughts on the use of artificial intelligence in programming classes.
+
+2
+00:00:07,000 --> 00:00:13,000
+ My name is Charles Severance and I'm a professor at the University of Michigan School of Information in Ann Arbor, Michigan.
+
+3
+00:00:13,000 --> 00:00:20,000
+ So you may know me from some of my online classes, Python for Everybody, 3 Million Students, the largest programming class in the world,
+
+4
+00:00:20,000 --> 00:00:23,000
+ Django for Everybody, C Programming for Everybody.
+
+5
+00:00:23,000 --> 00:00:32,000
+ I'm building a series of curriculums, a series of courses that lead towards what I call a master programmer,
+
+6
+00:00:32,000 --> 00:00:43,000
+ which is a way to get people to become very skilled programmers in shorter time by giving the essential foundations of programming rather than a four-year degree.
+
+7
+00:00:43,000 --> 00:00:50,000
+ So it's much less than a four-year degree. That's my goal right now is to make programmers faster and better.
+
+8
+00:00:50,000 --> 00:00:54,000
+ So the goals of this presentation are not to make policy for my course or any other course.
+
+9
+00:00:54,000 --> 00:00:59,000
+ Policies really depend on the course and the goals of the course and the course material and the instructor.
+
+10
+00:00:59,000 --> 00:01:07,000
+ So don't use this as like telling your teacher that somehow they should change their policies because of Dr. Chuck's talk.
+
+11
+00:01:07,000 --> 00:01:12,000
+ These are just my experiences and opinions and ways I've learned things over time and my theories
+
+12
+00:01:12,000 --> 00:01:22,000
+ and how I try to explain to my students about the good and the bad about using AI when working in a program, taking a programming class.
+
+13
+00:01:22,000 --> 00:01:30,000
+ So to AI or not to AI, that is the question. Well, I think the answer is you have to use it.
+
+14
+00:01:30,000 --> 00:01:36,000
+ From now on, AI is part of software development. You can't deny that.
+
+15
+00:01:36,000 --> 00:01:40,000
+ You're not going to get a job if you say, well, I don't use AI. Well, you better use it.
+
+16
+00:01:40,000 --> 00:01:45,000
+ I want you to learn how to use it to make you a better programmer, not how to not make you a better programmer.
+
+17
+00:01:45,000 --> 00:01:53,000
+ They're like, oh, AI is good enough. And any AI technique that I teach or anyone else teaches is going to be out of date so quickly.
+
+18
+00:01:53,000 --> 00:01:55,000
+ Everything is changing. Every couple of months, things get better.
+
+19
+00:01:55,000 --> 00:02:04,000
+ Sometimes I'm using a piece of AI and it's stuck on something and I'll set it aside and come back in another month and the models will change.
+
+20
+00:02:04,000 --> 00:02:09,000
+ And I'll like, what about that? And it's like, oh, yeah, I'll fix that for you. Like, oh, great.
+
+21
+00:02:09,000 --> 00:02:19,000
+ But one thing I think is permanent forever, the better you understand programming and the foundations of programming, the better you're going to be at using AI to help you develop software.
+
+22
+00:02:19,000 --> 00:02:27,000
+ The dangers of AI is that using AI does not mean that you don't need to learn anything in a programming class or in a job.
+
+23
+00:02:27,000 --> 00:02:35,000
+ Believe me, if the only thing you can do is do what AI does for you, then you're probably not going to get a very good job.
+
+24
+00:02:35,000 --> 00:02:44,000
+ And if you're taking a class, you become a better programmer, but then you rely on AI to actually not study the class material and not learn the class material.
+
+25
+00:02:44,000 --> 00:02:53,000
+ And the first and then the first part of the course, it's particularly perilous because then you you just wasted all your time and money, took a course and I didn't learn anything.
+
+26
+00:02:53,000 --> 00:02:59,000
+ And AI caused you to not learn anything. My thinking on this has evolved over time.
+
+27
+00:02:59,000 --> 00:03:05,000
+ We first heard about AI like I was in the middle of teaching winter semester, twenty, twenty three.
+
+28
+00:03:05,000 --> 00:03:15,000
+ We had a quick, quick faculty meeting. We pretty much all without without even coordinating, we just knew that we weren't going to prohibit AI in programming classes.
+
+29
+00:03:15,000 --> 00:03:20,000
+ We wanted to find a way to teach with AI and we wanted to find a way to use AI wisely.
+
+30
+00:03:20,000 --> 00:03:26,000
+ So for about a year, year and a half, I kind of adjusted my class.
+
+31
+00:03:26,000 --> 00:03:29,000
+ More paper stuff, et cetera, et cetera.
+
+32
+00:03:29,000 --> 00:03:38,000
+ And it had mixed results. The thing I didn't like about it was and this is true going back over a decade.
+
+33
+00:03:38,000 --> 00:03:46,000
+ Every time I build something that tries to force students to do something my way rather than the easiest way for them,
+
+34
+00:03:46,000 --> 00:03:53,000
+ I harm the students who want to learn and I don't really stop the students who don't want to learn from taking the easy way out.
+
+35
+00:03:53,000 --> 00:03:59,000
+ So really from last semester onward, I'm just treating AI like Stack Overflow.
+
+36
+00:03:59,000 --> 00:04:06,000
+ I'm not uniquely thinking about it, not doing anything to help it, not do anything to stop it.
+
+37
+00:04:06,000 --> 00:04:14,000
+ As a teacher, you might think it's great to go to college and snap your fingers and get A's in all your classes.
+
+38
+00:04:14,000 --> 00:04:21,000
+ And in one day you get a degree and you graduate and you want to get a great job.
+
+39
+00:04:21,000 --> 00:04:26,000
+ Unfortunately, when you go to school, you're supposed to learn something.
+
+40
+00:04:26,000 --> 00:04:30,000
+ So I'm a teacher and I'm part of your schooling.
+
+41
+00:04:30,000 --> 00:04:39,000
+ So I feel that my job is to take some set of materials, maybe programming language, and change how you know about it.
+
+42
+00:04:39,000 --> 00:04:43,000
+ Right. You don't know something before and you do know something after.
+
+43
+00:04:43,000 --> 00:04:50,000
+ And I got 15 weeks to do that. And believe me, I don't want to waste your time. I really don't.
+
+44
+00:04:50,000 --> 00:04:59,000
+ If I could grab a little USB thing and plug it into the back of your neck like they did in the Matrix and teach you something,
+
+45
+00:04:59,000 --> 00:05:02,000
+ I would invent that and I would do that.
+
+46
+00:05:02,000 --> 00:05:07,000
+ The human mind just does not accept new knowledge that fast.
+
+47
+00:05:07,000 --> 00:05:13,000
+ And so we have to come up with a way. And we only have 15 weeks or 10 weeks or whatever.
+
+48
+00:05:13,000 --> 00:05:17,000
+ So we have a short period of time and a lot of material to cover.
+
+49
+00:05:17,000 --> 00:05:23,000
+ So how do we take a lot of material and cover it in a short period of time?
+
+50
+00:05:23,000 --> 00:05:30,000
+ And the answer is you break it into small, doable chunks.
+
+51
+00:05:30,000 --> 00:05:34,000
+ The education word for this is the zone of proximal development.
+
+52
+00:05:34,000 --> 00:05:44,000
+ And that is the way you learn is someone like me with an assignment or whatever pushes you outside your comfort zone just a little bit.
+
+53
+00:05:44,000 --> 00:05:48,000
+ And then we hang out with you and help you through that and then you learn something.
+
+54
+00:05:48,000 --> 00:05:53,000
+ And then a week later, you got a new comfort zone. We push you just a little bit out of that comfort zone.
+
+55
+00:05:53,000 --> 00:06:00,000
+ So we're keeping you under a little bit of stress each week that hopefully you're adding some stuff up and you're retaining it.
+
+56
+00:06:00,000 --> 00:06:04,000
+ So some teachers teach too much in a week and then you don't retain it.
+
+57
+00:06:04,000 --> 00:06:11,000
+ I try to figure out how much I can teach you in one week that you will retain so your knowledge builds.
+
+58
+00:06:11,000 --> 00:06:15,000
+ Naturally, what you find is in the beginning of classes,
+
+59
+00:06:15,000 --> 00:06:20,000
+ the amount that I can teach you in a week is smaller than what I can in later, right?
+
+60
+00:06:20,000 --> 00:06:27,000
+ Because in the later classes, I can assume that you'd remember most of the stuff that I've already taught you in earlier classes.
+
+61
+00:06:27,000 --> 00:06:31,000
+ And this is just natural. It's how you build classes.
+
+62
+00:06:31,000 --> 00:06:38,000
+ The problem is, is these simple early assignments are much easier for you to complete.
+
+63
+00:06:38,000 --> 00:06:44,000
+ And so students who are tired, who are busy, who just came off of a summer vacation,
+
+64
+00:06:44,000 --> 00:06:50,000
+ they're like, well, I don't really want to work hard this week. I'm going to work twice as hard next week.
+
+65
+00:06:50,000 --> 00:06:54,000
+ So I'm going to have AI do the homework this week. Yay.
+
+66
+00:06:54,000 --> 00:06:57,000
+ So they do that and they're like, whew, I got 100% and AI did it.
+
+67
+00:06:57,000 --> 00:07:03,000
+ And then they promise that the second week they'll work twice as hard, learn everything in the first week and everything in the second week.
+
+68
+00:07:03,000 --> 00:07:08,000
+ And they're like, oh, wow, I wonder if AI could do this second week homework.
+
+69
+00:07:08,000 --> 00:07:11,000
+ And then they do have AI do the second week homework.
+
+70
+00:07:11,000 --> 00:07:17,000
+ And they keep doing this, not because they're bad. Students are bad. I mean, students are mostly tired.
+
+71
+00:07:17,000 --> 00:07:22,000
+ School is hard, especially when you're taking a course that has a schedule
+
+72
+00:07:22,000 --> 00:07:26,000
+ and a teacher like me that's telling you what to do every week.
+
+73
+00:07:26,000 --> 00:07:30,000
+ When I finally graduated with my PhD, someone asked me, do you miss school?
+
+74
+00:07:30,000 --> 00:07:34,000
+ I said, I don't want any more deadlines. I don't want to be told to do any homework on a time.
+
+75
+00:07:34,000 --> 00:07:40,000
+ Learning's fun, but having deadlines isn't. Unfortunately, those two things are connected.
+
+76
+00:07:40,000 --> 00:07:43,000
+ If you're not forced to do something, you will delay it.
+
+77
+00:07:43,000 --> 00:07:50,000
+ So here's the problem. Let's just say weeks one through five in this particular course are tractable for AI.
+
+78
+00:07:50,000 --> 00:07:56,000
+ And AI is not really learning anything. AI is no smarter at week five than it was at week one.
+
+79
+00:07:56,000 --> 00:08:00,000
+ OK, you're not teaching AI anything as you're going through this.
+
+80
+00:08:00,000 --> 00:08:02,000
+ If you went through it, you'd be learning something.
+
+81
+00:08:02,000 --> 00:08:07,000
+ But AI is already smarter than you and smarter than whatever.
+
+82
+00:08:07,000 --> 00:08:16,000
+ So the problem is, is that you get to week six and for whatever reason, AI can't solve your problem.
+
+83
+00:08:16,000 --> 00:08:22,000
+ So then what you're forced to do in week six is you're really forced to either drop the class
+
+84
+00:08:22,000 --> 00:08:27,000
+ or you have to learn six weeks of material in one week.
+
+85
+00:08:27,000 --> 00:08:32,000
+ And you've been tired and busy and you've got other classes and it doesn't happen.
+
+86
+00:08:32,000 --> 00:08:39,000
+ And seven days later, the class is going to take another step. Seven more days, class taking another step.
+
+87
+00:08:39,000 --> 00:08:44,000
+ And this is part of the class where the class is starting to speed up. We call it the knee of the curve.
+
+88
+00:08:44,000 --> 00:08:49,000
+ So you picked the exact wrong time to not know what was going on in this class.
+
+89
+00:08:49,000 --> 00:08:56,000
+ Usually you have to drop the class or get a very low grade in the class because about the one third to one half point
+
+90
+00:08:56,000 --> 00:09:03,000
+ is the place in most classes where programming classes where AI just can't do it.
+
+91
+00:09:03,000 --> 00:09:06,000
+ Before AI, I always made my assessments real work.
+
+92
+00:09:06,000 --> 00:09:10,000
+ So writing Django applications is the learning objective of the course.
+
+93
+00:09:10,000 --> 00:09:13,000
+ Then I want my assignments to be writing Django applications.
+
+94
+00:09:13,000 --> 00:09:18,000
+ And so the key thing there is if I want you to know how to do something and then use AI to do it,
+
+95
+00:09:18,000 --> 00:09:21,000
+ but you actually learn how to do it and AI makes it better for you.
+
+96
+00:09:21,000 --> 00:09:26,000
+ Great. I just taught you how to use AI to solve the learning objective of my course,
+
+97
+00:09:26,000 --> 00:09:28,000
+ which you will then be able to do when you get in your job.
+
+98
+00:09:28,000 --> 00:09:31,000
+ So my assignments integrate across many sources.
+
+99
+00:09:31,000 --> 00:09:36,000
+ I mentioned I don't give you a little single paragraph that completely describes it and then grade that.
+
+100
+00:09:36,000 --> 00:09:40,000
+ No, you got to look at sample code. You got to look at some code walkthroughs and demos.
+
+101
+00:09:40,000 --> 00:09:42,000
+ I'm explaining concepts, right?
+
+102
+00:09:42,000 --> 00:09:45,000
+ So then what you got to do is you got to learn the concepts and then you got to pull from places
+
+103
+00:09:45,000 --> 00:09:48,000
+ and you got to synthesize all that together.
+
+104
+00:09:48,000 --> 00:09:53,000
+ And so the problem is, is that AI just wants to look at a few paragraphs
+
+105
+00:09:53,000 --> 00:09:56,000
+ and then write some code because it can't do that.
+
+106
+00:09:56,000 --> 00:10:03,000
+ Like, let's write a database application to store and retrieve autos and auto data.
+
+107
+00:10:03,000 --> 00:10:08,000
+ Well, that's not what my assignments are. My assignments are look at this code, adapt it,
+
+108
+00:10:08,000 --> 00:10:12,000
+ look at that code, adapt it, look at this, read this thing, adapt it, watch this lecture,
+
+109
+00:10:12,000 --> 00:10:16,000
+ adapt all that stuff together and synthesize it together and then build a piece of software,
+
+110
+00:10:16,000 --> 00:10:22,000
+ not just to solve the problem, but to solve the problem using the techniques that you saw
+
+111
+00:10:22,000 --> 00:10:24,000
+ in all the stuff that was in the class.
+
+112
+00:10:24,000 --> 00:10:28,000
+ Now, that doesn't mean that you can't give AI enough context.
+
+113
+00:10:28,000 --> 00:10:36,000
+ If you were really organized and you figured out every single asset that was in the course this week
+
+114
+00:10:36,000 --> 00:10:41,000
+ and you could somehow feed it into AI and build AI's understanding up and said, OK,
+
+115
+00:10:41,000 --> 00:10:49,000
+ now using the stuff I just gave you, write an auto tracking, automobile tracking application.
+
+116
+00:10:49,000 --> 00:10:54,000
+ You might get it. It might. It's not dumb. It might.
+
+117
+00:10:54,000 --> 00:11:00,000
+ And if you are smart enough to give it enough context to solve one of my assignments,
+
+118
+00:11:00,000 --> 00:11:02,000
+ I actually kind of gained some respect for you.
+
+119
+00:11:02,000 --> 00:11:08,000
+ And my teaching assistants will sit down in a meeting and tell me, oh, yeah, I feed it all into AI.
+
+120
+00:11:08,000 --> 00:11:12,000
+ I've got these 14 things in AI and I tell it to write the code.
+
+121
+00:11:12,000 --> 00:11:15,000
+ They probably fed the sample solution in as well.
+
+122
+00:11:15,000 --> 00:11:18,000
+ And so, yeah, the AI is pretty smart at that point.
+
+123
+00:11:18,000 --> 00:11:23,000
+ So my autograders for the software look for specific techniques, not just any old technique,
+
+124
+00:11:23,000 --> 00:11:27,000
+ but the specific techniques from the material, my course materials in your solution.
+
+125
+00:11:27,000 --> 00:11:29,000
+ You can't just take and argue with me.
+
+126
+00:11:29,000 --> 00:11:33,000
+ It says you told me to write an automobile database and I wrote an automobile database.
+
+127
+00:11:33,000 --> 00:11:35,000
+ Too bad it didn't pass the autograder.
+
+128
+00:11:35,000 --> 00:11:39,000
+ Another technique I have is cumulative exams.
+
+129
+00:11:39,000 --> 00:11:46,000
+ So like in week 1, 2, 3, and 4, in order to discourage you from just using AI, I say there'll be a midterm.
+
+130
+00:11:46,000 --> 00:11:50,000
+ And that midterm will be cumulative.
+
+131
+00:11:50,000 --> 00:11:58,000
+ And so if you take weeks 1 through 5 plus a little bit and you think you can do that in one week with AI, great.
+
+132
+00:11:58,000 --> 00:12:01,000
+ Good luck with you. The exams are going to be more difficult.
+
+133
+00:12:01,000 --> 00:12:06,000
+ They are going to be potentially as difficult as weeks 1 through 5 combined.
+
+134
+00:12:06,000 --> 00:12:09,000
+ And if you know everything in week 1 through 5, they're pretty easy.
+
+135
+00:12:09,000 --> 00:12:12,000
+ But if you don't, you're not going to do it.
+
+136
+00:12:12,000 --> 00:12:17,000
+ And so I generally use about half or a little under half of my scores.
+
+137
+00:12:17,000 --> 00:12:22,000
+ Grades are calculated based on exams.
+
+138
+00:12:22,000 --> 00:12:28,000
+ And so if you get 100% on the assignments and you don't do well on the exams, you kind of have a 50% in the class.
+
+139
+00:12:28,000 --> 00:12:36,000
+ And so that's another motivation to not just depend on AI because AI won't be able to do the exam for you.
+
+140
+00:12:36,000 --> 00:12:40,000
+ And so, I mean, I do let people do some exams online,
+
+141
+00:12:40,000 --> 00:12:45,000
+ but sometimes they're just so big that AI can't get it right and the autograders, like I said, are too specific.
+
+142
+00:12:45,000 --> 00:12:48,000
+ So here's my recommendations.
+
+143
+00:12:48,000 --> 00:12:52,000
+ Don't just rush to the assignments and just smash them out with AI.
+
+144
+00:12:52,000 --> 00:12:55,000
+ I understand you're tired and you don't have enough time.
+
+145
+00:12:55,000 --> 00:12:59,000
+ The problem is, is that that strategy will initially lead off into success,
+
+146
+00:12:59,000 --> 00:13:03,000
+ but that will reinforce your bad choice of not studying, right?
+
+147
+00:13:03,000 --> 00:13:07,000
+ If you skim the material before and at least while you're working and if AI is helping you,
+
+148
+00:13:07,000 --> 00:13:10,000
+ maybe some pieces will stick in your mind as you're going through.
+
+149
+00:13:10,000 --> 00:13:13,000
+ And don't be so impatient in the first few weeks.
+
+150
+00:13:13,000 --> 00:13:16,000
+ The first few weeks are the easy part of the class on purpose.
+
+151
+00:13:16,000 --> 00:13:20,000
+ So if you don't give yourself a chance to learn in the easy part of the class,
+
+152
+00:13:20,000 --> 00:13:23,000
+ you're not going to learn in the hard part of the class.
+
+153
+00:13:23,000 --> 00:13:30,000
+ Now, if you already know the material because that's the easy class for you.
+
+154
+00:13:30,000 --> 00:13:34,000
+ Great. You'll be using AI. You know how to use AI.
+
+155
+00:13:34,000 --> 00:13:37,000
+ You could do it in your sleep. So that's not the student I'm talking to.
+
+156
+00:13:37,000 --> 00:13:40,000
+ I'm talking about the student that's actually learning this material.
+
+157
+00:13:40,000 --> 00:13:46,000
+ And again, the key is a programming course designed to stretch you and teach you a little bit more every week
+
+158
+00:13:46,000 --> 00:13:50,000
+ so that when you're done, you can do something big.
+
+159
+00:13:50,000 --> 00:13:53,000
+ AI is great and getting better.
+
+160
+00:13:53,000 --> 00:13:57,000
+ This is a circuit layout tool that I'm building for a course,
+
+161
+00:13:57,000 --> 00:14:01,000
+ an upcoming course I'm going to teach called Computer Architecture for Everybody.
+
+162
+00:14:01,000 --> 00:14:04,000
+ Hardware, how chips are made.
+
+163
+00:14:04,000 --> 00:14:11,000
+ This is based on a piece of software that I learned in grad school like 25 plus years ago called Magic.
+
+164
+00:14:11,000 --> 00:14:13,000
+ It came from a university in California, Berkeley.
+
+165
+00:14:13,000 --> 00:14:18,000
+ That's why it's called Mystic because it's like my own version of Magic.
+
+166
+00:14:18,000 --> 00:14:25,000
+ This does circuit layout. All those layers are polysilicon, n-dope, silicon, p-dope, silicon, metal.
+
+167
+00:14:25,000 --> 00:14:28,000
+ You don't need to know this. It's not a hardware class.
+
+168
+00:14:28,000 --> 00:14:32,000
+ And literally, I just talked AI through building all this.
+
+169
+00:14:32,000 --> 00:14:35,000
+ This is only a couple hundred lines of code.
+
+170
+00:14:35,000 --> 00:14:42,000
+ And it's a reasonable facsimile of this semi-professional software called Magic.
+
+171
+00:14:42,000 --> 00:14:47,000
+ And the only part that I really helped in was the circuit simulation
+
+172
+00:14:47,000 --> 00:14:51,000
+ because maybe the AI will figure that out too eventually.
+
+173
+00:14:51,000 --> 00:14:57,000
+ But I used some recursion and some other tricks to make the little pluses and minuses go.
+
+174
+00:14:57,000 --> 00:15:01,000
+ But I've been doing these kinds of small tasks with AI for a while.
+
+175
+00:15:01,000 --> 00:15:06,000
+ And I'll just say, I'm really starting to believe.
+
+176
+00:15:06,000 --> 00:15:14,000
+ I'm starting to believe that AI is more of a partner than like barely capable of doing the simplest things.
+
+177
+00:15:14,000 --> 00:15:18,000
+ And as I increasingly trust and believe in AI as my partner,
+
+178
+00:15:18,000 --> 00:15:22,000
+ I'm starting to communicate with it as if it's more intelligent.
+
+179
+00:15:22,000 --> 00:15:28,000
+ So my conversations with AI are longer, more jargon-loaded,
+
+180
+00:15:28,000 --> 00:15:32,000
+ as if I was talking to someone who is almost as good as me.
+
+181
+00:15:32,000 --> 00:15:39,000
+ And I will say that as I increase the sophistication with which I communicate with AI,
+
+182
+00:15:39,000 --> 00:15:42,000
+ I am getting better results from AI.
+
+183
+00:15:42,000 --> 00:15:48,000
+ And so this goes back to if you're good at programming and you're good at understanding problems,
+
+184
+00:15:48,000 --> 00:15:53,000
+ then your communication with AI can be at a much higher level with much more detail
+
+185
+00:15:53,000 --> 00:15:56,000
+ and you will get better results.
+
+186
+00:15:56,000 --> 00:15:58,000
+ So thanks for listening.
+
+187
+00:15:58,000 --> 00:16:05,000
+ I hope to see you in class or online, perhaps in the Ann Arbor campus or perhaps in an online venue.
+
+188
+00:16:05,000 --> 00:16:07,000
+ Cheers.
+
+189
+00:16:12,000 --> 00:16:14,920
+ (jazz piano music)
+

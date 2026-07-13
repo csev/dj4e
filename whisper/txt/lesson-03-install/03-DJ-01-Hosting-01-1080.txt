@@ -1,0 +1,152 @@
+ - Hello, and welcome to this lecture on the structure
+ of a Django application.
+ It's a little early to be going through all the detail,
+ and there'll be some things that we're not really
+ going to understand until a little bit later in the course.
+ But I wanted to sort of show you the lay of the land
+ so that as we add features, you realize that there's
+ sort of a method to the madness.
+ And so, Django is a way of building web applications.
+ Django has a pattern within itself that, you know,
+ organizes folders in a certain way, and puts files
+ in certain places, and we're gonna build these projects
+ and applications, and you're like, why are these things
+ organized the way they are?
+ Well, it has to do with the fact that if you go
+ from one Django project to another Django project,
+ you can, you know, fit right in and understand
+ how things are going to work.
+ So, the important terminology that's, I don't know,
+ a bit frustrating is there is projects and applications,
+ and from, Django has this notion of, you have applications,
+ and you might have a project, which is really basically
+ a website, and then, you know, some applications,
+ but if you had two projects, you could share
+ applications between them.
+ And so, it's one or more applications per project
+ with the ability to potentially reuse application
+ across multiple projects.
+ And so, we're gonna work with my DJ4E samples,
+ which I hope you have downloaded somewhere,
+ at least so that you can look at the files,
+ look at the folders, look at the names of the files,
+ and look at the contents of the files.
+ This will all make more sense when you get a little
+ farther down the road.
+ So, here is an LS statement, LS minus L,
+ DJ4E samples, and hello.
+ This is within the folder DJ4E samples.
+ There are two basic folders.
+ One is, in effect, the project wide settings,
+ which is the same name as the folder that we're in.
+ So, it's DJ4E samples slash DJ4E samples.
+ And then, there is the first application, which is hello.
+ And there's a couple things here,
+ like the underscore underscore init dot py.
+ You'll notice it's an empty file.
+ It's just some bookkeeping that helps Python know
+ that there are files that contain classes
+ and objects in here.
+ Settings dot py and URLs dot py and wgsi dot py
+ is kind of like the traffic cop
+ for this entire application that routes things
+ coming into the right, this entire project
+ that routes things to the right application.
+ And then, within the application, we have some files.
+ And you're really gonna learn a lot
+ about object-oriented programming,
+ because all these files contain objects.
+ So, Django is a large piece of software,
+ and you change its behavior by defining objects
+ that accomplish things, and then,
+ in effect, registering those objects.
+ So, a common thing will be to take something like, you know,
+ admin dot py or models dot py, create a data model,
+ and then tell the admin user interface
+ that you didn't write how to show your model,
+ and so you write stuff in admin dot py
+ to communicate into the admin user interface
+ how your data model that Django currently knows nothing about
+ is supposed to be shown, et cetera, et cetera.
+ And so, there's a lot of files,
+ and we will talk through these files.
+ Now, this is an example of a request response.
+ It's a web application.
+ And so, what we'll talk about is,
+ once a request makes it into the server,
+ it's gonna do some work and then produce a response.
+ But in that, we're gonna look at all of the work
+ that goes back and forth.
+ And there's effectively like a routing step
+ where it picks what part of your application
+ to run this route this request to.
+ There is a view part, which is going to receive it
+ and potentially store data.
+ Some would call that the model.
+ The storing of the data is certainly the model,
+ but the receiving of the possibly new input data
+ like you're gonna create a new thing,
+ that would be the model.
+ And then the view, at some point,
+ you gotta finish it and send something back out.
+ And that's the purpose of the view.
+ We call this pattern for building web applications,
+ model view controller.
+ And it's not like you can't build applications any other way.
+ It's just by saying, it's a terminology
+ that I can say going forward, that's the model,
+ that's the view, and that's a controller function.
+ And you don't have to know it right now,
+ but these are words that are, they're loaded
+ and have valuable meaning to us to be able to do.
+ So at some point in this picture on the left side,
+ we have a browser.
+ DOM stands for the document object model.
+ And at some point, the person clicks somewhere
+ in the current web page they're looking at.
+ And the web browser intercepts that and says,
+ oh, okay, I've got your click right here.
+ The web browser intercepts it
+ and then makes a socket connection across the internet,
+ which we've seen before, and then does a get request.
+ And that is what then goes into the server.
+ And so the three functions are the routing,
+ the views, and the models.
+ And there is an overall configuration file,
+ the settings.py, which is sort of how you just say,
+ oh, here's my view files, read these view files,
+ read these model files.
+ So the settings.py kinda controls everything.
+ But when a request first comes in, it consults urls.py,
+ and then for the project, and then it will include urls.py
+ from each of the applications.
+ So once it's chosen what view to run,
+ it looks at the URL, pulls out the pieces of the URL,
+ and finds the views in views.py.
+ That's a Python file that has the destinations
+ for these incoming URLs.
+ There's a file called forms.py, which we'll see later,
+ that is used to make the forms aspect,
+ the part that you fill in as pretty as possible.
+ And then we take the resulting data
+ that we're gonna send back and we merge that in
+ through what's called a template.
+ And then if there's any data that we need stored,
+ we call the model and we store that in a database.
+ And there's this file called model.py,
+ which informs how we store data in the database.
+ And then when that's all done,
+ we read potentially new data from the database,
+ merge that into a template,
+ and then send a response back to the browser,
+ and then that response is all shown to the end user.
+ And so that really is the request into the server
+ through a Django application,
+ pulling data from various places,
+ merging a template back in,
+ and then sending a response back to the application.
+ So up next, we're gonna talk about virtual hosting.
+ Now, in general, you're not gonna have to worry about this.
+ It just kind of explains how something like Python Anywhere
+ is able to manage a whole lot of domains on a single system.
+ (upbeat music)

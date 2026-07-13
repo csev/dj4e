@@ -1,0 +1,608 @@
+1
+00:00:00,000 --> 00:00:02,340
+ - Hello, and welcome to this lecture on the structure
+
+2
+00:00:02,340 --> 00:00:03,780
+ of a Django application.
+
+3
+00:00:03,780 --> 00:00:06,580
+ It's a little early to be going through all the detail,
+
+4
+00:00:06,580 --> 00:00:07,860
+ and there'll be some things that we're not really
+
+5
+00:00:07,860 --> 00:00:10,660
+ going to understand until a little bit later in the course.
+
+6
+00:00:10,660 --> 00:00:13,480
+ But I wanted to sort of show you the lay of the land
+
+7
+00:00:13,480 --> 00:00:16,000
+ so that as we add features, you realize that there's
+
+8
+00:00:16,000 --> 00:00:19,360
+ sort of a method to the madness.
+
+9
+00:00:19,360 --> 00:00:23,340
+ And so, Django is a way of building web applications.
+
+10
+00:00:23,340 --> 00:00:27,560
+ Django has a pattern within itself that, you know,
+
+11
+00:00:27,560 --> 00:00:30,480
+ organizes folders in a certain way, and puts files
+
+12
+00:00:30,480 --> 00:00:34,900
+ in certain places, and we're gonna build these projects
+
+13
+00:00:34,900 --> 00:00:39,040
+ and applications, and you're like, why are these things
+
+14
+00:00:39,040 --> 00:00:40,560
+ organized the way they are?
+
+15
+00:00:40,560 --> 00:00:42,480
+ Well, it has to do with the fact that if you go
+
+16
+00:00:42,480 --> 00:00:45,240
+ from one Django project to another Django project,
+
+17
+00:00:45,240 --> 00:00:48,040
+ you can, you know, fit right in and understand
+
+18
+00:00:48,040 --> 00:00:49,160
+ how things are going to work.
+
+19
+00:00:49,160 --> 00:00:52,460
+ So, the important terminology that's, I don't know,
+
+20
+00:00:52,460 --> 00:00:55,360
+ a bit frustrating is there is projects and applications,
+
+21
+00:00:55,360 --> 00:00:59,520
+ and from, Django has this notion of, you have applications,
+
+22
+00:00:59,520 --> 00:01:03,300
+ and you might have a project, which is really basically
+
+23
+00:01:03,300 --> 00:01:06,460
+ a website, and then, you know, some applications,
+
+24
+00:01:06,460 --> 00:01:08,280
+ but if you had two projects, you could share
+
+25
+00:01:08,280 --> 00:01:09,820
+ applications between them.
+
+26
+00:01:09,820 --> 00:01:13,760
+ And so, it's one or more applications per project
+
+27
+00:01:13,760 --> 00:01:17,320
+ with the ability to potentially reuse application
+
+28
+00:01:17,320 --> 00:01:19,380
+ across multiple projects.
+
+29
+00:01:19,380 --> 00:01:22,360
+ And so, we're gonna work with my DJ4E samples,
+
+30
+00:01:22,360 --> 00:01:24,160
+ which I hope you have downloaded somewhere,
+
+31
+00:01:24,160 --> 00:01:26,220
+ at least so that you can look at the files,
+
+32
+00:01:26,220 --> 00:01:28,200
+ look at the folders, look at the names of the files,
+
+33
+00:01:28,200 --> 00:01:29,960
+ and look at the contents of the files.
+
+34
+00:01:29,960 --> 00:01:31,940
+ This will all make more sense when you get a little
+
+35
+00:01:31,940 --> 00:01:34,260
+ farther down the road.
+
+36
+00:01:34,260 --> 00:01:37,340
+ So, here is an LS statement, LS minus L,
+
+37
+00:01:37,340 --> 00:01:39,200
+ DJ4E samples, and hello.
+
+38
+00:01:39,200 --> 00:01:42,280
+ This is within the folder DJ4E samples.
+
+39
+00:01:42,280 --> 00:01:45,040
+ There are two basic folders.
+
+40
+00:01:45,040 --> 00:01:47,280
+ One is, in effect, the project wide settings,
+
+41
+00:01:47,280 --> 00:01:51,240
+ which is the same name as the folder that we're in.
+
+42
+00:01:51,240 --> 00:01:55,460
+ So, it's DJ4E samples slash DJ4E samples.
+
+43
+00:01:55,460 --> 00:01:59,060
+ And then, there is the first application, which is hello.
+
+44
+00:01:59,060 --> 00:02:00,460
+ And there's a couple things here,
+
+45
+00:02:00,460 --> 00:02:02,760
+ like the underscore underscore init dot py.
+
+46
+00:02:02,760 --> 00:02:04,420
+ You'll notice it's an empty file.
+
+47
+00:02:04,420 --> 00:02:07,920
+ It's just some bookkeeping that helps Python know
+
+48
+00:02:07,920 --> 00:02:11,000
+ that there are files that contain classes
+
+49
+00:02:11,000 --> 00:02:12,100
+ and objects in here.
+
+50
+00:02:12,100 --> 00:02:17,820
+ Settings dot py and URLs dot py and wgsi dot py
+
+51
+00:02:17,820 --> 00:02:20,720
+ is kind of like the traffic cop
+
+52
+00:02:20,720 --> 00:02:23,440
+ for this entire application that routes things
+
+53
+00:02:23,440 --> 00:02:26,280
+ coming into the right, this entire project
+
+54
+00:02:26,280 --> 00:02:28,360
+ that routes things to the right application.
+
+55
+00:02:28,360 --> 00:02:31,400
+ And then, within the application, we have some files.
+
+56
+00:02:31,400 --> 00:02:33,560
+ And you're really gonna learn a lot
+
+57
+00:02:33,560 --> 00:02:34,860
+ about object-oriented programming,
+
+58
+00:02:34,860 --> 00:02:37,800
+ because all these files contain objects.
+
+59
+00:02:37,800 --> 00:02:40,840
+ So, Django is a large piece of software,
+
+60
+00:02:40,840 --> 00:02:43,480
+ and you change its behavior by defining objects
+
+61
+00:02:43,480 --> 00:02:44,760
+ that accomplish things, and then,
+
+62
+00:02:44,760 --> 00:02:46,840
+ in effect, registering those objects.
+
+63
+00:02:46,840 --> 00:02:50,040
+ So, a common thing will be to take something like, you know,
+
+64
+00:02:50,040 --> 00:02:53,240
+ admin dot py or models dot py, create a data model,
+
+65
+00:02:53,240 --> 00:02:55,720
+ and then tell the admin user interface
+
+66
+00:02:55,720 --> 00:02:59,480
+ that you didn't write how to show your model,
+
+67
+00:02:59,480 --> 00:03:02,000
+ and so you write stuff in admin dot py
+
+68
+00:03:02,000 --> 00:03:05,960
+ to communicate into the admin user interface
+
+69
+00:03:05,960 --> 00:03:09,360
+ how your data model that Django currently knows nothing about
+
+70
+00:03:09,360 --> 00:03:11,720
+ is supposed to be shown, et cetera, et cetera.
+
+71
+00:03:11,720 --> 00:03:13,300
+ And so, there's a lot of files,
+
+72
+00:03:13,300 --> 00:03:16,460
+ and we will talk through these files.
+
+73
+00:03:16,460 --> 00:03:20,600
+ Now, this is an example of a request response.
+
+74
+00:03:20,600 --> 00:03:21,760
+ It's a web application.
+
+75
+00:03:21,760 --> 00:03:24,600
+ And so, what we'll talk about is,
+
+76
+00:03:24,600 --> 00:03:26,940
+ once a request makes it into the server,
+
+77
+00:03:26,940 --> 00:03:29,020
+ it's gonna do some work and then produce a response.
+
+78
+00:03:29,020 --> 00:03:31,480
+ But in that, we're gonna look at all of the work
+
+79
+00:03:31,480 --> 00:03:33,760
+ that goes back and forth.
+
+80
+00:03:33,760 --> 00:03:36,600
+ And there's effectively like a routing step
+
+81
+00:03:36,600 --> 00:03:38,560
+ where it picks what part of your application
+
+82
+00:03:38,560 --> 00:03:40,840
+ to run this route this request to.
+
+83
+00:03:40,840 --> 00:03:44,920
+ There is a view part, which is going to receive it
+
+84
+00:03:44,920 --> 00:03:47,380
+ and potentially store data.
+
+85
+00:03:47,380 --> 00:03:49,640
+ Some would call that the model.
+
+86
+00:03:49,640 --> 00:03:51,440
+ The storing of the data is certainly the model,
+
+87
+00:03:51,440 --> 00:03:54,280
+ but the receiving of the possibly new input data
+
+88
+00:03:54,280 --> 00:03:55,780
+ like you're gonna create a new thing,
+
+89
+00:03:55,780 --> 00:03:57,200
+ that would be the model.
+
+90
+00:03:57,200 --> 00:03:59,320
+ And then the view, at some point,
+
+91
+00:03:59,320 --> 00:04:01,760
+ you gotta finish it and send something back out.
+
+92
+00:04:01,760 --> 00:04:03,600
+ And that's the purpose of the view.
+
+93
+00:04:03,600 --> 00:04:07,080
+ We call this pattern for building web applications,
+
+94
+00:04:07,080 --> 00:04:08,560
+ model view controller.
+
+95
+00:04:08,560 --> 00:04:12,280
+ And it's not like you can't build applications any other way.
+
+96
+00:04:12,280 --> 00:04:14,640
+ It's just by saying, it's a terminology
+
+97
+00:04:14,640 --> 00:04:17,340
+ that I can say going forward, that's the model,
+
+98
+00:04:17,340 --> 00:04:19,860
+ that's the view, and that's a controller function.
+
+99
+00:04:19,860 --> 00:04:22,080
+ And you don't have to know it right now,
+
+100
+00:04:22,080 --> 00:04:25,240
+ but these are words that are, they're loaded
+
+101
+00:04:25,240 --> 00:04:27,960
+ and have valuable meaning to us to be able to do.
+
+102
+00:04:27,960 --> 00:04:31,360
+ So at some point in this picture on the left side,
+
+103
+00:04:31,360 --> 00:04:32,840
+ we have a browser.
+
+104
+00:04:32,840 --> 00:04:35,620
+ DOM stands for the document object model.
+
+105
+00:04:35,620 --> 00:04:38,560
+ And at some point, the person clicks somewhere
+
+106
+00:04:38,560 --> 00:04:41,080
+ in the current web page they're looking at.
+
+107
+00:04:41,080 --> 00:04:44,760
+ And the web browser intercepts that and says,
+
+108
+00:04:44,760 --> 00:04:47,080
+ oh, okay, I've got your click right here.
+
+109
+00:04:47,080 --> 00:04:49,100
+ The web browser intercepts it
+
+110
+00:04:49,100 --> 00:04:51,620
+ and then makes a socket connection across the internet,
+
+111
+00:04:51,620 --> 00:04:54,600
+ which we've seen before, and then does a get request.
+
+112
+00:04:54,600 --> 00:04:57,600
+ And that is what then goes into the server.
+
+113
+00:04:57,600 --> 00:05:00,360
+ And so the three functions are the routing,
+
+114
+00:05:00,360 --> 00:05:02,080
+ the views, and the models.
+
+115
+00:05:02,080 --> 00:05:05,560
+ And there is an overall configuration file,
+
+116
+00:05:05,560 --> 00:05:09,320
+ the settings.py, which is sort of how you just say,
+
+117
+00:05:09,320 --> 00:05:11,800
+ oh, here's my view files, read these view files,
+
+118
+00:05:11,800 --> 00:05:13,000
+ read these model files.
+
+119
+00:05:13,000 --> 00:05:16,220
+ So the settings.py kinda controls everything.
+
+120
+00:05:16,220 --> 00:05:20,440
+ But when a request first comes in, it consults urls.py,
+
+121
+00:05:20,440 --> 00:05:25,440
+ and then for the project, and then it will include urls.py
+
+122
+00:05:25,440 --> 00:05:27,520
+ from each of the applications.
+
+123
+00:05:27,520 --> 00:05:30,840
+ So once it's chosen what view to run,
+
+124
+00:05:30,840 --> 00:05:33,760
+ it looks at the URL, pulls out the pieces of the URL,
+
+125
+00:05:33,760 --> 00:05:37,080
+ and finds the views in views.py.
+
+126
+00:05:37,080 --> 00:05:41,180
+ That's a Python file that has the destinations
+
+127
+00:05:41,180 --> 00:05:43,360
+ for these incoming URLs.
+
+128
+00:05:43,360 --> 00:05:46,000
+ There's a file called forms.py, which we'll see later,
+
+129
+00:05:46,000 --> 00:05:49,820
+ that is used to make the forms aspect,
+
+130
+00:05:49,820 --> 00:05:52,980
+ the part that you fill in as pretty as possible.
+
+131
+00:05:52,980 --> 00:05:55,680
+ And then we take the resulting data
+
+132
+00:05:55,680 --> 00:05:58,020
+ that we're gonna send back and we merge that in
+
+133
+00:05:58,020 --> 00:05:59,760
+ through what's called a template.
+
+134
+00:05:59,760 --> 00:06:02,440
+ And then if there's any data that we need stored,
+
+135
+00:06:02,440 --> 00:06:06,000
+ we call the model and we store that in a database.
+
+136
+00:06:06,000 --> 00:06:08,680
+ And there's this file called model.py,
+
+137
+00:06:08,680 --> 00:06:12,320
+ which informs how we store data in the database.
+
+138
+00:06:12,320 --> 00:06:14,200
+ And then when that's all done,
+
+139
+00:06:14,200 --> 00:06:17,560
+ we read potentially new data from the database,
+
+140
+00:06:17,560 --> 00:06:19,080
+ merge that into a template,
+
+141
+00:06:19,080 --> 00:06:22,020
+ and then send a response back to the browser,
+
+142
+00:06:22,020 --> 00:06:25,560
+ and then that response is all shown to the end user.
+
+143
+00:06:25,560 --> 00:06:29,880
+ And so that really is the request into the server
+
+144
+00:06:29,880 --> 00:06:31,380
+ through a Django application,
+
+145
+00:06:31,380 --> 00:06:33,120
+ pulling data from various places,
+
+146
+00:06:33,120 --> 00:06:35,080
+ merging a template back in,
+
+147
+00:06:35,080 --> 00:06:40,080
+ and then sending a response back to the application.
+
+148
+00:06:40,080 --> 00:06:44,600
+ So up next, we're gonna talk about virtual hosting.
+
+149
+00:06:44,600 --> 00:06:46,680
+ Now, in general, you're not gonna have to worry about this.
+
+150
+00:06:46,680 --> 00:06:50,160
+ It just kind of explains how something like Python Anywhere
+
+151
+00:06:50,160 --> 00:06:54,000
+ is able to manage a whole lot of domains on a single system.
+
+152
+00:06:54,000 --> 00:06:56,580
+ (upbeat music)
+

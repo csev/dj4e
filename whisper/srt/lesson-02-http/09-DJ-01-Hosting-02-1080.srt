@@ -1,0 +1,76 @@
+1
+00:00:00,000 --> 00:00:17,500
+ So now I want to talk about a concept called virtual hosting. Like I said, this doesn't really affect you directly, but I want to sort of show you a little bit about how an organization like PythonAnywhere can have a very small amount of resources and support a very large number of hosts.
+
+2
+00:00:17,500 --> 00:00:24,500
+ And this is the idea that they have one piece of hardware or a very few pieces of hardware and many different domains running on that system.
+
+3
+00:00:24,500 --> 00:00:38,500
+ And this also kind of helps you understand why you have to configure PythonAnywhere the way you do to help them route the request not just to the server but to your application within the server where your application is running.
+
+4
+00:00:38,500 --> 00:00:49,000
+ So if you recall with the request-response cycle, HTTP, it makes a connection to a domain and then it sends a GET request with the domain in the GET request.
+
+5
+00:00:49,000 --> 00:01:01,500
+ And so here we have a little sample. We say telnet data.pr4e.org, that's the host, and port 80, which is to say let's talk to the web server and then we connect and then we send the GET request.
+
+6
+00:01:01,500 --> 00:01:11,500
+ And the GET request has a couple of pieces, right? The GET request has, you know, the name of the document including the server that it's going to and then the protocol and then a blank line.
+
+7
+00:01:11,500 --> 00:01:22,500
+ The key thing is they don't just say get me any document. You actually tell it the host that you're looking for. And by looking at this, that's how the virtual hosting works.
+
+8
+00:01:22,500 --> 00:01:31,500
+ And so it says oh, I'm one host really, but I can pretend to be many hosts and know which host I'm being asked for with that information.
+
+9
+00:01:31,500 --> 00:01:41,000
+ And so that's how the virtual hosting works. So when a GET request comes into a server, it can say I have many virtual hosts inside myself and I'll pick the right one.
+
+10
+00:01:41,000 --> 00:02:00,500
+ And so if we look at the browser's debugger console, we can see that it's asking and doing a GET request to a particular Python Anywhere URL and with a particular domain name and the domain name is part of the request, which is what makes the virtual hosting happen.
+
+11
+00:02:00,500 --> 00:02:20,500
+ And so this is where in the web tab of Python Anywhere you've got to give this thing about where are you at. And you have to say within this server I'm running at this home folder and so that's your home directory, you know, dangle projects local library, your working directory where it's supposed to go when it receives a request for you.
+
+12
+00:02:20,500 --> 00:02:36,500
+ And then it has this one configuration file and you'll notice that that file doesn't belong that www.mdntutorial_pythonanywhere.com_wgsi, the WGSI configuration file is not in your data space.
+
+13
+00:02:36,500 --> 00:02:54,500
+ So that's actually in the system and that's the place where the system can look up where you're going and then that file, again if you read that file, you'll see it's telling where it's supposed to go in the overall system to start in a directory and load the configuration for a particular application and up you go.
+
+14
+00:02:54,500 --> 00:03:21,500
+ And so this is kind of the picture of how it all works. You know, you've got a browser out here and the browser is making many requests to this server, which is one piece of physical hardware and then there's a little piece of software, often it's an open source software called NGINX, and it has a whole bunch of configuration files that you put in in their user interface and it has little instances of Django, one for each of the domains in those systems.
+
+15
+00:03:21,500 --> 00:03:32,500
+ And so you're isolated from all the other ones, whether it's www.mdntutorial_pythonanywhere.com, www.dj4epythonanywhere.com, or just some other kind of thing. It doesn't even have to be Django, it can be just about anything.
+
+16
+00:03:32,500 --> 00:03:45,500
+ And so there are these configuration files that allow, and all this really accomplishes is reusing some of the server hardware so that you don't have to have a dedicated piece of hardware for every single piece of software.
+
+17
+00:03:45,500 --> 00:04:00,500
+ And then within that is what I showed you before, and that is how the request works in your settings file, but the goal of NGINX is getting it to your front door so that your application gets the requests that are destined for it.
+
+18
+00:04:00,500 --> 00:04:20,500
+ So this is both how these applications are combined into one server using virtual hosting, but also how applications work internally. And so I just wanted to give you a really short overview of how this all works so that you can build the picture a little bit at a time over the next few weeks as you learn this material.
+
+19
+00:04:30,500 --> 00:04:31,380
+ [MUSIC]
+
