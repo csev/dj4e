@@ -1,0 +1,7 @@
+Django CSRF Implementation: Token Handling and Template Tags
+
+Django, CSRF, Cross-Site Request Forgery, CSRF token, template tag, csrf_token, form security, POST request
+
+The lecture covers Django's implementation of CSRF protection for form submissions. It explains how Django generates a unique CSRF token per user session and requires it to be included in POST requests to authenticate the request and prevent cross-site request forgery attacks.
+
+The example demonstrates practical application of CSRF tokens using Django's `csrf_token` template tag. By automatically including the token in forms, the application validates the token on the server side before processing form data, ensuring only legitimate requests are accepted.

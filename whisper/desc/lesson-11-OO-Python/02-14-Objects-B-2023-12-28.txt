@@ -1,0 +1,7 @@
+Python Classes, Objects, and Self
+
+Python, class, object, instance, self, method, attribute, dir
+
+The lecture explains the distinction between a class (a template) and an object (an instance) in Python. It demonstrates a `PartyAnimal` class with an attribute `x` (initial value 0) and a method `party` that increments `x`. The `self` keyword within class methods refers to the object instance.
+
+The lecture describes how the `dir` function reveals an object's attributes and methods. For example, the `PartyAnimal` object has an attribute `x` and a method `party`.

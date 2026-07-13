@@ -1,0 +1,7 @@
+AI in Programming Classes: Learning Fundamentals Before Tool Use
+
+programming education, ai in programming courses, zone of proximal development, cumulative exams, autograding, programming fundamentals, ai partnerships
+
+Charles Severance, a professor at the University of Michigan, explains that the early part of programming courses is particularly perilous if students rely on AI without learning the fundamentals. This can result in wasted time and money, as students may not gain any knowledge from the course.
+
+Severance details his course design strategies to counteract AI dependency, including assignments that require synthesizing concepts from multiple course materials, cumulative exams that test knowledge across weeks, and autograders that verify specific techniques taught. He notes that early course weeks are intentionally designed to be manageable to build foundational understanding, ensuring students can effectively use AI in more complex scenarios.

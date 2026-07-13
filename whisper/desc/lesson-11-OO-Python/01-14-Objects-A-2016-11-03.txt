@@ -1,0 +1,7 @@
+Python OOP Terminology: Objects, Classes, and Methods Explained
+
+python, object-oriented programming, objects, classes, methods, attributes, terminology
+
+This lecture provides an introduction to the key terminology in Python object-oriented programming for beginners. It focuses on understanding foundational concepts without requiring immediate implementation of object-oriented code. The session explains why this terminology is essential for reading Python documentation and working with libraries that use objects.
+
+The lecture covers the definitions of objects (self-contained units of code and data), classes (templates for creating objects), methods (functions within a class), and attributes (data variables within a class). It emphasizes that beginners have been using objects throughout their Python journey and that this terminology provides a foundation for interacting with object-oriented systems without complex implementation.

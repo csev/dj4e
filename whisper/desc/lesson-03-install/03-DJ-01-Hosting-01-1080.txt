@@ -1,0 +1,7 @@
+Django Project Structure Overview
+
+Django, project structure, applications, settings.py, urls.py, views.py, models.py, admin.py, forms.py, templates
+
+This lecture covers the fundamental structure of a Django project, distinguishing between projects and applications. A project serves as a website and contains project-wide configuration files including settings.py, urls.py, and wsgi.py. Applications, which can be shared across projects, include files such as models.py, views.py, admin.py, forms.py, and templates.
+
+The request-response cycle in Django involves routing incoming requests via urls.py to the appropriate view in views.py. The view handles the request, may interact with models.py for data storage, and then renders a template to produce a response. This workflow follows the model-view-controller pattern terminology used for clarity in application development.

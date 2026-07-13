@@ -1,0 +1,7 @@
+How to Fix Post-Refresh Issues in Web Forms
+
+CSRF, POST requests, form submission, browser refresh, Post-Redirect-Get, web security
+
+This lecture explains a common web application issue where refreshing a page after submitting a form via POST causes the browser to resend the form data. The problem occurs because the browser treats POST requests as potentially dangerous actions that could be re-executed, triggering security warnings and unintended duplicate operations like re-transferring funds.
+
+The solution involves implementing the Post-Redirect-Get (PRG) pattern. This technique ensures that after a form submission, the server redirects the user to a new GET request instead of sending the form data again. This prevents browser refreshes from re-submitting POST actions and eliminates unwanted security popups while maintaining clean user experience.

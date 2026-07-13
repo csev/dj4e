@@ -1,0 +1,7 @@
+Cookies and Sessions: Browser vs Server Concepts
+
+cookies, sessions, browser, server, session cookies, persistent cookies
+
+Cookies are browser-based data segments stored by servers to track user sessions. They are set during initial requests and sent with subsequent requests to the server. Cookies can be session cookies (expiring when the browser closes) or persistent cookies (with defined expiration dates).
+
+Sessions are server-side mechanisms that maintain user-specific data across multiple requests. The server uses cookies to link a browser to a session, enabling it to distinguish concurrent connections from different browsers in production environments.

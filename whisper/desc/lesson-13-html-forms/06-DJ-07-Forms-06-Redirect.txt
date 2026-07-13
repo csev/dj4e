@@ -1,0 +1,7 @@
+Post-Redirect-Get Pattern: Preventing Form Submission Duplicates on Refresh
+
+post-redirect-get, redirect, flash messages, session, form submission
+
+The lecture addresses the problem of duplicate form submissions caused by refreshing a page after a POST request. It demonstrates the post-redirect-get pattern where a 302 redirect is returned at the end of a POST request, triggering a new GET request to the same URL. This prevents the browser from re-executing the POST operation on refresh.
+
+The implementation uses session storage to manage flash messages. After processing a POST request, a message (such as form validation feedback) is stored in the session. The redirect then causes a GET request that retrieves and displays the message before deleting it from the session, ensuring the message is shown only once.

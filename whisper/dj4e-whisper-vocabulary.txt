@@ -16,7 +16,6 @@ UMSI
 PythonAnywhere
 GitHub
 Stack Overflow
-
 Django
 Python
 JavaScript
@@ -47,7 +46,6 @@ IETF
 RFC
 W3C
 CERN
-
 Model View Controller
 MVC
 Object Relational Mapper
@@ -60,7 +58,6 @@ Web Server Gateway Interface
 WSGI
 Asynchronous Server Gateway Interface
 ASGI
-
 manage.py
 settings.py
 urls.py
@@ -76,7 +73,6 @@ main.html
 login.html
 form.html
 index.html
-
 runserver
 makemigrations
 migrate
@@ -97,7 +93,6 @@ get_object_or_404
 HttpRequest
 HttpResponse
 HttpResponseRedirect
-
 Model
 ModelForm
 QuerySet
@@ -138,7 +133,6 @@ SET_NULL
 related_name
 auto_now
 auto_now_add
-
 class-based views
 generic views
 View
@@ -159,7 +153,6 @@ form_valid
 template_name
 success_url
 object_list
-
 Django template language
 DTL
 template inheritance
@@ -167,7 +160,6 @@ template context
 context processor
 block content
 extends
-include
 forloop
 csrf_token
 CSRF
@@ -182,8 +174,6 @@ CsrfViewMiddleware
 AuthenticationMiddleware
 MessageMiddleware
 XFrameOptionsMiddleware
-
-GET
 POST
 request-response
 request line
@@ -198,7 +188,6 @@ django_session
 is_authenticated
 login required
 logout
-
 one-to-many
 many-to-many
 many-to-one
@@ -216,7 +205,6 @@ UPDATE
 DELETE FROM
 CREATE TABLE
 DROP TABLE
-PRIMARY KEY
 AUTOINCREMENT
 VARCHAR
 INTEGER
@@ -227,7 +215,6 @@ INDEX
 REFERENCES
 DEFERRABLE
 INITIALLY DEFERRED
-
 Berners-Lee
 Tim Berners-Lee
 Mozilla
@@ -246,7 +233,6 @@ multi-threaded
 web worker
 LitElement
 web component
-
 auto-grader
 LTI
 Learning Tools Interoperability
@@ -254,3 +240,74 @@ LMS
 learning management system
 MOOC
 massive open online course
+dj4e-samples
+dj4e-samples/settings.py
+dj4e-samples/urls.py
+DrChuckPythonAnywhere.com
+PythonAnywhere.com
+nginx
+Gunicorn
+mod_wsgi
+myarts
+myarts.Article
+myarts.owner
+autos
+cats
+ads
+forums
+favs
+pics
+menu
+social_django
+social-auth-app-django
+crispy forms
+django-crispy-forms
+Bootstrap
+favicon
+OwnerListView
+OwnerDetailView
+OwnerCreateView
+OwnerUpdateView
+OwnerDeleteView
+UserCreationForm
+AuthenticationForm
+settings.AUTH_USER_MODEL
+request.user
+manage dot py
+settings dot py
+URLs dot py
+views dot py
+models dot py
+forms dot py
+admin dot py
+apps dot py
+owner dot py
+object underscore list
+context underscore object underscore name
+primary underscore key
+foreign underscore key
+created underscore at
+updated underscore at
+web components
+custom elements
+shadow DOM
+innerHTML
+addEventListener
+setTimeout
+location.href
+window.location
+onClick
+async
+await
+OAuth
+OAuth 2.0
+GitHub OAuth
+MD5
+SHA-256
+PNG
+JPEG
+ISBN
+IPv4
+IPv6
+CPython
+NaN
