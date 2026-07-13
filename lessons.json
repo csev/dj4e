@@ -20,14 +20,14 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 01.01 Django for Everybody Course Introduction (7:33)",
+                    "title": "DJ 01.01 Django for Everybody Introduction (7:33)",
                     "youtube": "oxJQB4f2MMs",
                     "media": "lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v",
                     "youtube-2018": "KH_-vhsfxjg"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 01.02 AI in Programming Classes: Learning Fundamentals Before Tool Use (16:16)",
+                    "title": "DJ 01.02 AI in Programming Classes: Charles Severance's Approach (16:16)",
                     "youtube": "1u-gQ-d5Lv8",
                     "media": "lesson-01-welcome/02-2025-08-20-AI.m4v"
                 },
@@ -72,27 +72,27 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)",
+                    "title": "DJ 03.01 Setting up Django 5.2 environment on Python Anywhere (31:58)",
                     "media": "lesson-03-install/01-paw_install52_new.m4v",
                     "FCP": "DJ4E-Demos/01_paw_install52_new/01_paw_install52_new",
                     "youtube": "Aba5ZCfua8k"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 03.02 Django Assignment Auto-Grader Process (10:42)",
+                    "title": "DJ 03.02 Django Autograder: How It Checks Student Assignments (10:42)",
                     "media": "lesson-03-install/02-DJ-00-AutoGrader.m4v",
                     "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
                     "youtube": "zQvzXkiwILM"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 03.03 Django Project Structure Overview (7:04)",
+                    "title": "DJ 03.03 Django Application Structure (7:04)",
                     "youtube": "jmX27FrCqqs",
                     "media": "lesson-03-install/03-DJ-01-Hosting-01-1080.mov"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 03.04 Django Startup Failures and Traceback Debugging on Python Anywhere (19:38)",
+                    "title": "DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Traceback Errors (19:38)",
                     "media": "lesson-03-install/04-paw_install_errors_52.m4v",
                     "todo": "Re-record for 2026",
                     "youtube": "IYH_BkpHf3s"
@@ -195,7 +195,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 04.01 Django for Everybody: Linux Command Line Basics (18:27)",
+                    "title": "DJ 04.01 Django Shell: Linux Command Line Interface (18:27)",
                     "media": "lesson-04-shell/01-01_paw_shell.m4v",
                     "todo": "Re-record for 2026",
                     "FCP": "Shell-01-DJ52",
@@ -273,20 +273,20 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 07.01 SQL History, Schema Design, and CRUD Operations (18:57)",
+                    "title": "DJ 07.01 SQL: History and Database Abstraction (18:57)",
                     "media": "lesson-07-sql/01-SQL-01-Basic-01.m4v",
                     "youtube": "C1QXYMNTEVs"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 07.02 Basic SQL Operations with SQLite (11:44)",
+                    "title": "DJ 07.02 SQLite Basics: Creating Tables and Simple SQL Commands (11:44)",
                     "media": "lesson-07-sql/02-SQL-01-Basic-02.m4v",
                     "note": "Audio is messed up in FCPX",
                     "youtube": "wtU7Pp6VFoE"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 07.03 SQLite Command Line Basics: Create, Read, Update, Delete Tables (8:39)",
+                    "title": "DJ 07.03 Basic SQLite Command Line Operations (8:39)",
                     "media": "lesson-07-sql/03-sql-01-basic.m4v",
                     "youtube": "2Or6_sSyl7c"
                 },
@@ -662,19 +662,19 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 05.01 HTML History and Evolution: From Early Browsers to Modern Standards (5:53)",
+                    "title": "DJ 05.01 HTML: Request-Response Cycle and Historical Evolution (5:53)",
                     "media": "lesson-05-html/01-Web-02-HTML-A.m4v",
                     "youtube": "yWmJSO5xQlU"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 05.02 HTML Basic Syntax and Document Structure (13:53)",
+                    "title": "DJ 05.02 Basic HTML Document Structure and Tags (13:53)",
                     "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
                     "youtube": "fh3omoEiebQ"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 05.03 Document Object Model vs HTML Source Code (13:34)",
+                    "title": "DJ 05.03 Document Object Model vs Source Code in HTML (13:34)",
                     "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
                     "youtube": "wYc6l28v7Cs"
                 },
@@ -782,31 +782,31 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 06.01 CSS: Styling Web Pages After HTML (12:47)",
+                    "title": "DJ 06.01 CSS: Styling the Document Object Model (12:47)",
                     "media": "lesson-06-css/01-Web-02-CSS-A.m4v",
                     "youtube": "blWx62Js7T0"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 06.02 Applying CSS in HTML: Inline, Internal, and External Stylesheets (15:03)",
+                    "title": "DJ 06.02 Three Methods for Applying CSS in HTML (15:03)",
                     "media": "lesson-06-css/02-Web-02-CSS-B.m4v",
                     "youtube": "nMU8wMgasJ8"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 06.03 CSS Fundamentals: Images, Colors, and Fonts (13:39)",
+                    "title": "DJ 06.03 CSS for Images, Colors, and Fonts (13:39)",
                     "media": "lesson-06-css/03-Web-02-CSS-C.m4v",
                     "youtube": "7KWtFdqXiqE"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 06.04 Understanding CSS Cascading and Selectors for Web Development (13:25)",
+                    "title": "DJ 06.04 Cascading Style Sheets Fundamentals (13:25)",
                     "media": "lesson-06-css/04-Web-03-CSS-Code-A.m4v",
                     "youtube": "2Eu96WnoHBY"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 06.05 CSS Fundamentals: Fonts, Colors, and Layout (25:49)",
+                    "title": "DJ 06.05 HTML Fonts, Colors, and CSS Basics (25:49)",
                     "media": "lesson-06-css/05-Web-03-CSS-Code-B.m4v",
                     "youtube": "MHqI-PKBl_A"
                 },
@@ -1551,37 +1551,37 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.01 Web Request-Response Cycle for Dynamic Content (6:04)",
+                    "title": "DJ 02.01 Web Request-Response Cycle Fundamentals (6:04)",
                     "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
                     "youtube": "ZT8uqIEG92o"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.02 Network Sockets: Computer Phone Call Model (6:34)",
+                    "title": "DJ 02.02 Understanding Network Sockets: Connect, Talk, Disconnect Model (6:34)",
                     "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
                     "youtube": "RDvlb_XgVyI"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.03 HTTP Protocol: History and URL Structure (16:28)",
+                    "title": "DJ 02.03 History of HTTP and URL Structure (16:28)",
                     "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
                     "youtube": "Q5YIrYkrVXg"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.04 Building a Simple Python Browser Client with Sockets (8:39)",
+                    "title": "DJ 02.04 Simple Python HTTP Client with Sockets (8:39)",
                     "media": "lesson-02-http/04-Web-01-HTTP-04-Browser.m4v",
                     "youtube": "Fxgw_BxZg2I"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.05 Simple HTTP Web Server and Client in Python with Sockets (16:07)",
+                    "title": "DJ 02.05 Simple HTTP Server and Client in Python Using Sockets (16:07)",
                     "media": "lesson-02-http/05-Web-01-HTTP-05-Server.m4v",
                     "youtube": "PNt8zXl7EJ0"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.06 Browser Console Fundamentals: Request-Response Cycles and DOM Debugging (9:43)",
+                    "title": "DJ 02.06 Browser Debugger Console: Network Requests and DOM (9:43)",
                     "media": "lesson-02-http/06-dev-mode-walkthrough.mov",
                     "youtube": "0JsWY3pmdak"
                 },
@@ -1593,7 +1593,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.09 How Virtual Hosting Works on Shared Server Hardware (4:31)",
+                    "title": "DJ 02.09 Virtual Hosting: One Server for Multiple Domains (4:31)",
                     "youtube": "KA5ZM3E9OjY",
                     "media": "lesson-02-http/09-DJ-01-Hosting-02-1080.mov"
                 },
@@ -1703,7 +1703,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 02.08 Mini Django Web Server: Minimal HTTP Routing and View Implementation (36:59)",
+                    "title": "DJ 02.08 Mini-jango: Under-200-line HTTP server (36:59)",
                     "media": "lesson-02-http/08-Web-04-Mini-Django.m4v",
                     "youtube": "q6LGpiVPwaA"
                 },

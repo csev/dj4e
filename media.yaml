@@ -6,109 +6,109 @@ youtube_playlist: https://www.youtube.com/playlist?list=PLlRFEj9H3Oj5e-EH0t3kXrc
 course_hint: Django for Everybody, DJ4E, Django, Python, web development, Dr. Chuck, Chuck Severance
 entries:
   lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v:
-    title: DJ 01.01 Django for Everybody Course Introduction (7:33)
+    title: DJ 01.01 Django for Everybody Introduction (7:33)
     youtube_id: oxJQB4f2MMs
     kaltura_id: null
     size: 597437858
     md5: 6e850e61ed50644b9e6f119ce350c542
     duration: 453
     duration_text: 07:33
-    tags: Django, Python, Object oriented programming, Web development, MOOC
+    tags: python, django, object-oriented programming, html, css, javascript, json, oauth, bootstrap, pythonanywhere
     description: |
-      This lecture introduces the "Django for Everybody" course, explaining Charles Severance's decision to use Django for students who already know Python. The choice was made after comparing Django and Flask, with Django providing a clear learning path for building functional web applications without excessive low-level complexity.
+      Charles Severance has taught web development courses at the University of Michigan since 2007, using frameworks including PHP, Ruby on Rails, Google App Engine, and Flask. He developed the popular Python for Everybody course for beginners.
 
-      The course teaches object oriented programming through Django, covering features including Ajax, image handling, OAuth authentication, and Bootstrap. Students host their projects on Python Anywhere from the first week, resulting in a complete, functional website by the end of the course.
+      The Django for Everybody course teaches advanced Python and object-oriented programming by building a complete website with features such as Ajax, image handling, OAuth authentication, and Bootstrap, hosted on Python Anywhere.
   lesson-01-welcome/02-2025-08-20-AI.m4v:
-    title: 'DJ 01.02 AI in Programming Classes: Learning Fundamentals Before Tool Use (16:16)'
+    title: 'DJ 01.02 AI in Programming Classes: Charles Severance''s Approach (16:16)'
     youtube_id: 1u-gQ-d5Lv8
     kaltura_id: null
     size: 1223876861
     md5: 266f968a0c66ee208a9204a94f4d071e
     duration: 976
     duration_text: 16:16
-    tags: programming education, ai in programming courses, zone of proximal development, cumulative exams, autograding, programming fundamentals, ai partnerships
+    tags: programming education, AI tools, curriculum design, zone of proximal development, cumulative exams, auto graders, software development
     description: |
-      Charles Severance, a professor at the University of Michigan, explains that the early part of programming courses is particularly perilous if students rely on AI without learning the fundamentals. This can result in wasted time and money, as students may not gain any knowledge from the course.
+      Charles Severance, a professor at the University of Michigan School of Information, discusses the integration of AI in programming education. He argues that AI is now an essential part of software development and must be used by students to become better programmers. Severance, who teaches large courses such as Python for Everybody (with three million students) and Django for Everybody, emphasizes the importance of programming fundamentals over AI dependency.
 
-      Severance details his course design strategies to counteract AI dependency, including assignments that require synthesizing concepts from multiple course materials, cumulative exams that test knowledge across weeks, and autograders that verify specific techniques taught. He notes that early course weeks are intentionally designed to be manageable to build foundational understanding, ensuring students can effectively use AI in more complex scenarios.
+      His approach includes designing assignments that require synthesizing multiple course concepts, using cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific techniques. Severance observes that AI can handle initial assignments but fails at the "knee of the curve" (around week six), where the complexity increases. This strategy ensures students build foundational skills before using AI effectively.
   lesson-02-http/01-Web-01-HTTP-01.m4v:
-    title: DJ 02.01 Web Request-Response Cycle for Dynamic Content (6:04)
+    title: DJ 02.01 Web Request-Response Cycle Fundamentals (6:04)
     youtube_id: ZT8uqIEG92o
     kaltura_id: null
     size: 369453093
     md5: 8666d1ecc4b0d43586da418d03519fd9
     duration: 364
     duration_text: 06:04
-    tags: request-response cycle, http, browser, web server, network socket, html, css, javascript
+    tags: html, css, javascript, http, request-response-cycle, web-server, browser, socket
     description: |
-      This lecture details the request-response cycle as the fundamental mechanism for delivering dynamic web content. Understanding this cycle is essential for web developers to effectively build and debug applications, as it reveals the underlying protocol interactions that enable web functionality.
+      This lecture describes the fundamental request-response cycle in web applications. When a user interacts with a web page, the browser sends an HTTP request to a web server, which responds with HTML content that the browser renders using CSS and JavaScript.
 
-      The cycle begins when a browser sends a request to a web server via a network socket. The server processes the request, potentially accessing data sources, and returns a response containing HTML and other resources. The browser then renders the HTML using CSS and JavaScript to produce the visible web page.
+      The course emphasizes the network protocols and back-end technologies required for building and debugging web applications, including the role of HTTP, web servers, and network sockets.
   lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
-    title: 'DJ 02.02 Network Sockets: Computer Phone Call Model (6:34)'
+    title: 'DJ 02.02 Understanding Network Sockets: Connect, Talk, Disconnect Model (6:34)'
     youtube_id: RDvlb_XgVyI
     kaltura_id: null
     size: 342378216
     md5: 3c2c565da7264b9f5c95e2f9844a4464
     duration: 394
     duration_text: 06:34
-    tags: network sockets, tcp, ip, ipv4, ipv6, tcp ports, http, https, telnet
+    tags: network sockets, TCP port, IP address, IPv4, IPv6, HTTP, HTTPS
     description: |
-      Network sockets provide a communication mechanism for computer applications, modeled after phone calls. This design involves establishing a connection, exchanging data, and disconnecting, which was conceived in the 1960s to handle network communication without requiring permanent connections for scalability.
+      Network sockets provide a communication abstraction for computers that operates on a connect-talk-disconnect model, originating from 1960s design principles to enable scalable data sharing without permanent connections. This approach uses IP addresses and port numbers to route communication between applications, allowing billions of devices to interact efficiently without requiring continuous data access.
 
-      Each network connection uses an IP address (IPv4 or IPv6) and a TCP port number. Common ports include 25 for email server communication, 23 for Telnet, 80 for HTTP, and 443 for HTTPS, enabling applications to interact over the internet.
+      Each computer has a unique IP address (either IPv4 or IPv6) and applications use port numbers to specify services, such as port 25 for email, port 23 for Telnet, port 80 for HTTP, and port 443 for HTTPS. These port numbers act as extensions to IP addresses, directing traffic to the correct application without conflicts while maintaining the client-server communication pattern.
   lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
-    title: 'DJ 02.03 HTTP Protocol: History and URL Structure (16:28)'
+    title: 'DJ 02.03 History of HTTP and URL Structure (16:28)'
     youtube_id: Q5YIrYkrVXg
     kaltura_id: null
     size: 868953263
     md5: b1dfc3195151772bf59e708a0f7102c1
     duration: 988
     duration_text: 16:28
-    tags: HTTP, URL, RFC, IETF, HTTP request, HTTP response
+    tags: HTTP, URL, RFC, IETF, HTTP request, HTTP response, status code
     description: |
-      The HTTP protocol was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN to retrieve documents and images. It introduced the URL structure, which combines a protocol (e.g., HTTP, FTP), a host (domain name resolvable to an IP address), and a document path. This design enabled multiple protocols within a single address and became the dominant web protocol after 1990.
+      Hypertext Transfer Protocol (HTTP) was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN. It serves as a simple protocol for browsers to communicate with servers and retrieve documents and images. The Uniform Resource Locator (URL) structure includes a protocol, a host (domain name), and a document path, with domain names resolving to IP addresses.
 
-      HTTP operates via a request-response mechanism where a client sends a GET request to a server, which responds with a status line (e.g., 200 OK or 404 Not Found) and the requested document. The protocol is defined in open standards (RFCs) maintained by the IETF, ensuring interoperability across diverse systems without proprietary constraints.
+      HTTP uses a request-response mechanism where a client sends a request to a server, which responds with a status code and the requested resource. The status code (e.g., 200 OK or 404 Not Found) indicates the outcome of the request, and the response contains headers and the resource data. The protocol is standardized through Request for Comments (RFCs) by the Internet Engineering Task Force (IETF).
   lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
-    title: DJ 02.04 Building a Simple Python Browser Client with Sockets (8:39)
+    title: DJ 02.04 Simple Python HTTP Client with Sockets (8:39)
     youtube_id: Fxgw_BxZg2I
     kaltura_id: null
     size: 289440817
     md5: 2c3957962f46ab94307b8b241da9bae8
     duration: 519
     duration_text: 08:39
-    tags: Python, Sockets, HTTP, Web Client, UTF-8, Encoding
+    tags: Python, Sockets, HTTP, Client, UTF-8, Encoding, Decoding
     description: |
-      This lecture demonstrates creating a minimal Python client that functions as a browser to send HTTP requests to a server. The client uses socket programming to connect to a specified domain (e.g., data.pr4e.org) on port 80, constructs an HTTP GET request, and receives the server's response.
+      This lecture demonstrates creating a basic HTTP client in Python using socket programming. The client connects to a server (e.g., data.pr4e.org:80), constructs an HTTP GET request in UTF-8 encoding, and transmits it to the server.
 
-      The HTTP request string is encoded from Python's Unicode to UTF-8 for transmission, and the server response is decoded from UTF-8 back to Unicode for processing. This example illustrates fundamental network communication concepts but is intentionally minimal; real applications typically require additional error handling and server-side code.
+      The implementation includes socket connection, sending encoded data, and receiving the response in chunks. It handles UTF-8 encoding for transmission and decoding for processing, and the lecture notes that this manual approach is less efficient than browser developer tools for debugging web applications.
   lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
-    title: DJ 02.05 Simple HTTP Web Server and Client in Python with Sockets (16:07)
+    title: DJ 02.05 Simple HTTP Server and Client in Python Using Sockets (16:07)
     youtube_id: PNt8zXl7EJ0
     kaltura_id: null
     size: 583612134
     md5: 44bf6e8a5f66c61a3295c63a1f7e122f
     duration: 967
     duration_text: 16:07
-    tags: python, web server, socket programming, http, get request, http response, utf-8
+    tags: python, http, web server, web client, sockets, get request
     description: |
-      The lecture demonstrates building a minimal HTTP web server and client in Python using socket programming. The server listens on port 9000 and returns a static HTML page containing "hello world" for any HTTP GET request. The client connects to the server via a socket and sends a GET request.
+      This lecture demonstrates building a simple HTTP server and client in Python. The server listens on port 9000 for incoming HTTP GET requests and returns a fixed "hello world" HTML response. The client sends a GET request to the server running on localhost:9000 and receives the response.
 
-      The implementation adheres to HTTP/1.1 (RFC 2616) with UTF-8 encoding for the response body. The server handles connections in an infinite loop using a blocking socket accept call, sending a 200 OK status and text/html content type for each request. The example also shows that browsers automatically request the favicon.ico resource.
+      The implementation uses TCP sockets for communication. The server handles connections in an infinite loop, responding with HTTP 200 OK, content type text/html, and UTF-8 encoded HTML content. The client uses the urllib library to send requests and receive responses.
   lesson-02-http/06-dev-mode-walkthrough.mov:
-    title: 'DJ 02.06 Browser Console Fundamentals: Request-Response Cycles and DOM Debugging (9:43)'
+    title: 'DJ 02.06 Browser Debugger Console: Network Requests and DOM (9:43)'
     youtube_id: 0JsWY3pmdak
     kaltura_id: null
     size: 188926333
     md5: 0ff2868949406aa6aa75904e200326fa
     duration: 583
     duration_text: 09:43
-    tags: browser console, request response cycle, document object model, http status codes, network tab, chrome developer tools, firefox developer tools
+    tags: browser debugger console, network requests, document object model, dom, request response cycle, http status codes, firefox, chrome, safari
     description: |
-      This lecture demonstrates browser console functionality across Firefox and Chrome. It explains the request-response cycle in HTTP protocols, including status codes like 200 (success) and 404 (not found), request headers, and response headers. The console shows real-time interactions such as document object model parsing, network requests, and JavaScript debugging capabilities.
+      The browser debugger console is a tool accessible in modern browsers such as Firefox and Chrome. It can be opened via browser menus (e.g., Firefox: Tools › Developer › JavaScript Console) and provides features including the document object model (DOM), JavaScript console, network request monitoring, and CSS debugging.
 
-      The session details how browsers handle complex web pages through multiple request-response cycles. It illustrates that a single page load can involve dozens of requests (e.g., 44 requests for a typical page), including CSS, JavaScript, fonts, and other resources. The console also covers debugging features like DOM manipulation, network monitoring, and cache control settings for development workflows.
+      The request-response cycle involves a browser sending a GET request to a server and receiving HTTP responses with status codes like 200, 404, and 500. Complex web pages require multiple network requests (e.g., 44 for 1.6 MB of data) with download times up to one second. Safari is less suitable for debugging due to its limited console features.
   lesson-02-http/07-DJ-11-BigPicture.m4v:
     title: DJ 02.07 Django Request-Response Cycle and Project Structure (17:15)
     youtube_id: zuCxAR3-CzA
@@ -117,245 +117,245 @@ entries:
     md5: bc166ff05f80e2cb3d69d65e2aea05b2
     duration: 1035
     duration_text: 17:15
-    tags: Django, request-response cycle, project structure, URL routing, views, templates
+    tags: Django, request-response cycle, settings.py, urls.py, applications, views, templates, routing
     description: |
-      This lecture describes Django's request-response cycle and the hierarchical project structure, including settings.py and applications.
+      The lecture describes the request-response cycle in Django applications. A browser request is routed to a Django application running on a Linux server, which processes the request by interacting with application files and resources, then returns a response to the browser.
 
-      Requests are routed through project-level URLs to application views, which return responses to the browser using templates.
+      The Django project structure includes a settings.py file for configuration and application definitions, a project-level urls.py for root URL routing, and application-specific files including urls.py and views.py. Templates are used to render the final HTML response.
   lesson-02-http/08-Web-04-Mini-Django.m4v:
-    title: 'DJ 02.08 Mini Django Web Server: Minimal HTTP Routing and View Implementation (36:59)'
+    title: 'DJ 02.08 Mini-jango: Under-200-line HTTP server (36:59)'
     youtube_id: q6LGpiVPwaA
     kaltura_id: null
     size: 835841221
     md5: def458f93c42ad8b395c4a76dd340948
     duration: 2219
     duration_text: 36:59
-    tags: mini django, http server, routing, views, python
+    tags: mini-django, http server, url routing, views, django
     description: |
-      Mini Django is a minimal implementation of the Django web framework, under 200 lines of Python code. It is designed to be readable and understandable for learners to grasp the core HTTP routing and view handling concepts.
+      Mini-jango is a minimal implementation of Django under 200 lines of Python. It provides a simplified HTTP server for understanding the internal structure of Django.
 
-      The framework processes HTTP requests by parsing the request, routing to a view function via a simple if-else pattern in urls.py, and returning HTTP responses with headers and body data.
+      The framework processes HTTP requests through a URL router that directs them to specific view functions. Each view function receives an HTTP request and returns an HTTP response, with the system handling common errors like 404 not found and 500 internal server errors.
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
-    title: DJ 02.09 How Virtual Hosting Works on Shared Server Hardware (4:31)
+    title: 'DJ 02.09 Virtual Hosting: One Server for Multiple Domains (4:31)'
     youtube_id: KA5ZM3E9OjY
     kaltura_id: null
     size: 246488741
     md5: 34db47320ed4fa0ab842b1e559ccccaf
     duration: 271
     duration_text: 04:31
-    tags: virtual hosting, HTTP request, domain routing, NGINX, configuration file, PythonAnywhere
+    tags: virtual hosting, http, get request, nginx, wsgi, domain name, configuration file, home directory
     description: |
-      Virtual hosting enables multiple domain names to operate on a single server instance by using the domain name specified in HTTP requests to route traffic to the correct application. This technique allows organizations like PythonAnywhere to manage numerous websites using minimal hardware resources while maintaining isolation between different domains.
+      Virtual hosting enables a single physical server to manage multiple domain names by using the domain specified in the HTTP GET request. This technique allows organizations like Python Anywhere to support numerous websites with minimal hardware resources. The server identifies the correct domain from the request and routes it to the appropriate application.
 
-      The system relies on configuration files, such as PythonAnywhere's WGSI file, which define application directories and routing rules. NGINX acts as the front-end server to direct incoming HTTP requests to the appropriate application instance based on the domain name in the request, ensuring each application runs independently within the shared infrastructure.
+      The implementation typically involves a web server such as nginx, which uses configuration files to map each domain to a specific application directory. The WSGI configuration file, stored outside the user's data space, defines the application's home directory and startup parameters, ensuring isolation between different applications.
   lesson-03-install/01-paw_install52_new.m4v:
-    title: DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)
+    title: DJ 03.01 Setting up Django 5.2 environment on Python Anywhere (31:58)
     youtube_id: Aba5ZCfua8k
     kaltura_id: null
     size: 894692080
     md5: c08f5987579475723ac5ef6461cf5997
     duration: 1918
     duration_text: 31:58
-    tags: Python Anywhere, Django 5.2, virtual environment, pip, requirements.txt, django project, django app, urls configuration, manage.py
+    tags: Django, Python Anywhere, virtual environment, Django 5.2, requirements.txt, Django project, Django app
     description: |
-      The lecture provides a step-by-step guide for setting up Django 5.2 on Python Anywhere. It covers creating a virtual environment using Python 3.13, activating it, upgrading pip, and installing Django. The process includes verifying the installation with `python manage.py check` and initializing a sample project.
+      This lecture provides a step-by-step guide for configuring a Django 5.2 environment on Python Anywhere. It covers creating a virtual environment using Python 3.13, installing Django dependencies via requirements.txt, and setting up Python Anywhere web app configurations including source code paths and virtual environment specifications.
 
-      The lecture then details configuring Python Anywhere's web service to link the Django application to the domain by specifying the source code directory, working directory, and virtual environment. It concludes with creating a basic "polls" application and setting up URL routing and views.
+      The tutorial demonstrates creating a basic Django project and app, followed by running a simple "Hello DJ4E world" application. The setup ensures the application operates through Python Anywhere's web tab configuration rather than local server commands, with validation steps using Django's check command to verify project integrity.
   lesson-03-install/02-DJ-00-AutoGrader.m4v:
-    title: DJ 03.02 Django Assignment Auto-Grader Process (10:42)
+    title: 'DJ 03.02 Django Autograder: How It Checks Student Assignments (10:42)'
     youtube_id: zQvzXkiwILM
     kaltura_id: null
     size: 201329460
     md5: 81a287b0b4d4d371708e397f3a04d3cb
     duration: 642
     duration_text: 10:42
-    tags: Django, auto-grader, assignment testing, web crawler, LTI, HTTP, HTML, PHP
+    tags: autograder, django, php, lti, html, web crawling, grading
     description: |
-      The Django auto-grader is a PHP-based tool that evaluates student assignments by sending HTTP requests to the deployed application and checking HTML responses for required strings.
+      The Django autograder is a PHP program hosted at www.dj4e.com that checks student assignments by sending HTTP requests to the student's website and verifying the HTML response contains specific strings as defined by the assignment instructions.
 
-      It utilizes Learning Tools Interoperability (LTI) to send grades to learning management systems and performs up to 50 HTTP request-response cycles to validate the application.
+      Students must manually test their application before submitting it to the autograder, which uses Learning Tools Interoperability to report grades. The autograder runs up to 50 request-response cycles to validate the application and provides detailed feedback on mismatches if the assignment requirements are not met.
   lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
-    title: DJ 03.03 Django Project Structure Overview (7:04)
+    title: DJ 03.03 Django Application Structure (7:04)
     youtube_id: jmX27FrCqqs
     kaltura_id: null
     size: 360052905
     md5: a0238756779742226515fc3a8fa8a38e
     duration: 424
     duration_text: 07:04
-    tags: Django, project structure, applications, settings.py, urls.py, views.py, models.py, admin.py, forms.py, templates
+    tags: django, project, application, folder_structure, settings, urls, wgsi, models, views, mvc
     description: |
-      This lecture covers the fundamental structure of a Django project, distinguishing between projects and applications. A project serves as a website and contains project-wide configuration files including settings.py, urls.py, and wsgi.py. Applications, which can be shared across projects, include files such as models.py, views.py, admin.py, forms.py, and templates.
+      This lecture explains the folder structure and key files of a Django application, distinguishing between projects (which are websites) and applications (reusable components). It describes the typical project layout, including the project directory (e.g., dj4esamples/dj4esamples) and applications (e.g., hello), and highlights critical files such as settings.py, urls.py, wgsi.py, models.py, views.py, and admin.py.
 
-      The request-response cycle in Django involves routing incoming requests via urls.py to the appropriate view in views.py. The view handles the request, may interact with models.py for data storage, and then renders a template to produce a response. This workflow follows the model-view-controller pattern terminology used for clarity in application development.
+      The lecture details the request-response cycle in Django, where a browser request is routed by urls.py to a view in views.py. The view handles data through models and generates a response using templates, following the Model-View-Controller pattern.
   lesson-03-install/04-paw_install_errors_52.m4v:
-    title: DJ 03.04 Django Startup Failures and Traceback Debugging on Python Anywhere (19:38)
+    title: 'DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Traceback Errors (19:38)'
     youtube_id: IYH_BkpHf3s
     kaltura_id: null
     size: 543135960
     md5: af93e420b0815fdd9c7e1fafc71f5e64
     duration: 1178
     duration_text: 19:38
-    tags: Django, Python Anywhere, startup failure, traceback, debug, virtual environment, manage.py check, settings.py, urls.py, views.py
+    tags: Django, Python Anywhere, startup failure, traceback, error log, virtual environment, manage.py, check
     description: |
-      The lecture demonstrates debugging common errors in Django applications hosted on Python Anywhere. It specifically covers startup failures where the application won't start at all, and traceback errors that occur after the application loads but fails during a request. For startup failures, the solution involves checking the virtual environment and working directory using the `python manage.py check` command to identify configuration issues before they prevent application startup.
+      Django applications on Python Anywhere commonly encounter startup failures and traceback errors. Startup failures occur when the application fails to initialize, while traceback errors manifest as yellow screens during request processing.
 
-      The transcript provides a step-by-step walkthrough of diagnosing a startup failure by running `python manage.py check` in the bash console, identifying the error in the code (such as a typo in an import statement), and fixing the issue. It also illustrates how to interpret traceback errors, which indicate that the application is running but fails during a specific request, often due to code errors in views.py or template files. The lecture emphasizes the importance of using the `manage.py check` tool to catch errors before they manifest as full startup failures and the role of the virtual environment in managing Django dependencies.
+      The lecture details the process for diagnosing startup failures, including checking the virtual environment and working directory, and running python manage.py check. It also explains how to interpret traceback errors by examining the error log and locating the specific code line that causes the failure.
   lesson-04-shell/01-01_paw_shell.m4v:
-    title: 'DJ 04.01 Django for Everybody: Linux Command Line Basics (18:27)'
+    title: 'DJ 04.01 Django Shell: Linux Command Line Interface (18:27)'
     youtube_id: a7YIQb8juQk
     kaltura_id: null
     size: 412719254
     md5: 4d190cfafdbb30c984ea109056a675ac
     duration: 1107
     duration_text: 18:27
-    tags: Bash, Command line, Django shell, Linux, SQLite, Python shell
+    tags: bash, shell, linux, django, sqlite, python
     description: |
-      This lecture introduces the Linux command line interface as the primary environment for server operations, focusing on Bash shell commands essential for Django development. It covers basic navigation with `ls`, `pwd`, and `cd`, file manipulation using `rm`, text search via `grep`, and documentation through `man`. The session also explains command line completion using the tab key and the history feature for re-executing previous commands.
+      This lecture covers the Linux command line interface, specifically the bash shell, and essential commands including ls, pwd, cd, and rm. It also demonstrates command line completion using the tab key and navigating command history with up and down arrow keys.
 
-      The lecture distinguishes between the Linux shell, Python interactive shell (REPL), and Django shell, highlighting how to recognize and exit each environment. It demonstrates SQLite database interaction and practical commands for Django development, such as running the Django shell with `python manage.py shell` and using the `quit` command to exit.
+      The lecture explains the differences between the Python shell (REPL), Django shell, and SQLite database access. It shows how to interact with these interfaces, including running SQL queries and using the Django shell for application-specific commands.
   lesson-05-html/01-Web-02-HTML-A.m4v:
-    title: 'DJ 05.01 HTML History and Evolution: From Early Browsers to Modern Standards (5:53)'
+    title: 'DJ 05.01 HTML: Request-Response Cycle and Historical Evolution (5:53)'
     youtube_id: yWmJSO5xQlU
     kaltura_id: null
     size: 308216735
     md5: 97a8a9ef2d2f53a1cd22e97f291c634c
     duration: 353
     duration_text: 05:53
-    tags: HTML, HTML history, World Wide Web Consortium, W3C, HTML syntax, browser quirks mode, document object model, request-response cycle, early web, HTML standards
+    tags: html, dom, w3c, browser, quirks mode, request-response cycle, html syntax
     description: |
-      This lecture examines HTML's historical development from its 1990s origins at CERN to modern web standards. It covers early browser implementations like NCSA Mosaic that enabled cross-platform web access, and the initial limitations of HTML such as the absence of inline images and basic link styling with gray backgrounds and blue text. The discussion highlights how early HTML prioritized basic functionality over visual presentation.
+      In the request-response cycle, a user's click triggers a request to a web server. The server processes the request and returns an HTML response, which the browser parses to construct the Document Object Model (DOM).
 
-      The lecture explains the shift toward standardized HTML through the World Wide Web Consortium (W3C) from 1994 to 1999, which established rules for lowercase tags, attribute quoting, and proper tag closure. Modern HTML requires precise syntax to ensure predictable rendering across browsers, avoiding inconsistent behaviors like quirks mode that occurred in earlier inconsistent implementations.
+      HTML originated in the early 1990s with simple implementations. The World Wide Web Consortium (W3C) developed standards to enforce precise HTML syntax, including lowercase tags and double-quoted attributes, reducing browser-specific quirks modes and improving rendering consistency.
   lesson-05-html/02-Web-02-HTML-B.m4v:
-    title: DJ 05.02 HTML Basic Syntax and Document Structure (13:53)
+    title: DJ 05.02 Basic HTML Document Structure and Tags (13:53)
     youtube_id: fh3omoEiebQ
     kaltura_id: null
     size: 736221114
     md5: 0f08651f557381879c8dd52f02299dcd
     duration: 833
     duration_text: 13:53
-    tags: html, document structure, head, body, hyperlinks, relative links, absolute links, image tags, list tags
+    tags: html, head, body, tags, relative links, absolute links, img, a, ul, li, table, tr, th, td
     description: |
-      The lecture covers the foundational structure of an HTML document, including the doctype declaration, the `html` root element, the `head` section for metadata and non-printing content, and the `body` section for visible page content. It emphasizes that the `head` contains elements such as the page title, styling information, and scripts, while the `body` holds the actual content that users see.
+      The lecture explains the fundamental structure of an HTML document, starting with the doctype (optional), followed by the `html` element that contains the `head` (for non-printing metadata) and `body` (for printable content). The `head` section includes the page title, styles, and scripts.
 
-      The lecture details basic HTML tags and their attributes, including hyperlinks (using the `a` tag with href attributes), image tags, and unordered lists (with `ul` and `li` tags). It also explains HTML special characters and their entity representations (e.g., &lt; for less than), the use of HTML comments, and the distinction between absolute and relative links for resource references, as well as the web server's default file naming conventions (e.g., index.html).
+      Key concepts covered include the use of `img` for images, `a` for hyperlinks with `href` attributes (supporting relative and absolute URLs), `ul` and `li` for unordered lists, and `table`, `tr`, `th`, `td` for tabular data. The lecture emphasizes that tables should be used for tabular data and not for layout, and that HTML focuses on semantic meaning rather than visual presentation.
   lesson-05-html/03-Web-02-HTML-Code.m4v:
-    title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
+    title: DJ 05.03 Document Object Model vs Source Code in HTML (13:34)
     youtube_id: wYc6l28v7Cs
     kaltura_id: null
     size: 315268951
     md5: b3b074ea3592fd41817dbcd0754005f4
     duration: 814
     duration_text: 13:34
-    tags: Document Object Model, HTML, Source Code, DOM, Relative Links, Target Attribute
+    tags: document object model, html, source code, dom, browser, relative links, special characters, image tags, tables, html parsing, developer tools
     description: |
-      This lecture demonstrates the difference between HTML source code and the Document Object Model (DOM) in web development. It shows how the browser parses HTML files to create a structured DOM representation that is distinct from the original source code.
+      The lecture explains the difference between HTML source code and the document object model (DOM). Source code is the original content delivered by the server, while the DOM is the browser's internal representation of the page structure.
 
-      The session covers practical examples including the pre tag, lists, tables, relative links, target attributes, and special characters. It explains how the DOM dynamically changes without altering the source code and how the browser automatically corrects minor HTML errors to form a valid DOM representation.
+      The DOM automatically corrects common HTML errors such as inconsistent tag casing, unterminated tags, and missing quotation marks. The lecture demonstrates how JavaScript can modify the DOM to update the page without changing the source code.
   lesson-06-css/01-Web-02-CSS-A.m4v:
-    title: 'DJ 06.01 CSS: Styling Web Pages After HTML (12:47)'
+    title: 'DJ 06.01 CSS: Styling the Document Object Model (12:47)'
     youtube_id: blWx62Js7T0
     kaltura_id: null
     size: 1014562175
     md5: 59a342b5694042c4f024fdd9549a5692
     duration: 767
     duration_text: 12:47
-    tags: CSS, HTML, Document Object Model, Request Response Cycle, Web Developer, Accessibility, Separation of Concerns
+    tags: html, css, document-object-model, request-response-cycle, accessibility, css-selectors, browser-compatibility
     description: |
-      This lecture introduces CSS as the styling layer that modifies the Document Object Model (DOM) after HTML is parsed from a request-response cycle. It demonstrates how CSS files define visual presentation using examples from webapplicationsforeverybody.com.
+      The lecture covers the fundamentals of Cascading Style Sheets (CSS) and their role in the request-response cycle. CSS is applied to the Document Object Model (DOM) to define visual presentation, following the process where browsers fetch HTML, parse it into the DOM, and then apply CSS rules.
 
-      The lecture covers the importance of clean HTML for accessibility and the separation of concerns in web development. It explains that CSS enables precise pixel-perfect layouts across browsers and provides practical tools like the Web Developer plugin for debugging CSS.
+      The lecture emphasizes CSS's importance for browser compatibility and accessibility. It explains that well-structured HTML remains functional without CSS, and the Web Developer plugin by Chris Pedrick is introduced as a tool for CSS debugging. This separation of concerns allows for specialized development roles in web applications.
   lesson-06-css/02-Web-02-CSS-B.m4v:
-    title: 'DJ 06.02 Applying CSS in HTML: Inline, Internal, and External Stylesheets (15:03)'
+    title: 'DJ 06.02 Three Methods for Applying CSS in HTML (15:03)'
     youtube_id: nMU8wMgasJ8
     kaltura_id: null
     size: 798259696
     md5: 7a5838546d6d1d045a40f8a2dad6ae6b
     duration: 903
     duration_text: 15:03
-    tags: CSS, HTML, inline styles, internal stylesheet, external stylesheet, cascading, span, div
+    tags: CSS, HTML, style attribute, style tag, external style sheet, cascading, selector, id, class, span, div
     description: |
-      The lecture details three fundamental approaches for applying CSS styles to HTML elements: using the style attribute for inline styles, embedding CSS in a style tag within the head section, and linking to an external CSS stylesheet file. It explains that CSS rules cascade such that styles closer to the target element in the document hierarchy have higher priority.
+      This lecture explains the three primary methods for applying CSS rules in HTML: using the style attribute directly on elements, placing CSS in a style tag within the head section, and linking to an external CSS file. It also covers cascading behavior where closer rules have higher priority, and introduces `span` and `div` as elements with no default styling for precise visual control.
 
-      The lecture also discusses the role of span and div tags, which have no default styling to enable precise visual control. It covers CSS selectors including IDs (unique per document) and classes (reusable across multiple elements), demonstrating how these can be combined for targeted styling without requiring additional classes.
+      The lecture details CSS selectors including `id` (unique per document) and `class` (reusable across elements), and how hierarchical selectors allow targeted styling without excessive classes. These techniques enable fine-grained control over specific elements within HTML structures while maintaining clean, maintainable code.
   lesson-06-css/03-Web-02-CSS-C.m4v:
-    title: 'DJ 06.03 CSS Fundamentals: Images, Colors, and Fonts (13:39)'
+    title: 'DJ 06.03 CSS for Images, Colors, and Fonts (13:39)'
     youtube_id: 7KWtFdqXiqE
     kaltura_id: null
     size: 722523866
     md5: 7adffde9563034f1472bc68c3c78db9a
     duration: 819
     duration_text: 13:39
-    tags: css, images, floating, clear, colors, rgb, hex, font-families, font-fallbacks, links, hover, visited, active
+    tags: CSS, float, clear, colors, fonts, font-family, link-states
     description: |
-      This lecture covers fundamental CSS techniques for styling web content, including floating images to the right, using margins for spacing, defining color schemes with named colors and RGB hex values, configuring font families with fallbacks, and styling hyperlinks with distinct states.
+      The lecture covers CSS techniques for positioning images with floats and clearing, defining colors using RGB and hexadecimal values, and configuring fonts through font families with fallbacks such as sans-serif and serif. It also explains the states of HTML links: unvisited, visited, hover, and active.
 
-      The speaker highlights CSS's historical evolution, noting how browser support has expanded (e.g., rounded corners) and the ongoing development of CSS to support user experiences while adhering to standards for cross-platform compatibility.
+      The speaker discusses the historical evolution of CSS since 1994 and the role of modern frameworks like Bootstrap in simplifying web design while maintaining cross-browser compatibility.
   lesson-06-css/04-Web-03-CSS-Code-A.m4v:
-    title: DJ 06.04 Understanding CSS Cascading and Selectors for Web Development (13:25)
+    title: DJ 06.04 Cascading Style Sheets Fundamentals (13:25)
     youtube_id: 2Eu96WnoHBY
     kaltura_id: null
     size: 275479673
     md5: 6c71df887f6be733bef3e7094cef9432
     duration: 805
     duration_text: 13:25
-    tags: CSS, Cascading Style Sheets, CSS selectors, CSS cascading, HTML5, navigation bar, font families, borders, margins, padding, inline elements, block elements
+    tags: css, selectors, cascading, font-family, borders, margins, padding, id, class, inline, block, html5
     description: |
-      This lecture demonstrates the fundamentals of Cascading Style Sheets (CSS) for web development. It explains how CSS styles are applied to HTML elements through selectors, showing examples of color properties, font families, and spacing controls like margins and padding. The instructor illustrates the cascading behavior where styles from multiple sources are resolved to determine the final appearance of elements.
+      This lecture covers the fundamentals of Cascading Style Sheets (CSS) for styling web content.
 
-      The session covers key technical concepts including element selectors (body, H1), class and ID selectors, and how inline versus block elements (span vs div) affect styling. It also demonstrates practical applications such as styling navigation bars with HTML5 elements and implementing responsive design principles through CSS rules.
+      It explains the cascading mechanism and demonstrates key CSS properties such as font families, borders, margins, and padding. It also discusses the use of IDs and classes for targeted styling, the distinction between inline and block elements, and how CSS can style HTML5 navigation components.
   lesson-06-css/05-Web-03-CSS-Code-B.m4v:
-    title: 'DJ 06.05 CSS Fundamentals: Fonts, Colors, and Layout (25:49)'
+    title: 'DJ 06.05 HTML Fonts, Colors, and CSS Basics (25:49)'
     youtube_id: MHqI-PKBl_A
     kaltura_id: null
     size: 728851423
     md5: bfb68803532a83af00787f3c8b0aa34f
     duration: 1549
     duration_text: 25:49
-    tags: css, fonts, colors, box-model, positioning, z-index, float, anchor-tags, web-safe-colors
+    tags: css, fonts, color codes, hexadecimal, web-safe colors, box model, positioning, z-index, float, anchor tags
     description: |
-      The lecture covers core CSS concepts including font handling with default and custom fonts (using fallbacks), color specifications via HTML color names and hexadecimal codes, and anchor tag states (unvisited, visited, hover, active).
+      The lecture covers font handling in HTML, including default font families (serif, sans-serif, monospace, cursive, fantasy), system fonts like Arial, and web fonts with fallbacks. It also explains color specifications such as HTML color names, hexadecimal color codes (e.g., #884411), and web-safe colors. Additionally, the lecture describes anchor tag states (unvisited, visited, hover, active) and basic CSS styling techniques.
 
-      This presentation details the CSS box model (content, padding, border, margin), positioning techniques (relative, absolute, fixed), z-index for overlapping elements, image floats, overflow handling (including hidden), and a navigation bar implementation using absolute positioning and class-based styling.
+      The lecture details the CSS box model (content, padding, border, margin), positioning methods (relative, absolute, fixed), z-index for overlapping elements, and float for image wrapping. It also covers CSS specificity and the important rule, along with common challenges in debugging overlapping elements.
   lesson-07-sql/01-SQL-01-Basic-01.m4v:
-    title: DJ 07.01 SQL History, Schema Design, and CRUD Operations (18:57)
+    title: 'DJ 07.01 SQL: History and Database Abstraction (18:57)'
     youtube_id: C1QXYMNTEVs
     kaltura_id: null
     size: 837093031
     md5: 57c079a6bd957d1d06b6ba79f65d001c
     duration: 1137
     duration_text: 18:57
-    tags: sql, database history, schema, crud, relational databases, nist
+    tags: SQL, relational databases, database schema, NIST, database abstraction, tape storage
     description: |
-      The lecture covers the historical context of database systems, starting with tape-based storage in the 1950s-1960s that required sequential access and hours of nightly processing for banks. This was followed by the introduction of disk drives in the 1970s, which improved access speed but necessitated research into storage optimization.
+      Early database systems used tape storage, which lacked random access and required manual nightly processing of transactions. Banks sorted and updated account balances by copying data from physical tapes, a process that could take hours.
 
-      The US National Institute of Standards and Technology (NIST) established SQL as a standard to prevent vendor lock-in, allowing databases to be interchanged without code rewriting. SQL abstracts physical storage details, enabling the definition of a schema that specifies data structure and types, which allows database engines to optimize storage and efficiently perform CRUD operations.
+      The U.S. National Institute of Standards and Technology (NIST) standardized SQL in the 1960s and 1970s to prevent vendor lock-in and enable cross-vendor database compatibility. This abstraction layer allows applications to define a schema without concern for physical storage details, supporting systems like SQLite, PostgreSQL, MySQL, and Oracle.
   lesson-07-sql/02-SQL-01-Basic-02.m4v:
-    title: DJ 07.02 Basic SQL Operations with SQLite (11:44)
+    title: 'DJ 07.02 SQLite Basics: Creating Tables and Simple SQL Commands (11:44)'
     youtube_id: wtU7Pp6VFoE
     kaltura_id: null
     size: 552785837
     md5: 2aa5930b957181089429369b080b37b6
     duration: 704
     duration_text: 11:44
-    tags: SQLite, SQL, Database, Table, Primary Key, Varchar, Integer, Not Null, Insert, Delete, Update, Select, Where Clause
+    tags: sqlite, sql, create_table, insert, delete, update, select, schema
     description: |
-      This lecture covers the basics of SQLite, a single-file database system, and introduces fundamental SQL commands for creating tables with defined columns and constraints such as primary keys and not null fields.
+      This lecture provides a concise introduction to SQLite, a lightweight relational database that stores data in a single file. It demonstrates the use of the sqlite3 command-line interface to create tables with columns defined by data types and constraints, such as varchar and primary key.
 
-      It demonstrates core SQL operations including insert, delete, update, and select statements with where clauses to target specific rows, and explains the absence of explicit loops in these operations. The lecture also mentions that SQLite stores the database schema and supports indexing for efficient data handling.
+      The lecture covers basic SQL operations including insert, delete, update, and select commands, and explains how SQLite stores both data and schema within the database file. It also mentions the SQLite browser as a tool for GUI-based interaction with SQLite databases.
   lesson-07-sql/03-sql-01-basic.m4v:
-    title: 'DJ 07.03 SQLite Command Line Basics: Create, Read, Update, Delete Tables (8:39)'
+    title: 'DJ 07.03 Basic SQLite Command Line Operations (8:39)'
     youtube_id: 2Or6_sSyl7c
     kaltura_id: null
     size: 203949001
     md5: 46e0cd86570e6a671b777eafbd48d0fd
     duration: 519
     duration_text: 08:39
-    tags: sqlite, command line, sqlite3, create table, insert, select, update, delete, where clause, order by, crud
+    tags: sqlite, command_line, sql, table, insert, select, update, delete, where_clause, crud
     description: |
-      This lecture demonstrates basic SQLite command line operations for file-based databases. It includes creating a table, inserting records, selecting data, updating rows, and deleting entries.
+      This lecture demonstrates basic SQLite command line operations for managing a simple database. It includes creating a table with columns, inserting multiple records, selecting data, updating specific records, deleting records, and dropping the table.
 
-      The session highlights the necessity of WHERE clauses in update and delete statements to target specific records, as omitting them affects all rows. It also explains how SQLite handles empty result sets without errors.
+      This lecture emphasizes the critical role of WHERE clauses in UPDATE and DELETE statements to target specific rows and avoid unintended data changes. Omitting a WHERE clause in these operations affects all records in the table, which can lead to data loss.
   lesson-08-models/01-DJ-02-Models.m4v:
     title: 'DJ 08.01 Django Models: Creating Database Tables with ORM and Migrations (19:59)'
     youtube_id: AqsPifp-ccc
