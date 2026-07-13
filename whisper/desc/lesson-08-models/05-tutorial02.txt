@@ -1,7 +1,0 @@
-Django Tutorial 2 Walkthrough for Python Anywhere
-
-Django, Python Anywhere, Django migrations, Django shell, Django admin, Django models
-
-This lecture provides a step-by-step adaptation of Django project tutorial two for the Python Anywhere platform, focusing on the specific file paths and command-line operations required when implementing standard Django workflows in this environment.
-
-The lecture covers key technical topics including SQLite database configuration, poll application model definitions, migration generation and application, Django shell usage, superuser creation, and admin interface registration. It also explains the requirement to reload the application after file changes to reflect updates on Python Anywhere.

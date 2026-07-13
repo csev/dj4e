@@ -1,7 +1,0 @@
-Django Shell Fundamentals: Essential Command Line Operations for Server Environments
-
-Django, shell, command line, Linux, virtual environment, Python, SQLite, manage.py
-
-This lecture covers essential command line operations for server environments, focusing on Linux-based systems. It details fundamental shell commands such as `ls`, `pwd`, `cd`, and `rm` for managing files and directories, as well as features like command line completion and command history navigation using the up and down arrow keys. The session also explains the setup and use of virtual environments for Django projects to isolate dependencies.
-
-The lecture demonstrates the differences between the Linux shell, Python interactive shell (REPL), and Django shell. It shows how to switch contexts by recognizing prompt indicators (e.g., dollar sign for Linux, `sqlite>` for SQLite) and provides examples of database operations with SQLite and Django-specific commands via `manage.py shell`. The session emphasizes the importance of identifying the current shell context to avoid errors when executing commands.
