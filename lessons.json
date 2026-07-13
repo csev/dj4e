@@ -81,7 +81,7 @@
                 {
                     "type": "video",
                     "title": "DJ 03.02 Fixing Django 5.2 Errors on PythonAnywhere (19:39)",
-                    "media": "lesson-03-paw/02-01_paw_install_errors.m4v",
+                    "media": "lesson-03-install/02-01_paw_install_errors_52.m4v",
                     "todo": "Re-record for 2026",
                     "youtube": "IYH_BkpHf3s"
                 },
@@ -2459,7 +2459,7 @@
                 {
                     "type": "video",
                     "title": "DJ 20.01 DJ4E Marketplace - Initial Setup / Install  (9:46)",
-                    "media": "lesson-20-mkt0-setup/01-mkt_00_setup.m4v",
+                    "media": "lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v",
                     "youtube": "9WZHLlOyoXY"
                 },
                 {

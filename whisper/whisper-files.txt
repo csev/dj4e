@@ -2,7 +2,7 @@ lesson-02-http/07-Web-04-Mini-Django.m4v
 lesson-02-http/08-DJ-11-BigPicture.m4v
 lesson-03-install/03-01-DJ-00-AutoGrader.m4v
 lesson-03-install/03-01-paw_install52_new.m4v
-lesson-03-install/paw_errors_52.m4v
+lesson-03-install/02-01_paw_install_errors_52.m4v
 lesson-04-shell/01-01_paw_shell-DJ4.m4v
 lesson-04-shell/01-01_paw_shell.m4v
 lesson-05-html/01-Web-02-HTML-A.m4v
@@ -17,7 +17,6 @@ lesson-08-models/01-DJ-02-Models.m4v
 lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v
 lesson-08-models/03-04_paw_models_2026.m4v
 lesson-08-models/04-tut2-reset-database-edit.mov
-lesson-08-models/05-tutorial02.m4v
 lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v
 lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v
 lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v

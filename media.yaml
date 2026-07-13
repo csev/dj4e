@@ -43,7 +43,7 @@ entries:
     duration: 1918
     description: |
       Please visit http://www.dj4e.com to access free supporting materials, as well as interactive exercises.
-  lesson-03-install/paw_errors_52.m4v:
+  lesson-03-install/02-01_paw_install_errors_52.m4v:
     title: paw errors 52
     youtube_id: null
     kaltura_id: null
@@ -213,14 +213,6 @@ entries:
 
 
       tut2 reset database edit
-  lesson-08-models/05-tutorial02.m4v:
-    title: 05 tutorial02
-    youtube_id: null
-    kaltura_id: null
-    size: 817539435
-    md5: 9531ec39cf973c3eacd0f1d5a180db07
-    duration: 1760
-    description: null
   lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v:
     title: DJ 11.05 The True Story of Python Assignment Statements (7:30)
     youtube_id: zoD2GY11dcY
