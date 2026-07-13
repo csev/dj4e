@@ -1,197 +1,380 @@
- so we build a browser in Python it's time to build a web server in Python so
- remember that what we've got here is we've got you know the browser is an
- application and we've we've made this a Python application now that sends this
- get request so we we have effectively like I said built the world's simplest
- browser and that sends a get request the server does something and then it sends
- the response back and now we're going to kind of change this right we're going to
- assume the browser exists and it's like okay because we're going to be the server
- folks right so now we're going to look in greater detail at what goes on in the
- server and so here is a very very simple web server it's a few more lines than
- the than the the simplest web browser because we have to put a little bit of
- error checking in with some tries and accepts okay so let's let's walk through
- what this code does okay let me let me change the color again to black if you're
- from Microsoft and you can tell them to make a key to change the color on the on
- the scribbler I'd greatly appreciate it oh and then I went down a page too okay
- so we're going to pull in some more stuff from this from the socket we're
- going to pull in some stuff from the socket right here and so we're going to
- make a function called create server that we're going to call right down here
- and it's going to print out how you're supposed to access it and then start the
- server now the whole idea of the server is the server is woke up to wait for
- incoming connections so the server already exists so when you start talking
- to a web server that servers in that computer already the server software is
- already running registering its interest in incoming requests so that's what we
- do so when this Python program starts it's going to sit there and wait in an
- infinite loop for incoming requests so the first thing we do is we're going to
- make a socket this looks very much like the time we made it's an endpoint it's
- not actually making the phone call we're remember I said this socket call is
- making the phone so we're saying we're going to make a phone and it's up to us
- later to decide if we're going to make a phone call or receive phone calls and
- then this next thing is like to connect except this is I am willing on port 90
- to receive the phone calls now it turns out there's only one program on port 90
- that can receive phone calls so this might blow up you might try to do this I
- mean port 9000 and if you run this twice and you can do it in two windows on your
- computer the second one will blow up and say you can't have port 9000 because
- another piece of software has it but as long as there's only one running away you
- go and that's part of this whole try accept thing because if you run this
- twice gonna blow up the second time because you cannot receive phone calls
- on this server on port 9000 with two applications one application gets the
- phone calls that's what socket listen says the five on there says dear
- operating system if I'm busy handling one phone call you can hold on to four
- more and queue them and then I'll come back and get it for you and that you're
- asking the operating system to queue incoming calls don't just say you're
- busy shut down if you didn't say this listen five if you were busy writing the
- data for phone call one and phone call two came in and you weren't ready for it
- right that instant it would just deny the phone call so that's what listen
- says is dear operating system hold hold those temporarily I'll get back to you
- which is how it works and then what happens is we go into this except now
- this except is I'm at the phone I've registered what my number is and what my
- extension is and I'm ready to pick the phone up let me know so this except is
- blocking it stops and it just sits there and it can sit there forever you
- know it just literally forever if nobody calls it nothing happens the next line
- never exit never runs until you blow it up or the server goes down so that's
- except is a blocking and the reason we do this except well we have to establish
- the phone call first right so then this next line runs only when a phone calls
- received so that means that we on the browser side we already connected you
- know we made the phone call now we haven't sent any data yet right and so
- this is just now at this point somewhere out there there's a piece of client
- software that has done a socket dot connect and we have done except and our
- except is succeeded in the server the connect is succeeded and we are ready to
- talk so the phone call has been made now the question is who is going to say hello
- and this is where the HTTP protocol solves our problem the server knows that
- the client must speak first so it just does a receive now you'll notice the
- receive and the send are the same function calls because it's a two-way
- thing the whatever the browser is sending the server is receiving and
- whatever the server sends the browser receives and they can do it
- simultaneously if they can figure it out but usually you kind of like say it's
- your turn to listen in my turn to send and then I'll listen and usually they
- kind of go back and forth in this there's only one step you the server
- listens gets the get request sends the data back and so then we're going to
- read some data and we're gonna get 5,000 characters we're gonna get the whole
- thing remember it's one line it has a get request in it it has the optional
- parameters in it and so we're gonna split it now again we've received it as
- UTF-8 we've got to decode it for UTF-16 I mean not UTF-16 unicode inside of
- Python and then we split it based on new lines because the get request is on one
- line then header header header header header header and then the blank line to
- tell us that we're into the headers and we're only going to take in this we're
- just gonna look at that first line we're not gonna do anything with it most most
- servers actually like look at the line to figure out what document to send
- there's a very simple server it sends the same document no matter what the
- URL is all we do with the URL is we print to it print it out to prove that
- we got it and then we construct a response and in this response again go
- back to RFC 2616 and it will tell you what this response is supposed to look
- like it sends back a 200 okay remember this is all the stuff we saw probably I
- cut and pasted it from a working thing we tell it that we're sending it back in
- content type a text HTML the character set UTF-8 remember I was telling you
- that a blank line and then some HTML HTML body hello world body and I'm
- throwing in these /r/ends which is the network's version of new lines and then
- you will notice that I encode it before I send it because it's unicode inside of
- Python and it needs to be sent as UTF-8 because the phone when you're in a socket
- the thing that's going across the socket almost always is supposed to be UTF-8
- so we encode it and and then because the protocol says so as soon as we send the
- data we close the connection now remember that the client had to close
- the connection too so we close it it's half closed and then the client gets all
- of its data gets the indication that it closed knows it's finished all the data
- and then the client shuts its side down and so there are two hang-ups it's kind
- of like a phone call the person hangs up and then click you hang up now there's
- you can't really keep talking but you do want to have both sides hang up and that
- shutdown is what's going on and then the rest of this is all try-except for
- various things so we clean up our socket so we don't have to restart our server
- when our software blows up and so the rest of it's pretty simple and then so
- this while one the first browser will talk and then it'll send some data and
- then I'll go back and wait for the next phone call and that's what's going on
- the next phone call comes in it doesn't get you sees a get request it sends the
- data back then goes and asks waits for another phone call so this is an
- infinite loop that sits and waits for incoming phone calls and it you know it
- answers the same thing so it's like you call this phone number and it goes and
- you go I would like a pizza and it says hello world and then click and then you
- call it up and say I would like a car and it says hello world click and then
- you say I would like to register for this class and it says hello world click
- so this is not a very flexible server you will build far more flexible servers
- but it's the one I could build and fit on a single page in a slide deck so to
- run this if you you know you download this code and it's tiny bit of code and
- you run it so you go somewhere maybe your laptop maybe Python anywhere I don't
- know if it works on Python pride doesn't work on Python anywhere because you
- can't actually talk to ports but let's just run this on your laptop and you
- you start the server up somewhere get a hold of my sample code or download it
- from here server dot p y and it's telling you this is just output from the
- server and this is the moment at which it's waiting right it's waiting the
- server could wait for hours at this point but I just give you this in a
- print statement so you can copy that and put it into your browser so you paste
- localhost 9,000 into your browser and then the server is printing that it got
- a get request for the slash document from this browser that's what the browser
- send I mean we're talking from Firefox browser to the little web server that we
- just built now there's another a second get request that you don't even know
- because you didn't ask for it and that's because the browser is built in to ask
- for a URL called favicon.ico so that it can make an icon and that icon ends up
- in the tab or wherever in your browser and so that's like an icon for the
- website so you didn't ask the browser to do this but it's a thing browsers do and
- you'll see when you're looking at your debug logs when you're building stuff
- that it's a Fabico and so this this happens like blink blink and now it's
- waiting again right and you could hit refresh or you can go start up a
- different browser and you would see these get requests every get request
- you're gonna see in your browser and your server so it's so it's working and
- it works really well and you're welcome to go ahead and play with it and try it
- all out so now we're gonna do is build a simple web client and then we'll talk to
- our server so the other web client we may talk to data.pr4e.org this one is
- gonna talk to yourself so it's this it almost looks identical right we're gonna
- make a phone we're making a phone we're gonna connect to localhost 127.001 is
- the IPv4 connection what's called loopback right to the same host we're
- talking to port 9000 because that's where we've got our web server running
- that little web server we just wrote and then we're gonna send a get request a
- valid get request to this thing HTTP 10 and then two new lines and we're gonna
- encode it into UTF-8 before we send it then we send it and then we just have a
- loop that prints it all out and then when the socket gets closed we hit a
- break and then we close our end of the socket so the server clicks the phone
- and then we're no we're done with our data but we've already printed it out
- and then we hang up the phone on our end to kind of clean everything up all the
- way in between everything else so this is a very simple web client and so now
- you can run the web server right just like we did before and instead of
- talking in a browser we run this client and this client gets a header of HTTP 1
- okay it's content type HTML it gets a new line and then the body and we're
- done now I mean it's not a browser but it is client that's talking HTTP and so
- now you'll notice that this server sort of sits and waits for incoming calls you
- could run this over and over on the client run the client over and over
- again right and then you would see more requests but in general the server is
- destined to just sit and wait for hours potentially until a client connects to
- it then at some point you'll just abort this server and then if you control C or
- blow this up somehow this will fail the client will fail and it will fail it
- will fail in this connect code so if you want to play with it try to run this
- client without running the server and you'll see that the connect which is the
- part of actually making the phone call this will continue to work which is make
- me a phone on my current computer and then connect is make a call to the
- remote computer that will blow up and then if you wanted to play with this you
- could put some try and accepts around it say remote computer is not responding on
- port 9000 that's if you blew up you put it could put a try and accept around
- that but I'm not doing it because it don't fit on my slides so here is an
- even simpler web client that we can use and you again you can get this code from
- my sample code we don't talk to this we there's a higher level thing that so the
- the previous client talked to sockets so I could show you the low level but
- because we spend so much time talking about to URLs we then have a URL lib so
- I'm just going to use URL lib I'm gonna and this could be a local host or it
- could be whatever I'm just gonna make a four line URL lib call and so I just do
- a URL open of that same URL now we're operating at the HTTP level because URL
- the concept of URL is not a socket concept the concept of URL is HTTP
- concept and we just get an effect what looks like a file handle to us and we
- loop through it and print it all out so we run our server and the server sort of
- says this and waits and then we run our client it basically hits our server and
- we can see in the server window you got to do these two things in two windows
- right you got to do these things in two separate windows so in the server window
- you'll it'll sit and wait and then in the client window when it runs you'll
- see the client will make the request to the server or blow up with the server
- not running and the server will see the get request and then the data will come
- back to the client so you sort of do this in in two things and you can run
- the client over and over and over again and you'll see every time you run the
- client the the server sees it responds and away you go and again our server
- always says hello world no matter what which is delightful and classic it's a
- classic so you actually can watch when you're running Django there will be a
- way for you to see when you're running Django locally and you start the server
- up this managed three don't do this later managed pie dot run server and
- then you talk to it and you will see all the get requests and so Django when you
- run it local you can debug a lot of what's going on so you see the you can
- see like the favicon that it's asking for and that is no five or six HTTP
- requests to produce that little Django web page and so that that will be
- something that you will learn how to do and so so that sums up what we were
- doing in this you know at the beginning you look at it very simply pretty soon
- you'll just be looking at the developer console and it'll all make sense to you
- I want you to be able to know that you can dig as deep as you want to and
- understand all of these protocols that are going back and forth okay cheers
+ So we build a browser in Python.
+ It's time to build a web server in Python.
+ So remember that what we've got here is we've got,
+ you know, the browser is an application,
+ and we've made this a Python application now
+ that sends this GET request.
+ So we have effectively, like I said,
+ built the world's simplest browser.
+ And that sends a GET request, the server does something,
+ and then it sends the response back.
+ And now we're going to kind of change this, right?
+ We're going to assume the browser exists,
+ and it's like, OK, because we're going to be the server folks,
+ right?
+ So now we're going to look in greater detail
+ at what goes on in the server.
+ And so here is a very, very simple web server.
+ It's a few more lines than the simplest web browser,
+ because we have to put a little bit of error checking in with some tries
+ and accepts, OK?
+ So let's walk through what this code does, OK?
+ Let me change the color again to black.
+ If you're from Microsoft and you can tell them
+ to make a key to change the color on the Scribbler,
+ I'd greatly appreciate it.
+ Oh, and then I went down a page too.
+ OK, so we're going to pull in some more stuff from the socket.
+ We're going to pull in some stuff from the socket right here.
+ And so we're going to make a function called
+ create server that we're going to call right down here.
+ And it's going to print out how you're supposed to access it
+ and then start the server.
+ Now, the whole idea of the server
+ is the server is woke up to wait for incoming connections.
+ So the server already exists.
+ So when you start talking to a web server,
+ that server is in that computer already.
+ The server software is already running,
+ registering its interest in incoming requests.
+ So that's what we do.
+ So when this Python program starts,
+ it's going to sit there and wait in an infinite loop
+ for incoming requests.
+ So the first thing we do is we're going to make a socket.
+ This looks very much like the time we made.
+ It's an endpoint.
+ It's not actually making the phone call.
+ Remember I said this socket call is making the phone.
+ So we're saying we're going to make a phone.
+ And it's up to us later to decide
+ if we're going to make a phone call or receive phone calls.
+ And then this next thing is like to connect,
+ except this is I am willing on port 90
+ to receive the phone calls.
+ Now, it turns out there's only one program on port 90
+ that can receive phone calls.
+ So this might blow up.
+ You might try to do this.
+ I mean, port 9,000.
+ And if you run this twice and you can do it
+ in two windows on your computer,
+ the second one will blow up and say you can't have port 9,000
+ because another piece of software has it.
+ But as long as there's only one running, away you go.
+ And that's part of this whole try except thing
+ because if you run this twice,
+ it's going to blow up the second time
+ because you cannot receive phone calls on this server
+ on port 9,000 with two applications.
+ One application gets the phone calls.
+ That's what socket listen says.
+ The five on there says, dear operating system,
+ if I'm busy handling one phone call,
+ you can hold on to four more and queue them
+ and then I'll come back and get it for you.
+ And that you're asking the operating system
+ to queue incoming calls.
+ Don't just say you're busy, shut down.
+ If you didn't say this, listen five,
+ if you were busy writing the data for phone call one
+ and phone call two came in
+ and you weren't ready for it right that instant,
+ it would just deny the phone call.
+ So that's what listen says is,
+ dear operating system, hold those temporarily,
+ I'll get back to you, which is how it works.
+ And then what happens is we go into this except.
+ Now this except is I'm at the phone,
+ I've registered what my number is and what my extension is
+ and I'm ready to pick the phone up.
+ Let me know.
+ So this except is blocking.
+ It stops and it just sits there
+ and it can sit there forever.
+ You know, just literally forever.
+ If nobody calls it, nothing happens.
+ The next line never runs until you blow it up
+ or the server goes down.
+ So that's except is a blocking.
+ And the reason we do this except,
+ well, we have to establish the phone call first, right?
+ So then this next line runs
+ only when a phone call is received.
+ So that means that we, on the browser side,
+ we already connected, you know, we made the phone call.
+ Now we haven't sent any data yet, right?
+ And so this is just now at this point,
+ somewhere out there, there's a piece of client software
+ that has done a socket dot connect
+ and we have done an except
+ and our except has succeeded in the server.
+ The connect has succeeded and we are ready to talk.
+ So the phone call has been made.
+ Now the question is, who's gonna say hello?
+ And this is where the HTTP protocol solves our problem.
+ The server knows that the client must speak first.
+ So it just does a receive.
+ Now you'll notice the receive and the send
+ are the same function calls
+ because it's a two-way thing.
+ Whatever the browser is sending, the server is receiving
+ and whatever the server sends, the browser receives
+ and they can do it simultaneously
+ if they can figure it out.
+ But usually you kind of like say, it's your turn to listen
+ and my turn to send and then I'll listen.
+ And usually they kind of go back and forth.
+ In this, there's only one step.
+ The server listens, gets the get request,
+ sends the data back.
+ And so then we're going to read some data
+ and we're gonna get 5,000 characters.
+ We're gonna get the whole thing.
+ Remember it's one line, it has a get request in it.
+ It has the optional parameters in it.
+ And so we're gonna split it.
+ Now again, we've received it as UTF-8.
+ We've got to decode it for UTF-16.
+ I mean, not UTF-16, Unicode inside of Python.
+ And then we split it based on new lines
+ 'cause the get request is on one line
+ and header, header, header, header, header, header
+ and then the blank line
+ to tell us that we're into the headers.
+ And we're only gonna take in this,
+ we're just gonna look at that first line.
+ We're not gonna do anything with it.
+ Most servers actually like look at the line
+ to figure out what document to send.
+ It's a very simple server.
+ It sends the same document no matter what the URL is.
+ All we do with the URL is we print it out
+ to prove that we got it.
+ And then we construct a response.
+ And in this response, again, go back to RFC 2616
+ and it will tell you what this response
+ is supposed to look like.
+ It sends back a 200 okay.
+ Remember this is all the stuff we saw.
+ Probably I cut and pasted it from a working thing.
+ We tell it that we're sending it back
+ in content type text HTML, the character set UTF-8.
+ Remember I was telling you that.
+ A blank line and then some HTML.
+ HTML body, hello world body.
+ And I'm throwing in these /r/n's
+ which is the network's version of new lines.
+ And then you will notice that I encode it before I send it
+ because it's Unicode inside of Python
+ and it needs to be sent as UTF-8
+ because the phone, when you're in a socket,
+ the thing that's going across the socket
+ almost always is supposed to be UTF-8.
+ So we encode it.
+ And then because the protocol says so,
+ as soon as we send the data, we close the connection.
+ Now remember that the client had to close the connection too.
+ So we close it, it's half closed
+ and then the client gets all of its data,
+ gets the indication that it closed,
+ knows it's finished all the data
+ and then the client shuts its side down.
+ And so there are two hangups.
+ It's kind of like a phone call.
+ The person hangs up and then click you hang up.
+ Now you can't really keep talking
+ but you do want to have both sides hang up
+ and that shutdown is what's going on.
+ And then the rest of this is all try-except
+ for various things.
+ So we clean up our socket.
+ So we don't have to restart our server
+ when our software blows up
+ and so the rest of it's pretty simple.
+ And then, so this while one,
+ the first browser will talk
+ and then it'll send some data
+ and then it'll go back and wait for the next phone call.
+ And that's what's going on.
+ The next phone call comes in,
+ it sees a get request, it sends the data back
+ then goes and waits for another phone call.
+ So this is an infinite loop
+ that sits and waits for incoming phone calls
+ and it answers the same thing.
+ So it's like you call this phone number
+ and it goes, and you go, I would like a pizza.
+ And it says, hello world, and then click
+ and then you call it up and say, I would like a car.
+ And it says, hello world, click.
+ And then you say, I would like to register for this class.
+ And it says, hello world, click.
+ So this is not a very flexible server.
+ You will build far more flexible servers
+ but it's the one I could build
+ and fit on a single page in a slide deck.
+ So to run this, if you download this code
+ and it's tiny bit of code and you run it,
+ so you go somewhere, maybe your laptop,
+ maybe Python anywhere, I don't know if it works on Python,
+ probably doesn't work on Python anywhere
+ 'cause you can't actually talk to ports.
+ But let's just run this on your laptop
+ and you start the server up somewhere,
+ get ahold of my sample code or download it from here,
+ server.py and it's telling you,
+ this is just output from the server
+ and this is the moment at which it's waiting, right?
+ It's waiting.
+ The server could wait for hours at this point.
+ But I just give you this in a print statement
+ so you can copy that and put it into your browser.
+ So you paste localhost 9000 into your browser
+ and then the server is printing that it got a get request
+ for the slash document from this browser.
+ That's what the browser send.
+ I mean, we're talking from Firefox browser
+ to the little web server that we just built.
+ Now there's another, a second get request
+ that you don't even know 'cause you didn't ask for it
+ and that's because the browser is built in
+ to ask for a URL called favicon.ico
+ so that it can make an icon
+ and that icon ends up in the tab
+ or wherever in your browser
+ and so that's like an icon for the website.
+ So you didn't ask the browser to do this
+ but it's a thing browsers do
+ and you'll see when you're looking at your debug logs
+ when you're building stuff that it's a Fabico.
+ And so this happens like blink blink
+ and now it's waiting again, right?
+ And you can hit refresh
+ or you can go start up a different browser
+ and you would see these get requests.
+ Every get request you're gonna see
+ in your browser and your server.
+ So it's working and it works really well
+ and you're welcome to go ahead and play with it
+ and try it all out.
+ So now what we're gonna do is build a simple web client
+ and that'll talk to our server.
+ So the other web client we made talked to data.prfree.org.
+ This one is gonna talk to yourself.
+ So it almost looks identical, right?
+ We're gonna make a phone.
+ We're making a phone.
+ We're gonna connect to local host 127.0.0.1
+ is the IPv4 connection
+ what's called loopback right to the same host.
+ We're talking to port 9000
+ because that's where we've got our web server running
+ that little web server we just wrote.
+ And then we're gonna send a get request
+ a valid get request to this thing htp10
+ and then two new lines
+ and we're gonna encode it into UTF-8 before we send it.
+ Then we send it and then we just have a loop
+ that prints it all out.
+ And then when the socket gets closed, we hit a break
+ and then we close our end of the socket.
+ So the server clicks the phone
+ and then we know we're done with our data
+ but we've already printed it out
+ and then we hang up the phone on our end
+ to kind of clean everything up
+ all the way in between everything else.
+ So this is a very simple web client.
+ And so now you can run the web server, right?
+ Just like we did before.
+ And instead of talking in a browser, we run this client.
+ And this client gets a header of HTTP/1.0/k,
+ it's content type HTML.
+ It gets a new line and then the body and we're done.
+ Now, I mean, it's not a browser
+ but it is a client that's talking HTTP.
+ And so now you'll notice that this server
+ sort of sits and waits for incoming calls.
+ You could run this over and over on the client,
+ run the client over and over again, right?
+ And then you would see more requests
+ but in general the server is destined
+ to just sit and wait for hours potentially
+ until a client connects to it.
+ And then at some point, you'll just abort this server
+ and then if you control C or blow this up somehow,
+ this will fail, the client will fail
+ and it will fail in this connect code.
+ So if you wanna play with it,
+ try to run this client without running the server
+ and you'll see that the connect,
+ which is the part of actually making the phone call,
+ this will continue to work,
+ which is make me a phone on my current computer
+ and then connect is make a call to the remote computer,
+ that will blow up.
+ And then if you wanted to play with this,
+ you could put some try and accepts around it,
+ say remote computer is not responding on port 9000.
+ That's if you blew up,
+ you could put a try and accept around that.
+ But I'm not doing it because it don't fit on my slides.
+ So here is an even simpler web client that we can use.
+ And again, you can get this code from my sample code.
+ We don't talk to this, there's a higher level thing that,
+ so the previous client talked to sockets
+ so I could show you the low level,
+ but because we spend so much time talking about to URLs,
+ we then have a URL lib.
+ So I'm just gonna use URL lib.
+ I'm gonna, and this could be a local host
+ or it could be whatever.
+ I'm just gonna make a four line URL lib call.
+ And so I just do a URL open of that same URL.
+ Now we're operating at the HTTP level
+ 'cause URL, the concept of URL is not a socket concept,
+ the concept of URL is HTTP concept.
+ Then we just get an effect what looks like a file handle
+ to us and we loop through it and print it all out.
+ So we run our server
+ and the server sort of says this and waits.
+ And then we run our client, it basically hits our server
+ and we can see in the server window,
+ you gotta do these two things in two windows, right?
+ You gotta do these things in two separate windows.
+ So in the server window, it'll sit and wait
+ and then in the client window, when it runs,
+ you'll see the client will make the request to the server
+ or blow up with the server not running.
+ And the server will see the get request
+ and then the data will come back to the client.
+ So you sort of do this in two things
+ and you can run the client over and over and over again
+ and you'll see every time you run the client,
+ the server sees it, responds and away you go.
+ And again, our server always says hello world,
+ no matter what, which is delightful and classic.
+ It's a classic.
+ So you actually can watch when you're running Django,
+ there will be a way for you to see
+ when you're running Django locally
+ and you start the server up.
+ This managed three don't, we'll do this later,
+ managed pi.runserver and then you talk to it
+ and you will see all the get requests.
+ And so Django, when you run it locally,
+ you can debug a lot of what's going on.
+ So you can see like the favicon that it's asking for
+ and that is five or six HTTP requests
+ to produce that little Django webpage.
+ And so that will be something that you will learn how to do.
+ And so that sums up what we were doing in this.
+ At the beginning, you look at it very simply,
+ pretty soon you'll just be looking at the developer console
+ and it'll all make sense to you.
+ I want you to be able to know that you can dig
+ as deep as you want to and understand
+ all of these protocols that are going back and forth.
+ Okay, cheers.
+ (upbeat music)

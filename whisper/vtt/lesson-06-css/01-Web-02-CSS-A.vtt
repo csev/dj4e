@@ -6,28 +6,25 @@ WEBVTT
 00:00:04.400 --> 00:00:07.680
  Of course, this follows right on the heels of our HTML lecture.
 
-00:00:07.680 --> 00:00:14.160
+00:00:07.680 --> 00:00:14.100
  And I'm gonna use a bunch of examples from webapplicationsforeverybody.com.
 
-00:00:14.160 --> 00:00:16.280
+00:00:14.100 --> 00:00:17.080
  And you can just bring these up in your browser.
 
-00:00:16.280 --> 00:00:22.000
+00:00:17.080 --> 00:00:22.000
  I love to place everything that we talk about in the context of the request
 
-00:00:22.000 --> 00:00:25.600
- response cycle cuz that's the whole web applications for everybody.
+00:00:22.000 --> 00:00:25.640
+ response cycle, cuz that's the whole web applications for everybody.
 
-00:00:25.600 --> 00:00:27.560
- You, of course, are out here.
+00:00:25.640 --> 00:00:31.200
+ You, of course, are out here, you do a click, it sends a request, a HTTP request.
 
-00:00:27.560 --> 00:00:32.560
- You do a click, it sends a request, a HTTP request, maybe talks to a database,
+00:00:31.200 --> 00:00:35.000
+ It maybe talks to a database, get some stuff back, send some stuff back.
 
-00:00:32.560 --> 00:00:35.040
- gets some stuff back, sends some stuff back.
-
-00:00:35.040 --> 00:00:37.480
+00:00:35.000 --> 00:00:37.480
  This is the request response cycle right here.
 
 00:00:37.480 --> 00:00:39.960
@@ -36,17 +33,17 @@ WEBVTT
 00:00:39.960 --> 00:00:43.560
  And then that is parsed, put into the document object model.
 
-00:00:43.560 --> 00:00:47.000
+00:00:43.560 --> 00:00:46.980
  And the thing that you then see, the pixels you see on your screen,
 
-00:00:47.000 --> 00:00:48.960
+00:00:46.980 --> 00:00:48.960
  are from the document object model.
 
 00:00:48.960 --> 00:00:51.280
  So that's what we've been doing so far.
 
 00:00:51.280 --> 00:00:54.640
- And so far, then at HTML lecture, we just talked about this.
+ And so far, in that HTML lecture, we just talked about this.
 
 00:00:54.640 --> 00:00:58.320
  What the format was when you parsed the response.
@@ -54,11 +51,11 @@ WEBVTT
 00:00:58.320 --> 00:01:01.040
  So what we're gonna talk about today is we're gonna talk about,
 
-00:01:01.040 --> 00:01:06.620
- in addition to that, we're gonna go and pull another file, a CSS file, CSS.
+00:01:01.040 --> 00:01:05.400
+ in addition to that, we're gonna go and pull another file, a CSS file.
 
-00:01:06.620 --> 00:01:08.920
- And that is gonna inform the document object model.
+00:01:05.400 --> 00:01:08.920
+ CSS, and that is gonna inform the document object model.
 
 00:01:08.920 --> 00:01:11.640
  And it's gonna change how things look out here.
@@ -66,10 +63,10 @@ WEBVTT
 00:01:11.640 --> 00:01:16.600
  And so we'll have some CSS in the HTML, but we'll also have some CSS in
 
-00:01:16.600 --> 00:01:19.840
+00:01:16.600 --> 00:01:19.800
  separate files that make separate request response cycles.
 
-00:01:19.840 --> 00:01:23.480
+00:01:19.800 --> 00:01:23.480
  But so we're gonna be putting files like our HTML files in here and
 
 00:01:23.480 --> 00:01:25.240
@@ -84,86 +81,89 @@ WEBVTT
 00:01:32.000 --> 00:01:35.600
  how to make the DOM look pretty, and that's sort of what CSS is all about.
 
-00:01:35.600 --> 00:01:40.200
+00:01:35.600 --> 00:01:40.160
  So in addition, I would like you to install
 
-00:01:40.200 --> 00:01:45.800
+00:01:40.160 --> 00:01:45.800
  this thing called Web Developer from Chris Pedrick.
 
-00:01:45.800 --> 00:01:49.920
- Chris Pedrick has been doing this a long time before there were even developer
+00:01:45.800 --> 00:01:48.400
+ Chris Pedrick has been doing this a long time,
 
-00:01:49.920 --> 00:01:54.480
- consoles in browsers, and it's funny that the developer
+00:01:48.400 --> 00:01:51.360
+ before there were even developer consoles in browsers.
 
-00:01:54.480 --> 00:01:56.480
- consoles don't do what this does.
+00:01:52.560 --> 00:01:56.480
+ And it's funny that developer consoles don't do what this does.
 
-00:01:56.480 --> 00:02:01.600
- And I don't use all of its features, but it has some wonderful features for CSS,
+00:01:56.480 --> 00:01:59.160
+ And it, I don't use all of its features, but
 
-00:02:01.600 --> 00:02:03.920
- in particular, turning on and off various styles.
+00:01:59.160 --> 00:02:02.960
+ it has some wonderful features for CSS, in particular turning on and
 
-00:02:03.920 --> 00:02:07.720
+00:02:02.960 --> 00:02:03.960
+ off various styles.
+
+00:02:03.960 --> 00:02:07.720
  And so it's a great way to sort of dig through CSS issues,
 
-00:02:07.720 --> 00:02:10.080
+00:02:07.720 --> 00:02:10.120
  in addition to the web developer console.
 
-00:02:10.080 --> 00:02:12.400
+00:02:10.120 --> 00:02:12.400
  And you can do a lot of sort of fine debugging, but
 
 00:02:12.400 --> 00:02:14.040
  there's some real nice stuff with web developer.
 
-00:02:14.040 --> 00:02:18.640
- It's just a plug-in for your Safari or your Chrome or
+00:02:14.040 --> 00:02:18.680
+ It's just a plug-in for your Safari, or your Chrome, or
 
-00:02:18.640 --> 00:02:21.480
- your Mozilla browser or whatever.
+00:02:18.680 --> 00:02:21.480
+ your Mozilla browser, or whatever.
 
 00:02:21.480 --> 00:02:24.960
  So please install that, I recommend it, and
 
-00:02:24.960 --> 00:02:29.240
- some of the assignments actually require it.
+00:02:24.960 --> 00:02:27.720
+ some of the assignments actually require it, so.
 
-00:02:29.240 --> 00:02:35.680
+00:02:27.720 --> 00:02:35.720
  So like I said in the HTML lecture, the HTML started out with,
 
-00:02:35.680 --> 00:02:41.360
+00:02:35.720 --> 00:02:41.400
  we were just amazed in 1995 when we could see a page with a gray background and
 
-00:02:41.360 --> 00:02:48.960
- blue links, and it was lists, long lists of links, and the links turned purple.
+00:02:41.400 --> 00:02:44.880
+ blue links, and it was lists, long lists of links.
 
-00:02:48.960 --> 00:02:51.280
- And we would click on a link, and another page would come up, and
+00:02:44.880 --> 00:02:50.240
+ And the links turned purple, and we would click on a link, and
 
-00:02:51.280 --> 00:02:53.480
- we were like, holy mackerel, this is the future, right?
+00:02:50.240 --> 00:02:53.440
+ another page would come up and we're like, holy mackerel, this is the future, right?
 
-00:02:53.480 --> 00:02:55.480
+00:02:53.440 --> 00:02:55.480
  And we were so happy.
 
 00:02:55.480 --> 00:03:00.560
- And our curiosity was piqued, we did interesting things.
+ And our curiosity was peaked, we did interesting things.
 
 00:03:00.560 --> 00:03:08.560
  But in the 10, 15, almost 20 years since all that, it's become a business.
 
-00:03:08.560 --> 00:03:13.400
+00:03:08.560 --> 00:03:13.360
  And in business, the look and feel for the average non-nerd user,
 
-00:03:13.400 --> 00:03:15.960
+00:03:13.360 --> 00:03:15.920
  they don't care that there's a request-response cycle.
 
-00:03:15.960 --> 00:03:18.560
- They just want to do a thing, talk to their friends or
+00:03:15.920 --> 00:03:20.040
+ They just want to do a thing, talk to their friends, or look up information.
 
-00:03:18.560 --> 00:03:21.640
- look up information or whatever.
+00:03:20.040 --> 00:03:21.640
+ Or whatever.
 
 00:03:21.640 --> 00:03:27.840
  And so the CSS is in the middle of this time frame.
@@ -174,67 +174,64 @@ WEBVTT
 00:03:30.520 --> 00:03:34.760
  make pages beautiful became super important for
 
-00:03:34.760 --> 00:03:38.680
+00:03:34.760 --> 00:03:38.720
  the web to take its sort of leap into commercial dumb.
 
-00:03:38.680 --> 00:03:41.800
- So if you look at the Yahoo web page, for example,
+00:03:38.720 --> 00:03:42.800
+ So if you look at the Yahoo web page, for example, this is just a screenshot,
 
-00:03:41.800 --> 00:03:43.960
- this is just a screenshot I took a while back.
+00:03:42.800 --> 00:03:43.960
+ I took a while back.
 
-00:03:43.960 --> 00:03:49.040
+00:03:43.960 --> 00:03:49.080
  They do studies as to how much white space is in between those two pieces.
 
-00:03:49.040 --> 00:03:51.240
- And they'll add a pixel and take away a pixel, and
+00:03:49.080 --> 00:03:53.120
+ And they'll add a pixel and take away a pixel and they'll see how the revenue goes.
 
-00:03:51.240 --> 00:03:53.080
- they'll see how their revenue goes.
-
-00:03:53.080 --> 00:03:57.640
+00:03:53.120 --> 00:03:57.680
  And so these user experiences, these visual looks and
 
-00:03:57.640 --> 00:04:02.480
+00:03:57.680 --> 00:04:02.520
  feels are highly tuned and highly sort of taken care of.
 
-00:04:02.480 --> 00:04:07.880
- And so CSS needed to be able to precisely have a pixel-perfect layout in
+00:04:02.520 --> 00:04:07.920
+ And so CSS needed to be able to precisely have a pixel perfect layout in
 
-00:04:07.880 --> 00:04:08.960
+00:04:07.920 --> 00:04:09.000
  every browser.
 
-00:04:08.960 --> 00:04:11.480
+00:04:09.000 --> 00:04:11.480
  And so CSS is a very, very precise thing.
 
-00:04:11.480 --> 00:04:13.720
- HTML has become precise, but
+00:04:11.480 --> 00:04:17.400
+ HTML has become precise, but we don't wanna do our markup and layout in HTML.
 
-00:04:13.720 --> 00:04:17.400
- we don't wanna do our markup and layout in HTML.
+00:04:17.400 --> 00:04:19.400
+ I showed you tables previously, and
 
-00:04:17.400 --> 00:04:20.960
- I showed you tables previously, and in really early versions of HTML,
+00:04:19.400 --> 00:04:23.840
+ in really early versions of HTML we used tables to create look and feel.
 
-00:04:20.960 --> 00:04:24.960
- we used tables to create look and feel, and that was never good.
+00:04:23.840 --> 00:04:24.960
+ And that was never good.
 
-00:04:24.960 --> 00:04:30.320
+00:04:24.960 --> 00:04:30.360
  So one of the things you can do with the Chris Pedrick web developer plugin is you
 
-00:04:30.320 --> 00:04:32.840
+00:04:30.360 --> 00:04:32.880
  can show a page without CSS.
 
-00:04:32.840 --> 00:04:38.000
+00:04:32.880 --> 00:04:38.040
  And what you should expect when you see a page without CSS is it's
 
-00:04:38.000 --> 00:04:40.160
+00:04:38.040 --> 00:04:40.200
  sort of beautiful even without CSS.
 
-00:04:40.160 --> 00:04:43.120
- It's beautiful in a logical and a structure.
+00:04:40.200 --> 00:04:43.160
+ It's beautiful in a logical, in a structure.
 
-00:04:43.120 --> 00:04:46.560
+00:04:43.160 --> 00:04:46.560
  And so here's my web applications for everybody website, right?
 
 00:04:46.560 --> 00:04:47.880
@@ -244,133 +241,124 @@ WEBVTT
  It's got these little things that go over there.
 
 00:04:50.480 --> 00:04:51.760
- It's got a little border.
+ It's got the little border.
 
 00:04:51.760 --> 00:04:54.040
- The color's gray here, and it's a little lighter gray, and
+ The color's gray here and it's a little lighter gray and
 
-00:04:54.040 --> 00:04:56.120
- this wraps around, and it looks really awesome, right?
+00:04:54.040 --> 00:04:56.080
+ this wraps around and it looks really awesome, right?
 
-00:04:57.280 --> 00:05:00.900
- Well, turn CSS off, and
+00:04:56.080 --> 00:05:00.880
+ Well, turn CSS off and
 
-00:05:00.900 --> 00:05:04.160
+00:05:00.880 --> 00:05:04.160
  you should still see a page that you could effectively navigate.
 
 00:05:04.160 --> 00:05:09.440
  It's like going back in time to a simpler time of, okay, I wanna see this.
 
-00:05:09.440 --> 00:05:12.360
- This is really a list of links at the end of the day, and there you go.
+00:05:09.440 --> 00:05:11.760
+ This is really a list of links at the end of the day.
 
-00:05:12.360 --> 00:05:13.600
- It's a list of links.
+00:05:11.760 --> 00:05:13.600
+ And there you go, it's a list of links.
 
-00:05:13.600 --> 00:05:17.800
- And the default is I've already clicked on lessons, so lessons is purple now.
+00:05:13.600 --> 00:05:16.040
+ And the default is, I've already clicked on lessons, so
+
+00:05:16.040 --> 00:05:17.800
+ lessons is purple now.
 
 00:05:17.800 --> 00:05:21.080
- And here's this video, and if you scroll up and down on this,
+ And here's this video and if you scroll up and down on this,
 
 00:05:21.080 --> 00:05:26.520
  I mean it's really fun to go to a website and turn CSS off and
 
-00:05:26.520 --> 00:05:30.120
+00:05:26.520 --> 00:05:30.160
  see how good their HTML developers are and how pretty it is.
 
-00:05:30.120 --> 00:05:33.800
+00:05:30.160 --> 00:05:33.840
  And so it's supposed to be pretty in a simple way.
 
-00:05:33.800 --> 00:05:37.160
+00:05:33.840 --> 00:05:37.200
  And what's nice about this is it really leads to good accessibility,
 
-00:05:37.160 --> 00:05:42.800
+00:05:37.200 --> 00:05:42.840
  meaning some people do not see the graphics, they hear the page read to them.
 
-00:05:42.800 --> 00:05:45.400
- And this way, this is how it's read.
+00:05:42.840 --> 00:05:47.040
+ And this way, this is how it's read and the simpler and more beautiful and
 
-00:05:45.400 --> 00:05:49.840
- And the simpler and more beautiful and elegant your HTML is, the easier it is for
+00:05:47.040 --> 00:05:49.840
+ elegant your HTML is, the easier it is for
 
 00:05:49.840 --> 00:05:55.920
  a person who has reduced visual ability to understand your site.
 
-00:05:55.920 --> 00:06:02.160
- And that is, I remember the joy of hearing from people who were using the web and
+00:05:55.920 --> 00:06:01.560
+ And that is, I remember the joy of hearing from people who were using
 
-00:06:02.160 --> 00:06:07.840
- gopher in the early days, how they all of a sudden could go anywhere and see anything
+00:06:01.560 --> 00:06:07.280
+ the web end gopher in the early days, how they all of a sudden could go anywhere and
 
-00:06:07.840 --> 00:06:12.900
- and do anything in a way that visually impaired people could never do for
+00:06:07.280 --> 00:06:12.040
+ see anything and do anything in a way that visually impaired people could never
 
-00:06:12.900 --> 00:06:14.960
- like hundreds of thousands of years.
+00:06:12.040 --> 00:06:16.520
+ do for like hundreds of thousands of years and it's joyful.
 
-00:06:14.960 --> 00:06:16.520
- And it's joyful.
+00:06:16.520 --> 00:06:19.920
+ And then what happened was is we ended up with this really nasty markup and
 
-00:06:16.520 --> 00:06:19.840
- And then what happened was is we ended up with this really nasty markup.
+00:06:19.920 --> 00:06:23.280
+ then they're like, it was like the web was simple and they loved it and
 
-00:06:19.840 --> 00:06:23.200
- And then it was like the web was simple and they loved it.
-
-00:06:23.200 --> 00:06:26.400
- And then the web became ugly and nasty and HTML became nasty.
+00:06:23.280 --> 00:06:26.400
+ then the web became ugly and nasty and HTML became nasty.
 
 00:06:26.400 --> 00:06:30.480
  And they're like, the world is horrible because now you go to all these cool
 
 00:06:30.480 --> 00:06:34.560
- websites, but I can't go to these cool websites cuz I'm visually impaired.
+ websites but I can't go to these cool websites cuz I'm visually impaired.
 
-00:06:34.560 --> 00:06:36.280
- And now we're back, we're back to that.
+00:06:34.560 --> 00:06:39.640
+ And now we're back, we're back to that, we're back to beautiful HTML, simple HTML.
 
-00:06:36.280 --> 00:06:39.720
- We're back to beautiful HTML, simple HTML, and
+00:06:39.640 --> 00:06:42.960
+ And then beautiful web pages and CSS is the, okay,
 
-00:06:39.720 --> 00:06:42.440
- then beautiful web pages and CSS is the main.
+00:06:42.960 --> 00:06:48.000
+ I think I've done enough advertising for CSS and accessibility and beautiful HTML.
 
-00:06:42.440 --> 00:06:46.120
- Okay, I think I've done enough advertising for CSS and
-
-00:06:46.120 --> 00:06:48.040
- accessibility and beautiful HTML.
-
-00:06:49.620 --> 00:06:53.640
+00:06:48.000 --> 00:06:53.640
  So ultimately, if you look at how this thing is assembled in your browser,
 
-00:06:53.640 --> 00:06:59.320
+00:06:53.640 --> 00:06:59.360
  there is an HTML page that is pulled down and then there is CSS.
 
-00:06:59.320 --> 00:07:02.880
+00:06:59.360 --> 00:07:02.880
  Sort of both inside the document, sometimes there's CSS in the document.
 
-00:07:02.880 --> 00:07:04.120
- If you look at this, not that it matters,
+00:07:02.880 --> 00:07:05.440
+ If you look at this, not that it matters, there's a little bit of CSS in that
 
-00:07:04.120 --> 00:07:06.240
- there's a little bit of CSS in that document.
-
-00:07:06.240 --> 00:07:09.920
- And then a whole bunch of other CSS that brings all the beauty to this.
+00:07:05.440 --> 00:07:09.920
+ document and then a whole bunch of other CSS that brings all the beauty to this.
 
 00:07:09.920 --> 00:07:12.400
  Sometimes it even takes some JavaScript and whatever.
 
 00:07:12.400 --> 00:07:15.960
- And so we understand that the HTML does not have the beauty in it.
+ And so we understand that the HTML does not have the beauty in it,
 
 00:07:15.960 --> 00:07:18.920
- The beauty comes from the CSS.
+ the beauty comes from the CSS.
 
 00:07:18.920 --> 00:07:22.480
- And that is part of what we try to do, is learn CSS.
+ And that is part of what we try to do is learn CSS.
 
 00:07:22.480 --> 00:07:25.320
  So if you're gonna be like a coder and you're not gonna be a graphic designer,
@@ -378,20 +366,20 @@ WEBVTT
 00:07:25.320 --> 00:07:29.520
  you still need to know enough CSS so that you don't write horrible HTML, so
 
-00:07:29.520 --> 00:07:33.960
- that you know what a really good CSS developer is capable of doing on your
-
-00:07:33.960 --> 00:07:35.000
- behalf.
+00:07:29.520 --> 00:07:35.000
+ that you know what a really good CSS developer is capable of doing on your behalf.
 
 00:07:35.000 --> 00:07:40.320
- And on large projects, including like Sakai project,
+ And on large projects, including like Sakai Project,
 
-00:07:40.320 --> 00:07:45.080
- which is a open source learning management system, this allows separation
+00:07:40.320 --> 00:07:42.320
+ which is a open source learning management system.
 
-00:07:45.080 --> 00:07:50.920
- of concerns, and you can have people that specialize in the back end and the HTML.
+00:07:42.320 --> 00:07:45.800
+ This allows separation of concerns.
+
+00:07:45.800 --> 00:07:50.920
+ And you can have people that specialize in the back end and the HTML.
 
 00:07:50.920 --> 00:07:54.120
  And then a web designer can, the web designer, so
@@ -399,13 +387,13 @@ WEBVTT
 00:07:54.120 --> 00:07:57.800
  if you think of the developer usually, there's a back end.
 
-00:07:57.800 --> 00:08:00.920
- And then they generate, from the back end, they generate the HTML, and
+00:07:57.800 --> 00:08:00.840
+ And then they generate, from the back end, they generate the HTML.
 
-00:08:00.920 --> 00:08:04.080
- then the designer will build the CSS.
+00:08:00.840 --> 00:08:04.100
+ And then the designer will build the CSS.
 
-00:08:04.080 --> 00:08:08.960
+00:08:04.100 --> 00:08:08.960
  The designer will often have skill enough to sort of tweak the HTML if
 
 00:08:08.960 --> 00:08:11.120
@@ -417,10 +405,10 @@ WEBVTT
 00:08:14.400 --> 00:08:17.720
  responsible for building the back end developer.
 
-00:08:17.720 --> 00:08:24.220
+00:08:17.720 --> 00:08:24.240
  And then the front end designer can then tweak the HTML a little and
 
-00:08:24.220 --> 00:08:25.280
+00:08:24.240 --> 00:08:25.280
  then tweak the CSS.
 
 00:08:25.280 --> 00:08:28.160
@@ -429,10 +417,10 @@ WEBVTT
 00:08:28.160 --> 00:08:30.680
  the front end developer come together.
 
-00:08:30.680 --> 00:08:37.880
+00:08:30.680 --> 00:08:37.900
  But it means that you can, it means that you can have lots of people working and
 
-00:08:37.880 --> 00:08:42.280
+00:08:37.900 --> 00:08:42.280
  you can develop highly specialized skill sets in larger projects.
 
 00:08:42.280 --> 00:08:48.120
@@ -445,70 +433,73 @@ WEBVTT
  And you'll be like, whoa, that's not very good.
 
 00:08:55.400 --> 00:08:57.800
- And if it even looks pretty of mine, I'd probably use Bootstrap.
+ And if it even looks pretty of mine, I'd probably use bootstrap.
 
 00:08:57.800 --> 00:09:01.840
- And I cheated and found a CSS framework and I didn't build it, I just did it.
+ And I cheated and found a CSS framework, and I didn't build it, I just did it.
 
-00:09:01.840 --> 00:09:04.840
- Now there are people who are smart enough to build Bootstrap.
+00:09:01.840 --> 00:09:04.800
+ Now there are people who are smart enough to build bootstrap.
 
-00:09:04.840 --> 00:09:08.440
- That's, and they're, they can build such gorgeous websites.
+00:09:04.800 --> 00:09:08.440
+ That's, and they can build such gorgeous websites.
 
 00:09:08.440 --> 00:09:13.720
  And my job is to build beautiful HTML that then they can add CSS to and
 
-00:09:13.720 --> 00:09:15.920
+00:09:13.720 --> 00:09:15.880
  make it super gorgeous.
 
-00:09:15.920 --> 00:09:19.200
+00:09:15.880 --> 00:09:19.200
  So the CSS basic syntax is different than HTML, right?
 
-00:09:19.200 --> 00:09:21.120
+00:09:19.200 --> 00:09:21.080
  HTML is less than and greater than.
 
-00:09:21.120 --> 00:09:23.640
+00:09:21.080 --> 00:09:23.600
  CSS has curly braces.
 
-00:09:23.640 --> 00:09:26.960
+00:09:23.600 --> 00:09:26.960
  I don't really know who invented the first.
 
-00:09:26.960 --> 00:09:29.720
+00:09:26.960 --> 00:09:29.760
  I should find that out and go videotape that person.
 
-00:09:29.720 --> 00:09:31.560
+00:09:29.760 --> 00:09:31.560
  But it has curly braces and semicolons, so
 
 00:09:31.560 --> 00:09:36.720
  it kind of looks like a little bit of C. And it's really a set of rules.
 
 00:09:36.720 --> 00:09:41.840
- And it's not sequential, although the order does matter.
+ And it's not sequential, although the order does matter,
 
-00:09:41.840 --> 00:09:46.160
- Because what comes later has more importance than what comes earlier in CSS.
+00:09:41.840 --> 00:09:46.200
+ because what comes later has more importance than what comes earlier in CSS.
 
-00:09:46.160 --> 00:09:48.040
+00:09:46.200 --> 00:09:48.120
  But it's not like code that gets run.
 
-00:09:48.040 --> 00:09:54.760
+00:09:48.120 --> 00:09:54.800
  And so the anatomy of a CSS rule is that there is some kind of a selector.
 
-00:09:54.760 --> 00:09:59.160
+00:09:54.800 --> 00:09:59.200
  And in this case, the simplest selector is the tag that we want to affect.
 
-00:09:59.160 --> 00:10:00.600
+00:09:59.200 --> 00:10:00.600
  We want to affect the body tag.
 
-00:10:00.600 --> 00:10:03.960
- Now, there's only one body tag, but you could have a P for a P tag and
+00:10:00.600 --> 00:10:02.280
+ Now, there's only one body tag.
 
-00:10:03.960 --> 00:10:06.320
- say I would like to do this to all P tags.
+00:10:02.280 --> 00:10:06.320
+ But you could have a P for a P tag and say, I would like to do this to all P tags.
 
-00:10:06.320 --> 00:10:12.400
- And so it's implicit, kinda like SQL, in that a body tag means for all body tags.
+00:10:06.320 --> 00:10:11.400
+ And so it's implicit, kind of like SQL, in that a body tag means for
+
+00:10:11.400 --> 00:10:12.400
+ all body tags.
 
 00:10:12.400 --> 00:10:14.960
  There's an implicit loop for the whole document.
@@ -519,20 +510,20 @@ WEBVTT
 00:10:17.080 --> 00:10:18.520
  it's not always the whole document.
 
-00:10:18.520 --> 00:10:25.680
+00:10:18.520 --> 00:10:24.720
  But for now, a tag there by itself means every tag in this document.
 
-00:10:25.680 --> 00:10:31.360
+00:10:24.720 --> 00:10:31.360
  And then there's a series of rules, and so this is really when to apply.
 
 00:10:31.360 --> 00:10:37.080
  This is sort of what aspect, and there's a whole list of aspects that you can have.
 
 00:10:37.080 --> 00:10:39.920
- And then what you wanna do, I wanna make the font size 100%.
+ And then what you want to do, I want to make the font size 100%.
 
 00:10:39.920 --> 00:10:44.160
- I wanna use Arial, and then say in Serif, etc., etc., etc.
+ I want to use Arial, and then sans serif, etc, etc, etc.
 
 00:10:44.160 --> 00:10:49.240
  Holy mackerel, my little pen is undoing itself.
@@ -544,86 +535,98 @@ WEBVTT
  You can have just one, you can have more.
 
 00:10:53.760 --> 00:10:58.560
- But that's the basic idea, is a CSS rule is go find a part of this document and
+ But that's the basic idea, is a CSS rule is, go find a part of this document and
 
-00:10:58.560 --> 00:11:01.800
- paint it, I like to think of this as like, go find a thing and
+00:10:58.560 --> 00:10:59.560
+ paint it.
 
-00:11:01.800 --> 00:11:04.920
+00:10:59.560 --> 00:11:01.800
+ I like to think of this as like, go find a thing and
+
+00:11:01.800 --> 00:11:04.940
  then run a paintbrush over top of it, that is this paintbrush.
 
-00:11:04.920 --> 00:11:08.040
+00:11:04.940 --> 00:11:08.080
  That is the paintbrush that you go select a piece of the document and
 
-00:11:08.040 --> 00:11:11.240
+00:11:08.080 --> 00:11:11.240
  then paint it yellow or paint it bold or whatever.
 
-00:11:11.240 --> 00:11:12.680
- That's kinda how I think about it.
+00:11:11.240 --> 00:11:12.640
+ That's kind of how I think about it.
 
-00:11:12.680 --> 00:11:23.560
- Now, I'll admit, I'm really a very weak CSS developer, and I need a cheat sheet.
+00:11:12.640 --> 00:11:22.480
+ Now, I'll admit, I'm really a very weak CSS developer, and
 
-00:11:23.560 --> 00:11:28.200
- And if I wanna do CSS, having even a single page cheat sheet
+00:11:22.480 --> 00:11:25.520
+ I need a cheat sheet, and if I'm gonna do CSS,
 
-00:11:28.200 --> 00:11:31.640
- is super helpful for me, just cuz I don't use it all the time.
+00:11:25.520 --> 00:11:29.320
+ having this even a single page cheat sheet is super helpful for
 
-00:11:31.640 --> 00:11:38.040
- And so the attributes like background color and the border-bottom,
+00:11:29.320 --> 00:11:31.640
+ me just cuz I don't use it all the time.
 
-00:11:38.040 --> 00:11:42.880
+00:11:31.640 --> 00:11:37.960
+ And so the attributes like background color and the border dash bottom,
+
+00:11:37.960 --> 00:11:42.880
  for me, they're all very self-explanatory.
 
-00:11:42.880 --> 00:11:46.520
- They're really easy to understand, or if you don't understand them,
+00:11:42.880 --> 00:11:45.040
+ They're really easy to understand.
 
-00:11:46.520 --> 00:11:48.840
- you just Google and you go stack overflow.
+00:11:45.040 --> 00:11:48.840
+ Or if you don't understand them, you just Google and you go Stack Overflow.
 
 00:11:48.840 --> 00:11:52.360
- But for me, I'm like, is it border-bottom or bottom-border?
+ But for me, I'm like, is it border bottom or bottom border?
 
 00:11:52.360 --> 00:11:55.080
  I just can't remember that stuff, and so
 
-00:11:55.080 --> 00:11:58.200
+00:11:55.080 --> 00:11:58.240
  I just have to have a cheat sheet whenever I work.
 
-00:11:58.200 --> 00:12:01.440
- And this is the one cheat sheet that I happen to like.
+00:11:58.240 --> 00:12:01.440
+ And this is one cheat sheet that I happen to like.
 
-00:12:01.440 --> 00:12:04.480
- And these are the kind of properties that we're gonna be playing with,
+00:12:01.440 --> 00:12:05.040
+ And these are the kind of properties that we're gonna be playing with.
 
-00:12:04.480 --> 00:12:07.200
- the color, the background color, how to align it vertically,
+00:12:05.040 --> 00:12:07.200
+ Color, the background color, how to align it vertically,
 
-00:12:07.200 --> 00:12:12.200
- how to align it horizontally, padding, which is space on the sides, etc, etc, etc.
+00:12:07.200 --> 00:12:08.840
+ how to align it horizontally.
 
-00:12:12.200 --> 00:12:14.560
+00:12:08.840 --> 00:12:12.240
+ Padding, which is space on the sides, etc., etc., etc.
+
+00:12:12.240 --> 00:12:14.600
  So there's just tons of CSS properties.
 
-00:12:14.560 --> 00:12:18.200
+00:12:14.600 --> 00:12:18.240
  And there's tons of great documentation on each of these CSS properties,
 
-00:12:18.200 --> 00:12:20.040
+00:12:18.240 --> 00:12:20.080
  with little samples all over the place.
 
-00:12:20.040 --> 00:12:24.920
- And I have my own samples as well, that I'll do some recordings and
+00:12:20.080 --> 00:12:21.520
+ And I have my own samples as well.
 
-00:12:24.920 --> 00:12:28.800
- show you, walk you through like line by line on my sample code as well.
+00:12:21.520 --> 00:12:24.960
+ Then I'll do some recordings and
 
-00:12:28.800 --> 00:12:32.160
+00:12:24.960 --> 00:12:28.840
+ show you walk you through line by line on my sample code as well.
+
+00:12:28.840 --> 00:12:32.200
  But this is the kind of stuff that we're gonna play with in CSS.
 
-00:12:32.160 --> 00:12:36.480
+00:12:32.200 --> 00:12:36.440
  So up next, we're gonna talk about how we connect CSS and HTML together.
 
-00:12:36.480 --> 00:12:46.480
+00:12:36.440 --> 00:12:46.440
  [MUSIC]
 

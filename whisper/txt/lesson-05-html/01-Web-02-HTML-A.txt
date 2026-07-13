@@ -1,7 +1,6 @@
- Hello and welcome to our lecture on HTML, the hypertext markup language.
- So we're gonna place this in the context of our request-response cycle and
- sort of here's us in the request-response cycle in our browser and
- what we're seeing.
+ >> Hello and welcome to our lecture on HTML, the hypertext markup language.
+ So we're gonna place this in the context of our request response cycle and
+ sort of hears us in the request response cycle in our browser and what we're seeing.
  We make a click, it goes across the network to the web server,
  runs some code, maybe talks to a database, formats up some new stuff and
  we get the response, then HTML comes out and then that's parsed to make the DOM.
@@ -16,7 +15,7 @@
  Like the paragraph tag, the paragraph tag, that's a paragraph tag.
  Strong tag makes things bold, emphasize tag and a paragraph tag.
  And so we have these tags and we just mark up, we're communicating meaning.
- If you're old enough to remember what word processors used to have ways to look
+ If you're old enough to remember, well, word processors used to have ways to look
  at the actual codes that were being stored in the word processor file.
  So the web is, the HTML and hypertext transport protocol and
  all that stuff is a relatively recent invention.
@@ -27,11 +26,10 @@
  Looking back in the early days,
  if we take a look at what HTML was really intended to do,
  it worked on a next computer in the early 1990s.
- And so this is the next browser, which came from CERN, and
- it had everything in a new window, images were not shown in line.
- And then there was the NCSA mosaic browser,
- which was the first browser that was universally available on Unix,
- Windows and Macintosh.
+ And so this is the next browser which came from CERN.
+ And it had everything in a new window, images were not shown in line.
+ And then there was the NCSA mosaic browser which was the first browser that
+ was universally available on Unix, Windows and Macintosh.
  And you see things like gray background and blue links and
  highlighted links that you visited in purple.
  And so in the early days, it was nothing like what we see today.
@@ -42,8 +40,8 @@
  how navigation looks.
  And so today, we need to create beautiful web pages, whereas in the old days,
  we were just amazed to have web pages that worked in the first place.
- And of course, computers have gotten much faster,
- capable of handling video and images.
+ And of course, computers have gotten much faster, capable of handling video and
+ images.
  Back in the old days, images were costly, both for network bandwidth and
  for the time it took your computer to display them.
  And so that just affected how we did it.
@@ -59,11 +57,10 @@
  We would have li tags that didn't finish.
  We would have attributes that didn't even have double quotes in them.
  So there was all kinds of stuff.
- And literally, you could take this bad page, and
- you could put it into a web browser, and it will still display.
- So HTML wallet technically is a very precise language, and
- you can make syntax errors.
- Browsers are extremely flexible in terms of parsing it.
+ And literally, you can take this bad page and
+ you could put it into a web browser and it will still display.
+ So HTML, while it technically is a very precise language and
+ you can make syntax errors, browsers are extremely flexible in terms of parsing it.
  Now, you're not gonna get predictable results,
  like browsers can go into what's called quirks mode.
  And so in order to create the standards environment that we have today,
@@ -71,18 +68,18 @@
  helped found an organization called the World Wide Web Consortium, or the W3C.
  And it really decided that instead of just letting people write a browser and
  having HTML be defined by the browser, instead they would write a spec for
- what HTML was, and then multiple vendors could produce the browsers.
+ what HTML was and then multiple vendors could produce the browsers.
  And it took a while for this to become successful, but
  there was a need for every vendor to build a web browser.
  And so they worked with the World Wide Web Consortium.
- And like the mid and late 90s, '95, '96, well, '94 through '98, '99,
+ And like the mid and late 90s, '95, '96, well '94 through '98, '99,
  the World Wide Web Consortium created a lot of wonderful standards around
  the World Wide Web.
  Now, once we started having rules, then we tend to want to follow those rules.
  And so tags need to be lowercase.
  Attributes like this image source equals have to have double quotes around them.
  You have to have open tags and closed tags, open tags and closed tags.
- And so there's a set of rules, and now we are much more precise about our HTML.
+ And so there's a set of rules and now we are much more precise about our HTML.
  And we try to write it as precise as we can so that we get the best performance and
  the best sort of rendering out of the browsers that we can possibly get.
  Because if you don't write precise HTML,

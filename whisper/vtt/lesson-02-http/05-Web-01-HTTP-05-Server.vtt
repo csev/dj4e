@@ -1,593 +1,1142 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.480
- so we build a browser in Python it's time to build a web server in Python so
+00:00:00.000 --> 00:00:02.880
+ So we build a browser in Python.
 
-00:00:06.480 --> 00:00:11.360
- remember that what we've got here is we've got you know the browser is an
+00:00:02.880 --> 00:00:06.340
+ It's time to build a web server in Python.
 
-00:00:11.360 --> 00:00:15.680
- application and we've we've made this a Python application now that sends this
+00:00:06.340 --> 00:00:09.840
+ So remember that what we've got here is we've got,
 
-00:00:15.680 --> 00:00:19.680
- get request so we we have effectively like I said built the world's simplest
+00:00:09.840 --> 00:00:12.200
+ you know, the browser is an application,
 
-00:00:19.680 --> 00:00:24.880
- browser and that sends a get request the server does something and then it sends
+00:00:12.200 --> 00:00:14.880
+ and we've made this a Python application now
 
-00:00:24.880 --> 00:00:30.720
- the response back and now we're going to kind of change this right we're going to
+00:00:14.880 --> 00:00:16.540
+ that sends this GET request.
 
-00:00:30.720 --> 00:00:34.840
- assume the browser exists and it's like okay because we're going to be the server
+00:00:16.540 --> 00:00:18.680
+ So we have effectively, like I said,
 
-00:00:34.840 --> 00:00:40.360
- folks right so now we're going to look in greater detail at what goes on in the
+00:00:18.680 --> 00:00:20.680
+ built the world's simplest browser.
 
-00:00:40.360 --> 00:00:46.120
- server and so here is a very very simple web server it's a few more lines than
+00:00:20.680 --> 00:00:24.220
+ And that sends a GET request, the server does something,
 
-00:00:46.120 --> 00:00:51.000
- the than the the simplest web browser because we have to put a little bit of
+00:00:24.220 --> 00:00:26.960
+ and then it sends the response back.
 
-00:00:51.000 --> 00:00:55.160
- error checking in with some tries and accepts okay so let's let's walk through
+00:00:26.960 --> 00:00:30.340
+ And now we're going to kind of change this, right?
 
-00:00:55.160 --> 00:01:03.320
- what this code does okay let me let me change the color again to black if you're
+00:00:30.340 --> 00:00:32.120
+ We're going to assume the browser exists,
 
-00:01:03.320 --> 00:01:10.600
- from Microsoft and you can tell them to make a key to change the color on the on
+00:00:32.120 --> 00:00:35.360
+ and it's like, OK, because we're going to be the server folks,
 
-00:01:10.600 --> 00:01:16.680
- the scribbler I'd greatly appreciate it oh and then I went down a page too okay
+00:00:35.360 --> 00:00:35.860
+ right?
 
-00:01:16.680 --> 00:01:21.440
- so we're going to pull in some more stuff from this from the socket we're
+00:00:35.860 --> 00:00:38.640
+ So now we're going to look in greater detail
 
-00:01:21.440 --> 00:01:25.920
- going to pull in some stuff from the socket right here and so we're going to
+00:00:38.640 --> 00:00:42.360
+ at what goes on in the server.
 
-00:01:25.920 --> 00:01:28.920
- make a function called create server that we're going to call right down here
+00:00:42.360 --> 00:00:44.880
+ And so here is a very, very simple web server.
 
-00:01:28.920 --> 00:01:32.880
- and it's going to print out how you're supposed to access it and then start the
+00:00:44.880 --> 00:00:49.620
+ It's a few more lines than the simplest web browser,
 
-00:01:32.880 --> 00:01:39.040
- server now the whole idea of the server is the server is woke up to wait for
+00:00:49.620 --> 00:00:52.280
+ because we have to put a little bit of error checking in with some tries
 
-00:01:39.040 --> 00:01:42.800
- incoming connections so the server already exists so when you start talking
+00:00:52.280 --> 00:00:54.120
+ and accepts, OK?
 
-00:01:42.800 --> 00:01:47.880
- to a web server that servers in that computer already the server software is
+00:00:54.120 --> 00:00:57.480
+ So let's walk through what this code does, OK?
 
-00:01:47.880 --> 00:01:52.760
- already running registering its interest in incoming requests so that's what we
+00:00:57.480 --> 00:01:00.040
+ Let me change the color again to black.
 
-00:01:52.760 --> 00:01:57.680
- do so when this Python program starts it's going to sit there and wait in an
+00:01:00.040 --> 00:01:07.280
+ If you're from Microsoft and you can tell them
 
-00:01:57.680 --> 00:02:02.680
- infinite loop for incoming requests so the first thing we do is we're going to
+00:01:07.280 --> 00:01:11.640
+ to make a key to change the color on the Scribbler,
 
-00:02:02.680 --> 00:02:06.840
- make a socket this looks very much like the time we made it's an endpoint it's
+00:01:11.640 --> 00:01:13.280
+ I'd greatly appreciate it.
 
-00:02:06.840 --> 00:02:11.280
- not actually making the phone call we're remember I said this socket call is
+00:01:13.280 --> 00:01:16.480
+ Oh, and then I went down a page too.
 
-00:02:11.280 --> 00:02:16.520
- making the phone so we're saying we're going to make a phone and it's up to us
+00:01:16.480 --> 00:01:21.360
+ OK, so we're going to pull in some more stuff from the socket.
 
-00:02:16.520 --> 00:02:20.440
- later to decide if we're going to make a phone call or receive phone calls and
+00:01:21.360 --> 00:01:23.920
+ We're going to pull in some stuff from the socket right here.
 
-00:02:20.440 --> 00:02:27.960
- then this next thing is like to connect except this is I am willing on port 90
+00:01:23.920 --> 00:01:26.800
+ And so we're going to make a function called
 
-00:02:27.960 --> 00:02:32.120
- to receive the phone calls now it turns out there's only one program on port 90
+00:01:26.800 --> 00:01:29.280
+ create server that we're going to call right down here.
 
-00:02:32.120 --> 00:02:37.160
- that can receive phone calls so this might blow up you might try to do this I
+00:01:29.280 --> 00:01:32.320
+ And it's going to print out how you're supposed to access it
 
-00:02:37.160 --> 00:02:41.120
- mean port 9000 and if you run this twice and you can do it in two windows on your
+00:01:32.320 --> 00:01:33.360
+ and then start the server.
 
-00:02:41.120 --> 00:02:45.440
- computer the second one will blow up and say you can't have port 9000 because
+00:01:33.360 --> 00:01:35.520
+ Now, the whole idea of the server
 
-00:02:45.440 --> 00:02:49.680
- another piece of software has it but as long as there's only one running away you
+00:01:35.520 --> 00:01:40.560
+ is the server is woke up to wait for incoming connections.
 
-00:02:49.680 --> 00:02:52.800
- go and that's part of this whole try accept thing because if you run this
+00:01:40.560 --> 00:01:41.920
+ So the server already exists.
 
-00:02:52.800 --> 00:02:56.600
- twice gonna blow up the second time because you cannot receive phone calls
+00:01:41.920 --> 00:01:43.600
+ So when you start talking to a web server,
 
-00:02:56.600 --> 00:03:01.160
- on this server on port 9000 with two applications one application gets the
+00:01:43.600 --> 00:01:47.160
+ that server is in that computer already.
 
-00:03:01.160 --> 00:03:06.760
- phone calls that's what socket listen says the five on there says dear
+00:01:47.160 --> 00:01:48.960
+ The server software is already running,
 
-00:03:06.760 --> 00:03:12.600
- operating system if I'm busy handling one phone call you can hold on to four
+00:01:48.960 --> 00:01:51.960
+ registering its interest in incoming requests.
 
-00:03:12.600 --> 00:03:16.400
- more and queue them and then I'll come back and get it for you and that you're
+00:01:51.960 --> 00:01:53.080
+ So that's what we do.
 
-00:03:16.400 --> 00:03:20.380
- asking the operating system to queue incoming calls don't just say you're
+00:01:53.080 --> 00:01:55.120
+ So when this Python program starts,
 
-00:03:20.380 --> 00:03:26.080
- busy shut down if you didn't say this listen five if you were busy writing the
+00:01:55.120 --> 00:01:58.800
+ it's going to sit there and wait in an infinite loop
 
-00:03:26.080 --> 00:03:31.000
- data for phone call one and phone call two came in and you weren't ready for it
+00:01:58.800 --> 00:02:01.280
+ for incoming requests.
 
-00:03:31.000 --> 00:03:34.400
- right that instant it would just deny the phone call so that's what listen
+00:02:01.280 --> 00:02:03.920
+ So the first thing we do is we're going to make a socket.
 
-00:03:34.400 --> 00:03:39.320
- says is dear operating system hold hold those temporarily I'll get back to you
+00:02:03.920 --> 00:02:05.880
+ This looks very much like the time we made.
 
-00:03:39.320 --> 00:03:44.560
- which is how it works and then what happens is we go into this except now
+00:02:05.880 --> 00:02:06.800
+ It's an endpoint.
 
-00:03:44.560 --> 00:03:50.320
- this except is I'm at the phone I've registered what my number is and what my
+00:02:06.800 --> 00:02:09.280
+ It's not actually making the phone call.
 
-00:03:50.320 --> 00:03:55.220
- extension is and I'm ready to pick the phone up let me know so this except is
+00:02:09.280 --> 00:02:13.680
+ Remember I said this socket call is making the phone.
 
-00:03:55.220 --> 00:04:01.520
- blocking it stops and it just sits there and it can sit there forever you
+00:02:13.680 --> 00:02:16.000
+ So we're saying we're going to make a phone.
 
-00:04:01.520 --> 00:04:06.560
- know it just literally forever if nobody calls it nothing happens the next line
+00:02:16.000 --> 00:02:18.440
+ And it's up to us later to decide
 
-00:04:06.560 --> 00:04:12.360
- never exit never runs until you blow it up or the server goes down so that's
+00:02:18.440 --> 00:02:20.960
+ if we're going to make a phone call or receive phone calls.
 
-00:04:12.360 --> 00:04:17.120
- except is a blocking and the reason we do this except well we have to establish
+00:02:20.960 --> 00:02:24.160
+ And then this next thing is like to connect,
 
-00:04:17.120 --> 00:04:24.120
- the phone call first right so then this next line runs only when a phone calls
+00:02:24.160 --> 00:02:28.240
+ except this is I am willing on port 90
 
-00:04:24.120 --> 00:04:30.040
- received so that means that we on the browser side we already connected you
+00:02:28.240 --> 00:02:29.440
+ to receive the phone calls.
 
-00:04:30.040 --> 00:04:33.800
- know we made the phone call now we haven't sent any data yet right and so
+00:02:29.440 --> 00:02:32.520
+ Now, it turns out there's only one program on port 90
 
-00:04:33.800 --> 00:04:38.520
- this is just now at this point somewhere out there there's a piece of client
+00:02:32.520 --> 00:02:33.640
+ that can receive phone calls.
 
-00:04:38.520 --> 00:04:44.040
- software that has done a socket dot connect and we have done except and our
+00:02:33.640 --> 00:02:35.240
+ So this might blow up.
 
-00:04:44.040 --> 00:04:47.880
- except is succeeded in the server the connect is succeeded and we are ready to
+00:02:35.240 --> 00:02:37.160
+ You might try to do this.
 
-00:04:47.880 --> 00:04:52.720
- talk so the phone call has been made now the question is who is going to say hello
+00:02:37.160 --> 00:02:38.520
+ I mean, port 9,000.
 
-00:04:52.720 --> 00:04:58.280
- and this is where the HTTP protocol solves our problem the server knows that
+00:02:38.520 --> 00:02:40.400
+ And if you run this twice and you can do it
 
-00:04:58.280 --> 00:05:03.360
- the client must speak first so it just does a receive now you'll notice the
+00:02:40.400 --> 00:02:41.880
+ in two windows on your computer,
 
-00:05:03.360 --> 00:05:08.680
- receive and the send are the same function calls because it's a two-way
+00:02:41.880 --> 00:02:45.400
+ the second one will blow up and say you can't have port 9,000
 
-00:05:08.680 --> 00:05:13.440
- thing the whatever the browser is sending the server is receiving and
+00:02:45.400 --> 00:02:47.080
+ because another piece of software has it.
 
-00:05:13.440 --> 00:05:16.520
- whatever the server sends the browser receives and they can do it
+00:02:47.080 --> 00:02:49.960
+ But as long as there's only one running, away you go.
 
-00:05:16.520 --> 00:05:21.000
- simultaneously if they can figure it out but usually you kind of like say it's
+00:02:49.960 --> 00:02:51.440
+ And that's part of this whole try except thing
 
-00:05:21.000 --> 00:05:24.480
- your turn to listen in my turn to send and then I'll listen and usually they
+00:02:51.440 --> 00:02:53.520
+ because if you run this twice,
 
-00:05:24.480 --> 00:05:30.780
- kind of go back and forth in this there's only one step you the server
+00:02:53.520 --> 00:02:54.840
+ it's going to blow up the second time
 
-00:05:30.780 --> 00:05:37.320
- listens gets the get request sends the data back and so then we're going to
+00:02:54.840 --> 00:02:58.120
+ because you cannot receive phone calls on this server
 
-00:05:37.320 --> 00:05:42.400
- read some data and we're gonna get 5,000 characters we're gonna get the whole
+00:02:58.120 --> 00:03:00.200
+ on port 9,000 with two applications.
 
-00:05:42.400 --> 00:05:46.600
- thing remember it's one line it has a get request in it it has the optional
+00:03:00.200 --> 00:03:02.120
+ One application gets the phone calls.
 
-00:05:46.600 --> 00:05:51.360
- parameters in it and so we're gonna split it now again we've received it as
+00:03:02.120 --> 00:03:03.800
+ That's what socket listen says.
 
-00:05:51.360 --> 00:05:58.800
- UTF-8 we've got to decode it for UTF-16 I mean not UTF-16 unicode inside of
+00:03:03.800 --> 00:03:08.600
+ The five on there says, dear operating system,
 
-00:05:58.800 --> 00:06:04.120
- Python and then we split it based on new lines because the get request is on one
+00:03:08.600 --> 00:03:11.640
+ if I'm busy handling one phone call,
 
-00:06:04.120 --> 00:06:07.760
- line then header header header header header header and then the blank line to
+00:03:11.640 --> 00:03:14.560
+ you can hold on to four more and queue them
 
-00:06:07.760 --> 00:06:11.080
- tell us that we're into the headers and we're only going to take in this we're
+00:03:14.560 --> 00:03:16.080
+ and then I'll come back and get it for you.
 
-00:06:11.080 --> 00:06:15.680
- just gonna look at that first line we're not gonna do anything with it most most
+00:03:16.080 --> 00:03:18.320
+ And that you're asking the operating system
 
-00:06:15.680 --> 00:06:19.200
- servers actually like look at the line to figure out what document to send
+00:03:18.320 --> 00:03:19.680
+ to queue incoming calls.
 
-00:06:19.200 --> 00:06:22.280
- there's a very simple server it sends the same document no matter what the
+00:03:19.680 --> 00:03:21.640
+ Don't just say you're busy, shut down.
 
-00:06:22.280 --> 00:06:26.040
- URL is all we do with the URL is we print to it print it out to prove that
+00:03:21.640 --> 00:03:24.040
+ If you didn't say this, listen five,
 
-00:06:26.040 --> 00:06:32.280
- we got it and then we construct a response and in this response again go
+00:03:24.040 --> 00:03:27.880
+ if you were busy writing the data for phone call one
 
-00:06:32.280 --> 00:06:36.440
- back to RFC 2616 and it will tell you what this response is supposed to look
+00:03:27.880 --> 00:03:30.120
+ and phone call two came in
 
-00:06:36.440 --> 00:06:41.720
- like it sends back a 200 okay remember this is all the stuff we saw probably I
+00:03:30.120 --> 00:03:31.920
+ and you weren't ready for it right that instant,
 
-00:06:41.720 --> 00:06:46.960
- cut and pasted it from a working thing we tell it that we're sending it back in
+00:03:31.920 --> 00:03:33.640
+ it would just deny the phone call.
 
-00:06:46.960 --> 00:06:51.560
- content type a text HTML the character set UTF-8 remember I was telling you
+00:03:33.640 --> 00:03:35.160
+ So that's what listen says is,
 
-00:06:51.560 --> 00:06:58.800
- that a blank line and then some HTML HTML body hello world body and I'm
+00:03:35.160 --> 00:03:38.600
+ dear operating system, hold those temporarily,
 
-00:06:58.800 --> 00:07:05.000
- throwing in these /r/ends which is the network's version of new lines and then
+00:03:38.600 --> 00:03:41.640
+ I'll get back to you, which is how it works.
 
-00:07:05.000 --> 00:07:09.840
- you will notice that I encode it before I send it because it's unicode inside of
+00:03:41.640 --> 00:03:44.520
+ And then what happens is we go into this except.
 
-00:07:09.840 --> 00:07:15.440
- Python and it needs to be sent as UTF-8 because the phone when you're in a socket
+00:03:44.520 --> 00:03:48.480
+ Now this except is I'm at the phone,
 
-00:07:15.440 --> 00:07:19.320
- the thing that's going across the socket almost always is supposed to be UTF-8
+00:03:48.480 --> 00:03:51.520
+ I've registered what my number is and what my extension is
 
-00:07:19.320 --> 00:07:25.480
- so we encode it and and then because the protocol says so as soon as we send the
+00:03:51.520 --> 00:03:53.160
+ and I'm ready to pick the phone up.
 
-00:07:25.480 --> 00:07:29.160
- data we close the connection now remember that the client had to close
+00:03:53.160 --> 00:03:54.040
+ Let me know.
 
-00:07:29.160 --> 00:07:33.040
- the connection too so we close it it's half closed and then the client gets all
+00:03:54.040 --> 00:03:55.960
+ So this except is blocking.
 
-00:07:33.040 --> 00:07:36.560
- of its data gets the indication that it closed knows it's finished all the data
+00:03:55.960 --> 00:03:58.560
+ It stops and it just sits there
 
-00:07:36.560 --> 00:07:40.840
- and then the client shuts its side down and so there are two hang-ups it's kind
+00:03:58.560 --> 00:04:01.440
+ and it can sit there forever.
 
-00:07:40.840 --> 00:07:45.320
- of like a phone call the person hangs up and then click you hang up now there's
+00:04:01.440 --> 00:04:04.200
+ You know, just literally forever.
 
-00:07:45.320 --> 00:07:49.360
- you can't really keep talking but you do want to have both sides hang up and that
+00:04:04.200 --> 00:04:06.120
+ If nobody calls it, nothing happens.
 
-00:07:49.360 --> 00:07:54.520
- shutdown is what's going on and then the rest of this is all try-except for
+00:04:06.120 --> 00:04:10.560
+ The next line never runs until you blow it up
 
-00:07:54.520 --> 00:07:58.720
- various things so we clean up our socket so we don't have to restart our server
+00:04:10.560 --> 00:04:12.000
+ or the server goes down.
 
-00:07:58.720 --> 00:08:03.280
- when our software blows up and so the rest of it's pretty simple and then so
+00:04:12.000 --> 00:04:14.040
+ So that's except is a blocking.
 
-00:08:03.280 --> 00:08:09.280
- this while one the first browser will talk and then it'll send some data and
+00:04:14.040 --> 00:04:16.320
+ And the reason we do this except,
 
-00:08:09.280 --> 00:08:12.520
- then I'll go back and wait for the next phone call and that's what's going on
+00:04:16.320 --> 00:04:19.400
+ well, we have to establish the phone call first, right?
 
-00:08:12.520 --> 00:08:16.320
- the next phone call comes in it doesn't get you sees a get request it sends the
+00:04:19.400 --> 00:04:22.360
+ So then this next line runs
 
-00:08:16.320 --> 00:08:19.720
- data back then goes and asks waits for another phone call so this is an
+00:04:22.360 --> 00:04:24.920
+ only when a phone call is received.
 
-00:08:19.720 --> 00:08:24.200
- infinite loop that sits and waits for incoming phone calls and it you know it
+00:04:24.920 --> 00:04:27.040
+ So that means that we, on the browser side,
 
-00:08:24.200 --> 00:08:28.400
- answers the same thing so it's like you call this phone number and it goes and
+00:04:27.040 --> 00:04:31.240
+ we already connected, you know, we made the phone call.
 
-00:08:28.400 --> 00:08:34.840
- you go I would like a pizza and it says hello world and then click and then you
+00:04:31.240 --> 00:04:33.560
+ Now we haven't sent any data yet, right?
 
-00:08:34.840 --> 00:08:40.240
- call it up and say I would like a car and it says hello world click and then
+00:04:33.560 --> 00:04:36.360
+ And so this is just now at this point,
 
-00:08:40.240 --> 00:08:44.800
- you say I would like to register for this class and it says hello world click
+00:04:36.360 --> 00:04:39.120
+ somewhere out there, there's a piece of client software
 
-00:08:44.800 --> 00:08:49.960
- so this is not a very flexible server you will build far more flexible servers
+00:04:39.120 --> 00:04:42.520
+ that has done a socket dot connect
 
-00:08:49.960 --> 00:08:56.360
- but it's the one I could build and fit on a single page in a slide deck so to
+00:04:42.520 --> 00:04:43.880
+ and we have done an except
 
-00:08:56.360 --> 00:09:01.640
- run this if you you know you download this code and it's tiny bit of code and
+00:04:43.880 --> 00:04:45.720
+ and our except has succeeded in the server.
 
-00:09:01.640 --> 00:09:08.080
- you run it so you go somewhere maybe your laptop maybe Python anywhere I don't
+00:04:45.720 --> 00:04:48.800
+ The connect has succeeded and we are ready to talk.
 
-00:09:08.080 --> 00:09:10.640
- know if it works on Python pride doesn't work on Python anywhere because you
+00:04:48.800 --> 00:04:50.520
+ So the phone call has been made.
 
-00:09:10.640 --> 00:09:16.240
- can't actually talk to ports but let's just run this on your laptop and you
+00:04:50.520 --> 00:04:53.440
+ Now the question is, who's gonna say hello?
 
-00:09:16.240 --> 00:09:22.480
- you start the server up somewhere get a hold of my sample code or download it
+00:04:53.440 --> 00:04:57.320
+ And this is where the HTTP protocol solves our problem.
 
-00:09:22.480 --> 00:09:26.980
- from here server dot p y and it's telling you this is just output from the
+00:04:57.320 --> 00:05:00.520
+ The server knows that the client must speak first.
 
-00:09:26.980 --> 00:09:31.240
- server and this is the moment at which it's waiting right it's waiting the
+00:05:00.520 --> 00:05:02.480
+ So it just does a receive.
 
-00:09:31.240 --> 00:09:35.600
- server could wait for hours at this point but I just give you this in a
+00:05:02.480 --> 00:05:04.560
+ Now you'll notice the receive and the send
 
-00:09:35.600 --> 00:09:38.720
- print statement so you can copy that and put it into your browser so you paste
+00:05:04.560 --> 00:05:06.600
+ are the same function calls
 
-00:09:38.720 --> 00:09:44.440
- localhost 9,000 into your browser and then the server is printing that it got
+00:05:06.600 --> 00:05:09.720
+ because it's a two-way thing.
 
-00:09:44.440 --> 00:09:50.240
- a get request for the slash document from this browser that's what the browser
+00:05:09.720 --> 00:05:13.400
+ Whatever the browser is sending, the server is receiving
 
-00:09:50.240 --> 00:09:55.760
- send I mean we're talking from Firefox browser to the little web server that we
+00:05:13.400 --> 00:05:15.520
+ and whatever the server sends, the browser receives
 
-00:09:55.760 --> 00:09:59.760
- just built now there's another a second get request that you don't even know
+00:05:15.520 --> 00:05:17.480
+ and they can do it simultaneously
 
-00:09:59.760 --> 00:10:03.720
- because you didn't ask for it and that's because the browser is built in to ask
+00:05:17.480 --> 00:05:19.400
+ if they can figure it out.
 
-00:10:03.720 --> 00:10:10.200
- for a URL called favicon.ico so that it can make an icon and that icon ends up
+00:05:19.400 --> 00:05:21.880
+ But usually you kind of like say, it's your turn to listen
 
-00:10:10.200 --> 00:10:14.240
- in the tab or wherever in your browser and so that's like an icon for the
+00:05:21.880 --> 00:05:23.960
+ and my turn to send and then I'll listen.
 
-00:10:14.240 --> 00:10:19.360
- website so you didn't ask the browser to do this but it's a thing browsers do and
+00:05:23.960 --> 00:05:26.800
+ And usually they kind of go back and forth.
 
-00:10:19.360 --> 00:10:22.520
- you'll see when you're looking at your debug logs when you're building stuff
+00:05:26.800 --> 00:05:30.440
+ In this, there's only one step.
 
-00:10:22.520 --> 00:10:27.120
- that it's a Fabico and so this this happens like blink blink and now it's
+00:05:30.440 --> 00:05:33.080
+ The server listens, gets the get request,
 
-00:10:27.120 --> 00:10:30.720
- waiting again right and you could hit refresh or you can go start up a
+00:05:33.080 --> 00:05:34.800
+ sends the data back.
 
-00:10:30.720 --> 00:10:33.720
- different browser and you would see these get requests every get request
+00:05:34.800 --> 00:05:39.720
+ And so then we're going to read some data
 
-00:10:33.720 --> 00:10:39.720
- you're gonna see in your browser and your server so it's so it's working and
+00:05:39.720 --> 00:05:41.920
+ and we're gonna get 5,000 characters.
 
-00:10:39.720 --> 00:10:43.160
- it works really well and you're welcome to go ahead and play with it and try it
+00:05:41.920 --> 00:05:42.840
+ We're gonna get the whole thing.
 
-00:10:43.160 --> 00:10:48.360
- all out so now we're gonna do is build a simple web client and then we'll talk to
+00:05:42.840 --> 00:05:45.520
+ Remember it's one line, it has a get request in it.
 
-00:10:48.360 --> 00:10:54.600
- our server so the other web client we may talk to data.pr4e.org this one is
+00:05:45.520 --> 00:05:47.880
+ It has the optional parameters in it.
 
-00:10:54.600 --> 00:11:01.320
- gonna talk to yourself so it's this it almost looks identical right we're gonna
+00:05:47.880 --> 00:05:49.440
+ And so we're gonna split it.
 
-00:11:01.320 --> 00:11:06.880
- make a phone we're making a phone we're gonna connect to localhost 127.001 is
+00:05:49.440 --> 00:05:52.200
+ Now again, we've received it as UTF-8.
 
-00:11:06.880 --> 00:11:11.240
- the IPv4 connection what's called loopback right to the same host we're
+00:05:52.200 --> 00:05:55.400
+ We've got to decode it for UTF-16.
 
-00:11:11.240 --> 00:11:14.960
- talking to port 9000 because that's where we've got our web server running
+00:05:55.400 --> 00:06:00.400
+ I mean, not UTF-16, Unicode inside of Python.
 
-00:11:14.960 --> 00:11:18.480
- that little web server we just wrote and then we're gonna send a get request a
+00:06:00.400 --> 00:06:02.440
+ And then we split it based on new lines
 
-00:11:18.480 --> 00:11:22.600
- valid get request to this thing HTTP 10 and then two new lines and we're gonna
+00:06:02.440 --> 00:06:04.560
+ 'cause the get request is on one line
 
-00:11:22.600 --> 00:11:27.000
- encode it into UTF-8 before we send it then we send it and then we just have a
+00:06:04.560 --> 00:06:06.480
+ and header, header, header, header, header, header
 
-00:11:27.000 --> 00:11:32.280
- loop that prints it all out and then when the socket gets closed we hit a
+00:06:06.480 --> 00:06:07.640
+ and then the blank line
 
-00:11:32.280 --> 00:11:36.800
- break and then we close our end of the socket so the server clicks the phone
+00:06:07.640 --> 00:06:09.320
+ to tell us that we're into the headers.
 
-00:11:36.800 --> 00:11:40.640
- and then we're no we're done with our data but we've already printed it out
+00:06:09.320 --> 00:06:10.960
+ And we're only gonna take in this,
 
-00:11:40.640 --> 00:11:45.000
- and then we hang up the phone on our end to kind of clean everything up all the
+00:06:10.960 --> 00:06:13.600
+ we're just gonna look at that first line.
 
-00:11:45.000 --> 00:11:49.920
- way in between everything else so this is a very simple web client and so now
+00:06:13.600 --> 00:06:15.160
+ We're not gonna do anything with it.
 
-00:11:49.920 --> 00:11:55.760
- you can run the web server right just like we did before and instead of
+00:06:15.160 --> 00:06:17.720
+ Most servers actually like look at the line
 
-00:11:55.760 --> 00:12:00.920
- talking in a browser we run this client and this client gets a header of HTTP 1
+00:06:17.720 --> 00:06:19.720
+ to figure out what document to send.
 
-00:12:00.920 --> 00:12:06.000
- okay it's content type HTML it gets a new line and then the body and we're
+00:06:19.720 --> 00:06:20.760
+ It's a very simple server.
 
-00:12:06.000 --> 00:12:10.500
- done now I mean it's not a browser but it is client that's talking HTTP and so
+00:06:20.760 --> 00:06:23.040
+ It sends the same document no matter what the URL is.
 
-00:12:10.500 --> 00:12:17.400
- now you'll notice that this server sort of sits and waits for incoming calls you
+00:06:23.040 --> 00:06:25.760
+ All we do with the URL is we print it out
 
-00:12:17.400 --> 00:12:21.000
- could run this over and over on the client run the client over and over
+00:06:25.760 --> 00:06:27.680
+ to prove that we got it.
 
-00:12:21.000 --> 00:12:26.760
- again right and then you would see more requests but in general the server is
+00:06:27.680 --> 00:06:30.240
+ And then we construct a response.
 
-00:12:26.760 --> 00:12:32.400
- destined to just sit and wait for hours potentially until a client connects to
+00:06:30.240 --> 00:06:34.400
+ And in this response, again, go back to RFC 2616
 
-00:12:32.400 --> 00:12:37.680
- it then at some point you'll just abort this server and then if you control C or
+00:06:34.400 --> 00:06:35.800
+ and it will tell you what this response
 
-00:12:37.680 --> 00:12:45.360
- blow this up somehow this will fail the client will fail and it will fail it
+00:06:35.800 --> 00:06:37.440
+ is supposed to look like.
 
-00:12:45.360 --> 00:12:50.040
- will fail in this connect code so if you want to play with it try to run this
+00:06:37.440 --> 00:06:39.640
+ It sends back a 200 okay.
 
-00:12:50.040 --> 00:12:53.640
- client without running the server and you'll see that the connect which is the
+00:06:39.640 --> 00:06:41.360
+ Remember this is all the stuff we saw.
 
-00:12:53.640 --> 00:12:58.320
- part of actually making the phone call this will continue to work which is make
+00:06:41.360 --> 00:06:44.400
+ Probably I cut and pasted it from a working thing.
 
-00:12:58.320 --> 00:13:02.200
- me a phone on my current computer and then connect is make a call to the
+00:06:44.400 --> 00:06:46.520
+ We tell it that we're sending it back
 
-00:13:02.200 --> 00:13:05.640
- remote computer that will blow up and then if you wanted to play with this you
+00:06:46.520 --> 00:06:50.840
+ in content type text HTML, the character set UTF-8.
 
-00:13:05.640 --> 00:13:10.280
- could put some try and accepts around it say remote computer is not responding on
+00:06:50.840 --> 00:06:52.640
+ Remember I was telling you that.
 
-00:13:10.280 --> 00:13:13.960
- port 9000 that's if you blew up you put it could put a try and accept around
+00:06:52.640 --> 00:06:55.360
+ A blank line and then some HTML.
 
-00:13:13.960 --> 00:13:20.560
- that but I'm not doing it because it don't fit on my slides so here is an
+00:06:55.360 --> 00:06:58.440
+ HTML body, hello world body.
 
-00:13:20.560 --> 00:13:25.240
- even simpler web client that we can use and you again you can get this code from
+00:06:58.440 --> 00:07:00.880
+ And I'm throwing in these /r/n's
 
-00:13:25.240 --> 00:13:33.640
- my sample code we don't talk to this we there's a higher level thing that so the
+00:07:00.880 --> 00:07:04.520
+ which is the network's version of new lines.
 
-00:13:33.640 --> 00:13:37.520
- the previous client talked to sockets so I could show you the low level but
+00:07:04.520 --> 00:07:08.000
+ And then you will notice that I encode it before I send it
 
-00:13:37.520 --> 00:13:42.600
- because we spend so much time talking about to URLs we then have a URL lib so
+00:07:08.000 --> 00:07:10.880
+ because it's Unicode inside of Python
 
-00:13:42.600 --> 00:13:47.680
- I'm just going to use URL lib I'm gonna and this could be a local host or it
+00:07:10.880 --> 00:07:12.720
+ and it needs to be sent as UTF-8
 
-00:13:47.680 --> 00:13:53.240
- could be whatever I'm just gonna make a four line URL lib call and so I just do
+00:07:12.720 --> 00:07:15.680
+ because the phone, when you're in a socket,
 
-00:13:53.240 --> 00:13:58.840
- a URL open of that same URL now we're operating at the HTTP level because URL
+00:07:15.680 --> 00:07:17.240
+ the thing that's going across the socket
 
-00:13:58.840 --> 00:14:02.720
- the concept of URL is not a socket concept the concept of URL is HTTP
+00:07:17.240 --> 00:07:19.800
+ almost always is supposed to be UTF-8.
 
-00:14:02.720 --> 00:14:07.560
- concept and we just get an effect what looks like a file handle to us and we
+00:07:19.800 --> 00:07:21.480
+ So we encode it.
 
-00:14:07.560 --> 00:14:12.200
- loop through it and print it all out so we run our server and the server sort of
+00:07:21.480 --> 00:07:24.520
+ And then because the protocol says so,
 
-00:14:12.200 --> 00:14:17.400
- says this and waits and then we run our client it basically hits our server and
+00:07:24.520 --> 00:07:27.000
+ as soon as we send the data, we close the connection.
 
-00:14:17.400 --> 00:14:21.280
- we can see in the server window you got to do these two things in two windows
+00:07:27.000 --> 00:07:30.560
+ Now remember that the client had to close the connection too.
 
-00:14:21.280 --> 00:14:24.760
- right you got to do these things in two separate windows so in the server window
+00:07:30.560 --> 00:07:32.120
+ So we close it, it's half closed
 
-00:14:24.760 --> 00:14:28.520
- you'll it'll sit and wait and then in the client window when it runs you'll
+00:07:32.120 --> 00:07:34.080
+ and then the client gets all of its data,
 
-00:14:28.520 --> 00:14:32.120
- see the client will make the request to the server or blow up with the server
+00:07:34.080 --> 00:07:35.400
+ gets the indication that it closed,
 
-00:14:32.120 --> 00:14:35.880
- not running and the server will see the get request and then the data will come
+00:07:35.400 --> 00:07:36.880
+ knows it's finished all the data
 
-00:14:35.880 --> 00:14:39.520
- back to the client so you sort of do this in in two things and you can run
+00:07:36.880 --> 00:07:38.440
+ and then the client shuts its side down.
 
-00:14:39.520 --> 00:14:42.760
- the client over and over and over again and you'll see every time you run the
+00:07:38.440 --> 00:07:40.400
+ And so there are two hangups.
 
-00:14:42.760 --> 00:14:48.880
- client the the server sees it responds and away you go and again our server
+00:07:40.400 --> 00:07:42.160
+ It's kind of like a phone call.
 
-00:14:48.880 --> 00:14:54.200
- always says hello world no matter what which is delightful and classic it's a
+00:07:42.160 --> 00:07:44.920
+ The person hangs up and then click you hang up.
 
-00:14:54.200 --> 00:15:01.960
- classic so you actually can watch when you're running Django there will be a
+00:07:44.920 --> 00:07:47.160
+ Now you can't really keep talking
 
-00:15:01.960 --> 00:15:06.280
- way for you to see when you're running Django locally and you start the server
+00:07:47.160 --> 00:07:49.120
+ but you do want to have both sides hang up
 
-00:15:06.280 --> 00:15:11.160
- up this managed three don't do this later managed pie dot run server and
+00:07:49.120 --> 00:07:51.680
+ and that shutdown is what's going on.
 
-00:15:11.160 --> 00:15:16.320
- then you talk to it and you will see all the get requests and so Django when you
+00:07:51.680 --> 00:07:54.320
+ And then the rest of this is all try-except
 
-00:15:16.320 --> 00:15:20.800
- run it local you can debug a lot of what's going on so you see the you can
+00:07:54.320 --> 00:07:55.200
+ for various things.
 
-00:15:20.800 --> 00:15:27.040
- see like the favicon that it's asking for and that is no five or six HTTP
+00:07:55.200 --> 00:07:56.960
+ So we clean up our socket.
 
-00:15:27.040 --> 00:15:31.800
- requests to produce that little Django web page and so that that will be
+00:07:56.960 --> 00:07:58.960
+ So we don't have to restart our server
 
-00:15:31.800 --> 00:15:38.640
- something that you will learn how to do and so so that sums up what we were
+00:07:58.960 --> 00:08:00.320
+ when our software blows up
 
-00:15:38.640 --> 00:15:44.200
- doing in this you know at the beginning you look at it very simply pretty soon
+00:08:00.320 --> 00:08:02.400
+ and so the rest of it's pretty simple.
 
-00:15:44.200 --> 00:15:47.560
- you'll just be looking at the developer console and it'll all make sense to you
+00:08:02.400 --> 00:08:05.760
+ And then, so this while one,
 
-00:15:47.560 --> 00:15:51.520
- I want you to be able to know that you can dig as deep as you want to and
+00:08:05.760 --> 00:08:07.480
+ the first browser will talk
 
-00:15:51.520 --> 00:16:09.040
- understand all of these protocols that are going back and forth okay cheers
+00:08:07.480 --> 00:08:09.160
+ and then it'll send some data
+
+00:08:09.160 --> 00:08:11.680
+ and then it'll go back and wait for the next phone call.
+
+00:08:11.680 --> 00:08:12.720
+ And that's what's going on.
+
+00:08:12.720 --> 00:08:13.960
+ The next phone call comes in,
+
+00:08:13.960 --> 00:08:16.880
+ it sees a get request, it sends the data back
+
+00:08:16.880 --> 00:08:19.080
+ then goes and waits for another phone call.
+
+00:08:19.080 --> 00:08:20.760
+ So this is an infinite loop
+
+00:08:20.760 --> 00:08:22.920
+ that sits and waits for incoming phone calls
+
+00:08:22.920 --> 00:08:25.360
+ and it answers the same thing.
+
+00:08:25.360 --> 00:08:27.680
+ So it's like you call this phone number
+
+00:08:27.680 --> 00:08:31.880
+ and it goes, and you go, I would like a pizza.
+
+00:08:31.880 --> 00:08:34.480
+ And it says, hello world, and then click
+
+00:08:34.480 --> 00:08:37.640
+ and then you call it up and say, I would like a car.
+
+00:08:37.640 --> 00:08:39.960
+ And it says, hello world, click.
+
+00:08:39.960 --> 00:08:43.480
+ And then you say, I would like to register for this class.
+
+00:08:43.480 --> 00:08:44.800
+ And it says, hello world, click.
+
+00:08:44.800 --> 00:08:47.200
+ So this is not a very flexible server.
+
+00:08:47.200 --> 00:08:49.240
+ You will build far more flexible servers
+
+00:08:49.240 --> 00:08:51.920
+ but it's the one I could build
+
+00:08:51.920 --> 00:08:56.040
+ and fit on a single page in a slide deck.
+
+00:08:56.040 --> 00:09:00.360
+ So to run this, if you download this code
+
+00:09:00.360 --> 00:09:02.520
+ and it's tiny bit of code and you run it,
+
+00:09:02.520 --> 00:09:05.360
+ so you go somewhere, maybe your laptop,
+
+00:09:05.360 --> 00:09:09.080
+ maybe Python anywhere, I don't know if it works on Python,
+
+00:09:09.080 --> 00:09:10.400
+ probably doesn't work on Python anywhere
+
+00:09:10.400 --> 00:09:12.280
+ 'cause you can't actually talk to ports.
+
+00:09:12.280 --> 00:09:15.240
+ But let's just run this on your laptop
+
+00:09:15.240 --> 00:09:19.680
+ and you start the server up somewhere,
+
+00:09:19.680 --> 00:09:22.920
+ get ahold of my sample code or download it from here,
+
+00:09:22.920 --> 00:09:25.800
+ server.py and it's telling you,
+
+00:09:25.800 --> 00:09:27.640
+ this is just output from the server
+
+00:09:27.640 --> 00:09:30.080
+ and this is the moment at which it's waiting, right?
+
+00:09:30.080 --> 00:09:31.120
+ It's waiting.
+
+00:09:31.120 --> 00:09:34.400
+ The server could wait for hours at this point.
+
+00:09:34.400 --> 00:09:36.120
+ But I just give you this in a print statement
+
+00:09:36.120 --> 00:09:38.240
+ so you can copy that and put it into your browser.
+
+00:09:38.240 --> 00:09:41.600
+ So you paste localhost 9000 into your browser
+
+00:09:41.600 --> 00:09:45.720
+ and then the server is printing that it got a get request
+
+00:09:45.720 --> 00:09:49.400
+ for the slash document from this browser.
+
+00:09:49.400 --> 00:09:50.720
+ That's what the browser send.
+
+00:09:50.720 --> 00:09:54.320
+ I mean, we're talking from Firefox browser
+
+00:09:54.320 --> 00:09:57.040
+ to the little web server that we just built.
+
+00:09:57.040 --> 00:09:58.920
+ Now there's another, a second get request
+
+00:09:58.920 --> 00:10:01.640
+ that you don't even know 'cause you didn't ask for it
+
+00:10:01.640 --> 00:10:03.440
+ and that's because the browser is built in
+
+00:10:03.440 --> 00:10:07.280
+ to ask for a URL called favicon.ico
+
+00:10:07.280 --> 00:10:09.200
+ so that it can make an icon
+
+00:10:09.200 --> 00:10:11.480
+ and that icon ends up in the tab
+
+00:10:11.480 --> 00:10:12.800
+ or wherever in your browser
+
+00:10:12.800 --> 00:10:15.280
+ and so that's like an icon for the website.
+
+00:10:15.280 --> 00:10:17.840
+ So you didn't ask the browser to do this
+
+00:10:17.840 --> 00:10:19.200
+ but it's a thing browsers do
+
+00:10:19.200 --> 00:10:21.600
+ and you'll see when you're looking at your debug logs
+
+00:10:21.600 --> 00:10:23.720
+ when you're building stuff that it's a Fabico.
+
+00:10:23.720 --> 00:10:26.680
+ And so this happens like blink blink
+
+00:10:26.680 --> 00:10:28.480
+ and now it's waiting again, right?
+
+00:10:28.480 --> 00:10:29.920
+ And you can hit refresh
+
+00:10:29.920 --> 00:10:31.720
+ or you can go start up a different browser
+
+00:10:31.720 --> 00:10:32.960
+ and you would see these get requests.
+
+00:10:32.960 --> 00:10:35.320
+ Every get request you're gonna see
+
+00:10:35.320 --> 00:10:37.800
+ in your browser and your server.
+
+00:10:37.800 --> 00:10:40.600
+ So it's working and it works really well
+
+00:10:40.600 --> 00:10:42.680
+ and you're welcome to go ahead and play with it
+
+00:10:42.680 --> 00:10:43.800
+ and try it all out.
+
+00:10:43.800 --> 00:10:47.600
+ So now what we're gonna do is build a simple web client
+
+00:10:47.600 --> 00:10:49.920
+ and that'll talk to our server.
+
+00:10:49.920 --> 00:10:54.040
+ So the other web client we made talked to data.prfree.org.
+
+00:10:54.040 --> 00:10:57.200
+ This one is gonna talk to yourself.
+
+00:10:57.200 --> 00:11:00.960
+ So it almost looks identical, right?
+
+00:11:00.960 --> 00:11:02.400
+ We're gonna make a phone.
+
+00:11:02.400 --> 00:11:04.000
+ We're making a phone.
+
+00:11:04.000 --> 00:11:06.720
+ We're gonna connect to local host 127.0.0.1
+
+00:11:06.720 --> 00:11:08.720
+ is the IPv4 connection
+
+00:11:08.720 --> 00:11:11.040
+ what's called loopback right to the same host.
+
+00:11:11.040 --> 00:11:12.720
+ We're talking to port 9000
+
+00:11:12.720 --> 00:11:14.960
+ because that's where we've got our web server running
+
+00:11:14.960 --> 00:11:17.040
+ that little web server we just wrote.
+
+00:11:17.040 --> 00:11:18.400
+ And then we're gonna send a get request
+
+00:11:18.400 --> 00:11:21.280
+ a valid get request to this thing htp10
+
+00:11:21.280 --> 00:11:22.280
+ and then two new lines
+
+00:11:22.280 --> 00:11:25.000
+ and we're gonna encode it into UTF-8 before we send it.
+
+00:11:25.000 --> 00:11:27.360
+ Then we send it and then we just have a loop
+
+00:11:27.360 --> 00:11:28.360
+ that prints it all out.
+
+00:11:28.360 --> 00:11:32.720
+ And then when the socket gets closed, we hit a break
+
+00:11:32.720 --> 00:11:34.480
+ and then we close our end of the socket.
+
+00:11:34.480 --> 00:11:37.360
+ So the server clicks the phone
+
+00:11:37.360 --> 00:11:39.560
+ and then we know we're done with our data
+
+00:11:39.560 --> 00:11:40.800
+ but we've already printed it out
+
+00:11:40.800 --> 00:11:42.920
+ and then we hang up the phone on our end
+
+00:11:42.920 --> 00:11:44.640
+ to kind of clean everything up
+
+00:11:44.640 --> 00:11:47.080
+ all the way in between everything else.
+
+00:11:47.080 --> 00:11:49.200
+ So this is a very simple web client.
+
+00:11:49.200 --> 00:11:53.280
+ And so now you can run the web server, right?
+
+00:11:53.280 --> 00:11:54.920
+ Just like we did before.
+
+00:11:54.920 --> 00:11:58.520
+ And instead of talking in a browser, we run this client.
+
+00:11:58.520 --> 00:12:01.360
+ And this client gets a header of HTTP/1.0/k,
+
+00:12:01.360 --> 00:12:03.680
+ it's content type HTML.
+
+00:12:03.680 --> 00:12:06.160
+ It gets a new line and then the body and we're done.
+
+00:12:06.160 --> 00:12:07.840
+ Now, I mean, it's not a browser
+
+00:12:07.840 --> 00:12:10.120
+ but it is a client that's talking HTTP.
+
+00:12:10.120 --> 00:12:13.960
+ And so now you'll notice that this server
+
+00:12:13.960 --> 00:12:17.200
+ sort of sits and waits for incoming calls.
+
+00:12:17.200 --> 00:12:19.640
+ You could run this over and over on the client,
+
+00:12:19.640 --> 00:12:22.280
+ run the client over and over again, right?
+
+00:12:23.800 --> 00:12:25.520
+ And then you would see more requests
+
+00:12:25.520 --> 00:12:27.600
+ but in general the server is destined
+
+00:12:27.600 --> 00:12:29.880
+ to just sit and wait for hours potentially
+
+00:12:29.880 --> 00:12:33.480
+ until a client connects to it.
+
+00:12:33.480 --> 00:12:35.880
+ And then at some point, you'll just abort this server
+
+00:12:35.880 --> 00:12:39.200
+ and then if you control C or blow this up somehow,
+
+00:12:39.200 --> 00:12:42.160
+ this will fail, the client will fail
+
+00:12:42.160 --> 00:12:47.160
+ and it will fail in this connect code.
+
+00:12:47.160 --> 00:12:49.520
+ So if you wanna play with it,
+
+00:12:49.520 --> 00:12:51.840
+ try to run this client without running the server
+
+00:12:51.840 --> 00:12:53.200
+ and you'll see that the connect,
+
+00:12:53.200 --> 00:12:56.640
+ which is the part of actually making the phone call,
+
+00:12:56.640 --> 00:12:57.720
+ this will continue to work,
+
+00:12:57.720 --> 00:13:00.560
+ which is make me a phone on my current computer
+
+00:13:00.560 --> 00:13:03.400
+ and then connect is make a call to the remote computer,
+
+00:13:03.400 --> 00:13:04.360
+ that will blow up.
+
+00:13:04.360 --> 00:13:05.600
+ And then if you wanted to play with this,
+
+00:13:05.600 --> 00:13:07.440
+ you could put some try and accepts around it,
+
+00:13:07.440 --> 00:13:11.440
+ say remote computer is not responding on port 9000.
+
+00:13:11.440 --> 00:13:12.600
+ That's if you blew up,
+
+00:13:12.600 --> 00:13:15.560
+ you could put a try and accept around that.
+
+00:13:15.560 --> 00:13:18.520
+ But I'm not doing it because it don't fit on my slides.
+
+00:13:19.920 --> 00:13:23.280
+ So here is an even simpler web client that we can use.
+
+00:13:23.280 --> 00:13:26.320
+ And again, you can get this code from my sample code.
+
+00:13:26.320 --> 00:13:32.640
+ We don't talk to this, there's a higher level thing that,
+
+00:13:32.640 --> 00:13:35.760
+ so the previous client talked to sockets
+
+00:13:35.760 --> 00:13:37.440
+ so I could show you the low level,
+
+00:13:37.440 --> 00:13:40.480
+ but because we spend so much time talking about to URLs,
+
+00:13:40.480 --> 00:13:42.480
+ we then have a URL lib.
+
+00:13:42.480 --> 00:13:44.320
+ So I'm just gonna use URL lib.
+
+00:13:44.320 --> 00:13:47.520
+ I'm gonna, and this could be a local host
+
+00:13:47.520 --> 00:13:48.480
+ or it could be whatever.
+
+00:13:48.480 --> 00:13:52.360
+ I'm just gonna make a four line URL lib call.
+
+00:13:52.360 --> 00:13:55.800
+ And so I just do a URL open of that same URL.
+
+00:13:55.800 --> 00:13:58.320
+ Now we're operating at the HTTP level
+
+00:13:58.320 --> 00:14:01.280
+ 'cause URL, the concept of URL is not a socket concept,
+
+00:14:01.280 --> 00:14:04.240
+ the concept of URL is HTTP concept.
+
+00:14:04.240 --> 00:14:07.040
+ Then we just get an effect what looks like a file handle
+
+00:14:07.040 --> 00:14:10.160
+ to us and we loop through it and print it all out.
+
+00:14:10.160 --> 00:14:11.360
+ So we run our server
+
+00:14:11.360 --> 00:14:14.200
+ and the server sort of says this and waits.
+
+00:14:14.200 --> 00:14:17.320
+ And then we run our client, it basically hits our server
+
+00:14:17.320 --> 00:14:18.600
+ and we can see in the server window,
+
+00:14:18.600 --> 00:14:21.560
+ you gotta do these two things in two windows, right?
+
+00:14:21.560 --> 00:14:23.880
+ You gotta do these things in two separate windows.
+
+00:14:23.880 --> 00:14:26.080
+ So in the server window, it'll sit and wait
+
+00:14:26.080 --> 00:14:28.400
+ and then in the client window, when it runs,
+
+00:14:28.400 --> 00:14:31.320
+ you'll see the client will make the request to the server
+
+00:14:31.320 --> 00:14:33.240
+ or blow up with the server not running.
+
+00:14:33.240 --> 00:14:35.120
+ And the server will see the get request
+
+00:14:35.120 --> 00:14:36.600
+ and then the data will come back to the client.
+
+00:14:36.600 --> 00:14:38.920
+ So you sort of do this in two things
+
+00:14:38.920 --> 00:14:41.600
+ and you can run the client over and over and over again
+
+00:14:41.600 --> 00:14:43.720
+ and you'll see every time you run the client,
+
+00:14:43.720 --> 00:14:48.120
+ the server sees it, responds and away you go.
+
+00:14:48.120 --> 00:14:50.240
+ And again, our server always says hello world,
+
+00:14:50.240 --> 00:14:53.960
+ no matter what, which is delightful and classic.
+
+00:14:53.960 --> 00:14:54.920
+ It's a classic.
+
+00:14:54.920 --> 00:15:01.440
+ So you actually can watch when you're running Django,
+
+00:15:01.440 --> 00:15:03.820
+ there will be a way for you to see
+
+00:15:03.820 --> 00:15:05.320
+ when you're running Django locally
+
+00:15:05.320 --> 00:15:07.080
+ and you start the server up.
+
+00:15:07.080 --> 00:15:09.400
+ This managed three don't, we'll do this later,
+
+00:15:09.400 --> 00:15:12.520
+ managed pi.runserver and then you talk to it
+
+00:15:12.520 --> 00:15:14.560
+ and you will see all the get requests.
+
+00:15:14.560 --> 00:15:16.960
+ And so Django, when you run it locally,
+
+00:15:16.960 --> 00:15:19.480
+ you can debug a lot of what's going on.
+
+00:15:19.480 --> 00:15:23.560
+ So you can see like the favicon that it's asking for
+
+00:15:23.560 --> 00:15:27.560
+ and that is five or six HTTP requests
+
+00:15:27.560 --> 00:15:30.520
+ to produce that little Django webpage.
+
+00:15:30.520 --> 00:15:35.320
+ And so that will be something that you will learn how to do.
+
+00:15:35.320 --> 00:15:39.660
+ And so that sums up what we were doing in this.
+
+00:15:41.560 --> 00:15:43.680
+ At the beginning, you look at it very simply,
+
+00:15:43.680 --> 00:15:46.380
+ pretty soon you'll just be looking at the developer console
+
+00:15:46.380 --> 00:15:47.660
+ and it'll all make sense to you.
+
+00:15:47.660 --> 00:15:50.060
+ I want you to be able to know that you can dig
+
+00:15:50.060 --> 00:15:52.480
+ as deep as you want to and understand
+
+00:15:52.480 --> 00:15:55.800
+ all of these protocols that are going back and forth.
+
+00:15:55.800 --> 00:15:57.040
+ Okay, cheers.
+
+00:15:57.040 --> 00:15:59.620
+ (upbeat music)
 

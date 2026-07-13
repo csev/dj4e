@@ -1457,20 +1457,20 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.01 Review: URL Routing (6:59)",
+                    "title": "DJ 10.01 Review: URL Routing in Django (6:59)",
                     "youtube": "AQFC13D2mRM",
                     "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.02 Review: Views (6:19)",
+                    "title": "DJ 10.02 Review: Django Views (6:19)",
                     "youtube": "9Qk4vJMssMo",
                     "project": "DJ 06 Views 02 Views",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.04 Review: Templates (10:05)",
+                    "title": "DJ 10.04 Review: Using Templates in Django (10:05)",
                     "youtube": "mTvWrpMGWBA",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
@@ -2297,43 +2297,43 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.01 Review: URL Routing (6:59)",
+                    "title": "DJ 10.01 Review: URL Routing in Django (6:59)",
                     "youtube": "AQFC13D2mRM",
                     "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.02 Review: Views (6:19)",
+                    "title": "DJ 10.02 Review: Django Views (6:19)",
                     "youtube": "9Qk4vJMssMo",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.04 Review: Templates (10:05)",
+                    "title": "DJ 10.04 Review: Using Templates in Django (10:05)",
                     "youtube": "mTvWrpMGWBA",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.06 Review: Template Inheritance (6:05)",
+                    "title": "DJ 10.06 Review: Inheritance in Django Templates (6:06)",
                     "youtube": "IMgml67lH9Y",
                     "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.07 Review: Reversing URLs (12:52)",
+                    "title": "DJ 10.07 Review: Reversing Django URLs (12:52)",
                     "youtube": "YT60BZJjySg",
                     "media": "lesson-10-views/07-DJ-06-Views-07-Reverse.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 12.01 Review: Generic Views (16:28)",
+                    "title": "DJ 12.01 Review: Understanding Django Generic Views (16:28)",
                     "youtube": "uPRabryhv5k",
                     "media": "lesson-12-generic/01-DJ-06-Views-08-Generic.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 17.01 Review: Django Forms (13:56)",
+                    "title": "DJ 17.01 Review: Using Django Forms Capabilities (13:26)",
                     "youtube": "bYlgvmAPrp0",
                     "media": "lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v"
                 },
@@ -2384,35 +2384,35 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.02 (Review) Django Views",
+                    "title": "DJ 10.02 Review: Django Views (6:19)",
                     "youtube": "9Qk4vJMssMo",
                     "project": "DJ 06 Views 02 Views",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 10.04 (Review) Using Templates in Django",
+                    "title": "DJ 10.04 Review: Using Templates in Django (10:05)",
                     "youtube": "mTvWrpMGWBA",
                     "project": "DJ 06 Views 04 Templates",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 13.06 (Review) Implementing POST Redirect in Django",
+                    "title": "DJ 13.06 Review: Implementing POST Redirect in Django (8:04)",
                     "project": "DJ-10-Forms-06-Redirect",
                     "youtube": "a_ahU4F1V2g",
                     "media": "lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 14.02 (Review) Using Sessions in Django",
+                    "title": "DJ 14.02 Review: Using Sessions in Django (12:33)",
                     "project": "DJ-08-Cookies-02-Sessions",
                     "youtube": "RjykNmVdcgI",
                     "media": "lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 16.03 (Review) Login and Views in Django",
+                    "title": "DJ 16.03 Review: Login and Views in Django (10:15)",
                     "project": "DJ-09-Login-03-Views",
                     "youtube": "n5Xwqz1IJck",
                     "media": "lesson-16-users/03-DJ-09-Login-03-Views.m4v"
@@ -3628,7 +3628,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 23.02 DJ4E Samples Walkthrough - myarts (review) (30:13)",
+                    "title": "DJ 23.02 Review: Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
                     "youtube": "iHvJZ_lvXB4",
                     "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
@@ -4882,7 +4882,7 @@
                 },
                 {
                     "type": "video",
-                    "title": "DJ 23.02 DJ4E Samples Walkthrough - myarts (review) (30:13)",
+                    "title": "DJ 23.02 Review: Walking through the DJ4E My Articles (myarts) Sample Code (30:13)",
                     "youtube": "iHvJZ_lvXB4",
                     "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },

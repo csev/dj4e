@@ -1,1008 +1,1480 @@
 1
-00:00:00,000 --> 00:00:05,560
- Hypertext Transfer Protocol is the protocol that browsers use to talk to servers.
+00:00:00,000 --> 00:00:03,660
+ Hypertext Transfer Protocol is the protocol
 
 2
-00:00:05,560 --> 00:00:10,720
- Now we've used it for all kinds of other things because it turns out that it's a super simple
+00:00:03,660 --> 00:00:05,560
+ that browsers use to talk to servers.
 
 3
-00:00:10,720 --> 00:00:12,920
- and super elegant protocol.
+00:00:05,560 --> 00:00:07,980
+ Now we've used it for all kinds of other things
 
 4
-00:00:12,920 --> 00:00:15,060
- This goes to a long time ago.
+00:00:07,980 --> 00:00:10,740
+ because it turns out that it's a super simple
 
 5
-00:00:15,060 --> 00:00:21,960
- This protocol was invented in 1990, which is like going on 30 years ago.
+00:00:10,740 --> 00:00:12,760
+ and super elegant protocol.
 
 6
-00:00:21,960 --> 00:00:26,520
- Yeah, going on 30 years ago now or more.
+00:00:12,760 --> 00:00:14,960
+ Now this goes to a long time ago.
 
 7
-00:00:26,520 --> 00:00:28,160
- And there were many protocols.
+00:00:14,960 --> 00:00:17,660
+ This protocol was invented in 1990,
 
 8
-00:00:28,160 --> 00:00:32,560
- You would have one piece of software, and there was server software and client software.
+00:00:17,660 --> 00:00:21,920
+ which is like going on 30 years ago.
 
 9
-00:00:32,560 --> 00:00:36,760
- You had to match them up, and then you'd talk to the right port with this server software.
+00:00:21,920 --> 00:00:24,380
+ Yeah, going on 30 years ago now or more.
 
 10
-00:00:36,760 --> 00:00:42,520
- And one of the inventions of Tim Berners-Lee and Robert Caillou at CERN was that we came
+00:00:24,380 --> 00:00:28,040
+ And there were many protocols.
 
 11
-00:00:42,520 --> 00:00:47,280
- up with this notion of instead of lots of pieces of software, we would have one piece
+00:00:28,040 --> 00:00:30,560
+ You would have one piece of software
 
 12
-00:00:47,280 --> 00:00:52,260
- of software called the web browser, and it would be multi-protocol.
+00:00:30,560 --> 00:00:32,500
+ and there was server software and client software.
 
 13
-00:00:52,260 --> 00:00:56,200
- And so we have this thing called the URL, or Uniform Resource Locator, and we just sling
+00:00:32,500 --> 00:00:34,200
+ You had to match them up and then you'd talk
 
 14
-00:00:56,200 --> 00:00:57,200
- these around.
+00:00:34,200 --> 00:00:36,640
+ to the right port with this server software.
 
 15
-00:00:57,200 --> 00:00:58,520
- We couldn't use them.
+00:00:36,640 --> 00:00:38,880
+ And one of the inventions of Tim Berners-Lee
 
 16
-00:00:58,520 --> 00:01:03,600
- But these things, this was itself an amazing innovation in 1990, because in the old days
+00:00:38,880 --> 00:00:42,780
+ and Robert Caillou at CERN was that we came up
 
 17
-00:01:03,600 --> 00:01:07,760
- it would be like, use this piece of software and talk to this address.
+00:00:42,780 --> 00:00:46,500
+ with this notion of instead of lots of pieces of software,
 
 18
-00:01:07,760 --> 00:01:12,800
- So the URL captured three really important, very separate things.
+00:00:46,500 --> 00:00:49,440
+ we would have one piece of software called the web browser
 
 19
-00:01:12,800 --> 00:01:16,160
- The first thing it did is it allowed for multiple protocols.
+00:00:49,440 --> 00:00:52,120
+ and it would be multi-protocol.
 
 20
-00:01:16,160 --> 00:01:22,000
- The one that you mostly have seen is HTTP or HTTPS, but that's a protocol, FTP colon
+00:00:52,120 --> 00:00:53,960
+ And so we have this thing called the URL
 
 21
-00:01:22,000 --> 00:01:25,120
- or mail to colon might be the other ones that you've seen.
+00:00:53,960 --> 00:00:55,160
+ or Uniform Resource Locator.
 
 22
-00:01:25,120 --> 00:01:27,960
- And then a host and then a document.
+00:00:55,160 --> 00:00:58,400
+ And we just sling these around, we just use them.
 
 23
-00:01:27,960 --> 00:01:35,600
- And that host is a domain name, which is a nice symbolic way to get a server address.
+00:00:58,400 --> 00:01:01,960
+ But these things, this was itself an amazing innovation
 
 24
-00:01:35,600 --> 00:01:42,360
- And that eventually resolves to an IP address like 141.206.14.22 or something.
+00:01:01,960 --> 00:01:04,400
+ in 1990 'cause in the old days it'd be like,
 
 25
-00:01:42,360 --> 00:01:47,840
- And then the document within that server, that /page1.htm, is the document in the server.
+00:01:04,400 --> 00:01:07,640
+ use this piece of software and talk to this address.
 
 26
-00:01:47,840 --> 00:01:53,480
- And I'm just saying, before 1990, there were many protocols and we did many things.
+00:01:07,640 --> 00:01:11,780
+ So the URL captured three really important,
 
 27
-00:01:53,480 --> 00:02:01,160
- But after 1990, this one protocol, HTTP, found its way into so many awesome solutions that
+00:01:11,780 --> 00:01:12,800
+ very separate things.
 
 28
-00:02:01,160 --> 00:02:07,320
- it's by far, other than email, the dominant protocol that we use on the internet.
+00:01:12,800 --> 00:01:16,060
+ The first thing it did is it allowed for multiple protocols.
 
 29
-00:02:07,320 --> 00:02:12,080
- Like I said, it was invented at CERN by Tim Berners-Lee and Robert Caillou to retrieve documents and
+00:01:16,060 --> 00:01:19,680
+ Now the one that you mostly have seen is HTTP or HTTPS,
 
 30
-00:02:12,080 --> 00:02:13,760
- images.
+00:01:19,680 --> 00:01:23,040
+ that's a protocol, FTP colon or mail to colon
 
 31
-00:02:13,760 --> 00:02:17,600
- And as soon as they built it, because it was all the other protocols that came, most of
+00:01:23,040 --> 00:01:25,040
+ might be the other ones that you've seen.
 
 32
-00:02:17,600 --> 00:02:22,200
- the other protocols, were kind of complex because we're computer scientists and we make
+00:01:25,040 --> 00:01:27,920
+ And then a host and then a document.
 
 33
-00:02:22,200 --> 00:02:24,440
- complex things and we love complex things.
+00:01:27,920 --> 00:01:29,560
+ And that host is a domain name,
 
 34
-00:02:24,440 --> 00:02:27,520
- And we're very, very good at complex things.
+00:01:29,560 --> 00:01:34,560
+ which is a nice symbolic way to get a server address.
 
 35
-00:02:27,520 --> 00:02:34,560
- But this was, you know, when the web was being built, Tim and Robert were not like, we're
+00:01:34,560 --> 00:01:38,400
+ And that eventually resolves to an IP address
 
 36
-00:02:34,560 --> 00:02:36,520
- going to make the greatest thing ever.
+00:01:38,400 --> 00:01:42,160
+ like 141.206.14.22 or something.
 
 37
-00:02:36,520 --> 00:02:38,560
- We're just going to make a simple thing.
+00:01:42,160 --> 00:01:43,960
+ And then the document within that server
 
 38
-00:02:38,560 --> 00:02:43,160
- So they made a simple thing, but it turned out to be the greatest thing ever because
+00:01:43,960 --> 00:01:47,720
+ and that /page1.htm is the document in the server.
 
 39
-00:02:43,160 --> 00:02:47,780
- different engineers would be like, oh, wow, I can use that a little different way.
+00:01:47,720 --> 00:01:50,520
+ And I'm just saying before 1990,
 
 40
-00:02:47,780 --> 00:02:50,120
- And the grounding of it was super simple.
+00:01:50,520 --> 00:01:53,360
+ there were many protocols and we did many things.
 
 41
-00:02:50,120 --> 00:02:54,680
- And the basic concept was you connect to a server, you figure out where it is, you send
+00:01:53,360 --> 00:01:57,400
+ But after 1990, this one protocol, HTTP,
 
 42
-00:02:54,680 --> 00:03:00,500
- a single command with a bit of extra data, and then you get back something, a document.
+00:01:57,400 --> 00:02:01,100
+ found its way into so many awesome solutions
 
 43
-00:03:00,500 --> 00:03:03,560
- It could be an image, it could be data, it could be HTML.
+00:02:01,100 --> 00:02:03,040
+ that it's by far, other than email,
 
 44
-00:03:03,560 --> 00:03:07,040
- And it was really amazing, right?
+00:02:03,040 --> 00:02:05,880
+ the dominant protocol that we use on the internet.
 
 45
-00:03:07,040 --> 00:03:11,880
- And so the sockets, the underlying sockets are the things that make the phone call.
+00:02:05,880 --> 00:02:09,400
+ Like I said, it was invented at CERN
 
 46
-00:03:11,880 --> 00:03:17,800
- HTTP is what we do once this phone call has been established.
+00:02:09,400 --> 00:02:11,040
+ by Tim Berners-Lee and Robert Caillou
 
 47
-00:03:17,800 --> 00:03:22,320
- So one of the things that made the internet so successful starting in the 1960s was a
+00:02:11,040 --> 00:02:13,040
+ to retrieve documents and images.
 
 48
-00:03:22,320 --> 00:03:29,240
- radical openness, a very, we're all around the same campfire feeling, very friendly,
+00:02:13,040 --> 00:02:15,080
+ And as soon as they built it,
 
 49
-00:03:29,240 --> 00:03:31,760
- respectful, that still allowed criticism.
+00:02:15,080 --> 00:02:17,340
+ because it was all the other protocols that came,
 
 50
-00:03:31,760 --> 00:03:36,600
- There wasn't like one super genius that designed this or one company that designed this.
+00:02:17,340 --> 00:02:19,680
+ most of the other protocols were kind of complex
 
 51
-00:03:36,600 --> 00:03:38,400
- This was a collaboration.
+00:02:19,680 --> 00:02:21,860
+ because we're computer scientists
 
 52
-00:03:38,400 --> 00:03:41,840
- And the collaboration was around a set of open standards and meetings to help build
+00:02:21,860 --> 00:02:23,000
+ and we make complex things.
 
 53
-00:03:41,840 --> 00:03:42,840
- these standards.
+00:02:23,000 --> 00:02:24,240
+ And we love complex things.
 
 54
-00:03:42,840 --> 00:03:47,120
- And they were called RFCs, they were called Request for Comments.
+00:02:24,240 --> 00:02:27,460
+ And we're very, very good at complex things.
 
 55
-00:03:47,120 --> 00:03:51,880
- And there was a group that built these called the Internet Engineering Task Force, the IETF.
+00:02:27,460 --> 00:02:31,040
+ But this was, when the web was being built,
 
 56
-00:03:51,880 --> 00:03:55,760
- And the Request for Comments is a fun notion.
+00:02:31,040 --> 00:02:34,480
+ Tim and Robert were not like,
 
 57
-00:03:55,760 --> 00:04:02,920
- We're looking here at a September 1981 document, which is 40 years old about now.
+00:02:34,480 --> 00:02:36,400
+ we're gonna make the greatest thing ever.
 
 58
-00:04:02,920 --> 00:04:04,640
- And it's called a Request for Comments.
+00:02:36,400 --> 00:02:38,480
+ We're just gonna make a simple thing.
 
 59
-00:04:04,640 --> 00:04:11,000
- And the idea is as engineers, we might have a design that everyone thinks is the greatest
+00:02:38,480 --> 00:02:40,200
+ So they made a simple thing,
 
 60
-00:04:11,000 --> 00:04:14,720
- thing ever, but we should always question.
+00:02:40,200 --> 00:02:41,800
+ but it turned out to be the greatest thing ever
 
 61
-00:04:14,720 --> 00:04:16,000
- No design is perfect.
+00:02:41,800 --> 00:02:44,880
+ because different engineers would be like,
 
 62
-00:04:16,000 --> 00:04:18,440
- No design is beyond question.
+00:02:44,880 --> 00:02:47,680
+ oh wow, I can use that a little different way.
 
 63
-00:04:18,440 --> 00:04:21,120
- No design is beyond commentary.
+00:02:47,680 --> 00:02:50,200
+ And the grounding of it was super simple.
 
 64
-00:04:21,120 --> 00:04:28,560
- And so even when they're 40 years old and used worldwide and dang amazing, we still
+00:02:50,200 --> 00:02:53,040
+ And the basic concept was you connect to a server,
 
 65
-00:04:28,560 --> 00:04:30,660
- say there is room for improvement.
+00:02:53,040 --> 00:02:54,040
+ you figure out where it is,
 
 66
-00:04:30,660 --> 00:04:36,800
- And so this talks about, I think this one is IP, and there's an IPv6.
+00:02:54,040 --> 00:02:57,840
+ you send a single command with a bit of extra data,
 
 67
-00:04:36,800 --> 00:04:41,480
- There's another one if you look for this RFC that we're looking at here, there'd be IPv6.
+00:02:57,840 --> 00:03:00,480
+ and then you get back something, a document.
 
 68
-00:04:41,480 --> 00:04:42,480
- And you'd start reading it.
+00:03:00,480 --> 00:03:03,960
+ It could be an image, it could be data, it could be HTML.
 
 69
-00:04:42,480 --> 00:04:46,720
- I mean, it's pretty dense reading, but as an engineer, it gives you all the details
+00:03:03,960 --> 00:03:06,960
+ And it was really amazing, right?
 
 70
-00:04:46,720 --> 00:04:50,320
- to build a router or build a piece of software or build whatever.
+00:03:06,960 --> 00:03:09,920
+ And so the sockets, the underlying sockets
 
 71
-00:04:50,320 --> 00:04:54,160
- And these are 100% public documents.
+00:03:09,920 --> 00:03:11,760
+ are the things that make the phone call.
 
 72
-00:04:54,160 --> 00:04:58,400
- And the idea was that no company, because literally the companies that were around in
+00:03:11,760 --> 00:03:16,300
+ HTTP is what we do once this phone call has been established.
 
 73
-00:04:58,400 --> 00:05:05,320
- 1960, if they had said Burroughs or Sperry owns the internet or digital equipment owns
+00:03:17,760 --> 00:03:20,720
+ So one of the things that made the internet so successful
 
 74
-00:05:05,320 --> 00:05:10,040
- the internet, they're all out of business because they didn't make good choices, but
+00:03:20,720 --> 00:03:23,680
+ starting in the 1960s was a radical openness,
 
 75
-00:05:10,040 --> 00:05:14,920
- the market was able to make good choices and because the commons were these open standards
+00:03:23,680 --> 00:03:27,800
+ a very, we're all around the same campfire feeling,
 
 76
-00:05:14,920 --> 00:05:19,800
- and open specifications, new companies like Sun Microsystems and new operating systems
+00:03:27,800 --> 00:03:31,760
+ very friendly, respectful, that still allowed criticism.
 
 77
-00:05:19,800 --> 00:05:25,400
- like Linux could come in and even Windows could come in and participate as full participants
+00:03:31,760 --> 00:03:35,240
+ There wasn't like one super genius that designed this
 
 78
-00:05:25,400 --> 00:05:29,160
- because they just read these specs and all of a sudden they're interoperating with everybody
+00:03:35,240 --> 00:03:36,600
+ or one company that designed this.
 
 79
-00:05:29,160 --> 00:05:30,160
- else.
+00:03:36,600 --> 00:03:38,320
+ This was a collaboration.
 
 80
-00:05:30,160 --> 00:05:34,000
- This is fundamental and foundational to how the internet works.
+00:03:38,320 --> 00:03:40,840
+ And the collaboration was around a set of open standards
 
 81
-00:05:34,000 --> 00:05:38,540
- And I'm not saying you're supposed to go read them, but it's just fascinating to understand
+00:03:40,840 --> 00:03:42,640
+ and meetings to help build these standards.
 
 82
-00:05:38,540 --> 00:05:45,640
- that the entire technological infrastructure upon which the internet is built is free,
+00:03:42,640 --> 00:03:44,580
+ And they were called RFCs.
 
 83
-00:05:45,640 --> 00:05:52,920
- license free, royalty free, and you could build a brand new gadget and you could hook
+00:03:44,580 --> 00:03:46,720
+ They were called Request for Comments.
 
 84
-00:05:52,920 --> 00:05:55,520
- it to the internet by reading the specifications.
+00:03:46,720 --> 00:03:48,560
+ And there was a group that built these
 
 85
-00:05:55,520 --> 00:05:58,160
- You don't have to pay a developer's license or nothing.
+00:03:48,560 --> 00:03:51,680
+ called the Internet Engineering Task Force, the IETF.
 
 86
-00:05:58,160 --> 00:05:59,960
- It's dang, it's cool.
+00:03:51,680 --> 00:03:55,720
+ And the Request for Comments is a fun notion.
 
 87
-00:05:59,960 --> 00:06:02,960
- Sorry, I'm just a little bit too excited about that.
+00:03:55,720 --> 00:03:58,400
+ We're looking here at a September 1981 document,
 
 88
-00:06:02,960 --> 00:06:06,200
- So let's take a look at one of these in particular.
+00:03:58,400 --> 00:04:02,680
+ which is 40 years old about now,
 
 89
-00:06:06,200 --> 00:06:10,840
- Now this is probably supplanted, but we'll look at RFC 2616.
+00:04:02,680 --> 00:04:04,600
+ and it's called Request for Comments.
 
 90
-00:06:10,840 --> 00:06:12,320
- They go up in numbers.
+00:04:04,600 --> 00:04:09,160
+ And the idea is as engineers, we might have a design
 
 91
-00:06:12,320 --> 00:06:20,000
- And so this is HTTP, hypertext transfer protocol.
+00:04:09,160 --> 00:04:12,000
+ that everyone thinks is the greatest thing ever,
 
 92
-00:06:20,000 --> 00:06:25,000
- And if you wanted to build a web browser or a web server, you could read this document.
+00:04:12,000 --> 00:04:14,560
+ but we should always question.
 
 93
-00:06:25,000 --> 00:06:27,360
- Go ahead, read the document.
+00:04:14,560 --> 00:04:18,320
+ No design is perfect, no design is beyond question,
 
 94
-00:06:27,360 --> 00:06:32,520
- And if you read down far enough, you'll say, oh, this is how you make a request, blah,
+00:04:18,320 --> 00:04:21,040
+ no design is beyond commentary.
 
 95
-00:06:32,520 --> 00:06:33,520
- blah, blah.
+00:04:21,040 --> 00:04:26,000
+ And so even when they're 40 years old and used worldwide,
 
 96
-00:06:33,520 --> 00:06:37,680
- It's got a header and it's got like a carriage return line feed and then a message body.
+00:04:26,000 --> 00:04:29,240
+ and dang amazing, we still say
 
 97
-00:06:37,680 --> 00:06:38,680
- And you got to do this.
+00:04:29,240 --> 00:04:30,560
+ there is room for improvement.
 
 98
-00:06:38,680 --> 00:06:40,760
- And this is what it looks like.
+00:04:30,560 --> 00:04:35,000
+ And so this talks about, I think this one is IP,
 
 99
-00:06:40,760 --> 00:06:41,760
- This is how it works.
+00:04:35,000 --> 00:04:36,660
+ and there's an IPv6.
 
 100
-00:06:41,760 --> 00:06:42,760
- Right?
+00:04:36,660 --> 00:04:39,160
+ There's another one, if you look for this RFC
 
 101
-00:06:42,760 --> 00:06:46,440
- And so at some point you're deep in this document and you're finding out in this page right
+00:04:39,160 --> 00:04:41,360
+ that we're looking at here, there'd be IPv6,
 
 102
-00:06:46,440 --> 00:06:51,340
- here of this document how your browser is supposed to format it.
+00:04:41,360 --> 00:04:42,280
+ and you'd start reading it.
 
 103
-00:06:51,340 --> 00:06:56,280
- And this tells both the client and the server what the rules of the protocol are.
+00:04:42,280 --> 00:04:45,240
+ And it's pretty dense reading, but as an engineer,
 
 104
-00:06:56,280 --> 00:07:00,440
- Now it's a lot easier to just for me to tell you.
+00:04:45,240 --> 00:04:47,720
+ it gives you all the details to build a router
 
 105
-00:07:00,440 --> 00:07:06,320
- So you connect to the server on a socket, usually port 80 or port 443.
+00:04:47,720 --> 00:04:50,080
+ or build a piece of software or build whatever.
 
 106
-00:07:06,320 --> 00:07:14,180
- And then the client is supposed to make the first sound-- it makes the first request.
+00:04:50,080 --> 00:04:53,760
+ And these are 100% public documents.
 
 107
-00:07:14,180 --> 00:07:19,040
- It sends a line with a carriage return line feed at the end that has the characters--
+00:04:53,760 --> 00:04:56,680
+ And the idea was is that no company,
 
 108
-00:07:19,040 --> 00:07:24,760
- there are other ones-- but get get space, a URL space, and then a protocol.
+00:04:56,680 --> 00:04:59,400
+ because literally the companies that were around in 1960,
 
 109
-00:07:24,760 --> 00:07:28,760
- And right now I'm using this HTTP 1.0 because I can do it by hand.
+00:04:59,400 --> 00:05:04,160
+ if they had said Burroughs or Sperry owns the internet
 
 110
-00:07:28,760 --> 00:07:29,760
- Right?
+00:05:04,160 --> 00:05:06,080
+ or digital equipment owns the internet,
 
 111
-00:07:29,760 --> 00:07:32,160
- And so you ask for a document.
+00:05:06,080 --> 00:05:07,880
+ they're all out of business
 
 112
-00:07:32,160 --> 00:07:37,560
- And then you can optionally send some header information, things like what language this
+00:05:07,880 --> 00:05:09,880
+ because they didn't make good choices,
 
 113
-00:07:37,560 --> 00:07:43,820
- browser-- person that this browser prefers, what are the capabilities of this browser,
+00:05:09,880 --> 00:05:11,640
+ but the market was able to make good choices.
 
 114
-00:07:43,820 --> 00:07:44,920
- what version browser we have.
+00:05:11,640 --> 00:05:15,000
+ And because the commons were these open standards
 
 115
-00:07:44,920 --> 00:07:45,920
- So there's a series of things.
+00:05:15,000 --> 00:05:18,800
+ and open specifications, new companies like Sun Microsystems
 
 116
-00:07:45,920 --> 00:07:49,080
- You say, give me this document and here's something about the browser that's requesting
+00:05:18,800 --> 00:05:21,820
+ and new operating systems like Linux could come in,
 
 117
-00:07:49,080 --> 00:07:53,120
- the document, including information like cookies that are being said.
+00:05:21,820 --> 00:05:23,720
+ and even Windows could come in
 
 118
-00:07:53,120 --> 00:07:58,240
- So in case you want to know who is doing this request because you've logged somebody in
+00:05:23,720 --> 00:05:25,460
+ and participate as full participants
 
 119
-00:07:58,240 --> 00:08:02,760
- and set a cookie to indicate that they're logged in, that's all sent on this GET request.
+00:05:25,460 --> 00:05:27,400
+ 'cause they just read these specs
 
 120
-00:08:02,760 --> 00:08:04,760
- But we'll not send the headers.
+00:05:27,400 --> 00:05:28,640
+ and all of a sudden they're interoperating
 
 121
-00:08:04,760 --> 00:08:07,720
- There's actually incoming headers and then outgoing headers.
+00:05:28,640 --> 00:05:29,480
+ with everybody else.
 
 122
-00:08:07,720 --> 00:08:13,640
- We'll see these when we start looking at Firefox's debugging console.
+00:05:29,480 --> 00:05:32,840
+ This is fundamental and foundational
 
 123
-00:08:13,640 --> 00:08:18,720
- And so this is an entire interaction that you can do on your laptop.
+00:05:32,840 --> 00:05:33,800
+ to how the internet works.
 
 124
-00:08:18,720 --> 00:08:24,080
- Now I'm not going to do it for you, but I would note that the program Telnet that this
+00:05:33,800 --> 00:05:36,500
+ And I'm not saying you're supposed to go read them,
 
 125
-00:08:24,080 --> 00:08:27,200
- uses has been removed from most computers.
+00:05:36,500 --> 00:05:38,580
+ but it's just fascinating to understand
 
 126
-00:08:27,200 --> 00:08:28,520
- It makes me sad.
+00:05:38,580 --> 00:05:41,100
+ that the entire technological infrastructure
 
 127
-00:08:28,520 --> 00:08:32,160
- They think of it as a security hole because it doesn't use encrypted connections.
+00:05:41,100 --> 00:05:43,820
+ upon which the internet is built is free,
 
 128
-00:08:32,160 --> 00:08:36,320
- Like port 80 is not an encrypted connection.
+00:05:43,820 --> 00:05:47,660
+ license free, royalty free,
 
 129
-00:08:36,320 --> 00:08:42,680
- But ultimately, you can install-- go search on your favorite search engine and find out
+00:05:47,660 --> 00:05:52,400
+ and you could build a brand new gadget
 
 130
-00:08:42,680 --> 00:08:44,320
- how to install Telnet.
+00:05:52,400 --> 00:05:54,160
+ and you could hook it to the internet
 
 131
-00:08:44,320 --> 00:08:49,000
- But if you get in a command line, whether it's a Windows command line or a Mac command line
+00:05:54,160 --> 00:05:55,480
+ by reading these specifications.
 
 132
-00:08:49,000 --> 00:08:54,320
- or a Linux command line, and you get Telnet properly installed, you can type the following
+00:05:55,480 --> 00:05:57,960
+ You don't have to pay a developer's license or nothing.
 
 133
-00:08:54,320 --> 00:09:00,920
- command, telnet datapr4e.org 80, and then hit Enter.
+00:05:57,960 --> 00:06:00,040
+ It's, dang, it's cool.
 
 134
-00:09:00,920 --> 00:09:05,360
- And at that point-- so Telnet originally was used to log into computers.
+00:06:00,040 --> 00:06:02,880
+ Sorry, I'm just a little bit too excited about that.
 
 135
-00:09:05,360 --> 00:09:09,120
- But if the server we're talking to and the protocol that we're talking to is simple enough--
+00:06:02,880 --> 00:06:06,520
+ So let's take a look at one of these in particular.
 
 136
-00:09:09,120 --> 00:09:14,360
- and in this case, HTTP/1 is simple enough for us to be able to do this-- we're actually
+00:06:06,520 --> 00:06:08,880
+ Now this is probably supplanted,
 
 137
-00:09:14,360 --> 00:09:15,720
- talking to the server.
+00:06:08,880 --> 00:06:10,800
+ but we'll look at RFC 2616.
 
 138
-00:09:15,720 --> 00:09:20,000
- Because remember I said that these are applications.
+00:06:10,800 --> 00:06:12,060
+ They go up in numbers.
 
 139
-00:09:20,000 --> 00:09:21,740
- Your browser is not talking to files.
+00:06:12,060 --> 00:06:16,560
+ And so this is HTTP,
 
 140
-00:09:21,740 --> 00:09:25,200
- Your browser is talking to an application on a server, and the server might give you
+00:06:16,560 --> 00:06:19,880
+ Hypertext Transfer Protocol.
 
 141
-00:09:25,200 --> 00:09:26,440
- back a file.
+00:06:19,880 --> 00:06:23,360
+ And if you wanted to build a web browser or a web server,
 
 142
-00:09:26,440 --> 00:09:28,160
- So it's really talking to a piece of software.
+00:06:23,360 --> 00:06:24,960
+ you could read this document.
 
 143
-00:09:28,160 --> 00:09:32,040
- And we'll see this in more detail in the next section.
+00:06:24,960 --> 00:06:27,280
+ Go ahead, read the document.
 
 144
-00:09:32,040 --> 00:09:38,800
- And so what will happen is because the HTTP protocol requires that the client speak first,
+00:06:27,280 --> 00:06:29,720
+ And if you read down far enough, you'll say,
 
 145
-00:09:38,800 --> 00:09:39,800
- we have to type.
+00:06:29,720 --> 00:06:32,680
+ "Oh, this is how you make a request."
 
 146
-00:09:39,800 --> 00:09:44,640
- Now, if you can get this working and type wrong things-- and type a couple of enters,
+00:06:32,680 --> 00:06:34,200
+ Blah, blah, blah, it's got a header
 
 147
-00:09:44,640 --> 00:09:48,340
- new lines-- you will see that you're talking to a piece of software.
+00:06:34,200 --> 00:06:36,020
+ and it's got like a carriage return line feed
 
 148
-00:09:48,340 --> 00:09:51,400
- And it will say, you have violated my protocol.
+00:06:36,020 --> 00:06:37,540
+ and then a message body,
 
 149
-00:09:51,400 --> 00:09:55,400
- You're not talking to a thing that has any online help or user interface or anything
+00:06:37,540 --> 00:06:40,440
+ and you gotta do this and this is what it looks like.
 
 150
-00:09:55,400 --> 00:09:56,440
- like that.
+00:06:40,440 --> 00:06:42,040
+ And this is how it works, right?
 
 151
-00:09:56,440 --> 00:10:00,880
- You're talking to a server, and your job is to request some data using the proper format
+00:06:42,040 --> 00:06:44,520
+ And so at some point you're deep in this document
 
 152
-00:10:00,880 --> 00:10:06,000
- because you read the specifications about the proper format, right?
+00:06:44,520 --> 00:06:47,160
+ and you're finding out in this page right here
 
 153
-00:10:06,000 --> 00:10:09,200
- So in this particular one, we just-- it's easier to cut and paste this because some
+00:06:47,160 --> 00:06:51,200
+ of this document how your browser is supposed to format it.
 
 154
-00:10:09,200 --> 00:10:13,200
- of these servers, if you don't type fast enough, they'll be like, you're not of software.
+00:06:51,200 --> 00:06:54,080
+ And this tells both the client and the server
 
 155
-00:10:13,200 --> 00:10:14,200
- You're a human.
+00:06:54,080 --> 00:06:56,940
+ what the rules of the protocol are.
 
 156
-00:10:14,200 --> 00:10:15,200
- Quit playing with me.
+00:06:56,940 --> 00:07:00,280
+ Now, it's a lot easier to just for me to tell you.
 
 157
-00:10:15,200 --> 00:10:19,540
- Like, you talk to Facebook or something, and you can talk to Facebook and see what happens
+00:07:00,280 --> 00:07:03,100
+ So you connect to the server on a socket,
 
 158
-00:10:19,540 --> 00:10:22,120
- on port 80.
+00:07:03,100 --> 00:07:06,120
+ usually port 80 or port 443.
 
 159
-00:10:22,120 --> 00:10:23,720
- And it will time you out really fast.
+00:07:06,120 --> 00:07:11,120
+ And then the client is supposed to make the first sound.
 
 160
-00:10:23,720 --> 00:10:25,920
- So it's good to have a cut and paste buffer.
+00:07:11,120 --> 00:07:14,140
+ It makes first request.
 
 161
-00:10:25,920 --> 00:10:28,160
- So you paste this get command in.
+00:07:14,140 --> 00:07:17,840
+ It sends a line for the carriage return line feed at the end
 
 162
-00:10:28,160 --> 00:10:32,120
- And the other thing that's important is you got to put an extra blank line.
+00:07:17,840 --> 00:07:19,980
+ that has the characters, there are other ones,
 
 163
-00:10:32,120 --> 00:10:35,920
- And this extra blank line is to indicate that you're not going to send any of those headers
+00:07:19,980 --> 00:07:24,520
+ but get get space, a URL space, and then a protocol.
 
 164
-00:10:35,920 --> 00:10:42,400
- if we were going to send things like what language we would prefer or what formats we
+00:07:24,520 --> 00:07:26,800
+ And right now I'm using this HTTP 1.0
 
 165
-00:10:42,400 --> 00:10:45,580
- would prefer as a browser.
+00:07:26,800 --> 00:07:29,360
+ because I can do it by hand, right?
 
 166
-00:10:45,580 --> 00:10:50,280
- The browser has certain languages and other configurations and login information.
+00:07:29,360 --> 00:07:32,020
+ And so you ask for a document
 
 167
-00:10:50,280 --> 00:10:55,480
- And that can get sent up to the web server along with the request for the document.
+00:07:32,020 --> 00:07:35,860
+ and then you can optionally send some header information,
 
 168
-00:10:55,480 --> 00:10:57,240
- And we would be able to type them in here.
+00:07:35,860 --> 00:07:38,040
+ things like what language this browser,
 
 169
-00:10:57,240 --> 00:10:59,520
- But we're not going to do that in this very simple.
+00:07:38,040 --> 00:07:39,920
+ person that this browser prefers,
 
 170
-00:10:59,520 --> 00:11:02,760
- We're just going to say enter, which means no more headers.
+00:07:39,920 --> 00:07:43,760
+ what are the capabilities of this browser,
 
 171
-00:11:02,760 --> 00:11:05,600
- If you were putting in headers, you'd type header, header, header, header, and then enter
+00:07:43,760 --> 00:07:44,840
+ what version browser we have.
 
 172
-00:11:05,600 --> 00:11:06,920
- on a blank line.
+00:07:44,840 --> 00:07:47,120
+ So there's a series of things you say, give me this document
 
 173
-00:11:06,920 --> 00:11:09,720
- And then the server would know that our request was finished.
+00:07:47,120 --> 00:07:48,460
+ and here's something about the browser
 
 174
-00:11:09,720 --> 00:11:12,600
- But we can just ask for a page.
+00:07:48,460 --> 00:07:50,080
+ that's requesting the document,
 
 175
-00:11:12,600 --> 00:11:16,880
- And then what the server does is it sends us back two pieces of information.
+00:07:50,080 --> 00:07:52,920
+ including information like cookies that are being said.
 
 176
-00:11:16,880 --> 00:11:18,560
- First it sends us headers.
+00:07:52,920 --> 00:07:57,120
+ Now, so in case you wanna know who is doing this request
 
 177
-00:11:18,560 --> 00:11:22,120
- The first header is HTTP 1.1 200 OK.
+00:07:57,120 --> 00:07:59,080
+ because you've logged somebody in and set a cookie
 
 178
-00:11:22,120 --> 00:11:23,660
- That's actually a status line.
+00:07:59,080 --> 00:08:00,720
+ to indicate that they're logged in,
 
 179
-00:11:23,660 --> 00:11:26,640
- Now you'd have to go read the documentation on what that works.
+00:08:00,720 --> 00:08:02,640
+ that's all sent on this get request.
 
 180
-00:11:26,640 --> 00:11:29,880
- But for example, 200 means that you got a document.
+00:08:02,640 --> 00:08:04,600
+ What will not send the headers,
 
 181
-00:11:29,880 --> 00:11:31,400
- Another one that you might have seen is 404.
+00:08:04,600 --> 00:08:07,600
+ there's actually incoming headers and then outgoing headers.
 
 182
-00:11:31,400 --> 00:11:33,800
- It might say 404 not found.
+00:08:07,600 --> 00:08:10,160
+ We'll see these when we start looking at
 
 183
-00:11:33,800 --> 00:11:37,720
- So if you go to a web page and it doesn't exist, something will say 404 in your browser
+00:08:10,160 --> 00:08:12,040
+ Firefox's debugging console.
 
 184
-00:11:37,720 --> 00:11:41,640
- usually unless it says here's a search box, go find it.
+00:08:12,040 --> 00:08:16,840
+ And so this is an entire interaction
 
 185
-00:11:41,640 --> 00:11:43,840
- But there's a status.
+00:08:16,840 --> 00:08:18,680
+ that you can do on your laptop.
 
 186
-00:11:43,840 --> 00:11:49,840
- And so the thing that you're typing, page1.htm, may or may not be on this server.
+00:08:18,680 --> 00:08:20,600
+ Now, I'm not gonna do it for you,
 
 187
-00:11:49,840 --> 00:11:53,360
- If it is, then you'll get a 200 OK and the data.
+00:08:20,600 --> 00:08:25,160
+ but I would note that the program Telnet that this uses
 
 188
-00:11:53,360 --> 00:11:55,600
- Or you'll get a 404 not found.
+00:08:25,160 --> 00:08:28,500
+ has been removed from most computers, it makes me sad.
 
 189
-00:11:55,600 --> 00:11:59,000
- And then we get some response data, some header response.
+00:08:28,500 --> 00:08:29,960
+ They think of it as a security hole
 
 190
-00:11:59,000 --> 00:12:02,680
- And this header response looks pretty much like the same format of the data we would
+00:08:29,960 --> 00:08:32,080
+ 'cause it doesn't use encrypted connections,
 
 191
-00:12:02,680 --> 00:12:08,160
- have sent into the browser if we were sending things like that in there.
+00:08:32,080 --> 00:08:36,000
+ like port 80 is not an encrypted connection.
 
 192
-00:12:08,160 --> 00:12:13,000
- It's what the data is, what the server we're using, last modified.
+00:08:36,000 --> 00:08:40,000
+ But ultimately, you can install,
 
 193
-00:12:13,000 --> 00:12:18,440
- And one of the important things is what kind of content are you about to see.
+00:08:40,000 --> 00:08:42,240
+ go search on your favorite search engine
 
 194
-00:12:18,440 --> 00:12:22,680
- Content type, in this case, is text/html, which means the thing coming next.
+00:08:42,240 --> 00:08:44,280
+ and find out how to install Telnet.
 
 195
-00:12:22,680 --> 00:12:27,280
- And then there's a blank line, and the blank line is our indication as we're reading this
+00:08:44,280 --> 00:08:45,580
+ But if you get in a command line,
 
 196
-00:12:27,280 --> 00:12:32,800
- data that we have finished the header, which is really metadata about the page we're retrieving,
+00:08:45,580 --> 00:08:47,720
+ whether it's a Windows command line
 
 197
-00:12:32,800 --> 00:12:34,400
- and the actual page itself.
+00:08:47,720 --> 00:08:50,740
+ or a Mac command line or a Linux command line,
 
 198
-00:12:34,400 --> 00:12:37,960
- And so the rest of this page is the actual data.
+00:08:50,740 --> 00:08:53,180
+ and you get Telnet properly installed,
 
 199
-00:12:37,960 --> 00:12:42,560
- And we know the format of it because we were told before the page starts.
+00:08:53,180 --> 00:08:55,580
+ you can type the following command,
 
 200
-00:12:42,560 --> 00:12:48,800
- This could be image/png, this could be xml, application/xml, and it could be JSON.
+00:08:55,580 --> 00:09:00,580
+ telnet datapr4e.org 80 and then hit enter.
 
 201
-00:12:48,800 --> 00:12:50,560
- It could be like anything.
+00:09:01,200 --> 00:09:02,320
+ And at that point,
 
 202
-00:12:50,560 --> 00:12:54,120
- And then the browser is supposed to-- and if this was an image, it would be like garble,
+00:09:02,320 --> 00:09:05,200
+ so Telnet originally was used to log into computers,
 
 203
-00:12:54,120 --> 00:12:56,440
- garble, garble, garble, garble, garble, garble, right?
+00:09:05,200 --> 00:09:07,400
+ but if the server we're talking to
 
 204
-00:12:56,440 --> 00:12:59,760
- It would be all garbled stuff that we can't really see.
+00:09:07,400 --> 00:09:09,180
+ and the protocol that we're talking to is simple enough,
 
 205
-00:12:59,760 --> 00:13:04,920
- But the browser knows what a png or jpeg looks like, and it shows it to you.
+00:09:09,180 --> 00:09:11,940
+ and in this case, HTTP/1 is simple enough
 
 206
-00:13:04,920 --> 00:13:09,720
- And it basically uses this text/html to tell you what's going on.
+00:09:11,940 --> 00:09:13,900
+ for us to be able to do this,
 
 207
-00:13:09,720 --> 00:13:13,000
- And so this, then, your browser has read all this information.
+00:09:13,900 --> 00:09:15,600
+ we're actually talking to the server
 
 208
-00:13:13,000 --> 00:13:18,080
- It has both the metadata and the data about the retrieved page, and then its job is to
+00:09:15,600 --> 00:09:18,840
+ 'cause I remember I said that these are applications,
 
 209
-00:13:18,080 --> 00:13:24,180
- sort of produce a pretty rendered version of the page and show it to you.
+00:09:18,840 --> 00:09:21,660
+ they're not, your browser is not talking to files,
 
 210
-00:13:24,180 --> 00:13:26,520
- And that is the request recycle.
+00:09:21,660 --> 00:09:24,040
+ your browser is talking to an application on a server
 
 211
-00:13:26,520 --> 00:13:28,540
- Again, you don't have to do this.
+00:09:24,040 --> 00:09:26,320
+ and the server might give you back a file.
 
 212
-00:13:28,540 --> 00:13:30,620
- You can just sort of believe that it's done here.
+00:09:26,320 --> 00:09:28,360
+ So it's really talking to a piece of software
 
 213
-00:13:30,620 --> 00:13:34,680
- But if you want to install Telnet on your system, it's not a bad thing to install Telnet.
+00:09:28,360 --> 00:09:31,920
+ and we'll see this in more detail in the next section.
 
 214
-00:13:34,680 --> 00:13:37,120
- It's kind of a classic, fun thing.
+00:09:31,920 --> 00:09:35,400
+ And so what'll happen is because the HTTP protocol
 
 215
-00:13:37,120 --> 00:13:40,520
- It's far less useful than it was in the early days, because we used to use Telnet to test
+00:09:35,400 --> 00:09:39,800
+ requires that the client speak first, we have to type.
 
 216
-00:13:40,520 --> 00:13:41,520
- everything.
+00:09:39,800 --> 00:09:42,960
+ Now, if you can get this working and type wrong things
 
 217
-00:13:41,520 --> 00:13:46,520
- Now we've got browser developer consoles that are way easier than Telnet.
+00:09:42,960 --> 00:09:46,080
+ and type a couple of enters, new lines,
 
 218
-00:13:46,520 --> 00:13:49,000
- But it's kind of a cool thing.
+00:09:46,080 --> 00:09:48,280
+ you will see that you're talking to a piece of software
 
 219
-00:13:49,000 --> 00:13:54,360
- Feel free to do this, and you'll be like, I know what's really going on.
+00:09:48,280 --> 00:09:51,320
+ and it will say, you have violated my protocol.
 
 220
-00:13:54,360 --> 00:14:03,320
- And so I'm a big fan of using the console, of using the terminal, of using text-based
+00:09:51,320 --> 00:09:54,280
+ You're not talking to a thing that has any online help
 
 221
-00:14:03,320 --> 00:14:04,320
- interfaces.
+00:09:54,280 --> 00:09:56,320
+ or user interface or anything like that.
 
 222
-00:14:04,320 --> 00:14:06,440
- They're actually way more accessible.
+00:09:56,320 --> 00:09:58,560
+ You're talking to a server and your job
 
 223
-00:14:06,440 --> 00:14:08,560
- I think it's awesome.
+00:09:58,560 --> 00:10:00,960
+ is to request some data using the proper format
 
 224
-00:14:08,560 --> 00:14:16,340
- And in a way, all these fancy graphical user interfaces distract us from the simplicity
+00:10:00,960 --> 00:10:03,360
+ because you read the specifications
 
 225
-00:14:16,340 --> 00:14:19,600
- of what's going on inside of computers, because you think, well, where's the button?
+00:10:03,360 --> 00:10:05,920
+ about the proper format, right?
 
 226
-00:14:19,600 --> 00:14:22,900
- And the answer is, oh, there's probably some command inside this computer that does what
+00:10:05,920 --> 00:10:07,720
+ So in this particular one, we just,
 
 227
-00:14:22,900 --> 00:14:24,440
- the button does.
+00:10:07,720 --> 00:10:08,920
+ it's easier to cut and paste this
 
 228
-00:14:24,440 --> 00:14:32,680
- So I have a former student of mine who actually wrote the scene in, I think, maybe it was
+00:10:08,920 --> 00:10:11,040
+ 'cause some of these servers, if you don't type fast enough,
 
 229
-00:14:32,680 --> 00:14:33,680
- Matrix 2.
+00:10:11,040 --> 00:10:13,120
+ they'll be like, you're not a software,
 
 230
-00:14:33,680 --> 00:14:35,080
- I think this was Matrix 2.
+00:10:13,120 --> 00:10:15,560
+ you're a human, quit playing with me.
 
 231
-00:14:35,080 --> 00:14:37,200
- Yeah, Matrix Reloaded.
+00:10:15,560 --> 00:10:17,200
+ Like you talk to Facebook or something
 
 232
-00:14:37,200 --> 00:14:43,040
- And this scene where Trinity is breaking into the power grid, and she is using the console.
+00:10:17,200 --> 00:10:18,900
+ and you can talk to Facebook
 
 233
-00:14:43,040 --> 00:14:48,240
- And it turned out that the way this scene was written is it was written exactly as a
+00:10:18,900 --> 00:10:20,560
+ and see what happens on port 80
 
 234
-00:14:48,240 --> 00:14:53,500
- hacker, whether that's a hacker with bad intent or good intent, because there are hackers
+00:10:20,560 --> 00:10:23,720
+ and it will time you out really fast.
 
 235
-00:14:53,500 --> 00:14:57,400
- with good intent who are trying to break into your system so they can tell you, for you
+00:10:23,720 --> 00:10:25,840
+ So it's good to have a cut and paste buffer
 
 236
-00:14:57,400 --> 00:15:01,760
- pay them to break into your system, so that they can tell you your vulnerabilities.
+00:10:25,840 --> 00:10:28,240
+ so you paste this get command in.
 
 237
-00:15:01,760 --> 00:15:06,560
- But you can take a look at the analysis of this little scene.
+00:10:28,240 --> 00:10:29,760
+ And the other thing that's important
 
 238
-00:15:06,560 --> 00:15:12,040
- And this sort of is just one of the cool things about me teaching people about how to use
+00:10:29,760 --> 00:10:32,040
+ is you gotta put an extra blank line
 
 239
-00:15:12,040 --> 00:15:16,840
- the command line, and increasingly, me teaching people about how to use Linux.
+00:10:32,040 --> 00:10:34,400
+ and this extra blank line is to indicate
 
 240
-00:15:16,840 --> 00:15:23,440
- I really think that it's OK to know your Mac and Windows command line, but really increasingly
+00:10:34,400 --> 00:10:36,000
+ that you're not gonna send any of those headers.
 
 241
-00:15:23,440 --> 00:15:27,640
- the world and the server world, and we're starting to work on web servers in this class,
+00:10:36,000 --> 00:10:37,720
+ If we were going to send things
 
 242
-00:15:27,640 --> 00:15:32,000
- and you might as well start learning some Linux, because that's an important skill.
+00:10:37,720 --> 00:10:41,240
+ like what language we would prefer
 
 243
-00:15:32,000 --> 00:15:36,560
- Just writing some Java code or Ruby code or Django code, that's a skill.
+00:10:41,240 --> 00:10:45,600
+ or what formats we would prefer as a browser,
 
 244
-00:15:36,560 --> 00:15:41,480
- But knowing how to start the server, debug your application, find log files, et cetera,
+00:10:45,600 --> 00:10:47,680
+ the browsers has certain languages
 
 245
-00:15:41,480 --> 00:15:45,440
- in the command line is really important in real production systems, because we're going
+00:10:47,680 --> 00:10:50,200
+ and other configurations and login information
 
 246
-00:15:45,440 --> 00:15:51,080
- to play in some simplified environments to make it a little easier, but those simplified
+00:10:50,200 --> 00:10:52,240
+ and that can get sent up to the web server
 
 247
-00:15:51,080 --> 00:15:55,480
- environments go away once you go into real production in a real job.
+00:10:52,240 --> 00:10:54,360
+ along with the request for the document.
 
 248
-00:15:55,480 --> 00:16:01,320
- And so I'm really into teaching you Linux, command line, et cetera, et cetera.
+00:10:55,360 --> 00:10:57,200
+ And we would be able to type them in here.
 
 249
-00:16:01,320 --> 00:16:07,200
- So up next, we're going to show you in Python, in effect, as few lines as I can possibly
+00:10:57,200 --> 00:10:59,480
+ But we're not gonna do that in this very simple,
 
 250
-00:16:07,200 --> 00:16:13,420
- show you how a browser works, how a browser sends the HTTP protocol, how a server reacts
+00:10:59,480 --> 00:11:02,680
+ we're just gonna say enter, which means no more headers.
 
 251
-00:16:13,420 --> 00:16:16,200
- to the HTTP protocol and returns documents.
+00:11:02,680 --> 00:11:03,560
+ If you were putting in headers,
 
 252
-00:16:16,200 --> 00:16:28,280
- So that's what's coming up next.
+00:11:03,560 --> 00:11:05,040
+ you type header, header, header, header
+
+253
+00:11:05,040 --> 00:11:06,840
+ and then enter on a blank line
+
+254
+00:11:06,840 --> 00:11:10,040
+ and then the server would know that our request was finished.
+
+255
+00:11:10,040 --> 00:11:12,480
+ But we can just ask for a page
+
+256
+00:11:12,480 --> 00:11:14,120
+ and then what the server does
+
+257
+00:11:14,120 --> 00:11:16,640
+ is it sends us back two pieces of information.
+
+258
+00:11:16,640 --> 00:11:18,520
+ First it sends us headers.
+
+259
+00:11:18,520 --> 00:11:21,920
+ The first header is HTTP 1.1 200 okay,
+
+260
+00:11:21,920 --> 00:11:23,600
+ that's actually a status line.
+
+261
+00:11:23,600 --> 00:11:25,120
+ Now you'd have to go read the documentation
+
+262
+00:11:25,120 --> 00:11:26,560
+ on how, what that works.
+
+263
+00:11:26,560 --> 00:11:29,680
+ But for example, 200 means that you got a document.
+
+264
+00:11:29,680 --> 00:11:31,680
+ Another one that you might've seen is 404.
+
+265
+00:11:31,680 --> 00:11:33,680
+ It might say 404 not found.
+
+266
+00:11:33,680 --> 00:11:35,720
+ So if you go to a webpage and it doesn't exist,
+
+267
+00:11:35,720 --> 00:11:38,560
+ something will say 404 in your browser usually
+
+268
+00:11:38,560 --> 00:11:41,520
+ unless it says here's a search box, go find it.
+
+269
+00:11:41,520 --> 00:11:45,000
+ But you can, there's a status and so you might,
+
+270
+00:11:45,000 --> 00:11:46,320
+ the thing that you're typing,
+
+271
+00:11:46,320 --> 00:11:49,800
+ page1.htm may or may not be on this server.
+
+272
+00:11:49,800 --> 00:11:53,280
+ If it is, then you'll get a 200 okay and the data
+
+273
+00:11:53,280 --> 00:11:55,560
+ or you'll get a 404 not found.
+
+274
+00:11:55,560 --> 00:11:58,880
+ And then we get some response data, some header response.
+
+275
+00:11:58,880 --> 00:12:00,680
+ And this header response looks pretty much
+
+276
+00:12:00,680 --> 00:12:03,160
+ like the same format of the data we would have sent
+
+277
+00:12:03,160 --> 00:12:05,760
+ into the browser if we were sending things
+
+278
+00:12:05,760 --> 00:12:06,840
+ like that in there.
+
+279
+00:12:06,840 --> 00:12:11,480
+ Here it's what the date is, what the server we're using,
+
+280
+00:12:11,480 --> 00:12:14,720
+ last modified and one of the important things
+
+281
+00:12:14,720 --> 00:12:18,080
+ is what kind of content are you about to see.
+
+282
+00:12:18,080 --> 00:12:20,720
+ Content type in this case is tech/html
+
+283
+00:12:20,720 --> 00:12:22,520
+ which means the thing coming next.
+
+284
+00:12:22,520 --> 00:12:25,280
+ And then there's a blank line and the blank line
+
+285
+00:12:25,280 --> 00:12:28,480
+ is our indication as we're reading this data
+
+286
+00:12:28,480 --> 00:12:31,120
+ that we've finished the header which is really metadata
+
+287
+00:12:31,120 --> 00:12:34,240
+ about the page we're retrieving and the actual page itself.
+
+288
+00:12:34,240 --> 00:12:37,760
+ And so the rest of this page is the actual data
+
+289
+00:12:37,760 --> 00:12:39,400
+ and we know the format of it
+
+290
+00:12:39,400 --> 00:12:42,400
+ because we were told before the page starts.
+
+291
+00:12:42,400 --> 00:12:46,040
+ This could be image/png, this could be XML,
+
+292
+00:12:46,040 --> 00:12:48,760
+ the application/xml and it could be JSON,
+
+293
+00:12:48,760 --> 00:12:51,280
+ it could be like anything and then the browser
+
+294
+00:12:51,280 --> 00:12:52,960
+ is supposed to, and if this was an image,
+
+295
+00:12:52,960 --> 00:12:55,040
+ it would be like garble, garble, garble,
+
+296
+00:12:55,040 --> 00:12:56,360
+ garble, garble, garble, right?
+
+297
+00:12:56,360 --> 00:12:59,640
+ It would be all garbled stuff that we can't really see
+
+298
+00:12:59,640 --> 00:13:02,640
+ but the browser knows what a png or jpeg looks like
+
+299
+00:13:02,640 --> 00:13:07,640
+ and it shows it to you and it basically uses this tech/html
+
+300
+00:13:07,640 --> 00:13:09,560
+ to tell you what's going on.
+
+301
+00:13:09,560 --> 00:13:13,240
+ And so this then, your browser has read all this information,
+
+302
+00:13:13,240 --> 00:13:15,440
+ it has both the metadata and the data
+
+303
+00:13:15,440 --> 00:13:18,960
+ about the retrieved page and then its job is to sort of
+
+304
+00:13:18,960 --> 00:13:22,520
+ produce a pretty rendered version of the page
+
+305
+00:13:22,520 --> 00:13:24,000
+ and show it to you.
+
+306
+00:13:24,000 --> 00:13:26,760
+ And that is the request recycle.
+
+307
+00:13:26,760 --> 00:13:28,480
+ Again, you don't have to do this,
+
+308
+00:13:28,480 --> 00:13:30,520
+ you can just sort of believe that it's done here
+
+309
+00:13:30,520 --> 00:13:32,760
+ but if you want to install Telnet on your system,
+
+310
+00:13:32,760 --> 00:13:34,540
+ it's not a bad thing to install Telnet,
+
+311
+00:13:34,540 --> 00:13:36,880
+ it's kind of a classic fun thing.
+
+312
+00:13:36,880 --> 00:13:39,040
+ It's far less useful than it was in the early days
+
+313
+00:13:39,040 --> 00:13:41,280
+ 'cause we used to use Telnet to test everything,
+
+314
+00:13:41,280 --> 00:13:43,320
+ now we've got like browser developer consoles
+
+315
+00:13:43,320 --> 00:13:46,320
+ that are way easier than Telnet.
+
+316
+00:13:46,320 --> 00:13:48,840
+ But it's kind of a cool thing,
+
+317
+00:13:48,840 --> 00:13:50,680
+ feel free to do this and you'll be like,
+
+318
+00:13:50,680 --> 00:13:54,000
+ I know what's really going on.
+
+319
+00:13:54,000 --> 00:13:59,000
+ And so I'm a big fan of using the console,
+
+320
+00:13:59,000 --> 00:14:03,800
+ of using the terminal, of using text-based interfaces,
+
+321
+00:14:03,800 --> 00:14:06,420
+ I think they're actually way more accessible,
+
+322
+00:14:06,420 --> 00:14:07,840
+ I think it's awesome.
+
+323
+00:14:07,840 --> 00:14:12,840
+ And in a way, all these fancy graphical user interfaces
+
+324
+00:14:12,840 --> 00:14:17,000
+ distract us from the simplicity of what's going on
+
+325
+00:14:17,000 --> 00:14:18,340
+ inside of computers 'cause you think,
+
+326
+00:14:18,340 --> 00:14:19,800
+ well, where's the button?
+
+327
+00:14:19,800 --> 00:14:21,600
+ And the answer is, oh, there's probably some command
+
+328
+00:14:21,600 --> 00:14:24,320
+ inside this computer that does what the button does.
+
+329
+00:14:24,320 --> 00:14:26,520
+ So I have a former student of mine
+
+330
+00:14:26,520 --> 00:14:30,300
+ who actually wrote the scene
+
+331
+00:14:30,300 --> 00:14:33,320
+ and I think maybe it was Matrix 2,
+
+332
+00:14:33,320 --> 00:14:36,840
+ I think this was Matrix 2, yeah, Matrix Reloaded.
+
+333
+00:14:36,840 --> 00:14:40,760
+ And this scene where Trinity is breaking into the power grid
+
+334
+00:14:40,760 --> 00:14:43,600
+ and she is using the console.
+
+335
+00:14:43,600 --> 00:14:46,160
+ And it turned out that the way this scene was written
+
+336
+00:14:46,160 --> 00:14:49,560
+ is it was written exactly as a hacker,
+
+337
+00:14:49,560 --> 00:14:52,640
+ whether that's a hacker with bad intent or good intent,
+
+338
+00:14:52,640 --> 00:14:54,320
+ 'cause there are hackers with good intent
+
+339
+00:14:54,320 --> 00:14:56,000
+ who are trying to break into your system
+
+340
+00:14:56,000 --> 00:14:58,000
+ so they can tell you for you pay them
+
+341
+00:14:58,000 --> 00:14:59,340
+ to break into your system,
+
+342
+00:14:59,340 --> 00:15:01,600
+ so that they can tell you your vulnerabilities.
+
+343
+00:15:01,600 --> 00:15:05,400
+ But you can take a look at the analysis of this little scene
+
+344
+00:15:05,400 --> 00:15:09,500
+ and this sort of is just one of the cool things
+
+345
+00:15:09,500 --> 00:15:13,200
+ about me teaching people about how to use the command line
+
+346
+00:15:13,200 --> 00:15:15,560
+ and increasingly me teaching people
+
+347
+00:15:15,560 --> 00:15:16,840
+ about how to use Linux.
+
+348
+00:15:16,840 --> 00:15:20,200
+ I really think that it's okay to know
+
+349
+00:15:20,200 --> 00:15:21,960
+ your Mac and Windows command line,
+
+350
+00:15:21,960 --> 00:15:25,080
+ but really increasingly the world and the server world
+
+351
+00:15:25,080 --> 00:15:27,560
+ and we're starting to work on web servers in this class
+
+352
+00:15:27,560 --> 00:15:29,320
+ and you might as well start learning some Linux
+
+353
+00:15:29,320 --> 00:15:31,720
+ 'cause that's an important skill,
+
+354
+00:15:31,720 --> 00:15:35,400
+ just writing some Java code or Ruby code or Django code,
+
+355
+00:15:35,400 --> 00:15:38,000
+ that's a skill, but knowing how to start the server,
+
+356
+00:15:38,000 --> 00:15:41,380
+ debug your application, find log files, et cetera,
+
+357
+00:15:41,380 --> 00:15:43,420
+ in the command line is really important
+
+358
+00:15:43,420 --> 00:15:44,720
+ in real production systems
+
+359
+00:15:44,720 --> 00:15:48,300
+ 'cause we're gonna play in some simplified environments
+
+360
+00:15:48,300 --> 00:15:50,200
+ to make it a little easier,
+
+361
+00:15:50,200 --> 00:15:52,960
+ but those simplified environments go away
+
+362
+00:15:52,960 --> 00:15:55,360
+ once you go into real production in a real job
+
+363
+00:15:55,360 --> 00:15:59,280
+ and so I'm really into teaching you Linux command line,
+
+364
+00:15:59,280 --> 00:16:01,200
+ et cetera, et cetera.
+
+365
+00:16:01,200 --> 00:16:04,600
+ So up next, we're going to show you in Python,
+
+366
+00:16:04,600 --> 00:16:08,260
+ in effect, as few lines as I can possibly show you,
+
+367
+00:16:08,260 --> 00:16:12,280
+ how a browser works, how a browser sends the HTTP protocol,
+
+368
+00:16:12,280 --> 00:16:14,640
+ how a server reacts to the HTTP protocol
+
+369
+00:16:14,640 --> 00:16:17,680
+ and returns documents, so that's what's coming up next.
+
+370
+00:16:17,680 --> 00:16:20,260
+ (upbeat music)
 

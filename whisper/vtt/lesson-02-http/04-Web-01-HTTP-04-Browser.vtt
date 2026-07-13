@@ -1,239 +1,269 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.160
+00:00:00.000 --> 00:00:05.260
  So now we're going to build a very simple browser and server in Python.
 
-00:00:05.160 --> 00:00:14.400
+00:00:05.260 --> 00:00:14.400
  Okay, so import a library, import socket, and that just like, you know, import math or import whatever,
 
-00:00:14.400 --> 00:00:21.480
+00:00:14.400 --> 00:00:21.500
  that pulls in a library into Python. Sockets are built into Python, it's very cool, and it's very, very simple.
 
-00:00:21.480 --> 00:00:28.720
- So, we're, sockets kind of function like files, but they're files that we can send data to and receive data to,
+00:00:21.500 --> 00:00:28.700
+ So we're, sockets kind of function like files, but they're files that we can send data to and receive data to,
 
-00:00:28.720 --> 00:00:32.320
+00:00:28.700 --> 00:00:32.360
  but when you're using a file in Python, you've got to first open it.
 
-00:00:32.320 --> 00:00:37.440
- And so, the opening of a file, of a socket, is really a two-step process.
+00:00:32.360 --> 00:00:37.360
+ And so the opening of a file, of a socket, is really a two-step process.
 
-00:00:37.440 --> 00:00:44.160
- First, you create the socket, and that socket sort of lives in your computer as an endpoint that's not yet finished.
+00:00:37.360 --> 00:00:44.160
+ First you create the socket, and that socket sort of lives in your computer as an endpoint that's not yet finished.
 
-00:00:44.160 --> 00:00:48.320
+00:00:44.160 --> 00:00:48.360
  It's the endpoint that you're going to send and receive data to inside your computer,
 
-00:00:48.320 --> 00:00:55.760
- but then we have to actually make the phone call. So, socket.socket, and don't worry too much about this syntax,
+00:00:48.360 --> 00:00:55.700
+ but then we have to actually make the phone call. So socket dot socket, and don't worry too much about this syntax,
 
-00:00:55.760 --> 00:01:01.920
- we don't change it, socket.socket basically says make a phone, that's what we're making.
+00:00:55.700 --> 00:01:01.900
+ we don't change it. Socket dot socket basically says make a phone, that's what we're making.
 
-00:01:01.920 --> 00:01:08.560
- And then, mysock.connect, that second line, is dial the phone.
+00:01:01.900 --> 00:01:08.500
+ And then mysock.connect, that second line, is dial the phone.
 
-00:01:08.560 --> 00:01:16.480
+00:01:08.500 --> 00:01:16.460
  And we're dialing the phone to a domain name, data.pr4e.org, and a port in that domain name.
 
-00:01:16.480 --> 00:01:24.720
- So, that is the call. Now, if we made a mistake, right, if we had, we were dialing and not talking to the right server,
+00:01:16.460 --> 00:01:24.660
+ So that is the call. Now, if we made a mistake, right, if we were dialing and not talking to the right server,
 
-00:01:24.720 --> 00:01:32.400
- or that server didn't exist, this connect would blow up, meaning we'd make a phone call, a data phone call to a server that doesn't exist.
+00:01:24.660 --> 00:01:30.700
+ or that server didn't exist, this connect would blow up, meaning we'd make a phone call, a data phone call,
 
-00:01:32.400 --> 00:01:39.360
- That line is what's going to blow up. But, as you continue down to the next line, if you continue down to the next line,
+00:01:30.700 --> 00:01:34.360
+ to a server that doesn't exist. That line is what's going to blow up.
 
-00:01:39.360 --> 00:01:46.960
- if it gets that far, now you put try and accepts around this, but I don't want to keep this really short, so I'm not putting in all the stuff,
+00:01:34.360 --> 00:01:40.560
+ But as you continue down to the next line, if you continue down to the next line, if it gets that far,
 
-00:01:46.960 --> 00:01:52.640
- all the error checking. So, connect might blow up, socket.socket won't blow up, because it's like,
+00:01:40.560 --> 00:01:47.000
+ now you put try and accepts around this, but I want to keep this really short, so I'm not putting in all the stuff,
 
-00:01:52.640 --> 00:01:57.280
- unless you don't have networking at all in your computer, but it's unlikely these days.
+00:01:47.000 --> 00:01:51.660
+ all the error checking. So connect might blow up. Socket dot socket won't blow up,
 
-00:01:57.280 --> 00:02:06.000
- But, mysock.connect is like, dial the phone, dial the data phone to this endpoint, and it includes the port, the port 80 that we talked about before.
+00:01:51.660 --> 00:01:57.900
+ because it's like unless you don't have networking at all in your computer, but it's unlikely these days.
 
-00:02:06.000 --> 00:02:13.840
- And now, we need to send a command. And in this command, it's exactly what we talked about before, it's exactly what we sent via telnet.
+00:01:57.900 --> 00:02:03.360
+ But mysock.connect is like dial the phone, dial the data phone to this endpoint, and it includes the port,
 
-00:02:13.840 --> 00:02:21.200
- It's a get, followed by a space, followed by our URL, followed by a space, followed by a protocol HTTP/1.0,
+00:02:03.360 --> 00:02:08.560
+ the port 80 that we talked about before. And now we need to send a command.
 
-00:02:21.200 --> 00:02:31.040
- and then we hit the enter. Now, it turns out, in network world, you actually hit two things, it's the /r/n is a return and a new line.
+00:02:08.560 --> 00:02:13.900
+ And in this command, it's exactly what we talked about before. It's exactly what we sent via Telnet.
 
-00:02:31.040 --> 00:02:37.200
- And you have to hit it twice, the enter at the beginning of the first line, and then remember we had to put that blank line in,
+00:02:13.900 --> 00:02:21.260
+ It's a get followed by a space, followed by our URL, followed by a space, followed by a protocol HTTP/1.0,
 
-00:02:37.200 --> 00:02:44.640
- because to say no headers. Now, we would put, in between here, we'd put all our headers in there, if we were going to do that, but we're not going to do that.
+00:02:21.260 --> 00:02:26.760
+ and then we hit the Enter. Now it turns out in network world, you actually hit two things.
 
-00:02:44.640 --> 00:02:51.600
- And then you have to use encode, and encode means that the data sent across the internet is generally sent in what's called UTF-8.
+00:02:26.760 --> 00:02:34.900
+ It's the /r/n is a return and a new line. And you have to hit it twice to enter at the beginning of the first line.
 
-00:02:51.600 --> 00:02:58.640
- Inside of Python, the data is in Unicode, so that you can put literally any character in a Python string,
+00:02:34.900 --> 00:02:38.400
+ And then remember, we had to put that blank line in because to say no headers.
 
-00:02:58.640 --> 00:03:07.440
- and then preparing it to send it out across the internet, we kind of encode it into the more dense UTF, more compressed UTF-8 format,
+00:02:38.400 --> 00:02:42.960
+ Now we would put in between here, we'd put all our headers in there if we were going to do that,
 
-00:03:07.440 --> 00:03:15.920
- rather than we don't send strings across the internet in Unicode in general. I mean, it's very rare, but you'd have to control both ends.
+00:02:42.960 --> 00:02:46.160
+ but we're not going to do that. And then you have to use encode.
 
-00:03:15.920 --> 00:03:23.040
- We want to send them in UTF-8, and so the string get blah blah blah, that's in the Unicode string in Python,
+00:02:46.160 --> 00:02:51.600
+ Encode means that the data sent across the internet is generally sent in what's called UTF-8.
 
-00:03:23.040 --> 00:03:32.640
- and dot encode says convert this into a UTF-8 string, and so command CMD is a variable that has a UTF-8 string in it.
+00:02:51.600 --> 00:02:58.660
+ Inside of Python, the data is in Unicode so that you can put literally any character in a Python string.
 
-00:03:32.640 --> 00:03:37.760
- And then we say send, now remember I said that you can simultaneously send and receive on these sockets,
+00:02:58.660 --> 00:03:05.360
+ And then preparing it to send it out across the internet, we encode it into the more dense UTF,
 
-00:03:37.760 --> 00:03:42.000
- but the protocol tells us whether the first thing we're supposed to do is listen or talk,
+00:03:05.360 --> 00:03:12.060
+ more compressed UTF-8 format rather than we don't send strings across the internet in Unicode in general.
 
-00:03:42.000 --> 00:03:46.640
- and we're the browser in this case, and so we're supposed to talk first.
+00:03:12.060 --> 00:03:18.560
+ I mean, it's very rare, but you'd have to control both ends. We want to send them in UTF-8.
 
-00:03:46.640 --> 00:03:53.920
- So we send the request out, and that's just like you typed it in Telnet, because in effect you're scripting Telnet.
+00:03:18.560 --> 00:03:23.160
+ And so the string get blah, blah, blah, that's in the Unicode string in Python.
 
-00:03:53.920 --> 00:04:00.480
- Telnet, we liked Telnet in the old days because it was kind of like a socket, I could connect to any host, any port,
+00:03:23.160 --> 00:03:26.560
+ And dot encode says convert this into a UTF-8 string.
 
-00:04:00.480 --> 00:04:05.600
- and type things and see if it's broken or not.
+00:03:26.560 --> 00:03:32.760
+ And so command cmd is a variable that has a UTF-8 string in it.
 
-00:04:05.600 --> 00:04:12.800
- And then the protocol says once the server has received the first line, any headers, and then the blank line,
+00:03:32.760 --> 00:03:37.860
+ And then we say send. Now remember, I said that you can simultaneously send and receive on these sockets,
 
-00:04:12.800 --> 00:04:18.720
+00:03:37.860 --> 00:03:42.060
+ but the protocol tells us whether the first thing we're supposed to do is listen or talk.
+
+00:03:42.060 --> 00:03:46.760
+ And we're the browser in this case, and so we're supposed to talk first.
+
+00:03:46.760 --> 00:03:53.960
+ So we send the request out and that's just like you typed it in Telnet because in effect you're scripting Telnet.
+
+00:03:53.960 --> 00:03:58.460
+ Telnet, we liked Telnet in the old days because it was kind of like a socket.
+
+00:03:58.460 --> 00:04:05.660
+ I could connect to any host, any port and type things and see if it's broken or not.
+
+00:04:05.660 --> 00:04:12.860
+ And the protocol says once the server has received the first line, any headers and then the blank line,
+
+00:04:12.860 --> 00:04:18.760
  then it's to return it. So then the next part of this is we're going to have a little loop.
 
-00:04:18.720 --> 00:04:24.640
- So the protocol tells us we are supposed to receive data until the socket's closed,
+00:04:18.760 --> 00:04:24.760
+ So the protocol tells us we are supposed to receive data until the socket's closed.
 
-00:04:24.640 --> 00:04:31.280
- and at the bottom of that Telnet you saw that it sent a bunch of lines, like the four I think, and then it closed it.
+00:04:24.760 --> 00:04:31.360
+ And at the bottom of that Telnet, you saw that it sent a bunch of lines like the four, I think, and then it closed it.
 
-00:04:31.280 --> 00:04:37.760
- That's what's going on here. We are retrieving data, and then this receive, this actually waits.
+00:04:31.360 --> 00:04:35.060
+ That's what's going on here. We are retrieving data.
 
-00:04:37.760 --> 00:04:44.000
- If the server's coming slower, the network is slow, this piece of Python will be, sit, sit, sit, sit,
+00:04:35.060 --> 00:04:40.660
+ And then this receive, this actually waits. If the server is coming slower, the network is slow,
 
-00:04:44.000 --> 00:04:50.560
- oh, got a little bit, got a little bit, up to 512 characters, it will wait until it's gotten 512,
+00:04:40.660 --> 00:04:47.860
+ this piece of Python will be, sit, sit, sit, sit, got a little bit, got a little bit up to 512 characters.
 
-00:04:50.560 --> 00:04:58.720
- or it's done, and it's got 100 or so. But the receive is a blocking, waiting operation in Python,
+00:04:47.860 --> 00:04:55.060
+ It will wait until it's gotten 512 or it's done and it's got 100 or so.
 
-00:04:58.720 --> 00:05:03.920
- says give me up to the next 512 characters. Now usually the network's so fast that the Python doesn't even wait,
+00:04:55.060 --> 00:05:01.160
+ But the receive is a blocking, waiting operation in Python, says give me up to the next 512 characters.
 
-00:05:03.920 --> 00:05:11.760
- because the operating system already has it, but we get it, and if we get no data whatsoever,
+00:05:01.160 --> 00:05:06.360
+ Now, usually the network's so fast that the Python doesn't even wait because the operating system already has it.
 
-00:05:11.760 --> 00:05:16.160
- that isn't our indication that the network connection, the socket has been hung up on,
+00:05:06.360 --> 00:05:13.960
+ But we get it. And if we get no data whatsoever, that isn't our indication that the network connection,
 
-00:05:16.160 --> 00:05:21.440
- closed by the remote server, and away you go. So that's why we are going to break if the length of the
+00:05:13.960 --> 00:05:19.460
+ the socket has been hung up on, closed by the remote server, and away you go.
 
-00:05:21.440 --> 00:05:28.240
- data is less than one, and if not, we're going to simply print out the data, but we're decoding it,
+00:05:19.460 --> 00:05:23.060
+ So that's why we are going to break if the length of the data is less than one.
 
-00:05:28.240 --> 00:05:35.600
- and that's because the data that comes in is in UTF-8, but the print statement wants to print Unicode,
+00:05:23.060 --> 00:05:28.360
+ And if not, we're going to simply print out the data, but we're decoding it.
 
-00:05:35.600 --> 00:05:43.040
- and so decode says, here's a variable that has UTF-8 in it, convert it to Unicode for printing inside of Python.
+00:05:28.360 --> 00:05:35.760
+ And that's because the data that comes in is in UTF-8, but the print statement wants to print Unicode.
 
-00:05:43.040 --> 00:05:50.080
- So because this data is externalized to us, we encode it before we send it, and we decode it
+00:05:35.760 --> 00:05:43.060
+ And so decode says, here's a variable that has UTF-8 in it, convert it to Unicode for printing inside of Python.
 
-00:05:50.080 --> 00:05:56.080
- when we receive it, before we use it, because Python inside itself doesn't use UTF-8, Python inside
+00:05:43.060 --> 00:05:51.060
+ So because this data is externalized to us, we encode it before we send it and we decode it when we receive it,
 
-00:05:56.080 --> 00:06:01.920
- itself uses Unicode, which is awesome and a whole separate conversation. I'm just kind of bringing
+00:05:51.060 --> 00:05:57.960
+ before we use it, because Python inside itself doesn't use UTF-8, Python inside itself uses Unicode,
 
-00:06:01.920 --> 00:06:07.520
- that up to remind you how important it is, because we're not going to write much of this in Python,
+00:05:57.960 --> 00:06:01.260
+ which is awesome and a whole separate conversation.
 
-00:06:07.520 --> 00:06:12.560
- really, and all this stuff is taken care of for us in web servers when we get to that point,
+00:06:01.260 --> 00:06:08.260
+ I'm just kind of bringing that up to remind you how important it is because we're not going to write much of this in Python, really.
 
-00:06:12.560 --> 00:06:18.960
- but it's just a good time to review Python's strings and Unicode and encode and decode,
+00:06:08.260 --> 00:06:12.660
+ And all this stuff is taken care of for us in web servers when we get to that point.
 
-00:06:18.960 --> 00:06:28.320
- because it's really important. So if you run this, and you've got it right, it runs pretty simply.
+00:06:12.660 --> 00:06:22.660
+ But it's just a good time to review Python's strings and Unicode and encode and decode because it's really important.
 
-00:06:28.320 --> 00:06:39.680
- Let's get the color back. Get it back to yellow here. So if you run it in your system, Python socket1.py,
+00:06:22.660 --> 00:06:29.460
+ So if you run this and you've got it right, it runs pretty simply.
 
-00:06:42.160 --> 00:06:47.680
- all the work is done up here before you see your first output, and then all this output that you
+00:06:29.460 --> 00:06:35.760
+ Let's get the color back, get it back to yellow here.
 
-00:06:47.680 --> 00:06:52.560
- see is just this loop running. And what you see is really the exact headers that are coming from
+00:06:35.760 --> 00:06:45.760
+ So if you run it in your system, Python socket1.py, all the work is done up here before you see your first output.
 
-00:06:52.560 --> 00:06:58.080
- this server, and then you see a blank line, and then you see the actual page that's coming out.
+00:06:45.760 --> 00:06:49.560
+ And then all this output that you see is just this loop running.
 
-00:06:58.080 --> 00:07:03.200
- And you don't see it, but at the end here, the connection gets closed, and you break out,
+00:06:49.560 --> 00:06:53.460
+ And what you see is really the exact headers that are coming from this server.
 
-00:07:03.200 --> 00:07:10.080
- and you're done. And then we close our end of the socket. The socket, the far end was already closed.
+00:06:53.460 --> 00:06:59.260
+ And then you see a blank line and then you see the actual page that's coming out and you don't see it.
 
-00:07:10.080 --> 00:07:16.960
- That's how we know to stop reading data. And then we hang ourself up so that our local system does
+00:06:59.260 --> 00:07:03.960
+ But at the end here, the connection gets closed and you break out and you're done.
 
-00:07:16.960 --> 00:07:23.120
- not end up with a bunch of half hung up phone calls. And so that's basically how we talk
+00:07:03.960 --> 00:07:10.160
+ And then we close our end of the socket. The socket, the far end was already closed.
 
-00:07:23.120 --> 00:07:33.600
- to a socket in Python. Now, that was literally 10 years ago how I would debug applications. I would
+00:07:10.160 --> 00:07:13.160
+ That's how we know to stop reading data.
 
-00:07:33.600 --> 00:07:38.240
- like Telnet or write a little thing like that and dump all the headers. And that got really
+00:07:13.160 --> 00:07:20.760
+ And then we hang ourselves up so that our local system does not end up with a bunch of half hung up phone calls.
 
-00:07:38.240 --> 00:07:44.000
- tiring, really boring, really tiring. And so browser developer mode is going to be your friend.
+00:07:20.760 --> 00:07:26.560
+ And so that's basically how we talk to a socket in Python.
 
-00:07:44.000 --> 00:07:47.280
- In a way, browser developer mode-- and I'm going to have a separate video on this--
+00:07:26.560 --> 00:07:33.560
+ Now, that was literally 10 years ago how I would debug applications.
 
-00:07:47.280 --> 00:07:52.480
- browser developer mode lets you look at the sent headers, the received headers, the received data,
+00:07:33.560 --> 00:07:37.560
+ I would like Telnet or write a little thing like that and dump all the headers.
 
-00:07:52.480 --> 00:07:56.560
- the sent data, what URL it went to. And it's super awesome, especially because a lot of
+00:07:37.560 --> 00:07:40.260
+ And that got really tiring, really boring, really tiring.
 
-00:07:56.560 --> 00:08:03.120
- web pages have like 40 to 150 request response cycles. So you don't want to debug them all by
+00:07:40.260 --> 00:07:44.060
+ And so browser developer mode is going to be your friend.
 
-00:08:03.120 --> 00:08:07.680
- hand. You just let the browser do its thing and say, what was that second one, and what went wrong
+00:07:44.060 --> 00:07:47.360
+ In a way, browser developer mode, and I'm going to have a separate video on this.
 
-00:08:07.680 --> 00:08:13.360
- in the second one? I spend a lot of time when I'm debugging web applications using the developer
+00:07:47.360 --> 00:07:54.560
+ Browser developer mode lets you look at the sent headers, the received headers, the received data, the sent data, what URL it went to.
 
-00:08:13.360 --> 00:08:17.520
- mode. And that's why I have a special little video that gets you familiar with it. And I tell
+00:07:54.560 --> 00:08:01.060
+ And it's super awesome, especially because a lot of web pages have like 40 to 150 request response cycles.
 
-00:08:17.520 --> 00:08:21.600
- you, by the time you've done web stuff for a little while, you're going to know your browser
+00:08:01.060 --> 00:08:03.560
+ So you don't want to debug them all by hand.
 
-00:08:21.600 --> 00:08:27.280
- developer mode. So next, we're going to talk about writing code in the server to respond to these
+00:08:03.560 --> 00:08:08.460
+ You just let the browser do its thing and say, what was that second one and what went wrong in the second one?
 
-00:08:27.280 --> 00:08:38.720
- requests.
+00:08:08.460 --> 00:08:13.660
+ I spent a lot of time when I'm debugging web applications using the developer mode.
+
+00:08:13.660 --> 00:08:17.060
+ And that's why I have a special little video that gets you familiar with it.
+
+00:08:17.060 --> 00:08:23.560
+ And I tell you, by the time you've done web stuff for a little while, you're going to know your browser developer mode.
+
+00:08:23.560 --> 00:08:27.960
+ So next, we're going to talk about writing code in the server to respond to these requests.
+
+00:08:38.460 --> 00:08:41.040
+ (upbeat music)
 

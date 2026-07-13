@@ -28,7 +28,7 @@
  And so you'll tend to see, if you look at the zip file,
  that you've got a whole bunch of files in the same directory.
  And with little anchor tags, they point back and forth between each one.
- And so, like I said, you got tags, like the paragraph tag, the strong tag,
+ And so, like I said, you've got tags like the paragraph tag, the strong tag,
  and the emphasize tag.
  They have to start, they have to stop.
  But another thing that's really important about HTML is the fact that
@@ -59,7 +59,7 @@
  So here's a beginning tag, and then here's the ending tag.
  The slash is our indication of an ending, and they're paired.
  And they're also nested.
- So this p tag has a strong tag within it and an m tag within it, and
+ So this P tag has a strong tag within it and an M tag within it, and
  that's totally okay, because this whole thing is a paragraph, and
  this is a piece of bold text.
  So they have beginning and end, and slash is the end.
@@ -68,7 +68,7 @@
  That's the same, you just put a slash here and it self-closes.
  Another thing that you will get used to is the fact that you can put on
  the opening tag attributes, so key value pairs.
- And you'll go define what the, you'll go to the documentation on the image tag and
+ And you'll go define what the, you go to the documentation on the image tag and
  it'll say, put a source attribute on to say what picture,
  what file we want to display as the picture.
  The image tag is to show pictures, basically.
@@ -77,7 +77,7 @@
  we have to have a way to print the special characters.
  So how do we print a special character?
  Well, we use ampersand LT semicolon, and there's a whole list of these things.
- HTML special characters, and you can look them up.
+ HTML, special characters, and you can look them up.
  And you don't, there's some that are kind of fun, like the special characters for
  the deck of the cards, there's mathematical special characters.
  And you go look these up and you can find them.
@@ -102,10 +102,10 @@
  And so it is how we in effect use this thing that we're sort of just scribbling
  on to create knowledge that Google then can extract.
  And so the anchor tag, the a tag, is the tag that we use to do these things.
- And so there's a header one, a paragraph, and
- the anchor tag has, this is the start tag, and this is the end tag.
- And so the text that's clickable is second page.
- And you can see that it's clickable right there.
+ And so there's a header one, a paragraph, and the anchor tag has,
+ this is the start tag, and this is the end tag.
+ And so the text that's clickable is second page, and
+ you can see that it's clickable right there.
  It is styled with a underline and blue to indicate that it's a link.
  And so there is the href, which stands for hypertext reference.
  And then it's an attribute, so it's key value with double quotes.
@@ -121,7 +121,7 @@
  cuz the web wasn't so big in the beginning,
  we would mark them as purple after you'd been to it.
  So you could sort of slowly but surely work your way through the whole internet
- as it existed back in the old days, and keep track of the ones so
+ as it existed back in the old days and keep track of the ones so
  you didn't have to go back to the ones that you'd seen before.
  And that was an absolute link, and here's one with a relative link.
  And that assumes that we are now in the same folder,
@@ -143,12 +143,12 @@
  Images are a lot of fun, and CSS will see how to wrap text.
  One of my favorite things was to wrap text.
  There is an image tag, which we saw before, image, and
- then the source equals is the attribute, and then it quotes the name of the file.
+ then the source equals is the attribute, and then in quotes the name of the file.
  And it can either be an image that's all by itself.
  In this case, this paragraph is what we're seeing.
  And you can see that this image is a tiny image, but
  it's sort of like, blah, blah, blah, blah.
- The image right here works kinda like a character.
+ The image right here works kind of like a character.
  You gotta be careful, cuz the images can be really big.
  That's why I made a tiny image.
  And you could even, for example, in this case, I have an anchor tag.
@@ -157,9 +157,9 @@
  And so you can make an image be a hypertext reference as well.
  Now we're gonna do much more with these things, and
  this is just, at this point, the basics.
- Lists are an important part of HTML.
+ Now, lists are an important part of HTML.
  There's ordered lists and unordered lists.
- And so the unordered list starts with a UL tag and ends with a UL tag.
+ And so the unordered list starts with the UL tag and ends with the UL tag.
  And then that sort of bounds the whole list.
  And then each list element starts with an li, list item, and /li.
  And I want a little bit of spacing.
@@ -170,8 +170,8 @@
  You could make a little denser list with a list of links or something.
  But I'm putting paragraphs in.
  And so you can see that I have li to end li, li to end li.
- I'm putting some links in here, etc, etc.
- And so dot, dot, dot, dot, and it puts all the bullets in.
+ I'm putting some links in here, etc., etc., and so dot, dot, dot, dot, dot.
+ And it puts all the bullets in.
  It does the indenting automatically.
  We'll see in a bit how we can control all that formatting and
  do different things if we wanna do those different things.
@@ -182,10 +182,9 @@
  not how pretty it is.
  Tables, tables have a bit of a checkered past.
  In the early days, people tended to use tables to lay pages out on grids.
- And they would just put a paragraph here, and a paragraph here, and
- then a paragraph underneath it.
- And they would move them around, and
- they would put images in some of the table cells.
+ And they would just put a paragraph here and a paragraph here and
+ then a paragraph underneath it, and they would move them to move around.
+ And they would put images in some of the table cells.
  And that turned out to be really bad.
  And that notion of tables as graphic layout is long gone.
  And we use CSS now, which is the next lecture.
@@ -201,12 +200,13 @@
  three table headers, one, two, three.
  And then we're gonna put TDs for the data.
  TD stands for data, one, two, three.
- And so that's the Ford, Edge, and then the mileage of that, and on, and on, and on,
- and on as we go.
+ And so that's the forward, edge, and then the mileage of that.
+ And on and on and on and on as we go.
  And so it's not hard to build them.
- You kind of have to keep track of how many of these things you've got.
- And there are tricks where you can make a table that has like four things, but
- then in one row, this expands so that that's, I can't erase it, can't erase it.
+ You kinda have to keep track of how many of these things you've got.
+ And there are tricks where you can make a table that has like four things.
+ But then in one row this expands so that that's, I can't erase it.
+ Can't erase it.
  So there are ways to do things where a data element spans more than one column.
  Call span, for example, but the key to tables is that we use them for tables.
  We don't use them for
@@ -217,19 +217,19 @@
  And I really am intending that you will, these are very simple pages, but
  the idea is to look at them in developer mode and take a look at them.
  And then you can see how the various things work.
- And you can also then look at the source code and see, here's how a pre-tag works.
- Or where's the pre-tag?
- No, yeah.
- So look at the source code, take a look at things, and
+ And you can also then look at the source code and see,
+ here's how a pre-tag works, or where's the pre-tag?
+ No. Yeah.
+ So we look at the source code, take a look at things and
  show that the line wrapping does not actually matter.
  We look at pre-tag in another one.
- So I'll record some walkthroughs of all this sample code, but
+ So I'll record some walk-throughs of all this sample code, but
  I encourage you to take a look at it cuz it has a lot of good examples of
  the basics of HTML.
  And so HTML is a continually evolving thing.
  It's a very creative space.
  It's a lot of fun.
  We have to avoid the temptation of trying to make everything look pretty in
- the HTML, but instead, delegate that to the CSS,
+ the HTML, but instead delegate that to the CSS,
  which is what we're gonna talk about next.
  [MUSIC]

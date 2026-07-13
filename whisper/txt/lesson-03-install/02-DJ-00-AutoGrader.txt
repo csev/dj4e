@@ -1,91 +1,87 @@
- Hello, and welcome to another walk-through for Django for Everybody.
- Today what we're going to talk about is the auto-grader.
+ Hello, and welcome to another walkthrough for Django for Everybody.
+ Today what we're going to talk about is the autograder.
  So you just finished your assignment and you are looking at needing to earn a grade.
- So you have drchuckanywhere.com after the install of the first assignment and it's working
- and you've got a URL and away it goes.
+ So you have drchuckanywhere.com after the install of the first assignment and it's working and
+ you've got a URL and away it goes.
  And now you launch from your learning management system to earn a grade and you're presented
  with this page.
- This is an auto-grader page.
- So you'll notice it has the instructions for that assignment that you just completed, right?
- So you go to the auto-grader, it usually tells you where the instructions are.
+ This is an autograder page.
+ So you notice it has the instructions for that assignment that you just completed, right?
+ So you go to the autograder, it usually tells you where the instructions are.
  And so there's rules in those instructions and we went through these in a completely
- separate video.
- And you've got to follow those and sometimes there's little details down here about characters
- you're supposed to do or ways you're supposed to do things.
- That gets checked for.
- But then the auto-grader has its own set of rules.
- And so it puts these codes in various places.
- That's one of the ways the auto-grader tracks whether or not stuff is moved between students.
- And so that you're grading your version of this, not someone else's application, okay?
+ separate video and you got to follow those and sometimes there's little details down
+ here about characters you're supposed to do or ways you're supposed to do things.
+ That gets checked for, but then the autograder has its own set of rules and so it puts these
+ codes in various places.
+ That's one of the ways the autograder tracks whether or not stuff is moved between students
+ and so that you're grading your version of this, not someone else's application, okay?
  So let me show you a little bit about what happens right when you're going to press this
  evaluate button.
- So this is a couple of slides I have on how the auto-grader works.
+ So this is a couple of slides I have on how the autograder works.
  So what is it?
- So the auto-grader is a piece of software that I wrote on www.dj4e.com, it's launched
- from Canvas or Coursera.
- That is going to grade your assignment, check to make sure it's okay.
- And it's a very simple program.
+ So the autograder is a piece of software that I wrote on www.dj4e.com, it's launched from
+ Canvas or Coursera, that is going to grade your assignment, check to make sure it's okay,
+ and it's a very simple program.
  If you took Python for everybody, you wrote a program that does web crawling.
  So what this is is just a smart web crawler that decides if your page meets a certain
  set of specifications and then gives it a grade.
- So it sends requests the webpage and it checks the response to make sure that it's right,
+ So it sends requests the web page and it checks the response to make sure that it's right,
  then continues to the next page.
  And if it makes it all the way through all of the tests, then a correct grade is sent
  back to Canvas.
  So I have an philosophy and approach.
  I'm trying to make these simple.
- Sometimes there's auto-graders that try to trick you.
+ Sometimes there's autograders that try to trick you.
  I want to keep it as simple as possible.
  I want to just check to see did you follow the instructions, right?
- And you'll make lots of little mistakes and this auto-grader is going to catch them.
+ And you'll make lots of little mistakes and this autograder is going to catch them.
  I give you a lot of feedback.
- I try not to make the auto-grader mysterious.
+ I try not to make the autograder mysterious.
  Although you will think I'm doing that, it is not true.
  All it does is did you check the instructions?
  It's doing the simplest thing it can possibly can, which is not always super simple.
  So there's no guarantee that the AI-generated code that looks good in the browser is going
- to pass the auto-grader.
- And so you can't come and say, "Look, it has a button and it says the word hello world."
+ to pass the autograder.
+ And so you can't come and say, look, it has a button and it says the word hello world.
  Well, it might be that it's the wrong kind of button or you're using an anchor tag or
- a button tag because AI just did it.
- Because AI can build code an infinite number of ways.
+ a button tag because AI just did it, because AI can build code an infinite number of ways.
  If you follow my instructions, you tend to build it one way.
- And that's what the auto-grader is looking for.
+ And that's what the autograder is looking for.
  Did you follow the instructions?
- Follow the instructions, doing your own work, and then the auto-grader is going to take
- you to the bugs, give you a grade when you fix those bugs, and it should be straightforward.
+ Following instructions, doing your own work, and then the autograder is going to take you
+ to the bugs, give you a grade when you fix those bugs, and it should be straightforward.
  I'm not saying you can't use AI on the way.
  So here's kind of a block diagram of how this process works.
  So you're developing, say, your website on drchuckpythonanywhere.com, you're using a
  browser and you're clicking on it and you're hitting refresh and you're getting errors
  and you're fixing the errors and reloading your application.
  So that top process of just developing and testing is really important.
- And some of the auto-graders or assignments will give you manual testing.
+ And some of the autograders or assignments will give you manual testing.
  And I think it's really important for you to manually test first.
  And then hopefully when it all works and you've manually tested it, then it's time to send
- it to the auto-grader.
+ it to the autograder.
  And so you go in from your learning management system, launches into djangoforeverybody.com
  with an LTI token, and then you press the evaluate button.
  And then what happens is djfree.com makes its own connections to your website and it
  sends requests and it receives HTML back and it reads that HTML.
- And based on what that HTML is, it either says, "Whoops, I got the wrong thing," or
- it goes on and then eventually using Learning Tools Interoperability, it sends a grade back
+ And based on what that HTML is, it either says, whoops, I got the wrong thing, or it
+ goes on and then eventually, using Learning Tools Interoperability, it sends a grade back
  to Canvas or Coursera.
- In the first auto-grader that we're going to show here, it really just does one, but
- you can get toward the end and djfree.com will make up to 50 request response cycles.
- And it's got a lot of debug output and so you're going to have to scroll down.
+ And the first autograder that we're gonna show here really just does one, but you can
+ get toward the end and djfree.com will make up to 50 request response cycles.
+ And it's got a lot of debug output and so you're gonna have to scroll down.
  I'll probably make another video in the second half so you can see some of the techniques
- when the auto-grader gets a lot more sophisticated.
- So now before, last thing to do before we go to the auto-grader demonstration is to
- basically say, "What does it look like?"
+ when the autograder gets a lot more sophisticated.
+ So now before, last thing to do before we go to the autograder demonstration is to basically
+ say what does it look like.
  So it's written in a programming language called PHP.
  It's all up in GitHub.
  It's all open source.
- If you really want to get smart or if you want to train your AI bot, you can look at
- the auto-grader code and AI would understand this.
- And so you might say, "I'm doing this homework, I'm submitting it to this auto-grader and
- it's not working.
- Help me fix my code."
+ If you really wanna get smart or if you wanna train your AI bot, you can look at the autograder
+ code and AI would understand this.
+ And so you might say I'm doing this homework, I'm submitting it to this autograder and it's
+ not working.
+ Help me fix my code.
  That is not a good strategy, but it's okay.
  So you look here, it's got a couple lines of code.
  So it's got some URL, probably a URL that you pass in, and then it makes a connection.
@@ -95,110 +91,81 @@
  And then I get the HTML back and I search for the string hello.
  And then in the next line, I'm checking to see if you've got the code that I wanted you
  to put in correctly and it finds it and then you got your grade.
- Otherwise it says, "I didn't find it.
- No score sent."
- So this is the first, this auto-grader is very, very simple.
- That's pretty much the core code.
- If this auto-grader is like 12 lines of code, it's an easy one.
- So you want to read this stuff closely.
- I understand the temptation to just hit this evaluate button, but we've got to make a change.
- But I'm not going to make that change right now.
- So this is going to grade drchuckpythonanywhere.com/polls.
+ Otherwise it says I didn't find it, no score sent.
+ So this autograder is very, very simple.
+ That's pretty much the core code if this autograder is like 12 lines of code.
+ It's an easy one.
+ So you wanna read this stuff closely.
+ I understand the temptation to just hit this evaluate button, but we've gotta make a change,
+ but I'm not gonna make that change right now.
+ So this is gonna grade drchuckpythonanywhere.com/polls.
  Now you'll notice that I always give you a reference implementation.
  And so this is just a thing.
  If you go up here, djtutorial.djfree.com/polls, you see I have a reference implementation.
  And I have this here so that you don't have to put yours in first.
- You can see how the auto-grader works.
- So I'm going to press evaluate.
- Now it didn't take long, but all those requests.
- And I mentioned that it's trying to tell you what's going on.
+ You can see how the autograder works.
+ So I'm gonna press evaluate.
+ Now it didn't take long, but all those requests, and I mentioned that it's trying to tell you
+ what's going on.
  You got a score to the bottom.
- It said, "No score sent."
+ It said no score sent.
  If you check in your learning management system, you didn't get a score.
- And it's like, "Okay, it found a hello.
- That's good."
- But it didn't find this.
+ And it's like, okay, it found a hello, that's good, but it didn't find this.
  Now there's two things you can do.
- You can open this URL.
- That's the URL it went to, and you're like, "Oh, okay.
- That is what this URL is, cool."
+ You can open this URL, that's the URL it went to, and you're like, oh, okay, that is what
+ this URL is, cool.
  Or you can just see the page.
  If you look at it, what it's showing you is it's showing you it made a request and it's
  showing you the page that it got back.
- And then it looks at that page that got back.
- And when it looks at the page that came back and it doesn't like it, it tells you about
- that.
- And this goes down to, "I'm trying to give you as much feedback."
+ And then it looks at that page that got back, and when it looks at the page that came back
+ and it doesn't like it, it tells you about that.
+ And this goes down to I'm trying to give you as much feedback.
  Now a lot of students just don't go down to the bottom, say something went wrong and then
  hit show/hide/retrieve page on the thing right before everything blew up because it was looking
  in this HTML.
  So we got no score.
- So here's the thing.
- It's like, "Okay, it wanted me.
- I didn't listen to this."
- So it says, "You might want to put this in your views.py."
+ So here's the thing, it's like, okay, it wanted me, I didn't listen to this, so it says you
+ might want to put this in your views.py.
  So let's go put that in my views.py.
- So here I am as Dr. Chuck logged in.
- Let's go into my files, take a look at Django projects, my site, polls, views.py.
- And here's that code.
+ So here I am as Dr. Chuck logged in, let's go into my files, take a look at Django projects,
+ my site, polls, views.py, and here's that code.
  And look, the autograder gave me an exact thing to paste.
  Now I got to get my indentation right.
- And if I save it and I introduce a Python syntax error, "Oh, wait a sec.
- Let's introduce a Python syntax error."
+ And if I save it and I introduce a Python syntax error, oh, wait a sec, let's introduce
+ a Python syntax error.
  Okay, so I'm working on this and I mess up and I make a mistake.
- Watch, I'll say save and it goes like, "But that's okay."
+ Watch, I'll say save and it goes like, but that's okay.
  Then I'm going to reload it.
  Important, important, important, important, important, very important.
  I've saved it and I can reload the entire Python application on Python Anywhere by clicking
  right there.
- It's got the little spinner.
- You got to wait till the spinner happens.
- Okay, the spinner completes.
- Keep going.
- Keep going.
- Happy little spinner.
- Happy little spinner.
- Got to wait.
- Ugh.
- We got to wait.
+ It's got the little spinner, you gotta wait till the spinner happens.
+ Okay, the spinner completes, keep going, keep going.
+ Happy little spinner, happy little spinner, gotta wait, we gotta wait.
  Python Anywhere is a big shared system.
  Okay, spinner finished.
- Now I can go back to my Dr. Chuck Anywhere Python Anywhere polls.
- And now what happens is I see the change that I made.
+ Now I can go back to my Dr. Chuck Anywhere Python Anywhere polls and now what happens
+ is I see the change that I made.
  Something went wrong.
  So what happened is it blew up.
  That's because I made a mistake.
  I'm going to write a whole video about making mistakes and fixing them.
  So I'm just going to fix this mistake and I'm going to make the Python correct.
  Save it and reload the application.
- And again, this is taking the new source code and reconnecting it to DrChuckPythonAnywhere.com.
+ Again, this is taking the new source code and reconnecting it to drchuckpythonanywhere.com.
  So the first thing I always do is check to see if it worked.
  And so this is the new output.
  And then I can go back to the autograder.
- Now it's got this thing.
- I'll hide this.
- It's got this rerun test.
+ Now it's got this thing, I'll hide this, it's got this rerun test.
  So it's rerunning the same test to the same URL.
- Now the test runs.
- Wait a second.
- Show hide, retrieve.
- Oh, oh, it's.
- Oh, wait a sec.
- Look.
- It's running the sample application.
- OK, so now I got to relaunch this thing.
- I relaunch it here.
- And so that I can type it in because I don't want it to do my reference implementation.
- I got to paste in DrChuckAnywhere.com/polls.
- And students will come into my office doing exactly what I just did.
- And that is keep grading the reference implementation.
+ Now the test runs, wait a second, show, hide, retrieve, oh, wait a second, look.
+ It's running the sample application, okay?
+ So now I got to relaunch this thing, I relaunch it here and so that I can type it in because
+ I don't want it to do my reference implementation.
+ I got to paste in drchuckanywhere.com/polls and students will come into my office doing
+ exactly what I just did and that is keep grading the reference implementation.
  So now it's that one.
- And look, that's the page that's coming back from DrChuckPythonAnywhere.com.
- I can open the URL.
- I can see the page.
- It found hello.
- And it found my code in there.
- And then the grade was sent to the server.
- OK, so I hope this has been helpful to you.
- How to use the autograder.
- Cheers.
+ And look, that's the page that's coming back from drchuckpythonanywhere.com.
+ I can open the URL, I can see the page, it found hello and it found my code in there
+ and then the grade was sent to the server, okay?
+ So I hope this has been helpful to you, how to use the autograder, cheers.

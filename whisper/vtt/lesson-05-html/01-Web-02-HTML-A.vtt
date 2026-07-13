@@ -1,24 +1,21 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.240
- Hello and welcome to our lecture on HTML, the hypertext markup language.
+00:00:00.000 --> 00:00:05.260
+ >> Hello and welcome to our lecture on HTML, the hypertext markup language.
 
-00:00:05.240 --> 00:00:08.880
- So we're gonna place this in the context of our request-response cycle and
+00:00:05.260 --> 00:00:08.900
+ So we're gonna place this in the context of our request response cycle and
 
-00:00:08.880 --> 00:00:12.240
- sort of here's us in the request-response cycle in our browser and
+00:00:08.900 --> 00:00:13.360
+ sort of hears us in the request response cycle in our browser and what we're seeing.
 
-00:00:12.240 --> 00:00:13.360
- what we're seeing.
-
-00:00:13.360 --> 00:00:15.960
+00:00:13.360 --> 00:00:15.980
  We make a click, it goes across the network to the web server,
 
-00:00:15.960 --> 00:00:19.680
+00:00:15.980 --> 00:00:19.700
  runs some code, maybe talks to a database, formats up some new stuff and
 
-00:00:19.680 --> 00:00:25.200
+00:00:19.700 --> 00:00:25.200
  we get the response, then HTML comes out and then that's parsed to make the DOM.
 
 00:00:25.200 --> 00:00:28.400
@@ -36,26 +33,26 @@ WEBVTT
 00:00:36.400 --> 00:00:40.240
  It's HTML and it is parsed and it's read through and
 
-00:00:40.240 --> 00:00:45.200
+00:00:40.240 --> 00:00:45.040
  it's used to construct the document object model which then shows what we see.
 
-00:00:45.200 --> 00:00:51.360
+00:00:45.040 --> 00:00:51.360
  And so HTML is just a technique of using some special characters,
 
 00:00:51.360 --> 00:00:55.840
  less than and greater than, to add tags to indicate what we wanna see.
 
-00:00:55.840 --> 00:01:02.000
+00:00:55.840 --> 00:01:01.960
  Like the paragraph tag, the paragraph tag, that's a paragraph tag.
 
-00:01:02.000 --> 00:01:06.680
+00:01:01.960 --> 00:01:06.680
  Strong tag makes things bold, emphasize tag and a paragraph tag.
 
 00:01:06.680 --> 00:01:11.200
  And so we have these tags and we just mark up, we're communicating meaning.
 
 00:01:11.200 --> 00:01:15.640
- If you're old enough to remember what word processors used to have ways to look
+ If you're old enough to remember, well, word processors used to have ways to look
 
 00:01:15.640 --> 00:01:20.240
  at the actual codes that were being stored in the word processor file.
@@ -69,16 +66,16 @@ WEBVTT
 00:01:27.500 --> 00:01:31.800
  And we're doing so many cool things with it, it's continuously evolving.
 
-00:01:31.800 --> 00:01:36.880
+00:01:31.800 --> 00:01:36.840
  And really, we're less than 20 years old and so
 
-00:01:36.880 --> 00:01:40.480
+00:01:36.840 --> 00:01:40.480
  we're doing so much with it, it's continuously evolving.
 
-00:01:40.480 --> 00:01:44.760
+00:01:40.480 --> 00:01:44.720
  So HTML and CSS are really kind of at the edge.
 
-00:01:44.760 --> 00:01:46.760
+00:01:44.720 --> 00:01:46.760
  Looking back in the early days,
 
 00:01:46.760 --> 00:01:50.160
@@ -87,40 +84,37 @@ WEBVTT
 00:01:50.160 --> 00:01:53.520
  it worked on a next computer in the early 1990s.
 
-00:01:53.520 --> 00:01:58.240
- And so this is the next browser, which came from CERN, and
+00:01:53.520 --> 00:01:58.080
+ And so this is the next browser which came from CERN.
 
-00:01:58.240 --> 00:02:02.880
- it had everything in a new window, images were not shown in line.
+00:01:58.080 --> 00:02:02.880
+ And it had everything in a new window, images were not shown in line.
 
-00:02:02.880 --> 00:02:05.480
- And then there was the NCSA mosaic browser,
+00:02:02.880 --> 00:02:07.200
+ And then there was the NCSA mosaic browser which was the first browser that
 
-00:02:05.480 --> 00:02:09.840
- which was the first browser that was universally available on Unix,
+00:02:07.200 --> 00:02:11.720
+ was universally available on Unix, Windows and Macintosh.
 
-00:02:09.840 --> 00:02:11.720
- Windows and Macintosh.
-
-00:02:11.720 --> 00:02:16.680
+00:02:11.720 --> 00:02:16.720
  And you see things like gray background and blue links and
 
-00:02:16.680 --> 00:02:19.800
+00:02:16.720 --> 00:02:19.800
  highlighted links that you visited in purple.
 
-00:02:19.800 --> 00:02:24.500
+00:02:19.800 --> 00:02:24.520
  And so in the early days, it was nothing like what we see today.
 
-00:02:24.500 --> 00:02:28.400
+00:02:24.520 --> 00:02:28.420
  In the early days, we were just amazed and happy that we could see a link and
 
-00:02:28.400 --> 00:02:30.800
+00:02:28.420 --> 00:02:30.800
  you'd click a link and something would happen.
 
-00:02:30.800 --> 00:02:36.020
+00:02:30.800 --> 00:02:36.000
  But today, money is to be made based on making stuff super beautiful and
 
-00:02:36.020 --> 00:02:39.880
+00:02:36.000 --> 00:02:39.880
  the number of pixels and how things line up and how things are shoved over and
 
 00:02:39.880 --> 00:02:41.360
@@ -132,11 +126,11 @@ WEBVTT
 00:02:46.480 --> 00:02:50.480
  we were just amazed to have web pages that worked in the first place.
 
-00:02:50.480 --> 00:02:52.480
- And of course, computers have gotten much faster,
+00:02:50.480 --> 00:02:53.960
+ And of course, computers have gotten much faster, capable of handling video and
 
-00:02:52.480 --> 00:02:55.160
- capable of handling video and images.
+00:02:53.960 --> 00:02:55.160
+ images.
 
 00:02:55.160 --> 00:02:59.100
  Back in the old days, images were costly, both for network bandwidth and
@@ -144,10 +138,10 @@ WEBVTT
 00:02:59.100 --> 00:03:01.120
  for the time it took your computer to display them.
 
-00:03:01.120 --> 00:03:04.040
+00:03:01.120 --> 00:03:04.080
  And so that just affected how we did it.
 
-00:03:04.040 --> 00:03:06.040
+00:03:04.080 --> 00:03:06.040
  And it's kind of fun to use the Wayback Machine,
 
 00:03:06.040 --> 00:03:09.000
@@ -162,10 +156,10 @@ WEBVTT
 00:03:15.880 --> 00:03:21.040
  And in the good old days, HTML was kind of a wild west.
 
-00:03:21.040 --> 00:03:26.000
+00:03:21.040 --> 00:03:26.040
  The browsers did not want to show broken HTML as broken HTML.
 
-00:03:26.000 --> 00:03:28.240
+00:03:26.040 --> 00:03:28.240
  And so they compensated for it.
 
 00:03:28.240 --> 00:03:32.920
@@ -184,30 +178,27 @@ WEBVTT
  So there was all kinds of stuff.
 
 00:03:44.680 --> 00:03:47.520
- And literally, you could take this bad page, and
+ And literally, you can take this bad page and
 
 00:03:47.520 --> 00:03:50.680
- you could put it into a web browser, and it will still display.
+ you could put it into a web browser and it will still display.
 
 00:03:50.680 --> 00:03:54.400
- So HTML wallet technically is a very precise language, and
+ So HTML, while it technically is a very precise language and
 
-00:03:54.400 --> 00:03:56.080
- you can make syntax errors.
-
-00:03:56.080 --> 00:03:59.800
- Browsers are extremely flexible in terms of parsing it.
+00:03:54.400 --> 00:03:59.800
+ you can make syntax errors, browsers are extremely flexible in terms of parsing it.
 
 00:03:59.800 --> 00:04:02.080
  Now, you're not gonna get predictable results,
 
-00:04:02.080 --> 00:04:04.120
+00:04:02.080 --> 00:04:04.080
  like browsers can go into what's called quirks mode.
 
-00:04:04.120 --> 00:04:09.400
+00:04:04.080 --> 00:04:09.440
  And so in order to create the standards environment that we have today,
 
-00:04:09.400 --> 00:04:13.400
+00:04:09.440 --> 00:04:13.400
  Tim Berners-Lee, one of the original founders of the World Wide Web,
 
 00:04:13.400 --> 00:04:17.840
@@ -220,21 +211,21 @@ WEBVTT
  having HTML be defined by the browser, instead they would write a spec for
 
 00:04:25.400 --> 00:04:29.960
- what HTML was, and then multiple vendors could produce the browsers.
+ what HTML was and then multiple vendors could produce the browsers.
 
-00:04:29.960 --> 00:04:34.800
+00:04:29.960 --> 00:04:34.760
  And it took a while for this to become successful, but
 
-00:04:34.800 --> 00:04:38.160
+00:04:34.760 --> 00:04:38.160
  there was a need for every vendor to build a web browser.
 
 00:04:38.160 --> 00:04:40.720
  And so they worked with the World Wide Web Consortium.
 
-00:04:40.720 --> 00:04:47.000
- And like the mid and late 90s, '95, '96, well, '94 through '98, '99,
+00:04:40.720 --> 00:04:46.280
+ And like the mid and late 90s, '95, '96, well '94 through '98, '99,
 
-00:04:47.000 --> 00:04:50.960
+00:04:46.280 --> 00:04:50.960
  the World Wide Web Consortium created a lot of wonderful standards around
 
 00:04:50.960 --> 00:04:51.720
@@ -252,10 +243,10 @@ WEBVTT
 00:05:06.240 --> 00:05:10.320
  You have to have open tags and closed tags, open tags and closed tags.
 
-00:05:10.320 --> 00:05:14.600
- And so there's a set of rules, and now we are much more precise about our HTML.
+00:05:10.320 --> 00:05:14.800
+ And so there's a set of rules and now we are much more precise about our HTML.
 
-00:05:14.600 --> 00:05:19.480
+00:05:14.800 --> 00:05:19.480
  And we try to write it as precise as we can so that we get the best performance and
 
 00:05:19.480 --> 00:05:23.400
@@ -276,9 +267,9 @@ WEBVTT
 00:05:35.440 --> 00:05:39.840
  So up next, we're gonna talk about HTML itself, look at some HTML documents.
 
-00:05:39.840 --> 00:05:42.480
+00:05:39.840 --> 00:05:42.580
  And take a look at the syntax of HTML.
 
-00:05:42.480 --> 00:05:52.480
+00:05:42.580 --> 00:05:52.580
  [MUSIC]
 

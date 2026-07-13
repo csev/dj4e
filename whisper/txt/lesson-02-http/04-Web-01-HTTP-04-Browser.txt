@@ -1,79 +1,89 @@
  So now we're going to build a very simple browser and server in Python.
  Okay, so import a library, import socket, and that just like, you know, import math or import whatever,
  that pulls in a library into Python. Sockets are built into Python, it's very cool, and it's very, very simple.
- So, we're, sockets kind of function like files, but they're files that we can send data to and receive data to,
+ So we're, sockets kind of function like files, but they're files that we can send data to and receive data to,
  but when you're using a file in Python, you've got to first open it.
- And so, the opening of a file, of a socket, is really a two-step process.
- First, you create the socket, and that socket sort of lives in your computer as an endpoint that's not yet finished.
+ And so the opening of a file, of a socket, is really a two-step process.
+ First you create the socket, and that socket sort of lives in your computer as an endpoint that's not yet finished.
  It's the endpoint that you're going to send and receive data to inside your computer,
- but then we have to actually make the phone call. So, socket.socket, and don't worry too much about this syntax,
- we don't change it, socket.socket basically says make a phone, that's what we're making.
- And then, mysock.connect, that second line, is dial the phone.
+ but then we have to actually make the phone call. So socket dot socket, and don't worry too much about this syntax,
+ we don't change it. Socket dot socket basically says make a phone, that's what we're making.
+ And then mysock.connect, that second line, is dial the phone.
  And we're dialing the phone to a domain name, data.pr4e.org, and a port in that domain name.
- So, that is the call. Now, if we made a mistake, right, if we had, we were dialing and not talking to the right server,
- or that server didn't exist, this connect would blow up, meaning we'd make a phone call, a data phone call to a server that doesn't exist.
- That line is what's going to blow up. But, as you continue down to the next line, if you continue down to the next line,
- if it gets that far, now you put try and accepts around this, but I don't want to keep this really short, so I'm not putting in all the stuff,
- all the error checking. So, connect might blow up, socket.socket won't blow up, because it's like,
- unless you don't have networking at all in your computer, but it's unlikely these days.
- But, mysock.connect is like, dial the phone, dial the data phone to this endpoint, and it includes the port, the port 80 that we talked about before.
- And now, we need to send a command. And in this command, it's exactly what we talked about before, it's exactly what we sent via telnet.
- It's a get, followed by a space, followed by our URL, followed by a space, followed by a protocol HTTP/1.0,
- and then we hit the enter. Now, it turns out, in network world, you actually hit two things, it's the /r/n is a return and a new line.
- And you have to hit it twice, the enter at the beginning of the first line, and then remember we had to put that blank line in,
- because to say no headers. Now, we would put, in between here, we'd put all our headers in there, if we were going to do that, but we're not going to do that.
- And then you have to use encode, and encode means that the data sent across the internet is generally sent in what's called UTF-8.
- Inside of Python, the data is in Unicode, so that you can put literally any character in a Python string,
- and then preparing it to send it out across the internet, we kind of encode it into the more dense UTF, more compressed UTF-8 format,
- rather than we don't send strings across the internet in Unicode in general. I mean, it's very rare, but you'd have to control both ends.
- We want to send them in UTF-8, and so the string get blah blah blah, that's in the Unicode string in Python,
- and dot encode says convert this into a UTF-8 string, and so command CMD is a variable that has a UTF-8 string in it.
- And then we say send, now remember I said that you can simultaneously send and receive on these sockets,
- but the protocol tells us whether the first thing we're supposed to do is listen or talk,
- and we're the browser in this case, and so we're supposed to talk first.
- So we send the request out, and that's just like you typed it in Telnet, because in effect you're scripting Telnet.
- Telnet, we liked Telnet in the old days because it was kind of like a socket, I could connect to any host, any port,
- and type things and see if it's broken or not.
- And then the protocol says once the server has received the first line, any headers, and then the blank line,
+ So that is the call. Now, if we made a mistake, right, if we were dialing and not talking to the right server,
+ or that server didn't exist, this connect would blow up, meaning we'd make a phone call, a data phone call,
+ to a server that doesn't exist. That line is what's going to blow up.
+ But as you continue down to the next line, if you continue down to the next line, if it gets that far,
+ now you put try and accepts around this, but I want to keep this really short, so I'm not putting in all the stuff,
+ all the error checking. So connect might blow up. Socket dot socket won't blow up,
+ because it's like unless you don't have networking at all in your computer, but it's unlikely these days.
+ But mysock.connect is like dial the phone, dial the data phone to this endpoint, and it includes the port,
+ the port 80 that we talked about before. And now we need to send a command.
+ And in this command, it's exactly what we talked about before. It's exactly what we sent via Telnet.
+ It's a get followed by a space, followed by our URL, followed by a space, followed by a protocol HTTP/1.0,
+ and then we hit the Enter. Now it turns out in network world, you actually hit two things.
+ It's the /r/n is a return and a new line. And you have to hit it twice to enter at the beginning of the first line.
+ And then remember, we had to put that blank line in because to say no headers.
+ Now we would put in between here, we'd put all our headers in there if we were going to do that,
+ but we're not going to do that. And then you have to use encode.
+ Encode means that the data sent across the internet is generally sent in what's called UTF-8.
+ Inside of Python, the data is in Unicode so that you can put literally any character in a Python string.
+ And then preparing it to send it out across the internet, we encode it into the more dense UTF,
+ more compressed UTF-8 format rather than we don't send strings across the internet in Unicode in general.
+ I mean, it's very rare, but you'd have to control both ends. We want to send them in UTF-8.
+ And so the string get blah, blah, blah, that's in the Unicode string in Python.
+ And dot encode says convert this into a UTF-8 string.
+ And so command cmd is a variable that has a UTF-8 string in it.
+ And then we say send. Now remember, I said that you can simultaneously send and receive on these sockets,
+ but the protocol tells us whether the first thing we're supposed to do is listen or talk.
+ And we're the browser in this case, and so we're supposed to talk first.
+ So we send the request out and that's just like you typed it in Telnet because in effect you're scripting Telnet.
+ Telnet, we liked Telnet in the old days because it was kind of like a socket.
+ I could connect to any host, any port and type things and see if it's broken or not.
+ And the protocol says once the server has received the first line, any headers and then the blank line,
  then it's to return it. So then the next part of this is we're going to have a little loop.
- So the protocol tells us we are supposed to receive data until the socket's closed,
- and at the bottom of that Telnet you saw that it sent a bunch of lines, like the four I think, and then it closed it.
- That's what's going on here. We are retrieving data, and then this receive, this actually waits.
- If the server's coming slower, the network is slow, this piece of Python will be, sit, sit, sit, sit,
- oh, got a little bit, got a little bit, up to 512 characters, it will wait until it's gotten 512,
- or it's done, and it's got 100 or so. But the receive is a blocking, waiting operation in Python,
- says give me up to the next 512 characters. Now usually the network's so fast that the Python doesn't even wait,
- because the operating system already has it, but we get it, and if we get no data whatsoever,
- that isn't our indication that the network connection, the socket has been hung up on,
- closed by the remote server, and away you go. So that's why we are going to break if the length of the
- data is less than one, and if not, we're going to simply print out the data, but we're decoding it,
- and that's because the data that comes in is in UTF-8, but the print statement wants to print Unicode,
- and so decode says, here's a variable that has UTF-8 in it, convert it to Unicode for printing inside of Python.
- So because this data is externalized to us, we encode it before we send it, and we decode it
- when we receive it, before we use it, because Python inside itself doesn't use UTF-8, Python inside
- itself uses Unicode, which is awesome and a whole separate conversation. I'm just kind of bringing
- that up to remind you how important it is, because we're not going to write much of this in Python,
- really, and all this stuff is taken care of for us in web servers when we get to that point,
- but it's just a good time to review Python's strings and Unicode and encode and decode,
- because it's really important. So if you run this, and you've got it right, it runs pretty simply.
- Let's get the color back. Get it back to yellow here. So if you run it in your system, Python socket1.py,
- all the work is done up here before you see your first output, and then all this output that you
- see is just this loop running. And what you see is really the exact headers that are coming from
- this server, and then you see a blank line, and then you see the actual page that's coming out.
- And you don't see it, but at the end here, the connection gets closed, and you break out,
- and you're done. And then we close our end of the socket. The socket, the far end was already closed.
- That's how we know to stop reading data. And then we hang ourself up so that our local system does
- not end up with a bunch of half hung up phone calls. And so that's basically how we talk
- to a socket in Python. Now, that was literally 10 years ago how I would debug applications. I would
- like Telnet or write a little thing like that and dump all the headers. And that got really
- tiring, really boring, really tiring. And so browser developer mode is going to be your friend.
- In a way, browser developer mode-- and I'm going to have a separate video on this--
- browser developer mode lets you look at the sent headers, the received headers, the received data,
- the sent data, what URL it went to. And it's super awesome, especially because a lot of
- web pages have like 40 to 150 request response cycles. So you don't want to debug them all by
- hand. You just let the browser do its thing and say, what was that second one, and what went wrong
- in the second one? I spend a lot of time when I'm debugging web applications using the developer
- mode. And that's why I have a special little video that gets you familiar with it. And I tell
- you, by the time you've done web stuff for a little while, you're going to know your browser
- developer mode. So next, we're going to talk about writing code in the server to respond to these
- requests.
+ So the protocol tells us we are supposed to receive data until the socket's closed.
+ And at the bottom of that Telnet, you saw that it sent a bunch of lines like the four, I think, and then it closed it.
+ That's what's going on here. We are retrieving data.
+ And then this receive, this actually waits. If the server is coming slower, the network is slow,
+ this piece of Python will be, sit, sit, sit, sit, got a little bit, got a little bit up to 512 characters.
+ It will wait until it's gotten 512 or it's done and it's got 100 or so.
+ But the receive is a blocking, waiting operation in Python, says give me up to the next 512 characters.
+ Now, usually the network's so fast that the Python doesn't even wait because the operating system already has it.
+ But we get it. And if we get no data whatsoever, that isn't our indication that the network connection,
+ the socket has been hung up on, closed by the remote server, and away you go.
+ So that's why we are going to break if the length of the data is less than one.
+ And if not, we're going to simply print out the data, but we're decoding it.
+ And that's because the data that comes in is in UTF-8, but the print statement wants to print Unicode.
+ And so decode says, here's a variable that has UTF-8 in it, convert it to Unicode for printing inside of Python.
+ So because this data is externalized to us, we encode it before we send it and we decode it when we receive it,
+ before we use it, because Python inside itself doesn't use UTF-8, Python inside itself uses Unicode,
+ which is awesome and a whole separate conversation.
+ I'm just kind of bringing that up to remind you how important it is because we're not going to write much of this in Python, really.
+ And all this stuff is taken care of for us in web servers when we get to that point.
+ But it's just a good time to review Python's strings and Unicode and encode and decode because it's really important.
+ So if you run this and you've got it right, it runs pretty simply.
+ Let's get the color back, get it back to yellow here.
+ So if you run it in your system, Python socket1.py, all the work is done up here before you see your first output.
+ And then all this output that you see is just this loop running.
+ And what you see is really the exact headers that are coming from this server.
+ And then you see a blank line and then you see the actual page that's coming out and you don't see it.
+ But at the end here, the connection gets closed and you break out and you're done.
+ And then we close our end of the socket. The socket, the far end was already closed.
+ That's how we know to stop reading data.
+ And then we hang ourselves up so that our local system does not end up with a bunch of half hung up phone calls.
+ And so that's basically how we talk to a socket in Python.
+ Now, that was literally 10 years ago how I would debug applications.
+ I would like Telnet or write a little thing like that and dump all the headers.
+ And that got really tiring, really boring, really tiring.
+ And so browser developer mode is going to be your friend.
+ In a way, browser developer mode, and I'm going to have a separate video on this.
+ Browser developer mode lets you look at the sent headers, the received headers, the received data, the sent data, what URL it went to.
+ And it's super awesome, especially because a lot of web pages have like 40 to 150 request response cycles.
+ So you don't want to debug them all by hand.
+ You just let the browser do its thing and say, what was that second one and what went wrong in the second one?
+ I spent a lot of time when I'm debugging web applications using the developer mode.
+ And that's why I have a special little video that gets you familiar with it.
+ And I tell you, by the time you've done web stuff for a little while, you're going to know your browser developer mode.
+ So next, we're going to talk about writing code in the server to respond to these requests.
+ (upbeat music)

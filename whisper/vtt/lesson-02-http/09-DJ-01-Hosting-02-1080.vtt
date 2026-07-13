@@ -1,59 +1,290 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:17.500
- So now I want to talk about a concept called virtual hosting. Like I said, this doesn't really affect you directly, but I want to sort of show you a little bit about how an organization like PythonAnywhere can have a very small amount of resources and support a very large number of hosts.
+00:00:00.000 --> 00:00:03.040
+ So now I want to talk about a concept called virtual hosting.
 
-00:00:17.500 --> 00:00:24.500
- And this is the idea that they have one piece of hardware or a very few pieces of hardware and many different domains running on that system.
+00:00:03.040 --> 00:00:05.640
+ Like I said, this doesn't really affect you directly,
 
-00:00:24.500 --> 00:00:38.500
- And this also kind of helps you understand why you have to configure PythonAnywhere the way you do to help them route the request not just to the server but to your application within the server where your application is running.
+00:00:05.640 --> 00:00:09.600
+ but I want to sort of show you a little bit about how
 
-00:00:38.500 --> 00:00:49.000
- So if you recall with the request-response cycle, HTTP, it makes a connection to a domain and then it sends a GET request with the domain in the GET request.
+00:00:09.600 --> 00:00:11.560
+ an organization like Python Anywhere
 
-00:00:49.000 --> 00:01:01.500
- And so here we have a little sample. We say telnet data.pr4e.org, that's the host, and port 80, which is to say let's talk to the web server and then we connect and then we send the GET request.
+00:00:11.560 --> 00:00:14.160
+ can have a very small amount of resources
 
-00:01:01.500 --> 00:01:11.500
- And the GET request has a couple of pieces, right? The GET request has, you know, the name of the document including the server that it's going to and then the protocol and then a blank line.
+00:00:14.160 --> 00:00:17.920
+ and support a very large number of hosts.
 
-00:01:11.500 --> 00:01:22.500
- The key thing is they don't just say get me any document. You actually tell it the host that you're looking for. And by looking at this, that's how the virtual hosting works.
+00:00:17.920 --> 00:00:20.760
+ And this is the idea that they have one piece of hardware
 
-00:01:22.500 --> 00:01:31.500
- And so it says oh, I'm one host really, but I can pretend to be many hosts and know which host I'm being asked for with that information.
+00:00:20.760 --> 00:00:23.400
+ or a very few pieces of hardware in many different domains
 
-00:01:31.500 --> 00:01:41.000
- And so that's how the virtual hosting works. So when a GET request comes into a server, it can say I have many virtual hosts inside myself and I'll pick the right one.
+00:00:23.400 --> 00:00:25.160
+ running on that system.
 
-00:01:41.000 --> 00:02:00.500
- And so if we look at the browser's debugger console, we can see that it's asking and doing a GET request to a particular Python Anywhere URL and with a particular domain name and the domain name is part of the request, which is what makes the virtual hosting happen.
+00:00:25.160 --> 00:00:27.280
+ And this also kind of helps you understand
 
-00:02:00.500 --> 00:02:20.500
- And so this is where in the web tab of Python Anywhere you've got to give this thing about where are you at. And you have to say within this server I'm running at this home folder and so that's your home directory, you know, dangle projects local library, your working directory where it's supposed to go when it receives a request for you.
+00:00:27.280 --> 00:00:30.360
+ why you have to configure Python Anywhere the way
 
-00:02:20.500 --> 00:02:36.500
- And then it has this one configuration file and you'll notice that that file doesn't belong that www.mdntutorial_pythonanywhere.com_wgsi, the WGSI configuration file is not in your data space.
+00:00:30.360 --> 00:00:34.720
+ you do to help them route the request not just to the server,
 
-00:02:36.500 --> 00:02:54.500
- So that's actually in the system and that's the place where the system can look up where you're going and then that file, again if you read that file, you'll see it's telling where it's supposed to go in the overall system to start in a directory and load the configuration for a particular application and up you go.
+00:00:34.720 --> 00:00:37.120
+ but to your application within the server where
 
-00:02:54.500 --> 00:03:21.500
- And so this is kind of the picture of how it all works. You know, you've got a browser out here and the browser is making many requests to this server, which is one piece of physical hardware and then there's a little piece of software, often it's an open source software called NGINX, and it has a whole bunch of configuration files that you put in in their user interface and it has little instances of Django, one for each of the domains in those systems.
+00:00:37.120 --> 00:00:38.960
+ your application is running.
 
-00:03:21.500 --> 00:03:32.500
- And so you're isolated from all the other ones, whether it's www.mdntutorial_pythonanywhere.com, www.dj4epythonanywhere.com, or just some other kind of thing. It doesn't even have to be Django, it can be just about anything.
+00:00:38.960 --> 00:00:43.800
+ So if you recall with the request response cycle, HTTP,
 
-00:03:32.500 --> 00:03:45.500
- And so there are these configuration files that allow, and all this really accomplishes is reusing some of the server hardware so that you don't have to have a dedicated piece of hardware for every single piece of software.
+00:00:43.800 --> 00:00:45.320
+ it makes a connection to a domain,
 
-00:03:45.500 --> 00:04:00.500
- And then within that is what I showed you before, and that is how the request works in your settings file, but the goal of NGINX is getting it to your front door so that your application gets the requests that are destined for it.
+00:00:45.320 --> 00:00:48.640
+ and then it sends a GET request with the domain in the GET
 
-00:04:00.500 --> 00:04:20.500
- So this is both how these applications are combined into one server using virtual hosting, but also how applications work internally. And so I just wanted to give you a really short overview of how this all works so that you can build the picture a little bit at a time over the next few weeks as you learn this material.
+00:00:48.640 --> 00:00:49.160
+ request.
 
-00:04:30.500 --> 00:04:31.380
- [MUSIC]
+00:00:49.160 --> 00:00:51.280
+ And so here we have a little sample.
+
+00:00:51.280 --> 00:00:54.240
+ We say telnet data.pr4e.org.
+
+00:00:54.240 --> 00:00:57.800
+ That's the host and port 80, which is to say,
+
+00:00:57.800 --> 00:00:59.600
+ let's talk to the web server.
+
+00:00:59.600 --> 00:01:01.960
+ And then we connect, and then we send the GET request.
+
+00:01:01.960 --> 00:01:04.400
+ And the GET request has a couple of pieces, right?
+
+00:01:04.400 --> 00:01:08.000
+ The GET request has the name of the document,
+
+00:01:08.000 --> 00:01:10.840
+ including the server that it's going to, and then the protocol,
+
+00:01:10.840 --> 00:01:12.080
+ and then a blank line.
+
+00:01:12.080 --> 00:01:15.560
+ The key thing is they don't just say, get me any document.
+
+00:01:15.560 --> 00:01:18.400
+ You actually tell it the host that you're looking for.
+
+00:01:18.400 --> 00:01:22.520
+ And by looking at this, that's how the virtual hosting works.
+
+00:01:22.520 --> 00:01:25.800
+ And so it says, oh, I'm one host really,
+
+00:01:25.800 --> 00:01:27.880
+ but I can pretend to be many hosts
+
+00:01:27.880 --> 00:01:32.080
+ and know which host I'm being asked for with that information.
+
+00:01:32.080 --> 00:01:34.080
+ And so that's how the virtual hosting works.
+
+00:01:34.080 --> 00:01:37.120
+ So when a GET request comes into a server,
+
+00:01:37.120 --> 00:01:39.960
+ it can say, I have many virtual hosts inside myself,
+
+00:01:39.960 --> 00:01:41.520
+ and I'll pick the right one.
+
+00:01:41.520 --> 00:01:46.200
+ And so if we look at the browser's debugger console,
+
+00:01:46.200 --> 00:01:49.160
+ we can see that it's asking and doing a GET request
+
+00:01:49.160 --> 00:01:54.720
+ to a particular Python Anywhere URL with a particular domain
+
+00:01:54.720 --> 00:01:55.220
+ name.
+
+00:01:55.220 --> 00:01:57.080
+ And the domain name is part of the request,
+
+00:01:57.080 --> 00:02:00.760
+ which is what makes the virtual hosting happen.
+
+00:02:00.760 --> 00:02:03.960
+ And so this is where, in the web tab of Python Anywhere,
+
+00:02:03.960 --> 00:02:07.680
+ you've got to give this thing about where are you at.
+
+00:02:07.680 --> 00:02:09.680
+ And you have to say, within this server,
+
+00:02:09.680 --> 00:02:11.280
+ I'm running at this home folder.
+
+00:02:11.280 --> 00:02:15.120
+ And so that's your home directory, dangle projects,
+
+00:02:15.120 --> 00:02:17.040
+ local library, your working directory,
+
+00:02:17.040 --> 00:02:20.720
+ where it's supposed to go when it receives a request for you.
+
+00:02:20.720 --> 00:02:24.200
+ And then it has this one configuration file.
+
+00:02:24.200 --> 00:02:26.440
+ And you'll notice that that file doesn't belong,
+
+00:02:26.440 --> 00:02:32.000
+ that www.mdntutorial_pythonanywhere.com_wgsi.
+
+00:02:32.000 --> 00:02:36.720
+ The WGSI configuration file is not in your data space.
+
+00:02:36.720 --> 00:02:38.160
+ So that's actually in the system.
+
+00:02:38.160 --> 00:02:41.360
+ And that's the place where the system can look up
+
+00:02:41.360 --> 00:02:42.960
+ where you're going.
+
+00:02:42.960 --> 00:02:45.880
+ And then that file, again, if you read that file,
+
+00:02:45.880 --> 00:02:48.240
+ you'll see it's telling where it's supposed to go
+
+00:02:48.240 --> 00:02:50.800
+ in the overall system to start in a directory
+
+00:02:50.800 --> 00:02:53.680
+ and load the configuration for a particular application.
+
+00:02:53.680 --> 00:02:55.200
+ And up you go.
+
+00:02:55.200 --> 00:02:58.000
+ And so this is kind of the picture of how it all works.
+
+00:02:58.000 --> 00:02:59.680
+ You've got a browser out here.
+
+00:02:59.680 --> 00:03:02.560
+ And the browser is making many requests
+
+00:03:02.560 --> 00:03:05.600
+ to this server, which is one piece of physical hardware.
+
+00:03:05.600 --> 00:03:07.480
+ And then there's a little piece of software.
+
+00:03:07.480 --> 00:03:11.000
+ Often it's an open source software called NGINX.
+
+00:03:11.000 --> 00:03:14.080
+ And it has a whole bunch of configuration files
+
+00:03:14.080 --> 00:03:16.600
+ that you put in in their user interface.
+
+00:03:16.600 --> 00:03:19.320
+ And it has little instances of Django,
+
+00:03:19.320 --> 00:03:22.280
+ one for each of the domains in those systems.
+
+00:03:22.280 --> 00:03:24.920
+ And so you're isolated from all the other ones,
+
+00:03:24.920 --> 00:03:27.040
+ whether it's mdntutorial_pythonanywhere.com,
+
+00:03:27.040 --> 00:03:30.680
+ dj4epythonanywhere.com, or just some other kind of thing.
+
+00:03:30.680 --> 00:03:31.720
+ It doesn't even have to be Django.
+
+00:03:31.720 --> 00:03:33.200
+ It can be just about anything.
+
+00:03:33.200 --> 00:03:36.120
+ And so there are these configuration files that allow,
+
+00:03:36.120 --> 00:03:38.200
+ and all this really accomplishes
+
+00:03:38.200 --> 00:03:40.720
+ is reusing some of the server hardware
+
+00:03:40.720 --> 00:03:43.520
+ so that you don't have to have a dedicated piece of hardware
+
+00:03:43.520 --> 00:03:46.520
+ for every single piece of software.
+
+00:03:46.520 --> 00:03:49.920
+ And then within that is what I showed you before,
+
+00:03:49.920 --> 00:03:53.640
+ and that is how the request works in your settings file.
+
+00:03:53.640 --> 00:03:57.040
+ But the goal of NGINX is getting it to your front door
+
+00:03:57.040 --> 00:03:59.320
+ so that your application gets the requests
+
+00:03:59.320 --> 00:04:01.160
+ that are destined for it.
+
+00:04:01.160 --> 00:04:05.440
+ So this is both how these applications are combined
+
+00:04:05.440 --> 00:04:07.160
+ into one server using virtual hosting,
+
+00:04:07.160 --> 00:04:09.280
+ but also how applications work internally.
+
+00:04:09.280 --> 00:04:12.120
+ And so I just wanted to give you a really short overview
+
+00:04:12.120 --> 00:04:13.400
+ of how this all works.
+
+00:04:13.400 --> 00:04:17.360
+ So that you can build the picture a little bit
+
+00:04:17.360 --> 00:04:19.240
+ at a time over the next few weeks
+
+00:04:19.240 --> 00:04:21.440
+ as you learn this material.
+
+00:04:21.440 --> 00:04:24.480
+ [MUSIC PLAYING]
 

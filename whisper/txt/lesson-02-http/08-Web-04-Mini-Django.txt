@@ -1,390 +1,390 @@
- Hello and welcome to my lecture on the mini Django web server. So why did I
- build this mini Django web server? Well, the first part of my Django for everybody
+ Hello and welcome to my lecture on the mini-jango web server. So why did I
+ build this mini-jango web server? Well, the first part of my Django for Everybody
  course is always about getting students to understand the nature of Django. If you
  know how to use Django and you know how it works internally, it's easy to write
- web applications because Django takes care of all the details of hypertext
- transfer protocol, HTTP. And you can read documents, tons of documents, hundreds and
- thousands of pages, and write your own Python code to handle the HTTP. The
- problem though is, while Django makes it so you don't have to read any of that, you
- do have to understand Django. And Django, to give you the kind of flexibility that
- you need, uses a very object-oriented inversion of control, a whole bunch of
- design patterns that make it so you don't have to write the whole
- application, but you need to plug your work into Django. So it's important for
+ web applications because Django takes care of all the details of Hypertext
+ Transfer Protocol, HTTP. And you can read documents, tons of documents, hundreds
+ and thousands of pages, and write your own Python code to handle the HTTP. The
+ problem, though, is while Django makes it so you don't have to read any of
+ that, you do have to understand Django. And Django, to give you the kind of
+ flexibility that you need, uses a very object-oriented inversion of control, a
+ whole bunch of design patterns that make it so you don't have to write the whole
+ application. But you need to plug your work into Django. So it's important for
  you to understand what the framework is and how it is that your work fits into
- it. So mini Django is the simplest possible Django that I could write. It's
- under 200 lines. The mini Django framework itself is only 200 lines of
- Python, meaning you can read it, you can understand it, and you can even change it
- and explore supporting additional features of HTTP. So we're gonna build
- both have a mini Django and a really simple Django-like application. So why do
- we use Django in the first place? Like I said, do you really want to read RFC 7231?
- It is pages that's over a hundred pages and it's detail upon detail upon detail.
- If you start reading it, you will realize it's really well-defined how browsers and
- web servers talk, but you really don't want to read it, especially when someone
- else has written all the code. And all you have to do is import HTTP request and
- response from Django.http and then write a four-line function that takes as its
- input an HTTP request and returns an HTTP response. And then in your code you
- create the HTTP response and put some text in it and you return it and then
- Django literally outside of your code does everything else. So Django takes this
- super complex task and hides it behind an abstraction. It's something, an
- abstraction is something you're sort of not supposed to look past. You're
- supposed to just look at the interface that it gives to you and you're supposed
- to express your logic and then plug it in at the right place to create a rich
- and HTTP compliant web application. Django handles all the details and there's
- lots of them, thousands and thousands of little detail. But with all abstractions
- it's a good idea to understand the shape of the abstraction that you're dealing
- with so you can kind of have some predictability as to when you make a
- change to your code. How is that? And then Django says do this, override this
- method, override the query method, all that stuff. You have to
- kind of understand what's going on behind the scenes. And so my hope is is
- that if you can understand mini Django you'll better have a chance, it'll have a
- much better chance of understanding the real Django. So in my class I use this
- thing I call the big picture and on the left side is a browser with a document
- object model that deals with HTML and CSS and JavaScript and intercept user
- actions and then sends the request-response cycle into a server
- running somewhere on the internet. There's Django and Linux and there's
- urls.py and views.py and forms.py and templates.py and literally the
- first half of any Django class I teach really is designed to understand this
- picture and it's a little complex. So what I like to do is I'd like to take
- mini Django which I've written and the HTTP server part of mini Django is under
- a hundred lines of code, meaning you can look at it. It's a web server that
- responds to a request and sends back a response and then we have pseudo
- application code, the urls.py which handles the routing activity, chooses the
- right view and then sends the request to the right view, gets a response back from
- that view and then urls.py forwards that back to HTTP server which then formats
- it in the right way for the network protocol and sends it back to the
- browser. And if you look at how Django itself works it's just a more flexible
- and more rich and more intricate version of this little thing that I call mini
- Django. So if you check out mini Django you'll see that it really is just four
- files and some documentation. The run server.py loads the mini Django library
- and loads the path router and urls.py and starts the HTTP server. There
- always has to be a process listening on the port to accept the connections. The
- web server is the library, the framework, it is Django. It's just tiny so I call it
- mini Django. It listens for incoming service requests in a Linux process or
- a Windows process. Then when it gets a request it parses the network
- protocol part of that request. Then when it's got it right it passes the request
- to urls.yoururls.py for routing between the views. Then the view produces
- the HTTP response object and then urls.py sends that back to the HTTP server
- and then it sends it back to the browser when the HTTP server sends it
- back to the browser using the HTTP protocol correctly. The urls.py, much
- like any Django applications urls.py, it looks at a path and their HTTP request
- object and then chooses a view function. And views.py is a set of functions that
- capture the functionality of your web application. Each function takes an HTTP
- request as its input and produces an HTTP response for the output. So to get
- started you can download the source code from GitHub into a folder using either
- get or zip. GitHub, if you look at the code button in GitHub, it gives you an
- option to download a zip which means you don't have to install git and you don't
- have to do a get checkout. And then you can just file the readme instructions.
- If you have Python installed on your computer you say Python runserver.py
- and then you navigate to the localhost colon 9000 in your browsers and you're
- interacting with this little server that's running on a process on your
- computer. Taking a look at the source code the views.py looks a lot like
- Django's views.py, at least in the beginning in the simplest views, where
- each view is a function takes as its first parameter a variable, I call it req
- in this situation, of type HTTP request and is expected to return an HTTP
- response. So if you look at it it creates the HTTP response object. Again the
- definition of HTTP response came from Minijango and the res.headers allows us
- to set headers then res.write creates the body of the response and then we
- return that response which then we turn back over to Minijango to send back. The
- urls.py in Minijango looks a little bit different than the urls.py in a
- real Django application because I didn't want to create, if you look at the
- urls.py in a real application, it's really a table of routes and I just made
- it an if then else so that you can see it's not that different than what the
- table of routes really is and you might decide in your mind that this is a
- little cleaner and elegant. The purpose of urls.py in Django and in Minijango is
- to look at the path and choose a view and then cause that view to be executed
- and you see at the end if it can't find a view it sends back a failure view with
- a 404 not found. So up next we're going to do a simple demo of downloading
- installing and running Minijango. So here's the demonstration of Minijango
- for my Django for everybody class. We've got to start by going into GitHub and
- taking a look at my Minijango repository. You see GitHub.com/csev/mini_jango
- is where we find the code and in here we have a readme and then four source
- files and this readme tells us where we're going to do we're going to start
- by downloading this code and then running it and we'll go go through this
- in a bit. So there are two ways that you can install this if you have git find
- some folder do a git clone and grab Minijango if you don't want to install
- git or you don't know how to use git you can just grab a zip file because
- GitHub is really nice and that's how we're going to do it under this code
- button there's a thing called download zip and so that's just going to download
- it and it just downloaded it into my downloads folder so I'm going to click
- and see here's my downloads folder and on Windows it's a little trickier when
- you go into your downloads folder it hides this dot zip the Mac is pretty
- easy I think on on the Windows you kind of to right click and extract it but on
- Mac you just double click it and it extracts it into real files so now we
- see the actual files and so these files Minijango readme run server they're all
- the same files that work you got on GitHub is so now you're kind of done
- with with GitHub okay so there's the downloads file and now I'm going to
- start a terminal and in Windows this is like a command shell in Windows you
- would type CD to see the current working directory and in Mac and Linux you say
- PWD to see the current working directory and my downloads are just in a
- subfolder underneath my home directory users CSEV and if I do an LS - L you'll
- see that I've got that zip file it was downloaded and then a folder folder with
- Minijango main so I'm gonna go into Minijango - main and so now if you look
- at the working directory you see them in my downloads folder I'm in
- Minijango dot main and as a matter of fact if I do an LS - L in this folder you
- see I see you see the exact same files that you see here in downloads and so
- I'm gonna minimize that for now and away you go and so if we go back to the
- readme now it says Python run server dot py so I'm gonna copy that and so what
- this does is it starts the Minijango server if this was Django on your
- laptop you'd say Python manage py run server if this was Django on Python
- anywhere you would go and reload your web server whatever this does is it
- causes it to start up and listen on a server port so I have this thing
- starting on 9,000 higher numbers are tend to be used for development lower
- numbers like 80 or you over 443 are using for production and now I can go
- and grab this URL localhost 9,000 and I can start a browser here's a little baby
- browser now I'm gonna keep these up at the same time I'll come back okay let's
- go back to my browser go back to this window and I'm gonna go to localhost
- 9,000 as a matter of fact before I do that I am going to turn on the web
- developer tools and watch the network tab and now I'm gonna go to localhost
- 9,000 okay it's all clear oh wait a second all that stuff okay so what we
- have here is we have a what something went wrong I don't know what went wrong
- maybe it's doing a head request for all you know okay so I've played around too
- long and something went wrong I'll figure that bug out later okay so now I
- go over here and I hit ask for localhost 9,000 and it does a request you can see
- it down here let's move this up a bit so I can see it better so it does a
- request and the response is this HTML and I can see it in source code form or
- I can see it in rendered form and I can look at the headers it sent these
- headers in the request headers so the interesting thing is is you can see this
- debug let's make this a little just a little bigger there we go this thing
- just waits right oh let's go up to here it wait started the server and now
- there's a process running on my computer that's hooked up to server 9,000 waiting
- for something to happen I'll show you this code in a minute so it's just
- debugging I wait for the next request I receive a get and that's the same as
- this get there we go that's this get to slash it's an HTTP one one it's a get
- request and then these are all of the headers that are being sent and if you
- look down here request headers you see all of them every one of them cookie
- pragma those are being sent to the web server the web servers receiving them on
- a socket connection and then parsing that and so then it runs the code and
- this router we'll talk about the router in a second it says oh I got a slash
- path which is slash is there's nothing here after the 9,000 there's nothing
- after the 9,000 there's slash path then it goes to the view and then it gets
- back from the viewer response then it sends the response headers the only one
- we're really changing is the fact that this is an HTML request and then it
- sends 217 carries characters of the body output so this is the body output and
- the web server sent 200 I'm guessing that's 217 characters and then it goes
- back up and waits for the next request now it turns out the next request is
- rapidly forthcoming and that's because it's requesting the favicon okay and
- the favicon is it's trying to figure out what this icon is supposed to be so if
+ it. So mini-jango is the simplest possible
+ Django that I could write. It's under 200 lines. The mini-jango framework itself is
+ only 200 lines of Python, meaning you can read it, you can understand it, and you
+ can even change it and explore supporting additional features of HTTP. So
+ we're going to build both have a mini-jango and a really simple Django-like
+ application. So why do we use Django in the first place? Like I said, do you
+ really want to read RFC 7231? It is pages that's over a hundred pages and it's
+ detail upon detail upon detail. If you start reading it, you will realize it's
+ really well defined how browsers and web servers talk, but you really don't want
+ to read it, especially when someone else has written all the code. And all you
+ have to do is import HTTP request and response from Django.http and then write
+ a four-line function that takes as its input an HTTP request and returns an
+ HTTP response, and then in your code you create the HTTP response and put some
+ text in it and you return it, and then Django literally outside of your code
+ does everything else. So Django takes this super complex task and hides it
+ behind an abstraction. An abstraction is something you're sort of
+ not supposed to look past. You're supposed to just look at the interface
+ that it gives to you, and you're supposed to express your logic and then plug it
+ in at the right place to create a rich and HTTP compliant web application, and
+ Django handles all the details, and there's lots of them, thousands and
+ thousands of little detail. But with all abstractions, it's a good idea to
+ understand the shape of the abstraction that you're dealing with, so you can kind
+ of have some predictability as to when you make a change to your code, how is
+ that? And then Django says do this, override this method, you know override
+ the query method, all that stuff, you have to kind of understand what's
+ going on behind the scenes. And so my hope is is that if you can understand
+ mini Django, you'll better have a chance, it'll have a much better chance of
+ understanding the real Django. So in my class I use this thing I call it the big
+ picture, and on the left side is a browser with a document object model that
+ deals with HTML and CSS, and JavaScript, and intercept user actions, and then
+ sends the request response cycle into a server running somewhere on the internet.
+ There's Django and Linux, and there's urls.py and views.py and forms.py and
+ templates.py. And literally the first half of any Django class I teach
+ really is designed to understand this picture, and it's a little complex. So
+ what I like to do is I like to take mini Django, which I've written, and the HDB
+ server part of mini Django is under a hundred lines of code, meaning you can
+ look at it. So it's a web server that responds to a request and sends back a
+ response, and then we have pseudo application code, the urls.py which
+ handles the routing activity, chooses the right view, and then sends the request to
+ the right view, gets a response back from that view, and then urls.py forwards that
+ back to HDB server which then formats it in the right way for the network
+ protocol and sends it back to the browser. And if you look at how Django
+ itself works, it's just a more flexible and more rich and more intricate version
+ of this little thing that I call mini Django. So if you check out mini Django,
+ you'll see that it really is just four files and some documentation. The run
+ server.py loads the mini Django library and loads the path router and urls.py
+ and starts the HDB server. There always has to be a process listening on the
+ port to accept the connections. The web server is the library, the framework. It
+ is Django. It's just tiny, so I call it mini Django. It listens for incoming
+ service requests in a Linux process or a Windows process. Then when it gets a
+ request, it parses the network protocol part of that request. Then when it's got
+ it right, it passes the request to urls.yoururls.py for routing between the
+ views. Then the view produces the HDB response object, and then urls.py sends
+ that back to the HDB server. And then it sends it back to the browser when the
+ HDB server sends it back to the browser using the HDB protocol correctly. The
+ urls.py, much like any Django applications urls.py, it looks at a path
+ in the HTTP request object and then chooses a view function. And views.py is
+ a set of functions that capture the functionality of your web application.
+ Each function takes an HTTP request as its input and produces an HTTP response
+ for the output. So to get started, you can download the source code from GitHub
+ into a folder using either get or zip. GitHub, if you look at the code button
+ in GitHub, it gives you an option to download a zip, which means you don't
+ have to install git and you don't have to do a git checkout. And then you can just
+ file the readme instructions. If you have Python installed on your computer,
+ you say, "Python run server.py," and then you navigate to the localhost colon 9000
+ in your browsers, and you're interacting with this little server that's running
+ on a process on your computer. Taking a look at the source code, the views.py
+ looks a lot like Django's views.py, at least in the beginning in the simplest
+ views, where each view is a function, takes as its first parameter a variable,
+ I call it req in this situation, of type HTTP request, and is expected to return
+ an HTTP response. So if you look at it, it creates the HTTP response object. Again,
+ the definition of HTTP response came from Minijango. And the res.headers allows us
+ to set headers, then res.write creates the body of the response, and then we
+ return that response, which then we turn back over to Minijango to send back.
+ The urls.py in Minijango looks a little bit different than the urls.py in a real
+ Django application, because I didn't want to create, if you look at the urls.py in
+ a real application, it's really a table of routes, and I just made it an if-then
+ else, so that you can see it's not that different than what the table of routes
+ really is, and you might decide in your mind that this is a little cleaner and
+ elegant. The purpose of urls.py in Django and in Minijango is to look at the
+ path and choose a view, and then cause that view to be executed. And you see at
+ the end, if it can't find a view, it sends back a failure view with a 404 not
+ found. So up next, we're going to do a simple demo of downloading, installing,
+ and running Minijango. So here's the demonstration of Minijango for my
+ Django for everybody class. We've got to start by going into GitHub and taking a
+ look at my Minijango repository. You see GitHub.com/csev/mini_jango is where we
+ find the code, and in here we have a readme and then four source files, and
+ this readme tells us what we're going to do. We're going to start by downloading
+ this code and then running it, and we'll go through this in a bit. So there are
+ two ways that you can install this. If you have Git, find some folder, do a Git
+ clone, and grab Minijango. If you don't want to install Git or you don't know
+ how to use Git, you can just grab a zip file because GitHub is really nice, and
+ that's how we're going to do it. Under this code button, there's a thing called
+ DownloadZip, and so that's just going to download it, and it just downloaded it
+ into my downloads folder. So I'm going to click and see here's my downloads
+ folder, and on Windows it's a little trickier when you go into your downloads
+ folder. It hides this .zip. The Mac is pretty easy. I think on the Windows
+ you kind of have to right-click and extract it, but on Mac you just double
+ click it and it extracts it into real files. So now we see the actual files, and
+ so these files, Minijango, Readme, RunServer, they're all the same files
+ that were you got on GitHub. So now you're kind of done with with GitHub, okay?
+ So there's the downloads file, and now I'm going to start a terminal, and in
+ Windows this is like a command shell. In Windows you would type "cd" to see the
+ current working directory, and in Mac and Linux you say "pwd" to see the current
+ working directory, and my downloads are just in a subfolder underneath my
+ home directory, user.csev, and if I do an "ls -l" you'll see that I've got that zip
+ file that was downloaded, and then a folder with Minijango main. So I'm
+ going to go into Minijango - main, and so now if you look at the working
+ directory you see them in my downloads folder, I'm in Minijango.main, and as a
+ matter of fact if I do an "ls -l" in this folder you see the
+ exact same files that you see here in downloads, and so I'm going to minimize
+ that for now, and away you go, and so if we go back to the readme now, it says
+ "python run server dot py" so I'm going to copy that, and so what this does is it
+ starts the Minijango server. If this was Django on your laptop you'd say Python
+ manage py run server. If this was Django on Python anywhere you would go and
+ reload your web server. Whatever this does is it causes it to start up and
+ listen on a server port. So I have this thing starting on 9000, higher numbers
+ tend to be used for development, lower numbers like 80 or
+ 443 are using for production, and now I can go and grab this URL localhost
+ 9000 and I can start a browser. Here's a little baby browser. Now I'm going to
+ keep these up at the same time, I'll come back, okay let's go back to my browser,
+ go back to this window, and I'm going to go to localhost 9000. As a matter of
+ fact before I do that I am going to turn on the web developer tools and watch the
+ network tab, and now I'm going to go to localhost 9000. Okay it's all clear. Oh
+ wait a sec, I don't need all that stuff. Okay so what we have here is we have a
+ what? Something went wrong. I don't know what went wrong. Maybe it's doing a head
+ request for all I know. Okay so I've played around too long and something
+ went wrong. I'll figure that bug out later. Okay so I now go over here and I
+ hit ask for localhost 9000 and it does a request. You can see it down here. Let's
+ move this up a bit so I can see it better. So it does a request and the
+ response is this HTML and I can see it in source code form or I can see it in
+ rendered form and I can look at the headers. It sent these headers in. The
+ request headers. So the interesting thing is is you can see this debug. Let's make
+ this a little just a little bigger. There we go. This thing just waits right? Oh
+ let's go up to here. It waits, started the server, and now there's a process
+ running on my computer that's hooked up to server 9000 waiting for something to
+ happen. I'll show you this code in a minute. So it's just debugging. I wait
+ for the next request. I receive a get and that's the same as this get. There we go.
+ That's this get to slash. It's an HTTP 1.1. It's a get request and then these
+ are all of the headers that are being sent and if you look down here at
+ request headers you see all of them. Every one of them. Cookie, pragma. Those
+ are being sent to the web server. The web server is receiving them on a socket
+ connection and then parsing that and so then it runs the code and this router
+ will talk about the router in a second. It says oh I got a slash path which is
+ slash is there's nothing here. It's after the 9000. There's nothing after the 9000.
+ There's slash path. Then it goes to the view and then it gets back from the view a
+ response. Then it sends the response headers. The only one we're really
+ changing is the fact that this is an HTML request and then it sends 217
+ characters of the body output. So this is the body output and the web
+ server sent 200 I'm guessing that's 217 characters and then it goes back up and
+ waits for the next request. Now it turns out the next request is rapidly
+ forthcoming and that's because it's requesting the favicon okay and the
+ favicon is it's trying to figure out what this icon is supposed to be. So if
  you look at like let's go back to this here you can see this DJ is a favicon
  and the little octocat that's a favicon and it's trying to figure out what
- favicon to put on localhost 9,000 but I don't have the capability to serve a
+ favicon to put on localhost 9000 but I don't have the capability to serve a
  favicon so the favicon is a 404 not found so it's like hey I want a favicon
  give me a favicon my browser is sending to my server give me the favicon and I
  route the path to favicon and it blows up with a 404 and if you look at the
- response you see the response is this 404 the risk let's look at the headers
- look at the response headers we got a response status of 404 and we got that
+ response you see the response is this 404. Let's look at the headers look
+ at the response headers we got a response status of 404 and we got that
  it's an HTML page and those are the response headers but the 404 is the
  thing that tells the browser that I don't I can't find this path that's the
  path I've asked for and I can't get it and the browser is perfectly happy with
- that and just doesn't put up a favicon for us okay so now what we're going to
- do is we're gonna do another request and it tells us to add /djfree and now it's
- still this keeps asking for the favicon wish it would stop but it doesn't maybe
- I'll add favicon or maybe I'll have you add favicon support for it so we receive
- the headers we've got a get for /djfree so if you look here let's go back to
- this get request this is a get with a path of djfree and and then all the
- headers of course and we have a valid route which you'll see this code in a
- second for the routing it sends response headers it says this is a this is a text
- slash plain so if we look at the response headers come back if we look at
- the response headers this is text slash plain slash UTF-8 so this web server on
- the left and the browser on the right are participating in a protocol and
- again there's all kinds of rules about the protocol HTTP protocol we keep RFC
- RFC stands for request for count okay this 72 31 so this protocol this
- document right here tells us like let's go in this document search for get the
- get request and the rules for what the get request looks like are here so let's
+ that and just doesn't put up a favicon for us. Okay so now what we're going to
+ do is we're going to do another request and it tells us to add /dj for e and now
+ it's still this keeps asking for the favicon wish it would stop but it
+ doesn't maybe I'll add favicon or maybe I'll have you add favicon support for
+ it so we receive the headers we've got a get for /dj for e so if you look here
+ let's go back to this get request this is a get with a path of dj free and and
+ then all the headers of course and we have a valid route which you'll see
+ this code in a second for the routing it sends response headers it says this is a
+ this is a text slash plain so if we look at the response headers come back if we
+ look at the response headers this is text slash plain slash utf-8 so this web
+ server on the left and the browser on the right are participating in a
+ protocol and again there's all kinds of rules about the protocol HTTP protocol
+ we keep rfc rc stands for request for content okay this 7231 so this protocol this document
+ right here tells us like let's go in this document search for get the get
+ request and the rules for what the get request looks like are here so let's
  take a look the head I think the head is what when I when it blew up it was
  sending a head request because I was sort of typing and it was trying to look
  ahead yeah it might be that I have to check what the head is if it was a head
- but let's let's keep looking for get look for an example get put put put so
- again I'm already on page 26 it doesn't make any sense it's a mess we don't want
- to learn how to do that but somebody had to know how to do it now I've been
- working with some of this long enough that I wrote this code without having to
- read this the the format of the headers everybody kind of knows and the format
- of the body everybody kind of knows and so I I wrote this code which I'm going
- to show you in a second that knows how to do this so let's get back and so the
- body output it sent 13 characters of body output let's take a look at the
- response the response is a plain text it's not HTML so it's not formatted
- that's just that's why it's in courier format here and so let's go back and go
- to let me clear this temporarily go to JS free now this returns neither it
- returns a different status code it returns a 302 status code which is a
- headers and so the 302 is the status code and that's called a redirect and
- then it has this additional location header and so that location header says
- go somewhere else okay I gotta go back where am I out here got to find so this
- is where's JS free yeah okay so this is this is the JS free so it did a get
- request for JS free boom routed all the right places route to this path of deep
- JS for E in my views and then it sent a response header which says I'm gonna
- send you a 302 and I'm gonna send this additional location that says go
- immediately grab this and so the browser without what instantaneously went and
- grabbed the the the DJ for E and retrieve that and that's what that found
- so let's go back to the root again clear our our browser and now let's look at an
- error so let's just go to a URL that is just junk and broken and like Django oh
- what happened did I blow up my code oh I was typing too long well let's run it
- again I address already in use you have to wait a little bit you got to wait
- because the process was connected to the port and then the process died and tried
- to close it but now it still can't get it sometimes it takes a few seconds to
- get it back don't worry about address already in use don't worry about it there
- we go we're back so now I gotta go and I gotta say missing and now we get a 404
- we're sending up we got it we sent a 404 and this looks kind of like the Django
- but the key thing here is it returns a header of a 404 which is I didn't know
- how to route this path missing blah blah blah blah blah blah and Django does
- kind of the same basic thing right and I put a dump of all this stuff just for
- for yucks and then I have a broken view which I'll show you in a moment broken
- and this has a this has a logic error in the Python and it blows up and the 500
- error is the way that the server indicates to us that it did not get the
- right kind of response from the router or the view okay so that is our widget
- and let me take a look and show you some of the source code guess I'll make this
- bigger now so again I am in my users CSF downloads mini Django main and it's got
- the source code and so let's start with the simplest file and this is in a sense
- kind of like if you're developing Django locally Python manage py run server if
- you're developing in Python anywhere this is like the reload application
- button and we have to start this this is a process that's going to listen on a
- port and you do this by saying Python run server py you can switch to a
- different port with a parameter and then if you're going to autograde this in
- Django for everybody you got to turn on autograder support it adds a little
- extra line in there for autograder support and and so you've got to add
- this Python run server py 9000 autograder but if you look at this it's
- sort of taken that first parameter for the port and it prints a print statement
- and then it's imported mini Django okay and in mini Django there is a method
- which we will see in a minute called HTTP server and that starts the server
- and we pass into it the URLs URLs dot py we've imported URLs and that is our
- URL writer router that is our URL router that is our URL router and so we're
- gonna run the web server and then in the middle of that web server it's going to
- route the URLs to our application so let's take a look at the web server the
- mini Django itself you'll notice it's a hundred and seventy four lines okay so
- in this we've got a couple of things we create some data classes which these are
- just really lightweight objects we have a some just some data in here the method
- which is get the path which is like slash DJ free the headers which is being
- incoming headers that's going to be in a dictionary and then the body which is you
- know if it was a post or whatever the response which is what we're supposed to
- produce and send back we have an error code which is 200 okay normally we have
- some response headers and then we have a response body and we make a little
- method in here that basically is going to append to a list so we're accumulating
- the lines which we will then send back to so these objects are the things that
- views will work with the HTTP request response and etc so the first thing we
- have to do is take the incoming request and and so the parsing of the request
- has to do with what the headers look like what the body looks like and it's
- pretty simple the headers are a bunch of key value pairs with this colon pattern
- and it followed by a blank line followed by the body so the code splits splits
- the the the incoming text that we've read from the from the input here parse
- request the red input we break it into head and body and then we split the
- header lines based on the rule and then we we send the headers back and we put
- them in the object and then we return the HTTP request object response send
- we'll come back to that here's a little patch autograder stuff here's the HTTP
- server okay so what you see here is web servers have a thing where it makes a
- socket that's like a file handle to the operating system that says we're going
- to exchange network traffic it's going to connect it to local host on port 9000
- and then we're going to have a listen this five is the queue so while you're
- processing one the operating system if another one arrives in that moment the
- it'll queue up five of them and after it gets five that you haven't processed yet
- but then what it does is we're going to have a loop an infinite loop basically we
- say waiting for the next response and then we say accept it and we get a socket
- which is a readable bit of data like a file handle at that point one that you
- can both read and write and then the address which we're not going to really
- use so once we are it sits in this for a long time that's waiting for the next
- request and then it reads up to 5,000 characters decodes it because it's UTF
- 8 coming from the internet and then gives us that in a big string and we
- print the received headers which is just a string at this point and then we call
- parse request which we just looked at which breaks it into headers turns the
- headers into a dictionary and has the body figures out the method and figures
- out the path and returns us an object of type HTTP request now remember that 500
- error if we didn't get something a parse request I had that error happen if if we
- don't have the request that we got back from parse request like a false or
- something went wrong we're going to just go to the 500 error because that's the
- view fail that says I couldn't parse it I'm gonna give up otherwise we got a
- good request and so we're gonna take the router which is the first parameter to
- HTTP server and that is a function and we're going to pass the request object
- into the function and expect to get a response object back from the router now
- if we're not getting a response object from the router then we're gonna blow up
- with a 500 and this is what happens when you see the broken and we'll see that in
- the view in a moment and now we got a response back and it's got all the
- headers response headers it's got the response body and then we send her back
- and then we shut down the socket and then we go back up and wait for the next
- socket so it says waiting for next requests so it spends a lot of time
- waiting then it gets some data reads it really quick processes it really quick
- and then goes back and waits for the next request now if we take a look at
- response send this is again doing the HTTP protocol we send the headers in the
- right format then we send a blank line and then we then we go through and read
- the body and send all that out and then we close it all out okay so that's
- response send HTTP server response send and then the last thing we've got is
- there's a view fail method and that's called for like a 404 or a 500 and it's
- got the request in case we need to look at it we're dumping the request actually
- and then a failure string which is kind of a you know that's just some debugging
- additional clue as to what might have gone wrong we're printing now we're
- logging this you'll notice that we always have this logging so we're seeing
- all these print statements coming out to us that makes it easy for us to debug it
- and you might even blow this code up once in a while and you get tracebacks in
- here and so all this does is it prints out the page let's go back to the page
- if you say missing you get a 404 not found and this is just Pat printing that
- whole thing what the response code is the dumping it making it pretty and so
- this is a way for you to debug when things are going badly and you can either
- get a 404 error or if your view is broken you get a 500 error okay so now
- let's take a look at is router okay so router is a parameter it is in the file
- URLs and it's the as the function called router so let's take a look at the file
- URLs and so this is similar to Python's Django URLs dot py and we get the print
+ but let's let's keep looking for get let's look for an example get put put
+ put so again I'm already in page 26 it doesn't make any sense it's a mess we
+ don't want to learn how to do that but somebody had to know how to do it now
+ I've been working with some of this long enough that I wrote this code without
+ having to read this the the format of the headers everybody kind of knows and
+ the format of the body everybody kind of knows and so I I wrote this code which
+ I'm going to show you in a second that knows how to do this so let's get back
+ and so the body output it sent 13 characters of body output let's take a
+ look at the response the response is a plain text it's not HTML so it's not
+ formatted that's just that's why it's incur your format here and so let's go
+ back and go to let me clear this temporarily go to JS free now this
+ returns neither it returns a different status code it returns a 302 status code
+ which is a headers and so the 302 is the status code and that's called a redirect
+ and then it has this additional location header and so that location header says
+ go somewhere else okay gotta find so this is where's JS free yeah okay so
+ this is this is the JS free so it did a get request for JS free boom routed all
+ the right places route to this path of deep JS for E in my views and then it
+ send a response header which says I'm gonna send you a 302 and I'm gonna send
+ this additional location that says go immediately grab this and so the browser
+ without what instantaneously went and grabbed the the the DJ for E and
+ retrieve that and that's what that found so let's go back to the root again clear
+ our our browser and now let's look at an error so let's just go to a URL that is
+ just junk and broken and like Django oh what happened did I blow up my code oh I
+ was typing too long well let's run it again I address already in use you have
+ to wait a little bit you got to wait because the process was connected to the
+ port and then the process died and tried to close it but now it still can't get
+ it sometimes it takes a few seconds to get it back don't worry about address
+ already in use don't worry about it there we go we're back so now I got to
+ go and I got to say missing and now we get a 404 we're sending up we got it we
+ sent a 404 and this looks kind of like the Django but the key thing here is it
+ returns a header of a 404 which is I didn't know how to route this path
+ missing blah blah blah blah blah blah and Django does kind of the same basic
+ thing right and I put a dump of all this stuff just for for yucks and then I have
+ a broken view which I'll show you in a moment broken this has it this has a
+ logic error in the Python and it blows up and the 500 error is the way that the
+ server indicates to us that it did not get the right kind of response from the
+ router or the view okay so that is our widget and let me take a look and show
+ you some of the source code I guess I'll make this bigger now so again I am in my
+ users CSF downloads mini Django main and it's got the source code and so let's
+ start with the simplest file and this is in a sense kind of like if you're
+ developing Django locally Python manage Python server if you're developing in
+ Python anywhere this is like the reload application button and we have to start
+ this this is a process that's going to listen on a port and you do this by
+ saying Python run server dot py you can switch to a different port with a
+ parameter and then if you're going to auto grade this in Django for everybody
+ you've got to turn on auto grader support it adds a little extra line in
+ there for auto grader support and and so you've got to add this Python run
+ server pi 9,000 autograder but if you look at this it's sort of taken that
+ first parameter for the port and it prints a print statement and then it's
+ imported mini Django okay in mini Django there is a method which we will see in a
+ minute called HTTP server and that starts the server and we pass into it
+ the URLs URLs dot py we've imported URLs and that is our URL writer router that
+ is our URL router that is our URL router and so we're going to run the web server
+ and then in the middle of that web server it's going to route the URLs to
+ our application so let's take a look at the web server the mini Django itself
+ you'll notice it's 174 lines okay so in this we've got a couple of things we
+ create some data classes which these are just really lightweight objects we have
+ a some just some data in here the method which is get the path which is like
+ slash DJ free the headers which is being incoming headers that's going to be in a
+ dictionary and then the body which is you know if it was a post or whatever
+ the response which is what we're supposed to produce and send back we have
+ an error code which is 200 okay normally we have some response headers and then
+ we have a response body and we make a little method in here that basically is
+ going to append to a list so we're accumulating the lines which we will then
+ send back to so these objects are the things that views will work with the HTTP
+ request response and etc so the first thing we have to do is take the incoming
+ request and and so the parsing of the request has to do with what the headers
+ look like what the body looks like and it's pretty simple the headers are a
+ bunch of key value pairs with this colon pattern and it followed by a blank line
+ followed by the body so the code splits splits the the the incoming text that
+ we've read from the from the input here parse request the red input we break it
+ into head and body and then we split the header lines based on the rule and then
+ we we send the headers back and we put them in the object and then we return
+ the HTTP request object response send we'll come back to that here's a little
+ patch autograder stuff here's the HTTP server okay so what you see here is web
+ servers have a thing where it makes a socket that's like a file handle to the
+ operating system that says we're gonna exchange network traffic it's gonna
+ connect it to local host on port 9000 and then we're gonna have listen this
+ five is the queue so while you're processing one the operating system if
+ another one arrives in that moment the it'll queue up five of them and after it
+ gets five that you haven't processed yet but then what it does is we're gonna
+ have a loop an infinite loop basically we say waiting for the next response and
+ then we say accept it and we get a socket which is a readable bit of data
+ like a file handle at that point one that you can both read and write and then
+ the address which we're not gonna really use so once we it sits in this for a
+ long time that's waiting for the next request and then it reads up to 5,000
+ characters decodes it because it's UTF 8 coming from the internet and then gives
+ us that in a big string and we print the received headers which is just a string
+ at this point and then we call parse request which we just looked at which
+ breaks it into headers turns the headers into a dictionary and has the body
+ figures out the method and figures out the path and returns us an object of type
+ HTTP request now remember that 500 error if we didn't get something a parse
+ request I had that error happen if if we don't have the request that we got back
+ from parse request like a false or something went wrong we're going to just
+ go to the 500 error because that's the view fail it says I couldn't parse it
+ I'm going to give up otherwise we got a good request and so we're going to take
+ the router which is the first parameter to HTTP server and that is a function
+ and we're going to pass the request object into the function and expect to
+ get a response object back from the router now if we're not getting a
+ response object from the router then we're gonna blow up with a 500 and this
+ is what happens when you see the broken and we'll see that in the view in a
+ moment and now we got a response back and it's got all the headers response
+ headers it's got the response body and then we send her back and then we shut
+ down the socket and then we go back up and wait for the next socket so it says
+ waiting for next request so it spends a lot of time waiting then it gets some
+ data reads it really quick processes it really quick and then goes back and
+ waits for the next request now if we take a look at response send this is
+ again doing the HTTP protocol we send the headers in the right format then we
+ send a blank line and then we then we go through and read the body and send all
+ that out and then we close it all out okay so that's response send HTTP server
+ response send and then the last thing we've got is there's a view fail method
+ and that's called for like a 404 or a 500 and it's got the request in case we
+ need to look at it we're dumping the request actually and then a failure
+ string which is kind of a you know that's just some debugging additional
+ clue as to what might have gone wrong we're printing now we're logging this
+ you'll notice that we always have this logging so we're seeing all these print
+ statements coming out to us that makes it easy for us to debug it and you might
+ even blow this code up once in a while and you get trace backs in here and so
+ all this does is it prints out the page let's go back to the page if you say
+ missing you get a 404 not found and this is just Pat printing that whole thing
+ what the response code is the dumping it making it pretty and so this is a way
+ for you to debug when things are going badly and you can either get a 404 error
+ or if your view is broken you'll get a 500 error okay so now let's take a look
+ at is router okay so router is a parameter it is in the file URLs and
+ it's the as the function called router so let's take a look at the file URLs
+ and so this is similar to Python's Django URLs dot py and we get the print
  statement routing to path right so that it has got the path out of the incoming
  request if it's a slash we're gonna run a function out of views see it doesn't
  import a views there's a function named root in views and if it starts with slash
  DJ free we're gonna call the DJ very view if it's start if it's equal to JS
- free we're gonna call that view and if it's slash broken we're gonna call the
- broken view now if you look at Django's URLs dot py they put all this into an
- array of tuples basically and in that array of tuples it's more complex than
- this but I figured I would just make this a simple pattern of if LF LF LF just
- because that's all that array is doing if we're gonna be very simple now if we
- don't see one of these paths that our application knows about we drop into
- this else and then that's where we send the 404 not found okay and so let's take
- a look now at views dot py and this is a views and we're going to import many
- Django and that's the HTTP request and response that is these two data classes
- oops which are really kind of very lightweight objects so lightweight
+ free we're gonna call that view if it's slash broken we're gonna call the broken
+ view now if you look at Django URLs dot py they put all this into an array of
+ tuples basically and in that array of tuples it's more complex than this but I
+ figured I would just make this a simple pattern of if LF LF LF just because
+ that's all that array is doing if we're gonna be very simple now if we don't see
+ one of these paths that our application knows about we drop into this else and
+ then that's where we send the 404 not found okay and so let's take a look now
+ at views dot py and this is a views and we're gonna import mini Django and
+ that's the HTTP request and response that is these two data classes oops
+ which are really kind of very lightweight objects so lightweight
  syntax to build objects quickly and so the parameter to our view is an HTTP
  request because the framework has built an HTTP request and has passed it to us
  right and we are expected so if you haven't been if you've been newbie to
  Python or been doing Python a long time this is Python type extensions I think
- it came into Python 3.5 the parameter name is request colon and then the type
- name this is the expected type and then the return name that's just says that
- when we return from this function we're supposed to send back an HTTP response
- so you could do this without this sort of syntactic fluff but boy it sure helps
- for me to talk to you about what the parameter and return value are supposed
- to be because that's what that line is really saying okay so our contract is
- we're supposed to return an HTTP response and again that's an object defined by
- the framework so we're going to create one we're going to set the headers the
- headers are just a dictionary so they're key value pair and we're going to tell
- it the content type and again you can go look up what content type is in the
- documentation and then we do a series of writes and at this point in the response
- object if you go back and look at it that's accumulating a list of strings and
- we're not actually sending the data at this moment we are accumulating a list
- of strings and then we were stern we have constructed and filled up this
- response object and we send it back okay and so if you go in here it's also being
- returned back up through URLs dot py back up into where's the router come back
- there we go the router is URLs dot py we are getting back an HTTP response we're
- checking to see if it's a good one if it's not good we send a 500 if it is
- good we actually I should make that be okay okay so I think I got to put a
- little extra line code in here so by the time you're looking at it I think this
- is supposed to yeah I'll put some code in here okay so then we send that
- response back so we're here in the views we are returning the response it works
- its way back up through the URLs back into the Django itself we get the
+ it came in Python three point five the parameter name is request colon and then
+ the type name this is the expected type and then the return name that's just
+ says that when we return from this function we're supposed to send back an
+ HTTP response so you could do this without this sort of syntactic fluff but
+ boy it sure helps for me to talk to you about what the parameter and return
+ value are supposed to be because that's what that line is really saying okay so
+ our contract is we're supposed to return an HTTP response and again that's an
+ object defined by the framework so we're gonna create one we're gonna set the
+ headers the headers are just a dictionary so they're key value pair and
+ we're gonna tell it the content type and again you can go look up what content
+ type is in the documentation and then we do a series of writes and at this
+ point in response object if you go back and look at it that's accumulating a
+ list of strings and we're not actually sending the data at this moment we are
+ accumulating a list of strings and then we were stern we have constructed and
+ filled up this response object and we send it back okay and so if you go in
+ here it's also being returned back up through URLs dot py back up into where's
+ the router come back there we go the router is URLs dot py we are getting
+ back an HTTP response we're checking to see if it's a good one if it's not good
+ we send a 500 if it is good we actually I should make that be okay so I think I
+ got to put a little extra line code in here so by time you're looking at it I
+ think this is supposed to yeah I'll put some code in here okay so then we send
+ that response back so we're here in the views we are returning the response it
+ works its way back up through the URLs back into the Django itself we get the
  response and then we send it back to the browser we're almost done so we have a
  series this is our application code right the URLs is just kind of to get us
  where we want the DJ free is sending back a single line of text the JS free
  is sending a redirect and so we're telling it to send a code of 302 that's
- called a temporary redirect and we're adding a header called the location
+ called a temporary direct and we're adding a header called the location
  which is where we want to redirect to so we return this it goes to the browser
- and the browser immediately comes back and comes back to this DJ free and
- that's what you see when you go to slash J here let me hide this boom that's what
- you see when you go to JS for eat so first you see a 302 which sends back a
+ and the browser immediately comes back and comes back to this DJ free and that's
+ what you see when you go to slash J here let me hide this boom that's what you
+ see when you go to JS for eat so first you see a 302 which sends back a
  location to DJ free and then the browser in a blink of an eye without doing
- without waiting for you does a get request to DJ free because that's what
- it was told to do so you return this goes all the way back to the browser the
+ without waiting for you does a get request a DJ free because that's what it
+ was told to do so you return this goes all the way back to the browser the
  browser sees the 302 redirect sees the location and then comes back in and
  reads this code and that's how that works the only remaining view is the
- broken and in this it it's not going to return an HTTP response all these other
- ones make HTTP responses and return them this is just returning a string by
+ broken and in this it it's not going to return an HTB response all these other
+ ones make HTB responses and return them this is just returning a string by
  mistake it turns out I think in Django you can return a string and it kind of
  makes an HTTP request for you but I was more interested in causing a 500 or
  return a string the path returns that to the framework the framework receives a
  string as the response and then it's not an HTTP response so we get a 500 error
  and so if I go to slash broken let me clear this boom I get a 500 error so the
- 500 error not only is a 500 error but there is a response involved in there right and
- so there's some HTML that comes back with all that stuff and so there we go
- I'm sure you have questions but you can look at all this code and you can figure
- it all out and enjoy it so again this is about the mini Django web server like
- the smallest approximately Django web server that I could build so that you
- can read and even play with it put print statements in and again this is part of
- my Django for everybody class Cheers
+ 500 error not only is a 500 error but there is a response involved in there
+ right and so there's some HTML that comes back with all that stuff and so
+ there we go I'm sure you have questions but you can look at all this code and
+ you can figure it all out and enjoy it so again this is about the mini Django
+ web server like the smallest approximately Django web server that I
+ could build so that you can read and even play with it put print statements
+ in and again this is part of my Django for everybody class cheers

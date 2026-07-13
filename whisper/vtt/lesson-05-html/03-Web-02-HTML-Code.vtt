@@ -1,541 +1,559 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:02.660
+00:00:00.000 --> 00:00:02.600
  - Hello and welcome to Web Applications for Everybody.
 
-00:00:02.660 --> 00:00:05.780
+00:00:02.600 --> 00:00:05.720
  In this screencast, we are going to play
 
-00:00:05.780 --> 00:00:08.340
+00:00:05.720 --> 00:00:08.280
  with some of the sample code, and you can either download it
 
-00:00:08.340 --> 00:00:10.220
+00:00:08.280 --> 00:00:10.200
  and play with it on your own computer,
 
-00:00:10.220 --> 00:00:12.100
+00:00:10.200 --> 00:00:12.040
  or you can look at it in your text editor,
 
-00:00:12.100 --> 00:00:15.500
+00:00:12.040 --> 00:00:15.480
  or if you just wanna browse it, you can browse it here,
 
-00:00:15.500 --> 00:00:17.740
+00:00:15.480 --> 00:00:17.680
  and take a look at the version that I'm using.
 
-00:00:17.740 --> 00:00:20.780
+00:00:17.680 --> 00:00:20.720
  It's really been intended that you look at this
 
-00:00:20.780 --> 00:00:25.060
+00:00:20.720 --> 00:00:25.000
  in the developer tools, and so you can do things
 
-00:00:25.060 --> 00:00:29.300
- like say, Inspect Element, and so here we are,
+00:00:25.000 --> 00:00:29.240
+ like say, inspect element, and so here we are,
 
-00:00:29.300 --> 00:00:31.900
- we're gonna, this will also be a little more valuable
+00:00:29.240 --> 00:00:33.240
+ this will also be a little more valuable even when doing CSS,
 
-00:00:31.900 --> 00:00:36.260
- even when doing CSS, but you can see the document object model.
+00:00:33.240 --> 00:00:36.240
+ but you can see the document object model.
 
-00:00:36.260 --> 00:00:38.780
- Now the interesting thing here is it shows
+00:00:36.240 --> 00:00:38.720
+ Now the interesting thing here is it shows,
 
-00:00:38.780 --> 00:00:40.620
- something I'm always talking about is the difference
+00:00:38.720 --> 00:00:40.000
+ something I'm always talking about,
 
-00:00:40.620 --> 00:00:43.320
- between the document object model and the source code.
+00:00:40.000 --> 00:00:42.120
+ is the difference between the document object model
 
-00:00:43.320 --> 00:00:47.340
+00:00:42.120 --> 00:00:43.240
+ and the source code.
+
+00:00:43.240 --> 00:00:47.320
  So this is the document object model, it's kind of stylized.
 
-00:00:47.340 --> 00:00:48.980
+00:00:47.320 --> 00:00:48.960
  If you look at the source code,
 
-00:00:48.980 --> 00:00:52.740
- you have to say View Page Source, and so the source code,
+00:00:48.960 --> 00:00:52.680
+ you have to say view page source, and so the source code,
 
-00:00:52.740 --> 00:00:55.460
- this is literally exactly what's in the file.
+00:00:52.680 --> 00:00:55.400
+ this is literally exactly what's in the file,
 
-00:00:55.460 --> 00:00:58.120
- If you go look at this file at a text editor,
+00:00:55.400 --> 00:00:58.080
+ and if you go look at this file at a text editor,
 
-00:00:58.120 --> 00:00:59.500
- you will see this.
+00:00:58.080 --> 00:01:00.880
+ you will see this, and if you're looking at it here,
 
-00:00:59.500 --> 00:01:00.940
- And if you're looking at it here,
-
-00:01:00.940 --> 00:01:03.260
+00:01:00.880 --> 00:01:03.240
  it doesn't quite look exactly the same,
 
-00:01:03.260 --> 00:01:06.620
+00:01:03.240 --> 00:01:06.640
  and some things have been done a little bit differently.
 
-00:01:06.620 --> 00:01:08.300
+00:01:06.640 --> 00:01:08.280
  You know, they kind of got this extra stuff,
 
-00:01:08.300 --> 00:01:11.680
- and this is kind of after the browser has looked at it.
+00:01:08.280 --> 00:01:11.640
+ and this is kind of after the browser has looked at it,
 
-00:01:11.680 --> 00:01:13.020
- And when we start talking about JavaScript
+00:01:11.640 --> 00:01:13.000
+ and when we start talking about JavaScript
 
-00:01:13.020 --> 00:01:14.580
+00:01:13.000 --> 00:01:14.560
  and changing some of this dynamically,
 
-00:01:14.580 --> 00:01:17.080
+00:01:14.560 --> 00:01:17.040
  you'll see this part is the document object model,
 
-00:01:17.080 --> 00:01:18.340
+00:01:17.040 --> 00:01:18.320
  but the source never changes.
 
-00:01:18.340 --> 00:01:21.200
+00:01:18.320 --> 00:01:21.160
  The source is what was originally downloaded
 
-00:01:21.200 --> 00:01:24.320
+00:01:21.160 --> 00:01:24.280
  when the server sent this back to us.
 
-00:01:24.320 --> 00:01:27.500
+00:01:24.280 --> 00:01:28.280
  So let's take a basic look at this.
 
-00:01:27.500 --> 00:01:30.920
+00:01:28.280 --> 00:01:29.880
  I'll hide this unless I need it.
 
-00:01:30.920 --> 00:01:32.620
+00:01:29.880 --> 00:01:32.520
  I'll go back and forth between the source.
 
-00:01:32.620 --> 00:01:37.080
+00:01:32.520 --> 00:01:37.040
  So we have a basic document, HTML with a head tag and a body,
 
-00:01:37.080 --> 00:01:41.600
+00:01:37.040 --> 00:01:41.600
  and then a header, and of course, here's our header.
 
-00:01:41.600 --> 00:01:43.900
+00:01:41.600 --> 00:01:43.880
  We're using default styling,
 
-00:01:43.900 --> 00:01:47.060
+00:01:43.880 --> 00:01:47.040
  and paragraphs are an important part of things.
 
-00:01:47.060 --> 00:01:49.200
+00:01:47.040 --> 00:01:49.200
  You can squeeze this up as much as you want.
 
 00:01:49.200 --> 00:01:51.280
  White space sort of doesn't matter, right?
 
-00:01:51.280 --> 00:01:55.000
+00:01:51.280 --> 00:01:54.960
  So this white space kind of doesn't matter here.
 
-00:01:55.000 --> 00:01:56.620
+00:01:54.960 --> 00:01:56.600
  You know, the fact that this has got extra space,
 
-00:01:56.620 --> 00:01:59.040
+00:01:56.600 --> 00:01:57.920
  it doesn't much matter.
 
-00:01:59.040 --> 00:02:03.200
- And so you can see a strong tag that leads to a boldness.
+00:01:57.920 --> 00:02:02.520
+ And so you can see an anchor to a strong tag
 
-00:02:03.200 --> 00:02:09.600
+00:02:02.520 --> 00:02:04.920
+ that leads to a boldness.
+
+00:02:04.920 --> 00:02:08.480
  Let's just go ahead and look at it here in the inspect.
 
-00:02:09.600 --> 00:02:13.300
- Go down here and find like a strong tag, that's the bold.
+00:02:08.480 --> 00:02:11.800
+ We'll go down here and we'll find like a strong tag.
 
-00:02:13.300 --> 00:02:16.700
+00:02:11.800 --> 00:02:13.200
+ That's the bold.
+
+00:02:13.200 --> 00:02:16.640
  We got an emphasize tag, and if you look a little farther,
 
-00:02:16.700 --> 00:02:19.200
+00:02:16.640 --> 00:02:19.160
  you'll see there is the anchor tag,
 
-00:02:19.200 --> 00:02:21.700
+00:02:19.160 --> 00:02:21.640
  which is the whole anchor tag is this whole tag
 
-00:02:21.700 --> 00:02:24.280
- from the A to the /alist.htm.
+00:02:21.640 --> 00:02:26.160
+ from the a to the slash a list.htm.
 
-00:02:26.240 --> 00:02:27.460
+00:02:26.160 --> 00:02:27.360
  That's where we're going to go
 
-00:02:27.460 --> 00:02:29.580
+00:02:27.360 --> 00:02:29.440
  if we click on this text right here.
 
-00:02:29.580 --> 00:02:33.200
+00:02:29.440 --> 00:02:33.080
  And so you can see, now this is a relative link,
 
-00:02:33.200 --> 00:02:35.580
+00:02:33.080 --> 00:02:35.440
  and it turns it into an absolute link,
 
-00:02:35.580 --> 00:02:38.740
+00:02:35.440 --> 00:02:38.600
  and that's because the browser knows where we're at,
 
-00:02:38.740 --> 00:02:42.980
+00:02:38.600 --> 00:02:42.880
  and so it sort of prefixes everything up to that
 
-00:02:42.980 --> 00:02:44.960
- to the relative link, and that's nice,
+00:02:42.880 --> 00:02:44.240
+ to the relative link.
 
-00:02:44.960 --> 00:02:47.080
- because if we look in folders,
+00:02:44.240 --> 00:02:46.960
+ That's nice because if we look in folders,
 
-00:02:47.080 --> 00:02:50.900
+00:02:46.960 --> 00:02:49.480
  we will see that these folders are all here.
 
-00:02:50.900 --> 00:02:52.440
- Here, let me go find you that folder,
+00:02:49.480 --> 00:02:52.320
+ Here, let me go find you that folder.
 
-00:02:52.440 --> 00:02:54.360
- it's pretty deep in mine.
+00:02:52.320 --> 00:02:53.880
+ It's pretty deep in my.
 
-00:02:55.680 --> 00:02:59.840
- Here we have the files, right, and so this is index.htm,
+00:02:53.880 --> 00:02:58.680
+ Here we have the files, right?
 
-00:02:59.840 --> 00:03:03.480
- and index.htm is right there, and list.htm,
+00:02:58.680 --> 00:03:00.640
+ And so this is index.htm,
 
-00:03:03.480 --> 00:03:06.700
- and so if I click here, I'll go to list.htm,
+00:03:00.640 --> 00:03:03.360
+ and index.htm is right there, and list.htm.
 
-00:03:06.700 --> 00:03:08.760
- and that'll pull this other file up,
+00:03:03.360 --> 00:03:06.600
+ And so if I click here, I'll go to list.htm,
 
-00:03:08.760 --> 00:03:11.720
- and so these guys are all in the same folder together,
+00:03:06.600 --> 00:03:08.640
+ and that'll pull this other file up.
 
-00:03:11.720 --> 00:03:15.060
- it just means that I can use relative links
+00:03:08.640 --> 00:03:11.640
+ And so these guys are all in the same folder together.
 
-00:03:15.060 --> 00:03:17.000
+00:03:11.640 --> 00:03:15.000
+ It just means that I can use relative links
+
+00:03:15.000 --> 00:03:16.880
  to go moving between them.
 
-00:03:17.000 --> 00:03:18.740
- A tag that really becomes more important,
+00:03:16.880 --> 00:03:18.720
+ The tag that's really becomes more important,
 
-00:03:18.740 --> 00:03:22.020
+00:03:18.720 --> 00:03:21.960
  especially when we're talking about writing code
 
-00:03:22.020 --> 00:03:25.900
- inside HTML and showing people code is the pre-tag,
+00:03:21.960 --> 00:03:25.600
+ inside HTML and showing people code is the pretag.
 
-00:03:25.900 --> 00:03:29.740
- and so the pre-tag, and you can just say inspect
+00:03:25.600 --> 00:03:29.560
+ And so the pretag, and you can just say inspect
 
-00:03:29.740 --> 00:03:32.260
- to hop right down to where the pre-tag is.
+00:03:29.560 --> 00:03:32.080
+ to hop right down to where the pretag is.
 
-00:03:32.260 --> 00:03:36.100
- The pre-tag respects spaces, so all these spaces happen,
+00:03:32.080 --> 00:03:35.960
+ The pretag respects spaces, so all these spaces happen,
 
-00:03:36.100 --> 00:03:39.860
+00:03:35.960 --> 00:03:39.640
  the new lines happen, and it also shows it in monospace font.
 
-00:03:39.860 --> 00:03:43.020
- You can change all these things once we get to CSS,
+00:03:39.640 --> 00:03:42.840
+ Now you can change all these things once we get to CSS,
 
-00:03:43.020 --> 00:03:46.380
- but the pre-tag, when we're printing debug out from,
+00:03:42.840 --> 00:03:45.720
+ but the pretag, when we're printing debug out
 
-00:03:46.380 --> 00:03:49.780
- not in files like this, but when running code,
+00:03:45.720 --> 00:03:49.680
+ from, not in files like this, but when running code,
 
-00:03:49.780 --> 00:03:53.940
- sometimes it's good to print debugging out in the pre-tags.
+00:03:49.680 --> 00:03:54.680
+ sometimes it's good to print debugging out in the pretags.
 
-00:03:53.940 --> 00:03:59.060
- So let's go to the next page,
+00:03:54.680 --> 00:03:58.960
+ So let's go to the next page.
 
-00:03:59.060 --> 00:04:03.220
- and so here's a whole series of things we're gonna play with.
+00:03:58.960 --> 00:04:02.000
+ And so here's a whole series of things we're gonna play with.
 
-00:04:03.220 --> 00:04:06.960
+00:04:02.000 --> 00:04:07.520
  This is a unnumbered list.
 
-00:04:06.960 --> 00:04:14.380
- This whole thing is an unnumbered list from top to bottom,
+00:04:07.520 --> 00:04:14.320
+ This whole thing is an unnumbered list from top to bottom.
 
-00:04:14.380 --> 00:04:16.660
- so when I highlight this, you see the whole beginning
+00:04:14.320 --> 00:04:16.640
+ So when I highlight this, you see the whole beginning
 
-00:04:16.660 --> 00:04:21.220
- and the end of the list, then each item in the list has
+00:04:16.640 --> 00:04:18.040
+ to end of the list.
 
-00:04:21.220 --> 00:04:25.140
- start and end li tag, right, down, down, down.
+00:04:18.040 --> 00:04:23.040
+ Then each item in the list has start and end li tag.
 
-00:04:25.140 --> 00:04:30.960
- So here's this, we should learn about tables,
+00:04:23.040 --> 00:04:26.640
+ Down, down, down.
 
-00:04:30.960 --> 00:04:33.740
- and there's a href, there's another relative link,
+00:04:26.640 --> 00:04:30.800
+ So here's this, we should learn about tables.
 
-00:04:33.740 --> 00:04:36.380
- and so this is sort of my jumping off page
+00:04:30.800 --> 00:04:33.640
+ And there's a href, there's another relative link.
 
-00:04:36.380 --> 00:04:39.380
- to get to all of those other things, right,
+00:04:33.640 --> 00:04:36.240
+ And so this is sort of my jumping off page
 
-00:04:39.380 --> 00:04:41.780
- learn about tables, et cetera, et cetera,
+00:04:36.240 --> 00:04:39.240
+ to get to all those other things.
 
-00:04:41.780 --> 00:04:44.220
- and so you can see these.
+00:04:39.240 --> 00:04:41.640
+ Learn about tables, et cetera, et cetera.
 
-00:04:44.220 --> 00:04:46.300
- We probably use this to take a look at the source code
+00:04:41.640 --> 00:04:45.320
+ And so you can see these, we probably use just to take a look
 
-00:04:46.300 --> 00:04:50.460
- of this page, and so that's the source code that I typed in,
+00:04:45.320 --> 00:04:47.320
+ at the source code of this page.
 
-00:04:50.460 --> 00:04:54.100
- and you can see the li tags, the p tags,
+00:04:47.320 --> 00:04:51.640
+ And so that's the source code that I typed in.
 
-00:04:54.100 --> 00:04:57.220
+00:04:51.640 --> 00:04:54.000
+ And you can see the li tags, the p tags.
+
+00:04:54.000 --> 00:04:57.080
  I'm putting p's inside of li's to get space.
 
-00:04:57.220 --> 00:04:59.500
+00:04:57.080 --> 00:04:59.360
  Let's see if I can sort of show you that.
 
-00:04:59.500 --> 00:05:03.660
+00:04:59.360 --> 00:05:04.360
  So if you look at this, and you look at the li tag,
 
-00:05:03.660 --> 00:05:09.820
+00:05:04.360 --> 00:05:09.760
  the li tag is that, and the paragraph is what actually
 
-00:05:09.820 --> 00:05:12.660
- creates the vertical and horizontal space, right,
+00:05:09.760 --> 00:05:12.520
+ creates the vertical and horizontal space, right?
 
-00:05:12.660 --> 00:05:15.660
- so that orange that you're seeing, that's paragraph,
+00:05:12.520 --> 00:05:15.520
+ So that orange that you're seeing, that's paragraph.
 
-00:05:15.660 --> 00:05:19.240
- there's space that the paragraph tag has preset,
+00:05:15.520 --> 00:05:19.080
+ There's space that the paragraph tag has preset.
 
-00:05:19.240 --> 00:05:22.660
- so that's how I do that, putting paragraphs and hrefs,
+00:05:19.080 --> 00:05:21.000
+ So that's how I do that.
 
-00:05:22.660 --> 00:05:25.820
- and so that's what this all looks like.
+00:05:21.000 --> 00:05:22.560
+ Putting paragraphs and hrefs.
 
-00:05:25.820 --> 00:05:29.700
- So, let's take a look at special characters,
+00:05:22.560 --> 00:05:24.520
+ And so that's what this all looks like.
 
-00:05:29.700 --> 00:05:31.580
- and so this is an interesting thing,
+00:05:24.520 --> 00:05:29.520
+ So let's take a look at special characters.
 
-00:05:31.580 --> 00:05:33.260
- 'cause it's not really what came out,
+00:05:29.520 --> 00:05:31.440
+ And so this is an interesting thing,
 
-00:05:33.260 --> 00:05:36.060
- 'cause less than requires ampersand LT,
+00:05:31.440 --> 00:05:33.120
+ 'cause it's not really what came out.
 
-00:05:36.060 --> 00:05:37.780
- but it's kind of processing that,
+00:05:33.120 --> 00:05:35.920
+ 'Cause less than requires ampersand LT,
 
-00:05:37.780 --> 00:05:40.220
- so let's take a look at the source code to this one,
+00:05:35.920 --> 00:05:37.640
+ but it's kind of processing that.
 
-00:05:40.220 --> 00:05:42.700
- 'cause that'll be more instructive,
+00:05:37.640 --> 00:05:40.040
+ So let's take a look at the source code to this one,
 
-00:05:42.700 --> 00:05:46.980
- so ampersand LT, ampersand GT, ampersand amp,
+00:05:40.040 --> 00:05:42.560
+ 'cause that'll be more instructive.
 
-00:05:46.980 --> 00:05:49.340
- this is an ampersand in HTML,
+00:05:42.560 --> 00:05:46.920
+ So ampersand LT, ampersand GT, ampersand amp.
 
-00:05:49.340 --> 00:05:51.580
- and then just the letters amp semicolon,
+00:05:46.920 --> 00:05:49.240
+ This is an ampersand in HTML,
 
-00:05:51.580 --> 00:05:54.340
- semicolon's not special, there are only really three
+00:05:49.240 --> 00:05:51.480
+ and then just the letters AMP semicolon.
 
-00:05:54.340 --> 00:05:55.860
- truly special characters, less than,
+00:05:51.480 --> 00:05:52.960
+ Semicolon's not special.
 
-00:05:55.860 --> 00:05:58.140
- greater than, and ampersand,
+00:05:52.960 --> 00:05:55.360
+ There are only really three truly special characters,
 
-00:05:58.140 --> 00:05:59.940
- and you can put all kinds of fun stuff,
+00:05:55.360 --> 00:05:58.040
+ less than, greater than, and ampersand.
 
-00:05:59.940 --> 00:06:01.980
- clubs, hearts, and diamonds,
+00:05:58.040 --> 00:05:59.840
+ And you can put all kinds of fun stuff,
 
-00:06:01.980 --> 00:06:04.220
- and so you got the clubs, hearts, and diamonds,
+00:05:59.840 --> 00:06:01.880
+ clubs, hearts, and diamonds.
 
-00:06:04.220 --> 00:06:06.380
+00:06:01.880 --> 00:06:04.120
+ And so you got the clubs, hearts, and diamonds,
+
+00:06:04.120 --> 00:06:06.280
  some arrows, stuff like that.
 
-00:06:06.380 --> 00:06:08.460
+00:06:06.280 --> 00:06:08.400
  What's nice is browsers just have these built in,
 
-00:06:08.460 --> 00:06:12.020
- although they're not necessarily the sexiest
+00:06:08.400 --> 00:06:09.960
+ although they're not necessarily
 
-00:06:12.020 --> 00:06:14.660
- or the coolest things, and I think what happens
+00:06:09.960 --> 00:06:13.760
+ the sexiest or coolest things.
 
-00:06:14.660 --> 00:06:17.580
- when I go back on this link is I go back to the list,
+00:06:13.760 --> 00:06:16.120
+ And I think what happens when I go back on this link
 
-00:06:17.580 --> 00:06:19.060
- so that's just special characters,
+00:06:16.120 --> 00:06:17.600
+ is I go back to the list.
 
-00:06:19.060 --> 00:06:22.260
- and you'll notice that the default styling,
+00:06:17.600 --> 00:06:19.080
+ So that's just special characters.
 
-00:06:22.260 --> 00:06:23.580
+00:06:19.080 --> 00:06:22.280
+ And you'll notice that the default styling
+
+00:06:22.280 --> 00:06:23.600
  that says we've seen this one,
 
-00:06:23.580 --> 00:06:26.500
- and this is how the web worked a thousand years ago,
+00:06:23.600 --> 00:06:25.920
+ and this is how the web worked a thousand years,
 
-00:06:26.500 --> 00:06:28.500
- back in the 90s, is you sort of,
+00:06:25.920 --> 00:06:28.520
+ no, back in the '90s, is you sort of,
 
-00:06:28.500 --> 00:06:30.140
- oh, it's kind of nice that it's turning purple,
+00:06:28.520 --> 00:06:30.160
+ oh, it's kind of nice that it's turning purple.
 
-00:06:30.140 --> 00:06:32.100
- and you'll notice that Google does this as well,
+00:06:30.160 --> 00:06:32.080
+ And you'll notice that Google does this as well
 
-00:06:32.100 --> 00:06:33.820
- when you're doing Google searches,
+00:06:32.080 --> 00:06:33.800
+ when you're doing Google searches.
 
-00:06:33.820 --> 00:06:35.620
- it actually lets the links change color
+00:06:33.800 --> 00:06:35.600
+ It actually lets the links change color
 
-00:06:35.620 --> 00:06:37.420
- after you've visited them,
+00:06:35.600 --> 00:06:37.440
+ after you've visited them.
 
-00:06:37.420 --> 00:06:38.980
- so let's take a look about links,
+00:06:37.440 --> 00:06:39.000
+ So let's take a look about links.
 
-00:06:38.980 --> 00:06:43.340
- we look at links, we, I'll view the source of this guy.
+00:06:39.000 --> 00:06:43.360
+ We look at links, I'll view the source of this guy.
 
-00:06:43.340 --> 00:06:51.580
- Absolute link, a href, right,
+00:06:43.360 --> 00:06:51.600
+ Absolute link, a href, right?
 
-00:06:51.580 --> 00:06:54.340
- and then /a, this is the clickable text, right,
+00:06:51.600 --> 00:06:54.320
+ And then /a, this is the clickable text, right?
 
-00:06:54.340 --> 00:06:56.900
- between the beginning tag and the ending tag,
+00:06:54.320 --> 00:06:56.880
+ Between the beginning tag and the ending tag.
 
-00:06:56.900 --> 00:06:59.540
- the attributes are on the beginning tag.
+00:06:56.880 --> 00:06:59.560
+ The attributes are on the beginning tag.
 
-00:06:59.540 --> 00:07:02.500
+00:06:59.560 --> 00:07:02.480
  Another attribute that you can add,
 
-00:07:02.500 --> 00:07:04.980
- and I do it all the time, is target equals blank,
+00:07:02.480 --> 00:07:05.000
+ and I do it all the time, is target equals blank.
 
-00:07:04.980 --> 00:07:08.380
- and that basically is the way we say,
+00:07:05.000 --> 00:07:08.360
+ And that basically is the way we say,
 
-00:07:08.380 --> 00:07:10.020
- open this up in a new tab,
+00:07:08.360 --> 00:07:10.040
+ open this up in a new tab.
 
-00:07:10.020 --> 00:07:11.860
- so you'll notice pop up in a new tab,
+00:07:10.040 --> 00:07:11.880
+ So you'll notice, pop up in a new tab.
 
-00:07:11.860 --> 00:07:15.220
- and so that's where that one goes, when it pops up,
+00:07:11.880 --> 00:07:15.200
+ And so that's where that one goes when it pops up.
 
-00:07:15.220 --> 00:07:18.220
- and so you can decide whether or not you want this
+00:07:15.200 --> 00:07:18.240
+ And so you can decide whether or not you want this
 
-00:07:18.220 --> 00:07:23.220
- to go in the same page, back, or in a new page,
+00:07:18.240 --> 00:07:23.240
+ to go in the same page, back, or in a new page.
 
-00:07:23.220 --> 00:07:26.140
- and then I gotta close the tab to get back,
+00:07:23.240 --> 00:07:26.160
+ And then I gotta close the tab to get back.
 
-00:07:26.140 --> 00:07:30.300
- and now I'll go back, 'cause that's just a relative link,
+00:07:26.160 --> 00:07:30.280
+ And now I'll go back, 'cause that's just a relative link
 
-00:07:30.300 --> 00:07:33.540
+00:07:30.280 --> 00:07:33.560
  to list.htm, so I can go back and look at the next thing.
 
-00:07:33.540 --> 00:07:37.300
- Let's take a look at how images are represented,
+00:07:35.280 --> 00:07:38.240
+ Let's take a look at how images are represented, so.
 
-00:07:37.300 --> 00:07:42.300
- so, so this is just a paragraph that has an image in it,
+00:07:38.240 --> 00:07:48.360
+ So this is just a paragraph that has an image in it, right?
 
-00:07:42.300 --> 00:07:51.340
- right, so it's a paragraph, but there's the image,
+00:07:48.360 --> 00:07:51.360
+ So it's a paragraph, but there's the image.
 
-00:07:51.340 --> 00:07:55.300
- source equals medium.jpg, if you look in my folder,
+00:07:51.360 --> 00:07:55.320
+ Source equals medium.jpg, if you look in my folder.
 
-00:07:55.300 --> 00:08:00.220
- if you look in my folder, you see the image right there,
+00:07:55.320 --> 00:08:00.240
+ If you look in my folder, you see the image right there,
 
-00:08:00.220 --> 00:08:02.500
+00:08:00.240 --> 00:08:02.520
  medium.png, you don't see the suffix,
 
-00:08:02.500 --> 00:08:04.700
- 'cause Mac is trying to hide it from me,
+00:08:02.520 --> 00:08:04.680
+ 'cause Mac is trying to hide it from me.
 
-00:08:04.700 --> 00:08:08.380
- and so that's just, you see the space here and here,
+00:08:04.680 --> 00:08:08.360
+ And so that's just, you see the space here and here.
 
-00:08:08.380 --> 00:08:10.300
- the image doesn't have any space,
+00:08:08.360 --> 00:08:10.320
+ The image doesn't have any space.
 
-00:08:10.300 --> 00:08:11.960
- we could add some with CSS later,
+00:08:10.320 --> 00:08:11.960
+ We could add some with CSS later,
 
-00:08:11.960 --> 00:08:14.660
- but the paragraph is what's adding that space,
+00:08:11.960 --> 00:08:14.640
+ but the paragraph is what's adding that space.
 
-00:08:14.660 --> 00:08:18.100
- and we have just a regular old paragraph,
+00:08:14.640 --> 00:08:18.080
+ Then we have just a regular old paragraph.
 
-00:08:18.100 --> 00:08:25.140
- not supposed to use the center tag,
+00:08:18.080 --> 00:08:25.160
+ Not supposed to use the center tag,
 
-00:08:25.140 --> 00:08:26.660
+00:08:25.160 --> 00:08:26.660
  we'll get to the how to center stuff,
 
-00:08:26.660 --> 00:08:29.460
- so that's what that is saying right there,
+00:08:26.660 --> 00:08:29.440
+ so that's what that is saying right there.
 
-00:08:29.460 --> 00:08:31.900
- and you can have an image that's right in the middle,
+00:08:29.440 --> 00:08:31.920
+ And you can have an image that's right in the middle.
 
-00:08:31.900 --> 00:08:33.960
- so you see where that image is,
+00:08:31.920 --> 00:08:33.960
+ So you see where that image is.
 
-00:08:33.960 --> 00:08:36.820
+00:08:33.960 --> 00:08:36.800
  I think of images, if they're right in the middle of text,
 
-00:08:36.820 --> 00:08:38.540
+00:08:36.800 --> 00:08:38.520
  they're like a giant character,
 
-00:08:38.540 --> 00:08:40.780
- and so that's how that works,
+00:08:38.520 --> 00:08:40.780
+ and so that's how that works.
 
-00:08:40.780 --> 00:08:43.980
- and you can even sort of stick an image
+00:08:40.780 --> 00:08:44.000
+ And you can even sort of stick an image
 
-00:08:43.980 --> 00:08:45.660
- as the thing inside of a link,
+00:08:44.000 --> 00:08:45.640
+ as the thing inside of a link.
 
-00:08:45.660 --> 00:08:49.060
- so here's the anchor tag, it's that bit right there,
+00:08:45.640 --> 00:08:49.040
+ So here's the anchor tag, it's that bit right there,
 
-00:08:49.060 --> 00:08:52.680
- and then the anchor tag body is an image,
+00:08:49.040 --> 00:08:52.680
+ and then the anchor tag body is an image.
 
-00:08:52.680 --> 00:08:55.580
- and so if I click on that, it's gonna go back to list.htm,
+00:08:52.680 --> 00:08:55.600
+ And so if I click on that, it's gonna go back to list.htm.
 
-00:08:55.580 --> 00:08:57.980
- you'll notice these all go back to list.htm,
+00:08:55.600 --> 00:08:57.980
+ You'll notice these all go back to list.htm,
 
 00:08:57.980 --> 00:09:00.820
  so I can work on the next thing, right?
@@ -543,312 +561,294 @@ WEBVTT
 00:09:02.280 --> 00:09:06.440
  Tables, again, you're not supposed to use tables
 
-00:09:06.440 --> 00:09:10.260
- for laying out blocks of text, which we used to do,
+00:09:06.440 --> 00:09:10.240
+ for laying out blocks of text, which we used to do.
 
-00:09:10.260 --> 00:09:11.660
- we used to do things like use tables
+00:09:10.240 --> 00:09:11.680
+ We used to do things like use tables
 
-00:09:11.660 --> 00:09:15.620
+00:09:11.680 --> 00:09:15.600
  to draw borders around things, which we'll see in CSS,
 
-00:09:15.620 --> 00:09:19.100
+00:09:15.600 --> 00:09:19.080
  but now that's totally verboten,
 
-00:09:19.100 --> 00:09:22.540
+00:09:19.080 --> 00:09:22.560
  and you're supposed to look at tables
 
-00:09:22.540 --> 00:09:25.120
- in a way that they're nice and pretty,
+00:09:22.560 --> 00:09:25.120
+ in a way that they're nice and pretty.
 
 00:09:25.120 --> 00:09:28.760
- so let's do a view source here,
+ So let's do a view source here.
 
-00:09:31.060 --> 00:09:32.960
- so let's see, there's our table,
+00:09:31.060 --> 00:09:34.240
+ So let's see, there's our table, our slash table,
 
-00:09:32.960 --> 00:09:35.020
- our slash table, and a table row,
+00:09:34.240 --> 00:09:35.080
+ and a table row.
 
-00:09:35.020 --> 00:09:37.700
- now let's take a look at the DOM,
+00:09:35.080 --> 00:09:37.680
+ Now let's take a look at the DOM.
 
-00:09:37.700 --> 00:09:39.860
- so apparently I didn't put a tbody,
+00:09:37.680 --> 00:09:39.880
+ So apparently I didn't put a tbody,
 
-00:09:39.860 --> 00:09:42.140
+00:09:39.880 --> 00:09:42.160
  we're supposed to put a tbody in there,
 
-00:09:42.140 --> 00:09:44.240
+00:09:42.160 --> 00:09:44.240
  and I didn't do it, but this is the DOM,
 
-00:09:44.240 --> 00:09:48.100
- the DOM put it in, that's put in by the parsing,
+00:09:44.240 --> 00:09:46.280
+ the DOM put it in.
 
-00:09:48.100 --> 00:09:51.660
- and so clearly I made a little mistake in my HTML,
+00:09:46.280 --> 00:09:48.120
+ That's put in by the parsing,
 
-00:09:51.660 --> 00:09:53.200
+00:09:48.120 --> 00:09:51.640
+ and so clearly I made a little mistake in my HTML
+
+00:09:51.640 --> 00:09:53.200
  'cause I didn't put a tbody tag,
 
 00:09:53.200 --> 00:09:55.240
- and so that was added by the browser,
+ and so that was added by the browser.
 
-00:09:55.240 --> 00:09:57.140
- as it was parsing and reading through this,
+00:09:55.240 --> 00:09:57.120
+ As it was parsing and reading through this,
 
-00:09:57.140 --> 00:09:58.820
- like oh, he forgot his tbody,
+00:09:57.120 --> 00:09:58.820
+ it was like, oh, he forgot his tbody,
 
 00:09:58.820 --> 00:10:01.040
- so it just like slapped one in for me,
+ so it just like slapped one in for me.
 
-00:10:01.040 --> 00:10:03.220
- and I think the mistake is this is my header row,
+00:10:01.040 --> 00:10:03.240
+ And I think the mistake is this is my header row,
 
-00:10:03.220 --> 00:10:05.380
- and I think that should be like a thead,
+00:10:03.240 --> 00:10:05.360
+ and I think that should be like a thead.
 
-00:10:05.380 --> 00:10:08.820
- so there I go, bad HTML, it's the story of my life,
+00:10:05.360 --> 00:10:08.840
+ So there I go, bad HTML, it's the story of my life.
 
-00:10:08.820 --> 00:10:09.940
- and then I've got the rows,
+00:10:08.840 --> 00:10:09.940
+ And then I've got the rows,
 
-00:10:09.940 --> 00:10:13.620
- and you'll notice that the DOM is kind of prettier,
+00:10:09.940 --> 00:10:13.600
+ and you'll notice that the DOM is kind of prettier.
 
-00:10:13.620 --> 00:10:17.720
- so sometimes I do this, the DOM is indented nicely,
+00:10:13.600 --> 00:10:17.720
+ So sometimes I do this, the DOM is indented nicely.
 
 00:10:17.720 --> 00:10:19.840
- so this isn't really the source code,
+ So this isn't really the source code,
 
-00:10:19.840 --> 00:10:24.460
- this is the data that represents this visual, right,
+00:10:19.840 --> 00:10:24.480
+ this is the data that represents this visual, right?
 
-00:10:24.460 --> 00:10:26.920
- it is the thing that you're seeing,
+00:10:24.480 --> 00:10:26.920
+ It is the thing that you're seeing,
 
 00:10:26.920 --> 00:10:31.920
  but it read this from the file or from the server,
 
-00:10:31.920 --> 00:10:34.700
+00:10:31.920 --> 00:10:34.720
  parsed it, and produced the document object model.
 
-00:10:34.700 --> 00:10:37.720
+00:10:34.720 --> 00:10:37.720
  I only say that like a million times.
 
 00:10:37.720 --> 00:10:39.720
  Okay, so back we go to the lists,
 
-00:10:39.720 --> 00:10:41.220
+00:10:39.720 --> 00:10:41.160
  we're making pretty good time.
 
-00:10:41.220 --> 00:10:45.500
- So here's some really bad HTML,
+00:10:41.160 --> 00:10:45.500
+ So here's some really bad HTML.
 
-00:10:45.500 --> 00:10:46.900
+00:10:45.500 --> 00:10:46.880
  I'm gonna view source on it,
 
-00:10:46.900 --> 00:10:48.420
- and again you'll see sort of the difference
+00:10:46.880 --> 00:10:48.400
+ and again, you'll see sort of the difference
 
-00:10:48.420 --> 00:10:50.020
+00:10:48.400 --> 00:10:50.040
  between the document object model.
 
-00:10:50.020 --> 00:10:51.700
+00:10:50.040 --> 00:10:51.680
  When you're debugging these things,
 
-00:10:51.700 --> 00:10:53.700
- you will have to sometimes view source,
+00:10:51.680 --> 00:10:53.680
+ you will have to sometimes view source.
 
-00:10:53.700 --> 00:10:55.100
- sometimes document object model
+00:10:53.680 --> 00:10:55.080
+ Sometimes document object model
 
-00:10:55.100 --> 00:10:56.660
+00:10:55.080 --> 00:10:56.640
  will be the only way to debug it,
 
-00:10:56.660 --> 00:10:58.360
- and sometimes view source,
+00:10:56.640 --> 00:10:58.320
+ and sometimes view source.
 
-00:10:58.360 --> 00:11:00.260
- so this is the one that's got bad stuff,
+00:10:58.320 --> 00:11:00.220
+ So this is the one that's got bad stuff,
 
-00:11:00.260 --> 00:11:03.420
- like h1 is upper case,
+00:11:00.220 --> 00:11:03.360
+ like h1 is uppercase.
 
-00:11:03.420 --> 00:11:06.500
- this paragraph tag is not terminated,
+00:11:03.360 --> 00:11:06.480
+ This paragraph tag is not terminated.
 
-00:11:06.500 --> 00:11:08.380
- this ul tag is upper case,
+00:11:06.480 --> 00:11:10.320
+ This ul tag is uppercase, this li is not terminated.
 
-00:11:08.380 --> 00:11:10.340
- this li is not terminated,
+00:11:10.320 --> 00:11:12.000
+ I don't have double quotes here.
 
-00:11:10.340 --> 00:11:12.040
- I don't have double quotes here,
+00:11:12.000 --> 00:11:15.480
+ So there's a series of mistakes that I've made in this HTML,
 
-00:11:12.040 --> 00:11:15.500
- so there's a series of mistakes that I've made in this HTML,
+00:11:15.480 --> 00:11:17.760
+ but it looks pretty good.
 
-00:11:15.500 --> 00:11:17.820
- but it looks pretty good,
+00:11:17.760 --> 00:11:20.100
+ And you'll notice in the document object model,
 
-00:11:17.820 --> 00:11:20.140
- and you'll notice in the document object model,
+00:11:20.100 --> 00:11:22.160
+ it's fixed all that.
 
-00:11:20.140 --> 00:11:22.200
- it's fixed all that,
+00:11:22.160 --> 00:11:23.680
+ Each one is lowercase.
 
-00:11:22.200 --> 00:11:23.720
- each one is lower case,
+00:11:23.680 --> 00:11:26.000
+ The p tag is finished.
 
-00:11:23.720 --> 00:11:26.020
- the p tag is finished,
+00:11:26.000 --> 00:11:27.440
+ There are double quotes,
 
-00:11:26.020 --> 00:11:27.460
- there are double quotes,
-
-00:11:27.460 --> 00:11:29.220
+00:11:27.440 --> 00:11:29.220
  meaning the document object model
 
-00:11:29.220 --> 00:11:32.860
- is not just your HTML source code,
+00:11:29.220 --> 00:11:32.880
+ is not just your HTML source code.
 
-00:11:32.860 --> 00:11:35.700
- it's like the sensible parsed pretty version
+00:11:32.880 --> 00:11:35.720
+ It's like the sensible parsed pretty version
 
-00:11:35.700 --> 00:11:37.780
- of the HTML source code,
+00:11:35.720 --> 00:11:37.760
+ of the HTML source code.
 
-00:11:37.780 --> 00:11:40.240
- and so this ul tag,
+00:11:37.760 --> 00:11:42.120
+ And so this ul tag, these li tags are now done.
 
-00:11:40.240 --> 00:11:42.100
- these li tags are now done,
+00:11:42.120 --> 00:11:44.400
+ The ul's lowercase, everything's lowercase.
 
-00:11:42.100 --> 00:11:43.220
- the ul is lower case,
+00:11:44.400 --> 00:11:46.040
+ So it's like, I'll take care of your mess.
 
-00:11:43.220 --> 00:11:44.400
- everything's lower case,
-
-00:11:44.400 --> 00:11:46.060
- so it's like I'll take care of your mess,
-
-00:11:46.060 --> 00:11:49.840
+00:11:46.040 --> 00:11:49.840
  I'll patch up and fix your HTML,
 
-00:11:49.840 --> 00:11:51.700
- and then I'll display it for me,
+00:11:49.840 --> 00:11:52.940
+ and then I'll display it for me and make sense of it.
 
-00:11:51.700 --> 00:11:52.940
- and make sense of it.
+00:11:55.440 --> 00:11:57.720
+ So the document object model is not the same.
 
-00:11:55.420 --> 00:11:57.740
- So the document object model is not the same,
+00:11:57.720 --> 00:12:02.760
+ It is sort of like a sweet, awesome, better version of it.
 
-00:11:57.740 --> 00:12:02.740
- it is sort of like a sweet, awesome, better version of it,
+00:12:02.760 --> 00:12:04.880
+ But this is what changes that.
 
-00:12:02.740 --> 00:12:04.860
- but this is what changes that,
+00:12:04.880 --> 00:12:06.000
+ So let me just show you something,
 
-00:12:04.860 --> 00:12:06.020
- so let me just show you something,
+00:12:06.000 --> 00:12:08.440
+ how I can change the document object model.
 
-00:12:06.020 --> 00:12:08.420
- how I can change the document object model,
+00:12:08.440 --> 00:12:10.800
+ Let's see, let me see if I can change this text.
 
-00:12:08.420 --> 00:12:10.780
- let's see, let me see if I can change this text.
-
-00:12:10.780 --> 00:12:15.600
- I changed the document object model,
-
-00:12:15.600 --> 00:12:16.740
- that changes,
+00:12:10.800 --> 00:12:16.740
+ I changed the document object model, that changes.
 
 00:12:16.740 --> 00:12:17.580
- so I'm actually,
+ So I'm actually,
 
-00:12:17.580 --> 00:12:19.940
- but that didn't change the source code here,
+00:12:17.580 --> 00:12:19.960
+ but that didn't change the source code here.
 
-00:12:19.940 --> 00:12:22.800
- the source that was retrieved to produce it,
+00:12:19.960 --> 00:12:22.800
+ The source that was retrieved to produce it,
 
-00:12:22.800 --> 00:12:24.580
- but I can change the document object model,
+00:12:22.800 --> 00:12:24.560
+ but I can change the document object model.
 
-00:12:24.580 --> 00:12:26.820
- and later in the class we will write code,
+00:12:24.560 --> 00:12:26.800
+ And later in the class, we will write code
 
-00:12:26.820 --> 00:12:29.660
- that will actually change the document object model,
+00:12:26.800 --> 00:12:29.600
+ that will actually change the document object model.
 
-00:12:29.660 --> 00:12:31.400
- so we'll change this,
+00:12:29.600 --> 00:12:31.360
+ So we'll just change this.
 
-00:12:31.400 --> 00:12:36.040
- we'll call this be going to lists,
+00:12:31.360 --> 00:12:36.360
+ We'll call this be going to lists yet again.
 
-00:12:36.040 --> 00:12:42.580
- yet again,
+00:12:36.360 --> 00:12:44.920
+ So I can change the document object model.
 
-00:12:42.580 --> 00:12:44.940
- so I can change the document object model,
+00:12:44.920 --> 00:12:45.960
+ So you see it changed it.
 
-00:12:44.940 --> 00:12:46.020
- so you see it changed it,
+00:12:45.960 --> 00:12:47.920
+ So when we change document object model,
 
-00:12:46.020 --> 00:12:47.940
- so when we change document object model,
-
-00:12:47.940 --> 00:12:49.620
+00:12:47.920 --> 00:12:49.600
  what we see in the browser changes,
 
-00:12:49.620 --> 00:12:50.780
- but the source doesn't change,
+00:12:49.600 --> 00:12:50.720
+ but the source doesn't change.
 
-00:12:50.780 --> 00:12:51.860
- did I say that enough times?
+00:12:50.720 --> 00:12:51.840
+ Did I say that enough times?
 
-00:12:51.860 --> 00:12:54.680
- So let's click on this, and go back to lists.
+00:12:51.840 --> 00:12:54.700
+ So let's click on this and go back to lists.
 
-00:12:54.680 --> 00:12:59.060
- Okay, so some HTML can be broken so badly,
+00:12:54.700 --> 00:12:59.040
+ Okay, so some HTML can be broken so badly
 
-00:12:59.060 --> 00:13:00.660
- so that it doesn't render at all,
+00:12:59.040 --> 00:13:00.640
+ so that it doesn't render at all.
 
-00:13:00.660 --> 00:13:03.940
- whoops, that didn't work so well,
+00:13:00.640 --> 00:13:03.920
+ Whoops, that didn't work so well.
 
-00:13:03.940 --> 00:13:07.340
- I will, I'll do a view source on it,
+00:13:03.920 --> 00:13:07.340
+ I will, I'll do a view source on it.
 
-00:13:07.340 --> 00:13:13.580
- and then I will let you figure out why this doesn't work,
+00:13:07.340 --> 00:13:13.600
+ And then I will let you figure out why this doesn't work,
 
-00:13:13.580 --> 00:13:15.140
- why this doesn't show,
+00:13:13.600 --> 00:13:15.120
+ why this doesn't show.
 
-00:13:15.140 --> 00:13:16.840
- you take a look at the source,
+00:13:15.120 --> 00:13:18.160
+ You take a look at the source, you figure it out.
 
-00:13:16.840 --> 00:13:18.140
- you figure it out,
+00:13:18.160 --> 00:13:20.720
+ I hope this has been helpful to you.
 
-00:13:18.140 --> 00:13:20.700
- I hope this has been helpful to you,
+00:13:21.600 --> 00:13:22.860
+ See you on the net.
 
-00:13:21.580 --> 00:13:23.060
- and I'll see you on the net.
-
-00:13:23.060 --> 00:13:25.640
+00:13:22.860 --> 00:13:25.440
  (upbeat music)
 

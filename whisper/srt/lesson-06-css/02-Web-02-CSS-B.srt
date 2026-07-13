@@ -1,1020 +1,1008 @@
 1
-00:00:00,000 --> 00:00:00,840
- So welcome back.
+00:00:00,000 --> 00:00:04,560
+ >> So welcome back, now we're gonna talk about how you use CSS within HTML,
 
 2
-00:00:00,840 --> 00:00:04,560
- Now we're gonna talk about how you use CSS within HTML.
+00:00:04,560 --> 00:00:08,880
+ how you take these CSS rules and apply them to the various parts of HTML.
 
 3
-00:00:04,560 --> 00:00:08,880
- How you take these CSS rules and apply them to the various parts of HTML.
-
-4
-00:00:08,880 --> 00:00:10,800
+00:00:08,880 --> 00:00:10,840
  And there are three basic ways that we do this.
 
-5
-00:00:10,800 --> 00:00:14,400
+4
+00:00:10,840 --> 00:00:14,400
  One is we take an HTML tag and use the style attribute and
 
-6
+5
 00:00:14,400 --> 00:00:20,600
  just put those little CSS key value, you know, CSS settings right there, very close.
 
-7
-00:00:20,600 --> 00:00:23,160
+6
+00:00:20,600 --> 00:00:23,200
  The other thing is you can put it in the background of the HTML document,
 
-8
-00:00:23,160 --> 00:00:24,880
+7
+00:00:23,200 --> 00:00:24,880
  usually in the head area.
 
-9
+8
 00:00:24,880 --> 00:00:28,640
  And the other, probably most common thing, especially when the styles get large,
 
-10
+9
 00:00:28,640 --> 00:00:31,720
  is an external style sheet that's a separately loaded file with a separate
 
-11
-00:00:31,720 --> 00:00:32,840
+10
+00:00:31,720 --> 00:00:32,880
  request response cycle.
 
-12
-00:00:32,840 --> 00:00:39,640
+11
+00:00:32,880 --> 00:00:39,640
  So we'll start with sort of the simplest but sort of least used of these things.
 
-13
+12
 00:00:39,640 --> 00:00:43,800
  And that is, like I said, you can put a style attribute on any tag.
 
-14
+13
 00:00:43,800 --> 00:00:47,720
  And you say, any attribute, you know, you say, it's got a double quote and
 
-15
+14
 00:00:47,720 --> 00:00:49,720
  a bunch of stuff and another double quote.
 
-16
+15
 00:00:49,720 --> 00:00:54,000
  And in there is a series of CSS rules that are basically CSS setting,
 
-17
+16
 00:00:54,000 --> 00:00:57,680
  like border style colon and then the border style setting that you want.
 
-18
+17
 00:00:57,680 --> 00:01:00,680
- And so in here I'm saying I would like a solid border, I would like it red and
+ And so in here I'm saying I would like a solid border, I would like it red, and
 
-19
+18
 00:01:00,680 --> 00:01:02,280
  I'd like it to be five pixels.
 
-20
+19
 00:01:02,280 --> 00:01:09,040
  And that effectively determines how that particular thing gets painted, right?
 
-21
+20
 00:01:09,040 --> 00:01:12,760
  In this particular one I said font family monospace for that particular paragraph.
 
-22
+21
 00:01:12,760 --> 00:01:16,360
  So this paragraph is painted with a font family monospace.
 
-23
+22
 00:01:16,360 --> 00:01:18,280
  And so you can just put these things here.
 
+23
+00:01:18,280 --> 00:01:22,200
+ I put on the body tag, I want an Arial Sans Serif font, so
+
 24
-00:01:18,280 --> 00:01:21,560
- I put on the body tag, I want an Arial Sans Serif font.
+00:01:22,200 --> 00:01:24,800
+ the whole body is not Times New Roman,
 
 25
-00:01:21,560 --> 00:01:24,800
- So the whole body is not Times New Roman,
-
-26
 00:01:24,800 --> 00:01:27,880
  except for the fact that this particular one is monospace.
 
-27
+26
 00:01:27,880 --> 00:01:33,920
  And so these two tags are rendering opinions about what the font's supposed to be.
 
-28
+27
 00:01:33,920 --> 00:01:37,720
  But because this one is closer, the monospace wins here, but
 
-29
+28
 00:01:37,720 --> 00:01:42,400
  the Arial wins everywhere else because none of these other tags render an opinion.
 
-30
+29
 00:01:42,400 --> 00:01:47,080
  And so that's kind of the cascading bit, meaning the closer it is,
 
-31
+30
 00:01:47,080 --> 00:01:52,120
  the more priority that it has, unless of course they put important up here.
 
-32
+31
 00:01:52,120 --> 00:01:54,640
  And important is something we'll talk about later.
 
-33
+32
 00:01:54,640 --> 00:01:59,640
- You can make the farther away override the local, but
+ And you can make the farther away override the local, but
 
-34
+33
 00:01:59,640 --> 00:02:01,920
  it's not something you wanna use too much.
 
-35
+34
 00:02:01,920 --> 00:02:03,600
  If you're using important, that's a trouble.
 
-36
-00:02:03,600 --> 00:02:05,920
+35
+00:02:03,600 --> 00:02:05,880
  But don't worry about important right now.
 
-37
-00:02:05,920 --> 00:02:09,920
+36
+00:02:05,880 --> 00:02:09,920
  Just imagine cascading means the closer, the higher priority.
 
-38
+37
 00:02:09,920 --> 00:02:15,560
  Closer to the tag the statement of CSS is than the higher priority that it is.
 
-39
+38
 00:02:15,560 --> 00:02:19,440
  So another place that you can put the CSS is right there in the header, right?
 
-40
+39
 00:02:19,440 --> 00:02:23,360
  So instead of putting it on a tag, we can use a style tag in the header.
 
-41
+40
 00:02:23,360 --> 00:02:27,240
  And so here we have the header of the document, right?
 
-42
+41
 00:02:27,240 --> 00:02:29,840
  The head, the body starts down here.
 
-43
-00:02:29,840 --> 00:02:32,160
+42
+00:02:29,840 --> 00:02:32,140
  And up here, we're gonna set a set of rules.
 
-44
-00:02:32,160 --> 00:02:35,960
+43
+00:02:32,140 --> 00:02:35,960
  And now we're using the thing where we have to say which tag it goes to.
 
-45
+44
 00:02:35,960 --> 00:02:39,240
  So now I can say the body tag, even though there's only one body tag.
 
-46
+45
 00:02:39,240 --> 00:02:41,480
  We want a font family Arial Sans Serif.
 
-47
+46
 00:02:41,480 --> 00:02:44,960
  And because they're all inheriting from the body tag,
 
-48
+47
 00:02:44,960 --> 00:02:49,020
  then all the paragraphs inherit from this and the headers inherit, etc, etc.
 
-49
+48
 00:02:49,020 --> 00:02:52,280
  So it's like body on down in this particular case.
 
-50
+49
 00:02:52,280 --> 00:02:56,280
  The header one, which is this, is blue.
 
-51
+50
 00:02:56,280 --> 00:02:59,480
  And paragraphs are supposed to have a solid border, red, five pixels.
 
-52
+51
 00:02:59,480 --> 00:03:01,680
  And so border style, border color, etc.
 
-53
+52
 00:03:01,680 --> 00:03:05,280
- And that means that each of the two paragraphs here are a way you go.
+ And that means that each of the two paragraphs here are away you go.
 
-54
+53
 00:03:05,280 --> 00:03:07,400
  And I'm gonna dig into the anchor tag.
 
-55
+54
 00:03:07,400 --> 00:03:09,400
  And here's my little anchor tag.
 
-56
+55
 00:03:09,400 --> 00:03:12,400
  And I'm telling the anchor tag that I would like to have a green font.
 
-57
+56
 00:03:12,400 --> 00:03:13,680
  And I would like no underline.
 
-58
+57
 00:03:13,680 --> 00:03:15,280
  The default is to underline them.
 
-59
+58
 00:03:15,280 --> 00:03:18,320
  If you look at links, they're always underlined.
 
-60
+59
 00:03:18,320 --> 00:03:19,720
  I'm overriding that.
 
-61
+60
 00:03:19,720 --> 00:03:22,960
  And then I want the background color of that text to be light gray.
 
-62
+61
 00:03:22,960 --> 00:03:24,280
  And so this is a set of rules.
 
-63
+62
 00:03:24,280 --> 00:03:26,800
  All that HTML is down here, lower down.
 
-64
+63
 00:03:26,800 --> 00:03:28,160
  And there are no style tags.
 
+64
+00:03:28,160 --> 00:03:31,560
+ There are no style attributes on the tags, because we have basically said for
+
 65
-00:03:28,160 --> 00:03:30,160
- There are no style attributes on the tags.
+00:03:31,560 --> 00:03:36,080
+ all paragraph tags, for all anchor tags, for all h1 tags, and for all body tags.
 
 66
-00:03:30,160 --> 00:03:33,560
- Because we have basically said for all paragraph tags, for all anchor tags, for
-
-67
-00:03:33,560 --> 00:03:36,080
- all h1 tags, and for all body tags.
-
-68
 00:03:36,080 --> 00:03:38,080
  And we put it up here in the top of the document.
 
-69
+67
 00:03:38,080 --> 00:03:42,440
  Now the problem is there's lots of, most websites have multiple pages.
 
-70
+68
 00:03:42,440 --> 00:03:44,560
  And this gets really frustrating after a while.
 
-71
+69
 00:03:44,560 --> 00:03:48,360
  So you really wanna pull some of those widely used or
 
-72
+70
 00:03:48,360 --> 00:03:51,160
  repeated things out into a file and include them.
 
-73
+71
 00:03:51,160 --> 00:03:55,960
- And all we do is take pretty much that same set of CSS rules, and
+ And all we do is take pretty much that same set of CSS rules and
 
-74
+72
 00:03:55,960 --> 00:03:57,600
  we put them into a file.
 
-75
+73
 00:03:57,600 --> 00:04:00,240
  And in this case, we'll put them in the same file, same directory,
 
-76
+74
 00:04:00,240 --> 00:04:03,280
  same folder as the HTML.
 
-77
+75
 00:04:03,280 --> 00:04:07,200
  Although you can pull these things off of a website if you want.
 
-78
+76
 00:04:07,200 --> 00:04:10,160
  So htp colon slash slash or whatever.
 
-79
+77
 00:04:10,160 --> 00:04:14,000
- But you put a link in here and tell it's a CSS, and it's gonna be a style sheet.
+ But you put a link in here and tell it's a CSS and it's gonna be a style sheet.
 
-80
+78
 00:04:14,000 --> 00:04:18,120
  And then you give it an href, which is then going to pull this file in.
 
-81
-00:04:18,120 --> 00:04:21,240
+79
+00:04:18,120 --> 00:04:21,200
  And sort of expand it as if it were right there in the middle of a style tag.
 
-82
-00:04:21,240 --> 00:04:24,040
- And so it knows it's a CSS, and it pulls it in.
+80
+00:04:21,200 --> 00:04:24,040
+ And so it knows it's a CSS and it pulls it in.
 
-83
+81
 00:04:24,040 --> 00:04:26,600
  So that's how you change your HTML.
 
-84
+82
 00:04:26,600 --> 00:04:29,840
  So now if we take a look at the next example,
 
-85
+83
 00:04:29,840 --> 00:04:34,800
  we see that in this next example, we've got a link, right?
 
-86
+84
 00:04:34,800 --> 00:04:39,200
  And down here, we've got no style, ignore this little thing.
 
-87
+85
 00:04:39,200 --> 00:04:41,880
  That's how we're putting this little, don't ignore that page.
 
-88
-00:04:41,880 --> 00:04:47,680
+86
+00:04:41,880 --> 00:04:47,640
  But in the real stuff here, we've got this, we've got our pre tag,
 
-89
-00:04:47,680 --> 00:04:49,680
+87
+00:04:47,640 --> 00:04:49,680
  we've moved it in, we've got some things here.
 
-90
+88
 00:04:49,680 --> 00:04:52,800
  We've got all that stuff that we've done, right?
 
-91
+89
 00:04:52,800 --> 00:04:57,200
  And if you look, here is that rules.css file.
 
-92
+90
 00:04:57,200 --> 00:05:01,360
  Rules has all that same stuff, h1, border color, a tag.
 
-93
+91
 00:05:01,360 --> 00:05:06,080
  All that stuff that we put in the head now is sitting in this rules file.
 
-94
+92
 00:05:06,080 --> 00:05:09,200
  And we're just pulling it in right here in one fell swoop.
 
-95
+93
 00:05:09,200 --> 00:05:12,800
  And it accomplishes the exact same thing, okay?
 
-96
-00:05:12,800 --> 00:05:18,800
+94
+00:05:12,800 --> 00:05:18,820
  And so this, including in a separate file, is by far a superior way to do it
 
-97
-00:05:18,800 --> 00:05:21,120
+95
+00:05:18,820 --> 00:05:21,120
  than putting it in the head tag.
 
-98
+96
 00:05:21,120 --> 00:05:24,320
  But sometimes you have to change two things and you put them in the head tag.
 
+97
+00:05:24,320 --> 00:05:27,560
+ And you use all three of these ultimately.
+
+98
+00:05:27,560 --> 00:05:33,240
+ But generally, you tend to start with a large amount of CSS in a file and
+
 99
-00:05:24,320 --> 00:05:29,640
- And you use all three of these ultimately, but
+00:05:33,240 --> 00:05:36,440
+ then you tweak in the head and you might tweak on a tag here and there.
 
 100
-00:05:29,640 --> 00:05:33,160
- generally you tend to start with a large amount of CSS in a file.
-
-101
-00:05:33,160 --> 00:05:36,440
- And then you tweak in the head, and you might tweak on a tag here and there.
-
-102
-00:05:36,440 --> 00:05:40,160
+00:05:36,440 --> 00:05:40,200
  And that's kind of how these three things tend to work together.
 
-103
-00:05:40,160 --> 00:05:42,780
+101
+00:05:40,200 --> 00:05:42,780
  And the whole cascading thing works out well.
 
-104
+102
 00:05:42,780 --> 00:05:46,240
  You can put the link first and then style tag second, and
 
-105
+103
 00:05:46,240 --> 00:05:49,440
  then it kind of overrides some of the stuff that are in the linked.
 
-106
+104
 00:05:49,440 --> 00:05:52,560
  And then you can have something on a tag which overrides the stuff that's in the
 
-107
+105
 00:05:52,560 --> 00:05:55,440
- head, unless, of course, it says important.
+ head, unless of course it says important.
 
-108
-00:05:55,440 --> 00:06:03,640
+106
+00:05:55,440 --> 00:06:03,400
  So as the world went from hacking look and feel in HTML to
 
-109
-00:06:03,640 --> 00:06:10,640
+107
+00:06:03,400 --> 00:06:10,640
  finely tuning look and feel in CSS, all these tags, paragraph, h1, body,
 
-110
+108
 00:06:10,640 --> 00:06:14,800
  they all had default styles that had kind of evolved.
 
-111
+109
 00:06:14,800 --> 00:06:17,680
  And links and all that stuff that evolved and
 
-112
+110
 00:06:17,680 --> 00:06:20,800
  a lot of pages depended on those default styles working.
 
-113
+111
 00:06:20,800 --> 00:06:24,880
  And so they couldn't say, welcome to CSS and now all the styles,
 
-114
+112
 00:06:24,880 --> 00:06:27,960
  a paragraph that's unstyled will look terrible.
 
-115
+113
 00:06:27,960 --> 00:06:29,760
  Not that they look great.
 
-116
+114
 00:06:29,760 --> 00:06:34,400
  And so we couldn't take the paragraph tag, everything had a style.
 
-117
+115
 00:06:34,400 --> 00:06:38,600
  That's the problem, all the existing tags had something on them.
 
-118
+116
 00:06:38,600 --> 00:06:40,920
  So they had to make new tags, and
 
-119
+117
 00:06:40,920 --> 00:06:44,120
  the new tags that they made are the span and the div tags.
 
-120
+118
 00:06:44,120 --> 00:06:48,320
  The key to the span and the div tags is span is an inline tag that has no styling
 
-121
+119
 00:06:48,320 --> 00:06:50,720
  associated with it, no default styling.
 
-122
+120
 00:06:50,720 --> 00:06:54,480
  It is defined as having no styling, and
 
-123
+121
 00:06:54,480 --> 00:06:59,320
  the div tag is a tag that has no styling associated with it, but it's a block tag.
 
+122
+00:06:59,320 --> 00:07:03,320
+ And so we sort of use these to sort of mark text but
+
+123
+00:07:03,320 --> 00:07:10,720
+ don't inherit without inheriting any styling from some long ago 1993, 94 defaults.
+
 124
-00:06:59,320 --> 00:07:05,360
- And so we sort of use these to sort of mark text without inheriting any styling
-
-125
-00:07:05,360 --> 00:07:10,560
- from some long ago, 1993, 94 defaults.
-
-126
-00:07:10,560 --> 00:07:18,920
+00:07:10,720 --> 00:07:18,880
  And so the span tag is, span tag here, that's kind of broke over line.
 
-127
-00:07:18,920 --> 00:07:22,400
+125
+00:07:18,880 --> 00:07:22,380
  The span tag has no styling except that styling which you add.
 
-128
-00:07:22,400 --> 00:07:24,960
+126
+00:07:22,380 --> 00:07:24,920
  In this case, I'm adding it with a style attribute.
 
-129
-00:07:24,960 --> 00:07:27,120
+127
+00:07:24,920 --> 00:07:27,080
  And the same thing is true for a div tag, right?
 
-130
-00:07:27,120 --> 00:07:31,600
+128
+00:07:27,080 --> 00:07:31,600
  The div tag, and also, divs can be within divs.
 
-131
-00:07:31,600 --> 00:07:33,320
- So this is a nested div, right?
+129
+00:07:31,600 --> 00:07:35,240
+ So this is a nested div, right, there's an outer div and an inner div.
 
-132
-00:07:33,320 --> 00:07:35,240
- There's an outer div and an inner div.
-
-133
+130
 00:07:35,240 --> 00:07:40,720
  And basically, you know that styling, the div has no style whatsoever, right?
 
-134
+131
 00:07:40,720 --> 00:07:42,680
  The span has no style whatsoever.
 
+132
+00:07:42,680 --> 00:07:46,440
+ So if you just put something in a span tag, and you don't sort of
+
+133
+00:07:46,440 --> 00:07:50,960
+ render an opinion about what it looks like, the span doesn't change it.
+
+134
+00:07:50,960 --> 00:07:53,600
+ It just inherits from whatever else is there.
+
 135
-00:07:42,680 --> 00:07:44,680
- So if you just put something in a span tag and
-
-136
-00:07:44,680 --> 00:07:48,720
- you don't sort of render an opinion about what it looks like,
-
-137
-00:07:48,720 --> 00:07:53,600
- the span doesn't change it, it just inherits from whatever else is there.
-
-138
-00:07:53,600 --> 00:07:57,120
+00:07:53,600 --> 00:07:57,080
  And so we take a look at this, right?
 
-139
-00:07:57,120 --> 00:08:03,400
- So here we have a P tag with a green border, one pixel border solid.
+136
+00:07:57,080 --> 00:08:03,400
+ So here we have a p tag with a green border, one pixel border solid.
 
-140
-00:08:03,400 --> 00:08:06,440
+137
+00:08:03,400 --> 00:08:06,400
  Now, the interesting thing is you say, well, did the paragraph tag have styling?
 
-141
-00:08:06,440 --> 00:08:07,520
+138
+00:08:06,400 --> 00:08:07,480
  It turns out it does.
 
-142
-00:08:07,520 --> 00:08:12,360
+139
+00:08:07,480 --> 00:08:12,360
  It has some margin in padding to make it look better, right?
 
-143
-00:08:12,360 --> 00:08:15,840
+140
+00:08:12,360 --> 00:08:15,820
  And so the paragraph tag is not an unstyled tag.
 
-144
-00:08:15,840 --> 00:08:20,280
+141
+00:08:15,820 --> 00:08:20,240
  It is expected to create blank space around itself.
 
-145
-00:08:20,280 --> 00:08:25,800
+142
+00:08:20,240 --> 00:08:25,760
  And so, yeah, so the paragraph tag has a default style.
 
-146
-00:08:25,800 --> 00:08:27,720
+143
+00:08:25,760 --> 00:08:27,720
  It's supposed to have a default style.
 
-147
-00:08:27,720 --> 00:08:31,600
- But then if you look at the div tags that we've got here, like this div tag,
+144
+00:08:27,720 --> 00:08:30,560
+ But then if you look at the div tags that we've got here,
 
-148
-00:08:31,600 --> 00:08:34,440
- this div tag, remember, goes all the way down to here.
+145
+00:08:30,560 --> 00:08:34,440
+ like this div tag, this div tag, remember, goes all the way down to here.
 
-149
+146
 00:08:34,440 --> 00:08:39,040
- This div tag, I just put a blue around so you kind of know what's going on, right?
+ This div tag, I just put a blue around so you kinda know what's going on, right?
 
-150
+147
 00:08:39,040 --> 00:08:41,080
  So this blue goes from here to here.
 
-151
-00:08:41,080 --> 00:08:44,840
- But you can see right away that the div tags have no padding or
+148
+00:08:41,080 --> 00:08:45,720
+ But you can see right away that the div tags have no padding or margin or
 
-152
-00:08:44,840 --> 00:08:48,440
- margin or sort of little white space to make them look prettier.
+149
+00:08:45,720 --> 00:08:48,440
+ sort of little white space to make them look prettier.
 
-153
+150
 00:08:48,440 --> 00:08:49,800
  And that's okay, you've gotta do that.
 
-154
-00:08:49,800 --> 00:08:51,880
+151
+00:08:49,800 --> 00:08:51,840
  You've gotta add the padding and the white space.
 
-155
-00:08:51,880 --> 00:08:53,360
+152
+00:08:51,840 --> 00:08:53,360
  They just start with nothing.
 
-156
-00:08:53,360 --> 00:08:55,760
+153
+00:08:53,360 --> 00:08:55,740
  It's just a block, right?
 
-157
-00:08:55,760 --> 00:08:57,480
+154
+00:08:55,740 --> 00:08:57,480
  And the span tag, this one here,
 
-158
+155
 00:08:57,480 --> 00:09:01,320
  changed it green because we put a style color equals green right there.
 
-159
-00:09:01,320 --> 00:09:02,640
- And okay, so we did that.
+156
+00:09:01,320 --> 00:09:03,280
+ And, okay, so we did that.
 
-160
-00:09:02,640 --> 00:09:08,320
- And the div tag, and you'll notice, interestingly,
+157
+00:09:03,280 --> 00:09:08,320
+ [COUGH] And the div tag, and you'll notice, interestingly,
 
-161
+158
 00:09:08,320 --> 00:09:13,240
  because the divs I'm using end up with a one pixel border as their style,
 
-162
-00:09:13,240 --> 00:09:14,880
+159
+00:09:13,240 --> 00:09:14,920
  meaning they started with nothing.
 
-163
-00:09:14,880 --> 00:09:17,880
+160
+00:09:14,920 --> 00:09:17,880
  You can even see that if you look really close, it's impossible, but
 
-164
+161
 00:09:17,880 --> 00:09:19,000
  you can zoom in.
 
-165
+162
 00:09:19,000 --> 00:09:21,280
- This orange border, the blue border takes up space, and
+ This orange border, the blue border takes up space and
 
-166
-00:09:21,280 --> 00:09:24,800
+163
+00:09:21,280 --> 00:09:24,840
  then the orange border's on inside of it, and that's one pixel wide.
 
-167
-00:09:24,800 --> 00:09:31,300
+164
+00:09:24,840 --> 00:09:31,320
  So I'm adding to these through the style attribute, I'm adding CSS to them.
 
-168
-00:09:31,300 --> 00:09:34,880
- But they start with absolutely nothing, and they kinda look ugly
+165
+00:09:31,320 --> 00:09:34,880
+ But they start with absolutely nothing, and they kind of look ugly
 
-169
-00:09:34,880 --> 00:09:38,160
+166
+00:09:34,880 --> 00:09:38,200
  when you just put something in a div, like right next to each other,
 
-170
-00:09:38,160 --> 00:09:40,600
+167
+00:09:38,200 --> 00:09:40,080
  because they didn't want anything.
 
-171
-00:09:40,600 --> 00:09:45,040
+168
+00:09:40,080 --> 00:09:45,080
  And again, they're nested, and there's reasons, cuz we'll use divs to say,
 
-172
-00:09:45,040 --> 00:09:47,960
+169
+00:09:45,080 --> 00:09:47,960
  this is the main body, and then there's divs within the main body, and
 
-173
-00:09:47,960 --> 00:09:51,640
+170
+00:09:47,960 --> 00:09:51,680
  then this is the navigation, and this is the footer, etc., etc., etc.
 
-174
-00:09:51,640 --> 00:09:56,280
+171
+00:09:51,680 --> 00:09:56,320
  And so we have, divs are ways to describe blocks without
 
-175
-00:09:56,280 --> 00:10:01,520
- adding CSS styling by default, and then as such,
+172
+00:09:56,320 --> 00:10:01,520
+ adding CSS styling by default, and as such,
 
-176
+173
 00:10:01,520 --> 00:10:05,040
  letting you define all the CSS for these things.
 
-177
+174
 00:10:05,040 --> 00:10:09,240
  So these are cool, they're like the non-tags, the un-tags,
 
-178
+175
 00:10:09,240 --> 00:10:11,600
  the tags that don't cause anything to happen, but
 
-179
+176
 00:10:11,600 --> 00:10:13,620
  let you cause everything to happen.
 
-180
+177
 00:10:13,620 --> 00:10:17,320
- So they're really important, [COUGH] they're really important.
+ So they're really important, they're really important.
 
-181
-00:10:17,320 --> 00:10:24,440
- So the next thing I wanna talk about is making a sort of
+178
+00:10:17,320 --> 00:10:24,200
+ So, the next thing I wanna talk about is making a sort of
 
-182
-00:10:24,440 --> 00:10:28,800
+179
+00:10:24,200 --> 00:10:28,800
  finer selection of which tags that you want to apply a rule to, right?
 
-183
+180
 00:10:28,800 --> 00:10:33,120
  A rule to, and so if we look at this tag right here, this is the body tag, and
 
-184
-00:10:33,120 --> 00:10:37,140
+181
+00:10:33,120 --> 00:10:37,120
  that basically says, I want everything from body to slash body,
 
-185
-00:10:37,140 --> 00:10:39,000
+182
+00:10:37,120 --> 00:10:39,000
  then everything inherits.
 
-186
+183
 00:10:39,000 --> 00:10:46,000
  So unless it's overridden, I want ariel sans serif to happen, okay?
 
-187
+184
 00:10:46,000 --> 00:10:49,000
  And I can do that with a paragraph tag, but I wanna show you this other thing.
 
-188
-00:10:49,000 --> 00:10:53,600
+185
+00:10:49,000 --> 00:10:53,560
  So there's a way to mark a tag, let's find this one, where's first?
 
-189
-00:10:53,600 --> 00:10:55,080
+186
+00:10:53,560 --> 00:10:55,080
  First, right there.
 
-190
+187
 00:10:55,080 --> 00:10:57,280
- So there's this ID attribute.
+ So there's this id attribute.
+
+188
+00:10:57,280 --> 00:11:01,680
+ An id attribute is an attribute that was added kind of specifically for CSS as well.
+
+189
+00:11:01,680 --> 00:11:08,480
+ And so you can only mark one tag per document with an id.
+
+190
+00:11:08,480 --> 00:11:09,840
+ And then there's this class tag, and
 
 191
-00:10:57,280 --> 00:11:01,720
- An ID attribute is an attribute that was added kind of specifically for CSS as well.
-
-192
-00:11:01,720 --> 00:11:08,560
- And so you can only mark one tag per document with an ID, and
-
-193
-00:11:08,560 --> 00:11:09,840
- then there's this class tag, and
-
-194
 00:11:09,840 --> 00:11:13,920
  you can mark as many tags as you want in the document with a class tag.
 
-195
+192
 00:11:13,920 --> 00:11:18,880
- And the idea is like ID tags are for chunks, like main page,
+ And the idea is like, id tags are for chunks, like main page,
+
+193
+00:11:18,880 --> 00:11:23,520
+ like left navigation, top navigation, or something that's only gonna appear once
+
+194
+00:11:23,520 --> 00:11:24,120
+ on the page.
+
+195
+00:11:24,120 --> 00:11:28,160
+ And so if you want to sort, in effect,
 
 196
-00:11:18,880 --> 00:11:22,160
- like left navigation, top navigation, or something.
+00:11:28,160 --> 00:11:34,160
+ in effect, what pound sign first means is look through the whole document.
 
 197
-00:11:22,160 --> 00:11:24,080
- That's only gonna appear once on the page.
+00:11:34,160 --> 00:11:39,760
+ Find a tag, where's div id equals first, where's that stop?
 
 198
-00:11:24,080 --> 00:11:29,280
- And so if you want to sort in effect,
+00:11:39,760 --> 00:11:41,480
+ Div, div, div, div, right there, right there.
 
 199
-00:11:29,280 --> 00:11:34,160
- in effect what pound sign first means is look through the whole document.
+00:11:42,960 --> 00:11:49,120
+ Find the tag that's got an id of first, and then paint it with as rules.
 
 200
-00:11:34,160 --> 00:11:38,720
- Find a tag, where's div ID equals first?
-
-201
-00:11:38,720 --> 00:11:41,520
- Where's that stop, div, div, div, div, right there, right there.
-
-202
-00:11:41,520 --> 00:11:49,120
- Find the tag that's got an ID of first, and then paint it with as rules.
-
-203
-00:11:49,120 --> 00:11:54,080
+00:11:49,120 --> 00:11:54,040
  The class can happen more than once, but more space.
 
-204
-00:11:54,080 --> 00:11:56,680
+201
+00:11:54,040 --> 00:11:56,680
  Let's see, class is more space here, that's there.
 
-205
+202
 00:11:56,680 --> 00:12:01,400
  And so that basically says, let's change clear and change color here.
 
-206
-00:12:01,400 --> 00:12:05,480
+203
+00:12:01,400 --> 00:12:05,440
  More space says, look through all the document and find all the class.
 
-207
-00:12:05,480 --> 00:12:09,560
+204
+00:12:05,440 --> 00:12:09,560
  There's that paragraph, do I not close that paragraph?
 
-208
-00:12:09,560 --> 00:12:14,800
- Oops, mistake on my HTML, here, yeah.
+205
+00:12:09,560 --> 00:12:11,200
+ Oops, mistake on my HTML.
 
-209
-00:12:14,800 --> 00:12:18,480
- So that basically says, change the margin left.
+206
+00:12:12,720 --> 00:12:18,480
+ Here, yeah, so that basically says, change the margin left.
 
-210
+207
 00:12:18,480 --> 00:12:21,320
  That means shove this in, and change the margin right and shove it in.
 
-211
+208
 00:12:21,320 --> 00:12:23,240
  So we'll see all these things.
 
-212
-00:12:23,240 --> 00:12:26,840
+209
+00:12:23,240 --> 00:12:26,860
  And loud, and then you can also see a situation where when you put classes on,
 
-213
-00:12:26,840 --> 00:12:28,040
+210
+00:12:26,860 --> 00:12:28,040
  you can have more than one.
 
-214
+211
 00:12:28,040 --> 00:12:33,520
  And so this basically will respond both to the shout and to the loud class.
 
-215
+212
 00:12:33,520 --> 00:12:35,120
  Okay, so let's take a look at what this page looks like.
 
-216
-00:12:35,120 --> 00:12:36,960
+213
+00:12:35,120 --> 00:12:36,940
  So here we go.
 
-217
-00:12:36,960 --> 00:12:40,480
+214
+00:12:36,940 --> 00:12:40,480
  It's a little busy.
 
-218
+215
 00:12:40,480 --> 00:12:47,440
- So if we take a look at first, it grabs this tag here,
+ So if we take a look at first, it grabs this tag here.
 
-219
-00:12:47,440 --> 00:12:50,920
- the div tag is first, right?
+216
+00:12:47,440 --> 00:12:50,880
+ The div tag is first, right?
 
-220
-00:12:50,920 --> 00:12:56,120
+217
+00:12:50,880 --> 00:12:56,080
  And then if we look at more space, this more space is affecting this one.
 
-221
-00:12:56,120 --> 00:12:58,440
+218
+00:12:56,080 --> 00:12:58,400
  And it's shoving it in both on the left and the right.
 
-222
-00:12:58,440 --> 00:13:03,400
+219
+00:12:58,400 --> 00:13:03,360
  And that's because it's this paragraph more space, okay?
 
-223
-00:13:03,400 --> 00:13:05,960
+220
+00:13:03,360 --> 00:13:05,920
  Shout, let's find the shout ones.
 
+221
+00:13:05,920 --> 00:13:07,040
+ Well, we can see them right here.
+
+222
+00:13:07,040 --> 00:13:08,120
+ They're all the loud ones.
+
+223
+00:13:08,120 --> 00:13:12,720
+ So that is red, that shout and loud.
+
 224
-00:13:05,960 --> 00:13:08,160
- Well, we can see them right here, they're all the loud ones.
+00:13:12,720 --> 00:13:18,040
+ Here's one that shout, entire has been shouted, and all has been shouted.
 
 225
-00:13:08,160 --> 00:13:12,760
- So that is red, that's shout and loud.
+00:13:18,040 --> 00:13:20,400
+ So you'll notice these guys are lower case, but
 
 226
-00:13:12,760 --> 00:13:16,240
- Here's one that shout, entire has been shouted.
+00:13:20,400 --> 00:13:22,720
+ shout is a text transform to upper case.
 
 227
-00:13:16,240 --> 00:13:18,040
- And all has been shouted.
+00:13:22,720 --> 00:13:25,880
+ So you can even change the case of things.
 
 228
-00:13:18,040 --> 00:13:20,040
- So you'll notice these guys are lower case.
+00:13:25,880 --> 00:13:29,960
+ And then like in third, for example, where is third at?
 
 229
-00:13:20,040 --> 00:13:22,840
- But shout is a text transformed to uppercase, so
+00:13:29,960 --> 00:13:37,080
+ Third says within, so this says, find the third div, which is right there.
 
 230
-00:13:22,840 --> 00:13:25,920
- you can even change the case of things.
-
-231
-00:13:25,920 --> 00:13:29,960
- And then like in third, for example, where's third at?
-
-232
-00:13:29,960 --> 00:13:37,080
- Third says, so this says, find the third div, which is right there.
-
-233
 00:13:37,080 --> 00:13:42,640
  And find all the p tags within the third div, this p tag and this p tag.
 
-234
+231
 00:13:42,640 --> 00:13:45,600
- And then apply a background color yellow to all those,
+ And then apply a background color, yellow, to all those,
 
-235
-00:13:45,600 --> 00:13:48,680
+232
+00:13:45,600 --> 00:13:48,640
  which leads to this right here, okay?
 
-236
-00:13:48,680 --> 00:13:53,760
+233
+00:13:48,640 --> 00:13:53,760
  And so, pound sign means find ID and apply.
 
-237
+234
 00:13:53,760 --> 00:13:56,080
  Dot means find class and apply.
 
-238
+235
 00:13:56,080 --> 00:13:59,600
  You can have multiple classes, right?
 
-239
+236
 00:13:59,600 --> 00:14:02,960
  Pull in the definitions from two classes, shout, space, load.
 
-240
+237
 00:14:02,960 --> 00:14:05,640
- Go find whatever is in CSS.
+ Go find whatever's in CSS.
 
-241
+238
 00:14:05,640 --> 00:14:09,080
  And then you can kind of have hierarchical things.
 
-242
+239
 00:14:09,080 --> 00:14:12,600
  This is quite useful because you don't have to get special.
 
-243
-00:14:12,600 --> 00:14:15,760
+240
+00:14:12,600 --> 00:14:14,120
  It saves you putting classes on.
 
-244
-00:14:15,760 --> 00:14:20,080
+241
+00:14:14,120 --> 00:14:20,080
  It saves you from putting classes on all the paragraph tags here.
 
-245
+242
 00:14:20,080 --> 00:14:21,240
  You don't have to do anything.
 
-246
+243
 00:14:21,240 --> 00:14:24,480
  But you're not affecting the paragraph tags outside here.
 
-247
+244
 00:14:24,480 --> 00:14:26,160
  You're only affecting the paragraph.
 
-248
+245
 00:14:26,160 --> 00:14:31,160
  I think of this as go find third and the paragraph tags within third.
 
-249
+246
 00:14:31,160 --> 00:14:32,440
  And then do something to them.
 
-250
-00:14:32,440 --> 00:14:35,120
- And that way, otherwise you'd be making more classes than you need to be.
+247
+00:14:32,440 --> 00:14:35,160
+ And that way, otherwise, you'd be making more classes than you need to be.
 
-251
-00:14:35,120 --> 00:14:40,600
+248
+00:14:35,160 --> 00:14:40,680
  And so this is a very well-liked technique for
 
-252
-00:14:40,600 --> 00:14:43,400
+249
+00:14:40,680 --> 00:14:43,400
  really fine-tuning your selection,
 
-253
-00:14:43,400 --> 00:14:47,000
- your selector for CSS to touch only the things that you want to touch.
+250
+00:14:43,400 --> 00:14:47,240
+ your selector for CSS to touch only the things that you wanna touch.
 
-254
-00:14:47,000 --> 00:14:52,920
+251
+00:14:47,240 --> 00:14:52,920
  So up next we'll talk about images and colors and fonts and a few other things.
 
-255
+252
 00:14:52,920 --> 00:15:02,920
  [MUSIC]
 

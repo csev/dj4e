@@ -1,666 +1,666 @@
 1
 00:00:00,000 --> 00:00:05,600
- Hello and welcome to my lecture on the mini Django web server. So why did I
+ Hello and welcome to my lecture on the mini-jango web server. So why did I
 
 2
 00:00:05,600 --> 00:00:10,520
- build this mini Django web server? Well, the first part of my Django for everybody
+ build this mini-jango web server? Well, the first part of my Django for Everybody
 
 3
-00:00:10,520 --> 00:00:16,700
+00:00:10,520 --> 00:00:16,720
  course is always about getting students to understand the nature of Django. If you
 
 4
-00:00:16,700 --> 00:00:20,400
+00:00:16,720 --> 00:00:20,400
  know how to use Django and you know how it works internally, it's easy to write
 
 5
-00:00:20,400 --> 00:00:24,860
- web applications because Django takes care of all the details of hypertext
+00:00:20,400 --> 00:00:24,840
+ web applications because Django takes care of all the details of Hypertext
 
 6
-00:00:24,860 --> 00:00:31,600
- transfer protocol, HTTP. And you can read documents, tons of documents, hundreds and
+00:00:24,840 --> 00:00:31,480
+ Transfer Protocol, HTTP. And you can read documents, tons of documents, hundreds
 
 7
-00:00:31,600 --> 00:00:38,640
- thousands of pages, and write your own Python code to handle the HTTP. The
+00:00:31,480 --> 00:00:38,640
+ and thousands of pages, and write your own Python code to handle the HTTP. The
 
 8
-00:00:38,640 --> 00:00:42,520
- problem though is, while Django makes it so you don't have to read any of that, you
+00:00:38,640 --> 00:00:42,080
+ problem, though, is while Django makes it so you don't have to read any of
 
 9
-00:00:42,520 --> 00:00:46,680
- do have to understand Django. And Django, to give you the kind of flexibility that
+00:00:42,080 --> 00:00:45,960
+ that, you do have to understand Django. And Django, to give you the kind of
 
 10
-00:00:46,680 --> 00:00:52,080
- you need, uses a very object-oriented inversion of control, a whole bunch of
+00:00:45,960 --> 00:00:51,520
+ flexibility that you need, uses a very object-oriented inversion of control, a
 
 11
-00:00:52,080 --> 00:00:55,240
- design patterns that make it so you don't have to write the whole
+00:00:51,520 --> 00:00:55,200
+ whole bunch of design patterns that make it so you don't have to write the whole
 
 12
-00:00:55,240 --> 00:01:01,400
- application, but you need to plug your work into Django. So it's important for
+00:00:55,200 --> 00:01:01,480
+ application. But you need to plug your work into Django. So it's important for
 
 13
-00:01:01,400 --> 00:01:06,480
+00:01:01,480 --> 00:01:06,280
  you to understand what the framework is and how it is that your work fits into
 
 14
-00:01:06,480 --> 00:01:13,920
- it. So mini Django is the simplest possible Django that I could write. It's
+00:01:06,280 --> 00:01:11,320
+ it. So mini-jango is the simplest possible
 
 15
-00:01:13,920 --> 00:01:18,600
- under 200 lines. The mini Django framework itself is only 200 lines of
+00:01:11,320 --> 00:01:17,800
+ Django that I could write. It's under 200 lines. The mini-jango framework itself is
 
 16
-00:01:18,600 --> 00:01:23,240
- Python, meaning you can read it, you can understand it, and you can even change it
+00:01:17,800 --> 00:01:22,320
+ only 200 lines of Python, meaning you can read it, you can understand it, and you
 
 17
-00:01:23,240 --> 00:01:28,520
- and explore supporting additional features of HTTP. So we're gonna build
+00:01:22,320 --> 00:01:27,960
+ can even change it and explore supporting additional features of HTTP. So
 
 18
-00:01:28,520 --> 00:01:35,000
- both have a mini Django and a really simple Django-like application. So why do
+00:01:27,960 --> 00:01:32,320
+ we're going to build both have a mini-jango and a really simple Django-like
 
 19
-00:01:35,000 --> 00:01:41,360
- we use Django in the first place? Like I said, do you really want to read RFC 7231?
+00:01:32,320 --> 00:01:37,960
+ application. So why do we use Django in the first place? Like I said, do you
 
 20
-00:01:41,360 --> 00:01:47,320
- It is pages that's over a hundred pages and it's detail upon detail upon detail.
+00:01:37,960 --> 00:01:45,360
+ really want to read RFC 7231? It is pages that's over a hundred pages and it's
 
 21
-00:01:47,320 --> 00:01:52,560
- If you start reading it, you will realize it's really well-defined how browsers and
+00:01:45,360 --> 00:01:50,000
+ detail upon detail upon detail. If you start reading it, you will realize it's
 
 22
-00:01:52,560 --> 00:01:57,680
- web servers talk, but you really don't want to read it, especially when someone
+00:01:50,000 --> 00:01:55,800
+ really well defined how browsers and web servers talk, but you really don't want
 
 23
-00:01:57,680 --> 00:02:02,600
- else has written all the code. And all you have to do is import HTTP request and
+00:01:55,800 --> 00:01:59,680
+ to read it, especially when someone else has written all the code. And all you
 
 24
-00:02:02,600 --> 00:02:08,040
- response from Django.http and then write a four-line function that takes as its
+00:01:59,680 --> 00:02:05,560
+ have to do is import HTTP request and response from Django.http and then write
 
 25
-00:02:08,040 --> 00:02:13,560
- input an HTTP request and returns an HTTP response. And then in your code you
+00:02:05,560 --> 00:02:10,960
+ a four-line function that takes as its input an HTTP request and returns an
 
 26
-00:02:13,560 --> 00:02:18,480
- create the HTTP response and put some text in it and you return it and then
+00:02:10,960 --> 00:02:16,200
+ HTTP response, and then in your code you create the HTTP response and put some
 
 27
-00:02:18,480 --> 00:02:26,240
- Django literally outside of your code does everything else. So Django takes this
+00:02:16,200 --> 00:02:20,400
+ text in it and you return it, and then Django literally outside of your code
 
 28
-00:02:26,240 --> 00:02:30,760
- super complex task and hides it behind an abstraction. It's something, an
+00:02:20,400 --> 00:02:28,360
+ does everything else. So Django takes this super complex task and hides it
 
 29
-00:02:30,760 --> 00:02:35,320
- abstraction is something you're sort of not supposed to look past. You're
+00:02:28,360 --> 00:02:32,040
+ behind an abstraction. An abstraction is something you're sort of
 
 30
-00:02:35,320 --> 00:02:38,640
- supposed to just look at the interface that it gives to you and you're supposed
+00:02:32,040 --> 00:02:36,680
+ not supposed to look past. You're supposed to just look at the interface
 
 31
-00:02:38,640 --> 00:02:42,680
- to express your logic and then plug it in at the right place to create a rich
+00:02:36,680 --> 00:02:40,240
+ that it gives to you, and you're supposed to express your logic and then plug it
 
 32
-00:02:42,680 --> 00:02:47,760
- and HTTP compliant web application. Django handles all the details and there's
+00:02:40,240 --> 00:02:46,000
+ in at the right place to create a rich and HTTP compliant web application, and
 
 33
-00:02:47,760 --> 00:02:53,240
- lots of them, thousands and thousands of little detail. But with all abstractions
+00:02:46,000 --> 00:02:49,400
+ Django handles all the details, and there's lots of them, thousands and
 
 34
-00:02:53,240 --> 00:02:57,240
- it's a good idea to understand the shape of the abstraction that you're dealing
+00:02:49,400 --> 00:02:54,640
+ thousands of little detail. But with all abstractions, it's a good idea to
 
 35
-00:02:57,240 --> 00:03:01,120
- with so you can kind of have some predictability as to when you make a
+00:02:54,640 --> 00:02:58,320
+ understand the shape of the abstraction that you're dealing with, so you can kind
 
 36
-00:03:01,120 --> 00:03:06,320
- change to your code. How is that? And then Django says do this, override this
+00:02:58,320 --> 00:03:03,040
+ of have some predictability as to when you make a change to your code, how is
 
 37
-00:03:06,320 --> 00:03:12,240
- method, override the query method, all that stuff. You have to
+00:03:03,040 --> 00:03:08,240
+ that? And then Django says do this, override this method, you know override
 
 38
-00:03:12,240 --> 00:03:17,680
- kind of understand what's going on behind the scenes. And so my hope is is
+00:03:08,240 --> 00:03:13,480
+ the query method, all that stuff, you have to kind of understand what's
 
 39
-00:03:17,680 --> 00:03:22,160
- that if you can understand mini Django you'll better have a chance, it'll have a
+00:03:13,480 --> 00:03:18,820
+ going on behind the scenes. And so my hope is is that if you can understand
 
 40
-00:03:22,160 --> 00:03:28,680
- much better chance of understanding the real Django. So in my class I use this
+00:03:18,820 --> 00:03:23,600
+ mini Django, you'll better have a chance, it'll have a much better chance of
 
 41
-00:03:28,680 --> 00:03:33,320
- thing I call the big picture and on the left side is a browser with a document
+00:03:23,600 --> 00:03:29,640
+ understanding the real Django. So in my class I use this thing I call it the big
 
 42
-00:03:33,320 --> 00:03:39,200
- object model that deals with HTML and CSS and JavaScript and intercept user
+00:03:29,640 --> 00:03:34,240
+ picture, and on the left side is a browser with a document object model that
 
 43
-00:03:39,200 --> 00:03:43,720
- actions and then sends the request-response cycle into a server
+00:03:34,240 --> 00:03:41,080
+ deals with HTML and CSS, and JavaScript, and intercept user actions, and then
 
 44
-00:03:43,720 --> 00:03:48,720
- running somewhere on the internet. There's Django and Linux and there's
+00:03:41,080 --> 00:03:45,120
+ sends the request response cycle into a server running somewhere on the internet.
 
 45
-00:03:48,720 --> 00:03:54,200
- urls.py and views.py and forms.py and templates.py and literally the
+00:03:45,120 --> 00:03:51,720
+ There's Django and Linux, and there's urls.py and views.py and forms.py and
 
 46
-00:03:54,200 --> 00:04:01,360
- first half of any Django class I teach really is designed to understand this
+00:03:51,720 --> 00:03:57,280
+ templates.py. And literally the first half of any Django class I teach
 
 47
-00:04:01,360 --> 00:04:05,760
- picture and it's a little complex. So what I like to do is I'd like to take
+00:03:57,280 --> 00:04:04,360
+ really is designed to understand this picture, and it's a little complex. So
 
 48
-00:04:05,760 --> 00:04:10,840
- mini Django which I've written and the HTTP server part of mini Django is under
+00:04:04,360 --> 00:04:09,080
+ what I like to do is I like to take mini Django, which I've written, and the HDB
 
 49
-00:04:10,840 --> 00:04:15,120
- a hundred lines of code, meaning you can look at it. It's a web server that
+00:04:09,080 --> 00:04:13,360
+ server part of mini Django is under a hundred lines of code, meaning you can
 
 50
-00:04:15,120 --> 00:04:21,600
- responds to a request and sends back a response and then we have pseudo
+00:04:13,360 --> 00:04:17,880
+ look at it. So it's a web server that responds to a request and sends back a
 
 51
-00:04:21,600 --> 00:04:26,480
- application code, the urls.py which handles the routing activity, chooses the
+00:04:17,880 --> 00:04:24,000
+ response, and then we have pseudo application code, the urls.py which
 
 52
-00:04:26,480 --> 00:04:32,120
- right view and then sends the request to the right view, gets a response back from
+00:04:24,000 --> 00:04:29,840
+ handles the routing activity, chooses the right view, and then sends the request to
 
 53
-00:04:32,120 --> 00:04:36,840
- that view and then urls.py forwards that back to HTTP server which then formats
+00:04:29,840 --> 00:04:34,680
+ the right view, gets a response back from that view, and then urls.py forwards that
 
 54
-00:04:36,840 --> 00:04:40,240
- it in the right way for the network protocol and sends it back to the
+00:04:34,680 --> 00:04:38,240
+ back to HDB server which then formats it in the right way for the network
 
 55
-00:04:40,240 --> 00:04:47,800
- browser. And if you look at how Django itself works it's just a more flexible
+00:04:38,240 --> 00:04:44,720
+ protocol and sends it back to the browser. And if you look at how Django
 
 56
-00:04:47,800 --> 00:04:54,000
- and more rich and more intricate version of this little thing that I call mini
+00:04:44,720 --> 00:04:50,040
+ itself works, it's just a more flexible and more rich and more intricate version
 
 57
-00:04:54,000 --> 00:04:59,360
- Django. So if you check out mini Django you'll see that it really is just four
+00:04:50,040 --> 00:04:56,680
+ of this little thing that I call mini Django. So if you check out mini Django,
 
 58
-00:04:59,360 --> 00:05:05,360
- files and some documentation. The run server.py loads the mini Django library
+00:04:56,680 --> 00:05:02,400
+ you'll see that it really is just four files and some documentation. The run
 
 59
-00:05:05,360 --> 00:05:11,520
- and loads the path router and urls.py and starts the HTTP server. There
+00:05:02,400 --> 00:05:08,080
+ server.py loads the mini Django library and loads the path router and urls.py
 
 60
-00:05:11,520 --> 00:05:17,680
- always has to be a process listening on the port to accept the connections. The
+00:05:08,080 --> 00:05:14,240
+ and starts the HDB server. There always has to be a process listening on the
 
 61
-00:05:17,680 --> 00:05:23,760
- web server is the library, the framework, it is Django. It's just tiny so I call it
+00:05:14,240 --> 00:05:20,960
+ port to accept the connections. The web server is the library, the framework. It
 
 62
-00:05:23,760 --> 00:05:28,640
- mini Django. It listens for incoming service requests in a Linux process or
+00:05:20,960 --> 00:05:25,720
+ is Django. It's just tiny, so I call it mini Django. It listens for incoming
 
 63
-00:05:28,640 --> 00:05:33,320
- a Windows process. Then when it gets a request it parses the network
+00:05:25,720 --> 00:05:31,560
+ service requests in a Linux process or a Windows process. Then when it gets a
 
 64
-00:05:33,320 --> 00:05:37,040
- protocol part of that request. Then when it's got it right it passes the request
+00:05:31,560 --> 00:05:35,640
+ request, it parses the network protocol part of that request. Then when it's got
 
 65
-00:05:37,040 --> 00:05:42,860
- to urls.yoururls.py for routing between the views. Then the view produces
+00:05:35,640 --> 00:05:40,800
+ it right, it passes the request to urls.yoururls.py for routing between the
 
 66
-00:05:42,860 --> 00:05:49,240
- the HTTP response object and then urls.py sends that back to the HTTP server
+00:05:40,800 --> 00:05:47,200
+ views. Then the view produces the HDB response object, and then urls.py sends
 
 67
-00:05:49,240 --> 00:05:54,400
- and then it sends it back to the browser when the HTTP server sends it
+00:05:47,200 --> 00:05:53,040
+ that back to the HDB server. And then it sends it back to the browser when the
 
 68
-00:05:54,400 --> 00:06:00,040
- back to the browser using the HTTP protocol correctly. The urls.py, much
+00:05:53,040 --> 00:05:58,360
+ HDB server sends it back to the browser using the HDB protocol correctly. The
 
 69
-00:06:00,040 --> 00:06:05,480
- like any Django applications urls.py, it looks at a path and their HTTP request
+00:05:58,360 --> 00:06:04,280
+ urls.py, much like any Django applications urls.py, it looks at a path
 
 70
-00:06:05,480 --> 00:06:11,200
- object and then chooses a view function. And views.py is a set of functions that
+00:06:04,280 --> 00:06:10,160
+ in the HTTP request object and then chooses a view function. And views.py is
 
 71
-00:06:11,200 --> 00:06:18,120
- capture the functionality of your web application. Each function takes an HTTP
+00:06:10,160 --> 00:06:15,360
+ a set of functions that capture the functionality of your web application.
 
 72
-00:06:18,120 --> 00:06:24,360
- request as its input and produces an HTTP response for the output. So to get
+00:06:15,360 --> 00:06:21,880
+ Each function takes an HTTP request as its input and produces an HTTP response
 
 73
-00:06:24,360 --> 00:06:29,280
- started you can download the source code from GitHub into a folder using either
+00:06:21,880 --> 00:06:27,520
+ for the output. So to get started, you can download the source code from GitHub
 
 74
-00:06:29,280 --> 00:06:34,560
- get or zip. GitHub, if you look at the code button in GitHub, it gives you an
+00:06:27,520 --> 00:06:32,960
+ into a folder using either get or zip. GitHub, if you look at the code button
 
 75
-00:06:34,560 --> 00:06:37,640
- option to download a zip which means you don't have to install git and you don't
+00:06:32,960 --> 00:06:36,500
+ in GitHub, it gives you an option to download a zip, which means you don't
 
 76
-00:06:37,640 --> 00:06:41,920
- have to do a get checkout. And then you can just file the readme instructions.
+00:06:36,500 --> 00:06:40,680
+ have to install git and you don't have to do a git checkout. And then you can just
 
 77
-00:06:41,920 --> 00:06:46,840
- If you have Python installed on your computer you say Python runserver.py
+00:06:40,680 --> 00:06:44,040
+ file the readme instructions. If you have Python installed on your computer,
 
 78
-00:06:46,840 --> 00:06:52,400
- and then you navigate to the localhost colon 9000 in your browsers and you're
+00:06:44,040 --> 00:06:51,040
+ you say, "Python run server.py," and then you navigate to the localhost colon 9000
 
 79
-00:06:52,400 --> 00:06:56,960
- interacting with this little server that's running on a process on your
+00:06:51,040 --> 00:06:55,160
+ in your browsers, and you're interacting with this little server that's running
 
 80
-00:06:56,960 --> 00:07:04,600
- computer. Taking a look at the source code the views.py looks a lot like
+00:06:55,160 --> 00:07:02,440
+ on a process on your computer. Taking a look at the source code, the views.py
 
 81
-00:07:04,600 --> 00:07:09,400
- Django's views.py, at least in the beginning in the simplest views, where
+00:07:02,440 --> 00:07:08,800
+ looks a lot like Django's views.py, at least in the beginning in the simplest
 
 82
-00:07:09,400 --> 00:07:15,000
- each view is a function takes as its first parameter a variable, I call it req
+00:07:08,800 --> 00:07:13,960
+ views, where each view is a function, takes as its first parameter a variable,
 
 83
-00:07:15,000 --> 00:07:21,680
- in this situation, of type HTTP request and is expected to return an HTTP
+00:07:13,960 --> 00:07:20,480
+ I call it req in this situation, of type HTTP request, and is expected to return
 
 84
-00:07:21,680 --> 00:07:27,240
- response. So if you look at it it creates the HTTP response object. Again the
+00:07:20,480 --> 00:07:27,040
+ an HTTP response. So if you look at it, it creates the HTTP response object. Again,
 
 85
-00:07:27,240 --> 00:07:32,720
- definition of HTTP response came from Minijango and the res.headers allows us
+00:07:27,040 --> 00:07:32,720
+ the definition of HTTP response came from Minijango. And the res.headers allows us
 
 86
 00:07:32,720 --> 00:07:38,840
- to set headers then res.write creates the body of the response and then we
+ to set headers, then res.write creates the body of the response, and then we
 
 87
-00:07:38,840 --> 00:07:46,560
- return that response which then we turn back over to Minijango to send back. The
+00:07:38,840 --> 00:07:46,520
+ return that response, which then we turn back over to Minijango to send back.
 
 88
-00:07:46,560 --> 00:07:52,120
- urls.py in Minijango looks a little bit different than the urls.py in a
+00:07:46,520 --> 00:07:52,280
+ The urls.py in Minijango looks a little bit different than the urls.py in a real
 
 89
-00:07:52,120 --> 00:07:57,160
- real Django application because I didn't want to create, if you look at the
+00:07:52,280 --> 00:07:57,960
+ Django application, because I didn't want to create, if you look at the urls.py in
 
 90
-00:07:57,160 --> 00:08:02,080
- urls.py in a real application, it's really a table of routes and I just made
+00:07:57,960 --> 00:08:02,680
+ a real application, it's really a table of routes, and I just made it an if-then
 
 91
-00:08:02,080 --> 00:08:05,560
- it an if then else so that you can see it's not that different than what the
+00:08:02,680 --> 00:08:06,080
+ else, so that you can see it's not that different than what the table of routes
 
 92
-00:08:05,560 --> 00:08:09,600
- table of routes really is and you might decide in your mind that this is a
+00:08:06,080 --> 00:08:10,480
+ really is, and you might decide in your mind that this is a little cleaner and
 
 93
-00:08:09,600 --> 00:08:15,200
- little cleaner and elegant. The purpose of urls.py in Django and in Minijango is
+00:08:10,480 --> 00:08:16,600
+ elegant. The purpose of urls.py in Django and in Minijango is to look at the
 
 94
-00:08:15,200 --> 00:08:21,120
- to look at the path and choose a view and then cause that view to be executed
+00:08:16,600 --> 00:08:22,080
+ path and choose a view, and then cause that view to be executed. And you see at
 
 95
-00:08:21,120 --> 00:08:26,720
- and you see at the end if it can't find a view it sends back a failure view with
+00:08:22,080 --> 00:08:28,400
+ the end, if it can't find a view, it sends back a failure view with a 404 not
 
 96
-00:08:26,720 --> 00:08:32,920
- a 404 not found. So up next we're going to do a simple demo of downloading
+00:08:28,400 --> 00:08:33,560
+ found. So up next, we're going to do a simple demo of downloading, installing,
 
 97
-00:08:32,920 --> 00:08:38,880
- installing and running Minijango. So here's the demonstration of Minijango
+00:08:33,560 --> 00:08:39,480
+ and running Minijango. So here's the demonstration of Minijango for my
 
 98
-00:08:38,880 --> 00:08:44,360
- for my Django for everybody class. We've got to start by going into GitHub and
+00:08:39,480 --> 00:08:44,800
+ Django for everybody class. We've got to start by going into GitHub and taking a
 
 99
-00:08:44,360 --> 00:08:54,280
- taking a look at my Minijango repository. You see GitHub.com/csev/mini_jango
+00:08:44,800 --> 00:08:55,280
+ look at my Minijango repository. You see GitHub.com/csev/mini_jango is where we
 
 100
-00:08:54,280 --> 00:09:01,600
- is where we find the code and in here we have a readme and then four source
+00:08:55,280 --> 00:09:02,280
+ find the code, and in here we have a readme and then four source files, and
 
 101
-00:09:01,600 --> 00:09:04,720
- files and this readme tells us where we're going to do we're going to start
+00:09:02,280 --> 00:09:05,640
+ this readme tells us what we're going to do. We're going to start by downloading
 
 102
-00:09:04,720 --> 00:09:10,240
- by downloading this code and then running it and we'll go go through this
+00:09:05,640 --> 00:09:12,840
+ this code and then running it, and we'll go through this in a bit. So there are
 
 103
-00:09:10,240 --> 00:09:16,960
- in a bit. So there are two ways that you can install this if you have git find
+00:09:12,840 --> 00:09:18,360
+ two ways that you can install this. If you have Git, find some folder, do a Git
 
 104
-00:09:16,960 --> 00:09:22,240
- some folder do a git clone and grab Minijango if you don't want to install
+00:09:18,360 --> 00:09:22,920
+ clone, and grab Minijango. If you don't want to install Git or you don't know
 
 105
-00:09:22,240 --> 00:09:25,360
- git or you don't know how to use git you can just grab a zip file because
+00:09:22,920 --> 00:09:26,600
+ how to use Git, you can just grab a zip file because GitHub is really nice, and
 
 106
-00:09:25,360 --> 00:09:28,680
- GitHub is really nice and that's how we're going to do it under this code
+00:09:26,600 --> 00:09:30,560
+ that's how we're going to do it. Under this code button, there's a thing called
 
 107
-00:09:28,680 --> 00:09:33,000
- button there's a thing called download zip and so that's just going to download
+00:09:30,560 --> 00:09:35,200
+ DownloadZip, and so that's just going to download it, and it just downloaded it
 
 108
-00:09:33,000 --> 00:09:38,360
- it and it just downloaded it into my downloads folder so I'm going to click
+00:09:35,200 --> 00:09:39,800
+ into my downloads folder. So I'm going to click and see here's my downloads
 
 109
-00:09:38,360 --> 00:09:43,480
- and see here's my downloads folder and on Windows it's a little trickier when
+00:09:39,800 --> 00:09:44,400
+ folder, and on Windows it's a little trickier when you go into your downloads
 
 110
-00:09:43,480 --> 00:09:49,200
- you go into your downloads folder it hides this dot zip the Mac is pretty
+00:09:44,400 --> 00:09:53,240
+ folder. It hides this .zip. The Mac is pretty easy. I think on the Windows
 
 111
-00:09:49,200 --> 00:09:56,360
- easy I think on on the Windows you kind of to right click and extract it but on
+00:09:53,240 --> 00:09:57,560
+ you kind of have to right-click and extract it, but on Mac you just double
 
 112
-00:09:56,360 --> 00:10:01,760
- Mac you just double click it and it extracts it into real files so now we
+00:09:57,560 --> 00:10:03,000
+ click it and it extracts it into real files. So now we see the actual files, and
 
 113
-00:10:01,760 --> 00:10:06,680
- see the actual files and so these files Minijango readme run server they're all
+00:10:03,000 --> 00:10:07,480
+ so these files, Minijango, Readme, RunServer, they're all the same files
 
 114
-00:10:06,680 --> 00:10:10,840
- the same files that work you got on GitHub is so now you're kind of done
+00:10:07,480 --> 00:10:13,160
+ that were you got on GitHub. So now you're kind of done with with GitHub, okay?
 
 115
-00:10:10,840 --> 00:10:16,600
- with with GitHub okay so there's the downloads file and now I'm going to
+00:10:13,160 --> 00:10:18,680
+ So there's the downloads file, and now I'm going to start a terminal, and in
 
 116
-00:10:16,600 --> 00:10:22,600
- start a terminal and in Windows this is like a command shell in Windows you
+00:10:18,680 --> 00:10:25,000
+ Windows this is like a command shell. In Windows you would type "cd" to see the
 
 117
-00:10:22,600 --> 00:10:27,960
- would type CD to see the current working directory and in Mac and Linux you say
+00:10:25,000 --> 00:10:29,680
+ current working directory, and in Mac and Linux you say "pwd" to see the current
 
 118
-00:10:27,960 --> 00:10:32,640
- PWD to see the current working directory and my downloads are just in a
+00:10:29,680 --> 00:10:35,280
+ working directory, and my downloads are just in a subfolder underneath my
 
 119
-00:10:32,640 --> 00:10:40,240
- subfolder underneath my home directory users CSEV and if I do an LS - L you'll
+00:10:35,280 --> 00:10:41,440
+ home directory, user.csev, and if I do an "ls -l" you'll see that I've got that zip
 
 120
-00:10:40,240 --> 00:10:45,400
- see that I've got that zip file it was downloaded and then a folder folder with
+00:10:41,440 --> 00:10:47,520
+ file that was downloaded, and then a folder with Minijango main. So I'm
 
 121
-00:10:45,400 --> 00:10:51,040
- Minijango main so I'm gonna go into Minijango - main and so now if you look
+00:10:47,520 --> 00:10:51,440
+ going to go into Minijango - main, and so now if you look at the working
 
 122
-00:10:51,040 --> 00:10:53,600
- at the working directory you see them in my downloads folder I'm in
+00:10:51,440 --> 00:10:55,320
+ directory you see them in my downloads folder, I'm in Minijango.main, and as a
 
 123
-00:10:53,600 --> 00:10:58,600
- Minijango dot main and as a matter of fact if I do an LS - L in this folder you
+00:10:55,320 --> 00:10:59,800
+ matter of fact if I do an "ls -l" in this folder you see the
 
 124
-00:10:58,600 --> 00:11:03,560
- see I see you see the exact same files that you see here in downloads and so
+00:10:59,800 --> 00:11:04,400
+ exact same files that you see here in downloads, and so I'm going to minimize
 
 125
-00:11:03,560 --> 00:11:09,160
- I'm gonna minimize that for now and away you go and so if we go back to the
+00:11:04,400 --> 00:11:11,680
+ that for now, and away you go, and so if we go back to the readme now, it says
 
 126
-00:11:09,160 --> 00:11:22,480
- readme now it says Python run server dot py so I'm gonna copy that and so what
+00:11:11,680 --> 00:11:23,300
+ "python run server dot py" so I'm going to copy that, and so what this does is it
 
 127
-00:11:22,480 --> 00:11:27,200
- this does is it starts the Minijango server if this was Django on your
+00:11:23,300 --> 00:11:28,520
+ starts the Minijango server. If this was Django on your laptop you'd say Python
 
 128
-00:11:27,200 --> 00:11:32,620
- laptop you'd say Python manage py run server if this was Django on Python
+00:11:28,520 --> 00:11:34,760
+ manage py run server. If this was Django on Python anywhere you would go and
 
 129
-00:11:32,620 --> 00:11:37,320
- anywhere you would go and reload your web server whatever this does is it
+00:11:34,760 --> 00:11:39,080
+ reload your web server. Whatever this does is it causes it to start up and
 
 130
-00:11:37,320 --> 00:11:43,960
- causes it to start up and listen on a server port so I have this thing
+00:11:39,080 --> 00:11:46,480
+ listen on a server port. So I have this thing starting on 9000, higher numbers
 
 131
-00:11:43,960 --> 00:11:49,200
- starting on 9,000 higher numbers are tend to be used for development lower
+00:11:46,480 --> 00:11:50,720
+ tend to be used for development, lower numbers like 80 or
 
 132
-00:11:49,200 --> 00:11:55,200
- numbers like 80 or you over 443 are using for production and now I can go
+00:11:50,720 --> 00:11:57,800
+ 443 are using for production, and now I can go and grab this URL localhost
 
 133
-00:11:55,200 --> 00:12:02,560
- and grab this URL localhost 9,000 and I can start a browser here's a little baby
+00:11:57,800 --> 00:12:03,960
+ 9000 and I can start a browser. Here's a little baby browser. Now I'm going to
 
 134
-00:12:02,560 --> 00:12:10,560
- browser now I'm gonna keep these up at the same time I'll come back okay let's
+00:12:03,960 --> 00:12:12,600
+ keep these up at the same time, I'll come back, okay let's go back to my browser,
 
 135
-00:12:10,560 --> 00:12:16,280
- go back to my browser go back to this window and I'm gonna go to localhost
+00:12:12,600 --> 00:12:17,600
+ go back to this window, and I'm going to go to localhost 9000. As a matter of
 
 136
-00:12:16,280 --> 00:12:21,780
- 9,000 as a matter of fact before I do that I am going to turn on the web
+00:12:17,600 --> 00:12:24,120
+ fact before I do that I am going to turn on the web developer tools and watch the
 
 137
-00:12:21,780 --> 00:12:26,640
- developer tools and watch the network tab and now I'm gonna go to localhost
+00:12:24,120 --> 00:12:30,640
+ network tab, and now I'm going to go to localhost 9000. Okay it's all clear. Oh
 
 138
-00:12:26,640 --> 00:12:35,520
- 9,000 okay it's all clear oh wait a second all that stuff okay so what we
+00:12:30,640 --> 00:12:37,240
+ wait a sec, I don't need all that stuff. Okay so what we have here is we have a
 
 139
-00:12:35,520 --> 00:12:44,120
- have here is we have a what something went wrong I don't know what went wrong
+00:12:37,240 --> 00:12:45,920
+ what? Something went wrong. I don't know what went wrong. Maybe it's doing a head
 
 140
-00:12:44,120 --> 00:12:50,040
- maybe it's doing a head request for all you know okay so I've played around too
+00:12:45,920 --> 00:12:51,440
+ request for all I know. Okay so I've played around too long and something
 
 141
-00:12:50,040 --> 00:12:55,160
- long and something went wrong I'll figure that bug out later okay so now I
+00:12:51,440 --> 00:12:55,840
+ went wrong. I'll figure that bug out later. Okay so I now go over here and I
 
 142
-00:12:55,160 --> 00:13:01,600
- go over here and I hit ask for localhost 9,000 and it does a request you can see
+00:12:55,840 --> 00:13:03,280
+ hit ask for localhost 9000 and it does a request. You can see it down here. Let's
 
 143
-00:13:01,600 --> 00:13:06,000
- it down here let's move this up a bit so I can see it better so it does a
+00:13:03,280 --> 00:13:06,800
+ move this up a bit so I can see it better. So it does a request and the
 
 144
-00:13:06,000 --> 00:13:11,720
- request and the response is this HTML and I can see it in source code form or
+00:13:06,800 --> 00:13:12,720
+ response is this HTML and I can see it in source code form or I can see it in
 
 145
-00:13:11,720 --> 00:13:19,120
- I can see it in rendered form and I can look at the headers it sent these
+00:13:12,720 --> 00:13:20,920
+ rendered form and I can look at the headers. It sent these headers in. The
 
 146
-00:13:19,120 --> 00:13:24,720
- headers in the request headers so the interesting thing is is you can see this
+00:13:20,920 --> 00:13:26,320
+ request headers. So the interesting thing is is you can see this debug. Let's make
 
 147
-00:13:24,720 --> 00:13:30,040
- debug let's make this a little just a little bigger there we go this thing
+00:13:26,320 --> 00:13:32,640
+ this a little just a little bigger. There we go. This thing just waits right? Oh
 
 148
-00:13:30,040 --> 00:13:36,480
- just waits right oh let's go up to here it wait started the server and now
+00:13:32,640 --> 00:13:37,380
+ let's go up to here. It waits, started the server, and now there's a process
 
 149
-00:13:36,480 --> 00:13:42,480
- there's a process running on my computer that's hooked up to server 9,000 waiting
+00:13:37,380 --> 00:13:43,360
+ running on my computer that's hooked up to server 9000 waiting for something to
 
 150
-00:13:42,480 --> 00:13:46,280
- for something to happen I'll show you this code in a minute so it's just
+00:13:43,360 --> 00:13:47,040
+ happen. I'll show you this code in a minute. So it's just debugging. I wait
 
 151
-00:13:46,280 --> 00:13:51,400
- debugging I wait for the next request I receive a get and that's the same as
+00:13:47,040 --> 00:13:55,920
+ for the next request. I receive a get and that's the same as this get. There we go.
 
 152
-00:13:51,400 --> 00:14:03,720
- this get there we go that's this get to slash it's an HTTP one one it's a get
+00:13:55,920 --> 00:14:07,560
+ That's this get to slash. It's an HTTP 1.1. It's a get request and then these
 
 153
-00:14:03,720 --> 00:14:10,240
- request and then these are all of the headers that are being sent and if you
+00:14:07,560 --> 00:14:10,880
+ are all of the headers that are being sent and if you look down here at
 
 154
-00:14:10,240 --> 00:14:13,920
- look down here request headers you see all of them every one of them cookie
+00:14:10,880 --> 00:14:15,440
+ request headers you see all of them. Every one of them. Cookie, pragma. Those
 
 155
-00:14:13,920 --> 00:14:20,120
- pragma those are being sent to the web server the web servers receiving them on
+00:14:15,440 --> 00:14:20,800
+ are being sent to the web server. The web server is receiving them on a socket
 
 156
-00:14:20,120 --> 00:14:26,720
- a socket connection and then parsing that and so then it runs the code and
+00:14:20,800 --> 00:14:28,040
+ connection and then parsing that and so then it runs the code and this router
 
 157
-00:14:26,720 --> 00:14:31,080
- this router we'll talk about the router in a second it says oh I got a slash
+00:14:28,040 --> 00:14:32,080
+ will talk about the router in a second. It says oh I got a slash path which is
 
 158
-00:14:31,080 --> 00:14:36,440
- path which is slash is there's nothing here after the 9,000 there's nothing
+00:14:32,080 --> 00:14:37,400
+ slash is there's nothing here. It's after the 9000. There's nothing after the 9000.
 
 159
-00:14:36,440 --> 00:14:41,560
- after the 9,000 there's slash path then it goes to the view and then it gets
+00:14:37,400 --> 00:14:42,600
+ There's slash path. Then it goes to the view and then it gets back from the view a
 
 160
-00:14:41,560 --> 00:14:45,960
- back from the viewer response then it sends the response headers the only one
+00:14:42,600 --> 00:14:46,240
+ response. Then it sends the response headers. The only one we're really
 
 161
-00:14:45,960 --> 00:14:49,760
- we're really changing is the fact that this is an HTML request and then it
+00:14:46,240 --> 00:14:51,080
+ changing is the fact that this is an HTML request and then it sends 217
 
 162
-00:14:49,760 --> 00:14:55,600
- sends 217 carries characters of the body output so this is the body output and
+00:14:51,080 --> 00:14:56,680
+ characters of the body output. So this is the body output and the web
 
 163
-00:14:55,600 --> 00:15:02,520
- the web server sent 200 I'm guessing that's 217 characters and then it goes
+00:14:56,680 --> 00:15:03,120
+ server sent 200 I'm guessing that's 217 characters and then it goes back up and
 
 164
-00:15:02,520 --> 00:15:07,320
- back up and waits for the next request now it turns out the next request is
+00:15:03,120 --> 00:15:08,160
+ waits for the next request. Now it turns out the next request is rapidly
 
 165
-00:15:07,320 --> 00:15:13,960
- rapidly forthcoming and that's because it's requesting the favicon okay and
+00:15:08,160 --> 00:15:14,640
+ forthcoming and that's because it's requesting the favicon okay and the
 
 166
-00:15:13,960 --> 00:15:19,960
- the favicon is it's trying to figure out what this icon is supposed to be so if
+00:15:14,640 --> 00:15:19,960
+ favicon is it's trying to figure out what this icon is supposed to be. So if
 
 167
 00:15:19,960 --> 00:15:27,480
@@ -672,7 +672,7 @@
 
 169
 00:15:31,440 --> 00:15:36,320
- favicon to put on localhost 9,000 but I don't have the capability to serve a
+ favicon to put on localhost 9000 but I don't have the capability to serve a
 
 170
 00:15:36,320 --> 00:15:43,520
@@ -683,88 +683,88 @@
  give me a favicon my browser is sending to my server give me the favicon and I
 
 172
-00:15:49,720 --> 00:15:57,820
+00:15:49,720 --> 00:15:57,800
  route the path to favicon and it blows up with a 404 and if you look at the
 
 173
-00:15:57,820 --> 00:16:02,760
- response you see the response is this 404 the risk let's look at the headers
+00:15:57,800 --> 00:16:03,080
+ response you see the response is this 404. Let's look at the headers look
 
 174
-00:16:02,760 --> 00:16:09,600
- look at the response headers we got a response status of 404 and we got that
+00:16:03,080 --> 00:16:09,600
+ at the response headers we got a response status of 404 and we got that
 
 175
-00:16:09,600 --> 00:16:14,820
+00:16:09,600 --> 00:16:14,800
  it's an HTML page and those are the response headers but the 404 is the
 
 176
-00:16:14,820 --> 00:16:19,680
+00:16:14,800 --> 00:16:19,640
  thing that tells the browser that I don't I can't find this path that's the
 
 177
-00:16:19,680 --> 00:16:24,280
+00:16:19,640 --> 00:16:24,280
  path I've asked for and I can't get it and the browser is perfectly happy with
 
 178
 00:16:24,280 --> 00:16:28,920
- that and just doesn't put up a favicon for us okay so now what we're going to
+ that and just doesn't put up a favicon for us. Okay so now what we're going to
 
 179
-00:16:28,920 --> 00:16:38,600
- do is we're gonna do another request and it tells us to add /djfree and now it's
+00:16:28,920 --> 00:16:38,320
+ do is we're going to do another request and it tells us to add /dj for e and now
 
 180
-00:16:38,600 --> 00:16:44,840
- still this keeps asking for the favicon wish it would stop but it doesn't maybe
+00:16:38,320 --> 00:16:43,680
+ it's still this keeps asking for the favicon wish it would stop but it
 
 181
-00:16:44,840 --> 00:16:49,760
- I'll add favicon or maybe I'll have you add favicon support for it so we receive
+00:16:43,680 --> 00:16:48,040
+ doesn't maybe I'll add favicon or maybe I'll have you add favicon support for
 
 182
-00:16:49,760 --> 00:16:54,800
- the headers we've got a get for /djfree so if you look here let's go back to
+00:16:48,040 --> 00:16:53,600
+ it so we receive the headers we've got a get for /dj for e so if you look here
 
 183
-00:16:54,800 --> 00:17:02,420
- this get request this is a get with a path of djfree and and then all the
+00:16:53,600 --> 00:17:01,340
+ let's go back to this get request this is a get with a path of dj free and and
 
 184
-00:17:02,420 --> 00:17:06,440
- headers of course and we have a valid route which you'll see this code in a
+00:17:01,340 --> 00:17:05,700
+ then all the headers of course and we have a valid route which you'll see
 
 185
-00:17:06,440 --> 00:17:11,760
- second for the routing it sends response headers it says this is a this is a text
+00:17:05,700 --> 00:17:10,200
+ this code in a second for the routing it sends response headers it says this is a
 
 186
-00:17:11,760 --> 00:17:18,480
- slash plain so if we look at the response headers come back if we look at
+00:17:10,200 --> 00:17:18,240
+ this is a text slash plain so if we look at the response headers come back if we
 
 187
-00:17:18,480 --> 00:17:24,440
- the response headers this is text slash plain slash UTF-8 so this web server on
+00:17:18,240 --> 00:17:23,680
+ look at the response headers this is text slash plain slash utf-8 so this web
 
 188
-00:17:24,440 --> 00:17:28,880
- the left and the browser on the right are participating in a protocol and
+00:17:23,680 --> 00:17:28,200
+ server on the left and the browser on the right are participating in a
 
 189
-00:17:28,880 --> 00:17:41,280
- again there's all kinds of rules about the protocol HTTP protocol we keep RFC
+00:17:28,200 --> 00:17:38,680
+ protocol and again there's all kinds of rules about the protocol HTTP protocol
 
 190
-00:17:41,280 --> 00:17:47,280
- RFC stands for request for count okay this 72 31 so this protocol this
+00:17:38,680 --> 00:17:48,240
+ we keep rfc rc stands for request for content okay this 7231 so this protocol this document
 
 191
-00:17:47,280 --> 00:17:54,520
- document right here tells us like let's go in this document search for get the
+00:17:48,240 --> 00:17:54,800
+ right here tells us like let's go in this document search for get the get
 
 192
-00:17:54,520 --> 00:18:00,200
- get request and the rules for what the get request looks like are here so let's
+00:17:54,800 --> 00:18:00,200
+ request and the rules for what the get request looks like are here so let's
 
 193
 00:18:00,200 --> 00:18:03,960
@@ -779,672 +779,672 @@
  ahead yeah it might be that I have to check what the head is if it was a head
 
 196
-00:18:14,840 --> 00:18:29,360
- but let's let's keep looking for get look for an example get put put put so
+00:18:14,840 --> 00:18:24,240
+ but let's let's keep looking for get let's look for an example get put put
 
 197
-00:18:29,360 --> 00:18:34,440
- again I'm already on page 26 it doesn't make any sense it's a mess we don't want
+00:18:24,240 --> 00:18:34,240
+ put so again I'm already in page 26 it doesn't make any sense it's a mess we
 
 198
-00:18:34,440 --> 00:18:40,600
- to learn how to do that but somebody had to know how to do it now I've been
+00:18:34,240 --> 00:18:39,600
+ don't want to learn how to do that but somebody had to know how to do it now
 
 199
-00:18:40,600 --> 00:18:44,240
- working with some of this long enough that I wrote this code without having to
+00:18:39,600 --> 00:18:43,720
+ I've been working with some of this long enough that I wrote this code without
 
 200
-00:18:44,240 --> 00:18:48,600
- read this the the format of the headers everybody kind of knows and the format
+00:18:43,720 --> 00:18:48,320
+ having to read this the the format of the headers everybody kind of knows and
 
 201
-00:18:48,600 --> 00:18:52,120
- of the body everybody kind of knows and so I I wrote this code which I'm going
+00:18:48,320 --> 00:18:51,920
+ the format of the body everybody kind of knows and so I I wrote this code which
 
 202
-00:18:52,120 --> 00:18:56,320
- to show you in a second that knows how to do this so let's get back and so the
+00:18:51,920 --> 00:18:55,040
+ I'm going to show you in a second that knows how to do this so let's get back
 
 203
-00:18:56,320 --> 00:18:59,760
- body output it sent 13 characters of body output let's take a look at the
+00:18:55,040 --> 00:18:59,480
+ and so the body output it sent 13 characters of body output let's take a
 
 204
-00:18:59,760 --> 00:19:04,520
- response the response is a plain text it's not HTML so it's not formatted
+00:18:59,480 --> 00:19:03,840
+ look at the response the response is a plain text it's not HTML so it's not
 
 205
-00:19:04,520 --> 00:19:12,160
- that's just that's why it's in courier format here and so let's go back and go
+00:19:03,840 --> 00:19:09,120
+ formatted that's just that's why it's incur your format here and so let's go
 
 206
-00:19:12,160 --> 00:19:21,520
- to let me clear this temporarily go to JS free now this returns neither it
+00:19:09,120 --> 00:19:19,140
+ back and go to let me clear this temporarily go to JS free now this
 
 207
-00:19:21,520 --> 00:19:28,800
- returns a different status code it returns a 302 status code which is a
+00:19:19,140 --> 00:19:25,120
+ returns neither it returns a different status code it returns a 302 status code
 
 208
-00:19:28,800 --> 00:19:34,480
- headers and so the 302 is the status code and that's called a redirect and
+00:19:25,120 --> 00:19:34,280
+ which is a headers and so the 302 is the status code and that's called a redirect
 
 209
-00:19:34,480 --> 00:19:42,800
- then it has this additional location header and so that location header says
+00:19:34,280 --> 00:19:42,840
+ and then it has this additional location header and so that location header says
 
 210
-00:19:42,800 --> 00:19:53,800
- go somewhere else okay I gotta go back where am I out here got to find so this
+00:19:42,840 --> 00:19:57,080
+ go somewhere else okay gotta find so this is where's JS free yeah okay so
 
 211
-00:19:53,800 --> 00:19:59,240
- is where's JS free yeah okay so this is this is the JS free so it did a get
+00:19:57,080 --> 00:20:03,140
+ this is this is the JS free so it did a get request for JS free boom routed all
 
 212
-00:19:59,240 --> 00:20:05,440
- request for JS free boom routed all the right places route to this path of deep
+00:20:03,140 --> 00:20:08,040
+ the right places route to this path of deep JS for E in my views and then it
 
 213
-00:20:05,440 --> 00:20:09,800
- JS for E in my views and then it sent a response header which says I'm gonna
+00:20:08,040 --> 00:20:14,600
+ send a response header which says I'm gonna send you a 302 and I'm gonna send
 
 214
-00:20:09,800 --> 00:20:16,400
- send you a 302 and I'm gonna send this additional location that says go
+00:20:14,600 --> 00:20:18,360
+ this additional location that says go immediately grab this and so the browser
 
 215
-00:20:16,400 --> 00:20:20,720
- immediately grab this and so the browser without what instantaneously went and
+00:20:18,360 --> 00:20:25,560
+ without what instantaneously went and grabbed the the the DJ for E and
 
 216
-00:20:20,720 --> 00:20:27,200
- grabbed the the the DJ for E and retrieve that and that's what that found
+00:20:25,560 --> 00:20:30,880
+ retrieve that and that's what that found so let's go back to the root again clear
 
 217
-00:20:27,200 --> 00:20:33,440
- so let's go back to the root again clear our our browser and now let's look at an
+00:20:30,880 --> 00:20:37,960
+ our our browser and now let's look at an error so let's just go to a URL that is
 
 218
-00:20:33,440 --> 00:20:41,840
- error so let's just go to a URL that is just junk and broken and like Django oh
+00:20:37,960 --> 00:20:45,160
+ just junk and broken and like Django oh what happened did I blow up my code oh I
 
 219
-00:20:41,840 --> 00:20:47,800
- what happened did I blow up my code oh I was typing too long well let's run it
+00:20:45,160 --> 00:20:52,240
+ was typing too long well let's run it again I address already in use you have
 
 220
-00:20:47,800 --> 00:20:56,520
- again I address already in use you have to wait a little bit you got to wait
+00:20:52,240 --> 00:20:59,400
+ to wait a little bit you got to wait because the process was connected to the
 
 221
-00:20:56,520 --> 00:21:03,240
- because the process was connected to the port and then the process died and tried
+00:20:59,400 --> 00:21:05,760
+ port and then the process died and tried to close it but now it still can't get
 
 222
-00:21:03,240 --> 00:21:07,520
- to close it but now it still can't get it sometimes it takes a few seconds to
+00:21:05,760 --> 00:21:09,540
+ it sometimes it takes a few seconds to get it back don't worry about address
 
 223
-00:21:07,520 --> 00:21:12,120
- get it back don't worry about address already in use don't worry about it there
+00:21:09,540 --> 00:21:14,360
+ already in use don't worry about it there we go we're back so now I got to
 
 224
-00:21:12,120 --> 00:21:17,960
- we go we're back so now I gotta go and I gotta say missing and now we get a 404
+00:21:14,360 --> 00:21:20,000
+ go and I got to say missing and now we get a 404 we're sending up we got it we
 
 225
-00:21:17,960 --> 00:21:23,640
- we're sending up we got it we sent a 404 and this looks kind of like the Django
+00:21:20,000 --> 00:21:26,040
+ sent a 404 and this looks kind of like the Django but the key thing here is it
 
 226
-00:21:23,640 --> 00:21:30,080
- but the key thing here is it returns a header of a 404 which is I didn't know
+00:21:26,040 --> 00:21:31,160
+ returns a header of a 404 which is I didn't know how to route this path
 
 227
-00:21:30,080 --> 00:21:34,360
- how to route this path missing blah blah blah blah blah blah and Django does
+00:21:31,160 --> 00:21:35,600
+ missing blah blah blah blah blah blah and Django does kind of the same basic
 
 228
-00:21:34,360 --> 00:21:39,000
- kind of the same basic thing right and I put a dump of all this stuff just for
+00:21:35,600 --> 00:21:40,840
+ thing right and I put a dump of all this stuff just for for yucks and then I have
 
 229
-00:21:39,000 --> 00:21:45,280
- for yucks and then I have a broken view which I'll show you in a moment broken
+00:21:40,840 --> 00:21:47,200
+ a broken view which I'll show you in a moment broken this has it this has a
 
 230
-00:21:45,280 --> 00:21:51,960
- and this has a this has a logic error in the Python and it blows up and the 500
+00:21:47,200 --> 00:21:53,320
+ logic error in the Python and it blows up and the 500 error is the way that the
 
 231
-00:21:51,960 --> 00:21:57,240
- error is the way that the server indicates to us that it did not get the
+00:21:53,320 --> 00:21:59,360
+ server indicates to us that it did not get the right kind of response from the
 
 232
-00:21:57,240 --> 00:22:06,200
- right kind of response from the router or the view okay so that is our widget
+00:21:59,360 --> 00:22:08,680
+ router or the view okay so that is our widget and let me take a look and show
 
 233
-00:22:06,200 --> 00:22:12,120
- and let me take a look and show you some of the source code guess I'll make this
+00:22:08,680 --> 00:22:15,640
+ you some of the source code I guess I'll make this bigger now so again I am in my
 
 234
-00:22:12,120 --> 00:22:20,080
- bigger now so again I am in my users CSF downloads mini Django main and it's got
+00:22:15,640 --> 00:22:23,080
+ users CSF downloads mini Django main and it's got the source code and so let's
 
 235
-00:22:20,080 --> 00:22:28,240
- the source code and so let's start with the simplest file and this is in a sense
+00:22:23,080 --> 00:22:29,960
+ start with the simplest file and this is in a sense kind of like if you're
 
 236
-00:22:28,240 --> 00:22:34,560
- kind of like if you're developing Django locally Python manage py run server if
+00:22:29,960 --> 00:22:35,240
+ developing Django locally Python manage Python server if you're developing in
 
 237
-00:22:34,560 --> 00:22:37,400
- you're developing in Python anywhere this is like the reload application
+00:22:35,240 --> 00:22:39,080
+ Python anywhere this is like the reload application button and we have to start
 
 238
-00:22:37,400 --> 00:22:42,120
- button and we have to start this this is a process that's going to listen on a
+00:22:39,080 --> 00:22:44,040
+ this this is a process that's going to listen on a port and you do this by
 
 239
-00:22:42,120 --> 00:22:46,960
- port and you do this by saying Python run server py you can switch to a
+00:22:44,040 --> 00:22:47,920
+ saying Python run server dot py you can switch to a different port with a
 
 240
-00:22:46,960 --> 00:22:51,000
- different port with a parameter and then if you're going to autograde this in
+00:22:47,920 --> 00:22:51,880
+ parameter and then if you're going to auto grade this in Django for everybody
 
 241
-00:22:51,000 --> 00:22:54,880
- Django for everybody you got to turn on autograder support it adds a little
+00:22:51,880 --> 00:22:55,640
+ you've got to turn on auto grader support it adds a little extra line in
 
 242
-00:22:54,880 --> 00:23:00,240
- extra line in there for autograder support and and so you've got to add
+00:22:55,640 --> 00:23:01,480
+ there for auto grader support and and so you've got to add this Python run
 
 243
-00:23:00,240 --> 00:23:05,720
- this Python run server py 9000 autograder but if you look at this it's
+00:23:01,480 --> 00:23:06,640
+ server pi 9,000 autograder but if you look at this it's sort of taken that
 
 244
-00:23:05,720 --> 00:23:10,820
- sort of taken that first parameter for the port and it prints a print statement
+00:23:06,640 --> 00:23:11,600
+ first parameter for the port and it prints a print statement and then it's
 
 245
-00:23:10,820 --> 00:23:16,800
- and then it's imported mini Django okay and in mini Django there is a method
+00:23:11,600 --> 00:23:18,080
+ imported mini Django okay in mini Django there is a method which we will see in a
 
 246
-00:23:16,800 --> 00:23:22,240
- which we will see in a minute called HTTP server and that starts the server
+00:23:18,080 --> 00:23:24,000
+ minute called HTTP server and that starts the server and we pass into it
 
 247
-00:23:22,240 --> 00:23:29,280
- and we pass into it the URLs URLs dot py we've imported URLs and that is our
+00:23:24,000 --> 00:23:31,760
+ the URLs URLs dot py we've imported URLs and that is our URL writer router that
 
 248
-00:23:29,280 --> 00:23:40,600
- URL writer router that is our URL router that is our URL router and so we're
+00:23:31,760 --> 00:23:41,680
+ is our URL router that is our URL router and so we're going to run the web server
 
 249
-00:23:40,600 --> 00:23:44,160
- gonna run the web server and then in the middle of that web server it's going to
+00:23:41,680 --> 00:23:45,760
+ and then in the middle of that web server it's going to route the URLs to
 
 250
-00:23:44,160 --> 00:23:50,460
- route the URLs to our application so let's take a look at the web server the
+00:23:45,760 --> 00:23:51,480
+ our application so let's take a look at the web server the mini Django itself
 
 251
-00:23:50,460 --> 00:23:56,080
- mini Django itself you'll notice it's a hundred and seventy four lines okay so
+00:23:51,480 --> 00:23:58,480
+ you'll notice it's 174 lines okay so in this we've got a couple of things we
 
 252
-00:23:56,080 --> 00:24:00,400
- in this we've got a couple of things we create some data classes which these are
+00:23:58,480 --> 00:24:03,080
+ create some data classes which these are just really lightweight objects we have
 
 253
-00:24:00,400 --> 00:24:05,360
- just really lightweight objects we have a some just some data in here the method
+00:24:03,080 --> 00:24:07,840
+ a some just some data in here the method which is get the path which is like
 
 254
-00:24:05,360 --> 00:24:10,560
- which is get the path which is like slash DJ free the headers which is being
+00:24:07,840 --> 00:24:13,600
+ slash DJ free the headers which is being incoming headers that's going to be in a
 
 255
-00:24:10,560 --> 00:24:15,560
- incoming headers that's going to be in a dictionary and then the body which is you
+00:24:13,600 --> 00:24:17,680
+ dictionary and then the body which is you know if it was a post or whatever
 
 256
-00:24:15,560 --> 00:24:20,640
- know if it was a post or whatever the response which is what we're supposed to
+00:24:17,680 --> 00:24:21,960
+ the response which is what we're supposed to produce and send back we have
 
 257
-00:24:20,640 --> 00:24:25,920
- produce and send back we have an error code which is 200 okay normally we have
+00:24:21,960 --> 00:24:27,360
+ an error code which is 200 okay normally we have some response headers and then
 
 258
-00:24:25,920 --> 00:24:30,040
- some response headers and then we have a response body and we make a little
+00:24:27,360 --> 00:24:32,080
+ we have a response body and we make a little method in here that basically is
 
 259
-00:24:30,040 --> 00:24:34,760
- method in here that basically is going to append to a list so we're accumulating
+00:24:32,080 --> 00:24:37,080
+ going to append to a list so we're accumulating the lines which we will then
 
 260
-00:24:34,760 --> 00:24:41,560
- the lines which we will then send back to so these objects are the things that
+00:24:37,080 --> 00:24:43,360
+ send back to so these objects are the things that views will work with the HTTP
 
 261
-00:24:41,560 --> 00:24:47,280
- views will work with the HTTP request response and etc so the first thing we
+00:24:43,360 --> 00:24:48,720
+ request response and etc so the first thing we have to do is take the incoming
 
 262
-00:24:47,280 --> 00:24:51,920
- have to do is take the incoming request and and so the parsing of the request
+00:24:48,720 --> 00:24:54,000
+ request and and so the parsing of the request has to do with what the headers
 
 263
-00:24:51,920 --> 00:24:56,320
- has to do with what the headers look like what the body looks like and it's
+00:24:54,000 --> 00:25:00,040
+ look like what the body looks like and it's pretty simple the headers are a
 
 264
-00:24:56,320 --> 00:25:02,680
- pretty simple the headers are a bunch of key value pairs with this colon pattern
+00:25:00,040 --> 00:25:06,160
+ bunch of key value pairs with this colon pattern and it followed by a blank line
 
 265
-00:25:02,680 --> 00:25:10,520
- and it followed by a blank line followed by the body so the code splits splits
+00:25:06,160 --> 00:25:14,560
+ followed by the body so the code splits splits the the the incoming text that
 
 266
-00:25:10,520 --> 00:25:18,600
- the the the incoming text that we've read from the from the input here parse
+00:25:14,560 --> 00:25:20,800
+ we've read from the from the input here parse request the red input we break it
 
 267
-00:25:18,600 --> 00:25:24,240
- request the red input we break it into head and body and then we split the
+00:25:20,800 --> 00:25:29,360
+ into head and body and then we split the header lines based on the rule and then
 
 268
-00:25:24,240 --> 00:25:33,240
- header lines based on the rule and then we we send the headers back and we put
+00:25:29,360 --> 00:25:34,920
+ we we send the headers back and we put them in the object and then we return
 
 269
-00:25:33,240 --> 00:25:38,640
- them in the object and then we return the HTTP request object response send
+00:25:34,920 --> 00:25:41,220
+ the HTTP request object response send we'll come back to that here's a little
 
 270
-00:25:38,640 --> 00:25:43,440
- we'll come back to that here's a little patch autograder stuff here's the HTTP
+00:25:41,220 --> 00:25:47,220
+ patch autograder stuff here's the HTTP server okay so what you see here is web
 
 271
-00:25:43,440 --> 00:25:49,400
- server okay so what you see here is web servers have a thing where it makes a
+00:25:47,220 --> 00:25:52,020
+ servers have a thing where it makes a socket that's like a file handle to the
 
 272
-00:25:49,400 --> 00:25:53,240
- socket that's like a file handle to the operating system that says we're going
+00:25:52,020 --> 00:25:55,480
+ operating system that says we're gonna exchange network traffic it's gonna
 
 273
-00:25:53,240 --> 00:25:58,280
- to exchange network traffic it's going to connect it to local host on port 9000
+00:25:55,480 --> 00:26:00,240
+ connect it to local host on port 9000 and then we're gonna have listen this
 
 274
-00:25:58,280 --> 00:26:02,520
- and then we're going to have a listen this five is the queue so while you're
+00:26:00,240 --> 00:26:05,000
+ five is the queue so while you're processing one the operating system if
 
 275
-00:26:02,520 --> 00:26:08,840
- processing one the operating system if another one arrives in that moment the
+00:26:05,000 --> 00:26:11,680
+ another one arrives in that moment the it'll queue up five of them and after it
 
 276
-00:26:08,840 --> 00:26:13,640
- it'll queue up five of them and after it gets five that you haven't processed yet
+00:26:11,680 --> 00:26:19,320
+ gets five that you haven't processed yet but then what it does is we're gonna
 
 277
-00:26:13,640 --> 00:26:21,200
- but then what it does is we're going to have a loop an infinite loop basically we
+00:26:19,320 --> 00:26:22,920
+ have a loop an infinite loop basically we say waiting for the next response and
 
 278
-00:26:21,200 --> 00:26:26,080
- say waiting for the next response and then we say accept it and we get a socket
+00:26:22,920 --> 00:26:27,800
+ then we say accept it and we get a socket which is a readable bit of data
 
 279
-00:26:26,080 --> 00:26:30,520
- which is a readable bit of data like a file handle at that point one that you
+00:26:27,800 --> 00:26:32,800
+ like a file handle at that point one that you can both read and write and then
 
 280
-00:26:30,520 --> 00:26:35,120
- can both read and write and then the address which we're not going to really
+00:26:32,800 --> 00:26:38,440
+ the address which we're not gonna really use so once we it sits in this for a
 
 281
-00:26:35,120 --> 00:26:40,440
- use so once we are it sits in this for a long time that's waiting for the next
+00:26:38,440 --> 00:26:43,120
+ long time that's waiting for the next request and then it reads up to 5,000
 
 282
-00:26:40,440 --> 00:26:45,200
- request and then it reads up to 5,000 characters decodes it because it's UTF
+00:26:43,120 --> 00:26:48,960
+ characters decodes it because it's UTF 8 coming from the internet and then gives
 
 283
-00:26:45,200 --> 00:26:50,640
- 8 coming from the internet and then gives us that in a big string and we
+00:26:48,960 --> 00:26:53,040
+ us that in a big string and we print the received headers which is just a string
 
 284
-00:26:50,640 --> 00:26:54,720
- print the received headers which is just a string at this point and then we call
+00:26:53,040 --> 00:26:57,080
+ at this point and then we call parse request which we just looked at which
 
 285
-00:26:54,720 --> 00:26:58,600
- parse request which we just looked at which breaks it into headers turns the
+00:26:57,080 --> 00:27:01,520
+ breaks it into headers turns the headers into a dictionary and has the body
 
 286
-00:26:58,600 --> 00:27:03,520
- headers into a dictionary and has the body figures out the method and figures
+00:27:01,520 --> 00:27:06,760
+ figures out the method and figures out the path and returns us an object of type
 
 287
-00:27:03,520 --> 00:27:11,720
- out the path and returns us an object of type HTTP request now remember that 500
+00:27:06,760 --> 00:27:17,600
+ HTTP request now remember that 500 error if we didn't get something a parse
 
 288
-00:27:11,720 --> 00:27:20,880
- error if we didn't get something a parse request I had that error happen if if we
+00:27:17,600 --> 00:27:22,600
+ request I had that error happen if if we don't have the request that we got back
 
 289
-00:27:20,880 --> 00:27:24,440
- don't have the request that we got back from parse request like a false or
+00:27:22,600 --> 00:27:26,520
+ from parse request like a false or something went wrong we're going to just
 
 290
-00:27:24,440 --> 00:27:28,440
- something went wrong we're going to just go to the 500 error because that's the
+00:27:26,520 --> 00:27:30,680
+ go to the 500 error because that's the view fail it says I couldn't parse it
 
 291
-00:27:28,440 --> 00:27:33,120
- view fail that says I couldn't parse it I'm gonna give up otherwise we got a
+00:27:30,680 --> 00:27:34,600
+ I'm going to give up otherwise we got a good request and so we're going to take
 
 292
-00:27:33,120 --> 00:27:37,200
- good request and so we're gonna take the router which is the first parameter to
+00:27:34,600 --> 00:27:39,560
+ the router which is the first parameter to HTTP server and that is a function
 
 293
-00:27:37,200 --> 00:27:41,840
- HTTP server and that is a function and we're going to pass the request object
+00:27:39,560 --> 00:27:44,280
+ and we're going to pass the request object into the function and expect to
 
 294
-00:27:41,840 --> 00:27:48,600
- into the function and expect to get a response object back from the router now
+00:27:44,280 --> 00:27:50,400
+ get a response object back from the router now if we're not getting a
 
 295
-00:27:48,600 --> 00:27:54,400
- if we're not getting a response object from the router then we're gonna blow up
+00:27:50,400 --> 00:27:55,560
+ response object from the router then we're gonna blow up with a 500 and this
 
 296
-00:27:54,400 --> 00:27:58,380
- with a 500 and this is what happens when you see the broken and we'll see that in
+00:27:55,560 --> 00:27:58,920
+ is what happens when you see the broken and we'll see that in the view in a
 
 297
-00:27:58,380 --> 00:28:03,140
- the view in a moment and now we got a response back and it's got all the
+00:27:58,920 --> 00:28:04,320
+ moment and now we got a response back and it's got all the headers response
 
 298
-00:28:03,140 --> 00:28:07,280
- headers response headers it's got the response body and then we send her back
+00:28:04,320 --> 00:28:08,680
+ headers it's got the response body and then we send her back and then we shut
 
 299
-00:28:07,280 --> 00:28:13,320
- and then we shut down the socket and then we go back up and wait for the next
+00:28:08,680 --> 00:28:14,200
+ down the socket and then we go back up and wait for the next socket so it says
 
 300
-00:28:13,320 --> 00:28:16,800
- socket so it says waiting for next requests so it spends a lot of time
+00:28:14,200 --> 00:28:18,380
+ waiting for next request so it spends a lot of time waiting then it gets some
 
 301
-00:28:16,800 --> 00:28:21,440
- waiting then it gets some data reads it really quick processes it really quick
+00:28:18,380 --> 00:28:22,240
+ data reads it really quick processes it really quick and then goes back and
 
 302
-00:28:21,440 --> 00:28:25,640
- and then goes back and waits for the next request now if we take a look at
+00:28:22,240 --> 00:28:28,080
+ waits for the next request now if we take a look at response send this is
 
 303
-00:28:25,640 --> 00:28:32,600
- response send this is again doing the HTTP protocol we send the headers in the
+00:28:28,080 --> 00:28:34,300
+ again doing the HTTP protocol we send the headers in the right format then we
 
 304
-00:28:32,600 --> 00:28:37,560
- right format then we send a blank line and then we then we go through and read
+00:28:34,300 --> 00:28:38,800
+ send a blank line and then we then we go through and read the body and send all
 
 305
-00:28:37,560 --> 00:28:42,840
- the body and send all that out and then we close it all out okay so that's
+00:28:38,800 --> 00:28:46,040
+ that out and then we close it all out okay so that's response send HTTP server
 
 306
-00:28:42,840 --> 00:28:48,760
- response send HTTP server response send and then the last thing we've got is
+00:28:46,040 --> 00:28:49,880
+ response send and then the last thing we've got is there's a view fail method
 
 307
-00:28:48,760 --> 00:28:54,600
- there's a view fail method and that's called for like a 404 or a 500 and it's
+00:28:49,880 --> 00:28:56,240
+ and that's called for like a 404 or a 500 and it's got the request in case we
 
 308
-00:28:54,600 --> 00:28:59,200
- got the request in case we need to look at it we're dumping the request actually
+00:28:56,240 --> 00:29:00,480
+ need to look at it we're dumping the request actually and then a failure
 
 309
-00:28:59,200 --> 00:29:04,600
- and then a failure string which is kind of a you know that's just some debugging
+00:29:00,480 --> 00:29:05,120
+ string which is kind of a you know that's just some debugging additional
 
 310
-00:29:04,600 --> 00:29:08,400
- additional clue as to what might have gone wrong we're printing now we're
+00:29:05,120 --> 00:29:08,920
+ clue as to what might have gone wrong we're printing now we're logging this
 
 311
-00:29:08,400 --> 00:29:11,080
- logging this you'll notice that we always have this logging so we're seeing
+00:29:08,920 --> 00:29:11,680
+ you'll notice that we always have this logging so we're seeing all these print
 
 312
-00:29:11,080 --> 00:29:15,160
- all these print statements coming out to us that makes it easy for us to debug it
+00:29:11,680 --> 00:29:16,120
+ statements coming out to us that makes it easy for us to debug it and you might
 
 313
-00:29:15,160 --> 00:29:18,520
- and you might even blow this code up once in a while and you get tracebacks in
+00:29:16,120 --> 00:29:22,040
+ even blow this code up once in a while and you get trace backs in here and so
 
 314
-00:29:18,520 --> 00:29:27,120
- here and so all this does is it prints out the page let's go back to the page
+00:29:22,040 --> 00:29:28,840
+ all this does is it prints out the page let's go back to the page if you say
 
 315
-00:29:27,120 --> 00:29:34,320
- if you say missing you get a 404 not found and this is just Pat printing that
+00:29:28,840 --> 00:29:34,800
+ missing you get a 404 not found and this is just Pat printing that whole thing
 
 316
-00:29:34,320 --> 00:29:39,240
- whole thing what the response code is the dumping it making it pretty and so
+00:29:34,800 --> 00:29:40,160
+ what the response code is the dumping it making it pretty and so this is a way
 
 317
-00:29:39,240 --> 00:29:43,920
- this is a way for you to debug when things are going badly and you can either
+00:29:40,160 --> 00:29:44,960
+ for you to debug when things are going badly and you can either get a 404 error
 
 318
-00:29:43,920 --> 00:29:51,920
- get a 404 error or if your view is broken you get a 500 error okay so now
+00:29:44,960 --> 00:29:52,880
+ or if your view is broken you'll get a 500 error okay so now let's take a look
 
 319
-00:29:51,920 --> 00:30:04,120
- let's take a look at is router okay so router is a parameter it is in the file
+00:29:52,880 --> 00:30:04,920
+ at is router okay so router is a parameter it is in the file URLs and
 
 320
-00:30:04,120 --> 00:30:07,840
- URLs and it's the as the function called router so let's take a look at the file
+00:30:04,920 --> 00:30:10,240
+ it's the as the function called router so let's take a look at the file URLs
 
 321
-00:30:07,840 --> 00:30:16,240
- URLs and so this is similar to Python's Django URLs dot py and we get the print
+00:30:10,240 --> 00:30:16,240
+ and so this is similar to Python's Django URLs dot py and we get the print
 
 322
-00:30:16,240 --> 00:30:21,360
+00:30:16,240 --> 00:30:21,480
  statement routing to path right so that it has got the path out of the incoming
 
 323
-00:30:21,360 --> 00:30:26,600
+00:30:21,480 --> 00:30:26,600
  request if it's a slash we're gonna run a function out of views see it doesn't
 
 324
-00:30:26,600 --> 00:30:31,260
+00:30:26,600 --> 00:30:31,240
  import a views there's a function named root in views and if it starts with slash
 
 325
-00:30:31,260 --> 00:30:37,360
+00:30:31,240 --> 00:30:37,360
  DJ free we're gonna call the DJ very view if it's start if it's equal to JS
 
 326
-00:30:37,360 --> 00:30:41,280
- free we're gonna call that view and if it's slash broken we're gonna call the
+00:30:37,360 --> 00:30:41,740
+ free we're gonna call that view if it's slash broken we're gonna call the broken
 
 327
-00:30:41,280 --> 00:30:47,960
- broken view now if you look at Django's URLs dot py they put all this into an
+00:30:41,740 --> 00:30:48,740
+ view now if you look at Django URLs dot py they put all this into an array of
 
 328
-00:30:47,960 --> 00:30:53,640
- array of tuples basically and in that array of tuples it's more complex than
+00:30:48,740 --> 00:30:54,120
+ tuples basically and in that array of tuples it's more complex than this but I
 
 329
-00:30:53,640 --> 00:30:59,860
- this but I figured I would just make this a simple pattern of if LF LF LF just
+00:30:54,120 --> 00:31:00,080
+ figured I would just make this a simple pattern of if LF LF LF just because
 
 330
-00:30:59,860 --> 00:31:04,400
- because that's all that array is doing if we're gonna be very simple now if we
+00:31:00,080 --> 00:31:05,280
+ that's all that array is doing if we're gonna be very simple now if we don't see
 
 331
-00:31:04,400 --> 00:31:09,040
- don't see one of these paths that our application knows about we drop into
+00:31:05,280 --> 00:31:09,800
+ one of these paths that our application knows about we drop into this else and
 
 332
-00:31:09,040 --> 00:31:16,240
- this else and then that's where we send the 404 not found okay and so let's take
+00:31:09,800 --> 00:31:16,880
+ then that's where we send the 404 not found okay and so let's take a look now
 
 333
-00:31:16,240 --> 00:31:26,440
- a look now at views dot py and this is a views and we're going to import many
+00:31:16,880 --> 00:31:27,200
+ at views dot py and this is a views and we're gonna import mini Django and
 
 334
-00:31:26,440 --> 00:31:33,360
- Django and that's the HTTP request and response that is these two data classes
+00:31:27,200 --> 00:31:33,680
+ that's the HTTP request and response that is these two data classes oops
 
 335
-00:31:33,360 --> 00:31:36,680
- oops which are really kind of very lightweight objects so lightweight
+00:31:33,680 --> 00:31:36,680
+ which are really kind of very lightweight objects so lightweight
 
 336
 00:31:36,680 --> 00:31:43,480
  syntax to build objects quickly and so the parameter to our view is an HTTP
 
 337
-00:31:43,480 --> 00:31:48,880
+00:31:43,480 --> 00:31:48,840
  request because the framework has built an HTTP request and has passed it to us
 
 338
-00:31:48,880 --> 00:31:56,120
+00:31:48,840 --> 00:31:56,080
  right and we are expected so if you haven't been if you've been newbie to
 
 339
-00:31:56,120 --> 00:32:00,800
+00:31:56,080 --> 00:32:00,760
  Python or been doing Python a long time this is Python type extensions I think
 
 340
-00:32:00,800 --> 00:32:05,920
- it came into Python 3.5 the parameter name is request colon and then the type
+00:32:00,760 --> 00:32:05,600
+ it came in Python three point five the parameter name is request colon and then
 
 341
-00:32:05,920 --> 00:32:10,560
- name this is the expected type and then the return name that's just says that
+00:32:05,600 --> 00:32:10,160
+ the type name this is the expected type and then the return name that's just
 
 342
-00:32:10,560 --> 00:32:15,040
- when we return from this function we're supposed to send back an HTTP response
+00:32:10,160 --> 00:32:14,040
+ says that when we return from this function we're supposed to send back an
 
 343
-00:32:15,040 --> 00:32:22,460
- so you could do this without this sort of syntactic fluff but boy it sure helps
+00:32:14,040 --> 00:32:21,280
+ HTTP response so you could do this without this sort of syntactic fluff but
 
 344
-00:32:22,460 --> 00:32:27,960
- for me to talk to you about what the parameter and return value are supposed
+00:32:21,280 --> 00:32:27,040
+ boy it sure helps for me to talk to you about what the parameter and return
 
 345
-00:32:27,960 --> 00:32:36,720
- to be because that's what that line is really saying okay so our contract is
+00:32:27,040 --> 00:32:35,040
+ value are supposed to be because that's what that line is really saying okay so
 
 346
-00:32:36,720 --> 00:32:40,880
- we're supposed to return an HTTP response and again that's an object defined by
+00:32:35,040 --> 00:32:39,640
+ our contract is we're supposed to return an HTTP response and again that's an
 
 347
-00:32:40,880 --> 00:32:45,240
- the framework so we're going to create one we're going to set the headers the
+00:32:39,640 --> 00:32:44,720
+ object defined by the framework so we're gonna create one we're gonna set the
 
 348
-00:32:45,240 --> 00:32:48,740
- headers are just a dictionary so they're key value pair and we're going to tell
+00:32:44,720 --> 00:32:48,280
+ headers the headers are just a dictionary so they're key value pair and
 
 349
-00:32:48,740 --> 00:32:52,120
- it the content type and again you can go look up what content type is in the
+00:32:48,280 --> 00:32:51,360
+ we're gonna tell it the content type and again you can go look up what content
 
 350
-00:32:52,120 --> 00:32:57,000
- documentation and then we do a series of writes and at this point in the response
+00:32:51,360 --> 00:32:55,480
+ type is in the documentation and then we do a series of writes and at this
 
 351
-00:32:57,000 --> 00:33:00,720
- object if you go back and look at it that's accumulating a list of strings and
+00:32:55,480 --> 00:32:59,520
+ point in response object if you go back and look at it that's accumulating a
 
 352
-00:33:00,720 --> 00:33:05,840
- we're not actually sending the data at this moment we are accumulating a list
+00:32:59,520 --> 00:33:05,080
+ list of strings and we're not actually sending the data at this moment we are
 
 353
-00:33:05,840 --> 00:33:10,280
- of strings and then we were stern we have constructed and filled up this
+00:33:05,080 --> 00:33:09,480
+ accumulating a list of strings and then we were stern we have constructed and
 
 354
-00:33:10,280 --> 00:33:19,480
- response object and we send it back okay and so if you go in here it's also being
+00:33:09,480 --> 00:33:16,960
+ filled up this response object and we send it back okay and so if you go in
 
 355
-00:33:19,480 --> 00:33:27,360
- returned back up through URLs dot py back up into where's the router come back
+00:33:16,960 --> 00:33:26,020
+ here it's also being returned back up through URLs dot py back up into where's
 
 356
-00:33:27,360 --> 00:33:34,560
- there we go the router is URLs dot py we are getting back an HTTP response we're
+00:33:26,020 --> 00:33:32,640
+ the router come back there we go the router is URLs dot py we are getting
 
 357
-00:33:34,560 --> 00:33:39,760
- checking to see if it's a good one if it's not good we send a 500 if it is
+00:33:32,640 --> 00:33:37,560
+ back an HTTP response we're checking to see if it's a good one if it's not good
 
 358
-00:33:39,760 --> 00:33:46,960
- good we actually I should make that be okay okay so I think I got to put a
+00:33:37,560 --> 00:33:46,600
+ we send a 500 if it is good we actually I should make that be okay so I think I
 
 359
-00:33:46,960 --> 00:33:49,720
- little extra line code in here so by the time you're looking at it I think this
+00:33:46,600 --> 00:33:49,280
+ got to put a little extra line code in here so by time you're looking at it I
 
 360
-00:33:49,720 --> 00:34:00,760
- is supposed to yeah I'll put some code in here okay so then we send that
+00:33:49,280 --> 00:34:00,600
+ think this is supposed to yeah I'll put some code in here okay so then we send
 
 361
-00:34:00,760 --> 00:34:05,960
- response back so we're here in the views we are returning the response it works
+00:34:00,600 --> 00:34:05,640
+ that response back so we're here in the views we are returning the response it
 
 362
-00:34:05,960 --> 00:34:11,680
- its way back up through the URLs back into the Django itself we get the
+00:34:05,640 --> 00:34:11,680
+ works its way back up through the URLs back into the Django itself we get the
 
 363
 00:34:11,680 --> 00:34:18,120
@@ -1463,98 +1463,98 @@
  is sending a redirect and so we're telling it to send a code of 302 that's
 
 367
-00:34:34,120 --> 00:34:37,760
- called a temporary redirect and we're adding a header called the location
+00:34:34,120 --> 00:34:37,740
+ called a temporary direct and we're adding a header called the location
 
 368
-00:34:37,760 --> 00:34:41,240
+00:34:37,740 --> 00:34:41,240
  which is where we want to redirect to so we return this it goes to the browser
 
 369
-00:34:41,240 --> 00:34:45,880
- and the browser immediately comes back and comes back to this DJ free and
+00:34:41,240 --> 00:34:45,960
+ and the browser immediately comes back and comes back to this DJ free and that's
 
 370
-00:34:45,880 --> 00:34:52,520
- that's what you see when you go to slash J here let me hide this boom that's what
+00:34:45,960 --> 00:34:52,600
+ what you see when you go to slash J here let me hide this boom that's what you
 
 371
-00:34:52,520 --> 00:35:01,240
- you see when you go to JS for eat so first you see a 302 which sends back a
+00:34:52,600 --> 00:35:01,200
+ see when you go to JS for eat so first you see a 302 which sends back a
 
 372
-00:35:01,240 --> 00:35:05,120
+00:35:01,200 --> 00:35:05,080
  location to DJ free and then the browser in a blink of an eye without doing
 
 373
-00:35:05,120 --> 00:35:09,280
- without waiting for you does a get request to DJ free because that's what
+00:35:05,080 --> 00:35:09,360
+ without waiting for you does a get request a DJ free because that's what it
 
 374
-00:35:09,280 --> 00:35:14,320
- it was told to do so you return this goes all the way back to the browser the
+00:35:09,360 --> 00:35:14,340
+ was told to do so you return this goes all the way back to the browser the
 
 375
-00:35:14,320 --> 00:35:19,360
+00:35:14,340 --> 00:35:19,360
  browser sees the 302 redirect sees the location and then comes back in and
 
 376
-00:35:19,360 --> 00:35:24,240
+00:35:19,360 --> 00:35:24,280
  reads this code and that's how that works the only remaining view is the
 
 377
-00:35:24,240 --> 00:35:30,760
- broken and in this it it's not going to return an HTTP response all these other
+00:35:24,280 --> 00:35:30,800
+ broken and in this it it's not going to return an HTB response all these other
 
 378
-00:35:30,760 --> 00:35:35,000
- ones make HTTP responses and return them this is just returning a string by
+00:35:30,800 --> 00:35:35,040
+ ones make HTB responses and return them this is just returning a string by
 
 379
-00:35:35,000 --> 00:35:38,880
+00:35:35,040 --> 00:35:38,920
  mistake it turns out I think in Django you can return a string and it kind of
 
 380
-00:35:38,880 --> 00:35:44,360
+00:35:38,920 --> 00:35:44,400
  makes an HTTP request for you but I was more interested in causing a 500 or
 
 381
-00:35:44,360 --> 00:35:52,040
+00:35:44,400 --> 00:35:52,080
  return a string the path returns that to the framework the framework receives a
 
 382
-00:35:52,040 --> 00:35:59,120
+00:35:52,080 --> 00:35:59,200
  string as the response and then it's not an HTTP response so we get a 500 error
 
 383
-00:35:59,120 --> 00:36:10,440
+00:35:59,200 --> 00:36:10,480
  and so if I go to slash broken let me clear this boom I get a 500 error so the
 
 384
-00:36:10,440 --> 00:36:14,480
- 500 error not only is a 500 error but there is a response involved in there right and
+00:36:10,480 --> 00:36:13,880
+ 500 error not only is a 500 error but there is a response involved in there
 
 385
-00:36:14,480 --> 00:36:22,160
- so there's some HTML that comes back with all that stuff and so there we go
+00:36:13,880 --> 00:36:20,480
+ right and so there's some HTML that comes back with all that stuff and so
 
 386
-00:36:22,160 --> 00:36:27,720
- I'm sure you have questions but you can look at all this code and you can figure
+00:36:20,480 --> 00:36:26,480
+ there we go I'm sure you have questions but you can look at all this code and
 
 387
-00:36:27,720 --> 00:36:35,240
- it all out and enjoy it so again this is about the mini Django web server like
+00:36:26,480 --> 00:36:34,120
+ you can figure it all out and enjoy it so again this is about the mini Django
 
 388
-00:36:35,240 --> 00:36:39,880
- the smallest approximately Django web server that I could build so that you
+00:36:34,120 --> 00:36:38,800
+ web server like the smallest approximately Django web server that I
 
 389
-00:36:39,880 --> 00:36:45,360
- can read and even play with it put print statements in and again this is part of
+00:36:38,800 --> 00:36:42,320
+ could build so that you can read and even play with it put print statements
 
 390
-00:36:45,360 --> 00:37:00,800
- my Django for everybody class Cheers
+00:36:42,320 --> 00:37:00,800
+ in and again this is part of my Django for everybody class cheers
 

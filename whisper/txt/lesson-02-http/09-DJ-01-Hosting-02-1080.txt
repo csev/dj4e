@@ -1,19 +1,96 @@
- So now I want to talk about a concept called virtual hosting. Like I said, this doesn't really affect you directly, but I want to sort of show you a little bit about how an organization like PythonAnywhere can have a very small amount of resources and support a very large number of hosts.
- And this is the idea that they have one piece of hardware or a very few pieces of hardware and many different domains running on that system.
- And this also kind of helps you understand why you have to configure PythonAnywhere the way you do to help them route the request not just to the server but to your application within the server where your application is running.
- So if you recall with the request-response cycle, HTTP, it makes a connection to a domain and then it sends a GET request with the domain in the GET request.
- And so here we have a little sample. We say telnet data.pr4e.org, that's the host, and port 80, which is to say let's talk to the web server and then we connect and then we send the GET request.
- And the GET request has a couple of pieces, right? The GET request has, you know, the name of the document including the server that it's going to and then the protocol and then a blank line.
- The key thing is they don't just say get me any document. You actually tell it the host that you're looking for. And by looking at this, that's how the virtual hosting works.
- And so it says oh, I'm one host really, but I can pretend to be many hosts and know which host I'm being asked for with that information.
- And so that's how the virtual hosting works. So when a GET request comes into a server, it can say I have many virtual hosts inside myself and I'll pick the right one.
- And so if we look at the browser's debugger console, we can see that it's asking and doing a GET request to a particular Python Anywhere URL and with a particular domain name and the domain name is part of the request, which is what makes the virtual hosting happen.
- And so this is where in the web tab of Python Anywhere you've got to give this thing about where are you at. And you have to say within this server I'm running at this home folder and so that's your home directory, you know, dangle projects local library, your working directory where it's supposed to go when it receives a request for you.
- And then it has this one configuration file and you'll notice that that file doesn't belong that www.mdntutorial_pythonanywhere.com_wgsi, the WGSI configuration file is not in your data space.
- So that's actually in the system and that's the place where the system can look up where you're going and then that file, again if you read that file, you'll see it's telling where it's supposed to go in the overall system to start in a directory and load the configuration for a particular application and up you go.
- And so this is kind of the picture of how it all works. You know, you've got a browser out here and the browser is making many requests to this server, which is one piece of physical hardware and then there's a little piece of software, often it's an open source software called NGINX, and it has a whole bunch of configuration files that you put in in their user interface and it has little instances of Django, one for each of the domains in those systems.
- And so you're isolated from all the other ones, whether it's www.mdntutorial_pythonanywhere.com, www.dj4epythonanywhere.com, or just some other kind of thing. It doesn't even have to be Django, it can be just about anything.
- And so there are these configuration files that allow, and all this really accomplishes is reusing some of the server hardware so that you don't have to have a dedicated piece of hardware for every single piece of software.
- And then within that is what I showed you before, and that is how the request works in your settings file, but the goal of NGINX is getting it to your front door so that your application gets the requests that are destined for it.
- So this is both how these applications are combined into one server using virtual hosting, but also how applications work internally. And so I just wanted to give you a really short overview of how this all works so that you can build the picture a little bit at a time over the next few weeks as you learn this material.
- [MUSIC]
+ So now I want to talk about a concept called virtual hosting.
+ Like I said, this doesn't really affect you directly,
+ but I want to sort of show you a little bit about how
+ an organization like Python Anywhere
+ can have a very small amount of resources
+ and support a very large number of hosts.
+ And this is the idea that they have one piece of hardware
+ or a very few pieces of hardware in many different domains
+ running on that system.
+ And this also kind of helps you understand
+ why you have to configure Python Anywhere the way
+ you do to help them route the request not just to the server,
+ but to your application within the server where
+ your application is running.
+ So if you recall with the request response cycle, HTTP,
+ it makes a connection to a domain,
+ and then it sends a GET request with the domain in the GET
+ request.
+ And so here we have a little sample.
+ We say telnet data.pr4e.org.
+ That's the host and port 80, which is to say,
+ let's talk to the web server.
+ And then we connect, and then we send the GET request.
+ And the GET request has a couple of pieces, right?
+ The GET request has the name of the document,
+ including the server that it's going to, and then the protocol,
+ and then a blank line.
+ The key thing is they don't just say, get me any document.
+ You actually tell it the host that you're looking for.
+ And by looking at this, that's how the virtual hosting works.
+ And so it says, oh, I'm one host really,
+ but I can pretend to be many hosts
+ and know which host I'm being asked for with that information.
+ And so that's how the virtual hosting works.
+ So when a GET request comes into a server,
+ it can say, I have many virtual hosts inside myself,
+ and I'll pick the right one.
+ And so if we look at the browser's debugger console,
+ we can see that it's asking and doing a GET request
+ to a particular Python Anywhere URL with a particular domain
+ name.
+ And the domain name is part of the request,
+ which is what makes the virtual hosting happen.
+ And so this is where, in the web tab of Python Anywhere,
+ you've got to give this thing about where are you at.
+ And you have to say, within this server,
+ I'm running at this home folder.
+ And so that's your home directory, dangle projects,
+ local library, your working directory,
+ where it's supposed to go when it receives a request for you.
+ And then it has this one configuration file.
+ And you'll notice that that file doesn't belong,
+ that www.mdntutorial_pythonanywhere.com_wgsi.
+ The WGSI configuration file is not in your data space.
+ So that's actually in the system.
+ And that's the place where the system can look up
+ where you're going.
+ And then that file, again, if you read that file,
+ you'll see it's telling where it's supposed to go
+ in the overall system to start in a directory
+ and load the configuration for a particular application.
+ And up you go.
+ And so this is kind of the picture of how it all works.
+ You've got a browser out here.
+ And the browser is making many requests
+ to this server, which is one piece of physical hardware.
+ And then there's a little piece of software.
+ Often it's an open source software called NGINX.
+ And it has a whole bunch of configuration files
+ that you put in in their user interface.
+ And it has little instances of Django,
+ one for each of the domains in those systems.
+ And so you're isolated from all the other ones,
+ whether it's mdntutorial_pythonanywhere.com,
+ dj4epythonanywhere.com, or just some other kind of thing.
+ It doesn't even have to be Django.
+ It can be just about anything.
+ And so there are these configuration files that allow,
+ and all this really accomplishes
+ is reusing some of the server hardware
+ so that you don't have to have a dedicated piece of hardware
+ for every single piece of software.
+ And then within that is what I showed you before,
+ and that is how the request works in your settings file.
+ But the goal of NGINX is getting it to your front door
+ so that your application gets the requests
+ that are destined for it.
+ So this is both how these applications are combined
+ into one server using virtual hosting,
+ but also how applications work internally.
+ And so I just wanted to give you a really short overview
+ of how this all works.
+ So that you can build the picture a little bit
+ at a time over the next few weeks
+ as you learn this material.
+ [MUSIC PLAYING]

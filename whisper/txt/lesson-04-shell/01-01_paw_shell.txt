@@ -1,4 +1,4 @@
- (upbeat jazz music)
+ (upbeat music)
  Hello, and welcome to Django for Everybody.
  Today we're gonna talk about using the shell.
  It's one of the early assignments in the class,
@@ -32,41 +32,42 @@
  Python Anywhere just gives you a free one.
  Otherwise, you'd get one from Amazon or Google
  or Windows Azure.
- So here you are, you're logged into Python Anywhere.
- You go into the consoles tab and you can start a new console.
+ So here you are, you're logged into Python Anywhere,
+ you go into the consoles tab,
+ and you can start a new console.
  And the console, you can just run Python interactively
- if you want.
- You can run a MySQL shell that connects
- to your MySQL database, which we'll have later.
+ if you want, you can run a MySQL shell
+ that connects to your MySQL database,
+ which we'll have later.
  I prefer to not use any of these things
  except the bash shell.
  The bash is just, there's variations
- in the Linux user interface.
- And bash is just one of them.
+ in the Linux user interface,
+ and bash is just one of them.
  And so you may not use bash,
  you may use the sh or something else,
  but they all kind of have common things
  with little tiny subtle differences.
- So I'm gonna start a bash shell.
- And it's gonna take a little bit here
- to go do its little thing here.
- And it's setting things up.
+ So I'm gonna start a bash shell,
+ and it's gonna take a little bit here
+ to go do its little thing here,
+ and it's setting things up.
  Part of this is that there are hundreds of thousands
- of people using Python Anywhere
+ of people using Python Anywhere,
  and it has to build your own interface.
  Now, the dollar sign prompt is traditionally
  the prompt that says it's waiting for input.
- So I can type a command and then I can hit enter.
- And it says that is not a good command.
- There is a help, it's called man.
- Man LS that tells you, so that's the LS command,
- like what is in the LS command?
+ So I can type a command and then I can hit enter,
+ and it says that is not a good command.
+ There is a help, it's called man,
+ man ls that tells you, so that's the ls command,
+ like what is in the ls command?
  And then it goes into a page.
- Now you'll notice that we're not scrolling here.
- It pauses at the bottom.
- And I'm gonna hit the Q key to get out of that.
- So man is kind of like your help.
- And man stands for manual.
+ Now, you'll notice that we're not scrolling here,
+ it pauses at the bottom,
+ and I'm gonna hit the Q key to get out of that, okay?
+ So man is kind of like your help,
+ and man stands for manual.
  Back in the days when you had big books, right?
  You had these big books that were the manuals
  that you would reach up on your shelf and open it up.
@@ -77,122 +78,133 @@
  your Django environment with the right version of Python.
  The rest of these, many of these commands
  would work without that, but here on Python Anywhere,
- we tend to build that and that's a separate assignment
+ we tend to build that, and that's a separate assignment
  where you set that up.
- And the prompt you see changes to say,
+ In the prompt, you see changes to say,
  you're working in a Python virtual environment.
  The first thing you wanna do to verify
  that things are working well is check the version
- by typing Python dash dash version.
- And that tells you what version of Python.
+ by typing python --version,
+ and that tells you what version of Python.
  At this point, you should be using
- a relatively high version of Python.
- Python say 3.8 or later.
- And then a relatively recent Django version.
+ a relatively high version of Python,
+ Python, say, 3.8 or later,
+ and then a relatively recent Django version.
  So let's talk about some shell commands.
  So the first shell command is ls.
- I showed you the man page for that.
- And that lists the current files
+ I showed you the man page for that,
+ and that lists the current files
  in the current working directory.
- Ls minus l lists them with some detail,
+ ls -l lists them with some detail,
  including the size and the last modification date
- and the owner of the file.
- And that little drwx stuff on the left,
- well, that's the permissions.
- And there is rwx, rwx, rwx and one is the permission
- that the owner would have, fellow members of their group,
- and then anyone including anonymous users.
- And so you notice that we have more permission.
- We have lots more permissions than others.
+ and the owner of the file,
+ and that little drwx stuff on the left,
+ well, that's the permissions,
+ and there is rwx, rwx, rwx,
+ and one is the permission that the owner would have,
+ fellow members of their group,
+ and then anyone, including anonymous users.
+ And so you notice that we have more permission,
+ we have lots more permissions than others.
  So the next command is pwd, pwd, print working directory.
- And so what happens is Unix, Linux is a multi-user system
- and our account name is djfree.
- And so /home is where all the home directories are
- and home djfree is the home directory
+ And so what happens is Unix, Linux is a multi-user system,
+ and our account name is dj4e,
+ and so /home is where all the home directories are,
+ and home dj4e is the home directory
  for the user named dj4e.
  So cd is change directory.
  Now, if you type cd by itself,
  you go back to your home directory.
- So if I go cd space Django project,
+ So if I go cd space django project,
  oh, and this is another thing.
  There is what's called command line completion.
  So I know that I'm typing a directory here that exists,
  djan tab underscore tab,
  and then I don't have to know all the names.
- You see that Django projects is one of my folders.
- And if it's unique, it completes it for it.
+ You see that django projects is one of my folders,
+ and if it's unique, it completes it for it.
  So as I'm typing, if I need to complete a file name
  or a folder name, I can use the tab key.
- The other thing about this, if I do a pwd,
- you can see now I'm in home djfree Django projects.
- And it's given me a context, right?
+ The other thing about this, that I do with pwd,
+ you can see now I'm in home dj4e django projects,
+ and it's giving me a context, right?
  I'm still in my home directory,
  but now I'm going down into folders
  and directories and files.
- Now, if I type the command cd, it will go back
- to my home directory 'cause now I'm down in a subdirectory
- and I do a pwd and you see I'm back in my home directory.
+ Now, if I type the command cd,
+ it will go back to my home directory,
+ 'cause now I'm down in a subdirectory,
+ and I do a pwd, and you see I'm back in my home directory.
  Here's another trick that I really want you to learn.
- Up arrow, you can scroll.
- I'm up arrow, down arrow, up arrow, up arrow, up arrow.
- I can scroll up to a previous command and then hit enter
+ Up arrow, you can scroll, I'm up arrow, down arrow,
+ up arrow, up arrow, up arrow.
+ I can scroll up to a previous command and then hit enter,
  and then run it again.
  This will save you a bunch of time, okay?
  So I'm sitting in this folder.
  So let's go back and take a look at the other things
  I wanna cover.
- You can use the tilde on a cd command and you'll see
- that it's showing this tilde in the current prompt,
- cd tilde slash Django underscore projects.
- And that will go all the way up to the home directory
- and then work its way down.
+ You can use the tilde on a cd command,
+ and you'll see that it's showing this tilde
+ in the current prompt, cd tilde slash django underscore
+ projects, and that will go all the way up to the home
+ directory and then work its way down.
  So if you're like, where am I?
- You can say, go to tilde slash and then you know
- what that folder name is.
- Let's see, do I have any files here I can remove?
- Let's go back into my home directory, do an ls
- and see some files.
- DB.ZAP, let's just get rid of it.
- RM DB.ZAP.
+ You can say, go to tilde slash,
+ and then you know what that folder name is.
+ Let's see, do I have any files here
+ I can remove?
+ Let's go back into my home directory,
+ do an ls, and see some files.
+ db.zap, let's just get rid of it, rm db.zap.
  Boop, it's gone.
- Now we didn't put it in the trash can, we removed it.
+ Now we didn't put it in the trashcan, we removed it.
  It does it.
- So you'll notice that DB.ZAP is no longer
+ So you'll notice that db.zap is no longer
  in my list of files.
- So be careful with the RM command,
+ So be careful with the rm command,
  but it's quite powerful and useful.
- So this grep command, grep searches all the files,
- so if you look, I've got lots and lots and lots of files.
- And so I'm going to say grep -r, that means recursive,
- for a string autoscreatestar in all my files.
- Now I got a lot of files here, so this is gonna be
- a long grep, but sometimes, and it works from the current
- working directory, let me go into cd Django projects.
- And then let's go into, let's see, no, let's go into my ads.
+ (clears throat)
+ So this grep command, grep searches all the files.
+ So if you look, I've got lots and lots and lots of files.
+ And so I'm going to say, grep minus r,
+ that means recursive, for a string autoscreate star
+ in all my files.
+ Now I got a lot of files here,
+ so this is gonna be a long grep.
+ But sometimes, and it works from the current
+ working directory, let me go into cd django projects.
+ (keyboard clicking)
+ And then let's go into, let's see if crud,
+ no, let's go into my ads.
  Chucklist, I think it might be called Chucklist, yeah.
- So this is one of my, you know, later we'll get this,
- but I'm gonna run this grep command,
+ So this is one of my, you know, later we'll get this.
+ But I'm gonna run this grep command,
  and it's gonna find every example in every file
- in this folder and below, where the string autos_create
- exists, so that means grep -r means recursively,
- go deep and down the tree, autos_create is whatever string
- you wanna put in, and then star means all the files,
+ in this folder and below,
+ where the string autos_create exists.
+ So that means grep minus r means recursively,
+ go deep and down the tree.
+ autos_create is whatever string you wanna put in.
+ And then star means all the files,
  but then it recursively goes through all the files.
  And so you will see, oh, I didn't have that.
- Let's see, autos_create, let's look for the word,
+ Let's see, autoscreate, let's look for the word,
  I don't know, model.
- Let's look for the word model in all of these files
- and below, so there you go.
+ Let's look for the word model
+ in all of these files and below.
+ So there you go.
  So now I can see that this is the file.
- Some of these files, like pycache, are junk,
- but, you know, let's see, where have I got a model
- in my file, right there, ads_for.
- So there's this, it shows me the file name and the string.
- And usually what you're looking for is maybe
- a typographical error that you've seen in an error message.
- So that's the shell interface, and again,
- part of what I wanna show you is for you to know
- when you're talking to the shell,
+ Some of these files like pycache are junk,
+ but, you know, let's see,
+ where have I got a model in my file, right there.
+ Ads for, so it shows me the file name and the string.
+ And usually what you're looking for
+ is maybe a typographical error
+ that you've seen in an error message.
+ So that's the shell interface.
+ And again, part of what I wanna show you
+ is for you to know when you're talking to the shell,
  'cause you're not always talking to the shell.
  If it ends in a dollar sign prompt,
  usually you're talking to the shell.
@@ -200,57 +212,58 @@
  in different situations.
  So sometimes you just run Python interactively.
  And if you've taken a Python course,
- this is the REPL, the read, evaluate, something loop.
- So you just type Python,
+ this is the REPL, the read, evaluate something loop.
+ So you just type Python
  and it's running Python interactively.
  Now you're still sitting in a prompt, okay?
  And so now that's not the same thing.
  That's not Linux talking to you,
  that's Python talking to you.
- You're running the command Python on Linux,
+ You're running the command Python on Linux
  and that Python command is asking for input.
  So it expects you to type Python.
  Hello world, of course we're gonna type hello world.
  And that reads the Python, parses it, and then executes it.
- Now if you're in this and you type ls,
+ Now, if you're in this and you type LS,
  it's like, I don't know what to do.
- I have no idea, pwd, I have no idea what you're doing,
+ I have no idea.
+ PWD, I have no idea what you're doing
  'cause you're not in the shell.
  So students come to me and go like,
- I keep typing pwd and it's giving me name errors.
+ I keep typing PWD and it's giving me name errors.
  Like, well, that's 'cause you're in Python,
  not in the shell.
  So you have to know how to exit.
  And you do that with quit, open paren, close paren, enter.
- And now you're back to the happy little dollar sign prompt,
- and now you can say pwd and it will work, right?
+ And now you're back to the happy little dollar sign prompt.
+ And now you can say PWD and it will work, right?
  So part of it is recognizing what you're interacting with
- based on what the prompt looks like.
- Okay, so that's the Python interface.
+ based on what the prompt looks like, okay?
+ So that's the Python interface.
  Now, if you end up with a more than one line Python statement
  that the three chevrons prompts turns into a dot, dot, dot.
  Let me show you how that works.
  So I'm gonna run Python again.
- I'm just cursoring up Python,
- and I can say for i in range five, colon.
- Now you'll see that the prompt is turned into a dot, dot, dot.
+ I'm just cursoring up Python.
+ And I can say, for i in range five, colon.
+ Now you see that the prompt is turned into a dot, dot, dot.
  And I have to do an indent, of course.
  One, two, three, four, five, print i.
  And it's still thinking that I'm in this for loop.
  And so it's saying, are you still doing more stuff
  in the for loop?
  I could put another line in this for loop.
- I could say print second line.
+ I could say, print second line.
  And then I can hit the enter and say,
  I'm done with the for loop.
  And then we'll actually read the for loop,
  run the for loop, execute it five times
- with i being zero, one, two, three, four,
- but the body loop has two things.
+ with i being zero, one, two, three, four.
+ But the body loop has two things.
  And then when it's done with this sort of continuation,
  dot, dot, dot is like, I need more, I'm not done yet.
  Whatever you typed, it's not finished.
- Now I'm back to the standard chevron prompt,
+ Now I'm back to the standard Chevron prompt,
  at which case I would type quit.
  And now I'm back to the shell prompt.
  See, the whole idea is to be able to record,
@@ -265,7 +278,7 @@
  that is where SQLite stores its data.
  So the command is sqlite3,
  and then you give it as a parameter,
- the name of the file, db.sqlite3, all right?
+ the name of the file, db.sqlite3, right?
  So that's gonna read that.
  And now you see the prompt has changed
  to sqlite greater than.
@@ -279,8 +292,8 @@
  And so it's just like, I haven't seen a semicolon yet,
  so you must still be typing.
  Now it's like, oh, you just, not only did you do some,
- I finally got a semicolon, but it's still terrible SQL,
- structured query language, okay?
+ I finally got a semicolon,
+ but it's still terrible SQL, structured query language, okay?
  So this sqlite or the dot, dot, dot arrow, right?
  That is sqlite or the sqlite continuation,
  'cause that's what we're dealing with with the dot, dot, dot.
@@ -307,25 +320,25 @@
  So I'm gonna go into Django projects.
  I'm gonna go into MySite,
  which is the place you're gonna be working on doing LS,
- and you'll see that I got a db.sqlite here as well.
+ and you'll see that I got a dbusqlite here as well.
  It's a different one because it is just a different one.
  I had one in my home directory,
  now I got one two folders down in Django projects MySite.
- Heat peat and tab, and then db.sqlite.
+ Keep in tab and then db.sqlite.
  Now I'm gonna say dot tables,
  and I'm gonna have a bunch of tables, look at that.
  I got a whole bunch of tables.
  And this is not exactly your code, this is my code,
  this is later in the semester.
  But I can say select star from polls to underscore choice.
- Now that is an SQL command, and you'll learn about that later.
- It does end in a semicolon, it's got select
- as one of the things I could type, update, delete.
- We'll learn a bit of SQL as the course progresses.
+ Now that is an SQL command and you'll learn about that later.
+ It does end in a semicolon, it's got, you know,
+ select is one of the things I could type, update, delete.
+ You know, we'll learn a bit of SQL as the course progresses.
  Oh, I didn't type it right.
- But watch, I'm gonna use the up arrow key.
- Up arrow, back, back, back, back, back, back, back, back.
- Oh, for polls, two choice, boom.
+ But watch, I'm gonna use the up arrow key, up arrow,
+ back, back, back, back, back, back, back, back, back, back.
+ Oh, for polls to choice, boom.
  So that's the two lines that are in there.
  And again, later you will understand what that is.
  And then to get out of this, I type dot quit,
@@ -334,53 +347,56 @@
  So you gotta remember that if you're in one of these things,
  you got to get out of that.
  Okay, so that's another thing.
- And there is the Django shell, and we'll use that later.
+ Then there is the Django shell.
+ And we'll use that later.
  And you can say, and so this has to work in a folder
  that has the file manage.py in it.
  And that's basically a Python project.
- And you have to run the manage.py.
- Python manage.py, that says run the manage.py file,
- and then I'm gonna give it another command called shell.
- So that says load up manage.py,
+ And you have to run the manage.py
+ Python manage.py that says run the manage.py file.
+ And then I'm gonna give it another command called shell.
+ So that says load up manage.py
  and then drop me into a Django shell.
- So you'll do a lot of things that say Python manage.py,
+ So you'll do a lot of things to say Python manage.py
  and like Python manage.py check,
  which we check to see if there's something broken
- in our configuration for this application for this project.
- And the answer is, oh, you're not broken, so that's good.
- But I wanna show you the shell,
+ in our configuration for this application, for this project.
+ And the answer is, oh, you're not broken.
+ So that's good.
+ But I wanna show you the shell
  because I'm trying to show you user interfaces
- that you might get stuck into, and how to get out of those.
- So now you notice that it looks exactly
- like the Python shell, and I can type Python commands.
+ that you might get stuck into and how to get out of those.
+ So now you notice that it looks exactly like the Python shell
+ and I can type Python commands.
  And you might say, okay, what's the difference?
- I can type print hello world, and it says hello world.
+ I can type print hello world.
+ And it says hello world.
  I can say quit open print to close print.
  But what's happened is Python has run manage.py
  and loaded your entire Django application
  into this Python instance.
  And so there are commands like,
- and let me find a command here.
+ ah, let me find a command here.
  From, now this is a Python statement.
  Now I think I gotta change this
  in this particular thing to be poles too.
- For yours it'll be poles.
- Yeah, so that ran a Python, but it imported a bunch of code
- from my models.py file.
+ For yours, it'll be poles.
+ Yeah, so that ran a Python,
+ but it imported a bunch of code from my models.py file.
  Again, later in the course, okay.
  And then I can run a command to create an in-memory model
  to create a brand new question in this model.
  Oops, I didn't mean to do the quit.
- And so that actually, I mean, we can print queue
- to see what's in queue.
- Yeah, it's a question, and it's got the text
- to hello world in, we could save it.
+ And so that actually, I mean, we can print Q
+ to see what's in Q.
+ Yeah, it's a question.
+ And it's got the text to hello world in it.
+ We could save it.
  And so there are things you can do in the Django shell
  that you can't do in the Python shell,
- but it's a Python shell plus a bunch
- of preloaded Django stuff.
+ but it's a Python shell plus a bunch of preloaded Django stuff.
  So you might have a continuation line,
- but then you leave by quit open print, close print.
+ but then you leave by quit, open print, close print.
  And now we're back to the Linux command prompt
  because there's a dollar sign there.
  LS minus L, PWD, all that Linux stuff is working.
@@ -392,6 +408,5 @@
  And I just wanted you at this beginning
  to get a kind of a picture of what's going on
  in the command line interface.
- Okay?
- Cheers.
+ Okay, cheers.
  (upbeat music)

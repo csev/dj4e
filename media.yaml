@@ -1,19 +1,101 @@
 media_root: /Users/csev/Desktop/teach/dj4e-media
 www_root: /Users/csev/htdocs/dj4e
 entries:
-  lesson-02-http/08-Web-04-Mini-Django.m4v:
-    title: DJ 02.08 Exploring the Mini Django Web Server (36:58)
-    youtube_id: q6LGpiVPwaA
+  lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v:
+    title: DJ 01.01 Welcome to Django for Everybody (7:33)
+    youtube_id: oxJQB4f2MMs
     kaltura_id: null
-    size: 835841221
-    md5: def458f93c42ad8b395c4a76dd340948
-    duration: 2219
+    size: 597437858
+    md5: 6e850e61ed50644b9e6f119ce350c542
+    duration: 453
+    duration_text: 07:33
     description: |
-      This video is part of my Django for Everybody class.  I built a simple web server inspired by Django's design patterns to help students understand the internal workings of the Django code base and better understand how their Django application code fits within Django.
+      In this video I take a look at how the Django for Everybody course was built and some of the decisions that were made along the way.
 
       https://www.dj4e.com/
-      https://github.com/csev/mini_django/
-      http://www.dj4e.com/lectures/mini_django.pptx
+  lesson-01-welcome/02-2025-08-20-AI.m4v:
+    title: DJ 01.02 Thoughts on the use of Artificial Intelligence in Programming Courses (16:16)
+    youtube_id: 1u-gQ-d5Lv8
+    kaltura_id: null
+    size: 1223876861
+    md5: 266f968a0c66ee208a9204a94f4d071e
+    duration: 976
+    duration_text: 16:16
+    description: |
+      In this video Dr. Chuck explores how he sees the role of AI in programming courses.   He talks about the perils of using too much AI that you never learn anything and how he designs courses in the "post-AI" world.
+  lesson-02-http/01-Web-01-HTTP-01.m4v:
+    title: DJ 02.01 Web Applications and the Request/Response Cycle (6:04)
+    youtube_id: ZT8uqIEG92o
+    kaltura_id: null
+    size: 369453093
+    md5: 8666d1ecc4b0d43586da418d03519fd9
+    duration: 364
+    duration_text: 06:04
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      Web 01 HTTP 01
+  lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
+    title: DJ 02.02 Using Sockets to Make Network Connections in Python (6:34)
+    youtube_id: RDvlb_XgVyI
+    kaltura_id: null
+    size: 342378216
+    md5: 3c2c565da7264b9f5c95e2f9844a4464
+    duration: 394
+    duration_text: 06:34
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      Web 01 HTTP 02 Sockets
+  lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
+    title: DJ 02.03 Exploring the HyperText Transfer Protocol (16:28)
+    youtube_id: Q5YIrYkrVXg
+    kaltura_id: null
+    size: 868953263
+    md5: b1dfc3195151772bf59e708a0f7102c1
+    duration: 988
+    duration_text: 16:28
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      Web 01 HTTP 03 HTTP 1080
+  lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
+    title: DJ 02.04 Building a Simple Web Browser in Python (8:39)
+    youtube_id: Fxgw_BxZg2I
+    kaltura_id: null
+    size: 289440817
+    md5: 2c3957962f46ab94307b8b241da9bae8
+    duration: 519
+    duration_text: 08:39
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      Web 01 HTTP 04 Browser
+  lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
+    title: DJ 02.05 Building a Simple HTTP Server in Python (16:07)
+    youtube_id: PNt8zXl7EJ0
+    kaltura_id: null
+    size: 583612134
+    md5: 44bf6e8a5f66c61a3295c63a1f7e122f
+    duration: 967
+    duration_text: 16:07
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      Web 01 HTTP 05 Server
+  lesson-02-http/06-dev-mode-walkthrough.mov:
+    title: DJ 02.06 Understanding Browser Developer Mode (9:43)
+    youtube_id: 0JsWY3pmdak
+    kaltura_id: null
+    size: 188926333
+    md5: 0ff2868949406aa6aa75904e200326fa
+    duration: 583
+    duration_text: 09:43
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+
+      dev mode walkthrough
   lesson-02-http/07-DJ-11-BigPicture.m4v:
     title: DJ 02.07 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)
     youtube_id: zuCxAR3-CzA
@@ -21,19 +103,37 @@ entries:
     size: 369078195
     md5: bc166ff05f80e2cb3d69d65e2aea05b2
     duration: 1035
+    duration_text: 17:15
     description: |
       This video looks at how the various files work together to produce a Django application on PythonAnywhere.
 
       https://www.dj4e.com/
-  lesson-03-install/02-DJ-00-AutoGrader.m4v:
-    title: DJ 03.02 Using the Autograder in Django for Everybody (10:42)
-    youtube_id: zQvzXkiwILM
+  lesson-02-http/08-Web-04-Mini-Django.m4v:
+    title: DJ 02.08 Exploring the Mini Django Web Server (36:58)
+    youtube_id: q6LGpiVPwaA
     kaltura_id: null
-    size: 201329460
-    md5: 81a287b0b4d4d371708e397f3a04d3cb
-    duration: 642
+    size: 835841221
+    md5: def458f93c42ad8b395c4a76dd340948
+    duration: 2219
+    duration_text: 36:59
     description: |
-      For additional materials and autograded assignments, please see www.dj4e.com
+      This video is part of my Django for Everybody class.  I built a simple web server inspired by Django's design patterns to help students understand the internal workings of the Django code base and better understand how their Django application code fits within Django.
+
+      https://www.dj4e.com/
+      https://github.com/csev/mini_django/
+      http://www.dj4e.com/lectures/mini_django.pptx
+  lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
+    title: DJ 02.09 Virtual Hosting of Django Applications (4:31)
+    youtube_id: KA5ZM3E9OjY
+    kaltura_id: null
+    size: 246488741
+    md5: 34db47320ed4fa0ab842b1e559ccccaf
+    duration: 271
+    duration_text: 04:31
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 01 Hosting 02
   lesson-03-install/01-paw_install52_new.m4v:
     title: DJ 03.01 Installing Django 5.2 on PythonAnywhere (31:59)
     youtube_id: Aba5ZCfua8k
@@ -41,8 +141,31 @@ entries:
     size: 894692080
     md5: c08f5987579475723ac5ef6461cf5997
     duration: 1918
+    duration_text: 31:58
     description: |
       Please visit http://www.dj4e.com to access free supporting materials, as well as interactive exercises.
+  lesson-03-install/02-DJ-00-AutoGrader.m4v:
+    title: DJ 03.02 Using the Autograder in Django for Everybody (10:42)
+    youtube_id: zQvzXkiwILM
+    kaltura_id: null
+    size: 201329460
+    md5: 81a287b0b4d4d371708e397f3a04d3cb
+    duration: 642
+    duration_text: 10:42
+    description: |
+      For additional materials and autograded assignments, please see www.dj4e.com
+  lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
+    title: DJ 03.03 The Structure of a Django Application (7:04)
+    youtube_id: jmX27FrCqqs
+    kaltura_id: null
+    size: 360052905
+    md5: a0238756779742226515fc3a8fa8a38e
+    duration: 424
+    duration_text: 07:04
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 01 Hosting 01
   lesson-03-install/04-paw_install_errors_52.m4v:
     title: DJ 03.04 Fixing Django 5.2 Errors on PythonAnywhere (19:39)
     youtube_id: IYH_BkpHf3s
@@ -50,23 +173,13 @@ entries:
     size: 543135960
     md5: af93e420b0815fdd9c7e1fafc71f5e64
     duration: 1178
-    description: null
-  lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
-    title: DJ 03.03 The Structure of a Django Application (7:04)
-    youtube_id: jmX27FrCqqs
-    kaltura_id: null
-    size: 360052905
-    md5: null
-    duration: 424
-    description: null
-  lesson-04-shell/01-01_paw_shell-DJ4.m4v:
-    title: 01 01 paw shell DJ4
-    youtube_id: null
-    kaltura_id: null
-    size: 422759127
-    md5: 9e0368a42bbf7c12f1b7294d5bd5ede3
-    duration: 1142
-    description: null
+    duration_text: 19:38
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+
+      https://www.dj4e.com/assn/dj4e_errors52.md
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
   lesson-04-shell/01-01_paw_shell.m4v:
     title: DJ 04.01 Using the Command Line Shell on PythonAnywhere (5.2) (18.28)
     youtube_id: a7YIQb8juQk
@@ -74,6 +187,7 @@ entries:
     size: 412719254
     md5: 4d190cfafdbb30c984ea109056a675ac
     duration: 1107
+    duration_text: 18:27
     description: |
       http://www.dj4e.com - Django for Everybody 
 
@@ -85,6 +199,7 @@ entries:
     size: 308216735
     md5: 97a8a9ef2d2f53a1cd22e97f291c634c
     duration: 353
+    duration_text: 05:53
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -97,6 +212,7 @@ entries:
     size: 736221114
     md5: 0f08651f557381879c8dd52f02299dcd
     duration: 833
+    duration_text: 13:53
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -110,12 +226,52 @@ entries:
     size: 315268951
     md5: b3b074ea3592fd41817dbcd0754005f4
     duration: 814
+    duration_text: 13:34
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
 
 
       Web 02 HTML Code 2017 01 20 720
+  lesson-06-css/01-Web-02-CSS-A.m4v:
+    title: DJ 06.01 CSS - Cascading Style Sheets - (Part 1) (12:47)
+    youtube_id: blWx62Js7T0
+    kaltura_id: null
+    size: 1014562175
+    md5: 59a342b5694042c4f024fdd9549a5692
+    duration: 767
+    duration_text: 12:47
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+
+      Web 03 CSS A 2017 01 26 1080
+  lesson-06-css/02-Web-02-CSS-B.m4v:
+    title: DJ 06.02 CSS - Cascading Style Sheets - (Part 2) (15:03)
+    youtube_id: nMU8wMgasJ8
+    kaltura_id: null
+    size: 798259696
+    md5: 7a5838546d6d1d045a40f8a2dad6ae6b
+    duration: 903
+    duration_text: 15:03
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+
+      Web 03 CSS B 2017 01 26 1080
+  lesson-06-css/03-Web-02-CSS-C.m4v:
+    title: DJ 06.03 CSS - Cascading Style Sheets - (Part 3) (13:40)
+    youtube_id: 7KWtFdqXiqE
+    kaltura_id: null
+    size: 722523866
+    md5: 7adffde9563034f1472bc68c3c78db9a
+    duration: 819
+    duration_text: 13:39
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+
+      Web 03 CSS C 2017 01 26 1080
   lesson-06-css/04-Web-03-CSS-Code-A.m4v:
     title: DJ 06.04 CSS - Sample Code Walkthrough (Part 1) (13:26)
     youtube_id: 2Eu96WnoHBY
@@ -123,6 +279,7 @@ entries:
     size: 275479673
     md5: 6c71df887f6be733bef3e7094cef9432
     duration: 805
+    duration_text: 13:25
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -134,6 +291,7 @@ entries:
     size: 728851423
     md5: bfb68803532a83af00787f3c8b0aa34f
     duration: 1549
+    duration_text: 25:49
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -147,6 +305,7 @@ entries:
     size: 837093031
     md5: 57c079a6bd957d1d06b6ba79f65d001c
     duration: 1137
+    duration_text: 18:57
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -158,6 +317,7 @@ entries:
     size: 552785837
     md5: 2aa5930b957181089429369b080b37b6
     duration: 704
+    duration_text: 11:44
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -169,6 +329,7 @@ entries:
     size: 203949001
     md5: 46e0cd86570e6a671b777eafbd48d0fd
     duration: 519
+    duration_text: 08:39
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -182,6 +343,7 @@ entries:
     size: 676198456
     md5: 5db52885718a7f74cf4907436dec2019
     duration: 1199
+    duration_text: 19:59
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
@@ -193,10 +355,24 @@ entries:
     size: 295128059
     md5: 1a5c66a44d35d200b73c62b52d7d7e52
     duration: 474
+    duration_text: 07:54
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
 
       DJ 03 Many 05 Migrate
+  lesson-08-models/03-04_paw_models.m4v:
+    title: 'DJ 08.03 Demonstration: Django Single Table Models (11:09)'
+    youtube_id: p5K5hFiJ-GI
+    kaltura_id: null
+    size: 337752681
+    md5: d17b2fa88202aca6b25fc6acc79b698e
+    duration: 691
+    duration_text: 11:31
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+
+      django model 02 walkthrough
   lesson-08-models/03-04_paw_models_2026.m4v:
     title: 'DJ 08.03 Demonstration: Django Project Tutorial 2 (29:20)'
     youtube_id: VmWRxV6iAPI
@@ -204,6 +380,7 @@ entries:
     size: 817510920
     md5: d70b3e2d65af95f8c4eb67afbfd0f739
     duration: 1760
+    duration_text: 29:20
     description: |
       http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
   lesson-08-models/04-tut2-reset-database-edit.mov:
@@ -213,6 +390,7 @@ entries:
     size: 135272641
     md5: 1026f4f2dc9f35aff059934adeca0bd6
     duration: 347
+    duration_text: 05:47
     description: |
       http://www.dj4e.com - Django for Everybody 
 
@@ -221,6 +399,150 @@ entries:
 
 
       tut2 reset database edit
+  lesson-09-mvc/01-DJ-05-MVC.m4v:
+    title: DJ 09.01 Model View Controller in Django (7:07)
+    youtube_id: XvWG5KMncOU
+    kaltura_id: null
+    size: 274340249
+    md5: 634d7df2b7c8b8a8eebbc5868f0faab7
+    duration: 427
+    duration_text: 07:07
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 05 MVC
+  lesson-10-views/01-DJ-06-Views-01-Urls.m4v:
+    title: DJ 10.01 URL Routing in Django (6:59)
+    youtube_id: AQFC13D2mRM
+    kaltura_id: null
+    size: 285504305
+    md5: 2b1fd4e24a27be6bffcc9d17c85cd08b
+    duration: 419
+    duration_text: 06:59
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 01 Urls
+  lesson-10-views/02-DJ-06-Views-02-Views.m4v:
+    title: DJ 10.02 Django Views (6:19)
+    youtube_id: 9Qk4vJMssMo
+    kaltura_id: null
+    size: 160577454
+    md5: abf0aabff173f44183e48a00aa8568b6
+    duration: 379
+    duration_text: 06:19
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 02 Views
+  lesson-10-views/03-DJ-06-Views-03-Detail.m4v:
+    title: DJ 10.03 Inside Django Views and HTML Escaping in Django (15:36)
+    youtube_id: SAAWE4Hz6Mk
+    kaltura_id: null
+    size: 330070099
+    md5: 8f3c2418bb0a059dd1b98ab8bc2786fe
+    duration: 936
+    duration_text: 15:36
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 03 Detail
+  lesson-10-views/04-DJ-06-Views-04-Templates.m4v:
+    title: DJ 10.04 Using Templates in Django (10:05)
+    youtube_id: mTvWrpMGWBA
+    kaltura_id: null
+    size: 296530066
+    md5: 615c03b6763272b3d6ff7a95f07ce67c
+    duration: 605
+    duration_text: 10:05
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 04 Templates
+  lesson-10-views/05-DJ-06-Views-05-DTL.m4v:
+    title: DJ 10.05 Using the Django Template Language (DTL) (11:00)
+    youtube_id: teL44ugGpSs
+    kaltura_id: null
+    size: 409350814
+    md5: 49b9e017a0b7a96190ffa9651abce141
+    duration: 659
+    duration_text: 10:59
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 05 DTL
+  lesson-10-views/06-DJ-06-Views-06-Inherit.m4v:
+    title: DJ 10.06 Inheritance in Django Templates (6:06)
+    youtube_id: IMgml67lH9Y
+    kaltura_id: null
+    size: 184307858
+    md5: 1932106873247ce98b686b95d7e34085
+    duration: 365
+    duration_text: 06:05
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 06 Inherit
+  lesson-10-views/07-DJ-06-Views-07-Reverse.m4v:
+    title: DJ 10.07 Reversing Django URLs (12:52)
+    youtube_id: YT60BZJjySg
+    kaltura_id: null
+    size: 396011695
+    md5: 648d7ec42f2a8087b2db7293a07af059
+    duration: 772
+    duration_text: 12:52
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 07 Reverse
+  lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v:
+    title: DJ 11.01 Objects - Introduction - Part 1 (10:40)
+    youtube_id: MafXTB8UXIg
+    kaltura_id: null
+    size: 556907486
+    md5: de0da2c5e764ee989b07437597646d58
+    duration: 640
+    duration_text: 10:40
+    description: |
+      http://www.py4e.com - Python for Everybody: Exploring Data
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.  You can see my entire online curriculum at https://online.dr-chuck.com
+  lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v:
+    title: DJ 11.02 Objects - A Sample Class - Part 2 (8:22)
+    youtube_id: cBgtQK6vhN4
+    kaltura_id: null
+    size: 293569965
+    md5: 8f5a3e8979ade3a11dda37f289802370
+    duration: 501
+    duration_text: 08:21
+    description: |
+      http://www.py4e.com - Python for Everybody: Exploring Data
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises. You can see my entire online curriculum including a course focused on how you might build a Python object implementation in C at https://online.dr-chuck.com
+  lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v:
+    title: DJ 11.03 Objects - Lifecycle - Part 3 (6:09)
+    youtube_id: QSaHfuMf5QI
+    kaltura_id: null
+    size: 194923962
+    md5: ec05670c7a5a4cd8ea9a0665f88fc9fa
+    duration: 369
+    duration_text: 06:09
+    description: |
+      http://www.py4e.com - Python for Everybody: Exploring Data
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises. You can see my entire online curriculum including a course focused on how you might build a Python object implementation in C at https://online.dr-chuck.com
+  lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v:
+    title: DJ 11.04 Objects - Inheritance - Part 4 (7:34)
+    youtube_id: cOf7g_E2G8g
+    kaltura_id: null
+    size: 388741471
+    md5: bee7a351fa8b8998130a6267beda4eb2
+    duration: 454
+    duration_text: 07:34
+    description: |
+      http://www.py4e.com - Python for Everybody: Exploring Data
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises. You can see my entire online curriculum including a course focused on how you might build a Python object implementation in C at https://online.dr-chuck.com
   lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v:
     title: DJ 11.05 The True Story of Python Assignment Statements (7:30)
     youtube_id: zoD2GY11dcY
@@ -228,16 +550,564 @@ entries:
     size: 289134547
     md5: ad4a450261797abb0848d5383d5aa0ef
     duration: 449
+    duration_text: 07:29
     description: |
       This is a lecture that reveals how Python Assignment statements work.  (Hint: It is not the way it was described in Python for Everybody).  It is part of the www.dj4e.com - Django for Everybody lectures on Object Oriented Programming.
+  lesson-12-generic/01-DJ-06-Views-08-Generic.m4v:
+    title: DJ 12.01 Understanding Django Generic Views (16:28)
+    youtube_id: uPRabryhv5k
+    kaltura_id: null
+    size: 494345612
+    md5: b9a91397b455a4b1d1869f8134744c0b
+    duration: 988
+    duration_text: 16:28
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 06 Views 08 Generic
+  lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v:
+    title: DJ 13.01 Forms, GET, POST, and HTTP (8:19)
+    youtube_id: KqH0Pu2ZnIg
+    kaltura_id: null
+    size: 272816394
+    md5: 0b46e67de14dbe07836dcd0f6d1a794a
+    duration: 499
+    duration_text: 08:19
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 01 getpost
+  lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v:
+    title: DJ 13.02 Building HTML Forms (11:49)
+    youtube_id: iXgnkxwzZzM
+    kaltura_id: null
+    size: 160923558
+    md5: 124e69b3685087ca18f7714650bf505f
+    duration: 709
+    duration_text: 11:49
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 02 HTML
+  lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v:
+    title: DJ 13.03 Forms and Cross Site Request Forgery (CSRF) (5:52)
+    youtube_id: j-vdshWK9Lc
+    kaltura_id: null
+    size: 149209977
+    md5: b301d9943268892ecd4fdfddf82c7644
+    duration: 352
+    duration_text: 05:52
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 03 CSRF
+  lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v:
+    title: DJ 13.04 CSRF Support in Django (9:16)
+    youtube_id: w9Y6tIVGUTI
+    kaltura_id: null
+    size: 195330930
+    md5: 7946cbb007e684592df1645648f2f130
+    duration: 556
+    duration_text: 09:16
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 04 Form CSRF
+  lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v:
+    title: DJ 13.05 The POST Refresh Pattern (3:26)
+    youtube_id: Cug7pkRWQM0
+    kaltura_id: null
+    size: 175038782
+    md5: 70debc98870c86f7b110c50448ed88a2
+    duration: 206
+    duration_text: 03:26
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 05 Refresh
+  lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v:
+    title: DJ 13.06 Implementing POST Redirect in Django (8:04)
+    youtube_id: a_ahU4F1V2g
+    kaltura_id: null
+    size: 169515065
+    md5: fdda1f5a02fa638c8dc7c323f9004d48
+    duration: 484
+    duration_text: 08:04
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 06 Redirect
+  lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v:
+    title: DJ 14.01 Cookies in Browsers and Django (9:43)
+    youtube_id: C75IW38hKI8
+    kaltura_id: null
+    size: 323914098
+    md5: 17ec8a595445e5add1f4ee5584a3406a
+    duration: 583
+    duration_text: 09:43
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 07 Cookies 01 Cookies
+  lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v:
+    title: DJ 14.02 Using Sessions in Django (12:33)
+    youtube_id: RjykNmVdcgI
+    kaltura_id: null
+    size: 413985349
+    md5: e347591b8cbcacf521e0023fff03c820
+    duration: 753
+    duration_text: 12:33
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 07 Cookies 02 Sessions
+  lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v:
+    title: DJ 15.01 One-to-Many Models Overview (5:52)
+    youtube_id: vgyYEE7XDzw
+    kaltura_id: null
+    size: 240192203
+    md5: e73c1e6dc17ad84471f0422a6b8cf9e4
+    duration: 352
+    duration_text: 05:52
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 03 Many 01 Overview
+  lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v:
+    title: DJ 15.02 Removing Replication in One-to-Many Models (8:36)
+    youtube_id: JCQYxILYNIE
+    kaltura_id: null
+    size: 172907743
+    md5: b88eda3b177930896b411a4c31d916b8
+    duration: 516
+    duration_text: 08:36
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 03 Many 02 Replication
+  lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v:
+    title: DJ 15.03 Storing Primary and Foreign Keys in a Database (2:46)
+    youtube_id: xmyE-zQaBEI
+    kaltura_id: null
+    size: 143069593
+    md5: b04fe0304ec00d45fdc57193bf9f9fd3
+    duration: 166
+    duration_text: 02:46
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 03 Many 03 Physical
+  lesson-15-one-many/04-DJ-03-Many-04-Django.m4v:
+    title: DJ 15.04 Representing One-To-Many Models in Django (9:56)
+    youtube_id: 9t-bP963_jY
+    kaltura_id: null
+    size: 279629253
+    md5: 5cb21018f0db46c210bfa8e00d94b47f
+    duration: 596
+    duration_text: 09:56
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 03 Many 04 Django
+  lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v:
+    title: DJ 15.05 Using the Django Shell to Explore One-to-Many Models (7:45)
+    youtube_id: aGtY4xkirsE
+    kaltura_id: null
+    size: 282862227
+    md5: 0296bcedb356e69fa698d46c03cd74d0
+    duration: 465
+    duration_text: 07:45
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 03 Many 05 Shell 1080 - 2021-01
+  lesson-16-users/01-DJ-09-Login-01-Users.m4v:
+    title: DJ 16.01 Creating and Managing Users in Django (3:45)
+    youtube_id: E_X5Kr6xmNY
+    kaltura_id: null
+    size: 101590052
+    md5: f8ca22c3dd55d403ec994f914f8e9035
+    duration: 225
+    duration_text: 03:45
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 08 Login 01 Users
+  lesson-16-users/02-DJ-09-Login-02-Urls.m4v:
+    title: DJ 16.02 Login and Logout URLs in Django (7:24)
+    youtube_id: tNofsgLH7c4
+    kaltura_id: null
+    size: 173073801
+    md5: c907a7b8a9208e44a888bcdf39875d9e
+    duration: 443
+    duration_text: 07:23
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 08 Login 02 Urls
+  lesson-16-users/03-DJ-09-Login-03-Views.m4v:
+    title: DJ 16.03 Login and Views in Django (10:15)
+    youtube_id: n5Xwqz1IJck
+    kaltura_id: null
+    size: 330227948
+    md5: 16cdc0d21ba48a747fefb00d523d1354
+    duration: 616
+    duration_text: 10:16
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 08 Login 03 Views
+  lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v:
+    title: DJ 17.01 Using Django Forms Capabilities (13:26)
+    youtube_id: bYlgvmAPrp0
+    kaltura_id: null
+    size: 317590617
+    md5: a883650c250b1978249f50311f2a08e5
+    duration: 806
+    duration_text: 13:26
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 07 FormsPy
+  lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v:
+    title: DJ 17.02 Data Validation with Django Forms (9:12)
+    youtube_id: kRXiMIFKzoQ
+    kaltura_id: null
+    size: 317916454
+    md5: e73074325664b19d5f61564d7b007d8b
+    duration: 553
+    duration_text: 09:13
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 09 Forms 08 Validation
+  lesson-18-autos/01-samples-autos-walkthrough.mov:
+    title: DJ 18.01 Walkthrough of the DJ4E Autos Sample - Generic Edit Forms (36:12)
+    youtube_id: 3kHgAE-MidA
+    kaltura_id: null
+    size: 621913399
+    md5: 120f91475882da421f71f3e2acc8c4d5
+    duration: 2173
+    duration_text: 36:13
+    description: |
+      https://samples.dj4e.com/
+
+      samples autos walkthrough
   lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v:
-    title: 01 mkt 00 setup sqlite
-    youtube_id: null
+    title: DJ 20.01 DJ4E Marketplace - Initial Setup / Install  (9:46)
+    youtube_id: 9WZHLlOyoXY
     kaltura_id: null
     size: 260201707
     md5: a4167197da8e408b49f6fce716a4ad9a
     duration: 585
-    description: null
+    duration_text: 09:45
+    description: |
+      This video walks through the initial setup of the Marketplace application from github:
+
+      https://www.dj4e.com/assn/dj4e_mkt0.md
+
+      https://github.com/csev/dj4e-market
+
+      Note: As of January 26, 2026 PythonAnywhere no longer provides MySQL on free accounts so these instructions have been updated to use SQLite.
+  lesson-22-owned/01-DJ-12-Owned-01.m4v:
+    title: DJ 22.01 Owned Rows in Django - Overview (6:02)
+    youtube_id: YTK-Sx4OUqs
+    kaltura_id: null
+    size: 182181435
+    md5: 109263db658a02a8e2a759cb951925eb
+    duration: 362
+    duration_text: 06:02
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 12 Owned 01 1080
+  lesson-22-owned/02-DJ-12-Owned-02.m4v:
+    title: DJ 22.02 Generic Views Review (10:17)
+    youtube_id: z4iJ3Njbc9g
+    kaltura_id: null
+    size: 240442902
+    md5: b5984b9df186ef5c203bf7b878749a0c
+    duration: 617
+    duration_text: 10:17
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 12 Owned 02 1080
+  lesson-22-owned/03-DJ-12-Owned-03.m4v:
+    title: DJ 22.03 Owned Rows in Django - owner.py (13:03)
+    youtube_id: hznUKCsk8X8
+    kaltura_id: null
+    size: 414981543
+    md5: 69263bab9795ab53901eadef47d32c06
+    duration: 783
+    duration_text: 13:03
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 12 Owned 03 1080
+  lesson-23-ads1/01-samples-crispy-walkthrough-23.mov:
+    title: DJ 23.01 Walking through the DJ4E Crispy Forms (crispy) Sample Code (9:14)
+    youtube_id: kQORvrIzsZs
+    kaltura_id: null
+    size: 132119126
+    md5: 1e0a1bc19832b05c2b78338635b891ec
+    duration: 554
+    duration_text: 09:14
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+  lesson-23-ads1/02-samples-myarts-walkthrough.mov:
+    title: DJ 23.02 Walking through the DJ4E My Articles (myarts) Sample Code (30:13)
+    youtube_id: iHvJZ_lvXB4
+    kaltura_id: null
+    size: 522434774
+    md5: 5ebb39ac0065ddd232afe7de67faf8af
+    duration: 1813
+    duration_text: 30:13
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+
+      samples myarts walkthrough
+  lesson-23-ads1/03-samples-menu-walkthrough-edited.mov:
+    title: DJ 23.03 Walking through the DJ4E Bootstrap Menu (menu) Sample Code (14:21)
+    youtube_id: nuz_zXWoCo8
+    kaltura_id: null
+    size: 367059338
+    md5: 8326f149b71bf50934e34e62587dbe42
+    duration: 861
+    duration_text: 14:21
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+
+      samples menu walkthrough edited
+  lesson-24-javascript/01-JS-01-01-JavaScript.m4v:
+    title: DJ 24.01 JavaScript - Overview and History (9:59)
+    youtube_id: xBpKUM1CTBQ
+    kaltura_id: null
+    size: 525956795
+    md5: 76985df5e533c7a6674e548028b1d473
+    duration: 599
+    duration_text: 09:59
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+      JS 01 JavaScript 1080
+  lesson-24-javascript/02-JS-01-02-Browser.m4v:
+    title: DJ 24.02 JavaScript - In the Browser (14:02)
+    youtube_id: wnUhEMhEeDs
+    kaltura_id: null
+    size: 416905451
+    md5: be574fce2e50c4a8423960af4b679ac1
+    duration: 842
+    duration_text: 14:02
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+      JS 01 02 Language 1080
+  lesson-24-javascript/03-JS-01-03-Language.m4v:
+    title: DJ 24.03 JavaScript - The Language (16:57)
+    youtube_id: BtIhwBPeyp4
+    kaltura_id: null
+    size: 522909447
+    md5: 97be087c576368a315726876964f9af9
+    duration: 1017
+    duration_text: 16:57
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+
+
+      JS 01 03 Language Finite 20 11 18 1080
+  lesson-24-javascript/04-JS-01-04-Functions-Arrays.m4v:
+    title: DJ 24.04 JavaScript - Functions and Arrays (7:03)
+    youtube_id: a7wPzoX9o_8
+    kaltura_id: null
+    size: 141640319
+    md5: c71fa8513c84a6bd715de1ee8d626005
+    duration: 422
+    duration_text: 07:02
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+      JS 01 04 Functions Arrays 1080
+  lesson-24-javascript/05-JS-01-05-If-Loops.m4v:
+    title: DJ 24.05 JavaScript - Loops and Conditional (6:37)
+    youtube_id: XtKhAo9IO5Q
+    kaltura_id: null
+    size: 122152987
+    md5: a10d87c295296dbc6e3268023b1c6b86
+    duration: 397
+    duration_text: 06:37
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+
+
+      JS 01 05 If Loops 1080 B
+  lesson-25-jsoo/01-JS-02-01-Overview.m4v:
+    title: DJ 25.01 JavaScript Object Oriented Concepts (4:21)
+    youtube_id: N_ZB9VnXDWo
+    kaltura_id: null
+    size: 166197700
+    md5: 80f4477c3717bc3f3dc6b0215e08af92
+    duration: 260
+    duration_text: 04:20
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+      JS 02 01 Overview 1080
+  lesson-25-jsoo/02-JS-02-02-Code.m4v:
+    title: DJ 25.02 JavaScript Object Oriented Classes (13:13)
+    youtube_id: DLWYj1_j1Is
+    kaltura_id: null
+    size: 433837110
+    md5: 784dea00372a30cfae900602a4848d69
+    duration: 793
+    duration_text: 13:13
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+
+
+
+      JS 02 02 Code 1080
+  lesson-26-ads-pictures/01-samples-pics-combined.mov:
+    title: DJ 26.01 Walking through the DJ4E Pictures (pics) Sample Code (33:06)
+    youtube_id: tanl9CthvHE
+    kaltura_id: null
+    size: 808848381
+    md5: ea597d2a7dde53beb59f5191d11d4c70
+    duration: 1986
+    duration_text: 33:06
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+
+
+
+      samples pics combined
+  lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v:
+    title: DJ 27.01 Many-to-Many Overview (5:34)
+    youtube_id: JI4ZOFOubLY
+    kaltura_id: null
+    size: 192524578
+    md5: f86acaffa8c1b6dee537a180469cc6d3
+    duration: 334
+    duration_text: 05:34
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 04 Many 01 Overview
+  lesson-27-many-many/02-DJ-04-Many-02-Many.m4v:
+    title: DJ 27.02 A Simple Many-To-Many Example in Django (12:35)
+    youtube_id: gf2-J9YOMcc
+    kaltura_id: null
+    size: 305034109
+    md5: c2cfb78b5e165d2dc06f7f087e2f0bee
+    duration: 755
+    duration_text: 12:35
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 04 Many 02 Many
+  lesson-27-many-many/03-DJ-04-Many-03-Course.m4v:
+    title: DJ 27.03 Many-To-Many Data Models for Courses and Membership (8:38)
+    youtube_id: kY_1a057phM
+    kaltura_id: null
+    size: 197590682
+    md5: 7891d10d5ca6801a6733f33c1f06d93f
+    duration: 518
+    duration_text: 08:38
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+
+      DJ 04 Many 03 Course
+  lesson-28-ads-comments/01-samples-forums-walkthrough.mov:
+    title: DJ 28.01 Walking through the DJ4E Forums (forums) Sample Code (25:28)
+    youtube_id: mgcj3V56X-A
+    kaltura_id: null
+    size: 425926829
+    md5: d62ffe15f846107fa5d49942fbf34970
+    duration: 1528
+    duration_text: 25:28
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+       
+
+      samples forums walkthrough
+  lesson-29-browser/01-JS-03-Browser-01-Execution.m4v:
+    title: DJ 29.01 The JavaScript Execution Model In the Browser (8:24)
+    youtube_id: tkZcNu-RGQA
+    kaltura_id: null
+    size: 182065940
+    md5: aabf440bc42ab158818ee4f5454a079b
+    duration: 504
+    duration_text: 08:24
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+  lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v:
+    title: DJ 29.02 Working with the Document Object Model (DOM) in JavaScript (5:40)
+    youtube_id: dPpGAYZGrgs
+    kaltura_id: null
+    size: 194913745
+    md5: 1b8b30ac381829c2788231d5c3d834f4
+    duration: 340
+    duration_text: 05:40
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+  lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v:
+    title: DJ 29.03 Modifying the Document Object Model (DOM) in JavaScript (8:24)
+    youtube_id: x-TaJHWs4nU
+    kaltura_id: null
+    size: 185017199
+    md5: 3cafca8dee0cec70a274eab4774fa4d8
+    duration: 504
+    duration_text: 08:24
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+  lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v:
+    title: DJ 29.04 JavaScript Events in the Browser (7:54)
+    youtube_id: _QVcbmGqm2o
+    kaltura_id: null
+    size: 305324921
+    md5: be22cb3be0e3b17461561e8015c04750
+    duration: 474
+    duration_text: 07:54
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
   lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v:
     title: DJ 29.05 Using Fetch to make Network Requests in JavaScript (6:27)
     youtube_id: m1MBEktyC7U
@@ -245,6 +1115,7 @@ entries:
     size: 200555363
     md5: 5396a3f71afeece6b601041990df6166
     duration: 386
+    duration_text: 06:26
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
@@ -256,10 +1127,108 @@ entries:
     size: 423914776
     md5: 236f85c68284f53428b588273eee5236
     duration: 665
+    duration_text: 11:05
     description: |
       http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
 
       Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+  lesson-30-json/01-JS-04-JSON-01-JSON.m4v:
+    title: DJ 30.01 JSON - JavaScript Object Notation (8:34)
+    youtube_id: thhKcuHNQzo
+    kaltura_id: null
+    size: 234285746
+    md5: baed3f5bbe5150ff33e9c850260f6025
+    duration: 514
+    duration_text: 08:34
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+  lesson-30-json/02-samples-fetch-walkthrough-23.mov:
+    title: DJ 30.02 Walking through the DJ4E JSON / Fetch (fetch) Sample Code (21:53)
+    youtube_id: KcgPJYil5Do
+    kaltura_id: null
+    size: 363973875
+    md5: 29c2b340b653a673ffb320cad21d027c
+    duration: 1313
+    duration_text: 21:53
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+  lesson-30-json/03-JS-04-JSON-02-Chat.m4v:
+    title: DJ 30.03 JSON - AJAX and CHAT (8:05)
+    youtube_id: PJ1LkwGcOsk
+    kaltura_id: null
+    size: 230417035
+    md5: 15f6ab6f9fa87a38b3dde4d3b659e95e
+    duration: 485
+    duration_text: 08:05
+    description: |
+      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+
+      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+  lesson-30-json/04-samples-chat-walkthrough-23.mov:
+    title: DJ 30.04 Walking through the DJ4E JSON (chat) Sample Code (16:03)
+    youtube_id: v5CKyLS701M
+    kaltura_id: null
+    size: 256069455
+    md5: 416a9c6503ea9f881930d1a73630491e
+    duration: 963
+    duration_text: 16:03
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+  lesson-31-ads3/01-samples-favicon-walkthrough.mov:
+    title: DJ 31.01 Walking through the DJ4E Favicon Sample Code (4:11)
+    youtube_id: C1WGD5hFdT8
+    kaltura_id: null
+    size: 95715245
+    md5: 1368bed1d361ca78785f31e99f1617ad
+    duration: 251
+    duration_text: 04:11
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+
+
+
+      samples favicon walkthrough
+  lesson-31-ads3/02-samples-social-github-walkthrough.mov:
+    title: DJ 31.02 DJ4E Samples Walkthrough - Social Login (8:47)
+    youtube_id: NctpQ-2Kdtw
+    kaltura_id: null
+    size: 154041153
+    md5: ba347407d7e60b5504eca97a85e33ca9
+    duration: 527
+    duration_text: 08:47
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
+
+
+
+      samples social github walkthrough
+  lesson-31-ads3/03-samples-favs-720.mov:
+    title: DJ 31.03 Walking through the DJ4E Favorites (favwc) Sample Code (34:17)
+    youtube_id: CFF0WQLj1as
+    kaltura_id: null
+    size: 800409093
+    md5: 8c89cfebf0e128fe38a82ddce37ca294
+    duration: 1820
+    duration_text: 30:20
+    description: |
+      http://www.dj4e.com - Django for Everybody 
+      http://samples.dj4e.com
+
+      Please visit the web site to access free supporting materials, as well as interactive exercises.
   lesson-32-ads-search/01-samples-well-walkthrough.mov:
     title: DJ 32.01 DJ4E Samples Walkthrough - search (well) (21:30)
     youtube_id: 4pOExZHnL9k
@@ -267,6 +1236,7 @@ entries:
     size: 369475448
     md5: d7195aad587d208c02c495d28f010dbf
     duration: 1290
+    duration_text: 21:30
     description: |
       http://www.dj4e.com - Django for Everybody 
       http://samples.dj4e.com
@@ -276,3 +1246,11 @@ entries:
 
 
       samples well walkthrough
+  lesson-04-shell/01-01_paw_shell-DJ4.m4v:
+    title: 01 01 paw shell DJ4
+    youtube_id: null
+    kaltura_id: null
+    size: 422759127
+    md5: 9e0368a42bbf7c12f1b7294d5bd5ede3
+    duration: 1142
+    description: null
