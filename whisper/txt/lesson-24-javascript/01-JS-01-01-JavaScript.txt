@@ -1,0 +1,117 @@
+ Hello and welcome to our lecture about JavaScript. JavaScript is another
+ programming language and it's, if the Python is the only language you know, it's
+ quite a bit different than Python. So JavaScript was originally designed as an
+ addition to HTML and CSS and it really started as a programming language inside
+ of the browser that runs right in the browser. Even though it's named like
+ JavaScript, like Java, it's really more like Python in how it works and it,
+ except that it has a C-like syntax and it's really an amazing language and a lot
+ of people, for a lot of people, it's their number one language, their favorite
+ language and so it's worth learning JavaScript even if you love Python. So
+ JavaScript is an interesting language in that it was built very quickly in ten
+ days in 1995 by a fellow named Brennan Icke. Brennan was a PhD in physics and he
+ knew a lot about programming languages and formal languages and how to build
+ compilers really fast and so the idea was to make a sort of a subversion of
+ Java, like a lightweight version of Java and put it in the browser. Today it's
+ gone through a standardization process and it's called ECMA script and so if we
+ were to take a look at the history of programming languages, you know probably,
+ oops, you know by now, you know Python, right? And Python is a great language and
+ JavaScript is the other language we're going to learn here and this just sort
+ of puts them in some context so that you understand a bit of the influences.
+ So in the very beginnings, in the 50s, 1950s, we programmed in assembly
+ language and then most computers all they could do is numeric calculations
+ very well and so languages like Fortran came along. Probably the, there's lots of
+ languages and so if you go back to the 50s and the 60s, people were inventing
+ languages all the time. But a language that really for me changed everything
+ was the C language. Invented in 1972 and I still want to do a really cool class on
+ C. C is not a good language to write everything in. It's a, it's very much
+ like a assembly language. It mirrors how computers really work which is kind of
+ different than how we program computers in a lot of ways. But the other thing
+ that C was doing was it was acknowledging that computers were less
+ and less about numerical computations and more and more about strings and
+ and you know words and messages and things like that. So if you, if you, you
+ know, it's probably 95% of the calculations and computers have to do
+ with moving data around not numbers around and C was great at that. So all
+ the languages I used up till I started using C, they were kind of a numeric
+ system that was sort of fighting to do characters well and the C was a very
+ well done character system. So it became the language, C is the language that's a
+ kind of the mother language of all this. It's the Linux is written in C, Python
+ is written in C, PHP is written in C, JavaScript is probably written in C and
+ so it's like the lowest level language that we go to these days and when you're
+ writing a language and you want it to be fast the implementation of that language
+ is often written in C. C++ came from C as an object oriented variation and we
+ talked a lot about object oriented Python. We're going to talk about object
+ oriented JavaScript coming up and so C++ influenced a whole lot of systems that
+ had to do in a sense object C++ influenced Python as well. And so C++
+ has added an object oriented layer. It's actually probably the least object
+ oriented of any of these other languages on here but it had object oriented
+ concepts. C# was Microsoft's version of that. Java was open source, the thing that
+ became the the sort of progenitor of JavaScript but again they're not as
+ related as you might think. It's really JavaScript came from C more than it came
+ from Java. There's a few things that are imitating Java and and so all of the
+ things above this line are semicolon and curly brace. They use semicolon and
+ curly brace to end lines and to begin and end blocks. Curly brace, beginning
+ curly brace and end curly brace. And then there is this other set of programming
+ languages that don't use semicolon and curly brace and C was the first language
+ that did the semicolon and curly brace. And so these languages that are kind of
+ below this line, Bash, Perl, Python and PHP are really actually PHP is a
+ semicolon and curly brace as well. Python is the language we've been learning and
+ it's it's really the odd language. So we're going to learn a language that's
+ in the category that makes it easier for you to learn C or C++ or Java or
+ Objective-C. So this is worth learning even though you know Python. There was
+ another movement that was sort of C is a very high performance language and
+ really aimed computer scientists to build complex systems like like Linux. But
+ then there were languages for like the end user that just got work done but
+ weren't seen as like super performant for professionals etc etc etc. And so
+ Bash which is the Linux shell where you're typing CD and LS if you're
+ familiar with that. Perl was a report generation language that introduced the
+ concept of associative arrays and most people joke about Perl. I don't like
+ Perl because I can never read my code after I write it. I can write it but I
+ can't read it afterwards. But it introduced a lot of wonderful concepts
+ like associative arrays which we would call dictionaries in Python. And Perl
+ it really definitely influenced Python because of its ease of
+ programming. So what Perl was really good at was allowing a person with very
+ little formal training on data structures to be able to use associative
+ arrays and nested associative arrays to create pretty sophisticated data
+ structures. And Python came along with that and PHP also original PHP
+ stood for Perl hypertext processor. Now it doesn't stand for that but Perl and
+ Python and PHP are in this category of sort of interpreted easy to use
+ languages with strings that work really nice and they just make life a lot
+ easier. In languages like C strings are very difficult. So if we take a
+ look at this right we've learned Python and we're going to learn JavaScript next
+ and so we're moving in but again JavaScript you can think of as
+ unlocking a whole bunch of other languages and so it's worth learning it a
+ little bit even though in this class we're not going to go into any great
+ detail because mostly you're going to be cutting and pasting JavaScript and then
+ tweaking it and reading it and debugging it. So we're really not focusing on
+ writing too much new JavaScript. So there's a couple of situations where
+ you'll find yourself writing some JavaScript. One is augmenting HTML. That
+ will be the first thing we'll do. There is this thing in the browser that runs
+ JavaScript and the way it interacts with the browser's UI is through the document
+ object model. You can add a library like jQuery to make that interaction easier
+ because the document object models aren't as portable across browsers as we
+ would like sometimes and then to keep going you find that you're building more
+ and more of your application logic in the browser and so they say you know
+ what I just want to write the the model in view part maybe I mean the controller
+ in view part in the browser in JavaScript using a templating language
+ and you can use like viewer react to do that and then if you keep on going you
+ can add JavaScript is just a language and they've implemented it inside the
+ server using as a server-based language and we would use Django and Python as
+ our server-based language but you can actually write your entire application
+ front to back in JavaScript and use something like node to run the server
+ side of it that's actually talking to the database. So there's lots and lots
+ JavaScript is just like you're you're opening the door into a lot of really
+ wonderful capabilities. So like I said it is in the syntax family of Java and that
+ is that it has semicolons to end lines white space doesn't matter open curly
+ brace and close curly brace start and end blocks whereas in in Python you just end
+ the line and you indent to indicate a block of text and you de-indent to
+ indicate the end of that block of text. Now I will admit that Python is not my
+ favorite syntax it is my favorite language in that I like its libraries I
+ like how it thinks about things I like its object oriented patterns I like a
+ lot about it but I do like my curly braces because for me I like to see the
+ beginning and end of blocks whereas in Python you only see the beginning but
+ that's okay I'm just saying that now you're going to see some of this syntax
+ and it's look gonna look if Python's the only language you know it's gonna look
+ quite different. If you know Java it'd be like yeah of course I know that I've
+ been programming that for a long time. So up next we're going to talk about how we
+ work with JavaScript when we're sitting in a browser.
+ (upbeat music)

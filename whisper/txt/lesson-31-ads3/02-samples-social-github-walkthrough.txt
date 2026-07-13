@@ -1,0 +1,126 @@
+ Hello and welcome to another walk-through for Django For Everybody.
+ In this walk-through we're going to look at social login.
+ And we're going to use GitHub to do our login.
+ And we're going to use a piece of code called social login framework.
+ And you can read this, this is the link documentation to social login.
+ You can read through all this stuff.
+ But I've actually, in my home, I've already done most of this.
+ And if you've based some of your stuff on the settings.
+ So if you've been using my code for a while, every time you say manage.py,
+ it says if you want to use social login, please see this file.
+ And then, and which registration it's doing.
+ And so, we're actually going to, not really, it's not really broken.
+ But you'll notice now, I'm going to show you where these messages are coming from.
+ And what we are about to change.
+ So, this one over here.
+ So first off, where those messages are coming from is down here,
+ deep in the settings.py, byline 176.
+ It's going to import from githubsettings.py.
+ And githubsettings.py is a file.
+ But this file doesn't yet exist.
+ So if you go into djfree samples, you will see that there is a githubsettings dist,
+ but there is not a githubsettings.py.
+ So this blows up.
+ And otherwise, and it prints that message.
+ So there's where that message happens.
+ And so, if you look at the documentation,
+ we're going to put the github, oauth2, backend, et cetera, et cetera.
+ Okay?
+ So, what we need to do, basically, is we need to take this file.
+ There is a file called githubsettingsdist.py.
+ So now we have to make a new empty file called githubsettings.py.
+ So create that new empty file.
+ And then the first thing we're going to do is we're going to just take all of this
+ and we're going to paste it into it, so from the dist.
+ So this idea of a file with a dist name,
+ that means it's kind of the distribution file, it's not the real file.
+ And so I'm just going to save this file for now.
+ Now the problem, and so if I go here, back here,
+ I believe that at this point it won't say anything because we have a file.
+ All right?
+ And it says we've switched to using, it was using login,
+ and now it's using login social.
+ And so the login is a registration template.
+ So this was the login that you've been using until you turn the social on.
+ And it has some rules that says, you know, here's where you do the URL,
+ you get a form, et cetera, so you get to set this login.
+ It's a long time ago that we set this thing.
+ But social login, if you read all the documentation,
+ read all this documentation, social login,
+ you have a different way of doing it.
+ So this is asking if that social auth GitHub key has been set properly,
+ and that's this key right here, and otherwise it's not set.
+ So if it gets set, then it's going to do a link to this social begin GitHub.
+ And this is something that's documented in this Django framework.
+ So somewhere in here is the begin.
+ Yeah, so this is an example of how you call Google.
+ So you just do this social colon begin.
+ And this social, going back to settings.py,
+ oh, we've got to go into the URLs.py.
+ So let me go here and then go into URLs.py.
+ So we do add something here, and that is that we find,
+ we switch to social login, we try to import that same GitHub settings,
+ and if we do get GitHub settings, we switch to using the different template,
+ and you say template name and then use that as social for our social login.
+ And then it prints out this little error message.
+ So that redirects to social login,
+ and we also have OAuth, the namespace social for the social Django URLs.
+ Now that social Django URLs is configured by some of those settings.
+ OK, so we have this file called githubsettings.py,
+ but we can't use GitHub yet because we have to get a key and a secret.
+ And so the instructions are right here.
+ So we go to GitHub, developer settings.
+ Now I'm not going to show you the ones I'm using for the projects or the samples,
+ but what you do is you just add a new OAuth app.
+ My cool app samples.
+ And I give you some example things to put in here.
+ So actually this home page is really samples, dj4e.com, samples.
+ And then you've got to set the login, and this is what you're going to need.
+ I'm only going to update it.
+ I'm going to change this to be samples.dj4e.com.
+ And then I register the application.
+ And now I have an ID and a secret.
+ Don't worry, I'm going to delete this later.
+ So then what you do is you go into settings, not settings dist,
+ and then you go in and you paste that in, and then you paste this secret in.
+ I hope I got the secret right.
+ This secret.
+ So now I save it.
+ So I save it, and you go into my web tab, because this is my pay account.
+ And I'm going to go samples and reload samples.
+ I'll just go over here and I'll do a manage.py check.
+ And I hope everything is right still, but it's a good test.
+ And it is using the social login, and it looks fine.
+ So I've got that.
+ Now let's just see what happens when I say log out.
+ And now if I say log in, I get this login with GitHub, because I set that.
+ So if all goes well, I should be able to log into GitHub.
+ Now what's happening is GitHub is asking Charles Severance, me, the logged in user,
+ whether or not to share the data to my CoolApp samples.
+ So I'm going to authorize it, and then it's going to send back.
+ And then I'm logged in.
+ And interestingly, now it knows who I am.
+ It's a GitHub account.
+ And if I go into-- where are we at?
+ Where are the menus at?
+ Menu, because that is based on that email account.
+ That's a Gravatar that's based on the email account.
+ So now I'm logged in, and away it works.
+ So that's the basic idea.
+ It really comes down to create this GitHub settings, use the GitHub settings dist,
+ and away you go.
+ Yeah, the GitHub settings dist.
+ And you copy that into GitHub settings, and then you put your real account in there.
+ Now I'm going to go ahead and go back and delete this application,
+ so you can't use my keys.
+ Now it's not going to work anymore.
+ So there I go.
+ So I hope this was helpful to you, that it walked you through a little bit of what it takes
+ to get GitHub authentication working.
+ I would observe that the reason I chose GitHub is that you can do the same with Twitter
+ and you can do the same with Google, but they're a lot.
+ They don't trust you as much, and so you have to do a lot more work to prove to them
+ that you're worthy of using Google and Twitter instead of just-- or Facebook.
+ Those are all much higher bars to get permission to use it.
+ GitHub is really easy.
+ So I hope this was helpful. Cheers.

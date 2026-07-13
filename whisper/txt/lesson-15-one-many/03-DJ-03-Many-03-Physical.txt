@@ -1,0 +1,45 @@
+ So now what we're going to do is we're going to talk about how we can represent links in a database.
+ And so up till now I've just been drawing arrows and just assuming that you know how to do them.
+ And so here's some arrows, right?
+ We got some book instance rows that can somehow magically connect to some book rows,
+ and some book rows that can magically connect to a language row.
+ And so there's a way that we do this.
+ And we put what we call a key column in every one of our tables.
+ Key column, we call this the primary key, and we often call the name of the column the ID.
+ There's a way in the database to make it what's called auto-increment and
+ primary key and index it so it's really fast.
+ And so that then becomes the handle.
+ The primary keys are like the destination endpoint of the arrows, right?
+ So that's how we say English becomes language number one.
+ And Wisdom of Crowds is book number one, and Introduction to Networking is book
+ number two.
+ And so the ID is something that we then can use throughout the rest of the system.
+ Integer replication is not a problem, okay?
+ And so then what we do is we put columns in that we call foreign keys, right?
+ And so those foreign keys are the starting point of the arrows, right?
+ So book_id.
+ Now by convention, we name these by the name of the table followed by an underscore
+ followed by the word ID.
+ These are called foreign keys, foreign keys.
+ And so by having a foreign key everywhere we need to start an arrow and
+ a primary key everywhere we need to end an arrow.
+ Now really we pretty much put primary keys on every table so
+ that every row of every table has a primary key.
+ Now in this example, I've just got one foreign key per table, but
+ you can have more than one foreign key per table.
+ There could be another column here that points off to another table.
+ But that's it.
+ That's how we do it.
+ We just simply add these integer numbers and then we kind of maintain them and
+ put them all together.
+ So like I said, the primary key is that column that we add and
+ that is our handle for the rows.
+ And then the foreign key is the column that we add to a table so
+ that we can point to something.
+ So basically once we create these foreign key columns and
+ the primary key columns, we start being able to build using these links.
+ We can build the links that replicate the data model
+ that ends up being our picture, okay?
+ And so that's how they work.
+ Up next, we're gonna talk about how we represent these links in Django.
+ [MUSIC]

@@ -1,0 +1,269 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.060
+ Now that we've talked about forms a bit, I want to talk a little bit about security in forms.
+
+00:00:04.060 --> 00:00:10.940
+ I want to talk about a security issue called cross-site request forgery, or CSRF.
+
+00:00:10.940 --> 00:00:16.220
+ So the idea of a CSRF attack is that a rogue site,
+
+00:00:16.220 --> 00:00:18.720
+ it has to do with cookies and how cookies get sent to sites.
+
+00:00:18.720 --> 00:00:21.360
+ So let's say you're logged into a MySite,
+
+00:00:21.360 --> 00:00:24.960
+ and a rogue site generates a page that's going to post.
+
+00:00:24.960 --> 00:00:29.260
+ And on every form, you can post to a site other than the one it came from.
+
+00:00:29.260 --> 00:00:34.760
+ And so if I can get data that I want to send to the legitimate server,
+
+00:00:34.760 --> 00:00:40.440
+ the rogue site can set up a post, and then if I can convince you to hit the button,
+
+00:00:40.440 --> 00:00:44.700
+ then it will grab the cookie and send it to the legitimate server that you're already logged into,
+
+00:00:44.700 --> 00:00:46.840
+ and perhaps do something dangerous.
+
+00:00:46.840 --> 00:00:49.420
+ And so the rogue server doesn't need to know the cookie.
+
+00:00:49.420 --> 00:00:57.280
+ The rogue server just needs to convince you to click on a rogue form to send to the request server.
+
+00:00:57.280 --> 00:01:03.720
+ So the defense for CSRF is to, don't be confused with session.
+
+00:01:03.720 --> 00:01:05.300
+ It is going to use session.
+
+00:01:05.300 --> 00:01:08.260
+ We're going to grab another large random number,
+
+00:01:08.260 --> 00:01:12.460
+ and we're going to call it the CSRF token, and we're going to stick that in the session.
+
+00:01:12.460 --> 00:01:16.740
+ And then what we do is every time we send a form out that's coming from our server,
+
+00:01:16.740 --> 00:01:20.700
+ we add a little input hidden tag that has this CSRF token.
+
+00:01:20.700 --> 00:01:25.780
+ And then when the post comes in, we check the CSRF token that's coming in and the post data,
+
+00:01:25.780 --> 00:01:28.240
+ and then we check it against the one that's in the session,
+
+00:01:28.240 --> 00:01:30.260
+ and then rejects it if it doesn't match.
+
+00:01:30.260 --> 00:01:33.620
+ So here's a picture of how this works, right?
+
+00:01:33.620 --> 00:01:36.420
+ So we'll have a legitimate server, right?
+
+00:01:36.420 --> 00:01:38.960
+ We're going to produce a page by the legitimate server,
+
+00:01:38.960 --> 00:01:42.140
+ and it's going to post back to this same server.
+
+00:01:42.140 --> 00:01:45.700
+ The action is the URL to send the post data to,
+
+00:01:45.700 --> 00:01:49.740
+ and we got some key value pairs and a submit button, right?
+
+00:01:49.740 --> 00:01:52.900
+ So you hit the submit button, and it's going to come back to the server.
+
+00:01:52.900 --> 00:01:57.620
+ Now, one of the things that the browser is supposed to do is pull the cookies
+
+00:01:57.620 --> 00:01:59.420
+ for that server and send it.
+
+00:01:59.420 --> 00:02:02.380
+ So it sends it both a post and the data,
+
+00:02:02.380 --> 00:02:05.460
+ but it also sends the session ID cookie.
+
+00:02:05.460 --> 00:02:09.860
+ And then what happens is is that the Django gets its hands on it,
+
+00:02:09.860 --> 00:02:12.220
+ it looks up the session ID, pulls it in,
+
+00:02:12.220 --> 00:02:16.140
+ and notices that it's CSEV and I've been logged as an instructor,
+
+00:02:16.140 --> 00:02:21.820
+ and then I can actually change this grade and set the grade, and it works.
+
+00:02:21.820 --> 00:02:28.700
+ Okay, now, here is what happens when you get to a CSRF attack.
+
+00:02:28.700 --> 00:02:34.700
+ So somehow a page gets sent to the server, right, sent from a rogue server,
+
+00:02:34.700 --> 00:02:38.780
+ and it just has this form, method equals post, action equals DJ.
+
+00:02:38.780 --> 00:02:41.860
+ It's not the action, it's going to a different place.
+
+00:02:41.860 --> 00:02:45.660
+ And it puts sort of a new grade and then a submit.
+
+00:02:45.660 --> 00:02:49.340
+ So what happens is is this submit comes in,
+
+00:02:49.340 --> 00:02:54.420
+ and the browser dutifully appends the cookie to it, and it sends it.
+
+00:02:54.420 --> 00:02:57.540
+ Now, you had to be tricked into getting to this page and
+
+00:02:57.540 --> 00:02:59.860
+ sometimes tricked into submitting the page.
+
+00:02:59.860 --> 00:03:03.180
+ But once the post comes in, it has legit cookie in it.
+
+00:03:03.180 --> 00:03:06.580
+ The cookie is used to look up the session and re-associate it.
+
+00:03:06.580 --> 00:03:10.500
+ And we can check in the session that the user is indeed logged in, and
+
+00:03:10.500 --> 00:03:13.420
+ we'll let the thing set the grade to 1.0.
+
+00:03:13.420 --> 00:03:17.500
+ So this would be a way if you could convince a logged in instructor
+
+00:03:17.500 --> 00:03:23.220
+ to run a post form that you created, you could basically change your grades.
+
+00:03:23.220 --> 00:03:24.620
+ So that's how it works.
+
+00:03:24.620 --> 00:03:26.560
+ That's how a CSRF attack.
+
+00:03:26.560 --> 00:03:28.740
+ You have to be tricked twice first.
+
+00:03:28.740 --> 00:03:31.140
+ But there's ways in JavaScript to make it so
+
+00:03:31.140 --> 00:03:33.420
+ it's hardly noticeable that you get tricked.
+
+00:03:33.420 --> 00:03:41.460
+ So if you do this with CSRF, the legit server basically adds another value,
+
+00:03:41.460 --> 00:03:44.700
+ not the session ID, but another value in the session,
+
+00:03:44.700 --> 00:03:47.260
+ which is a large randomly chosen number.
+
+00:03:47.260 --> 00:03:51.220
+ And then when a page comes out, it's a legit page, and
+
+00:03:51.220 --> 00:03:56.380
+ it uses a type hidden variable and puts the CSRF value in.
+
+00:03:56.380 --> 00:04:02.560
+ Now you hit the submit button, and the CSRF is coming in as post data.
+
+00:04:02.560 --> 00:04:05.460
+ The regular data, the grade data is coming in, and
+
+00:04:05.460 --> 00:04:08.820
+ the browser dutifully appends the session.
+
+00:04:08.820 --> 00:04:12.500
+ And so then using the session cookie, it re-associates the session.
+
+00:04:12.500 --> 00:04:17.940
+ It says, yep, you're C7, you're the instructor, and the CSRF works.
+
+00:04:17.940 --> 00:04:22.340
+ CSRF matches, so let's go ahead and let you set the grade.
+
+00:04:22.340 --> 00:04:23.180
+ So we let them in.
+
+00:04:23.180 --> 00:04:29.380
+ With the attack blocked, because the rogue server can generate a page, but
+
+00:04:29.380 --> 00:04:36.380
+ it doesn't know what the CSRF is, so who knows what the CSRF is?
+
+00:04:36.380 --> 00:04:40.500
+ So it generates it, maybe it can put a CSRF, but it doesn't know it.
+
+00:04:40.500 --> 00:04:43.940
+ So then the post happens, and all the data gets gathered up, and so
+
+00:04:43.940 --> 00:04:47.060
+ it sends the CSRF, but it's not the right CSRF.
+
+00:04:47.060 --> 00:04:51.780
+ The session ID is sent in, and so the session is pulled in.
+
+00:04:51.780 --> 00:04:55.660
+ We know it's user C7, we know it's instructor, but we're gonna check to see
+
+00:04:55.660 --> 00:04:59.260
+ if the CSRF matches, and then it blows up.
+
+00:04:59.260 --> 00:05:03.100
+ And so then you just refuse the post, probably log the user out, and
+
+00:05:03.100 --> 00:05:05.420
+ then log some kind of a security error.
+
+00:05:05.420 --> 00:05:10.580
+ So the idea is, is by having this little CSRF number in the session,
+
+00:05:10.580 --> 00:05:13.300
+ we can then take care of that.
+
+00:05:13.300 --> 00:05:19.340
+ So like most things, Django comes out of the box with CSRF protection built in.
+
+00:05:19.340 --> 00:05:24.300
+ Just like the session, we've got CSRF middleware just dropped in, and
+
+00:05:24.300 --> 00:05:27.900
+ actually it works automatically, you don't even have to ask for it to work.
+
+00:05:27.900 --> 00:05:32.140
+ Once you have a session, it starts putting out CSRF things.
+
+00:05:32.140 --> 00:05:36.100
+ So up next, we'll talk about, now that we know the concept of CSRF,
+
+00:05:36.100 --> 00:05:40.340
+ we'll talk about how we're going to use CSRF inside of forms to implement
+
+00:05:40.340 --> 00:05:42.020
+ sort of CSRF protection.
+
+00:05:42.020 --> 00:05:52.020
+ [MUSIC]
+

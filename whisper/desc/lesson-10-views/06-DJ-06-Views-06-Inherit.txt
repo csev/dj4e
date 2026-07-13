@@ -1,0 +1,7 @@
+Django Template Inheritance: Base Templates and Extending
+
+Django, template inheritance, base template, block tags, template rendering, reusable templates
+
+Django's template inheritance system allows reusing common HTML structures across multiple pages by defining a base template that contains shared elements. This technique prevents repetitive code, such as navigation menus, by centralizing consistent sections in the base template while enabling individual pages to extend it with specific content.
+
+Extended templates use block tags to specify sections that replace corresponding parts in the base template. For example, a page template extends a base template and includes block content that gets inserted into the base, combining to produce the final rendered HTML without duplicating shared elements.

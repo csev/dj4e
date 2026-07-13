@@ -1,41 +1,40 @@
 # DJ4E YouTube playlist data
 
-Course-specific YouTube metadata for DJ4E. Shared tooling lives in
-[`media-util`](../../media-util/README.md) (`/Users/csev/htdocs/media-util`).
+Course-specific YouTube metadata for DJ4E. Shared tooling and the full workflow
+live in [`media-util`](../../media-util/README.md)
+(`/Users/csev/htdocs/media-util`).
 
 ## Files here
 
-- `youtube-playlist.jsonl` — playlist dump used to fill YouTube fields
+- `youtube-playlist.jsonl` — playlist dump used when building `media.yaml`
 
 Course env (repo root): `../media.env`
 
-## Typical workflow
+## Workflow (summary)
 
 ```bash
 source /Users/csev/htdocs/dj4e/media.env
 cd /Users/csev/htdocs/dj4e
 
-# 1. First: lessons.json <-> MEDIA_ROOT (does not touch media.yaml)
-compare-lessons-root.py
-
-# 2. Refresh playlist metadata
+# 1. Download existing YouTube playlist
 dump-youtube-playlist.sh
 
-# 3. Build / refresh media.yaml from lessons + MEDIA_ROOT + playlist
-bootstrap-media-yaml.py
+# 2. Align lessons.json <-> MEDIA_ROOT
+compare-lessons-root.py
 
-# Later checks against media.yaml (optional)
-# compare-media-root.py
-# compare-youtube.py
-# compare-lessons.py
+# 3. Remove orphan whisper artifacts
+compare-whisper-root.py --remove
 
-# Transcribe (writes under whisper/)
+# 4. Transcribe missing media (all of MEDIA_ROOT, or only lessons.json)
 whisper-media.sh
+# whisper-lessons
 
-# Generate YouTube title/tags/description under whisper/desc/
-cd whisper && whisper-desc
+# 5. Generate titles/tags/descriptions (Ollama must be running)
+whisper-desc
+
+# 6. Build media.yaml
+bootstrap-media-yaml.py
 ```
 
-Sourcing `media.env` puts `media-util/bin` on your `PATH` and sets
-`MEDIA_ROOT`, `OUTPUT_ROOT`, `YOUTUBE_DIR`, `YOUTUBE_PLAYLIST`, and `COURSE_HINT`.
-No separate install step is required for day-to-day use.
+See the media-util [INSTALL.md](../../media-util/INSTALL.md) and
+[README.md](../../media-util/README.md) for install notes and the full workflow.

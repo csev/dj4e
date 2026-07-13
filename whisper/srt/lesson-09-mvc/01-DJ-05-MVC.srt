@@ -1,0 +1,612 @@
+1
+00:00:00,000 --> 00:00:02,480
+ Now I want to talk a little bit about a concept,
+
+2
+00:00:02,480 --> 00:00:05,740
+ model view controller, it's not super essential
+
+3
+00:00:05,740 --> 00:00:09,260
+ to understanding how everything works in web servers,
+
+4
+00:00:09,260 --> 00:00:11,060
+ but it's a great set of terminology
+
+5
+00:00:11,060 --> 00:00:13,820
+ that we use among web developers,
+
+6
+00:00:13,820 --> 00:00:17,320
+ and I think as you move into your role as a web developer,
+
+7
+00:00:17,320 --> 00:00:18,780
+ you ought to understand this.
+
+8
+00:00:18,780 --> 00:00:21,460
+ So this is a picture of the request-response cycle.
+
+9
+00:00:21,460 --> 00:00:23,320
+ At the bottom we have the browser,
+
+10
+00:00:23,320 --> 00:00:26,300
+ and at the top we have a web server talking on port 80,
+
+11
+00:00:26,300 --> 00:00:29,600
+ the user clicks on a page, clicks on a link,
+
+12
+00:00:29,600 --> 00:00:31,700
+ and the browser intercepts that link,
+
+13
+00:00:31,700 --> 00:00:33,660
+ opens a connection up to the web server,
+
+14
+00:00:33,660 --> 00:00:36,680
+ sends a get request, the web server does its work,
+
+15
+00:00:36,680 --> 00:00:38,120
+ and returns a web page.
+
+16
+00:00:38,120 --> 00:00:42,300
+ And so that's sort of the basic request-response cycle.
+
+17
+00:00:42,300 --> 00:00:45,540
+ And now we're going to, as in much of this class,
+
+18
+00:00:45,540 --> 00:00:47,580
+ really expand what we're going to do
+
+19
+00:00:47,580 --> 00:00:49,260
+ when we're in that web server.
+
+20
+00:00:49,260 --> 00:00:52,280
+ So that's where we're gonna take a look at this.
+
+21
+00:00:52,280 --> 00:00:54,740
+ So basically model view controller
+
+22
+00:00:54,740 --> 00:00:59,420
+ is really a set of terms that allow us to say,
+
+23
+00:00:59,420 --> 00:01:02,980
+ this aspect, this part of the work
+
+24
+00:01:02,980 --> 00:01:04,900
+ that's gonna be done in the web server,
+
+25
+00:01:04,900 --> 00:01:07,620
+ it's either the model, it's the view, or the controller.
+
+26
+00:01:07,620 --> 00:01:11,580
+ And so the most value that it has is to say,
+
+27
+00:01:11,580 --> 00:01:14,320
+ oh, that part right there, that's controller.
+
+28
+00:01:14,320 --> 00:01:16,860
+ So model view controller is independent
+
+29
+00:01:16,860 --> 00:01:19,300
+ of the programming language that you use,
+
+30
+00:01:19,300 --> 00:01:21,660
+ independent of the operating system that you use.
+
+31
+00:01:21,660 --> 00:01:24,340
+ It's pretty universal across the concept,
+
+32
+00:01:24,340 --> 00:01:28,500
+ as an architecture, as a way of talking about web servers.
+
+33
+00:01:29,900 --> 00:01:32,900
+ So the three parts of it, it'd be probably better
+
+34
+00:01:32,900 --> 00:01:34,780
+ to call it controller view model,
+
+35
+00:01:34,780 --> 00:01:38,780
+ or model controller view model, or something like that.
+
+36
+00:01:38,780 --> 00:01:41,520
+ But model view controller rolls off our tongue better.
+
+37
+00:01:41,520 --> 00:01:44,940
+ So the definition in my mind of these terms
+
+38
+00:01:44,940 --> 00:01:48,980
+ is the controller is this sort of abstract idea
+
+39
+00:01:48,980 --> 00:01:52,940
+ of what happens next, what is the sequence of events
+
+40
+00:01:52,940 --> 00:01:55,260
+ that happen, and then where do we start from,
+
+41
+00:01:55,260 --> 00:01:57,320
+ what do we do when we get a request,
+
+42
+00:01:57,320 --> 00:02:00,520
+ and then afterwards, where do we go at the end of that?
+
+43
+00:02:00,520 --> 00:02:02,600
+ The view is all the stuff we see.
+
+44
+00:02:02,600 --> 00:02:05,280
+ It usually is at the end of the request response cycle,
+
+45
+00:02:05,280 --> 00:02:08,300
+ we produce a view and we return the view back.
+
+46
+00:02:08,300 --> 00:02:11,540
+ And one of the things that the request response cycle
+
+47
+00:02:11,540 --> 00:02:14,420
+ often does is either interacts by storing data
+
+48
+00:02:14,420 --> 00:02:18,500
+ in a database, like an insert, or it edits something
+
+49
+00:02:18,500 --> 00:02:21,020
+ and puts it in a database, or it just reads stuff
+
+50
+00:02:21,020 --> 00:02:25,500
+ from the database and shows it to us in the view.
+
+51
+00:02:25,500 --> 00:02:26,900
+ And so that's called the model.
+
+52
+00:02:26,900 --> 00:02:30,020
+ The database itself, and sort of the notion
+
+53
+00:02:30,020 --> 00:02:33,300
+ that we have persistent storage inside the application,
+
+54
+00:02:33,300 --> 00:02:34,660
+ that's what we call the model.
+
+55
+00:02:34,660 --> 00:02:37,300
+ The view is what we see, and the controller's kind of the glue
+
+56
+00:02:37,300 --> 00:02:38,860
+ that puts it all together.
+
+57
+00:02:38,860 --> 00:02:42,060
+ So the controller orchestrates all this stuff.
+
+58
+00:02:42,060 --> 00:02:45,140
+ And so sometimes you don't say that's the controller,
+
+59
+00:02:45,140 --> 00:02:47,260
+ but the controller is like several places
+
+60
+00:02:47,260 --> 00:02:50,260
+ and the actual shape of your application.
+
+61
+00:02:50,260 --> 00:02:55,600
+ So when we receive a request, we have a number of tasks
+
+62
+00:02:55,600 --> 00:02:58,600
+ that we often have to do for each request.
+
+63
+00:02:58,600 --> 00:03:01,580
+ Sometimes if it's like a form that's been sent to us,
+
+64
+00:03:01,580 --> 00:03:03,780
+ we have some data that we have to receive,
+
+65
+00:03:03,780 --> 00:03:05,620
+ validate, and then process,
+
+66
+00:03:05,620 --> 00:03:07,460
+ and then store it in a database maybe.
+
+67
+00:03:07,460 --> 00:03:10,580
+ And so that's often thought of as the model work.
+
+68
+00:03:10,580 --> 00:03:13,240
+ Then once we've done that, we make a decision,
+
+69
+00:03:13,240 --> 00:03:16,440
+ like I've stored this, where do we want to send the user?
+
+70
+00:03:16,440 --> 00:03:17,700
+ What do we want to show next?
+
+71
+00:03:17,700 --> 00:03:19,720
+ What page to show next?
+
+72
+00:03:19,720 --> 00:03:22,140
+ Maybe we show them a thank you page,
+
+73
+00:03:22,140 --> 00:03:25,860
+ or maybe we send them back to the top page of the application.
+
+74
+00:03:25,860 --> 00:03:29,140
+ And so once we know what page we're gonna send back to them,
+
+75
+00:03:29,140 --> 00:03:30,720
+ then that page has some data
+
+76
+00:03:30,720 --> 00:03:33,200
+ that we might have to pull from the database.
+
+77
+00:03:33,200 --> 00:03:35,320
+ And so we retrieve that using the model,
+
+78
+00:03:35,320 --> 00:03:37,980
+ and then we produce, perhaps using a template,
+
+79
+00:03:37,980 --> 00:03:41,620
+ some HTML response, and then put it back.
+
+80
+00:03:41,620 --> 00:03:45,180
+ So these are the four typical steps that we break down.
+
+81
+00:03:45,180 --> 00:03:47,760
+ Say, in comes an HTTP request.
+
+82
+00:03:47,760 --> 00:03:49,380
+ First thing we do is if it has data
+
+83
+00:03:49,380 --> 00:03:52,040
+ that we're supposed to do something with, we handle it.
+
+84
+00:03:52,040 --> 00:03:54,880
+ Maybe store that data in a database.
+
+85
+00:03:54,880 --> 00:03:57,400
+ Then we talk to the database and retrieve more data
+
+86
+00:03:57,400 --> 00:03:59,880
+ to produce the next output that we're gonna make.
+
+87
+00:03:59,880 --> 00:04:03,600
+ And then we produce the HTML or the other form of output,
+
+88
+00:04:03,600 --> 00:04:06,480
+ and we send it back to the browser.
+
+89
+00:04:06,480 --> 00:04:10,160
+ And so if we take a look at this in our Django application,
+
+90
+00:04:10,160 --> 00:04:13,560
+ the Django application is pretty much
+
+91
+00:04:13,560 --> 00:04:16,360
+ a model view controller application
+
+92
+00:04:16,360 --> 00:04:21,240
+ in that the routing is very much the controller.
+
+93
+00:04:21,240 --> 00:04:25,960
+ It is that which we, it's like, here comes a URL.
+
+94
+00:04:25,960 --> 00:04:27,640
+ It's a request for something.
+
+95
+00:04:27,640 --> 00:04:28,720
+ Where do we go?
+
+96
+00:04:28,720 --> 00:04:30,840
+ And so when you write urls.py,
+
+97
+00:04:30,840 --> 00:04:32,480
+ you're informing the controller.
+
+98
+00:04:32,480 --> 00:04:34,120
+ So the urls.py, I would say,
+
+99
+00:04:34,120 --> 00:04:38,000
+ is part of the controller action, the controller activity.
+
+100
+00:04:38,000 --> 00:04:42,060
+ The views is named the view.
+
+101
+00:04:42,060 --> 00:04:44,900
+ So the view is a little bit controller
+
+102
+00:04:44,900 --> 00:04:47,600
+ in that sometimes the view is storing some data
+
+103
+00:04:47,600 --> 00:04:48,440
+ in the database.
+
+104
+00:04:48,440 --> 00:04:50,800
+ Sometimes that's the job of the view.
+
+105
+00:04:50,800 --> 00:04:53,600
+ Here comes some data before the view produces
+
+106
+00:04:53,600 --> 00:04:55,680
+ the next output.
+
+107
+00:04:55,680 --> 00:04:59,220
+ It actually has to store what came in on this request.
+
+108
+00:04:59,220 --> 00:05:02,040
+ And then the view will do some controller activity,
+
+109
+00:05:02,040 --> 00:05:04,560
+ like it might decide, you know, I don't want you,
+
+110
+00:05:04,560 --> 00:05:07,160
+ this is the wrong page now that we've processed your data.
+
+111
+00:05:07,160 --> 00:05:09,340
+ I'm just gonna send you over to some other page.
+
+112
+00:05:09,340 --> 00:05:11,240
+ That's kind of a controller activity.
+
+113
+00:05:11,240 --> 00:05:13,420
+ So it might say, I'll store the data.
+
+114
+00:05:13,420 --> 00:05:15,920
+ It might, let's see here, can I, yeah.
+
+115
+00:05:15,920 --> 00:05:18,120
+ So it might say, you know, here I go.
+
+116
+00:05:18,120 --> 00:05:19,600
+ I'm gonna store some data.
+
+117
+00:05:19,600 --> 00:05:21,200
+ And then I'm actually just gonna send you
+
+118
+00:05:21,200 --> 00:05:22,040
+ to a different place.
+
+119
+00:05:22,040 --> 00:05:24,160
+ So I'm not even gonna give you an HTML.
+
+120
+00:05:24,160 --> 00:05:25,720
+ And we'll talk about that redirect.
+
+121
+00:05:25,720 --> 00:05:28,080
+ That's called a redirect in a bit.
+
+122
+00:05:28,080 --> 00:05:30,440
+ Sometimes there is no data.
+
+123
+00:05:30,440 --> 00:05:32,280
+ And so sometimes you get some data,
+
+124
+00:05:32,280 --> 00:05:33,920
+ you route it to the right view,
+
+125
+00:05:33,920 --> 00:05:37,320
+ and maybe some data has to be retrieved from the database,
+
+126
+00:05:37,320 --> 00:05:40,880
+ merged together, and result is processed.
+
+127
+00:05:40,880 --> 00:05:43,880
+ So when we think of views.py,
+
+128
+00:05:43,880 --> 00:05:48,880
+ that is, to me, both the controller and the view production.
+
+129
+00:05:49,080 --> 00:05:52,720
+ So sometimes it's making decisions about where to go next.
+
+130
+00:05:52,720 --> 00:05:55,000
+ Sometimes it's just handling incoming data
+
+131
+00:05:55,000 --> 00:05:57,200
+ or sending data out.
+
+132
+00:05:57,200 --> 00:06:02,200
+ And similarly, the models is taken from Model View Controller
+
+133
+00:06:02,200 --> 00:06:08,120
+ because the models.py is where we basically do all the work
+
+134
+00:06:08,120 --> 00:06:10,680
+ to talk to the database, whether it is storing stuff
+
+135
+00:06:10,680 --> 00:06:12,880
+ in the database or retrieving stuff in the database.
+
+136
+00:06:12,880 --> 00:06:17,520
+ We use the Django model capability to implement the concept
+
+137
+00:06:17,520 --> 00:06:20,240
+ in Model View Controller of models.
+
+138
+00:06:20,240 --> 00:06:22,520
+ So just a quick summary.
+
+139
+00:06:22,520 --> 00:06:24,960
+ I like to think of urls.py
+
+140
+00:06:24,960 --> 00:06:28,000
+ and some of the views.py is the controller.
+
+141
+00:06:28,000 --> 00:06:29,640
+ The models, of course, is all the things
+
+142
+00:06:29,640 --> 00:06:30,960
+ that talk to the database.
+
+143
+00:06:30,960 --> 00:06:34,640
+ And then the views are like the second half of views.py.
+
+144
+00:06:34,640 --> 00:06:38,800
+ So produce using templates and forms.py and et cetera,
+
+145
+00:06:38,800 --> 00:06:41,240
+ et cetera to produce the output and send it out.
+
+146
+00:06:41,240 --> 00:06:44,560
+ And so that's how I map the Model View Controller
+
+147
+00:06:44,560 --> 00:06:46,600
+ onto the Django architecture.
+
+148
+00:06:46,600 --> 00:06:49,600
+ And again, Django architecture was probably inspired
+
+149
+00:06:49,600 --> 00:06:50,720
+ by the Model View Controller.
+
+150
+00:06:50,720 --> 00:06:52,960
+ And that's why it takes some of its names
+
+151
+00:06:52,960 --> 00:06:54,680
+ of some of its capabilities
+
+152
+00:06:54,680 --> 00:06:56,680
+ from the Model View Controller concept.
+
+153
+00:06:56,680 --> 00:06:59,260
+ (upbeat music)
+

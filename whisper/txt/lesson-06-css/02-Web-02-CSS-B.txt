@@ -1,0 +1,255 @@
+ So welcome back.
+ Now we're gonna talk about how you use CSS within HTML.
+ How you take these CSS rules and apply them to the various parts of HTML.
+ And there are three basic ways that we do this.
+ One is we take an HTML tag and use the style attribute and
+ just put those little CSS key value, you know, CSS settings right there, very close.
+ The other thing is you can put it in the background of the HTML document,
+ usually in the head area.
+ And the other, probably most common thing, especially when the styles get large,
+ is an external style sheet that's a separately loaded file with a separate
+ request response cycle.
+ So we'll start with sort of the simplest but sort of least used of these things.
+ And that is, like I said, you can put a style attribute on any tag.
+ And you say, any attribute, you know, you say, it's got a double quote and
+ a bunch of stuff and another double quote.
+ And in there is a series of CSS rules that are basically CSS setting,
+ like border style colon and then the border style setting that you want.
+ And so in here I'm saying I would like a solid border, I would like it red and
+ I'd like it to be five pixels.
+ And that effectively determines how that particular thing gets painted, right?
+ In this particular one I said font family monospace for that particular paragraph.
+ So this paragraph is painted with a font family monospace.
+ And so you can just put these things here.
+ I put on the body tag, I want an Arial Sans Serif font.
+ So the whole body is not Times New Roman,
+ except for the fact that this particular one is monospace.
+ And so these two tags are rendering opinions about what the font's supposed to be.
+ But because this one is closer, the monospace wins here, but
+ the Arial wins everywhere else because none of these other tags render an opinion.
+ And so that's kind of the cascading bit, meaning the closer it is,
+ the more priority that it has, unless of course they put important up here.
+ And important is something we'll talk about later.
+ You can make the farther away override the local, but
+ it's not something you wanna use too much.
+ If you're using important, that's a trouble.
+ But don't worry about important right now.
+ Just imagine cascading means the closer, the higher priority.
+ Closer to the tag the statement of CSS is than the higher priority that it is.
+ So another place that you can put the CSS is right there in the header, right?
+ So instead of putting it on a tag, we can use a style tag in the header.
+ And so here we have the header of the document, right?
+ The head, the body starts down here.
+ And up here, we're gonna set a set of rules.
+ And now we're using the thing where we have to say which tag it goes to.
+ So now I can say the body tag, even though there's only one body tag.
+ We want a font family Arial Sans Serif.
+ And because they're all inheriting from the body tag,
+ then all the paragraphs inherit from this and the headers inherit, etc, etc.
+ So it's like body on down in this particular case.
+ The header one, which is this, is blue.
+ And paragraphs are supposed to have a solid border, red, five pixels.
+ And so border style, border color, etc.
+ And that means that each of the two paragraphs here are a way you go.
+ And I'm gonna dig into the anchor tag.
+ And here's my little anchor tag.
+ And I'm telling the anchor tag that I would like to have a green font.
+ And I would like no underline.
+ The default is to underline them.
+ If you look at links, they're always underlined.
+ I'm overriding that.
+ And then I want the background color of that text to be light gray.
+ And so this is a set of rules.
+ All that HTML is down here, lower down.
+ And there are no style tags.
+ There are no style attributes on the tags.
+ Because we have basically said for all paragraph tags, for all anchor tags, for
+ all h1 tags, and for all body tags.
+ And we put it up here in the top of the document.
+ Now the problem is there's lots of, most websites have multiple pages.
+ And this gets really frustrating after a while.
+ So you really wanna pull some of those widely used or
+ repeated things out into a file and include them.
+ And all we do is take pretty much that same set of CSS rules, and
+ we put them into a file.
+ And in this case, we'll put them in the same file, same directory,
+ same folder as the HTML.
+ Although you can pull these things off of a website if you want.
+ So htp colon slash slash or whatever.
+ But you put a link in here and tell it's a CSS, and it's gonna be a style sheet.
+ And then you give it an href, which is then going to pull this file in.
+ And sort of expand it as if it were right there in the middle of a style tag.
+ And so it knows it's a CSS, and it pulls it in.
+ So that's how you change your HTML.
+ So now if we take a look at the next example,
+ we see that in this next example, we've got a link, right?
+ And down here, we've got no style, ignore this little thing.
+ That's how we're putting this little, don't ignore that page.
+ But in the real stuff here, we've got this, we've got our pre tag,
+ we've moved it in, we've got some things here.
+ We've got all that stuff that we've done, right?
+ And if you look, here is that rules.css file.
+ Rules has all that same stuff, h1, border color, a tag.
+ All that stuff that we put in the head now is sitting in this rules file.
+ And we're just pulling it in right here in one fell swoop.
+ And it accomplishes the exact same thing, okay?
+ And so this, including in a separate file, is by far a superior way to do it
+ than putting it in the head tag.
+ But sometimes you have to change two things and you put them in the head tag.
+ And you use all three of these ultimately, but
+ generally you tend to start with a large amount of CSS in a file.
+ And then you tweak in the head, and you might tweak on a tag here and there.
+ And that's kind of how these three things tend to work together.
+ And the whole cascading thing works out well.
+ You can put the link first and then style tag second, and
+ then it kind of overrides some of the stuff that are in the linked.
+ And then you can have something on a tag which overrides the stuff that's in the
+ head, unless, of course, it says important.
+ So as the world went from hacking look and feel in HTML to
+ finely tuning look and feel in CSS, all these tags, paragraph, h1, body,
+ they all had default styles that had kind of evolved.
+ And links and all that stuff that evolved and
+ a lot of pages depended on those default styles working.
+ And so they couldn't say, welcome to CSS and now all the styles,
+ a paragraph that's unstyled will look terrible.
+ Not that they look great.
+ And so we couldn't take the paragraph tag, everything had a style.
+ That's the problem, all the existing tags had something on them.
+ So they had to make new tags, and
+ the new tags that they made are the span and the div tags.
+ The key to the span and the div tags is span is an inline tag that has no styling
+ associated with it, no default styling.
+ It is defined as having no styling, and
+ the div tag is a tag that has no styling associated with it, but it's a block tag.
+ And so we sort of use these to sort of mark text without inheriting any styling
+ from some long ago, 1993, 94 defaults.
+ And so the span tag is, span tag here, that's kind of broke over line.
+ The span tag has no styling except that styling which you add.
+ In this case, I'm adding it with a style attribute.
+ And the same thing is true for a div tag, right?
+ The div tag, and also, divs can be within divs.
+ So this is a nested div, right?
+ There's an outer div and an inner div.
+ And basically, you know that styling, the div has no style whatsoever, right?
+ The span has no style whatsoever.
+ So if you just put something in a span tag and
+ you don't sort of render an opinion about what it looks like,
+ the span doesn't change it, it just inherits from whatever else is there.
+ And so we take a look at this, right?
+ So here we have a P tag with a green border, one pixel border solid.
+ Now, the interesting thing is you say, well, did the paragraph tag have styling?
+ It turns out it does.
+ It has some margin in padding to make it look better, right?
+ And so the paragraph tag is not an unstyled tag.
+ It is expected to create blank space around itself.
+ And so, yeah, so the paragraph tag has a default style.
+ It's supposed to have a default style.
+ But then if you look at the div tags that we've got here, like this div tag,
+ this div tag, remember, goes all the way down to here.
+ This div tag, I just put a blue around so you kind of know what's going on, right?
+ So this blue goes from here to here.
+ But you can see right away that the div tags have no padding or
+ margin or sort of little white space to make them look prettier.
+ And that's okay, you've gotta do that.
+ You've gotta add the padding and the white space.
+ They just start with nothing.
+ It's just a block, right?
+ And the span tag, this one here,
+ changed it green because we put a style color equals green right there.
+ And okay, so we did that.
+ And the div tag, and you'll notice, interestingly,
+ because the divs I'm using end up with a one pixel border as their style,
+ meaning they started with nothing.
+ You can even see that if you look really close, it's impossible, but
+ you can zoom in.
+ This orange border, the blue border takes up space, and
+ then the orange border's on inside of it, and that's one pixel wide.
+ So I'm adding to these through the style attribute, I'm adding CSS to them.
+ But they start with absolutely nothing, and they kinda look ugly
+ when you just put something in a div, like right next to each other,
+ because they didn't want anything.
+ And again, they're nested, and there's reasons, cuz we'll use divs to say,
+ this is the main body, and then there's divs within the main body, and
+ then this is the navigation, and this is the footer, etc., etc., etc.
+ And so we have, divs are ways to describe blocks without
+ adding CSS styling by default, and then as such,
+ letting you define all the CSS for these things.
+ So these are cool, they're like the non-tags, the un-tags,
+ the tags that don't cause anything to happen, but
+ let you cause everything to happen.
+ So they're really important, [COUGH] they're really important.
+ So the next thing I wanna talk about is making a sort of
+ finer selection of which tags that you want to apply a rule to, right?
+ A rule to, and so if we look at this tag right here, this is the body tag, and
+ that basically says, I want everything from body to slash body,
+ then everything inherits.
+ So unless it's overridden, I want ariel sans serif to happen, okay?
+ And I can do that with a paragraph tag, but I wanna show you this other thing.
+ So there's a way to mark a tag, let's find this one, where's first?
+ First, right there.
+ So there's this ID attribute.
+ An ID attribute is an attribute that was added kind of specifically for CSS as well.
+ And so you can only mark one tag per document with an ID, and
+ then there's this class tag, and
+ you can mark as many tags as you want in the document with a class tag.
+ And the idea is like ID tags are for chunks, like main page,
+ like left navigation, top navigation, or something.
+ That's only gonna appear once on the page.
+ And so if you want to sort in effect,
+ in effect what pound sign first means is look through the whole document.
+ Find a tag, where's div ID equals first?
+ Where's that stop, div, div, div, div, right there, right there.
+ Find the tag that's got an ID of first, and then paint it with as rules.
+ The class can happen more than once, but more space.
+ Let's see, class is more space here, that's there.
+ And so that basically says, let's change clear and change color here.
+ More space says, look through all the document and find all the class.
+ There's that paragraph, do I not close that paragraph?
+ Oops, mistake on my HTML, here, yeah.
+ So that basically says, change the margin left.
+ That means shove this in, and change the margin right and shove it in.
+ So we'll see all these things.
+ And loud, and then you can also see a situation where when you put classes on,
+ you can have more than one.
+ And so this basically will respond both to the shout and to the loud class.
+ Okay, so let's take a look at what this page looks like.
+ So here we go.
+ It's a little busy.
+ So if we take a look at first, it grabs this tag here,
+ the div tag is first, right?
+ And then if we look at more space, this more space is affecting this one.
+ And it's shoving it in both on the left and the right.
+ And that's because it's this paragraph more space, okay?
+ Shout, let's find the shout ones.
+ Well, we can see them right here, they're all the loud ones.
+ So that is red, that's shout and loud.
+ Here's one that shout, entire has been shouted.
+ And all has been shouted.
+ So you'll notice these guys are lower case.
+ But shout is a text transformed to uppercase, so
+ you can even change the case of things.
+ And then like in third, for example, where's third at?
+ Third says, so this says, find the third div, which is right there.
+ And find all the p tags within the third div, this p tag and this p tag.
+ And then apply a background color yellow to all those,
+ which leads to this right here, okay?
+ And so, pound sign means find ID and apply.
+ Dot means find class and apply.
+ You can have multiple classes, right?
+ Pull in the definitions from two classes, shout, space, load.
+ Go find whatever is in CSS.
+ And then you can kind of have hierarchical things.
+ This is quite useful because you don't have to get special.
+ It saves you putting classes on.
+ It saves you from putting classes on all the paragraph tags here.
+ You don't have to do anything.
+ But you're not affecting the paragraph tags outside here.
+ You're only affecting the paragraph.
+ I think of this as go find third and the paragraph tags within third.
+ And then do something to them.
+ And that way, otherwise you'd be making more classes than you need to be.
+ And so this is a very well-liked technique for
+ really fine-tuning your selection,
+ your selector for CSS to touch only the things that you want to touch.
+ So up next we'll talk about images and colors and fonts and a few other things.
+ [MUSIC]

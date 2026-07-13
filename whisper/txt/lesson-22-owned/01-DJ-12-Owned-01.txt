@@ -1,0 +1,128 @@
+ - Hello and welcome to our lecture on owned rows in Django.
+ So what do I mean by an owned row?
+ Well up to now, every CRUD application that you've written,
+ you got a table or a model or two, maybe they're connected,
+ but basically if you log in, you can edit every row.
+ And so if you do a list, you see an update
+ and delete button on every row.
+ Real applications don't work that way.
+ If you're building a classified ad system,
+ some ads belong to you and some ads belong to other people,
+ you can see them all, but you can't edit them all.
+ And so we have to decide when to put the edit
+ and delete buttons up and only do those for the owner.
+ And we gotta make it so you can't like sneak in
+ and edit and delete other people's stuff.
+ And so we have to protect these rows
+ from being edited or deleted by anybody but the owner,
+ but anybody can see them.
+ And so that's why I call them owned rows.
+ If there's a row that you own,
+ you will see an edit or delete button.
+ If there's a row you don't own,
+ you'll see the row and the data
+ and you'll be able to read it and view it and that's it.
+ And so if we go back to how we were working
+ in our CRUD application, we were making heavy uses
+ of these generic views, the generic list view.
+ And so when we're all said and done
+ after a whole bunch of machinations,
+ you ended up with a very, very simple view.
+ You ended up with a horse list view
+ that extended generic list view.
+ Generic list view is provided to us by Django.
+ And the only thing we had to do was take this code,
+ which is several thousand lines of code,
+ and inform it as to which model we want it to be
+ and then we make another view, right?
+ So we make the horse list view
+ by extending generic list view
+ and informing that list view
+ that we wanna do this in the model with horses.
+ And from that point on, all kinds of convention happens.
+ And so we know things like
+ the variable will be named horse list.
+ It'll be a list of objects that are retrieved from,
+ a list of model objects that are retrieved from the database.
+ And so we kinda know how that works.
+ And it makes things really simple, not a lot of repetition.
+ Every view kinda looks the same.
+ You probably have done cats or dogs or autos,
+ a couple of different things.
+ And they all look very much the same
+ and if you get good at it,
+ you should be able to make these changes very rapidly.
+ So if we look at how this is working
+ kinda from an object oriented perspective,
+ we are making a new class called gView.Views.HorseListView
+ and we are extending our parent class
+ is the generic list view
+ and we're sort of adding our own little special sauce
+ by saying one class variable, model equals horse.
+ Okay, so that's kinda what's going on here.
+ Now, in this owner view,
+ we're going to do something quite similar.
+ And that is when we're going to have an article
+ and this is all from the DJ Free Samples My Arts example,
+ we're going to extend owner list view.
+ Now if we were, and soon we will look inside owner list view
+ and we will see that owner list view
+ is extending generic list view
+ and where this model equals article
+ is informing owner list view,
+ the difference is this is our code.
+ That belongs to us and in the last part,
+ we will show you everything that you have to do
+ to build one of these things.
+ And so we're taking the list view
+ which has almost everything we want
+ and we're gonna add one feature to it
+ and then we're gonna extend the list view
+ and create a new view called owner list view
+ or you might call it list view for owned rows.
+ And at that point, you're good
+ and this has this class owner list view
+ which we'll see in a second,
+ has everything you need to deal with rows that are owned.
+ And for example, we're going to have a owner column.
+ So every article is gonna have an owner
+ and if that's equal to the current logged in user,
+ then we're going to show these little edit and delete buttons.
+ But if the article owner,
+ the owner value inside the article object or the model,
+ if that owner is not equal to the current user,
+ we don't show it.
+ Now, not showing a link does not mean
+ you've protected it from editing.
+ We'll show you later how that protection from editing happens.
+ But this is such a common problem
+ that we wanna just be able to, in a sense,
+ say look, here's a list view.
+ Here's a list view with this special owner column in it
+ and we wanna maintain the owner column.
+ We don't wanna have to write hundreds of lines of code
+ in every view that we wanna have this owner column.
+ So we just use object-oriented techniques to accomplish this.
+ And so we're going to use inheritance
+ and we talked about it and we'll talk about it again.
+ Inheritance is the idea that you have a class,
+ you're gonna make another class that inherits all of its,
+ all that parent class and then extends it,
+ adds a little bit of stuff to it.
+ And it's another form of don't repeat yourself.
+ Do something once in a parent class.
+ You make the parent class sometimes quite generic.
+ Then you make a child class that extends the parent class
+ and then we use the child class.
+ Or we could call them subclasses or child classes.
+ There's a whole bunch of different terminology
+ and it's all pretty much equivalent.
+ Subclasses are more specialized versions of a class.
+ They inherit attributes and methods
+ from their parent classes and can introduce their own.
+ Again, basic object-oriented programming.
+ So up next we're gonna talk a little bit
+ about how it is that we can peek in
+ to one of these generic views
+ and add our own special sauce for it.
+ (jazz music)

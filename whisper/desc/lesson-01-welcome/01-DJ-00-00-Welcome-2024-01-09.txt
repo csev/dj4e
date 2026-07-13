@@ -1,0 +1,7 @@
+Django for Everybody Course Introduction
+
+Django, Python, Object oriented programming, Web development, MOOC
+
+This lecture introduces the "Django for Everybody" course, explaining Charles Severance's decision to use Django for students who already know Python. The choice was made after comparing Django and Flask, with Django providing a clear learning path for building functional web applications without excessive low-level complexity.
+
+The course teaches object oriented programming through Django, covering features including Ajax, image handling, OAuth authentication, and Bootstrap. Students host their projects on Python Anywhere from the first week, resulting in a complete, functional website by the end of the course.

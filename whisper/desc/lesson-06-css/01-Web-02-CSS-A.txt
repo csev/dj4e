@@ -1,0 +1,7 @@
+CSS: Styling Web Pages After HTML
+
+CSS, HTML, Document Object Model, Request Response Cycle, Web Developer, Accessibility, Separation of Concerns
+
+This lecture introduces CSS as the styling layer that modifies the Document Object Model (DOM) after HTML is parsed from a request-response cycle. It demonstrates how CSS files define visual presentation using examples from webapplicationsforeverybody.com.
+
+The lecture covers the importance of clean HTML for accessibility and the separation of concerns in web development. It explains that CSS enables precise pixel-perfect layouts across browsers and provides practical tools like the Web Developer plugin for debugging CSS.

@@ -1,0 +1,131 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.000
+ So now we've kind of understood a little bit about the user object and how we do things in templates and how we get at the URLs for log in and log out and then how we redirect back to ourselves, let's talk a little bit about the login page itself.
+
+00:00:13.000 --> 00:00:29.000
+ And so the login page is something that's provided by Django, but it needs a template, and so what happens is we get to control the template, and we're going to go to this URL, the code behind the views, the code that looks up the password, the codes that gives you errors,
+
+00:00:29.000 --> 00:00:37.000
+ that's all taken care of, all the views are taken care of, and what we get to do is we get to describe a template that controls our look and feel.
+
+00:00:37.000 --> 00:00:51.000
+ And so we can have a simple login thing or a pretty login thing, and we can have links to the rest of our application, and so we want control over our login page so it looks like it comes from our application rather than having it look like it came from Django.
+
+00:00:51.000 --> 00:01:08.000
+ So I'm not going to go through in much detail about how this works, you have to create a template that can be accessed as registration/login.html, and remember that no matter which application in a Django project you're working in, those names are global.
+
+00:01:08.000 --> 00:01:27.000
+ So for example, this name right here, registration/login.html, the fact that it's in my home application doesn't matter, and that's why we have this extra slash in here, so just because it's in the home application doesn't mean it has to be, the home and the registration don't have to be the same in this particular case.
+
+00:01:27.000 --> 00:01:44.000
+ And so this is a template that if they just do a render, so in their view, in the login view that's somewhere deep in Django, they're just going to do a render to registration/login.html, you have this somewhere in some application because the templates are global, it's going to find your template and put that in.
+
+00:01:44.000 --> 00:01:57.000
+ So within this template, there's a few rules that you've got to follow. They're going to send in, they're going to send some errors, and there's errors, if the form has errors, you have to have some output that deals with that.
+
+00:01:57.000 --> 00:02:16.000
+ If next, that's actually that next equals parameter, okay, and so if the next is there, and you've come into this login, this one's a little bit weird, if you have a going forward page, that means you came from a page and you're going to go back to a page.
+
+00:02:16.000 --> 00:02:30.000
+ If the authentication happens, that means you've been logged in, you went to the page, the page kicked you back because it's protected by more than just logged in user, okay, so this little bit right here, this is a little bit subtle.
+
+00:02:30.000 --> 00:02:38.000
+ If you're not logged in, that's kind of the normal case, please log in to see the site, and then we basically create a simple form.
+
+00:02:38.000 --> 00:02:48.000
+ We're going to post to the login URL, that just looks up the login URL, and we've got this context variable called form, and we can print that out.
+
+00:02:48.000 --> 00:03:02.000
+ That form has the key, that form has all of the input stuff in it, and we're going to talk about forms coming up soon, and so that's what generates, this form here generates all this stuff right here, and so there could be a bunch of things in there,
+
+00:03:02.000 --> 00:03:12.000
+ but the form is a variable created by the view that has all the input names and areas, et cetera, that it wants, so we didn't have to actually construct the form.
+
+00:03:12.000 --> 00:03:20.000
+ We do have to submit, put the login button, we could put a cancel button, and we do have to pass the next back as a hidden field.
+
+00:03:20.000 --> 00:03:33.000
+ Now, a hidden form field is just like a text field, except that it doesn't show up here, and so that's in there, and if you were to view source, you would see that, and so that's after you submit this form, it needs to know where we're going to go next.
+
+00:03:33.000 --> 00:03:50.000
+ So then if you're successfully logged in, it's going to log you in, say yay, and then it's going to redirect to whatever that next value is, and that's our way of, it's going to give us the next value inside this template, but we have to give it back to the view when we post back into the view.
+
+00:03:50.000 --> 00:04:09.000
+ So like I mentioned, there's a whole bunch of data that we can get. There is this user variable, and that user variable has their full name, their email, and very importantly, the primary key of the logged in user, but these things are only defined if user is authenticated is true.
+
+00:04:09.000 --> 00:04:21.000
+ You can access this user data in Python, it's in a little different spot, it's in the request, so this, I just changed the name of request to REQ, that's just a variable name you pick.
+
+00:04:21.000 --> 00:04:26.000
+ I will generally even, generally always write it as request or REQ.
+
+00:04:26.000 --> 00:04:50.000
+ And so the user information that is pretty much the same as what's in the template tag, well template context user, user is authenticated, their username, their email, I could have had REQ.user.id if I wanted here, and otherwise it's not logged in, and then I just throw this back as a simple HTTP response.
+
+00:04:50.000 --> 00:05:04.000
+ This isn't all that useful, it's just showing you how to get your hands on those values if you're in Python, so sometimes you're in Python, sometimes you're in templates, quite commonly you're in templates.
+
+00:05:04.000 --> 00:05:28.000
+ So, I've been talking about a view that requires a logged in user, and so again, imagine something where you're sort of reading your messages on an online system, and you bookmark the message reading URL, and then you shut your browser down, which logs you out of the system, and then you click on that bookmark straight to the messages, my inbox or whatever, and then inbox looks at you and says, you're not logged in.
+
+00:05:28.000 --> 00:05:43.000
+ So I'm gonna send you to log in, you finish logging in, and then you come back. That's what the next equals does. Now there's a couple of ways in views to write that kind of feature that basically says, this view is fine, but only fine for logged in users, so let's take a look.
+
+00:05:43.000 --> 00:05:56.000
+ So one of them is checking to see if user is authenticated. So I have two views in here. One is, I'm gonna protect it manually, and that's so you can see how it works, but it's really not the right way to do it.
+
+00:05:56.000 --> 00:06:02.000
+ I mean, you can do it this way, but it's like, there's always a better way in Django, always a better way in Django.
+
+00:06:02.000 --> 00:06:25.000
+ So here we have a class-based view, and we ask, is the user authenticated? If the user is authenticated, we just do whatever. Now, there might be a whole bunch of stuff in here, there might be a whole bunch of stuff, but I'm just gonna render the thing so that that's a view, so I'm protecting this particular manual, protective view, but if you're authenticated, you can see it, right?
+
+00:06:25.000 --> 00:06:29.000
+ It doesn't do anything in particular other than dump a bunch of data out.
+
+00:06:29.000 --> 00:06:42.000
+ If you're not authenticated, then I'm gonna construct a login URL by calling reverse, say, look up the URL for login, add a question mark, and then add the request path, which means wherever we're at, come back to it.
+
+00:06:42.000 --> 00:06:58.000
+ So that's the next, and that's gonna put next equals, blah blah blah, blah blah blah, and then instead of returning a render, we return a redirect and say, okay, go to the login URL. So the way this is gonna work is, it's gonna come in once, right?
+
+00:06:58.000 --> 00:07:06.000
+ You're not logged in, so it's redirecting, it's gonna go out, but then it's gonna come in back again, and this time the user's redirected in, so it's gonna show you the page.
+
+00:07:06.000 --> 00:07:18.000
+ So you end up going through this twice. Now, that's the bad way to do it, or the wordy way to do it. I mean, it's only five lines of code, but I don't like five lines of code.
+
+00:07:18.000 --> 00:07:40.000
+ So there's this thing called a mixin, and a mixin is a class. The idea of a mixin is that we have kind of an inherited class, we inherit things that are like just a feature almost, so what we're doing is we're gonna take our protect view, it really extends a view, but it's gonna also add the capabilities of login required mixin.
+
+00:07:40.000 --> 00:08:01.000
+ So login required mixin basically says to Django, if this is here, hey, I wanna do this, don't let the user into this particular view. You protect the view, so this is another protected view, but by simply including this little signal that says login required mixin, I've mixed this into my view, then it does all this work for us.
+
+00:08:01.000 --> 00:08:14.000
+ So what'll happen is, it won't even come in, right? It won't even come in if the user's not logged in. It will redirect, and then come back, and then let this code in the get run only when the user's logged in.
+
+00:08:14.000 --> 00:08:33.000
+ And so this is by far the most common way to do it is just called login required mixin, saving you from writing all these lines of code, right? So all these extra things, 'cause do I remember how to do this? What if I write that 5,000 times in the application? It's really kind of silly when we've got login required mixin that takes care of all this stuff.
+
+00:08:33.000 --> 00:08:44.000
+ And just to review, this is what that view looks like. It just sort of dumps all that stuff out. I use the same view for, I mean, I use the same template for all of these views.
+
+00:08:44.000 --> 00:09:03.000
+ So login, like many things in Django, is simple. It's easy. You add the things to installed apps and URL patterns. You make yourself a template. I didn't go into great detail. Django has great documentation if you want to get really sophisticated. What I tend to do is I get one or two templates working for login.
+
+00:09:03.000 --> 00:09:15.000
+ Like, I want to use this one today or that one. So this is where, like, the sample code has two different logins that we're gonna use. One is a simple local login and the other one actually is a login when we're gonna use GitHub to do our logins.
+
+00:09:15.000 --> 00:09:42.000
+ You can get your URLs for login with reverse, reverse lazy, or the URL template tag. And then if we want to come back, we add an x parameter to those URLs. And then when we have a view and we say, look, this view is gonna depend on request.user or the user template tag, just add login required mixin and then Django takes care of making sure that you can't get to the view unless you're logged in.
+
+00:09:42.000 --> 00:09:53.000
+ And if you try to get to the view, it tries to let you log in. And if you are login successful, you come back to the view and it's all transparent to you. And it's literally just one little comma thing in the create.
+
+00:09:53.000 --> 00:10:05.000
+ So it's pretty simple. It's pretty awesome. I just want you to understand what's going on because, again, sometimes the fewer the lines of code to write, the harder it is to understand. Cheers.
+
+00:10:12.000 --> 00:10:15.360
+ [MUSIC PLAYING]
+

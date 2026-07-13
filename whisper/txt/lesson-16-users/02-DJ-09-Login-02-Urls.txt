@@ -1,0 +1,174 @@
+ So now we're gonna take a look at what we do with Django
+ to handle logging users into and out of our application.
+ So just, we talked about sessions recently
+ and making a session is not the same as being logged in.
+ Logging in actually changes data in the session.
+ Logging in, in general, the most basic way of logging in
+ depends on the existence of a session
+ and logging in is putting data into the session
+ about the current user and their name and their email
+ and then logging out is removing it.
+ In the session, you could have multiple users
+ log in with one user, log out.
+ Log in with a different user, log out.
+ If you're just in the same browser,
+ you're gonna end up with the same session
+ just associated with different users.
+ So remember, sessions and login are not the same thing.
+ Just like cookies and sessions are not the same thing,
+ sessions and login are not the same thing.
+ But they all build on each other.
+ Sessions build on cookies and login builds on sessions.
+ So to make this all work,
+ you have to add to your installed apps
+ all the Django support for all this login and log out stuff.
+ Now if you automatically built your project
+ and you've got a settings.py
+ that they're gonna just put this in automatically.
+ So this is just so you know when you're looking at it
+ where it is that all this magic functionality comes from.
+ It comes from this installed apps.
+ Also for the login and log out,
+ you're gonna have to add a path to your project wide.
+ So dj4esamples, dj4esamples, urls.py.
+ This is not in any of your applications.
+ This is in your Django project.
+ And you add a path and there's a bunch of urls
+ and that gets all registered
+ and a whole bunch of wonderful magic happens at that point.
+ And so that's how these urls are activated
+ in your Django project.
+ So the applications.
+ So the way we get the urls to the login and log out features
+ is we use the reverse.
+ We've been using reverse all along.
+ Reverse is the way we look up for a particular view.
+ And in some urls.py, matter of fact,
+ in that Django contrib auth urls,
+ in that there is a name equals.
+ And so there's a view in there that they've got
+ that we didn't write and it has a name equals
+ and has name equals login and a name equals logout.
+ And so we can do a reverse lookup
+ like we would have any of our views that we might have.
+ Say what is give me the url in this Django project
+ for the view named login or the view named logout.
+ And it's pretty simple.
+ You could even probably hard code these
+ but maybe the route isn't exactly a count slash, right?
+ And so maybe you call them something else.
+ And so that's why we use the reverse
+ to look these things up.
+ And so that's just a convenient way of doing it.
+ Now, one of the things about logging in
+ is sometimes you have an application
+ and there's like a login button.
+ But sometimes you just have pages
+ that are protected by login.
+ And then when you go to a page,
+ it says, oh wait, you gotta log in first.
+ And then after you log in,
+ you'll notice it typically just takes you right back
+ to the page that you want it to see.
+ So you might bookmark a page when you're logged in
+ and then you log out and then you click
+ on that bookmark page.
+ But that requires that you be logged in.
+ So you're gonna go to the page.
+ And then when you're done logging in,
+ you wanna come right back to that page.
+ And so that's using redirecting.
+ But it's redirecting after login is successful
+ or after logout is successful.
+ Logouts are almost always successful.
+ And so there's a parameter that we can add,
+ a gap parameter that we can add.
+ And it's the next equals.
+ And what we do is we give it a path.
+ And so here's a little bit of code
+ that we're gonna play with in my sample codes
+ under the AuthZ application.
+ And so I got a bunch of views
+ and I'm gonna give them some names
+ so that we can play with them.
+ So these are just the URLs.py.
+ So if you take a look in this main.html template,
+ you see a whole bunch of things.
+ You see this next feature in action.
+ So here's a couple things we can do.
+ So there is this user object that in a sense is passed in.
+ You don't have to do anything to pass it in.
+ There's this user object that sits there
+ in your template context that's automatically.
+ We'll talk later about how you can sort of inject
+ into every template certain little things
+ that you gotta inject.
+ But the system injects this user.
+ There is an attribute called isAuthenticated,
+ which is true or false,
+ to say whether you're not logged in or are logged in.
+ And so if we see it, we say,
+ oh, what's their person's full name?
+ User.email, user.id.
+ User id is the primary key.
+ We might actually have a, later we'll have a foreign key
+ that goes into the user table.
+ And we need to know what the primary key
+ of the current user is so we can populate our foreign key
+ so when we like have a row and it's owned by such and so,
+ we're gonna actually put a foreign key into a table
+ that we didn't even create.
+ But the thing I'm talking about now
+ is you can get a URL, that URL tag,
+ that's looking up the name of a view.
+ Log out is the name of a view.
+ Log in is the name of a view.
+ And then we have this question mark next equals.
+ That's the parameter to say when you're all done
+ with that login or log out, go back to this particular URL.
+ Okay, and so that says go to the URL
+ that's in the Authsy application, the view named open.
+ And so that's one way of doing it.
+ Another way, let's say you're in login,
+ we're gonna get the login URL
+ and send ourselves back to the request path.
+ Request is another one of these things
+ that's dropped in automatically for us.
+ That is the current URL of the view we're at.
+ So in a sense, this is a contraction
+ that says go ahead and go to login,
+ and when you're back, come right back here.
+ So login will login and then redirect
+ back to this page that we're on, whatever the page is.
+ 'Cause this is gonna be, this little main.html
+ is used in a couple of my different views.
+ So request.path is like come back here.
+ So that's a good pattern to know,
+ to just say login and come back to this current path
+ when you're all done.
+ And so here's just a bunch of connections to this thing.
+ And we have, here's just all my links.
+ And I have a couple of things.
+ I have some no login required pages just to play around.
+ And then I have one that's protected by hand in Python.
+ And then one's required by a login mixin.
+ And then I sort of dump all that data.
+ And I think I showed you that one already.
+ So here is one of them, right?
+ I showed that.
+ That's what this all looks like.
+ You can see that these links have the next in there.
+ You can, this is how it turns out to be.
+ You get accounts login.
+ Oops, come back, come back.
+ You go to accounts login, next equals authzopen.
+ And that's basically, I'm in this file right now.
+ I'm in that URL.
+ And that says go ahead and log me in
+ and then come back to this URL, to the authzopen.
+ Here's an example of the logout URL
+ with a next setup in it.
+ And so up next we're gonna talk about
+ not just how to get the users to go to the login page,
+ but how to configure the login page.
+ (upbeat music)

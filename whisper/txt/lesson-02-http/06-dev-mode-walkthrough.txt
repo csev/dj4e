@@ -1,0 +1,95 @@
+ Hello, and welcome to another walkthrough for Django for everybody.
+ In this walkthrough, we're going to talk about the browser debugger console, and so this
+ is something that in the old days was only in Firefox, but eventually everybody built
+ it in, and they used to have to build a plug-in, and it shows up at different places, and so
+ in Firefox, it's here under tools.
+ It turns out that you can kind of go to any of these things because these are the, they're
+ just different tabs here.
+ In Chrome, we do view, developer, JavaScript, console, and then you see a similar kind of
+ thing here.
+ So I'm going to do it in Firefox here, and so you can see things like you can see the
+ document object model, you can see the JavaScript console, this little error hardly matters,
+ it's because it's such a simple page, you can actually debug JavaScript code, you can
+ watch the network, you can play with CSS, et cetera, et cetera, et cetera, performs,
+ cookies are in here, so there's a lot of things that you can do.
+ I'm going to start and show you right now, we're at the very beginning class, I'm just
+ going to show you some of the most basic things here, I'm going to clear this out, and then
+ refresh the page, and so what you see here is you see each request response cycle, right,
+ and so I came up here as if I typed this, let me clear it again so you see, I'm going
+ to type this, I'm going to press enter, and that tells the browser to go retrieve this
+ page, so it connects to the server, www.drchuck.com, and gets the document page 1.htm, this favicon.ico,
+ that's basically getting this little favicon right here, that's the little thing that shows
+ up in the tool, in the tab bar, and so websites can have a file, and later we will actually
+ make a favicon, but what I want to show you from a request response cycle is you can see
+ some detail here, so let's go up here, and you can see detail, you can see that this
+ was the URL, we sent a request, a get request, we got back a status code, the status is the
+ first thing, 200 isn't okay, 404 is not found, and we used HTTP version 1.1, the request
+ headers, we'll start, they always show you the request headers, response headers first,
+ so these request headers are actually part of the HTTP protocol, where we are telling
+ things like what my preferred language is, what kind of documents we can handle, and
+ cookies that we're sending back in, we'll learn more about all of this stuff, so this
+ is actually, the browser makes the connection to port 80, sends the get request to the URL
+ it's interested in, get HTTP www.chuck.com/page1.htm, space, HTTP 1.1, and then after it, it sends
+ these, and this is pretty much the format, except colon, blah blah blah, and so that
+ is the, and then it sends a empty line, and then it's done, and then the browser sends
+ back first a set of headers, you know, what the content type is very important, the size
+ is sometimes in here, gzip means that it compressed it on the way, and so these are the response
+ headers, and so if I go to an error page, not a page.htm, I'm going to clear this, and
+ what's happening here is, it's putting up a page from my hosting system, but the most
+ important one here is this, and that is the 404 error, and so it was going, and it sent
+ a get request to HTTP www.chuck.com/notapage.htm, and it got back a 404 not found, so that was
+ the, that 404 not found is a different status code that said this is a thing that's not
+ there, 500 means the server had an error, and we'll talk about all these codes, but
+ the point is, is you can debug all this stuff quite nicely, so let me go back to page1.htm,
+ let's clear this and refresh it to make sure we got it all right, okay, so we grabbed the
+ page, and now I can, another thing that you probably by now have figured out to be able
+ to do is inspect element, so now you're actually looking at this document object model, right,
+ and so this document object model is not necessarily the code that came back from the server, if
+ I go here to network, and I click on get, and I look at the response, this is the response
+ down here, this is what actually came back from the server, and then the browser parses
+ this and turns it into what's called the document object model, so this is the source, now just
+ for fun here, you'll notice that I can change the document object model here, right, if
+ you are cool, you can switch to the second page, so you'll notice that document object
+ model changed, and what I saw up here changed as well, so this is like inspect element,
+ I can do something like I can even add here, I can add some CSS, style equals color colon
+ red semicolon, and if all goes well, there you go, you see I switched the color, this
+ is the document object model, now the server was completely uninvolved in that, later we're
+ gonna write a lot of code to mess with the document object model, so the server is still,
+ it doesn't have the red in here, it didn't change this to cool, so this is what we originally
+ got from the server, and this is what we've got in the browser, and so once that page
+ comes from the server, you, or JavaScript, can mess with that page, so it's pretty dang
+ cool, okay, so now I'm gonna clear it, and I'm just gonna click on the second page, which
+ is an anchor, let's inspect it, well it's an anchor tag, and so it's going to do another
+ get request, and so this time it went and grabbed page two, and there's the second page,
+ and you can go back to the first page, and so there's a lot of things that you can see,
+ this persist logs is an important feature, that means that it keeps them crossed more
+ than one request, and disable cache means that sometimes the browser wants to keep a
+ copy of something, and you, while you're debugging, you want to say, hey, go get the original
+ every time, and so this, right now I'm giving you, starting with very simple pages, but
+ if you take a more complex page, and I can never remember where it is, view, developer,
+ network, let's go here, if you take a more complex page with a bunch of things in it,
+ and you hit refresh on this page, you will see that it does a get request, but then as
+ it parses that get request, it finds things like all kinds of stuff, right, so here this
+ took 44 request response cycles, 1.6 megabytes, and it took almost one second to download
+ all that stuff, right, it took a second to download it, and so if you go, you scroll
+ all the way up to the top, the original get request was to this URL, which is /lessons/rrc,
+ which is the URL, but then if you were to look at the response, and I don't want to
+ see that, I want to see the actual, so if you look at the response, you see all these
+ URLs for more stuff, some CSS from JavaScript, some who knows what, and so then what you
+ see is you see it then retrieving all these other things that it needs to actually construct
+ the page, some CSS, grabbed a font, it grabbed jQuery, it grabbed time ago, that's a little
+ thing like, and then grabbed a bunch of JavaScript, and fonts, and this, and then the translates,
+ you see this little translate thing, it's doing that, and so you'll see that's how
+ it quickly builds up to about 44 request response cycles to produce a page, now, so that's just
+ my quick introduction to this, you may not see these little drop downs like this, you
+ might have to turn them on in preferences, so you go into preferences somewhere, I turned
+ them on a long time ago, I probably couldn't even find it, but you might see it, the other
+ thing that I would suggest is don't use Safari, because Safari, just, Safari's trying to hide
+ too much stuff, like it doesn't even show you the URL unless you click on it, so Safari's
+ kind of a pain in the neck, and so I would suggest that for this class, you either use
+ Firefox or you use Chrome in addition to using Safari, Safari's fine for daily use, but I
+ just find it as a debugger, it's bad, which is really sad for Safari, they made Safari
+ unfriendly to software developers, which means we're not going to test our stuff on Safari,
+ which means if it breaks, too bad, so, okay, well, enough of that little Safari diatribe,
+ again, I hope that you found this walkthrough for Django for everybody as usual helpful,
+ cheers.

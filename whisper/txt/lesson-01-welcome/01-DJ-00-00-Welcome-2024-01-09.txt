@@ -1,0 +1,69 @@
+ Hello. Welcome to Django for Everybody. My name is Charles Severance and I've developed these materials that I hope you find useful.
+ So one of the things I like to do whenever I start teaching a class is explain why I chose to teach this material.
+ In particular, why Django? To explain why Django, I have to go back into the past a little bit.
+ I have been teaching here at the School of Information, University of Michigan, since 2007, I've been teaching web development.
+ And if we go all the way back to the beginning, I think we started with PHP, then we did Ruby on Rails, and then we did Google App Engine.
+ I even wrote a textbook for O'Reilly and Associates about Google App Engine. We used that textbook for a while.
+ It was based on Django 1.0 and then they changed Google App Engine and I didn't like that because it broke my book.
+ And then we switched to PHP and then we did Flask and then we did Django. So there's a whole litany of different web development frameworks we've used over the years.
+ And that's kind of how web development is. There's always something new, always something different.
+ So right before I was teaching Django for everybody, I was teaching PHP and I had been teaching that for five years and I just love that class.
+ We teach Python for most of our beginning students and just that's a great first language.
+ That course that I built that taught Python to beginners evolved into the course Python for Everybody, which is one of the most popular programming courses in the world.
+ And one of the things that I wanted to do was teach a second language, not just more Python, so that's why I really like teaching PHP.
+ And I developed that course for five years, but it wasn't just a PHP class. It was HTML, it's CSS, JavaScript, jQuery, JSON, PHP.
+ And I love teaching that class, but at some point the curriculum committee wanted it to be Python across the board.
+ I love that course and I turned it into web applications for everybody and that's available also online.
+ And so I had a year to convert from PHP to Python. And so during that year I asked myself the question, would I teach Flask or Django?
+ And I had a semester sabbatical and during that time someone taught the class in Flask.
+ And I looked at what they were accomplishing in the 15th week of the Flask class and I'm like, oh, there's so much low level stuff you have to learn.
+ And so I was like, I'm not sure I like Flask, but I had a year. So I asked everyone I knew who was pretty sharp.
+ I said, would you prefer Flask or Django? And the strange thing is I got different answers.
+ Half the people said Flask is great, Django is terrible, and the other half the people said Django is great, Flask is terrible, which was inconclusive.
+ And then I changed the question. I said, if you were going to teach only one of Flask or Django, which one would you teach first?
+ And at that point, Django was pretty much the consensus agreement.
+ And that's because Flask is a very powerful tool in the hands of strong developers.
+ So if you're teaching, taking a React class or a Progressive Web Applications class and you just want kind of a little back end and you know what you're doing,
+ Flask is great because you whip up a little microservice and away it goes.
+ But Django, if you don't know anything, Django gives you a road to follow. You go down this road and you will learn and you will build something.
+ And so I started developing this class. It took me a couple of years to get it right. I iterate a lot.
+ I'm an engineer and I love to iterate. After a couple of years, I said, OK, I think I like it.
+ And so I turned it into this DJ for E, Django for everybody. It became a MOOC.
+ And so I'm really impressed at how far we get.
+ And the reason is, is with Django, because there's kind of a road and you follow the road.
+ At the end, my students have a nicely working website that has Ajax working, has pictures working, has single sign-on using OAuth working and all these things.
+ And we learn about Bootstrap and a whole bunch of things.
+ And if you look at their website, you know, it's a beginner, but it is a complete website.
+ And because we use Python Anywhere, they are hosting it from the first week.
+ So every assignment is in a hosted Python Anywhere instance of Django for them.
+ And so they're learning how to host. And I think that's of all the things I've taught up to this point.
+ I never, other than Google App Engine, I never could get the students to have in effect a URL at the end of the course.
+ This is a great second class, once you kind of know Python, to learn how to use Python to do something.
+ It's advanced Python. It's using things that you might have seen in initial Python class, but not really developed skill in.
+ And the particular skill that this class really is going to teach you is object oriented programming.
+ And I'll just say, object oriented programming is probably one of the most important concepts in programming.
+ And it's also the most difficult concept to teach and learn.
+ That's because if you just take a class and you have a chapter on object orientation, you'll see a bunch of syntax.
+ But you do not know why you're using that syntax.
+ Whereas in Django, on the first day you're building objects.
+ Django itself is an object and you're like overriding bits and pieces inside of this big object.
+ And then there's objects within objects.
+ And so it's a wonderful, wonderful way to teach object oriented programming in Django.
+ And so in this class, I review Python's object oriented programming.
+ I feature all of the use of objects in Django when I say object many, many times, just like I'm saying in this little intro video.
+ But then we also later look at JavaScript.
+ And then we look at object oriented programming in JavaScript as well.
+ And they're different.
+ The execution model for Python and the execution model for JavaScript object orientation is a little bit different.
+ And so for me, that sort of compare and contrast is a really great opportunity as a teacher
+ to get students to understand the principles of object orientation and not be just looking at the various syntaxes.
+ So with that, welcome to a course that I think is a great course and I hope that you enjoy it.
+ And I wish you luck.
+ Take your time.
+ Don't rush.
+ These kind of learning experiences are precious.
+ And take your time and learn everything.
+ And I wish you nothing but the best.
+ And I hope to see you online.
+ Cheers.
+ [music]

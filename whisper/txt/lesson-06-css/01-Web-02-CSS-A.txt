@@ -1,0 +1,209 @@
+ >> Hello everybody and welcome to our lecture on Cascading Style Sheet, CSS.
+ Of course, this follows right on the heels of our HTML lecture.
+ And I'm gonna use a bunch of examples from webapplicationsforeverybody.com.
+ And you can just bring these up in your browser.
+ I love to place everything that we talk about in the context of the request
+ response cycle cuz that's the whole web applications for everybody.
+ You, of course, are out here.
+ You do a click, it sends a request, a HTTP request, maybe talks to a database,
+ gets some stuff back, sends some stuff back.
+ This is the request response cycle right here.
+ And the thing that comes back is HTML.
+ And then that is parsed, put into the document object model.
+ And the thing that you then see, the pixels you see on your screen,
+ are from the document object model.
+ So that's what we've been doing so far.
+ And so far, then at HTML lecture, we just talked about this.
+ What the format was when you parsed the response.
+ So what we're gonna talk about today is we're gonna talk about,
+ in addition to that, we're gonna go and pull another file, a CSS file, CSS.
+ And that is gonna inform the document object model.
+ And it's gonna change how things look out here.
+ And so we'll have some CSS in the HTML, but we'll also have some CSS in
+ separate files that make separate request response cycles.
+ But so we're gonna be putting files like our HTML files in here and
+ our CSS files in here.
+ So we're gonna be serving them a little bit.
+ But mostly what we're worried about is sort of the form,
+ how to make the DOM look pretty, and that's sort of what CSS is all about.
+ So in addition, I would like you to install
+ this thing called Web Developer from Chris Pedrick.
+ Chris Pedrick has been doing this a long time before there were even developer
+ consoles in browsers, and it's funny that the developer
+ consoles don't do what this does.
+ And I don't use all of its features, but it has some wonderful features for CSS,
+ in particular, turning on and off various styles.
+ And so it's a great way to sort of dig through CSS issues,
+ in addition to the web developer console.
+ And you can do a lot of sort of fine debugging, but
+ there's some real nice stuff with web developer.
+ It's just a plug-in for your Safari or your Chrome or
+ your Mozilla browser or whatever.
+ So please install that, I recommend it, and
+ some of the assignments actually require it.
+ So like I said in the HTML lecture, the HTML started out with,
+ we were just amazed in 1995 when we could see a page with a gray background and
+ blue links, and it was lists, long lists of links, and the links turned purple.
+ And we would click on a link, and another page would come up, and
+ we were like, holy mackerel, this is the future, right?
+ And we were so happy.
+ And our curiosity was piqued, we did interesting things.
+ But in the 10, 15, almost 20 years since all that, it's become a business.
+ And in business, the look and feel for the average non-nerd user,
+ they don't care that there's a request-response cycle.
+ They just want to do a thing, talk to their friends or
+ look up information or whatever.
+ And so the CSS is in the middle of this time frame.
+ The ability to precisely lay things out and
+ make pages beautiful became super important for
+ the web to take its sort of leap into commercial dumb.
+ So if you look at the Yahoo web page, for example,
+ this is just a screenshot I took a while back.
+ They do studies as to how much white space is in between those two pieces.
+ And they'll add a pixel and take away a pixel, and
+ they'll see how their revenue goes.
+ And so these user experiences, these visual looks and
+ feels are highly tuned and highly sort of taken care of.
+ And so CSS needed to be able to precisely have a pixel-perfect layout in
+ every browser.
+ And so CSS is a very, very precise thing.
+ HTML has become precise, but
+ we don't wanna do our markup and layout in HTML.
+ I showed you tables previously, and in really early versions of HTML,
+ we used tables to create look and feel, and that was never good.
+ So one of the things you can do with the Chris Pedrick web developer plugin is you
+ can show a page without CSS.
+ And what you should expect when you see a page without CSS is it's
+ sort of beautiful even without CSS.
+ It's beautiful in a logical and a structure.
+ And so here's my web applications for everybody website, right?
+ It's got some cool stuff.
+ It's got these little things that go over there.
+ It's got a little border.
+ The color's gray here, and it's a little lighter gray, and
+ this wraps around, and it looks really awesome, right?
+ Well, turn CSS off, and
+ you should still see a page that you could effectively navigate.
+ It's like going back in time to a simpler time of, okay, I wanna see this.
+ This is really a list of links at the end of the day, and there you go.
+ It's a list of links.
+ And the default is I've already clicked on lessons, so lessons is purple now.
+ And here's this video, and if you scroll up and down on this,
+ I mean it's really fun to go to a website and turn CSS off and
+ see how good their HTML developers are and how pretty it is.
+ And so it's supposed to be pretty in a simple way.
+ And what's nice about this is it really leads to good accessibility,
+ meaning some people do not see the graphics, they hear the page read to them.
+ And this way, this is how it's read.
+ And the simpler and more beautiful and elegant your HTML is, the easier it is for
+ a person who has reduced visual ability to understand your site.
+ And that is, I remember the joy of hearing from people who were using the web and
+ gopher in the early days, how they all of a sudden could go anywhere and see anything
+ and do anything in a way that visually impaired people could never do for
+ like hundreds of thousands of years.
+ And it's joyful.
+ And then what happened was is we ended up with this really nasty markup.
+ And then it was like the web was simple and they loved it.
+ And then the web became ugly and nasty and HTML became nasty.
+ And they're like, the world is horrible because now you go to all these cool
+ websites, but I can't go to these cool websites cuz I'm visually impaired.
+ And now we're back, we're back to that.
+ We're back to beautiful HTML, simple HTML, and
+ then beautiful web pages and CSS is the main.
+ Okay, I think I've done enough advertising for CSS and
+ accessibility and beautiful HTML.
+ So ultimately, if you look at how this thing is assembled in your browser,
+ there is an HTML page that is pulled down and then there is CSS.
+ Sort of both inside the document, sometimes there's CSS in the document.
+ If you look at this, not that it matters,
+ there's a little bit of CSS in that document.
+ And then a whole bunch of other CSS that brings all the beauty to this.
+ Sometimes it even takes some JavaScript and whatever.
+ And so we understand that the HTML does not have the beauty in it.
+ The beauty comes from the CSS.
+ And that is part of what we try to do, is learn CSS.
+ So if you're gonna be like a coder and you're not gonna be a graphic designer,
+ you still need to know enough CSS so that you don't write horrible HTML, so
+ that you know what a really good CSS developer is capable of doing on your
+ behalf.
+ And on large projects, including like Sakai project,
+ which is a open source learning management system, this allows separation
+ of concerns, and you can have people that specialize in the back end and the HTML.
+ And then a web designer can, the web designer, so
+ if you think of the developer usually, there's a back end.
+ And then they generate, from the back end, they generate the HTML, and
+ then the designer will build the CSS.
+ The designer will often have skill enough to sort of tweak the HTML if
+ the developer built bad HTML.
+ So they kind of meet in the middle of the HTML with the developer mostly being
+ responsible for building the back end developer.
+ And then the front end designer can then tweak the HTML a little and
+ then tweak the CSS.
+ And so the HTML is where the back end developer and
+ the front end developer come together.
+ But it means that you can, it means that you can have lots of people working and
+ you can develop highly specialized skill sets in larger projects.
+ I know that my skill set is in this side, I am not skilled in this side, right?
+ I can clunk my way through CSS and everything that you'll see is my CSS.
+ And you'll be like, whoa, that's not very good.
+ And if it even looks pretty of mine, I'd probably use Bootstrap.
+ And I cheated and found a CSS framework and I didn't build it, I just did it.
+ Now there are people who are smart enough to build Bootstrap.
+ That's, and they're, they can build such gorgeous websites.
+ And my job is to build beautiful HTML that then they can add CSS to and
+ make it super gorgeous.
+ So the CSS basic syntax is different than HTML, right?
+ HTML is less than and greater than.
+ CSS has curly braces.
+ I don't really know who invented the first.
+ I should find that out and go videotape that person.
+ But it has curly braces and semicolons, so
+ it kind of looks like a little bit of C. And it's really a set of rules.
+ And it's not sequential, although the order does matter.
+ Because what comes later has more importance than what comes earlier in CSS.
+ But it's not like code that gets run.
+ And so the anatomy of a CSS rule is that there is some kind of a selector.
+ And in this case, the simplest selector is the tag that we want to affect.
+ We want to affect the body tag.
+ Now, there's only one body tag, but you could have a P for a P tag and
+ say I would like to do this to all P tags.
+ And so it's implicit, kinda like SQL, in that a body tag means for all body tags.
+ There's an implicit loop for the whole document.
+ And we'll see how to reduce that later to it, so
+ it's not always the whole document.
+ But for now, a tag there by itself means every tag in this document.
+ And then there's a series of rules, and so this is really when to apply.
+ This is sort of what aspect, and there's a whole list of aspects that you can have.
+ And then what you wanna do, I wanna make the font size 100%.
+ I wanna use Arial, and then say in Serif, etc., etc., etc.
+ Holy mackerel, my little pen is undoing itself.
+ And so then these end in a semicolon, and you can have a bunch of these, right?
+ You can have just one, you can have more.
+ But that's the basic idea, is a CSS rule is go find a part of this document and
+ paint it, I like to think of this as like, go find a thing and
+ then run a paintbrush over top of it, that is this paintbrush.
+ That is the paintbrush that you go select a piece of the document and
+ then paint it yellow or paint it bold or whatever.
+ That's kinda how I think about it.
+ Now, I'll admit, I'm really a very weak CSS developer, and I need a cheat sheet.
+ And if I wanna do CSS, having even a single page cheat sheet
+ is super helpful for me, just cuz I don't use it all the time.
+ And so the attributes like background color and the border-bottom,
+ for me, they're all very self-explanatory.
+ They're really easy to understand, or if you don't understand them,
+ you just Google and you go stack overflow.
+ But for me, I'm like, is it border-bottom or bottom-border?
+ I just can't remember that stuff, and so
+ I just have to have a cheat sheet whenever I work.
+ And this is the one cheat sheet that I happen to like.
+ And these are the kind of properties that we're gonna be playing with,
+ the color, the background color, how to align it vertically,
+ how to align it horizontally, padding, which is space on the sides, etc, etc, etc.
+ So there's just tons of CSS properties.
+ And there's tons of great documentation on each of these CSS properties,
+ with little samples all over the place.
+ And I have my own samples as well, that I'll do some recordings and
+ show you, walk you through like line by line on my sample code as well.
+ But this is the kind of stuff that we're gonna play with in CSS.
+ So up next, we're gonna talk about how we connect CSS and HTML together.
+ [MUSIC]

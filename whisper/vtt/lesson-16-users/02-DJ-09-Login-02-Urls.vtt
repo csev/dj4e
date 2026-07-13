@@ -1,0 +1,524 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.180
+ So now we're gonna take a look at what we do with Django
+
+00:00:02.180 --> 00:00:06.800
+ to handle logging users into and out of our application.
+
+00:00:06.800 --> 00:00:09.080
+ So just, we talked about sessions recently
+
+00:00:09.080 --> 00:00:12.320
+ and making a session is not the same as being logged in.
+
+00:00:12.320 --> 00:00:15.400
+ Logging in actually changes data in the session.
+
+00:00:15.400 --> 00:00:18.760
+ Logging in, in general, the most basic way of logging in
+
+00:00:18.760 --> 00:00:20.960
+ depends on the existence of a session
+
+00:00:20.960 --> 00:00:23.160
+ and logging in is putting data into the session
+
+00:00:23.160 --> 00:00:25.520
+ about the current user and their name and their email
+
+00:00:25.520 --> 00:00:27.200
+ and then logging out is removing it.
+
+00:00:27.200 --> 00:00:29.520
+ In the session, you could have multiple users
+
+00:00:29.520 --> 00:00:30.920
+ log in with one user, log out.
+
+00:00:30.920 --> 00:00:33.020
+ Log in with a different user, log out.
+
+00:00:33.020 --> 00:00:34.440
+ If you're just in the same browser,
+
+00:00:34.440 --> 00:00:35.940
+ you're gonna end up with the same session
+
+00:00:35.940 --> 00:00:37.640
+ just associated with different users.
+
+00:00:37.640 --> 00:00:41.380
+ So remember, sessions and login are not the same thing.
+
+00:00:41.380 --> 00:00:43.400
+ Just like cookies and sessions are not the same thing,
+
+00:00:43.400 --> 00:00:45.440
+ sessions and login are not the same thing.
+
+00:00:45.440 --> 00:00:47.200
+ But they all build on each other.
+
+00:00:47.200 --> 00:00:50.540
+ Sessions build on cookies and login builds on sessions.
+
+00:00:50.540 --> 00:00:53.560
+ So to make this all work,
+
+00:00:53.560 --> 00:00:55.360
+ you have to add to your installed apps
+
+00:00:55.360 --> 00:00:59.720
+ all the Django support for all this login and log out stuff.
+
+00:00:59.720 --> 00:01:03.240
+ Now if you automatically built your project
+
+00:01:03.240 --> 00:01:04.680
+ and you've got a settings.py
+
+00:01:04.680 --> 00:01:06.900
+ that they're gonna just put this in automatically.
+
+00:01:06.900 --> 00:01:09.700
+ So this is just so you know when you're looking at it
+
+00:01:09.700 --> 00:01:12.580
+ where it is that all this magic functionality comes from.
+
+00:01:12.580 --> 00:01:14.740
+ It comes from this installed apps.
+
+00:01:14.740 --> 00:01:17.100
+ Also for the login and log out,
+
+00:01:17.100 --> 00:01:20.420
+ you're gonna have to add a path to your project wide.
+
+00:01:20.420 --> 00:01:24.000
+ So dj4esamples, dj4esamples, urls.py.
+
+00:01:24.000 --> 00:01:25.680
+ This is not in any of your applications.
+
+00:01:25.680 --> 00:01:27.400
+ This is in your Django project.
+
+00:01:27.400 --> 00:01:30.660
+ And you add a path and there's a bunch of urls
+
+00:01:30.660 --> 00:01:31.960
+ and that gets all registered
+
+00:01:31.960 --> 00:01:34.880
+ and a whole bunch of wonderful magic happens at that point.
+
+00:01:34.880 --> 00:01:38.600
+ And so that's how these urls are activated
+
+00:01:38.600 --> 00:01:42.220
+ in your Django project.
+
+00:01:42.220 --> 00:01:43.940
+ So the applications.
+
+00:01:43.940 --> 00:01:48.940
+ So the way we get the urls to the login and log out features
+
+00:01:48.940 --> 00:01:51.580
+ is we use the reverse.
+
+00:01:51.580 --> 00:01:53.540
+ We've been using reverse all along.
+
+00:01:53.540 --> 00:01:57.780
+ Reverse is the way we look up for a particular view.
+
+00:01:57.780 --> 00:02:01.500
+ And in some urls.py, matter of fact,
+
+00:02:01.500 --> 00:02:04.660
+ in that Django contrib auth urls,
+
+00:02:04.660 --> 00:02:06.940
+ in that there is a name equals.
+
+00:02:06.940 --> 00:02:09.020
+ And so there's a view in there that they've got
+
+00:02:09.020 --> 00:02:11.340
+ that we didn't write and it has a name equals
+
+00:02:11.340 --> 00:02:14.100
+ and has name equals login and a name equals logout.
+
+00:02:14.100 --> 00:02:16.080
+ And so we can do a reverse lookup
+
+00:02:16.080 --> 00:02:19.140
+ like we would have any of our views that we might have.
+
+00:02:19.140 --> 00:02:23.220
+ Say what is give me the url in this Django project
+
+00:02:23.220 --> 00:02:27.360
+ for the view named login or the view named logout.
+
+00:02:27.360 --> 00:02:28.200
+ And it's pretty simple.
+
+00:02:28.200 --> 00:02:29.860
+ You could even probably hard code these
+
+00:02:29.860 --> 00:02:33.260
+ but maybe the route isn't exactly a count slash, right?
+
+00:02:33.260 --> 00:02:35.520
+ And so maybe you call them something else.
+
+00:02:35.520 --> 00:02:36.980
+ And so that's why we use the reverse
+
+00:02:36.980 --> 00:02:38.720
+ to look these things up.
+
+00:02:38.720 --> 00:02:42.520
+ And so that's just a convenient way of doing it.
+
+00:02:42.520 --> 00:02:45.820
+ Now, one of the things about logging in
+
+00:02:45.820 --> 00:02:48.360
+ is sometimes you have an application
+
+00:02:48.360 --> 00:02:50.060
+ and there's like a login button.
+
+00:02:50.060 --> 00:02:51.620
+ But sometimes you just have pages
+
+00:02:51.620 --> 00:02:53.580
+ that are protected by login.
+
+00:02:53.580 --> 00:02:56.540
+ And then when you go to a page,
+
+00:02:56.540 --> 00:02:58.420
+ it says, oh wait, you gotta log in first.
+
+00:02:58.420 --> 00:02:59.640
+ And then after you log in,
+
+00:02:59.640 --> 00:03:01.700
+ you'll notice it typically just takes you right back
+
+00:03:01.700 --> 00:03:03.560
+ to the page that you want it to see.
+
+00:03:03.560 --> 00:03:07.100
+ So you might bookmark a page when you're logged in
+
+00:03:07.100 --> 00:03:09.440
+ and then you log out and then you click
+
+00:03:09.440 --> 00:03:10.540
+ on that bookmark page.
+
+00:03:10.540 --> 00:03:12.660
+ But that requires that you be logged in.
+
+00:03:12.660 --> 00:03:14.260
+ So you're gonna go to the page.
+
+00:03:14.260 --> 00:03:16.580
+ And then when you're done logging in,
+
+00:03:16.580 --> 00:03:18.180
+ you wanna come right back to that page.
+
+00:03:18.180 --> 00:03:20.360
+ And so that's using redirecting.
+
+00:03:20.360 --> 00:03:22.620
+ But it's redirecting after login is successful
+
+00:03:22.620 --> 00:03:25.140
+ or after logout is successful.
+
+00:03:25.140 --> 00:03:26.820
+ Logouts are almost always successful.
+
+00:03:26.820 --> 00:03:28.460
+ And so there's a parameter that we can add,
+
+00:03:28.460 --> 00:03:30.020
+ a gap parameter that we can add.
+
+00:03:30.020 --> 00:03:31.220
+ And it's the next equals.
+
+00:03:31.220 --> 00:03:33.280
+ And what we do is we give it a path.
+
+00:03:33.280 --> 00:03:36.780
+ And so here's a little bit of code
+
+00:03:36.780 --> 00:03:39.580
+ that we're gonna play with in my sample codes
+
+00:03:39.580 --> 00:03:43.540
+ under the AuthZ application.
+
+00:03:43.540 --> 00:03:44.980
+ And so I got a bunch of views
+
+00:03:44.980 --> 00:03:47.300
+ and I'm gonna give them some names
+
+00:03:47.300 --> 00:03:48.420
+ so that we can play with them.
+
+00:03:48.420 --> 00:03:50.980
+ So these are just the URLs.py.
+
+00:03:50.980 --> 00:03:54.820
+ So if you take a look in this main.html template,
+
+00:03:54.820 --> 00:03:56.140
+ you see a whole bunch of things.
+
+00:03:56.140 --> 00:03:59.840
+ You see this next feature in action.
+
+00:03:59.840 --> 00:04:02.100
+ So here's a couple things we can do.
+
+00:04:02.100 --> 00:04:05.180
+ So there is this user object that in a sense is passed in.
+
+00:04:05.180 --> 00:04:07.440
+ You don't have to do anything to pass it in.
+
+00:04:07.440 --> 00:04:09.380
+ There's this user object that sits there
+
+00:04:09.380 --> 00:04:13.380
+ in your template context that's automatically.
+
+00:04:13.380 --> 00:04:15.620
+ We'll talk later about how you can sort of inject
+
+00:04:15.620 --> 00:04:19.140
+ into every template certain little things
+
+00:04:19.140 --> 00:04:20.220
+ that you gotta inject.
+
+00:04:20.220 --> 00:04:22.580
+ But the system injects this user.
+
+00:04:22.580 --> 00:04:25.220
+ There is an attribute called isAuthenticated,
+
+00:04:25.220 --> 00:04:26.820
+ which is true or false,
+
+00:04:26.820 --> 00:04:29.760
+ to say whether you're not logged in or are logged in.
+
+00:04:29.760 --> 00:04:33.580
+ And so if we see it, we say,
+
+00:04:33.580 --> 00:04:35.340
+ oh, what's their person's full name?
+
+00:04:35.340 --> 00:04:37.940
+ User.email, user.id.
+
+00:04:37.940 --> 00:04:39.460
+ User id is the primary key.
+
+00:04:39.460 --> 00:04:42.460
+ We might actually have a, later we'll have a foreign key
+
+00:04:42.460 --> 00:04:44.020
+ that goes into the user table.
+
+00:04:44.020 --> 00:04:45.660
+ And we need to know what the primary key
+
+00:04:45.660 --> 00:04:49.260
+ of the current user is so we can populate our foreign key
+
+00:04:49.260 --> 00:04:52.140
+ so when we like have a row and it's owned by such and so,
+
+00:04:52.140 --> 00:04:53.900
+ we're gonna actually put a foreign key into a table
+
+00:04:53.900 --> 00:04:55.880
+ that we didn't even create.
+
+00:04:55.880 --> 00:04:57.340
+ But the thing I'm talking about now
+
+00:04:57.340 --> 00:05:00.300
+ is you can get a URL, that URL tag,
+
+00:05:00.300 --> 00:05:02.180
+ that's looking up the name of a view.
+
+00:05:02.180 --> 00:05:04.020
+ Log out is the name of a view.
+
+00:05:04.020 --> 00:05:05.780
+ Log in is the name of a view.
+
+00:05:05.780 --> 00:05:07.840
+ And then we have this question mark next equals.
+
+00:05:07.840 --> 00:05:10.940
+ That's the parameter to say when you're all done
+
+00:05:10.940 --> 00:05:15.340
+ with that login or log out, go back to this particular URL.
+
+00:05:15.340 --> 00:05:20.340
+ Okay, and so that says go to the URL
+
+00:05:20.340 --> 00:05:25.820
+ that's in the Authsy application, the view named open.
+
+00:05:25.820 --> 00:05:28.580
+ And so that's one way of doing it.
+
+00:05:28.580 --> 00:05:30.380
+ Another way, let's say you're in login,
+
+00:05:30.380 --> 00:05:31.540
+ we're gonna get the login URL
+
+00:05:31.540 --> 00:05:33.820
+ and send ourselves back to the request path.
+
+00:05:33.820 --> 00:05:36.220
+ Request is another one of these things
+
+00:05:36.220 --> 00:05:38.560
+ that's dropped in automatically for us.
+
+00:05:38.560 --> 00:05:41.820
+ That is the current URL of the view we're at.
+
+00:05:41.820 --> 00:05:45.300
+ So in a sense, this is a contraction
+
+00:05:45.300 --> 00:05:47.340
+ that says go ahead and go to login,
+
+00:05:47.340 --> 00:05:49.380
+ and when you're back, come right back here.
+
+00:05:49.380 --> 00:05:51.880
+ So login will login and then redirect
+
+00:05:51.880 --> 00:05:54.760
+ back to this page that we're on, whatever the page is.
+
+00:05:54.760 --> 00:05:56.740
+ 'Cause this is gonna be, this little main.html
+
+00:05:56.740 --> 00:05:59.060
+ is used in a couple of my different views.
+
+00:05:59.060 --> 00:06:01.460
+ So request.path is like come back here.
+
+00:06:01.460 --> 00:06:04.180
+ So that's a good pattern to know,
+
+00:06:04.180 --> 00:06:07.100
+ to just say login and come back to this current path
+
+00:06:07.100 --> 00:06:08.100
+ when you're all done.
+
+00:06:09.380 --> 00:06:12.660
+ And so here's just a bunch of connections to this thing.
+
+00:06:12.660 --> 00:06:15.540
+ And we have, here's just all my links.
+
+00:06:15.540 --> 00:06:16.700
+ And I have a couple of things.
+
+00:06:16.700 --> 00:06:20.620
+ I have some no login required pages just to play around.
+
+00:06:20.620 --> 00:06:24.240
+ And then I have one that's protected by hand in Python.
+
+00:06:24.240 --> 00:06:26.700
+ And then one's required by a login mixin.
+
+00:06:26.700 --> 00:06:28.460
+ And then I sort of dump all that data.
+
+00:06:28.460 --> 00:06:30.700
+ And I think I showed you that one already.
+
+00:06:30.700 --> 00:06:32.960
+ So here is one of them, right?
+
+00:06:32.960 --> 00:06:34.060
+ I showed that.
+
+00:06:34.060 --> 00:06:36.700
+ That's what this all looks like.
+
+00:06:36.700 --> 00:06:39.140
+ You can see that these links have the next in there.
+
+00:06:39.140 --> 00:06:41.500
+ You can, this is how it turns out to be.
+
+00:06:41.500 --> 00:06:42.580
+ You get accounts login.
+
+00:06:42.580 --> 00:06:44.620
+ Oops, come back, come back.
+
+00:06:44.620 --> 00:06:47.340
+ You go to accounts login, next equals authzopen.
+
+00:06:47.340 --> 00:06:50.600
+ And that's basically, I'm in this file right now.
+
+00:06:50.600 --> 00:06:51.820
+ I'm in that URL.
+
+00:06:51.820 --> 00:06:54.740
+ And that says go ahead and log me in
+
+00:06:54.740 --> 00:06:59.740
+ and then come back to this URL, to the authzopen.
+
+00:06:59.740 --> 00:07:03.300
+ Here's an example of the logout URL
+
+00:07:03.300 --> 00:07:05.060
+ with a next setup in it.
+
+00:07:06.340 --> 00:07:08.500
+ And so up next we're gonna talk about
+
+00:07:08.500 --> 00:07:11.420
+ not just how to get the users to go to the login page,
+
+00:07:11.420 --> 00:07:13.460
+ but how to configure the login page.
+
+00:07:13.460 --> 00:07:16.040
+ (upbeat music)
+

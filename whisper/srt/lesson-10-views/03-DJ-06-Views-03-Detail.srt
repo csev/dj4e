@@ -1,0 +1,680 @@
+1
+00:00:00,000 --> 00:00:04,900
+ so it's important from time to time to talk about ways that you as a web
+
+2
+00:00:04,900 --> 00:00:08,940
+ application developer have a responsibility to create secure web
+
+3
+00:00:08,940 --> 00:00:13,000
+ applications and so I want to call your attention to places where you write code
+
+4
+00:00:13,000 --> 00:00:18,280
+ that seems like on the surface that it's what's what could go wrong and then you
+
+5
+00:00:18,280 --> 00:00:25,200
+ realize oh wait a sec that could go wrong so it turns out that you you take
+
+6
+00:00:25,200 --> 00:00:28,800
+ data from the user in their request object whether it's from a form or from
+
+7
+00:00:28,800 --> 00:00:35,760
+ the URL and you know like s equals 42 seems innocuous enough and then what I
+
+8
+00:00:35,760 --> 00:00:41,480
+ did is I just concatenated that into HTML and I sent that back and so the
+
+9
+00:00:41,480 --> 00:00:46,680
+ problem is is what if somebody with ill intent tries to produce data that
+
+10
+00:00:46,680 --> 00:00:51,680
+ actually does something and the problem is is if I take data straight from the
+
+11
+00:00:51,680 --> 00:00:58,440
+ user and put it back in the HTML response well HTML and JavaScript are
+
+12
+00:00:58,440 --> 00:01:02,200
+ programming language your browser is being programmed and that means that a
+
+13
+00:01:02,200 --> 00:01:08,720
+ user typing data into your system can program the browser and what's even
+
+14
+00:01:08,720 --> 00:01:13,240
+ worse is that they mean having them program their own browser not such a big
+
+15
+00:01:13,240 --> 00:01:20,760
+ deal but in a way what they do is they put some data in your system that turns
+
+16
+00:01:20,760 --> 00:01:25,200
+ into code and then they kidnap someone else's browser when they take a look at
+
+17
+00:01:25,200 --> 00:01:31,440
+ data that came in this is called cross site scripting where in a sense what
+
+18
+00:01:31,440 --> 00:01:36,300
+ what it's doing is it's trying to run code so that it can read stuff from your
+
+19
+00:01:36,300 --> 00:01:41,480
+ site and then hand it to a rogue site and so we have to protect against this
+
+20
+00:01:41,480 --> 00:01:48,280
+ and it's a very simple thing so if we take a look at the code that was bad
+
+21
+00:01:48,280 --> 00:01:52,200
+ basically we have this parameter guess and in the last time I showed you that
+
+22
+00:01:52,200 --> 00:01:58,640
+ was 42 and we just took this request get guess which is this stuff and we simply
+
+23
+00:01:58,640 --> 00:02:05,440
+ concatenated it into some HTML well if I carefully construct my guess with
+
+24
+00:02:05,440 --> 00:02:12,000
+ percent c3 blah blah blah all the blah blah blah all that stuff well that turns
+
+25
+00:02:12,000 --> 00:02:21,280
+ into this is a URL encoding of less than be bold greater than bold slash so that
+
+26
+00:02:21,280 --> 00:02:29,000
+ turns into HTML so I passed into this application some HTML and I as the
+
+27
+00:02:29,000 --> 00:02:35,880
+ developer took that and I concatenated together so the response source has HTML
+
+28
+00:02:35,880 --> 00:02:41,160
+ it's HTML that mostly comes from the application but this little bit of HTML
+
+29
+00:02:41,160 --> 00:02:47,600
+ came from the person who put it in and like I said it's not such a critical
+
+30
+00:02:47,600 --> 00:02:53,440
+ problem if I in my browser put stuff to take over your browser but it is if
+
+31
+00:02:53,440 --> 00:02:57,840
+ someone you can move that into someone else's browser so what happens is is
+
+32
+00:02:57,840 --> 00:03:05,720
+ that the the browser sees this bold text in HTML and instead of showing us the
+
+33
+00:03:05,720 --> 00:03:09,320
+ less than and the greater than it actually shows it to us as bold now this
+
+34
+00:03:09,320 --> 00:03:15,640
+ seems innocuous enough until you do something much more clever and that is I
+
+35
+00:03:15,640 --> 00:03:24,240
+ am going to carefully construct some code JavaScript and so what happens is
+
+36
+00:03:24,240 --> 00:03:30,920
+ is this here is encoding of that line right there the script alert owned slash
+
+37
+00:03:30,920 --> 00:03:36,440
+ script and so what happens is is that came in and it was concatenated straight
+
+38
+00:03:36,440 --> 00:03:42,320
+ out and if you run this page you won't see the data but that actually
+
+39
+00:03:42,320 --> 00:03:46,880
+ JavaScript will run and it's going to show up an alert box that says owned and
+
+40
+00:03:46,880 --> 00:03:52,240
+ okay now you can go ahead and look at the Wikipedia entries on cross-site
+
+41
+00:03:52,240 --> 00:03:56,800
+ scripting generally the idea is once you're in JavaScript you don't just say
+
+42
+00:03:56,800 --> 00:04:00,440
+ alert that I've owned your browser what you do is you do something like grab a
+
+43
+00:04:00,440 --> 00:04:05,680
+ cookie and send it to a third party or you call say a web service on the on the
+
+44
+00:04:05,680 --> 00:04:11,240
+ system with a cookie and and do bad things like you can convince a teacher
+
+45
+00:04:11,240 --> 00:04:14,880
+ to log in and change someone else's grade or delete all the grades in a
+
+46
+00:04:14,880 --> 00:04:21,480
+ class once you're into a person's job browser in JavaScript you can do a lot
+
+47
+00:04:21,480 --> 00:04:26,680
+ so that's really quite scary and there's all kinds of scenarios where you're
+
+48
+00:04:26,680 --> 00:04:31,520
+ taking data from the user and you got to be careful because yes I said the guess
+
+49
+00:04:31,520 --> 00:04:35,320
+ is supposed to be a number but if it's not a number if I concatenate it without
+
+50
+00:04:35,320 --> 00:04:42,760
+ escaping it it's a problem so here is a safer version of that so I've got
+
+51
+00:04:42,760 --> 00:04:48,480
+ another view function called game and it takes that same request and it still
+
+52
+00:04:48,480 --> 00:04:53,960
+ pulls that get data off which is this bit right here but then it calls a
+
+53
+00:04:53,960 --> 00:05:02,480
+ function and that's Django utils HTML escape right so what that does is that
+
+54
+00:05:02,480 --> 00:05:08,840
+ be that concatenates that into the HTML but escape processes any dangerous
+
+55
+00:05:08,840 --> 00:05:12,880
+ characters and turns them into what are called HTML entities so less than
+
+56
+00:05:12,880 --> 00:05:19,280
+ becomes ampersand LT greater than becomes ampersand GT right these two
+
+57
+00:05:19,280 --> 00:05:23,600
+ these four things with ampersands are a safer version of it and so that means
+
+58
+00:05:23,600 --> 00:05:28,040
+ that even though I tried I put in the data for bold it comes out with the less
+
+59
+00:05:28,040 --> 00:05:33,040
+ than and greater than showing and it's not actually interpreted right so this
+
+60
+00:05:33,040 --> 00:05:39,280
+ whole notion of escaping or HTML entities converting data running the
+
+61
+00:05:39,280 --> 00:05:43,520
+ data from a user through an HTML entities automatic filter ensures that
+
+62
+00:05:43,520 --> 00:05:48,800
+ the user cannot provide you data that turns into code in there or someone
+
+63
+00:05:48,800 --> 00:05:55,280
+ else's browser eventually so that's the kind of thing you have to think of as
+
+64
+00:05:55,280 --> 00:06:00,240
+ you're concatenating stuff together that and the key thing is is the request get
+
+65
+00:06:00,240 --> 00:06:07,400
+ guess that came from the user and so we think the users going to be nice but are
+
+66
+00:06:07,400 --> 00:06:12,040
+ the user with bad intent can send data that they carefully construct to cause
+
+67
+00:06:12,040 --> 00:06:16,240
+ the maximum trouble but if you just escape your data before you concatenate
+
+68
+00:06:16,240 --> 00:06:24,200
+ it there's nothing they can do about it so another of the views is where we're
+
+69
+00:06:24,200 --> 00:06:29,280
+ going to parse the parameter off of the URL itself these URLs are a little
+
+70
+00:06:29,280 --> 00:06:34,840
+ prettier sometimes than the question mark keyword equals value and so so let's
+
+71
+00:06:34,840 --> 00:06:40,200
+ take a look at this the way you do this is you in your URL patterns you have a
+
+72
+00:06:40,200 --> 00:06:48,740
+ path and instead of just having the path name the view function name you actually
+
+73
+00:06:48,740 --> 00:06:54,640
+ have this bracket int colon bracket guest bracket and what that is and you
+
+74
+00:06:54,640 --> 00:06:57,680
+ can go look this up in the Django documentation there's a whole series of
+
+75
+00:06:57,680 --> 00:07:02,960
+ these things that says the parameter after the word rest is an integer and
+
+76
+00:07:02,960 --> 00:07:08,520
+ please pass it in as the parameter guess so I've given I've chosen the name to
+
+77
+00:07:08,520 --> 00:07:14,200
+ pass it in as a parameter and then once Django sees this it pulls that 41 off
+
+78
+00:07:14,200 --> 00:07:18,560
+ and hands it to us so we don't have to tear the URL part actually in this
+
+79
+00:07:18,560 --> 00:07:22,520
+ request object we do get the URL we could do a bunch of splits and fool
+
+80
+00:07:22,520 --> 00:07:27,640
+ around but nah doesn't matter let's let Django do all that work let's just tell
+
+81
+00:07:27,640 --> 00:07:31,600
+ it we want that parameter after the word rest it's supposed to be an integer and
+
+82
+00:07:31,600 --> 00:07:37,680
+ pass it to me in the variable guest in the variable guess and then that same 41
+
+83
+00:07:37,680 --> 00:07:42,840
+ comes in I am clearly escaping it before I concatenate it and then I return a
+
+84
+00:07:42,840 --> 00:07:49,880
+ text-based HTML response with some HTML back to the browser so I'm this escape
+
+85
+00:07:49,880 --> 00:07:54,200
+ is there just because of cross-site scripting I don't I'm still taking this
+
+86
+00:07:54,200 --> 00:07:58,440
+ value still coming from the user so if any value comes from the user you have
+
+87
+00:07:58,440 --> 00:08:04,520
+ to properly escape it before you show it to them now those are all function based
+
+88
+00:08:04,520 --> 00:08:10,160
+ which are sort of a lower level we haven't got to the point where we're
+
+89
+00:08:10,160 --> 00:08:14,360
+ talking about forms but eventually in that in those lower level functions you
+
+90
+00:08:14,360 --> 00:08:19,080
+ have to check whether you got get a get request or a post request post request
+
+91
+00:08:19,080 --> 00:08:28,600
+ often comes from forms and so so this class this class based view allows us to
+
+92
+00:08:28,600 --> 00:08:32,680
+ gift a method for getting a method for post and let Django pick whether it's a
+
+93
+00:08:32,680 --> 00:08:39,120
+ get or a post and and this is an object orient an object and if you're a little
+
+94
+00:08:39,120 --> 00:08:43,680
+ rusty on objects I've got a URL there on Python for everybody calm to review just
+
+95
+00:08:43,680 --> 00:08:51,520
+ like what a self is I'm not going to cover all that in the path command you
+
+96
+00:08:51,520 --> 00:08:56,920
+ just have a you know a string that comes after the application routing to this the
+
+97
+00:08:56,920 --> 00:09:01,320
+ main view as view is something you got to add to it because main view is a
+
+98
+00:09:01,320 --> 00:09:08,240
+ class not a function but as view is a function and then we have to create a
+
+99
+00:09:08,240 --> 00:09:13,920
+ method get self of course is just part of pythons object-oriented work request
+
+100
+00:09:13,920 --> 00:09:18,880
+ is that first parameter right and so this is this one here is just a stock
+
+101
+00:09:18,880 --> 00:09:24,640
+ response and I just like the other ones I return on HTTP response now this it's
+
+102
+00:09:24,640 --> 00:09:27,960
+ like why this looks a little more complex than the other one did the same
+
+103
+00:09:27,960 --> 00:09:33,080
+ thing but it turns out there is tons of things that we can do and inheritance
+
+104
+00:09:33,080 --> 00:09:36,980
+ the fact it's a class there are so many things about object-oriented programming
+
+105
+00:09:36,980 --> 00:09:41,280
+ that over the next few lectures we're going to really take advantage of this
+
+106
+00:09:41,280 --> 00:09:46,080
+ and we ultimately will rarely write the old-school function based view we'll do
+
+107
+00:09:46,080 --> 00:09:51,720
+ class based views and so we can also pass parameters to class based views just
+
+108
+00:09:51,720 --> 00:09:56,240
+ like we can pass them to function based views you say okay with a prefix of
+
+109
+00:09:56,240 --> 00:10:03,280
+ remain slug is a kind of string and then guess is the parameter so that says pull
+
+110
+00:10:03,280 --> 00:10:08,000
+ this pull the string after the word remain off right views is the name of
+
+111
+00:10:08,000 --> 00:10:14,480
+ the view remain is the view within the application and then this third parameter
+
+112
+00:10:14,480 --> 00:10:18,960
+ is the guess and it's automatically parsed and handed to us and guess and
+
+113
+00:10:18,960 --> 00:10:23,680
+ then we're going to respond to a get request self of course is the
+
+114
+00:10:23,680 --> 00:10:27,320
+ object-oriented thing here's the whole request and guess is that little piece
+
+115
+00:10:27,320 --> 00:10:33,080
+ that comes off of the end of the URL we're going to can create a response by
+
+116
+00:10:33,080 --> 00:10:38,360
+ escaping the user provided guest bit so that if the user put something nasty in
+
+117
+00:10:38,360 --> 00:10:43,280
+ for cross-site scripting haha we stop them from doing that and so that
+
+118
+00:10:43,280 --> 00:10:52,640
+ produces the same kind of output your guess was ABC 1 2 3 42 XY is easy why so
+
+119
+00:10:52,640 --> 00:10:57,880
+ talking about return values everything we've shown you up till now is your
+
+120
+00:10:57,880 --> 00:11:04,520
+ basic 200 okay which means you asked for a page I gave you a page you're probably
+
+121
+00:11:04,520 --> 00:11:08,520
+ familiar with 404 not found which means you asked for a page that page doesn't
+
+122
+00:11:08,520 --> 00:11:14,360
+ exist there is another kind of response that's not actually a page which is a
+
+123
+00:11:14,360 --> 00:11:20,040
+ response header that says you know what it's not like you made a mistake but
+
+124
+00:11:20,040 --> 00:11:25,200
+ you're at the wrong place and it's called a redirect and 302 means I know
+
+125
+00:11:25,200 --> 00:11:29,320
+ where you're supposed to be and it isn't here and it was originally used for
+
+126
+00:11:29,320 --> 00:11:35,320
+ sites that would move and it's all handled by the location header on the
+
+127
+00:11:35,320 --> 00:11:40,920
+ HTTP response and so we send a redirect response which is a 302 with the
+
+128
+00:11:40,920 --> 00:11:45,960
+ location header being set and it uses our URL and when the browser gets that
+
+129
+00:11:45,960 --> 00:11:51,600
+ you gets that HD the 302 and a location header it doesn't show you what it just
+
+130
+00:11:51,600 --> 00:11:57,120
+ got but it immediately we regets that URL and then shows you that URL and the
+
+131
+00:11:57,120 --> 00:12:02,280
+ original idea was that if you rename a domain or something you wanted to have
+
+132
+00:12:02,280 --> 00:12:07,400
+ the old domain redirect web browsers and search engines use these 302s there's
+
+133
+00:12:07,400 --> 00:12:13,160
+ also a 301 header that can be used to redirect all this stuff but now we use it
+
+134
+00:12:13,160 --> 00:12:17,160
+ for all kinds of things and it's very much a controller function if you go to
+
+135
+00:12:17,160 --> 00:12:21,200
+ model view controller controller says okay we're done with that but I want your
+
+136
+00:12:21,200 --> 00:12:26,800
+ browser to go over there so that like that routing that sort of routing the
+
+137
+00:12:26,800 --> 00:12:30,520
+ browser changing the browser putting the browser where you want it to be that's
+
+138
+00:12:30,520 --> 00:12:35,560
+ part of the applications controller phase so we can send a redirect from a
+
+139
+00:12:35,560 --> 00:12:41,760
+ from a Django view and so here we go if you go to this bounce it's going to
+
+140
+00:12:41,760 --> 00:12:46,360
+ actually not end up at this it's going to bounce it to somewhere else and in
+
+141
+00:12:46,360 --> 00:12:50,920
+ the path we just say if we go to the bounce view run to this function this is
+
+142
+00:12:50,920 --> 00:12:54,960
+ not a class-based function this is an old-school function and so the request
+
+143
+00:12:54,960 --> 00:13:00,480
+ data is passed in and instead of now returning an HTTP response which we
+
+144
+00:13:00,480 --> 00:13:05,600
+ would put in here HTML we are doing an HTTP response redirect and now we put a
+
+145
+00:13:05,600 --> 00:13:11,560
+ URL and what we're saying with this whole thing is you're at the wrong place
+
+146
+00:13:11,560 --> 00:13:17,320
+ please browser when you get this response back go here so it's like it
+
+147
+00:13:17,320 --> 00:13:23,440
+ bounces to the browser and then bounces back and then reads that URL so and and
+
+148
+00:13:23,440 --> 00:13:28,320
+ you don't you can't have some output but folks generally don't need output when
+
+149
+00:13:28,320 --> 00:13:33,680
+ you're doing a redirect so if you take a look at that bounce watching it in your
+
+150
+00:13:33,680 --> 00:13:38,720
+ network console in a JavaScript debugger what you see is you see a set of three
+
+151
+00:13:38,720 --> 00:13:44,800
+ requests actually just two you'll see the first request is going to bounce and
+
+152
+00:13:44,800 --> 00:13:51,000
+ if we take a look at this request we see that it's a 302 it's kind of small you
+
+153
+00:13:51,000 --> 00:13:54,960
+ see we got a 302 which tells the browser something's wrong I'm not at the right
+
+154
+00:13:54,960 --> 00:14:01,200
+ place and then also the server sends the location header that says this is where
+
+155
+00:14:01,200 --> 00:14:06,000
+ you're supposed to be and the browser immediately turns around and does a get
+
+156
+00:14:06,000 --> 00:14:13,160
+ to that URL simple dot HTM and then that's what we see and then this 404
+
+157
+00:14:13,160 --> 00:14:18,760
+ interestingly the three statuses I talked to you about is because at this
+
+158
+00:14:18,760 --> 00:14:25,240
+ new location DJ free comm slash simple dot HTM there's no favicon remember the
+
+159
+00:14:25,240 --> 00:14:30,800
+ favicon is the thing that shows up like right there in the in the top tab bars
+
+160
+00:14:30,800 --> 00:14:35,200
+ the favicon and I don't have a favicon at least not now or DJ free I should put
+
+161
+00:14:35,200 --> 00:14:39,520
+ a favicon there but we get to see a 404 and all that means is the browser looked
+
+162
+00:14:39,520 --> 00:14:46,320
+ for a favicon and didn't find it so we see a 302 which is moved with a location
+
+163
+00:14:46,320 --> 00:14:50,440
+ header and then we see a get which returns then a 200 which is a success
+
+164
+00:14:50,440 --> 00:14:54,800
+ and we see the document and then we see a 404 because it tries to grab the
+
+165
+00:14:54,800 --> 00:15:00,640
+ favicon and so the HTML you get back from DJ free comm simple dot HTM that's
+
+166
+00:15:00,640 --> 00:15:07,040
+ this simple page with with a simple link okay so that's how the redirect works so
+
+167
+00:15:07,040 --> 00:15:14,040
+ that's a series of views both the input class base function base and to both the
+
+168
+00:15:14,040 --> 00:15:19,480
+ HTTP response and the HTTP redirect response so up now come up next we're
+
+169
+00:15:19,480 --> 00:15:24,280
+ going to talk about how building templates makes us do a lot less
+
+170
+00:15:24,280 --> 00:15:37,640
+ than cat nation
+

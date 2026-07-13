@@ -1,0 +1,123 @@
+ So now we're going to do a real, simple run-through of the kinds of things that you can do in HTML and forms.
+ This is only the beginning and there's so many great online resources for how to do forms in HTML.
+ So I've already showed you the basic text field, we'll talk about the password field, radio button,
+ checkbox, select and drop-down, and I just got kind of this one HTML page that you can view the source of and borrow.
+ I kind of write this stuff up for me for a quick reference.
+ So we've already talked about the text field, right?
+ So input type equals text and then the name is the value.
+ The ID, don't get too stuck on the ID.
+ The ID has to do with how you associate the label tag with the field and so that that knows that somehow account and this text box are connected.
+ So the ID is more of a browser thing and the name equals is the thing that's going to be sent to the browser.
+ So the browser is always going to get key value pairs and so, you know, when we type Beth and we hit submit,
+ then we're going to get the incoming post data is going to have the value account equals Beth.
+ Now, if you look at password, that's a type, password for all intents and purposes is a text type and it shows it so people can't shoulder surf and see what it is.
+ Of course, they can watch you type your password, but it shows asterisks in the box while you're typing.
+ But then it's important to realize that once the data is submitted, the data is submitted in plain text and until here's another one, another nickname.
+ So Nick equals and I see Kate.
+ So that's that's basically the variance of the input types of text.
+ Hidden type equals hidden is another one where you just don't see it in the user interface.
+ We're going to use one of those input type equals in a bit.
+ A radio button is designed for situations where there you can only pick one of two things.
+ So when you hit AM, the PM goes off.
+ When you hit PM, the AM goes off and you can actually have a whole bunch of them and you can click them.
+ Now, now they're they're drawn together because they're type equals radio and then the name is identical.
+ And interestingly, you can scatter these literally all over the page.
+ It doesn't lead to very good user interface, but the way you go.
+ And so what happens is, is again, no matter how many of these you put with a name equals when, no matter where you put them on the page, if you click one, all the others are going to turn off.
+ And so the one that's clicked, they all have different values.
+ And so what will happen is whatever one is clicked at the moment that you actually send it, that will be the key value pair where when equals PM because only one can be selected.
+ And it's up to you to make these things unique or you don't maybe don't want to be unique.
+ You do whatever you want.
+ And so in this case, the PM one is selected.
+ So we see when equals PM in the incoming post data.
+ So that's a radio button.
+ So this is a checkbox.
+ This is more probably more useful in many ways.
+ Checkboxes, you can have as many that you want and each of them are individual and distinct.
+ So if you take a look, for example, you see that you have different names to class one, class two and class three.
+ So that each checkbox has its own name, but the checkboxes are actually just little checkboxes.
+ The text here is just text.
+ The text is not really a critical part of it.
+ The value is what will get sent if that checkbox is checked.
+ And so in this example, we've checked pie free and SI 539.
+ And you'll notice that two of them have values and one of them doesn't.
+ Now, the key is often you're just checking to see if the data is there.
+ In this case, class three is not in the post data and class one is on.
+ That's the default.
+ If you don't say value equals, it's like value equals on or whatever the value is that you put in that checkbox.
+ And so you get to decide these.
+ You might easily think that you don't need any values whatsoever because you're really looking for the name of the field and you want the name of the field to be distinct.
+ And so again, you can check as many of the checkboxes as you want.
+ You can uncheck them.
+ You can check none of them and you can check all of them.
+ So those are checkboxes.
+ So to describe a drop down, a drop down is a multiple choice option basically for a single value that's going to be sent back to you.
+ And so we have a select, which is the whole thing, and that gives the name the key, the keyword that is going to be sent back to.
+ And then we have a series of options.
+ And you'll notice there's no value on the select, but each option has its own value.
+ Right. So I happen to be going zero, one, two, and these are strings, not numbers.
+ They often are just numbers to make our lives simple.
+ And then you have some text, et cetera, et cetera, et cetera.
+ And so you pick one.
+ In this case, I leave it default and I hit the submit.
+ So soda is going to be equal to zero.
+ So this happened to be the one that selected when we hit submit.
+ OK, so that's what a select looks like.
+ You can also make a select that has some defaulted one.
+ And so you just put selected on one of them.
+ So that means it's the drop down.
+ They're all there, right?
+ They're all there.
+ If you click on this thing, you'll see if you click on which snack you're going to see all the different snacks, peanuts is preselected.
+ And if I don't change it and hit submit, then we're going to see snack equals the value, which is peanuts.
+ So that's an example that you don't have to make numbers, although it's really common to be using numbers.
+ So that's a drop down with a default other than the first item.
+ The default is it's the first item unless you do it otherwise.
+ When you're typing in comments or a blog post, big long blob of text, you use a text area tag.
+ The text area tag is a little bit different in that it doesn't have a value equals.
+ It does have a name equals.
+ It has rows and columns to tell how tall it is and how wide it is.
+ There are clever styling libraries that make these a little prettier.
+ But basically what it is, it's a series of text, including paragraphs, including new lines, et cetera.
+ And you're just allowed to type with new lines and edit and cursor around in here and build all kind of stuff.
+ And then you send it in and you can put default text in here.
+ You can edit the text.
+ You can change it.
+ And it comes in as a key value pair with new lines and everything and any weird spacing that you might put in.
+ But it's basically a block of text like a comment or like a like a comment or a blog post or something like that.
+ So the last thing on this page here is the submit button.
+ And so you can make a type equals submit and you can give it a name.
+ And again, that's a key value pair and a value.
+ Now, the submit is a little bit weird in that the value actually appears on the submit.
+ But what we tend to do is this submit and if you were in a multi-language environment, you're going to want that to be whatever language of the user.
+ So usually what we do is we I name, carefully name the variables or the name of the form.
+ And then I check for this to exist.
+ And if I have a bunch of buttons, I name them differently and don't really actually look at this text because that text might want to be translated at some point in time.
+ So that's an input type.
+ Input type equals button.
+ This is a little pattern where I'm going to do like an escape or a back or something like that.
+ And then sometimes it's easier just to do some little JavaScript and what this little JavaScript chunk is.
+ Location.href equals quote www.djfree.com return false.
+ What this says is it actually sort of when you press this escape button, it goes up in the browser and in effect pastes this little URL into the URL bar and then hits enter and return false keeps the form from being submitted.
+ And so this is a way that I often will put a simple cancel or escape or something else in a form.
+ Just if I know the URL I want to go back to or go to, then you can put it in here and on click location.href.
+ So those are the input types that have been around for probably 20 years.
+ Yeah, at least 20, 25 years.
+ HTML5 is a more recent phenomenon, although by now it's pretty well supported in most browsers, to find a whole new set of input types.
+ And what's nice about this is we were slowly but surely building complex libraries to solve all these problems, but now we can use these input types and now each browser can support them to their own way.
+ And they all fall back to type equals text.
+ And so if you have a really old browser, these don't cause trouble.
+ So here's just some samples of some things.
+ So type equals color is a color picker and that's going to pop up a color picker, let you cruise around.
+ That color picker is defined by the browser and usually the operating system and so you'll pick a color.
+ And that color is going to go in in hex format and that's the red, the green and the blue and so that's what colors look like.
+ You can have type equals date and so here's a date and they pop in here, you're going to pop up a date picker for the birthday, you'll pop up a date picker and you'll be able to kind of move around and pick a date and then that'll put that date in as a string.
+ They're all going to turn into strings when they're being sent in.
+ There's a couple of other ones like email, name equals email, that basically does validation that says it's got to have an @ sign, there's some rules about what is and isn't a valid email.
+ And so this will refuse to submit this form unless there's a valid email in there.
+ The same is true for number, if you put something that's like 25 and it's not between one and five with min and max here, if we're going to refuse to submit the form, the same is true for a type equals URL.
+ There's really a validation on the form to say, look, you can't put something in here that's not a valid URL and just to prove that it doesn't matter, if you make any type, which flying doesn't exist, you can type something in and it just functions as a text field and so in a way all these fall back to text fields.
+ The key thing is, is when you hit the submit button, normally that gathers up the form and sends it to the server, but when you use this HTML5 validation like date, number, email, URL, it actually will, before it, before it, you hit the submit button, before it actually sends it, it's going to do a quick validation on these things and it will actually stop and say, you know what, you didn't get that one right and it just refuses to submit.
+ You can't override that in your application. What happens is, is the data doesn't get submitted at all until, so the browser blocks the submission of the data.
+ Now, if it's not an HTML5 browser, it's going to get submitted with no validation whatsoever, so we still have to kind of check this data for sanity, which we'll talk about soon about how to do that in the server, but this is quite nice because it gives your user some immediate feedback, kind of customized to the browser so the browser takes some responsibility for helping get the user to type the right stuff in.
+ And so that is a romp through HTML forms. You will learn so much more. I just wanted to kind of cover some of them in case you hadn't seen it in a while.

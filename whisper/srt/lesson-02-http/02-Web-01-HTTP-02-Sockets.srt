@@ -1,0 +1,580 @@
+1
+00:00:00,000 --> 00:00:03,960
+ So network sockets are like phone calls for computers.
+
+2
+00:00:03,960 --> 00:00:05,880
+ And literally, in the 1960s, when
+
+3
+00:00:05,880 --> 00:00:08,560
+ they were designing the concept for network software,
+
+4
+00:00:08,560 --> 00:00:12,000
+ that is the concept that they came up with.
+
+5
+00:00:12,000 --> 00:00:16,320
+ And that is that, in a sense, we make a call, we talk on the call,
+
+6
+00:00:16,320 --> 00:00:17,360
+ and we hang the phone up.
+
+7
+00:00:17,360 --> 00:00:19,700
+ And as computers were going to share data,
+
+8
+00:00:19,700 --> 00:00:22,280
+ and some computers were going to have data, and other computers
+
+9
+00:00:22,280 --> 00:00:25,680
+ were going to want data, they thought, oh, the way to do this
+
+10
+00:00:25,680 --> 00:00:27,600
+ is not necessarily have a permanent connection
+
+11
+00:00:27,600 --> 00:00:30,040
+ to that data, because there's going to be so many computers,
+
+12
+00:00:30,040 --> 00:00:33,480
+ and so many sources of data, and so many computers that
+
+13
+00:00:33,480 --> 00:00:34,600
+ want to consume those data.
+
+14
+00:00:34,600 --> 00:00:36,720
+ And of course, in 1960, they had no imagination
+
+15
+00:00:36,720 --> 00:00:37,920
+ that there would be billions.
+
+16
+00:00:37,920 --> 00:00:40,760
+ They just thought there would be 10,000.
+
+17
+00:00:40,760 --> 00:00:42,320
+ And they thought that was a lot.
+
+18
+00:00:42,320 --> 00:00:44,760
+ But they came up with a protocol that basically said,
+
+19
+00:00:44,760 --> 00:00:49,000
+ when you don't have continuous permanent access to data,
+
+20
+00:00:49,000 --> 00:00:50,680
+ you actually make a phone call.
+
+21
+00:00:50,680 --> 00:00:52,080
+ You know where the data is at.
+
+22
+00:00:52,080 --> 00:00:55,680
+ You kind of say, you dial up, you grab this stuff,
+
+23
+00:00:55,680 --> 00:00:58,040
+ you get it back, and then you let the connection go.
+
+24
+00:00:58,040 --> 00:01:01,280
+ And so it means that with billions of computers,
+
+25
+00:01:01,280 --> 00:01:04,840
+ each talking to each other, the network isn't so complex.
+
+26
+00:01:04,840 --> 00:01:09,680
+ And so there's this connect, talk, disconnect.
+
+27
+00:01:09,680 --> 00:01:11,120
+ Connect, talk, disconnect.
+
+28
+00:01:11,120 --> 00:01:15,840
+ And it's the way the phone system in our world
+
+29
+00:01:15,840 --> 00:01:17,080
+ scales to all the people.
+
+30
+00:01:17,080 --> 00:01:19,500
+ And it's the way the internet scales to all the people
+
+31
+00:01:19,500 --> 00:01:21,360
+ that want to use that internet.
+
+32
+00:01:21,360 --> 00:01:25,760
+ So this is made inside of software
+
+33
+00:01:25,760 --> 00:01:30,120
+ using an abstraction, our library, called Sockets.
+
+34
+00:01:30,120 --> 00:01:34,240
+ And Sockets really are computer phone calls.
+
+35
+00:01:34,240 --> 00:01:36,720
+ You know where you're going to call.
+
+36
+00:01:36,720 --> 00:01:39,720
+ You can start the call, wait for them to answer.
+
+37
+00:01:39,720 --> 00:01:42,920
+ Once they answer, there is a two-way communication.
+
+38
+00:01:42,920 --> 00:01:46,640
+ It's kind of like a file, except that you can simultaneously
+
+39
+00:01:46,640 --> 00:01:48,360
+ read from the file and write from the file,
+
+40
+00:01:48,360 --> 00:01:50,880
+ although it's important for the two cooperating
+
+41
+00:01:50,880 --> 00:01:53,760
+ pieces of software to know who's going to read first
+
+42
+00:01:53,760 --> 00:01:55,960
+ and who's going to write first, because it's
+
+43
+00:01:55,960 --> 00:01:58,360
+ like when you pick the phone up after it rings,
+
+44
+00:01:58,360 --> 00:02:00,840
+ we all know to say, hello.
+
+45
+00:02:00,840 --> 00:02:02,520
+ And that's kind of a protocol.
+
+46
+00:02:02,520 --> 00:02:05,080
+ Who talks first is a protocol.
+
+47
+00:02:05,080 --> 00:02:06,840
+ And then the person goes, who is this?
+
+48
+00:02:06,840 --> 00:02:09,280
+ And then eventually conversations
+
+49
+00:02:09,280 --> 00:02:11,560
+ happen pretty naturally.
+
+50
+00:02:11,560 --> 00:02:12,760
+ Somebody talks, listens.
+
+51
+00:02:12,760 --> 00:02:14,400
+ Someone else talks, listens.
+
+52
+00:02:14,400 --> 00:02:18,120
+ And that works, but there's complicated protocols.
+
+53
+00:02:18,120 --> 00:02:20,280
+ And you can think of this not necessarily
+
+54
+00:02:20,280 --> 00:02:24,600
+ as the browser on your laptop or phone
+
+55
+00:02:24,600 --> 00:02:27,080
+ as talking to data on the server.
+
+56
+00:02:27,080 --> 00:02:29,760
+ It actually is talking to another program.
+
+57
+00:02:29,760 --> 00:02:32,000
+ So even when it's just retrieving a file,
+
+58
+00:02:32,000 --> 00:02:34,880
+ it's talking to an application on that server.
+
+59
+00:02:34,880 --> 00:02:38,160
+ And that application is reading the file and sending it out.
+
+60
+00:02:38,160 --> 00:02:39,680
+ And we'll see that eventually how
+
+61
+00:02:39,680 --> 00:02:41,760
+ we have to do that when we're doing things
+
+62
+00:02:41,760 --> 00:02:43,280
+ like uploading pictures.
+
+63
+00:02:43,280 --> 00:02:45,840
+ We upload pictures, and then we have to actually serve them
+
+64
+00:02:45,840 --> 00:02:46,440
+ back out.
+
+65
+00:02:46,440 --> 00:02:48,320
+ We can't just say, oh, the pictures are there.
+
+66
+00:02:48,320 --> 00:02:49,400
+ You can grab them.
+
+67
+00:02:49,400 --> 00:02:52,520
+ Because sometimes not everyone can see every picture.
+
+68
+00:02:52,520 --> 00:02:54,640
+ And so part of the software application
+
+69
+00:02:54,640 --> 00:02:58,200
+ decides, if you are allowed to see this picture, I will send it.
+
+70
+00:02:58,200 --> 00:03:01,240
+ If you're not allowed to see the picture, I will not send it.
+
+71
+00:03:01,240 --> 00:03:03,400
+ And so that's where it's a piece of software
+
+72
+00:03:03,400 --> 00:03:06,600
+ that you're talking, even if you're looking at a picture.
+
+73
+00:03:06,600 --> 00:03:08,360
+ Sometimes that software is really simple,
+
+74
+00:03:08,360 --> 00:03:11,280
+ and you barely notice it.
+
+75
+00:03:11,280 --> 00:03:13,000
+ But there is software in the loop.
+
+76
+00:03:13,000 --> 00:03:15,200
+ It's not like you just go straight to data.
+
+77
+00:03:15,200 --> 00:03:18,560
+ It is really two pieces of computer software
+
+78
+00:03:18,560 --> 00:03:20,040
+ talking to each other.
+
+79
+00:03:20,040 --> 00:03:22,440
+ And we use the internet as that intermediary
+
+80
+00:03:22,440 --> 00:03:26,160
+ to allow that conversation to happen.
+
+81
+00:03:26,160 --> 00:03:29,160
+ So if you read my book about the TCP/IP,
+
+82
+00:03:29,160 --> 00:03:31,240
+ you'll learn this in super great detail.
+
+83
+00:03:31,240 --> 00:03:36,280
+ But every computer has an IP address.
+
+84
+00:03:36,280 --> 00:03:37,360
+ It is a number.
+
+85
+00:03:37,360 --> 00:03:38,680
+ There are two kinds of addresses.
+
+86
+00:03:38,680 --> 00:03:41,880
+ There's IPv4 and IPv6.
+
+87
+00:03:41,880 --> 00:03:45,800
+ IPv4 version 4 is the one that's got four dotted numbers,
+
+88
+00:03:45,800 --> 00:03:51,280
+ like 142.16.42.14.
+
+89
+00:03:51,280 --> 00:03:52,720
+ But within each of those, they have
+
+90
+00:03:52,720 --> 00:03:55,000
+ what's called a TCP port number.
+
+91
+00:03:55,000 --> 00:03:57,280
+ And because this whole internet thing
+
+92
+00:03:57,280 --> 00:03:59,320
+ is applications talking to applications,
+
+93
+00:03:59,320 --> 00:04:02,920
+ we need to have a good way to know which application we're
+
+94
+00:04:02,920 --> 00:04:03,440
+ talking to.
+
+95
+00:04:03,440 --> 00:04:06,120
+ And that's where TCP port numbers come in.
+
+96
+00:04:06,120 --> 00:04:10,360
+ And you can think of this as like a phone extension.
+
+97
+00:04:10,360 --> 00:04:15,680
+ So you have a phone number, and then you have extension 1436.
+
+98
+00:04:15,680 --> 00:04:17,640
+ And so TCP port numbers are like that.
+
+99
+00:04:17,640 --> 00:04:22,480
+ So we can not have a specific address for every application,
+
+100
+00:04:22,480 --> 00:04:25,560
+ but an application that has an address and a port
+
+101
+00:04:25,560 --> 00:04:28,520
+ within that address, or a phone number and an extension
+
+102
+00:04:28,520 --> 00:04:30,840
+ within that phone number.
+
+103
+00:04:30,840 --> 00:04:32,840
+ And so you can look these things up.
+
+104
+00:04:32,840 --> 00:04:36,000
+ Port 25 is used for email, server-to-server
+
+105
+00:04:36,000 --> 00:04:37,320
+ communication.
+
+106
+00:04:37,320 --> 00:04:39,600
+ In the old days, we used this thing called Telnet.
+
+107
+00:04:39,600 --> 00:04:42,440
+ We'll talk about that on port 23.
+
+108
+00:04:42,440 --> 00:04:46,440
+ And so the client is on the right-hand side.
+
+109
+00:04:46,440 --> 00:04:49,360
+ And it might be a computer where you've got a keyboard,
+
+110
+00:04:49,360 --> 00:04:50,320
+ and it's you.
+
+111
+00:04:50,320 --> 00:04:52,560
+ Or it might be a server that's got some mail that's
+
+112
+00:04:52,560 --> 00:04:54,200
+ being forwarded from somewhere.
+
+113
+00:04:54,200 --> 00:04:57,200
+ And they all talk, and they connect to an IP address.
+
+114
+00:04:57,200 --> 00:05:02,440
+ In this case, 7420828177 is the IP address of this computer.
+
+115
+00:05:02,440 --> 00:05:04,960
+ And then port 25 is the extension
+
+116
+00:05:04,960 --> 00:05:08,440
+ where one computer sends email to another computer.
+
+117
+00:05:08,440 --> 00:05:10,880
+ And each of the arrows in between them
+
+118
+00:05:10,880 --> 00:05:12,200
+ is a separate protocol.
+
+119
+00:05:12,200 --> 00:05:14,120
+ So if you're talking to an email server,
+
+120
+00:05:14,120 --> 00:05:15,940
+ you expect to talk an email protocol.
+
+121
+00:05:15,940 --> 00:05:17,520
+ And if you're talking to a login server,
+
+122
+00:05:17,520 --> 00:05:18,560
+ you have a login protocol.
+
+123
+00:05:18,560 --> 00:05:19,940
+ That's kind of the simplest one.
+
+124
+00:05:19,940 --> 00:05:21,080
+ Or a web server.
+
+125
+00:05:21,080 --> 00:05:24,520
+ Web server can be on port 80 if it's unsecure.
+
+126
+00:05:24,520 --> 00:05:28,560
+ Preferred, of course, is HTTPS, which is on port 443.
+
+127
+00:05:28,560 --> 00:05:32,160
+ If you have a mail application like, say,
+
+128
+00:05:32,160 --> 00:05:34,160
+ Thunderbird that's reading Gmail,
+
+129
+00:05:34,160 --> 00:05:37,640
+ it talks to ports 109 or 110 or a couple of other ones
+
+130
+00:05:37,640 --> 00:05:40,880
+ that are ways for a mailbox application
+
+131
+00:05:40,880 --> 00:05:43,760
+ to talk a protocol to a server-based mailbox
+
+132
+00:05:43,760 --> 00:05:46,600
+ to retrieve the new messages or delete a message or view
+
+133
+00:05:46,600 --> 00:05:48,200
+ a message or whatever.
+
+134
+00:05:48,200 --> 00:05:52,560
+ So there are these ports on servers that have protocols.
+
+135
+00:05:52,560 --> 00:05:55,660
+ And then we can build software on our clients
+
+136
+00:05:55,660 --> 00:05:58,640
+ that talk these protocols.
+
+137
+00:05:58,640 --> 00:06:00,920
+ The one we're going to be playing with the most
+
+138
+00:06:00,920 --> 00:06:02,680
+ in development mode is port 80.
+
+139
+00:06:02,680 --> 00:06:08,000
+ And in production mode, port 443 for the HTTP for web documents,
+
+140
+00:06:08,000 --> 00:06:10,720
+ basically, and web application documents.
+
+141
+00:06:10,720 --> 00:06:13,480
+ So up next, we're going to take a quick look at the hypertext
+
+142
+00:06:13,480 --> 00:06:15,040
+ transfer protocol.
+
+143
+00:06:15,040 --> 00:06:17,800
+ I always want to call it hypertext transport protocol,
+
+144
+00:06:17,800 --> 00:06:18,960
+ HTTP.
+
+145
+00:06:18,960 --> 00:06:24,760
+ And that is the protocol that we talk to port 80 or port 443.
+

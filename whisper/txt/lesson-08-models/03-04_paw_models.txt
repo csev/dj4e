@@ -1,0 +1,99 @@
+ and welcome to our quick walk-through of using models in Django, again, we're working through
+ the Mozilla Developer Network tutorial, so we're in this tutorial about using models.
+ Now this tutorial has a lot of useful information, so it's designing the local library models,
+ this is something you should read carefully and understand, hopefully you've had some
+ data model design before or watched some information about data model design, so we have sort of
+ authors and books and genres and the language and books and how they're checked out, so
+ just read all this.
+ This talks about how we define these models, take from that diagram and turn the models
+ into Django models, how we add fields to those models, how we add foreign keys, logical keys,
+ etc., etc., and so just, I'm going through this fast, just I want you to read all that
+ and what I'm gonna do is jump down to this defining local library models 'cause this
+ is sort of the work that you've gotta do, so once you understand all that through whatever
+ way you understand it, we're going to go ahead to our Python Anywhere account and start a
+ new bash console, and then we're gonna say work on Django 2, pick our virtual environment,
+ then we're gonna go CD Django projects, I say DJ Tab there, and then local library is
+ the project, and if we take a look, we've got the catalog, local library is the configuration,
+ we've been editing these files all along, and so here we are, if you recall, we've run
+ the SQL light command in previous that we can see what's in here, we're gonna be adding
+ some new tables, so we're going to edit the file catalog, models.py, I'll use nano to
+ edit that, and it has something in there, it's exactly as predicted here, and then we're
+ gonna add, I'm just gonna add one of the models, there's several that we've gotta add, but
+ for now, I'm just going to paste that one in, and control x, y, enter, and so now if
+ I do a git status, you can see that I made one small change, okay, so once we've made
+ this change, this whole concept of make migrations, all make migrations does, it looks at all
+ the models.py file, and there's some in there already for the administration, which we're
+ gonna see in the next assignment.
+ This looks at the models, now this one's gonna detect changes, so oh, there's a new model
+ in that file, so we have to create what's called a migration, migration is a script
+ that basically creates new tables, or updates tables, et cetera, so we're gonna run the
+ make migrations, and then we're gonna actually do the migration, so these are separate, so
+ the migrations would get, if we were running in production, you might check the migration
+ into GitHub, and then run migrate both locally, and on your production server, so we'll just
+ do the migrate right away, and the migrate is what is actually creating the new table,
+ and we already did kind of a git status, we can see that we got two new files, we'll deal
+ with those in a second, okay, but now we're gonna run this command right here, sqlite3,
+ and we're gonna read that database file, so if we take a look at the files, it's this
+ file, so that is how we do it, so we're in a sqlite command line browser, you can see
+ how to use this, but .tables, we see this new one, so if you looked at it before, you
+ saw all these things, but now because we've added this new model file, we have this catalog.genre,
+ so schema tells us what the shape, copy, paste, so this tells us a SQL create table that would
+ be necessary to create this, we have a primary key named id, and then a name field, so that's
+ a pretty simple table, and if we take a look at the migration, that's what we had, we had
+ this name, which was basically some text, okay, and the id is automatically generated,
+ that's the primary key that's automatically generated, so that's the way we go, so you
+ can either hit Ctrl+D or .quit, I'll hit Ctrl+D here, so here we are, and so now we can edit
+ this again, this time I'll use vi, catalog_models.py, again, learn to use that tab, go to the end
+ with a zero G, zero capital G, and now I'm just going to kind of blast these things in
+ here, copy these guys, it'd be better for you to understand this, so one of the problems
+ that people have, I think, open, open a new line, is people are so much in a hurry to
+ get through these tutorials, and of course I'm blasting through them too, that you just
+ type this and you just put it back in without understanding it, and that just means that
+ you're going to have to come back and you're going to have to actually learn this when
+ it comes time to writing an application that you're doing yourself, and then the author
+ model, let's look at these for a little bit of time, I'm just showing you how to do it
+ here, so you're not wasting too much time watching me on the video, escape colon wq
+ to save it, if I do a get diff, this is a more prompt here, this little colon, so I've
+ got a genre model, a book model, a book instance model, and an author model, so those are the
+ actually, an author model, and then Q gets me out of that, these are basically the models
+ that represent, in a sense, everything except the language, and so you've got to actually
+ add the language here, and it's kind of telling you where you're supposed to hook the language
+ up, what kind of a thing, so you in this challenge, you've got to add the language, so there's
+ a challenge down here, figure out where to hook it up, read all these models, and then
+ add a language model and get that right as well, connect it to the right place, again
+ there's a bunch of stuff that you've got to read, that's unfortunate, so see this thing
+ about language model, you've got to do this too, I'm not going to do it in this video,
+ so now that we've got these things done, we're going to run the make migrations again, so
+ it's going to have two migrations when we're done, I could have done all the edits and
+ done one migration, but I just wanted to show you, and then I want to do the migrate to
+ actually create the tables, okay, and so, if I do an SQLite, and I look at .tables,
+ see now I've got a lot more, I've got like, this genre was there before, but now I've
+ got like catalog author, and I can say .schema, catalog author, and we see the primary key,
+ the first name, the last name, date of birth, date of death, and that of course is taken
+ straight from these things right here, so this is called an object relational mapper,
+ which takes this author object and then turns it into a set of tables in a database and
+ does joins automatically, we'll get to all that eventually, so .quit or control D gets
+ us out of that, so we've seen that, and at that point, we're all done, we've got our
+ models, we've got our model created, if we are doing this in GitHub, oops, where'd I
+ just go, where am I, local library, pwd, local library, there I am, so if I do a git status
+ here, so you can see all the things that have been added in my local library, and then I'm
+ going to just say git add catalog migration star, because all these added files aren't
+ there yet, so that's okay, pycache, something you'd never want to add, it just ended up
+ in that star, so it's okay, git status, so these are the added files, and the catalog
+ files, and then we're going to commit that, and push it into our git repo, okay, so now
+ I typed in my password, and so it's all set up, and just for our own sanity, we're going
+ to give ourselves another tag in our GitHub repo, just so we can keep track of the fact
+ that, because you might have made a couple of commits, we only made one commit, I did,
+ because I knew what I was doing, and then we'll upload the tags to GitHub, and so if
+ I look at GitHub, jangle projects, see we got five commits, that one we just did, and
+ the other one we just did, so we're going to click on that one, and then we're going
+ to click on that one, and we're going to click on that one, and then we're going to click
+ on that one, and then we're going to click on that one, and then we're going to click
+ on that one, and then we're going to click on that one, and then we're going to click
+ on that one, and then we're going to click on that one, and then we're going to click
+ the SQLite file, so you go into jangle projects, local library, and dbsqlite, and then you
+ download it right here, so it downloads that file, and then you end up with this file locally
+ on your hard drive, and so if you have a command line on your computer, or the SQLite browser
+ on the computer, you can look at this, and you may have to turn it in as part of your
+ assignment, so that's how you download the file if you need to do that, okay, so thanks
+ for listening, and to our little discussion of jangle models.

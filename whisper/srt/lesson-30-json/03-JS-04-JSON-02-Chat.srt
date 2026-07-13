@@ -1,0 +1,316 @@
+1
+00:00:00,000 --> 00:00:05,280
+ So now we're going to bring all this together and we're going to build a simple multi-user chat
+
+2
+00:00:05,280 --> 00:00:11,680
+ application that moves data through the server using Ajax and JSON. So the idea here is we've got a
+
+3
+00:00:11,680 --> 00:00:18,640
+ simple chat and things are going to happen and we're going to use two tabs to simulate two users
+
+4
+00:00:18,640 --> 00:00:24,160
+ and the idea is whatever you enter in the first tab it's going to asynchronously merely appear in
+
+5
+00:00:24,160 --> 00:00:28,400
+ the second tab and we're going to use polling to do this and we're going to use polling every four
+
+6
+00:00:28,400 --> 00:00:34,160
+ seconds which is a very inefficient way to do this but for now it's the simplest way I can show you
+
+7
+00:00:34,160 --> 00:00:41,840
+ in a hurry what's going on. Every four seconds both windows are making a request to this URL called
+
+8
+00:00:41,840 --> 00:00:49,680
+ messages that is a JSON endpoint and they get back an array of the recent messages both the
+
+9
+00:00:49,680 --> 00:00:55,920
+ message text and a little nice time indicator like a minute ago or two minutes ago or something like
+
+10
+00:00:55,920 --> 00:01:00,880
+ that so this happens every four seconds and that's why this is not at all best practice
+
+11
+00:01:00,880 --> 00:01:06,000
+ not only is it not best practice for that but I'm returning an array in JSON and you're really not
+
+12
+00:01:06,000 --> 00:01:10,480
+ supposed to do that you're supposed to return an object even if the main data is an array you want
+
+13
+00:01:10,480 --> 00:01:15,840
+ an outer encapsulating object but again I'm trying to keep this as simple and short as I possibly
+
+14
+00:01:15,840 --> 00:01:20,960
+ can. So if we take a look at the urls.py and again I got a nice walkthrough if you want to see this
+
+15
+00:01:20,960 --> 00:01:28,800
+ version and walkthrough I have the main view that's talk and then messages is that a JSON view
+
+16
+00:01:28,800 --> 00:01:36,240
+ and I have a little spinner that you can see when it first starts up and then there's a simple model
+
+17
+00:01:36,240 --> 00:01:40,400
+ where we've got some text and who typed it in and what time it was created and if there's
+
+18
+00:01:40,400 --> 00:01:45,120
+ any updating in this case there's no updating but we need the date of the thing so we can say it's
+
+19
+00:01:45,120 --> 00:01:55,280
+ two minutes ago and so if you take a look at the views.py the talk main simply shows the main page
+
+20
+00:01:55,280 --> 00:02:00,320
+ and then is done and when we hit the chat button or post button it comes back to the post and we
+
+21
+00:02:00,320 --> 00:02:06,160
+ save the message and then we redirect back to ourselves back to the talk so if you look at the
+
+22
+00:02:06,160 --> 00:02:13,840
+ the template talk.htm you see we have a simple form that's got a text field and a submit button
+
+23
+00:02:13,840 --> 00:02:22,800
+ name post and importantly this div id chat content that has a spinning gif as its content and you're
+
+24
+00:02:22,800 --> 00:02:28,160
+ going to see that we're going to delete this and so one of the reasons I make it wait two seconds
+
+25
+00:02:28,160 --> 00:02:32,800
+ is that you can see this when it comes up and you can see the spinner happening but then once
+
+26
+00:02:32,800 --> 00:02:38,080
+ the javascript takes over it actually deletes the spinner and replaces it with the messages so this
+
+27
+00:02:38,080 --> 00:02:44,960
+ div is a placeholder for us to put the chat content which we're going to put in using javascript
+
+28
+00:02:44,960 --> 00:02:50,800
+ and here's the main javascript we have a function called update message and it does a fetch and it
+
+29
+00:02:50,800 --> 00:02:58,000
+ does a fetch to the uh to the url messages the cache note store just says every time I ask to
+
+30
+00:02:58,000 --> 00:03:03,440
+ fetch it give me a new copy of it and then I have a couple of promises the first promise says the
+
+31
+00:03:03,440 --> 00:03:08,880
+ response has been started and I'd like to retrieve the response and convert it as if it were json
+
+32
+00:03:08,880 --> 00:03:14,560
+ data and then the second promise takes as its parameters the converted json data meaning the
+
+33
+00:03:14,560 --> 00:03:24,400
+ the rows with a z is an object which in this case is an array and so we we we basically uh
+
+34
+00:03:24,400 --> 00:03:30,480
+ log that so we can see it then we go and say document get my id chat content that's that div
+
+35
+00:03:30,480 --> 00:03:36,960
+ inner html is nothing that is deleting either the previous list of messages or the spinner so we're
+
+36
+00:03:36,960 --> 00:03:41,920
+ going to empty it out and then we're going to fill it back up so we're going to loop through this
+
+37
+00:03:41,920 --> 00:03:49,760
+ set of rows that we got back and for each row we're going to append a paragraph tag so plus
+
+38
+00:03:49,760 --> 00:03:55,120
+ equals there is appending to the current inner html we can just treat this inner html as a variable
+
+39
+00:03:55,120 --> 00:04:00,320
+ right we can read it and we can write it and plus equals means we're appending to it we append a p
+
+40
+00:04:00,320 --> 00:04:06,160
+ tag we append the first part of the row which is the message then a br tag in two non-breaking spaces
+
+41
+00:04:06,160 --> 00:04:10,720
+ and then the second part which is how long ago it was which we generated in the server
+
+42
+00:04:10,720 --> 00:04:15,280
+ and then the end of a p tag and then we set a timeout so that we do this again in four
+
+43
+00:04:15,280 --> 00:04:20,800
+ four seconds four thousand milliseconds actually and then there's a catch that just alerts now
+
+44
+00:04:20,800 --> 00:04:28,560
+ the way this stuff usually works is that um it usually works or it blows up badly and so
+
+45
+00:04:28,560 --> 00:04:33,600
+ i just have a catch that says here's the error and hopefully it doesn't happen very often but
+
+46
+00:04:33,600 --> 00:04:37,840
+ maybe use the error could either be i made a mistake in the server and if you're doing
+
+47
+00:04:37,840 --> 00:04:41,360
+ software development chances are good that you're going to make a mistake in the server and that's
+
+48
+00:04:41,360 --> 00:04:45,520
+ a reason to put this alert there in the real world once your server code is nice and clean
+
+49
+00:04:45,520 --> 00:04:50,640
+ it doesn't have errors in it then they probably lost their network connection or your server went
+
+50
+00:04:50,640 --> 00:04:56,000
+ down or something like that in the middle of you know every four seconds getting this new data
+
+51
+00:04:56,960 --> 00:05:01,920
+ and then at the end we have an event listener dom content loaded which we've talked about before
+
+52
+00:05:01,920 --> 00:05:08,720
+ and we simply have run a function to do a set timeout of update message two seconds after the
+
+53
+00:05:08,720 --> 00:05:13,520
+ dom content is loaded and that's what these lines tell us to do and remember that update
+
+54
+00:05:13,520 --> 00:05:19,200
+ message doesn't actually call it right there it's in a string and it says after two seconds
+
+55
+00:05:19,200 --> 00:05:25,200
+ parse this javascript string and run it and that's what's happening here
+
+56
+00:05:26,480 --> 00:05:31,280
+ so we take a look at views.py we we're doing a get request and this is the one where we're
+
+57
+00:05:31,280 --> 00:05:37,840
+ sending a json response we're going to retrieve the messages the most recent 10 messages ordered
+
+58
+00:05:37,840 --> 00:05:44,240
+ into sending order by created at and then we're going to process it now it's pretty common not to
+
+59
+00:05:44,240 --> 00:05:51,440
+ just send the objects back we want to do a little processing and so we're sending back the message
+
+60
+00:05:51,440 --> 00:05:56,720
+ text and then this natural time which is a django library that makes up this 13 minutes ago 14
+
+61
+00:05:56,720 --> 00:06:03,280
+ minutes ago we go through the array that is the list of objects that we got from django's model
+
+62
+00:06:03,280 --> 00:06:09,120
+ and then we're going to make another one which is the only the pieces we want to give to our
+
+63
+00:06:09,120 --> 00:06:14,400
+ front-end code and then we return a json response with results which is an array which then is
+
+64
+00:06:14,400 --> 00:06:19,600
+ serialized into an array and it's actually an array of arrays and that is serialized then into
+
+65
+00:06:19,600 --> 00:06:27,040
+ an array of an arrays and sent back to it and then we go back to the code here if you look there
+
+66
+00:06:27,040 --> 00:06:35,760
+ that is looping through the data that came back from the messages view in json and so you know
+
+67
+00:06:35,760 --> 00:06:41,280
+ again that's what happens it's just every four seconds it runs through and retrieves the json
+
+68
+00:06:41,280 --> 00:06:47,200
+ clears out that div then fills it back up with whatever they are and if nothing changed you don't
+
+69
+00:06:47,200 --> 00:06:54,400
+ even see a blink it all happens so rapidly partly because it's all done asynchronously and that is
+
+70
+00:06:54,400 --> 00:07:00,880
+ that we are not actually touching the dom until we've got the data to replace it and then we
+
+71
+00:07:00,880 --> 00:07:06,720
+ do it so fast and we're done and then we give the browser back the thread and then it redisplays
+
+72
+00:07:06,720 --> 00:07:13,200
+ which means it's not kind of displaying one piece at a time you are modifying the dom and it doesn't
+
+73
+00:07:13,200 --> 00:07:21,680
+ update the window until you return from the function so in summary json is very powerful
+
+74
+00:07:21,680 --> 00:07:29,200
+ these are pretty short lectures actually it is very well supported and performs extremely well
+
+75
+00:07:29,200 --> 00:07:37,520
+ in many languages i mean it's over 20 years old now and it's every language has to be really good
+
+76
+00:07:37,520 --> 00:07:43,040
+ at json back in the early days you'd have to go find a json library now it's just built in it's
+
+77
+00:07:43,040 --> 00:07:48,000
+ built into the browsers it's built into python it's built into php it's built into everything
+
+78
+00:07:48,000 --> 00:07:54,320
+ and so python and and jango and javascript have excellent support so it's a great way to build
+
+79
+00:07:54,320 --> 00:08:05,120
+ applications
+

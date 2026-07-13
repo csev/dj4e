@@ -1,0 +1,88 @@
+ I mentioned that JavaScript owns the document-object model.
+ The document-object model is what we see when we're looking at the browser.
+ A browser parses the HTML, sometimes our JavaScript writes it, and then creates this object we
+ call the document-object model, which is then displayed to the user through a window.
+ A window is the subset of the document-object model.
+ In whatever JavaScript we write, we can read, manipulate, and update the DOM.
+ And as soon as the DOM is updated, the user sees the updates through the window.
+ And we can also just go into the debugger and directly manipulate the document-object
+ model.
+ So if we go back to the 01 NoScript, there's no JavaScript in here.
+ So you just go, it shows you a header and a paragraph, and that's the document-object
+ model.
+ But you'll note that if you go into Inspect Element and then go into that paragraph tag,
+ you can change and add the word cool.
+ In a sense, the debugger is JavaScript, and you can actually type JavaScript commands into
+ the debugger if you do the right thing.
+ But the debugger is owning the document-object model as well.
+ And so you simply can change the document-object model.
+ And literally, it changes the UI, but truly the document-object model changes.
+ So you can even change the kind of a tag you're dealing with.
+ You could turn this into an anchor tag.
+ You could add some hrefs.
+ You can change the document-object model.
+ You're displayed-- it just-- you change it, and you see it.
+ Now, I mentioned this thing called the window.
+ There are two sort of foundational objects in JavaScript in the browser.
+ There's the DOM.
+ And the DOM is an abstraction.
+ It is a structured hierarchy of tags.
+ We call them elements.
+ The window is how we see it.
+ So you can think of this picture that I've been showing you, parsing the response, running
+ some JavaScript, and tweaking the document-object model, and showing it to the user.
+ And if you change the document-object model, it's immediately updated.
+ On the left, that's kind of an oversimplification, because the way we actually view the document-object
+ model is through the window.
+ The window is what's on your screen, and probably the most easy way to demonstrate this is to
+ understand that the document-object model could be very large, and the window could
+ be very small.
+ And the document-object model doesn't change, and you can resize the window back and forth.
+ So sometimes you see scroll bars.
+ The scroll bar is not a notion in the document-object model.
+ It's a notion in the window.
+ The window has a certain height.
+ The document-object model may or may not completely fit in the window, and that has to do with
+ the window height and so scroll bars.
+ And so for example, if you look at 06height.html, all it does is puts out the header, puts out
+ the paragraph, and then prints out window height and window width, window.innerHeight
+ and window.innerWidth.
+ These are the height of the window, not the document-object model, but the window through
+ which we're viewing it.
+ And so if you show this page with the debugger turned on with a really tiny window, it says
+ that the height is 116.
+ If you make the window bigger and hit reload, it says the height's 256.
+ So in JavaScript, we can ask questions about the window, and we can do things to the window.
+ One thing we could do is we could scroll it up and down, and that's actually a common
+ thing to do in JavaScript.
+ If you have a big document-object model, and you've got a scroll window, and you want to
+ show the user a particular thing, like go to bottom, JavaScript can scroll the window
+ down to the bottom or up or down.
+ I don't get those right very well.
+ But we can control the window.
+ In this case, we're simply asking it how tall you are and how wide you are, but we can also
+ control it.
+ And so if we take a look now and we make 07scroll.htm, we can see that we have nine paragraphs
+ and a header.
+ That is the actual content.
+ And if we have a tall window, we can see the whole document.
+ But if we make the window smaller, then we can only see a subset of the document-object
+ model.
+ And so the window height changes, and if you look, you now have a scroll bar.
+ And what does the scroll bar do?
+ Well, it just takes and moves the document-object model up and down.
+ Well, it moves the part of the document-object, our view to the document-object model up and
+ down.
+ And if you're doing an inspect element in some browsers, you will see that it's telling
+ us with little kind of annotations that the body is being scrolled right now, and up through
+ paragraph four is overflowed off the screen up, and paragraph seven, eight, and nine have
+ overflowed and they've gone off the screen below.
+ Now if you play with this and you resize it and refresh it and resize it and refresh it,
+ you'll see this whole-- I mean, on the left, the whole thing shows, and so body is not indicated
+ as the scrollable element, and the headers not overflow, et cetera.
+ So you can play with this, but play with it with different sizes, refresh it, and then
+ inspect element, and watch how the scroll, the overflow, and the scroll bar-- and in
+ this case, I'm not printing out height, but you would be seeing that the height would
+ actually change.
+ So one of the things that we're going to do next is we're going to modify the document-object
+ model in JavaScript.

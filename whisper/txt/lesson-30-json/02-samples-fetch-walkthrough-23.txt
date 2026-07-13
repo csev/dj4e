@@ -1,0 +1,461 @@
+ another video walk-through for Django for everybody.
+ In this particular sample, we're going to do JSON and fetch.
+ So here we are.
+ The first thing to observe is that JSON
+ is really just the syntax.
+ So let's view source here.
+ And then we're also gonna view the console in this one.
+ Let's turn the console on.
+ And then, let's up a bit, come on, move up a bit.
+ So here's the source code.
+ This is just JavaScript.
+ There's no JSON coming from the server,
+ it's just JavaScript.
+ And I'm doing an assignment statement.
+ This is the syntax for a JavaScript object constant,
+ open curly brace, and then a series of string,
+ key value, key value, key value,
+ and the values can be strings,
+ they can be numbers, they can be booleans,
+ they can be arrays, and they object,
+ you can even have an object within the object, right?
+ And so all we're doing here is creating a variable
+ called who in JavaScript and then console logging it.
+ And son of a gun, if that object,
+ this is a parsed object, right?
+ That is the JavaScript.
+ I could have made a syntax error in here,
+ and then JavaScript would say syntax error.
+ But if that syntax is correct,
+ that is just the syntax for a JavaScript object constant.
+ And so the brilliance of JSON was,
+ let's send that exact syntax back and forth
+ across the network, right?
+ That was the brilliance of it, okay?
+ So let's actually do that in the simplest possible way.
+ So it means that we can build views inside the browser
+ and let me load this in the browser
+ and let me turn on the console.
+ Let me just turn on a console
+ so you can see what's going on here.
+ Let's start with web developer tools.
+ Oh yeah, favicon, favicon, whatever.
+ Let's go ahead and do that network here.
+ So one of the things going on,
+ let's take a look at this view here.
+ This is the JSON fun view.
+ And so this JSON fun view that we're hitting,
+ it does a time sleep, which is actually quite foolish,
+ but I do that so you can kind of see when things start
+ and then when things finish.
+ And so we have sitting here, this is Python now.
+ And the ironic thing is this the syntax
+ for a Python dictionary is the same
+ as the syntax for a JavaScript object.
+ I'd love to know like how explicitly that was.
+ Both syntaxes, I mean, it's a sensible syntax.
+ If I was inventing a language,
+ I might use this exact same syntax.
+ And so it's beautiful that JavaScript object syntax
+ and Python constants for dictionaries
+ are pretty much the same thing.
+ And so we simply serialize these things,
+ send them out and deserialize them.
+ So what's going on in this JSON fun
+ is we're sending back a JSON response.
+ In the normal situation, in this home view,
+ home view of course is this view right here,
+ we are sending back, this render request
+ is sending back an HTTP response.
+ I'm not, I import it, but I don't use it.
+ The return value from render,
+ which takes the request object fetch and optional context,
+ that is an HTTP response.
+ And so it knows that it HTML.
+ And so if we just, if we do a view source on this one,
+ not view source, let's do this.
+ Browser tools, web developer tools,
+ let's go to the network tab.
+ Let's hit refresh on this one.
+ And if we take a look at the request response cycle,
+ response headers are like text HTML.
+ And that's because this view,
+ the home view is returning an HTTP response.
+ And in that Django is setting all these things
+ like content length and content type.
+ But now we're gonna send back a JSON response.
+ So we're telling, we're telling Django
+ that we wanna send back JSON.
+ And here's our dictionary in Python.
+ So please serialize that as JSON,
+ send it back and set the headers correctly.
+ So if we look at this one and go in the network tab,
+ when you hit refresh,
+ we see that there's a get request
+ and the response headers now are quite different.
+ Application JSON, it's got a content length,
+ et cetera, et cetera.
+ And if we look at the response,
+ now my browser is doing like clever stuff making it pretty,
+ but let's just look at the raw thing.
+ This is the serialized key value store.
+ This is literally the text that came back from the browser.
+ Our browsers are trying to help us out.
+ They're parsing it and turning it into a JavaScript object
+ and showing it to us, right?
+ And so raw, and this in up here,
+ you can see it says raw as well.
+ You can go back and forth and see what's actually sent.
+ So this string is created by JSON response when passed that.
+ Now that's serialization, deserialization.
+ And I guess I call attention to it,
+ but you can almost ignore it
+ 'cause it works so amazingly smoothly, okay?
+ And so that is sort of the basic mechanisms
+ of retrieving and producing.
+ We produce the JSON inside our Python code, inside our view,
+ and then we send it back to the browser.
+ And in this case, when we're doing just plain old JSON fun,
+ we're doing a GET request in the browser, okay?
+ But that's not typically how it's done.
+ We do this to debug stuff, right?
+ We go to these JSON URLs to see if they're blowing up.
+ Because if the JSON URL blows up,
+ let me see if I can make it blow up.
+ Let's see if I can make it blow up.
+ I don't know.
+ Let me take this comma out, right?
+ I'll take this comma out.
+ So that means I'm gonna have a syntax error.
+ Oh, my server was so bad.
+ My server won't write.
+ Can't make a mistake if I try.
+ Let's see if my server starts.
+ Okay, at least my server restarted on that one.
+ So now maybe I'll get a 500 error or something.
+ Oops.
+ Okay, so here's the key.
+ So what you're going to find
+ is that when this fetch happens,
+ you're going to get a 500 error.
+ And this is the output of it.
+ Like it goes bad.
+ Now the problem is, is you're going to have trouble later
+ when we're doing JSON using fetch.
+ When things go wrong,
+ you need to be able to find this response.
+ It won't show up in your browser.
+ It shows up in your debugger, right?
+ And so the point is, is these are harder to debug,
+ but sometimes you go to the URL explicitly
+ and at least you see its output.
+ And this is an output where I made a mistake.
+ And okay, so let's just fix it all.
+ Make sure it's working.
+ So the rest of it worked.
+ Is it working?
+ Yes, it's working.
+ Okay, so you got that.
+ So there's a special kind of view
+ and a special kind of response type,
+ a JSON response, and we pass it a key value store,
+ which in Python is a dictionary.
+ Okay, enough of going directly.
+ Now we're going to use the fetch API
+ 'cause that's really what we wanna do.
+ We wanna fetch this data
+ and then we wanna do something with it,
+ perhaps show it in the user interface.
+ So I have a couple of different bits of code here.
+ There's two ways to do this.
+ If you look at fetch,
+ there's prom syntax and there is async await.
+ And you can have a good time
+ if you go to your search engine and type.
+ Which is better, promises or async await?
+ And the answer is you have a lot of reading to do
+ 'cause there's a lot of opinions
+ as to whether promise syntax or async await.
+ So let's take a quick look at this code.
+ My opinion is this is the promise syntax
+ where you start an asynchronous action
+ and it returns a promise and then you wait
+ for when the promise resolves, you run some code.
+ And that code itself might return another promise
+ and then when that second promise resolves,
+ it runs some more code.
+ And then we have like a dot catch to say
+ if something goes wrong in any of these three things,
+ the starting, the first asynchronous step,
+ the second asynchronous step,
+ catch it and then give us an error.
+ And so a lot of people tend to use this syntax here
+ because it's succinct.
+ The async code I think is way more powerful,
+ feels more powerful to me
+ because what you do is you do the fetch
+ and you get back a value.
+ Now that doesn't mean,
+ that just means the fetch has started
+ but you can check for the error on that fetch
+ with a catch there and do something there
+ and like quit and stop and not do the rest of it.
+ Again, it's doing effectively a simple thing here.
+ So you notice here I can console log it,
+ that doesn't mean the fetch is finished.
+ But now what I can do is I can use an await
+ to say, wait a second, finish this.
+ I'm gonna just wait.
+ Now this is making it at,
+ I mean, I've said before that you're
+ in a threaded environment,
+ you can't wait inside of JavaScript code.
+ This is not really waiting.
+ What this is doing, when you see the await,
+ it's almost like the code has been broken into two halves.
+ It runs this half and then when you say await,
+ it holds on to this half, right?
+ Grabs the rest of the code
+ and makes that be an event to be run.
+ And so this await syntax does all that splitting of code,
+ creating the event,
+ indicating that the last half of this code
+ is supposed to be run as a result of the event.
+ So it's basically a way to kinda split this code in half
+ and then when the event finishes,
+ it's gonna pick up here.
+ But we get to pretend it's procedural.
+ We get to pretend we're in Python
+ and we get to pretend that we are doing an input
+ and waiting for the user to type whatever,
+ or a request.retriever, whatever.
+ And the key thing this await says,
+ I understand that what I'm about to do is
+ I've got an effective promise and it's started
+ but not finished,
+ but I want to stop my current line of execution
+ until it finishes, okay?
+ So there are two ways to do it.
+ You can do promises.
+ You just look at this and you see that the await
+ is a much longer bit of code,
+ partly because I put a lot more error checking into it
+ and I got a lot of console logs, et cetera.
+ And if you're doing something like react or a review
+ or some kind of a progressive web application,
+ you want the kind of control I think that await does.
+ But in a normal thing, it's like do this thing.
+ It works 99.99% of the time.
+ Oh yeah, and there's a message.
+ All you're gonna do is put up an alert box.
+ So again, you can really argue both ways,
+ whether the promise pattern
+ or the async await pattern works better.
+ So let's just look through this code right now.
+ How come my developer console is not here?
+ Developer console.
+ Let's go into the console.
+ There we go, console.
+ And so what we're doing here is I am,
+ so this is just doing load URL
+ and it's doing a bunch of errors
+ and when things fail, it sends messages.
+ And so I'm calling this first with a completely broken URL
+ that is not HTTP, which means the fetch blows up
+ before it starts the request.
+ Now slash broken is a valid URL.
+ So that means that the fetch is going to start,
+ but we're gonna get a 404.
+ And so if I put in, let me just make a new tab here.
+ So if I go to broken,
+ you get a 404, okay?
+ And so when we're doing a broken,
+ I'm gonna get back a 404 and the question is,
+ how does my error checking handle a 404?
+ Now, if I go to fetch main, which is this page,
+ I'm gonna get a 200, except I'm not getting JSON.
+ And so then I'm gonna get JSON parse failure.
+ So I'm trying to simulate all the kinds of errors
+ that could happen.
+ Bad URL, a 404, a 200 with the wrong kind of data,
+ and then finally, we're gonna get the good stuff.
+ And the good stuff is going to say,
+ it's gonna actually change the thing.
+ So let, so you see I'm trying to show
+ all the possible error checking that can happen.
+ So let's go ahead and without further ado,
+ let's try to fetch a URL with bad syntax, right?
+ So I get this type error.
+ So that means that the catch, right?
+ The catch happened, the error happened up here in fetch,
+ the catch happened there.
+ Now I'm gonna do a 404.
+ Now this is kind of weird because the 404,
+ I did get a response, right?
+ I did get a response and then it was a 404 response,
+ but it also had some data.
+ And then I tried to parse the data as JSON,
+ and then this blew up that ran the catch, okay?
+ So I got a 404 and then it blew up
+ trying to turn it into JSON and then this catch triggered.
+ Now I'm gonna go to, this time I'm gonna go to
+ a good URL that's not a 404.
+ So I get a 200, if I go to the network,
+ you can see that I went to fetch and got a 200.
+ Broken was a 404.
+ Fetch is a, if I look at the response,
+ you see that that's a 404, right?
+ So you gotta come down here and you gotta say,
+ "Oh, yeah, I did a fetch and it got a bad page," right?
+ So this is, I've got some kind of a bug here.
+ Okay, so fetch gave me a 200, but it's HTML, right?
+ If I look at it in raw, that's HTML.
+ And so I couldn't parse it.
+ And so the code that blew up in this situation
+ was this response.json.
+ Converting the response to JSON blew up
+ and so then I had a failure.
+ Now the weird thing is I can't really tell
+ the difference between a 404 and just bad JSON
+ 'cause this 404 sent me back text as well, right?
+ If you look at broken, it got text back.
+ It just wasn't JSON.
+ So now we're going to run through
+ and the code that's finally gonna run
+ is we're going to take this first.
+ Let's retrieve the, I'll clear all this out.
+ I'm gonna retrieve the data.
+ I'm gonna get a 200.
+ Now you'll notice it took two seconds
+ because of that view that waits two seconds, right?
+ But then I got a 200, I got JSON,
+ and the response was valid JSON.
+ And so now I'm in my,
+ no, here.
+ I'm in my code and data is that key value pair.
+ And so I can say data.first retrieved my data,
+ promise, it's green, it's all good, okay?
+ So you can also see in the console
+ that I had the data object.
+ So that's the data object that I put out in console.log, okay?
+ So that's a walkthrough of the promised version of this.
+ And again, I think you will probably tend
+ to use the promised version of this,
+ but the async await, if you're a more sophisticated programmer,
+ I feel like I get a lot more control in async await.
+ So let's do the exact same thing
+ with this now async await.
+ So we look at the top code,
+ this top code is pretty much the same.
+ First, we're gonna trigger a syntax error,
+ which means the fetch itself is going to fail.
+ Then we're going to trigger a 404.
+ And then we're gonna get a 200 that gives us,
+ doesn't give us JSON,
+ so it's gonna fail the JSON parsing.
+ And then we're gonna make it successful, okay?
+ And so that's what these buttons all do, right?
+ So let's take a look at this.
+ And so they're all calling this load URL.
+ Okay, so this is cool.
+ And so now what I can do is I can start the request
+ and catch the error in the fetch, right?
+ And this is the one I couldn't do here.
+ So could not start fetch URL, and then I print the error.
+ So let's run that.
+ And then what's cool is I can quit, I can stop.
+ I don't have to like run the catch.
+ So this is nice.
+ It did sort of like, it tells me exactly what happened.
+ Now, if I do a 404, if I make a 404,
+ that means that this fetch got a valid URL,
+ and you'll see this console log request come out.
+ And then it's gonna do the await,
+ and that await is gonna take two seconds,
+ because that's where it actually,
+ well, actually, no,
+ we're not doing the one that waits two seconds.
+ This await is gonna pause the code,
+ and then we're gonna see the console log response.
+ And then we're going to try to parse this, right?
+ We're gonna be able to check to see
+ that we didn't get a 200,
+ and then come up with an error message there, okay?
+ So let's do a 404.
+ Let's clear this console, and let's make a 404 happen.
+ Boom, okay.
+ So we got a response.
+ The status was a 404.
+ And then we were able to process this,
+ but the response not okay.
+ And I was able to handle the exact same error
+ with some response statuses.
+ I really could see, I knew this is a 404,
+ versus just something went wrong in general,
+ which we did in the previous example.
+ Okay, so now what we're gonna do is we've got this,
+ if the response is okay,
+ we're gonna do another await, right?
+ And this, we're breaking it.
+ And again, this breaks the code into the stuff above it,
+ and the stuff below it,
+ and the stuff below it, in effect, is an error.
+ And we can catch this one too.
+ And that means that this response JSON
+ can either succeed,
+ at which point this code is going to run,
+ or it's going to fail,
+ at which point this code is going to run, okay?
+ And so now we are going to go to a URL.
+ Let's go clear here.
+ And let's look at the network.
+ Let's clear this one.
+ And let's go to a URL that is a 200 URL,
+ but it is not JSON.
+ So we retrieve it, we go to /fetch,
+ we look at the response, and that is HTML.
+ It's HTML in that response, right?
+ And so this happens to be this page right here.
+ So don't get too worried about that.
+ Okay, and then if we look at our console,
+ we see that we got a response,
+ and the response had a 200,
+ and we haven't yet used the body,
+ but then this code right here, await response JSON,
+ runs, and then eventually blows up, okay?
+ And so then that blows up,
+ and we can quit, we can leave, right?
+ And so there we go.
+ So now let's do it successfully.
+ Let me clear this.
+ Let me clear this.
+ Let me go to the URL.
+ So eventually when it's all said and done,
+ when we're happy with our object,
+ we're going to change this to a green thing,
+ but also watch for that two second thing,
+ because the actual get,
+ is to watch the console.
+ So I'll try to call out
+ when that two second delay is happening.
+ So here we go.
+ Oh, gotta click here.
+ 1001, 1002, see?
+ And so what happened was is we were starting the fetch,
+ we got a promise with a state of pending,
+ then we got a response with body used false,
+ but a status of 200,
+ and then we parsed the JSON data,
+ and we got the object kind of exactly the way we did
+ in the first thing.
+ And then we ran the success code,
+ meaning that we parse the object data,
+ we see it, we grab the data,
+ and we put it into first thing, okay?
+ So that is a quick run through.
+ Again, I encourage you to ask the internet
+ whether or not you should use promises or async await
+ and enjoy the discussion
+ and the learning that you'll have,
+ 'cause I think there's place for both of them.
+ Cheers.

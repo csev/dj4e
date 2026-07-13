@@ -1,0 +1,7 @@
+Django Views and Templates: Core Application Logic
+
+Django, views.py, templates, URL dispatcher, URL routing, application views, database interaction
+
+The lecture explains how Django views handle incoming HTTP requests and interact with models and templates to generate application output. Views serve as the central component where business logic executes, processing form data, database operations, and rendering HTML templates. This layer bridges user requests with database operations and frontend presentation.
+
+Django's URL dispatcher routes requests to specific view functions or classes defined in urls.py. The system supports three pattern types: traditional view functions handling requests, view classes with get/post methods, and template view shortcuts for direct template rendering without custom code. Views directly manage database interactions through models while coordinating template rendering for user interfaces.

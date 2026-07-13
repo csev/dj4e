@@ -1,0 +1,872 @@
+1
+00:00:00,000 --> 00:00:03,560
+ - Hello, and welcome to my lecture on cookies and sessions.
+
+2
+00:00:03,560 --> 00:00:07,720
+ So taking a look at sort of how all this stuff works out,
+
+3
+00:00:07,720 --> 00:00:11,220
+ we're again in our application.
+
+4
+00:00:11,220 --> 00:00:14,240
+ So there's two distinct topics that we're going to cover,
+
+5
+00:00:14,240 --> 00:00:17,680
+ and it's really important to keep them clear.
+
+6
+00:00:17,680 --> 00:00:20,720
+ So there's cookies, which are a browser concept.
+
+7
+00:00:20,720 --> 00:00:23,720
+ And then there are sessions, which are a server concept.
+
+8
+00:00:23,720 --> 00:00:27,080
+ When we write Python code in likeourviews.py,
+
+9
+00:00:27,080 --> 00:00:29,160
+ we talk to the session.
+
+10
+00:00:29,160 --> 00:00:32,180
+ Cookies are essential to sessions.
+
+11
+00:00:32,180 --> 00:00:35,280
+ Cookies are used to look up which among the sessions
+
+12
+00:00:35,280 --> 00:00:36,920
+ that we're going to use.
+
+13
+00:00:36,920 --> 00:00:38,640
+ So what we're gonna do is I'm gonna first talk about
+
+14
+00:00:38,640 --> 00:00:39,840
+ really just the cookies.
+
+15
+00:00:39,840 --> 00:00:43,520
+ How cookies talk, how the servers talk to the cookies,
+
+16
+00:00:43,520 --> 00:00:45,560
+ and then separately we'll talk about sessions.
+
+17
+00:00:45,560 --> 00:00:48,020
+ So keep the two concepts the same.
+
+18
+00:00:48,020 --> 00:00:50,320
+ A lot of people tend to confuse the concept
+
+19
+00:00:50,320 --> 00:00:51,400
+ of sessions and cookies,
+
+20
+00:00:51,400 --> 00:00:53,760
+ 'cause one of the most common use of cookies
+
+21
+00:00:53,760 --> 00:00:57,320
+ is to establish and maintain sessions.
+
+22
+00:00:57,320 --> 00:01:02,020
+ So the first thing about the web in general
+
+23
+00:01:02,020 --> 00:01:04,800
+ is that you have a web server,
+
+24
+00:01:04,800 --> 00:01:06,160
+ and when you're just developing,
+
+25
+00:01:06,160 --> 00:01:07,620
+ you think there's only one person,
+
+26
+00:01:07,620 --> 00:01:09,980
+ which is you, talking to the web server.
+
+27
+00:01:09,980 --> 00:01:12,360
+ But in reality, when a web server's in production,
+
+28
+00:01:12,360 --> 00:01:13,260
+ connected to the internet,
+
+29
+00:01:13,260 --> 00:01:14,880
+ there could be 1,000 connections
+
+30
+00:01:14,880 --> 00:01:16,880
+ to 1,000 different browsers.
+
+31
+00:01:16,880 --> 00:01:19,880
+ And it's essential that the server can figure out
+
+32
+00:01:19,880 --> 00:01:23,760
+ at any moment which browser it is talking to.
+
+33
+00:01:23,760 --> 00:01:26,160
+ We don't maintain a permanent connection to these browsers.
+
+34
+00:01:26,160 --> 00:01:28,000
+ That's one of the reasons that the internet scales
+
+35
+00:01:28,000 --> 00:01:30,000
+ as high as it does, right?
+
+36
+00:01:30,000 --> 00:01:33,440
+ But that's, so we still have to have some way
+
+37
+00:01:33,440 --> 00:01:37,240
+ of distinguishing when a request comes in from this server
+
+38
+00:01:37,240 --> 00:01:39,480
+ versus when it comes in from that server.
+
+39
+00:01:39,480 --> 00:01:41,400
+ And so what we wanna do is we want a way
+
+40
+00:01:41,400 --> 00:01:44,400
+ to basically put a little mark on each browser
+
+41
+00:01:44,400 --> 00:01:46,000
+ and say, oh, that's this browser.
+
+42
+00:01:46,000 --> 00:01:48,680
+ And so when you log in from this browser,
+
+43
+00:01:48,680 --> 00:01:50,640
+ I can know that it's you.
+
+44
+00:01:50,640 --> 00:01:53,440
+ So marking the browser is different from saying,
+
+45
+00:01:53,440 --> 00:01:56,180
+ I have browser 41, 42, 43, 44.
+
+46
+00:01:56,180 --> 00:02:00,000
+ And each browser ends up with a mark.
+
+47
+00:02:00,000 --> 00:02:03,200
+ In the early days, the web was pretty much
+
+48
+00:02:03,200 --> 00:02:04,120
+ a read-only medium.
+
+49
+00:02:04,120 --> 00:02:05,680
+ We didn't do a lot of logging in.
+
+50
+00:02:05,680 --> 00:02:07,880
+ We didn't do a lot of uploading.
+
+51
+00:02:07,880 --> 00:02:09,200
+ There were password mechanisms,
+
+52
+00:02:09,200 --> 00:02:11,320
+ but they were very, very clunky.
+
+53
+00:02:11,320 --> 00:02:14,080
+ And so all the browsers were pretty much reading
+
+54
+00:02:14,080 --> 00:02:16,440
+ the same information, and as long as you're not logging in
+
+55
+00:02:16,440 --> 00:02:20,520
+ and modifying stuff, it just doesn't matter.
+
+56
+00:02:20,520 --> 00:02:23,760
+ So quickly, in the early days of the web,
+
+57
+00:02:23,760 --> 00:02:25,480
+ the idea of a cookie was created,
+
+58
+00:02:25,480 --> 00:02:28,640
+ and that was a way for the server
+
+59
+00:02:28,640 --> 00:02:32,120
+ to store a little bit of data on each of the browsers.
+
+60
+00:02:32,120 --> 00:02:33,760
+ And they're just little pieces of data
+
+61
+00:02:33,760 --> 00:02:36,800
+ written by the servers, read by the servers,
+
+62
+00:02:36,800 --> 00:02:40,080
+ sent by the browsers, and read by the servers.
+
+63
+00:02:40,080 --> 00:02:42,000
+ Now, it has nothing to do with logging in.
+
+64
+00:02:42,000 --> 00:02:44,380
+ It has to do with writing a little mark on every browser
+
+65
+00:02:44,380 --> 00:02:48,160
+ and then getting that browser mark back every time we ask it.
+
+66
+00:02:48,160 --> 00:02:53,160
+ So often when a server gets a first request from a web page
+
+67
+00:02:53,160 --> 00:02:55,600
+ that doesn't have its little mark on it,
+
+68
+00:02:55,600 --> 00:02:57,880
+ it makes up a number and sends that cookie back.
+
+69
+00:02:57,880 --> 00:03:01,440
+ So it sets the cookie, there may be many interactions
+
+70
+00:03:01,440 --> 00:03:04,800
+ between the time you're starting to talk to a server
+
+71
+00:03:04,800 --> 00:03:06,080
+ and when you log in.
+
+72
+00:03:06,080 --> 00:03:08,640
+ But often the cookie is set immediately.
+
+73
+00:03:08,640 --> 00:03:12,560
+ But the key is, is that once I set that cookie,
+
+74
+00:03:12,560 --> 00:03:15,640
+ it's like storage for my server on your browser,
+
+75
+00:03:15,640 --> 00:03:19,200
+ and each of the servers, and that can be sort of
+
+76
+00:03:19,200 --> 00:03:22,020
+ temporary or permanent storage.
+
+77
+00:03:22,020 --> 00:03:24,280
+ So they're marked in the browser
+
+78
+00:03:24,280 --> 00:03:25,960
+ by the web address as they came from.
+
+79
+00:03:25,960 --> 00:03:27,120
+ It's a security thing.
+
+80
+00:03:27,120 --> 00:03:31,520
+ You're not allowed to read cookies from a page.
+
+81
+00:03:31,520 --> 00:03:33,360
+ If your page comes from a particular server,
+
+82
+00:03:33,360 --> 00:03:35,240
+ it can only read the cookies associated with that server
+
+83
+00:03:35,240 --> 00:03:39,820
+ and vice versa, so they're like a little stovepiped.
+
+84
+00:03:39,820 --> 00:03:41,440
+ Cookies have an expiration date.
+
+85
+00:03:41,440 --> 00:03:43,440
+ There is two kinds of expiration dates.
+
+86
+00:03:43,440 --> 00:03:46,160
+ There's sort of a by a certain time or a number of seconds,
+
+87
+00:03:46,160 --> 00:03:50,080
+ or there is stay logged in or keep this cookie
+
+88
+00:03:50,080 --> 00:03:54,960
+ until the browser is shut down.
+
+89
+00:03:54,960 --> 00:03:56,800
+ We call those session cookies,
+
+90
+00:03:56,800 --> 00:03:58,760
+ which is kind of weird 'cause we often use them.
+
+91
+00:03:58,760 --> 00:04:01,280
+ We often use session cookies for sessions,
+
+92
+00:04:01,280 --> 00:04:03,560
+ but we still gotta keep them cookies.
+
+93
+00:04:03,560 --> 00:04:05,520
+ So here's a bit of sample code.
+
+94
+00:04:05,520 --> 00:04:09,040
+ So one of the things you can do is you can go
+
+95
+00:04:09,040 --> 00:04:11,000
+ into your browser console and you find something
+
+96
+00:04:11,000 --> 00:04:14,120
+ like storage, and you can see for the website
+
+97
+00:04:14,120 --> 00:04:17,880
+ of the current page, the current website that you're on,
+
+98
+00:04:17,880 --> 00:04:20,120
+ that website's cookies are stored here.
+
+99
+00:04:20,120 --> 00:04:21,880
+ And so I'm looking at the cookies here,
+
+100
+00:04:21,880 --> 00:04:25,480
+ and I see there's only one cookie, the CFDUID.
+
+101
+00:04:25,480 --> 00:04:30,480
+ That's the server is using a proxy to help speed itself up.
+
+102
+00:04:30,480 --> 00:04:34,720
+ And so that cookie's not really part of our application.
+
+103
+00:04:34,720 --> 00:04:36,840
+ And so what happens is there is no cookie.
+
+104
+00:04:36,840 --> 00:04:38,080
+ It's not set.
+
+105
+00:04:38,080 --> 00:04:40,840
+ And so we go in and click on this.
+
+106
+00:04:40,840 --> 00:04:42,760
+ If you give a browser a cookie.
+
+107
+00:04:42,760 --> 00:04:45,760
+ And it's going to route to this particular view.
+
+108
+00:04:45,760 --> 00:04:49,920
+ And so in this, we're gonna do a print of request.cookies.
+
+109
+00:04:49,920 --> 00:04:52,960
+ So what happens is I mention that every time
+
+110
+00:04:52,960 --> 00:04:56,120
+ a web request comes in, all the cookies get sent in
+
+111
+00:04:56,120 --> 00:04:58,860
+ with that web request that are associated with that server.
+
+112
+00:04:58,860 --> 00:04:59,700
+ So we're gonna print them out.
+
+113
+00:04:59,700 --> 00:05:03,000
+ And they come in just like request.get, request.post,
+
+114
+00:05:03,000 --> 00:05:05,480
+ and request.cookies is Django's way
+
+115
+00:05:05,480 --> 00:05:07,640
+ of handing us all that information.
+
+116
+00:05:08,820 --> 00:05:11,100
+ And so in this case, I'm not actually going
+
+117
+00:05:11,100 --> 00:05:13,880
+ to send the response back in the return value.
+
+118
+00:05:13,880 --> 00:05:15,600
+ I'm actually gonna create the response.
+
+119
+00:05:15,600 --> 00:05:18,480
+ That's resphd response with a string.
+
+120
+00:05:18,480 --> 00:05:20,480
+ And then I'm gonna set some cookies.
+
+121
+00:05:20,480 --> 00:05:22,760
+ So cookies are part of the response.
+
+122
+00:05:22,760 --> 00:05:25,840
+ They're actually part of the headers of the response.
+
+123
+00:05:25,840 --> 00:05:27,440
+ And I'm gonna just set one cookie.
+
+124
+00:05:27,440 --> 00:05:28,280
+ They're my names.
+
+125
+00:05:28,280 --> 00:05:30,420
+ I set 'em, this application.
+
+126
+00:05:30,420 --> 00:05:31,960
+ Cookie name zap to 42.
+
+127
+00:05:31,960 --> 00:05:35,840
+ And then a cookie named SakaiCar with a value of 42.
+
+128
+00:05:35,840 --> 00:05:37,440
+ And I give it 1,000 seconds.
+
+129
+00:05:37,440 --> 00:05:40,800
+ So that's, one is a session cookie,
+
+130
+00:05:40,800 --> 00:05:43,440
+ and the other is a cookie with a fixed expiration date.
+
+131
+00:05:43,440 --> 00:05:45,040
+ Now this 1,000 seconds,
+
+132
+00:05:45,040 --> 00:05:46,960
+ you can go much longer than 1,000 seconds
+
+133
+00:05:46,960 --> 00:05:48,640
+ if you start looking at the cookies
+
+134
+00:05:48,640 --> 00:05:51,360
+ that you're talking to on the various things.
+
+135
+00:05:51,360 --> 00:05:53,680
+ These are year-long, multi-year cookies,
+
+136
+00:05:53,680 --> 00:05:54,920
+ et cetera, et cetera, et cetera.
+
+137
+00:05:54,920 --> 00:05:56,920
+ And so if you were to see the printout
+
+138
+00:05:56,920 --> 00:05:59,160
+ that is coming from that request.cookies,
+
+139
+00:05:59,160 --> 00:06:00,400
+ you would see that it's basically
+
+140
+00:06:00,400 --> 00:06:02,640
+ a dictionary of key value pairs.
+
+141
+00:06:02,640 --> 00:06:05,300
+ Now that's after the second response.
+
+142
+00:06:06,560 --> 00:06:09,120
+ So if we go and we click on the cookie
+
+143
+00:06:09,120 --> 00:06:11,220
+ and we start with no cookies whatsoever,
+
+144
+00:06:11,220 --> 00:06:14,400
+ if we start with no cookies whatsoever,
+
+145
+00:06:14,400 --> 00:06:17,700
+ we're gonna send this code out,
+
+146
+00:06:17,700 --> 00:06:20,200
+ and it's gonna send two cookies back.
+
+147
+00:06:20,200 --> 00:06:22,440
+ And so what you can see here is you can see,
+
+148
+00:06:22,440 --> 00:06:26,240
+ if you look closely on the response headers,
+
+149
+00:06:26,240 --> 00:06:28,340
+ two set cookie responses.
+
+150
+00:06:28,340 --> 00:06:31,800
+ So the response headers are like the content type,
+
+151
+00:06:31,800 --> 00:06:32,860
+ et cetera, et cetera, et cetera.
+
+152
+00:06:32,860 --> 00:06:34,440
+ They're not the actual page.
+
+153
+00:06:34,440 --> 00:06:36,560
+ The actual page is C is for cookie and it's good enough
+
+154
+00:06:36,560 --> 00:06:40,480
+ for me, but basically when this response came back,
+
+155
+00:06:40,480 --> 00:06:43,260
+ the server said, hey, set this key value pair
+
+156
+00:06:43,260 --> 00:06:46,560
+ and this key value pair and have this second one expire,
+
+157
+00:06:46,560 --> 00:06:50,040
+ which is exactly what I did inside that code.
+
+158
+00:06:50,040 --> 00:06:52,080
+ And so now if we take a quick look
+
+159
+00:06:52,080 --> 00:06:53,600
+ and we take a look in our storage,
+
+160
+00:06:53,600 --> 00:06:56,760
+ what we're gonna see is that we now have two values.
+
+161
+00:06:56,760 --> 00:07:01,040
+ Sakai car is 42, Zap is also 42,
+
+162
+00:07:01,040 --> 00:07:03,280
+ Sakai car is going to expire a certain amount
+
+163
+00:07:03,280 --> 00:07:06,440
+ of time in the future and Zap is a session cookie
+
+164
+00:07:06,440 --> 00:07:08,100
+ 'cause we gave it with no expiration,
+
+165
+00:07:08,100 --> 00:07:10,320
+ which means once I wanna close all the tabs
+
+166
+00:07:10,320 --> 00:07:12,020
+ in my browser and close the browser,
+
+167
+00:07:12,020 --> 00:07:14,100
+ then the browser will throw this away.
+
+168
+00:07:14,100 --> 00:07:18,240
+ The Sakai car will be persisted to disk or some other place
+
+169
+00:07:18,240 --> 00:07:22,160
+ so that if I close all my browsers and open browsers up
+
+170
+00:07:22,160 --> 00:07:25,480
+ and go back to this website, samplesdj4e.com,
+
+171
+00:07:25,480 --> 00:07:26,800
+ it'll start sending that cookie.
+
+172
+00:07:26,800 --> 00:07:30,000
+ So that's a permanent cookie with an expiration date on it.
+
+173
+00:07:30,000 --> 00:07:31,400
+ Now that's pretty short expiration,
+
+174
+00:07:31,400 --> 00:07:35,160
+ 1,000 seconds is like, what, 20 minutes, I think,
+
+175
+00:07:35,160 --> 00:07:36,680
+ and so that's gonna go away.
+
+176
+00:07:36,680 --> 00:07:39,200
+ But a lot of these cookies last much longer.
+
+177
+00:07:39,200 --> 00:07:44,120
+ So that's after the set cookie comes back from the server,
+
+178
+00:07:44,120 --> 00:07:47,800
+ then we can take a look and we can see
+
+179
+00:07:47,800 --> 00:07:50,680
+ as we make another request, we're going to see
+
+180
+00:07:50,680 --> 00:07:54,800
+ that the browser is going to look up the cookies
+
+181
+00:07:54,800 --> 00:07:57,400
+ and we have this one here that's part
+
+182
+00:07:57,400 --> 00:08:01,200
+ of the hosting environment, but Zap equals 42 Sakai car.
+
+183
+00:08:01,200 --> 00:08:03,340
+ So now in goes a get request
+
+184
+00:08:03,340 --> 00:08:05,640
+ and as part of the request headers,
+
+185
+00:08:05,640 --> 00:08:07,980
+ it's telling us all the cookie values
+
+186
+00:08:07,980 --> 00:08:10,880
+ for samples.dj4e.com.
+
+187
+00:08:10,880 --> 00:08:13,920
+ And then when I look at my code and I say request.cookies,
+
+188
+00:08:13,920 --> 00:08:16,720
+ request.cookies contains the parsed versions
+
+189
+00:08:16,720 --> 00:08:19,160
+ of Zap 42 and Sakai car 42.
+
+190
+00:08:19,160 --> 00:08:21,860
+ So I'm gonna end up with a dictionary with two values in it
+
+191
+00:08:21,860 --> 00:08:24,000
+ and Zap and Sakai car.
+
+192
+00:08:24,000 --> 00:08:28,360
+ And so the way to think about this is
+
+193
+00:08:28,360 --> 00:08:29,760
+ when the browser first come in,
+
+194
+00:08:29,760 --> 00:08:34,640
+ first comes in to the server, it looks for the cookie.
+
+195
+00:08:34,640 --> 00:08:36,680
+ It might say, do I have this cookie already set?
+
+196
+00:08:36,680 --> 00:08:39,840
+ Now my application that I wrote is real simple.
+
+197
+00:08:39,840 --> 00:08:42,340
+ And then you are gonna send the cookie back
+
+198
+00:08:42,340 --> 00:08:45,880
+ and then the browser stores the cookie inside the browser
+
+199
+00:08:45,880 --> 00:08:48,000
+ and then from that point forward,
+
+200
+00:08:48,000 --> 00:08:51,160
+ every time it makes a request, that comes in
+
+201
+00:08:51,160 --> 00:08:56,040
+ and we can see this in the variable request.cookies inside it.
+
+202
+00:08:56,040 --> 00:08:58,120
+ So we really only have to set it once,
+
+203
+00:08:58,120 --> 00:09:00,040
+ although the code I wrote sets it every time,
+
+204
+00:09:00,040 --> 00:09:01,880
+ but it doesn't matter.
+
+205
+00:09:01,880 --> 00:09:04,680
+ Until it expires or until the browser closes,
+
+206
+00:09:04,680 --> 00:09:09,160
+ the job of the browser is to send that cookie back, okay?
+
+207
+00:09:09,160 --> 00:09:11,800
+ So remember what I said, I said we're gonna mark this
+
+208
+00:09:11,800 --> 00:09:13,680
+ each browser with a different number
+
+209
+00:09:13,680 --> 00:09:15,280
+ so we can know which browser is which.
+
+210
+00:09:15,280 --> 00:09:16,440
+ That's exactly what it is.
+
+211
+00:09:16,440 --> 00:09:18,240
+ Now it doesn't always set it to 42.
+
+212
+00:09:18,240 --> 00:09:21,180
+ Usually it chooses a large random number,
+
+213
+00:09:21,180 --> 00:09:23,160
+ but we'll get to that in a second.
+
+214
+00:09:23,160 --> 00:09:26,060
+ So up next, we're gonna like make some sense of this
+
+215
+00:09:26,060 --> 00:09:27,960
+ by adding the backend part of this,
+
+216
+00:09:27,960 --> 00:09:31,520
+ which is the sessions, which stores all the data
+
+217
+00:09:31,520 --> 00:09:32,860
+ from request to request.
+
+218
+00:09:32,860 --> 00:09:35,440
+ (upbeat music)
+

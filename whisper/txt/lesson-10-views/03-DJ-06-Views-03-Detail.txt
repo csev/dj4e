@@ -1,0 +1,170 @@
+ so it's important from time to time to talk about ways that you as a web
+ application developer have a responsibility to create secure web
+ applications and so I want to call your attention to places where you write code
+ that seems like on the surface that it's what's what could go wrong and then you
+ realize oh wait a sec that could go wrong so it turns out that you you take
+ data from the user in their request object whether it's from a form or from
+ the URL and you know like s equals 42 seems innocuous enough and then what I
+ did is I just concatenated that into HTML and I sent that back and so the
+ problem is is what if somebody with ill intent tries to produce data that
+ actually does something and the problem is is if I take data straight from the
+ user and put it back in the HTML response well HTML and JavaScript are
+ programming language your browser is being programmed and that means that a
+ user typing data into your system can program the browser and what's even
+ worse is that they mean having them program their own browser not such a big
+ deal but in a way what they do is they put some data in your system that turns
+ into code and then they kidnap someone else's browser when they take a look at
+ data that came in this is called cross site scripting where in a sense what
+ what it's doing is it's trying to run code so that it can read stuff from your
+ site and then hand it to a rogue site and so we have to protect against this
+ and it's a very simple thing so if we take a look at the code that was bad
+ basically we have this parameter guess and in the last time I showed you that
+ was 42 and we just took this request get guess which is this stuff and we simply
+ concatenated it into some HTML well if I carefully construct my guess with
+ percent c3 blah blah blah all the blah blah blah all that stuff well that turns
+ into this is a URL encoding of less than be bold greater than bold slash so that
+ turns into HTML so I passed into this application some HTML and I as the
+ developer took that and I concatenated together so the response source has HTML
+ it's HTML that mostly comes from the application but this little bit of HTML
+ came from the person who put it in and like I said it's not such a critical
+ problem if I in my browser put stuff to take over your browser but it is if
+ someone you can move that into someone else's browser so what happens is is
+ that the the browser sees this bold text in HTML and instead of showing us the
+ less than and the greater than it actually shows it to us as bold now this
+ seems innocuous enough until you do something much more clever and that is I
+ am going to carefully construct some code JavaScript and so what happens is
+ is this here is encoding of that line right there the script alert owned slash
+ script and so what happens is is that came in and it was concatenated straight
+ out and if you run this page you won't see the data but that actually
+ JavaScript will run and it's going to show up an alert box that says owned and
+ okay now you can go ahead and look at the Wikipedia entries on cross-site
+ scripting generally the idea is once you're in JavaScript you don't just say
+ alert that I've owned your browser what you do is you do something like grab a
+ cookie and send it to a third party or you call say a web service on the on the
+ system with a cookie and and do bad things like you can convince a teacher
+ to log in and change someone else's grade or delete all the grades in a
+ class once you're into a person's job browser in JavaScript you can do a lot
+ so that's really quite scary and there's all kinds of scenarios where you're
+ taking data from the user and you got to be careful because yes I said the guess
+ is supposed to be a number but if it's not a number if I concatenate it without
+ escaping it it's a problem so here is a safer version of that so I've got
+ another view function called game and it takes that same request and it still
+ pulls that get data off which is this bit right here but then it calls a
+ function and that's Django utils HTML escape right so what that does is that
+ be that concatenates that into the HTML but escape processes any dangerous
+ characters and turns them into what are called HTML entities so less than
+ becomes ampersand LT greater than becomes ampersand GT right these two
+ these four things with ampersands are a safer version of it and so that means
+ that even though I tried I put in the data for bold it comes out with the less
+ than and greater than showing and it's not actually interpreted right so this
+ whole notion of escaping or HTML entities converting data running the
+ data from a user through an HTML entities automatic filter ensures that
+ the user cannot provide you data that turns into code in there or someone
+ else's browser eventually so that's the kind of thing you have to think of as
+ you're concatenating stuff together that and the key thing is is the request get
+ guess that came from the user and so we think the users going to be nice but are
+ the user with bad intent can send data that they carefully construct to cause
+ the maximum trouble but if you just escape your data before you concatenate
+ it there's nothing they can do about it so another of the views is where we're
+ going to parse the parameter off of the URL itself these URLs are a little
+ prettier sometimes than the question mark keyword equals value and so so let's
+ take a look at this the way you do this is you in your URL patterns you have a
+ path and instead of just having the path name the view function name you actually
+ have this bracket int colon bracket guest bracket and what that is and you
+ can go look this up in the Django documentation there's a whole series of
+ these things that says the parameter after the word rest is an integer and
+ please pass it in as the parameter guess so I've given I've chosen the name to
+ pass it in as a parameter and then once Django sees this it pulls that 41 off
+ and hands it to us so we don't have to tear the URL part actually in this
+ request object we do get the URL we could do a bunch of splits and fool
+ around but nah doesn't matter let's let Django do all that work let's just tell
+ it we want that parameter after the word rest it's supposed to be an integer and
+ pass it to me in the variable guest in the variable guess and then that same 41
+ comes in I am clearly escaping it before I concatenate it and then I return a
+ text-based HTML response with some HTML back to the browser so I'm this escape
+ is there just because of cross-site scripting I don't I'm still taking this
+ value still coming from the user so if any value comes from the user you have
+ to properly escape it before you show it to them now those are all function based
+ which are sort of a lower level we haven't got to the point where we're
+ talking about forms but eventually in that in those lower level functions you
+ have to check whether you got get a get request or a post request post request
+ often comes from forms and so so this class this class based view allows us to
+ gift a method for getting a method for post and let Django pick whether it's a
+ get or a post and and this is an object orient an object and if you're a little
+ rusty on objects I've got a URL there on Python for everybody calm to review just
+ like what a self is I'm not going to cover all that in the path command you
+ just have a you know a string that comes after the application routing to this the
+ main view as view is something you got to add to it because main view is a
+ class not a function but as view is a function and then we have to create a
+ method get self of course is just part of pythons object-oriented work request
+ is that first parameter right and so this is this one here is just a stock
+ response and I just like the other ones I return on HTTP response now this it's
+ like why this looks a little more complex than the other one did the same
+ thing but it turns out there is tons of things that we can do and inheritance
+ the fact it's a class there are so many things about object-oriented programming
+ that over the next few lectures we're going to really take advantage of this
+ and we ultimately will rarely write the old-school function based view we'll do
+ class based views and so we can also pass parameters to class based views just
+ like we can pass them to function based views you say okay with a prefix of
+ remain slug is a kind of string and then guess is the parameter so that says pull
+ this pull the string after the word remain off right views is the name of
+ the view remain is the view within the application and then this third parameter
+ is the guess and it's automatically parsed and handed to us and guess and
+ then we're going to respond to a get request self of course is the
+ object-oriented thing here's the whole request and guess is that little piece
+ that comes off of the end of the URL we're going to can create a response by
+ escaping the user provided guest bit so that if the user put something nasty in
+ for cross-site scripting haha we stop them from doing that and so that
+ produces the same kind of output your guess was ABC 1 2 3 42 XY is easy why so
+ talking about return values everything we've shown you up till now is your
+ basic 200 okay which means you asked for a page I gave you a page you're probably
+ familiar with 404 not found which means you asked for a page that page doesn't
+ exist there is another kind of response that's not actually a page which is a
+ response header that says you know what it's not like you made a mistake but
+ you're at the wrong place and it's called a redirect and 302 means I know
+ where you're supposed to be and it isn't here and it was originally used for
+ sites that would move and it's all handled by the location header on the
+ HTTP response and so we send a redirect response which is a 302 with the
+ location header being set and it uses our URL and when the browser gets that
+ you gets that HD the 302 and a location header it doesn't show you what it just
+ got but it immediately we regets that URL and then shows you that URL and the
+ original idea was that if you rename a domain or something you wanted to have
+ the old domain redirect web browsers and search engines use these 302s there's
+ also a 301 header that can be used to redirect all this stuff but now we use it
+ for all kinds of things and it's very much a controller function if you go to
+ model view controller controller says okay we're done with that but I want your
+ browser to go over there so that like that routing that sort of routing the
+ browser changing the browser putting the browser where you want it to be that's
+ part of the applications controller phase so we can send a redirect from a
+ from a Django view and so here we go if you go to this bounce it's going to
+ actually not end up at this it's going to bounce it to somewhere else and in
+ the path we just say if we go to the bounce view run to this function this is
+ not a class-based function this is an old-school function and so the request
+ data is passed in and instead of now returning an HTTP response which we
+ would put in here HTML we are doing an HTTP response redirect and now we put a
+ URL and what we're saying with this whole thing is you're at the wrong place
+ please browser when you get this response back go here so it's like it
+ bounces to the browser and then bounces back and then reads that URL so and and
+ you don't you can't have some output but folks generally don't need output when
+ you're doing a redirect so if you take a look at that bounce watching it in your
+ network console in a JavaScript debugger what you see is you see a set of three
+ requests actually just two you'll see the first request is going to bounce and
+ if we take a look at this request we see that it's a 302 it's kind of small you
+ see we got a 302 which tells the browser something's wrong I'm not at the right
+ place and then also the server sends the location header that says this is where
+ you're supposed to be and the browser immediately turns around and does a get
+ to that URL simple dot HTM and then that's what we see and then this 404
+ interestingly the three statuses I talked to you about is because at this
+ new location DJ free comm slash simple dot HTM there's no favicon remember the
+ favicon is the thing that shows up like right there in the in the top tab bars
+ the favicon and I don't have a favicon at least not now or DJ free I should put
+ a favicon there but we get to see a 404 and all that means is the browser looked
+ for a favicon and didn't find it so we see a 302 which is moved with a location
+ header and then we see a get which returns then a 200 which is a success
+ and we see the document and then we see a 404 because it tries to grab the
+ favicon and so the HTML you get back from DJ free comm simple dot HTM that's
+ this simple page with with a simple link okay so that's how the redirect works so
+ that's a series of views both the input class base function base and to both the
+ HTTP response and the HTTP redirect response so up now come up next we're
+ going to talk about how building templates makes us do a lot less
+ than cat nation

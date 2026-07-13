@@ -1,0 +1,580 @@
+1
+00:00:00,000 --> 00:00:02,480
+ So now we're going to start producing the actual output
+
+2
+00:00:02,480 --> 00:00:05,800
+ of our application in the views and using templates.
+
+3
+00:00:05,800 --> 00:00:07,640
+ And there's a lot to cover here.
+
+4
+00:00:07,640 --> 00:00:10,280
+ So up till now, we've been starting
+
+5
+00:00:10,280 --> 00:00:12,160
+ to talk about URLs, which are simple.
+
+6
+00:00:12,160 --> 00:00:15,680
+ It says when you get the request with a URL of this format,
+
+7
+00:00:15,680 --> 00:00:18,480
+ choose a view and send it to that view.
+
+8
+00:00:18,480 --> 00:00:21,360
+ We're going to talk a lot about views.py and templates
+
+9
+00:00:21,360 --> 00:00:22,880
+ in an upcoming lecture.
+
+10
+00:00:22,880 --> 00:00:24,160
+ We'll talk about forms.
+
+11
+00:00:24,160 --> 00:00:26,920
+ And we spent a bunch of time talking about models.py
+
+12
+00:00:26,920 --> 00:00:29,560
+ and how the models can talk to Python code,
+
+13
+00:00:29,560 --> 00:00:31,520
+ talk to the shell, how the models can
+
+14
+00:00:31,520 --> 00:00:33,560
+ inform how we write to the database
+
+15
+00:00:33,560 --> 00:00:35,440
+ and how we read from the database.
+
+16
+00:00:35,440 --> 00:00:37,560
+ So we're starting to fill parts in.
+
+17
+00:00:37,560 --> 00:00:39,200
+ As we put the views together, we're
+
+18
+00:00:39,200 --> 00:00:42,760
+ really starting to really create our entire application.
+
+19
+00:00:42,760 --> 00:00:45,120
+ And I know it's taken a while to get to the point
+
+20
+00:00:45,120 --> 00:00:50,240
+ where we can get to the point where we see the whole thing.
+
+21
+00:00:50,240 --> 00:00:53,960
+ So I just want to say that from time to time, wherever you have
+
+22
+00:00:53,960 --> 00:00:56,480
+ dj-free samples, whether it's on your laptop
+
+23
+00:00:56,480 --> 00:01:00,880
+ or whether it's on Python Anywhere,
+
+24
+00:01:00,880 --> 00:01:03,600
+ you should do a get pull from time to time,
+
+25
+00:01:03,600 --> 00:01:05,600
+ because I'm always working on these samples.
+
+26
+00:01:05,600 --> 00:01:07,520
+ And I want you to make sure you have the latest
+
+27
+00:01:07,520 --> 00:01:09,160
+ copies of these samples.
+
+28
+00:01:09,160 --> 00:01:11,680
+ Sometimes I add little bits of-- I don't change the samples,
+
+29
+00:01:11,680 --> 00:01:14,040
+ but I add bits of documentation as I'm like, oh,
+
+30
+00:01:14,040 --> 00:01:16,040
+ I should have added that.
+
+31
+00:01:16,040 --> 00:01:18,960
+ So views are like the core of the application.
+
+32
+00:01:18,960 --> 00:01:21,800
+ I mean, the URLs find their way to views.
+
+33
+00:01:21,800 --> 00:01:25,560
+ Models tend to serve the needs of views,
+
+34
+00:01:25,560 --> 00:01:28,800
+ act as this layer to allow views to write and read
+
+35
+00:01:28,800 --> 00:01:30,160
+ the database.
+
+36
+00:01:30,160 --> 00:01:34,840
+ And so the views.py has a model aspect
+
+37
+00:01:34,840 --> 00:01:36,400
+ in that it handles incoming data.
+
+38
+00:01:36,400 --> 00:01:38,720
+ When we get the forms and post data,
+
+39
+00:01:38,720 --> 00:01:41,040
+ then we copy that into the database.
+
+40
+00:01:41,040 --> 00:01:45,320
+ The views.py decides sometimes whether or not
+
+41
+00:01:45,320 --> 00:01:47,200
+ to send the user to a different screen
+
+42
+00:01:47,200 --> 00:01:51,040
+ or if it's going to produce the actual screen in the HTML,
+
+43
+00:01:51,040 --> 00:01:53,640
+ it produces that HTML, often using template,
+
+44
+00:01:53,640 --> 00:01:55,000
+ and then sends it back.
+
+45
+00:01:55,000 --> 00:01:58,280
+ So the views are where the work really gets done.
+
+46
+00:01:58,280 --> 00:02:02,000
+ And what you see is you write a lot of code in the views.
+
+47
+00:02:02,000 --> 00:02:05,640
+ You write one line in the URL, few lines in the models file,
+
+48
+00:02:05,640 --> 00:02:08,040
+ and then lots of stuff in the views.
+
+49
+00:02:08,040 --> 00:02:10,520
+ And I consider the templates kind of part of the views
+
+50
+00:02:10,520 --> 00:02:11,880
+ as well.
+
+51
+00:02:11,880 --> 00:02:13,920
+ So the first thing that Django does
+
+52
+00:02:13,920 --> 00:02:16,640
+ when it receives an incoming document, a request
+
+53
+00:02:16,640 --> 00:02:19,960
+ for a document, it basically parses that URL.
+
+54
+00:02:19,960 --> 00:02:23,000
+ And the first thing after the domain name
+
+55
+00:02:23,000 --> 00:02:25,600
+ is generally the application.
+
+56
+00:02:25,600 --> 00:02:28,600
+ So remember that Django has a project.
+
+57
+00:02:28,600 --> 00:02:30,080
+ And then underneath that, there's
+
+58
+00:02:30,080 --> 00:02:31,340
+ one or more applications.
+
+59
+00:02:31,340 --> 00:02:33,640
+ And each of the DJ free samples, you
+
+60
+00:02:33,640 --> 00:02:35,920
+ see lots of applications, each application
+
+61
+00:02:35,920 --> 00:02:39,480
+ kind of to show a little bit of sample code for a topic.
+
+62
+00:02:39,480 --> 00:02:43,480
+ And so that second part of the URL,
+
+63
+00:02:43,480 --> 00:02:46,320
+ that is the application name.
+
+64
+00:02:46,320 --> 00:02:47,800
+ And for all intents and purposes,
+
+65
+00:02:47,800 --> 00:02:51,280
+ it's also the folder name within the Django project.
+
+66
+00:02:51,280 --> 00:02:55,360
+ Now within that, usually the next chunk is the view.
+
+67
+00:02:55,360 --> 00:02:58,320
+ And so that view within application,
+
+68
+00:02:58,320 --> 00:03:05,800
+ the view within application is defined in urls.py.
+
+69
+00:03:05,800 --> 00:03:08,800
+ And then after that, there are two kinds of parameters.
+
+70
+00:03:08,800 --> 00:03:10,400
+ One is like a key value parameter
+
+71
+00:03:10,400 --> 00:03:12,320
+ that comes after a question mark.
+
+72
+00:03:12,320 --> 00:03:14,160
+ It also uses ampersands for that.
+
+73
+00:03:14,160 --> 00:03:17,240
+ And then sometimes we just put after slashes.
+
+74
+00:03:17,240 --> 00:03:22,760
+ This is more of a REST style URL that's very pretty.
+
+75
+00:03:22,760 --> 00:03:24,560
+ And you put the parameters right on the URL
+
+76
+00:03:24,560 --> 00:03:26,260
+ rather than the question mark, which
+
+77
+00:03:26,260 --> 00:03:29,680
+ is sort of the old school for doing all this stuff.
+
+78
+00:03:29,680 --> 00:03:33,680
+ So there is this thing in Django called the URL dispatcher.
+
+79
+00:03:33,680 --> 00:03:36,000
+ I sort of call it router on my picture.
+
+80
+00:03:36,000 --> 00:03:40,040
+ It's basically to get you to be able to define the URLs
+
+81
+00:03:40,040 --> 00:03:42,040
+ and how those URLs are to be parsed and handled
+
+82
+00:03:42,040 --> 00:03:46,600
+ and how those URLs to be routed to the various bits of view
+
+83
+00:03:46,600 --> 00:03:47,600
+ code.
+
+84
+00:03:47,600 --> 00:03:50,200
+ And so we do this in urls.py.
+
+85
+00:03:50,200 --> 00:03:52,800
+ There are three basic patterns.
+
+86
+00:03:52,800 --> 00:03:56,200
+ First, you might route a particular URL pattern
+
+87
+00:03:56,200 --> 00:03:58,200
+ to a predefined class.
+
+88
+00:03:58,200 --> 00:04:00,880
+ And you'll see the example of that coming up.
+
+89
+00:04:00,880 --> 00:04:04,440
+ Or there's sort of functions, really old school function,
+
+90
+00:04:04,440 --> 00:04:08,600
+ that take this request, which is an object that
+
+91
+00:04:08,600 --> 00:04:12,360
+ captures all of the data, the parameters, the URL,
+
+92
+00:04:12,360 --> 00:04:15,360
+ whether it was a secure request or not, what host it came from,
+
+93
+00:04:15,360 --> 00:04:17,320
+ what's the IP address it came from.
+
+94
+00:04:17,320 --> 00:04:20,480
+ All that stuff is wrapped up into this request object, which
+
+95
+00:04:20,480 --> 00:04:22,140
+ we'll talk about in a second.
+
+96
+00:04:22,140 --> 00:04:24,520
+ And that view function looks at that request object,
+
+97
+00:04:24,520 --> 00:04:28,000
+ decides what to do, talks to the database, maybe,
+
+98
+00:04:28,000 --> 00:04:30,600
+ and then sends back a response, whether it's
+
+99
+00:04:30,600 --> 00:04:33,480
+ a redirect or some HTML.
+
+100
+00:04:33,480 --> 00:04:35,440
+ And the function is kind of the low level thing.
+
+101
+00:04:35,440 --> 00:04:37,600
+ But you can also then define a class.
+
+102
+00:04:37,600 --> 00:04:42,640
+ And defining classes, as we'll see, is really quite nice.
+
+103
+00:04:42,640 --> 00:04:45,960
+ The classes have methods, like for get and for post,
+
+104
+00:04:45,960 --> 00:04:49,320
+ depending on the kind of incoming HTTP request
+
+105
+00:04:49,320 --> 00:04:50,160
+ that we're handling.
+
+106
+00:04:50,160 --> 00:04:53,760
+ And it also, in those methods, the request
+
+107
+00:04:53,760 --> 00:04:57,840
+ and any other URL parameters can also be sent in.
+
+108
+00:04:57,840 --> 00:05:01,760
+ So let's take a look at a sample urls.py from views.
+
+109
+00:05:01,760 --> 00:05:06,740
+ And we see examples of all three kinds of these routes.
+
+110
+00:05:06,740 --> 00:05:08,800
+ URL patterns is a global variable.
+
+111
+00:05:08,800 --> 00:05:10,720
+ It's just a list.
+
+112
+00:05:10,720 --> 00:05:12,520
+ But it has very special meaning.
+
+113
+00:05:12,520 --> 00:05:15,760
+ This list has very special meaning to Django.
+
+114
+00:05:15,760 --> 00:05:19,040
+ And you see these path commands.
+
+115
+00:05:19,040 --> 00:05:21,200
+ And there's other ways to describe these things.
+
+116
+00:05:21,200 --> 00:05:22,440
+ And then you have the path.
+
+117
+00:05:22,440 --> 00:05:25,560
+ And the blank path means sort of just slash right
+
+118
+00:05:25,560 --> 00:05:28,040
+ after the application name.
+
+119
+00:05:28,040 --> 00:05:30,760
+ And then we have which view to send it to.
+
+120
+00:05:30,760 --> 00:05:34,320
+ And so this template view as view,
+
+121
+00:05:34,320 --> 00:05:37,560
+ this is basically to save you from writing code
+
+122
+00:05:37,560 --> 00:05:40,520
+ if all you want to do is take a template out of the templates
+
+123
+00:05:40,520 --> 00:05:42,760
+ folder and return it.
+
+124
+00:05:42,760 --> 00:05:45,160
+ So you don't have to write your own code in views.py.
+
+125
+00:05:45,160 --> 00:05:47,000
+ And so it's already there.
+
+126
+00:05:47,000 --> 00:05:49,960
+ And that's why we go into Django views generic import template
+
+127
+00:05:49,960 --> 00:05:50,560
+ view.
+
+128
+00:05:50,560 --> 00:05:56,040
+ And we're going to say, you know what, I wrote that template.
+
+129
+00:05:56,040 --> 00:05:58,920
+ But I just don't want to write the code to go send that.
+
+130
+00:05:58,920 --> 00:06:00,720
+ We just read that template and send it back.
+
+131
+00:06:00,720 --> 00:06:05,440
+ And so this is a predefined bit of Django that does this for us.
+
+132
+00:06:05,440 --> 00:06:09,800
+ Sort of the more old school thing is this syntax right here.
+
+133
+00:06:09,800 --> 00:06:16,320
+ And basically from.import views pulls in views slash views.py.
+
+134
+00:06:16,320 --> 00:06:20,040
+ And then this, you will see our functions inside there.
+
+135
+00:06:20,040 --> 00:06:24,000
+ And then these are classes also from our views.py
+
+136
+00:06:24,000 --> 00:06:26,920
+ for this particular application.
+
+137
+00:06:26,920 --> 00:06:28,840
+ And the syntax is a little weird.
+
+138
+00:06:28,840 --> 00:06:30,440
+ This is the module we imported.
+
+139
+00:06:30,440 --> 00:06:31,680
+ This is a class from that.
+
+140
+00:06:31,680 --> 00:06:34,880
+ And then as view is a static method
+
+141
+00:06:34,880 --> 00:06:37,640
+ that returns a function that then can
+
+142
+00:06:37,640 --> 00:06:40,760
+ respond to the incoming requests.
+
+143
+00:06:40,760 --> 00:06:44,180
+ And we'll see these as we kind of go through these.
+
+144
+00:06:44,180 --> 00:06:46,800
+ So up next, we're going to actually look at the views.py
+
+145
+00:06:46,800 --> 00:06:50,320
+ and take a look at the views.
+

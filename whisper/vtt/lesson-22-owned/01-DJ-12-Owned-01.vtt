@@ -1,0 +1,386 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.180
+ - Hello and welcome to our lecture on owned rows in Django.
+
+00:00:04.180 --> 00:00:07.180
+ So what do I mean by an owned row?
+
+00:00:07.180 --> 00:00:11.200
+ Well up to now, every CRUD application that you've written,
+
+00:00:11.200 --> 00:00:15.640
+ you got a table or a model or two, maybe they're connected,
+
+00:00:15.640 --> 00:00:18.920
+ but basically if you log in, you can edit every row.
+
+00:00:18.920 --> 00:00:21.360
+ And so if you do a list, you see an update
+
+00:00:21.360 --> 00:00:23.660
+ and delete button on every row.
+
+00:00:23.660 --> 00:00:25.520
+ Real applications don't work that way.
+
+00:00:25.520 --> 00:00:28.320
+ If you're building a classified ad system,
+
+00:00:28.320 --> 00:00:31.360
+ some ads belong to you and some ads belong to other people,
+
+00:00:31.360 --> 00:00:33.560
+ you can see them all, but you can't edit them all.
+
+00:00:33.560 --> 00:00:36.280
+ And so we have to decide when to put the edit
+
+00:00:36.280 --> 00:00:40.280
+ and delete buttons up and only do those for the owner.
+
+00:00:40.280 --> 00:00:42.040
+ And we gotta make it so you can't like sneak in
+
+00:00:42.040 --> 00:00:43.520
+ and edit and delete other people's stuff.
+
+00:00:43.520 --> 00:00:46.040
+ And so we have to protect these rows
+
+00:00:46.040 --> 00:00:48.760
+ from being edited or deleted by anybody but the owner,
+
+00:00:48.760 --> 00:00:50.560
+ but anybody can see them.
+
+00:00:50.560 --> 00:00:52.640
+ And so that's why I call them owned rows.
+
+00:00:52.640 --> 00:00:55.120
+ If there's a row that you own,
+
+00:00:55.120 --> 00:00:57.800
+ you will see an edit or delete button.
+
+00:00:57.800 --> 00:00:58.960
+ If there's a row you don't own,
+
+00:00:58.960 --> 00:01:00.520
+ you'll see the row and the data
+
+00:01:00.520 --> 00:01:03.560
+ and you'll be able to read it and view it and that's it.
+
+00:01:03.560 --> 00:01:07.200
+ And so if we go back to how we were working
+
+00:01:07.200 --> 00:01:10.640
+ in our CRUD application, we were making heavy uses
+
+00:01:10.640 --> 00:01:13.480
+ of these generic views, the generic list view.
+
+00:01:13.480 --> 00:01:16.120
+ And so when we're all said and done
+
+00:01:16.120 --> 00:01:20.120
+ after a whole bunch of machinations,
+
+00:01:20.120 --> 00:01:23.120
+ you ended up with a very, very simple view.
+
+00:01:23.120 --> 00:01:25.460
+ You ended up with a horse list view
+
+00:01:25.460 --> 00:01:27.200
+ that extended generic list view.
+
+00:01:27.200 --> 00:01:31.200
+ Generic list view is provided to us by Django.
+
+00:01:31.200 --> 00:01:34.720
+ And the only thing we had to do was take this code,
+
+00:01:34.720 --> 00:01:37.040
+ which is several thousand lines of code,
+
+00:01:37.040 --> 00:01:40.160
+ and inform it as to which model we want it to be
+
+00:01:40.160 --> 00:01:41.760
+ and then we make another view, right?
+
+00:01:41.760 --> 00:01:44.240
+ So we make the horse list view
+
+00:01:44.240 --> 00:01:46.280
+ by extending generic list view
+
+00:01:46.280 --> 00:01:49.280
+ and informing that list view
+
+00:01:49.280 --> 00:01:51.840
+ that we wanna do this in the model with horses.
+
+00:01:51.840 --> 00:01:56.840
+ And from that point on, all kinds of convention happens.
+
+00:01:56.840 --> 00:01:58.280
+ And so we know things like
+
+00:01:58.280 --> 00:01:59.980
+ the variable will be named horse list.
+
+00:01:59.980 --> 00:02:03.160
+ It'll be a list of objects that are retrieved from,
+
+00:02:03.160 --> 00:02:07.280
+ a list of model objects that are retrieved from the database.
+
+00:02:07.280 --> 00:02:09.920
+ And so we kinda know how that works.
+
+00:02:09.920 --> 00:02:14.240
+ And it makes things really simple, not a lot of repetition.
+
+00:02:14.240 --> 00:02:16.000
+ Every view kinda looks the same.
+
+00:02:16.000 --> 00:02:19.400
+ You probably have done cats or dogs or autos,
+
+00:02:19.400 --> 00:02:20.840
+ a couple of different things.
+
+00:02:20.840 --> 00:02:23.840
+ And they all look very much the same
+
+00:02:23.840 --> 00:02:25.200
+ and if you get good at it,
+
+00:02:25.200 --> 00:02:28.600
+ you should be able to make these changes very rapidly.
+
+00:02:28.600 --> 00:02:30.220
+ So if we look at how this is working
+
+00:02:30.220 --> 00:02:33.160
+ kinda from an object oriented perspective,
+
+00:02:33.160 --> 00:02:38.160
+ we are making a new class called gView.Views.HorseListView
+
+00:02:38.160 --> 00:02:43.120
+ and we are extending our parent class
+
+00:02:43.120 --> 00:02:44.800
+ is the generic list view
+
+00:02:44.800 --> 00:02:48.700
+ and we're sort of adding our own little special sauce
+
+00:02:48.700 --> 00:02:53.280
+ by saying one class variable, model equals horse.
+
+00:02:53.280 --> 00:02:55.860
+ Okay, so that's kinda what's going on here.
+
+00:02:55.860 --> 00:03:00.700
+ Now, in this owner view,
+
+00:03:00.700 --> 00:03:03.240
+ we're going to do something quite similar.
+
+00:03:03.240 --> 00:03:05.660
+ And that is when we're going to have an article
+
+00:03:05.660 --> 00:03:10.440
+ and this is all from the DJ Free Samples My Arts example,
+
+00:03:10.440 --> 00:03:13.360
+ we're going to extend owner list view.
+
+00:03:13.360 --> 00:03:16.440
+ Now if we were, and soon we will look inside owner list view
+
+00:03:16.440 --> 00:03:17.880
+ and we will see that owner list view
+
+00:03:17.880 --> 00:03:21.400
+ is extending generic list view
+
+00:03:21.400 --> 00:03:26.400
+ and where this model equals article
+
+00:03:26.400 --> 00:03:28.880
+ is informing owner list view,
+
+00:03:28.880 --> 00:03:31.240
+ the difference is this is our code.
+
+00:03:31.240 --> 00:03:33.700
+ That belongs to us and in the last part,
+
+00:03:33.700 --> 00:03:35.920
+ we will show you everything that you have to do
+
+00:03:35.920 --> 00:03:37.160
+ to build one of these things.
+
+00:03:37.160 --> 00:03:39.120
+ And so we're taking the list view
+
+00:03:39.120 --> 00:03:41.480
+ which has almost everything we want
+
+00:03:41.480 --> 00:03:43.520
+ and we're gonna add one feature to it
+
+00:03:43.520 --> 00:03:45.180
+ and then we're gonna extend the list view
+
+00:03:45.180 --> 00:03:48.120
+ and create a new view called owner list view
+
+00:03:48.120 --> 00:03:51.560
+ or you might call it list view for owned rows.
+
+00:03:51.560 --> 00:03:55.680
+ And at that point, you're good
+
+00:03:55.680 --> 00:03:58.400
+ and this has this class owner list view
+
+00:03:58.400 --> 00:03:59.700
+ which we'll see in a second,
+
+00:03:59.700 --> 00:04:03.800
+ has everything you need to deal with rows that are owned.
+
+00:04:03.800 --> 00:04:08.800
+ And for example, we're going to have a owner column.
+
+00:04:08.800 --> 00:04:11.600
+ So every article is gonna have an owner
+
+00:04:11.600 --> 00:04:13.960
+ and if that's equal to the current logged in user,
+
+00:04:13.960 --> 00:04:17.760
+ then we're going to show these little edit and delete buttons.
+
+00:04:17.760 --> 00:04:19.240
+ But if the article owner,
+
+00:04:19.240 --> 00:04:23.720
+ the owner value inside the article object or the model,
+
+00:04:23.720 --> 00:04:26.760
+ if that owner is not equal to the current user,
+
+00:04:26.760 --> 00:04:27.820
+ we don't show it.
+
+00:04:27.820 --> 00:04:30.240
+ Now, not showing a link does not mean
+
+00:04:30.240 --> 00:04:31.600
+ you've protected it from editing.
+
+00:04:31.600 --> 00:04:35.720
+ We'll show you later how that protection from editing happens.
+
+00:04:35.720 --> 00:04:38.080
+ But this is such a common problem
+
+00:04:38.080 --> 00:04:40.340
+ that we wanna just be able to, in a sense,
+
+00:04:40.340 --> 00:04:42.340
+ say look, here's a list view.
+
+00:04:42.340 --> 00:04:44.740
+ Here's a list view with this special owner column in it
+
+00:04:44.740 --> 00:04:46.880
+ and we wanna maintain the owner column.
+
+00:04:46.880 --> 00:04:49.500
+ We don't wanna have to write hundreds of lines of code
+
+00:04:49.500 --> 00:04:52.160
+ in every view that we wanna have this owner column.
+
+00:04:52.160 --> 00:04:55.760
+ So we just use object-oriented techniques to accomplish this.
+
+00:04:55.760 --> 00:04:57.720
+ And so we're going to use inheritance
+
+00:04:57.720 --> 00:05:00.560
+ and we talked about it and we'll talk about it again.
+
+00:05:00.560 --> 00:05:03.680
+ Inheritance is the idea that you have a class,
+
+00:05:03.680 --> 00:05:06.680
+ you're gonna make another class that inherits all of its,
+
+00:05:06.680 --> 00:05:09.000
+ all that parent class and then extends it,
+
+00:05:09.000 --> 00:05:11.180
+ adds a little bit of stuff to it.
+
+00:05:11.180 --> 00:05:13.760
+ And it's another form of don't repeat yourself.
+
+00:05:13.760 --> 00:05:17.020
+ Do something once in a parent class.
+
+00:05:17.020 --> 00:05:20.260
+ You make the parent class sometimes quite generic.
+
+00:05:20.260 --> 00:05:22.840
+ Then you make a child class that extends the parent class
+
+00:05:22.840 --> 00:05:24.520
+ and then we use the child class.
+
+00:05:24.520 --> 00:05:28.060
+ Or we could call them subclasses or child classes.
+
+00:05:28.060 --> 00:05:29.720
+ There's a whole bunch of different terminology
+
+00:05:29.720 --> 00:05:31.240
+ and it's all pretty much equivalent.
+
+00:05:31.240 --> 00:05:34.360
+ Subclasses are more specialized versions of a class.
+
+00:05:34.360 --> 00:05:36.480
+ They inherit attributes and methods
+
+00:05:36.480 --> 00:05:39.680
+ from their parent classes and can introduce their own.
+
+00:05:39.680 --> 00:05:43.800
+ Again, basic object-oriented programming.
+
+00:05:43.800 --> 00:05:45.760
+ So up next we're gonna talk a little bit
+
+00:05:45.760 --> 00:05:47.840
+ about how it is that we can peek in
+
+00:05:47.840 --> 00:05:49.760
+ to one of these generic views
+
+00:05:49.760 --> 00:05:52.140
+ and add our own special sauce for it.
+
+00:05:52.140 --> 00:05:54.560
+ (jazz music)
+

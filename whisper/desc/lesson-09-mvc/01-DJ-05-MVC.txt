@@ -1,0 +1,7 @@
+Model View Controller Architecture in Web Development
+
+model view controller, web server, request response cycle, controller, view, model, database, django, urls, views, models
+
+The lecture explains that Model View Controller (MVC) is a universal architectural pattern for web development, independent of programming languages and operating systems. It divides web server functionality into three distinct components: the controller handles request routing and sequence of operations, the view produces output (typically HTML), and the model manages data storage and retrieval from databases.
+
+In Django, the MVC pattern is implemented through specific files: urls.py serves as the controller for request routing, views.py handles both controller logic and view rendering, and models.py defines database interactions and data structures.

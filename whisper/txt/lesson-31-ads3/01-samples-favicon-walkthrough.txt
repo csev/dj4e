@@ -1,0 +1,42 @@
+ Hello and welcome to another walkthrough for Django for everybody. In this
+ particular walkthrough we're going to play with the favicon and so the favicon
+ is a special little icon that shows up at your root /favicon.ico. There's a
+ whole series of favicons but this is sort of the original classic one and you
+ should be able to see it and it's also what happens in your bookmarks or your
+ little tabs and so it's kind of a fun little way to brand your site and if
+ you've been grabbing my code you have got a favicon sitting here in Django's
+ home static favicon.ico and if you look at urls.py down later it adds a path
+ using the static file server and it sort of goes to the base directory of the
+ of the Django application that's home static and then if there's a path that
+ matches this is the path that matches then this is the file that it looks up
+ and then that serves up the contents of that file at favicon.ico. Now what you
+ want to probably do is make your own favicon so let's go ahead and make our
+ own favicon. Here is a favicon converter and let's go ahead and grab a file. Let's
+ see. Sakaiger. Gonna make a little Sakaiger icon instead and so I did it it
+ converted it to an icon. Let's see what we got here and I'm going to download a zip file
+ with a bunch of icons and it'll go into my downloads so here it came into my
+ downloads it's already downloaded it and that is an icon and so an icon is a
+ special kind of an image and so now what I'm going to do is I'm going to go into
+ here and I'm going to upload and overwrite this with a new file and so
+ here we're going to upload that favicon and I believe it's up to uploaded right
+ this second. Now here's a weird thing now I should be able to go here and I should
+ be able to press refresh. I don't think reloading my application is going to
+ make much difference at this point but icons are heavily cached by the browser
+ so one thing to do is just I didn't mean to start that didn't mean to start
+ Camtasia sorry didn't mean to start that. So I can go here in a different browser
+ and I can see icon or I can add a get parameter and then I can see that
+ icon x=3 and now I can see the icon. So it
+ so if you come here and you press refresh what you'll find is these icons
+ are heavily cached and that's just because you don't want to overload the
+ server getting an icon on every page so to really do this right yet the way to
+ force the cache and we've seen this like in JSON you can add a get parameter x
+ equals 42 and that basically says it's going to ignore this and it's just going
+ to get because that's a query parameter it's not part of the path and it's going
+ to load the new icon so it might take a while before you're going to see that
+ icon show up and so don't feel too bad if you can do this thing where you go
+ directly and you add this question mark you should be able to see your brand new
+ icon and then later or maybe if you run with a different browser but if you've
+ used a different browser and it's got a cached icon away it goes and you can go
+ Google how to clear the favicon on my browser and you'll find it's not trivial
+ so this is the way that I do it I just add a get parameter and then that does it
+ so I hope this little favicon walkthrough was helpful to you cheers

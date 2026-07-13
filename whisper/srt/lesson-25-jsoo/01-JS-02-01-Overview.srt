@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:05,000
+ Hello and welcome to our lecture on Object-Oriented Programming in JavaScript.
+
+2
+00:00:05,000 --> 00:00:12,000
+ I teach Object-Oriented Programming in Python, in PHP, and in JavaScript.
+
+3
+00:00:12,000 --> 00:00:15,000
+ And I use the same slides over and over and over again.
+
+4
+00:00:15,000 --> 00:00:20,000
+ And that's because Object-Oriented concepts are the same.
+
+5
+00:00:20,000 --> 00:00:24,000
+ So if you've taken other classes from me, you've seen some of these slides.
+
+6
+00:00:24,000 --> 00:00:29,000
+ They're adapted a little bit from JavaScript because JavaScript's Object-Oriented pattern is particularly awesome, right?
+
+7
+00:00:29,000 --> 00:00:34,000
+ But there's this concept of a class, which is like a template.
+
+8
+00:00:34,000 --> 00:00:38,000
+ There's a concept of code and data in a class.
+
+9
+00:00:38,000 --> 00:00:40,000
+ Whether you call the code method or message is up to you.
+
+10
+00:00:40,000 --> 00:00:43,000
+ Whether you call the data attributes or fields.
+
+11
+00:00:43,000 --> 00:00:45,000
+ And then an object is an instance of the class.
+
+12
+00:00:45,000 --> 00:00:52,000
+ And so the cookie cutter is the shape that's the class and the cookie itself that can be specialized.
+
+13
+00:00:52,000 --> 00:00:56,000
+ And it's an instance. Millions of cookies come from one cookie cutter.
+
+14
+00:00:56,000 --> 00:00:58,000
+ And that's Object-Oriented.
+
+15
+00:00:58,000 --> 00:01:06,000
+ So the key is the craft of it is building the cookie cutter so that it makes awesome cookies.
+
+16
+00:01:06,000 --> 00:01:10,000
+ So the class, like I said, is the template. It's a blueprint.
+
+17
+00:01:10,000 --> 00:01:16,000
+ It's not the actual thing, but it is the precise instructions on how to make the thing.
+
+18
+00:01:16,000 --> 00:01:21,000
+ An instance is once you make the cookie, you can have different frosting on it.
+
+19
+00:01:21,000 --> 00:01:24,000
+ You can have all kinds of other things.
+
+20
+00:01:24,000 --> 00:01:31,000
+ You can make subclasses, which is what we do for inheritance, which makes specialized versions of the class.
+
+21
+00:01:31,000 --> 00:01:33,000
+ Now, the methods are the code.
+
+22
+00:01:33,000 --> 00:01:39,000
+ So in classic programming, we think of like code and data structures, algorithms and data structures.
+
+23
+00:01:39,000 --> 00:01:45,000
+ Data structures are the shape of data and algorithms are the shape of the code, the way the code is made to work.
+
+24
+00:01:45,000 --> 00:01:50,000
+ The methods are the algorithms that make up the code part of every object.
+
+25
+00:01:50,000 --> 00:01:56,000
+ Every object has code and data, and often the code works on the data that's inside the object.
+
+26
+00:01:56,000 --> 00:02:03,000
+ Some Object-Oriented sort of schools of thought use method, and some use message.
+
+27
+00:02:03,000 --> 00:02:07,000
+ The more purist folks tend to use messages, like you're sending a message.
+
+28
+00:02:07,000 --> 00:02:11,000
+ Here's the object, not the class. You're sending a message to the object.
+
+29
+00:02:11,000 --> 00:02:15,000
+ I tend to use method because method is a bit of code that lives in there.
+
+30
+00:02:15,000 --> 00:02:22,000
+ That's just because I think of things from like Fortran or C, very procedural way of thinking.
+
+31
+00:02:22,000 --> 00:02:25,000
+ So objects in JavaScript are a little different.
+
+32
+00:02:25,000 --> 00:02:32,000
+ And if you've seen me talk about objects in Python or objects in PHP or even objects in Java,
+
+33
+00:02:32,000 --> 00:02:37,000
+ which I taught a lot of time ago, or C++, they're very different.
+
+34
+00:02:37,000 --> 00:02:41,000
+ And the key thing is it certainly is a storing reuse pattern.
+
+35
+00:02:41,000 --> 00:02:47,000
+ It is a mechanism to create data and code and put it into one kind of reusable thing.
+
+36
+00:02:47,000 --> 00:02:54,000
+ But the key thing is that the function keyword is actually, in a sense, an executable statement.
+
+37
+00:02:54,000 --> 00:03:01,000
+ And you can take and use the function keyword, and the function is, in a sense,
+
+38
+00:03:01,000 --> 00:03:05,000
+ calling a function that causes code to come back to you.
+
+39
+00:03:05,000 --> 00:03:11,000
+ So you can have the function create code and then assign it into the variable.
+
+40
+00:03:11,000 --> 00:03:13,000
+ These are called first-class functions.
+
+41
+00:03:13,000 --> 00:03:20,000
+ And it has to do with the fact that in first-class functions, you have this symmetry between code and data.
+
+42
+00:03:20,000 --> 00:03:22,000
+ The code is just data.
+
+43
+00:03:22,000 --> 00:03:30,000
+ And of all of the modern programming languages, Lisp really was the original code-data kind of duality.
+
+44
+00:03:30,000 --> 00:03:37,000
+ There is very, very, very much throwback to the Lisp tradition of data and code look the same way
+
+45
+00:03:37,000 --> 00:03:39,000
+ or can be treated the same way.
+
+46
+00:03:39,000 --> 00:03:43,000
+ You can have X as a variable and you can assign it to be 42.
+
+47
+00:03:43,000 --> 00:03:47,000
+ You can have it be a string or you can have it be a function that adds two numbers together.
+
+48
+00:03:47,000 --> 00:03:51,000
+ And it's just X. And that is kind of elegant.
+
+49
+00:03:51,000 --> 00:03:56,000
+ So that's called first-class functions in that functions themselves are the code.
+
+50
+00:03:56,000 --> 00:04:00,000
+ So the code in systems is manipulable as data.
+
+51
+00:04:00,000 --> 00:04:04,000
+ Copy around, use it, reuse it, et cetera.
+
+52
+00:04:04,000 --> 00:04:10,000
+ So up next, we're going to take a look at how we put together a sample class in JavaScript.
+

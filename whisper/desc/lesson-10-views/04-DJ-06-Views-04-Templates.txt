@@ -1,0 +1,7 @@
+Django Templates: Generating HTML from Context
+
+Django, templates, context, variable insertion, double curly braces
+
+Django templates dynamically generate HTML by merging data from a context dictionary with template files. The template engine uses double curly braces syntax (e.g., `{{ variable }}`) to insert context variables into the template structure.
+
+Template names are structured with the application name as a prefix to resolve conflicts across Django applications. For example, a template named detail.html in the app application is referenced as app/detail.html.

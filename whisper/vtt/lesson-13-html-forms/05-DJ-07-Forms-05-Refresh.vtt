@@ -1,0 +1,215 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.700
+ So these forms are kind of complicated.
+
+00:00:01.700 --> 00:00:03.400
+ There's a lot of little details.
+
+00:00:03.400 --> 00:00:05.740
+ Once we get 'em, then we'll be able to knock out forms
+
+00:00:05.740 --> 00:00:08.180
+ and just do form after form after form.
+
+00:00:08.180 --> 00:00:12.100
+ So I call this little section Post-Refresh Oops.
+
+00:00:12.100 --> 00:00:16.020
+ So remember this little page not so long ago
+
+00:00:16.020 --> 00:00:17.280
+ where I'm like, "Look, it's great.
+
+00:00:17.280 --> 00:00:20.340
+ "We did the CSRF and we checked it and it worked great
+
+00:00:20.340 --> 00:00:24.060
+ "and we put the CSRF token in and it's all good."
+
+00:00:24.060 --> 00:00:27.120
+ Well, it turns out from the heights of success
+
+00:00:27.120 --> 00:00:30.440
+ is the depths of failure, but it's not too bad,
+
+00:00:30.440 --> 00:00:33.600
+ not too hard to fix it, so we just gotta fix it.
+
+00:00:33.600 --> 00:00:38.360
+ So the problem is if the browser sends a post request
+
+00:00:38.360 --> 00:00:40.500
+ and it gets back a 200 and a page of HTML,
+
+00:00:40.500 --> 00:00:42.420
+ which is exactly what we just did,
+
+00:00:42.420 --> 00:00:44.820
+ and then you hit the refresh button on your browser,
+
+00:00:44.820 --> 00:00:46.880
+ the browser is going to resend the post request.
+
+00:00:46.880 --> 00:00:50.200
+ If you go back, I said post requests are things that change.
+
+00:00:50.200 --> 00:00:53.400
+ So for example, if you are transferring money
+
+00:00:53.400 --> 00:00:54.800
+ from your account to someone else's
+
+00:00:54.800 --> 00:00:57.580
+ and then you hit the transfer button, it's a post,
+
+00:00:57.580 --> 00:01:01.080
+ and the money gets transferred, and then transfer successful.
+
+00:01:01.080 --> 00:01:04.600
+ And then if you hit refresh, you're gonna post it again.
+
+00:01:04.600 --> 00:01:06.760
+ And so the refresh basically reruns
+
+00:01:06.760 --> 00:01:08.440
+ the entire previous transaction.
+
+00:01:08.440 --> 00:01:11.440
+ It doesn't just grab the page, it sends the post data again.
+
+00:01:11.440 --> 00:01:14.860
+ So if you transferred $100 in one post and you hit refresh,
+
+00:01:14.860 --> 00:01:16.820
+ you're gonna transfer $100 again.
+
+00:01:16.820 --> 00:01:19.280
+ So what happens is is that because the browsers know
+
+00:01:19.280 --> 00:01:22.440
+ that posts are potentially dangerous to the server,
+
+00:01:22.440 --> 00:01:25.160
+ the user will get a pop-up, not from you,
+
+00:01:25.160 --> 00:01:28.160
+ but from the browser to say, hey,
+
+00:01:28.160 --> 00:01:30.960
+ this person who built this server application
+
+00:01:30.960 --> 00:01:33.080
+ left you sitting on a post, and you hit refresh,
+
+00:01:33.080 --> 00:01:34.740
+ and I'm gonna about post it again.
+
+00:01:34.740 --> 00:01:36.880
+ So are you sure you really wanna do that?
+
+00:01:36.880 --> 00:01:39.500
+ And the problem is the user doesn't even know what a post is,
+
+00:01:39.500 --> 00:01:43.020
+ barely knows what's a refresh, and it looks like a mess.
+
+00:01:43.020 --> 00:01:45.960
+ So the way to do this is you go to the page,
+
+00:01:45.960 --> 00:01:49.760
+ you type in 42, you hit submit query,
+
+00:01:49.760 --> 00:01:52.840
+ and it'll say congratulations, and you look at it,
+
+00:01:52.840 --> 00:01:55.100
+ and then you press the refresh button,
+
+00:01:55.100 --> 00:01:58.280
+ the refresh button, the reload button,
+
+00:01:58.280 --> 00:02:01.060
+ and you press the reload button, and it says,
+
+00:02:01.060 --> 00:02:03.880
+ to display this page, Firefox must send information
+
+00:02:03.880 --> 00:02:05.720
+ that will repeat an action, such as a search order
+
+00:02:05.720 --> 00:02:07.720
+ confirmation that was performed earlier,
+
+00:02:07.720 --> 00:02:09.960
+ or a money transfer.
+
+00:02:09.960 --> 00:02:12.280
+ That is not a message from your application.
+
+00:02:12.280 --> 00:02:14.400
+ That is literally because your application
+
+00:02:14.400 --> 00:02:16.960
+ was a little sloppy, and Firefox is like,
+
+00:02:16.960 --> 00:02:18.760
+ I'm really not sure if we should do this,
+
+00:02:18.760 --> 00:02:21.400
+ so I'm gonna ask the user, but it doesn't exactly know
+
+00:02:21.400 --> 00:02:24.760
+ what to ask the user, it doesn't know what you just did,
+
+00:02:24.760 --> 00:02:29.160
+ and so it's a yucky message, and what we wanna do
+
+00:02:29.160 --> 00:02:30.760
+ as programmers is avoid this.
+
+00:02:30.760 --> 00:02:33.080
+ We want all the message, all the user experience
+
+00:02:33.080 --> 00:02:36.120
+ coming from us, not having the browsers take over
+
+00:02:36.120 --> 00:02:39.240
+ some of these things, and so it's just bad practice
+
+00:02:39.240 --> 00:02:44.240
+ in general to send a 200 post, to take a post request,
+
+00:02:44.240 --> 00:02:48.400
+ and then send a 200 with an HTML page back, okay?
+
+00:02:48.400 --> 00:02:52.080
+ And so it's just ugly, and it sits in the browser ass,
+
+00:02:52.080 --> 00:02:55.000
+ it's out of your control, it's ugly, it's bad usability,
+
+00:02:55.000 --> 00:02:57.800
+ so we can do a little bit of work to make this never happen.
+
+00:02:57.800 --> 00:02:59.440
+ So that's what we wanna do here.
+
+00:02:59.440 --> 00:03:04.240
+ So the way we do this is through what we call
+
+00:03:04.240 --> 00:03:07.340
+ post redirect refresh.
+
+00:03:07.340 --> 00:03:10.400
+ So up next, we're gonna show how we're gonna fix all this
+
+00:03:10.400 --> 00:03:13.560
+ using a post redirect get refresh.
+
+00:03:13.560 --> 00:03:15.760
+ These titles keep getting longer and longer.
+
+00:03:15.760 --> 00:03:18.340
+ (upbeat music)
+

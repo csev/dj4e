@@ -1,0 +1,299 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.640
+ and welcome to our quick walk-through of using models in Django, again, we're working through
+
+00:00:05.640 --> 00:00:13.060
+ the Mozilla Developer Network tutorial, so we're in this tutorial about using models.
+
+00:00:13.060 --> 00:00:18.980
+ Now this tutorial has a lot of useful information, so it's designing the local library models,
+
+00:00:18.980 --> 00:00:22.660
+ this is something you should read carefully and understand, hopefully you've had some
+
+00:00:22.660 --> 00:00:29.660
+ data model design before or watched some information about data model design, so we have sort of
+
+00:00:30.000 --> 00:00:37.760
+ authors and books and genres and the language and books and how they're checked out, so
+
+00:00:37.760 --> 00:00:39.340
+ just read all this.
+
+00:00:39.340 --> 00:00:45.120
+ This talks about how we define these models, take from that diagram and turn the models
+
+00:00:45.120 --> 00:00:55.540
+ into Django models, how we add fields to those models, how we add foreign keys, logical keys,
+
+00:00:55.540 --> 00:01:04.320
+ etc., etc., and so just, I'm going through this fast, just I want you to read all that
+
+00:01:04.320 --> 00:01:08.100
+ and what I'm gonna do is jump down to this defining local library models 'cause this
+
+00:01:08.100 --> 00:01:13.280
+ is sort of the work that you've gotta do, so once you understand all that through whatever
+
+00:01:13.280 --> 00:01:19.200
+ way you understand it, we're going to go ahead to our Python Anywhere account and start a
+
+00:01:19.200 --> 00:01:34.240
+ new bash console, and then we're gonna say work on Django 2, pick our virtual environment,
+
+00:01:34.240 --> 00:01:43.160
+ then we're gonna go CD Django projects, I say DJ Tab there, and then local library is
+
+00:01:43.160 --> 00:01:48.560
+ the project, and if we take a look, we've got the catalog, local library is the configuration,
+
+00:01:48.560 --> 00:01:55.400
+ we've been editing these files all along, and so here we are, if you recall, we've run
+
+00:01:55.400 --> 00:01:59.440
+ the SQL light command in previous that we can see what's in here, we're gonna be adding
+
+00:01:59.440 --> 00:02:10.040
+ some new tables, so we're going to edit the file catalog, models.py, I'll use nano to
+
+00:02:10.040 --> 00:02:17.880
+ edit that, and it has something in there, it's exactly as predicted here, and then we're
+
+00:02:17.880 --> 00:02:21.880
+ gonna add, I'm just gonna add one of the models, there's several that we've gotta add, but
+
+00:02:21.880 --> 00:02:29.560
+ for now, I'm just going to paste that one in, and control x, y, enter, and so now if
+
+00:02:29.560 --> 00:02:34.840
+ I do a git status, you can see that I made one small change, okay, so once we've made
+
+00:02:34.840 --> 00:02:40.440
+ this change, this whole concept of make migrations, all make migrations does, it looks at all
+
+00:02:40.440 --> 00:02:44.760
+ the models.py file, and there's some in there already for the administration, which we're
+
+00:02:44.760 --> 00:02:48.400
+ gonna see in the next assignment.
+
+00:02:48.400 --> 00:02:52.840
+ This looks at the models, now this one's gonna detect changes, so oh, there's a new model
+
+00:02:52.840 --> 00:02:58.120
+ in that file, so we have to create what's called a migration, migration is a script
+
+00:02:58.120 --> 00:03:03.520
+ that basically creates new tables, or updates tables, et cetera, so we're gonna run the
+
+00:03:03.520 --> 00:03:09.480
+ make migrations, and then we're gonna actually do the migration, so these are separate, so
+
+00:03:09.480 --> 00:03:13.240
+ the migrations would get, if we were running in production, you might check the migration
+
+00:03:13.240 --> 00:03:19.720
+ into GitHub, and then run migrate both locally, and on your production server, so we'll just
+
+00:03:19.720 --> 00:03:26.120
+ do the migrate right away, and the migrate is what is actually creating the new table,
+
+00:03:26.120 --> 00:03:30.720
+ and we already did kind of a git status, we can see that we got two new files, we'll deal
+
+00:03:30.720 --> 00:03:38.240
+ with those in a second, okay, but now we're gonna run this command right here, sqlite3,
+
+00:03:38.240 --> 00:03:41.680
+ and we're gonna read that database file, so if we take a look at the files, it's this
+
+00:03:41.680 --> 00:03:45.920
+ file, so that is how we do it, so we're in a sqlite command line browser, you can see
+
+00:03:45.920 --> 00:03:52.840
+ how to use this, but .tables, we see this new one, so if you looked at it before, you
+
+00:03:52.840 --> 00:04:00.640
+ saw all these things, but now because we've added this new model file, we have this catalog.genre,
+
+00:04:00.640 --> 00:04:10.120
+ so schema tells us what the shape, copy, paste, so this tells us a SQL create table that would
+
+00:04:10.120 --> 00:04:20.280
+ be necessary to create this, we have a primary key named id, and then a name field, so that's
+
+00:04:20.280 --> 00:04:29.320
+ a pretty simple table, and if we take a look at the migration, that's what we had, we had
+
+00:04:29.320 --> 00:04:36.800
+ this name, which was basically some text, okay, and the id is automatically generated,
+
+00:04:36.800 --> 00:04:43.720
+ that's the primary key that's automatically generated, so that's the way we go, so you
+
+00:04:43.720 --> 00:04:53.560
+ can either hit Ctrl+D or .quit, I'll hit Ctrl+D here, so here we are, and so now we can edit
+
+00:04:53.560 --> 00:05:01.600
+ this again, this time I'll use vi, catalog_models.py, again, learn to use that tab, go to the end
+
+00:05:01.600 --> 00:05:06.720
+ with a zero G, zero capital G, and now I'm just going to kind of blast these things in
+
+00:05:06.720 --> 00:05:14.560
+ here, copy these guys, it'd be better for you to understand this, so one of the problems
+
+00:05:14.560 --> 00:05:21.960
+ that people have, I think, open, open a new line, is people are so much in a hurry to
+
+00:05:21.960 --> 00:05:27.340
+ get through these tutorials, and of course I'm blasting through them too, that you just
+
+00:05:27.340 --> 00:05:33.880
+ type this and you just put it back in without understanding it, and that just means that
+
+00:05:33.880 --> 00:05:36.840
+ you're going to have to come back and you're going to have to actually learn this when
+
+00:05:36.840 --> 00:05:43.760
+ it comes time to writing an application that you're doing yourself, and then the author
+
+00:05:43.760 --> 00:05:51.320
+ model, let's look at these for a little bit of time, I'm just showing you how to do it
+
+00:05:51.320 --> 00:05:57.920
+ here, so you're not wasting too much time watching me on the video, escape colon wq
+
+00:05:57.920 --> 00:06:05.960
+ to save it, if I do a get diff, this is a more prompt here, this little colon, so I've
+
+00:06:05.960 --> 00:06:13.760
+ got a genre model, a book model, a book instance model, and an author model, so those are the
+
+00:06:13.760 --> 00:06:24.080
+ actually, an author model, and then Q gets me out of that, these are basically the models
+
+00:06:24.080 --> 00:06:32.220
+ that represent, in a sense, everything except the language, and so you've got to actually
+
+00:06:32.220 --> 00:06:36.080
+ add the language here, and it's kind of telling you where you're supposed to hook the language
+
+00:06:36.080 --> 00:06:42.600
+ up, what kind of a thing, so you in this challenge, you've got to add the language, so there's
+
+00:06:42.600 --> 00:06:46.600
+ a challenge down here, figure out where to hook it up, read all these models, and then
+
+00:06:46.600 --> 00:06:51.640
+ add a language model and get that right as well, connect it to the right place, again
+
+00:06:51.640 --> 00:06:55.160
+ there's a bunch of stuff that you've got to read, that's unfortunate, so see this thing
+
+00:06:55.160 --> 00:07:01.500
+ about language model, you've got to do this too, I'm not going to do it in this video,
+
+00:07:01.500 --> 00:07:07.920
+ so now that we've got these things done, we're going to run the make migrations again, so
+
+00:07:07.920 --> 00:07:12.000
+ it's going to have two migrations when we're done, I could have done all the edits and
+
+00:07:12.000 --> 00:07:16.680
+ done one migration, but I just wanted to show you, and then I want to do the migrate to
+
+00:07:16.680 --> 00:07:38.080
+ actually create the tables, okay, and so, if I do an SQLite, and I look at .tables,
+
+00:07:38.080 --> 00:07:43.000
+ see now I've got a lot more, I've got like, this genre was there before, but now I've
+
+00:07:43.000 --> 00:07:54.360
+ got like catalog author, and I can say .schema, catalog author, and we see the primary key,
+
+00:07:54.360 --> 00:07:58.880
+ the first name, the last name, date of birth, date of death, and that of course is taken
+
+00:07:58.880 --> 00:08:05.320
+ straight from these things right here, so this is called an object relational mapper,
+
+00:08:05.320 --> 00:08:11.440
+ which takes this author object and then turns it into a set of tables in a database and
+
+00:08:11.440 --> 00:08:18.920
+ does joins automatically, we'll get to all that eventually, so .quit or control D gets
+
+00:08:18.920 --> 00:08:24.600
+ us out of that, so we've seen that, and at that point, we're all done, we've got our
+
+00:08:24.600 --> 00:08:37.240
+ models, we've got our model created, if we are doing this in GitHub, oops, where'd I
+
+00:08:37.240 --> 00:08:42.360
+ just go, where am I, local library, pwd, local library, there I am, so if I do a git status
+
+00:08:42.360 --> 00:08:49.080
+ here, so you can see all the things that have been added in my local library, and then I'm
+
+00:08:49.080 --> 00:08:56.160
+ going to just say git add catalog migration star, because all these added files aren't
+
+00:08:56.160 --> 00:09:02.600
+ there yet, so that's okay, pycache, something you'd never want to add, it just ended up
+
+00:09:02.600 --> 00:09:10.640
+ in that star, so it's okay, git status, so these are the added files, and the catalog
+
+00:09:10.640 --> 00:09:26.920
+ files, and then we're going to commit that, and push it into our git repo, okay, so now
+
+00:09:26.920 --> 00:09:33.880
+ I typed in my password, and so it's all set up, and just for our own sanity, we're going
+
+00:09:33.880 --> 00:09:40.280
+ to give ourselves another tag in our GitHub repo, just so we can keep track of the fact
+
+00:09:40.280 --> 00:09:45.000
+ that, because you might have made a couple of commits, we only made one commit, I did,
+
+00:09:45.000 --> 00:09:50.920
+ because I knew what I was doing, and then we'll upload the tags to GitHub, and so if
+
+00:09:50.920 --> 00:10:08.920
+ I look at GitHub, jangle projects, see we got five commits, that one we just did, and
+
+00:10:08.920 --> 00:10:16.920
+ the other one we just did, so we're going to click on that one, and then we're going
+
+00:10:16.920 --> 00:10:21.440
+ to click on that one, and we're going to click on that one, and then we're going to click
+
+00:10:21.440 --> 00:10:26.120
+ on that one, and then we're going to click on that one, and then we're going to click
+
+00:10:26.120 --> 00:10:30.240
+ on that one, and then we're going to click on that one, and then we're going to click
+
+00:10:30.240 --> 00:10:35.640
+ on that one, and then we're going to click on that one, and then we're going to click
+
+00:10:35.640 --> 00:10:47.080
+ the SQLite file, so you go into jangle projects, local library, and dbsqlite, and then you
+
+00:10:47.080 --> 00:10:56.520
+ download it right here, so it downloads that file, and then you end up with this file locally
+
+00:10:56.520 --> 00:11:01.840
+ on your hard drive, and so if you have a command line on your computer, or the SQLite browser
+
+00:11:01.840 --> 00:11:07.120
+ on the computer, you can look at this, and you may have to turn it in as part of your
+
+00:11:07.120 --> 00:11:12.640
+ assignment, so that's how you download the file if you need to do that, okay, so thanks
+
+00:11:12.640 --> 00:11:16.800
+ for listening, and to our little discussion of jangle models.
+

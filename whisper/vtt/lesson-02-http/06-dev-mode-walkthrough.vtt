@@ -1,0 +1,287 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.300
+ Hello, and welcome to another walkthrough for Django for everybody.
+
+00:00:05.300 --> 00:00:11.720
+ In this walkthrough, we're going to talk about the browser debugger console, and so this
+
+00:00:11.720 --> 00:00:16.640
+ is something that in the old days was only in Firefox, but eventually everybody built
+
+00:00:16.640 --> 00:00:22.640
+ it in, and they used to have to build a plug-in, and it shows up at different places, and so
+
+00:00:22.640 --> 00:00:25.320
+ in Firefox, it's here under tools.
+
+00:00:25.320 --> 00:00:32.120
+ It turns out that you can kind of go to any of these things because these are the, they're
+
+00:00:32.120 --> 00:00:34.280
+ just different tabs here.
+
+00:00:34.280 --> 00:00:42.120
+ In Chrome, we do view, developer, JavaScript, console, and then you see a similar kind of
+
+00:00:42.120 --> 00:00:43.120
+ thing here.
+
+00:00:43.120 --> 00:00:53.680
+ So I'm going to do it in Firefox here, and so you can see things like you can see the
+
+00:00:53.680 --> 00:00:59.120
+ document object model, you can see the JavaScript console, this little error hardly matters,
+
+00:00:59.120 --> 00:01:03.000
+ it's because it's such a simple page, you can actually debug JavaScript code, you can
+
+00:01:03.000 --> 00:01:11.160
+ watch the network, you can play with CSS, et cetera, et cetera, et cetera, performs,
+
+00:01:11.160 --> 00:01:16.360
+ cookies are in here, so there's a lot of things that you can do.
+
+00:01:16.360 --> 00:01:20.640
+ I'm going to start and show you right now, we're at the very beginning class, I'm just
+
+00:01:20.640 --> 00:01:28.480
+ going to show you some of the most basic things here, I'm going to clear this out, and then
+
+00:01:28.480 --> 00:01:35.920
+ refresh the page, and so what you see here is you see each request response cycle, right,
+
+00:01:35.920 --> 00:01:40.800
+ and so I came up here as if I typed this, let me clear it again so you see, I'm going
+
+00:01:40.800 --> 00:01:45.600
+ to type this, I'm going to press enter, and that tells the browser to go retrieve this
+
+00:01:45.600 --> 00:01:54.440
+ page, so it connects to the server, www.drchuck.com, and gets the document page 1.htm, this favicon.ico,
+
+00:01:54.440 --> 00:01:57.760
+ that's basically getting this little favicon right here, that's the little thing that shows
+
+00:01:57.760 --> 00:02:04.440
+ up in the tool, in the tab bar, and so websites can have a file, and later we will actually
+
+00:02:04.440 --> 00:02:09.480
+ make a favicon, but what I want to show you from a request response cycle is you can see
+
+00:02:09.480 --> 00:02:16.400
+ some detail here, so let's go up here, and you can see detail, you can see that this
+
+00:02:16.400 --> 00:02:24.000
+ was the URL, we sent a request, a get request, we got back a status code, the status is the
+
+00:02:24.000 --> 00:02:31.880
+ first thing, 200 isn't okay, 404 is not found, and we used HTTP version 1.1, the request
+
+00:02:31.880 --> 00:02:37.720
+ headers, we'll start, they always show you the request headers, response headers first,
+
+00:02:37.720 --> 00:02:42.680
+ so these request headers are actually part of the HTTP protocol, where we are telling
+
+00:02:42.680 --> 00:02:52.440
+ things like what my preferred language is, what kind of documents we can handle, and
+
+00:02:52.440 --> 00:02:56.040
+ cookies that we're sending back in, we'll learn more about all of this stuff, so this
+
+00:02:56.040 --> 00:03:01.920
+ is actually, the browser makes the connection to port 80, sends the get request to the URL
+
+00:03:01.920 --> 00:03:11.360
+ it's interested in, get HTTP www.chuck.com/page1.htm, space, HTTP 1.1, and then after it, it sends
+
+00:03:11.360 --> 00:03:16.160
+ these, and this is pretty much the format, except colon, blah blah blah, and so that
+
+00:03:16.160 --> 00:03:21.600
+ is the, and then it sends a empty line, and then it's done, and then the browser sends
+
+00:03:21.600 --> 00:03:28.000
+ back first a set of headers, you know, what the content type is very important, the size
+
+00:03:28.000 --> 00:03:36.560
+ is sometimes in here, gzip means that it compressed it on the way, and so these are the response
+
+00:03:36.560 --> 00:03:53.360
+ headers, and so if I go to an error page, not a page.htm, I'm going to clear this, and
+
+00:03:53.360 --> 00:04:00.920
+ what's happening here is, it's putting up a page from my hosting system, but the most
+
+00:04:00.920 --> 00:04:06.320
+ important one here is this, and that is the 404 error, and so it was going, and it sent
+
+00:04:06.320 --> 00:04:14.120
+ a get request to HTTP www.chuck.com/notapage.htm, and it got back a 404 not found, so that was
+
+00:04:14.120 --> 00:04:19.280
+ the, that 404 not found is a different status code that said this is a thing that's not
+
+00:04:19.280 --> 00:04:23.280
+ there, 500 means the server had an error, and we'll talk about all these codes, but
+
+00:04:23.280 --> 00:04:35.400
+ the point is, is you can debug all this stuff quite nicely, so let me go back to page1.htm,
+
+00:04:35.400 --> 00:04:39.360
+ let's clear this and refresh it to make sure we got it all right, okay, so we grabbed the
+
+00:04:39.360 --> 00:04:44.840
+ page, and now I can, another thing that you probably by now have figured out to be able
+
+00:04:44.840 --> 00:04:50.080
+ to do is inspect element, so now you're actually looking at this document object model, right,
+
+00:04:50.080 --> 00:04:56.320
+ and so this document object model is not necessarily the code that came back from the server, if
+
+00:04:56.320 --> 00:05:02.080
+ I go here to network, and I click on get, and I look at the response, this is the response
+
+00:05:02.080 --> 00:05:07.800
+ down here, this is what actually came back from the server, and then the browser parses
+
+00:05:07.800 --> 00:05:14.400
+ this and turns it into what's called the document object model, so this is the source, now just
+
+00:05:14.400 --> 00:05:22.680
+ for fun here, you'll notice that I can change the document object model here, right, if
+
+00:05:22.680 --> 00:05:29.040
+ you are cool, you can switch to the second page, so you'll notice that document object
+
+00:05:29.040 --> 00:05:34.040
+ model changed, and what I saw up here changed as well, so this is like inspect element,
+
+00:05:34.040 --> 00:05:41.160
+ I can do something like I can even add here, I can add some CSS, style equals color colon
+
+00:05:41.160 --> 00:05:47.200
+ red semicolon, and if all goes well, there you go, you see I switched the color, this
+
+00:05:47.200 --> 00:05:51.560
+ is the document object model, now the server was completely uninvolved in that, later we're
+
+00:05:51.560 --> 00:05:56.840
+ gonna write a lot of code to mess with the document object model, so the server is still,
+
+00:05:56.840 --> 00:06:01.320
+ it doesn't have the red in here, it didn't change this to cool, so this is what we originally
+
+00:06:01.320 --> 00:06:06.320
+ got from the server, and this is what we've got in the browser, and so once that page
+
+00:06:06.320 --> 00:06:12.960
+ comes from the server, you, or JavaScript, can mess with that page, so it's pretty dang
+
+00:06:12.960 --> 00:06:18.760
+ cool, okay, so now I'm gonna clear it, and I'm just gonna click on the second page, which
+
+00:06:18.760 --> 00:06:23.160
+ is an anchor, let's inspect it, well it's an anchor tag, and so it's going to do another
+
+00:06:23.160 --> 00:06:28.080
+ get request, and so this time it went and grabbed page two, and there's the second page,
+
+00:06:28.080 --> 00:06:34.800
+ and you can go back to the first page, and so there's a lot of things that you can see,
+
+00:06:34.800 --> 00:06:39.480
+ this persist logs is an important feature, that means that it keeps them crossed more
+
+00:06:39.480 --> 00:06:43.960
+ than one request, and disable cache means that sometimes the browser wants to keep a
+
+00:06:43.960 --> 00:06:48.400
+ copy of something, and you, while you're debugging, you want to say, hey, go get the original
+
+00:06:48.400 --> 00:06:55.560
+ every time, and so this, right now I'm giving you, starting with very simple pages, but
+
+00:06:55.560 --> 00:07:03.480
+ if you take a more complex page, and I can never remember where it is, view, developer,
+
+00:07:03.480 --> 00:07:08.680
+ network, let's go here, if you take a more complex page with a bunch of things in it,
+
+00:07:08.680 --> 00:07:12.640
+ and you hit refresh on this page, you will see that it does a get request, but then as
+
+00:07:12.640 --> 00:07:18.280
+ it parses that get request, it finds things like all kinds of stuff, right, so here this
+
+00:07:18.280 --> 00:07:27.920
+ took 44 request response cycles, 1.6 megabytes, and it took almost one second to download
+
+00:07:27.920 --> 00:07:33.920
+ all that stuff, right, it took a second to download it, and so if you go, you scroll
+
+00:07:33.920 --> 00:07:41.040
+ all the way up to the top, the original get request was to this URL, which is /lessons/rrc,
+
+00:07:41.040 --> 00:07:46.040
+ which is the URL, but then if you were to look at the response, and I don't want to
+
+00:07:46.040 --> 00:07:52.560
+ see that, I want to see the actual, so if you look at the response, you see all these
+
+00:07:52.560 --> 00:07:58.480
+ URLs for more stuff, some CSS from JavaScript, some who knows what, and so then what you
+
+00:07:58.480 --> 00:08:03.680
+ see is you see it then retrieving all these other things that it needs to actually construct
+
+00:08:03.680 --> 00:08:12.000
+ the page, some CSS, grabbed a font, it grabbed jQuery, it grabbed time ago, that's a little
+
+00:08:12.000 --> 00:08:16.760
+ thing like, and then grabbed a bunch of JavaScript, and fonts, and this, and then the translates,
+
+00:08:16.760 --> 00:08:20.980
+ you see this little translate thing, it's doing that, and so you'll see that's how
+
+00:08:20.980 --> 00:08:31.260
+ it quickly builds up to about 44 request response cycles to produce a page, now, so that's just
+
+00:08:31.260 --> 00:08:38.000
+ my quick introduction to this, you may not see these little drop downs like this, you
+
+00:08:38.000 --> 00:08:42.240
+ might have to turn them on in preferences, so you go into preferences somewhere, I turned
+
+00:08:42.240 --> 00:08:46.000
+ them on a long time ago, I probably couldn't even find it, but you might see it, the other
+
+00:08:46.000 --> 00:08:57.000
+ thing that I would suggest is don't use Safari, because Safari, just, Safari's trying to hide
+
+00:08:57.000 --> 00:09:03.440
+ too much stuff, like it doesn't even show you the URL unless you click on it, so Safari's
+
+00:09:03.440 --> 00:09:09.360
+ kind of a pain in the neck, and so I would suggest that for this class, you either use
+
+00:09:09.360 --> 00:09:15.920
+ Firefox or you use Chrome in addition to using Safari, Safari's fine for daily use, but I
+
+00:09:15.920 --> 00:09:23.460
+ just find it as a debugger, it's bad, which is really sad for Safari, they made Safari
+
+00:09:23.460 --> 00:09:27.880
+ unfriendly to software developers, which means we're not going to test our stuff on Safari,
+
+00:09:27.880 --> 00:09:34.400
+ which means if it breaks, too bad, so, okay, well, enough of that little Safari diatribe,
+
+00:09:34.400 --> 00:09:40.560
+ again, I hope that you found this walkthrough for Django for everybody as usual helpful,
+
+00:09:40.560 --> 00:09:41.120
+ cheers.
+

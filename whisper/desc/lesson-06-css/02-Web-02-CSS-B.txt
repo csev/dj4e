@@ -1,0 +1,7 @@
+Applying CSS in HTML: Inline, Internal, and External Stylesheets
+
+CSS, HTML, inline styles, internal stylesheet, external stylesheet, cascading, span, div
+
+The lecture details three fundamental approaches for applying CSS styles to HTML elements: using the style attribute for inline styles, embedding CSS in a style tag within the head section, and linking to an external CSS stylesheet file. It explains that CSS rules cascade such that styles closer to the target element in the document hierarchy have higher priority.
+
+The lecture also discusses the role of span and div tags, which have no default styling to enable precise visual control. It covers CSS selectors including IDs (unique per document) and classes (reusable across multiple elements), demonstrating how these can be combined for targeted styling without requiring additional classes.

@@ -1,0 +1,1610 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.600
+ Hello and welcome to another Django for Everybody walkthrough.
+
+00:00:04.600 --> 00:00:09.920
+ So you are probably at this point working on your autos assignment.
+
+00:00:09.920 --> 00:00:14.320
+ This is our first real create, read, update, and delete assignment.
+
+00:00:14.320 --> 00:00:18.240
+ And we're going to, a lot of what this assignment is,
+
+00:00:18.240 --> 00:00:23.360
+ is to look at the code I've given you in DJ Free Samples and pull it in.
+
+00:00:23.360 --> 00:00:26.520
+ Don't, do not clone the repository for this assignment.
+
+00:00:26.520 --> 00:00:28.400
+ The DJ Free Samples is a monster.
+
+00:00:28.400 --> 00:00:32.200
+ It's got all kinds of stuff in it that's way too complex.
+
+00:00:32.200 --> 00:00:35.520
+ And you do not want, you want to start with a nice clean application.
+
+00:00:35.520 --> 00:00:38.200
+ Your previous assignment was to make a really tiny application.
+
+00:00:38.200 --> 00:00:39.760
+ Now we're going to extend that application.
+
+00:00:39.760 --> 00:00:47.800
+ And that's why you've already have this DJ4E projects in your, wherever it is, okay?
+
+00:00:47.800 --> 00:00:53.600
+ And so, so what this is, is this assignment is to evolve that using the sample code.
+
+00:00:53.600 --> 00:00:56.080
+ But what I'm really going to do is I'm going to walk through the sample code
+
+00:00:56.080 --> 00:00:58.160
+ because there's new concepts in this sample code.
+
+00:00:58.160 --> 00:01:02.000
+ So this is more of a lecture about the sample code than exactly how to do
+
+00:01:02.000 --> 00:01:02.880
+ the assignment.
+
+00:01:02.880 --> 00:01:07.240
+ But importantly, you need to understand every single line.
+
+00:01:07.240 --> 00:01:11.920
+ Because literally, every program that we're going to write for
+
+00:01:11.920 --> 00:01:16.360
+ the next n weeks is a variation on this crud, right?
+
+00:01:16.360 --> 00:01:21.480
+ And so these views, these default views, the get or 404,
+
+00:01:21.480 --> 00:01:24.800
+ all that stuff are really foundational things.
+
+00:01:24.800 --> 00:01:27.720
+ And what we're going to find is the right way to write this code,
+
+00:01:27.720 --> 00:01:32.640
+ like everything in Django, is really small and succinct, okay?
+
+00:01:32.640 --> 00:01:35.640
+ So let's take a look at the code.
+
+00:01:35.640 --> 00:01:37.680
+ Let's just, well, let's go ahead and run the code.
+
+00:01:37.680 --> 00:01:42.680
+ Go to autos, and you gotta log in.
+
+00:01:42.680 --> 00:01:45.040
+ And so the idea of this is there are two tables.
+
+00:01:45.040 --> 00:01:46.600
+ There is a table of makes.
+
+00:01:46.600 --> 00:01:54.000
+ So I'm going to add a make, and then I'm going to add an auto.
+
+00:01:54.000 --> 00:01:59.900
+ And the cool thing about this is this is neon one, mileage one, two,
+
+00:01:59.900 --> 00:02:03.440
+ three, four, Sakai car.
+
+00:02:03.440 --> 00:02:04.960
+ And then I have this cool drop down.
+
+00:02:04.960 --> 00:02:10.960
+ And so there's a whole bunch of forms going on here.
+
+00:02:10.960 --> 00:02:14.680
+ There's drop downs, there's a many to one relationship going on.
+
+00:02:14.680 --> 00:02:18.120
+ Then I have this list, and I can update it and delete it.
+
+00:02:18.120 --> 00:02:20.400
+ So that's where our full crud is.
+
+00:02:20.400 --> 00:02:23.600
+ And so we can add makes, view makes, add autos.
+
+00:02:23.600 --> 00:02:25.680
+ Et cetera, and so that's all the samples.
+
+00:02:25.680 --> 00:02:28.440
+ So it's very close to what it is that you have to write.
+
+00:02:28.440 --> 00:02:31.640
+ It's just don't go grabbing all that stuff.
+
+00:02:31.640 --> 00:02:33.720
+ So let's start by taking a look.
+
+00:02:33.720 --> 00:02:37.000
+ So I'm here sitting in my DJ free samples.
+
+00:02:37.000 --> 00:02:44.600
+ And if you look, you see all of my various applications under a project.
+
+00:02:44.600 --> 00:02:46.040
+ And so we've got the autos.
+
+00:02:46.040 --> 00:02:50.400
+ But I really want to start with the authentication code.
+
+00:02:50.400 --> 00:02:56.480
+ The code that, if I go here, back to samples, let me log out.
+
+00:02:56.480 --> 00:02:59.200
+ The code that allows me to log in.
+
+00:02:59.200 --> 00:03:02.680
+ So if I go straight to autos, see if I've logged out.
+
+00:03:02.680 --> 00:03:07.560
+ Right, so you'll notice that what it does when I go straight to autos is it
+
+00:03:07.560 --> 00:03:11.880
+ routes me to log in, and then with the next to go back to autos.
+
+00:03:11.880 --> 00:03:19.640
+ So this view in autos, the /autos, has protected itself with login mixing.
+
+00:03:19.640 --> 00:03:23.760
+ And so, and later we'll do login, your login won't quite look like this, but
+
+00:03:23.760 --> 00:03:27.320
+ this is the one I have on samples where you don't have to make it pretty yet.
+
+00:03:27.320 --> 00:03:29.560
+ An upcoming assignment is gonna make everything pretty.
+
+00:03:29.560 --> 00:03:32.040
+ So now we're at autos and we're logged in.
+
+00:03:32.040 --> 00:03:34.920
+ Okay, and your application has to have some more things here.
+
+00:03:34.920 --> 00:03:39.480
+ But I'm more interested in showing you really the essence of the views
+
+00:03:39.480 --> 00:03:41.640
+ in this autos, right?
+
+00:03:41.640 --> 00:03:44.840
+ So if we just, let's just review just briefly.
+
+00:03:46.440 --> 00:03:51.600
+ Let's just review briefly about how the auto login works, right?
+
+00:03:51.600 --> 00:03:56.440
+ So if I look at djfree-samples/settings.py.
+
+00:03:56.440 --> 00:04:03.080
+ You need to have this auth plugged in, right?
+
+00:04:03.080 --> 00:04:07.240
+ So that basically is, that's a bunch of code, some views, etc.
+
+00:04:07.240 --> 00:04:08.520
+ That comes from Django, and
+
+00:04:08.520 --> 00:04:12.000
+ that's been there all along when you did your start project.
+
+00:04:12.000 --> 00:04:18.520
+ Of course, then somewhere in here we've gotta have the autos, wherever autos is.
+
+00:04:18.520 --> 00:04:22.140
+ Yeah, autos app config, you get to pull the autos app in.
+
+00:04:22.140 --> 00:04:29.960
+ And if I take a look at djfree-samples/urls.py, then I can find autos here.
+
+00:04:29.960 --> 00:04:35.920
+ And there needs to be some kind of a link that basically says, at the top level,
+
+00:04:35.920 --> 00:04:41.240
+ everything below autos is delegated to the urls file in autos.py.
+
+00:04:41.240 --> 00:04:44.960
+ But also then, there is the accounts, right?
+
+00:04:44.960 --> 00:04:49.400
+ And so if you recall, this is a bunch of views that come from Django for us.
+
+00:04:49.400 --> 00:04:51.160
+ It's pre-installed for us.
+
+00:04:51.160 --> 00:04:56.880
+ And the thing that we've gotta do is we've gotta build a,
+
+00:04:56.880 --> 00:05:04.080
+ we've gotta provide this a template with the name registration.html.
+
+00:05:04.080 --> 00:05:11.080
+ So I think I've got this in home/templates/registration, yes I do.
+
+00:05:11.080 --> 00:05:13.220
+ So I've got actually two logins.
+
+00:05:13.220 --> 00:05:15.800
+ I've got a really simple one is login.html.
+
+00:05:15.800 --> 00:05:17.600
+ And this is the one I recommend that you start with.
+
+00:05:17.600 --> 00:05:19.920
+ Later we'll use the social login.
+
+00:05:19.920 --> 00:05:21.520
+ And this is very simple.
+
+00:05:21.520 --> 00:05:22.840
+ It's a login page.
+
+00:05:22.840 --> 00:05:25.600
+ It uses the Django forms capability.
+
+00:05:25.600 --> 00:05:28.480
+ If form.errors, that means that there is a validation error and
+
+00:05:28.480 --> 00:05:31.640
+ it came back and redisplayed this page and showed you an error.
+
+00:05:31.640 --> 00:05:36.960
+ And then we make a simple post form with a URL that is a reverse look up to
+
+00:05:36.960 --> 00:05:38.960
+ a view with the name of login.
+
+00:05:38.960 --> 00:05:43.760
+ Then we put the CRSRF token in and then we take the form.
+
+00:05:43.760 --> 00:05:46.480
+ And I'm just making this with paragraph tags.
+
+00:05:46.480 --> 00:05:48.160
+ And so that's a simple login.
+
+00:05:48.160 --> 00:05:50.120
+ That's not the actual one that we're showing.
+
+00:05:50.120 --> 00:05:53.880
+ And then the next is a hidden value that you've gotta pass in so
+
+00:05:53.880 --> 00:05:56.080
+ that when you actually successfully log in,
+
+00:05:56.080 --> 00:06:00.840
+ it knows to come back to autos when it's all done.
+
+00:06:00.840 --> 00:06:03.840
+ It come back here after the login has been done.
+
+00:06:03.840 --> 00:06:08.920
+ And so that registration/login, you can put this in any of your applications.
+
+00:06:08.920 --> 00:06:13.080
+ But you want to name it registration/login.html.
+
+00:06:13.080 --> 00:06:18.240
+ So if I take a look real quick and I go into home templates,
+
+00:06:18.240 --> 00:06:21.480
+ these are all the templates, and they do an LS.
+
+00:06:21.480 --> 00:06:26.400
+ You'll see that I have a home templates home and a home templates registration.
+
+00:06:26.400 --> 00:06:29.120
+ You can add more than one folder here.
+
+00:06:29.120 --> 00:06:34.000
+ And if I do a look at what's in registration, you see that I've got
+
+00:06:34.000 --> 00:06:37.760
+ this simple login and then later the more complex login that will give us
+
+00:06:37.760 --> 00:06:39.960
+ the GitHub login capabilities.
+
+00:06:39.960 --> 00:06:42.960
+ So we can log in using, what that means is login use social.
+
+00:06:42.960 --> 00:06:45.160
+ The point is, is underneath this templates,
+
+00:06:45.160 --> 00:06:49.760
+ you don't have to just have one subfolder, you can have more than one subfolders.
+
+00:06:49.760 --> 00:06:54.720
+ And so that is the necessary configuration to make it so
+
+00:06:54.720 --> 00:07:00.040
+ that when we tell our views to add the login mixin, which we'll see in just
+
+00:07:00.040 --> 00:07:04.200
+ a second, when we tell our views to use the login mixin,
+
+00:07:04.200 --> 00:07:06.560
+ then it knows where to get the template from.
+
+00:07:06.560 --> 00:07:08.040
+ So that's just part of it.
+
+00:07:08.040 --> 00:07:11.360
+ And your instructions tell you how to do that.
+
+00:07:11.360 --> 00:07:14.840
+ So any application that you're gonna build or any project you're gonna build,
+
+00:07:14.840 --> 00:07:20.560
+ you have to put those in settings.py, urls.py, and then make the template.
+
+00:07:20.560 --> 00:07:22.880
+ And then you have to start using login mixin, and
+
+00:07:22.880 --> 00:07:25.520
+ then everything just magically starts coming together.
+
+00:07:25.520 --> 00:07:29.640
+ So let's take a look at the actual autos application.
+
+00:07:29.640 --> 00:07:35.760
+ We'll look at a couple of different things here, autos/urls.
+
+00:07:37.560 --> 00:07:43.360
+ And I'm gonna do a multi, I'm gonna tab so I can switch back between files really fast.
+
+00:07:43.360 --> 00:07:45.680
+ You probably have a better text editor than me.
+
+00:07:45.680 --> 00:07:49.160
+ So I've got urls, I'm gonna take a look at the views.
+
+00:07:49.160 --> 00:07:56.040
+ Nope, nope, nope, autos/views.py.
+
+00:07:56.040 --> 00:08:02.120
+ Then I'm going to look at autos/model.py.
+
+00:08:02.120 --> 00:08:08.960
+ And then I'm gonna look at autos/forms.py.
+
+00:08:08.960 --> 00:08:19.180
+ And so let's sort of work through these four files, urls, views, models, forms.
+
+00:08:19.180 --> 00:08:23.000
+ Probably let's do models first.
+
+00:08:23.000 --> 00:08:26.880
+ So this is pretty straightforward.
+
+00:08:26.880 --> 00:08:31.160
+ We're going to make a make object class.
+
+00:08:31.160 --> 00:08:34.360
+ It's gonna have one character field with some validators in it.
+
+00:08:34.360 --> 00:08:36.120
+ We kind of played with that with forms.
+
+00:08:36.120 --> 00:08:39.080
+ You can put validators in models.
+
+00:08:39.080 --> 00:08:41.560
+ We've previously seen validators in form.
+
+00:08:41.560 --> 00:08:45.760
+ But there's a validator that basically says we're not gonna accept data coming
+
+00:08:45.760 --> 00:08:50.320
+ into this database table unless there's at least two characters.
+
+00:08:50.320 --> 00:08:53.880
+ These underscore underscore str, you've been doing this for a while.
+
+00:08:53.880 --> 00:08:59.000
+ That basically is if you take a model object on actual make and you print it,
+
+00:08:59.000 --> 00:09:02.640
+ it says which of the fields, in this case there's only one field.
+
+00:09:02.640 --> 00:09:06.600
+ And so that just says when we're converting a model to a string,
+
+00:09:06.600 --> 00:09:10.120
+ a model object to a string, we get to decide how that looks.
+
+00:09:10.120 --> 00:09:16.720
+ Okay, and then we have an automobile.
+
+00:09:16.720 --> 00:09:20.600
+ And it's got a nickname with a min length validator, max length of 200,
+
+00:09:20.600 --> 00:09:24.980
+ a mileage which is an integer field, a comments which is a 300 character field.
+
+00:09:24.980 --> 00:09:30.000
+ And then a foreign key into, this is a one to many or many to one relationship,
+
+00:09:30.000 --> 00:09:32.720
+ not a many to many, just a foreign key into make.
+
+00:09:32.720 --> 00:09:36.840
+ And then we're gonna do on delete cascade, which really means if you delete a make,
+
+00:09:36.840 --> 00:09:40.760
+ then the corresponding auto entries will automatically be deleted.
+
+00:09:40.760 --> 00:09:44.040
+ And so this is a pretty straightforward model, actually very, very simple.
+
+00:09:44.040 --> 00:09:48.120
+ And once again, we're always defining this str underscore underscore self, so
+
+00:09:48.120 --> 00:09:52.200
+ that we know that if you're just showing it like in the admin interface, or
+
+00:09:52.200 --> 00:09:55.740
+ if you're just printing it, or just converting the model itself to a string,
+
+00:09:55.740 --> 00:10:00.160
+ the field among these fields that is supposed to be used is the nickname field,
+
+00:10:00.160 --> 00:10:01.720
+ just to show to end user.
+
+00:10:01.720 --> 00:10:03.080
+ So that's the models file.
+
+00:10:03.080 --> 00:10:08.160
+ Let's look at the forms file next.
+
+00:10:08.160 --> 00:10:13.040
+ So the forms file is interesting because we've seen forms that are just forms by
+
+00:10:13.040 --> 00:10:17.920
+ themselves, but this is a special kind of form, and then it's a model form.
+
+00:10:17.920 --> 00:10:21.880
+ In that we normally, in the other models, we had all these fields, right?
+
+00:10:21.880 --> 00:10:24.640
+ And we put them in, and it looked a lot like a model file,
+
+00:10:24.640 --> 00:10:28.500
+ where we'd have a character field, a positive integer field.
+
+00:10:28.500 --> 00:10:31.880
+ But what we're basically saying is, you know what?
+
+00:10:31.880 --> 00:10:33.720
+ We're gonna make a form here.
+
+00:10:33.720 --> 00:10:40.600
+ And really, all we wanna do is take all the fields from the make model,
+
+00:10:40.600 --> 00:10:42.520
+ and make them form fields.
+
+00:10:42.520 --> 00:10:44.660
+ So a form and a model are two different things.
+
+00:10:44.660 --> 00:10:50.120
+ A form is something that goes between sort of the view and the template.
+
+00:10:50.120 --> 00:10:53.960
+ And as you'll see, it also goes down into the models automatically.
+
+00:10:53.960 --> 00:10:57.520
+ But you gotta, so this is just like make all the fields, right?
+
+00:10:57.520 --> 00:11:02.480
+ Let's make a form, cuz form objects don't have to be associated with models.
+
+00:11:02.480 --> 00:11:07.120
+ But in this case, we're going to sort of derive a form object from a model.
+
+00:11:07.120 --> 00:11:11.000
+ And so instead of extending form, we're extending model form.
+
+00:11:11.000 --> 00:11:17.000
+ So that's a model form, must have, and this is just some data that says,
+
+00:11:17.000 --> 00:11:21.440
+ the model that we're going to pull all our fields from is the make model.
+
+00:11:21.440 --> 00:11:26.440
+ And it only has one thing, which is a name, that's it, okay?
+
+00:11:26.440 --> 00:11:30.520
+ So this is auto generating a form that if we changed it and
+
+00:11:30.520 --> 00:11:34.840
+ added another field here, then this make form would automatically have a field.
+
+00:11:34.840 --> 00:11:37.560
+ You can give it a list of fields, underscore, underscore, all, underscore,
+
+00:11:37.560 --> 00:11:40.360
+ underscore, is like a signal to say, just give me all of them.
+
+00:11:40.360 --> 00:11:42.620
+ Now there might be some internal things like created at or
+
+00:11:42.620 --> 00:11:45.200
+ updated at, or something that you don't wanna use.
+
+00:11:47.120 --> 00:11:52.560
+ So that's a form, remember how forms work, covered that before.
+
+00:11:52.560 --> 00:11:53.800
+ Let's take a look at our URLs.
+
+00:11:53.800 --> 00:11:58.080
+ Now, a lot of this looks pretty similar to things that we've done, right?
+
+00:11:58.080 --> 00:12:03.300
+ We basically have a main table,
+
+00:12:03.300 --> 00:12:07.520
+ which is our autos table and our lookup table, which is our makes table.
+
+00:12:07.520 --> 00:12:11.000
+ And we have sort of three things.
+
+00:12:11.000 --> 00:12:15.320
+ There is the main list view, which is list all the autos.
+
+00:12:15.320 --> 00:12:20.440
+ There is the main, the make list view, which is list all the makes.
+
+00:12:20.440 --> 00:12:23.360
+ And then we can make a new one, which doesn't have a primary key.
+
+00:12:23.360 --> 00:12:25.760
+ Cuz part of the idea is the create is making a new thing,
+
+00:12:25.760 --> 00:12:27.960
+ which is gonna generate a primary key.
+
+00:12:27.960 --> 00:12:30.080
+ And then we're gonna have a update and a delete.
+
+00:12:30.080 --> 00:12:34.560
+ And so we have a read, a create, update, delete.
+
+00:12:34.560 --> 00:12:37.920
+ So it's not exactly crud, but you see all four of these things.
+
+00:12:37.920 --> 00:12:40.800
+ And so we've got views, and we name these views so
+
+00:12:40.800 --> 00:12:45.400
+ that we can reference them in our views themselves and in our templates.
+
+00:12:45.400 --> 00:12:47.920
+ So we can make links in between them, okay?
+
+00:12:47.920 --> 00:12:53.680
+ Okay, so these are pretty straightforward and not all that different.
+
+00:12:53.680 --> 00:12:58.680
+ So the fun starts to happen when we're in the views.py.
+
+00:12:58.680 --> 00:13:03.360
+ So LoginMixin,
+
+00:13:03.360 --> 00:13:08.600
+ if you remember from the AuthZ walkthrough,
+
+00:13:08.600 --> 00:13:12.680
+ you just add this to a view, and it just basically says,
+
+00:13:12.680 --> 00:13:17.040
+ you cannot get to this view unless you're logged in.
+
+00:13:17.040 --> 00:13:22.320
+ And if you aren't logged in, it will bounce to the login.html file, and
+
+00:13:22.320 --> 00:13:23.640
+ then bounce back after you're done.
+
+00:13:23.640 --> 00:13:26.720
+ And so RogginRequiredMixin is all we need to do.
+
+00:13:26.720 --> 00:13:31.200
+ If you go with the AuthZ sample, you'll see like I did that by hand.
+
+00:13:31.200 --> 00:13:34.600
+ But you don't wanna do it by hand, you just call LoginMixin.
+
+00:13:35.720 --> 00:13:40.040
+ Now, so this main view is a list view.
+
+00:13:40.040 --> 00:13:43.040
+ And so let's go take a look at what this is gonna look like.
+
+00:13:43.040 --> 00:13:44.520
+ This is the list view.
+
+00:13:44.520 --> 00:13:49.040
+ So we're gonna take however many autos we have.
+
+00:13:49.040 --> 00:13:50.400
+ We're gonna loop through that list.
+
+00:13:50.400 --> 00:13:52.440
+ We're gonna retrieve all the autos from the database.
+
+00:13:52.440 --> 00:13:56.320
+ Then we're gonna have an add the auto link, then a view the makes link,
+
+00:13:56.320 --> 00:13:59.440
+ with a count of how many makes there are, and add a make.
+
+00:13:59.440 --> 00:14:04.120
+ So let me also then go into autos templates.
+
+00:14:04.120 --> 00:14:09.560
+ Autos again, yeah, I'm sorry about that.
+
+00:14:09.560 --> 00:14:16.480
+ And autolist, so this is the template that makes that.
+
+00:14:16.480 --> 00:14:18.600
+ And so there's a few things that we get.
+
+00:14:18.600 --> 00:14:19.880
+ We get an autolist.
+
+00:14:19.880 --> 00:14:24.800
+ Now the names of these are not forced upon you, but
+
+00:14:24.800 --> 00:14:26.760
+ there's conventions that turn out in a moment.
+
+00:14:26.760 --> 00:14:29.640
+ They're gonna look really useful, okay?
+
+00:14:29.640 --> 00:14:32.960
+ So we're gonna get an autolist, and if we go back into our views,
+
+00:14:32.960 --> 00:14:40.960
+ we see that we say get all of the objects from the auto table,
+
+00:14:40.960 --> 00:14:44.160
+ all the auto class objects, retrieve them all,
+
+00:14:44.160 --> 00:14:48.880
+ pass them in to the context as auto underscore list.
+
+00:14:48.880 --> 00:14:53.120
+ Now we also wanna be able to show that little count, this number two.
+
+00:14:53.120 --> 00:14:57.520
+ So we're gonna ask, go ahead to the make objects all, but
+
+00:14:57.520 --> 00:15:01.040
+ don't give me a list of them, count them and give me a number.
+
+00:15:01.040 --> 00:15:03.880
+ So make count is stuck in there.
+
+00:15:03.880 --> 00:15:09.680
+ And you'll see if make count is greater than zero,
+
+00:15:09.680 --> 00:15:13.480
+ we can show the add an auto button.
+
+00:15:13.480 --> 00:15:17.720
+ And it also somewhere, yeah, shows the make count, view all the makes,
+
+00:15:17.720 --> 00:15:20.280
+ add a make, and the make count comes out here.
+
+00:15:20.280 --> 00:15:22.200
+ So that's another thing we put in.
+
+00:15:22.200 --> 00:15:27.000
+ The autolist we're going to go through, and that iteration variable of auto is
+
+00:15:27.000 --> 00:15:29.400
+ gonna go through each of the separate things.
+
+00:15:29.400 --> 00:15:35.720
+ And nickname, make, etc., that's right straight out of the models.py file.
+
+00:15:35.720 --> 00:15:38.280
+ There's the four things that every auto has.
+
+00:15:38.280 --> 00:15:39.800
+ And we're just printing all this stuff out.
+
+00:15:39.800 --> 00:15:47.320
+ You also get the primary key, and so we're gonna make a update URL.
+
+00:15:47.320 --> 00:15:49.720
+ And that URL is to autos auto update.
+
+00:15:49.720 --> 00:15:54.800
+ So if we look in urls.py, we see this auto update looks up.
+
+00:15:54.800 --> 00:15:57.120
+ This gives us a path to the view.
+
+00:15:57.120 --> 00:16:02.400
+ But that particular path needs one parameter, which is a primary key.
+
+00:16:02.400 --> 00:16:08.760
+ And so that means that this URL template tag autos has to have the auto ID.
+
+00:16:08.760 --> 00:16:13.480
+ But because we're looping through the models, you got one, right?
+
+00:16:13.480 --> 00:16:18.480
+ So, and you do an auto create, that's pretty straightforward.
+
+00:16:18.480 --> 00:16:22.000
+ But one of the rules is you have to have at least one make before you can do
+
+00:16:22.000 --> 00:16:27.200
+ an auto, because if you recall, add an auto has to have this drop down list
+
+00:16:27.200 --> 00:16:31.800
+ populatable, and that's being pulled from the make table, okay?
+
+00:16:31.800 --> 00:16:35.200
+ And so that's basically the way around this.
+
+00:16:35.200 --> 00:16:36.560
+ That's the main view.
+
+00:16:36.560 --> 00:16:42.800
+ Now, just like I showed you before, it turns out that there are.
+
+00:16:49.800 --> 00:16:52.520
+ Here we go.
+
+00:16:52.520 --> 00:16:56.780
+ Okay, obtain.
+
+00:16:56.780 --> 00:17:00.040
+ Yeah, that's the autos view, so.
+
+00:17:00.040 --> 00:17:05.320
+ And then if we do the make view, we're doing the same kind of thing.
+
+00:17:05.320 --> 00:17:09.320
+ If we go and look at the make list, we're doing the same basic kind of thing.
+
+00:17:09.320 --> 00:17:10.880
+ View all the makes.
+
+00:17:10.880 --> 00:17:14.520
+ This is the, and now we got update and delete.
+
+00:17:14.520 --> 00:17:16.320
+ We are, this way you don't need to count.
+
+00:17:16.320 --> 00:17:18.760
+ We just wanna grab all of the objects.
+
+00:17:18.760 --> 00:17:21.760
+ We wanna put it in a context under make list.
+
+00:17:21.760 --> 00:17:28.120
+ And then we do make list on HTML, and this is even simpler.
+
+00:17:28.120 --> 00:17:33.400
+ It's just going through the make list, it comes in through the context.
+
+00:17:33.400 --> 00:17:35.840
+ If there's none, we don't print this out.
+
+00:17:35.840 --> 00:17:39.800
+ And then we put out the name of it, and then we have an update and
+
+00:17:39.800 --> 00:17:43.360
+ a delete button that goes to the update and delete.
+
+00:17:43.360 --> 00:17:47.560
+ And of course those, if you look in urls.py, those also,
+
+00:17:47.560 --> 00:17:52.140
+ the update and delete have primary key requirements.
+
+00:17:52.140 --> 00:17:57.320
+ And so you have a primary key that you gotta pass in here to make that URL
+
+00:17:57.320 --> 00:17:58.440
+ the proper kind of URL.
+
+00:17:58.440 --> 00:18:05.280
+ And then just some links to go back to the various things so that we can get
+
+00:18:05.280 --> 00:18:13.680
+ back to autos, view makes, add a new make, cancel, all that stuff, okay?
+
+00:18:13.680 --> 00:18:21.760
+ So that is the views.py for listing the autos and the makes, okay?
+
+00:18:21.760 --> 00:18:29.400
+ Now, we wanna make the make create view, okay?
+
+00:18:29.400 --> 00:18:33.720
+ So if we take a look at the make create view, that is add a make.
+
+00:18:33.720 --> 00:18:40.360
+ That's going to create this form, can make this bigger here.
+
+00:18:40.360 --> 00:18:46.160
+ Come, create this form where we're gonna put in a thing called chevy, by.
+
+00:18:46.160 --> 00:18:51.640
+ So we need a form, wait to make this form, right?
+
+00:18:51.640 --> 00:18:55.760
+ And so we are going to, we're gonna make it a login required.
+
+00:18:55.760 --> 00:18:57.200
+ We're not gonna let folks do this.
+
+00:18:57.200 --> 00:19:00.560
+ We're going to have some variables that are class wide,
+
+00:19:00.560 --> 00:19:02.800
+ like what template we wanna use.
+
+00:19:02.800 --> 00:19:07.840
+ And success URL is after we have done this right.
+
+00:19:07.840 --> 00:19:10.840
+ Now, if you just submit it and it complains, it doesn't do it.
+
+00:19:10.840 --> 00:19:14.320
+ But once you've done it right, where do you wanna go afterwards?
+
+00:19:14.320 --> 00:19:18.080
+ So chevy, where do you wanna go afterwards?
+
+00:19:18.080 --> 00:19:19.760
+ This is a controller function.
+
+00:19:19.760 --> 00:19:22.440
+ Boom, I wanna go back to the auto list.
+
+00:19:22.440 --> 00:19:27.520
+ And so the success URL is go to autos colon all,
+
+00:19:27.520 --> 00:19:30.520
+ which in urls.py is this main view.
+
+00:19:30.520 --> 00:19:33.520
+ That's the name of the main view, okay?
+
+00:19:34.960 --> 00:19:40.400
+ And so if we go here, which template to use and which success URL?
+
+00:19:40.400 --> 00:19:46.640
+ If we do a get request, we're gonna build a form for the make.
+
+00:19:46.640 --> 00:19:48.560
+ That comes from make form.
+
+00:19:48.560 --> 00:19:54.080
+ But really, it comes from the make model, which is just one string field.
+
+00:19:54.080 --> 00:19:55.600
+ As simple as that, right?
+
+00:19:55.600 --> 00:20:00.320
+ We're reusing this, we're just saying let's make a form that pulls from here.
+
+00:20:00.320 --> 00:20:05.320
+ We have to pass a form in because models can't be used
+
+00:20:05.320 --> 00:20:07.240
+ to create this kind of a screen.
+
+00:20:07.240 --> 00:20:11.320
+ That screen comes from a form, okay?
+
+00:20:11.320 --> 00:20:15.600
+ And so if we take a look at the template, oops.
+
+00:20:15.600 --> 00:20:21.720
+ If we look at the make create template.
+
+00:20:27.360 --> 00:20:34.760
+ Make form, so that's the template we're gonna use to make form.
+
+00:20:34.760 --> 00:20:38.200
+ We're gonna need form as table, right?
+
+00:20:38.200 --> 00:20:41.040
+ So that's from how we did forms.
+
+00:20:41.040 --> 00:20:45.000
+ Put the CSRF token, you make a table, that could be as paragraphs or as tables.
+
+00:20:45.000 --> 00:20:47.840
+ But whatever, you need this form object.
+
+00:20:47.840 --> 00:20:50.040
+ So you need to pass the form object in.
+
+00:20:50.040 --> 00:20:50.880
+ And so here we are.
+
+00:20:50.880 --> 00:20:54.240
+ We're gonna make a form and then we're gonna pass the form object in.
+
+00:20:54.240 --> 00:20:59.200
+ And then we're gonna render to self.template, autos.makeform.html.
+
+00:20:59.200 --> 00:21:02.480
+ And then we're gonna return that for the get.
+
+00:21:02.480 --> 00:21:07.520
+ And then when we hit the button, the submit button, add a make.
+
+00:21:07.520 --> 00:21:09.760
+ We hit the submit button.
+
+00:21:09.760 --> 00:21:15.400
+ It's going to do, it's coming into the post because we made a form post.
+
+00:21:15.400 --> 00:21:19.840
+ Comes in, we're gonna take the, don't do that, that's terrible.
+
+00:21:19.840 --> 00:21:21.280
+ I hate it when VI does that.
+
+00:21:21.280 --> 00:21:22.320
+ But here we go, we're back.
+
+00:21:24.400 --> 00:21:24.900
+ Yeah.
+
+00:21:24.900 --> 00:21:37.280
+ So post comes in, request.post has all the key value pairs,
+
+00:21:37.280 --> 00:21:41.080
+ which are these key value pairs as defined by the form.
+
+00:21:41.080 --> 00:21:45.120
+ So let's make a make form with the initial data coming in from request post.
+
+00:21:45.120 --> 00:21:48.960
+ And given that the form generated it, it knows what the names of these fields are.
+
+00:21:48.960 --> 00:21:52.440
+ And this is something that hides behind how forms work.
+
+00:21:52.440 --> 00:21:55.640
+ But it also checks to see if the form data is valid.
+
+00:21:55.640 --> 00:21:59.400
+ And that means, where are all these validator rules followed?
+
+00:21:59.400 --> 00:22:05.400
+ If the validator rules are not followed, if not form is valid,
+
+00:22:05.400 --> 00:22:06.960
+ we're just gonna send it back.
+
+00:22:06.960 --> 00:22:11.800
+ And so if I, so this code here, this if form is not valid code,
+
+00:22:11.800 --> 00:22:17.240
+ if I put in a single letter, a, and hit submit,
+
+00:22:17.240 --> 00:22:20.160
+ it's gonna come back and re-render the form.
+
+00:22:20.160 --> 00:22:25.220
+ And all that error stuff, all that stuff is all handled by this form code,
+
+00:22:25.220 --> 00:22:30.320
+ this Django form code, figures out what is wrong, right?
+
+00:22:30.320 --> 00:22:34.080
+ Let me move this over just a little bit so I can get back to it faster.
+
+00:22:34.080 --> 00:22:35.000
+ There we go.
+
+00:22:35.000 --> 00:22:37.720
+ It figures out what's wrong with it, makes an error message.
+
+00:22:37.720 --> 00:22:44.840
+ The error message came from models.py, right here, no, right here.
+
+00:22:44.840 --> 00:22:49.080
+ And then went through forms.py, cuz it is a form,
+
+00:22:49.080 --> 00:22:52.360
+ ultimately, that we inherited from model form, get it?
+
+00:22:52.360 --> 00:22:55.200
+ And so that's cool.
+
+00:22:55.200 --> 00:22:59.920
+ So that's the error condition, and otherwise we do form.save.
+
+00:22:59.920 --> 00:23:05.320
+ Now the thing here that's really super cool is because this form
+
+00:23:05.320 --> 00:23:10.760
+ is a model form, it knows, and the field names are the same as the field names
+
+00:23:10.760 --> 00:23:14.560
+ in the model, and so it actually does a save on the model itself.
+
+00:23:14.560 --> 00:23:20.760
+ So in a way, the form contains the model data that came from the post request,
+
+00:23:20.760 --> 00:23:24.200
+ and then it saves it, okay?
+
+00:23:24.200 --> 00:23:28.640
+ That saves the form, it puts it in.
+
+00:23:28.640 --> 00:23:30.960
+ And then we just redirect back to the request URL.
+
+00:23:30.960 --> 00:23:35.760
+ So this is pretty succinct, right?
+
+00:23:35.760 --> 00:23:39.400
+ We pull in the old, we pull in the post data, we check to see if it's bad.
+
+00:23:39.400 --> 00:23:44.200
+ If it's bad, we send it back, send the form back to the exact same template we did.
+
+00:23:44.840 --> 00:23:48.240
+ And then we save it if it's good, and then we pop to the success URL.
+
+00:23:48.240 --> 00:23:51.240
+ That is a beautiful thing.
+
+00:23:51.240 --> 00:23:58.800
+ But just like in Django all the time, this is a far wordier thing to do,
+
+00:23:58.800 --> 00:24:01.600
+ even though this is super succinct, and if you did this in any other,
+
+00:24:01.600 --> 00:24:06.320
+ almost any other language, you'd be like, you know, 75 lines of code.
+
+00:24:06.320 --> 00:24:08.960
+ And here we have like 15 lines of code.
+
+00:24:08.960 --> 00:24:13.800
+ But it turns out, in Django, there's almost always a more succinct way to do it.
+
+00:24:15.560 --> 00:24:18.840
+ We have a generic create view.
+
+00:24:18.840 --> 00:24:22.440
+ You can take a look at the documentation for this generic create view.
+
+00:24:22.440 --> 00:24:25.320
+ Django views, generic edit.
+
+00:24:25.320 --> 00:24:28.240
+ Let's just go and Google this stuff.
+
+00:24:28.240 --> 00:24:33.640
+ I always just put a dot here, and this usually gets me right to,
+
+00:24:33.640 --> 00:24:36.600
+ because that's the actual package in the class inside the package.
+
+00:24:36.600 --> 00:24:40.200
+ Oh, no. Oh, no. Sorry.
+
+00:24:44.400 --> 00:24:46.320
+ You thought that that was a domain name.
+
+00:24:46.320 --> 00:24:49.600
+ So the search didn't work.
+
+00:24:49.600 --> 00:24:53.920
+ But now I'll just say, you know, Django something look like.
+
+00:24:53.920 --> 00:24:56.560
+ So at least it's going to do the search for me.
+
+00:24:56.560 --> 00:24:59.440
+ Generic editing views jump to the create view.
+
+00:24:59.440 --> 00:25:02.680
+ So you can read through all this stuff, right?
+
+00:25:02.680 --> 00:25:05.040
+ Generic create view.
+
+00:25:05.040 --> 00:25:08.080
+ Actually, let's make a.
+
+00:25:08.080 --> 00:25:10.760
+ Do I have a reference to this?
+
+00:25:14.400 --> 00:25:20.240
+ So there you go.
+
+00:25:20.240 --> 00:25:22.160
+ Take a look at that.
+
+00:25:22.160 --> 00:25:27.720
+ Now, this, just like some of the other views that we've inherited,
+
+00:25:27.720 --> 00:25:30.440
+ have a ton of functionality in them.
+
+00:25:30.440 --> 00:25:38.400
+ So if I want to do an autocreate, this is all it takes.
+
+00:25:38.400 --> 00:25:42.080
+ Now, autocreate and make create, for all intents and purposes,
+
+00:25:42.080 --> 00:25:44.480
+ do the exact same thing.
+
+00:25:44.480 --> 00:25:49.840
+ So what happens in autocreate, because we're extending create view,
+
+00:25:49.840 --> 00:25:52.080
+ we have three bits of metadata.
+
+00:25:52.080 --> 00:25:56.640
+ We tell it which model we want to use, which fields from that model we want,
+
+00:25:56.640 --> 00:25:59.600
+ and where the success URL to go is.
+
+00:25:59.600 --> 00:26:04.520
+ And then this generates all this code.
+
+00:26:04.520 --> 00:26:06.440
+ We inherited all that code.
+
+00:26:06.440 --> 00:26:10.280
+ You'll notice that there's nothing hard coded in here, except the make form.
+
+00:26:10.280 --> 00:26:14.680
+ Now, we don't even have to make a form for the auto.
+
+00:26:14.680 --> 00:26:21.840
+ Because this code right here builds the form.
+
+00:26:21.840 --> 00:26:25.360
+ And not only that, but it uses this name,
+
+00:26:25.360 --> 00:26:30.360
+ auto, to pick the template.
+
+00:26:30.360 --> 00:26:40.520
+ So if I do auto_form, I have to use this, right?
+
+00:26:40.520 --> 00:26:45.080
+ I use this, that's my base bootstrap, don't worry too much about that.
+
+00:26:45.080 --> 00:26:49.280
+ And so it knows the name of the template that it's going to use.
+
+00:26:49.280 --> 00:26:51.640
+ I don't even have to tell it which template to use in here.
+
+00:26:51.640 --> 00:26:59.480
+ Because it derives the template, auto_form.html is the template.
+
+00:26:59.480 --> 00:27:00.520
+ Pretty cool, huh?
+
+00:27:00.520 --> 00:27:03.480
+ Pretty awesome and cool.
+
+00:27:03.480 --> 00:27:07.160
+ So it automatically finds that and the success URL.
+
+00:27:07.160 --> 00:27:08.880
+ And so this is all that's needed.
+
+00:27:08.880 --> 00:27:14.160
+ As a matter of fact, I could, in this make create,
+
+00:27:14.160 --> 00:27:16.920
+ I could have deleted all this code from here to here,
+
+00:27:16.920 --> 00:27:22.240
+ but instead just do a create view, by extending create view.
+
+00:27:22.240 --> 00:27:27.160
+ So I'm just showing you this because I want you to see what's really going on.
+
+00:27:27.160 --> 00:27:31.560
+ But this is not how you write your code.
+
+00:27:31.560 --> 00:27:34.720
+ This is how you write your code, okay?
+
+00:27:34.720 --> 00:27:42.200
+ So now I want to show you the hard way of doing an update.
+
+00:27:42.200 --> 00:27:43.080
+ So what's an update?
+
+00:27:43.080 --> 00:27:45.120
+ Let's take a look at the code.
+
+00:27:45.120 --> 00:27:49.800
+ So let's take a look at View Makes.
+
+00:27:49.800 --> 00:27:54.200
+ Update is the thing that happens when we go here.
+
+00:27:54.200 --> 00:27:59.200
+ And that's going to go to make update.
+
+00:27:59.200 --> 00:28:00.760
+ So here's make update.
+
+00:28:00.760 --> 00:28:02.240
+ Here's urls.py.
+
+00:28:02.240 --> 00:28:03.360
+ It's this one.
+
+00:28:03.360 --> 00:28:09.680
+ Main, I mean, yeah, lookup primary key update, which then if you look under here,
+
+00:28:09.680 --> 00:28:14.760
+ it's going to be autos lookup one update, right?
+
+00:28:14.760 --> 00:28:17.600
+ So I'm going to update the Chevy one.
+
+00:28:17.600 --> 00:28:22.280
+ It has to read the old data, has to show it to you.
+
+00:28:22.280 --> 00:28:24.320
+ And then let us update it.
+
+00:28:24.320 --> 00:28:28.280
+ And then submit it, checking, of course, for any validation errors.
+
+00:28:28.280 --> 00:28:33.320
+ And then redirecting us back to a success URL.
+
+00:28:33.320 --> 00:28:39.000
+ So if we look at the views, we're going to, again, foreshadowing.
+
+00:28:39.000 --> 00:28:40.360
+ There's a much easier way to do this.
+
+00:28:40.360 --> 00:28:44.160
+ So we set these variables, whichever the success URL,
+
+00:28:44.160 --> 00:28:48.280
+ which template we want in the model, okay?
+
+00:28:48.280 --> 00:28:50.480
+ And then we have a get request.
+
+00:28:50.480 --> 00:28:57.520
+ And because in the urls.py, there's this int pk, we're passed in this pk value.
+
+00:28:57.520 --> 00:29:04.760
+ Now, this get object or 404 is really cool, okay?
+
+00:29:04.760 --> 00:29:10.600
+ So self.model, wait, sorry, this get object 404, self.model pk equals pk.
+
+00:29:10.600 --> 00:29:15.800
+ That's this parameter, but we're passing pk equals and
+
+00:29:15.800 --> 00:29:17.560
+ it's common that they are the same name.
+
+00:29:17.560 --> 00:29:20.720
+ But this is a parameter to get object or 404.
+
+00:29:20.720 --> 00:29:23.160
+ The second one is the parameter that was called to our get.
+
+00:29:23.160 --> 00:29:28.440
+ Self.model, of course, is make, all right?
+
+00:29:28.440 --> 00:29:37.240
+ And get object or 404 basically checks to see if, so I'll do this update.
+
+00:29:37.240 --> 00:29:41.080
+ Let's go to makes, let's do an update.
+
+00:29:41.080 --> 00:29:44.560
+ And what it's doing is it's taking this number, this three here.
+
+00:29:44.560 --> 00:29:49.200
+ Autos lookup three update, and it's retrieving the old data.
+
+00:29:49.200 --> 00:29:55.640
+ Now, what happens if I inadvertently have a number that doesn't exist in
+
+00:29:55.640 --> 00:29:59.800
+ the database, like 9,999, and I do a get request to that one.
+
+00:29:59.800 --> 00:30:05.160
+ I get page not found 404, right?
+
+00:30:05.160 --> 00:30:11.880
+ And so what's happening here is somehow you say, hey, load this object and
+
+00:30:11.880 --> 00:30:18.520
+ give it to me in the variable make, or just blow up and send out a 404 error, right?
+
+00:30:18.520 --> 00:30:20.560
+ And so this is telling you what's going on,
+
+00:30:20.560 --> 00:30:23.720
+ which of you you just know make matches the given query.
+
+00:30:23.720 --> 00:30:27.120
+ Now, generally, you're not supposed to hand type these.
+
+00:30:27.120 --> 00:30:29.280
+ Three works, and so it doesn't blow up.
+
+00:30:29.280 --> 00:30:34.400
+ So get object or 404 is a way of loading the old data and
+
+00:30:34.400 --> 00:30:38.760
+ then protecting and using that data or just blowing up.
+
+00:30:38.760 --> 00:30:41.160
+ So don't go any farther at that point.
+
+00:30:41.160 --> 00:30:45.080
+ Now, then we're gonna make a form and we're gonna fill it with the old data.
+
+00:30:45.080 --> 00:30:47.920
+ So instance, what the instance is make.
+
+00:30:47.920 --> 00:30:51.040
+ So that's the object, make a make form.
+
+00:30:51.040 --> 00:30:55.240
+ Here's a make form, all the fields from the model, inherit from the model make.
+
+00:30:55.240 --> 00:31:01.320
+ And then pass it into the template makeform.html, which we just looked at.
+
+00:31:01.320 --> 00:31:05.880
+ This form comes in, that's all we need.
+
+00:31:05.880 --> 00:31:07.680
+ This is very generic looking.
+
+00:31:07.680 --> 00:31:10.840
+ It really doesn't care too much.
+
+00:31:10.840 --> 00:31:16.000
+ It's all pretty much encoded in this form, which is derived from the model.
+
+00:31:16.000 --> 00:31:21.200
+ Then, of course, we type a bunch of stuff in, blah, blah, blah, and
+
+00:31:21.200 --> 00:31:25.480
+ we hit submit, and it does exactly the same thing as the create.
+
+00:31:25.480 --> 00:31:30.880
+ In that it does, well, first it has to do a get or 404,
+
+00:31:30.880 --> 00:31:33.920
+ cuz we post to the thing with the primary key.
+
+00:31:33.920 --> 00:31:37.080
+ We load it up to make sure we have an object to update.
+
+00:31:38.440 --> 00:31:45.000
+ Then we create a new make form from that database and then change it.
+
+00:31:45.000 --> 00:31:49.520
+ So this is like, this is the starting data, but then it alters it to the data.
+
+00:31:49.520 --> 00:31:55.440
+ So in this particular case, Chevrolet is the old value in the database.
+
+00:31:55.440 --> 00:32:04.120
+ And if I say bowtie, request post will have bowtie.
+
+00:32:04.120 --> 00:32:08.560
+ This will start as Chevrolet, but in this form object, then it will be bowtie.
+
+00:32:08.560 --> 00:32:12.600
+ Of course, if it's not valid,
+
+00:32:12.600 --> 00:32:15.640
+ we're gonna return an error message right back here.
+
+00:32:15.640 --> 00:32:18.760
+ And if it is valid, we're gonna save it.
+
+00:32:18.760 --> 00:32:24.440
+ And so this new bowtie is going to be saved in there.
+
+00:32:24.440 --> 00:32:28.560
+ And so if we view our makes, we see that it's now bowtie, right?
+
+00:32:28.560 --> 00:32:32.280
+ And we're gonna redirect to success URL.
+
+00:32:32.280 --> 00:32:35.920
+ Now, at this point, I would hope you could predict about what's gonna happen next.
+
+00:32:35.920 --> 00:32:44.800
+ Auto-update extends update view, the generic editing view.
+
+00:32:44.800 --> 00:32:47.280
+ It says which model it is, which fields you want, and
+
+00:32:47.280 --> 00:32:52.120
+ where to go when it's successful, okay?
+
+00:32:52.120 --> 00:32:56.680
+ And then it does everything that's in here, right?
+
+00:32:56.680 --> 00:32:59.680
+ It does everything that's in here.
+
+00:32:59.680 --> 00:33:06.120
+ And literally, I could go and say the exact same words for make delete,
+
+00:33:06.120 --> 00:33:10.760
+ which is what happens when you go in here and you delete.
+
+00:33:10.760 --> 00:33:16.520
+ And then you have a cancel, there's a, oops.
+
+00:33:16.520 --> 00:33:21.800
+ There is a confirm delete.
+
+00:33:21.800 --> 00:33:25.800
+ And the name of this template is not randomly chosen.
+
+00:33:25.800 --> 00:33:28.240
+ It's gotta be called the confirm delete.
+
+00:33:28.240 --> 00:33:31.640
+ The model, confirm delete, right?
+
+00:33:31.640 --> 00:33:36.760
+ And there you go, you got a CSRF token, you're handed the make as an object in
+
+00:33:36.760 --> 00:33:40.600
+ this, so that produces this output.
+
+00:33:40.600 --> 00:33:42.360
+ There's no form in this one.
+
+00:33:42.360 --> 00:33:48.400
+ There's just the make that gets loaded by object or 404.
+
+00:33:48.400 --> 00:33:50.640
+ And then it passes make in and renders it.
+
+00:33:50.640 --> 00:33:53.400
+ And then when the post happens, it retrieves it.
+
+00:33:53.400 --> 00:33:57.800
+ If it's there with a 404, again checking for bad data, and deleting it, and
+
+00:33:57.800 --> 00:33:59.960
+ then hopping off to the success URL.
+
+00:33:59.960 --> 00:34:03.560
+ And it doesn't take much to guess what I'm gonna do next.
+
+00:34:03.560 --> 00:34:07.240
+ And that is, if you extend delete view, you get all that code for free.
+
+00:34:07.240 --> 00:34:10.680
+ You just tell which model fields and where to go for success.
+
+00:34:10.680 --> 00:34:13.760
+ And so the key thing is, is as you're doing your homework,
+
+00:34:13.760 --> 00:34:19.760
+ I'm sure some of you are just gonna like copy and paste all this stuff.
+
+00:34:19.760 --> 00:34:21.160
+ That's wrong.
+
+00:34:21.160 --> 00:34:25.160
+ This make create, the make create, the make update, and
+
+00:34:25.160 --> 00:34:30.960
+ the make delete should be as short as auto create, auto update, and auto delete.
+
+00:34:30.960 --> 00:34:33.160
+ Because you're gonna do this a lot, right?
+
+00:34:33.160 --> 00:34:36.880
+ You're gonna do these generic editing views a lot.
+
+00:34:36.880 --> 00:34:40.240
+ And we're gonna do CRUD over and over and over again.
+
+00:34:40.240 --> 00:34:43.640
+ And you really do not want to write 15 lines of code.
+
+00:34:43.640 --> 00:34:47.040
+ That's unnecessary repetition, unnecessary cutting and
+
+00:34:47.040 --> 00:34:51.040
+ pasting and changing code, if you can keep it really simple.
+
+00:34:51.040 --> 00:34:55.720
+ So I can basically build a full set of CRUD forms and
+
+00:34:55.720 --> 00:35:01.240
+ CRUD functionality with validation for a model with this kind of code.
+
+00:35:01.240 --> 00:35:06.200
+ And then I don't even have to have a forms.py, I just have a models.py.
+
+00:35:06.200 --> 00:35:08.080
+ So if you're doing your autos,
+
+00:35:08.080 --> 00:35:12.440
+ you kind of would think I made a mistake if I'm making a forms.py.
+
+00:35:12.440 --> 00:35:16.200
+ Because if I just use this views.py this way,
+
+00:35:16.200 --> 00:35:22.320
+ instead of making all of them look like make update, then you're gonna save
+
+00:35:22.320 --> 00:35:25.000
+ yourself a lot of time and energy and we have to modify these things.
+
+00:35:25.000 --> 00:35:29.360
+ It's a lot easier to find all the changes and then modify them.
+
+00:35:29.360 --> 00:35:37.800
+ So that is a walk through of the sample code for autos.
+
+00:35:37.800 --> 00:35:44.200
+ And you're gonna do an assignment on this, but don't just copy everything.
+
+00:35:44.200 --> 00:35:48.500
+ I set this up so that the time you spend understanding what's going on,
+
+00:35:48.500 --> 00:35:52.360
+ particularly in the views, URLs you'll probably just copy,
+
+00:35:52.360 --> 00:35:56.160
+ models you'll just copy, the URLs you'll just copy.
+
+00:35:56.160 --> 00:36:00.000
+ But the views, don't just copy it, figure out what's really going on and
+
+00:36:00.000 --> 00:36:05.280
+ come up with the easier and more succinct way to do all this stuff, okay?
+
+00:36:05.280 --> 00:36:09.120
+ Cuz Django is starting to look really beautiful at this point.
+
+00:36:09.120 --> 00:36:11.680
+ So I hope you found this helpful, cheers.
+

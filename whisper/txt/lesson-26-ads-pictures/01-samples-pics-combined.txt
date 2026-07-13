@@ -1,0 +1,273 @@
+ Hello and welcome to another code walkthrough for Django for Everybody. In this we're going to walk
+ through the how to handle pictures and in our DJ free samples I'm gonna walk through the code so
+ so first let's walk through just how it basically works it's a CRUD application this is CRUD and now
+ we have this browsing to upload a file and so we'll upload that file and then when we look at it
+ we're going to see it if I click on the picture I get kind of this overlay view that's all JavaScript
+ and then I hide it and I can upload it I can edit and delete it so let me kind of walk through how
+ this works so first off let's take a look at urls.py there's nothing particularly special that the
+ whole pattern is kind of the same I'll come back to this particular URL the actual picture the thing
+ that in a sense serves the picture so if I open this view the image in a new tab well it's this
+ it's this URL that's actually serving the image this image is stored in the database and so we'll
+ come back to that particular one it's the stream file view okay so let's go back to all pics and
+ let's start taking a look first let's go at the model first because this is where everything starts
+ sure let's go put the model here put the views there and the forms there okay so let's start the
+ model we'll start from the back and forwards so if we were to go look at the admin I think I've
+ got the admin hidden in this particular one let's take a look at admin.py yeah I'm gonna
+ so this is one of the things let me show you how the admin works I hope I got admin going
+ probably don't have my admin account oh there we are we have admin so if I'm to take a look at the
+ pics so it turned out that I didn't want either of these these two things to show up because it
+ turned out it made it difficult because I wouldn't couldn't update things so you won't see picture or
+ content type here in admin and I do that by excluding this and instead of doing the shortcut
+ I am going to register for the for the model pic this particular class and it allows me to have
+ this class wide variable called exclude so that I don't show those things and so that's that's
+ just a little trick on admin so that when you see it when they're in the database they're just not
+ there because you can't because the admin interface is not smart enough to update these pictures the
+ way I want to update them so I'm going to hide that so in the model we've got a binary field which
+ is like a blob if you're into databases and I'm allowing it to be null and blank and editable and
+ then there is this thing called the content type and the content type is open this in a
+ new window and I copy this location so if I were to do a view develop a console network one of the
+ things when you're serving images is that you've got to you've got to set the MIME type so this is
+ a get request and it's sent a bunch of data but if I look at the headers here the response header
+ includes this header called the content type oh no that was the icon what am I doing persist logs
+ I'll clear this it's not the icon that was the icon but let me retrash this and so this is the
+ actual PNG and then the icon comes as well of course the icons that little picture but the
+ content type is image slash PNG and that's really important when you're uploading the file you get
+ to have it and then you have to send it back out otherwise the browser will not know how to properly
+ format this so that is what is here right that's the content type it's just a string field the
+ content type is just a string but it's very important to track it so when I am in a on add
+ when I upload the file and I pick it it's actually communicated to me as part of the uploaded data
+ but I got to remember it I got to actual pixels go in here and the content type goes in its own
+ character character field the pixel goes into about the pixels of the picture the actual colors and
+ stuff go into this binary field and I'm going to use the owner so we're going to have this we did
+ this before we have an owner and that's just going to be automatically created when I there's a
+ there's a owners.py there's a owners.py so there's owners.py and I mean the owner.py from the
+ previous thing and that gets all taken care of in the views so all we got it's pretty much a
+ standard thing except we've got these two things and those are hidden from the admin so now let's
+ take a look at the views and so we're going to use the owner views again and those are automatically
+ handling all of the detail of setting the owner field and there is just not a single line of code
+ in here that has anything to do with setting the owner field I set have this owner field in my model
+ and then I just extend for all of my other views I extend that okay so I have an owner list view
+ an owner detail view and you'll notice those do not require login I'm gonna specify the template
+ name I'm getting a little tired of just remembering I don't necessarily like their naming conventions
+ and so this I'm gonna have my own template names here and create view this one you're
+ gonna make one okay and we're gonna have a get request it's like going back because I can't quite
+ make this one complete and my post request and so the post request yeah I'm gonna so I'm just this
+ I might have been able to extend something or put inside but I'm just gonna do all the work you'll
+ notice I'll walk through this this will be a good review of that so let's just look at the let's
+ look at the pick create view next so let's take a look at forms HTML so now let's look at forms.py
+ so the create form so if you if you think about it if you recall right there is the views in the
+ middle views and then the thing that talks to the browser that really controls our relationship with
+ a browser is the form and a thing that controls our relationship with a database is the model
+ right so the view is interacting with the form to get what it needs to do and then it kind of
+ transports it to the model so that would be kind of like a controller function if we're thinking
+ a model view controller this would be but that's okay so so so the form the form is what determines
+ all of what's going on on this screen and then the model yeah oh yeah that's not that looks
+ really not good the model is what is going on back here and so you can think of the view is like
+ manipulating both the form escape both the form and the model and so it's interacting with them
+ and so you'll see when it's doing things in the beginning like clear escape okay so you'll you'll
+ see that in the view when it's doing its work it's working with the form and then eventually it's
+ working with the model toward the end okay and so to some degree this post request is to get data
+ from the form and handle everything when it's doing it so that's let's avoid to some degree
+ the hardest bits we'll come back to that in a second so let's go and hit cancel and then add a
+ pick add a pick basically runs this get request so we're going to grab the form it's the create
+ form and there's a little bit of work in here there's the create form and we're going to jack
+ into just object-oriented ways we're going to jack into the clean we're going to jack into the
+ save but for now all it's doing is this bit right here that you've been using for a while and so
+ we're going to tell it what we're going to make a picture form and so here's a thing so there is a
+ file field and so we're asking the form to include a file field okay and so that's what puts out this
+ file to upload less than or equal to megabytes we've got a little bit of code to both have a
+ numeric limit of the size max upload limit that's just a class-wide variable and then the max upload
+ limit text which is that in text and that little file to upload less than or equal to two megabytes
+ that's because I'm doing this in the form so I've got a little bit of logic in the form and it is a
+ model form which means that it takes its it takes its input from it you know I don't have to put
+ these things in there but I do have to tell it which things I actually want to do and so I want
+ the title in the text I don't want the owner and create it at an update or kind of automatically so
+ that's why I've got the fact that inherit from the pick model which is this model inherit from the
+ pick model and include title text and picture now title and text come from the model and picture
+ comes from right here so we're we're not it if Django were our friend it would understand this
+ would be a file field but it's not and so we have to actually manipulate it and convert it it's not
+ hard but in between the view I mean the form in the model we got to do a bit of work and we do it
+ here in forms.py okay so meta okay so this part here in the top is all that is affected to create
+ this screen right so that's what the get is doing so if we look at the get it makes a form and then
+ it renders it to self template which is picked stop form dot HTML and here we go it's pretty
+ straightforward now we're just going to load our crispy form tag extend our base bootstrap put out
+ the CSRF token pretty up the form and crispy and that's sort of everything from title and to file
+ upload and then we have a submit button and a cancel button so one of the things that we're
+ going to do is we are going to add some jQuery and that is we're going to connect into this form and
+ when the submit button is pressed we're going to run this JavaScript code so that this line right
+ here upload form submit function that makes it so that whenever the submit button whenever this
+ submit button here is pressed on this form this jQuery is going to run and so we will do a web
+ developer well it's not going to do us much good because actually we can so I will I'll show you
+ how that works so what we're going to do here is this a bit of code I got this off stack overflow
+ right there and what I'm going to do basically is I'm going to read whether or not this file
+ is greater than or equal to two megabytes so if it's greater than two megabytes I'm going to stop
+ and complain with an alert statement so this is JavaScript and returning false here says I'm not
+ going to upload it so let me create one with some stuff and let me browse let me find a really large
+ file okay so now I'm going to do a web developer JavaScript console oh and by the way let me do a
+ view source on this so you can kind of see that it you can see all the stuff that came from base
+ bootstrap and you can see there's the CSRF token there is the file input types and then here's
+ submit and then here's the JavaScript at the bottom and this JavaScript is running code out
+ of jQuery and we'll talk about jQuery right now we'll just look at it as JavaScript and we happen
+ to be using the jQuery library okay so now what I'm going to do is I'm going to press submit and
+ I'll watch this console I'm going to press the submit button and code is going to run and you're
+ going to see the JavaScript run and it's not going to be happy with this file Sakai ladies of Sakai
+ because it's too big I think yeah so there you go look it's a checking file size and it complained
+ that this ladies of Sakai camp type must be less than two megabytes which is exactly what I wanted
+ and so that I I enforce that rule right here okay now it turns out that I got to also enforce it in
+ the server because somebody could easily just override that and force it to be uploaded but
+ but you see that the JavaScript is running in this browser and it's kind of protecting it other than
+ that this looks pretty much like a standard crud thing except very importantly if you're uploading
+ files you've got to say and type equals multi-part slash form data and that has to do with the format
+ that the data is sent if you just have like a few text fields then you don't need this but if you
+ have longer things like files you need that and so that is how we get through the get request okay
+ so now let me pick a better file pong my favorite that's dangerous one of my earliest I don't know got
+ so many little files Apple iPhone I don't know whatever so this one's nice less than two and I'm
+ going to hit the post so I'm gonna hit the submit now the post is going to come through and it's
+ going to run this code right here and this is probably the trickiest part of this code so if
+ you recall we can construct a create form and get it back and we pull the data request dot post now
+ it turns out that these little attached files like Apple iPhone Sakai JPEG comes in in request dot
+ files and or none just is just in case it's not there okay and so what happens is is this is where
+ we're going to do some of our work we're going to actually pull data from this request dot files
+ and so we're going to jack into the clean so clean is one of the life cycles of a model form
+ I mean once the data comes in it's going to ask to be cleaned so what we do is we call the super
+ call the super class the model form class and do the clean there it doesn't know anything about
+ picture because we're the one that added that okay but then we get the data in cleaned data and I
+ it's a it's a dictionary at that point and so I can get the picture so remember that the form is
+ the part that's coming in from the browser right and then I can make the picture I can get it from
+ there if I got no picture it's I don't need to do anything special right if I do I am checking to
+ see if the amount of data that I got from that upload is greater than that upload limit it's it's
+ good so this is mostly here to check to make sure I'm cleaning the data I'm not actually saving it
+ but I am grabbing the picture from the form and I'm checking to see if it's greater than two megabytes
+ and then I'm going to add this is what you do in clean clean is just to say a nasty message now in
+ this case the nasty message I showed you before came from JavaScript but if you somehow trick
+ tricked my JavaScript and sent it this clean would catch it so if I'm my view here clean is
+ happening right now form is valid happens afterwards so it's a side effect of clean you're saying is the
+ form valid and if there was an error from this or if there was an error like my title was too short
+ right then it would come back and say titles greater than two characters oh we love crispy forms
+ look how pretty errors aren't crispy forms that is running this little bit of code right here if the
+ form is not valid and it could have been and in that particular case the super got upset right
+ because because this min length validator triggered and so the super got upset and set form was not
+ valid now mine looked good right so but now the picture is gone so I can make a slightly longer
+ title here and browse completely I don't know what I'm doing these are really old pictures of mine so
+ now it's gonna pass it's gonna pass this is gonna pass and I'm gonna grab this and I'm gonna do my
+ own check that's sort of a double check on this less than two megabytes because even though the
+ client protects you and that's the you more user friendly because this is gonna this is catching
+ it after the upload happened and that might be long two megabytes doesn't take that long but now
+ it's going to come and it's gonna pass this and skip and then it's going to come here and it worked
+ so here's what's happening so you've got the form the form has like took all that data including
+ the file right and cleaned it all up and I'm gonna call form dot save commit equals false and then
+ I'm gonna set the owner field because I'm not extending owner view here so I got to set that
+ owner view because I'm gonna ultimately override both this post and the get and I wasn't gonna get
+ much help out of owner at that point and then I'm gonna save the model so form dot save gives me
+ back a model if I don't say commit equals false it actually does the pick dot save also so if you
+ save the form without commit equals false commit equals false means don't store it in the database
+ okay so let's take a look at what's going on here in form dot save so I have also overridden form
+ dot save and I'm just behaving commit equals true is a default but when I say commit equals false
+ then commit will be false and so I have got to call the super right actually this is really not
+ right oh I want oh no actually no matter what the commit is this is the end users wish for commit I
+ am going to do a super and I'm gonna run a save with commit false no matter what this person wants
+ it to give me commit true or not I'm gonna run commit false then what I've got to do is I've got
+ to grab the picture the picture from the form I'm in a form and I check to see if this is an in memory
+ uploaded file and there's all kind of cool magic that's happening right here it's got this all it's
+ in memory it's got this thing it's an object it's really nice and then what I say is give me all the
+ data the byte array which reads all of the pixels of the file and then F dot content type is that
+ image slash PNG and I then need to put that in the instance which is the model I've got to add to it
+ the byte array of the text and the content type I've got to store both of those things and now I'm
+ talking to the database the picture oops a picture and the content type are being set as part of the
+ save then what I do is if commit is true now I'm trying to mimic the save behavior now I'm only using
+ this one way right with commit equals false but someone might leave this out and call my call my
+ form I'm supposed to actually save the model if commit is true but in this case commit will be
+ false so I'm just going to return the instance at this point I have an object model an object
+ model and in that object model all these two fields are exactly the way they want to be and
+ the only thing I've got to do is set the owner field which I'm doing right there and then I'm
+ storing it in the database and then I redirect and that's how it works it's pretty cool you got to
+ kind of get your object oriented Zen thing going and pretty awesome so I'll just go through the
+ update view because it's not that different than the create view so it looks the same on the get
+ we're going to go grab the old copy out of the database and then we're gonna make a form and
+ inherit all the old data now in this one it's not gonna put the picture out there it'll just put out
+ a new one so if I'm in the edit right here it's gonna it's not going to put the picture here but
+ it'll let me put a new picture here because that's in the form but all the old data is sitting right
+ here and then and then that renders the update form and then I make my changes blah blah blah blah
+ blah blah right blah blah blah and then and then when I post it it's going to do this create form
+ and the difference is it's going to do a get object or 404 so that it it pulls that old data
+ from the database and then it does the validation automatically it calls this clean to do that
+ validation and then then we save it etc and so that's how it actually updates all of this stuff
+ so the only thing left to take a look at is the detail page and so some of these things we don't
+ have detail pages and some we do so let's take a look at this one right so this detail page looks
+ just about like every detail page let's go take a look at the view and and so it's pretty good I
+ mean we're just it looks we're using the same code that we've used for everything and we're using
+ owner detail view we're telling it with model to use and I'm going to use pics detail and most of
+ this like again humanizes to make times and dates look better I'll get back to that CSS in a bit
+ here you have we'll come back to this too in a second I'm just showing you the parts that are like the
+ way you've been doing it it's got the buttons for the update this is part of the owner code right if
+ the owner is the user we're gonna write a pencil on a trash little icon and then print out the title
+ and then the text and then some all right some all stuff okay so that's what's familiar let's
+ now talk about what's different so let's first talk about the HTML that generates this little
+ picture so if I do an inspect element we'll see that what we've got here is image style float
+ right max with that some CSS but the source here is pics pic picture 3 and so if you look what I'm
+ doing here is I'm going to the pics pic picture view and then the pic ID and that pic ID is just
+ the pic that came in and if we go back to URLs now that's this one and it goes into stream view
+ stream file and it passes in you know an integer number as the variable PK so let's go take a look
+ at that so that's this one and it's and I you'll notice that this is not a class-based one it's an
+ old-school one mostly because hey I'm just gonna do get the class-based one we can do def get and
+ def post but this one I'm just gonna do an old-school thing passes in the request in the
+ first parameter which of course is that number three that's the primary key of the image that
+ we're trying to see right so I'm going to do a get object or 404 and of the type pick and I'm
+ gonna look it up by its primary key which is that three and now I have it and so I'm going to send
+ an HTTP response but this is not a text response nor is it HTML response this is where that content
+ type going back to the model remember this is the mind type that image slash PNG and so just come
+ back so as part of the response so now if I can get this guy to open in a new can I make that guy
+ come on open a new page can I do that page you image is that gonna work well okay I guess it's
+ sort of worked one of you image in this view image in okay that's what I'll just go back and put this
+ in by itself so now I can see that this is the this is the URL that generates the picture now
+ the picture is sitting in my database right but if I do view the developer and go into network
+ and clear the network and make sure I've got all sort of clear persist logs and disable cache now
+ if I hit refresh we're gonna see that it's coming back and the response content type is image dash
+ PNG so to set that to set this and that's essential so that when the browser is seeing the pixels it
+ knows that this is a PNG not a JPEG or a GIF or an MPG or a PDF or whatever so this content type
+ is something that we stored we got it when we were doing the post and we pulled it in we took
+ all that stuff and if you look at forms.py it was grabbing it here in the save method and we
+ got it from the form and then we stored it in the database and now we've got it back from the
+ database and so we're just saying the content type which is a header is pic.content type that's
+ a string and then we also have to tell it how long it is but pic.picture is the actual pixels
+ that are the picture and you have to tell it how long it is so if you look at content length right
+ there 470,152 yeah 470 152 so that's content length we knew that from the database and then
+ we actually write the pixels and the place you see this is when you click on response now it's
+ basically showing you yeah that's a picture but if you if you really looked at it it's just you
+ know bits and bytes and a complete gibberish and so that's what it takes to send that stream out
+ and so that's what makes it so that when I have an image tag when I have this image tag I can source
+ but I'm actually feeding that picture okay so so that's how the picture gets there but then I'm
+ going to show you how when I click on this picture I get this overlay and then when I click on the
+ overlay it goes away now that this is there's all kind of fancy things and bootstrap has modals I
+ did this with the simplest and crudest of CSS and JavaScript tricks okay so let's take a look at how
+ I did that at that point now we're in JavaScript so first thing I've got is a CSS and it's this
+ overlay position fixed and and you'll see that I have a div tag that has the picture in it and
+ it's got a whole bunch of CSS in it the width is 90% the margin top the border is 3 pixel with a
+ solid black so you'll see this it's 90% of the width it's got a 3 pixel margin it's a the margin
+ top is 50 pixels so there's 50 pixels here and so so that picture is there but because this class
+ equals overlay all this other stuff is there as well so that's not the picture that's the rest of
+ it so you can see that this is fixed which means it overlaps this div and the rest of the page this
+ div right here and the rest of the page are like two layers z-index is 10 puts it on top 100%
+ width 100% height display none means it starts out hidden and then I've got kind of this little gray
+ you see this little gray bit right and then the image has this style the width 90% margin top 50
+ pixels that's giving me the border and the margin and making it 90% wide okay well let me get rid
+ of it or hit refresh so it's not there it's not there but if I do a view page source you page
+ source it is there it is there it's just hidden right it's hidden because I told it to be hidden
+ here so it starts out hidden so how does it unhide well if I look I've got this image here this is
+ the actual image that's this image that's really showing on the page and I've got an on click at a
+ JavaScript so on click so what I'm doing is I got an on click there and then I say document dot get
+ element by ID overlay which is looking for whatever tag has ID equals overlay and then
+ I'm changing its display from hidden to block so when I when that on click happens when I click
+ on goodbye goodbye so when I click on this image I've got an on click event anywhere in this image
+ that is going to show this other div so this other div poof pops out now what I've got is
+ an on click method on that div so that I can click anywhere anywhere in here including the
+ picture or the background because that's part of the overlay the overlay is the entire div in the
+ background so I can click anywhere click and then that triggers this document get element ID style
+ display none so I it's still there it's hidden so I can bring it up I can hide it I can bring it up
+ I can hide it I can bring it up I can hide it and I tried to make this one as simple as possible there
+ are prettier ways and people put a little X box X up here and that hides it they make a whole modal
+ they use bootstrap they use all kinds of clever things this is like the least clever way to make
+ a full screen semi full screen pop-up of an image using a bit of JavaScript here and a bit of
+ JavaScript here and then some just slightly clever CSS and I'm sure I found most of this on stack
+ overflow somewhere so I hope that you found this particular walkthrough of how to add images to
+ a CRUD application useful so hope you found it useful cheers

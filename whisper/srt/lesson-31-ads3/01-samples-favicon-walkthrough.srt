@@ -1,0 +1,168 @@
+1
+00:00:00,000 --> 00:00:04,360
+ Hello and welcome to another walkthrough for Django for everybody. In this
+
+2
+00:00:04,360 --> 00:00:08,480
+ particular walkthrough we're going to play with the favicon and so the favicon
+
+3
+00:00:08,480 --> 00:00:15,260
+ is a special little icon that shows up at your root /favicon.ico. There's a
+
+4
+00:00:15,260 --> 00:00:19,420
+ whole series of favicons but this is sort of the original classic one and you
+
+5
+00:00:19,420 --> 00:00:23,440
+ should be able to see it and it's also what happens in your bookmarks or your
+
+6
+00:00:23,440 --> 00:00:27,940
+ little tabs and so it's kind of a fun little way to brand your site and if
+
+7
+00:00:27,940 --> 00:00:33,840
+ you've been grabbing my code you have got a favicon sitting here in Django's
+
+8
+00:00:33,840 --> 00:00:41,860
+ home static favicon.ico and if you look at urls.py down later it adds a path
+
+9
+00:00:41,860 --> 00:00:47,080
+ using the static file server and it sort of goes to the base directory of the
+
+10
+00:00:47,080 --> 00:00:51,100
+ of the Django application that's home static and then if there's a path that
+
+11
+00:00:51,100 --> 00:00:55,840
+ matches this is the path that matches then this is the file that it looks up
+
+12
+00:00:55,840 --> 00:01:03,600
+ and then that serves up the contents of that file at favicon.ico. Now what you
+
+13
+00:01:03,600 --> 00:01:06,760
+ want to probably do is make your own favicon so let's go ahead and make our
+
+14
+00:01:06,760 --> 00:01:14,800
+ own favicon. Here is a favicon converter and let's go ahead and grab a file. Let's
+
+15
+00:01:14,800 --> 00:01:24,120
+ see. Sakaiger. Gonna make a little Sakaiger icon instead and so I did it it
+
+16
+00:01:24,120 --> 00:01:29,480
+ converted it to an icon. Let's see what we got here and I'm going to download a zip file
+
+17
+00:01:29,480 --> 00:01:34,380
+ with a bunch of icons and it'll go into my downloads so here it came into my
+
+18
+00:01:34,380 --> 00:01:39,880
+ downloads it's already downloaded it and that is an icon and so an icon is a
+
+19
+00:01:39,880 --> 00:01:45,960
+ special kind of an image and so now what I'm going to do is I'm going to go into
+
+20
+00:01:45,960 --> 00:01:52,440
+ here and I'm going to upload and overwrite this with a new file and so
+
+21
+00:01:52,440 --> 00:01:58,320
+ here we're going to upload that favicon and I believe it's up to uploaded right
+
+22
+00:01:58,320 --> 00:02:03,080
+ this second. Now here's a weird thing now I should be able to go here and I should
+
+23
+00:02:03,080 --> 00:02:07,820
+ be able to press refresh. I don't think reloading my application is going to
+
+24
+00:02:07,820 --> 00:02:12,360
+ make much difference at this point but icons are heavily cached by the browser
+
+25
+00:02:12,360 --> 00:02:17,880
+ so one thing to do is just I didn't mean to start that didn't mean to start
+
+26
+00:02:17,880 --> 00:02:25,600
+ Camtasia sorry didn't mean to start that. So I can go here in a different browser
+
+27
+00:02:25,600 --> 00:02:37,520
+ and I can see icon or I can add a get parameter and then I can see that
+
+28
+00:02:37,520 --> 00:02:48,120
+ icon x=3 and now I can see the icon. So it
+
+29
+00:03:05,480 --> 00:03:09,560
+ so if you come here and you press refresh what you'll find is these icons
+
+30
+00:03:09,560 --> 00:03:14,520
+ are heavily cached and that's just because you don't want to overload the
+
+31
+00:03:14,520 --> 00:03:20,520
+ server getting an icon on every page so to really do this right yet the way to
+
+32
+00:03:20,520 --> 00:03:25,580
+ force the cache and we've seen this like in JSON you can add a get parameter x
+
+33
+00:03:25,580 --> 00:03:30,200
+ equals 42 and that basically says it's going to ignore this and it's just going
+
+34
+00:03:30,200 --> 00:03:34,520
+ to get because that's a query parameter it's not part of the path and it's going
+
+35
+00:03:34,520 --> 00:03:40,400
+ to load the new icon so it might take a while before you're going to see that
+
+36
+00:03:40,400 --> 00:03:44,480
+ icon show up and so don't feel too bad if you can do this thing where you go
+
+37
+00:03:44,480 --> 00:03:48,760
+ directly and you add this question mark you should be able to see your brand new
+
+38
+00:03:48,760 --> 00:03:53,480
+ icon and then later or maybe if you run with a different browser but if you've
+
+39
+00:03:53,480 --> 00:03:57,560
+ used a different browser and it's got a cached icon away it goes and you can go
+
+40
+00:03:57,560 --> 00:04:01,680
+ Google how to clear the favicon on my browser and you'll find it's not trivial
+
+41
+00:04:01,680 --> 00:04:06,240
+ so this is the way that I do it I just add a get parameter and then that does it
+
+42
+00:04:06,240 --> 00:04:11,960
+ so I hope this little favicon walkthrough was helpful to you cheers
+

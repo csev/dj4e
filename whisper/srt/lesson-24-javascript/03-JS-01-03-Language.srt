@@ -1,0 +1,884 @@
+1
+00:00:00,000 --> 00:00:02,960
+ So now we're going to talk about JavaScript as a programming language.
+
+2
+00:00:02,960 --> 00:00:05,200
+ Now we're just going to talk about the syntax.
+
+3
+00:00:05,200 --> 00:00:07,520
+ So we'll start out, say, with comments.
+
+4
+00:00:07,520 --> 00:00:09,720
+ So I love the comments in JavaScript.
+
+5
+00:00:09,720 --> 00:00:14,640
+ There are two kinds of comments, and they have to do with what languages did the influencing.
+
+6
+00:00:14,640 --> 00:00:20,120
+ And so the slash star, star slash, is a multi-line comment, right?
+
+7
+00:00:20,120 --> 00:00:25,640
+ So this is all comment from here all the way to here, and you can have new lines.
+
+8
+00:00:25,640 --> 00:00:27,920
+ This is great for writing documentation.
+
+9
+00:00:27,920 --> 00:00:30,080
+ That comes from the C language.
+
+10
+00:00:30,080 --> 00:00:32,040
+ Java also supports it as well.
+
+11
+00:00:32,040 --> 00:00:36,800
+ And then the C++ language has slash slash to the end of the line.
+
+12
+00:00:36,800 --> 00:00:40,600
+ Well, that's much more like the pound sign comment in Python.
+
+13
+00:00:40,600 --> 00:00:43,000
+ But I like both of those styles.
+
+14
+00:00:43,000 --> 00:00:47,520
+ I like using these for documentation sections, and I like these for short comments.
+
+15
+00:00:47,520 --> 00:00:48,960
+ So nice.
+
+16
+00:00:48,960 --> 00:00:50,240
+ Thank you very much.
+
+17
+00:00:50,240 --> 00:00:53,680
+ White space and new lines do not matter.
+
+18
+00:00:53,680 --> 00:00:58,640
+ Statements end in a semicolon, it turns out that that's not technically true.
+
+19
+00:00:58,640 --> 00:01:03,600
+ But if you just pretend that all statements end in a semicolon, then if you move to Java
+
+20
+00:01:03,600 --> 00:01:10,400
+ or C++ or C or PHP, then you're not like, oh, when do I have to put the semicolon on?
+
+21
+00:01:10,400 --> 00:01:12,520
+ Well, in those languages, you have to put it on just about everywhere.
+
+22
+00:01:12,520 --> 00:01:17,720
+ So just put semicolons at the end of every line, and you can just pretend you're writing C.
+
+23
+00:01:17,720 --> 00:01:20,720
+ And then when you get to C, you'll be like, oh, this is just like JavaScript, even though
+
+24
+00:01:20,720 --> 00:01:25,800
+ under the implementation, it's very different, very, very different.
+
+25
+00:01:25,800 --> 00:01:32,080
+ So here is just an example of some really nasty JavaScript where x equals three plus
+
+26
+00:01:32,080 --> 00:01:37,320
+ five times four on two lines, and then this line's jammed up, and console.log.
+
+27
+00:01:37,320 --> 00:01:38,320
+ That's okay.
+
+28
+00:01:38,320 --> 00:01:40,320
+ It just doesn't matter.
+
+29
+00:01:40,320 --> 00:01:45,600
+ JavaScript and these C-style languages just don't care what the white space is.
+
+30
+00:01:45,600 --> 00:01:50,680
+ They're looking for characters, blah, blah, blah, blah, blah, blah.
+
+31
+00:01:50,680 --> 00:01:54,400
+ Semicolon, that must be the end of the line, blah, blah, blah, blah, blah, blah, semicolon.
+
+32
+00:01:54,400 --> 00:01:55,560
+ That's the end of the line.
+
+33
+00:01:55,560 --> 00:02:04,800
+ So just, the new line is just like another space-like character ultimately in these languages.
+
+34
+00:02:04,800 --> 00:02:07,520
+ Variable names are kind of normal.
+
+35
+00:02:07,520 --> 00:02:09,480
+ They can start with letters.
+
+36
+00:02:09,480 --> 00:02:15,560
+ I mean, they're letters and numbers and underscore and dollar sign, but they're not supposed
+
+37
+00:02:15,560 --> 00:02:18,320
+ to start with a number, and they are case sensitive.
+
+38
+00:02:18,320 --> 00:02:19,660
+ Just please.
+
+39
+00:02:19,660 --> 00:02:24,280
+ We use case sometimes as a signal because different kinds of variables, we like either
+
+40
+00:02:24,280 --> 00:02:28,040
+ camel case them or all uppercase.
+
+41
+00:02:28,040 --> 00:02:39,040
+ I use case to signal things, and it turns out that because JavaScript sort of saw what
+
+42
+00:02:39,040 --> 00:02:44,040
+ PHP and Perl looked like, they allowed dollar signs at the beginning variables because PHP
+
+43
+00:02:44,040 --> 00:02:47,400
+ and Perl are the places where dollar signs are allowed.
+
+44
+00:02:47,400 --> 00:02:53,480
+ But when people started writing JavaScript, they wanted to be more like Java.
+
+45
+00:02:53,480 --> 00:02:58,000
+ Java doesn't allow dollar signs in variables, and so there was kind of like this unwritten
+
+46
+00:02:58,000 --> 00:03:03,640
+ rule, which we will come back to, of just don't start a variable with dollar sign, even
+
+47
+00:03:03,640 --> 00:03:05,240
+ though JavaScript allows it.
+
+48
+00:03:05,240 --> 00:03:06,240
+ Just kind of don't do it.
+
+49
+00:03:06,240 --> 00:03:08,320
+ It's not cool.
+
+50
+00:03:08,320 --> 00:03:14,960
+ String constants, single quotes and double quotes function the exact same way.
+
+51
+00:03:14,960 --> 00:03:17,720
+ I like that a lot.
+
+52
+00:03:17,720 --> 00:03:24,240
+ Stylistically, what I tend to do is I tend to use single quotes as much as I can in JavaScript
+
+53
+00:03:24,240 --> 00:03:30,120
+ because ultimately double quotes are part of HTML, and when I'm mixing my HTML in JavaScript,
+
+54
+00:03:30,120 --> 00:03:34,360
+ I tend to want to look at it and say that single quote is a JavaScript quote versus
+
+55
+00:03:34,360 --> 00:03:36,280
+ a HTML quote.
+
+56
+00:03:36,280 --> 00:03:40,640
+ So if we take a look at those little code, you see like this text equal JavaScript, that's
+
+57
+00:03:40,640 --> 00:03:43,120
+ in double quotes, and it has to be.
+
+58
+00:03:43,120 --> 00:03:48,120
+ So the one line and two line, I could use single quotes or double quotes for that, but
+
+59
+00:03:48,120 --> 00:03:53,000
+ for me, I try to use single quotes as much as possible when I'm in JavaScript.
+
+60
+00:03:53,000 --> 00:03:56,400
+ So I can take a look at this code and know HTML, JavaScript.
+
+61
+00:03:56,400 --> 00:04:01,600
+ If I'm in double quotes, I'm generally dealing with HTML, and because JavaScript is sometimes
+
+62
+00:04:01,600 --> 00:04:07,560
+ writing HTML, it's writing double quotes into the document because it has to, because that's
+
+63
+00:04:07,560 --> 00:04:09,840
+ how HTML requires it.
+
+64
+00:04:09,840 --> 00:04:13,240
+ So I have a single quote string that has a double quote in the middle of it because I'm
+
+65
+00:04:13,240 --> 00:04:14,880
+ writing HTML in JavaScript.
+
+66
+00:04:14,880 --> 00:04:16,800
+ That'll make more sense to you later.
+
+67
+00:04:16,800 --> 00:04:22,600
+ So you can do either one, and you'll see examples where JavaScript just uses double quotes,
+
+68
+00:04:22,600 --> 00:04:27,120
+ but I prefer single quotes as much as I possibly can.
+
+69
+00:04:27,120 --> 00:04:36,060
+ Unumeric constants are pretty much like every other language, but, but, there is only one
+
+70
+00:04:36,060 --> 00:04:37,240
+ number type.
+
+71
+00:04:37,240 --> 00:04:41,760
+ In most languages, there's like an integer and a floating point.
+
+72
+00:04:41,760 --> 00:04:43,600
+ Sometimes there's double and float.
+
+73
+00:04:43,600 --> 00:04:46,880
+ There's different kinds of long integers.
+
+74
+00:04:46,880 --> 00:04:52,720
+ In JavaScript, I think in a way they were smart, and they basically made one type, one
+
+75
+00:04:52,720 --> 00:04:55,160
+ numeric type called number.
+
+76
+00:04:55,160 --> 00:05:00,960
+ And so for example, if you take five thirds, that is a floating point number, 1.666, repeating
+
+77
+00:05:00,960 --> 00:05:01,960
+ forever.
+
+78
+00:05:01,960 --> 00:05:07,500
+ If you want to turn that into an integer, you just truncate it, like math.trunc.
+
+79
+00:05:07,500 --> 00:05:10,080
+ Math is a library that's in JavaScript.
+
+80
+00:05:10,080 --> 00:05:14,120
+ Now when you get back in X, it's still a floating point number.
+
+81
+00:05:14,120 --> 00:05:18,740
+ It just is shown as an integer because you've chopped off the decimal part.
+
+82
+00:05:18,740 --> 00:05:23,440
+ And so you have to be careful because they're really floating point numbers.
+
+83
+00:05:23,440 --> 00:05:27,440
+ Every one of them, some of them are shown as integers when you print them out.
+
+84
+00:05:27,440 --> 00:05:32,380
+ But in general, there are no integers in JavaScript.
+
+85
+00:05:32,380 --> 00:05:40,080
+ So there's a whole bunch of operators, plus, minus, multiply, divide, truncate, you know,
+
+86
+00:05:40,080 --> 00:05:45,560
+ those are pretty much like every other programming language.
+
+87
+00:05:45,560 --> 00:05:49,240
+ More operators like the modulo operator.
+
+88
+00:05:49,240 --> 00:05:53,940
+ Modulo operator is the percent sign, and that is the remainder operator.
+
+89
+00:05:53,940 --> 00:05:59,880
+ So 45 divided by 7 is 6 remainder 3.
+
+90
+00:05:59,880 --> 00:06:09,680
+ And that remainder, you know, 45, 7 is 6, 42, 3, remainder 3.
+
+91
+00:06:09,680 --> 00:06:12,680
+ That 3 is what goes there.
+
+92
+00:06:12,680 --> 00:06:18,560
+ So division with truncation will give you the 6, but the remainder will give you the
+
+93
+00:06:18,560 --> 00:06:19,640
+ 3.
+
+94
+00:06:19,640 --> 00:06:22,600
+ And it turns out that that modulo is really quite useful.
+
+95
+00:06:22,600 --> 00:06:29,360
+ Like if you want to do something every hundredth time through an iteration, you take the iteration
+
+96
+00:06:29,360 --> 00:06:31,000
+ counter like 1, 2, 3.
+
+97
+00:06:31,000 --> 00:06:36,720
+ And if you modulo 100 and the result is 0, remainder 0, it's an even multiple of 100.
+
+98
+00:06:36,720 --> 00:06:38,740
+ And that means every 100 times you can do something.
+
+99
+00:06:38,740 --> 00:06:42,680
+ So we like modulo.
+
+100
+00:06:42,680 --> 00:06:45,800
+ There are side effect operators.
+
+101
+00:06:45,800 --> 00:06:47,600
+ Oops, come back.
+
+102
+00:06:47,600 --> 00:06:54,160
+ There are side effect operators, k++ says retrieve k, have it be part of an expression
+
+103
+00:06:54,160 --> 00:06:57,200
+ perhaps, and then add one to it, store it back down.
+
+104
+00:06:57,200 --> 00:07:02,680
+ So if I say k++, it says 3, but then afterwards k has become 4.
+
+105
+00:07:02,680 --> 00:07:07,280
+ So after it retrieved the k and printed it, then it turned it into 4.
+
+106
+00:07:07,280 --> 00:07:11,420
+ These are, there's a very few places that we actually use these, and then we use them
+
+107
+00:07:11,420 --> 00:07:17,360
+ all the time, but in general, you can hurt yourself if you write too much of this stuff.
+
+108
+00:07:17,360 --> 00:07:24,760
+ There is a pre-increment, minus, minus k, and that says subtract 1 from k, and then print
+
+109
+00:07:24,760 --> 00:07:27,880
+ it out, which is 3, and then the 3 goes back into k.
+
+110
+00:07:27,880 --> 00:07:35,840
+ Okay, then there are some side effect operators, j is equal to, j plus equals is the same as
+
+111
+00:07:35,840 --> 00:07:41,040
+ j equals j plus 5, and the same is true for all these things.
+
+112
+00:07:41,040 --> 00:07:47,880
+ Actually, this is just, that's a typo there, slash equals.
+
+113
+00:07:47,880 --> 00:07:53,440
+ And so most people do not use these formats, I just show them to you in case you ever see
+
+114
+00:07:53,440 --> 00:07:54,440
+ some code.
+
+115
+00:07:54,440 --> 00:07:58,480
+ I always prefer to write my increments and decrements and divisions out.
+
+116
+00:07:58,480 --> 00:08:04,320
+ It's not particularly faster that way, it's just, it's a syntax.
+
+117
+00:08:04,320 --> 00:08:10,120
+ This comes from C, all of these fancy bits come from the C language, and JavaScript was
+
+118
+00:08:10,120 --> 00:08:17,760
+ just, and Java do the same thing, and so those two languages are represented here, and so
+
+119
+00:08:17,760 --> 00:08:20,440
+ that's why these operators are here.
+
+120
+00:08:20,440 --> 00:08:26,720
+ Comparison operators, all C-style languages, one of the trickiest things you gotta realize
+
+121
+00:08:26,720 --> 00:08:31,240
+ is that the single equal sign is an assignment statement, and I like to think of that as
+
+122
+00:08:31,240 --> 00:08:35,540
+ changing, so the 10 is being stored into the j.
+
+123
+00:08:35,540 --> 00:08:37,280
+ To say, is j equal to 10?
+
+124
+00:08:37,280 --> 00:08:42,920
+ This is like a question mark, I wish this was like, question equals, that would be like,
+
+125
+00:08:42,920 --> 00:08:45,480
+ is it equal to, but that's not what they do.
+
+126
+00:08:45,480 --> 00:08:49,320
+ They decided double equals was the one that was the question mark, and that's asking the
+
+127
+00:08:49,320 --> 00:08:54,060
+ question is j equal to 10, and it returns a true or a false when it's evaluated.
+
+128
+00:08:54,060 --> 00:09:00,840
+ So j equals 10 is true, j not equals 17, that's exclamation equal, again I wish this was question
+
+129
+00:09:00,840 --> 00:09:05,320
+ mark equal, but you know, that's going back to 1972, I had to catch 'em and say no, don't
+
+130
+00:09:05,320 --> 00:09:08,480
+ make double equals, make question equal.
+
+131
+00:09:08,480 --> 00:09:13,600
+ Not equal, less than, greater than, less than or equal to.
+
+132
+00:09:13,600 --> 00:09:21,320
+ Now, there's a special operator, and you see this in Python in the is and is not operator.
+
+133
+00:09:21,320 --> 00:09:27,220
+ So the double equals is a comparison with type conversion.
+
+134
+00:09:27,220 --> 00:09:33,760
+ So it says, can the left side of the double equals, the j, be converted eventually to
+
+135
+00:09:33,760 --> 00:09:35,760
+ become equal to zero.
+
+136
+00:09:35,760 --> 00:09:45,040
+ And so in this particular case, j is false, so it is of type Boolean, but a false can
+
+137
+00:09:45,040 --> 00:09:50,960
+ be coerced into zero, so false is equal to zero with some conversion.
+
+138
+00:09:50,960 --> 00:09:59,920
+ But then, then, if we want to compare two things in terms of both their type and their
+
+139
+00:09:59,920 --> 00:10:07,080
+ value with no type, implicit type conversion, if I say is j triple equals zero, that says
+
+140
+00:10:07,080 --> 00:10:15,040
+ is j the same type as zero, which is a number, and has the same value, well j is a Boolean,
+
+141
+00:10:15,040 --> 00:10:18,560
+ because it's true or false, and so this turns out to be false.
+
+142
+00:10:18,560 --> 00:10:24,920
+ So j is not triple equals, right, and j is not triple equals true, and so you have triple
+
+143
+00:10:24,920 --> 00:10:32,720
+ equals and not, it's like not equal equal, but I call it not triple equals.
+
+144
+00:10:32,720 --> 00:10:38,240
+ So there's a whole series of logical operators, much like that, that return for you true and
+
+145
+00:10:38,240 --> 00:10:41,520
+ falses, and so we've got our greater than.
+
+146
+00:10:41,520 --> 00:10:47,600
+ So we've got double ampersand, which is and, so for the whole operation, for the whole
+
+147
+00:10:47,600 --> 00:10:50,500
+ expression to be true, both sides have to be true.
+
+148
+00:10:50,500 --> 00:10:56,360
+ So is k greater than one and j less than 10, and in this case, the answer is yes.
+
+149
+00:10:56,360 --> 00:11:03,600
+ Is k greater than 10, no, and is j greater than 10, so that's true, but this one's false.
+
+150
+00:11:03,600 --> 00:11:11,480
+ False and true become false, or is k greater than 10 or j greater than 10, no, neither
+
+151
+00:11:11,480 --> 00:11:14,820
+ are true, so the result is false.
+
+152
+00:11:14,820 --> 00:11:18,880
+ And then there is a unary not operator that you can put in front.
+
+153
+00:11:18,880 --> 00:11:22,920
+ That's like saying k greater than 10, well, that's false, but then if I apply a not to
+
+154
+00:11:22,920 --> 00:11:26,560
+ it, it becomes true.
+
+155
+00:11:26,560 --> 00:11:29,800
+ String concatenation is a little different than Python.
+
+156
+00:11:29,800 --> 00:11:35,720
+ It uses the plus operator, but it will convert things to string, right?
+
+157
+00:11:35,720 --> 00:11:42,000
+ So x equals 12 is a number, and I'm adding a number to a string, and it's like, meh,
+
+158
+00:11:42,000 --> 00:11:46,080
+ I'll convert that into a string, and so that 12 becomes a string, and you end up with a
+
+159
+00:11:46,080 --> 00:11:49,960
+ string that's hello, 12 people with one, two characters.
+
+160
+00:11:49,960 --> 00:11:53,640
+ The number 12 is long gone at that point, so there is a conversion.
+
+161
+00:11:53,640 --> 00:11:59,080
+ Normally, if this were in Python, you'd say stir parenthesis to force it to a string.
+
+162
+00:11:59,080 --> 00:12:02,360
+ The plus is smart enough to automatically convert it.
+
+163
+00:12:02,360 --> 00:12:08,880
+ You can debate which of those things you prefer, and I can come down on either side of it.
+
+164
+00:12:08,880 --> 00:12:12,480
+ There is something to respect about Python that basically says, if you want it to be
+
+165
+00:12:12,480 --> 00:12:15,000
+ a string, you as the programmer should say it.
+
+166
+00:12:15,000 --> 00:12:20,000
+ Languages that are sort of loosey-goosey that do things to make it most convenient like
+
+167
+00:12:20,000 --> 00:12:27,280
+ PHP and JavaScript sometimes can get you into trouble, and this is where you can always
+
+168
+00:12:27,280 --> 00:12:33,640
+ tell that NaN, if you see NaN in a user interface anywhere in the web, you're like, oh, somebody
+
+169
+00:12:33,640 --> 00:12:39,740
+ did a JavaScript calculation just like this, and something went wrong, because that's what
+
+170
+00:12:39,740 --> 00:12:44,800
+ happens when additions go wrong.
+
+171
+00:12:44,800 --> 00:12:47,880
+ We'll see that in a second.
+
+172
+00:12:47,880 --> 00:12:53,440
+ Variable typing is a little confusing because we're using plus.
+
+173
+00:12:53,440 --> 00:12:57,080
+ Sometimes we're using it for concatenation, sometimes we're using it for addition.
+
+174
+00:12:57,080 --> 00:13:01,240
+ In this particular case, where we take the string 1, 2, 3 and add 10 to it, it sees that
+
+175
+00:13:01,240 --> 00:13:04,400
+ as a concatenation and gives us back a string.
+
+176
+00:13:04,400 --> 00:13:11,280
+ If we say the string 1, 2, 3 times 1, then it converts that to an integer times 1, and
+
+177
+00:13:11,280 --> 00:13:16,080
+ that's 10, so it becomes 133, but that is a number.
+
+178
+00:13:16,080 --> 00:13:19,120
+ What happens if we take something that's not even a number?
+
+179
+00:13:19,120 --> 00:13:25,800
+ Well, multiply it by 1, that is not a number, and then we add 10 to it, and it's still not
+
+180
+00:13:25,800 --> 00:13:32,200
+ a number, and this is not a number, and that's why you see NaN on all these webpages like
+
+181
+00:13:32,200 --> 00:13:38,080
+ percent complete, NaN, and that's because it was adding 1 to something like a fault,
+
+182
+00:13:38,080 --> 00:13:41,440
+ you know, that wasn't a number and couldn't be conversed into a number, like a string
+
+183
+00:13:41,440 --> 00:13:44,840
+ or something.
+
+184
+00:13:44,840 --> 00:13:50,040
+ And once you get something that's a NaN, it's very, very, very sticky, but it doesn't blow
+
+185
+00:13:50,040 --> 00:13:55,600
+ up, it just keeps running and shows you NaN in your user interface.
+
+186
+00:13:55,600 --> 00:14:02,380
+ So if a string can't be converted because of mathematical operation, you get a NaN.
+
+187
+00:14:02,380 --> 00:14:07,880
+ There is a function called isNaN that gives you a true false, like is there a NaN, NaN
+
+188
+00:14:07,880 --> 00:14:13,720
+ is a value, it's not the lack of a value, something like null or, null would be a lack
+
+189
+00:14:13,720 --> 00:14:17,400
+ of a value, or empty in Python would be the lack of a value.
+
+190
+00:14:17,400 --> 00:14:23,520
+ Is NaN is an actual value, it's just like a value that's the indication within a number,
+
+191
+00:14:23,520 --> 00:14:25,520
+ that is, it's a number.
+
+192
+00:14:25,520 --> 00:14:30,040
+ If you divide by 2, you get another value that's not really a value, it's a special
+
+193
+00:14:30,040 --> 00:14:34,200
+ value called infinity, and if you like add 1 to infinity, you still get infinity, if
+
+194
+00:14:34,200 --> 00:14:38,400
+ you subtract 1 from infinity, you still get infinity, there's no amount of 1s that you
+
+195
+00:14:38,400 --> 00:14:44,200
+ can subtract from infinity to get anything less than infinity, because it's like infinity,
+
+196
+00:14:44,200 --> 00:14:47,560
+ and there's a function called isInfinity that lets you know if the variable you're
+
+197
+00:14:47,560 --> 00:14:52,360
+ working with is infinity.
+
+198
+00:14:52,360 --> 00:15:00,160
+ So this seems kind of silly, but it turns out that in some ways JavaScript has one of
+
+199
+00:15:00,160 --> 00:15:09,080
+ the coolest number classes, because it uses this internal number format called IEEE450,
+
+200
+00:15:09,080 --> 00:15:16,280
+ 455 or something, and it's actually a scientifically thought out really good way to do number calculations,
+
+201
+00:15:16,280 --> 00:15:20,840
+ and so in some ways it does a better job of flowing point numbers than some other programming
+
+202
+00:15:20,840 --> 00:15:26,160
+ languages that just kind of do unpredictable things at things like infinity and dividing
+
+203
+00:15:26,160 --> 00:15:29,900
+ by 0 or multiplying by an undefined or something.
+
+204
+00:15:29,900 --> 00:15:37,220
+ So you've got to respect JavaScript because they stuck to their guns on numeric calculations
+
+205
+00:15:37,220 --> 00:15:42,000
+ and they're pure, they're the way computer science researchers suggest this is the way
+
+206
+00:15:42,000 --> 00:15:44,120
+ you do it and that's exactly the way you do it.
+
+207
+00:15:44,120 --> 00:15:49,360
+ It seems a little weird, I make a little fun of it, but it's actually pretty cool.
+
+208
+00:15:49,360 --> 00:15:52,440
+ If you're in an untyped language and you're passed in like a variable and you want to
+
+209
+00:15:52,440 --> 00:15:58,360
+ know is this a string or is this an array or is this an object, there is a unary function
+
+210
+00:15:58,360 --> 00:16:04,520
+ which is just takes one parameter type of, that's P-I-P-E-O-F, that's the function,
+
+211
+00:16:04,520 --> 00:16:10,440
+ that's like multiplication or minus sign, type of X, and that returns a string.
+
+212
+00:16:10,440 --> 00:16:12,980
+ So type of a number is the string number.
+
+213
+00:16:12,980 --> 00:16:19,680
+ If we say what is Y, the string double Y, it's a string, and you can ask for a variable
+
+214
+00:16:19,680 --> 00:16:24,720
+ that doesn't exist yet and that will be undefined, and so you can say is this variable defined
+
+215
+00:16:24,720 --> 00:16:25,720
+ yet?
+
+216
+00:16:25,720 --> 00:16:26,720
+ Well, it's not defined yet.
+
+217
+00:16:26,720 --> 00:16:30,040
+ This is where you're writing code and maybe you pass the parameter and you don't know
+
+218
+00:16:30,040 --> 00:16:33,880
+ what it is and you say is it a string, is it an array, or whatever, so it's good to
+
+219
+00:16:33,880 --> 00:16:38,800
+ be able to in an untyped environment to take a variable that you might have been given
+
+220
+00:16:38,800 --> 00:16:43,240
+ by somebody else and check its type.
+
+221
+00:16:43,240 --> 00:16:45,960
+ So up next we're going to talk about functions and arrays.
+

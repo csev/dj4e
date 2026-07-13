@@ -1,0 +1,1145 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+ Hello and welcome to a walkthrough for Django for Everybody.
+
+00:00:05.000 --> 00:00:11.500
+ So the walkthrough that we're going to be doing is the walkthrough for the My Articles,
+
+00:00:11.500 --> 00:00:16.000
+ which is really focusing on the notion of owning rows in a model.
+
+00:00:16.000 --> 00:00:20.000
+ And what I've got going here is I'm logged in twice.
+
+00:00:20.000 --> 00:00:25.000
+ I'm logged in one with a user ID of one, and the other is a user ID of two.
+
+00:00:25.000 --> 00:00:31.000
+ So let's just do a quick demonstration of what really owning rows in a model is.
+
+00:00:31.000 --> 00:00:34.000
+ So here I'm logged in as my first user, and now I'm logged in.
+
+00:00:34.000 --> 00:00:39.000
+ I'm using a separate browser, because this is Safari and this is Firefox.
+
+00:00:39.000 --> 00:00:42.500
+ You can't just do this with tabs, because the cookies are shared between tabs.
+
+00:00:42.500 --> 00:00:45.000
+ And so you can log in and log out.
+
+00:00:45.000 --> 00:00:49.000
+ I want to just be logged in simultaneously.
+
+00:00:49.000 --> 00:00:53.000
+ And so I've got two of these tabs.
+
+00:00:53.000 --> 00:01:00.000
+ Refresh. So you'll notice that the edit and delete buttons show up differently for different users.
+
+00:01:00.000 --> 00:01:07.000
+ And that's because this row in the table lawnmower belongs to this user, user number two.
+
+00:01:07.000 --> 00:01:10.000
+ And these two rows belong to this user.
+
+00:01:10.000 --> 00:01:21.000
+ So if I take a look at administration and I go down into groups--not groups, not groups--users.
+
+00:01:21.000 --> 00:01:24.000
+ Now I can kind of hover, figure out that CSEV is two.
+
+00:01:24.000 --> 00:01:27.000
+ You can kind of see at the bottom there.
+
+00:01:27.000 --> 00:01:30.000
+ And DJ Furi is user one, and CSEV is user number two.
+
+00:01:30.000 --> 00:01:35.000
+ So those are the primary keys in Django's user table.
+
+00:01:35.000 --> 00:01:43.000
+ And now if I go and I take a look at these articles, you will see--and this looks a lot like if you were looking at, say, your autos.
+
+00:01:43.000 --> 00:01:49.000
+ Here's the rows or the models in articles.
+
+00:01:49.000 --> 00:01:55.000
+ And if I look at lawnmower, you see that there is a title, some text, and the owner is a dropdown.
+
+00:01:55.000 --> 00:01:57.000
+ And that's because this is a one-to-many field.
+
+00:01:57.000 --> 00:02:02.000
+ This is a one-to-many field between the articles and the users.
+
+00:02:02.000 --> 00:02:10.000
+ And then if I switch to a different--so that's CSEV.
+
+00:02:10.000 --> 00:02:15.000
+ So CSEV owns the lawnmower.
+
+00:02:15.000 --> 00:02:19.000
+ So I must be--I'm logged in as DJ Furi here.
+
+00:02:19.000 --> 00:02:20.000
+ No, here.
+
+00:02:20.000 --> 00:02:22.000
+ That's my name on DJ Furi.
+
+00:02:22.000 --> 00:02:28.000
+ And if I switch to Trombone, we'll see that that one belongs to DJ Furi.
+
+00:02:28.000 --> 00:02:33.000
+ Now I can sit and edit this in admin, right?
+
+00:02:33.000 --> 00:02:34.000
+ But that's not the point.
+
+00:02:34.000 --> 00:02:37.000
+ The point is to build software.
+
+00:02:37.000 --> 00:02:44.000
+ If you'll notice, when I create a new article, it doesn't ask me what user it was, right?
+
+00:02:44.000 --> 00:02:48.000
+ So this is where you would say Dodge or whatever when you were doing cars.
+
+00:02:48.000 --> 00:03:02.000
+ So this is like a race car, slightly used, Neon.
+
+00:03:02.000 --> 00:03:05.000
+ So now I have another one, right?
+
+00:03:05.000 --> 00:03:12.000
+ And so the key thing was is it looks like a create from things we've done before.
+
+00:03:12.000 --> 00:03:14.000
+ Look at my articles. Here's this.
+
+00:03:14.000 --> 00:03:17.000
+ But somehow, magically, this owner field is populated.
+
+00:03:17.000 --> 00:03:25.000
+ And that's the essence of owned rows, is we've got a row, a column, and these are marked.
+
+00:03:25.000 --> 00:03:33.000
+ And we know in all our code, we know the difference, for example, between things we own and things we don't know--things we own and we don't own.
+
+00:03:33.000 --> 00:03:43.000
+ So if I hit refresh over here, there's a slightly used race car, but--slightly used race car, but I can't edit it, right?
+
+00:03:43.000 --> 00:03:45.000
+ So that's the ownership.
+
+00:03:45.000 --> 00:03:48.000
+ Now, I don't know where to start.
+
+00:03:48.000 --> 00:03:49.000
+ There's a lot to cover here.
+
+00:03:49.000 --> 00:03:53.000
+ Let me show you--let me show--I don't know.
+
+00:03:53.000 --> 00:03:56.000
+ OK, I'll just start with--wait, we're always starting.
+
+00:03:56.000 --> 00:03:58.000
+ Let's start with--I'm running this locally.
+
+00:03:58.000 --> 00:04:00.000
+ I don't know what that bug is there.
+
+00:04:00.000 --> 00:04:01.000
+ That's not a bug.
+
+00:04:01.000 --> 00:04:05.000
+ So this is--just looks kind of like your autos.
+
+00:04:05.000 --> 00:04:10.000
+ If you look at it, it looks pretty much like the autos that might add a mileage or price in there or something.
+
+00:04:10.000 --> 00:04:13.000
+ The only thing that's really different at all is this.
+
+00:04:13.000 --> 00:04:14.000
+ There's a foreign key.
+
+00:04:14.000 --> 00:04:17.000
+ Now, in your autos, you have a foreign key to make.
+
+00:04:17.000 --> 00:04:24.000
+ And the key difference here--the only thing that's new is this idea of where the foreign key is pointing at.
+
+00:04:24.000 --> 00:04:31.000
+ Now, the problem is in Django, there is actually a table that all these users live in.
+
+00:04:31.000 --> 00:04:34.000
+ And I can probably come over here and type tables.
+
+00:04:34.000 --> 00:04:35.000
+ And I can see it.
+
+00:04:35.000 --> 00:04:37.000
+ I think it's probably here.
+
+00:04:37.000 --> 00:04:45.000
+ So let's just try saying select star from auth user.
+
+00:04:45.000 --> 00:04:47.000
+ So we should see a bunch of rows.
+
+00:04:47.000 --> 00:04:49.000
+ And so there are my users.
+
+00:04:49.000 --> 00:04:54.000
+ CSEV, you kind of--it's all jammed together in DJFree.
+
+00:04:54.000 --> 00:04:57.000
+ So this is row one for DJFree and CSEV.
+
+00:04:57.000 --> 00:05:00.000
+ So there is a table and a model.
+
+00:05:00.000 --> 00:05:08.000
+ The difference is we're not allowed to know that this is the user model in the auth application.
+
+00:05:08.000 --> 00:05:13.000
+ And so what happens is we have to let Django tell us what the name of that model is.
+
+00:05:13.000 --> 00:05:17.000
+ And so we go into settings, which is settings.py, actually.
+
+00:05:17.000 --> 00:05:19.000
+ And we're going to pull in the settings.py.
+
+00:05:19.000 --> 00:05:22.000
+ And the default is auth user model.
+
+00:05:22.000 --> 00:05:24.000
+ And that's the name of the model.
+
+00:05:24.000 --> 00:05:28.000
+ And so this is the foreign key to a place that we don't exactly know,
+
+00:05:28.000 --> 00:05:31.000
+ but Django will tell us and put in a string here.
+
+00:05:31.000 --> 00:05:34.000
+ If we were to print this out, we would see what that is.
+
+00:05:34.000 --> 00:05:36.000
+ That's just a string, but it's not a string we mess with.
+
+00:05:36.000 --> 00:05:38.000
+ On delete cascade, that's just normal.
+
+00:05:38.000 --> 00:05:42.000
+ The kind of parent row, the one row is in users.
+
+00:05:42.000 --> 00:05:47.000
+ And if you delete a user, that means that all of the rows that belong to that user will get deleted
+
+00:05:47.000 --> 00:05:49.000
+ because on delete cascade.
+
+00:05:49.000 --> 00:05:51.000
+ I'm choosing that as the model.
+
+00:05:51.000 --> 00:05:59.000
+ And so you see created at, if we go back into the-- you see all of these things.
+
+00:05:59.000 --> 00:06:02.000
+ Now created at, admin doesn't show.
+
+00:06:02.000 --> 00:06:04.000
+ It's pretty smart knowing about created at and update.
+
+00:06:04.000 --> 00:06:06.000
+ So it doesn't bother doing that.
+
+00:06:06.000 --> 00:06:08.000
+ And it actually updates them automatically.
+
+00:06:08.000 --> 00:06:14.000
+ So it knows something about created at and updated at in admin.
+
+00:06:14.000 --> 00:06:18.000
+ So that is our model.
+
+00:06:18.000 --> 00:06:24.000
+ If we were to take a look at MyArts article,
+
+00:06:24.000 --> 00:06:28.000
+ you will see that there is a foreign key right there.
+
+00:06:28.000 --> 00:06:29.000
+ There's a foreign key.
+
+00:06:29.000 --> 00:06:40.000
+ And if we say select star from MyArts article, you will see that there is a foreign key in there.
+
+00:06:40.000 --> 00:06:42.000
+ So this row belongs to user one.
+
+00:06:42.000 --> 00:06:43.000
+ This row belongs to user one.
+
+00:06:43.000 --> 00:06:45.000
+ That row belongs to user two.
+
+00:06:45.000 --> 00:06:49.000
+ And that row belongs to user one, which is perfectly reflected here.
+
+00:06:49.000 --> 00:06:52.000
+ So now I am user one, so I can edit three of them.
+
+00:06:52.000 --> 00:06:55.000
+ Now I am here with user two, and I can edit one of them.
+
+00:06:55.000 --> 00:06:58.000
+ So I'm editing the ones where I own it.
+
+00:06:58.000 --> 00:07:04.000
+ So ultimately, we're going to write a bunch of code so that these numbers are properly updated.
+
+00:07:04.000 --> 00:07:09.000
+ So when you add the article, it works the way you want it to work.
+
+00:07:09.000 --> 00:07:12.000
+ So let's just take a look at urls.py.
+
+00:07:12.000 --> 00:07:14.000
+ It's pretty boring.
+
+00:07:14.000 --> 00:07:16.000
+ This looks just like autos.
+
+00:07:16.000 --> 00:07:23.000
+ I probably hoisted up success URL here, put that in the as view as a parameter.
+
+00:07:23.000 --> 00:07:28.000
+ And so that makes my views even simpler.
+
+00:07:28.000 --> 00:07:31.000
+ MyArts colon all points to that view.
+
+00:07:31.000 --> 00:07:37.000
+ I think it actually is kind of prettier to put it in here because this is sort of a URL place.
+
+00:07:37.000 --> 00:07:38.000
+ And so it's not in my view.
+
+00:07:38.000 --> 00:07:42.000
+ So that makes my views really succinct.
+
+00:07:42.000 --> 00:07:53.000
+ And so it's like what you did once you got your autos down to just using the generics.
+
+00:07:53.000 --> 00:07:58.000
+ And so I have a list, a detail, a create, an update, and a delete.
+
+00:07:58.000 --> 00:08:02.000
+ And I have a model called article, which I just showed you.
+
+00:08:02.000 --> 00:08:08.000
+ And I am going to reuse some general purpose views for owner kinds of rows.
+
+00:08:08.000 --> 00:08:12.000
+ Now, these are not from Django, these are from me.
+
+00:08:12.000 --> 00:08:13.000
+ I made them.
+
+00:08:13.000 --> 00:08:15.000
+ And now I'm using them.
+
+00:08:15.000 --> 00:08:18.000
+ So article list view extends owner list view.
+
+00:08:18.000 --> 00:08:21.000
+ And then I can put all my things in there.
+
+00:08:21.000 --> 00:08:25.000
+ The success URL, actually, I don't need that here.
+
+00:08:25.000 --> 00:08:29.000
+ But for create view, I do need a success URL.
+
+00:08:29.000 --> 00:08:33.000
+ But for create view, that success URL comes right from here.
+
+00:08:33.000 --> 00:08:36.000
+ So I could have put it either here or I could have put it here.
+
+00:08:36.000 --> 00:08:40.000
+ For me, after a while, I think this is prettier.
+
+00:08:40.000 --> 00:08:45.000
+ Because now I can look at all the names of my arts, et cetera.
+
+00:08:45.000 --> 00:08:46.000
+ So that's kind of nice.
+
+00:08:46.000 --> 00:08:47.000
+ OK.
+
+00:08:47.000 --> 00:08:49.000
+ So here's views.
+
+00:08:49.000 --> 00:08:51.000
+ We're going to come back to this.
+
+00:08:51.000 --> 00:08:56.000
+ All the brains of this operation are in owner list view, owner detail view, create view, update view.
+
+00:08:56.000 --> 00:08:58.000
+ And we'll look at that last.
+
+00:08:58.000 --> 00:09:00.000
+ So that's where the hardest part is.
+
+00:09:00.000 --> 00:09:04.000
+ But let's first look at the template.
+
+00:09:04.000 --> 00:09:07.000
+ And so here's the template.
+
+00:09:07.000 --> 00:09:09.000
+ This looks a lot like your autos.
+
+00:09:09.000 --> 00:09:17.000
+ The only real difference here is that this edit and delete button is inside of an if statement.
+
+00:09:17.000 --> 00:09:21.000
+ So it's article update, article ID, article delete, article ID.
+
+00:09:21.000 --> 00:09:22.000
+ That's the same.
+
+00:09:22.000 --> 00:09:24.000
+ You've done that, right?
+
+00:09:24.000 --> 00:09:32.000
+ But all it says is if article.owner is equal to the current logged in user, article.owner is one of the article lists.
+
+00:09:32.000 --> 00:09:36.000
+ That's just one of the fields in the model, which happens to be a number.
+
+00:09:36.000 --> 00:09:40.000
+ But we're giving this user for free, right?
+
+00:09:40.000 --> 00:09:43.000
+ It just hands us user, and so we can compare it.
+
+00:09:43.000 --> 00:09:48.000
+ So if this is one that we own, we show this link.
+
+00:09:48.000 --> 00:09:51.000
+ And if it's not one that we own, we don't show the link, right?
+
+00:09:51.000 --> 00:09:53.000
+ So we don't show the link for the ones that we own.
+
+00:09:53.000 --> 00:10:02.000
+ Now, I hope by now you realize that we have to also protect, right?
+
+00:10:02.000 --> 00:10:05.000
+ So this is number four, right?
+
+00:10:05.000 --> 00:10:08.000
+ And if I click edit, number five.
+
+00:10:08.000 --> 00:10:11.000
+ But what if I just change this to four?
+
+00:10:11.000 --> 00:10:20.000
+ We still just not putting up the link does not mean that we can't have someone go to that link.
+
+00:10:20.000 --> 00:10:24.000
+ So I'm cheating by putting in this link, but this is going to blow up, right?
+
+00:10:24.000 --> 00:10:30.000
+ And so we'll show you how just because you don't put the link up doesn't mean that people can't go to the link.
+
+00:10:30.000 --> 00:10:32.000
+ They can guess what the link is.
+
+00:10:32.000 --> 00:10:34.000
+ I just did that.
+
+00:10:34.000 --> 00:10:36.000
+ I went to an article I could update.
+
+00:10:36.000 --> 00:10:40.000
+ I noticed the primary key of one I could not update to be four.
+
+00:10:40.000 --> 00:10:46.000
+ And then I went to five, and then I just edited it, changed it to four, and I attempted to update four.
+
+00:10:46.000 --> 00:10:49.000
+ So it's not good enough just to not show the link.
+
+00:10:49.000 --> 00:10:51.000
+ That's actually not security.
+
+00:10:51.000 --> 00:10:53.000
+ That just is prettiness, usability.
+
+00:10:53.000 --> 00:10:56.000
+ Don't show a link that is going to blow up if you click on it.
+
+00:10:56.000 --> 00:10:59.000
+ So that's not really protecting us.
+
+00:10:59.000 --> 00:11:05.000
+ This if statement is not really protecting us from clicking on or attempting to go edit or delete.
+
+00:11:05.000 --> 00:11:09.000
+ It's just not showing it if it's not going to work.
+
+00:11:09.000 --> 00:11:10.000
+ OK.
+
+00:11:10.000 --> 00:11:18.000
+ And again, article.owner is just a column in this model, and user is the current logged in user.
+
+00:11:18.000 --> 00:11:21.000
+ OK.
+
+00:11:21.000 --> 00:11:23.000
+ OK.
+
+00:11:23.000 --> 00:11:31.000
+ So what we'd seen before is I would create a view and then use it in my URLs.py, and it would extend another view.
+
+00:11:31.000 --> 00:11:36.000
+ So now it's time to take a look at where this view is being defined.
+
+00:11:36.000 --> 00:11:41.000
+ And so here's our view, generic view, the New York list view, delete view.
+
+00:11:41.000 --> 00:11:42.000
+ These are the generic ones.
+
+00:11:42.000 --> 00:11:49.000
+ And all I'm really doing here is I'm creating a class called owner list view that extends list view.
+
+00:11:49.000 --> 00:11:53.000
+ Now, it pulls in everything that list view is.
+
+00:11:53.000 --> 00:11:55.000
+ And you'll notice I've added nothing to it.
+
+00:11:55.000 --> 00:11:59.000
+ And I really could because the list view doesn't really care.
+
+00:11:59.000 --> 00:12:04.000
+ It's not really doing anything other than the fact that that value is in the models.
+
+00:12:04.000 --> 00:12:06.000
+ So it's going to come in.
+
+00:12:06.000 --> 00:12:10.000
+ So I could have made this be list view, but I just want it to be pretty.
+
+00:12:10.000 --> 00:12:15.000
+ I want to make it so that I could just say owner list view, owner detail view.
+
+00:12:15.000 --> 00:12:20.000
+ And so you'll notice that I'm not making any changes at the moment of inheritance.
+
+00:12:20.000 --> 00:12:22.000
+ I'm not changing owner.
+
+00:12:22.000 --> 00:12:28.000
+ So owner list view is exactly the same as list view, and owner detail is exactly the same as detail.
+
+00:12:28.000 --> 00:12:33.000
+ I just did it to make it pretty in case later maybe I want to add some.
+
+00:12:33.000 --> 00:12:36.000
+ But now we get to owner create view.
+
+00:12:36.000 --> 00:12:41.000
+ Owner create view is something that matters a lot.
+
+00:12:41.000 --> 00:12:45.000
+ So there's two things we've got to do for owner create view.
+
+00:12:45.000 --> 00:12:48.000
+ So let's go ahead and start to add an article.
+
+00:12:48.000 --> 00:12:54.000
+ So the first thing is there is no field here for which user it is.
+
+00:12:54.000 --> 00:12:56.000
+ It would be kind of silly.
+
+00:12:56.000 --> 00:13:01.000
+ And I can actually mess this up.
+
+00:13:01.000 --> 00:13:12.000
+ So if I go to create view here and I add user, and if I hit refresh on the create view,
+
+00:13:12.000 --> 00:13:16.000
+ come on, back up.
+
+00:13:16.000 --> 00:13:19.000
+ Oh, it's not user.
+
+00:13:19.000 --> 00:13:23.000
+ Owner.
+
+00:13:23.000 --> 00:13:30.000
+ So if I add it to that list, and part of this what's going on here is there is both a model and a form.
+
+00:13:30.000 --> 00:13:35.000
+ This fields equals is informing the form, and the form is the user interface.
+
+00:13:35.000 --> 00:13:37.000
+ So look at this.
+
+00:13:37.000 --> 00:13:42.000
+ I'm allowing the user to specify it, and now they can set the owner.
+
+00:13:42.000 --> 00:13:43.000
+ Pretty convenient.
+
+00:13:43.000 --> 00:13:45.000
+ Well, that's not what we want.
+
+00:13:45.000 --> 00:13:50.000
+ So that's why in this create view, you say don't let them set the owner.
+
+00:13:50.000 --> 00:13:54.000
+ I don't want them to see the owner because it takes a little while for this thing to restart.
+
+00:13:54.000 --> 00:13:57.000
+ OK, now it's restarted, and I can hit refresh.
+
+00:13:57.000 --> 00:14:01.000
+ So it was blowing up. It was just because I was coming here too fast.
+
+00:14:01.000 --> 00:14:03.000
+ What is that?
+
+00:14:03.000 --> 00:14:07.000
+ I don't know what that is.
+
+00:14:07.000 --> 00:14:12.000
+ So I'll go back to the views.
+
+00:14:12.000 --> 00:14:14.000
+ Maybe I'll have some tiny little bug.
+
+00:14:14.000 --> 00:14:16.000
+ I'll dig through that bug later.
+
+00:14:16.000 --> 00:14:17.000
+ It's working.
+
+00:14:17.000 --> 00:14:20.000
+ It's probably passing the autograder, so I'm pretty happy.
+
+00:14:20.000 --> 00:14:23.000
+ So remember that there are two sides to this.
+
+00:14:23.000 --> 00:14:28.000
+ One is the database side, and that's what the model deals with, and then there is a form.
+
+00:14:28.000 --> 00:14:41.000
+ So these views, this list view, if you recall, once we tell it the model, it actually makes a form.
+
+00:14:41.000 --> 00:14:45.000
+ So in this create view, it's making a form from article,
+
+00:14:45.000 --> 00:14:49.000
+ copying all the fields in article or the fields according to this little list.
+
+00:14:49.000 --> 00:14:51.000
+ And so that's why we're doing it.
+
+00:14:51.000 --> 00:14:54.000
+ So the key there is we're explicitly not putting owner in there,
+
+00:14:54.000 --> 00:14:57.000
+ and we're not putting created at or updated at.
+
+00:14:57.000 --> 00:15:05.000
+ If I wanted to put created at in here,
+
+00:15:05.000 --> 00:15:07.000
+ I'd say, "Hey, let's show them created at."
+
+00:15:07.000 --> 00:15:13.000
+ OK, let's refresh, refresh, refresh. OK.
+
+00:15:13.000 --> 00:15:16.000
+ Oh, OK.
+
+00:15:16.000 --> 00:15:20.000
+ So again, it's trying to go from the article model to make a form,
+
+00:15:20.000 --> 00:15:23.000
+ and it's not an editable field, so it's mad at me.
+
+00:15:23.000 --> 00:15:27.000
+ So I'll go back and fix it. I'm sorry.
+
+00:15:27.000 --> 00:15:29.000
+ OK, you get the idea.
+
+00:15:29.000 --> 00:15:34.000
+ It uses this list of fields to make a form.
+
+00:15:34.000 --> 00:15:40.000
+ The same for article and for update.
+
+00:15:40.000 --> 00:15:54.000
+ In fact, the update and the create are so equivalent that the template for them is shared.
+
+00:15:54.000 --> 00:16:02.000
+ It's basically -- we'll talk about crispy tags separately in a different little video.
+
+00:16:02.000 --> 00:16:04.000
+ The form is the same.
+
+00:16:04.000 --> 00:16:07.000
+ The difference is when the update comes, there is already data in it.
+
+00:16:07.000 --> 00:16:11.000
+ That's the only difference between a create and an update.
+
+00:16:11.000 --> 00:16:14.000
+ It looks exactly the same, but update has data in it.
+
+00:16:14.000 --> 00:16:16.000
+ A create has no data in it.
+
+00:16:16.000 --> 00:16:20.000
+ So the code between create and update is super equivalent.
+
+00:16:20.000 --> 00:16:24.000
+ Very, very similar, and the template is similar as well.
+
+00:16:24.000 --> 00:16:26.000
+ OK, so there we go.
+
+00:16:26.000 --> 00:16:30.000
+ So we got create view, delete view, et cetera.
+
+00:16:30.000 --> 00:16:33.000
+ Now, I'm going to focus on create view.
+
+00:16:33.000 --> 00:16:37.000
+ And the key to create view is now in owner.py.
+
+00:16:37.000 --> 00:16:40.000
+ Here's our form. That's pretty straightforward.
+
+00:16:40.000 --> 00:16:46.000
+ In owner.py, this create view now has a little bit more to it.
+
+00:16:46.000 --> 00:16:49.000
+ The list view and the detail view just inherit it.
+
+00:16:49.000 --> 00:16:53.000
+ So the first thing is that create view has a login required mixing.
+
+00:16:53.000 --> 00:16:56.000
+ And that's because if you're going to create it, you need to be a logged in user.
+
+00:16:56.000 --> 00:16:59.000
+ But to view it, you don't actually have to be a logged in user.
+
+00:16:59.000 --> 00:17:05.000
+ Or if I was to-- OK, let me log out here.
+
+00:17:05.000 --> 00:17:07.000
+ So now I'm logged in as anybody.
+
+00:17:07.000 --> 00:17:09.000
+ And so I can see all these. I can't edit any of them.
+
+00:17:09.000 --> 00:17:11.000
+ I could log in if I want.
+
+00:17:11.000 --> 00:17:13.000
+ And a detail view also works.
+
+00:17:13.000 --> 00:17:16.000
+ So I'm completely logged out here.
+
+00:17:16.000 --> 00:17:18.000
+ Oh, add article. Yeah.
+
+00:17:18.000 --> 00:17:25.000
+ So add article is protected by-- add article is protected by login.
+
+00:17:25.000 --> 00:17:32.000
+ So owner create view, owner create view, login required mixing.
+
+00:17:32.000 --> 00:17:36.000
+ And I do this because I don't want to trust the user who's writing this view
+
+00:17:36.000 --> 00:17:39.000
+ to put the login required mixing here.
+
+00:17:39.000 --> 00:17:45.000
+ Because I am writing code right here that depends on the fact that this person is logged in.
+
+00:17:45.000 --> 00:17:47.000
+ So this is like a guardian pattern.
+
+00:17:47.000 --> 00:17:51.000
+ I'm putting this in here so I don't end up with tracebacks inside my code.
+
+00:17:51.000 --> 00:17:57.000
+ I don't want-- if I didn't put this in owner-- if I didn't put login required mixing in owner create view,
+
+00:17:57.000 --> 00:18:01.000
+ then they forgot to put in the views.py.
+
+00:18:01.000 --> 00:18:04.000
+ They forgot to put it in article create view.
+
+00:18:04.000 --> 00:18:06.000
+ Then this code would blow up.
+
+00:18:06.000 --> 00:18:10.000
+ It would trace back at when I tried to set object owner to self-request user.
+
+00:18:10.000 --> 00:18:11.000
+ It would just blow up.
+
+00:18:11.000 --> 00:18:19.000
+ OK. So I'm extending create view, which is inheriting all the functionality.
+
+00:18:19.000 --> 00:18:23.000
+ And I'm only going to override one method.
+
+00:18:23.000 --> 00:18:25.000
+ This is object orientation.
+
+00:18:25.000 --> 00:18:29.000
+ And you've got to go read all the documentation.
+
+00:18:29.000 --> 00:18:32.000
+ This documentation right here.
+
+00:18:32.000 --> 00:18:40.000
+ Show you that documentation.
+
+00:18:40.000 --> 00:18:43.000
+ So this documentation is hard to find.
+
+00:18:43.000 --> 00:18:48.000
+ And I'm sure I helped myself by doing some stack overflows.
+
+00:18:48.000 --> 00:18:53.000
+ So that's why I put little notes at the bottom of the file, things that took me a long time to find.
+
+00:18:53.000 --> 00:19:00.000
+ So this form model mixin, and that is what they're really doing is they're giving us for these editing fields like the update.
+
+00:19:00.000 --> 00:19:07.000
+ They're saying these are the functions that are in this, and I can override them.
+
+00:19:07.000 --> 00:19:10.000
+ So the one that I'm overriding is the form valid.
+
+00:19:10.000 --> 00:19:14.000
+ And what that does is it basically says, here's your form.
+
+00:19:14.000 --> 00:19:21.000
+ Save it to the database and set the current object for view and then redirect to get success URL.
+
+00:19:21.000 --> 00:19:29.000
+ That's its job, except that right before it's going to save the form instance, I want to do something myself.
+
+00:19:29.000 --> 00:19:39.000
+ So what I'm doing here is I'm saying, and the form is what's being called as the parameter, which is the form that has been pulled in from the post data and handed to me.
+
+00:19:39.000 --> 00:19:43.000
+ And so what I'm going to do is I'm going to say, save it, but don't save it to the disk.
+
+00:19:43.000 --> 00:19:45.000
+ That's what commit equals false means.
+
+00:19:45.000 --> 00:19:50.000
+ Don't save it to the database, just save it into this variable object.
+
+00:19:50.000 --> 00:19:52.000
+ And then I'm going to set the object owner.
+
+00:19:52.000 --> 00:20:00.000
+ I'm simply going to copy the current logged in user into owner, and then I'm going to set it to the database.
+
+00:20:00.000 --> 00:20:12.000
+ And then what I'm going to do is I'm going to call the original form valid, passing form in as a parameter that's in this class.
+
+00:20:12.000 --> 00:20:16.000
+ And that's really not going to do much, right?
+
+00:20:16.000 --> 00:20:21.000
+ Because it knows that it's already been saved, so it's not going to save it again.
+
+00:20:21.000 --> 00:20:27.000
+ And then what it's going to do is it's just going to do the redirect to the success URL.
+
+00:20:27.000 --> 00:20:32.000
+ So this is rather late in the process of create view.
+
+00:20:32.000 --> 00:20:36.000
+ It's been validated, it's checked for bad data, et cetera, et cetera, et cetera.
+
+00:20:36.000 --> 00:20:40.000
+ And so this is like right before the redirect happens.
+
+00:20:40.000 --> 00:20:48.000
+ And so at a high level, my whole goal was to pause the saving of this data to the database
+
+00:20:48.000 --> 00:20:54.000
+ and sneak the actual current logged in user into the owner column and then be done with it.
+
+00:20:54.000 --> 00:20:56.000
+ And so that's the basic overriding.
+
+00:20:56.000 --> 00:21:08.000
+ I'm really extending form valid to cause my code to be called right before the default code is called.
+
+00:21:08.000 --> 00:21:11.000
+ OK, so that's owner create view.
+
+00:21:11.000 --> 00:21:20.000
+ And that's how, once I add an article and put some stuff in and I submit, right as I submit it,
+
+00:21:20.000 --> 00:21:27.000
+ and right before it's saved, there is a little field called owner that's going to be updated, boop, and it's there.
+
+00:21:27.000 --> 00:21:31.000
+ And so the owner field came from this code.
+
+00:21:31.000 --> 00:21:36.000
+ Now, I don't have to--I could have put this in this view.py.
+
+00:21:36.000 --> 00:21:38.000
+ You know, I got this really awesome, createable thing.
+
+00:21:38.000 --> 00:21:40.000
+ I can write really cool code.
+
+00:21:40.000 --> 00:21:44.000
+ I'm going to make hundreds of views that are--and we will, through the rest of the semester,
+
+00:21:44.000 --> 00:21:46.000
+ do this over and over and over again.
+
+00:21:46.000 --> 00:21:51.000
+ We're never going to change this file again, OK?
+
+00:21:51.000 --> 00:21:56.000
+ So now let's talk about edit.
+
+00:21:56.000 --> 00:21:59.000
+ OK, so there's two things.
+
+00:21:59.000 --> 00:22:04.000
+ So here we're going to load article six, and then we're going to put out a form that has all this stuff.
+
+00:22:04.000 --> 00:22:15.000
+ So the first thing that's got to happen in owner update view is we got to check to see if this belongs to the current logged in user.
+
+00:22:15.000 --> 00:22:21.000
+ Remember when I tried to go to whatever it was for here and it blew up?
+
+00:22:21.000 --> 00:22:24.000
+ This is the moment where I'm going to protect it.
+
+00:22:24.000 --> 00:22:31.000
+ So if we take a look at the moment where it's loading the model, I have a link to that.
+
+00:22:31.000 --> 00:22:35.000
+ I'm going to go populate. Let's go to Stack Overflow here.
+
+00:22:35.000 --> 00:22:41.000
+ This one I got from Stack Overflow.
+
+00:22:41.000 --> 00:22:52.000
+ Been there 10 years, probably a good one.
+
+00:22:52.000 --> 00:22:56.000
+ Middleware.
+
+00:22:56.000 --> 00:23:02.000
+ Somewhere in here. I should make that link be a better link.
+
+00:23:02.000 --> 00:23:12.000
+ Oh, I like this one. I'm going to put a link in just to this one here.
+
+00:23:12.000 --> 00:23:31.000
+ Link straight to that one. It's telling us what to do. You see I just borrowed this right there. Form valid.
+
+00:23:31.000 --> 00:23:47.000
+ I can't find quickly where I can do this. But query set. Query set is called when it's loading ID number four.
+
+00:23:47.000 --> 00:23:54.000
+ So it's going to do a load. So query set is not the actual load, but it is the query to the database that we're going to do.
+
+00:23:54.000 --> 00:24:05.000
+ So what I'm going to do is I'm going to tweak the query set. And this query set is probably going to say show me where ID equals four.
+
+00:24:05.000 --> 00:24:12.000
+ So it's going to say something like select from articles where ID equals four.
+
+00:24:12.000 --> 00:24:22.000
+ And if I just did the normal query set, it would work. But I'm going to change the query set.
+
+00:24:22.000 --> 00:24:28.000
+ So what I'm going to do is I'm going to call the default get query set in the super class, which is the delete view class.
+
+00:24:28.000 --> 00:24:36.000
+ And that's going to say query where the primary key equals four in this particular case.
+
+00:24:36.000 --> 00:24:44.000
+ But then what I'm going to do is I'm going to add another filter. This is like and. And owner equals the current logged in user.
+
+00:24:44.000 --> 00:24:53.000
+ So. So number four is owned by user two, but a logged in user is one.
+
+00:24:53.000 --> 00:25:02.000
+ So this is going to be and logged in as user one. So when it does the query, it says give me the thing that's ID equals four and user user ID equals one.
+
+00:25:02.000 --> 00:25:08.000
+ It's going to get no records. And so as the delete code or the update.
+
+00:25:08.000 --> 00:25:16.000
+ My looking at delete, update and delete are the same here.
+
+00:25:16.000 --> 00:25:22.000
+ Before it does an update, it has to load the old data.
+
+00:25:22.000 --> 00:25:30.000
+ And I have made it so that if you're not loading data on something that you that you that you own, then it's going to give you a 404.
+
+00:25:30.000 --> 00:25:39.000
+ So it's like that wasn't found. Now, four does exist. It just doesn't exist for the current logged in user. But five does. And it does belong to me.
+
+00:25:39.000 --> 00:25:43.000
+ Right. Now, the other thing is.
+
+00:25:43.000 --> 00:25:50.000
+ Is when I it's going to call, it's going to call get query set again. New stuff.
+
+00:25:50.000 --> 00:25:54.000
+ X, Y, Z, one, two, three.
+
+00:25:54.000 --> 00:26:01.000
+ So when you submit it, it actually is going to call get query set one more time.
+
+00:26:01.000 --> 00:26:06.000
+ Before it actually stores the data. And so let me show you this will be kind of tricky.
+
+00:26:06.000 --> 00:26:14.000
+ So I'm going to try to mess with it on for change. Try to change for someone going to edit screen.
+
+00:26:14.000 --> 00:26:34.000
+ And I'm going to inspect element. And I am going to somewhere in here. Fine.
+
+00:26:34.000 --> 00:26:44.000
+ Here's a hidden input type hidden. So that is the input type equals hit.
+
+00:26:44.000 --> 00:26:49.000
+ No, that's the middleware token. That's not the one I want to change.
+
+00:26:49.000 --> 00:27:06.000
+ Oh, this is going to. Oh, it's because it's in this URL.
+
+00:27:06.000 --> 00:27:14.000
+ I don't know. I don't think if I change this to four, it's actually going to work. Let's try it. It's probably not going to work.
+
+00:27:14.000 --> 00:27:19.000
+ OK. But the idea is eventually someone could mess with that post.
+
+00:27:19.000 --> 00:27:26.000
+ So you still got to protect it right when that data is being modified.
+
+00:27:26.000 --> 00:27:30.000
+ It actually does. It runs this code again and it won't.
+
+00:27:30.000 --> 00:27:33.000
+ It reads the thing and if it can't read it, then it won't let you update it.
+
+00:27:33.000 --> 00:27:38.000
+ And so that protects you from people breaking in and attacking there.
+
+00:27:38.000 --> 00:27:47.000
+ And the owner delete view is the same thing. So if you go into delete, it does a get get query set.
+
+00:27:47.000 --> 00:27:50.000
+ And I add this filter to say and it has to belong to the right person.
+
+00:27:50.000 --> 00:28:19.000
+ So if I try to delete Article four, boom, it says I can't load Article four. But if I come over here, I'm going to log back in. So this one, I think, was CSAT.
+
+00:28:19.000 --> 00:28:29.000
+ Yeah. So now I can. So I can't delete number. I can delete number four here because it kind of hides it, which is crappy.
+
+00:28:29.000 --> 00:28:34.000
+ But there it is. It's deleting number four. And away I go.
+
+00:28:34.000 --> 00:28:40.000
+ So. OK. A lot of stuff. A lot of stuff. OK.
+
+00:28:40.000 --> 00:28:45.000
+ So here's the thing. We're going to use owner.py over and over and over again.
+
+00:28:45.000 --> 00:28:58.000
+ We're going to write simple and elegant views. And all we have to do, ultimately, any model that we want to have this owner feature with, we add an owner column to it.
+
+00:28:58.000 --> 00:29:06.000
+ Then we have the views extend an owner view and then everything's taken care of after that point.
+
+00:29:06.000 --> 00:29:09.000
+ So it's really we're not going to change a line of this. It's really cool.
+
+00:29:09.000 --> 00:29:16.000
+ We're going to use it in project after project on table after table after table. Right. Because this can apply to different models.
+
+00:29:16.000 --> 00:29:19.000
+ It's just this one happens to be applying to the article model.
+
+00:29:19.000 --> 00:29:28.000
+ So I built a super generic owner capability that I can use over and over and just take your time.
+
+00:29:28.000 --> 00:29:34.000
+ Watch this more than once. Review object orientation. Figure this out.
+
+00:29:34.000 --> 00:29:42.000
+ It's hard. It's hard for me when I'm teaching to explain how object why object orientation is cool.
+
+00:29:42.000 --> 00:29:47.000
+ Object orientation is cool because it can let you write the super elegant and very reliable.
+
+00:29:47.000 --> 00:29:50.000
+ The fewer lines of code you write, the more reliable it is.
+
+00:29:50.000 --> 00:29:55.000
+ But the harder it is to understand because the magic is here in this object ornament pattern.
+
+00:29:55.000 --> 00:30:01.000
+ And again, it's it took me a long time to write this stuff, but now it's really gorgeous and really useful.
+
+00:30:01.000 --> 00:30:05.000
+ So keep thinking about object orientation.
+
+00:30:05.000 --> 00:30:09.000
+ We're going to be doing a lot going forward in terms of object orientation.
+
+00:30:09.000 --> 00:30:12.000
+ OK, so I hope this helps. Cheers.
+

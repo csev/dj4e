@@ -1,0 +1,290 @@
+ So now we're gonna take a quick look at URL mapping
+ and URL reversing.
+ This has to do with basically routing,
+ and it really allows us to generate links
+ from one page to another.
+ So we're in the middle of a page,
+ and we wanna make a link to a different page.
+ We gotta figure out what the string of that is.
+ So again, we're sitting here in the middle of our code,
+ we're in the views,
+ and this URL mapping is basically a set of functions
+ that allow us to read the URLs.py.
+ In a way, if all these functions didn't exist
+ that allowed us to read URLs.py,
+ we would write a bunch of functions to do that,
+ and so these are just now part of Django.
+ And so often these are used in the view.
+ Sometimes they're actually used
+ right inside URLs.py to come up.
+ So it's like, if you know the name of a view,
+ what would be the URL to get to that view?
+ And sometimes views have just a URL,
+ and sometimes they're a URL plus a parameter,
+ and that's all set up here.
+ And so it's like, give me a link to a view, please.
+ And then Django looks in the URLs.py,
+ potentially across the applications,
+ and gives you that string.
+ And it's just to avoid hard coding the strings.
+ It's really the idea.
+ And so this is just a common problem.
+ This is the documentation right from the Django website.
+ You don't wanna hard code these things.
+ You actually can, but then if you rename an application,
+ the whole idea is you could make a Django project
+ that had four or five applications,
+ and then you could reuse some of those
+ in a different Django project
+ and add some more applications.
+ So you don't want these applications
+ to have too many hard coded decisions.
+ And it might be easier to hard code some of these things,
+ but it is actually, in the long run,
+ much easier from a maintenance perspective.
+ And so it's just a, it's better maintenance.
+ It's another don't repeat yourself,
+ or doing a table lookup rather than hard coding strings.
+ It also lets you hunt around in your code
+ to see where it is that you're talking
+ to that other application.
+ 'Cause we're gonna do login eventually,
+ and login is another place.
+ It's not in our application,
+ but our application is gonna have to generate login URLs
+ by asking the login application,
+ hey, what's the URL to log in?
+ What's the URL to log out?
+ And that's where we'll mostly start doing this.
+ So I wanna talk about it now,
+ so when we get to log in and log out,
+ you'll have that make more sense to you.
+ And it also is some of the stuff that you're doing
+ from the tutorials, you're putting these reverse
+ lookup things in, and you may or may not know what they are.
+ And my goal here is to give you a little sense
+ of what really they're there for.
+ So let's take a look at an example.
+ So here we have our URLs.py, and most of it,
+ I mean, this is the application route,
+ so if you're looking in the samples,
+ it's in the route application.
+ The main thing that we've added is some names.
+ Names are here to look up these paths.
+ We don't really wanna look it up by this path mapping,
+ 'cause that could actually change.
+ So we're basically saying this view in your views.py,
+ second view, is gonna be referenceable
+ by this second dash view.
+ I named them differently very much on purpose.
+ So here's what happens if you just go to the route/route,
+ the name of my application.
+ It pulls up this main/html, and so the first thing
+ I wanna show you is what a hard-coded URL looks like.
+ Now we know that, blah, blah, blah,
+ samples/route/second is gonna go to that second view,
+ 'cause the application's name is route,
+ and the view name is second, and that's good.
+ That will work, it's not gonna break,
+ but this is where you lose flexibility
+ as you try to recombine the applications
+ from one end to the other.
+ And so in a sense, what we're asking to do here
+ is we're going to instead use this URL utility,
+ and so in our template, we use curly brace percent,
+ and then we're running a utility
+ that's been plugged into the template system
+ that is like, when we're running the URL function,
+ as it were, and we're gonna pass a string to it,
+ and that is, within the route application,
+ the view that is named second view.
+ So that goes into this file, routeurls.py,
+ read down the views until it finds second view,
+ and then it reverse-generates the path that works for that.
+ Now in this case, these two strings are gonna be the same,
+ and yes, that looks a little uglier,
+ but the key is that we can make changes here,
+ and this will not, the top one, route/second,
+ will not reflect the changes,
+ but if we're looking it up by name,
+ we can do all kinds of crazy things
+ and remap stuff quite naturally.
+ And so again, it's just this URL command,
+ the name of the view, the application, colon, the view.
+ So this is what it looks like when it's all said and done.
+ There's no parameters to this,
+ so if you take a look at this,
+ this route/second view ends up under this hard-coded,
+ the route/second view, the hard-coded ones,
+ ends up under the string in the URL output,
+ I mean the page output.
+ We just see the, it's /route/first is the thing
+ that comes out from running the code URL
+ and passing route colon first view in,
+ so that's what it looks up.
+ And we can make a link, this is now in a href,
+ and the actual path is sitting there in the href.
+ So now we're going to see how we do this
+ when we're going from one application to another.
+ So an application we're gonna look at in just a bit
+ is this thing called the generic views,
+ it's application called gview.
+ And we wanna make a link to that application,
+ and we know that there are two views,
+ there's a list view and a detail view,
+ and all we have to do is go take a look at the urls.py,
+ and we know that it's an application,
+ it's an application gview, and there's a,
+ this view has a name and that view has a name.
+ The view that is all the cats has got a name of cats,
+ and the view for a single cat is cat.
+ But the cat one takes a parameter, it's an integer number,
+ which is cat number 42 or whatever.
+ And so we're sitting here in the route application,
+ route application, main.html,
+ and we can now go create a URL
+ that actually is pointing to another application
+ and a view within that other application.
+ So this is a URL for gview cats,
+ and that'll just look it up.
+ So now we don't even have to know what the URL patterns are
+ inside of gview/cats.
+ Now, we can look at gview cat, which is this URL,
+ but you'll notice that this has a parameter,
+ and so we actually have to add a second parameter,
+ which is that 42 number.
+ And so this will generate the URL straight
+ to the detail page for a single cat.
+ Now, there's a lot of nice stuff about this.
+ So for example, if you omit this,
+ it's going to look this gview cat up and find it
+ and say, you know what, I'm supposed to have an integer.
+ And it'll blow up on you, right, if you get that wrong.
+ Or if you put a 42 on this one, on the gview cats,
+ you're not supposed to have a number on that.
+ But gview cat, you are supposed to have a number.
+ So this is one of the nice things about this reverse URL
+ lookup, in that we can, there's some error checking
+ that goes on, 'cause if it could just blow up silently,
+ and in many ways, when the code blows up silently,
+ it's worse than blowing up in a spectacular fashion.
+ 'Cause if it blows up in a spectacular fashion,
+ you can fix it.
+ So this is what it looks like.
+ So this gview cats URL and gview cat 42,
+ this one that actually is the detail page
+ that demands a parameter, it constructs that just fine.
+ Okay, so that's going from the route application
+ to the gview application.
+ Now, you can also, this is kind of subtle,
+ and we will need it when we start doing social login
+ using GitHub.
+ So I'll just mention it, 'cause we're deep in it right now.
+ And so basically, this is actually the overall
+ djfree-samples-urls.py, and that's the one
+ that's pulling all the URLs together,
+ kind of in the same folder as settings.py.
+ And so you're pulling in a bunch of URLs,
+ and these live in an application of their own name,
+ but we can actually give them a name of our own
+ to reference them.
+ So you can actually name them, you can reference them
+ with the name they were already given
+ by the application that we're talking to,
+ or we can say, you know what, I'm gonna call these
+ social colon, or nsroute colon.
+ So if we take this route application
+ and include all those URLs, and we're gonna
+ use a namespace of nsroute, you still can say
+ route colon, or you can also say nsroute.
+ And so you can see that in this example, right?
+ We can go to the second view of route,
+ or we can go to the second view of ns.
+ And so there's route, route is the way, one way in,
+ but nsroute is our own way in, in case we somewhere
+ have an application named route or something like that.
+ And so this allows for a second way to access
+ these URLs using a namespace.
+ And it's not in the urls.py in each application,
+ it is in the urls.py for the Django project.
+ So I just finished showing you all that in the templates,
+ but we can also do this in Python.
+ And we'll find that sometimes in like models.py
+ or views.py, or even sometimes in admin.py,
+ we'll need to sort of be able to find a view
+ in the same or another application
+ and automatically construct it.
+ Sometimes in forms.py, we're gonna do it as well.
+ And so this, you tend to call this reverse or reverse lazy
+ to look these things up.
+ And the URL feature inside of the template
+ is pretty much just calling this reverse lazy automatically
+ 'cause the parameters are kind of the same.
+ So I just wanna show you how to do some of those things
+ that I just showed you in templates,
+ how you can do them in Python as well.
+ So here's the one in templates,
+ we just have this little plugin to a template
+ called the URL plugin.
+ It takes one parameter and looks up in the urls.py
+ of the first application, the URL name, first view.
+ Maybe there's parameters, in this case there's not,
+ and then it generates a path to that /route/first, right?
+ And so that's how you do it.
+ It's really under the covers calling this reverse lazy.
+ And so these reverse and reverse lazy
+ are from the Django.urls library.
+ And so in this view, there's nothing tricky about this view,
+ it's just a class-based view, we have a get method,
+ we pass in all the request stuff.
+ But basically we can call reverse lazy
+ and pass it the exact same string,
+ this exact same string,
+ which is go into the gview application,
+ work your way down until you find the cats,
+ or go into the gview application,
+ go in and find the one for dogs,
+ or in this case, this is the dog btail,
+ and it requires a number, and so this gview dog,
+ go find that one, and then the second parameter is 42,
+ so make me one for that.
+ And in Python, u, u2, and u3 are all just strings,
+ which I'm passing in through some context,
+ under the variables x1, x2, and x3.
+ They're really lousy choices of variable names,
+ but I do that sometimes to point out
+ that they're arbitrary and capricious,
+ and all they have to do is match.
+ And so then like the x1 matches in this substitution,
+ now we're just doing string substitutions,
+ which is different than calling the URL,
+ but it's still just a bunch of strings.
+ You call reverse lazy in your Python code,
+ and now you're just pulling that string into
+ with double curly braces.
+ And so this is how it ultimately works.
+ We can, you know, we get these,
+ we're just showing how this output turns out,
+ where we go reverse lazy for gview cats, gview dogs,
+ or gview dog with an argument of 42.
+ We pass it in, we replace it,
+ and so this is how it prints out gview cats,
+ slash gview dogs, slash gview dog 42.
+ And so that's how that reversing works in Python.
+ And you'll see that certain situations,
+ whether you're like in a model,
+ sometimes you're in a model,
+ it's very common in a model to wanna put something
+ about the reverse in it.
+ And the reverse lazy says delay until later to look it up.
+ So up next, we're gonna put this all together
+ and ultimately start writing using the generic views
+ because we're gonna look at list pages and detail pages,
+ and in time, we're gonna look about delete pages
+ and update pages.
+ And Django has these wonderful features
+ that make it work really simply with very little code.
+ Well, we wanna talk about it
+ because sometimes the less code you write,
+ the harder it is to understand.
+ (upbeat music)

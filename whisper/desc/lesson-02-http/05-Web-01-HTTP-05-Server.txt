@@ -1,0 +1,7 @@
+Simple HTTP Web Server and Client in Python with Sockets
+
+python, web server, socket programming, http, get request, http response, utf-8
+
+The lecture demonstrates building a minimal HTTP web server and client in Python using socket programming. The server listens on port 9000 and returns a static HTML page containing "hello world" for any HTTP GET request. The client connects to the server via a socket and sends a GET request.
+
+The implementation adheres to HTTP/1.1 (RFC 2616) with UTF-8 encoding for the response body. The server handles connections in an infinite loop using a blocking socket accept call, sending a 200 OK status and text/html content type for each request. The example also shows that browsers automatically request the favicon.ico resource.

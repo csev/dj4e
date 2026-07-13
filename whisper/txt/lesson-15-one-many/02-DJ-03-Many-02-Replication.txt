@@ -1,0 +1,108 @@
+ so now let's design a data model usually you start out with a user interface that
+ if we're going to build an application you're going to end up with a user
+ interface in this I'm not going to really start with a user interface I'm
+ going to start with like a spreadsheet view and if you've ever done something
+ like tried to organize your music collection with a spreadsheet or a video
+ collection with a spreadsheet or you know you find that spreadsheets are
+ super convenient because you can scroll around and do stuff and you you know
+ you've learned SQL you know you can go into various cells with SQL rows and
+ columns and update and do all the stuff but you find that after a while you you
+ start repeating yourself in spreadsheets and you find it's really difficult
+ because it's really easy when you're putting data into copy paste copy paste
+ paste paste paste paste and put the same stuff in but then what if you want to
+ change it and this is where there's a vertical replication or the replication
+ of data in multiple places is very bad so here's kind of an exploded table view
+ of that same data and the this is this it's okay this is the data that we've
+ got to do so if we look at the use cases of our application what we see is
+ there's a series of books like in this cross wisdom of crowds as a book
+ introduction and networking these are all books coming down here unlocking the
+ clubhouse so the first column is titles of books the second column is the ISBN
+ and then we are sort of keeping track because we're a library you know so we
+ might have more than one book and we're going to call those the the book
+ instance so instance one instance two instance three each book each physical
+ actual book so that you might have no physical books actually or you might
+ have one physical book or five physical books and each physical book might be
+ checked out and have a due date and so we have a status and then we have
+ something like say the language of the book or the genre of the book or who
+ wrote the book right and so that's kind of our this the data we're going to
+ represent in this application now when you're looking at this the first thing
+ you do is you go like anything where you've got vertical replication is a
+ problem and so you've got to be careful so you look for vertical replication and
+ the places that are problematic in this table view of all of our data like the
+ status the language the genre you see the word think think think think think those
+ are strings right they're not numbers okay wisdom of crowds wisdom of crowds
+ wisdom of crowds and the problem here with wisdom of crowds is that there are
+ three instances of the book but then and because we've got this all in one row I
+ mean one table with just a bunch of columns and not multiple tables well we
+ have to replicate the name wisdom of crowds three times so that we can
+ represent the three instances the same is true about the English language and
+ the genre and the author name right these are this these are these are the
+ same authors okay so this vertical replication is your first clue that says
+ that you've got to you've got to come up with a smarter data model than just this
+ and so the idea is is you're not allowed to put something like the string en
+ English in more than once in your whole database so what you have to do is you
+ have to split this all out somehow you have to remove duplication by making a
+ language table a book table and an instance table and so in the book table
+ you only put wisdom of crowds once and you only put the English language in
+ once and Spanish in once but then the problem is okay somehow we've taken this
+ data moved it from one big long bunch of columns to three tables with sets of
+ columns but we still have to represent all the original data that we were
+ working with before we have to represent all that stuff and so this is where we
+ have to be able to make connections and this is the this is the essence of
+ relational databases and that is they don't replicate data but they make
+ connections from one data item to another data item and so what we're
+ going to do here is in the case of the wisdom of crowds we are going to have
+ three book instances but somehow they all point to one book in the book table
+ right and so and so we have two books that point to the English language and
+ one points to the Spanish language now this seems like wow that wasn't such a
+ big deal but when you do millions of records it actually matters it's the
+ string data that gets you in trouble and requires far more scanning and far more
+ storage and another thing that happens is when you follow this rule of only one
+ copy well what if we wanted to turn this to uppercase EN or something that means
+ as long as the data is linked rather than replicated that means you're only
+ changing one copy okay so the replication has a performance advantage
+ has a storage advantage and it has a modifiability advantage when there's
+ only one place if we if we mistakenly misspelled the title of wisdom of crowds
+ it's easy we fix it it's not in these other tables whereas if we misspelled the
+ wisdom of crowds here we have to go find on the top one where it's just all one
+ big long spreadsheet we got to go and like do a search and replace but but
+ what if what if that's in a different column and so so that the the idea of
+ getting to the point where we have unique rows and we connect those rows now
+ I haven't told you much about how this magically works I just said we can draw
+ some arrows and so by drawing those arrows we got to show you how those
+ arrows get drawn because that's really important so this is how you start
+ drawing the picture of your database and so the kind of relationship we're going
+ to have between tables is like a many to one so when we say many to one what
+ we're saying is that there is one English language entry and then there
+ are many books that go to it so that's a many to one relationship so it could be
+ just one but it's many and if we look at the data model that we see from the
+ Django example from the Mozilla developer network we can look at this
+ and we can see here right this connection between the book table and
+ the language table has two ends to it and it has a direction to it and one end
+ says zero dot dot asterisk and the other end says one so this is many zero dot
+ dot asterisk means a number between zero and infinity including zero which means
+ it's possible for a book not to have a language we'd call that we call that null
+ in database concept so there's there's a book with no language or many books can
+ have one language so this is the there's one language English and there is as
+ many books as we want including potentially zero books right so it we
+ might have a language that has no books in our library with that language and
+ that's okay so in this one between book and language it's okay to have zero so
+ zero through infinity on the book side of the relationship and one on the
+ language side of the relationship if then we look at the the relationship
+ between the the book and the book instance now remember what the book
+ instance purpose is is to record the fact that we have multiple cop the
+ actual physical copies of the books that we have and so we might have multiple
+ copies and so if you look at this it's pretty much the same in that there is
+ any number of book instances from zero zero until infinities and you could have
+ a book in your book table for which you didn't actually own a physical copy and
+ that'd be okay we would know things like what its author was what its genre was
+ etc and then we would buy a copy of said book we'd add a copy to the instance
+ table and then we'd link that into that book so again you can have zero book
+ instances well zero through infinity book instances mapped to a single book
+ entry okay and so this little legend you know zero to infinity to one is is how we
+ read this table and you'll see database tables that have different syntaxes but
+ they all are capturing the same thing and that's the cardinality or the number
+ of things at each end of the arrow so up next we're going to show you how to
+ actually physically store this information in the database so far I've
+ been just sort of saying and there's an arrow but we have to have a way to
+ actually store it in the database

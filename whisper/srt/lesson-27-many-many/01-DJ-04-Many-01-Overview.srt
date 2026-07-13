@@ -1,0 +1,256 @@
+1
+00:00:00,000 --> 00:00:05,020
+ so now we're in the second half of our data modeling exploration we've talked
+
+2
+00:00:05,020 --> 00:00:09,560
+ about one-to-many and now we're going to talk about many-to-many just to remember
+
+3
+00:00:09,560 --> 00:00:15,840
+ we are in the in the bowels of a of a Django application and we're really very
+
+4
+00:00:15,840 --> 00:00:21,820
+ much talking about the model.py file and how we mess with that we're talking a
+
+5
+00:00:21,820 --> 00:00:26,320
+ little bit about the shell and how we can sort of look at the model.py and
+
+6
+00:00:26,320 --> 00:00:31,480
+ store stuff in the database how we can like migrate make migrations and update
+
+7
+00:00:31,480 --> 00:00:36,520
+ the database and and then read and write data from the database through the
+
+8
+00:00:36,520 --> 00:00:40,840
+ models and so this we're sort of narrowing in eventually we're going to
+
+9
+00:00:40,840 --> 00:00:44,900
+ see all the rest of the Django application the views the forms the
+
+10
+00:00:44,900 --> 00:00:49,160
+ templates and done a little bit with routing and a little bit with admin but
+
+11
+00:00:49,160 --> 00:00:52,680
+ just remember that we're going to look at each of these pieces in turn and
+
+12
+00:00:52,680 --> 00:00:59,160
+ eventually make some sense out of them so in this data model which I think is a
+
+13
+00:00:59,160 --> 00:01:05,480
+ really cool data model because it shows a two one-to-many relationships and a and
+
+14
+00:01:05,480 --> 00:01:10,080
+ two many-to-many relationships one very simple and one a little bit more complex
+
+15
+00:01:10,080 --> 00:01:15,520
+ both the genre and the author are example of one-to-many and just sort of
+
+16
+00:01:15,520 --> 00:01:19,840
+ foreshadowing see the one dot dot asterisk there on both ends of the links
+
+17
+00:01:19,840 --> 00:01:25,320
+ well that basically says one or more up to an infinite the other ones zero dot
+
+18
+00:01:25,320 --> 00:01:30,020
+ dot the lines kind of covering it zero or more and one or more so the one to
+
+19
+00:01:30,020 --> 00:01:35,640
+ many has one on the one side sometimes it has zero on or one but one on one
+
+20
+00:01:35,640 --> 00:01:40,680
+ side and then zero dot dot star or one dot dot star so many to many is a
+
+21
+00:01:40,680 --> 00:01:46,400
+ different kind of creature so remember how in the last modeling exercise I
+
+22
+00:01:46,400 --> 00:01:52,000
+ kind of you'll notice I showed you genre and author and then I kind of stopped
+
+23
+00:01:52,000 --> 00:01:57,320
+ talking about them I only talked about language and book instance so in this
+
+24
+00:01:57,320 --> 00:02:01,040
+ one we're going to talk about genre and author and that's because genre and
+
+25
+00:02:01,040 --> 00:02:06,960
+ author are kind of problematic because really each book can have multiple
+
+26
+00:02:06,960 --> 00:02:12,560
+ authors and each each book can be multiple genres and so in that previous
+
+27
+00:02:12,560 --> 00:02:16,840
+ lecture I kept these really simple and and you see this syntax here where I'm
+
+28
+00:02:16,840 --> 00:02:20,840
+ just kind of making a spreadsheet or another way to be thinking about it'd be
+
+29
+00:02:20,840 --> 00:02:26,160
+ a single single wide table with all my data in one table but I'm starting to
+
+30
+00:02:26,160 --> 00:02:30,300
+ put commas in and so when you have commas in a user interface you think of
+
+31
+00:02:30,300 --> 00:02:33,960
+ this as perhaps a multi select where you have a list of things and you can
+
+32
+00:02:33,960 --> 00:02:38,480
+ highlight more than one of those things and so anytime you sort of see this
+
+33
+00:02:38,480 --> 00:02:44,840
+ pattern it's another form of replication and that is that the Raspberry Pi book
+
+34
+00:02:44,840 --> 00:02:49,480
+ can be of the tech genre and the kids genre and the wizard stay up late book
+
+35
+00:02:49,480 --> 00:02:53,600
+ can be of the tech genre and the thinking genre right some books have one
+
+36
+00:02:53,600 --> 00:02:59,000
+ genre some books have two genres some books have one author some have two but
+
+37
+00:02:59,000 --> 00:03:04,320
+ then the problem is is they might have ten authors or twenty authors and so how
+
+38
+00:03:04,320 --> 00:03:10,440
+ do we represent these things and and if you're sort of looking at either a UI or
+
+39
+00:03:10,440 --> 00:03:17,040
+ or sort of a UI or just kind of a flat data table you start seeing these commas
+
+40
+00:03:17,040 --> 00:03:20,960
+ and as soon as you see the commas you think to yourself that is an indicator
+
+41
+00:03:20,960 --> 00:03:25,560
+ that this might be a many-to-many relationship so if this were a one to
+
+42
+00:03:25,560 --> 00:03:31,200
+ one to many not one to one this was a one to many this was a one to many
+
+43
+00:03:31,200 --> 00:03:35,200
+ relationship sort of like what we did with languages we would have a book and
+
+44
+00:03:35,200 --> 00:03:39,840
+ that would have a genre foreign key in it that would point to a row in a genre
+
+45
+00:03:39,840 --> 00:03:44,800
+ table and that would make some sense right but that doesn't make sense
+
+46
+00:03:44,800 --> 00:03:48,920
+ because we have to have genres more than one and we you could basically decide
+
+47
+00:03:48,920 --> 00:03:52,620
+ for your application developers that you can't have more than one genre but the
+
+48
+00:03:52,620 --> 00:03:56,520
+ application developers would say sorry we're librarians and we know that
+
+49
+00:03:56,520 --> 00:03:59,880
+ there's more than one genre so you the programmer have got to come up with a
+
+50
+00:03:59,880 --> 00:04:05,800
+ data model that represents that and so if this was a one to many you could have
+
+51
+00:04:05,800 --> 00:04:10,840
+ like a genre ID and each book would be able to pick a row out of the genre and
+
+52
+00:04:10,840 --> 00:04:18,120
+ so they would sort of mark themselves now this is another moment where it's a
+
+53
+00:04:18,120 --> 00:04:24,480
+ warning sign and you're like well maybe we would just have two foreign keys and
+
+54
+00:04:24,480 --> 00:04:29,280
+ we just how about books are only allowed to have two genres you know maybe one's
+
+55
+00:04:29,280 --> 00:04:35,560
+ not enough but two's enough oh man let's make it three and so in and people who
+
+56
+00:04:35,560 --> 00:04:39,480
+ are doing data modeling earlier early in their career they were like yeah I'll
+
+57
+00:04:39,480 --> 00:04:44,680
+ just make a genre ID oh one genre ID oh two and then later like genre ID oh three
+
+58
+00:04:44,680 --> 00:04:51,800
+ and away you go and this is completely wrong because genres of course is a weird
+
+59
+00:04:51,800 --> 00:04:55,840
+ example but if it's authors there are plenty of books with eight or nine ten
+
+60
+00:04:55,840 --> 00:05:00,840
+ eleven authors right and so this when you see yourself thinking this in your
+
+61
+00:05:00,840 --> 00:05:07,360
+ head that like oh I'll just add a like an array of things here no and and it it
+
+62
+00:05:07,360 --> 00:05:13,840
+ has to do with it it violates the basic notion of relations and connections and
+
+63
+00:05:13,840 --> 00:05:20,680
+ how you model stuff to the extent that you can with connections and so that
+
+64
+00:05:20,680 --> 00:05:35,400
+ leads us to what's called the many to many
+

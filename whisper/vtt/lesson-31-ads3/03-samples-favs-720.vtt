@@ -1,0 +1,1364 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.000
+ Hello and welcome to another of the sample code walkthroughs on Django for Everybody.
+
+00:00:06.000 --> 00:00:10.000
+ This particular sample walkthrough is the favorite things.
+
+00:00:10.000 --> 00:00:14.000
+ You can see the source code here in FAVS.
+
+00:00:14.000 --> 00:00:20.000
+ Hopefully you have, like I do, the whole source code of this entire DJ Free samples checked out somewhere,
+
+00:00:20.000 --> 00:00:27.000
+ maybe on your local computer or maybe on a separate Python Anywhere website in a way that you can watch it.
+
+00:00:27.000 --> 00:00:33.000
+ And if you don't have that, you can play with these samples here at samples.djfore.com.
+
+00:00:33.000 --> 00:00:39.000
+ I'm going to run my local copy. So let's talk a little bit about what we're doing.
+
+00:00:39.000 --> 00:00:45.000
+ We're really demonstrating many-to-many accounts, but in this case we're also demonstrating AJAX.
+
+00:00:45.000 --> 00:00:48.000
+ And I can show you how AJAX works at a high level.
+
+00:00:48.000 --> 00:00:55.000
+ So normally if I click on, you know, raindrops on roses and all things, you see an entire request response cycle.
+
+00:00:55.000 --> 00:00:57.000
+ You see lots of things going on here.
+
+00:00:57.000 --> 00:01:01.000
+ And if I click on this, I go up to here.
+
+00:01:01.000 --> 00:01:05.000
+ The very first page is a bunch of HTML that came out.
+
+00:01:05.000 --> 00:01:09.000
+ And then the rest of it is like bootstrap, etc. that was loaded by that page.
+
+00:01:09.000 --> 00:01:13.000
+ And so you have to kind of scroll back up.
+
+00:01:13.000 --> 00:01:16.000
+ But now I'm going to clear this. I'll go back to all things.
+
+00:01:16.000 --> 00:01:20.000
+ So that was one page with lots of sort of derivative stuff.
+
+00:01:20.000 --> 00:01:24.000
+ But what we're going to do in this is when we hit this favorite button,
+
+00:01:24.000 --> 00:01:27.000
+ we're not going to see a full screen refresh.
+
+00:01:27.000 --> 00:01:33.000
+ We've got some JavaScript code in here that's going to make this, when I click on it, it's going to make it filled in.
+
+00:01:33.000 --> 00:01:40.000
+ But it's also going to have to update something in the database so that it remembers that this is one of my favorite things for the logged in user.
+
+00:01:40.000 --> 00:01:42.000
+ So I'm going to hit it.
+
+00:01:42.000 --> 00:01:51.000
+ And you see that I hit this favorite and that called a view inside the server, which updated the state.
+
+00:01:51.000 --> 00:01:57.000
+ And now if I refresh the whole page, it's going to show it to me and it's remembered this, right?
+
+00:01:57.000 --> 00:02:01.000
+ So I refresh the entire favorite list.
+
+00:02:01.000 --> 00:02:09.000
+ And if I new add a new one, whiskers on kittens.
+
+00:02:09.000 --> 00:02:12.000
+ This is just a normal bit of code that's not that different.
+
+00:02:12.000 --> 00:02:18.000
+ Sound of music.
+
+00:02:18.000 --> 00:02:21.000
+ So like this one, I've got a favorite, this one I don't have a favorite.
+
+00:02:21.000 --> 00:02:24.000
+ I don't have that favorited.
+
+00:02:24.000 --> 00:02:31.000
+ And so but Ajax is the way that we can both.
+
+00:02:31.000 --> 00:02:34.000
+ Well, it's just JavaScript and jQuery that's updating the UI.
+
+00:02:34.000 --> 00:02:40.000
+ But we can change data on the server by just hitting a URL, in this case to the post request.
+
+00:02:40.000 --> 00:02:45.000
+ So we do if we look at this, it actually sent a post request.
+
+00:02:45.000 --> 00:02:48.000
+ If you recall, we're not supposed to change the server state on a get request.
+
+00:02:48.000 --> 00:02:53.000
+ So this is to not be tacky, we're going to send a post request.
+
+00:02:53.000 --> 00:03:04.000
+ And again, if you see this in the source, which we will, you don't want a spider to go down these get requests.
+
+00:03:04.000 --> 00:03:06.000
+ They'll see these URLs in the JavaScript.
+
+00:03:06.000 --> 00:03:09.000
+ We just hope and they won't do it because they see it's a post request.
+
+00:03:09.000 --> 00:03:13.000
+ So if I hit refresh now, the data has been updated.
+
+00:03:13.000 --> 00:03:29.000
+ So if I take a quick look at the admin user interface, admin, and I look at Fez, this is my, this is my many.
+
+00:03:29.000 --> 00:03:31.000
+ Well, let me just stay here, right?
+
+00:03:31.000 --> 00:03:34.000
+ So this means that the user, DJ Free, likes raindrops.
+
+00:03:34.000 --> 00:03:41.000
+ And so if I do a refresh here, so that means that me, the logged in user, DJ Free, likes this.
+
+00:03:41.000 --> 00:03:47.000
+ Now, if I say I would also like whiskered on kittens, it's going to update the database, see there.
+
+00:03:47.000 --> 00:03:53.000
+ And then if I come over here, I can hit refresh and you see that DJ Free likes raindrops.
+
+00:03:53.000 --> 00:04:00.000
+ And it's just a many to many table with an outward connection to raindrops on roses and another outward connection to the user DJ Free.
+
+00:04:00.000 --> 00:04:03.000
+ I'm going to delete this.
+
+00:04:03.000 --> 00:04:06.000
+ I'm going to delete this from within the administration.
+
+00:04:06.000 --> 00:04:13.000
+ Now, this is exactly what the undelete button does.
+
+00:04:13.000 --> 00:04:17.000
+ Now, the state of the system doesn't know that I deleted this in the background.
+
+00:04:17.000 --> 00:04:23.000
+ But if I hit refresh, you see it now knows that it's deleted because it actually went and it queried all those tables.
+
+00:04:23.000 --> 00:04:25.000
+ And there was really only one favorite.
+
+00:04:25.000 --> 00:04:32.000
+ OK, so let's take a look at the way this kind of comes together.
+
+00:04:32.000 --> 00:04:35.000
+ We will eventually get back to all this JavaScript.
+
+00:04:35.000 --> 00:04:40.000
+ So let's start with the models.
+
+00:04:40.000 --> 00:04:46.000
+ The model, yeah, so thing, of course, has some title, like a lot of things, some text.
+
+00:04:46.000 --> 00:04:54.000
+ We have a foreign key in the owner because we want to be able to mark these things as belonging to somebody.
+
+00:04:54.000 --> 00:05:02.000
+ This owner right here indicates who owns it, i.e. who will get the edit and delete, just like everything we've done that does that.
+
+00:05:02.000 --> 00:05:05.000
+ Favorites is the new bit we're adding.
+
+00:05:05.000 --> 00:05:08.000
+ And so we're basically saying, OK, we're going to.
+
+00:05:08.000 --> 00:05:10.000
+ So this foreign key is a one to many, right?
+
+00:05:10.000 --> 00:05:13.000
+ Because that's one user to many things.
+
+00:05:13.000 --> 00:05:15.000
+ But this is the many to many.
+
+00:05:15.000 --> 00:05:18.000
+ And we're this is also to off user.
+
+00:05:18.000 --> 00:05:23.000
+ Normally, many to many is three tables, the kind of the left table, the right table and the middle table.
+
+00:05:23.000 --> 00:05:26.000
+ Well, in this case, we got the ones table.
+
+00:05:26.000 --> 00:05:29.000
+ But the right table, as it were, is the user model itself.
+
+00:05:29.000 --> 00:05:32.000
+ And that's OK, because the user model is a table.
+
+00:05:32.000 --> 00:05:37.000
+ And all we're doing with the settings.off user model is knowing what table that is.
+
+00:05:37.000 --> 00:05:41.000
+ And of course, the created ad and updated ad and the title, that does.
+
+00:05:41.000 --> 00:05:43.000
+ So this is our through model.
+
+00:05:43.000 --> 00:05:52.000
+ And of course, when you're in the middle of a foreign key, you effectively have a foreign key to the left and a foreign key to the right.
+
+00:05:52.000 --> 00:05:56.000
+ And so this is like we have a foreign key back to thing.
+
+00:05:56.000 --> 00:05:59.000
+ And that's a one to many relationship and we have a foreign key to the users.
+
+00:05:59.000 --> 00:06:02.000
+ And that's a one to many relationship.
+
+00:06:02.000 --> 00:06:13.000
+ In this case, the on delete models equals cascade, means if a thing is deleted and there's a fav row that references the thing, the fav rows that reference the thing will be deleted.
+
+00:06:13.000 --> 00:06:20.000
+ And the same is true for if a user gets deleted, all the fav rows except so either side, either left or the right of this.
+
+00:06:20.000 --> 00:06:28.000
+ We could, if one of those records goes, the corresponding records in fav will be deleted and you can either delete things or you can delete users.
+
+00:06:28.000 --> 00:06:31.000
+ And the fav rows are sort of automatically maintained.
+
+00:06:31.000 --> 00:06:38.000
+ Now, the one thing we're doing here is a little different than what we did in the comments one is we've added this unique together.
+
+00:06:38.000 --> 00:06:44.000
+ And that simply means that you can't insert more than one combination of a thing and a user.
+
+00:06:44.000 --> 00:06:47.000
+ So it's not like you can favorite it a lot.
+
+00:06:47.000 --> 00:06:51.000
+ If you keep hitting favorite, there's only one row.
+
+00:06:51.000 --> 00:07:01.000
+ If there's a row in here that exists, i.e. right here, if this row exists and it connects the two, then it's favorited.
+
+00:07:01.000 --> 00:07:06.000
+ So in the other examples, you'll notice that we modeled something at this connection.
+
+00:07:06.000 --> 00:07:08.000
+ This is really a pure many to many.
+
+00:07:08.000 --> 00:07:16.000
+ And this unique together basically says the only data that matters is the actual connection between thing and user.
+
+00:07:16.000 --> 00:07:22.000
+ And this is just kind of a little fancy way to make it so that the admin user interface looks really cool.
+
+00:07:22.000 --> 00:07:24.000
+ Right, DJ4E likes whiskers.
+
+00:07:24.000 --> 00:07:28.000
+ That's just that's what you're doing with these string classes.
+
+00:07:28.000 --> 00:07:33.000
+ OK, so of course, you'll do your migrations when you get that.
+
+00:07:33.000 --> 00:07:36.000
+ That's already taken care of.
+
+00:07:36.000 --> 00:07:39.000
+ Let's take a look at a couple of things.
+
+00:07:39.000 --> 00:07:43.000
+ Let's let's just start with urls.py.
+
+00:07:43.000 --> 00:07:47.000
+ Make it a little smaller so it sort of fits better, a little wider.
+
+00:07:47.000 --> 00:07:48.000
+ There we go.
+
+00:07:48.000 --> 00:07:51.000
+ So this looks very similar to a lot of things that we've done.
+
+00:07:51.000 --> 00:07:58.000
+ We've got a main view, we've got a detail view, we've got a create view, delete view.
+
+00:07:58.000 --> 00:08:02.000
+ So those are all sort of we've talked about those before and we've used those.
+
+00:08:02.000 --> 00:08:04.000
+ This is the new thing here.
+
+00:08:04.000 --> 00:08:10.000
+ And so this is this is the URL that we're going to hit if we're going to do a favorite or an unfavorite.
+
+00:08:10.000 --> 00:08:12.000
+ And it is the primary key of the thing.
+
+00:08:12.000 --> 00:08:17.000
+ And that's why I named this thing slash thing primary key.
+
+00:08:17.000 --> 00:08:21.000
+ I'm not wanting to call that thing pk and then favorite, right?
+
+00:08:21.000 --> 00:08:24.000
+ And then that's going to call the add favorite view.
+
+00:08:24.000 --> 00:08:29.000
+ And of course, this thing favorite is just a way to reference it in templates and in views.
+
+00:08:29.000 --> 00:08:31.000
+ And the same thing for unfavorite.
+
+00:08:31.000 --> 00:08:35.000
+ So we've got a little tiny add favorite view and a delete favorite view.
+
+00:08:35.000 --> 00:08:41.000
+ And in terms of this, the only real code that we're going to change from previous examples
+
+00:08:41.000 --> 00:08:48.000
+ is the list view because the list view has to be augmented to actually show the little asterisks.
+
+00:08:48.000 --> 00:08:50.000
+ And the list template has got to be augmented.
+
+00:08:50.000 --> 00:08:53.000
+ As a matter of fact, the most complex bit of this is the list view.
+
+00:08:53.000 --> 00:08:56.000
+ And these two have got to be added as well.
+
+00:08:56.000 --> 00:09:04.000
+ So let's take a quick look at the views.
+
+00:09:04.000 --> 00:09:09.000
+ I'll go ahead and CD templates slash Favs.
+
+00:09:09.000 --> 00:09:12.000
+ So let's start with our list view.
+
+00:09:12.000 --> 00:09:13.000
+ Okay.
+
+00:09:13.000 --> 00:09:19.000
+ And go a little larger.
+
+00:09:19.000 --> 00:09:20.000
+ There we go.
+
+00:09:20.000 --> 00:09:21.000
+ Here's our list view.
+
+00:09:21.000 --> 00:09:23.000
+ And let's take a look at our list view.
+
+00:09:23.000 --> 00:09:33.000
+ So the first thing is because of that owner field, right, I am going to import the owner detail view,
+
+00:09:33.000 --> 00:09:40.000
+ owner list view, and owner create view.
+
+00:09:40.000 --> 00:09:41.000
+ And so I've got that.
+
+00:09:41.000 --> 00:09:46.000
+ And actually, I'm importing it from a different project.
+
+00:09:46.000 --> 00:09:47.000
+ That's okay.
+
+00:09:47.000 --> 00:09:50.000
+ This owner.py is in the MyArts.
+
+00:09:50.000 --> 00:09:52.000
+ But you might have it also locally.
+
+00:09:52.000 --> 00:09:53.000
+ It'd be owner.py.
+
+00:09:53.000 --> 00:10:02.000
+ So again, the whole idea here is that the owner field in the models, vimodels.py,
+
+00:10:02.000 --> 00:10:18.000
+ this owner field is managed, like in many of these, by us creating my dot dot slash MyArts owner.
+
+00:10:18.000 --> 00:10:23.000
+ And basically, we're creating this owner list view, the owner detail view, owner create view.
+
+00:10:23.000 --> 00:10:28.000
+ And if you recall from these, these are the places where we've kind of overridden the original
+
+00:10:28.000 --> 00:10:32.000
+ automatic create view, automatic update view, which we've used for lots of things.
+
+00:10:32.000 --> 00:10:37.000
+ Except when we're creating it, we've got to put the request user in right before.
+
+00:10:37.000 --> 00:10:39.000
+ We split the save into two pieces.
+
+00:10:39.000 --> 00:10:42.000
+ And then we half save it.
+
+00:10:42.000 --> 00:10:44.000
+ Then we set the owner field.
+
+00:10:44.000 --> 00:10:46.000
+ Then we finish the saving.
+
+00:10:46.000 --> 00:10:51.000
+ And then the update view and the delete view is more about the query set.
+
+00:10:51.000 --> 00:10:54.000
+ And it basically says, I'm not going to let you retrieve this for update.
+
+00:10:54.000 --> 00:10:56.000
+ That's what query set is.
+
+00:10:56.000 --> 00:11:01.000
+ I'm not going to let you retrieve this for update unless you own it.
+
+00:11:01.000 --> 00:11:06.000
+ And so that's what this is basically saying is, I'm going to also filter these based on
+
+00:11:06.000 --> 00:11:10.000
+ the owner must be equal to the current logged in user.
+
+00:11:10.000 --> 00:11:14.000
+ And this code right here, this code right here, is exactly the same for delete.
+
+00:11:14.000 --> 00:11:19.000
+ So what we're doing is loading the record prior to delete.
+
+00:11:19.000 --> 00:11:22.000
+ And we're saying, look, if you don't own it, I'm not going to load it, which means you can't
+
+00:11:22.000 --> 00:11:26.000
+ delete it because it gets a 404 not found.
+
+00:11:26.000 --> 00:11:32.000
+ And so, again, that's in the delete view and the update view, right?
+
+00:11:32.000 --> 00:11:37.000
+ That's all here because it's going to do a get or 404, right?
+
+00:11:37.000 --> 00:11:39.000
+ And so in there, it does a get 404.
+
+00:11:39.000 --> 00:11:43.000
+ Again, this particular one, we've got to do our own get or 404.
+
+00:11:43.000 --> 00:11:49.000
+ And inside delete view and update view, it's going to do a get or 404, get object or 404.
+
+00:11:49.000 --> 00:11:59.000
+ And then this code right here, if it's like ID equals primary key and owner equals self.requestUser,
+
+00:11:59.000 --> 00:12:01.000
+ the answer is no.
+
+00:12:01.000 --> 00:12:05.000
+ And so this is going to blow up, this delete view and update view.
+
+00:12:05.000 --> 00:12:08.000
+ Now, that's just a review of stuff we've been doing for a couple of examples.
+
+00:12:08.000 --> 00:12:10.000
+ So I'm not going to go into super great detail.
+
+00:12:10.000 --> 00:12:16.000
+ So what I want to do is I want to show you thing list view.
+
+00:12:16.000 --> 00:12:19.000
+ Now, actually, it does owner list view, but if you go back and look at owner list view,
+
+00:12:19.000 --> 00:12:23.000
+ it doesn't really do anything other than the base one.
+
+00:12:23.000 --> 00:12:29.000
+ So it basically looks like most of these, except what we've done is we've overwritten the get request.
+
+00:12:29.000 --> 00:12:31.000
+ So we're overriding the get request.
+
+00:12:31.000 --> 00:12:34.000
+ And some of this is the stuff that's part of the default,
+
+00:12:34.000 --> 00:12:39.000
+ meaning it always would go get thing list objects.all.
+
+00:12:39.000 --> 00:12:44.000
+ And it would always pass into the template, thing list.
+
+00:12:44.000 --> 00:12:49.000
+ And if you take a look at the template, what it does is it checks to see if there's a thing list,
+
+00:12:49.000 --> 00:12:51.000
+ then it loops through it, and then it prints all this stuff out.
+
+00:12:51.000 --> 00:13:01.000
+ And literally, a lot of this is very similar to everything we've done with previous sample code.
+
+00:13:01.000 --> 00:13:06.000
+ But the problem is we need to get the data so that we can know the starting value,
+
+00:13:06.000 --> 00:13:10.000
+ whether these are supposed to be filled in or not.
+
+00:13:10.000 --> 00:13:14.000
+ And so what we do is we say, OK, and we only do that if they're authenticated,
+
+00:13:14.000 --> 00:13:20.000
+ because if we're not logged in, I log out, I don't have any favorites.
+
+00:13:20.000 --> 00:13:23.000
+ I can't unfavorite things, I can't favorite things, because I'm not logged in.
+
+00:13:23.000 --> 00:13:26.000
+ And so I don't do this, right?
+
+00:13:26.000 --> 00:13:29.000
+ So if the user is authenticated, then I'm going to do this.
+
+00:13:29.000 --> 00:13:35.000
+ And it also means that in the template, all of this stuff, this is the favorite code,
+
+00:13:35.000 --> 00:13:39.000
+ only happens and only shows if the user is authenticated.
+
+00:13:39.000 --> 00:13:47.000
+ Log in, dj4e, log in.
+
+00:13:47.000 --> 00:13:49.000
+ And now it's actually pulling this extra data.
+
+00:13:49.000 --> 00:13:51.000
+ And so here we are in Views.
+
+00:13:51.000 --> 00:13:57.000
+ If the user is authenticated, let's go to the current logged in user
+
+00:13:57.000 --> 00:14:02.000
+ and get a list of their favorite things, but only the ID field.
+
+00:14:02.000 --> 00:14:09.000
+ Now, this would give you a list of objects, and each object would be ID colon 1, ID colon 2, ID colon 3.
+
+00:14:09.000 --> 00:14:13.000
+ And so we use a bit of list comprehension so that I end up with a favorites
+
+00:14:13.000 --> 00:14:18.000
+ that's just a list of the IDs of the things for which I have a favorite.
+
+00:14:18.000 --> 00:14:24.000
+ So in this case, if this is like thing 1, and this is thing 4.
+
+00:14:24.000 --> 00:14:30.000
+ And so in this list, that list will be just 4, because 4 is favorited and 1 is not.
+
+00:14:30.000 --> 00:14:33.000
+ So I might have 50 of these, and you might only have 2 of them favorited.
+
+00:14:33.000 --> 00:14:37.000
+ And when it's all said and done, this favorites list, if you printed it out,
+
+00:14:37.000 --> 00:14:44.000
+ okay, let's print it out, print favorites.
+
+00:14:44.000 --> 00:14:53.000
+ Print that out, and you will see, let me hit refresh here, and then go over to my run server,
+
+00:14:53.000 --> 00:14:56.000
+ and it's a list with the number 4 in it.
+
+00:14:56.000 --> 00:15:01.000
+ So 4 is a favorite and 1 is not a favorite.
+
+00:15:01.000 --> 00:15:05.000
+ If I hit this, and then I hit refresh, and I look at this print,
+
+00:15:05.000 --> 00:15:08.000
+ you'll see that 4 and 1 are my favorites, right?
+
+00:15:08.000 --> 00:15:15.000
+ And if I unfavorite 4 and I hit refresh, you will see that 1 is the favorite, okay?
+
+00:15:15.000 --> 00:15:23.000
+ Now, that then drives into that, and that just has passed right here into the template.
+
+00:15:23.000 --> 00:15:26.000
+ And then we have this new stuff in the template.
+
+00:15:26.000 --> 00:15:29.000
+ Now, we're in the middle of looping through all the things,
+
+00:15:29.000 --> 00:15:33.000
+ which this is the loop that goes through all those things.
+
+00:15:33.000 --> 00:15:39.000
+ But here we are in the middle if the user is authenticated.
+
+00:15:39.000 --> 00:15:45.000
+ And so we basically have some code.
+
+00:15:45.000 --> 00:15:49.000
+ Anchor tag, href equals pound sign is our key that says don't actually go anywhere.
+
+00:15:49.000 --> 00:15:53.000
+ And the onClick is the method, and that's gonna call some JavaScript,
+
+00:15:53.000 --> 00:15:57.000
+ and it's gonna call as a parameter, see I got a single quote here,
+
+00:15:57.000 --> 00:16:00.000
+ the URL for the thing unfavorite of thing ID.
+
+00:16:00.000 --> 00:16:02.000
+ I'm also passing thing ID as a parameter.
+
+00:16:02.000 --> 00:16:07.000
+ So if you do a quick inspect element right here, inspect element,
+
+00:16:07.000 --> 00:16:15.000
+ you see that onClick FavPost, this is a URL to hit, and that's the ID.
+
+00:16:15.000 --> 00:16:18.000
+ So I'm passing those in as parameters, and then return false.
+
+00:16:18.000 --> 00:16:21.000
+ We'll go through that JavaScript in a second.
+
+00:16:21.000 --> 00:16:26.000
+ And I also give this an ID so that I can reference it down in that function
+
+00:16:26.000 --> 00:16:28.000
+ that I'm gonna build in a second.
+
+00:16:28.000 --> 00:16:30.000
+ So that's here ID equals favorite.
+
+00:16:30.000 --> 00:16:44.000
+ Now, I need to decide whether or not to show which of these two to show.
+
+00:16:44.000 --> 00:16:47.000
+ So it turns out that there's actually two stars.
+
+00:16:47.000 --> 00:16:50.000
+ And what I'm really doing is I'm showing one star or the other.
+
+00:16:50.000 --> 00:16:54.000
+ You don't notice that, but if you look down here, there are actually two stars.
+
+00:16:54.000 --> 00:16:56.000
+ Here's one star, and here's the other star.
+
+00:16:56.000 --> 00:17:04.000
+ So there's actually, if you, you know, I can see if I can convince it.
+
+00:17:04.000 --> 00:17:14.000
+ If I can convince the, where is, oh, it's gotta be here, display none.
+
+00:17:14.000 --> 00:17:21.000
+ If I can change this to be display inline, you'll see that there's really two stars.
+
+00:17:21.000 --> 00:17:25.000
+ And all I'm doing, now, this is not gonna be much, this is not gonna work.
+
+00:17:25.000 --> 00:17:27.000
+ I don't know how well this is gonna work because I manually unhit it.
+
+00:17:27.000 --> 00:17:29.000
+ But there's actually two stars, right?
+
+00:17:29.000 --> 00:17:35.000
+ But what happens is that I hide the star that's filled and show the star that's filled appropriately.
+
+00:17:35.000 --> 00:17:38.000
+ So let me refresh to get it so that, but there's two stars there.
+
+00:17:38.000 --> 00:17:41.000
+ One is hidden and one is not.
+
+00:17:41.000 --> 00:17:46.000
+ So it turns out that what this is, is this is two bits of making a star.
+
+00:17:46.000 --> 00:17:48.000
+ And all I'm doing is I'm stacking two stars.
+
+00:17:48.000 --> 00:17:53.000
+ I'm stacking an orange star on top of a blue outline star.
+
+00:17:53.000 --> 00:17:57.000
+ And then what I'm doing, I'm doing twice.
+
+00:17:57.000 --> 00:17:59.000
+ So that's a link.
+
+00:17:59.000 --> 00:18:07.000
+ But what I'm doing is if the current thing is in the favorite list, remember I did that?
+
+00:18:07.000 --> 00:18:10.000
+ Then I'm gonna add a style equals display none.
+
+00:18:10.000 --> 00:18:16.000
+ And in this case, if it's not in the favorite list, I'm gonna hide this one.
+
+00:18:16.000 --> 00:18:19.000
+ This is the unfavorite and this is the favorite.
+
+00:18:19.000 --> 00:18:24.000
+ And if it's in favorites, I'm gonna hide the favorite.
+
+00:18:24.000 --> 00:18:30.000
+ So if it's already a favorite, I'm gonna show the empty star that's got an unfavorite link.
+
+00:18:30.000 --> 00:18:35.000
+ Show empty star, I mean show a full star with an unfavorite link underneath it.
+
+00:18:35.000 --> 00:18:37.000
+ My mind gets all messed up on this.
+
+00:18:37.000 --> 00:18:48.000
+ And then if it is in favorites, show a filled in star with an unfavorite.
+
+00:18:48.000 --> 00:18:54.000
+ Yeah.
+
+00:18:54.000 --> 00:18:56.000
+ If it's not in favorites.
+
+00:18:56.000 --> 00:18:58.000
+ Oh, right.
+
+00:18:58.000 --> 00:19:00.000
+ It's almost a double negative, right?
+
+00:19:00.000 --> 00:19:03.000
+ If it's not in favorites, hide it.
+
+00:19:03.000 --> 00:19:04.000
+ So this kind of flips.
+
+00:19:04.000 --> 00:19:10.000
+ But okay, so this is an empty star that if you click on it, favorites it.
+
+00:19:10.000 --> 00:19:16.000
+ And this is a filled in star that if you click on it, unfavorites it, okay?
+
+00:19:16.000 --> 00:19:18.000
+ So let's take a look at this.
+
+00:19:18.000 --> 00:19:20.000
+ Now then there's the tricky bit.
+
+00:19:20.000 --> 00:19:27.000
+ The tricky bit is that when you click on the one that you can see, and in this case, the one I can see is this one, right?
+
+00:19:27.000 --> 00:19:29.000
+ So I'm here, I can see this one.
+
+00:19:29.000 --> 00:19:35.000
+ So it's going to click on FavPost, passing in Fav's thing unfavorite where that is the key of the thing.
+
+00:19:35.000 --> 00:19:37.000
+ Here's the whole thing, right?
+
+00:19:37.000 --> 00:19:38.000
+ And passing in that number.
+
+00:19:38.000 --> 00:19:40.000
+ We'll see what that's for in a sec.
+
+00:19:40.000 --> 00:19:41.000
+ Okay.
+
+00:19:41.000 --> 00:19:46.000
+ So now I'm going to switch to the JavaScript that handles this.
+
+00:19:46.000 --> 00:19:48.000
+ Okay.
+
+00:19:48.000 --> 00:19:51.000
+ So now we've got this function FavPost.
+
+00:19:51.000 --> 00:19:53.000
+ And you don't have to modify this.
+
+00:19:53.000 --> 00:19:55.000
+ So this is the URL that we're going to post to.
+
+00:19:55.000 --> 00:19:57.000
+ We're actually going to send no data to it.
+
+00:19:57.000 --> 00:20:00.000
+ And then thing ID is so we can have a number.
+
+00:20:00.000 --> 00:20:03.000
+ So this fetch is built into the browser.
+
+00:20:03.000 --> 00:20:08.000
+ You may have to do what's called a polyfill for fetch if you have a really old browser, but we don't.
+
+00:20:08.000 --> 00:20:15.000
+ And so those are called polyfills, things to say like, oh, this is Internet Explorer 10 or whatever, and I need X.
+
+00:20:15.000 --> 00:20:23.000
+ So fetch basically takes the URL and then an object with method post, yada, yada.
+
+00:20:23.000 --> 00:20:25.000
+ You can go look all this up.
+
+00:20:25.000 --> 00:20:28.000
+ You don't have to worry too much about it.
+
+00:20:28.000 --> 00:20:29.000
+ Content type.
+
+00:20:29.000 --> 00:20:30.000
+ And I'm not sending any data.
+
+00:20:30.000 --> 00:20:33.000
+ And so this is a post with zero data.
+
+00:20:33.000 --> 00:20:44.000
+ And then the way this works is this fetch function starts the fetch, but then it delays it because it could take a long time to go across the Internet, go through the server, and come back.
+
+00:20:44.000 --> 00:20:51.000
+ And then what it does is it comes back and then calls this function when the response returns back to the browser.
+
+00:20:51.000 --> 00:20:57.000
+ So this is the browser talking to the server and then you split your code into two parts.
+
+00:20:57.000 --> 00:21:03.000
+ The part that gets it started and then the part that in effect asynchronously reacts to the finished.
+
+00:21:03.000 --> 00:21:08.000
+ So that's why I'm saying log finished.
+
+00:21:08.000 --> 00:21:09.000
+ So you see, oh, it finished.
+
+00:21:09.000 --> 00:21:15.000
+ And then the next thing I do is I go grab those two little stars and I flip them.
+
+00:21:15.000 --> 00:21:16.000
+ I hide them.
+
+00:21:16.000 --> 00:21:18.000
+ If they're visible, I hide them.
+
+00:21:18.000 --> 00:21:20.000
+ And if they're hidden, I make them visible.
+
+00:21:20.000 --> 00:21:27.000
+ So unfavorite star thing ID, which means it comes back to this little guy here and it just toggles them.
+
+00:21:27.000 --> 00:21:32.000
+ So when I do this, it's actually hiding one and showing the other, hiding one and showing the other.
+
+00:21:32.000 --> 00:21:35.000
+ I could have done this differently, but that's really what's going on.
+
+00:21:35.000 --> 00:21:40.000
+ And you can see the display none flipping back and forth down here as I flip it.
+
+00:21:40.000 --> 00:21:44.000
+ And of course, it's also changing it in the server with the post request.
+
+00:21:44.000 --> 00:21:51.000
+ So if I sit here and I look at the network and I go unfavorite, favorite, unfavorite, favorite.
+
+00:21:51.000 --> 00:21:57.000
+ And that's because as I'm showing it and hiding it, it's also toggling what happens when I click on it.
+
+00:21:57.000 --> 00:22:00.000
+ If this is shown, then it's going to call unfavorite.
+
+00:22:00.000 --> 00:22:02.000
+ Oh, this is now shown.
+
+00:22:02.000 --> 00:22:03.000
+ It's going to call favorite.
+
+00:22:03.000 --> 00:22:08.000
+ So the empty star is going to call favorite and the filled in star is going to call unfavorite.
+
+00:22:08.000 --> 00:22:10.000
+ Pretty cool, huh?
+
+00:22:10.000 --> 00:22:15.000
+ I mean, you could probably come up with some better HTML.
+
+00:22:15.000 --> 00:22:18.000
+ And so if you look at the console, this is quite nice.
+
+00:22:18.000 --> 00:22:21.000
+ I got some debugging here, right?
+
+00:22:21.000 --> 00:22:24.000
+ Favorite, favorite finished.
+
+00:22:24.000 --> 00:22:32.000
+ So that's actually going on here after the network shows when they start.
+
+00:22:32.000 --> 00:22:35.000
+ Start, now the finish so fast, it's hardly whatever.
+
+00:22:35.000 --> 00:22:37.000
+ But then this shows when it's finished.
+
+00:22:37.000 --> 00:22:39.000
+ OK, and so that that's how you debug this.
+
+00:22:39.000 --> 00:22:43.000
+ Now, you might have problems on your own code when you're doing stuff like this, OK?
+
+00:22:43.000 --> 00:22:46.000
+ But in this, you just don't have to change much.
+
+00:22:46.000 --> 00:22:49.000
+ So that is probably the hardest part of this.
+
+00:22:49.000 --> 00:22:55.000
+ But then the last thing that we've got to do is we've got to go into the views.py
+
+00:22:55.000 --> 00:23:00.000
+ and handle these posts to Fav's thing, favorite finished, right?
+
+00:23:00.000 --> 00:23:02.000
+ So we've got to hit the posts.
+
+00:23:02.000 --> 00:23:11.000
+ So if you take a look at URLs, I probably need models.
+
+00:23:11.000 --> 00:23:16.000
+ Keep models up, urls.py.
+
+00:23:16.000 --> 00:23:19.000
+ So this is the routes.
+
+00:23:19.000 --> 00:23:20.000
+ So it's really simple.
+
+00:23:20.000 --> 00:23:25.000
+ Remember this thing is the primary key of the thing ID, not the favorite ID.
+
+00:23:25.000 --> 00:23:27.000
+ Here it does have an ID, but we're not really using it.
+
+00:23:27.000 --> 00:23:32.000
+ We're using the combination of the thing ID and the user ID basically as the index in the favorite.
+
+00:23:32.000 --> 00:23:40.000
+ So we go find favorite view down near the bottom.
+
+00:23:40.000 --> 00:23:44.000
+ And so if recall, most forms we require CSRF.
+
+00:23:44.000 --> 00:23:50.000
+ And we could have put the CSRF in here, but it was a lot simpler to just make it CSRF exempt.
+
+00:23:50.000 --> 00:23:53.000
+ You kind of have to decide on security, whether or not it's OK.
+
+00:23:53.000 --> 00:23:59.000
+ Like I could write a code injection that would favorite a bunch of books for you.
+
+00:23:59.000 --> 00:24:01.000
+ Is that really that dangerous?
+
+00:24:01.000 --> 00:24:03.000
+ But you could make this more secure.
+
+00:24:03.000 --> 00:24:06.000
+ But what I did is I made it CSRF exempt.
+
+00:24:06.000 --> 00:24:11.000
+ And so if you go read the Stack Overflow, you have to import these things
+
+00:24:11.000 --> 00:24:17.000
+ and then add this little thing that basically says, hey, we're not going to blow up CSRF.
+
+00:24:17.000 --> 00:24:26.000
+ If you don't, these things will get 403s, I think, which is not allowed.
+
+00:24:26.000 --> 00:24:27.000
+ But you don't want that.
+
+00:24:27.000 --> 00:24:31.000
+ And then after that, this looks like pretty much any other thing.
+
+00:24:31.000 --> 00:24:35.000
+ It's a login required mixin, which basically means a session has to be established.
+
+00:24:35.000 --> 00:24:36.000
+ We're not really caring.
+
+00:24:36.000 --> 00:24:37.000
+ We're just extending a normal view.
+
+00:24:37.000 --> 00:24:39.000
+ It turns out there's no UI to this.
+
+00:24:39.000 --> 00:24:42.000
+ If you look at the response, the response is empty.
+
+00:24:42.000 --> 00:24:47.000
+ But that's OK, because the damage has been done in the server as a result of the post.
+
+00:24:47.000 --> 00:24:48.000
+ So we got a post method.
+
+00:24:48.000 --> 00:24:50.000
+ We're overriding from view.
+
+00:24:50.000 --> 00:24:53.000
+ And we're taking self and request, which we always get.
+
+00:24:53.000 --> 00:24:57.000
+ And PK, of course, which is the second number, right?
+
+00:24:57.000 --> 00:24:58.000
+ I guess it's in URLs, right?
+
+00:24:58.000 --> 00:25:00.000
+ PK is whatever this second number is.
+
+00:25:00.000 --> 00:25:02.000
+ It's that parameter.
+
+00:25:02.000 --> 00:25:04.000
+ And we get PK is the parameter.
+
+00:25:04.000 --> 00:25:05.000
+ Come back, views.
+
+00:25:05.000 --> 00:25:06.000
+ There we are.
+
+00:25:06.000 --> 00:25:08.000
+ Print some stuff out.
+
+00:25:08.000 --> 00:25:14.000
+ I'm going to load the thing that corresponds to the PK or blow up with the 404, right?
+
+00:25:14.000 --> 00:25:16.000
+ So you can't just guess.
+
+00:25:16.000 --> 00:25:22.000
+ I can't just say, you know, I can't-- if I pick a PK that doesn't exist, nothing happens.
+
+00:25:22.000 --> 00:25:27.000
+ And then what I'm going to do is I'm going to load the old favorite.
+
+00:25:27.000 --> 00:25:29.000
+ I'm going to create a new favorite.
+
+00:25:29.000 --> 00:25:34.000
+ And I'm going to put to the left and the right the user value of favorite, right?
+
+00:25:34.000 --> 00:25:41.000
+ We're setting these two parameters right here, setting thing and user.
+
+00:25:41.000 --> 00:25:48.000
+ So thing is being set to the current thing we just loaded, which has got a primary key.
+
+00:25:48.000 --> 00:25:51.000
+ And the user is the current logged in user.
+
+00:25:51.000 --> 00:25:55.000
+ Now, we're going to save it, but we're going to do it in the try accept block
+
+00:25:55.000 --> 00:25:57.000
+ because what if there's already one there?
+
+00:25:57.000 --> 00:26:00.000
+ And if you recall, you can't-- because of unique together,
+
+00:26:00.000 --> 00:26:03.000
+ you can't save the same combination of thing and user twice.
+
+00:26:03.000 --> 00:26:06.000
+ And there's other ways I could have done this that are a little more complex,
+
+00:26:06.000 --> 00:26:07.000
+ but I kept it simple.
+
+00:26:07.000 --> 00:26:12.000
+ I just tried-- did a try and said, it's OK if it blows up.
+
+00:26:12.000 --> 00:26:13.000
+ That means it's already there.
+
+00:26:13.000 --> 00:26:16.000
+ Because I don't let you really hit the favorite twice,
+
+00:26:16.000 --> 00:26:28.000
+ but if you somehow could click on this, if I could do an inspect element, and-- OK.
+
+00:26:28.000 --> 00:26:33.000
+ And so we're unfavorited, but I could unfavorite twice, right?
+
+00:26:33.000 --> 00:26:38.000
+ All I'd have to do is somehow convince myself to grab this URL.
+
+00:26:38.000 --> 00:26:39.000
+ It's not favorited.
+
+00:26:39.000 --> 00:26:41.000
+ And you think, oh, don't do that.
+
+00:26:41.000 --> 00:26:46.000
+ Well, the user can always, like, hand put this URL in.
+
+00:26:46.000 --> 00:26:47.000
+ I just unfavorited it.
+
+00:26:47.000 --> 00:26:48.000
+ What did I do wrong?
+
+00:26:48.000 --> 00:26:50.000
+ Oh, too many FAVs.
+
+00:26:50.000 --> 00:26:54.000
+ Come back.
+
+00:26:54.000 --> 00:26:56.000
+ That's a second unfavorite.
+
+00:26:56.000 --> 00:26:59.000
+ Well, I don't know why that didn't-- why that blew up.
+
+00:26:59.000 --> 00:27:02.000
+ Well, let's stop playing with that.
+
+00:27:02.000 --> 00:27:03.000
+ Let's see.
+
+00:27:03.000 --> 00:27:04.000
+ Did it complain in my thing?
+
+00:27:04.000 --> 00:27:10.000
+ Thing one unfavorite.
+
+00:27:10.000 --> 00:27:18.000
+ FAVs thing.
+
+00:27:27.000 --> 00:27:29.000
+ Oh, oh, I know why.
+
+00:27:29.000 --> 00:27:30.000
+ Duh.
+
+00:27:30.000 --> 00:27:32.000
+ I'm doing a get request.
+
+00:27:32.000 --> 00:27:33.000
+ There is no get request.
+
+00:27:33.000 --> 00:27:34.000
+ Come back.
+
+00:27:34.000 --> 00:27:35.000
+ Come back.
+
+00:27:35.000 --> 00:27:37.000
+ Yeah, you can't always put it in a browser and make it work.
+
+00:27:37.000 --> 00:27:39.000
+ Teach me a lesson, right?
+
+00:27:39.000 --> 00:27:41.000
+ There's no def get.
+
+00:27:41.000 --> 00:27:43.000
+ And I can make it work, but that's a get request.
+
+00:27:43.000 --> 00:27:47.000
+ And so it's like, sorry, there ain't even a get request here.
+
+00:27:47.000 --> 00:27:49.000
+ OK, so high level.
+
+00:27:49.000 --> 00:27:50.000
+ We get the thing's primary key.
+
+00:27:50.000 --> 00:27:51.000
+ We load the thing.
+
+00:27:51.000 --> 00:27:58.000
+ We create an object to put in a FAV with the two pieces.
+
+00:27:58.000 --> 00:28:01.000
+ And we try to save it and don't really care if we inadvertently
+
+00:28:01.000 --> 00:28:05.000
+ double saved it, because our UI is sort of keeping us from causing
+
+00:28:05.000 --> 00:28:06.000
+ that to happen.
+
+00:28:06.000 --> 00:28:08.000
+ OK?
+
+00:28:08.000 --> 00:28:10.000
+ So that's the favorite.
+
+00:28:10.000 --> 00:28:13.000
+ The delete favorite is even easier.
+
+00:28:13.000 --> 00:28:14.000
+ All right?
+
+00:28:14.000 --> 00:28:18.000
+ So in delete favorite, we're CSRF exempt.
+
+00:28:18.000 --> 00:28:21.000
+ We have to be logged in, because if you're not logged in,
+
+00:28:21.000 --> 00:28:23.000
+ then request user is going to blow up.
+
+00:28:23.000 --> 00:28:25.000
+ This line is going to blow up, because request user is not
+
+00:28:25.000 --> 00:28:28.000
+ necessarily set if you don't have login required.
+
+00:28:28.000 --> 00:28:31.000
+ So that's why we drop login required mix in right here.
+
+00:28:31.000 --> 00:28:36.000
+ And then we load up the old thing.
+
+00:28:36.000 --> 00:28:40.000
+ And that's because we need to put it in this effect filter.
+
+00:28:40.000 --> 00:28:42.000
+ So this is like a where clause in SQL.
+
+00:28:42.000 --> 00:28:46.000
+ FAV objects get user equals current logged in user and thing
+
+00:28:46.000 --> 00:28:47.000
+ equals t.
+
+00:28:47.000 --> 00:28:50.000
+ t was the primary key of that thing.
+
+00:28:50.000 --> 00:28:55.000
+ So if we can get it, then we delete it.
+
+00:28:55.000 --> 00:29:00.000
+ Now, if again somebody manually found their way to the unfavorite
+
+00:29:00.000 --> 00:29:03.000
+ button, even though we've hit it cleverly, they could still find
+
+00:29:03.000 --> 00:29:06.000
+ their way or a web browser might find its way.
+
+00:29:06.000 --> 00:29:08.000
+ We're like, OK, we tried to delete it.
+
+00:29:08.000 --> 00:29:09.000
+ It's not there.
+
+00:29:09.000 --> 00:29:10.000
+ There's nothing bad.
+
+00:29:10.000 --> 00:29:11.000
+ We'll just kind of FAV not.
+
+00:29:11.000 --> 00:29:13.000
+ We'll just-- it does not exist.
+
+00:29:13.000 --> 00:29:14.000
+ And we're going to pass.
+
+00:29:14.000 --> 00:29:18.000
+ And then we return an HTTP response, which is in effect
+
+00:29:18.000 --> 00:29:19.000
+ emptiness.
+
+00:29:19.000 --> 00:29:24.000
+ So when we come here, go to the network, refresh, clear
+
+00:29:24.000 --> 00:29:27.000
+ everything, unclear it.
+
+00:29:27.000 --> 00:29:28.000
+ There is nothing there.
+
+00:29:28.000 --> 00:29:30.000
+ So we return an HTTP response.
+
+00:29:30.000 --> 00:29:34.000
+ But the most important thing is that we sent back a 200.
+
+00:29:34.000 --> 00:29:38.000
+ So this implicit when you're doing this is there is a 200
+
+00:29:38.000 --> 00:29:39.000
+ going back.
+
+00:29:39.000 --> 00:29:43.000
+ And so it is successful.
+
+00:29:43.000 --> 00:29:44.000
+ OK.
+
+00:29:44.000 --> 00:29:49.000
+ And so I think that this is pretty much all I have to cover
+
+00:29:49.000 --> 00:29:52.000
+ on this, how to build a favorites.
+
+00:29:52.000 --> 00:29:54.000
+ The quick way to test this is you should be able to turn these
+
+00:29:54.000 --> 00:29:57.000
+ things on and off and watch the network tab.
+
+00:29:57.000 --> 00:30:01.000
+ And then if you hit refresh, these two things, the state of
+
+00:30:01.000 --> 00:30:03.000
+ these should be the same, meaning that you've properly
+
+00:30:03.000 --> 00:30:05.000
+ recorded them in the database.
+
+00:30:05.000 --> 00:30:08.000
+ So when I had it breaking, I would hide it.
+
+00:30:08.000 --> 00:30:09.000
+ And then I would refresh it.
+
+00:30:09.000 --> 00:30:11.000
+ And the little orange star would come back.
+
+00:30:11.000 --> 00:30:15.000
+ So I hope this was helpful to you, a helpful little walk
+
+00:30:15.000 --> 00:30:18.000
+ through going through the favorite sample code.
+
+00:30:18.000 --> 00:30:19.000
+ Cheers.
+

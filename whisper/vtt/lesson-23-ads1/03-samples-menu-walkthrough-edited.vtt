@@ -1,0 +1,419 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+ Hello, and welcome to another screen recording for Django for everybody.
+
+00:00:05.000 --> 00:00:10.000
+ In this one, we're going to play with the Bootstrap menu.
+
+00:00:10.000 --> 00:00:12.000
+ So what's a Bootstrap menu?
+
+00:00:12.000 --> 00:00:18.000
+ A Bootstrap menu is a common bit that's going to be on a whole different set of pages.
+
+00:00:18.000 --> 00:00:25.000
+ So in this particular menu, we're going to have like a page one, a page two, a page three inside of a dropdown,
+
+00:00:25.000 --> 00:00:30.000
+ and then we have kind of like a login dropdown. I'm already logged in. I'll log out.
+
+00:00:30.000 --> 00:00:37.000
+ And then it switches when I'm logged in. When I'm logged in, it shows my Gravatar.
+
+00:00:37.000 --> 00:00:42.000
+ When I want to log in, I'll log in at CSEV.
+
+00:00:42.000 --> 00:00:55.000
+ Actually, I think, let's call this DJ Free, I think will work. Yeah.
+
+00:00:55.000 --> 00:01:01.000
+ So that shows a little picture based on your email address, and so I'll show you how all these things work.
+
+00:01:01.000 --> 00:01:10.000
+ But again, we're talking multiple pages. Now, the couple things you'll see is we are changing the highlight of this.
+
+00:01:10.000 --> 00:01:16.000
+ And so if I was to do a view source, these are completely different pages.
+
+00:01:16.000 --> 00:01:25.000
+ And what you see is on the highlighted one, page two is the highlighted one.
+
+00:01:25.000 --> 00:01:32.000
+ I have a list tag for page one and then a list tag class equals active for page two.
+
+00:01:32.000 --> 00:01:36.000
+ And that's what makes this highlighted. So these are different pages.
+
+00:01:36.000 --> 00:01:41.000
+ So in this menu, we have to know what current page we're on so we can look at the request path.
+
+00:01:41.000 --> 00:01:46.000
+ It's page two. So we know to put active on the page two one.
+
+00:01:46.000 --> 00:01:50.000
+ So there'll be some logic inside this navigation bar.
+
+00:01:50.000 --> 00:01:58.000
+ So let's take a look at some of the code. So I'm really going to do this all in templates.
+
+00:01:58.000 --> 00:02:09.000
+ So you see I'm using template view in the urls.py and I just have I've got three pages that are all going to render the menu,
+
+00:02:09.000 --> 00:02:18.000
+ main menu slash main menu HTML. And so there's nothing in the views of any importance because I just got template view that I'm using.
+
+00:02:18.000 --> 00:02:23.000
+ So let's take a quick look at the actual menu.
+
+00:02:23.000 --> 00:02:30.000
+ So it's really quite simple because one of the things you're going to do is you're going to have these pages and lots of them.
+
+00:02:30.000 --> 00:02:37.000
+ So you don't want all of this HTML that's needed for this header sitting in every one of the pages.
+
+00:02:37.000 --> 00:02:46.000
+ So we will use the extends mechanism in a template to say, oh, let's go and grab base menu dot HTML and start with that.
+
+00:02:46.000 --> 00:02:52.000
+ So we've been working with base bootstrap and bootstrap uses all kinds of pages, but it doesn't have a menu.
+
+00:02:52.000 --> 00:02:58.000
+ And it has areas that you can replace. We've been working with base bootstrap for a while, but now we want to do the menu.
+
+00:02:58.000 --> 00:03:05.000
+ So what we're going to see is instead of extending base bootstrap, we're going to extend base menu.
+
+00:03:05.000 --> 00:03:12.000
+ And that's our own local file. So you'll note that base menu extends base bootstrap.
+
+00:03:12.000 --> 00:03:16.000
+ And this is the same base bootstrap we've been using all along.
+
+00:03:16.000 --> 00:03:22.000
+ And what it basically does, this app tags, we'll talk about that in a second. That's how the Gravatar works.
+
+00:03:22.000 --> 00:03:28.000
+ It is going to override this nav bar block. And you'll see that this goes all the way down.
+
+00:03:28.000 --> 00:03:39.000
+ That's just one big nav tag. And so the nav bar comes in right here, right after we say div class equals container.
+
+00:03:39.000 --> 00:03:49.000
+ And then we have this welcome. We have these flash messages, area for flash alerts. Those are the messages that say congratulations, you added a file.
+
+00:03:49.000 --> 00:03:56.000
+ Congratulations, you deleted a file. And then the block content and then the end of this container div.
+
+00:03:56.000 --> 00:04:08.000
+ So block content is what we're going to override here. And a block nav bar is what we're overriding in menu.
+
+00:04:08.000 --> 00:04:17.000
+ So this is, so block nav bar is being overwritten. So we have one template that extends another template that extends another template.
+
+00:04:17.000 --> 00:04:24.000
+ And so we're, just like any kind of object oriented, we're sort of specializing and further specializing and further specializing.
+
+00:04:24.000 --> 00:04:33.000
+ So bootstrap can be used with or without a menu. But then once we add the menu to base bootstrap, then we have base menu.
+
+00:04:33.000 --> 00:04:42.000
+ So this is the top part of the page. And every page simply extends base menu and then puts whatever content it is.
+
+00:04:42.000 --> 00:04:52.000
+ It says just I would like a menu here. So let's take a look at the menu.
+
+00:04:52.000 --> 00:05:01.000
+ So the first thing you do is you go, I'm using bootstrap. So if you go read up on bootstrap, it'll tell you this is how you make a menu.
+
+00:05:01.000 --> 00:05:11.000
+ And it tells you how to use the nav tag and what classes to put on the nav tag, how the container works and the header and the brand and all these little classes.
+
+00:05:11.000 --> 00:05:23.000
+ I didn't make this up. This is what bootstrap said. This is how bootstrap makes it pretty and dark and curvy little things and they all line up nice, et cetera, et cetera.
+
+00:05:23.000 --> 00:05:33.000
+ So I had to read that. And so this pretty much is taken straight from some sample code, except for one little thing.
+
+00:05:33.000 --> 00:05:43.000
+ And that is the mechanism by which I on different pages can highlight which page I'm on, which is a very common something you want to do in menus.
+
+00:05:43.000 --> 00:05:53.000
+ And so we have a UL tag. And the UL tag is this list of things. And then you have an LI.
+
+00:05:53.000 --> 00:05:58.000
+ And what we're doing here, this is a weird little bit of Django template language.
+
+00:05:58.000 --> 00:06:07.000
+ We are causing the URL function to be called with a parameter of menu colon main to give us a path.
+
+00:06:07.000 --> 00:06:17.000
+ So menu colon main is slash menu. If you look at URLs, it's menu colon main is this view.
+
+00:06:17.000 --> 00:06:27.000
+ And it's the path that's just slash menu. And so this is like an assignment statement in the Django template language.
+
+00:06:27.000 --> 00:06:33.000
+ And it leaves the value in XYZ. And now what I'm going to do is I want to put an if statement in.
+
+00:06:33.000 --> 00:06:39.000
+ All these if statements have been multi-lined, but you don't have to make a multi-line. That is an if statement.
+
+00:06:39.000 --> 00:06:47.000
+ If request.getFullPath is equal to XYZ, the variable I just computed, then emit class equals active.
+
+00:06:47.000 --> 00:06:55.000
+ Otherwise, emit nothing. So again, now if we take a look at the source code, review the source of this,
+
+00:06:55.000 --> 00:07:05.000
+ the source of the menu, we scroll down, we will see that the home has a class of active and the other ones do not have a class of active.
+
+00:07:05.000 --> 00:07:13.000
+ And that's why home has this little extra dark box, just to give a little clue to our user that that's the one that we're working with.
+
+00:07:13.000 --> 00:07:20.000
+ And so this little pattern is repeated over and over to see if we're on page one, if we're on page two.
+
+00:07:20.000 --> 00:07:28.000
+ Then we do the construct the dropdown. And the dropdown is just, again, this comes straight from the bootstrap, right?
+
+00:07:28.000 --> 00:07:35.000
+ And so we have the dropdown, we have another URL, we have a little page three link here and it shows up.
+
+00:07:35.000 --> 00:07:42.000
+ And this is just the text to make a cool dropdown. And that's just bootstrap.
+
+00:07:42.000 --> 00:07:51.000
+ Now we have a left, we have a list that is the left side of the nav bar and now we're starting on the right side of the nav bar,
+
+00:07:51.000 --> 00:07:59.000
+ which is also an unnumbered list. So this is cool. So we basically have two versions.
+
+00:07:59.000 --> 00:08:04.000
+ One is if the user is authenticated and then else if the user is not authenticated.
+
+00:08:04.000 --> 00:08:09.000
+ So if the user is not authenticated, let's go ahead and log out here, if the user is not authenticated,
+
+00:08:09.000 --> 00:08:16.000
+ we are just going to calculate a URL to the login page, which is slash account slash login.
+
+00:08:16.000 --> 00:08:23.000
+ Let's pass a next to say come back here, right? Now, you know, come back to the main menu.
+
+00:08:23.000 --> 00:08:29.000
+ So if you go to login, it will say next equals and it's come back here, right?
+
+00:08:29.000 --> 00:08:33.000
+ And so that you construct that and you pass that login in.
+
+00:08:33.000 --> 00:08:41.000
+ So I can do DJ free and I can log in and it will come back to the main menu, even though I clicked on it over here.
+
+00:08:41.000 --> 00:08:49.000
+ OK, but now we're in this page. And in this case, user dot is authenticated is true.
+
+00:08:49.000 --> 00:08:55.000
+ So we're going to construct a dropdown.
+
+00:08:55.000 --> 00:08:59.000
+ And this shows the dropdown and takes the dropdown out.
+
+00:08:59.000 --> 00:09:04.000
+ Here's here. Oh, and we're going to in the dropdown, we're going to say log out.
+
+00:09:04.000 --> 00:09:09.000
+ But in the page, right. So this is the dropdown menu.
+
+00:09:09.000 --> 00:09:15.000
+ So that's the menu within the dropdown that we turn on and off with a with a carrot.
+
+00:09:15.000 --> 00:09:23.000
+ But here's the Gravatar. So this is an image tag source equals.
+
+00:09:23.000 --> 00:09:29.000
+ And then we have oops, oops, oops, undo that.
+
+00:09:29.000 --> 00:09:37.000
+ Then we have a double curly brace user piped through Gravatar with a size of 60, 60 pixel Gravatar.
+
+00:09:37.000 --> 00:09:42.000
+ OK, so that is making this little image.
+
+00:09:42.000 --> 00:09:46.000
+ So if we do it, let's do a quick inspect on that image.
+
+00:09:46.000 --> 00:09:54.000
+ Inspect. OK, let's do just do resource this image is double Gravatar dot com.
+
+00:09:54.000 --> 00:09:58.000
+ Avatar slash this long thing. OK.
+
+00:09:58.000 --> 00:10:03.000
+ And if you go read on Avatar, Gravatar is a service.
+
+00:10:03.000 --> 00:10:06.000
+ It's actually a Google service that you register your email.
+
+00:10:06.000 --> 00:10:09.000
+ And this here is a hash of your email.
+
+00:10:09.000 --> 00:10:13.000
+ And then that looks up and then gives you back this little URL.
+
+00:10:13.000 --> 00:10:20.000
+ So if I was to take this URL right here, don't do that.
+
+00:10:20.000 --> 00:10:27.000
+ I take this URL, put it HTTPS colon slash slash.
+
+00:10:27.000 --> 00:10:30.000
+ It shows a little tiny picture of me.
+
+00:10:30.000 --> 00:10:32.000
+ Right shows a little tiny picture of me.
+
+00:10:32.000 --> 00:10:34.000
+ But the question is, how did this get generated?
+
+00:10:34.000 --> 00:10:40.000
+ It got generated by passing the user object, which is the same as user that is authenticated,
+
+00:10:40.000 --> 00:10:46.000
+ except I'm piping it through a tag that I invented called Gravatar.
+
+00:10:46.000 --> 00:10:52.000
+ And again, this is code that is going to run just kind of like this URL code or whoever.
+
+00:10:52.000 --> 00:10:55.000
+ Whatever these things are. Right.
+
+00:10:55.000 --> 00:11:00.000
+ So what we have is we have a thing where we've loaded these app tags.
+
+00:11:00.000 --> 00:11:07.000
+ OK, and so app tags are tags that we as developers can create.
+
+00:11:07.000 --> 00:11:08.000
+ And then we can do things in it.
+
+00:11:08.000 --> 00:11:11.000
+ So here's what's in app tags.
+
+00:11:11.000 --> 00:11:14.000
+ So this is how you make a Gravatar.
+
+00:11:14.000 --> 00:11:20.000
+ You take the user's email, you strip it, throw away any white space, you convert it to lowercase,
+
+00:11:20.000 --> 00:11:29.000
+ you encode it in UTF-8, and then you use the MD5, which is a hashing function, and make a hex digest.
+
+00:11:29.000 --> 00:11:37.000
+ And that hex digest, this is an MD5, this long ugly string 2D0A2F51.
+
+00:11:37.000 --> 00:11:43.000
+ That is a one-way hash of the email address.
+
+00:11:43.000 --> 00:11:48.000
+ And if you go put that in to a thing, then if you know it,
+
+00:11:48.000 --> 00:11:53.000
+ so that you can't figure out a person's email address from their Gravatar,
+
+00:11:53.000 --> 00:11:57.000
+ but you can from an email address figure out what the Gravatar is.
+
+00:11:57.000 --> 00:12:00.000
+ So this is not actually revealing the person's email address.
+
+00:12:00.000 --> 00:12:05.000
+ So that's why we're using a one-way hash, an MD5 of the email address.
+
+00:12:05.000 --> 00:12:15.000
+ And then I just construct the URL, put the hash in the right place, put the size, that 60 parameter.
+
+00:12:15.000 --> 00:12:19.000
+ If you take a look, where are we at?
+
+00:12:19.000 --> 00:12:26.000
+ This colon 60 is the second parameter to this code we wrote, so that 60 is size.
+
+00:12:26.000 --> 00:12:31.000
+ So that's why it says 60 right there, S equals 60 right there.
+
+00:12:31.000 --> 00:12:39.000
+ And then I'm going to use the format, and I'll put the hash in and the size in,
+
+00:12:39.000 --> 00:12:44.000
+ and I'm going to turn that as a string, and that goes all the way back here,
+
+00:12:44.000 --> 00:12:48.000
+ and then replaces this double curly brace.
+
+00:12:48.000 --> 00:12:53.000
+ So all those double curly braces and piping, that's just code somebody wrote.
+
+00:12:53.000 --> 00:12:59.000
+ In this case, the Gravatar code is code that I wrote and we wrote, or you could write.
+
+00:12:59.000 --> 00:13:04.000
+ And that produces this URL, so it's a convenient way to put that URL in there.
+
+00:13:04.000 --> 00:13:08.000
+ And it's really pretty, and it works out very cool.
+
+00:13:08.000 --> 00:13:14.000
+ So you write this code, and it's in home, template tags, aptags.py.
+
+00:13:14.000 --> 00:13:26.000
+ And then you basically have to load it in your menu, where are we at?
+
+00:13:26.000 --> 00:13:31.000
+ You have to go get aptags, and away you go.
+
+00:13:31.000 --> 00:13:36.000
+ So that sums up how you can make a nice bootstrap menu
+
+00:13:36.000 --> 00:13:41.000
+ and put it on your page through an extension mechanism.
+
+00:13:41.000 --> 00:13:44.000
+ So we're going to extend it, and then boom, you make a page.
+
+00:13:44.000 --> 00:13:48.000
+ Then you extend it again, and that puts it on the next page.
+
+00:13:48.000 --> 00:13:51.000
+ So it's pretty easy, it's pretty straightforward.
+
+00:13:51.000 --> 00:13:57.000
+ There's a lot of HTML, but luckily I hand that to you in the djfree samples,
+
+00:13:57.000 --> 00:13:59.000
+ and you're not going to have to modify that.
+
+00:13:59.000 --> 00:14:01.000
+ It'll pretty much just work.
+
+00:14:01.000 --> 00:14:03.000
+ You'll change what's in the menu.
+
+00:14:03.000 --> 00:14:08.000
+ You'll be like putting different things in as the links and stuff.
+
+00:14:08.000 --> 00:14:12.000
+ So you'll be working with this, but in general, most of the hard work is done.
+
+00:14:12.000 --> 00:14:17.000
+ And as always, you can take a look at djfree samples,
+
+00:14:17.000 --> 00:14:19.000
+ just like we always do for inspiration.
+
+00:14:19.000 --> 00:14:20.400
+ I hope you found this helpful.
+
+00:14:20.400 --> 00:14:20.900
+ Cheers.
+

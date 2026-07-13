@@ -1,0 +1,1040 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+ Hello and welcome to another code walkthrough on Django for everybody.
+
+00:00:05.000 --> 00:00:07.000
+ We're going to walk through some sample code today.
+
+00:00:07.000 --> 00:00:15.000
+ It's the SIF code that really starts using the many-to-many work a bit, and it's our forums code.
+
+00:00:15.000 --> 00:00:18.000
+ So let's just walk through how it works.
+
+00:00:18.000 --> 00:00:25.000
+ The idea, I've got two users logged in here, just two different users.
+
+00:00:25.000 --> 00:00:28.000
+ This is also going to demonstrate the owner pattern again.
+
+00:00:28.000 --> 00:00:38.000
+ So let's add a forum, forum, forum one, hello.
+
+00:00:38.000 --> 00:00:43.000
+ So this is just crud at this point.
+
+00:00:43.000 --> 00:00:49.000
+ And so this looks like most of the crud things that we've built.
+
+00:00:49.000 --> 00:00:57.000
+ I won't go through and delete because the interesting part is here in the detail page.
+
+00:00:57.000 --> 00:01:07.000
+ And so I can put a comment in, this is person, this is Firefox comment.
+
+00:01:07.000 --> 00:01:11.000
+ So I've got one user logged in on Firefox, submit.
+
+00:01:11.000 --> 00:01:17.000
+ And then I will refresh here in the other one, and I see forum one.
+
+00:01:17.000 --> 00:01:32.000
+ So well, let me just make a comment, and this is Safari.
+
+00:01:32.000 --> 00:01:36.000
+ So you can see that this is the Firefox comment and the Safari comment.
+
+00:01:36.000 --> 00:01:41.000
+ And now if I hit refresh here in forum three, you can see the Safari comment.
+
+00:01:41.000 --> 00:01:45.000
+ And the Firefox comment, which I didn't even get my typographical error done right.
+
+00:01:45.000 --> 00:01:49.000
+ Well, the key is now you see the delete button is appropriate.
+
+00:01:49.000 --> 00:01:52.000
+ So the comments are owned.
+
+00:01:52.000 --> 00:02:01.000
+ And what's even more important is, sorry about that typo, is there's multiple of them.
+
+00:02:01.000 --> 00:02:07.000
+ So now if I just hit refresh here, you can see that and see these things happening.
+
+00:02:07.000 --> 00:02:16.000
+ And so for one forum, each user can have many comments.
+
+00:02:16.000 --> 00:02:22.000
+ And so this has to be a many to many relationship.
+
+00:02:22.000 --> 00:02:28.000
+ And if I go back to all forums, this guy sees the edit and the delete,
+
+00:02:28.000 --> 00:02:31.000
+ and then this one does not see the edit and the delete.
+
+00:02:31.000 --> 00:02:35.000
+ So you get the idea that that's pretty much what it does.
+
+00:02:35.000 --> 00:02:38.000
+ So let's take a look at the code here.
+
+00:02:38.000 --> 00:02:43.000
+ There is not too much tricky in the URLs.py.
+
+00:02:43.000 --> 00:02:49.000
+ Most of the URLs.py is like all CRUD things we've built.
+
+00:02:49.000 --> 00:02:52.000
+ But the comment is yet another table, because there's really two tables here.
+
+00:02:52.000 --> 00:02:54.000
+ There's the forum table and the comment table.
+
+00:02:54.000 --> 00:02:58.000
+ And so we've done stuff like this where we've got two tables involved.
+
+00:02:58.000 --> 00:03:02.000
+ There's actually three tables involved, but one of them is the user.
+
+00:03:02.000 --> 00:03:04.000
+ So we'll come back to this a little bit.
+
+00:03:04.000 --> 00:03:09.000
+ There's not too much outrageous or new in that.
+
+00:03:09.000 --> 00:03:13.000
+ But we do have two models.
+
+00:03:13.000 --> 00:03:14.000
+ So let's get that back on.
+
+00:03:14.000 --> 00:03:17.000
+ The first model is the forum model.
+
+00:03:17.000 --> 00:03:24.000
+ And this is other than this new many to many field, this is really very straightforward.
+
+00:03:24.000 --> 00:03:28.000
+ It looks like almost everything we've been doing that's CRUD.
+
+00:03:28.000 --> 00:03:30.000
+ It's got some fields and it's got an owner key.
+
+00:03:30.000 --> 00:03:34.000
+ And so again, there is a table out there.
+
+00:03:34.000 --> 00:03:38.000
+ There is a model out there, the user model that's out there.
+
+00:03:38.000 --> 00:03:42.000
+ And we're in effect drawing a picture.
+
+00:03:42.000 --> 00:03:45.000
+ This is a one to many.
+
+00:03:45.000 --> 00:03:48.000
+ Oops, let's draw this.
+
+00:03:48.000 --> 00:03:55.000
+ Pen working.
+
+00:03:55.000 --> 00:04:11.000
+ Pen, come on, pen.
+
+00:04:11.000 --> 00:04:32.000
+ There we go.
+
+00:04:32.000 --> 00:04:36.000
+ So owner is a one to many relationship.
+
+00:04:36.000 --> 00:04:44.000
+ That is that there is a user table and then there is a forum table.
+
+00:04:44.000 --> 00:04:49.000
+ And each user can have many forums.
+
+00:04:49.000 --> 00:04:51.000
+ So each user can have many forums.
+
+00:04:51.000 --> 00:04:55.000
+ So that is our table.
+
+00:04:55.000 --> 00:04:59.000
+ Now what's going to happen is the interesting part is here.
+
+00:04:59.000 --> 00:05:01.000
+ But let's first talk about the comment table.
+
+00:05:01.000 --> 00:05:09.000
+ So the comment table is down here and the comment table has one user can have many comments
+
+00:05:09.000 --> 00:05:14.000
+ and one forum can have many comments as well.
+
+00:05:14.000 --> 00:05:19.000
+ And so because in a sense there is a -- let me change color here.
+
+00:05:19.000 --> 00:05:21.000
+ Come on, change color.
+
+00:05:21.000 --> 00:05:22.000
+ Let's go violet.
+
+00:05:22.000 --> 00:05:27.000
+ Because there is a many to many relationship between users and forums
+
+00:05:27.000 --> 00:05:30.000
+ with a little bit of comment data sitting right there in the middle.
+
+00:05:30.000 --> 00:05:36.000
+ We have to model it as -- that has to be modeled as a completely separate table.
+
+00:05:36.000 --> 00:05:39.000
+ So there's only two tables here, but really there's three tables here
+
+00:05:39.000 --> 00:05:46.000
+ because the user table is participating in both of these models.
+
+00:05:46.000 --> 00:05:50.000
+ And so we'll come back to the many to many field.
+
+00:05:50.000 --> 00:05:52.000
+ So this is the comment.
+
+00:05:52.000 --> 00:05:58.000
+ And like connection tables or junction tables or join tables, it has two foreign keys.
+
+00:05:58.000 --> 00:06:00.000
+ It's the most important thing.
+
+00:06:00.000 --> 00:06:02.000
+ It's the keys in each direction.
+
+00:06:02.000 --> 00:06:06.000
+ I guess I should have changed that, right?
+
+00:06:06.000 --> 00:06:10.000
+ So come on, give me -- can I draw?
+
+00:06:10.000 --> 00:06:13.000
+ Yeah.
+
+00:06:13.000 --> 00:06:16.000
+ Right, so we got the user table.
+
+00:06:16.000 --> 00:06:18.000
+ We got the comment table.
+
+00:06:18.000 --> 00:06:23.000
+ And we got the forum table.
+
+00:06:23.000 --> 00:06:26.000
+ So forums can have many comments.
+
+00:06:26.000 --> 00:06:28.000
+ Users can have many comments.
+
+00:06:28.000 --> 00:06:30.000
+ These are forum.
+
+00:06:30.000 --> 00:06:34.000
+ And so a user can have many forums.
+
+00:06:34.000 --> 00:06:40.000
+ So this side of it is a forum key, and this is a forum key as well, right?
+
+00:06:40.000 --> 00:06:43.000
+ Coming out of the comment table, there are two forum keys.
+
+00:06:43.000 --> 00:06:44.000
+ And look at that.
+
+00:06:44.000 --> 00:06:48.000
+ There's a forum key aimed at the forum model,
+
+00:06:48.000 --> 00:06:53.000
+ and then a forum key coming out of the comment to the user model.
+
+00:06:53.000 --> 00:06:56.000
+ Now again, we've talked about in the lectures,
+
+00:06:56.000 --> 00:06:59.000
+ we've talked about modeling data at the connection.
+
+00:06:59.000 --> 00:07:05.000
+ So the text that we're getting is the text --
+
+00:07:05.000 --> 00:07:10.000
+ the text that we're getting at the modeling point is this text right here.
+
+00:07:10.000 --> 00:07:12.000
+ It is the actual comment itself.
+
+00:07:12.000 --> 00:07:14.000
+ And you could make a different table for it,
+
+00:07:14.000 --> 00:07:19.000
+ but it's just as easy to model it right in the middle of the junction field.
+
+00:07:19.000 --> 00:07:23.000
+ Okay? And so that's pretty much it.
+
+00:07:23.000 --> 00:07:30.000
+ And we have to -- in the forums field, we are basically saying,
+
+00:07:30.000 --> 00:07:36.000
+ "Look, we're going all the way through the comment model,
+
+00:07:36.000 --> 00:07:40.000
+ and we're coming out the other end in the user model."
+
+00:07:40.000 --> 00:07:46.000
+ This related name is really, really important, and that's basically a name --
+
+00:07:46.000 --> 00:07:52.000
+ let me draw my picture again. I should have probably just drawn this picture and kept it.
+
+00:07:52.000 --> 00:08:02.000
+ The user table, the forum table, and the comment table.
+
+00:08:02.000 --> 00:08:05.000
+ The forum has many comments.
+
+00:08:05.000 --> 00:08:12.000
+ The user has many comments.
+
+00:08:12.000 --> 00:08:18.000
+ And so, in a sense, what we're seeing here is --
+
+00:08:18.000 --> 00:08:21.000
+ this basically says that there is a relationship --
+
+00:08:21.000 --> 00:08:25.000
+ dot, dot, dot, dot, dot, dot, dot --
+
+00:08:25.000 --> 00:08:33.000
+ between forums and users, and it is in the comments table.
+
+00:08:33.000 --> 00:08:36.000
+ The table that it goes through is the comments table.
+
+00:08:36.000 --> 00:08:38.000
+ That's what the "through" means.
+
+00:08:38.000 --> 00:08:42.000
+ And then the related name equals forum comments,
+
+00:08:42.000 --> 00:08:48.000
+ is actually you're installing in the user object a method, an attribute,
+
+00:08:48.000 --> 00:08:52.000
+ something in this user model that says "forum comments."
+
+00:08:52.000 --> 00:08:55.000
+ So we're actually extending the user model.
+
+00:08:55.000 --> 00:09:00.000
+ If we were looking at the user, we could say, "Hey, what are the forum comments for this user?"
+
+00:09:00.000 --> 00:09:05.000
+ And that would give us a -- it would come over here, and it would give us a list of all the forums --
+
+00:09:05.000 --> 00:09:10.000
+ actually, no, no, sorry, it would come over here and give us a list of all the comments.
+
+00:09:10.000 --> 00:09:13.000
+ But this related name is the name of this attribute.
+
+00:09:13.000 --> 00:09:18.000
+ And you don't necessarily need all the time to be able to do this,
+
+00:09:18.000 --> 00:09:23.000
+ but the problem is after a while when you're plugging so many things into the user model,
+
+00:09:23.000 --> 00:09:28.000
+ you can end up with name conflicts.
+
+00:09:28.000 --> 00:09:32.000
+ And so it's good to name this thing even though we might not use it.
+
+00:09:32.000 --> 00:09:35.000
+ So I hope that helps.
+
+00:09:35.000 --> 00:09:38.000
+ So this is a pretty straightforward thing,
+
+00:09:38.000 --> 00:09:45.000
+ other than the fact that the user model is our third table and we're using it in both places.
+
+00:09:45.000 --> 00:09:52.000
+ So there is that.
+
+00:09:52.000 --> 00:09:58.000
+ So the forms -- so the only place I'm using a form in here is this comment form.
+
+00:09:58.000 --> 00:10:07.000
+ So I just made it -- and the reason that I made a comment form is that I wanted to be able to make it look pretty.
+
+00:10:07.000 --> 00:10:08.000
+ I wanted to be able to use Crispy.
+
+00:10:08.000 --> 00:10:13.000
+ And so instead of just making this comment form on the detail page out of HTML,
+
+00:10:13.000 --> 00:10:18.000
+ I just made a form so I could use Crispy in the detail page.
+
+00:10:18.000 --> 00:10:20.000
+ Okay, so that's the forms.
+
+00:10:20.000 --> 00:10:29.000
+ The views are pretty straightforward, the create, the delete.
+
+00:10:29.000 --> 00:10:31.000
+ We'll come back to comment, create, and comment, delete.
+
+00:10:31.000 --> 00:10:33.000
+ They're not all that tricky either.
+
+00:10:33.000 --> 00:10:38.000
+ Probably the trickiest thing going on in here is the forum detail view.
+
+00:10:38.000 --> 00:10:46.000
+ And we're extending owner detail view and the template name and the model and all that stuff.
+
+00:10:46.000 --> 00:10:50.000
+ And we're not -- there's no -- we're not going to post, actually.
+
+00:10:50.000 --> 00:10:51.000
+ You'll see in a second.
+
+00:10:51.000 --> 00:10:53.000
+ We're not going to post back to this.
+
+00:10:53.000 --> 00:10:55.000
+ So we only need to get.
+
+00:10:55.000 --> 00:11:02.000
+ And so if you look at owner detail view -- I guess I should open up another tab.
+
+00:11:02.000 --> 00:11:07.000
+ This is dot dot my hearts owner.
+
+00:11:07.000 --> 00:11:13.000
+ Owner detail view extends detail view, which basically demands a primary key.
+
+00:11:13.000 --> 00:11:17.000
+ So there is this primary key value.
+
+00:11:17.000 --> 00:11:18.000
+ Don't do that.
+
+00:11:18.000 --> 00:11:19.000
+ Don't do that.
+
+00:11:19.000 --> 00:11:21.000
+ Undo.
+
+00:11:21.000 --> 00:11:23.000
+ There is this primary key value that's going to come in.
+
+00:11:23.000 --> 00:11:33.000
+ And that's going to come in from the detail view, which is the second parameter, which is forums, forum three.
+
+00:11:33.000 --> 00:11:37.000
+ So we're going to go grab and load that object.
+
+00:11:37.000 --> 00:11:39.000
+ I could have made that a getter 404.
+
+00:11:39.000 --> 00:11:42.000
+ I probably actually should have made that a getter 404.
+
+00:11:42.000 --> 00:11:44.000
+ So that's going to load the forum object.
+
+00:11:44.000 --> 00:11:50.000
+ And the forum object is the title and the text and the owner of the forum itself.
+
+00:11:50.000 --> 00:12:03.000
+ But then what I'm going to do is I'm going to say go get me all of the comment objects filtered so that the forum value in the model equals the current forum.
+
+00:12:03.000 --> 00:12:07.000
+ This forum -- that is the forum we just loaded.
+
+00:12:07.000 --> 00:12:09.000
+ That's the forum key in the model.
+
+00:12:09.000 --> 00:12:15.000
+ So the first one is this forum in models.
+
+00:12:15.000 --> 00:12:18.000
+ And the second one is this variable.
+
+00:12:18.000 --> 00:12:26.000
+ I could have changed this to be -- I'm not going to change it, but I could have changed this to be x.
+
+00:12:26.000 --> 00:12:28.000
+ I could change this to be x.
+
+00:12:28.000 --> 00:12:31.000
+ I'm not going to save it, although it might be.
+
+00:12:31.000 --> 00:12:33.000
+ Maybe I'll just save it.
+
+00:12:33.000 --> 00:12:39.000
+ Let's make sure I got all of comment forum, forum, forum.
+
+00:12:39.000 --> 00:12:44.000
+ Let's just make this be x, too, because that's the variable.
+
+00:12:44.000 --> 00:12:46.000
+ I hope I don't break the code by doing this.
+
+00:12:46.000 --> 00:12:55.000
+ I'm trying to show you that this is a field in the model and this is just a variable in this view.
+
+00:12:55.000 --> 00:12:56.000
+ Okay.
+
+00:12:56.000 --> 00:12:59.000
+ So this is going to give us a list of comments.
+
+00:12:59.000 --> 00:13:01.000
+ In a sense, this is kind of like a list view.
+
+00:13:01.000 --> 00:13:04.000
+ If you're dealing with a list view, you've got to write a for loop to go through it in the thing.
+
+00:13:04.000 --> 00:13:07.000
+ So we got all the comments for this thing.
+
+00:13:07.000 --> 00:13:10.000
+ And we're passing in the comment forum.
+
+00:13:10.000 --> 00:13:12.000
+ That's simply constructing it.
+
+00:13:12.000 --> 00:13:14.000
+ It's constructing this comment forum.
+
+00:13:14.000 --> 00:13:20.000
+ And then we're going to basically render the request.
+
+00:13:20.000 --> 00:13:24.000
+ So we'll close that one.
+
+00:13:24.000 --> 00:13:26.000
+ And so let's take a look at this detail page.
+
+00:13:26.000 --> 00:13:29.000
+ This detail page is what generates this forum.
+
+00:13:29.000 --> 00:13:32.000
+ A lot of it's pretty much the same.
+
+00:13:32.000 --> 00:13:36.000
+ Check to see if you're the owner before you put up the little button, little pencils.
+
+00:13:36.000 --> 00:13:37.000
+ That's quite nice.
+
+00:13:37.000 --> 00:13:39.000
+ Print out the forum title.
+
+00:13:39.000 --> 00:13:41.000
+ Print out the forum text.
+
+00:13:41.000 --> 00:13:48.000
+ Print out this stuff is all the forum title, text, and how long go with the natural time.
+
+00:13:48.000 --> 00:13:50.000
+ So that's pretty straightforward.
+
+00:13:50.000 --> 00:13:53.000
+ So that's really not all that tricky.
+
+00:13:53.000 --> 00:13:58.000
+ So then what we're going to do here is if the user is logged in.
+
+00:13:58.000 --> 00:14:01.000
+ And so it turns out that this does not require log in.
+
+00:14:01.000 --> 00:14:07.000
+ And so the only time we're going to show this comment, this comment form is if the user is logged in.
+
+00:14:07.000 --> 00:14:12.000
+ So this part right here is if the user is logged in.
+
+00:14:12.000 --> 00:14:16.000
+ BrClearEqualsAll is what stops, brings this stuff back to the left margin,
+
+00:14:16.000 --> 00:14:19.000
+ even though I floated these things over using CSS.
+
+00:14:19.000 --> 00:14:21.000
+ Load the crispy form tags.
+
+00:14:21.000 --> 00:14:23.000
+ And then I'm going to build the form.
+
+00:14:23.000 --> 00:14:30.000
+ That's this comment form that goes from the word comment, the word text, the submit button,
+
+00:14:30.000 --> 00:14:37.000
+ and the all forms, which is just an on-click JavaScript that sends us back to the all forms page.
+
+00:14:37.000 --> 00:14:40.000
+ And that is the end of the user authenticated.
+
+00:14:40.000 --> 00:14:47.000
+ Because it turns out that seeing all this stuff, seeing the actual comments, that's OK.
+
+00:14:47.000 --> 00:14:49.000
+ Non-logged in users can see it.
+
+00:14:49.000 --> 00:14:55.000
+ And then if you recall, going back to the views, we sent in the comments.
+
+00:14:55.000 --> 00:15:02.000
+ And the comments is a list of comments ordered by, in descending order, most recent first.
+
+00:15:02.000 --> 00:15:06.000
+ And I guess you don't see it there, but they are most recent first.
+
+00:15:06.000 --> 00:15:11.000
+ But at that point, we are just going to write a for loop to loop through all the comments,
+
+00:15:11.000 --> 00:15:15.000
+ print out the comment text, print out the comment updated at.
+
+00:15:15.000 --> 00:15:23.000
+ And if the owner of the comment is the current logged in user, put out a little trash icon.
+
+00:15:23.000 --> 00:15:24.000
+ OK?
+
+00:15:24.000 --> 00:15:26.000
+ Put out a little trash icon.
+
+00:15:26.000 --> 00:15:28.000
+ Got it?
+
+00:15:28.000 --> 00:15:33.000
+ So that generates the output.
+
+00:15:33.000 --> 00:15:35.000
+ That generates this page.
+
+00:15:35.000 --> 00:15:39.000
+ But let's take a look at a couple of things that we're going to do.
+
+00:15:39.000 --> 00:15:45.000
+ So you see this first two things, right?
+
+00:15:45.000 --> 00:15:49.000
+ We are actually going to post with action equals.
+
+00:15:49.000 --> 00:15:56.000
+ This form right here, the comment form, blah, does not post back to forums detail page.
+
+00:15:56.000 --> 00:15:58.000
+ This is the forums detail page.
+
+00:15:58.000 --> 00:16:02.000
+ If you look at it, it points us to posts to forum, comment, create.
+
+00:16:02.000 --> 00:16:04.000
+ So let's go back to that.
+
+00:16:04.000 --> 00:16:07.000
+ Forum, comment, create is right here.
+
+00:16:07.000 --> 00:16:15.000
+ And so it's just going to run this comment, create view, passing in the primary key of the forum.
+
+00:16:15.000 --> 00:16:16.000
+ OK?
+
+00:16:16.000 --> 00:16:24.000
+ So then if I go into my views, forum, create, no, comment, create view.
+
+00:16:24.000 --> 00:16:29.000
+ So comment, create view is what's going to happen when I get this post, right?
+
+00:16:29.000 --> 00:16:32.000
+ So the post is going to come in.
+
+00:16:32.000 --> 00:16:36.000
+ There's going to be some comment field, which is this text field.
+
+00:16:36.000 --> 00:16:40.000
+ And there is the primary key of the forum, not the comment.
+
+00:16:40.000 --> 00:16:42.000
+ So now we are going to make the connection.
+
+00:16:42.000 --> 00:16:45.000
+ This is where we're actually making the connection.
+
+00:16:45.000 --> 00:16:48.000
+ And you'll notice that I'm just saying login required view in view,
+
+00:16:48.000 --> 00:16:50.000
+ because I don't have an automated way to do this.
+
+00:16:50.000 --> 00:16:55.000
+ And so I'm going to do it by hand.
+
+00:16:55.000 --> 00:16:57.000
+ So we're in the post.
+
+00:16:57.000 --> 00:17:00.000
+ We're going to go grab the forum object.
+
+00:17:00.000 --> 00:17:06.000
+ I apply a primary key. There I am using a getter 404, so at least I blow up in the right way.
+
+00:17:06.000 --> 00:17:10.000
+ Then what I'm going to do is I am going to-- let's go back to models.
+
+00:17:10.000 --> 00:17:16.000
+ I've got to fill out the text field, the forum field, and the owner field.
+
+00:17:16.000 --> 00:17:19.000
+ And the owner field are the two foreign keys.
+
+00:17:19.000 --> 00:17:21.000
+ And-- come back, come back, come back.
+
+00:17:21.000 --> 00:17:26.000
+ In the many to many, we have to have those objects available to us.
+
+00:17:26.000 --> 00:17:31.000
+ So we are going to build a new comment that doesn't store-- this doesn't store in the database.
+
+00:17:31.000 --> 00:17:34.000
+ The text field comes from the request post.
+
+00:17:34.000 --> 00:17:37.000
+ The owner field is current request user.
+
+00:17:37.000 --> 00:17:42.000
+ And the forum field, the foreign key in this middle connector table,
+
+00:17:42.000 --> 00:17:46.000
+ is this forum object that we just loaded.
+
+00:17:46.000 --> 00:17:50.000
+ And so that fully populates a comment object.
+
+00:17:50.000 --> 00:17:54.000
+ It fully populates a comment object in that post method.
+
+00:17:54.000 --> 00:17:59.000
+ And then all we have to do is we have to say, save it.
+
+00:17:59.000 --> 00:18:05.000
+ So the comment.save takes that in-memory comment that we created with the two foreign keys in the comment
+
+00:18:05.000 --> 00:18:08.000
+ and sticks it in the database.
+
+00:18:08.000 --> 00:18:10.000
+ And then all we have to do is redirect.
+
+00:18:10.000 --> 00:18:14.000
+ Now what we want to redirect back to is we want to redirect back to this detail page,
+
+00:18:14.000 --> 00:18:19.000
+ because we don't want to redirect back to ourselves, and we don't want to redirect back to all forums.
+
+00:18:19.000 --> 00:18:22.000
+ And so we have-- when we hit submit, we want to come back here.
+
+00:18:22.000 --> 00:18:25.000
+ So it just looks like that thing showed up.
+
+00:18:25.000 --> 00:18:30.000
+ But really, it was a full request response cycle where it posted to comment create view.
+
+00:18:30.000 --> 00:18:32.000
+ But after the post was done, it did a redirect.
+
+00:18:32.000 --> 00:18:35.000
+ And we're doing a post redirect, so it's cool anyways.
+
+00:18:35.000 --> 00:18:40.000
+ And so this is a slightly different version of the reverse.
+
+00:18:40.000 --> 00:18:46.000
+ It is the same concept as what we've seen all along,
+
+00:18:46.000 --> 00:18:54.000
+ where we have a forum ID inside a second parameter to the URL, because the reverse in this URL thing--
+
+00:18:54.000 --> 00:18:57.000
+ I wish they'd call this reverse, because that's what it's doing.
+
+00:18:57.000 --> 00:19:01.000
+ The URL is just kind of a wrapper for reverse.
+
+00:19:01.000 --> 00:19:03.000
+ Well, this is the two-parameter form.
+
+00:19:03.000 --> 00:19:09.000
+ So we have a one-parameter form of URL, which is this one, which says go url forums colon all.
+
+00:19:09.000 --> 00:19:14.000
+ It says, give me the URL to the view that is named all within forums.
+
+00:19:14.000 --> 00:19:19.000
+ Here, I'm saying URL forums forum create forum ID.
+
+00:19:19.000 --> 00:19:28.000
+ This is saying this one needs a primary key, because if you go into urls.py,
+
+00:19:28.000 --> 00:19:31.000
+ the forum create demands a parameter.
+
+00:19:31.000 --> 00:19:32.000
+ And so we're feeding it.
+
+00:19:32.000 --> 00:19:36.000
+ But you can also feed that in in a reverse.
+
+00:19:36.000 --> 00:19:38.000
+ And you do it with this funky format.
+
+00:19:38.000 --> 00:19:42.000
+ I wish that was by position, but no, it's not.
+
+00:19:42.000 --> 00:19:47.000
+ It's args keyword, and it's sending in a list of variables.
+
+00:19:47.000 --> 00:19:53.000
+ And the variable is the primary key, which is the number, which is this 3.
+
+00:19:53.000 --> 00:20:03.000
+ So redirecting to forum/forum/3, and that's where the 3 comes from.
+
+00:20:03.000 --> 00:20:11.000
+ OK, so the only thing to look at next is what happens when I hit the Delete button.
+
+00:20:11.000 --> 00:20:14.000
+ So let's take a look at the detail page.
+
+00:20:14.000 --> 00:20:21.000
+ So remember that we cannot delete in a get, but we have to delete in a post.
+
+00:20:21.000 --> 00:20:27.000
+ OK, so in here, I am not-- this is the trash can.
+
+00:20:27.000 --> 00:20:29.000
+ The trash can's not going to do the deleting.
+
+00:20:29.000 --> 00:20:36.000
+ The trash can is going to link to forums/comment/delete with comment ID.
+
+00:20:36.000 --> 00:20:40.000
+ So there's this number 3, but each of these comments has a comment ID.
+
+00:20:40.000 --> 00:20:42.000
+ So let's just inspect.
+
+00:20:42.000 --> 00:20:45.000
+ You can see in the bottom, it's comment 7.
+
+00:20:45.000 --> 00:20:48.000
+ This one is comment 4.
+
+00:20:48.000 --> 00:20:50.000
+ So that is the comment ID.
+
+00:20:50.000 --> 00:20:55.000
+ Because we're looping in this code, we are looping through for comment and comments.
+
+00:20:55.000 --> 00:20:59.000
+ So each comment has the primary key.
+
+00:20:59.000 --> 00:21:04.000
+ So with all that, I am just going to click on it.
+
+00:21:04.000 --> 00:21:13.000
+ And of course, we're going to have a verification page that turns the get into a post, in a sense.
+
+00:21:13.000 --> 00:21:15.000
+ I mean, it's just a page.
+
+00:21:15.000 --> 00:21:17.000
+ And so we've gone to comment/delete view.
+
+00:21:17.000 --> 00:21:20.000
+ So forums/comment 7 delete.
+
+00:21:20.000 --> 00:21:27.000
+ And if you look at the urls.py, forums/comment 7 delete.
+
+00:21:27.000 --> 00:21:35.000
+ And we give it a name, and we're going to rope through to comment/delete view.
+
+00:21:35.000 --> 00:21:41.000
+ So if we take a look at our comment/delete view, well, what's pretty cool is that we can mostly use owner/delete view.
+
+00:21:41.000 --> 00:21:46.000
+ Because by now, we know that we're in the comment model.
+
+00:21:46.000 --> 00:22:07.000
+ The template we're going to work with is comment/delete, which is pretty straightforward.
+
+00:22:07.000 --> 00:22:09.000
+ So it's going to go find.
+
+00:22:09.000 --> 00:22:11.000
+ And so you'll notice we don't have a get in here.
+
+00:22:11.000 --> 00:22:13.000
+ We don't have a post in here.
+
+00:22:13.000 --> 00:22:17.000
+ And that's because we're inheriting all that from owner/delete view.
+
+00:22:17.000 --> 00:22:19.000
+ The owner/delete view.
+
+00:22:19.000 --> 00:22:25.000
+ Now, the only thing we're overriding is the get of the success url.
+
+00:22:25.000 --> 00:22:32.000
+ Because the success url, when we're all done, we want to go back to the forum.
+
+00:22:32.000 --> 00:22:35.000
+ Not 7, but 3.
+
+00:22:35.000 --> 00:22:37.000
+ See how we're going to go back to forum 3?
+
+00:22:37.000 --> 00:22:40.000
+ And it looks like that just went away.
+
+00:22:40.000 --> 00:22:47.000
+ And so the success url actually needs to be computed based on the current forum.
+
+00:22:47.000 --> 00:22:51.000
+ And so we are overriding the get success url, which is part--
+
+00:22:51.000 --> 00:22:59.000
+ not exactly of owner/delete view, but the models, the generic delete view.
+
+00:22:59.000 --> 00:23:01.000
+ We are returning a string.
+
+00:23:01.000 --> 00:23:12.000
+ And if you go and you read, self.object.forum-- self.object points to the current comment.
+
+00:23:12.000 --> 00:23:15.000
+ So if this is-- we're in the middle of comment/for/delete.
+
+00:23:15.000 --> 00:23:21.000
+ While we're running in this view, self.object is the comment.
+
+00:23:21.000 --> 00:23:24.000
+ That's number 4, comment number 4.
+
+00:23:24.000 --> 00:23:33.000
+ But comment number 4.forum is the primary key of the forum that this object belonged to.
+
+00:23:33.000 --> 00:23:35.000
+ By the time-- oops.
+
+00:23:35.000 --> 00:23:39.000
+ By the time we're here getting the success url, it's actually been deleted.
+
+00:23:39.000 --> 00:23:41.000
+ But we still have an in-memory copy of it.
+
+00:23:41.000 --> 00:23:45.000
+ So we're going to go to the forum's deep-- oh, no, no, no.
+
+00:23:45.000 --> 00:23:52.000
+ I do not intend-- where was I?
+
+00:23:52.000 --> 00:23:56.000
+ Dragging it by mistake, trying to highlight it.
+
+00:23:56.000 --> 00:23:59.000
+ So it's been deleted, but we have it sitting here in the memory.
+
+00:23:59.000 --> 00:24:06.000
+ And so we can get its former primary key-- we can get the forum's primary key.
+
+00:24:06.000 --> 00:24:09.000
+ Object doesn't exist in the database anymore, but the memory copy does.
+
+00:24:09.000 --> 00:24:11.000
+ And so we know what that number is.
+
+00:24:11.000 --> 00:24:15.000
+ So then we go to this fancy reverse again with a parameter.
+
+00:24:15.000 --> 00:24:18.000
+ And so that's how we get back.
+
+00:24:18.000 --> 00:24:21.000
+ Let's see what happens in the cancel.
+
+00:24:21.000 --> 00:24:24.000
+ Cancel, cancel-- oh, so it's the cancel, right.
+
+00:24:24.000 --> 00:24:26.000
+ So the cancel does this.
+
+00:24:26.000 --> 00:24:32.000
+ The cancel generates the url, forum detail, with a comment, which is the current object,
+
+00:24:32.000 --> 00:24:36.000
+ and then a foreign key and a forum, and the primary key of the forum.
+
+00:24:36.000 --> 00:24:42.000
+ So comment forum ID is what generates this url.
+
+00:24:42.000 --> 00:24:44.000
+ And there is that url.
+
+00:24:44.000 --> 00:24:46.000
+ It goes back to the forum detail page.
+
+00:24:46.000 --> 00:24:49.000
+ So if I go cancel, it goes back to the right page.
+
+00:24:49.000 --> 00:24:55.000
+ And that's because comment, you're walking the foreign key in this particular situation.
+
+00:24:55.000 --> 00:25:01.000
+ So I think that we pretty much have covered everything.
+
+00:25:01.000 --> 00:25:02.000
+ Just check the views.
+
+00:25:02.000 --> 00:25:07.000
+ Yeah, we've covered pretty much everything that's unique in this particular bit of code.
+
+00:25:07.000 --> 00:25:14.000
+ And again, the new part here is to have a connector model and then have a many-to-many field.
+
+00:25:14.000 --> 00:25:20.000
+ The rest of this is very much similar to many of the other things that we have talked about.
+
+00:25:20.000 --> 00:25:22.000
+ So I hope this has been helpful to you.
+
+00:25:22.000 --> 00:25:26.000
+ And now you can start playing with many-to-many kinds of connections.
+
+00:25:26.000 --> 00:25:27.000
+ Cheers.
+

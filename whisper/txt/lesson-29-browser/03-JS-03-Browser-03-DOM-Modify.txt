@@ -1,0 +1,165 @@
+ So now we're going to do more than just console.log
+ so we can see what's going on in JavaScript,
+ but we're actually going to do modifying the document object model in JavaScript.
+ So recall on the o1noscript.htm that I just used the debugger
+ to modify the document object model, right?
+ We modify the document object model,
+ and if it's visible through the window,
+ then what we changed is instantly changed.
+ So literally, we're running JavaScript on one end,
+ and the UI just changes. It's like it instantaneously.
+ Although if you make mistakes and you run code that runs too long,
+ those changes will be delayed
+ because we have to finish the JavaScript code
+ and let the browser do the redisplay.
+ But we can change these by hand,
+ but let's just do this instead with a trigger.
+ And to trigger it, we have to be able to grab bits of the DOM
+ or query the document object model.
+ Let's recall 03event.htm, and all we're showing here
+ is that we can define a function in JavaScript,
+ then we can have an onClick method that calls my function
+ after the click happens.
+ Again, remember that those quotes are important.
+ onClick attribute is a string,
+ which is only parsed at the moment that you click it,
+ and then func is called in that moment.
+ So let's do something a little more interesting
+ in that onClick method.
+ So the top part is still an ID tag, an h1,
+ except now we put id equals fun,
+ and you can choose anything you want for the ID.
+ It's got to be unique across the whole document.
+ Remember CSS.
+ And then it has a bunch of attributes and methods.
+ Elements have attributes and methods,
+ and one of them is innerHTML.
+ And I simply assign the innerHTML to a cool header.
+ And that's how you basically see that change.
+ We're changing the element.
+ Now, an important part of this is the function ends,
+ so it goes back into the browser
+ and the browser sees the change to the document object model
+ and then displays it.
+ If we did something crazy in the last line of my func
+ that did not give the thread back to the browser,
+ it might get messed up, but we're going to just return.
+ We're going to make our change to document object model.
+ This code here, console.log let lm equals console.log lm
+ innerHTML, that's really quick.
+ Just in a blink of an eye, that code runs,
+ meaning there's nothing slow in it.
+ Everything happens fast. There's nothing to wait for.
+ So everything happens fast.
+ We get the browser back to redisplay things.
+ And so you can see when you click on it,
+ you can see that it says, "I was clicked."
+ It goes and looks the element up and it says,
+ "Oh, I just found an H1 tag."
+ And then I set its innerHTML to be a cool header.
+ I could have appended something
+ because I could have read innerHTML if I felt like it.
+ But then as soon as that function finishes,
+ then the browser takes over and then redisplays the updated DOM.
+ And again, everything that we did happens so rapidly
+ that you don't even notice it.
+ So now let's add some stuff to the DOM.
+ We can completely build a tag and we can add it to the DOM.
+ Everything we've done so far is find a tag,
+ mess with it and then put it back.
+ So let's add something to the DOM.
+ This is a little bit more intricate, but we're going...
+ And this is a source code 09-append.htm
+ if you want to go play with it.
+ So we're going to have a little button, an anchor tag,
+ and we're going to have an add, call the add function.
+ And then what you'll notice is we have a UL tag
+ and I've got an ID of Zap on the UL tag.
+ And then the first item is li, list item tag and then /ul.
+ And then in the JavaScript,
+ I create a global variable called counter equals one.
+ And then I create a function called add.
+ And in that function, I go create a new create element.
+ Document.createElement says make me a new element.
+ I want an element of a tag, an li tag.
+ And then I can set things. I can set its class name.
+ I can set its inner HTML.
+ I'm concatenating the word the counter is
+ and then I'm concatenating the number.
+ And then I'm going to go document get element ID Zap.
+ Now, that is the UL tag, a pen child.
+ So the li tag is a child of the UL tag.
+ And by saying a pen child, I say I want to make a new child of this UL tag.
+ And so that's when you click it and then counter goes up by one.
+ And it's a global variable.
+ So kind of every time we call add, that counter goes up.
+ So first item, you click it, it says the counter is one.
+ You click it again, it adds counters too.
+ Click it again, it adds counters too.
+ You can do this as many times you like.
+ But the idea of making a new tag that's not connected to the document,
+ we make an li tag, we set some stuff in it,
+ and then we plug it into the document with a pen child.
+ If you look at the, it starts out with first item.
+ And you'll notice, of course, that the more button
+ has an event associated with it.
+ We created that event with the onclick.
+ And then after we click it a couple times, boom, boom, boom,
+ it just adds those things.
+ So we can manipulate many things in the document object model
+ from JavaScript, including changing the CSS,
+ which means we can alter the look of things.
+ And so in this, we've got a header tag with an idea of fun.
+ Again, the idea is a way for us to grab it in JavaScript, okay?
+ And then we're going to have a button with an idea of poof
+ and a button, an idea of show that has the text hide and show.
+ And we're going to do this using add event listener.
+ There are shorter, we could have used the onclick,
+ but I just want to kind of get used to the notion
+ that one of the things you do toward the end of your document
+ is you add all the event listeners.
+ So you have all the HTML that gets displayed,
+ and then after that, you add event listeners.
+ And so in that script, we do document, get element, ID, show,
+ and then we're going to add an event listener.
+ And we're looking for the click event.
+ And it says, open print, quote, click, quote, comma.
+ And then what I have is literally code.
+ And again, first class functions, the function keyword returns code
+ so that we are doing the second parameter to add event listener.
+ So we're creating a function,
+ but you'll notice the function currently has no parameters,
+ and it has no name, open curly brace.
+ It's an anonymous function, and it only has one line of code,
+ document, get element, ID, fun, dot style.
+ That's how we get our hands on the CSS.
+ Display is a CSS value, and we're going to set it to the string block.
+ So that is our show.
+ And we'll see that when we do the poof, the add event listener,
+ you know, on the hide button,
+ we're going to have an event listener for clicking.
+ And in this one, we're going to set the display none,
+ which means it's going to hide, so you click on hide.
+ But you'll see a slightly different syntax,
+ and you'll see the syntax a lot
+ because that early JavaScript, there was only one syntax for this,
+ and now there's sort of more clever syntaxes
+ in later versions of JavaScript.
+ And a key thing to remember is that this second example for the poof,
+ open parent element equals greater than,
+ which is kind of like a right arrow, equals document, get element, ID, fun.
+ This is a shortcut to define a function,
+ to define a function with no name.
+ And so for all intents and purposes,
+ these two bits of code are equivalent.
+ We're saying when there is a click on the poof item,
+ we're going to call this function that has no name,
+ but it takes as one parameter of the event.
+ The event is a parameter to all these little events
+ that the browser sets up when it calls us.
+ And then we're not going to use it, actually.
+ We just say document, get element, ID, fun, style dot display equals none,
+ which makes it vanish. Okay?
+ So if you run this, 13-css.htm, you click on hide, the header goes away.
+ You click on show, it comes back. You click on hide, it goes away.
+ And so this is just an example of how you can modify CSS.

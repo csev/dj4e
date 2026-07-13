@@ -1,0 +1,821 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.860
+ Hello and welcome to another code walkthrough for Django for Everybody. In this we're going to walk
+
+00:00:06.860 --> 00:00:14.100
+ through the how to handle pictures and in our DJ free samples I'm gonna walk through the code so
+
+00:00:14.100 --> 00:00:27.380
+ so first let's walk through just how it basically works it's a CRUD application this is CRUD and now
+
+00:00:27.380 --> 00:00:36.620
+ we have this browsing to upload a file and so we'll upload that file and then when we look at it
+
+00:00:36.620 --> 00:00:42.500
+ we're going to see it if I click on the picture I get kind of this overlay view that's all JavaScript
+
+00:00:42.500 --> 00:00:51.300
+ and then I hide it and I can upload it I can edit and delete it so let me kind of walk through how
+
+00:00:51.300 --> 00:01:03.820
+ this works so first off let's take a look at urls.py there's nothing particularly special that the
+
+00:01:03.820 --> 00:01:11.460
+ whole pattern is kind of the same I'll come back to this particular URL the actual picture the thing
+
+00:01:11.460 --> 00:01:20.180
+ that in a sense serves the picture so if I open this view the image in a new tab well it's this
+
+00:01:20.180 --> 00:01:27.780
+ it's this URL that's actually serving the image this image is stored in the database and so we'll
+
+00:01:27.780 --> 00:01:35.180
+ come back to that particular one it's the stream file view okay so let's go back to all pics and
+
+00:01:35.180 --> 00:01:42.660
+ let's start taking a look first let's go at the model first because this is where everything starts
+
+00:01:42.660 --> 00:01:51.660
+ sure let's go put the model here put the views there and the forms there okay so let's start the
+
+00:01:51.660 --> 00:01:56.220
+ model we'll start from the back and forwards so if we were to go look at the admin I think I've
+
+00:01:56.220 --> 00:02:06.660
+ got the admin hidden in this particular one let's take a look at admin.py yeah I'm gonna
+
+00:02:06.660 --> 00:02:13.100
+ so this is one of the things let me show you how the admin works I hope I got admin going
+
+00:02:13.100 --> 00:02:21.340
+ probably don't have my admin account oh there we are we have admin so if I'm to take a look at the
+
+00:02:21.340 --> 00:02:33.580
+ pics so it turned out that I didn't want either of these these two things to show up because it
+
+00:02:33.580 --> 00:02:38.580
+ turned out it made it difficult because I wouldn't couldn't update things so you won't see picture or
+
+00:02:38.580 --> 00:02:46.260
+ content type here in admin and I do that by excluding this and instead of doing the shortcut
+
+00:02:46.260 --> 00:02:53.580
+ I am going to register for the for the model pic this particular class and it allows me to have
+
+00:02:53.580 --> 00:02:59.060
+ this class wide variable called exclude so that I don't show those things and so that's that's
+
+00:02:59.060 --> 00:03:04.660
+ just a little trick on admin so that when you see it when they're in the database they're just not
+
+00:03:04.660 --> 00:03:10.460
+ there because you can't because the admin interface is not smart enough to update these pictures the
+
+00:03:10.460 --> 00:03:18.140
+ way I want to update them so I'm going to hide that so in the model we've got a binary field which
+
+00:03:18.140 --> 00:03:23.380
+ is like a blob if you're into databases and I'm allowing it to be null and blank and editable and
+
+00:03:23.380 --> 00:03:31.500
+ then there is this thing called the content type and the content type is open this in a
+
+00:03:31.500 --> 00:03:44.180
+ new window and I copy this location so if I were to do a view develop a console network one of the
+
+00:03:44.180 --> 00:03:52.460
+ things when you're serving images is that you've got to you've got to set the MIME type so this is
+
+00:03:52.460 --> 00:03:58.220
+ a get request and it's sent a bunch of data but if I look at the headers here the response header
+
+00:03:58.220 --> 00:04:06.220
+ includes this header called the content type oh no that was the icon what am I doing persist logs
+
+00:04:06.220 --> 00:04:14.380
+ I'll clear this it's not the icon that was the icon but let me retrash this and so this is the
+
+00:04:14.380 --> 00:04:20.620
+ actual PNG and then the icon comes as well of course the icons that little picture but the
+
+00:04:20.620 --> 00:04:26.100
+ content type is image slash PNG and that's really important when you're uploading the file you get
+
+00:04:26.100 --> 00:04:30.860
+ to have it and then you have to send it back out otherwise the browser will not know how to properly
+
+00:04:30.860 --> 00:04:38.420
+ format this so that is what is here right that's the content type it's just a string field the
+
+00:04:38.420 --> 00:04:45.740
+ content type is just a string but it's very important to track it so when I am in a on add
+
+00:04:45.740 --> 00:04:52.300
+ when I upload the file and I pick it it's actually communicated to me as part of the uploaded data
+
+00:04:52.300 --> 00:05:00.300
+ but I got to remember it I got to actual pixels go in here and the content type goes in its own
+
+00:05:00.300 --> 00:05:05.860
+ character character field the pixel goes into about the pixels of the picture the actual colors and
+
+00:05:05.860 --> 00:05:12.420
+ stuff go into this binary field and I'm going to use the owner so we're going to have this we did
+
+00:05:12.420 --> 00:05:18.420
+ this before we have an owner and that's just going to be automatically created when I there's a
+
+00:05:18.420 --> 00:05:34.180
+ there's a owners.py there's a owners.py so there's owners.py and I mean the owner.py from the
+
+00:05:34.180 --> 00:05:39.980
+ previous thing and that gets all taken care of in the views so all we got it's pretty much a
+
+00:05:39.980 --> 00:05:46.460
+ standard thing except we've got these two things and those are hidden from the admin so now let's
+
+00:05:46.460 --> 00:05:53.300
+ take a look at the views and so we're going to use the owner views again and those are automatically
+
+00:05:53.300 --> 00:06:01.220
+ handling all of the detail of setting the owner field and there is just not a single line of code
+
+00:06:01.220 --> 00:06:07.780
+ in here that has anything to do with setting the owner field I set have this owner field in my model
+
+00:06:07.780 --> 00:06:15.340
+ and then I just extend for all of my other views I extend that okay so I have an owner list view
+
+00:06:15.340 --> 00:06:20.740
+ an owner detail view and you'll notice those do not require login I'm gonna specify the template
+
+00:06:20.740 --> 00:06:26.860
+ name I'm getting a little tired of just remembering I don't necessarily like their naming conventions
+
+00:06:26.860 --> 00:06:34.020
+ and so this I'm gonna have my own template names here and create view this one you're
+
+00:06:34.020 --> 00:06:42.580
+ gonna make one okay and we're gonna have a get request it's like going back because I can't quite
+
+00:06:42.580 --> 00:06:55.180
+ make this one complete and my post request and so the post request yeah I'm gonna so I'm just this
+
+00:06:55.180 --> 00:07:00.940
+ I might have been able to extend something or put inside but I'm just gonna do all the work you'll
+
+00:07:00.940 --> 00:07:07.180
+ notice I'll walk through this this will be a good review of that so let's just look at the let's
+
+00:07:07.180 --> 00:07:18.500
+ look at the pick create view next so let's take a look at forms HTML so now let's look at forms.py
+
+00:07:18.500 --> 00:07:26.940
+ so the create form so if you if you think about it if you recall right there is the views in the
+
+00:07:26.940 --> 00:07:32.620
+ middle views and then the thing that talks to the browser that really controls our relationship with
+
+00:07:32.620 --> 00:07:38.260
+ a browser is the form and a thing that controls our relationship with a database is the model
+
+00:07:38.260 --> 00:07:42.900
+ right so the view is interacting with the form to get what it needs to do and then it kind of
+
+00:07:42.900 --> 00:07:47.980
+ transports it to the model so that would be kind of like a controller function if we're thinking
+
+00:07:47.980 --> 00:07:56.140
+ a model view controller this would be but that's okay so so so the form the form is what determines
+
+00:07:56.140 --> 00:08:05.380
+ all of what's going on on this screen and then the model yeah oh yeah that's not that looks
+
+00:08:05.380 --> 00:08:11.180
+ really not good the model is what is going on back here and so you can think of the view is like
+
+00:08:11.180 --> 00:08:19.900
+ manipulating both the form escape both the form and the model and so it's interacting with them
+
+00:08:19.900 --> 00:08:31.660
+ and so you'll see when it's doing things in the beginning like clear escape okay so you'll you'll
+
+00:08:31.660 --> 00:08:36.460
+ see that in the view when it's doing its work it's working with the form and then eventually it's
+
+00:08:36.460 --> 00:08:42.060
+ working with the model toward the end okay and so to some degree this post request is to get data
+
+00:08:42.060 --> 00:08:51.100
+ from the form and handle everything when it's doing it so that's let's avoid to some degree
+
+00:08:51.100 --> 00:08:58.080
+ the hardest bits we'll come back to that in a second so let's go and hit cancel and then add a
+
+00:08:58.080 --> 00:09:06.260
+ pick add a pick basically runs this get request so we're going to grab the form it's the create
+
+00:09:06.260 --> 00:09:11.060
+ form and there's a little bit of work in here there's the create form and we're going to jack
+
+00:09:11.060 --> 00:09:15.180
+ into just object-oriented ways we're going to jack into the clean we're going to jack into the
+
+00:09:15.180 --> 00:09:22.820
+ save but for now all it's doing is this bit right here that you've been using for a while and so
+
+00:09:22.820 --> 00:09:29.700
+ we're going to tell it what we're going to make a picture form and so here's a thing so there is a
+
+00:09:29.700 --> 00:09:39.580
+ file field and so we're asking the form to include a file field okay and so that's what puts out this
+
+00:09:39.580 --> 00:09:45.140
+ file to upload less than or equal to megabytes we've got a little bit of code to both have a
+
+00:09:45.140 --> 00:09:53.380
+ numeric limit of the size max upload limit that's just a class-wide variable and then the max upload
+
+00:09:53.380 --> 00:09:58.580
+ limit text which is that in text and that little file to upload less than or equal to two megabytes
+
+00:09:58.580 --> 00:10:04.420
+ that's because I'm doing this in the form so I've got a little bit of logic in the form and it is a
+
+00:10:04.420 --> 00:10:12.100
+ model form which means that it takes its it takes its input from it you know I don't have to put
+
+00:10:12.100 --> 00:10:18.780
+ these things in there but I do have to tell it which things I actually want to do and so I want
+
+00:10:18.780 --> 00:10:23.300
+ the title in the text I don't want the owner and create it at an update or kind of automatically so
+
+00:10:23.300 --> 00:10:30.060
+ that's why I've got the fact that inherit from the pick model which is this model inherit from the
+
+00:10:30.060 --> 00:10:37.020
+ pick model and include title text and picture now title and text come from the model and picture
+
+00:10:37.020 --> 00:10:45.740
+ comes from right here so we're we're not it if Django were our friend it would understand this
+
+00:10:45.740 --> 00:10:51.620
+ would be a file field but it's not and so we have to actually manipulate it and convert it it's not
+
+00:10:51.620 --> 00:10:57.540
+ hard but in between the view I mean the form in the model we got to do a bit of work and we do it
+
+00:10:57.540 --> 00:11:11.380
+ here in forms.py okay so meta okay so this part here in the top is all that is affected to create
+
+00:11:11.380 --> 00:11:18.220
+ this screen right so that's what the get is doing so if we look at the get it makes a form and then
+
+00:11:18.220 --> 00:11:25.180
+ it renders it to self template which is picked stop form dot HTML and here we go it's pretty
+
+00:11:25.180 --> 00:11:30.420
+ straightforward now we're just going to load our crispy form tag extend our base bootstrap put out
+
+00:11:30.420 --> 00:11:35.140
+ the CSRF token pretty up the form and crispy and that's sort of everything from title and to file
+
+00:11:35.140 --> 00:11:39.820
+ upload and then we have a submit button and a cancel button so one of the things that we're
+
+00:11:39.820 --> 00:11:49.820
+ going to do is we are going to add some jQuery and that is we're going to connect into this form and
+
+00:11:49.820 --> 00:11:55.260
+ when the submit button is pressed we're going to run this JavaScript code so that this line right
+
+00:11:55.260 --> 00:12:01.500
+ here upload form submit function that makes it so that whenever the submit button whenever this
+
+00:12:01.500 --> 00:12:08.660
+ submit button here is pressed on this form this jQuery is going to run and so we will do a web
+
+00:12:08.660 --> 00:12:14.540
+ developer well it's not going to do us much good because actually we can so I will I'll show you
+
+00:12:14.540 --> 00:12:19.340
+ how that works so what we're going to do here is this a bit of code I got this off stack overflow
+
+00:12:19.340 --> 00:12:24.980
+ right there and what I'm going to do basically is I'm going to read whether or not this file
+
+00:12:24.980 --> 00:12:30.340
+ is greater than or equal to two megabytes so if it's greater than two megabytes I'm going to stop
+
+00:12:30.340 --> 00:12:36.300
+ and complain with an alert statement so this is JavaScript and returning false here says I'm not
+
+00:12:36.300 --> 00:12:46.300
+ going to upload it so let me create one with some stuff and let me browse let me find a really large
+
+00:12:46.300 --> 00:12:56.340
+ file okay so now I'm going to do a web developer JavaScript console oh and by the way let me do a
+
+00:12:56.340 --> 00:13:01.300
+ view source on this so you can kind of see that it you can see all the stuff that came from base
+
+00:13:01.300 --> 00:13:11.500
+ bootstrap and you can see there's the CSRF token there is the file input types and then here's
+
+00:13:11.500 --> 00:13:17.140
+ submit and then here's the JavaScript at the bottom and this JavaScript is running code out
+
+00:13:17.140 --> 00:13:22.000
+ of jQuery and we'll talk about jQuery right now we'll just look at it as JavaScript and we happen
+
+00:13:22.000 --> 00:13:27.940
+ to be using the jQuery library okay so now what I'm going to do is I'm going to press submit and
+
+00:13:27.940 --> 00:13:32.940
+ I'll watch this console I'm going to press the submit button and code is going to run and you're
+
+00:13:32.940 --> 00:13:39.180
+ going to see the JavaScript run and it's not going to be happy with this file Sakai ladies of Sakai
+
+00:13:39.180 --> 00:13:47.340
+ because it's too big I think yeah so there you go look it's a checking file size and it complained
+
+00:13:47.340 --> 00:13:54.340
+ that this ladies of Sakai camp type must be less than two megabytes which is exactly what I wanted
+
+00:13:54.340 --> 00:14:02.980
+ and so that I I enforce that rule right here okay now it turns out that I got to also enforce it in
+
+00:14:02.980 --> 00:14:10.180
+ the server because somebody could easily just override that and force it to be uploaded but
+
+00:14:10.180 --> 00:14:15.620
+ but you see that the JavaScript is running in this browser and it's kind of protecting it other than
+
+00:14:15.620 --> 00:14:20.820
+ that this looks pretty much like a standard crud thing except very importantly if you're uploading
+
+00:14:20.820 --> 00:14:25.860
+ files you've got to say and type equals multi-part slash form data and that has to do with the format
+
+00:14:25.860 --> 00:14:30.940
+ that the data is sent if you just have like a few text fields then you don't need this but if you
+
+00:14:30.940 --> 00:14:39.620
+ have longer things like files you need that and so that is how we get through the get request okay
+
+00:14:39.620 --> 00:15:00.220
+ so now let me pick a better file pong my favorite that's dangerous one of my earliest I don't know got
+
+00:15:00.220 --> 00:15:09.300
+ so many little files Apple iPhone I don't know whatever so this one's nice less than two and I'm
+
+00:15:09.300 --> 00:15:13.100
+ going to hit the post so I'm gonna hit the submit now the post is going to come through and it's
+
+00:15:13.100 --> 00:15:18.580
+ going to run this code right here and this is probably the trickiest part of this code so if
+
+00:15:18.580 --> 00:15:26.740
+ you recall we can construct a create form and get it back and we pull the data request dot post now
+
+00:15:26.740 --> 00:15:33.060
+ it turns out that these little attached files like Apple iPhone Sakai JPEG comes in in request dot
+
+00:15:33.060 --> 00:15:41.460
+ files and or none just is just in case it's not there okay and so what happens is is this is where
+
+00:15:41.460 --> 00:15:47.220
+ we're going to do some of our work we're going to actually pull data from this request dot files
+
+00:15:47.220 --> 00:15:54.900
+ and so we're going to jack into the clean so clean is one of the life cycles of a model form
+
+00:15:54.900 --> 00:16:00.820
+ I mean once the data comes in it's going to ask to be cleaned so what we do is we call the super
+
+00:16:00.820 --> 00:16:06.000
+ call the super class the model form class and do the clean there it doesn't know anything about
+
+00:16:06.000 --> 00:16:13.500
+ picture because we're the one that added that okay but then we get the data in cleaned data and I
+
+00:16:13.500 --> 00:16:20.420
+ it's a it's a dictionary at that point and so I can get the picture so remember that the form is
+
+00:16:20.420 --> 00:16:28.060
+ the part that's coming in from the browser right and then I can make the picture I can get it from
+
+00:16:28.060 --> 00:16:35.380
+ there if I got no picture it's I don't need to do anything special right if I do I am checking to
+
+00:16:35.380 --> 00:16:42.260
+ see if the amount of data that I got from that upload is greater than that upload limit it's it's
+
+00:16:42.260 --> 00:16:49.060
+ good so this is mostly here to check to make sure I'm cleaning the data I'm not actually saving it
+
+00:16:49.060 --> 00:16:54.580
+ but I am grabbing the picture from the form and I'm checking to see if it's greater than two megabytes
+
+00:16:54.580 --> 00:17:00.380
+ and then I'm going to add this is what you do in clean clean is just to say a nasty message now in
+
+00:17:00.380 --> 00:17:05.100
+ this case the nasty message I showed you before came from JavaScript but if you somehow trick
+
+00:17:05.100 --> 00:17:13.660
+ tricked my JavaScript and sent it this clean would catch it so if I'm my view here clean is
+
+00:17:13.660 --> 00:17:21.100
+ happening right now form is valid happens afterwards so it's a side effect of clean you're saying is the
+
+00:17:21.100 --> 00:17:27.580
+ form valid and if there was an error from this or if there was an error like my title was too short
+
+00:17:27.580 --> 00:17:34.260
+ right then it would come back and say titles greater than two characters oh we love crispy forms
+
+00:17:34.260 --> 00:17:39.220
+ look how pretty errors aren't crispy forms that is running this little bit of code right here if the
+
+00:17:39.220 --> 00:17:45.780
+ form is not valid and it could have been and in that particular case the super got upset right
+
+00:17:45.780 --> 00:17:53.780
+ because because this min length validator triggered and so the super got upset and set form was not
+
+00:17:53.780 --> 00:18:00.340
+ valid now mine looked good right so but now the picture is gone so I can make a slightly longer
+
+00:18:00.340 --> 00:18:10.380
+ title here and browse completely I don't know what I'm doing these are really old pictures of mine so
+
+00:18:10.380 --> 00:18:17.260
+ now it's gonna pass it's gonna pass this is gonna pass and I'm gonna grab this and I'm gonna do my
+
+00:18:17.260 --> 00:18:21.860
+ own check that's sort of a double check on this less than two megabytes because even though the
+
+00:18:21.860 --> 00:18:28.500
+ client protects you and that's the you more user friendly because this is gonna this is catching
+
+00:18:28.500 --> 00:18:33.660
+ it after the upload happened and that might be long two megabytes doesn't take that long but now
+
+00:18:33.660 --> 00:18:43.340
+ it's going to come and it's gonna pass this and skip and then it's going to come here and it worked
+
+00:18:43.340 --> 00:18:49.860
+ so here's what's happening so you've got the form the form has like took all that data including
+
+00:18:49.860 --> 00:18:56.860
+ the file right and cleaned it all up and I'm gonna call form dot save commit equals false and then
+
+00:18:56.860 --> 00:19:02.820
+ I'm gonna set the owner field because I'm not extending owner view here so I got to set that
+
+00:19:02.820 --> 00:19:07.160
+ owner view because I'm gonna ultimately override both this post and the get and I wasn't gonna get
+
+00:19:07.160 --> 00:19:13.020
+ much help out of owner at that point and then I'm gonna save the model so form dot save gives me
+
+00:19:13.020 --> 00:19:18.780
+ back a model if I don't say commit equals false it actually does the pick dot save also so if you
+
+00:19:18.780 --> 00:19:23.300
+ save the form without commit equals false commit equals false means don't store it in the database
+
+00:19:23.300 --> 00:19:32.820
+ okay so let's take a look at what's going on here in form dot save so I have also overridden form
+
+00:19:32.820 --> 00:19:39.260
+ dot save and I'm just behaving commit equals true is a default but when I say commit equals false
+
+00:19:39.260 --> 00:19:47.340
+ then commit will be false and so I have got to call the super right actually this is really not
+
+00:19:47.340 --> 00:19:54.980
+ right oh I want oh no actually no matter what the commit is this is the end users wish for commit I
+
+00:19:54.980 --> 00:20:00.940
+ am going to do a super and I'm gonna run a save with commit false no matter what this person wants
+
+00:20:00.940 --> 00:20:07.620
+ it to give me commit true or not I'm gonna run commit false then what I've got to do is I've got
+
+00:20:07.620 --> 00:20:16.860
+ to grab the picture the picture from the form I'm in a form and I check to see if this is an in memory
+
+00:20:16.860 --> 00:20:22.500
+ uploaded file and there's all kind of cool magic that's happening right here it's got this all it's
+
+00:20:22.500 --> 00:20:28.940
+ in memory it's got this thing it's an object it's really nice and then what I say is give me all the
+
+00:20:28.940 --> 00:20:36.300
+ data the byte array which reads all of the pixels of the file and then F dot content type is that
+
+00:20:36.300 --> 00:20:45.000
+ image slash PNG and I then need to put that in the instance which is the model I've got to add to it
+
+00:20:45.000 --> 00:20:52.140
+ the byte array of the text and the content type I've got to store both of those things and now I'm
+
+00:20:52.140 --> 00:20:59.460
+ talking to the database the picture oops a picture and the content type are being set as part of the
+
+00:20:59.460 --> 00:21:07.940
+ save then what I do is if commit is true now I'm trying to mimic the save behavior now I'm only using
+
+00:21:07.940 --> 00:21:14.100
+ this one way right with commit equals false but someone might leave this out and call my call my
+
+00:21:14.100 --> 00:21:18.860
+ form I'm supposed to actually save the model if commit is true but in this case commit will be
+
+00:21:18.860 --> 00:21:24.860
+ false so I'm just going to return the instance at this point I have an object model an object
+
+00:21:24.860 --> 00:21:29.540
+ model and in that object model all these two fields are exactly the way they want to be and
+
+00:21:29.540 --> 00:21:35.700
+ the only thing I've got to do is set the owner field which I'm doing right there and then I'm
+
+00:21:35.700 --> 00:21:45.500
+ storing it in the database and then I redirect and that's how it works it's pretty cool you got to
+
+00:21:45.500 --> 00:21:54.580
+ kind of get your object oriented Zen thing going and pretty awesome so I'll just go through the
+
+00:21:54.580 --> 00:22:04.220
+ update view because it's not that different than the create view so it looks the same on the get
+
+00:22:04.220 --> 00:22:10.380
+ we're going to go grab the old copy out of the database and then we're gonna make a form and
+
+00:22:10.380 --> 00:22:15.740
+ inherit all the old data now in this one it's not gonna put the picture out there it'll just put out
+
+00:22:15.740 --> 00:22:21.980
+ a new one so if I'm in the edit right here it's gonna it's not going to put the picture here but
+
+00:22:21.980 --> 00:22:27.220
+ it'll let me put a new picture here because that's in the form but all the old data is sitting right
+
+00:22:27.220 --> 00:22:33.020
+ here and then and then that renders the update form and then I make my changes blah blah blah blah
+
+00:22:33.020 --> 00:22:43.540
+ blah blah right blah blah blah and then and then when I post it it's going to do this create form
+
+00:22:43.540 --> 00:22:50.100
+ and the difference is it's going to do a get object or 404 so that it it pulls that old data
+
+00:22:50.100 --> 00:22:57.260
+ from the database and then it does the validation automatically it calls this clean to do that
+
+00:22:57.260 --> 00:23:04.580
+ validation and then then we save it etc and so that's how it actually updates all of this stuff
+
+00:23:04.580 --> 00:23:11.540
+ so the only thing left to take a look at is the detail page and so some of these things we don't
+
+00:23:11.540 --> 00:23:17.420
+ have detail pages and some we do so let's take a look at this one right so this detail page looks
+
+00:23:17.420 --> 00:23:24.940
+ just about like every detail page let's go take a look at the view and and so it's pretty good I
+
+00:23:24.940 --> 00:23:29.860
+ mean we're just it looks we're using the same code that we've used for everything and we're using
+
+00:23:29.860 --> 00:23:36.700
+ owner detail view we're telling it with model to use and I'm going to use pics detail and most of
+
+00:23:36.700 --> 00:23:44.580
+ this like again humanizes to make times and dates look better I'll get back to that CSS in a bit
+
+00:23:44.580 --> 00:23:54.820
+ here you have we'll come back to this too in a second I'm just showing you the parts that are like the
+
+00:23:54.820 --> 00:24:00.980
+ way you've been doing it it's got the buttons for the update this is part of the owner code right if
+
+00:24:00.980 --> 00:24:08.420
+ the owner is the user we're gonna write a pencil on a trash little icon and then print out the title
+
+00:24:08.420 --> 00:24:19.980
+ and then the text and then some all right some all stuff okay so that's what's familiar let's
+
+00:24:19.980 --> 00:24:29.020
+ now talk about what's different so let's first talk about the HTML that generates this little
+
+00:24:29.020 --> 00:24:37.820
+ picture so if I do an inspect element we'll see that what we've got here is image style float
+
+00:24:37.820 --> 00:24:46.220
+ right max with that some CSS but the source here is pics pic picture 3 and so if you look what I'm
+
+00:24:46.220 --> 00:24:52.180
+ doing here is I'm going to the pics pic picture view and then the pic ID and that pic ID is just
+
+00:24:52.180 --> 00:24:59.660
+ the pic that came in and if we go back to URLs now that's this one and it goes into stream view
+
+00:24:59.660 --> 00:25:05.580
+ stream file and it passes in you know an integer number as the variable PK so let's go take a look
+
+00:25:05.580 --> 00:25:12.220
+ at that so that's this one and it's and I you'll notice that this is not a class-based one it's an
+
+00:25:12.220 --> 00:25:18.020
+ old-school one mostly because hey I'm just gonna do get the class-based one we can do def get and
+
+00:25:18.020 --> 00:25:23.460
+ def post but this one I'm just gonna do an old-school thing passes in the request in the
+
+00:25:23.460 --> 00:25:29.340
+ first parameter which of course is that number three that's the primary key of the image that
+
+00:25:29.340 --> 00:25:38.700
+ we're trying to see right so I'm going to do a get object or 404 and of the type pick and I'm
+
+00:25:38.700 --> 00:25:45.820
+ gonna look it up by its primary key which is that three and now I have it and so I'm going to send
+
+00:25:45.820 --> 00:25:51.500
+ an HTTP response but this is not a text response nor is it HTML response this is where that content
+
+00:25:51.500 --> 00:25:59.140
+ type going back to the model remember this is the mind type that image slash PNG and so just come
+
+00:25:59.140 --> 00:26:08.140
+ back so as part of the response so now if I can get this guy to open in a new can I make that guy
+
+00:26:08.140 --> 00:26:20.300
+ come on open a new page can I do that page you image is that gonna work well okay I guess it's
+
+00:26:20.300 --> 00:26:29.260
+ sort of worked one of you image in this view image in okay that's what I'll just go back and put this
+
+00:26:29.260 --> 00:26:36.900
+ in by itself so now I can see that this is the this is the URL that generates the picture now
+
+00:26:36.900 --> 00:26:45.420
+ the picture is sitting in my database right but if I do view the developer and go into network
+
+00:26:45.420 --> 00:26:53.780
+ and clear the network and make sure I've got all sort of clear persist logs and disable cache now
+
+00:26:53.780 --> 00:27:01.780
+ if I hit refresh we're gonna see that it's coming back and the response content type is image dash
+
+00:27:01.780 --> 00:27:09.380
+ PNG so to set that to set this and that's essential so that when the browser is seeing the pixels it
+
+00:27:09.380 --> 00:27:16.180
+ knows that this is a PNG not a JPEG or a GIF or an MPG or a PDF or whatever so this content type
+
+00:27:16.180 --> 00:27:22.780
+ is something that we stored we got it when we were doing the post and we pulled it in we took
+
+00:27:22.780 --> 00:27:30.040
+ all that stuff and if you look at forms.py it was grabbing it here in the save method and we
+
+00:27:30.040 --> 00:27:36.620
+ got it from the form and then we stored it in the database and now we've got it back from the
+
+00:27:36.620 --> 00:27:42.700
+ database and so we're just saying the content type which is a header is pic.content type that's
+
+00:27:42.700 --> 00:27:48.980
+ a string and then we also have to tell it how long it is but pic.picture is the actual pixels
+
+00:27:48.980 --> 00:27:54.380
+ that are the picture and you have to tell it how long it is so if you look at content length right
+
+00:27:54.380 --> 00:28:03.860
+ there 470,152 yeah 470 152 so that's content length we knew that from the database and then
+
+00:28:03.860 --> 00:28:09.940
+ we actually write the pixels and the place you see this is when you click on response now it's
+
+00:28:09.940 --> 00:28:14.780
+ basically showing you yeah that's a picture but if you if you really looked at it it's just you
+
+00:28:14.780 --> 00:28:22.660
+ know bits and bytes and a complete gibberish and so that's what it takes to send that stream out
+
+00:28:22.660 --> 00:28:31.140
+ and so that's what makes it so that when I have an image tag when I have this image tag I can source
+
+00:28:31.140 --> 00:28:40.620
+ but I'm actually feeding that picture okay so so that's how the picture gets there but then I'm
+
+00:28:40.620 --> 00:28:45.540
+ going to show you how when I click on this picture I get this overlay and then when I click on the
+
+00:28:45.540 --> 00:28:51.940
+ overlay it goes away now that this is there's all kind of fancy things and bootstrap has modals I
+
+00:28:51.940 --> 00:28:58.900
+ did this with the simplest and crudest of CSS and JavaScript tricks okay so let's take a look at how
+
+00:28:58.900 --> 00:29:05.700
+ I did that at that point now we're in JavaScript so first thing I've got is a CSS and it's this
+
+00:29:05.700 --> 00:29:16.660
+ overlay position fixed and and you'll see that I have a div tag that has the picture in it and
+
+00:29:16.660 --> 00:29:24.060
+ it's got a whole bunch of CSS in it the width is 90% the margin top the border is 3 pixel with a
+
+00:29:24.060 --> 00:29:31.140
+ solid black so you'll see this it's 90% of the width it's got a 3 pixel margin it's a the margin
+
+00:29:31.140 --> 00:29:43.060
+ top is 50 pixels so there's 50 pixels here and so so that picture is there but because this class
+
+00:29:43.060 --> 00:29:49.980
+ equals overlay all this other stuff is there as well so that's not the picture that's the rest of
+
+00:29:49.980 --> 00:29:59.420
+ it so you can see that this is fixed which means it overlaps this div and the rest of the page this
+
+00:29:59.420 --> 00:30:08.060
+ div right here and the rest of the page are like two layers z-index is 10 puts it on top 100%
+
+00:30:08.060 --> 00:30:14.860
+ width 100% height display none means it starts out hidden and then I've got kind of this little gray
+
+00:30:14.860 --> 00:30:23.900
+ you see this little gray bit right and then the image has this style the width 90% margin top 50
+
+00:30:23.900 --> 00:30:31.900
+ pixels that's giving me the border and the margin and making it 90% wide okay well let me get rid
+
+00:30:31.900 --> 00:30:40.020
+ of it or hit refresh so it's not there it's not there but if I do a view page source you page
+
+00:30:40.020 --> 00:30:51.180
+ source it is there it is there it's just hidden right it's hidden because I told it to be hidden
+
+00:30:51.180 --> 00:31:01.380
+ here so it starts out hidden so how does it unhide well if I look I've got this image here this is
+
+00:31:01.380 --> 00:31:07.660
+ the actual image that's this image that's really showing on the page and I've got an on click at a
+
+00:31:07.660 --> 00:31:17.020
+ JavaScript so on click so what I'm doing is I got an on click there and then I say document dot get
+
+00:31:17.020 --> 00:31:26.620
+ element by ID overlay which is looking for whatever tag has ID equals overlay and then
+
+00:31:26.620 --> 00:31:35.500
+ I'm changing its display from hidden to block so when I when that on click happens when I click
+
+00:31:35.500 --> 00:31:42.700
+ on goodbye goodbye so when I click on this image I've got an on click event anywhere in this image
+
+00:31:42.700 --> 00:31:50.820
+ that is going to show this other div so this other div poof pops out now what I've got is
+
+00:31:50.820 --> 00:31:58.120
+ an on click method on that div so that I can click anywhere anywhere in here including the
+
+00:31:58.120 --> 00:32:02.980
+ picture or the background because that's part of the overlay the overlay is the entire div in the
+
+00:32:02.980 --> 00:32:10.180
+ background so I can click anywhere click and then that triggers this document get element ID style
+
+00:32:10.180 --> 00:32:17.980
+ display none so I it's still there it's hidden so I can bring it up I can hide it I can bring it up
+
+00:32:17.980 --> 00:32:23.580
+ I can hide it I can bring it up I can hide it and I tried to make this one as simple as possible there
+
+00:32:23.580 --> 00:32:29.740
+ are prettier ways and people put a little X box X up here and that hides it they make a whole modal
+
+00:32:29.740 --> 00:32:37.540
+ they use bootstrap they use all kinds of clever things this is like the least clever way to make
+
+00:32:37.540 --> 00:32:44.780
+ a full screen semi full screen pop-up of an image using a bit of JavaScript here and a bit of
+
+00:32:44.780 --> 00:32:52.240
+ JavaScript here and then some just slightly clever CSS and I'm sure I found most of this on stack
+
+00:32:52.240 --> 00:33:01.300
+ overflow somewhere so I hope that you found this particular walkthrough of how to add images to
+
+00:33:01.300 --> 00:33:05.380
+ a CRUD application useful so hope you found it useful cheers
+

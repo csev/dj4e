@@ -1,0 +1,308 @@
+1
+00:00:00,000 --> 00:00:05,040
+ so now we're going to talk about javascript functions and javascript arrays
+
+2
+00:00:05,040 --> 00:00:10,480
+ so functions use the function keyword unlike python this would be like in the
+
+3
+00:00:10,480 --> 00:00:17,600
+ def this would be like def in python and so we basically say you know
+
+4
+00:00:17,600 --> 00:00:21,920
+ function and then give the name of a function and then the parameters to the
+
+5
+00:00:21,920 --> 00:00:26,400
+ function and then you have a curly brace to start the function and then end the
+
+6
+00:00:26,400 --> 00:00:34,400
+ function this over here and then you have return to return the resulting value and
+
+7
+00:00:34,400 --> 00:00:39,120
+ that return defines the return value that's going to be used in some
+
+8
+00:00:39,120 --> 00:00:42,880
+ expression so you're cruising along you're in the middle of an expression you
+
+9
+00:00:42,880 --> 00:00:46,240
+ encounter a function it calls the function runs the call and then the
+
+10
+00:00:46,240 --> 00:00:51,600
+ return value is what is the residual that's placed in that plus so whatever
+
+11
+00:00:51,600 --> 00:00:59,200
+ that value is in this case it's going to add four and five and end up with nine
+
+12
+00:00:59,200 --> 00:01:03,040
+ as the result and prod equals nine
+
+13
+00:01:03,040 --> 00:01:12,640
+ so the so so the functions other than that are like most programming languages
+
+14
+00:01:12,640 --> 00:01:17,600
+ except when it comes to global variables and so
+
+15
+00:01:17,600 --> 00:01:21,600
+ most of the time when you're working with a function every variable that you
+
+16
+00:01:21,600 --> 00:01:28,240
+ design define inside the function is local to that function and so if you use
+
+17
+00:01:28,240 --> 00:01:31,520
+ the same variable outside the function now i'm doing this two lines away but
+
+18
+00:01:31,520 --> 00:01:35,600
+ really often this functions inside of a library and that doesn't even know what
+
+19
+00:01:35,600 --> 00:01:41,280
+ variables are being used outside of it and so by it by default these two are
+
+20
+00:01:41,280 --> 00:01:46,400
+ the same and that really i'm not really familiar of a lot of other programming
+
+21
+00:01:46,400 --> 00:01:50,320
+ languages where the default is that that's kind of a global variable if you
+
+22
+00:01:50,320 --> 00:01:53,360
+ don't make it worse it depends on whether this global variable is defined
+
+23
+00:01:53,360 --> 00:01:57,920
+ before or after turn two in this case i'm defining the global variable before
+
+24
+00:01:57,920 --> 00:02:04,960
+ and i say nothing special about gl and so it's global and so i set it to 123
+
+25
+00:02:04,960 --> 00:02:10,000
+ then i call this function and it sets it to 456 and when we're at come back from
+
+26
+00:02:10,000 --> 00:02:17,040
+ the function it's 456 so that's kind of weird it's this weird kind of super
+
+27
+00:02:17,040 --> 00:02:21,680
+ global by default which is not the way we usually like to run functions
+
+28
+00:02:21,680 --> 00:02:27,760
+ so what we do and it's really weird there's no other programming language
+
+29
+00:02:27,760 --> 00:02:31,440
+ that makes you say don't be global most other programming
+
+30
+00:02:31,440 --> 00:02:34,480
+ languages if they have a global capability and not all of them do
+
+31
+00:02:34,480 --> 00:02:38,000
+ they're like this is the weird one that's global and everything else is
+
+32
+00:02:38,000 --> 00:02:42,000
+ local what you do is if you don't say it's local it's going to be global
+
+33
+00:02:42,000 --> 00:02:47,440
+ so the var keyword basically says it's local
+
+34
+00:02:47,440 --> 00:02:55,520
+ it's just this is a variable and it's local and so i can say you know var gl
+
+35
+00:02:55,520 --> 00:03:03,120
+ equals 456 that means that that variable has no effect outside the function i.e.
+
+36
+00:03:03,120 --> 00:03:06,960
+ the function lives in its own little silo which is the way most functions
+
+37
+00:03:06,960 --> 00:03:11,920
+ usually work unless we explicitly bust out of the little silo so if in this
+
+38
+00:03:11,920 --> 00:03:17,040
+ case if we do gl equals 123 then we call function check and we look at gl even
+
+39
+00:03:17,040 --> 00:03:21,040
+ though inside a function there's a gl that's 456 not the same gl
+
+40
+00:03:21,040 --> 00:03:27,280
+ and so we get 123 when it's all said and done so that's really quite nice
+
+41
+00:03:27,280 --> 00:03:32,080
+ but you do put a lot of vars in and one of my biggest bugs in
+
+42
+00:03:32,080 --> 00:03:36,480
+ when i write javascript is to forget to put the var in so i now just kind of
+
+43
+00:03:36,480 --> 00:03:41,360
+ been punished enough to know always put the var in so you get what you kind of
+
+44
+00:03:41,360 --> 00:03:45,200
+ expect as a default in most other programming languages that all
+
+45
+00:03:45,200 --> 00:03:48,080
+ function define variables that are defined inside of a function
+
+46
+00:03:48,080 --> 00:03:51,600
+ are local unless you're very explicitly doing otherwise
+
+47
+00:03:51,600 --> 00:03:57,040
+ javascript has arrays they look a lot like python lists
+
+48
+00:03:57,040 --> 00:04:02,240
+ so here we have an array that's three strings
+
+49
+00:04:04,400 --> 00:04:08,320
+ javascript has an associative structure but it's not an associative array
+
+50
+00:04:08,320 --> 00:04:14,880
+ and it's it's more like a dictionary but it's not it's an object objects can be
+
+51
+00:04:14,880 --> 00:04:18,640
+ many many things and we'll talk a bunch we'll have a whole lecture on nothing
+
+52
+00:04:18,640 --> 00:04:23,040
+ but objects but right now they kind of look like a dictionary key value pair
+
+53
+00:04:23,040 --> 00:04:28,560
+ key value pair key is name value is chuck key is class value is dj for e
+
+54
+00:04:28,560 --> 00:04:34,080
+ and so that when you print that out away you go now you can say a sub zero
+
+55
+00:04:34,080 --> 00:04:38,720
+ which gives you x which is that first element and you can say b sub quote name
+
+56
+00:04:38,720 --> 00:04:43,440
+ quote you can do that be another way to say that is b dot name
+
+57
+00:04:43,440 --> 00:04:49,920
+ those two syntaxes and this confused the heck out of me when i was first learning
+
+58
+00:04:49,920 --> 00:04:56,400
+ javascript those two syntaxes mean the same thing they both are saying look up
+
+59
+00:04:57,200 --> 00:05:06,720
+ an attribute of the object b that's named name and again equivalent they are the same thing even
+
+60
+00:05:06,720 --> 00:05:11,680
+ though for every other language you ever look at you think those are very different creatures
+
+61
+00:05:11,680 --> 00:05:17,920
+ but not so in javascript and it has to do the fact that b is an object it is an object and so
+
+62
+00:05:17,920 --> 00:05:24,320
+ objects are the associative structures but they're even more powerful than associative arrays are in
+
+63
+00:05:25,200 --> 00:05:28,400
+ in some languages like directories
+
+64
+00:05:28,400 --> 00:05:35,280
+ linear arrays you can make linear arrays you can fill them up a couple different ways
+
+65
+00:05:35,280 --> 00:05:40,160
+ you can either fill them up you know we start and make an array and we can push some elements in
+
+66
+00:05:40,160 --> 00:05:46,000
+ don't like the name push i like append better that would be what we would say if we were in python
+
+67
+00:05:46,000 --> 00:05:51,600
+ if this were a list but it works push kind of pushes on to the end normally push means
+
+68
+00:05:51,600 --> 00:05:58,560
+ or push on to the beginning but in computer science push usually means push down not append but so i
+
+69
+00:05:58,560 --> 00:06:04,480
+ think python has a javascript there where where we say append in python we say push in javascript
+
+70
+00:06:04,480 --> 00:06:11,040
+ or we can just fill it up with the array we um array sub zero and array sub one and then we can
+
+71
+00:06:11,040 --> 00:06:18,400
+ fill up a nice linear array if we want and remember in javascript arrays are arrays they're not
+
+72
+00:06:18,400 --> 00:06:24,400
+ dictionaries they are lists in python they're you know python has lists and dictionaries
+
+73
+00:06:24,400 --> 00:06:31,520
+ and javascript has arrays and objects there's other syntaxes for making arrays you can say
+
+74
+00:06:31,520 --> 00:06:35,600
+ array and then just have a list of array the list of things that make up the array and you get an
+
+75
+00:06:35,600 --> 00:06:41,680
+ array or you just use the constant form that's square brackets and this looks exactly like how
+
+76
+00:06:41,680 --> 00:06:47,360
+ we would do it in python and so that works so so in that particular line you can write python in
+
+77
+00:06:47,360 --> 00:07:02,320
+ javascript if you so desire up next we're going to talk about control structures
+

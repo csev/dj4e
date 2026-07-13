@@ -1,0 +1,381 @@
+ Hello and welcome to a walkthrough for Django for Everybody.
+ So the walkthrough that we're going to be doing is the walkthrough for the My Articles,
+ which is really focusing on the notion of owning rows in a model.
+ And what I've got going here is I'm logged in twice.
+ I'm logged in one with a user ID of one, and the other is a user ID of two.
+ So let's just do a quick demonstration of what really owning rows in a model is.
+ So here I'm logged in as my first user, and now I'm logged in.
+ I'm using a separate browser, because this is Safari and this is Firefox.
+ You can't just do this with tabs, because the cookies are shared between tabs.
+ And so you can log in and log out.
+ I want to just be logged in simultaneously.
+ And so I've got two of these tabs.
+ Refresh. So you'll notice that the edit and delete buttons show up differently for different users.
+ And that's because this row in the table lawnmower belongs to this user, user number two.
+ And these two rows belong to this user.
+ So if I take a look at administration and I go down into groups--not groups, not groups--users.
+ Now I can kind of hover, figure out that CSEV is two.
+ You can kind of see at the bottom there.
+ And DJ Furi is user one, and CSEV is user number two.
+ So those are the primary keys in Django's user table.
+ And now if I go and I take a look at these articles, you will see--and this looks a lot like if you were looking at, say, your autos.
+ Here's the rows or the models in articles.
+ And if I look at lawnmower, you see that there is a title, some text, and the owner is a dropdown.
+ And that's because this is a one-to-many field.
+ This is a one-to-many field between the articles and the users.
+ And then if I switch to a different--so that's CSEV.
+ So CSEV owns the lawnmower.
+ So I must be--I'm logged in as DJ Furi here.
+ No, here.
+ That's my name on DJ Furi.
+ And if I switch to Trombone, we'll see that that one belongs to DJ Furi.
+ Now I can sit and edit this in admin, right?
+ But that's not the point.
+ The point is to build software.
+ If you'll notice, when I create a new article, it doesn't ask me what user it was, right?
+ So this is where you would say Dodge or whatever when you were doing cars.
+ So this is like a race car, slightly used, Neon.
+ So now I have another one, right?
+ And so the key thing was is it looks like a create from things we've done before.
+ Look at my articles. Here's this.
+ But somehow, magically, this owner field is populated.
+ And that's the essence of owned rows, is we've got a row, a column, and these are marked.
+ And we know in all our code, we know the difference, for example, between things we own and things we don't know--things we own and we don't own.
+ So if I hit refresh over here, there's a slightly used race car, but--slightly used race car, but I can't edit it, right?
+ So that's the ownership.
+ Now, I don't know where to start.
+ There's a lot to cover here.
+ Let me show you--let me show--I don't know.
+ OK, I'll just start with--wait, we're always starting.
+ Let's start with--I'm running this locally.
+ I don't know what that bug is there.
+ That's not a bug.
+ So this is--just looks kind of like your autos.
+ If you look at it, it looks pretty much like the autos that might add a mileage or price in there or something.
+ The only thing that's really different at all is this.
+ There's a foreign key.
+ Now, in your autos, you have a foreign key to make.
+ And the key difference here--the only thing that's new is this idea of where the foreign key is pointing at.
+ Now, the problem is in Django, there is actually a table that all these users live in.
+ And I can probably come over here and type tables.
+ And I can see it.
+ I think it's probably here.
+ So let's just try saying select star from auth user.
+ So we should see a bunch of rows.
+ And so there are my users.
+ CSEV, you kind of--it's all jammed together in DJFree.
+ So this is row one for DJFree and CSEV.
+ So there is a table and a model.
+ The difference is we're not allowed to know that this is the user model in the auth application.
+ And so what happens is we have to let Django tell us what the name of that model is.
+ And so we go into settings, which is settings.py, actually.
+ And we're going to pull in the settings.py.
+ And the default is auth user model.
+ And that's the name of the model.
+ And so this is the foreign key to a place that we don't exactly know,
+ but Django will tell us and put in a string here.
+ If we were to print this out, we would see what that is.
+ That's just a string, but it's not a string we mess with.
+ On delete cascade, that's just normal.
+ The kind of parent row, the one row is in users.
+ And if you delete a user, that means that all of the rows that belong to that user will get deleted
+ because on delete cascade.
+ I'm choosing that as the model.
+ And so you see created at, if we go back into the-- you see all of these things.
+ Now created at, admin doesn't show.
+ It's pretty smart knowing about created at and update.
+ So it doesn't bother doing that.
+ And it actually updates them automatically.
+ So it knows something about created at and updated at in admin.
+ So that is our model.
+ If we were to take a look at MyArts article,
+ you will see that there is a foreign key right there.
+ There's a foreign key.
+ And if we say select star from MyArts article, you will see that there is a foreign key in there.
+ So this row belongs to user one.
+ This row belongs to user one.
+ That row belongs to user two.
+ And that row belongs to user one, which is perfectly reflected here.
+ So now I am user one, so I can edit three of them.
+ Now I am here with user two, and I can edit one of them.
+ So I'm editing the ones where I own it.
+ So ultimately, we're going to write a bunch of code so that these numbers are properly updated.
+ So when you add the article, it works the way you want it to work.
+ So let's just take a look at urls.py.
+ It's pretty boring.
+ This looks just like autos.
+ I probably hoisted up success URL here, put that in the as view as a parameter.
+ And so that makes my views even simpler.
+ MyArts colon all points to that view.
+ I think it actually is kind of prettier to put it in here because this is sort of a URL place.
+ And so it's not in my view.
+ So that makes my views really succinct.
+ And so it's like what you did once you got your autos down to just using the generics.
+ And so I have a list, a detail, a create, an update, and a delete.
+ And I have a model called article, which I just showed you.
+ And I am going to reuse some general purpose views for owner kinds of rows.
+ Now, these are not from Django, these are from me.
+ I made them.
+ And now I'm using them.
+ So article list view extends owner list view.
+ And then I can put all my things in there.
+ The success URL, actually, I don't need that here.
+ But for create view, I do need a success URL.
+ But for create view, that success URL comes right from here.
+ So I could have put it either here or I could have put it here.
+ For me, after a while, I think this is prettier.
+ Because now I can look at all the names of my arts, et cetera.
+ So that's kind of nice.
+ OK.
+ So here's views.
+ We're going to come back to this.
+ All the brains of this operation are in owner list view, owner detail view, create view, update view.
+ And we'll look at that last.
+ So that's where the hardest part is.
+ But let's first look at the template.
+ And so here's the template.
+ This looks a lot like your autos.
+ The only real difference here is that this edit and delete button is inside of an if statement.
+ So it's article update, article ID, article delete, article ID.
+ That's the same.
+ You've done that, right?
+ But all it says is if article.owner is equal to the current logged in user, article.owner is one of the article lists.
+ That's just one of the fields in the model, which happens to be a number.
+ But we're giving this user for free, right?
+ It just hands us user, and so we can compare it.
+ So if this is one that we own, we show this link.
+ And if it's not one that we own, we don't show the link, right?
+ So we don't show the link for the ones that we own.
+ Now, I hope by now you realize that we have to also protect, right?
+ So this is number four, right?
+ And if I click edit, number five.
+ But what if I just change this to four?
+ We still just not putting up the link does not mean that we can't have someone go to that link.
+ So I'm cheating by putting in this link, but this is going to blow up, right?
+ And so we'll show you how just because you don't put the link up doesn't mean that people can't go to the link.
+ They can guess what the link is.
+ I just did that.
+ I went to an article I could update.
+ I noticed the primary key of one I could not update to be four.
+ And then I went to five, and then I just edited it, changed it to four, and I attempted to update four.
+ So it's not good enough just to not show the link.
+ That's actually not security.
+ That just is prettiness, usability.
+ Don't show a link that is going to blow up if you click on it.
+ So that's not really protecting us.
+ This if statement is not really protecting us from clicking on or attempting to go edit or delete.
+ It's just not showing it if it's not going to work.
+ OK.
+ And again, article.owner is just a column in this model, and user is the current logged in user.
+ OK.
+ OK.
+ So what we'd seen before is I would create a view and then use it in my URLs.py, and it would extend another view.
+ So now it's time to take a look at where this view is being defined.
+ And so here's our view, generic view, the New York list view, delete view.
+ These are the generic ones.
+ And all I'm really doing here is I'm creating a class called owner list view that extends list view.
+ Now, it pulls in everything that list view is.
+ And you'll notice I've added nothing to it.
+ And I really could because the list view doesn't really care.
+ It's not really doing anything other than the fact that that value is in the models.
+ So it's going to come in.
+ So I could have made this be list view, but I just want it to be pretty.
+ I want to make it so that I could just say owner list view, owner detail view.
+ And so you'll notice that I'm not making any changes at the moment of inheritance.
+ I'm not changing owner.
+ So owner list view is exactly the same as list view, and owner detail is exactly the same as detail.
+ I just did it to make it pretty in case later maybe I want to add some.
+ But now we get to owner create view.
+ Owner create view is something that matters a lot.
+ So there's two things we've got to do for owner create view.
+ So let's go ahead and start to add an article.
+ So the first thing is there is no field here for which user it is.
+ It would be kind of silly.
+ And I can actually mess this up.
+ So if I go to create view here and I add user, and if I hit refresh on the create view,
+ come on, back up.
+ Oh, it's not user.
+ Owner.
+ So if I add it to that list, and part of this what's going on here is there is both a model and a form.
+ This fields equals is informing the form, and the form is the user interface.
+ So look at this.
+ I'm allowing the user to specify it, and now they can set the owner.
+ Pretty convenient.
+ Well, that's not what we want.
+ So that's why in this create view, you say don't let them set the owner.
+ I don't want them to see the owner because it takes a little while for this thing to restart.
+ OK, now it's restarted, and I can hit refresh.
+ So it was blowing up. It was just because I was coming here too fast.
+ What is that?
+ I don't know what that is.
+ So I'll go back to the views.
+ Maybe I'll have some tiny little bug.
+ I'll dig through that bug later.
+ It's working.
+ It's probably passing the autograder, so I'm pretty happy.
+ So remember that there are two sides to this.
+ One is the database side, and that's what the model deals with, and then there is a form.
+ So these views, this list view, if you recall, once we tell it the model, it actually makes a form.
+ So in this create view, it's making a form from article,
+ copying all the fields in article or the fields according to this little list.
+ And so that's why we're doing it.
+ So the key there is we're explicitly not putting owner in there,
+ and we're not putting created at or updated at.
+ If I wanted to put created at in here,
+ I'd say, "Hey, let's show them created at."
+ OK, let's refresh, refresh, refresh. OK.
+ Oh, OK.
+ So again, it's trying to go from the article model to make a form,
+ and it's not an editable field, so it's mad at me.
+ So I'll go back and fix it. I'm sorry.
+ OK, you get the idea.
+ It uses this list of fields to make a form.
+ The same for article and for update.
+ In fact, the update and the create are so equivalent that the template for them is shared.
+ It's basically -- we'll talk about crispy tags separately in a different little video.
+ The form is the same.
+ The difference is when the update comes, there is already data in it.
+ That's the only difference between a create and an update.
+ It looks exactly the same, but update has data in it.
+ A create has no data in it.
+ So the code between create and update is super equivalent.
+ Very, very similar, and the template is similar as well.
+ OK, so there we go.
+ So we got create view, delete view, et cetera.
+ Now, I'm going to focus on create view.
+ And the key to create view is now in owner.py.
+ Here's our form. That's pretty straightforward.
+ In owner.py, this create view now has a little bit more to it.
+ The list view and the detail view just inherit it.
+ So the first thing is that create view has a login required mixing.
+ And that's because if you're going to create it, you need to be a logged in user.
+ But to view it, you don't actually have to be a logged in user.
+ Or if I was to-- OK, let me log out here.
+ So now I'm logged in as anybody.
+ And so I can see all these. I can't edit any of them.
+ I could log in if I want.
+ And a detail view also works.
+ So I'm completely logged out here.
+ Oh, add article. Yeah.
+ So add article is protected by-- add article is protected by login.
+ So owner create view, owner create view, login required mixing.
+ And I do this because I don't want to trust the user who's writing this view
+ to put the login required mixing here.
+ Because I am writing code right here that depends on the fact that this person is logged in.
+ So this is like a guardian pattern.
+ I'm putting this in here so I don't end up with tracebacks inside my code.
+ I don't want-- if I didn't put this in owner-- if I didn't put login required mixing in owner create view,
+ then they forgot to put in the views.py.
+ They forgot to put it in article create view.
+ Then this code would blow up.
+ It would trace back at when I tried to set object owner to self-request user.
+ It would just blow up.
+ OK. So I'm extending create view, which is inheriting all the functionality.
+ And I'm only going to override one method.
+ This is object orientation.
+ And you've got to go read all the documentation.
+ This documentation right here.
+ Show you that documentation.
+ So this documentation is hard to find.
+ And I'm sure I helped myself by doing some stack overflows.
+ So that's why I put little notes at the bottom of the file, things that took me a long time to find.
+ So this form model mixin, and that is what they're really doing is they're giving us for these editing fields like the update.
+ They're saying these are the functions that are in this, and I can override them.
+ So the one that I'm overriding is the form valid.
+ And what that does is it basically says, here's your form.
+ Save it to the database and set the current object for view and then redirect to get success URL.
+ That's its job, except that right before it's going to save the form instance, I want to do something myself.
+ So what I'm doing here is I'm saying, and the form is what's being called as the parameter, which is the form that has been pulled in from the post data and handed to me.
+ And so what I'm going to do is I'm going to say, save it, but don't save it to the disk.
+ That's what commit equals false means.
+ Don't save it to the database, just save it into this variable object.
+ And then I'm going to set the object owner.
+ I'm simply going to copy the current logged in user into owner, and then I'm going to set it to the database.
+ And then what I'm going to do is I'm going to call the original form valid, passing form in as a parameter that's in this class.
+ And that's really not going to do much, right?
+ Because it knows that it's already been saved, so it's not going to save it again.
+ And then what it's going to do is it's just going to do the redirect to the success URL.
+ So this is rather late in the process of create view.
+ It's been validated, it's checked for bad data, et cetera, et cetera, et cetera.
+ And so this is like right before the redirect happens.
+ And so at a high level, my whole goal was to pause the saving of this data to the database
+ and sneak the actual current logged in user into the owner column and then be done with it.
+ And so that's the basic overriding.
+ I'm really extending form valid to cause my code to be called right before the default code is called.
+ OK, so that's owner create view.
+ And that's how, once I add an article and put some stuff in and I submit, right as I submit it,
+ and right before it's saved, there is a little field called owner that's going to be updated, boop, and it's there.
+ And so the owner field came from this code.
+ Now, I don't have to--I could have put this in this view.py.
+ You know, I got this really awesome, createable thing.
+ I can write really cool code.
+ I'm going to make hundreds of views that are--and we will, through the rest of the semester,
+ do this over and over and over again.
+ We're never going to change this file again, OK?
+ So now let's talk about edit.
+ OK, so there's two things.
+ So here we're going to load article six, and then we're going to put out a form that has all this stuff.
+ So the first thing that's got to happen in owner update view is we got to check to see if this belongs to the current logged in user.
+ Remember when I tried to go to whatever it was for here and it blew up?
+ This is the moment where I'm going to protect it.
+ So if we take a look at the moment where it's loading the model, I have a link to that.
+ I'm going to go populate. Let's go to Stack Overflow here.
+ This one I got from Stack Overflow.
+ Been there 10 years, probably a good one.
+ Middleware.
+ Somewhere in here. I should make that link be a better link.
+ Oh, I like this one. I'm going to put a link in just to this one here.
+ Link straight to that one. It's telling us what to do. You see I just borrowed this right there. Form valid.
+ I can't find quickly where I can do this. But query set. Query set is called when it's loading ID number four.
+ So it's going to do a load. So query set is not the actual load, but it is the query to the database that we're going to do.
+ So what I'm going to do is I'm going to tweak the query set. And this query set is probably going to say show me where ID equals four.
+ So it's going to say something like select from articles where ID equals four.
+ And if I just did the normal query set, it would work. But I'm going to change the query set.
+ So what I'm going to do is I'm going to call the default get query set in the super class, which is the delete view class.
+ And that's going to say query where the primary key equals four in this particular case.
+ But then what I'm going to do is I'm going to add another filter. This is like and. And owner equals the current logged in user.
+ So. So number four is owned by user two, but a logged in user is one.
+ So this is going to be and logged in as user one. So when it does the query, it says give me the thing that's ID equals four and user user ID equals one.
+ It's going to get no records. And so as the delete code or the update.
+ My looking at delete, update and delete are the same here.
+ Before it does an update, it has to load the old data.
+ And I have made it so that if you're not loading data on something that you that you that you own, then it's going to give you a 404.
+ So it's like that wasn't found. Now, four does exist. It just doesn't exist for the current logged in user. But five does. And it does belong to me.
+ Right. Now, the other thing is.
+ Is when I it's going to call, it's going to call get query set again. New stuff.
+ X, Y, Z, one, two, three.
+ So when you submit it, it actually is going to call get query set one more time.
+ Before it actually stores the data. And so let me show you this will be kind of tricky.
+ So I'm going to try to mess with it on for change. Try to change for someone going to edit screen.
+ And I'm going to inspect element. And I am going to somewhere in here. Fine.
+ Here's a hidden input type hidden. So that is the input type equals hit.
+ No, that's the middleware token. That's not the one I want to change.
+ Oh, this is going to. Oh, it's because it's in this URL.
+ I don't know. I don't think if I change this to four, it's actually going to work. Let's try it. It's probably not going to work.
+ OK. But the idea is eventually someone could mess with that post.
+ So you still got to protect it right when that data is being modified.
+ It actually does. It runs this code again and it won't.
+ It reads the thing and if it can't read it, then it won't let you update it.
+ And so that protects you from people breaking in and attacking there.
+ And the owner delete view is the same thing. So if you go into delete, it does a get get query set.
+ And I add this filter to say and it has to belong to the right person.
+ So if I try to delete Article four, boom, it says I can't load Article four. But if I come over here, I'm going to log back in. So this one, I think, was CSAT.
+ Yeah. So now I can. So I can't delete number. I can delete number four here because it kind of hides it, which is crappy.
+ But there it is. It's deleting number four. And away I go.
+ So. OK. A lot of stuff. A lot of stuff. OK.
+ So here's the thing. We're going to use owner.py over and over and over again.
+ We're going to write simple and elegant views. And all we have to do, ultimately, any model that we want to have this owner feature with, we add an owner column to it.
+ Then we have the views extend an owner view and then everything's taken care of after that point.
+ So it's really we're not going to change a line of this. It's really cool.
+ We're going to use it in project after project on table after table after table. Right. Because this can apply to different models.
+ It's just this one happens to be applying to the article model.
+ So I built a super generic owner capability that I can use over and over and just take your time.
+ Watch this more than once. Review object orientation. Figure this out.
+ It's hard. It's hard for me when I'm teaching to explain how object why object orientation is cool.
+ Object orientation is cool because it can let you write the super elegant and very reliable.
+ The fewer lines of code you write, the more reliable it is.
+ But the harder it is to understand because the magic is here in this object ornament pattern.
+ And again, it's it took me a long time to write this stuff, but now it's really gorgeous and really useful.
+ So keep thinking about object orientation.
+ We're going to be doing a lot going forward in terms of object orientation.
+ OK, so I hope this helps. Cheers.

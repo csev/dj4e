@@ -1,0 +1,629 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.760
+ - So hello, with all that as lead up, we are going to finally start taking a look at how we actually build this owner list view.
+
+00:00:07.760 --> 00:00:10.200
+ So let's take a look.
+
+00:00:10.200 --> 00:00:18.520
+ So the basic idea is we're going to make a new class called owner list view, owner update view, owner create view,
+
+00:00:18.520 --> 00:00:25.000
+ a whole series of classes that sort of mirror the generic ones, and we're going to add our own little sauce.
+
+00:00:25.000 --> 00:00:30.240
+ And we are going to basically make our owner list view, which is going to extend generic list view.
+
+00:00:30.240 --> 00:00:34.500
+ And we're going to extend owner list view to create article list view.
+
+00:00:34.500 --> 00:00:40.360
+ So the thing we ultimately end up with as our view is sort of three layers deep,
+
+00:00:40.360 --> 00:00:48.520
+ where we have our view that extends another one of our views that extends a view that came from Django.
+
+00:00:48.520 --> 00:00:51.120
+ And so there we go.
+
+00:00:51.120 --> 00:00:55.640
+ And so things like article list, the HTML is the template, and all that convention,
+
+00:00:55.640 --> 00:01:01.600
+ and the name of the variable article list, that's all convention, and we've been doing that quite a bit.
+
+00:01:01.600 --> 00:01:05.560
+ So let's start with the models changes.
+
+00:01:05.560 --> 00:01:11.720
+ Now in this model, everything except one line should be familiar to you and pretty comfortable.
+
+00:01:11.720 --> 00:01:15.400
+ The only line that's a little bit different is this owner line.
+
+00:01:15.400 --> 00:01:16.840
+ So it's just another field.
+
+00:01:16.840 --> 00:01:18.360
+ It turns out to be an integer.
+
+00:01:18.360 --> 00:01:22.920
+ It's a foreign key like all foreign keys are integers.
+
+00:01:22.920 --> 00:01:26.120
+ And on delete models cascade, you have seen that before.
+
+00:01:26.120 --> 00:01:30.080
+ That simply means if we have a bunch of articles that are linked to a user, and
+
+00:01:30.080 --> 00:01:33.960
+ we delete that user, it deletes the four articles that were associated with the user
+
+00:01:33.960 --> 00:01:38.080
+ in order to keep the internal pointers consistent.
+
+00:01:38.080 --> 00:01:43.280
+ So that part is all the same, quite comfortable, and you've been doing that for a while.
+
+00:01:43.280 --> 00:01:45.240
+ Now settings off user model.
+
+00:01:45.240 --> 00:01:52.000
+ We're importing settings from Django, and we are making a foreign key to a model that is not ours.
+
+00:01:52.000 --> 00:01:54.120
+ It is something that Django maintains.
+
+00:01:54.120 --> 00:01:56.800
+ Django always has a user model somewhere.
+
+00:01:56.800 --> 00:01:58.840
+ It may be named one thing or a different thing.
+
+00:01:58.840 --> 00:02:00.160
+ We just don't know.
+
+00:02:00.160 --> 00:02:02.160
+ We don't know what the name of the user model is.
+
+00:02:02.160 --> 00:02:04.320
+ And so we have to ask Django for it.
+
+00:02:04.320 --> 00:02:08.880
+ And Django conveniently always leaves it in this location.
+
+00:02:08.880 --> 00:02:10.720
+ Settings.off user model.
+
+00:02:10.720 --> 00:02:13.160
+ And it turns out if you wanna change it, you gotta change that variable.
+
+00:02:14.560 --> 00:02:16.720
+ But for us, we're not gonna change where it's at.
+
+00:02:16.720 --> 00:02:20.680
+ Django's gonna set it for us and we're just going to use it.
+
+00:02:20.680 --> 00:02:22.160
+ So there's two tables.
+
+00:02:22.160 --> 00:02:25.720
+ There's this article table and some user table somewhere.
+
+00:02:25.720 --> 00:02:29.240
+ And there's a foreign key relationship between them in a database level.
+
+00:02:29.240 --> 00:02:33.040
+ And once you make this database, you could go see what the name of that table is,
+
+00:02:33.040 --> 00:02:35.720
+ cuz it will show you the create statement that it actually used,
+
+00:02:35.720 --> 00:02:37.480
+ not that that matters.
+
+00:02:37.480 --> 00:02:42.360
+ And so it's pretty much a normal old thing, like we've been making,
+
+00:02:42.360 --> 00:02:45.200
+ except it's got this extra owner column.
+
+00:02:45.200 --> 00:02:47.960
+ And that's what we're gonna, that's the thing we're focusing on right now.
+
+00:02:47.960 --> 00:02:53.720
+ Okay, so the views are gonna be pretty straightforward.
+
+00:02:53.720 --> 00:02:57.540
+ The thing you're gonna see about the views is we're not gonna use the generic
+
+00:02:57.540 --> 00:03:00.200
+ list view, the generic detail, blah, blah, blah.
+
+00:03:00.200 --> 00:03:01.280
+ We're gonna make our own.
+
+00:03:01.280 --> 00:03:03.800
+ These are made by us, myarts.owner.
+
+00:03:03.800 --> 00:03:05.800
+ So we'll see owner.py in a second.
+
+00:03:07.080 --> 00:03:12.840
+ And so article list view, which is the, we got a urls.py that routes here,
+
+00:03:12.840 --> 00:03:15.920
+ is gonna extend owner list view and say do this model.
+
+00:03:15.920 --> 00:03:17.600
+ Things like the template name and everything,
+
+00:03:17.600 --> 00:03:19.680
+ that's all done by convention, right?
+
+00:03:19.680 --> 00:03:22.720
+ So we're gonna have a detail view, a create view.
+
+00:03:22.720 --> 00:03:25.520
+ Now the one thing that's different about the create and
+
+00:03:25.520 --> 00:03:27.400
+ update is there are two things.
+
+00:03:27.400 --> 00:03:31.040
+ There's a form, which tells what shows up on the screen, and
+
+00:03:31.040 --> 00:03:36.160
+ then there is the model back here that shows up what ends up in the database, right?
+
+00:03:36.160 --> 00:03:39.160
+ So the model, article model, is what's in the database.
+
+00:03:39.160 --> 00:03:41.360
+ The form is what we show on the screen.
+
+00:03:41.360 --> 00:03:44.280
+ So the model is which model is in the database, and
+
+00:03:44.280 --> 00:03:48.440
+ fields are which model fields are to be put on the screen.
+
+00:03:48.440 --> 00:03:51.720
+ We're not gonna show all of the fields on the screen.
+
+00:03:51.720 --> 00:03:55.120
+ In particular, we are not putting the owner field in.
+
+00:03:55.120 --> 00:03:58.720
+ Cuz we're not letting the user say this is owned by number 12.
+
+00:03:58.720 --> 00:04:00.360
+ If it's owner 12, great.
+
+00:04:00.360 --> 00:04:02.400
+ That number 12 is the current logged in user.
+
+00:04:02.400 --> 00:04:04.720
+ It's not something we let the user see.
+
+00:04:04.720 --> 00:04:06.680
+ So we don't put owner in here.
+
+00:04:06.680 --> 00:04:08.360
+ We put the title and the text.
+
+00:04:08.360 --> 00:04:12.080
+ We don't put updated at or created at, all the things from the model.
+
+00:04:12.080 --> 00:04:16.560
+ We have to tell that we want this to put in the form and that to put in the form.
+
+00:04:16.560 --> 00:04:18.080
+ This is gonna be handled internally.
+
+00:04:18.080 --> 00:04:20.960
+ And all these three are going to be handled internally.
+
+00:04:20.960 --> 00:04:24.400
+ Owner, created at and updated at are handled internally.
+
+00:04:24.400 --> 00:04:28.280
+ Text and title are to be shown to the user.
+
+00:04:28.280 --> 00:04:30.680
+ And so here we are in article create view.
+
+00:04:30.680 --> 00:04:35.160
+ And we're saying this is the model and make a form based on that model.
+
+00:04:35.160 --> 00:04:37.560
+ But only for two of the fields.
+
+00:04:37.560 --> 00:04:39.080
+ Ignore the other fields.
+
+00:04:39.080 --> 00:04:43.240
+ The same for an update and then the delete, it doesn't use an actual form.
+
+00:04:43.240 --> 00:04:45.440
+ So you just tell it which model it's gonna use.
+
+00:04:45.440 --> 00:04:51.280
+ So again, this is a triumph of don't repeat yourself.
+
+00:04:51.280 --> 00:04:56.840
+ All the brains of this operation are really, add an owner column, oops.
+
+00:04:56.840 --> 00:05:03.320
+ Add an owner column and then extend these classes that we are about to make.
+
+00:05:03.320 --> 00:05:05.560
+ Extend the classes that we're about to make.
+
+00:05:05.560 --> 00:05:07.840
+ Now I wanna show you how to make the classes.
+
+00:05:07.840 --> 00:05:11.400
+ So I show you the easy stuff, now we talk about the hard stuff.
+
+00:05:11.400 --> 00:05:16.440
+ Okay, so this is the owner update view.
+
+00:05:16.440 --> 00:05:20.920
+ And so let's take a quick review of the owner update view.
+
+00:05:20.920 --> 00:05:27.120
+ And when we first do a get request, if we go look at the documentation,
+
+00:05:27.120 --> 00:05:31.400
+ it says, I wanna show you the old data in a form.
+
+00:05:31.400 --> 00:05:37.600
+ And I'm gonna call a function called get query set in generic update view, okay?
+
+00:05:37.600 --> 00:05:40.560
+ And if I can't get anything, if I don't get anything, I'll give you an error.
+
+00:05:40.560 --> 00:05:46.440
+ So this is like to a URL like /edit/2.
+
+00:05:46.440 --> 00:05:49.960
+ And if the 2 is not in the database, then you're gonna get a 404.
+
+00:05:49.960 --> 00:05:53.040
+ So we call get query set, okay?
+
+00:05:53.040 --> 00:05:56.400
+ And so let's just take a look at get query set.
+
+00:05:56.400 --> 00:06:01.500
+ So the way we're going to do this is because we're in the middle of an update,
+
+00:06:01.500 --> 00:06:04.440
+ the user is intending to modify it.
+
+00:06:04.440 --> 00:06:07.720
+ Which means we're not gonna let them modify it unless they're the actual owner.
+
+00:06:07.720 --> 00:06:12.200
+ So what we're going to do is we're going to override the query set.
+
+00:06:12.200 --> 00:06:17.560
+ And I just put print statement in for yucks.
+
+00:06:17.560 --> 00:06:21.800
+ And so the first thing we're going to do is get the default query set.
+
+00:06:21.800 --> 00:06:24.080
+ This is gonna pick the model that we're gonna query.
+
+00:06:24.080 --> 00:06:28.160
+ And it's probably gonna say something like the primary key is whatever that
+
+00:06:28.160 --> 00:06:30.440
+ number was, 2 or 14.
+
+00:06:30.440 --> 00:06:33.240
+ And so we're gonna actually get a query set back.
+
+00:06:33.240 --> 00:06:37.400
+ And so that says super, go into owner update view.
+
+00:06:37.400 --> 00:06:41.080
+ Owner update, no, not owner update view.
+
+00:06:41.080 --> 00:06:44.640
+ Go into update view and go run its query set.
+
+00:06:44.640 --> 00:06:46.520
+ And then give me back that query set.
+
+00:06:46.520 --> 00:06:50.280
+ And then what I'm gonna do after I got that query set is add a and
+
+00:06:50.280 --> 00:06:55.440
+ clause to filter it that says, okay, whatever that primary key was, fine.
+
+00:06:55.440 --> 00:07:01.480
+ And the owner column of this model must match the current logged in user.
+
+00:07:01.480 --> 00:07:07.280
+ And so it's like I'm adding a where clause and an and to the where clause.
+
+00:07:07.280 --> 00:07:10.960
+ The other thing that you'll notice here is login required mixin.
+
+00:07:10.960 --> 00:07:16.320
+ I could have put login required mixin in the views.py.
+
+00:07:16.320 --> 00:07:21.320
+ But I need to have this variable self-request user properly defined,
+
+00:07:21.320 --> 00:07:26.080
+ which means any owner update view, you really can't use it unless you're logged in.
+
+00:07:26.080 --> 00:07:28.280
+ So it's like I'm gonna put the login required mixin here.
+
+00:07:28.280 --> 00:07:31.480
+ That's like a marker interface that says, look, if you're not logged in,
+
+00:07:31.480 --> 00:07:33.520
+ send them to log in and then come back here.
+
+00:07:33.520 --> 00:07:36.320
+ And if they can't log in, I'm never gonna let them run this code.
+
+00:07:36.320 --> 00:07:41.400
+ Because if you let a non-login user run this code, it would blow up right there.
+
+00:07:41.400 --> 00:07:44.240
+ So in a sense, this is like a guardian pattern to say,
+
+00:07:44.240 --> 00:07:47.760
+ don't even bother coming in here if you're not properly logged in.
+
+00:07:47.760 --> 00:07:53.040
+ And you don't have a user object properly passed in as request.user.
+
+00:07:53.040 --> 00:07:56.040
+ And so that's why I put login required mixin there.
+
+00:07:56.040 --> 00:08:01.480
+ So the key here is we're going to do a where clause, that is where id equals 7 and
+
+00:08:01.480 --> 00:08:05.120
+ owner equals 14, whatever the current logged in user is.
+
+00:08:05.120 --> 00:08:08.800
+ And so that means that when you come in here,
+
+00:08:08.800 --> 00:08:12.160
+ if you're trying to edit a thing, you're gonna get a 404, right?
+
+00:08:12.160 --> 00:08:14.520
+ If it doesn't exist, you're gonna get a 404.
+
+00:08:14.520 --> 00:08:19.240
+ Or if you don't own it, you're gonna get a 404, 404 is not found.
+
+00:08:19.240 --> 00:08:24.320
+ And it's legit to say, it might be there, but you didn't find it.
+
+00:08:24.320 --> 00:08:26.840
+ Cuz you were trying to read it for updating.
+
+00:08:26.840 --> 00:08:32.200
+ So by changing the query set, in a sense, to return zero records,
+
+00:08:32.200 --> 00:08:35.880
+ when you don't own the record, because this is an update view.
+
+00:08:35.880 --> 00:08:37.160
+ If you look at the list view,
+
+00:08:37.160 --> 00:08:40.460
+ it doesn't do any tricky stuff cuz you can list them all, right?
+
+00:08:40.460 --> 00:08:43.500
+ And so a list view is no big deal, a detail view is no big deal.
+
+00:08:43.500 --> 00:08:48.920
+ But an update or a delete view, yeah, detail view and list view are good.
+
+00:08:48.920 --> 00:08:52.040
+ But an update and a delete, you have an intention of modifying it.
+
+00:08:52.040 --> 00:08:56.120
+ So we're not even gonna let you retrieve the record if you don't own it.
+
+00:08:56.120 --> 00:08:59.520
+ So we do that by overriding query set, calling super, and
+
+00:08:59.520 --> 00:09:02.400
+ then augmenting the query set when we get it back, so
+
+00:09:02.400 --> 00:09:04.360
+ that it accomplishes what we want to achieve.
+
+00:09:04.360 --> 00:09:09.680
+ So the next thing we're gonna look at is how we actually store the data.
+
+00:09:09.680 --> 00:09:12.600
+ And the storing of the data is in form valid.
+
+00:09:12.600 --> 00:09:14.400
+ We're gonna override form valid.
+
+00:09:14.400 --> 00:09:19.280
+ And remember, when the post data comes in, it first calls form valid.
+
+00:09:19.280 --> 00:09:23.160
+ That checks to see if the things are the right length,
+
+00:09:23.160 --> 00:09:26.480
+ if it's a date, it's the right format, who knows what it does.
+
+00:09:26.480 --> 00:09:30.360
+ But we're also going to override it and stick our own code in form valid.
+
+00:09:30.360 --> 00:09:32.120
+ So yes, it's gonna do all those checks.
+
+00:09:32.120 --> 00:09:36.640
+ But also, we're gonna do a little sneaky thing to make what we want to do
+
+00:09:36.640 --> 00:09:41.840
+ that's gonna solve the create and the update situation.
+
+00:09:41.840 --> 00:09:43.160
+ But it's mostly for the create.
+
+00:09:43.160 --> 00:09:51.480
+ And so in the create view, it sends out a blank form, and then in comes the data.
+
+00:09:51.480 --> 00:09:53.360
+ But we never showed owner.
+
+00:09:53.360 --> 00:09:55.360
+ Let's go back a little bit, right?
+
+00:09:55.360 --> 00:10:01.200
+ So if we're going create view, create view,
+
+00:10:01.200 --> 00:10:06.600
+ the form that we're gonna send out is title and text.
+
+00:10:06.600 --> 00:10:08.600
+ There is no owner field.
+
+00:10:08.600 --> 00:10:13.160
+ Now, this owner is required, and so we have to get the owner in.
+
+00:10:13.160 --> 00:10:15.640
+ So what we do here, it's really quite simple.
+
+00:10:15.640 --> 00:10:21.160
+ We're going to, so there's, again, there's a form object,
+
+00:10:21.160 --> 00:10:25.320
+ which is kind of like the UI side of things, and then there's a model object.
+
+00:10:25.320 --> 00:10:32.480
+ And so form.save commit equals false says just copy the data
+
+00:10:32.480 --> 00:10:38.200
+ into an object as if we were going to store it, but don't actually store it.
+
+00:10:38.200 --> 00:10:41.440
+ Commit equals false is make it, but don't store it.
+
+00:10:41.440 --> 00:10:46.160
+ And then we're going to add the owner field, which is there,
+
+00:10:46.160 --> 00:10:47.560
+ to be self-request user.
+
+00:10:47.560 --> 00:10:51.080
+ Now, self-request user, remember, is like 16, it's some number.
+
+00:10:51.080 --> 00:10:55.520
+ It's the primary key of the user, and so that's gonna copy 16 in here.
+
+00:10:55.520 --> 00:10:57.080
+ And then we're gonna save it.
+
+00:10:58.240 --> 00:11:03.760
+ But then we're also going to do the validation and
+
+00:11:03.760 --> 00:11:06.600
+ call the super to do form validation for us.
+
+00:11:06.600 --> 00:11:10.960
+ And so we're calling the create view form validation as well
+
+00:11:10.960 --> 00:11:15.040
+ to make sure everything else is done properly, okay?
+
+00:11:15.040 --> 00:11:24.000
+ Okay, so when it's all said and done, all we have to do to make an owner
+
+00:11:24.000 --> 00:11:29.960
+ work in this situation is we add an owner column, foreign key to the right place.
+
+00:11:29.960 --> 00:11:31.880
+ We import owner delete view.
+
+00:11:31.880 --> 00:11:35.840
+ And then we just extend owner delete view to make article delete view and
+
+00:11:35.840 --> 00:11:37.760
+ then tell it which model to work in.
+
+00:11:37.760 --> 00:11:39.040
+ And then the magic all happens.
+
+00:11:39.040 --> 00:11:43.960
+ So I'm not gonna show you owner delete view, just you know that it's gonna force
+
+00:11:43.960 --> 00:11:49.240
+ log in and it's gonna only let you delete rows that you own in the system.
+
+00:11:49.240 --> 00:11:54.560
+ And so this is really a neat example of how you can use the object-oriented pattern
+
+00:11:54.560 --> 00:11:59.160
+ to extend these existing things and give features that you wanna add to them.
+
+00:11:59.160 --> 00:12:03.120
+ I'm gonna guess the first ten of these are gonna be just add an owner field,
+
+00:12:03.120 --> 00:12:08.280
+ cuz it's such a common thing to have a database rows that have an owner field.
+
+00:12:08.280 --> 00:12:11.800
+ But we can do other things beyond just an owner field.
+
+00:12:11.800 --> 00:12:14.880
+ And it, again, is a nice review of object orientation.
+
+00:12:14.880 --> 00:12:18.440
+ I'm just gonna hit object orientation over and over and over and over again,
+
+00:12:18.440 --> 00:12:20.920
+ because it's hard to get it.
+
+00:12:20.920 --> 00:12:23.000
+ And I wanna tell it to you as many times as I can.
+
+00:12:23.000 --> 00:12:29.240
+ And again, I don't like putting, we don't like putting don't repeat yourself,
+
+00:12:29.240 --> 00:12:31.480
+ lots of boilerplate to do this owner.
+
+00:12:31.480 --> 00:12:35.640
+ You could do it all in a view, you really could, but you really don't want to.
+
+00:12:35.640 --> 00:12:37.920
+ You wanna basically make an object yourself.
+
+00:12:37.920 --> 00:12:40.120
+ We've been using other people's objects.
+
+00:12:40.120 --> 00:12:43.440
+ Now we're extending object classes to make our own classes and
+
+00:12:43.440 --> 00:12:45.160
+ then using those classes.
+
+00:12:45.160 --> 00:12:48.600
+ So it's a good example of how we can save a lot of time and
+
+00:12:48.600 --> 00:12:52.020
+ energy with object orientation and inheritance.
+
+00:12:52.020 --> 00:13:02.020
+ [MUSIC]
+

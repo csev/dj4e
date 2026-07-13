@@ -1,0 +1,175 @@
+ Now let's talk about browser events.
+ We've been talking about events all along.
+ We have done an on-click handler, which is a shortcut
+ to, in effect, register a click event handler,
+ but we're just doing it with the shortcut
+ of the on-click attribute.
+ And then when we do a set timeout,
+ we're actually creating a timer event.
+ So the timer starts, and then when the timer expires,
+ the event fires, and our code is run.
+ So we've been doing this all along.
+ But there is an entire event registration system
+ inside the browser.
+ And we can say, I would like to register an event
+ for something to happen on this tag,
+ and we can hook things in all over the place.
+ And there's a separate event registration system.
+ On-click is like a shortcut using an attribute
+ that eventually registers the event on our behalf.
+ And that's why you see the little event
+ when you do the inspect element.
+ And so if we take a look at the code here,
+ we're going to do the same thing that we did in 03event.htm,
+ which we've seen before.
+ And then we're going to do it again in 10-event.htm.
+ And we're going to show the more generic way of doing it.
+ So in 03event.htm, we have an on-click method.
+ We've done this before.
+ And it calls my func when that method is clicked.
+ And if you do an inspect element,
+ you see that that anchor tag has an event on it.
+ The kind of more pure way to do it,
+ where we're really explicitly registering the event--
+ these two things are front-ends and purposes equivalent--
+ is we're going to, instead of having the on-click method
+ on the anchor tag, we're going to have an ID equals zap.
+ And again, we have to put the ID on
+ so we can get our hands on it inside JavaScript.
+ So we create an H1 and a paragraph
+ with an anchor tag in it.
+ Then we start our JavaScript.
+ And the JavaScript starts by defining a function,
+ doesn't do anything.
+ It just defines the function.
+ And then we call document.getElementByIdZap.
+ Now, that is grabbing that anchor tag.
+ And then it calls an element method called addEventListener.
+ And it's got two parameters.
+ The first parameter is I'm interested in the click event.
+ I want to listen for click events.
+ And when click events happen, call my func.
+ Now, again, first-class functions,
+ there's no parentheses on my func.
+ That is a function reference that we defined three lines
+ earlier.
+ And so it accomplishes the same thing.
+ And if we look at 10event.htm and we take a look at it,
+ you see that the anchor tag with the ID of zap
+ doesn't have an on-click on it, but it has a registered event.
+ And that's because we registered the event using JavaScript.
+ Now, if we click on it, it does the exact same thing.
+ That event is triggered.
+ It looks up and says, well, when a click happens,
+ I'm supposed to call my func.
+ And so this notion of adding event listeners
+ is a more general purpose notion than simply on-click.
+ I like to think of on-click as a shortcut to registering it.
+ Now, you might say it's a lot shorter.
+ And one thing about JavaScript is it's a bit wordy at times,
+ right?
+ Document.getEventById.addEventListener,
+ a lot of JavaScript.
+ But it does what you need it to do.
+ Now, I'm not saying you shouldn't use on-click,
+ but I want to show you the more general way of doing it.
+ There are other kinds of events that we can connect to.
+ And so in this case, I'm going to just have a header and no
+ paragraph.
+ And then in my JavaScript, I'm going to create a function.
+ And in that function, I'm going to log the current height
+ and width of the window.
+ When this function is called, it's only going to log it.
+ Now, what I'm going to say is window.addEventListener.
+ Now, remember, document.addEventListener,
+ that's a different thing, right?
+ Window.addEventListener is adding an event to the window.
+ Remember how the window is the thing
+ that gets larger and smaller and has scrollbars, et cetera.
+ So I'm saying I would like to register a bit of my code
+ to be called every time the window is resized.
+ That's what quote resized quote is.
+ My func is to think to call.
+ So now what happens is you display this,
+ and then you start changing the size of the window.
+ And on your console log, it's zoom, you know?
+ Window height, 135, 136, 137.
+ So as you're making that window larger and smaller,
+ your code is being called every time.
+ Now, why might you want to do this?
+ Well, one of the big things in website design
+ is to do what's called responsive design.
+ And that's as the thing gets narrower or higher or smaller,
+ like mobile, you want to change the UI.
+ You might have in a big screen,
+ you might have a more complex UI.
+ And then on a small screen,
+ you might want to have a more narrow UI.
+ Now, often things like Bootstrap
+ take care of all this for us,
+ but still Bootstrap needs to get their hands
+ on the resize event so they know,
+ whoa, the screen size changed.
+ So I need to kind of tweak the markup a little bit.
+ So this is an example of a window event
+ that allows you to render an opinion
+ as to what you want to happen every time the screen resizes.
+ Now, another issue that's an important event to know about
+ is what's called the content load complete event.
+ Modern webpages are very, very complex.
+ I mean, the things I've been showing you
+ in this series of lectures are simple
+ because I want you to be able to see them on a slide,
+ but real webpages with menus and pretty pictures
+ and colors and spinners, all that stuff, right?
+ There's so many things.
+ You got to download the HTML,
+ then you got a bunch of CSS
+ and some images and JavaScript libraries.
+ And so sometimes you're going to just get like 100 assets
+ when you download a page.
+ The first one is the HTML.
+ And so the problem is, is it can take a while
+ for all these things to get orchestrated by the browser.
+ It reads the HTML, it sees a CSS, it loads the CSS,
+ it sees a JavaScript thing,
+ loads the JavaScript, it da-da-da-da,
+ and then it's got some images and it takes some time
+ and it does this all interleaved
+ and in parallel.
+ And eventually you want to know, are you done yet?
+ Or just, are you done?
+ And so if we take a look at a typical,
+ at the page of Django for Everybody,
+ we see about 30 requests and many requests.
+ And you'd like to know when that's all done
+ because you can't write JavaScript
+ that references a tag that doesn't exist yet.
+ Or if you have, you want to write JavaScript
+ that does something to an image,
+ like changes its size or checks something,
+ or hides it or shows it.
+ You got to wait till the image is there
+ before you start messing with it, right?
+ So there is a special event.
+ It's pretty simple.
+ And in this, you use a script tag near the end of your body.
+ So, we have a function, MyFunk,
+ and in that function, the console log, the DOM is landed.
+ And then we're going to add event listener.
+ And this is a document event
+ because this is DOM content loaded.
+ Not window, but DOM content.
+ Document add event listener.
+ The event name is DOM content loaded.
+ That's a hard-coded string.
+ And I say, please call my function
+ when all the files have been loaded
+ and we're ready and the user can see the page.
+ And so in this one, it's really short.
+ It's just that that console,
+ the MyFunk happens after the content is loaded
+ and after all the derivative things have been loaded,
+ et cetera, et cetera, et cetera.
+ (upbeat music)
+ (upbeat music)

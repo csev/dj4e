@@ -1,0 +1,257 @@
+ We're on to our last mini lecture about views and it's a big one, it's about generic views.
+ It's a really big lecture so that we end up with little tiny views with one line of code.
+ So I've been building up views and we've talked about inheritance with the templates and
+ now we're going to talk about inheritance and views.
+ And we've been inheriting all along with views.
+ So here we are in the views.py, this whole thing,
+ these particular kinds of views, we define them in views.py.
+ But they're very informed by the content of model.py.
+ Which means that views are constructed automatically
+ just looking at the data in the models.py.
+ So it's again sort of the logic of don't repeat yourself.
+ If you have a thing in models.py, you've defined exactly what the fields are.
+ And things like what the help text is for this field and what the description for
+ the field is, that has nothing to do with the database but it can inform the views.
+ And so it's just a way for, you'll see how it all fits together nicely.
+ But sometimes when we use these super awesome techniques we end up with a little
+ tiny bit of code and it's really important to deeply understand that tiny bit of code.
+ Because you can sort of just fade away and not realize what's going on.
+ Because this code is so cleverly reusing a ton of other code and
+ pulling stuff in from other places.
+ So if you go all the way back to, we talked about SQL,
+ the four basic operations are put data in a database, get data out of a database,
+ delete that data, or update that data.
+ Crud, create, read, update, and delete.
+ And we're gonna build a bunch of things, whether they're add things,
+ they're auto things, where we gotta insert an auto, update an auto,
+ delete an auto, list all the autos, insert a cat, delete a cat,
+ list all the cats, update a cat, right?
+ And so we have a bunch of user interfaces that we're gonna build over and
+ over and over again.
+ And as you build your own projects, you'll probably have four or five tables and
+ then little crud user interfaces for each of the tables.
+ And sometimes you make them a little different and
+ there's pretty stuff on them and they're customized.
+ But surprisingly often, these things just look the same and
+ we end up repeating ourselves,
+ which is something we don't wanna do as software developers.
+ So here is a simple crud application.
+ It's the cur, create, and read.
+ No, actually, this one here is only read and detail.
+ So we have a list of cats and then you click on the cat list and
+ then you see the data for a particular cat and then a link back to the list.
+ So this is like a detail page, but we're gonna do a lot more than that.
+ But I just wanna show you how these generic views work by keeping
+ things very, very simple.
+ So we're gonna talk about a generic view in the list in the detail,
+ which are two of several generic views.
+ So this is our gview application, and here's the urls.py.
+ In this gview, it has a list of cats, an individual cat,
+ a list of dogs, an individual dog.
+ And so you see this sort of repetition.
+ And I'm putting so many of these in here because I'm gonna show you sort of
+ different approaches to implement them using less and
+ more detail and less and more inheritance.
+ So they're all kind of the same.
+ I give them a name, some have integer primary keys, and away you go.
+ And so here is the cat list.
+ I'm gonna start with a template.
+ So we're going to expect in the cat list template that there is a context variable
+ called cat_list, and that is a list of cat objects.
+ And then we are going to iterate through the cat list,
+ however many cats there are, with inside of a list and generate an li tag.
+ And then create a link URL, and then pull out the name of the cat.
+ So the cat has name, and the cat has a primary key.
+ And so we are going to generate a link to the cat Sophie, and
+ underneath that link is the link to /cat/12, whatever that number is.
+ And if the cat list is empty, we're gonna say there are no cats in the database.
+ Now we've actually got a script that you use to preload all of this data.
+ So there's instructions in the sample code as to how to preload that data.
+ Take a look at the readme for it.
+ And so if we're in the detail page, we're going to pass a cat object in, and
+ that has a name, and then we want a link to go back to the cat list.
+ And so again, we're using something from the previous lecture where we're using
+ the URL macro, passing in the name of a view within an application.
+ So this is the gv applications, the cat view, and then that makes a, for
+ an href, that makes a valid link with the string go back to list to be the thing
+ that that does.
+ So we're gonna build all this stuff, and that's the basic idea that template and
+ the HTML, that's how we're going to do it.
+ But we're gonna look at how the views work.
+ And again, this is a reminder of the dry principle,
+ the don't repeat yourself principle.
+ Again, sometimes this dry principle gets us in trouble because the idea is that
+ some bit of logic is placed one place and reused as many places as possible.
+ Cuz don't repeat yourself would probably be as well described by calling reuse,
+ reuse, reuse, reuse.
+ Do it once and then reuse it as many times as possible.
+ So that if you have to fix it and you got a bug in it,
+ you don't have to find the 49 places that you put all this code.
+ And because we do the same thing over and over and over again, cats, dogs, horses,
+ we do it over and over and over again, cars.
+ The idea that you have a list view, a detail view, a edit view, etc.
+ It's a common thing.
+ And really, if you're gonna do this stuff,
+ why not make it look consistent and function consistently?
+ If you have one developer build the cat's editing interface and
+ another person develop the dog's editing interface.
+ And they go off in their own way and they got some groovy design.
+ But it's different, who cares, right?
+ It's inconsistent, so consistent.
+ You still want a beautiful design, but you want the cat's data and
+ the dog's data to make sense with that consistent design.
+ So both of them can have a nice design.
+ So we got templates.
+ The templates expect variables,
+ like the list expects a thing called cat_list or dog_list or whatever.
+ And then the cat detail just has a cat variable in it, and then we call it.
+ So if we just forgot about all the stuff that we're about to learn and
+ we just wrote a view, it would look like this first one, this cat list view here.
+ And so we would inherit from view.
+ We're going to go to the database.
+ We've imported the cat model, cat.objects.
+ This is the way to query all the cat objects and get a list of cat objects and
+ put it in the variable stuff.
+ That's what cat.objects.all does.
+ Now we've done this before like in the shell, but
+ now we're doing it in actual Python code in the views.
+ Like I said, views are where all the stuff happens.
+ So that says make a database call, load all the cat records,
+ turn them into objects, and give me a list of those objects.
+ And then I'm going to pass in the context into the template,
+ the gview/catlist.html, I'm going to pass an entire list.
+ And if you go back and look, there was a little loop in the template that printed
+ out Sophie, Frankie, and made links underneath them into the detail page, okay?
+ So this is how we would do it if we were going to not repeat ourselves, okay?
+ Now, this next way of doing it for the dogs, yeah,
+ for the dogs we're going to do it another way.
+ And so what we're going to do is it looks like it's more work,
+ but it's more reusable, so the stuff that we're doing here.
+ So what we're doing is now we have a dog list view, which is just a class.
+ And we're going to create an attribute variable in this object called model.
+ And we're just going to say that this model for this particular one is dog.
+ So the idea now is in this get method, we take this code right here and
+ every we said cat, make that be generic and
+ have it be driven by this one variable, okay?
+ Now the tricky part that makes this a little tricky is sometimes we're just using
+ the model and then other times we are going to actually turn it into a text string.
+ So if we take a look at this, boop, boop, we have this variable model.
+ And in the get request, self.model is the way refer to the particular instance
+ that we're in, that model variable.
+ And this little meta verbose underscore name title to lower case.
+ You could figure that out by yourself by going to Stack Overflow eventually.
+ That's how I figured it out.
+ I wanted to get a lower case version of the model name.
+ So the model's name is a string dog, which is not the same as the dog model, okay?
+ And so that just is a way, model name is gonna be lower case dog.
+ But if model is cat, then model name will be lower case cat in this bit.
+ So I'm trying to make reusable code.
+ So yes, the reusable code looks a little more complex because it's generic.
+ But you'll notice that I'm creating a variable called model name underscore list.
+ Because I'm just concatenating it together.
+ So it's model name is gonna be dog underscore list.
+ So that's what's gonna happen.
+ I am going to talk to the model and retrieve all the objects.
+ That's okay, I don't have to change it to a string.
+ Self.model is dog.objects.all.
+ So then I'm gonna get a list of all the objects and stuff.
+ And I'll put that in the context.
+ And then I'm gonna go get myself a template out of the gvue folder
+ with the model name underscore list.
+ So that what used to be cat list in here is now dog underscore list.
+ I'm concatenating it together and I passed the context in.
+ And so then when that happens, then you get a dog list and
+ some list of dogs and away you go.
+ So what I did is I generalized this code and put it in here.
+ And then I passed in, in a sense, to the object that was made from the dog list
+ view class, the actual model that I wanted it to operate on, okay?
+ So I do this to give you a sense of how this works.
+ You can do the exact same thing for horses by doing this.
+ And that is, you import the generic, Django views generic, right here.
+ And you say, I'm gonna make a class called horse list views.
+ I'm gonna extend not just view, but generic list view.
+ So this is a generic class.
+ You can go look at the Django documentation for this.
+ It's a generic class that does a list view in general.
+ And the rule for the class is you have to add one line here to say which model it
+ functions on, and that's it.
+ And that's because the get code is already in this model.
+ We're extending that model.
+ We're inheriting all this code, not from dog list view, but
+ instead from generic list view.
+ So we took something that was five lines,
+ a little more generalized, it's like eight lines, and now it's one line.
+ And so that's how the extension works.
+ But you have to trust, and you have to go read the documentation for
+ Django list view, to know how it is that you inform it as to what model
+ you're supposed to use.
+ So I wanna show you a little bit of how this is happening,
+ by making one of these list views that's mine.
+ It's not as cool as the real Django list view, just to give you a sense of what's
+ going on behind the scenes in the Django list view.
+ So if you say, so I'm gonna make a new class, dg4e list view.
+ And then I'm gonna extend view, and then I'm gonna have a get method.
+ And it's gonna be all this code.
+ It's looking for a variable called model.
+ And you'll notice that it's not defining model up here,
+ cuz it's intended that this is a class that's going to be reused.
+ So I'm gonna say, well, whatever the model is that's been set up here,
+ by the class that's being created while we're extending it, go grab that,
+ convert it to a text, get the title of it, and then convert it to lower case,
+ make that model name.
+ Whatever the model is, retrieve all of its objects and put it into stuff, and
+ then put model name underscore list, in this case car underscore list.
+ And then pass that list into the template, and
+ then render g view car underscore list context, okay?
+ So this is not doing anything per se.
+ Dj4e list view is creating a class that I'm gonna extend later.
+ And I'm gonna extend that two lines lighter.
+ I'm making a car list view that extends dj4e list view.
+ And the only thing I need to do to get all of this code in here is extend it,
+ and then I do need to add model equals car.
+ So you'll notice that car list view has the exact same syntax as horse list view.
+ Right?
+ Horse list view, you basically tell it, the generic list view,
+ tell what model to work on, and then generic list view does it all.
+ And if you look at car list view, it says use this generic list view that I just
+ invented to show you the source code of what it is.
+ That's the source code behind the scene.
+ Like I said, it's way more complex and sophisticated than what I did.
+ This is the crudest, simplest version of an extendable generic list view.
+ But when it's all said and done, you don't write any of those versions.
+ You literally make a list view and tell it what model it is.
+ You make a cat view and tell it what model it is.
+ And you just reuse the list view over and over and over again.
+ So the fact that I give you four different ways to do this.
+ Yeah, I think four different ways, maybe five.
+ Four or five different ways of doing this.
+ The real way to do it is one way.
+ But when you look at code like that, you're like horse list view is an extending
+ generic list view and the model is horse.
+ I'm trusting a lot.
+ And the answer is yeah, you get used to it.
+ And now the code you have to write is only two lines of code.
+ And you have to write the template still because it's gonna call your templates.
+ But it knows the name of the template by looking at that horse, right?
+ It knows, yeah, horse_detail, right?
+ Or horse_list.
+ And so this is the actual detail page that shows you the horse and
+ goes back to the list, etc., etc., etc.
+ And so using these generic views,
+ you can make things really short and really succinct and really simple.
+ So generic views are excellent.
+ They allow us to produce lots of similar pages without repeating ourselves.
+ They keep your code consistent.
+ The repeating yourself, doing the same thing over and
+ over even seems quick to cut, paste, change, cut, paste, change, cut, paste, change.
+ If you really wanna build reliable code and code that's thousands and
+ thousands of lines with hundreds of features, you don't wanna be
+ pasting the same thing over and over, and so less lines of code means fewer mistakes.
+ So this is kind of the end of our talk about views.
+ It's really where we're gonna start doing most of the work.
+ The URLs, the models, they sort of don't get the kind of activity.
+ Although we are gonna talk upcoming about forms, which touch on views and
+ they touch on models and they touch on templates.
+ So forms are one of the things that lets us take our user experience and
+ really up it, so we'll see you soon.
+ [MUSIC]

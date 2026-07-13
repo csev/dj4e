@@ -1,0 +1,132 @@
+ -Hello, and welcome to our lecture on dynamic web content.
+ It may seem kind of weird to be talking about building web
+ applications, and when we start out
+ talking about building web applications,
+ that we're going to talk about protocols and stuff.
+ But in a way, when you are building a web application,
+ if you don't understand the protocol,
+ and you just sort of say, I changed
+ this little bit of code, and I hit refresh,
+ and some magic happened, you really
+ are cheating yourself in terms of becoming
+ a really good web application developer.
+ Because ultimately, these protocols
+ are what enable web applications.
+ And as you go forward and use frameworks,
+ you don't need to know all these things in detail.
+ But when you debug your applications, you absolutely do.
+ And I don't know if you've had your Firefox console
+ or looked at things and watched.
+ There's so much complexity going on.
+ And when you're using a web application,
+ hopefully everything works, and that complexity is hidden from you.
+ So if you have some interest in this
+ and want to go even lower to sort of more of the network
+ protocols, not just the HTTP protocols,
+ I've written a free book on networking called Introduction
+ to Networking-- How the Internet Works that you are welcome.
+ You can buy a print if you want, but it's also completely free,
+ like every book that I write these days.
+ And so if we take a look at what we're
+ going to really be talking about in this lecture
+ and in this web application course,
+ is the technologies, the different technologies
+ that are used to, in effect, produce a web page, right?
+ So we have a web page over here.
+ You go to URL, dub, dub, dub, data,
+ I mean, data.pr4e.org/page1.htm.
+ And here comes a page.
+ And this is like a super simple page.
+ But there are so many technologies,
+ like how browsers work with JavaScript and jQuery and CSS
+ and eventually Vue and things like that.
+ That's a whole set of front-end technologies.
+ And then there's sort of back-end technologies,
+ like Django or Flask and databases.
+ And we're going to learn-- my focus in this class
+ is less about how to make it all look beautiful,
+ although that's important, and more about how
+ to deal with the back-end.
+ So what we're going to see is these technologies that
+ define the look and feel and the interactivity
+ of your web pages, but also then how data and HTML, CSS,
+ and JavaScript are served up by the remote server.
+ And so the internet here is in the middle.
+ The browser is sitting on your laptop or your phone
+ or whatever, and it has all these technologies built
+ into it.
+ It makes requests.
+ And then the server comes back with responses.
+ And so the simplest version of this protocol
+ is that you click on a tag.
+ And when you click on that tag, you get a new web page.
+ Now, if you watch your debug console,
+ you will see that sometimes it's 120 different request response
+ cycles used to construct the page.
+ But in a sense, they're all the same.
+ Now, as we move to things like HTTP/2,
+ there are ways to pull down multiple documents
+ in a single connection.
+ But we'll stick with the old HTTP/1
+ way of thinking about it.
+ In the simplest form, the browser
+ asks for a document and then retrieves the document
+ and then shows the document.
+ And that is the basic request response cycle.
+ So if you look at how this works,
+ that browser is an application running
+ inside your computer on your laptop or your phone.
+ That is a piece of code.
+ And in that, it's got a connection
+ to the screen or the keyboard or the mouse or whatever.
+ And it's watching for events, meaning
+ that you're going to go and you're going to click somewhere.
+ And then this application is going
+ to respond to the events.
+ So on a web page, in the simplest case,
+ you got stuff that you can click on and stuff that you can't.
+ And you go find your way through whatever
+ to click on part of that web page.
+ And that click is intercepted by the application,
+ whether it's Chrome or Firefox or Safari running
+ on your piece of equipment.
+ And then that application then opens
+ what's called a network socket, a socket across the network
+ to a web server and sends a request.
+ And that request, as we'll see in a bit,
+ is a specially formatted request.
+ It has a get command.
+ And then it has the URL that it wants to get from the web server.
+ And then the web server does a bunch of work inside itself,
+ a bunch of work inside itself, maybe reading disk spiles
+ and running the programs, generating
+ what it is that you want.
+ And then it sends the response back
+ on that same socket connection.
+ So there's like this socket connection
+ through which all of this stuff is viewed.
+ And so the HTML is kind of the basic thing that comes back.
+ As we go further, we'll see that it's not just HTML that comes
+ back, but other things as well come back.
+ And so when the browser receives that HTML, then it says,
+ oh, I know what HTML is.
+ I've got this header one tag.
+ Here, let me change the color of this thing
+ so you can see that.
+ See it a little better.
+ Yellow is way better.
+ OK, so when the browser receives this page,
+ it sort of sees it.
+ And it looks at it.
+ And then it looks at all the HTML.
+ And so part of this course is to understand the syntax of HTML.
+ That itself is how to build good HTML and CSS
+ and how to make it look beautiful.
+ But ultimately, something in that HTML plus its CSS
+ plus its JavaScript leads to a visual display of the page.
+ And then that's the thing you see.
+ And so this is the request response.
+ Cycle.
+ So up next, we're going to talk about what these network
+ sockets are or the things that fundamentally
+ underlie this request response cycle.

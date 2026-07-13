@@ -1,0 +1,189 @@
+ - Hello, and welcome to our lecture on JavaScript and the browser.
+ So JavaScript is a programming language,
+ but more importantly, it typically runs in the browser.
+ In the browser, there are some special things.
+ If you're just writing Python, right,
+ you've got this whole operating system,
+ whether it's Windows or Mac or Linux,
+ that threads things, that allows you to write a piece of code
+ that says, put out a prompt, wait for some input.
+ When the input comes, write a loop.
+ Make a URL lib request, wait for that request.
+ When that request comes, open up a database connection,
+ put that data in the database.
+ And there's this whole thing where you're like,
+ go wait, go wait, go wait.
+ And operating system is taking care of the fact
+ that your laptop keeps working while this program is waiting.
+ But that's not how it works in JavaScript and the browser.
+ In the JavaScript and the browser,
+ this whole idea of waiting for something isn't anathema
+ because it does what's called cooperative multitasking.
+ And so in some ways,
+ JavaScript is not just a programming language,
+ but it's also kind of part of what we think of typically
+ as the operating system.
+ We got to help the browser work with things
+ like document object model being updated,
+ the visible window being scrolled and tabs,
+ multiple tabs are going on,
+ events are happening and timers are happening.
+ And we have much more responsibility in the browser
+ than we do sort of in Python, just running on your laptop.
+ So there's a couple of places that JavaScript can execute.
+ Inline is the documents being parsed.
+ At this point, document parsing stops
+ and then JavaScript runs.
+ You can take over, you can throw away
+ all the rest of the document if you want.
+ Or there's some kind of a UI event,
+ like a click or something else happening,
+ a resize of a window or a timer can expire
+ or some asynchronous activity
+ like a retrieval of some data finishing
+ and then activates your code.
+ Now, the key thing we talked about this in JavaScript
+ is that first-class functions
+ are essential to this execution model
+ because we have to basically say when this happens,
+ run this code and the code is data.
+ And so to some degree we say set something up
+ and I'm handing you some code to handle this event.
+ So let's take a look at this 01noscript.htm.
+ This has no JavaScript.
+ And we've been talking about this all along
+ where something comes from the server.
+ Here we have a header tag, h1 tag, and a p tag.
+ We parse, the browser parses that response
+ and then writes the document object model.
+ And so when you do an inspect element,
+ you're actually not seeing the exact text
+ that came from the server.
+ You are seeing the document object model
+ that the browser created as it read that document.
+ And so this whole parse response.
+ And in this particular page, there is no JavaScript.
+ And so the JavaScript sort of is sitting there
+ in your browser, but it's not currently active.
+ Here is a completely different page.
+ And this is the sum total.
+ It's a script tag, document.write, document.write
+ and a script and a slash script.
+ There is no HTML in this page.
+ And that's because as the document is being parsed,
+ it sees the script tag and then it runs JavaScript, the code.
+ Document is a predefined object,
+ which is the document object model.
+ Document.write allows you in JavaScript
+ to write HTML into the DOM.
+ So we write two lines, the exact same two lines
+ that were in the previous example.
+ And so when that's all said and done,
+ we run the parse response.
+ There's no HTML in this.
+ I've exaggerated this to make the point, of course.
+ We parse the response, we run the JavaScript
+ and the JavaScript writes the document object model.
+ The DOM belongs to JavaScript.
+ You, when you're writing JavaScript, you own the browser.
+ You are in charge.
+ So if you look at the inspector,
+ the source code that came was the script,
+ these four lines of script and document.write,
+ document.write and script, slash script.
+ But the document object model, when it's all said and done,
+ is the same as in the previous example.
+ Now, we've been doing this for a while.
+ We've been like making certain tags, like the anchor tag,
+ have an on click event, and then we call some JavaScript.
+ Now this is, my func, open, print, close, print, semi-column
+ is some JavaScript, except it's inside of a string,
+ which means it's being executed.
+ It's actually being parsed and executed
+ at the moment that the click happens.
+ And then in the script tag, we create a function
+ called my func and just put nice little console.log,
+ I was clicked in there.
+ So the way this works is the HTML comes,
+ JavaScript doesn't actually run during the parsing
+ except to create the function.
+ There's no other thing.
+ It doesn't actually, the log doesn't come out.
+ But then later when the DOM is shown, there is an event.
+ You can see that there's an event associated
+ with that anchor tag.
+ And if you look at the document object model with inspect,
+ you see, oh, this one has an event.
+ Well, it's kind of obvious this one has an event
+ because the on click is our way of indicating
+ that there's an event.
+ Now, after the page shows up,
+ then you click on the word click me,
+ and then the JavaScript runs.
+ So the JavaScript is from a string,
+ the string is in a sense compiled or parsed
+ or whatever you wanna say, and then the code runs.
+ And so the on click event is handed a string of source code.
+ And again, first class function.
+ We've been doing this all along.
+ And if you go back and think about something we used to use,
+ we've been using on click for things like the cancel P
+ so that we can do things in there.
+ We still, it's just a way to indicate JavaScript.
+ You can call a function
+ or you can just put the JavaScript right there.
+ Sometimes you'll see several lines of JavaScript
+ in an on click method.
+ Another way to run the code is as the result of a timer.
+ So here we have a page, it's got an H1,
+ it's got a P tag and it's got some script.
+ And that's all part of the parsing of the response.
+ Now the script basically runs
+ and it says define a function called my func
+ that says console log I was called when it's called later
+ and then set timeout my func 5000.
+ What that basically says set timeout runs immediately
+ and returns immediately.
+ It does not wait.
+ It's not like input in Python.
+ It doesn't wait.
+ It happens instantly.
+ You are registering a handler
+ that's triggered five seconds afterwards.
+ Then we say console log timer started.
+ So if you look at the output,
+ you see that the first thing that happened
+ was that the timer was started.
+ Now, if you ran this and you can 04 timer.htm,
+ you run it and then you count five seconds
+ and then it says I was called.
+ So this is code that you defined and you said,
+ I want this code to run after a delay.
+ And that's one form of an event,
+ a timer expiration event that causes your code to run.
+ Now, if you take a look at this,
+ first class functions are essential to this, right?
+ And so I've changed this 05 function.htm
+ changes this a little bit.
+ Now notice there is no parentheses.
+ Now, if you put a parentheses after my func
+ in the set timeout call,
+ it would actually then call my func
+ and the log would happen and then you'd get null back
+ and the set timeout would actually fail.
+ My func is itself with no parentheses
+ is a function reference.
+ And we can see this by adding console log my func to it.
+ So now if you watch the console,
+ you can see the variable my func being printed out.
+ And what does it show?
+ It shows a function.
+ Like that's what's in my func with no parentheses.
+ My func with a parentheses calls my func,
+ but my func without a parentheses is the,
+ in this case, parsed source code of the my func function.
+ So first class functions are essential
+ to all this eventing.
+ So up next, we'll talk a little bit
+ about the document object model.
+ (upbeat music)

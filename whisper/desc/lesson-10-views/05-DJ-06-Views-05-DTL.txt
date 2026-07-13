@@ -1,0 +1,7 @@
+Django Template Language: Context Variables and HTML Escaping
+
+Django template language, context variables, HTML escaping, safe filter, substitution, for loops, if conditions
+
+Django's template language uses double curly braces for variable substitution and automatically escapes HTML content to prevent cross-site scripting attacks. Context variables are passed from the application and rendered without requiring manual escaping.
+
+The language supports conditional logic, for loops, and hierarchical object traversal. It includes a safe filter to disable HTML escaping for specific content and enables template inheritance for reusing common template structures.

@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.320
+ So now what we're going to do is we're going to talk about how we can represent links in a database.
+
+00:00:05.320 --> 00:00:09.720
+ And so up till now I've just been drawing arrows and just assuming that you know how to do them.
+
+00:00:09.720 --> 00:00:10.880
+ And so here's some arrows, right?
+
+00:00:10.880 --> 00:00:16.000
+ We got some book instance rows that can somehow magically connect to some book rows,
+
+00:00:16.000 --> 00:00:20.720
+ and some book rows that can magically connect to a language row.
+
+00:00:20.720 --> 00:00:23.000
+ And so there's a way that we do this.
+
+00:00:23.000 --> 00:00:28.440
+ And we put what we call a key column in every one of our tables.
+
+00:00:28.440 --> 00:00:34.720
+ Key column, we call this the primary key, and we often call the name of the column the ID.
+
+00:00:34.720 --> 00:00:38.160
+ There's a way in the database to make it what's called auto-increment and
+
+00:00:38.160 --> 00:00:41.240
+ primary key and index it so it's really fast.
+
+00:00:41.240 --> 00:00:43.960
+ And so that then becomes the handle.
+
+00:00:43.960 --> 00:00:48.400
+ The primary keys are like the destination endpoint of the arrows, right?
+
+00:00:48.400 --> 00:00:54.680
+ So that's how we say English becomes language number one.
+
+00:00:54.680 --> 00:00:59.320
+ And Wisdom of Crowds is book number one, and Introduction to Networking is book
+
+00:00:59.320 --> 00:01:00.560
+ number two.
+
+00:01:00.560 --> 00:01:05.520
+ And so the ID is something that we then can use throughout the rest of the system.
+
+00:01:05.520 --> 00:01:09.680
+ Integer replication is not a problem, okay?
+
+00:01:09.680 --> 00:01:14.840
+ And so then what we do is we put columns in that we call foreign keys, right?
+
+00:01:14.840 --> 00:01:18.480
+ And so those foreign keys are the starting point of the arrows, right?
+
+00:01:18.480 --> 00:01:20.000
+ So book_id.
+
+00:01:20.000 --> 00:01:25.320
+ Now by convention, we name these by the name of the table followed by an underscore
+
+00:01:25.320 --> 00:01:27.040
+ followed by the word ID.
+
+00:01:27.040 --> 00:01:31.600
+ These are called foreign keys, foreign keys.
+
+00:01:31.600 --> 00:01:36.080
+ And so by having a foreign key everywhere we need to start an arrow and
+
+00:01:36.080 --> 00:01:38.880
+ a primary key everywhere we need to end an arrow.
+
+00:01:38.880 --> 00:01:41.600
+ Now really we pretty much put primary keys on every table so
+
+00:01:41.600 --> 00:01:44.520
+ that every row of every table has a primary key.
+
+00:01:44.520 --> 00:01:47.680
+ Now in this example, I've just got one foreign key per table, but
+
+00:01:47.680 --> 00:01:49.520
+ you can have more than one foreign key per table.
+
+00:01:49.520 --> 00:01:53.040
+ There could be another column here that points off to another table.
+
+00:01:53.040 --> 00:01:53.760
+ But that's it.
+
+00:01:53.760 --> 00:01:54.680
+ That's how we do it.
+
+00:01:54.680 --> 00:01:59.840
+ We just simply add these integer numbers and then we kind of maintain them and
+
+00:01:59.840 --> 00:02:01.000
+ put them all together.
+
+00:02:01.000 --> 00:02:08.200
+ So like I said, the primary key is that column that we add and
+
+00:02:08.200 --> 00:02:10.320
+ that is our handle for the rows.
+
+00:02:10.320 --> 00:02:13.320
+ And then the foreign key is the column that we add to a table so
+
+00:02:13.320 --> 00:02:14.840
+ that we can point to something.
+
+00:02:16.680 --> 00:02:20.040
+ So basically once we create these foreign key columns and
+
+00:02:20.040 --> 00:02:24.960
+ the primary key columns, we start being able to build using these links.
+
+00:02:24.960 --> 00:02:27.800
+ We can build the links that replicate the data model
+
+00:02:27.800 --> 00:02:30.000
+ that ends up being our picture, okay?
+
+00:02:30.000 --> 00:02:31.800
+ And so that's how they work.
+
+00:02:31.800 --> 00:02:36.040
+ Up next, we're gonna talk about how we represent these links in Django.
+
+00:02:36.040 --> 00:02:46.040
+ [MUSIC]
+

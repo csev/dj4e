@@ -1,0 +1,278 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.000
+ So now I want to show you a little bit about how we build classes in JavaScript, how we build our own classes and how classes work internally.
+
+00:00:07.000 --> 00:00:17.000
+ You may have noticed that the coffee cup that I'm using during this JavaScript lecture has code on it and the code is somewhat JavaScript-y.
+
+00:00:17.000 --> 00:00:25.000
+ I think it's JavaScript. It's C, Java, I think this would be C or JavaScript or Java.
+
+00:00:25.000 --> 00:00:31.000
+ Because again, these are all related languages. So let's take a look at a sample class here.
+
+00:00:31.000 --> 00:00:37.000
+ And so the first thing to notice is that it uses function as the keyword to define a class.
+
+00:00:37.000 --> 00:00:48.000
+ Now, you might see what's called ES6 classes and it's like a syntactic sugar that layers on top of this that makes the syntax look more like the other languages.
+
+00:00:48.000 --> 00:00:57.000
+ And so this is kind of like vanilla, the underlying actually how they work. And so I guess I'm glad that they've made syntax that looks like everything else.
+
+00:00:57.000 --> 00:01:07.000
+ But it really belies the elegance of the original way it works. The syntax doesn't change how it works. This is how it really works.
+
+00:01:07.000 --> 00:01:14.000
+ And the thing that's super excellent about this is that it uses the function keyword. There's not a different keyword.
+
+00:01:14.000 --> 00:01:20.000
+ Every other programming language, pretty much when they go into an object, they use a different than they're in their procedural.
+
+00:01:20.000 --> 00:01:30.000
+ So a class is a specialized function that as a side effect of its execution returns code and data.
+
+00:01:30.000 --> 00:01:35.000
+ Now, we'll see that we invoke it a little bit differently. So let's start and take a look at what we got here.
+
+00:01:35.000 --> 00:01:42.000
+ We got this function PartyAnimal, right? So PartyAnimal is the name of the class, but it's code.
+
+00:01:42.000 --> 00:01:48.000
+ And again, we have a curly brace to start it. And the thing that's different is there's this notion of this.
+
+00:01:48.000 --> 00:01:55.000
+ So we make sort of an empty vessel that is going to be the object that we're going to use this class to populate.
+
+00:01:55.000 --> 00:01:59.000
+ And then by running the code, we're actually populating that empty vessel.
+
+00:01:59.000 --> 00:02:09.000
+ So this dot x is going to create a member variable called x inside this, which is the empty vessel object that we're creating.
+
+00:02:09.000 --> 00:02:14.000
+ And then we're going to fill up. OK. And then we have this dot party.
+
+00:02:14.000 --> 00:02:21.000
+ This dot party is also a piece of data in the this object that we're about to create.
+
+00:02:21.000 --> 00:02:27.000
+ And you'll notice that we're saying equals and then function. But this one is a little different.
+
+00:02:27.000 --> 00:02:34.000
+ You notice the function is unnamed. It is what we call an anonymous function because it doesn't have a name.
+
+00:02:34.000 --> 00:02:44.000
+ So this the functions name is actually called party, but it just hasn't called party because we're storing the functions code in the instance variable called party.
+
+00:02:44.000 --> 00:02:51.000
+ But that's how we're going to call it. So in the party variable, we have the code that is those two lines.
+
+00:02:51.000 --> 00:02:59.000
+ And then within that method, now I'd call party a method to use the terminology within the party method.
+
+00:02:59.000 --> 00:03:13.000
+ This is the instance that we're talking about in Python. We use self for this right in different languages have this concept of the current object that we're part of this dot x is referencing.
+
+00:03:13.000 --> 00:03:20.000
+ Remember how we talked about global and local inside of functions. Well, this x is actually outside of the function.
+
+00:03:20.000 --> 00:03:30.000
+ So this is an advantage that this dot x is defined inside the function. And because this is defined before the function definition, it sees that right.
+
+00:03:30.000 --> 00:03:37.000
+ And so we're going to add one to that member variable. And then we're going to put out a console log message. And that's our entire object.
+
+00:03:37.000 --> 00:03:47.000
+ It's got one attribute called x and one method called party. OK, so we could just call this this function party animal, but that's not what we do.
+
+00:03:47.000 --> 00:04:01.000
+ We have a new keyword called do and it says, look, don't just run this code, create an empty object and then use the party animal code to sort of fill out that object with a bit of code and a bit of data.
+
+00:04:01.000 --> 00:04:08.000
+ And so that says run all this. But instead of just running it, give me back the thing that eventually it produces.
+
+00:04:08.000 --> 00:04:16.000
+ It's as if there's like a return statement at the bottom of this thing at the bottom of party animal function and then give me back the object.
+
+00:04:16.000 --> 00:04:22.000
+ And now I have an object and it's got an accident and it's got a party in it.
+
+00:04:22.000 --> 00:04:30.000
+ Then a N is where I store that object. So a N is my first instance of a party animal object.
+
+00:04:30.000 --> 00:04:39.000
+ But now I can talk to end up party and and called again and again. So I call and party three times. So I call the method party.
+
+00:04:39.000 --> 00:04:54.000
+ OK, so that is the basic mechanism. And so if we were to somewhat trace through this, this this part here, the function just as a template that it's remembering the template and naming it party animal.
+
+00:04:54.000 --> 00:05:04.000
+ And at the point where we have an equals new party animal, JavaScript constructs this object and it's got two things in it. It's got an accident and it's got a party in it.
+
+00:05:04.000 --> 00:05:11.000
+ X is data and party is code and then that's what it looks like. But it's got well actually know the construction.
+
+00:05:11.000 --> 00:05:24.000
+ Let me change here. The construction also put a zero into this dot X and so it is a part of the creation around all this code to construct party animal and this got set to zero.
+
+00:05:24.000 --> 00:05:36.000
+ So when we're at this next line of code before we call a N party for the first time, a N dot X is got a zero in it. Then we call a N party and it runs the code a N dot party.
+
+00:05:36.000 --> 00:05:48.000
+ This a N is an alias for this. And so in a sense, when it says this dot X, it really is a N dot X. Now we'll see in a second how when we do multiple instances, how that works.
+
+00:05:48.000 --> 00:06:03.000
+ So it runs the code and then it adds this to be one and then it prints out the first line and then it does it again and then it becomes two and prints out the second line and does it again, prints out three, makes it three and prints out the third line.
+
+00:06:03.000 --> 00:06:19.000
+ So that's how this code works. This is the constructing or creation or taking the little cookie cutter and poof making a cookie out of cookie dough. You got a bunch of cookie dough. That's like a little object that doesn't exist.
+
+00:06:19.000 --> 00:06:36.000
+ It's got no form and then we take the template and we make the thing. So I mentioned the word constructor because there is this moment where it's actually building the object and filling it up with all the little pieces.
+
+00:06:36.000 --> 00:06:55.000
+ So objects are created, used by us, and then discarded. And there is this concept of a bit of code called the constructor in object oriented theory that says, look, I'm going to start an empty object and then I'll fill it with stuff and the constructor is the sort of filling it up so it's ready to do its job.
+
+00:06:55.000 --> 00:07:08.000
+ Once you're done constructing it. Destructors are a common concept and we talked about those when we talked about object oriented Python. You don't get to get a hold of the destructor inside of JavaScript. That's something that they just don't let you do.
+
+00:07:08.000 --> 00:07:17.000
+ And I think it philosophically has to do with the idea that you're in a web page, you're not going to be there for very long and that's really the earliest of days, right?
+
+00:07:17.000 --> 00:07:28.000
+ These days with things like Vue and React, some of these JavaScript pages last a very long time and maybe it'd be useful to have destructors in there, but JavaScript didn't have them in the beginning.
+
+00:07:28.000 --> 00:07:50.000
+ Okay, so the constructor is, in a sense, the moment where we are this new is triggering the constructor and what it basically does is creates basically a blank object that has nothing in it and then runs the code inside a function party animal to give some form to that object, right?
+
+00:07:50.000 --> 00:08:02.000
+ And so this right here is the constructor, right? And so I just put a console.log so you can kind of see where that happens. It says I'm in the constructor and then this thing works the exact same way.
+
+00:08:02.000 --> 00:08:07.000
+ It's just a kind of instrumented the moment that we're in the constructor.
+
+00:08:07.000 --> 00:08:26.000
+ Okay, and the purpose of the constructor and object orientation is to set the initial conditions of the object so that the object is ready to be used and like setting x to zero, setting x to zero is apparently for this object a necessary condition.
+
+00:08:26.000 --> 00:08:39.000
+ So, once we have a template, cookie cutter, we have a class, party animals are class, then we can make many different objects. And then those objects have each independent data, that's the key to this, right?
+
+00:08:39.000 --> 00:08:47.000
+ And we call this having multiple instances or multiple objects that implement a particular class.
+
+00:08:47.000 --> 00:08:48.000
+ So here we go.
+
+00:08:48.000 --> 00:08:52.000
+ Here's our same old party animal that we've been talking about all along.
+
+00:08:52.000 --> 00:09:05.000
+ Well, the only difference now is we actually give a parameter here. And so one of the things that this is going to do is as part of its construction, it is going to copy that first parameter into one of the instance variables.
+
+00:09:05.000 --> 00:09:11.000
+ So we're going to have two instance variables, this.x and this.name. And we're going to copy whatever that is.
+
+00:09:11.000 --> 00:09:18.000
+ Now, where does that come from? Well, it comes from the moment of construction when we're saying make me a new party animal. Oh, and here's a constructor parameter.
+
+00:09:18.000 --> 00:09:23.000
+ So that Sally goes in as nam. So this.name equals Sally.
+
+00:09:23.000 --> 00:09:27.000
+ This.x equals zero and then this.party is exactly the same way.
+
+00:09:27.000 --> 00:09:40.000
+ And so when we run this, when we run this, it comes in, it constructs Sally, setting that and it says build Sally, that's that nam.
+
+00:09:40.000 --> 00:09:54.000
+ And then we call Sally, s.party. So this is the actual object is in the variable s. We call s.party and this.name is Sally and it's equal to one.
+
+00:09:54.000 --> 00:10:02.000
+ And then we make a new one. We make a new one. Going to make a new one, but this one's going to be called Jim.
+
+00:10:02.000 --> 00:10:11.000
+ So we make a second variable, a second instance variable. It's going to have a second copy of x and a nam and actually a copy of party, right?
+
+00:10:11.000 --> 00:10:20.000
+ And so then it will say built Jim and then we say j.party and then we set Jim to one and then s.party and that sets Sally to two.
+
+00:10:20.000 --> 00:10:28.000
+ And so now the j variable and the s variable are completely independent variables.
+
+00:10:28.000 --> 00:10:41.000
+ And so halfway through, so when we're down to here, we've got this object, s.party, well, x starts out at zero and the name here is Sally, right?
+
+00:10:41.000 --> 00:10:49.000
+ And then s.party comes and runs in here and prints out Sally equals one, right?
+
+00:10:49.000 --> 00:10:55.000
+ And then comes back and then we're going to create a second one.
+
+00:10:55.000 --> 00:11:00.000
+ So we've created a second one and that will be in the name j, in the variable j, right?
+
+00:11:00.000 --> 00:11:09.000
+ So we've created one, oops, we've created one, create Jim, out comes built Jim.
+
+00:11:09.000 --> 00:11:17.000
+ And then we call, and then this is zero, this is Sally, this is one, this is zero, this is Jim, right?
+
+00:11:17.000 --> 00:11:23.000
+ And it says Jim equals one. And then we're going to call s.party here at the very end.
+
+00:11:23.000 --> 00:11:31.000
+ And so it's going to run this party code again, except now this, well, this is an alias of s.
+
+00:11:31.000 --> 00:11:36.000
+ So you can see how when we call j.party, this is an alias of j.
+
+00:11:36.000 --> 00:11:41.000
+ And we call s.party, this is an alias of s. These are instance, instance.
+
+00:11:41.000 --> 00:11:46.000
+ So s is one instance and j is another instance of it.
+
+00:11:46.000 --> 00:11:57.000
+ And so that's how we take one class and make multiple instances and each instance has their own independent copy of the variables.
+
+00:11:57.000 --> 00:12:02.000
+ So that's a real quick introduction, mostly to get syntax.
+
+00:12:02.000 --> 00:12:06.000
+ I'm not going to ask you to write a bunch of objects, but we're going to use a ton of them.
+
+00:12:06.000 --> 00:12:11.000
+ And when you start learning about jQuery and document object model and all that stuff,
+
+00:12:11.000 --> 00:12:17.000
+ this dot syntax and the methods and the member variables, the attributes, away you go.
+
+00:12:17.000 --> 00:12:21.000
+ So you got to know all this stuff. So class is a template.
+
+00:12:21.000 --> 00:12:25.000
+ Method or message is the code that's inside of objects and classes.
+
+00:12:25.000 --> 00:12:29.000
+ And then attributes is the data inside objects and classes.
+
+00:12:29.000 --> 00:12:35.000
+ And then constructor is the code that runs as one of these things is created.
+
+00:12:35.000 --> 00:12:42.000
+ So that's a real quick romp through object oriented JavaScript. It's actually in some ways one of the,
+
+00:12:42.000 --> 00:12:49.000
+ I debate with myself whether I think the Python or the JavaScript object oriented pattern is more prettier.
+
+00:12:49.000 --> 00:12:52.000
+ I mean, there's other ones that aren't as pretty as these two.
+
+00:12:52.000 --> 00:13:03.000
+ So we in Python and JavaScript, I think we're fortunate to have two very mature and very advanced thinking in how to really build beautiful object oriented systems.
+
+00:13:05.000 --> 00:13:12.000
+ [music]
+

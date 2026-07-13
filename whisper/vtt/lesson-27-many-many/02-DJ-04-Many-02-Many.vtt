@@ -1,0 +1,635 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.960
+ and so the many-to-many is a situation where you have sort of somewhere between one infinity
+
+00:00:05.960 --> 00:00:08.020
+ and somewhere between one infinity on both sides.
+
+00:00:08.020 --> 00:00:16.660
+ Now, what we need to do to model this is we can't really model many-to-many in a relational database.
+
+00:00:16.660 --> 00:00:23.020
+ So what we do is we break it into two one-to-manys and we have a junction table.
+
+00:00:23.020 --> 00:00:25.180
+ You could call this the author book table.
+
+00:00:25.180 --> 00:00:27.460
+ Later I'll call this the author table.
+
+00:00:27.460 --> 00:00:29.860
+ Like, you know, who are the authors of?
+
+00:00:29.860 --> 00:00:31.500
+ You could call it authors of.
+
+00:00:31.500 --> 00:00:37.020
+ And it's a table that's a very short table and it really just says this author authored this book.
+
+00:00:37.020 --> 00:00:38.340
+ This author authored this book.
+
+00:00:38.340 --> 00:00:40.180
+ This author authored this book.
+
+00:00:40.180 --> 00:00:43.420
+ And then within that you can say for this book, who are all the authors?
+
+00:00:43.420 --> 00:00:46.460
+ Or for this author, what are all the books, right?
+
+00:00:46.460 --> 00:00:48.540
+ So we call it a connection table.
+
+00:00:48.540 --> 00:00:49.980
+ We call it a join table.
+
+00:00:49.980 --> 00:00:52.100
+ We call it a junction table.
+
+00:00:52.100 --> 00:00:56.220
+ And in Django terminology we'll call this a through table.
+
+00:00:56.220 --> 00:01:01.100
+ But its purpose is to have two outbound one-to-many relationships instead.
+
+00:01:01.100 --> 00:01:04.780
+ And that basically is just our way of capturing a one-to-many.
+
+00:01:04.780 --> 00:01:09.580
+ And that's why I said one-to-many plus one-to-many equals many-to-many.
+
+00:01:09.580 --> 00:01:13.140
+ Two-to-many would sound good, but many-to-many.
+
+00:01:13.140 --> 00:01:14.020
+ So here we are.
+
+00:01:14.020 --> 00:01:19.140
+ And here are our two many-to-many relationships in our local library application.
+
+00:01:19.140 --> 00:01:23.300
+ So a book can have many authors and an author can have many books.
+
+00:01:23.300 --> 00:01:26.500
+ And that's what we're characterizing with this little one dot dot star,
+
+00:01:26.500 --> 00:01:28.420
+ one dot dot star.
+
+00:01:28.420 --> 00:01:32.980
+ And the same is true, like a genre can be associated with many books.
+
+00:01:32.980 --> 00:01:36.140
+ And interestingly, the zero dot dot star, that's special.
+
+00:01:36.140 --> 00:01:41.540
+ Where the book connects to genre and it's zero dot dot star coming out of the book,
+
+00:01:41.540 --> 00:01:44.220
+ that means it's a minimum of zero.
+
+00:01:44.220 --> 00:01:49.660
+ And all that's really capturing is that a book can have no genres.
+
+00:01:49.660 --> 00:01:52.260
+ But a book must have at least one author.
+
+00:01:52.260 --> 00:01:55.460
+ And whether that's true or not, that's what this data model is saying.
+
+00:01:55.460 --> 00:01:59.660
+ This data model is saying all books have at least one author, but
+
+00:01:59.660 --> 00:02:03.420
+ they have zero or more genres, but they have one or more authors.
+
+00:02:03.420 --> 00:02:08.780
+ And that's the subtle difference between zero dot dot star and one dot dot star.
+
+00:02:08.780 --> 00:02:14.540
+ And that's the kind of clever little application features that these
+
+00:02:14.540 --> 00:02:17.540
+ applications and these data models can capture beautifully.
+
+00:02:17.540 --> 00:02:21.220
+ And we'll see in a second how that turns into a Django model
+
+00:02:21.220 --> 00:02:24.180
+ that is then a business rule for the data.
+
+00:02:24.180 --> 00:02:30.540
+ And so this is how it works.
+
+00:02:30.540 --> 00:02:34.500
+ We're gonna create two tables, the book table and the author table.
+
+00:02:34.500 --> 00:02:37.700
+ And every table's gonna, every row's gonna have an ID,
+
+00:02:37.700 --> 00:02:40.140
+ auto increment, primary key column.
+
+00:02:40.140 --> 00:02:44.060
+ And then we're gonna have these outbound foreign keys from authored.
+
+00:02:44.060 --> 00:02:47.940
+ Again, the authored table is the start of the arrow, so
+
+00:02:47.940 --> 00:02:50.460
+ it's the one that has the foreign key column in it.
+
+00:02:50.460 --> 00:02:54.180
+ And the destination of the arrow is a primary key in that other table.
+
+00:02:54.180 --> 00:02:57.980
+ Now, what we're gonna do is, and we'll see how this works,
+
+00:02:57.980 --> 00:03:03.140
+ is that Django allows us to create these kind of virtual attributes.
+
+00:03:03.140 --> 00:03:06.500
+ And we'll name them cleverly, the name of them doesn't matter.
+
+00:03:06.500 --> 00:03:09.420
+ But we'll basically say, inside of author,
+
+00:03:09.420 --> 00:03:12.860
+ we're going to have an attribute of books,
+
+00:03:12.860 --> 00:03:17.740
+ which is automatically going to be populated by all the books the author wrote.
+
+00:03:17.740 --> 00:03:20.660
+ And in book, there'll be this little virtual thing.
+
+00:03:20.660 --> 00:03:24.220
+ It's actually computed, it's not stored, it's actually computed,
+
+00:03:24.220 --> 00:03:26.700
+ based on reading the authored table.
+
+00:03:26.700 --> 00:03:29.580
+ It'll be authors, which is a list of all the authors.
+
+00:03:29.580 --> 00:03:32.380
+ And so this is a convenient way, because in Django,
+
+00:03:32.380 --> 00:03:35.940
+ they kind of want to hide this middle table, it exists.
+
+00:03:35.940 --> 00:03:42.620
+ And as a matter of fact, you can write, drop my pen, drop my pen.
+
+00:03:42.620 --> 00:03:46.180
+ Pick the pen back up, make sure the audio is still working.
+
+00:03:46.180 --> 00:03:47.180
+ Is the audio still working?
+
+00:03:47.180 --> 00:03:49.060
+ Yeah, it is, audio's still working.
+
+00:03:49.060 --> 00:03:50.380
+ Life's good.
+
+00:03:50.380 --> 00:03:51.740
+ Sorry about that slight interruption.
+
+00:03:51.740 --> 00:03:57.380
+ So Django tends to want to hide this through table, and
+
+00:03:57.380 --> 00:04:00.300
+ you can actually define models where you don't even give that a name and
+
+00:04:00.300 --> 00:04:01.060
+ it makes one up.
+
+00:04:01.060 --> 00:04:04.940
+ It still exists, it exists exactly like it's shown here.
+
+00:04:04.940 --> 00:04:08.420
+ But I would rather, in my data model, show you this table so
+
+00:04:08.420 --> 00:04:10.500
+ you have a better understanding.
+
+00:04:10.500 --> 00:04:14.860
+ But if you see other data models where they don't explicitly mention this, and
+
+00:04:14.860 --> 00:04:18.500
+ just have a many-to-many, and it actually makes this table up for you.
+
+00:04:18.500 --> 00:04:23.540
+ So don't get all freaked out if you see a model that doesn't have
+
+00:04:23.540 --> 00:04:26.500
+ the through table explicitly modeled.
+
+00:04:26.500 --> 00:04:27.420
+ I like to do it.
+
+00:04:27.420 --> 00:04:28.620
+ So here we go.
+
+00:04:28.620 --> 00:04:30.420
+ So here we have some models.
+
+00:04:30.420 --> 00:04:34.020
+ So we have the book field.
+
+00:04:34.020 --> 00:04:35.580
+ The title is just a bit of the book.
+
+00:04:35.580 --> 00:04:41.180
+ Then authors is a many-to-many field going toward the author table.
+
+00:04:41.180 --> 00:04:43.060
+ That's the far one.
+
+00:04:43.060 --> 00:04:44.740
+ But the through table is authored.
+
+00:04:44.740 --> 00:04:46.800
+ So the intermediate table, the junction table,
+
+00:04:46.800 --> 00:04:50.060
+ the through table is the authored table.
+
+00:04:50.060 --> 00:04:52.100
+ The author is on the other side.
+
+00:04:52.100 --> 00:04:56.980
+ The author has a name, and it has books, which is this kind of virtual set in there
+
+00:04:56.980 --> 00:05:02.020
+ that's a many-to-many field derived pointing at the book table
+
+00:05:02.020 --> 00:05:03.540
+ with a through table of authored.
+
+00:05:03.540 --> 00:05:08.180
+ So the junction table, we mentioned the junction table the same in both of these,
+
+00:05:08.180 --> 00:05:08.980
+ right?
+
+00:05:08.980 --> 00:05:12.620
+ So this is going from one to the other, and this is kind of going back.
+
+00:05:12.620 --> 00:05:14.940
+ And these are like virtual--
+
+00:05:14.940 --> 00:05:21.420
+ it's not data that's stored in each row of the book table.
+
+00:05:21.420 --> 00:05:26.180
+ It is data which is derived for you if you ask for it when you retrieve a book.
+
+00:05:26.180 --> 00:05:28.460
+ You can say, what are the authors of this book?
+
+00:05:28.460 --> 00:05:30.700
+ It's a convenience in a way.
+
+00:05:30.700 --> 00:05:33.340
+ And it also is telling Django about the foreign keys
+
+00:05:33.340 --> 00:05:36.660
+ and where to store the foreign keys and the fact that it's a many-to-many field.
+
+00:05:36.660 --> 00:05:43.140
+ That's all setting up this stuff so that Django, when you start putting stuff
+
+00:05:43.140 --> 00:05:47.860
+ in these tables, Django automatically puts the right stuff into those tables.
+
+00:05:47.860 --> 00:05:50.540
+ And like I said, here's the through table I called authored.
+
+00:05:50.540 --> 00:05:52.180
+ I thought that was kind of clever.
+
+00:05:52.180 --> 00:05:56.740
+ And the through table is modeled as foreign key this way, foreign key that way.
+
+00:05:56.740 --> 00:05:58.820
+ So that's not a many-to-many.
+
+00:05:58.820 --> 00:05:59.620
+ It's a foreign key.
+
+00:05:59.620 --> 00:06:02.420
+ But I've named these, and I matched these things up.
+
+00:06:02.420 --> 00:06:07.060
+ Now, the on delete cascade is the same as the other one.
+
+00:06:07.060 --> 00:06:10.100
+ These are now just, these are two one-to-many's, right?
+
+00:06:10.100 --> 00:06:13.580
+ The through table has a one-to-many going this way and a one-to-many going that way.
+
+00:06:13.580 --> 00:06:21.020
+ And on delete cascade, and so just the whole idea of a book-author combination is
+
+00:06:21.020 --> 00:06:25.220
+ if the authors are deleted, if you delete an author,
+
+00:06:25.220 --> 00:06:29.140
+ you want to delete all the entries in the authored table that correspond to that author.
+
+00:06:29.140 --> 00:06:33.540
+ If we do delete a book, you want to delete automatically all the entries in that.
+
+00:06:33.540 --> 00:06:37.900
+ And so that's what on delete cascade means in the authored table.
+
+00:06:37.900 --> 00:06:42.380
+ And that's clean this table up if things are deleted from the outside two tables.
+
+00:06:42.380 --> 00:06:46.220
+ So that automatic cleanup is done for us, which is quite nice.
+
+00:06:46.220 --> 00:06:49.540
+ And we just request that with this on delete statement.
+
+00:06:49.540 --> 00:06:56.420
+ So, I don't know, that's a beautiful thing, that is a beautiful thing.
+
+00:06:58.460 --> 00:07:00.460
+ It's so pure and so simple.
+
+00:07:00.460 --> 00:07:05.020
+ And I don't like it when you don't put the authored table in there.
+
+00:07:05.020 --> 00:07:08.440
+ Cuz you can sort of do this and then it'll make the authored table up, but
+
+00:07:08.440 --> 00:07:11.060
+ then there's certain things that don't work as well and I don't like that.
+
+00:07:11.060 --> 00:07:17.060
+ Okay, so let's just say we created this models.py file.
+
+00:07:17.060 --> 00:07:21.500
+ Of course, in dg4e samples, if you checked it out and you ran make migrations,
+
+00:07:21.500 --> 00:07:23.060
+ it run makes them all.
+
+00:07:23.060 --> 00:07:26.300
+ But let's just say this is the first time you run make migrations.
+
+00:07:26.300 --> 00:07:28.380
+ And then you'd see that it's creating the migrations.
+
+00:07:28.380 --> 00:07:31.620
+ And then you do the migrate, which of course, as we talked about in
+
+00:07:31.620 --> 00:07:34.860
+ the previous lecture, that is what takes from the migrations and
+
+00:07:34.860 --> 00:07:36.380
+ then upstates the database.
+
+00:07:36.380 --> 00:07:40.300
+ And both the make migrations and
+
+00:07:40.300 --> 00:07:43.980
+ the migrate are checking to see which ones have already been done.
+
+00:07:43.980 --> 00:07:49.380
+ So make migrations is looking for changes or deltas in the models.py file.
+
+00:07:49.380 --> 00:07:52.780
+ And the migrate is looking for deltas in the migrations.
+
+00:07:52.780 --> 00:07:57.820
+ And again, remember that the list of the things that both of these are looking at
+
+00:07:57.820 --> 00:08:01.060
+ is based on the settings.py file.
+
+00:08:01.060 --> 00:08:05.020
+ And it's the installed apps variable in the settings.py file.
+
+00:08:05.020 --> 00:08:08.140
+ So I put this note in because students are always saying,
+
+00:08:08.140 --> 00:08:09.940
+ my make migrations didn't do anything.
+
+00:08:09.940 --> 00:08:11.220
+ Well, there's one of two reasons.
+
+00:08:11.220 --> 00:08:16.060
+ It either is not in the settings.py file or it's already done.
+
+00:08:16.060 --> 00:08:19.700
+ So I don't know which of those it is, but those are the two things to look for.
+
+00:08:19.700 --> 00:08:23.700
+ If you think you're running a make migrations and it's not running,
+
+00:08:23.700 --> 00:08:27.060
+ it either already ran, which is fine, that's totally fine.
+
+00:08:27.060 --> 00:08:32.940
+ Or, you forgot to add it to settings.py, so okay.
+
+00:08:32.940 --> 00:08:36.940
+ So here's just a few things that we can do in the shell, right?
+
+00:08:36.940 --> 00:08:39.300
+ Again, Python 3 manage.py shell.
+
+00:08:39.300 --> 00:08:42.500
+ You gotta run this from the folder that has manage.py in it,
+
+00:08:42.500 --> 00:08:45.620
+ which is the project folder.
+
+00:08:45.620 --> 00:08:48.160
+ Projects have many applications.
+
+00:08:48.160 --> 00:08:52.460
+ And so because the manage.py shell starts up in preloads, again,
+
+00:08:52.460 --> 00:08:57.580
+ the manage.py shell reads all of the apps that are in settings.py,
+
+00:08:57.580 --> 00:09:01.500
+ loads their models, and a few other things from those preloads them.
+
+00:09:01.500 --> 00:09:07.160
+ And so that's why bookmany.models exists at the very first line here.
+
+00:09:07.160 --> 00:09:09.940
+ Because Django, in a sense, has woke up and
+
+00:09:09.940 --> 00:09:13.340
+ preloaded all of the classes and things that are there.
+
+00:09:13.340 --> 00:09:17.660
+ So it's in a Django application, not just in a Python shell.
+
+00:09:20.120 --> 00:09:24.480
+ So we import bookmany as the name of the application, and
+
+00:09:24.480 --> 00:09:27.260
+ the models are book, author, and authored.
+
+00:09:27.260 --> 00:09:30.780
+ So some of this is starting to look familiar to you.
+
+00:09:30.780 --> 00:09:36.300
+ We create an object of type book, book model, the title's networking, and
+
+00:09:36.300 --> 00:09:37.140
+ then we save it.
+
+00:09:37.140 --> 00:09:41.820
+ Remember, save is the thing that transmits the in-memory object into the database and
+
+00:09:41.820 --> 00:09:43.820
+ populates that ID field.
+
+00:09:43.820 --> 00:09:45.980
+ And when you start linking these together,
+
+00:09:45.980 --> 00:09:48.540
+ populating the ID field is very important.
+
+00:09:48.540 --> 00:09:51.500
+ We do a Raspberry Pi book, and we save that.
+
+00:09:51.500 --> 00:09:55.340
+ And now we're gonna make an author for Kristen, and save that.
+
+00:09:55.340 --> 00:09:57.580
+ And author for me, and we save that.
+
+00:09:57.580 --> 00:10:02.940
+ And so at this point, we have made two authors, and we made two books.
+
+00:10:02.940 --> 00:10:06.580
+ But now we have to connect them together, okay?
+
+00:10:06.580 --> 00:10:10.700
+ And so what we're gonna basically say is we're gonna create an authored record,
+
+00:10:10.700 --> 00:10:15.080
+ a record and author, with a book of B connecting book B1 with author A2 and
+
+00:10:15.080 --> 00:10:16.100
+ save it.
+
+00:10:16.100 --> 00:10:19.420
+ Then book B2 connected with author A1 and save that.
+
+00:10:19.420 --> 00:10:22.220
+ Book B2 connected with author A1 and save that.
+
+00:10:22.220 --> 00:10:25.260
+ So that's throwing three records into the authored table,
+
+00:10:25.260 --> 00:10:28.340
+ making those connections, setting the foreign keys.
+
+00:10:28.340 --> 00:10:34.420
+ So like it's just reading the ID field from these A1, A2, and B1, B2.
+
+00:10:34.420 --> 00:10:39.460
+ And it's like inserting records into the authored table in the book_id and
+
+00:10:39.460 --> 00:10:41.180
+ the author_id, right?
+
+00:10:42.820 --> 00:10:46.860
+ Now, remember that in book we have this virtual set called authors, and
+
+00:10:46.860 --> 00:10:50.020
+ in author we have this virtual set called books.
+
+00:10:50.020 --> 00:10:53.180
+ Again, that's not actually stored in the book table or the books table.
+
+00:10:53.180 --> 00:10:58.020
+ It is generated by reading through the appropriate things in the author table.
+
+00:10:58.020 --> 00:10:59.180
+ That's how it's generated.
+
+00:10:59.180 --> 00:11:09.740
+ So if we say for book1.authors, this is like that little virtual thing.
+
+00:11:09.740 --> 00:11:14.340
+ And it reads all of the corresponding authors from the authored table, and
+
+00:11:14.340 --> 00:11:16.740
+ then values just says actually go retrieve them.
+
+00:11:16.740 --> 00:11:22.300
+ And so now we see that the authors for book one is a list of just one author
+
+00:11:22.300 --> 00:11:23.420
+ named Severance.
+
+00:11:23.420 --> 00:11:28.260
+ Book two authors values is a list with Kristen and me.
+
+00:11:28.260 --> 00:11:31.460
+ And then author one, who's that?
+
+00:11:31.460 --> 00:11:33.700
+ Author one is Kristen.
+
+00:11:33.700 --> 00:11:35.020
+ What books did she write?
+
+00:11:35.020 --> 00:11:38.500
+ Well, she wrote the Raspberry Pi book, we co-wrote that book.
+
+00:11:38.500 --> 00:11:40.860
+ And then author two, what books did he write?
+
+00:11:40.860 --> 00:11:43.580
+ Well, he wrote the networking book by himself, and
+
+00:11:43.580 --> 00:11:46.420
+ he's a co-author with Kristen on this other book.
+
+00:11:46.420 --> 00:11:50.420
+ And there's all kind of other things that you can do, but you kind of get this idea
+
+00:11:50.420 --> 00:11:57.740
+ that you don't have to do too much with the authored table.
+
+00:11:57.740 --> 00:12:01.180
+ And then once you got things all set up, you can sort of like walk the authored
+
+00:12:01.180 --> 00:12:05.860
+ table without actually knowing it, because we preset these things.
+
+00:12:05.860 --> 00:12:11.340
+ When we made the data model, and said what the through table was.
+
+00:12:11.340 --> 00:12:16.140
+ And so the through table is sort of a magic thing that's useful,
+
+00:12:16.140 --> 00:12:19.500
+ but we don't really explicitly deal with it too much.
+
+00:12:19.500 --> 00:12:22.820
+ Now up next, I'm gonna show you a different example of many to many,
+
+00:12:22.820 --> 00:12:24.820
+ just to sort of bring this home a bit.
+
+00:12:24.820 --> 00:12:34.820
+ [MUSIC]
+

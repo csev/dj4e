@@ -1,0 +1,7 @@
+Network Sockets: Computer Phone Call Model
+
+network sockets, tcp, ip, ipv4, ipv6, tcp ports, http, https, telnet
+
+Network sockets provide a communication mechanism for computer applications, modeled after phone calls. This design involves establishing a connection, exchanging data, and disconnecting, which was conceived in the 1960s to handle network communication without requiring permanent connections for scalability.
+
+Each network connection uses an IP address (IPv4 or IPv6) and a TCP port number. Common ports include 25 for email server communication, 23 for Telnet, 80 for HTTP, and 443 for HTTPS, enabling applications to interact over the internet.

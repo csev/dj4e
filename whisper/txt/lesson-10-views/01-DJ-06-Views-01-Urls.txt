@@ -1,0 +1,145 @@
+ So now we're going to start producing the actual output
+ of our application in the views and using templates.
+ And there's a lot to cover here.
+ So up till now, we've been starting
+ to talk about URLs, which are simple.
+ It says when you get the request with a URL of this format,
+ choose a view and send it to that view.
+ We're going to talk a lot about views.py and templates
+ in an upcoming lecture.
+ We'll talk about forms.
+ And we spent a bunch of time talking about models.py
+ and how the models can talk to Python code,
+ talk to the shell, how the models can
+ inform how we write to the database
+ and how we read from the database.
+ So we're starting to fill parts in.
+ As we put the views together, we're
+ really starting to really create our entire application.
+ And I know it's taken a while to get to the point
+ where we can get to the point where we see the whole thing.
+ So I just want to say that from time to time, wherever you have
+ dj-free samples, whether it's on your laptop
+ or whether it's on Python Anywhere,
+ you should do a get pull from time to time,
+ because I'm always working on these samples.
+ And I want you to make sure you have the latest
+ copies of these samples.
+ Sometimes I add little bits of-- I don't change the samples,
+ but I add bits of documentation as I'm like, oh,
+ I should have added that.
+ So views are like the core of the application.
+ I mean, the URLs find their way to views.
+ Models tend to serve the needs of views,
+ act as this layer to allow views to write and read
+ the database.
+ And so the views.py has a model aspect
+ in that it handles incoming data.
+ When we get the forms and post data,
+ then we copy that into the database.
+ The views.py decides sometimes whether or not
+ to send the user to a different screen
+ or if it's going to produce the actual screen in the HTML,
+ it produces that HTML, often using template,
+ and then sends it back.
+ So the views are where the work really gets done.
+ And what you see is you write a lot of code in the views.
+ You write one line in the URL, few lines in the models file,
+ and then lots of stuff in the views.
+ And I consider the templates kind of part of the views
+ as well.
+ So the first thing that Django does
+ when it receives an incoming document, a request
+ for a document, it basically parses that URL.
+ And the first thing after the domain name
+ is generally the application.
+ So remember that Django has a project.
+ And then underneath that, there's
+ one or more applications.
+ And each of the DJ free samples, you
+ see lots of applications, each application
+ kind of to show a little bit of sample code for a topic.
+ And so that second part of the URL,
+ that is the application name.
+ And for all intents and purposes,
+ it's also the folder name within the Django project.
+ Now within that, usually the next chunk is the view.
+ And so that view within application,
+ the view within application is defined in urls.py.
+ And then after that, there are two kinds of parameters.
+ One is like a key value parameter
+ that comes after a question mark.
+ It also uses ampersands for that.
+ And then sometimes we just put after slashes.
+ This is more of a REST style URL that's very pretty.
+ And you put the parameters right on the URL
+ rather than the question mark, which
+ is sort of the old school for doing all this stuff.
+ So there is this thing in Django called the URL dispatcher.
+ I sort of call it router on my picture.
+ It's basically to get you to be able to define the URLs
+ and how those URLs are to be parsed and handled
+ and how those URLs to be routed to the various bits of view
+ code.
+ And so we do this in urls.py.
+ There are three basic patterns.
+ First, you might route a particular URL pattern
+ to a predefined class.
+ And you'll see the example of that coming up.
+ Or there's sort of functions, really old school function,
+ that take this request, which is an object that
+ captures all of the data, the parameters, the URL,
+ whether it was a secure request or not, what host it came from,
+ what's the IP address it came from.
+ All that stuff is wrapped up into this request object, which
+ we'll talk about in a second.
+ And that view function looks at that request object,
+ decides what to do, talks to the database, maybe,
+ and then sends back a response, whether it's
+ a redirect or some HTML.
+ And the function is kind of the low level thing.
+ But you can also then define a class.
+ And defining classes, as we'll see, is really quite nice.
+ The classes have methods, like for get and for post,
+ depending on the kind of incoming HTTP request
+ that we're handling.
+ And it also, in those methods, the request
+ and any other URL parameters can also be sent in.
+ So let's take a look at a sample urls.py from views.
+ And we see examples of all three kinds of these routes.
+ URL patterns is a global variable.
+ It's just a list.
+ But it has very special meaning.
+ This list has very special meaning to Django.
+ And you see these path commands.
+ And there's other ways to describe these things.
+ And then you have the path.
+ And the blank path means sort of just slash right
+ after the application name.
+ And then we have which view to send it to.
+ And so this template view as view,
+ this is basically to save you from writing code
+ if all you want to do is take a template out of the templates
+ folder and return it.
+ So you don't have to write your own code in views.py.
+ And so it's already there.
+ And that's why we go into Django views generic import template
+ view.
+ And we're going to say, you know what, I wrote that template.
+ But I just don't want to write the code to go send that.
+ We just read that template and send it back.
+ And so this is a predefined bit of Django that does this for us.
+ Sort of the more old school thing is this syntax right here.
+ And basically from.import views pulls in views slash views.py.
+ And then this, you will see our functions inside there.
+ And then these are classes also from our views.py
+ for this particular application.
+ And the syntax is a little weird.
+ This is the module we imported.
+ This is a class from that.
+ And then as view is a static method
+ that returns a function that then can
+ respond to the incoming requests.
+ And we'll see these as we kind of go through these.
+ So up next, we're going to actually look at the views.py
+ and take a look at the views.

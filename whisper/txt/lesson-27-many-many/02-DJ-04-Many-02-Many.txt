@@ -1,0 +1,211 @@
+ and so the many-to-many is a situation where you have sort of somewhere between one infinity
+ and somewhere between one infinity on both sides.
+ Now, what we need to do to model this is we can't really model many-to-many in a relational database.
+ So what we do is we break it into two one-to-manys and we have a junction table.
+ You could call this the author book table.
+ Later I'll call this the author table.
+ Like, you know, who are the authors of?
+ You could call it authors of.
+ And it's a table that's a very short table and it really just says this author authored this book.
+ This author authored this book.
+ This author authored this book.
+ And then within that you can say for this book, who are all the authors?
+ Or for this author, what are all the books, right?
+ So we call it a connection table.
+ We call it a join table.
+ We call it a junction table.
+ And in Django terminology we'll call this a through table.
+ But its purpose is to have two outbound one-to-many relationships instead.
+ And that basically is just our way of capturing a one-to-many.
+ And that's why I said one-to-many plus one-to-many equals many-to-many.
+ Two-to-many would sound good, but many-to-many.
+ So here we are.
+ And here are our two many-to-many relationships in our local library application.
+ So a book can have many authors and an author can have many books.
+ And that's what we're characterizing with this little one dot dot star,
+ one dot dot star.
+ And the same is true, like a genre can be associated with many books.
+ And interestingly, the zero dot dot star, that's special.
+ Where the book connects to genre and it's zero dot dot star coming out of the book,
+ that means it's a minimum of zero.
+ And all that's really capturing is that a book can have no genres.
+ But a book must have at least one author.
+ And whether that's true or not, that's what this data model is saying.
+ This data model is saying all books have at least one author, but
+ they have zero or more genres, but they have one or more authors.
+ And that's the subtle difference between zero dot dot star and one dot dot star.
+ And that's the kind of clever little application features that these
+ applications and these data models can capture beautifully.
+ And we'll see in a second how that turns into a Django model
+ that is then a business rule for the data.
+ And so this is how it works.
+ We're gonna create two tables, the book table and the author table.
+ And every table's gonna, every row's gonna have an ID,
+ auto increment, primary key column.
+ And then we're gonna have these outbound foreign keys from authored.
+ Again, the authored table is the start of the arrow, so
+ it's the one that has the foreign key column in it.
+ And the destination of the arrow is a primary key in that other table.
+ Now, what we're gonna do is, and we'll see how this works,
+ is that Django allows us to create these kind of virtual attributes.
+ And we'll name them cleverly, the name of them doesn't matter.
+ But we'll basically say, inside of author,
+ we're going to have an attribute of books,
+ which is automatically going to be populated by all the books the author wrote.
+ And in book, there'll be this little virtual thing.
+ It's actually computed, it's not stored, it's actually computed,
+ based on reading the authored table.
+ It'll be authors, which is a list of all the authors.
+ And so this is a convenient way, because in Django,
+ they kind of want to hide this middle table, it exists.
+ And as a matter of fact, you can write, drop my pen, drop my pen.
+ Pick the pen back up, make sure the audio is still working.
+ Is the audio still working?
+ Yeah, it is, audio's still working.
+ Life's good.
+ Sorry about that slight interruption.
+ So Django tends to want to hide this through table, and
+ you can actually define models where you don't even give that a name and
+ it makes one up.
+ It still exists, it exists exactly like it's shown here.
+ But I would rather, in my data model, show you this table so
+ you have a better understanding.
+ But if you see other data models where they don't explicitly mention this, and
+ just have a many-to-many, and it actually makes this table up for you.
+ So don't get all freaked out if you see a model that doesn't have
+ the through table explicitly modeled.
+ I like to do it.
+ So here we go.
+ So here we have some models.
+ So we have the book field.
+ The title is just a bit of the book.
+ Then authors is a many-to-many field going toward the author table.
+ That's the far one.
+ But the through table is authored.
+ So the intermediate table, the junction table,
+ the through table is the authored table.
+ The author is on the other side.
+ The author has a name, and it has books, which is this kind of virtual set in there
+ that's a many-to-many field derived pointing at the book table
+ with a through table of authored.
+ So the junction table, we mentioned the junction table the same in both of these,
+ right?
+ So this is going from one to the other, and this is kind of going back.
+ And these are like virtual--
+ it's not data that's stored in each row of the book table.
+ It is data which is derived for you if you ask for it when you retrieve a book.
+ You can say, what are the authors of this book?
+ It's a convenience in a way.
+ And it also is telling Django about the foreign keys
+ and where to store the foreign keys and the fact that it's a many-to-many field.
+ That's all setting up this stuff so that Django, when you start putting stuff
+ in these tables, Django automatically puts the right stuff into those tables.
+ And like I said, here's the through table I called authored.
+ I thought that was kind of clever.
+ And the through table is modeled as foreign key this way, foreign key that way.
+ So that's not a many-to-many.
+ It's a foreign key.
+ But I've named these, and I matched these things up.
+ Now, the on delete cascade is the same as the other one.
+ These are now just, these are two one-to-many's, right?
+ The through table has a one-to-many going this way and a one-to-many going that way.
+ And on delete cascade, and so just the whole idea of a book-author combination is
+ if the authors are deleted, if you delete an author,
+ you want to delete all the entries in the authored table that correspond to that author.
+ If we do delete a book, you want to delete automatically all the entries in that.
+ And so that's what on delete cascade means in the authored table.
+ And that's clean this table up if things are deleted from the outside two tables.
+ So that automatic cleanup is done for us, which is quite nice.
+ And we just request that with this on delete statement.
+ So, I don't know, that's a beautiful thing, that is a beautiful thing.
+ It's so pure and so simple.
+ And I don't like it when you don't put the authored table in there.
+ Cuz you can sort of do this and then it'll make the authored table up, but
+ then there's certain things that don't work as well and I don't like that.
+ Okay, so let's just say we created this models.py file.
+ Of course, in dg4e samples, if you checked it out and you ran make migrations,
+ it run makes them all.
+ But let's just say this is the first time you run make migrations.
+ And then you'd see that it's creating the migrations.
+ And then you do the migrate, which of course, as we talked about in
+ the previous lecture, that is what takes from the migrations and
+ then upstates the database.
+ And both the make migrations and
+ the migrate are checking to see which ones have already been done.
+ So make migrations is looking for changes or deltas in the models.py file.
+ And the migrate is looking for deltas in the migrations.
+ And again, remember that the list of the things that both of these are looking at
+ is based on the settings.py file.
+ And it's the installed apps variable in the settings.py file.
+ So I put this note in because students are always saying,
+ my make migrations didn't do anything.
+ Well, there's one of two reasons.
+ It either is not in the settings.py file or it's already done.
+ So I don't know which of those it is, but those are the two things to look for.
+ If you think you're running a make migrations and it's not running,
+ it either already ran, which is fine, that's totally fine.
+ Or, you forgot to add it to settings.py, so okay.
+ So here's just a few things that we can do in the shell, right?
+ Again, Python 3 manage.py shell.
+ You gotta run this from the folder that has manage.py in it,
+ which is the project folder.
+ Projects have many applications.
+ And so because the manage.py shell starts up in preloads, again,
+ the manage.py shell reads all of the apps that are in settings.py,
+ loads their models, and a few other things from those preloads them.
+ And so that's why bookmany.models exists at the very first line here.
+ Because Django, in a sense, has woke up and
+ preloaded all of the classes and things that are there.
+ So it's in a Django application, not just in a Python shell.
+ So we import bookmany as the name of the application, and
+ the models are book, author, and authored.
+ So some of this is starting to look familiar to you.
+ We create an object of type book, book model, the title's networking, and
+ then we save it.
+ Remember, save is the thing that transmits the in-memory object into the database and
+ populates that ID field.
+ And when you start linking these together,
+ populating the ID field is very important.
+ We do a Raspberry Pi book, and we save that.
+ And now we're gonna make an author for Kristen, and save that.
+ And author for me, and we save that.
+ And so at this point, we have made two authors, and we made two books.
+ But now we have to connect them together, okay?
+ And so what we're gonna basically say is we're gonna create an authored record,
+ a record and author, with a book of B connecting book B1 with author A2 and
+ save it.
+ Then book B2 connected with author A1 and save that.
+ Book B2 connected with author A1 and save that.
+ So that's throwing three records into the authored table,
+ making those connections, setting the foreign keys.
+ So like it's just reading the ID field from these A1, A2, and B1, B2.
+ And it's like inserting records into the authored table in the book_id and
+ the author_id, right?
+ Now, remember that in book we have this virtual set called authors, and
+ in author we have this virtual set called books.
+ Again, that's not actually stored in the book table or the books table.
+ It is generated by reading through the appropriate things in the author table.
+ That's how it's generated.
+ So if we say for book1.authors, this is like that little virtual thing.
+ And it reads all of the corresponding authors from the authored table, and
+ then values just says actually go retrieve them.
+ And so now we see that the authors for book one is a list of just one author
+ named Severance.
+ Book two authors values is a list with Kristen and me.
+ And then author one, who's that?
+ Author one is Kristen.
+ What books did she write?
+ Well, she wrote the Raspberry Pi book, we co-wrote that book.
+ And then author two, what books did he write?
+ Well, he wrote the networking book by himself, and
+ he's a co-author with Kristen on this other book.
+ And there's all kind of other things that you can do, but you kind of get this idea
+ that you don't have to do too much with the authored table.
+ And then once you got things all set up, you can sort of like walk the authored
+ table without actually knowing it, because we preset these things.
+ When we made the data model, and said what the through table was.
+ And so the through table is sort of a magic thing that's useful,
+ but we don't really explicitly deal with it too much.
+ Now up next, I'm gonna show you a different example of many to many,
+ just to sort of bring this home a bit.
+ [MUSIC]

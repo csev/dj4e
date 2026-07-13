@@ -1,0 +1,178 @@
+ - So we've talked about how we reduce replication
+ by moving data from sort of one table with too many columns
+ into multiple tables and then make links
+ with primary keys and foreign keys.
+ But we're really not gonna operate at that level
+ 'cause this is a Django class
+ and we're gonna do this in Django.
+ And so we use data models in models.py to do this.
+ And so a lot of the model field types are characters
+ or numbers or dates or long text fields, et cetera.
+ But some of them are special and used in this one-to-many
+ foreign key, many-to-many fields.
+ These are the fields that we use to do the linking
+ in our Django data model.
+ And so we'll take a look at how these all work.
+ So if we have our book instance that links to our book table
+ and then our book table that links to the language table,
+ we end up with special little lines in our models.
+ So most of this is pretty familiar.
+ We got a language, it's got a name.
+ Now, one thing about Django is it automatically adds
+ the ID field and that's kinda nice.
+ So you just assume that everything inside of a data model,
+ every one of these three tables are going to have ID fields.
+ And we don't even talk about the name of the foreign keys
+ even though Django names them the way I just showed you
+ with the lang_id.
+ We have just a regular old thing.
+ So lang is suitable as a destination for a link
+ 'cause it has an ID column automatically added
+ by Django every time.
+ The book table has an ID column,
+ so it's suitable for the destination of a link.
+ But then title and ISBN are there.
+ And then there's this language and that's the first one.
+ And so this is where we're actually modeling
+ the need to have links between the book table
+ and the language table.
+ So we're starting at the from or the start of the arrow
+ and we're saying there is, we need to have a language.
+ But the language is not a string, it's not a number,
+ it is a foreign key.
+ And it's a foreign key into the table called lang
+ and this table called lang matches that table.
+ And then we have a couple things.
+ I'll talk about on delete in a second
+ and then null equals true is whether or not it's required.
+ And so what it's saying when null is true
+ is we're allowing emptiness.
+ So that means it's possible to have a record
+ in the book table that doesn't have a language.
+ And so that's what we're saying when we're saying null equals true.
+ The instance table points to a book.
+ It's a foreign key to the book model and it has a do back.
+ Now the status was in there and so I sort of shortened it a little bit.
+ But we have a foreign key that points into it.
+ And so again, we're defining where we have the beginnings of the arrows
+ because the ends of the arrows is kind of implicit.
+ Django gives us sort of the primary keys for each row in these models
+ automatically without us having to say it.
+ But you can put it in a Django model if you wanna overwrite the name of it.
+ But if you just want a column called id, which everybody pretty much does,
+ you just leave it out and Django puts it in for you automatically, okay?
+ And so again, you see this from the point of view of the data model
+ where we have the arrow between book and language that's a many to one.
+ And then a book instance to the book is a many to one as well.
+ And so those foreign key links represent the arrows in this data model.
+ Now just to sort of review, you might have done already some of these migrations.
+ So once you edit these data models and you get them right,
+ you have to do a two step process to get them so
+ that your database reflects these models.
+ The first one is you have to make migrations.
+ And so the way the make migrations works is it looks through all of
+ the applications that are registered in your settings.py.
+ And for every one, it checks to see if the data model has changed since
+ the last run of make migrations.
+ So make migrations actually creates files in your application
+ based on the models.py.
+ And it's a series of files, like 001 here, that's the first one.
+ There might, if we changed it and then run make migrations again,
+ there'd be an 002, and what it would do is the 002 is evolution beyond the 001.
+ Now the migrations are portable, okay, in that they don't,
+ they're not specific to the MySQL database, the SQLite database, etc.
+ Now the migrate reads those migrations and
+ then updates the actual tables in the database.
+ And so the migrate is mapping the portable representation of what's supposed
+ to be in the database into the actual physical representation in the database.
+ Now you'll notice if you run these both twice, once they work,
+ they'll say no changes detected.
+ Because in the case of the make migrations, it looks at your models and
+ then looks at what's in the migrations already and says, it's a perfect match.
+ And then in the migrate, it looks at what's in the migrations and
+ what's in the database table and says, everything's there, everything's been done.
+ So this can be confusing because in my documentation,
+ I'll say run a make migrations and you say no changes detected.
+ Now there's another reason why you might get no changes detected and
+ that is that you have to add it to the settings.py file before it's gonna be detected.
+ So you might have edited a model.py file and changed it.
+ But if the application is not in the settings.py, then it won't be detected.
+ So the make migrations is reading through all the applications listed in
+ the settings.py, checking for differences, deviations between models.py and
+ the migrations.
+ It might be a little easier just to show you these things.
+ Well, that's coming up, I'll show you those in a second.
+ If we look at what the migrate does, the migrate creates the SQLite file.
+ And so we can take a look at this file.
+ You don't have to, but you can take a look at this file after you've run the migrate.
+ And you see, so I have a tables, book one percent.
+ That's actually a wild card because the like statement,
+ that's like the like statement in SQL.
+ So that says, show me all the tables that start with book one.
+ And you see that there's three of them.
+ Book one underscore book, book one underscore instance, and
+ book one underscore lang.
+ Book one is the application because Django has project and
+ then applications within project.
+ And book one is the application that we're doing.
+ And then instance book and lang are the three models that we've specified
+ in our database, in our models.py.
+ So if we take a look using the schema command of book one,
+ we can see how the migrate statement produced the table.
+ And so we created a book one dot underscore book.
+ It has ID, auto increment, all that stuff from the SQL stuff.
+ It's got a title, it's got ISPN, and then it's got this lang ID.
+ That's the foreign key.
+ So it's actually building the foreign key the right way.
+ Now in SQLite, there's one way of building foreign keys.
+ In MySQL, there's a different way of building foreign keys.
+ And so that's all something that the migrate operation understands
+ how to build.
+ And if you look at the language,
+ you just see that there's an ID column that's automatically produced and
+ then a name.
+ And then if you look at the instance, you see an ID and
+ a dude back, which is date.
+ And then you see the book ID, which is the foreign key into the book table.
+ And so you can kinda see how these tables implement the links as described
+ in the picture.
+ Now, I was telling you about this on delete.
+ So the problem is, is what happens when you have a row in one table,
+ like in the book table, that's pointing to a row in a language table, and
+ you got records that are pointing there.
+ So you've got two books that are pointing to English in this situation.
+ And then you delete the English row.
+ What happens to the rows?
+ And you've got, there's a couple of different things that you can do, but
+ the two common things are, is cascade.
+ And what cascade says is that you're going to delete all the rows.
+ If you delete those rows,
+ you're gonna delete all the rows that have the matching language ID.
+ And set null basically instead says, that's okay.
+ We're just gonna wipe out these and make them null.
+ And in this English, I mean in this language,
+ if we delete a language from the language table,
+ we probably just wanna set it to be null, okay?
+ And so if you look, you'll see that the relationship between the book and
+ the language, which is right here, if we delete one of these things,
+ we set it to null.
+ We set the corresponding language to null.
+ We just throw away these links in a sense.
+ And that's okay, cuz books are allowed to not have languages, okay?
+ And so languages are allowed to be null, null equals true.
+ Languages are allowed to be null.
+ But if on the other hand we get rid of a book from our books table,
+ then we probably wanna wipe out all of the instances that are related to that book.
+ And so that's why we in here say on delete cascade in the book foreign key entry.
+ And we don't say null equals true.
+ And so set null requires you to be able to say null equals true.
+ So you have to say I am willing to allow nulls in this column.
+ And by the way, if the thing that this column points to is deleted,
+ then set it to null, which means don't delete the row.
+ Cascade means if the thing we're pointing to is deleted, then delete this row,
+ cuz we don't want inconsistent data.
+ We don't want those little things pointing off to absolutely nowhere and
+ making absolutely no sense.
+ So next I wanna go into a little more detail on models, migrations, and
+ databases and how they work at a bit of a low level.
+ [MUSIC]

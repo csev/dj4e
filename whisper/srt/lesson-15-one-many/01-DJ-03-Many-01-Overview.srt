@@ -1,0 +1,544 @@
+1
+00:00:00,000 --> 00:00:03,120
+ - Hello, and welcome to our lecture on data modeling.
+
+2
+00:00:03,120 --> 00:00:04,740
+ We're gonna have a couple lectures on data modeling.
+
+3
+00:00:04,740 --> 00:00:06,620
+ This first one is sort of the one-to-many,
+
+4
+00:00:06,620 --> 00:00:08,080
+ which is the easiest to understand,
+
+5
+00:00:08,080 --> 00:00:10,820
+ and then we'll have another lecture on many-to-many.
+
+6
+00:00:10,820 --> 00:00:14,500
+ Just to give you sort of, we're still sort of building
+
+7
+00:00:14,500 --> 00:00:16,800
+ a Django application one piece at a time,
+
+8
+00:00:16,800 --> 00:00:20,540
+ and we haven't built a whole Django application.
+
+9
+00:00:20,540 --> 00:00:24,540
+ But basically, we're really focused on model.py,
+
+10
+00:00:24,540 --> 00:00:29,820
+ and a little bit more on admin to inform.
+
+11
+00:00:29,820 --> 00:00:34,480
+ So, model.py is where we define the structure of our database,
+
+12
+00:00:34,480 --> 00:00:38,480
+ and we see this database through data models,
+
+13
+00:00:38,480 --> 00:00:42,120
+ data model objects, and we can register our data models
+
+14
+00:00:42,120 --> 00:00:46,100
+ in admin.py, there's not too much in this admin.py.
+
+15
+00:00:46,100 --> 00:00:47,860
+ But we really, and so we're gonna be talking to things
+
+16
+00:00:47,860 --> 00:00:50,620
+ like the shell, or you can even run scripts in here.
+
+17
+00:00:50,620 --> 00:00:53,440
+ So, the whole thing, in this lecture,
+
+18
+00:00:53,440 --> 00:00:55,480
+ we're not talking much about the routing,
+
+19
+00:00:55,480 --> 00:00:57,620
+ or the views, or forms, or templates.
+
+20
+00:00:57,620 --> 00:01:00,560
+ We're really focused down in this area
+
+21
+00:01:00,560 --> 00:01:02,620
+ of our Django application, and it's okay.
+
+22
+00:01:02,620 --> 00:01:03,860
+ We'll get to the rest of them,
+
+23
+00:01:03,860 --> 00:01:08,020
+ and we're just kind of talking about the data modeling now.
+
+24
+00:01:08,020 --> 00:01:11,020
+ So, I came to databases late in life.
+
+25
+00:01:11,020 --> 00:01:14,360
+ I saw them a little bit in grad school,
+
+26
+00:01:14,360 --> 00:01:15,500
+ which was a very long time ago,
+
+27
+00:01:15,500 --> 00:01:17,920
+ and I didn't like relational database as much,
+
+28
+00:01:17,920 --> 00:01:22,680
+ and I went to a job, and I had learned relational databases
+
+29
+00:01:22,680 --> 00:01:26,920
+ for the job, and I actually was a pretty advanced programmer
+
+30
+00:01:26,920 --> 00:01:30,440
+ at that point in time, and so they taught me
+
+31
+00:01:30,440 --> 00:01:33,600
+ how to do data model design, and I picked it up really fast,
+
+32
+00:01:33,600 --> 00:01:36,560
+ and I like totally fell in love with databases.
+
+33
+00:01:36,560 --> 00:01:41,100
+ So, model design is a interesting problem to solve.
+
+34
+00:01:41,100 --> 00:01:44,660
+ The basic idea really comes down to efficiency
+
+35
+00:01:44,660 --> 00:01:46,800
+ of storing and retrieving data.
+
+36
+00:01:46,800 --> 00:01:48,280
+ And it just comes down to like,
+
+37
+00:01:48,280 --> 00:01:51,800
+ if you build an online application like Facebook,
+
+38
+00:01:51,800 --> 00:01:54,020
+ and if you're not clever about how to store your data,
+
+39
+00:01:54,020 --> 00:01:56,000
+ and somehow every time you logged into Facebook,
+
+40
+00:01:56,000 --> 00:01:59,420
+ you had to read all the Facebook's data to finally log in,
+
+41
+00:01:59,420 --> 00:02:03,420
+ it would literally take you two to 3,000 hours
+
+42
+00:02:03,420 --> 00:02:06,640
+ to log into Facebook if it had to read all of its data.
+
+43
+00:02:06,640 --> 00:02:08,600
+ Now, obviously, millions of people
+
+44
+00:02:08,600 --> 00:02:10,840
+ log in per second in Facebook,
+
+45
+00:02:10,840 --> 00:02:12,680
+ and so obviously they're a little faster than that.
+
+46
+00:02:12,680 --> 00:02:15,040
+ So, somewhere between days and days and days
+
+47
+00:02:15,040 --> 00:02:17,540
+ to read the data, and can read the data
+
+48
+00:02:17,540 --> 00:02:19,160
+ a million times a second,
+
+49
+00:02:19,160 --> 00:02:20,920
+ in there is where databases win.
+
+50
+00:02:20,920 --> 00:02:24,040
+ And so, at times, it seems like when we're building
+
+51
+00:02:24,040 --> 00:02:26,160
+ a data model, you're like, "Oh, this is so difficult,
+
+52
+00:02:26,160 --> 00:02:28,160
+ "why are we working so hard?"
+
+53
+00:02:28,160 --> 00:02:30,920
+ And the answer is, you just can't scale.
+
+54
+00:02:30,920 --> 00:02:32,560
+ I mean, you can read through your data
+
+55
+00:02:32,560 --> 00:02:33,960
+ for simple data mining things,
+
+56
+00:02:33,960 --> 00:02:35,560
+ but databases are really important,
+
+57
+00:02:35,560 --> 00:02:36,660
+ and especially when you're building
+
+58
+00:02:36,660 --> 00:02:39,200
+ interactive online applications, speed's important.
+
+59
+00:02:39,200 --> 00:02:43,560
+ So, it turns out that, like most things in database,
+
+60
+00:02:43,560 --> 00:02:45,340
+ you can learn the basics pretty quick,
+
+61
+00:02:45,340 --> 00:02:46,880
+ and the rest of it is sort of an art form
+
+62
+00:02:46,880 --> 00:02:49,520
+ that you learn as you go.
+
+63
+00:02:49,520 --> 00:02:52,520
+ And so, the goal is to figure out the data
+
+64
+00:02:52,520 --> 00:02:54,640
+ that you want to store in your application,
+
+65
+00:02:54,640 --> 00:02:56,640
+ and then draw a picture,
+
+66
+00:02:56,640 --> 00:02:58,980
+ spreading that data across multiple tables,
+
+67
+00:02:58,980 --> 00:03:01,560
+ and then creating links between those tables.
+
+68
+00:03:01,560 --> 00:03:03,840
+ So, you kind of start with a sample data set.
+
+69
+00:03:03,840 --> 00:03:05,240
+ Now, this is where we're gonna end up,
+
+70
+00:03:05,240 --> 00:03:07,660
+ and this is the model for the data
+
+71
+00:03:07,660 --> 00:03:10,040
+ for this local library application that we're building,
+
+72
+00:03:10,040 --> 00:03:12,480
+ and this is the thing we're gonna keep coming back to
+
+73
+00:03:12,480 --> 00:03:13,320
+ over and over.
+
+74
+00:03:13,320 --> 00:03:15,380
+ So, this is the destination,
+
+75
+00:03:15,380 --> 00:03:17,200
+ but we're not gonna hit this destination,
+
+76
+00:03:17,200 --> 00:03:19,520
+ we're gonna start more with the data.
+
+77
+00:03:19,520 --> 00:03:20,920
+ Now, different applications,
+
+78
+00:03:20,920 --> 00:03:22,600
+ when you work at different organizations,
+
+79
+00:03:22,600 --> 00:03:26,080
+ you're going to find that the data model is very important.
+
+80
+00:03:26,080 --> 00:03:28,040
+ So, this is the data model of my autograder,
+
+81
+00:03:28,040 --> 00:03:30,840
+ which is based on a framework I built called SUGI,
+
+82
+00:03:30,840 --> 00:03:34,060
+ and so, if you were to learn this thing,
+
+83
+00:03:34,060 --> 00:03:36,020
+ early on I say, oh, and here's our data model,
+
+84
+00:03:36,020 --> 00:03:37,080
+ and here's how we store stuff,
+
+85
+00:03:37,080 --> 00:03:38,480
+ and here's this, that, and the other thing,
+
+86
+00:03:38,480 --> 00:03:41,760
+ and this data model took a lot of time to get right,
+
+87
+00:03:41,760 --> 00:03:45,520
+ and it's a real important part of the application.
+
+88
+00:03:45,520 --> 00:03:47,680
+ And another project I work on is called Sakai,
+
+89
+00:03:47,680 --> 00:03:50,240
+ it's a learning management system that's open source.
+
+90
+00:03:50,240 --> 00:03:53,080
+ And, you know, this is a tiny fraction of the data model,
+
+91
+00:03:53,080 --> 00:03:54,760
+ but if you wanna work in this application,
+
+92
+00:03:54,760 --> 00:03:57,200
+ you wanna improve something or add a feature,
+
+93
+00:03:57,200 --> 00:03:58,640
+ you gotta figure out this data model,
+
+94
+00:03:58,640 --> 00:04:00,840
+ because where the data goes,
+
+95
+00:04:00,840 --> 00:04:03,560
+ it shows up kind of flat in the user interface,
+
+96
+00:04:03,560 --> 00:04:06,760
+ but eventually it's stored in very specific locations,
+
+97
+00:04:06,760 --> 00:04:08,740
+ and linked, and that's why you see all these little boxes,
+
+98
+00:04:08,740 --> 00:04:09,580
+ but then lines.
+
+99
+00:04:09,580 --> 00:04:12,960
+ The lines are also the links between the various tables.
+
+100
+00:04:12,960 --> 00:04:15,380
+ So, there's a whole bunch of theory
+
+101
+00:04:15,380 --> 00:04:18,140
+ about database normalization, and it's important,
+
+102
+00:04:18,140 --> 00:04:20,040
+ it really is, and if you take some time,
+
+103
+00:04:20,040 --> 00:04:22,240
+ go ahead and read about it.
+
+104
+00:04:22,240 --> 00:04:24,960
+ First normal form, second normal form, third normal form,
+
+105
+00:04:24,960 --> 00:04:27,640
+ third normal form, version A and stuff.
+
+106
+00:04:27,640 --> 00:04:28,900
+ I'm not really into the math,
+
+107
+00:04:28,900 --> 00:04:32,000
+ I don't really wanna explain the math to you.
+
+108
+00:04:32,000 --> 00:04:36,380
+ The key thing about database normalization, ultimately,
+
+109
+00:04:36,380 --> 00:04:40,620
+ that it can be sort of distilled down to,
+
+110
+00:04:40,620 --> 00:04:43,000
+ don't replicate string data,
+
+111
+00:04:43,000 --> 00:04:44,920
+ and what I mean by string data is like,
+
+112
+00:04:44,920 --> 00:04:48,180
+ names, and URLs, and things like that.
+
+113
+00:04:49,520 --> 00:04:51,520
+ So, in a system, ultimately,
+
+114
+00:04:51,520 --> 00:04:56,440
+ if my email address is stored in text in that system,
+
+115
+00:04:56,440 --> 00:04:58,140
+ it literally should be stored once.
+
+116
+00:04:58,140 --> 00:05:00,200
+ There should be no email address,
+
+117
+00:05:00,200 --> 00:05:01,440
+ email address, email address.
+
+118
+00:05:01,440 --> 00:05:04,000
+ What you need is to have the email address one place,
+
+119
+00:05:04,000 --> 00:05:06,040
+ and then kind of give that email address a number,
+
+120
+00:05:06,040 --> 00:05:08,320
+ and all the places you wanna indicate
+
+121
+00:05:08,320 --> 00:05:10,280
+ about that email address you used the number in.
+
+122
+00:05:10,280 --> 00:05:12,840
+ So, these integer numbers are the key.
+
+123
+00:05:12,840 --> 00:05:16,400
+ So, we create keys, which are the lookup handles,
+
+124
+00:05:16,400 --> 00:05:18,000
+ and then we point to those keys,
+
+125
+00:05:18,000 --> 00:05:20,300
+ and we use integers to make links between the tables,
+
+126
+00:05:20,300 --> 00:05:22,720
+ 'cause integers are fast,
+
+127
+00:05:22,720 --> 00:05:24,540
+ they're the thing that computers understand better.
+
+128
+00:05:24,540 --> 00:05:26,680
+ They understand, computers understand
+
+129
+00:05:26,680 --> 00:05:28,400
+ and move integers around.
+
+130
+00:05:28,400 --> 00:05:30,400
+ They use less data, they calculate,
+
+131
+00:05:30,400 --> 00:05:32,020
+ they compare really fast,
+
+132
+00:05:32,020 --> 00:05:34,420
+ and so it's very, integers are very important.
+
+133
+00:05:34,420 --> 00:05:39,240
+ So, up next, we're gonna take a look at some example data,
+
+134
+00:05:39,240 --> 00:05:42,020
+ and then we're gonna design a data model for that data.
+
+135
+00:05:42,020 --> 00:05:44,600
+ (upbeat music)
+
+136
+00:05:48,000 --> 00:05:50,920
+ (jazz piano music)
+

@@ -1,0 +1,7 @@
+Django Template View: Static HTML with No Code
+
+django, template_view, request_object, response_object, query_parameters, get
+
+The lecture demonstrates a Django template view that requires no Python code. This pre-defined view uses a static HTML file (views/main.html) and returns it directly to the browser without database interactions. The implementation leverages Django's built-in template view class.
+
+The lecture explains how Django handles request data through the request object, which contains attributes like scheme and body. Views process this request to generate responses, such as HTML content. The example shows accessing query parameters via request.GET to dynamically replace content in the HTML response.
