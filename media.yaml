@@ -14,9 +14,9 @@ entries:
     duration: 453
     duration_text: 07:33
     description: |
-      In this video I take a look at how the Django for Everybody course was built and some of the decisions that were made along the way.
+      This lecture introduces the "Django for Everybody" course, explaining Charles Severance's decision to use Django for students who already know Python. The choice was made after comparing Django and Flask, with Django providing a clear learning path for building functional web applications without excessive low-level complexity.
 
-      https://www.dj4e.com/
+      The course teaches object oriented programming through Django, covering features including Ajax, image handling, OAuth authentication, and Bootstrap. Students host their projects on Python Anywhere from the first week, resulting in a complete, functional website by the end of the course.
   lesson-01-welcome/02-2025-08-20-AI.m4v:
     title: DJ 01.02 Thoughts on the use of Artificial Intelligence in Programming Courses (16:16)
     youtube_id: 1u-gQ-d5Lv8
@@ -26,7 +26,9 @@ entries:
     duration: 976
     duration_text: 16:16
     description: |
-      In this video Dr. Chuck explores how he sees the role of AI in programming courses.   He talks about the perils of using too much AI that you never learn anything and how he designs courses in the "post-AI" world.
+      Charles Severance, a professor at the University of Michigan, explains that the early part of programming courses is particularly perilous if students rely on AI without learning the fundamentals. This can result in wasted time and money, as students may not gain any knowledge from the course.
+
+      Severance details his course design strategies to counteract AI dependency, including assignments that require synthesizing concepts from multiple course materials, cumulative exams that test knowledge across weeks, and autograders that verify specific techniques taught. He notes that early course weeks are intentionally designed to be manageable to build foundational understanding, ensuring students can effectively use AI in more complex scenarios.
   lesson-02-http/01-Web-01-HTTP-01.m4v:
     title: DJ 02.01 Web Applications and the Request/Response Cycle (6:04)
     youtube_id: ZT8uqIEG92o
@@ -36,9 +38,9 @@ entries:
     duration: 364
     duration_text: 06:04
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture details the request-response cycle as the fundamental mechanism for delivering dynamic web content. Understanding this cycle is essential for web developers to effectively build and debug applications, as it reveals the underlying protocol interactions that enable web functionality.
 
-      Web 01 HTTP 01
+      The cycle begins when a browser sends a request to a web server via a network socket. The server processes the request, potentially accessing data sources, and returns a response containing HTML and other resources. The browser then renders the HTML using CSS and JavaScript to produce the visible web page.
   lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
     title: DJ 02.02 Using Sockets to Make Network Connections in Python (6:34)
     youtube_id: RDvlb_XgVyI
@@ -48,9 +50,9 @@ entries:
     duration: 394
     duration_text: 06:34
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Network sockets provide a communication mechanism for computer applications, modeled after phone calls. This design involves establishing a connection, exchanging data, and disconnecting, which was conceived in the 1960s to handle network communication without requiring permanent connections for scalability.
 
-      Web 01 HTTP 02 Sockets
+      Each network connection uses an IP address (IPv4 or IPv6) and a TCP port number. Common ports include 25 for email server communication, 23 for Telnet, 80 for HTTP, and 443 for HTTPS, enabling applications to interact over the internet.
   lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
     title: DJ 02.03 Exploring the HyperText Transfer Protocol (16:28)
     youtube_id: Q5YIrYkrVXg
@@ -60,9 +62,9 @@ entries:
     duration: 988
     duration_text: 16:28
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The HTTP protocol was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN to retrieve documents and images. It introduced the URL structure, which combines a protocol (e.g., HTTP, FTP), a host (domain name resolvable to an IP address), and a document path. This design enabled multiple protocols within a single address and became the dominant web protocol after 1990.
 
-      Web 01 HTTP 03 HTTP 1080
+      HTTP operates via a request-response mechanism where a client sends a GET request to a server, which responds with a status line (e.g., 200 OK or 404 Not Found) and the requested document. The protocol is defined in open standards (RFCs) maintained by the IETF, ensuring interoperability across diverse systems without proprietary constraints.
   lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
     title: DJ 02.04 Building a Simple Web Browser in Python (8:39)
     youtube_id: Fxgw_BxZg2I
@@ -72,9 +74,9 @@ entries:
     duration: 519
     duration_text: 08:39
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture demonstrates creating a minimal Python client that functions as a browser to send HTTP requests to a server. The client uses socket programming to connect to a specified domain (e.g., data.pr4e.org) on port 80, constructs an HTTP GET request, and receives the server's response.
 
-      Web 01 HTTP 04 Browser
+      The HTTP request string is encoded from Python's Unicode to UTF-8 for transmission, and the server response is decoded from UTF-8 back to Unicode for processing. This example illustrates fundamental network communication concepts but is intentionally minimal; real applications typically require additional error handling and server-side code.
   lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
     title: DJ 02.05 Building a Simple HTTP Server in Python (16:07)
     youtube_id: PNt8zXl7EJ0
@@ -84,9 +86,9 @@ entries:
     duration: 967
     duration_text: 16:07
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture demonstrates building a minimal HTTP web server and client in Python using socket programming. The server listens on port 9000 and returns a static HTML page containing "hello world" for any HTTP GET request. The client connects to the server via a socket and sends a GET request.
 
-      Web 01 HTTP 05 Server
+      The implementation adheres to HTTP/1.1 (RFC 2616) with UTF-8 encoding for the response body. The server handles connections in an infinite loop using a blocking socket accept call, sending a 200 OK status and text/html content type for each request. The example also shows that browsers automatically request the favicon.ico resource.
   lesson-02-http/06-dev-mode-walkthrough.mov:
     title: DJ 02.06 Understanding Browser Developer Mode (9:43)
     youtube_id: 0JsWY3pmdak
@@ -96,10 +98,9 @@ entries:
     duration: 583
     duration_text: 09:43
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture demonstrates browser console functionality across Firefox and Chrome. It explains the request-response cycle in HTTP protocols, including status codes like 200 (success) and 404 (not found), request headers, and response headers. The console shows real-time interactions such as document object model parsing, network requests, and JavaScript debugging capabilities.
 
-
-      dev mode walkthrough
+      The session details how browsers handle complex web pages through multiple request-response cycles. It illustrates that a single page load can involve dozens of requests (e.g., 44 requests for a typical page), including CSS, JavaScript, fonts, and other resources. The console also covers debugging features like DOM manipulation, network monitoring, and cache control settings for development workflows.
   lesson-02-http/07-DJ-11-BigPicture.m4v:
     title: DJ 02.07 The 'Big Picture' of a Django Application running on PythonAnywhere (17:15)
     youtube_id: zuCxAR3-CzA
@@ -109,9 +110,9 @@ entries:
     duration: 1035
     duration_text: 17:15
     description: |
-      This video looks at how the various files work together to produce a Django application on PythonAnywhere.
+      This lecture describes Django's request-response cycle and the hierarchical project structure, including settings.py and applications.
 
-      https://www.dj4e.com/
+      Requests are routed through project-level URLs to application views, which return responses to the browser using templates.
   lesson-02-http/08-Web-04-Mini-Django.m4v:
     title: DJ 02.08 Exploring the Mini Django Web Server (36:58)
     youtube_id: q6LGpiVPwaA
@@ -121,11 +122,9 @@ entries:
     duration: 2219
     duration_text: 36:59
     description: |
-      This video is part of my Django for Everybody class.  I built a simple web server inspired by Django's design patterns to help students understand the internal workings of the Django code base and better understand how their Django application code fits within Django.
+      Mini Django is a minimal implementation of the Django web framework, under 200 lines of Python code. It is designed to be readable and understandable for learners to grasp the core HTTP routing and view handling concepts.
 
-      https://www.dj4e.com/
-      https://github.com/csev/mini_django/
-      http://www.dj4e.com/lectures/mini_django.pptx
+      The framework processes HTTP requests by parsing the request, routing to a view function via a simple if-else pattern in urls.py, and returning HTTP responses with headers and body data.
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
     title: DJ 02.09 Virtual Hosting of Django Applications (4:31)
     youtube_id: KA5ZM3E9OjY
@@ -135,9 +134,9 @@ entries:
     duration: 271
     duration_text: 04:31
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Virtual hosting enables multiple domain names to operate on a single server instance by using the domain name specified in HTTP requests to route traffic to the correct application. This technique allows organizations like PythonAnywhere to manage numerous websites using minimal hardware resources while maintaining isolation between different domains.
 
-      DJ 01 Hosting 02
+      The system relies on configuration files, such as PythonAnywhere's WGSI file, which define application directories and routing rules. NGINX acts as the front-end server to direct incoming HTTP requests to the appropriate application instance based on the domain name in the request, ensuring each application runs independently within the shared infrastructure.
   lesson-03-install/01-paw_install52_new.m4v:
     title: DJ 03.01 Installing Django 5.2 on PythonAnywhere (31:59)
     youtube_id: Aba5ZCfua8k
@@ -147,7 +146,9 @@ entries:
     duration: 1918
     duration_text: 31:58
     description: |
-      Please visit http://www.dj4e.com to access free supporting materials, as well as interactive exercises.
+      The lecture provides a step-by-step guide for setting up Django 5.2 on Python Anywhere. It covers creating a virtual environment using Python 3.13, activating it, upgrading pip, and installing Django. The process includes verifying the installation with `python manage.py check` and initializing a sample project.
+
+      The lecture then details configuring Python Anywhere's web service to link the Django application to the domain by specifying the source code directory, working directory, and virtual environment. It concludes with creating a basic "polls" application and setting up URL routing and views.
   lesson-03-install/02-DJ-00-AutoGrader.m4v:
     title: DJ 03.02 Using the Autograder in Django for Everybody (10:42)
     youtube_id: zQvzXkiwILM
@@ -157,7 +158,9 @@ entries:
     duration: 642
     duration_text: 10:42
     description: |
-      For additional materials and autograded assignments, please see www.dj4e.com
+      The Django auto-grader is a PHP-based tool that evaluates student assignments by sending HTTP requests to the deployed application and checking HTML responses for required strings.
+
+      It utilizes Learning Tools Interoperability (LTI) to send grades to learning management systems and performs up to 50 HTTP request-response cycles to validate the application.
   lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
     title: DJ 03.03 The Structure of a Django Application (7:04)
     youtube_id: jmX27FrCqqs
@@ -167,9 +170,9 @@ entries:
     duration: 424
     duration_text: 07:04
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture covers the fundamental structure of a Django project, distinguishing between projects and applications. A project serves as a website and contains project-wide configuration files including settings.py, urls.py, and wsgi.py. Applications, which can be shared across projects, include files such as models.py, views.py, admin.py, forms.py, and templates.
 
-      DJ 01 Hosting 01
+      The request-response cycle in Django involves routing incoming requests via urls.py to the appropriate view in views.py. The view handles the request, may interact with models.py for data storage, and then renders a template to produce a response. This workflow follows the model-view-controller pattern terminology used for clarity in application development.
   lesson-03-install/04-paw_install_errors_52.m4v:
     title: DJ 03.04 Fixing Django 5.2 Errors on PythonAnywhere (19:39)
     youtube_id: IYH_BkpHf3s
@@ -179,11 +182,9 @@ entries:
     duration: 1178
     duration_text: 19:38
     description: |
-      http://www.dj4e.com - Django for Everybody 
+      The lecture demonstrates debugging common errors in Django applications hosted on Python Anywhere. It specifically covers startup failures where the application won't start at all, and traceback errors that occur after the application loads but fails during a request. For startup failures, the solution involves checking the virtual environment and working directory using the `python manage.py check` command to identify configuration issues before they prevent application startup.
 
-      https://www.dj4e.com/assn/dj4e_errors52.md
-
-      Please visit the web site to access free supporting materials, as well as interactive exercises.
+      The transcript provides a step-by-step walkthrough of diagnosing a startup failure by running `python manage.py check` in the bash console, identifying the error in the code (such as a typo in an import statement), and fixing the issue. It also illustrates how to interpret traceback errors, which indicate that the application is running but fails during a specific request, often due to code errors in views.py or template files. The lecture emphasizes the importance of using the `manage.py check` tool to catch errors before they manifest as full startup failures and the role of the virtual environment in managing Django dependencies.
   lesson-04-shell/01-01_paw_shell.m4v:
     title: DJ 04.01 Using the Command Line Shell on PythonAnywhere (5.2) (18.28)
     youtube_id: a7YIQb8juQk
@@ -193,9 +194,9 @@ entries:
     duration: 1107
     duration_text: 18:27
     description: |
-      http://www.dj4e.com - Django for Everybody 
+      This lecture introduces the Linux command line interface as the primary environment for server operations, focusing on Bash shell commands essential for Django development. It covers basic navigation with `ls`, `pwd`, and `cd`, file manipulation using `rm`, text search via `grep`, and documentation through `man`. The session also explains command line completion using the tab key and the history feature for re-executing previous commands.
 
-      Please visit the web site to access free supporting materials, as well as interactive exercises.
+      The lecture distinguishes between the Linux shell, Python interactive shell (REPL), and Django shell, highlighting how to recognize and exit each environment. It demonstrates SQLite database interaction and practical commands for Django development, such as running the Django shell with `python manage.py shell` and using the `quit` command to exit.
   lesson-05-html/01-Web-02-HTML-A.m4v:
     title: DJ 05.01 HTML - HyperText Markup Language (Part 1) (5:53)
     youtube_id: yWmJSO5xQlU
@@ -205,10 +206,9 @@ entries:
     duration: 353
     duration_text: 05:53
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture examines HTML's historical development from its 1990s origins at CERN to modern web standards. It covers early browser implementations like NCSA Mosaic that enabled cross-platform web access, and the initial limitations of HTML such as the absence of inline images and basic link styling with gray backgrounds and blue text. The discussion highlights how early HTML prioritized basic functionality over visual presentation.
 
-
-      Web 02 HTML A 2017 01 20 1080
+      The lecture explains the shift toward standardized HTML through the World Wide Web Consortium (W3C) from 1994 to 1999, which established rules for lowercase tags, attribute quoting, and proper tag closure. Modern HTML requires precise syntax to ensure predictable rendering across browsers, avoiding inconsistent behaviors like quirks mode that occurred in earlier inconsistent implementations.
   lesson-05-html/02-Web-02-HTML-B.m4v:
     title: DJ 05.02 HTML - HyperText Markup Language (Part 2) (13:52)
     youtube_id: fh3omoEiebQ
@@ -218,11 +218,9 @@ entries:
     duration: 833
     duration_text: 13:53
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture covers the foundational structure of an HTML document, including the doctype declaration, the <html> root element, the <head> section for metadata and non-printing content, and the <body> section for visible page content. It emphasizes that the <head> contains elements such as the page title, styling information, and scripts, while the <body> holds the actual content that users see.
 
-
-
-      Web 02 HTML B 2017 01 20 1080
+      The lecture details basic HTML tags and their attributes, including hyperlinks (using the <a> tag with href attributes), image tags, and unordered lists (with <ul> and <li> tags). It also explains HTML special characters and their entity representations (e.g., &lt; for less than), the use of HTML comments, and the distinction between absolute and relative links for resource references, as well as the web server's default file naming conventions (e.g., index.html).
   lesson-05-html/03-Web-02-HTML-Code.m4v:
     title: DJ 05.03 Code Walk Through HTML (13:58)
     youtube_id: wYc6l28v7Cs
@@ -232,11 +230,9 @@ entries:
     duration: 814
     duration_text: 13:34
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture demonstrates the difference between HTML source code and the Document Object Model (DOM) in web development. It shows how the browser parses HTML files to create a structured DOM representation that is distinct from the original source code.
 
-
-
-      Web 02 HTML Code 2017 01 20 720
+      The session covers practical examples including the pre tag, lists, tables, relative links, target attributes, and special characters. It explains how the DOM dynamically changes without altering the source code and how the browser automatically corrects minor HTML errors to form a valid DOM representation.
   lesson-06-css/01-Web-02-CSS-A.m4v:
     title: DJ 06.01 CSS - Cascading Style Sheets - (Part 1) (12:47)
     youtube_id: blWx62Js7T0
@@ -246,10 +242,9 @@ entries:
     duration: 767
     duration_text: 12:47
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture introduces CSS as the styling layer that modifies the Document Object Model (DOM) after HTML is parsed from a request-response cycle. It demonstrates how CSS files define visual presentation using examples from webapplicationsforeverybody.com.
 
-
-      Web 03 CSS A 2017 01 26 1080
+      The lecture covers the importance of clean HTML for accessibility and the separation of concerns in web development. It explains that CSS enables precise pixel-perfect layouts across browsers and provides practical tools like the Web Developer plugin for debugging CSS.
   lesson-06-css/02-Web-02-CSS-B.m4v:
     title: DJ 06.02 CSS - Cascading Style Sheets - (Part 2) (15:03)
     youtube_id: nMU8wMgasJ8
@@ -259,10 +254,9 @@ entries:
     duration: 903
     duration_text: 15:03
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture details three fundamental approaches for applying CSS styles to HTML elements: using the style attribute for inline styles, embedding CSS in a style tag within the head section, and linking to an external CSS stylesheet file. It explains that CSS rules cascade such that styles closer to the target element in the document hierarchy have higher priority.
 
-
-      Web 03 CSS B 2017 01 26 1080
+      The lecture also discusses the role of span and div tags, which have no default styling to enable precise visual control. It covers CSS selectors including IDs (unique per document) and classes (reusable across multiple elements), demonstrating how these can be combined for targeted styling without requiring additional classes.
   lesson-06-css/03-Web-02-CSS-C.m4v:
     title: DJ 06.03 CSS - Cascading Style Sheets - (Part 3) (13:40)
     youtube_id: 7KWtFdqXiqE
@@ -272,10 +266,9 @@ entries:
     duration: 819
     duration_text: 13:39
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture covers fundamental CSS techniques for styling web content, including floating images to the right, using margins for spacing, defining color schemes with named colors and RGB hex values, configuring font families with fallbacks, and styling hyperlinks with distinct states.
 
-
-      Web 03 CSS C 2017 01 26 1080
+      The speaker highlights CSS's historical evolution, noting how browser support has expanded (e.g., rounded corners) and the ongoing development of CSS to support user experiences while adhering to standards for cross-platform compatibility.
   lesson-06-css/04-Web-03-CSS-Code-A.m4v:
     title: DJ 06.04 CSS - Sample Code Walkthrough (Part 1) (13:26)
     youtube_id: 2Eu96WnoHBY
@@ -285,9 +278,9 @@ entries:
     duration: 805
     duration_text: 13:25
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture demonstrates the fundamentals of Cascading Style Sheets (CSS) for web development. It explains how CSS styles are applied to HTML elements through selectors, showing examples of color properties, font families, and spacing controls like margins and padding. The instructor illustrates the cascading behavior where styles from multiple sources are resolved to determine the final appearance of elements.
 
-      Web 03 CSS Code A 2017 01 21 720
+      The session covers key technical concepts including element selectors (body, H1), class and ID selectors, and how inline versus block elements (span vs div) affect styling. It also demonstrates practical applications such as styling navigation bars with HTML5 elements and implementing responsive design principles through CSS rules.
   lesson-06-css/05-Web-03-CSS-Code-B.m4v:
     title: DJ 06.05 CSS - Sample Code Walkthrough (Part 2) (25:49)
     youtube_id: MHqI-PKBl_A
@@ -297,11 +290,9 @@ entries:
     duration: 1549
     duration_text: 25:49
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture covers core CSS concepts including font handling with default and custom fonts (using fallbacks), color specifications via HTML color names and hexadecimal codes, and anchor tag states (unvisited, visited, hover, active).
 
-
-
-      Web 03 CSS Code B 2017 01 21 720
+      This presentation details the CSS box model (content, padding, border, margin), positioning techniques (relative, absolute, fixed), z-index for overlapping elements, image floats, overflow handling (including hidden), and a navigation bar implementation using absolute positioning and class-based styling.
   lesson-07-sql/01-SQL-01-Basic-01.m4v:
     title: DJ 07.01 How Databases Work (18:57)
     youtube_id: C1QXYMNTEVs
@@ -311,9 +302,9 @@ entries:
     duration: 1137
     duration_text: 18:57
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture covers the historical context of database systems, starting with tape-based storage in the 1950s-1960s that required sequential access and hours of nightly processing for banks. This was followed by the introduction of disk drives in the 1970s, which improved access speed but necessitated research into storage optimization.
 
-      SQL 01 Basic 01
+      The US National Institute of Standards and Technology (NIST) established SQL as a standard to prevent vendor lock-in, allowing databases to be interchanged without code rewriting. SQL abstracts physical storage details, enabling the definition of a schema that specifies data structure and types, which allows database engines to optimize storage and efficiently perform CRUD operations.
   lesson-07-sql/02-SQL-01-Basic-02.m4v:
     title: DJ 07.02 Introduction to Structured Query Language (SQL) (11:45)
     youtube_id: wtU7Pp6VFoE
@@ -323,9 +314,9 @@ entries:
     duration: 704
     duration_text: 11:44
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture covers the basics of SQLite, a single-file database system, and introduces fundamental SQL commands for creating tables with defined columns and constraints such as primary keys and not null fields.
 
-      SQL 01 Basic 02
+      It demonstrates core SQL operations including insert, delete, update, and select statements with where clauses to target specific rows, and explains the absence of explicit loops in these operations. The lecture also mentions that SQLite stores the database schema and supports indexing for efficient data handling.
   lesson-07-sql/03-sql-01-basic.m4v:
     title: 'DJ 07.03 Demonstration: Basic SQL (6:36)'
     youtube_id: 2Or6_sSyl7c
@@ -335,11 +326,9 @@ entries:
     duration: 519
     duration_text: 08:39
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture demonstrates basic SQLite command line operations for file-based databases. It includes creating a table, inserting records, selecting data, updating rows, and deleting entries.
 
-
-
-      sql 01 walkthrough
+      The session highlights the necessity of WHERE clauses in update and delete statements to target specific records, as omitting them affects all rows. It also explains how SQLite handles empty result sets without errors.
   lesson-08-models/01-DJ-02-Models.m4v:
     title: DJ 08.01 Introduction to Django Models (19:59)
     youtube_id: AqsPifp-ccc
@@ -349,9 +338,9 @@ entries:
     duration: 1199
     duration_text: 19:59
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django models are Python classes defined in an application's models.py file that map to database tables. These classes extend Django's Model class to define fields such as CharField with a maximum length, enabling the creation of database tables through migrations.
 
-      DJ 02 Models
+      Django migrations create and evolve database schemas across different databases (e.g., SQLite, Postgres, MySQL). The process involves generating migration files via `make migrations` and applying them with `migrate`, ensuring database portability by handling database-specific syntax differences.
   lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v:
     title: DJ 08.02 Data Model Migration in Django (7:54)
     youtube_id: YqARGlI6bGc
@@ -361,9 +350,9 @@ entries:
     duration: 474
     duration_text: 07:54
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django migrations are Python-based files generated by `make migrations` that describe incremental database schema changes. These files are portable across database types like SQLite and MySQL, and follow a versioned sequence starting from 001_initial.py. Each migration file represents the evolution from previous models.py definitions without wiping existing databases.
 
-      DJ 03 Many 05 Migrate
+      The `migrate` command applies these migration files in order to update the database schema, tracking applied migrations in a Django Migrations table. In SQLite environments, the database can be reset by deleting the SQLite file (e.g., `rm db.sqlite`), though this requires recreating admin accounts and data.
   lesson-08-models/03-04_paw_models.m4v:
     title: 'DJ 08.03 Demonstration: Django Single Table Models (11:09)'
     youtube_id: p5K5hFiJ-GI
@@ -373,10 +362,9 @@ entries:
     duration: 691
     duration_text: 11:31
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture demonstrates creating Django models for a local library application, including author, book, book instance, and genre models. It covers defining model fields, adding foreign keys, and generating model files within the project.
 
-
-      django model 02 walkthrough
+      This process involves creating and applying migrations to build database tables, inspecting the SQLite database schema, and integrating changes with Git for version control. The tutorial includes executing make migrations, migrate, and committing the model changes to a Git repository.
   lesson-08-models/03-04_paw_models_2026.m4v:
     title: 'DJ 08.03 Demonstration: Django Project Tutorial 2 (29:20)'
     youtube_id: VmWRxV6iAPI
@@ -386,7 +374,9 @@ entries:
     duration: 1760
     duration_text: 29:20
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture provides a step-by-step walkthrough of Django tutorial two, customized for the Python Anywhere hosting platform. It details the specific command-line operations and file paths required when using Python Anywhere, including navigating to the project directory and executing migration commands.
+
+      The session covers creating a polls application with Django models, generating database migrations, applying them to the SQLite database, and configuring the admin interface. It also explains the application reload process in Python Anywhere to update the live site after code changes.
   lesson-08-models/04-tut2-reset-database-edit.mov:
     title: 'DJ 08.04 Demonstration: Resetting your Django database on PythonAnywhere (5:47)'
     youtube_id: GOQIJbTSzoQ
@@ -396,13 +386,9 @@ entries:
     duration: 347
     duration_text: 05:47
     description: |
-      http://www.dj4e.com - Django for Everybody 
+      This lecture details a reset procedure for Django's database and migrations when model operations encounter errors, serving as a supplement to tutorial two.
 
-
-      Please visit the web site to access free supporting materials, as well as interactive exercises.
-
-
-      tut2 reset database edit
+      The reset process requires deleting the migration files and the SQLite database file (db.sqlite), followed by generating new migrations and applying them via `python manage.py make migrations` and `python manage.py migrate`. Existing data in the database is lost during this reset.
   lesson-09-mvc/01-DJ-05-MVC.m4v:
     title: DJ 09.01 Model View Controller in Django (7:07)
     youtube_id: XvWG5KMncOU
@@ -412,9 +398,9 @@ entries:
     duration: 427
     duration_text: 07:07
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture explains that Model View Controller (MVC) is a universal architectural pattern for web development, independent of programming languages and operating systems. It divides web server functionality into three distinct components: the controller handles request routing and sequence of operations, the view produces output (typically HTML), and the model manages data storage and retrieval from databases.
 
-      DJ 05 MVC
+      In Django, the MVC pattern is implemented through specific files: urls.py serves as the controller for request routing, views.py handles both controller logic and view rendering, and models.py defines database interactions and data structures.
   lesson-10-views/01-DJ-06-Views-01-Urls.m4v:
     title: DJ 10.01 URL Routing in Django (6:59)
     youtube_id: AQFC13D2mRM
@@ -424,9 +410,9 @@ entries:
     duration: 419
     duration_text: 06:59
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture explains how Django views handle incoming HTTP requests and interact with models and templates to generate application output. Views serve as the central component where business logic executes, processing form data, database operations, and rendering HTML templates. This layer bridges user requests with database operations and frontend presentation.
 
-      DJ 06 Views 01 Urls
+      Django's URL dispatcher routes requests to specific view functions or classes defined in urls.py. The system supports three pattern types: traditional view functions handling requests, view classes with get/post methods, and template view shortcuts for direct template rendering without custom code. Views directly manage database interactions through models while coordinating template rendering for user interfaces.
   lesson-10-views/02-DJ-06-Views-02-Views.m4v:
     title: DJ 10.02 Django Views (6:19)
     youtube_id: 9Qk4vJMssMo
@@ -436,9 +422,9 @@ entries:
     duration: 379
     duration_text: 06:19
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture demonstrates a Django template view that requires no Python code. This pre-defined view uses a static HTML file (views/main.html) and returns it directly to the browser without database interactions. The implementation leverages Django's built-in template view class.
 
-      DJ 06 Views 02 Views
+      The lecture explains how Django handles request data through the request object, which contains attributes like scheme and body. Views process this request to generate responses, such as HTML content. The example shows accessing query parameters via request.GET to dynamically replace content in the HTML response.
   lesson-10-views/03-DJ-06-Views-03-Detail.m4v:
     title: DJ 10.03 Inside Django Views and HTML Escaping in Django (15:36)
     youtube_id: SAAWE4Hz6Mk
@@ -448,9 +434,9 @@ entries:
     duration: 936
     duration_text: 15:36
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture explains how unescaped user input in web applications can lead to cross-site scripting (XSS) vulnerabilities. When developers concatenate user-provided data directly into HTML responses without proper sanitization, attackers can inject malicious JavaScript. For example, user input like "script alert owned" executes in the browser, potentially stealing session cookies or compromising user data. The solution involves escaping user input using HTML entities (e.g., converting `<` to `&lt;` and `>` to `&gt;`) to prevent code execution.
 
-      DJ 06 Views 03 Detail
+      Django's handling of URL parameters and HTTP responses is discussed as part of the security context. The framework automatically parses integer parameters from URLs (e.g., `rest` in paths) and requires escaping user input before rendering HTML. The lecture also demonstrates 302 redirects using HTTP response headers, where the browser follows a location header to a new URL after a redirect, as seen in the bounce example.
   lesson-10-views/04-DJ-06-Views-04-Templates.m4v:
     title: DJ 10.04 Using Templates in Django (10:05)
     youtube_id: mTvWrpMGWBA
@@ -460,9 +446,9 @@ entries:
     duration: 605
     duration_text: 10:05
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django templates dynamically generate HTML by merging data from a context dictionary with template files. The template engine uses double curly braces syntax (e.g., `{{ variable }}`) to insert context variables into the template structure.
 
-      DJ 06 Views 04 Templates
+      Template names are structured with the application name as a prefix to resolve conflicts across Django applications. For example, a template named detail.html in the app application is referenced as app/detail.html.
   lesson-10-views/05-DJ-06-Views-05-DTL.m4v:
     title: DJ 10.05 Using the Django Template Language (DTL) (11:00)
     youtube_id: teL44ugGpSs
@@ -472,9 +458,9 @@ entries:
     duration: 659
     duration_text: 10:59
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django's template language uses double curly braces for variable substitution and automatically escapes HTML content to prevent cross-site scripting attacks. Context variables are passed from the application and rendered without requiring manual escaping.
 
-      DJ 06 Views 05 DTL
+      The language supports conditional logic, for loops, and hierarchical object traversal. It includes a safe filter to disable HTML escaping for specific content and enables template inheritance for reusing common template structures.
   lesson-10-views/06-DJ-06-Views-06-Inherit.m4v:
     title: DJ 10.06 Inheritance in Django Templates (6:06)
     youtube_id: IMgml67lH9Y
@@ -484,9 +470,9 @@ entries:
     duration: 365
     duration_text: 06:05
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django's template inheritance system allows reusing common HTML structures across multiple pages by defining a base template that contains shared elements. This technique prevents repetitive code, such as navigation menus, by centralizing consistent sections in the base template while enabling individual pages to extend it with specific content.
 
-      DJ 06 Views 06 Inherit
+      Extended templates use block tags to specify sections that replace corresponding parts in the base template. For example, a page template extends a base template and includes block content that gets inserted into the base, combining to produce the final rendered HTML without duplicating shared elements.
   lesson-10-views/07-DJ-06-Views-07-Reverse.m4v:
     title: DJ 10.07 Reversing Django URLs (12:52)
     youtube_id: YT60BZJjySg
@@ -496,9 +482,9 @@ entries:
     duration: 772
     duration_text: 12:52
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django's URL mapping and reversing features allow generating links between pages without hard-coding URL strings. This approach improves maintainability by enabling application reuse across projects and preventing breakage when application names or structures change. The system uses named patterns in `urls.py` to reference views, which are then resolved through reverse lookups.
 
-      DJ 06 Views 07 Reverse
+      Reverse lookups implement the `reverse` and `reverse_lazy` functions to construct URLs from view names and parameters. This mechanism handles parameter validation and error checking, ensuring incorrect usage (like missing required parameters) results in clear errors rather than silent failures. The examples demonstrate generating links within the same application or across multiple applications while supporting namespace resolution for conflicting application names.
   lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v:
     title: DJ 11.01 Objects - Introduction - Part 1 (10:40)
     youtube_id: MafXTB8UXIg
@@ -508,9 +494,9 @@ entries:
     duration: 640
     duration_text: 10:40
     description: |
-      http://www.py4e.com - Python for Everybody: Exploring Data
+      This lecture provides an introduction to the key terminology in Python object-oriented programming for beginners. It focuses on understanding foundational concepts without requiring immediate implementation of object-oriented code. The session explains why this terminology is essential for reading Python documentation and working with libraries that use objects.
 
-      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.  You can see my entire online curriculum at https://online.dr-chuck.com
+      The lecture covers the definitions of objects (self-contained units of code and data), classes (templates for creating objects), methods (functions within a class), and attributes (data variables within a class). It emphasizes that beginners have been using objects throughout their Python journey and that this terminology provides a foundation for interacting with object-oriented systems without complex implementation.
   lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v:
     title: DJ 11.02 Objects - A Sample Class - Part 2 (8:22)
     youtube_id: cBgtQK6vhN4
@@ -520,9 +506,9 @@ entries:
     duration: 501
     duration_text: 08:21
     description: |
-      http://www.py4e.com - Python for Everybody: Exploring Data
+      The lecture explains the distinction between a class (a template) and an object (an instance) in Python. It demonstrates a `PartyAnimal` class with an attribute `x` (initial value 0) and a method `party` that increments `x`. The `self` keyword within class methods refers to the object instance.
 
-      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises. You can see my entire online curriculum including a course focused on how you might build a Python object implementation in C at https://online.dr-chuck.com
+      The lecture describes how the `dir` function reveals an object's attributes and methods. For example, the `PartyAnimal` object has an attribute `x` and a method `party`.
   lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v:
     title: DJ 11.03 Objects - Lifecycle - Part 3 (6:09)
     youtube_id: QSaHfuMf5QI
@@ -532,9 +518,9 @@ entries:
     duration: 369
     duration_text: 06:09
     description: |
-      http://www.py4e.com - Python for Everybody: Exploring Data
+      The lecture explains Python's object life cycle, detailing how objects are created and destroyed. Constructors, named `__init__`, automatically initialize object state when instantiated, while destructors, named `__del__`, handle cleanup when objects are no longer referenced. These special methods allow developers to intervene at critical moments without explicit calls.
 
-      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises. You can see my entire online curriculum including a course focused on how you might build a Python object implementation in C at https://online.dr-chuck.com
+      Multiple instances of a class each maintain independent copies of instance variables. The lecture demonstrates that when a class is instantiated with parameters (e.g., `name`), each instance stores its own values, ensuring changes to one instance do not affect others. This separation is fundamental to object-oriented design in Python.
   lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v:
     title: DJ 11.04 Objects - Inheritance - Part 4 (7:34)
     youtube_id: cOf7g_E2G8g
@@ -544,9 +530,9 @@ entries:
     duration: 454
     duration_text: 07:34
     description: |
-      http://www.py4e.com - Python for Everybody: Exploring Data
+      Inheritance is a form of code reuse in object-oriented programming where a new class extends an existing class to inherit its attributes and methods. The lecture illustrates this with the FootballFan class extending the PartyAnimal class, which inherits attributes such as name and the party method while adding a points variable and a touchdown method.
 
-      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises. You can see my entire online curriculum including a course focused on how you might build a Python object implementation in C at https://online.dr-chuck.com
+      This parent-child relationship allows the child class to utilize all attributes and methods of the parent class. The lecture also notes that students have been using objects and methods throughout the course without explicitly writing classes, and that inheritance is an advanced concept for later application.
   lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v:
     title: DJ 11.05 The True Story of Python Assignment Statements (7:30)
     youtube_id: zoD2GY11dcY
@@ -556,7 +542,9 @@ entries:
     duration: 449
     duration_text: 07:29
     description: |
-      This is a lecture that reveals how Python Assignment statements work.  (Hint: It is not the way it was described in Python for Everybody).  It is part of the www.dj4e.com - Django for Everybody lectures on Object Oriented Programming.
+      This lecture corrects a common misconception about Python variables. While introductory materials often describe variables as named storage locations (drawers) that hold values, Python's CPython implementation treats variables as pointers to objects. This distinction is essential for understanding Python's memory model.
+
+      The `id()` function in CPython returns the memory address of an object. When two variables are assigned the same value (e.g., `y = x`), they share the same memory location, meaning they point to the same object. For mutable objects like lists, the operation `y = x` creates a shared reference, so modifications to `x` affect `y`. A shallow copy (via `x.copy()`) creates a new list with references to the same elements, while a deep copy duplicates the entire structure.
   lesson-12-generic/01-DJ-06-Views-08-Generic.m4v:
     title: DJ 12.01 Understanding Django Generic Views (16:28)
     youtube_id: uPRabryhv5k
@@ -566,9 +554,9 @@ entries:
     duration: 988
     duration_text: 16:28
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture explains how Django generic views enable the creation of reusable list and detail views through model-based configuration. By extending the `ListView` class and specifying a single model attribute, developers can generate consistent user interfaces for multiple data models without repeating code.
 
-      DJ 06 Views 08 Generic
+      The approach follows the DRY principle by abstracting common operations like database queries and template rendering into a single view class. This reduces lines of code and potential errors while ensuring consistent behavior across different models such as cats, dogs, or cars.
   lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v:
     title: DJ 13.01 Forms, GET, POST, and HTTP (8:19)
     youtube_id: KqH0Pu2ZnIg
@@ -578,9 +566,9 @@ entries:
     duration: 499
     duration_text: 08:19
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture explains how HTML forms interact with HTTP methods in Django. Form data can be sent via GET requests (appending query parameters to the URL) or POST requests (transmitting form-encoded data in the request body). Django parses both into dictionaries: request.GET for GET data and request.POST for POST data.
 
-      DJ 09 Forms 01 getpost
+      Best practices dictate that GET requests should be used for read operations (idempotent, bookmarkable) and POST requests for state-changing operations (create, update, delete). This prevents unintended data changes from web crawlers and aligns with the constraint that GET has a character limit (around 2000) which may not support large payloads.
   lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v:
     title: DJ 13.02 Building HTML Forms (11:49)
     youtube_id: iXgnkxwzZzM
@@ -590,9 +578,9 @@ entries:
     duration: 709
     duration_text: 11:49
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture covers fundamental HTML form elements including text fields, password fields, radio buttons, checkboxes, select dropdowns, text areas, and submit buttons. It explains how the 'name' attribute defines key-value pairs for form data submission and the role of the 'id' attribute in associating labels with form fields.
 
-      DJ 09 Forms 02 HTML
+      The lecture also details HTML5 input types such as color, date, email, number, and url, which provide client-side validation. Browsers block form submission if any HTML5 validated field is invalid, while older browsers treat these inputs as text fields without validation.
   lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v:
     title: DJ 13.03 Forms and Cross Site Request Forgery (CSRF) (5:52)
     youtube_id: j-vdshWK9Lc
@@ -602,9 +590,9 @@ entries:
     duration: 352
     duration_text: 05:52
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Cross-Site Request Forgery (CSRF) is a security vulnerability that allows attackers to execute unintended actions on a user's behalf by exploiting session cookies. The attack occurs when a user logged into a legitimate site is tricked into submitting a form on a malicious site that targets the same backend server.
 
-      DJ 09 Forms 03 CSRF
+      To mitigate CSRF, a unique token is generated per session and stored server-side. This token is included in the form as a hidden field. Upon form submission, the server checks the token against the stored value. Django provides built-in CSRF protection through middleware that automatically handles token generation and validation.
   lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v:
     title: DJ 13.04 CSRF Support in Django (9:16)
     youtube_id: w9Y6tIVGUTI
@@ -614,9 +602,9 @@ entries:
     duration: 556
     duration_text: 09:16
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture covers Django's implementation of CSRF protection for form submissions. It explains how Django generates a unique CSRF token per user session and requires it to be included in POST requests to authenticate the request and prevent cross-site request forgery attacks.
 
-      DJ 09 Forms 04 Form CSRF
+      The example demonstrates practical application of CSRF tokens using Django's `csrf_token` template tag. By automatically including the token in forms, the application validates the token on the server side before processing form data, ensuring only legitimate requests are accepted.
   lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v:
     title: DJ 13.05 The POST Refresh Pattern (3:26)
     youtube_id: Cug7pkRWQM0
@@ -626,9 +614,9 @@ entries:
     duration: 206
     duration_text: 03:26
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture explains a common web application issue where refreshing a page after submitting a form via POST causes the browser to resend the form data. The problem occurs because the browser treats POST requests as potentially dangerous actions that could be re-executed, triggering security warnings and unintended duplicate operations like re-transferring funds.
 
-      DJ 09 Forms 05 Refresh
+      The solution involves implementing the Post-Redirect-Get (PRG) pattern. This technique ensures that after a form submission, the server redirects the user to a new GET request instead of sending the form data again. This prevents browser refreshes from re-submitting POST actions and eliminates unwanted security popups while maintaining clean user experience.
   lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v:
     title: DJ 13.06 Implementing POST Redirect in Django (8:04)
     youtube_id: a_ahU4F1V2g
@@ -638,9 +626,9 @@ entries:
     duration: 484
     duration_text: 08:04
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture addresses the problem of duplicate form submissions caused by refreshing a page after a POST request. It demonstrates the post-redirect-get pattern where a 302 redirect is returned at the end of a POST request, triggering a new GET request to the same URL. This prevents the browser from re-executing the POST operation on refresh.
 
-      DJ 09 Forms 06 Redirect
+      The implementation uses session storage to manage flash messages. After processing a POST request, a message (such as form validation feedback) is stored in the session. The redirect then causes a GET request that retrieves and displays the message before deleting it from the session, ensuring the message is shown only once.
   lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v:
     title: DJ 14.01 Cookies in Browsers and Django (9:43)
     youtube_id: C75IW38hKI8
@@ -650,9 +638,9 @@ entries:
     duration: 583
     duration_text: 09:43
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Cookies are browser-based data segments stored by servers to track user sessions. They are set during initial requests and sent with subsequent requests to the server. Cookies can be session cookies (expiring when the browser closes) or persistent cookies (with defined expiration dates).
 
-      DJ 07 Cookies 01 Cookies
+      Sessions are server-side mechanisms that maintain user-specific data across multiple requests. The server uses cookies to link a browser to a session, enabling it to distinguish concurrent connections from different browsers in production environments.
   lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v:
     title: DJ 14.02 Using Sessions in Django (12:33)
     youtube_id: RjykNmVdcgI
@@ -662,9 +650,9 @@ entries:
     duration: 753
     duration_text: 12:33
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django's session middleware uses a session cookie containing a unique session identifier (a large random number) to associate incoming HTTP requests with server-stored session data. This mechanism allows the server to maintain user-specific state across multiple requests without requiring the browser to send additional data for each request.
 
-      DJ 07 Cookies 02 Sessions
+      By default, Django stores sessions in a database table (e.g., `django_session`). Session data is a dictionary serialized to JSON and encoded in Base64 for safe storage. Developers access session data via `request.session` in view functions to store, retrieve, and delete key-value pairs.
   lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v:
     title: DJ 15.01 One-to-Many Models Overview (5:52)
     youtube_id: vgyYEE7XDzw
@@ -674,9 +662,9 @@ entries:
     duration: 352
     duration_text: 05:52
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture introduces foundational data modeling concepts in Django, specifically focusing on one-to-many relationships as the first topic. It emphasizes the critical importance of efficient data storage and retrieval, explaining that poor design choices could cause severe performance issues in large-scale applications.
 
-      DJ 03 Many 01 Overview
+      The lecture covers database normalization principles, highlighting the avoidance of redundant string data (such as email addresses) by storing each instance once and using integer keys for fast inter-table linking. This approach ensures optimal database performance and scalability.
   lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v:
     title: DJ 15.02 Removing Replication in One-to-Many Models (8:36)
     youtube_id: JCQYxILYNIE
@@ -686,9 +674,9 @@ entries:
     duration: 516
     duration_text: 08:36
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture demonstrates how spreadsheet-based data modeling leads to vertical replication problems when representing library book instances. It identifies repeated strings like book titles, languages, and genres across multiple rows as inefficient and error-prone, especially when scaling to millions of records. This replication creates storage overhead and complicates updates, as changes require searching through duplicated data instead of modifying a single source.
 
-      DJ 03 Many 02 Replication
+      The solution involves splitting data into relational tables—book, language, and instance—with explicit many-to-one relationships. Each book instance links to a single book record, while languages are shared across multiple books. Cardinality constraints define that languages can have zero or more books (many-to-one), and books can have zero or more physical instances (many-to-one), ensuring data uniqueness and efficient updates through database relationships rather than replication.
   lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v:
     title: DJ 15.03 Storing Primary and Foreign Keys in a Database (2:46)
     youtube_id: xmyE-zQaBEI
@@ -698,9 +686,9 @@ entries:
     duration: 166
     duration_text: 02:46
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture explains how to represent relationships between database tables using primary keys and foreign keys. Primary keys serve as unique identifiers for each row within a table, acting as the destination endpoint for connections. Foreign keys, named with conventions like "book_id", establish links from one table to another by referencing the primary key of another table.
 
-      DJ 03 Many 03 Physical
+      The implementation involves creating primary keys with auto-increment and indexing for efficiency, while foreign keys enable connections between tables. Each table typically includes primary keys for row identification and foreign keys to link to other tables, allowing the construction of the data model that replicates the intended relationships.
   lesson-15-one-many/04-DJ-03-Many-04-Django.m4v:
     title: DJ 15.04 Representing One-To-Many Models in Django (9:56)
     youtube_id: 9t-bP963_jY
@@ -710,9 +698,9 @@ entries:
     duration: 596
     duration_text: 09:56
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      This lecture explains how Django data models implement foreign key relationships for one-to-many table linking, including the automatic addition of an ID fields and the configuration of null and on delete parameters.
 
-      DJ 03 Many 04 Django
+      The two-step migration process—creating migration files with make migrations and applying them with migrate—ensures database schema consistency. Migrations define foreign key behavior such as set null and cascade for handling record deletions.
   lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v:
     title: DJ 15.05 Using the Django Shell to Explore One-to-Many Models (7:45)
     youtube_id: aGtY4xkirsE
@@ -722,9 +710,9 @@ entries:
     duration: 465
     duration_text: 07:45
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      The lecture demonstrates creating and saving model objects in the Django shell. The shell preloads Django settings and applications, enabling direct interaction with models. It shows constructing objects in memory (e.g., `lang = Language(name='en')`), saving them to the database via the `save()` method, and establishing relationships using primary keys and foreign keys.
 
-      DJ 03 Many 05 Shell 1080 - 2021-01
+      The lecture also covers database queries and relationship traversal. It demonstrates using `objects` to retrieve model instances (e.g., `Book.objects.get(pk=1)`) and accessing related fields (e.g., `x.lang.name`). This illustrates Django's automatic management of foreign key relationships without requiring explicit ID values.
   lesson-16-users/01-DJ-09-Login-01-Users.m4v:
     title: DJ 16.01 Creating and Managing Users in Django (3:45)
     youtube_id: E_X5Kr6xmNY
@@ -734,9 +722,9 @@ entries:
     duration: 225
     duration_text: 03:45
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django includes a built-in authentication system that starts with creating a superuser. This process requires a username, email address, and password, with the email used for password recovery. The superuser has full permissions and is necessary for accessing the Django admin interface.
 
-      DJ 08 Login 01 Users
+      The lecture emphasizes using SQLite for development due to its simplicity, noting that wiping the database removes all user data including the superuser. After resetting the database with migrations, the superuser must be recreated. The admin interface manages users, but groups and permissions are not heavily utilized in the current application.
   lesson-16-users/02-DJ-09-Login-02-Urls.m4v:
     title: DJ 16.02 Login and Logout URLs in Django (7:24)
     youtube_id: tNofsgLH7c4
@@ -746,9 +734,9 @@ entries:
     duration: 443
     duration_text: 07:23
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Python and Django to build web sites
+      Django user authentication uses sessions to store user-specific data. Logging in updates the session with details like name and email, while logging out removes this information. The system requires adding django.contrib.auth to installed apps and configuring project-level URLs for login and logout views.
 
-      DJ 08 Login 02 Urls
+      The reverse lookup function retrieves login and logout URLs by view name. After authentication, the next parameter directs users to a specified URL, typically the page they were previously on, ensuring seamless redirection without manual URL handling.
   lesson-16-users/03-DJ-09-Login-03-Views.m4v:
     title: DJ 16.03 Login and Views in Django (10:15)
     youtube_id: n5Xwqz1IJck
@@ -806,13 +794,9 @@ entries:
     duration: 585
     duration_text: 09:45
     description: |
-      This video walks through the initial setup of the Marketplace application from github:
+      This lecture details the initial setup steps for a Django project dedicated to the Marketplace assignment. It creates a project named "market" with a separate configuration directory "config" to avoid the "market market" naming pattern. The process includes verifying the Python 3.13 virtual environment, installing Django 5.2, and executing initial migrations.
 
-      https://www.dj4e.com/assn/dj4e_mkt0.md
-
-      https://github.com/csev/dj4e-market
-
-      Note: As of January 26, 2026 PythonAnywhere no longer provides MySQL on free accounts so these instructions have been updated to use SQLite.
+      The tutorial then creates a superuser with the username "admin", updates the WSGI configuration to reference the new project structure, and confirms application functionality by accessing the home page, favicon, and Django admin interface.
   lesson-22-owned/01-DJ-12-Owned-01.m4v:
     title: DJ 22.01 Owned Rows in Django - Overview (6:02)
     youtube_id: YTK-Sx4OUqs
@@ -1121,9 +1105,9 @@ entries:
     duration: 386
     duration_text: 06:26
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+      This lecture explains JavaScript network events, focusing on asynchronous request-response cycles. The fetch API initiates network operations by taking a URL and returning a promise that represents the pending response, ensuring code execution never blocks the browser.
 
-      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises
+      The example demonstrates fetching `secret.txt`, processing the response (which includes a 200 status code), and updating the DOM with the retrieved text. The response object's `text` method returns another promise that resolves with the file content once received.
   lesson-29-browser/06-JS-03-Browser-06-WC.m4v:
     title: DJ 29.06 Creating our own HTML Tags using Web Components (11:06)
     youtube_id: ZEQBZ_r2pvQ
@@ -1133,9 +1117,9 @@ entries:
     duration: 665
     duration_text: 11:05
     description: |
-      http://www.dj4e.com - Django for Everybody - Using Django to build Web Sites
+      This lecture demonstrates creating reusable custom HTML tags using Lit Element to implement web components. The approach focuses on avoiding code repetition through the DRY principle, as seen in the implementation of a simple greeting component that dynamically updates its content based on user interaction. The example shows how to define a custom element with attributes, handle DOM events, and render templates within the browser environment.
 
-      Please visit the web site to access a free textbook, free supporting materials, as well as interactive exercises.
+      The session explains how this technique fits into modern web development patterns where template processing and view logic move toward the browser. It highlights the transition from server-based templates to client-side rendering, with the next step being data exchange via JSON and REST web services. This approach provides a foundational capability for building responsive applications without requiring complex frameworks.
   lesson-30-json/01-JS-04-JSON-01-JSON.m4v:
     title: DJ 30.01 JSON - JavaScript Object Notation (8:34)
     youtube_id: thhKcuHNQzo
@@ -1242,14 +1226,9 @@ entries:
     duration: 1290
     duration_text: 21:30
     description: |
-      http://www.dj4e.com - Django for Everybody 
-      http://samples.dj4e.com
+      The lecture details the Django WELL sample application, a clone of MyArts with a search feature implemented via GET requests for idempotency. This allows search terms to be bookmarked without altering the application state. The application uses a `Post` model with a `post_owner` related name to prevent naming conflicts across Django applications.
 
-      Please visit the web site to access free supporting materials, as well as interactive exercises.
-
-
-
-      samples well walkthrough
+      The search functionality filters posts using Django's queryset to match terms in both title and text fields via `Q` objects. The lecture also introduces a pattern where views are defined in `urls.py` by extending generic views, which centralizes view configuration and simplifies application renaming.
   lesson-04-shell/01-01_paw_shell-DJ4.m4v:
     title: 01 01 paw shell DJ4
     youtube_id: null
