@@ -1,10 +1,10 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:05.600
- Hello and welcome to my lecture on the mini-jango web server. So why did I
+ Hello and welcome to my lecture on the mini-django web server. So why did I
 
 00:00:05.600 --> 00:00:10.520
- build this mini-jango web server? Well, the first part of my Django for Everybody
+ build this mini-django web server? Well, the first part of my Django for Everybody
 
 00:00:10.520 --> 00:00:16.720
  course is always about getting students to understand the nature of Django. If you
@@ -40,10 +40,10 @@ WEBVTT
  you to understand what the framework is and how it is that your work fits into
 
 00:01:06.280 --> 00:01:11.320
- it. So mini-jango is the simplest possible
+ it. So mini-django is the simplest possible
 
 00:01:11.320 --> 00:01:17.800
- Django that I could write. It's under 200 lines. The mini-jango framework itself is
+ Django that I could write. It's under 200 lines. The mini-django framework itself is
 
 00:01:17.800 --> 00:01:22.320
  only 200 lines of Python, meaning you can read it, you can understand it, and you
@@ -52,7 +52,7 @@ WEBVTT
  can even change it and explore supporting additional features of HTTP. So
 
 00:01:27.960 --> 00:01:32.320
- we're going to build both have a mini-jango and a really simple Django-like
+ we're going to build both have a mini-django and a really simple Django-like
 
 00:01:32.320 --> 00:01:37.960
  application. So why do we use Django in the first place? Like I said, do you

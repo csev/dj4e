@@ -123,16 +123,16 @@ entries:
 
       The application is organized into a project directory containing settings.py for configuration and multiple applications. Each application has its own urls.py for routing, views.py for handling requests, and templates for rendering responses.
   lesson-02-http/08-Web-04-Mini-Django.m4v:
-    title: 'DJ 02.08 Mini-Jango: A Minimal Django Web Server for HTTP and Routing (36:59)'
+    title: 'DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)'
     youtube_id: q6LGpiVPwaA
     kaltura_id: null
     size: 835841221
     md5: def458f93c42ad8b395c4a76dd340948
     duration: 2219
     duration_text: 36:59
-    tags: mini-jango, django, web server, http, http request, http response, routing, view functions, minimal framework, django internals
+    tags: mini-django, django, web server, http, http request, http response, routing, view functions, minimal framework, django internals
     description: |
-      Mini-jango is a minimal Django web server implementation with fewer than 200 lines of Python. It was designed to help learners understand Django's internal architecture by illustrating the core HTTP request-response cycle, routing mechanisms, and view functions without the complexity of the full framework.
+      Mini-django is a minimal Django web server implementation with fewer than 200 lines of Python. It was designed to help learners understand Django's internal architecture by illustrating the core HTTP request-response cycle, routing mechanisms, and view functions without the complexity of the full framework.
 
       The framework includes a router (urls.py) that maps HTTP request paths to view functions. Each view function processes an HTTP request and returns an HTTP response, and the server handles common HTTP errors such as 404 not found and 500 internal server errors. This minimal implementation provides a clear example of how Django's abstraction layer works.
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:

@@ -1,5 +1,5 @@
- Hello and welcome to my lecture on the mini-jango web server. So why did I
- build this mini-jango web server? Well, the first part of my Django for Everybody
+ Hello and welcome to my lecture on the mini-django web server. So why did I
+ build this mini-django web server? Well, the first part of my Django for Everybody
  course is always about getting students to understand the nature of Django. If you
  know how to use Django and you know how it works internally, it's easy to write
  web applications because Django takes care of all the details of Hypertext
@@ -11,11 +11,11 @@
  whole bunch of design patterns that make it so you don't have to write the whole
  application. But you need to plug your work into Django. So it's important for
  you to understand what the framework is and how it is that your work fits into
- it. So mini-jango is the simplest possible
- Django that I could write. It's under 200 lines. The mini-jango framework itself is
+ it. So mini-django is the simplest possible
+ Django that I could write. It's under 200 lines. The mini-django framework itself is
  only 200 lines of Python, meaning you can read it, you can understand it, and you
  can even change it and explore supporting additional features of HTTP. So
- we're going to build both have a mini-jango and a really simple Django-like
+ we're going to build both have a mini-django and a really simple Django-like
  application. So why do we use Django in the first place? Like I said, do you
  really want to read RFC 7231? It is pages that's over a hundred pages and it's
  detail upon detail upon detail. If you start reading it, you will realize it's

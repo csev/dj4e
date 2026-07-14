@@ -1,10 +1,10 @@
 1
 00:00:00,000 --> 00:00:05,600
- Hello and welcome to my lecture on the mini-jango web server. So why did I
+ Hello and welcome to my lecture on the mini-django web server. So why did I
 
 2
 00:00:05,600 --> 00:00:10,520
- build this mini-jango web server? Well, the first part of my Django for Everybody
+ build this mini-django web server? Well, the first part of my Django for Everybody
 
 3
 00:00:10,520 --> 00:00:16,720
@@ -52,11 +52,11 @@
 
 14
 00:01:06,280 --> 00:01:11,320
- it. So mini-jango is the simplest possible
+ it. So mini-django is the simplest possible
 
 15
 00:01:11,320 --> 00:01:17,800
- Django that I could write. It's under 200 lines. The mini-jango framework itself is
+ Django that I could write. It's under 200 lines. The mini-django framework itself is
 
 16
 00:01:17,800 --> 00:01:22,320
@@ -68,7 +68,7 @@
 
 18
 00:01:27,960 --> 00:01:32,320
- we're going to build both have a mini-jango and a really simple Django-like
+ we're going to build both have a mini-django and a really simple Django-like
 
 19
 00:01:32,320 --> 00:01:37,960
