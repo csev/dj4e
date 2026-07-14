@@ -4,6 +4,8 @@ whisper_root: /Users/csev/htdocs/dj4e/whisper
 youtube_dir: /Users/csev/htdocs/dj4e/youtube
 youtube_playlist: https://www.youtube.com/playlist?list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z
 course_hint: Django for Everybody, DJ4E, Django, Python, web development, Dr. Chuck, Chuck Severance
+extra_tags: dj4e, dj4e-lecture
+extra_description: For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
 entries:
   lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v:
     title: 'DJ 01.01 Django for Everybody: Building Web Applications with Python (7:33)'
@@ -13,11 +15,13 @@ entries:
     md5: 6e850e61ed50644b9e6f119ce350c542
     duration: 453
     duration_text: 07:33
-    tags: Django, Python, object-oriented programming, web applications, Bootstrap, OAuth, Ajax
+    tags: Django, Python, object-oriented programming, web applications, Bootstrap, OAuth, Ajax, dj4e, dj4e-lecture
     description: |
       Django for Everybody is a course designed for students who have already learned Python to build web applications using Django. The course focuses on object-oriented programming through Django's structure, providing a clear learning path for developing functional websites.
 
       Students host their applications on Python Anywhere from the first week, implementing features such as Ajax, image handling, OAuth-based single sign-on, and Bootstrap for responsive design.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-01-welcome/02-2025-08-20-AI.m4v:
     title: 'DJ 01.02 Charles Severance on AI in Programming Courses (16:16)'
     youtube_id: 1u-gQ-d5Lv8
@@ -26,11 +30,13 @@ entries:
     md5: 266f968a0c66ee208a9204a94f4d071e
     duration: 976
     duration_text: 16:16
-    tags: programming education, AI integration, zone of proximal development, cumulative exams, auto graders
+    tags: programming education, AI integration, zone of proximal development, cumulative exams, auto graders, dj4e, dj4e-lecture
     description: |
       Charles Severance, professor at the University of Michigan School of Information, discusses his approach to using AI in programming education. He emphasizes that AI is now an essential part of software development and students must learn to use it effectively to become better programmers, not avoid it.
 
       Severance's teaching strategy includes breaking course material into small, doable chunks using the zone of proximal development, implementing cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific course techniques. He explains that AI can effectively solve assignments in the early weeks but becomes unable to handle the more complex problems later in the course, requiring students to develop foundational programming skills.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/01-Web-01-HTTP-01.m4v:
     title: DJ 02.01 Web Request-Response Cycle (6:04)
     youtube_id: ZT8uqIEG92o
@@ -39,11 +45,13 @@ entries:
     md5: 8666d1ecc4b0d43586da418d03519fd9
     duration: 364
     duration_text: 06:04
-    tags: html, http, request-response-cycle, network-sockets, browser, server, css, javascript
+    tags: html, http, request-response-cycle, network-sockets, browser, server, css, javascript, dj4e, dj4e-lecture
     description: |
       This lecture introduces the request-response cycle as the fundamental communication pattern in web applications. It details how a browser initiates a request to a server and receives a response to render a web page.
 
       The lecture explains the role of network sockets in the request-response process and how browsers interpret HTML, apply CSS, and execute JavaScript to produce the visual representation of the page.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
     title: 'DJ 02.02 Network Sockets as Computer Phone Calls (6:34)'
     youtube_id: RDvlb_XgVyI
@@ -52,11 +60,13 @@ entries:
     md5: 3c2c565da7264b9f5c95e2f9844a4464
     duration: 394
     duration_text: 06:34
-    tags: sockets, tcp, ip, port, http, https, ipv4, ipv6
+    tags: sockets, tcp, ip, port, http, https, ipv4, ipv6, dj4e, dj4e-lecture
     description: |
       Network sockets are a software abstraction that enables temporary communication between computers, modeled after phone calls: establishing a connection, exchanging data, and then disconnecting. This design, developed in the 1960s, avoids the need for permanent connections and scales efficiently across the internet.
 
       Each computer has an IP address (either IPv4 or IPv6) and applications use TCP port numbers to specify services. For instance, port 80 handles HTTP traffic, port 443 handles HTTPS, port 25 is used for email servers, and port 23 is for Telnet, illustrating how diverse protocols operate over the same network infrastructure.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
     title: 'DJ 02.03 HTTP Protocol: History and URL Structure (16:28)'
     youtube_id: Q5YIrYkrVXg
@@ -65,11 +75,13 @@ entries:
     md5: b1dfc3195151772bf59e708a0f7102c1
     duration: 988
     duration_text: 16:28
-    tags: HTTP, URL, RFC, IETF, HTTP request, HTTP response
+    tags: HTTP, URL, RFC, IETF, HTTP request, HTTP response, dj4e, dj4e-lecture
     description: |
       Hypertext Transfer Protocol (HTTP) was invented in 1990 by Tim Berners-Lee and Robert Caillou at CERN. This protocol enabled browsers to communicate with servers using a simple mechanism, introducing the Uniform Resource Locator (URL) structure that specifies the protocol, host (domain name), and document. The URL resolves domain names to IP addresses and supports multiple protocols.
 
       HTTP uses a request-response mechanism where clients send requests (including headers) to servers, which return status lines (e.g., 200 OK or 404 Not Found) and response headers followed by document data. The internet's infrastructure relies on open standards defined by the Internet Engineering Task Force (IETF) through Request for Comments (RFCs), ensuring interoperability without proprietary constraints.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
     title: DJ 02.04 Simple Python HTTP Client with Sockets (8:39)
     youtube_id: Fxgw_BxZg2I
@@ -78,11 +90,13 @@ entries:
     md5: 2c3957962f46ab94307b8b241da9bae8
     duration: 519
     duration_text: 08:39
-    tags: python, sockets, http, get, http/1.0, utf-8, browser developer tools
+    tags: python, sockets, http, get, http/1.0, utf-8, browser developer tools, dj4e, dj4e-lecture
     description: |
       This lecture details a simple Python HTTP client implementation using socket programming. It shows how to connect to a server (e.g., data.pr4e.org on port 80), send an HTTP GET request with the HTTP/1.0 protocol, and receive the server's response.
 
       The implementation handles UTF-8 encoding for network transmission and decoding for Python's Unicode strings. The lecture notes that this client code serves as a basic debugging tool but emphasizes the use of browser developer tools for inspecting HTTP requests and responses in web development.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
     title: DJ 02.05 Simple Python Web Server Using Sockets (16:07)
     youtube_id: PNt8zXl7EJ0
@@ -91,11 +105,13 @@ entries:
     md5: 44bf6e8a5f66c61a3295c63a1f7e122f
     duration: 967
     duration_text: 16:07
-    tags: Python, web server, sockets, HTTP, GET request
+    tags: Python, web server, sockets, HTTP, GET request, dj4e, dj4e-lecture
     description: |
       The lecture implements a minimal Python web server using socket programming that responds to HTTP GET requests with a static "hello world" HTML page.
 
       The server listens for incoming connections on a port and sends a 200 OK response with UTF-8 encoded HTML content for each GET request. A client application is built to send HTTP GET requests to this server via socket connections.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/06-dev-mode-walkthrough.mov:
     title: 'DJ 02.06 Browser Debugger Console: Access in Firefox and Chrome (9:43)'
     youtube_id: 0JsWY3pmdak
@@ -104,11 +120,13 @@ entries:
     md5: 0ff2868949406aa6aa75904e200326fa
     duration: 583
     duration_text: 09:43
-    tags: browser console, firefox, chrome, document object model, request response cycle, http, http headers, network tab, javascript console, css
+    tags: browser console, firefox, chrome, document object model, request response cycle, http, http headers, network tab, javascript console, css, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates the browser debugger console in Firefox and Chrome. It covers accessing the console via browser menus and its key features including the document object model, JavaScript console, and network request inspection.
 
       The lecture explains the request-response cycle with examples of HTTP GET requests, status codes (200, 404, 500), and HTTP headers. Complex web pages require multiple requests (e.g., 44 requests for 1.6 megabytes of content) that take nearly one second to download, and the distinction between the server's raw response and the browser's parsed document object model.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/07-DJ-11-BigPicture.m4v:
     title: DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)
     youtube_id: zuCxAR3-CzA
@@ -117,11 +135,13 @@ entries:
     md5: bc166ff05f80e2cb3d69d65e2aea05b2
     duration: 1035
     duration_text: 17:15
-    tags: Django, request-response cycle, project structure, applications, settings.py, urls.py, views.py, templates
+    tags: Django, request-response cycle, project structure, applications, settings.py, urls.py, views.py, templates, dj4e, dj4e-lecture
     description: |
       This lecture covers the fundamental flow of a Django application, describing the request-response cycle and project structure. It explains how browser requests are processed by a Django application running on a server, which routes the request to the appropriate application and returns a response.
 
       The application is organized into a project directory containing settings.py for configuration and multiple applications. Each application has its own urls.py for routing, views.py for handling requests, and templates for rendering responses.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/08-Web-04-Mini-Django.m4v:
     title: 'DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)'
     youtube_id: q6LGpiVPwaA
@@ -130,11 +150,13 @@ entries:
     md5: def458f93c42ad8b395c4a76dd340948
     duration: 2219
     duration_text: 36:59
-    tags: mini-django, django, web server, http, http request, http response, routing, view functions, minimal framework, django internals
+    tags: mini-django, django, web server, http, http request, http response, routing, view functions, minimal framework, django internals, dj4e, dj4e-lecture
     description: |
-      Mini-django is a minimal Django web server implementation with fewer than 200 lines of Python. It was designed to help learners understand Django's internal architecture by illustrating the core HTTP request-response cycle, routing mechanisms, and view functions without the complexity of the full framework.
+      Mini-Django is a minimal Django web server implementation with fewer than 200 lines of Python. It was designed to help learners understand Django's internal architecture by illustrating the core HTTP request-response cycle, routing mechanisms, and view functions without the complexity of the full framework.
 
       The framework includes a router (urls.py) that maps HTTP request paths to view functions. Each view function processes an HTTP request and returns an HTTP response, and the server handles common HTTP errors such as 404 not found and 500 internal server errors. This minimal implementation provides a clear example of how Django's abstraction layer works.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
     title: 'DJ 02.09 Virtual Hosting: How a Single Server Hosts Multiple Domains (4:31)'
     youtube_id: KA5ZM3E9OjY
@@ -143,11 +165,13 @@ entries:
     md5: 34db47320ed4fa0ab842b1e559ccccaf
     duration: 271
     duration_text: 04:31
-    tags: virtual hosting, http, host header, domain routing, nginx, wsgi
+    tags: virtual hosting, http, host header, domain routing, nginx, wsgi, dj4e, dj4e-lecture
     description: |
       Virtual hosting enables a single physical server to host multiple domain names by using the host header in HTTP requests. This technique allows organizations like Python Anywhere to support a large number of users on limited hardware resources.
 
       The server software (e.g., nginx) routes requests based on the host header to the appropriate application. In Python Anywhere, the system-managed wsgi configuration file specifies the application's home directory, ensuring each application runs in isolation within the shared server environment.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-03-install/01-paw_install52_new.m4v:
     title: DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)
     youtube_id: Aba5ZCfua8k
@@ -156,11 +180,13 @@ entries:
     md5: c08f5987579475723ac5ef6461cf5997
     duration: 1918
     duration_text: 31:58
-    tags: Python Anywhere, Django 5.2, virtual environment, pip, requirements file, wsgi, bashrc, django project
+    tags: Python Anywhere, Django 5.2, virtual environment, pip, requirements file, wsgi, bashrc, django project, dj4e, dj4e-lecture
     description: |
       This lecture provides a step-by-step guide for setting up Django 5.2 on Python Anywhere. It covers creating a virtual environment, installing Django and dependencies using pip, and configuring the shell environment via a .bashrc file to persist the virtual environment. The process also includes cloning sample code from the DJ4E repository.
 
       The tutorial then configures Python Anywhere's web hosting to run the Django application by specifying the source code directory, working directory, and virtual environment. The WSGI configuration is updated to route traffic to the application, enabling access via a URL without local server commands due to the shared hosting environment.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-03-install/02-DJ-00-AutoGrader.m4v:
     title: 'DJ 03.02 Django Autograder: Checking Student Applications (10:42)'
     youtube_id: zQvzXkiwILM
@@ -169,11 +195,13 @@ entries:
     md5: 81a287b0b4d4d371708e397f3a04d3cb
     duration: 642
     duration_text: 10:42
-    tags: autograder, django, lti, html, php, web_crawling, request, response
+    tags: autograder, django, lti, html, php, web_crawling, request, response, dj4e, dj4e-lecture
     description: |
       The lecture details the Django course autograder system, a PHP script hosted at dj4e.com that uses Learning Tools Interoperability (LTI) to integrate with learning management systems. This autograder sends HTTP requests to the student's Django application (running on Python Anywhere) to validate HTML responses against specified requirements. It performs up to 50 request-response cycles to ensure the application meets the grading criteria and returns a grade to the learning platform if all checks pass.
 
       The autograder focuses on verifying that the student's code adheres to instructions by checking for specific elements in the HTML output. Students must manually test their applications before submitting to the autograder. The lecture demonstrates a real-time example where a student corrected a Python syntax error in their views.py, resulting in a successful autograder test.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
     title: DJ 03.03 Django Application Structure Overview (7:04)
     youtube_id: jmX27FrCqqs
@@ -182,11 +210,13 @@ entries:
     md5: a0238756779742226515fc3a8fa8a38e
     duration: 424
     duration_text: 07:04
-    tags: django, project, application, settings, urls, models, views, templates, mvc
+    tags: django, project, application, settings, urls, models, views, templates, mvc, dj4e, dj4e-lecture
     description: |
       This lecture explains the standard folder structure and key files in a Django project. Django organizes applications into projects, with each project containing one or more reusable applications. The project directory includes settings.py for configuration, urls.py for routing, and wsgi.py for the web server interface. Applications contain files such as models.py for data models, views.py for request handling, and templates for HTML rendering.
 
       Django processes web requests by routing them to the appropriate application view via urls.py. The view then interacts with models to handle data and renders a template to produce the HTTP response. This model-view-controller pattern organizes the application into distinct components: models for data storage, views for request processing, and templates for HTML output.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-03-install/04-paw_install_errors_52.m4v:
     title: 'DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Tracebacks (19:38)'
     youtube_id: IYH_BkpHf3s
@@ -195,11 +225,13 @@ entries:
     md5: af93e420b0815fdd9c7e1fafc71f5e64
     duration: 1178
     duration_text: 19:38
-    tags: django, python anywhere, debugging, startup failure, traceback, virtual environment, manage.py, settings.py, urls.py
+    tags: django, python anywhere, debugging, startup failure, traceback, virtual environment, manage.py, settings.py, urls.py, dj4e, dj4e-lecture
     description: |
       The lecture covers two primary error scenarios in Django applications hosted on Python Anywhere: startup failures where the application fails to initialize, and traceback errors where the application runs but crashes during a request. It provides a method to diagnose startup failures using the `python manage.py check` command in the bash console.
 
       The session demonstrates a startup failure caused by a typo in `polls/views.py` (an incorrect import statement for `HttpResponse`). It explains the importance of the virtual environment for Django version and dependencies, and how to interpret tracebacks to identify and fix code errors.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-04-shell/01-01_paw_shell.m4v:
     title: 'DJ 04.01 Linux Shell Commands for Django Developers (18:27)'
     youtube_id: a7YIQb8juQk
@@ -208,11 +240,13 @@ entries:
     md5: 4d190cfafdbb30c984ea109056a675ac
     duration: 1107
     duration_text: 18:27
-    tags: bash, linux shell, command line, django shell, python shell
+    tags: bash, linux shell, command line, django shell, python shell, dj4e, dj4e-lecture
     description: |
       This lecture introduces the Linux command line shell as a fundamental interface for server operations, essential for Django developers. It covers basic shell commands such as ls, pwd, cd, rm, and grep (with recursive search), along with features like command line completion and command history. The session explains why understanding the shell is important, as most production servers run on Linux and use command line interfaces.
 
       The lecture differentiates between several interactive environments: the Linux shell (dollar sign prompt), Python interactive shell (REPL), SQLite shell, and Django shell. Each environment has unique prompts and exit commands; for example, the Django shell is a Python environment preloaded with Django application code. Recognizing the current interface helps developers avoid confusion and effectively manage their development workflow.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-05-html/01-Web-02-HTML-A.m4v:
     title: 'DJ 05.01 HTML Parsing and Standard Evolution (5:53)'
     youtube_id: yWmJSO5xQlU
@@ -221,11 +255,13 @@ entries:
     md5: 97a8a9ef2d2f53a1cd22e97f291c634c
     duration: 353
     duration_text: 05:53
-    tags: html, dom, w3c, parsing, browser, standardization
+    tags: html, dom, w3c, parsing, browser, standardization, dj4e, dj4e-lecture
     description: |
       HTML is a hypertext markup language that defines web page structure. In the browser's request-response cycle, user interactions trigger server requests that return HTML responses. These responses are parsed to construct the Document Object Model (DOM), the in-memory representation of the web page.
 
       HTML evolved from early 1990s browsers to modern standards defined by the W3C. The W3C established rules for HTML, including lowercase tag names, double-quoted attributes, and balanced tags. Precise HTML implementation ensures consistent rendering and predictable browser behavior.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-05-html/02-Web-02-HTML-B.m4v:
     title: DJ 05.02 Basic HTML Document Structure and Syntax (13:53)
     youtube_id: fh3omoEiebQ
@@ -234,11 +270,13 @@ entries:
     md5: 0f08651f557381879c8dd52f02299dcd
     duration: 833
     duration_text: 13:53
-    tags: html, head, body, relative links, absolute links, anchor tag, image tag, special characters, comments, unordered list, table
+    tags: html, head, body, relative links, absolute links, anchor tag, image tag, special characters, comments, unordered list, table, dj4e, dj4e-lecture
     description: |
       The lecture covers the basic structure of an HTML document, starting with the `html` root element that contains the `head` and `body` sections. The `head` holds non-printing information like the page title, styles, and scripts, while the `body` contains the visible content. It introduces common tags such as `p` for paragraphs, `strong` for bold text, and `a` for hyperlinks.
 
       The lecture explains entity references for special characters (e.g., `&lt;` for `‹`), HTML comments (`‹!--`), and the distinction between relative links (e.g., `href` within the same directory) and absolute links (full URLs). It also describes unordered lists using `ul` and `li` tags, tables with `table`, `tr`, `th`, and `td` elements, and the `pre` tag for preserving whitespace and line breaks.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-05-html/03-Web-02-HTML-Code.m4v:
     title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
     youtube_id: wYc6l28v7Cs
@@ -247,11 +285,13 @@ entries:
     md5: b3b074ea3592fd41817dbcd0754005f4
     duration: 814
     duration_text: 13:34
-    tags: html, source code, relative links, special characters, browser parsing, dom
+    tags: html, source code, relative links, special characters, browser parsing, dom, dj4e, dj4e-lecture
     description: |
       The lecture explains the distinction between HTML source code and the Document Object Model (DOM). The source code is the raw text file retrieved from the server, while the DOM is the structured representation generated by the browser during parsing.
 
       The lecture demonstrates that the browser's parsing process may correct errors in the source code (e.g., adding missing tags like `tbody`). It also covers relative links, special characters (such as ampersand, less than, greater than), and common HTML elements including `html`, `head`, `body`, `a`, `p`, `ul`, `li`, `table`, `tr`, `td`, and `img`.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-06-css/01-Web-02-CSS-A.m4v:
     title: 'DJ 06.01 CSS: Styling HTML in Web Applications (12:47)'
     youtube_id: blWx62Js7T0
@@ -260,11 +300,13 @@ entries:
     md5: 59a342b5694042c4f024fdd9549a5692
     duration: 767
     duration_text: 12:47
-    tags: css, html, dom, request-response-cycle, styling, webapplications, accessibility
+    tags: css, html, dom, request-response-cycle, styling, webapplications, accessibility, dj4e, dj4e-lecture
     description: |
       This lecture covers Cascading Style Sheets (CSS) as the layer that styles HTML content in web applications. CSS is fetched during the request-response cycle and applied to the document object model to define visual presentation. The HTML document is parsed into the document object model, which then receives CSS rules to determine the final appearance of the web page.
 
       The lecture emphasizes CSS's importance for accessibility, noting that pages remain navigable without CSS due to clean HTML structure. This separation of concerns allows back-end developers to generate HTML and front-end designers to apply CSS, enabling efficient web application development.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-06-css/02-Web-02-CSS-B.m4v:
     title: 'DJ 06.02 Three Methods for Applying CSS in HTML (15:03)'
     youtube_id: nMU8wMgasJ8
@@ -273,11 +315,13 @@ entries:
     md5: 7a5838546d6d1d045a40f8a2dad6ae6b
     duration: 903
     duration_text: 15:03
-    tags: css, html, style attribute, internal css, external css, css cascade, span, div, selectors, id, class
+    tags: css, html, style attribute, internal css, external css, css cascade, span, div, selectors, id, class, dj4e, dj4e-lecture
     description: |
       The lecture details three methods for applying CSS rules to HTML: inline styles via the `style` attribute on tags, internal styles using a `style` tag in the `head`, and external stylesheets linked via the `link` element. It explains the CSS cascade, where rules closer to the target element have higher priority.
 
       The lecture emphasizes that `span` and `div` tags have no default styling, enabling precise control over visual presentation. It also covers CSS selectors, including IDs (`#id`), classes (`.class`), and their combinations for targeted styling without excessive class usage.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-06-css/03-Web-02-CSS-C.m4v:
     title: 'DJ 06.03 CSS: Images, Colors, and Fonts (13:39)'
     youtube_id: 7KWtFdqXiqE
@@ -286,11 +330,13 @@ entries:
     md5: 7adffde9563034f1472bc68c3c78db9a
     duration: 819
     duration_text: 13:39
-    tags: CSS, images, colors, fonts, floats, clear, a, img, font-family, hex, rgb
+    tags: CSS, images, colors, fonts, floats, clear, a, img, font-family, hex, rgb, dj4e, dj4e-lecture
     description: |
       This lecture covers CSS techniques for styling images, colors, and fonts. It explains how to use floats to position images to the right, manage floating elements with the `clear` property, and define colors using 16 named colors and hexadecimal RGB values. The speaker also discusses font stacks with fallbacks and the use of relative units like `m` for margins.
 
       The lecture includes practical examples for link styling with the `a` tag, including unvisited, visited, hover, and active states. It also touches on browser-specific CSS extensions, such as rounded corners, and mentions tools like Bootstrap for enhancing web page aesthetics through simplified styling.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-06-css/04-Web-03-CSS-Code-A.m4v:
     title: DJ 06.04 How Cascading Style Sheets Work (13:25)
     youtube_id: 2Eu96WnoHBY
@@ -299,11 +345,13 @@ entries:
     md5: 6c71df887f6be733bef3e7094cef9432
     duration: 805
     duration_text: 13:25
-    tags: css, cascade, selectors, html, dom, block, inline, margins, padding, borders, classes, ids
+    tags: css, cascade, selectors, html, dom, block, inline, margins, padding, borders, classes, ids, dj4e, dj4e-lecture
     description: |
       This lecture explains the cascading mechanism in CSS, where styles are applied based on specificity and source order. It covers the use of selectors to target HTML elements and the distinction between block and inline elements. The lecture also demonstrates basic CSS properties such as margins, padding, and borders.
 
       The lecture includes practical examples of styling web pages using CSS, including the application of classes and IDs. It shows how the Document Object Model (DOM) interacts with CSS styles and provides examples of styling navigation bars.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-06-css/05-Web-03-CSS-Code-B.m4v:
     title: 'DJ 06.05 HTML/CSS Examples: Fonts, Colors, and Layout Techniques (25:49)'
     youtube_id: MHqI-PKBl_A
@@ -312,11 +360,13 @@ entries:
     md5: bfb68803532a83af00787f3c8b0aa34f
     duration: 1549
     duration_text: 25:49
-    tags: fonts, colors, css, box-model, positioning, z-index, anchor-tags, css-selectors
+    tags: fonts, colors, css, box-model, positioning, z-index, anchor-tags, css-selectors, dj4e, dj4e-lecture
     description: |
       The lecture covers HTML and CSS fundamentals including font management with system and web fonts, fallback strategies, color specifications using hexadecimal codes, and web-safe colors. It also demonstrates anchor tag states such as unvisited, visited, hover, and active.
 
       The session details CSS layout techniques such as the box model (content, padding, border, margin), floating elements with the clear property, positioning methods (relative, absolute, fixed), and z-index for handling overlapping elements.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-07-sql/01-SQL-01-Basic-01.m4v:
     title: 'DJ 07.01 SQL: Historical Development and Core Principles (18:57)'
     youtube_id: C1QXYMNTEVs
@@ -325,11 +375,13 @@ entries:
     md5: 57c079a6bd957d1d06b6ba79f65d001c
     duration: 1137
     duration_text: 18:57
-    tags: SQL, database history, NIST, relational databases, schema
+    tags: SQL, database history, NIST, relational databases, schema, dj4e, dj4e-lecture
     description: |
       The lecture traces the historical development of databases from tape-based storage systems with sequential access in the early computing era to disk drives that enabled faster data retrieval. This evolution led to the creation of early database models in the 1960s and 1970s, including index sequential and network approaches. The U.S. National Institute of Standards and Technology (NIST) addressed vendor lock-in by establishing a standard for database interoperability.
 
       SQL, initially known as the Simple Query Language, provides a standardized interface for database operations without exposing physical storage mechanisms. The lecture emphasizes that defining a schema, which specifies column types and structures, allows database systems to optimize storage and retrieval efficiently.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-07-sql/02-SQL-01-Basic-02.m4v:
     title: 'DJ 07.02 SQLite Basic SQL Commands: Create, Insert, Update, Delete (11:44)'
     youtube_id: wtU7Pp6VFoE
@@ -338,11 +390,13 @@ entries:
     md5: 2aa5930b957181089429369b080b37b6
     duration: 704
     duration_text: 11:44
-    tags: sqlite, sql, create table, insert, delete, update, select, database, schema, varchar, integer, primary key
+    tags: sqlite, sql, create table, insert, delete, update, select, database, schema, varchar, integer, primary key, dj4e, dj4e-lecture
     description: |
       This lecture covers the fundamentals of SQLite and basic SQL commands including CREATE TABLE, INSERT, DELETE, UPDATE, and SELECT. It details how to define tables with specific data types such as integer and varchar, along with constraints like not null and primary key.
 
       SQLite stores both database schema and data in a single file. The lecture explains that core SQL commands are portable across database systems and highlights the implied loop behavior in commands like DELETE without a WHERE clause, which deletes all rows.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-07-sql/03-sql-01-basic.m4v:
     title: 'DJ 07.03 SQLite Command Line: Basic Table Creation and Queries (8:39)'
     youtube_id: 2Or6_sSyl7c
@@ -351,11 +405,13 @@ entries:
     md5: 46e0cd86570e6a671b777eafbd48d0fd
     duration: 519
     duration_text: 08:39
-    tags: sqlite, command line, create table, insert, select, update, delete, where, order by
+    tags: sqlite, command line, create table, insert, select, update, delete, where, order by, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates fundamental SQLite command line operations for creating tables, inserting records, and executing basic queries with examples of SELECT, UPDATE, and DELETE statements using WHERE clauses and ORDER BY.
 
       These operations function on a file-based SQLite database without server dependencies, enabling direct inspection and debugging of database structures.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-08-models/01-DJ-02-Models.m4v:
     title: 'DJ 08.01 Django Models: ORM and Migrations (19:59)'
     youtube_id: AqsPifp-ccc
@@ -364,11 +420,13 @@ entries:
     md5: 5db52885718a7f74cf4907436dec2019
     duration: 1199
     duration_text: 19:59
-    tags: Django, ORM, models, migrations, database, SQLite, PostgreSQL, MySQL, CRUD, object-relational-mapping
+    tags: Django, ORM, models, migrations, database, SQLite, PostgreSQL, MySQL, CRUD, object-relational-mapping, dj4e, dj4e-lecture
     description: |
       This lecture reviews the fundamentals of SQL and introduces Django's object-relational mapper (ORM) for database interactions. It explains how to define models in Python using the models.py file, which maps to database tables, and how migrations manage schema evolution across different database backends.
 
       Django's ORM simplifies common database operations such as creating, reading, updating, and deleting records through Python objects. Migrations automatically generate and apply database schema changes, ensuring portability between development (SQLite) and production (PostgreSQL or MySQL) environments without manual SQL.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v:
     title: 'DJ 08.02 Django Migrations: Creating and Applying Database Schema Changes (7:54)'
     youtube_id: YqARGlI6bGc
@@ -377,11 +435,13 @@ entries:
     md5: 1a5c66a44d35d200b73c62b52d7d7e52
     duration: 474
     duration_text: 07:54
-    tags: Django, migrations, database_schema, portability, migrate
+    tags: Django, migrations, database_schema, portability, migrate, dj4e, dj4e-lecture
     description: |
       Django migrations are generated by reading models.py and settings.py to describe database schema changes. They are portable across database backends because they provide a logical description of the schema without specific SQL commands.
 
       The migrate command applies migrations in order to update the database, and Django maintains a table to record which migrations have been applied. In development, resetting migrations can be achieved by deleting the migration files and re-running make migrations; for SQLite, the entire database can be reset by deleting the database file.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-08-models/03-04_paw_models.m4v:
     title: 'DJ 08.03 Django Models: Local Library Project Setup (11:31)'
     youtube_id: p5K5hFiJ-GI
@@ -390,11 +450,13 @@ entries:
     md5: d17b2fa88202aca6b25fc6acc79b698e
     duration: 691
     duration_text: 11:31
-    tags: django, models, migrations, orm, sqlite, git
+    tags: django, models, migrations, orm, sqlite, git, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates creating Django models for a local library project using the Mozilla Developer Network tutorial. It covers defining model classes in models.py, adding fields and foreign keys, and the migration process.
 
       The tutorial shows running migrations to create database tables, verifying the schema with SQLite, and committing changes to Git. It explains that the object-relational mapper converts model definitions into database tables and handles joins automatically.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-08-models/03-04_paw_models_2026.m4v:
     title: 'DJ 08.03 Django Tutorial 2 on Python Anywhere: File Paths and Database Migrations (29:20)'
     youtube_id: VmWRxV6iAPI
@@ -403,11 +465,13 @@ entries:
     md5: d70b3e2d65af95f8c4eb67afbfd0f739
     duration: 1760
     duration_text: 29:20
-    tags: Django, Python Anywhere, database migrations, models, admin interface, manage.py
+    tags: Django, Python Anywhere, database migrations, models, admin interface, manage.py, dj4e, dj4e-lecture
     description: |
       This lecture provides a step-by-step walkthrough of Django Tutorial 2 from the Django project website, specifically adapted for the Python Anywhere platform. It covers the necessary file paths, including the home directory (~), the django_projects folder, and the mysite application structure. The session details the execution of key commands such as python manage.py migrate for database migrations and python manage.py shell for interactive model testing.
 
       The tutorial emphasizes the process of reloading the Python Anywhere application after each file change using the reload button to ensure updates are reflected. It also demonstrates creating database models, applying migrations, and configuring the Django admin interface to manage application data within the Python Anywhere environment.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-08-models/04-tut2-reset-database-edit.mov:
     title: DJ 08.04 Resetting Django Database When Migrations Fail (5:47)
     youtube_id: GOQIJbTSzoQ
@@ -416,11 +480,13 @@ entries:
     md5: 1026f4f2dc9f35aff059934adeca0bd6
     duration: 347
     duration_text: 05:47
-    tags: Django, migrations, database reset, manage.py, makemigrations, migrate, db.sqlite3, models
+    tags: Django, migrations, database reset, manage.py, makemigrations, migrate, db.sqlite3, models, dj4e, dj4e-lecture
     description: |
       This lecture explains how to reset a Django database when migrations or migrate commands fail. The procedure requires deleting the migration files (e.g., numbered Python migration files) and the database file (db.sqlite3).
 
       Before resetting, the models must be verified with python manage.py check. Then, the process runs python manage.py makemigrations to generate new migration files and python manage.py migrate to rebuild the database. This reset method discards all existing data and reinitializes the database from the models.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-09-mvc/01-DJ-05-MVC.m4v:
     title: DJ 09.01 Model-View-Controller Pattern in Web Development (7:07)
     youtube_id: XvWG5KMncOU
@@ -429,11 +495,13 @@ entries:
     md5: 634d7df2b7c8b8a8eebbc5868f0faab7
     duration: 427
     duration_text: 07:07
-    tags: mvc, web development, django, controller, view, model
+    tags: mvc, web development, django, controller, view, model, dj4e, dj4e-lecture
     description: |
       The lecture explains the Model-View-Controller (MVC) pattern as a set of terms used in web development to describe separation of concerns in web server applications. It defines the controller as the component handling request flow and routing decisions, the view as the output (typically HTML) presented to users, and the model as the data layer interacting with databases.
 
       The lecture demonstrates how Django implements the MVC pattern with urls.py acting as the controller, views.py handling both controller logic and view rendering, and models.py managing database operations. MVC is described as a universal concept independent of programming languages and operating systems.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/01-DJ-06-Views-01-Urls.m4v:
     title: 'DJ 10.01 Django Views and Templates: Application Output (6:59)'
     youtube_id: AQFC13D2mRM
@@ -442,11 +510,13 @@ entries:
     md5: 2b1fd4e24a27be6bffcc9d17c85cd08b
     duration: 419
     duration_text: 06:59
-    tags: django, views, templates, url routing, request object
+    tags: django, views, templates, url routing, request object, dj4e, dj4e-lecture
     description: |
       This lecture covers the implementation of Django views and templates for producing application output. Views, defined in views.py, handle incoming requests and generate HTML responses by rendering templates. The URL dispatcher routes URLs to the appropriate view functions or classes.
 
       The lecture details the Django project structure, where applications are organized within a project. Views interact with the request object to process data, may use models for database operations, and render templates to produce the final HTML output.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/02-DJ-06-Views-02-Views.m4v:
     title: 'DJ 10.02 Django Template Views and Request Objects (6:19)'
     youtube_id: 9Qk4vJMssMo
@@ -455,11 +525,13 @@ entries:
     md5: abf0aabff173f44183e48a00aa8568b6
     duration: 379
     duration_text: 06:19
-    tags: django, template_view, request_object, get_parameters, http_response
+    tags: django, template_view, request_object, get_parameters, http_response, dj4e, dj4e-lecture
     description: |
       The lecture explains Django's template view functionality, which serves static HTML files without Python code. This view uses a template file in the application's templates directory and requires no database interactions. The template path includes the application name to avoid conflicts with other applications.
 
       The lecture demonstrates how Django views receive a request object containing incoming request data. It shows accessing GET query parameters via request.GET and constructing an HTTP response, which can be a string of HTML or a redirect object.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/03-DJ-06-Views-03-Detail.m4v:
     title: DJ 10.03 XSS prevention with HTML escaping in Django (15:36)
     youtube_id: SAAWE4Hz6Mk
@@ -468,11 +540,13 @@ entries:
     md5: 8f3c2418bb0a059dd1b98ab8bc2786fe
     duration: 936
     duration_text: 15:36
-    tags: cross-site scripting, xss, html escaping, django, url parameters, http redirects, 302
+    tags: cross-site scripting, xss, html escaping, django, url parameters, http redirects, 302, dj4e, dj4e-lecture
     description: |
       This lecture describes a cross-site scripting (XSS) vulnerability that occurs when user input is directly inserted into HTML responses without escaping. Attackers can inject malicious JavaScript that executes in the victim's browser, potentially leading to unauthorized actions.
 
       Django prevents this vulnerability by escaping user input using HTML entities. The lecture also covers Django's URL parameter parsing and 302 HTTP redirects as part of the framework's routing and response handling.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/04-DJ-06-Views-04-Templates.m4v:
     title: 'DJ 10.04 Django Templates: Rendering and Context (10:05)'
     youtube_id: mTvWrpMGWBA
@@ -481,11 +555,13 @@ entries:
     md5: 615c03b6763272b3d6ff7a95f07ce67c
     duration: 605
     duration_text: 10:05
-    tags: Django, templates, template engine, rendering, context, variable substitution, double curly braces, HTML
+    tags: Django, templates, template engine, rendering, context, variable substitution, double curly braces, HTML, dj4e, dj4e-lecture
     description: |
       Django templates provide a mechanism for dynamically generating HTML using a template engine. The process involves passing data in a context (a dictionary) to a template file, which then substitutes variables with double curly braces syntax to produce the final HTML output.
 
       Template names are global across the Django project, so applications prefix template names with their application name to avoid conflicts. The template language also supports conditional logic, as demonstrated in the lecture example.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/05-DJ-06-Views-05-DTL.m4v:
     title: 'DJ 10.05 Django Template Language: Variable Substitution and Automatic Escaping (10:59)'
     youtube_id: teL44ugGpSs
@@ -494,11 +570,13 @@ entries:
     md5: 49b9e017a0b7a96190ffa9651abce141
     duration: 659
     duration_text: 10:59
-    tags: Django, template, double_curly_braces, HTML_escaping, safe_filter, context, for_loop, if_statement, template_inheritance
+    tags: Django, template, double_curly_braces, HTML_escaping, safe_filter, context, for_loop, if_statement, template_inheritance, dj4e, dj4e-lecture
     description: |
       The lecture explains Django's default template language using double curly braces for variable substitution. This system automatically escapes user-generated content to prevent HTML injection, with the safe filter ({{ variable|safe }}) used to avoid escaping when content is trusted.
 
       The template system supports context variables, for loops, conditional logic, and hierarchical object traversal. Template inheritance enables reusing common text across templates through block overrides.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/06-DJ-06-Views-06-Inherit.m4v:
     title: 'DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)'
     youtube_id: IMgml67lH9Y
@@ -507,11 +585,13 @@ entries:
     md5: 1932106873247ce98b686b95d7e34085
     duration: 365
     duration_text: 06:05
-    tags: template inheritance, Django, base template, extended template, block
+    tags: template inheritance, Django, base template, extended template, block, dj4e, dj4e-lecture
     description: |
       Template inheritance in Django allows developers to define reusable HTML structures through base templates and child templates that extend them. This technique reduces code duplication by capturing common elements in a single base template and reusing that structure across multiple pages.
 
       Child templates use block tags to replace specific sections of the base template. For example, navigation menus defined in the base template can be overridden in child templates without repeating HTML code, ensuring consistency while allowing customization of individual page elements.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-10-views/07-DJ-06-Views-07-Reverse.m4v:
     title: 'DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)'
     youtube_id: YT60BZJjySg
@@ -520,11 +600,13 @@ entries:
     md5: 648d7ec42f2a8087b2db7293a07af059
     duration: 772
     duration_text: 12:52
-    tags: django, url mapping, url reversing, reverse lookup, views, urls.py, namespaces
+    tags: django, url mapping, url reversing, reverse lookup, views, urls.py, namespaces, dj4e, dj4e-lecture
     description: |
       Django URL mapping and URL reversing generate links between views without hardcoding URL strings. This technique enhances maintainability by enabling applications to be reused across projects without requiring updates to link strings when the application structure changes.
 
       Named URLs in urls.py files are used for reverse lookups via the reverse and reverse_lazy functions. Namespaces resolve conflicts when multiple applications share the same name, and templates generate URLs using the {% url %} tag.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v:
     title: 'DJ 11.01 Python Objects Terminology Explained (10:40)'
     youtube_id: MafXTB8UXIg
@@ -533,11 +615,13 @@ entries:
     md5: de0da2c5e764ee989b07437597646d58
     duration: 640
     duration_text: 10:40
-    tags: objects, methods, classes, attributes, inheritance
+    tags: objects, methods, classes, attributes, inheritance, dj4e, dj4e-lecture
     description: |
       This lecture provides a foundational explanation of Python object-oriented programming terminology for beginning programmers. It clarifies that concepts such as objects, methods, classes, and attributes have been used implicitly in early Python work, including with strings and dictionaries.
 
       The session describes objects as self-contained units of data and code, where classes serve as templates for creating instances. It also covers the boundary between object implementation and usage, enabling encapsulation and separation of concerns in application design.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v:
     title: DJ 11.02 Python Classes, Objects, and the Self Keyword (8:21)
     youtube_id: cBgtQK6vhN4
@@ -546,11 +630,13 @@ entries:
     md5: 8f5a3e8979ade3a11dda37f289802370
     duration: 501
     duration_text: 08:21
-    tags: python, classes, objects, self, instance, attributes, methods
+    tags: python, classes, objects, self, instance, attributes, methods, dj4e, dj4e-lecture
     description: |
       This lecture explains Python's fundamental object-oriented programming concepts. A class is a template that defines the structure and behavior of objects. The example code demonstrates creating a PartyAnimal class with an attribute x (initialized to 0) and a method party that increments x and prints its value.
 
       The lecture details the self keyword, which refers to the instance within class methods. When an object is created, self acts as an alias for the instance variable. The dot operator is used for object lookup, and the dir function reveals an object's attributes and methods, including built-in methods with double underscores.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v:
     title: 'DJ 11.03 Python Object Lifecycle: Constructors and Destructors (6:09)'
     youtube_id: QSaHfuMf5QI
@@ -559,11 +645,13 @@ entries:
     md5: ec05670c7a5a4cd8ea9a0665f88fc9fa
     duration: 369
     duration_text: 06:09
-    tags: Python, object lifecycle, constructor, destructor, instance variables
+    tags: Python, object lifecycle, constructor, destructor, instance variables, dj4e, dj4e-lecture
     description: |
       The lecture explains Python's object lifecycle, covering the automatic creation and destruction of objects. It details the constructor method (__init__), which initializes object attributes when an instance is created, and the destructor method (__del__), which is called when an object is no longer in use. The constructor is commonly used for setting initial values, while destructors are rarely utilized.
 
       The lecture demonstrates how multiple instances of a class each maintain independent copies of instance variables. By defining a constructor with parameters, such as a name attribute, the example shows that each instance (e.g., s and j) has its own state, including a unique value for the instance variable x. The destruction of an object occurs when the reference variable is reassigned, triggering the destructor.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v:
     title: DJ 11.04 Inheritance in Object-Oriented Programming (7:34)
     youtube_id: cOf7g_E2G8g
@@ -572,11 +660,13 @@ entries:
     md5: bee7a351fa8b8998130a6267beda4eb2
     duration: 454
     duration_text: 07:34
-    tags: inheritance, parent class, child class, subclass, code reuse
+    tags: inheritance, parent class, child class, subclass, code reuse, dj4e, dj4e-lecture
     description: |
       Inheritance is a mechanism in object-oriented programming where a new class (child) inherits attributes and methods from an existing class (parent). This allows developers to reuse existing code without duplicating functionality.
 
       The lecture demonstrates inheritance with a football fan class that extends the party animal class. The football fan class inherits all attributes and methods of the party animal class and adds a points attribute and a touchdown method that increments the points by seven.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v:
     title: 'DJ 11.05 Python Variables Are Pointers, Not Drawers in CPython (7:29)'
     youtube_id: zoD2GY11dcY
@@ -585,11 +675,13 @@ entries:
     md5: ad4a450261797abb0848d5383d5aa0ef
     duration: 449
     duration_text: 07:29
-    tags: CPython, variables, pointers, object references, id, copy constructor
+    tags: CPython, variables, pointers, object references, id, copy constructor, dj4e, dj4e-lecture
     description: |
       The lecture addresses the common oversimplification in Python variable concepts from the "Python for Everybody" course, explaining that in CPython, variables are pointers to objects rather than named drawers in memory.
 
       The id function reveals memory locations of objects. Reassigning a variable (e.g., x = 2000) changes the pointer to a new integer object, while y = x for lists creates a shared reference. A deep copy using list(x) creates an independent copy of the list.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-12-generic/01-DJ-06-Views-08-Generic.m4v:
     title: 'DJ 12.01 Django Generic Views: One Line Code for Reusable Model Views (16:28)'
     youtube_id: uPRabryhv5k
@@ -598,11 +690,13 @@ entries:
     md5: b9a91397b455a4b1d1869f8134744c0b
     duration: 988
     duration_text: 16:28
-    tags: Django, generic views, reusable models, list view, detail view, dry principle
+    tags: Django, generic views, reusable models, list view, detail view, dry principle, dj4e, dj4e-lecture
     description: |
       This lecture explains how Django generic views enable reusable model list and detail views. It demonstrates the use of a single generic view class that specifies a model attribute to handle multiple models, reducing code duplication through the DRY principle.
 
       By inheriting from a generic view class and setting the model attribute, developers achieve one line of code per view. This implementation automatically queries the database and passes context variables to templates, ensuring consistent user interfaces for different models.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v:
     title: 'DJ 13.01 HTML Forms and HTTP Methods in Django (8:19)'
     youtube_id: KqH0Pu2ZnIg
@@ -611,11 +705,13 @@ entries:
     md5: 0b46e67de14dbe07836dcd0f6d1a794a
     duration: 499
     duration_text: 08:19
-    tags: html, http, forms, get, post, django
+    tags: html, http, forms, get, post, django, dj4e, dj4e-lecture
     description: |
       Forms in HTML provide user input fields that can be submitted to a server via HTTP methods. The two primary methods are GET, which appends query parameters to the URL (e.g., ?guess=42), and POST, which sends data in the request body. Django handles both by parsing the data into dictionaries accessible via request.get (for GET parameters) and request.post (for POST parameters).
 
       GET requests are idempotent and intended for read operations, making them suitable for bookmarking and web spiders. POST requests, used for creating or modifying data, should not be bookmarked as they change the system state. This distinction prevents unintended data deletions when web spiders follow links.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v:
     title: DJ 13.02 HTML Form Elements and Validation (11:49)
     youtube_id: iXgnkxwzZzM
@@ -624,11 +720,13 @@ entries:
     md5: 124e69b3685087ca18f7714650bf505f
     duration: 709
     duration_text: 11:49
-    tags: input, text, password, radio, checkbox, select, html5, validation
+    tags: input, text, password, radio, checkbox, select, html5, validation, dj4e, dj4e-lecture
     description: |
       This lecture covers fundamental HTML form elements including text fields, password fields, radio buttons, checkboxes, dropdown lists, text areas, and submit buttons. It explains how the `name` attribute defines the key for form data submission and the `id` attribute associates labels with fields.
 
       The lecture also discusses HTML5 input types such as color, date, email, number, and URL, along with their client-side validation. These validations run in the browser before form submission, ensuring data integrity by rejecting invalid inputs.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v:
     title: DJ 13.03 Cross-Site Request Forgery (CSRF) in Web Forms (5:52)
     youtube_id: j-vdshWK9Lc
@@ -637,11 +735,13 @@ entries:
     md5: b301d9943268892ecd4fdfddf82c7644
     duration: 352
     duration_text: 05:52
-    tags: CSRF, Cross-Site Request Forgery, Web forms, Session tokens, Django
+    tags: CSRF, Cross-Site Request Forgery, Web forms, Session tokens, Django, dj4e, dj4e-lecture
     description: |
       Cross-Site Request Forgery (CSRF) is a security vulnerability where a rogue site tricks a user into submitting form data to a legitimate server without their knowledge. This occurs because the browser automatically sends the user's session cookie with each request, allowing attackers to exploit the victim's authenticated session.
 
       The defense mechanism generates a unique random token stored in the session. Every form submitted by the legitimate server includes this token in a hidden input field. Upon receiving a form submission, the server checks the token against the session store. If the tokens do not match, the request is rejected. Django provides built-in CSRF protection by default when session middleware is active.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v:
     title: 'DJ 13.04 Django CSRF Token Implementation for Forms (9:16)'
     youtube_id: w9Y6tIVGUTI
@@ -650,11 +750,13 @@ entries:
     md5: 7946cbb007e684592df1645648f2f130
     duration: 556
     duration_text: 09:16
-    tags: Django, CSRF, CSRF token, template tag
+    tags: Django, CSRF, CSRF token, template tag, dj4e, dj4e-lecture
     description: |
       This lecture explains the implementation of Cross-Site Request Forgery (CSRF) protection in Django, focusing on the default behavior for POST requests and two methods for token inclusion. It details that CSRF processing is enabled by default, requiring explicit handling when forms are submitted. The manual method involves adding a hidden input field with the token value, while the recommended approach uses Django's `csrf_token` template tag to automatically generate and include the token.
 
       The lecture demonstrates a CSRF-protected guessing game example. When the form is submitted with the token, the request is validated by the CSRF middleware before processing, ensuring only legitimate POST requests with matching tokens are accepted. This prevents unauthorized form submissions by verifying the token's integrity against the session.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v:
     title: 'DJ 13.05 POST-REDIRECT-GET: Preventing Form Resubmission on Page Refresh (3:26)'
     youtube_id: Cug7pkRWQM0
@@ -663,11 +765,13 @@ entries:
     md5: 70debc98870c86f7b110c50448ed88a2
     duration: 206
     duration_text: 03:26
-    tags: csrf, form, post, redirect, get, browser, refresh
+    tags: csrf, form, post, redirect, get, browser, refresh, dj4e, dj4e-lecture
     description: |
       When a web form is submitted via a POST request and the server returns a 200 status with HTML content, refreshing the browser page triggers a resubmission of the POST request. This can cause unintended duplicate transactions, such as transferring funds multiple times. The browser displays a warning popup to prevent accidental resubmission, but the user may not understand why the refresh operation is problematic.
 
       The solution is the POST-REDIRECT-GET pattern. After processing a POST request, the server redirects the user to a GET request for the same resource. This ensures that refreshing the page does not resubmit the form data, eliminating duplicate submissions and improving user experience.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v:
     title: 'DJ 13.06 POST Redirect Pattern for Form Submissions (8:04)'
     youtube_id: a_ahU4F1V2g
@@ -676,11 +780,13 @@ entries:
     md5: fdda1f5a02fa638c8dc7c323f9004d48
     duration: 484
     duration_text: 08:04
-    tags: post requests, redirects, flash messages, sessions
+    tags: post requests, redirects, flash messages, sessions, dj4e, dj4e-lecture
     description: |
       This lecture explains how to prevent double form submissions when a user refreshes a page after a POST request. The solution involves redirecting the browser to the same page with a 302 status code instead of returning HTML. This redirect causes the browser to perform a GET request on the same URL, preventing the form data from being submitted twice.
 
       The implementation uses sessions to store a flash message during the POST request, which is then displayed in the subsequent GET request. After the message is shown, it is deleted from the session to avoid re-display. This pattern is called the flash message pattern and is a standard technique for handling form submissions without double submissions.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v:
     title: 'DJ 14.01 Cookies and Sessions: Browser and Server Concepts (9:43)'
     youtube_id: C75IW38hKI8
@@ -689,11 +795,13 @@ entries:
     md5: 17ec8a595445e5add1f4ee5584a3406a
     duration: 583
     duration_text: 09:43
-    tags: cookies, sessions, browser, server, http, django
+    tags: cookies, sessions, browser, server, http, django, dj4e, dj4e-lecture
     description: |
       Cookies are a browser-based storage mechanism that allows web servers to track a specific browser session. They are set by the server in response to a request and sent with subsequent requests to maintain state, enabling the server to identify the browser connection without persistent connections.
 
       Cookies can be session cookies, which expire when the browser is closed, or persistent cookies, which have a fixed expiration date. The lecture illustrates how Django handles cookies using request.cookies and sets cookies in response headers, demonstrating the distinction between session and persistent cookies.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v:
     title: 'DJ 14.02 Django Sessions: Session Cookies and Storage (12:33)'
     youtube_id: RjykNmVdcgI
@@ -702,11 +810,13 @@ entries:
     md5: e347591b8cbcacf521e0023fff03c820
     duration: 753
     duration_text: 12:33
-    tags: django, sessions, sessionmiddleware, session cookies, session storage, session id, database, base64, json
+    tags: django, sessions, sessionmiddleware, session cookies, session storage, session id, database, base64, json, dj4e, dj4e-lecture
     description: |
       Django sessions enable persistent storage of user-specific data across multiple HTTP request-response cycles. Each session is identified by a session ID, a large random number stored in a browser cookie. The server uses this ID to retrieve the session data from storage.
 
       Django's SessionMiddleware handles session creation, lookup, and management. Sessions are stored in a database as base64-encoded JSON strings. Developers access session data via request.session in views, which functions as a dictionary for key-value storage.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v:
     title: 'DJ 15.01 Django Data Modeling: Models, Normalization, and Integer Keys (5:52)'
     youtube_id: vgyYEE7XDzw
@@ -715,11 +825,13 @@ entries:
     md5: e73c1e6dc17ad84471f0422a6b8cf9e4
     duration: 352
     duration_text: 05:52
-    tags: django, data modeling, database normalization, model.py, admin.py, integer keys, third normal form
+    tags: django, data modeling, database normalization, model.py, admin.py, integer keys, third normal form, dj4e, dj4e-lecture
     description: |
       This lecture focuses on data modeling within Django applications, specifically model.py and admin.py. It discusses the importance of efficient data storage and retrieval, illustrating how poor design could lead to extremely slow operations for large-scale applications. The lecture covers database normalization principles, emphasizing the avoidance of string data replication and the use of integer keys for fast inter-table linking.
 
       Real-world examples include a local library data model, an autograder, and the Sakai learning management system. The lecture explains that database normalization, particularly third normal form, is critical for preventing data duplication and ensuring efficient database operations.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v:
     title: DJ 15.02 Avoiding Data Replication in Spreadsheet Models (8:36)
     youtube_id: JCQYxILYNIE
@@ -728,11 +840,13 @@ entries:
     md5: b88eda3b177930896b411a4c31d916b8
     duration: 516
     duration_text: 08:36
-    tags: relational_databases, data_modeling, vertical_replication, database_normalization, many_to_one_relationships
+    tags: relational_databases, data_modeling, vertical_replication, database_normalization, many_to_one_relationships, dj4e, dj4e-lecture
     description: |
       The lecture explains how spreadsheet data models often face issues with vertical replication, where identical information like book titles, languages, and genres is duplicated across multiple rows. This approach becomes inefficient when managing large datasets, causing increased storage needs, higher scanning overhead, and challenges in maintaining data consistency. The example of a library tracking physical book instances illustrates how repeated entries for the same attributes create operational problems as datasets grow.
 
       The solution involves structuring data into relational tables with explicit relationships. By separating book instances from a central `book` table and using `language` tables, the model eliminates duplication. Each `book` instance links to a single `book` entry, with relationships defined by cardinality—such as zero or more `book` instances per `language` entry. This design ensures data integrity and simplifies updates while reducing storage requirements.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v:
     title: DJ 15.03 Representing Database Links with Primary and Foreign Keys (2:46)
     youtube_id: xmyE-zQaBEI
@@ -741,11 +855,13 @@ entries:
     md5: b04fe0304ec00d45fdc57193bf9f9fd3
     duration: 166
     duration_text: 02:46
-    tags: primary key, foreign key, database, key column, auto increment, index
+    tags: primary key, foreign key, database, key column, auto increment, index, dj4e, dj4e-lecture
     description: |
       The lecture explains how to model relationships between database tables using primary keys and foreign keys. Primary keys uniquely identify each row in a table and are typically auto-incremented and indexed for efficient data retrieval. These keys serve as the destination endpoints of the relationships.
 
       Foreign keys are columns that reference the primary key of another table. By convention, they follow the naming pattern of table name followed by underscore and the word id. Each table must contain a primary key, and multiple foreign keys can exist per table to establish connections between tables.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-15-one-many/04-DJ-03-Many-04-Django.m4v:
     title: 'DJ 15.04 Django Data Models: Foreign Keys and Migrations (9:56)'
     youtube_id: 9t-bP963_jY
@@ -754,11 +870,13 @@ entries:
     md5: 5cb21018f0db46c210bfa8e00d94b47f
     duration: 596
     duration_text: 09:56
-    tags: django, data_models, foreign_keys, migrations, on_delete, cascade, set_null
+    tags: django, data_models, foreign_keys, migrations, on_delete, cascade, set_null, dj4e, dj4e-lecture
     description: |
       This lecture explains Django data models, focusing on foreign key fields for linking tables. Django automatically generates ID fields for each model. The null=True parameter allows foreign keys to be nullable, and the on_delete option specifies behavior when a referenced record is deleted (e.g., cascade or set null).
 
       The lecture details the migration process: makemigrations creates portable migration files based on model changes, and migrate applies these to the database. It demonstrates the resulting SQLite database schema, showing how foreign keys are implemented and the database-specific differences in foreign key constraints.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v:
     title: 'DJ 15.05 Django Shell: Creating and Saving Model Objects with Foreign Keys (7:45)'
     youtube_id: aGtY4xkirsE
@@ -767,11 +885,13 @@ entries:
     md5: 0296bcedb356e69fa698d46c03cd74d0
     duration: 465
     duration_text: 07:45
-    tags: django-shell, model-objects, foreign-keys, save, primary-keys
+    tags: django-shell, model-objects, foreign-keys, save, primary-keys, dj4e, dj4e-lecture
     description: |
       The lecture explains using the Django shell to create and save model objects. The shell preloads Django settings and applications, enabling in-memory object creation. For instance, a language object is instantiated with a name attribute and saved to the database, generating a primary key.
 
       The lecture demonstrates foreign key relationships by linking a book to a language object via primary key. It shows creating a book instance connected to the language and saving it. The shell also queries model objects by primary key and traverses relationships to access nested attributes like a book's title through its linked language.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-16-users/01-DJ-09-Login-01-Users.m4v:
     title: DJ 16.01 Django Superuser Creation and Authentication Basics (3:45)
     youtube_id: E_X5Kr6xmNY
@@ -780,11 +900,13 @@ entries:
     md5: f8ca22c3dd55d403ec994f914f8e9035
     duration: 225
     duration_text: 03:45
-    tags: django, superuser, login, logout, authentication, admin, sqlite
+    tags: django, superuser, login, logout, authentication, admin, sqlite, dj4e, dj4e-lecture
     description: |
       This lecture covers creating a Django superuser, a user with full permissions. The superuser is created with a username and email address, which serves for password recovery. The superuser is stored in the database and can be removed when the database is reset.
 
       Django uses SQLite for development, where wiping the database removes all user data including superusers. To reset, developers must delete the SQLite database file, run migrations to recreate tables, and recreate the superuser. The admin interface provides built-in user management, and the lecture notes that local users are used for short-term projects before moving to social logins.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-16-users/02-DJ-09-Login-02-Urls.m4v:
     title: 'DJ 16.02 Django User Login and Logout (7:23)'
     youtube_id: tNofsgLH7c4
@@ -793,11 +915,13 @@ entries:
     md5: c907a7b8a9208e44a888bcdf39875d9e
     duration: 443
     duration_text: 07:23
-    tags: django, django authentication, sessions, login, logout, reverse, next parameter
+    tags: django, django authentication, sessions, login, logout, reverse, next parameter, dj4e, dj4e-lecture
     description: |
       Django implements user authentication using sessions and the django.contrib.auth app. The lecture clarifies that sessions store user state between requests, while login updates the session with user credentials. Project-level URL configuration in project/urls.py is necessary to register the login and logout views.
 
       The reverse function is used to look up login and logout views by name. The next parameter in login and logout URLs specifies the redirect URL after authentication. Templates automatically inject a user object with attributes such as isAuthenticated, id, and email.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-16-users/03-DJ-09-Login-03-Views.m4v:
     title: 'DJ 16.03 Django Login Page Template and Authentication Mixins (10:16)'
     youtube_id: n5Xwqz1IJck
@@ -806,11 +930,13 @@ entries:
     md5: 16cdc0d21ba48a747fefb00d523d1354
     duration: 616
     duration_text: 10:16
-    tags: django, login template, form, next parameter, user authentication, login required mixin
+    tags: django, login template, form, next parameter, user authentication, login required mixin, dj4e, dj4e-lecture
     description: |
       The lecture explains Django's login page template configuration, noting that the template registration/login.html is globally accessible across applications. It handles form submissions, error messages, and the next parameter for redirecting after login. The template uses the user context variable for authenticated sessions and passes the next value to the login URL.
 
       The lecture details Django's login required mixin for view protection, which automatically redirects unauthenticated users to the login page with the next parameter. This mixin is the preferred method over manual authentication checks, ensuring secure access to views with minimal code.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v:
     title: 'DJ 17.01 Django Forms: Validation and Template Rendering (13:26)'
     youtube_id: bYlgvmAPrp0
@@ -819,11 +945,13 @@ entries:
     md5: a883650c250b1978249f50311f2a08e5
     duration: 806
     duration_text: 13:26
-    tags: Django, forms, validation, templates, csrf, post, redirect
+    tags: Django, forms, validation, templates, csrf, post, redirect, dj4e, dj4e-lecture
     description: |
       Django forms are a critical component for handling user input in web applications. They generate HTML, validate data, and integrate with models, views, and templates. The lecture covers the form workflow, including data validation and error handling for create, update, and delete operations.
 
       The lecture demonstrates the form processing cycle: generating form HTML in templates, validating POST data, and responding with redirects or error messages. It also explains the use of CSRF tokens and the form object's role in connecting templates and browsers.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v:
     title: DJ 17.02 Django Server-Side Form Validation (9:13)
     youtube_id: kRXiMIFKzoQ
@@ -832,11 +960,13 @@ entries:
     md5: e73074325664b19d5f61564d7b007d8b
     duration: 553
     duration_text: 09:13
-    tags: django, server-side-validation, form-validation, post-requests, form-objects, error-handling, redirects
+    tags: django, server-side-validation, form-validation, post-requests, form-objects, error-handling, redirects, dj4e, dj4e-lecture
     description: |
       This lecture covers server-side form validation in Django. When a form is submitted via POST, the server validates the data against defined rules. If validation fails, the server returns the form with error messages for correction.
 
       The lecture explains how Django form objects process POST data and handle validation errors. Successful submissions result in a redirect to a success page. It also notes that Django returns a 200 status code after POST when no data changes, which can cause double processing if the page is refreshed.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-18-autos/01-samples-autos-walkthrough.mov:
     title: 'DJ 18.01 Django Autos Assignment: Implementing CRUD with Generic Views (36:13)'
     youtube_id: 3kHgAE-MidA
@@ -845,11 +975,13 @@ entries:
     md5: 120f91475882da421f71f3e2acc8c4d5
     duration: 2173
     duration_text: 36:13
-    tags: Django, CRUD, generic views, models, views, forms, LoginRequiredMixin, URL routing, templates
+    tags: Django, CRUD, generic views, models, views, forms, LoginRequiredMixin, URL routing, templates, dj4e, dj4e-lecture
     description: |
       This lecture walks through the Django autos sample application, covering the implementation of models, form handling, and URL routing. It demonstrates how generic views can efficiently handle create, read, update, and delete operations.
 
       The lecture emphasizes understanding the underlying Django mechanisms to avoid copy-pasting repetitive code. By using generic views and LoginRequiredMixin, developers can implement CRUD functionality with minimal configuration.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v:
     title: DJ 20.01 Django Marketplace Initial Project Setup with Virtual Environment (9:45)
     youtube_id: 9WZHLlOyoXY
@@ -858,11 +990,13 @@ entries:
     md5: a4167197da8e408b49f6fce716a4ad9a
     duration: 585
     duration_text: 09:45
-    tags: Django, virtual environment, WSGI, marketplace, migrations, superuser
+    tags: Django, virtual environment, WSGI, marketplace, migrations, superuser, dj4e, dj4e-lecture
     description: |
       This lecture details the initial configuration steps for the Django Marketplace project. It covers creating a new Django project named Market with a configuration directory structure, setting up a Python 3.13 virtual environment, and installing Django 5.2. Key steps include generating and applying migrations, creating a superuser with the username admin, and configuring WSGI to switch from the MySite project to Market.
 
       After completing these steps, the Marketplace application runs locally and is accessible via the web server. The setup includes an admin interface for user management and provides the foundation for developing the Marketplace features as specified in the assignment.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-22-owned/01-DJ-12-Owned-01.m4v:
     title: DJ 22.01 Django Owned Rows Implementation Using Inheritance (6:02)
     youtube_id: YTK-Sx4OUqs
@@ -871,11 +1005,13 @@ entries:
     md5: 109263db658a02a8e2a759cb951925eb
     duration: 362
     duration_text: 06:02
-    tags: django, owned rows, inheritance, generic views, user ownership
+    tags: django, owned rows, inheritance, generic views, user ownership, dj4e, dj4e-lecture
     description: |
       Django owned rows are database rows that users can view but can only edit or delete if they are the owner. This pattern is essential for applications requiring data ownership, such as classified ad systems.
 
       The implementation uses inheritance to extend Django's generic list view, adding an owner field to conditionally display edit and delete buttons for the current user. This approach avoids code repetition by creating a specialized view class (OwnerListView), though additional security measures (like permission checks) are necessary to prevent unauthorized edits.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-22-owned/02-DJ-12-Owned-02.m4v:
     title: 'DJ 22.02 How to Extend Django Generic Edit Views with Method Overrides (10:17)'
     youtube_id: z4iJ3Njbc9g
@@ -884,11 +1020,13 @@ entries:
     md5: b5984b9df186ef5c203bf7b878749a0c
     duration: 617
     duration_text: 10:17
-    tags: django, generic_edit_view, get_queryset, get_context_data, method_override, context_augmentation
+    tags: django, generic_edit_view, get_queryset, get_context_data, method_override, context_augmentation, dj4e, dj4e-lecture
     description: |
       The lecture explains the internal method flow of Django generic edit views and demonstrates two techniques for extending their behavior: complete method replacement and context augmentation.
 
       Complete method replacement involves overriding a method entirely to change its functionality, such as altering the data source by returning horse objects instead of car objects. Context augmentation allows adding new context variables to the existing context without replacing the parent method's output, by first calling the parent method and then extending the return value.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-22-owned/03-DJ-12-Owned-03.m4v:
     title: DJ 22.03 Django Owner Views Implementation with User Authentication (13:03)
     youtube_id: hznUKCsk8X8
@@ -897,11 +1035,13 @@ entries:
     md5: 69263bab9795ab53901eadef47d32c06
     duration: 783
     duration_text: 13:03
-    tags: Django, owner field, generic views, user authentication, queryset, form validation, login required, foreign key, cascade delete
+    tags: Django, owner field, generic views, user authentication, queryset, form validation, login required, foreign key, cascade delete, dj4e, dj4e-lecture
     description: |
       The lecture details implementing Django views that enforce article ownership by adding an owner foreign key to the model. The model includes an owner field with cascade delete behavior, ensuring articles are automatically removed when the associated user is deleted. The views extend generic Django views to handle ownership constraints while maintaining database integrity.
 
       Security is enforced through queryset filtering in update and delete views to restrict access to the current user's articles. During article creation, the form saves the owner field as the authenticated user's primary key before committing to the database. This pattern leverages Django's inheritance to minimize boilerplate while ensuring only authorized users can modify their owned content.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-23-ads1/01-samples-crispy-walkthrough-23.mov:
     title: 'DJ 23.01 Crispy Forms: Django Bootstrap 5 Form Rendering (9:14)'
     youtube_id: kQORvrIzsZs
@@ -910,11 +1050,13 @@ entries:
     md5: 1e0a1bc19832b05c2b78338635b891ec
     duration: 554
     duration_text: 09:14
-    tags: crispy forms, django, bootstrap5, form rendering, template tags
+    tags: crispy forms, django, bootstrap5, form rendering, template tags, dj4e, dj4e-lecture
     description: |
       Crispy Forms is a Django library that generates styled HTML and CSS for form rendering using Bootstrap 5. It processes a Django form object through a template tag to produce a visually consistent form without requiring manual HTML or CSS code.
 
       Implementation requires installing the Crispy Forms library and Bootstrap 5 template pack via pip, adding crispy_forms to the installed apps in settings.py, and including the load crispy forms template tag in the template. The form object is then rendered using the pipe operator form | crispy to generate the form with required fields and a submit button.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-23-ads1/02-samples-myarts-walkthrough.mov:
     title: 'DJ 23.02 Django model ownership with user-specific rows (30:13)'
     youtube_id: iHvJZ_lvXB4
@@ -923,11 +1065,13 @@ entries:
     md5: 5ebb39ac0065ddd232afe7de67faf8af
     duration: 1813
     duration_text: 30:13
-    tags: django, user model, foreign key, model ownership, generic views, view inheritance
+    tags: django, user model, foreign key, model ownership, generic views, view inheritance, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates Django's implementation of user-specific model rows. The Article model contains a foreign key field linking to the Django auth.User model, ensuring each instance belongs to a single user. The system uses a reusable ownership pattern that extends generic views to enforce user-specific access.
 
       The owner create view automatically sets the user field to the current authenticated user during form validation. Update and delete views apply a queryset filter to verify ownership before processing requests. This pattern is designed to be used across multiple models without modifying the owner.py file.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-23-ads1/03-samples-menu-walkthrough-edited.mov:
     title: DJ 23.03 Django Bootstrap Menu Implementation with Template Inheritance (14:21)
     youtube_id: nuz_zXWoCo8
@@ -936,11 +1080,13 @@ entries:
     md5: 8326f149b71bf50934e34e62587dbe42
     duration: 861
     duration_text: 14:21
-    tags: ul, li, div, a, django, bootstrap, template-inheritance, navbar, active-class, gravatar, md5, template-tags, user-authentication
+    tags: ul, li, div, a, django, bootstrap, template-inheritance, navbar, active-class, gravatar, md5, template-tags, user-authentication, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates implementing a Bootstrap menu in Django using template inheritance. The menu is defined in a template that extends base_menu.html, which itself inherits from a Bootstrap template. Navigation links are rendered within the navbar block, and the current page is highlighted by applying the active class based on the request path.
 
       The implementation handles user authentication by displaying a Gravatar image for authenticated users. A custom template tag generates a Gravatar URL using an MD5 hash of the user's email address, ensuring the email is not exposed while providing a user-specific avatar image.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-24-javascript/01-JS-01-01-JavaScript.m4v:
     title: 'DJ 24.01 JavaScript: History, Syntax, and Browser Applications (9:59)'
     youtube_id: xBpKUM1CTBQ
@@ -949,11 +1095,13 @@ entries:
     md5: 76985df5e533c7a6674e548028b1d473
     duration: 599
     duration_text: 09:59
-    tags: javascript, browser, dom, c-like syntax, ecmascript, node.js, python, java, c, html, css
+    tags: javascript, browser, dom, c-like syntax, ecmascript, node.js, python, java, c, html, css, dj4e, dj4e-lecture
     description: |
       JavaScript was created in 1995 by Brennan Icke in 10 days as a programming language for web browsers. It was designed to run within the browser alongside HTML and CSS and uses a C-like syntax with semicolons and curly braces.
 
       This language interacts with the browser's DOM for client-side operations and can be extended to server-side applications using Node.js.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-24-javascript/02-JS-01-02-Browser.m4v:
     title: DJ 24.02 JavaScript DOM and Event Handling in Web Browsers (14:02)
     youtube_id: wnUhEMhEeDs
@@ -962,11 +1110,13 @@ entries:
     md5: be574fce2e50c4a8423960af4b679ac1
     duration: 842
     duration_text: 14:02
-    tags: javascript, browser, dom, event, console, debugger
+    tags: javascript, browser, dom, event, console, debugger, dj4e, dj4e-lecture
     description: |
       This lecture covers the fundamentals of JavaScript in web browsers, including how it interacts with HTML and the Document Object Model (DOM). It demonstrates the use of `document.write` to output text to the screen, the `alert` function for debugging, and the three primary methods for embedding JavaScript: inline within `html` (using a `script` tag), as event handlers (e.g., `onClick`), or in external `.js` files.
 
       The lecture explains browser debugging techniques, such as using the console for error messages and `console.log` for non-blocking debug output. It also addresses how JavaScript syntax errors halt execution without user notification and the critical role of the browser console in identifying and resolving errors during development.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-24-javascript/03-JS-01-03-Language.m4v:
     title: 'DJ 24.03 JavaScript Syntax: Comments, Variables, and Numbers (16:57)'
     youtube_id: BtIhwBPeyp4
@@ -975,11 +1125,13 @@ entries:
     md5: 97be087c576368a315726876964f9af9
     duration: 1017
     duration_text: 16:57
-    tags: JavaScript, Syntax, Comments, Variables, Numbers, String, Operators, Type Coercion, NaN, Infinity
+    tags: JavaScript, Syntax, Comments, Variables, Numbers, String, Operators, Type Coercion, NaN, Infinity, dj4e, dj4e-lecture
     description: |
       JavaScript syntax includes two comment styles: multi-line comments using /* ... */ and single-line comments using //. Variable names are case-sensitive and can consist of letters, numbers, underscores, and dollar signs (but should not start with a number). JavaScript ignores whitespace and new lines during parsing, and statements typically end with semicolons as a convention from C-style languages.
 
       JavaScript has a single numeric type (number) that handles floating-point arithmetic. Type coercion occurs automatically in operations, such as adding a number and a string, which may produce NaN (Not a Number) for invalid numeric operations. The typeof operator and strict equality (===) are used for type checking and comparisons.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-24-javascript/04-JS-01-04-Functions-Arrays.m4v:
     title: 'DJ 24.04 JavaScript Functions and Arrays: Scoping (7:02)'
     youtube_id: a7wPzoX9o_8
@@ -988,11 +1140,13 @@ entries:
     md5: c71fa8513c84a6bd715de1ee8d626005
     duration: 422
     duration_text: 07:02
-    tags: javascript, function, array, object, var, scoping, global, local
+    tags: javascript, function, array, object, var, scoping, global, local, dj4e, dj4e-lecture
     description: |
       This lecture covers JavaScript functions and arrays. Functions are defined using the function keyword followed by a name, parameters, and a body enclosed in curly braces. Functions can return values via the return statement. A key difference from many other languages is that variables defined inside a function without the var keyword are global by default, which is then explicitly scoped to local using the var keyword.
 
       JavaScript arrays are linear structures that resemble Python lists. Arrays are not associative; objects are used for key-value pairs. The push method appends elements to the end of an array.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-24-javascript/05-JS-01-05-If-Loops.m4v:
     title: 'DJ 24.05 JavaScript Control Structures: If Statements, Loops, and Logical Operators (6:37)'
     youtube_id: XtKhAo9IO5Q
@@ -1001,11 +1155,13 @@ entries:
     md5: a10d87c295296dbc6e3268023b1c6b86
     duration: 397
     duration_text: 06:37
-    tags: if statement, logical operators, loops, while loop, for loop, break, continue, object iteration
+    tags: if statement, logical operators, loops, while loop, for loop, break, continue, object iteration, dj4e, dj4e-lecture
     description: |
       The lecture explains JavaScript control structures, including if statements and logical operators. It describes the use of equality (==), strict equality (===), inequality (!=), logical AND (&&), and logical OR (||) operators, and how blocks (curly braces) define code executed when a condition is true. The lecture also covers multi-way if statements with else if clauses and optional else blocks.
 
       The lecture details while loops (zero-trip loops) and for loops (counted loops), emphasizing the need to manage iteration variables to avoid infinite loops. It explains the break and continue statements, and how to iterate over JavaScript objects (definite loops) versus arrays (counted loops).
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-25-jsoo/01-JS-02-01-Overview.m4v:
     title: DJ 25.01 Object-Oriented Programming Concepts in JavaScript (4:20)
     youtube_id: N_ZB9VnXDWo
@@ -1014,11 +1170,13 @@ entries:
     md5: 80f4477c3717bc3f3dc6b0215e08af92
     duration: 260
     duration_text: 04:20
-    tags: object-oriented programming, javascript, class, instance, method, first-class functions, inheritance
+    tags: object-oriented programming, javascript, class, instance, method, first-class functions, inheritance, dj4e, dj4e-lecture
     description: |
       This lecture explains core object-oriented programming concepts in JavaScript, including classes as blueprints for creating objects, instances as concrete manifestations of these classes, and methods as code that operate on object data. It also covers inheritance through subclasses.
 
       JavaScript supports first-class functions, allowing functions to be treated as data that can be assigned to variables and passed as arguments. This design aligns with Lisp's historical approach to unifying code and data, where functions and other values are treated uniformly.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-25-jsoo/02-JS-02-02-Code.m4v:
     title: 'DJ 25.02 JavaScript Classes: Function-Based Implementation and Instances (13:13)'
     youtube_id: DLWYj1_j1Is
@@ -1027,11 +1185,13 @@ entries:
     md5: 784dea00372a30cfae900602a4848d69
     duration: 793
     duration_text: 13:13
-    tags: javascript, classes, function, this, instance, constructor
+    tags: javascript, classes, function, this, instance, constructor, dj4e, dj4e-lecture
     description: |
       JavaScript classes are implemented using the function keyword, forming a function-based template for object creation. The class body defines instance variables and methods, with the this keyword referring to the instance object being constructed.
 
       The constructor function runs during instance creation to initialize attributes. Each instance maintains independent attribute values, ensuring that multiple instances operate with distinct data states when methods are called.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-26-ads-pictures/01-samples-pics-combined.mov:
     title: DJ 26.01 Django CRUD Image Upload Implementation (33:06)
     youtube_id: tanl9CthvHE
@@ -1040,11 +1200,13 @@ entries:
     md5: ea597d2a7dde53beb59f5191d11d4c70
     duration: 1986
     duration_text: 33:06
-    tags: django, crud, image upload, binary field, content type, admin interface, form, multipart/form-data
+    tags: django, crud, image upload, binary field, content type, admin interface, form, multipart/form-data, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates implementing image uploads in a Django CRUD application. The model includes a binary field for storing image data and a content type field (string) for the MIME type. The admin interface is customized to hide fields that would cause issues with image handling, and form validation uses client-side JavaScript to check file size (under 2 MB).
 
       The application handles file uploads via Django's form processing, with server-side validation to ensure file size and content type. The detail view streams images using stored content type and content length headers, and a simple overlay modal is implemented for larger image viewing with minimal CSS and JavaScript.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v:
     title: 'DJ 27.01 Django Data Modeling: Many-to-Many Relationships (5:34)'
     youtube_id: JI4ZOFOubLY
@@ -1053,11 +1215,13 @@ entries:
     md5: f86acaffa8c1b6dee537a180469cc6d3
     duration: 334
     duration_text: 05:34
-    tags: django, data modeling, many-to-many, relationships, migrations, database
+    tags: django, data modeling, many-to-many, relationships, migrations, database, dj4e, dj4e-lecture
     description: |
       This lecture covers the implementation of many-to-many relationships in Django. It explains that one-to-many relationships are inadequate for scenarios where an entity can have multiple related items (such as books with multiple authors or genres) because they cannot handle arbitrary numbers of relationships.
 
       In Django, many-to-many relationships are defined using the ManyToManyField in the model.py file. This allows models to represent multiple associations without fixed limits, ensuring the database can accommodate varying numbers of related objects.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-27-many-many/02-DJ-04-Many-02-Many.m4v:
     title: DJ 27.02 Django Many-to-Many Relationships with Junction Tables (12:35)
     youtube_id: gf2-J9YOMcc
@@ -1066,11 +1230,13 @@ entries:
     md5: c2cfb78b5e165d2dc06f7f087e2f0bee
     duration: 755
     duration_text: 12:35
-    tags: many-to-many, junction table, through table, one-to-many, Django
+    tags: many-to-many, junction table, through table, one-to-many, Django, dj4e, dj4e-lecture
     description: |
       Many-to-many relationships cannot be directly modeled in relational databases. The solution involves breaking the relationship into two one-to-many relationships and using a junction table to store connections between entities.
 
       In Django, a many-to-many field creates a junction table and virtual attributes for related objects. The junction table supports on delete cascade for automatic cleanup during deletions, and the data model can specify constraints like one dot dot star (minimum one) or zero dot dot star (minimum zero) for relationships.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-27-many-many/03-DJ-04-Many-03-Course.m4v:
     title: DJ 27.03 Django Many-to-Many Relationship with Role and Timestamps (8:38)
     youtube_id: kY_1a057phM
@@ -1079,11 +1245,13 @@ entries:
     md5: 7891d10d5ca6801a6733f33c1f06d93f
     duration: 518
     duration_text: 08:38
-    tags: many-to-many, through table, foreign keys, created_at, updated_at, role, integer, django
+    tags: many-to-many, through table, foreign keys, created_at, updated_at, role, integer, django, dj4e, dj4e-lecture
     description: |
       The lecture demonstrates a many-to-many relationship between persons and courses in an educational autograder application. This relationship is implemented using a through table (membership table) that includes foreign keys to persons and courses, along with created_at and updated_at timestamp fields. The role field in the membership table uses integer values to represent predefined roles (learner, teaching assistant, instructor, admin) without string replication.
 
       The example shows how to interact with this model in Django's shell, including creating persons and courses, adding memberships with specific roles, and querying membership data. The integer role system employs a tuple of choices to map integers to role names in the admin interface, ensuring consistent representation and avoiding code duplication.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-28-ads-comments/01-samples-forums-walkthrough.mov:
     title: DJ 28.01 Django Many-to-Many Relationships with Junction Tables (25:28)
     youtube_id: mgcj3V56X-A
@@ -1092,11 +1260,13 @@ entries:
     md5: d62ffe15f846107fa5d49942fbf34970
     duration: 1528
     duration_text: 25:28
-    tags: django, many-to-many, junction table, foreign keys, related_name
+    tags: django, many-to-many, junction table, foreign keys, related_name, dj4e, dj4e-lecture
     description: |
       This lecture walks through a Django implementation of many-to-many relationships using a junction table. The example application features a forums system where comments are stored in a separate table that connects users and forums via two foreign keys.
 
       The code demonstrates the use of related_name to create an attribute on the user model for accessing comments and covers the view and URL patterns for comment creation and deletion, including a post-redirect pattern for deletion.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-29-browser/01-JS-03-Browser-01-Execution.m4v:
     title: 'DJ 29.01 JavaScript Execution Model: Events, DOM, and First-Class Functions (8:24)'
     youtube_id: tkZcNu-RGQA
@@ -1105,11 +1275,13 @@ entries:
     md5: aabf440bc42ab158818ee4f5454a079b
     duration: 504
     duration_text: 08:24
-    tags: javascript, browser, dom, event handling, first-class functions, cooperative multitasking
+    tags: javascript, browser, dom, event handling, first-class functions, cooperative multitasking, dj4e, dj4e-lecture
     description: |
       JavaScript in browsers operates with a cooperative multitasking model, where code execution is triggered by events rather than waiting for operations to complete. This contrasts with traditional programming environments where the operating system manages blocking and non-blocking operations.
 
       The Document Object Model (DOM) is the structure that JavaScript manipulates to update the webpage. First-class functions are critical for event handling, as they enable event handlers to be defined and executed without immediate invocation, supporting asynchronous behavior.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v:
     title: DJ 29.02 JavaScript DOM and Window Object (5:40)
     youtube_id: dPpGAYZGrgs
@@ -1118,11 +1290,13 @@ entries:
     md5: 1b8b30ac381829c2788231d5c3d834f4
     duration: 340
     duration_text: 05:40
-    tags: DOM, Window, JavaScript, Browser, Scroll, Overflow
+    tags: DOM, Window, JavaScript, Browser, Scroll, Overflow, dj4e, dj4e-lecture
     description: |
       The lecture describes the Document Object Model (DOM) as the structured representation of a web page's content in the browser. JavaScript interacts with this model by reading, manipulating, and updating elements, which are then rendered through the window. Changes to the DOM are immediately visible to the user.
 
       The window object provides properties for the browser window's dimensions and methods for scrolling. When the DOM exceeds the window's visible area, scroll bars appear due to overflow. JavaScript can dynamically adjust the window and DOM to handle such scenarios.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v:
     title: 'DJ 29.03 JavaScript DOM Manipulation: Changing Elements and Styles (8:24)'
     youtube_id: x-TaJHWs4nU
@@ -1131,11 +1305,13 @@ entries:
     md5: 3cafca8dee0cec70a274eab4774fa4d8
     duration: 504
     duration_text: 08:24
-    tags: javascript, dom, innerHTML, createElement, appendChild, event listeners, css, style.display
+    tags: javascript, dom, innerHTML, createElement, appendChild, event listeners, css, style.display, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates modifying the Document Object Model in JavaScript by changing element content via `innerHTML`. It shows how to select an element using its ID, update its `innerHTML` with a string, and trigger the change with a click event. The browser instantly updates the DOM after the JavaScript execution completes.
 
       The lecture also covers creating new DOM elements using `createElement` and appending them with `appendChild`, and manipulating CSS styles via `style.display`. It includes a practical example of toggling an element's visibility by switching between block and none display values.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v:
     title: 'DJ 29.04 Browser Event Registration: addEventListener vs. onClick and DOMContentLoaded (7:54)'
     youtube_id: _QVcbmGqm2o
@@ -1144,11 +1320,13 @@ entries:
     md5: be22cb3be0e3b17461561e8015c04750
     duration: 474
     duration_text: 07:54
-    tags: browser events, event registration, addEventListener, onClick, DOMContentLoaded
+    tags: browser events, event registration, addEventListener, onClick, DOMContentLoaded, dj4e, dj4e-lecture
     description: |
       The lecture details the browser's event registration system, explaining that `onClick` is a shortcut attribute for attaching click event handlers, while `addEventListener` provides a more explicit and versatile method for registering events with the DOM.
 
       It also covers the `DOMContentLoaded` event, which fires when the initial HTML document is fully loaded and parsed, and demonstrates the window `resize` event for responsive design applications.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v:
     title: DJ 29.05 JavaScript Network Events with Fetch and Promises (6:26)
     youtube_id: m1MBEktyC7U
@@ -1157,11 +1335,13 @@ entries:
     md5: 5396a3f71afeece6b601041990df6166
     duration: 386
     duration_text: 06:26
-    tags: JavaScript, network events, fetch, promises, asynchronous
+    tags: JavaScript, network events, fetch, promises, asynchronous, dj4e, dj4e-lecture
     description: |
       This lecture covers network events in JavaScript, explaining how asynchronous operations are handled when communicating with the network. The fetch API initiates requests, returning a promise that resolves when the request completes.
 
       The example demonstrates a promise chain: the initial fetch returns a promise, which is resolved by a then callback. This callback processes the response, retrieves the text via response.text(), and when that promise resolves, the content is set in a DOM element.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-29-browser/06-JS-03-Browser-06-WC.m4v:
     title: DJ 29.06 Creating Custom Elements with LitElement (11:05)
     youtube_id: ZEQBZ_r2pvQ
@@ -1170,11 +1350,13 @@ entries:
     md5: 236f85c68284f53428b588273eee5236
     duration: 665
     duration_text: 11:05
-    tags: custom-element, lit-element, shadow-dom, web-components, dom, javascript
+    tags: custom-element, lit-element, shadow-dom, web-components, dom, javascript, dj4e, dj4e-lecture
     description: |
       Creating custom HTML elements in the browser using JavaScript with LitElement enables developers to define reusable components that avoid repetitive HTML structure across web pages. The lecture demonstrates a dynamic greeting component that updates its text based on user input without server interaction.
 
       LitElement simplifies custom element implementation by handling rendering and data binding, allowing components to share styles with the parent document and avoid shadow DOM. This approach enables responsive components that automatically update when their data changes, reducing the need for server-side template processing.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-30-json/01-JS-04-JSON-01-JSON.m4v:
     title: 'DJ 30.01 AJAX and JSON: Server-Client Data Exchange (8:34)'
     youtube_id: thhKcuHNQzo
@@ -1183,11 +1365,13 @@ entries:
     md5: baed3f5bbe5150ff33e9c850260f6025
     duration: 514
     duration_text: 08:34
-    tags: ajax, json, server, client, data-exchange, serialization, deserialization, wire-format, request-response, javascript, python
+    tags: ajax, json, server, client, data-exchange, serialization, deserialization, wire-format, request-response, javascript, python, dj4e, dj4e-lecture
     description: |
       This lecture covers the use of JSON as a data format in the request-response cycle, contrasting it with HTML as the markup format. JSON serves as a wire format for structured data exchange between servers and clients, enabling serialization of data structures from various programming languages.
 
       The lecture demonstrates a Django view that returns a JSON response with content type application/json. This allows client-side JavaScript to process the data and update the document object model.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-30-json/02-samples-fetch-walkthrough-23.mov:
     title: DJ 30.02 Django JSON Responses and Fetch API Basics (21:53)
     youtube_id: KcgPJYil5Do
@@ -1196,11 +1380,13 @@ entries:
     md5: 29c2b340b653a673ffb320cad21d027c
     duration: 1313
     duration_text: 21:53
-    tags: Django, JSON, Fetch API, Promise, Async await, JSON response, Django views
+    tags: Django, JSON, Fetch API, Promise, Async await, JSON response, Django views, dj4e, dj4e-lecture
     description: |
       The lecture explains that JSON and Python dictionaries share identical syntax structures and demonstrates how Django views can serialize Python dictionaries into JSON responses. It shows the browser's network tab displaying the raw JSON response and the browser's parsing process.
 
       The lecture covers error handling in Fetch API operations, including invalid URLs, 404 responses, and non-JSON responses. It compares two asynchronous patterns: promise syntax and async/await, highlighting their error handling capabilities and typical use cases.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-30-json/03-JS-04-JSON-02-Chat.m4v:
     title: DJ 30.03 Simple Multi-User Chat Application with Ajax and JSON Polling (8:05)
     youtube_id: PJ1LkwGcOsk
@@ -1209,11 +1395,13 @@ entries:
     md5: 15f6ab6f9fa87a38b3dde4d3b659e95e
     duration: 485
     duration_text: 08:05
-    tags: ajax, json, polling, django, javascript, fetch
+    tags: ajax, json, polling, django, javascript, fetch, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates building a simple multi-user chat application using Django and JavaScript. The application implements polling every four seconds to fetch JSON data from a server endpoint, displaying recent messages in a chat interface. Messages entered in one tab appear asynchronously in another tab, with the server returning an array of message text and time indicators.
 
       The server retrieves the latest 10 messages ordered by creation time and formats time intervals using Django's time library. The client-side JavaScript uses the fetch API to poll the server, clears the chat content div, and appends new messages. The lecture highlights JSON's widespread support across programming languages and its long history in web development.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-30-json/04-samples-chat-walkthrough-23.mov:
     title: DJ 30.04 Django Polling Example with AJAX and JSON (16:03)
     youtube_id: v5CKyLS701M
@@ -1222,11 +1410,13 @@ entries:
     md5: 416a9c6503ea9f881930d1a73630491e
     duration: 963
     duration_text: 16:03
-    tags: Django, AJAX, JSON, polling, fetch, setTimeout, DOM
+    tags: Django, AJAX, JSON, polling, fetch, setTimeout, DOM, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates a Django chat application that uses AJAX polling to fetch and display messages. The example implements a client-side timer using setTimeout to periodically request JSON data from a server, which is then rendered in the browser's DOM.
 
       The implementation uses a polling pattern that sends requests to the server every few seconds. This approach is inefficient for production systems due to high server and network resource usage but effectively illustrates key asynchronous JavaScript concepts and DOM manipulation.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-31-ads3/01-samples-favicon-walkthrough.mov:
     title: DJ 31.01 Django Favicon Setup and Cache Busting (4:11)
     youtube_id: C1WGD5hFdT8
@@ -1235,11 +1425,13 @@ entries:
     md5: 1368bed1d361ca78785f31e99f1617ad
     duration: 251
     duration_text: 04:11
-    tags: django, favicon, static files, browser cache, cache busting, query parameters
+    tags: django, favicon, static files, browser cache, cache busting, query parameters, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates how to set up a custom favicon in Django applications by uploading an icon file to the static directory and configuring the static file server to serve it at static/favicon.ico.
 
       Browser caching can prevent immediate updates to the favicon; adding a cache-busting query parameter like ?x=42 to the favicon URL forces the browser to fetch the new icon.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-31-ads3/02-samples-social-github-walkthrough.mov:
     title: DJ 31.02 Setting Up GitHub Social Login in Django (8:47)
     youtube_id: NctpQ-2Kdtw
@@ -1248,11 +1440,13 @@ entries:
     md5: ba347407d7e60b5504eca97a85e33ca9
     duration: 527
     duration_text: 08:47
-    tags: Django, GitHub, Social login, OAuth, Social authentication
+    tags: Django, GitHub, Social login, OAuth, Social authentication, dj4e, dj4e-lecture
     description: |
       This lecture details the configuration of GitHub social authentication in Django. It starts with creating a GitHubsettings.py configuration file from the GitHubsettings.dist template and then registering a GitHub OAuth application to obtain client ID and secret credentials.
 
       With the credentials configured in Django settings, the application enables GitHub login. Users are redirected to GitHub for authorization, and upon successful authorization, they are authenticated in the Django application.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-31-ads3/03-samples-favs-720.mov:
     title: DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)
     youtube_id: CFF0WQLj1as
@@ -1261,11 +1455,13 @@ entries:
     md5: 8c89cfebf0e128fe38a82ddce37ca294
     duration: 1820
     duration_text: 30:20
-    tags: Django, many-to-many, AJAX, favorite, views, templates, jQuery, unique_constraint, URL routing, CSRF
+    tags: Django, many-to-many, AJAX, favorite, views, templates, jQuery, unique_constraint, URL routing, CSRF, dj4e, dj4e-lecture
     description: |
       This lecture demonstrates a Django implementation for managing user favorites using a many-to-many relationship between `Thing` objects and users. The model includes a unique constraint to ensure each user can favorite a `Thing` only once, preventing duplicate entries. The system uses a `through` model to handle the relationship without additional tables.
 
       The implementation employs AJAX with jQuery to update favorite states without full page refreshes. When a user clicks a favorite button, a POST request is sent to update the database, and the UI dynamically toggles between filled and empty star indicators. Views handle the POST requests with CSRF exemption for simplicity, ensuring only authenticated users can modify favorites.
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-32-ads-search/01-samples-well-walkthrough.mov:
     title: 'DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)'
     youtube_id: 4pOExZHnL9k
@@ -1274,16 +1470,10 @@ entries:
     md5: d7195aad587d208c02c495d28f010dbf
     duration: 1290
     duration_text: 21:30
-    tags: django, well-sample, get-parameters, idempotent-urls, search-functionality, generic-views, url-patterns, related-names, query-filtering
+    tags: django, well-sample, get-parameters, idempotent-urls, search-functionality, generic-views, url-patterns, related-names, query-filtering, dj4e, dj4e-lecture
     description: |
       The WELL sample application extends Django's myarts project with a search feature implemented using GET parameters. This approach ensures search URLs are idempotent, meaning they can be safely bookmarked and revisited without altering system state.
 
       The lecture demonstrates how the application filters posts via title and text fields using Django's ORM, and explains a pattern where views are defined in urls.py by extending generic views to override parameters. This eliminates the need for separate view files while improving maintainability.
-  lesson-04-shell/01-01_paw_shell-DJ4.m4v:
-    title: 01 01 paw shell DJ4
-    youtube_id: null
-    kaltura_id: null
-    size: 422759127
-    md5: 9e0368a42bbf7c12f1b7294d5bd5ede3
-    duration: 1142
-    description: null
+
+      For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
