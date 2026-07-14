@@ -1,0 +1,7 @@
+JavaScript Functions and Arrays: Scoping
+
+javascript, function, array, object, var, scoping, global, local
+
+This lecture covers JavaScript functions and arrays. Functions are defined using the function keyword followed by a name, parameters, and a body enclosed in curly braces. Functions can return values via the return statement. A key difference from many other languages is that variables defined inside a function without the var keyword are global by default, which is then explicitly scoped to local using the var keyword.
+
+JavaScript arrays are linear structures that resemble Python lists. Arrays are not associative; objects are used for key-value pairs. The push method appends elements to the end of an array.

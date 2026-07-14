@@ -1,0 +1,7 @@
+Django Favicon Setup and Cache Busting
+
+django, favicon, static files, browser cache, cache busting, query parameters
+
+This lecture demonstrates how to set up a custom favicon in Django applications by uploading an icon file to the static directory and configuring the static file server to serve it at static/favicon.ico.
+
+Browser caching can prevent immediate updates to the favicon; adding a cache-busting query parameter like ?x=42 to the favicon URL forces the browser to fetch the new icon.

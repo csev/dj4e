@@ -1,7 +1,7 @@
-Django Application Structure
+Django Application Structure Overview
 
-django, project, application, folder_structure, settings, urls, wgsi, models, views, mvc
+django, project, application, settings, urls, models, views, templates, mvc
 
-This lecture explains the folder structure and key files of a Django application, distinguishing between projects (which are websites) and applications (reusable components). It describes the typical project layout, including the project directory (e.g., dj4esamples/dj4esamples) and applications (e.g., hello), and highlights critical files such as settings.py, urls.py, wgsi.py, models.py, views.py, and admin.py.
+This lecture explains the standard folder structure and key files in a Django project. Django organizes applications into projects, with each project containing one or more reusable applications. The project directory includes settings.py for configuration, urls.py for routing, and wsgi.py for the web server interface. Applications contain files such as models.py for data models, views.py for request handling, and templates for HTML rendering.
 
-The lecture details the request-response cycle in Django, where a browser request is routed by urls.py to a view in views.py. The view handles data through models and generates a response using templates, following the Model-View-Controller pattern.
+Django processes web requests by routing them to the appropriate application view via urls.py. The view then interacts with models to handle data and renders a template to produce the HTTP response. This model-view-controller pattern organizes the application into distinct components: models for data storage, views for request processing, and templates for HTML output.

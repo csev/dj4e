@@ -1,0 +1,7 @@
+Django JSON Responses and Fetch API Basics
+
+Django, JSON, Fetch API, Promise, Async await, JSON response, Django views
+
+The lecture explains that JSON and Python dictionaries share identical syntax structures and demonstrates how Django views can serialize Python dictionaries into JSON responses. It shows the browser's network tab displaying the raw JSON response and the browser's parsing process.
+
+The lecture covers error handling in Fetch API operations, including invalid URLs, 404 responses, and non-JSON responses. It compares two asynchronous patterns: promise syntax and async/await, highlighting their error handling capabilities and typical use cases.

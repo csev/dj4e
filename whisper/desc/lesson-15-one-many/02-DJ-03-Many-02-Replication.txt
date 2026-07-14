@@ -1,7 +1,7 @@
-Avoiding Data Replication in Library Application Data Modeling
+Avoiding Data Replication in Spreadsheet Models
 
-vertical replication, relational database, many-to-one relationships, data modeling, cardinality, database normalization
+relational_databases, data_modeling, vertical_replication, database_normalization, many_to_one_relationships
 
-The lecture demonstrates how spreadsheet-based data modeling leads to vertical replication problems when representing library book instances. It identifies repeated strings like book titles, languages, and genres across multiple rows as inefficient and error-prone, especially when scaling to millions of records. This replication creates storage overhead and complicates updates, as changes require searching through duplicated data instead of modifying a single source.
+The lecture explains how spreadsheet data models often face issues with vertical replication, where identical information like book titles, languages, and genres is duplicated across multiple rows. This approach becomes inefficient when managing large datasets, causing increased storage needs, higher scanning overhead, and challenges in maintaining data consistency. The example of a library tracking physical book instances illustrates how repeated entries for the same attributes create operational problems as datasets grow.
 
-The solution involves splitting data into relational tables—book, language, and instance—with explicit many-to-one relationships. Each book instance links to a single book record, while languages are shared across multiple books. Cardinality constraints define that languages can have zero or more books (many-to-one), and books can have zero or more physical instances (many-to-one), ensuring data uniqueness and efficient updates through database relationships rather than replication.
+The solution involves structuring data into relational tables with explicit relationships. By separating book instances from a central `book` table and using `language` tables, the model eliminates duplication. Each `book` instance links to a single `book` entry, with relationships defined by cardinality—such as zero or more `book` instances per `language` entry. This design ensures data integrity and simplifies updates while reducing storage requirements.

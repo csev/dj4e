@@ -1,7 +1,7 @@
-Cascading Style Sheets Fundamentals
+How Cascading Style Sheets Work
 
-css, selectors, cascading, font-family, borders, margins, padding, id, class, inline, block, html5
+css, cascade, selectors, html, dom, block, inline, margins, padding, borders, classes, ids
 
-This lecture covers the fundamentals of Cascading Style Sheets (CSS) for styling web content.
+This lecture explains the cascading mechanism in CSS, where styles are applied based on specificity and source order. It covers the use of selectors to target HTML elements and the distinction between block and inline elements. The lecture also demonstrates basic CSS properties such as margins, padding, and borders.
 
-It explains the cascading mechanism and demonstrates key CSS properties such as font families, borders, margins, and padding. It also discusses the use of IDs and classes for targeted styling, the distinction between inline and block elements, and how CSS can style HTML5 navigation components.
+The lecture includes practical examples of styling web pages using CSS, including the application of classes and IDs. It shows how the Document Object Model (DOM) interacts with CSS styles and provides examples of styling navigation bars.

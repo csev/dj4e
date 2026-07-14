@@ -1,7 +1,7 @@
-Understanding Network Sockets: Connect, Talk, Disconnect Model
+Network Sockets as Computer Phone Calls
 
-network sockets, TCP port, IP address, IPv4, IPv6, HTTP, HTTPS
+sockets, tcp, ip, port, http, https, ipv4, ipv6
 
-Network sockets provide a communication abstraction for computers that operates on a connect-talk-disconnect model, originating from 1960s design principles to enable scalable data sharing without permanent connections. This approach uses IP addresses and port numbers to route communication between applications, allowing billions of devices to interact efficiently without requiring continuous data access.
+Network sockets are a software abstraction that enables temporary communication between computers, modeled after phone calls: establishing a connection, exchanging data, and then disconnecting. This design, developed in the 1960s, avoids the need for permanent connections and scales efficiently across the internet.
 
-Each computer has a unique IP address (either IPv4 or IPv6) and applications use port numbers to specify services, such as port 25 for email, port 23 for Telnet, port 80 for HTTP, and port 443 for HTTPS. These port numbers act as extensions to IP addresses, directing traffic to the correct application without conflicts while maintaining the client-server communication pattern.
+Each computer has an IP address (either IPv4 or IPv6) and applications use TCP port numbers to specify services. For instance, port 80 handles HTTP traffic, port 443 handles HTTPS, port 25 is used for email servers, and port 23 is for Telnet, illustrating how diverse protocols operate over the same network infrastructure.

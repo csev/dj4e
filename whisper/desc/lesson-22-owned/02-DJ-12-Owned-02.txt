@@ -1,0 +1,7 @@
+How to Extend Django Generic Edit Views with Method Overrides
+
+django, generic_edit_view, get_queryset, get_context_data, method_override, context_augmentation
+
+The lecture explains the internal method flow of Django generic edit views and demonstrates two techniques for extending their behavior: complete method replacement and context augmentation.
+
+Complete method replacement involves overriding a method entirely to change its functionality, such as altering the data source by returning horse objects instead of car objects. Context augmentation allows adding new context variables to the existing context without replacing the parent method's output, by first calling the parent method and then extending the return value.

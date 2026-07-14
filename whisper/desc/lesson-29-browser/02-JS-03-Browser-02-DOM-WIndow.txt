@@ -1,0 +1,7 @@
+JavaScript DOM and Window Object
+
+DOM, Window, JavaScript, Browser, Scroll, Overflow
+
+The lecture describes the Document Object Model (DOM) as the structured representation of a web page's content in the browser. JavaScript interacts with this model by reading, manipulating, and updating elements, which are then rendered through the window. Changes to the DOM are immediately visible to the user.
+
+The window object provides properties for the browser window's dimensions and methods for scrolling. When the DOM exceeds the window's visible area, scroll bars appear due to overflow. JavaScript can dynamically adjust the window and DOM to handle such scenarios.

@@ -1,7 +1,7 @@
-Mini-jango: Under-200-line HTTP server
+Mini-Jango: A Minimal Django Web Server for HTTP and Routing
 
-mini-django, http server, url routing, views, django
+mini-jango, django, web server, http, http request, http response, routing, view functions, minimal framework, django internals
 
-Mini-jango is a minimal implementation of Django under 200 lines of Python. It provides a simplified HTTP server for understanding the internal structure of Django.
+Mini-jango is a minimal Django web server implementation with fewer than 200 lines of Python. It was designed to help learners understand Django's internal architecture by illustrating the core HTTP request-response cycle, routing mechanisms, and view functions without the complexity of the full framework.
 
-The framework processes HTTP requests through a URL router that directs them to specific view functions. Each view function receives an HTTP request and returns an HTTP response, with the system handling common errors like 404 not found and 500 internal server errors.
+The framework includes a router (urls.py) that maps HTTP request paths to view functions. Each view function processes an HTTP request and returns an HTTP response, and the server handles common HTTP errors such as 404 not found and 500 internal server errors. This minimal implementation provides a clear example of how Django's abstraction layer works.

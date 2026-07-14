@@ -1,0 +1,7 @@
+JavaScript DOM and Event Handling in Web Browsers
+
+javascript, browser, dom, event, console, debugger
+
+This lecture covers the fundamentals of JavaScript in web browsers, including how it interacts with HTML and the Document Object Model (DOM). It demonstrates the use of `document.write` to output text to the screen, the `alert` function for debugging, and the three primary methods for embedding JavaScript: inline within `html` (using a `script` tag), as event handlers (e.g., `onClick`), or in external `.js` files.
+
+The lecture explains browser debugging techniques, such as using the console for error messages and `console.log` for non-blocking debug output. It also addresses how JavaScript syntax errors halt execution without user notification and the critical role of the browser console in identifying and resolving errors during development.

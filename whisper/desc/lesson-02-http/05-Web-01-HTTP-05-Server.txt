@@ -1,7 +1,7 @@
-Simple HTTP Server and Client in Python Using Sockets
+Simple Python Web Server Using Sockets
 
-python, http, web server, web client, sockets, get request
+Python, web server, sockets, HTTP, GET request
 
-This lecture demonstrates building a simple HTTP server and client in Python. The server listens on port 9000 for incoming HTTP GET requests and returns a fixed "hello world" HTML response. The client sends a GET request to the server running on localhost:9000 and receives the response.
+The lecture implements a minimal Python web server using socket programming that responds to HTTP GET requests with a static "hello world" HTML page.
 
-The implementation uses TCP sockets for communication. The server handles connections in an infinite loop, responding with HTTP 200 OK, content type text/html, and UTF-8 encoded HTML content. The client uses the urllib library to send requests and receive responses.
+The server listens for incoming connections on a port and sends a 200 OK response with UTF-8 encoded HTML content for each GET request. A client application is built to send HTTP GET requests to this server via socket connections.

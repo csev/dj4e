@@ -1,7 +1,7 @@
-HTML Fonts, Colors, and CSS Basics
+HTML/CSS Examples: Fonts, Colors, and Layout Techniques
 
-css, fonts, color codes, hexadecimal, web-safe colors, box model, positioning, z-index, float, anchor tags
+fonts, colors, css, box-model, positioning, z-index, anchor-tags, css-selectors
 
-The lecture covers font handling in HTML, including default font families (serif, sans-serif, monospace, cursive, fantasy), system fonts like Arial, and web fonts with fallbacks. It also explains color specifications such as HTML color names, hexadecimal color codes (e.g., #884411), and web-safe colors. Additionally, the lecture describes anchor tag states (unvisited, visited, hover, active) and basic CSS styling techniques.
+The lecture covers HTML and CSS fundamentals including font management with system and web fonts, fallback strategies, color specifications using hexadecimal codes, and web-safe colors. It also demonstrates anchor tag states such as unvisited, visited, hover, and active.
 
-The lecture details the CSS box model (content, padding, border, margin), positioning methods (relative, absolute, fixed), z-index for overlapping elements, and float for image wrapping. It also covers CSS specificity and the important rule, along with common challenges in debugging overlapping elements.
+The session details CSS layout techniques such as the box model (content, padding, border, margin), floating elements with the clear property, positioning methods (relative, absolute, fixed), and z-index for handling overlapping elements.

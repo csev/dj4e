@@ -1,7 +1,7 @@
-Web Request-Response Cycle Fundamentals
+Web Request-Response Cycle
 
-html, css, javascript, http, request-response-cycle, web-server, browser, socket
+html, http, request-response-cycle, network-sockets, browser, server, css, javascript
 
-This lecture describes the fundamental request-response cycle in web applications. When a user interacts with a web page, the browser sends an HTTP request to a web server, which responds with HTML content that the browser renders using CSS and JavaScript.
+This lecture introduces the request-response cycle as the fundamental communication pattern in web applications. It details how a browser initiates a request to a server and receives a response to render a web page.
 
-The course emphasizes the network protocols and back-end technologies required for building and debugging web applications, including the role of HTTP, web servers, and network sockets.
+The lecture explains the role of network sockets in the request-response process and how browsers interpret HTML, apply CSS, and execute JavaScript to produce the visual representation of the page.

@@ -1,7 +1,7 @@
-HTML Forms: GET vs POST Requests in Django
+HTML Forms and HTTP Methods in Django
 
-HTML forms, GET request, POST request, Django, form data
+html, http, forms, get, post, django
 
-This lecture explains how HTML forms interact with HTTP methods in Django. Form data can be sent via GET requests (appending query parameters to the URL) or POST requests (transmitting form-encoded data in the request body). Django parses both into dictionaries: request.GET for GET data and request.POST for POST data.
+Forms in HTML provide user input fields that can be submitted to a server via HTTP methods. The two primary methods are GET, which appends query parameters to the URL (e.g., ?guess=42), and POST, which sends data in the request body. Django handles both by parsing the data into dictionaries accessible via request.get (for GET parameters) and request.post (for POST parameters).
 
-Best practices dictate that GET requests should be used for read operations (idempotent, bookmarkable) and POST requests for state-changing operations (create, update, delete). This prevents unintended data changes from web crawlers and aligns with the constraint that GET has a character limit (around 2000) which may not support large payloads.
+GET requests are idempotent and intended for read operations, making them suitable for bookmarking and web spiders. POST requests, used for creating or modifying data, should not be bookmarked as they change the system state. This distinction prevents unintended data deletions when web spiders follow links.

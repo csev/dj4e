@@ -1,0 +1,7 @@
+Django Many-to-Many Favorites with AJAX Implementation
+
+Django, many-to-many, AJAX, favorite, views, templates, jQuery, unique_constraint, URL routing, CSRF
+
+This lecture demonstrates a Django implementation for managing user favorites using a many-to-many relationship between `Thing` objects and users. The model includes a unique constraint to ensure each user can favorite a `Thing` only once, preventing duplicate entries. The system uses a `through` model to handle the relationship without additional tables.
+
+The implementation employs AJAX with jQuery to update favorite states without full page refreshes. When a user clicks a favorite button, a POST request is sent to update the database, and the UI dynamically toggles between filled and empty star indicators. Views handle the POST requests with CSRF exemption for simplicity, ensuring only authenticated users can modify favorites.

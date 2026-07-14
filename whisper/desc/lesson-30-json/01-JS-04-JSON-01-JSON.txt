@@ -1,0 +1,7 @@
+AJAX and JSON: Server-Client Data Exchange
+
+ajax, json, server, client, data-exchange, serialization, deserialization, wire-format, request-response, javascript, python
+
+This lecture covers the use of JSON as a data format in the request-response cycle, contrasting it with HTML as the markup format. JSON serves as a wire format for structured data exchange between servers and clients, enabling serialization of data structures from various programming languages.
+
+The lecture demonstrates a Django view that returns a JSON response with content type application/json. This allows client-side JavaScript to process the data and update the document object model.

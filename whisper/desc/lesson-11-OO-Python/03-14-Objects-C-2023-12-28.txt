@@ -1,7 +1,7 @@
-Python Object Life Cycle: Constructors and Destructors
+Python Object Lifecycle: Constructors and Destructors
 
-python, object life cycle, constructor, destructor, instance variables
+Python, object lifecycle, constructor, destructor, instance variables
 
-The lecture explains Python's object life cycle, detailing how objects are created and destroyed. Constructors, named `__init__`, automatically initialize object state when instantiated, while destructors, named `__del__`, handle cleanup when objects are no longer referenced. These special methods allow developers to intervene at critical moments without explicit calls.
+The lecture explains Python's object lifecycle, covering the automatic creation and destruction of objects. It details the constructor method (__init__), which initializes object attributes when an instance is created, and the destructor method (__del__), which is called when an object is no longer in use. The constructor is commonly used for setting initial values, while destructors are rarely utilized.
 
-Multiple instances of a class each maintain independent copies of instance variables. The lecture demonstrates that when a class is instantiated with parameters (e.g., `name`), each instance stores its own values, ensuring changes to one instance do not affect others. This separation is fundamental to object-oriented design in Python.
+The lecture demonstrates how multiple instances of a class each maintain independent copies of instance variables. By defining a constructor with parameters, such as a name attribute, the example shows that each instance (e.g., s and j) has its own state, including a unique value for the instance variable x. The destruction of an object occurs when the reference variable is reassigned, triggering the destructor.

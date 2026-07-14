@@ -1,0 +1,7 @@
+Setting Up GitHub Social Login in Django
+
+Django, GitHub, Social login, OAuth, Social authentication
+
+This lecture details the configuration of GitHub social authentication in Django. It starts with creating a GitHubsettings.py configuration file from the GitHubsettings.dist template and then registering a GitHub OAuth application to obtain client ID and secret credentials.
+
+With the credentials configured in Django settings, the application enables GitHub login. Users are redirected to GitHub for authorization, and upon successful authorization, they are authenticated in the Django application.

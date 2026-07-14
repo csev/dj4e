@@ -1,0 +1,7 @@
+Django Polling Example with AJAX and JSON
+
+Django, AJAX, JSON, polling, fetch, setTimeout, DOM
+
+This lecture demonstrates a Django chat application that uses AJAX polling to fetch and display messages. The example implements a client-side timer using setTimeout to periodically request JSON data from a server, which is then rendered in the browser's DOM.
+
+The implementation uses a polling pattern that sends requests to the server every few seconds. This approach is inefficient for production systems due to high server and network resource usage but effectively illustrates key asynchronous JavaScript concepts and DOM manipulation.

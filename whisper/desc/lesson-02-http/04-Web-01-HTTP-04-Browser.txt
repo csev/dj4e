@@ -1,7 +1,7 @@
 Simple Python HTTP Client with Sockets
 
-Python, Sockets, HTTP, Client, UTF-8, Encoding, Decoding
+python, sockets, http, get, http/1.0, utf-8, browser developer tools
 
-This lecture demonstrates creating a basic HTTP client in Python using socket programming. The client connects to a server (e.g., data.pr4e.org:80), constructs an HTTP GET request in UTF-8 encoding, and transmits it to the server.
+This lecture details a simple Python HTTP client implementation using socket programming. It shows how to connect to a server (e.g., data.pr4e.org on port 80), send an HTTP GET request with the HTTP/1.0 protocol, and receive the server's response.
 
-The implementation includes socket connection, sending encoded data, and receiving the response in chunks. It handles UTF-8 encoding for transmission and decoding for processing, and the lecture notes that this manual approach is less efficient than browser developer tools for debugging web applications.
+The implementation handles UTF-8 encoding for network transmission and decoding for Python's Unicode strings. The lecture notes that this client code serves as a basic debugging tool but emphasizes the use of browser developer tools for inspecting HTTP requests and responses in web development.

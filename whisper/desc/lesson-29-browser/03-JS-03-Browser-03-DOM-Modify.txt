@@ -1,0 +1,7 @@
+JavaScript DOM Manipulation: Changing Elements and Styles
+
+javascript, dom, innerHTML, createElement, appendChild, event listeners, css, style.display
+
+This lecture demonstrates modifying the Document Object Model in JavaScript by changing element content via `innerHTML`. It shows how to select an element using its ID, update its `innerHTML` with a string, and trigger the change with a click event. The browser instantly updates the DOM after the JavaScript execution completes.
+
+The lecture also covers creating new DOM elements using `createElement` and appending them with `appendChild`, and manipulating CSS styles via `style.display`. It includes a practical example of toggling an element's visibility by switching between block and none display values.

@@ -1,7 +1,7 @@
-SQL: History and Database Abstraction
+SQL: Historical Development and Core Principles
 
-SQL, relational databases, database schema, NIST, database abstraction, tape storage
+SQL, database history, NIST, relational databases, schema
 
-Early database systems used tape storage, which lacked random access and required manual nightly processing of transactions. Banks sorted and updated account balances by copying data from physical tapes, a process that could take hours.
+The lecture traces the historical development of databases from tape-based storage systems with sequential access in the early computing era to disk drives that enabled faster data retrieval. This evolution led to the creation of early database models in the 1960s and 1970s, including index sequential and network approaches. The U.S. National Institute of Standards and Technology (NIST) addressed vendor lock-in by establishing a standard for database interoperability.
 
-The U.S. National Institute of Standards and Technology (NIST) standardized SQL in the 1960s and 1970s to prevent vendor lock-in and enable cross-vendor database compatibility. This abstraction layer allows applications to define a schema without concern for physical storage details, supporting systems like SQLite, PostgreSQL, MySQL, and Oracle.
+SQL, initially known as the Simple Query Language, provides a standardized interface for database operations without exposing physical storage mechanisms. The lecture emphasizes that defining a schema, which specifies column types and structures, allows database systems to optimize storage and retrieval efficiently.

@@ -1,0 +1,7 @@
+JavaScript: History, Syntax, and Browser Applications
+
+javascript, browser, dom, c-like syntax, ecmascript, node.js, python, java, c, html, css
+
+JavaScript was created in 1995 by Brennan Icke in 10 days as a programming language for web browsers. It was designed to run within the browser alongside HTML and CSS and uses a C-like syntax with semicolons and curly braces.
+
+This language interacts with the browser's DOM for client-side operations and can be extended to server-side applications using Node.js.

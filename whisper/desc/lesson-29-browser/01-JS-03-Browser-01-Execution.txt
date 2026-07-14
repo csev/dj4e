@@ -1,0 +1,7 @@
+JavaScript Execution Model: Events, DOM, and First-Class Functions
+
+javascript, browser, dom, event handling, first-class functions, cooperative multitasking
+
+JavaScript in browsers operates with a cooperative multitasking model, where code execution is triggered by events rather than waiting for operations to complete. This contrasts with traditional programming environments where the operating system manages blocking and non-blocking operations.
+
+The Document Object Model (DOM) is the structure that JavaScript manipulates to update the webpage. First-class functions are critical for event handling, as they enable event handlers to be defined and executed without immediate invocation, supporting asynchronous behavior.

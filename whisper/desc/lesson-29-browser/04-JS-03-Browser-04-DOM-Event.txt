@@ -1,0 +1,7 @@
+Browser Event Registration: addEventListener vs. onClick and DOMContentLoaded
+
+browser events, event registration, addEventListener, onClick, DOMContentLoaded
+
+The lecture details the browser's event registration system, explaining that `onClick` is a shortcut attribute for attaching click event handlers, while `addEventListener` provides a more explicit and versatile method for registering events with the DOM.
+
+It also covers the `DOMContentLoaded` event, which fires when the initial HTML document is fully loaded and parsed, and demonstrates the window `resize` event for responsive design applications.

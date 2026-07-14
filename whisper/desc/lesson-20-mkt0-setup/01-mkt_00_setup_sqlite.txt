@@ -1,7 +1,7 @@
-Django Marketplace Project Initial Setup
+Django Marketplace Initial Project Setup with Virtual Environment
 
-Django, Marketplace, Virtual Environment, Project Setup, Migrations, Superuser, WSGI
+Django, virtual environment, WSGI, marketplace, migrations, superuser
 
-This lecture details the initial setup steps for a Django project dedicated to the Marketplace assignment. It creates a project named "market" with a separate configuration directory "config" to avoid the "market market" naming pattern. The process includes verifying the Python 3.13 virtual environment, installing Django 5.2, and executing initial migrations.
+This lecture details the initial configuration steps for the Django Marketplace project. It covers creating a new Django project named Market with a configuration directory structure, setting up a Python 3.13 virtual environment, and installing Django 5.2. Key steps include generating and applying migrations, creating a superuser with the username admin, and configuring WSGI to switch from the MySite project to Market.
 
-The tutorial then creates a superuser with the username "admin", updates the WSGI configuration to reference the new project structure, and confirms application functionality by accessing the home page, favicon, and Django admin interface.
+After completing these steps, the Marketplace application runs locally and is accessible via the web server. The setup includes an admin interface for user management and provides the foundation for developing the Marketplace features as specified in the assignment.

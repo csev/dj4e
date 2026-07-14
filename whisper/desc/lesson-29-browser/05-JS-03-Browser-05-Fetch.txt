@@ -1,7 +1,7 @@
 JavaScript Network Events with Fetch and Promises
 
-javascript, fetch api, asynchronous programming, promises, network requests, web development
+JavaScript, network events, fetch, promises, asynchronous
 
-This lecture explains JavaScript network events, focusing on asynchronous request-response cycles. The fetch API initiates network operations by taking a URL and returning a promise that represents the pending response, ensuring code execution never blocks the browser.
+This lecture covers network events in JavaScript, explaining how asynchronous operations are handled when communicating with the network. The fetch API initiates requests, returning a promise that resolves when the request completes.
 
-The example demonstrates fetching `secret.txt`, processing the response (which includes a 200 status code), and updating the DOM with the retrieved text. The response object's `text` method returns another promise that resolves with the file content once received.
+The example demonstrates a promise chain: the initial fetch returns a promise, which is resolved by a then callback. This callback processes the response, retrieves the text via response.text(), and when that promise resolves, the content is set in a DOM element.

@@ -1,0 +1,7 @@
+Crispy Forms: Django Bootstrap 5 Form Rendering
+
+crispy forms, django, bootstrap5, form rendering, template tags
+
+Crispy Forms is a Django library that generates styled HTML and CSS for form rendering using Bootstrap 5. It processes a Django form object through a template tag to produce a visually consistent form without requiring manual HTML or CSS code.
+
+Implementation requires installing the Crispy Forms library and Bootstrap 5 template pack via pip, adding crispy_forms to the installed apps in settings.py, and including the load crispy forms template tag in the template. The form object is then rendered using the pipe operator form | crispy to generate the form with required fields and a submit button.

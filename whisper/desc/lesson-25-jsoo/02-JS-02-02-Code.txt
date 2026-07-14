@@ -1,0 +1,7 @@
+JavaScript Classes: Function-Based Implementation and Instances
+
+javascript, classes, function, this, instance, constructor
+
+JavaScript classes are implemented using the function keyword, forming a function-based template for object creation. The class body defines instance variables and methods, with the this keyword referring to the instance object being constructed.
+
+The constructor function runs during instance creation to initialize attributes. Each instance maintains independent attribute values, ensuring that multiple instances operate with distinct data states when methods are called.

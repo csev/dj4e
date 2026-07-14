@@ -1,7 +1,7 @@
-Django Models: Creating Database Tables with ORM and Migrations
+Django Models: ORM and Migrations
 
-Django models, ORM, migrations, database schema
+Django, ORM, models, migrations, database, SQLite, PostgreSQL, MySQL, CRUD, object-relational-mapping
 
-Django models are Python classes defined in an application's models.py file that map to database tables. These classes extend Django's Model class to define fields such as CharField with a maximum length, enabling the creation of database tables through migrations.
+This lecture reviews the fundamentals of SQL and introduces Django's object-relational mapper (ORM) for database interactions. It explains how to define models in Python using the models.py file, which maps to database tables, and how migrations manage schema evolution across different database backends.
 
-Django migrations create and evolve database schemas across different databases (e.g., SQLite, Postgres, MySQL). The process involves generating migration files via `make migrations` and applying them with `migrate`, ensuring database portability by handling database-specific syntax differences.
+Django's ORM simplifies common database operations such as creating, reading, updating, and deleting records through Python objects. Migrations automatically generate and apply database schema changes, ensuring portability between development (SQLite) and production (PostgreSQL or MySQL) environments without manual SQL.

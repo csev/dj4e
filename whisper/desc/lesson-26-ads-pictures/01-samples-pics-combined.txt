@@ -1,0 +1,7 @@
+Django CRUD Image Upload Implementation
+
+django, crud, image upload, binary field, content type, admin interface, form, multipart/form-data
+
+This lecture demonstrates implementing image uploads in a Django CRUD application. The model includes a binary field for storing image data and a content type field (string) for the MIME type. The admin interface is customized to hide fields that would cause issues with image handling, and form validation uses client-side JavaScript to check file size (under 2 MB).
+
+The application handles file uploads via Django's form processing, with server-side validation to ensure file size and content type. The detail view streams images using stored content type and content length headers, and a simple overlay modal is implemented for larger image viewing with minimal CSS and JavaScript.

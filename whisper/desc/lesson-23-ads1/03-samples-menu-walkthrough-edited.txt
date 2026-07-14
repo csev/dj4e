@@ -1,0 +1,7 @@
+Django Bootstrap Menu Implementation with Template Inheritance
+
+ul, li, div, a, django, bootstrap, template-inheritance, navbar, active-class, gravatar, md5, template-tags, user-authentication
+
+This lecture demonstrates implementing a Bootstrap menu in Django using template inheritance. The menu is defined in a template that extends base_menu.html, which itself inherits from a Bootstrap template. Navigation links are rendered within the navbar block, and the current page is highlighted by applying the active class based on the request path.
+
+The implementation handles user authentication by displaying a Gravatar image for authenticated users. A custom template tag generates a Gravatar URL using an MD5 hash of the user's email address, ensuring the email is not exposed while providing a user-specific avatar image.

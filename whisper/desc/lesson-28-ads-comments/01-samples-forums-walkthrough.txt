@@ -1,0 +1,7 @@
+Django Many-to-Many Relationships with Junction Tables
+
+django, many-to-many, junction table, foreign keys, related_name
+
+This lecture walks through a Django implementation of many-to-many relationships using a junction table. The example application features a forums system where comments are stored in a separate table that connects users and forums via two foreign keys.
+
+The code demonstrates the use of related_name to create an attribute on the user model for accessing comments and covers the view and URL patterns for comment creation and deletion, including a post-redirect pattern for deletion.

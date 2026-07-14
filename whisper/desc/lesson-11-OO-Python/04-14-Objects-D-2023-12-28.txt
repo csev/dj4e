@@ -1,7 +1,7 @@
-Object-Oriented Programming Inheritance Basics
+Inheritance in Object-Oriented Programming
 
-object-oriented programming, inheritance, parent class, child class, subclass, code reuse
+inheritance, parent class, child class, subclass, code reuse
 
-Inheritance is a form of code reuse in object-oriented programming where a new class extends an existing class to inherit its attributes and methods. The lecture illustrates this with the FootballFan class extending the PartyAnimal class, which inherits attributes such as name and the party method while adding a points variable and a touchdown method.
+Inheritance is a mechanism in object-oriented programming where a new class (child) inherits attributes and methods from an existing class (parent). This allows developers to reuse existing code without duplicating functionality.
 
-This parent-child relationship allows the child class to utilize all attributes and methods of the parent class. The lecture also notes that students have been using objects and methods throughout the course without explicitly writing classes, and that inheritance is an advanced concept for later application.
+The lecture demonstrates inheritance with a football fan class that extends the party animal class. The football fan class inherits all attributes and methods of the party animal class and adds a points attribute and a touchdown method that increments the points by seven.

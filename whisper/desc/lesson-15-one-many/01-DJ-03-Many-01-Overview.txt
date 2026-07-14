@@ -1,7 +1,7 @@
-Django Data Modeling: One-to-Many Relationships
+Django Data Modeling: Models, Normalization, and Integer Keys
 
-Django, data modeling, one-to-many, database normalization, model.py, admin.py, integer keys
+django, data modeling, database normalization, model.py, admin.py, integer keys, third normal form
 
-This lecture introduces foundational data modeling concepts in Django, specifically focusing on one-to-many relationships as the first topic. It emphasizes the critical importance of efficient data storage and retrieval, explaining that poor design choices could cause severe performance issues in large-scale applications.
+This lecture focuses on data modeling within Django applications, specifically model.py and admin.py. It discusses the importance of efficient data storage and retrieval, illustrating how poor design could lead to extremely slow operations for large-scale applications. The lecture covers database normalization principles, emphasizing the avoidance of string data replication and the use of integer keys for fast inter-table linking.
 
-The lecture covers database normalization principles, highlighting the avoidance of redundant string data (such as email addresses) by storing each instance once and using integer keys for fast inter-table linking. This approach ensures optimal database performance and scalability.
+Real-world examples include a local library data model, an autograder, and the Sakai learning management system. The lecture explains that database normalization, particularly third normal form, is critical for preventing data duplication and ensuring efficient database operations.

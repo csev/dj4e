@@ -1,7 +1,7 @@
-Cross-Site Request Forgery (CSRF) Security in Web Forms
+Cross-Site Request Forgery (CSRF) in Web Forms
 
-cross-site request forgery, csrf token, session cookies, form security, django
+CSRF, Cross-Site Request Forgery, Web forms, Session tokens, Django
 
-Cross-Site Request Forgery (CSRF) is a security vulnerability that allows attackers to execute unintended actions on a user's behalf by exploiting session cookies. The attack occurs when a user logged into a legitimate site is tricked into submitting a form on a malicious site that targets the same backend server.
+Cross-Site Request Forgery (CSRF) is a security vulnerability where a rogue site tricks a user into submitting form data to a legitimate server without their knowledge. This occurs because the browser automatically sends the user's session cookie with each request, allowing attackers to exploit the victim's authenticated session.
 
-To mitigate CSRF, a unique token is generated per session and stored server-side. This token is included in the form as a hidden field. Upon form submission, the server checks the token against the stored value. Django provides built-in CSRF protection through middleware that automatically handles token generation and validation.
+The defense mechanism generates a unique random token stored in the session. Every form submitted by the legitimate server includes this token in a hidden input field. Upon receiving a form submission, the server checks the token against the session store. If the tokens do not match, the request is rejected. Django provides built-in CSRF protection by default when session middleware is active.

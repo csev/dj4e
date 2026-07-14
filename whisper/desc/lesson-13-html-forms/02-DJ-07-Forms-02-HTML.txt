@@ -1,7 +1,7 @@
-HTML Form Elements and Input Types
+HTML Form Elements and Validation
 
-HTML forms, input types, text field, password field, radio button, checkbox, select, text area, submit button, HTML5 validation
+input, text, password, radio, checkbox, select, html5, validation
 
-This lecture covers fundamental HTML form elements including text fields, password fields, radio buttons, checkboxes, select dropdowns, text areas, and submit buttons. It explains how the 'name' attribute defines key-value pairs for form data submission and the role of the 'id' attribute in associating labels with form fields.
+This lecture covers fundamental HTML form elements including text fields, password fields, radio buttons, checkboxes, dropdown lists, text areas, and submit buttons. It explains how the `name` attribute defines the key for form data submission and the `id` attribute associates labels with fields.
 
-The lecture also details HTML5 input types such as color, date, email, number, and url, which provide client-side validation. Browsers block form submission if any HTML5 validated field is invalid, while older browsers treat these inputs as text fields without validation.
+The lecture also discusses HTML5 input types such as color, date, email, number, and URL, along with their client-side validation. These validations run in the browser before form submission, ensuring data integrity by rejecting invalid inputs.

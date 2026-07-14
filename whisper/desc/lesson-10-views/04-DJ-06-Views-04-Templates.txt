@@ -1,7 +1,7 @@
-Django Templates: Generating HTML from Context
+Django Templates: Rendering and Context
 
-Django, templates, context, variable insertion, double curly braces
+Django, templates, template engine, rendering, context, variable substitution, double curly braces, HTML
 
-Django templates dynamically generate HTML by merging data from a context dictionary with template files. The template engine uses double curly braces syntax (e.g., `{{ variable }}`) to insert context variables into the template structure.
+Django templates provide a mechanism for dynamically generating HTML using a template engine. The process involves passing data in a context (a dictionary) to a template file, which then substitutes variables with double curly braces syntax to produce the final HTML output.
 
-Template names are structured with the application name as a prefix to resolve conflicts across Django applications. For example, a template named detail.html in the app application is referenced as app/detail.html.
+Template names are global across the Django project, so applications prefix template names with their application name to avoid conflicts. The template language also supports conditional logic, as demonstrated in the lecture example.

@@ -1,0 +1,7 @@
+Simple Multi-User Chat Application with Ajax and JSON Polling
+
+ajax, json, polling, django, javascript, fetch
+
+This lecture demonstrates building a simple multi-user chat application using Django and JavaScript. The application implements polling every four seconds to fetch JSON data from a server endpoint, displaying recent messages in a chat interface. Messages entered in one tab appear asynchronously in another tab, with the server returning an array of message text and time indicators.
+
+The server retrieves the latest 10 messages ordered by creation time and formats time intervals using Django's time library. The client-side JavaScript uses the fetch API to poll the server, clears the chat content div, and appends new messages. The lecture highlights JSON's widespread support across programming languages and its long history in web development.

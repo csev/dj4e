@@ -1,0 +1,7 @@
+Django Many-to-Many Relationships with Junction Tables
+
+many-to-many, junction table, through table, one-to-many, Django
+
+Many-to-many relationships cannot be directly modeled in relational databases. The solution involves breaking the relationship into two one-to-many relationships and using a junction table to store connections between entities.
+
+In Django, a many-to-many field creates a junction table and virtual attributes for related objects. The junction table supports on delete cascade for automatic cleanup during deletions, and the data model can specify constraints like one dot dot star (minimum one) or zero dot dot star (minimum zero) for relationships.

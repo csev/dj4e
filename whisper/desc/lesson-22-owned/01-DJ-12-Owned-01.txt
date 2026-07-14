@@ -1,0 +1,7 @@
+Django Owned Rows Implementation Using Inheritance
+
+django, owned rows, inheritance, generic views, user ownership
+
+Django owned rows are database rows that users can view but can only edit or delete if they are the owner. This pattern is essential for applications requiring data ownership, such as classified ad systems.
+
+The implementation uses inheritance to extend Django's generic list view, adding an owner field to conditionally display edit and delete buttons for the current user. This approach avoids code repetition by creating a specialized view class (OwnerListView), though additional security measures (like permission checks) are necessary to prevent unauthorized edits.

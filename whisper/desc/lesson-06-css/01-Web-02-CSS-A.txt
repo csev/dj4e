@@ -1,7 +1,7 @@
-CSS: Styling the Document Object Model
+CSS: Styling HTML in Web Applications
 
-html, css, document-object-model, request-response-cycle, accessibility, css-selectors, browser-compatibility
+css, html, dom, request-response-cycle, styling, webapplications, accessibility
 
-The lecture covers the fundamentals of Cascading Style Sheets (CSS) and their role in the request-response cycle. CSS is applied to the Document Object Model (DOM) to define visual presentation, following the process where browsers fetch HTML, parse it into the DOM, and then apply CSS rules.
+This lecture covers Cascading Style Sheets (CSS) as the layer that styles HTML content in web applications. CSS is fetched during the request-response cycle and applied to the document object model to define visual presentation. The HTML document is parsed into the document object model, which then receives CSS rules to determine the final appearance of the web page.
 
-The lecture emphasizes CSS's importance for browser compatibility and accessibility. It explains that well-structured HTML remains functional without CSS, and the Web Developer plugin by Chris Pedrick is introduced as a tool for CSS debugging. This separation of concerns allows for specialized development roles in web applications.
+The lecture emphasizes CSS's importance for accessibility, noting that pages remain navigable without CSS due to clean HTML structure. This separation of concerns allows back-end developers to generate HTML and front-end designers to apply CSS, enabling efficient web application development.

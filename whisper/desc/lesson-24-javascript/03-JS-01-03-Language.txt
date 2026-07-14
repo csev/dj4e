@@ -1,0 +1,7 @@
+JavaScript Syntax: Comments, Variables, and Numbers
+
+JavaScript, Syntax, Comments, Variables, Numbers, String, Operators, Type Coercion, NaN, Infinity
+
+JavaScript syntax includes two comment styles: multi-line comments using /* ... */ and single-line comments using //. Variable names are case-sensitive and can consist of letters, numbers, underscores, and dollar signs (but should not start with a number). JavaScript ignores whitespace and new lines during parsing, and statements typically end with semicolons as a convention from C-style languages.
+
+JavaScript has a single numeric type (number) that handles floating-point arithmetic. Type coercion occurs automatically in operations, such as adding a number and a string, which may produce NaN (Not a Number) for invalid numeric operations. The typeof operator and strict equality (===) are used for type checking and comparisons.

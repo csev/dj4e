@@ -1,7 +1,7 @@
-Virtual Hosting: One Server for Multiple Domains
+Virtual Hosting: How a Single Server Hosts Multiple Domains
 
-virtual hosting, http, get request, nginx, wsgi, domain name, configuration file, home directory
+virtual hosting, http, host header, domain routing, nginx, wsgi
 
-Virtual hosting enables a single physical server to manage multiple domain names by using the domain specified in the HTTP GET request. This technique allows organizations like Python Anywhere to support numerous websites with minimal hardware resources. The server identifies the correct domain from the request and routes it to the appropriate application.
+Virtual hosting enables a single physical server to host multiple domain names by using the host header in HTTP requests. This technique allows organizations like Python Anywhere to support a large number of users on limited hardware resources.
 
-The implementation typically involves a web server such as nginx, which uses configuration files to map each domain to a specific application directory. The WSGI configuration file, stored outside the user's data space, defines the application's home directory and startup parameters, ensuring isolation between different applications.
+The server software (e.g., nginx) routes requests based on the host header to the appropriate application. In Python Anywhere, the system-managed wsgi configuration file specifies the application's home directory, ensuring each application runs in isolation within the shared server environment.

@@ -1,0 +1,7 @@
+Django Many-to-Many Relationship with Role and Timestamps
+
+many-to-many, through table, foreign keys, created_at, updated_at, role, integer, django
+
+The lecture demonstrates a many-to-many relationship between persons and courses in an educational autograder application. This relationship is implemented using a through table (membership table) that includes foreign keys to persons and courses, along with created_at and updated_at timestamp fields. The role field in the membership table uses integer values to represent predefined roles (learner, teaching assistant, instructor, admin) without string replication.
+
+The example shows how to interact with this model in Django's shell, including creating persons and courses, adding memberships with specific roles, and querying membership data. The integer role system employs a tuple of choices to map integers to role names in the admin interface, ensuring consistent representation and avoiding code duplication.

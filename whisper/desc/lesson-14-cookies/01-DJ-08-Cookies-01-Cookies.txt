@@ -1,7 +1,7 @@
-Cookies and Sessions: Browser vs Server Concepts
+Cookies and Sessions: Browser and Server Concepts
 
-cookies, sessions, browser, server, session cookies, persistent cookies
+cookies, sessions, browser, server, http, django
 
-Cookies are browser-based data segments stored by servers to track user sessions. They are set during initial requests and sent with subsequent requests to the server. Cookies can be session cookies (expiring when the browser closes) or persistent cookies (with defined expiration dates).
+Cookies are a browser-based storage mechanism that allows web servers to track a specific browser session. They are set by the server in response to a request and sent with subsequent requests to maintain state, enabling the server to identify the browser connection without persistent connections.
 
-Sessions are server-side mechanisms that maintain user-specific data across multiple requests. The server uses cookies to link a browser to a session, enabling it to distinguish concurrent connections from different browsers in production environments.
+Cookies can be session cookies, which expire when the browser is closed, or persistent cookies, which have a fixed expiration date. The lecture illustrates how Django handles cookies using request.cookies and sets cookies in response headers, demonstrating the distinction between session and persistent cookies.

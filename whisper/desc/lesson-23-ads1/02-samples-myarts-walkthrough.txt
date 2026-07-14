@@ -1,0 +1,7 @@
+Django model ownership with user-specific rows
+
+django, user model, foreign key, model ownership, generic views, view inheritance
+
+This lecture demonstrates Django's implementation of user-specific model rows. The Article model contains a foreign key field linking to the Django auth.User model, ensuring each instance belongs to a single user. The system uses a reusable ownership pattern that extends generic views to enforce user-specific access.
+
+The owner create view automatically sets the user field to the current authenticated user during form validation. Update and delete views apply a queryset filter to verify ownership before processing requests. This pattern is designed to be used across multiple models without modifying the owner.py file.

@@ -1,0 +1,7 @@
+Object-Oriented Programming Concepts in JavaScript
+
+object-oriented programming, javascript, class, instance, method, first-class functions, inheritance
+
+This lecture explains core object-oriented programming concepts in JavaScript, including classes as blueprints for creating objects, instances as concrete manifestations of these classes, and methods as code that operate on object data. It also covers inheritance through subclasses.
+
+JavaScript supports first-class functions, allowing functions to be treated as data that can be assigned to variables and passed as arguments. This design aligns with Lisp's historical approach to unifying code and data, where functions and other values are treated uniformly.

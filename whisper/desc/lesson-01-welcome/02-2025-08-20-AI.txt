@@ -1,7 +1,7 @@
-AI in Programming Classes: Charles Severance's Approach
+Charles Severance on AI in Programming Courses
 
-programming education, AI tools, curriculum design, zone of proximal development, cumulative exams, auto graders, software development
+programming education, AI integration, zone of proximal development, cumulative exams, auto graders
 
-Charles Severance, a professor at the University of Michigan School of Information, discusses the integration of AI in programming education. He argues that AI is now an essential part of software development and must be used by students to become better programmers. Severance, who teaches large courses such as Python for Everybody (with three million students) and Django for Everybody, emphasizes the importance of programming fundamentals over AI dependency.
+Charles Severance, professor at the University of Michigan School of Information, discusses his approach to using AI in programming education. He emphasizes that AI is now an essential part of software development and students must learn to use it effectively to become better programmers, not avoid it.
 
-His approach includes designing assignments that require synthesizing multiple course concepts, using cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific techniques. Severance observes that AI can handle initial assignments but fails at the "knee of the curve" (around week six), where the complexity increases. This strategy ensures students build foundational skills before using AI effectively.
+Severance's teaching strategy includes breaking course material into small, doable chunks using the zone of proximal development, implementing cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific course techniques. He explains that AI can effectively solve assignments in the early weeks but becomes unable to handle the more complex problems later in the course, requiring students to develop foundational programming skills.

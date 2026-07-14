@@ -1,7 +1,7 @@
-Setting up Django 5.2 environment on Python Anywhere
+Setting Up Django 5.2 on Python Anywhere
 
-Django, Python Anywhere, virtual environment, Django 5.2, requirements.txt, Django project, Django app
+Python Anywhere, Django 5.2, virtual environment, pip, requirements file, wsgi, bashrc, django project
 
-This lecture provides a step-by-step guide for configuring a Django 5.2 environment on Python Anywhere. It covers creating a virtual environment using Python 3.13, installing Django dependencies via requirements.txt, and setting up Python Anywhere web app configurations including source code paths and virtual environment specifications.
+This lecture provides a step-by-step guide for setting up Django 5.2 on Python Anywhere. It covers creating a virtual environment, installing Django and dependencies using pip, and configuring the shell environment via a .bashrc file to persist the virtual environment. The process also includes cloning sample code from the DJ4E repository.
 
-The tutorial demonstrates creating a basic Django project and app, followed by running a simple "Hello DJ4E world" application. The setup ensures the application operates through Python Anywhere's web tab configuration rather than local server commands, with validation steps using Django's check command to verify project integrity.
+The tutorial then configures Python Anywhere's web hosting to run the Django application by specifying the source code directory, working directory, and virtual environment. The WSGI configuration is updated to route traffic to the application, enabling access via a URL without local server commands due to the shared hosting environment.

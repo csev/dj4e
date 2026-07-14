@@ -1,0 +1,7 @@
+JavaScript Control Structures: If Statements, Loops, and Logical Operators
+
+if statement, logical operators, loops, while loop, for loop, break, continue, object iteration
+
+The lecture explains JavaScript control structures, including if statements and logical operators. It describes the use of equality (==), strict equality (===), inequality (!=), logical AND (&&), and logical OR (||) operators, and how blocks (curly braces) define code executed when a condition is true. The lecture also covers multi-way if statements with else if clauses and optional else blocks.
+
+The lecture details while loops (zero-trip loops) and for loops (counted loops), emphasizing the need to manage iteration variables to avoid infinite loops. It explains the break and continue statements, and how to iterate over JavaScript objects (definite loops) versus arrays (counted loops).

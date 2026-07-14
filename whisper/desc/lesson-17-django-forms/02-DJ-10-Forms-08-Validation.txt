@@ -1,0 +1,7 @@
+Django Server-Side Form Validation
+
+django, server-side-validation, form-validation, post-requests, form-objects, error-handling, redirects
+
+This lecture covers server-side form validation in Django. When a form is submitted via POST, the server validates the data against defined rules. If validation fails, the server returns the form with error messages for correction.
+
+The lecture explains how Django form objects process POST data and handle validation errors. Successful submissions result in a redirect to a success page. It also notes that Django returns a 200 status code after POST when no data changes, which can cause double processing if the page is refreshed.
