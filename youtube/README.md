@@ -41,10 +41,14 @@ whisper-media.sh
 # 5. Generate titles/tags/descriptions (Ollama must be running)
 whisper-desc
 
-# 6. Build media.yaml
+# 6. Build media.yaml (AI titles: DJ nn.mm <AI title> (duration))
 bootstrap-media-yaml.py
 
-# 7. Push titles/descriptions to YouTube (optional; OAuth required)
+# 7. Sync titles into lessons.json (Review: stays lessons-only)
+sync-lessons-titles-from-media.py
+
+# 8. Push titles / descriptions / tags to YouTube (optional; OAuth required)
+test-youtube-oauth.py                # once, if needed
 update-youtube-from-media.py         # dry-run
 # update-youtube-from-media.py --apply
 ```
