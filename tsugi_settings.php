@@ -44,6 +44,8 @@ $CFG->setExtension('canvas_assignment_extension', true);
 $CFG->setExtension('django_version', '5.2');
 $CFG->setExtension('django_version_short', '52');
 
+$CFG->setExtension('kaltura_embed', 'https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id={id}');
+
 $CFG->top_menu_callback = function() {
     global $CFG;
     $buildmenu = $CFG->dirroot.'/../buildmenu.php';
