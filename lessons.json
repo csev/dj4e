@@ -2215,6 +2215,7 @@
                     "title": "DJ 17.01 Django Forms: Validation and Template Rendering (13:26)",
                     "project": "DJ-10-Forms-07-FormsPy",
                     "youtube": "bYlgvmAPrp0",
+                    "kaltura_id": "1_e3zatn0h",
                     "media": "lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v"
                 },
                 {
@@ -2222,6 +2223,7 @@
                     "title": "DJ 17.02 Django Server-Side Form Validation (9:13)",
                     "project": "DJ-10-Forms-08-Validation",
                     "youtube": "kRXiMIFKzoQ",
+                    "kaltura_id": "1_dmf98f80",
                     "media": "lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v"
                 },
                 {
@@ -2285,6 +2287,7 @@
                     "title": "DJ 18.01 Django Autos Assignment: Implementing CRUD with Generic Views (36:13)",
                     "project": "samples autos walkthrough",
                     "youtube": "3kHgAE-MidA",
+                    "kaltura_id": "1_6ln6x8q1",
                     "media": "lesson-18-autos/01-samples-autos-walkthrough.mov"
                 },
                 {
@@ -2412,6 +2415,7 @@
                     "title": "Review: DJ 17.01 Django Forms: Validation and Template Rendering (13:26)",
                     "review": true,
                     "youtube": "bYlgvmAPrp0",
+                    "kaltura_id": "1_e3zatn0h",
                     "media": "lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v"
                 },
                 {
@@ -2564,6 +2568,7 @@
                 {
                     "type": "video",
                     "title": "DJ 20.01 Django Marketplace Initial Project Setup with Virtual Environment (9:45)",
+                    "kaltura_id": "1_apzt9xxp",
                     "media": "lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v",
                     "youtube": "9WZHLlOyoXY"
                 },
@@ -2657,18 +2662,21 @@
                     "type": "video",
                     "title": "DJ 22.01 Django Owned Rows Implementation Using Inheritance (6:02)",
                     "youtube": "YTK-Sx4OUqs",
+                    "kaltura_id": "1_v84e17n0",
                     "media": "lesson-22-owned/01-DJ-12-Owned-01.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 22.02 How to Extend Django Generic Edit Views with Method Overrides (10:17)",
                     "youtube": "z4iJ3Njbc9g",
+                    "kaltura_id": "1_ulaazij0",
                     "media": "lesson-22-owned/02-DJ-12-Owned-02.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 22.03 Django Owner Views Implementation with User Authentication (13:03)",
                     "youtube": "hznUKCsk8X8",
+                    "kaltura_id": "1_zx9ll17v",
                     "media": "lesson-22-owned/03-DJ-12-Owned-03.m4v"
                 },
                 {
@@ -2748,18 +2756,21 @@
                     "type": "video",
                     "title": "DJ 23.01 Crispy Forms: Django Bootstrap 5 Form Rendering (9:14)",
                     "youtube": "kQORvrIzsZs",
+                    "kaltura_id": "1_imx4jszv",
                     "media": "lesson-23-ads1/01-samples-crispy-walkthrough-23.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 23.02 Django model ownership with user-specific rows (30:13)",
                     "youtube": "iHvJZ_lvXB4",
+                    "kaltura_id": "1_pdjmuz3x",
                     "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 23.03 Django Bootstrap Menu Implementation with Template Inheritance (14:21)",
                     "youtube": "nuz_zXWoCo8",
+                    "kaltura_id": "1_oq1zk70d",
                     "media": "lesson-23-ads1/03-samples-menu-walkthrough-edited.mov"
                 },
                 {
@@ -2877,12 +2888,14 @@
                     "type": "video",
                     "title": "DJ 24.02 JavaScript DOM and Event Handling in Web Browsers (14:02)",
                     "youtube": "wnUhEMhEeDs",
+                    "kaltura_id": "1_pc5ff9mw",
                     "media": "lesson-24-javascript/02-JS-01-02-Browser.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 24.03 JavaScript Syntax: Comments, Variables, and Numbers (16:57)",
                     "youtube": "BtIhwBPeyp4",
+                    "kaltura_id": "1_m1ni5vvv",
                     "media": "lesson-24-javascript/03-JS-01-03-Language.m4v"
                 },
                 {
@@ -2895,6 +2908,7 @@
                     "type": "video",
                     "title": "DJ 24.05 JavaScript Control Structures: If Statements, Loops, and Logical Operators (6:37)",
                     "youtube": "XtKhAo9IO5Q",
+                    "kaltura_id": "1_itcm1pzs",
                     "media": "lesson-24-javascript/05-JS-01-05-If-Loops.m4v"
                 },
                 {
@@ -2977,12 +2991,14 @@
                     "type": "video",
                     "title": "DJ 25.01 Object-Oriented Programming Concepts in JavaScript (4:20)",
                     "youtube": "N_ZB9VnXDWo",
+                    "kaltura_id": "1_jggoaaix",
                     "media": "lesson-25-jsoo/01-JS-02-01-Overview.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 25.02 JavaScript Classes: Function-Based Implementation and Instances (13:13)",
                     "youtube": "DLWYj1_j1Is",
+                    "kaltura_id": "1_01ef84yz",
                     "media": "lesson-25-jsoo/02-JS-02-02-Code.m4v"
                 },
                 {
@@ -3719,6 +3735,7 @@
                     "title": "Review: DJ 23.02 Django model ownership with user-specific rows (30:13)",
                     "review": true,
                     "youtube": "iHvJZ_lvXB4",
+                    "kaltura_id": "1_pdjmuz3x",
                     "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
@@ -4502,18 +4519,21 @@
                     "type": "video",
                     "title": "DJ 23.01 Crispy Forms: Django Bootstrap 5 Form Rendering (9:14)",
                     "youtube": "kQORvrIzsZs",
+                    "kaltura_id": "1_imx4jszv",
                     "media": "lesson-23-ads1/01-samples-crispy-walkthrough-23.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 23.02 Django model ownership with user-specific rows (30:13)",
                     "youtube": "iHvJZ_lvXB4",
+                    "kaltura_id": "1_pdjmuz3x",
                     "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 23.03 Django Bootstrap Menu Implementation with Template Inheritance (14:21)",
                     "youtube": "nuz_zXWoCo8",
+                    "kaltura_id": "1_oq1zk70d",
                     "media": "lesson-23-ads1/03-samples-menu-walkthrough-edited.mov"
                 },
                 {
@@ -4974,6 +4994,7 @@
                     "title": "Review: DJ 23.02 Django model ownership with user-specific rows (30:13)",
                     "review": true,
                     "youtube": "iHvJZ_lvXB4",
+                    "kaltura_id": "1_pdjmuz3x",
                     "media": "lesson-23-ads1/02-samples-myarts-walkthrough.mov"
                 },
                 {

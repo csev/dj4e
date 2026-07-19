@@ -16,7 +16,7 @@
  even if you love Python.
  So JavaScript is an interesting language
  in that it was built very quickly in 10 days in 1995
- by a fellow named Brennan Icke.
+ by a fellow named Brendan Eich.
  Brennan was a PhD in physics,
  and he knew a lot about programming languages
  and formal languages and how to build compilers really fast.

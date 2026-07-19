@@ -15,6 +15,7 @@ djfree samples => dj4e-samples
 djfree-samples => dj4e-samples
 MyArts article => myarts.Article
 myarts article => myarts.Article
+Brennan Icke => Brendan Eich
 mini-jango => mini-django
 Mini-Jango => Mini-Django
 www.djfree.com => www.dj4e.com
