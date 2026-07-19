@@ -1180,7 +1180,7 @@ entries:
   lesson-26-ads-pictures/01-samples-pics-combined.mov:
     title: DJ 26.01 Django CRUD Image Upload Implementation (33:06)
     youtube_id: tanl9CthvHE
-    kaltura_id: null
+    kaltura_id: 1_2ydqy05m
     size: 808848381
     md5: ea597d2a7dde53beb59f5191d11d4c70
     duration: 1986
@@ -1195,7 +1195,7 @@ entries:
   lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v:
     title: 'DJ 27.01 Django Data Modeling: Many-to-Many Relationships (5:34)'
     youtube_id: JI4ZOFOubLY
-    kaltura_id: null
+    kaltura_id: 1_ybkf3k7m
     size: 192524578
     md5: f86acaffa8c1b6dee537a180469cc6d3
     duration: 334
@@ -1210,7 +1210,7 @@ entries:
   lesson-27-many-many/02-DJ-04-Many-02-Many.m4v:
     title: DJ 27.02 Django Many-to-Many Relationships with Junction Tables (12:35)
     youtube_id: gf2-J9YOMcc
-    kaltura_id: null
+    kaltura_id: 1_p0zyh97c
     size: 305034109
     md5: c2cfb78b5e165d2dc06f7f087e2f0bee
     duration: 755
@@ -1225,7 +1225,7 @@ entries:
   lesson-27-many-many/03-DJ-04-Many-03-Course.m4v:
     title: DJ 27.03 Django Many-to-Many Relationship with Role and Timestamps (8:38)
     youtube_id: kY_1a057phM
-    kaltura_id: null
+    kaltura_id: 1_7j9qsmaa
     size: 197590682
     md5: 7891d10d5ca6801a6733f33c1f06d93f
     duration: 518
