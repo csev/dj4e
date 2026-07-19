@@ -775,7 +775,7 @@ entries:
   lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v:
     title: 'DJ 14.01 Cookies and Sessions: Browser and Server Concepts (9:43)'
     youtube_id: C75IW38hKI8
-    kaltura_id: null
+    kaltura_id: 1_iem44hof
     size: 323914098
     md5: 17ec8a595445e5add1f4ee5584a3406a
     duration: 583
@@ -790,7 +790,7 @@ entries:
   lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v:
     title: 'DJ 14.02 Django Sessions: Session Cookies and Storage (12:33)'
     youtube_id: RjykNmVdcgI
-    kaltura_id: null
+    kaltura_id: 1_8n7xpvz5
     size: 413985349
     md5: e347591b8cbcacf521e0023fff03c820
     duration: 753
@@ -805,7 +805,7 @@ entries:
   lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v:
     title: 'DJ 15.01 Django Data Modeling: Models, Normalization, and Integer Keys (5:52)'
     youtube_id: vgyYEE7XDzw
-    kaltura_id: null
+    kaltura_id: 1_zzm8kekx
     size: 240192203
     md5: e73c1e6dc17ad84471f0422a6b8cf9e4
     duration: 352
@@ -820,7 +820,7 @@ entries:
   lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v:
     title: DJ 15.02 Avoiding Data Replication in Spreadsheet Models (8:36)
     youtube_id: JCQYxILYNIE
-    kaltura_id: null
+    kaltura_id: 1_58btj8cq
     size: 172907743
     md5: b88eda3b177930896b411a4c31d916b8
     duration: 516
@@ -835,7 +835,7 @@ entries:
   lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v:
     title: DJ 15.03 Representing Database Links with Primary and Foreign Keys (2:46)
     youtube_id: xmyE-zQaBEI
-    kaltura_id: null
+    kaltura_id: 1_3t0sx2qr
     size: 143069593
     md5: b04fe0304ec00d45fdc57193bf9f9fd3
     duration: 166
@@ -850,7 +850,7 @@ entries:
   lesson-15-one-many/04-DJ-03-Many-04-Django.m4v:
     title: 'DJ 15.04 Django Data Models: Foreign Keys and Migrations (9:56)'
     youtube_id: 9t-bP963_jY
-    kaltura_id: null
+    kaltura_id: 1_4svbt1c2
     size: 279629253
     md5: 5cb21018f0db46c210bfa8e00d94b47f
     duration: 596
@@ -865,7 +865,7 @@ entries:
   lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v:
     title: 'DJ 15.05 Django Shell: Creating and Saving Model Objects with Foreign Keys (7:45)'
     youtube_id: aGtY4xkirsE
-    kaltura_id: null
+    kaltura_id: 1_4xt4niup
     size: 282862227
     md5: 0296bcedb356e69fa698d46c03cd74d0
     duration: 465
@@ -880,7 +880,7 @@ entries:
   lesson-16-users/01-DJ-09-Login-01-Users.m4v:
     title: DJ 16.01 Django Superuser Creation and Authentication Basics (3:45)
     youtube_id: E_X5Kr6xmNY
-    kaltura_id: null
+    kaltura_id: 1_n0351rh1
     size: 101590052
     md5: f8ca22c3dd55d403ec994f914f8e9035
     duration: 225
@@ -895,7 +895,7 @@ entries:
   lesson-16-users/02-DJ-09-Login-02-Urls.m4v:
     title: 'DJ 16.02 Django User Login and Logout (7:23)'
     youtube_id: tNofsgLH7c4
-    kaltura_id: null
+    kaltura_id: 1_5vlbeb12
     size: 173073801
     md5: c907a7b8a9208e44a888bcdf39875d9e
     duration: 443
@@ -910,7 +910,7 @@ entries:
   lesson-16-users/03-DJ-09-Login-03-Views.m4v:
     title: 'DJ 16.03 Django Login Page Template and Authentication Mixins (10:16)'
     youtube_id: n5Xwqz1IJck
-    kaltura_id: null
+    kaltura_id: 1_3ivsxf01
     size: 330227948
     md5: 16cdc0d21ba48a747fefb00d523d1354
     duration: 616

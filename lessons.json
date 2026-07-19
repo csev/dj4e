@@ -1832,6 +1832,7 @@
                     "title": "DJ 14.01 Cookies and Sessions: Browser and Server Concepts (9:43)",
                     "project": "DJ-08-Cookies-01-Cookies",
                     "youtube": "C75IW38hKI8",
+                    "kaltura_id": "1_iem44hof",
                     "media": "lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v"
                 },
                 {
@@ -1839,6 +1840,7 @@
                     "title": "DJ 14.02 Django Sessions: Session Cookies and Storage (12:33)",
                     "project": "DJ-08-Cookies-02-Sessions",
                     "youtube": "RjykNmVdcgI",
+                    "kaltura_id": "1_8n7xpvz5",
                     "media": "lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v"
                 },
                 {
@@ -1964,6 +1966,7 @@
                     "type": "video",
                     "title": "DJ 15.01 Django Data Modeling: Models, Normalization, and Integer Keys (5:52)",
                     "youtube": "vgyYEE7XDzw",
+                    "kaltura_id": "1_zzm8kekx",
                     "project": "DJ 03 Many 01 Overview",
                     "media": "lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v"
                 },
@@ -1971,6 +1974,7 @@
                     "type": "video",
                     "title": "DJ 15.02 Avoiding Data Replication in Spreadsheet Models (8:36)",
                     "youtube": "JCQYxILYNIE",
+                    "kaltura_id": "1_58btj8cq",
                     "project": "DJ 03 Many 02 Replication",
                     "media": "lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v"
                 },
@@ -1978,6 +1982,7 @@
                     "type": "video",
                     "title": "DJ 15.03 Representing Database Links with Primary and Foreign Keys (2:46)",
                     "youtube": "xmyE-zQaBEI",
+                    "kaltura_id": "1_3t0sx2qr",
                     "project": "DJ 03 Many 03 Physical",
                     "media": "lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v"
                 },
@@ -1985,6 +1990,7 @@
                     "type": "video",
                     "title": "DJ 15.04 Django Data Models: Foreign Keys and Migrations (9:56)",
                     "youtube": "9t-bP963_jY",
+                    "kaltura_id": "1_4svbt1c2",
                     "project": "DJ 03 Many 04 Django",
                     "media": "lesson-15-one-many/04-DJ-03-Many-04-Django.m4v"
                 },
@@ -1992,6 +1998,7 @@
                     "type": "video",
                     "title": "DJ 15.05 Django Shell: Creating and Saving Model Objects with Foreign Keys (7:45)",
                     "youtube": "aGtY4xkirsE",
+                    "kaltura_id": "1_4xt4niup",
                     "notes": "revised 2021-01 truncated reference to m-2-m at end formerly ZdLpAtfWfZk",
                     "project": "DJ 03 Many 05 Shell",
                     "media": "lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v"
@@ -2128,6 +2135,7 @@
                     "title": "DJ 16.01 Django Superuser Creation and Authentication Basics (3:45)",
                     "project": "DJ-09-Login-01-Users",
                     "youtube": "E_X5Kr6xmNY",
+                    "kaltura_id": "1_n0351rh1",
                     "media": "lesson-16-users/01-DJ-09-Login-01-Users.m4v"
                 },
                 {
@@ -2135,6 +2143,7 @@
                     "title": "DJ 16.02 Django User Login and Logout (7:23)",
                     "project": "DJ-09-Login-02-Urls",
                     "youtube": "tNofsgLH7c4",
+                    "kaltura_id": "1_5vlbeb12",
                     "media": "lesson-16-users/02-DJ-09-Login-02-Urls.m4v"
                 },
                 {
@@ -2142,6 +2151,7 @@
                     "title": "DJ 16.03 Django Login Page Template and Authentication Mixins (10:16)",
                     "project": "DJ-09-Login-03-Views",
                     "youtube": "n5Xwqz1IJck",
+                    "kaltura_id": "1_3ivsxf01",
                     "media": "lesson-16-users/03-DJ-09-Login-03-Views.m4v"
                 },
                 {
@@ -2482,6 +2492,7 @@
                     "review": true,
                     "project": "DJ-08-Cookies-02-Sessions",
                     "youtube": "RjykNmVdcgI",
+                    "kaltura_id": "1_8n7xpvz5",
                     "media": "lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v"
                 },
                 {
@@ -2490,6 +2501,7 @@
                     "review": true,
                     "project": "DJ-09-Login-03-Views",
                     "youtube": "n5Xwqz1IJck",
+                    "kaltura_id": "1_3ivsxf01",
                     "media": "lesson-16-users/03-DJ-09-Login-03-Views.m4v"
                 },
                 {
