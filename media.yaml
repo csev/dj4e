@@ -1240,7 +1240,7 @@ entries:
   lesson-28-ads-comments/01-samples-forums-walkthrough.mov:
     title: DJ 28.01 Django Many-to-Many Relationships with Junction Tables (25:28)
     youtube_id: mgcj3V56X-A
-    kaltura_id: null
+    kaltura_id: 1_vbq4r6lq
     size: 425926829
     md5: d62ffe15f846107fa5d49942fbf34970
     duration: 1528
@@ -1255,7 +1255,7 @@ entries:
   lesson-29-browser/01-JS-03-Browser-01-Execution.m4v:
     title: 'DJ 29.01 JavaScript Execution Model: Events, DOM, and First-Class Functions (8:24)'
     youtube_id: tkZcNu-RGQA
-    kaltura_id: null
+    kaltura_id: 1_d3sabfhl
     size: 182065940
     md5: aabf440bc42ab158818ee4f5454a079b
     duration: 504
@@ -1270,7 +1270,7 @@ entries:
   lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v:
     title: DJ 29.02 JavaScript DOM and Window Object (5:40)
     youtube_id: dPpGAYZGrgs
-    kaltura_id: null
+    kaltura_id: 1_2os72zps
     size: 194913745
     md5: 1b8b30ac381829c2788231d5c3d834f4
     duration: 340
@@ -1285,7 +1285,7 @@ entries:
   lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v:
     title: 'DJ 29.03 JavaScript DOM Manipulation: Changing Elements and Styles (8:24)'
     youtube_id: x-TaJHWs4nU
-    kaltura_id: null
+    kaltura_id: 1_ge0c2npu
     size: 185017199
     md5: 3cafca8dee0cec70a274eab4774fa4d8
     duration: 504
@@ -1300,7 +1300,7 @@ entries:
   lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v:
     title: 'DJ 29.04 Browser Event Registration: addEventListener vs. onClick and DOMContentLoaded (7:54)'
     youtube_id: _QVcbmGqm2o
-    kaltura_id: null
+    kaltura_id: 1_ivoc5vwn
     size: 305324921
     md5: be22cb3be0e3b17461561e8015c04750
     duration: 474
@@ -1315,7 +1315,7 @@ entries:
   lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v:
     title: DJ 29.05 JavaScript Network Events with Fetch and Promises (6:26)
     youtube_id: m1MBEktyC7U
-    kaltura_id: null
+    kaltura_id: 1_v50qafql
     size: 200555363
     md5: 5396a3f71afeece6b601041990df6166
     duration: 386
@@ -1330,7 +1330,7 @@ entries:
   lesson-29-browser/06-JS-03-Browser-06-WC.m4v:
     title: DJ 29.06 Creating Custom Elements with LitElement (11:05)
     youtube_id: ZEQBZ_r2pvQ
-    kaltura_id: null
+    kaltura_id: 1_mtslochd
     size: 423914776
     md5: 236f85c68284f53428b588273eee5236
     duration: 665
