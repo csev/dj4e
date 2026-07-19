@@ -475,7 +475,7 @@ entries:
   lesson-09-mvc/01-DJ-05-MVC.m4v:
     title: DJ 09.01 Model-View-Controller Pattern in Web Development (7:07)
     youtube_id: XvWG5KMncOU
-    kaltura_id: null
+    kaltura_id: 1_io5sca3j
     size: 274340249
     md5: 634d7df2b7c8b8a8eebbc5868f0faab7
     duration: 427
@@ -490,7 +490,7 @@ entries:
   lesson-10-views/01-DJ-06-Views-01-Urls.m4v:
     title: 'DJ 10.01 Django Views and Templates: Application Output (6:59)'
     youtube_id: AQFC13D2mRM
-    kaltura_id: null
+    kaltura_id: 1_ls59lpcv
     size: 285504305
     md5: 2b1fd4e24a27be6bffcc9d17c85cd08b
     duration: 419
@@ -505,7 +505,7 @@ entries:
   lesson-10-views/02-DJ-06-Views-02-Views.m4v:
     title: 'DJ 10.02 Django Template Views and Request Objects (6:19)'
     youtube_id: 9Qk4vJMssMo
-    kaltura_id: null
+    kaltura_id: 1_ee6q7w4k
     size: 160577454
     md5: abf0aabff173f44183e48a00aa8568b6
     duration: 379
@@ -520,7 +520,7 @@ entries:
   lesson-10-views/03-DJ-06-Views-03-Detail.m4v:
     title: DJ 10.03 XSS prevention with HTML escaping in Django (15:36)
     youtube_id: SAAWE4Hz6Mk
-    kaltura_id: null
+    kaltura_id: 1_jlx4suin
     size: 330070099
     md5: 8f3c2418bb0a059dd1b98ab8bc2786fe
     duration: 936
@@ -535,7 +535,7 @@ entries:
   lesson-10-views/04-DJ-06-Views-04-Templates.m4v:
     title: 'DJ 10.04 Django Templates: Rendering and Context (10:05)'
     youtube_id: mTvWrpMGWBA
-    kaltura_id: null
+    kaltura_id: 1_rr28mcvn
     size: 296530066
     md5: 615c03b6763272b3d6ff7a95f07ce67c
     duration: 605
@@ -550,7 +550,7 @@ entries:
   lesson-10-views/05-DJ-06-Views-05-DTL.m4v:
     title: 'DJ 10.05 Django Template Language: Variable Substitution and Automatic Escaping (10:59)'
     youtube_id: teL44ugGpSs
-    kaltura_id: null
+    kaltura_id: 1_wcl2tubu
     size: 409350814
     md5: 49b9e017a0b7a96190ffa9651abce141
     duration: 659
@@ -565,7 +565,7 @@ entries:
   lesson-10-views/06-DJ-06-Views-06-Inherit.m4v:
     title: 'DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)'
     youtube_id: IMgml67lH9Y
-    kaltura_id: null
+    kaltura_id: 1_svw6mc86
     size: 184307858
     md5: 1932106873247ce98b686b95d7e34085
     duration: 365
@@ -580,7 +580,7 @@ entries:
   lesson-10-views/07-DJ-06-Views-07-Reverse.m4v:
     title: 'DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)'
     youtube_id: YT60BZJjySg
-    kaltura_id: null
+    kaltura_id: 1_vd9ipruz
     size: 396011695
     md5: 648d7ec42f2a8087b2db7293a07af059
     duration: 772

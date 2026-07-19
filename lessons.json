@@ -958,6 +958,7 @@
                 {
                     "type": "video",
                     "title": "DJ 09.01 Model-View-Controller Pattern in Web Development (7:07)",
+                    "kaltura_id": "1_io5sca3j",
                     "media": "lesson-09-mvc/01-DJ-05-MVC.m4v",
                     "youtube": "XvWG5KMncOU",
                     "project": "DJ 05 MVC"
@@ -1041,6 +1042,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.01 Django Views and Templates: Application Output (6:59)",
+                    "kaltura_id": "1_ls59lpcv",
                     "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v",
                     "youtube": "AQFC13D2mRM",
                     "project": "DJ 06 Views 01 Urls"
@@ -1048,6 +1050,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.02 Django Template Views and Request Objects (6:19)",
+                    "kaltura_id": "1_ee6q7w4k",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v",
                     "youtube": "9Qk4vJMssMo",
                     "project": "DJ 06 Views 02 Views"
@@ -1055,6 +1058,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.03 XSS prevention with HTML escaping in Django (15:36)",
+                    "kaltura_id": "1_jlx4suin",
                     "media": "lesson-10-views/03-DJ-06-Views-03-Detail.m4v",
                     "youtube": "SAAWE4Hz6Mk",
                     "project": "DJ 06 Views 03 Detail"
@@ -1062,6 +1066,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.04 Django Templates: Rendering and Context (10:05)",
+                    "kaltura_id": "1_rr28mcvn",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v",
                     "youtube": "mTvWrpMGWBA",
                     "project": "DJ 06 Views 04 Templates"
@@ -1069,6 +1074,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.05 Django Template Language: Variable Substitution and Automatic Escaping (10:59)",
+                    "kaltura_id": "1_wcl2tubu",
                     "media": "lesson-10-views/05-DJ-06-Views-05-DTL.m4v",
                     "youtube": "teL44ugGpSs",
                     "project": "DJ 06 Views 05 DTL"
@@ -1076,6 +1082,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)",
+                    "kaltura_id": "1_svw6mc86",
                     "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v",
                     "youtube": "IMgml67lH9Y",
                     "project": "DJ 06 Views 06 Inherit"
@@ -1083,6 +1090,7 @@
                 {
                     "type": "video",
                     "title": "DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)",
+                    "kaltura_id": "1_vd9ipruz",
                     "media": "lesson-10-views/07-DJ-06-Views-07-Reverse.m4v",
                     "youtube": "YT60BZJjySg",
                     "project": "DJ 06 Views 07 Reverse"
@@ -1477,6 +1485,7 @@
                     "title": "Review: DJ 10.01 Django Views and Templates: Application Output (6:59)",
                     "review": true,
                     "youtube": "AQFC13D2mRM",
+                    "kaltura_id": "1_ls59lpcv",
                     "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v"
                 },
                 {
@@ -1484,6 +1493,7 @@
                     "title": "Review: DJ 10.02 Django Template Views and Request Objects (6:19)",
                     "review": true,
                     "youtube": "9Qk4vJMssMo",
+                    "kaltura_id": "1_ee6q7w4k",
                     "project": "DJ 06 Views 02 Views",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
@@ -1492,6 +1502,7 @@
                     "title": "Review: DJ 10.04 Django Templates: Rendering and Context (10:05)",
                     "review": true,
                     "youtube": "mTvWrpMGWBA",
+                    "kaltura_id": "1_rr28mcvn",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
@@ -2331,6 +2342,7 @@
                     "title": "Review: DJ 10.01 Django Views and Templates: Application Output (6:59)",
                     "review": true,
                     "youtube": "AQFC13D2mRM",
+                    "kaltura_id": "1_ls59lpcv",
                     "media": "lesson-10-views/01-DJ-06-Views-01-Urls.m4v"
                 },
                 {
@@ -2338,6 +2350,7 @@
                     "title": "Review: DJ 10.02 Django Template Views and Request Objects (6:19)",
                     "review": true,
                     "youtube": "9Qk4vJMssMo",
+                    "kaltura_id": "1_ee6q7w4k",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
                 {
@@ -2345,6 +2358,7 @@
                     "title": "Review: DJ 10.04 Django Templates: Rendering and Context (10:05)",
                     "review": true,
                     "youtube": "mTvWrpMGWBA",
+                    "kaltura_id": "1_rr28mcvn",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
                 {
@@ -2352,6 +2366,7 @@
                     "title": "Review: DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)",
                     "review": true,
                     "youtube": "IMgml67lH9Y",
+                    "kaltura_id": "1_svw6mc86",
                     "media": "lesson-10-views/06-DJ-06-Views-06-Inherit.m4v"
                 },
                 {
@@ -2359,6 +2374,7 @@
                     "title": "Review: DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)",
                     "review": true,
                     "youtube": "YT60BZJjySg",
+                    "kaltura_id": "1_vd9ipruz",
                     "media": "lesson-10-views/07-DJ-06-Views-07-Reverse.m4v"
                 },
                 {
@@ -2425,6 +2441,7 @@
                     "title": "Review: DJ 10.02 Django Template Views and Request Objects (6:19)",
                     "review": true,
                     "youtube": "9Qk4vJMssMo",
+                    "kaltura_id": "1_ee6q7w4k",
                     "project": "DJ 06 Views 02 Views",
                     "media": "lesson-10-views/02-DJ-06-Views-02-Views.m4v"
                 },
@@ -2433,6 +2450,7 @@
                     "title": "Review: DJ 10.04 Django Templates: Rendering and Context (10:05)",
                     "review": true,
                     "youtube": "mTvWrpMGWBA",
+                    "kaltura_id": "1_rr28mcvn",
                     "project": "DJ 06 Views 04 Templates",
                     "media": "lesson-10-views/04-DJ-06-Views-04-Templates.m4v"
                 },
