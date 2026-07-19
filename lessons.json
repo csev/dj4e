@@ -407,6 +407,7 @@
                     "title": "DJ 11.01 Python Objects Terminology Explained (10:40)",
                     "youtube_preplus": "u9xZE5t9Y30",
                     "youtube": "MafXTB8UXIg",
+                    "kaltura_id": "1_vvmki3m0",
                     "media": "lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v"
                 },
                 {
@@ -414,6 +415,7 @@
                     "title": "DJ 11.02 Python Classes, Objects, and the Self Keyword (8:21)",
                     "youtube_preplud": "xYSY7JwpqTM",
                     "youtube": "cBgtQK6vhN4",
+                    "kaltura_id": "1_upm89fy3",
                     "media": "lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v",
                     "youtube-2016": "b2vc5uzUfoE"
                 },
@@ -422,6 +424,7 @@
                     "title": "DJ 11.03 Python Object Lifecycle: Constructors and Destructors (6:09)",
                     "youtube_preplus": "7A5PEOK-AF0",
                     "youtube": "QSaHfuMf5QI",
+                    "kaltura_id": "1_oa32nueq",
                     "media": "lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v",
                     "youtube-2016": "bal0Fv6QE9w"
                 },
@@ -430,6 +433,7 @@
                     "title": "DJ 11.04 Inheritance in Object-Oriented Programming (7:34)",
                     "youtube_preplus": "VzVaj8orzOE",
                     "youtube": "cOf7g_E2G8g",
+                    "kaltura_id": "1_gukz6d1c",
                     "media": "lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v",
                     "youtube-2016": "EE9PaHPPm2w"
                 },
@@ -437,6 +441,7 @@
                     "type": "video",
                     "title": "DJ 11.05 Python Variables Are Pointers, Not Drawers in CPython (7:29)",
                     "youtube": "zoD2GY11dcY",
+                    "kaltura_id": "1_jpi8vnmv",
                     "media": "lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v"
                 },
                 {
@@ -1396,6 +1401,7 @@
                     "type": "video",
                     "title": "DJ 12.01 Django Generic Views: One Line Code for Reusable Model Views (16:28)",
                     "youtube": "uPRabryhv5k",
+                    "kaltura_id": "1_jmjqo7ty",
                     "project": "DJ 07 Views 08 Generic",
                     "media": "lesson-12-generic/01-DJ-06-Views-08-Generic.m4v"
                 },
@@ -2382,6 +2388,7 @@
                     "title": "Review: DJ 12.01 Django Generic Views: One Line Code for Reusable Model Views (16:28)",
                     "review": true,
                     "youtube": "uPRabryhv5k",
+                    "kaltura_id": "1_jmjqo7ty",
                     "media": "lesson-12-generic/01-DJ-06-Views-08-Generic.m4v"
                 },
                 {
