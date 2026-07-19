@@ -75,6 +75,7 @@
                 {
                     "type": "video",
                     "title": "DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)",
+                    "kaltura_id": "1_m3r8zrvl",
                     "media": "lesson-03-install/01-paw_install52_new.m4v",
                     "FCP": "DJ4E-Demos/01_paw_install52_new/01_paw_install52_new",
                     "youtube": "Aba5ZCfua8k"
@@ -82,6 +83,7 @@
                 {
                     "type": "video",
                     "title": "DJ 03.02 Django Autograder: Checking Student Applications (10:42)",
+                    "kaltura_id": "1_rwh6tn83",
                     "media": "lesson-03-install/02-DJ-00-AutoGrader.m4v",
                     "FCP": "DJ4E/DJ-00-AutoGrader/DJ-00-AutoGrader",
                     "youtube": "zQvzXkiwILM"
@@ -90,11 +92,13 @@
                     "type": "video",
                     "title": "DJ 03.03 Django Application Structure Overview (7:04)",
                     "youtube": "jmX27FrCqqs",
+                    "kaltura_id": "1_9vivtmhy",
                     "media": "lesson-03-install/03-DJ-01-Hosting-01-1080.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Tracebacks (19:38)",
+                    "kaltura_id": "1_mye8edg3",
                     "media": "lesson-03-install/04-paw_install_errors_52.m4v",
                     "todo": "Re-record for 2026",
                     "youtube": "IYH_BkpHf3s"
@@ -198,6 +202,7 @@
                 {
                     "type": "video",
                     "title": "DJ 04.01 Linux Shell Commands for Django Developers (18:27)",
+                    "kaltura_id": "1_wm73qac5",
                     "media": "lesson-04-shell/01-01_paw_shell.m4v",
                     "todo": "Re-record for 2026",
                     "FCP": "Shell-01-DJ52",
@@ -276,12 +281,14 @@
                 {
                     "type": "video",
                     "title": "DJ 07.01 SQL: Historical Development and Core Principles (18:57)",
+                    "kaltura_id": "1_is9piyqj",
                     "media": "lesson-07-sql/01-SQL-01-Basic-01.m4v",
                     "youtube": "C1QXYMNTEVs"
                 },
                 {
                     "type": "video",
                     "title": "DJ 07.02 SQLite Basic SQL Commands: Create, Insert, Update, Delete (11:44)",
+                    "kaltura_id": "1_c92qnkpc",
                     "media": "lesson-07-sql/02-SQL-01-Basic-02.m4v",
                     "note": "Audio is messed up in FCPX",
                     "youtube": "wtU7Pp6VFoE"
@@ -289,6 +296,7 @@
                 {
                     "type": "video",
                     "title": "DJ 07.03 SQLite Command Line: Basic Table Creation and Queries (8:39)",
+                    "kaltura_id": "1_g8otnnv4",
                     "media": "lesson-07-sql/03-sql-01-basic.m4v",
                     "youtube": "2Or6_sSyl7c"
                 },
@@ -521,6 +529,7 @@
                 {
                     "type": "video",
                     "title": "DJ 08.01 Django Models: ORM and Migrations (19:59)",
+                    "kaltura_id": "1_55pyvf75",
                     "media": "lesson-08-models/01-DJ-02-Models.m4v",
                     "note": "Audio is messed up in FCPX",
                     "youtube": "AqsPifp-ccc"
@@ -529,19 +538,15 @@
                     "type": "video",
                     "title": "DJ 08.02 Django Migrations: Creating and Applying Database Schema Changes (7:54)",
                     "youtube": "YqARGlI6bGc",
+                    "kaltura_id": "1_heb425uc",
                     "media": "lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v",
                     "todo": "Need to make migration fit better in DJ-02",
                     "project": "DJ 03 Many 05 Migrate"
                 },
                 {
                     "type": "video",
-                    "title": "DJ 08.03 Django Models: Local Library Project Setup (11:31)",
-                    "media": "lesson-08-models/03-04_paw_models.m4v",
-                    "youtube": "p5K5hFiJ-GI"
-                },
-                {
-                    "type": "video",
                     "title": "DJ 08.03 Django Tutorial 2 on Python Anywhere: File Paths and Database Migrations (29:20)",
+                    "kaltura_id": "1_fhq2ghe3",
                     "media": "lesson-08-models/03-04_paw_models_2026.m4v",
                     "project": "DJ4E-Demos tutorial02 tutorial02",
                     "youtube": "VmWRxV6iAPI"
@@ -549,6 +554,7 @@
                 {
                     "type": "video",
                     "title": "DJ 08.04 Resetting Django Database When Migrations Fail (5:47)",
+                    "kaltura_id": "1_mmb1947c",
                     "media": "lesson-08-models/04-tut2-reset-database-edit.mov",
                     "project": "tut2 reset database edit",
                     "youtube": "GOQIJbTSzoQ"
@@ -665,18 +671,21 @@
                 {
                     "type": "video",
                     "title": "DJ 05.01 HTML Parsing and Standard Evolution (5:53)",
+                    "kaltura_id": "1_a0josh9c",
                     "media": "lesson-05-html/01-Web-02-HTML-A.m4v",
                     "youtube": "yWmJSO5xQlU"
                 },
                 {
                     "type": "video",
                     "title": "DJ 05.02 Basic HTML Document Structure and Syntax (13:53)",
+                    "kaltura_id": "1_dwa48de3",
                     "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
                     "youtube": "fh3omoEiebQ"
                 },
                 {
                     "type": "video",
                     "title": "DJ 05.03 Document Object Model vs HTML Source Code (13:34)",
+                    "kaltura_id": "1_fyok19ax",
                     "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
                     "youtube": "wYc6l28v7Cs"
                 },
@@ -785,30 +794,35 @@
                 {
                     "type": "video",
                     "title": "DJ 06.01 CSS: Styling HTML in Web Applications (12:47)",
+                    "kaltura_id": "1_omddte6i",
                     "media": "lesson-06-css/01-Web-02-CSS-A.m4v",
                     "youtube": "blWx62Js7T0"
                 },
                 {
                     "type": "video",
                     "title": "DJ 06.02 Three Methods for Applying CSS in HTML (15:03)",
+                    "kaltura_id": "1_qs5quxzr",
                     "media": "lesson-06-css/02-Web-02-CSS-B.m4v",
                     "youtube": "nMU8wMgasJ8"
                 },
                 {
                     "type": "video",
                     "title": "DJ 06.03 CSS: Images, Colors, and Fonts (13:39)",
+                    "kaltura_id": "1_ul315ql1",
                     "media": "lesson-06-css/03-Web-02-CSS-C.m4v",
                     "youtube": "7KWtFdqXiqE"
                 },
                 {
                     "type": "video",
                     "title": "DJ 06.04 How Cascading Style Sheets Work (13:25)",
+                    "kaltura_id": "1_20pnhnvn",
                     "media": "lesson-06-css/04-Web-03-CSS-Code-A.m4v",
                     "youtube": "2Eu96WnoHBY"
                 },
                 {
                     "type": "video",
                     "title": "DJ 06.05 HTML/CSS Examples: Fonts, Colors, and Layout Techniques (25:49)",
+                    "kaltura_id": "1_2p3in9d8",
                     "media": "lesson-06-css/05-Web-03-CSS-Code-B.m4v",
                     "youtube": "MHqI-PKBl_A"
                 },
