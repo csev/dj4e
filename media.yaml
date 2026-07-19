@@ -685,7 +685,7 @@ entries:
   lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v:
     title: 'DJ 13.01 HTML Forms and HTTP Methods in Django (8:19)'
     youtube_id: KqH0Pu2ZnIg
-    kaltura_id: null
+    kaltura_id: 1_bpsld0t3
     size: 272816394
     md5: 0b46e67de14dbe07836dcd0f6d1a794a
     duration: 499
@@ -700,7 +700,7 @@ entries:
   lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v:
     title: DJ 13.02 HTML Form Elements and Validation (11:49)
     youtube_id: iXgnkxwzZzM
-    kaltura_id: null
+    kaltura_id: 1_cgpvq5lo
     size: 160923558
     md5: 124e69b3685087ca18f7714650bf505f
     duration: 709
@@ -715,7 +715,7 @@ entries:
   lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v:
     title: DJ 13.03 Cross-Site Request Forgery (CSRF) in Web Forms (5:52)
     youtube_id: j-vdshWK9Lc
-    kaltura_id: null
+    kaltura_id: 1_f3tfgk1d
     size: 149209977
     md5: b301d9943268892ecd4fdfddf82c7644
     duration: 352
@@ -730,7 +730,7 @@ entries:
   lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v:
     title: 'DJ 13.04 Django CSRF Token Implementation for Forms (9:16)'
     youtube_id: w9Y6tIVGUTI
-    kaltura_id: null
+    kaltura_id: 1_eiiig020
     size: 195330930
     md5: 7946cbb007e684592df1645648f2f130
     duration: 556
@@ -745,7 +745,7 @@ entries:
   lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v:
     title: 'DJ 13.05 POST-REDIRECT-GET: Preventing Form Resubmission on Page Refresh (3:26)'
     youtube_id: Cug7pkRWQM0
-    kaltura_id: null
+    kaltura_id: 1_owdkdhs9
     size: 175038782
     md5: 70debc98870c86f7b110c50448ed88a2
     duration: 206
@@ -760,7 +760,7 @@ entries:
   lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v:
     title: 'DJ 13.06 POST Redirect Pattern for Form Submissions (8:04)'
     youtube_id: a_ahU4F1V2g
-    kaltura_id: null
+    kaltura_id: 1_qzikf4xh
     size: 169515065
     md5: fdda1f5a02fa638c8dc7c323f9004d48
     duration: 484

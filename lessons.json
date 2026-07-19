@@ -1250,6 +1250,7 @@
                     "title": "DJ 13.01 HTML Forms and HTTP Methods in Django (8:19)",
                     "project": "DJ-10-Forms-01-getpost",
                     "youtube": "KqH0Pu2ZnIg",
+                    "kaltura_id": "1_bpsld0t3",
                     "media": "lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v"
                 },
                 {
@@ -1257,6 +1258,7 @@
                     "title": "DJ 13.02 HTML Form Elements and Validation (11:49)",
                     "project": "DJ-10-Forms-02-HTML",
                     "youtube": "iXgnkxwzZzM",
+                    "kaltura_id": "1_cgpvq5lo",
                     "media": "lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v"
                 },
                 {
@@ -1264,6 +1266,7 @@
                     "title": "DJ 13.03 Cross-Site Request Forgery (CSRF) in Web Forms (5:52)",
                     "project": "DJ-10-Forms-03-CSRF",
                     "youtube": "j-vdshWK9Lc",
+                    "kaltura_id": "1_f3tfgk1d",
                     "media": "lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v"
                 },
                 {
@@ -1271,6 +1274,7 @@
                     "title": "DJ 13.04 Django CSRF Token Implementation for Forms (9:16)",
                     "project": "DJ-10-Forms-04-Form-CSRF",
                     "youtube": "w9Y6tIVGUTI",
+                    "kaltura_id": "1_eiiig020",
                     "media": "lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v"
                 },
                 {
@@ -1278,6 +1282,7 @@
                     "title": "DJ 13.05 POST-REDIRECT-GET: Preventing Form Resubmission on Page Refresh (3:26)",
                     "project": "DJ-10-Forms-05-Refresh",
                     "youtube": "Cug7pkRWQM0",
+                    "kaltura_id": "1_owdkdhs9",
                     "media": "lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v"
                 },
                 {
@@ -1285,6 +1290,7 @@
                     "title": "DJ 13.06 POST Redirect Pattern for Form Submissions (8:04)",
                     "project": "DJ-10-Forms-06-Redirect",
                     "youtube": "a_ahU4F1V2g",
+                    "kaltura_id": "1_qzikf4xh",
                     "media": "lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v"
                 },
                 {
@@ -2467,6 +2473,7 @@
                     "review": true,
                     "project": "DJ-10-Forms-06-Redirect",
                     "youtube": "a_ahU4F1V2g",
+                    "kaltura_id": "1_qzikf4xh",
                     "media": "lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v"
                 },
                 {
