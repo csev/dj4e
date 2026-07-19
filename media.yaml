@@ -40,7 +40,7 @@ entries:
   lesson-02-http/01-Web-01-HTTP-01.m4v:
     title: DJ 02.01 Web Request-Response Cycle (6:04)
     youtube_id: ZT8uqIEG92o
-    kaltura_id: null
+    kaltura_id: 1_2y8uuxkt
     size: 369453093
     md5: 8666d1ecc4b0d43586da418d03519fd9
     duration: 364
@@ -55,7 +55,7 @@ entries:
   lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
     title: 'DJ 02.02 Network Sockets as Computer Phone Calls (6:34)'
     youtube_id: RDvlb_XgVyI
-    kaltura_id: null
+    kaltura_id: 1_1p6b2a1z
     size: 342378216
     md5: 3c2c565da7264b9f5c95e2f9844a4464
     duration: 394
@@ -70,7 +70,7 @@ entries:
   lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
     title: 'DJ 02.03 HTTP Protocol: History and URL Structure (16:28)'
     youtube_id: Q5YIrYkrVXg
-    kaltura_id: null
+    kaltura_id: 1_7talvmaf
     size: 868953263
     md5: b1dfc3195151772bf59e708a0f7102c1
     duration: 988
@@ -85,7 +85,7 @@ entries:
   lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
     title: DJ 02.04 Simple Python HTTP Client with Sockets (8:39)
     youtube_id: Fxgw_BxZg2I
-    kaltura_id: null
+    kaltura_id: 1_g183m3a4
     size: 289440817
     md5: 2c3957962f46ab94307b8b241da9bae8
     duration: 519
@@ -100,7 +100,7 @@ entries:
   lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
     title: DJ 02.05 Simple Python Web Server Using Sockets (16:07)
     youtube_id: PNt8zXl7EJ0
-    kaltura_id: null
+    kaltura_id: 1_81iajz8i
     size: 583612134
     md5: 44bf6e8a5f66c61a3295c63a1f7e122f
     duration: 967
@@ -115,7 +115,7 @@ entries:
   lesson-02-http/06-dev-mode-walkthrough.mov:
     title: 'DJ 02.06 Browser Debugger Console: Access in Firefox and Chrome (9:43)'
     youtube_id: 0JsWY3pmdak
-    kaltura_id: null
+    kaltura_id: 1_7hjlhqof
     size: 188926333
     md5: 0ff2868949406aa6aa75904e200326fa
     duration: 583
@@ -130,7 +130,7 @@ entries:
   lesson-02-http/07-DJ-11-BigPicture.m4v:
     title: DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)
     youtube_id: zuCxAR3-CzA
-    kaltura_id: null
+    kaltura_id: 1_oji2q2zz
     size: 369078195
     md5: bc166ff05f80e2cb3d69d65e2aea05b2
     duration: 1035
@@ -145,7 +145,7 @@ entries:
   lesson-02-http/08-Web-04-Mini-Django.m4v:
     title: 'DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)'
     youtube_id: q6LGpiVPwaA
-    kaltura_id: null
+    kaltura_id: 1_qjwy5m0d
     size: 835841221
     md5: def458f93c42ad8b395c4a76dd340948
     duration: 2219
@@ -160,7 +160,7 @@ entries:
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
     title: 'DJ 02.09 Virtual Hosting: How a Single Server Hosts Multiple Domains (4:31)'
     youtube_id: KA5ZM3E9OjY
-    kaltura_id: null
+    kaltura_id: 1_ya6ljup1
     size: 246488741
     md5: 34db47320ed4fa0ab842b1e559ccccaf
     duration: 271

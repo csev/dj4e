@@ -1554,36 +1554,42 @@
                 {
                     "type": "video",
                     "title": "DJ 02.01 Web Request-Response Cycle (6:04)",
+                    "kaltura_id": "1_2y8uuxkt",
                     "media": "lesson-02-http/01-Web-01-HTTP-01.m4v",
                     "youtube": "ZT8uqIEG92o"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.02 Network Sockets as Computer Phone Calls (6:34)",
+                    "kaltura_id": "1_1p6b2a1z",
                     "media": "lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v",
                     "youtube": "RDvlb_XgVyI"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.03 HTTP Protocol: History and URL Structure (16:28)",
+                    "kaltura_id": "1_7talvmaf",
                     "media": "lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v",
                     "youtube": "Q5YIrYkrVXg"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.04 Simple Python HTTP Client with Sockets (8:39)",
+                    "kaltura_id": "1_g183m3a4",
                     "media": "lesson-02-http/04-Web-01-HTTP-04-Browser.m4v",
                     "youtube": "Fxgw_BxZg2I"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.05 Simple Python Web Server Using Sockets (16:07)",
+                    "kaltura_id": "1_81iajz8i",
                     "media": "lesson-02-http/05-Web-01-HTTP-05-Server.m4v",
                     "youtube": "PNt8zXl7EJ0"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.06 Browser Debugger Console: Access in Firefox and Chrome (9:43)",
+                    "kaltura_id": "1_7hjlhqof",
                     "media": "lesson-02-http/06-dev-mode-walkthrough.mov",
                     "youtube": "0JsWY3pmdak"
                 },
@@ -1591,12 +1597,14 @@
                     "type": "video",
                     "title": "DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)",
                     "youtube": "zuCxAR3-CzA",
+                    "kaltura_id": "1_oji2q2zz",
                     "media": "lesson-02-http/07-DJ-11-BigPicture.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.09 Virtual Hosting: How a Single Server Hosts Multiple Domains (4:31)",
                     "youtube": "KA5ZM3E9OjY",
+                    "kaltura_id": "1_ya6ljup1",
                     "media": "lesson-02-http/09-DJ-01-Hosting-02-1080.mov"
                 },
                 {
@@ -1701,11 +1709,13 @@
                     "type": "video",
                     "title": "DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)",
                     "youtube": "zuCxAR3-CzA",
+                    "kaltura_id": "1_oji2q2zz",
                     "media": "lesson-02-http/07-DJ-11-BigPicture.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)",
+                    "kaltura_id": "1_qjwy5m0d",
                     "media": "lesson-02-http/08-Web-04-Mini-Django.m4v",
                     "youtube": "q6LGpiVPwaA"
                 },
@@ -2299,6 +2309,7 @@
                     "type": "video",
                     "title": "DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)",
                     "youtube": "zuCxAR3-CzA",
+                    "kaltura_id": "1_oji2q2zz",
                     "media": "lesson-02-http/07-DJ-11-BigPicture.m4v"
                 },
                 {
