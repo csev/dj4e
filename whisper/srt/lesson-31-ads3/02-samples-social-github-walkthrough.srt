@@ -80,11 +80,11 @@
 
 21
 00:01:04,360 --> 00:01:07,880
- It's going to import from GitHubsettings.py.
+ It's going to import from GitHub_settings.py.
 
 22
 00:01:07,880 --> 00:01:13,040
- And GitHubsettings.py is a file, but this file doesn't yet exist.
+ And GitHub_settings.py is a file, but this file doesn't yet exist.
 
 23
 00:01:13,040 --> 00:01:18,200
@@ -92,11 +92,11 @@
 
 24
 00:01:18,200 --> 00:01:21,320
- you will see that there is a GitHubsettings dist,
+ you will see that there is a GitHub_settings-dist.py,
 
 25
 00:01:21,320 --> 00:01:24,000
- but there is not a GitHubsettings.py.
+ but there is not a GitHub_settings.py.
 
 26
 00:01:24,000 --> 00:01:28,720
@@ -124,7 +124,7 @@
 
 32
 00:01:48,840 --> 00:02:02,160
- and we have to make a new empty file called GitHubsettings.py.
+ and we have to make a new empty file called GitHub_settings.py.
 
 33
 00:02:02,160 --> 00:02:04,840
@@ -324,7 +324,7 @@
 
 82
 00:04:38,400 --> 00:04:45,040
- So we have this file called GitHubsettings.py.
+ So we have this file called GitHub_settings.py.
 
 83
 00:04:45,040 --> 00:04:48,680

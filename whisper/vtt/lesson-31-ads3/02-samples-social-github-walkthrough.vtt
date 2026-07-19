@@ -61,19 +61,19 @@ WEBVTT
  is down here deep in the settings.py by line 176.
 
 00:01:04.360 --> 00:01:07.880
- It's going to import from GitHubsettings.py.
+ It's going to import from GitHub_settings.py.
 
 00:01:07.880 --> 00:01:13.040
- And GitHubsettings.py is a file, but this file doesn't yet exist.
+ And GitHub_settings.py is a file, but this file doesn't yet exist.
 
 00:01:13.040 --> 00:01:18.200
  So if you go into dj4e-samples,
 
 00:01:18.200 --> 00:01:21.320
- you will see that there is a GitHubsettings dist,
+ you will see that there is a GitHub_settings-dist.py,
 
 00:01:21.320 --> 00:01:24.000
- but there is not a GitHubsettings.py.
+ but there is not a GitHub_settings.py.
 
 00:01:24.000 --> 00:01:28.720
  So this blows up, and otherwise, it prints that message.
@@ -94,7 +94,7 @@ WEBVTT
  There is a file called GitHubsettingsdist.py,
 
 00:01:48.840 --> 00:02:02.160
- and we have to make a new empty file called GitHubsettings.py.
+ and we have to make a new empty file called GitHub_settings.py.
 
 00:02:02.160 --> 00:02:04.840
  So create that new empty file.
@@ -244,7 +244,7 @@ WEBVTT
  by some of those settings.
 
 00:04:38.400 --> 00:04:45.040
- So we have this file called GitHubsettings.py.
+ So we have this file called GitHub_settings.py.
 
 00:04:45.040 --> 00:04:48.680
  But we can't use GitHub yet, because we

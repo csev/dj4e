@@ -265,7 +265,7 @@ entries:
   lesson-05-html/02-Web-02-HTML-B.m4v:
     title: DJ 05.02 Basic HTML Document Structure and Syntax (13:53)
     youtube_id: fh3omoEiebQ
-    kaltura_id: 1_dwa48de3
+    kaltura_id: 1_fyok19ax
     size: 736221114
     md5: 0f08651f557381879c8dd52f02299dcd
     duration: 833
@@ -280,7 +280,7 @@ entries:
   lesson-05-html/03-Web-02-HTML-Code.m4v:
     title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
     youtube_id: wYc6l28v7Cs
-    kaltura_id: 1_fyok19ax
+    kaltura_id: 1_dwa48de3
     size: 315268951
     md5: b3b074ea3592fd41817dbcd0754005f4
     duration: 814
@@ -1345,7 +1345,7 @@ entries:
   lesson-30-json/01-JS-04-JSON-01-JSON.m4v:
     title: 'DJ 30.01 AJAX and JSON: Server-Client Data Exchange (8:34)'
     youtube_id: thhKcuHNQzo
-    kaltura_id: null
+    kaltura_id: 1_7z5fx9xh
     size: 234285746
     md5: baed3f5bbe5150ff33e9c850260f6025
     duration: 514
@@ -1360,7 +1360,7 @@ entries:
   lesson-30-json/02-samples-fetch-walkthrough-23.mov:
     title: DJ 30.02 Django JSON Responses and Fetch API Basics (21:53)
     youtube_id: KcgPJYil5Do
-    kaltura_id: null
+    kaltura_id: 1_opf8j457
     size: 363973875
     md5: 29c2b340b653a673ffb320cad21d027c
     duration: 1313
@@ -1375,7 +1375,7 @@ entries:
   lesson-30-json/03-JS-04-JSON-02-Chat.m4v:
     title: DJ 30.03 Simple Multi-User Chat Application with Ajax and JSON Polling (8:05)
     youtube_id: PJ1LkwGcOsk
-    kaltura_id: null
+    kaltura_id: 1_298on87l
     size: 230417035
     md5: 15f6ab6f9fa87a38b3dde4d3b659e95e
     duration: 485
@@ -1390,7 +1390,7 @@ entries:
   lesson-30-json/04-samples-chat-walkthrough-23.mov:
     title: DJ 30.04 Django Polling Example with AJAX and JSON (16:03)
     youtube_id: v5CKyLS701M
-    kaltura_id: null
+    kaltura_id: 1_2z67r1na
     size: 256069455
     md5: 416a9c6503ea9f881930d1a73630491e
     duration: 963
@@ -1405,7 +1405,7 @@ entries:
   lesson-31-ads3/01-samples-favicon-walkthrough.mov:
     title: DJ 31.01 Django Favicon Setup and Cache Busting (4:11)
     youtube_id: C1WGD5hFdT8
-    kaltura_id: null
+    kaltura_id: 1_aabjytfx
     size: 95715245
     md5: 1368bed1d361ca78785f31e99f1617ad
     duration: 251
@@ -1420,14 +1420,14 @@ entries:
   lesson-31-ads3/02-samples-social-github-walkthrough.mov:
     title: DJ 31.02 Setting Up GitHub Social Login in Django (8:47)
     youtube_id: NctpQ-2Kdtw
-    kaltura_id: null
+    kaltura_id: 1_u4e0y7mq
     size: 154041153
     md5: ba347407d7e60b5504eca97a85e33ca9
     duration: 527
     duration_text: 08:47
     tags: Django, GitHub, Social login, OAuth, Social authentication, dj4e, dj4e-lecture
     description: |
-      This lecture details the configuration of GitHub social authentication in Django. It starts with creating a GitHubsettings.py configuration file from the GitHubsettings.dist template and then registering a GitHub OAuth application to obtain client ID and secret credentials.
+      This lecture details the configuration of GitHub social authentication in Django. It starts with creating a github_settings.py configuration file from the github_settings-dist.py template and then registering a GitHub OAuth application to obtain client ID and secret credentials.
 
       With the credentials configured in Django settings, the application enables GitHub login. Users are redirected to GitHub for authorization, and upon successful authorization, they are authenticated in the Django application.
 
@@ -1435,7 +1435,7 @@ entries:
   lesson-31-ads3/03-samples-favs-720.mov:
     title: DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)
     youtube_id: CFF0WQLj1as
-    kaltura_id: null
+    kaltura_id: 1_6v3e8pzy
     size: 800409093
     md5: 8c89cfebf0e128fe38a82ddce37ca294
     duration: 1820
@@ -1450,7 +1450,7 @@ entries:
   lesson-32-ads-search/01-samples-well-walkthrough.mov:
     title: 'DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)'
     youtube_id: 4pOExZHnL9k
-    kaltura_id: null
+    kaltura_id: 1_g5q1q7bc
     size: 369475448
     md5: d7195aad587d208c02c495d28f010dbf
     duration: 1290
@@ -1462,3 +1462,6 @@ entries:
       The lecture demonstrates how the application filters posts via title and text fields using Django's ORM, and explains a pattern where views are defined in urls.py by extending generic views to override parameters. This eliminates the need for separate view files while improving maintainability.
 
       For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
+
+
+

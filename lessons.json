@@ -683,14 +683,14 @@
                 {
                     "type": "video",
                     "title": "DJ 05.02 Basic HTML Document Structure and Syntax (13:53)",
-                    "kaltura_id": "1_dwa48de3",
+                    "kaltura_id": "1_fyok19ax",
                     "media": "lesson-05-html/02-Web-02-HTML-B.m4v",
                     "youtube": "fh3omoEiebQ"
                 },
                 {
                     "type": "video",
                     "title": "DJ 05.03 Document Object Model vs HTML Source Code (13:34)",
-                    "kaltura_id": "1_fyok19ax",
+                    "kaltura_id": "1_dwa48de3",
                     "media": "lesson-05-html/03-Web-02-HTML-Code.m4v",
                     "youtube": "wYc6l28v7Cs"
                 },
@@ -3504,24 +3504,28 @@
                     "type": "video",
                     "title": "DJ 30.01 AJAX and JSON: Server-Client Data Exchange (8:34)",
                     "youtube": "thhKcuHNQzo",
+                    "kaltura_id": "1_7z5fx9xh",
                     "media": "lesson-30-json/01-JS-04-JSON-01-JSON.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 30.02 Django JSON Responses and Fetch API Basics (21:53)",
                     "youtube": "KcgPJYil5Do",
+                    "kaltura_id": "1_opf8j457",
                     "media": "lesson-30-json/02-samples-fetch-walkthrough-23.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 30.03 Simple Multi-User Chat Application with Ajax and JSON Polling (8:05)",
                     "youtube": "PJ1LkwGcOsk",
+                    "kaltura_id": "1_298on87l",
                     "media": "lesson-30-json/03-JS-04-JSON-02-Chat.m4v"
                 },
                 {
                     "type": "video",
                     "title": "DJ 30.04 Django Polling Example with AJAX and JSON (16:03)",
                     "youtube": "v5CKyLS701M",
+                    "kaltura_id": "1_2z67r1na",
                     "media": "lesson-30-json/04-samples-chat-walkthrough-23.mov"
                 },
                 {
@@ -3593,18 +3597,21 @@
                     "type": "video",
                     "title": "DJ 31.01 Django Favicon Setup and Cache Busting (4:11)",
                     "youtube": "C1WGD5hFdT8",
+                    "kaltura_id": "1_aabjytfx",
                     "media": "lesson-31-ads3/01-samples-favicon-walkthrough.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 31.02 Setting Up GitHub Social Login in Django (8:47)",
                     "youtube": "NctpQ-2Kdtw",
+                    "kaltura_id": "1_u4e0y7mq",
                     "media": "lesson-31-ads3/02-samples-social-github-walkthrough.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)",
                     "youtube": "CFF0WQLj1as",
+                    "kaltura_id": "1_6v3e8pzy",
                     "youtube_pre_2025": "6cq-ehBHkwc",
                     "media": "lesson-31-ads3/03-samples-favs-720.mov"
                 },
@@ -3741,6 +3748,7 @@
                     "type": "video",
                     "title": "DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)",
                     "youtube": "4pOExZHnL9k",
+                    "kaltura_id": "1_g5q1q7bc",
                     "media": "lesson-32-ads-search/01-samples-well-walkthrough.mov"
                 },
                 {
@@ -4857,18 +4865,21 @@
                     "type": "video",
                     "title": "DJ 31.01 Django Favicon Setup and Cache Busting (4:11)",
                     "youtube": "C1WGD5hFdT8",
+                    "kaltura_id": "1_aabjytfx",
                     "media": "lesson-31-ads3/01-samples-favicon-walkthrough.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 31.02 Setting Up GitHub Social Login in Django (8:47)",
                     "youtube": "NctpQ-2Kdtw",
+                    "kaltura_id": "1_u4e0y7mq",
                     "media": "lesson-31-ads3/02-samples-social-github-walkthrough.mov"
                 },
                 {
                     "type": "video",
                     "title": "DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)",
                     "youtube": "CFF0WQLj1as",
+                    "kaltura_id": "1_6v3e8pzy",
                     "youtube_pre_2025": "6cq-ehBHkwc",
                     "media": "lesson-31-ads3/03-samples-favs-720.mov"
                 },
@@ -5001,6 +5012,7 @@
                 {
                     "type": "video",
                     "title": "DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)",
+                    "kaltura_id": "1_g5q1q7bc",
                     "media": "lesson-32-ads-search/01-samples-well-walkthrough.mov",
                     "youtube": "4pOExZHnL9k"
                 },

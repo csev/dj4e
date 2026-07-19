@@ -18,18 +18,18 @@
  So this one over here.
  So first off, where those messages are coming from
  is down here deep in the settings.py by line 176.
- It's going to import from GitHubsettings.py.
- And GitHubsettings.py is a file, but this file doesn't yet exist.
+ It's going to import from GitHub_settings.py.
+ And GitHub_settings.py is a file, but this file doesn't yet exist.
  So if you go into dj4e-samples,
- you will see that there is a GitHubsettings dist,
- but there is not a GitHubsettings.py.
+ you will see that there is a GitHub_settings-dist.py,
+ but there is not a GitHub_settings.py.
  So this blows up, and otherwise, it prints that message.
  So there's where that message happens.
  And so if you look at the documentation,
  we're going to put the GitHub, oauth2, backend, et cetera, et cetera.
  So what we need to do basically is we need to take this file.
  There is a file called GitHubsettingsdist.py,
- and we have to make a new empty file called GitHubsettings.py.
+ and we have to make a new empty file called GitHub_settings.py.
  So create that new empty file.
  And then the first thing we're going to do
  is we're going to just take all of this
@@ -79,7 +79,7 @@
  for the social Django URLs.
  Now, that social Django URLs is configured
  by some of those settings.
- So we have this file called GitHubsettings.py.
+ So we have this file called GitHub_settings.py.
  But we can't use GitHub yet, because we
  have to get a key and a secret.
  And so the instructions are right here.
