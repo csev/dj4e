@@ -283,8 +283,8 @@ https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframe
 DJ 31.02 Setting Up GitHub Social Login in Django (8:47)
 https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_u4e0y7mq
 
-DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)
-https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_6v3e8pzy
+DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (34:18)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_dyssb9vl
 
 DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)
 https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_g5q1q7bc
