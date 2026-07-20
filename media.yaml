@@ -10,7 +10,7 @@ kaltura_playlist_id: null
 course_hint: Django for Everybody, DJ4E, Django, Python, web development, Dr. Chuck, Chuck Severance
 title_prefix: null
 extra_tags: dj4e, dj4e-lecture
-extra_description: For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+extra_description: For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
 entries:
   lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v:
     title: 'DJ 01.01 Django for Everybody: Building Web Applications with Python (7:33)'
@@ -29,7 +29,7 @@ entries:
 
       Students host their applications on Python Anywhere from the first week, implementing features such as Ajax, image handling, OAuth-based single sign-on, and Bootstrap for responsive design.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-01-welcome/02-2025-08-20-AI.m4v:
     title: 'DJ 01.02 Charles Severance on AI in Programming Courses (16:16)'
     ai_title: null
@@ -47,7 +47,7 @@ entries:
 
       Severance's teaching strategy includes breaking course material into small, doable chunks using the zone of proximal development, implementing cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific course techniques. He explains that AI can effectively solve assignments in the early weeks but becomes unable to handle the more complex problems later in the course, requiring students to develop foundational programming skills.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/01-Web-01-HTTP-01.m4v:
     title: DJ 02.01 Web Request-Response Cycle (6:04)
     ai_title: null
@@ -65,7 +65,7 @@ entries:
 
       The lecture explains the role of network sockets in the request-response process and how browsers interpret HTML, apply CSS, and execute JavaScript to produce the visual representation of the page.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
     title: 'DJ 02.02 Network Sockets as Computer Phone Calls (6:34)'
     ai_title: null
@@ -83,7 +83,7 @@ entries:
 
       Each computer has an IP address (either IPv4 or IPv6) and applications use TCP port numbers to specify services. For instance, port 80 handles HTTP traffic, port 443 handles HTTPS, port 25 is used for email servers, and port 23 is for Telnet, illustrating how diverse protocols operate over the same network infrastructure.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
     title: 'DJ 02.03 HTTP Protocol: History and URL Structure (16:28)'
     ai_title: null
@@ -101,7 +101,7 @@ entries:
 
       HTTP uses a request-response mechanism where clients send requests (including headers) to servers, which return status lines (e.g., 200 OK or 404 Not Found) and response headers followed by document data. The internet's infrastructure relies on open standards defined by the Internet Engineering Task Force (IETF) through Request for Comments (RFCs), ensuring interoperability without proprietary constraints.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
     title: DJ 02.04 Simple Python HTTP Client with Sockets (8:39)
     ai_title: null
@@ -119,7 +119,7 @@ entries:
 
       The implementation handles UTF-8 encoding for network transmission and decoding for Python's Unicode strings. The lecture notes that this client code serves as a basic debugging tool but emphasizes the use of browser developer tools for inspecting HTTP requests and responses in web development.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
     title: DJ 02.05 Simple Python Web Server Using Sockets (16:07)
     ai_title: null
@@ -137,7 +137,7 @@ entries:
 
       The server listens for incoming connections on a port and sends a 200 OK response with UTF-8 encoded HTML content for each GET request. A client application is built to send HTTP GET requests to this server via socket connections.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/06-dev-mode-walkthrough.mov:
     title: 'DJ 02.06 Browser Debugger Console: Access in Firefox and Chrome (9:43)'
     ai_title: null
@@ -155,7 +155,7 @@ entries:
 
       The lecture explains the request-response cycle with examples of HTTP GET requests, status codes (200, 404, 500), and HTTP headers. Complex web pages require multiple requests (e.g., 44 requests for 1.6 megabytes of content) that take nearly one second to download, and the distinction between the server's raw response and the browser's parsed document object model.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/07-DJ-11-BigPicture.m4v:
     title: DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)
     ai_title: null
@@ -173,7 +173,7 @@ entries:
 
       The application is organized into a project directory containing settings.py for configuration and multiple applications. Each application has its own urls.py for routing, views.py for handling requests, and templates for rendering responses.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/08-Web-04-Mini-Django.m4v:
     title: 'DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)'
     ai_title: null
@@ -191,7 +191,7 @@ entries:
 
       The framework includes a router (urls.py) that maps HTTP request paths to view functions. Each view function processes an HTTP request and returns an HTTP response, and the server handles common HTTP errors such as 404 not found and 500 internal server errors. This minimal implementation provides a clear example of how Django's abstraction layer works.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
     title: 'DJ 02.09 Virtual Hosting: How a Single Server Hosts Multiple Domains (4:31)'
     ai_title: null
@@ -209,7 +209,7 @@ entries:
 
       The server software (e.g., nginx) routes requests based on the host header to the appropriate application. In Python Anywhere, the system-managed wsgi configuration file specifies the application's home directory, ensuring each application runs in isolation within the shared server environment.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/01-paw_install52_new.m4v:
     title: DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)
     ai_title: null
@@ -227,7 +227,7 @@ entries:
 
       The tutorial then configures Python Anywhere's web hosting to run the Django application by specifying the source code directory, working directory, and virtual environment. The WSGI configuration is updated to route traffic to the application, enabling access via a URL without local server commands due to the shared hosting environment.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/02-DJ-00-AutoGrader.m4v:
     title: 'DJ 03.02 Django Autograder: Checking Student Applications (10:42)'
     ai_title: null
@@ -245,7 +245,7 @@ entries:
 
       The autograder focuses on verifying that the student's code adheres to instructions by checking for specific elements in the HTML output. Students must manually test their applications before submitting to the autograder. The lecture demonstrates a real-time example where a student corrected a Python syntax error in their views.py, resulting in a successful autograder test.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
     title: DJ 03.03 Django Application Structure Overview (7:04)
     ai_title: null
@@ -263,7 +263,7 @@ entries:
 
       Django processes web requests by routing them to the appropriate application view via urls.py. The view then interacts with models to handle data and renders a template to produce the HTTP response. This model-view-controller pattern organizes the application into distinct components: models for data storage, views for request processing, and templates for HTML output.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/04-paw_install_errors_52.m4v:
     title: 'DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Tracebacks (19:38)'
     ai_title: null
@@ -281,7 +281,7 @@ entries:
 
       The session demonstrates a startup failure caused by a typo in `polls/views.py` (an incorrect import statement for `HttpResponse`). It explains the importance of the virtual environment for Django version and dependencies, and how to interpret tracebacks to identify and fix code errors.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-04-shell/01-01_paw_shell.m4v:
     title: 'DJ 04.01 Linux Shell Commands for Django Developers (18:27)'
     ai_title: null
@@ -299,7 +299,7 @@ entries:
 
       The lecture differentiates between several interactive environments: the Linux shell (dollar sign prompt), Python interactive shell (REPL), SQLite shell, and Django shell. Each environment has unique prompts and exit commands; for example, the Django shell is a Python environment preloaded with Django application code. Recognizing the current interface helps developers avoid confusion and effectively manage their development workflow.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-05-html/01-Web-02-HTML-A.m4v:
     title: 'DJ 05.01 HTML Parsing and Standard Evolution (5:53)'
     ai_title: null
@@ -317,7 +317,7 @@ entries:
 
       HTML evolved from early 1990s browsers to modern standards defined by the W3C. The W3C established rules for HTML, including lowercase tag names, double-quoted attributes, and balanced tags. Precise HTML implementation ensures consistent rendering and predictable browser behavior.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-05-html/02-Web-02-HTML-B.m4v:
     title: DJ 05.02 Basic HTML Document Structure and Syntax (13:53)
     ai_title: null
@@ -335,7 +335,7 @@ entries:
 
       The lecture explains entity references for special characters (e.g., `&lt;` for `‹`), HTML comments (`‹!--`), and the distinction between relative links (e.g., `href` within the same directory) and absolute links (full URLs). It also describes unordered lists using `ul` and `li` tags, tables with `table`, `tr`, `th`, and `td` elements, and the `pre` tag for preserving whitespace and line breaks.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-05-html/03-Web-02-HTML-Code.m4v:
     title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
     ai_title: null
@@ -353,7 +353,7 @@ entries:
 
       The lecture demonstrates that the browser's parsing process may correct errors in the source code (e.g., adding missing tags like `tbody`). It also covers relative links, special characters (such as ampersand, less than, greater than), and common HTML elements including `html`, `head`, `body`, `a`, `p`, `ul`, `li`, `table`, `tr`, `td`, and `img`.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
     youtube_id_2020: wYc6l28v7Cs
   lesson-06-css/01-Web-02-CSS-A.m4v:
     title: 'DJ 06.01 CSS: Styling HTML in Web Applications (12:47)'
@@ -372,7 +372,7 @@ entries:
 
       The lecture emphasizes CSS's importance for accessibility, noting that pages remain navigable without CSS due to clean HTML structure. This separation of concerns allows back-end developers to generate HTML and front-end designers to apply CSS, enabling efficient web application development.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/02-Web-02-CSS-B.m4v:
     title: 'DJ 06.02 Three Methods for Applying CSS in HTML (15:03)'
     ai_title: null
@@ -390,7 +390,7 @@ entries:
 
       The lecture emphasizes that `span` and `div` tags have no default styling, enabling precise control over visual presentation. It also covers CSS selectors, including IDs (`#id`), classes (`.class`), and their combinations for targeted styling without excessive class usage.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/03-Web-02-CSS-C.m4v:
     title: 'DJ 06.03 CSS: Images, Colors, and Fonts (13:39)'
     ai_title: null
@@ -408,7 +408,7 @@ entries:
 
       The lecture includes practical examples for link styling with the `a` tag, including unvisited, visited, hover, and active states. It also touches on browser-specific CSS extensions, such as rounded corners, and mentions tools like Bootstrap for enhancing web page aesthetics through simplified styling.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/04-Web-03-CSS-Code-A.m4v:
     title: DJ 06.04 How Cascading Style Sheets Work (13:25)
     ai_title: null
@@ -426,7 +426,7 @@ entries:
 
       The lecture includes practical examples of styling web pages using CSS, including the application of classes and IDs. It shows how the Document Object Model (DOM) interacts with CSS styles and provides examples of styling navigation bars.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/05-Web-03-CSS-Code-B.m4v:
     title: 'DJ 06.05 HTML/CSS Examples: Fonts, Colors, and Layout Techniques (25:49)'
     ai_title: null
@@ -444,7 +444,7 @@ entries:
 
       The session details CSS layout techniques such as the box model (content, padding, border, margin), floating elements with the clear property, positioning methods (relative, absolute, fixed), and z-index for handling overlapping elements.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-07-sql/01-SQL-01-Basic-01.m4v:
     title: 'DJ 07.01 SQL: Historical Development and Core Principles (18:57)'
     ai_title: null
@@ -462,7 +462,7 @@ entries:
 
       SQL, initially known as the Simple Query Language, provides a standardized interface for database operations without exposing physical storage mechanisms. The lecture emphasizes that defining a schema, which specifies column types and structures, allows database systems to optimize storage and retrieval efficiently.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-07-sql/02-SQL-01-Basic-02.m4v:
     title: 'DJ 07.02 SQLite Basic SQL Commands: Create, Insert, Update, Delete (11:44)'
     ai_title: null
@@ -480,7 +480,7 @@ entries:
 
       SQLite stores both database schema and data in a single file. The lecture explains that core SQL commands are portable across database systems and highlights the implied loop behavior in commands like DELETE without a WHERE clause, which deletes all rows.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-07-sql/03-sql-01-basic.m4v:
     title: 'DJ 07.03 SQLite Command Line: Basic Table Creation and Queries (8:39)'
     ai_title: null
@@ -498,7 +498,7 @@ entries:
 
       These operations function on a file-based SQLite database without server dependencies, enabling direct inspection and debugging of database structures.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
     youtube_id_2020: 2Or6_sSyl7c
   lesson-08-models/01-DJ-02-Models.m4v:
     title: 'DJ 08.01 Django Models: ORM and Migrations (19:59)'
@@ -517,7 +517,7 @@ entries:
 
       Django's ORM simplifies common database operations such as creating, reading, updating, and deleting records through Python objects. Migrations automatically generate and apply database schema changes, ensuring portability between development (SQLite) and production (PostgreSQL or MySQL) environments without manual SQL.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v:
     title: 'DJ 08.02 Django Migrations: Creating and Applying Database Schema Changes (7:54)'
     ai_title: null
@@ -535,7 +535,7 @@ entries:
 
       The migrate command applies migrations in order to update the database, and Django maintains a table to record which migrations have been applied. In development, resetting migrations can be achieved by deleting the migration files and re-running make migrations; for SQLite, the entire database can be reset by deleting the database file.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-08-models/03-04_paw_models_2026.m4v:
     title: 'DJ 08.03 Django Tutorial 2 on Python Anywhere: File Paths and Database Migrations (29:20)'
     ai_title: null
@@ -553,7 +553,7 @@ entries:
 
       The tutorial emphasizes the process of reloading the Python Anywhere application after each file change using the reload button to ensure updates are reflected. It also demonstrates creating database models, applying migrations, and configuring the Django admin interface to manage application data within the Python Anywhere environment.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-08-models/04-tut2-reset-database-edit.mov:
     title: DJ 08.04 Resetting Django Database When Migrations Fail (5:47)
     ai_title: null
@@ -571,7 +571,7 @@ entries:
 
       Before resetting, the models must be verified with python manage.py check. Then, the process runs python manage.py makemigrations to generate new migration files and python manage.py migrate to rebuild the database. This reset method discards all existing data and reinitializes the database from the models.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-09-mvc/01-DJ-05-MVC.m4v:
     title: DJ 09.01 Model-View-Controller Pattern in Web Development (7:07)
     ai_title: null
@@ -589,7 +589,7 @@ entries:
 
       The lecture demonstrates how Django implements the MVC pattern with urls.py acting as the controller, views.py handling both controller logic and view rendering, and models.py managing database operations. MVC is described as a universal concept independent of programming languages and operating systems.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/01-DJ-06-Views-01-Urls.m4v:
     title: 'DJ 10.01 Django Views and Templates: Application Output (6:59)'
     ai_title: null
@@ -607,7 +607,7 @@ entries:
 
       The lecture details the Django project structure, where applications are organized within a project. Views interact with the request object to process data, may use models for database operations, and render templates to produce the final HTML output.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/02-DJ-06-Views-02-Views.m4v:
     title: 'DJ 10.02 Django Template Views and Request Objects (6:19)'
     ai_title: null
@@ -625,7 +625,7 @@ entries:
 
       The lecture demonstrates how Django views receive a request object containing incoming request data. It shows accessing GET query parameters via request.GET and constructing an HTTP response, which can be a string of HTML or a redirect object.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/03-DJ-06-Views-03-Detail.m4v:
     title: DJ 10.03 XSS prevention with HTML escaping in Django (15:36)
     ai_title: null
@@ -643,7 +643,7 @@ entries:
 
       Django prevents this vulnerability by escaping user input using HTML entities. The lecture also covers Django's URL parameter parsing and 302 HTTP redirects as part of the framework's routing and response handling.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/04-DJ-06-Views-04-Templates.m4v:
     title: 'DJ 10.04 Django Templates: Rendering and Context (10:05)'
     ai_title: null
@@ -661,7 +661,7 @@ entries:
 
       Template names are global across the Django project, so applications prefix template names with their application name to avoid conflicts. The template language also supports conditional logic, as demonstrated in the lecture example.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/05-DJ-06-Views-05-DTL.m4v:
     title: 'DJ 10.05 Django Template Language: Variable Substitution and Automatic Escaping (10:59)'
     ai_title: null
@@ -679,7 +679,7 @@ entries:
 
       The template system supports context variables, for loops, conditional logic, and hierarchical object traversal. Template inheritance enables reusing common text across templates through block overrides.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/06-DJ-06-Views-06-Inherit.m4v:
     title: 'DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)'
     ai_title: null
@@ -697,7 +697,7 @@ entries:
 
       Child templates use block tags to replace specific sections of the base template. For example, navigation menus defined in the base template can be overridden in child templates without repeating HTML code, ensuring consistency while allowing customization of individual page elements.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/07-DJ-06-Views-07-Reverse.m4v:
     title: 'DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)'
     ai_title: null
@@ -715,7 +715,7 @@ entries:
 
       Named URLs in urls.py files are used for reverse lookups via the reverse and reverse_lazy functions. Namespaces resolve conflicts when multiple applications share the same name, and templates generate URLs using the {% url %} tag.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v:
     title: 'DJ 11.01 Python Objects Terminology Explained (10:40)'
     ai_title: null
@@ -733,7 +733,7 @@ entries:
 
       The session describes objects as self-contained units of data and code, where classes serve as templates for creating instances. It also covers the boundary between object implementation and usage, enabling encapsulation and separation of concerns in application design.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v:
     title: DJ 11.02 Python Classes, Objects, and the Self Keyword (8:21)
     ai_title: null
@@ -751,7 +751,7 @@ entries:
 
       The lecture details the self keyword, which refers to the instance within class methods. When an object is created, self acts as an alias for the instance variable. The dot operator is used for object lookup, and the dir function reveals an object's attributes and methods, including built-in methods with double underscores.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v:
     title: 'DJ 11.03 Python Object Lifecycle: Constructors and Destructors (6:09)'
     ai_title: null
@@ -769,7 +769,7 @@ entries:
 
       The lecture demonstrates how multiple instances of a class each maintain independent copies of instance variables. By defining a constructor with parameters, such as a name attribute, the example shows that each instance (e.g., s and j) has its own state, including a unique value for the instance variable x. The destruction of an object occurs when the reference variable is reassigned, triggering the destructor.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v:
     title: DJ 11.04 Inheritance in Object-Oriented Programming (7:34)
     ai_title: null
@@ -787,7 +787,7 @@ entries:
 
       The lecture demonstrates inheritance with a football fan class that extends the party animal class. The football fan class inherits all attributes and methods of the party animal class and adds a points attribute and a touchdown method that increments the points by seven.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v:
     title: 'DJ 11.05 Python Variables Are Pointers, Not Drawers in CPython (7:29)'
     ai_title: null
@@ -805,7 +805,7 @@ entries:
 
       The id function reveals memory locations of objects. Reassigning a variable (e.g., x = 2000) changes the pointer to a new integer object, while y = x for lists creates a shared reference. A deep copy using list(x) creates an independent copy of the list.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-12-generic/01-DJ-06-Views-08-Generic.m4v:
     title: 'DJ 12.01 Django Generic Views: One Line Code for Reusable Model Views (16:28)'
     ai_title: null
@@ -823,7 +823,7 @@ entries:
 
       By inheriting from a generic view class and setting the model attribute, developers achieve one line of code per view. This implementation automatically queries the database and passes context variables to templates, ensuring consistent user interfaces for different models.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v:
     title: 'DJ 13.01 HTML Forms and HTTP Methods in Django (8:19)'
     ai_title: null
@@ -841,7 +841,7 @@ entries:
 
       GET requests are idempotent and intended for read operations, making them suitable for bookmarking and web spiders. POST requests, used for creating or modifying data, should not be bookmarked as they change the system state. This distinction prevents unintended data deletions when web spiders follow links.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v:
     title: DJ 13.02 HTML Form Elements and Validation (11:49)
     ai_title: null
@@ -859,7 +859,7 @@ entries:
 
       The lecture also discusses HTML5 input types such as color, date, email, number, and URL, along with their client-side validation. These validations run in the browser before form submission, ensuring data integrity by rejecting invalid inputs.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v:
     title: DJ 13.03 Cross-Site Request Forgery (CSRF) in Web Forms (5:52)
     ai_title: null
@@ -877,7 +877,7 @@ entries:
 
       The defense mechanism generates a unique random token stored in the session. Every form submitted by the legitimate server includes this token in a hidden input field. Upon receiving a form submission, the server checks the token against the session store. If the tokens do not match, the request is rejected. Django provides built-in CSRF protection by default when session middleware is active.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v:
     title: 'DJ 13.04 Django CSRF Token Implementation for Forms (9:16)'
     ai_title: null
@@ -895,7 +895,7 @@ entries:
 
       The lecture demonstrates a CSRF-protected guessing game example. When the form is submitted with the token, the request is validated by the CSRF middleware before processing, ensuring only legitimate POST requests with matching tokens are accepted. This prevents unauthorized form submissions by verifying the token's integrity against the session.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v:
     title: 'DJ 13.05 POST-REDIRECT-GET: Preventing Form Resubmission on Page Refresh (3:26)'
     ai_title: null
@@ -913,7 +913,7 @@ entries:
 
       The solution is the POST-REDIRECT-GET pattern. After processing a POST request, the server redirects the user to a GET request for the same resource. This ensures that refreshing the page does not resubmit the form data, eliminating duplicate submissions and improving user experience.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v:
     title: 'DJ 13.06 POST Redirect Pattern for Form Submissions (8:04)'
     ai_title: null
@@ -931,7 +931,7 @@ entries:
 
       The implementation uses sessions to store a flash message during the POST request, which is then displayed in the subsequent GET request. After the message is shown, it is deleted from the session to avoid re-display. This pattern is called the flash message pattern and is a standard technique for handling form submissions without double submissions.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v:
     title: 'DJ 14.01 Cookies and Sessions: Browser and Server Concepts (9:43)'
     ai_title: null
@@ -949,7 +949,7 @@ entries:
 
       Cookies can be session cookies, which expire when the browser is closed, or persistent cookies, which have a fixed expiration date. The lecture illustrates how Django handles cookies using request.cookies and sets cookies in response headers, demonstrating the distinction between session and persistent cookies.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v:
     title: 'DJ 14.02 Django Sessions: Session Cookies and Storage (12:33)'
     ai_title: null
@@ -967,7 +967,7 @@ entries:
 
       Django's SessionMiddleware handles session creation, lookup, and management. Sessions are stored in a database as base64-encoded JSON strings. Developers access session data via request.session in views, which functions as a dictionary for key-value storage.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v:
     title: 'DJ 15.01 Django Data Modeling: Models, Normalization, and Integer Keys (5:52)'
     ai_title: null
@@ -985,7 +985,7 @@ entries:
 
       Real-world examples include a local library data model, an autograder, and the Sakai learning management system. The lecture explains that database normalization, particularly third normal form, is critical for preventing data duplication and ensuring efficient database operations.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v:
     title: DJ 15.02 Avoiding Data Replication in Spreadsheet Models (8:36)
     ai_title: null
@@ -1003,7 +1003,7 @@ entries:
 
       The solution involves structuring data into relational tables with explicit relationships. By separating book instances from a central `book` table and using `language` tables, the model eliminates duplication. Each `book` instance links to a single `book` entry, with relationships defined by cardinality—such as zero or more `book` instances per `language` entry. This design ensures data integrity and simplifies updates while reducing storage requirements.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v:
     title: DJ 15.03 Representing Database Links with Primary and Foreign Keys (2:46)
     ai_title: null
@@ -1021,7 +1021,7 @@ entries:
 
       Foreign keys are columns that reference the primary key of another table. By convention, they follow the naming pattern of table name followed by underscore and the word id. Each table must contain a primary key, and multiple foreign keys can exist per table to establish connections between tables.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/04-DJ-03-Many-04-Django.m4v:
     title: 'DJ 15.04 Django Data Models: Foreign Keys and Migrations (9:56)'
     ai_title: null
@@ -1039,7 +1039,7 @@ entries:
 
       The lecture details the migration process: makemigrations creates portable migration files based on model changes, and migrate applies these to the database. It demonstrates the resulting SQLite database schema, showing how foreign keys are implemented and the database-specific differences in foreign key constraints.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v:
     title: 'DJ 15.05 Django Shell: Creating and Saving Model Objects with Foreign Keys (7:45)'
     ai_title: null
@@ -1057,7 +1057,7 @@ entries:
 
       The lecture demonstrates foreign key relationships by linking a book to a language object via primary key. It shows creating a book instance connected to the language and saving it. The shell also queries model objects by primary key and traverses relationships to access nested attributes like a book's title through its linked language.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-16-users/01-DJ-09-Login-01-Users.m4v:
     title: DJ 16.01 Django Superuser Creation and Authentication Basics (3:45)
     ai_title: null
@@ -1075,7 +1075,7 @@ entries:
 
       Django uses SQLite for development, where wiping the database removes all user data including superusers. To reset, developers must delete the SQLite database file, run migrations to recreate tables, and recreate the superuser. The admin interface provides built-in user management, and the lecture notes that local users are used for short-term projects before moving to social logins.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-16-users/02-DJ-09-Login-02-Urls.m4v:
     title: 'DJ 16.02 Django User Login and Logout (7:23)'
     ai_title: null
@@ -1093,7 +1093,7 @@ entries:
 
       The reverse function is used to look up login and logout views by name. The next parameter in login and logout URLs specifies the redirect URL after authentication. Templates automatically inject a user object with attributes such as isAuthenticated, id, and email.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-16-users/03-DJ-09-Login-03-Views.m4v:
     title: 'DJ 16.03 Django Login Page Template and Authentication Mixins (10:16)'
     ai_title: null
@@ -1111,7 +1111,7 @@ entries:
 
       The lecture details Django's login required mixin for view protection, which automatically redirects unauthenticated users to the login page with the next parameter. This mixin is the preferred method over manual authentication checks, ensuring secure access to views with minimal code.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v:
     title: 'DJ 17.01 Django Forms: Validation and Template Rendering (13:26)'
     ai_title: null
@@ -1129,7 +1129,7 @@ entries:
 
       The lecture demonstrates the form processing cycle: generating form HTML in templates, validating POST data, and responding with redirects or error messages. It also explains the use of CSRF tokens and the form object's role in connecting templates and browsers.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v:
     title: DJ 17.02 Django Server-Side Form Validation (9:13)
     ai_title: null
@@ -1147,7 +1147,7 @@ entries:
 
       The lecture explains how Django form objects process POST data and handle validation errors. Successful submissions result in a redirect to a success page. It also notes that Django returns a 200 status code after POST when no data changes, which can cause double processing if the page is refreshed.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-18-autos/01-samples-autos-walkthrough.mov:
     title: 'DJ 18.01 Django Autos Assignment: Implementing CRUD with Generic Views (36:13)'
     ai_title: null
@@ -1165,7 +1165,7 @@ entries:
 
       The lecture emphasizes understanding the underlying Django mechanisms to avoid copy-pasting repetitive code. By using generic views and LoginRequiredMixin, developers can implement CRUD functionality with minimal configuration.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v:
     title: DJ 20.01 Django Marketplace Initial Project Setup with Virtual Environment (9:45)
     ai_title: null
@@ -1183,7 +1183,7 @@ entries:
 
       After completing these steps, the Marketplace application runs locally and is accessible via the web server. The setup includes an admin interface for user management and provides the foundation for developing the Marketplace features as specified in the assignment.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-22-owned/01-DJ-12-Owned-01.m4v:
     title: DJ 22.01 Django Owned Rows Implementation Using Inheritance (6:02)
     ai_title: null
@@ -1201,7 +1201,7 @@ entries:
 
       The implementation uses inheritance to extend Django's generic list view, adding an owner field to conditionally display edit and delete buttons for the current user. This approach avoids code repetition by creating a specialized view class (OwnerListView), though additional security measures (like permission checks) are necessary to prevent unauthorized edits.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-22-owned/02-DJ-12-Owned-02.m4v:
     title: 'DJ 22.02 How to Extend Django Generic Edit Views with Method Overrides (10:17)'
     ai_title: null
@@ -1219,7 +1219,7 @@ entries:
 
       Complete method replacement involves overriding a method entirely to change its functionality, such as altering the data source by returning horse objects instead of car objects. Context augmentation allows adding new context variables to the existing context without replacing the parent method's output, by first calling the parent method and then extending the return value.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-22-owned/03-DJ-12-Owned-03.m4v:
     title: DJ 22.03 Django Owner Views Implementation with User Authentication (13:03)
     ai_title: null
@@ -1237,7 +1237,7 @@ entries:
 
       Security is enforced through queryset filtering in update and delete views to restrict access to the current user's articles. During article creation, the form saves the owner field as the authenticated user's primary key before committing to the database. This pattern leverages Django's inheritance to minimize boilerplate while ensuring only authorized users can modify their owned content.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-23-ads1/01-samples-crispy-walkthrough-23.mov:
     title: 'DJ 23.01 Crispy Forms: Django Bootstrap 5 Form Rendering (9:14)'
     ai_title: null
@@ -1255,7 +1255,7 @@ entries:
 
       Implementation requires installing the Crispy Forms library and Bootstrap 5 template pack via pip, adding crispy_forms to the installed apps in settings.py, and including the load crispy forms template tag in the template. The form object is then rendered using the pipe operator form | crispy to generate the form with required fields and a submit button.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-23-ads1/02-samples-myarts-walkthrough.mov:
     title: 'DJ 23.02 Django model ownership with user-specific rows (30:13)'
     ai_title: null
@@ -1273,7 +1273,7 @@ entries:
 
       The owner create view automatically sets the user field to the current authenticated user during form validation. Update and delete views apply a queryset filter to verify ownership before processing requests. This pattern is designed to be used across multiple models without modifying the owner.py file.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-23-ads1/03-samples-menu-walkthrough-edited.mov:
     title: DJ 23.03 Django Bootstrap Menu Implementation with Template Inheritance (14:21)
     ai_title: null
@@ -1291,7 +1291,7 @@ entries:
 
       The implementation handles user authentication by displaying a Gravatar image for authenticated users. A custom template tag generates a Gravatar URL using an MD5 hash of the user's email address, ensuring the email is not exposed while providing a user-specific avatar image.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/01-JS-01-01-JavaScript.m4v:
     title: 'DJ 24.01 JavaScript: History, Syntax, and Browser Applications (9:59)'
     ai_title: null
@@ -1309,7 +1309,7 @@ entries:
 
       This language interacts with the browser's DOM for client-side operations and can be extended to server-side applications using Node.js.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/02-JS-01-02-Browser.m4v:
     title: DJ 24.02 JavaScript DOM and Event Handling in Web Browsers (14:02)
     ai_title: null
@@ -1327,7 +1327,7 @@ entries:
 
       The lecture explains browser debugging techniques, such as using the console for error messages and `console.log` for non-blocking debug output. It also addresses how JavaScript syntax errors halt execution without user notification and the critical role of the browser console in identifying and resolving errors during development.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/03-JS-01-03-Language.m4v:
     title: 'DJ 24.03 JavaScript Syntax: Comments, Variables, and Numbers (16:57)'
     ai_title: null
@@ -1345,7 +1345,7 @@ entries:
 
       JavaScript has a single numeric type (number) that handles floating-point arithmetic. Type coercion occurs automatically in operations, such as adding a number and a string, which may produce NaN (Not a Number) for invalid numeric operations. The typeof operator and strict equality (===) are used for type checking and comparisons.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/04-JS-01-04-Functions-Arrays.m4v:
     title: 'DJ 24.04 JavaScript Functions and Arrays: Scoping (7:02)'
     ai_title: null
@@ -1363,7 +1363,7 @@ entries:
 
       JavaScript arrays are linear structures that resemble Python lists. Arrays are not associative; objects are used for key-value pairs. The push method appends elements to the end of an array.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/05-JS-01-05-If-Loops.m4v:
     title: 'DJ 24.05 JavaScript Control Structures: If Statements, Loops, and Logical Operators (6:37)'
     ai_title: null
@@ -1381,7 +1381,7 @@ entries:
 
       The lecture details while loops (zero-trip loops) and for loops (counted loops), emphasizing the need to manage iteration variables to avoid infinite loops. It explains the break and continue statements, and how to iterate over JavaScript objects (definite loops) versus arrays (counted loops).
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-25-jsoo/01-JS-02-01-Overview.m4v:
     title: DJ 25.01 Object-Oriented Programming Concepts in JavaScript (4:20)
     ai_title: null
@@ -1399,7 +1399,7 @@ entries:
 
       JavaScript supports first-class functions, allowing functions to be treated as data that can be assigned to variables and passed as arguments. This design aligns with Lisp's historical approach to unifying code and data, where functions and other values are treated uniformly.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-25-jsoo/02-JS-02-02-Code.m4v:
     title: 'DJ 25.02 JavaScript Classes: Function-Based Implementation and Instances (13:13)'
     ai_title: null
@@ -1417,7 +1417,7 @@ entries:
 
       The constructor function runs during instance creation to initialize attributes. Each instance maintains independent attribute values, ensuring that multiple instances operate with distinct data states when methods are called.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-26-ads-pictures/01-samples-pics-combined.mov:
     title: DJ 26.01 Django CRUD Image Upload Implementation (33:06)
     ai_title: null
@@ -1435,7 +1435,7 @@ entries:
 
       The application handles file uploads via Django's form processing, with server-side validation to ensure file size and content type. The detail view streams images using stored content type and content length headers, and a simple overlay modal is implemented for larger image viewing with minimal CSS and JavaScript.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v:
     title: 'DJ 27.01 Django Data Modeling: Many-to-Many Relationships (5:34)'
     ai_title: null
@@ -1453,7 +1453,7 @@ entries:
 
       In Django, many-to-many relationships are defined using the ManyToManyField in the model.py file. This allows models to represent multiple associations without fixed limits, ensuring the database can accommodate varying numbers of related objects.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-27-many-many/02-DJ-04-Many-02-Many.m4v:
     title: DJ 27.02 Django Many-to-Many Relationships with Junction Tables (12:35)
     ai_title: null
@@ -1471,7 +1471,7 @@ entries:
 
       In Django, a many-to-many field creates a junction table and virtual attributes for related objects. The junction table supports on delete cascade for automatic cleanup during deletions, and the data model can specify constraints like one dot dot star (minimum one) or zero dot dot star (minimum zero) for relationships.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-27-many-many/03-DJ-04-Many-03-Course.m4v:
     title: DJ 27.03 Django Many-to-Many Relationship with Role and Timestamps (8:38)
     ai_title: null
@@ -1489,7 +1489,7 @@ entries:
 
       The example shows how to interact with this model in Django's shell, including creating persons and courses, adding memberships with specific roles, and querying membership data. The integer role system employs a tuple of choices to map integers to role names in the admin interface, ensuring consistent representation and avoiding code duplication.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-28-ads-comments/01-samples-forums-walkthrough.mov:
     title: DJ 28.01 Django Many-to-Many Relationships with Junction Tables (25:28)
     ai_title: null
@@ -1507,7 +1507,7 @@ entries:
 
       The code demonstrates the use of related_name to create an attribute on the user model for accessing comments and covers the view and URL patterns for comment creation and deletion, including a post-redirect pattern for deletion.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/01-JS-03-Browser-01-Execution.m4v:
     title: 'DJ 29.01 JavaScript Execution Model: Events, DOM, and First-Class Functions (8:24)'
     ai_title: null
@@ -1525,7 +1525,7 @@ entries:
 
       The Document Object Model (DOM) is the structure that JavaScript manipulates to update the webpage. First-class functions are critical for event handling, as they enable event handlers to be defined and executed without immediate invocation, supporting asynchronous behavior.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v:
     title: DJ 29.02 JavaScript DOM and Window Object (5:40)
     ai_title: null
@@ -1543,7 +1543,7 @@ entries:
 
       The window object provides properties for the browser window's dimensions and methods for scrolling. When the DOM exceeds the window's visible area, scroll bars appear due to overflow. JavaScript can dynamically adjust the window and DOM to handle such scenarios.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v:
     title: 'DJ 29.03 JavaScript DOM Manipulation: Changing Elements and Styles (8:24)'
     ai_title: null
@@ -1561,7 +1561,7 @@ entries:
 
       The lecture also covers creating new DOM elements using `createElement` and appending them with `appendChild`, and manipulating CSS styles via `style.display`. It includes a practical example of toggling an element's visibility by switching between block and none display values.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v:
     title: 'DJ 29.04 Browser Event Registration: addEventListener vs. onClick and DOMContentLoaded (7:54)'
     ai_title: null
@@ -1579,7 +1579,7 @@ entries:
 
       It also covers the `DOMContentLoaded` event, which fires when the initial HTML document is fully loaded and parsed, and demonstrates the window `resize` event for responsive design applications.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v:
     title: DJ 29.05 JavaScript Network Events with Fetch and Promises (6:26)
     ai_title: null
@@ -1597,7 +1597,7 @@ entries:
 
       The example demonstrates a promise chain: the initial fetch returns a promise, which is resolved by a then callback. This callback processes the response, retrieves the text via response.text(), and when that promise resolves, the content is set in a DOM element.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/06-JS-03-Browser-06-WC.m4v:
     title: DJ 29.06 Creating Custom Elements with LitElement (11:05)
     ai_title: null
@@ -1615,7 +1615,7 @@ entries:
 
       LitElement simplifies custom element implementation by handling rendering and data binding, allowing components to share styles with the parent document and avoid shadow DOM. This approach enables responsive components that automatically update when their data changes, reducing the need for server-side template processing.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/01-JS-04-JSON-01-JSON.m4v:
     title: 'DJ 30.01 AJAX and JSON: Server-Client Data Exchange (8:34)'
     ai_title: null
@@ -1633,7 +1633,7 @@ entries:
 
       The lecture demonstrates a Django view that returns a JSON response with content type application/json. This allows client-side JavaScript to process the data and update the document object model.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/02-samples-fetch-walkthrough-23.mov:
     title: DJ 30.02 Django JSON Responses and Fetch API Basics (21:53)
     ai_title: null
@@ -1651,7 +1651,7 @@ entries:
 
       The lecture covers error handling in Fetch API operations, including invalid URLs, 404 responses, and non-JSON responses. It compares two asynchronous patterns: promise syntax and async/await, highlighting their error handling capabilities and typical use cases.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/03-JS-04-JSON-02-Chat.m4v:
     title: DJ 30.03 Simple Multi-User Chat Application with Ajax and JSON Polling (8:05)
     ai_title: null
@@ -1669,7 +1669,7 @@ entries:
 
       The server retrieves the latest 10 messages ordered by creation time and formats time intervals using Django's time library. The client-side JavaScript uses the fetch API to poll the server, clears the chat content div, and appends new messages. The lecture highlights JSON's widespread support across programming languages and its long history in web development.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/04-samples-chat-walkthrough-23.mov:
     title: DJ 30.04 Django Polling Example with AJAX and JSON (16:03)
     ai_title: null
@@ -1687,7 +1687,7 @@ entries:
 
       The implementation uses a polling pattern that sends requests to the server every few seconds. This approach is inefficient for production systems due to high server and network resource usage but effectively illustrates key asynchronous JavaScript concepts and DOM manipulation.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-31-ads3/01-samples-favicon-walkthrough.mov:
     title: DJ 31.01 Django Favicon Setup and Cache Busting (4:11)
     ai_title: null
@@ -1705,7 +1705,7 @@ entries:
 
       Browser caching can prevent immediate updates to the favicon; adding a cache-busting query parameter like ?x=42 to the favicon URL forces the browser to fetch the new icon.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-31-ads3/02-samples-social-github-walkthrough.mov:
     title: DJ 31.02 Setting Up GitHub Social Login in Django (8:47)
     ai_title: null
@@ -1723,7 +1723,7 @@ entries:
 
       With the credentials configured in Django settings, the application enables GitHub login. Users are redirected to GitHub for authorization, and upon successful authorization, they are authenticated in the Django application.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-31-ads3/03-favwc-walkthrough.m4v:
     title: DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (34:18)
     ai_title: null
@@ -1741,7 +1741,7 @@ entries:
 
       The implementation employs AJAX with jQuery to update favorite states without full page refreshes. When a user clicks a favorite button, a POST request is sent to update the database, and the UI dynamically toggles between filled and empty star indicators. Views handle the POST requests with CSRF exemption for simplicity, ensuring only authenticated users can modify favorites.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-32-ads-search/01-samples-well-walkthrough.mov:
     title: 'DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)'
     ai_title: null
@@ -1759,7 +1759,7 @@ entries:
 
       The lecture demonstrates how the application filters posts via title and text fields using Django's ORM, and explains a pattern where views are defined in urls.py by extending generic views to override parameters. This eliminates the need for separate view files while improving maintainability.
 
-      For more materials, auto graders, and more courses, please see www.masterprogrammer.com
+      For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
 
 
 
