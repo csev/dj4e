@@ -1434,10 +1434,10 @@ entries:
       With the credentials configured in Django settings, the application enables GitHub login. Users are redirected to GitHub for authorization, and upon successful authorization, they are authenticated in the Django application.
 
       For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
-  lesson-31-ads3/03-samples-favs-720.mov:
+  lesson-31-ads3/03-favwc-walkthrough.m4v:
     title: DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)
-    youtube_id: CFF0WQLj1as
-    kaltura_id: 1_6v3e8pzy
+    youtube_id: null
+    kaltura_id: null
     size: 800409093
     md5: 8c89cfebf0e128fe38a82ddce37ca294
     duration: 1820
