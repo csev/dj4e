@@ -279,7 +279,8 @@ entries:
       For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-05-html/03-Web-02-HTML-Code.m4v:
     title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
-    youtube_id: wYc6l28v7Cs
+    youtube_id: null
+    youtube_id_2020: wYc6l28v7Cs
     kaltura_id: 1_dwa48de3
     size: 315268951
     md5: b3b074ea3592fd41817dbcd0754005f4
@@ -399,7 +400,8 @@ entries:
       For more materials, auto graders, and more courses, please see www.masterprogrammer.com.
   lesson-07-sql/03-sql-01-basic.m4v:
     title: 'DJ 07.03 SQLite Command Line: Basic Table Creation and Queries (8:39)'
-    youtube_id: 2Or6_sSyl7c
+    youtube_id: WCiIvnt5GoE
+    youtube_id_2020: 2Or6_sSyl7c
     kaltura_id: 1_g8otnnv4
     size: 203949001
     md5: 46e0cd86570e6a671b777eafbd48d0fd

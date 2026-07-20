@@ -1,0 +1,290 @@
+DJ 01.01 Django for Everybody: Building Web Applications with Python (7:33)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_rivimz4s
+
+DJ 01.02 Charles Severance on AI in Programming Courses (16:16)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_xf35oqja
+
+DJ 02.01 Web Request-Response Cycle (6:04)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_2y8uuxkt
+
+DJ 02.02 Network Sockets as Computer Phone Calls (6:34)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_1p6b2a1z
+
+DJ 02.03 HTTP Protocol: History and URL Structure (16:28)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_7talvmaf
+
+DJ 02.04 Simple Python HTTP Client with Sockets (8:39)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_g183m3a4
+
+DJ 02.05 Simple Python Web Server Using Sockets (16:07)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_81iajz8i
+
+DJ 02.06 Browser Debugger Console: Access in Firefox and Chrome (9:43)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_7hjlhqof
+
+DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_oji2q2zz
+
+DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_qjwy5m0d
+
+DJ 02.09 Virtual Hosting: How a Single Server Hosts Multiple Domains (4:31)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ya6ljup1
+
+DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_m3r8zrvl
+
+DJ 03.02 Django Autograder: Checking Student Applications (10:42)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_rwh6tn83
+
+DJ 03.03 Django Application Structure Overview (7:04)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_9vivtmhy
+
+DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Tracebacks (19:38)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_mye8edg3
+
+DJ 04.01 Linux Shell Commands for Django Developers (18:27)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_wm73qac5
+
+DJ 05.01 HTML Parsing and Standard Evolution (5:53)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_a0josh9c
+
+DJ 05.02 Basic HTML Document Structure and Syntax (13:53)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_fyok19ax
+
+DJ 05.03 Document Object Model vs HTML Source Code (13:34)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_dwa48de3
+
+DJ 06.01 CSS: Styling HTML in Web Applications (12:47)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_omddte6i
+
+DJ 06.02 Three Methods for Applying CSS in HTML (15:03)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_qs5quxzr
+
+DJ 06.03 CSS: Images, Colors, and Fonts (13:39)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ul315ql1
+
+DJ 06.04 How Cascading Style Sheets Work (13:25)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_20pnhnvn
+
+DJ 06.05 HTML/CSS Examples: Fonts, Colors, and Layout Techniques (25:49)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_2p3in9d8
+
+DJ 07.01 SQL: Historical Development and Core Principles (18:57)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_is9piyqj
+
+DJ 07.02 SQLite Basic SQL Commands: Create, Insert, Update, Delete (11:44)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_c92qnkpc
+
+DJ 07.03 SQLite Command Line: Basic Table Creation and Queries (8:39)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_g8otnnv4
+
+DJ 08.01 Django Models: ORM and Migrations (19:59)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_55pyvf75
+
+DJ 08.02 Django Migrations: Creating and Applying Database Schema Changes (7:54)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_heb425uc
+
+DJ 08.03 Django Tutorial 2 on Python Anywhere: File Paths and Database Migrations (29:20)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_fhq2ghe3
+
+DJ 08.04 Resetting Django Database When Migrations Fail (5:47)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_mmb1947c
+
+DJ 09.01 Model-View-Controller Pattern in Web Development (7:07)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_io5sca3j
+
+DJ 10.01 Django Views and Templates: Application Output (6:59)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ls59lpcv
+
+DJ 10.02 Django Template Views and Request Objects (6:19)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ee6q7w4k
+
+DJ 10.03 XSS prevention with HTML escaping in Django (15:36)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_jlx4suin
+
+DJ 10.04 Django Templates: Rendering and Context (10:05)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_rr28mcvn
+
+DJ 10.05 Django Template Language: Variable Substitution and Automatic Escaping (10:59)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_wcl2tubu
+
+DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_svw6mc86
+
+DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_vd9ipruz
+
+DJ 11.01 Python Objects Terminology Explained (10:40)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_vvmki3m0
+
+DJ 11.02 Python Classes, Objects, and the Self Keyword (8:21)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_upm89fy3
+
+DJ 11.03 Python Object Lifecycle: Constructors and Destructors (6:09)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_oa32nueq
+
+DJ 11.04 Inheritance in Object-Oriented Programming (7:34)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_gukz6d1c
+
+DJ 11.05 Python Variables Are Pointers, Not Drawers in CPython (7:29)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_jpi8vnmv
+
+DJ 12.01 Django Generic Views: One Line Code for Reusable Model Views (16:28)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_jmjqo7ty
+
+DJ 13.01 HTML Forms and HTTP Methods in Django (8:19)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_bpsld0t3
+
+DJ 13.02 HTML Form Elements and Validation (11:49)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_cgpvq5lo
+
+DJ 13.03 Cross-Site Request Forgery (CSRF) in Web Forms (5:52)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_f3tfgk1d
+
+DJ 13.04 Django CSRF Token Implementation for Forms (9:16)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_eiiig020
+
+DJ 13.05 POST-REDIRECT-GET: Preventing Form Resubmission on Page Refresh (3:26)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_owdkdhs9
+
+DJ 13.06 POST Redirect Pattern for Form Submissions (8:04)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_qzikf4xh
+
+DJ 14.01 Cookies and Sessions: Browser and Server Concepts (9:43)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_iem44hof
+
+DJ 14.02 Django Sessions: Session Cookies and Storage (12:33)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_8n7xpvz5
+
+DJ 15.01 Django Data Modeling: Models, Normalization, and Integer Keys (5:52)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_zzm8kekx
+
+DJ 15.02 Avoiding Data Replication in Spreadsheet Models (8:36)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_58btj8cq
+
+DJ 15.03 Representing Database Links with Primary and Foreign Keys (2:46)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_3t0sx2qr
+
+DJ 15.04 Django Data Models: Foreign Keys and Migrations (9:56)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_4svbt1c2
+
+DJ 15.05 Django Shell: Creating and Saving Model Objects with Foreign Keys (7:45)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_4xt4niup
+
+DJ 16.01 Django Superuser Creation and Authentication Basics (3:45)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_n0351rh1
+
+DJ 16.02 Django User Login and Logout (7:23)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_5vlbeb12
+
+DJ 16.03 Django Login Page Template and Authentication Mixins (10:16)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_3ivsxf01
+
+DJ 17.01 Django Forms: Validation and Template Rendering (13:26)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_e3zatn0h
+
+DJ 17.02 Django Server-Side Form Validation (9:13)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_dmf98f80
+
+DJ 18.01 Django Autos Assignment: Implementing CRUD with Generic Views (36:13)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_6ln6x8q1
+
+DJ 20.01 Django Marketplace Initial Project Setup with Virtual Environment (9:45)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_apzt9xxp
+
+DJ 22.01 Django Owned Rows Implementation Using Inheritance (6:02)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_v84e17n0
+
+DJ 22.02 How to Extend Django Generic Edit Views with Method Overrides (10:17)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ulaazij0
+
+DJ 22.03 Django Owner Views Implementation with User Authentication (13:03)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_zx9ll17v
+
+DJ 23.01 Crispy Forms: Django Bootstrap 5 Form Rendering (9:14)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_imx4jszv
+
+DJ 23.02 Django model ownership with user-specific rows (30:13)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_pdjmuz3x
+
+DJ 23.03 Django Bootstrap Menu Implementation with Template Inheritance (14:21)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_oq1zk70d
+
+DJ 24.01 JavaScript: History, Syntax, and Browser Applications (9:59)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_gkxnjsf2
+
+DJ 24.02 JavaScript DOM and Event Handling in Web Browsers (14:02)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_pc5ff9mw
+
+DJ 24.03 JavaScript Syntax: Comments, Variables, and Numbers (16:57)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_m1ni5vvv
+
+DJ 24.04 JavaScript Functions and Arrays: Scoping (7:02)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_our7l5wy
+
+DJ 24.05 JavaScript Control Structures: If Statements, Loops, and Logical Operators (6:37)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_itcm1pzs
+
+DJ 25.01 Object-Oriented Programming Concepts in JavaScript (4:20)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_jggoaaix
+
+DJ 25.02 JavaScript Classes: Function-Based Implementation and Instances (13:13)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_01ef84yz
+
+DJ 26.01 Django CRUD Image Upload Implementation (33:06)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_2ydqy05m
+
+DJ 27.01 Django Data Modeling: Many-to-Many Relationships (5:34)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ybkf3k7m
+
+DJ 27.02 Django Many-to-Many Relationships with Junction Tables (12:35)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_p0zyh97c
+
+DJ 27.03 Django Many-to-Many Relationship with Role and Timestamps (8:38)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_7j9qsmaa
+
+DJ 28.01 Django Many-to-Many Relationships with Junction Tables (25:28)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_vbq4r6lq
+
+DJ 29.01 JavaScript Execution Model: Events, DOM, and First-Class Functions (8:24)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_d3sabfhl
+
+DJ 29.02 JavaScript DOM and Window Object (5:40)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_2os72zps
+
+DJ 29.03 JavaScript DOM Manipulation: Changing Elements and Styles (8:24)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ge0c2npu
+
+DJ 29.04 Browser Event Registration: addEventListener vs. onClick and DOMContentLoaded (7:54)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_ivoc5vwn
+
+DJ 29.05 JavaScript Network Events with Fetch and Promises (6:26)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_v50qafql
+
+DJ 29.06 Creating Custom Elements with LitElement (11:05)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_mtslochd
+
+DJ 30.01 AJAX and JSON: Server-Client Data Exchange (8:34)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_7z5fx9xh
+
+DJ 30.02 Django JSON Responses and Fetch API Basics (21:53)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_opf8j457
+
+DJ 30.03 Simple Multi-User Chat Application with Ajax and JSON Polling (8:05)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_298on87l
+
+DJ 30.04 Django Polling Example with AJAX and JSON (16:03)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_2z67r1na
+
+DJ 31.01 Django Favicon Setup and Cache Busting (4:11)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_aabjytfx
+
+DJ 31.02 Setting Up GitHub Social Login in Django (8:47)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_u4e0y7mq
+
+DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (30:20)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_6v3e8pzy
+
+DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)
+https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id=1_g5q1q7bc
