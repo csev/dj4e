@@ -16,6 +16,7 @@ djfree-samples => dj4e-samples
 MyArts article => myarts.Article
 myarts article => myarts.Article
 Brennan Icke => Brendan Eich
+Earl Severance => Charles Severance
 GitHubsettings.py => github_settings.py
 GitHubsettings.dist => github_settings-dist.py
 GitHubsettings dist => github_settings-dist.py

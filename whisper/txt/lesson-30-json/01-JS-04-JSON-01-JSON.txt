@@ -1,5 +1,5 @@
  - Hello, and welcome to our lecture on AJAX and JSON.
- I'm Dr. Earl Severance, and I'm your professor,
+ I'm Dr. Charles Severance, and I'm your professor,
  and I just wanna, I got a nice Father's Day gift
  from my daughter, and so I'm, to thank her,
  I'm wearing it for this particular lecture.
