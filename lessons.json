@@ -6,6 +6,13 @@
         "https://github.com/tsugitools/youtube",
         "https://github.com/tsugitools/dbgrader"
     ],
+    "discussions": [
+        {
+            "title": "New Features and Updates",
+            "launch": "tsugi/tool/tdiscus/",
+            "resource_link_id": "discussion_features"
+        }
+    ],
     "badges": [],
     "modules": [
         {
