@@ -1,0 +1,84 @@
+Hi, I’m Dr. Chuck, and I want to tell you about a new way that I’m offering Building Web Applications in Django, beginning August 1.
+
+Over the years, I’ve taught Django in two very different ways.
+
+I’ve taught it on campus, where students move through the course together. They have a schedule, assignments, office hours, teaching assistants, and other students working on the same material at the same time.
+
+And I’ve taught it online, where people can often start whenever they like and work at their own pace. That flexibility is wonderful, but it can also feel a little lonely. You may be watching a lecture that thousands of people have watched, but you might not know anyone who is working on the same assignment that week.
+
+This new offering is an attempt to bring the strongest parts of those two models together.
+
+I’m calling it a CAOC—a Campus-Aligned Online Course.
+
+Now, how do you pronounce CAOC?
+
+I pronounce it “kay-ock.”
+
+It sounds a little like kayak, which is actually:q a useful image. A two-person kayak works best when both people are moving in the same direction, at roughly the same pace.
+
+It also sounds a little like chaos, which may be an equally accurate description of teaching campus and online students at the same time.
+
+But the important word in CAOC is aligned.
+
+A CAOC is an online course that is deliberately aligned with live campus courses.
+
+In this case, the online course will run alongside SI 357 and SI 664, the two University of Michigan courses in which I teach this material.
+
+The online students are not enrolled as University of Michigan students, and this is not a University of Michigan credentialed course. But they will follow the same overall schedule as the campus students.
+
+When the students in SI 357 and SI 664 are learning about Django models, the online students will be learning about Django models.
+
+When the campus students are working through forms, authentication, JavaScript, and complete Django applications, the online students will be moving through those topics as well.
+
+Online learners will also have access to scheduled office hours and selected sessions involving the campus teaching team and teaching assistants.
+
+The goal is not to pretend that the online and campus experiences are identical. They are not.
+
+The goal is alignment.
+
+Everyone will be moving in roughly the same direction at roughly the same time.
+
+That means online students will have a reason to keep going, a community working beside them, and regular opportunities to ask questions when those questions are most relevant.
+
+This approach preserves much of the accessibility of online education while adding some of the rhythm and human connection of a campus course.
+
+You will still be learning online, and you can participate from anywhere in the world.
+
+But instead of feeling as though you are walking through an empty building whenever you happen to arrive, you will be joining while the building is full of people.
+
+There will be students working on the same concepts, teaching assistants helping people through the same difficult spots, and a real academic calendar providing momentum.
+
+Building Web Applications in Django is designed for people who already have some experience with Python and want to learn how to build database-backed web applications using Django.
+
+We will begin with the fundamentals of web applications and Django, and then move into models, views, templates, forms, authentication, JavaScript, and more complete applications.
+
+As always, the course materials are designed to emphasize understanding.
+
+I do not just want you to follow a sequence of instructions and somehow end up with a working application.
+
+I want you to understand what Django is doing, why it is doing it, and how the pieces fit together.
+
+The CAOC format adds another ingredient: the feeling that you are taking the journey with a real group of people.
+
+Our first offering begins August 1.
+
+The cost will be $300. That fee is intended primarily to cover the cost of the teaching assistants who will support the online students through office hours, instructional sessions, and help with the course material.
+
+This is an experiment, and we will learn from it as we go.
+
+But I think there is an important space between a completely self-paced online course and formal university enrollment.
+
+A Campus-Aligned Online Course is meant to occupy that space.
+
+One course.
+
+Campus and online learners.
+
+A shared schedule, a shared instructional community, and a better chance for online learners to feel connected to the process of learning.
+
+So welcome to Building Web Applications in Django.
+
+Welcome to the experiment.
+
+And welcome to the CAOC—pronounced “kay-ock,” somewhere between a kayak and chaos.
+
