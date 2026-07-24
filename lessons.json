@@ -4,6 +4,7 @@
     "count": true,
     "required_modules": [
         "https://github.com/tsugitools/youtube",
+        "https://github.com/tsugitools/webgrader.git",
         "https://github.com/tsugitools/dbgrader"
     ],
     "discussions": [
