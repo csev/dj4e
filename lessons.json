@@ -781,14 +781,12 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Autograder: HyperText Markup Language (HTML)",
-                    "launch": "{apphome}/tools/html-autograde/",
-                    "resource_link_id": "html_01",
+                    "title": "Auto-grader: Headings and Paragraphs",
+                    "launch": "{apphome}/mod/webgrader/",
+                    "resource_link_id": "dj4e_webgrader_headings",
+                    "target": "_blank",
                     "custom": [
-                        {
-                            "key": "exercise",
-                            "value": "a01.php"
-                        }
+                        { "key": "exercise", "value": "HeadingsAndParagraphs" }
                     ]
                 }
             ]
@@ -913,46 +911,22 @@
                 },
                 {
                     "type": "lti",
-                    "title": "Peer Graded: Cascading Style Sheets (CSS)",
-                    "launch": "tsugi/tool/peer-grade/",
-                    "resource_link_id": "css",
+                    "title": "Auto-grader: Four Corners",
+                    "launch": "{apphome}/mod/webgrader/",
+                    "resource_link_id": "dj4e_webgrader_four_corners",
+                                 "target": "_blank",
                     "custom": [
-                        {
-                            "key": "config",
-                            "json": {
-                                "title": "Cascading Style Sheets",
-                                "description": "In this assignment you will develop a Cascading Style Sheet (CSS) to control, the look, feel, and layout of some provide HTML content.",
-                                "grading": "This is a relatively simple assignment.  Don't take off points for little mistakes.  If they seem to have done the assignment give them full credit.   Feel free to make suggestions if there are small mistakes.  Please keep your comments positive and useful.  If you do not take grading seriously, the instructors may delete your response and you will lose points.",
-                                "assignment": "{apphome}/assn/css/index.php",
-                                "parts": [
-                                    {
-                                        "title": "Image (JPG or PNG) of your index.htm with the styling applied",
-                                        "type": "image"
-                                    },
-                                    {
-                                        "title": "Please paste the source code of your blocks.css file",
-                                        "type": "code",
-                                        "code": "css"
-                                    },
-                                    {
-                                        "title": "Image (JPG or PNG) of your blocks.css passing the W3 CSS validator",
-                                        "type": "image"
-                                    },
-                                    {
-                                        "title": "Image (JPG or PNG) of your browser showing your index.htm page inspecting the 'DJ4E' element.",
-                                        "type": "image"
-                                    }
-                                ],
-                                "totalpoints": 10,
-                                "instructorpoints": 0,
-                                "peerpoints": 4,
-                                "assesspoints": 3,
-                                "minassess": 2,
-                                "maxassess": 6,
-                                "flag": true,
-                                "resubmit": "on"
-                            }
-                        }
+                        { "key": "exercise", "value": "FourCorners" }
+                    ]
+                },
+                {
+                    "type": "lti",
+                    "title": "Auto-grader: Highlighting with Span",
+                    "launch": "{apphome}/mod/webgrader/",
+                    "resource_link_id": "dj4e_webgrader_highlighting_span",
+                    "target": "_blank",
+                    "custom": [
+                        { "key": "exercise", "value": "HighlightingWithSpan" }
                     ]
                 }
             ]
