@@ -375,12 +375,15 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Select User with WHERE Clause",
-                    "launch": "{apphome}/mod/dbgrader/",
+                    "launch": "{apphome}/mod/dbgrader/?exercise=SimpleWhereExercise",
                     "resource_link_id": "dj4e_select_where",
                     "target": "_blank",
                     "custom": [
-                        { "key": "exercise", "value": "SimpleWhereExercise" }
-                      ]
+                        {
+                            "key": "exercise",
+                            "value": "SimpleWhereExercise"
+                        }
+                    ]
                 },
                 {
                     "type": "lti",
@@ -783,11 +786,14 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Headings and Paragraphs",
-                    "launch": "{apphome}/mod/webgrader/",
+                    "launch": "{apphome}/mod/webgrader/?exercise=HeadingsAndParagraphs",
                     "resource_link_id": "dj4e_webgrader_headings",
                     "target": "_blank",
                     "custom": [
-                        { "key": "exercise", "value": "HeadingsAndParagraphs" }
+                        {
+                            "key": "exercise",
+                            "value": "HeadingsAndParagraphs"
+                        }
                     ]
                 }
             ]
@@ -913,21 +919,27 @@
                 {
                     "type": "lti",
                     "title": "Auto-grader: Four Corners",
-                    "launch": "{apphome}/mod/webgrader/",
+                    "launch": "{apphome}/mod/webgrader/?exercise=FourCorners",
                     "resource_link_id": "dj4e_webgrader_four_corners",
-                                 "target": "_blank",
+                    "target": "_blank",
                     "custom": [
-                        { "key": "exercise", "value": "FourCorners" }
+                        {
+                            "key": "exercise",
+                            "value": "FourCorners"
+                        }
                     ]
                 },
                 {
                     "type": "lti",
                     "title": "Auto-grader: Highlighting with Span",
-                    "launch": "{apphome}/mod/webgrader/",
+                    "launch": "{apphome}/mod/webgrader/?exercise=HighlightingWithSpan",
                     "resource_link_id": "dj4e_webgrader_highlighting_span",
                     "target": "_blank",
                     "custom": [
-                        { "key": "exercise", "value": "HighlightingWithSpan" }
+                        {
+                            "key": "exercise",
+                            "value": "HighlightingWithSpan"
+                        }
                     ]
                 }
             ]
