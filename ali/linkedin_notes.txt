@@ -1,0 +1,6 @@
+I have been working on a new model for open online education called the Campus-Linked Open Course, or CLOC.
+
+A CLOC connects online learners to a university course while it is actively being taught, giving them access to a shared calendar, regular communication, office hours, instructional support, and a cohort moving through the material together.
+
+My first CLOC is Building Web Applications in Django, beginning August 1. This article explains why I think there is an important space between a completely self-paced online course and formal university enrollment—and why the CLOC model is worth trying.
+

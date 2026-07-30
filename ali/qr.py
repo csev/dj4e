@@ -7,7 +7,7 @@ import qrcode
 
 
 def main() -> None:
-    url = "https://django.dr-chuck.com/"
+    url = "https://django.dr-chuck.com/?utm=qr"
     output_file = "django-dr-chuck-qr.png"
 
     qr = qrcode.QRCode(
