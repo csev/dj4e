@@ -1,42 +1,15 @@
 <?php
 
-use \Tsugi\Core\LTIX;
-
 require_once "browser_util.php";
 
-$seed = $USER->id+$LINK->id+$CONTEXT->id;
-$secret = browser_readable_secret($seed);
-
-$oldgrade = $RESULT->grade;
-
-if ( count($_POST) > 0 ) {
-    $_SESSION['postdata'] = $_POST;
-
-    $guess = isset($_POST['secret']) ? trim($_POST['secret']) : '';
-    $gradetosend = ($guess === $secret) ? 1.0 : 0.0;
-    LTIX::gradeSendDueDate($gradetosend, $oldgrade, $dueDate);
-
-    if ( $gradetosend >= 1.0 ) {
-        $_SESSION['success'] = 'Correct! You found the password field value.';
-    } else {
-        $_SESSION['error'] = 'That is not the value in the password field. Use Inspect / DevTools and try again.';
-    }
-
-    header('Location: '.addSession('index.php'));
-    return;
-}
-
-if ( $RESULT->grade > 0 ) {
-    echo('<p class="alert alert-info">Your current grade on this assignment is: '.($RESULT->grade*100.0).'%</p>'."\n");
-}
-
-if ( $dueDate->message ) {
-    echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
-}
-
-$postdata = isset($_SESSION['postdata']) ? $_SESSION['postdata'] : array();
-unset($_SESSION['postdata']);
-$oldguess = isset($postdata['secret']) ? $postdata['secret'] : '';
+$secret = browser_exercise_secret('password_field');
+browser_handle_secret_post(
+    $secret,
+    'Correct! You found the password field value.',
+    'That is not the value in the password field. Use Inspect / DevTools and try again.'
+);
+browser_show_grade_and_due();
+$oldguess = browser_old_guess();
 
 ?>
 <p>
@@ -47,28 +20,16 @@ Browsers hide the characters in a <code>password</code> input so people nearby c
 read them. Your job is to use browser Developer Tools to discover the value of the
 password field below, type it into the text field, and submit.
 </p>
-<form method="post" autocomplete="off">
 <p>
 <label for="hidden_secret">Secret (password field):</label><br/>
 <input type="password" id="hidden_secret" size="40" readonly
  autocomplete="off" aria-label="Hidden secret password field" />
 </p>
-<p>
-<label for="secret">Enter the secret you found:</label><br/>
-<input type="text" id="secret" name="secret" size="40"
- value="<?= htmlentities($oldguess) ?>" autocomplete="off" />
-</p>
-<input type="submit" value="Submit" />
-</form>
+<?php browser_submit_form($oldguess); ?>
 <script>
 document.getElementById('hidden_secret').value = <?= json_encode($secret) ?>;
 </script>
-<?php
-if ( $USER->instructor ) {
-    echo("\n<hr/>\n");
-    echo("<p><b>Instructor note:</b> student secret is <code>".htmlentities($secret)."</code></p>\n");
-}
-?>
+<?php browser_instructor_note($secret); ?>
 <!--
 How to solve this puzzle:
 1. Right-click the password field and choose Inspect.

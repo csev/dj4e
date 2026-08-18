@@ -17,6 +17,12 @@ if ( SettingsForm::handleSettingsPost() ) {
 // All the assignments we support
 $assignments = array(
     'password_field.php' => 'Inspecting a Password Field',
+    'css_hidden.php' => 'Finding CSS-Hidden Text',
+    'data_attribute.php' => 'Reading a data-* Attribute',
+    'html_comment.php' => 'Secrets in HTML Comments',
+    'console_dataset.php' => 'Console: $0 and dataset',
+    'network_json.php' => 'Network: Reading a JSON Response',
+    'local_storage.php' => 'Application: localStorage',
 );
 
 // Prefer link settings; if unset, take LTI custom or ?inherit= / ?exercise= from lessons.
