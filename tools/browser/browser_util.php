@@ -46,6 +46,7 @@ function browser_handle_secret_post($secret, $success_msg, $error_msg) {
     $_SESSION['postdata'] = $_POST;
     $guess = isset($_POST['secret']) ? trim($_POST['secret']) : '';
     $gradetosend = ($guess === $secret) ? 1.0 : 0.0;
+    if ( is_object($RESULT) ) $RESULT->recordAttempt();
     LTIX::gradeSendDueDate($gradetosend, $RESULT->grade, $dueDate);
 
     if ( $gradetosend >= 1.0 ) {

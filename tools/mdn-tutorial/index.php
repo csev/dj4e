@@ -61,10 +61,8 @@ if ( count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
 
 // Test info
 function webauto_check_test() {
-    global $RESULT;
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw;
     if ( ! webauto_testrun($url) ) {
-      if ( is_object($RESULT) ) $RESULT->recordAttempt();
       return;
     }
     error_out('Test run - switching to sample data');
@@ -187,7 +185,9 @@ if ( $assn && isset($assignments[$assn]) ) {
     ob_end_clean();
     echo($ob_output);
 
-    $LAUNCH->result->setJsonKey('output', $ob_output);
+    if ( function_exists('webauto_persist_real_attempt') ) {
+        webauto_persist_real_attempt($RESULT, $ob_output);
+    }
 } else {
     if ( $USER->instructor ) {
         echo("<p>Please use settings to select an assignment for this tool.</p>\n");

@@ -61,19 +61,7 @@ $assn = Settings::linkGet('exercise');
 $delay = Settings::linkGet('delay');
 $delay_tries = Settings::linkGet('delay_tries');
 
-// Load the previous attempt
-$attempt = json_decode($RESULT->getJson());
-$when = 0;
-$tries = 0;
-if ( $attempt && is_object($attempt) ) {
-    if ( isset($attempt->when) ) $when = $attempt->when + 0;
-    if ( isset($attempt->tries) ) $tries = $attempt->tries + 0;
-}
-
-$SECONDS_BEFORE_RETRY = 0;
-if ( $delay >= 0 && $when > 0 && $tries > $delay_tries) {
-    $SECONDS_BEFORE_RETRY = ($when+$delay) - time();
-}
+$SECONDS_BEFORE_RETRY = $RESULT->secondsUntilRetry($delay, $delay_tries);
 
 $password_ok = strlen($password) < 1 || U::get($_SESSION,'assignment_password') == $password;
 
@@ -117,11 +105,9 @@ function sendToIframe(id, html) {
 <?php
 
 function webauto_check_test() {
-    global $RESULT;
     global $url, $first_name, $last_name, $title_name, $book_title, $full_name, $last_first, $meta, $adminpw, $userpw, $useraccount;
     global $user1account, $user1pw, $user2account, $user2pw, $check;
     if ( ! webauto_testrun($url) ) {
-      if ( is_object($RESULT) ) $RESULT->recordAttempt();
       return;
     }
     error_out('Test run - switching to sample data');
@@ -274,8 +260,9 @@ if ( $assn && isset($assignments[$assn]) ) {
         echo($ob_output);
     }
 
-    $result = array("when" => time(), "tries" => $tries+1, "submit" => $_POST, "output" => $ob_output, "url" => U::get($_GET, 'url', ''));
-    $LAUNCH->result->setJson(json_encode($result));
+    if ( function_exists('webauto_persist_real_attempt') ) {
+        webauto_persist_real_attempt($RESULT, isset($ob_output) ? $ob_output : '');
+    }
 } else {
     if ( $USER->instructor ) {
         echo("<p>Please use settings to select an assignment for this tool.</p>\n");

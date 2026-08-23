@@ -37,6 +37,7 @@ $dueDate = SettingsForm::getDueDate();
 
 // Let the assignment handle the POST
 if ( count($_POST) > 0 && $assn && isset($assignments[$assn]) ) {
+    if ( is_object($RESULT) ) $RESULT->recordAttempt();
     include($assn);
     return;
 }

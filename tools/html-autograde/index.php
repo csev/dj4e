@@ -167,6 +167,7 @@ $grade = 0;
 $possgrade = 0;
 $data = $_SESSION['html_data'];
 unset($_SESSION['html_data']);
+if ( is_object($RESULT) ) $RESULT->recordAttempt();
 echo("<pre>\n");
 // echo("Input HTML\n"); echo(htmlentities($data)); echo("\n");
 

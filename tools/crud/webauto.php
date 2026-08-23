@@ -24,6 +24,28 @@ if ( $dueDate->message ) {
     echo('<p style="color:red;">'.$dueDate->message.'</p>'."\n");
 }
 
+/**
+ * Record a real student autograde run and keep JSON for instructor review.
+ * Sample / test-run URLs and form-only views (no url) are skipped.
+ */
+function webauto_persist_real_attempt($result, $output = '') {
+    global $url;
+    $run_url = '';
+    if ( isset($url) && is_string($url) && strlen(trim($url)) > 0 ) {
+        $run_url = trim($url);
+    } else {
+        $run_url = trim((string) U::get($_GET, 'url', ''));
+    }
+    if ( $run_url === '' ) return;
+    if ( function_exists('webauto_testrun') && webauto_testrun($run_url) ) return;
+    if ( ! is_object($result) ) return;
+    $result->recordAttempt();
+    $result->setJson(json_encode(array(
+        'output' => $output,
+        'url' => $run_url,
+    )));
+}
+
 function webauto_setup() {
     global $client;
     $client = new HttpBrowser(HttpClient::create(['verify_peer' => false, 'verify_host' => false]));

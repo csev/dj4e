@@ -46,16 +46,17 @@ if ( is_object($json) && isset($json->url)) {
     echo("</a></p>\n");
 }
 
-if ( $delay > 0 && is_object($json) && isset($json->when)) {
-    $when = $json->when;
+$when = 0;
+if ( ! empty($row['attempted_at']) ) {
+    $when = is_numeric($row['attempted_at']) ? ($row['attempted_at'] + 0) : strtotime($row['attempted_at']);
+} else if ( is_object($json) && isset($json->when) ) {
+    $when = $json->when + 0;
+}
+if ( $delay > 0 && $when > 0 ) {
     $delta = ($when + $delay) - time();
     if ( $delta > 0 ) {
-        echo("<p>Can be retried in ".SettingsForm::getDueDateDelta(($when + $delay) - time())."</p>\n");
+        echo("<p>Can be retried in ".SettingsForm::getDueDateDelta($delta)."</p>\n");
     }
-}
-
-if ( is_object($json) && isset($json->tries)) {
-    echo("<p>Tries: ".htmlentities($json->tries)."</p>\n");
 }
 
 if ( is_object($json) && isset($json->output)) {

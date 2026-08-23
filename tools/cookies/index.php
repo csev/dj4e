@@ -34,6 +34,7 @@ if ( isset($_POST['cookie']) ) {
         $error .= 'You must remove dj4e_destroy_cookie every time before you press "Submit"';
     }
 
+    $RESULT->recordAttempt();
     $RESULT->gradeSend($score);
     if ( $score >= 1.0 ) {
         $_SESSION['success'] = 'Assignment completed';

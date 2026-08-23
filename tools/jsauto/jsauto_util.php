@@ -43,7 +43,7 @@ function webauto_compute_effective_score($perfect, $passed, $penalty) {
 }
 
 function webauto_send_score($grade) {
-    global $USER, $OUTPUT;
+    global $USER, $OUTPUT, $RESULT;
 
     if ( ! isset($_SESSION[TSUGI_SESSION_LTI]) ) {
         return 'Not setup to return a grade..';
@@ -60,6 +60,8 @@ function webauto_send_score($grade) {
     if ( $grade < $old_grade ) {
         $grade = $old_grade;
     }
+
+    if ( is_object($RESULT) ) $RESULT->recordAttempt();
 
     $debug_log = array();
     $retval = LTIX::gradeSend($grade, false, $debug_log);

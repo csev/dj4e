@@ -36,19 +36,7 @@ $assn = Settings::linkGet('exercise');
 $delay = Settings::linkGet('delay');
 $delay_tries = Settings::linkGet('delay_tries');
 
-// Load the previous attempt
-$attempt = json_decode($RESULT->getJson());
-$when = 0;
-$tries = 0;
-if ( $attempt && is_object($attempt) ) {
-    if ( isset($attempt->when) ) $when = $attempt->when + 0;
-    if ( isset($attempt->tries) ) $tries = $attempt->tries + 0;
-}
-
-$SECONDS_BEFORE_RETRY = 0;
-if ( $delay >= 0 && $when > 0 && $tries > $delay_tries) {
-    $SECONDS_BEFORE_RETRY = ($when+$delay) - time();
-}
+$SECONDS_BEFORE_RETRY = $RESULT->secondsUntilRetry($delay, $delay_tries);
 
 // Get any due date information
 $dueDate = SettingsForm::getDueDate();

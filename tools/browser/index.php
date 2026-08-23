@@ -97,8 +97,6 @@ if ( $assn && isset($assignments[$assn]) ) {
     $ob_output = ob_get_contents();
     ob_end_clean();
     echo($ob_output);
-
-    $LAUNCH->result->setJsonKey('output', $ob_output);
 } else {
     if ( $USER->instructor ) {
         echo("<p>Please use settings to select an assignment for this tool.</p>\n");

@@ -46,6 +46,7 @@ if ( count($_POST) > 0 ) {
     }
 
     $gradetosend = (1.0 * $good) / $count;
+    if ( is_object($RESULT) ) $RESULT->recordAttempt();
     LTIX::gradeSendDueDate($gradetosend, $oldgrade, $dueDate);
 
     header('Location: '.addSession('index.php'));
