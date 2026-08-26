@@ -47,6 +47,10 @@ $CFG->setExtension('django_version_short', '52');
 $CFG->setExtension('kaltura_embed', 'https://cdnapisec.kaltura.com/p/1038472/embedPlaykitJs/uiconf_id/58045402?iframeembed=true&entry_id={id}');
 $CFG->setExtension('kaltura_tab', 'https://umsiali.mivideo.it.umich.edu/playlist/dedicated/410698932/1_6058dcqq/{id}');
 
+$CFG->setExtension('courses_in_urls', false);
+// $CFG->setExtension('courses_in_urls', true);
+// $CFG->setExtension('courses_in_urls', array('you@example.com'));
+
 $CFG->top_menu_callback = function() {
     global $CFG;
     $buildmenu = $CFG->dirroot.'/../buildmenu.php';

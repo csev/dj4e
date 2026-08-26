@@ -4,7 +4,27 @@ use \Tsugi\Util\U;
 
 function buildMenu() {
     global $CFG, $USER;
-    $R = $CFG->apphome . '/';
+    $home = rtrim($CFG->apphome, '/');
+    $flag = $CFG->getExtension('courses_in_urls', false);
+    $cid = (int) U::get($_SESSION, 'context_id', 0);
+    $prefix = '';
+    if ( ! empty($flag) && $cid > 0 ) {
+        $allowed = true;
+        if ( is_array($flag) ) {
+            $email = isset($_SESSION['email']) ? (string) $_SESSION['email'] : '';
+            $allowed = false;
+            foreach ($flag as $candidate) {
+                if ( strcasecmp(trim((string) $candidate), trim($email)) === 0 ) {
+                    $allowed = true;
+                    break;
+                }
+            }
+        }
+        if ( $allowed ) {
+            $prefix = '/courses/'.$cid;
+        }
+    }
+    $R = $home . $prefix . '/';
     $T = $CFG->wwwroot . '/';
 
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
@@ -32,11 +52,11 @@ function buildMenu() {
         if ( $isInstructor ) {
             $submenu->addLink('Notifications', $R.'notifications');
         }
-        $submenu->addLink('Courses', $R.'coursesredirect.php');
+        $submenu->addLink('Courses', $home.'/coursesredirect.php');
         if ( isset($CFG->google_map_api_key) ) {
             $submenu->addLink('Map', $R.'map');
         }
-        $submenu->addLink('Profile', $R.'profile');
+        $submenu->addLink('Profile', $home.'/profile');
         if ( $showCalendarDueUi ) {
             $submenu->addLink('Calendar', $R.'calendar');
         }
@@ -44,20 +64,20 @@ function buildMenu() {
             $submenu->addLink('Badges', $R.'badges');
         }
         if ( file_exists('materials.php') ) {
-            $submenu->addLink('Materials', $R.'materials');
+            $submenu->addLink('Materials', $home.'/materials');
         }
         if ( file_exists('privacy.php') ) {
-            $submenu->addLink('Privacy', $R.'privacy');
+            $submenu->addLink('Privacy', $home.'/privacy');
         }
         $submenu->addLink('LMS Integration', $T . 'settings');
         if ( isset($CFG->google_classroom_secret) ) {
             $submenu->addLink('Google Classroom', $T.'gclass/login');
         }
-        $submenu->addLink('Django Versions', $R.'versions');
+        $submenu->addLink('Django Versions', $home.'/versions');
         if ( isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true" ) {
             $submenu->addLink('Administer', $T . 'admin/');
         }
-        $submenu->addLink('Logout', $R.'logout');
+        $submenu->addLink('Logout', $home.'/logout');
         if ( isset($_SESSION['avatar']) ) {
             $set->addRight('<img src="'.$_SESSION['avatar'].'" alt="'.htmlentities(__('User Profile Menu - Includes logout')).'" style="height: 2em;"/>', $submenu);
             // htmlentities($_SESSION['displayname']), $submenu);
@@ -65,8 +85,8 @@ function buildMenu() {
             $set->addRight(htmlentities($_SESSION['displayname']), $submenu);
         }
     } else {
-        $set->addRight('Login', $R.'login');
-        $set->addRight('Courses', $R.'coursesredirect.php');
+        $set->addRight('Login', $home.'/login');
+        $set->addRight('Courses', $home.'/coursesredirect.php');
     }
     if ( isset($_SESSION['id']) ) {
         $set->addRight(
