@@ -33,8 +33,8 @@
     # Common “info” / debug endpoints
     RewriteRule ^(phpinfo|info)\.php$ - [R=404,L,NS]
     RewriteRule ^server-status$ - [R=404,L,NS]
-    # Root config.php is a stub; /config is rewritten to it via FileRouter
-    RewriteRule ^config(\.php)?(/.*)?$ - [R=404,L,NS]
+    # Root config.php is a stub; FileRouter also maps /config and /config-dist
+    RewriteRule ^config(-dist)?(\.php)?(/.*)?$ - [R=404,L,NS]
 
     # Shell / CGI / vendor exploits (common wordlists)
     RewriteRule ^cgi-bin/ - [R=404,L,NS]
