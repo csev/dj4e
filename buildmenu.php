@@ -48,6 +48,7 @@ function buildMenu() {
         $submenu->addLink('Announcements', $R.'announcements');
         $submenu->addLink('Grades', $R.'grades');
         $submenu->addLink('Pages', $R.'pages');
+        $submenu->addLink('Files', $R.'files');
         $submenu->addLink('Discussions', $R.'discussions');
         if ( $isInstructor ) {
             $submenu->addLink('Notifications', $R.'notifications');
