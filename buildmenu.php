@@ -53,7 +53,7 @@ function buildMenu() {
         if ( $isInstructor ) {
             $submenu->addLink('Notifications', $R.'notifications');
         }
-        if ( $isInstructor && \Tsugi\Core\Manifest::activeId() > 0 ) {
+        if ( \Tsugi\Controllers\Setup::showInMenu() ) {
             $submenu->addLink('Setup', $R.'setup');
         }
         $submenu->addLink('Courses', $home.'/coursesredirect.php');
