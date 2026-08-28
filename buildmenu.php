@@ -53,6 +53,9 @@ function buildMenu() {
         if ( $isInstructor ) {
             $submenu->addLink('Notifications', $R.'notifications');
         }
+        if ( $isInstructor && \Tsugi\Core\Manifest::activeId() > 0 ) {
+            $submenu->addLink('Setup', $R.'setup');
+        }
         $submenu->addLink('Courses', $home.'/coursesredirect.php');
         if ( isset($CFG->google_map_api_key) ) {
             $submenu->addLink('Map', $R.'map');
