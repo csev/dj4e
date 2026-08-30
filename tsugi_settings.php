@@ -1,4 +1,8 @@
 <?php
+if ( ! isset($CFG) ) {
+    http_response_code(404);
+    exit;
+}
 /**
  * These are some configuration variables that are not secure / sensitive
  *

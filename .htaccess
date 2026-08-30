@@ -36,6 +36,9 @@
     # Root config.php is a stub; FileRouter also maps /config and /config-dist
     RewriteRule ^config(-dist)?(\.php)?(/.*)?$ - [R=404,L,NS]
 
+    # Include-only fragments (need Tsugi $OUTPUT / $CFG; not standalone pages)
+    RewriteRule ^(nav|top|footer|buildmenu|sanity|tsugi_settings)\.php$ - [R=404,L,NS]
+
     # Shell / CGI / vendor exploits (common wordlists)
     RewriteRule ^cgi-bin/ - [R=404,L,NS]
     RewriteRule ^vendor/ - [R=404,L,NS]

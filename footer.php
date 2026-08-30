@@ -1,4 +1,8 @@
 <?php
+if ( ! isset($OUTPUT) || ! is_object($OUTPUT) ) {
+    http_response_code(404);
+    exit;
+}
 
 // Service worker registration and notifications web component are now loaded
 // in Output.php footerStart() method
