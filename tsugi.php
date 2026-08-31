@@ -2,6 +2,20 @@
 
 use \Tsugi\Core\LTIX;
 
+// Chrome Private Prefetch Proxy — before session so we do not set cookies.
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+if ( $path === '/.well-known/traffic-advice' || $path === '/.well-known/traffic-advice/' ) {
+    header('Content-Type: application/trafficadvice+json');
+    header('Cache-Control: public, max-age=86400');
+    $advice = __DIR__ . '/.well-known/traffic-advice';
+    if ( is_readable($advice) ) {
+        readfile($advice);
+    } else {
+        echo '[{"user_agent":"prefetch-proxy","fraction":1.0}]';
+    }
+    return;
+}
+
 define('COOKIE_SESSION', true);
 require_once "tsugi/config.php";
 
