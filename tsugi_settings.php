@@ -53,7 +53,7 @@ $CFG->setExtension('kaltura_tab', 'https://umsiali.mivideo.it.umich.edu/playlist
 
 $CFG->setExtension('courses_in_urls', false);
 // $CFG->setExtension('courses_in_urls', true);
-// $CFG->setExtension('courses_in_urls', array('you@example.com'));
+$CFG->setExtension('courses_in_urls', array('drchuck@gmail.com', 'drchuck@learnxp.com'));
 
 $CFG->top_menu_callback = function() {
     global $CFG;
