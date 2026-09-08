@@ -4,6 +4,8 @@
 
 `tsugi/` is checked out as a **subfolder** of this course tree, but it stays in its **own** git repo ([tsugiproject/tsugi](https://github.com/tsugiproject/tsugi.git)). Commits and PRs for Tsugi belong in that repo, not in `dj4e`. It is still quite common to debug Tsugi from within this working tree (paths under `dj4e/tsugi/`); see `tsugi/AGENTS.md` for Tsugi-specific agent guidance.
 
+**Do not use `/Users/csev/htdocs/tsugi`** (sibling of `dj4e/`) while working here. That is a different clone. See `.cursor/rules/tsugi-checkout.mdc`.
+
 ## media-util (shared media tooling)
 
 Lecture media tooling (whisper, `media.yaml` bootstrap, compare scripts, YouTube helpers) lives in a **separate** git repo, not in this tree:

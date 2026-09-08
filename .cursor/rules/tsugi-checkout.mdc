@@ -1,0 +1,14 @@
+---
+description: Nested dj4e/tsugi is the Tsugi being edited. Do not use the sibling htdocs/tsugi clone.
+alwaysApply: true
+---
+
+# Nested Tsugi checkout only
+
+DJ4E's Tsugi lives at **`dj4e/tsugi/`** (this course tree). It is its own git repo.
+
+`/Users/csev/htdocs/tsugi` (sibling of `dj4e/`, not inside it) is a **different clone**. Do not read, write, grep, migrate, or copy into it while working on DJ4E or `dj4e/tsugi`.
+
+- Edits and `php admin/upgrade.php` stay under `dj4e/tsugi/`.
+- CWD-relative `../config.php` from `dj4e/tsugi` loads `dj4e/config.php`, which pulls in **`htdocs/tsugi`**. Use `__DIR__` requires inside Tsugi instead.
+- If `dirroot` is not `.../dj4e/tsugi`, stop. Do not follow it to the sibling tree.
