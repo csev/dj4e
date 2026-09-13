@@ -53,8 +53,8 @@ function buildMenu() {
         if ( $isInstructor ) {
             $submenu->addLink('Notifications', $R.'notifications');
         }
-        if ( \Tsugi\Controllers\Setup::showInMenu() ) {
-            $submenu->addLink('Setup', $R.'setup');
+        if ( \Tsugi\Controllers\Settings::showInMenu() ) {
+            $submenu->addLink('Settings', $R.'settings');
         }
         $submenu->addLink('Courses', $home.'/coursesredirect.php');
         if ( isset($CFG->google_map_api_key) ) {
