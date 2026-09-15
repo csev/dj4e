@@ -28,7 +28,7 @@ ALLOWED_HOSTS = ['*']
 <p>
 The URL of your website below would be something like 
 <a href="https://drchuck.pythonanywhere.com" target="_blank">https://drchuck.pythonanywhere.com</a>
-but with <i>your</i> PythonAnywhere username instead of `drchuck`.  The autograder wil access the "/polls"
+but with <i>your</i> PythonAnywhere username instead of "drchuck".  The autograder wil access the "/polls"
 path within your web site.
 </p>
 <?php
