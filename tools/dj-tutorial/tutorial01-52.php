@@ -15,19 +15,24 @@ https://www.dj4e.com/assn/dj4e_install52.md
 nameNote();
 $message = $check;
 ?>
-Here is a sample of what you might put into your <b>views.py</b>.
+Here is a sample of what you might put into your <b>~/django_projects/mysite/polls/views.py</b>.
+Note that the four-space indentation matters because this is Python.
 <pre>
     return HttpResponse("Hello, world. <?= $message ?> You're at the polls index.")
 </pre>
-Also you will need to edit the file <b>mysite/mysite/settings.py</b> and
+Also you will need to edit the file <b>~/django_projects/mysite/mysite/settings.py</b> and
 edit the <b>ALLOWED_HOSTS</b> to look as follows:
 <pre>
 ALLOWED_HOSTS = ['*']
 </pre>
-
+<p>
+The URL of your website below would be something like 
+<a href="https://drchuck.pythonanywhere.com" target="_blank">https://drchuck.pythonanywhere.com</a>
+but with <i>your</i> PythonAnywhere username instead of `drchuck`.
+</p>
 <?php
 
-$url = getUrl('http://djtutorial.dj4e.com/polls');
+$url = getUrl('');
 if ( $url === false ) return;
 $passed = 0;
 

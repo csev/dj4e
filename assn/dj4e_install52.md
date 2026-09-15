@@ -13,10 +13,10 @@ of installing Django 5.2</a>.
 Checking Your Current Virtual Environment
 -----------------------------------------
 
-Once you have created your PythonAnywhere account, start a `bash` shell under `Consoles`
+Once you have created your PythonAnywhere account, start a `bash` console under `Consoles`
 and set up a virtual environment with Python 3.x and Django 5.2.  First lets
 make sure you don't already have a Django 5.2 environment or other virtual environment set up.  If your
-shell prompt looks as follows, you are all set up and can skip to
+console prompt looks as follows, you are all set up and can skip to
 "Installing the Sample Code for DJ4E".
 
     (.ve52) 14:15 ~ $
@@ -41,11 +41,20 @@ Installing a Django 5.2 Virtual Environment
 -------------------------------------------
 
 If after all the above checks, you do not have a Django 5.2 virtual environment installed,
-lets install one.  First lets make sure your shell has no current virtual environment
+lets install one.  First lets make sure your console has no current virtual environment
 by de-activating any current virtual environment:
 
     cd ~
     deactivate  # May fail - this is OK
+
+
+> **Note**: Throughout this document you will see the use of the "tilde"
+character (`~`).  While you cannot use this character everywhere,
+it represents "the path to your home folder".  So if your PythonAnywhere
+username is `drchuck` and you type `cd ~` it is a convenient short cut for
+`cd /home/drchuck` and means "change directory into my home directory".
+We use it a lot to keep directory paths short, simple and the same
+regardless of your login account.
 
 If the deactivate fails with the following message - that is OK.  You just were
 not in a virtual environment:
@@ -91,7 +100,8 @@ Once you verify your Python version is correct, run:
     pip install django==5.2 ## this may take a couple of minutes
 
 Sometimes these two commands take a long time.  Run them one at a time in the
-shell.  When the servers are running slowly, each command can take more than ten
+console.  When the servers are running slowly, each command can
+take more than ten
 minutes to finish.  Be patient and wait until you see the `$` prompt indicating
 the command is complete before continuing.  After they are complete, check your
 Django version.
@@ -100,8 +110,8 @@ Django version.
 
 The Django version should be at least 5.2.
 
-Note if you exit and re-start a new shell on PythonAnywhere - you need the following command
-to get back into your virtual environment in the new bash shell unless you enable it automatically
+Note if you exit and re-start a new console on PythonAnywhere - you need the following command
+to get back into your virtual environment in the new console unless you enable it automatically
 as shown below.
 
     source ~/.ve52/bin/activate
@@ -109,7 +119,7 @@ as shown below.
 Automatically Enabling Your Virtual Environment
 -----------------------------------------------
 
-Each time you start a new shell, you will need to activate your virtual environment.  It
+Each time you start a new console, you will need to activate your virtual environment.  It
 is a lot simpler to do this automatically every time you login by
 editing the `/home/(your-account)/.bashrc` file in *your* home directory
 using the `Files` tab on the PythonAnywhere web site.
@@ -119,8 +129,8 @@ Go to the end of that file, add a blank line and the following lines:
     # Auto switch into Django 5.2 virtual environment
     source ~/.ve52/bin/activate
 
-The next time you start a console/shell, the shell should be using the `.ve52` environment
-and you should see the virtual environment indicator in your shell prompt:
+The next time you start a console (a.k.a bash shell), the console should be using the `.ve52` environment
+and you should see the virtual environment indicator in your console prompt:
 
     (.ve52) 13:29 ~ $
 
@@ -228,7 +238,7 @@ like PythonAnywhere.  We never change these files.
 You only should run the `startproject` command once - it will fail if you try to run it twice.  There
 are instructions to delete then entire `mysite` folder and start over at the bottom of these instructions.
 
-At this point, keep your shell open in one tab and open the PythonAnywhere *Files* application
+At this point, keep your console open in one tab and open the PythonAnywhere *Files* application
 in another browser tab and navigate to the `~/django_projects/mysite/mysite/settings.py` and change
 the allowed hosts line (around line 28) to be:
 
@@ -262,11 +272,12 @@ make a few changes to the settings for the web app and your application.
 
     Virtualenv: /home/drchuck/.ve52
 
-Replace `drchuck` with your account on PythonAnywhere.
+Replace `drchuck` with your account on PythonAnywhere.  Note that we cannot use
+the tilde (`~`) in these path names because you are not logged in to a console.
 
-Set the Python version to your application to the version of Python that is in your virtual
+Go back to the console and set the Python version to your application to the version of Python that is in your virtual
 environment when you created it above.   You can always go into your virtual environment and
-check the Python version in the Console / Shell:
+check the Python version in the console:
 
     source ~/.ve52/bin/activate
     python --version
@@ -313,7 +324,7 @@ If you try to do `runserver` on PythonAnywhere it, you will see an error message
 This will *never* work on PythonAnywhere.  You run / restart your server on
 PythonAnywhere using the "reload" button on your `Web` tab.  So
 if you are reading any Django instructions that say to do a `runserver`, instead do a
-`check`  in the shell and then reload the application in the PythonAnywhere web UI.
+`check`  in the  console and then reload the application in the PythonAnywhere web UI.
 
 Adding Your Polls Application
 -----------------------------
@@ -330,7 +341,7 @@ will be stored in its own folder under `mysite`.
     cd ~/django_projects/mysite
     python manage.py startapp polls
 
-You should only run this command once.   It creates a new folder under `mysite` called `polls`
+You should only run this command once.   It creates a new folder under `~/django_projects/mysite` called `polls`
 with the following skeleton files for your new application:
 
     django_projects/
@@ -352,14 +363,14 @@ with the following skeleton files for your new application:
                 tests.py
                 views.py
 
-Write your first view in the `mysite/polls/views.py` file.  Replace its contents with:
+Write your first view in the `~/django_projects/mysite/polls/views.py` file.  Replace its contents with:
 
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("Hello, world. You're at the polls index.")
 
-Then create the `mysite/polls/urls.py` and put the following code into it:
+Then create the `~/django_projects/mysite/polls/urls.py` and put the following code into it:
 
     from django.urls import path
 
@@ -369,8 +380,8 @@ Then create the `mysite/polls/urls.py` and put the following code into it:
         path("", views.index, name="index"),
     ]
 
-Then replace the contents of the `mysite/mysite/urls.py` with the following to activate the
-`mysite/polls/urls.py` file at the `/polls` URL path in your application.
+Then replace the contents of the `~/django_projects/mysite/mysite/urls.py` with the following to activate the
+`~/django_projects/mysite/polls/urls.py` file at the `/polls` URL path in your application.
 
     # mysite/mysite/urls.py from DJ4E
 
@@ -393,11 +404,11 @@ At this point you have created a new view (named `index`), added a route to
 the view in `mysite/polls/urls.py`, and mounted the urls for the `polls` application
 into the project-wide URL routing file `mysite/mysite/urls.py`.  There are two files
 named `urls.py` in two different folders.  One file is for the overall (soon to be
-multi-application) project (`mysite`) and the other file is for your *first*
+multi-application) project (`~/django_projects/mysite`) and the other file is for your *first*
 application (`polls`).
 
 To see if you have made the modifications correctly, run the following commands
-in a bash shell console on PythonAnywhere:
+in a console on PythonAnywhere:
 
     cd ~/django_projects/mysite 
     python manage.py check
@@ -418,12 +429,12 @@ You should see a page that looks like:
 <center><img src="dj4e_install/pyaw_404.png" alt="An image showing a 404 Not found response" style="border: 1px black solid;"></center>
 
 This page is a "404 Error" which means that Django could not find a route in your application for the
-"empty path".  Because you have `DEBUG = true` in your `mysite/mysite/settings.py`,
-Django tells you have not yet told
+"empty path".  Because you have `DEBUG = True` in your `~/django_projects/mysite/mysite/settings.py`,
+Django tells you that have not yet told
 it how to route the "empty path" *and* it tells you all the paths it knows how to route.
 
 This 404 error is OK at this point in the tutorial.  Later we will add a route in 
-`mysite/mysite/urls.py` for the "empty path" - but for now we can change the URL to 
+`~/django_projects/mysite/mysite/urls.py` for the "empty path" - but for now we can change the URL to 
 add `polls` to route to the application that you just created.
 
     (your-account).pythonanywhere.com/polls
@@ -437,7 +448,7 @@ Going forward, every time we make changes to our application, we should run
     cd ~/django_projects/mysite
     python manage.py check
 
-in the shell, and when that shows no errors, navigate to the `Web`, press `Reload`,
+in the console, and when that shows no errors, navigate to the `Web`, press `Reload`,
 and then go to your web site to test your changes.  This pattern of change, check,
 reload, and test will become second nature after a while.
 
