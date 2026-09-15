@@ -4,12 +4,27 @@ use \Tsugi\Util\U;
 
 function buildMenu() {
     global $CFG, $USER;
-    // Normally Output::topNav() already restored the Google-login course
-    // before this callback. Call it again so a leftover sandbox cannot
-    // leak into site chrome if someone invokes buildMenu() directly.
-    \Tsugi\Controllers\Courses::restoreSiteLoginContext();
     $home = rtrim($CFG->apphome, '/');
-    $R = $home . '/';
+    $flag = $CFG->getExtension('courses_in_urls', false);
+    $cid = (int) U::get($_SESSION, 'context_id', 0);
+    $prefix = '';
+    if ( ! empty($flag) && $cid > 0 ) {
+        $allowed = true;
+        if ( is_array($flag) ) {
+            $email = isset($_SESSION['email']) ? (string) $_SESSION['email'] : '';
+            $allowed = false;
+            foreach ($flag as $candidate) {
+                if ( strcasecmp(trim((string) $candidate), trim($email)) === 0 ) {
+                    $allowed = true;
+                    break;
+                }
+            }
+        }
+        if ( $allowed ) {
+            $prefix = '/courses/'.$cid;
+        }
+    }
+    $R = $home . $prefix . '/';
     $T = $CFG->wwwroot . '/';
 
     $adminmenu = isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true";
@@ -69,6 +84,7 @@ function buildMenu() {
         $submenu->addLink('Logout', $home.'/logout');
         if ( isset($_SESSION['avatar']) ) {
             $set->addRight('<img src="'.$_SESSION['avatar'].'" alt="'.htmlentities(__('User Profile Menu - Includes logout')).'" style="height: 2em;"/>', $submenu);
+            // htmlentities($_SESSION['displayname']), $submenu);
         } else {
             $set->addRight(htmlentities($_SESSION['displayname']), $submenu);
         }
@@ -99,15 +115,8 @@ function buildMenu() {
                 'hidden-xs tsugi-wc-nav-item'
             );
         }
-        if ( \Tsugi\Controllers\Courses::showCoursesWidget() ) {
-            $set->addRight(
-                '<tsugi-courses api-url="'. htmlspecialchars($T . 'courses/json') . '" all-url="'. htmlspecialchars($T . 'courses') . '" enter-url="'. htmlspecialchars($T . 'courses') . '"></tsugi-courses>',
-                false,
-                true,
-                'hidden-xs tsugi-wc-nav-item'
-            );
-        }
-    }
+    }   
 
     return $set;
 }
+
