@@ -28,12 +28,15 @@ ALLOWED_HOSTS = ['*']
 <p>
 The URL of your website below would be something like 
 <a href="https://drchuck.pythonanywhere.com" target="_blank">https://drchuck.pythonanywhere.com</a>
-but with <i>your</i> PythonAnywhere username instead of `drchuck`.
+but with <i>your</i> PythonAnywhere username instead of `drchuck`.  The autograder wil access the "/polls"
+path within your web site.
 </p>
 <?php
 
 $url = getUrl('');
 if ( $url === false ) return;
+$url = rtrim($url, '/');
+if ( ! str_ends_with($url, '/polls') ) $url = $url . '/polls';
 $passed = 0;
 
 error_log("Tutorial01 ".$url);
