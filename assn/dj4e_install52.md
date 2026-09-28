@@ -1,3 +1,4 @@
+```
 Installing Django 5.2 on PythonAnywhere
 =======================================
 
@@ -41,7 +42,7 @@ Installing a Django 5.2 Virtual Environment
 -------------------------------------------
 
 If after all the above checks, you do not have a Django 5.2 virtual environment installed,
-lets install one.  First lets make sure your console has no current virtual environment
+let's install one.  First let's make sure your console has no current virtual environment
 by de-activating any current virtual environment:
 
     cd ~
@@ -61,11 +62,11 @@ not in a virtual environment:
 
     bash: deactivate: command not found
 
-Now lets install a new virtual environment in your home directory (~) with a version of Python
+Now let's install a new virtual environment in your home directory (~) with a version of Python
 that supports Django 5.2.  The Python version should be 3.10 - 3.13 with a preference toward
 the later releases.
 
-You can figure out figure out exactly which versions of Python are available in your
+You can figure out exactly which versions of Python are available in your
 Linux shell (a.k.a. PythonAnywhere console) type `python3.` and then press the `Tab` key twice and
 you should see something like the following:
 
@@ -88,7 +89,7 @@ If this works without error, you are in good shape.  If you get a message like
 Try the `python` command above with 3.12, 3.11, and 3.10 until one works.   Hopefully your
 PythonAnywhere account has at least one Python version that supports Django 5.2.
 
-Once the above `venv` creation is successfull, activate your virtual environment and verify the python
+Once the above `venv` creation is successful, activate your virtual environment and verify the python
 version inside the virtual environment.
 
     source ~/.ve52/bin/activate
@@ -137,7 +138,7 @@ and you should see the virtual environment indicator in your console prompt:
 Installing the Sample Code for DJ4E
 -----------------------------------
 
-Lets also get a copy of the sample code for DJ4E checked out so you can look at sample code
+Let's also get a copy of the sample code for DJ4E checked out so you can look at sample code
 as the course progresses and install some important additional Django software libraries using
 `pip`.
 
@@ -180,8 +181,7 @@ Then run:
 
 If you are doing this for the first time, it should run some migrations and create a file `db.sqlite3`.
 
-The `dj4e-samples` folder is reference material that you can use through
-out the course.   From time to time we might make changes to this and ask you to
+The `dj4e-samples` folder is reference material that you can use throughout the course.   From time to time we might make changes to this and ask you to
 do the following commands to get the latest version of the code.
 
     cd ~/dj4e-samples
@@ -191,13 +191,13 @@ Building Your Application
 -------------------------
 
 Now that we have your Django set up and you have retrieved the sample 
-code for DJ4E and installed required libraries, lets build your first application
+code for DJ4E and installed required libraries, let's build your first application
 in the PythonAnywhere console / bash shell:
 
     cd ~
     mkdir django_projects
 
-Once you have made a folder in your home directory, lets go into that folder and make a Django project.
+Once you have made a folder in your home directory, let's go into that folder and make a Django project.
 
     cd ~/django_projects
     django-admin startproject mysite
@@ -232,7 +232,7 @@ file that PythonAnywhere reads to start your application.
 see that URLs with the prefix of `/admin` are routed to the built-in Django administration screens
 which we will use much later.
 
-* `mysite/wgsi.py` and `mysite/agsi.py` are the starting points to plug our application into a hosting system
+* `mysite/wsgi.py` and `mysite/asgi.py` are the starting points to plug our application into a hosting system
 like PythonAnywhere.  We never change these files.
 
 You only should run the `startproject` command once - it will fail if you try to run it twice.  There
@@ -244,8 +244,9 @@ the allowed hosts line (around line 28) to be:
 
      ALLOWED_HOSTS = [ '*' ]
 
-Leave the __DEBUG__ value set to *True* - we are not really "in production" and if you set this to
-*False* you will not see error messages when you make mistakes.
+For this course exercise, leave the __DEBUG__ value set to *True* and use `ALLOWED_HOSTS = [ '*' ]`
+so that Django displays useful error information while you are learning.  You would not use these
+settings for a real production application.
 
 Then save the file.  Do *not* "Run" the file - just save it - it will be loaded later.
 
@@ -275,9 +276,9 @@ make a few changes to the settings for the web app and your application.
 Replace `drchuck` with your account on PythonAnywhere.  Note that we cannot use
 the tilde (`~`) in these path names because you are not logged in to a console.
 
-Go back to the console and set the Python version to your application to the version of Python that is in your virtual
-environment when you created it above.   You can always go into your virtual environment and
-check the Python version in the console:
+Make sure the Python version selected for your Web application matches the Python version used
+by your virtual environment.  You can check the Python version in the virtual environment from
+the console:
 
     source ~/.ve52/bin/activate
     python --version
@@ -334,7 +335,7 @@ At this point, we are going to add the polls application from the first
 Django tutorial</a>.  The instructions below are specialized on how to do the first tutorial
 specifically on PythonAnywhere.
 
-First create the `polls` application.  A Django "project" is contains multiple Django "applications".
+First create the `polls` application.  A Django "project" contains multiple Django "applications".
 The `polls` application is the first of several that we will build in this course.  Each application
 will be stored in its own folder under `mysite`.
 
@@ -402,10 +403,10 @@ to that URL path root.
 
 At this point you have created a new view (named `index`), added a route to 
 the view in `mysite/polls/urls.py`, and mounted the urls for the `polls` application
-into the project-wide URL routing file `mysite/mysite/urls.py`.  There are two files
-named `urls.py` in two different folders.  One file is for the overall (soon to be
-multi-application) project (`~/django_projects/mysite`) and the other file is for your *first*
-application (`polls`).
+into the project-wide URL routing file `mysite/mysite/urls.py`.  There are two files named `urls.py` in two different folders:
+
+* `~/django_projects/mysite/mysite/urls.py` - project-wide routing
+* `~/django_projects/mysite/polls/urls.py` - routing for the `polls` application
 
 To see if you have made the modifications correctly, run the following commands
 in a console on PythonAnywhere:
@@ -413,8 +414,8 @@ in a console on PythonAnywhere:
     cd ~/django_projects/mysite 
     python manage.py check
 
-Running this command checks for syntax and logic errors in your Django application.
-It is easier to fix errors in the command line.
+Running this command checks your Django configuration and catches many common errors before
+you reload the application.  It is easier to fix errors in the command line.
 
 <b>Important:</b> If you find an error, you need to stop and go back and fix the error,
 running `python manage.py check` repeatedly until there are no errors.
@@ -500,10 +501,12 @@ working when you Reload your application.
 About Django 4.2
 ----------------
 
-**Note** As of January 2026, this cource has moved from
-Django 4.2 to Django 5.2 - If you started the course using Django 4.2 - you
-can finish the course using Django 4.2 but if you are starting the course June 2025
+**Note** As of January 2026, this course has moved from
+Django 4.2 to Django 5.2. If you started the course using Django 4.2, you
+can finish the course using Django 4.2, but if you are starting the course January 2026
 or later, you should use Django 5.2.  If you want to use Django 4.2, please follow the
 <a href="dj4e_install.md">install instructions for Django 4.2</a> to install Django 4.2.
 
 
+
+```
