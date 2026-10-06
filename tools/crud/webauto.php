@@ -8,7 +8,26 @@ use \Tsugi\UI\SettingsForm;
 use \Tsugi\Core\LTIX;
 
 use Symfony\Component\BrowserKit\HttpBrowser;
+use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpClient\HttpClient;
+
+/**
+ * Picture-assignment forms include file inputs. HttpBrowser turns an empty
+ * file into DataPart('', ''), and TextPart then dies with "Path cannot be empty".
+ * Drop the files so the post stays application/x-www-form-urlencoded.
+ *
+ * Undo: in webauto_setup(), change "new Dj4eHttpBrowser" back to "new HttpBrowser".
+ * The server copy of vendor/symfony/browser-kit/AbstractBrowser.php still has
+ * "$files = []; // DJ4E hack" until that line is removed, so either class is
+ * safe while that hack is in place.
+ */
+class Dj4eHttpBrowser extends HttpBrowser
+{
+    public function request(string $method, string $uri, array $parameters = [], array $files = [], array $server = [], ?string $content = null, bool $changeHistory = true): Crawler
+    {
+        return parent::request($method, $uri, $parameters, [], $server, $content, $changeHistory);
+    }
+}
 
 $ngrok_fails = array(
     "ngrok.com/signup",
@@ -48,7 +67,7 @@ function webauto_persist_real_attempt($result, $output = '') {
 
 function webauto_setup() {
     global $client;
-    $client = new HttpBrowser(HttpClient::create(['verify_peer' => false, 'verify_host' => false]));
+    $client = new Dj4eHttpBrowser(HttpClient::create(['verify_peer' => false, 'verify_host' => false]));
     // $client = new Client();
     // $client->setMaxRedirects(5);
     // $client->getClient()->setSslVerification(false);
