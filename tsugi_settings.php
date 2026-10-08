@@ -29,6 +29,8 @@ $CFG->tool_folders = array("admin", "../tools", "../mod", "tool");
 
 $CFG->giftquizzes = $CFG->dirroot.'/../dj4e-private/quiz';
 
+$CFG->privacy_url = $CFG->apphome . '/privacy.php';
+
 $CFG->youtube_url = $CFG->apphome . '/mod/youtube/';
 
 $CFG->tdiscus = $CFG->wwwroot . '/tool/tdiscus/';
