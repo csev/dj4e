@@ -1,5 +1,6 @@
 <?php
 require_once "../config.php";
+require_once "market-util.php";
 
 use \Tsugi\Util\U;
 use \Tsugi\Core\Settings;
@@ -52,6 +53,37 @@ $assn = Settings::linkGet('exercise');
 $prereq = Settings::linkGet('prereq');
 $delay = Settings::linkGet('delay');
 $delay_tries = Settings::linkGet('delay_tries');
+
+$sql_links = "SELECT DISTINCT L.link_key AS link_key, L.title AS link_title
+    FROM {$CFG->dbprefix}lti_link AS L
+    WHERE L.context_id = :CID AND L.link_id <> :LID
+      AND (L.deleted IS NULL OR L.deleted = 0)";
+$link_rows = $PDOX->allRowsDie($sql_links, array(":CID" => $LAUNCH->context->id, ":LID" => $LAUNCH->link->id));
+if ( ! is_array($link_rows) ) $link_rows = array();
+$prereq = market_prereq_resolve($prereq, $link_rows);
+$links = market_prereq_choices($link_rows);
+
+$prereq_grade = 0;
+$prereq_title = false;
+$sql_valid = "KID not set";
+$sql_grade = "KID not set";
+if ( is_string($prereq) && strlen($prereq) > 0 ) {
+    $sql_valid = "SELECT L.link_id AS link_id, L.title AS title
+        FROM {$CFG->dbprefix}lti_link AS L
+        WHERE L.context_id = :CID AND L.link_key = :KID
+          AND (L.deleted IS NULL OR L.deleted = 0)";
+    $rows = $PDOX->allRowsDie($sql_valid, array(":CID" => $LAUNCH->context->id, ":KID" => $prereq));
+    $sql_grade = "KID not valid";
+    if ( count($rows) > 0 ) {
+        $prereq_title = $rows[0]['title'];
+        $link_id = $rows[0]['link_id'];
+        $sql_grade = "SELECT R.grade AS grade
+            FROM {$CFG->dbprefix}lti_result AS R
+            WHERE R.user_id = :UID AND R.link_id = :LID";
+        $rows = $PDOX->allRowsDie($sql_grade, array(":UID" => $LAUNCH->user->id, ":LID" => $link_id));
+        if ( count($rows) > 0 ) $prereq_grade = $rows[0]['grade'];
+    }
+}
 
 $SECONDS_BEFORE_RETRY = $RESULT->secondsUntilRetry($delay, $delay_tries);
 
@@ -122,38 +154,6 @@ function webauto_check_test() {
 
 $OUTPUT->bodyStart();
 $OUTPUT->topNav($menu);
-
-$sql_links = "SELECT DISTINCT L.link_key AS link_key, L.title AS link_title
-    FROM {$CFG->dbprefix}lti_link AS L
-    WHERE L.context_id = :CID AND L.link_id <> :LID";
-$rows = $PDOX->allRowsDie($sql_links, array(":CID" => $LAUNCH->context->id, ":LID" => $LAUNCH->link->id));
-$links = array();
-foreach($rows as $row) {
-  $links[$row['link_key']] = $row['link_title'];
-}
-
-$prereq_grade = 0;
-$prereq_title = false;
-if ( is_string($prereq) && strlen($prereq) > 0 ) {
-
-        // Make sure we have a valid resource_link_id (perhaps pre-set in lessons.json)
-        $sql_valid = "SELECT DISTINCT L.link_id AS link_id, L.title AS title
-            FROM {$CFG->dbprefix}lti_context AS C 
-            JOIN {$CFG->dbprefix}lti_link AS L
-	    WHERE C.context_id = :CID AND L.link_key = :KID";
-        $rows = $PDOX->allRowsDie($sql_valid, array(":CID" => $LAUNCH->context->id, ":KID" => $prereq));
-
-	$sql_grade = "KID not valid";
-	if ( count($rows) > 0 ) {
-            $prereq_title = $rows[0]['title'];
-            $link_id = $rows[0]['link_id'];
-            $sql_grade = "SELECT R.grade AS grade
-                FROM {$CFG->dbprefix}lti_result AS R 
-	        WHERE R.user_id = :UID AND R.link_id = :LID";
-            $rows = $PDOX->allRowsDie($sql_grade, array(":UID" => $LAUNCH->user->id, ":LID" => $link_id));
-	    if ( count($rows) > 0 ) $prereq_grade = $rows[0]['grade'];
-        }
-}
 
 // Settings button and dialog
 if ( $LAUNCH->user->instructor ) {

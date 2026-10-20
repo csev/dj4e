@@ -11,6 +11,9 @@ use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpClient\HttpClient;
 
+require_once __DIR__ . '/assignment_lock.php';
+dj4e_assignment_lock_stop();
+
 /**
  * Picture-assignment forms include file inputs. HttpBrowser turns an empty
  * file into DataPart('', ''), and TextPart then dies with "Path cannot be empty".

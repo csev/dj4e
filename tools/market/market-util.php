@@ -218,6 +218,81 @@ function market_delete_old($client, $url, $check, $testrun) {
     return true;
 }
 
+/**
+ * SettingsForm treats an all-digit array key as "no key" and saves the
+ * option label. Prefix the id so the saved prerequisite stays the link key.
+ */
+function market_prereq_setting_value($key) {
+    return 'id:' . $key;
+}
+
+/**
+ * Turn a stored prerequisite into a link_key.
+ * Accepts id:KEY, a real link_key such as dj4e_mkt0, or a title saved by
+ * the broken dropdown when the id was all digits.
+ *
+ * @param mixed $stored
+ * @param array $rows rows with link_key and link_title
+ * @return string link_key, or '' when no prerequisite is set
+ */
+function market_prereq_resolve($stored, $rows) {
+    global $LINK;
+
+    $by_key = array();
+    $title_keys = array();
+    foreach ( $rows as $row ) {
+        $key = isset($row['link_key']) ? trim((string) $row['link_key']) : '';
+        if ( $key === '' ) continue;
+        $title = isset($row['link_title']) ? trim((string) $row['link_title']) : '';
+        $by_key[$key] = $title;
+        if ( $title !== '' ) {
+            if ( ! isset($title_keys[$title]) ) $title_keys[$title] = array();
+            $title_keys[$title][] = $key;
+        }
+    }
+
+    $key = '';
+    if ( is_string($stored) ) {
+        $stored_trim = trim($stored);
+        if ( $stored_trim !== '' && $stored_trim !== '0' ) {
+            $candidate = $stored_trim;
+            if ( strncmp($candidate, 'id:', 3) === 0 ) {
+                $candidate = trim(substr($candidate, 3));
+            }
+            if ( $candidate !== '' && isset($by_key[$candidate]) ) {
+                $key = $candidate;
+            } else if ( isset($title_keys[$stored_trim]) && count($title_keys[$stored_trim]) === 1 ) {
+                $key = $title_keys[$stored_trim][0];
+            } else if ( $candidate !== '' ) {
+                $key = $candidate;
+            }
+        }
+    }
+
+    if ( $key !== '' && isset($by_key[$key]) && isset($LINK) && is_object($LINK) ) {
+        $canonical = market_prereq_setting_value($key);
+        $all = $LINK->settingsGetAll();
+        $current = (is_array($all) && array_key_exists('prereq', $all)) ? $all['prereq'] : $stored;
+        if ( ! is_string($current) || $current !== $canonical ) {
+            $LINK->settingsSet('prereq', $canonical);
+        }
+    }
+
+    return $key;
+}
+
+function market_prereq_choices($rows) {
+    $choices = array();
+    foreach ( $rows as $row ) {
+        $key = isset($row['link_key']) ? trim((string) $row['link_key']) : '';
+        if ( $key === '' ) continue;
+        $title = isset($row['link_title']) ? trim((string) $row['link_title']) : '';
+        if ( $title === '' ) $title = 'Untitled assignment';
+        $choices[market_prereq_setting_value($key)] = $title;
+    }
+    return $choices;
+}
+
 function market_check_prereq($prereq, $prereq_title, $prereq_grade ) {
 
     if ( ! is_string($prereq_title) || strlen($prereq_title) < 1 ) return;
