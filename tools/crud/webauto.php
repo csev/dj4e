@@ -713,7 +713,7 @@ function webauto_change_form($form, $name, $value, $message=false)
         $x = $form->get($name);
     } catch(Exception $ex) {
         $msg = 'Did not find form field named "'.$name.'"';
-        if ( is_string($message) ) $msg .= ' ' . $detail;
+        if ( is_string($message) ) $msg .= ' ' . $message;
         error_out($msg);
         throw new Exception($msg);
     }
@@ -727,7 +727,7 @@ function webauto_submit_form($client, $form) {
         $crawler = $client->submit($form);
     } catch(Exception $ex) {
         error_out("Submitting the form caused an error - often this is an '<input type=file' field with the wrong name");
-        return $crawler;
+        return false;
     }
 	$response = $client->getInternalResponse();
 	$status = $response->getStatusCode();

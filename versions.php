@@ -44,5 +44,5 @@ Django 3.0.1
 
 </pre>
 
-<?php include("footer.php"); ?>
+<?php include("footer.php");
 

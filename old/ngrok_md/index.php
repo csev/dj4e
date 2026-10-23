@@ -2,11 +2,11 @@
 
 if ( ! defined('COOKIE_SESSION') ) define('COOKIE_SESSION', true);
 
-require_once "../tsugi/config.php";
+require_once "../../tsugi/config.php";
 require_once "Parsedown.php";
 
-require_once "../top.php";
-require_once "../nav.php";
+require_once "../../top.php";
+require_once "../../nav.php";
 
 if ( ! function_exists('endsWith') ) {
 function endsWith($haystack, $needle) {
@@ -21,7 +21,7 @@ $pieces = explode('/',$url);
 
 $file = false;
 $contents = false;
-if ( $pieces >= 2 ) {
+if ( count($pieces) >= 2 ) {
    $file = $pieces[count($pieces)-1];
    if ( ! endsWith($file, '.md') ) $file = false;
    if ( ! $file || ! file_exists($file) ) $file = false;

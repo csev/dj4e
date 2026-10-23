@@ -151,7 +151,7 @@ Make sure your title tag in the HTML contains this string along with the rest of
 <p>
 <?php
 
-$url = getUrl('https://djtutorial.dj4e.com/site/dj4e.htm');
+$url = htmlGetUrl('https://djtutorial.dj4e.com/site/dj4e.htm');
 if ( $url === false ) {
     $OUTPUT->footer();
     return;
@@ -185,7 +185,8 @@ register_shutdown_function("fatalHandler");
 $titlematch = false;
 require($assn);
 
-echo("\n\nGrading Complete, your score is  " . $grade/$possgrade . "\n\n");
+$score = ($possgrade > 0) ? ($grade / $possgrade) : 0;
+echo("\n\nGrading Complete, your score is  " . $score . "\n\n");
 
 if ( ! $titlematch ) {
     badmessage("Since the title tag was not correct your grade is not recorded");
@@ -194,7 +195,7 @@ if ( ! $titlematch ) {
     return;
 }
 
-$gradetosend = $grade/$possgrade;
+$gradetosend = $score;
 $scorestr = "Your answer is correct, score saved.";
 
 if ( $oldgrade > $gradetosend ) {

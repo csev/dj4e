@@ -33,7 +33,7 @@ if ( ! $dj4e_code || strlen($dj4e_code) < 1 ) {
        $meta_good = false;
     } else {
         $now = time();
-        if ( ($then + 180*24*60*60) < $now ) {
+        if ( ((int) $then + 180*24*60*60) < $now ) {
             error_log('Expired dj4e-code '.$dj4e_code.' user:'.$USER->id.' '.$USER->email." ".$USER->displayname);
             error_out('Your meta name="dj4e-code" tag is out of date.  Check the Owned Rows assignment document.');
             $meta_good = false;

@@ -336,7 +336,7 @@ if ( is_array($matches) && isset($matches[1]) && is_array($matches[1]) ) {
         $crawler = webauto_submit_form($client, $form);
         $html = webauto_get_html($crawler);
         if ( ! webauto_search_for_not($html, $title."_comment") ) {
-            error('It appears that the comment was not deleted.');
+            error_out('It appears that the comment was not deleted.');
             return;
         }
         break;

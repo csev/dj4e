@@ -22,7 +22,7 @@ $pieces = explode('/',$url);
 $file = false;
 $svg = false;
 $contents = false;
-if ( $pieces >= 2 ) {
+if ( count($pieces) >= 2 ) {
    $file = $pieces[count($pieces)-1];
    if ( ! file_exists($file) ) {
       $file_with_folder = $pieces[count($pieces)-2] . '/' . $file;

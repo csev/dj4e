@@ -71,5 +71,5 @@ Holt, Michigan 48842
 United States</code></pre>
 </address>
 <p>Last edited: 27-Nov-2017</p>
-<?php include("footer.php"); ?>
+<?php include("footer.php");
 
