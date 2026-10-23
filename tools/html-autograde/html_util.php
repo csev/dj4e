@@ -60,7 +60,7 @@ function getTag($dom, $tagname) {
 function getTagText($dom, $tagname) {
     $node = getTag($dom, $tagname);
     if ( $node ) return $node->nodeValue;
-    return $false;
+    return false;
 }
 
 function getTagCount($dom, $tagname) {
@@ -177,7 +177,7 @@ function validateHTML($data) {
     return true;
 }
 
-function getUrl($sample) {
+function htmlGetUrl($sample) {
     global $USER;
 
     if ( isset($_GET['url']) ) {

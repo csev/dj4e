@@ -22,7 +22,7 @@ $pieces = explode('/',$url);
 $file = false;
 $svg = false;
 $contents = false;
-if ( $pieces >= 2 ) {
+if ( count($pieces) >= 2 ) {
    $file = $pieces[count($pieces)-1];
    if ( endsWith($file, '.svg') ) {
         $contents = file_get_contents('svg/'.$file);
