@@ -54,7 +54,7 @@ Go find the `STATIC_URL` line in `settings.py` and add the following two lines b
     STATIC_URL = '/static/'  # Existing line in settings.py
 
     import os
-    STATIC_ROOT = os.path.join(BASE_DIR, 'catalog/static')  # New line
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # New line
 
 Continue with the Tutorial
 --------------------------
