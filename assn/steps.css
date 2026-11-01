@@ -1,0 +1,89 @@
+/* Student step checkboxes. State lives in localStorage, not on the server. */
+
+input.step-box {
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.45rem 0.12rem 0;
+  vertical-align: -0.15em;
+  cursor: pointer;
+  accent-color: #2e7d32;
+}
+
+h1.step input.step-box,
+h2.step input.step-box,
+h3.step input.step-box {
+  vertical-align: middle;
+}
+
+input.step-box:focus-visible {
+  outline: 2px solid #1565c0;
+  outline-offset: 2px;
+}
+
+.step.step-done {
+  box-shadow: inset 3px 0 0 #2e7d32;
+}
+
+.step.step-current {
+  box-shadow: inset 3px 0 0 #1565c0;
+  background: #f5f9fd;
+}
+
+ul > li.step {
+  list-style: none;
+}
+
+#step-progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.75rem;
+  clear: both;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  margin: 0.2rem 0 1rem;
+  padding: 0.4rem 0.65rem;
+  background: #f7f7f8;
+  border: 1px solid #e2e2e6;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  font-size: 0.92rem;
+}
+
+#step-progress progress {
+  width: 7rem;
+  height: 0.7rem;
+  vertical-align: middle;
+}
+
+#step-progress .step-progress-note {
+  color: #666;
+  font-size: 0.82rem;
+}
+
+#step-progress button {
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.12rem 0.55rem;
+  cursor: pointer;
+}
+
+#step-progress button:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+#step-progress button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+@media print {
+  #step-progress {
+    display: none;
+  }
+}

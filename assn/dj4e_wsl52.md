@@ -10,19 +10,19 @@ When you complete this, you will have a URL from localhost.run (e.g. `https://xx
 Prerequisites
 -------------
 
-1. **WSL 2** – Install and update WSL, then install a Linux distribution (Ubuntu is a common choice). Official steps: <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank">Install WSL on Windows</a>.  
+1. [] **WSL 2** – Install and update WSL, then install a Linux distribution (Ubuntu is a common choice). Official steps: <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank">Install WSL on Windows</a>.  
    Open **Ubuntu** (or your distro) from the Start menu; the rest of this guide uses that terminal.
 
-2. **Python 3.10, 3.11, 3.12, or 3.13** – In your WSL terminal, on Debian/Ubuntu:
+2. [] **Python 3.10, 3.11, 3.12, or 3.13** – In your WSL terminal, on Debian/Ubuntu:
 
         sudo apt update
         sudo apt install python3 python3-venv python3-pip
 
    Other distros: use their package manager to install Python 3 and `venv` support.
 
-3. **Git** – Debian/Ubuntu: `sudo apt install git`
+3. [] **Git** – Debian/Ubuntu: `sudo apt install git`
 
-4. **SSH** – Used by localhost.run. OpenSSH is included with typical WSL images; if `ssh` is missing, install `openssh-client` with your package manager.
+4. [] **SSH** – Used by localhost.run. OpenSSH is included with typical WSL images; if `ssh` is missing, install `openssh-client` with your package manager.
 
 **Where to put your files:** Keep projects under your **Linux home** (`cd ~`), not under `/mnt/c/...`. I/O on the Windows drive from WSL is slower and can cause odd permission or line-ending issues with tools like Git and Python.
 
@@ -31,7 +31,7 @@ We use `~/django_projects` for your Django apps and `~/dj4e-samples` for the sam
 Creating a Virtual Environment
 ------------------------------
 
-In your **WSL** terminal:
+[] In your **WSL** terminal:
 
     cd ~
     python3 -m venv .ve52
@@ -39,7 +39,7 @@ In your **WSL** terminal:
 
 If `python3` is not found, install it as above or use a specific version (e.g. `python3.12 -m venv .ve52`).
 
-Once activated, your prompt should show `(.ve52)` at the start. Verify Python and install Django:
+[] Once activated, your prompt should show `(.ve52)` at the start. Verify Python and install Django:
 
     pip install --upgrade pip
     pip install django==5.2
@@ -50,7 +50,7 @@ The Django version should be 5.2 or higher.
 Installing dj4e-samples and Requirements
 ----------------------------------------
 
-Make sure your virtual environment is activated (you should see `(.ve52)` in your prompt). If you opened a new terminal, activate it again as shown above.
+[] Make sure your virtual environment is activated (you should see `(.ve52)` in your prompt). If you opened a new terminal, activate it again as shown above.
 
     cd ~
     git clone https://github.com/csev/dj4e-samples
@@ -60,7 +60,7 @@ Make sure your virtual environment is activated (you should see `(.ve52)` in you
     pip install --upgrade pip
     pip install -r requirements52.txt
 
-Verify the installation:
+[] Verify the installation:
 
     python manage.py check
 
@@ -68,7 +68,7 @@ Expected output includes:
 
     System check identified no issues (0 silenced).
 
-Then run migrations:
+[] Then run migrations:
 
     python manage.py makemigrations
     python manage.py migrate
@@ -81,14 +81,14 @@ To pull updates later:
 Building Your Django Application
 ---------------------------------
 
-Ensure your virtual environment is activated. Create your project folder and Django project:
+[] Ensure your virtual environment is activated. Create your project folder and Django project:
 
     cd ~
     mkdir -p django_projects
     cd django_projects
     django-admin startproject mysite
 
-In `mysite/mysite/settings.py`, edit **ALLOWED_HOSTS** and add **CSRF_TRUSTED_ORIGINS** (that setting is not in a fresh project by default—add it next to **ALLOWED_HOSTS**):
+[] In `mysite/mysite/settings.py`, edit **ALLOWED_HOSTS** and add **CSRF_TRUSTED_ORIGINS** (that setting is not in a fresh project by default—add it next to **ALLOWED_HOSTS**):
 
     ALLOWED_HOSTS = [ '*' ]
     CSRF_TRUSTED_ORIGINS = [
@@ -106,14 +106,14 @@ Create the polls app and add the initial view:
     cd ~/django_projects/mysite
     python manage.py startapp polls
 
-Edit `mysite/polls/views.py` and replace its contents with:
+[] Edit `mysite/polls/views.py` and replace its contents with:
 
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("Hello, world. You're at the polls index.")
 
-Create `mysite/polls/urls.py` with:
+[] Create `mysite/polls/urls.py` with:
 
     from django.urls import path
     from . import views
@@ -122,7 +122,7 @@ Create `mysite/polls/urls.py` with:
         path("", views.index, name="index"),
     ]
 
-Edit `mysite/mysite/urls.py` and replace its contents with:
+[] Edit `mysite/mysite/urls.py` and replace its contents with:
 
     from django.contrib import admin
     from django.urls import include, path
@@ -132,14 +132,14 @@ Edit `mysite/mysite/urls.py` and replace its contents with:
         path("admin/", admin.site.urls),
     ]
 
-Verify:
+[] Verify:
 
     python manage.py check
 
 Running Your Server and Exposing with localhost.run
 ---------------------------------------------------
 
-You need **two WSL terminal windows** (or tabs)—for example two **Ubuntu** windows: **first terminal** for Django below, **second terminal** for localhost.run.
+[] You need **two WSL terminal windows** (or tabs)—for example two **Ubuntu** windows: **first terminal** for Django below, **second terminal** for localhost.run.
 
 **Terminal 1** (your **first terminal**) – Django server
 
@@ -152,7 +152,7 @@ Leave this running. The server listens on `http://127.0.0.1:8000/`.
 
 **Terminal 2** (your **second terminal**) – localhost.run tunnel
 
-In your **second terminal**, run:
+[] In your **second terminal**, run:
 
     ssh -R 80:localhost:8000 localhost.run
 
@@ -164,18 +164,18 @@ That URL is what you submit to the Install autograder.
 
 **Testing locally**
 
-- In **Windows** Edge or Chrome, try `http://127.0.0.1:8000/polls` or `http://localhost:8000/polls`. Recent WSL versions forward `localhost` from Windows to your WSL services.
+- [] In **Windows** Edge or Chrome, try `http://127.0.0.1:8000/polls` or `http://localhost:8000/polls`. Recent WSL versions forward `localhost` from Windows to your WSL services.
 - If the page does not load, run `python manage.py runserver 0.0.0.0:8000` instead, then in a WSL terminal run `hostname -I` and open `http://<first-ip>:8000/polls` from Windows (or search for “WSL localhost forwarding” for your Windows version).
-- Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`).
+- [] Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`).
 
 You should see: "Hello, world. You're at the polls index."
 
 Submitting to the Autograder
 ---------------------------
 
-1. Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
-2. Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
-3. Submit that URL to the DJ4E Install autograder
+1. [] Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
+2. [] Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
+3. [] Submit that URL to the DJ4E Install autograder
 
 The autograder will fetch your site through localhost.run. Each time you restart the SSH tunnel, the URL may change; if it does, submit the new URL.
 
@@ -184,16 +184,16 @@ Workflow: Change, Check, Restart, Test
 
 When you change code:
 
-1. Run `python manage.py check` to catch errors
-2. Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
-3. Test at `http://127.0.0.1:8000/` or your localhost.run URL
+1. [] Run `python manage.py check` to catch errors
+2. [] Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
+3. [] Test at `http://127.0.0.1:8000/` or your localhost.run URL
 
 Your **second terminal** (Terminal 2, the tunnel) can stay running; you only need to restart the Django server.
 
 Checkup Tool
 -----------
 
-From WSL:
+[] From WSL:
 
     bash ~/dj4e-samples/tools/checkup.sh
 

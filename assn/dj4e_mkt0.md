@@ -14,7 +14,7 @@ two-digit number of Dr. Chuck's race car or the numeric value for asterisk in th
 Initial Setup
 -------------
 
-We provide an initial github repository for you to checkout and install on PythonAnywhere
+[] We provide an initial github repository for you to checkout and install on PythonAnywhere
 with most of the base code already built so you can add your application.  To install the application,
 follow the instructions in the `README.md` at:
 

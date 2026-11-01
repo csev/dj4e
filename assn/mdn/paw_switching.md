@@ -4,7 +4,7 @@ If you are taking the Django for Everybody course, you may have several Django p
 
 ## The three configurations
 
-Go to the **Web** tab on PythonAnywhere and update these two settings plus the WSGI file for the project you want to run. Replace `mdntutorial` with your PythonAnywhere username.
+[] Go to the **Web** tab on PythonAnywhere and update these two settings plus the WSGI file for the project you want to run. Replace `mdntutorial` with your PythonAnywhere username.
 
 ---
 

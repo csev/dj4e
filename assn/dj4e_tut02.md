@@ -42,11 +42,11 @@ Django instructions and map thme on to "how we do it on PythonAnywhere".
 Django Project Tutorial 2
 -------------------------
 
-Armed with the above mapping, follow the instructions in this tutorial:
+[] Armed with the above mapping, follow the instructions in this tutorial:
 
 https://docs.djangoproject.com/en/5.2/intro/tutorial02/
 
-One suggestion, when the tutorial tells you to put the following in `~/django_projects/mysite/polls/admin.py`:
+[] One suggestion, when the tutorial tells you to put the following in `~/django_projects/mysite/polls/admin.py`:
 
     from django.contrib import admin
 

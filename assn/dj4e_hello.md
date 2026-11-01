@@ -10,7 +10,8 @@ less exact steps to cut and paste.  It is time for you to understand how to "Do 
 
 This assignment will not have any models - just views.  In this assignment you will
 be looking at the `dj4e-samples` code and figuring out how to read and adapt sample code.
-You should make sure to get the latest updates by doing the following:
+
+[] You should make sure to get the latest updates by doing the following:
 
     cd ~/dj4e-samples
     git pull origin django52
@@ -22,14 +23,14 @@ code into your application.
 Building a Main Page
 --------------------
 
-It is time for the "/" in your application URL to actually refer to a real page instead
+[] It is time for the "/" in your application URL to actually refer to a real page instead
 of throwing a "404 Not Found" error.  We will store this page (and other project-wide
 bits) in an application named "home".  To get started:
 
     cd ~/django_projects/mysite
     python manage.py startapp home
 
-Create an HTML file in `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
+[] Create an HTML file in `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
     <ul>
     <li><p><a href="/polls">A Polls Application</a></p></li>
@@ -38,7 +39,7 @@ Create an HTML file in `~/django_projects/mysite/home/templates/home/main.html` 
 
 You can add more HTML - but this list and links should be somewhere in the template.
 
-Edit the file `~/django_projects/mysite/mysite/urls.py` and add following path route:
+[] Edit the file `~/django_projects/mysite/mysite/urls.py` and add following path route:
 
     path('', TemplateView.as_view(template_name='home/main.html')),
 
@@ -47,15 +48,15 @@ There are lots of examples of the use of TemplateView in the `urls.py` files in 
 and in the lecture materials.  Figuring out exactly how to change your `urls.py` is one of the
 DIY aspects of this assignment.
 
-Then edit the file `~/django_projects/mysite/mysite/settings.py` and add a line to load the `home`
+[] Then edit the file `~/django_projects/mysite/mysite/settings.py` and add a line to load the `home`
 application.  Simply duplicate the line in `INSTALLED_APPS` for the `polls` application and edit it
 to reference `home` and follow the pattern of case from the `polls` line.
 
-Make sure to run:
+[] Make sure to run:
 
     python manage.py check
 
-To see if your changes have syntax errors, then Reload your web application and
+[] To see if your changes have syntax errors, then Reload your web application and
 navigate to the top level path (i.e. no path).  You should no longer
 get a "404" and instead be able to navigate to the polls application by clicking on the link.
 Congratulations!  You now have a web site that is not broken.
@@ -84,13 +85,13 @@ https://samples.dj4e.com/session/sessfun</a>.
 
 You will need to:
 
-1. Use `startapp` to create a folder
+1. [] Use `startapp` to create a folder
 for the application and have Django create empty files like `views.py` and `models.py` in the `hello` folder.
 
     cd ~/django_projects/mysite
     python manage.py startapp hello
 
-2. Create a `hello/urls.py` to route all requests to the hello application to a view function that you will write in
+2. [] Create a `hello/urls.py` to route all requests to the hello application to a view function that you will write in
 `views.py` - You can look at your `polls/urls.py` to see how the file is constructed in general and adapt it
 to create `hello/urls.py`.   You will only need one urlpattern in the `hello` application.
 You will only write a single view function that will *both* set a cookie and implement the session.
@@ -98,15 +99,15 @@ If your view function was named `myview`, the path will look as follows:
 
         path('', views.myview),
 
-3. Change the project-wide `~/django_projects/mysite/mysite/urls.py` to set up the path to the
+3. [] Change the project-wide `~/django_projects/mysite/mysite/urls.py` to set up the path to the
 new application's urls at `/hello`.  Look at the line in that file that routes paths to the `polls`
 application and adapt it for your `hello` application.
 
-4. Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `hello` application following
+4. [] Edit the file `~/django_projects/mysite/mysite/settings.py` and add the `hello` application following
 the pattern that you used to add the `polls` application to `INSTALLED_APPS` - again - the exact code
 is something you figure out from looking at `dj4e-samples` or from the lectures.
 
-Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
+[] Add a link to `~/django_projects/mysite/home/templates/home/main.html` with the following HTML:
 
     <li><p><a href="/hello">Test the session</a></p></li>
 

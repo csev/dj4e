@@ -55,7 +55,7 @@ You should already have your github identity set up.  The following should print
 If you do not see your name, following the instructions  to configure git at
 [dj4e-samples/README.md](https://github.com/csev/dj4e-samples/blob/django52/README.md#setting-up-git-source-code-managment-on-pythonanywhere)
     
-Once your git account is configured, run these commands:
+[] Once your git account is configured, run these commands:
     
     cd ~/django_projects/market
     git tag             # Make sure you don't already have a mkt2 tag (only do this once!)
@@ -81,7 +81,7 @@ this site - weird but true.
 In this section, you will pull bits and pieces of the `forum` sample application
 into your `ads` application to add support for comments for each ad.
 
-(1) Update your `models.py` adding the comment feature from the `forums/models.py`
+[] (1) Update your `models.py` adding the comment feature from the `forums/models.py`
 
     class Ad(models.Model) :
 
@@ -110,19 +110,19 @@ into your `ads` application to add support for comments for each ad.
 Do not add the Forum model - simply connect the `Comment` model to the `Ad` model. Of course do
 the migrations once you have modified the model successfully.
 
-(2) Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
+[] (2) Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
 
-(3) Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
+[] (3) Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
 and create the `CommentForm` and pass them into your
 `mkt/templates/mkt/ad_detail.html` template through the context.
 
-(4) Adapt the `mkt/templates/mkt/ad_detail.html` template to show comments and show a delete icon
+[] (4) Adapt the `mkt/templates/mkt/ad_detail.html` template to show comments and show a delete icon
 when a comment belongs to the current logged in user.
 
-(5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
+[] (5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
 at the techniques in `forums/templates/forums/detail.html`.
 
-(6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
+[] (6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
 routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown here:
 
     urlpatterns = [
@@ -133,9 +133,9 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
             views.CommentDeleteView.as_view(success_url=reverse_lazy('mkt:all')), name='ad_comment_delete'),
     ]
 
-(7) Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
+[] (7) Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
 
-(8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
+[] (8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
 
 Manual Testing
 --------------
@@ -143,22 +143,22 @@ Manual Testing
 It is always a good idea to manually test your application before submitting it for grading.  Here
 are a set of manual test steps:
 
-* Make two accounts - If you have not already done so
-* Log in to your application on the first account
-* Create an ad with a picture
-* In the all ads list make sure that the edit / delete button shows correctly
-* View its details click on the picture to see that it fills the screen
-* Update the ad, check that the details are correct
-* Delete the ad - just to make sure it works - the autograder gets grumpy if it cannot delete an ad
-* Create two more ads
-* Make two comments on an ad - make sure you can see the delete button on your comments
-* Delete one of your comments
-* Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
-* Go into the ad you commented on above - make sure to see the comment from the first user
+* [] Make two accounts - If you have not already done so
+* [] Log in to your application on the first account
+* [] Create an ad with a picture
+* [] In the all ads list make sure that the edit / delete button shows correctly
+* [] View its details click on the picture to see that it fills the screen
+* [] Update the ad, check that the details are correct
+* [] Delete the ad - just to make sure it works - the autograder gets grumpy if it cannot delete an ad
+* [] Create two more ads
+* [] Make two comments on an ad - make sure you can see the delete button on your comments
+* [] Delete one of your comments
+* [] Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ads
+* [] Go into the ad you commented on above - make sure to see the comment from the first user
 and make sure there is **no** delete button
-* Make two new comments - make sure you *do* see the delete button for your comments but not for
+* [] Make two new comments - make sure you *do* see the delete button for your comments but not for
 the other user's comments
-* Delete one of your comments and make sure it goes away
+* [] Delete one of your comments and make sure it goes away
 
 
 Do Some or All of the Challenges
@@ -167,12 +167,12 @@ Do Some or All of the Challenges
 You will have to finish these by the next assignment - so you might as well work on them now.
 And they are fun.
 
-(1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+[] (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
-(2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
+[] (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
@@ -183,7 +183,7 @@ you can add a GET parameter to the URL to force it to be re-retrieved:
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) Make social login work.  Take a look at
+[] (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `market/config/github_settings.py` and go through the process on github to get your client ID and

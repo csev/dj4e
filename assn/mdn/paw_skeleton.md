@@ -20,14 +20,14 @@ the instructions at the bottom of this page to start over.
 Checking Your Installation
 --------------------------
 
-We assume that you have a Django virtual environment all set up from your
+[] We assume that you have a Django virtual environment all set up from your
 previous assignments.  Start a shell and type:
 
     python -m django --version
 
 It should show a version like `5.2`
 
-We will start the MDN tutorial at step 3.  You can read the first two steps -
+[] We will start the MDN tutorial at step 3.  You can read the first two steps -
 but you can start at the "Skeleton Website" step.
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
@@ -36,20 +36,20 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 grading of one assignment before starting on the next assignment.  The autograder deducts
 points for haing *too many* features implemented.
 
-Since you already have a `django_projects` folder your first step in the tutorial does
+[] Since you already have a `django_projects` folder your first step in the tutorial does
 not require a `mkdir` command - instead:
 
     cd ~/django_projects
     django-admin startproject locallibrary
     cd ~/django_projects/locallibrary
 
-Edit the file `locallibrary/settings.py` and make the following changes:
+[] Edit the file `locallibrary/settings.py` and make the following changes:
 
     DEBUG = True                        # Do not change to False
 
     ALLOWED_HOSTS = ['*']               # Change
 
-Go find the `STATIC_URL` line in `settings.py` and add the following two lines below it.
+[] Go find the `STATIC_URL` line in `settings.py` and add the following two lines below it.
 
     STATIC_URL = '/static/'  # Existing line in settings.py
 
@@ -62,7 +62,7 @@ Continue with the Tutorial
 **Read this entire section before you start the tutorial.  In particular when the
 tutorial tells you to `runserver` come back to these instructions.**
 
-We will start the tutorial at the step *Creating the catalog application*:
+[] We will start the tutorial at the step *Creating the catalog application*:
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#creating_the_catalog_application
 
@@ -71,7 +71,7 @@ starting with the command:
     cd ~/django_projects/locallibrary
     python manage.py startapp catalog
 
-When you get to get to the instructions in the tutorial where you are
+[] When you get to get to the instructions in the tutorial where you are
 editing `locallibrary/urls.py`, *do not add* `permanent=True`
 if the tutorial tells you to do so - just leave it out. 
 
@@ -83,7 +83,7 @@ Do this instead:
 
         path('', RedirectView.as_view(url='catalog/')),
 
-At some point the instructions tell you to run
+[] At some point the instructions tell you to run
 
 	python manage.py makemigrations
 
@@ -102,7 +102,7 @@ works.  A `makemigrations` error might look like
 Figure out what is wrong and fix it, and re-run `makemigrations` until it succeeds and then
 proceed with the tutorial.
 
-Continue with the tutorial until it tells you to `python manage.py runserver` - instead do
+[] Continue with the tutorial until it tells you to `python manage.py runserver` - instead do
 
 	python manage.py check
 
@@ -121,7 +121,7 @@ so we don't recommend it.
 Switching Your Web Application to a New Project (instead of runserver)
 ----------------------------------------------------------------------
 
-We need to go into the `Web` tab in PythonAnywhere and *switch* which project your
+[] We need to go into the `Web` tab in PythonAnywhere and *switch* which project your
 account is serving at your application URL.
 
 Scroll down to the *Code:* section and make the following settings (replace 'mdntutorial'
@@ -130,7 +130,7 @@ with your PYAW account):
     Source code: /home/mdntutorial/django_projects/locallibrary
     Working directory: /home/mdntutorial/django_projects/locallibrary
 
-**Important:** Edit the *WSGI Configuration File* and change `mysite` to `locallibrary` in two places
+[] **Important:** Edit the *WSGI Configuration File* and change `mysite` to `locallibrary` in two places
 and save it.  Your *WSGI Configuration File* should look as follows after you edit it:
 
     import os
@@ -148,9 +148,9 @@ The virtual environment and Python version should already be set up and does not
 
     Virtualenv: /home/mdntutorial/.ve52
 
-Change `mdntutorial` above to your PythonAnywhere account name.
+[] Change `mdntutorial` above to your PythonAnywhere account name.
 
-Then `Reload` your web application and visit its url to make sure you get the expected output.
+[] Then `Reload` your web application and visit its url to make sure you get the expected output.
 
     http://mdntutorial.pythonanywhere.com/catalog/
 

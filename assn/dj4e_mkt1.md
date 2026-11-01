@@ -28,7 +28,7 @@ Initial Setup
 We provide an initial github repository for you to checkout and install on PythonAnywhere
 with most of the base code already built so you can add your application.
 
-If you have not already done so, follow the instructions at:
+[] If you have not already done so, follow the instructions at:
 
 https://github.com/csev/dj4e-market
 
@@ -45,12 +45,12 @@ __Important Note:__ If you find you have a problem saving files in the PythonAny
 system using their browser-based editor, you might need to turn off your ad blocker for
 this site - weird but true.
 
-(1) Create a new `mkt` application within your `market` project:
+[] (1) Create a new `mkt` application within your `market` project:
 
     cd ~/django_projects/market
     python manage.py startapp mkt
 
-(2) Then add the application to your `market/config/settings.py`
+[] (2) Then add the application to your `market/config/settings.py`
 
 INSTALLED_APPS = [
 
@@ -61,13 +61,13 @@ INSTALLED_APPS = [
     'mkt.apps.MktConfig',
 ]
 
-(3) Then edit your `market/config/urls.py` to replace the "root" route to go to 
+[] (3) Then edit your `market/config/urls.py` to replace the "root" route to go to 
 the new `mkt` application and keep the `/home` route going to the home application:
 
     path('', include('mkt.urls')),       # Route root path to mkt
     path('home/', include('home.urls')), # Keep
 
-(4) Use this in your `mkt/models.py`:
+[] (4) Use this in your `mkt/models.py`:
 
     from django.db import models
     from django.core.validators import MinLengthValidator
@@ -88,10 +88,10 @@ the new `mkt` application and keep the `/home` route going to the home applicati
         def __str__(self):
             return self.title
 
-(5) Copy the `owner.py` file from `dj4e-samples/myarts` to your `mkt` folder.  This is the one file you <b>do not</b>
+[] (5) Copy the `owner.py` file from `dj4e-samples/myarts` to your `mkt` folder.  This is the one file you <b>do not</b>
 have to change at all (thanks to object orientation 😊).
 
-(6) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in 
+[] (6) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in 
 the `myarts` folder will require significant
 adaptation to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
@@ -100,10 +100,10 @@ not be shown to the user on the create and update forms, it should be automatica
 by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop down
 in your create screen the program is not implemented correctly and will fail the autograder.
 
-(7) Adapt the templates in `myarts/templates/myarts` as a starting point to create the needed
+[] (7) Adapt the templates in `myarts/templates/myarts` as a starting point to create the needed
 templates in `mkt/templates/mkt`.
 
-(8) When you are implementing the update and delete views, make sure to follow the url patterns
+[] (8) When you are implementing the update and delete views, make sure to follow the url patterns
 for the update and delete operations.  They should be of the form `/ad/<int:pk>/update`
 and `/ad/<int:pk>/delete`.  Something like the following should work when you create
 your `market/mkt/urls.py`:
@@ -123,12 +123,12 @@ your `market/mkt/urls.py`:
             views.AdDeleteView.as_view(success_url=reverse_lazy('mkt:all')), name='ad_delete'),
     ]
 
-(9) As you build the application, use `check` periodically as you complete some of the code.
+[] (9) As you build the application, use `check` periodically as you complete some of the code.
 
     cd ~/django_projects/market
     python manage.py check
 
-(10) Once your application is mostly complete and can pass the `check`
+[] (10) Once your application is mostly complete and can pass the `check`
 without error, add the new models to your migrations and database tables:
 
     cd ~/django_projects/market
@@ -145,7 +145,7 @@ https://market.dj4e.com/m1/
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation with
 gravatar when the user logs in.
 
-(1) Edit all four of the `mkt` files in `mkt/templates/mkt` to change them so
+[] (1) Edit all four of the `mkt` files in `mkt/templates/mkt` to change them so
 they extend `mkt/base_menu.html`.  Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
@@ -154,7 +154,7 @@ to be:
 
     {% extends "base_menu.html" %}
 
-(2) Create `home/templates/base_menu.html` with this code:
+[] (2) Create `home/templates/base_menu.html` with this code:
 
     {% extends 'base_bootstrap.html' %}
     {% load app_tags %} <!-- see home/templatetags/app_tags.py and dj4e-samples/settings.py -->
@@ -194,7 +194,7 @@ to be:
     </nav>
     {% endblock %}
 
-(3) Find the line in your `base_bootstrap.html` that looks like this:
+[] (3) Find the line in your `base_bootstrap.html` that looks like this:
 
         <meta name="dj4e-code" content="99999999">
 
@@ -202,9 +202,9 @@ to be:
    Note that there will be two meta tags, one for dj4e-code and one for
    dj4e - keep both in this file.
 
-Make sure to check the autograder for additional markup requirements.
+[] Make sure to check the autograder for additional markup requirements.
 
-When you are done, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
+[] When you are done, you should see an 'Ads' menu on the left and a 'Create Ad' link on the right just like the
 sample implementation.
 
 Manual Testing
@@ -213,33 +213,33 @@ Manual Testing
 It is always a good idea to manually test your application before submitting it for grading.  Here
 are a set of manual test steps:
 
-* Make two accounts if you have not already done so
-* Log in to your application on the first account
-* Make sure the menu bar shows at the top of all of the screens - the autograder gets grumpy about a missing menu on a page
-* Create an ad
-* Try to submit an add with no title - make sure that it complains
-* Create an ad
-* In the all ad list make sure that the edit / delete button shows correctly
-* View its details - make sure the edit / delete button shows up correctly
-* Update the ad, check that the details are correct after the update
-* Delete the ad - just to make sure it works
-* Create two more ads
-* Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ad
-* Go into the detail for the ad created by the other user -  make sure you **do not** see edit / delete buttons
-* Create a new ad on the second account
-* Make sure that in the "all ad list" the edit / delete buttons are only present on the ad the second user "owns"
-* Delete the ad
+* [] Make two accounts if you have not already done so
+* [] Log in to your application on the first account
+* [] Make sure the menu bar shows at the top of all of the screens - the autograder gets grumpy about a missing menu on a page
+* [] Create an ad
+* [] Try to submit an add with no title - make sure that it complains
+* [] Create an ad
+* [] In the all ad list make sure that the edit / delete button shows correctly
+* [] View its details - make sure the edit / delete button shows up correctly
+* [] Update the ad, check that the details are correct after the update
+* [] Delete the ad - just to make sure it works
+* [] Create two more ads
+* [] Log in on the second account - make sure you **do not** see edit / delete buttons on the existing ad
+* [] Go into the detail for the ad created by the other user -  make sure you **do not** see edit / delete buttons
+* [] Create a new ad on the second account
+* [] Make sure that in the "all ad list" the edit / delete buttons are only present on the ad the second user "owns"
+* [] Delete the ad
 
 
 Fun Challenges
 --------------
 
-(1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+[] (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
-(2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
+[] (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
@@ -250,7 +250,7 @@ favicon is really being served you can add a GET parameter to the URL to force i
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) To make the social login work.  Take a look at
+[] (3) To make the social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `market/config/github_settings.py` and go through the process on github to get your client ID and

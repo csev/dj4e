@@ -14,18 +14,18 @@ Django environment so they are available to the autograder for grading.
 Serving HTML Content
 --------------------
 
-Using the Shell on PythonAnywhere, make two folders
+[] Using the Shell on PythonAnywhere, make two folders
 
     mkdir ~/django_projects/mysite/site
     mkdir ~/django_projects/mysite/site/subfolder
 
-Using Files on PythonAnywhere, create a file at `~/django_projects/mysite/site/hello.txt` with the text "Hello World".
+[] Using Files on PythonAnywhere, create a file at `~/django_projects/mysite/site/hello.txt` with the text "Hello World".
 
-Using Files on PythonAnywhere, create a file at `~/django_projects/mysite/site/subfolder/hello.html` with this text:
+[] Using Files on PythonAnywhere, create a file at `~/django_projects/mysite/site/subfolder/hello.html` with this text:
 
     <h1>Hello World</h1>
 
-Change your `~/django_projects/mysite/mysite/urls.py` to be:
+[] Change your `~/django_projects/mysite/mysite/urls.py` to be:
 
     import os
     from django.contrib import admin
@@ -50,14 +50,14 @@ as we add new features.  As you do upcoming assignments,
 do not remove these entries from your `urls.py`.
 Just add the new url pattern entries as required by the upcoming assignments.
 
-Once you have made the changes, you should check for errors in the PythonAnywhere shell:
+[] Once you have made the changes, you should check for errors in the PythonAnywhere shell:
 
     cd ~/django_projects/mysite
     python manage.py check
 
 If the `check` fails, stop and fix any and all errors before continuing.
 
-Once `check` succeeds, you can go to the `Web` tab on PythonAnywhere,
+[] Once `check` succeeds, you can go to the `Web` tab on PythonAnywhere,
 reload your application and then view your new files.
 
 Viewing Your New Files
@@ -83,19 +83,19 @@ site at the top level.
 
 Next test the ability to serve the `site` content.
 
-Go to __(your-account).pythonanywhere.com/site__ - you should see
+[] Go to __(your-account).pythonanywhere.com/site__ - you should see
 see a list of files including your `hello.txt`
 (like <a href="dj4e_html/site.htm" target="_blank">this</a>).
 Click on `hello.txt` on your site and you should see "Hello world". 
 
-Go to __(your-account).pythonanywhere.com/site/subfolder/hello.html__ - you should
+[] Go to __(your-account).pythonanywhere.com/site/subfolder/hello.html__ - you should
 see "Hello World" styled using a HTML header tag 
 ( like <a href="dj4e_html/hello.htm" target="_blank">this</a>)
 
 Building Some Validated HTML
 ----------------------------
 
-Create a web page in a file named `dj4e.htm` and store it in the `~/django_projects/mysite/site` folder according
+[] Create a web page in a file named `dj4e.htm` and store it in the `~/django_projects/mysite/site` folder according
 to these specifications.
 
 Your page will be well-formed HTML5, and indicate that it is in the UTF-8 character set.  This is a starting point
@@ -116,25 +116,25 @@ for the file.
     </body>
     </html>
 
-Once you save the file load it in
+[] Once you save the file load it in
 __(your-account).pythonanywhere.com/site/dj4e.htm__ and make sure it loads.
 
-Once you can see it, you need to start editing it to meet the requirements for the autograder.
+[] Once you can see it, you need to start editing it to meet the requirements for the autograder.
 
-* The __title__ tag must contain your name or the string indicated by the autograder.
+* [] The __title__ tag must contain your name or the string indicated by the autograder.
 
 <center><img src="dj4e_html/01-title-name.png" alt="A screen shot of the autograder user interface." width="80%" border="2px"></a></center>
 
-* You must have at least one example of each of the following tags: __p__, __h1__, and __ul__
+* [] You must have at least one example of each of the following tags: __p__, __h1__, and __ul__
 
-* You must have three __a__ tags and three __li__ tags.
+* [] You must have three __a__ tags and three __li__ tags.
 
-* You must have some bold text in the document and some italics
+* [] You must have some bold text in the document and some italics
 text in the document but you must use the correct tags (i.e. neither __b__ nor __i__ are allowed).
 
 There is a lot of flexibility within those parameters. 
 
-But to get a grade, your HTML must have no syntax errors and must pass the validator at:
+[] But to get a grade, your HTML must have no syntax errors and must pass the validator at:
 
     https://validator.w3.org/nu/
 

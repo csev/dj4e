@@ -17,13 +17,13 @@ the autograder requires for this assignment.
 
 Complete the following sections of the Views tutorial:
 
-* Go into the `catalog` application
+* [] Go into the `catalog` application
 
         cd ~/django_projects/locallibrary/catalog
 
-* Edit `views.py` for the views.index as suggested in the tutorial
+* [] Edit `views.py` for the views.index as suggested in the tutorial
 
-* You will have to make the `templates` and `static` directories
+* [] You will have to make the `templates` and `static` directories
 
         cd ~/django_projects/locallibrary/catalog
         mkdir templates
@@ -33,17 +33,17 @@ Complete the following sections of the Views tutorial:
     Note that the tutorial mentions folder and file names like `/django-locallibrary-tutorial/catalog/templates/` the actual path
     for this folder on your PythonAnywhere account is `~/django_projects/locallibrary/catalog/templates/`
 
-* Create the file `catalog/templates/base_generic.html`as suggested.  The tutorial shows a simple version and then a more complex version with some CSS files - create the more complex version.  The autograder may require the addition of a `<meta>` tag in the `<head>` area of the base template.
+* [] Create the file `catalog/templates/base_generic.html`as suggested.  The tutorial shows a simple version and then a more complex version with some CSS files - create the more complex version.  The autograder may require the addition of a `<meta>` tag in the `<head>` area of the base template.
 
-* Create the file `catalog/static/css/styles.css` as suggested
+* [] Create the file `catalog/static/css/styles.css` as suggested
 
-* Create the file `catalog/templates/index.html`as suggested but replace the string "Mozilla Developer Network!" with something else.  You do not need to use your name if you don't want to - it just must be something other than the text in the tutorial.
+* [] Create the file `catalog/templates/index.html`as suggested but replace the string "Mozilla Developer Network!" with something else.  You do not need to use your name if you don't want to - it just must be something other than the text in the tutorial.
 
 
-* Reload your application under the `Web` tab in
+* [] Reload your application under the `Web` tab in
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 
-* Visit the catalog site
+* [] Visit the catalog site
 <a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
 
 When you make changes to configuration files like `urls.py` or `views.py` or templates it is always a good idea to reload

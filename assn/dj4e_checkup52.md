@@ -29,7 +29,7 @@ The [checkup](https://github.com/csev/dj4e-samples/blob/django52/tools/README_CH
 tool is installed in your `~/dj4e-samples` folder when you did the
 first assignment to install Django on PythonAnywhere.
 
-The following commands will get the latest version of the checkup tool and run
+[] The following commands will get the latest version of the checkup tool and run
 it:
 
     cd ~/dj4e-samples

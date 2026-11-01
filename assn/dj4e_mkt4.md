@@ -30,7 +30,7 @@ You should already have your github identity set up.  The following should print
 If you do not see your name, following the instructions  to configure git at
 [dj4e-samples/README.md](https://github.com/csev/dj4e-samples/blob/django52/README.md#setting-up-git-source-code-managment-on-pythonanywhere)
 
-Once your git account is configured, run these commands:
+[] Once your git account is configured, run these commands:
 
     cd ~/django_projects/market
     git tag             # Make sure you don't already have a mkt3 tag (only do this once!)
@@ -52,12 +52,12 @@ Do All of the Challenges
 At this point all of the challenges should be working - not all will be tested
 by the autograder - but we will separately check them.
 
-(1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+[] (1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
-(2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
+[] (2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
@@ -68,7 +68,7 @@ you can add a GET parameter to the URL to force it to be re-retrieved:
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) Make social login work.  Take a look at
+[] (3) Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/django52/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `market/config/github_settings.py` and go through the process on github to get your client ID and
@@ -98,7 +98,7 @@ In this section, you will pull bits and pieces of the `favwc` sample application
 into your `mkt` application to add support for logged in users to "favorite" and "un-favorite"
 ads. We will also create a custom web component to implement this favorites feature.
 
-(1) Add this to your `mkt/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
+[] (1) Add this to your `mkt/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
 
     class Ad(models.Model) :
 
@@ -120,17 +120,17 @@ ads. We will also create a custom web component to implement this favorites feat
         def __str__(self) :
             return '%s likes %s'%(self.user.username, self.ad.title[:10])
 
-(2) Do `python manage.py makemigrations` and `python manage.py migrate` once
+[] (2) Do `python manage.py makemigrations` and `python manage.py migrate` once
 you have modified the model.
 
-(3) Edit your `mkt/admin.py` and add the `Fav` model to the `/admin` UI so you can
+[] (3) Edit your `mkt/admin.py` and add the `Fav` model to the `/admin` UI so you can
 look at Favs in the Admin user interface.
 
-(4) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
+[] (4) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(5) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
+[] (5) If the `market/site/wc/dj4e-favstar.js` file does not exist, create the `market/site/` and `market/site/wc` folders and the
 file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for our custom web component: <!-- remove this after 2025 -->
 
     import { html, LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.2.1/+esm";
@@ -160,7 +160,7 @@ file `market/site/wc/dj4e-favstar.js` and add the following Javascript code for 
     customElements.define('dj4e-favstar', DJ4EFavoriteStar);
 
 
-(6) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+[] (6) Alter your `list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
 `dj4e-favstar` web component in the list of ads, to show the stars based on the list of favorites for the current logged in user
 and the `favToggle()` function and web component module include JavaScript (as shown below):
 
@@ -194,7 +194,7 @@ and the `favToggle()` function and web component module include JavaScript (as s
     {% endblock %}
     ...
 
-(6) At this point, you can reload your application and go to the main page with all of your
+[] (6) At this point, you can reload your application and go to the main page with all of your
 ads listed, each ad should have a blank star and if you click on the star, it will change
 color, but if you refresh the page, the favorites will not be "sticky" because you are missing the server code to store the favorite when the key is pressed.  The JavaScript is running
 `favPost()` but the server code is failing and returning an error to your application.
@@ -202,13 +202,13 @@ You can view developer console in your browser and you will see a `404 not found
 on a url that looks like `ad/42/toggle`.   We need to add a route and a view for that url
 pattern so that the favorites can be stored.
 
-(7) Add the following route to your `urls.py` for the favorites feature:
+[] (7) Add the following route to your `urls.py` for the favorites feature:
 
     ...
     path('ad/<int:pk>/toggle', views.ToggleFavoriteView.as_view(), name='ad_toggle'),
     ...
 
-(8) Pull in and adapt `ToggleFavoriteView`
+[] (8) Pull in and adapt `ToggleFavoriteView`
 from `dj4e-samples/favwc/views.py` into your `views.py`.  This view will be called using AJAX in the `favToggle()` function
 above.  Edit this view carefully - if you make a mistake in this method, it will not be shown on the screen like
 your other views.  The best way
@@ -247,16 +247,16 @@ Manual Testing
 It is always a good idea to manually test your application before submitting it for grading.  Here
 are a set of manual test steps:
 
-* Make two accounts if you have not already done so
-* Log in to your application on the first account
-* Create an ad, view its details, update, the ad, and delete the ad (test for regression)
-* Create more than one ad
-* In the list view mark one ad as a favorite and then press 'refresh' and see if the star is the same
+* [] Make two accounts if you have not already done so
+* [] Log in to your application on the first account
+* [] Create an ad, view its details, update, the ad, and delete the ad (test for regression)
+* [] Create more than one ad
+* [] In the list view mark one ad as a favorite and then press 'refresh' and see if the star is the same
 after refresh as it was when you clicked on the star
-* In the list view unfavorite a favorited ad and then press 'refresh' and see if the star is the same
+* [] In the list view unfavorite a favorited ad and then press 'refresh' and see if the star is the same
 after refresh as it was when you clicked on the star
-* Log in on the second account - make sure the favorites are not the same as the first account
-* Do several favorite and unfavorite operations pressing 'refresh' after each change and make sure
+* [] Log in on the second account - make sure the favorites are not the same as the first account
+* [] Do several favorite and unfavorite operations pressing 'refresh' after each change and make sure
 the star "sticks" (i.e. has the same value as when you clicked it)
 
 The most common problem is that when you click on the star it looks good on the screen but the

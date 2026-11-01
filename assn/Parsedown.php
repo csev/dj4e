@@ -485,12 +485,17 @@ class Parsedown
 
             $text = trim($Line['text'], '# ');
 
+            $element = array(
+                'name' => 'h' . min(6, $level),
+                'text' => $text,
+                'handler' => 'line',
+            );
+
+            $this->markStep($element, $text);
+            $element['text'] = $text;
+
             $Block = array(
-                'element' => array(
-                    'name' => 'h' . min(6, $level),
-                    'text' => $text,
-                    'handler' => 'line',
-                ),
+                'element' => $element,
             );
 
             return $Block;
@@ -525,13 +530,7 @@ class Parsedown
                 }
             }
 
-            $Block['li'] = array(
-                'name' => 'li',
-                'handler' => 'li',
-                'text' => array(
-                    $matches[2],
-                ),
-            );
+            $Block['li'] = $this->listItem($matches[2]);
 
             $Block['element']['text'] []= & $Block['li'];
 
@@ -554,13 +553,7 @@ class Parsedown
 
             $text = isset($matches[1]) ? $matches[1] : '';
 
-            $Block['li'] = array(
-                'name' => 'li',
-                'handler' => 'li',
-                'text' => array(
-                    $text,
-                ),
-            );
+            $Block['li'] = $this->listItem($text);
 
             $Block['element']['text'] []= & $Block['li'];
 
@@ -957,14 +950,57 @@ class Parsedown
     # ~
     #
 
+    # A line that starts with [] or [ ] is a student step. The checkbox
+    # state is not stored in the markdown; the browser keeps it.
+    protected function markStep(array &$element, &$text)
+    {
+        if ( ! preg_match('/^\[ ?\](?:\s+(.*))?$/', $text, $matches))
+        {
+            return false;
+        }
+
+        $text = isset($matches[1]) ? $matches[1] : '';
+
+        if ( ! isset($element['attributes']))
+        {
+            $element['attributes'] = array();
+        }
+
+        $class = isset($element['attributes']['class']) ? $element['attributes']['class'] : '';
+        $element['attributes']['class'] = trim($class.' step');
+
+        return true;
+    }
+
+    protected function listItem($text)
+    {
+        $element = array(
+            'name' => 'li',
+            'handler' => 'li',
+            'text' => array($text),
+        );
+
+        $this->markStep($element, $text);
+        $element['text'] = array($text);
+
+        return $element;
+    }
+
     protected function paragraph($Line)
     {
+        $text = $Line['text'];
+
+        $element = array(
+            'name' => 'p',
+            'text' => $text,
+            'handler' => 'line',
+        );
+
+        $this->markStep($element, $text);
+        $element['text'] = $text;
+
         $Block = array(
-            'element' => array(
-                'name' => 'p',
-                'text' => $Line['text'],
-                'handler' => 'line',
-            ),
+            'element' => $element,
         );
 
         return $Block;
@@ -1419,6 +1455,11 @@ class Parsedown
         if (isset($Element['text']))
         {
             $markup .= '>';
+
+            if (isset($Element['attributes']['class']) and preg_match('/(^|\s)step($|\s)/', $Element['attributes']['class']))
+            {
+                $markup .= '<input type="checkbox" class="step-box" aria-label="Mark this step done" autocomplete="off">';
+            }
 
             if (isset($Element['handler']))
             {

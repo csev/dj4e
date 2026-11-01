@@ -33,7 +33,7 @@ You should already have your github identity set up.  The following should print
 If you do not see your name, following the instructions  to configure git at
 [dj4e-samples/README.md](https://github.com/csev/dj4e-samples/blob/django52/README.md#setting-up-git-source-code-managment-on-pythonanywhere)
     
-Once your git account is configured, run these commands:
+[] Once your git account is configured, run these commands:
 
 Then run these commands:
 
@@ -54,7 +54,7 @@ document.  Hopefully you won't need to use them.
 Adding Search
 -------------
 
-The `well` sample application contains code you can adapt to implement the code to search
+[] The `well` sample application contains code you can adapt to implement the code to search
 the title and text:
 
 https://samples.dj4e.com/well/
@@ -64,7 +64,7 @@ To avoid getting too much broken at one time - it is probably a good idea to mak
 Adding Support for Tags
 -----------------------
 
-The `tagme` application adds a `tags` field to the model and adds support for tags
+[] The `tagme` application adds a `tags` field to the model and adds support for tags
 to the user interface and search code.  Make sure the tags field has `blank=True` in the
 `models.py` (take a look at the sample code) so that the field can be left blank while creating or updating an Ad.
 
@@ -83,14 +83,14 @@ save the tags after the form has been copied to the model and the model has been
 
 https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
 
-In your `forms.py` code you will need to (a) add 'tags' to the field list and (b) update the
+[] In your `forms.py` code you will need to (a) add 'tags' to the field list and (b) update the
 code in the commit to look like:
 
         if commit:
             instance.save()
             self.save_m2m()    # Add this
 
-In your `views.py`, we have our own code to pull data from the form to the model and then
+[] In your `views.py`, we have our own code to pull data from the form to the model and then
 save the model.  This code is in both the insert and edit views:
 
         # Adjust the model owner before saving
@@ -101,9 +101,9 @@ save the model.  This code is in both the insert and edit views:
         # https://django-taggit.readthedocs.io/en/latest/forms.html#commit-false
         form.save_m2m()    # Add this
 
-You need to add the `save_m2m()` call *after* the instance was saved.
+[] You need to add the `save_m2m()` call *after* the instance was saved.
 
-Finally, the detail template for the `tagme` application contains code that can be adapted to display the tags in your application.
+[] Finally, the detail template for the `tagme` application contains code that can be adapted to display the tags in your application.
 
 Note About using AI with this Assignment
 ----------------------------------------
@@ -132,23 +132,23 @@ Manual Testing
 It is always a good idea to manually test your application before submitting it for grading.  Here
 are a set of manual test steps:
 
-* Log in to your application and create several ads add a tag to one of the ads.  Make sure that
+* [] Log in to your application and create several ads add a tag to one of the ads.  Make sure that
 you put unique words that are only in the title, text, and tag so you can verify that you can search
 for a word in any of the three places.
 
-* Go into the detail page for an ad and verify that it shows you the title, text, and tag(s) that you entered
+* [] Go into the detail page for an ad and verify that it shows you the title, text, and tag(s) that you entered
 
-* Make sure to edit an ad and verify that you are able to change the title, text, and tags.
+* [] Make sure to edit an ad and verify that you are able to change the title, text, and tags.
 
-* Search for some text that is only in a title and verify that the correct ads come back.
+* [] Search for some text that is only in a title and verify that the correct ads come back.
 
-* Search for some text that is only in a body and verify that the correct ads come back.
+* [] Search for some text that is only in a body and verify that the correct ads come back.
 
-* Search for some text that is only in a tag and verify that the correct ads come back.
+* [] Search for some text that is only in a tag and verify that the correct ads come back.
 
-* Note the "?search=" in the location bar in your browser while you are doing searches
+* [] Note the "?search=" in the location bar in your browser while you are doing searches
 
-* Clear the search and see all of the results and verify there is no "?search=" get parameter
+* [] Clear the search and see all of the results and verify there is no "?search=" get parameter
 
 Resetting Your Database
 ------------------------

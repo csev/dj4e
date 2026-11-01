@@ -12,22 +12,22 @@ the autograder requires for this assignment.
 
 Complete the following sections of the Admin tutorial:
 
-* Edit `~/django_projects/locallibrary/catalog/admin.py` and register the four models (don't register the Language model)
-* Create a superuser (The autograder will ask you to make a second superuser)
+* [] Edit `~/django_projects/locallibrary/catalog/admin.py` and register the four models (don't register the Language model)
+* [] Create a superuser (The autograder will ask you to make a second superuser)
 Note that it is OK to have more than one super user and you can log in as any
 super user and edit or delete the other superuser accounts.
-* Reload your application under the `Web` tab in
+* [] Reload your application under the `Web` tab in
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
-* Log in to the admin site.  Insead of using http://localhost:8000/admin, simply add `/admin` to the end of
+* [] Log in to the admin site.  Insead of using http://localhost:8000/admin, simply add `/admin` to the end of
 your PythonAnywhere site (i.e. like
 <a href="http://mdntutorial.pythonanywhere.com/admin" target="_blank">http://mdntutorial.pythonanywhere.com/admin</a>.
-* Create some books (The autograder will ask you to create one specific book and author)
-* Continue into the Advanced Configuration
-* Register a Model Admin class
-* Configure the list views - Note that you need to edit `~/django_projects/locallibrary/catalog/models.py` at one point
-* Add the list filter
-* Organize the detail view layout
-* Enable inline editing of associated records
+* [] Create some books (The autograder will ask you to create one specific book and author)
+* [] Continue into the Advanced Configuration
+* [] Register a Model Admin class
+* [] Configure the list views - Note that you need to edit `~/django_projects/locallibrary/catalog/models.py` at one point
+* [] Add the list filter
+* [] Organize the detail view layout
+* [] Enable inline editing of associated records
 
 Just as a reminder, when you are running on PythonAnywhere you **do not need** to do a:
 

@@ -88,6 +88,7 @@ require_once "../nav.php";
 
 $OUTPUT->header();
 ?>
+<link rel="stylesheet" href="steps.css">
 <style>
 center {
     padding-bottom: 10px;
@@ -169,7 +170,10 @@ function onSelect() {
 <?php
     if ( file_exists("assn_note.html") ) require_once("assn_note.html");
     $Parsedown = new Parsedown();
+    echo '<div id="step-root">';
     echo $Parsedown->text($contents);
+    echo '</div>';
+    echo '<script src="steps.js"></script>';
 } else {
 ?>
 <p>

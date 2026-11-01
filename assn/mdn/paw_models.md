@@ -9,21 +9,21 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models
 You can view a
 <a href="https://www.youtube.com/watch?v=2-QFePlm7GA&list=PLlRFEj9H3Oj5e-EH0t3kXrcdygrL9-u-Z&index=5" target="_blank">video walkthrough</a> of this assignment.
 
-Read and understand the tutorial, and when you get to the section titled
+[] Read and understand the tutorial, and when you get to the section titled
 <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models#Defining_the_LocalLibrary_Models" target="_blank">Defining the LocalLibrary Models</a>,
 go to your
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 account and start a bash shell.
 
-Lets go into the locallibrary project:
+[] Lets go into the locallibrary project:
 
     cd ~/django_projects/locallibrary
 
-Make sure that you have properly edited the `locallibrary/settings.py` file
+[] Make sure that you have properly edited the `locallibrary/settings.py` file
 to register your catalog
 application within the locallibrary project by adding `CatalogConfig` line.
 
-Edit the file `catalog/models.py` and add the `Genre`, `Book`, `BookInstance`, and `Author` models
+[] Edit the file `catalog/models.py` and add the `Genre`, `Book`, `BookInstance`, and `Author` models
 as described in the tutorial.  Once you have added models models, run the migrations
 from `~/django_projects/locallibrary`
 
@@ -43,7 +43,7 @@ it is successfull.
 
     python manage.py migrate
 
-Then add the `Language` model to your `models.py` as discussed in the "Challenge" section
+[] Then add the `Language` model to your `models.py` as discussed in the "Challenge" section
 at the end of the tutorial.  You can skim and think through the "design a model" part of the
 tutorial - but for the sake of time, here is a Language model you can use:
 
@@ -70,7 +70,7 @@ tutorial - but for the sake of time, here is a Language model you can use:
                 ),
             ]
 
-Since we have changed the `models.py` by adding the `Language` model, we need to run the migrations again:
+[] Since we have changed the `models.py` by adding the `Language` model, we need to run the migrations again:
 
     cd ~/django_projects/locallibrary
     python manage.py makemigrations
@@ -84,7 +84,7 @@ right and then run `migrate` to actually create/update the tables in the databas
 
     python manage.py migrate
 
-If you are using the autograder for this assignment, you will need to upload the
+[] If you are using the autograder for this assignment, you will need to upload the
 `~/django_projects/locallibrary/db.sqlite3` file.  If you are using PythonAnywhere you can use the Files tab
 to download the file to your computer and then upload it to the autograder.
 

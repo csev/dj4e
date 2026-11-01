@@ -17,28 +17,28 @@ This is a set of steps to walk through the challenge that is not included in the
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#Challenge_yourself
 
-* In `catalog/models.py`, update the `BookInstance` model and add the permissions line:
+* [] In `catalog/models.py`, update the `BookInstance` model and add the permissions line:
 
         class Meta:
             ordering = ['due_back']
             permissions = (("can_mark_returned", "Set book as returned"),)
 
-* Then run your migration
+* [] Then run your migration
 
         cd ~/django_projects/locallibrary
         python manage.py makemigrations
         python manage.py migrate
 
-* Reload your application, go into the admin page -> Groups and change the 'Library Staff' group
+* [] Reload your application, go into the admin page -> Groups and change the 'Library Staff' group
 and add the `catalog | book instance | Set book as returned` permission to the group and save the group.
 
-* Add the following to the `urls.py` (this is where we define 'all-borrowed' to fix the error above):
+* [] Add the following to the `urls.py` (this is where we define 'all-borrowed' to fix the error above):
 
         urlpatterns += [
             path('borrowed/', views.LoanedBooksListView.as_view(), name='all-borrowed'),
         ]
 
-* Add the following to `catalog/views.py`:
+* [] Add the following to `catalog/views.py`:
 
         from django.contrib.auth.mixins import PermissionRequiredMixin
 
@@ -55,7 +55,7 @@ and add the `catalog | book instance | Set book as returned` permission to the g
     Note that `get_queryset()` is quite similar to the same method in `LoadedBooksByUserListView`
     except that we have removed the filter by logged in user.
 
-* Create the template in `catalog/templates/catalog/bookinstance_list_borrowed_all.html`
+* [] Create the template in `catalog/templates/catalog/bookinstance_list_borrowed_all.html`
 
         {% extends "base_generic.html" %}
         {% block content %}
@@ -74,7 +74,7 @@ and add the `catalog | book instance | Set book as returned` permission to the g
             {% endif %}
         {% endblock %}
 
-* Add this to `templates/base_generic.html` right below 'My Borrowed'
+* [] Add this to `templates/base_generic.html` right below 'My Borrowed'
 
         {% if perms.catalog.can_mark_returned %}
           <hr/>
@@ -86,7 +86,7 @@ and add the `catalog | book instance | Set book as returned` permission to the g
     user has the `catalog.can_mark_returned` permission.   We don't want our library
     staff to be able to access the '/admin' page.
 
-* Then `Reload` the application and log in with an account that is in the group 'Library Members'
+* [] Then `Reload` the application and log in with an account that is in the group 'Library Members'
 and verify that the 'All borrowed` code works.
 
 Adding the renew form
@@ -96,15 +96,15 @@ Now that we have the 'All borrowed view' lets make some forms to support some li
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
-* Create `catalog/forms.py` as described in the tutorial
+* [] Create `catalog/forms.py` as described in the tutorial
 
-* Add a pattern to `catalog/urls.py` for the `renew_book_librarian` view
+* [] Add a pattern to `catalog/urls.py` for the `renew_book_librarian` view
 
-* Add the `renew_book_librarian` view to `catalog/views.py` as described in the tutorial
+* [] Add the `renew_book_librarian` view to `catalog/views.py` as described in the tutorial
 
-* Add the `catalog/templates/catalog/book_renew_librarian.html` template as described in tht tutorial
+* [] Add the `catalog/templates/catalog/book_renew_librarian.html` template as described in tht tutorial
 
-* Update the template in `catalog/templates/catalog/bookinstance_list_borrowed_all.html` to call the new
+* [] Update the template in `catalog/templates/catalog/bookinstance_list_borrowed_all.html` to call the new
 renewal form from the "all borrowed" view, add these three lines after the 'book-detial' line.
 
         ...
@@ -115,7 +115,7 @@ renewal form from the "all borrowed" view, add these three lines after the 'book
                 ({{bookinst.borrower}}, {{ bookinst.due_back }})
         ...
 
-* You should reload your web application and test both the 'All borrowed' view and the librarian renewal
+* [] You should reload your web application and test both the 'All borrowed' view and the librarian renewal
 feature.  Make sure when you change the due date that it actually changes.  Try some invalid dates like
 next year to test data validation.
 
@@ -129,7 +129,7 @@ Continuing with the Forms tutorial, we add three CRUD views:
 
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms#Generic_editing_views
 
-* Add the Create Update, and Delete views to `views.py` as described in the tutorial.  But we want to
+* [] Add the Create Update, and Delete views to `views.py` as described in the tutorial.  But we want to
 only allow logged in users to access these views.  If you want to take the extra step, you can create a new permission
 and use the `PermissionRequiredMixin` to be more fine-grained.  At a minimum, make sure that a user must be 
 logged in to do the CRUD operations.  
@@ -145,13 +145,13 @@ logged in to do the CRUD operations.
     wide-open URLs that accept data from the internet without a log in - that would be very irresponsible
     and make your hosting provider very unhappy.__
         
-* Create the `catalog/templates/catalog/author_form.html` template as described in the tutorial
+* [] Create the `catalog/templates/catalog/author_form.html` template as described in the tutorial
 
-* Create the `catalog/templates/catalog/author_confirm_delete.html` template as described in the tutorial
+* [] Create the `catalog/templates/catalog/author_confirm_delete.html` template as described in the tutorial
 
-* Add the url mappings for the Create Update, and Delete views `urls.py` as described in the tutorial
+* [] Add the url mappings for the Create Update, and Delete views `urls.py` as described in the tutorial
 
-* Test that you can Create, Update, and Delete by logging in as a valid user and manually going to the URLs:
+* [] Test that you can Create, Update, and Delete by logging in as a valid user and manually going to the URLs:
 
         http://mdntutorial.pythonanywhere.com/catalog/author/create/
         http://mdntutorial.pythonanywhere.com/catalog/author/12/update

@@ -22,7 +22,7 @@ and the `[1:]` items are the choices.
 Designing a Database Model
 --------------------------
 
-Since we are reusing the `polls` data model with `Choices` and `Questions` we are already past
+[] Since we are reusing the `polls` data model with `Choices` and `Questions` we are already past
 the "design" phase.  But in order to better understand the `polls` data model,
 as an exercise, you should look at your `models.py` and draw the model using
 <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model" target="_blank">
@@ -34,14 +34,14 @@ as a "many" or a "one" end.
 Getting Started
 ---------------
 
-Also make a folder called `scripts` and add an `__init__.py` file to it.  The `__init__.py` file
+[] Also make a folder called `scripts` and add an `__init__.py` file to it.  The `__init__.py` file
 is needed in order to store Python objects in the `scripts` folder.
 
     cd ~/django_projects/mysite
     mkdir scripts
     touch scripts/__init__.py
 
-Add `django_extensions` to your `INSTALLED_APPS` in `mysite/mysite/settings.py`:
+[] Add `django_extensions` to your `INSTALLED_APPS` in `mysite/mysite/settings.py`:
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -51,7 +51,7 @@ Add `django_extensions` to your `INSTALLED_APPS` in `mysite/mysite/settings.py`:
         'django_extensions', # Add
     ]
 
-At this point you should run:
+[] At this point you should run:
 
     python manage.py check
 
@@ -60,7 +60,7 @@ To make sure that your Django environment is configured properly.
 Copying the data file into your application
 -------------------------------------------
 
-You need to copy the CSV file into the `scripts` folder.  If the `wget` command is available
+[] You need to copy the CSV file into the `scripts` folder.  If the `wget` command is available
 you can use it to download the file:
 
     cd ~/django_projects/mysite/scripts
@@ -69,7 +69,7 @@ you can use it to download the file:
 Creating the batch script
 -------------------------
 
-Start with putting this code into your `scripts` folder `(~/django_projects/mysite/scripts)`
+[] Start with putting this code into your `scripts` folder `(~/django_projects/mysite/scripts)`
 as the file `polls_load.py`.
 
     import csv  # https://docs.python.org/3/library/csv.html
@@ -116,7 +116,7 @@ object is well covered in Tutorial 2:
 Running the Script
 ------------------
 
-You run the script from the project folder (i.e.  where the `manage.py` file resides):
+[] You run the script from the project folder (i.e.  where the `manage.py` file resides):
 
     cd ~/django_projects/mysite
     python manage.py runscript polls_load
@@ -130,7 +130,7 @@ work properly.
 Note that you should be able to run the script over and over because of the first thing the script
 does is delete all the existing questions and choices.
 
-Once your script runs, you should verify that the questions and choices made it into your database
+[] Once your script runs, you should verify that the questions and choices made it into your database
 using either your `/polls` application or the `/admin` feature of your django application.
 
 Possible Errors
@@ -157,7 +157,7 @@ to type `workon django42`  to activate your virtual environment:
 Checking Your Data By Hand
 --------------------------
 
-You can also hand-check your data by running a few queries on
+[] You can also hand-check your data by running a few queries on
 your data before turning it in to make sure the data makes
 it into the right tables:
 
@@ -180,7 +180,7 @@ it into the right tables:
 Upload to the Autograder
 ------------------------
 
-When the data passes your manual tests, you can download `db.sqlite3` from PythonAnywhere
+[] When the data passes your manual tests, you can download `db.sqlite3` from PythonAnywhere
 and then upload it to the autograder.
 
 <center><img src="dj4e_batch/pyaw_download.png" alt="An image pointing to the download icon on the Files tab on PythonAnywhere" style="width: 50%; border: 1px black solid;"></center>

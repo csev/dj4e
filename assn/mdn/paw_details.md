@@ -11,11 +11,11 @@ the autograder requires for this assignment.
 
 Complete the following sections of the Views tutorial:
 
-* Go into the `catalog` application
+* [] Go into the `catalog` application
 
         cd ~/django_projects/locallibrary/catalog
 
-* Edit `catalog/urls.py` and add the `BookListView` and `BookDetailView` lines to the `urlpatterns` list.
+* [] Edit `catalog/urls.py` and add the `BookListView` and `BookDetailView` lines to the `urlpatterns` list.
 
         urlpatterns = [
             path('', views.index, name='index'),
@@ -23,7 +23,7 @@ Complete the following sections of the Views tutorial:
             path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
         ]
 
-* Edit `catalog/views.py` for the views.index as suggested in the tutorial, adding these lines
+* [] Edit `catalog/views.py` for the views.index as suggested in the tutorial, adding these lines
 
         from django.views import generic
 
@@ -37,22 +37,22 @@ Complete the following sections of the Views tutorial:
     Since list and detail views are so common in programming Django provides us classes for us to reuse/extend.
     This saves us a lot of typing almost the same thing over and over again.
 
-* You will have to make the `catalog` folder under the `templates` folder if it does not already exist
+* [] You will have to make the `catalog` folder under the `templates` folder if it does not already exist
 
         cd ~/django_projects/locallibrary/catalog
         mkdir templates/catalog
 
-* Create the files `catalog/templates/catalog/book_list.html` and `catalog/templates/catalog/book_detail.html` as per
+* [] Create the files `catalog/templates/catalog/book_list.html` and `catalog/templates/catalog/book_detail.html` as per
     the tutorial.
 
-* Add pagination the pagination code to `templates/base_generic.html` and make sure you have at least
+* [] Add pagination the pagination code to `templates/base_generic.html` and make sure you have at least
 three books so you can set the pagination to two in the view and then test pagination.
 Once you test the pagination set `paginate_by = 20` so the autograder finds your books.
 
-* Reload your application under the `Web` tab in
+* [] Reload your application under the `Web` tab in
 <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>
 
-* Visit the catalog site
+* [] Visit the catalog site
 <a href="http://mdntutorial.pythonanywhere.com/catalog" target="_blank">http://mdntutorial.pythonanywhere.com/catalog</a>
 and explore the list and detail views.
 

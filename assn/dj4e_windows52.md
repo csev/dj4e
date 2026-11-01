@@ -12,13 +12,13 @@ Prerequisites
 
 You need the following installed on your computer:
 
-1. **Python 3.10, 3.11, 3.12, or 3.13** – <a href="https://www.python.org/downloads/" target="_blank">Download Python</a>  
+1. [] **Python 3.10, 3.11, 3.12, or 3.13** – <a href="https://www.python.org/downloads/" target="_blank">Download Python</a>  
    Check **Add Python to PATH** during install.
 
-2. **Git** – <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>  
+2. [] **Git** – <a href="https://git-scm.com/downloads" target="_blank">Download Git</a>  
    Git for Windows installs **Git Bash**, which we recommend for running the commands below.
 
-3. **SSH** – Used by localhost.run (no signup required). SSH comes with Git for Windows; Windows 10 and 11 also include OpenSSH.
+3. [] **SSH** – Used by localhost.run (no signup required). SSH comes with Git for Windows; Windows 10 and 11 also include OpenSSH.
 
 We recommend **Git Bash** so your commands match the Mac and Linux guides. Open **Git Bash** from the Start menu instead of cmd or PowerShell.
 
@@ -27,7 +27,7 @@ We use the same folder layout as on Mac/Linux: `~/django_projects` for your Djan
 Creating a Virtual Environment
 ------------------------------
 
-Create and activate a virtual environment for Django 5.2 in your home directory.
+[] Create and activate a virtual environment for Django 5.2 in your home directory.
 
 **Git Bash (recommended):**
 
@@ -49,7 +49,7 @@ Create and activate a virtual environment for Django 5.2 in your home directory.
 
 If `python` is not found, try `py -3`. If you have multiple Python versions, use one that is 3.10 or newer (e.g. `py -3.12 -m venv .ve52`).
 
-Once activated, your prompt should show `(.ve52)` at the start. Verify Python and install Django:
+[] Once activated, your prompt should show `(.ve52)` at the start. Verify Python and install Django:
 
     pip install --upgrade pip
     pip install django==5.2
@@ -60,7 +60,7 @@ The Django version should be 5.2 or higher.
 Installing dj4e-samples and Requirements
 ----------------------------------------
 
-Make sure your virtual environment is activated (you should see `(.ve52)` in your prompt). If you opened a new terminal, activate it again as shown above.
+[] Make sure your virtual environment is activated (you should see `(.ve52)` in your prompt). If you opened a new terminal, activate it again as shown above.
 
 **Git Bash:**
 
@@ -84,7 +84,7 @@ Make sure your virtual environment is activated (you should see `(.ve52)` in you
 
 (In PowerShell, use `cd $env:USERPROFILE` instead of `cd %USERPROFILE%` for the first line.)
 
-Verify the installation:
+[] Verify the installation:
 
     python manage.py check
 
@@ -92,7 +92,7 @@ Expected output includes:
 
     System check identified no issues (0 silenced).
 
-Then run migrations:
+[] Then run migrations:
 
     python manage.py makemigrations
     python manage.py migrate
@@ -105,7 +105,7 @@ The `dj4e-samples` folder is reference material for the course. To pull updates 
 Building Your Django Application
 ---------------------------------
 
-Ensure your virtual environment is activated. Create your project folder and Django project.
+[] Ensure your virtual environment is activated. Create your project folder and Django project.
 
 **Git Bash:**
 
@@ -128,7 +128,7 @@ Ensure your virtual environment is activated. Create your project folder and Dja
     cd django_projects
     django-admin startproject mysite
 
-In `mysite/mysite/settings.py`, edit **ALLOWED_HOSTS** and add **CSRF_TRUSTED_ORIGINS** (that setting is not in a fresh project by default—add it next to **ALLOWED_HOSTS**):
+[] In `mysite/mysite/settings.py`, edit **ALLOWED_HOSTS** and add **CSRF_TRUSTED_ORIGINS** (that setting is not in a fresh project by default—add it next to **ALLOWED_HOSTS**):
 
     ALLOWED_HOSTS = [ '*' ]
     CSRF_TRUSTED_ORIGINS = [
@@ -156,14 +156,14 @@ Adding the Polls Application
     cd $env:USERPROFILE\django_projects\mysite
     python manage.py startapp polls
 
-Edit `mysite/polls/views.py` and replace its contents with:
+[] Edit `mysite/polls/views.py` and replace its contents with:
 
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("Hello, world. You're at the polls index.")
 
-Create `mysite/polls/urls.py` with:
+[] Create `mysite/polls/urls.py` with:
 
     from django.urls import path
     from . import views
@@ -172,7 +172,7 @@ Create `mysite/polls/urls.py` with:
         path("", views.index, name="index"),
     ]
 
-Edit `mysite/mysite/urls.py` and replace its contents with:
+[] Edit `mysite/mysite/urls.py` and replace its contents with:
 
     from django.contrib import admin
     from django.urls import include, path
@@ -182,14 +182,14 @@ Edit `mysite/mysite/urls.py` and replace its contents with:
         path("admin/", admin.site.urls),
     ]
 
-Verify:
+[] Verify:
 
     python manage.py check
 
 Running Your Server and Exposing with localhost.run
 ---------------------------------------------------
 
-You need **two terminal windows** (or tabs): use the **first terminal** for Django below, and a **second terminal** for localhost.run.
+[] You need **two terminal windows** (or tabs): use the **first terminal** for Django below, and a **second terminal** for localhost.run.
 
 **Terminal 1** (your **first terminal**) – Django server
 
@@ -218,7 +218,7 @@ Leave this running. The server listens on `http://127.0.0.1:8000/`.
 
 **Terminal 2** (your **second terminal**) – localhost.run tunnel
 
-In your **second terminal**, run:
+[] In your **second terminal**, run:
 
     ssh -R 80:localhost:8000 localhost.run
 
@@ -230,17 +230,17 @@ That URL is what you submit to the Install autograder. It forwards traffic to yo
 
 **Testing locally**
 
-- Local: open `http://127.0.0.1:8000/polls` in your browser
-- Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`)
+- [] Local: open `http://127.0.0.1:8000/polls` in your browser
+- [] Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`)
 
 You should see: "Hello, world. You're at the polls index."
 
 Submitting to the Autograder
 ---------------------------
 
-1. Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
-2. Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
-3. Submit that URL to the DJ4E Install autograder
+1. [] Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
+2. [] Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
+3. [] Submit that URL to the DJ4E Install autograder
 
 The autograder will fetch your site through localhost.run. Each time you restart the SSH tunnel, the URL may change; if it does, submit the new URL.
 
@@ -249,16 +249,16 @@ Workflow: Change, Check, Restart, Test
 
 When you change code:
 
-1. Run `python manage.py check` to catch errors
-2. Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
-3. Test at `http://127.0.0.1:8000/` or your localhost.run URL
+1. [] Run `python manage.py check` to catch errors
+2. [] Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
+3. [] Test at `http://127.0.0.1:8000/` or your localhost.run URL
 
 Your **second terminal** (Terminal 2, the tunnel) can stay running; you only need to restart the Django server.
 
 Checkup Tool
 -----------
 
-We provide a checkup script in dj4e-samples. From **Git Bash**:
+[] We provide a checkup script in dj4e-samples. From **Git Bash**:
 
     bash ~/dj4e-samples/tools/checkup.sh
 
