@@ -73,7 +73,6 @@ $OUTPUT->bodyStart();
 
 if ( $contents != false ) {
 ?>
-<link rel="stylesheet" href="../steps.css">
 <script>
 function onSelect() {
     console.log($('#chapters').val());
@@ -95,10 +94,9 @@ function onSelect() {
 </div>
 <?php
     $Parsedown = new Parsedown();
-    echo '<div id="step-root">';
+    echo '<div id="tsugi-step-root">';
     echo $Parsedown->text($contents);
     echo '</div>';
-    echo '<script src="../steps.js"></script>';
 } else {
 ?>
 <p>

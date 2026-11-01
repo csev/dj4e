@@ -967,7 +967,7 @@ class Parsedown
         }
 
         $class = isset($element['attributes']['class']) ? $element['attributes']['class'] : '';
-        $element['attributes']['class'] = trim($class.' step');
+        $element['attributes']['class'] = trim($class.' tsugi-step');
 
         return true;
     }
@@ -1456,9 +1456,9 @@ class Parsedown
         {
             $markup .= '>';
 
-            if (isset($Element['attributes']['class']) and preg_match('/(^|\s)step($|\s)/', $Element['attributes']['class']))
+            if (isset($Element['attributes']['class']) and preg_match('/(^|\s)tsugi-step($|\s)/', $Element['attributes']['class']))
             {
-                $markup .= '<input type="checkbox" class="step-box" aria-label="Mark this step done" autocomplete="off">';
+                $markup .= '<input type="checkbox" class="tsugi-step-box" aria-label="Mark this step done" autocomplete="off">';
             }
 
             if (isset($Element['handler']))
