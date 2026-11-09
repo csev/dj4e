@@ -16,4 +16,3 @@ When you finish, you will have a localhost.run URL (for example `https://xxxxx.l
 
 **Troubleshooting:** [Fixing Common Django Errors](dj4e_errors52.md)
 
-**Django 4.2:** As of January 2026 this course uses Django 5.2. For 4.2, see [dj4e_install42.md](dj4e_install42.md) and adapt the steps from your platform guide above.
