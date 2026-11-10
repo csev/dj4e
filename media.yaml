@@ -15,7 +15,7 @@ extra_tags: dj4e, dj4e-lecture
 extra_description: For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
 entries:
   lesson-01-welcome/01-DJ-00-00-Welcome-2024-01-09.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_01_01
     title: 'DJ 01.01 Django for Everybody: Building Web Applications with Python (7:33)'
     ai_title: null
@@ -36,7 +36,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-01-welcome/02-2025-08-20-AI.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_01_02
     title: 'DJ 01.02 Charles Severance on AI in Programming Courses (16:16)'
     ai_title: null
@@ -57,7 +57,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/01-Web-01-HTTP-01.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_01
     title: DJ 02.01 Web Request-Response Cycle (6:04)
     ai_title: null
@@ -78,7 +78,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/02-Web-01-HTTP-02-Sockets.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_02
     title: 'DJ 02.02 Network Sockets as Computer Phone Calls (6:34)'
     ai_title: null
@@ -99,7 +99,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/03-Web-01-HTTP-03-HTTP.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_03
     title: 'DJ 02.03 HTTP Protocol: History and URL Structure (16:28)'
     ai_title: null
@@ -120,7 +120,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/04-Web-01-HTTP-04-Browser.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_04
     title: DJ 02.04 Simple Python HTTP Client with Sockets (8:39)
     ai_title: null
@@ -141,7 +141,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/05-Web-01-HTTP-05-Server.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_05
     title: DJ 02.05 Simple Python Web Server Using Sockets (16:07)
     ai_title: null
@@ -162,7 +162,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/06-dev-mode-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_06
     title: 'DJ 02.06 Browser Debugger Console: Access in Firefox and Chrome (9:43)'
     ai_title: null
@@ -183,7 +183,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/07-DJ-11-BigPicture.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_07
     title: DJ 02.07 Django Application Structure and Request-Response Cycle (17:15)
     ai_title: null
@@ -204,7 +204,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/08-Web-04-Mini-Django.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_08
     title: 'DJ 02.08 Mini-Django: A Minimal Django Web Server for HTTP and Routing (36:59)'
     ai_title: null
@@ -225,7 +225,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-02-http/09-DJ-01-Hosting-02-1080.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_02_09
     title: 'DJ 02.09 Virtual Hosting: How a Single Server Hosts Multiple Domains (4:31)'
     ai_title: null
@@ -246,7 +246,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/01-paw_install52_new.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_03_01
     title: DJ 03.01 Setting Up Django 5.2 on Python Anywhere (31:58)
     ai_title: null
@@ -267,7 +267,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/02-DJ-00-AutoGrader.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_03_02
     title: 'DJ 03.02 Django Autograder: Checking Student Applications (10:42)'
     ai_title: null
@@ -288,7 +288,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/03-DJ-01-Hosting-01-1080.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_03_03
     title: DJ 03.03 Django Application Structure Overview (7:04)
     ai_title: null
@@ -309,7 +309,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-03-install/04-paw_install_errors_52.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_03_04
     title: 'DJ 03.04 Debugging Django Applications on Python Anywhere: Startup Failures and Tracebacks (19:38)'
     ai_title: null
@@ -330,7 +330,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-04-shell/01-01_paw_shell.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_04_01
     title: 'DJ 04.01 Linux Shell Commands for Django Developers (18:27)'
     ai_title: null
@@ -351,7 +351,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-05-html/01-Web-02-HTML-A.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_05_01
     title: 'DJ 05.01 HTML Parsing and Standard Evolution (5:53)'
     ai_title: null
@@ -372,7 +372,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-05-html/02-Web-02-HTML-B.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_05_02
     title: DJ 05.02 Basic HTML Document Structure and Syntax (13:53)
     ai_title: null
@@ -393,7 +393,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-05-html/03-Web-02-HTML-Code.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_05_03
     title: DJ 05.03 Document Object Model vs HTML Source Code (13:34)
     ai_title: null
@@ -415,7 +415,7 @@ entries:
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
     youtube_id_2020: wYc6l28v7Cs
   lesson-06-css/01-Web-02-CSS-A.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_06_01
     title: 'DJ 06.01 CSS: Styling HTML in Web Applications (12:47)'
     ai_title: null
@@ -436,7 +436,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/02-Web-02-CSS-B.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_06_02
     title: 'DJ 06.02 Three Methods for Applying CSS in HTML (15:03)'
     ai_title: null
@@ -457,7 +457,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/03-Web-02-CSS-C.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_06_03
     title: 'DJ 06.03 CSS: Images, Colors, and Fonts (13:39)'
     ai_title: null
@@ -478,7 +478,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/04-Web-03-CSS-Code-A.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_06_04
     title: DJ 06.04 How Cascading Style Sheets Work (13:25)
     ai_title: null
@@ -499,7 +499,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-06-css/05-Web-03-CSS-Code-B.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_06_05
     title: 'DJ 06.05 HTML/CSS Examples: Fonts, Colors, and Layout Techniques (25:49)'
     ai_title: null
@@ -520,7 +520,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-07-sql/01-SQL-01-Basic-01.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_07_01
     title: 'DJ 07.01 SQL: Historical Development and Core Principles (18:57)'
     ai_title: null
@@ -541,7 +541,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-07-sql/02-SQL-01-Basic-02.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_07_02
     title: 'DJ 07.02 SQLite Basic SQL Commands: Create, Insert, Update, Delete (11:44)'
     ai_title: null
@@ -562,7 +562,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-07-sql/03-sql-01-basic.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_07_03
     title: 'DJ 07.03 SQLite Command Line: Basic Table Creation and Queries (8:39)'
     ai_title: null
@@ -584,7 +584,7 @@ entries:
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
     youtube_id_2020: 2Or6_sSyl7c
   lesson-08-models/01-DJ-02-Models.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_08_01
     title: 'DJ 08.01 Django Models: ORM and Migrations (19:59)'
     ai_title: null
@@ -605,7 +605,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-08-models/02-DJ-02-Models-Migrate-From-03.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_08_02
     title: 'DJ 08.02 Django Migrations: Creating and Applying Database Schema Changes (7:54)'
     ai_title: null
@@ -626,7 +626,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-08-models/03-04_paw_models_2026.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_08_03
     title: 'DJ 08.03 Django Tutorial 2 on Python Anywhere: File Paths and Database Migrations (29:20)'
     ai_title: null
@@ -647,7 +647,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-08-models/04-tut2-reset-database-edit.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_08_04
     title: DJ 08.04 Resetting Django Database When Migrations Fail (5:47)
     ai_title: null
@@ -668,7 +668,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-09-mvc/01-DJ-05-MVC.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_09_01
     title: DJ 09.01 Model-View-Controller Pattern in Web Development (7:07)
     ai_title: null
@@ -689,7 +689,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/01-DJ-06-Views-01-Urls.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_01
     title: 'DJ 10.01 Django Views and Templates: Application Output (6:59)'
     ai_title: null
@@ -710,7 +710,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/02-DJ-06-Views-02-Views.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_02
     title: 'DJ 10.02 Django Template Views and Request Objects (6:19)'
     ai_title: null
@@ -731,7 +731,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/03-DJ-06-Views-03-Detail.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_03
     title: DJ 10.03 XSS prevention with HTML escaping in Django (15:36)
     ai_title: null
@@ -752,7 +752,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/04-DJ-06-Views-04-Templates.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_04
     title: 'DJ 10.04 Django Templates: Rendering and Context (10:05)'
     ai_title: null
@@ -773,7 +773,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/05-DJ-06-Views-05-DTL.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_05
     title: 'DJ 10.05 Django Template Language: Variable Substitution and Automatic Escaping (10:59)'
     ai_title: null
@@ -794,7 +794,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/06-DJ-06-Views-06-Inherit.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_06
     title: 'DJ 10.06 Template Inheritance in Django: Base and Extended Templates (6:05)'
     ai_title: null
@@ -815,7 +815,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-10-views/07-DJ-06-Views-07-Reverse.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_10_07
     title: 'DJ 10.07 Django URL Mapping and Reversing: Generating Links (12:52)'
     ai_title: null
@@ -836,7 +836,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/01-14-Objects-A-2016-11-03.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_11_01
     title: 'DJ 11.01 Python Objects Terminology Explained (10:40)'
     ai_title: null
@@ -857,7 +857,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/02-14-Objects-B-2023-12-28.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_11_02
     title: DJ 11.02 Python Classes, Objects, and the Self Keyword (8:21)
     ai_title: null
@@ -878,7 +878,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/03-14-Objects-C-2023-12-28.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_11_03
     title: 'DJ 11.03 Python Object Lifecycle: Constructors and Destructors (6:09)'
     ai_title: null
@@ -899,7 +899,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/04-14-Objects-D-2023-12-28.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_11_04
     title: DJ 11.04 Inheritance in Object-Oriented Programming (7:34)
     ai_title: null
@@ -920,7 +920,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-11-OO-Python/05-14-Py-01-Variables-2025-09.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_11_05
     title: 'DJ 11.05 Python Variables Are Pointers, Not Drawers in CPython (7:29)'
     ai_title: null
@@ -941,7 +941,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-12-generic/01-DJ-06-Views-08-Generic.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_12_01
     title: 'DJ 12.01 Django Generic Views: One Line Code for Reusable Model Views (16:28)'
     ai_title: null
@@ -962,7 +962,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/01-DJ-07-Forms-01-getpost.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_13_01
     title: 'DJ 13.01 HTML Forms and HTTP Methods in Django (8:19)'
     ai_title: null
@@ -983,7 +983,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/02-DJ-07-Forms-02-HTML.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_13_02
     title: DJ 13.02 HTML Form Elements and Validation (11:49)
     ai_title: null
@@ -1004,7 +1004,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/03-DJ-07-Forms-03-CSRF.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_13_03
     title: DJ 13.03 Cross-Site Request Forgery (CSRF) in Web Forms (5:52)
     ai_title: null
@@ -1025,7 +1025,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/04-DJ-07-Forms-04-Form-CSRF.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_13_04
     title: 'DJ 13.04 Django CSRF Token Implementation for Forms (9:16)'
     ai_title: null
@@ -1046,7 +1046,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/05-DJ-07-Forms-05-Refresh.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_13_05
     title: 'DJ 13.05 POST-REDIRECT-GET: Preventing Form Resubmission on Page Refresh (3:26)'
     ai_title: null
@@ -1067,7 +1067,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-13-html-forms/06-DJ-07-Forms-06-Redirect.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_13_06
     title: 'DJ 13.06 POST Redirect Pattern for Form Submissions (8:04)'
     ai_title: null
@@ -1088,7 +1088,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-14-cookies/01-DJ-08-Cookies-01-Cookies.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_14_01
     title: 'DJ 14.01 Cookies and Sessions: Browser and Server Concepts (9:43)'
     ai_title: null
@@ -1109,7 +1109,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-14-cookies/02-DJ-08-Cookies-02-Sessions.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_14_02
     title: 'DJ 14.02 Django Sessions: Session Cookies and Storage (12:33)'
     ai_title: null
@@ -1130,7 +1130,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/01-DJ-03-Many-01-Overview.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_15_01
     title: 'DJ 15.01 Django Data Modeling: Models, Normalization, and Integer Keys (5:52)'
     ai_title: null
@@ -1151,7 +1151,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/02-DJ-03-Many-02-Replication.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_15_02
     title: DJ 15.02 Avoiding Data Replication in Spreadsheet Models (8:36)
     ai_title: null
@@ -1172,7 +1172,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/03-DJ-03-Many-03-Physical.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_15_03
     title: DJ 15.03 Representing Database Links with Primary and Foreign Keys (2:46)
     ai_title: null
@@ -1193,7 +1193,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/04-DJ-03-Many-04-Django.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_15_04
     title: 'DJ 15.04 Django Data Models: Foreign Keys and Migrations (9:56)'
     ai_title: null
@@ -1214,7 +1214,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-15-one-many/05-DJ-03-Many-05-Shell.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_15_05
     title: 'DJ 15.05 Django Shell: Creating and Saving Model Objects with Foreign Keys (7:45)'
     ai_title: null
@@ -1235,7 +1235,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-16-users/01-DJ-09-Login-01-Users.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_16_01
     title: DJ 16.01 Django Superuser Creation and Authentication Basics (3:45)
     ai_title: null
@@ -1256,7 +1256,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-16-users/02-DJ-09-Login-02-Urls.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_16_02
     title: 'DJ 16.02 Django User Login and Logout (7:23)'
     ai_title: null
@@ -1277,7 +1277,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-16-users/03-DJ-09-Login-03-Views.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_16_03
     title: 'DJ 16.03 Django Login Page Template and Authentication Mixins (10:16)'
     ai_title: null
@@ -1298,7 +1298,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-17-django-forms/01-DJ-10-Forms-07-FormsPy.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_17_01
     title: 'DJ 17.01 Django Forms: Validation and Template Rendering (13:26)'
     ai_title: null
@@ -1319,7 +1319,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-17-django-forms/02-DJ-10-Forms-08-Validation.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_17_02
     title: DJ 17.02 Django Server-Side Form Validation (9:13)
     ai_title: null
@@ -1340,7 +1340,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-18-autos/01-samples-autos-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_18_01
     title: 'DJ 18.01 Django Autos Assignment: Implementing CRUD with Generic Views (36:13)'
     ai_title: null
@@ -1361,7 +1361,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-20-mkt0-setup/01-mkt_00_setup_sqlite.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_20_01
     title: DJ 20.01 Django Marketplace Initial Project Setup with Virtual Environment (9:45)
     ai_title: null
@@ -1382,7 +1382,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-22-owned/01-DJ-12-Owned-01.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_22_01
     title: DJ 22.01 Django Owned Rows Implementation Using Inheritance (6:02)
     ai_title: null
@@ -1403,7 +1403,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-22-owned/02-DJ-12-Owned-02.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_22_02
     title: 'DJ 22.02 How to Extend Django Generic Edit Views with Method Overrides (10:17)'
     ai_title: null
@@ -1424,7 +1424,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-22-owned/03-DJ-12-Owned-03.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_22_03
     title: DJ 22.03 Django Owner Views Implementation with User Authentication (13:03)
     ai_title: null
@@ -1445,7 +1445,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-23-ads1/01-samples-crispy-walkthrough-23.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_23_01
     title: 'DJ 23.01 Crispy Forms: Django Bootstrap 5 Form Rendering (9:14)'
     ai_title: null
@@ -1466,7 +1466,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-23-ads1/02-samples-myarts-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_23_02
     title: 'DJ 23.02 Django model ownership with user-specific rows (30:13)'
     ai_title: null
@@ -1487,7 +1487,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-23-ads1/03-samples-menu-walkthrough-edited.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_23_03
     title: DJ 23.03 Django Bootstrap Menu Implementation with Template Inheritance (14:21)
     ai_title: null
@@ -1508,7 +1508,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/01-JS-01-01-JavaScript.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_24_01
     title: 'DJ 24.01 JavaScript: History, Syntax, and Browser Applications (9:59)'
     ai_title: null
@@ -1529,7 +1529,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/02-JS-01-02-Browser.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_24_02
     title: DJ 24.02 JavaScript DOM and Event Handling in Web Browsers (14:02)
     ai_title: null
@@ -1550,7 +1550,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/03-JS-01-03-Language.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_24_03
     title: 'DJ 24.03 JavaScript Syntax: Comments, Variables, and Numbers (16:57)'
     ai_title: null
@@ -1571,7 +1571,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/04-JS-01-04-Functions-Arrays.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_24_04
     title: 'DJ 24.04 JavaScript Functions and Arrays: Scoping (7:02)'
     ai_title: null
@@ -1592,7 +1592,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-24-javascript/05-JS-01-05-If-Loops.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_24_05
     title: 'DJ 24.05 JavaScript Control Structures: If Statements, Loops, and Logical Operators (6:37)'
     ai_title: null
@@ -1613,7 +1613,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-25-jsoo/01-JS-02-01-Overview.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_25_01
     title: DJ 25.01 Object-Oriented Programming Concepts in JavaScript (4:20)
     ai_title: null
@@ -1634,7 +1634,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-25-jsoo/02-JS-02-02-Code.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_25_02
     title: 'DJ 25.02 JavaScript Classes: Function-Based Implementation and Instances (13:13)'
     ai_title: null
@@ -1655,7 +1655,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-26-ads-pictures/01-samples-pics-combined.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_26_01
     title: DJ 26.01 Django CRUD Image Upload Implementation (33:06)
     ai_title: null
@@ -1676,7 +1676,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-27-many-many/01-DJ-04-Many-01-Overview.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_27_01
     title: 'DJ 27.01 Django Data Modeling: Many-to-Many Relationships (5:34)'
     ai_title: null
@@ -1697,7 +1697,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-27-many-many/02-DJ-04-Many-02-Many.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_27_02
     title: DJ 27.02 Django Many-to-Many Relationships with Junction Tables (12:35)
     ai_title: null
@@ -1718,7 +1718,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-27-many-many/03-DJ-04-Many-03-Course.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_27_03
     title: DJ 27.03 Django Many-to-Many Relationship with Role and Timestamps (8:38)
     ai_title: null
@@ -1739,7 +1739,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-28-ads-comments/01-samples-forums-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_28_01
     title: DJ 28.01 Django Many-to-Many Relationships with Junction Tables (25:28)
     ai_title: null
@@ -1760,7 +1760,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/01-JS-03-Browser-01-Execution.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_29_01
     title: 'DJ 29.01 JavaScript Execution Model: Events, DOM, and First-Class Functions (8:24)'
     ai_title: null
@@ -1781,7 +1781,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/02-JS-03-Browser-02-DOM-WIndow.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_29_02
     title: DJ 29.02 JavaScript DOM and Window Object (5:40)
     ai_title: null
@@ -1802,7 +1802,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/03-JS-03-Browser-03-DOM-Modify.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_29_03
     title: 'DJ 29.03 JavaScript DOM Manipulation: Changing Elements and Styles (8:24)'
     ai_title: null
@@ -1823,7 +1823,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/04-JS-03-Browser-04-DOM-Event.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_29_04
     title: 'DJ 29.04 Browser Event Registration: addEventListener vs. onClick and DOMContentLoaded (7:54)'
     ai_title: null
@@ -1844,7 +1844,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/05-JS-03-Browser-05-Fetch.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_29_05
     title: DJ 29.05 JavaScript Network Events with Fetch and Promises (6:26)
     ai_title: null
@@ -1865,7 +1865,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-29-browser/06-JS-03-Browser-06-WC.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_29_06
     title: DJ 29.06 Creating Custom Elements with LitElement (11:05)
     ai_title: null
@@ -1886,7 +1886,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/01-JS-04-JSON-01-JSON.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_30_01
     title: 'DJ 30.01 AJAX and JSON: Server-Client Data Exchange (8:34)'
     ai_title: null
@@ -1907,7 +1907,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/02-samples-fetch-walkthrough-23.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_30_02
     title: DJ 30.02 Django JSON Responses and Fetch API Basics (21:53)
     ai_title: null
@@ -1928,7 +1928,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/03-JS-04-JSON-02-Chat.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_30_03
     title: DJ 30.03 Simple Multi-User Chat Application with Ajax and JSON Polling (8:05)
     ai_title: null
@@ -1949,7 +1949,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-30-json/04-samples-chat-walkthrough-23.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_30_04
     title: DJ 30.04 Django Polling Example with AJAX and JSON (16:03)
     ai_title: null
@@ -1970,7 +1970,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-31-ads3/01-samples-favicon-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_31_01
     title: DJ 31.01 Django Favicon Setup and Cache Busting (4:11)
     ai_title: null
@@ -1991,7 +1991,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-31-ads3/02-samples-social-github-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_31_02
     title: DJ 31.02 Setting Up GitHub Social Login in Django (8:47)
     ai_title: null
@@ -2012,7 +2012,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-31-ads3/03-favwc-walkthrough.m4v:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_31_03
     title: DJ 31.03 Django Many-to-Many Favorites with AJAX Implementation (34:18)
     ai_title: null
@@ -2033,7 +2033,7 @@ entries:
 
       For more materials, auto graders, and more courses, please see https://www.masterprogrammer.com
   lesson-32-ads-search/01-samples-well-walkthrough.mov:
-    collection: dj4e
+    collection: DJ4E
     logical_key: DJ_32_01
     title: 'DJ 32.01 Django WELL Sample: Implementing Search with GET Parameters for Idempotent URLs (21:30)'
     ai_title: null
