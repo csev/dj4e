@@ -1,7 +1,0 @@
-XSS prevention with HTML escaping in Django
-
-cross-site scripting, xss, html escaping, django, url parameters, http redirects, 302
-
-This lecture describes a cross-site scripting (XSS) vulnerability that occurs when user input is directly inserted into HTML responses without escaping. Attackers can inject malicious JavaScript that executes in the victim's browser, potentially leading to unauthorized actions.
-
-Django prevents this vulnerability by escaping user input using HTML entities. The lecture also covers Django's URL parameter parsing and 302 HTTP redirects as part of the framework's routing and response handling.

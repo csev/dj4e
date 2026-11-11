@@ -1,7 +1,0 @@
-CSS: Images, Colors, and Fonts
-
-CSS, images, colors, fonts, floats, clear, a, img, font-family, hex, rgb
-
-This lecture covers CSS techniques for styling images, colors, and fonts. It explains how to use floats to position images to the right, manage floating elements with the `clear` property, and define colors using 16 named colors and hexadecimal RGB values. The speaker also discusses font stacks with fallbacks and the use of relative units like `m` for margins.
-
-The lecture includes practical examples for link styling with the `a` tag, including unvisited, visited, hover, and active states. It also touches on browser-specific CSS extensions, such as rounded corners, and mentions tools like Bootstrap for enhancing web page aesthetics through simplified styling.

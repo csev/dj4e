@@ -1,7 +1,0 @@
-SQLite Basic SQL Commands: Create, Insert, Update, Delete
-
-sqlite, sql, create table, insert, delete, update, select, database, schema, varchar, integer, primary key
-
-This lecture covers the fundamentals of SQLite and basic SQL commands including CREATE TABLE, INSERT, DELETE, UPDATE, and SELECT. It details how to define tables with specific data types such as integer and varchar, along with constraints like not null and primary key.
-
-SQLite stores both database schema and data in a single file. The lecture explains that core SQL commands are portable across database systems and highlights the implied loop behavior in commands like DELETE without a WHERE clause, which deletes all rows.

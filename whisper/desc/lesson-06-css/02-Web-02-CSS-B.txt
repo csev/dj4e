@@ -1,7 +1,0 @@
-Three Methods for Applying CSS in HTML
-
-css, html, style attribute, internal css, external css, css cascade, span, div, selectors, id, class
-
-The lecture details three methods for applying CSS rules to HTML: inline styles via the `style` attribute on tags, internal styles using a `style` tag in the `head`, and external stylesheets linked via the `link` element. It explains the CSS cascade, where rules closer to the target element have higher priority.
-
-The lecture emphasizes that `span` and `div` tags have no default styling, enabling precise control over visual presentation. It also covers CSS selectors, including IDs (`#id`), classes (`.class`), and their combinations for targeted styling without excessive class usage.

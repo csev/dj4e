@@ -1,7 +1,0 @@
-Django Tutorial 2 on Python Anywhere: File Paths and Database Migrations
-
-Django, Python Anywhere, database migrations, models, admin interface, manage.py
-
-This lecture provides a step-by-step walkthrough of Django Tutorial 2 from the Django project website, specifically adapted for the Python Anywhere platform. It covers the necessary file paths, including the home directory (~), the django_projects folder, and the mysite application structure. The session details the execution of key commands such as python manage.py migrate for database migrations and python manage.py shell for interactive model testing.
-
-The tutorial emphasizes the process of reloading the Python Anywhere application after each file change using the reload button to ensure updates are reflected. It also demonstrates creating database models, applying migrations, and configuring the Django admin interface to manage application data within the Python Anywhere environment.

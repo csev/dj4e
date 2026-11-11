@@ -1,7 +1,0 @@
-CSS: Styling HTML in Web Applications
-
-css, html, dom, request-response-cycle, styling, webapplications, accessibility
-
-This lecture covers Cascading Style Sheets (CSS) as the layer that styles HTML content in web applications. CSS is fetched during the request-response cycle and applied to the document object model to define visual presentation. The HTML document is parsed into the document object model, which then receives CSS rules to determine the final appearance of the web page.
-
-The lecture emphasizes CSS's importance for accessibility, noting that pages remain navigable without CSS due to clean HTML structure. This separation of concerns allows back-end developers to generate HTML and front-end designers to apply CSS, enabling efficient web application development.

@@ -13,4 +13,4 @@ Lecture media tooling (whisper, `media.yaml` bootstrap, compare scripts, YouTube
 - **Repo:** [csev/media-util](https://github.com/csev/media-util.git) (`media-util`)
 - **Usual checkout:** a **peer folder** next to this course root, e.g. `../media-util` when this repo is `dj4e` under the same parent (`htdocs/dj4e` ↔ `htdocs/media-util`)
 
-Course wiring: `media.env` sets `MEDIA_UTIL` and prepends `$MEDIA_UTIL/bin` to `PATH`. Source `media.env` from the course root before running those tools. Docs and workflow live in `media-util/README.md`; course-specific bits here are `media.env`, `media.yaml`, `lessons.json`, and `youtube/`.
+Course wiring: `media.env` sets `MEDIA_UTIL` and prepends `$MEDIA_UTIL/bin` to `PATH`. Source `media.env` from the course root before running those tools. Docs and workflow live in `media-util/README.md`. Course-specific bits that stay in this tree are `media.env`, `lessons.json`, and `youtube/`. `media.yaml` and `whisper/` live in `~/Desktop/teach/dj4e-media` (`MEDIA_YAML` and `WHISPER_ROOT` in `media.env`).

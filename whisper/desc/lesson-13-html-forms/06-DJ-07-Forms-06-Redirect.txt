@@ -1,7 +1,0 @@
-POST Redirect Pattern for Form Submissions
-
-post requests, redirects, flash messages, sessions
-
-This lecture explains how to prevent double form submissions when a user refreshes a page after a POST request. The solution involves redirecting the browser to the same page with a 302 status code instead of returning HTML. This redirect causes the browser to perform a GET request on the same URL, preventing the form data from being submitted twice.
-
-The implementation uses sessions to store a flash message during the POST request, which is then displayed in the subsequent GET request. After the message is shown, it is deleted from the session to avoid re-display. This pattern is called the flash message pattern and is a standard technique for handling form submissions without double submissions.

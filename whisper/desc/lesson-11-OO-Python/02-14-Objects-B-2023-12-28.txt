@@ -1,7 +1,0 @@
-Python Classes, Objects, and the Self Keyword
-
-python, classes, objects, self, instance, attributes, methods
-
-This lecture explains Python's fundamental object-oriented programming concepts. A class is a template that defines the structure and behavior of objects. The example code demonstrates creating a PartyAnimal class with an attribute x (initialized to 0) and a method party that increments x and prints its value.
-
-The lecture details the self keyword, which refers to the instance within class methods. When an object is created, self acts as an alias for the instance variable. The dot operator is used for object lookup, and the dir function reveals an object's attributes and methods, including built-in methods with double underscores.

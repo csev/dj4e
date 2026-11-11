@@ -1,7 +1,0 @@
-Django Models: ORM and Migrations
-
-Django, ORM, models, migrations, database, SQLite, PostgreSQL, MySQL, CRUD, object-relational-mapping
-
-This lecture reviews the fundamentals of SQL and introduces Django's object-relational mapper (ORM) for database interactions. It explains how to define models in Python using the models.py file, which maps to database tables, and how migrations manage schema evolution across different database backends.
-
-Django's ORM simplifies common database operations such as creating, reading, updating, and deleting records through Python objects. Migrations automatically generate and apply database schema changes, ensuring portability between development (SQLite) and production (PostgreSQL or MySQL) environments without manual SQL.

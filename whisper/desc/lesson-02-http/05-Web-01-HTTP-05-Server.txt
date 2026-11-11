@@ -1,7 +1,0 @@
-Simple Python Web Server Using Sockets
-
-Python, web server, sockets, HTTP, GET request
-
-The lecture implements a minimal Python web server using socket programming that responds to HTTP GET requests with a static "hello world" HTML page.
-
-The server listens for incoming connections on a port and sends a 200 OK response with UTF-8 encoded HTML content for each GET request. A client application is built to send HTTP GET requests to this server via socket connections.

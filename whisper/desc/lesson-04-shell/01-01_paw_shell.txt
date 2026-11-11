@@ -1,7 +1,0 @@
-Linux Shell Commands for Django Developers
-
-bash, linux shell, command line, django shell, python shell
-
-This lecture introduces the Linux command line shell as a fundamental interface for server operations, essential for Django developers. It covers basic shell commands such as ls, pwd, cd, rm, and grep (with recursive search), along with features like command line completion and command history. The session explains why understanding the shell is important, as most production servers run on Linux and use command line interfaces.
-
-The lecture differentiates between several interactive environments: the Linux shell (dollar sign prompt), Python interactive shell (REPL), SQLite shell, and Django shell. Each environment has unique prompts and exit commands; for example, the Django shell is a Python environment preloaded with Django application code. Recognizing the current interface helps developers avoid confusion and effectively manage their development workflow.

@@ -1,7 +1,0 @@
-Django Sessions: Session Cookies and Storage
-
-django, sessions, sessionmiddleware, session cookies, session storage, session id, database, base64, json
-
-Django sessions enable persistent storage of user-specific data across multiple HTTP request-response cycles. Each session is identified by a session ID, a large random number stored in a browser cookie. The server uses this ID to retrieve the session data from storage.
-
-Django's SessionMiddleware handles session creation, lookup, and management. Sessions are stored in a database as base64-encoded JSON strings. Developers access session data via request.session in views, which functions as a dictionary for key-value storage.

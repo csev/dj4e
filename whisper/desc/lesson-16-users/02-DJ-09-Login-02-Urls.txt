@@ -1,7 +1,0 @@
-Django User Login and Logout
-
-django, django authentication, sessions, login, logout, reverse, next parameter
-
-Django implements user authentication using sessions and the django.contrib.auth app. The lecture clarifies that sessions store user state between requests, while login updates the session with user credentials. Project-level URL configuration in project/urls.py is necessary to register the login and logout views.
-
-The reverse function is used to look up login and logout views by name. The next parameter in login and logout URLs specifies the redirect URL after authentication. Templates automatically inject a user object with attributes such as isAuthenticated, id, and email.

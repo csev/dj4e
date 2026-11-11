@@ -1,7 +1,0 @@
-HTML/CSS Examples: Fonts, Colors, and Layout Techniques
-
-fonts, colors, css, box-model, positioning, z-index, anchor-tags, css-selectors
-
-The lecture covers HTML and CSS fundamentals including font management with system and web fonts, fallback strategies, color specifications using hexadecimal codes, and web-safe colors. It also demonstrates anchor tag states such as unvisited, visited, hover, and active.
-
-The session details CSS layout techniques such as the box model (content, padding, border, margin), floating elements with the clear property, positioning methods (relative, absolute, fixed), and z-index for handling overlapping elements.

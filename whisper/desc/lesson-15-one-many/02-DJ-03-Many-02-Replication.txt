@@ -1,7 +1,0 @@
-Avoiding Data Replication in Spreadsheet Models
-
-relational_databases, data_modeling, vertical_replication, database_normalization, many_to_one_relationships
-
-The lecture explains how spreadsheet data models often face issues with vertical replication, where identical information like book titles, languages, and genres is duplicated across multiple rows. This approach becomes inefficient when managing large datasets, causing increased storage needs, higher scanning overhead, and challenges in maintaining data consistency. The example of a library tracking physical book instances illustrates how repeated entries for the same attributes create operational problems as datasets grow.
-
-The solution involves structuring data into relational tables with explicit relationships. By separating book instances from a central `book` table and using `language` tables, the model eliminates duplication. Each `book` instance links to a single `book` entry, with relationships defined by cardinality—such as zero or more `book` instances per `language` entry. This design ensures data integrity and simplifies updates while reducing storage requirements.

@@ -1,7 +1,0 @@
-Django Data Models: Foreign Keys and Migrations
-
-django, data_models, foreign_keys, migrations, on_delete, cascade, set_null
-
-This lecture explains Django data models, focusing on foreign key fields for linking tables. Django automatically generates ID fields for each model. The null=True parameter allows foreign keys to be nullable, and the on_delete option specifies behavior when a referenced record is deleted (e.g., cascade or set null).
-
-The lecture details the migration process: makemigrations creates portable migration files based on model changes, and migrate applies these to the database. It demonstrates the resulting SQLite database schema, showing how foreign keys are implemented and the database-specific differences in foreign key constraints.

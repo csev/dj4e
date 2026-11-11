@@ -1,7 +1,0 @@
-Browser Debugger Console: Access in Firefox and Chrome
-
-browser console, firefox, chrome, document object model, request response cycle, http, http headers, network tab, javascript console, css
-
-This lecture demonstrates the browser debugger console in Firefox and Chrome. It covers accessing the console via browser menus and its key features including the document object model, JavaScript console, and network request inspection.
-
-The lecture explains the request-response cycle with examples of HTTP GET requests, status codes (200, 404, 500), and HTTP headers. Complex web pages require multiple requests (e.g., 44 requests for 1.6 megabytes of content) that take nearly one second to download, and the distinction between the server's raw response and the browser's parsed document object model.

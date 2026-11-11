@@ -1,7 +1,0 @@
-Django Superuser Creation and Authentication Basics
-
-django, superuser, login, logout, authentication, admin, sqlite
-
-This lecture covers creating a Django superuser, a user with full permissions. The superuser is created with a username and email address, which serves for password recovery. The superuser is stored in the database and can be removed when the database is reset.
-
-Django uses SQLite for development, where wiping the database removes all user data including superusers. To reset, developers must delete the SQLite database file, run migrations to recreate tables, and recreate the superuser. The admin interface provides built-in user management, and the lecture notes that local users are used for short-term projects before moving to social logins.

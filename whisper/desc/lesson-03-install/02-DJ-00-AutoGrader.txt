@@ -1,7 +1,0 @@
-Django Autograder: Checking Student Applications
-
-autograder, django, lti, html, php, web_crawling, request, response
-
-The lecture details the Django course autograder system, a PHP script hosted at dj4e.com that uses Learning Tools Interoperability (LTI) to integrate with learning management systems. This autograder sends HTTP requests to the student's Django application (running on Python Anywhere) to validate HTML responses against specified requirements. It performs up to 50 request-response cycles to ensure the application meets the grading criteria and returns a grade to the learning platform if all checks pass.
-
-The autograder focuses on verifying that the student's code adheres to instructions by checking for specific elements in the HTML output. Students must manually test their applications before submitting to the autograder. The lecture demonstrates a real-time example where a student corrected a Python syntax error in their views.py, resulting in a successful autograder test.

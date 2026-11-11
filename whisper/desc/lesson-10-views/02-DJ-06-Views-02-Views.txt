@@ -1,7 +1,0 @@
-Django Template Views and Request Objects
-
-django, template_view, request_object, get_parameters, http_response
-
-The lecture explains Django's template view functionality, which serves static HTML files without Python code. This view uses a template file in the application's templates directory and requires no database interactions. The template path includes the application name to avoid conflicts with other applications.
-
-The lecture demonstrates how Django views receive a request object containing incoming request data. It shows accessing GET query parameters via request.GET and constructing an HTTP response, which can be a string of HTML or a redirect object.

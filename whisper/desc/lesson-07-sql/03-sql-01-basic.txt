@@ -1,7 +1,0 @@
-SQLite Command Line: Basic Table Creation and Queries
-
-sqlite, command line, create table, insert, select, update, delete, where, order by
-
-This lecture demonstrates fundamental SQLite command line operations for creating tables, inserting records, and executing basic queries with examples of SELECT, UPDATE, and DELETE statements using WHERE clauses and ORDER BY.
-
-These operations function on a file-based SQLite database without server dependencies, enabling direct inspection and debugging of database structures.

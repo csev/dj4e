@@ -1,7 +1,0 @@
-Django for Everybody: Building Web Applications with Python
-
-Django, Python, object-oriented programming, web applications, Bootstrap, OAuth, Ajax
-
-Django for Everybody is a course designed for students who have already learned Python to build web applications using Django. The course focuses on object-oriented programming through Django's structure, providing a clear learning path for developing functional websites.
-
-Students host their applications on Python Anywhere from the first week, implementing features such as Ajax, image handling, OAuth-based single sign-on, and Bootstrap for responsive design.

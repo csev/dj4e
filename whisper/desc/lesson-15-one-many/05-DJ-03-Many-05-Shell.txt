@@ -1,7 +1,0 @@
-Django Shell: Creating and Saving Model Objects with Foreign Keys
-
-django-shell, model-objects, foreign-keys, save, primary-keys
-
-The lecture explains using the Django shell to create and save model objects. The shell preloads Django settings and applications, enabling in-memory object creation. For instance, a language object is instantiated with a name attribute and saved to the database, generating a primary key.
-
-The lecture demonstrates foreign key relationships by linking a book to a language object via primary key. It shows creating a book instance connected to the language and saving it. The shell also queries model objects by primary key and traverses relationships to access nested attributes like a book's title through its linked language.

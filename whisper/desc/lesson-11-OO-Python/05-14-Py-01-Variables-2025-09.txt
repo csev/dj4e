@@ -1,7 +1,0 @@
-Python Variables Are Pointers, Not Drawers in CPython
-
-CPython, variables, pointers, object references, id, copy constructor
-
-The lecture addresses the common oversimplification in Python variable concepts from the "Python for Everybody" course, explaining that in CPython, variables are pointers to objects rather than named drawers in memory.
-
-The id function reveals memory locations of objects. Reassigning a variable (e.g., x = 2000) changes the pointer to a new integer object, while y = x for lists creates a shared reference. A deep copy using list(x) creates an independent copy of the list.

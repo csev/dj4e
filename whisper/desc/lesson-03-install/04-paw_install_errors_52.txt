@@ -1,7 +1,0 @@
-Debugging Django Applications on Python Anywhere: Startup Failures and Tracebacks
-
-django, python anywhere, debugging, startup failure, traceback, virtual environment, manage.py, settings.py, urls.py
-
-The lecture covers two primary error scenarios in Django applications hosted on Python Anywhere: startup failures where the application fails to initialize, and traceback errors where the application runs but crashes during a request. It provides a method to diagnose startup failures using the `python manage.py check` command in the bash console.
-
-The session demonstrates a startup failure caused by a typo in `polls/views.py` (an incorrect import statement for `HttpResponse`). It explains the importance of the virtual environment for Django version and dependencies, and how to interpret tracebacks to identify and fix code errors.

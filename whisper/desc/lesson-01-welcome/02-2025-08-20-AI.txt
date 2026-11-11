@@ -1,7 +1,0 @@
-Charles Severance on AI in Programming Courses
-
-programming education, AI integration, zone of proximal development, cumulative exams, auto graders
-
-Charles Severance, professor at the University of Michigan School of Information, discusses his approach to using AI in programming education. He emphasizes that AI is now an essential part of software development and students must learn to use it effectively to become better programmers, not avoid it.
-
-Severance's teaching strategy includes breaking course material into small, doable chunks using the zone of proximal development, implementing cumulative exams to discourage AI reliance in early weeks, and auto graders that check for specific course techniques. He explains that AI can effectively solve assignments in the early weeks but becomes unable to handle the more complex problems later in the course, requiring students to develop foundational programming skills.

@@ -1,7 +1,0 @@
-Network Sockets as Computer Phone Calls
-
-sockets, tcp, ip, port, http, https, ipv4, ipv6
-
-Network sockets are a software abstraction that enables temporary communication between computers, modeled after phone calls: establishing a connection, exchanging data, and then disconnecting. This design, developed in the 1960s, avoids the need for permanent connections and scales efficiently across the internet.
-
-Each computer has an IP address (either IPv4 or IPv6) and applications use TCP port numbers to specify services. For instance, port 80 handles HTTP traffic, port 443 handles HTTPS, port 25 is used for email servers, and port 23 is for Telnet, illustrating how diverse protocols operate over the same network infrastructure.

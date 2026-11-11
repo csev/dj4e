@@ -1,7 +1,0 @@
-SQL: Historical Development and Core Principles
-
-SQL, database history, NIST, relational databases, schema
-
-The lecture traces the historical development of databases from tape-based storage systems with sequential access in the early computing era to disk drives that enabled faster data retrieval. This evolution led to the creation of early database models in the 1960s and 1970s, including index sequential and network approaches. The U.S. National Institute of Standards and Technology (NIST) addressed vendor lock-in by establishing a standard for database interoperability.
-
-SQL, initially known as the Simple Query Language, provides a standardized interface for database operations without exposing physical storage mechanisms. The lecture emphasizes that defining a schema, which specifies column types and structures, allows database systems to optimize storage and retrieval efficiently.

@@ -1,7 +1,0 @@
-Django Models: Local Library Project Setup
-
-django, models, migrations, orm, sqlite, git
-
-This lecture demonstrates creating Django models for a local library project using the Mozilla Developer Network tutorial. It covers defining model classes in models.py, adding fields and foreign keys, and the migration process.
-
-The tutorial shows running migrations to create database tables, verifying the schema with SQLite, and committing changes to Git. It explains that the object-relational mapper converts model definitions into database tables and handles joins automatically.
