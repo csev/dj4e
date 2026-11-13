@@ -150,7 +150,7 @@ Leave this running. The server listens on `http://127.0.0.1:8000/`.
 
 [] In your **second terminal**, run:
 
-    ssh -R 80:localhost:8000 localhost.run
+    ssh -R 80:localhost:8000 nokey@localhost.run
 
 Leave this running. localhost.run will print a public URL, for example:
 
@@ -192,6 +192,50 @@ Checkup Tool
 
     bash ~/dj4e-samples/tools/checkup.sh
 
+Setting Up SSH Key Authentication (Optional)
+---------------------------------------------
+
+localhost.run supports SSH key authentication. This is useful if you want to associate a stable domain with your account. For ordinary free temporary tunnels, SSH key setup is optional.
+
+[] Check whether you already have an SSH key:
+
+    ls -la ~/.ssh
+
+Look for `id_ed25519` (private key) and `id_ed25519.pub` (public key).
+
+[] If you do not have an Ed25519 SSH key, generate one:
+
+    ssh-keygen -t ed25519
+
+When prompted:
+
+- Press **Enter** to accept the default file location (`~/.ssh/id_ed25519`).
+- Enter a passphrase if you want additional protection, or press Enter twice to leave it empty.
+
+**Important:** If an SSH key already exists, do not overwrite it. You can use your existing key or generate a separate key with a different filename.
+
+[] Display your public key:
+
+    cat ~/.ssh/id_ed25519.pub
+
+Copy the entire output. It should begin with `ssh-ed25519`.
+
+**Never share your private key** (`~/.ssh/id_ed25519`). Only upload the public key (`~/.ssh/id_ed25519.pub`).
+
+[] Open the <a href="https://admin.localhost.run" target="_blank">localhost.run admin portal</a> and add your public SSH key to your account.
+
+[] Once your key has been registered, connect to localhost.run using:
+
+    ssh -R 80:localhost:8000 localhost.run
+
+If you have multiple SSH keys, you can explicitly select one:
+
+    ssh -i ~/.ssh/id_ed25519 -R 80:localhost:8000 localhost.run
+
+**Note:** You can skip this entire section when using a free temporary tunnel. To connect without SSH key authentication, use the `nokey` username:
+
+    ssh -R 80:localhost:8000 nokey@localhost.run
+
 Possible Errors
 ---------------
 
@@ -214,7 +258,3 @@ To remove everything and start fresh:
 
 Then follow this document from the beginning.
 
-About Django 4.2
----------------
-
-As of January 2026, this course uses Django 5.2. If you prefer Django 4.2, follow the <a href="dj4e_install42.md" target="_blank">Django 4.2 install instructions</a> and adapt the local steps from this document.
