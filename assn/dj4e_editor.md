@@ -4,18 +4,18 @@ Editing Files on PythonAnywhere
 There are three ways to edit files in your PythonAnywhere environment, ranging from the easiest
 to the coolest.  You only have to edit the file one of these ways.
 
-(1) Go to the main PythonAnywhere dashboard, browse files, navigate to the correct folder and edit the file
+- Go to the main PythonAnywhere dashboard, browse files, navigate to the correct folder and edit the file
 
     /home/drchuck/django_projects/mysite/mysite/settings.py
 
-(2) Or in the command line:
+- Or in the command line:
 
     cd ~/django_projects/mysite/mysite/
     nano settings.py
 
     Save the File by pressing 'CTRL-X', 'Y', and Enter
 
-(3) Don't try this most difficult and most cool way to edit files on Linux without a helper
+- Don't try this most difficult and most cool way to edit files on Linux without a helper
 if it is your first time with the `vi` text editor.
 
     cd ~/django_projects/mysite/mysite/

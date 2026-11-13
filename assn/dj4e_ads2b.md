@@ -28,7 +28,7 @@ this site - weird but true.
 In this section, you will pull bits and pieces of the `forum` sample application
 into your `ads` application to add support for comments for each ad.
 
-(1) Update your `models.py` adding the comment feature from the `forums/models.py`
+[] Update your `models.py` adding the comment feature from the `forums/models.py`
 
     class Ad(models.Model) :
 
@@ -57,19 +57,19 @@ into your `ads` application to add support for comments for each ad.
 Do not add the Forum model - simply connect the `Comment` model to the `Ad` model. Of course do
 the migrations once you have modified the model successfully.
 
-(2) Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
+[] Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
 
-(3) Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
+[] Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
 and create the `CommentForm` and pass them into your
 `templates/ads/ad_detail.html` template through the context.
 
-(4) Adapt the `templates/ads/ad_detail.html` template to show comments and show a delete icon
+[] Adapt the `templates/ads/ad_detail.html` template to show comments and show a delete icon
 when a comment belongs to the current logged in user.
 
-(5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
+[] Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
 at the techniques in `forums/templates/forums/detail.html`.
 
-(6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
+[] Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
 routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown here:
 
     urlpatterns = [
@@ -80,9 +80,9 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
             views.CommentDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_comment_delete'),
     ]
 
-(7) Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
+[] Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
 
-(8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
+[] You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
 
 Manual Testing
 --------------
@@ -114,12 +114,12 @@ Do Some or All of the Challenges
 You will have to finish these by the next assignment - so you might as well work on them now.
 And they are fun.
 
-(1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+[] Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
-(2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
+[] Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
@@ -130,7 +130,7 @@ you can add a GET parameter to the URL to force it to be re-retrieved:
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) Make social login work.  Take a look at
+[] Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
