@@ -151,7 +151,6 @@ Leave this running. The server listens on `http://127.0.0.1:8000/`.
 [] In your **second terminal**, run:
 
     ssh -R 80:localhost:8000 nokey@localhost.run
-    
 
 Leave this running. localhost.run will print a public URL, for example:
 
