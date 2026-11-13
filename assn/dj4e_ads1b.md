@@ -28,7 +28,7 @@ Adding Pictures to the Ads Application
 In this section, you will pull bits and pieces of the `pics` sample application
 into your `ads` application to add support for an optional single picture per ad.
 
-(1) Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/pics/models.py`
+[] Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/pics/models.py`
 
     class Ad(models.Model) :
 
@@ -41,7 +41,7 @@ into your `ads` application to add support for an optional single picture per ad
 
 Do not include the entire `Pic` model.  Of course do the migrations once you have modified the model.
 
-(2) Copy in the `pics/forms.py` as well as `pics/humanize.py`.  Edit the `pics/forms.py` and change
+[] Copy in the `pics/forms.py` as well as `pics/humanize.py`.  Edit the `pics/forms.py` and change
 *only* the following four lines:
 
     ...
@@ -65,25 +65,25 @@ to:
 Leave the other bits of `ads/forms.py` alone.  Only change the name of the model in the
 above two lines.
 
-(3) Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
+[] Take a look at `pics/views.py` and adapt the patterns in `PicCreateView` and
 `PicUpdateView` and replace the code for `AdCreateView` and `AdUpdateView` in `ads/views.py`.
 These new views don't inherit from owner.py because they manage the `owner` column in the `get()`
 and `post()` methods.
 
-(4) Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
+[] Alter your `templates/ads/ad_form.html` by looking through `pics/templates/pics/form.html`.  Make sure to add the
 JavaScript bits at the end and add `enctype="multipart/form-data"` and the `id`
 attribute to the `form` tag.
 
-(5) Alter the `templates/ads/ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
+[] Alter the `templates/ads/ad_detail.html` template by looking through `pics/templates/pics/detail.html` and
 to add code to include the image in the output if there is an image associated with the ad.
 Make sure not to lose the `price` field in your UI.  If you don't see the `price` field
 in your UI it is likely a mistake in your `forms.py`.
 
-(6) Add an `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
+[] Add an `ad_picture` route to your `urls.py` based on the `pics_picture` route from `pics/urls.py`:
 
     path('ad_picture/<int:pk>', views.stream_file, name='ad_picture'),
 
-(5) Add the `stream_file()` view from `pics/views.py` and adapt appropriately.
+[] Add the `stream_file()` view from `pics/views.py` and adapt appropriately.
 
 Test to make sure you can upload, view, and update pictures with your ads.
 
