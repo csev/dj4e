@@ -72,7 +72,7 @@ In this section, you will pull bits and pieces of the `favwc` sample application
 into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
 ads.
 
-(1) Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
+[] Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
 
     class Ad(models.Model) :
 
@@ -96,26 +96,26 @@ ads.
 
 Of course do the migrations once you have modified the model.
 
-(2) Add two routes to your `urls.py` for the favorite features
+[] Add two routes to your `urls.py` for the favorite features
 
     ...
     path('ad/<int:pk>/favorite',
         views.ToggleFavoriteView.as_view(), name='ad_toggle'),
     ...
 
-(3) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
+[] Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.  Make sure to use the
 `related_name` from your `models.py` when retrieving the favorites in your view.
 
-(4) Create a folder `mysite/site/wc` and copy the 
+[] Create a folder `mysite/site/wc` and copy the 
 file `dj4e-samples/site/wc/dj4e-favstar.js` int0 the `wc` folder.
 
-(5) Alter your `ad_list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+[] Alter your `ad_list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
 parts that show the stars based on the list of favorites for this user and the `favToggle()` JavaScript
 code at the end.
 
-(6) Pull in and adapt `ToggleFavoriteView` from `dj4e-samples/favwc/views.py` into your `views.py`.
+[] Pull in and adapt `ToggleFavoriteView` from `dj4e-samples/favwc/views.py` into your `views.py`.
 
 Manual Testing
 --------------
