@@ -449,7 +449,7 @@ Since you are in effect starting with a brand new `mysite/settings.py` and `mysi
 find a few problems when you are running `python manage.py check` - I will keep a list of the common
 problems and their solutions here:
 
-- If you see an error message "TypeError: 'module' object is not iterable" when you are
+(1) If you see an error message "TypeError: 'module' object is not iterable" when you are
 running `python manage.py check`, this may be because you mistakenly
 edited the `ROOT_URLCONF` value in `settings.py`  - your value should be:
 
@@ -457,7 +457,7 @@ edited the `ROOT_URLCONF` value in `settings.py`  - your value should be:
 
 More will be added as the problems are identified.
 
-- If you have a problem running `migrate` or `makemigrations` in step 9 above, you might want
+(2) If you have a problem running `migrate` or `makemigrations` in step 9 above, you might want
 to start with a fresh MySQL database.  Since we are using a MYSQL server, we can't
 just delete the SQLite file and start over - but it is not much more difficult.
 
