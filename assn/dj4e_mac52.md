@@ -132,6 +132,67 @@ Create the polls app and add the initial view:
 
     python manage.py check
 
+Running Your Server and Exposing with localhost.run
+---------------------------------------------------
+
+[] You need **two terminal windows** (or tabs): use the **first terminal** for Django below, and a **second terminal** for localhost.run.
+
+**Terminal 1** (your **first terminal**) – Django server
+
+    cd ~
+    source .ve52/bin/activate
+    cd django_projects/mysite
+    python manage.py runserver
+
+Leave this running. The server listens on `http://127.0.0.1:8000/`.
+
+**Terminal 2** (your **second terminal**) – localhost.run tunnel
+
+[] In your **second terminal**, run:
+
+    ssh -R 80:localhost:8000 nokey@localhost.run
+    
+
+Leave this running. localhost.run will print a public URL, for example:
+
+    Forwarding HTTP traffic from https://xxxxx-xx-xx-xx-xx.lhr.life
+
+That URL is what you submit to the Install autograder. It forwards traffic to your local Django server.
+
+**Testing locally**
+
+- [] Local: open `http://127.0.0.1:8000/polls` in your browser
+- [] Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`)
+
+You should see: "Hello, world. You're at the polls index."
+
+Submitting to the Autograder
+---------------------------
+
+1. [] Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
+2. [] Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
+3. [] Submit that URL to the DJ4E Install autograder
+
+The autograder will fetch your site through localhost.run. Each time you restart the SSH tunnel, the URL may change; if it does, submit the new URL.
+
+Workflow: Change, Check, Restart, Test
+-------------------------------------
+
+When you change code:
+
+1. [] Run `python manage.py check` to catch errors
+2. [] Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
+3. [] Test at `http://127.0.0.1:8000/` or your localhost.run URL
+
+Your **second terminal** (Terminal 2, the tunnel) can stay running; you only need to restart the Django server.
+
+Checkup Tool
+-----------
+
+[] We provide a checkup script in dj4e-samples:
+
+    bash ~/dj4e-samples/tools/checkup.sh
+
 Setting Up SSH Key Authentication (Optional)
 ---------------------------------------------
 
@@ -176,66 +237,6 @@ If you have multiple SSH keys, you can explicitly select one:
 
     ssh -R 80:localhost:8000 nokey@localhost.run
 
-Running Your Server and Exposing with localhost.run
----------------------------------------------------
-
-[] You need **two terminal windows** (or tabs): use the **first terminal** for Django below, and a **second terminal** for localhost.run.
-
-**Terminal 1** (your **first terminal**) – Django server
-
-    cd ~
-    source .ve52/bin/activate
-    cd django_projects/mysite
-    python manage.py runserver
-
-Leave this running. The server listens on `http://127.0.0.1:8000/`.
-
-**Terminal 2** (your **second terminal**) – localhost.run tunnel
-
-[] In your **second terminal**, run:
-
-    ssh -R 80:localhost:8000 localhost.run
-
-Leave this running. localhost.run will print a public URL, for example:
-
-    Forwarding HTTP traffic from https://xxxxx-xx-xx-xx-xx.lhr.life
-
-That URL is what you submit to the Install autograder. It forwards traffic to your local Django server.
-
-**Testing locally**
-
-- [] Local: open `http://127.0.0.1:8000/polls` in your browser
-- [] Public: open the localhost.run URL (e.g. `https://xxxxx.lhr.life/polls`)
-
-You should see: "Hello, world. You're at the polls index."
-
-Submitting to the Autograder
----------------------------
-
-1. [] Keep **Terminal 1** (your **first terminal**, runserver) and **Terminal 2** (your **second terminal**, SSH tunnel) running
-2. [] Copy the **full** localhost.run URL (e.g. `https://xxxxx.lhr.life`)
-3. [] Submit that URL to the DJ4E Install autograder
-
-The autograder will fetch your site through localhost.run. Each time you restart the SSH tunnel, the URL may change; if it does, submit the new URL.
-
-Workflow: Change, Check, Restart, Test
--------------------------------------
-
-When you change code:
-
-1. [] Run `python manage.py check` to catch errors
-2. [] Stop the server (Ctrl+C in your **first terminal** / Terminal 1) and start it again: `python manage.py runserver`
-3. [] Test at `http://127.0.0.1:8000/` or your localhost.run URL
-
-Your **second terminal** (Terminal 2, the tunnel) can stay running; you only need to restart the Django server.
-
-Checkup Tool
------------
-
-[] We provide a checkup script in dj4e-samples:
-
-    bash ~/dj4e-samples/tools/checkup.sh
-
 Possible Errors
 ---------------
 
@@ -258,7 +259,3 @@ To remove everything and start fresh:
 
 Then follow this document from the beginning.
 
-About Django 4.2
----------------
-
-As of January 2026, this course uses Django 5.2. If you prefer Django 4.2, follow the <a href="dj4e_install42.md" target="_blank">Django 4.2 install instructions</a> and adapt the local steps from this document.
