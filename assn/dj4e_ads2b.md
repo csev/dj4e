@@ -28,7 +28,7 @@ this site - weird but true.
 In this section, you will pull bits and pieces of the `forum` sample application
 into your `ads` application to add support for comments for each ad.
 
-(1) Update your `models.py` adding the comment feature from the `forums/models.py`
+[] Update your `models.py` adding the comment feature from the `forums/models.py`
 
     class Ad(models.Model) :
 
@@ -57,19 +57,19 @@ into your `ads` application to add support for comments for each ad.
 Do not add the Forum model - simply connect the `Comment` model to the `Ad` model. Of course do
 the migrations once you have modified the model successfully.
 
-(2) Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
+[] Pull the `CommentForm` class from `forums/forms.py` into your `forms.py`.
 
-(3) Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
+[] Adapt the `get()` method from `ForumDetailView` to your `AdDetailView` to retrieve the list of comments
 and create the `CommentForm` and pass them into your
 `templates/ads/ad_detail.html` template through the context.
 
-(4) Adapt the `templates/ads/ad_detail.html` template to show comments and show a delete icon
+[] Adapt the `templates/ads/ad_detail.html` template to show comments and show a delete icon
 when a comment belongs to the current logged in user.
 
-(5) Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
+[] Also add the ability to add a comment to an ad in `ad_detail.html` when the user is logged in by looking
 at the techniques in `forums/templates/forums/detail.html`.
 
-(6) Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
+[] Add a route in `urls.py` for the `ad_comment_create` and `ad_comment_delete`
 routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown here:
 
     urlpatterns = [
@@ -80,9 +80,9 @@ routes from `forums/urls.py`.  Make sure to use the same URL patterns as shown h
             views.CommentDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_comment_delete'),
     ]
 
-(7) Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
+[] Adapt the comment related views from `forums/views.py` and put them into your `views.py`.
 
-(8) You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
+[] You will have to adapt the `forums/templates/forums/comment_delete.html` template to work in your ads application.
 
 Manual Testing
 --------------
