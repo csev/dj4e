@@ -65,7 +65,7 @@ In this section, you will pull bits and pieces of the `favs` sample application
 into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
 ads.
 
-(1) Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favs/models.py`
+[] Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favs/models.py`
 
     class Ad(models.Model) :
 
@@ -89,7 +89,7 @@ ads.
 
 Of course do the migrations once you have modified the model.
 
-(2) Add two routes to your `urls.py` for the favorite features
+[] Add two routes to your `urls.py` for the favorite features
 
     ...
     path('ad/<int:pk>/favorite',
@@ -98,15 +98,15 @@ Of course do the migrations once you have modified the model.
         views.DeleteFavoriteView.as_view(), name='ad_unfavorite'),
     ...
 
-(3) Look at how `ThingListView` from `dj4e-samples/favs/views.py`
+[] Look at how `ThingListView` from `dj4e-samples/favs/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.
 
-(4) Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
+[] Alter your `ad_list.html` by looking through `favs/templates/favs/list.html`.  Make sure to add the
 parts that show the stars based on the list of favorites for this user and the `favPost()` JavaScript
 code at the end.
 
-(5) Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
+[] Pull in and adapt `AddFavoriteView`, and `DeleteFavoriteView`
 from `dj4e-samples/favs/views.py` into your `views.py`.
 
 Manual Testing
