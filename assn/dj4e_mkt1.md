@@ -164,8 +164,9 @@ to be:
         <a class="navbar-brand" href="{% url 'mkt:all' %}">{{ settings.APP_NAME }}</a>
         <ul class="navbar-nav">
           {% url 'mkt:all' as x %}
-          <li {% if request.get_full_path == x %}class="active"{% endif %}>
-              <a class="nav-link" href="{% url 'mkt:all' %}" role="button">Ads</a></li>
+          <li>
+          <a class="nav-link{% if request.get_full_path == x %} active{% endif %}" href="{% url 'mkt:all' %}" role="button">Ads</a>
+          </li>
         </ul>
         <ul class="navbar-nav">
           {% if user.is_authenticated %}
