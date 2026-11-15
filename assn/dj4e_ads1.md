@@ -82,14 +82,14 @@ When this is done, the autos, cats, dogs, etc will stop working unless you
 add them back to these two files.  It is OK for these applications not to be working.
 The autograder will just look at /ads.
 
-(1) Copy the `settings.py` and `urls.py` files and the entire
+[] Copy the `settings.py` and `urls.py` files and the entire
 `home` folder from the `dj4e-samples` project:
 
     cp ~/dj4e-samples/dj4e-samples/settings.py ~/django_projects/mysite/mysite
     cp ~/dj4e-samples/dj4e-samples/urls.py ~/django_projects/mysite/mysite
     cp -r ~/dj4e-samples/home/* ~/django_projects/mysite/home
 
-(2) Edit `~/django_projects/mysite/mysite/settings.py` and then delete
+[] Edit `~/django_projects/mysite/mysite/settings.py` and then delete
 all the `INSTALLED_APPLICATIONS` after `home`.  You will have to search
 and replace `dj4e-samples` with `mysite` in a few places.  Also set
 the name of your application in the `settings.py` file to something other
@@ -100,12 +100,12 @@ than `ChucksList`:
 
 This shows up in default page titles and default page navigation.
 
-(3) Edit your `django_projects/mysite/mysite/urls.py` and
+[] Edit your `django_projects/mysite/mysite/urls.py` and
 remove all of the `path()` calls to the sample applications. Make
 sure to keep the `path()` to `home.urls`.  Also keep
 the `site` and `favicon` rules in your `urls.py`.
 
-(4) Edit the file `django_projects/mysite/home/templates/home/main.html` and replace the
+[] Edit the file `django_projects/mysite/home/templates/home/main.html` and replace the
 contents with this:
 
     {% extends "base_bootstrap.html" %}
@@ -116,7 +116,7 @@ contents with this:
         </p>
     {% endblock content %}
 
-(5) At this point, you should be able to run:
+[] At this point, you should be able to run:
 
     python manage.py check
 
@@ -129,15 +129,15 @@ don't worry - you will see this warning until you set up the social login.
 <b>If you are running on your local computer, (i.e not using PythonAnywhere)
 you can skip to step 9, otherwise continue with these steps.  Steps 6-8 are for PythonAnywhere.</b>
 
-(6) We are going to switch your application on PythonAnywhere from using an
+[] We are going to switch your application on PythonAnywhere from using an
 SQLite database to a MySQL database for the rest of this course.  If you keep running
 SQLite and your application stores too much data it will start to slow down.
 If you are running locally, you can keep using SQLite.
 
-(7) To use MySQL, first go to the `Databases` tab in PythonAnywhere. Make a MySQL database
+[] To use MySQL, first go to the `Databases` tab in PythonAnywhere. Make a MySQL database
 named `ads` and choose a name and password and write them down.
 
-(8) Edit `~/django_projects/mysite/mysite/settings.py` and find the existing
+[] Edit `~/django_projects/mysite/mysite/settings.py` and find the existing
 value for the `DATABASES` variable and comment it out.
 
     # DATABASES = {
@@ -165,7 +165,7 @@ to the values for your database.
         }
     }
 
-(9) Run `python manage.py check` until there are no errors.  Once `check` works you will need to run your migrations and make a new
+[] Run `python manage.py check` until there are no errors.  Once `check` works you will need to run your migrations and make a new
 administrator account:
 
     cd ~/django_projects/mysite
@@ -183,7 +183,7 @@ interrupted - you might need to drop your MySQL tables and run the migrations ag
 are shown below to drop the databases tables so you can run the migrations
 on a fresh database.
 
-(10) If you restart your web application, there won't be many working urls.
+[] If you restart your web application, there won't be many working urls.
 Try these two to see if you have the home code working properly:
 
     https://your-account.pythonanywhere.com/
@@ -204,14 +204,14 @@ __Important Note:__ If you find you have a problem saving files in the PythonAny
 system using their browser-based editor, you might need to turn off your ad blocker for
 this site - weird but true.
 
-(1) Create a new `ads` application within your `mysite` project:
+[] Create a new `ads` application within your `mysite` project:
 
     cd ~/django_projects/mysite
     python manage.py startapp ads
 
 Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/urls.py`.
 
-(2) Use this in your `ads/models.py`:
+[] Use this in your `ads/models.py`:
 
     from django.db import models
     from django.core.validators import MinLengthValidator
@@ -232,10 +232,10 @@ Then add the application to your `mysite/mysite/settings.py` and `mysite/mysite/
         def __str__(self):
             return self.title
 
-(3) Copy the `owner.py` file from `dj4e-samples/myarts` to your `ads` folder.  This is the one file you <b>do not</b>
+[] Copy the `owner.py` file from `dj4e-samples/myarts` to your `ads` folder.  This is the one file you <b>do not</b>
 have to change at all (thanks to object orientation 😊).
 
-(4) The files `admin.py`, `views.py`, `urls.py`, and the `templates` in the `myarts` folder will require significant
+[] The files `admin.py`, `views.py`, `urls.py`, and the `templates` in the `myarts` folder will require significant
 adaptation to be suitable for a classified
 ad application and the above model.   A big part of this assignment is to use the
 view classes that are in `owner.py` and used in `views.py`.  The new `owner` field should
@@ -243,10 +243,10 @@ not be shown to the user on the create and update forms, it should be automatica
 by the classes like `OwnerCreateView` in `owner.py`.  If you see an "owner" drop down
 in your create screen the program is not implemented correctly and will fail the autograder.
 
-(5) Adapt the templates in `myarts/templates/myarts` as a starting point to create the needed
+[] Adapt the templates in `myarts/templates/myarts` as a starting point to create the needed
 templates in `ads/templates/ads`.
 
-(6) When you are implementing the update and delete views, make sure to follow the url patterns
+[] When you are implementing the update and delete views, make sure to follow the url patterns
 for the update and delete operations.  They should be of the form `/ad/<int:pk>/update`
 and `/ad/<int:pk>/delete`.  Something like the following should work in your `urls.py`:
 
@@ -265,11 +265,11 @@ and `/ad/<int:pk>/delete`.  Something like the following should work in your `ur
             views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
     ]
 
-(7) As you build the application, use `check` periodically as you complete some of the code.
+[] As you build the application, use `check` periodically as you complete some of the code.
 
     python manage.py check
 
-(8) Once your application is mostly complete and can pass the `check`
+[] Once your application is mostly complete and can pass the `check`
 without error, add the new models to your migrations and database tables:
 
     python manage.py makemigrations
@@ -285,7 +285,7 @@ https://chucklist.dj4e.com/
 This top bar includes a 'Create Ad' navigation item and the login/logout navigation with
 gravatar when the user logs in.
 
-(1) Edit all four of the `ads_` files in `ads/templates/ads` to change them so
+[] Edit all four of the `ads_` files in `ads/templates/ads` to change them so
 they extend `ads/base_menu.html`.  Change the first line of each file from:
 
     {% extends "base_bootstrap.html" %}
@@ -294,7 +294,7 @@ to be:
 
     {% extends "base_menu.html" %}
 
-(2) Create `home/templates/base_menu.html` with this code:
+[] Create `home/templates/base_menu.html` with this code:
 
     {% extends 'base_bootstrap.html' %}
     {% load app_tags %} <!-- see home/templatetags/app_tags.py and dj4e-samples/settings.py -->
@@ -328,7 +328,7 @@ to be:
     </nav>
     {% endblock %}
 
-(3) Find the line in your `base_bootstrap.html` that looks like this:
+[] Find the line in your `base_bootstrap.html` that looks like this:
 
         <meta name="dj4e-code" content="99999999">
 
@@ -368,12 +368,12 @@ are a set of manual test steps:
 Fun Challenges
 --------------
 
-(1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+[] Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
-(2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
+[] Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
@@ -384,7 +384,7 @@ favicon is really being served you can add a GET parameter to the URL to force i
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) To make the social login work.  Take a look at
+[] To make the social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and

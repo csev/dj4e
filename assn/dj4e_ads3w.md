@@ -27,12 +27,12 @@ Do All of the Challenges
 At this point all of the challenges should be working - not all will be tested
 by the autograder - but we will separately check them.
 
-(1) Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
+[] Make yourself a gravatar at https://en.gravatar.com/ - it is super easy and you will see your
 avatar when you log in to your application and elsewhere with gravatar enabled apps. The gravatar can be
 anything you like - it does not have to be a picture of you.  The gravatar is associated with an email address
 so make sure to give an email address to the user you create with `createsuperuser`.
 
-(2) Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
+[] Change your `home/static/favicon.ico` to a favicon of your own making.   I made my favicon
 at https://favicon.io/favicon-generator/ - it might not change instantly after you update the favicon
 because they are cached extensively.   Probably the best way to test is to go right to the favicon url
 after you update the file and press 'Refresh' and/or switch browsers.  Sometimes the browser caching
@@ -43,7 +43,7 @@ you can add a GET parameter to the URL to force it to be re-retrieved:
 
 Change the `x` value to something else if you want to test over and over.
 
-(3) Make social login work.  Take a look at
+[] Make social login work.  Take a look at
 <a href="https://github.com/csev/dj4e-samples/blob/main/dj4e-samples/github_settings-dist.py" target="_blank">
 github_settings-dist.py</a>, copy it into
 `mysite/mysite/github_settings.py` and go through the process on github to get your client ID and
@@ -72,7 +72,7 @@ In this section, you will pull bits and pieces of the `favwc` sample application
 into your `ads` application to add support for logged in users to "favorite" and "un-favorite"
 ads.
 
-(1) Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
+[] Add this to your `ads/models.py`, taking inspiration from `dj4e-samples/favwc/models.py`
 
     class Ad(models.Model) :
 
@@ -96,26 +96,26 @@ ads.
 
 Of course do the migrations once you have modified the model.
 
-(2) Add two routes to your `urls.py` for the favorite features
+[] Add two routes to your `urls.py` for the favorite features
 
     ...
     path('ad/<int:pk>/favorite',
         views.ToggleFavoriteView.as_view(), name='ad_toggle'),
     ...
 
-(3) Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
+[] Look at how `ThingListView` from `dj4e-samples/favwc/views.py`
 retrieves the list of favorites for the current user and add code
 to your `AdListView` to retrieve the favorites for the current logged in user.  Make sure to use the
 `related_name` from your `models.py` when retrieving the favorites in your view.
 
-(4) Create a folder `mysite/site/wc` and copy the 
+[] Create a folder `mysite/site/wc` and copy the 
 file `dj4e-samples/site/wc/dj4e-favstar.js` int0 the `wc` folder.
 
-(5) Alter your `ad_list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
+[] Alter your `ad_list.html` by looking through `favwc/templates/favwc/list.html`.  Make sure to add the
 parts that show the stars based on the list of favorites for this user and the `favToggle()` JavaScript
 code at the end.
 
-(6) Pull in and adapt `ToggleFavoriteView` from `dj4e-samples/favwc/views.py` into your `views.py`.
+[] Pull in and adapt `ToggleFavoriteView` from `dj4e-samples/favwc/views.py` into your `views.py`.
 
 Manual Testing
 --------------
