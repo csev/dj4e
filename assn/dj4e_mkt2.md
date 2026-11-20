@@ -52,7 +52,7 @@ Before you Start: Taking a Snapshot of Your Previous Assignment
 ---------------------------------------------------------------
 
 We want to take a snapshot of your previous assignment code using the `git` version management
-tool before we start making schanges to your code.  Only do this *once and only once*
+tool before we start making changes to your code.  Only do this *once and only once*
 after you have fully completed the previous assignment before you start
 editing your files for this assignment.
 
