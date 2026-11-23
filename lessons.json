@@ -3451,6 +3451,11 @@
                     "href": "{apphome}/code/browser.zip"
                 },
                 {
+                    "type": "reference",
+                    "title": "JavaScript Event Loop Visualizer",
+                    "href": "https://frontendatlas.com/javascript/trivia/js-event-loop"
+                },
+                {
                     "type": "header",
                     "text": "Discussions",
                     "level": 2
@@ -3552,7 +3557,7 @@
                 {
                     "type": "reference",
                     "title": "Sample code - JSON Chat",
-                    "href": "https://github.com/csev/dj4e-samples/tree/master/chat"
+                    "href": "https://github.com/csev/dj4e-samples/tree/main/chat"
                 },
                 {
                     "type": "header",
@@ -5153,7 +5158,7 @@
                 {
                     "type": "reference",
                     "title": "MDN Skeleton Web Site",
-                    "href": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website"
+                    "href": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/skeleton_website"
                 },
                 {
                     "type": "header",
